@@ -488,6 +488,9 @@ type Backend struct {
 	dead bool
 	// Stderr receives server log lines (nil = keep in Log()).
 	Stderr func([]byte)
+	// Listen receives the session's LISTEN set changes at commit time
+	// (see host.Host.Listen). It runs inside Exec.
+	Listen func(channel string, op int)
 }
 
 // Start boots a backend on a filesystem that already has a data directory.
@@ -513,6 +516,11 @@ func (e *Engine) Start(fs *vfs.FS, opts StartOptions) (*Backend, error) {
 	h.Log = e.Log
 	h.Recv = b.recv
 	h.Send = b.send
+	h.Listen = func(channel string, op int) {
+		if b.Listen != nil {
+			b.Listen(channel, op)
+		}
+	}
 	h.Run = func(cmd, _, _ string) int { e.logf("backend tried to run %q", cmd); return 1 }
 	b.h = h
 	mod, err := e.postgres.Instantiate(e.ctx, h)

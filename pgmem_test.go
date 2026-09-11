@@ -3,11 +3,13 @@ package pgmem_test
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"os"
 	"testing"
 	"time"
 
 	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
 	_ "github.com/jackc/pgx/v5/stdlib"
 
 	"github.com/shibukawa/pgmem"
@@ -360,5 +362,349 @@ func TestCryptoHashes(t *testing.T) {
 	var big string
 	if err := conn.QueryRow(ctx, `SELECT md5(repeat('x', 1000000))`).Scan(&big); err != nil || big != "ec78dbd963d2fc01e51176ed4dec299e" {
 		t.Fatalf("md5(repeat x 1e6) = %s, %v", big, err)
+	}
+}
+
+// Two connections used at the same time must not share a transaction: the
+// second one's statement waits until the first transaction ends, instead of
+// being executed inside it.
+func TestTransactionsDoNotInterleave(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	c1, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c1.Close(ctx)
+	c2, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c2.Close(ctx)
+	if _, err := c1.Exec(ctx, `CREATE TABLE t(v int)`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := c1.Exec(ctx, `BEGIN; INSERT INTO t VALUES (1)`); err != nil {
+		t.Fatal(err)
+	}
+	done := make(chan error, 1)
+	go func() {
+		_, err := c2.Exec(ctx, `INSERT INTO t VALUES (2)`)
+		done <- err
+	}()
+	select {
+	case err := <-done:
+		t.Fatalf("second connection ran inside the first transaction (err=%v)", err)
+	case <-time.After(300 * time.Millisecond):
+	}
+	if _, err := c1.Exec(ctx, `ROLLBACK`); err != nil {
+		t.Fatal(err)
+	}
+	select {
+	case err := <-done:
+		if err != nil {
+			t.Fatal(err)
+		}
+	case <-time.After(10 * time.Second):
+		t.Fatal("second connection still blocked after ROLLBACK")
+	}
+	var rows []int
+	r, err := c1.Query(ctx, `SELECT v FROM t ORDER BY v`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for r.Next() {
+		var v int
+		r.Scan(&v)
+		rows = append(rows, v)
+	}
+	if len(rows) != 1 || rows[0] != 2 {
+		t.Fatalf("rows = %v, want [2]", rows)
+	}
+}
+
+// A connection's prepared statements must survive other connections coming
+// and going.
+func TestPreparedStatementSurvivesOtherConnections(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	c1, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c1.Close(ctx)
+	if _, err := c1.Prepare(ctx, "double", `SELECT $1::int * 2`); err != nil {
+		t.Fatal(err)
+	}
+	c2, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := c2.Exec(ctx, `SELECT 1`); err != nil {
+		t.Fatal(err)
+	}
+	c2.Close(ctx)
+	var v int
+	if err := c1.QueryRow(ctx, "double", 21).Scan(&v); err != nil || v != 42 {
+		t.Fatalf("v = %d, %v", v, err)
+	}
+}
+
+// A client that vanishes inside a transaction must not leave the backend
+// locked or the transaction open.
+func TestDisconnectMidTransactionReleasesBackend(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	c1, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := c1.Exec(ctx, `CREATE TABLE t(v int)`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := c1.Exec(ctx, `BEGIN; INSERT INTO t VALUES (1)`); err != nil {
+		t.Fatal(err)
+	}
+	// Drop the socket without a Terminate message.
+	c1.PgConn().Conn().Close()
+
+	ctx2, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	c2, err := pgx.Connect(ctx2, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c2.Close(ctx)
+	var n int
+	if err := c2.QueryRow(ctx2, `SELECT count(*) FROM t`).Scan(&n); err != nil {
+		t.Fatal(err)
+	}
+	if n != 0 {
+		t.Fatalf("count = %d, want 0 (transaction should have been rolled back)", n)
+	}
+}
+
+// database/sql with a real pool: concurrent transactions serialize on the
+// backend but each sees a consistent world.
+func TestDatabaseSQLPool(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	db, err := sql.Open("pgx", s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	db.SetMaxOpenConns(4)
+	if _, err := db.Exec(`CREATE TABLE t(worker int, i int)`); err != nil {
+		t.Fatal(err)
+	}
+	const workers, iters = 8, 20
+	errs := make(chan error, workers)
+	for w := 0; w < workers; w++ {
+		go func(w int) {
+			for i := 0; i < iters; i++ {
+				tx, err := db.Begin()
+				if err != nil {
+					errs <- err
+					return
+				}
+				if _, err := tx.Exec(`INSERT INTO t VALUES ($1, $2)`, w, i); err != nil {
+					errs <- err
+					return
+				}
+				var mine int
+				if err := tx.QueryRow(`SELECT count(*) FROM t WHERE worker = $1`, w).Scan(&mine); err != nil {
+					errs <- err
+					return
+				}
+				if mine != i+1 {
+					errs <- fmt.Errorf("worker %d saw %d own rows inside its transaction, want %d", w, mine, i+1)
+					return
+				}
+				if err := tx.Commit(); err != nil {
+					errs <- err
+					return
+				}
+			}
+			errs <- nil
+		}(w)
+	}
+	for w := 0; w < workers; w++ {
+		if err := <-errs; err != nil {
+			t.Fatal(err)
+		}
+	}
+	var n int
+	if err := db.QueryRow(`SELECT count(*) FROM t`).Scan(&n); err != nil || n != workers*iters {
+		t.Fatalf("count = %d, %v", n, err)
+	}
+}
+
+func waitNotification(t *testing.T, c *pgx.Conn, d time.Duration) *pgconn.Notification {
+	t.Helper()
+	ctx, cancel := context.WithTimeout(context.Background(), d)
+	defer cancel()
+	n, err := c.WaitForNotification(ctx)
+	if err != nil {
+		return nil
+	}
+	return n
+}
+
+// NOTIFY on one connection reaches the connections that LISTEN, and only
+// those.
+func TestNotifyAcrossConnections(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	listener, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer listener.Close(ctx)
+	notifier, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer notifier.Close(ctx)
+	bystander, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer bystander.Close(ctx)
+
+	if _, err := listener.Exec(ctx, `LISTEN ch`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := notifier.Exec(ctx, `NOTIFY ch, 'hello'`); err != nil {
+		t.Fatal(err)
+	}
+	n := waitNotification(t, listener, 5*time.Second)
+	if n == nil || n.Channel != "ch" || n.Payload != "hello" {
+		t.Fatalf("listener got %+v", n)
+	}
+	if n := waitNotification(t, notifier, 200*time.Millisecond); n != nil {
+		t.Fatalf("notifier (not listening) got %+v", n)
+	}
+	if n := waitNotification(t, bystander, 200*time.Millisecond); n != nil {
+		t.Fatalf("bystander got %+v", n)
+	}
+
+	// Self-delivery still works, and pg_notify() from inside a transaction
+	// is delivered at commit.
+	if _, err := listener.Exec(ctx, `BEGIN; SELECT pg_notify('ch', 'self'); COMMIT`); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, listener, 5*time.Second); n == nil || n.Payload != "self" {
+		t.Fatalf("self notify: %+v", n)
+	}
+}
+
+// A LISTEN that is rolled back never takes effect.
+func TestListenRollback(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	c1, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c1.Close(ctx)
+	c2, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c2.Close(ctx)
+	if _, err := c1.Exec(ctx, `BEGIN; LISTEN ch; ROLLBACK`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := c2.Exec(ctx, `NOTIFY ch`); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, c1, 200*time.Millisecond); n != nil {
+		t.Fatalf("rolled-back LISTEN delivered %+v", n)
+	}
+}
+
+// UNLISTEN (and UNLISTEN *) on one connection must not silence another
+// connection listening on the same channel, even though the shared backend
+// session drops the channel.
+func TestUnlistenByOtherConnection(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	conns := make([]*pgx.Conn, 3)
+	for i := range conns {
+		c, err := pgx.Connect(ctx, s.DSN())
+		if err != nil {
+			t.Fatal(err)
+		}
+		defer c.Close(ctx)
+		conns[i] = c
+	}
+	keeper, quitter, notifier := conns[0], conns[1], conns[2]
+	for _, c := range []*pgx.Conn{keeper, quitter} {
+		if _, err := c.Exec(ctx, `LISTEN ch; LISTEN other`); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if _, err := quitter.Exec(ctx, `UNLISTEN ch`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := notifier.Exec(ctx, `NOTIFY ch, 'one'`); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, keeper, 5*time.Second); n == nil || n.Payload != "one" {
+		t.Fatalf("keeper after UNLISTEN by other: %+v", n)
+	}
+	if n := waitNotification(t, quitter, 200*time.Millisecond); n != nil {
+		t.Fatalf("quitter got %+v after UNLISTEN", n)
+	}
+
+	if _, err := quitter.Exec(ctx, `UNLISTEN *`); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := notifier.Exec(ctx, `NOTIFY other, 'two'`); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, keeper, 5*time.Second); n == nil || n.Payload != "two" {
+		t.Fatalf("keeper after UNLISTEN * by other: %+v", n)
+	}
+
+	// Closing a listener leaves the others intact.
+	quitter.Close(ctx)
+	if _, err := notifier.Exec(ctx, `NOTIFY ch, 'three'`); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, keeper, 5*time.Second); n == nil || n.Payload != "three" {
+		t.Fatalf("keeper after other closed: %+v", n)
+	}
+}
+
+// Notifications reach an in-process (net.Pipe) listener that is not
+// currently reading, without stalling the notifier.
+func TestNotifyInProcessDial(t *testing.T) {
+	s := startServer(t, pgmem.Options{})
+	ctx := context.Background()
+	cfg, _ := pgx.ParseConfig(s.DSN())
+	cfg.DialFunc = s.Dial
+	listener, err := pgx.ConnectConfig(ctx, cfg)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer listener.Close(ctx)
+	notifier, err := pgx.ConnectConfig(ctx, cfg)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer notifier.Close(ctx)
+	if _, err := listener.Exec(ctx, `LISTEN ch`); err != nil {
+		t.Fatal(err)
+	}
+	for i := 0; i < 3; i++ {
+		if _, err := notifier.Exec(ctx, `NOTIFY ch, 'x'`); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for i := 0; i < 3; i++ {
+		if n := waitNotification(t, listener, 5*time.Second); n == nil {
+			t.Fatalf("notification %d missing", i)
+		}
 	}
 }

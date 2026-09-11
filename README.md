@@ -13,8 +13,7 @@ func TestSomething(t *testing.T) {
     }
     defer s.Close()
 
-    db, _ := sql.Open("pgx", s.DSN()) // any driver works
-    db.SetMaxOpenConns(1)             // see "Limits"
+    db, _ := sql.Open("pgx", s.DSN()) // any driver works, pools included
     // ...
 }
 ```
@@ -129,11 +128,24 @@ on this memory-bound code (arm64; amd64 not measured).
 ## Limits
 
 - **One session.** PostgreSQL runs in single-user mode, so every TCP
-  connection shares one backend session. Connections are serialized, get
-  `DISCARD ALL` between them, and their prepared-statement names are
-  prefixed, but two connections interleaving transactions would step on
-  each other. Keep pools at one connection (`SetMaxOpenConns(1)`,
-  `pool_max_conns=1`).
+  connection shares one backend session. pgmem multiplexes connections
+  onto it the way a transaction-mode pooler does: a connection owns the
+  backend from `BEGIN` (or an unsynced pipelined message, or `COPY FROM
+  STDIN`) until the transaction ends, and other connections wait. Pools of
+  any size work, but they serialize instead of running in parallel. The
+  consequences are the usual transaction-pooling ones:
+  - Session state (`SET`, temp tables, advisory locks) is shared between
+    live connections. Use `SET LOCAL`; prepared statements are fine (their
+    names are prefixed per connection and dropped when it ends). `DISCARD
+    ALL` runs when a connection starts and no other is alive, so
+    sequential connections still see a fresh session.
+  - `LISTEN`/`NOTIFY` work per connection: the backend reports its listen
+    set to pgmem at commit time and notifications are routed to the
+    connections that listen on the channel. `DISCARD ALL` issued by a
+    client while others are connected still unsubscribes everyone.
+  - A connection that waits, inside a transaction, for work another
+    connection must do first (row locks, advisory locks, application-level
+    hand-offs) waits forever. pgmem logs a diagnostic after 5 s.
 - `CREATE DATABASE` and other commands that wait on background processes
   hang inside a live session. `Options.Database` and `Options.User` are
   created at startup through a standalone child instead.

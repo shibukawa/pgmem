@@ -79,6 +79,10 @@ type Host struct {
 	Run func(cmd, stdinPath, stdoutPath string) int
 	// Log receives diagnostics from the host itself.
 	Log func(format string, args ...any)
+	// Listen is called by pgmem_listen when the session's LISTEN set
+	// changes at commit: op 1 = LISTEN channel, 0 = UNLISTEN channel,
+	// 2 = UNLISTEN * (channel is empty).
+	Listen func(channel string, op int)
 
 	timers   [3]time.Time // itimer deadlines (zero = unset)
 	inTimer  bool         // a timer handler is running (no re-entry)
@@ -274,6 +278,12 @@ var table = []Fn{
 		return ret32(int32(h.Run(cmd, in, out)))
 	}},
 
+	{"env", "pgmem_listen", "ii", "", func(h *Host, m Memory, a []uint64) uint64 {
+		if h.Listen != nil {
+			h.Listen(h.str(m, u32(a[0])), int(i32(a[1])))
+		}
+		return 0
+	}},
 	{"env", "pgmem_poll", "i", "i", func(h *Host, m Memory, a []uint64) uint64 {
 		h.sleep(i32(a[0]))
 		return 0

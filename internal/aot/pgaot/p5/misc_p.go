@@ -5708,7 +5708,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(_a_F_ProcessNotifyInterrupt_1), int32(2317), int32(_a_F_ProcessNotifyInterrupt_0))
+	F_errfinish(m, int32(_a_F_ProcessNotifyInterrupt_1), int32(2327), int32(_a_F_ProcessNotifyInterrupt_0))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -5801,7 +5801,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(_a_F_ProcessNotifyInterrupt_1), int32(2341), int32(_a_F_ProcessNotifyInterrupt_0))
+	F_errfinish(m, int32(_a_F_ProcessNotifyInterrupt_1), int32(2351), int32(_a_F_ProcessNotifyInterrupt_0))
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {

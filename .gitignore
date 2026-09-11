@@ -2,3 +2,6 @@
 /wasm/out/
 /postgres-pglite/
 *.test
+
+# knowledge-compiler cache
+.knowledge/.cache/

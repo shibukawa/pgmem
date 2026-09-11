@@ -64,3 +64,57 @@ extern int pgmem_random_bytes(void *buf, size_t len)
 #endif
 ''',
 'pgmem_random_bytes')
+
+# LISTEN/NOTIFY: report changes to the session's listen set to the host at
+# commit time (op 1 = LISTEN, 0 = UNLISTEN, 2 = UNLISTEN *). The single
+# backend session is shared by every client connection; pgmem keeps a
+# per-connection registry from these calls and routes NotifyResponse
+# messages to the connections that actually listen.
+patch('src/backend/commands/async.c',
+'''static void
+Exec_ListenCommit(const char *channel)
+{
+	MemoryContext oldcontext;
+
+	/* Do nothing if we are already listening on this channel */
+	if (IsListeningOn(channel))
+		return;
+''',
+'''#ifdef __PGMEM__
+extern void pgmem_listen(const char *channel, int op)
+	__attribute__((import_module("env"), import_name("pgmem_listen")));
+#else
+#define pgmem_listen(channel, op) ((void) 0)
+#endif
+
+static void
+Exec_ListenCommit(const char *channel)
+{
+	MemoryContext oldcontext;
+
+	pgmem_listen(channel, 1);
+	/* Do nothing if we are already listening on this channel */
+	if (IsListeningOn(channel))
+		return;
+''',
+'pgmem_listen(channel, 1)')
+
+patch('src/backend/commands/async.c',
+'''	if (Trace_notify)
+		elog(DEBUG1, "Exec_UnlistenCommit(%s,%d)", channel, MyProcPid);
+''',
+'''	if (Trace_notify)
+		elog(DEBUG1, "Exec_UnlistenCommit(%s,%d)", channel, MyProcPid);
+	pgmem_listen(channel, 0);
+''',
+'pgmem_listen(channel, 0)')
+
+patch('src/backend/commands/async.c',
+'''	if (Trace_notify)
+		elog(DEBUG1, "Exec_UnlistenAllCommit(%d)", MyProcPid);
+''',
+'''	if (Trace_notify)
+		elog(DEBUG1, "Exec_UnlistenAllCommit(%d)", MyProcPid);
+	pgmem_listen("", 2);
+''',
+'pgmem_listen("", 2)')
