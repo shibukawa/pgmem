@@ -41,6 +41,7 @@ type Wasi_snapshot_preview1Imports interface {
 }
 type EnvImports interface {
 	Pgmem_crc32c(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_listen(m *Module, l0 int32, l1 int32)
 	Getaddrinfo(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	Emscripten_exit_with_live_runtime(m *Module)
 	X__assert_fail(m *Module, l0 int32, l1 int32, l2 int32, l3 int32)

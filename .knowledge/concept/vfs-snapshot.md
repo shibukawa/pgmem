@@ -1,0 +1,24 @@
+---
+id: concept:vfs-snapshot
+type: concept
+title: VFS Snapshot Mechanism
+---
+A fork is a deep copy of the in-memory vfs data directory plus a fresh single-user backend instance started on that copy.
+
+```yaml
+summary:
+  existing_code:
+    - internal/vfs FS.Clone() deep copy (unused so far)
+    - internal/engine Engine.Start(fs, opts) boots a backend on any vfs
+    - internal/engine Tar/Untar for optional export of a snapshot
+  snapshot_steps:
+    - issue CHECKPOINT on template backend (single-user mode runs it synchronously)
+    - FS.Clone() the vfs; keep the copy as immutable template image
+  fork_steps:
+    - FS.Clone() the template image
+    - Engine.Start on the copy
+    - net.Listen on a new loopback port
+  startup_on_fork: short WAL recovery from the checkpoint record; near-empty
+  optimization_later: copy-on-write data slices in cloneNode; write paths are writeAt and truncateNode only
+  rejected: PostgreSQL CREATE DATABASE TEMPLATE (hangs in live single-user session; needs backend restart per database)
+```

@@ -109,8 +109,11 @@ public final class Pgmem implements AutoCloseable {
 }
 ```
 
-Use one connection at a time (the server is a single session): set the
-pool size to 1, or keep a single connection per test.
+Connection pools of any size work: the server is a single session, so
+connections are serialized at transaction boundaries the way a
+transaction-mode pooler does (see "Limits" in the README for what that
+means for `SET` and temp tables). `LISTEN`/`NOTIFY` works across
+connections.
 
 ## Shipping the binary
 

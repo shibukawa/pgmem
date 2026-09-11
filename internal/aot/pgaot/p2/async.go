@@ -1320,29 +1320,31 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 	_ = v22
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
-	var v36 int32
-	_ = v36
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[346])))
 	if v8 != int32(1) {
-		v29 = *(*int32)(unsafe.Add(mBase, _consts[351]))
-		F_list_free_deep(m, v29)
+		m.Env.Pgmem_listen(m, int32(706478), int32(2))
 		mBase = m.M
-		v31 = m.ExcPending
-		if v31 != 0 {
+		v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
+		F_list_free_deep(m, v32)
+		mBase = m.M
+		v34 = m.ExcPending
+		if v34 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, _consts[351])) = int32(0)
 			F_asyncQueueUnregister(m)
 			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
+			v39 = m.ExcPending
+			if v39 != 0 {
 				return
 			} else {
 				m.G0 = v5 + int32(16)
@@ -1357,18 +1359,20 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 			return
 		} else {
 			if v13 == int32(0) {
-				v29 = *(*int32)(unsafe.Add(mBase, _consts[351]))
-				F_list_free_deep(m, v29)
+				m.Env.Pgmem_listen(m, int32(706478), int32(2))
 				mBase = m.M
-				v31 = m.ExcPending
-				if v31 != 0 {
+				v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
+				F_list_free_deep(m, v32)
+				mBase = m.M
+				v34 = m.ExcPending
+				if v34 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, _consts[351])) = int32(0)
 					F_asyncQueueUnregister(m)
 					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
+					v39 = m.ExcPending
+					if v39 != 0 {
 						return
 					} else {
 						m.G0 = v5 + int32(16)
@@ -1384,24 +1388,26 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(469278), int32(1196), int32(93498))
+					F_errfinish(m, int32(469278), int32(1205), int32(93498))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return
 					} else {
-						v29 = *(*int32)(unsafe.Add(mBase, _consts[351]))
-						F_list_free_deep(m, v29)
+						m.Env.Pgmem_listen(m, int32(706478), int32(2))
 						mBase = m.M
-						v31 = m.ExcPending
-						if v31 != 0 {
+						v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
+						F_list_free_deep(m, v32)
+						mBase = m.M
+						v34 = m.ExcPending
+						if v34 != 0 {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, _consts[351])) = int32(0)
 							F_asyncQueueUnregister(m)
 							mBase = m.M
-							v36 = m.ExcPending
-							if v36 != 0 {
+							v39 = m.ExcPending
+							if v39 != 0 {
 								return
 							} else {
 								m.G0 = v5 + int32(16)

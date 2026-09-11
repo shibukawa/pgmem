@@ -16,6 +16,12 @@ func (a *imports) Pgmem_crc32c(m *base.Module, l0 int32, l1 int32, l2 int32) int
 	return int32(uint32(fn_env_pgmem_crc32c.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
 }
 
+var fn_env_pgmem_listen = mustLookup("env", "pgmem_listen")
+
+func (a *imports) Pgmem_listen(m *base.Module, l0 int32, l1 int32) {
+	fn_env_pgmem_listen.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})
+}
+
 var fn_env_getaddrinfo = mustLookup("env", "getaddrinfo")
 
 func (a *imports) Getaddrinfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {

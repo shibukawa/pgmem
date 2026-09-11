@@ -264,7 +264,7 @@ func F_NotifyMyFrontEnd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v68 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(469278), int32(2367), int32(403342))
+					F_errfinish(m, int32(469278), int32(2377), int32(403342))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {
