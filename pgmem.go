@@ -61,6 +61,7 @@ type Options struct {
 	// []string{"-c", "log_statement=all"}. Unless it sets shared_buffers,
 	// pgmem uses 32MB instead of initdb's 128MB: a test database does not
 	// need a large buffer cache and every megabyte here is resident memory.
+	// io_method defaults to sync (see Options.withDefaults).
 	Params []string
 	// Log receives server log output and host diagnostics (nil = discard).
 	Log func(format string, args ...any)
@@ -95,37 +96,22 @@ type Server struct {
 	listeners   map[string]map[int64]*session
 	relisten    map[string]bool
 	quietListen bool // pgmem is re-issuing LISTEN; ignore hook events
-	connSeq     atomic.Int64
-	closed      atomic.Bool
-	wg          sync.WaitGroup
-	connsMu     sync.Mutex
-	conns       map[net.Conn]struct{}
+
+	onClose func() // set for forks: returns the Snapshot's slot
+	connSeq atomic.Int64
+	closed  atomic.Bool
+	wg      sync.WaitGroup
+	connsMu sync.Mutex
+	conns   map[net.Conn]struct{}
 }
 
 // Start boots a fresh server: compiles the module, runs initdb into memory,
 // starts the backend and listens on 127.0.0.1.
 func Start(ctx context.Context, opts Options) (*Server, error) {
-	if opts.Database == "" {
-		opts.Database = "postgres"
-	}
-	if opts.User == "" {
-		opts.User = "postgres"
-	}
-	if !hasSetting(opts.Params, "shared_buffers") {
-		opts.Params = append([]string{"-c", "shared_buffers=32MB"}, opts.Params...)
-	}
+	opts = opts.withDefaults()
 	e, err := sharedEngine()
 	if err != nil {
 		return nil, err
-	}
-	s := &Server{
-		opts:      opts,
-		e:         e,
-		conns:     map[net.Conn]struct{}{},
-		sem:       make(chan struct{}, 1),
-		sessions:  map[int64]*session{},
-		listeners: map[string]map[int64]*session{},
-		relisten:  map[string]bool{},
 	}
 	fs, err := e.BaseFS()
 	if err != nil {
@@ -156,6 +142,46 @@ func Start(ctx context.Context, opts Options) (*Server, error) {
 			return nil, fmt.Errorf("setup: %w", err)
 		}
 	}
+	// Unpacking the share tree and data directory leaves the decompressor
+	// window and tar buffers as garbage; give that back to the OS now so a
+	// server's resident size is what it actually uses.
+	debug.FreeOSMemory()
+	return boot(e, opts, fs, nil)
+}
+
+func (o Options) withDefaults() Options {
+	if o.Database == "" {
+		o.Database = "postgres"
+	}
+	if o.User == "" {
+		o.User = "postgres"
+	}
+	if !hasSetting(o.Params, "shared_buffers") {
+		o.Params = append([]string{"-c", "shared_buffers=32MB"}, o.Params...)
+	}
+	// PGlite runs the backend with IsUnderPostmaster set, so PostgreSQL
+	// 18's default io_method=worker hands batched reads (sequential scans
+	// through read_stream) to IO workers that do not exist and waits for
+	// them forever. sync executes every IO in the backend itself.
+	if !hasSetting(o.Params, "io_method") {
+		o.Params = append([]string{"-c", "io_method=sync"}, o.Params...)
+	}
+	return o
+}
+
+// boot starts a backend on a filesystem that already holds a data
+// directory and begins serving it. onClose runs at the end of Close.
+func boot(e *engine.Engine, opts Options, fs *vfs.FS, onClose func()) (*Server, error) {
+	s := &Server{
+		opts:      opts,
+		e:         e,
+		conns:     map[net.Conn]struct{}{},
+		sem:       make(chan struct{}, 1),
+		sessions:  map[int64]*session{},
+		listeners: map[string]map[int64]*session{},
+		relisten:  map[string]bool{},
+		onClose:   onClose,
+	}
 	b, err := e.Start(fs, engine.StartOptions{User: opts.User, Database: opts.Database, Params: opts.Params})
 	if err != nil {
 		return nil, err
@@ -165,10 +191,6 @@ func Start(ctx context.Context, opts Options) (*Server, error) {
 	}
 	b.Listen = s.onListen
 	s.fs, s.b = fs, b
-	// Unpacking the share tree and data directory leaves the decompressor
-	// window and tar buffers as garbage; give that back to the OS now so a
-	// server's resident size is what it actually uses.
-	debug.FreeOSMemory()
 	ln, err := net.Listen("tcp", net.JoinHostPort("127.0.0.1", strconv.Itoa(opts.Port)))
 	if err != nil {
 		b.Close()
@@ -230,6 +252,9 @@ func (s *Server) Close() error {
 	s.acquire(0)
 	err := s.b.Close()
 	s.release()
+	if s.onClose != nil {
+		s.onClose()
+	}
 	return err
 }
 
