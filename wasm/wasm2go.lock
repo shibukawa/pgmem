@@ -1,0 +1,8 @@
+# wasm2go fork used by wasm/gen-aot.sh: branch pgmem of shibukawa/wasm2go-fork
+# (goccy/wasm2go plus the pgmem-specific changes; see its README_ABOUT_FORK.md),
+# pinned to a commit. The repository is cloned into toolchain/wasm2go-src and
+# built from there. tag is informational: the fork release the commit belongs to.
+repo=https://github.com/shibukawa/wasm2go-fork.git
+branch=pgmem
+commit=189db46b667862d5cc8fa406ef11489250ac1c07
+tag=v0.5.9-fork.3
