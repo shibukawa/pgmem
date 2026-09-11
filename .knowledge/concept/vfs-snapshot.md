@@ -8,7 +8,7 @@ A fork is a deep copy of the in-memory vfs data directory plus a fresh single-us
 ```yaml
 summary:
   existing_code:
-    - internal/vfs FS.Clone() deep copy (unused so far)
+    - internal/vfs FS.Clone() deep copy (used by snapshot.go)
     - internal/engine Engine.Start(fs, opts) boots a backend on any vfs
     - internal/engine Tar/Untar for optional export of a snapshot
   snapshot_steps:
@@ -20,5 +20,6 @@ summary:
     - net.Listen on a new loopback port
   startup_on_fork: short WAL recovery from the checkpoint record; near-empty
   optimization_later: copy-on-write data slices in cloneNode; write paths are writeAt and truncateNode only
+  gotcha: io_method must be sync; PGlite sets IsUnderPostmaster so worker AIO waits forever on batched read_stream reads (pgmem.go withDefaults)
   rejected: PostgreSQL CREATE DATABASE TEMPLATE (hangs in live single-user session; needs backend restart per database)
 ```

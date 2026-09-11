@@ -18,6 +18,37 @@ func TestSomething(t *testing.T) {
 }
 ```
 
+### Per-test forks
+
+Load the schema and seed data once, snapshot, and give every test its own
+copy. A fork is a full backend on a copy of the data directory, so tests
+can run in parallel; `MaxForks` bounds how many exist at once (default
+`GOMAXPROCS`) and `Fork` blocks when the cap is reached.
+
+```go
+var fx *pgmemtest.Fixture
+
+func TestMain(m *testing.M) {
+    os.Exit(pgmemtest.Run(m, pgmemtest.Options{
+        Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
+            _, err := db.ExecContext(ctx, schema) // migrations, seed data
+            return err
+        },
+    }, func(f *pgmemtest.Fixture) { fx = f }))
+}
+
+func TestOrders(t *testing.T) {
+    t.Parallel()
+    db := fx.DB(t) // fresh copy of the prepared database, closed when t ends
+    // fx.PgxConn(t), fx.PgxPool(t), fx.DSN(t) and fx.Fork(t) also exist
+}
+```
+
+The same primitives are available without the test helpers:
+`s.Snapshot(ctx, opts)` checkpoints and copies the server's state, and
+`snap.Fork(ctx)` starts a new server from it. Snapshotting takes about
+10 ms and a fork about 20 ms.
+
 Connecting over loopback TCP works with every driver. For pgx you can
 skip the kernel entirely with the in-process dialer, which makes small
 queries about three times faster:
@@ -151,6 +182,10 @@ on this memory-bound code (arm64; amd64 not measured).
   created at startup through a standalone child instead.
 - No extensions beyond what initdb installs (plpgsql). ICU, OpenSSL and
   zlib are not compiled in.
+- `io_method` is forced to `sync`. PGlite runs the backend as if under a
+  postmaster, so PostgreSQL 18's default `worker` method would hand
+  batched reads to IO workers that do not exist; with an in-memory
+  filesystem there is nothing to overlap anyway.
 - A running server is about 150 MB resident (65 MB PostgreSQL memory with
   the default `shared_buffers=32MB`, 40 MB of in-memory data directory,
   the rest binary and Go heap). `Options.Params` can raise
