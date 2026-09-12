@@ -57,7 +57,7 @@ func F_tuplesort_getgintuple(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = int32(4486928)
+	v10 = int32(4487040)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -109,7 +109,7 @@ func F_tuplesort_getheaptuple(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = int32(4486928)
+	v8 = int32(4487040)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v11
@@ -643,7 +643,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(489702), int32(1498), int32(244597))
+	F_errfinish(m, int32(489752), int32(1498), int32(244597))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -885,7 +885,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(489702), int32(1581), int32(244597))
+	F_errfinish(m, int32(489752), int32(1581), int32(244597))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -942,7 +942,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(489702), int32(1595), int32(244597))
+	F_errfinish(m, int32(489752), int32(1595), int32(244597))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -1004,7 +1004,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(489702), int32(1615), int32(244597))
+	F_errfinish(m, int32(489752), int32(1615), int32(244597))
 	mBase = m.M
 	v178 = m.ExcPending
 	if v178 != 0 {
@@ -1501,7 +1501,7 @@ L136:
 	}
 L137:
 	;
-	F_errfinish(m, int32(489702), int32(1698), int32(244597))
+	F_errfinish(m, int32(489752), int32(1698), int32(244597))
 	mBase = m.M
 	v441 = m.ExcPending
 	if v441 != 0 {
@@ -1526,7 +1526,7 @@ L139:
 	}
 L140:
 	;
-	F_errfinish(m, int32(489702), int32(2862), int32(280231))
+	F_errfinish(m, int32(489752), int32(2862), int32(280231))
 	mBase = m.M
 	v472 = m.ExcPending
 	if v472 != 0 {
@@ -1551,7 +1551,7 @@ L142:
 	}
 L143:
 	;
-	F_errfinish(m, int32(489702), int32(1628), int32(244597))
+	F_errfinish(m, int32(489752), int32(1628), int32(244597))
 	mBase = m.M
 	v485 = m.ExcPending
 	if v485 != 0 {
@@ -1576,7 +1576,7 @@ L145:
 	}
 L146:
 	;
-	F_errfinish(m, int32(489702), int32(2862), int32(280231))
+	F_errfinish(m, int32(489752), int32(2862), int32(280231))
 	mBase = m.M
 	v498 = m.ExcPending
 	if v498 != 0 {
@@ -1636,7 +1636,7 @@ func F_tuplesort_gettupleslot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = int32(4486928)
+	v12 = int32(4487040)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v15

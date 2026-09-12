@@ -2198,7 +2198,7 @@ L115:
 	}
 L116:
 	;
-	F_errfinish(m, int32(490642), int32(5239), int32(19479))
+	F_errfinish(m, int32(490692), int32(5239), int32(19479))
 	mBase = m.M
 	v363 = m.ExcPending
 	if v363 != 0 {
@@ -2233,7 +2233,7 @@ L119:
 	}
 L120:
 	;
-	F_errfinish(m, int32(490642), int32(5244), int32(19479))
+	F_errfinish(m, int32(490692), int32(5244), int32(19479))
 	mBase = m.M
 	v379 = m.ExcPending
 	if v379 != 0 {
@@ -2258,7 +2258,7 @@ L122:
 	}
 L123:
 	;
-	F_errmsg(m, int32(438381), int32(0))
+	F_errmsg(m, int32(438431), int32(0))
 	mBase = m.M
 	v390 = m.ExcPending
 	if v390 != 0 {
@@ -2268,7 +2268,7 @@ L123:
 	}
 L124:
 	;
-	F_errfinish(m, int32(490642), int32(5253), int32(19479))
+	F_errfinish(m, int32(490692), int32(5253), int32(19479))
 	mBase = m.M
 	v395 = m.ExcPending
 	if v395 != 0 {
@@ -2368,7 +2368,7 @@ func F_circle_recv(m *base.Module, l0 int32) int32 {
 								if v31 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490642), int32(4718), int32(36489))
+									F_errfinish(m, int32(490692), int32(4718), int32(36489))
 									mBase = m.M
 									v36 = m.ExcPending
 									if v36 != 0 {

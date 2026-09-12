@@ -64,7 +64,7 @@ func F_tts_buffer_heap_copy_minimal_tuple(m *base.Module, l0 int32, l1 int32) in
 				return v35
 			}
 		} else {
-			v10 = int32(4486928)
+			v10 = int32(4487040)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v13
@@ -196,7 +196,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v57
 	var v62 int32
 	_ = v62
-	v5 = int32(4486928)
+	v5 = int32(4487040)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v8
@@ -210,7 +210,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[28])) = v6
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		if v16 == int32(1599208) {
+		if v16 == int32(1599256) {
 			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 			if v19&int32(4) != 0 {
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -275,7 +275,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(491007), int32(1553), int32(382595))
+					F_errfinish(m, int32(491057), int32(1553), int32(382595))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -314,7 +314,7 @@ func F_tts_minimal_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(491007), int32(581), int32(381200))
+				F_errfinish(m, int32(491057), int32(581), int32(381200))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -344,7 +344,7 @@ func F_tts_virtual_getsomeattrs(m *base.Module, l0 int32, l1 int32) {
 		if v10 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(491007), int32(132), int32(130237))
+			F_errfinish(m, int32(491057), int32(132), int32(130237))
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
@@ -380,7 +380,7 @@ func F_tts_virtual_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(491007), int32(163), int32(381166))
+				F_errfinish(m, int32(491057), int32(163), int32(381166))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)

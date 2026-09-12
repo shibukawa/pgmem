@@ -270,7 +270,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(489829), int32(1311), int32(99945))
+	F_errfinish(m, int32(489879), int32(1311), int32(99945))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -441,13 +441,13 @@ func F_GinFormTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 						*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = int32(2712)
 						*(*int32)(unsafe.Add(mBase, uint32(v14))) = v66
 						*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v129 + int32(4)
-						F_errmsg(m, int32(674522), v14)
+						F_errmsg(m, int32(674572), v14)
 						mBase = m.M
 						v138 = m.ExcPending
 						if v138 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496095), int32(111), int32(382634))
+							F_errfinish(m, int32(496145), int32(111), int32(382634))
 							mBase = m.M
 							v143 = m.ExcPending
 							if v143 != 0 {
@@ -1072,7 +1072,7 @@ func F_gin_bool_consistent(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 			v116 = int32(8)
-			v123 = F_execute(m, v20+v27<<(uint(int32(3))%32)-v116, v13+v116, int32(0), int32(1), int32(6942))
+			v123 = F_execute(m, v20+v27<<(uint(int32(3))%32)-v116, v13+v116, int32(0), int32(1), int32(6945))
 			mBase = m.M
 			v124 = m.ExcPending
 			if v124 != 0 {
@@ -1245,7 +1245,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
-	F_errmsg_internal(m, int32(479275), v10)
+	F_errmsg_internal(m, int32(479325), v10)
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -1255,7 +1255,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(493426), int32(1266), int32(319870))
+	F_errfinish(m, int32(493476), int32(1266), int32(319870))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -3241,7 +3241,7 @@ L158:
 L159:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-	F_errmsg_internal(m, int32(479275), v13+int32(-48))
+	F_errmsg_internal(m, int32(479325), v13+int32(-48))
 	mBase = m.M
 	v821 = m.ExcPending
 	if v821 != 0 {
@@ -3251,7 +3251,7 @@ L159:
 	}
 L160:
 	;
-	F_errfinish(m, int32(493426), int32(921), int32(15964))
+	F_errfinish(m, int32(493476), int32(921), int32(15964))
 	mBase = m.M
 	v826 = m.ExcPending
 	if v826 != 0 {
@@ -3270,7 +3270,7 @@ func F_gin_extract_query_varbit(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(6939), int32(2661))
+	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(6942), int32(2661))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

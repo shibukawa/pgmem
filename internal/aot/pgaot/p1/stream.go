@@ -193,7 +193,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(492928), int32(1084), int32(408900))
+	F_errfinish(m, int32(492978), int32(1084), int32(408900))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -551,7 +551,7 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v16
-	v20 = int32(4479832)
+	v20 = int32(4479944)
 	v21 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 	*(*int32)(unsafe.Add(mBase, _consts[337])) = v10 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v21
@@ -577,14 +577,14 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			if v47 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(500314)
+				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(500364)
 				F_errmsg(m, int32(316949), v10)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494412), int32(1534), int32(217038))
+					F_errfinish(m, int32(494462), int32(1534), int32(217038))
 					mBase = m.M
 					v57 = m.ExcPending
 					if v57 != 0 {
@@ -651,7 +651,7 @@ func F_stream_truncate_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, 
 		v19 = *(*int64)(unsafe.Add(mBase, uint32(l4)))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(993)
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v19
-		v23 = int32(4479832)
+		v23 = int32(4479944)
 		v24 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 		*(*int32)(unsafe.Add(mBase, _consts[337])) = v12 + int32(4)
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v24

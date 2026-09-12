@@ -1027,7 +1027,7 @@ func F_writeListPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 L1:
 	;
 	v37 = int32(1)
-	v38 = int32(4481588)
+	v38 = int32(4481700)
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v40 + v37
 	v44 = int32(16)
@@ -1331,7 +1331,7 @@ L43:
 	goto L40
 L44:
 	;
-	v192 = int32(4481588)
+	v192 = int32(4481700)
 	v194 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v194 - int32(1)
 	m.G0 = v17 + int32(8208)
@@ -1340,7 +1340,7 @@ L45:
 	;
 	v206 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v206 + int32(4)
-	F_errmsg_internal(m, int32(693562), v17)
+	F_errmsg_internal(m, int32(693612), v17)
 	mBase = m.M
 	v212 = m.ExcPending
 	if v212 != 0 {
@@ -1350,7 +1350,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(489672), int32(90), int32(406460))
+	F_errfinish(m, int32(489722), int32(90), int32(406460))
 	mBase = m.M
 	v217 = m.ExcPending
 	if v217 != 0 {

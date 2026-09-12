@@ -415,7 +415,7 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(495450), int32(309), int32(355579))
+					F_errfinish(m, int32(495500), int32(309), int32(355579))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {

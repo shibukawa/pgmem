@@ -125,7 +125,7 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						if v34 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(494461), int32(3190), int32(63428))
+							F_errfinish(m, int32(494511), int32(3190), int32(63428))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
@@ -178,7 +178,7 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 							if v61 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(494461), int32(3209), int32(63428))
+								F_errfinish(m, int32(494511), int32(3209), int32(63428))
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
@@ -240,7 +240,7 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 												if v102 != 0 {
 													return int64(0)
 												} else {
-													F_errfinish(m, int32(494461), int32(3247), int32(63428))
+													F_errfinish(m, int32(494511), int32(3247), int32(63428))
 													mBase = m.M
 													v107 = m.ExcPending
 													if v107 != 0 {

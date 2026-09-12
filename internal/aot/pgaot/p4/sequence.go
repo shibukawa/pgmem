@@ -420,7 +420,7 @@ func F_has_sequence_privilege_name(m *base.Module, l0 int32) int32 {
 												if v49 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(494337), int32(2153), int32(377945))
+													F_errfinish(m, int32(494387), int32(2153), int32(377945))
 													mBase = m.M
 													v54 = m.ExcPending
 													if v54 != 0 {

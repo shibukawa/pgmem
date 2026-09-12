@@ -690,7 +690,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(491893), int32(601), int32(254062))
+	F_errfinish(m, int32(491943), int32(601), int32(254062))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
@@ -715,7 +715,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(491893), int32(594), int32(254062))
+	F_errfinish(m, int32(491943), int32(594), int32(254062))
 	mBase = m.M
 	v209 = m.ExcPending
 	if v209 != 0 {
@@ -1596,7 +1596,7 @@ L153:
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+24)) = v708
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+20)) = v410
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+16)) = v703
-	F_errdetail(m, int32(585440), v21+int32(-48))
+	F_errdetail(m, int32(585490), v21+int32(-48))
 	mBase = m.M
 	v717 = m.ExcPending
 	if v717 != 0 {
@@ -1606,7 +1606,7 @@ L153:
 	}
 L154:
 	;
-	F_errfinish(m, int32(491893), int32(684), int32(254062))
+	F_errfinish(m, int32(491943), int32(684), int32(254062))
 	mBase = m.M
 	v722 = m.ExcPending
 	if v722 != 0 {
@@ -1642,7 +1642,7 @@ L157:
 L158:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v410
-	F_errdetail(m, int32(635349), v23)
+	F_errdetail(m, int32(635399), v23)
 	mBase = m.M
 	v737 = m.ExcPending
 	if v737 != 0 {
@@ -1652,7 +1652,7 @@ L158:
 	}
 L159:
 	;
-	F_errfinish(m, int32(491893), int32(676), int32(254062))
+	F_errfinish(m, int32(491943), int32(676), int32(254062))
 	mBase = m.M
 	v742 = m.ExcPending
 	if v742 != 0 {
@@ -1687,7 +1687,7 @@ L162:
 	}
 L163:
 	;
-	F_errdetail(m, int32(573724), int32(0))
+	F_errdetail(m, int32(573774), int32(0))
 	mBase = m.M
 	v758 = m.ExcPending
 	if v758 != 0 {
@@ -1697,7 +1697,7 @@ L163:
 	}
 L164:
 	;
-	F_errfinish(m, int32(491893), int32(668), int32(254062))
+	F_errfinish(m, int32(491943), int32(668), int32(254062))
 	mBase = m.M
 	v763 = m.ExcPending
 	if v763 != 0 {
@@ -1967,7 +1967,7 @@ L7:
 	v84 = *(*float64)(unsafe.Add(mBase, uint32(l2)+48))
 	v85 = *(*float64)(unsafe.Add(mBase, uint32(l3)+16))
 	*(*float64)(unsafe.Add(mBase, uint32(v11)+48)) = base.F64_add(v84, v85)
-	v89 = *(*float64)(unsafe.Add(mBase, _consts[389]))
+	v89 = *(*float64)(unsafe.Add(mBase, _consts[388]))
 	v90 = *(*float64)(unsafe.Add(mBase, uint32(l3)+24))
 	v92 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
 	v94 = *(*float64)(unsafe.Add(mBase, uint32(l2)+56))

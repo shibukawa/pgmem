@@ -89,7 +89,7 @@ func F_check_log_timezone(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, _consts[516])) = v29
 						v33 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 						*(*int32)(unsafe.Add(mBase, _consts[497])) = v33
-						v39 = F_format_elog_string(m, int32(583997), int32(0))
+						v39 = F_format_elog_string(m, int32(584047), int32(0))
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {

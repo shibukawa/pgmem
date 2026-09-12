@@ -151,7 +151,7 @@ func F_stream_commit_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
-	v19 = int32(4479832)
+	v19 = int32(4479944)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	*(*int32)(unsafe.Add(mBase, _consts[77])) = v9 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v20
@@ -177,14 +177,14 @@ func F_stream_commit_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 			if v46 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(500162)
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(500212)
 				F_errmsg(m, int32(316949), v9)
 				mBase = m.M
 				v51 = m.ExcPending
 				if v51 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494412), int32(1485), int32(216939))
+					F_errfinish(m, int32(494462), int32(1485), int32(216939))
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -246,7 +246,7 @@ func F_stream_message_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64, l
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = int32(401675)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v15
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(993)
-		v23 = int32(4479832)
+		v23 = int32(4479944)
 		v24 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 		*(*int32)(unsafe.Add(mBase, _consts[77])) = v13 + int32(4)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v24
@@ -524,7 +524,7 @@ func F_stream_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
-	v19 = int32(4479832)
+	v19 = int32(4479944)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	*(*int32)(unsafe.Add(mBase, _consts[77])) = v9 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v20
@@ -550,14 +550,14 @@ func F_stream_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 			if v46 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(500258)
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(500308)
 				F_errmsg(m, int32(317049), v9)
 				mBase = m.M
 				v51 = m.ExcPending
 				if v51 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494412), int32(1444), int32(217012))
+					F_errfinish(m, int32(494462), int32(1444), int32(217012))
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {

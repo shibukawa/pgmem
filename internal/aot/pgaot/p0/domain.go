@@ -124,7 +124,7 @@ func F_domainAddNotNullConstraint(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						if v31 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(491311), int32(3684), int32(90248))
+							F_errfinish(m, int32(491361), int32(3684), int32(90248))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -323,7 +323,7 @@ func F_domain_state_setup(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							if v65 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490692), int32(96), int32(231192))
+								F_errfinish(m, int32(490742), int32(96), int32(231192))
 								mBase = m.M
 								v70 = m.ExcPending
 								if v70 != 0 {

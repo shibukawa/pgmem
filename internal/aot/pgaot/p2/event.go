@@ -696,7 +696,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(490110), int32(1492), int32(315126))
+	F_errfinish(m, int32(490160), int32(1492), int32(315126))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -894,7 +894,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(490110), int32(1970), int32(276151))
+	F_errfinish(m, int32(490160), int32(1970), int32(276151))
 	mBase = m.M
 	v223 = m.ExcPending
 	if v223 != 0 {
@@ -1177,7 +1177,7 @@ L90:
 	}
 L91:
 	;
-	F_errfinish(m, int32(490110), int32(1980), int32(276151))
+	F_errfinish(m, int32(490160), int32(1980), int32(276151))
 	mBase = m.M
 	v448 = m.ExcPending
 	if v448 != 0 {
@@ -1233,7 +1233,7 @@ func F_event_trigger_out(m *base.Module, l0 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(490975), int32(367), int32(66721))
+				F_errfinish(m, int32(491025), int32(367), int32(66721))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

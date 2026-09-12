@@ -117,7 +117,7 @@ func F_timestamptz_le_date(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+4)) = int64(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[330]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[329]))
 				v37 = F_DetermineTimeZoneOffset(m, v9+int32(4), v36)
 				mBase = m.M
 				v44 = base.I64_extend_i32_s(v37)*int64(1000000) + base.I64_extend_i32_s(v2)*int64(86400000000)
@@ -471,7 +471,7 @@ func F_timestamptz_to_char(m *base.Module, l0 int32) int32 {
 							if v197 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(494985), int32(4053), int32(228977))
+								F_errfinish(m, int32(495035), int32(4053), int32(228977))
 								mBase = m.M
 								v202 = m.ExcPending
 								if v202 != 0 {

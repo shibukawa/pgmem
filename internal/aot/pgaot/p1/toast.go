@@ -210,7 +210,7 @@ L16:
 	goto L9
 L17:
 	;
-	v65 = F_systable_beginscan_ordered(m, v20, v40, int32(4154312), int32(1), v7+int32(-52))
+	v65 = F_systable_beginscan_ordered(m, v20, v40, int32(4154360), int32(1), v7+int32(-52))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -389,7 +389,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(490879), int32(653), int32(85998))
+	F_errfinish(m, int32(490929), int32(653), int32(85998))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -1287,7 +1287,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(490879), int32(609), int32(156540))
+	F_errfinish(m, int32(490929), int32(609), int32(156540))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {

@@ -77,7 +77,7 @@ func F_bbsink_copystream_begin_archive(m *base.Module, l0 int32, l1 int32) {
 				if v33 != 0 {
 					v35 = v33
 				} else {
-					v35 = int32(738681)
+					v35 = int32(738731)
 				}
 				F_pq_sendstring(m, v7, v35)
 				mBase = m.M
@@ -258,7 +258,7 @@ L4:
 	}
 L5:
 	;
-	F_TupleDescInitBuiltinEntry(m, v36, int32(1), int32(431021), int32(26))
+	F_TupleDescInitBuiltinEntry(m, v36, int32(1), int32(431071), int32(26))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -288,7 +288,7 @@ L7:
 	}
 L8:
 	;
-	v54 = F_begin_tup_output_tupdesc(m, v33, v36, int32(1599156))
+	v54 = F_begin_tup_output_tupdesc(m, v33, v36, int32(1599204))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -633,7 +633,7 @@ func F_bbsink_progress_begin_backup(m *base.Module, l0 int32) {
 		v46 = int32(*(*uint8)(unsafe.Add(mBase, _consts[24])))
 		if v46&int32(1) == int32(0) {
 		} else {
-			v51 = int32(4481588)
+			v51 = int32(4481700)
 			v53 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 			v54 = int32(1)
 			*(*int32)(unsafe.Add(mBase, _consts[7])) = v53 + v54
@@ -660,7 +660,7 @@ func F_bbsink_progress_begin_backup(m *base.Module, l0 int32) {
 			v187 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 			v188 = int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v40))) = v187 + v188
-			v191 = int32(4481588)
+			v191 = int32(4481700)
 			v193 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 			*(*int32)(unsafe.Add(mBase, _consts[7])) = v193 - v188
 		}
@@ -766,13 +766,13 @@ func F_bbsink_server_manifest_contents(m *base.Module, l0 int32, l1 int32) {
 						if v79 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(625939), int32(0))
+							F_errhint(m, int32(625989), int32(0))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492008), int32(268), int32(119825))
+								F_errfinish(m, int32(492058), int32(268), int32(119825))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -806,13 +806,13 @@ func F_bbsink_server_manifest_contents(m *base.Module, l0 int32, l1 int32) {
 						if v48 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(625939), int32(0))
+							F_errhint(m, int32(625989), int32(0))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492008), int32(275), int32(119825))
+								F_errfinish(m, int32(492058), int32(275), int32(119825))
 								mBase = m.M
 								v57 = m.ExcPending
 								if v57 != 0 {

@@ -101,13 +101,13 @@ func F_binary_upgrade_add_sub_rel_state(m *base.Module, l0 int32) int32 {
 			if v70 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(436396), int32(0))
+				F_errmsg_internal(m, int32(436446), int32(0))
 				mBase = m.M
 				v74 = m.ExcPending
 				if v74 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(338), int32(349630))
+					F_errfinish(m, int32(489793), int32(338), int32(349630))
 					mBase = m.M
 					v79 = m.ExcPending
 					if v79 != 0 {
@@ -128,13 +128,13 @@ func F_binary_upgrade_add_sub_rel_state(m *base.Module, l0 int32) int32 {
 				if v70 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(436396), int32(0))
+					F_errmsg_internal(m, int32(436446), int32(0))
 					mBase = m.M
 					v74 = m.ExcPending
 					if v74 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(489743), int32(338), int32(349630))
+						F_errfinish(m, int32(489793), int32(338), int32(349630))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
@@ -155,13 +155,13 @@ func F_binary_upgrade_add_sub_rel_state(m *base.Module, l0 int32) int32 {
 					if v70 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(436396), int32(0))
+						F_errmsg_internal(m, int32(436446), int32(0))
 						mBase = m.M
 						v74 = m.ExcPending
 						if v74 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489743), int32(338), int32(349630))
+							F_errfinish(m, int32(489793), int32(338), int32(349630))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -264,7 +264,7 @@ func F_binary_upgrade_add_sub_rel_state(m *base.Module, l0 int32) int32 {
 				if v61 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(334), int32(349630))
+					F_errfinish(m, int32(489793), int32(334), int32(349630))
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
@@ -709,7 +709,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(489743), int32(194), int32(269923))
+	F_errfinish(m, int32(489793), int32(194), int32(269923))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -724,7 +724,7 @@ L38:
 	}
 L39:
 	;
-	F_errmsg_internal(m, int32(436326), int32(0))
+	F_errmsg_internal(m, int32(436376), int32(0))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -734,7 +734,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(489743), int32(201), int32(269923))
+	F_errfinish(m, int32(489793), int32(201), int32(269923))
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {
@@ -783,7 +783,7 @@ func F_binary_upgrade_set_next_array_pg_type_oid(m *base.Module, l0 int32) int32
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(68), int32(432130))
+					F_errfinish(m, int32(489793), int32(68), int32(432180))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -839,7 +839,7 @@ func F_binary_upgrade_set_record_init_privs(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(253), int32(113829))
+					F_errfinish(m, int32(489793), int32(253), int32(113829))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1145,7 +1145,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(495772), int32(124), int32(383985))
+	F_errfinish(m, int32(495822), int32(124), int32(383985))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -1409,7 +1409,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(495772), int32(171), int32(383985))
+	F_errfinish(m, int32(495822), int32(171), int32(383985))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -1533,7 +1533,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(495772), int32(114), int32(383985))
+	F_errfinish(m, int32(495822), int32(114), int32(383985))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {
@@ -1569,7 +1569,7 @@ L81:
 	}
 L82:
 	;
-	F_errfinish(m, int32(495772), int32(131), int32(383985))
+	F_errfinish(m, int32(495822), int32(131), int32(383985))
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -1605,7 +1605,7 @@ L85:
 	}
 L86:
 	;
-	F_errfinish(m, int32(495772), int32(197), int32(383985))
+	F_errfinish(m, int32(495822), int32(197), int32(383985))
 	mBase = m.M
 	v255 = m.ExcPending
 	if v255 != 0 {

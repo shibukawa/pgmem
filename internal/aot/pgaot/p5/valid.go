@@ -110,7 +110,7 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 				if v19 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(496510), int32(131), int32(207369))
+					F_errfinish(m, int32(496560), int32(131), int32(207369))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -144,7 +144,7 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 					if v19 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(496510), int32(131), int32(207369))
+						F_errfinish(m, int32(496560), int32(131), int32(207369))
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {
@@ -180,7 +180,7 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 						if v19 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(496510), int32(131), int32(207369))
+							F_errfinish(m, int32(496560), int32(131), int32(207369))
 							mBase = m.M
 							v24 = m.ExcPending
 							if v24 != 0 {

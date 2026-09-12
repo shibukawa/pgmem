@@ -369,7 +369,7 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-	F_errmsg_internal(m, int32(483908), v12+int32(16))
+	F_errmsg_internal(m, int32(483958), v12+int32(16))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -379,7 +379,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(492706), int32(1489), int32(419723))
+	F_errfinish(m, int32(492756), int32(1489), int32(419773))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -442,7 +442,7 @@ L49:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+4)) = int64(25769803776)
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v110
-	F_errmsg(m, int32(475227), v12)
+	F_errmsg(m, int32(475277), v12)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -452,7 +452,7 @@ L49:
 	}
 L50:
 	;
-	F_errsave_finish(m, l2, int32(492706), int32(1498), int32(419723))
+	F_errsave_finish(m, l2, int32(492756), int32(1498), int32(419773))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -532,7 +532,7 @@ L60:
 	}
 L61:
 	;
-	F_errsave_finish(m, l2, int32(492706), int32(1507), int32(419723))
+	F_errsave_finish(m, l2, int32(492756), int32(1507), int32(419773))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -591,7 +591,7 @@ L68:
 	}
 L69:
 	;
-	F_errsave_finish(m, l2, int32(492706), int32(1517), int32(419723))
+	F_errsave_finish(m, l2, int32(492756), int32(1517), int32(419773))
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {
@@ -688,7 +688,7 @@ func F_interval_avg(m *base.Module, l0 int32) int32 {
 								if v76 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492706), int32(4248), int32(324840))
+									F_errfinish(m, int32(492756), int32(4248), int32(324840))
 									mBase = m.M
 									v81 = m.ExcPending
 									if v81 != 0 {
@@ -934,7 +934,7 @@ func F_interval_avg_combine(m *base.Module, l0 int32) int32 {
 						if v113 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492706), int32(3992), int32(351773))
+							F_errfinish(m, int32(492756), int32(3992), int32(351773))
 							mBase = m.M
 							v118 = m.ExcPending
 							if v118 != 0 {
@@ -947,7 +947,7 @@ func F_interval_avg_combine(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v54 = int32(4486928)
+					v54 = int32(4487040)
 					v55 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v57 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v57
@@ -1040,7 +1040,7 @@ func F_interval_dist(m *base.Module, l0 int32) int32 {
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		v15 = F_DirectFunctionCall2Coll(m, int32(2460), v2, v9, int32(4055696))
+		v15 = F_DirectFunctionCall2Coll(m, int32(2460), v2, v9, int32(4055744))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -1175,7 +1175,7 @@ func F_interval_justify_days(m *base.Module, l0 int32) int32 {
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492706), int32(3081), int32(112828))
+								F_errfinish(m, int32(492756), int32(3081), int32(112828))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -1237,7 +1237,7 @@ func F_interval_justify_days(m *base.Module, l0 int32) int32 {
 								if v76 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492706), int32(3081), int32(112828))
+									F_errfinish(m, int32(492756), int32(3081), int32(112828))
 									mBase = m.M
 									v81 = m.ExcPending
 									if v81 != 0 {
@@ -1299,7 +1299,7 @@ func F_interval_justify_days(m *base.Module, l0 int32) int32 {
 									if v76 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492706), int32(3081), int32(112828))
+										F_errfinish(m, int32(492756), int32(3081), int32(112828))
 										mBase = m.M
 										v81 = m.ExcPending
 										if v81 != 0 {
@@ -1366,7 +1366,7 @@ func F_interval_justify_days(m *base.Module, l0 int32) int32 {
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492706), int32(3081), int32(112828))
+								F_errfinish(m, int32(492756), int32(3081), int32(112828))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -1430,7 +1430,7 @@ func F_interval_justify_days(m *base.Module, l0 int32) int32 {
 								if v76 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492706), int32(3081), int32(112828))
+									F_errfinish(m, int32(492756), int32(3081), int32(112828))
 									mBase = m.M
 									v81 = m.ExcPending
 									if v81 != 0 {
@@ -1553,7 +1553,7 @@ func F_interval_justify_hours(m *base.Module, l0 int32) int32 {
 							if v83 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492706), int32(3038), int32(130214))
+								F_errfinish(m, int32(492756), int32(3038), int32(130214))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -1621,7 +1621,7 @@ func F_interval_justify_hours(m *base.Module, l0 int32) int32 {
 								if v83 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492706), int32(3038), int32(130214))
+									F_errfinish(m, int32(492756), int32(3038), int32(130214))
 									mBase = m.M
 									v88 = m.ExcPending
 									if v88 != 0 {
@@ -1689,7 +1689,7 @@ func F_interval_justify_hours(m *base.Module, l0 int32) int32 {
 									if v83 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492706), int32(3038), int32(130214))
+										F_errfinish(m, int32(492756), int32(3038), int32(130214))
 										mBase = m.M
 										v88 = m.ExcPending
 										if v88 != 0 {
@@ -1762,7 +1762,7 @@ func F_interval_justify_hours(m *base.Module, l0 int32) int32 {
 							if v83 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492706), int32(3038), int32(130214))
+								F_errfinish(m, int32(492756), int32(3038), int32(130214))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -1832,7 +1832,7 @@ func F_interval_justify_hours(m *base.Module, l0 int32) int32 {
 								if v83 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492706), int32(3038), int32(130214))
+									F_errfinish(m, int32(492756), int32(3038), int32(130214))
 									mBase = m.M
 									v88 = m.ExcPending
 									if v88 != 0 {

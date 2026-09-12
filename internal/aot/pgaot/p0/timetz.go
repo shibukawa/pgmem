@@ -209,7 +209,7 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(2697), int32(307506))
+								F_errfinish(m, int32(495500), int32(2697), int32(307506))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -311,7 +311,7 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2697), int32(307506))
+							F_errfinish(m, int32(495500), int32(2697), int32(307506))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -520,7 +520,7 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 								if v80 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495450), int32(2425), int32(36002))
+									F_errfinish(m, int32(495500), int32(2425), int32(36002))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
@@ -573,7 +573,7 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 						if v64 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2417), int32(36002))
+							F_errfinish(m, int32(495500), int32(2417), int32(36002))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

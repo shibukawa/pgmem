@@ -43,7 +43,7 @@ func F_GetCurrentCommandId(m *base.Module, l0 int32) int32 {
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490316), int32(843), int32(462850))
+						F_errfinish(m, int32(490366), int32(843), int32(462900))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {

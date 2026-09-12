@@ -81,7 +81,7 @@ func F_enum_range_bounds(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493891), int32(520), int32(171434))
+						F_errfinish(m, int32(493941), int32(520), int32(171434))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {

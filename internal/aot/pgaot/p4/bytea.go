@@ -106,13 +106,13 @@ func F_byteaGetBit(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v53 - int64(1)
 					*(*int64)(unsafe.Add(mBase, uint32(v9))) = v17
-					F_errmsg(m, int32(427401), v9)
+					F_errmsg(m, int32(427451), v9)
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496904), int32(3356), int32(103134))
+						F_errfinish(m, int32(496954), int32(3356), int32(103134))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -197,7 +197,7 @@ func F_bytea_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496904), int32(3240), int32(26387))
+						F_errfinish(m, int32(496954), int32(3240), int32(26387))
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return int32(0)
@@ -254,12 +254,12 @@ func F_bytea_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 			if v39 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(436989), int32(0))
+				F_errmsg(m, int32(437039), int32(0))
 				v43 = m.ExcPending
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496904), int32(3236), int32(26387))
+					F_errfinish(m, int32(496954), int32(3236), int32(26387))
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return int32(0)
@@ -727,7 +727,7 @@ func F_bytea_string_agg_transfn(m *base.Module, l0 int32) int32 {
 						if v213 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496904), int32(5432), int32(351794))
+							F_errfinish(m, int32(496954), int32(5432), int32(351794))
 							mBase = m.M
 							v218 = m.ExcPending
 							if v218 != 0 {
@@ -740,7 +740,7 @@ func F_bytea_string_agg_transfn(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v61 = int32(4486928)
+					v61 = int32(4487040)
 					v62 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 					v64 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
 					*(*int32)(unsafe.Add(mBase, _consts[28])) = v64

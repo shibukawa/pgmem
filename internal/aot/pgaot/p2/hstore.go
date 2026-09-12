@@ -1812,7 +1812,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(492970), int32(1015), int32(417996))
+	F_errfinish(m, int32(493020), int32(1015), int32(418046))
 	mBase = m.M
 	v299 = m.ExcPending
 	if v299 != 0 {
@@ -2717,7 +2717,7 @@ func F_hstore_subscript_transform(m *base.Module, l0 int32, l1 int32, l2 int32, 
 					if v62 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(491855), int32(57), int32(286198))
+						F_errfinish(m, int32(491905), int32(57), int32(286198))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -2759,7 +2759,7 @@ func F_hstore_subscript_transform(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						if v62 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(491855), int32(57), int32(286198))
+							F_errfinish(m, int32(491905), int32(57), int32(286198))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {
@@ -2802,7 +2802,7 @@ func F_hstore_subscript_transform(m *base.Module, l0 int32, l1 int32, l2 int32, 
 							if v62 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(491855), int32(57), int32(286198))
+								F_errfinish(m, int32(491905), int32(57), int32(286198))
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
@@ -2868,7 +2868,7 @@ func F_hstore_subscript_transform(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											if v86 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(491855), int32(75), int32(286198))
+												F_errfinish(m, int32(491905), int32(75), int32(286198))
 												mBase = m.M
 												v93 = m.ExcPending
 												if v93 != 0 {

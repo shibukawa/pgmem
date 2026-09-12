@@ -1213,7 +1213,7 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 							if v31 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(609), int32(318176))
+								F_errfinish(m, int32(495500), int32(609), int32(318176))
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {
@@ -1246,7 +1246,7 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 						if v31 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(609), int32(318176))
+							F_errfinish(m, int32(495500), int32(609), int32(318176))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -1280,7 +1280,7 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 						if v31 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(609), int32(318176))
+							F_errfinish(m, int32(495500), int32(609), int32(318176))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -1316,7 +1316,7 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 							if v31 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(609), int32(318176))
+								F_errfinish(m, int32(495500), int32(609), int32(318176))
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {

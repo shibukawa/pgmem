@@ -78,7 +78,7 @@ func F_QTN2QT(m *base.Module, l0 int32) int32 {
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494242), int32(376), int32(514312))
+						F_errfinish(m, int32(494292), int32(376), int32(514362))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -672,12 +672,12 @@ func F_querytree(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(443845), int32(0))
+		F_errmsg_internal(m, int32(443895), int32(0))
 		v13 = m.ExcPending
 		if v13 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(494162), int32(667), int32(407319))
+			F_errfinish(m, int32(494212), int32(667), int32(407319))
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return int32(0)
@@ -949,7 +949,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 	_ = v15
 	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v2 == int32(1) {
-		v6 = F_cstring_to_text(m, int32(529780))
+		v6 = F_cstring_to_text(m, int32(529830))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {

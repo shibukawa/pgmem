@@ -163,7 +163,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										if v83 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(493871), v75, int32(261717))
+											F_errfinish(m, int32(493921), v75, int32(261717))
 											mBase = m.M
 											v87 = m.ExcPending
 											if v87 != 0 {
@@ -226,7 +226,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											if v83 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(493871), v75, int32(261717))
+												F_errfinish(m, int32(493921), v75, int32(261717))
 												mBase = m.M
 												v87 = m.ExcPending
 												if v87 != 0 {
@@ -316,7 +316,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										if v83 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(493871), v75, int32(261717))
+											F_errfinish(m, int32(493921), v75, int32(261717))
 											mBase = m.M
 											v87 = m.ExcPending
 											if v87 != 0 {
@@ -379,7 +379,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											if v83 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(493871), v75, int32(261717))
+												F_errfinish(m, int32(493921), v75, int32(261717))
 												mBase = m.M
 												v87 = m.ExcPending
 												if v87 != 0 {
@@ -472,7 +472,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												if v83 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(493871), v75, int32(261717))
+													F_errfinish(m, int32(493921), v75, int32(261717))
 													mBase = m.M
 													v87 = m.ExcPending
 													if v87 != 0 {
@@ -535,7 +535,7 @@ func F_vacuum_open_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 													if v83 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(493871), v75, int32(261717))
+														F_errfinish(m, int32(493921), v75, int32(261717))
 														mBase = m.M
 														v87 = m.ExcPending
 														if v87 != 0 {

@@ -51,7 +51,7 @@ func F_CloseServerPorts(m *base.Module, l0 int32, l1 int32) {
 	var v62 int32
 	_ = v62
 	v3 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[468]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[467]))
 	if v3 < v5 {
 		goto L1
 	} else {
@@ -67,8 +67,8 @@ L2:
 L3:
 	;
 	v42 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[468])) = v42
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[469]))
+	*(*int32)(unsafe.Add(mBase, _consts[467])) = v42
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 	if v46 == v42 {
 		goto L14
 	} else {
@@ -76,7 +76,7 @@ L3:
 	}
 L4:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[470]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[469]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v11+v8<<(uint(int32(2))%32))))
 	v16 = F_close(m, v15)
 	mBase = m.M
@@ -91,7 +91,7 @@ L5:
 L6:
 	;
 	v35 = v8 + int32(1)
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[468]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[467]))
 	if v35 < v37 {
 		v8 = v35
 		goto L4
@@ -130,7 +130,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(492052), int32(1428), int32(117211))
+	F_errfinish(m, int32(492102), int32(1428), int32(117211))
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -146,7 +146,7 @@ L13:
 	goto L5
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[469])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[468])) = int32(0)
 	return
 L15:
 	;

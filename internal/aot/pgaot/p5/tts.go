@@ -141,7 +141,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(491007), int32(796), int32(381102))
+	F_errfinish(m, int32(491057), int32(796), int32(381102))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -448,7 +448,7 @@ func F_tts_heap_copy_minimal_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 				return v35
 			}
 		} else {
-			v10 = int32(4486928)
+			v10 = int32(4487040)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -1049,7 +1049,7 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = base.I32_extend16_s(v104)
-	F_errmsg_internal(m, int32(480197), v19)
+	F_errmsg_internal(m, int32(480247), v19)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -1363,7 +1363,7 @@ L95:
 L96:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = base.I32_extend16_s(v258)
-	F_errmsg_internal(m, int32(480197), v19+int32(32))
+	F_errmsg_internal(m, int32(480247), v19+int32(32))
 	mBase = m.M
 	v274 = m.ExcPending
 	if v274 != 0 {
@@ -1660,7 +1660,7 @@ L141:
 L142:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v422
-	F_errmsg_internal(m, int32(480197), v19+int32(16))
+	F_errmsg_internal(m, int32(480247), v19+int32(16))
 	mBase = m.M
 	v459 = m.ExcPending
 	if v459 != 0 {
@@ -1829,7 +1829,7 @@ func F_tts_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491007), int32(369), int32(205338))
+					F_errfinish(m, int32(491057), int32(369), int32(205338))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -1978,7 +1978,7 @@ func F_tts_minimal_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 				return v47
 			}
 		} else {
-			v10 = int32(4486928)
+			v10 = int32(4487040)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -2059,7 +2059,7 @@ func F_tts_minimal_copyslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v18 int32
 	_ = v18
-	v4 = int32(4486928)
+	v4 = int32(4487040)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v7

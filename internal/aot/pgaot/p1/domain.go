@@ -105,7 +105,7 @@ func F_checkDomainOwner(m *base.Module, l0 int32) {
 					if v41 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(491311), int32(3494), int32(217579))
+						F_errfinish(m, int32(491361), int32(3494), int32(217579))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {

@@ -117,7 +117,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(489815), int32(68), int32(313953))
+	F_errfinish(m, int32(489865), int32(68), int32(313953))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -1483,7 +1483,7 @@ func F_spg_redo(m *base.Module, l0 int32) {
 	v17 = m.G0
 	v19 = v17 - int32(192)
 	m.G0 = v19
-	v21 = int32(4486928)
+	v21 = int32(4487040)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+96))
 	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+48)))
@@ -4883,7 +4883,7 @@ L489:
 	}
 L490:
 	;
-	F_errfinish(m, int32(494884), int32(135), int32(337850))
+	F_errfinish(m, int32(494934), int32(135), int32(337850))
 	mBase = m.M
 	v2086 = m.ExcPending
 	if v2086 != 0 {
@@ -4909,7 +4909,7 @@ L492:
 	}
 L493:
 	;
-	F_errfinish(m, int32(494884), int32(316), int32(411547))
+	F_errfinish(m, int32(494934), int32(316), int32(411547))
 	mBase = m.M
 	v2101 = m.ExcPending
 	if v2101 != 0 {
@@ -4936,7 +4936,7 @@ L495:
 	}
 L496:
 	;
-	F_errfinish(m, int32(494884), int32(397), int32(411547))
+	F_errfinish(m, int32(494934), int32(397), int32(411547))
 	mBase = m.M
 	v2119 = m.ExcPending
 	if v2119 != 0 {
@@ -4962,7 +4962,7 @@ L498:
 	}
 L499:
 	;
-	F_errfinish(m, int32(494884), int32(514), int32(382405))
+	F_errfinish(m, int32(494934), int32(514), int32(382405))
 	mBase = m.M
 	v2134 = m.ExcPending
 	if v2134 != 0 {
@@ -4988,7 +4988,7 @@ L501:
 	}
 L502:
 	;
-	F_errfinish(m, int32(494884), int32(968), int32(241391))
+	F_errfinish(m, int32(494934), int32(968), int32(241391))
 	mBase = m.M
 	v2147 = m.ExcPending
 	if v2147 != 0 {

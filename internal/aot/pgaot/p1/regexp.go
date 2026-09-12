@@ -72,7 +72,7 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 				if v64 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492464), int32(1878), int32(97333))
+					F_errfinish(m, int32(492514), int32(1878), int32(97333))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -130,7 +130,7 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 				if v51 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492464), int32(1874), int32(97333))
+					F_errfinish(m, int32(492514), int32(1874), int32(97333))
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -158,7 +158,7 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492464), int32(1878), int32(97333))
+						F_errfinish(m, int32(492514), int32(1878), int32(97333))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -426,14 +426,14 @@ func F_regexp_like(m *base.Module, l0 int32) int32 {
 								if v101 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(665885)
+									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(665935)
 									F_errmsg(m, int32(245392), v10)
 									mBase = m.M
 									v106 = m.ExcPending
 									if v106 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492464), int32(1344), int32(396234))
+										F_errfinish(m, int32(492514), int32(1344), int32(396234))
 										mBase = m.M
 										v111 = m.ExcPending
 										if v111 != 0 {
@@ -544,14 +544,14 @@ func F_regexp_like(m *base.Module, l0 int32) int32 {
 							if v101 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(665885)
+								*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(665935)
 								F_errmsg(m, int32(245392), v10)
 								mBase = m.M
 								v106 = m.ExcPending
 								if v106 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492464), int32(1344), int32(396234))
+									F_errfinish(m, int32(492514), int32(1344), int32(396234))
 									mBase = m.M
 									v111 = m.ExcPending
 									if v111 != 0 {
@@ -1547,7 +1547,7 @@ L97:
 	}
 L98:
 	;
-	F_errfinish(m, int32(492464), int32(1572), int32(167832))
+	F_errfinish(m, int32(492514), int32(1572), int32(167832))
 	mBase = m.M
 	v426 = m.ExcPending
 	if v426 != 0 {

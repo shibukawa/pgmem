@@ -165,7 +165,7 @@ L6:
 	goto L1
 L7:
 	;
-	v52 = int32(4486928)
+	v52 = int32(4487040)
 	v53 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v19)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v55
@@ -239,7 +239,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(495877), int32(3663), int32(456427))
+	F_errfinish(m, int32(495927), int32(3663), int32(456477))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -254,7 +254,7 @@ L16:
 	}
 L17:
 	;
-	v96 = int32(4486928)
+	v96 = int32(4487040)
 	v97 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v90)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v99
@@ -407,7 +407,7 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = l1
-					F_errmsg(m, int32(692009), v7+int32(32))
+					F_errmsg(m, int32(692059), v7+int32(32))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -420,24 +420,24 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 						if v55 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(517474)
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(517524)
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = v54
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l1
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v11 + int32(4)
-							F_errdetail(m, int32(557381), v7+int32(16))
+							F_errdetail(m, int32(557431), v7+int32(16))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(517485)
-								F_errhint(m, int32(586646), v7)
+								*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(517535)
+								F_errhint(m, int32(586696), v7)
 								mBase = m.M
 								v72 = m.ExcPending
 								if v72 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491322), int32(9595), int32(388624))
+									F_errfinish(m, int32(491372), int32(9595), int32(388624))
 									mBase = m.M
 									v77 = m.ExcPending
 									if v77 != 0 {
@@ -469,7 +469,7 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+80)) = l1
-						F_errmsg(m, int32(692009), v7+int32(80))
+						F_errmsg(m, int32(692059), v7+int32(80))
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
@@ -482,24 +482,24 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 							if v93 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+76)) = int32(539921)
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+76)) = int32(539971)
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+72)) = v92
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = l1
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = v11 + int32(4)
-								F_errdetail(m, int32(557381), v7-int32(-64))
+								F_errdetail(m, int32(557431), v7-int32(-64))
 								mBase = m.M
 								v105 = m.ExcPending
 								if v105 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(514860)
-									F_errhint(m, int32(586606), v7+int32(48))
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(514910)
+									F_errhint(m, int32(586656), v7+int32(48))
 									mBase = m.M
 									v112 = m.ExcPending
 									if v112 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491322), int32(9607), int32(388624))
+										F_errfinish(m, int32(491372), int32(9607), int32(388624))
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -535,7 +535,7 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 			if v34 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(491322), int32(9583), int32(388624))
+				F_errfinish(m, int32(491372), int32(9583), int32(388624))
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {

@@ -32,7 +32,7 @@ func F_ExecGetTriggerNewSlot(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v24
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+76))
 	if v5 == int32(0) {
-		v8 = int32(4486928)
+		v8 = int32(4487040)
 		v9 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
@@ -406,7 +406,7 @@ L41:
 	return int32(0)
 L42:
 	;
-	v126 = int32(4486928)
+	v126 = int32(4487040)
 	v127 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v129
@@ -793,7 +793,7 @@ func F_trigger_out(m *base.Module, l0 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(490975), int32(366), int32(66727))
+				F_errfinish(m, int32(491025), int32(366), int32(66727))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

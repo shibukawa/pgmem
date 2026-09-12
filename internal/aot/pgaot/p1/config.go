@@ -114,20 +114,20 @@ func F_GetConfigOptionByName(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
-							F_errmsg(m, int32(695998), v8+int32(16))
+							F_errmsg(m, int32(696048), v8+int32(16))
 							mBase = m.M
 							v48 = m.ExcPending
 							if v48 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(154854)
-								F_errdetail(m, int32(590646), v8)
+								F_errdetail(m, int32(590696), v8)
 								mBase = m.M
 								v53 = m.ExcPending
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496556), int32(5457), int32(379672))
+									F_errfinish(m, int32(496606), int32(5457), int32(379672))
 									mBase = m.M
 									v58 = m.ExcPending
 									if v58 != 0 {
@@ -1755,7 +1755,7 @@ L59:
 	goto L81
 L60:
 	;
-	v542 = int32(4485524)
+	v542 = int32(4485636)
 	v544 = *(*int32)(unsafe.Add(mBase, _consts[1216]))
 	*(*int32)(unsafe.Add(mBase, _consts[1216])) = v544 + int32(1)
 	goto L59
@@ -3356,7 +3356,7 @@ L234:
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+24)) = v1478
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+20)) = v1489
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+16)) = l1
-	F_errmsg(m, int32(693758), v36+int32(16))
+	F_errmsg(m, int32(693808), v36+int32(16))
 	mBase = m.M
 	v1497 = m.ExcPending
 	if v1497 != 0 {
@@ -3561,7 +3561,7 @@ L253:
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+104)) = v1330
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+108)) = v59
 	*(*int32)(unsafe.Add(mBase, uint32(v36))) = l1
-	F_errmsg(m, int32(698447), v36)
+	F_errmsg(m, int32(698497), v36)
 	mBase = m.M
 	v1622 = m.ExcPending
 	if v1622 != 0 {
@@ -4072,7 +4072,7 @@ L11:
 	}
 L12:
 	;
-	F_errfinish(m, int32(496556), int32(3036), int32(342776))
+	F_errfinish(m, int32(496606), int32(3036), int32(342776))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {

@@ -144,7 +144,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 				v42 = F_rename(m, v7+int32(1088), v7-int32(-64))
 				mBase = m.M
 				if v42 == int32(0) {
-					v45 = int32(4481588)
+					v45 = int32(4481700)
 					v47 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 					v48 = int32(1)
 					*(*int32)(unsafe.Add(mBase, _consts[13])) = v47 + v48
@@ -160,7 +160,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 						if v59 != 0 {
 							return
 						} else {
-							v60 = int32(4481588)
+							v60 = int32(4481700)
 							v62 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 							*(*int32)(unsafe.Add(mBase, _consts[13])) = v62 - int32(1)
 							v112 = *(*int32)(unsafe.Add(mBase, _consts[7]))
@@ -207,7 +207,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 													if v139 != 0 {
 														v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 														if v158 != 0 {
-															v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+															v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 															v165 = base.I32_div_s(l0-v162, int32(288))
 															v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 															mBase = m.M
@@ -216,7 +216,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																return
 															} else {
 																if v167 == int32(0) {
-																	v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																	v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																	v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																	*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																} else {
@@ -254,7 +254,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 															if v143 == int32(0) {
 																v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																if v158 != 0 {
-																	v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																	v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																	v165 = base.I32_div_s(l0-v162, int32(288))
 																	v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																	mBase = m.M
@@ -263,7 +263,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																		return
 																	} else {
 																		if v167 == int32(0) {
-																			v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																			v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																			v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																			*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																		} else {
@@ -293,13 +293,13 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																}
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 - int32(-64)
-																F_errmsg(m, int32(673809), v7)
+																F_errmsg(m, int32(673859), v7)
 																mBase = m.M
 																v152 = m.ExcPending
 																if v152 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(489898), int32(1060), int32(205676))
+																	F_errfinish(m, int32(489948), int32(1060), int32(205676))
 																	mBase = m.M
 																	v157 = m.ExcPending
 																	if v157 != 0 {
@@ -307,7 +307,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																	} else {
 																		v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																		if v158 != 0 {
-																			v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																			v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																			v165 = base.I32_div_s(l0-v162, int32(288))
 																			v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																			mBase = m.M
@@ -316,7 +316,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																				return
 																			} else {
 																				if v167 == int32(0) {
-																					v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																					v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																					v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																					*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																				} else {
@@ -362,7 +362,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 					v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+92))
 					if v66 != 0 {
-						F_s_lock(m, l0, int32(489898), int32(1018), int32(205676))
+						F_s_lock(m, l0, int32(489948), int32(1018), int32(205676))
 						mBase = m.M
 						v74 = m.ExcPending
 						if v74 != 0 {
@@ -433,7 +433,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																if v139 != 0 {
 																	v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																	if v158 != 0 {
-																		v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																		v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																		v165 = base.I32_div_s(l0-v162, int32(288))
 																		v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																		mBase = m.M
@@ -442,7 +442,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																			return
 																		} else {
 																			if v167 == int32(0) {
-																				v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																				v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																				v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																				*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																			} else {
@@ -480,7 +480,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																		if v143 == int32(0) {
 																			v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																			if v158 != 0 {
-																				v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																				v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																				v165 = base.I32_div_s(l0-v162, int32(288))
 																				v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																				mBase = m.M
@@ -489,7 +489,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																					return
 																				} else {
 																					if v167 == int32(0) {
-																						v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																						v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																						v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																						*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																					} else {
@@ -519,13 +519,13 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																			}
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 - int32(-64)
-																			F_errmsg(m, int32(673809), v7)
+																			F_errmsg(m, int32(673859), v7)
 																			mBase = m.M
 																			v152 = m.ExcPending
 																			if v152 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(489898), int32(1060), int32(205676))
+																				F_errfinish(m, int32(489948), int32(1060), int32(205676))
 																				mBase = m.M
 																				v157 = m.ExcPending
 																				if v157 != 0 {
@@ -533,7 +533,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																				} else {
 																					v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																					if v158 != 0 {
-																						v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																						v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																						v165 = base.I32_div_s(l0-v162, int32(288))
 																						v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																						mBase = m.M
@@ -542,7 +542,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																							return
 																						} else {
 																							if v167 == int32(0) {
-																								v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																								v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																								v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																								*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																							} else {
@@ -596,7 +596,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 											if v103 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(489898), int32(1028), int32(205676))
+												F_errfinish(m, int32(489948), int32(1028), int32(205676))
 												mBase = m.M
 												v108 = m.ExcPending
 												if v108 != 0 {
@@ -646,7 +646,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																			if v139 != 0 {
 																				v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																				if v158 != 0 {
-																					v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																					v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																					v165 = base.I32_div_s(l0-v162, int32(288))
 																					v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																					mBase = m.M
@@ -655,7 +655,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																						return
 																					} else {
 																						if v167 == int32(0) {
-																							v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																							v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																							v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																							*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																						} else {
@@ -693,7 +693,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																					if v143 == int32(0) {
 																						v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																						if v158 != 0 {
-																							v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																							v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																							v165 = base.I32_div_s(l0-v162, int32(288))
 																							v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																							mBase = m.M
@@ -702,7 +702,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																								return
 																							} else {
 																								if v167 == int32(0) {
-																									v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																									v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																									v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																									*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																								} else {
@@ -732,13 +732,13 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																						}
 																					} else {
 																						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 - int32(-64)
-																						F_errmsg(m, int32(673809), v7)
+																						F_errmsg(m, int32(673859), v7)
 																						mBase = m.M
 																						v152 = m.ExcPending
 																						if v152 != 0 {
 																							return
 																						} else {
-																							F_errfinish(m, int32(489898), int32(1060), int32(205676))
+																							F_errfinish(m, int32(489948), int32(1060), int32(205676))
 																							mBase = m.M
 																							v157 = m.ExcPending
 																							if v157 != 0 {
@@ -746,7 +746,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																							} else {
 																								v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																								if v158 != 0 {
-																									v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																									v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																									v165 = base.I32_div_s(l0-v162, int32(288))
 																									v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																									mBase = m.M
@@ -755,7 +755,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																										return
 																									} else {
 																										if v167 == int32(0) {
-																											v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																											v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																											v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																											*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																										} else {
@@ -867,7 +867,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 															if v139 != 0 {
 																v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																if v158 != 0 {
-																	v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																	v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																	v165 = base.I32_div_s(l0-v162, int32(288))
 																	v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																	mBase = m.M
@@ -876,7 +876,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																		return
 																	} else {
 																		if v167 == int32(0) {
-																			v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																			v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																			v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																			*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																		} else {
@@ -914,7 +914,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																	if v143 == int32(0) {
 																		v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																		if v158 != 0 {
-																			v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																			v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																			v165 = base.I32_div_s(l0-v162, int32(288))
 																			v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																			mBase = m.M
@@ -923,7 +923,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																				return
 																			} else {
 																				if v167 == int32(0) {
-																					v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																					v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																					v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																					*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																				} else {
@@ -953,13 +953,13 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																		}
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 - int32(-64)
-																		F_errmsg(m, int32(673809), v7)
+																		F_errmsg(m, int32(673859), v7)
 																		mBase = m.M
 																		v152 = m.ExcPending
 																		if v152 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(489898), int32(1060), int32(205676))
+																			F_errfinish(m, int32(489948), int32(1060), int32(205676))
 																			mBase = m.M
 																			v157 = m.ExcPending
 																			if v157 != 0 {
@@ -967,7 +967,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																			} else {
 																				v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																				if v158 != 0 {
-																					v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																					v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																					v165 = base.I32_div_s(l0-v162, int32(288))
 																					v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																					mBase = m.M
@@ -976,7 +976,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																						return
 																					} else {
 																						if v167 == int32(0) {
-																							v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																							v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																							v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																							*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																						} else {
@@ -1030,7 +1030,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 										if v103 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(489898), int32(1028), int32(205676))
+											F_errfinish(m, int32(489948), int32(1028), int32(205676))
 											mBase = m.M
 											v108 = m.ExcPending
 											if v108 != 0 {
@@ -1080,7 +1080,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																		if v139 != 0 {
 																			v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																			if v158 != 0 {
-																				v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																				v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																				v165 = base.I32_div_s(l0-v162, int32(288))
 																				v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																				mBase = m.M
@@ -1089,7 +1089,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																					return
 																				} else {
 																					if v167 == int32(0) {
-																						v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																						v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																						v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																						*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																					} else {
@@ -1127,7 +1127,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																				if v143 == int32(0) {
 																					v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																					if v158 != 0 {
-																						v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																						v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																						v165 = base.I32_div_s(l0-v162, int32(288))
 																						v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																						mBase = m.M
@@ -1136,7 +1136,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																							return
 																						} else {
 																							if v167 == int32(0) {
-																								v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																								v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																								v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																								*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																							} else {
@@ -1166,13 +1166,13 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																					}
 																				} else {
 																					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 - int32(-64)
-																					F_errmsg(m, int32(673809), v7)
+																					F_errmsg(m, int32(673859), v7)
 																					mBase = m.M
 																					v152 = m.ExcPending
 																					if v152 != 0 {
 																						return
 																					} else {
-																						F_errfinish(m, int32(489898), int32(1060), int32(205676))
+																						F_errfinish(m, int32(489948), int32(1060), int32(205676))
 																						mBase = m.M
 																						v157 = m.ExcPending
 																						if v157 != 0 {
@@ -1180,7 +1180,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																						} else {
 																							v158 = *(*int32)(unsafe.Add(mBase, uint32(l0)+88))
 																							if v158 != 0 {
-																								v162 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																								v162 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																								v165 = base.I32_div_s(l0-v162, int32(288))
 																								v167 = F_pgstat_drop_entry(m, int32(4), int32(0), base.I64_extend_i32_s(v165))
 																								mBase = m.M
@@ -1189,7 +1189,7 @@ func F_ReplicationSlotDropPtr(m *base.Module, l0 int32) {
 																									return
 																								} else {
 																									if v167 == int32(0) {
-																										v173 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+																										v173 = *(*int32)(unsafe.Add(mBase, _consts[561]))
 																										v174 = *(*int64)(unsafe.Add(mBase, uint32(v173)+16))
 																										*(*int64)(unsafe.Add(mBase, uint32(v173)+16)) = v174 + int64(1)
 																									} else {
@@ -1253,24 +1253,24 @@ func F_ReplicationSlotMarkDirty(m *base.Module) {
 	_ = v14
 	var v15 int32
 	_ = v15
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[518]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
 	if v5 != 0 {
-		F_s_lock(m, v4, int32(489898), int32(1107), int32(8422))
+		F_s_lock(m, v4, int32(489948), int32(1107), int32(8422))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return
 		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[518]))
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 			v15 = int32(257)
 			*(*uint16)(unsafe.Add(mBase, uint32(v14)+12)) = uint16(v15)
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(0)
 			return
 		}
 	} else {
-		v14 = *(*int32)(unsafe.Add(mBase, _consts[518]))
+		v14 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 		v15 = int32(257)
 		*(*uint16)(unsafe.Add(mBase, uint32(v14)+12)) = uint16(v15)
 		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(0)
@@ -1363,7 +1363,7 @@ func F_ReplicationSlotValidateName(m *base.Module, l0 int32, l1 int32) int32 {
 								if v39 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489898), int32(282), int32(379740))
+									F_errfinish(m, int32(489948), int32(282), int32(379740))
 									mBase = m.M
 									v44 = m.ExcPending
 									if v44 != 0 {
@@ -1395,7 +1395,7 @@ func F_ReplicationSlotValidateName(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								}
 							} else {
-								F_errfinish(m, int32(489898), int32(282), int32(379740))
+								F_errfinish(m, int32(489948), int32(282), int32(379740))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {

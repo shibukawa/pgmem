@@ -272,7 +272,7 @@ L15:
 	}
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(514697)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(514747)
 	F_errmsg(m, int32(153124), v9+int32(80))
 	mBase = m.M
 	v45 = m.ExcPending
@@ -283,7 +283,7 @@ L16:
 	}
 L17:
 	;
-	F_errfinish(m, int32(490316), int32(4604), int32(88022))
+	F_errfinish(m, int32(490366), int32(4604), int32(88022))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -322,14 +322,14 @@ L21:
 	goto L23
 L22:
 	;
-	v65 = int32(540183)
+	v65 = int32(540233)
 	goto L23
 L23:
 	;
 	goto L20
 L24:
 	;
-	F_errfinish(m, int32(490316), int32(4631), int32(88022))
+	F_errfinish(m, int32(490366), int32(4631), int32(88022))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {
@@ -474,7 +474,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(490316), int32(4644), int32(88022))
+	F_errfinish(m, int32(490366), int32(4644), int32(88022))
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -582,14 +582,14 @@ L57:
 	goto L59
 L58:
 	;
-	v156 = int32(540183)
+	v156 = int32(540233)
 	goto L59
 L59:
 	;
 	goto L56
 L60:
 	;
-	F_errfinish(m, int32(490316), int32(4668), int32(88022))
+	F_errfinish(m, int32(490366), int32(4668), int32(88022))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -650,14 +650,14 @@ L68:
 	goto L70
 L69:
 	;
-	v197 = int32(540183)
+	v197 = int32(540233)
 	goto L70
 L70:
 	;
 	goto L67
 L71:
 	;
-	F_errfinish(m, int32(490316), int32(4680), int32(88022))
+	F_errfinish(m, int32(490366), int32(4680), int32(88022))
 	mBase = m.M
 	v208 = m.ExcPending
 	if v208 != 0 {
@@ -692,7 +692,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(490316), int32(4583), int32(88022))
+	F_errfinish(m, int32(490366), int32(4583), int32(88022))
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -728,7 +728,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(490316), int32(4595), int32(88022))
+	F_errfinish(m, int32(490366), int32(4595), int32(88022))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -764,7 +764,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(490316), int32(4650), int32(88022))
+	F_errfinish(m, int32(490366), int32(4650), int32(88022))
 	mBase = m.M
 	v266 = m.ExcPending
 	if v266 != 0 {
@@ -953,7 +953,7 @@ func F_coerce_to_common_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 										if v58 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(496287), int32(1590), int32(364246))
+											F_errfinish(m, int32(496337), int32(1590), int32(364246))
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
@@ -1554,7 +1554,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(492539), int32(1980), int32(313714))
+	F_errfinish(m, int32(492589), int32(1980), int32(313714))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -1642,7 +1642,7 @@ func F_to_ascii_enc(m *base.Module, l0 int32) int32 {
 					if v26 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494595), int32(146), int32(487241))
+						F_errfinish(m, int32(494645), int32(146), int32(487291))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -1845,7 +1845,7 @@ func F_to_json(m *base.Module, l0 int32) int32 {
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493044), int32(749), int32(244015))
+						F_errfinish(m, int32(493094), int32(749), int32(244015))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -1967,7 +1967,7 @@ func F_to_jsonb(m *base.Module, l0 int32) int32 {
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496866), int32(1098), int32(499526))
+						F_errfinish(m, int32(496916), int32(1098), int32(499576))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -2524,7 +2524,7 @@ func F_to_timestamp(m *base.Module, l0 int32) int32 {
 							if v173 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(494985), int32(4140), int32(235643))
+								F_errfinish(m, int32(495035), int32(4140), int32(235643))
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {

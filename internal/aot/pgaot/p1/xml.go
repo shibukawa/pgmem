@@ -31,12 +31,12 @@ func F_XmlTableFetchRow(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494174), int32(4912), int32(31839))
+					F_errfinish(m, int32(494224), int32(4912), int32(31839))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -76,12 +76,12 @@ func F_XmlTableSetRowFilter(m *base.Module, l0 int32, l1 int32) {
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494174), int32(4837), int32(214760))
+					F_errfinish(m, int32(494224), int32(4837), int32(214760))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -277,7 +277,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v5 + int32(-52)
-	v94 = F_sscanf(m, v28, int32(512719), v7)
+	v94 = F_sscanf(m, v28, int32(512769), v7)
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -355,12 +355,12 @@ func F_xml_is_well_formed_document(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494174), int32(4628), int32(94320))
+					F_errfinish(m, int32(494224), int32(4628), int32(94320))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

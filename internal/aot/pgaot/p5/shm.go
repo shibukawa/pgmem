@@ -333,7 +333,7 @@ L15:
 	goto L10
 L16:
 	;
-	F_s_lock(m, v14, int32(492450), int32(261), int32(226128))
+	F_s_lock(m, v14, int32(492500), int32(261), int32(226128))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -379,7 +379,7 @@ L22:
 	}
 L23:
 	;
-	F_s_lock(m, v14, int32(492450), int32(261), int32(226128))
+	F_s_lock(m, v14, int32(492500), int32(261), int32(226128))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -884,7 +884,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(492450), int32(719), int32(341966))
+	F_errfinish(m, int32(492500), int32(719), int32(341966))
 	mBase = m.M
 	v334 = m.ExcPending
 	if v334 != 0 {

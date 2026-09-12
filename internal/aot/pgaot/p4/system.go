@@ -42,7 +42,7 @@ func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32) {
 		if v17 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1418])) = v16
+			*(*int32)(unsafe.Add(mBase, _consts[1419])) = v16
 			F_pfree(m, v11)
 			mBase = m.M
 			v20 = m.ExcPending

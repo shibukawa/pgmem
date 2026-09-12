@@ -9140,6 +9140,24 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoGCubeUnion(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_earthdistance":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_earthdistance: want 0 args")
+		}
+		r := pgaot.PgMagicFuncEarthdistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "geo_distance":
+		if len(a) != 1 {
+			panic("aot: geo_distance: want 1 args")
+		}
+		r := pgaot.GeoDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_geo_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_geo_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGeoDistance(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

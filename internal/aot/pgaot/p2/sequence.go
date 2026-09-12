@@ -115,7 +115,7 @@ func F_has_sequence_privilege_id_id(m *base.Module, l0 int32) int32 {
 									if v46 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(494337), int32(2284), int32(434632))
+										F_errfinish(m, int32(494387), int32(2284), int32(434682))
 										mBase = m.M
 										v51 = m.ExcPending
 										if v51 != 0 {
@@ -273,7 +273,7 @@ func F_has_sequence_privilege_name_id(m *base.Module, l0 int32) int32 {
 										if v48 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(494337), int32(2186), int32(433917))
+											F_errfinish(m, int32(494387), int32(2186), int32(433967))
 											mBase = m.M
 											v53 = m.ExcPending
 											if v53 != 0 {
@@ -456,7 +456,7 @@ func F_has_sequence_privilege_name_name(m *base.Module, l0 int32) int32 {
 													if v50 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(494337), int32(2123), int32(377453))
+														F_errfinish(m, int32(494387), int32(2123), int32(377453))
 														mBase = m.M
 														v55 = m.ExcPending
 														if v55 != 0 {
@@ -584,7 +584,7 @@ func F_init_sequence(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				v50 = *(*int32)(unsafe.Add(mBase, _consts[185]))
 				v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+56))
 				if v48 != v51 {
-					v53 = int32(4486980)
+					v53 = int32(4487092)
 					v54 = *(*int32)(unsafe.Add(mBase, _consts[258]))
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[402]))
 					*(*int32)(unsafe.Add(mBase, _consts[258])) = v57
@@ -668,7 +668,7 @@ func F_init_sequence(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			v50 = *(*int32)(unsafe.Add(mBase, _consts[185]))
 			v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+56))
 			if v48 != v51 {
-				v53 = int32(4486980)
+				v53 = int32(4487092)
 				v54 = *(*int32)(unsafe.Add(mBase, _consts[258]))
 				v57 = *(*int32)(unsafe.Add(mBase, _consts[402]))
 				*(*int32)(unsafe.Add(mBase, _consts[258])) = v57
@@ -786,7 +786,7 @@ func F_sequence_open(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v23 + int32(4)
-					F_errmsg(m, int32(688352), v6)
+					F_errmsg(m, int32(688402), v6)
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -800,7 +800,7 @@ func F_sequence_open(m *base.Module, l0 int32, l1 int32) int32 {
 						if v33 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496302), int32(77), int32(422852))
+							F_errfinish(m, int32(496352), int32(77), int32(422902))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {

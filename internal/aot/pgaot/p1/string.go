@@ -355,13 +355,13 @@ L31:
 	goto L33
 L32:
 	;
-	v105 = int32(738681)
+	v105 = int32(738731)
 	goto L33
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v105
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = v102
-	F_errmsg(m, int32(709096), v16+int32(-32))
+	F_errmsg(m, int32(709146), v16+int32(-32))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -413,7 +413,7 @@ L40:
 	goto L41
 L41:
 	;
-	F_errfinish(m, int32(496556), int32(6947), int32(313479))
+	F_errfinish(m, int32(496606), int32(6947), int32(313479))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -702,7 +702,7 @@ L10:
 	}
 L11:
 	;
-	F_errsave_finish(m, l1, int32(496646), int32(1810), int32(76027))
+	F_errsave_finish(m, l1, int32(496696), int32(1810), int32(76027))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -851,7 +851,7 @@ L29:
 	}
 L30:
 	;
-	F_errsave_finish(m, l1, int32(496646), int32(1815), int32(76027))
+	F_errsave_finish(m, l1, int32(496696), int32(1815), int32(76027))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -977,7 +977,7 @@ func F_string_to_const(m *base.Module, l0 int32, l1 int32) int32 {
 						if v37 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489728), int32(1765), int32(68106))
+							F_errfinish(m, int32(489778), int32(1765), int32(68106))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -2502,7 +2502,7 @@ L174:
 L175:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-	F_errmsg(m, int32(695840), v6)
+	F_errmsg(m, int32(695890), v6)
 	mBase = m.M
 	v486 = m.ExcPending
 	if v486 != 0 {
@@ -2512,7 +2512,7 @@ L175:
 	}
 L176:
 	;
-	F_errfinish(m, int32(494461), int32(2603), int32(400956))
+	F_errfinish(m, int32(494511), int32(2603), int32(400956))
 	mBase = m.M
 	v491 = m.ExcPending
 	if v491 != 0 {

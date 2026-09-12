@@ -99,7 +99,7 @@ func F_check_for_column_name_collision(m *base.Module, l0 int32, l1 int32, l2 in
 							if v71 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491322), int32(7674), int32(270317))
+								F_errfinish(m, int32(491372), int32(7674), int32(270317))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -135,7 +135,7 @@ func F_check_for_column_name_collision(m *base.Module, l0 int32, l1 int32, l2 in
 								if v93 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(491322), int32(7689), int32(270317))
+									F_errfinish(m, int32(491372), int32(7689), int32(270317))
 									mBase = m.M
 									v98 = m.ExcPending
 									if v98 != 0 {
@@ -174,7 +174,7 @@ func F_check_for_column_name_collision(m *base.Module, l0 int32, l1 int32, l2 in
 									if v47 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(491322), int32(7682), int32(270317))
+										F_errfinish(m, int32(491372), int32(7682), int32(270317))
 										mBase = m.M
 										v52 = m.ExcPending
 										if v52 != 0 {
@@ -503,7 +503,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	F_errmsg_internal(m, int32(449739), int32(0))
+	F_errmsg_internal(m, int32(449789), int32(0))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -513,7 +513,7 @@ L5:
 	}
 L6:
 	;
-	F_errfinish(m, int32(493977), int32(374), int32(308230))
+	F_errfinish(m, int32(494027), int32(374), int32(308230))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -546,8 +546,8 @@ L10:
 	}
 L11:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, _consts[502]))
-	v55 = *(*int64)(unsafe.Add(mBase, _consts[501]))
+	v53 = *(*int32)(unsafe.Add(mBase, _consts[503]))
+	v55 = *(*int64)(unsafe.Add(mBase, _consts[502]))
 	if v55 == int64(0) {
 		goto L13
 	} else {
@@ -1247,8 +1247,8 @@ L108:
 	}
 L109:
 	;
-	v375 = *(*int32)(unsafe.Add(mBase, _consts[502]))
-	v377 = *(*int64)(unsafe.Add(mBase, _consts[501]))
+	v375 = *(*int32)(unsafe.Add(mBase, _consts[503]))
+	v377 = *(*int64)(unsafe.Add(mBase, _consts[502]))
 	if v377 != int64(0) {
 		v82 = v375
 		v84 = v267
@@ -1299,7 +1299,7 @@ L114:
 	}
 L115:
 	;
-	F_errmsg_internal(m, int32(449827), int32(0))
+	F_errmsg_internal(m, int32(449877), int32(0))
 	mBase = m.M
 	v409 = m.ExcPending
 	if v409 != 0 {
@@ -1309,7 +1309,7 @@ L115:
 	}
 L116:
 	;
-	F_errfinish(m, int32(493977), int32(383), int32(308218))
+	F_errfinish(m, int32(494027), int32(383), int32(308218))
 	mBase = m.M
 	v414 = m.ExcPending
 	if v414 != 0 {

@@ -127,7 +127,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v140 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490003), int32(213), int32(503316))
+					F_errfinish(m, int32(490053), int32(213), int32(503366))
 					mBase = m.M
 					v147 = m.ExcPending
 					if v147 != 0 {
@@ -160,7 +160,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v140 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490003), int32(213), int32(503316))
+						F_errfinish(m, int32(490053), int32(213), int32(503366))
 						mBase = m.M
 						v147 = m.ExcPending
 						if v147 != 0 {
@@ -176,7 +176,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
 			v17 = l3 + int32(3)
-			v20 = F_pg_snprintf(m, v17, int32(18), int32(671403), v9)
+			v20 = F_pg_snprintf(m, v17, int32(18), int32(671453), v9)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
@@ -201,7 +201,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v160 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490003), int32(220), int32(503316))
+								F_errfinish(m, int32(490053), int32(220), int32(503366))
 								mBase = m.M
 								v167 = m.ExcPending
 								if v167 != 0 {
@@ -218,52 +218,52 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					v26 = v17 + v20
 					v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 					v29 = int32(63)
-					v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28&v29)+uint32(_consts[1297]))))
+					v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26))) = uint8(v32)
 					v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
-					v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34&v29)+uint32(_consts[1297]))))
+					v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+1)) = uint8(v38)
 					v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
-					v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40&v29)+uint32(_consts[1297]))))
+					v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+2)) = uint8(v44)
 					v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+3)))
-					v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46&v29)+uint32(_consts[1297]))))
+					v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+3)) = uint8(v50)
 					v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+4)))
-					v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52&v29)+uint32(_consts[1297]))))
+					v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+4)) = uint8(v56)
 					v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+5)))
-					v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58&v29)+uint32(_consts[1297]))))
+					v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+5)) = uint8(v62)
 					v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+6)))
-					v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64&v29)+uint32(_consts[1297]))))
+					v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+6)) = uint8(v68)
 					v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+7)))
-					v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70&v29)+uint32(_consts[1297]))))
+					v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+7)) = uint8(v74)
 					v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-					v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76&v29)+uint32(_consts[1297]))))
+					v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+8)) = uint8(v80)
 					v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+9)))
-					v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82&v29)+uint32(_consts[1297]))))
+					v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+9)) = uint8(v86)
 					v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+10)))
-					v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88&v29)+uint32(_consts[1297]))))
+					v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+10)) = uint8(v92)
 					v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+11)))
-					v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v94&v29)+uint32(_consts[1297]))))
+					v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v94&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+11)) = uint8(v98)
 					v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+12)))
-					v104 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100&v29)+uint32(_consts[1297]))))
+					v104 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+12)) = uint8(v104)
 					v106 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
-					v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v106&v29)+uint32(_consts[1297]))))
+					v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v106&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+13)) = uint8(v110)
 					v112 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+14)))
-					v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v112&v29)+uint32(_consts[1297]))))
+					v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v112&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+14)) = uint8(v116)
 					v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+15)))
-					v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118&v29)+uint32(_consts[1297]))))
+					v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118&v29)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(v26)+15)) = uint8(v122)
 					m.G0 = v9 + int32(16)
 					return l3
@@ -310,24 +310,24 @@ func F__crypt_gensalt_traditional_rn(m *base.Module, l0 int32, l1 int32, l2 int3
 			if l0 == int32(0) {
 				v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 				v20 = int32(63)
-				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v20)+uint32(_consts[1297]))))
+				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v20)+uint32(_consts[1298]))))
 				*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v23)
 				v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
 				v26 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v26)
-				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25&v20)+uint32(_consts[1297]))))
+				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25&v20)+uint32(_consts[1298]))))
 				*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v31)
 				return l3
 			} else {
 				if l0 == int32(25) {
 					v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 					v20 = int32(63)
-					v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v20)+uint32(_consts[1297]))))
+					v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19&v20)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v23)
 					v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
 					v26 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(l3)+2)) = uint8(v26)
-					v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25&v20)+uint32(_consts[1297]))))
+					v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25&v20)+uint32(_consts[1298]))))
 					*(*uint8)(unsafe.Add(mBase, uint32(l3)+1)) = uint8(v31)
 					return l3
 				} else {

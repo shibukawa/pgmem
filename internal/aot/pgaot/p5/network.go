@@ -1166,7 +1166,7 @@ func F_network_out(m *base.Module, l0 int32, l1 int32) int32 {
 					if v81 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494432), int32(152), int32(66888))
+						F_errfinish(m, int32(494482), int32(152), int32(66888))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -1747,7 +1747,7 @@ L61:
 	}
 L62:
 	;
-	F_errdetail(m, int32(604892), int32(0))
+	F_errdetail(m, int32(604942), int32(0))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -1757,7 +1757,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(494432), int32(241), int32(36378))
+	F_errfinish(m, int32(494482), int32(241), int32(36378))
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -1808,7 +1808,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(494432), int32(210), int32(36378))
+	F_errfinish(m, int32(494482), int32(210), int32(36378))
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {
@@ -1859,7 +1859,7 @@ L76:
 	}
 L77:
 	;
-	F_errfinish(m, int32(494432), int32(217), int32(36378))
+	F_errfinish(m, int32(494482), int32(217), int32(36378))
 	mBase = m.M
 	v213 = m.ExcPending
 	if v213 != 0 {
@@ -1910,7 +1910,7 @@ L83:
 	}
 L84:
 	;
-	F_errfinish(m, int32(494432), int32(226), int32(36378))
+	F_errfinish(m, int32(494482), int32(226), int32(36378))
 	mBase = m.M
 	v234 = m.ExcPending
 	if v234 != 0 {

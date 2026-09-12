@@ -240,7 +240,7 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 									if v261 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(489508), int32(304), int32(125723))
+										F_errfinish(m, int32(489558), int32(304), int32(125723))
 										mBase = m.M
 										v268 = m.ExcPending
 										if v268 != 0 {
@@ -379,13 +379,13 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 													if v275 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg(m, int32(460953), int32(0))
+														F_errmsg(m, int32(461003), int32(0))
 														mBase = m.M
 														v281 = m.ExcPending
 														if v281 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(489508), int32(338), int32(125723))
+															F_errfinish(m, int32(489558), int32(338), int32(125723))
 															mBase = m.M
 															v288 = m.ExcPending
 															if v288 != 0 {
@@ -649,13 +649,13 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 											if v275 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg(m, int32(460953), int32(0))
+												F_errmsg(m, int32(461003), int32(0))
 												mBase = m.M
 												v281 = m.ExcPending
 												if v281 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(489508), int32(338), int32(125723))
+													F_errfinish(m, int32(489558), int32(338), int32(125723))
 													mBase = m.M
 													v288 = m.ExcPending
 													if v288 != 0 {
@@ -830,7 +830,7 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 								if v261 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489508), int32(304), int32(125723))
+									F_errfinish(m, int32(489558), int32(304), int32(125723))
 									mBase = m.M
 									v268 = m.ExcPending
 									if v268 != 0 {
@@ -969,13 +969,13 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 												if v275 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg(m, int32(460953), int32(0))
+													F_errmsg(m, int32(461003), int32(0))
 													mBase = m.M
 													v281 = m.ExcPending
 													if v281 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(489508), int32(338), int32(125723))
+														F_errfinish(m, int32(489558), int32(338), int32(125723))
 														mBase = m.M
 														v288 = m.ExcPending
 														if v288 != 0 {
@@ -1239,13 +1239,13 @@ func F_g_int_decompress(m *base.Module, l0 int32) int32 {
 										if v275 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(460953), int32(0))
+											F_errmsg(m, int32(461003), int32(0))
 											mBase = m.M
 											v281 = m.ExcPending
 											if v281 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489508), int32(338), int32(125723))
+												F_errfinish(m, int32(489558), int32(338), int32(125723))
 												mBase = m.M
 												v288 = m.ExcPending
 												if v288 != 0 {
@@ -1773,7 +1773,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(489508), int32(136), int32(270622))
+	F_errfinish(m, int32(489558), int32(136), int32(270622))
 	mBase = m.M
 	v178 = m.ExcPending
 	if v178 != 0 {

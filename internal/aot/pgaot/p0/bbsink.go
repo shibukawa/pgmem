@@ -117,7 +117,7 @@ func F_bbsink_server_end_archive(m *base.Module, l0 int32) {
 					if v29 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(492008), int32(208), int32(341792))
+						F_errfinish(m, int32(492058), int32(208), int32(341792))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {

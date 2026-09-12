@@ -61,7 +61,7 @@ func F_ChangeToDataDir(m *base.Module) {
 				if v30 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(490049), int32(468), int32(212682))
+					F_errfinish(m, int32(490099), int32(468), int32(212682))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -402,7 +402,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(496419), int32(650), int32(283849))
+	F_errfinish(m, int32(496469), int32(650), int32(283849))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {

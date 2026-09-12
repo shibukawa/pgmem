@@ -34,7 +34,7 @@ func F_BumpFree(m *base.Module, l0 int32) {
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(492689), int32(619), int32(408128))
+			F_errfinish(m, int32(492739), int32(619), int32(408128))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

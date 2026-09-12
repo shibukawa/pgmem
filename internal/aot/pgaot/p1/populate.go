@@ -77,7 +77,7 @@ func F_populate_recordset_object_start(m *base.Module, l0 int32) int32 {
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491502), int32(4226), int32(81895))
+					F_errfinish(m, int32(491552), int32(4226), int32(81895))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {

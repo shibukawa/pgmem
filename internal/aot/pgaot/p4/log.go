@@ -130,7 +130,7 @@ L1:
 	return
 L2:
 	;
-	F_errfinish(m, int32(492052), v240, int32(99236))
+	F_errfinish(m, int32(492102), v240, int32(99236))
 	mBase = m.M
 	v250 = m.ExcPending
 	if v250 != 0 {
@@ -162,7 +162,7 @@ L4:
 L5:
 	;
 	v16 = v13 - int32(-64)
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[769]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[770]))
 	if v18 == int32(0) {
 		goto L9
 	} else {
@@ -196,7 +196,7 @@ L9:
 	goto L8
 L10:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[770]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[771]))
 	if v22 == int32(0) {
 		goto L9
 	} else {
@@ -204,7 +204,7 @@ L10:
 	}
 L11:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _consts[771]))
+	v27 = *(*int32)(unsafe.Add(mBase, _consts[772]))
 	if v27 <= int32(0) {
 		goto L9
 	} else {
@@ -249,8 +249,8 @@ L17:
 	}
 L18:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, _consts[772]))
-	v48 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+	v45 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+	v48 = *(*int32)(unsafe.Add(mBase, _consts[774]))
 	if base.Ui32(v22+v45-v48) < base.Ui32(v42) {
 		goto L9
 	} else {
@@ -390,7 +390,7 @@ L41:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = int32(base.Ui32(l3)>>(uint(int32(8))%32)) & int32(255)
-	F_errmsg(m, int32(474660), v13+int32(16))
+	F_errmsg(m, int32(474710), v13+int32(16))
 	mBase = m.M
 	v165 = m.ExcPending
 	if v165 != 0 {
@@ -438,7 +438,7 @@ L47:
 	}
 L48:
 	;
-	v180 = int32(4084320)
+	v180 = int32(4084368)
 	if base.Ui32(v138-int32(65)) < base.Ui32(int32(-64)) {
 		v197 = v180
 		goto L50
@@ -528,7 +528,7 @@ L61:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+56)) = l3
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+52)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+48)) = l1
-	F_errmsg(m, int32(466225), v13+int32(48))
+	F_errmsg(m, int32(466275), v13+int32(48))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -564,7 +564,7 @@ func F_assign_log_connections(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[1195])) = v4
+	*(*int32)(unsafe.Add(mBase, _consts[1196])) = v4
 	return
 }
 func F_assign_log_timezone(m *base.Module, l0 int32, l1 int32) {
@@ -573,7 +573,7 @@ func F_assign_log_timezone(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[480])) = v4
+	*(*int32)(unsafe.Add(mBase, _consts[481])) = v4
 	return
 }
 func F_log_heap_prune_and_freeze(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32) {
@@ -1254,7 +1254,7 @@ L69:
 L70:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = l4
-	F_errmsg_internal(m, int32(479770), v23)
+	F_errmsg_internal(m, int32(479820), v23)
 	mBase = m.M
 	v333 = m.ExcPending
 	if v333 != 0 {
@@ -1264,7 +1264,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(492870), int32(2166), int32(340295))
+	F_errfinish(m, int32(492920), int32(2166), int32(340295))
 	mBase = m.M
 	v338 = m.ExcPending
 	if v338 != 0 {
@@ -1550,7 +1550,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = l2
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v9 + int32(40)
 						if v4 != 0 {
-							v122 = int32(435587)
+							v122 = int32(435637)
 						} else {
 							v122 = int32(69450)
 						}
@@ -1565,7 +1565,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							} else {
 								v128 = int32(96)
 							}
-							F_errfinish(m, int32(490765), v128, int32(404766))
+							F_errfinish(m, int32(490815), v128, int32(404766))
 							mBase = m.M
 							v131 = m.ExcPending
 							if v131 != 0 {
@@ -1653,7 +1653,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l2
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v9 + int32(40)
 					if v4 != 0 {
-						v33 = int32(435587)
+						v33 = int32(435637)
 					} else {
 						v33 = int32(69450)
 					}
@@ -1668,7 +1668,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						} else {
 							v41 = int32(96)
 						}
-						F_errfinish(m, int32(490765), v41, int32(404766))
+						F_errfinish(m, int32(490815), v41, int32(404766))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -1856,7 +1856,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 													*(*int32)(unsafe.Add(mBase, uint32(v9))) = l2
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v9 + int32(40)
 													if v4 != 0 {
-														v122 = int32(435587)
+														v122 = int32(435637)
 													} else {
 														v122 = int32(69450)
 													}
@@ -1871,7 +1871,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 														} else {
 															v128 = int32(96)
 														}
-														F_errfinish(m, int32(490765), v128, int32(404766))
+														F_errfinish(m, int32(490815), v128, int32(404766))
 														mBase = m.M
 														v131 = m.ExcPending
 														if v131 != 0 {
@@ -1946,7 +1946,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 									if v58 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(490765), int32(120), int32(404786))
+										F_errfinish(m, int32(490815), int32(120), int32(404786))
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
@@ -2121,7 +2121,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 															*(*int32)(unsafe.Add(mBase, uint32(v9))) = l2
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v9 + int32(40)
 															if v4 != 0 {
-																v122 = int32(435587)
+																v122 = int32(435637)
 															} else {
 																v122 = int32(69450)
 															}
@@ -2136,7 +2136,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 																} else {
 																	v128 = int32(96)
 																}
-																F_errfinish(m, int32(490765), v128, int32(404766))
+																F_errfinish(m, int32(490815), v128, int32(404766))
 																mBase = m.M
 																v131 = m.ExcPending
 																if v131 != 0 {
@@ -2393,7 +2393,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = l2
 											*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v9 + int32(40)
 											if v4 != 0 {
-												v122 = int32(435587)
+												v122 = int32(435637)
 											} else {
 												v122 = int32(69450)
 											}
@@ -2408,7 +2408,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 												} else {
 													v128 = int32(96)
 												}
-												F_errfinish(m, int32(490765), v128, int32(404766))
+												F_errfinish(m, int32(490815), v128, int32(404766))
 												mBase = m.M
 												v131 = m.ExcPending
 												if v131 != 0 {
@@ -2483,7 +2483,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(490765), int32(120), int32(404786))
+								F_errfinish(m, int32(490815), int32(120), int32(404786))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -2658,7 +2658,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 													*(*int32)(unsafe.Add(mBase, uint32(v9))) = l2
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v9 + int32(40)
 													if v4 != 0 {
-														v122 = int32(435587)
+														v122 = int32(435637)
 													} else {
 														v122 = int32(69450)
 													}
@@ -2673,7 +2673,7 @@ func F_log_invalid_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 														} else {
 															v128 = int32(96)
 														}
-														F_errfinish(m, int32(490765), v128, int32(404766))
+														F_errfinish(m, int32(490815), v128, int32(404766))
 														mBase = m.M
 														v131 = m.ExcPending
 														if v131 != 0 {
@@ -2841,7 +2841,7 @@ func F_log_newpage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 				if v56 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489866), int32(320), int32(315148))
+					F_errfinish(m, int32(489916), int32(320), int32(315148))
 					mBase = m.M
 					v61 = m.ExcPending
 					if v61 != 0 {

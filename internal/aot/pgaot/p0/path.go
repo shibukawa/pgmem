@@ -2369,7 +2369,7 @@ func F_path_poly(m *base.Module, l0 int32) int32 {
 					if v173 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490642), int32(4463), int32(19469))
+						F_errfinish(m, int32(490692), int32(4463), int32(19469))
 						mBase = m.M
 						v178 = m.ExcPending
 						if v178 != 0 {

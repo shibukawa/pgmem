@@ -348,7 +348,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 										if v507 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(492706), int32(4591), int32(406123))
+											F_errfinish(m, int32(492756), int32(4591), int32(406123))
 											mBase = m.M
 											v512 = m.ExcPending
 											if v512 != 0 {
@@ -388,7 +388,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 												if v507 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(492706), int32(4591), int32(406123))
+													F_errfinish(m, int32(492756), int32(4591), int32(406123))
 													mBase = m.M
 													v512 = m.ExcPending
 													if v512 != 0 {
@@ -606,7 +606,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 													if v491 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(492706), int32(4586), int32(406123))
+														F_errfinish(m, int32(492756), int32(4586), int32(406123))
 														mBase = m.M
 														v496 = m.ExcPending
 														if v496 != 0 {
@@ -656,7 +656,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 														if v491 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492706), int32(4586), int32(406123))
+															F_errfinish(m, int32(492756), int32(4586), int32(406123))
 															mBase = m.M
 															v496 = m.ExcPending
 															if v496 != 0 {
@@ -692,7 +692,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 															if v491 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(492706), int32(4586), int32(406123))
+																F_errfinish(m, int32(492756), int32(4586), int32(406123))
 																mBase = m.M
 																v496 = m.ExcPending
 																if v496 != 0 {
@@ -728,7 +728,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 																if v491 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(492706), int32(4586), int32(406123))
+																	F_errfinish(m, int32(492756), int32(4586), int32(406123))
 																	mBase = m.M
 																	v496 = m.ExcPending
 																	if v496 != 0 {
@@ -764,7 +764,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 																	if v491 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(492706), int32(4586), int32(406123))
+																		F_errfinish(m, int32(492756), int32(4586), int32(406123))
 																		mBase = m.M
 																		v496 = m.ExcPending
 																		if v496 != 0 {
@@ -808,7 +808,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 																				if v491 != 0 {
 																					return int32(0)
 																				} else {
-																					F_errfinish(m, int32(492706), int32(4586), int32(406123))
+																					F_errfinish(m, int32(492756), int32(4586), int32(406123))
 																					mBase = m.M
 																					v496 = m.ExcPending
 																					if v496 != 0 {
@@ -871,7 +871,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 							if v51 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492706), int32(4481), int32(406123))
+								F_errfinish(m, int32(492756), int32(4481), int32(406123))
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
@@ -914,7 +914,7 @@ func F_timestamptz_age(m *base.Module, l0 int32) int32 {
 						if v70 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492706), int32(4490), int32(406123))
+							F_errfinish(m, int32(492756), int32(4490), int32(406123))
 							mBase = m.M
 							v75 = m.ExcPending
 							if v75 != 0 {
@@ -1167,7 +1167,7 @@ func F_timestamptz_time(m *base.Module, l0 int32) int32 {
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2015), int32(372259))
+							F_errfinish(m, int32(495500), int32(2015), int32(372259))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {

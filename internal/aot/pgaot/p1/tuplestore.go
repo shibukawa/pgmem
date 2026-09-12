@@ -26,7 +26,7 @@ func F_tuplestore_putvalues(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v16
 	var v21 int32
 	_ = v21
-	v6 = int32(4486928)
+	v6 = int32(4487040)
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v9
@@ -178,7 +178,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 									if v54 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(495558), int32(552), int32(214388))
+										F_errfinish(m, int32(495608), int32(552), int32(214388))
 										mBase = m.M
 										v59 = m.ExcPending
 										if v59 != 0 {
@@ -224,7 +224,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 									if v76 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(495558), int32(562), int32(214388))
+										F_errfinish(m, int32(495608), int32(562), int32(214388))
 										mBase = m.M
 										v81 = m.ExcPending
 										if v81 != 0 {
@@ -253,7 +253,7 @@ func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32) {
 					if v89 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495558), int32(566), int32(214388))
+						F_errfinish(m, int32(495608), int32(566), int32(214388))
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {

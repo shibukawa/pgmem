@@ -525,7 +525,7 @@ L16:
 	goto L8
 L17:
 	;
-	F_pg_qsort(m, v55, v52, int32(8), int32(6750))
+	F_pg_qsort(m, v55, v52, int32(8), int32(6753))
 	mBase = m.M
 	v317 = m.ExcPending
 	if v317 != 0 {
@@ -715,7 +715,7 @@ L41:
 L42:
 	;
 	v374 = v55 + v349<<(uint(int32(3))%32)
-	v378 = *(*int32)(unsafe.Add(mBase, _consts[1394]))
+	v378 = *(*int32)(unsafe.Add(mBase, _consts[1395]))
 	v379 = m.T0[v378].(func(*base.Module, int32, int32) int32)(m, v374-int32(8), v374)
 	mBase = m.M
 	v380 = m.ExcPending
@@ -783,11 +783,11 @@ L52:
 	goto L43
 L53:
 	;
-	v429 = int32(4376384)
+	v429 = int32(4376432)
 	goto L55
 L54:
 	;
-	v429 = int32(4376392)
+	v429 = int32(4376440)
 	goto L55
 L55:
 	;
@@ -1386,7 +1386,7 @@ func F_word_is_not_variable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	F_errstart_cold(m, int32(21), int32(546495))
+	F_errstart_cold(m, int32(21), int32(546545))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {

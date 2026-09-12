@@ -380,7 +380,7 @@ L3:
 	}
 L4:
 	;
-	v79 = int32(542789)
+	v79 = int32(542839)
 	goto L1
 L5:
 	;
@@ -435,7 +435,7 @@ L10:
 	}
 L11:
 	;
-	v23 = F_cstring_to_text(m, int32(542825))
+	v23 = F_cstring_to_text(m, int32(542875))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -2248,7 +2248,7 @@ func F_pg_stat_get_subscription_stats(m *base.Module, l0 int32) int32 {
 		if v36 != 0 {
 			return int32(0)
 		} else {
-			F_TupleDescInitEntry(m, v35, int32(1), int32(433488), int32(26), int32(-1), int32(0))
+			F_TupleDescInitEntry(m, v35, int32(1), int32(433538), int32(26), int32(-1), int32(0))
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
@@ -2752,7 +2752,7 @@ L8:
 	goto L6
 L9:
 	;
-	F_s_lock(m, v75, int32(492360), int32(3950), int32(134737))
+	F_s_lock(m, v75, int32(492410), int32(3950), int32(134737))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {
@@ -2908,7 +2908,7 @@ L30:
 	goto L32
 L31:
 	;
-	v180 = int32(524570)
+	v180 = int32(524620)
 	goto L32
 L32:
 	;
@@ -3174,7 +3174,7 @@ L71:
 	goto L73
 L72:
 	;
-	v258 = int32(486047)
+	v258 = int32(486097)
 	goto L73
 L73:
 	;
@@ -3186,7 +3186,7 @@ L74:
 	goto L76
 L75:
 	;
-	v264 = int32(486097)
+	v264 = int32(486147)
 	goto L76
 L76:
 	;
@@ -4253,7 +4253,7 @@ L83:
 L84:
 	;
 	v249 = v12
-	v250 = int32(424543)
+	v250 = int32(424593)
 	goto L86
 L85:
 	;
@@ -5839,7 +5839,7 @@ L366:
 L367:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v12
-	F_errmsg(m, int32(708830), v19)
+	F_errmsg(m, int32(708880), v19)
 	mBase = m.M
 	v1017 = m.ExcPending
 	if v1017 != 0 {
@@ -5849,7 +5849,7 @@ L367:
 	}
 L368:
 	;
-	F_errfinish(m, int32(490323), int32(1426), int32(205611))
+	F_errfinish(m, int32(490373), int32(1426), int32(205611))
 	mBase = m.M
 	v1022 = m.ExcPending
 	if v1022 != 0 {

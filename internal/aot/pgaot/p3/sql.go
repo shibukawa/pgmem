@@ -71,12 +71,12 @@ func F_map_sql_identifier_to_xml_name(m *base.Module) int32 {
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494174), int32(2425), int32(376745))
+					F_errfinish(m, int32(494224), int32(2425), int32(376745))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return int32(0)
@@ -156,7 +156,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-					F_errcontext_msg(m, int32(465373), v7)
+					F_errcontext_msg(m, int32(465423), v7)
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
@@ -195,7 +195,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-						F_errcontext_msg(m, int32(465373), v7)
+						F_errcontext_msg(m, int32(465423), v7)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -251,7 +251,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 									v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-									F_errcontext_msg(m, int32(465373), v7)
+									F_errcontext_msg(m, int32(465423), v7)
 									mBase = m.M
 									v39 = m.ExcPending
 									if v39 != 0 {

@@ -192,7 +192,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v38
-	v47 = int32(4486928)
+	v47 = int32(4487040)
 	v48 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v13)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v50
@@ -459,7 +459,7 @@ func F_seq_identify(m *base.Module, l0 int32) int32 {
 	var v6 int32
 	_ = v6
 	if base.Ui32(l0) < base.Ui32(int32(16)) {
-		v6 = int32(532823)
+		v6 = int32(532873)
 	} else {
 		v6 = int32(0)
 	}

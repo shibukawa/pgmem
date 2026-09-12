@@ -22,7 +22,7 @@ func F_MarkLocalBufferDirty(m *base.Module, l0 int32) {
 	v11 = v4 + (l0^int32(-1))<<(uint(int32(6))%32) + int32(24)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	if v12&int32(8388608) == int32(0) {
-		v17 = int32(4385240)
+		v17 = int32(4385352)
 		v19 = *(*int64)(unsafe.Add(mBase, _consts[106]))
 		*(*int64)(unsafe.Add(mBase, _consts[106])) = v19 + int64(1)
 	} else {
@@ -73,7 +73,7 @@ func F_PinLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 	v14 = v8 + (int32(-2)-v10)<<(uint(int32(2))%32)
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 	if v15 == int32(0) {
-		v18 = int32(4402872)
+		v18 = int32(4402984)
 		v20 = *(*int32)(unsafe.Add(mBase, _consts[750]))
 		v21 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[750])) = v20 + v21
@@ -98,7 +98,7 @@ func F_PinLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v37 + v38
 	v42 = *(*int32)(unsafe.Add(mBase, _consts[258]))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_ResourceOwnerRemember(m, v42, v43+v38, int32(1609600))
+	F_ResourceOwnerRemember(m, v42, v43+v38, int32(1609648))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -278,7 +278,7 @@ L18:
 L19:
 	;
 	v48 = *(*int32)(unsafe.Add(mBase, _consts[799]))
-	F_s_lock(m, v48, int32(494492), int32(1495), int32(315723))
+	F_s_lock(m, v48, int32(494542), int32(1495), int32(315723))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -331,7 +331,7 @@ L26:
 	}
 L27:
 	;
-	F_errmsg_internal(m, int32(442284), int32(0))
+	F_errmsg_internal(m, int32(442334), int32(0))
 	mBase = m.M
 	v87 = m.ExcPending
 	if v87 != 0 {
@@ -341,7 +341,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(494492), int32(1505), int32(315723))
+	F_errfinish(m, int32(494542), int32(1505), int32(315723))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {

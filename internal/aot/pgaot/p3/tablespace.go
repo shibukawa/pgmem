@@ -295,7 +295,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 					if v28 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(496328), int32(893), int32(313797))
+						F_errfinish(m, int32(496378), int32(893), int32(313797))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -333,7 +333,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 						if v101 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(496328), int32(922), int32(313797))
+							F_errfinish(m, int32(496378), int32(922), int32(313797))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {
@@ -377,7 +377,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 								if v59 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(496328), int32(906), int32(313797))
+									F_errfinish(m, int32(496378), int32(906), int32(313797))
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
@@ -424,7 +424,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(496328), int32(914), int32(313797))
+								F_errfinish(m, int32(496378), int32(914), int32(313797))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {

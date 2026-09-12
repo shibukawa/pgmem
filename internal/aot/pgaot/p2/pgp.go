@@ -144,7 +144,7 @@ func F_pgp_armor_headers(m *base.Module, l0 int32) int32 {
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
 	if v16 == int32(0) {
-		v19 = int32(4486928)
+		v19 = int32(4487040)
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v21 = F_pg_detoast_datum_packed(m, v20)
 		mBase = m.M
@@ -180,7 +180,7 @@ func F_pgp_armor_headers(m *base.Module, l0 int32) int32 {
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(494101), int32(937), int32(134858))
+								F_errfinish(m, int32(494151), int32(937), int32(134858))
 								mBase = m.M
 								v170 = m.ExcPending
 								if v170 != 0 {
@@ -432,7 +432,7 @@ func F_pgp_expect_packet_end(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		if int32(0) < v10 {
-			F_px_debug(m, int32(501087), int32(0))
+			F_px_debug(m, int32(501137), int32(0))
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
@@ -785,14 +785,14 @@ L9:
 	}
 L10:
 	;
-	v35 = int32(527045)
+	v35 = int32(527095)
 	goto L12
 L12:
 	;
 	goto L13
 L13:
 	;
-	v38 = int32(*(*int8)(unsafe.Add(mBase, _consts[1391])))
+	v38 = int32(*(*int8)(unsafe.Add(mBase, _consts[1392])))
 	v42 = l0
 	goto L14
 L14:
@@ -1031,14 +1031,14 @@ L49:
 	}
 L50:
 	;
-	v147 = int32(539392)
+	v147 = int32(539442)
 	goto L51
 L51:
 	;
 	goto L53
 L53:
 	;
-	v152 = int32(*(*int8)(unsafe.Add(mBase, _consts[1392])))
+	v152 = int32(*(*int8)(unsafe.Add(mBase, _consts[1393])))
 	v156 = v131
 	goto L54
 L54:
@@ -1613,7 +1613,7 @@ L136:
 	;
 	v432 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v431))) = uint8(v432)
-	v435 = F_strstr(m, v419, int32(727196))
+	v435 = F_strstr(m, v419, int32(727246))
 	mBase = m.M
 	if v435 == v432 {
 		v486 = v16
@@ -1703,7 +1703,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(491929), int32(473), int32(134823))
+	F_errfinish(m, int32(491979), int32(473), int32(134823))
 	mBase = m.M
 	v508 = m.ExcPending
 	if v508 != 0 {
@@ -1728,7 +1728,7 @@ L151:
 	}
 L152:
 	;
-	F_errfinish(m, int32(491929), int32(484), int32(134823))
+	F_errfinish(m, int32(491979), int32(484), int32(134823))
 	mBase = m.M
 	v525 = m.ExcPending
 	if v525 != 0 {
@@ -2002,14 +2002,14 @@ L15:
 	goto L5
 L16:
 	;
-	v436 = int32(4375328)
+	v436 = int32(4375376)
 	goto L2
 L17:
 	;
 	goto L18
 L18:
 	;
-	v57 = int32(547092)
+	v57 = int32(547142)
 	v58 = l0
 	goto L20
 L19:
@@ -2090,7 +2090,7 @@ L31:
 	goto L21
 L32:
 	;
-	v436 = int32(4375348)
+	v436 = int32(4375396)
 	goto L2
 L33:
 	;
@@ -2178,7 +2178,7 @@ L47:
 	goto L37
 L48:
 	;
-	v436 = int32(4375368)
+	v436 = int32(4375416)
 	goto L2
 L49:
 	;
@@ -2266,7 +2266,7 @@ L63:
 	goto L53
 L64:
 	;
-	v436 = int32(4375388)
+	v436 = int32(4375436)
 	goto L2
 L65:
 	;
@@ -2354,14 +2354,14 @@ L79:
 	goto L69
 L80:
 	;
-	v436 = int32(4375408)
+	v436 = int32(4375456)
 	goto L2
 L81:
 	;
 	goto L82
 L82:
 	;
-	v249 = int32(546476)
+	v249 = int32(546526)
 	v250 = l0
 	goto L84
 L83:
@@ -2442,14 +2442,14 @@ L95:
 	goto L85
 L96:
 	;
-	v436 = int32(4375428)
+	v436 = int32(4375476)
 	goto L2
 L97:
 	;
 	goto L98
 L98:
 	;
-	v297 = int32(550034)
+	v297 = int32(550084)
 	v298 = l0
 	goto L100
 L99:
@@ -2530,14 +2530,14 @@ L111:
 	goto L101
 L112:
 	;
-	v436 = int32(4375448)
+	v436 = int32(4375496)
 	goto L2
 L113:
 	;
 	goto L114
 L114:
 	;
-	v345 = int32(546856)
+	v345 = int32(546906)
 	v346 = l0
 	goto L116
 L115:
@@ -2618,7 +2618,7 @@ L127:
 	goto L117
 L128:
 	;
-	v436 = int32(4375468)
+	v436 = int32(4375516)
 	goto L2
 L129:
 	;
@@ -2707,7 +2707,7 @@ L143:
 	goto L133
 L144:
 	;
-	v436 = int32(4375488)
+	v436 = int32(4375536)
 	goto L2
 }
 func F_pgp_get_cipher_key_size(m *base.Module, l0 int32) int32 {
@@ -2731,7 +2731,7 @@ func F_pgp_get_cipher_key_size(m *base.Module, l0 int32) int32 {
 		if int32(base.Ui32(int32(487))>>(uint(v4)%32))&int32(1) == int32(0) {
 			v19 = v2
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1393])))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1394])))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
 			v19 = v18
 		}

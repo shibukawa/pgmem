@@ -133,7 +133,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 							if v78 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(658), int32(31099))
+								F_errfinish(m, int32(495500), int32(658), int32(31099))
 								mBase = m.M
 								v83 = m.ExcPending
 								if v83 != 0 {
@@ -248,7 +248,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495450), int32(658), int32(31099))
+									F_errfinish(m, int32(495500), int32(658), int32(31099))
 									mBase = m.M
 									v83 = m.ExcPending
 									if v83 != 0 {
@@ -309,7 +309,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 						if v62 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(658), int32(31099))
+							F_errfinish(m, int32(495500), int32(658), int32(31099))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -395,7 +395,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 									if v78 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495450), int32(658), int32(31099))
+										F_errfinish(m, int32(495500), int32(658), int32(31099))
 										mBase = m.M
 										v83 = m.ExcPending
 										if v83 != 0 {

@@ -60,7 +60,7 @@ func F_bit_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490101), int32(1195), int32(26375))
+						F_errfinish(m, int32(490151), int32(1195), int32(26375))
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
@@ -111,12 +111,12 @@ func F_bit_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(436989), int32(0))
+				F_errmsg(m, int32(437039), int32(0))
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490101), int32(1191), int32(26375))
+					F_errfinish(m, int32(490151), int32(1191), int32(26375))
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return int32(0)
@@ -212,13 +212,13 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v11
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v14
-						F_errmsg(m, int32(660081), v9)
+						F_errmsg(m, int32(660131), v9)
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490101), int32(357), int32(36195))
+							F_errfinish(m, int32(490151), int32(357), int32(36195))
 							mBase = m.M
 							v96 = m.ExcPending
 							if v96 != 0 {
@@ -283,7 +283,7 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 					if v74 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490101), int32(347), int32(36195))
+						F_errfinish(m, int32(490151), int32(347), int32(36195))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {

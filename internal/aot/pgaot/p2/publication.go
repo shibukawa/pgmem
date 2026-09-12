@@ -75,7 +75,7 @@ func F_GetPublication(m *base.Module, l0 int32) int32 {
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(493193), int32(1078), int32(265704))
+					F_errfinish(m, int32(493243), int32(1078), int32(265704))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -767,7 +767,7 @@ L33:
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v86)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v82)+4)) = v114
 	*(*int32)(unsafe.Add(mBase, uint32(v82))) = v113 + int32(4)
-	F_errmsg(m, int32(690804), v82)
+	F_errmsg(m, int32(690854), v82)
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -777,7 +777,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(493193), int32(463), int32(261781))
+	F_errfinish(m, int32(493243), int32(463), int32(261781))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -840,7 +840,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(493193), int32(65), int32(261775))
+	F_errfinish(m, int32(493243), int32(65), int32(261775))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -928,7 +928,7 @@ L49:
 	}
 L50:
 	;
-	F_errdetail(m, int32(581716), int32(0))
+	F_errdetail(m, int32(581766), int32(0))
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -938,7 +938,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(493193), int32(81), int32(261775))
+	F_errfinish(m, int32(493243), int32(81), int32(261775))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {
@@ -975,7 +975,7 @@ L54:
 	}
 L55:
 	;
-	F_errdetail(m, int32(582426), int32(0))
+	F_errdetail(m, int32(582476), int32(0))
 	mBase = m.M
 	v207 = m.ExcPending
 	if v207 != 0 {
@@ -985,7 +985,7 @@ L55:
 	}
 L56:
 	;
-	F_errfinish(m, int32(493193), int32(87), int32(261775))
+	F_errfinish(m, int32(493243), int32(87), int32(261775))
 	mBase = m.M
 	v212 = m.ExcPending
 	if v212 != 0 {
@@ -1720,7 +1720,7 @@ L161:
 	}
 L162:
 	;
-	F_errdetail(m, int32(582139), int32(0))
+	F_errdetail(m, int32(582189), int32(0))
 	mBase = m.M
 	v734 = m.ExcPending
 	if v734 != 0 {
@@ -1730,7 +1730,7 @@ L162:
 	}
 L163:
 	;
-	F_errfinish(m, int32(493193), int32(73), int32(261775))
+	F_errfinish(m, int32(493243), int32(73), int32(261775))
 	mBase = m.M
 	v739 = m.ExcPending
 	if v739 != 0 {

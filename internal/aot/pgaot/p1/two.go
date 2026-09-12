@@ -171,7 +171,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 		*(*uint32)(unsafe.Add(mBase, uint32(v10)+164)) = uint32(v33)
 		v36 = int64(base.Ui64(v33) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v10)+160)) = uint32(v36)
-		v44 = F_pg_snprintf(m, v10+int32(272), int32(1024), int32(506786), v10+int32(160))
+		v44 = F_pg_snprintf(m, v10+int32(272), int32(1024), int32(506836), v10+int32(160))
 		mBase = m.M
 		v45 = m.ExcPending
 		if v45 != 0 {
@@ -210,7 +210,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 									if v70 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495511), int32(1309), int32(387719))
+										F_errfinish(m, int32(495561), int32(1309), int32(387719))
 										mBase = m.M
 										v75 = m.ExcPending
 										if v75 != 0 {
@@ -244,7 +244,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 								if v70 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495511), int32(1309), int32(387719))
+									F_errfinish(m, int32(495561), int32(1309), int32(387719))
 									mBase = m.M
 									v75 = m.ExcPending
 									if v75 != 0 {
@@ -264,7 +264,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 						mBase = m.M
 						v85 = v81
 					} else {
-						v84 = F___fstatat(m, v49, int32(738681), v10+int32(176), int32(4096))
+						v84 = F___fstatat(m, v49, int32(738731), v10+int32(176), int32(4096))
 						mBase = m.M
 						v85 = v84
 					}
@@ -288,7 +288,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 								if v168 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495511), int32(1321), int32(387719))
+									F_errfinish(m, int32(495561), int32(1321), int32(387719))
 									mBase = m.M
 									v173 = m.ExcPending
 									if v173 != 0 {
@@ -324,7 +324,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 									if v191 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495511), int32(1332), int32(387719))
+										F_errfinish(m, int32(495561), int32(1332), int32(387719))
 										mBase = m.M
 										v196 = m.ExcPending
 										if v196 != 0 {
@@ -354,13 +354,13 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+128)) = v10 + int32(272)
-										F_errmsg(m, int32(697459), v10+int32(128))
+										F_errmsg(m, int32(697509), v10+int32(128))
 										mBase = m.M
 										v211 = m.ExcPending
 										if v211 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(495511), int32(1339), int32(387719))
+											F_errfinish(m, int32(495561), int32(1339), int32(387719))
 											mBase = m.M
 											v216 = m.ExcPending
 											if v216 != 0 {
@@ -405,7 +405,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 													if v226 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(495511), int32(1353), int32(387719))
+														F_errfinish(m, int32(495561), int32(1353), int32(387719))
 														mBase = m.M
 														v231 = m.ExcPending
 														if v231 != 0 {
@@ -421,13 +421,13 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 												*(*int64)(unsafe.Add(mBase, uint32(v10)+120)) = v86
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+116)) = v105
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+112)) = v10 + int32(272)
-												F_errmsg(m, int32(427501), v10+int32(112))
+												F_errmsg(m, int32(427551), v10+int32(112))
 												mBase = m.M
 												v123 = m.ExcPending
 												if v123 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(495511), int32(1357), int32(387719))
+													F_errfinish(m, int32(495561), int32(1357), int32(387719))
 													mBase = m.M
 													v128 = m.ExcPending
 													if v128 != 0 {
@@ -469,7 +469,7 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 														if v245 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(495511), int32(1365), int32(387719))
+															F_errfinish(m, int32(495561), int32(1365), int32(387719))
 															mBase = m.M
 															v250 = m.ExcPending
 															if v250 != 0 {
@@ -498,13 +498,13 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v10)+64)) = v10 + int32(272)
-															F_errmsg(m, int32(697763), v10-int32(-64))
+															F_errmsg(m, int32(697813), v10-int32(-64))
 															mBase = m.M
 															v265 = m.ExcPending
 															if v265 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(495511), int32(1372), int32(387719))
+																F_errfinish(m, int32(495561), int32(1372), int32(387719))
 																mBase = m.M
 																v270 = m.ExcPending
 																if v270 != 0 {
@@ -533,13 +533,13 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v10)+48)) = v10 + int32(272)
-																F_errmsg(m, int32(697804), v10+int32(48))
+																F_errmsg(m, int32(697854), v10+int32(48))
 																mBase = m.M
 																v285 = m.ExcPending
 																if v285 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(495511), int32(1378), int32(387719))
+																	F_errfinish(m, int32(495561), int32(1378), int32(387719))
 																	mBase = m.M
 																	v290 = m.ExcPending
 																	if v290 != 0 {
@@ -571,13 +571,13 @@ func F_ReadTwoPhaseFile(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v10 + int32(272)
-																	F_errmsg(m, int32(697837), v10+int32(32))
+																	F_errmsg(m, int32(697887), v10+int32(32))
 																	mBase = m.M
 																	v305 = m.ExcPending
 																	if v305 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(495511), int32(1390), int32(387719))
+																		F_errfinish(m, int32(495561), int32(1390), int32(387719))
 																		mBase = m.M
 																		v310 = m.ExcPending
 																		if v310 != 0 {
@@ -669,7 +669,7 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+20)) = uint32(v29)
 		v32 = int64(base.Ui64(v29) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+16)) = uint32(v32)
-		v40 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(506786), v8+int32(16))
+		v40 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(506836), v8+int32(16))
 		mBase = m.M
 		v41 = m.ExcPending
 		if v41 != 0 {
@@ -710,7 +710,7 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 									if v66 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(495511), int32(1716), int32(387679))
+										F_errfinish(m, int32(495561), int32(1716), int32(387679))
 										mBase = m.M
 										v71 = m.ExcPending
 										if v71 != 0 {
@@ -748,7 +748,7 @@ func F_RemoveTwoPhaseFile(m *base.Module, l0 int32, l1 int32) {
 								if v66 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(495511), int32(1716), int32(387679))
+									F_errfinish(m, int32(495561), int32(1716), int32(387679))
 									mBase = m.M
 									v71 = m.ExcPending
 									if v71 != 0 {
@@ -836,7 +836,7 @@ func F_UpdateTwoPhaseState(m *base.Module, l0 int32) {
 					if v26 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(496725), int32(1809), int32(351874))
+						F_errfinish(m, int32(496775), int32(1809), int32(351874))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

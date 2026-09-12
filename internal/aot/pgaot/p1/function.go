@@ -384,7 +384,7 @@ func F_has_function_privilege_name_name(m *base.Module, l0 int32) int32 {
 									if v39 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(494337), int32(3565), int32(376468))
+										F_errfinish(m, int32(494387), int32(3565), int32(376468))
 										mBase = m.M
 										v44 = m.ExcPending
 										if v44 != 0 {

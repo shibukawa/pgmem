@@ -581,7 +581,7 @@ func F_TupleDescInitEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v106 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(496580), int32(896), int32(12523))
+					F_errfinish(m, int32(496630), int32(896), int32(12523))
 					mBase = m.M
 					v111 = m.ExcPending
 					if v111 != 0 {
@@ -1218,7 +1218,7 @@ L5:
 	goto L6
 L6:
 	;
-	v55 = int32(4486928)
+	v55 = int32(4487040)
 	v56 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v54)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v58
@@ -1495,7 +1495,7 @@ L37:
 	}
 L38:
 	;
-	v177 = int32(4486928)
+	v177 = int32(4487040)
 	v178 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v181 = *(*int32)(unsafe.Add(mBase, _consts[661]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v181
@@ -1521,7 +1521,7 @@ L40:
 	goto L41
 L41:
 	;
-	v163 = int32(4486928)
+	v163 = int32(4487040)
 	v164 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v167 = *(*int32)(unsafe.Add(mBase, _consts[661]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v167
@@ -2090,7 +2090,7 @@ L112:
 	goto L113
 L113:
 	;
-	v586 = int32(4486928)
+	v586 = int32(4487040)
 	v587 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v589 = *(*int32)(unsafe.Add(mBase, uint32(v585)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v589
@@ -2293,7 +2293,7 @@ L137:
 	goto L138
 L138:
 	;
-	v648 = int32(4486928)
+	v648 = int32(4487040)
 	v649 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v651 = *(*int32)(unsafe.Add(mBase, uint32(v647)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v651
@@ -2381,7 +2381,7 @@ L146:
 	goto L147
 L147:
 	;
-	v683 = int32(4486928)
+	v683 = int32(4487040)
 	v684 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v686 = *(*int32)(unsafe.Add(mBase, uint32(v682)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v686

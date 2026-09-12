@@ -174,7 +174,7 @@ func F_tuplestore_alloc_read_pointer(m *base.Module, l0 int32, l1 int32) int32 {
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495558), int32(401), int32(214419))
+						F_errfinish(m, int32(495608), int32(401), int32(214419))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -257,7 +257,7 @@ func F_tuplestore_alloc_read_pointer(m *base.Module, l0 int32, l1 int32) int32 {
 				if v64 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495558), int32(401), int32(214419))
+					F_errfinish(m, int32(495608), int32(401), int32(214419))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -558,7 +558,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 					if v247 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495558), int32(1394), int32(214359))
+						F_errfinish(m, int32(495608), int32(1394), int32(214359))
 						mBase = m.M
 						v252 = m.ExcPending
 						if v252 != 0 {
@@ -605,7 +605,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 										if v185 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(495558), int32(1373), int32(214359))
+											F_errfinish(m, int32(495608), int32(1373), int32(214359))
 											mBase = m.M
 											v190 = m.ExcPending
 											if v190 != 0 {
@@ -650,7 +650,7 @@ func F_tuplestore_copy_read_pointer(m *base.Module, l0 int32, l1 int32, l2 int32
 										if v207 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(495558), int32(1382), int32(214359))
+											F_errfinish(m, int32(495608), int32(1382), int32(214359))
 											mBase = m.M
 											v212 = m.ExcPending
 											if v212 != 0 {
@@ -1078,7 +1078,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v221 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495558), int32(1025), int32(380981))
+									F_errfinish(m, int32(495608), int32(1025), int32(380981))
 									mBase = m.M
 									v226 = m.ExcPending
 									if v226 != 0 {
@@ -1193,7 +1193,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															if v236 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																mBase = m.M
 																v241 = m.ExcPending
 																if v241 != 0 {
@@ -1260,7 +1260,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																	if v159 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(495558), int32(1089), int32(380981))
+																		F_errfinish(m, int32(495608), int32(1089), int32(380981))
 																		mBase = m.M
 																		v164 = m.ExcPending
 																		if v164 != 0 {
@@ -1317,7 +1317,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																		if v236 != 0 {
 																			return int32(0)
 																		} else {
-																			F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																			F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																			mBase = m.M
 																			v241 = m.ExcPending
 																			if v241 != 0 {
@@ -1456,7 +1456,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													if v236 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(495558), int32(1106), int32(380981))
+														F_errfinish(m, int32(495608), int32(1106), int32(380981))
 														mBase = m.M
 														v241 = m.ExcPending
 														if v241 != 0 {
@@ -1523,7 +1523,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															if v159 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(495558), int32(1089), int32(380981))
+																F_errfinish(m, int32(495608), int32(1089), int32(380981))
 																mBase = m.M
 																v164 = m.ExcPending
 																if v164 != 0 {
@@ -1580,7 +1580,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																if v236 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																	F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																	mBase = m.M
 																	v241 = m.ExcPending
 																	if v241 != 0 {
@@ -1655,7 +1655,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v221 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495558), int32(1025), int32(380981))
+										F_errfinish(m, int32(495608), int32(1025), int32(380981))
 										mBase = m.M
 										v226 = m.ExcPending
 										if v226 != 0 {
@@ -1770,7 +1770,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																if v236 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																	F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																	mBase = m.M
 																	v241 = m.ExcPending
 																	if v241 != 0 {
@@ -1837,7 +1837,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																		if v159 != 0 {
 																			return int32(0)
 																		} else {
-																			F_errfinish(m, int32(495558), int32(1089), int32(380981))
+																			F_errfinish(m, int32(495608), int32(1089), int32(380981))
 																			mBase = m.M
 																			v164 = m.ExcPending
 																			if v164 != 0 {
@@ -1894,7 +1894,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																			if v236 != 0 {
 																				return int32(0)
 																			} else {
-																				F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																				F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																				mBase = m.M
 																				v241 = m.ExcPending
 																				if v241 != 0 {
@@ -2033,7 +2033,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														if v236 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(495558), int32(1106), int32(380981))
+															F_errfinish(m, int32(495608), int32(1106), int32(380981))
 															mBase = m.M
 															v241 = m.ExcPending
 															if v241 != 0 {
@@ -2100,7 +2100,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																if v159 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(495558), int32(1089), int32(380981))
+																	F_errfinish(m, int32(495608), int32(1089), int32(380981))
 																	mBase = m.M
 																	v164 = m.ExcPending
 																	if v164 != 0 {
@@ -2157,7 +2157,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																	if v236 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(495558), int32(1106), int32(380981))
+																		F_errfinish(m, int32(495608), int32(1106), int32(380981))
 																		mBase = m.M
 																		v241 = m.ExcPending
 																		if v241 != 0 {
@@ -2300,7 +2300,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v236 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(495558), int32(1106), int32(380981))
+												F_errfinish(m, int32(495608), int32(1106), int32(380981))
 												mBase = m.M
 												v241 = m.ExcPending
 												if v241 != 0 {
@@ -2367,7 +2367,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													if v159 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(495558), int32(1089), int32(380981))
+														F_errfinish(m, int32(495608), int32(1089), int32(380981))
 														mBase = m.M
 														v164 = m.ExcPending
 														if v164 != 0 {
@@ -2424,7 +2424,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														if v236 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(495558), int32(1106), int32(380981))
+															F_errfinish(m, int32(495608), int32(1106), int32(380981))
 															mBase = m.M
 															v241 = m.ExcPending
 															if v241 != 0 {
@@ -2472,7 +2472,7 @@ func F_tuplestore_gettuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v195 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(495558), int32(1111), int32(380981))
+				F_errfinish(m, int32(495608), int32(1111), int32(380981))
 				mBase = m.M
 				v200 = m.ExcPending
 				if v200 != 0 {

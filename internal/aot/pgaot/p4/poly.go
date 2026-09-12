@@ -664,13 +664,13 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 						if v117 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(438381), int32(0))
+							F_errmsg(m, int32(438431), int32(0))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
 								return int32(0)
 							} else {
-								F_errsave_finish(m, v19, int32(490642), int32(3438), int32(277437))
+								F_errsave_finish(m, v19, int32(490692), int32(3438), int32(277437))
 								mBase = m.M
 								v126 = m.ExcPending
 								if v126 != 0 {
@@ -838,13 +838,13 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v20
 						*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(271619)
-						F_errmsg(m, int32(706620), v17)
+						F_errmsg(m, int32(706670), v17)
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {
 							return int32(0)
 						} else {
-							F_errsave_finish(m, v19, int32(490642), int32(3429), int32(277437))
+							F_errsave_finish(m, v19, int32(490692), int32(3429), int32(277437))
 							mBase = m.M
 							v99 = m.ExcPending
 							if v99 != 0 {
@@ -880,13 +880,13 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v20
 					*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(271619)
-					F_errmsg(m, int32(706620), v17)
+					F_errmsg(m, int32(706670), v17)
 					mBase = m.M
 					v94 = m.ExcPending
 					if v94 != 0 {
 						return int32(0)
 					} else {
-						F_errsave_finish(m, v19, int32(490642), int32(3429), int32(277437))
+						F_errsave_finish(m, v19, int32(490692), int32(3429), int32(277437))
 						mBase = m.M
 						v99 = m.ExcPending
 						if v99 != 0 {

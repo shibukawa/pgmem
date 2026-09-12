@@ -115,7 +115,7 @@ func F_has_sequence_privilege_id(m *base.Module, l0 int32) int32 {
 									if v47 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(494337), int32(2222), int32(434267))
+										F_errfinish(m, int32(494387), int32(2222), int32(434317))
 										mBase = m.M
 										v52 = m.ExcPending
 										if v52 != 0 {
@@ -287,7 +287,7 @@ func F_has_sequence_privilege_id_name(m *base.Module, l0 int32) int32 {
 												if v48 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(494337), int32(2253), int32(378442))
+													F_errfinish(m, int32(494387), int32(2253), int32(378442))
 													mBase = m.M
 													v53 = m.ExcPending
 													if v53 != 0 {

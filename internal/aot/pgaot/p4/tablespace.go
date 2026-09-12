@@ -79,7 +79,7 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	v11 = v9 - int32(1152)
 	m.G0 = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(550670)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(550720)
 	v22 = F_pg_snprintf(m, v11+int32(128), int32(1024), int32(176209), v11+int32(16))
 	mBase = m.M
 	v25 = m.ExcPending
@@ -114,7 +114,7 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 						if v48 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(492539), int32(1160), int32(416822))
+							F_errfinish(m, int32(492589), int32(1160), int32(416872))
 							mBase = m.M
 							v53 = m.ExcPending
 							if v53 != 0 {
@@ -129,7 +129,7 @@ func F_sendTablespace(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 				}
 			}
 		} else {
-			F__tarWriteHeader(m, l0, int32(550670), int32(0), v11+int32(32), l3)
+			F__tarWriteHeader(m, l0, int32(550720), int32(0), v11+int32(32), l3)
 			mBase = m.M
 			v59 = m.ExcPending
 			if v59 != 0 {
@@ -156,7 +156,7 @@ func F_tablespace_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_build_reloptions(m, l0, l1, int32(128), int32(32), int32(739184), int32(4))
+	v7 = F_build_reloptions(m, l0, l1, int32(128), int32(32), int32(739232), int32(4))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

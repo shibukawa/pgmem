@@ -126,7 +126,7 @@ func F_jsonpath_yyensure_buffer_stack(m *base.Module, l0 int32) {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v8
 			if v8 == int32(0) {
-				F_yy_fatal_error_5(m, int32(665631))
+				F_yy_fatal_error_5(m, int32(665681))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -155,7 +155,7 @@ func F_jsonpath_yyensure_buffer_stack(m *base.Module, l0 int32) {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v26
 				if v26 == int32(0) {
-					F_yy_fatal_error_5(m, int32(665631))
+					F_yy_fatal_error_5(m, int32(665681))
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {

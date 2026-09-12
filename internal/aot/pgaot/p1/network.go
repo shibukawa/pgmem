@@ -2586,7 +2586,7 @@ func F_network_host(m *base.Module, l0 int32) int32 {
 						if v56 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(494432), int32(1149), int32(67817))
+							F_errfinish(m, int32(494482), int32(1149), int32(67817))
 							mBase = m.M
 							v61 = m.ExcPending
 							if v61 != 0 {

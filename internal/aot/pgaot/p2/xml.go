@@ -31,12 +31,12 @@ func F_XmlTableInitOpaque(m *base.Module, l0 int32, l1 int32) {
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494174), int32(4722), int32(342631))
+					F_errfinish(m, int32(494224), int32(4722), int32(342631))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -76,12 +76,12 @@ func F_XmlTableSetDocument(m *base.Module, l0 int32, l1 int32) {
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494174), int32(4779), int32(94369))
+					F_errfinish(m, int32(494224), int32(4779), int32(94369))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -121,12 +121,12 @@ func F_XmlTableSetNamespace(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494174), int32(4805), int32(415922))
+					F_errfinish(m, int32(494224), int32(4805), int32(415972))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return
@@ -196,12 +196,12 @@ func F_xml_recv(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(560427), int32(0))
+				F_errdetail(m, int32(560477), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494174), int32(431), int32(36355))
+					F_errfinish(m, int32(494224), int32(431), int32(36355))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

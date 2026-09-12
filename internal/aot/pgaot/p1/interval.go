@@ -198,7 +198,7 @@ func F_interval_avg_serialize(m *base.Module, l0 int32) int32 {
 			if v52 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492706), int32(4135), int32(340069))
+				F_errfinish(m, int32(492756), int32(4135), int32(340069))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
@@ -613,7 +613,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(492706), int32(3772), int32(35338))
+	F_errfinish(m, int32(492756), int32(3772), int32(35338))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -900,7 +900,7 @@ L72:
 	}
 L73:
 	;
-	F_errfinish(m, int32(492706), int32(3841), int32(35338))
+	F_errfinish(m, int32(492756), int32(3841), int32(35338))
 	mBase = m.M
 	v245 = m.ExcPending
 	if v245 != 0 {
@@ -1300,7 +1300,7 @@ func F_interval_time(m *base.Module, l0 int32) int32 {
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(2085), int32(372779))
+								F_errfinish(m, int32(495500), int32(2085), int32(372779))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -1374,7 +1374,7 @@ func F_interval_time(m *base.Module, l0 int32) int32 {
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2085), int32(372779))
+							F_errfinish(m, int32(495500), int32(2085), int32(372779))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {

@@ -538,7 +538,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(489743), int32(290), int32(232704))
+	F_errfinish(m, int32(489793), int32(290), int32(232704))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -553,7 +553,7 @@ L8:
 	}
 L9:
 	;
-	v45 = int32(4382496)
+	v45 = int32(4382608)
 	v46 = *(*int32)(unsafe.Add(mBase, _consts[113]))
 	v47 = *(*int64)(unsafe.Add(mBase, uint32(v46)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v46)+280)) = v47
@@ -709,7 +709,7 @@ L27:
 L28:
 	;
 	v137 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
-	v139 = *(*int32)(unsafe.Add(mBase, _consts[518]))
+	v139 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 	v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+104))
 	F_XLogBeginRead(m, v137, v140)
 	mBase = m.M
@@ -808,7 +808,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(494412), int32(2042), int32(312594))
+	F_errfinish(m, int32(494462), int32(2042), int32(312594))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -878,7 +878,7 @@ L52:
 	*(*int32)(unsafe.Add(mBase, uint32(v112))) = v135
 	*(*int32)(unsafe.Add(mBase, uint32(v111)+8)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v111)+4)) = int32(993)
-	v203 = int32(4479832)
+	v203 = int32(4479944)
 	v204 = *(*int32)(unsafe.Add(mBase, _consts[141]))
 	*(*int32)(unsafe.Add(mBase, uint32(v111))) = v204
 	*(*int32)(unsafe.Add(mBase, _consts[141])) = v111
@@ -1124,13 +1124,13 @@ func F_binary_upgrade_replorigin_advance(m *base.Module, l0 int32) int32 {
 			if v80 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(436503), int32(0))
+				F_errmsg_internal(m, int32(436553), int32(0))
 				mBase = m.M
 				v84 = m.ExcPending
 				if v84 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(384), int32(414548))
+					F_errfinish(m, int32(489793), int32(384), int32(414548))
 					mBase = m.M
 					v89 = m.ExcPending
 					if v89 != 0 {
@@ -1245,7 +1245,7 @@ func F_binary_upgrade_replorigin_advance(m *base.Module, l0 int32) int32 {
 				if v71 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(377), int32(414548))
+					F_errfinish(m, int32(489793), int32(377), int32(414548))
 					mBase = m.M
 					v76 = m.ExcPending
 					if v76 != 0 {
@@ -1295,7 +1295,7 @@ func F_binary_upgrade_set_next_toast_pg_class_oid(m *base.Module, l0 int32) int3
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(145), int32(431285))
+					F_errfinish(m, int32(489793), int32(145), int32(431335))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

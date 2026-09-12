@@ -111,7 +111,7 @@ func F_InitLocalBuffers(m *base.Module) {
 	m.G0 = v8
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[172]))
 	if v11 < int32(0) {
-		v16 = *(*int32)(unsafe.Add(mBase, _consts[933]))
+		v16 = *(*int32)(unsafe.Add(mBase, _consts[934]))
 		v17 = int32(64)
 		v18 = int32(0)
 		if v16 == v18 {
@@ -201,7 +201,7 @@ func F_InitLocalBuffers(m *base.Module) {
 				mBase = m.M
 			}
 		}
-		*(*int32)(unsafe.Add(mBase, _consts[932])) = v108
+		*(*int32)(unsafe.Add(mBase, _consts[933])) = v108
 		if v38 == int32(0) {
 			F_errstart_cold(m, int32(22), int32(0))
 			mBase = m.M
@@ -221,7 +221,7 @@ func F_InitLocalBuffers(m *base.Module) {
 					if v199 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495093), int32(745), int32(134616))
+						F_errfinish(m, int32(495143), int32(745), int32(134616))
 						mBase = m.M
 						v204 = m.ExcPending
 						if v204 != 0 {
@@ -254,7 +254,7 @@ func F_InitLocalBuffers(m *base.Module) {
 						if v199 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(495093), int32(745), int32(134616))
+							F_errfinish(m, int32(495143), int32(745), int32(134616))
 							mBase = m.M
 							v204 = m.ExcPending
 							if v204 != 0 {
@@ -287,7 +287,7 @@ func F_InitLocalBuffers(m *base.Module) {
 							if v199 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(495093), int32(745), int32(134616))
+								F_errfinish(m, int32(495143), int32(745), int32(134616))
 								mBase = m.M
 								v204 = m.ExcPending
 								if v204 != 0 {
@@ -302,7 +302,7 @@ func F_InitLocalBuffers(m *base.Module) {
 					}
 				} else {
 					v127 = int32(0)
-					*(*int32)(unsafe.Add(mBase, _consts[934])) = v127
+					*(*int32)(unsafe.Add(mBase, _consts[935])) = v127
 					if v127 < v16 {
 						v133 = v127
 						for {
@@ -328,7 +328,7 @@ func F_InitLocalBuffers(m *base.Module) {
 					if v164 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[935])) = v163
+						*(*int32)(unsafe.Add(mBase, _consts[936])) = v163
 						if v163 == int32(0) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
@@ -342,7 +342,7 @@ func F_InitLocalBuffers(m *base.Module) {
 								if v212 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(495093), int32(782), int32(134616))
+									F_errfinish(m, int32(495143), int32(782), int32(134616))
 									mBase = m.M
 									v217 = m.ExcPending
 									if v217 != 0 {
@@ -355,7 +355,7 @@ func F_InitLocalBuffers(m *base.Module) {
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[936])) = v16
+							*(*int32)(unsafe.Add(mBase, _consts[937])) = v16
 							m.G0 = v8 + int32(48)
 							return
 						}
@@ -382,7 +382,7 @@ func F_InitLocalBuffers(m *base.Module) {
 				if v183 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(495093), int32(736), int32(134616))
+					F_errfinish(m, int32(495143), int32(736), int32(134616))
 					mBase = m.M
 					v188 = m.ExcPending
 					if v188 != 0 {

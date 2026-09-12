@@ -297,7 +297,7 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(2670), int32(307347))
+								F_errfinish(m, int32(495500), int32(2670), int32(307347))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -399,7 +399,7 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2670), int32(307347))
+							F_errfinish(m, int32(495500), int32(2670), int32(307347))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -627,7 +627,7 @@ func F_timetz_zone(m *base.Module, l0 int32) int32 {
 									if v105 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495450), int32(3166), int32(370019))
+										F_errfinish(m, int32(495500), int32(3166), int32(370019))
 										mBase = m.M
 										v110 = m.ExcPending
 										if v110 != 0 {

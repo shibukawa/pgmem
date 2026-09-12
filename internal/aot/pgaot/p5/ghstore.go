@@ -42,7 +42,7 @@ func F_ghstore_out(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(489580), int32(112), int32(66982))
+				F_errfinish(m, int32(489630), int32(112), int32(66982))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

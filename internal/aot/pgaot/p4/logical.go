@@ -80,7 +80,7 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 						if v55 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(494412), int32(128), int32(122279))
+							F_errfinish(m, int32(494462), int32(128), int32(122279))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
@@ -126,7 +126,7 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 								if v71 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(494412), int32(143), int32(122279))
+									F_errfinish(m, int32(494462), int32(143), int32(122279))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -159,13 +159,13 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 				if v35 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(710088), int32(0))
+					F_errmsg(m, int32(710138), int32(0))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(494412), int32(123), int32(122279))
+						F_errfinish(m, int32(494462), int32(123), int32(122279))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -375,7 +375,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(492856), int32(820), int32(155323))
+	F_errfinish(m, int32(492906), int32(820), int32(155323))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -650,7 +650,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(492856), int32(886), int32(155323))
+	F_errfinish(m, int32(492906), int32(886), int32(155323))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {

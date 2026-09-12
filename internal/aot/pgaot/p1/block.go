@@ -292,7 +292,7 @@ func F_BlockStateAsString(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[142])))
 		v11 = v10
 	} else {
-		v11 = int32(540183)
+		v11 = int32(540233)
 	}
 	return v11
 }

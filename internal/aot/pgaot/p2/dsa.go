@@ -83,13 +83,13 @@ func F_dsa_pin(m *base.Module, l0 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(449761), int32(0))
+					F_errmsg_internal(m, int32(449811), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(496898), int32(981), int32(273993))
+						F_errfinish(m, int32(496948), int32(981), int32(273993))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {

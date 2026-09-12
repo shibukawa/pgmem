@@ -212,7 +212,7 @@ func F_sql_compile_callback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	m.G0 = v14
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+22)))
-	v19 = int32(4479832)
+	v19 = int32(4479944)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[84]))
 	*(*int32)(unsafe.Add(mBase, _consts[84])) = v14 + int32(36)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = l3
@@ -604,7 +604,7 @@ L44:
 	}
 L45:
 	;
-	F_errdetail(m, int32(640179), int32(0))
+	F_errdetail(m, int32(640229), int32(0))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -614,7 +614,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(490665), int32(1187), int32(316783))
+	F_errfinish(m, int32(490715), int32(1187), int32(316783))
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -766,7 +766,7 @@ func F_sql_function_parse_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v15
-				F_errcontext_msg(m, int32(685384), v5)
+				F_errcontext_msg(m, int32(685434), v5)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {

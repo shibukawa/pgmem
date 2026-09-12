@@ -121,23 +121,23 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v20
-				v32 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
-				v35 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
-				v38 = *(*int32)(unsafe.Add(mBase, _consts[1349]))
+				v32 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
+				v35 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+				v38 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
 				if v35 == v38 {
-					*(*int32)(unsafe.Add(mBase, _consts[1349])) = v35 << (uint(int32(1)) % 32)
+					*(*int32)(unsafe.Add(mBase, _consts[1348])) = v35 << (uint(int32(1)) % 32)
 					v50 = F_repalloc(m, v32, v35<<(uint(int32(3))%32))
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1347])) = v50
-						v55 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
+						*(*int32)(unsafe.Add(mBase, _consts[1346])) = v50
+						v55 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
 						v56 = v55
 						v57 = v50
 						*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v56
-						*(*int32)(unsafe.Add(mBase, _consts[1348])) = v56 + int32(1)
+						*(*int32)(unsafe.Add(mBase, _consts[1347])) = v56 + int32(1)
 						*(*int32)(unsafe.Add(mBase, uint32(v57+v56<<(uint(int32(2))%32)))) = v14
 						if l3 == int32(0) {
 							v133 = v14
@@ -160,7 +160,7 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v56 = v35
 					v57 = v32
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v56
-					*(*int32)(unsafe.Add(mBase, _consts[1348])) = v56 + int32(1)
+					*(*int32)(unsafe.Add(mBase, _consts[1347])) = v56 + int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v57+v56<<(uint(int32(2))%32)))) = v14
 					if l3 == int32(0) {
 						v133 = v14
@@ -201,23 +201,23 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				*(*int32)(unsafe.Add(mBase, uint32(v74)+24)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v74)+12)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v74)+8)) = v78
-				v89 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
-				v92 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
-				v95 = *(*int32)(unsafe.Add(mBase, _consts[1349]))
+				v89 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
+				v92 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+				v95 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
 				if v92 == v95 {
-					*(*int32)(unsafe.Add(mBase, _consts[1349])) = v92 << (uint(int32(1)) % 32)
+					*(*int32)(unsafe.Add(mBase, _consts[1348])) = v92 << (uint(int32(1)) % 32)
 					v107 = F_repalloc(m, v89, v92<<(uint(int32(3))%32))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1347])) = v107
-						v112 = *(*int32)(unsafe.Add(mBase, _consts[1348]))
+						*(*int32)(unsafe.Add(mBase, _consts[1346])) = v107
+						v112 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
 						v113 = v107
 						v114 = v112
 						*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v114
-						*(*int32)(unsafe.Add(mBase, _consts[1348])) = v114 + int32(1)
+						*(*int32)(unsafe.Add(mBase, _consts[1347])) = v114 + int32(1)
 						*(*int32)(unsafe.Add(mBase, uint32(v113+v114<<(uint(int32(2))%32)))) = v74
 						if l3 == int32(0) {
 							v133 = v74
@@ -241,7 +241,7 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v113 = v89
 					v114 = v92
 					*(*int32)(unsafe.Add(mBase, uint32(v74)+4)) = v114
-					*(*int32)(unsafe.Add(mBase, _consts[1348])) = v114 + int32(1)
+					*(*int32)(unsafe.Add(mBase, _consts[1347])) = v114 + int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v113+v114<<(uint(int32(2))%32)))) = v74
 					if l3 == int32(0) {
 						v133 = v74
@@ -264,7 +264,7 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			}
 		}
 	case 2:
-		F_errstart_cold(m, int32(21), int32(546495))
+		F_errstart_cold(m, int32(21), int32(546545))
 		mBase = m.M
 		v144 = m.ExcPending
 		if v144 != 0 {
@@ -291,7 +291,7 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if v158 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492696), int32(1795), int32(393881))
+						F_errfinish(m, int32(492746), int32(1795), int32(393881))
 						mBase = m.M
 						v165 = m.ExcPending
 						if v165 != 0 {
@@ -306,7 +306,7 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			}
 		}
 	default:
-		F_errstart_cold(m, int32(21), int32(546495))
+		F_errstart_cold(m, int32(21), int32(546545))
 		mBase = m.M
 		v171 = m.ExcPending
 		if v171 != 0 {
@@ -314,13 +314,13 @@ func F_plpgsql_build_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		} else {
 			v172 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v172
-			F_errmsg_internal(m, int32(480904), v10)
+			F_errmsg_internal(m, int32(480954), v10)
 			mBase = m.M
 			v177 = m.ExcPending
 			if v177 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492696), int32(1799), int32(393881))
+				F_errfinish(m, int32(492746), int32(1799), int32(393881))
 				mBase = m.M
 				v184 = m.ExcPending
 				if v184 != 0 {
@@ -876,7 +876,7 @@ L5:
 	goto L3
 L6:
 	;
-	F_errstart_cold(m, int32(21), int32(546495))
+	F_errstart_cold(m, int32(21), int32(546545))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -886,7 +886,7 @@ L6:
 	}
 L7:
 	;
-	F_errstart_cold(m, int32(21), int32(546495))
+	F_errstart_cold(m, int32(21), int32(546545))
 	mBase = m.M
 	v84 = m.ExcPending
 	if v84 != 0 {
@@ -1000,7 +1000,7 @@ L21:
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v20)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v89
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v88
-	F_errmsg(m, int32(704450), v9+int32(16))
+	F_errmsg(m, int32(704500), v9+int32(16))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -1010,7 +1010,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(496817), int32(6787), int32(428897))
+	F_errfinish(m, int32(496867), int32(6787), int32(428947))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -1061,7 +1061,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v119
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v116
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v114
-	F_errmsg(m, int32(656400), v9)
+	F_errmsg(m, int32(656450), v9)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -1071,7 +1071,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(496817), int32(6803), int32(428897))
+	F_errfinish(m, int32(496867), int32(6803), int32(428947))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1145,9 +1145,9 @@ func F_plpgsql_parse_cwordrowtype(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v10 = int32(4486928)
+	v10 = int32(4487040)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[1352]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[1351]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v14
 	v16 = F_makeRangeVarFromNameList(m, l0)
 	mBase = m.M
@@ -1183,7 +1183,7 @@ func F_plpgsql_parse_cwordrowtype(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							if v33 == int32(0) {
-								F_errstart_cold(m, int32(21), int32(546495))
+								F_errstart_cold(m, int32(21), int32(546545))
 								mBase = m.M
 								v67 = m.ExcPending
 								if v67 != 0 {
@@ -1196,7 +1196,7 @@ func F_plpgsql_parse_cwordrowtype(m *base.Module, l0 int32) int32 {
 									if v73 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492696), int32(1960), int32(363877))
+										F_errfinish(m, int32(492746), int32(1960), int32(363877))
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -1229,7 +1229,7 @@ func F_plpgsql_parse_cwordrowtype(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					F_errstart_cold(m, int32(21), int32(546495))
+					F_errstart_cold(m, int32(21), int32(546545))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
@@ -1249,7 +1249,7 @@ func F_plpgsql_parse_cwordrowtype(m *base.Module, l0 int32) int32 {
 							if v58 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492696), int32(1729), int32(363245))
+								F_errfinish(m, int32(492746), int32(1729), int32(363245))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -1457,9 +1457,9 @@ func F_plpgsql_parse_cwordtype(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v10 = int32(4486928)
+	v10 = int32(4487040)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[1352]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[1351]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v14
 	if l0 == int32(0) {
 		goto L5
@@ -1468,7 +1468,7 @@ func F_plpgsql_parse_cwordtype(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(21), int32(546495))
+	F_errstart_cold(m, int32(21), int32(546545))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -1478,7 +1478,7 @@ L1:
 	}
 L2:
 	;
-	F_errstart_cold(m, int32(21), int32(546495))
+	F_errstart_cold(m, int32(21), int32(546545))
 	mBase = m.M
 	v273 = m.ExcPending
 	if v273 != 0 {
@@ -1524,7 +1524,7 @@ L6:
 	}
 L7:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[1351]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[1350]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
@@ -1778,7 +1778,7 @@ L46:
 	}
 L47:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+	v176 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
 	v177 = *(*int32)(unsafe.Add(mBase, uint32(v169)+4))
 	v181 = *(*int32)(unsafe.Add(mBase, uint32(v176+v177<<(uint(int32(2))%32))))
 	v182 = *(*int32)(unsafe.Add(mBase, uint32(v181)+24))
@@ -1804,7 +1804,7 @@ L50:
 	}
 L51:
 	;
-	v189 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+	v189 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v169)+4))
 	v194 = *(*int32)(unsafe.Add(mBase, uint32(v189+v190<<(uint(int32(2))%32))))
 	v195 = *(*int32)(unsafe.Add(mBase, uint32(v194)+24))
@@ -1899,7 +1899,7 @@ L61:
 	}
 L62:
 	;
-	v255 = *(*int32)(unsafe.Add(mBase, _consts[1352]))
+	v255 = *(*int32)(unsafe.Add(mBase, _consts[1351]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v255
 	F_ReleaseCatCache(m, v233)
 	mBase = m.M
@@ -1948,7 +1948,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(492696), int32(1631), int32(363756))
+	F_errfinish(m, int32(492746), int32(1631), int32(363756))
 	mBase = m.M
 	v287 = m.ExcPending
 	if v287 != 0 {
@@ -1975,7 +1975,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(492696), int32(1637), int32(363756))
+	F_errfinish(m, int32(492746), int32(1637), int32(363756))
 	mBase = m.M
 	v303 = m.ExcPending
 	if v303 != 0 {
@@ -2131,7 +2131,7 @@ func F_plpgsql_parse_tripword(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	v8 = m.G0
 	v10 = v8 - int32(80)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1350]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1349]))
 	if v13 == int32(1) {
 		goto L2
 	} else {
@@ -2153,7 +2153,7 @@ L2:
 	}
 L3:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[1351]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[1350]))
 	v20 = v10 + int32(76)
 	if v17 == int32(0) {
 		goto L8
@@ -2389,7 +2389,7 @@ L41:
 	}
 L42:
 	;
-	v165 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+	v165 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
 	v166 = *(*int32)(unsafe.Add(mBase, uint32(v158)+4))
 	v170 = *(*int32)(unsafe.Add(mBase, uint32(v165+v166<<(uint(int32(2))%32))))
 	v171 = *(*int32)(unsafe.Add(mBase, uint32(v10)+76))
@@ -2574,9 +2574,9 @@ func F_plpgsql_parser_setup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(6631)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(6632)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(6633)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(6634)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(6635)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(6636)
 	return
 }
 func F_plpgsql_peek2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
@@ -2688,7 +2688,7 @@ func F_plpgsql_peek2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 				v46 = v44 + int32(1)
 				*(*int32)(unsafe.Add(mBase, uint32(v43)+72)) = v46
 				if int32(3) <= v44 {
-					F_errstart_cold(m, int32(21), int32(546495))
+					F_errstart_cold(m, int32(21), int32(546545))
 					mBase = m.M
 					v95 = m.ExcPending
 					if v95 != 0 {
@@ -2700,7 +2700,7 @@ func F_plpgsql_peek2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 						if v100 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(492169), int32(388), int32(280545))
+							F_errfinish(m, int32(492219), int32(388), int32(280545))
 							mBase = m.M
 							v107 = m.ExcPending
 							if v107 != 0 {
@@ -2729,7 +2729,7 @@ func F_plpgsql_peek2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 					return
 				}
 			} else {
-				F_errstart_cold(m, int32(21), int32(546495))
+				F_errstart_cold(m, int32(21), int32(546545))
 				mBase = m.M
 				v77 = m.ExcPending
 				if v77 != 0 {
@@ -2741,7 +2741,7 @@ func F_plpgsql_peek2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 					if v82 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(492169), int32(388), int32(280545))
+						F_errfinish(m, int32(492219), int32(388), int32(280545))
 						mBase = m.M
 						v89 = m.ExcPending
 						if v89 != 0 {
@@ -3197,7 +3197,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											v59 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 											v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+72))
 											if int32(4) <= v60 {
-												F_errstart_cold(m, int32(21), int32(546495))
+												F_errstart_cold(m, int32(21), int32(546545))
 												mBase = m.M
 												v355 = m.ExcPending
 												if v355 != 0 {
@@ -3209,7 +3209,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													if v360 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(492169), int32(388), int32(280545))
+														F_errfinish(m, int32(492219), int32(388), int32(280545))
 														mBase = m.M
 														v367 = m.ExcPending
 														if v367 != 0 {
@@ -3236,7 +3236,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												v80 = v78 + int32(1)
 												*(*int32)(unsafe.Add(mBase, uint32(v77)+72)) = v80
 												if int32(3) <= v78 {
-													F_errstart_cold(m, int32(21), int32(546495))
+													F_errstart_cold(m, int32(21), int32(546545))
 													mBase = m.M
 													v373 = m.ExcPending
 													if v373 != 0 {
@@ -3248,7 +3248,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														if v378 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492169), int32(388), int32(280545))
+															F_errfinish(m, int32(492219), int32(388), int32(280545))
 															mBase = m.M
 															v385 = m.ExcPending
 															if v385 != 0 {
@@ -3316,7 +3316,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									v130 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 									v131 = *(*int32)(unsafe.Add(mBase, uint32(v130)+72))
 									if int32(4) <= v131 {
-										F_errstart_cold(m, int32(21), int32(546495))
+										F_errstart_cold(m, int32(21), int32(546545))
 										mBase = m.M
 										v391 = m.ExcPending
 										if v391 != 0 {
@@ -3328,7 +3328,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v396 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(492169), int32(388), int32(280545))
+												F_errfinish(m, int32(492219), int32(388), int32(280545))
 												mBase = m.M
 												v403 = m.ExcPending
 												if v403 != 0 {
@@ -3392,7 +3392,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							v170 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 							v171 = *(*int32)(unsafe.Add(mBase, uint32(v170)+72))
 							if int32(4) <= v171 {
-								F_errstart_cold(m, int32(21), int32(546495))
+								F_errstart_cold(m, int32(21), int32(546545))
 								mBase = m.M
 								v409 = m.ExcPending
 								if v409 != 0 {
@@ -3404,7 +3404,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v414 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492169), int32(388), int32(280545))
+										F_errfinish(m, int32(492219), int32(388), int32(280545))
 										mBase = m.M
 										v421 = m.ExcPending
 										if v421 != 0 {
@@ -3431,7 +3431,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								v193 = v191 + int32(1)
 								*(*int32)(unsafe.Add(mBase, uint32(v190)+72)) = v193
 								if int32(3) <= v191 {
-									F_errstart_cold(m, int32(21), int32(546495))
+									F_errstart_cold(m, int32(21), int32(546545))
 									mBase = m.M
 									v427 = m.ExcPending
 									if v427 != 0 {
@@ -3443,7 +3443,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v432 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(492169), int32(388), int32(280545))
+											F_errfinish(m, int32(492219), int32(388), int32(280545))
 											mBase = m.M
 											v439 = m.ExcPending
 											if v439 != 0 {
@@ -3512,7 +3512,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 												return v331
 											} else {
 												v231 = *(*int32)(unsafe.Add(mBase, uint32(v12)+104))
-												v233 = F_ScanKeywordLookup(m, v231, int32(4156784))
+												v233 = F_ScanKeywordLookup(m, v231, int32(4156832))
 												mBase = m.M
 												v234 = m.ExcPending
 												if v234 != 0 {
@@ -3522,9 +3522,9 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														v331 = v229
 													} else {
 														v241 = v233 << (uint(int32(1)) % 32)
-														v245 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v241)+uint32(_consts[1431]))))
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(2153504) + v245
-														v251 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v241)+uint32(_consts[1374]))))
+														v245 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v241)+uint32(_consts[1430]))))
+														*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(2153552) + v245
+														v251 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v241)+uint32(_consts[1373]))))
 														v331 = v251
 													}
 													v336 = *(*int64)(unsafe.Add(mBase, uint32(v12)+104))
@@ -3551,7 +3551,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					v252 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 					v253 = *(*int32)(unsafe.Add(mBase, uint32(v252)+72))
 					if int32(4) <= v253 {
-						F_errstart_cold(m, int32(21), int32(546495))
+						F_errstart_cold(m, int32(21), int32(546545))
 						mBase = m.M
 						v445 = m.ExcPending
 						if v445 != 0 {
@@ -3563,7 +3563,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							if v450 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492169), int32(388), int32(280545))
+								F_errfinish(m, int32(492219), int32(388), int32(280545))
 								mBase = m.M
 								v457 = m.ExcPending
 								if v457 != 0 {
@@ -3718,7 +3718,7 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									return v331
 								} else {
 									v310 = *(*int32)(unsafe.Add(mBase, uint32(v12)+104))
-									v312 = F_ScanKeywordLookup(m, v310, int32(4156784))
+									v312 = F_ScanKeywordLookup(m, v310, int32(4156832))
 									mBase = m.M
 									v313 = m.ExcPending
 									if v313 != 0 {
@@ -3728,9 +3728,9 @@ func F_plpgsql_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											v331 = v308
 										} else {
 											v320 = v312 << (uint(int32(1)) % 32)
-											v324 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v320)+uint32(_consts[1431]))))
-											*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(2153504) + v324
-											v330 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v320)+uint32(_consts[1374]))))
+											v324 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v320)+uint32(_consts[1430]))))
+											*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(2153552) + v324
+											v330 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v320)+uint32(_consts[1373]))))
 											v331 = v330
 										}
 										v336 = *(*int64)(unsafe.Add(mBase, uint32(v12)+104))

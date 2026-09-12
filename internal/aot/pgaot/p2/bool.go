@@ -40,7 +40,7 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(494167), int32(370), int32(32507))
+				F_errfinish(m, int32(494217), int32(370), int32(32507))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -67,7 +67,7 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 				if v30 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494167), int32(370), int32(32507))
+					F_errfinish(m, int32(494217), int32(370), int32(32507))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -221,7 +221,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												if v71 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(496556), int32(6836), int32(313437))
+													F_errfinish(m, int32(496606), int32(6836), int32(313437))
 													mBase = m.M
 													v76 = m.ExcPending
 													if v76 != 0 {
@@ -240,7 +240,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 													}
 												}
 											} else {
-												F_errfinish(m, int32(496556), int32(6836), int32(313437))
+												F_errfinish(m, int32(496606), int32(6836), int32(313437))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -269,7 +269,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											if v71 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(496556), int32(6836), int32(313437))
+												F_errfinish(m, int32(496606), int32(6836), int32(313437))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -288,7 +288,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												}
 											}
 										} else {
-											F_errfinish(m, int32(496556), int32(6836), int32(313437))
+											F_errfinish(m, int32(496606), int32(6836), int32(313437))
 											mBase = m.M
 											v76 = m.ExcPending
 											if v76 != 0 {
@@ -313,7 +313,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 								v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v49
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v48
-								F_errmsg(m, int32(484897), v9+int32(-32))
+								F_errmsg(m, int32(484947), v9+int32(-32))
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
@@ -337,7 +337,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												if v71 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(496556), int32(6836), int32(313437))
+													F_errfinish(m, int32(496606), int32(6836), int32(313437))
 													mBase = m.M
 													v76 = m.ExcPending
 													if v76 != 0 {
@@ -356,7 +356,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 													}
 												}
 											} else {
-												F_errfinish(m, int32(496556), int32(6836), int32(313437))
+												F_errfinish(m, int32(496606), int32(6836), int32(313437))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -385,7 +385,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											if v71 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(496556), int32(6836), int32(313437))
+												F_errfinish(m, int32(496606), int32(6836), int32(313437))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -404,7 +404,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												}
 											}
 										} else {
-											F_errfinish(m, int32(496556), int32(6836), int32(313437))
+											F_errfinish(m, int32(496606), int32(6836), int32(313437))
 											mBase = m.M
 											v76 = m.ExcPending
 											if v76 != 0 {

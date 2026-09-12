@@ -279,7 +279,7 @@ L14:
 	goto L15
 L15:
 	;
-	v60 = int32(4486928)
+	v60 = int32(4487040)
 	v61 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v14
 	v65 = F_palloc(m, int32(20))
@@ -301,7 +301,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v39 + int32(4)
-	F_errmsg_internal(m, int32(695290), v11)
+	F_errmsg_internal(m, int32(695340), v11)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -311,7 +311,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(493843), int32(1842), int32(73660))
+	F_errfinish(m, int32(493893), int32(1842), int32(73660))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -512,7 +512,7 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 											if v55 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(491072), int32(3202), int32(432085))
+												F_errfinish(m, int32(491122), int32(3202), int32(432135))
 												mBase = m.M
 												v60 = m.ExcPending
 												if v60 != 0 {

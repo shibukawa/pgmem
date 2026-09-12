@@ -173,13 +173,13 @@ func F_bbsink_server_archive_contents(m *base.Module, l0 int32, l1 int32) {
 						if v79 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(625939), int32(0))
+							F_errhint(m, int32(625989), int32(0))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492008), int32(175), int32(119890))
+								F_errfinish(m, int32(492058), int32(175), int32(119890))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -213,13 +213,13 @@ func F_bbsink_server_archive_contents(m *base.Module, l0 int32, l1 int32) {
 						if v48 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(625939), int32(0))
+							F_errhint(m, int32(625989), int32(0))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492008), int32(182), int32(119890))
+								F_errfinish(m, int32(492058), int32(182), int32(119890))
 								mBase = m.M
 								v57 = m.ExcPending
 								if v57 != 0 {
@@ -316,7 +316,7 @@ func F_bbsink_server_begin_manifest(m *base.Module, l0 int32) {
 						if v31 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(492008), int32(242), int32(77164))
+							F_errfinish(m, int32(492058), int32(242), int32(77164))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {

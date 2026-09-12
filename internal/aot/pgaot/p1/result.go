@@ -139,7 +139,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 					}
 				}
 			case 1:
-				v41 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(421354), int32(0))
+				v41 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(421404), int32(0))
 				mBase = m.M
 				v42 = m.ExcPending
 				if v42 != 0 {
@@ -157,7 +157,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 				}
 			default:
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v26
-				v48 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(474621), v6)
+				v48 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(474671), v6)
 				mBase = m.M
 				v49 = m.ExcPending
 				if v49 != 0 {
@@ -176,7 +176,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			if base.Ui32(l0&int32(65535)-int32(1)) <= base.Ui32(int32(254)) {
-				v58 = int32(4084320)
+				v58 = int32(4084368)
 				if base.Ui32(v20-int32(65)) < base.Ui32(int32(-64)) {
 					v75 = v58
 				} else {
@@ -227,7 +227,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = l0
-				v95 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(466125), v6+int32(32))
+				v95 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(466175), v6+int32(32))
 				mBase = m.M
 				v96 = m.ExcPending
 				if v96 != 0 {

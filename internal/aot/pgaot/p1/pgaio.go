@@ -202,7 +202,7 @@ L12:
 	v31 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30)+22)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v31
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = l0
-	F_errmsg_internal(m, int32(447326), v14+int32(32))
+	F_errmsg_internal(m, int32(447376), v14+int32(32))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -212,7 +212,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(492928), int32(1237), int32(434983))
+	F_errfinish(m, int32(492978), int32(1237), int32(435033))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -427,7 +427,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(492928), int32(1276), int32(434983))
+	F_errfinish(m, int32(492978), int32(1276), int32(435033))
 	mBase = m.M
 	v163 = m.ExcPending
 	if v163 != 0 {
@@ -577,7 +577,7 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 					if v65 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(492928), int32(397), int32(349696))
+						F_errfinish(m, int32(492978), int32(397), int32(349696))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -741,7 +741,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(492928), int32(1206), int32(239800))
+	F_errfinish(m, int32(492978), int32(1206), int32(239800))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -885,7 +885,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(492928), int32(1312), int32(242412))
+	F_errfinish(m, int32(492978), int32(1312), int32(242412))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {

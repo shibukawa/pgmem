@@ -569,7 +569,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(493630), int32(74), int32(231286))
+	F_errfinish(m, int32(493680), int32(74), int32(231286))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -604,7 +604,7 @@ L22:
 	}
 L23:
 	;
-	F_s_lock(m, v68, int32(493630), int32(426), int32(351980))
+	F_s_lock(m, v68, int32(493680), int32(426), int32(351980))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -1172,7 +1172,7 @@ L96:
 	}
 L97:
 	;
-	F_s_lock(m, v68, int32(493630), int32(183), int32(351946))
+	F_s_lock(m, v68, int32(493680), int32(183), int32(351946))
 	mBase = m.M
 	v551 = m.ExcPending
 	if v551 != 0 {
@@ -1477,7 +1477,7 @@ L139:
 	goto L140
 L140:
 	;
-	v766 = int32(4486928)
+	v766 = int32(4487040)
 	v767 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v769 = *(*int32)(unsafe.Add(mBase, uint32(v34)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v769
@@ -1599,7 +1599,7 @@ L155:
 	}
 L156:
 	;
-	F_errfinish(m, int32(493630), int32(84), int32(231286))
+	F_errfinish(m, int32(493680), int32(84), int32(231286))
 	mBase = m.M
 	v861 = m.ExcPending
 	if v861 != 0 {
@@ -1649,7 +1649,7 @@ func F_BitmapHeapRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = l1
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+116))
 	if v11 != 0 {
-		v12 = int32(4486928)
+		v12 = int32(4487040)
 		v13 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v9)+20))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v15

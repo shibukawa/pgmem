@@ -858,7 +858,7 @@ func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(739152), int32(2))
+	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(739200), int32(2))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)

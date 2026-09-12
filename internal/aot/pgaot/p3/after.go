@@ -12,7 +12,7 @@ func F_AfterTriggerBeginQuery(m *base.Module) {
 	_ = v1
 	var v3 int32
 	_ = v3
-	v1 = int32(4384024)
+	v1 = int32(4384136)
 	v3 = *(*int32)(unsafe.Add(mBase, _consts[502]))
 	*(*int32)(unsafe.Add(mBase, _consts[502])) = v3 + int32(1)
 	return
@@ -125,7 +125,7 @@ L6:
 L7:
 	;
 	v12 = int32(0)
-	v14 = F_afterTriggerMarkEvents(m, int32(4384004), v12, v12)
+	v14 = F_afterTriggerMarkEvents(m, int32(4384116), v12, v12)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -149,11 +149,11 @@ L9:
 	}
 L10:
 	;
-	v16 = int32(4383996)
+	v16 = int32(4384108)
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[504]))
 	v19 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[504])) = v18 + v19
-	v25 = F_afterTriggerInvokeEvents(m, int32(4384004), v18, int32(0), v19)
+	v25 = F_afterTriggerInvokeEvents(m, int32(4384116), v18, int32(0), v19)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -773,7 +773,7 @@ L57:
 	}
 L58:
 	;
-	v196 = int32(4486928)
+	v196 = int32(4487040)
 	v197 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v200 = *(*int32)(unsafe.Add(mBase, _consts[501]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v200

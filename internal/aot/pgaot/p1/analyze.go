@@ -332,7 +332,7 @@ L35:
 	}
 L36:
 	;
-	v106 = int32(4481588)
+	v106 = int32(4481700)
 	v108 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	v109 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[11])) = v108 + v109
@@ -691,7 +691,7 @@ L7:
 	goto L6
 L8:
 	;
-	v41 = F__emscripten_memcpy_bulkmem(m, v14+int32(8), int32(4385192), int32(128))
+	v41 = F__emscripten_memcpy_bulkmem(m, v14+int32(8), int32(4385304), int32(128))
 	mBase = m.M
 	goto L10
 L10:
@@ -853,7 +853,7 @@ L31:
 	;
 	v102 = int32(*(*int8)(unsafe.Add(mBase, uint32(l1)+24)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v102
-	F_errmsg(m, int32(483649), v14)
+	F_errmsg(m, int32(483699), v14)
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -863,7 +863,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(492399), int32(94), int32(240569))
+	F_errfinish(m, int32(492449), int32(94), int32(240569))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -907,7 +907,7 @@ L38:
 	goto L39
 L39:
 	;
-	v150 = int32(4486928)
+	v150 = int32(4487040)
 	v151 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v153 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v153

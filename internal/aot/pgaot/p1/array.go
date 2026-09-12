@@ -197,7 +197,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(268435455)
-	F_errmsg(m, int32(661090), v9)
+	F_errmsg(m, int32(661140), v9)
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -207,7 +207,7 @@ L23:
 	}
 L24:
 	;
-	F_errsave_finish(m, int32(0), int32(490719), v61, int32(407200))
+	F_errsave_finish(m, int32(0), int32(490769), v61, int32(407200))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -602,7 +602,7 @@ L31:
 	return int32(0)
 L32:
 	;
-	v67 = int32(4486928)
+	v67 = int32(4487040)
 	v68 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v70 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v70
@@ -700,7 +700,7 @@ L46:
 	goto L43
 L47:
 	;
-	v127 = int32(4486928)
+	v127 = int32(4487040)
 	v128 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v48)+16))
 	v131 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
@@ -865,7 +865,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(491484), int32(609), int32(371598))
+	F_errfinish(m, int32(491534), int32(609), int32(371598))
 	mBase = m.M
 	v236 = m.ExcPending
 	if v236 != 0 {
@@ -1513,7 +1513,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(491484), int32(797), int32(339896))
+	F_errfinish(m, int32(491534), int32(797), int32(339896))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -1548,7 +1548,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(491484), int32(873), int32(339896))
+	F_errfinish(m, int32(491534), int32(873), int32(339896))
 	mBase = m.M
 	v258 = m.ExcPending
 	if v258 != 0 {
@@ -1953,7 +1953,7 @@ func F_array_fill(m *base.Module, l0 int32) int32 {
 						if v52 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(491377), int32(6067), int32(302427))
+							F_errfinish(m, int32(491427), int32(6067), int32(302427))
 							mBase = m.M
 							v57 = m.ExcPending
 							if v57 != 0 {
@@ -1996,7 +1996,7 @@ func F_array_fill(m *base.Module, l0 int32) int32 {
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491377), int32(6050), int32(302427))
+					F_errfinish(m, int32(491427), int32(6050), int32(302427))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
@@ -2753,7 +2753,7 @@ L31:
 	}
 L32:
 	;
-	F_errmsg(m, int32(442476), int32(0))
+	F_errmsg(m, int32(442526), int32(0))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -2763,7 +2763,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(491377), int32(2067), int32(415604))
+	F_errfinish(m, int32(491427), int32(2067), int32(415654))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -4402,7 +4402,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(491484), int32(1411), int32(244349))
+	F_errfinish(m, int32(491534), int32(1411), int32(244349))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -4437,7 +4437,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(491484), int32(1377), int32(244349))
+	F_errfinish(m, int32(491534), int32(1377), int32(244349))
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -4462,7 +4462,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(439213), int32(0))
+	F_errmsg(m, int32(439263), int32(0))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -4472,7 +4472,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(491484), int32(1348), int32(244349))
+	F_errfinish(m, int32(491534), int32(1348), int32(244349))
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {
@@ -5399,7 +5399,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496827), int32(3474), int32(29154))
+									F_errfinish(m, int32(496877), int32(3474), int32(29154))
 									mBase = m.M
 									v58 = m.ExcPending
 									if v58 != 0 {
@@ -5440,7 +5440,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 									if v53 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(496827), int32(3474), int32(29154))
+										F_errfinish(m, int32(496877), int32(3474), int32(29154))
 										mBase = m.M
 										v58 = m.ExcPending
 										if v58 != 0 {
@@ -5511,7 +5511,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 														if v90 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(496827), int32(3486), int32(29154))
+															F_errfinish(m, int32(496877), int32(3486), int32(29154))
 															mBase = m.M
 															v95 = m.ExcPending
 															if v95 != 0 {
@@ -5554,7 +5554,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 										if v53 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(496827), int32(3474), int32(29154))
+											F_errfinish(m, int32(496877), int32(3474), int32(29154))
 											mBase = m.M
 											v58 = m.ExcPending
 											if v58 != 0 {
@@ -5626,7 +5626,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 												if v90 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(496827), int32(3486), int32(29154))
+													F_errfinish(m, int32(496877), int32(3486), int32(29154))
 													mBase = m.M
 													v95 = m.ExcPending
 													if v95 != 0 {
@@ -5669,7 +5669,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496827), int32(3474), int32(29154))
+									F_errfinish(m, int32(496877), int32(3474), int32(29154))
 									mBase = m.M
 									v58 = m.ExcPending
 									if v58 != 0 {
@@ -5943,7 +5943,7 @@ L5:
 	v30 = m.G0
 	v32 = v30 - int32(80)
 	m.G0 = v32
-	if v27 == int32(4488392) {
+	if v27 == int32(4488504) {
 		goto L7
 	} else {
 		goto L8
@@ -6293,7 +6293,7 @@ func F_initArrayResultArr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v50 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491377), int32(5525), int32(205894))
+								F_errfinish(m, int32(491427), int32(5525), int32(205894))
 								mBase = m.M
 								v55 = m.ExcPending
 								if v55 != 0 {
@@ -6551,7 +6551,7 @@ func F_makeArrayResultArr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	var v194 int32
 	_ = v194
 	v4 = int32(0)
-	v14 = int32(4486928)
+	v14 = int32(4487040)
 	v15 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = l1
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))

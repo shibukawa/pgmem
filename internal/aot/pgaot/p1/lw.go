@@ -225,7 +225,7 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v155
-	F_errmsg_internal(m, int32(429369), v10)
+	F_errmsg_internal(m, int32(429419), v10)
 	mBase = m.M
 	v159 = m.ExcPending
 	if v159 != 0 {
@@ -281,7 +281,7 @@ L29:
 	goto L26
 L30:
 	;
-	F_errfinish(m, int32(494470), int32(1820), int32(310818))
+	F_errfinish(m, int32(494520), int32(1820), int32(310818))
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {
@@ -321,7 +321,7 @@ func F_LWLockReleaseClearVar(m *base.Module, l0 int32, l1 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			v9 = int32(4481580)
+			v9 = int32(4481692)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[163]))
 			*(*int32)(unsafe.Add(mBase, _consts[163])) = v11 - int32(1)
 			return

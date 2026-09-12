@@ -116,7 +116,7 @@ func F_queue_listen(m *base.Module, l0 int32, l1 int32) {
 	goto L1
 L1:
 	;
-	v14 = int32(4486928)
+	v14 = int32(4487040)
 	v15 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[141]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v18
@@ -340,7 +340,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v109)+4)) = v117
-	v120 = int32(4383884)
+	v120 = int32(4383996)
 	v121 = *(*int32)(unsafe.Add(mBase, _consts[151]))
 	*(*int32)(unsafe.Add(mBase, uint32(v109)+8)) = v121
 	*(*int32)(unsafe.Add(mBase, _consts[151])) = v109
@@ -412,16 +412,16 @@ func F_quickdie(m *base.Module, l0 int32) {
 	_ = v118
 	var v121 int32
 	_ = v121
-	v24 = int32(4394280)
+	v24 = int32(4394392)
 	v25 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 	*(*int32)(unsafe.Add(mBase, _consts[841])) = v25 | int32(4)
-	F_sigprocmask(m, int32(4394280), int32(0))
+	F_sigprocmask(m, int32(4394392), int32(0))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
 		return
 	} else {
-		v35 = int32(4481580)
+		v35 = int32(4481692)
 		v37 = *(*int32)(unsafe.Add(mBase, _consts[163]))
 		v38 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[163])) = v37 + v38
@@ -476,7 +476,7 @@ func F_quickdie(m *base.Module, l0 int32) {
 							return
 						} else {
 							v118 = int32(3089)
-							F_errfinish(m, int32(490953), v118, int32(396450))
+							F_errfinish(m, int32(491003), v118, int32(396450))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -518,20 +518,20 @@ func F_quickdie(m *base.Module, l0 int32) {
 						if v94 != 0 {
 							return
 						} else {
-							F_errdetail(m, int32(553679), int32(0))
+							F_errdetail(m, int32(553729), int32(0))
 							mBase = m.M
 							v98 = m.ExcPending
 							if v98 != 0 {
 								return
 							} else {
-								F_errhint(m, int32(627257), int32(0))
+								F_errhint(m, int32(627307), int32(0))
 								mBase = m.M
 								v102 = m.ExcPending
 								if v102 != 0 {
 									return
 								} else {
 									v118 = int32(3101)
-									F_errfinish(m, int32(490953), v118, int32(396450))
+									F_errfinish(m, int32(491003), v118, int32(396450))
 									mBase = m.M
 									v121 = m.ExcPending
 									if v121 != 0 {
@@ -569,14 +569,14 @@ func F_quickdie(m *base.Module, l0 int32) {
 					if v112 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(425985), int32(0))
+						F_errmsg(m, int32(426035), int32(0))
 						mBase = m.M
 						v116 = m.ExcPending
 						if v116 != 0 {
 							return
 						} else {
 							v118 = int32(3107)
-							F_errfinish(m, int32(490953), v118, int32(396450))
+							F_errfinish(m, int32(491003), v118, int32(396450))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -641,7 +641,7 @@ func F_quote_qualified_identifier(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v14
-				F_appendStringInfo(m, v6+int32(16), int32(588192), v6)
+				F_appendStringInfo(m, v6+int32(16), int32(588242), v6)
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {

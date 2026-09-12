@@ -94,7 +94,7 @@ func F_float8_corr(m *base.Module, l0 int32) int32 {
 				if v66 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490364), int32(2938), int32(24633))
+					F_errfinish(m, int32(490414), int32(2938), int32(24633))
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
@@ -123,7 +123,7 @@ func F_float8_corr(m *base.Module, l0 int32) int32 {
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490364), int32(2938), int32(24633))
+						F_errfinish(m, int32(490414), int32(2938), int32(24633))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -152,7 +152,7 @@ func F_float8_corr(m *base.Module, l0 int32) int32 {
 						if v66 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490364), int32(2938), int32(24633))
+							F_errfinish(m, int32(490414), int32(2938), int32(24633))
 							mBase = m.M
 							v71 = m.ExcPending
 							if v71 != 0 {
@@ -181,7 +181,7 @@ func F_float8_corr(m *base.Module, l0 int32) int32 {
 							if v66 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490364), int32(2938), int32(24633))
+								F_errfinish(m, int32(490414), int32(2938), int32(24633))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
@@ -899,7 +899,7 @@ L65:
 	}
 L66:
 	;
-	F_errfinish(m, int32(490364), int32(2938), int32(24633))
+	F_errfinish(m, int32(490414), int32(2938), int32(24633))
 	mBase = m.M
 	v280 = m.ExcPending
 	if v280 != 0 {
@@ -983,7 +983,7 @@ func F_float8_regr_avgy(m *base.Module, l0 int32) int32 {
 				if v49 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490364), int32(2938), int32(24633))
+					F_errfinish(m, int32(490414), int32(2938), int32(24633))
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
@@ -1012,7 +1012,7 @@ func F_float8_regr_avgy(m *base.Module, l0 int32) int32 {
 					if v49 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490364), int32(2938), int32(24633))
+						F_errfinish(m, int32(490414), int32(2938), int32(24633))
 						mBase = m.M
 						v54 = m.ExcPending
 						if v54 != 0 {
@@ -1041,7 +1041,7 @@ func F_float8_regr_avgy(m *base.Module, l0 int32) int32 {
 						if v49 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490364), int32(2938), int32(24633))
+							F_errfinish(m, int32(490414), int32(2938), int32(24633))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
@@ -1070,7 +1070,7 @@ func F_float8_regr_avgy(m *base.Module, l0 int32) int32 {
 							if v49 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490364), int32(2938), int32(24633))
+								F_errfinish(m, int32(490414), int32(2938), int32(24633))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {
@@ -1178,7 +1178,7 @@ func F_float8_regr_slope(m *base.Module, l0 int32) int32 {
 				if v58 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490364), int32(2938), int32(24633))
+					F_errfinish(m, int32(490414), int32(2938), int32(24633))
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {
@@ -1207,7 +1207,7 @@ func F_float8_regr_slope(m *base.Module, l0 int32) int32 {
 					if v58 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490364), int32(2938), int32(24633))
+						F_errfinish(m, int32(490414), int32(2938), int32(24633))
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
@@ -1236,7 +1236,7 @@ func F_float8_regr_slope(m *base.Module, l0 int32) int32 {
 						if v58 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490364), int32(2938), int32(24633))
+							F_errfinish(m, int32(490414), int32(2938), int32(24633))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
@@ -1265,7 +1265,7 @@ func F_float8_regr_slope(m *base.Module, l0 int32) int32 {
 							if v58 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490364), int32(2938), int32(24633))
+								F_errfinish(m, int32(490414), int32(2938), int32(24633))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {

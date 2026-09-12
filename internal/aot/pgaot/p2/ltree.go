@@ -423,7 +423,7 @@ L27:
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v24
-	F_errmsg_internal(m, int32(479438), v15)
+	F_errmsg_internal(m, int32(479488), v15)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -433,7 +433,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(489594), int32(541), int32(92475))
+	F_errfinish(m, int32(489644), int32(541), int32(92475))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -663,7 +663,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(489594), int32(493), int32(146552))
+	F_errfinish(m, int32(489644), int32(493), int32(146552))
 	mBase = m.M
 	v286 = m.ExcPending
 	if v286 != 0 {
@@ -698,7 +698,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(489594), int32(489), int32(146552))
+	F_errfinish(m, int32(489644), int32(489), int32(146552))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -716,7 +716,7 @@ L70:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v50
 	v311 = int32(8)
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v51 + v311
-	v320 = F_ltree_execute(m, v19+v311, v15+v311, int32(0), int32(6762))
+	v320 = F_ltree_execute(m, v19+v311, v15+v311, int32(0), int32(6765))
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -3168,7 +3168,7 @@ L17:
 L18:
 	;
 	v86 = int32(8)
-	F_pg_qsort(m, v80+v86, v61, v86, int32(6763))
+	F_pg_qsort(m, v80+v86, v61, v86, int32(6766))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -3205,7 +3205,7 @@ L22:
 L23:
 	;
 	v139 = int32(8)
-	F_pg_qsort(m, v80+v139, v61, v139, int32(6763))
+	F_pg_qsort(m, v80+v139, v61, v139, int32(6766))
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {

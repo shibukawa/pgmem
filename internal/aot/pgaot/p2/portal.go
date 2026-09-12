@@ -137,7 +137,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 					v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 					*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-					v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+					v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 					v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 					mBase = m.M
 					v97 = m.ExcPending
@@ -158,7 +158,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v137 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493977), int32(222), int32(308240))
+									F_errfinish(m, int32(494027), int32(222), int32(308240))
 									mBase = m.M
 									v142 = m.ExcPending
 									if v142 != 0 {
@@ -178,7 +178,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							if v105 != 0 {
 								v106 = v96
 							} else {
-								v106 = int32(542850)
+								v106 = int32(542900)
 							}
 							*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 							m.G0 = v8 + int32(32)
@@ -189,7 +189,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 		}
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+		v13 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 		v14 = int32(0)
 		v16 = F_hash_search(m, v13, l0, v14, v14)
 		mBase = m.M
@@ -237,7 +237,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 							v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 							*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-							v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+							v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 							v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 							mBase = m.M
 							v97 = m.ExcPending
@@ -258,7 +258,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v137 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(493977), int32(222), int32(308240))
+											F_errfinish(m, int32(494027), int32(222), int32(308240))
 											mBase = m.M
 											v142 = m.ExcPending
 											if v142 != 0 {
@@ -278,7 +278,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v105 != 0 {
 										v106 = v96
 									} else {
-										v106 = int32(542850)
+										v106 = int32(542900)
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 									m.G0 = v8 + int32(32)
@@ -330,7 +330,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 								v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 								*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-								v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+								v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 								v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 								mBase = m.M
 								v97 = m.ExcPending
@@ -351,7 +351,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											if v137 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(493977), int32(222), int32(308240))
+												F_errfinish(m, int32(494027), int32(222), int32(308240))
 												mBase = m.M
 												v142 = m.ExcPending
 												if v142 != 0 {
@@ -371,7 +371,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										if v105 != 0 {
 											v106 = v96
 										} else {
-											v106 = int32(542850)
+											v106 = int32(542900)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 										m.G0 = v8 + int32(32)
@@ -402,7 +402,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v124 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493977), int32(187), int32(308240))
+									F_errfinish(m, int32(494027), int32(187), int32(308240))
 									mBase = m.M
 									v129 = m.ExcPending
 									if v129 != 0 {
@@ -462,7 +462,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 											*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 											v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 											*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-											v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+											v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 											v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 											mBase = m.M
 											v97 = m.ExcPending
@@ -483,7 +483,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 														if v137 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(493977), int32(222), int32(308240))
+															F_errfinish(m, int32(494027), int32(222), int32(308240))
 															mBase = m.M
 															v142 = m.ExcPending
 															if v142 != 0 {
@@ -503,7 +503,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													if v105 != 0 {
 														v106 = v96
 													} else {
-														v106 = int32(542850)
+														v106 = int32(542900)
 													}
 													*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 													m.G0 = v8 + int32(32)
@@ -567,7 +567,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 													*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 													v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 													*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-													v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+													v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 													v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 													mBase = m.M
 													v97 = m.ExcPending
@@ -588,7 +588,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																if v137 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(493977), int32(222), int32(308240))
+																	F_errfinish(m, int32(494027), int32(222), int32(308240))
 																	mBase = m.M
 																	v142 = m.ExcPending
 																	if v142 != 0 {
@@ -608,7 +608,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 															if v105 != 0 {
 																v106 = v96
 															} else {
-																v106 = int32(542850)
+																v106 = int32(542900)
 															}
 															*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 															m.G0 = v8 + int32(32)
@@ -627,13 +627,13 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-										F_errmsg(m, int32(681643), v8)
+										F_errmsg(m, int32(681693), v8)
 										mBase = m.M
 										v39 = m.ExcPending
 										if v39 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(493977), int32(192), int32(308240))
+											F_errfinish(m, int32(494027), int32(192), int32(308240))
 											mBase = m.M
 											v44 = m.ExcPending
 											if v44 != 0 {
@@ -684,7 +684,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																*(*int32)(unsafe.Add(mBase, uint32(v52)+28)) = v80
 																v89 = *(*int64)(unsafe.Add(mBase, _consts[660]))
 																*(*int64)(unsafe.Add(mBase, uint32(v52)+128)) = v89
-																v92 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+																v92 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 																v96 = F_hash_search(m, v92, l0, v81, v8+int32(31))
 																mBase = m.M
 																v97 = m.ExcPending
@@ -705,7 +705,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																			if v137 != 0 {
 																				return int32(0)
 																			} else {
-																				F_errfinish(m, int32(493977), int32(222), int32(308240))
+																				F_errfinish(m, int32(494027), int32(222), int32(308240))
 																				mBase = m.M
 																				v142 = m.ExcPending
 																				if v142 != 0 {
@@ -725,7 +725,7 @@ func F_CreatePortal(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 																		if v105 != 0 {
 																			v106 = v96
 																		} else {
-																			v106 = int32(542850)
+																			v106 = int32(542900)
 																		}
 																		*(*int32)(unsafe.Add(mBase, uint32(v103)+36)) = v106
 																		m.G0 = v8 + int32(32)
@@ -809,19 +809,19 @@ func F_DoPortalRewind(m *base.Module, l0 int32) {
 					if v44 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(419254), int32(0))
+						F_errmsg(m, int32(419304), int32(0))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(601931), int32(0))
+							F_errhint(m, int32(601981), int32(0))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(489230), int32(1685), int32(422749))
+								F_errfinish(m, int32(489280), int32(1685), int32(422799))
 								mBase = m.M
 								v57 = m.ExcPending
 								if v57 != 0 {
@@ -838,7 +838,7 @@ func F_DoPortalRewind(m *base.Module, l0 int32) {
 			} else {
 				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 				if v13 != 0 {
-					v14 = int32(4486928)
+					v14 = int32(4487040)
 					v15 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v17
@@ -937,19 +937,19 @@ func F_DoPortalRewind(m *base.Module, l0 int32) {
 				if v44 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(419254), int32(0))
+					F_errmsg(m, int32(419304), int32(0))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return
 					} else {
-						F_errhint(m, int32(601931), int32(0))
+						F_errhint(m, int32(601981), int32(0))
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(489230), int32(1685), int32(422749))
+							F_errfinish(m, int32(489280), int32(1685), int32(422799))
 							mBase = m.M
 							v57 = m.ExcPending
 							if v57 != 0 {
@@ -966,7 +966,7 @@ func F_DoPortalRewind(m *base.Module, l0 int32) {
 		} else {
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
 			if v13 != 0 {
-				v14 = int32(4486928)
+				v14 = int32(4487040)
 				v15 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v17
@@ -1092,7 +1092,7 @@ func F_EnsurePortalSnapshotExists(m *base.Module) {
 				if v29 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489230), int32(1778), int32(116850))
+					F_errfinish(m, int32(489280), int32(1778), int32(116850))
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
@@ -1212,7 +1212,7 @@ func F_FillPortalStore(m *base.Module, l0 int32, l1 int32) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v22
-		v25 = int32(4486928)
+		v25 = int32(4487040)
 		v26 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v22
 		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
@@ -1279,13 +1279,13 @@ func F_FillPortalStore(m *base.Module, l0 int32, l1 int32) {
 						} else {
 							v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v74
-							F_errmsg_internal(m, int32(477497), v8)
+							F_errmsg_internal(m, int32(477547), v8)
 							mBase = m.M
 							v78 = m.ExcPending
 							if v78 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(489230), int32(1032), int32(362151))
+								F_errfinish(m, int32(489280), int32(1032), int32(362151))
 								mBase = m.M
 								v83 = m.ExcPending
 								if v83 != 0 {
@@ -1518,7 +1518,7 @@ func F_PortalHashTableDeleteAll(m *base.Module) {
 	v3 = m.G0
 	v5 = v3 - int32(32)
 	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 	if v8 == int32(0) {
 		goto L1
 	} else {
@@ -1609,7 +1609,7 @@ L12:
 	}
 L13:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1239]))
 	F_hash_seq_init(m, v5+int32(12), v37)
 	mBase = m.M
 	v39 = m.ExcPending
@@ -1783,7 +1783,7 @@ func F_PortalSetResultFormat(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v197 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(489230), int32(643), int32(111691))
+								F_errfinish(m, int32(489280), int32(643), int32(111691))
 								mBase = m.M
 								v202 = m.ExcPending
 								if v202 != 0 {
@@ -2269,7 +2269,7 @@ L18:
 	;
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	*(*int32)(unsafe.Add(mBase, _consts[399])) = v91
-	v93 = int32(4486928)
+	v93 = int32(4487040)
 	v94 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v91
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = l1

@@ -728,7 +728,7 @@ L37:
 	v161 = *(*int32)(unsafe.Add(mBase, uint32(v157+v147<<(uint(int32(2))%32))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v32)+52)) = uint8(v155)
 	*(*int32)(unsafe.Add(mBase, uint32(v32)+48)) = v161
-	v164 = int32(4486928)
+	v164 = int32(4487040)
 	v165 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v167 = *(*int32)(unsafe.Add(mBase, uint32(v32)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v167
@@ -899,7 +899,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(491311), int32(3267), int32(90290))
+	F_errfinish(m, int32(491361), int32(3267), int32(90290))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {

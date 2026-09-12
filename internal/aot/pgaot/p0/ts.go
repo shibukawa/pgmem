@@ -56,14 +56,14 @@ func F_commit_ts_identify(m *base.Module, l0 int32) int32 {
 	var v8 int32
 	_ = v8
 	if l0 == int32(16) {
-		v6 = int32(535553)
+		v6 = int32(535603)
 	} else {
 		v6 = int32(0)
 	}
 	if l0 != 0 {
 		v8 = v6
 	} else {
-		v8 = int32(538498)
+		v8 = int32(538548)
 	}
 	return v8
 }
@@ -167,7 +167,7 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 		if v86 != 0 {
 			return
 		} else {
-			v87 = int32(4381540)
+			v87 = int32(4381652)
 			v89 = F_SimpleLruZeroPage(m, v87, v76)
 			mBase = m.M
 			v90 = m.ExcPending
@@ -206,7 +206,7 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 			if v66 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(490542), int32(1063), int32(241293))
+				F_errfinish(m, int32(490592), int32(1063), int32(241293))
 				mBase = m.M
 				v71 = m.ExcPending
 				if v71 != 0 {
@@ -250,7 +250,7 @@ func F_commit_ts_redo(m *base.Module, l0 int32) {
 			if v50 != 0 {
 				return
 			} else {
-				v51 = int32(4381540)
+				v51 = int32(4381652)
 				v52 = *(*int32)(unsafe.Add(mBase, _consts[65]))
 				v53 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
 				*(*int64)(unsafe.Add(mBase, uint32(v52)+48)) = v53
@@ -564,7 +564,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(496316), int32(3201), int32(431921))
+	F_errfinish(m, int32(496366), int32(3201), int32(431971))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -874,7 +874,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(496316), int32(3056), int32(432065))
+	F_errfinish(m, int32(496366), int32(3056), int32(432115))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -1853,7 +1853,7 @@ L100:
 	}
 L101:
 	;
-	F_errfinish(m, int32(496050), int32(426), int32(396611))
+	F_errfinish(m, int32(496100), int32(426), int32(396611))
 	mBase = m.M
 	v359 = m.ExcPending
 	if v359 != 0 {
@@ -1880,7 +1880,7 @@ L103:
 	}
 L104:
 	;
-	F_errfinish(m, int32(496050), int32(433), int32(396611))
+	F_errfinish(m, int32(496100), int32(433), int32(396611))
 	mBase = m.M
 	v375 = m.ExcPending
 	if v375 != 0 {
@@ -1906,7 +1906,7 @@ L106:
 	}
 L107:
 	;
-	F_errfinish(m, int32(496050), int32(491), int32(396611))
+	F_errfinish(m, int32(496100), int32(491), int32(396611))
 	mBase = m.M
 	v390 = m.ExcPending
 	if v390 != 0 {
@@ -1931,7 +1931,7 @@ L109:
 	}
 L110:
 	;
-	F_errfinish(m, int32(496050), int32(493), int32(396611))
+	F_errfinish(m, int32(496100), int32(493), int32(396611))
 	mBase = m.M
 	v403 = m.ExcPending
 	if v403 != 0 {
@@ -1956,7 +1956,7 @@ L112:
 	}
 L113:
 	;
-	F_errfinish(m, int32(496050), int32(514), int32(396611))
+	F_errfinish(m, int32(496100), int32(514), int32(396611))
 	mBase = m.M
 	v416 = m.ExcPending
 	if v416 != 0 {
@@ -2199,7 +2199,7 @@ L16:
 	*(*uint8)(unsafe.Add(mBase, uint32(v98+v99))) = uint8(v101)
 	v103 = *(*int32)(unsafe.Add(mBase, uint32(v77)))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v103
-	v110 = F_pg_sprintf(m, v13+int32(48), int32(485141), v13+int32(16))
+	v110 = F_pg_sprintf(m, v13+int32(48), int32(485191), v13+int32(16))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -2225,7 +2225,7 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+72)) = v13 + int32(48)
 	v115 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v115
-	v120 = F_pg_sprintf(m, v13+int32(32), int32(485141), v13)
+	v120 = F_pg_sprintf(m, v13+int32(32), int32(485191), v13)
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -2343,7 +2343,7 @@ func F_ts_setup_firstcall(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = l2
-	v13 = int32(4486928)
+	v13 = int32(4487040)
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v16
@@ -2416,7 +2416,7 @@ func F_ts_setup_firstcall(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v88 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(492630), int32(2481), int32(302998))
+						F_errfinish(m, int32(492680), int32(2481), int32(302998))
 						mBase = m.M
 						v93 = m.ExcPending
 						if v93 != 0 {

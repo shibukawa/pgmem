@@ -112,13 +112,13 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						if v55 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(555193), int32(0))
+							F_errhint(m, int32(555243), int32(0))
 							mBase = m.M
 							v59 = m.ExcPending
 							if v59 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492135), int32(217), int32(130594))
+								F_errfinish(m, int32(492185), int32(217), int32(130594))
 								mBase = m.M
 								v64 = m.ExcPending
 								if v64 != 0 {
@@ -161,13 +161,13 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 							if v55 != 0 {
 								return
 							} else {
-								F_errhint(m, int32(555193), int32(0))
+								F_errhint(m, int32(555243), int32(0))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(492135), int32(217), int32(130594))
+									F_errfinish(m, int32(492185), int32(217), int32(130594))
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
@@ -216,7 +216,7 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 								if v79 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(492135), int32(222), int32(130594))
+									F_errfinish(m, int32(492185), int32(222), int32(130594))
 									mBase = m.M
 									v84 = m.ExcPending
 									if v84 != 0 {

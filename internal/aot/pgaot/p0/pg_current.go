@@ -229,7 +229,7 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 				if v193 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491794), int32(380), int32(86054))
+					F_errfinish(m, int32(491844), int32(380), int32(86054))
 					mBase = m.M
 					v198 = m.ExcPending
 					if v198 != 0 {
@@ -304,13 +304,13 @@ func F_pg_current_wal_insert_lsn(m *base.Module, l0 int32) int32 {
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(554684), int32(0))
+					F_errhint(m, int32(554734), int32(0))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(491704), int32(303), int32(243224))
+						F_errfinish(m, int32(491754), int32(303), int32(243224))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -359,7 +359,7 @@ func F_pg_current_xact_id(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	F_PreventCommandDuringRecovery(m, int32(665936))
+	F_PreventCommandDuringRecovery(m, int32(665986))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -377,7 +377,7 @@ func F_pg_current_xact_id(m *base.Module, l0 int32) int32 {
 				return v17
 			}
 		} else {
-			F_AssignTransactionId(m, int32(4382072))
+			F_AssignTransactionId(m, int32(4382184))
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {

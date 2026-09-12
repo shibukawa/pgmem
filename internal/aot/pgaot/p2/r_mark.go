@@ -45,7 +45,7 @@ func F_r_mark_lAr(m *base.Module, l0 int32) int32 {
 				v27 = v2
 				return v27
 			} else {
-				v21 = F_find_among_b(m, l0, int32(4363680), int32(2))
+				v21 = F_find_among_b(m, l0, int32(4363728), int32(2))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -317,7 +317,7 @@ L3:
 	}
 L4:
 	;
-	v27 = F_find_among_b(m, l0, int32(4364304), int32(10))
+	v27 = F_find_among_b(m, l0, int32(4364352), int32(10))
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {
@@ -476,7 +476,7 @@ L28:
 	goto L29
 L29:
 	;
-	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v134)>>(uint(int32(3))%32)))+uint32(_consts[1336]))))
+	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v134)>>(uint(int32(3))%32)))+uint32(_consts[1337]))))
 	if int32(base.Ui32(v140)>>(uint(v134&int32(7))%32))&int32(1) == int32(0) {
 		goto L30
 	} else {
@@ -612,7 +612,7 @@ L50:
 	}
 L51:
 	;
-	v271 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v265)>>(uint(int32(3))%32)))+uint32(_consts[1329]))))
+	v271 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v265)>>(uint(int32(3))%32)))+uint32(_consts[1330]))))
 	if int32(base.Ui32(v271)>>(uint(v265&int32(7))%32))&int32(1) == int32(0) {
 		goto L49
 	} else {
@@ -753,7 +753,7 @@ L73:
 	goto L74
 L74:
 	;
-	v410 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v404)>>(uint(int32(3))%32)))+uint32(_consts[1336]))))
+	v410 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v404)>>(uint(int32(3))%32)))+uint32(_consts[1337]))))
 	if int32(base.Ui32(v410)>>(uint(v404&int32(7))%32))&int32(1) == int32(0) {
 		goto L75
 	} else {
@@ -994,7 +994,7 @@ L116:
 	}
 L117:
 	;
-	v600 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v594)>>(uint(int32(3))%32)))+uint32(_consts[1329]))))
+	v600 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v594)>>(uint(int32(3))%32)))+uint32(_consts[1330]))))
 	if int32(base.Ui32(v600)>>(uint(v594&int32(7))%32))&int32(1) == int32(0) {
 		goto L115
 	} else {

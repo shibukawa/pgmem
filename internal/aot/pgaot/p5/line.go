@@ -562,7 +562,7 @@ func F_line_recv(m *base.Module, l0 int32) int32 {
 									if v40 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490642), int32(1052), int32(36469))
+										F_errfinish(m, int32(490692), int32(1052), int32(36469))
 										mBase = m.M
 										v45 = m.ExcPending
 										if v45 != 0 {

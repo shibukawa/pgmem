@@ -288,7 +288,7 @@ func F_multirange_adjacent_multirange(m *base.Module, l0 int32) int32 {
 										if v122 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(490989), int32(558), int32(396516))
+											F_errfinish(m, int32(491039), int32(558), int32(396516))
 											mBase = m.M
 											v127 = m.ExcPending
 											if v127 != 0 {
@@ -460,7 +460,7 @@ func F_multirange_adjacent_multirange(m *base.Module, l0 int32) int32 {
 									if v122 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490989), int32(558), int32(396516))
+										F_errfinish(m, int32(491039), int32(558), int32(396516))
 										mBase = m.M
 										v127 = m.ExcPending
 										if v127 != 0 {
@@ -720,7 +720,7 @@ func F_multirange_contained_by_range(m *base.Module, l0 int32) int32 {
 								if v47 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490989), int32(558), int32(396516))
+									F_errfinish(m, int32(491039), int32(558), int32(396516))
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -771,7 +771,7 @@ func F_multirange_contained_by_range(m *base.Module, l0 int32) int32 {
 							if v47 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490989), int32(558), int32(396516))
+								F_errfinish(m, int32(491039), int32(558), int32(396516))
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -908,7 +908,7 @@ func F_multirange_contains_range(m *base.Module, l0 int32) int32 {
 								if v47 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490989), int32(558), int32(396516))
+									F_errfinish(m, int32(491039), int32(558), int32(396516))
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -959,7 +959,7 @@ func F_multirange_contains_range(m *base.Module, l0 int32) int32 {
 							if v47 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490989), int32(558), int32(396516))
+								F_errfinish(m, int32(491039), int32(558), int32(396516))
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1993,7 +1993,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(490989), int32(558), int32(396516))
+	F_errfinish(m, int32(491039), int32(558), int32(396516))
 	mBase = m.M
 	v184 = m.ExcPending
 	if v184 != 0 {

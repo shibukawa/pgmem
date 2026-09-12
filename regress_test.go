@@ -54,6 +54,9 @@ var contribRegress = map[string][]string{
 	"intarray":      {"_int"},
 	"fuzzystrmatch": {"fuzzystrmatch", "fuzzystrmatch_utf8"},
 	"cube":          {"cube", "cube_sci"},
+	// earthdistance's file is cut before its extension create/drop part,
+	// which is all \dT, \df, \do and \d
+	"earthdistance": {"earthdistance"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

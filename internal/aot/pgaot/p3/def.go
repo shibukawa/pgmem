@@ -528,7 +528,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(495662), int32(141), int32(282472))
+	F_errfinish(m, int32(495712), int32(141), int32(282472))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -606,7 +606,7 @@ func F_defGetInt32(m *base.Module, l0 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495662), int32(164), int32(550091))
+						F_errfinish(m, int32(495712), int32(164), int32(550141))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -641,7 +641,7 @@ func F_defGetInt32(m *base.Module, l0 int32) int32 {
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495662), int32(155), int32(550091))
+					F_errfinish(m, int32(495712), int32(155), int32(550141))
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {

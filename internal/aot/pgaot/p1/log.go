@@ -195,10 +195,10 @@ func F_LogCheckpointEnd(m *base.Module, l0 int32) {
 			}
 		}
 	}
-	v83 = int32(4466608)
+	v83 = int32(4466720)
 	v85 = *(*int64)(unsafe.Add(mBase, _consts[235]))
 	*(*int64)(unsafe.Add(mBase, _consts[235])) = v85 + base.I64_extend_i32_s(v61)
-	v89 = int32(4466616)
+	v89 = int32(4466728)
 	v91 = *(*int64)(unsafe.Add(mBase, _consts[236]))
 	*(*int64)(unsafe.Add(mBase, _consts[236])) = v91 + base.I64_extend_i32_s(v82)
 	v96 = int32(*(*uint8)(unsafe.Add(mBase, _consts[237])))
@@ -301,9 +301,9 @@ func F_LogCheckpointEnd(m *base.Module, l0 int32) {
 				v234 = *(*int32)(unsafe.Add(mBase, _consts[136]))
 				*(*float64)(unsafe.Add(mBase, uint32(v19)+8)) = base.F64_div(base.F64_mul(base.F64_convert_i32_s(v228), float64(100)), base.F64_convert_i32_s(v234))
 				if l0 != 0 {
-					v240 = int32(507152)
+					v240 = int32(507202)
 				} else {
-					v240 = int32(507438)
+					v240 = int32(507488)
 				}
 				F_errmsg(m, v240, v19)
 				mBase = m.M
@@ -316,7 +316,7 @@ func F_LogCheckpointEnd(m *base.Module, l0 int32) {
 					} else {
 						v246 = int32(6816)
 					}
-					F_errfinish(m, int32(494925), v246, int32(426773))
+					F_errfinish(m, int32(494975), v246, int32(426823))
 					mBase = m.M
 					v249 = m.ExcPending
 					if v249 != 0 {
@@ -721,7 +721,7 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(140738)
-	v37 = F_format_elog_string(m, int32(646838), v12+int32(32))
+	v37 = F_format_elog_string(m, int32(646888), v12+int32(32))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -1066,7 +1066,7 @@ L66:
 L67:
 	;
 	v195 = v56
-	v196 = int32(552243)
+	v196 = int32(552293)
 	goto L69
 L68:
 	;
@@ -1418,7 +1418,7 @@ L130:
 L131:
 	;
 	v375 = v56
-	v376 = int32(551242)
+	v376 = int32(551292)
 	goto L133
 L132:
 	;
@@ -1963,7 +1963,7 @@ L223:
 L224:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v436
-	v676 = F_format_elog_string(m, int32(647511), v12+int32(16))
+	v676 = F_format_elog_string(m, int32(647561), v12+int32(16))
 	mBase = m.M
 	v677 = m.ExcPending
 	if v677 != 0 {
@@ -1994,7 +1994,7 @@ L228:
 L229:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v56
-	v691 = F_format_elog_string(m, int32(571283), v12)
+	v691 = F_format_elog_string(m, int32(571333), v12)
 	mBase = m.M
 	v692 = m.ExcPending
 	if v692 != 0 {
@@ -2301,13 +2301,13 @@ func F_show_log_file_mode(m *base.Module) int32 {
 	m.G0 = v4
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[428]))
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v7
-	v12 = F_pg_snprintf(m, int32(4384173), int32(12), int32(241489), v4)
+	v12 = F_pg_snprintf(m, int32(4384285), int32(12), int32(241489), v4)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
 		return int32(0)
 	} else {
 		m.G0 = v4 + int32(16)
-		return int32(4384173)
+		return int32(4384285)
 	}
 }

@@ -94,7 +94,7 @@ func F_defGetInt64(m *base.Module, l0 int32) int64 {
 					if v34 != 0 {
 						return int64(0)
 					} else {
-						F_errfinish(m, int32(495662), int32(197), int32(548583))
+						F_errfinish(m, int32(495712), int32(197), int32(548633))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -129,7 +129,7 @@ func F_defGetInt64(m *base.Module, l0 int32) int64 {
 				if v57 != 0 {
 					return int64(0)
 				} else {
-					F_errfinish(m, int32(495662), int32(179), int32(548583))
+					F_errfinish(m, int32(495712), int32(179), int32(548633))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -213,7 +213,7 @@ func F_defGetTypeName(m *base.Module, l0 int32) int32 {
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495662), int32(289), int32(379768))
+							F_errfinish(m, int32(495712), int32(289), int32(379768))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -273,7 +273,7 @@ func F_defGetTypeName(m *base.Module, l0 int32) int32 {
 				if v42 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495662), int32(277), int32(379768))
+					F_errfinish(m, int32(495712), int32(277), int32(379768))
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {

@@ -193,7 +193,7 @@ L5:
 	goto L3
 L6:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[294]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[293]))
 	goto L13
 L7:
 	;

@@ -1231,7 +1231,7 @@ L81:
 	}
 L82:
 	;
-	F_errfinish(m, int32(495450), int32(2281), int32(244315))
+	F_errfinish(m, int32(495500), int32(2281), int32(244315))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -1334,7 +1334,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(495450), int32(2297), int32(244315))
+	F_errfinish(m, int32(495500), int32(2297), int32(244315))
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {

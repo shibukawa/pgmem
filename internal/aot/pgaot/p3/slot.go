@@ -344,7 +344,7 @@ func F_SaveSlotToPath(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 L1:
 	;
-	F_s_lock(m, l0, int32(489898), int32(2328), int32(320163))
+	F_s_lock(m, l0, int32(489948), int32(2328), int32(320163))
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
@@ -497,7 +497,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(489898), int32(2361), int32(320163))
+	F_errfinish(m, int32(489948), int32(2361), int32(320163))
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -510,7 +510,7 @@ L21:
 	goto L6
 L22:
 	;
-	F_s_lock(m, l0, int32(489898), int32(2370), int32(320163))
+	F_s_lock(m, l0, int32(489948), int32(2370), int32(320163))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -572,7 +572,7 @@ L31:
 	goto L32
 L32:
 	;
-	v165 = int32(4102524)
+	v165 = int32(4102572)
 	v166 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	v167 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v166))) = v167
@@ -653,7 +653,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(489898), int32(2397), int32(320163))
+	F_errfinish(m, int32(489948), int32(2397), int32(320163))
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {
@@ -783,7 +783,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(489898), int32(2417), int32(320163))
+	F_errfinish(m, int32(489948), int32(2417), int32(320163))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {
@@ -867,7 +867,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(489898), int32(2433), int32(320163))
+	F_errfinish(m, int32(489948), int32(2433), int32(320163))
 	mBase = m.M
 	v259 = m.ExcPending
 	if v259 != 0 {
@@ -896,7 +896,7 @@ L71:
 	goto L72
 L72:
 	;
-	v297 = int32(4481588)
+	v297 = int32(4481700)
 	v299 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v299 + int32(1)
 	F_fsync_fname(m, v11+int32(304), int32(0))
@@ -949,7 +949,7 @@ L76:
 	}
 L77:
 	;
-	F_errfinish(m, int32(489898), int32(2449), int32(320163))
+	F_errfinish(m, int32(489948), int32(2449), int32(320163))
 	mBase = m.M
 	v296 = m.ExcPending
 	if v296 != 0 {
@@ -982,7 +982,7 @@ L80:
 	}
 L81:
 	;
-	v315 = int32(4481588)
+	v315 = int32(4481700)
 	v317 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	v318 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v317 - v318
@@ -995,7 +995,7 @@ L81:
 	}
 L82:
 	;
-	F_s_lock(m, l0, int32(489898), int32(2468), int32(320163))
+	F_s_lock(m, l0, int32(489948), int32(2468), int32(320163))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {
@@ -1407,13 +1407,13 @@ func F_slot_getsomeattrs_int(m *base.Module, l0 int32, l1 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v2
-			F_errmsg_internal(m, int32(468997), v7)
+			F_errmsg_internal(m, int32(469047), v7)
 			mBase = m.M
 			v130 = m.ExcPending
 			if v130 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(491007), int32(2098), int32(90603))
+				F_errfinish(m, int32(491057), int32(2098), int32(90603))
 				mBase = m.M
 				v135 = m.ExcPending
 				if v135 != 0 {

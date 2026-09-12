@@ -564,7 +564,7 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 						if v110 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492595), int32(126), int32(414890))
+							F_errfinish(m, int32(492645), int32(126), int32(414940))
 							mBase = m.M
 							v115 = m.ExcPending
 							if v115 != 0 {

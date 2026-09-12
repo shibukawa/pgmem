@@ -73,7 +73,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 				if v37 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(493130), int32(711), int32(408137))
+					F_errfinish(m, int32(493180), int32(711), int32(408137))
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {
@@ -101,7 +101,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 					if v37 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493130), int32(711), int32(408137))
+						F_errfinish(m, int32(493180), int32(711), int32(408137))
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
@@ -169,7 +169,7 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 						if v37 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493130), int32(711), int32(408137))
+							F_errfinish(m, int32(493180), int32(711), int32(408137))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {

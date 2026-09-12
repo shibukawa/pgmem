@@ -71,7 +71,7 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v78 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(493130), int32(820), int32(485832))
+					F_errfinish(m, int32(493180), int32(820), int32(485882))
 					mBase = m.M
 					v83 = m.ExcPending
 					if v83 != 0 {
@@ -99,7 +99,7 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v78 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493130), int32(820), int32(485832))
+						F_errfinish(m, int32(493180), int32(820), int32(485882))
 						mBase = m.M
 						v83 = m.ExcPending
 						if v83 != 0 {
@@ -127,7 +127,7 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						if v78 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493130), int32(820), int32(485832))
+							F_errfinish(m, int32(493180), int32(820), int32(485882))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {

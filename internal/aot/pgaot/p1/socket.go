@@ -137,7 +137,7 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493959), int32(886), int32(333571))
+							F_errfinish(m, int32(494009), int32(886), int32(333571))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
@@ -155,7 +155,7 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 				*(*uint8)(unsafe.Add(mBase, uint32(v10)+4)) = uint8(v13)
 				*(*uint8)(unsafe.Add(mBase, _consts[458])) = uint8(v13)
 				v19 = *(*int32)(unsafe.Add(mBase, _consts[459]))
-				v22 = F_internal_flush_buffer(m, v19, int32(4385848), int32(4385852))
+				v22 = F_internal_flush_buffer(m, v19, int32(4385960), int32(4385964))
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {

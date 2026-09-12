@@ -2173,7 +2173,7 @@ L3:
 L4:
 	;
 	v41 = *(*int32)(unsafe.Add(mBase, _consts[479]))
-	v43 = int32(4380696)
+	v43 = int32(4380808)
 	v44 = *(*int32)(unsafe.Add(mBase, _consts[480]))
 	*(*int32)(unsafe.Add(mBase, _consts[480])) = v41
 	v47 = F___syscall_ret(m, v44)
@@ -2230,7 +2230,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(492316), int32(1490), int32(383960))
+	F_errfinish(m, int32(492366), int32(1490), int32(383960))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -2245,7 +2245,7 @@ L13:
 	;
 	v50 = F_fopen(m, int32(234258), int32(32454))
 	mBase = m.M
-	v52 = int32(4380696)
+	v52 = int32(4380808)
 	v53 = *(*int32)(unsafe.Add(mBase, _consts[480]))
 	*(*int32)(unsafe.Add(mBase, _consts[480])) = v47
 	v56 = F___syscall_ret(m, v53)
@@ -2319,7 +2319,7 @@ L23:
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+128)) = v67
-	v80 = F_pg_fprintf(m, v50, int32(729335), v6+int32(128))
+	v80 = F_pg_fprintf(m, v50, int32(729385), v6+int32(128))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -2387,7 +2387,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(492316), int32(1524), int32(383960))
+	F_errfinish(m, int32(492366), int32(1524), int32(383960))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -2431,7 +2431,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(492316), int32(1513), int32(383960))
+	F_errfinish(m, int32(492366), int32(1513), int32(383960))
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -2461,7 +2461,7 @@ L41:
 L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+96)) = v125
-	v138 = F_pg_fprintf(m, v50, int32(729346), v6+int32(96))
+	v138 = F_pg_fprintf(m, v50, int32(729396), v6+int32(96))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -2529,7 +2529,7 @@ L49:
 	}
 L50:
 	;
-	F_errfinish(m, int32(492316), int32(1537), int32(383960))
+	F_errfinish(m, int32(492366), int32(1537), int32(383960))
 	mBase = m.M
 	v159 = m.ExcPending
 	if v159 != 0 {
@@ -2564,7 +2564,7 @@ L54:
 L55:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+64)) = v163
-	v176 = F_pg_fprintf(m, v50, int32(729357), v6-int32(-64))
+	v176 = F_pg_fprintf(m, v50, int32(729407), v6-int32(-64))
 	mBase = m.M
 	v177 = m.ExcPending
 	if v177 != 0 {
@@ -2632,7 +2632,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(492316), int32(1550), int32(383960))
+	F_errfinish(m, int32(492366), int32(1550), int32(383960))
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {
@@ -2696,7 +2696,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(492316), int32(1561), int32(383960))
+	F_errfinish(m, int32(492366), int32(1561), int32(383960))
 	mBase = m.M
 	v228 = m.ExcPending
 	if v228 != 0 {

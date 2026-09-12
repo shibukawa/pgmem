@@ -397,7 +397,7 @@ func F_smgr_aio_reopen(m *base.Module, l0 int32) {
 			v31 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+20)))
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
 			v35 = *(*int32)(unsafe.Add(mBase, uint32(v24)+36))
-			v40 = *(*int32)(unsafe.Add(mBase, uint32(v35*int32(80))+uint32(_consts[797])))
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(v35*int32(80))+uint32(_consts[796])))
 			v41 = m.T0[v40].(func(*base.Module, int32, int32, int32, int32) int32)(m, v24, v31, v32, v8+int32(12))
 			mBase = m.M
 			v42 = m.ExcPending

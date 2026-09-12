@@ -423,7 +423,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(496475), int32(1763), int32(86748))
+	F_errfinish(m, int32(496525), int32(1763), int32(86748))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -625,7 +625,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(496475), int32(1784), int32(86748))
+	F_errfinish(m, int32(496525), int32(1784), int32(86748))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {
@@ -664,7 +664,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(496475), int32(1790), int32(86748))
+	F_errfinish(m, int32(496525), int32(1790), int32(86748))
 	mBase = m.M
 	v199 = m.ExcPending
 	if v199 != 0 {
@@ -700,7 +700,7 @@ L49:
 	}
 L50:
 	;
-	F_errfinish(m, int32(496475), int32(1822), int32(86748))
+	F_errfinish(m, int32(496525), int32(1822), int32(86748))
 	mBase = m.M
 	v218 = m.ExcPending
 	if v218 != 0 {
@@ -739,7 +739,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(496475), int32(1831), int32(86748))
+	F_errfinish(m, int32(496525), int32(1831), int32(86748))
 	mBase = m.M
 	v239 = m.ExcPending
 	if v239 != 0 {
@@ -994,7 +994,7 @@ L85:
 	*(*uint32)(unsafe.Add(mBase, uint32(v14)+4)) = uint32(v2)
 	v354 = int64(base.Ui64(v2) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v14))) = uint32(v354)
-	F_errmsg(m, int32(508739), v14)
+	F_errmsg(m, int32(508789), v14)
 	mBase = m.M
 	v358 = m.ExcPending
 	if v358 != 0 {
@@ -1004,7 +1004,7 @@ L85:
 	}
 L86:
 	;
-	F_errdetail(m, int32(561214), int32(0))
+	F_errdetail(m, int32(561264), int32(0))
 	mBase = m.M
 	v362 = m.ExcPending
 	if v362 != 0 {
@@ -1014,7 +1014,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(496475), int32(1918), int32(362112))
+	F_errfinish(m, int32(496525), int32(1918), int32(362112))
 	mBase = m.M
 	v367 = m.ExcPending
 	if v367 != 0 {
@@ -1077,7 +1077,7 @@ L95:
 	}
 L96:
 	;
-	F_errfinish(m, int32(496475), int32(344), int32(87035))
+	F_errfinish(m, int32(496525), int32(344), int32(87035))
 	mBase = m.M
 	v401 = m.ExcPending
 	if v401 != 0 {
@@ -1131,7 +1131,7 @@ func F_SnapBuildRestoreContents(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = int32(4102524)
+	v11 = int32(4102572)
 	v12 = *(*int32)(unsafe.Add(mBase, _consts[148]))
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = int32(167772214)
 	v15 = F_read(m, l0, l1, l2)
@@ -1167,7 +1167,7 @@ func F_SnapBuildRestoreContents(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(496475), int32(1951), int32(119950))
+							F_errfinish(m, int32(496525), int32(1951), int32(119950))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -1202,7 +1202,7 @@ func F_SnapBuildRestoreContents(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						if v41 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(496475), int32(1957), int32(119950))
+							F_errfinish(m, int32(496525), int32(1957), int32(119950))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
@@ -1269,7 +1269,7 @@ func F_SnapBuildSnapDecRefcount(m *base.Module, l0 int32) {
 			if v21 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(496475), int32(344), int32(87035))
+				F_errfinish(m, int32(496525), int32(344), int32(87035))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {

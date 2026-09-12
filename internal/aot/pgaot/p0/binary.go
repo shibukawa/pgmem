@@ -208,7 +208,7 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 								if v36 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489743), int32(268), int32(343101))
+									F_errfinish(m, int32(489793), int32(268), int32(343101))
 									mBase = m.M
 									v41 = m.ExcPending
 									if v41 != 0 {
@@ -283,7 +283,7 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 												if v195 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(492875), int32(2113), int32(327435))
+													F_errfinish(m, int32(492925), int32(2113), int32(327435))
 													mBase = m.M
 													v200 = m.ExcPending
 													if v200 != 0 {
@@ -341,13 +341,13 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 														} else {
 															v137 = *(*int32)(unsafe.Add(mBase, uint32(v95)+12))
 															*(*int32)(unsafe.Add(mBase, uint32(v95))) = v137
-															F_errmsg_internal(m, int32(529142), v95)
+															F_errmsg_internal(m, int32(529192), v95)
 															mBase = m.M
 															v141 = m.ExcPending
 															if v141 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(491985), int32(1190), int32(302269))
+																F_errfinish(m, int32(492035), int32(1190), int32(302269))
 																mBase = m.M
 																v146 = m.ExcPending
 																if v146 != 0 {
@@ -454,7 +454,7 @@ func F_binary_upgrade_set_next_index_relfilenode(m *base.Module, l0 int32) int32
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(134), int32(408311))
+					F_errfinish(m, int32(489793), int32(134), int32(408311))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -508,7 +508,7 @@ func F_binary_upgrade_set_next_pg_enum_oid(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489743), int32(167), int32(431810))
+					F_errfinish(m, int32(489793), int32(167), int32(431860))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

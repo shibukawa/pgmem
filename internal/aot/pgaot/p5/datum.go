@@ -159,7 +159,7 @@ func F_datum_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l4
-				F_errmsg_internal(m, int32(480197), v10)
+				F_errmsg_internal(m, int32(480247), v10)
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
@@ -214,7 +214,7 @@ func F_datum_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 					if v144 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490994), int32(2796), int32(347569))
+						F_errfinish(m, int32(491044), int32(2796), int32(347569))
 						mBase = m.M
 						v149 = m.ExcPending
 						if v149 != 0 {

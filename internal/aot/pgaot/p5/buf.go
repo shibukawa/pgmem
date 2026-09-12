@@ -511,7 +511,7 @@ L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+20)) = v34
-	v58 = F_pg_snprintf(m, v17+int32(32), int32(1024), int32(463904), v17+int32(16))
+	v58 = F_pg_snprintf(m, v17+int32(32), int32(1024), int32(463954), v17+int32(16))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -963,7 +963,7 @@ L52:
 	}
 L53:
 	;
-	v377 = *(*int32)(unsafe.Add(mBase, _consts[645]))
+	v377 = *(*int32)(unsafe.Add(mBase, _consts[644]))
 	v378 = F_PathNameOpenFilePerm(m, v367, l2, v377)
 	mBase = m.M
 	v379 = m.ExcPending
@@ -1003,7 +1003,7 @@ L57:
 L58:
 	;
 	v402 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-	F_ResourceOwnerRemember(m, v402, v378, int32(1609664))
+	F_ResourceOwnerRemember(m, v402, v378, int32(1609712))
 	mBase = m.M
 	v405 = m.ExcPending
 	if v405 != 0 {
@@ -1044,7 +1044,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(496527), int32(1925), int32(387169))
+	F_errfinish(m, int32(496577), int32(1925), int32(387169))
 	mBase = m.M
 	v400 = m.ExcPending
 	if v400 != 0 {
@@ -1059,7 +1059,7 @@ L63:
 	}
 L64:
 	;
-	v407 = *(*int32)(unsafe.Add(mBase, _consts[552]))
+	v407 = *(*int32)(unsafe.Add(mBase, _consts[551]))
 	v410 = v407 + v378*int32(48)
 	v412 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	*(*int32)(unsafe.Add(mBase, uint32(v410)+8)) = v412
@@ -1068,7 +1068,7 @@ L64:
 	v418 = v416 | int32(2)
 	*(*uint16)(unsafe.Add(mBase, uint32(v415))) = uint16(v418)
 	v421 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[646])) = uint8(v421)
+	*(*uint8)(unsafe.Add(mBase, _consts[645])) = uint8(v421)
 	goto L54
 L65:
 	;
@@ -1172,7 +1172,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(495782), int32(339), int32(107997))
+	F_errfinish(m, int32(495832), int32(339), int32(107997))
 	mBase = m.M
 	v464 = m.ExcPending
 	if v464 != 0 {

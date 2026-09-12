@@ -359,7 +359,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(491199), int32(1921), int32(166284))
+	F_errfinish(m, int32(491249), int32(1921), int32(166284))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -404,7 +404,7 @@ L23:
 	}
 L24:
 	;
-	F_errmsg(m, int32(523334), int32(0))
+	F_errmsg(m, int32(523384), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -414,7 +414,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(491199), int32(1908), int32(166284))
+	F_errfinish(m, int32(491249), int32(1908), int32(166284))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -449,7 +449,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(491199), int32(1927), int32(166284))
+	F_errfinish(m, int32(491249), int32(1927), int32(166284))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -521,7 +521,7 @@ func F_get_publication_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495981), int32(3774), int32(431727))
+							F_errfinish(m, int32(496031), int32(3774), int32(431777))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {

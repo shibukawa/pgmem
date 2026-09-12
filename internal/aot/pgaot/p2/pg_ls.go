@@ -93,7 +93,7 @@ func F_pg_ls_tmpdir(m *base.Module, l0 int32, l1 int32) {
 					if v26 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495772), int32(657), int32(212231))
+						F_errfinish(m, int32(495822), int32(657), int32(212231))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

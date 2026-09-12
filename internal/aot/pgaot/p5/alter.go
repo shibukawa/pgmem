@@ -38,7 +38,7 @@ func F_AlterTableInternal(m *base.Module, l0 int32, l1 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			v11 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+			v11 = *(*int32)(unsafe.Add(mBase, _consts[286]))
 			if v11 == int32(0) {
 			} else {
 				v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+20)))
@@ -126,7 +126,7 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						if v65 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(491149), int32(1085), int32(246561))
+							F_errfinish(m, int32(491199), int32(1085), int32(246561))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -147,7 +147,7 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l1
-					F_appendStringInfo(m, v6+int32(-16), int32(657090), v6+int32(-32))
+					F_appendStringInfo(m, v6+int32(-16), int32(657140), v6+int32(-32))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -198,7 +198,7 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 				if v47 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(491149), int32(1071), int32(246561))
+					F_errfinish(m, int32(491199), int32(1071), int32(246561))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {

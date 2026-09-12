@@ -3435,7 +3435,7 @@ func F_hash_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491502), int32(3950), int32(228395))
+					F_errfinish(m, int32(491552), int32(3950), int32(228395))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

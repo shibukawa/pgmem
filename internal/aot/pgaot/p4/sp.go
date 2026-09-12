@@ -447,7 +447,7 @@ func F_SpGistGetBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				if v226 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490754), int32(576), int32(225212))
+					F_errfinish(m, int32(490804), int32(576), int32(225212))
 					mBase = m.M
 					v231 = m.ExcPending
 					if v231 != 0 {

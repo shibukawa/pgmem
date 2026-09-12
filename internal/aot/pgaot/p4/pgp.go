@@ -464,14 +464,14 @@ L8:
 	}
 L9:
 	;
-	v36 = int32(527045)
+	v36 = int32(527095)
 	goto L11
 L11:
 	;
 	goto L12
 L12:
 	;
-	v39 = int32(*(*int8)(unsafe.Add(mBase, _consts[1530])))
+	v39 = int32(*(*int8)(unsafe.Add(mBase, _consts[1531])))
 	v43 = l0
 	goto L13
 L13:
@@ -710,14 +710,14 @@ L48:
 	}
 L49:
 	;
-	v148 = int32(539392)
+	v148 = int32(539442)
 	goto L50
 L50:
 	;
 	goto L52
 L52:
 	;
-	v153 = int32(*(*int8)(unsafe.Add(mBase, _consts[1531])))
+	v153 = int32(*(*int8)(unsafe.Add(mBase, _consts[1532])))
 	v157 = v132
 	goto L53
 L53:
@@ -1971,7 +1971,7 @@ L245:
 	}
 L246:
 	;
-	F_errfinish(m, int32(491929), int32(370), int32(411214))
+	F_errfinish(m, int32(491979), int32(370), int32(411214))
 	mBase = m.M
 	v911 = m.ExcPending
 	if v911 != 0 {
@@ -2185,7 +2185,7 @@ L2:
 	goto L3
 L3:
 	;
-	F_appendStringInfoString(m, l2, int32(736953))
+	F_appendStringInfoString(m, l2, int32(737003))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -2376,7 +2376,7 @@ L36:
 	v131 = *(*int32)(unsafe.Add(mBase, uint32(l5+v127)))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v131
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v129
-	F_appendStringInfo(m, l2, int32(729481), v15)
+	F_appendStringInfo(m, l2, int32(729531), v15)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -2466,13 +2466,13 @@ L46:
 L47:
 	;
 	v198 = int32(63)
-	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v192&v198)+uint32(_consts[1529]))))
+	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v192&v198)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v182)+3)) = uint8(v201)
-	v208 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(6))%32))&v198)+uint32(_consts[1529]))))
+	v208 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(6))%32))&v198)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v182)+2)) = uint8(v208)
-	v215 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(12))%32))&v198)+uint32(_consts[1529]))))
+	v215 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(12))%32))&v198)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v182)+1)) = uint8(v215)
-	v222 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(18))%32))&v198)+uint32(_consts[1529]))))
+	v222 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v192)>>(uint(int32(18))%32))&v198)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v182))) = uint8(v222)
 	v228 = v182 + int32(4)
 	v229 = int32(0)
@@ -2516,9 +2516,9 @@ L52:
 L53:
 	;
 	v249 = int32(63)
-	v252 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(12))%32))&v249)+uint32(_consts[1529]))))
+	v252 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(12))%32))&v249)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v240)+1)) = uint8(v252)
-	v259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(18))%32))&v249)+uint32(_consts[1529]))))
+	v259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(18))%32))&v249)+uint32(_consts[1530]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v240))) = uint8(v259)
 	if v231 == int32(0) {
 		goto L54
@@ -2527,7 +2527,7 @@ L53:
 	}
 L54:
 	;
-	v270 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(6))%32))&int32(63))+uint32(_consts[1529]))))
+	v270 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v229)>>(uint(int32(6))%32))&int32(63))+uint32(_consts[1530]))))
 	v271 = v270
 	goto L56
 L55:
@@ -2594,7 +2594,7 @@ L63:
 	goto L62
 L64:
 	;
-	v313 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(18))%32)))+uint32(_consts[1529]))))
+	v313 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(18))%32)))+uint32(_consts[1530]))))
 	F_appendStringInfoChar(m, l2, v313)
 	mBase = m.M
 	v315 = m.ExcPending
@@ -2605,7 +2605,7 @@ L64:
 	}
 L65:
 	;
-	v321 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(12))%32))&int32(63))+uint32(_consts[1529]))))
+	v321 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(12))%32))&int32(63))+uint32(_consts[1530]))))
 	F_appendStringInfoChar(m, l2, v321)
 	mBase = m.M
 	v323 = m.ExcPending
@@ -2616,7 +2616,7 @@ L65:
 	}
 L66:
 	;
-	v329 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(6))%32))&int32(63))+uint32(_consts[1529]))))
+	v329 = int32(*(*int8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v104)>>(uint(int32(6))%32))&int32(63))+uint32(_consts[1530]))))
 	F_appendStringInfoChar(m, l2, v329)
 	mBase = m.M
 	v331 = m.ExcPending
@@ -2627,7 +2627,7 @@ L66:
 	}
 L67:
 	;
-	v335 = int32(*(*int8)(unsafe.Add(mBase, uint32(v104&int32(63))+uint32(_consts[1529]))))
+	v335 = int32(*(*int8)(unsafe.Add(mBase, uint32(v104&int32(63))+uint32(_consts[1530]))))
 	F_appendStringInfoChar(m, l2, v335)
 	mBase = m.M
 	v337 = m.ExcPending
@@ -2638,7 +2638,7 @@ L67:
 	}
 L68:
 	;
-	F_appendStringInfoString(m, l2, int32(736982))
+	F_appendStringInfoString(m, l2, int32(737032))
 	mBase = m.M
 	v341 = m.ExcPending
 	if v341 != 0 {
@@ -2662,7 +2662,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(491929), int32(227), int32(411111))
+	F_errfinish(m, int32(491979), int32(227), int32(411111))
 	mBase = m.M
 	v361 = m.ExcPending
 	if v361 != 0 {
@@ -2820,7 +2820,7 @@ func F_pgp_create_pkt_writer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		return int32(0)
 	} else {
 		if int32(0) <= v15 {
-			v23 = F_pushf_create(m, l2, int32(4375196), int32(0), l0)
+			v23 = F_pushf_create(m, l2, int32(4375244), int32(0), l0)
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -2842,7 +2842,7 @@ func F_pgp_decompress_filter(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_pullf_create(m, l0, int32(4375104), l1, l2)
+	v5 = F_pullf_create(m, l0, int32(4375152), l1, l2)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -2914,7 +2914,7 @@ func F_pgp_get_cipher_block_size(m *base.Module, l0 int32) int32 {
 		if int32(base.Ui32(int32(487))>>(uint(v4)%32))&int32(1) == int32(0) {
 			v19 = v2
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1554])))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1555])))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
 			v19 = v18
 		}
@@ -2950,7 +2950,7 @@ func F_pgp_load_cipher(m *base.Module, l0 int32, l1 int32) int32 {
 			v28 = v4
 			return v28
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(v6<<(uint(int32(2))%32))+uint32(_consts[1554])))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v6<<(uint(int32(2))%32))+uint32(_consts[1555])))
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
 			v23 = F_px_find_cipher(m, v22, l1)
 			mBase = m.M
@@ -2991,7 +2991,7 @@ func F_pgp_mpi_alloc(m *base.Module, l0 int32, l1 int32) int32 {
 	m.G0 = v8
 	if base.Ui32(int32(65536)) <= base.Ui32(l0) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-		F_px_debug(m, int32(463392), v8)
+		F_px_debug(m, int32(463442), v8)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
@@ -3877,56 +3877,56 @@ func F_pgp_set_cipher_algo(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = F_pg_strcasecmp(m, int32(170506), l1)
 	mBase = m.M
 	if v8 == int32(0) {
-		v77 = int32(4375328)
+		v77 = int32(4375376)
 		v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 		v79 = v78
 	} else {
-		v16 = F_pg_strcasecmp(m, int32(547092), l1)
+		v16 = F_pg_strcasecmp(m, int32(547142), l1)
 		mBase = m.M
 		if v16 == int32(0) {
-			v77 = int32(4375348)
+			v77 = int32(4375396)
 			v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 			v79 = v78
 		} else {
 			v24 = F_pg_strcasecmp(m, int32(337797), l1)
 			mBase = m.M
 			if v24 == int32(0) {
-				v77 = int32(4375368)
+				v77 = int32(4375416)
 				v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 				v79 = v78
 			} else {
 				v32 = F_pg_strcasecmp(m, int32(320787), l1)
 				mBase = m.M
 				if v32 == int32(0) {
-					v77 = int32(4375388)
+					v77 = int32(4375436)
 					v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 					v79 = v78
 				} else {
 					v40 = F_pg_strcasecmp(m, int32(171006), l1)
 					mBase = m.M
 					if v40 == int32(0) {
-						v77 = int32(4375408)
+						v77 = int32(4375456)
 						v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 						v79 = v78
 					} else {
-						v48 = F_pg_strcasecmp(m, int32(546476), l1)
+						v48 = F_pg_strcasecmp(m, int32(546526), l1)
 						mBase = m.M
 						if v48 == int32(0) {
-							v77 = int32(4375428)
+							v77 = int32(4375476)
 							v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 							v79 = v78
 						} else {
-							v56 = F_pg_strcasecmp(m, int32(550034), l1)
+							v56 = F_pg_strcasecmp(m, int32(550084), l1)
 							mBase = m.M
 							if v56 == int32(0) {
-								v77 = int32(4375448)
+								v77 = int32(4375496)
 								v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 								v79 = v78
 							} else {
-								v64 = F_pg_strcasecmp(m, int32(546856), l1)
+								v64 = F_pg_strcasecmp(m, int32(546906), l1)
 								mBase = m.M
 								if v64 == int32(0) {
-									v77 = int32(4375468)
+									v77 = int32(4375516)
 									v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 									v79 = v78
 								} else {
@@ -3935,7 +3935,7 @@ func F_pgp_set_cipher_algo(m *base.Module, l0 int32, l1 int32) int32 {
 									if v73 != 0 {
 										v79 = int32(-103)
 									} else {
-										v77 = int32(4375488)
+										v77 = int32(4375536)
 										v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 										v79 = v78
 									}

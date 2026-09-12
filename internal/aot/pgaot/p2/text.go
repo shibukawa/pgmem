@@ -1153,7 +1153,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(496904), int32(4531), int32(230406))
+	F_errfinish(m, int32(496954), int32(4531), int32(230406))
 	mBase = m.M
 	v365 = m.ExcPending
 	if v365 != 0 {
@@ -3821,7 +3821,7 @@ L14:
 	}
 L15:
 	;
-	F_errhint(m, int32(651351), int32(0))
+	F_errhint(m, int32(651401), int32(0))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -3831,7 +3831,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(496904), int32(6191), int32(122927))
+	F_errfinish(m, int32(496954), int32(6191), int32(122927))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -3866,7 +3866,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(496904), int32(6190), int32(122927))
+	F_errfinish(m, int32(496954), int32(6190), int32(122927))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {
@@ -3935,7 +3935,7 @@ func F_text_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496904), int32(1186), int32(26362))
+						F_errfinish(m, int32(496954), int32(1186), int32(26362))
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
@@ -3986,12 +3986,12 @@ func F_text_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(436989), int32(0))
+				F_errmsg(m, int32(437039), int32(0))
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496904), int32(1182), int32(26362))
+					F_errfinish(m, int32(496954), int32(1182), int32(26362))
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return int32(0)

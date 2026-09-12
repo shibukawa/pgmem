@@ -299,7 +299,7 @@ func F_on_proc_exit(m *base.Module, l0 int32) {
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(496590), int32(321), int32(99008))
+					F_errfinish(m, int32(496640), int32(321), int32(99008))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

@@ -2480,7 +2480,7 @@ L45:
 	goto L49
 L46:
 	;
-	v324 = F__emscripten_memcpy_bulkmem(m, v35+int32(8), int32(4048548), int32(4096))
+	v324 = F__emscripten_memcpy_bulkmem(m, v35+int32(8), int32(4048596), int32(4096))
 	mBase = m.M
 	goto L48
 L48:
@@ -3811,7 +3811,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(494701), int32(639), int32(243809))
+	F_errfinish(m, int32(494751), int32(639), int32(243809))
 	mBase = m.M
 	v5306 = m.ExcPending
 	if v5306 != 0 {
@@ -3846,7 +3846,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(494701), int32(630), int32(243809))
+	F_errfinish(m, int32(494751), int32(630), int32(243809))
 	mBase = m.M
 	v5329 = m.ExcPending
 	if v5329 != 0 {
@@ -3881,7 +3881,7 @@ L102:
 	}
 L103:
 	;
-	F_errfinish(m, int32(494701), int32(617), int32(243809))
+	F_errfinish(m, int32(494751), int32(617), int32(243809))
 	mBase = m.M
 	v5349 = m.ExcPending
 	if v5349 != 0 {

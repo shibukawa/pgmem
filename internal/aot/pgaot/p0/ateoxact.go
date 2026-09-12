@@ -151,16 +151,16 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 				if v18 != 0 {
 					return
 				} else {
-					F_read_relmap_file(m, int32(4475724), int32(312550), int32(1), int32(22))
+					F_read_relmap_file(m, int32(4475836), int32(312550), int32(1), int32(22))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						v29 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4475724), int32(524))
+						v29 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4475836), int32(524))
 						mBase = m.M
 						v35 = int32(*(*uint8)(unsafe.Add(mBase, _consts[273])))
-						F_merge_map_updates(m, v6+int32(4), int32(4475200), v35)
+						F_merge_map_updates(m, v6+int32(4), int32(4475312), v35)
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
@@ -173,7 +173,7 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 							if v47 != 0 {
 								return
 							} else {
-								v52 = F__emscripten_memcpy_bulkmem(m, int32(4475724), v6+int32(4), int32(524))
+								v52 = F__emscripten_memcpy_bulkmem(m, int32(4475836), v6+int32(4), int32(524))
 								mBase = m.M
 								v55 = *(*int32)(unsafe.Add(mBase, _consts[29]))
 								F_LWLockRelease(m, v55+int32(3200))
@@ -196,16 +196,16 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 											return
 										} else {
 											v76 = *(*int32)(unsafe.Add(mBase, _consts[883]))
-											F_read_relmap_file(m, int32(4476772), v76, int32(1), int32(22))
+											F_read_relmap_file(m, int32(4476884), v76, int32(1), int32(22))
 											mBase = m.M
 											v80 = m.ExcPending
 											if v80 != 0 {
 												return
 											} else {
-												v85 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4476772), int32(524))
+												v85 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4476884), int32(524))
 												mBase = m.M
 												v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[273])))
-												F_merge_map_updates(m, v6+int32(4), int32(4476248), v91)
+												F_merge_map_updates(m, v6+int32(4), int32(4476360), v91)
 												mBase = m.M
 												v93 = m.ExcPending
 												if v93 != 0 {
@@ -221,7 +221,7 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 													if v106 != 0 {
 														return
 													} else {
-														v111 = F__emscripten_memcpy_bulkmem(m, int32(4476772), v6+int32(4), int32(524))
+														v111 = F__emscripten_memcpy_bulkmem(m, int32(4476884), v6+int32(4), int32(524))
 														mBase = m.M
 														v114 = *(*int32)(unsafe.Add(mBase, _consts[29]))
 														F_LWLockRelease(m, v114+int32(3200))
@@ -258,16 +258,16 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						v76 = *(*int32)(unsafe.Add(mBase, _consts[883]))
-						F_read_relmap_file(m, int32(4476772), v76, int32(1), int32(22))
+						F_read_relmap_file(m, int32(4476884), v76, int32(1), int32(22))
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return
 						} else {
-							v85 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4476772), int32(524))
+							v85 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), int32(4476884), int32(524))
 							mBase = m.M
 							v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[273])))
-							F_merge_map_updates(m, v6+int32(4), int32(4476248), v91)
+							F_merge_map_updates(m, v6+int32(4), int32(4476360), v91)
 							mBase = m.M
 							v93 = m.ExcPending
 							if v93 != 0 {
@@ -283,7 +283,7 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 								if v106 != 0 {
 									return
 								} else {
-									v111 = F__emscripten_memcpy_bulkmem(m, int32(4476772), v6+int32(4), int32(524))
+									v111 = F__emscripten_memcpy_bulkmem(m, int32(4476884), v6+int32(4), int32(524))
 									mBase = m.M
 									v114 = *(*int32)(unsafe.Add(mBase, _consts[29]))
 									F_LWLockRelease(m, v114+int32(3200))
@@ -504,7 +504,7 @@ L20:
 	}
 L21:
 	;
-	F_errhint(m, int32(575956), int32(0))
+	F_errhint(m, int32(576006), int32(0))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -514,7 +514,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(494534), int32(472), int32(530812))
+	F_errfinish(m, int32(494584), int32(472), int32(530862))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

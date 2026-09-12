@@ -1426,7 +1426,7 @@ L5:
 	return int32(0)
 L6:
 	;
-	v24 = int32(4486928)
+	v24 = int32(4487040)
 	v25 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(v20)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v27
@@ -1719,7 +1719,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(492630), int32(653), int32(77061))
+	F_errfinish(m, int32(492680), int32(653), int32(77061))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {

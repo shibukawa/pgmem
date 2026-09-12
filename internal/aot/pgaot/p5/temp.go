@@ -27,7 +27,7 @@ func F_check_temp_buffers(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v26 = v4
 		return v26
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[640]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[639]))
 		if v8 == int32(0) {
 			v26 = v4
 			return v26
@@ -39,7 +39,7 @@ func F_check_temp_buffers(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				v15 = *(*int32)(unsafe.Add(mBase, _consts[86]))
 				*(*int32)(unsafe.Add(mBase, _consts[87])) = v15
-				v21 = F_format_elog_string(m, int32(599220), int32(0))
+				v21 = F_format_elog_string(m, int32(599270), int32(0))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -220,7 +220,7 @@ L8:
 	goto L11
 L9:
 	;
-	v38 = F_format_elog_string(m, int32(627757), int32(0))
+	v38 = F_format_elog_string(m, int32(627807), int32(0))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -421,7 +421,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(496328), int32(1258), int32(170890))
+	F_errfinish(m, int32(496378), int32(1258), int32(170890))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {

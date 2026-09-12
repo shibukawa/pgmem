@@ -2888,6 +2888,12 @@ func F_cube_f8_f8(m *base.Module, l0 int32) int32
 func F_cube_c_f8(m *base.Module, l0 int32) int32
 //go:linkname F_cube_c_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_c_f8_f8
 func F_cube_c_f8_f8(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_earthdistance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Pg_magic_func_earthdistance
+func F_Pg_magic_func_earthdistance(m *base.Module) int32
+//go:linkname F_pg_finfo_geo_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_geo_distance
+func F_pg_finfo_geo_distance(m *base.Module) int32
+//go:linkname F_geo_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_geo_distance
+func F_geo_distance(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

@@ -758,7 +758,7 @@ func F_get_agg_combine_expr(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(490777), int32(11015), int32(206102))
+				F_errfinish(m, int32(490827), int32(11015), int32(206102))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {

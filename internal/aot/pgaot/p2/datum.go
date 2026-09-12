@@ -869,7 +869,7 @@ L68:
 L69:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l3
-	F_errmsg_internal(m, int32(480099), v9)
+	F_errmsg_internal(m, int32(480149), v9)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -879,7 +879,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(493880), int32(323), int32(230165))
+	F_errfinish(m, int32(493930), int32(323), int32(230165))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {

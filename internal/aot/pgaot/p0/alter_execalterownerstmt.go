@@ -602,13 +602,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 			} else {
 				v562 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = v562
-				F_errmsg_internal(m, int32(481558), v14)
+				F_errmsg_internal(m, int32(481608), v14)
 				mBase = m.M
 				v566 = m.ExcPending
 				if v566 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492080), int32(908), int32(96958))
+					F_errfinish(m, int32(492130), int32(908), int32(96958))
 					mBase = m.M
 					v571 = m.ExcPending
 					if v571 != 0 {
@@ -720,7 +720,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																			if v752 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(491072), int32(2730), int32(217611))
+																				F_errfinish(m, int32(491122), int32(2730), int32(217611))
 																				mBase = m.M
 																				v757 = m.ExcPending
 																				if v757 != 0 {
@@ -762,7 +762,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					if v752 != 0 {
 																						return
 																					} else {
-																						F_errfinish(m, int32(491072), int32(2730), int32(217611))
+																						F_errfinish(m, int32(491122), int32(2730), int32(217611))
 																						mBase = m.M
 																						v757 = m.ExcPending
 																						if v757 != 0 {
@@ -1260,7 +1260,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																		if v752 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(491072), int32(2730), int32(217611))
+																			F_errfinish(m, int32(491122), int32(2730), int32(217611))
 																			mBase = m.M
 																			v757 = m.ExcPending
 																			if v757 != 0 {
@@ -1302,7 +1302,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																				if v752 != 0 {
 																					return
 																				} else {
-																					F_errfinish(m, int32(491072), int32(2730), int32(217611))
+																					F_errfinish(m, int32(491122), int32(2730), int32(217611))
 																					mBase = m.M
 																					v757 = m.ExcPending
 																					if v757 != 0 {
@@ -1834,7 +1834,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 										if v735 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(491072), int32(2690), int32(217611))
+											F_errfinish(m, int32(491122), int32(2690), int32(217611))
 											mBase = m.M
 											v740 = m.ExcPending
 											if v740 != 0 {
@@ -1937,13 +1937,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																			return
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v76)+48)) = v279
-																			F_errhint(m, int32(603607), v76+int32(48))
+																			F_errhint(m, int32(603657), v76+int32(48))
 																			mBase = m.M
 																			v286 = m.ExcPending
 																			if v286 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(491311), int32(3881), int32(217630))
+																				F_errfinish(m, int32(491361), int32(3881), int32(217630))
 																				mBase = m.M
 																				v291 = m.ExcPending
 																				if v291 != 0 {
@@ -2001,13 +2001,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																						return
 																					} else {
 																						*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																						F_errhint(m, int32(603671), v76+int32(16))
+																						F_errhint(m, int32(603721), v76+int32(16))
 																						mBase = m.M
 																						v164 = m.ExcPending
 																						if v164 != 0 {
 																							return
 																						} else {
-																							F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																							F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																							mBase = m.M
 																							v169 = m.ExcPending
 																							if v169 != 0 {
@@ -2020,7 +2020,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																						}
 																					}
 																				} else {
-																					F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																					F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																					mBase = m.M
 																					v169 = m.ExcPending
 																					if v169 != 0 {
@@ -2296,13 +2296,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					return
 																				} else {
 																					*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																					F_errhint(m, int32(603671), v76+int32(16))
+																					F_errhint(m, int32(603721), v76+int32(16))
 																					mBase = m.M
 																					v164 = m.ExcPending
 																					if v164 != 0 {
 																						return
 																					} else {
-																						F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																						F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																						mBase = m.M
 																						v169 = m.ExcPending
 																						if v169 != 0 {
@@ -2315,7 +2315,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					}
 																				}
 																			} else {
-																				F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																				F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																				mBase = m.M
 																				v169 = m.ExcPending
 																				if v169 != 0 {
@@ -2575,7 +2575,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 															if v118 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(491311), int32(3857), int32(217630))
+																F_errfinish(m, int32(491361), int32(3857), int32(217630))
 																mBase = m.M
 																v123 = m.ExcPending
 																if v123 != 0 {
@@ -2629,13 +2629,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																			return
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v76)+48)) = v279
-																			F_errhint(m, int32(603607), v76+int32(48))
+																			F_errhint(m, int32(603657), v76+int32(48))
 																			mBase = m.M
 																			v286 = m.ExcPending
 																			if v286 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(491311), int32(3881), int32(217630))
+																				F_errfinish(m, int32(491361), int32(3881), int32(217630))
 																				mBase = m.M
 																				v291 = m.ExcPending
 																				if v291 != 0 {
@@ -2693,13 +2693,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																						return
 																					} else {
 																						*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																						F_errhint(m, int32(603671), v76+int32(16))
+																						F_errhint(m, int32(603721), v76+int32(16))
 																						mBase = m.M
 																						v164 = m.ExcPending
 																						if v164 != 0 {
 																							return
 																						} else {
-																							F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																							F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																							mBase = m.M
 																							v169 = m.ExcPending
 																							if v169 != 0 {
@@ -2712,7 +2712,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																						}
 																					}
 																				} else {
-																					F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																					F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																					mBase = m.M
 																					v169 = m.ExcPending
 																					if v169 != 0 {
@@ -2988,13 +2988,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					return
 																				} else {
 																					*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																					F_errhint(m, int32(603671), v76+int32(16))
+																					F_errhint(m, int32(603721), v76+int32(16))
 																					mBase = m.M
 																					v164 = m.ExcPending
 																					if v164 != 0 {
 																						return
 																					} else {
-																						F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																						F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																						mBase = m.M
 																						v169 = m.ExcPending
 																						if v169 != 0 {
@@ -3007,7 +3007,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					}
 																				}
 																			} else {
-																				F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																				F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																				mBase = m.M
 																				v169 = m.ExcPending
 																				if v169 != 0 {
@@ -3275,14 +3275,14 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																	if v250 != 0 {
 																		return
 																	} else {
-																		*(*int32)(unsafe.Add(mBase, uint32(v76)+96)) = int32(537399)
-																		F_errhint(m, int32(633299), v76+int32(96))
+																		*(*int32)(unsafe.Add(mBase, uint32(v76)+96)) = int32(537449)
+																		F_errhint(m, int32(633349), v76+int32(96))
 																		mBase = m.M
 																		v257 = m.ExcPending
 																		if v257 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(491311), int32(3872), int32(217630))
+																			F_errfinish(m, int32(491361), int32(3872), int32(217630))
 																			mBase = m.M
 																			v262 = m.ExcPending
 																			if v262 != 0 {
@@ -3335,13 +3335,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																					return
 																				} else {
 																					*(*int32)(unsafe.Add(mBase, uint32(v76)+48)) = v279
-																					F_errhint(m, int32(603607), v76+int32(48))
+																					F_errhint(m, int32(603657), v76+int32(48))
 																					mBase = m.M
 																					v286 = m.ExcPending
 																					if v286 != 0 {
 																						return
 																					} else {
-																						F_errfinish(m, int32(491311), int32(3881), int32(217630))
+																						F_errfinish(m, int32(491361), int32(3881), int32(217630))
 																						mBase = m.M
 																						v291 = m.ExcPending
 																						if v291 != 0 {
@@ -3399,13 +3399,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																								return
 																							} else {
 																								*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																								F_errhint(m, int32(603671), v76+int32(16))
+																								F_errhint(m, int32(603721), v76+int32(16))
 																								mBase = m.M
 																								v164 = m.ExcPending
 																								if v164 != 0 {
 																									return
 																								} else {
-																									F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																									F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																									mBase = m.M
 																									v169 = m.ExcPending
 																									if v169 != 0 {
@@ -3418,7 +3418,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																								}
 																							}
 																						} else {
-																							F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																							F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																							mBase = m.M
 																							v169 = m.ExcPending
 																							if v169 != 0 {
@@ -3694,13 +3694,13 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																							return
 																						} else {
 																							*(*int32)(unsafe.Add(mBase, uint32(v76)+16)) = v157
-																							F_errhint(m, int32(603671), v76+int32(16))
+																							F_errhint(m, int32(603721), v76+int32(16))
 																							mBase = m.M
 																							v164 = m.ExcPending
 																							if v164 != 0 {
 																								return
 																							} else {
-																								F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																								F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																								mBase = m.M
 																								v169 = m.ExcPending
 																								if v169 != 0 {
@@ -3713,7 +3713,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 																							}
 																						}
 																					} else {
-																						F_errfinish(m, int32(491311), int32(3895), int32(217630))
+																						F_errfinish(m, int32(491361), int32(3895), int32(217630))
 																						mBase = m.M
 																						v169 = m.ExcPending
 																						if v169 != 0 {
@@ -3980,7 +3980,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 										if v230 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(491311), int32(3843), int32(217630))
+											F_errfinish(m, int32(491361), int32(3843), int32(217630))
 											mBase = m.M
 											v235 = m.ExcPending
 											if v235 != 0 {
@@ -4036,7 +4036,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v420 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(492328), int32(494), int32(217511))
+									F_errfinish(m, int32(492378), int32(494), int32(217511))
 									mBase = m.M
 									v425 = m.ExcPending
 									if v425 != 0 {
@@ -4121,7 +4121,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v318 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491234), int32(302), int32(217482))
+									F_errfinish(m, int32(491284), int32(302), int32(217482))
 									mBase = m.M
 									v323 = m.ExcPending
 									if v323 != 0 {
@@ -4206,7 +4206,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v369 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491234), int32(441), int32(217458))
+									F_errfinish(m, int32(491284), int32(441), int32(217458))
 									mBase = m.M
 									v374 = m.ExcPending
 									if v374 != 0 {
@@ -4291,7 +4291,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v471 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491199), int32(2073), int32(217557))
+									F_errfinish(m, int32(491249), int32(2073), int32(217557))
 									mBase = m.M
 									v476 = m.ExcPending
 									if v476 != 0 {
@@ -4376,7 +4376,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v48 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491334), int32(344), int32(217663))
+									F_errfinish(m, int32(491384), int32(344), int32(217663))
 									mBase = m.M
 									v53 = m.ExcPending
 									if v53 != 0 {
@@ -4462,7 +4462,7 @@ func F_ExecAlterOwnerStmt(m *base.Module, l0 int32, l1 int32) {
 								if v523 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(491149), int32(2046), int32(217534))
+									F_errfinish(m, int32(491199), int32(2046), int32(217534))
 									mBase = m.M
 									v528 = m.ExcPending
 									if v528 != 0 {

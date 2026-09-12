@@ -111,7 +111,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 				if v64 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495450), int32(1654), int32(373215))
+					F_errfinish(m, int32(495500), int32(1654), int32(373215))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -147,7 +147,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495450), int32(1654), int32(373215))
+						F_errfinish(m, int32(495500), int32(1654), int32(373215))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -183,7 +183,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 						if v64 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(1654), int32(373215))
+							F_errfinish(m, int32(495500), int32(1654), int32(373215))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {
@@ -220,7 +220,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 							if v64 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(1654), int32(373215))
+								F_errfinish(m, int32(495500), int32(1654), int32(373215))
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
@@ -256,7 +256,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 								if v64 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495450), int32(1654), int32(373215))
+									F_errfinish(m, int32(495500), int32(1654), int32(373215))
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
@@ -310,7 +310,7 @@ func F_make_time(m *base.Module, l0 int32) int32 {
 									if v64 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(495450), int32(1654), int32(373215))
+										F_errfinish(m, int32(495500), int32(1654), int32(373215))
 										mBase = m.M
 										v69 = m.ExcPending
 										if v69 != 0 {
@@ -433,7 +433,7 @@ func F_time_mi_interval(m *base.Module, l0 int32) int32 {
 							if v39 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495450), int32(2149), int32(307564))
+								F_errfinish(m, int32(495500), int32(2149), int32(307564))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -507,7 +507,7 @@ func F_time_mi_interval(m *base.Module, l0 int32) int32 {
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495450), int32(2149), int32(307564))
+							F_errfinish(m, int32(495500), int32(2149), int32(307564))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {

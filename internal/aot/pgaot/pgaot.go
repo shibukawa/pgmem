@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6959)
-	m.G0 = int32(13052208)
+	m.T0 = make([]any, 6962)
+	m.G0 = int32(13052320)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381307
+	m.DataEnd = 4381419
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6959)
-	m.G0 = int32(13052208)
+	m.T0 = make([]any, 6962)
+	m.G0 = int32(13052320)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381307
+	m.DataEnd = 4381419
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6959)
-	m.G0 = int32(13052208)
+	m.T0 = make([]any, 6962)
+	m.G0 = int32(13052320)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381307
+	m.DataEnd = 4381419
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1590256])
-	copy(m.Memory[1595584:], wasm2goData_data_bin[1590256:1590265])
-	copy(m.Memory[1597632:], wasm2goData_data_bin[1590265:1603193])
-	copy(m.Memory[1622020:], wasm2goData_data_bin[1603193:1696434])
-	copy(m.Memory[1716288:], wasm2goData_data_bin[1696434:1808090])
-	copy(m.Memory[1839160:], wasm2goData_data_bin[1808090:4062976])
-	copy(m.Memory[4101536:], wasm2goData_data_bin[4062976:4342747])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1590304])
+	copy(m.Memory[1595632:], wasm2goData_data_bin[1590304:1590313])
+	copy(m.Memory[1597680:], wasm2goData_data_bin[1590313:1603241])
+	copy(m.Memory[1622020:], wasm2goData_data_bin[1603241:1696482])
+	copy(m.Memory[1716288:], wasm2goData_data_bin[1696482:1808138])
+	copy(m.Memory[1839160:], wasm2goData_data_bin[1808138:4063072])
+	copy(m.Memory[4101584:], wasm2goData_data_bin[4063072:4342907])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4744,6 +4744,15 @@ func PgFinfoGCubeSame(m *base.Module) int32 {
 }
 func PgFinfoGCubeUnion(m *base.Module) int32 {
 	return F_pg_finfo_g_cube_union(m)
+}
+func PgMagicFuncEarthdistance(m *base.Module) int32 {
+	return F_Pg_magic_func_earthdistance(m)
+}
+func GeoDistance(m *base.Module, l0 int32) int32 {
+	return F_geo_distance(m, l0)
+}
+func PgFinfoGeoDistance(m *base.Module) int32 {
+	return F_pg_finfo_geo_distance(m)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)
