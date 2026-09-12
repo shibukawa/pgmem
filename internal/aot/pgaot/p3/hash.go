@@ -187,8 +187,8 @@ func F_ExecChooseHashTableSize(m *base.Module, l0 float64, l1 int32, l2 int32, l
 	var v333 int32
 	_ = v333
 	v23 = (l1 + int32(7)) & int32(-8)
-	v27 = *(*float64)(unsafe.Add(mBase, _consts[539]))
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[534]))
+	v27 = *(*float64)(unsafe.Add(mBase, _consts[543]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[538]))
 	v33 = base.F64_mul(base.F64_mul(v27, base.F64_convert_i32_s(v29)), float64(1024))
 	v34 = float64(4.294967295e+09)
 	if base.F64_lt(v33, v34) != 0 {
@@ -429,8 +429,8 @@ L42:
 	}
 L43:
 	;
-	v130 = *(*float64)(unsafe.Add(mBase, _consts[539]))
-	v132 = *(*int32)(unsafe.Add(mBase, _consts[534]))
+	v130 = *(*float64)(unsafe.Add(mBase, _consts[543]))
+	v132 = *(*int32)(unsafe.Add(mBase, _consts[538]))
 	v136 = base.F64_mul(base.F64_mul(v130, base.F64_convert_i32_s(v132)), float64(1024))
 	v137 = float64(4.294967295e+09)
 	if base.F64_lt(v136, v137) != 0 {
@@ -4420,7 +4420,7 @@ func F_hash_page_type(m *base.Module, l0 int32) int32 {
 								return v32
 							}
 						} else {
-							v39 = *(*int32)(unsafe.Add(mBase, uint32(v27<<(uint(int32(2))%32))+uint32(_consts[1374])))
+							v39 = *(*int32)(unsafe.Add(mBase, uint32(v27<<(uint(int32(2))%32))+uint32(_consts[1377])))
 							v40 = F_cstring_to_text(m, v39)
 							mBase = m.M
 							v41 = m.ExcPending

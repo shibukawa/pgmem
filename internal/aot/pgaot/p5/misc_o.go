@@ -569,7 +569,7 @@ func F_operationPriority(m *base.Module, l0 int32) int32 {
 	_ = v13
 	v5 = l0 - int32(4)
 	if base.Ui32(v5) <= base.Ui32(int32(37)) {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(v5<<(uint(int32(2))%32))+uint32(_consts[1064])))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(v5<<(uint(int32(2))%32))+uint32(_consts[1061])))
 		v13 = v12
 	} else {
 		v13 = int32(6)

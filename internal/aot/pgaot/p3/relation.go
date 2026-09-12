@@ -138,15 +138,15 @@ func F_RelationAssumeNewRelfilelocator(m *base.Module, l0 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v5
 	} else {
 	}
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[1093]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[1097]))
 	if v12 <= int32(31) {
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-		*(*int32)(unsafe.Add(mBase, _consts[1093])) = v12 + int32(1)
-		*(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[1094]))) = v15
+		*(*int32)(unsafe.Add(mBase, _consts[1097])) = v12 + int32(1)
+		*(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[1098]))) = v15
 		return
 	} else {
 		v26 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[1095])) = uint8(v26)
+		*(*uint8)(unsafe.Add(mBase, _consts[1099])) = uint8(v26)
 		return
 	}
 }
@@ -335,7 +335,7 @@ func F_RelationBuildRuleLock(m *base.Module, l0 int32) {
 	v14 = m.G0
 	v16 = v14 + int32(-64)
 	m.G0 = v16
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v24 = F_AllocSetContextCreateInternal(m, v19, int32(173757), v2, int32(1024), int32(8192))
 	mBase = m.M
 	v25 = m.ExcPending
@@ -1772,7 +1772,7 @@ L70:
 	;
 	v554 = int32(4562080)
 	v555 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v558 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v558 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v558
 	v560 = F_CopyTriggerDesc(m, v352)
 	mBase = m.M
@@ -2026,20 +2026,20 @@ func F_RelationClearRelation(m *base.Module, l0 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+72)) = v13
 		if v13 == int32(0) {
 			v18 = v8 + int32(76)
-			v20 = *(*int32)(unsafe.Add(mBase, _consts[888]))
+			v20 = *(*int32)(unsafe.Add(mBase, _consts[892]))
 			if v20 != 0 {
-				v22 = *(*int32)(unsafe.Add(mBase, _consts[889]))
+				v22 = *(*int32)(unsafe.Add(mBase, _consts[893]))
 				v27 = v22
 			} else {
 				v24 = int32(4485560)
-				*(*int32)(unsafe.Add(mBase, _consts[888])) = v24
+				*(*int32)(unsafe.Add(mBase, _consts[892])) = v24
 				v27 = v24
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+76)) = v27
 			v29 = int32(4485560)
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v29
 			*(*int32)(unsafe.Add(mBase, uint32(v27)+4)) = v18
-			*(*int32)(unsafe.Add(mBase, _consts[889])) = v18
+			*(*int32)(unsafe.Add(mBase, _consts[893])) = v18
 		} else {
 		}
 		v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
@@ -2061,7 +2061,7 @@ func F_RelationClearRelation(m *base.Module, l0 int32) {
 					v44 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)) = uint8(v44)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+256)) = v44
-					v49 = *(*int32)(unsafe.Add(mBase, _consts[1092]))
+					v49 = *(*int32)(unsafe.Add(mBase, _consts[1096]))
 					v51 = l0 + int32(56)
 					v54 = F_hash_search(m, v49, v51, int32(2), v44)
 					mBase = m.M
@@ -2131,7 +2131,7 @@ func F_RelationClearRelation(m *base.Module, l0 int32) {
 				v44 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)) = uint8(v44)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+256)) = v44
-				v49 = *(*int32)(unsafe.Add(mBase, _consts[1092]))
+				v49 = *(*int32)(unsafe.Add(mBase, _consts[1096]))
 				v51 = l0 + int32(56)
 				v54 = F_hash_search(m, v49, v51, int32(2), v44)
 				mBase = m.M
@@ -2210,7 +2210,7 @@ func F_RelationClearRelation(m *base.Module, l0 int32) {
 				v44 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)) = uint8(v44)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+256)) = v44
-				v49 = *(*int32)(unsafe.Add(mBase, _consts[1092]))
+				v49 = *(*int32)(unsafe.Add(mBase, _consts[1096]))
 				v51 = l0 + int32(56)
 				v54 = F_hash_search(m, v49, v51, int32(2), v44)
 				mBase = m.M
@@ -2280,7 +2280,7 @@ func F_RelationClearRelation(m *base.Module, l0 int32) {
 			v44 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)) = uint8(v44)
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+256)) = v44
-			v49 = *(*int32)(unsafe.Add(mBase, _consts[1092]))
+			v49 = *(*int32)(unsafe.Add(mBase, _consts[1096]))
 			v51 = l0 + int32(56)
 			v54 = F_hash_search(m, v49, v51, int32(2), v44)
 			mBase = m.M
@@ -7746,7 +7746,7 @@ L10:
 L11:
 	;
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+196))
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[1100]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[1104]))
 	if v29 == int32(0) {
 		goto L12
 	} else {
@@ -7756,7 +7756,7 @@ L12:
 	;
 	v32 = int32(4562080)
 	v33 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v36
 	v39 = F_CreateTemplateTupleDesc(m, int32(21))
 	mBase = m.M
@@ -7793,7 +7793,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+20)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1100])) = v39
+	*(*int32)(unsafe.Add(mBase, _consts[1104])) = v39
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v33
 	v79 = v39
 	goto L14
@@ -8100,7 +8100,7 @@ L10:
 L11:
 	;
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+196))
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[1100]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[1104]))
 	if v29 == int32(0) {
 		goto L12
 	} else {
@@ -8110,7 +8110,7 @@ L12:
 	;
 	v32 = int32(4562080)
 	v33 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v36
 	v39 = F_CreateTemplateTupleDesc(m, int32(21))
 	mBase = m.M
@@ -8147,7 +8147,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+20)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1100])) = v39
+	*(*int32)(unsafe.Add(mBase, _consts[1104])) = v39
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v33
 	v79 = v39
 	goto L14
@@ -12572,7 +12572,7 @@ L388:
 	}
 L389:
 	;
-	v2840 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v2840 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v2844 = *(*int32)(unsafe.Add(mBase, uint32(v2256)+16))
 	if v2844 != v2840 {
 		goto L433
@@ -12601,7 +12601,7 @@ L392:
 L393:
 	;
 	v2763 = *(*int32)(unsafe.Add(mBase, uint32(v29)+120))
-	v2765 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v2765 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v2769 = *(*int32)(unsafe.Add(mBase, uint32(v2256)+16))
 	if v2769 != v2765 {
 		goto L395
@@ -13198,7 +13198,7 @@ func F_RelationIdGetRelation(m *base.Module, l0 int32) int32 {
 	v6 = v4 - int32(16)
 	m.G0 = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l0
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1092]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1096]))
 	v16 = F_hash_search(m, v11, v6+int32(12), v2, v2)
 	mBase = m.M
 	v19 = m.ExcPending

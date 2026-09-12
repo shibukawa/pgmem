@@ -3495,7 +3495,7 @@ func F_trackitem_compare_element(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v12
 	var v15 int32
 	_ = v15
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1027]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1024]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+20))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v5)+8))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
@@ -5736,7 +5736,7 @@ L23:
 	;
 	v91 = int32(1)
 	v92 = v37 - v91
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(v22*int32(48)+v92<<(uint(int32(2))%32))+uint32(_consts[1293])))
+	v98 = *(*int32)(unsafe.Add(mBase, uint32(v22*int32(48)+v92<<(uint(int32(2))%32))+uint32(_consts[1292])))
 	v99 = int32(7)
 	v105 = v83
 	v108 = v91
@@ -5804,11 +5804,11 @@ L32:
 L33:
 	;
 	v164 = v22*int32(48) + v151<<(uint(int32(2))%32)
-	v167 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1294])))
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1293])))
 	v168 = int32(86400)
-	v172 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1293])))
-	v178 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1295])))
-	v184 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1296])))
+	v172 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1292])))
+	v178 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1294])))
+	v184 = *(*int32)(unsafe.Add(mBase, uint32(v164)+uint32(_consts[1295])))
 	v188 = v167*v168 + (v172*v168 + v154 + v178*v168 + v184*v168)
 	v189 = int32(4)
 	v190 = v151 + v189
@@ -5837,7 +5837,7 @@ L36:
 	goto L37
 L37:
 	;
-	v225 = *(*int32)(unsafe.Add(mBase, uint32(v22*int32(48)+v209<<(uint(int32(2))%32))+uint32(_consts[1293])))
+	v225 = *(*int32)(unsafe.Add(mBase, uint32(v22*int32(48)+v209<<(uint(int32(2))%32))+uint32(_consts[1292])))
 	v228 = v225*int32(86400) + v212
 	v229 = int32(1)
 	v232 = v216 + v229
@@ -5992,7 +5992,7 @@ L12:
 L13:
 	;
 	v68 = int32(base.Ui32(v55+v56) >> (uint(int32(1)) % 32))
-	v73 = *(*int32)(unsafe.Add(mBase, _consts[1452]))
+	v73 = *(*int32)(unsafe.Add(mBase, _consts[1451]))
 	v74 = m.T0[v73].(func(*base.Module, int32, int32) int32)(m, v48, l1+int32(5)+v68*int32(3))
 	mBase = m.M
 	v75 = m.ExcPending

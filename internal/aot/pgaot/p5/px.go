@@ -204,7 +204,7 @@ L21:
 L22:
 	;
 	v64 = v58 << (uint(int32(3)) % 32)
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[1449])))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[1448])))
 	v70 = v67
 	v71 = l0
 	goto L24

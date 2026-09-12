@@ -470,7 +470,7 @@ func F_GetSysCacheOid(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	v13 = l0 << (uint(int32(2)) % 32)
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_consts[1131])))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_consts[1130])))
 	v17 = F_SearchCatCache(m, v16, l1, l2, l3, l4)
 	mBase = m.M
 	v20 = m.ExcPending
@@ -482,7 +482,7 @@ func F_GetSysCacheOid(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 			m.G0 = v10 + int32(16)
 			return v33
 		} else {
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_consts[1131])))
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_consts[1130])))
 			v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
 			v29 = F_heap_getattr_1(m, v17, int32(1), v26, v10+int32(15))
 			mBase = m.M
@@ -532,7 +532,7 @@ func F_SearchSysCacheCopyAttNum(m *base.Module, l0 int32, l1 int32) int32 {
 	var v22 int32
 	_ = v22
 	v3 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1131]))
 	v6 = F_SearchCatCache2(m, v5, l0, l1)
 	mBase = m.M
 	v9 = m.ExcPending
@@ -602,7 +602,7 @@ func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	if base.Ui32(l0) <= base.Ui32(int32(84)) {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1131])))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1130])))
 		if v18 != 0 {
 			v35 = F_SearchCatCacheList(m, v18, l1, l2, l3, l4)
 			mBase = m.M

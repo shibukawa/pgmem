@@ -378,7 +378,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							mBase = m.M
 							v413 = v320
 						case 1:
-							v324 = *(*int32)(unsafe.Add(mBase, _consts[1057]))
+							v324 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 							v326 = base.B2i32(v324 == int32(1))
 							if v324 == int32(1) {
 								v327 = int32(12)
@@ -432,7 +432,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							mBase = m.M
 							v413 = v376
 						default:
-							v380 = *(*int32)(unsafe.Add(mBase, _consts[1057]))
+							v380 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 							v382 = base.B2i32(v380 == int32(1))
 							if v380 == int32(1) {
 								v383 = int32(12)
@@ -467,9 +467,9 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						}
 						v414 = *(*int32)(unsafe.Add(mBase, uint32(v295)+20))
 						if v414 <= int32(0) {
-							v418 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1058])))
+							v418 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1055])))
 							*(*uint8)(unsafe.Add(mBase, uint32(v413)+2)) = uint8(v418)
-							v421 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1059])))
+							v421 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1056])))
 							*(*uint16)(unsafe.Add(mBase, uint32(v413))) = uint16(v421)
 							v425 = v413 + int32(3)
 						} else {
@@ -836,7 +836,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						mBase = m.M
 						v413 = v320
 					case 1:
-						v324 = *(*int32)(unsafe.Add(mBase, _consts[1057]))
+						v324 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 						v326 = base.B2i32(v324 == int32(1))
 						if v324 == int32(1) {
 							v327 = int32(12)
@@ -890,7 +890,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						mBase = m.M
 						v413 = v376
 					default:
-						v380 = *(*int32)(unsafe.Add(mBase, _consts[1057]))
+						v380 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 						v382 = base.B2i32(v380 == int32(1))
 						if v380 == int32(1) {
 							v383 = int32(12)
@@ -925,9 +925,9 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					}
 					v414 = *(*int32)(unsafe.Add(mBase, uint32(v295)+20))
 					if v414 <= int32(0) {
-						v418 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1058])))
+						v418 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1055])))
 						*(*uint8)(unsafe.Add(mBase, uint32(v413)+2)) = uint8(v418)
-						v421 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1059])))
+						v421 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1056])))
 						*(*uint16)(unsafe.Add(mBase, uint32(v413))) = uint16(v421)
 						v425 = v413 + int32(3)
 					} else {

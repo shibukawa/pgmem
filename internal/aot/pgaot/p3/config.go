@@ -643,7 +643,7 @@ L2:
 L3:
 	;
 	v152 = int32(0)
-	v154 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v154 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	v159 = F___fstatat(m, int32(-100), v154, v8+int32(144), v152)
 	mBase = m.M
 	goto L50
@@ -708,7 +708,7 @@ L11:
 L12:
 	;
 	v19 = v16 - v10
-	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[1141]))))
+	v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[1145]))))
 	if v21 != 0 {
 		v51 = v11
 		goto L13
@@ -721,7 +721,7 @@ L13:
 	goto L9
 L14:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[1126]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[1130]))
 	if v23 == int32(0) {
 		v51 = v11
 		goto L13
@@ -808,7 +808,7 @@ L28:
 	goto L29
 L29:
 	;
-	v111 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v111 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	if v111 == int32(0) {
 		goto L2
 	} else {
@@ -838,7 +838,7 @@ L32:
 	goto L33
 L33:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v85 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	if v85 != 0 {
 		v114 = v85
 		goto L5
@@ -870,7 +870,7 @@ L36:
 	goto L1
 L37:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, _consts[1142]))
+	v87 = *(*int32)(unsafe.Add(mBase, _consts[1146]))
 	v88 = F_strlen(m, v60)
 	mBase = m.M
 	v92 = F_MemoryContextAllocExtended(m, v87, v88+int32(17), int32(2))
@@ -991,7 +991,7 @@ L50:
 L51:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = l1
-	v162 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v162 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v162
 	F_write_stderr(m, int32(783449), v8+int32(80))
 	mBase = m.M
@@ -1043,7 +1043,7 @@ L56:
 L57:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = l1
-	v186 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v186 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v186
 	F_write_stderr(m, int32(789225), v8-int32(-64))
 	mBase = m.M
@@ -1127,7 +1127,7 @@ L66:
 	}
 L67:
 	;
-	v230 = *(*int32)(unsafe.Add(mBase, _consts[1143]))
+	v230 = *(*int32)(unsafe.Add(mBase, _consts[1147]))
 	if v230 == int32(0) {
 		goto L74
 	} else {
@@ -1154,7 +1154,7 @@ L69:
 L70:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = l1
-	v355 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v355 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v355
 	F_write_stderr(m, int32(789405), v8+int32(48))
 	mBase = m.M
@@ -1166,7 +1166,7 @@ L70:
 	}
 L71:
 	;
-	v329 = *(*int32)(unsafe.Add(mBase, _consts[1142]))
+	v329 = *(*int32)(unsafe.Add(mBase, _consts[1146]))
 	v330 = F_strlen(m, v60)
 	mBase = m.M
 	v334 = F_MemoryContextAllocExtended(m, v329, v330+int32(15), int32(2))
@@ -1228,7 +1228,7 @@ L77:
 	}
 L78:
 	;
-	v234 = *(*int32)(unsafe.Add(mBase, _consts[1142]))
+	v234 = *(*int32)(unsafe.Add(mBase, _consts[1146]))
 	v235 = F_strlen(m, v60)
 	mBase = m.M
 	v239 = F_MemoryContextAllocExtended(m, v234, v235+int32(13), int32(2))
@@ -1245,7 +1245,7 @@ L79:
 L80:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l1
-	v260 = *(*int32)(unsafe.Add(mBase, _consts[1140]))
+	v260 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v260
 	F_write_stderr(m, int32(789587), v8+int32(32))
 	mBase = m.M
@@ -1336,7 +1336,7 @@ L89:
 	}
 L90:
 	;
-	v289 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v289 = *(*int32)(unsafe.Add(mBase, _consts[1148]))
 	if v289 == int32(0) {
 		goto L71
 	} else {
@@ -1363,7 +1363,7 @@ L93:
 	;
 	F_emscripten_builtin_free(m, v294)
 	mBase = m.M
-	v307 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v307 = *(*int32)(unsafe.Add(mBase, _consts[1148]))
 	if v307 == int32(0) {
 		goto L72
 	} else {

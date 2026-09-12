@@ -265,7 +265,7 @@ func F_CheckTableForSerializableConflictIn(m *base.Module, l0 int32) {
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[868]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[872]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
 	if v17 == int32(0) {
 		goto L1
@@ -304,7 +304,7 @@ L4:
 L5:
 	;
 	v32 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[869])) = uint8(v32)
+	*(*uint8)(unsafe.Add(mBase, _consts[873])) = uint8(v32)
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v36 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v40 = F_LWLockAcquire(m, v36+int32(3840), int32(0))
@@ -507,7 +507,7 @@ L23:
 	}
 L24:
 	;
-	v164 = *(*int32)(unsafe.Add(mBase, _consts[870]))
+	v164 = *(*int32)(unsafe.Add(mBase, _consts[874]))
 	F_hash_seq_init(m, v13+int32(12), v164)
 	mBase = m.M
 	v166 = m.ExcPending

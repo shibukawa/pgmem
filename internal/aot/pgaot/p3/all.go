@@ -292,7 +292,7 @@ L10:
 	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+19)))
 	v43 = v41 - int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+19)) = uint8(v43)
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[1090]))
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[1094]))
 	m.T0[v46].(func(*base.Module, int32))(m, v33)
 	mBase = m.M
 	v48 = m.ExcPending
@@ -367,7 +367,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v85+v76)+4)) = v83
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v89 - int32(1)
-	v94 = *(*int32)(unsafe.Add(mBase, _consts[1090]))
+	v94 = *(*int32)(unsafe.Add(mBase, _consts[1094]))
 	m.T0[v94].(func(*base.Module, int32))(m, v82)
 	mBase = m.M
 	v96 = m.ExcPending
@@ -400,7 +400,7 @@ L25:
 	goto L20
 L26:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, _consts[1091]))
+	v119 = *(*int32)(unsafe.Add(mBase, _consts[1095]))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v119
 	F_errmsg_internal(m, int32(465994), v10)
 	mBase = m.M
@@ -432,19 +432,15 @@ func F_disable_all_timeouts(m *base.Module) {
 	var v2 int32
 	_ = v2
 	v2 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[624])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[625])) = v2
-	*(*uint8)(unsafe.Add(mBase, _consts[627])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[633])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[1160])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[1161])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[1162])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[1163])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[908])) = uint8(v2)
+	*(*int32)(unsafe.Add(mBase, _consts[628])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[629])) = v2
+	*(*uint8)(unsafe.Add(mBase, _consts[631])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[637])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1164])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1165])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1166])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1167])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[912])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1168])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1169])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1170])) = uint8(v2)
@@ -456,11 +452,11 @@ func F_disable_all_timeouts(m *base.Module) {
 	*(*uint8)(unsafe.Add(mBase, _consts[1176])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1177])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1178])) = uint8(v2)
-	*(*uint8)(unsafe.Add(mBase, _consts[910])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1179])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1180])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1181])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1182])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[914])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1183])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1184])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1185])) = uint8(v2)
@@ -480,6 +476,10 @@ func F_disable_all_timeouts(m *base.Module) {
 	*(*uint8)(unsafe.Add(mBase, _consts[1199])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1200])) = uint8(v2)
 	*(*uint8)(unsafe.Add(mBase, _consts[1201])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[1202])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[1203])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[1204])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[1205])) = uint8(v2)
 	return
 }
 func F_show_all_settings(m *base.Module, l0 int32) int32 {
@@ -1182,20 +1182,20 @@ L43:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+152)) = v228
 	v231 = *(*int32)(unsafe.Add(mBase, uint32(v184)+8))
 	v232 = int32(2)
-	v236 = *(*int32)(unsafe.Add(mBase, uint32(v231<<(uint(v232)%32))+uint32(_consts[1155])))
+	v236 = *(*int32)(unsafe.Add(mBase, uint32(v231<<(uint(v232)%32))+uint32(_consts[1159])))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+156)) = v236
 	v238 = *(*int32)(unsafe.Add(mBase, uint32(v184)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+160)) = v238
 	v240 = *(*int32)(unsafe.Add(mBase, uint32(v184)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = v240
 	v242 = *(*int32)(unsafe.Add(mBase, uint32(v184)+4))
-	v247 = *(*int32)(unsafe.Add(mBase, uint32(v242<<(uint(v232)%32))+uint32(_consts[1156])))
+	v247 = *(*int32)(unsafe.Add(mBase, uint32(v242<<(uint(v232)%32))+uint32(_consts[1160])))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+168)) = v247
 	v249 = *(*int32)(unsafe.Add(mBase, uint32(v184)+24))
-	v254 = *(*int32)(unsafe.Add(mBase, uint32(v249<<(uint(v232)%32))+uint32(_consts[1157])))
+	v254 = *(*int32)(unsafe.Add(mBase, uint32(v249<<(uint(v232)%32))+uint32(_consts[1161])))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+172)) = v254
 	v256 = *(*int32)(unsafe.Add(mBase, uint32(v184)+32))
-	v261 = *(*int32)(unsafe.Add(mBase, uint32(v256<<(uint(v232)%32))+uint32(_consts[1158])))
+	v261 = *(*int32)(unsafe.Add(mBase, uint32(v256<<(uint(v232)%32))+uint32(_consts[1162])))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+176)) = v261
 	switch v249 {
 	case 0:

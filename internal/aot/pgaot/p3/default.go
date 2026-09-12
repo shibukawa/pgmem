@@ -127,7 +127,7 @@ func F_check_default_tablespace(m *base.Module, l0 int32, l1 int32, l2 int32) in
 							}
 						} else {
 							v54 = *(*int32)(unsafe.Add(mBase, _consts[43]))
-							*(*int32)(unsafe.Add(mBase, _consts[508])) = v54
+							*(*int32)(unsafe.Add(mBase, _consts[512])) = v54
 							v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
 							v63 = F_format_elog_string(m, int32(606496), v8+int32(16))
@@ -136,7 +136,7 @@ func F_check_default_tablespace(m *base.Module, l0 int32, l1 int32, l2 int32) in
 							if v64 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, _consts[509])) = v63
+								*(*int32)(unsafe.Add(mBase, _consts[513])) = v63
 								v66 = int32(0)
 								m.G0 = v8 + int32(32)
 								return v66

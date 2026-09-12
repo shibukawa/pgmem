@@ -95,7 +95,7 @@ func F_LogicalConfirmReceivedLocation(m *base.Module, l0 int64) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v12 = *(*int64)(unsafe.Add(mBase, uint32(v11)+240))
 	if v12 == int64(0) {
 		goto L3
@@ -140,7 +140,7 @@ L6:
 	goto L5
 L7:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	F_s_lock(m, v22, int32(522549), int32(1834), int32(278405))
 	mBase = m.M
 	v27 = m.ExcPending
@@ -154,7 +154,7 @@ L8:
 	goto L9
 L9:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v30 = *(*int64)(unsafe.Add(mBase, uint32(v29)+120))
 	if base.Ui64(v30) < base.Ui64(l0) {
 		goto L12
@@ -318,7 +318,7 @@ L31:
 	goto L29
 L32:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v95 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v96 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
 	*(*int32)(unsafe.Add(mBase, uint32(v95))) = int32(1)
 	if v96 != 0 {
@@ -328,7 +328,7 @@ L32:
 	}
 L33:
 	;
-	v100 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v100 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	F_s_lock(m, v100, int32(522549), int32(1917), int32(278405))
 	mBase = m.M
 	v105 = m.ExcPending
@@ -342,7 +342,7 @@ L34:
 	goto L35
 L35:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v107 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v108 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v107))) = v108
 	v110 = *(*int32)(unsafe.Add(mBase, uint32(v107)+100))
@@ -373,7 +373,7 @@ L38:
 	goto L1
 L39:
 	;
-	v121 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v121 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	F_s_lock(m, v121, int32(522549), int32(1927), int32(278405))
 	mBase = m.M
 	v126 = m.ExcPending
@@ -387,7 +387,7 @@ L40:
 	goto L41
 L41:
 	;
-	v128 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v128 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v129 = *(*int64)(unsafe.Add(mBase, uint32(v128)+120))
 	if base.Ui64(v129) < base.Ui64(l0) {
 		goto L43

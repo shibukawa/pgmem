@@ -230,7 +230,7 @@ func F_PlanCacheRelCallback(m *base.Module, l0 int32, l1 int32) {
 	_ = v277
 	var v280 int32
 	_ = v280
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[973]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[1110]))
 	if v8 == int32(0) {
 		goto L1
 	} else {
@@ -238,7 +238,7 @@ func F_PlanCacheRelCallback(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v215 = *(*int32)(unsafe.Add(mBase, _consts[974]))
+	v215 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
 	if v215 == int32(0) {
 		goto L72
 	} else {

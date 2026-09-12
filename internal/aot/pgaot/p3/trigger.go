@@ -781,7 +781,7 @@ func F_TriggerEnabled(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	v13 = v11 - int32(16)
 	m.G0 = v13
 	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+14)))
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[511]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[515]))
 	if v17 == int32(1) {
 		goto L3
 	} else {

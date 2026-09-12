@@ -914,7 +914,7 @@ L17:
 	v104 = F_unlink(m, v103)
 	mBase = m.M
 	v105 = int32(4461000)
-	v107 = *(*int32)(unsafe.Add(mBase, _consts[575]))
+	v107 = *(*int32)(unsafe.Add(mBase, _consts[579]))
 	v110 = F_pstrdup(m, v103)
 	mBase = m.M
 	v111 = m.ExcPending
@@ -935,7 +935,7 @@ L18:
 	}
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[575])) = v112
+	*(*int32)(unsafe.Add(mBase, _consts[579])) = v112
 	v128 = v76
 	goto L2
 L20:
@@ -1008,7 +1008,7 @@ L29:
 	goto L30
 L30:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, _consts[576]))
+	v157 = *(*int32)(unsafe.Add(mBase, _consts[580]))
 	if v157 == int32(64) {
 		goto L32
 	} else {
@@ -1357,7 +1357,7 @@ L75:
 	}
 L76:
 	;
-	v302 = *(*int32)(unsafe.Add(mBase, _consts[577]))
+	v302 = *(*int32)(unsafe.Add(mBase, _consts[581]))
 	v303 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v302))))
 	if v303 == int32(0) {
 		goto L78
@@ -1372,7 +1372,7 @@ L77:
 	goto L26
 L78:
 	;
-	v371 = *(*int32)(unsafe.Add(mBase, _consts[578]))
+	v371 = *(*int32)(unsafe.Add(mBase, _consts[582]))
 	v372 = F_chmod(m, v128, v371)
 	mBase = m.M
 	if v372 != int32(-1) {
@@ -1436,7 +1436,7 @@ L85:
 	}
 L86:
 	;
-	v329 = *(*int32)(unsafe.Add(mBase, _consts[577]))
+	v329 = *(*int32)(unsafe.Add(mBase, _consts[581]))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+160)) = v329
 	F_errmsg(m, int32(77137), v15+int32(160))
 	mBase = m.M
@@ -1672,11 +1672,11 @@ L118:
 L119:
 	;
 	v467 = int32(4470540)
-	v468 = *(*int32)(unsafe.Add(mBase, _consts[576]))
+	v468 = *(*int32)(unsafe.Add(mBase, _consts[580]))
 	*(*int32)(unsafe.Add(mBase, uint32(l4+v468<<(uint(int32(2))%32)))) = v223
-	v475 = *(*int32)(unsafe.Add(mBase, _consts[576]))
+	v475 = *(*int32)(unsafe.Add(mBase, _consts[580]))
 	v476 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[576])) = v475 + v476
+	*(*int32)(unsafe.Add(mBase, _consts[580])) = v475 + v476
 	v486 = v149 + v476
 	goto L27
 L120:
@@ -4873,7 +4873,7 @@ func F_load_rangetype_info(m *base.Module, l0 int32) {
 									}
 								}
 							} else {
-								v41 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+								v41 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 								F_fmgr_info_cxt(m, v34, l0+int32(212), v41)
 								mBase = m.M
 								v43 = m.ExcPending
@@ -4881,7 +4881,7 @@ func F_load_rangetype_info(m *base.Module, l0 int32) {
 									return
 								} else {
 									if v24 != 0 {
-										v47 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+										v47 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 										F_fmgr_info_cxt(m, v24, l0+int32(240), v47)
 										mBase = m.M
 										v49 = m.ExcPending
@@ -4889,7 +4889,7 @@ func F_load_rangetype_info(m *base.Module, l0 int32) {
 											return
 										} else {
 											if v23 != 0 {
-												v53 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+												v53 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 												F_fmgr_info_cxt(m, v23, l0+int32(268), v53)
 												mBase = m.M
 												v55 = m.ExcPending
@@ -4922,7 +4922,7 @@ func F_load_rangetype_info(m *base.Module, l0 int32) {
 										}
 									} else {
 										if v23 != 0 {
-											v53 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+											v53 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 											F_fmgr_info_cxt(m, v23, l0+int32(268), v53)
 											mBase = m.M
 											v55 = m.ExcPending
@@ -5109,7 +5109,7 @@ func F_lock_twophase_postcommit(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				}
 			}
 		} else {
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[867])))
+			v36 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[871])))
 			v37 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
 			F_LockRefindAndRelease(m, v36, v10, l2, v37, int32(1))
 			mBase = m.M

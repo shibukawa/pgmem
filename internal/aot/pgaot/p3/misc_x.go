@@ -46,9 +46,9 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[139]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+56))
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[1071]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[1075]))
 	if v7 == v9 {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[1072]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[1076]))
 		v30 = v12
 		if base.Ui32(v3) <= base.Ui32(int32(2)) {
 			v34 = int32(2147483647)
@@ -57,9 +57,9 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 		}
 		return v34
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1071])) = v7
+		*(*int32)(unsafe.Add(mBase, _consts[1075])) = v7
 		v17 = *(*int32)(unsafe.Add(mBase, _consts[83]))
-		*(*int32)(unsafe.Add(mBase, _consts[1072])) = v17
+		*(*int32)(unsafe.Add(mBase, _consts[1076])) = v17
 		if v17 == int32(0) {
 			v22 = F_ReadNextFullTransactionId(m)
 			mBase = m.M
@@ -68,7 +68,7 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				v26 = base.I32_wrap_i64(v22)
-				*(*int32)(unsafe.Add(mBase, _consts[1072])) = v26
+				*(*int32)(unsafe.Add(mBase, _consts[1076])) = v26
 				v28 = v26
 				v30 = v28
 				if base.Ui32(v3) <= base.Ui32(int32(2)) {

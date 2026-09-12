@@ -602,7 +602,7 @@ func F_StandbySlotsHaveCaughtup(m *base.Module, l0 int64, l1 int32) int32 {
 	v14 = v12 - int32(48)
 	m.G0 = v14
 	v16 = int32(1)
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[713]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	if v18 == v3 {
 		v275 = v16
 		goto L1
@@ -646,7 +646,7 @@ L6:
 	goto L3
 L7:
 	;
-	v35 = *(*int64)(unsafe.Add(mBase, _consts[714]))
+	v35 = *(*int64)(unsafe.Add(mBase, _consts[718]))
 	if base.B2i32(v35 != int64(0))&base.B2i32(base.Ui64(l0) <= base.Ui64(v35)) != 0 {
 		v275 = v16
 		goto L1
@@ -669,7 +669,7 @@ L9:
 	return int32(0)
 L10:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _consts[713]))
+	v50 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
 	if v51 <= int32(0) {
 		goto L12
@@ -1085,7 +1085,7 @@ L67:
 	mBase = m.M
 	v240 = int32(1)
 	v243 = v66 + v240
-	v245 = *(*int32)(unsafe.Add(mBase, _consts[713]))
+	v245 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v246 = *(*int32)(unsafe.Add(mBase, uint32(v245)))
 	if v243 < v246 {
 		v63 = v238 + v63 + v240
@@ -1100,7 +1100,7 @@ L68:
 	goto L16
 L69:
 	;
-	v267 = *(*int32)(unsafe.Add(mBase, _consts[713]))
+	v267 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v268 = *(*int32)(unsafe.Add(mBase, uint32(v267)))
 	if v256 != v268 {
 		v275 = int32(0)
@@ -1110,7 +1110,7 @@ L69:
 	}
 L70:
 	;
-	*(*int64)(unsafe.Add(mBase, _consts[714])) = v257
+	*(*int64)(unsafe.Add(mBase, _consts[718])) = v257
 	v275 = int32(1)
 	goto L1
 }

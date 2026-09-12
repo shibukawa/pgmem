@@ -100,7 +100,7 @@ func F_copy_read_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[683]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[687]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
 	if v15 != v16 {
@@ -195,8 +195,8 @@ L15:
 	goto L11
 L16:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, _consts[684]))
-	v62 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v56 = *(*int32)(unsafe.Add(mBase, _consts[688]))
+	v62 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+40))
 	v64 = m.T0[v63].(func(*base.Module, int32, int32, int32) int32)(m, v56, v11+int32(8), v11+int32(12))
 	mBase = m.M
@@ -269,7 +269,7 @@ L26:
 L27:
 	;
 	v74 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
-	v76 = *(*int32)(unsafe.Add(mBase, _consts[683]))
+	v76 = *(*int32)(unsafe.Add(mBase, _consts[687]))
 	*(*int32)(unsafe.Add(mBase, uint32(v76)+12)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v76)+4)) = v64
 	*(*int32)(unsafe.Add(mBase, uint32(v76))) = v74

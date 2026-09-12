@@ -399,7 +399,7 @@ func F_utf8_to_iso8859_1(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v38 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[1314])))
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[1317])))
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)+8))
 				v40 = int32(0)
 				v45 = F_UtfToLocal(m, v14, v17, v13, v39, v40, v40, v40, v16, base.B2i32(v12 != v40))

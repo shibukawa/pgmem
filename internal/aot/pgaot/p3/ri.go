@@ -916,7 +916,7 @@ L68:
 	}
 L69:
 	;
-	v326 = *(*int64)(unsafe.Add(mBase, _consts[502]))
+	v326 = *(*int64)(unsafe.Add(mBase, _consts[506]))
 	if l9 != int32(5) {
 		goto L70
 	} else {
@@ -1158,7 +1158,7 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 			if v47 != 0 {
 				return int32(0)
 			} else {
-				v49 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
+				v49 = *(*int32)(unsafe.Add(mBase, _consts[1050]))
 				if v49 != 0 {
 					v90 = v49
 					v94 = F_hash_search(m, v90, l3, int32(1), v9+int32(-48))
@@ -1179,7 +1179,7 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1047])) = v58
+						*(*int32)(unsafe.Add(mBase, _consts[1051])) = v58
 						F_CacheRegisterSyscacheCallback(m, int32(19), int32(1504), int32(0))
 						mBase = m.M
 						v65 = m.ExcPending
@@ -1193,7 +1193,7 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 							if v75 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, _consts[1046])) = v74
+								*(*int32)(unsafe.Add(mBase, _consts[1050])) = v74
 								*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = int64(292057776136)
 								v85 = F_hash_create(m, int32(418629), int32(256), v9+int32(-48), int32(40))
 								mBase = m.M
@@ -1201,8 +1201,8 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 								if v86 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, _consts[1048])) = v85
-									v89 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
+									*(*int32)(unsafe.Add(mBase, _consts[1052])) = v85
+									v89 = *(*int32)(unsafe.Add(mBase, _consts[1050]))
 									v90 = v89
 									v94 = F_hash_search(m, v90, l3, int32(1), v9+int32(-48))
 									mBase = m.M
@@ -1227,7 +1227,7 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 			if v104 != 0 {
 				return int32(0)
 			} else {
-				v106 = *(*int32)(unsafe.Add(mBase, _consts[504]))
+				v106 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 				v107 = F_SPI_result_code_string(m, v106)
 				mBase = m.M
 				v108 = m.ExcPending

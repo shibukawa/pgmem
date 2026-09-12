@@ -569,7 +569,7 @@ func F_date_ne_timestamptz(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+4)) = int64(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[526]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[530]))
 				v37 = F_DetermineTimeZoneOffset(m, v9+int32(4), v36)
 				mBase = m.M
 				v44 = base.I64_extend_i32_s(v37)*int64(1000000) + base.I64_extend_i32_s(v2)*int64(86400000000)
@@ -912,7 +912,7 @@ func F_make_date(m *base.Module, l0 int32) int32 {
 								}
 							}
 							v185 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-							v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[960])))
+							v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[964])))
 							if v170 <= v191 {
 								v201 = int32(0)
 							} else {
@@ -947,7 +947,7 @@ func F_make_date(m *base.Module, l0 int32) int32 {
 								}
 							}
 							v185 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-							v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[960])))
+							v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[964])))
 							if v170 <= v191 {
 								v201 = int32(0)
 							} else {
@@ -1360,7 +1360,7 @@ func F_make_date(m *base.Module, l0 int32) int32 {
 							}
 						}
 						v185 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-						v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[960])))
+						v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[964])))
 						if v170 <= v191 {
 							v201 = int32(0)
 						} else {
@@ -1395,7 +1395,7 @@ func F_make_date(m *base.Module, l0 int32) int32 {
 							}
 						}
 						v185 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-						v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[960])))
+						v191 = *(*int32)(unsafe.Add(mBase, uint32(v182*int32(52)+v185<<(uint(int32(2))%32))+uint32(_consts[964])))
 						if v170 <= v191 {
 							v201 = int32(0)
 						} else {

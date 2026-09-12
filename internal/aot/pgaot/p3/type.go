@@ -54,7 +54,7 @@ func F_TypeCacheOpcCallback(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1102]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1106]))
 	F_hash_seq_init(m, v6+int32(8), v11)
 	mBase = m.M
 	v13 = m.ExcPending
@@ -141,7 +141,7 @@ L12:
 	}
 L13:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[1103]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[1107]))
 	v42 = F_hash_search(m, v36, v18+int32(16), int32(2), v6+int32(31))
 	mBase = m.M
 	v43 = m.ExcPending

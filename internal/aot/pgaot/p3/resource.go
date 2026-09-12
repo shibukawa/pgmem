@@ -1236,7 +1236,7 @@ L38:
 	goto L14
 L39:
 	;
-	v999 = *(*int32)(unsafe.Add(mBase, _consts[1203]))
+	v999 = *(*int32)(unsafe.Add(mBase, _consts[1207]))
 	if v999 != 0 {
 		goto L235
 	} else {
@@ -1337,7 +1337,7 @@ L50:
 	}
 L51:
 	;
-	v343 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+	v343 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 	v344 = *(*int32)(unsafe.Add(mBase, uint32(v343)+16))
 	if v327 != v344 {
 		goto L56
@@ -1524,7 +1524,7 @@ L75:
 	goto L47
 L76:
 	;
-	v399 = *(*int32)(unsafe.Add(mBase, _consts[569]))
+	v399 = *(*int32)(unsafe.Add(mBase, _consts[573]))
 	if l0 != v399 {
 		goto L39
 	} else {
@@ -1672,7 +1672,7 @@ L98:
 	goto L99
 L99:
 	;
-	v639 = *(*int32)(unsafe.Add(mBase, _consts[1204]))
+	v639 = *(*int32)(unsafe.Add(mBase, _consts[1208]))
 	F_hash_seq_init(m, v428+int32(12), v639)
 	mBase = m.M
 	v641 = m.ExcPending
@@ -2380,7 +2380,7 @@ L219:
 	goto L220
 L220:
 	;
-	v910 = *(*int32)(unsafe.Add(mBase, _consts[1204]))
+	v910 = *(*int32)(unsafe.Add(mBase, _consts[1208]))
 	F_hash_seq_init(m, v870+int32(12), v910)
 	mBase = m.M
 	v912 = m.ExcPending

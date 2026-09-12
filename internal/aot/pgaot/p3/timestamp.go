@@ -229,7 +229,7 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						}
 					}
 					v183 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[960])))
+					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[964])))
 					if v168 <= v189 {
 						v199 = int32(0)
 					} else {
@@ -264,7 +264,7 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						}
 					}
 					v183 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[960])))
+					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[964])))
 					if v168 <= v189 {
 						v199 = int32(0)
 					} else {

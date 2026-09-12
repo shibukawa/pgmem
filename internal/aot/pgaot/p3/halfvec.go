@@ -464,7 +464,7 @@ func F_halfvec_cosine_distance(m *base.Module, l0 int32) int32 {
 			v20 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
 			if v19 == v20 {
 				v24 = int32(8)
-				v29 = *(*int32)(unsafe.Add(mBase, _consts[1378]))
+				v29 = *(*int32)(unsafe.Add(mBase, _consts[1381]))
 				v30 = m.T0[v29].(func(*base.Module, int32, int32, int32) float64)(m, base.I32_extend16_s(v19), v12+v24, v17+v24)
 				mBase = m.M
 				v31 = m.ExcPending
@@ -1720,7 +1720,7 @@ func F_halfvec_l1_distance(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v40 = int32(8)
-				v45 = *(*int32)(unsafe.Add(mBase, _consts[1379]))
+				v45 = *(*int32)(unsafe.Add(mBase, _consts[1382]))
 				v46 = m.T0[v45].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v17), v10+v40, v15+v40)
 				mBase = m.M
 				v47 = m.ExcPending

@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"strings"
+	"sync"
 	"testing"
 	"time"
 
@@ -980,5 +981,69 @@ func TestSessionAuthorizationResets(t *testing.T) {
 	defer c2.Close(ctx)
 	if err := c2.QueryRow(ctx, "SELECT session_user").Scan(&who); err != nil || who != "postgres" {
 		t.Fatalf("next connection: %q err=%v", who, err)
+	}
+}
+
+// The cleanup between connections used to be "ROLLBACK; DISCARD ALL" as
+// statements, so pg_stat_statements counted them and log_statement showed
+// them, the way a pooler's reset query does. It is a C call now: the next
+// connection still gets a fresh session, and no statement is logged.
+func TestSessionResetIsNotAStatement(t *testing.T) {
+	ctx := context.Background()
+	var mu sync.Mutex
+	var logged []string
+	s := startServer(t, pgmem.Options{
+		Params: []string{"-c", "log_statement=all"},
+		Log: func(format string, args ...any) {
+			mu.Lock()
+			logged = append(logged, fmt.Sprintf(format, args...))
+			mu.Unlock()
+		},
+	})
+	a, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, q := range []string{
+		"SET work_mem = '77MB'",
+		"CREATE TEMP TABLE leftover(x int)",
+		"PREPARE p AS SELECT 1",
+		"BEGIN",
+		"CREATE TABLE never_committed(x int)",
+	} {
+		if _, err := a.Exec(ctx, q); err != nil {
+			t.Fatalf("%s: %v", q, err)
+		}
+	}
+	a.Close(ctx) // mid-transaction
+
+	b, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer b.Close(ctx)
+	var v string
+	if err := b.QueryRow(ctx, "SHOW work_mem").Scan(&v); err != nil || v == "77MB" {
+		t.Fatalf("work_mem = %q err=%v", v, err)
+	}
+	var n int
+	// (pgx's own statement cache adds entries for b; only a's "p" matters)
+	if err := b.QueryRow(ctx, "SELECT count(*) FROM pg_prepared_statements WHERE name = 'p'").Scan(&n); err != nil || n != 0 {
+		t.Fatalf("prepared statement p survived: %d err=%v", n, err)
+	}
+	if err := b.QueryRow(ctx, "SELECT count(*) FROM pg_tables WHERE tablename IN ('leftover', 'never_committed')").Scan(&n); err != nil || n != 0 {
+		t.Fatalf("leftover tables = %d err=%v", n, err)
+	}
+	// like a new backend, b has no temp namespace until it makes a temp table
+	var schemas string
+	if err := b.QueryRow(ctx, "SELECT array_to_string(current_schemas(true), ',')").Scan(&schemas); err != nil || strings.Contains(schemas, "pg_temp") {
+		t.Fatalf("temp namespace carried over: %q err=%v", schemas, err)
+	}
+	mu.Lock()
+	defer mu.Unlock()
+	for _, line := range logged {
+		if strings.Contains(line, "DISCARD ALL") || strings.Contains(line, "statement: ROLLBACK") {
+			t.Fatalf("housekeeping ran as a statement: %s", line)
+		}
 	}
 }

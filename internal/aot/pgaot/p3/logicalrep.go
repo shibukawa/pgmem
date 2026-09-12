@@ -956,7 +956,7 @@ func F_logicalrep_rel_open(m *base.Module, l0 int32, l1 int32) int32 {
 	v16 = v14 - int32(128)
 	m.G0 = v16
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+76)) = l0
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[675]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[679]))
 	if v20 != 0 {
 		goto L1
 	} else {
@@ -968,7 +968,7 @@ L1:
 	goto L3
 L2:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[680]))
 	if v22 == int32(0) {
 		goto L4
 	} else {
@@ -986,7 +986,7 @@ L3:
 	}
 L4:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v27 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v32 = F_AllocSetContextCreateInternal(m, v27, int32(67999), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v35 = m.ExcPending
@@ -1016,12 +1016,12 @@ L7:
 	return int32(0)
 L8:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[676])) = v32
+	*(*int32)(unsafe.Add(mBase, _consts[680])) = v32
 	v37 = v32
 	goto L6
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[675])) = v47
+	*(*int32)(unsafe.Add(mBase, _consts[679])) = v47
 	F_CacheRegisterRelcacheCallback(m, int32(1015))
 	mBase = m.M
 	v52 = m.ExcPending
@@ -1032,7 +1032,7 @@ L9:
 	}
 L10:
 	;
-	v54 = *(*int32)(unsafe.Add(mBase, _consts[675]))
+	v54 = *(*int32)(unsafe.Add(mBase, _consts[679]))
 	v56 = v54
 	goto L3
 L11:
@@ -1267,7 +1267,7 @@ L39:
 	v120 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v121 = *(*int32)(unsafe.Add(mBase, uint32(v62)+40))
 	v122 = *(*int32)(unsafe.Add(mBase, uint32(v121)+52))
-	v125 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+	v125 = *(*int32)(unsafe.Add(mBase, _consts[680]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v125
 	v127 = *(*int32)(unsafe.Add(mBase, uint32(v122)))
 	v128 = F_make_attrmap(m, v127)
@@ -1701,7 +1701,7 @@ L98:
 	goto L19
 L99:
 	;
-	v383 = *(*int32)(unsafe.Add(mBase, _consts[677]))
+	v383 = *(*int32)(unsafe.Add(mBase, _consts[681]))
 	v384 = *(*int32)(unsafe.Add(mBase, uint32(v383)))
 	v385 = *(*int32)(unsafe.Add(mBase, uint32(v62)+36))
 	v388 = F_GetSubscriptionRelState(m, v384, v385, v62-int32(-64))
@@ -1998,10 +1998,10 @@ func F_logicalrep_worker_attach(m *base.Module, l0 int32) {
 	if v15 != 0 {
 		return
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, _consts[671]))
+		v18 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 		v21 = v18 + l0*int32(112)
 		v23 = v21 + int32(16)
-		*(*int32)(unsafe.Add(mBase, _consts[590])) = v23
+		*(*int32)(unsafe.Add(mBase, _consts[594])) = v23
 		v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21)+32)))
 		if v25 != 0 {
 			v26 = *(*int32)(unsafe.Add(mBase, uint32(v23)+20))

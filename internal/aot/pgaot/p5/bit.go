@@ -208,11 +208,11 @@ func F_BitJaccardDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 		for {
 			v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100+v94))))
 			v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100+v93))))
-			v120 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114&v116)+uint32(_consts[1108]))))
+			v120 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114&v116)+uint32(_consts[1105]))))
 			v121 = v103 + v120
-			v124 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114)+uint32(_consts[1108]))))
+			v124 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114)+uint32(_consts[1105]))))
 			v125 = v105 + v124
-			v128 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v116)+uint32(_consts[1108]))))
+			v128 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v116)+uint32(_consts[1105]))))
 			v129 = v104 + v128
 			v131 = v100 + int32(1)
 			if v131 != v92 {

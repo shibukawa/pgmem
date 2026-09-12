@@ -4673,9 +4673,9 @@ L316:
 	}
 L317:
 	;
-	v825 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v825 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+960)) = v825
-	v828 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v828 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+952)) = v828
 	v836 = F_DirectInputFunctionCallSafe(m, int32(1427), v822, int32(-1), v24+int32(952), v24+int32(908))
 	mBase = m.M
@@ -4961,9 +4961,9 @@ L348:
 	}
 L349:
 	;
-	v971 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v971 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+760)) = v971
-	v974 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v974 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+752)) = v974
 	v977 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
 	v978 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
@@ -5376,9 +5376,9 @@ L403:
 	}
 L404:
 	;
-	v1093 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v1093 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+896)) = v1093
-	v1096 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v1096 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+888)) = v1096
 	F_jspGetArg(m, l1, v24+int32(752))
 	mBase = m.M
@@ -5948,9 +5948,9 @@ L472:
 	}
 L473:
 	;
-	v1338 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v1338 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+960)) = v1338
-	v1341 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v1341 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+952)) = v1341
 	v1349 = F_DirectInputFunctionCallSafe(m, int32(1427), v1335, int32(-1), v24+int32(952), v24+int32(908))
 	mBase = m.M
@@ -6417,9 +6417,9 @@ L529:
 	}
 L530:
 	;
-	v1519 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v1519 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+960)) = v1519
-	v1522 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v1522 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+952)) = v1522
 	v1530 = F_DirectInputFunctionCallSafe(m, int32(546), v1516, int32(-1), v24+int32(952), v24+int32(908))
 	mBase = m.M
@@ -7619,8 +7619,8 @@ L678:
 	}
 L679:
 	;
-	v2162 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
-	v2166 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v2162 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
+	v2166 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	v2170 = int32(0)
 	goto L700
 L680:
@@ -7643,9 +7643,9 @@ L681:
 	}
 L682:
 	;
-	v2098 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v2098 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+760)) = v2098
-	v2101 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v2101 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+752)) = v2101
 	F_jspGetArg(m, l1, v24+int32(952))
 	mBase = m.M
@@ -7783,7 +7783,7 @@ L700:
 	*(*int32)(unsafe.Add(mBase, uint32(v24+int32(760)))) = v2162
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+752)) = v2166
 	v2192 = v2170 << (uint(int32(2)) % 32)
-	v2195 = *(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1067])))
+	v2195 = *(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1064])))
 	if v2195 == int32(0) {
 		goto L702
 	} else {
@@ -7804,7 +7804,7 @@ L702:
 	v2199 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v2202 = *(*int32)(unsafe.Add(mBase, _consts[145]))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v2202
-	v2206 = *(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1068])))
+	v2206 = *(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1065])))
 	v2207 = F_cstring_to_text(m, v2206)
 	mBase = m.M
 	v2208 = m.ExcPending
@@ -7829,7 +7829,7 @@ L704:
 	}
 L705:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1067]))) = v2207
+	*(*int32)(unsafe.Add(mBase, uint32(v2192)+uint32(_consts[1064]))) = v2207
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v2199
 	v2212 = v2207
 	goto L704
@@ -8664,8 +8664,8 @@ L810:
 L811:
 	;
 	v2512 = v2500 << (uint(int32(3)) % 32)
-	v2515 = *(*int64)(unsafe.Add(mBase, uint32(v2512)+uint32(_consts[1028])))
-	v2518 = *(*int64)(unsafe.Add(mBase, uint32(v2512)+uint32(_consts[1029])))
+	v2515 = *(*int64)(unsafe.Add(mBase, uint32(v2512)+uint32(_consts[1025])))
+	v2518 = *(*int64)(unsafe.Add(mBase, uint32(v2512)+uint32(_consts[1026])))
 	v2519 = *(*int64)(unsafe.Add(mBase, uint32(v2505)))
 	if int64(0) <= v2519 {
 		goto L815
@@ -8849,8 +8849,8 @@ L839:
 L840:
 	;
 	v2593 = v2585 << (uint(int32(3)) % 32)
-	v2596 = *(*int64)(unsafe.Add(mBase, uint32(v2593)+uint32(_consts[1028])))
-	v2599 = *(*int64)(unsafe.Add(mBase, uint32(v2593)+uint32(_consts[1029])))
+	v2596 = *(*int64)(unsafe.Add(mBase, uint32(v2593)+uint32(_consts[1025])))
+	v2599 = *(*int64)(unsafe.Add(mBase, uint32(v2593)+uint32(_consts[1026])))
 	v2600 = *(*int64)(unsafe.Add(mBase, uint32(v2581)))
 	if int64(0) <= v2600 {
 		goto L844
@@ -9071,9 +9071,9 @@ L871:
 	goto L847
 L872:
 	;
-	v2691 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v2691 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+760)) = v2691
-	v2694 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v2694 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+752)) = v2694
 	v2697 = F_anytimestamp_typmod_check(m, int32(0), v2354)
 	mBase = m.M
@@ -9467,9 +9467,9 @@ L921:
 	goto L749
 L922:
 	;
-	v2937 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v2937 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+944)) = v2937
-	v2940 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v2940 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+936)) = v2940
 	v2943 = F_anytimestamp_typmod_check(m, int32(1), v2354)
 	mBase = m.M
@@ -9859,9 +9859,9 @@ L968:
 	}
 L969:
 	;
-	v3086 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v3086 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+960)) = v3086
-	v3089 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v3089 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+952)) = v3089
 	v3095 = F_float8in_internal(m, v3083, int32(0), int32(285167), v3083, v24+int32(952))
 	mBase = m.M
@@ -9975,9 +9975,9 @@ L982:
 	goto L971
 L983:
 	;
-	v3144 = *(*int32)(unsafe.Add(mBase, _consts[1065]))
+	v3144 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+960)) = v3144
-	v3147 = *(*int64)(unsafe.Add(mBase, _consts[1066]))
+	v3147 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
 	*(*int64)(unsafe.Add(mBase, uint32(v24)+952)) = v3147
 	v3153 = F_float8in_internal(m, v3141, int32(0), int32(285167), v3141, v24+int32(952))
 	mBase = m.M

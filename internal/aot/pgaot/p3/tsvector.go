@@ -77,7 +77,7 @@ func F_init_tsvector_parser(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v15
 			v19 = *(*int32)(unsafe.Add(mBase, _consts[462]))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v20*int32(28))+uint32(_consts[990])))
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v20*int32(28))+uint32(_consts[994])))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = l2
 			v29 = int32(1)
 			v30 = int32(base.Ui32(l1)>>(uint(int32(2))%32)) & v29

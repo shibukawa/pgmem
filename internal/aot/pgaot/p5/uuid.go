@@ -353,7 +353,7 @@ func F_uuid_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 					v231 = v212
 				}
 				if base.F64_gt(v231, float64(100000)) != 0 {
-					v235 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1110])))
+					v235 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1107])))
 					if v235 != int32(1) {
 						v259 = int32(0)
 						*(*uint8)(unsafe.Add(mBase, uint32(v14)+8)) = uint8(v259)
@@ -401,7 +401,7 @@ func F_uuid_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v262 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1110])))
+					v262 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1107])))
 					v263 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
 					if base.F64_gt(base.F64_add(base.F64_div(base.F64_convert_i64_s(v263), float64(2000)), float64(0.5)), v231) != 0 {
 						v270 = int32(1)
@@ -1966,22 +1966,22 @@ func F_uuid_generate_time(m *base.Module, l0 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1473])))
+	v11 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1472])))
 	if v11 == int32(0) {
 		v14 = int32(4726672)
 		v16 = m.Env.Pgmem_random_bytes(m, v14, int32(6))
 		mBase = m.M
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1474])))
+		v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1473])))
 		v20 = int32(1)
 		v21 = v19 | v20
-		*(*uint8)(unsafe.Add(mBase, _consts[1474])) = uint8(v21)
+		*(*uint8)(unsafe.Add(mBase, _consts[1473])) = uint8(v21)
 		v23 = int32(4726682)
 		v25 = m.Env.Pgmem_random_bytes(m, v23, int32(2))
 		mBase = m.M
-		*(*uint8)(unsafe.Add(mBase, _consts[1473])) = uint8(v20)
-		v31 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1475])))
+		*(*uint8)(unsafe.Add(mBase, _consts[1472])) = uint8(v20)
+		v31 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1474])))
 		v33 = v31 & int32(16383)
-		*(*uint16)(unsafe.Add(mBase, _consts[1475])) = uint16(v33)
+		*(*uint16)(unsafe.Add(mBase, _consts[1474])) = uint16(v33)
 	} else {
 	}
 	F___gettimeofday(m, v8)
@@ -1990,13 +1990,13 @@ func F_uuid_generate_time(m *base.Module, l0 int32) {
 	v37 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
 	v40 = int64(*(*int32)(unsafe.Add(mBase, uint32(v8)+8)))
 	v45 = v37*int64(10000000) + v40*int64(10) + int64(122192928000000000)
-	v47 = *(*int64)(unsafe.Add(mBase, _consts[1476]))
+	v47 = *(*int64)(unsafe.Add(mBase, _consts[1475]))
 	if base.Ui64(v47) < base.Ui64(v45) {
 		v51 = v45
 	} else {
 		v51 = v47 + int64(1)
 	}
-	*(*int64)(unsafe.Add(mBase, _consts[1476])) = v51
+	*(*int64)(unsafe.Add(mBase, _consts[1475])) = v51
 	v54 = int64(base.Ui64(v51) >> (uint(int64(48)) % 64))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+7)) = uint8(v54)
 	v57 = int64(base.Ui64(v51) >> (uint(int64(32)) % 64))
@@ -2013,13 +2013,13 @@ func F_uuid_generate_time(m *base.Module, l0 int32) {
 	v77 = int32(16)
 	v78 = base.I32_wrap_i64(int64(base.Ui64(v51)>>(uint(int64(56))%64)))&int32(15) | v77
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+6)) = uint8(v78)
-	v81 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1475])))
+	v81 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1474])))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)) = uint8(v81)
 	v88 = int32(base.Ui32(v81)>>(uint(int32(8))%32))&int32(63) | int32(128)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)) = uint8(v88)
-	v91 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	v91 = *(*int32)(unsafe.Add(mBase, _consts[1473]))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+10)) = v91
-	v94 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1477])))
+	v94 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1476])))
 	*(*uint16)(unsafe.Add(mBase, uint32(l0)+14)) = uint16(v94)
 	m.G0 = v8 + v77
 	return
@@ -2706,15 +2706,15 @@ func F_uuid_ns_x500(m *base.Module, l0 int32) int32 {
 	v5 = v3 - int32(48)
 	m.G0 = v5
 	v7 = int32(582792)
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[1468]))
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1467]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
-	v10 = *(*int64)(unsafe.Add(mBase, _consts[1469]))
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1468]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[1470]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1469]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[1471]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1470]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[1472]))
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1471]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
 	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M

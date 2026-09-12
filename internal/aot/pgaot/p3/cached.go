@@ -841,7 +841,7 @@ L25:
 	}
 L26:
 	;
-	v173 = *(*int32)(unsafe.Add(mBase, _consts[1077]))
+	v173 = *(*int32)(unsafe.Add(mBase, _consts[1081]))
 	if v173 == int32(0) {
 		goto L22
 	} else {
@@ -999,7 +999,7 @@ L41:
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+52)) = v69
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+56)) = v66
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+60)) = v63
-	v256 = *(*int32)(unsafe.Add(mBase, _consts[1077]))
+	v256 = *(*int32)(unsafe.Add(mBase, _consts[1081]))
 	v259 = F_hash_search(m, v256, v238, int32(2), int32(0))
 	mBase = m.M
 	v260 = m.ExcPending
@@ -1275,7 +1275,7 @@ L62:
 	}
 L63:
 	;
-	v381 = *(*int32)(unsafe.Add(mBase, _consts[1077]))
+	v381 = *(*int32)(unsafe.Add(mBase, _consts[1081]))
 	if v381 == int32(0) {
 		goto L22
 	} else {
@@ -1437,7 +1437,7 @@ L78:
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+52)) = v69
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+56)) = v66
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+60)) = v63
-	v462 = *(*int32)(unsafe.Add(mBase, _consts[1077]))
+	v462 = *(*int32)(unsafe.Add(mBase, _consts[1081]))
 	v465 = F_hash_search(m, v462, v444, int32(2), int32(0))
 	mBase = m.M
 	v466 = m.ExcPending
@@ -1731,7 +1731,7 @@ L107:
 	v691 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v651)+4)))
 	*(*uint16)(unsafe.Add(mBase, uint32(v647)+12)) = uint16(v691)
 	*(*int32)(unsafe.Add(mBase, uint32(v647)+16)) = l3
-	v695 = *(*int32)(unsafe.Add(mBase, _consts[1077]))
+	v695 = *(*int32)(unsafe.Add(mBase, _consts[1081]))
 	if v695 == int32(0) {
 		goto L108
 	} else {
@@ -1795,7 +1795,7 @@ L110:
 	}
 L111:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1077])) = v721
+	*(*int32)(unsafe.Add(mBase, _consts[1081])) = v721
 	v724 = v721
 	v725 = v721
 	goto L110

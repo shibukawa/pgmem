@@ -368,7 +368,7 @@ L43:
 	}
 L44:
 	;
-	v136 = *(*int32)(unsafe.Add(mBase, _consts[1291]))
+	v136 = *(*int32)(unsafe.Add(mBase, _consts[1290]))
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v136+v131<<(uint(int32(3))%32))))
 	v141 = v140
 	goto L46

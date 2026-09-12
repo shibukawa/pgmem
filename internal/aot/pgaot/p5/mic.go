@@ -1096,7 +1096,7 @@ L54:
 	;
 	v146 = v137 + int32(1)
 	v148 = v146 << (uint(int32(3)) % 32)
-	v151 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v148)+uint32(_consts[1447]))))
+	v151 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v148)+uint32(_consts[1446]))))
 	if v151 == int32(65535) {
 		goto L56
 	} else {

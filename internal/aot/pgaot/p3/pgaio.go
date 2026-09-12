@@ -66,7 +66,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v94
 	var v99 int32
 	_ = v99
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 	v10 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+22)))
 	if base.Ui32(int32(32)) <= base.Ui32(v10) {
 		F_pgaio_submit_staged(m)
@@ -75,7 +75,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 		if v16 != 0 {
 			return int32(0)
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+			v18 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 			v19 = v18
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 			if v20 == int32(0) {
@@ -106,7 +106,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 					if v46 != 0 {
 						return int32(0)
 					} else {
-						v48 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+						v48 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 						*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 						if l0 != 0 {
 							v51 = v32 + int32(12)
@@ -197,7 +197,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 				if v46 != 0 {
 					return int32(0)
 				} else {
-					v48 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+					v48 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 					*(*int32)(unsafe.Add(mBase, uint32(v48)+16)) = v43
 					if l0 != 0 {
 						v51 = v32 + int32(12)
@@ -345,7 +345,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 	if v17 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[778])) = v16
+		*(*int32)(unsafe.Add(mBase, _consts[782])) = v16
 		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
 		if v19 == int32(0) {
 			*(*int64)(unsafe.Add(mBase, uint32(v16)+8)) = int64(0)
@@ -358,7 +358,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 		if v32 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[779])) = v31
+			*(*int32)(unsafe.Add(mBase, _consts[783])) = v31
 			v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
 			if v34 == int32(0) {
 				*(*int64)(unsafe.Add(mBase, uint32(v31))) = int64(0)

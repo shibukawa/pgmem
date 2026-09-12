@@ -302,6 +302,9 @@ func PostgresMainLoopOnce(m *base.Module) {
 func PostgresSendReadyForQueryIfNecessary(m *base.Module) {
 	F_PostgresSendReadyForQueryIfNecessary(m)
 }
+func PgmemResetSession(m *base.Module, l0 int32) {
+	F_pgmem_reset_session(m, l0)
+}
 func PglSetPGliteExitStatus(m *base.Module, l0 int32) int32 {
 	return F_pgl_setPGliteExitStatus(m, l0)
 }

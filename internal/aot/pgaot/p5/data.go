@@ -128,7 +128,7 @@ func F_CopyErrorData(m *base.Module) int32 {
 	_ = v101
 	var v106 int32
 	_ = v106
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1137]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1136]))
 	if int32(0) <= v4 {
 		goto L1
 	} else {
@@ -149,7 +149,7 @@ L2:
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1137])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[1136])) = int32(-1)
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending

@@ -63,8 +63,8 @@ L3:
 	goto L4
 L4:
 	;
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[579]))
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[580]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[583]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[584]))
 	if v14 <= v16 {
 		goto L6
 	} else {
@@ -124,7 +124,7 @@ L14:
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[580])) = v30 + v16
+	*(*int32)(unsafe.Add(mBase, _consts[584])) = v30 + v16
 	v37 = v10 - v30
 	if v37 != 0 {
 		v9 = v32 + v30

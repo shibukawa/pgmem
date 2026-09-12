@@ -970,6 +970,8 @@ func F_defGetQualifiedName(m *base.Module, l0 int32) int32
 func F_defGetTypeName(m *base.Module, l0 int32) int32
 //go:linkname F_errorConflictingDefElem github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_errorConflictingDefElem
 func F_errorConflictingDefElem(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_DiscardCommand github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DiscardCommand
+func F_DiscardCommand(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_EventTriggerCommonSetup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_EventTriggerCommonSetup
 func F_EventTriggerCommonSetup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_EventTriggerInvoke github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_EventTriggerInvoke

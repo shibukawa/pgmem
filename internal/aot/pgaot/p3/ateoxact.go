@@ -24,7 +24,7 @@ func F_AtEOXact_Aio(m *base.Module) {
 	_ = v20
 	var v25 int32
 	_ = v25
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[777]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[781]))
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+20)))
 	if v4 != int32(1) {
 		return
@@ -386,7 +386,7 @@ L2:
 	goto L3
 L3:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[947]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[951]))
 	if v22 == int32(0) {
 		goto L7
 	} else {
@@ -407,7 +407,7 @@ L6:
 	goto L3
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[947])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[951])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
 	v196 = m.ExcPending
@@ -711,7 +711,7 @@ func F_AtEOXact_on_commit_actions(m *base.Module, l0 int32) {
 	var v31 int32
 	_ = v31
 	v2 = int32(0)
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[506]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[510]))
 	if v6 == v2 {
 		goto L1
 	} else {
@@ -757,7 +757,7 @@ L6:
 L7:
 	;
 	v24 = int32(4459104)
-	v26 = *(*int32)(unsafe.Add(mBase, _consts[506]))
+	v26 = *(*int32)(unsafe.Add(mBase, _consts[510]))
 	v27 = F_list_delete_nth_cell(m, v26, v10)
 	mBase = m.M
 	v28 = m.ExcPending
@@ -796,7 +796,7 @@ L13:
 	return
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[506])) = v27
+	*(*int32)(unsafe.Add(mBase, _consts[510])) = v27
 	F_pfree(m, v19)
 	mBase = m.M
 	v31 = m.ExcPending

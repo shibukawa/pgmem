@@ -1154,7 +1154,7 @@ L58:
 L59:
 	;
 	v281 = v240 - int32(1)
-	v286 = *(*int32)(unsafe.Add(mBase, uint32(v281<<(uint(int32(2))%32))+uint32(_consts[1107])))
+	v286 = *(*int32)(unsafe.Add(mBase, uint32(v281<<(uint(int32(2))%32))+uint32(_consts[1104])))
 	if v243 <= v286 {
 		v300 = v243
 		goto L55
@@ -1178,7 +1178,7 @@ L61:
 L62:
 	;
 	v272 = v240 - int32(1)
-	v277 = *(*int32)(unsafe.Add(mBase, uint32(v272<<(uint(int32(2))%32))+uint32(_consts[1106])))
+	v277 = *(*int32)(unsafe.Add(mBase, uint32(v272<<(uint(int32(2))%32))+uint32(_consts[1103])))
 	if v243 <= v277 {
 		v300 = v243
 		goto L55

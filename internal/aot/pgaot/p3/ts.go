@@ -449,7 +449,7 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 								return int32(0)
 							} else {
 								if base.Ui32(v34) < base.Ui32(int32(3)) {
-									v86 = *(*int32)(unsafe.Add(mBase, uint32(v34<<(uint(int32(2))%32))+uint32(_consts[1068])))
+									v86 = *(*int32)(unsafe.Add(mBase, uint32(v34<<(uint(int32(2))%32))+uint32(_consts[1072])))
 									v92 = v86
 								} else {
 									v92 = int32(0)
@@ -600,7 +600,7 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							return int32(0)
 						} else {
 							if base.Ui32(v34) < base.Ui32(int32(3)) {
-								v86 = *(*int32)(unsafe.Add(mBase, uint32(v34<<(uint(int32(2))%32))+uint32(_consts[1068])))
+								v86 = *(*int32)(unsafe.Add(mBase, uint32(v34<<(uint(int32(2))%32))+uint32(_consts[1072])))
 								v92 = v86
 							} else {
 								v92 = int32(0)

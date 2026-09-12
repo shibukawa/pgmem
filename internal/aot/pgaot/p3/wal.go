@@ -865,8 +865,8 @@ L14:
 	goto L15
 L15:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _consts[734]))
-	v48 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v40 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+	v48 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+28))
 	m.T0[v49].(func(*base.Module, int32, int32, int32, int32, int32))(m, v40, v13, v10+int32(124), v10+int32(120), v10+int32(116))
 	mBase = m.M

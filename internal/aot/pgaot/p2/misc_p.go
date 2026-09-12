@@ -2208,7 +2208,7 @@ L264:
 L265:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	F_errfinish(m, int32(518353), int32(5124), int32(291849))
+	F_errfinish(m, int32(518353), int32(5153), int32(291849))
 	mBase = m.M
 	v1126 = m.ExcPending
 	if v1126 != 0 {

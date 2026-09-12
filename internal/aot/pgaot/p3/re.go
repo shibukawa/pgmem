@@ -7846,16 +7846,16 @@ func F_ReThrowError(m *base.Module, l0 int32) {
 	_ = v109
 	var v114 int32
 	_ = v114
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v6
 	v8 = int32(4555004)
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[1109]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[1113]))
 	v11 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[1109])) = v10 + v11
+	*(*int32)(unsafe.Add(mBase, _consts[1113])) = v10 + v11
 	v14 = int32(4164644)
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[1106]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[1110]))
 	v18 = v16 + v11
-	*(*int32)(unsafe.Add(mBase, _consts[1106])) = v18
+	*(*int32)(unsafe.Add(mBase, _consts[1110])) = v18
 	if v18 < int32(5) {
 		goto L1
 	} else {
@@ -7873,7 +7873,7 @@ L2:
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1106])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[1110])) = int32(-1)
 	F_errstart_cold(m, int32(23), int32(0))
 	mBase = m.M
 	v105 = m.ExcPending
@@ -7885,11 +7885,11 @@ L3:
 L4:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, _consts[43]))
-	*(*int32)(unsafe.Add(mBase, uint32(v23)+uint32(_consts[1114]))) = v33
+	*(*int32)(unsafe.Add(mBase, uint32(v23)+uint32(_consts[1118]))) = v33
 	goto L6
 L5:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v23)+uint32(_consts[1118])))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v23)+uint32(_consts[1122])))
 	if v40 != 0 {
 		goto L9
 	} else {
@@ -8196,11 +8196,11 @@ L55:
 	goto L56
 L56:
 	;
-	v89 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
+	v89 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+96)) = v89
 	v91 = int32(4555004)
-	v93 = *(*int32)(unsafe.Add(mBase, _consts[1109]))
-	*(*int32)(unsafe.Add(mBase, _consts[1109])) = v93 - int32(1)
+	v93 = *(*int32)(unsafe.Add(mBase, _consts[1113]))
+	*(*int32)(unsafe.Add(mBase, _consts[1113])) = v93 - int32(1)
 	F_pg_re_throw(m)
 	mBase = m.M
 	v98 = m.ExcPending

@@ -12518,7 +12518,7 @@ func F_element_hash(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1027]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1024]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+24))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v4)+8))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
@@ -14061,7 +14061,7 @@ L109:
 	goto L107
 L110:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1451])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1450])) = int32(0)
 	goto L113
 L111:
 	;
@@ -14360,7 +14360,7 @@ L158:
 	}
 L159:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1451])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1450])) = int32(0)
 	goto L160
 L160:
 	;
@@ -18235,7 +18235,7 @@ L72:
 	}
 L73:
 	;
-	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v195)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v201 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v195)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v201)>>(uint(v195&int32(7))%32))&int32(1) == int32(0) {
 		v215 = v190
 		goto L66
@@ -18444,7 +18444,7 @@ L103:
 L104:
 	;
 	v307 = int32(1)
-	v311 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v304)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v311 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v304)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v311)>>(uint(v304&int32(7))%32))&v307 != 0 {
 		goto L96
 	} else {
@@ -18520,7 +18520,7 @@ L118:
 	}
 L119:
 	;
-	v367 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v361)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v367 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v361)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v367)>>(uint(v361&int32(7))%32))&int32(1) == int32(0) {
 		goto L112
 	} else {
@@ -18602,7 +18602,7 @@ L134:
 L135:
 	;
 	v422 = int32(1)
-	v426 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v419)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v426 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v419)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v426)>>(uint(v419&int32(7))%32))&v422 != 0 {
 		goto L127
 	} else {
@@ -18678,7 +18678,7 @@ L149:
 	}
 L150:
 	;
-	v482 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v476)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v482 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v476)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v482)>>(uint(v476&int32(7))%32))&int32(1) == int32(0) {
 		goto L143
 	} else {
@@ -18962,7 +18962,7 @@ L189:
 L190:
 	;
 	v617 = int32(1)
-	v621 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v614)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v621 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v614)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v621)>>(uint(v614&int32(7))%32))&v617 != 0 {
 		goto L182
 	} else {
@@ -19205,7 +19205,7 @@ L222:
 L223:
 	;
 	v742 = int32(1)
-	v746 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v739)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v746 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v739)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v746)>>(uint(v739&int32(7))%32))&v742 != 0 {
 		goto L215
 	} else {
@@ -19387,7 +19387,7 @@ L246:
 	}
 L247:
 	;
-	v835 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v829)>>(uint(int32(3))%32)))+uint32(_consts[1431]))))
+	v835 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v829)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
 	if int32(base.Ui32(v835)>>(uint(v829&int32(7))%32))&int32(1) == int32(0) {
 		v849 = v822
 		goto L240
@@ -19605,7 +19605,7 @@ L278:
 L279:
 	;
 	v994 = int32(1)
-	v998 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v991)>>(uint(int32(3))%32)))+uint32(_consts[1430]))))
+	v998 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v991)>>(uint(int32(3))%32)))+uint32(_consts[1429]))))
 	if int32(base.Ui32(v998)>>(uint(v991&int32(7))%32))&v994 != 0 {
 		v1011 = v994
 		goto L271
@@ -20139,7 +20139,7 @@ L349:
 	}
 L350:
 	;
-	v1198 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v1192)>>(uint(int32(3))%32)))+uint32(_consts[1432]))))
+	v1198 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v1192)>>(uint(int32(3))%32)))+uint32(_consts[1431]))))
 	if int32(base.Ui32(v1198)>>(uint(v1192&int32(7))%32))&int32(1) == int32(0) {
 		v1212 = v1185
 		goto L343
@@ -21065,11 +21065,11 @@ func F_errcode_for_socket_access(m *base.Module) {
 	_ = v31
 	var v36 int32
 	_ = v36
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1137]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1136]))
 	if int32(0) <= v5 {
 		v8 = int32(100663808)
 		v10 = v5 * int32(100)
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1200])))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1199])))
 		switch v13 - int32(13) {
 		case 0, 2, 10, 25, 26, 27, 51, 60:
 			v19 = v8
@@ -21082,10 +21082,10 @@ func F_errcode_for_socket_access(m *base.Module) {
 				v19 = int32(2600)
 			}
 		}
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1148]))) = v19
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1147]))) = v19
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1137])) = int32(-1)
+		*(*int32)(unsafe.Add(mBase, _consts[1136])) = int32(-1)
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
 		v27 = m.ExcPending
@@ -34807,7 +34807,7 @@ L41:
 	}
 L42:
 	;
-	v186 = *(*int32)(unsafe.Add(mBase, uint32(v171<<(uint(int32(2))%32))+uint32(_consts[1204])))
+	v186 = *(*int32)(unsafe.Add(mBase, uint32(v171<<(uint(int32(2))%32))+uint32(_consts[1203])))
 	v188 = *(*int32)(unsafe.Add(mBase, uint32(v166+v186)))
 	if v188 == int32(0) {
 		v207 = v162

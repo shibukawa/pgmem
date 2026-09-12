@@ -415,13 +415,13 @@ func F_bit_bit_count(m *base.Module, l0 int32) int32 {
 					v39 = v5
 					for {
 						v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+3)))
-						v43 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1065]))))
+						v43 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1069]))))
 						v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+2)))
-						v47 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1065]))))
+						v47 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1069]))))
 						v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+1)))
-						v51 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v48)+uint32(_consts[1065]))))
+						v51 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v48)+uint32(_consts[1069]))))
 						v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35))))
-						v55 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v52)+uint32(_consts[1065]))))
+						v55 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v52)+uint32(_consts[1069]))))
 						v59 = v43 + (v47 + (v51 + (v39 + v55)))
 						v60 = int32(4)
 						v61 = v35 + v60
@@ -445,7 +445,7 @@ func F_bit_bit_count(m *base.Module, l0 int32) int32 {
 					v75 = v69
 					for {
 						v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
-						v79 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v76)+uint32(_consts[1065]))))
+						v79 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v76)+uint32(_consts[1069]))))
 						v80 = v75 + v79
 						v81 = int32(1)
 						v84 = v72 + v81
@@ -571,7 +571,7 @@ func F_bit_bit_count(m *base.Module, l0 int32) int32 {
 						v198 = int32(1)
 						v199 = v193 - v198
 						v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v194))))
-						v203 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v200)+uint32(_consts[1065]))))
+						v203 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v200)+uint32(_consts[1069]))))
 						v204 = v197 + v203
 						v206 = v194 + v198
 						v208 = v195 + v198
@@ -598,13 +598,13 @@ func F_bit_bit_count(m *base.Module, l0 int32) int32 {
 					v225 = v216
 					for {
 						v226 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+3)))
-						v229 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v226)+uint32(_consts[1065]))))
+						v229 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v226)+uint32(_consts[1069]))))
 						v230 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+2)))
-						v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1065]))))
+						v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1069]))))
 						v234 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+1)))
-						v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1065]))))
+						v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1069]))))
 						v238 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219))))
-						v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1065]))))
+						v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1069]))))
 						v245 = v229 + (v233 + (v237 + (v225 + v241)))
 						v246 = int32(4)
 						v249 = v221 - v246

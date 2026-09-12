@@ -248,7 +248,7 @@ L3:
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 	v14 = int32(364906)
-	v17 = int32(*(*uint8)(unsafe.Add(mBase, _consts[521])))
+	v17 = int32(*(*uint8)(unsafe.Add(mBase, _consts[525])))
 	v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13))))
 	if v18 == int32(0) {
 		v37 = v17

@@ -406,7 +406,7 @@ L29:
 	;
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v152 = *(*int32)(unsafe.Add(mBase, uint32(v148+v135<<(uint(int32(2))%32))))
-	v155 = int32(*(*uint8)(unsafe.Add(mBase, _consts[801])))
+	v155 = int32(*(*uint8)(unsafe.Add(mBase, _consts[805])))
 	if v155 == int32(1) {
 		goto L30
 	} else {
@@ -448,7 +448,7 @@ L33:
 	}
 L34:
 	;
-	v182 = int32(*(*uint8)(unsafe.Add(mBase, _consts[801])))
+	v182 = int32(*(*uint8)(unsafe.Add(mBase, _consts[805])))
 	if v182 == int32(1) {
 		goto L35
 	} else {

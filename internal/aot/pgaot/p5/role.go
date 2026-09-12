@@ -1381,18 +1381,18 @@ func F_RoleMembershipCacheCallback(m *base.Module, l0 int32, l1 int32, l2 int32)
 	var v9 int32
 	_ = v9
 	if l1 != int32(21) {
-		*(*int64)(unsafe.Add(mBase, _consts[1022])) = int64(0)
-		*(*int32)(unsafe.Add(mBase, _consts[1025])) = int32(0)
+		*(*int64)(unsafe.Add(mBase, _consts[1019])) = int64(0)
+		*(*int32)(unsafe.Add(mBase, _consts[1022])) = int32(0)
 	} else {
 		if l2 == int32(0) {
-			*(*int64)(unsafe.Add(mBase, _consts[1022])) = int64(0)
-			*(*int32)(unsafe.Add(mBase, _consts[1025])) = int32(0)
+			*(*int64)(unsafe.Add(mBase, _consts[1019])) = int64(0)
+			*(*int32)(unsafe.Add(mBase, _consts[1022])) = int32(0)
 		} else {
-			v9 = *(*int32)(unsafe.Add(mBase, _consts[1026]))
+			v9 = *(*int32)(unsafe.Add(mBase, _consts[1023]))
 			if l2 != v9 {
 			} else {
-				*(*int64)(unsafe.Add(mBase, _consts[1022])) = int64(0)
-				*(*int32)(unsafe.Add(mBase, _consts[1025])) = int32(0)
+				*(*int64)(unsafe.Add(mBase, _consts[1019])) = int64(0)
+				*(*int32)(unsafe.Add(mBase, _consts[1022])) = int32(0)
 			}
 		}
 	}

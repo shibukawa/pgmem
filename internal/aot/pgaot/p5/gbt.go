@@ -227,12 +227,12 @@ func F_gbt_bpchar_consistent(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v40
 		v42 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v18))) = uint8(v42)
-		v45 = *(*int32)(unsafe.Add(mBase, _consts[1455]))
+		v45 = *(*int32)(unsafe.Add(mBase, _consts[1454]))
 		if v45 == v42 {
 			v50 = *(*int32)(unsafe.Add(mBase, _consts[247]))
 			v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
-			v56 = *(*int32)(unsafe.Add(mBase, uint32(v51*int32(28))+uint32(_consts[1049])))
-			*(*int32)(unsafe.Add(mBase, _consts[1455])) = v56
+			v56 = *(*int32)(unsafe.Add(mBase, uint32(v51*int32(28))+uint32(_consts[1046])))
+			*(*int32)(unsafe.Add(mBase, _consts[1454])) = v56
 		} else {
 		}
 		v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))

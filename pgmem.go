@@ -510,10 +510,11 @@ func (s *Server) endSession(id int64, stmts []string, held bool) {
 	if held {
 		// The client went away mid-transaction, mid-pipeline or mid-COPY.
 		// CopyFail is ignored outside COPY mode and aborts it inside; Sync
-		// clears a pipelined error state; ROLLBACK ends the transaction.
+		// clears a pipelined error state; the abort ends the transaction
+		// without a ROLLBACK statement anyone could observe.
 		s.b.Exec(copyFail("client disconnected"))
 		s.b.Exec([]byte{'S', 0, 0, 0, 4})
-		s.b.Exec(simpleQuery("ROLLBACK"))
+		s.b.ResetSession(false)
 	}
 	if len(stmts) > 0 {
 		var msg bytes.Buffer
@@ -641,13 +642,12 @@ func (s *Server) startSession(pkt []byte) ([]byte, error) {
 		return resp, s.applyUser()
 	}
 	// Fresh session semantics for a new connection, but only when no other
-	// connection is alive: DISCARD ALL would drop the prepared statements
-	// and temp tables of connections still using the shared session.
+	// connection is alive: the reset would drop the prepared statements
+	// and temp tables of connections still using the shared session. It
+	// is done in C rather than as ROLLBACK and DISCARD ALL statements, so
+	// pg_stat_statements and the log do not see it.
 	if s.live == 0 {
-		if _, err := s.b.Exec(simpleQuery("ROLLBACK")); err != nil {
-			return nil, err
-		}
-		if _, err := s.b.Exec(simpleQuery("DISCARD ALL")); err != nil {
+		if err := s.b.ResetSession(true); err != nil {
 			return nil, err
 		}
 	}

@@ -630,7 +630,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 	var v93 int32
 	_ = v93
 	if l0 != 0 {
-		v50 = *(*int32)(unsafe.Add(mBase, _consts[814]))
+		v50 = *(*int32)(unsafe.Add(mBase, _consts[818]))
 		if v50 != 0 {
 			v52 = v50
 		} else {
@@ -668,7 +668,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 					v87 = v85 | int32(2)
 					*(*uint16)(unsafe.Add(mBase, uint32(v84))) = uint16(v87)
 					v90 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, _consts[815])) = uint8(v90)
+					*(*uint8)(unsafe.Add(mBase, _consts[819])) = uint8(v90)
 					v93 = v68
 					return v93
 				}
@@ -682,9 +682,9 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			v11 = *(*int32)(unsafe.Add(mBase, _consts[816]))
+			v11 = *(*int32)(unsafe.Add(mBase, _consts[820]))
 			if v11 <= int32(0) {
-				v50 = *(*int32)(unsafe.Add(mBase, _consts[814]))
+				v50 = *(*int32)(unsafe.Add(mBase, _consts[818]))
 				if v50 != 0 {
 					v52 = v50
 				} else {
@@ -722,7 +722,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 							v87 = v85 | int32(2)
 							*(*uint16)(unsafe.Add(mBase, uint32(v84))) = uint16(v87)
 							v90 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, _consts[815])) = uint8(v90)
+							*(*uint8)(unsafe.Add(mBase, _consts[819])) = uint8(v90)
 							v93 = v68
 							return v93
 						}
@@ -730,18 +730,18 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v14 = int32(4478096)
-				v16 = *(*int32)(unsafe.Add(mBase, _consts[817]))
+				v16 = *(*int32)(unsafe.Add(mBase, _consts[821]))
 				v18 = v16 + int32(1)
 				if v18 < v11 {
 					v21 = v18
 				} else {
 					v21 = int32(0)
 				}
-				*(*int32)(unsafe.Add(mBase, _consts[817])) = v21
-				v24 = *(*int32)(unsafe.Add(mBase, _consts[818]))
+				*(*int32)(unsafe.Add(mBase, _consts[821])) = v21
+				v24 = *(*int32)(unsafe.Add(mBase, _consts[822]))
 				v28 = *(*int32)(unsafe.Add(mBase, uint32(v24+v21<<(uint(int32(2))%32))))
 				if v28 == int32(0) {
-					v50 = *(*int32)(unsafe.Add(mBase, _consts[814]))
+					v50 = *(*int32)(unsafe.Add(mBase, _consts[818]))
 					if v50 != 0 {
 						v52 = v50
 					} else {
@@ -779,7 +779,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 								v87 = v85 | int32(2)
 								*(*uint16)(unsafe.Add(mBase, uint32(v84))) = uint16(v87)
 								v90 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, _consts[815])) = uint8(v90)
+								*(*uint8)(unsafe.Add(mBase, _consts[819])) = uint8(v90)
 								v93 = v68
 								return v93
 							}
@@ -793,7 +793,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						if v32 <= int32(0) {
-							v50 = *(*int32)(unsafe.Add(mBase, _consts[814]))
+							v50 = *(*int32)(unsafe.Add(mBase, _consts[818]))
 							if v50 != 0 {
 								v52 = v50
 							} else {
@@ -831,7 +831,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 										v87 = v85 | int32(2)
 										*(*uint16)(unsafe.Add(mBase, uint32(v84))) = uint16(v87)
 										v90 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _consts[815])) = uint8(v90)
+										*(*uint8)(unsafe.Add(mBase, _consts[819])) = uint8(v90)
 										v93 = v68
 										return v93
 									}
@@ -860,7 +860,7 @@ func F_OpenTemporaryFile(m *base.Module, l0 int32) int32 {
 								v87 = v85 | int32(2)
 								*(*uint16)(unsafe.Add(mBase, uint32(v84))) = uint16(v87)
 								v90 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, _consts[815])) = uint8(v90)
+								*(*uint8)(unsafe.Add(mBase, _consts[819])) = uint8(v90)
 								v93 = v68
 								return v93
 							}
@@ -2412,7 +2412,7 @@ L73:
 	*(*int64)(unsafe.Add(mBase, uint32(v171)+16)) = v172
 	*(*int64)(unsafe.Add(mBase, uint32(v171)+8)) = v172
 	*(*int64)(unsafe.Add(mBase, uint32(v171))) = v172
-	v180 = int32(*(*uint8)(unsafe.Add(mBase, _consts[556])))
+	v180 = int32(*(*uint8)(unsafe.Add(mBase, _consts[560])))
 	if v180 == int32(0) {
 		goto L75
 	} else {
@@ -2435,7 +2435,7 @@ L76:
 	goto L77
 L77:
 	;
-	v184 = int32(*(*uint8)(unsafe.Add(mBase, _consts[557])))
+	v184 = int32(*(*uint8)(unsafe.Add(mBase, _consts[561])))
 	if v184 == int32(0) {
 		goto L78
 	} else {
@@ -2557,7 +2557,7 @@ L97:
 L98:
 	;
 	v300 = int32(336306)
-	v303 = int32(*(*uint8)(unsafe.Add(mBase, _consts[558])))
+	v303 = int32(*(*uint8)(unsafe.Add(mBase, _consts[562])))
 	v304 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v133))))
 	if v304 == int32(0) {
 		v323 = v303
@@ -2951,7 +2951,7 @@ L161:
 	*(*int64)(unsafe.Add(mBase, uint32(v462)+16)) = v463
 	*(*int64)(unsafe.Add(mBase, uint32(v462)+8)) = v463
 	*(*int64)(unsafe.Add(mBase, uint32(v462))) = v463
-	v471 = int32(*(*uint8)(unsafe.Add(mBase, _consts[559])))
+	v471 = int32(*(*uint8)(unsafe.Add(mBase, _consts[563])))
 	if v471 == int32(0) {
 		goto L165
 	} else {
@@ -2982,7 +2982,7 @@ L166:
 	goto L167
 L167:
 	;
-	v475 = int32(*(*uint8)(unsafe.Add(mBase, _consts[560])))
+	v475 = int32(*(*uint8)(unsafe.Add(mBase, _consts[564])))
 	if v475 == int32(0) {
 		goto L168
 	} else {
@@ -3134,7 +3134,7 @@ L192:
 	goto L193
 L193:
 	;
-	v565 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+	v565 = *(*int32)(unsafe.Add(mBase, _consts[565]))
 	if v565 == int32(0) {
 		goto L190
 	} else {
@@ -3172,9 +3172,9 @@ L197:
 	}
 L198:
 	;
-	v575 = *(*int32)(unsafe.Add(mBase, _consts[562]))
+	v575 = *(*int32)(unsafe.Add(mBase, _consts[566]))
 	v576 = *(*int32)(unsafe.Add(mBase, uint32(v368)+364))
-	v578 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+	v578 = *(*int32)(unsafe.Add(mBase, _consts[565]))
 	v579 = *(*int32)(unsafe.Add(mBase, uint32(v578)+12))
 	v580 = m.T0[v579].(func(*base.Module, int32, int32, int32, int32) int32)(m, v575, v432, v576, v572)
 	mBase = m.M
@@ -5285,7 +5285,7 @@ L15:
 	}
 L16:
 	;
-	v66 = *(*float64)(unsafe.Add(mBase, _consts[598]))
+	v66 = *(*float64)(unsafe.Add(mBase, _consts[602]))
 	if base.F64_lt(v55, base.F64_mul(v66, float64(10))) != 0 {
 		v71 = int32(0)
 		goto L14

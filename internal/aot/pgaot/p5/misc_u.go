@@ -39,7 +39,7 @@ func F_UnlinkLockFiles(m *base.Module, l0 int32, l1 int32) {
 	var v44 int32
 	_ = v44
 	v3 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1209]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1208]))
 	if v5 == v3 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
@@ -63,7 +63,7 @@ func F_UnlinkLockFiles(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	}
-	*(*int32)(unsafe.Add(mBase, _consts[1209])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1208])) = int32(0)
 	v31 = int32(*(*uint8)(unsafe.Add(mBase, _consts[801])))
 	if v31 != 0 {
 		v32 = int32(15)

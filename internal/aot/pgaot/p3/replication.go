@@ -304,7 +304,7 @@ L18:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[53])) = v77
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v76)))
-	v88 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v88 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+60))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = v79
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v78
@@ -866,8 +866,8 @@ func F_ReplicationSlotRelease(m *base.Module) {
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[674]))
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[708])))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[678]))
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[712])))
 	if v15 == int32(1) {
 		goto L1
 	} else {
@@ -923,8 +923,8 @@ L8:
 L9:
 	;
 	v31 = int32(4472308)
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[674]))
-	*(*int32)(unsafe.Add(mBase, _consts[674])) = int32(0)
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[678]))
+	*(*int32)(unsafe.Add(mBase, _consts[678])) = int32(0)
 	F_ReplicationSlotDropPtr(m, v32)
 	mBase = m.M
 	v37 = m.ExcPending
@@ -1022,7 +1022,7 @@ L21:
 L22:
 	;
 	v112 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[674])) = v112
+	*(*int32)(unsafe.Add(mBase, _consts[678])) = v112
 	v115 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v119 = F_LWLockAcquire(m, v115+int32(512), v112)
 	mBase = m.M
@@ -1152,7 +1152,7 @@ L41:
 	}
 L42:
 	;
-	v140 = int32(*(*uint8)(unsafe.Add(mBase, _consts[708])))
+	v140 = int32(*(*uint8)(unsafe.Add(mBase, _consts[712])))
 	if v140 == int32(1) {
 		goto L43
 	} else {
@@ -1160,7 +1160,7 @@ L42:
 	}
 L43:
 	;
-	v146 = int32(*(*uint8)(unsafe.Add(mBase, _consts[709])))
+	v146 = int32(*(*uint8)(unsafe.Add(mBase, _consts[713])))
 	if v146 != 0 {
 		goto L46
 	} else {
@@ -2060,7 +2060,7 @@ L73:
 	}
 L74:
 	;
-	v213 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v213 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	*(*int64)(unsafe.Add(mBase, uint32(v213)+104)) = v117
 	F_ReplicationSlotMarkDirty(m)
 	mBase = m.M
@@ -2230,7 +2230,7 @@ L99:
 	}
 L100:
 	;
-	v280 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v280 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v281 = *(*int32)(unsafe.Add(mBase, uint32(v280)))
 	*(*int32)(unsafe.Add(mBase, uint32(v280))) = int32(1)
 	if v281 != 0 {
@@ -2240,7 +2240,7 @@ L100:
 	}
 L101:
 	;
-	v285 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v285 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	F_s_lock(m, v285, int32(518862), int32(810), int32(91126))
 	mBase = m.M
 	v290 = m.ExcPending
@@ -2254,7 +2254,7 @@ L102:
 	goto L103
 L103:
 	;
-	v292 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v292 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	*(*int64)(unsafe.Add(mBase, uint32(v292)+120)) = v242
 	*(*int64)(unsafe.Add(mBase, uint32(v292)+104)) = v234
 	*(*int32)(unsafe.Add(mBase, uint32(v292)+100)) = v243
@@ -2328,7 +2328,7 @@ L111:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = v17
 	v320 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v15)+102)) = uint8(v320)
-	v324 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v324 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v325 = *(*int64)(unsafe.Add(mBase, uint32(v324)+120))
 	if v325 == int64(0) {
 		goto L114

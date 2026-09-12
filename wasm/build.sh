@@ -178,7 +178,7 @@ emcc $BASE_CFLAGS -c -o "$OUT/pgmem_dl.o" "$HERE/pgmem_dl.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_modules_gen.o" "$OUT/pgmem_modules_gen.c"
 
 echo "== link backend (pglite target)"
-BACKEND_EXPORTS=$EXPORTS_COMMON,_PostgresMainLoopOnce,_PostgresMainLongJmp,_PostgresSendReadyForQueryIfNecessary,_ProcessStartupPacket,_IsTransactionBlock,_pgl_startPGlite,_pgl_getMyProcPort,_pgl_sendConnData,_pgl_pq_flush,_pq_buffer_remaining_data,_pgmem_module_name
+BACKEND_EXPORTS=$EXPORTS_COMMON,_PostgresMainLoopOnce,_PostgresMainLongJmp,_PostgresSendReadyForQueryIfNecessary,_ProcessStartupPacket,_IsTransactionBlock,_pgl_startPGlite,_pgl_getMyProcPort,_pgl_sendConnData,_pgl_pq_flush,_pq_buffer_remaining_data,_pgmem_module_name,_pgmem_reset_session
 rm -f src/backend/pglite.wasm src/backend/pglite.js
 # A small initial memory: the heap grows on demand (emscripten_resize_heap)
 # and every initial byte is resident memory the host has to zero.

@@ -976,9 +976,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v774 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v772))) = uint16(v774)
-															v777 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v777 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v777
-															v780 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v780 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v780
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v772 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v772
@@ -1560,9 +1560,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v434 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v432))) = uint16(v434)
-															v437 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v437 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v437
-															v440 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v440 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v440
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v432 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v432
@@ -2450,9 +2450,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v774 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v772))) = uint16(v774)
-															v777 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v777 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v777
-															v780 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v780 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v780
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v772 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v772
@@ -3034,9 +3034,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v434 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v432))) = uint16(v434)
-															v437 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v437 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v437
-															v440 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v440 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v440
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v432 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v432
@@ -3820,9 +3820,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 											} else {
 												v774 = int32(0)
 												*(*uint16)(unsafe.Add(mBase, uint32(v772))) = uint16(v774)
-												v777 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+												v777 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 												*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v777
-												v780 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+												v780 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 												*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v780
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v772 + int32(2)
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v772
@@ -4404,9 +4404,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 											} else {
 												v434 = int32(0)
 												*(*uint16)(unsafe.Add(mBase, uint32(v432))) = uint16(v434)
-												v437 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+												v437 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 												*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v437
-												v440 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+												v440 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 												*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v440
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v432 + int32(2)
 												*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v432
@@ -5358,9 +5358,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v774 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v772))) = uint16(v774)
-															v777 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v777 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v777
-															v780 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v780 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v780
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v772 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v772
@@ -5942,9 +5942,9 @@ func F_width_bucket_numeric(m *base.Module, l0 int32) int32 {
 														} else {
 															v434 = int32(0)
 															*(*uint16)(unsafe.Add(mBase, uint32(v432))) = uint16(v434)
-															v437 = *(*int64)(unsafe.Add(mBase, _consts[996]))
+															v437 = *(*int64)(unsafe.Add(mBase, _consts[1000]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+16)) = v437
-															v440 = *(*int64)(unsafe.Add(mBase, _consts[997]))
+															v440 = *(*int64)(unsafe.Add(mBase, _consts[1001]))
 															*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v440
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v432 + int32(2)
 															*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v432

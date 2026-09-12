@@ -36,7 +36,7 @@ func F_HoldPortal(m *base.Module, l0 int32) {
 	_ = v35
 	var v38 int32
 	_ = v38
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1225]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1224]))
 	v10 = F_AllocSetContextCreateInternal(m, v5, int32(68360), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v11 = m.ExcPending
@@ -156,7 +156,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v25 != 0 {
-					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1024])))
+					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1021])))
 					if v29 != 0 {
 						v38 = int32(1)
 						return v38
@@ -11019,7 +11019,7 @@ func F_hnswcostestimate(m *base.Module, l0 int32, l1 int32, l2 float64, l3 int32
 						if base.F64_gt(v58, float64(0)) != 0 {
 							v61 = F_log(m, v58)
 							mBase = m.M
-							v63 = *(*int32)(unsafe.Add(mBase, _consts[1496]))
+							v63 = *(*int32)(unsafe.Add(mBase, _consts[1495]))
 							v65 = F_log(m, base.F64_convert_i32_s(v63))
 							mBase = m.M
 							v66 = float64(1)

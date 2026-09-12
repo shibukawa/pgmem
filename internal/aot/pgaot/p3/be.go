@@ -76,7 +76,7 @@ func F_be_lo_tell(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, _consts[565]))
+		v13 = *(*int32)(unsafe.Add(mBase, _consts[569]))
 		if v13 <= v9 {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -111,7 +111,7 @@ func F_be_lo_tell(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, _consts[566]))
+			v16 = *(*int32)(unsafe.Add(mBase, _consts[570]))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v16+v9<<(uint(int32(2))%32))))
 			if v20 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
@@ -318,7 +318,7 @@ L4:
 	}
 L5:
 	;
-	v21 = int32(*(*uint8)(unsafe.Add(mBase, _consts[567])))
+	v21 = int32(*(*uint8)(unsafe.Add(mBase, _consts[571])))
 	if v21 == int32(0) {
 		goto L8
 	} else {
@@ -353,7 +353,7 @@ L9:
 	goto L10
 L10:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[568]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[572]))
 	if v32 == int32(0) {
 		goto L13
 	} else {
@@ -388,7 +388,7 @@ L13:
 	}
 L14:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[565]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[569]))
 	if v36 <= int32(0) {
 		goto L13
 	} else {
@@ -396,7 +396,7 @@ L14:
 	}
 L15:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _consts[566]))
+	v40 = *(*int32)(unsafe.Add(mBase, _consts[570]))
 	v42 = int32(0)
 	v45 = v36
 	v47 = v40
@@ -447,7 +447,7 @@ L20:
 	}
 L21:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, _consts[569]))
+	v61 = *(*int32)(unsafe.Add(mBase, _consts[573]))
 	F_UnregisterSnapshotFromOwner(m, v59, v61)
 	mBase = m.M
 	v63 = m.ExcPending
@@ -474,8 +474,8 @@ L24:
 	goto L23
 L25:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[565]))
-	v69 = *(*int32)(unsafe.Add(mBase, _consts[566]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[569]))
+	v69 = *(*int32)(unsafe.Add(mBase, _consts[570]))
 	v70 = v67
 	v71 = v69
 	goto L18
@@ -668,7 +668,7 @@ func F_be_loread(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v28 = *(*int32)(unsafe.Add(mBase, _consts[565]))
+			v28 = *(*int32)(unsafe.Add(mBase, _consts[569]))
 			if v28 <= v7 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -703,7 +703,7 @@ func F_be_loread(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v31 = *(*int32)(unsafe.Add(mBase, _consts[566]))
+				v31 = *(*int32)(unsafe.Add(mBase, _consts[570]))
 				v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v7<<(uint(int32(2))%32))))
 				if v35 == int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))

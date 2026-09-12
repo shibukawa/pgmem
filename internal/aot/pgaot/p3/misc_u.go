@@ -164,8 +164,8 @@ func F_UnreservedPLKeywords_hash_func(m *base.Module, l0 int32, l1 int32) int32 
 		v87 = v78
 	}
 	v89 = int32(1)
-	v92 = int32(*(*int16)(unsafe.Add(mBase, uint32(v81<<(uint(v89)%32))+uint32(_consts[1286]))))
-	v96 = int32(*(*int16)(unsafe.Add(mBase, uint32(v87<<(uint(v89)%32))+uint32(_consts[1286]))))
+	v92 = int32(*(*int16)(unsafe.Add(mBase, uint32(v81<<(uint(v89)%32))+uint32(_consts[1289]))))
+	v96 = int32(*(*int16)(unsafe.Add(mBase, uint32(v87<<(uint(v89)%32))+uint32(_consts[1289]))))
 	return v92 + v96
 }
 func F_UpdateDecodingStats(m *base.Module, l0 int32) {
@@ -1278,8 +1278,8 @@ func F_umask(m *base.Module, l0 int32) int32 {
 	var v14 int32
 	_ = v14
 	v3 = int32(4452288)
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1421]))
-	*(*int32)(unsafe.Add(mBase, _consts[1421])) = l0
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1424]))
+	*(*int32)(unsafe.Add(mBase, _consts[1424])) = l0
 	if base.Ui32(int32(-4095)) <= base.Ui32(v4) {
 		*(*int32)(unsafe.Add(mBase, _consts[43])) = int32(0) - v4
 		v14 = int32(-1)

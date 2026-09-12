@@ -24,9 +24,9 @@ func F_EncodeSpecialTimestamp(m *base.Module, l0 int64, l1 int32) {
 	_ = v30
 	if l0 != int64(9223372036854775807) {
 		if l0 == int64(-9223372036854775807-1) {
-			v8 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1057])))
+			v8 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1061])))
 			*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v8)
-			v11 = *(*int64)(unsafe.Add(mBase, _consts[1058]))
+			v11 = *(*int64)(unsafe.Add(mBase, _consts[1062]))
 			*(*int64)(unsafe.Add(mBase, uint32(l1))) = v11
 			return
 		} else {
@@ -56,9 +56,9 @@ func F_EncodeSpecialTimestamp(m *base.Module, l0 int64, l1 int32) {
 			}
 		}
 	} else {
-		v27 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1059])))
+		v27 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1063])))
 		*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)) = uint8(v27)
-		v30 = *(*int64)(unsafe.Add(mBase, _consts[1060]))
+		v30 = *(*int64)(unsafe.Add(mBase, _consts[1064]))
 		*(*int64)(unsafe.Add(mBase, uint32(l1))) = v30
 		return
 	}

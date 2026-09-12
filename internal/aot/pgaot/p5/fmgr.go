@@ -1319,7 +1319,7 @@ L64:
 	}
 L65:
 	;
-	v548 = *(*int32)(unsafe.Add(mBase, _consts[1203]))
+	v548 = *(*int32)(unsafe.Add(mBase, _consts[1202]))
 	if v548 != 0 {
 		goto L71
 	} else {
@@ -1508,7 +1508,7 @@ L86:
 	*(*int32)(unsafe.Add(mBase, _consts[140])) = v642
 	*(*int32)(unsafe.Add(mBase, _consts[141])) = v641
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v643
-	v830 = *(*int32)(unsafe.Add(mBase, _consts[1203]))
+	v830 = *(*int32)(unsafe.Add(mBase, _consts[1202]))
 	if v830 != 0 {
 		goto L111
 	} else {
@@ -1695,7 +1695,7 @@ L104:
 	goto L105
 L105:
 	;
-	v799 = *(*int32)(unsafe.Add(mBase, _consts[1203]))
+	v799 = *(*int32)(unsafe.Add(mBase, _consts[1202]))
 	if v799 != 0 {
 		goto L107
 	} else {

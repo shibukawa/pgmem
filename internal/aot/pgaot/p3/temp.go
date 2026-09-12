@@ -36,8 +36,8 @@ func F_SetTempTablespaces(m *base.Module, l0 int32, l1 int32) {
 	_ = v62
 	var v64 int32
 	_ = v64
-	*(*int32)(unsafe.Add(mBase, _consts[816])) = l1
-	*(*int32)(unsafe.Add(mBase, _consts[818])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[820])) = l1
+	*(*int32)(unsafe.Add(mBase, _consts[822])) = l0
 	if int32(2) <= l1 {
 		v11 = int32(4645584)
 		v12 = int64(0)
@@ -46,8 +46,8 @@ func F_SetTempTablespaces(m *base.Module, l0 int32, l1 int32) {
 			v62 = v12
 		} else {
 			v22 = v15 - v12
-			v24 = *(*int64)(unsafe.Add(mBase, _consts[819]))
-			v25 = *(*int64)(unsafe.Add(mBase, _consts[820]))
+			v24 = *(*int64)(unsafe.Add(mBase, _consts[823]))
+			v25 = *(*int64)(unsafe.Add(mBase, _consts[824]))
 			v28 = v25
 			v30 = v24
 			for {
@@ -64,15 +64,15 @@ func F_SetTempTablespaces(m *base.Module, l0 int32, l1 int32) {
 				}
 				break
 			}
-			*(*int64)(unsafe.Add(mBase, _consts[819])) = v36
-			*(*int64)(unsafe.Add(mBase, _consts[820])) = v44
+			*(*int64)(unsafe.Add(mBase, _consts[823])) = v36
+			*(*int64)(unsafe.Add(mBase, _consts[824])) = v44
 			v62 = v12 + v49
 		}
 		v64 = base.I32_wrap_i64(v62)
 	} else {
 		v64 = int32(0)
 	}
-	*(*int32)(unsafe.Add(mBase, _consts[817])) = v64
+	*(*int32)(unsafe.Add(mBase, _consts[821])) = v64
 	return
 }
 func F_checkTempNamespaceStatus(m *base.Module, l0 int32) int32 {

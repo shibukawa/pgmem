@@ -13,14 +13,14 @@ func F_pgl_getpwuid(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v18 int32
 	_ = v18
-	*(*int32)(unsafe.Add(mBase, _consts[1248])) = int32(4216546)
-	*(*int32)(unsafe.Add(mBase, _consts[1249])) = int32(4216531)
-	*(*int32)(unsafe.Add(mBase, _consts[1250])) = int32(4216519)
-	*(*int32)(unsafe.Add(mBase, _consts[1251])) = l0
-	*(*int32)(unsafe.Add(mBase, _consts[1252])) = l0
-	*(*int32)(unsafe.Add(mBase, _consts[1253])) = int32(4216517)
+	*(*int32)(unsafe.Add(mBase, _consts[1252])) = int32(4216546)
+	*(*int32)(unsafe.Add(mBase, _consts[1253])) = int32(4216531)
+	*(*int32)(unsafe.Add(mBase, _consts[1254])) = int32(4216519)
+	*(*int32)(unsafe.Add(mBase, _consts[1255])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1256])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1257])) = int32(4216517)
 	v18 = int32(4646344)
-	*(*int32)(unsafe.Add(mBase, _consts[1254])) = int32(4216508)
+	*(*int32)(unsafe.Add(mBase, _consts[1258])) = int32(4216508)
 	return v18
 }
 func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
@@ -74,7 +74,7 @@ func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
 	_ = v70
 	var v76 int32
 	_ = v76
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1246]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1250]))
 	if v4 == int32(0) {
 		goto L1
 	} else {
@@ -209,7 +209,7 @@ L20:
 	goto L4
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1247])) = int32(100)
+	*(*int32)(unsafe.Add(mBase, _consts[1251])) = int32(100)
 	m.Env.Emscripten_exit_with_live_runtime(m)
 	mBase = m.M
 	base.Wasm_trap_unreachable()
@@ -243,8 +243,8 @@ func F_pgl_setPGliteActive(m *base.Module, l0 int32) int32 {
 	v6 = v4 - int32(32)
 	m.G0 = v6
 	v8 = int32(4646160)
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[1246]))
-	*(*int32)(unsafe.Add(mBase, _consts[1246])) = l0
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[1250]))
+	*(*int32)(unsafe.Add(mBase, _consts[1250])) = l0
 	if l0 == int32(0) {
 		v14 = int64(0)
 		*(*int64)(unsafe.Add(mBase, uint32(v6)+24)) = v14
@@ -266,8 +266,8 @@ func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32 {
 	var v4 int32
 	_ = v4
 	v3 = int32(4216504)
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1247]))
-	*(*int32)(unsafe.Add(mBase, _consts[1247])) = l0
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1251]))
+	*(*int32)(unsafe.Add(mBase, _consts[1251])) = l0
 	return v4
 }
 func F_pgl_shmat(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
@@ -283,7 +283,7 @@ func F_pgl_shmat(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v11
 	var v13 int32
 	_ = v13
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1129]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1133]))
 	if v5 != 0 {
 		goto L1
 	} else {

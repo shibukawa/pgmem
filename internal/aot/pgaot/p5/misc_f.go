@@ -6034,7 +6034,7 @@ func F_find_option(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	v13 = v11 - int32(16)
 	m.G0 = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = l0
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[1275]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[1274]))
 	v24 = F_hash_search(m, v19, v13+int32(8), v5, v5)
 	mBase = m.M
 	v27 = m.ExcPending
@@ -6049,7 +6049,7 @@ L1:
 	return v481
 L2:
 	;
-	v477 = *(*int32)(unsafe.Add(mBase, uint32(v463<<(uint(int32(2))%32))+uint32(_consts[1276])))
+	v477 = *(*int32)(unsafe.Add(mBase, uint32(v463<<(uint(int32(2))%32))+uint32(_consts[1275])))
 	v479 = F_find_option(m, v477, int32(0), l2, l3)
 	mBase = m.M
 	v480 = m.ExcPending
@@ -6810,7 +6810,7 @@ L136:
 	;
 	v367 = int32(0)
 	v368 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
-	v370 = *(*int32)(unsafe.Add(mBase, _consts[1277]))
+	v370 = *(*int32)(unsafe.Add(mBase, _consts[1276]))
 	v373 = F_MemoryContextAllocExtended(m, v370, int32(124), int32(2))
 	mBase = m.M
 	v374 = m.ExcPending
@@ -6910,7 +6910,7 @@ L148:
 	*(*int32)(unsafe.Add(mBase, uint32(v397)+12)) = int32(415608)
 	*(*int64)(unsafe.Add(mBase, uint32(v397)+4)) = int64(197568495622)
 	*(*int32)(unsafe.Add(mBase, uint32(v397)+92)) = v397 + int32(120)
-	v413 = *(*int32)(unsafe.Add(mBase, _consts[1275]))
+	v413 = *(*int32)(unsafe.Add(mBase, _consts[1274]))
 	v417 = F_hash_search(m, v413, v397, int32(3), v13+int32(15))
 	mBase = m.M
 	v418 = m.ExcPending
@@ -11405,7 +11405,7 @@ L6:
 	goto L7
 L7:
 	;
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1321])))
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1320])))
 	if v13 != 0 {
 		goto L8
 	} else {
@@ -11510,7 +11510,7 @@ L23:
 	goto L24
 L24:
 	;
-	v64 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1322])))
+	v64 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1321])))
 	if v64 != 0 {
 		goto L25
 	} else {
@@ -11605,7 +11605,7 @@ L38:
 	goto L39
 L39:
 	;
-	v113 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1323])))
+	v113 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1322])))
 	if v113 != 0 {
 		goto L40
 	} else {

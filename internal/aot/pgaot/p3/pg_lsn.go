@@ -146,7 +146,7 @@ func F_pg_lsn_in(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v17)+16)) = v18
 	*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v18
 	*(*int64)(unsafe.Add(mBase, uint32(v17))) = v18
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1039])))
 	if v26 == int32(0) {
 		goto L5
 	} else {
@@ -189,7 +189,7 @@ L6:
 	goto L7
 L7:
 	;
-	v30 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1036])))
+	v30 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1040])))
 	if v30 == int32(0) {
 		goto L8
 	} else {
@@ -311,7 +311,7 @@ L26:
 	*(*int64)(unsafe.Add(mBase, uint32(v111)+16)) = v112
 	*(*int64)(unsafe.Add(mBase, uint32(v111)+8)) = v112
 	*(*int64)(unsafe.Add(mBase, uint32(v111))) = v112
-	v120 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
+	v120 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1039])))
 	if v120 == int32(0) {
 		goto L28
 	} else {
@@ -333,7 +333,7 @@ L29:
 	goto L30
 L30:
 	;
-	v124 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1036])))
+	v124 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1040])))
 	if v124 == int32(0) {
 		goto L31
 	} else {

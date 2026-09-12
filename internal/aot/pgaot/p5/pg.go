@@ -15634,7 +15634,7 @@ L2:
 	}
 L3:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[1103]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[1100]))
 	if v25 == int32(0) {
 		goto L8
 	} else {
@@ -15727,7 +15727,7 @@ L12:
 	}
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1103])) = v34
+	*(*int32)(unsafe.Add(mBase, _consts[1100])) = v34
 	v42 = v34
 	goto L10
 L14:
@@ -19893,7 +19893,7 @@ L2:
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v28)+24))
 	v31 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = v31
-	v34 = *(*int32)(unsafe.Add(mBase, _consts[1056]))
+	v34 = *(*int32)(unsafe.Add(mBase, _consts[1053]))
 	v38 = F_open_auth_file(m, v34, int32(21), v31, v31)
 	mBase = m.M
 	v39 = m.ExcPending
@@ -19904,7 +19904,7 @@ L2:
 	}
 L3:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, _consts[1056]))
+	v41 = *(*int32)(unsafe.Add(mBase, _consts[1053]))
 	F_tokenize_auth_file(m, v41, v38, v21+int32(4), int32(12), int32(0))
 	mBase = m.M
 	v47 = m.ExcPending
@@ -20642,7 +20642,7 @@ func F_pg_mbstrlen(m *base.Module, l0 int32) int32 {
 	v2 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[247]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v7*int32(28))+uint32(_consts[1049])))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v7*int32(28))+uint32(_consts[1046])))
 	if v12 != int32(1) {
 		goto L2
 	} else {
@@ -20690,7 +20690,7 @@ L8:
 	;
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[247]))
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v23*int32(28))+uint32(_consts[1271])))
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v23*int32(28))+uint32(_consts[1270])))
 	v29 = m.T0[v28].(func(*base.Module, int32) int32)(m, v16)
 	mBase = m.M
 	v32 = m.ExcPending
@@ -31069,7 +31069,7 @@ L39:
 	}
 L40:
 	;
-	v159 = int64(*(*int8)(unsafe.Add(mBase, uint32(v143)+uint32(_consts[1086]))))
+	v159 = int64(*(*int8)(unsafe.Add(mBase, uint32(v143)+uint32(_consts[1083]))))
 	v136 = v136 + int32(1)
 	v142 = v159 + v142<<(uint(int64(4))%64)
 	goto L34

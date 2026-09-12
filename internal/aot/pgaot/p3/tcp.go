@@ -41,7 +41,7 @@ func F_show_tcp_keepalives_count(m *base.Module) int32 {
 	v3 = int32(16)
 	v4 = v2 - v3
 	m.G0 = v4
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 	v10 = m.G0
 	v12 = v10 - v3
 	m.G0 = v12

@@ -538,7 +538,7 @@ L54:
 	}
 L55:
 	;
-	v184 = int32(*(*uint8)(unsafe.Add(mBase, _consts[497])))
+	v184 = int32(*(*uint8)(unsafe.Add(mBase, _consts[501])))
 	if v184 != 0 {
 		goto L54
 	} else {
@@ -5226,7 +5226,7 @@ func F_range_typanalyze(m *base.Module, l0 int32) int32 {
 		} else {
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 			if v12 < int32(0) {
-				v16 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+				v16 = *(*int32)(unsafe.Add(mBase, _consts[1048]))
 				*(*int32)(unsafe.Add(mBase, uint32(v4))) = v16
 				v18 = v16
 			} else {

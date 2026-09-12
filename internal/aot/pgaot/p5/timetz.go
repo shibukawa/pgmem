@@ -117,8 +117,8 @@ func F_timetz_in(m *base.Module, l0 int32) int32 {
 						v100 = v60
 					} else {
 						v82 = v14 << (uint(int32(3)) % 32)
-						v85 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_consts[1028])))
-						v88 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_consts[1029])))
+						v85 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_consts[1025])))
+						v88 = *(*int64)(unsafe.Add(mBase, uint32(v82)+uint32(_consts[1026])))
 						if int64(0) <= v77 {
 							v91 = v77 + v88
 							v92 = base.I64_rem_s(v91, v85)

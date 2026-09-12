@@ -206,3 +206,72 @@ patch('src/backend/utils/init/miscinit.c',
 }
 """,
 'give the GUC its reset value after all')
+
+# Session cleanup between clients: pgmem used to run "ROLLBACK; DISCARD ALL"
+# as SQL when a new connection found the backend free, which showed up in
+# pg_stat_statements (like a pooler's server_reset_query does) and in the
+# log. pgmem_reset_session does the same work as C calls, so nothing is
+# executed as a statement.
+patch('src/backend/tcop/postgres.c',
+"""void PostgresMainLoopOnce() {
+""",
+"""#ifdef __PGMEM__
+#include "commands/discard.h"
+
+/*
+ * pgmem_reset_session: what a client expects from a fresh session, done
+ * without running a statement (so pg_stat_statements does not count it):
+ * abort anything left open, then, with discard, everything DISCARD ALL
+ * does plus forgetting the temp namespace.
+ */
+extern void pgmem_forget_temp_namespace(void);
+
+void
+pgmem_reset_session(int discard)
+{
+	DiscardStmt stmt;
+
+	AbortOutOfAnyTransaction();
+	if (!discard)
+		return;
+	StartTransactionCommand();
+	stmt.type = T_DiscardStmt;
+	stmt.target = DISCARD_ALL;
+	DiscardCommand(&stmt, true);
+	CommitTransactionCommand();
+	/* DISCARD TEMP emptied it; a new client starts without one, like a new backend */
+	pgmem_forget_temp_namespace();
+}
+#endif
+
+void PostgresMainLoopOnce() {
+""",
+'pgmem_reset_session')
+
+# Temp namespace: DISCARD TEMP empties the session's pg_temp_N but the
+# session keeps it assigned, so a later client's first CREATE TEMP TABLE
+# does not change the effective search_path the way it does in a new
+# backend (which is what revalidates cached plans). Forgetting it makes
+# the next client start like a new backend; pg_temp_N is found and
+# cleaned again on first use.
+patch('src/backend/catalog/namespace.c',
+"""/*
+ * GetTempToastNamespace - get the OID of my temporary-toast-table namespace,
+""",
+"""#ifdef __PGMEM__
+void
+pgmem_forget_temp_namespace(void)
+{
+	myTempNamespace = InvalidOid;
+	myTempToastNamespace = InvalidOid;
+	myTempNamespaceSubID = InvalidSubTransactionId;
+	/* the cached search paths still carry the old pg_temp_N */
+	baseSearchPathValid = false;
+	searchPathCacheValid = false;
+}
+#endif
+
+/*
+ * GetTempToastNamespace - get the OID of my temporary-toast-table namespace,
+""",
+'pgmem_forget_temp_namespace')

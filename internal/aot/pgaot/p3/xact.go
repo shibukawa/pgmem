@@ -48,7 +48,7 @@ func F_start_xact_command(m *base.Module) {
 	_ = v78
 	var v80 int32
 	_ = v80
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[906])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
 	if v3 == int32(0) {
 		F_StartTransactionCommand(m)
 		mBase = m.M
@@ -57,12 +57,12 @@ func F_start_xact_command(m *base.Module) {
 			return
 		} else {
 			v9 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, _consts[906])) = uint8(v9)
-			v26 = *(*int32)(unsafe.Add(mBase, _consts[907]))
+			*(*uint8)(unsafe.Add(mBase, _consts[910])) = uint8(v9)
+			v26 = *(*int32)(unsafe.Add(mBase, _consts[911]))
 			if v26 <= int32(0) {
-				v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+				v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 				if v51 == int32(0) {
-					v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+					v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 					if v59 <= int32(0) {
 						return
 					} else {
@@ -70,15 +70,15 @@ func F_start_xact_command(m *base.Module) {
 						if v63 != int32(1) {
 							return
 						} else {
-							v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+							v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 							if v67 == int32(0) {
 								return
 							} else {
-								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 								if v75 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+									v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 									F_enable_timeout_after(m, int32(11), v78)
 									mBase = m.M
 									v80 = m.ExcPending
@@ -98,7 +98,7 @@ func F_start_xact_command(m *base.Module) {
 					if v56 != 0 {
 						return
 					} else {
-						v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+						v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 						if v59 <= int32(0) {
 							return
 						} else {
@@ -106,15 +106,15 @@ func F_start_xact_command(m *base.Module) {
 							if v63 != int32(1) {
 								return
 							} else {
-								v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+								v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 								if v67 == int32(0) {
 									return
 								} else {
-									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 									if v75 != 0 {
 										return
 									} else {
-										v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+										v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 										F_enable_timeout_after(m, int32(11), v78)
 										mBase = m.M
 										v80 = m.ExcPending
@@ -130,16 +130,16 @@ func F_start_xact_command(m *base.Module) {
 					}
 				}
 			} else {
-				v30 = *(*int32)(unsafe.Add(mBase, _consts[911]))
+				v30 = *(*int32)(unsafe.Add(mBase, _consts[915]))
 				if v30 != 0 {
 					v33 = base.B2i32(v30 <= v26)
 				} else {
 					v33 = int32(0)
 				}
 				if v33 != 0 {
-					v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+					v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 					if v51 == int32(0) {
-						v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+						v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 						if v59 <= int32(0) {
 							return
 						} else {
@@ -147,15 +147,15 @@ func F_start_xact_command(m *base.Module) {
 							if v63 != int32(1) {
 								return
 							} else {
-								v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+								v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 								if v67 == int32(0) {
 									return
 								} else {
-									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 									if v75 != 0 {
 										return
 									} else {
-										v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+										v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 										F_enable_timeout_after(m, int32(11), v78)
 										mBase = m.M
 										v80 = m.ExcPending
@@ -175,7 +175,7 @@ func F_start_xact_command(m *base.Module) {
 						if v56 != 0 {
 							return
 						} else {
-							v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+							v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 							if v59 <= int32(0) {
 								return
 							} else {
@@ -183,15 +183,15 @@ func F_start_xact_command(m *base.Module) {
 								if v63 != int32(1) {
 									return
 								} else {
-									v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+									v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 									if v67 == int32(0) {
 										return
 									} else {
-										v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+										v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 										if v75 != 0 {
 											return
 										} else {
-											v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+											v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 											F_enable_timeout_after(m, int32(11), v78)
 											mBase = m.M
 											v80 = m.ExcPending
@@ -207,9 +207,9 @@ func F_start_xact_command(m *base.Module) {
 						}
 					}
 				} else {
-					v39 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+					v39 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 					if v39 != 0 {
-						v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+						v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 						if v59 <= int32(0) {
 							return
 						} else {
@@ -217,15 +217,15 @@ func F_start_xact_command(m *base.Module) {
 							if v63 != int32(1) {
 								return
 							} else {
-								v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+								v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 								if v67 == int32(0) {
 									return
 								} else {
-									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 									if v75 != 0 {
 										return
 									} else {
-										v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+										v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 										F_enable_timeout_after(m, int32(11), v78)
 										mBase = m.M
 										v80 = m.ExcPending
@@ -239,14 +239,14 @@ func F_start_xact_command(m *base.Module) {
 							}
 						}
 					} else {
-						v42 = *(*int32)(unsafe.Add(mBase, _consts[907]))
+						v42 = *(*int32)(unsafe.Add(mBase, _consts[911]))
 						F_enable_timeout_after(m, int32(3), v42)
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
 							return
 						} else {
-							v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+							v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 							if v59 <= int32(0) {
 								return
 							} else {
@@ -254,15 +254,15 @@ func F_start_xact_command(m *base.Module) {
 								if v63 != int32(1) {
 									return
 								} else {
-									v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+									v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 									if v67 == int32(0) {
 										return
 									} else {
-										v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+										v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 										if v75 != 0 {
 											return
 										} else {
-											v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+											v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 											F_enable_timeout_after(m, int32(11), v78)
 											mBase = m.M
 											v80 = m.ExcPending
@@ -291,11 +291,11 @@ func F_start_xact_command(m *base.Module) {
 			} else {
 			}
 		}
-		v26 = *(*int32)(unsafe.Add(mBase, _consts[907]))
+		v26 = *(*int32)(unsafe.Add(mBase, _consts[911]))
 		if v26 <= int32(0) {
-			v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+			v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 			if v51 == int32(0) {
-				v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+				v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 				if v59 <= int32(0) {
 					return
 				} else {
@@ -303,15 +303,15 @@ func F_start_xact_command(m *base.Module) {
 					if v63 != int32(1) {
 						return
 					} else {
-						v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+						v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 						if v67 == int32(0) {
 							return
 						} else {
-							v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+							v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 							if v75 != 0 {
 								return
 							} else {
-								v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+								v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 								F_enable_timeout_after(m, int32(11), v78)
 								mBase = m.M
 								v80 = m.ExcPending
@@ -331,7 +331,7 @@ func F_start_xact_command(m *base.Module) {
 				if v56 != 0 {
 					return
 				} else {
-					v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+					v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 					if v59 <= int32(0) {
 						return
 					} else {
@@ -339,15 +339,15 @@ func F_start_xact_command(m *base.Module) {
 						if v63 != int32(1) {
 							return
 						} else {
-							v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+							v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 							if v67 == int32(0) {
 								return
 							} else {
-								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 								if v75 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+									v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 									F_enable_timeout_after(m, int32(11), v78)
 									mBase = m.M
 									v80 = m.ExcPending
@@ -363,16 +363,16 @@ func F_start_xact_command(m *base.Module) {
 				}
 			}
 		} else {
-			v30 = *(*int32)(unsafe.Add(mBase, _consts[911]))
+			v30 = *(*int32)(unsafe.Add(mBase, _consts[915]))
 			if v30 != 0 {
 				v33 = base.B2i32(v30 <= v26)
 			} else {
 				v33 = int32(0)
 			}
 			if v33 != 0 {
-				v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+				v51 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 				if v51 == int32(0) {
-					v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+					v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 					if v59 <= int32(0) {
 						return
 					} else {
@@ -380,15 +380,15 @@ func F_start_xact_command(m *base.Module) {
 						if v63 != int32(1) {
 							return
 						} else {
-							v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+							v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 							if v67 == int32(0) {
 								return
 							} else {
-								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 								if v75 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+									v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 									F_enable_timeout_after(m, int32(11), v78)
 									mBase = m.M
 									v80 = m.ExcPending
@@ -408,7 +408,7 @@ func F_start_xact_command(m *base.Module) {
 					if v56 != 0 {
 						return
 					} else {
-						v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+						v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 						if v59 <= int32(0) {
 							return
 						} else {
@@ -416,15 +416,15 @@ func F_start_xact_command(m *base.Module) {
 							if v63 != int32(1) {
 								return
 							} else {
-								v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+								v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 								if v67 == int32(0) {
 									return
 								} else {
-									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 									if v75 != 0 {
 										return
 									} else {
-										v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+										v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 										F_enable_timeout_after(m, int32(11), v78)
 										mBase = m.M
 										v80 = m.ExcPending
@@ -440,9 +440,9 @@ func F_start_xact_command(m *base.Module) {
 					}
 				}
 			} else {
-				v39 = int32(*(*uint8)(unsafe.Add(mBase, _consts[908])))
+				v39 = int32(*(*uint8)(unsafe.Add(mBase, _consts[912])))
 				if v39 != 0 {
-					v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+					v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 					if v59 <= int32(0) {
 						return
 					} else {
@@ -450,15 +450,15 @@ func F_start_xact_command(m *base.Module) {
 						if v63 != int32(1) {
 							return
 						} else {
-							v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+							v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 							if v67 == int32(0) {
 								return
 							} else {
-								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+								v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 								if v75 != 0 {
 									return
 								} else {
-									v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+									v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 									F_enable_timeout_after(m, int32(11), v78)
 									mBase = m.M
 									v80 = m.ExcPending
@@ -472,14 +472,14 @@ func F_start_xact_command(m *base.Module) {
 						}
 					}
 				} else {
-					v42 = *(*int32)(unsafe.Add(mBase, _consts[907]))
+					v42 = *(*int32)(unsafe.Add(mBase, _consts[911]))
 					F_enable_timeout_after(m, int32(3), v42)
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return
 					} else {
-						v59 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+						v59 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 						if v59 <= int32(0) {
 							return
 						} else {
@@ -487,15 +487,15 @@ func F_start_xact_command(m *base.Module) {
 							if v63 != int32(1) {
 								return
 							} else {
-								v67 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+								v67 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 								if v67 == int32(0) {
 									return
 								} else {
-									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[910])))
+									v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[914])))
 									if v75 != 0 {
 										return
 									} else {
-										v78 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+										v78 = *(*int32)(unsafe.Add(mBase, _consts[913]))
 										F_enable_timeout_after(m, int32(11), v78)
 										mBase = m.M
 										v80 = m.ExcPending

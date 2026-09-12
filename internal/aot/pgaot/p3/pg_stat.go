@@ -498,7 +498,7 @@ L20:
 	goto L21
 L21:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _consts[617]))
+	v39 = *(*int32)(unsafe.Add(mBase, _consts[621]))
 	v41 = v32
 	goto L23
 L22:
@@ -1964,17 +1964,17 @@ func F_pg_stat_get_snapshot_timestamp(m *base.Module, l0 int32) int32 {
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v11 = v8 + int32(15)
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[919])))
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[923])))
 	if v13 != 0 {
 		v15 = int64(0)
-		*(*int64)(unsafe.Add(mBase, _consts[920])) = v15
-		*(*int64)(unsafe.Add(mBase, _consts[921])) = v15
-		*(*int64)(unsafe.Add(mBase, _consts[922])) = v15
+		*(*int64)(unsafe.Add(mBase, _consts[924])) = v15
+		*(*int64)(unsafe.Add(mBase, _consts[925])) = v15
+		*(*int64)(unsafe.Add(mBase, _consts[926])) = v15
 		v24 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[923])) = uint8(v24)
-		*(*int32)(unsafe.Add(mBase, _consts[924])) = v24
-		*(*int32)(unsafe.Add(mBase, _consts[925])) = v24
-		v33 = *(*int32)(unsafe.Add(mBase, _consts[926]))
+		*(*uint8)(unsafe.Add(mBase, _consts[927])) = uint8(v24)
+		*(*int32)(unsafe.Add(mBase, _consts[928])) = v24
+		*(*int32)(unsafe.Add(mBase, _consts[929])) = v24
+		v33 = *(*int32)(unsafe.Add(mBase, _consts[930]))
 		if v33 != 0 {
 			F_MemoryContextDelete(m, v33)
 			mBase = m.M
@@ -1982,7 +1982,7 @@ func F_pg_stat_get_snapshot_timestamp(m *base.Module, l0 int32) int32 {
 			if v37 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, _consts[926])) = int32(0)
+				*(*int32)(unsafe.Add(mBase, _consts[930])) = int32(0)
 				F_pgstat_clear_backend_activity_snapshot(m)
 				mBase = m.M
 				v42 = m.ExcPending
@@ -1990,12 +1990,12 @@ func F_pg_stat_get_snapshot_timestamp(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					v44 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, _consts[919])) = uint8(v44)
-					v48 = *(*int32)(unsafe.Add(mBase, _consts[925]))
+					*(*uint8)(unsafe.Add(mBase, _consts[923])) = uint8(v44)
+					v48 = *(*int32)(unsafe.Add(mBase, _consts[929]))
 					if v48 == int32(2) {
 						v51 = int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v51)
-						v54 = *(*int64)(unsafe.Add(mBase, _consts[1040]))
+						v54 = *(*int64)(unsafe.Add(mBase, _consts[1044]))
 						v58 = v54
 					} else {
 						v55 = int32(0)
@@ -2031,12 +2031,12 @@ func F_pg_stat_get_snapshot_timestamp(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				v44 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, _consts[919])) = uint8(v44)
-				v48 = *(*int32)(unsafe.Add(mBase, _consts[925]))
+				*(*uint8)(unsafe.Add(mBase, _consts[923])) = uint8(v44)
+				v48 = *(*int32)(unsafe.Add(mBase, _consts[929]))
 				if v48 == int32(2) {
 					v51 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v51)
-					v54 = *(*int64)(unsafe.Add(mBase, _consts[1040]))
+					v54 = *(*int64)(unsafe.Add(mBase, _consts[1044]))
 					v58 = v54
 				} else {
 					v55 = int32(0)
@@ -2065,11 +2065,11 @@ func F_pg_stat_get_snapshot_timestamp(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v48 = *(*int32)(unsafe.Add(mBase, _consts[925]))
+		v48 = *(*int32)(unsafe.Add(mBase, _consts[929]))
 		if v48 == int32(2) {
 			v51 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v51)
-			v54 = *(*int64)(unsafe.Add(mBase, _consts[1040]))
+			v54 = *(*int64)(unsafe.Add(mBase, _consts[1044]))
 			v58 = v54
 		} else {
 			v55 = int32(0)
@@ -2903,7 +2903,7 @@ L29:
 	}
 L30:
 	;
-	v178 = *(*int32)(unsafe.Add(mBase, uint32(v158<<(uint(int32(2))%32))+uint32(_consts[774])))
+	v178 = *(*int32)(unsafe.Add(mBase, uint32(v158<<(uint(int32(2))%32))+uint32(_consts[778])))
 	v180 = v178
 	goto L32
 L31:
@@ -3151,7 +3151,7 @@ L68:
 	}
 L69:
 	;
-	v262 = *(*int32)(unsafe.Add(mBase, _consts[715]))
+	v262 = *(*int32)(unsafe.Add(mBase, _consts[719]))
 	v263 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v262)+8)))
 	if v263 != 0 {
 		goto L74

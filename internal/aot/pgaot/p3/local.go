@@ -703,7 +703,7 @@ func F_update_local_synced_slot(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v10 = m.G0
 	v12 = v10 - int32(144)
 	m.G0 = v12
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	if l2 != 0 {
 		goto L1
 	} else {

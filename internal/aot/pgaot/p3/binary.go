@@ -174,7 +174,7 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[710])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[714])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -209,7 +209,7 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1037])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1041])) = v25
 		return int32(0)
 	}
 }
@@ -228,7 +228,7 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[710])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[714])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -263,7 +263,7 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1038])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1042])) = v25
 		return int32(0)
 	}
 }
@@ -282,7 +282,7 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[710])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[714])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -317,7 +317,7 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1039])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1043])) = v25
 		return int32(0)
 	}
 }

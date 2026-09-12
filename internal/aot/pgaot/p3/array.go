@@ -3598,7 +3598,7 @@ L206:
 	v949 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v947+v834))) = uint8(v949)
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+564)) = v834
-	v953 = int32(*(*uint8)(unsafe.Add(mBase, _consts[959])))
+	v953 = int32(*(*uint8)(unsafe.Add(mBase, _consts[963])))
 	if v846&v953&int32(1) == v949 {
 		goto L126
 	} else {

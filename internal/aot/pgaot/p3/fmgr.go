@@ -1591,7 +1591,7 @@ L91:
 	goto L104
 L92:
 	;
-	v400 = *(*int32)(unsafe.Add(mBase, _consts[533]))
+	v400 = *(*int32)(unsafe.Add(mBase, _consts[537]))
 	v401 = v400
 	goto L91
 L93:
@@ -1637,7 +1637,7 @@ L99:
 	v366 = *(*int32)(unsafe.Add(mBase, uint32(v75)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v366
 	v368 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v75)+8)))
-	v371 = *(*int32)(unsafe.Add(mBase, _consts[534]))
+	v371 = *(*int32)(unsafe.Add(mBase, _consts[538]))
 	v372 = F_tuplestore_begin_heap(m, v368, int32(0), v371)
 	mBase = m.M
 	v373 = m.ExcPending

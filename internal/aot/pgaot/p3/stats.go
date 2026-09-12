@@ -96,7 +96,7 @@ func F_stats_check_arg_array(m *base.Module, l0 int32, l1 int32) int32 {
 						if v48 != 0 {
 							return int32(0)
 						} else {
-							v53 = *(*int32)(unsafe.Add(mBase, uint32(l1<<(uint(int32(3))%32))+uint32(_consts[776])))
+							v53 = *(*int32)(unsafe.Add(mBase, uint32(l1<<(uint(int32(3))%32))+uint32(_consts[780])))
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v53
 							F_errmsg(m, v45, v7)
 							mBase = m.M
@@ -150,7 +150,7 @@ func F_stats_check_arg_array(m *base.Module, l0 int32, l1 int32) int32 {
 								if v48 != 0 {
 									return int32(0)
 								} else {
-									v53 = *(*int32)(unsafe.Add(mBase, uint32(l1<<(uint(int32(3))%32))+uint32(_consts[776])))
+									v53 = *(*int32)(unsafe.Add(mBase, uint32(l1<<(uint(int32(3))%32))+uint32(_consts[780])))
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v53
 									F_errmsg(m, v45, v7)
 									mBase = m.M

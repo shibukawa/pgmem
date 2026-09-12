@@ -46,7 +46,7 @@ func F_InitializeMaxBackends(m *base.Module) {
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[310]))
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[326]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[325]))
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[1134]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[1138]))
 	v20 = v9 + (v11 + (v13 + v15)) + int32(2)
 	*(*int32)(unsafe.Add(mBase, _consts[114])) = v20
 	if base.Ui32(int32(262144)) <= base.Ui32(v20) {
@@ -71,7 +71,7 @@ func F_InitializeMaxBackends(m *base.Module) {
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(262142)
 					v38 = *(*int32)(unsafe.Add(mBase, _consts[325]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v38
-					v41 = *(*int32)(unsafe.Add(mBase, _consts[1134]))
+					v41 = *(*int32)(unsafe.Add(mBase, _consts[1138]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v41
 					v44 = *(*int32)(unsafe.Add(mBase, _consts[326]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v44
@@ -113,7 +113,7 @@ func F_MaxLivePostmasterChildren(m *base.Module) int32 {
 	_ = v15
 	var v20 int32
 	_ = v20
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[650]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[654]))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M

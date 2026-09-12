@@ -2019,9 +2019,9 @@ L13:
 	}
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1255])) = v52
-	*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v5)
-	*(*int32)(unsafe.Add(mBase, _consts[1257])) = l3
+	*(*int32)(unsafe.Add(mBase, _consts[1259])) = v52
+	*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v5)
+	*(*int32)(unsafe.Add(mBase, _consts[1261])) = l3
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+412)) = v47
 	v60 = int32(0)
 	if v5 != 0 {
@@ -2059,7 +2059,7 @@ L18:
 	;
 	v85 = int32(4562080)
 	v86 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	*(*int32)(unsafe.Add(mBase, _consts[1258])) = v86
+	*(*int32)(unsafe.Add(mBase, _consts[1262])) = v86
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v82
 	v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+4))
@@ -2085,11 +2085,11 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+472)) = int32(-1)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+48)) = v82
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+44)) = v99
-	v105 = *(*int32)(unsafe.Add(mBase, _consts[1259]))
+	v105 = *(*int32)(unsafe.Add(mBase, _consts[1263]))
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+488)) = v105
-	v108 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1260])))
+	v108 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1264])))
 	*(*uint8)(unsafe.Add(mBase, uint32(l3)+492)) = uint8(v108)
-	v111 = *(*int32)(unsafe.Add(mBase, _consts[1261]))
+	v111 = *(*int32)(unsafe.Add(mBase, _consts[1265]))
 	if v5 != 0 {
 		goto L21
 	} else {
@@ -2106,7 +2106,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+496)) = v113
-	v116 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+	v116 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+40)) = v40
 	if v5 != 0 {
 		goto L24
@@ -2129,7 +2129,7 @@ L26:
 	*(*uint16)(unsafe.Add(mBase, uint32(l3)+524)) = uint16(v122)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+520)) = v122
 	*(*uint8)(unsafe.Add(mBase, uint32(l3)+65)) = uint8(v121)
-	*(*int32)(unsafe.Add(mBase, _consts[1263])) = v122
+	*(*int32)(unsafe.Add(mBase, _consts[1267])) = v122
 	goto L27
 L27:
 	;
@@ -2143,11 +2143,11 @@ L27:
 	}
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1264])) = int32(128)
+	*(*int32)(unsafe.Add(mBase, _consts[1268])) = int32(128)
 	v137 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[1265])) = uint8(v137)
-	*(*int32)(unsafe.Add(mBase, _consts[1266])) = v137
-	v143 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
+	*(*uint8)(unsafe.Add(mBase, _consts[1269])) = uint8(v137)
+	*(*int32)(unsafe.Add(mBase, _consts[1270])) = v137
+	v143 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
 	v145 = F_MemoryContextAlloc(m, v143, int32(512))
 	mBase = m.M
 	v146 = m.ExcPending
@@ -2158,8 +2158,8 @@ L28:
 	}
 L29:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1267])) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v145
+	*(*int32)(unsafe.Add(mBase, _consts[1271])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1272])) = v145
 	v152 = *(*int32)(unsafe.Add(mBase, uint32(l3)+40))
 	switch v152 {
 	case 0:
@@ -2452,7 +2452,7 @@ L58:
 	}
 L59:
 	;
-	v155 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
+	v155 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v155
 	v163 = F_get_func_arg_info(m, l1, v22+int32(392), v22+int32(388), v22+int32(384))
 	mBase = m.M
@@ -2468,7 +2468,7 @@ L60:
 	v166 = *(*int32)(unsafe.Add(mBase, uint32(v22)+384))
 	v167 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(v167)+24))
-	v170 = *(*int32)(unsafe.Add(mBase, _consts[1255]))
+	v170 = *(*int32)(unsafe.Add(mBase, _consts[1259]))
 	F_cfunc_resolve_polymorphic_argtypes(m, v163, v165, v166, v168, v5, v170)
 	mBase = m.M
 	v172 = m.ExcPending
@@ -2871,9 +2871,9 @@ L111:
 	}
 L112:
 	;
-	v419 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
-	v421 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
-	v423 = *(*int32)(unsafe.Add(mBase, _consts[1264]))
+	v419 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
+	v421 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
+	v423 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
 	if v421 == v423 {
 		goto L123
 	} else {
@@ -2970,7 +2970,7 @@ L122:
 	goto L112
 L123:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1264])) = v421 << (uint(int32(1)) % 32)
+	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v421 << (uint(int32(1)) % 32)
 	v432 = F_repalloc(m, v419, v421<<(uint(int32(3))%32))
 	mBase = m.M
 	v433 = m.ExcPending
@@ -2987,15 +2987,15 @@ L124:
 L125:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v318)+4)) = v437
-	*(*int32)(unsafe.Add(mBase, _consts[1266])) = v437 + int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[1270])) = v437 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v438+v437<<(uint(int32(2))%32)))) = v318
 	v451 = v437
 	v458 = v316
 	goto L100
 L126:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v432
-	v436 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+	*(*int32)(unsafe.Add(mBase, _consts[1272])) = v432
+	v436 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 	v437 = v436
 	v438 = v432
 	goto L125
@@ -3141,7 +3141,7 @@ L146:
 	}
 L147:
 	;
-	v530 = *(*int32)(unsafe.Add(mBase, _consts[1255]))
+	v530 = *(*int32)(unsafe.Add(mBase, _consts[1259]))
 	*(*int32)(unsafe.Add(mBase, uint32(v22)+128)) = v530
 	F_errmsg(m, int32(737740), v22+int32(128))
 	mBase = m.M
@@ -3193,9 +3193,9 @@ L152:
 	*(*int64)(unsafe.Add(mBase, uint32(v548)+24)) = int64(9659381448704)
 	*(*int32)(unsafe.Add(mBase, uint32(v548)+12)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v548)+8)) = v553
-	v563 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
-	v565 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
-	v567 = *(*int32)(unsafe.Add(mBase, _consts[1264]))
+	v563 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
+	v565 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
+	v567 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
 	if v565 == v567 {
 		goto L153
 	} else {
@@ -3203,7 +3203,7 @@ L152:
 	}
 L153:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1264])) = v565 << (uint(int32(1)) % 32)
+	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v565 << (uint(int32(1)) % 32)
 	v576 = F_repalloc(m, v563, v565<<(uint(int32(3))%32))
 	mBase = m.M
 	v577 = m.ExcPending
@@ -3221,7 +3221,7 @@ L154:
 L155:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v548)+4)) = v582
-	*(*int32)(unsafe.Add(mBase, _consts[1266])) = v582 + int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[1270])) = v582 + int32(1)
 	v590 = int32(2)
 	*(*int32)(unsafe.Add(mBase, uint32(v584+v582<<(uint(v590)%32)))) = v548
 	F_plpgsql_ns_additem(m, v590, v582, v583)
@@ -3234,9 +3234,9 @@ L155:
 	}
 L156:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v576
+	*(*int32)(unsafe.Add(mBase, _consts[1272])) = v576
 	v579 = *(*int32)(unsafe.Add(mBase, uint32(v548)+8))
-	v581 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+	v581 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 	v582 = v581
 	v583 = v579
 	v584 = v576
@@ -3270,9 +3270,9 @@ L159:
 	*(*int64)(unsafe.Add(mBase, uint32(v600)+24)) = int64(9659381448704)
 	*(*int32)(unsafe.Add(mBase, uint32(v600)+12)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v600)+8)) = v605
-	v615 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
-	v617 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
-	v619 = *(*int32)(unsafe.Add(mBase, _consts[1264]))
+	v615 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
+	v617 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
+	v619 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
 	if v617 == v619 {
 		goto L160
 	} else {
@@ -3280,7 +3280,7 @@ L159:
 	}
 L160:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1264])) = v617 << (uint(int32(1)) % 32)
+	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v617 << (uint(int32(1)) % 32)
 	v628 = F_repalloc(m, v615, v617<<(uint(int32(3))%32))
 	mBase = m.M
 	v629 = m.ExcPending
@@ -3298,7 +3298,7 @@ L161:
 L162:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v600)+4)) = v634
-	*(*int32)(unsafe.Add(mBase, _consts[1266])) = v634 + int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[1270])) = v634 + int32(1)
 	v642 = int32(2)
 	*(*int32)(unsafe.Add(mBase, uint32(v636+v634<<(uint(v642)%32)))) = v600
 	F_plpgsql_ns_additem(m, v642, v634, v635)
@@ -3311,9 +3311,9 @@ L162:
 	}
 L163:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1268])) = v628
+	*(*int32)(unsafe.Add(mBase, _consts[1272])) = v628
 	v631 = *(*int32)(unsafe.Add(mBase, uint32(v600)+8))
-	v633 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+	v633 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 	v634 = v633
 	v635 = v631
 	v636 = v628
@@ -4781,7 +4781,7 @@ L326:
 	goto L321
 L327:
 	;
-	v1487 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+	v1487 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+504)) = v1487
 	v1491 = F_palloc(m, v1487<<(uint(int32(2))%32))
 	mBase = m.M
@@ -4876,7 +4876,7 @@ L338:
 L339:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+508)) = v1491
-	v1495 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+	v1495 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 	if v1495 <= int32(0) {
 		goto L341
 	} else {
@@ -4901,7 +4901,7 @@ L342:
 L343:
 	;
 	v1499 = int32(1)
-	v1502 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
+	v1502 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
 	if v1495 == v1499 {
 		goto L345
 	} else {
@@ -5036,7 +5036,7 @@ L361:
 	goto L362
 L362:
 	;
-	v1618 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1265])))
+	v1618 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
 	if v1618 == int32(1) {
 		goto L364
 	} else {
@@ -5060,7 +5060,7 @@ L365:
 	goto L366
 L366:
 	;
-	v1624 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v1624 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v1628 = *(*int32)(unsafe.Add(mBase, uint32(v82)+16))
 	if v1628 != v1624 {
 		goto L369
@@ -5073,13 +5073,13 @@ L367:
 L368:
 	;
 	v1659 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1255])) = v1659
-	*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v1659)
+	*(*int32)(unsafe.Add(mBase, _consts[1259])) = v1659
+	*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v1659)
 	v1665 = *(*int32)(unsafe.Add(mBase, uint32(v22)+396))
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v1665
 	v1667 = int32(4655276)
-	v1668 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-	*(*int32)(unsafe.Add(mBase, _consts[1258])) = v1659
+	v1668 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+	*(*int32)(unsafe.Add(mBase, _consts[1262])) = v1659
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v1668
 	m.G0 = v22 + int32(416)
 	return
@@ -5451,9 +5451,9 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 	if v19 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1255])) = int32(332115)
+		*(*int32)(unsafe.Add(mBase, _consts[1259])) = int32(332115)
 		v25 = int32(*(*uint8)(unsafe.Add(mBase, _consts[449])))
-		*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v25)
+		*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v25)
 		*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = v16
 		*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = int32(7323)
@@ -5468,7 +5468,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 		if v44 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1257])) = v43
+			*(*int32)(unsafe.Add(mBase, _consts[1261])) = v43
 			v47 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v52 = F_AllocSetContextCreateInternal(m, v47, int32(67686), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
@@ -5478,7 +5478,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 			} else {
 				v55 = int32(4562080)
 				v56 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-				*(*int32)(unsafe.Add(mBase, _consts[1258])) = v56
+				*(*int32)(unsafe.Add(mBase, _consts[1262])) = v56
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v52
 				v61 = F_pstrdup(m, int32(332115))
 				mBase = m.M
@@ -5490,34 +5490,34 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v43)+48)) = v52
 					*(*int64)(unsafe.Add(mBase, uint32(v43)+40)) = int64(2)
 					*(*int32)(unsafe.Add(mBase, uint32(v43)+32)) = v61
-					v70 = *(*int32)(unsafe.Add(mBase, _consts[1259]))
+					v70 = *(*int32)(unsafe.Add(mBase, _consts[1263]))
 					*(*int32)(unsafe.Add(mBase, uint32(v43)+488)) = v70
-					v73 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1260])))
+					v73 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1264])))
 					v74 = int32(0)
 					*(*uint16)(unsafe.Add(mBase, uint32(v43)+524)) = uint16(v74)
 					*(*int32)(unsafe.Add(mBase, uint32(v43)+520)) = v74
 					*(*int64)(unsafe.Add(mBase, uint32(v43)+496)) = int64(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v43)+492)) = uint8(v73)
-					*(*int32)(unsafe.Add(mBase, _consts[1263])) = v74
+					*(*int32)(unsafe.Add(mBase, _consts[1267])) = v74
 					F_plpgsql_ns_push(m, int32(332115), int32(0))
 					mBase = m.M
 					v87 = m.ExcPending
 					if v87 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1264])) = int32(128)
+						*(*int32)(unsafe.Add(mBase, _consts[1268])) = int32(128)
 						v92 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, _consts[1265])) = uint8(v92)
-						*(*int32)(unsafe.Add(mBase, _consts[1266])) = v92
-						v98 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
+						*(*uint8)(unsafe.Add(mBase, _consts[1269])) = uint8(v92)
+						*(*int32)(unsafe.Add(mBase, _consts[1270])) = v92
+						v98 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
 						v100 = F_MemoryContextAlloc(m, v98, int32(512))
 						mBase = m.M
 						v101 = m.ExcPending
 						if v101 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[1267])) = int32(0)
-							*(*int32)(unsafe.Add(mBase, _consts[1268])) = v100
+							*(*int32)(unsafe.Add(mBase, _consts[1271])) = int32(0)
+							*(*int32)(unsafe.Add(mBase, _consts[1272])) = v100
 							*(*int64)(unsafe.Add(mBase, uint32(v43)+52)) = int64(17179871462)
 							*(*int32)(unsafe.Add(mBase, uint32(v43)+60)) = int32(1)
 							v111 = int32(26112)
@@ -5599,7 +5599,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																} else {
 																	v142 = int32(0)
 																	*(*int32)(unsafe.Add(mBase, uint32(v43)+68)) = v142
-																	v146 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+																	v146 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 																	*(*int32)(unsafe.Add(mBase, uint32(v43)+504)) = v146
 																	v150 = F_palloc(m, v146<<(uint(int32(2))%32))
 																	mBase = m.M
@@ -5608,12 +5608,12 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																		return int32(0)
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v43)+508)) = v150
-																		v154 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+																		v154 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 																		if v154 <= int32(0) {
 																			v234 = v142
 																		} else {
 																			v157 = int32(1)
-																			v160 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
+																			v160 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
 																			if v154 == v157 {
 																				v209 = int32(0)
 																				v210 = v142
@@ -5688,7 +5688,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																			if v247 != 0 {
 																				return int32(0)
 																			} else {
-																				v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1265])))
+																				v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
 																				if v249 == int32(1) {
 																					F_plpgsql_dumptree(m, v43)
 																					mBase = m.M
@@ -5699,11 +5699,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																						v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																						*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																						v258 = int32(0)
-																						*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																						*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																						*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																						*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																						v263 = int32(4655276)
-																						v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																						*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																						v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																						*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																						*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																						m.G0 = v14 + int32(48)
 																						return v43
@@ -5712,18 +5712,18 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																					v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																					*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																					v258 = int32(0)
-																					*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																					*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																					*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																					*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																					v263 = int32(4655276)
-																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																					*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																					*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																					*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																					m.G0 = v14 + int32(48)
 																					return v43
 																				}
 																			}
 																		} else {
-																			v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1265])))
+																			v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
 																			if v249 == int32(1) {
 																				F_plpgsql_dumptree(m, v43)
 																				mBase = m.M
@@ -5734,11 +5734,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																					v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																					*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																					v258 = int32(0)
-																					*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																					*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																					*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																					*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																					v263 = int32(4655276)
-																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																					*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																					*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																					*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																					m.G0 = v14 + int32(48)
 																					return v43
@@ -5747,11 +5747,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																				v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																				*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																				v258 = int32(0)
-																				*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																				*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																				*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																				*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																				v263 = int32(4655276)
-																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																				*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																				*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																				*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																				m.G0 = v14 + int32(48)
 																				return v43
@@ -5762,7 +5762,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 															} else {
 																v142 = int32(0)
 																*(*int32)(unsafe.Add(mBase, uint32(v43)+68)) = v142
-																v146 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+																v146 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 																*(*int32)(unsafe.Add(mBase, uint32(v43)+504)) = v146
 																v150 = F_palloc(m, v146<<(uint(int32(2))%32))
 																mBase = m.M
@@ -5771,12 +5771,12 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v43)+508)) = v150
-																	v154 = *(*int32)(unsafe.Add(mBase, _consts[1266]))
+																	v154 = *(*int32)(unsafe.Add(mBase, _consts[1270]))
 																	if v154 <= int32(0) {
 																		v234 = v142
 																	} else {
 																		v157 = int32(1)
-																		v160 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
+																		v160 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
 																		if v154 == v157 {
 																			v209 = int32(0)
 																			v210 = v142
@@ -5851,7 +5851,7 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																		if v247 != 0 {
 																			return int32(0)
 																		} else {
-																			v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1265])))
+																			v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
 																			if v249 == int32(1) {
 																				F_plpgsql_dumptree(m, v43)
 																				mBase = m.M
@@ -5862,11 +5862,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																					v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																					*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																					v258 = int32(0)
-																					*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																					*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																					*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																					*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																					v263 = int32(4655276)
-																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																					*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																					v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																					*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																					*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																					m.G0 = v14 + int32(48)
 																					return v43
@@ -5875,18 +5875,18 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																				v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																				*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																				v258 = int32(0)
-																				*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																				*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																				*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																				*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																				v263 = int32(4655276)
-																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																				*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																				*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																				*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																				m.G0 = v14 + int32(48)
 																				return v43
 																			}
 																		}
 																	} else {
-																		v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1265])))
+																		v249 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
 																		if v249 == int32(1) {
 																			F_plpgsql_dumptree(m, v43)
 																			mBase = m.M
@@ -5897,11 +5897,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																				v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																				*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																				v258 = int32(0)
-																				*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																				*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																				*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																				*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																				v263 = int32(4655276)
-																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																				*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																				v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																				*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																				*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																				m.G0 = v14 + int32(48)
 																				return v43
@@ -5910,11 +5910,11 @@ func F_plpgsql_compile_inline(m *base.Module, l0 int32) int32 {
 																			v255 = *(*int32)(unsafe.Add(mBase, uint32(v14)+28))
 																			*(*int32)(unsafe.Add(mBase, _consts[52])) = v255
 																			v258 = int32(0)
-																			*(*int32)(unsafe.Add(mBase, _consts[1255])) = v258
-																			*(*uint8)(unsafe.Add(mBase, _consts[1256])) = uint8(v258)
+																			*(*int32)(unsafe.Add(mBase, _consts[1259])) = v258
+																			*(*uint8)(unsafe.Add(mBase, _consts[1260])) = uint8(v258)
 																			v263 = int32(4655276)
-																			v264 = *(*int32)(unsafe.Add(mBase, _consts[1258]))
-																			*(*int32)(unsafe.Add(mBase, _consts[1258])) = v258
+																			v264 = *(*int32)(unsafe.Add(mBase, _consts[1262]))
+																			*(*int32)(unsafe.Add(mBase, _consts[1262])) = v258
 																			*(*int32)(unsafe.Add(mBase, _consts[0])) = v264
 																			m.G0 = v14 + int32(48)
 																			return v43
@@ -6266,7 +6266,7 @@ func F_plpgsql_ns_pop(m *base.Module) {
 	_ = v8
 	var v10 int32
 	_ = v10
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[1263]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[1267]))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	if v4 != 0 {
 		v5 = v3
@@ -6286,7 +6286,7 @@ func F_plpgsql_ns_pop(m *base.Module) {
 		v8 = v3
 	}
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-	*(*int32)(unsafe.Add(mBase, _consts[1263])) = v10
+	*(*int32)(unsafe.Add(mBase, _consts[1267])) = v10
 	return
 }
 func F_plpgsql_param_compile(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
@@ -6729,7 +6729,7 @@ func F_plpgsql_parse_err_condition(m *base.Module, l0 int32) int32 {
 	v9 = v7 - int32(16)
 	m.G0 = v9
 	v12 = int32(142923)
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1269])))
+	v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1273])))
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v17 == v2 {
 		v36 = v16
@@ -6905,7 +6905,7 @@ L25:
 	;
 	v88 = v48 + int32(1)
 	v90 = v88 << (uint(int32(3)) % 32)
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(v90)+uint32(_consts[1270])))
+	v93 = *(*int32)(unsafe.Add(mBase, uint32(v90)+uint32(_consts[1274])))
 	if v93 != 0 {
 		v44 = v93
 		v45 = v86

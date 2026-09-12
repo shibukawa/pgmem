@@ -9,10 +9,10 @@ import (
 func F_HalfvecInit(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1492])) = int32(7666)
-	*(*int32)(unsafe.Add(mBase, _consts[1493])) = int32(7667)
-	*(*int32)(unsafe.Add(mBase, _consts[1494])) = int32(7668)
-	*(*int32)(unsafe.Add(mBase, _consts[1495])) = int32(7669)
+	*(*int32)(unsafe.Add(mBase, _consts[1491])) = int32(7666)
+	*(*int32)(unsafe.Add(mBase, _consts[1492])) = int32(7667)
+	*(*int32)(unsafe.Add(mBase, _consts[1493])) = int32(7668)
+	*(*int32)(unsafe.Add(mBase, _consts[1494])) = int32(7669)
 	return
 }
 func F_halfvec_accum(m *base.Module, l0 int32) int32 {

@@ -626,7 +626,7 @@ L26:
 	goto L34
 L34:
 	;
-	v98 = int32(*(*uint8)(unsafe.Add(mBase, _consts[986])))
+	v98 = int32(*(*uint8)(unsafe.Add(mBase, _consts[990])))
 	if v98 == v60&int32(255) {
 		v128 = v58
 		v130 = v61
@@ -758,7 +758,7 @@ L55:
 	goto L63
 L63:
 	;
-	v206 = int32(*(*uint8)(unsafe.Add(mBase, _consts[987])))
+	v206 = int32(*(*uint8)(unsafe.Add(mBase, _consts[991])))
 	if v206 == v60&int32(255) {
 		v236 = v167
 		v238 = v169
@@ -1248,7 +1248,7 @@ L140:
 	goto L148
 L148:
 	;
-	v553 = int32(*(*uint8)(unsafe.Add(mBase, _consts[988])))
+	v553 = int32(*(*uint8)(unsafe.Add(mBase, _consts[992])))
 	if v553 == v512&int32(255) {
 		v583 = v515
 		v585 = v516
@@ -1438,7 +1438,7 @@ L179:
 	goto L187
 L187:
 	;
-	v696 = int32(*(*uint8)(unsafe.Add(mBase, _consts[988])))
+	v696 = int32(*(*uint8)(unsafe.Add(mBase, _consts[992])))
 	if v696 == v657&int32(255) {
 		v726 = v658
 		v728 = v659

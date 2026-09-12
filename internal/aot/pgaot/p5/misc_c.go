@@ -12354,7 +12354,7 @@ func F_check_backtrace_functions(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+16)) = v20
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+8)) = v20
 	*(*int64)(unsafe.Add(mBase, uint32(v19))) = v20
-	v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1201])))
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1200])))
 	if v28 == v4 {
 		goto L2
 	} else {
@@ -12376,7 +12376,7 @@ L3:
 	goto L4
 L4:
 	;
-	v32 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1202])))
+	v32 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1201])))
 	if v32 == int32(0) {
 		goto L5
 	} else {

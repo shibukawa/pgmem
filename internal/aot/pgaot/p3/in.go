@@ -189,7 +189,7 @@ func F_SetupLockInTable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v21
 			*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = l1
-			v103 = *(*int32)(unsafe.Add(mBase, _consts[866]))
+			v103 = *(*int32)(unsafe.Add(mBase, _consts[870]))
 			v112 = F_hash_search_with_hash_value(m, v103, v14+int32(24), l1<<(uint(int32(4))%32)^l3, int32(3), v14+int32(23))
 			mBase = m.M
 			v113 = m.ExcPending

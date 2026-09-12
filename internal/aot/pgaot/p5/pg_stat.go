@@ -1984,7 +1984,7 @@ L9:
 	goto L10
 L10:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[1087]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[1084]))
 	v19 = v10
 	goto L12
 L11:
@@ -2209,14 +2209,14 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 				} else {
 					v83 = v75 + v73<<(uint(int32(6))%32)
 					v86 = int64(0)
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1085]))) = v86
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1086]))) = v86
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1087]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1088]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1089]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1090]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1091]))) = v86
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1092]))) = v86
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1093]))) = v86
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1094]))) = v86
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1095]))) = v29 + v28*int64(1000000) - int64(946684800000000)
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1092]))) = v29 + v28*int64(1000000) - int64(946684800000000)
 					F_LWLockRelease(m, v77)
 					mBase = m.M
 					v116 = m.ExcPending

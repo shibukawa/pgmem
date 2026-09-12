@@ -6949,7 +6949,7 @@ L9:
 	v167 = m.G0
 	v169 = v167 - int32(2224)
 	m.G0 = v169
-	v176 = *(*int64)(unsafe.Add(mBase, _consts[498]))
+	v176 = *(*int64)(unsafe.Add(mBase, _consts[502]))
 	v177 = l0
 	v180 = v161
 	v181 = l4
@@ -10492,7 +10492,7 @@ L367:
 	goto L368
 L368:
 	;
-	v1001 = *(*int32)(unsafe.Add(mBase, _consts[499]))
+	v1001 = *(*int32)(unsafe.Add(mBase, _consts[503]))
 	v1002 = F_SearchCatCache2(m, v1001, v975, v925)
 	mBase = m.M
 	v1003 = m.ExcPending
@@ -11479,7 +11479,7 @@ L495:
 	goto L496
 L496:
 	;
-	v1466 = int32(*(*uint8)(unsafe.Add(mBase, _consts[497])))
+	v1466 = int32(*(*uint8)(unsafe.Add(mBase, _consts[501])))
 	F_index_constraint_create(m, v237+int32(1856), v355, v1372, int32(0), v1381, v1436, v1454, v1458|v1453|v1463, v1466, int32(0))
 	mBase = m.M
 	v1469 = m.ExcPending
@@ -14256,7 +14256,7 @@ L841:
 	v3059 = *(*int32)(unsafe.Add(mBase, uint32(v3008+v3018<<(uint(int32(2))%32))))
 	v3060 = *(*int32)(unsafe.Add(mBase, uint32(v3059)+8))
 	v3061 = int32(259336)
-	v3064 = int32(*(*uint8)(unsafe.Add(mBase, _consts[500])))
+	v3064 = int32(*(*uint8)(unsafe.Add(mBase, _consts[504])))
 	v3065 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3060))))
 	if v3065 == int32(0) {
 		v3084 = v3064
@@ -23551,7 +23551,7 @@ L1972:
 	goto L1973
 L1973:
 	;
-	v9447 = *(*int32)(unsafe.Add(mBase, _consts[501]))
+	v9447 = *(*int32)(unsafe.Add(mBase, _consts[505]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8314)+32)) = v9447
 	v9451 = int32(32)
 	v9455 = F_pg_snprintf(m, v8314+int32(832), v9451, int32(511270), v8314+v9451)
@@ -23685,7 +23685,7 @@ L1986:
 	}
 L1987:
 	;
-	v9494 = *(*int64)(unsafe.Add(mBase, _consts[502]))
+	v9494 = *(*int64)(unsafe.Add(mBase, _consts[506]))
 	if v9494 != int64(0) {
 		goto L1988
 	} else {
@@ -23693,7 +23693,7 @@ L1987:
 	}
 L1988:
 	;
-	v9498 = *(*int32)(unsafe.Add(mBase, _consts[503]))
+	v9498 = *(*int32)(unsafe.Add(mBase, _consts[507]))
 	v9499 = *(*int32)(unsafe.Add(mBase, uint32(v9498)))
 	v9500 = *(*int32)(unsafe.Add(mBase, uint32(v9498)+4))
 	v9501 = *(*int32)(unsafe.Add(mBase, uint32(v9500)))
@@ -23822,7 +23822,7 @@ L2007:
 	goto L1978
 L2008:
 	;
-	v9647 = *(*int32)(unsafe.Add(mBase, _consts[504]))
+	v9647 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	v9648 = F_SPI_result_code_string(m, v9647)
 	mBase = m.M
 	v9649 = m.ExcPending
@@ -23971,7 +23971,7 @@ L2025:
 	;
 	v10009 = *(*int32)(unsafe.Add(mBase, uint32(v8158)+56))
 	v10010 = *(*int32)(unsafe.Add(mBase, uint32(v355)+56))
-	v10012 = *(*int32)(unsafe.Add(mBase, _consts[485]))
+	v10012 = *(*int32)(unsafe.Add(mBase, _consts[490]))
 	v10013 = *(*int32)(unsafe.Add(mBase, uint32(v355)+48))
 	v10016 = F_MemoryContextStrdup(m, v10012, v10013+int32(4))
 	mBase = m.M
@@ -24169,7 +24169,7 @@ L2045:
 	goto L2025
 L2046:
 	;
-	v10019 = *(*int32)(unsafe.Add(mBase, _consts[485]))
+	v10019 = *(*int32)(unsafe.Add(mBase, _consts[490]))
 	v10020 = *(*int32)(unsafe.Add(mBase, uint32(v8158)+48))
 	v10023 = F_MemoryContextStrdup(m, v10019, v10020+int32(4))
 	mBase = m.M
@@ -26430,7 +26430,7 @@ L2331:
 	v11673 = *(*int32)(unsafe.Add(mBase, uint32(v11582)))
 	v11674 = int32(0)
 	v11677 = *(*int32)(unsafe.Add(mBase, uint32(v11582)+92))
-	v11681 = *(*int32)(unsafe.Add(mBase, _consts[505]))
+	v11681 = *(*int32)(unsafe.Add(mBase, _consts[509]))
 	v11682 = F_ReadNextMultiXactId(m)
 	mBase = m.M
 	v11683 = m.ExcPending
@@ -28230,7 +28230,7 @@ L2559:
 	goto L2560
 L2560:
 	;
-	v13474 = *(*int32)(unsafe.Add(mBase, _consts[501]))
+	v13474 = *(*int32)(unsafe.Add(mBase, _consts[505]))
 	*(*int32)(unsafe.Add(mBase, uint32(v12139)+48)) = v13474
 	v13482 = F_pg_snprintf(m, v12139+int32(848), int32(32), int32(511270), v12139+int32(48))
 	mBase = m.M
@@ -28320,7 +28320,7 @@ L2568:
 	}
 L2569:
 	;
-	v13523 = *(*int64)(unsafe.Add(mBase, _consts[502]))
+	v13523 = *(*int64)(unsafe.Add(mBase, _consts[506]))
 	if v13523 != int64(0) {
 		goto L2570
 	} else {
@@ -28328,7 +28328,7 @@ L2569:
 	}
 L2570:
 	;
-	v13527 = *(*int32)(unsafe.Add(mBase, _consts[503]))
+	v13527 = *(*int32)(unsafe.Add(mBase, _consts[507]))
 	v13528 = *(*int32)(unsafe.Add(mBase, uint32(v13527)))
 	v13529 = *(*int32)(unsafe.Add(mBase, uint32(v13527)+4))
 	v13530 = *(*int32)(unsafe.Add(mBase, uint32(v13529)))
@@ -28581,7 +28581,7 @@ L2608:
 	goto L2423
 L2609:
 	;
-	v13905 = *(*int32)(unsafe.Add(mBase, _consts[504]))
+	v13905 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	v13906 = F_SPI_result_code_string(m, v13905)
 	mBase = m.M
 	v13907 = m.ExcPending

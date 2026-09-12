@@ -2142,11 +2142,11 @@ func F_ReindexRelationConcurrently(m *base.Module, l0 int32, l1 int32, l2 int32)
 	v36 = m.G0
 	v38 = v36 - int32(416)
 	m.G0 = v38
-	v41 = *(*int64)(unsafe.Add(mBase, _consts[483]))
+	v41 = *(*int64)(unsafe.Add(mBase, _consts[488]))
 	*(*int64)(unsafe.Add(mBase, uint32(v38)+232)) = v41
-	v44 = *(*int64)(unsafe.Add(mBase, _consts[484]))
+	v44 = *(*int64)(unsafe.Add(mBase, _consts[489]))
 	*(*int64)(unsafe.Add(mBase, uint32(v38)+224)) = v44
-	v47 = *(*int32)(unsafe.Add(mBase, _consts[485]))
+	v47 = *(*int32)(unsafe.Add(mBase, _consts[490]))
 	v52 = F_AllocSetContextCreateInternal(m, v47, int32(99822), v4, int32(1024), int32(8192))
 	mBase = m.M
 	v55 = m.ExcPending

@@ -2092,7 +2092,7 @@ L7:
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v38+v36<<(uint(int32(2))%32))))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+8))
 	v44 = int32(231193)
-	v47 = int32(*(*uint8)(unsafe.Add(mBase, _consts[481])))
+	v47 = int32(*(*uint8)(unsafe.Add(mBase, _consts[486])))
 	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
 	if v48 == int32(0) {
 		v67 = v47
@@ -2181,7 +2181,7 @@ L19:
 L20:
 	;
 	v92 = int32(220845)
-	v95 = int32(*(*uint8)(unsafe.Add(mBase, _consts[482])))
+	v95 = int32(*(*uint8)(unsafe.Add(mBase, _consts[487])))
 	v96 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
 	if v96 == int32(0) {
 		v115 = v95

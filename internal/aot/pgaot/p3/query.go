@@ -613,7 +613,7 @@ L4:
 L5:
 	;
 	v628 = int32(554408)
-	v631 = int32(*(*uint8)(unsafe.Add(mBase, _consts[775])))
+	v631 = int32(*(*uint8)(unsafe.Add(mBase, _consts[779])))
 	v632 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v632 == int32(0) {
 		v651 = v631
@@ -682,7 +682,7 @@ L12:
 	}
 L13:
 	;
-	v34 = int32(*(*uint8)(unsafe.Add(mBase, _consts[497])))
+	v34 = int32(*(*uint8)(unsafe.Add(mBase, _consts[501])))
 	if v34 == int32(0) {
 		goto L14
 	} else {
@@ -1296,7 +1296,7 @@ L91:
 	;
 	v340 = int32(105)
 	v341 = int32(554408)
-	v344 = int32(*(*uint8)(unsafe.Add(mBase, _consts[775])))
+	v344 = int32(*(*uint8)(unsafe.Add(mBase, _consts[779])))
 	v345 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v345 == int32(0) {
 		v364 = v344

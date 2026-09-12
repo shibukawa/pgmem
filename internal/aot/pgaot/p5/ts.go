@@ -626,7 +626,7 @@ func F_lookup_ts_parser_cache(m *base.Module, l0 int32) int32 {
 	v9 = v7 - int32(112)
 	m.G0 = v9
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+108)) = l0
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1133]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
 	if v13 != 0 {
 		goto L1
 	} else {
@@ -634,7 +634,7 @@ func F_lookup_ts_parser_cache(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1134]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1133]))
 	if v37 == int32(0) {
 		goto L13
 	} else {
@@ -656,7 +656,7 @@ L3:
 	return int32(0)
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1133])) = v22
+	*(*int32)(unsafe.Add(mBase, _consts[1132])) = v22
 	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1616), v22)
 	mBase = m.M
 	v30 = m.ExcPending
@@ -732,7 +732,7 @@ L12:
 	return v163
 L13:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, _consts[1133]))
+	v44 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
 	v47 = int32(0)
 	v49 = F_hash_search(m, v44, v9+int32(108), v47, v47)
 	mBase = m.M
@@ -764,7 +764,7 @@ L16:
 	goto L13
 L17:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1134])) = v156
+	*(*int32)(unsafe.Add(mBase, _consts[1133])) = v156
 	v163 = v156
 	goto L12
 L18:
@@ -843,7 +843,7 @@ L27:
 	}
 L28:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, _consts[1133]))
+	v73 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
 	v79 = F_hash_search(m, v73, v9+int32(108), int32(1), v9+int32(60))
 	mBase = m.M
 	v80 = m.ExcPending
@@ -2192,7 +2192,7 @@ func F_ts_typanalyze(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	if v4 < int32(0) {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[1002]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[999]))
 		*(*int32)(unsafe.Add(mBase, uint32(v3))) = v8
 		v10 = v8
 	} else {

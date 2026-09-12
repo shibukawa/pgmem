@@ -1309,7 +1309,7 @@ func F_ShowUsage(m *base.Module, l0 int32) {
 													if v280 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(518353), int32(5398), int32(424739))
+														F_errfinish(m, int32(518353), int32(5427), int32(424739))
 														mBase = m.M
 														v285 = m.ExcPending
 														if v285 != 0 {

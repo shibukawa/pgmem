@@ -128,7 +128,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				}
 			}
 		} else {
-			v22 = *(*int32)(unsafe.Add(mBase, _consts[856]))
+			v22 = *(*int32)(unsafe.Add(mBase, _consts[860]))
 			v24 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 			v28 = F_LWLockAcquire(m, v24+int32(768), int32(0))
 			mBase = m.M
@@ -137,7 +137,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				return
 			} else {
 				v32 = v22 + v13<<(uint(int32(4))%32)
-				v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[857])))
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[861])))
 				if v35 != 0 {
 					v110 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 					F_LWLockRelease(m, v110+int32(768))
@@ -176,21 +176,21 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 					}
 				} else {
 					v37 = *(*int32)(unsafe.Add(mBase, _consts[112]))
-					v39 = *(*int32)(unsafe.Add(mBase, _consts[856]))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[858])))
-					*(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[858]))) = v40 + int32(1)
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[859])))
+					v39 = *(*int32)(unsafe.Add(mBase, _consts[860]))
+					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[862])))
+					*(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[862]))) = v40 + int32(1)
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[863])))
 					*(*int32)(unsafe.Add(mBase, uint32(v44+v40<<(uint(int32(2))%32)))) = v37
-					v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[860])))
+					v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[864])))
 					*(*int32)(unsafe.Add(mBase, _consts[285])) = v50
 					v53 = *(*int32)(unsafe.Add(mBase, _consts[140]))
-					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[857]))) = v53
+					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[861]))) = v53
 					v55 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[861]))) = uint8(v1)
+					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[865]))) = uint8(v1)
 					v57 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[862]))) = uint8(v57)
-					*(*uint16)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[863]))) = uint16(v57)
-					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[864]))) = v55
+					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[866]))) = uint8(v57)
+					*(*uint16)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[867]))) = uint16(v57)
+					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[868]))) = v55
 					v63 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 					F_LWLockRelease(m, v63+int32(768))
 					mBase = m.M
@@ -287,8 +287,8 @@ func F_process_shared_preload_libraries(m *base.Module) {
 	var v14 int32
 	_ = v14
 	v2 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[1131])) = uint8(v2)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
+	*(*uint8)(unsafe.Add(mBase, _consts[1135])) = uint8(v2)
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1136]))
 	F_load_libraries(m, v5, int32(178644), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
@@ -296,9 +296,9 @@ func F_process_shared_preload_libraries(m *base.Module) {
 		return
 	} else {
 		v11 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[1133])) = uint8(v11)
+		*(*uint8)(unsafe.Add(mBase, _consts[1137])) = uint8(v11)
 		v14 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[1131])) = uint8(v14)
+		*(*uint8)(unsafe.Add(mBase, _consts[1135])) = uint8(v14)
 		return
 	}
 }

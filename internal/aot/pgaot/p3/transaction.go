@@ -1885,7 +1885,7 @@ func F_TransactionTimeoutHandler(m *base.Module) {
 	var v10 int32
 	_ = v10
 	v2 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[1135])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[1139])) = v2
 	*(*int32)(unsafe.Add(mBase, _consts[8])) = v2
 	v8 = *(*int32)(unsafe.Add(mBase, _consts[313]))
 	F_SetLatch(m, v8)
@@ -1997,7 +1997,7 @@ func F_check_transaction_read_only(m *base.Module, l0 int32, l1 int32, l2 int32)
 				v63 = v4
 				return v63
 			} else {
-				v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[528])))
+				v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[532])))
 				if v18 != 0 {
 					v63 = v4
 					return v63
@@ -2008,34 +2008,34 @@ func F_check_transaction_read_only(m *base.Module, l0 int32, l1 int32, l2 int32)
 					if int32(1) < v23 {
 						v46 = v19
 						v47 = int32(269556)
-						*(*int32)(unsafe.Add(mBase, _consts[529])) = v46
+						*(*int32)(unsafe.Add(mBase, _consts[533])) = v46
 						v52 = *(*int32)(unsafe.Add(mBase, _consts[43]))
-						*(*int32)(unsafe.Add(mBase, _consts[508])) = v52
+						*(*int32)(unsafe.Add(mBase, _consts[512])) = v52
 						v57 = F_format_elog_string(m, v47, int32(0))
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[527])) = v57
+							*(*int32)(unsafe.Add(mBase, _consts[531])) = v57
 							v63 = int32(0)
 							return v63
 						}
 					} else {
-						v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[530])))
+						v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[534])))
 						if v28 != 0 {
 							v46 = v19
 							v47 = int32(16203)
-							*(*int32)(unsafe.Add(mBase, _consts[529])) = v46
+							*(*int32)(unsafe.Add(mBase, _consts[533])) = v46
 							v52 = *(*int32)(unsafe.Add(mBase, _consts[43]))
-							*(*int32)(unsafe.Add(mBase, _consts[508])) = v52
+							*(*int32)(unsafe.Add(mBase, _consts[512])) = v52
 							v57 = F_format_elog_string(m, v47, int32(0))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, _consts[527])) = v57
+								*(*int32)(unsafe.Add(mBase, _consts[531])) = v57
 								v63 = int32(0)
 								return v63
 							}
@@ -2056,16 +2056,16 @@ func F_check_transaction_read_only(m *base.Module, l0 int32, l1 int32, l2 int32)
 							} else {
 								v46 = int32(1088)
 								v47 = int32(14891)
-								*(*int32)(unsafe.Add(mBase, _consts[529])) = v46
+								*(*int32)(unsafe.Add(mBase, _consts[533])) = v46
 								v52 = *(*int32)(unsafe.Add(mBase, _consts[43]))
-								*(*int32)(unsafe.Add(mBase, _consts[508])) = v52
+								*(*int32)(unsafe.Add(mBase, _consts[512])) = v52
 								v57 = F_format_elog_string(m, v47, int32(0))
 								mBase = m.M
 								v60 = m.ExcPending
 								if v60 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, _consts[527])) = v57
+									*(*int32)(unsafe.Add(mBase, _consts[531])) = v57
 									v63 = int32(0)
 									return v63
 								}

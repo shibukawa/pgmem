@@ -2334,7 +2334,7 @@ func F_text_position_setup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 			*(*int32)(unsafe.Add(mBase, uint32(l3))) = v73
 			v79 = *(*int32)(unsafe.Add(mBase, _consts[462]))
 			v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
-			v85 = *(*int32)(unsafe.Add(mBase, uint32(v80*int32(28))+uint32(_consts[990])))
+			v85 = *(*int32)(unsafe.Add(mBase, uint32(v80*int32(28))+uint32(_consts[994])))
 			if v85 == int32(1) {
 				v88 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)) = uint8(v88)
@@ -2815,7 +2815,7 @@ L3:
 	;
 	v17 = *(*int32)(unsafe.Add(mBase, _consts[462]))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v18*int32(28))+uint32(_consts[990])))
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v18*int32(28))+uint32(_consts[994])))
 	goto L11
 L4:
 	;

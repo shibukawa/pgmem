@@ -96,7 +96,7 @@ func F_apply_handle_commit_internal(m *base.Module, l0 int32) {
 	_ = v123
 	var v129 int32
 	_ = v129
-	v6 = *(*int64)(unsafe.Add(mBase, _consts[685]))
+	v6 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	if v6 == int64(0) {
 		goto L1
 	} else {
@@ -112,7 +112,7 @@ L2:
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[685]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	if v14 != int64(0) {
 		goto L3
 	} else {
@@ -149,7 +149,7 @@ L7:
 	}
 L8:
 	;
-	v22 = *(*int64)(unsafe.Add(mBase, _consts[685]))
+	v22 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v22)
 	v25 = int64(base.Ui64(v22) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v25)
@@ -166,7 +166,7 @@ L9:
 	goto L10
 L10:
 	;
-	*(*int64)(unsafe.Add(mBase, _consts[685])) = int64(0)
+	*(*int64)(unsafe.Add(mBase, _consts[689])) = int64(0)
 	goto L5
 L11:
 	;
@@ -204,7 +204,7 @@ L15:
 L16:
 	;
 	v129 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[689])) = uint8(v129)
+	*(*uint8)(unsafe.Add(mBase, _consts[693])) = uint8(v129)
 	return
 L17:
 	;
@@ -240,9 +240,9 @@ L20:
 L21:
 	;
 	v61 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int64)(unsafe.Add(mBase, _consts[686])) = v61
+	*(*int64)(unsafe.Add(mBase, _consts[690])) = v61
 	v64 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-	*(*int64)(unsafe.Add(mBase, _consts[687])) = v64
+	*(*int64)(unsafe.Add(mBase, _consts[691])) = v64
 	F_CommitTransactionCommand(m)
 	mBase = m.M
 	v67 = m.ExcPending
@@ -301,9 +301,9 @@ L28:
 	goto L26
 L29:
 	;
-	v82 = *(*int64)(unsafe.Add(mBase, _consts[688]))
+	v82 = *(*int64)(unsafe.Add(mBase, _consts[692]))
 	v83 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-	v85 = *(*int32)(unsafe.Add(mBase, _consts[590]))
+	v85 = *(*int32)(unsafe.Add(mBase, _consts[594]))
 	v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+16)))
 	if v86 == int32(1) {
 		goto L30
@@ -323,7 +323,7 @@ L31:
 	goto L32
 L32:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, _consts[690]))
+	v94 = *(*int32)(unsafe.Add(mBase, _consts[694]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v94
 	v97 = F_palloc(m, int32(24))
 	mBase = m.M
@@ -340,7 +340,7 @@ L34:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v97)+16)) = v83
 	*(*int64)(unsafe.Add(mBase, uint32(v97)+8)) = v82
-	v102 = *(*int32)(unsafe.Add(mBase, _consts[691]))
+	v102 = *(*int32)(unsafe.Add(mBase, _consts[695]))
 	if v102 != 0 {
 		goto L36
 	} else {
@@ -352,13 +352,13 @@ L35:
 	v111 = int32(4164024)
 	*(*int32)(unsafe.Add(mBase, uint32(v97)+4)) = v111
 	*(*int32)(unsafe.Add(mBase, uint32(v109)+4)) = v97
-	*(*int32)(unsafe.Add(mBase, _consts[692])) = v97
-	v118 = *(*int32)(unsafe.Add(mBase, _consts[693]))
+	*(*int32)(unsafe.Add(mBase, _consts[696])) = v97
+	v118 = *(*int32)(unsafe.Add(mBase, _consts[697]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v118
 	goto L16
 L36:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, _consts[692]))
+	v104 = *(*int32)(unsafe.Add(mBase, _consts[696]))
 	v109 = v104
 	goto L35
 L37:
@@ -367,7 +367,7 @@ L37:
 L38:
 	;
 	v106 = int32(4164024)
-	*(*int32)(unsafe.Add(mBase, _consts[691])) = v106
+	*(*int32)(unsafe.Add(mBase, _consts[695])) = v106
 	v109 = v106
 	goto L35
 L39:
@@ -807,7 +807,7 @@ func F_apply_handle_prepare_internal(m *base.Module, l0 int32) {
 	v3 = m.G0
 	v5 = v3 - int32(208)
 	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[677]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[681]))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	F_TwoPhaseTransactionGid(m, v9, v10, v5)
@@ -832,9 +832,9 @@ func F_apply_handle_prepare_internal(m *base.Module, l0 int32) {
 					return
 				} else {
 					v25 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-					*(*int64)(unsafe.Add(mBase, _consts[686])) = v25
+					*(*int64)(unsafe.Add(mBase, _consts[690])) = v25
 					v28 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-					*(*int64)(unsafe.Add(mBase, _consts[687])) = v28
+					*(*int64)(unsafe.Add(mBase, _consts[691])) = v28
 					v30 = F_PrepareTransactionBlock(m, v5)
 					mBase = m.M
 					v31 = m.ExcPending
@@ -848,9 +848,9 @@ func F_apply_handle_prepare_internal(m *base.Module, l0 int32) {
 			}
 		} else {
 			v25 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
-			*(*int64)(unsafe.Add(mBase, _consts[686])) = v25
+			*(*int64)(unsafe.Add(mBase, _consts[690])) = v25
 			v28 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-			*(*int64)(unsafe.Add(mBase, _consts[687])) = v28
+			*(*int64)(unsafe.Add(mBase, _consts[691])) = v28
 			v30 = F_PrepareTransactionBlock(m, v5)
 			mBase = m.M
 			v31 = m.ExcPending
@@ -2071,7 +2071,7 @@ L4:
 	goto L1
 L5:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[581]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 	v19 = F_secure_write(m, v17, v14, v9-v14)
 	mBase = m.M
 	v22 = m.ExcPending
@@ -2115,7 +2115,7 @@ L11:
 	goto L12
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[582])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[586])) = int32(0)
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v68 + v19
 	v73 = v19 + v14
@@ -2129,7 +2129,7 @@ L13:
 	}
 L14:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[582]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[586]))
 	if v26 == v32 {
 		goto L15
 	} else {
@@ -2141,12 +2141,12 @@ L15:
 	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v53
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v53
 	v58 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[583])) = v58
+	*(*int32)(unsafe.Add(mBase, _consts[587])) = v58
 	*(*int32)(unsafe.Add(mBase, _consts[8])) = v58
 	return int32(-1)
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[582])) = v26
+	*(*int32)(unsafe.Add(mBase, _consts[586])) = v26
 	v38 = F_errstart(m, int32(16), int32(0))
 	mBase = m.M
 	v39 = m.ExcPending

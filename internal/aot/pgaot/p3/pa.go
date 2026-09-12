@@ -8,7 +8,7 @@ import (
 func F_pa_set_stream_apply_worker(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[670])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[674])) = l0
 	return
 }
 func F_pa_set_xact_state(m *base.Module, l0 int32, l1 int32) {

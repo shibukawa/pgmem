@@ -13,8 +13,8 @@ func F_AfterTriggerBeginQuery(m *base.Module) {
 	var v3 int32
 	_ = v3
 	v1 = int32(4459160)
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[513]))
-	*(*int32)(unsafe.Add(mBase, _consts[513])) = v3 + int32(1)
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+	*(*int32)(unsafe.Add(mBase, _consts[517])) = v3 + int32(1)
 	return
 }
 func F_AfterTriggerEndXact(m *base.Module) {
@@ -28,7 +28,7 @@ func F_AfterTriggerEndXact(m *base.Module) {
 	_ = v7
 	var v19 int32
 	_ = v19
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[512]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	if v3 != 0 {
 		F_MemoryContextDelete(m, v3)
 		mBase = m.M
@@ -37,21 +37,21 @@ func F_AfterTriggerEndXact(m *base.Module) {
 			return
 		} else {
 			v7 = int64(0)
-			*(*int64)(unsafe.Add(mBase, _consts[516])) = v7
-			*(*int64)(unsafe.Add(mBase, _consts[514])) = v7
-			*(*int64)(unsafe.Add(mBase, _consts[517])) = int64(0)
-			*(*int64)(unsafe.Add(mBase, _consts[518])) = int64(-4294967296)
+			*(*int64)(unsafe.Add(mBase, _consts[520])) = v7
+			*(*int64)(unsafe.Add(mBase, _consts[518])) = v7
+			*(*int64)(unsafe.Add(mBase, _consts[521])) = int64(0)
+			*(*int64)(unsafe.Add(mBase, _consts[522])) = int64(-4294967296)
 			v19 = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[519])) = v19
-			*(*int32)(unsafe.Add(mBase, _consts[520])) = v19
+			*(*int32)(unsafe.Add(mBase, _consts[523])) = v19
+			*(*int32)(unsafe.Add(mBase, _consts[524])) = v19
 			return
 		}
 	} else {
-		*(*int64)(unsafe.Add(mBase, _consts[517])) = int64(0)
-		*(*int64)(unsafe.Add(mBase, _consts[518])) = int64(-4294967296)
+		*(*int64)(unsafe.Add(mBase, _consts[521])) = int64(0)
+		*(*int64)(unsafe.Add(mBase, _consts[522])) = int64(-4294967296)
 		v19 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _consts[519])) = v19
-		*(*int32)(unsafe.Add(mBase, _consts[520])) = v19
+		*(*int32)(unsafe.Add(mBase, _consts[523])) = v19
+		*(*int32)(unsafe.Add(mBase, _consts[524])) = v19
 		return
 	}
 }
@@ -84,7 +84,7 @@ func F_AfterTriggerFireDeferred(m *base.Module) {
 	_ = v26
 	var v31 int32
 	_ = v31
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 	if v4 != 0 {
 		goto L1
 	} else {
@@ -150,9 +150,9 @@ L9:
 L10:
 	;
 	v16 = int32(4459132)
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[515]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 	v19 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[515])) = v18 + v19
+	*(*int32)(unsafe.Add(mBase, _consts[519])) = v18 + v19
 	v25 = F_afterTriggerInvokeEvents(m, int32(4459140), v18, int32(0), v19)
 	mBase = m.M
 	v26 = m.ExcPending
@@ -435,7 +435,7 @@ L9:
 	goto L10
 L10:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, _consts[512]))
+	v34 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	if v34 == int32(0) {
 		goto L12
 	} else {
@@ -471,7 +471,7 @@ L15:
 	return
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[512])) = v44
+	*(*int32)(unsafe.Add(mBase, _consts[516])) = v44
 	v47 = v44
 	goto L14
 L17:
@@ -775,7 +775,7 @@ L58:
 	;
 	v196 = int32(4562080)
 	v197 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v200 = *(*int32)(unsafe.Add(mBase, _consts[512]))
+	v200 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v200
 	v202 = F_bms_copy(m, v195)
 	mBase = m.M

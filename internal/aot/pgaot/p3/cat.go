@@ -492,7 +492,7 @@ L40:
 	goto L39
 L41:
 	;
-	v205 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1073])))
+	v205 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1077])))
 	if v205 != int32(1) {
 		v209 = v198
 		goto L39
@@ -501,7 +501,7 @@ L41:
 	}
 L42:
 	;
-	v203 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1074])))
+	v203 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1078])))
 	if v203 != 0 {
 		goto L40
 	} else {

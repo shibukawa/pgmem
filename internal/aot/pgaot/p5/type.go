@@ -1994,7 +1994,7 @@ func F_type_maximum_size(m *base.Module, l0 int32, l1 int32) int32 {
 			v14 = *(*int32)(unsafe.Add(mBase, _consts[247]))
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 			if base.Ui32(v15) <= base.Ui32(int32(41)) {
-				v24 = *(*int32)(unsafe.Add(mBase, uint32(v15*int32(28))+uint32(_consts[1049])))
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(v15*int32(28))+uint32(_consts[1046])))
 				v25 = v24
 			} else {
 				v25 = int32(1)

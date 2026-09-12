@@ -1840,7 +1840,7 @@ L77:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+264)) = v84
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v81
 	v800 = int32(344123)
-	v803 = int32(*(*uint8)(unsafe.Add(mBase, _consts[479])))
+	v803 = int32(*(*uint8)(unsafe.Add(mBase, _consts[484])))
 	v804 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v779))))
 	if v804 == int32(0) {
 		v823 = v803
@@ -1996,7 +1996,7 @@ L90:
 	}
 L91:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[480])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[485])) = l0
 	v960 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _consts[428])) = uint8(v960)
 	v963 = *(*int32)(unsafe.Add(mBase, _consts[53]))
@@ -2064,7 +2064,7 @@ L98:
 	*(*int32)(unsafe.Add(mBase, _consts[53])) = v987
 	v3276 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, _consts[428])) = uint8(v3276)
-	*(*int32)(unsafe.Add(mBase, _consts[480])) = v3276
+	*(*int32)(unsafe.Add(mBase, _consts[485])) = v3276
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+204)) = v62
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+208)) = v61
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+212)) = v63
@@ -4717,7 +4717,7 @@ L247:
 	*(*int32)(unsafe.Add(mBase, _consts[53])) = v987
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v986
 	v2980 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[480])) = v2980
+	*(*int32)(unsafe.Add(mBase, _consts[485])) = v2980
 	*(*uint8)(unsafe.Add(mBase, _consts[428])) = uint8(v2980)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+204)) = v2237
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+208)) = v1910

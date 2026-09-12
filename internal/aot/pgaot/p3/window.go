@@ -1310,7 +1310,7 @@ func F_window_nth_value(m *base.Module, l0 int32) int32 {
 						if int32(base.Ui32(int32(977))>>(uint(v32)%32))&int32(1) == int32(0) {
 							v68 = v23
 						} else {
-							v47 = *(*int32)(unsafe.Add(mBase, uint32(v32<<(uint(int32(2))%32))+uint32(_consts[1070])))
+							v47 = *(*int32)(unsafe.Add(mBase, uint32(v32<<(uint(int32(2))%32))+uint32(_consts[1074])))
 							v49 = *(*int32)(unsafe.Add(mBase, uint32(v27+v47)))
 							if v49 == int32(0) {
 								v68 = v23

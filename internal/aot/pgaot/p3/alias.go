@@ -740,6 +740,8 @@ func F_LookupCreationNamespace(m *base.Module, l0 int32) int32
 func F_isTempToastNamespace(m *base.Module, l0 int32) int32
 //go:linkname F_get_collation_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_collation_oid
 func F_get_collation_oid(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ResetTempTableNamespace github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ResetTempTableNamespace
+func F_ResetTempTableNamespace(m *base.Module)
 //go:linkname F_fetch_search_path github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_fetch_search_path
 func F_fetch_search_path(m *base.Module, l0 int32) int32
 //go:linkname F_RunFunctionExecuteHook github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_RunFunctionExecuteHook
@@ -872,6 +874,10 @@ func F_makeArrayTypeName(m *base.Module, l0 int32, l1 int32) int32
 func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_transformStmt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_transformStmt
 func F_transformStmt(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_stmt_requires_parse_analysis github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_stmt_requires_parse_analysis
+func F_stmt_requires_parse_analysis(m *base.Module, l0 int32) int32
+//go:linkname F_query_requires_rewrite_plan github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_query_requires_rewrite_plan
+func F_query_requires_rewrite_plan(m *base.Module, l0 int32) int32
 //go:linkname F_addNSItemForReturning github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_addNSItemForReturning
 func F_addNSItemForReturning(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_resolve_aggregate_transtype github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_resolve_aggregate_transtype
@@ -978,6 +984,8 @@ func F_std_typanalyze(m *base.Module, l0 int32) int32
 func F_AsyncExistsPendingNotify(m *base.Module, l0 int32) int32
 //go:linkname F_AddEventToPendingNotifies github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_AddEventToPendingNotifies
 func F_AddEventToPendingNotifies(m *base.Module, l0 int32)
+//go:linkname F_Async_UnlistenAll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Async_UnlistenAll
+func F_Async_UnlistenAll(m *base.Module)
 //go:linkname F_asyncQueueAdvanceTail github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_asyncQueueAdvanceTail
 func F_asyncQueueAdvanceTail(m *base.Module)
 //go:linkname F_mark_index_clustered github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_mark_index_clustered
@@ -3766,6 +3774,8 @@ func F_guc_malloc(m *base.Module, l0 int32) int32
 func F_get_guc_variables(m *base.Module, l0 int32) int32
 //go:linkname F_convert_GUC_name_for_parameter_acl github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_convert_GUC_name_for_parameter_acl
 func F_convert_GUC_name_for_parameter_acl(m *base.Module, l0 int32) int32
+//go:linkname F_ResetAllOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ResetAllOptions
+func F_ResetAllOptions(m *base.Module)
 //go:linkname F_AtEOXact_GUC github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_AtEOXact_GUC
 func F_AtEOXact_GUC(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ShowGUCOption github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ShowGUCOption
@@ -3814,6 +3824,8 @@ func F_ParseConfigFp(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 func F_FreeConfigVariables(m *base.Module, l0 int32)
 //go:linkname F_ExtractSetVariableArgs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExtractSetVariableArgs
 func F_ExtractSetVariableArgs(m *base.Module, l0 int32) int32
+//go:linkname F_SetPGVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_SetPGVariable
+func F_SetPGVariable(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pg_rusage_show github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_rusage_show
 func F_pg_rusage_show(m *base.Module, l0 int32) int32
 //go:linkname F_check_enable_rls github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_check_enable_rls
@@ -3906,6 +3918,8 @@ func F_pstrdup(m *base.Module, l0 int32) int32
 func F_pnstrdup(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_MarkPortalFailed github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_MarkPortalFailed
 func F_MarkPortalFailed(m *base.Module, l0 int32)
+//go:linkname F_PortalHashTableDeleteAll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_PortalHashTableDeleteAll
+func F_PortalHashTableDeleteAll(m *base.Module)
 //go:linkname F_ResourceOwnerRemember github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ResourceOwnerRemember
 func F_ResourceOwnerRemember(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ResourceOwnerForget github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ResourceOwnerForget

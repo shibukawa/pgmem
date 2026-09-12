@@ -3140,7 +3140,7 @@ L53:
 	}
 L54:
 	;
-	v257 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
+	v257 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
 	if v257 != 0 {
 		goto L82
 	} else {
@@ -3582,8 +3582,8 @@ L1:
 L2:
 	;
 	v29 = int32(4655356)
-	v30 = *(*int32)(unsafe.Add(mBase, _consts[1345]))
-	*(*int32)(unsafe.Add(mBase, _consts[1345])) = int32(2)
+	v30 = *(*int32)(unsafe.Add(mBase, _consts[1344]))
+	*(*int32)(unsafe.Add(mBase, _consts[1344])) = int32(2)
 	v34 = int32(-1)
 	v50 = int32(0)
 	v51 = v34
@@ -3632,7 +3632,7 @@ L6:
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1345])) = v30
+	*(*int32)(unsafe.Add(mBase, _consts[1344])) = v30
 	if l7 != 0 {
 		goto L37
 	} else {
@@ -3917,9 +3917,9 @@ L50:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v127)+4)) = l4
 	*(*int32)(unsafe.Add(mBase, uint32(v127))) = v129
-	v134 = *(*int32)(unsafe.Add(mBase, _consts[1364]))
+	v134 = *(*int32)(unsafe.Add(mBase, _consts[1363]))
 	*(*int32)(unsafe.Add(mBase, uint32(v127)+8)) = v134
-	v137 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
+	v137 = *(*int32)(unsafe.Add(mBase, _consts[1345]))
 	v138 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v127)+20)) = uint8(v138)
 	*(*int32)(unsafe.Add(mBase, uint32(v127)+16)) = int32(-1)
@@ -3946,7 +3946,7 @@ L52:
 	return v127
 L53:
 	;
-	v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1352])))
+	v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1351])))
 	if v149 != int32(1) {
 		goto L52
 	} else {
@@ -3958,7 +3958,7 @@ L54:
 	v153 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
 	v154 = int32(4562080)
 	v155 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-	v158 = *(*int32)(unsafe.Add(mBase, _consts[1347]))
+	v158 = *(*int32)(unsafe.Add(mBase, _consts[1346]))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v158
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+60)) = l11
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+56)) = v59
@@ -4289,16 +4289,16 @@ func F_unpack_sql_state(m *base.Module, l0 int32) int32 {
 	v3 = int32(63)
 	v5 = int32(48)
 	v6 = l0&v3 + v5
-	*(*uint8)(unsafe.Add(mBase, _consts[1149])) = uint8(v6)
+	*(*uint8)(unsafe.Add(mBase, _consts[1148])) = uint8(v6)
 	v14 = int32(base.Ui32(l0)>>(uint(int32(24))%32))&v3 + v5
-	*(*uint8)(unsafe.Add(mBase, _consts[1150])) = uint8(v14)
+	*(*uint8)(unsafe.Add(mBase, _consts[1149])) = uint8(v14)
 	v22 = int32(base.Ui32(l0)>>(uint(int32(18))%32))&v3 + v5
-	*(*uint8)(unsafe.Add(mBase, _consts[1151])) = uint8(v22)
+	*(*uint8)(unsafe.Add(mBase, _consts[1150])) = uint8(v22)
 	v30 = int32(base.Ui32(l0)>>(uint(int32(12))%32))&v3 + v5
-	*(*uint8)(unsafe.Add(mBase, _consts[1152])) = uint8(v30)
+	*(*uint8)(unsafe.Add(mBase, _consts[1151])) = uint8(v30)
 	v38 = int32(base.Ui32(l0)>>(uint(int32(6))%32))&v3 + v5
-	*(*uint8)(unsafe.Add(mBase, _consts[1153])) = uint8(v38)
+	*(*uint8)(unsafe.Add(mBase, _consts[1152])) = uint8(v38)
 	v41 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[1154])) = uint8(v41)
+	*(*uint8)(unsafe.Add(mBase, _consts[1153])) = uint8(v41)
 	return v2
 }

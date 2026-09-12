@@ -855,7 +855,7 @@ L7:
 	v86 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v60))) = v86
 	*(*int32)(unsafe.Add(mBase, uint32(v63))) = v86
-	v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1145])))
+	v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1149])))
 	if v91 == v86 {
 		goto L10
 	} else {
@@ -992,7 +992,7 @@ L16:
 	goto L3
 L17:
 	;
-	v1496 = *(*int32)(unsafe.Add(mBase, _consts[1146]))
+	v1496 = *(*int32)(unsafe.Add(mBase, _consts[1150]))
 	if v1496 != 0 {
 		goto L201
 	} else {

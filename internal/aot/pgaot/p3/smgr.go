@@ -399,7 +399,7 @@ L29:
 	goto L24
 L30:
 	;
-	v201 = *(*int32)(unsafe.Add(mBase, _consts[883]))
+	v201 = *(*int32)(unsafe.Add(mBase, _consts[887]))
 	v202 = int32(0)
 	if v202 < v201 {
 		goto L31

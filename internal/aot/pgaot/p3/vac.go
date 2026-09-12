@@ -2025,7 +2025,7 @@ L170:
 	}
 L171:
 	;
-	v589 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v589 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	if int32(0) <= v575 {
 		goto L174
 	} else {
@@ -2062,7 +2062,7 @@ L175:
 L176:
 	;
 	v615 = *(*int32)(unsafe.Add(mBase, uint32(v614)+28))
-	v617 = int64(*(*uint16)(unsafe.Add(mBase, _consts[523])))
+	v617 = int64(*(*uint16)(unsafe.Add(mBase, _consts[527])))
 	v618 = base.I64_rem_s(v585, v617)
 	v624 = F_LWLockAcquire(m, v615+base.I32_wrap_i64(v618)<<(uint(int32(7))%32), int32(0))
 	mBase = m.M
@@ -2077,7 +2077,7 @@ L177:
 	v592 = *(*int32)(unsafe.Add(mBase, uint32(v589)+12))
 	v594 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v592+v575))) = uint8(v594)
-	v597 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v597 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	v598 = v597
 	goto L179
 L178:
@@ -2087,7 +2087,7 @@ L178:
 L179:
 	;
 	v600 = *(*int32)(unsafe.Add(mBase, uint32(v598)+28))
-	v602 = int64(*(*uint16)(unsafe.Add(mBase, _consts[523])))
+	v602 = int64(*(*uint16)(unsafe.Add(mBase, _consts[527])))
 	v603 = base.I64_rem_s(v584, v602)
 	F_LWLockRelease(m, v600+base.I32_wrap_i64(v603)<<(uint(int32(7))%32))
 	mBase = m.M
@@ -2099,7 +2099,7 @@ L179:
 	}
 L180:
 	;
-	v611 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v611 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	v613 = int32(0)
 	v614 = v611
 	goto L176
@@ -2115,7 +2115,7 @@ L181:
 	}
 L182:
 	;
-	v632 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v632 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	v633 = *(*int32)(unsafe.Add(mBase, uint32(v632)+4))
 	v637 = *(*int32)(unsafe.Add(mBase, uint32(v633+v629<<(uint(int32(2))%32))))
 	v639 = v637
@@ -2244,7 +2244,7 @@ L198:
 	goto L170
 L199:
 	;
-	v687 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v687 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	if v667 != 0 {
 		goto L200
 	} else {
@@ -2255,7 +2255,7 @@ L200:
 	v688 = *(*int32)(unsafe.Add(mBase, uint32(v687)+12))
 	v690 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v688+v640))) = uint8(v690)
-	v693 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v693 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	v694 = v693
 	goto L202
 L201:
@@ -2265,7 +2265,7 @@ L201:
 L202:
 	;
 	v695 = *(*int32)(unsafe.Add(mBase, uint32(v694)+28))
-	v697 = int64(*(*uint16)(unsafe.Add(mBase, _consts[523])))
+	v697 = int64(*(*uint16)(unsafe.Add(mBase, _consts[527])))
 	v698 = base.I64_rem_s(v585, v697)
 	F_LWLockRelease(m, v695+base.I32_wrap_i64(v698)<<(uint(int32(7))%32))
 	mBase = m.M

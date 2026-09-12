@@ -189,7 +189,7 @@ func F_timestamptz_gt_date(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+4)) = int64(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[526]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[530]))
 				v37 = F_DetermineTimeZoneOffset(m, v9+int32(4), v36)
 				mBase = m.M
 				v44 = base.I64_extend_i32_s(v37)*int64(1000000) + base.I64_extend_i32_s(v2)*int64(86400000000)
@@ -380,14 +380,14 @@ func F_timestamptz_out(m *base.Module, l0 int32) int32 {
 	v9 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
 	if base.Ui64(v9-int64(9223372036854775807)) <= base.Ui64(int64(1)) {
 		if v9 != int64(-9223372036854775807-1) {
-			v64 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1059])))
+			v64 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1063])))
 			*(*uint8)(unsafe.Add(mBase, uint32(v6)+8)) = uint8(v64)
-			v67 = *(*int64)(unsafe.Add(mBase, _consts[1060]))
+			v67 = *(*int64)(unsafe.Add(mBase, _consts[1064]))
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v67
 		} else {
-			v17 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1057])))
+			v17 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1061])))
 			*(*uint16)(unsafe.Add(mBase, uint32(v6)+8)) = uint16(v17)
-			v20 = *(*int64)(unsafe.Add(mBase, _consts[1058]))
+			v20 = *(*int64)(unsafe.Add(mBase, _consts[1062]))
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v20
 		}
 		v69 = F_pstrdup(m, v6)
@@ -410,7 +410,7 @@ func F_timestamptz_out(m *base.Module, l0 int32) int32 {
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(v6)+140))
 				v41 = *(*int32)(unsafe.Add(mBase, uint32(v6)+188))
 				v42 = *(*int32)(unsafe.Add(mBase, uint32(v6)+136))
-				v44 = *(*int32)(unsafe.Add(mBase, _consts[524]))
+				v44 = *(*int32)(unsafe.Add(mBase, _consts[528]))
 				F_EncodeDateTime(m, v6+int32(144), v39, int32(1), v41, v42, v44, v6)
 				mBase = m.M
 				v46 = m.ExcPending
@@ -1136,7 +1136,7 @@ L31:
 	goto L32
 L32:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, _consts[526]))
+	v76 = *(*int32)(unsafe.Add(mBase, _consts[530]))
 	if l2 != 0 {
 		goto L33
 	} else {
@@ -1288,7 +1288,7 @@ L53:
 L54:
 	;
 	v172 = v131 - int32(1)
-	v177 = *(*int32)(unsafe.Add(mBase, uint32(v172<<(uint(int32(2))%32))+uint32(_consts[1063])))
+	v177 = *(*int32)(unsafe.Add(mBase, uint32(v172<<(uint(int32(2))%32))+uint32(_consts[1067])))
 	if v134 <= v177 {
 		goto L50
 	} else {
@@ -1310,7 +1310,7 @@ L56:
 L57:
 	;
 	v163 = v131 - int32(1)
-	v168 = *(*int32)(unsafe.Add(mBase, uint32(v163<<(uint(int32(2))%32))+uint32(_consts[1062])))
+	v168 = *(*int32)(unsafe.Add(mBase, uint32(v163<<(uint(int32(2))%32))+uint32(_consts[1066])))
 	if v134 <= v168 {
 		goto L50
 	} else {
@@ -2557,7 +2557,7 @@ L17:
 L18:
 	;
 	v57 = v13 + int32(104)
-	v64 = *(*int32)(unsafe.Add(mBase, _consts[1064]))
+	v64 = *(*int32)(unsafe.Add(mBase, _consts[1068]))
 	if v64 != 0 {
 		goto L21
 	} else {
@@ -2572,7 +2572,7 @@ L19:
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1064])) = v108
+	*(*int32)(unsafe.Add(mBase, _consts[1068])) = v108
 	v115 = int32(*(*int8)(unsafe.Add(mBase, uint32(v108)+11)))
 	v116 = *(*int32)(unsafe.Add(mBase, uint32(v108)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v57))) = v116

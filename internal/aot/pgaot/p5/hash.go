@@ -1462,7 +1462,7 @@ func F_hash_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v44
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v44
 	v46 = F_strlen(m, l0)
 	mBase = m.M
 	v49 = F_MemoryContextAlloc(m, v44, v46+int32(49))
@@ -1499,7 +1499,7 @@ L6:
 L7:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v33
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v33
 	v39 = F_AllocSetContextCreateInternal(m, v33, int32(338825), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v42 = m.ExcPending
@@ -1718,7 +1718,7 @@ L40:
 	goto L39
 L41:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, _consts[1205]))
+	v166 = *(*int32)(unsafe.Add(mBase, _consts[1204]))
 	*(*int32)(unsafe.Add(mBase, uint32(v166)+36)) = v87
 	goto L44
 L42:
@@ -1965,7 +1965,7 @@ L81:
 L82:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v49))) = int64(0)
-	v244 = *(*int32)(unsafe.Add(mBase, _consts[1205]))
+	v244 = *(*int32)(unsafe.Add(mBase, _consts[1204]))
 	v245 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v49)+32)) = uint8(v245)
 	*(*int32)(unsafe.Add(mBase, uint32(v49)+24)) = v244
@@ -2299,7 +2299,7 @@ L132:
 L133:
 	;
 	v463 = *(*int32)(unsafe.Add(mBase, uint32(v49)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v463
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v463
 	v467 = *(*int32)(unsafe.Add(mBase, uint32(v49)+20))
 	v468 = m.T0[v467].(func(*base.Module, int32) int32)(m, v458<<(uint(int32(2))%32))
 	mBase = m.M
@@ -2348,7 +2348,7 @@ L140:
 L141:
 	;
 	v493 = *(*int32)(unsafe.Add(mBase, uint32(v49)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v493
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v493
 	v495 = *(*int32)(unsafe.Add(mBase, uint32(v49)+40))
 	v498 = *(*int32)(unsafe.Add(mBase, uint32(v49)+20))
 	v499 = m.T0[v498].(func(*base.Module, int32) int32)(m, v495<<(uint(int32(2))%32))
@@ -2564,7 +2564,7 @@ L177:
 	v626 = *(*int32)(unsafe.Add(mBase, uint32(v49)))
 	v627 = *(*int32)(unsafe.Add(mBase, uint32(v626)+408))
 	v629 = *(*int32)(unsafe.Add(mBase, uint32(v49)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v629
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v629
 	v636 = (v627+int32(7))&int32(-8) + int32(8)
 	if v610 != 0 {
 		goto L178
@@ -10150,7 +10150,7 @@ L4:
 	}
 L5:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, _consts[1206]))
+	v34 = *(*int32)(unsafe.Add(mBase, _consts[1205]))
 	if int32(0) < v34 {
 		goto L6
 	} else {
@@ -10177,7 +10177,7 @@ L8:
 	}
 L9:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v42<<(uint(int32(2))%32))+uint32(_consts[1207])))
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v42<<(uint(int32(2))%32))+uint32(_consts[1206])))
 	if v61 == l0 {
 		goto L1
 	} else {
@@ -10241,7 +10241,7 @@ L18:
 L19:
 	;
 	v156 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v156
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v156
 	v160 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v161 = m.T0[v160].(func(*base.Module, int32) int32)(m, v149<<(uint(int32(2))%32))
 	mBase = m.M
@@ -10255,7 +10255,7 @@ L20:
 	;
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v100
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v100
 	v103 = v93 << (uint(int32(3)) % 32)
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v105 = m.T0[v104].(func(*base.Module, int32) int32)(m, v103)
@@ -10976,7 +10976,7 @@ L131:
 	v501 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v502 = *(*int32)(unsafe.Add(mBase, uint32(v501)+408))
 	v504 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	*(*int32)(unsafe.Add(mBase, _consts[1205])) = v504
+	*(*int32)(unsafe.Add(mBase, _consts[1204])) = v504
 	v511 = (v502+int32(7))&int32(-8) + int32(8)
 	v513 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v514 = m.T0[v513].(func(*base.Module, int32) int32)(m, v500*v511)
@@ -11458,7 +11458,7 @@ func F_hash_seq_init(m *base.Module, l0 int32, l1 int32) {
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+12)) = uint8(v3)
 	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+34)))
 	if v13 == v3 {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[1206]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[1205]))
 		if int32(100) <= v17 {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -11487,13 +11487,13 @@ func F_hash_seq_init(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v17<<(uint(int32(2))%32))+uint32(_consts[1207]))) = l1
+			*(*int32)(unsafe.Add(mBase, uint32(v17<<(uint(int32(2))%32))+uint32(_consts[1206]))) = l1
 			v26 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+28))
 			v28 = int32(4555872)
-			v29 = *(*int32)(unsafe.Add(mBase, _consts[1206]))
-			*(*int32)(unsafe.Add(mBase, uint32(v29<<(uint(int32(2))%32))+uint32(_consts[1208]))) = v27
-			*(*int32)(unsafe.Add(mBase, _consts[1206])) = v29 + int32(1)
+			v29 = *(*int32)(unsafe.Add(mBase, _consts[1205]))
+			*(*int32)(unsafe.Add(mBase, uint32(v29<<(uint(int32(2))%32))+uint32(_consts[1207]))) = v27
+			*(*int32)(unsafe.Add(mBase, _consts[1205])) = v29 + int32(1)
 			m.G0 = v6 + int32(16)
 			return
 		}

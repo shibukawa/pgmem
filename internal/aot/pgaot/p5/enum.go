@@ -103,7 +103,7 @@ L3:
 	v21 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[330])) = v21
 	*(*int32)(unsafe.Add(mBase, _consts[87])) = v21
-	*(*int32)(unsafe.Add(mBase, _consts[1282])) = v21
+	*(*int32)(unsafe.Add(mBase, _consts[1281])) = v21
 	v29 = m.T0[v14].(func(*base.Module, int32, int32, int32) int32)(m, l1, l2, l3)
 	mBase = m.M
 	v32 = m.ExcPending
@@ -276,7 +276,7 @@ L27:
 	goto L28
 L28:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, _consts[1282]))
+	v94 = *(*int32)(unsafe.Add(mBase, _consts[1281]))
 	if v94 != 0 {
 		goto L30
 	} else {

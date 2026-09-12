@@ -1009,7 +1009,7 @@ L64:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v159)+88)) = v173
 	v176 = v159 + int32(92)
-	v178 = *(*int32)(unsafe.Add(mBase, _consts[1497]))
+	v178 = *(*int32)(unsafe.Add(mBase, _consts[1496]))
 	*(*uint16)(unsafe.Add(mBase, uint32(v176))) = uint16(v178)
 	*(*int32)(unsafe.Add(mBase, uint32(v176)+4)) = int32(1073741824)
 	*(*int64)(unsafe.Add(mBase, uint32(v176)+8)) = int64(-1)

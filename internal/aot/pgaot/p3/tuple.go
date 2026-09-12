@@ -2049,7 +2049,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 					v27 = *(*int32)(unsafe.Add(mBase, _consts[181]))
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 					*(*int32)(unsafe.Add(mBase, _consts[181])) = v28
-					v36 = *(*int32)(unsafe.Add(mBase, _consts[534]))
+					v36 = *(*int32)(unsafe.Add(mBase, _consts[538]))
 					v37 = F_tuplestore_begin_heap(m, int32(base.Ui32(v14&int32(4))>>(uint(int32(2))%32)), int32(0), v36)
 					mBase = m.M
 					v38 = m.ExcPending

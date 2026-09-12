@@ -1636,7 +1636,7 @@ L57:
 	}
 L58:
 	;
-	v712 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v712 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v713 = *(*int32)(unsafe.Add(mBase, uint32(v712)+4))
 	v714 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84)+21)))
 	if v714 == int32(1) {
@@ -2249,7 +2249,7 @@ L85:
 L86:
 	;
 	v1147 = *(*int32)(unsafe.Add(mBase, uint32(v560)))
-	v1149 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v1149 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v1150 = *(*int32)(unsafe.Add(mBase, uint32(v1149)))
 	v1151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84)+21)))
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+68)) = v55
@@ -2493,7 +2493,7 @@ L101:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v1298
 	*(*int32)(unsafe.Add(mBase, _consts[53])) = v1297
-	v1765 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v1765 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v1766 = *(*int32)(unsafe.Add(mBase, uint32(v1765)+64))
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+68)) = v1298
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+72)) = v1297
@@ -2776,7 +2776,7 @@ L118:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v1298
 	*(*int32)(unsafe.Add(mBase, _consts[53])) = v1297
-	v1733 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v1733 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v1734 = *(*int32)(unsafe.Add(mBase, uint32(v1733)+64))
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+68)) = v1298
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+72)) = v1297
@@ -2810,7 +2810,7 @@ L119:
 	;
 	v1564 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1303))))
 	v1565 = *(*int32)(unsafe.Add(mBase, uint32(v1295)))
-	v1567 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v1567 = *(*int32)(unsafe.Add(mBase, _consts[499]))
 	v1568 = *(*int32)(unsafe.Add(mBase, uint32(v1567)+48))
 	v1569 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1304))))
 	if v1569 != int32(1) {
@@ -3316,7 +3316,7 @@ L144:
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+132)) = v1921
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+136)) = v1910
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+140)) = v1914
-	v2017 = int32(*(*uint8)(unsafe.Add(mBase, _consts[496])))
+	v2017 = int32(*(*uint8)(unsafe.Add(mBase, _consts[500])))
 	if v2017 == int32(0) {
 		goto L148
 	} else {
@@ -3343,7 +3343,7 @@ L147:
 L148:
 	;
 	v2021 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[496])) = uint8(v2021)
+	*(*uint8)(unsafe.Add(mBase, _consts[500])) = uint8(v2021)
 	goto L150
 L149:
 	;

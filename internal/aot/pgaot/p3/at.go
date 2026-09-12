@@ -3708,7 +3708,7 @@ func F_ATSimplePermissions(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 	if l2&v24 == int32(0) {
 		if base.Ui32(l0) <= base.Ui32(int32(64)) {
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[507])))
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[511])))
 			v36 = v34
 		} else {
 			v36 = int32(0)
@@ -3813,7 +3813,7 @@ func F_ATSimplePermissions(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v80 != 0 {
 					return
 				} else {
-					v82 = int32(*(*uint8)(unsafe.Add(mBase, _consts[497])))
+					v82 = int32(*(*uint8)(unsafe.Add(mBase, _consts[501])))
 					if v82 == int32(0) {
 						v86 = int32(1)
 						v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+56))
@@ -3874,7 +3874,7 @@ func F_ATSimplePermissions(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				v82 = int32(*(*uint8)(unsafe.Add(mBase, _consts[497])))
+				v82 = int32(*(*uint8)(unsafe.Add(mBase, _consts[501])))
 				if v82 == int32(0) {
 					v86 = int32(1)
 					v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+56))

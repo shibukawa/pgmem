@@ -489,7 +489,7 @@ func F_log_disconnections(m *base.Module, l0 int32, l1 int32) {
 			if v99 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(518353), int32(5432), int32(150229))
+				F_errfinish(m, int32(518353), int32(5461), int32(150229))
 				mBase = m.M
 				v104 = m.ExcPending
 				if v104 != 0 {
