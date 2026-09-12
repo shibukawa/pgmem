@@ -215,6 +215,10 @@ on this memory-bound code (arm64; amd64 not measured).
   in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
   (so `compress-algo=1|2` and messages made by GnuPG work), and
   `fips_mode()` is always false.
+- Parallel query and parallel index builds are off (`max_parallel_workers=0`):
+  the backend would register workers that no postmaster starts and wait
+  for them forever. Settings such as `max_parallel_workers_per_gather` are
+  accepted but there is never a worker to launch.
 - `io_method` is forced to `sync`. PGlite runs the backend as if under a
   postmaster, so PostgreSQL 18's default `worker` method would hand
   batched reads to IO workers that do not exist; with an in-memory

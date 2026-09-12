@@ -166,6 +166,13 @@ func (o Options) withDefaults() Options {
 	if !hasSetting(o.Params, "io_method") {
 		o.Params = append([]string{"-c", "io_method=sync"}, o.Params...)
 	}
+	// For the same reason a parallel query or index build registers
+	// workers that no postmaster will ever start, and the leader waits
+	// for them to attach forever. With no worker slots the planner and
+	// CREATE INDEX fall back to the leader doing all the work.
+	if !hasSetting(o.Params, "max_parallel_workers") {
+		o.Params = append([]string{"-c", "max_parallel_workers=0"}, o.Params...)
+	}
 	return o
 }
 
