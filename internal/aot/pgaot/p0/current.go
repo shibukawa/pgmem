@@ -46,7 +46,7 @@ func F_GetCurrentReplayRecPtr(m *base.Module, l0 int32) int64 {
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+96)) = int32(1)
 	if v7 != 0 {
 		v11 = *(*int32)(unsafe.Add(mBase, _consts[183]))
-		F_s_lock(m, v11+int32(96), int32(516730), int32(4609), int32(217720))
+		F_s_lock(m, v11+int32(96), int32(517171), int32(4609), int32(217912))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
@@ -183,13 +183,13 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v61 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(422473), int32(0))
+							F_errmsg(m, int32(422894), int32(0))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(524740), int32(432), int32(515977))
+								F_errfinish(m, int32(525186), int32(432), int32(516418))
 								mBase = m.M
 								v70 = m.ExcPending
 								if v70 != 0 {
@@ -251,13 +251,13 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v61 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(422473), int32(0))
+						F_errmsg(m, int32(422894), int32(0))
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524740), int32(432), int32(515977))
+							F_errfinish(m, int32(525186), int32(432), int32(516418))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -524,11 +524,11 @@ func F_SetCurrentRoleId(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, _consts[4])) = v17
 			*(*int32)(unsafe.Add(mBase, _consts[947])) = v17
 			if v18&int32(1) != 0 {
-				v28 = int32(286897)
+				v28 = int32(287119)
 			} else {
-				v28 = int32(356779)
+				v28 = int32(357125)
 			}
-			F_SetConfigOption(m, int32(229074), v28, int32(0), int32(1))
+			F_SetConfigOption(m, int32(229266), v28, int32(0), int32(1))
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {
@@ -545,11 +545,11 @@ func F_SetCurrentRoleId(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, _consts[4])) = v17
 		*(*int32)(unsafe.Add(mBase, _consts[947])) = v17
 		if v18&int32(1) != 0 {
-			v28 = int32(286897)
+			v28 = int32(287119)
 		} else {
-			v28 = int32(356779)
+			v28 = int32(357125)
 		}
-		F_SetConfigOption(m, int32(229074), v28, int32(0), int32(1))
+		F_SetConfigOption(m, int32(229266), v28, int32(0), int32(1))
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {
@@ -886,7 +886,7 @@ L26:
 	;
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v130
-	F_errmsg_internal(m, int32(559539), v14)
+	F_errmsg_internal(m, int32(559985), v14)
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -896,7 +896,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(517327), int32(258), int32(244785))
+	F_errfinish(m, int32(517768), int32(258), int32(244977))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {

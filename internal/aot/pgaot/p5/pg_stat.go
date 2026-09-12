@@ -148,13 +148,13 @@ func F_pg_stat_file(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v22
-							F_errmsg(m, int32(312559), v8)
+							F_errmsg(m, int32(312824), v8)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(524857), int32(437), int32(406131))
+								F_errfinish(m, int32(525303), int32(437), int32(406552))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {
@@ -183,13 +183,13 @@ func F_pg_stat_file(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v22
-								F_errmsg(m, int32(312559), v8)
+								F_errmsg(m, int32(312824), v8)
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(524857), int32(437), int32(406131))
+									F_errfinish(m, int32(525303), int32(437), int32(406552))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
@@ -217,37 +217,37 @@ func F_pg_stat_file(m *base.Module, l0 int32) int32 {
 				if v57 != 0 {
 					return int32(0)
 				} else {
-					F_TupleDescInitEntry(m, v56, int32(1), int32(359629), int32(20), int32(-1), int32(0))
+					F_TupleDescInitEntry(m, v56, int32(1), int32(360000), int32(20), int32(-1), int32(0))
 					mBase = m.M
 					v64 = m.ExcPending
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_TupleDescInitEntry(m, v56, int32(2), int32(139141), int32(1184), int32(-1), int32(0))
+						F_TupleDescInitEntry(m, v56, int32(2), int32(139211), int32(1184), int32(-1), int32(0))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							F_TupleDescInitEntry(m, v56, int32(3), int32(280936), int32(1184), int32(-1), int32(0))
+							F_TupleDescInitEntry(m, v56, int32(3), int32(281158), int32(1184), int32(-1), int32(0))
 							mBase = m.M
 							v78 = m.ExcPending
 							if v78 != 0 {
 								return int32(0)
 							} else {
-								F_TupleDescInitEntry(m, v56, int32(4), int32(423201), int32(1184), int32(-1), int32(0))
+								F_TupleDescInitEntry(m, v56, int32(4), int32(423622), int32(1184), int32(-1), int32(0))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
 									return int32(0)
 								} else {
-									F_TupleDescInitEntry(m, v56, int32(5), int32(278322), int32(1184), int32(-1), int32(0))
+									F_TupleDescInitEntry(m, v56, int32(5), int32(278544), int32(1184), int32(-1), int32(0))
 									mBase = m.M
 									v92 = m.ExcPending
 									if v92 != 0 {
 										return int32(0)
 									} else {
-										F_TupleDescInitEntry(m, v56, int32(6), int32(224661), int32(16), int32(-1), int32(0))
+										F_TupleDescInitEntry(m, v56, int32(6), int32(224853), int32(16), int32(-1), int32(0))
 										mBase = m.M
 										v99 = m.ExcPending
 										if v99 != 0 {
@@ -1130,7 +1130,7 @@ L5:
 	}
 L6:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, _consts[509]))
+	v47 = *(*int32)(unsafe.Add(mBase, _consts[510]))
 	if v47 <= int32(0) {
 		goto L7
 	} else {
@@ -1162,7 +1162,7 @@ L9:
 	v87 = int32(0)
 	*(*uint16)(unsafe.Add(mBase, uint32(v24+int32(-56)))) = uint16(v87)
 	*(*int64)(unsafe.Add(mBase, uint32(v26))) = v77
-	v92 = *(*int32)(unsafe.Add(mBase, _consts[510]))
+	v92 = *(*int32)(unsafe.Add(mBase, _consts[511]))
 	v95 = v92 + v62*int32(112)
 	v96 = *(*int32)(unsafe.Add(mBase, uint32(v95)+36))
 	if v96 == v87 {
@@ -1176,7 +1176,7 @@ L10:
 L11:
 	;
 	v337 = v62 + int32(1)
-	v339 = *(*int32)(unsafe.Add(mBase, _consts[509]))
+	v339 = *(*int32)(unsafe.Add(mBase, _consts[510]))
 	if v337 < v339 {
 		v62 = v337
 		goto L9
@@ -1223,7 +1223,7 @@ L14:
 	}
 L15:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _consts[512]))
+	v122 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 	v123 = *(*int32)(unsafe.Add(mBase, uint32(v122)))
 	if int32(0) < v123 {
 		goto L16
@@ -1232,7 +1232,7 @@ L15:
 	}
 L16:
 	;
-	v129 = *(*int32)(unsafe.Add(mBase, _consts[513]))
+	v129 = *(*int32)(unsafe.Add(mBase, _consts[514]))
 	v133 = v109
 	goto L20
 L17:
@@ -1539,11 +1539,11 @@ L62:
 	}
 L63:
 	;
-	v302 = int32(272067)
+	v302 = int32(272259)
 	goto L60
 L64:
 	;
-	F_errmsg_internal(m, int32(387428), int32(0))
+	F_errmsg_internal(m, int32(387849), int32(0))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -1553,7 +1553,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(520811), int32(1377), int32(260238))
+	F_errfinish(m, int32(521252), int32(1377), int32(260430))
 	mBase = m.M
 	v300 = m.ExcPending
 	if v300 != 0 {
@@ -1984,7 +1984,7 @@ L9:
 	goto L10
 L10:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[1083]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[1084]))
 	v19 = v10
 	goto L12
 L11:
@@ -2155,17 +2155,17 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 				v28 = *(*int64)(unsafe.Add(mBase, uint32(v25)))
 				v29 = int64(*(*int32)(unsafe.Add(mBase, uint32(v25)+8)))
 				m.G0 = v25 + v24
-				v39 = F_strcmp(m, int32(249090), v18)
+				v39 = F_strcmp(m, int32(249282), v18)
 				mBase = m.M
 				if v39 == int32(0) {
 					v73 = int32(0)
 				} else {
-					v44 = F_strcmp(m, int32(240670), v18)
+					v44 = F_strcmp(m, int32(240862), v18)
 					mBase = m.M
 					if v44 == int32(0) {
 						v73 = int32(1)
 					} else {
-						v49 = F_strcmp(m, int32(112745), v18)
+						v49 = F_strcmp(m, int32(112756), v18)
 						mBase = m.M
 						if v49 == int32(0) {
 							v73 = int32(2)
@@ -2175,17 +2175,17 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 							if v54 == int32(0) {
 								v73 = int32(3)
 							} else {
-								v59 = F_strcmp(m, int32(411136), v18)
+								v59 = F_strcmp(m, int32(411557), v18)
 								mBase = m.M
 								if v59 == int32(0) {
 									v73 = int32(4)
 								} else {
-									v64 = F_strcmp(m, int32(269318), v18)
+									v64 = F_strcmp(m, int32(269510), v18)
 									mBase = m.M
 									if v64 == int32(0) {
 										v73 = int32(5)
 									} else {
-										v71 = F_strcmp(m, int32(271263), v18)
+										v71 = F_strcmp(m, int32(271455), v18)
 										mBase = m.M
 										if v71 != 0 {
 											v72 = int32(7)
@@ -2199,7 +2199,7 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 						}
 					}
 				}
-				v75 = *(*int32)(unsafe.Add(mBase, _consts[558]))
+				v75 = *(*int32)(unsafe.Add(mBase, _consts[559]))
 				v77 = v75 + int32(52744)
 				v79 = F_LWLockAcquire(m, v77, int32(0))
 				mBase = m.M
@@ -2209,14 +2209,14 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 				} else {
 					v83 = v75 + v73<<(uint(int32(6))%32)
 					v86 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1084]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1085]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1086]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1087]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1088]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1089]))) = v86
 					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1090]))) = v86
-					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1091]))) = v29 + v28*int64(1000000) - int64(946684800000000)
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1091]))) = v86
+					*(*int64)(unsafe.Add(mBase, uint32(v83)+uint32(_consts[1092]))) = v29 + v28*int64(1000000) - int64(946684800000000)
 					F_LWLockRelease(m, v77)
 					mBase = m.M
 					v116 = m.ExcPending
@@ -2366,31 +2366,31 @@ func F_pg_stat_wal_build_tuple(m *base.Module, l0 int32, l1 int64) int32 {
 	if v19 != 0 {
 		return int32(0)
 	} else {
-		F_TupleDescInitEntry(m, v16, int32(1), int32(182820), int32(20), int32(-1), int32(0))
+		F_TupleDescInitEntry(m, v16, int32(1), int32(182984), int32(20), int32(-1), int32(0))
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
 			return int32(0)
 		} else {
-			F_TupleDescInitEntry(m, v16, int32(2), int32(336324), int32(20), int32(-1), int32(0))
+			F_TupleDescInitEntry(m, v16, int32(2), int32(336633), int32(20), int32(-1), int32(0))
 			mBase = m.M
 			v33 = m.ExcPending
 			if v33 != 0 {
 				return int32(0)
 			} else {
-				F_TupleDescInitEntry(m, v16, int32(3), int32(169156), int32(1700), int32(-1), int32(0))
+				F_TupleDescInitEntry(m, v16, int32(3), int32(169320), int32(1700), int32(-1), int32(0))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {
 					return int32(0)
 				} else {
-					F_TupleDescInitEntry(m, v16, int32(4), int32(318627), int32(20), int32(-1), int32(0))
+					F_TupleDescInitEntry(m, v16, int32(4), int32(318892), int32(20), int32(-1), int32(0))
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {
 						return int32(0)
 					} else {
-						F_TupleDescInitEntry(m, v16, int32(5), int32(113008), int32(1184), int32(-1), int32(0))
+						F_TupleDescInitEntry(m, v16, int32(5), int32(113019), int32(1184), int32(-1), int32(0))
 						mBase = m.M
 						v54 = m.ExcPending
 						if v54 != 0 {

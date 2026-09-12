@@ -30,7 +30,7 @@ func F_LWLockNewTrancheId(m *base.Module) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
 	if v8 != 0 {
 		v12 = *(*int32)(unsafe.Add(mBase, _consts[815]))
-		F_s_lock(m, v12, int32(523489), int32(622), int32(488346))
+		F_s_lock(m, v12, int32(523935), int32(622), int32(488787))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {

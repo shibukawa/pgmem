@@ -28,13 +28,13 @@ func F_BumpGetChunkContext(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(68231)
-		F_errmsg_internal(m, int32(221185), v4)
+		F_errmsg_internal(m, int32(221377), v4)
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(521207), int32(640), int32(68274))
+			F_errfinish(m, int32(521648), int32(640), int32(68274))
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
@@ -69,14 +69,14 @@ func F_BumpRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(512785)
-		F_errmsg_internal(m, int32(221185), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(513226)
+		F_errmsg_internal(m, int32(221377), v6)
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(521207), int32(629), int32(512836))
+			F_errfinish(m, int32(521648), int32(629), int32(513277))
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {

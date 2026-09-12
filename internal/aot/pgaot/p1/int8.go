@@ -284,7 +284,7 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 					if v163 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(526183), int32(4943), int32(372483))
+						F_errfinish(m, int32(526629), int32(4943), int32(372854))
 						mBase = m.M
 						v168 = m.ExcPending
 						if v168 != 0 {
@@ -485,7 +485,7 @@ func F_int8_accum(m *base.Module, l0 int32) int32 {
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(526183), int32(4943), int32(372483))
+					F_errfinish(m, int32(526629), int32(4943), int32(372854))
 					mBase = m.M
 					v168 = m.ExcPending
 					if v168 != 0 {

@@ -1047,3 +1047,41 @@ func TestSessionResetIsNotAStatement(t *testing.T) {
 		}
 	}
 }
+
+// auto_explain is a LOAD-only module (no CREATE EXTENSION): once loaded,
+// it writes the plan of every statement over log_min_duration to the
+// server log, which Options.Log receives.
+func TestAutoExplainLogsPlans(t *testing.T) {
+	ctx := context.Background()
+	var mu sync.Mutex
+	var logged []string
+	s := startServer(t, pgmem.Options{Log: func(format string, args ...any) {
+		mu.Lock()
+		logged = append(logged, fmt.Sprintf(format, args...))
+		mu.Unlock()
+	}})
+	c, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c.Close(ctx)
+	for _, q := range []string{
+		"LOAD 'auto_explain'",
+		"SET auto_explain.log_min_duration = 0",
+		"SET auto_explain.log_analyze = on",
+		"CREATE TABLE ae(x int)",
+		"SELECT count(*) FROM ae WHERE x > 41",
+	} {
+		if _, err := c.Exec(ctx, q); err != nil {
+			t.Fatalf("%s: %v", q, err)
+		}
+	}
+	mu.Lock()
+	defer mu.Unlock()
+	for _, line := range logged {
+		if strings.Contains(line, "Query Text: SELECT count(*) FROM ae") && strings.Contains(line, "Seq Scan on ae") {
+			return
+		}
+	}
+	t.Fatalf("no auto_explain plan in the log:\n%s", strings.Join(logged, "\n"))
+}

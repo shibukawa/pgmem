@@ -92,13 +92,13 @@ func F_pgaio_io_perform_synchronously(m *base.Module, l0 int32) {
 		if v49 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(274469), int32(0))
+			F_errmsg_internal(m, int32(274691), int32(0))
 			mBase = m.M
 			v53 = m.ExcPending
 			if v53 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(521502), int32(141), int32(19631))
+				F_errfinish(m, int32(521943), int32(141), int32(19631))
 				mBase = m.M
 				v58 = m.ExcPending
 				if v58 != 0 {
@@ -617,7 +617,7 @@ L25:
 	v108 = *(*int32)(unsafe.Add(mBase, _consts[556]))
 	v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)))
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v109
-	F_errmsg_internal(m, int32(131321), v16)
+	F_errmsg_internal(m, int32(131391), v16)
 	mBase = m.M
 	v113 = m.ExcPending
 	if v113 != 0 {
@@ -627,7 +627,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(520768), int32(191), int32(88115))
+	F_errfinish(m, int32(521209), int32(191), int32(88126))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -765,7 +765,7 @@ L44:
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+24)) = v196
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = v188
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = (v171 - v174) >> (uint(int32(7)) % 32)
-	F_errmsg_internal(m, int32(493981), v16+int32(16))
+	F_errmsg_internal(m, int32(494422), v16+int32(16))
 	mBase = m.M
 	v217 = m.ExcPending
 	if v217 != 0 {
@@ -787,7 +787,7 @@ L47:
 	goto L44
 L48:
 	;
-	F_errfinish(m, int32(520768), int32(276), int32(326521))
+	F_errfinish(m, int32(521209), int32(276), int32(326830))
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {

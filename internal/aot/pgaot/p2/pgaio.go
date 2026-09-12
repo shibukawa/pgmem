@@ -133,13 +133,13 @@ func F_pgaio_submit_staged(m *base.Module) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = v24
-							F_errmsg_internal(m, int32(185825), v6)
+							F_errmsg_internal(m, int32(185989), v6)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(521469), int32(1147), int32(482458))
+								F_errfinish(m, int32(521910), int32(1147), int32(482899))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {

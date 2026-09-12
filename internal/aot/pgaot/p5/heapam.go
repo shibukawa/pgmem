@@ -1000,13 +1000,13 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 						if v141 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(249940), int32(0))
+							F_errmsg_internal(m, int32(250132), int32(0))
 							mBase = m.M
 							v145 = m.ExcPending
 							if v145 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(523081), int32(6116), int32(361339))
+								F_errfinish(m, int32(523527), int32(6116), int32(361710))
 								mBase = m.M
 								v150 = m.ExcPending
 								if v150 != 0 {
@@ -1027,13 +1027,13 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 							if v141 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(249940), int32(0))
+								F_errmsg_internal(m, int32(250132), int32(0))
 								mBase = m.M
 								v145 = m.ExcPending
 								if v145 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(523081), int32(6116), int32(361339))
+									F_errfinish(m, int32(523527), int32(6116), int32(361710))
 									mBase = m.M
 									v150 = m.ExcPending
 									if v150 != 0 {

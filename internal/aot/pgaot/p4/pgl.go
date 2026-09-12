@@ -123,7 +123,7 @@ func F_pgl_sendConnData(m *base.Module) {
 						if v36 != 0 {
 							return
 						} else {
-							v38 = *(*int32)(unsafe.Add(mBase, _consts[713]))
+							v38 = *(*int32)(unsafe.Add(mBase, _consts[709]))
 							F_enlargeStringInfo(m, v7, int32(4))
 							mBase = m.M
 							v41 = m.ExcPending
@@ -184,7 +184,7 @@ func F_pgl_shmdt(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[645]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[641]))
 	if v4 == int32(0) {
 		goto L1
 	} else {

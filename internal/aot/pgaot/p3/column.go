@@ -130,7 +130,7 @@ L11:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29+v26<<(uint(int32(2))%32))))
-	F_appendStringInfoString(m, v13, int32(782248))
+	F_appendStringInfoString(m, v13, int32(783295))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -783,7 +783,7 @@ L2:
 	}
 L3:
 	;
-	F_scanner_yyerror(m, int32(766628), l3)
+	F_scanner_yyerror(m, int32(767675), l3)
 	mBase = m.M
 	v249 = m.ExcPending
 	if v249 != 0 {
@@ -793,7 +793,7 @@ L3:
 	}
 L4:
 	;
-	F_scanner_yyerror(m, int32(766628), l3)
+	F_scanner_yyerror(m, int32(767675), l3)
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {
@@ -803,7 +803,7 @@ L4:
 	}
 L5:
 	;
-	F_scanner_yyerror(m, int32(766628), l3)
+	F_scanner_yyerror(m, int32(767675), l3)
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {

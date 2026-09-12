@@ -357,7 +357,7 @@ L3:
 	}
 L4:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, _consts[668]))
+	v51 = *(*int32)(unsafe.Add(mBase, _consts[670]))
 	if int32(0) < v51 {
 		goto L5
 	} else {
@@ -365,7 +365,7 @@ L4:
 	}
 L5:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, _consts[669]))
+	v59 = *(*int32)(unsafe.Add(mBase, _consts[671]))
 	v68 = v51
 	v70 = v59
 	v74 = v2
@@ -423,7 +423,7 @@ L12:
 	}
 L13:
 	;
-	F_s_lock(m, v86, int32(519744), int32(268), int32(126595))
+	F_s_lock(m, v86, int32(520185), int32(268), int32(126630))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -483,7 +483,7 @@ L23:
 	;
 	v121 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)) = uint8(v121)
-	v126 = int32(330122)
+	v126 = int32(330431)
 	goto L22
 L24:
 	;
@@ -491,7 +491,7 @@ L24:
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+36)) = v21 + int32(249)
-	v126 = int32(330208)
+	v126 = int32(330517)
 	goto L22
 L26:
 	;
@@ -666,7 +666,7 @@ L54:
 	goto L53
 L55:
 	;
-	v327 = *(*int32)(unsafe.Add(mBase, _consts[672]))
+	v327 = *(*int32)(unsafe.Add(mBase, _consts[674]))
 	if v327 < int32(0) {
 		v353 = v318
 		goto L54
@@ -680,7 +680,7 @@ L56:
 	goto L55
 L57:
 	;
-	v305 = F_cstring_to_text(m, int32(74200))
+	v305 = F_cstring_to_text(m, int32(74211))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -764,7 +764,7 @@ L63:
 L64:
 	;
 	v207 = *(*int32)(unsafe.Add(mBase, _consts[30]))
-	F_s_lock(m, v207+int32(440), int32(523959), int32(3760), int32(253507))
+	F_s_lock(m, v207+int32(440), int32(524405), int32(3760), int32(253699))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -861,7 +861,7 @@ L80:
 	goto L60
 L81:
 	;
-	v269 = F_cstring_to_text(m, int32(462142))
+	v269 = F_cstring_to_text(m, int32(462583))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -871,7 +871,7 @@ L81:
 	}
 L82:
 	;
-	v265 = F_cstring_to_text(m, int32(483826))
+	v265 = F_cstring_to_text(m, int32(484267))
 	mBase = m.M
 	v266 = m.ExcPending
 	if v266 != 0 {
@@ -881,7 +881,7 @@ L82:
 	}
 L83:
 	;
-	v261 = F_cstring_to_text(m, int32(462212))
+	v261 = F_cstring_to_text(m, int32(462653))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -917,7 +917,7 @@ L88:
 	}
 L89:
 	;
-	F_s_lock(m, v86, int32(519744), int32(364), int32(126595))
+	F_s_lock(m, v86, int32(520185), int32(364), int32(126630))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -945,7 +945,7 @@ L92:
 	goto L91
 L93:
 	;
-	v300 = F_cstring_to_text(m, int32(462142))
+	v300 = F_cstring_to_text(m, int32(462583))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -970,7 +970,7 @@ L96:
 	v334 = base.I64_div_u_s(v330, v333)
 	v336 = base.I32_div_s(v332, int32(1048576))
 	v337 = base.I32_div_s(v327, v336)
-	v339 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+	v339 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 	v340 = base.I32_div_s(v339, v336)
 	if base.Ui32(v340) < base.Ui32(v337) {
 		goto L97
@@ -1086,7 +1086,7 @@ L111:
 	}
 L112:
 	;
-	v456 = int32(391772)
+	v456 = int32(392193)
 	if base.Ui32(int32(8)) < base.Ui32(v418) {
 		v471 = v456
 		goto L121
@@ -1155,7 +1155,7 @@ L122:
 	}
 L123:
 	;
-	v469 = *(*int32)(unsafe.Add(mBase, uint32(v418<<(uint(int32(2))%32))+uint32(_consts[674])))
+	v469 = *(*int32)(unsafe.Add(mBase, uint32(v418<<(uint(int32(2))%32))+uint32(_consts[676])))
 	v470 = *(*int32)(unsafe.Add(mBase, uint32(v469)+4))
 	v471 = v470
 	goto L121
@@ -1165,8 +1165,8 @@ L124:
 	goto L111
 L125:
 	;
-	v489 = *(*int32)(unsafe.Add(mBase, _consts[668]))
-	v491 = *(*int32)(unsafe.Add(mBase, _consts[669]))
+	v489 = *(*int32)(unsafe.Add(mBase, _consts[670]))
+	v491 = *(*int32)(unsafe.Add(mBase, _consts[671]))
 	v493 = v489
 	v495 = v491
 	goto L12
@@ -1230,7 +1230,7 @@ func F_pg_replication_origin_session_is_setup(m *base.Module, l0 int32) int32 {
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521945), int32(200), int32(170267))
+					F_errfinish(m, int32(522386), int32(200), int32(170431))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

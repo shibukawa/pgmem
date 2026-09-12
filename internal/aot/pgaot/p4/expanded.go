@@ -81,7 +81,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 			return int32(0)
 		} else {
 			v13 = v9
-			v18 = F_AllocSetContextCreateInternal(m, l1, int32(442813), int32(0), int32(8192), int32(8388608))
+			v18 = F_AllocSetContextCreateInternal(m, l1, int32(443234), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -165,7 +165,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 		}
 	} else {
 		v13 = v6
-		v18 = F_AllocSetContextCreateInternal(m, l1, int32(442813), int32(0), int32(8192), int32(8388608))
+		v18 = F_AllocSetContextCreateInternal(m, l1, int32(443234), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {

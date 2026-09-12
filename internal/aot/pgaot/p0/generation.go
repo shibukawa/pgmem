@@ -65,13 +65,13 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = v14
-				F_errmsg_internal(m, int32(251703), v11)
+				F_errmsg_internal(m, int32(251895), v11)
 				mBase = m.M
 				v78 = m.ExcPending
 				if v78 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521705), int32(820), int32(512848))
+					F_errfinish(m, int32(522146), int32(820), int32(513289))
 					mBase = m.M
 					v83 = m.ExcPending
 					if v83 != 0 {
@@ -93,13 +93,13 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = v14
-					F_errmsg_internal(m, int32(251703), v11)
+					F_errmsg_internal(m, int32(251895), v11)
 					mBase = m.M
 					v78 = m.ExcPending
 					if v78 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(521705), int32(820), int32(512848))
+						F_errfinish(m, int32(522146), int32(820), int32(513289))
 						mBase = m.M
 						v83 = m.ExcPending
 						if v83 != 0 {
@@ -121,13 +121,13 @@ func F_GenerationRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v14
-						F_errmsg_internal(m, int32(251703), v11)
+						F_errmsg_internal(m, int32(251895), v11)
 						mBase = m.M
 						v78 = m.ExcPending
 						if v78 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521705), int32(820), int32(512848))
+							F_errfinish(m, int32(522146), int32(820), int32(513289))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {

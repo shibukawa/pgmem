@@ -316,7 +316,7 @@ L11:
 	goto L12
 L12:
 	;
-	v70 = int32(*(*uint8)(unsafe.Add(mBase, _consts[907])))
+	v70 = int32(*(*uint8)(unsafe.Add(mBase, _consts[909])))
 	if v70 != int32(1) {
 		goto L14
 	} else {
@@ -394,7 +394,7 @@ L18:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v43
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v54)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v51
-	F_errmsg_internal(m, int32(257628), int32(0))
+	F_errmsg_internal(m, int32(257820), int32(0))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -435,7 +435,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v43
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v54)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v51
-	F_errfinish(m, int32(516755), int32(708), int32(257628))
+	F_errfinish(m, int32(517196), int32(708), int32(257820))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -455,9 +455,9 @@ L24:
 	v147 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 	v149 = *(*int32)(unsafe.Add(mBase, _consts[362]))
 	v151 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v153 = *(*int32)(unsafe.Add(mBase, _consts[908]))
+	v153 = *(*int32)(unsafe.Add(mBase, _consts[910]))
 	v155 = *(*int32)(unsafe.Add(mBase, _consts[175]))
-	v157 = *(*int32)(unsafe.Add(mBase, _consts[909]))
+	v157 = *(*int32)(unsafe.Add(mBase, _consts[911]))
 	v159 = *(*int32)(unsafe.Add(mBase, _consts[190]))
 	v161 = *(*int32)(unsafe.Add(mBase, _consts[176]))
 	goto L25
@@ -488,8 +488,8 @@ L29:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[337])) = v172
 	*(*int32)(unsafe.Add(mBase, _consts[362])) = v171
-	*(*int32)(unsafe.Add(mBase, _consts[909])) = v174
-	*(*int32)(unsafe.Add(mBase, _consts[908])) = v173
+	*(*int32)(unsafe.Add(mBase, _consts[911])) = v174
+	*(*int32)(unsafe.Add(mBase, _consts[910])) = v173
 	v375 = *(*int32)(unsafe.Add(mBase, _consts[190]))
 	if v167 == v175 {
 		goto L63
@@ -503,7 +503,7 @@ L30:
 	}
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[909])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[911])) = l0
 	*(*int32)(unsafe.Add(mBase, _consts[362])) = v169
 	v185 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v185 != 0 {
@@ -549,7 +549,7 @@ L36:
 	;
 	v189 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v189
-	*(*int32)(unsafe.Add(mBase, _consts[908])) = v189
+	*(*int32)(unsafe.Add(mBase, _consts[910])) = v189
 	v193 = *(*int32)(unsafe.Add(mBase, uint32(l0)+72))
 	switch v193 {
 	case 0:
@@ -744,7 +744,7 @@ L52:
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v278)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	*(*int32)(unsafe.Add(mBase, uint32(v24))) = v284
-	F_errmsg_internal(m, int32(504440), v24)
+	F_errmsg_internal(m, int32(504881), v24)
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -765,7 +765,7 @@ L53:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v176
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v278)
-	F_errfinish(m, int32(516755), int32(800), int32(257628))
+	F_errfinish(m, int32(517196), int32(800), int32(257820))
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -779,8 +779,8 @@ L54:
 	goto L30
 L55:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[909])) = v174
-	*(*int32)(unsafe.Add(mBase, _consts[908])) = v173
+	*(*int32)(unsafe.Add(mBase, _consts[911])) = v174
+	*(*int32)(unsafe.Add(mBase, _consts[910])) = v173
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+32)) = v175
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+16)) = v167
 	v340 = *(*int32)(unsafe.Add(mBase, _consts[190]))
@@ -865,7 +865,7 @@ L67:
 L68:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[175])) = v383
-	v386 = int32(*(*uint8)(unsafe.Add(mBase, _consts[907])))
+	v386 = int32(*(*uint8)(unsafe.Add(mBase, _consts[909])))
 	if v386 != int32(1) {
 		goto L3
 	} else {
@@ -892,7 +892,7 @@ L70:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	v402 = v170 & int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v402)
-	F_ShowUsage(m, int32(550865))
+	F_ShowUsage(m, int32(551311))
 	mBase = m.M
 	v406 = m.ExcPending
 	if v406 != 0 {

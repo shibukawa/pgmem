@@ -200,7 +200,7 @@ L18:
 	goto L16
 L19:
 	;
-	F_appendStringInfoString(m, v8+int32(16), int32(782248))
+	F_appendStringInfoString(m, v8+int32(16), int32(783295))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -216,7 +216,7 @@ L21:
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v93 = *(*int32)(unsafe.Add(mBase, uint32(v89+v78<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v93
-	F_appendStringInfo(m, v8+int32(16), int32(764322), v8)
+	F_appendStringInfo(m, v8+int32(16), int32(765369), v8)
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -437,7 +437,7 @@ func F_logicalrep_launcher_attach_dshmem(m *base.Module) {
 								return
 							} else {
 								v41 = *(*int32)(unsafe.Add(mBase, _consts[513]))
-								v44 = F_dshash_create(m, v41, int32(1657144), int32(0))
+								v44 = F_dshash_create(m, v41, int32(1658184), int32(0))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -499,7 +499,7 @@ func F_logicalrep_launcher_attach_dshmem(m *base.Module) {
 								v72 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 								v75 = *(*int32)(unsafe.Add(mBase, _consts[511]))
 								v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+8))
-								v78 = F_dshash_attach(m, v72, int32(1657144), v76, int32(0))
+								v78 = F_dshash_attach(m, v72, int32(1658184), v76, int32(0))
 								mBase = m.M
 								v79 = m.ExcPending
 								if v79 != 0 {
@@ -559,7 +559,7 @@ func F_logicalrep_launcher_attach_dshmem(m *base.Module) {
 							return
 						} else {
 							v41 = *(*int32)(unsafe.Add(mBase, _consts[513]))
-							v44 = F_dshash_create(m, v41, int32(1657144), int32(0))
+							v44 = F_dshash_create(m, v41, int32(1658184), int32(0))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -621,7 +621,7 @@ func F_logicalrep_launcher_attach_dshmem(m *base.Module) {
 							v72 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 							v75 = *(*int32)(unsafe.Add(mBase, _consts[511]))
 							v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)+8))
-							v78 = F_dshash_attach(m, v72, int32(1657144), v76, int32(0))
+							v78 = F_dshash_attach(m, v72, int32(1658184), v76, int32(0))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -815,7 +815,7 @@ L13:
 L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v44
-	F_errmsg_internal(m, int32(722861), v12)
+	F_errmsg_internal(m, int32(723908), v12)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -825,7 +825,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(521450), int32(912), int32(403127))
+	F_errfinish(m, int32(521891), int32(912), int32(403548))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -1203,7 +1203,7 @@ L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = v28
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = int64(309237645316)
-	v36 = F_hash_create(m, int32(419243), int32(128), v10, int32(1064))
+	v36 = F_hash_create(m, int32(419664), int32(128), v10, int32(1064))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {

@@ -151,7 +151,7 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 				if v18 != 0 {
 					return
 				} else {
-					F_read_relmap_file(m, int32(4550892), int32(330234), int32(1), int32(22))
+					F_read_relmap_file(m, int32(4550892), int32(330543), int32(1), int32(22))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -167,7 +167,7 @@ func F_AtEOXact_RelationMap(m *base.Module, l0 int32, l1 int32) {
 							return
 						} else {
 							v40 = int32(1)
-							F_write_relmap_file(m, v6+int32(4), v40, v40, v40, int32(0), int32(1664), int32(330234))
+							F_write_relmap_file(m, v6+int32(4), v40, v40, v40, int32(0), int32(1664), int32(330543))
 							mBase = m.M
 							v47 = m.ExcPending
 							if v47 != 0 {
@@ -494,7 +494,7 @@ L19:
 	}
 L20:
 	;
-	F_errmsg(m, int32(334933), int32(0))
+	F_errmsg(m, int32(335242), int32(0))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -504,7 +504,7 @@ L20:
 	}
 L21:
 	;
-	F_errhint(m, int32(624146), int32(0))
+	F_errhint(m, int32(624827), int32(0))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -514,7 +514,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(523553), int32(472), int32(561292))
+	F_errfinish(m, int32(523999), int32(472), int32(561738))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

@@ -169,13 +169,13 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
-						F_errmsg(m, int32(215044), v9)
+						F_errmsg(m, int32(215208), v9)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(520970), int32(304), int32(367050))
+							F_errfinish(m, int32(521411), int32(304), int32(367421))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {

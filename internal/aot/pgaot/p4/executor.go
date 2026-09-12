@@ -14,7 +14,7 @@ func F_ExecutorEnd(m *base.Module, l0 int32) {
 	_ = v6
 	var v8 int32
 	_ = v8
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[500]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[496]))
 	if v4 != 0 {
 		m.T0[v4].(func(*base.Module, int32))(m, l0)
 		mBase = m.M

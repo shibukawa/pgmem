@@ -176,7 +176,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						*(*int32)(unsafe.Add(mBase, uint32(v53))) = v75 + v76
 						v80 = *(*int32)(unsafe.Add(mBase, _consts[578]))
 						v81 = *(*int32)(unsafe.Add(mBase, uint32(v44)+20))
-						F_ResourceOwnerRemember(m, v80, v81+v76, int32(1664464))
+						F_ResourceOwnerRemember(m, v80, v81+v76, int32(1665504))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -211,13 +211,13 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 									if v138 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(467082), int32(0))
+										F_errmsg_internal(m, int32(467523), int32(0))
 										mBase = m.M
 										v142 = m.ExcPending
 										if v142 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(524133), int32(159), int32(513008))
+											F_errfinish(m, int32(524579), int32(159), int32(513449))
 											mBase = m.M
 											v147 = m.ExcPending
 											if v147 != 0 {
@@ -301,7 +301,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					*(*int32)(unsafe.Add(mBase, uint32(v53))) = v75 + v76
 					v80 = *(*int32)(unsafe.Add(mBase, _consts[578]))
 					v81 = *(*int32)(unsafe.Add(mBase, uint32(v44)+20))
-					F_ResourceOwnerRemember(m, v80, v81+v76, int32(1664464))
+					F_ResourceOwnerRemember(m, v80, v81+v76, int32(1665504))
 					mBase = m.M
 					v86 = m.ExcPending
 					if v86 != 0 {
@@ -336,13 +336,13 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 								if v138 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg_internal(m, int32(467082), int32(0))
+									F_errmsg_internal(m, int32(467523), int32(0))
 									mBase = m.M
 									v142 = m.ExcPending
 									if v142 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(524133), int32(159), int32(513008))
+										F_errfinish(m, int32(524579), int32(159), int32(513449))
 										mBase = m.M
 										v147 = m.ExcPending
 										if v147 != 0 {

@@ -984,10 +984,22 @@ func F_EventTriggerInvoke(m *base.Module, l0 int32, l1 int32)
 func F_standard_ExplainOneQuery(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_ExplainOnePlan github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExplainOnePlan
 func F_ExplainOnePlan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
+//go:linkname F_ExplainPreScanNode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainPreScanNode
+func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ExplainNode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainNode
+func F_ExplainNode(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_report_triggers github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_report_triggers
+func F_report_triggers(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainPropertyList github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainPropertyList
 func F_ExplainPropertyList(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainProperty github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainProperty
 func F_ExplainProperty(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_ExplainPropertyInteger github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainPropertyInteger
+func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32)
+//go:linkname F_ExplainOpenGroup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainOpenGroup
+func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_ExplainCloseGroup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainCloseGroup
+func F_ExplainCloseGroup(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainDummyGroup github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainDummyGroup
 func F_ExplainDummyGroup(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ExplainSeparatePlans github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainSeparatePlans
@@ -3515,7 +3527,7 @@ func F_ShowGUCOption(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetConfigOptionFlags github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetConfigOptionFlags
 func F_GetConfigOptionFlags(m *base.Module, l0 int32) int32
 //go:linkname F_DefineCustomBoolVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DefineCustomBoolVariable
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
 func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable

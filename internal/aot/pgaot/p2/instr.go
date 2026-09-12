@@ -275,7 +275,7 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 				if v55 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(517791), int32(72), int32(434810))
+					F_errfinish(m, int32(518232), int32(72), int32(435231))
 					mBase = m.M
 					v60 = m.ExcPending
 					if v60 != 0 {

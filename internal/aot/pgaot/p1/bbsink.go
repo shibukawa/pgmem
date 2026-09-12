@@ -274,7 +274,7 @@ func F_bbsink_server_end_manifest(m *base.Module, l0 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(0)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v14
-		v19 = F_psprintf(m, int32(247728), v7+int32(16))
+		v19 = F_psprintf(m, int32(247920), v7+int32(16))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
@@ -282,7 +282,7 @@ func F_bbsink_server_end_manifest(m *base.Module, l0 int32) {
 		} else {
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v21
-			v24 = F_psprintf(m, int32(83601), v7)
+			v24 = F_psprintf(m, int32(83612), v7)
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

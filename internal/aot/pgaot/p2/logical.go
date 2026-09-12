@@ -577,7 +577,7 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(1)
 	if v15 != 0 {
-		F_s_lock(m, v14, int32(523431), int32(1757), int32(92560))
+		F_s_lock(m, v14, int32(523877), int32(1757), int32(92571))
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
@@ -627,13 +627,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
 								v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-								F_errmsg_internal(m, int32(540741), v11)
+								F_errmsg_internal(m, int32(541187), v11)
 								mBase = m.M
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(523431), int32(1792), int32(92560))
+									F_errfinish(m, int32(523877), int32(1792), int32(92571))
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
@@ -675,13 +675,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
 								v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-								F_errmsg_internal(m, int32(541418), v9+int32(-48))
+								F_errmsg_internal(m, int32(541864), v9+int32(-48))
 								mBase = m.M
 								v97 = m.ExcPending
 								if v97 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(523431), int32(1810), int32(92560))
+									F_errfinish(m, int32(523877), int32(1810), int32(92571))
 									mBase = m.M
 									v102 = m.ExcPending
 									if v102 != 0 {
@@ -742,13 +742,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
 							v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
 							*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-							F_errmsg_internal(m, int32(540741), v11)
+							F_errmsg_internal(m, int32(541187), v11)
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(523431), int32(1792), int32(92560))
+								F_errfinish(m, int32(523877), int32(1792), int32(92571))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -790,13 +790,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
 							v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-							F_errmsg_internal(m, int32(541418), v9+int32(-48))
+							F_errmsg_internal(m, int32(541864), v9+int32(-48))
 							mBase = m.M
 							v97 = m.ExcPending
 							if v97 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(523431), int32(1810), int32(92560))
+								F_errfinish(m, int32(523877), int32(1810), int32(92571))
 								mBase = m.M
 								v102 = m.ExcPending
 								if v102 != 0 {
@@ -997,7 +997,7 @@ L9:
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v21
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v21
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	*(*int64)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1248]))) = int64(-1)
+	*(*int64)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1247]))) = int64(-1)
 	goto L8
 L10:
 	;
@@ -1067,7 +1067,7 @@ L19:
 L20:
 	;
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	*(*int64)(unsafe.Add(mBase, uint32(v46)+uint32(_consts[1249]))) = v44
+	*(*int64)(unsafe.Add(mBase, uint32(v46)+uint32(_consts[1248]))) = v44
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v51 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -1083,7 +1083,7 @@ L21:
 	;
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v58 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v55)+uint32(_consts[1248]))) = v58
+	*(*int64)(unsafe.Add(mBase, uint32(v55)+uint32(_consts[1247]))) = v58
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+52)) = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v44
 	v64 = int32(0)
@@ -1160,7 +1160,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(524682), int32(797), int32(368551))
+	F_errfinish(m, int32(525128), int32(797), int32(368922))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -1306,7 +1306,7 @@ func F_logical_rewrite_log_mapping(m *base.Module, l0 int32, l1 int32, l2 int32)
 					v45 = v29
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v45
-				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(166423)
+				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(166587)
 				v55 = F_pg_snprintf(m, v12+int32(48), int32(1024), int32(31240), v12+int32(16))
 				mBase = m.M
 				v56 = m.ExcPending
@@ -1341,13 +1341,13 @@ func F_logical_rewrite_log_mapping(m *base.Module, l0 int32, l1 int32, l2 int32)
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12))) = v12 + int32(48)
-									F_errmsg(m, int32(314136), v12)
+									F_errmsg(m, int32(314401), v12)
 									mBase = m.M
 									v141 = m.ExcPending
 									if v141 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(521392), int32(977), int32(351865))
+										F_errfinish(m, int32(521833), int32(977), int32(352187))
 										mBase = m.M
 										v146 = m.ExcPending
 										if v146 != 0 {

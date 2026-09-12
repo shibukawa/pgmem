@@ -24,7 +24,7 @@ func F_ResOwnerPrintTupleDesc(m *base.Module, l0 int32) int32 {
 	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+4)) = v7
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	v11 = F_psprintf(m, int32(711439), v5)
+	v11 = F_psprintf(m, int32(712486), v5)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {

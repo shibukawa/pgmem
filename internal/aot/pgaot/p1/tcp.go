@@ -26,7 +26,7 @@ func F_assign_tcp_keepalives_count(m *base.Module, l0 int32, l1 int32) {
 	_ = v26
 	var v29 int32
 	_ = v29
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[455]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[457]))
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -89,7 +89,7 @@ func F_assign_tcp_user_timeout(m *base.Module, l0 int32, l1 int32) {
 	_ = v26
 	var v29 int32
 	_ = v29
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[455]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[457]))
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8

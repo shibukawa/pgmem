@@ -500,7 +500,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(519627), int32(21849), int32(30532))
+	F_errfinish(m, int32(520068), int32(21849), int32(30532))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -527,7 +527,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(519627), int32(21875), int32(30532))
+	F_errfinish(m, int32(520068), int32(21875), int32(30532))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -620,7 +620,7 @@ func F_varchartypmodin(m *base.Module, l0 int32) int32 {
 	if v6 != 0 {
 		return int32(0)
 	} else {
-		v8 = F_anychar_typmodin(m, v3, int32(242042))
+		v8 = F_anychar_typmodin(m, v3, int32(242234))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
@@ -1840,7 +1840,7 @@ L147:
 L148:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v34))) = int32(255)
-	F_errmsg(m, int32(142268), v34)
+	F_errmsg(m, int32(142355), v34)
 	mBase = m.M
 	v1030 = m.ExcPending
 	if v1030 != 0 {
@@ -1850,7 +1850,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(522026), int32(135), int32(325327))
+	F_errfinish(m, int32(522467), int32(135), int32(325636))
 	mBase = m.M
 	v1035 = m.ExcPending
 	if v1035 != 0 {
@@ -2619,13 +2619,13 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 			if v248 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(113332), int32(0))
+				F_errmsg_internal(m, int32(113343), int32(0))
 				mBase = m.M
 				v252 = m.ExcPending
 				if v252 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521291), int32(270), int32(113404))
+					F_errfinish(m, int32(521732), int32(270), int32(113415))
 					mBase = m.M
 					v257 = m.ExcPending
 					if v257 != 0 {
@@ -2645,13 +2645,13 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 				if v261 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(113378), int32(0))
+					F_errmsg_internal(m, int32(113389), int32(0))
 					mBase = m.M
 					v265 = m.ExcPending
 					if v265 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(521291), int32(274), int32(113404))
+						F_errfinish(m, int32(521732), int32(274), int32(113415))
 						mBase = m.M
 						v270 = m.ExcPending
 						if v270 != 0 {
@@ -2680,13 +2680,13 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 					if v261 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(113378), int32(0))
+						F_errmsg_internal(m, int32(113389), int32(0))
 						mBase = m.M
 						v265 = m.ExcPending
 						if v265 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521291), int32(274), int32(113404))
+							F_errfinish(m, int32(521732), int32(274), int32(113415))
 							mBase = m.M
 							v270 = m.ExcPending
 							if v270 != 0 {
@@ -3095,13 +3095,13 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 			if v261 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(113378), int32(0))
+				F_errmsg_internal(m, int32(113389), int32(0))
 				mBase = m.M
 				v265 = m.ExcPending
 				if v265 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521291), int32(274), int32(113404))
+					F_errfinish(m, int32(521732), int32(274), int32(113415))
 					mBase = m.M
 					v270 = m.ExcPending
 					if v270 != 0 {
@@ -3130,13 +3130,13 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 				if v261 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(113378), int32(0))
+					F_errmsg_internal(m, int32(113389), int32(0))
 					mBase = m.M
 					v265 = m.ExcPending
 					if v265 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(521291), int32(274), int32(113404))
+						F_errfinish(m, int32(521732), int32(274), int32(113415))
 						mBase = m.M
 						v270 = m.ExcPending
 						if v270 != 0 {

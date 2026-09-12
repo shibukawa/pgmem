@@ -298,7 +298,7 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 															if v152 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(524155), int32(95), int32(105314))
+																F_errfinish(m, int32(524601), int32(95), int32(105325))
 																mBase = m.M
 																v157 = m.ExcPending
 																if v157 != 0 {

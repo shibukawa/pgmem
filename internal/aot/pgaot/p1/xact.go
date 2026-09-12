@@ -80,7 +80,7 @@ func F_XactLockTableWaitErrorCb(m *base.Module, l0 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v33
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v32 + int32(4)
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v29 | v30<<(uint(int32(16))%32)
-							v46 = *(*int32)(unsafe.Add(mBase, uint32(v11<<(uint(int32(2))%32))+uint32(_consts[807])))
+							v46 = *(*int32)(unsafe.Add(mBase, uint32(v11<<(uint(int32(2))%32))+uint32(_consts[809])))
 							F_errcontext_msg(m, v46, v9)
 							mBase = m.M
 							v48 = m.ExcPending

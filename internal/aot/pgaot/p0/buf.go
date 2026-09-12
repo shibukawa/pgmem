@@ -50,7 +50,7 @@ func F_BufFileDeleteFileSet(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	m.G0 = v9
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v4
-	v20 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(489453), v9+int32(32))
+	v20 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(489894), v9+int32(32))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -121,7 +121,7 @@ L11:
 	v37 = v30 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v37
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-	v46 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(489453), v9+int32(16))
+	v46 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(489894), v9+int32(16))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -173,7 +173,7 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
-	F_errmsg_internal(m, int32(753170), v9)
+	F_errmsg_internal(m, int32(754217), v9)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -183,7 +183,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(524867), int32(387), int32(116019))
+	F_errfinish(m, int32(525313), int32(387), int32(116030))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -636,7 +636,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(524867), int32(635), int32(259176))
+	F_errfinish(m, int32(525313), int32(635), int32(259368))
 	mBase = m.M
 	v186 = m.ExcPending
 	if v186 != 0 {
@@ -649,7 +649,7 @@ L41:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v153
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v168
-	F_errmsg(m, int32(169255), v13+int32(-48))
+	F_errmsg(m, int32(169419), v13+int32(-48))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -664,7 +664,7 @@ L43:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v153
-	F_errmsg(m, int32(169192), v15)
+	F_errmsg(m, int32(169356), v15)
 	mBase = m.M
 	v181 = m.ExcPending
 	if v181 != 0 {
@@ -701,7 +701,7 @@ L48:
 L49:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v204
-	F_errmsg(m, int32(314376), v13+int32(-32))
+	F_errmsg(m, int32(314641), v13+int32(-32))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -711,7 +711,7 @@ L49:
 	}
 L50:
 	;
-	F_errfinish(m, int32(524867), int32(471), int32(238586))
+	F_errfinish(m, int32(525313), int32(471), int32(238778))
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -810,13 +810,13 @@ func F_BufFileSize(m *base.Module, l0 int32) int64 {
 					v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v43
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v42
-					F_errmsg(m, int32(314526), v7)
+					F_errmsg(m, int32(314791), v7)
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return int64(0)
 					} else {
-						F_errfinish(m, int32(524867), int32(877), int32(360566))
+						F_errfinish(m, int32(525313), int32(877), int32(360937))
 						mBase = m.M
 						v53 = m.ExcPending
 						if v53 != 0 {

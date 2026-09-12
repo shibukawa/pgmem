@@ -3526,6 +3526,10 @@ func F_pg_stat_statements_1_2(m *base.Module, l0 int32) int32
 func F_pg_stat_statements(m *base.Module, l0 int32) int32
 //go:linkname F_pg_stat_statements_info github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_stat_statements_info
 func F_pg_stat_statements_info(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_auto_explain github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Pg_magic_func_auto_explain
+func F_Pg_magic_func_auto_explain(m *base.Module) int32
+//go:linkname F__PG_init_auto_explain github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F__PG_init_auto_explain
+func F__PG_init_auto_explain(m *base.Module)
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

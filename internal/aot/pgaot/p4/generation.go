@@ -67,13 +67,13 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-				F_errmsg_internal(m, int32(251703), v8)
+				F_errmsg_internal(m, int32(251895), v8)
 				mBase = m.M
 				v37 = m.ExcPending
 				if v37 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(521705), int32(711), int32(431484))
+					F_errfinish(m, int32(522146), int32(711), int32(431905))
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {
@@ -95,13 +95,13 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-					F_errmsg_internal(m, int32(251703), v8)
+					F_errmsg_internal(m, int32(251895), v8)
 					mBase = m.M
 					v37 = m.ExcPending
 					if v37 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(521705), int32(711), int32(431484))
+						F_errfinish(m, int32(522146), int32(711), int32(431905))
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
@@ -163,13 +163,13 @@ func F_GenerationFree(m *base.Module, l0 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-						F_errmsg_internal(m, int32(251703), v8)
+						F_errmsg_internal(m, int32(251895), v8)
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(521705), int32(711), int32(431484))
+							F_errfinish(m, int32(522146), int32(711), int32(431905))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {

@@ -2157,7 +2157,7 @@ func F_show_timezone(m *base.Module) int32 {
 	if v3 != 0 {
 		v5 = v3
 	} else {
-		v5 = int32(256661)
+		v5 = int32(256853)
 	}
 	return v5
 }

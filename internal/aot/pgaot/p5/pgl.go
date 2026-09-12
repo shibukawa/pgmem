@@ -69,7 +69,7 @@ func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v17
 		}
 	case 2:
-		v22 = *(*int32)(unsafe.Add(mBase, _consts[463]))
+		v22 = *(*int32)(unsafe.Add(mBase, _consts[464]))
 		v23 = F_freopen(m, l0, l1, v22)
 		mBase = m.M
 		v24 = m.ExcPending
@@ -89,7 +89,7 @@ func F_pgl_getMyProcPort(m *base.Module) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[375]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[376]))
 	return v2
 }
 func F_pgl_getPGliteExitStatus(m *base.Module) int32 {
@@ -97,7 +97,7 @@ func F_pgl_getPGliteExitStatus(m *base.Module) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[847]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[848]))
 	return v2
 }
 func F_pgl_set_rw_cbs(m *base.Module, l0 int32, l1 int32) {
@@ -169,14 +169,14 @@ func F_pgl_startPGlite(m *base.Module) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[10])) = v9
-		*(*int32)(unsafe.Add(mBase, _consts[375])) = v54
-		*(*int32)(unsafe.Add(mBase, _consts[277])) = int32(2)
+		*(*int32)(unsafe.Add(mBase, _consts[376])) = v54
+		*(*int32)(unsafe.Add(mBase, _consts[278])) = int32(2)
 		v64 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[20])) = v64
-		*(*uint8)(unsafe.Add(mBase, _consts[799])) = uint8(v64)
+		*(*uint8)(unsafe.Add(mBase, _consts[800])) = uint8(v64)
 		*(*uint8)(unsafe.Add(mBase, _consts[183])) = uint8(v64)
 		v73 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[800])) = uint8(v73)
+		*(*uint8)(unsafe.Add(mBase, _consts[801])) = uint8(v73)
 		v75 = F_load_hba(m)
 		mBase = m.M
 		v76 = m.ExcPending
@@ -190,15 +190,15 @@ func F_pgl_startPGlite(m *base.Module) {
 				if v82 != 0 {
 					return
 				} else {
-					v84 = *(*int32)(unsafe.Add(mBase, _consts[801]))
+					v84 = *(*int32)(unsafe.Add(mBase, _consts[802]))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v84
-					F_errmsg(m, int32(208208), v6)
+					F_errmsg(m, int32(208372), v6)
 					mBase = m.M
 					v88 = m.ExcPending
 					if v88 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(519235), int32(260), int32(368861))
+						F_errfinish(m, int32(519676), int32(260), int32(369232))
 						mBase = m.M
 						v93 = m.ExcPending
 						if v93 != 0 {

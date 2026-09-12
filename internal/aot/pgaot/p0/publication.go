@@ -293,13 +293,13 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v41
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = v39
-										F_errmsg(m, int32(745180), v10)
+										F_errmsg(m, int32(746227), v10)
 										mBase = m.M
 										v46 = m.ExcPending
 										if v46 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(521768), int32(701), int32(533068))
+											F_errfinish(m, int32(522209), int32(701), int32(533514))
 											mBase = m.M
 											v51 = m.ExcPending
 											if v51 != 0 {
@@ -336,19 +336,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
-									F_errmsg(m, int32(280177), v10+int32(16))
+									F_errmsg(m, int32(280399), v10+int32(16))
 									mBase = m.M
 									v146 = m.ExcPending
 									if v146 != 0 {
 										return
 									} else {
-										F_errdetail(m, int32(632527), int32(0))
+										F_errdetail(m, int32(633208), int32(0))
 										mBase = m.M
 										v150 = m.ExcPending
 										if v150 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(521768), int32(103), int32(533062))
+											F_errfinish(m, int32(522209), int32(103), int32(533508))
 											mBase = m.M
 											v155 = m.ExcPending
 											if v155 != 0 {
@@ -391,19 +391,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
-										F_errmsg(m, int32(280177), v10+int32(16))
+										F_errmsg(m, int32(280399), v10+int32(16))
 										mBase = m.M
 										v146 = m.ExcPending
 										if v146 != 0 {
 											return
 										} else {
-											F_errdetail(m, int32(632527), int32(0))
+											F_errdetail(m, int32(633208), int32(0))
 											mBase = m.M
 											v150 = m.ExcPending
 											if v150 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(521768), int32(103), int32(533062))
+												F_errfinish(m, int32(522209), int32(103), int32(533508))
 												mBase = m.M
 												v155 = m.ExcPending
 												if v155 != 0 {
@@ -445,19 +445,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v163
-												F_errmsg(m, int32(280177), v10+int32(32))
+												F_errmsg(m, int32(280399), v10+int32(32))
 												mBase = m.M
 												v170 = m.ExcPending
 												if v170 != 0 {
 													return
 												} else {
-													F_errdetail(m, int32(678930), int32(0))
+													F_errdetail(m, int32(679911), int32(0))
 													mBase = m.M
 													v174 = m.ExcPending
 													if v174 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(521768), int32(111), int32(533062))
+														F_errfinish(m, int32(522209), int32(111), int32(533508))
 														mBase = m.M
 														v179 = m.ExcPending
 														if v179 != 0 {

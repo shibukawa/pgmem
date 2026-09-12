@@ -144,7 +144,7 @@ L5:
 	}
 L6:
 	;
-	if v18 == int32(4164660) {
+	if v18 == int32(4164692) {
 		goto L5
 	} else {
 		goto L7
@@ -167,7 +167,7 @@ L9:
 L10:
 	;
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
-	if v34 != int32(4164660) {
+	if v34 != int32(4164692) {
 		v24 = v34
 		goto L8
 	} else {
@@ -216,7 +216,7 @@ L17:
 	}
 L18:
 	;
-	v61 = int32(4164660)
+	v61 = int32(4164692)
 	*(*int32)(unsafe.Add(mBase, _consts[595])) = v61
 	v65 = v61
 	goto L20
@@ -226,7 +226,7 @@ L19:
 	goto L20
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4164660)
+	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4164692)
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+4)) = v65
 	*(*int32)(unsafe.Add(mBase, uint32(v65))) = v55
 	*(*int32)(unsafe.Add(mBase, _consts[594])) = v55
@@ -241,7 +241,7 @@ L20:
 	}
 L21:
 	;
-	F_ResourceOwnerRemember(m, v77, v55, int32(1664556))
+	F_ResourceOwnerRemember(m, v77, v55, int32(1665596))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -402,7 +402,7 @@ L43:
 	goto L42
 L44:
 	;
-	F_errmsg_internal(m, int32(435476), int32(0))
+	F_errmsg_internal(m, int32(435897), int32(0))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -412,7 +412,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(522901), int32(692), int32(342955))
+	F_errfinish(m, int32(523347), int32(692), int32(343277))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -775,7 +775,7 @@ L32:
 	goto L17
 L33:
 	;
-	F_ResourceOwnerForget(m, v147, l0, int32(1664556))
+	F_ResourceOwnerForget(m, v147, l0, int32(1665596))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -919,13 +919,13 @@ func F_dsm_pin_segment(m *base.Module, l0 int32) {
 			if v71 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(474687), int32(0))
+				F_errmsg_internal(m, int32(475128), int32(0))
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(522901), int32(967), int32(101626))
+					F_errfinish(m, int32(523347), int32(967), int32(101637))
 					mBase = m.M
 					v80 = m.ExcPending
 					if v80 != 0 {

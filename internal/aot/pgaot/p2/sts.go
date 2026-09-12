@@ -315,7 +315,7 @@ L1:
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v17
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v16 + int32(12)
-	v26 = F_pg_snprintf(m, v11+int32(16), int32(1024), int32(488639), v11)
+	v26 = F_pg_snprintf(m, v11+int32(16), int32(1024), int32(489080), v11)
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {

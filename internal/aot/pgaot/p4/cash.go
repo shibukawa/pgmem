@@ -53,13 +53,13 @@ func F_cash_dist(m *base.Module, l0 int32) int32 {
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(422007), int32(0))
+				F_errmsg(m, int32(422428), int32(0))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(523757), int32(107), int32(81923))
+					F_errfinish(m, int32(524203), int32(107), int32(81934))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
@@ -200,13 +200,13 @@ func F_cash_mul_int4(m *base.Module, l0 int32) int32 {
 			if v64 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(422007), int32(0))
+				F_errmsg(m, int32(422428), int32(0))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(523763), int32(150), int32(587201))
+					F_errfinish(m, int32(524209), int32(150), int32(587647))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {

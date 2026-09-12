@@ -1565,13 +1565,13 @@ func F_get_expr_result_tupdesc(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							if v21 == int32(2249) {
-								F_errmsg(m, int32(473314), int32(0))
+								F_errmsg(m, int32(473755), int32(0))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(523572), int32(574), int32(512172))
+									F_errfinish(m, int32(524018), int32(574), int32(512613))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {
@@ -1590,13 +1590,13 @@ func F_get_expr_result_tupdesc(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v41
-									F_errmsg(m, int32(367615), v7)
+									F_errmsg(m, int32(367986), v7)
 									mBase = m.M
 									v46 = m.ExcPending
 									if v46 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(523572), int32(570), int32(512172))
+										F_errfinish(m, int32(524018), int32(570), int32(512613))
 										mBase = m.M
 										v51 = m.ExcPending
 										if v51 != 0 {

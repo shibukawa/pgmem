@@ -174,13 +174,13 @@ func F_pgp_armor_headers(m *base.Module, l0 int32) int32 {
 						if v157 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(386471), int32(0))
+							F_errmsg_internal(m, int32(386892), int32(0))
 							mBase = m.M
 							v163 = m.ExcPending
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(523120), int32(937), int32(144599))
+								F_errfinish(m, int32(523566), int32(937), int32(144737))
 								mBase = m.M
 								v170 = m.ExcPending
 								if v170 != 0 {
@@ -432,7 +432,7 @@ func F_pgp_expect_packet_end(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		if int32(0) < v10 {
-			F_px_debug(m, int32(531041), int32(0))
+			F_px_debug(m, int32(531487), int32(0))
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
@@ -785,7 +785,7 @@ L9:
 	}
 L10:
 	;
-	v35 = int32(557367)
+	v35 = int32(557813)
 	goto L12
 L12:
 	;
@@ -1031,7 +1031,7 @@ L49:
 	}
 L50:
 	;
-	v147 = int32(569917)
+	v147 = int32(570363)
 	goto L51
 L51:
 	;
@@ -1613,7 +1613,7 @@ L136:
 	;
 	v432 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v431))) = uint8(v432)
-	v435 = F_strstr(m, v419, int32(782000))
+	v435 = F_strstr(m, v419, int32(783047))
 	mBase = m.M
 	if v435 == v432 {
 		v486 = v16
@@ -1693,7 +1693,7 @@ L147:
 	goto L3
 L148:
 	;
-	F_errmsg_internal(m, int32(173378), int32(0))
+	F_errmsg_internal(m, int32(173542), int32(0))
 	mBase = m.M
 	v501 = m.ExcPending
 	if v501 != 0 {
@@ -1703,7 +1703,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(520435), int32(473), int32(144564))
+	F_errfinish(m, int32(520876), int32(473), int32(144702))
 	mBase = m.M
 	v508 = m.ExcPending
 	if v508 != 0 {
@@ -1718,7 +1718,7 @@ L150:
 	}
 L151:
 	;
-	F_errmsg_internal(m, int32(173378), int32(0))
+	F_errmsg_internal(m, int32(173542), int32(0))
 	mBase = m.M
 	v518 = m.ExcPending
 	if v518 != 0 {
@@ -1728,7 +1728,7 @@ L151:
 	}
 L152:
 	;
-	F_errfinish(m, int32(520435), int32(484), int32(144564))
+	F_errfinish(m, int32(520876), int32(484), int32(144702))
 	mBase = m.M
 	v525 = m.ExcPending
 	if v525 != 0 {
@@ -1913,7 +1913,7 @@ func F_pgp_get_cipher_code(m *base.Module, l0 int32) int32 {
 	_ = v437
 	var v438 int32
 	_ = v438
-	v9 = int32(182173)
+	v9 = int32(182337)
 	v10 = l0
 	goto L4
 L1:
@@ -2002,14 +2002,14 @@ L15:
 	goto L5
 L16:
 	;
-	v436 = int32(4437584)
+	v436 = int32(4437616)
 	goto L2
 L17:
 	;
 	goto L18
 L18:
 	;
-	v57 = int32(585126)
+	v57 = int32(585572)
 	v58 = l0
 	goto L20
 L19:
@@ -2090,14 +2090,14 @@ L31:
 	goto L21
 L32:
 	;
-	v436 = int32(4437604)
+	v436 = int32(4437636)
 	goto L2
 L33:
 	;
 	goto L34
 L34:
 	;
-	v105 = int32(357642)
+	v105 = int32(357988)
 	v106 = l0
 	goto L36
 L35:
@@ -2178,14 +2178,14 @@ L47:
 	goto L37
 L48:
 	;
-	v436 = int32(4437624)
+	v436 = int32(4437656)
 	goto L2
 L49:
 	;
 	goto L50
 L50:
 	;
-	v153 = int32(339234)
+	v153 = int32(339556)
 	v154 = l0
 	goto L52
 L51:
@@ -2266,14 +2266,14 @@ L63:
 	goto L53
 L64:
 	;
-	v436 = int32(4437644)
+	v436 = int32(4437676)
 	goto L2
 L65:
 	;
 	goto L66
 L66:
 	;
-	v201 = int32(182733)
+	v201 = int32(182897)
 	v202 = l0
 	goto L68
 L67:
@@ -2354,14 +2354,14 @@ L79:
 	goto L69
 L80:
 	;
-	v436 = int32(4437664)
+	v436 = int32(4437696)
 	goto L2
 L81:
 	;
 	goto L82
 L82:
 	;
-	v249 = int32(584251)
+	v249 = int32(584697)
 	v250 = l0
 	goto L84
 L83:
@@ -2442,14 +2442,14 @@ L95:
 	goto L85
 L96:
 	;
-	v436 = int32(4437684)
+	v436 = int32(4437716)
 	goto L2
 L97:
 	;
 	goto L98
 L98:
 	;
-	v297 = int32(589295)
+	v297 = int32(589741)
 	v298 = l0
 	goto L100
 L99:
@@ -2530,14 +2530,14 @@ L111:
 	goto L101
 L112:
 	;
-	v436 = int32(4437704)
+	v436 = int32(4437736)
 	goto L2
 L113:
 	;
 	goto L114
 L114:
 	;
-	v345 = int32(584810)
+	v345 = int32(585256)
 	v346 = l0
 	goto L116
 L115:
@@ -2618,14 +2618,14 @@ L127:
 	goto L117
 L128:
 	;
-	v436 = int32(4437724)
+	v436 = int32(4437756)
 	goto L2
 L129:
 	;
 	goto L130
 L130:
 	;
-	v394 = int32(339243)
+	v394 = int32(339565)
 	v395 = l0
 	goto L132
 L131:
@@ -2707,7 +2707,7 @@ L143:
 	goto L133
 L144:
 	;
-	v436 = int32(4437744)
+	v436 = int32(4437776)
 	goto L2
 }
 func F_pgp_get_cipher_key_size(m *base.Module, l0 int32) int32 {

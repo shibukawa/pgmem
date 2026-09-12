@@ -46,13 +46,13 @@ func F_AtEOXact_Aio(m *base.Module) {
 				if v13 == int32(0) {
 					return
 				} else {
-					F_errmsg_internal(m, int32(269766), int32(0))
+					F_errmsg_internal(m, int32(269958), int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(521469), int32(1206), int32(253735))
+						F_errfinish(m, int32(521910), int32(1206), int32(253927))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -151,7 +151,7 @@ L1:
 	return
 L2:
 	;
-	if v4 == int32(4155580) {
+	if v4 == int32(4155612) {
 		goto L1
 	} else {
 		goto L3
@@ -212,7 +212,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(523306), int32(1290), int32(323405))
+	F_errfinish(m, int32(523752), int32(1290), int32(323693))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -233,7 +233,7 @@ L13:
 	}
 L14:
 	;
-	if v31 != int32(4155580) {
+	if v31 != int32(4155612) {
 		v10 = v31
 		goto L4
 	} else {

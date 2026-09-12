@@ -118,13 +118,13 @@ func F_domainAddNotNullConstraint(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						v26 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l3
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v26
-						F_errmsg(m, int32(124849), v10)
+						F_errmsg(m, int32(124884), v10)
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(519616), int32(3684), int32(97142))
+							F_errfinish(m, int32(520057), int32(3684), int32(97153))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -141,7 +141,7 @@ func F_domainAddNotNullConstraint(m *base.Module, l0 int32, l1 int32, l2 int32, 
 		}
 	} else {
 		v37 = int32(0)
-		v40 = F_ChooseConstraintName(m, l3, v37, int32(317077), l1, v37)
+		v40 = F_ChooseConstraintName(m, l3, v37, int32(317342), l1, v37)
 		mBase = m.M
 		v41 = m.ExcPending
 		if v41 != 0 {
@@ -317,13 +317,13 @@ func F_domain_state_setup(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v60
-							F_errmsg(m, int32(291646), v11)
+							F_errmsg(m, int32(291868), v11)
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518566), int32(96), int32(244600))
+								F_errfinish(m, int32(519007), int32(96), int32(244792))
 								mBase = m.M
 								v70 = m.ExcPending
 								if v70 != 0 {

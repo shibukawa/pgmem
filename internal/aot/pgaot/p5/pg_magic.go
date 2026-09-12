@@ -3,20 +3,20 @@ package p5
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_dict_int(m *base.Module) int32 {
-	return int32(4451660)
+	return int32(4451692)
 }
 func F_Pg_magic_func_latin_and_mic(m *base.Module) int32 {
-	return int32(4431316)
+	return int32(4431348)
 }
 func F_Pg_magic_func_pg_freespacemap(m *base.Module) int32 {
-	return int32(4452408)
+	return int32(4452440)
 }
 func F_Pg_magic_func_tablefunc(m *base.Module) int32 {
-	return int32(4439872)
+	return int32(4439904)
 }
 func F_Pg_magic_func_tsm_system_time(m *base.Module) int32 {
-	return int32(4451916)
+	return int32(4451948)
 }
 func F_Pg_magic_func_utf8_and_johab(m *base.Module) int32 {
-	return int32(4434540)
+	return int32(4434572)
 }

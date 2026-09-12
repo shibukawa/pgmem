@@ -10,7 +10,7 @@ func F_StartupProcTriggerHandler(m *base.Module, l0 int32) {
 	_ = mBase
 	var v6 int32
 	_ = v6
-	*(*int32)(unsafe.Add(mBase, _consts[630])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[632])) = int32(1)
 	F_WakeupRecovery(m)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -61,7 +61,7 @@ func F_begin_startup_progress_phase(m *base.Module) {
 	_ = v67
 	var v69 int32
 	_ = v69
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[631]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[633]))
 	if v5 == int32(0) {
 		return
 	} else {
@@ -72,8 +72,8 @@ func F_begin_startup_progress_phase(m *base.Module) {
 			return
 		} else {
 			v12 = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[632])) = v12
-			v15 = *(*int32)(unsafe.Add(mBase, _consts[631]))
+			*(*int32)(unsafe.Add(mBase, _consts[634])) = v12
+			v15 = *(*int32)(unsafe.Add(mBase, _consts[633]))
 			if v15 == v12 {
 				return
 			} else {
@@ -87,9 +87,9 @@ func F_begin_startup_progress_phase(m *base.Module) {
 				v28 = int64(*(*int32)(unsafe.Add(mBase, uint32(v24)+8)))
 				m.G0 = v24 + v23
 				v36 = v28 + v27*int64(1000000) - int64(946684800000000)
-				*(*int64)(unsafe.Add(mBase, _consts[633])) = v36
-				v39 = *(*int32)(unsafe.Add(mBase, _consts[631]))
-				*(*int32)(unsafe.Add(mBase, _consts[634])) = int32(0)
+				*(*int64)(unsafe.Add(mBase, _consts[635])) = v36
+				v39 = *(*int32)(unsafe.Add(mBase, _consts[633]))
+				*(*int32)(unsafe.Add(mBase, _consts[636])) = int32(0)
 				v51 = m.G0
 				v52 = int32(16)
 				v53 = v51 - v52

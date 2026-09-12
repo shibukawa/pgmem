@@ -512,7 +512,7 @@ func F_AtEOXact_GUC(m *base.Module, l0 int32, l1 int32) {
 	_ = v1324
 	var v1341 int32
 	_ = v1341
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1281]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1282]))
 	if v37 != 0 {
 		goto L1
 	} else {
@@ -2431,7 +2431,7 @@ L274:
 	}
 L275:
 	;
-	v1184 = *(*int32)(unsafe.Add(mBase, _consts[1276]))
+	v1184 = *(*int32)(unsafe.Add(mBase, _consts[1277]))
 	if v1184 != 0 {
 		goto L277
 	} else {
@@ -2443,11 +2443,11 @@ L276:
 	*(*int32)(unsafe.Add(mBase, uint32(v93))) = v1192
 	*(*int32)(unsafe.Add(mBase, uint32(v95))) = v1191
 	*(*int32)(unsafe.Add(mBase, uint32(v1191)+4)) = v95
-	*(*int32)(unsafe.Add(mBase, _consts[1277])) = v95
+	*(*int32)(unsafe.Add(mBase, _consts[1278])) = v95
 	goto L271
 L277:
 	;
-	v1186 = *(*int32)(unsafe.Add(mBase, _consts[1277]))
+	v1186 = *(*int32)(unsafe.Add(mBase, _consts[1278]))
 	v1191 = v1186
 	goto L276
 L278:
@@ -2456,7 +2456,7 @@ L278:
 L279:
 	;
 	v1188 = int32(4560124)
-	*(*int32)(unsafe.Add(mBase, _consts[1276])) = v1188
+	*(*int32)(unsafe.Add(mBase, _consts[1277])) = v1188
 	v1191 = v1188
 	goto L276
 L280:
@@ -2537,9 +2537,9 @@ L290:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v85))) = v1258 | int32(4)
 	v1264 = int32(4560132)
-	v1265 = *(*int32)(unsafe.Add(mBase, _consts[1279]))
+	v1265 = *(*int32)(unsafe.Add(mBase, _consts[1280]))
 	*(*int32)(unsafe.Add(mBase, uint32(v83))) = v1265
-	*(*int32)(unsafe.Add(mBase, _consts[1279])) = v83
+	*(*int32)(unsafe.Add(mBase, _consts[1280])) = v83
 	v1288 = v1252
 	goto L13
 L291:
@@ -2569,7 +2569,7 @@ func F_AtEOXact_MultiXact(m *base.Module) {
 	var v20 int32
 	_ = v20
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[73]))
-	v3 = int32(4164912)
+	v3 = int32(4164944)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[74]))
 	v5 = int32(2)
 	v8 = int32(0)
@@ -2577,7 +2577,7 @@ func F_AtEOXact_MultiXact(m *base.Module) {
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[75]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[74]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11+v13<<(uint(v5)%32)))) = v8
-	v20 = int32(4155552)
+	v20 = int32(4155584)
 	*(*int32)(unsafe.Add(mBase, _consts[76])) = v20
 	*(*int32)(unsafe.Add(mBase, _consts[77])) = v20
 	*(*int32)(unsafe.Add(mBase, _consts[78])) = v8

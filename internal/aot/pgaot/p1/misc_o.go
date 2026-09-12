@@ -545,7 +545,7 @@ func F_oauth_get_mechanisms(m *base.Module, l0 int32, l1 int32) {
 	_ = v5
 	var v8 int32
 	_ = v8
-	F_appendStringInfoString(m, l1, int32(552505))
+	F_appendStringInfoString(m, l1, int32(552951))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return
@@ -873,7 +873,7 @@ L23:
 L24:
 	;
 	v75 = int32(1)
-	v76 = int32(247965)
+	v76 = int32(248157)
 	goto L22
 L25:
 	;
@@ -967,7 +967,7 @@ L38:
 	}
 L39:
 	;
-	v145 = v103 + int32(802736)
+	v145 = v103 + int32(803776)
 	goto L37
 L40:
 	;
@@ -993,7 +993,7 @@ L43:
 	}
 L44:
 	;
-	v145 = v113 + int32(802736)
+	v145 = v113 + int32(803776)
 	goto L37
 L45:
 	;
@@ -1009,7 +1009,7 @@ L46:
 	}
 L47:
 	;
-	v145 = v123 + int32(802736)
+	v145 = v123 + int32(803776)
 	goto L37
 L48:
 	;
@@ -1025,7 +1025,7 @@ L49:
 	}
 L50:
 	;
-	v145 = v133 + int32(802736)
+	v145 = v133 + int32(803776)
 	goto L37
 L51:
 	;
@@ -1044,7 +1044,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(518428), int32(2777), int32(530636))
+	F_errfinish(m, int32(518869), int32(2777), int32(531082))
 	mBase = m.M
 	v173 = m.ExcPending
 	if v173 != 0 {

@@ -391,7 +391,7 @@ L40:
 func F_GUC_check_errcode(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[427])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[429])) = l0
 	return
 }
 func F_InitializeGUCOptions(m *base.Module) {
@@ -460,7 +460,7 @@ func F_InitializeGUCOptions(m *base.Module) {
 	v3 = m.G0
 	v5 = v3 - int32(32)
 	m.G0 = v5
-	v9 = F_pg_tzset(m, int32(547214))
+	v9 = F_pg_tzset(m, int32(547660))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -473,8 +473,8 @@ L1:
 	return
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1210])) = v9
-	*(*int32)(unsafe.Add(mBase, _consts[1068])) = v9
+	*(*int32)(unsafe.Add(mBase, _consts[1212])) = v9
+	*(*int32)(unsafe.Add(mBase, _consts[1070])) = v9
 	F_build_guc_variables(m)
 	mBase = m.M
 	v15 = m.ExcPending
@@ -485,7 +485,7 @@ L2:
 	}
 L3:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[1211]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[382]))
 	F_hash_seq_init(m, v5+int32(12), v19)
 	mBase = m.M
 	v21 = m.ExcPending
@@ -521,10 +521,10 @@ L7:
 L8:
 	;
 	v38 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[1212])) = uint8(v38)
+	*(*uint8)(unsafe.Add(mBase, _consts[1213])) = uint8(v38)
 	v43 = int32(1)
 	v44 = int32(10)
-	v50 = F_set_config_with_handle(m, int32(275483), v38, int32(462917), v43, v44, v44, v38, v43, v38, v38)
+	v50 = F_set_config_with_handle(m, int32(275705), v38, int32(463358), v43, v44, v44, v38, v43, v38, v38)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -572,7 +572,7 @@ L14:
 	v53 = int32(0)
 	v55 = int32(1)
 	v56 = int32(10)
-	v62 = F_set_config_with_handle(m, int32(19909), v53, int32(253647), v55, v56, v56, v53, v55, v53, v53)
+	v62 = F_set_config_with_handle(m, int32(19909), v53, int32(253839), v55, v56, v56, v53, v55, v53, v53)
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -585,7 +585,7 @@ L15:
 	v65 = int32(0)
 	v67 = int32(1)
 	v68 = int32(10)
-	v74 = F_set_config_with_handle(m, int32(415017), v65, int32(253647), v67, v68, v68, v65, v67, v65, v65)
+	v74 = F_set_config_with_handle(m, int32(415438), v65, int32(253839), v67, v68, v68, v65, v67, v65, v65)
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -872,7 +872,7 @@ func F_guc_restore_error_context_callback(m *base.Module, l0 int32) {
 		} else {
 			v10 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
 			*(*int64)(unsafe.Add(mBase, uint32(v5))) = v10
-			F_errcontext_msg(m, int32(737934), v5)
+			F_errcontext_msg(m, int32(738981), v5)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {

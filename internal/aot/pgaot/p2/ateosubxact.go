@@ -853,13 +853,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						} else {
 							v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-							F_errmsg_internal(m, int32(93829), v9)
+							F_errmsg_internal(m, int32(93840), v9)
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(525101), int32(3475), int32(244913))
+								F_errfinish(m, int32(525547), int32(3475), int32(245105))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -1109,13 +1109,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					} else {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-						F_errmsg_internal(m, int32(93829), v9)
+						F_errmsg_internal(m, int32(93840), v9)
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(525101), int32(3475), int32(244913))
+							F_errfinish(m, int32(525547), int32(3475), int32(245105))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {

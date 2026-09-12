@@ -47,13 +47,13 @@ func F_IvfflatCheckMemoryUsage(m *base.Module, l0 int32) {
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[32]))
 				v27 = base.I32_div_s(v25, int32(1024))
 				*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v27
-				F_errmsg(m, int32(572513), v5)
+				F_errmsg(m, int32(572959), v5)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(518927), int32(128), int32(425503))
+					F_errfinish(m, int32(519368), int32(128), int32(425924))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -382,7 +382,7 @@ L33:
 	goto L8
 L34:
 	;
-	F_errmsg_internal(m, int32(476713), int32(0))
+	F_errmsg_internal(m, int32(477154), int32(0))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -392,7 +392,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(343466), int32(326), int32(116085))
+	F_errfinish(m, int32(343788), int32(326), int32(116096))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -407,7 +407,7 @@ L36:
 	}
 L37:
 	;
-	F_errmsg_internal(m, int32(476713), int32(0))
+	F_errmsg_internal(m, int32(477154), int32(0))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -417,7 +417,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(343466), int32(337), int32(115812))
+	F_errfinish(m, int32(343788), int32(337), int32(115823))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {
@@ -432,7 +432,7 @@ L39:
 	}
 L40:
 	;
-	F_errmsg_internal(m, int32(476713), int32(0))
+	F_errmsg_internal(m, int32(477154), int32(0))
 	mBase = m.M
 	v122 = m.ExcPending
 	if v122 != 0 {
@@ -442,7 +442,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(343466), int32(326), int32(116085))
+	F_errfinish(m, int32(343788), int32(326), int32(116096))
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {

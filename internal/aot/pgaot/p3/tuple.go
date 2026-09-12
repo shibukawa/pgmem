@@ -1907,7 +1907,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 	_ = v85
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v8 == int32(0) {
-		F_errstart_cold(m, int32(21), int32(584281))
+		F_errstart_cold(m, int32(21), int32(584727))
 		mBase = m.M
 		v49 = m.ExcPending
 		if v49 != 0 {
@@ -1919,13 +1919,13 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 			if v52 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(114111), int32(0))
+				F_errmsg(m, int32(114122), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(526193), int32(3681), int32(383255))
+					F_errfinish(m, int32(526639), int32(3681), int32(383676))
 					mBase = m.M
 					v64 = m.ExcPending
 					if v64 != 0 {
@@ -1941,7 +1941,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 	} else {
 		v11 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 		if v11 != int32(383) {
-			F_errstart_cold(m, int32(21), int32(584281))
+			F_errstart_cold(m, int32(21), int32(584727))
 			mBase = m.M
 			v49 = m.ExcPending
 			if v49 != 0 {
@@ -1953,13 +1953,13 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 				if v52 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(114111), int32(0))
+					F_errmsg(m, int32(114122), int32(0))
 					mBase = m.M
 					v57 = m.ExcPending
 					if v57 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(526193), int32(3681), int32(383255))
+						F_errfinish(m, int32(526639), int32(3681), int32(383676))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -1975,7 +1975,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 		} else {
 			v14 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
 			if v14&int32(2) == int32(0) {
-				F_errstart_cold(m, int32(21), int32(584281))
+				F_errstart_cold(m, int32(21), int32(584727))
 				mBase = m.M
 				v70 = m.ExcPending
 				if v70 != 0 {
@@ -1993,7 +1993,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 						if v78 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(526193), int32(3687), int32(383255))
+							F_errfinish(m, int32(526639), int32(3687), int32(383676))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -2009,7 +2009,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
 				if v19 == int32(0) {
-					F_errstart_cold(m, int32(21), int32(584281))
+					F_errstart_cold(m, int32(21), int32(584727))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -2027,7 +2027,7 @@ func F_exec_init_tuple_store(m *base.Module, l0 int32) {
 							if v78 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(526193), int32(3687), int32(383255))
+								F_errfinish(m, int32(526639), int32(3687), int32(383676))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -2292,7 +2292,7 @@ L17:
 L18:
 	;
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(l9)))
-	v62 = F_pstrdup(m, int32(793540))
+	v62 = F_pstrdup(m, int32(794587))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {

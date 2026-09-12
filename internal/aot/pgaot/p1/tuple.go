@@ -581,7 +581,7 @@ func F_TupleDescInitEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v106 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(525956), int32(896), int32(12725))
+					F_errfinish(m, int32(526402), int32(896), int32(12725))
 					mBase = m.M
 					v111 = m.ExcPending
 					if v111 != 0 {
@@ -1389,7 +1389,7 @@ L25:
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(v62)+56))
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+12)) = v108
 	v110 = *(*int32)(unsafe.Add(mBase, uint32(v31)+44))
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[664]))
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	if v112 != 0 {
 		goto L26
 	} else {
@@ -1401,7 +1401,7 @@ L26:
 	goto L28
 L27:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v114 = *(*int32)(unsafe.Add(mBase, _consts[667]))
 	if v114 == int32(0) {
 		goto L29
 	} else {
@@ -1436,7 +1436,7 @@ L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+56)) = v127
 	*(*int64)(unsafe.Add(mBase, uint32(v106)+32)) = int64(343597383684)
-	v137 = F_hash_create(m, int32(419212), int32(64), v104+int32(-48), int32(1064))
+	v137 = F_hash_create(m, int32(419633), int32(64), v104+int32(-48), int32(1064))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -1446,12 +1446,12 @@ L31:
 	}
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[665])) = v124
+	*(*int32)(unsafe.Add(mBase, _consts[667])) = v124
 	v127 = v124
 	goto L31
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[664])) = v137
+	*(*int32)(unsafe.Add(mBase, _consts[666])) = v137
 	F_CacheRegisterRelcacheCallback(m, int32(1016))
 	mBase = m.M
 	v142 = m.ExcPending
@@ -1462,7 +1462,7 @@ L33:
 	}
 L34:
 	;
-	v144 = *(*int32)(unsafe.Add(mBase, _consts[664]))
+	v144 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	v146 = v144
 	goto L28
 L35:
@@ -1497,7 +1497,7 @@ L38:
 	;
 	v177 = int32(4562096)
 	v178 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v181 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v181 = *(*int32)(unsafe.Add(mBase, _consts[667]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v181
 	v184 = v152 + int32(52)
 	v185 = *(*int32)(unsafe.Add(mBase, uint32(v152)+52))
@@ -1523,7 +1523,7 @@ L41:
 	;
 	v163 = int32(4562096)
 	v164 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v167 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v167 = *(*int32)(unsafe.Add(mBase, _consts[667]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v167
 	v172 = F__emscripten_memset_bulkmem(m, v152, base.I32_extend8_s(int32(0)), int32(80))
 	mBase = m.M

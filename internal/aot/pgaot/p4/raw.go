@@ -637,13 +637,13 @@ func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
 							if v27 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(240379), int32(0))
+								F_errmsg(m, int32(240571), int32(0))
 								mBase = m.M
 								v33 = m.ExcPending
 								if v33 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(525195), int32(113), int32(575386))
+									F_errfinish(m, int32(525641), int32(113), int32(575832))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {

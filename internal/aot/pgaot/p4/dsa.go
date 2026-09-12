@@ -49,13 +49,13 @@ func F_dsa_attach(m *base.Module, l0 int32) int32 {
 				if v15 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(534127), int32(0))
+					F_errmsg(m, int32(534573), int32(0))
 					mBase = m.M
 					v19 = m.ExcPending
 					if v19 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(526668), int32(523), int32(342966))
+						F_errfinish(m, int32(527114), int32(523), int32(343288))
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {

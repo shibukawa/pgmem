@@ -387,7 +387,7 @@ func F_ExecutorStart(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	}
-	v44 = *(*int32)(unsafe.Add(mBase, _consts[335]))
+	v44 = *(*int32)(unsafe.Add(mBase, _consts[336]))
 	if v44 != 0 {
 		m.T0[v44].(func(*base.Module, int32, int32))(m, l0, l1)
 		mBase = m.M

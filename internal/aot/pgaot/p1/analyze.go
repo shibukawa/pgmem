@@ -853,7 +853,7 @@ L31:
 	;
 	v102 = int32(*(*int8)(unsafe.Add(mBase, uint32(l1)+24)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v102
-	F_errmsg(m, int32(510625), v14)
+	F_errmsg(m, int32(511066), v14)
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -863,7 +863,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(520905), int32(94), int32(254624))
+	F_errfinish(m, int32(521346), int32(94), int32(254816))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -1238,7 +1238,7 @@ func F_serializeAnalyzeStartup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	default:
 	}
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v19 = F_AllocSetContextCreateInternal(m, v14, int32(362406), int32(0), int32(8192), int32(8388608))
+	v19 = F_AllocSetContextCreateInternal(m, v14, int32(362777), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {

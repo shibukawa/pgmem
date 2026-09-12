@@ -38,7 +38,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v40
 	var v42 int32
 	_ = v42
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 	if v9 == int32(0) {
 		return
 	} else {
@@ -71,7 +71,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v33
-					v37 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+					v37 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 					v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+28))
 					v39 = F_lappend(m, v38, v19)
 					mBase = m.M
@@ -79,7 +79,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 					if v40 != 0 {
 						return
 					} else {
-						v42 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+						v42 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 						*(*int32)(unsafe.Add(mBase, uint32(v42)+28)) = v39
 						*(*int32)(unsafe.Add(mBase, _consts[10])) = v14
 						return
@@ -130,7 +130,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v46
 	var v48 int32
 	_ = v48
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 	if v9 == int32(0) {
 		return
 	} else {
@@ -175,7 +175,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v39
-						v43 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+						v43 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 						v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+28))
 						v45 = F_lappend(m, v44, v19)
 						mBase = m.M
@@ -183,7 +183,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 						if v46 != 0 {
 							return
 						} else {
-							v48 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+							v48 = *(*int32)(unsafe.Add(mBase, _consts[283]))
 							*(*int32)(unsafe.Add(mBase, uint32(v48)+28)) = v45
 							*(*int32)(unsafe.Add(mBase, _consts[10])) = v14
 							return

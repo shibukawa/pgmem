@@ -732,7 +732,7 @@ func F_get_call_expr_argtype(m *base.Module, l0 int32, l1 int32) int32 {
 					v47 = v3
 					return v47
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(v9<<(uint(int32(2))%32))+uint32(_consts[1359])))
+					v24 = *(*int32)(unsafe.Add(mBase, uint32(v9<<(uint(int32(2))%32))+uint32(_consts[1355])))
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0+v24)))
 					if v26 == int32(0) {
 						v47 = v3

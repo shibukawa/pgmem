@@ -48,7 +48,7 @@ func F_LookupNamespaceNoError(m *base.Module, l0 int32) int32 {
 	_ = v53
 	var v55 int32
 	_ = v55
-	v2 = int32(247965)
+	v2 = int32(248157)
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, _consts[211])))
 	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v6 == int32(0) {
@@ -755,7 +755,7 @@ L22:
 	;
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
 	v71 = *(*int32)(unsafe.Add(mBase, uint32(v67+v58<<(uint(int32(2))%32))))
-	v72 = int32(229152)
+	v72 = int32(229344)
 	v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[210])))
 	v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
 	if v76 == int32(0) {
@@ -848,7 +848,7 @@ L34:
 	goto L35
 L35:
 	;
-	v126 = int32(247965)
+	v126 = int32(248157)
 	v129 = int32(*(*uint8)(unsafe.Add(mBase, _consts[211])))
 	v130 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
 	if v130 == int32(0) {
@@ -1316,7 +1316,7 @@ L99:
 	}
 L100:
 	;
-	F_errfinish(m, int32(525427), int32(4139), int32(338606))
+	F_errfinish(m, int32(525873), int32(4139), int32(338928))
 	mBase = m.M
 	v317 = m.ExcPending
 	if v317 != 0 {
@@ -1634,7 +1634,7 @@ L146:
 	*(*int32)(unsafe.Add(mBase, _consts[213])) = v468
 	*(*int32)(unsafe.Add(mBase, _consts[214])) = v479
 	*(*uint8)(unsafe.Add(mBase, _consts[216])) = uint8(v482)
-	v492 = int32(4163928)
+	v492 = int32(4163960)
 	v494 = *(*int64)(unsafe.Add(mBase, _consts[217]))
 	*(*int64)(unsafe.Add(mBase, _consts[217])) = v494 + int64(1)
 	v499 = int32(0)

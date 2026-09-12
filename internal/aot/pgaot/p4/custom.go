@@ -5,7 +5,7 @@ import (
 	"unsafe"
 )
 
-func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64) {
+func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64, l7 int32) {
 	mBase := m.M
 	_ = mBase
 	var v12 int32
@@ -16,7 +16,7 @@ func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v17
 	var v26 int32
 	_ = v26
-	v12 = F_init_custom_variable(m, l0, l1, l2, int32(6), int32(0), int32(2), int32(152))
+	v12 = F_init_custom_variable(m, l0, l1, l2, l7, int32(0), int32(2), int32(152))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

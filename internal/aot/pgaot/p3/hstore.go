@@ -157,7 +157,7 @@ L3:
 	goto L4
 L4:
 	;
-	F_pg_qsort(m, l0, l1, int32(20), int32(7475))
+	F_pg_qsort(m, l0, l1, int32(20), int32(7477))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -1207,7 +1207,7 @@ L81:
 	}
 L82:
 	;
-	F_errmsg_internal(m, int32(451335), int32(0))
+	F_errmsg_internal(m, int32(451776), int32(0))
 	mBase = m.M
 	v330 = m.ExcPending
 	if v330 != 0 {
@@ -1217,7 +1217,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(518167), int32(312), int32(435292))
+	F_errfinish(m, int32(518608), int32(312), int32(435713))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -1309,7 +1309,7 @@ L97:
 	goto L10
 L98:
 	;
-	F_errmsg_internal(m, int32(445490), int32(0))
+	F_errmsg_internal(m, int32(445911), int32(0))
 	mBase = m.M
 	v425 = m.ExcPending
 	if v425 != 0 {
@@ -1319,7 +1319,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(518167), int32(274), int32(435292))
+	F_errfinish(m, int32(518608), int32(274), int32(435713))
 	mBase = m.M
 	v432 = m.ExcPending
 	if v432 != 0 {
@@ -3535,13 +3535,13 @@ func F_hstore_each(m *base.Module, l0 int32) int32 {
 							if v165 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(386471), int32(0))
+								F_errmsg_internal(m, int32(386892), int32(0))
 								mBase = m.M
 								v171 = m.ExcPending
 								if v171 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(521172), int32(869), int32(319987))
+									F_errfinish(m, int32(521613), int32(869), int32(320252))
 									mBase = m.M
 									v178 = m.ExcPending
 									if v178 != 0 {
@@ -5821,7 +5821,7 @@ L160:
 	}
 L161:
 	;
-	F_errmsg(m, int32(318076), int32(0))
+	F_errmsg(m, int32(318341), int32(0))
 	mBase = m.M
 	v642 = m.ExcPending
 	if v642 != 0 {
@@ -5831,7 +5831,7 @@ L161:
 	}
 L162:
 	;
-	F_errfinish(m, int32(520231), int32(156), int32(294201))
+	F_errfinish(m, int32(520672), int32(156), int32(294466))
 	mBase = m.M
 	v649 = m.ExcPending
 	if v649 != 0 {

@@ -277,13 +277,13 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 						v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v110 + int32(4)
-						F_errmsg_internal(m, int32(747944), v11)
+						F_errmsg_internal(m, int32(748991), v11)
 						mBase = m.M
 						v116 = m.ExcPending
 						if v116 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(525180), int32(571), int32(429641))
+							F_errfinish(m, int32(525626), int32(571), int32(430062))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -432,13 +432,13 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 					v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = v110 + int32(4)
-					F_errmsg_internal(m, int32(747944), v11)
+					F_errmsg_internal(m, int32(748991), v11)
 					mBase = m.M
 					v116 = m.ExcPending
 					if v116 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(525180), int32(571), int32(429641))
+						F_errfinish(m, int32(525626), int32(571), int32(430062))
 						mBase = m.M
 						v121 = m.ExcPending
 						if v121 != 0 {

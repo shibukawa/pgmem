@@ -144,13 +144,13 @@ func F_GetForeignServerByName(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-					F_errmsg(m, int32(76982), v7)
+					F_errmsg(m, int32(76993), v7)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(522100), int32(714), int32(455751))
+						F_errfinish(m, int32(522546), int32(714), int32(456192))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {
@@ -214,7 +214,7 @@ func F_GetForeignServerIdByRelId(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522100), int32(364), int32(488296))
+					F_errfinish(m, int32(522546), int32(364), int32(488737))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

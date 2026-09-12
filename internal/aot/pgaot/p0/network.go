@@ -1000,28 +1000,28 @@ L28:
 	}
 L29:
 	;
-	m.Env.X__assert_fail(m, int32(581933), int32(521587), int32(150), int32(585891))
+	m.Env.X__assert_fail(m, int32(582379), int32(522028), int32(150), int32(586337))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L30:
 	;
-	m.Env.X__assert_fail(m, int32(585756), int32(521587), int32(121), int32(585891))
+	m.Env.X__assert_fail(m, int32(586202), int32(522028), int32(121), int32(586337))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L31:
 	;
-	m.Env.X__assert_fail(m, int32(581933), int32(521587), int32(301), int32(585872))
+	m.Env.X__assert_fail(m, int32(582379), int32(522028), int32(301), int32(586318))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L32:
 	;
-	m.Env.X__assert_fail(m, int32(581933), int32(521587), int32(276), int32(585872))
+	m.Env.X__assert_fail(m, int32(582379), int32(522028), int32(276), int32(586318))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
@@ -2190,7 +2190,7 @@ L236:
 	}
 L237:
 	;
-	m.Env.X__assert_fail(m, int32(581933), int32(521587), int32(181), int32(585891))
+	m.Env.X__assert_fail(m, int32(582379), int32(522028), int32(181), int32(586337))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
@@ -2672,16 +2672,16 @@ L314:
 	}
 L315:
 	;
-	v1363 = int32(241031)
+	v1363 = int32(241223)
 	goto L317
 L316:
 	;
-	v1363 = int32(114873)
+	v1363 = int32(114884)
 	goto L317
 L317:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v1363
-	F_errmsg(m, int32(761048), v21)
+	F_errmsg(m, int32(762095), v21)
 	mBase = m.M
 	v1367 = m.ExcPending
 	if v1367 != 0 {
@@ -2691,7 +2691,7 @@ L317:
 	}
 L318:
 	;
-	F_errsave_finish(m, l2, int32(523451), int32(100), int32(293509))
+	F_errsave_finish(m, l2, int32(523897), int32(100), int32(293774))
 	mBase = m.M
 	v1372 = m.ExcPending
 	if v1372 != 0 {
@@ -2834,7 +2834,7 @@ L338:
 L339:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+16)) = l0
-	F_errmsg(m, int32(762656), v21+int32(16))
+	F_errmsg(m, int32(763703), v21+int32(16))
 	mBase = m.M
 	v1452 = m.ExcPending
 	if v1452 != 0 {
@@ -2844,7 +2844,7 @@ L339:
 	}
 L340:
 	;
-	F_errdetail(m, int32(653524), int32(0))
+	F_errdetail(m, int32(654229), int32(0))
 	mBase = m.M
 	v1456 = m.ExcPending
 	if v1456 != 0 {
@@ -2854,7 +2854,7 @@ L340:
 	}
 L341:
 	;
-	F_errsave_finish(m, l2, int32(523451), int32(111), int32(293509))
+	F_errsave_finish(m, l2, int32(523897), int32(111), int32(293774))
 	mBase = m.M
 	v1461 = m.ExcPending
 	if v1461 != 0 {
@@ -3783,13 +3783,13 @@ func F_network_show(m *base.Module, l0 int32) int32 {
 					if v84 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(309100), int32(0))
+						F_errmsg(m, int32(309365), int32(0))
 						mBase = m.M
 						v88 = m.ExcPending
 						if v88 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523451), int32(1174), int32(33313))
+							F_errfinish(m, int32(523897), int32(1174), int32(33313))
 							mBase = m.M
 							v93 = m.ExcPending
 							if v93 != 0 {

@@ -1441,7 +1441,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v30
-	F_TupleDescInitEntry(m, v30, int32(1), int32(395579), int32(25), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(1), int32(396000), int32(25), int32(-1), int32(0))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -1451,7 +1451,7 @@ L7:
 	}
 L8:
 	;
-	F_TupleDescInitEntry(m, v30, int32(2), int32(147989), int32(1005), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(2), int32(148127), int32(1005), int32(-1), int32(0))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -1461,7 +1461,7 @@ L8:
 	}
 L9:
 	;
-	F_TupleDescInitEntry(m, v30, int32(3), int32(132450), int32(1009), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(3), int32(132520), int32(1009), int32(-1), int32(0))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -1709,7 +1709,7 @@ L37:
 	goto L14
 L38:
 	;
-	F_errmsg_internal(m, int32(386471), int32(0))
+	F_errmsg_internal(m, int32(386892), int32(0))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -1719,7 +1719,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(521148), int32(653), int32(83517))
+	F_errfinish(m, int32(521589), int32(653), int32(83528))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {

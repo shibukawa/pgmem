@@ -36,22 +36,22 @@ func F_IvfflatInit(m *base.Module) {
 	if v4 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1474])) = v3
-		F_add_int_reloption(m, v3, int32(125873), int32(125854), int32(100), int32(1), int32(32768))
+		*(*int32)(unsafe.Add(mBase, _consts[1473])) = v3
+		F_add_int_reloption(m, v3, int32(125908), int32(125889), int32(100), int32(1), int32(32768))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return
 		} else {
 			v17 = int32(1)
-			F_DefineCustomIntVariable(m, int32(182692), int32(182707), int32(612890), int32(4735084), v17, v17, int32(32768), int32(6), int32(0))
+			F_DefineCustomIntVariable(m, int32(182856), int32(182871), int32(613387), int32(4735124), v17, v17, int32(32768), int32(6), int32(0))
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return
 			} else {
 				v26 = int32(0)
-				F_DefineCustomEnumVariable(m, int32(298905), int32(159974), v26, int32(4735088), v26, int32(4120912), int32(6))
+				F_DefineCustomEnumVariable(m, int32(299170), int32(160112), v26, int32(4735128), v26, int32(4120944), int32(6))
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
@@ -59,13 +59,13 @@ func F_IvfflatInit(m *base.Module) {
 				} else {
 					v35 = int32(0)
 					v37 = int32(32768)
-					F_DefineCustomIntVariable(m, int32(182673), int32(159867), v35, int32(4735092), v37, int32(1), v37, int32(6), v35)
+					F_DefineCustomIntVariable(m, int32(182837), int32(160005), v35, int32(4735132), v37, int32(1), v37, int32(6), v35)
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
 						return
 					} else {
-						F_MarkGUCPrefixReserved(m, int32(120149))
+						F_MarkGUCPrefixReserved(m, int32(120184))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {
@@ -235,8 +235,8 @@ func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	}
 }
 func F_ivfflat_bit_support(m *base.Module, l0 int32) int32 {
-	return int32(4121040)
+	return int32(4121072)
 }
 func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(4121016)
+	return int32(4121048)
 }

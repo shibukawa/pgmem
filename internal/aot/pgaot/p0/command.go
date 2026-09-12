@@ -75,13 +75,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 				if v67 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(273881), int32(0))
+					F_errmsg(m, int32(274103), int32(0))
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(518151), int32(1118), int32(102621))
+						F_errfinish(m, int32(518592), int32(1118), int32(102632))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -109,13 +109,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 					if v67 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(273881), int32(0))
+						F_errmsg(m, int32(274103), int32(0))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518151), int32(1118), int32(102621))
+							F_errfinish(m, int32(518592), int32(1118), int32(102632))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {
@@ -143,13 +143,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 						if v67 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(273881), int32(0))
+							F_errmsg(m, int32(274103), int32(0))
 							mBase = m.M
 							v71 = m.ExcPending
 							if v71 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(518151), int32(1118), int32(102621))
+								F_errfinish(m, int32(518592), int32(1118), int32(102632))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -181,13 +181,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 							if v85 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(271007), int32(0))
+								F_errmsg(m, int32(271199), int32(0))
 								mBase = m.M
 								v89 = m.ExcPending
 								if v89 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(518151), int32(1126), int32(102621))
+									F_errfinish(m, int32(518592), int32(1126), int32(102632))
 									mBase = m.M
 									v94 = m.ExcPending
 									if v94 != 0 {

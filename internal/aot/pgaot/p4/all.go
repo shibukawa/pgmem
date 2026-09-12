@@ -264,7 +264,7 @@ func F_ResetAllOptions(m *base.Module) {
 	_ = v394
 	var v395 int32
 	_ = v395
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[433]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[1438]))
 	if v12 == int32(0) {
 		goto L1
 	} else {
@@ -1174,7 +1174,7 @@ L132:
 	}
 L133:
 	;
-	v345 = *(*int32)(unsafe.Add(mBase, _consts[433]))
+	v345 = *(*int32)(unsafe.Add(mBase, _consts[1438]))
 	if v345 != 0 {
 		goto L135
 	} else {
@@ -1186,11 +1186,11 @@ L134:
 	v354 = int32(4560124)
 	*(*int32)(unsafe.Add(mBase, uint32(v28))) = v354
 	*(*int32)(unsafe.Add(mBase, uint32(v352)+4)) = v24
-	*(*int32)(unsafe.Add(mBase, _consts[1441])) = v24
+	*(*int32)(unsafe.Add(mBase, _consts[1439])) = v24
 	goto L129
 L135:
 	;
-	v347 = *(*int32)(unsafe.Add(mBase, _consts[1441]))
+	v347 = *(*int32)(unsafe.Add(mBase, _consts[1439]))
 	v352 = v347
 	goto L134
 L136:
@@ -1199,7 +1199,7 @@ L136:
 L137:
 	;
 	v349 = int32(4560124)
-	*(*int32)(unsafe.Add(mBase, _consts[433])) = v349
+	*(*int32)(unsafe.Add(mBase, _consts[1438])) = v349
 	v352 = v349
 	goto L134
 L138:
@@ -1224,9 +1224,9 @@ L140:
 	*(*int32)(unsafe.Add(mBase, uint32(v385))) = v386 | int32(4)
 	v393 = v24 + int32(12)
 	v394 = int32(4560132)
-	v395 = *(*int32)(unsafe.Add(mBase, _consts[1442]))
+	v395 = *(*int32)(unsafe.Add(mBase, _consts[1440]))
 	*(*int32)(unsafe.Add(mBase, uint32(v393))) = v395
-	*(*int32)(unsafe.Add(mBase, _consts[1442])) = v393
+	*(*int32)(unsafe.Add(mBase, _consts[1440])) = v393
 	goto L6
 L141:
 	;

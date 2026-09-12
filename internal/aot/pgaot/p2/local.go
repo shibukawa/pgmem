@@ -98,7 +98,7 @@ func F_PinLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v37 + v38
 	v42 = *(*int32)(unsafe.Add(mBase, _consts[261]))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_ResourceOwnerRemember(m, v42, v43+v38, int32(1664464))
+	F_ResourceOwnerRemember(m, v42, v43+v38, int32(1665504))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -278,7 +278,7 @@ L18:
 L19:
 	;
 	v48 = *(*int32)(unsafe.Add(mBase, _consts[808]))
-	F_s_lock(m, v48, int32(523511), int32(1495), int32(333776))
+	F_s_lock(m, v48, int32(523957), int32(1495), int32(334085))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -331,7 +331,7 @@ L26:
 	}
 L27:
 	;
-	F_errmsg_internal(m, int32(467031), int32(0))
+	F_errmsg_internal(m, int32(467472), int32(0))
 	mBase = m.M
 	v87 = m.ExcPending
 	if v87 != 0 {
@@ -341,7 +341,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(523511), int32(1505), int32(333776))
+	F_errfinish(m, int32(523957), int32(1505), int32(334085))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {

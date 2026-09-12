@@ -12,9 +12,9 @@ func F_AtEOXact_ComboCid(m *base.Module) {
 	_ = v2
 	v2 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[70])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[1254])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[1256])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[1253])) = v2
 	*(*int32)(unsafe.Add(mBase, _consts[1255])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[1254])) = v2
 	return
 }
 func F_AtEOXact_Inval(m *base.Module, l0 int32) {

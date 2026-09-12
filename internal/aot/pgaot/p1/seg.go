@@ -151,13 +151,13 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 				if v17 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(310453), int32(0))
+					F_errmsg_internal(m, int32(310718), int32(0))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(330407), int32(104), int32(106807))
+						F_errfinish(m, int32(330716), int32(104), int32(106818))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
@@ -180,13 +180,13 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 		if v17 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(310453), int32(0))
+			F_errmsg_internal(m, int32(310718), int32(0))
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(330407), int32(104), int32(106807))
+				F_errfinish(m, int32(330716), int32(104), int32(106818))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {

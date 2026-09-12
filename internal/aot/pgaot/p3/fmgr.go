@@ -317,7 +317,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(526066), int32(763), int32(221106))
+	F_errfinish(m, int32(526512), int32(763), int32(221298))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -343,7 +343,7 @@ L34:
 L35:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v27
-	F_errmsg(m, int32(759100), v9+int32(16))
+	F_errmsg(m, int32(760147), v9+int32(16))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -353,7 +353,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(526066), int32(772), int32(221106))
+	F_errfinish(m, int32(526512), int32(772), int32(221298))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -1539,7 +1539,7 @@ L84:
 	}
 L85:
 	;
-	v350 = F_AllocSetContextCreateInternal(m, v344, int32(259255), int32(0), int32(8192), int32(8388608))
+	v350 = F_AllocSetContextCreateInternal(m, v344, int32(259447), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v351 = m.ExcPending
 	if v351 != 0 {
@@ -2328,7 +2328,7 @@ L192:
 	}
 L193:
 	;
-	F_errmsg(m, int32(114111), int32(0))
+	F_errmsg(m, int32(114122), int32(0))
 	mBase = m.M
 	v712 = m.ExcPending
 	if v712 != 0 {
@@ -2338,7 +2338,7 @@ L193:
 	}
 L194:
 	;
-	F_errfinish(m, int32(518539), int32(1604), int32(315936))
+	F_errfinish(m, int32(518980), int32(1604), int32(316201))
 	mBase = m.M
 	v717 = m.ExcPending
 	if v717 != 0 {

@@ -230,7 +230,7 @@ func F_PlanCacheRelCallback(m *base.Module, l0 int32, l1 int32) {
 	_ = v277
 	var v280 int32
 	_ = v280
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[1109]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[1110]))
 	if v8 == int32(0) {
 		goto L1
 	} else {
@@ -238,7 +238,7 @@ func F_PlanCacheRelCallback(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v215 = *(*int32)(unsafe.Add(mBase, _consts[1110]))
+	v215 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
 	if v215 == int32(0) {
 		goto L72
 	} else {
@@ -246,7 +246,7 @@ L1:
 	}
 L2:
 	;
-	if v8 == int32(4164864) {
+	if v8 == int32(4164896) {
 		goto L1
 	} else {
 		goto L3
@@ -270,7 +270,7 @@ L5:
 L6:
 	;
 	v205 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	if v205 != int32(4164864) {
+	if v205 != int32(4164896) {
 		v13 = v205
 		goto L4
 	} else {
@@ -665,7 +665,7 @@ L72:
 	return
 L73:
 	;
-	if v215 == int32(4164872) {
+	if v215 == int32(4164904) {
 		goto L72
 	} else {
 		goto L74
@@ -689,7 +689,7 @@ L76:
 L77:
 	;
 	v280 = *(*int32)(unsafe.Add(mBase, uint32(v220)+4))
-	if v280 != int32(4164872) {
+	if v280 != int32(4164904) {
 		v220 = v280
 		goto L75
 	} else {

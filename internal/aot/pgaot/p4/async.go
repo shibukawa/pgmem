@@ -494,7 +494,7 @@ L36:
 	v135 = *(*int32)(unsafe.Add(mBase, uint32(v101)+4))
 	v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)))
 	*(*int32)(unsafe.Add(mBase, uint32(v107))) = v136
-	F_errmsg_internal(m, int32(509858), v107)
+	F_errmsg_internal(m, int32(510299), v107)
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -504,7 +504,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(526135), int32(76), int32(110634))
+	F_errfinish(m, int32(526581), int32(76), int32(110645))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -614,7 +614,7 @@ L53:
 	goto L54
 L54:
 	;
-	v231 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+	v231 = *(*int32)(unsafe.Add(mBase, _consts[503]))
 	F_AddWaitEventToSet(m, v218, int32(1), int32(-1), v231)
 	mBase = m.M
 	v233 = m.ExcPending
@@ -878,7 +878,7 @@ L91:
 	v319 = *(*int32)(unsafe.Add(mBase, uint32(v268)))
 	v320 = *(*int32)(unsafe.Add(mBase, uint32(v319)))
 	*(*int32)(unsafe.Add(mBase, uint32(v276))) = v320
-	F_errmsg_internal(m, int32(509858), v276)
+	F_errmsg_internal(m, int32(510299), v276)
 	mBase = m.M
 	v324 = m.ExcPending
 	if v324 != 0 {
@@ -888,7 +888,7 @@ L91:
 	}
 L92:
 	;
-	F_errfinish(m, int32(526135), int32(127), int32(380105))
+	F_errfinish(m, int32(526581), int32(127), int32(380526))
 	mBase = m.M
 	v329 = m.ExcPending
 	if v329 != 0 {
@@ -906,7 +906,7 @@ L94:
 	v334 = *(*int32)(unsafe.Add(mBase, uint32(v268)+4))
 	v335 = *(*int32)(unsafe.Add(mBase, uint32(v334)))
 	*(*int32)(unsafe.Add(mBase, uint32(v276)+16)) = v335
-	F_errmsg_internal(m, int32(509858), v276+int32(16))
+	F_errmsg_internal(m, int32(510299), v276+int32(16))
 	mBase = m.M
 	v341 = m.ExcPending
 	if v341 != 0 {
@@ -916,7 +916,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(526135), int32(102), int32(21186))
+	F_errfinish(m, int32(526581), int32(102), int32(21186))
 	mBase = m.M
 	v346 = m.ExcPending
 	if v346 != 0 {
@@ -940,7 +940,7 @@ L97:
 	}
 L98:
 	;
-	v357 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+	v357 = *(*int32)(unsafe.Add(mBase, _consts[503]))
 	*(*int32)(unsafe.Add(mBase, uint32(v357))) = int32(0)
 	goto L99
 L99:

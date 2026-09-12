@@ -207,13 +207,13 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v121
-							F_errmsg(m, int32(367615), v9)
+							F_errmsg(m, int32(367986), v9)
 							mBase = m.M
 							v126 = m.ExcPending
 							if v126 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(525489), int32(232), int32(512196))
+								F_errfinish(m, int32(525935), int32(232), int32(512637))
 								mBase = m.M
 								v131 = m.ExcPending
 								if v131 != 0 {
@@ -231,7 +231,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 				v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+192))
 				v27 = v19
 				v29 = v22
-				v34 = F_AllocSetContextCreateInternal(m, l1, int32(442813), int32(0), int32(8192), int32(8388608))
+				v34 = F_AllocSetContextCreateInternal(m, l1, int32(443234), int32(0), int32(8192), int32(8388608))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -316,7 +316,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 		} else {
 			v27 = l0
 			v29 = v25
-			v34 = F_AllocSetContextCreateInternal(m, l1, int32(442813), int32(0), int32(8192), int32(8388608))
+			v34 = F_AllocSetContextCreateInternal(m, l1, int32(443234), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
 			v35 = m.ExcPending
 			if v35 != 0 {

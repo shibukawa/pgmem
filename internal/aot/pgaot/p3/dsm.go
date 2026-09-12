@@ -282,7 +282,7 @@ L9:
 	}
 L10:
 	;
-	v45 = int32(4164660)
+	v45 = int32(4164692)
 	*(*int32)(unsafe.Add(mBase, _consts[832])) = v45
 	v49 = v45
 	goto L12
@@ -292,7 +292,7 @@ L11:
 	goto L12
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(4164660)
+	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(4164692)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+4)) = v49
 	*(*int32)(unsafe.Add(mBase, uint32(v49))) = v39
 	*(*int32)(unsafe.Add(mBase, _consts[831])) = v39
@@ -307,7 +307,7 @@ L12:
 	}
 L13:
 	;
-	F_ResourceOwnerRemember(m, v61, v39, int32(1664556))
+	F_ResourceOwnerRemember(m, v61, v39, int32(1665596))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -644,7 +644,7 @@ L59:
 	goto L52
 L60:
 	;
-	F_ResourceOwnerForget(m, v313, v39, int32(1664556))
+	F_ResourceOwnerForget(m, v313, v39, int32(1665596))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -703,7 +703,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(130920), int32(0))
+	F_errmsg(m, int32(130955), int32(0))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -713,7 +713,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(522901), int32(626), int32(374013))
+	F_errfinish(m, int32(523347), int32(626), int32(374409))
 	mBase = m.M
 	v342 = m.ExcPending
 	if v342 != 0 {

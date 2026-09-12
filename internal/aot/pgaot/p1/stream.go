@@ -141,7 +141,7 @@ func F_read_stream_look_ahead(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[724]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[726]))
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+20)))
 	if v9 == int32(1) {
 		goto L4
@@ -183,7 +183,7 @@ L7:
 	return
 L8:
 	;
-	F_errmsg_internal(m, int32(136405), int32(0))
+	F_errmsg_internal(m, int32(136475), int32(0))
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
@@ -193,7 +193,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(521469), int32(1084), int32(432257))
+	F_errfinish(m, int32(521910), int32(1084), int32(432678))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -499,7 +499,7 @@ L56:
 	goto L12
 L57:
 	;
-	v138 = *(*int32)(unsafe.Add(mBase, _consts[724]))
+	v138 = *(*int32)(unsafe.Add(mBase, _consts[726]))
 	v139 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v138)+20)) = uint8(v139)
 	goto L11
@@ -546,7 +546,7 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v10 = v8 - int32(32)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(422882)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(423303)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
@@ -577,14 +577,14 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			if v47 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(530179)
-				F_errmsg(m, int32(335349), v10)
+				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(530625)
+				F_errmsg(m, int32(335658), v10)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(523431), int32(1534), int32(229586))
+					F_errfinish(m, int32(523877), int32(1534), int32(229778))
 					mBase = m.M
 					v57 = m.ExcPending
 					if v57 != 0 {
@@ -646,7 +646,7 @@ func F_stream_truncate_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+104))
 	if v15 != 0 {
-		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(376229)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(376625)
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v14
 		v19 = *(*int64)(unsafe.Add(mBase, uint32(l4)))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(993)

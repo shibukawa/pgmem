@@ -107,7 +107,7 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn lo tsm_system_rows tsm_system_time pgstattuple uuid-ossp amcheck pg_visibility pageinspect pg_buffercache pg_freespacemap pg_prewarm pg_stat_statements"
+CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn lo tsm_system_rows tsm_system_time pgstattuple uuid-ossp amcheck pg_visibility pageinspect pg_buffercache pg_freespacemap pg_prewarm pg_stat_statements auto_explain"
 for n in $CONTRIB_MODULES; do
   # the library name (what $libdir/<name> in the extension's SQL refers to)
   # is the Makefile's MODULE_big or MODULES, not always the directory name
@@ -168,7 +168,10 @@ python3 "$HERE/gen_modules.py" "$LLVM_NM" "$OUT/pgmem_modules_gen.c" $GEN_ARGS
 mkdir -p "$PREFIX/share/postgresql/extension"
 mkdir -p "$PREFIX/share/postgresql/tsearch_data"
 for n in $CONTRIB_MODULES; do
-  cp "$SRC/contrib/$n"/*.control "$SRC/contrib/$n"/*.sql "$PREFIX/share/postgresql/extension/"
+  # a LOAD-only module (auto_explain) has no control or SQL files
+  for f in "$SRC/contrib/$n"/*.control "$SRC/contrib/$n"/*.sql; do
+    [ -e "$f" ] && cp "$f" "$PREFIX/share/postgresql/extension/"
+  done
   # text search dictionaries and rules (DATA_TSEARCH in the module's Makefile)
   for f in $(sed -n 's/^DATA_TSEARCH *= *//p' "$SRC/contrib/$n/Makefile"); do
     cp "$SRC/contrib/$n/$f" "$PREFIX/share/postgresql/tsearch_data/"

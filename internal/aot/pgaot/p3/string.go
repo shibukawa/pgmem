@@ -549,7 +549,7 @@ func F_string_agg_deserialize(m *base.Module, l0 int32) int32 {
 				if v158 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(526674), int32(5432), int32(372464))
+					F_errfinish(m, int32(527120), int32(5432), int32(372835))
 					mBase = m.M
 					v163 = m.ExcPending
 					if v163 != 0 {

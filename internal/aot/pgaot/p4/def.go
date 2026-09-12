@@ -246,8 +246,8 @@ L12:
 	}
 L13:
 	;
-	v52 = int32(362650)
-	v55 = int32(*(*uint8)(unsafe.Add(mBase, _consts[472])))
+	v52 = int32(363021)
+	v55 = int32(*(*uint8)(unsafe.Add(mBase, _consts[468])))
 	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v56 == int32(0) {
 		v75 = v55
@@ -377,8 +377,8 @@ L29:
 	goto L30
 L30:
 	;
-	v88 = int32(380169)
-	v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[473])))
+	v88 = int32(380590)
+	v91 = int32(*(*uint8)(unsafe.Add(mBase, _consts[469])))
 	v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v92 == int32(0) {
 		v111 = v91
@@ -613,13 +613,13 @@ func F_defGetNumeric(m *base.Module, l0 int32) float64 {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v25
-					F_errmsg(m, int32(364966), v7+int32(16))
+					F_errmsg(m, int32(365337), v7+int32(16))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return float64(0)
 					} else {
-						F_errfinish(m, int32(524715), int32(85), int32(514839))
+						F_errfinish(m, int32(525161), int32(85), int32(515280))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -648,13 +648,13 @@ func F_defGetNumeric(m *base.Module, l0 int32) float64 {
 			} else {
 				v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v51
-				F_errmsg(m, int32(364966), v7)
+				F_errmsg(m, int32(365337), v7)
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
 					return float64(0)
 				} else {
-					F_errfinish(m, int32(524715), int32(74), int32(514839))
+					F_errfinish(m, int32(525161), int32(74), int32(515280))
 					mBase = m.M
 					v60 = m.ExcPending
 					if v60 != 0 {
@@ -740,13 +740,13 @@ func F_defGetQualifiedName(m *base.Module, l0 int32) int32 {
 						} else {
 							v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v27
-							F_errmsg(m, int32(401218), v7+int32(16))
+							F_errmsg(m, int32(401639), v7+int32(16))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(524715), int32(259), int32(401508))
+								F_errfinish(m, int32(525161), int32(259), int32(401929))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -790,13 +790,13 @@ func F_defGetQualifiedName(m *base.Module, l0 int32) int32 {
 			} else {
 				v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v58
-				F_errmsg(m, int32(228332), v7)
+				F_errmsg(m, int32(228524), v7)
 				mBase = m.M
 				v62 = m.ExcPending
 				if v62 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(524715), int32(245), int32(401508))
+					F_errfinish(m, int32(525161), int32(245), int32(401929))
 					mBase = m.M
 					v67 = m.ExcPending
 					if v67 != 0 {
@@ -880,7 +880,7 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 		case 0:
 			v47 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v47
-			v52 = F_psprintf(m, int32(453866), v7+int32(32))
+			v52 = F_psprintf(m, int32(454307), v7+int32(32))
 			mBase = m.M
 			v53 = m.ExcPending
 			if v53 != 0 {
@@ -898,9 +898,9 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 		case 2:
 			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+4)))
 			if v18 != 0 {
-				v19 = int32(362650)
+				v19 = int32(363021)
 			} else {
-				v19 = int32(380169)
+				v19 = int32(380590)
 			}
 			v73 = v19
 			m.G0 = v7 + int32(48)
@@ -933,13 +933,13 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 					v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v35
-					F_errmsg_internal(m, int32(509858), v7+int32(16))
+					F_errmsg_internal(m, int32(510299), v7+int32(16))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(524715), int32(59), int32(348321))
+						F_errfinish(m, int32(525161), int32(59), int32(348643))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {
@@ -952,7 +952,7 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 					}
 				}
 			case 9:
-				v26 = F_pstrdup(m, int32(702280))
+				v26 = F_pstrdup(m, int32(703327))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
@@ -984,13 +984,13 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 						v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v35
-						F_errmsg_internal(m, int32(509858), v7+int32(16))
+						F_errmsg_internal(m, int32(510299), v7+int32(16))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(524715), int32(59), int32(348321))
+							F_errfinish(m, int32(525161), int32(59), int32(348643))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
@@ -1020,13 +1020,13 @@ func F_defGetString(m *base.Module, l0 int32) int32 {
 			} else {
 				v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v61
-				F_errmsg(m, int32(228332), v7)
+				F_errmsg(m, int32(228524), v7)
 				mBase = m.M
 				v65 = m.ExcPending
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(524715), int32(41), int32(348321))
+					F_errfinish(m, int32(525161), int32(41), int32(348643))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {

@@ -45,19 +45,19 @@ func F_get_raw_page(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(717562), int32(0))
+				F_errmsg(m, int32(718609), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(608646), int32(0))
+					F_errhint(m, int32(609092), int32(0))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(525195), int32(85), int32(427203))
+						F_errfinish(m, int32(525641), int32(85), int32(427624))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -130,13 +130,13 @@ func F_get_raw_page_1_9(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(240379), int32(0))
+					F_errmsg(m, int32(240571), int32(0))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(525195), int32(58), int32(575417))
+						F_errfinish(m, int32(525641), int32(58), int32(575863))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {

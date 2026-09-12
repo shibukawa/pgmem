@@ -70,7 +70,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 			return v75
 		} else {
 			v16 = int32(0)
-			v20 = F___fstatat(m, int32(-100), int32(367580), v6, v16)
+			v20 = F___fstatat(m, int32(-100), int32(367951), v6, v16)
 			mBase = m.M
 			if v20 != 0 {
 				v75 = v16
@@ -84,19 +84,19 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 					return int32(0)
 				} else {
 					if v23 != 0 {
-						F_errmsg(m, int32(83238), int32(0))
+						F_errmsg(m, int32(83249), int32(0))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(516730), int32(4482), int32(236139))
+							F_errfinish(m, int32(517171), int32(4482), int32(236331))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								v37 = F_unlink(m, int32(367580))
+								v37 = F_unlink(m, int32(367951))
 								mBase = m.M
 								*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
 								v42 = *(*int32)(unsafe.Add(mBase, _consts[183]))
@@ -104,7 +104,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 								*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
 								if v43 != 0 {
 									v47 = *(*int32)(unsafe.Add(mBase, _consts[183]))
-									F_s_lock(m, v47+int32(96), int32(516730), int32(4456), int32(473438))
+									F_s_lock(m, v47+int32(96), int32(517171), int32(4456), int32(473879))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
@@ -158,7 +158,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 							}
 						}
 					} else {
-						v37 = F_unlink(m, int32(367580))
+						v37 = F_unlink(m, int32(367951))
 						mBase = m.M
 						*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
 						v42 = *(*int32)(unsafe.Add(mBase, _consts[183]))
@@ -166,7 +166,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
 						if v43 != 0 {
 							v47 = *(*int32)(unsafe.Add(mBase, _consts[183]))
-							F_s_lock(m, v47+int32(96), int32(516730), int32(4456), int32(473438))
+							F_s_lock(m, v47+int32(96), int32(517171), int32(4456), int32(473879))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
@@ -564,7 +564,7 @@ L37:
 	}
 L38:
 	;
-	F_errmsg(m, int32(359871), int32(0))
+	F_errmsg(m, int32(360242), int32(0))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -574,7 +574,7 @@ L38:
 	}
 L39:
 	;
-	F_errhint(m, int32(656121), int32(0))
+	F_errhint(m, int32(656826), int32(0))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -584,7 +584,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(523306), int32(879), int32(339095))
+	F_errfinish(m, int32(523752), int32(879), int32(339417))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {

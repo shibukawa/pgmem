@@ -282,7 +282,7 @@ func F_CacheInvalidateRelcacheByRelid(m *base.Module, l0 int32) {
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(523363), int32(1697), int32(456999))
+					F_errfinish(m, int32(523809), int32(1697), int32(457440))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -353,13 +353,13 @@ func F_CacheRegisterRelcacheCallback(m *base.Module, l0 int32) {
 		if v11 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(126726), int32(0))
+			F_errmsg_internal(m, int32(126761), int32(0))
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(523363), int32(1862), int32(335830))
+				F_errfinish(m, int32(523809), int32(1862), int32(336139))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
@@ -433,13 +433,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			if v90 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(126690), int32(0))
+				F_errmsg_internal(m, int32(126725), int32(0))
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(523363), int32(1823), int32(335800))
+					F_errfinish(m, int32(523809), int32(1823), int32(336109))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -491,13 +491,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v1
-			F_errmsg_internal(m, int32(511755), v10)
+			F_errmsg_internal(m, int32(512196), v10)
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(523363), int32(1821), int32(335800))
+				F_errfinish(m, int32(523809), int32(1821), int32(336109))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {

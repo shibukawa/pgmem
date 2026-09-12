@@ -68,7 +68,7 @@ func F_HnswGetTypeInfo(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v34 int32
 	_ = v34
-	v3 = int32(4120848)
+	v3 = int32(4120880)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+216))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+204))
 	v8 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v7)+6)))
@@ -1843,5 +1843,5 @@ L85:
 	return
 }
 func F_hnsw_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(4120864)
+	return int32(4120896)
 }

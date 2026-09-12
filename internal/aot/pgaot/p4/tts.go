@@ -210,7 +210,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[28])) = v6
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		if v16 == int32(1654072) {
+		if v16 == int32(1655112) {
 			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 			if v19&int32(4) != 0 {
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -269,13 +269,13 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(92227), int32(0))
+				F_errmsg_internal(m, int32(92238), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(519289), int32(1553), int32(404587))
+					F_errfinish(m, int32(519730), int32(1553), int32(405008))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -309,12 +309,12 @@ func F_tts_minimal_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(403861), int32(0))
+			F_errmsg(m, int32(404282), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(519289), int32(581), int32(402876))
+				F_errfinish(m, int32(519730), int32(581), int32(403297))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -339,12 +339,12 @@ func F_tts_virtual_getsomeattrs(m *base.Module, l0 int32, l1 int32) {
 	if v6 != 0 {
 		return
 	} else {
-		F_errmsg_internal(m, int32(92404), int32(0))
+		F_errmsg_internal(m, int32(92415), int32(0))
 		v10 = m.ExcPending
 		if v10 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(519289), int32(132), int32(139795))
+			F_errfinish(m, int32(519730), int32(132), int32(139865))
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
@@ -375,12 +375,12 @@ func F_tts_virtual_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(403861), int32(0))
+			F_errmsg(m, int32(404282), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(519289), int32(163), int32(402842))
+				F_errfinish(m, int32(519730), int32(163), int32(403263))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)

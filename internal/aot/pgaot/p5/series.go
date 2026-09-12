@@ -426,11 +426,11 @@ L12:
 	goto L1
 L13:
 	;
-	v81 = *(*int64)(unsafe.Add(mBase, _consts[1068]))
+	v81 = *(*int64)(unsafe.Add(mBase, _consts[1069]))
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+88)) = v81
-	v84 = *(*int64)(unsafe.Add(mBase, _consts[1069]))
+	v84 = *(*int64)(unsafe.Add(mBase, _consts[1070]))
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+80)) = v84
-	v87 = *(*int64)(unsafe.Add(mBase, _consts[1070]))
+	v87 = *(*int64)(unsafe.Add(mBase, _consts[1071]))
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+72)) = v87
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v28)+20))
 	v90 = F_pg_detoast_datum(m, v89)
@@ -613,8 +613,8 @@ L39:
 	;
 	v180 = v12 + int32(72)
 	v181 = int32(1774644)
-	v188 = *(*int32)(unsafe.Add(mBase, _consts[1071]))
-	v189 = *(*int32)(unsafe.Add(mBase, _consts[1072]))
+	v188 = *(*int32)(unsafe.Add(mBase, _consts[1072]))
+	v189 = *(*int32)(unsafe.Add(mBase, _consts[1073]))
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v180)))
 	if v190 == int32(0) {
 		goto L62
@@ -806,8 +806,8 @@ L72:
 	goto L73
 L73:
 	;
-	v207 = *(*int32)(unsafe.Add(mBase, _consts[1073]))
-	v208 = *(*int32)(unsafe.Add(mBase, _consts[1074]))
+	v207 = *(*int32)(unsafe.Add(mBase, _consts[1074]))
+	v208 = *(*int32)(unsafe.Add(mBase, _consts[1075]))
 	v209 = *(*int32)(unsafe.Add(mBase, uint32(v180)+4))
 	v210 = *(*int32)(unsafe.Add(mBase, uint32(v180)+20))
 	if v201 == int32(0) {

@@ -3367,7 +3367,7 @@ L350:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v27)+4)) = int32(1048575)
 	*(*int32)(unsafe.Add(mBase, uint32(v27))) = v1723
-	F_errmsg(m, int32(707021), v27)
+	F_errmsg(m, int32(708068), v27)
 	mBase = m.M
 	v1933 = m.ExcPending
 	if v1933 != 0 {
@@ -3377,7 +3377,7 @@ L350:
 	}
 L351:
 	;
-	F_errfinish(m, int32(521148), int32(1126), int32(120252))
+	F_errfinish(m, int32(521589), int32(1126), int32(120287))
 	mBase = m.M
 	v1938 = m.ExcPending
 	if v1938 != 0 {
@@ -4670,13 +4670,13 @@ func F_tsvector_setweight(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = base.I32_extend8_s(v24)
-				F_errmsg_internal(m, int32(505426), v16)
+				F_errmsg_internal(m, int32(505867), v16)
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521148), int32(242), int32(111695))
+					F_errfinish(m, int32(521589), int32(242), int32(111706))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {

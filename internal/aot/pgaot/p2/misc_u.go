@@ -190,7 +190,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 													if v103 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(523959), int32(2769), int32(95533))
+														F_errfinish(m, int32(524405), int32(2769), int32(95544))
 														mBase = m.M
 														v108 = m.ExcPending
 														if v108 != 0 {
@@ -268,7 +268,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 														if v103 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(523959), int32(2769), int32(95533))
+															F_errfinish(m, int32(524405), int32(2769), int32(95544))
 															mBase = m.M
 															v108 = m.ExcPending
 															if v108 != 0 {
@@ -352,7 +352,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 																if v103 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(523959), int32(2769), int32(95533))
+																	F_errfinish(m, int32(524405), int32(2769), int32(95544))
 																	mBase = m.M
 																	v108 = m.ExcPending
 																	if v108 != 0 {
@@ -382,13 +382,13 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 												*(*uint32)(unsafe.Add(mBase, uint32(v7)+20)) = uint32(v1)
 												v64 = int64(base.Ui64(v1) >> (uint(v59) % 64))
 												*(*uint32)(unsafe.Add(mBase, uint32(v7)+16)) = uint32(v64)
-												F_errmsg_internal(m, int32(538229), v7+int32(16))
+												F_errmsg_internal(m, int32(538675), v7+int32(16))
 												mBase = m.M
 												v70 = m.ExcPending
 												if v70 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(523959), int32(2755), int32(95533))
+													F_errfinish(m, int32(524405), int32(2755), int32(95544))
 													mBase = m.M
 													v75 = m.ExcPending
 													if v75 != 0 {
@@ -448,7 +448,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 																		if v103 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(523959), int32(2769), int32(95533))
+																			F_errfinish(m, int32(524405), int32(2769), int32(95544))
 																			mBase = m.M
 																			v108 = m.ExcPending
 																			if v108 != 0 {
@@ -580,7 +580,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 														if v103 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(523959), int32(2769), int32(95533))
+															F_errfinish(m, int32(524405), int32(2769), int32(95544))
 															mBase = m.M
 															v108 = m.ExcPending
 															if v108 != 0 {
@@ -658,7 +658,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 															if v103 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(523959), int32(2769), int32(95533))
+																F_errfinish(m, int32(524405), int32(2769), int32(95544))
 																mBase = m.M
 																v108 = m.ExcPending
 																if v108 != 0 {
@@ -742,7 +742,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 																	if v103 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(523959), int32(2769), int32(95533))
+																		F_errfinish(m, int32(524405), int32(2769), int32(95544))
 																		mBase = m.M
 																		v108 = m.ExcPending
 																		if v108 != 0 {
@@ -772,13 +772,13 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 													*(*uint32)(unsafe.Add(mBase, uint32(v7)+20)) = uint32(v1)
 													v64 = int64(base.Ui64(v1) >> (uint(v59) % 64))
 													*(*uint32)(unsafe.Add(mBase, uint32(v7)+16)) = uint32(v64)
-													F_errmsg_internal(m, int32(538229), v7+int32(16))
+													F_errmsg_internal(m, int32(538675), v7+int32(16))
 													mBase = m.M
 													v70 = m.ExcPending
 													if v70 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(523959), int32(2755), int32(95533))
+														F_errfinish(m, int32(524405), int32(2755), int32(95544))
 														mBase = m.M
 														v75 = m.ExcPending
 														if v75 != 0 {
@@ -838,7 +838,7 @@ func F_UpdateMinRecoveryPoint(m *base.Module, l0 int64, l1 int32) {
 																			if v103 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(523959), int32(2769), int32(95533))
+																				F_errfinish(m, int32(524405), int32(2769), int32(95544))
 																				mBase = m.M
 																				v108 = m.ExcPending
 																				if v108 != 0 {
@@ -1048,7 +1048,7 @@ func F_uhc_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4435084), v18, v18, v18, int32(38), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4435116), v18, v18, v18, int32(38), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -1435,7 +1435,7 @@ L32:
 	}
 L33:
 	;
-	v99 = F__emscripten_memcpy_bulkmem(m, v94, int32(4116868), int32(84))
+	v99 = F__emscripten_memcpy_bulkmem(m, v94, int32(4116900), int32(84))
 	mBase = m.M
 	goto L35
 L35:

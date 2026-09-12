@@ -104,13 +104,13 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 					if v86 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(252790), int32(0))
+						F_errmsg(m, int32(252982), int32(0))
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(526747), int32(1403), int32(582081))
+							F_errfinish(m, int32(527193), int32(1403), int32(582527))
 							mBase = m.M
 							v95 = m.ExcPending
 							if v95 != 0 {
@@ -653,13 +653,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 						if v172 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(252790), int32(0))
+							F_errmsg(m, int32(252982), int32(0))
 							mBase = m.M
 							v176 = m.ExcPending
 							if v176 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521224), int32(6708), int32(249192))
+								F_errfinish(m, int32(521665), int32(6708), int32(249384))
 								mBase = m.M
 								v181 = m.ExcPending
 								if v181 != 0 {
@@ -1008,13 +1008,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v201 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(368710), int32(0))
+											F_errmsg(m, int32(369081), int32(0))
 											mBase = m.M
 											v205 = m.ExcPending
 											if v205 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(521224), int32(6713), int32(249192))
+												F_errfinish(m, int32(521665), int32(6713), int32(249384))
 												mBase = m.M
 												v210 = m.ExcPending
 												if v210 != 0 {
@@ -1151,13 +1151,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v201 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(368710), int32(0))
+										F_errmsg(m, int32(369081), int32(0))
 										mBase = m.M
 										v205 = m.ExcPending
 										if v205 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521224), int32(6713), int32(249192))
+											F_errfinish(m, int32(521665), int32(6713), int32(249384))
 											mBase = m.M
 											v210 = m.ExcPending
 											if v210 != 0 {

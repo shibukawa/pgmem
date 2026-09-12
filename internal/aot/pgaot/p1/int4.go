@@ -228,7 +228,7 @@ func F_int4_accum(m *base.Module, l0 int32) int32 {
 					if v165 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(526183), int32(5606), int32(372503))
+						F_errfinish(m, int32(526629), int32(5606), int32(372874))
 						mBase = m.M
 						v170 = m.ExcPending
 						if v170 != 0 {
@@ -366,7 +366,7 @@ func F_int4_accum(m *base.Module, l0 int32) int32 {
 				if v165 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(526183), int32(5606), int32(372503))
+					F_errfinish(m, int32(526629), int32(5606), int32(372874))
 					mBase = m.M
 					v170 = m.ExcPending
 					if v170 != 0 {

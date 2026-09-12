@@ -549,13 +549,13 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						} else {
 							v72 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-							F_errmsg_internal(m, int32(505896), v10)
+							F_errmsg_internal(m, int32(506337), v10)
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521148), int32(1969), int32(379322))
+								F_errfinish(m, int32(521589), int32(1969), int32(379718))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -700,13 +700,13 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					} else {
 						v72 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-						F_errmsg_internal(m, int32(505896), v10)
+						F_errmsg_internal(m, int32(506337), v10)
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521148), int32(1969), int32(379322))
+							F_errfinish(m, int32(521589), int32(1969), int32(379718))
 							mBase = m.M
 							v81 = m.ExcPending
 							if v81 != 0 {
@@ -1282,13 +1282,13 @@ func F_TS_phrase_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						} else {
 							v264 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v264
-							F_errmsg_internal(m, int32(505896), v11)
+							F_errmsg_internal(m, int32(506337), v11)
 							mBase = m.M
 							v268 = m.ExcPending
 							if v268 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521148), int32(1837), int32(367067))
+								F_errfinish(m, int32(521589), int32(1837), int32(367438))
 								mBase = m.M
 								v273 = m.ExcPending
 								if v273 != 0 {
@@ -1654,13 +1654,13 @@ func F_TS_phrase_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					} else {
 						v264 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v264
-						F_errmsg_internal(m, int32(505896), v11)
+						F_errmsg_internal(m, int32(506337), v11)
 						mBase = m.M
 						v268 = m.ExcPending
 						if v268 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521148), int32(1837), int32(367067))
+							F_errfinish(m, int32(521589), int32(1837), int32(367438))
 							mBase = m.M
 							v273 = m.ExcPending
 							if v273 != 0 {
@@ -1721,7 +1721,7 @@ func F_error_commit_ts_disabled(m *base.Module) {
 		if v13 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(531274), int32(0))
+			F_errmsg(m, int32(531720), int32(0))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
@@ -1737,11 +1737,11 @@ func F_error_commit_ts_disabled(m *base.Module) {
 				} else {
 					v30 = int32(0)
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(249084)
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(249276)
 				if v30 != 0 {
-					v35 = int32(637637)
+					v35 = int32(638318)
 				} else {
-					v35 = int32(611273)
+					v35 = int32(611719)
 				}
 				F_errhint(m, v35, v5)
 				mBase = m.M
@@ -1749,7 +1749,7 @@ func F_error_commit_ts_disabled(m *base.Module) {
 				if v37 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(518416), int32(390), int32(477404))
+					F_errfinish(m, int32(518857), int32(390), int32(477845))
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {
@@ -1881,13 +1881,13 @@ func F_get_ts_parser_func(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v53
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51
-									F_errmsg(m, int32(202557), v8)
+									F_errmsg(m, int32(202721), v8)
 									mBase = m.M
 									v59 = m.ExcPending
 									if v59 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(519586), int32(126), int32(513789))
+										F_errfinish(m, int32(520027), int32(126), int32(514230))
 										mBase = m.M
 										v64 = m.ExcPending
 										if v64 != 0 {

@@ -116,13 +116,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_errmsg(m, int32(312364), v9)
+								F_errmsg(m, int32(312629), v9)
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(525903), int32(1966), int32(409243))
+									F_errfinish(m, int32(526349), int32(1966), int32(409664))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
@@ -159,13 +159,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-								F_errmsg(m, int32(312559), v9+int32(32))
+								F_errmsg(m, int32(312824), v9+int32(32))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(525903), int32(1977), int32(409243))
+									F_errfinish(m, int32(526349), int32(1977), int32(409664))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -190,7 +190,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v83 = base.I64_div_s(v78, int64(1024))
 						v84 = int32(1)
-						v86 = int64(*(*int32)(unsafe.Add(mBase, _consts[949])))
+						v86 = int64(*(*int32)(unsafe.Add(mBase, _consts[945])))
 						if v86 < int64(0) {
 							v109 = v84
 							m.G0 = v9 + int32(144)
@@ -220,7 +220,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 										if v102 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(525903), int32(1546), int32(425537))
+											F_errfinish(m, int32(526349), int32(1546), int32(425958))
 											mBase = m.M
 											v107 = m.ExcPending
 											if v107 != 0 {
@@ -253,7 +253,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v83 = base.I64_div_s(v78, int64(1024))
 				v84 = int32(1)
-				v86 = int64(*(*int32)(unsafe.Add(mBase, _consts[949])))
+				v86 = int64(*(*int32)(unsafe.Add(mBase, _consts[945])))
 				if v86 < int64(0) {
 					v109 = v84
 					m.G0 = v9 + int32(144)
@@ -283,7 +283,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								if v102 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(525903), int32(1546), int32(425537))
+									F_errfinish(m, int32(526349), int32(1546), int32(425958))
 									mBase = m.M
 									v107 = m.ExcPending
 									if v107 != 0 {
@@ -330,13 +330,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_errmsg(m, int32(312364), v9)
+							F_errmsg(m, int32(312629), v9)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(525903), int32(1966), int32(409243))
+								F_errfinish(m, int32(526349), int32(1966), int32(409664))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {

@@ -1046,14 +1046,14 @@ func F_event_trigger_in(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(235432)
-			F_errmsg(m, int32(203500), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(235624)
+			F_errmsg(m, int32(203664), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(519257), int32(367), int32(293294))
+				F_errfinish(m, int32(519698), int32(367), int32(293559))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

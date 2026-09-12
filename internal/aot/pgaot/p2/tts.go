@@ -374,7 +374,7 @@ func F_tts_virtual_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(519289), int32(147), int32(217385))
+				F_errfinish(m, int32(519730), int32(147), int32(217577))
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return int32(0)

@@ -91,13 +91,13 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 					if v81 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(252790), int32(0))
+						F_errmsg(m, int32(252982), int32(0))
 						mBase = m.M
 						v85 = m.ExcPending
 						if v85 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(517758), int32(1558), int32(586073))
+							F_errfinish(m, int32(518199), int32(1558), int32(586519))
 							mBase = m.M
 							v90 = m.ExcPending
 							if v90 != 0 {

@@ -650,7 +650,7 @@ L26:
 	goto L25
 L27:
 	;
-	F_s_lock(m, v122, int32(517722), int32(1875), int32(92697))
+	F_s_lock(m, v122, int32(518163), int32(1875), int32(92708))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
@@ -1203,7 +1203,7 @@ L104:
 	}
 L105:
 	;
-	F_s_lock(m, v440, int32(517722), int32(1107), int32(8439))
+	F_s_lock(m, v440, int32(518163), int32(1107), int32(8439))
 	mBase = m.M
 	v448 = m.ExcPending
 	if v448 != 0 {
@@ -1221,10 +1221,10 @@ L107:
 	v451 = int32(257)
 	*(*uint16)(unsafe.Add(mBase, uint32(v450)+12)) = uint16(v451)
 	*(*int32)(unsafe.Add(mBase, uint32(v440))) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v31)+64)) = int32(91121)
+	*(*int32)(unsafe.Add(mBase, uint32(v31)+64)) = int32(91132)
 	v458 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+68)) = v458 + int32(24)
-	v467 = F_pg_sprintf(m, v31+int32(208), int32(188074), v31-int32(-64))
+	v467 = F_pg_sprintf(m, v31+int32(208), int32(188238), v31-int32(-64))
 	mBase = m.M
 	v468 = m.ExcPending
 	if v468 != 0 {
@@ -1477,7 +1477,7 @@ L9:
 	goto L5
 L10:
 	;
-	F_errmsg_internal(m, int32(467130), int32(0))
+	F_errmsg_internal(m, int32(467571), int32(0))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -1487,7 +1487,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(520641), int32(1051), int32(336048))
+	F_errfinish(m, int32(521082), int32(1051), int32(336357))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {

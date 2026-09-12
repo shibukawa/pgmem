@@ -56,16 +56,16 @@ func F_BeginTransactionBlock(m *base.Module) {
 				v43 = *(*int32)(unsafe.Add(mBase, uint32(v34<<(uint(int32(2))%32))+uint32(_consts[154])))
 				v44 = v43
 			} else {
-				v44 = int32(571067)
+				v44 = int32(571513)
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v5))) = v44
-			F_errmsg_internal(m, int32(198340), v5)
+			F_errmsg_internal(m, int32(198504), v5)
 			mBase = m.M
 			v48 = m.ExcPending
 			if v48 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(518151), int32(3974), int32(333269))
+				F_errfinish(m, int32(518592), int32(3974), int32(333578))
 				mBase = m.M
 				v53 = m.ExcPending
 				if v53 != 0 {
@@ -98,13 +98,13 @@ func F_BeginTransactionBlock(m *base.Module) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(136688), int32(0))
+					F_errmsg(m, int32(136758), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(518151), int32(3956), int32(333269))
+						F_errfinish(m, int32(518592), int32(3956), int32(333578))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -449,7 +449,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v42
-	F_errmsg_internal(m, int32(198469), v10)
+	F_errmsg_internal(m, int32(198633), v10)
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -464,14 +464,14 @@ L22:
 	goto L24
 L23:
 	;
-	v42 = int32(571067)
+	v42 = int32(571513)
 	goto L24
 L24:
 	;
 	goto L21
 L25:
 	;
-	F_errfinish(m, int32(518151), int32(3194), int32(328796))
+	F_errfinish(m, int32(518592), int32(3194), int32(329105))
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -719,7 +719,7 @@ L55:
 L56:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v190
-	F_errmsg_internal(m, int32(198469), v10+int32(16))
+	F_errmsg_internal(m, int32(198633), v10+int32(16))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
@@ -734,14 +734,14 @@ L57:
 	goto L59
 L58:
 	;
-	v190 = int32(571067)
+	v190 = int32(571513)
 	goto L59
 L59:
 	;
 	goto L56
 L60:
 	;
-	F_errfinish(m, int32(518151), int32(3360), int32(328796))
+	F_errfinish(m, int32(518592), int32(3360), int32(329105))
 	mBase = m.M
 	v201 = m.ExcPending
 	if v201 != 0 {
@@ -1179,7 +1179,7 @@ L8:
 	}
 L9:
 	;
-	F_pairingheap_remove(m, int32(4216648), v16+int32(52))
+	F_pairingheap_remove(m, int32(4216680), v16+int32(52))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -1630,7 +1630,7 @@ L72:
 	}
 L73:
 	;
-	F_errmsg_internal(m, int32(391995), int32(0))
+	F_errmsg_internal(m, int32(392416), int32(0))
 	mBase = m.M
 	v205 = m.ExcPending
 	if v205 != 0 {
@@ -1640,7 +1640,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(524510), int32(1605), int32(93637))
+	F_errfinish(m, int32(524956), int32(1605), int32(93648))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -1699,7 +1699,7 @@ L81:
 	}
 L82:
 	;
-	F_errdetail(m, int32(700990), int32(0))
+	F_errdetail(m, int32(702037), int32(0))
 	mBase = m.M
 	v247 = m.ExcPending
 	if v247 != 0 {
@@ -1709,7 +1709,7 @@ L82:
 	}
 L83:
 	;
-	F_errhint(m, int32(610526), int32(0))
+	F_errhint(m, int32(610972), int32(0))
 	mBase = m.M
 	v251 = m.ExcPending
 	if v251 != 0 {
@@ -1719,7 +1719,7 @@ L83:
 	}
 L84:
 	;
-	F_errfinish(m, int32(524510), int32(1697), int32(93552))
+	F_errfinish(m, int32(524956), int32(1697), int32(93563))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -1831,7 +1831,7 @@ L99:
 	*(*int32)(unsafe.Add(mBase, _consts[988])) = v295
 	*(*int32)(unsafe.Add(mBase, _consts[151])) = v295
 	*(*int32)(unsafe.Add(mBase, uint32(v295)+48)) = v359
-	F_pairingheap_add(m, int32(4216648), v295+int32(52))
+	F_pairingheap_add(m, int32(4216680), v295+int32(52))
 	mBase = m.M
 	v369 = m.ExcPending
 	if v369 != 0 {
@@ -1931,7 +1931,7 @@ L115:
 	}
 L116:
 	;
-	F_pairingheap_remove(m, int32(4216648), v395+int32(52))
+	F_pairingheap_remove(m, int32(4216680), v395+int32(52))
 	mBase = m.M
 	v402 = m.ExcPending
 	if v402 != 0 {
@@ -2009,7 +2009,7 @@ L127:
 	goto L4
 L128:
 	;
-	F_errmsg_internal(m, int32(273098), int32(0))
+	F_errmsg_internal(m, int32(273320), int32(0))
 	mBase = m.M
 	v455 = m.ExcPending
 	if v455 != 0 {
@@ -2019,7 +2019,7 @@ L128:
 	}
 L129:
 	;
-	F_errfinish(m, int32(520471), int32(306), int32(93494))
+	F_errfinish(m, int32(520912), int32(306), int32(93505))
 	mBase = m.M
 	v460 = m.ExcPending
 	if v460 != 0 {
@@ -2176,13 +2176,13 @@ func F_PushTransaction(m *base.Module) {
 					if v79 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(270945), int32(0))
+						F_errmsg(m, int32(271137), int32(0))
 						mBase = m.M
 						v83 = m.ExcPending
 						if v83 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518151), int32(5438), int32(271431))
+							F_errfinish(m, int32(518592), int32(5438), int32(271623))
 							mBase = m.M
 							v88 = m.ExcPending
 							if v88 != 0 {
@@ -2549,13 +2549,13 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 													if v205 != 0 {
 														return
 													} else {
-														F_errmsg(m, int32(568210), int32(0))
+														F_errmsg(m, int32(568656), int32(0))
 														mBase = m.M
 														v209 = m.ExcPending
 														if v209 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(524510), int32(1748), int32(93517))
+															F_errfinish(m, int32(524956), int32(1748), int32(93528))
 															mBase = m.M
 															v214 = m.ExcPending
 															if v214 != 0 {
@@ -2676,7 +2676,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 														*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 														*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 														*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-														F_pairingheap_add(m, int32(4216648), v238+int32(52))
+														F_pairingheap_add(m, int32(4216680), v238+int32(52))
 														mBase = m.M
 														v312 = m.ExcPending
 														if v312 != 0 {
@@ -2798,7 +2798,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 													*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 													*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 													*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-													F_pairingheap_add(m, int32(4216648), v238+int32(52))
+													F_pairingheap_add(m, int32(4216680), v238+int32(52))
 													mBase = m.M
 													v312 = m.ExcPending
 													if v312 != 0 {
@@ -2914,7 +2914,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 											*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 											*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 											*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-											F_pairingheap_add(m, int32(4216648), v238+int32(52))
+											F_pairingheap_add(m, int32(4216680), v238+int32(52))
 											mBase = m.M
 											v312 = m.ExcPending
 											if v312 != 0 {
@@ -3029,7 +3029,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 										*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 										*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-										F_pairingheap_add(m, int32(4216648), v238+int32(52))
+										F_pairingheap_add(m, int32(4216680), v238+int32(52))
 										mBase = m.M
 										v312 = m.ExcPending
 										if v312 != 0 {
@@ -3061,19 +3061,19 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								if v156 != 0 {
 									return
 								} else {
-									F_errmsg(m, int32(93297), int32(0))
+									F_errmsg(m, int32(93308), int32(0))
 									mBase = m.M
 									v160 = m.ExcPending
 									if v160 != 0 {
 										return
 									} else {
-										F_errdetail(m, int32(663762), int32(0))
+										F_errdetail(m, int32(664709), int32(0))
 										mBase = m.M
 										v164 = m.ExcPending
 										if v164 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(520471), int32(568), int32(93471))
+											F_errfinish(m, int32(520912), int32(568), int32(93482))
 											mBase = m.M
 											v169 = m.ExcPending
 											if v169 != 0 {
@@ -3110,20 +3110,20 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							if v331 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(93297), int32(0))
+								F_errmsg(m, int32(93308), int32(0))
 								mBase = m.M
 								v335 = m.ExcPending
 								if v335 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10))) = l2
-									F_errdetail(m, int32(663809), v10)
+									F_errdetail(m, int32(664756), v10)
 									mBase = m.M
 									v339 = m.ExcPending
 									if v339 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(520471), int32(575), int32(93471))
+										F_errfinish(m, int32(520912), int32(575), int32(93482))
 										mBase = m.M
 										v344 = m.ExcPending
 										if v344 != 0 {
@@ -3160,13 +3160,13 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												if v205 != 0 {
 													return
 												} else {
-													F_errmsg(m, int32(568210), int32(0))
+													F_errmsg(m, int32(568656), int32(0))
 													mBase = m.M
 													v209 = m.ExcPending
 													if v209 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(524510), int32(1748), int32(93517))
+														F_errfinish(m, int32(524956), int32(1748), int32(93528))
 														mBase = m.M
 														v214 = m.ExcPending
 														if v214 != 0 {
@@ -3287,7 +3287,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 													*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 													*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 													*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-													F_pairingheap_add(m, int32(4216648), v238+int32(52))
+													F_pairingheap_add(m, int32(4216680), v238+int32(52))
 													mBase = m.M
 													v312 = m.ExcPending
 													if v312 != 0 {
@@ -3409,7 +3409,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 												*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 												*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-												F_pairingheap_add(m, int32(4216648), v238+int32(52))
+												F_pairingheap_add(m, int32(4216680), v238+int32(52))
 												mBase = m.M
 												v312 = m.ExcPending
 												if v312 != 0 {
@@ -3525,7 +3525,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 										*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 										*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-										F_pairingheap_add(m, int32(4216648), v238+int32(52))
+										F_pairingheap_add(m, int32(4216680), v238+int32(52))
 										mBase = m.M
 										v312 = m.ExcPending
 										if v312 != 0 {
@@ -3640,7 +3640,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 									*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 									*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-									F_pairingheap_add(m, int32(4216648), v238+int32(52))
+									F_pairingheap_add(m, int32(4216680), v238+int32(52))
 									mBase = m.M
 									v312 = m.ExcPending
 									if v312 != 0 {
@@ -3664,7 +3664,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			}
 		}
 	} else {
-		F_pairingheap_remove(m, int32(4216648), v13+int32(52))
+		F_pairingheap_remove(m, int32(4216680), v13+int32(52))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
@@ -3815,13 +3815,13 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 														if v205 != 0 {
 															return
 														} else {
-															F_errmsg(m, int32(568210), int32(0))
+															F_errmsg(m, int32(568656), int32(0))
 															mBase = m.M
 															v209 = m.ExcPending
 															if v209 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(524510), int32(1748), int32(93517))
+																F_errfinish(m, int32(524956), int32(1748), int32(93528))
 																mBase = m.M
 																v214 = m.ExcPending
 																if v214 != 0 {
@@ -3942,7 +3942,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 															*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 															*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 															*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-															F_pairingheap_add(m, int32(4216648), v238+int32(52))
+															F_pairingheap_add(m, int32(4216680), v238+int32(52))
 															mBase = m.M
 															v312 = m.ExcPending
 															if v312 != 0 {
@@ -4064,7 +4064,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 														*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 														*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 														*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-														F_pairingheap_add(m, int32(4216648), v238+int32(52))
+														F_pairingheap_add(m, int32(4216680), v238+int32(52))
 														mBase = m.M
 														v312 = m.ExcPending
 														if v312 != 0 {
@@ -4180,7 +4180,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 												*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 												*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-												F_pairingheap_add(m, int32(4216648), v238+int32(52))
+												F_pairingheap_add(m, int32(4216680), v238+int32(52))
 												mBase = m.M
 												v312 = m.ExcPending
 												if v312 != 0 {
@@ -4295,7 +4295,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 											*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 											*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 											*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-											F_pairingheap_add(m, int32(4216648), v238+int32(52))
+											F_pairingheap_add(m, int32(4216680), v238+int32(52))
 											mBase = m.M
 											v312 = m.ExcPending
 											if v312 != 0 {
@@ -4327,19 +4327,19 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									if v156 != 0 {
 										return
 									} else {
-										F_errmsg(m, int32(93297), int32(0))
+										F_errmsg(m, int32(93308), int32(0))
 										mBase = m.M
 										v160 = m.ExcPending
 										if v160 != 0 {
 											return
 										} else {
-											F_errdetail(m, int32(663762), int32(0))
+											F_errdetail(m, int32(664709), int32(0))
 											mBase = m.M
 											v164 = m.ExcPending
 											if v164 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(520471), int32(568), int32(93471))
+												F_errfinish(m, int32(520912), int32(568), int32(93482))
 												mBase = m.M
 												v169 = m.ExcPending
 												if v169 != 0 {
@@ -4376,20 +4376,20 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								if v331 != 0 {
 									return
 								} else {
-									F_errmsg(m, int32(93297), int32(0))
+									F_errmsg(m, int32(93308), int32(0))
 									mBase = m.M
 									v335 = m.ExcPending
 									if v335 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = l2
-										F_errdetail(m, int32(663809), v10)
+										F_errdetail(m, int32(664756), v10)
 										mBase = m.M
 										v339 = m.ExcPending
 										if v339 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(520471), int32(575), int32(93471))
+											F_errfinish(m, int32(520912), int32(575), int32(93482))
 											mBase = m.M
 											v344 = m.ExcPending
 											if v344 != 0 {
@@ -4426,13 +4426,13 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 													if v205 != 0 {
 														return
 													} else {
-														F_errmsg(m, int32(568210), int32(0))
+														F_errmsg(m, int32(568656), int32(0))
 														mBase = m.M
 														v209 = m.ExcPending
 														if v209 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(524510), int32(1748), int32(93517))
+															F_errfinish(m, int32(524956), int32(1748), int32(93528))
 															mBase = m.M
 															v214 = m.ExcPending
 															if v214 != 0 {
@@ -4553,7 +4553,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 														*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 														*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 														*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-														F_pairingheap_add(m, int32(4216648), v238+int32(52))
+														F_pairingheap_add(m, int32(4216680), v238+int32(52))
 														mBase = m.M
 														v312 = m.ExcPending
 														if v312 != 0 {
@@ -4675,7 +4675,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 													*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 													*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 													*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-													F_pairingheap_add(m, int32(4216648), v238+int32(52))
+													F_pairingheap_add(m, int32(4216680), v238+int32(52))
 													mBase = m.M
 													v312 = m.ExcPending
 													if v312 != 0 {
@@ -4791,7 +4791,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 											*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 											*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 											*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-											F_pairingheap_add(m, int32(4216648), v238+int32(52))
+											F_pairingheap_add(m, int32(4216680), v238+int32(52))
 											mBase = m.M
 											v312 = m.ExcPending
 											if v312 != 0 {
@@ -4906,7 +4906,7 @@ func F_SetTransactionSnapshot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										*(*int32)(unsafe.Add(mBase, _consts[988])) = v238
 										*(*int32)(unsafe.Add(mBase, _consts[151])) = v238
 										*(*int32)(unsafe.Add(mBase, uint32(v238)+48)) = v302
-										F_pairingheap_add(m, int32(4216648), v238+int32(52))
+										F_pairingheap_add(m, int32(4216680), v238+int32(52))
 										mBase = m.M
 										v312 = m.ExcPending
 										if v312 != 0 {
@@ -5032,7 +5032,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 									if v61 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(523037), int32(217), int32(87570))
+										F_errfinish(m, int32(523483), int32(217), int32(87581))
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
@@ -5091,7 +5091,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 										if v61 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(523037), int32(217), int32(87570))
+											F_errfinish(m, int32(523483), int32(217), int32(87581))
 											mBase = m.M
 											v66 = m.ExcPending
 											if v66 != 0 {
@@ -5145,7 +5145,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 										if v61 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(523037), int32(217), int32(87570))
+											F_errfinish(m, int32(523483), int32(217), int32(87581))
 											mBase = m.M
 											v66 = m.ExcPending
 											if v66 != 0 {
@@ -5249,7 +5249,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 											if v61 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(523037), int32(217), int32(87570))
+												F_errfinish(m, int32(523483), int32(217), int32(87581))
 												mBase = m.M
 												v66 = m.ExcPending
 												if v66 != 0 {
@@ -5308,7 +5308,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 												if v61 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(523037), int32(217), int32(87570))
+													F_errfinish(m, int32(523483), int32(217), int32(87581))
 													mBase = m.M
 													v66 = m.ExcPending
 													if v66 != 0 {
@@ -5362,7 +5362,7 @@ func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32 {
 												if v61 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(523037), int32(217), int32(87570))
+													F_errfinish(m, int32(523483), int32(217), int32(87581))
 													mBase = m.M
 													v66 = m.ExcPending
 													if v66 != 0 {

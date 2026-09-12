@@ -27,7 +27,7 @@ func F_CreateExecutorState(m *base.Module) int32 {
 	var v31 int32
 	_ = v31
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v10 = F_AllocSetContextCreateInternal(m, v5, int32(372145), int32(0), int32(8192), int32(8388608))
+	v10 = F_AllocSetContextCreateInternal(m, v5, int32(372516), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

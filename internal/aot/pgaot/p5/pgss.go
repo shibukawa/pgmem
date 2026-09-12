@@ -235,7 +235,7 @@ L4:
 	}
 L5:
 	;
-	v35 = F_AllocateFile(m, int32(247807), int32(34101))
+	v35 = F_AllocateFile(m, int32(247999), int32(34101))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -245,7 +245,7 @@ L5:
 	}
 L6:
 	;
-	v276 = F_unlink(m, int32(119666))
+	v276 = F_unlink(m, int32(119677))
 	mBase = m.M
 	goto L1
 L7:
@@ -272,7 +272,7 @@ L9:
 	}
 L10:
 	;
-	v42 = F_fwrite(m, int32(4120604), int32(4), int32(1), v35)
+	v42 = F_fwrite(m, int32(4120636), int32(4), int32(1), v35)
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -298,7 +298,7 @@ L13:
 	}
 L14:
 	;
-	v49 = F_fwrite(m, int32(4120608), int32(4), int32(1), v35)
+	v49 = F_fwrite(m, int32(4120640), int32(4), int32(1), v35)
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -586,7 +586,7 @@ L47:
 	}
 L48:
 	;
-	v220 = F_durable_rename(m, int32(247807), int32(119700), int32(15))
+	v220 = F_durable_rename(m, int32(247999), int32(119711), int32(15))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {
@@ -628,8 +628,8 @@ L53:
 	}
 L54:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(247807)
-	F_errmsg(m, int32(314042), v11)
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(247999)
+	F_errmsg(m, int32(314307), v11)
 	mBase = m.M
 	v253 = m.ExcPending
 	if v253 != 0 {
@@ -639,7 +639,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(518309), int32(824), int32(256723))
+	F_errfinish(m, int32(518750), int32(824), int32(256915))
 	mBase = m.M
 	v260 = m.ExcPending
 	if v260 != 0 {
@@ -665,7 +665,7 @@ L58:
 	goto L59
 L59:
 	;
-	v266 = F_unlink(m, int32(247807))
+	v266 = F_unlink(m, int32(247999))
 	mBase = m.M
 	goto L6
 L60:

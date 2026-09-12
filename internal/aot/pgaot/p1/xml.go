@@ -26,17 +26,17 @@ func F_XmlTableFetchRow(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(381964), int32(0))
+			F_errmsg(m, int32(382385), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(608183), int32(0))
+				F_errdetail(m, int32(608629), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(523193), int32(4912), int32(33468))
+					F_errfinish(m, int32(523639), int32(4912), int32(33468))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -71,17 +71,17 @@ func F_XmlTableSetRowFilter(m *base.Module, l0 int32, l1 int32) {
 		if v9 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(381964), int32(0))
+			F_errmsg(m, int32(382385), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(608183), int32(0))
+				F_errdetail(m, int32(608629), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(523193), int32(4837), int32(227289))
+					F_errfinish(m, int32(523639), int32(4837), int32(227481))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -277,7 +277,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v5 + int32(-52)
-	v94 = F_sscanf(m, v28, int32(543002), v7)
+	v94 = F_sscanf(m, v28, int32(543448), v7)
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -350,17 +350,17 @@ func F_xml_is_well_formed_document(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(381964), int32(0))
+			F_errmsg(m, int32(382385), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(608183), int32(0))
+				F_errdetail(m, int32(608629), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(523193), int32(4628), int32(101285))
+					F_errfinish(m, int32(523639), int32(4628), int32(101296))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

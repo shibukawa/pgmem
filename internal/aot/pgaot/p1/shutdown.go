@@ -35,10 +35,10 @@ func F_shutdown_validator_library(m *base.Module, l0 int32) {
 	_ = v6
 	var v8 int32
 	_ = v8
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[438]))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+8))
 	if v4 != 0 {
-		v6 = *(*int32)(unsafe.Add(mBase, _consts[437]))
+		v6 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 		m.T0[v4].(func(*base.Module, int32))(m, v6)
 		mBase = m.M
 		v8 = m.ExcPending

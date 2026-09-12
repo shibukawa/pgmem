@@ -222,7 +222,7 @@ func F_qtext_store(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 L1:
 	;
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[1458]))
-	F_s_lock(m, v19+int32(20), int32(518309), int32(2237), int32(383232))
+	F_s_lock(m, v19+int32(20), int32(518750), int32(2237), int32(383653))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -281,7 +281,7 @@ L9:
 L10:
 	;
 	v114 = *(*int32)(unsafe.Add(mBase, _consts[1458]))
-	F_s_lock(m, v114+int32(20), int32(518309), v112, int32(383232))
+	F_s_lock(m, v114+int32(20), int32(518750), v112, int32(383653))
 	mBase = m.M
 	v120 = m.ExcPending
 	if v120 != 0 {
@@ -309,7 +309,7 @@ L13:
 	goto L14
 L14:
 	;
-	v54 = F_OpenTransientFile(m, int32(119666), int32(66))
+	v54 = F_OpenTransientFile(m, int32(119677), int32(66))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -338,7 +338,7 @@ L16:
 L17:
 	;
 	v61 = int32(1)
-	v65 = F_pwrite(m, v54, int32(4120612), v61, base.I64_extend_i32_u(v36))
+	v65 = F_pwrite(m, v54, int32(4120644), v61, base.I64_extend_i32_u(v36))
 	mBase = m.M
 	if v65 != v61 {
 		v79 = v54
@@ -401,8 +401,8 @@ L24:
 	}
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(119666)
-	F_errmsg(m, int32(314042), v11)
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(119677)
+	F_errmsg(m, int32(314307), v11)
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -412,7 +412,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(518309), int32(2282), int32(383232))
+	F_errfinish(m, int32(518750), int32(2282), int32(383653))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {

@@ -1168,7 +1168,7 @@ L69:
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+8)) = v594
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+4)) = v593
 	*(*int32)(unsafe.Add(mBase, uint32(v34))) = v592
-	F_errmsg_internal(m, int32(133063), v34)
+	F_errmsg_internal(m, int32(133133), v34)
 	mBase = m.M
 	v613 = m.ExcPending
 	if v613 != 0 {
@@ -1217,7 +1217,7 @@ L72:
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+56)) = v516
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+60)) = v512
 	*(*uint8)(unsafe.Add(mBase, uint32(v34)+51)) = uint8(v547)
-	F_errfinish(m, int32(525055), int32(992), int32(419829))
+	F_errfinish(m, int32(525501), int32(992), int32(420250))
 	mBase = m.M
 	v629 = m.ExcPending
 	if v629 != 0 {
@@ -1482,7 +1482,7 @@ func F_GetCatalogSnapshot(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1211]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1210]))
 	if v4 != 0 {
 		v9 = v4
 		return v9
