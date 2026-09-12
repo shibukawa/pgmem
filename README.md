@@ -80,12 +80,20 @@ Every server has its own filesystem and its own database state.
 
 ## From other languages
 
-`go build ./cmd/pgmem` gives a standalone server binary. It prints a JSON
-line with the port and DSN when ready and exits when its stdin is closed,
-so a Java, Node.js or Python test suite can start it as a subprocess and
-connect with its normal PostgreSQL driver. See
-[docs/subprocess.md](docs/subprocess.md) for the contract, wrapper
-snippets and packaging options.
+The same prepare-once, fork-per-test workflow is available without Go:
+
+- **Python**: `pip install pgmem` and use the `pgmem_dsn` pytest fixture
+  (override `pgmem_snapshot` to run migrations). See
+  [packages/python](packages/python/README.md).
+- **Java**: `jp.shibu:pgmem-junit5` injects a fresh `Fork` or `DataSource`
+  into every test method, plus `jp.shibu:pgmem-native` with your
+  platform's classifier. See [packages/java](packages/java/README.md).
+
+Both bundle the `pgmem` binary (`go build ./cmd/pgmem`): a standalone
+process that prints a JSON line with the DSN when ready, takes snapshot and
+fork requests as JSON lines on stdin, and exits when its stdin is closed.
+[docs/subprocess.md](docs/subprocess.md) documents the protocol for other
+languages.
 
 ## How it works
 
