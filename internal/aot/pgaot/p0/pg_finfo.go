@@ -32,6 +32,12 @@ func F_pg_finfo_bqarr_out(m *base.Module) int32 {
 func F_pg_finfo_citext_gt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_gt_0)
 }
+func F_pg_finfo_daitch_mokotoff(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_daitch_mokotoff_0)
+}
+func F_pg_finfo_dmetaphone_alt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_dmetaphone_alt_0)
+}
 func F_pg_finfo_euc_jis_2004_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jis_2004_to_utf8_0)
 }
@@ -253,6 +259,9 @@ func F_pg_finfo_latin1_to_mic(m *base.Module) int32 {
 }
 func F_pg_finfo_latin2_to_win1250(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin2_to_win1250_0)
+}
+func F_pg_finfo_levenshtein(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_levenshtein_0)
 }
 func F_pg_finfo_lquery_out(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_lquery_out_0)

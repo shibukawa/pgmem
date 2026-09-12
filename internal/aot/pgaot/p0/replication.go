@@ -8,147 +8,28 @@ import (
 func F_EndReplicationCommand(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
-	var v15 int32
-	_ = v15
-	var v19 int32
-	_ = v19
-	var v24 int32
-	_ = v24
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v45 int32
-	_ = v45
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v59 int32
-	_ = v59
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	if l0&int32(3) == int32(0) {
-		v26 = l0
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_EndReplicationCommand[0]))
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+16))
-	v65 = m.T0[v64].(func(*base.Module, int32, int32, int32) int32)(m, int32(67), l0, v59+int32(1))
+	v3 = F_strlen(m, l0)
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
-		goto L18
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_EndReplicationCommand[0]))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+	v9 = m.T0[v8].(func(*base.Module, int32, int32, int32) int32)(m, int32(67), l0, v3+int32(1))
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		return
 	} else {
-		goto L19
+		return
 	}
-L2:
-	;
-	v59 = v51 - l0
-	goto L1
-L3:
-	;
-	v30 = v26
-	goto L12
-L4:
-	;
-	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v10 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v59 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v15 = l0
-	goto L8
-L8:
-	;
-	v19 = v15 + int32(1)
-	if v19&int32(3) == int32(0) {
-		v26 = v19
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v51 = v19
-	goto L2
-L10:
-	;
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
-	if v24 != 0 {
-		v15 = v19
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
-	v39 = int32(-2139062144)
-	if (int32(16843008)-v36|v36)&v39 == v39 {
-		v30 = v30 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v45 = v30
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45))))
-	if v49 != 0 {
-		v45 = v45 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v51 = v45
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	return
-L19:
-	;
-	return
 }
 func F_ReplicationSlotCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
 	mBase := m.M

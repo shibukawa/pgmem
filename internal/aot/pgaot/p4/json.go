@@ -2970,46 +2970,24 @@ func F_json_unique_object_field_start(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v22 int32
-	_ = v22
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -3028,149 +3006,58 @@ L2:
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
-	if l1&int32(3) == int32(0) {
-		v38 = l1
-		goto L5
+	v15 = F_strlen(m, l1)
+	mBase = m.M
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v13
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v15
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v24 = F_hash_search(m, v18, v7+int32(4), int32(1), v7+int32(3))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L3
 	} else {
-		goto L6
+		goto L4
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v13
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v71
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v80 = F_hash_search(m, v74, v7+int32(4), int32(1), v7+int32(3))
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
+	return int32(0)
 L4:
 	;
-	v71 = v63 - l1
-	goto L3
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+3)))
+	if v28 != int32(1) {
+		goto L1
+	} else {
+		goto L5
+	}
 L5:
 	;
-	v42 = v38
-	goto L14
+	v31 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
+	goto L6
 L6:
 	;
-	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	if v22 == int32(0) {
-		goto L7
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v37 == int32(0) {
+		goto L1
 	} else {
 		goto L8
 	}
-L7:
-	;
-	v71 = int32(0)
-	goto L3
 L8:
 	;
-	goto L9
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v40
+	F_pfree(m, v37)
+	mBase = m.M
+	v43 = m.ExcPending
+	if v43 != 0 {
+		goto L3
+	} else {
+		goto L9
+	}
 L9:
 	;
-	v27 = l1
-	goto L10
-L10:
-	;
-	v31 = v27 + int32(1)
-	if v31&int32(3) == int32(0) {
-		v38 = v31
-		goto L5
-	} else {
-		goto L12
-	}
-L11:
-	;
-	v63 = v31
-	goto L4
-L12:
-	;
-	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
-	if v36 != 0 {
-		v27 = v31
-		goto L10
-	} else {
-		goto L13
-	}
-L13:
-	;
-	goto L11
-L14:
-	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-	v51 = int32(-2139062144)
-	if (int32(16843008)-v48|v48)&v51 == v51 {
-		v42 = v42 + int32(4)
-		goto L14
-	} else {
-		goto L16
-	}
-L15:
-	;
-	v57 = v42
-	goto L17
-L16:
-	;
-	goto L15
-L17:
-	;
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v57))))
-	if v61 != 0 {
-		v57 = v57 + int32(1)
-		goto L17
-	} else {
-		goto L19
-	}
-L18:
-	;
-	v63 = v57
-	goto L4
-L19:
-	;
-	goto L18
-L20:
-	;
-	return int32(0)
-L21:
-	;
-	v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+3)))
-	if v84 != int32(1) {
-		goto L1
-	} else {
-		goto L22
-	}
-L22:
-	;
-	v87 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v87)
-	goto L23
-L23:
-	;
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v93 == int32(0) {
-		goto L1
-	} else {
-		goto L25
-	}
-L25:
-	;
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v96
-	F_pfree(m, v93)
-	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
-		goto L20
-	} else {
-		goto L26
-	}
-L26:
-	;
-	goto L23
+	goto L6
 }
 func F_makeJsonTablePathSpec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M

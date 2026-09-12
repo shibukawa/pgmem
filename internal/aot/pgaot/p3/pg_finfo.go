@@ -197,6 +197,9 @@ func F_pg_finfo_iso_to_win866(m *base.Module) int32 {
 func F_pg_finfo_latin2_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin2_to_mic_0)
 }
+func F_pg_finfo_levenshtein_less_equal(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_levenshtein_less_equal_0)
+}
 func F_pg_finfo_ltree_decompress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltree_decompress_0)
 }

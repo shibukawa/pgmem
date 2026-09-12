@@ -2440,8 +2440,12 @@ func F_array_create_iterator(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_array_iterate(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_array_free_iterator github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_array_free_iterator
 func F_array_free_iterator(m *base.Module, l0 int32)
+//go:linkname F_initArrayResult github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_initArrayResult
+func F_initArrayResult(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_initArrayResultWithSize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_initArrayResultWithSize
 func F_initArrayResultWithSize(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_makeArrayResult github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_makeArrayResult
+func F_makeArrayResult(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_initArrayResultAny github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_initArrayResultAny
 func F_initArrayResultAny(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_accumArrayResultAny github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_accumArrayResultAny
@@ -3404,6 +3408,8 @@ func F_pg_do_encoding_conversion_buf(m *base.Module, l0 int32, l1 int32, l2 int3
 func F_pg_any_to_server(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pg_server_to_client github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_server_to_client
 func F_pg_server_to_client(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pg_server_to_any github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_server_to_any
+func F_pg_server_to_any(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pg_mblen_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_mblen_cstr
 func F_pg_mblen_cstr(m *base.Module, l0 int32) int32
 //go:linkname F_report_invalid_encoding_int github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_report_invalid_encoding_int
@@ -3752,6 +3758,8 @@ func F_appendBinaryStringInfoNT(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_get_decomposed_size(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_decompose_code github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_decompose_code
 func F_decompose_code(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_pg_utf_mblen_private github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_utf_mblen_private
+func F_pg_utf_mblen_private(m *base.Module, l0 int32) int32
 //go:linkname F_pg_encoding_verifymbchar github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_encoding_verifymbchar
 func F_pg_encoding_verifymbchar(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pg_cryptohash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_cryptohash_create
@@ -3942,6 +3950,8 @@ func F_inner_int_inter(m *base.Module, l0 int32, l1 int32) int32
 func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_intarray_add_elem github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_intarray_add_elem
 func F_intarray_add_elem(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_update_node github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_update_node
+func F_update_node(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

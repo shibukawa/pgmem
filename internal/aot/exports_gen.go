@@ -8504,6 +8504,132 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Uniq(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_fuzzystrmatch":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_fuzzystrmatch: want 0 args")
+		}
+		r := pgaot.PgMagicFuncFuzzystrmatch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "daitch_mokotoff":
+		if len(a) != 1 {
+			panic("aot: daitch_mokotoff: want 1 args")
+		}
+		r := pgaot.DaitchMokotoff(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "difference":
+		if len(a) != 1 {
+			panic("aot: difference: want 1 args")
+		}
+		r := pgaot.Difference(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "dmetaphone":
+		if len(a) != 1 {
+			panic("aot: dmetaphone: want 1 args")
+		}
+		r := pgaot.Dmetaphone(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "dmetaphone_alt":
+		if len(a) != 1 {
+			panic("aot: dmetaphone_alt: want 1 args")
+		}
+		r := pgaot.DmetaphoneAlt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "levenshtein":
+		if len(a) != 1 {
+			panic("aot: levenshtein: want 1 args")
+		}
+		r := pgaot.Levenshtein(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "levenshtein_less_equal":
+		if len(a) != 1 {
+			panic("aot: levenshtein_less_equal: want 1 args")
+		}
+		r := pgaot.LevenshteinLessEqual(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "levenshtein_less_equal_with_costs":
+		if len(a) != 1 {
+			panic("aot: levenshtein_less_equal_with_costs: want 1 args")
+		}
+		r := pgaot.LevenshteinLessEqualWithCosts(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "levenshtein_with_costs":
+		if len(a) != 1 {
+			panic("aot: levenshtein_with_costs: want 1 args")
+		}
+		r := pgaot.LevenshteinWithCosts(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "metaphone":
+		if len(a) != 1 {
+			panic("aot: metaphone: want 1 args")
+		}
+		r := pgaot.Metaphone(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_daitch_mokotoff":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_daitch_mokotoff: want 0 args")
+		}
+		r := pgaot.PgFinfoDaitchMokotoff(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_difference":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_difference: want 0 args")
+		}
+		r := pgaot.PgFinfoDifference(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_dmetaphone":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_dmetaphone: want 0 args")
+		}
+		r := pgaot.PgFinfoDmetaphone(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_dmetaphone_alt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_dmetaphone_alt: want 0 args")
+		}
+		r := pgaot.PgFinfoDmetaphoneAlt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_levenshtein":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_levenshtein: want 0 args")
+		}
+		r := pgaot.PgFinfoLevenshtein(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_levenshtein_less_equal":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_levenshtein_less_equal: want 0 args")
+		}
+		r := pgaot.PgFinfoLevenshteinLessEqual(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_levenshtein_less_equal_with_costs":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_levenshtein_less_equal_with_costs: want 0 args")
+		}
+		r := pgaot.PgFinfoLevenshteinLessEqualWithCosts(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_levenshtein_with_costs":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_levenshtein_with_costs: want 0 args")
+		}
+		r := pgaot.PgFinfoLevenshteinWithCosts(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_metaphone":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_metaphone: want 0 args")
+		}
+		r := pgaot.PgFinfoMetaphone(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_soundex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_soundex: want 0 args")
+		}
+		r := pgaot.PgFinfoSoundex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "soundex":
+		if len(a) != 1 {
+			panic("aot: soundex: want 1 args")
+		}
+		r := pgaot.Soundex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

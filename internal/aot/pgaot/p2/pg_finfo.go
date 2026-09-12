@@ -50,6 +50,9 @@ func F_pg_finfo_crosstab(m *base.Module) int32 {
 func F_pg_finfo_delete(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_delete_0)
 }
+func F_pg_finfo_difference(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_difference_0)
+}
 func F_pg_finfo_each(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_each_0)
 }
@@ -280,6 +283,9 @@ func F_pg_finfo_koi8r_to_mic(m *base.Module) int32 {
 }
 func F_pg_finfo_latin3_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin3_to_mic_0)
+}
+func F_pg_finfo_levenshtein_with_costs(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_levenshtein_with_costs_0)
 }
 func F_pg_finfo_ltq_regex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltq_regex_0)

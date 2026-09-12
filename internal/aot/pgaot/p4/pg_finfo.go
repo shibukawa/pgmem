@@ -32,6 +32,9 @@ func F_pg_finfo_date_dist(m *base.Module) int32 {
 func F_pg_finfo_defined(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_defined_0)
 }
+func F_pg_finfo_dmetaphone(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_dmetaphone_0)
+}
 func F_pg_finfo_dsnowball_init(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dsnowball_init_0)
 }
@@ -277,6 +280,9 @@ func F_pg_finfo_ltxtq_exec(m *base.Module) int32 {
 }
 func F_pg_finfo_ltxtq_rexec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltxtq_rexec_0)
+}
+func F_pg_finfo_metaphone(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_metaphone_0)
 }
 func F_pg_finfo_mic_to_euc_cn(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_euc_cn_0)

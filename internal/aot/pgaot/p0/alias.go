@@ -2919,7 +2919,7 @@ func F_split_text(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_concat_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_concat_internal
 func F_concat_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_varstr_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_varstr_levenshtein_less_equal
-func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 //go:linkname F_map_sql_identifier_to_xml_name github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_map_sql_identifier_to_xml_name
 func F_map_sql_identifier_to_xml_name(m *base.Module) int32
 //go:linkname F_escape_xml github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_escape_xml
@@ -3900,6 +3900,8 @@ func F_new_intArrayType(m *base.Module, l0 int32) int32
 func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
 func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_MetaphAdd github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MetaphAdd
+func F_MetaphAdd(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

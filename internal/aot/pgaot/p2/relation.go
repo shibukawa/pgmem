@@ -856,42 +856,20 @@ func F_RelationCacheInitFileRemoveInDir(m *base.Module, l0 int32) {
 	_ = v95
 	var v103 int32
 	_ = v103
-	var v111 int32
-	_ = v111
-	var v116 int32
-	_ = v116
+	var v104 int32
+	_ = v104
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
 	var v120 int32
 	_ = v120
-	var v125 int32
-	_ = v125
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v137 int32
-	_ = v137
-	var v140 int32
-	_ = v140
-	var v146 int32
-	_ = v146
-	var v150 int32
-	_ = v150
-	var v152 int32
-	_ = v152
-	var v160 int32
-	_ = v160
-	var v170 int32
-	_ = v170
-	var v171 int32
-	_ = v171
-	var v176 int32
-	_ = v176
-	var v178 int32
-	_ = v178
-	var v179 int32
-	_ = v179
-	var v185 int32
-	_ = v185
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v129 int32
+	_ = v129
 	v5 = m.G0
 	v7 = v5 - int32(2064)
 	m.G0 = v7
@@ -934,11 +912,11 @@ L6:
 	;
 	F_FreeDir(m, v9)
 	mBase = m.M
-	v185 = m.ExcPending
-	if v185 != 0 {
+	v129 = m.ExcPending
+	if v129 != 0 {
 		goto L1
 	} else {
-		goto L54
+		goto L37
 	}
 L7:
 	;
@@ -962,11 +940,12 @@ L8:
 	goto L6
 L9:
 	;
-	if v19&int32(3) == int32(0) {
-		v127 = v19
-		goto L32
+	v104 = F_strlen(m, v19)
+	mBase = m.M
+	if v103 == v104 {
+		goto L30
 	} else {
-		goto L33
+		goto L31
 	}
 L10:
 	;
@@ -1081,147 +1060,55 @@ L29:
 	goto L25
 L30:
 	;
-	if v103 == v160 {
-		goto L47
-	} else {
-		goto L48
-	}
-L31:
-	;
-	v160 = v152 - v19
-	goto L30
-L32:
-	;
-	v131 = v127
-	goto L41
-L33:
-	;
-	v111 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
-	if v111 == int32(0) {
-		goto L34
-	} else {
-		goto L35
-	}
-L34:
-	;
-	v160 = int32(0)
-	goto L30
-L35:
-	;
-	goto L36
-L36:
-	;
-	v116 = v19
-	goto L37
-L37:
-	;
-	v120 = v116 + int32(1)
-	if v120&int32(3) == int32(0) {
-		v127 = v120
-		goto L32
-	} else {
-		goto L39
-	}
-L38:
-	;
-	v152 = v120
-	goto L31
-L39:
-	;
-	v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120))))
-	if v125 != 0 {
-		v116 = v120
-		goto L37
-	} else {
-		goto L40
-	}
-L40:
-	;
-	goto L38
-L41:
-	;
-	v137 = *(*int32)(unsafe.Add(mBase, uint32(v131)))
-	v140 = int32(-2139062144)
-	if (int32(16843008)-v137|v137)&v140 == v140 {
-		v131 = v131 + int32(4)
-		goto L41
-	} else {
-		goto L43
-	}
-L42:
-	;
-	v146 = v131
-	goto L44
-L43:
-	;
-	goto L42
-L44:
-	;
-	v150 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146))))
-	if v150 != 0 {
-		v146 = v146 + int32(1)
-		goto L44
-	} else {
-		goto L46
-	}
-L45:
-	;
-	v152 = v146
-	goto L31
-L46:
-	;
-	goto L45
-L47:
-	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(_a_F_RelationCacheInitFileRemoveInDir_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v19
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	v170 = F_pg_snprintf(m, v7+int32(16), int32(2048), int32(_a_F_RelationCacheInitFileRemoveInDir_2), v7)
+	v114 = F_pg_snprintf(m, v7+int32(16), int32(2048), int32(_a_F_RelationCacheInitFileRemoveInDir_2), v7)
 	mBase = m.M
-	v171 = m.ExcPending
-	if v171 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L1
 	} else {
-		goto L50
+		goto L33
 	}
-L48:
+L31:
 	;
-	goto L49
-L49:
+	goto L32
+L32:
 	;
-	v178 = F_ReadDirExtended(m, v9, l0, int32(15))
+	v122 = F_ReadDirExtended(m, v9, l0, int32(15))
 	mBase = m.M
-	v179 = m.ExcPending
-	if v179 != 0 {
+	v123 = m.ExcPending
+	if v123 != 0 {
 		goto L1
 	} else {
-		goto L52
+		goto L35
 	}
-L50:
+L33:
 	;
 	F_unlink_initfile(m, v7+int32(16), int32(15))
 	mBase = m.M
-	v176 = m.ExcPending
-	if v176 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L1
 	} else {
-		goto L51
+		goto L34
 	}
-L51:
+L34:
 	;
-	goto L49
-L52:
+	goto L32
+L35:
 	;
-	if v178 != 0 {
-		v16 = v178
+	if v122 != 0 {
+		v16 = v122
 		goto L7
 	} else {
-		goto L53
+		goto L36
 	}
-L53:
+L36:
 	;
 	goto L8
-L54:
+L37:
 	;
 	m.G0 = v7 + int32(2064)
 	return

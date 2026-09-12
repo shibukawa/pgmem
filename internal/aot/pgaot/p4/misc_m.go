@@ -1701,90 +1701,46 @@ func F_make_absolute_path(m *base.Module, l0 int32) int32 {
 	_ = v62
 	var v67 int32
 	_ = v67
-	var v75 int32
-	_ = v75
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
 	var v80 int32
 	_ = v80
 	var v84 int32
 	_ = v84
-	var v89 int32
-	_ = v89
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
 	var v91 int32
 	_ = v91
-	var v95 int32
-	_ = v95
-	var v101 int32
-	_ = v101
-	var v104 int32
-	_ = v104
-	var v110 int32
-	_ = v110
+	var v92 int32
+	_ = v92
+	var v96 int32
+	_ = v96
+	var v102 int32
+	_ = v102
 	var v114 int32
 	_ = v114
-	var v116 int32
-	_ = v116
-	var v124 int32
-	_ = v124
-	var v132 int32
-	_ = v132
+	var v117 int32
+	_ = v117
+	var v121 int32
+	_ = v121
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
 	var v137 int32
 	_ = v137
-	var v141 int32
-	_ = v141
-	var v146 int32
-	_ = v146
-	var v148 int32
-	_ = v148
-	var v152 int32
-	_ = v152
-	var v158 int32
-	_ = v158
-	var v161 int32
-	_ = v161
-	var v167 int32
-	_ = v167
-	var v171 int32
-	_ = v171
-	var v173 int32
-	_ = v173
-	var v181 int32
-	_ = v181
-	var v185 int32
-	_ = v185
-	var v191 int32
-	_ = v191
-	var v192 int32
-	_ = v192
-	var v196 int32
-	_ = v196
-	var v198 int32
-	_ = v198
-	var v199 int32
-	_ = v199
-	var v203 int32
-	_ = v203
-	var v204 int32
-	_ = v204
-	var v208 int32
-	_ = v208
-	var v214 int32
-	_ = v214
-	var v226 int32
-	_ = v226
-	var v229 int32
-	_ = v229
-	var v233 int32
-	_ = v233
-	var v238 int32
-	_ = v238
-	var v242 int32
-	_ = v242
-	var v245 int32
-	_ = v245
-	var v249 int32
-	_ = v249
-	var v254 int32
-	_ = v254
+	var v142 int32
+	_ = v142
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -1797,11 +1753,11 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v242 = m.ExcPending
-	if v242 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L20
 	} else {
-		goto L73
+		goto L39
 	}
 L2:
 	;
@@ -1809,11 +1765,11 @@ L2:
 	mBase = m.M
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
+	v114 = m.ExcPending
+	if v114 != 0 {
 		goto L20
 	} else {
-		goto L69
+		goto L35
 	}
 L3:
 	;
@@ -1825,17 +1781,17 @@ L3:
 	}
 L4:
 	;
-	v214 = int32(0)
+	v102 = int32(0)
 	goto L5
 L5:
 	;
 	m.G0 = v8 + int32(16)
-	return v214
+	return v102
 L6:
 	;
-	F_canonicalize_path_enc(m, v208)
+	F_canonicalize_path_enc(m, v96)
 	mBase = m.M
-	v214 = v208
+	v102 = v96
 	goto L5
 L7:
 	;
@@ -1852,23 +1808,28 @@ L8:
 	goto L9
 L9:
 	;
-	v196 = F_strlen(m, l0)
+	v84 = F_strlen(m, l0)
 	mBase = m.M
-	v198 = v196 + int32(1)
-	v199 = F_emscripten_builtin_malloc(m, v198)
+	v86 = v84 + int32(1)
+	v87 = F_emscripten_builtin_malloc(m, v86)
 	mBase = m.M
-	if v199 == int32(0) {
-		goto L65
+	if v87 == int32(0) {
+		goto L31
 	} else {
-		goto L66
+		goto L32
 	}
 L10:
 	;
-	if v18&int32(3) == int32(0) {
-		v91 = v18
-		goto L30
+	v68 = F_strlen(m, v18)
+	mBase = m.M
+	v69 = F_strlen(m, l0)
+	mBase = m.M
+	v73 = F_emscripten_builtin_malloc(m, v68+v69+int32(2))
+	mBase = m.M
+	if v73 == int32(0) {
+		goto L2
 	} else {
-		goto L31
+		goto L28
 	}
 L11:
 	;
@@ -2001,299 +1962,112 @@ L27:
 	}
 L28:
 	;
-	if l0&int32(3) == int32(0) {
-		v148 = l0
-		goto L47
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v18
+	v79 = F_pg_sprintf(m, v73, int32(_a_F_make_absolute_path_5), v8)
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L20
 	} else {
-		goto L48
+		goto L29
 	}
 L29:
 	;
-	v124 = v116 - v18
-	goto L28
+	F_emscripten_builtin_free(m, v18)
+	mBase = m.M
+	v96 = v73
+	goto L6
 L30:
 	;
-	v95 = v91
-	goto L39
+	if v92 == int32(0) {
+		goto L1
+	} else {
+		goto L34
+	}
 L31:
 	;
-	v75 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18))))
-	if v75 == int32(0) {
-		goto L32
-	} else {
-		goto L33
-	}
+	v92 = int32(0)
+	goto L30
 L32:
 	;
-	v124 = int32(0)
-	goto L28
+	goto L33
 L33:
 	;
-	goto L34
+	v91 = F___memcpy(m, v87, l0, v86)
+	mBase = m.M
+	v92 = v91
+	goto L30
 L34:
 	;
-	v80 = v18
-	goto L35
+	v96 = v92
+	goto L6
 L35:
 	;
-	v84 = v80 + int32(1)
-	if v84&int32(3) == int32(0) {
-		v91 = v84
-		goto L30
+	F_errcode(m, int32(_a_F_make_absolute_path_0))
+	mBase = m.M
+	v117 = m.ExcPending
+	if v117 != 0 {
+		goto L20
 	} else {
-		goto L37
+		goto L36
 	}
 L36:
 	;
-	v116 = v84
-	goto L29
+	F_errmsg(m, int32(_a_F_make_absolute_path_1), int32(0))
+	mBase = m.M
+	v121 = m.ExcPending
+	if v121 != 0 {
+		goto L20
+	} else {
+		goto L37
+	}
 L37:
 	;
-	v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
-	if v89 != 0 {
-		v80 = v84
-		goto L35
+	F_errfinish(m, int32(_a_F_make_absolute_path_2), int32(866), int32(_a_F_make_absolute_path_3))
+	mBase = m.M
+	v126 = m.ExcPending
+	if v126 != 0 {
+		goto L20
 	} else {
 		goto L38
 	}
 L38:
 	;
-	goto L36
-L39:
-	;
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
-	v104 = int32(-2139062144)
-	if (int32(16843008)-v101|v101)&v104 == v104 {
-		v95 = v95 + int32(4)
-		goto L39
-	} else {
-		goto L41
-	}
-L40:
-	;
-	v110 = v95
-	goto L42
-L41:
-	;
-	goto L40
-L42:
-	;
-	v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v110))))
-	if v114 != 0 {
-		v110 = v110 + int32(1)
-		goto L42
-	} else {
-		goto L44
-	}
-L43:
-	;
-	v116 = v110
-	goto L29
-L44:
-	;
-	goto L43
-L45:
-	;
-	v185 = F_emscripten_builtin_malloc(m, v124+v181+int32(2))
-	mBase = m.M
-	if v185 == int32(0) {
-		goto L2
-	} else {
-		goto L62
-	}
-L46:
-	;
-	v181 = v173 - l0
-	goto L45
-L47:
-	;
-	v152 = v148
-	goto L56
-L48:
-	;
-	v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v132 == int32(0) {
-		goto L49
-	} else {
-		goto L50
-	}
-L49:
-	;
-	v181 = int32(0)
-	goto L45
-L50:
-	;
-	goto L51
-L51:
-	;
-	v137 = l0
-	goto L52
-L52:
-	;
-	v141 = v137 + int32(1)
-	if v141&int32(3) == int32(0) {
-		v148 = v141
-		goto L47
-	} else {
-		goto L54
-	}
-L53:
-	;
-	v173 = v141
-	goto L46
-L54:
-	;
-	v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v141))))
-	if v146 != 0 {
-		v137 = v141
-		goto L52
-	} else {
-		goto L55
-	}
-L55:
-	;
-	goto L53
-L56:
-	;
-	v158 = *(*int32)(unsafe.Add(mBase, uint32(v152)))
-	v161 = int32(-2139062144)
-	if (int32(16843008)-v158|v158)&v161 == v161 {
-		v152 = v152 + int32(4)
-		goto L56
-	} else {
-		goto L58
-	}
-L57:
-	;
-	v167 = v152
-	goto L59
-L58:
-	;
-	goto L57
-L59:
-	;
-	v171 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v167))))
-	if v171 != 0 {
-		v167 = v167 + int32(1)
-		goto L59
-	} else {
-		goto L61
-	}
-L60:
-	;
-	v173 = v167
-	goto L46
-L61:
-	;
-	goto L60
-L62:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v18
-	v191 = F_pg_sprintf(m, v185, int32(_a_F_make_absolute_path_5), v8)
-	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
-		goto L20
-	} else {
-		goto L63
-	}
-L63:
-	;
-	F_emscripten_builtin_free(m, v18)
-	mBase = m.M
-	v208 = v185
-	goto L6
-L64:
-	;
-	if v204 == int32(0) {
-		goto L1
-	} else {
-		goto L68
-	}
-L65:
-	;
-	v204 = int32(0)
-	goto L64
-L66:
-	;
-	goto L67
-L67:
-	;
-	v203 = F___memcpy(m, v199, l0, v198)
-	mBase = m.M
-	v204 = v203
-	goto L64
-L68:
-	;
-	v208 = v204
-	goto L6
-L69:
-	;
-	F_errcode(m, int32(_a_F_make_absolute_path_0))
-	mBase = m.M
-	v229 = m.ExcPending
-	if v229 != 0 {
-		goto L20
-	} else {
-		goto L70
-	}
-L70:
-	;
-	F_errmsg(m, int32(_a_F_make_absolute_path_1), int32(0))
-	mBase = m.M
-	v233 = m.ExcPending
-	if v233 != 0 {
-		goto L20
-	} else {
-		goto L71
-	}
-L71:
-	;
-	F_errfinish(m, int32(_a_F_make_absolute_path_2), int32(866), int32(_a_F_make_absolute_path_3))
-	mBase = m.M
-	v238 = m.ExcPending
-	if v238 != 0 {
-		goto L20
-	} else {
-		goto L72
-	}
-L72:
-	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L73:
+L39:
 	;
 	F_errcode(m, int32(_a_F_make_absolute_path_0))
 	mBase = m.M
-	v245 = m.ExcPending
-	if v245 != 0 {
+	v133 = m.ExcPending
+	if v133 != 0 {
 		goto L20
 	} else {
-		goto L74
+		goto L40
 	}
-L74:
+L40:
 	;
 	F_errmsg(m, int32(_a_F_make_absolute_path_1), int32(0))
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L20
 	} else {
-		goto L75
+		goto L41
 	}
-L75:
+L41:
 	;
 	F_errfinish(m, int32(_a_F_make_absolute_path_2), int32(883), int32(_a_F_make_absolute_path_3))
 	mBase = m.M
-	v254 = m.ExcPending
-	if v254 != 0 {
+	v142 = m.ExcPending
+	if v142 != 0 {
 		goto L20
 	} else {
-		goto L76
+		goto L42
 	}
-L76:
+L42:
 	;
 	base.Wasm_trap_unreachable()
 	for {

@@ -254,6 +254,9 @@ func F_pg_finfo_latin4_to_mic(m *base.Module) int32 {
 func F_pg_finfo_lca(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_lca_0)
 }
+func F_pg_finfo_levenshtein_less_equal_with_costs(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_levenshtein_less_equal_with_costs_0)
+}
 func F_pg_finfo_lquery_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_lquery_in_0)
 }
@@ -295,6 +298,9 @@ func F_pg_finfo_sort(m *base.Module) int32 {
 }
 func F_pg_finfo_sort_asc(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sort_asc_0)
+}
+func F_pg_finfo_soundex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_soundex_0)
 }
 func F_pg_finfo_tstz_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_tstz_dist_0)

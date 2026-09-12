@@ -52,172 +52,42 @@ func F_check_recovery_target_name(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v65 int32
-	_ = v65
-	var v67 int32
-	_ = v67
-	var v71 int32
-	_ = v71
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	if v8&int32(3) == int32(0) {
-		v32 = v8
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v67 = base.B2i32(base.Ui32(v65) < base.Ui32(int32(64)))
-	if v67 == int32(0) {
-		goto L18
-	} else {
-		goto L19
-	}
-L2:
-	;
-	v65 = v57 - v8
-	goto L1
-L3:
-	;
-	v36 = v32
-	goto L12
-L4:
-	;
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8))))
-	if v16 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v65 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v21 = v8
-	goto L8
-L8:
-	;
-	v25 = v21 + int32(1)
-	if v25&int32(3) == int32(0) {
-		v32 = v25
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v57 = v25
-	goto L2
-L10:
-	;
-	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25))))
-	if v30 != 0 {
-		v21 = v25
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
-	v45 = int32(-2139062144)
-	if (int32(16843008)-v42|v42)&v45 == v45 {
-		v36 = v36 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v51 = v36
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-	if v55 != 0 {
-		v51 = v51 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v57 = v51
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	v71 = *(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[1])) = v71
-	goto L21
-L19:
-	;
-	goto L20
-L20:
-	;
-	m.G0 = v6 + int32(16)
-	return v67
-L21:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = int32(63)
-	*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_check_recovery_target_name_0)
-	v80 = F_format_elog_string(m, int32(_a_F_check_recovery_target_name_1), v6)
+	v9 = F_strlen(m, v8)
 	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L22
+	v11 = base.B2i32(base.Ui32(v9) < base.Ui32(int32(64)))
+	if v11 == int32(0) {
+		v15 = *(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[0]))
+		*(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[1])) = v15
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = int32(63)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(_a_F_check_recovery_target_name_0)
+		v24 = F_format_elog_string(m, int32(_a_F_check_recovery_target_name_1), v6)
+		mBase = m.M
+		v27 = m.ExcPending
+		if v27 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[2])) = v24
+			m.G0 = v6 + int32(16)
+			return v11
+		}
 	} else {
-		goto L23
+		m.G0 = v6 + int32(16)
+		return v11
 	}
-L22:
-	;
-	return int32(0)
-L23:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_recovery_target_name[2])) = v80
-	goto L20
 }
 func F_check_recovery_target_time(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M

@@ -283,102 +283,58 @@ func F_transformGenericOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v233
 	var v237 int32
 	_ = v237
-	var v245 int32
-	_ = v245
-	var v250 int32
-	_ = v250
-	var v254 int32
-	_ = v254
-	var v259 int32
-	_ = v259
+	var v238 int32
+	_ = v238
+	var v239 int32
+	_ = v239
+	var v240 int32
+	_ = v240
+	var v243 int32
+	_ = v243
+	var v244 int32
+	_ = v244
+	var v255 int32
+	_ = v255
+	var v256 int32
+	_ = v256
+	var v260 int32
+	_ = v260
 	var v261 int32
 	_ = v261
+	var v262 int32
+	_ = v262
+	var v264 int32
+	_ = v264
 	var v265 int32
 	_ = v265
+	var v267 int32
+	_ = v267
 	var v271 int32
 	_ = v271
-	var v274 int32
-	_ = v274
-	var v280 int32
-	_ = v280
+	var v272 int32
+	_ = v272
+	var v273 int32
+	_ = v273
 	var v284 int32
 	_ = v284
-	var v286 int32
-	_ = v286
-	var v294 int32
-	_ = v294
-	var v302 int32
-	_ = v302
-	var v307 int32
-	_ = v307
-	var v311 int32
-	_ = v311
-	var v316 int32
-	_ = v316
-	var v318 int32
-	_ = v318
-	var v322 int32
-	_ = v322
-	var v328 int32
-	_ = v328
-	var v331 int32
-	_ = v331
-	var v337 int32
-	_ = v337
-	var v341 int32
-	_ = v341
-	var v343 int32
-	_ = v343
-	var v351 int32
-	_ = v351
-	var v352 int32
-	_ = v352
-	var v355 int32
-	_ = v355
-	var v356 int32
-	_ = v356
-	var v367 int32
-	_ = v367
-	var v368 int32
-	_ = v368
-	var v372 int32
-	_ = v372
-	var v373 int32
-	_ = v373
-	var v374 int32
-	_ = v374
-	var v376 int32
-	_ = v376
-	var v377 int32
-	_ = v377
-	var v379 int32
-	_ = v379
-	var v383 int32
-	_ = v383
-	var v384 int32
-	_ = v384
-	var v385 int32
-	_ = v385
-	var v396 int32
-	_ = v396
-	var v399 int32
-	_ = v399
-	var v400 int32
-	_ = v400
-	var v401 int32
-	_ = v401
-	var v402 int32
-	_ = v402
-	var v403 int32
-	_ = v403
-	var v412 int32
-	_ = v412
-	var v415 int32
-	_ = v415
-	var v421 int32
-	_ = v421
-	var v426 int32
-	_ = v426
+	var v287 int32
+	_ = v287
+	var v288 int32
+	_ = v288
+	var v289 int32
+	_ = v289
+	var v290 int32
+	_ = v290
+	var v291 int32
+	_ = v291
+	var v300 int32
+	_ = v300
+	var v303 int32
+	_ = v303
+	var v309 int32
+	_ = v309
+	var v314 int32
+	_ = v314
 	v11 = m.G0
 	v13 = v11 - int32(96)
 	m.G0 = v13
@@ -405,7 +361,7 @@ L3:
 	;
 	v204 = int32(0)
 	if v201 == v204 {
-		v396 = v204
+		v284 = v204
 		goto L59
 	} else {
 		goto L60
@@ -821,25 +777,25 @@ L58:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v412 = m.ExcPending
-	if v412 != 0 {
+	v300 = m.ExcPending
+	if v300 != 0 {
 		goto L1
 	} else {
-		goto L118
+		goto L84
 	}
 L59:
 	;
 	if l3 != 0 {
-		goto L110
+		goto L76
 	} else {
-		goto L111
+		goto L77
 	}
 L60:
 	;
 	v207 = int32(0)
 	v208 = *(*int32)(unsafe.Add(mBase, uint32(v201)+4))
 	if v208 <= v207 {
-		v396 = v207
+		v284 = v207
 		goto L59
 	} else {
 		goto L61
@@ -864,12 +820,12 @@ L62:
 	}
 L63:
 	;
-	v379 = int32(0)
-	if v373 == v379 {
-		v396 = v379
+	v267 = int32(0)
+	if v261 == v267 {
+		v284 = v267
 		goto L59
 	} else {
-		goto L108
+		goto L74
 	}
 L64:
 	;
@@ -902,331 +858,149 @@ L68:
 	goto L65
 L69:
 	;
-	if v227&int32(3) == int32(0) {
-		v261 = v227
-		goto L72
+	v238 = F_strlen(m, v227)
+	mBase = m.M
+	v239 = F_strlen(m, v228)
+	mBase = m.M
+	v240 = v238 + v239
+	v243 = F_palloc(m, v240+int32(6))
+	mBase = m.M
+	v244 = m.ExcPending
+	if v244 != 0 {
+		goto L1
 	} else {
-		goto L73
+		goto L70
 	}
 L70:
 	;
-	if v228&int32(3) == int32(0) {
-		v318 = v228
-		goto L89
+	*(*int32)(unsafe.Add(mBase, uint32(v243))) = v240<<(uint(int32(2))%32) + int32(20)
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v228
+	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v227
+	v255 = F_pg_sprintf(m, v243+int32(4), int32(_a_F_transformGenericOptions_6), v13)
+	mBase = m.M
+	v256 = m.ExcPending
+	if v256 != 0 {
+		goto L1
 	} else {
-		goto L90
+		goto L71
 	}
 L71:
 	;
-	v294 = v286 - v227
-	goto L70
+	v260 = *(*int32)(unsafe.Add(mBase, _c_F_transformGenericOptions[0]))
+	v261 = F_accumArrayResult(m, v220, v243, int32(0), int32(25), v260)
+	mBase = m.M
+	v262 = m.ExcPending
+	if v262 != 0 {
+		goto L1
+	} else {
+		goto L72
+	}
 L72:
 	;
-	v265 = v261
-	goto L81
+	v264 = v216 + int32(1)
+	v265 = *(*int32)(unsafe.Add(mBase, uint32(v201)+4))
+	if v264 < v265 {
+		v216 = v264
+		v220 = v261
+		goto L62
+	} else {
+		goto L73
+	}
 L73:
 	;
-	v245 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v227))))
-	if v245 == int32(0) {
-		goto L74
+	goto L63
+L74:
+	;
+	v271 = *(*int32)(unsafe.Add(mBase, _c_F_transformGenericOptions[0]))
+	v272 = F_makeArrayResult(m, v261, v271)
+	mBase = m.M
+	v273 = m.ExcPending
+	if v273 != 0 {
+		goto L1
 	} else {
 		goto L75
 	}
-L74:
-	;
-	v294 = int32(0)
-	goto L70
 L75:
 	;
-	goto L76
+	v284 = v272
+	goto L59
 L76:
 	;
-	v250 = v227
-	goto L77
-L77:
-	;
-	v254 = v250 + int32(1)
-	if v254&int32(3) == int32(0) {
-		v261 = v254
-		goto L72
-	} else {
+	if v284 != 0 {
 		goto L79
-	}
-L78:
-	;
-	v286 = v254
-	goto L71
-L79:
-	;
-	v259 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v254))))
-	if v259 != 0 {
-		v250 = v254
-		goto L77
 	} else {
 		goto L80
 	}
-L80:
+L77:
 	;
 	goto L78
+L78:
+	;
+	m.G0 = v13 + int32(96)
+	return v284
+L79:
+	;
+	v289 = v284
+	goto L81
+L80:
+	;
+	v287 = F_construct_empty_array(m, int32(25))
+	mBase = m.M
+	v288 = m.ExcPending
+	if v288 != 0 {
+		goto L1
+	} else {
+		goto L82
+	}
 L81:
 	;
-	v271 = *(*int32)(unsafe.Add(mBase, uint32(v265)))
-	v274 = int32(-2139062144)
-	if (int32(16843008)-v271|v271)&v274 == v274 {
-		v265 = v265 + int32(4)
-		goto L81
+	v290 = F_OidFunctionCall2Coll(m, l3, int32(0), v289, l0)
+	mBase = m.M
+	v291 = m.ExcPending
+	if v291 != 0 {
+		goto L1
 	} else {
 		goto L83
 	}
 L82:
 	;
-	v280 = v265
-	goto L84
+	v289 = v287
+	goto L81
 L83:
 	;
-	goto L82
+	goto L78
 L84:
-	;
-	v284 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v280))))
-	if v284 != 0 {
-		v280 = v280 + int32(1)
-		goto L84
-	} else {
-		goto L86
-	}
-L85:
-	;
-	v286 = v280
-	goto L71
-L86:
-	;
-	goto L85
-L87:
-	;
-	v352 = v294 + v351
-	v355 = F_palloc(m, v352+int32(6))
-	mBase = m.M
-	v356 = m.ExcPending
-	if v356 != 0 {
-		goto L1
-	} else {
-		goto L104
-	}
-L88:
-	;
-	v351 = v343 - v228
-	goto L87
-L89:
-	;
-	v322 = v318
-	goto L98
-L90:
-	;
-	v302 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v228))))
-	if v302 == int32(0) {
-		goto L91
-	} else {
-		goto L92
-	}
-L91:
-	;
-	v351 = int32(0)
-	goto L87
-L92:
-	;
-	goto L93
-L93:
-	;
-	v307 = v228
-	goto L94
-L94:
-	;
-	v311 = v307 + int32(1)
-	if v311&int32(3) == int32(0) {
-		v318 = v311
-		goto L89
-	} else {
-		goto L96
-	}
-L95:
-	;
-	v343 = v311
-	goto L88
-L96:
-	;
-	v316 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v311))))
-	if v316 != 0 {
-		v307 = v311
-		goto L94
-	} else {
-		goto L97
-	}
-L97:
-	;
-	goto L95
-L98:
-	;
-	v328 = *(*int32)(unsafe.Add(mBase, uint32(v322)))
-	v331 = int32(-2139062144)
-	if (int32(16843008)-v328|v328)&v331 == v331 {
-		v322 = v322 + int32(4)
-		goto L98
-	} else {
-		goto L100
-	}
-L99:
-	;
-	v337 = v322
-	goto L101
-L100:
-	;
-	goto L99
-L101:
-	;
-	v341 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v337))))
-	if v341 != 0 {
-		v337 = v337 + int32(1)
-		goto L101
-	} else {
-		goto L103
-	}
-L102:
-	;
-	v343 = v337
-	goto L88
-L103:
-	;
-	goto L102
-L104:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v355))) = v352<<(uint(int32(2))%32) + int32(20)
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v228
-	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v227
-	v367 = F_pg_sprintf(m, v355+int32(4), int32(_a_F_transformGenericOptions_6), v13)
-	mBase = m.M
-	v368 = m.ExcPending
-	if v368 != 0 {
-		goto L1
-	} else {
-		goto L105
-	}
-L105:
-	;
-	v372 = *(*int32)(unsafe.Add(mBase, _c_F_transformGenericOptions[0]))
-	v373 = F_accumArrayResult(m, v220, v355, int32(0), int32(25), v372)
-	mBase = m.M
-	v374 = m.ExcPending
-	if v374 != 0 {
-		goto L1
-	} else {
-		goto L106
-	}
-L106:
-	;
-	v376 = v216 + int32(1)
-	v377 = *(*int32)(unsafe.Add(mBase, uint32(v201)+4))
-	if v376 < v377 {
-		v216 = v376
-		v220 = v373
-		goto L62
-	} else {
-		goto L107
-	}
-L107:
-	;
-	goto L63
-L108:
-	;
-	v383 = *(*int32)(unsafe.Add(mBase, _c_F_transformGenericOptions[0]))
-	v384 = F_makeArrayResult(m, v373, v383)
-	mBase = m.M
-	v385 = m.ExcPending
-	if v385 != 0 {
-		goto L1
-	} else {
-		goto L109
-	}
-L109:
-	;
-	v396 = v384
-	goto L59
-L110:
-	;
-	if v396 != 0 {
-		goto L113
-	} else {
-		goto L114
-	}
-L111:
-	;
-	goto L112
-L112:
-	;
-	m.G0 = v13 + int32(96)
-	return v396
-L113:
-	;
-	v401 = v396
-	goto L115
-L114:
-	;
-	v399 = F_construct_empty_array(m, int32(25))
-	mBase = m.M
-	v400 = m.ExcPending
-	if v400 != 0 {
-		goto L1
-	} else {
-		goto L116
-	}
-L115:
-	;
-	v402 = F_OidFunctionCall2Coll(m, l3, int32(0), v401, l0)
-	mBase = m.M
-	v403 = m.ExcPending
-	if v403 != 0 {
-		goto L1
-	} else {
-		goto L117
-	}
-L116:
-	;
-	v401 = v399
-	goto L115
-L117:
-	;
-	goto L112
-L118:
 	;
 	F_errcode(m, int32(50856066))
 	mBase = m.M
-	v415 = m.ExcPending
-	if v415 != 0 {
+	v303 = m.ExcPending
+	if v303 != 0 {
 		goto L1
 	} else {
-		goto L119
+		goto L85
 	}
-L119:
+L85:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v227
 	F_errmsg(m, int32(_a_F_transformGenericOptions_7), v13+int32(16))
 	mBase = m.M
-	v421 = m.ExcPending
-	if v421 != 0 {
+	v309 = m.ExcPending
+	if v309 != 0 {
 		goto L1
 	} else {
-		goto L120
+		goto L86
 	}
-L120:
+L86:
 	;
 	F_errfinish(m, int32(_a_F_transformGenericOptions_1), int32(87), int32(_a_F_transformGenericOptions_8))
 	mBase = m.M
-	v426 = m.ExcPending
-	if v426 != 0 {
+	v314 = m.ExcPending
+	if v314 != 0 {
 		goto L1
 	} else {
-		goto L121
+		goto L87
 	}
-L121:
+L87:
 	;
 	base.Wasm_trap_unreachable()
 	for {

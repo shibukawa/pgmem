@@ -66,395 +66,280 @@ func F_pg_logical_emit_message_bytea(m *base.Module, l0 int32) int32 {
 	_ = v67
 	var v70 int32
 	_ = v70
-	var v79 int32
-	_ = v79
+	var v72 int32
+	_ = v72
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
 	var v84 int32
 	_ = v84
+	var v86 int32
+	_ = v86
 	var v88 int32
 	_ = v88
-	var v93 int32
-	_ = v93
-	var v95 int32
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v95 int64
 	_ = v95
-	var v99 int32
-	_ = v99
+	var v96 int32
+	_ = v96
+	var v100 int32
+	_ = v100
+	var v104 int32
+	_ = v104
 	var v105 int32
 	_ = v105
-	var v108 int32
-	_ = v108
-	var v114 int32
-	_ = v114
-	var v118 int32
-	_ = v118
-	var v120 int32
-	_ = v120
-	var v128 int32
-	_ = v128
-	var v134 int32
-	_ = v134
-	var v137 int32
-	_ = v137
-	var v138 int32
-	_ = v138
-	var v140 int32
-	_ = v140
-	var v142 int32
-	_ = v142
-	var v144 int32
-	_ = v144
-	var v146 int32
-	_ = v146
-	var v147 int32
-	_ = v147
-	var v151 int64
-	_ = v151
-	var v152 int32
-	_ = v152
-	var v156 int32
-	_ = v156
-	var v160 int32
-	_ = v160
-	var v161 int32
-	_ = v161
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v12 = F_pg_detoast_datum_packed(m, v11)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
-		goto L1
+		return int32(0)
 	} else {
-		goto L2
+		v16 = F_text_to_cstring(m, v12)
+		mBase = m.M
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int32(0)
+		} else {
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v19 = F_pg_detoast_datum_packed(m, v18)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				v21 = int32(1)
+				v22 = v19 + v21
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+				v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
+				v28 = v26 & v21
+				if v28 != 0 {
+					v29 = v22
+				} else {
+					v29 = v19 + int32(4)
+				}
+				if v26 == int32(1) {
+					v32 = int32(4)
+					v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22))))
+					if v34&int32(254) == int32(2) {
+						v43 = v32
+					} else {
+						v43 = base.B2i32(v34 == int32(18)) << (uint(v32) % 32)
+					}
+					if v34 == int32(1) {
+						v46 = v32
+					} else {
+						v46 = v43
+					}
+					v57 = v46
+				} else {
+					v47 = int32(1)
+					if v28 != 0 {
+						v57 = int32(base.Ui32(v26)>>(uint(v47)%32)) - v47
+					} else {
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+						v57 = int32(base.Ui32(v51)>>(uint(int32(2))%32)) - int32(4)
+					}
+				}
+				v58 = int32(0)
+				v60 = m.G0
+				v62 = v60 - int32(16)
+				m.G0 = v62
+				v65 = base.B2i32(v10 != v58)
+				if v10 != v58 {
+					v66 = F_GetCurrentTransactionId(m)
+					mBase = m.M
+					v67 = m.ExcPending
+					if v67 != 0 {
+						return int32(0)
+					} else {
+						*(*uint8)(unsafe.Add(mBase, uint32(v62)+4)) = uint8(v65)
+						v70 = *(*int32)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[0]))
+						*(*int32)(unsafe.Add(mBase, uint32(v62))) = v70
+						v72 = F_strlen(m, v16)
+						mBase = m.M
+						*(*int32)(unsafe.Add(mBase, uint32(v62)+12)) = v57
+						*(*int32)(unsafe.Add(mBase, uint32(v62)+8)) = v72 + int32(1)
+						F_XLogBeginInsert(m)
+						mBase = m.M
+						v78 = m.ExcPending
+						if v78 != 0 {
+							return int32(0)
+						} else {
+							F_XLogRegisterData(m, v62, int32(16))
+							mBase = m.M
+							v81 = m.ExcPending
+							if v81 != 0 {
+								return int32(0)
+							} else {
+								v82 = *(*int32)(unsafe.Add(mBase, uint32(v62)+8))
+								F_XLogRegisterData(m, v16, v82)
+								mBase = m.M
+								v84 = m.ExcPending
+								if v84 != 0 {
+									return int32(0)
+								} else {
+									F_XLogRegisterData(m, v29, v57)
+									mBase = m.M
+									v86 = m.ExcPending
+									if v86 != 0 {
+										return int32(0)
+									} else {
+										v88 = int32(_a_F_pg_logical_emit_message_bytea_0)
+										v90 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])))
+										v91 = v90 | int32(1)
+										*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])) = uint8(v91)
+										v95 = F_XLogInsert(m, int32(21), int32(0))
+										mBase = m.M
+										v96 = m.ExcPending
+										if v96 != 0 {
+											return int32(0)
+										} else {
+											if v10 != v58 {
+												m.G0 = v62 + int32(16)
+												v104 = F_Int64GetDatum(m, v95)
+												mBase = m.M
+												v105 = m.ExcPending
+												if v105 != 0 {
+													return int32(0)
+												} else {
+													return v104
+												}
+											} else {
+												if base.B2i32(v23 != v58) == int32(0) {
+													m.G0 = v62 + int32(16)
+													v104 = F_Int64GetDatum(m, v95)
+													mBase = m.M
+													v105 = m.ExcPending
+													if v105 != 0 {
+														return int32(0)
+													} else {
+														return v104
+													}
+												} else {
+													F_XLogFlush(m, v95)
+													mBase = m.M
+													v100 = m.ExcPending
+													if v100 != 0 {
+														return int32(0)
+													} else {
+														m.G0 = v62 + int32(16)
+														v104 = F_Int64GetDatum(m, v95)
+														mBase = m.M
+														v105 = m.ExcPending
+														if v105 != 0 {
+															return int32(0)
+														} else {
+															return v104
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					*(*uint8)(unsafe.Add(mBase, uint32(v62)+4)) = uint8(v65)
+					v70 = *(*int32)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[0]))
+					*(*int32)(unsafe.Add(mBase, uint32(v62))) = v70
+					v72 = F_strlen(m, v16)
+					mBase = m.M
+					*(*int32)(unsafe.Add(mBase, uint32(v62)+12)) = v57
+					*(*int32)(unsafe.Add(mBase, uint32(v62)+8)) = v72 + int32(1)
+					F_XLogBeginInsert(m)
+					mBase = m.M
+					v78 = m.ExcPending
+					if v78 != 0 {
+						return int32(0)
+					} else {
+						F_XLogRegisterData(m, v62, int32(16))
+						mBase = m.M
+						v81 = m.ExcPending
+						if v81 != 0 {
+							return int32(0)
+						} else {
+							v82 = *(*int32)(unsafe.Add(mBase, uint32(v62)+8))
+							F_XLogRegisterData(m, v16, v82)
+							mBase = m.M
+							v84 = m.ExcPending
+							if v84 != 0 {
+								return int32(0)
+							} else {
+								F_XLogRegisterData(m, v29, v57)
+								mBase = m.M
+								v86 = m.ExcPending
+								if v86 != 0 {
+									return int32(0)
+								} else {
+									v88 = int32(_a_F_pg_logical_emit_message_bytea_0)
+									v90 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])))
+									v91 = v90 | int32(1)
+									*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])) = uint8(v91)
+									v95 = F_XLogInsert(m, int32(21), int32(0))
+									mBase = m.M
+									v96 = m.ExcPending
+									if v96 != 0 {
+										return int32(0)
+									} else {
+										if v10 != v58 {
+											m.G0 = v62 + int32(16)
+											v104 = F_Int64GetDatum(m, v95)
+											mBase = m.M
+											v105 = m.ExcPending
+											if v105 != 0 {
+												return int32(0)
+											} else {
+												return v104
+											}
+										} else {
+											if base.B2i32(v23 != v58) == int32(0) {
+												m.G0 = v62 + int32(16)
+												v104 = F_Int64GetDatum(m, v95)
+												mBase = m.M
+												v105 = m.ExcPending
+												if v105 != 0 {
+													return int32(0)
+												} else {
+													return v104
+												}
+											} else {
+												F_XLogFlush(m, v95)
+												mBase = m.M
+												v100 = m.ExcPending
+												if v100 != 0 {
+													return int32(0)
+												} else {
+													m.G0 = v62 + int32(16)
+													v104 = F_Int64GetDatum(m, v95)
+													mBase = m.M
+													v105 = m.ExcPending
+													if v105 != 0 {
+														return int32(0)
+													} else {
+														return v104
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-L1:
-	;
-	return int32(0)
-L2:
-	;
-	v16 = F_text_to_cstring(m, v12)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
-		goto L1
-	} else {
-		goto L3
-	}
-L3:
-	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v19 = F_pg_detoast_datum_packed(m, v18)
-	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L1
-	} else {
-		goto L4
-	}
-L4:
-	;
-	v21 = int32(1)
-	v22 = v19 + v21
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
-	v28 = v26 & v21
-	if v28 != 0 {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v29 = v22
-	goto L7
-L6:
-	;
-	v29 = v19 + int32(4)
-	goto L7
-L7:
-	;
-	if v26 == int32(1) {
-		goto L9
-	} else {
-		goto L10
-	}
-L8:
-	;
-	v58 = int32(0)
-	v60 = m.G0
-	v62 = v60 - int32(16)
-	m.G0 = v62
-	v65 = base.B2i32(v10 != v58)
-	if v10 != v58 {
-		goto L19
-	} else {
-		goto L20
-	}
-L9:
-	;
-	v32 = int32(4)
-	v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22))))
-	if v34&int32(254) == int32(2) {
-		goto L12
-	} else {
-		goto L13
-	}
-L10:
-	;
-	goto L11
-L11:
-	;
-	v47 = int32(1)
-	if v28 != 0 {
-		v57 = int32(base.Ui32(v26)>>(uint(v47)%32)) - v47
-		goto L8
-	} else {
-		goto L18
-	}
-L12:
-	;
-	v43 = v32
-	goto L14
-L13:
-	;
-	v43 = base.B2i32(v34 == int32(18)) << (uint(v32) % 32)
-	goto L14
-L14:
-	;
-	if v34 == int32(1) {
-		goto L15
-	} else {
-		goto L16
-	}
-L15:
-	;
-	v46 = v32
-	goto L17
-L16:
-	;
-	v46 = v43
-	goto L17
-L17:
-	;
-	v57 = v46
-	goto L8
-L18:
-	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-	v57 = int32(base.Ui32(v51)>>(uint(int32(2))%32)) - int32(4)
-	goto L8
-L19:
-	;
-	v66 = F_GetCurrentTransactionId(m)
-	mBase = m.M
-	v67 = m.ExcPending
-	if v67 != 0 {
-		goto L1
-	} else {
-		goto L22
-	}
-L20:
-	;
-	goto L21
-L21:
-	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v62)+4)) = uint8(v65)
-	v70 = *(*int32)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v62))) = v70
-	if v16&int32(3) == int32(0) {
-		v95 = v16
-		goto L25
-	} else {
-		goto L26
-	}
-L22:
-	;
-	goto L21
-L23:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v62)+12)) = v57
-	*(*int32)(unsafe.Add(mBase, uint32(v62)+8)) = v128 + int32(1)
-	F_XLogBeginInsert(m)
-	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
-		goto L1
-	} else {
-		goto L40
-	}
-L24:
-	;
-	v128 = v120 - v16
-	goto L23
-L25:
-	;
-	v99 = v95
-	goto L34
-L26:
-	;
-	v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16))))
-	if v79 == int32(0) {
-		goto L27
-	} else {
-		goto L28
-	}
-L27:
-	;
-	v128 = int32(0)
-	goto L23
-L28:
-	;
-	goto L29
-L29:
-	;
-	v84 = v16
-	goto L30
-L30:
-	;
-	v88 = v84 + int32(1)
-	if v88&int32(3) == int32(0) {
-		v95 = v88
-		goto L25
-	} else {
-		goto L32
-	}
-L31:
-	;
-	v120 = v88
-	goto L24
-L32:
-	;
-	v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88))))
-	if v93 != 0 {
-		v84 = v88
-		goto L30
-	} else {
-		goto L33
-	}
-L33:
-	;
-	goto L31
-L34:
-	;
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(v99)))
-	v108 = int32(-2139062144)
-	if (int32(16843008)-v105|v105)&v108 == v108 {
-		v99 = v99 + int32(4)
-		goto L34
-	} else {
-		goto L36
-	}
-L35:
-	;
-	v114 = v99
-	goto L37
-L36:
-	;
-	goto L35
-L37:
-	;
-	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v114))))
-	if v118 != 0 {
-		v114 = v114 + int32(1)
-		goto L37
-	} else {
-		goto L39
-	}
-L38:
-	;
-	v120 = v114
-	goto L24
-L39:
-	;
-	goto L38
-L40:
-	;
-	F_XLogRegisterData(m, v62, int32(16))
-	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
-		goto L1
-	} else {
-		goto L41
-	}
-L41:
-	;
-	v138 = *(*int32)(unsafe.Add(mBase, uint32(v62)+8))
-	F_XLogRegisterData(m, v16, v138)
-	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
-		goto L1
-	} else {
-		goto L42
-	}
-L42:
-	;
-	F_XLogRegisterData(m, v29, v57)
-	mBase = m.M
-	v142 = m.ExcPending
-	if v142 != 0 {
-		goto L1
-	} else {
-		goto L43
-	}
-L43:
-	;
-	v144 = int32(_a_F_pg_logical_emit_message_bytea_0)
-	v146 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])))
-	v147 = v146 | int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_pg_logical_emit_message_bytea[1])) = uint8(v147)
-	goto L44
-L44:
-	;
-	v151 = F_XLogInsert(m, int32(21), int32(0))
-	mBase = m.M
-	v152 = m.ExcPending
-	if v152 != 0 {
-		goto L1
-	} else {
-		goto L45
-	}
-L45:
-	;
-	if v10 != v58 {
-		goto L46
-	} else {
-		goto L47
-	}
-L46:
-	;
-	m.G0 = v62 + int32(16)
-	v160 = F_Int64GetDatum(m, v151)
-	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
-		goto L1
-	} else {
-		goto L50
-	}
-L47:
-	;
-	if base.B2i32(v23 != v58) == int32(0) {
-		goto L46
-	} else {
-		goto L48
-	}
-L48:
-	;
-	F_XLogFlush(m, v151)
-	mBase = m.M
-	v156 = m.ExcPending
-	if v156 != 0 {
-		goto L1
-	} else {
-		goto L49
-	}
-L49:
-	;
-	goto L46
-L50:
-	;
-	return v160
 }
 func F_pg_logical_slot_get_changes_guts(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M

@@ -139,110 +139,88 @@ func F_XLogArchiveNotify(m *base.Module, l0 int32) {
 	_ = v62
 	var v67 int32
 	_ = v67
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
 	var v75 int32
 	_ = v75
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v95 int32
-	_ = v95
-	var v101 int32
-	_ = v101
+	var v77 int32
+	_ = v77
+	var v78 int64
+	_ = v78
+	var v86 int32
+	_ = v86
+	var v90 int32
+	_ = v90
+	var v94 int32
+	_ = v94
+	var v100 int32
+	_ = v100
 	var v104 int32
 	_ = v104
-	var v110 int32
-	_ = v110
+	var v105 int32
+	_ = v105
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
 	var v114 int32
 	_ = v114
-	var v116 int32
-	_ = v116
-	var v124 int32
-	_ = v124
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v133 int32
-	_ = v133
-	var v134 int64
+	var v118 int32
+	_ = v118
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v134 int32
 	_ = v134
+	var v140 int32
+	_ = v140
 	var v142 int32
 	_ = v142
 	var v146 int32
 	_ = v146
-	var v150 int32
-	_ = v150
-	var v156 int32
-	_ = v156
-	var v160 int32
-	_ = v160
-	var v161 int32
-	_ = v161
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
+	var v159 int32
+	_ = v159
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	var v167 int32
+	_ = v167
 	var v168 int32
 	_ = v168
-	var v169 int32
-	_ = v169
-	var v170 int32
-	_ = v170
-	var v174 int32
-	_ = v174
-	var v177 int32
-	_ = v177
-	var v181 int32
-	_ = v181
+	var v171 int32
+	_ = v171
+	var v172 int32
+	_ = v172
+	var v175 int32
+	_ = v175
 	var v182 int32
 	_ = v182
+	var v183 int32
+	_ = v183
+	var v186 int32
+	_ = v186
 	var v190 int32
 	_ = v190
-	var v196 int32
-	_ = v196
-	var v198 int32
-	_ = v198
-	var v202 int32
-	_ = v202
-	var v210 int32
-	_ = v210
-	var v214 int32
-	_ = v214
-	var v215 int32
-	_ = v215
-	var v218 int32
-	_ = v218
-	var v219 int32
-	_ = v219
-	var v223 int32
-	_ = v223
-	var v224 int32
-	_ = v224
-	var v227 int32
-	_ = v227
-	var v228 int32
-	_ = v228
-	var v231 int32
-	_ = v231
-	var v238 int32
-	_ = v238
-	var v239 int32
-	_ = v239
-	var v242 int32
-	_ = v242
-	var v246 int32
-	_ = v246
-	var v250 int32
-	_ = v250
-	var v251 int32
-	_ = v251
-	var v255 int32
-	_ = v255
-	var v256 int32
-	_ = v256
-	var v263 int32
-	_ = v263
+	var v194 int32
+	_ = v194
+	var v195 int32
+	_ = v195
+	var v199 int32
+	_ = v199
+	var v200 int32
+	_ = v200
+	var v207 int32
+	_ = v207
 	v4 = m.G0
 	v6 = v4 - int32(1072)
 	m.G0 = v6
@@ -366,11 +344,12 @@ L15:
 	goto L16
 L16:
 	;
-	if l0&int32(3) == int32(0) {
-		v91 = l0
-		goto L25
+	v68 = F_strlen(m, l0)
+	mBase = m.M
+	if v68 != int32(16) {
+		goto L22
 	} else {
-		goto L26
+		goto L23
 	}
 L17:
 	;
@@ -415,339 +394,247 @@ L21:
 	goto L3
 L22:
 	;
-	v246 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[0])))
-	if v246 != int32(1) {
+	v190 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[0])))
+	if v190 != int32(1) {
 		goto L3
 	} else {
-		goto L72
+		goto L55
 	}
 L23:
 	;
-	if v124 != int32(16) {
-		goto L22
+	v71 = int32(_a_F_XLogArchiveNotify_7)
+	v75 = m.G0
+	v77 = v75 - int32(32)
+	v78 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v77)+24)) = v78
+	*(*int64)(unsafe.Add(mBase, uint32(v77)+16)) = v78
+	*(*int64)(unsafe.Add(mBase, uint32(v77)+8)) = v78
+	*(*int64)(unsafe.Add(mBase, uint32(v77))) = v78
+	v86 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[1])))
+	if v86 == int32(0) {
+		goto L25
 	} else {
-		goto L40
+		goto L26
 	}
 L24:
 	;
-	v124 = v116 - l0
-	goto L23
+	if v154 != int32(8) {
+		goto L22
+	} else {
+		goto L45
+	}
 L25:
 	;
-	v95 = v91
-	goto L34
+	v154 = int32(0)
+	goto L24
 L26:
 	;
-	v75 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v75 == int32(0) {
-		goto L27
-	} else {
-		goto L28
-	}
+	goto L27
 L27:
 	;
-	v124 = int32(0)
-	goto L23
+	v90 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[2])))
+	if v90 == int32(0) {
+		goto L28
+	} else {
+		goto L29
+	}
 L28:
 	;
-	goto L29
+	v94 = l0
+	goto L31
 L29:
 	;
-	v80 = l0
 	goto L30
 L30:
 	;
-	v84 = v80 + int32(1)
-	if v84&int32(3) == int32(0) {
-		v91 = v84
-		goto L25
-	} else {
-		goto L32
-	}
+	v104 = v71
+	v105 = v86
+	goto L34
 L31:
 	;
-	v116 = v84
-	goto L24
-L32:
-	;
-	v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
-	if v89 != 0 {
-		v80 = v84
-		goto L30
+	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v94))))
+	if v100 == v86 {
+		v94 = v94 + int32(1)
+		goto L31
 	} else {
 		goto L33
 	}
+L32:
+	;
+	v154 = v94 - l0
+	goto L24
 L33:
 	;
-	goto L31
+	goto L32
 L34:
 	;
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
-	v104 = int32(-2139062144)
-	if (int32(16843008)-v101|v101)&v104 == v104 {
-		v95 = v95 + int32(4)
+	v112 = v77 + int32(base.Ui32(v105)>>(uint(int32(3))%32))&int32(28)
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v112)))
+	v114 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v112))) = v113 | v114<<(uint(v105)%32)
+	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v104)+1)))
+	if v118 != 0 {
+		v104 = v104 + v114
+		v105 = v118
 		goto L34
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v110 = v95
-	goto L37
+	v121 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v121 == int32(0) {
+		v146 = l0
+		goto L37
+	} else {
+		goto L38
+	}
 L36:
 	;
 	goto L35
 L37:
 	;
-	v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v110))))
-	if v114 != 0 {
-		v110 = v110 + int32(1)
-		goto L37
-	} else {
-		goto L39
-	}
+	v154 = v146 - l0
+	goto L24
 L38:
 	;
-	v116 = v110
-	goto L24
+	v125 = l0
+	v126 = v121
+	goto L39
 L39:
 	;
-	goto L38
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v77+int32(base.Ui32(v126)>>(uint(int32(3))%32))&int32(28))))
+	if int32(base.Ui32(v134)>>(uint(v126)%32))&int32(1) == int32(0) {
+		goto L41
+	} else {
+		goto L42
+	}
 L40:
 	;
-	v127 = int32(_a_F_XLogArchiveNotify_7)
-	v131 = m.G0
-	v133 = v131 - int32(32)
-	v134 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v133)+24)) = v134
-	*(*int64)(unsafe.Add(mBase, uint32(v133)+16)) = v134
-	*(*int64)(unsafe.Add(mBase, uint32(v133)+8)) = v134
-	*(*int64)(unsafe.Add(mBase, uint32(v133))) = v134
-	v142 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[1])))
-	if v142 == int32(0) {
-		goto L42
-	} else {
-		goto L43
-	}
+	v146 = v142
+	goto L37
 L41:
 	;
-	if v210 != int32(8) {
-		goto L22
-	} else {
-		goto L62
-	}
+	v146 = v125
+	goto L37
 L42:
 	;
-	v210 = int32(0)
-	goto L41
+	goto L43
 L43:
 	;
-	goto L44
+	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v125)+1)))
+	v142 = v125 + int32(1)
+	if v140 != 0 {
+		v125 = v142
+		v126 = v140
+		goto L39
+	} else {
+		goto L44
+	}
 L44:
 	;
-	v146 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[2])))
-	if v146 == int32(0) {
-		goto L45
-	} else {
-		goto L46
-	}
+	goto L40
 L45:
 	;
-	v150 = l0
-	goto L48
+	v158 = l0 + int32(8)
+	v159 = int32(_a_F_XLogArchiveNotify_8)
+	v162 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[3])))
+	v163 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v158))))
+	if v163 == int32(0) {
+		v182 = v162
+		v183 = v163
+		goto L47
+	} else {
+		goto L48
+	}
 L46:
 	;
-	goto L47
+	if v183-v182 != 0 {
+		goto L22
+	} else {
+		goto L54
+	}
 L47:
 	;
-	v160 = v127
-	v161 = v142
-	goto L51
+	goto L46
 L48:
 	;
-	v156 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v150))))
-	if v156 == v142 {
-		v150 = v150 + int32(1)
-		goto L48
+	if v162 != v163 {
+		v182 = v162
+		v183 = v163
+		goto L47
 	} else {
-		goto L50
+		goto L49
 	}
 L49:
 	;
-	v210 = v150 - l0
-	goto L41
+	v167 = v158
+	v168 = v159
+	goto L50
 L50:
 	;
-	goto L49
+	v171 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v168)+1)))
+	v172 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v167)+1)))
+	if v172 == int32(0) {
+		v182 = v171
+		v183 = v172
+		goto L47
+	} else {
+		goto L52
+	}
 L51:
 	;
-	v168 = v133 + int32(base.Ui32(v161)>>(uint(int32(3))%32))&int32(28)
-	v169 = *(*int32)(unsafe.Add(mBase, uint32(v168)))
-	v170 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v168))) = v169 | v170<<(uint(v161)%32)
-	v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v160)+1)))
-	if v174 != 0 {
-		v160 = v160 + v170
-		v161 = v174
-		goto L51
+	v182 = v171
+	v183 = v172
+	goto L47
+L52:
+	;
+	v175 = int32(1)
+	if v171 == v172 {
+		v167 = v167 + v175
+		v168 = v168 + v175
+		goto L50
 	} else {
 		goto L53
 	}
-L52:
-	;
-	v177 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v177 == int32(0) {
-		v202 = l0
-		goto L54
-	} else {
-		goto L55
-	}
 L53:
 	;
-	goto L52
+	goto L51
 L54:
 	;
-	v210 = v202 - l0
-	goto L41
+	v186 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v186)+4)) = int32(1)
+	goto L22
 L55:
 	;
-	v181 = l0
-	v182 = v177
-	goto L56
+	v194 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[4]))
+	v195 = *(*int32)(unsafe.Add(mBase, uint32(v194)))
+	if v195 != int32(-1) {
+		goto L56
+	} else {
+		goto L57
+	}
 L56:
 	;
-	v190 = *(*int32)(unsafe.Add(mBase, uint32(v133+int32(base.Ui32(v182)>>(uint(int32(3))%32))&int32(28))))
-	if int32(base.Ui32(v190)>>(uint(v182)%32))&int32(1) == int32(0) {
-		goto L58
+	v199 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[5]))
+	v200 = *(*int32)(unsafe.Add(mBase, uint32(v199)))
+	F_SetLatch(m, v200+v195*int32(640)+int32(20))
+	mBase = m.M
+	v207 = m.ExcPending
+	if v207 != 0 {
+		goto L1
 	} else {
 		goto L59
 	}
 L57:
 	;
-	v202 = v198
-	goto L54
+	goto L58
 L58:
 	;
-	v202 = v181
-	goto L54
+	goto L3
 L59:
 	;
-	goto L60
-L60:
-	;
-	v196 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v181)+1)))
-	v198 = v181 + int32(1)
-	if v196 != 0 {
-		v181 = v198
-		v182 = v196
-		goto L56
-	} else {
-		goto L61
-	}
-L61:
-	;
-	goto L57
-L62:
-	;
-	v214 = l0 + int32(8)
-	v215 = int32(_a_F_XLogArchiveNotify_8)
-	v218 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[3])))
-	v219 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v214))))
-	if v219 == int32(0) {
-		v238 = v218
-		v239 = v219
-		goto L64
-	} else {
-		goto L65
-	}
-L63:
-	;
-	if v239-v238 != 0 {
-		goto L22
-	} else {
-		goto L71
-	}
-L64:
-	;
-	goto L63
-L65:
-	;
-	if v218 != v219 {
-		v238 = v218
-		v239 = v219
-		goto L64
-	} else {
-		goto L66
-	}
-L66:
-	;
-	v223 = v214
-	v224 = v215
-	goto L67
-L67:
-	;
-	v227 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224)+1)))
-	v228 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v223)+1)))
-	if v228 == int32(0) {
-		v238 = v227
-		v239 = v228
-		goto L64
-	} else {
-		goto L69
-	}
-L68:
-	;
-	v238 = v227
-	v239 = v228
-	goto L64
-L69:
-	;
-	v231 = int32(1)
-	if v227 == v228 {
-		v223 = v223 + v231
-		v224 = v224 + v231
-		goto L67
-	} else {
-		goto L70
-	}
-L70:
-	;
-	goto L68
-L71:
-	;
-	v242 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v242)+4)) = int32(1)
-	goto L22
-L72:
-	;
-	v250 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[4]))
-	v251 = *(*int32)(unsafe.Add(mBase, uint32(v250)))
-	if v251 != int32(-1) {
-		goto L73
-	} else {
-		goto L74
-	}
-L73:
-	;
-	v255 = *(*int32)(unsafe.Add(mBase, _c_F_XLogArchiveNotify[5]))
-	v256 = *(*int32)(unsafe.Add(mBase, uint32(v255)))
-	F_SetLatch(m, v256+v251*int32(640)+int32(20))
-	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
-		goto L1
-	} else {
-		goto L76
-	}
-L74:
-	;
-	goto L75
-L75:
-	;
-	goto L3
-L76:
-	;
-	goto L75
+	goto L58
 }
 func F_XLogDropRelation(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -15610,28 +15497,8 @@ func F_XLogSendPhysical(m *base.Module) {
 	_ = v822
 	var v823 int32
 	_ = v823
-	var v825 int32
-	_ = v825
-	var v833 int32
-	_ = v833
-	var v838 int32
-	_ = v838
-	var v842 int32
-	_ = v842
-	var v847 int32
-	_ = v847
-	var v849 int32
-	_ = v849
-	var v853 int32
-	_ = v853
-	var v859 int32
-	_ = v859
-	var v862 int32
-	_ = v862
-	var v868 int32
-	_ = v868
-	var v872 int32
-	_ = v872
+	var v826 int32
+	_ = v826
 	v16 = m.G0
 	v18 = v16 - int32(128)
 	m.G0 = v18
@@ -16704,97 +16571,9 @@ L133:
 	}
 L134:
 	;
-	v825 = v18 + int32(32)
-	if v825&int32(3) == int32(0) {
-		v849 = v825
-		goto L137
-	} else {
-		goto L138
-	}
-L135:
-	;
+	v826 = F_strlen(m, v18+int32(32))
+	mBase = m.M
 	goto L9
-L136:
-	;
-	goto L135
-L137:
-	;
-	v853 = v849
-	goto L146
-L138:
-	;
-	v833 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v825))))
-	if v833 == int32(0) {
-		goto L139
-	} else {
-		goto L140
-	}
-L139:
-	;
-	goto L135
-L140:
-	;
-	goto L141
-L141:
-	;
-	v838 = v825
-	goto L142
-L142:
-	;
-	v842 = v838 + int32(1)
-	if v842&int32(3) == int32(0) {
-		v849 = v842
-		goto L137
-	} else {
-		goto L144
-	}
-L143:
-	;
-	goto L136
-L144:
-	;
-	v847 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v842))))
-	if v847 != 0 {
-		v838 = v842
-		goto L142
-	} else {
-		goto L145
-	}
-L145:
-	;
-	goto L143
-L146:
-	;
-	v859 = *(*int32)(unsafe.Add(mBase, uint32(v853)))
-	v862 = int32(-2139062144)
-	if (int32(16843008)-v859|v859)&v862 == v862 {
-		v853 = v853 + int32(4)
-		goto L146
-	} else {
-		goto L148
-	}
-L147:
-	;
-	v868 = v853
-	goto L149
-L148:
-	;
-	goto L147
-L149:
-	;
-	v872 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v868))))
-	if v872 != 0 {
-		v868 = v868 + int32(1)
-		goto L149
-	} else {
-		goto L151
-	}
-L150:
-	;
-	goto L136
-L151:
-	;
-	goto L150
 }
 func F_XLogSetAsyncXactLSN(m *base.Module, l0 int64) {
 	mBase := m.M

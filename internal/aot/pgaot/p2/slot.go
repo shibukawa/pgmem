@@ -110,68 +110,46 @@ func F_ExecBuildSlotValueDescription(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v139
 	var v146 int32
 	_ = v146
-	var v154 int32
-	_ = v154
-	var v159 int32
-	_ = v159
-	var v163 int32
-	_ = v163
+	var v147 int32
+	_ = v147
+	var v153 int32
+	_ = v153
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
+	var v160 int32
+	_ = v160
+	var v165 int32
+	_ = v165
 	var v168 int32
 	_ = v168
-	var v170 int32
-	_ = v170
+	var v169 int32
+	_ = v169
+	var v171 int32
+	_ = v171
+	var v173 int32
+	_ = v173
 	var v174 int32
 	_ = v174
-	var v180 int32
-	_ = v180
-	var v183 int32
-	_ = v183
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v195 int32
-	_ = v195
-	var v203 int32
-	_ = v203
+	var v185 int32
+	_ = v185
+	var v196 int32
+	_ = v196
+	var v201 int32
+	_ = v201
+	var v204 int32
+	_ = v204
+	var v205 int32
+	_ = v205
+	var v207 int32
+	_ = v207
+	var v208 int32
+	_ = v208
 	var v209 int32
 	_ = v209
-	var v213 int32
-	_ = v213
-	var v214 int32
-	_ = v214
-	var v216 int32
-	_ = v216
-	var v221 int32
-	_ = v221
-	var v224 int32
-	_ = v224
-	var v225 int32
-	_ = v225
-	var v227 int32
-	_ = v227
-	var v229 int32
-	_ = v229
-	var v230 int32
-	_ = v230
-	var v241 int32
-	_ = v241
-	var v252 int32
-	_ = v252
-	var v257 int32
-	_ = v257
-	var v260 int32
-	_ = v260
-	var v261 int32
-	_ = v261
-	var v263 int32
-	_ = v263
-	var v264 int32
-	_ = v264
-	var v265 int32
-	_ = v265
-	var v276 int32
-	_ = v276
+	var v220 int32
+	_ = v220
 	v5 = int32(0)
 	v15 = m.G0
 	v17 = v15 - int32(48)
@@ -187,14 +165,14 @@ func F_ExecBuildSlotValueDescription(m *base.Module, l0 int32, l1 int32, l2 int3
 L1:
 	;
 	m.G0 = v17 + int32(48)
-	return v276
+	return v220
 L2:
 	;
 	return int32(0)
 L3:
 	;
 	if v21 == int32(2) {
-		v276 = v5
+		v220 = v5
 		goto L1
 	} else {
 		goto L4
@@ -309,45 +287,45 @@ L17:
 	goto L20
 L18:
 	;
-	v241 = v57
+	v185 = v57
 	goto L19
 L19:
 	;
-	if v241 == int32(0) {
-		v276 = v5
+	if v185 == int32(0) {
+		v220 = v5
 		goto L1
 	} else {
-		goto L73
+		goto L56
 	}
 L20:
 	;
 	v83 = l2 + int32(20) + v69<<(uint(int32(4))%32) + v70*int32(100)
 	v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v83)+91)))
 	if v84 != 0 {
-		v224 = v71
-		v225 = v73
-		v227 = v77
+		v168 = v71
+		v169 = v73
+		v171 = v77
 		goto L22
 	} else {
 		goto L23
 	}
 L21:
 	;
-	v241 = v225
+	v185 = v169
 	goto L19
 L22:
 	;
-	v229 = v70 + int32(1)
-	v230 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	if v229 < v230 {
-		v69 = v230
-		v70 = v229
-		v71 = v224
-		v73 = v225
-		v77 = v227
+	v173 = v70 + int32(1)
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	if v173 < v174 {
+		v69 = v174
+		v70 = v173
+		v71 = v168
+		v73 = v169
+		v77 = v171
 		goto L20
 	} else {
-		goto L72
+		goto L55
 	}
 L23:
 	;
@@ -411,9 +389,9 @@ L30:
 L31:
 	;
 	if v97 == int32(0) {
-		v224 = v71
-		v225 = v73
-		v227 = v77
+		v168 = v71
+		v169 = v73
+		v171 = v77
 		goto L22
 	} else {
 		goto L32
@@ -517,216 +495,125 @@ L44:
 	goto L45
 L45:
 	;
-	if v139&int32(3) == int32(0) {
-		v170 = v139
-		goto L50
+	v147 = F_strlen(m, v139)
+	mBase = m.M
+	if v147 <= int32(64) {
+		goto L48
 	} else {
-		goto L51
+		goto L49
 	}
 L46:
 	;
 	goto L45
 L47:
 	;
-	v224 = int32(1)
-	v225 = v113
-	v227 = v115
+	v168 = int32(1)
+	v169 = v113
+	v171 = v115
 	goto L22
 L48:
 	;
-	if v203 <= int32(64) {
-		goto L65
+	F_appendBinaryStringInfo(m, v17+int32(32), v139, v147)
+	mBase = m.M
+	v153 = m.ExcPending
+	if v153 != 0 {
+		goto L2
 	} else {
-		goto L66
+		goto L51
 	}
 L49:
 	;
-	v203 = v195 - v139
-	goto L48
+	goto L50
 L50:
 	;
-	v174 = v170
-	goto L59
+	v157 = F_pg_mbcliplen(m, v139, v147, int32(64))
+	mBase = m.M
+	v158 = m.ExcPending
+	if v158 != 0 {
+		goto L2
+	} else {
+		goto L52
+	}
 L51:
 	;
-	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v139))))
-	if v154 == int32(0) {
-		goto L52
+	goto L47
+L52:
+	;
+	F_appendBinaryStringInfo(m, v17+int32(32), v139, v157)
+	mBase = m.M
+	v160 = m.ExcPending
+	if v160 != 0 {
+		goto L2
 	} else {
 		goto L53
 	}
-L52:
-	;
-	v203 = int32(0)
-	goto L48
 L53:
-	;
-	goto L54
-L54:
-	;
-	v159 = v139
-	goto L55
-L55:
-	;
-	v163 = v159 + int32(1)
-	if v163&int32(3) == int32(0) {
-		v170 = v163
-		goto L50
-	} else {
-		goto L57
-	}
-L56:
-	;
-	v195 = v163
-	goto L49
-L57:
-	;
-	v168 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v163))))
-	if v168 != 0 {
-		v159 = v163
-		goto L55
-	} else {
-		goto L58
-	}
-L58:
-	;
-	goto L56
-L59:
-	;
-	v180 = *(*int32)(unsafe.Add(mBase, uint32(v174)))
-	v183 = int32(-2139062144)
-	if (int32(16843008)-v180|v180)&v183 == v183 {
-		v174 = v174 + int32(4)
-		goto L59
-	} else {
-		goto L61
-	}
-L60:
-	;
-	v189 = v174
-	goto L62
-L61:
-	;
-	goto L60
-L62:
-	;
-	v193 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189))))
-	if v193 != 0 {
-		v189 = v189 + int32(1)
-		goto L62
-	} else {
-		goto L64
-	}
-L63:
-	;
-	v195 = v189
-	goto L49
-L64:
-	;
-	goto L63
-L65:
-	;
-	F_appendBinaryStringInfo(m, v17+int32(32), v139, v203)
-	mBase = m.M
-	v209 = m.ExcPending
-	if v209 != 0 {
-		goto L2
-	} else {
-		goto L68
-	}
-L66:
-	;
-	goto L67
-L67:
-	;
-	v213 = F_pg_mbcliplen(m, v139, v203, int32(64))
-	mBase = m.M
-	v214 = m.ExcPending
-	if v214 != 0 {
-		goto L2
-	} else {
-		goto L69
-	}
-L68:
-	;
-	goto L47
-L69:
-	;
-	F_appendBinaryStringInfo(m, v17+int32(32), v139, v213)
-	mBase = m.M
-	v216 = m.ExcPending
-	if v216 != 0 {
-		goto L2
-	} else {
-		goto L70
-	}
-L70:
 	;
 	F_appendStringInfoString(m, v17+int32(32), int32(_a_F_ExecBuildSlotValueDescription_3))
 	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
+	v165 = m.ExcPending
+	if v165 != 0 {
 		goto L2
 	} else {
-		goto L71
+		goto L54
 	}
-L71:
+L54:
 	;
 	goto L47
-L72:
+L55:
 	;
 	goto L21
-L73:
+L56:
 	;
 	F_appendStringInfoChar(m, v17+int32(32), int32(41))
 	mBase = m.M
-	v252 = m.ExcPending
-	if v252 != 0 {
+	v196 = m.ExcPending
+	if v196 != 0 {
 		goto L2
 	} else {
-		goto L74
+		goto L57
 	}
-L74:
+L57:
 	;
 	if v39 != 0 {
-		goto L75
+		goto L58
 	} else {
-		goto L76
+		goto L59
 	}
-L75:
+L58:
 	;
 	F_appendStringInfoString(m, v17+int32(16), int32(_a_F_ExecBuildSlotValueDescription_4))
 	mBase = m.M
-	v257 = m.ExcPending
-	if v257 != 0 {
+	v201 = m.ExcPending
+	if v201 != 0 {
 		goto L2
 	} else {
-		goto L78
+		goto L61
 	}
-L76:
+L59:
 	;
-	goto L77
-L77:
+	goto L60
+L60:
 	;
-	v265 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
-	v276 = v265
+	v209 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
+	v220 = v209
 	goto L1
-L78:
+L61:
 	;
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
-	v261 = *(*int32)(unsafe.Add(mBase, uint32(v17)+36))
-	F_appendBinaryStringInfo(m, v17+int32(16), v260, v261)
+	v204 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
+	v205 = *(*int32)(unsafe.Add(mBase, uint32(v17)+36))
+	F_appendBinaryStringInfo(m, v17+int32(16), v204, v205)
 	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
+	v207 = m.ExcPending
+	if v207 != 0 {
 		goto L2
 	} else {
-		goto L79
+		goto L62
 	}
-L79:
+L62:
 	;
-	v264 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
-	v276 = v264
+	v208 = *(*int32)(unsafe.Add(mBase, uint32(v17)+16))
+	v220 = v208
 	goto L1
 }
 func F_ExecComputeSlotInfo(m *base.Module, l0 int32, l1 int32) int32 {

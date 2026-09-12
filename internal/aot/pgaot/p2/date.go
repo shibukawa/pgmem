@@ -176,48 +176,26 @@ func F_DecodeDate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int
 	_ = v399
 	var v413 int32
 	_ = v413
+	var v415 int32
+	_ = v415
 	var v422 int32
 	_ = v422
+	var v425 int32
+	_ = v425
 	var v427 int32
 	_ = v427
-	var v431 int32
-	_ = v431
-	var v436 int32
-	_ = v436
+	var v429 int32
+	_ = v429
+	var v434 int32
+	_ = v434
 	var v438 int32
 	_ = v438
-	var v442 int32
-	_ = v442
-	var v448 int32
-	_ = v448
-	var v451 int32
-	_ = v451
-	var v457 int32
-	_ = v457
-	var v461 int32
-	_ = v461
+	var v441 int32
+	_ = v441
+	var v462 int32
+	_ = v462
 	var v463 int32
 	_ = v463
-	var v471 int32
-	_ = v471
-	var v478 int32
-	_ = v478
-	var v481 int32
-	_ = v481
-	var v483 int32
-	_ = v483
-	var v485 int32
-	_ = v485
-	var v490 int32
-	_ = v490
-	var v494 int32
-	_ = v494
-	var v497 int32
-	_ = v497
-	var v518 int32
-	_ = v518
-	var v519 int32
-	_ = v519
 	v6 = int32(0)
 	v17 = m.G0
 	v19 = v17 - int32(112)
@@ -233,7 +211,7 @@ func F_DecodeDate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int
 L1:
 	;
 	m.G0 = v19 + int32(112)
-	return v519
+	return v463
 L2:
 	;
 	v26 = l0
@@ -242,14 +220,14 @@ L2:
 	goto L5
 L3:
 	;
-	v497 = l1
+	v441 = l1
 	goto L4
 L4:
 	;
-	if v497&int32(-32801) != int32(14) {
-		goto L111
+	if v441&int32(-32801) != int32(14) {
+		goto L94
 	} else {
-		goto L112
+		goto L95
 	}
 L5:
 	;
@@ -293,7 +271,7 @@ L10:
 	}
 L11:
 	;
-	v519 = int32(-1)
+	v463 = int32(-1)
 	goto L1
 L12:
 	;
@@ -556,7 +534,7 @@ L52:
 	}
 L53:
 	;
-	v519 = int32(-1)
+	v463 = int32(-1)
 	goto L1
 L54:
 	;
@@ -711,7 +689,7 @@ L79:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+104)) = v356 << (uint(v352) % 32)
 	v359 = int32(-1)
 	if v352 != v356 {
-		v519 = v359
+		v463 = v359
 		goto L1
 	} else {
 		goto L80
@@ -720,7 +698,7 @@ L80:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l4)+16)) = v355
 	if v171&int32(2) != 0 {
-		v519 = v359
+		v463 = v359
 		goto L1
 	} else {
 		goto L81
@@ -747,173 +725,82 @@ L83:
 	}
 L84:
 	;
-	v497 = v490
+	v441 = v434
 	goto L4
 L85:
 	;
-	if v413&int32(3) == int32(0) {
-		v438 = v413
-		goto L90
+	v415 = F_strlen(m, v413)
+	mBase = m.M
+	if v415 <= int32(0) {
+		v463 = int32(-1)
+		goto L1
 	} else {
-		goto L91
+		goto L88
 	}
 L86:
 	;
-	v490 = v395
+	v434 = v395
 	goto L87
 L87:
 	;
-	v494 = v399 + int32(1)
-	if v494 != v169 {
-		v395 = v490
-		v399 = v494
+	v438 = v399 + int32(1)
+	if v438 != v169 {
+		v395 = v434
+		v399 = v438
 		goto L83
-	} else {
-		goto L110
-	}
-L88:
-	;
-	if v471 <= int32(0) {
-		v519 = int32(-1)
-		goto L1
-	} else {
-		goto L105
-	}
-L89:
-	;
-	v471 = v463 - v413
-	goto L88
-L90:
-	;
-	v442 = v438
-	goto L99
-L91:
-	;
-	v422 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v413))))
-	if v422 == int32(0) {
-		goto L92
 	} else {
 		goto L93
 	}
-L92:
+L88:
 	;
-	v471 = int32(0)
-	goto L88
-L93:
-	;
-	goto L94
-L94:
-	;
-	v427 = v413
-	goto L95
-L95:
-	;
-	v431 = v427 + int32(1)
-	if v431&int32(3) == int32(0) {
-		v438 = v431
-		goto L90
-	} else {
-		goto L97
-	}
-L96:
-	;
-	v463 = v431
-	goto L89
-L97:
-	;
-	v436 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v431))))
-	if v436 != 0 {
-		v427 = v431
-		goto L95
-	} else {
-		goto L98
-	}
-L98:
-	;
-	goto L96
-L99:
-	;
-	v448 = *(*int32)(unsafe.Add(mBase, uint32(v442)))
-	v451 = int32(-2139062144)
-	if (int32(16843008)-v448|v448)&v451 == v451 {
-		v442 = v442 + int32(4)
-		goto L99
-	} else {
-		goto L101
-	}
-L100:
-	;
-	v457 = v442
-	goto L102
-L101:
-	;
-	goto L100
-L102:
-	;
-	v461 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v457))))
-	if v461 != 0 {
-		v457 = v457 + int32(1)
-		goto L102
-	} else {
-		goto L104
-	}
-L103:
-	;
-	v463 = v457
-	goto L89
-L104:
-	;
-	goto L103
-L105:
-	;
-	v478 = F_DecodeNumber(m, v471, v413, v385, v395, v19+int32(104), l4, v19+int32(108), l3)
+	v422 = F_DecodeNumber(m, v415, v413, v385, v395, v19+int32(104), l4, v19+int32(108), l3)
 	mBase = m.M
-	v481 = m.ExcPending
-	if v481 != 0 {
-		goto L106
+	v425 = m.ExcPending
+	if v425 != 0 {
+		goto L89
 	} else {
-		goto L107
+		goto L90
 	}
-L106:
+L89:
 	;
 	return int32(0)
-L107:
+L90:
 	;
-	if v478 != 0 {
-		v519 = v478
+	if v422 != 0 {
+		v463 = v422
 		goto L1
 	} else {
-		goto L108
+		goto L91
 	}
-L108:
+L91:
 	;
-	v483 = *(*int32)(unsafe.Add(mBase, uint32(v19)+104))
-	if v483&v395 != 0 {
-		v519 = int32(-1)
+	v427 = *(*int32)(unsafe.Add(mBase, uint32(v19)+104))
+	if v427&v395 != 0 {
+		v463 = int32(-1)
 		goto L1
 	} else {
-		goto L109
+		goto L92
 	}
-L109:
+L92:
 	;
-	v485 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v485 | v483
-	v490 = v395 | v483
+	v429 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v429 | v427
+	v434 = v395 | v427
 	goto L87
-L110:
+L93:
 	;
 	goto L84
-L111:
+L94:
 	;
-	v518 = int32(-1)
-	goto L113
-L112:
+	v462 = int32(-1)
+	goto L96
+L95:
 	;
-	v518 = int32(0)
-	goto L113
-L113:
+	v462 = int32(0)
+	goto L96
+L96:
 	;
-	v519 = v518
+	v463 = v462
 	goto L1
 }
 func F_EncodeDateOnly(m *base.Module, l0 int32, l1 int32, l2 int32) {

@@ -8,6 +8,9 @@ func F_Pg_magic_func__int(m *base.Module) int32 {
 func F_Pg_magic_func_euc_jp_and_sjis(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_euc_jp_and_sjis_0)
 }
+func F_Pg_magic_func_fuzzystrmatch(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_fuzzystrmatch_0)
+}
 func F_Pg_magic_func_ltree(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_ltree_0)
 }

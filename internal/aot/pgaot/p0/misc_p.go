@@ -136,40 +136,18 @@ func F_ParseAbortRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v188
 	var v195 int32
 	_ = v195
-	var v205 int32
-	_ = v205
-	var v210 int32
+	var v198 int32
+	_ = v198
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v204 int32
+	_ = v204
+	var v209 int64
+	_ = v209
+	var v210 int64
 	_ = v210
-	var v214 int32
-	_ = v214
-	var v219 int32
-	_ = v219
-	var v221 int32
-	_ = v221
-	var v225 int32
-	_ = v225
-	var v231 int32
-	_ = v231
-	var v234 int32
-	_ = v234
-	var v240 int32
-	_ = v240
-	var v244 int32
-	_ = v244
-	var v246 int32
-	_ = v246
-	var v254 int32
-	_ = v254
-	var v258 int32
-	_ = v258
-	var v259 int32
-	_ = v259
-	var v260 int32
-	_ = v260
-	var v265 int64
-	_ = v265
-	var v266 int64
-	_ = v266
 	v10 = F__emscripten_memset_bulkmem(m, l2, base.I32_extend8_s(int32(0)), int32(264))
 	mBase = m.M
 	goto L1
@@ -269,18 +247,18 @@ L14:
 L15:
 	;
 	if v16&int32(16) == int32(0) {
-		v259 = v16
-		v260 = v66
+		v203 = v16
+		v204 = v66
 		goto L16
 	} else {
 		goto L17
 	}
 L16:
 	;
-	if v259&int32(32) == int32(0) {
+	if v203&int32(32) == int32(0) {
 		goto L2
 	} else {
-		goto L68
+		goto L51
 	}
 L17:
 	;
@@ -288,8 +266,8 @@ L17:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = v73
 	v76 = v66 + int32(4)
 	if v16&int32(128) == int32(0) {
-		v259 = v16
-		v260 = v76
+		v203 = v16
+		v204 = v76
 		goto L16
 	} else {
 		goto L18
@@ -300,12 +278,12 @@ L18:
 	goto L22
 L19:
 	;
-	if v76&int32(3) == int32(0) {
-		v221 = v76
-		goto L53
-	} else {
-		goto L54
-	}
+	v198 = F_strlen(m, v76)
+	mBase = m.M
+	v202 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+	v203 = v202
+	v204 = v198 + v76 + int32(1)
+	goto L16
 L20:
 	;
 	v195 = F_strlen(m, v184)
@@ -536,101 +514,10 @@ L50:
 	goto L48
 L51:
 	;
-	v258 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
-	v259 = v258
-	v260 = v254 + v76 + int32(1)
-	goto L16
-L52:
-	;
-	v254 = v246 - v76
-	goto L51
-L53:
-	;
-	v225 = v221
-	goto L62
-L54:
-	;
-	v205 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76))))
-	if v205 == int32(0) {
-		goto L55
-	} else {
-		goto L56
-	}
-L55:
-	;
-	v254 = int32(0)
-	goto L51
-L56:
-	;
-	goto L57
-L57:
-	;
-	v210 = v76
-	goto L58
-L58:
-	;
-	v214 = v210 + int32(1)
-	if v214&int32(3) == int32(0) {
-		v221 = v214
-		goto L53
-	} else {
-		goto L60
-	}
-L59:
-	;
-	v246 = v214
-	goto L52
-L60:
-	;
-	v219 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v214))))
-	if v219 != 0 {
-		v210 = v214
-		goto L58
-	} else {
-		goto L61
-	}
-L61:
-	;
-	goto L59
-L62:
-	;
-	v231 = *(*int32)(unsafe.Add(mBase, uint32(v225)))
-	v234 = int32(-2139062144)
-	if (int32(16843008)-v231|v231)&v234 == v234 {
-		v225 = v225 + int32(4)
-		goto L62
-	} else {
-		goto L64
-	}
-L63:
-	;
-	v240 = v225
-	goto L65
-L64:
-	;
-	goto L63
-L65:
-	;
-	v244 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v240))))
-	if v244 != 0 {
-		v240 = v240 + int32(1)
-		goto L65
-	} else {
-		goto L67
-	}
-L66:
-	;
-	v246 = v240
-	goto L52
-L67:
-	;
-	goto L66
-L68:
-	;
-	v265 = *(*int64)(unsafe.Add(mBase, uint32(v260)))
-	v266 = *(*int64)(unsafe.Add(mBase, uint32(v260)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+256)) = v266
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+248)) = v265
+	v209 = *(*int64)(unsafe.Add(mBase, uint32(v204)))
+	v210 = *(*int64)(unsafe.Add(mBase, uint32(v204)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+256)) = v210
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+248)) = v209
 	goto L2
 }
 func F_PrepareInvalidationState(m *base.Module) int32 {
@@ -2406,389 +2293,179 @@ func F_perform_default_encoding_conversion(m *base.Module, l0 int32, l1 int32, l
 	_ = v38
 	var v39 int32
 	_ = v39
+	var v42 int32
+	_ = v42
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
+	var v60 int32
+	_ = v60
 	var v63 int32
 	_ = v63
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v75 int32
-	_ = v75
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
+	var v67 int32
+	_ = v67
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v83 int32
+	_ = v83
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
 	var v98 int32
 	_ = v98
-	var v103 int32
-	_ = v103
-	var v104 int32
-	_ = v104
-	var v105 int32
-	_ = v105
-	var v116 int32
-	_ = v116
-	var v119 int32
-	_ = v119
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
-	var v132 int32
-	_ = v132
-	var v136 int32
-	_ = v136
-	var v139 int32
-	_ = v139
-	var v143 int32
-	_ = v143
-	var v149 int32
-	_ = v149
-	var v154 int32
-	_ = v154
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
 	if l2 != 0 {
-		goto L4
+		v13 = int32(_a_F_perform_default_encoding_conversion_0)
 	} else {
-		goto L5
+		v13 = int32(_a_F_perform_default_encoding_conversion_1)
 	}
-L1:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
-		goto L15
-	} else {
-		goto L45
-	}
-L2:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
-		goto L15
-	} else {
-		goto L40
-	}
-L3:
-	;
-	m.G0 = v9 + int32(32)
-	return v105
-L4:
-	;
-	v13 = int32(_a_F_perform_default_encoding_conversion_0)
-	goto L6
-L5:
-	;
-	v13 = int32(_a_F_perform_default_encoding_conversion_1)
-	goto L6
-L6:
-	;
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
 	if v14 == int32(0) {
-		v105 = l0
-		goto L3
+		v49 = l0
+		m.G0 = v9 + int32(32)
+		return v49
 	} else {
-		goto L7
-	}
-L7:
-	;
-	if base.Ui32(int32(536870911)) <= base.Ui32(l1) {
-		goto L2
-	} else {
-		goto L8
-	}
-L8:
-	;
-	v20 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[0]))
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[1]))
-	if l2 != 0 {
-		goto L9
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v23 = v20
-	goto L11
-L10:
-	;
-	v23 = v22
-	goto L11
-L11:
-	;
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-	if l2 != 0 {
-		goto L12
-	} else {
-		goto L13
-	}
-L12:
-	;
-	v25 = v22
-	goto L14
-L13:
-	;
-	v25 = v20
-	goto L14
-L14:
-	;
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
-	v28 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[2]))
-	v33 = F_MemoryContextAllocHuge(m, v28, l1<<(uint(int32(2))%32)|int32(1))
-	mBase = m.M
-	v36 = m.ExcPending
-	if v36 != 0 {
-		goto L15
-	} else {
-		goto L16
-	}
-L15:
-	;
-	return int32(0)
-L16:
-	;
-	v38 = F_FunctionCall6Coll(m, v14, v24, v26, l0, v33, l1, int32(0))
-	mBase = m.M
-	v39 = m.ExcPending
-	if v39 != 0 {
-		goto L15
-	} else {
-		goto L17
-	}
-L17:
-	;
-	if base.Ui32(l1) < base.Ui32(int32(_a_F_perform_default_encoding_conversion_2)) {
-		goto L18
-	} else {
-		goto L19
-	}
-L18:
-	;
-	v105 = v33
-	goto L3
-L19:
-	;
-	goto L20
-L20:
-	;
-	if v33&int32(3) == int32(0) {
-		v65 = v33
-		goto L23
-	} else {
-		goto L24
-	}
-L21:
-	;
-	if base.Ui32(int32(1073741823)) <= base.Ui32(v98) {
-		goto L1
-	} else {
-		goto L38
-	}
-L22:
-	;
-	v98 = v90 - v33
-	goto L21
-L23:
-	;
-	v69 = v65
-	goto L32
-L24:
-	;
-	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33))))
-	if v49 == int32(0) {
-		goto L25
-	} else {
-		goto L26
-	}
-L25:
-	;
-	v98 = int32(0)
-	goto L21
-L26:
-	;
-	goto L27
-L27:
-	;
-	v54 = v33
-	goto L28
-L28:
-	;
-	v58 = v54 + int32(1)
-	if v58&int32(3) == int32(0) {
-		v65 = v58
-		goto L23
-	} else {
-		goto L30
-	}
-L29:
-	;
-	v90 = v58
-	goto L22
-L30:
-	;
-	v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58))))
-	if v63 != 0 {
-		v54 = v58
-		goto L28
-	} else {
-		goto L31
-	}
-L31:
-	;
-	goto L29
-L32:
-	;
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-	v78 = int32(-2139062144)
-	if (int32(16843008)-v75|v75)&v78 == v78 {
-		v69 = v69 + int32(4)
-		goto L32
-	} else {
-		goto L34
-	}
-L33:
-	;
-	v84 = v69
-	goto L35
-L34:
-	;
-	goto L33
-L35:
-	;
-	v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
-	if v88 != 0 {
-		v84 = v84 + int32(1)
-		goto L35
-	} else {
-		goto L37
-	}
-L36:
-	;
-	v90 = v84
-	goto L22
-L37:
-	;
-	goto L36
-L38:
-	;
-	v103 = F_repalloc(m, v33, v98+int32(1))
-	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
-		goto L15
-	} else {
-		goto L39
-	}
-L39:
-	;
-	v105 = v103
-	goto L3
-L40:
-	;
-	F_errcode(m, int32(261))
-	mBase = m.M
-	v119 = m.ExcPending
-	if v119 != 0 {
-		goto L15
-	} else {
-		goto L41
-	}
-L41:
-	;
-	F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_3), int32(0))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
-		goto L15
-	} else {
-		goto L42
-	}
-L42:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
-	F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_4), v9)
-	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
-		goto L15
-	} else {
-		goto L43
-	}
-L43:
-	;
-	F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_5), int32(825), int32(_a_F_perform_default_encoding_conversion_6))
-	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
-		goto L15
-	} else {
-		goto L44
-	}
-L44:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L45:
-	;
-	F_errcode(m, int32(261))
-	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
-		goto L15
-	} else {
-		goto L46
-	}
-L46:
-	;
-	F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_3), int32(0))
-	mBase = m.M
-	v143 = m.ExcPending
-	if v143 != 0 {
-		goto L15
-	} else {
-		goto L47
-	}
-L47:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-	F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_4), v9+int32(16))
-	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
-		goto L15
-	} else {
-		goto L48
-	}
-L48:
-	;
-	F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_5), int32(852), int32(_a_F_perform_default_encoding_conversion_6))
-	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
-		goto L15
-	} else {
-		goto L49
-	}
-L49:
-	;
-	base.Wasm_trap_unreachable()
-	for {
+		if base.Ui32(int32(536870911)) <= base.Ui32(l1) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v60 = m.ExcPending
+			if v60 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(261))
+				mBase = m.M
+				v63 = m.ExcPending
+				if v63 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_2), int32(0))
+					mBase = m.M
+					v67 = m.ExcPending
+					if v67 != 0 {
+						return int32(0)
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
+						F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9)
+						mBase = m.M
+						v71 = m.ExcPending
+						if v71 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(825), int32(_a_F_perform_default_encoding_conversion_5))
+							mBase = m.M
+							v76 = m.ExcPending
+							if v76 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v20 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[0]))
+			v22 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[1]))
+			if l2 != 0 {
+				v23 = v20
+			} else {
+				v23 = v22
+			}
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
+			if l2 != 0 {
+				v25 = v22
+			} else {
+				v25 = v20
+			}
+			v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
+			v28 = *(*int32)(unsafe.Add(mBase, _c_F_perform_default_encoding_conversion[2]))
+			v33 = F_MemoryContextAllocHuge(m, v28, l1<<(uint(int32(2))%32)|int32(1))
+			mBase = m.M
+			v36 = m.ExcPending
+			if v36 != 0 {
+				return int32(0)
+			} else {
+				v38 = F_FunctionCall6Coll(m, v14, v24, v26, l0, v33, l1, int32(0))
+				mBase = m.M
+				v39 = m.ExcPending
+				if v39 != 0 {
+					return int32(0)
+				} else {
+					if base.Ui32(l1) < base.Ui32(int32(_a_F_perform_default_encoding_conversion_6)) {
+						v49 = v33
+						m.G0 = v9 + int32(32)
+						return v49
+					} else {
+						v42 = F_strlen(m, v33)
+						mBase = m.M
+						if base.Ui32(int32(1073741823)) <= base.Ui32(v42) {
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v80 = m.ExcPending
+							if v80 != 0 {
+								return int32(0)
+							} else {
+								F_errcode(m, int32(261))
+								mBase = m.M
+								v83 = m.ExcPending
+								if v83 != 0 {
+									return int32(0)
+								} else {
+									F_errmsg(m, int32(_a_F_perform_default_encoding_conversion_2), int32(0))
+									mBase = m.M
+									v87 = m.ExcPending
+									if v87 != 0 {
+										return int32(0)
+									} else {
+										*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
+										F_errdetail(m, int32(_a_F_perform_default_encoding_conversion_3), v9+int32(16))
+										mBase = m.M
+										v93 = m.ExcPending
+										if v93 != 0 {
+											return int32(0)
+										} else {
+											F_errfinish(m, int32(_a_F_perform_default_encoding_conversion_4), int32(852), int32(_a_F_perform_default_encoding_conversion_5))
+											mBase = m.M
+											v98 = m.ExcPending
+											if v98 != 0 {
+												return int32(0)
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v47 = F_repalloc(m, v33, v42+int32(1))
+							mBase = m.M
+							v48 = m.ExcPending
+							if v48 != 0 {
+								return int32(0)
+							} else {
+								v49 = v47
+								m.G0 = v9 + int32(32)
+								return v49
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_pgarch_call_module_shutdown_cb(m *base.Module, l0 int32, l1 int32) {

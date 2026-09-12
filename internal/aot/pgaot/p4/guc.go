@@ -2552,236 +2552,77 @@ func F_guc_strdup(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v6 int32
 	_ = v6
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
 	var v14 int32
 	_ = v14
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v23 int32
-	_ = v23
+	var v24 int32
+	_ = v24
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v49 int32
-	_ = v49
-	var v53 int32
-	_ = v53
-	var v55 int32
-	_ = v55
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
-	var v67 int32
-	_ = v67
-	var v70 int32
-	_ = v70
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_guc_strdup[0]))
-	if l1&int32(3) == int32(0) {
-		v30 = l1
-		goto L4
-	} else {
-		goto L5
-	}
-L1:
-	;
-	return v67
-L2:
-	;
-	v65 = v63 + int32(1)
-	v67 = F_MemoryContextAllocExtended(m, v6, v65, int32(2))
+	v7 = F_strlen(m, l1)
 	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
-		goto L19
-	} else {
-		goto L20
-	}
-L3:
-	;
-	v63 = v55 - l1
-	goto L2
-L4:
-	;
-	v34 = v30
-	goto L13
-L5:
-	;
-	v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	if v14 == int32(0) {
-		goto L6
-	} else {
-		goto L7
-	}
-L6:
-	;
-	v63 = int32(0)
-	goto L2
-L7:
-	;
-	goto L8
-L8:
-	;
-	v19 = l1
-	goto L9
-L9:
-	;
-	v23 = v19 + int32(1)
-	if v23&int32(3) == int32(0) {
-		v30 = v23
-		goto L4
-	} else {
-		goto L11
-	}
-L10:
-	;
-	v55 = v23
-	goto L3
-L11:
-	;
-	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23))))
-	if v28 != 0 {
-		v19 = v23
-		goto L9
-	} else {
-		goto L12
-	}
-L12:
-	;
-	goto L10
-L13:
-	;
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-	v43 = int32(-2139062144)
-	if (int32(16843008)-v40|v40)&v43 == v43 {
-		v34 = v34 + int32(4)
-		goto L13
-	} else {
-		goto L15
-	}
-L14:
-	;
-	v49 = v34
-	goto L16
-L15:
-	;
-	goto L14
-L16:
-	;
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49))))
-	if v53 != 0 {
-		v49 = v49 + int32(1)
-		goto L16
-	} else {
-		goto L18
-	}
-L17:
-	;
-	v55 = v49
-	goto L3
-L18:
-	;
-	goto L17
-L19:
-	;
-	return int32(0)
-L20:
-	;
-	if v67 == int32(0) {
-		goto L21
-	} else {
-		goto L22
-	}
-L21:
-	;
-	v74 = F_errstart(m, l0, int32(0))
+	v9 = v7 + int32(1)
+	v11 = F_MemoryContextAllocExtended(m, v6, v9, int32(2))
 	mBase = m.M
-	v75 = m.ExcPending
-	if v75 != 0 {
-		goto L19
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int32(0)
 	} else {
-		goto L24
+		if v11 == int32(0) {
+			v18 = F_errstart(m, l0, int32(0))
+			mBase = m.M
+			v19 = m.ExcPending
+			if v19 != 0 {
+				return int32(0)
+			} else {
+				if v18 == int32(0) {
+					return v11
+				} else {
+					F_errcode(m, int32(_a_F_guc_strdup_0))
+					mBase = m.M
+					v24 = m.ExcPending
+					if v24 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_guc_strdup_1), int32(0))
+						mBase = m.M
+						v28 = m.ExcPending
+						if v28 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_guc_strdup_2), int32(647), int32(_a_F_guc_strdup_3))
+							mBase = m.M
+							v33 = m.ExcPending
+							if v33 != 0 {
+								return int32(0)
+							} else {
+								return v11
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if v9 != 0 {
+				v35 = F__emscripten_memcpy_bulkmem(m, v11, l1, v9)
+				mBase = m.M
+			} else {
+			}
+			return v11
+		}
 	}
-L22:
-	;
-	goto L23
-L23:
-	;
-	if v65 != 0 {
-		goto L30
-	} else {
-		goto L31
-	}
-L24:
-	;
-	if v74 == int32(0) {
-		goto L1
-	} else {
-		goto L25
-	}
-L25:
-	;
-	F_errcode(m, int32(_a_F_guc_strdup_0))
-	mBase = m.M
-	v80 = m.ExcPending
-	if v80 != 0 {
-		goto L19
-	} else {
-		goto L26
-	}
-L26:
-	;
-	F_errmsg(m, int32(_a_F_guc_strdup_1), int32(0))
-	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
-		goto L19
-	} else {
-		goto L27
-	}
-L27:
-	;
-	F_errfinish(m, int32(_a_F_guc_strdup_2), int32(647), int32(_a_F_guc_strdup_3))
-	mBase = m.M
-	v89 = m.ExcPending
-	if v89 != 0 {
-		goto L19
-	} else {
-		goto L28
-	}
-L28:
-	;
-	return v67
-L29:
-	;
-	goto L1
-L30:
-	;
-	v91 = F__emscripten_memcpy_bulkmem(m, v67, l1, v65)
-	mBase = m.M
-	goto L32
-L31:
-	;
-	goto L32
-L32:
-	;
-	goto L29
 }

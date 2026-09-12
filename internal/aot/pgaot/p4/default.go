@@ -535,366 +535,179 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 	_ = v22
 	var v25 int32
 	_ = v25
-	var v34 int32
-	_ = v34
-	var v39 int32
-	_ = v39
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
 	var v43 int32
 	_ = v43
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
 	var v60 int32
 	_ = v60
-	var v63 int32
-	_ = v63
-	var v69 int32
-	_ = v69
+	var v61 int32
+	_ = v61
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
 	var v73 int32
 	_ = v73
-	var v75 int32
-	_ = v75
-	var v83 int32
-	_ = v83
-	var v88 int32
-	_ = v88
+	var v79 int32
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
 	var v99 int32
 	_ = v99
-	var v100 int32
-	_ = v100
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
-	var v105 int32
-	_ = v105
-	var v111 int32
-	_ = v111
-	var v114 int32
-	_ = v114
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v122 int32
-	_ = v122
-	var v123 int32
-	_ = v123
-	var v128 int32
-	_ = v128
-	var v129 int32
-	_ = v129
-	var v135 int32
-	_ = v135
-	var v140 int32
-	_ = v140
-	var v143 int32
-	_ = v143
-	var v146 int32
-	_ = v146
-	var v152 int32
-	_ = v152
-	var v153 int32
-	_ = v153
-	var v155 int32
-	_ = v155
 	v5 = m.G0
 	v7 = v5 + int32(-64)
 	m.G0 = v7
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9))))
 	if v10 == int32(0) {
-		goto L2
+		v15 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
+		*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v15
+		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(_a_F_check_default_table_access_method_0)
+		v22 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_1), v7)
+		mBase = m.M
+		v25 = m.ExcPending
+		if v25 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v22
+			v99 = int32(0)
+			m.G0 = v7 - int32(-64)
+			return v99
+		}
 	} else {
-		goto L3
+		v27 = F_strlen(m, v9)
+		mBase = m.M
+		if base.Ui32(int32(64)) <= base.Ui32(v27) {
+			v32 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
+			*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v32
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(63)
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(_a_F_check_default_table_access_method_0)
+			v43 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_2), v5+int32(-48))
+			mBase = m.M
+			v44 = m.ExcPending
+			if v44 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v43
+				v99 = int32(0)
+				m.G0 = v7 - int32(-64)
+				return v99
+			}
+		} else {
+			v46 = int32(1)
+			v48 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[3]))
+			v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+20))
+			if base.B2i32(v49 == int32(2)) == int32(0) {
+				v99 = v46
+				m.G0 = v7 - int32(-64)
+				return v99
+			} else {
+				v55 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[4]))
+				if v55 == int32(0) {
+					v99 = v46
+					m.G0 = v7 - int32(-64)
+					return v99
+				} else {
+					v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v60 = F_get_table_am_oid(m, v58, int32(1))
+					mBase = m.M
+					v61 = m.ExcPending
+					if v61 != 0 {
+						return int32(0)
+					} else {
+						if v60 != 0 {
+							v99 = v46
+							m.G0 = v7 - int32(-64)
+							return v99
+						} else {
+							if l2 == int32(12) {
+								v66 = F_errstart(m, int32(18), int32(0))
+								mBase = m.M
+								v67 = m.ExcPending
+								if v67 != 0 {
+									return int32(0)
+								} else {
+									if v66 == int32(0) {
+										v99 = v46
+										m.G0 = v7 - int32(-64)
+										return v99
+									} else {
+										F_errcode(m, int32(67137668))
+										mBase = m.M
+										v72 = m.ExcPending
+										if v72 != 0 {
+											return int32(0)
+										} else {
+											v73 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v73
+											F_errmsg(m, int32(_a_F_check_default_table_access_method_3), v5+int32(-32))
+											mBase = m.M
+											v79 = m.ExcPending
+											if v79 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_check_default_table_access_method_4), int32(137), int32(_a_F_check_default_table_access_method_5))
+												mBase = m.M
+												v84 = m.ExcPending
+												if v84 != 0 {
+													return int32(0)
+												} else {
+													v99 = v46
+													m.G0 = v7 - int32(-64)
+													return v99
+												}
+											}
+										}
+									}
+								}
+							} else {
+								v87 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
+								*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v87
+								v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v90
+								v96 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_6), v5+int32(-16))
+								mBase = m.M
+								v97 = m.ExcPending
+								if v97 != 0 {
+									return int32(0)
+								} else {
+									*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v96
+									v99 = int32(0)
+									m.G0 = v7 - int32(-64)
+									return v99
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-L1:
-	;
-	m.G0 = v7 - int32(-64)
-	return v155
-L2:
-	;
-	v15 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v15
-	goto L5
-L3:
-	;
-	goto L4
-L4:
-	;
-	if v9&int32(3) == int32(0) {
-		v50 = v9
-		goto L10
-	} else {
-		goto L11
-	}
-L5:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(_a_F_check_default_table_access_method_0)
-	v22 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_1), v7)
-	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
-		goto L6
-	} else {
-		goto L7
-	}
-L6:
-	;
-	return int32(0)
-L7:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v22
-	v155 = int32(0)
-	goto L1
-L8:
-	;
-	if base.Ui32(int32(64)) <= base.Ui32(v83) {
-		goto L25
-	} else {
-		goto L26
-	}
-L9:
-	;
-	v83 = v75 - v9
-	goto L8
-L10:
-	;
-	v54 = v50
-	goto L19
-L11:
-	;
-	v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9))))
-	if v34 == int32(0) {
-		goto L12
-	} else {
-		goto L13
-	}
-L12:
-	;
-	v83 = int32(0)
-	goto L8
-L13:
-	;
-	goto L14
-L14:
-	;
-	v39 = v9
-	goto L15
-L15:
-	;
-	v43 = v39 + int32(1)
-	if v43&int32(3) == int32(0) {
-		v50 = v43
-		goto L10
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v75 = v43
-	goto L9
-L17:
-	;
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43))))
-	if v48 != 0 {
-		v39 = v43
-		goto L15
-	} else {
-		goto L18
-	}
-L18:
-	;
-	goto L16
-L19:
-	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(v54)))
-	v63 = int32(-2139062144)
-	if (int32(16843008)-v60|v60)&v63 == v63 {
-		v54 = v54 + int32(4)
-		goto L19
-	} else {
-		goto L21
-	}
-L20:
-	;
-	v69 = v54
-	goto L22
-L21:
-	;
-	goto L20
-L22:
-	;
-	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69))))
-	if v73 != 0 {
-		v69 = v69 + int32(1)
-		goto L22
-	} else {
-		goto L24
-	}
-L23:
-	;
-	v75 = v69
-	goto L9
-L24:
-	;
-	goto L23
-L25:
-	;
-	v88 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v88
-	goto L28
-L26:
-	;
-	goto L27
-L27:
-	;
-	v102 = int32(1)
-	v104 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[3]))
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(v104)+20))
-	goto L30
-L28:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(63)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(_a_F_check_default_table_access_method_0)
-	v99 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_2), v5+int32(-48))
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L6
-	} else {
-		goto L29
-	}
-L29:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v99
-	v155 = int32(0)
-	goto L1
-L30:
-	;
-	if base.B2i32(v105 == int32(2)) == int32(0) {
-		v155 = v102
-		goto L1
-	} else {
-		goto L31
-	}
-L31:
-	;
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[4]))
-	if v111 == int32(0) {
-		v155 = v102
-		goto L1
-	} else {
-		goto L32
-	}
-L32:
-	;
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v116 = F_get_table_am_oid(m, v114, int32(1))
-	mBase = m.M
-	v117 = m.ExcPending
-	if v117 != 0 {
-		goto L6
-	} else {
-		goto L33
-	}
-L33:
-	;
-	if v116 != 0 {
-		v155 = v102
-		goto L1
-	} else {
-		goto L34
-	}
-L34:
-	;
-	if l2 == int32(12) {
-		goto L35
-	} else {
-		goto L36
-	}
-L35:
-	;
-	v122 = F_errstart(m, int32(18), int32(0))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
-		goto L6
-	} else {
-		goto L38
-	}
-L36:
-	;
-	goto L37
-L37:
-	;
-	v143 = *(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[0]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[1])) = v143
-	goto L43
-L38:
-	;
-	if v122 == int32(0) {
-		v155 = v102
-		goto L1
-	} else {
-		goto L39
-	}
-L39:
-	;
-	F_errcode(m, int32(67137668))
-	mBase = m.M
-	v128 = m.ExcPending
-	if v128 != 0 {
-		goto L6
-	} else {
-		goto L40
-	}
-L40:
-	;
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v129
-	F_errmsg(m, int32(_a_F_check_default_table_access_method_3), v5+int32(-32))
-	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
-		goto L6
-	} else {
-		goto L41
-	}
-L41:
-	;
-	F_errfinish(m, int32(_a_F_check_default_table_access_method_4), int32(137), int32(_a_F_check_default_table_access_method_5))
-	mBase = m.M
-	v140 = m.ExcPending
-	if v140 != 0 {
-		goto L6
-	} else {
-		goto L42
-	}
-L42:
-	;
-	v155 = v102
-	goto L1
-L43:
-	;
-	v146 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v146
-	v152 = F_format_elog_string(m, int32(_a_F_check_default_table_access_method_6), v5+int32(-16))
-	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
-		goto L6
-	} else {
-		goto L44
-	}
-L44:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_default_table_access_method[2])) = v152
-	v155 = int32(0)
-	goto L1
 }
 func F_get_default_partition_oid(m *base.Module, l0 int32) int32 {
 	mBase := m.M

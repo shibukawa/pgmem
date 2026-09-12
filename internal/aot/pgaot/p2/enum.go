@@ -695,70 +695,48 @@ func F_enum_recv(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v19 int32
 	_ = v19
-	var v27 int32
-	_ = v27
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v41 int32
-	_ = v41
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v62 int32
-	_ = v62
-	var v66 int32
-	_ = v66
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v55 int32
+	_ = v55
+	var v60 int32
+	_ = v60
+	var v64 int32
+	_ = v64
+	var v67 int32
+	_ = v67
 	var v68 int32
 	_ = v68
+	var v69 int32
+	_ = v69
 	var v76 int32
 	_ = v76
-	var v80 int32
-	_ = v80
 	var v81 int32
 	_ = v81
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v87 int32
-	_ = v87
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v93 int32
-	_ = v93
-	var v101 int32
-	_ = v101
-	var v104 int32
-	_ = v104
-	var v105 int32
-	_ = v105
-	var v106 int32
-	_ = v106
-	var v111 int32
-	_ = v111
-	var v116 int32
-	_ = v116
-	var v120 int32
-	_ = v120
-	var v123 int32
-	_ = v123
-	var v124 int32
-	_ = v124
-	var v125 int32
-	_ = v125
-	var v132 int32
-	_ = v132
-	var v137 int32
-	_ = v137
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
@@ -770,282 +748,128 @@ func F_enum_recv(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
-		goto L2
+		return int32(0)
 	} else {
-		goto L3
-	}
-L1:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
-		goto L2
-	} else {
-		goto L34
-	}
-L2:
-	;
-	return int32(0)
-L3:
-	;
-	if v16&int32(3) == int32(0) {
-		v43 = v16
-		goto L6
-	} else {
-		goto L7
-	}
-L4:
-	;
-	if base.Ui32(v76) < base.Ui32(int32(64)) {
-		goto L21
-	} else {
-		goto L22
-	}
-L5:
-	;
-	v76 = v68 - v16
-	goto L4
-L6:
-	;
-	v47 = v43
-	goto L15
-L7:
-	;
-	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16))))
-	if v27 == int32(0) {
-		goto L8
-	} else {
-		goto L9
-	}
-L8:
-	;
-	v76 = int32(0)
-	goto L4
-L9:
-	;
-	goto L10
-L10:
-	;
-	v32 = v16
-	goto L11
-L11:
-	;
-	v36 = v32 + int32(1)
-	if v36&int32(3) == int32(0) {
-		v43 = v36
-		goto L6
-	} else {
-		goto L13
-	}
-L12:
-	;
-	v68 = v36
-	goto L5
-L13:
-	;
-	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
-	if v41 != 0 {
-		v32 = v36
-		goto L11
-	} else {
-		goto L14
-	}
-L14:
-	;
-	goto L12
-L15:
-	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v47)))
-	v56 = int32(-2139062144)
-	if (int32(16843008)-v53|v53)&v56 == v56 {
-		v47 = v47 + int32(4)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v62 = v47
-	goto L18
-L17:
-	;
-	goto L16
-L18:
-	;
-	v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v62))))
-	if v66 != 0 {
-		v62 = v62 + int32(1)
-		goto L18
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v68 = v62
-	goto L5
-L20:
-	;
-	goto L19
-L21:
-	;
-	v80 = F_SearchSysCache2(m, int32(24), v9, v16)
-	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
-		goto L2
-	} else {
-		goto L24
-	}
-L22:
-	;
-	goto L23
-L23:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
-		goto L2
-	} else {
-		goto L29
-	}
-L24:
-	;
-	if v80 == int32(0) {
-		goto L1
-	} else {
-		goto L25
-	}
-L25:
-	;
-	F_check_safe_enum_use(m, v80)
-	mBase = m.M
-	v85 = m.ExcPending
-	if v85 != 0 {
-		goto L2
-	} else {
-		goto L26
-	}
-L26:
-	;
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v80)+16))
-	v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86)+22)))
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(v86+v87)))
-	F_ReleaseCatCache(m, v80)
-	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
-		goto L2
-	} else {
-		goto L27
-	}
-L27:
-	;
-	F_pfree(m, v16)
-	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
-		goto L2
-	} else {
-		goto L28
-	}
-L28:
-	;
-	m.G0 = v7 + int32(32)
-	return v89
-L29:
-	;
-	F_errcode(m, int32(33685634))
-	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
-		goto L2
-	} else {
-		goto L30
-	}
-L30:
-	;
-	v105 = F_format_type_be(m, v9)
-	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
-		goto L2
-	} else {
-		goto L31
-	}
-L31:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v16
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v105
-	F_errmsg(m, int32(_a_F_enum_recv_0), v7)
-	mBase = m.M
-	v111 = m.ExcPending
-	if v111 != 0 {
-		goto L2
-	} else {
-		goto L32
-	}
-L32:
-	;
-	F_errfinish(m, int32(_a_F_enum_recv_1), int32(196), int32(_a_F_enum_recv_2))
-	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
-		goto L2
-	} else {
-		goto L33
-	}
-L33:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L34:
-	;
-	F_errcode(m, int32(33685634))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
-		goto L2
-	} else {
-		goto L35
-	}
-L35:
-	;
-	v124 = F_format_type_be(m, v9)
-	mBase = m.M
-	v125 = m.ExcPending
-	if v125 != 0 {
-		goto L2
-	} else {
-		goto L36
-	}
-L36:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v16
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v124
-	F_errmsg(m, int32(_a_F_enum_recv_0), v7+int32(16))
-	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
-		goto L2
-	} else {
-		goto L37
-	}
-L37:
-	;
-	F_errfinish(m, int32(_a_F_enum_recv_1), int32(206), int32(_a_F_enum_recv_2))
-	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
-		goto L2
-	} else {
-		goto L38
-	}
-L38:
-	;
-	base.Wasm_trap_unreachable()
-	for {
+		v20 = F_strlen(m, v16)
+		mBase = m.M
+		if base.Ui32(v20) < base.Ui32(int32(64)) {
+			v24 = F_SearchSysCache2(m, int32(24), v9, v16)
+			mBase = m.M
+			v25 = m.ExcPending
+			if v25 != 0 {
+				return int32(0)
+			} else {
+				if v24 == int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v64 = m.ExcPending
+					if v64 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(33685634))
+						mBase = m.M
+						v67 = m.ExcPending
+						if v67 != 0 {
+							return int32(0)
+						} else {
+							v68 = F_format_type_be(m, v9)
+							mBase = m.M
+							v69 = m.ExcPending
+							if v69 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v16
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v68
+								F_errmsg(m, int32(_a_F_enum_recv_0), v7+int32(16))
+								mBase = m.M
+								v76 = m.ExcPending
+								if v76 != 0 {
+									return int32(0)
+								} else {
+									F_errfinish(m, int32(_a_F_enum_recv_1), int32(206), int32(_a_F_enum_recv_2))
+									mBase = m.M
+									v81 = m.ExcPending
+									if v81 != 0 {
+										return int32(0)
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					F_check_safe_enum_use(m, v24)
+					mBase = m.M
+					v29 = m.ExcPending
+					if v29 != 0 {
+						return int32(0)
+					} else {
+						v30 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
+						v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+22)))
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(v30+v31)))
+						F_ReleaseCatCache(m, v24)
+						mBase = m.M
+						v35 = m.ExcPending
+						if v35 != 0 {
+							return int32(0)
+						} else {
+							F_pfree(m, v16)
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return int32(0)
+							} else {
+								m.G0 = v7 + int32(32)
+								return v33
+							}
+						}
+					}
+				}
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v45 = m.ExcPending
+			if v45 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(33685634))
+				mBase = m.M
+				v48 = m.ExcPending
+				if v48 != 0 {
+					return int32(0)
+				} else {
+					v49 = F_format_type_be(m, v9)
+					mBase = m.M
+					v50 = m.ExcPending
+					if v50 != 0 {
+						return int32(0)
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v16
+						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v49
+						F_errmsg(m, int32(_a_F_enum_recv_0), v7)
+						mBase = m.M
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_enum_recv_1), int32(196), int32(_a_F_enum_recv_2))
+							mBase = m.M
+							v60 = m.ExcPending
+							if v60 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

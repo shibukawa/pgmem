@@ -10450,321 +10450,148 @@ func F_get_th(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v9 int32
 	_ = v9
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	var v38 int32
-	_ = v38
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v53 int32
-	_ = v53
-	var v57 int32
-	_ = v57
-	var v59 int32
-	_ = v59
-	var v67 int32
-	_ = v67
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v26 int32
+	_ = v26
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v61 int32
+	_ = v61
+	var v64 int32
+	_ = v64
 	var v68 int32
 	_ = v68
-	var v71 int32
-	_ = v71
-	var v82 int32
-	_ = v82
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
-	var v101 int32
-	_ = v101
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
-	var v117 int32
-	_ = v117
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
-	var v129 int32
-	_ = v129
+	var v73 int32
+	_ = v73
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	if l0&int32(3) == int32(0) {
-		v34 = l0
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v68 = l0 + v67
-	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v68-int32(1)))))
-	if base.Ui32((v71-int32(48))&int32(255)) < base.Ui32(int32(10)) {
-		goto L18
-	} else {
-		goto L19
-	}
-L2:
-	;
-	v67 = v59 - l0
-	goto L1
-L3:
-	;
-	v38 = v34
-	goto L12
-L4:
-	;
-	v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v18 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v67 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v23 = l0
-	goto L8
-L8:
-	;
-	v27 = v23 + int32(1)
-	if v27&int32(3) == int32(0) {
-		v34 = v27
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v59 = v27
-	goto L2
-L10:
-	;
-	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27))))
-	if v32 != 0 {
-		v23 = v27
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
-	v47 = int32(-2139062144)
-	if (int32(16843008)-v44|v44)&v47 == v47 {
-		v38 = v38 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v53 = v38
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53))))
-	if v57 != 0 {
-		v53 = v53 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v59 = v53
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	if int32(2) <= v67 {
-		goto L23
-	} else {
-		goto L24
-	}
-L19:
-	;
-	goto L20
-L20:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v11 = F_strlen(m, l0)
 	mBase = m.M
-	v117 = m.ExcPending
-	if v117 != 0 {
-		goto L42
+	v12 = l0 + v11
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12-int32(1)))))
+	if base.Ui32((v15-int32(48))&int32(255)) < base.Ui32(int32(10)) {
+		if int32(2) <= v11 {
+			v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12-int32(2)))))
+			if v26 == int32(49) {
+				if l1 == int32(1) {
+					v50 = int32(_a_F_get_th_0)
+				} else {
+					v50 = int32(_a_F_get_th_1)
+				}
+				v51 = v50
+			} else {
+				switch v15 - int32(49) {
+				case 0:
+					if l1 == int32(1) {
+						v35 = int32(_a_F_get_th_2)
+					} else {
+						v35 = int32(_a_F_get_th_3)
+					}
+					v51 = v35
+				case 1:
+					if l1 == int32(1) {
+						v40 = int32(_a_F_get_th_4)
+					} else {
+						v40 = int32(_a_F_get_th_5)
+					}
+					v51 = v40
+				case 2:
+					if l1 == int32(1) {
+						v45 = int32(_a_F_get_th_6)
+					} else {
+						v45 = int32(_a_F_get_th_7)
+					}
+					v51 = v45
+				default:
+					if l1 == int32(1) {
+						v50 = int32(_a_F_get_th_0)
+					} else {
+						v50 = int32(_a_F_get_th_1)
+					}
+					v51 = v50
+				}
+			}
+		} else {
+			switch v15 - int32(49) {
+			case 0:
+				if l1 == int32(1) {
+					v35 = int32(_a_F_get_th_2)
+				} else {
+					v35 = int32(_a_F_get_th_3)
+				}
+				v51 = v35
+			case 1:
+				if l1 == int32(1) {
+					v40 = int32(_a_F_get_th_4)
+				} else {
+					v40 = int32(_a_F_get_th_5)
+				}
+				v51 = v40
+			case 2:
+				if l1 == int32(1) {
+					v45 = int32(_a_F_get_th_6)
+				} else {
+					v45 = int32(_a_F_get_th_7)
+				}
+				v51 = v45
+			default:
+				if l1 == int32(1) {
+					v50 = int32(_a_F_get_th_0)
+				} else {
+					v50 = int32(_a_F_get_th_1)
+				}
+				v51 = v50
+			}
+		}
+		m.G0 = v9 + int32(16)
+		return v51
 	} else {
-		goto L43
-	}
-L21:
-	;
-	m.G0 = v9 + int32(16)
-	return v107
-L22:
-	;
-	if l1 == int32(1) {
-		goto L39
-	} else {
-		goto L40
-	}
-L23:
-	;
-	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v68-int32(2)))))
-	if v82 == int32(49) {
-		goto L22
-	} else {
-		goto L26
-	}
-L24:
-	;
-	goto L25
-L25:
-	;
-	switch v71 - int32(49) {
-	case 0:
-		goto L29
-	case 1:
-		goto L28
-	case 2:
-		goto L27
-	default:
-		goto L22
-	}
-L26:
-	;
-	goto L25
-L27:
-	;
-	if l1 == int32(1) {
-		goto L36
-	} else {
-		goto L37
-	}
-L28:
-	;
-	if l1 == int32(1) {
-		goto L33
-	} else {
-		goto L34
-	}
-L29:
-	;
-	if l1 == int32(1) {
-		goto L30
-	} else {
-		goto L31
-	}
-L30:
-	;
-	v91 = int32(_a_F_get_th_0)
-	goto L32
-L31:
-	;
-	v91 = int32(_a_F_get_th_1)
-	goto L32
-L32:
-	;
-	v107 = v91
-	goto L21
-L33:
-	;
-	v96 = int32(_a_F_get_th_2)
-	goto L35
-L34:
-	;
-	v96 = int32(_a_F_get_th_3)
-	goto L35
-L35:
-	;
-	v107 = v96
-	goto L21
-L36:
-	;
-	v101 = int32(_a_F_get_th_4)
-	goto L38
-L37:
-	;
-	v101 = int32(_a_F_get_th_5)
-	goto L38
-L38:
-	;
-	v107 = v101
-	goto L21
-L39:
-	;
-	v106 = int32(_a_F_get_th_6)
-	goto L41
-L40:
-	;
-	v106 = int32(_a_F_get_th_7)
-	goto L41
-L41:
-	;
-	v107 = v106
-	goto L21
-L42:
-	;
-	return int32(0)
-L43:
-	;
-	F_errcode(m, int32(33685634))
-	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
-		goto L42
-	} else {
-		goto L44
-	}
-L44:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-	F_errmsg(m, int32(_a_F_get_th_8), v9)
-	mBase = m.M
-	v124 = m.ExcPending
-	if v124 != 0 {
-		goto L42
-	} else {
-		goto L45
-	}
-L45:
-	;
-	F_errfinish(m, int32(_a_F_get_th_9), int32(1572), int32(_a_F_get_th_10))
-	mBase = m.M
-	v129 = m.ExcPending
-	if v129 != 0 {
-		goto L42
-	} else {
-		goto L46
-	}
-L46:
-	;
-	base.Wasm_trap_unreachable()
-	for {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v61 = m.ExcPending
+		if v61 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(33685634))
+			mBase = m.M
+			v64 = m.ExcPending
+			if v64 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
+				F_errmsg(m, int32(_a_F_get_th_8), v9)
+				mBase = m.M
+				v68 = m.ExcPending
+				if v68 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_get_th_9), int32(1572), int32(_a_F_get_th_10))
+					mBase = m.M
+					v73 = m.ExcPending
+					if v73 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_get_typisdefined(m *base.Module, l0 int32) int32 {

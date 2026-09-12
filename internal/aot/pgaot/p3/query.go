@@ -3265,70 +3265,48 @@ func F_query_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v49 int32
-	_ = v49
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
 	var v54 int32
 	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
 	var v58 int32
 	_ = v58
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v75 int32
-	_ = v75
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v101 int32
-	_ = v101
-	var v102 int32
-	_ = v102
-	var v103 int32
-	_ = v103
-	var v104 int32
-	_ = v104
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
-	var v108 int32
-	_ = v108
-	var v110 int32
-	_ = v110
-	var v111 int32
-	_ = v111
-	var v112 int32
-	_ = v112
-	var v113 int32
-	_ = v113
-	var v114 int32
-	_ = v114
-	var v115 int32
-	_ = v115
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
-	var v132 int32
-	_ = v132
-	var v136 int32
-	_ = v136
-	var v142 int32
-	_ = v142
-	var v147 int32
-	_ = v147
+	var v59 int32
+	_ = v59
+	var v67 int32
+	_ = v67
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v86 int32
+	_ = v86
+	var v91 int32
+	_ = v91
 	v8 = m.G0
 	v10 = v8 - int32(32)
 	m.G0 = v10
@@ -3337,347 +3315,168 @@ func F_query_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
-		goto L1
+		return int32(0)
 	} else {
-		goto L2
-	}
-L1:
-	;
-	return int32(0)
-L2:
-	;
-	v17 = F_text_to_cstring(m, v13)
-	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
-		goto L1
-	} else {
-		goto L3
-	}
-L3:
-	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v21 = F_pg_detoast_datum_packed(m, v20)
-	mBase = m.M
-	v22 = m.ExcPending
-	if v22 != 0 {
-		goto L1
-	} else {
-		goto L4
-	}
-L4:
-	;
-	v23 = F_text_to_cstring(m, v21)
-	mBase = m.M
-	v24 = m.ExcPending
-	if v24 != 0 {
-		goto L1
-	} else {
-		goto L5
-	}
-L5:
-	;
-	F_SPI_connect_ext(m, int32(0))
-	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
-		goto L1
-	} else {
-		goto L6
-	}
-L6:
-	;
-	v28 = int32(0)
-	v30 = F_SPI_prepare(m, v17, v28, v28)
-	mBase = m.M
-	v31 = m.ExcPending
-	if v31 != 0 {
-		goto L1
-	} else {
-		goto L8
-	}
-L7:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
-		goto L1
-	} else {
-		goto L44
-	}
-L8:
-	;
-	if v30 != 0 {
-		goto L9
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v32 = F_SPI_cursor_open(m, v30)
-	mBase = m.M
-	v33 = m.ExcPending
-	if v33 != 0 {
-		goto L1
-	} else {
-		goto L12
-	}
-L10:
-	;
-	goto L11
-L11:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
-		goto L1
-	} else {
-		goto L41
-	}
-L12:
-	;
-	if v32 == int32(0) {
-		goto L7
-	} else {
-		goto L13
-	}
-L13:
-	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32)+92))
-	v37 = int32(0)
-	v39 = base.B2i32(v19 != v37)
-	v40 = F_map_sql_table_to_xmlschema(m, v36, v37, v39, v23)
-	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
-		goto L1
-	} else {
-		goto L14
-	}
-L14:
-	;
-	if v40&int32(3) == int32(0) {
-		v65 = v40
-		goto L17
-	} else {
-		goto L18
-	}
-L15:
-	;
-	v100 = v98 + int32(1)
-	v101 = F_SPI_palloc(m, v100)
-	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
-		goto L1
-	} else {
-		goto L32
-	}
-L16:
-	;
-	v98 = v90 - v40
-	goto L15
-L17:
-	;
-	v69 = v65
-	goto L26
-L18:
-	;
-	v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40))))
-	if v49 == int32(0) {
-		goto L19
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v98 = int32(0)
-	goto L15
-L20:
-	;
-	goto L21
-L21:
-	;
-	v54 = v40
-	goto L22
-L22:
-	;
-	v58 = v54 + int32(1)
-	if v58&int32(3) == int32(0) {
-		v65 = v58
-		goto L17
-	} else {
-		goto L24
-	}
-L23:
-	;
-	v90 = v58
-	goto L16
-L24:
-	;
-	v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58))))
-	if v63 != 0 {
-		v54 = v58
-		goto L22
-	} else {
-		goto L25
-	}
-L25:
-	;
-	goto L23
-L26:
-	;
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v69)))
-	v78 = int32(-2139062144)
-	if (int32(16843008)-v75|v75)&v78 == v78 {
-		v69 = v69 + int32(4)
-		goto L26
-	} else {
-		goto L28
-	}
-L27:
-	;
-	v84 = v69
-	goto L29
-L28:
-	;
-	goto L27
-L29:
-	;
-	v88 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v84))))
-	if v88 != 0 {
-		v84 = v84 + int32(1)
-		goto L29
-	} else {
-		goto L31
-	}
-L30:
-	;
-	v90 = v84
-	goto L16
-L31:
-	;
-	goto L30
-L32:
-	;
-	if v100 != 0 {
-		goto L34
-	} else {
-		goto L35
-	}
-L33:
-	;
-	F_SPI_cursor_close(m, v32)
-	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
-		goto L1
-	} else {
-		goto L37
-	}
-L34:
-	;
-	v103 = F__emscripten_memcpy_bulkmem(m, v101, v40, v100)
-	mBase = m.M
-	v104 = v103
-	goto L36
-L35:
-	;
-	v104 = v101
-	goto L36
-L36:
-	;
-	goto L33
-L37:
-	;
-	v107 = F_SPI_finish(m)
-	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
-		goto L1
-	} else {
-		goto L38
-	}
-L38:
-	;
-	v110 = F_query_to_xml_internal(m, v17, int32(0), v104, v39, v23)
-	mBase = m.M
-	v111 = m.ExcPending
-	if v111 != 0 {
-		goto L1
-	} else {
-		goto L39
-	}
-L39:
-	;
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(v110)+4))
-	v114 = F_cstring_to_text_with_len(m, v112, v113)
-	mBase = m.M
-	v115 = m.ExcPending
-	if v115 != 0 {
-		goto L1
-	} else {
-		goto L40
-	}
-L40:
-	;
-	m.G0 = v10 + int32(32)
-	return v114
-L41:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v17
-	F_errmsg_internal(m, int32(_a_F_query_to_xml_and_xmlschema_0), v10)
-	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
-		goto L1
-	} else {
-		goto L42
-	}
-L42:
-	;
-	F_errfinish(m, int32(_a_F_query_to_xml_and_xmlschema_1), int32(3158), int32(_a_F_query_to_xml_and_xmlschema_2))
-	mBase = m.M
-	v132 = m.ExcPending
-	if v132 != 0 {
-		goto L1
-	} else {
-		goto L43
-	}
-L43:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L44:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v17
-	F_errmsg_internal(m, int32(_a_F_query_to_xml_and_xmlschema_3), v10+int32(16))
-	mBase = m.M
-	v142 = m.ExcPending
-	if v142 != 0 {
-		goto L1
-	} else {
-		goto L45
-	}
-L45:
-	;
-	F_errfinish(m, int32(_a_F_query_to_xml_and_xmlschema_1), int32(3161), int32(_a_F_query_to_xml_and_xmlschema_2))
-	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
-		goto L1
-	} else {
-		goto L46
-	}
-L46:
-	;
-	base.Wasm_trap_unreachable()
-	for {
+		v17 = F_text_to_cstring(m, v13)
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+			v21 = F_pg_detoast_datum_packed(m, v20)
+			mBase = m.M
+			v22 = m.ExcPending
+			if v22 != 0 {
+				return int32(0)
+			} else {
+				v23 = F_text_to_cstring(m, v21)
+				mBase = m.M
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return int32(0)
+				} else {
+					F_SPI_connect_ext(m, int32(0))
+					mBase = m.M
+					v27 = m.ExcPending
+					if v27 != 0 {
+						return int32(0)
+					} else {
+						v28 = int32(0)
+						v30 = F_SPI_prepare(m, v17, v28, v28)
+						mBase = m.M
+						v31 = m.ExcPending
+						if v31 != 0 {
+							return int32(0)
+						} else {
+							if v30 != 0 {
+								v32 = F_SPI_cursor_open(m, v30)
+								mBase = m.M
+								v33 = m.ExcPending
+								if v33 != 0 {
+									return int32(0)
+								} else {
+									if v32 == int32(0) {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v80 = m.ExcPending
+										if v80 != 0 {
+											return int32(0)
+										} else {
+											*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v17
+											F_errmsg_internal(m, int32(_a_F_query_to_xml_and_xmlschema_0), v10+int32(16))
+											mBase = m.M
+											v86 = m.ExcPending
+											if v86 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_query_to_xml_and_xmlschema_1), int32(3161), int32(_a_F_query_to_xml_and_xmlschema_2))
+												mBase = m.M
+												v91 = m.ExcPending
+												if v91 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									} else {
+										v36 = *(*int32)(unsafe.Add(mBase, uint32(v32)+92))
+										v37 = int32(0)
+										v39 = base.B2i32(v19 != v37)
+										v40 = F_map_sql_table_to_xmlschema(m, v36, v37, v39, v23)
+										mBase = m.M
+										v41 = m.ExcPending
+										if v41 != 0 {
+											return int32(0)
+										} else {
+											v42 = F_strlen(m, v40)
+											mBase = m.M
+											v44 = v42 + int32(1)
+											v45 = F_SPI_palloc(m, v44)
+											mBase = m.M
+											v46 = m.ExcPending
+											if v46 != 0 {
+												return int32(0)
+											} else {
+												if v44 != 0 {
+													v47 = F__emscripten_memcpy_bulkmem(m, v45, v40, v44)
+													mBase = m.M
+													v48 = v47
+												} else {
+													v48 = v45
+												}
+												F_SPI_cursor_close(m, v32)
+												mBase = m.M
+												v50 = m.ExcPending
+												if v50 != 0 {
+													return int32(0)
+												} else {
+													v51 = F_SPI_finish(m)
+													mBase = m.M
+													v52 = m.ExcPending
+													if v52 != 0 {
+														return int32(0)
+													} else {
+														v54 = F_query_to_xml_internal(m, v17, int32(0), v48, v39, v23)
+														mBase = m.M
+														v55 = m.ExcPending
+														if v55 != 0 {
+															return int32(0)
+														} else {
+															v56 = *(*int32)(unsafe.Add(mBase, uint32(v54)))
+															v57 = *(*int32)(unsafe.Add(mBase, uint32(v54)+4))
+															v58 = F_cstring_to_text_with_len(m, v56, v57)
+															mBase = m.M
+															v59 = m.ExcPending
+															if v59 != 0 {
+																return int32(0)
+															} else {
+																m.G0 = v10 + int32(32)
+																return v58
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							} else {
+								F_errstart_cold(m, int32(21), int32(0))
+								mBase = m.M
+								v67 = m.ExcPending
+								if v67 != 0 {
+									return int32(0)
+								} else {
+									*(*int32)(unsafe.Add(mBase, uint32(v10))) = v17
+									F_errmsg_internal(m, int32(_a_F_query_to_xml_and_xmlschema_3), v10)
+									mBase = m.M
+									v71 = m.ExcPending
+									if v71 != 0 {
+										return int32(0)
+									} else {
+										F_errfinish(m, int32(_a_F_query_to_xml_and_xmlschema_1), int32(3158), int32(_a_F_query_to_xml_and_xmlschema_2))
+										mBase = m.M
+										v76 = m.ExcPending
+										if v76 != 0 {
+											return int32(0)
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_query_tree_mutator_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {

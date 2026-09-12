@@ -38,56 +38,34 @@ func F_DecodeTimezone(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v61
 	var v63 int32
 	_ = v63
-	var v73 int32
-	_ = v73
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
 	var v78 int32
 	_ = v78
-	var v82 int32
-	_ = v82
-	var v87 int32
-	_ = v87
-	var v89 int32
-	_ = v89
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
 	var v93 int32
 	_ = v93
-	var v99 int32
-	_ = v99
+	var v96 int32
+	_ = v96
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
 	var v102 int32
 	_ = v102
-	var v108 int32
-	_ = v108
-	var v112 int32
-	_ = v112
-	var v114 int32
-	_ = v114
-	var v122 int32
-	_ = v122
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v132 int32
-	_ = v132
-	var v134 int32
-	_ = v134
-	var v141 int32
-	_ = v141
-	var v146 int32
-	_ = v146
-	var v149 int32
-	_ = v149
-	var v152 int32
-	_ = v152
-	var v156 int32
-	_ = v156
-	var v157 int32
-	_ = v157
-	var v158 int32
-	_ = v158
-	var v160 int32
-	_ = v160
+	var v104 int32
+	_ = v104
 	v3 = int32(0)
 	v9 = m.G0
 	v11 = v9 - int32(16)
@@ -95,288 +73,187 @@ func F_DecodeTimezone(m *base.Module, l0 int32, l1 int32) int32 {
 	v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	switch v14 - int32(43) {
 	case 0, 2:
-		goto L2
+		*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
+		v25 = F_strtol(m, l0+int32(1), v11+int32(12), int32(10))
+		mBase = m.M
+		v26 = int32(-5)
+		v28 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
+		if v28 == int32(68) {
+			v104 = v26
+		} else {
+			v31 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+			v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
+			if v32 != 0 {
+				if v32 != int32(58) {
+					v75 = int32(0)
+					v76 = v25
+					v78 = v3
+					if base.Ui32(int32(15)) < base.Ui32(v76) {
+						v104 = v26
+					} else {
+						if base.Ui32(int32(59)) < base.Ui32(v75) {
+							v104 = v26
+						} else {
+							if base.Ui32(int32(59)) < base.Ui32(v78) {
+								v104 = v26
+							} else {
+								v85 = int32(60)
+								v90 = (v76*v85+v75)*v85 + v78
+								v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+								if v93 == int32(45) {
+									v96 = v90
+								} else {
+									v96 = int32(0) - v90
+								}
+								*(*int32)(unsafe.Add(mBase, uint32(l1))) = v96
+								v100 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+								v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100))))
+								if v101 != 0 {
+									v102 = int32(-1)
+								} else {
+									v102 = int32(0)
+								}
+								v104 = v102
+							}
+						}
+					}
+				} else {
+					*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
+					v44 = F_strtol(m, v31+int32(1), v11+int32(12), int32(10))
+					mBase = m.M
+					v46 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
+					if v46 == int32(68) {
+						v104 = v26
+					} else {
+						v49 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+						v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49))))
+						if v50 != int32(58) {
+							v75 = v44
+							v76 = v25
+							v78 = v3
+							if base.Ui32(int32(15)) < base.Ui32(v76) {
+								v104 = v26
+							} else {
+								if base.Ui32(int32(59)) < base.Ui32(v75) {
+									v104 = v26
+								} else {
+									if base.Ui32(int32(59)) < base.Ui32(v78) {
+										v104 = v26
+									} else {
+										v85 = int32(60)
+										v90 = (v76*v85+v75)*v85 + v78
+										v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+										if v93 == int32(45) {
+											v96 = v90
+										} else {
+											v96 = int32(0) - v90
+										}
+										*(*int32)(unsafe.Add(mBase, uint32(l1))) = v96
+										v100 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+										v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100))))
+										if v101 != 0 {
+											v102 = int32(-1)
+										} else {
+											v102 = int32(0)
+										}
+										v104 = v102
+									}
+								}
+							}
+						} else {
+							*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
+							v61 = F_strtol(m, v49+int32(1), v11+int32(12), int32(10))
+							mBase = m.M
+							v63 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
+							if v63 != int32(68) {
+								v75 = v44
+								v76 = v25
+								v78 = v61
+								if base.Ui32(int32(15)) < base.Ui32(v76) {
+									v104 = v26
+								} else {
+									if base.Ui32(int32(59)) < base.Ui32(v75) {
+										v104 = v26
+									} else {
+										if base.Ui32(int32(59)) < base.Ui32(v78) {
+											v104 = v26
+										} else {
+											v85 = int32(60)
+											v90 = (v76*v85+v75)*v85 + v78
+											v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+											if v93 == int32(45) {
+												v96 = v90
+											} else {
+												v96 = int32(0) - v90
+											}
+											*(*int32)(unsafe.Add(mBase, uint32(l1))) = v96
+											v100 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+											v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100))))
+											if v101 != 0 {
+												v102 = int32(-1)
+											} else {
+												v102 = int32(0)
+											}
+											v104 = v102
+										}
+									}
+								}
+							} else {
+								v104 = v26
+							}
+						}
+					}
+				}
+			} else {
+				v66 = F_strlen(m, l0)
+				mBase = m.M
+				if base.Ui32(v66) < base.Ui32(int32(4)) {
+					v75 = int32(0)
+					v76 = v25
+					v78 = v3
+				} else {
+					v70 = int32(100)
+					v71 = base.I32_div_s(v25, v70)
+					v75 = v25 - v71*v70
+					v76 = v71
+					v78 = v3
+				}
+				if base.Ui32(int32(15)) < base.Ui32(v76) {
+					v104 = v26
+				} else {
+					if base.Ui32(int32(59)) < base.Ui32(v75) {
+						v104 = v26
+					} else {
+						if base.Ui32(int32(59)) < base.Ui32(v78) {
+							v104 = v26
+						} else {
+							v85 = int32(60)
+							v90 = (v76*v85+v75)*v85 + v78
+							v93 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+							if v93 == int32(45) {
+								v96 = v90
+							} else {
+								v96 = int32(0) - v90
+							}
+							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v96
+							v100 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+							v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100))))
+							if v101 != 0 {
+								v102 = int32(-1)
+							} else {
+								v102 = int32(0)
+							}
+							v104 = v102
+						}
+					}
+				}
+			}
+		}
 	default:
-		v160 = int32(-1)
-		goto L1
+		v104 = int32(-1)
 	}
-L1:
-	;
 	m.G0 = v11 + int32(16)
-	return v160
-L2:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
-	v25 = F_strtol(m, l0+int32(1), v11+int32(12), int32(10))
-	mBase = m.M
-	goto L3
-L3:
-	;
-	v26 = int32(-5)
-	v28 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
-	if v28 == int32(68) {
-		v160 = v26
-		goto L1
-	} else {
-		goto L4
-	}
-L4:
-	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
-	if v32 != 0 {
-		goto L6
-	} else {
-		goto L7
-	}
-L5:
-	;
-	if base.Ui32(int32(15)) < base.Ui32(v132) {
-		v160 = v26
-		goto L1
-	} else {
-		goto L37
-	}
-L6:
-	;
-	if v32 != int32(58) {
-		goto L9
-	} else {
-		goto L10
-	}
-L7:
-	;
-	goto L8
-L8:
-	;
-	if l0&int32(3) == int32(0) {
-		v89 = l0
-		goto L19
-	} else {
-		goto L20
-	}
-L9:
-	;
-	v131 = int32(0)
-	v132 = v25
-	v134 = v3
-	goto L5
-L10:
-	;
-	goto L11
-L11:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
-	v44 = F_strtol(m, v31+int32(1), v11+int32(12), int32(10))
-	mBase = m.M
-	goto L12
-L12:
-	;
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
-	if v46 == int32(68) {
-		v160 = v26
-		goto L1
-	} else {
-		goto L13
-	}
-L13:
-	;
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49))))
-	if v50 != int32(58) {
-		v131 = v44
-		v132 = v25
-		v134 = v3
-		goto L5
-	} else {
-		goto L14
-	}
-L14:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0])) = int32(0)
-	v61 = F_strtol(m, v49+int32(1), v11+int32(12), int32(10))
-	mBase = m.M
-	goto L15
-L15:
-	;
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_DecodeTimezone[0]))
-	if v63 != int32(68) {
-		v131 = v44
-		v132 = v25
-		v134 = v61
-		goto L5
-	} else {
-		goto L16
-	}
-L16:
-	;
-	v160 = v26
-	goto L1
-L17:
-	;
-	if base.Ui32(v122) < base.Ui32(int32(4)) {
-		goto L34
-	} else {
-		goto L35
-	}
-L18:
-	;
-	v122 = v114 - l0
-	goto L17
-L19:
-	;
-	v93 = v89
-	goto L28
-L20:
-	;
-	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v73 == int32(0) {
-		goto L21
-	} else {
-		goto L22
-	}
-L21:
-	;
-	v122 = int32(0)
-	goto L17
-L22:
-	;
-	goto L23
-L23:
-	;
-	v78 = l0
-	goto L24
-L24:
-	;
-	v82 = v78 + int32(1)
-	if v82&int32(3) == int32(0) {
-		v89 = v82
-		goto L19
-	} else {
-		goto L26
-	}
-L25:
-	;
-	v114 = v82
-	goto L18
-L26:
-	;
-	v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82))))
-	if v87 != 0 {
-		v78 = v82
-		goto L24
-	} else {
-		goto L27
-	}
-L27:
-	;
-	goto L25
-L28:
-	;
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
-	v102 = int32(-2139062144)
-	if (int32(16843008)-v99|v99)&v102 == v102 {
-		v93 = v93 + int32(4)
-		goto L28
-	} else {
-		goto L30
-	}
-L29:
-	;
-	v108 = v93
-	goto L31
-L30:
-	;
-	goto L29
-L31:
-	;
-	v112 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v108))))
-	if v112 != 0 {
-		v108 = v108 + int32(1)
-		goto L31
-	} else {
-		goto L33
-	}
-L32:
-	;
-	v114 = v108
-	goto L18
-L33:
-	;
-	goto L32
-L34:
-	;
-	v131 = int32(0)
-	v132 = v25
-	v134 = v3
-	goto L5
-L35:
-	;
-	goto L36
-L36:
-	;
-	v126 = int32(100)
-	v127 = base.I32_div_s(v25, v126)
-	v131 = v25 - v127*v126
-	v132 = v127
-	v134 = v3
-	goto L5
-L37:
-	;
-	if base.Ui32(int32(59)) < base.Ui32(v131) {
-		v160 = v26
-		goto L1
-	} else {
-		goto L38
-	}
-L38:
-	;
-	if base.Ui32(int32(59)) < base.Ui32(v134) {
-		v160 = v26
-		goto L1
-	} else {
-		goto L39
-	}
-L39:
-	;
-	v141 = int32(60)
-	v146 = (v132*v141+v131)*v141 + v134
-	v149 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v149 == int32(45) {
-		goto L40
-	} else {
-		goto L41
-	}
-L40:
-	;
-	v152 = v146
-	goto L42
-L41:
-	;
-	v152 = int32(0) - v146
-	goto L42
-L42:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v152
-	v156 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
-	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v156))))
-	if v157 != 0 {
-		goto L43
-	} else {
-		goto L44
-	}
-L43:
-	;
-	v158 = int32(-1)
-	goto L45
-L44:
-	;
-	v158 = int32(0)
-	goto L45
-L45:
-	;
-	v160 = v158
-	goto L1
+	return v104
 }
 func F_DecodeTimezoneAbbrev(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
 	mBase := m.M

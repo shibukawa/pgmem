@@ -383,48 +383,26 @@ func F_heap_deform_tuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	_ = v185
 	var v190 int32
 	_ = v190
-	var v200 int32
-	_ = v200
-	var v205 int32
-	_ = v205
-	var v209 int32
-	_ = v209
-	var v214 int32
-	_ = v214
-	var v216 int32
-	_ = v216
-	var v220 int32
-	_ = v220
-	var v226 int32
-	_ = v226
-	var v229 int32
-	_ = v229
-	var v235 int32
-	_ = v235
-	var v239 int32
-	_ = v239
-	var v241 int32
-	_ = v241
-	var v249 int32
-	_ = v249
-	var v252 int32
-	_ = v252
-	var v257 int32
-	_ = v257
-	var v260 int32
-	_ = v260
-	var v262 int32
-	_ = v262
-	var v271 int32
-	_ = v271
-	var v288 int32
-	_ = v288
-	var v302 int32
-	_ = v302
-	var v303 int32
-	_ = v303
-	var v304 int32
-	_ = v304
+	var v193 int32
+	_ = v193
+	var v196 int32
+	_ = v196
+	var v201 int32
+	_ = v201
+	var v204 int32
+	_ = v204
+	var v206 int32
+	_ = v206
+	var v215 int32
+	_ = v215
+	var v232 int32
+	_ = v232
+	var v246 int32
+	_ = v246
+	var v247 int32
+	_ = v247
+	var v248 int32
+	_ = v248
 	v5 = int32(0)
 	v17 = m.G0
 	v19 = v17 - int32(16)
@@ -440,10 +418,10 @@ func F_heap_deform_tuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	}
 L1:
 	;
-	if v271 < v21 {
-		goto L78
+	if v215 < v21 {
+		goto L61
 	} else {
-		goto L79
+		goto L62
 	}
 L2:
 	;
@@ -462,7 +440,7 @@ L4:
 	}
 L5:
 	;
-	v271 = int32(0)
+	v215 = int32(0)
 	goto L1
 L6:
 	;
@@ -485,18 +463,18 @@ L8:
 	}
 L9:
 	;
-	v271 = v27
+	v215 = v27
 	goto L1
 L10:
 	;
-	v262 = v41 + int32(1)
-	if v262 != v27 {
-		v41 = v262
-		v46 = v260
-		v47 = v257
+	v206 = v41 + int32(1)
+	if v206 != v27 {
+		v41 = v206
+		v46 = v204
+		v47 = v201
 		goto L8
 	} else {
-		goto L77
+		goto L60
 	}
 L11:
 	;
@@ -521,8 +499,8 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(l2+v41<<(uint(int32(2))%32)))) = int32(0)
 	v74 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v41+l3))) = uint8(v74)
-	v257 = v47
-	v260 = v74
+	v201 = v47
+	v204 = v74
 	goto L10
 L14:
 	;
@@ -624,7 +602,7 @@ L28:
 	v161 = int32(0)
 	v162 = base.B2i32(v160 <= v161)
 	if v162 == v161 {
-		v252 = v160
+		v196 = v160
 		goto L40
 	} else {
 		goto L41
@@ -705,8 +683,8 @@ L39:
 	}
 L40:
 	;
-	v257 = v252 + v128
-	v260 = v129 | v162
+	v201 = v196 + v128
+	v204 = v129 | v162
 	goto L10
 L41:
 	;
@@ -728,12 +706,10 @@ L43:
 	goto L44
 L44:
 	;
-	if v130&int32(3) == int32(0) {
-		v216 = v130
-		goto L62
-	} else {
-		goto L63
-	}
+	v193 = F_strlen(m, v130)
+	mBase = m.M
+	v196 = v193 + int32(1)
+	goto L40
 L45:
 	;
 	v170 = int32(6)
@@ -794,11 +770,11 @@ L55:
 	goto L56
 L56:
 	;
-	v252 = v185
+	v196 = v185
 	goto L40
 L57:
 	;
-	v252 = int32(base.Ui32(v167) >> (uint(int32(1)) % 32))
+	v196 = int32(base.Ui32(v167) >> (uint(int32(1)) % 32))
 	goto L40
 L58:
 	;
@@ -806,137 +782,48 @@ L58:
 L59:
 	;
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v130)))
-	v252 = int32(base.Ui32(v190) >> (uint(int32(2)) % 32))
+	v196 = int32(base.Ui32(v190) >> (uint(int32(2)) % 32))
 	goto L40
 L60:
 	;
-	v252 = v249 + int32(1)
-	goto L40
+	goto L9
 L61:
 	;
-	v249 = v241 - v130
-	goto L60
+	v232 = v215
+	goto L64
 L62:
 	;
-	v220 = v216
-	goto L71
+	goto L63
 L63:
-	;
-	v200 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v130))))
-	if v200 == int32(0) {
-		goto L64
-	} else {
-		goto L65
-	}
-L64:
-	;
-	v249 = int32(0)
-	goto L60
-L65:
-	;
-	goto L66
-L66:
-	;
-	v205 = v130
-	goto L67
-L67:
-	;
-	v209 = v205 + int32(1)
-	if v209&int32(3) == int32(0) {
-		v216 = v209
-		goto L62
-	} else {
-		goto L69
-	}
-L68:
-	;
-	v241 = v209
-	goto L61
-L69:
-	;
-	v214 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v209))))
-	if v214 != 0 {
-		v205 = v209
-		goto L67
-	} else {
-		goto L70
-	}
-L70:
-	;
-	goto L68
-L71:
-	;
-	v226 = *(*int32)(unsafe.Add(mBase, uint32(v220)))
-	v229 = int32(-2139062144)
-	if (int32(16843008)-v226|v226)&v229 == v229 {
-		v220 = v220 + int32(4)
-		goto L71
-	} else {
-		goto L73
-	}
-L72:
-	;
-	v235 = v220
-	goto L74
-L73:
-	;
-	goto L72
-L74:
-	;
-	v239 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v235))))
-	if v239 != 0 {
-		v235 = v235 + int32(1)
-		goto L74
-	} else {
-		goto L76
-	}
-L75:
-	;
-	v241 = v235
-	goto L61
-L76:
-	;
-	goto L75
-L77:
-	;
-	goto L9
-L78:
-	;
-	v288 = v271
-	goto L81
-L79:
-	;
-	goto L80
-L80:
 	;
 	m.G0 = v19 + int32(16)
 	return
-L81:
+L64:
 	;
-	v302 = v288 + int32(1)
-	v303 = F_getmissingattr(m, l1, v302, l3+v288)
+	v246 = v232 + int32(1)
+	v247 = F_getmissingattr(m, l1, v246, l3+v232)
 	mBase = m.M
-	v304 = m.ExcPending
-	if v304 != 0 {
+	v248 = m.ExcPending
+	if v248 != 0 {
 		goto L36
 	} else {
-		goto L83
+		goto L66
 	}
-L82:
+L65:
 	;
-	goto L80
-L83:
+	goto L63
+L66:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l2+v288<<(uint(int32(2))%32)))) = v303
-	if v302 != v21 {
-		v288 = v302
-		goto L81
+	*(*int32)(unsafe.Add(mBase, uint32(l2+v232<<(uint(int32(2))%32)))) = v247
+	if v246 != v21 {
+		v232 = v246
+		goto L64
 	} else {
-		goto L84
+		goto L67
 	}
-L84:
+L67:
 	;
-	goto L82
+	goto L65
 }
 func F_heap_getattr_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M

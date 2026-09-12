@@ -204,52 +204,30 @@ func F_SlotExistsInSyncStandbySlots(m *base.Module, l0 int32) int32 {
 	_ = v45
 	var v48 int32
 	_ = v48
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v93 int32
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v99 int32
-	_ = v99
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
-	var v112 int32
-	_ = v112
-	var v116 int32
-	_ = v116
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, _c_F_SlotExistsInSyncStandbySlots[0]))
 	if v8 == v2 {
-		v116 = v2
+		v60 = v2
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v116
+	return v60
 L2:
 	;
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
 	if v11 <= int32(0) {
-		v116 = v2
+		v60 = v2
 		goto L1
 	} else {
 		goto L3
@@ -272,13 +250,13 @@ L4:
 	}
 L5:
 	;
-	v116 = v48
+	v60 = v48
 	goto L1
 L6:
 	;
 	v48 = base.B2i32(v45-v44 == int32(0))
 	if v45-v44 == int32(0) {
-		v116 = v48
+		v60 = v48
 		goto L1
 	} else {
 		goto L14
@@ -331,109 +309,18 @@ L13:
 	goto L11
 L14:
 	;
-	if v17&int32(3) == int32(0) {
-		v74 = v17
-		goto L17
-	} else {
-		goto L18
-	}
-L15:
-	;
-	v109 = int32(1)
-	v112 = v19 + v109
-	if v112 != v11 {
-		v17 = v107 + v17 + v109
-		v19 = v112
+	v51 = F_strlen(m, v17)
+	mBase = m.M
+	v53 = int32(1)
+	v56 = v19 + v53
+	if v56 != v11 {
+		v17 = v51 + v17 + v53
+		v19 = v56
 		goto L4
 	} else {
-		goto L32
+		goto L15
 	}
-L16:
-	;
-	v107 = v99 - v17
-	goto L15
-L17:
-	;
-	v78 = v74
-	goto L26
-L18:
-	;
-	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
-	if v58 == int32(0) {
-		goto L19
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v107 = int32(0)
-	goto L15
-L20:
-	;
-	goto L21
-L21:
-	;
-	v63 = v17
-	goto L22
-L22:
-	;
-	v67 = v63 + int32(1)
-	if v67&int32(3) == int32(0) {
-		v74 = v67
-		goto L17
-	} else {
-		goto L24
-	}
-L23:
-	;
-	v99 = v67
-	goto L16
-L24:
-	;
-	v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v67))))
-	if v72 != 0 {
-		v63 = v67
-		goto L22
-	} else {
-		goto L25
-	}
-L25:
-	;
-	goto L23
-L26:
-	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v78)))
-	v87 = int32(-2139062144)
-	if (int32(16843008)-v84|v84)&v87 == v87 {
-		v78 = v78 + int32(4)
-		goto L26
-	} else {
-		goto L28
-	}
-L27:
-	;
-	v93 = v78
-	goto L29
-L28:
-	;
-	goto L27
-L29:
-	;
-	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v93))))
-	if v97 != 0 {
-		v93 = v93 + int32(1)
-		goto L29
-	} else {
-		goto L31
-	}
-L30:
-	;
-	v99 = v93
-	goto L16
-L31:
-	;
-	goto L30
-L32:
+L15:
 	;
 	goto L5
 }

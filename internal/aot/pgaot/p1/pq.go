@@ -708,432 +708,145 @@ func F_pq_sendcountedtext(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v5
 	var v6 int32
 	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
 	var v15 int32
 	_ = v15
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
 	var v35 int32
 	_ = v35
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
 	var v41 int32
 	_ = v41
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
 	var v64 int32
 	_ = v64
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
-	var v91 int32
-	_ = v91
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
-	var v120 int32
-	_ = v120
 	v5 = F_pg_server_to_client(m, l1, l2)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		goto L1
+		return
 	} else {
-		goto L2
+		if l1 != v5 {
+			v8 = F_strlen(m, v5)
+			mBase = m.M
+			F_enlargeStringInfo(m, l0, int32(4))
+			mBase = m.M
+			v11 = m.ExcPending
+			if v11 != 0 {
+				return
+			} else {
+				v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v15 = int32(24)
+				v17 = int32(_a_F_pq_sendcountedtext_0)
+				v19 = int32(8)
+				*(*int32)(unsafe.Add(mBase, uint32(v12+v13))) = v8<<(uint(v15)%32) | v8&v17<<(uint(v19)%32) | (int32(base.Ui32(v8)>>(uint(v19)%32))&v17 | int32(base.Ui32(v8)>>(uint(v15)%32)))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v12 + int32(4)
+				F_appendBinaryStringInfoNT(m, l0, v5, v8)
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return
+				} else {
+					F_pfree(m, v5)
+					mBase = m.M
+					v37 = m.ExcPending
+					if v37 != 0 {
+						return
+					} else {
+						return
+					}
+				}
+			}
+		} else {
+			F_enlargeStringInfo(m, l0, int32(4))
+			mBase = m.M
+			v40 = m.ExcPending
+			if v40 != 0 {
+				return
+			} else {
+				v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v44 = int32(24)
+				v46 = int32(_a_F_pq_sendcountedtext_0)
+				v48 = int32(8)
+				*(*int32)(unsafe.Add(mBase, uint32(v41+v42))) = l2<<(uint(v44)%32) | l2&v46<<(uint(v48)%32) | (int32(base.Ui32(l2)>>(uint(v48)%32))&v46 | int32(base.Ui32(l2)>>(uint(v44)%32)))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v41 + int32(4)
+				F_appendBinaryStringInfoNT(m, l0, l1, l2)
+				mBase = m.M
+				v64 = m.ExcPending
+				if v64 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
 	}
-L1:
-	;
-	return
-L2:
-	;
-	if l1 != v5 {
-		goto L3
-	} else {
-		goto L4
-	}
-L3:
-	;
-	if v5&int32(3) == int32(0) {
-		v31 = v5
-		goto L8
-	} else {
-		goto L9
-	}
-L4:
-	;
-	goto L5
-L5:
-	;
-	F_enlargeStringInfo(m, l0, int32(4))
-	mBase = m.M
-	v96 = m.ExcPending
-	if v96 != 0 {
-		goto L1
-	} else {
-		goto L26
-	}
-L6:
-	;
-	F_enlargeStringInfo(m, l0, int32(4))
-	mBase = m.M
-	v67 = m.ExcPending
-	if v67 != 0 {
-		goto L1
-	} else {
-		goto L23
-	}
-L7:
-	;
-	v64 = v56 - v5
-	goto L6
-L8:
-	;
-	v35 = v31
-	goto L17
-L9:
-	;
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5))))
-	if v15 == int32(0) {
-		goto L10
-	} else {
-		goto L11
-	}
-L10:
-	;
-	v64 = int32(0)
-	goto L6
-L11:
-	;
-	goto L12
-L12:
-	;
-	v20 = v5
-	goto L13
-L13:
-	;
-	v24 = v20 + int32(1)
-	if v24&int32(3) == int32(0) {
-		v31 = v24
-		goto L8
-	} else {
-		goto L15
-	}
-L14:
-	;
-	v56 = v24
-	goto L7
-L15:
-	;
-	v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24))))
-	if v29 != 0 {
-		v20 = v24
-		goto L13
-	} else {
-		goto L16
-	}
-L16:
-	;
-	goto L14
-L17:
-	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
-	v44 = int32(-2139062144)
-	if (int32(16843008)-v41|v41)&v44 == v44 {
-		v35 = v35 + int32(4)
-		goto L17
-	} else {
-		goto L19
-	}
-L18:
-	;
-	v50 = v35
-	goto L20
-L19:
-	;
-	goto L18
-L20:
-	;
-	v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
-	if v54 != 0 {
-		v50 = v50 + int32(1)
-		goto L20
-	} else {
-		goto L22
-	}
-L21:
-	;
-	v56 = v50
-	goto L7
-L22:
-	;
-	goto L21
-L23:
-	;
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v71 = int32(24)
-	v73 = int32(_a_F_pq_sendcountedtext_0)
-	v75 = int32(8)
-	*(*int32)(unsafe.Add(mBase, uint32(v68+v69))) = v64<<(uint(v71)%32) | v64&v73<<(uint(v75)%32) | (int32(base.Ui32(v64)>>(uint(v75)%32))&v73 | int32(base.Ui32(v64)>>(uint(v71)%32)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v68 + int32(4)
-	F_appendBinaryStringInfoNT(m, l0, v5, v64)
-	mBase = m.M
-	v91 = m.ExcPending
-	if v91 != 0 {
-		goto L1
-	} else {
-		goto L24
-	}
-L24:
-	;
-	F_pfree(m, v5)
-	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
-		goto L1
-	} else {
-		goto L25
-	}
-L25:
-	;
-	return
-L26:
-	;
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v100 = int32(24)
-	v102 = int32(_a_F_pq_sendcountedtext_0)
-	v104 = int32(8)
-	*(*int32)(unsafe.Add(mBase, uint32(v97+v98))) = l2<<(uint(v100)%32) | l2&v102<<(uint(v104)%32) | (int32(base.Ui32(l2)>>(uint(v104)%32))&v102 | int32(base.Ui32(l2)>>(uint(v100)%32)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v97 + int32(4)
-	F_appendBinaryStringInfoNT(m, l0, l1, l2)
-	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
-		goto L1
-	} else {
-		goto L27
-	}
-L27:
-	;
-	return
 }
 func F_pq_sendtext(m *base.Module, l0 int32, l1 int32, l2 int32) {
-	mBase := m.M
-	_ = mBase
 	var v5 int32
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
-	var v24 int32
-	_ = v24
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	var v41 int32
-	_ = v41
-	var v44 int32
-	_ = v44
-	var v50 int32
-	_ = v50
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v64 int32
-	_ = v64
-	var v66 int32
-	_ = v66
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
 	v5 = F_pg_server_to_client(m, l1, l2)
-	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
-		goto L1
+		return
 	} else {
-		goto L2
+		if l1 != v5 {
+			v8 = F_strlen(m, v5)
+			F_appendBinaryStringInfo(m, l0, v5, v8)
+			v10 = m.ExcPending
+			if v10 != 0 {
+				return
+			} else {
+				F_pfree(m, v5)
+				v12 = m.ExcPending
+				if v12 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		} else {
+			F_appendBinaryStringInfo(m, l0, l1, l2)
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				return
+			}
+		}
 	}
-L1:
-	;
-	return
-L2:
-	;
-	if l1 != v5 {
-		goto L3
-	} else {
-		goto L4
-	}
-L3:
-	;
-	if v5&int32(3) == int32(0) {
-		v31 = v5
-		goto L8
-	} else {
-		goto L9
-	}
-L4:
-	;
-	goto L5
-L5:
-	;
-	F_appendBinaryStringInfo(m, l0, l1, l2)
-	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
-		goto L1
-	} else {
-		goto L25
-	}
-L6:
-	;
-	F_appendBinaryStringInfo(m, l0, v5, v64)
-	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
-		goto L1
-	} else {
-		goto L23
-	}
-L7:
-	;
-	v64 = v56 - v5
-	goto L6
-L8:
-	;
-	v35 = v31
-	goto L17
-L9:
-	;
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5))))
-	if v15 == int32(0) {
-		goto L10
-	} else {
-		goto L11
-	}
-L10:
-	;
-	v64 = int32(0)
-	goto L6
-L11:
-	;
-	goto L12
-L12:
-	;
-	v20 = v5
-	goto L13
-L13:
-	;
-	v24 = v20 + int32(1)
-	if v24&int32(3) == int32(0) {
-		v31 = v24
-		goto L8
-	} else {
-		goto L15
-	}
-L14:
-	;
-	v56 = v24
-	goto L7
-L15:
-	;
-	v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24))))
-	if v29 != 0 {
-		v20 = v24
-		goto L13
-	} else {
-		goto L16
-	}
-L16:
-	;
-	goto L14
-L17:
-	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
-	v44 = int32(-2139062144)
-	if (int32(16843008)-v41|v41)&v44 == v44 {
-		v35 = v35 + int32(4)
-		goto L17
-	} else {
-		goto L19
-	}
-L18:
-	;
-	v50 = v35
-	goto L20
-L19:
-	;
-	goto L18
-L20:
-	;
-	v54 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v50))))
-	if v54 != 0 {
-		v50 = v50 + int32(1)
-		goto L20
-	} else {
-		goto L22
-	}
-L21:
-	;
-	v56 = v50
-	goto L7
-L22:
-	;
-	goto L21
-L23:
-	;
-	F_pfree(m, v5)
-	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L1
-	} else {
-		goto L24
-	}
-L24:
-	;
-	return
-L25:
-	;
-	return
 }
 func F_pq_setkeepalivesidle(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

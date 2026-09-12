@@ -2492,6 +2492,168 @@ L39:
 	for {
 	}
 }
+func F_levenshtein_less_equal_with_costs(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v66 int32
+	_ = v66
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v80 int32
+	_ = v80
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
+	var v90 int32
+	_ = v90
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
+	var v99 int32
+	_ = v99
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = F_pg_detoast_datum_packed(m, v11)
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		v17 = v12 + int32(1)
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v19 = F_pg_detoast_datum_packed(m, v18)
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return int32(0)
+		} else {
+			v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12))))
+			v30 = v28 & int32(1)
+			if v30 != 0 {
+				v31 = v17
+			} else {
+				v31 = v12 + int32(4)
+			}
+			if v28 == int32(1) {
+				v34 = int32(4)
+				v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
+				if v36&int32(254) == int32(2) {
+					v45 = v34
+				} else {
+					v45 = base.B2i32(v36 == int32(18)) << (uint(v34) % 32)
+				}
+				if v36 == int32(1) {
+					v48 = v34
+				} else {
+					v48 = v45
+				}
+				v59 = v48
+			} else {
+				v49 = int32(1)
+				if v30 != 0 {
+					v59 = int32(base.Ui32(v28)>>(uint(v49)%32)) - v49
+				} else {
+					v53 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+					v59 = int32(base.Ui32(v53)>>(uint(int32(2))%32)) - int32(4)
+				}
+			}
+			v60 = int32(1)
+			v61 = v19 + v60
+			if v21&v60 != 0 {
+				v66 = v61
+			} else {
+				v66 = v19 + int32(4)
+			}
+			if v21 == int32(1) {
+				v69 = int32(4)
+				v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61))))
+				if v71&int32(254) == int32(2) {
+					v80 = v69
+				} else {
+					v80 = base.B2i32(v71 == int32(18)) << (uint(v69) % 32)
+				}
+				if v71 == int32(1) {
+					v83 = v69
+				} else {
+					v83 = v80
+				}
+				v96 = v83
+			} else {
+				v84 = int32(1)
+				if v21&v84 != 0 {
+					v96 = int32(base.Ui32(v21)>>(uint(v84)%32)) - v84
+				} else {
+					v90 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+					v96 = int32(base.Ui32(v90)>>(uint(int32(2))%32)) - int32(4)
+				}
+			}
+			v98 = F_varstr_levenshtein_less_equal(m, v31, v59, v66, v96, v25, v24, v23, v22, int32(0))
+			mBase = m.M
+			v99 = m.ExcPending
+			if v99 != 0 {
+				return int32(0)
+			} else {
+				return v98
+			}
+		}
+	}
+}
 func F_ln_var(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase

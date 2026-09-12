@@ -610,176 +610,44 @@ L42:
 func F_MemoryContextStrdup(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
-	var v20 int32
-	_ = v20
-	var v25 int32
-	_ = v25
-	var v27 int32
-	_ = v27
-	var v31 int32
-	_ = v31
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v60 int32
-	_ = v60
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v73 int32
-	_ = v73
-	if l1&int32(3) == int32(0) {
-		v27 = l1
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v61 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v61)
-	v64 = v60 + int32(1)
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)))
-	v68 = m.T0[v67].(func(*base.Module, int32, int32, int32) int32)(m, l0, v64, v61)
+	var v17 int32
+	_ = v17
+	v3 = int32(0)
+	v4 = F_strlen(m, l1)
 	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
-		goto L18
-	} else {
-		goto L19
-	}
-L2:
-	;
-	v60 = v52 - l1
-	goto L1
-L3:
-	;
-	v31 = v27
-	goto L12
-L4:
-	;
-	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	if v11 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v60 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v16 = l1
-	goto L8
-L8:
-	;
-	v20 = v16 + int32(1)
-	if v20&int32(3) == int32(0) {
-		v27 = v20
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v52 = v20
-	goto L2
-L10:
-	;
-	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-	if v25 != 0 {
-		v16 = v20
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
-	v40 = int32(-2139062144)
-	if (int32(16843008)-v37|v37)&v40 == v40 {
-		v31 = v31 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v46 = v31
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46))))
-	if v50 != 0 {
-		v46 = v46 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v52 = v46
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	return int32(0)
-L19:
-	;
-	if v64 != 0 {
-		goto L21
-	} else {
-		goto L22
-	}
-L20:
-	;
-	return v73
-L21:
-	;
-	v72 = F__emscripten_memcpy_bulkmem(m, v68, l1, v64)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v3)
+	v8 = v4 + int32(1)
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
+	v12 = m.T0[v11].(func(*base.Module, int32, int32, int32) int32)(m, l0, v8, v3)
 	mBase = m.M
-	v73 = v72
-	goto L23
-L22:
-	;
-	v73 = v68
-	goto L23
-L23:
-	;
-	goto L20
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		if v8 != 0 {
+			v16 = F__emscripten_memcpy_bulkmem(m, v12, l1, v8)
+			mBase = m.M
+			v17 = v16
+		} else {
+			v17 = v12
+		}
+		return v17
+	}
 }

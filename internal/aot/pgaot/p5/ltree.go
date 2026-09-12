@@ -1993,38 +1993,16 @@ func F_ltree_send(m *base.Module, l0 int32) int32 {
 	_ = v85
 	var v87 int32
 	_ = v87
+	var v92 int32
+	_ = v92
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
 	var v99 int32
 	_ = v99
-	var v104 int32
-	_ = v104
-	var v108 int32
-	_ = v108
-	var v113 int32
-	_ = v113
-	var v115 int32
-	_ = v115
-	var v119 int32
-	_ = v119
-	var v125 int32
-	_ = v125
-	var v128 int32
-	_ = v128
-	var v134 int32
-	_ = v134
-	var v138 int32
-	_ = v138
-	var v140 int32
-	_ = v140
-	var v148 int32
-	_ = v148
-	var v150 int32
-	_ = v150
-	var v152 int32
-	_ = v152
-	var v154 int32
-	_ = v154
-	var v155 int32
-	_ = v155
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -2033,266 +2011,109 @@ func F_ltree_send(m *base.Module, l0 int32) int32 {
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
-		goto L1
+		return int32(0)
 	} else {
-		goto L2
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+		v20 = F_palloc(m, int32(base.Ui32(v17)>>(uint(int32(2))%32)))
+		mBase = m.M
+		v21 = m.ExcPending
+		if v21 != 0 {
+			return int32(0)
+		} else {
+			v22 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
+			if v22 == int32(0) {
+				v73 = v20
+			} else {
+				v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+8)))
+				if v27 != 0 {
+					v28 = F__emscripten_memcpy_bulkmem(m, v20, v13+int32(10), v27)
+					mBase = m.M
+					v29 = v28
+				} else {
+					v29 = v20
+				}
+				v30 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+8)))
+				v31 = v29 + v30
+				v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
+				if base.Ui32(v32) < base.Ui32(int32(2)) {
+					v73 = v31
+				} else {
+					v43 = v13 + int32(8) + (v30+int32(9))&int32(_a_F_ltree_send_0)
+					v46 = v31
+					v48 = int32(1)
+					for {
+						v50 = int32(46)
+						*(*uint8)(unsafe.Add(mBase, uint32(v46))) = uint8(v50)
+						v53 = v46 + int32(1)
+						v56 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
+						if v56 != 0 {
+							v57 = F__emscripten_memcpy_bulkmem(m, v53, v43+int32(2), v56)
+							mBase = m.M
+							v58 = v57
+						} else {
+							v58 = v53
+						}
+						v59 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
+						v60 = v58 + v59
+						v67 = v48 + int32(1)
+						v68 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
+						if base.Ui32(v67) < base.Ui32(v68) {
+							v43 = v43 + (v59+int32(9))&int32(_a_F_ltree_send_0)
+							v46 = v60
+							v48 = v67
+							continue
+						} else {
+							break
+						}
+						break
+					}
+					v73 = v60
+				}
+			}
+			v77 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v73))) = uint8(v77)
+			F_pq_begintypsend(m, v10)
+			mBase = m.M
+			v80 = m.ExcPending
+			if v80 != 0 {
+				return int32(0)
+			} else {
+				F_enlargeStringInfo(m, v10, int32(1))
+				mBase = m.M
+				v83 = m.ExcPending
+				if v83 != 0 {
+					return int32(0)
+				} else {
+					v84 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+					v85 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
+					v87 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(v84+v85))) = uint8(v87)
+					*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v84 + v87
+					v92 = F_strlen(m, v20)
+					mBase = m.M
+					F_pq_sendtext(m, v10, v20, v92)
+					mBase = m.M
+					v94 = m.ExcPending
+					if v94 != 0 {
+						return int32(0)
+					} else {
+						F_pfree(m, v20)
+						mBase = m.M
+						v96 = m.ExcPending
+						if v96 != 0 {
+							return int32(0)
+						} else {
+							v98 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
+							v99 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+							*(*int32)(unsafe.Add(mBase, uint32(v98))) = v99 << (uint(int32(2)) % 32)
+							m.G0 = v10 + int32(16)
+							return v98
+						}
+					}
+				}
+			}
+		}
 	}
-L1:
-	;
-	return int32(0)
-L2:
-	;
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-	v20 = F_palloc(m, int32(base.Ui32(v17)>>(uint(int32(2))%32)))
-	mBase = m.M
-	v21 = m.ExcPending
-	if v21 != 0 {
-		goto L1
-	} else {
-		goto L3
-	}
-L3:
-	;
-	v22 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
-	if v22 == int32(0) {
-		v73 = v20
-		goto L4
-	} else {
-		goto L5
-	}
-L4:
-	;
-	v77 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v73))) = uint8(v77)
-	F_pq_begintypsend(m, v10)
-	mBase = m.M
-	v80 = m.ExcPending
-	if v80 != 0 {
-		goto L1
-	} else {
-		goto L18
-	}
-L5:
-	;
-	v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+8)))
-	if v27 != 0 {
-		goto L7
-	} else {
-		goto L8
-	}
-L6:
-	;
-	v30 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+8)))
-	v31 = v29 + v30
-	v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
-	if base.Ui32(v32) < base.Ui32(int32(2)) {
-		v73 = v31
-		goto L4
-	} else {
-		goto L10
-	}
-L7:
-	;
-	v28 = F__emscripten_memcpy_bulkmem(m, v20, v13+int32(10), v27)
-	mBase = m.M
-	v29 = v28
-	goto L9
-L8:
-	;
-	v29 = v20
-	goto L9
-L9:
-	;
-	goto L6
-L10:
-	;
-	v43 = v13 + int32(8) + (v30+int32(9))&int32(_a_F_ltree_send_0)
-	v46 = v31
-	v48 = int32(1)
-	goto L11
-L11:
-	;
-	v50 = int32(46)
-	*(*uint8)(unsafe.Add(mBase, uint32(v46))) = uint8(v50)
-	v53 = v46 + int32(1)
-	v56 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
-	if v56 != 0 {
-		goto L14
-	} else {
-		goto L15
-	}
-L12:
-	;
-	v73 = v60
-	goto L4
-L13:
-	;
-	v59 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
-	v60 = v58 + v59
-	v67 = v48 + int32(1)
-	v68 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+4)))
-	if base.Ui32(v67) < base.Ui32(v68) {
-		v43 = v43 + (v59+int32(9))&int32(_a_F_ltree_send_0)
-		v46 = v60
-		v48 = v67
-		goto L11
-	} else {
-		goto L17
-	}
-L14:
-	;
-	v57 = F__emscripten_memcpy_bulkmem(m, v53, v43+int32(2), v56)
-	mBase = m.M
-	v58 = v57
-	goto L16
-L15:
-	;
-	v58 = v53
-	goto L16
-L16:
-	;
-	goto L13
-L17:
-	;
-	goto L12
-L18:
-	;
-	F_enlargeStringInfo(m, v10, int32(1))
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L1
-	} else {
-		goto L19
-	}
-L19:
-	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	v85 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
-	v87 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v84+v85))) = uint8(v87)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v84 + v87
-	if v20&int32(3) == int32(0) {
-		v115 = v20
-		goto L22
-	} else {
-		goto L23
-	}
-L20:
-	;
-	F_pq_sendtext(m, v10, v20, v148)
-	mBase = m.M
-	v150 = m.ExcPending
-	if v150 != 0 {
-		goto L1
-	} else {
-		goto L37
-	}
-L21:
-	;
-	v148 = v140 - v20
-	goto L20
-L22:
-	;
-	v119 = v115
-	goto L31
-L23:
-	;
-	v99 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-	if v99 == int32(0) {
-		goto L24
-	} else {
-		goto L25
-	}
-L24:
-	;
-	v148 = int32(0)
-	goto L20
-L25:
-	;
-	goto L26
-L26:
-	;
-	v104 = v20
-	goto L27
-L27:
-	;
-	v108 = v104 + int32(1)
-	if v108&int32(3) == int32(0) {
-		v115 = v108
-		goto L22
-	} else {
-		goto L29
-	}
-L28:
-	;
-	v140 = v108
-	goto L21
-L29:
-	;
-	v113 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v108))))
-	if v113 != 0 {
-		v104 = v108
-		goto L27
-	} else {
-		goto L30
-	}
-L30:
-	;
-	goto L28
-L31:
-	;
-	v125 = *(*int32)(unsafe.Add(mBase, uint32(v119)))
-	v128 = int32(-2139062144)
-	if (int32(16843008)-v125|v125)&v128 == v128 {
-		v119 = v119 + int32(4)
-		goto L31
-	} else {
-		goto L33
-	}
-L32:
-	;
-	v134 = v119
-	goto L34
-L33:
-	;
-	goto L32
-L34:
-	;
-	v138 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v134))))
-	if v138 != 0 {
-		v134 = v134 + int32(1)
-		goto L34
-	} else {
-		goto L36
-	}
-L35:
-	;
-	v140 = v134
-	goto L21
-L36:
-	;
-	goto L35
-L37:
-	;
-	F_pfree(m, v20)
-	mBase = m.M
-	v152 = m.ExcPending
-	if v152 != 0 {
-		goto L1
-	} else {
-		goto L38
-	}
-L38:
-	;
-	v154 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
-	v155 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v154))) = v155 << (uint(int32(2)) % 32)
-	goto L39
-L39:
-	;
-	m.G0 = v10 + int32(16)
-	return v154
 }
 func F_ltree_textadd(m *base.Module, l0 int32) int32 {
 	mBase := m.M

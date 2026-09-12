@@ -477,44 +477,46 @@ func F_serializeAnalyzeReceive(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v217
 	var v218 int32
 	_ = v218
-	var v226 int32
-	_ = v226
+	var v219 int32
+	_ = v219
+	var v221 int32
+	_ = v221
+	var v222 int32
+	_ = v222
+	var v223 int32
+	_ = v223
+	var v224 int32
+	_ = v224
+	var v227 int32
+	_ = v227
+	var v228 int32
+	_ = v228
+	var v229 int32
+	_ = v229
 	var v231 int32
 	_ = v231
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
 	var v235 int32
 	_ = v235
-	var v240 int32
-	_ = v240
-	var v242 int32
-	_ = v242
-	var v246 int32
-	_ = v246
-	var v252 int32
-	_ = v252
-	var v255 int32
-	_ = v255
-	var v261 int32
-	_ = v261
-	var v265 int32
-	_ = v265
+	var v237 int32
+	_ = v237
+	var v239 int32
+	_ = v239
+	var v256 int32
+	_ = v256
+	var v262 int32
+	_ = v262
 	var v267 int32
 	_ = v267
-	var v275 int32
-	_ = v275
-	var v277 int32
-	_ = v277
-	var v278 int32
-	_ = v278
-	var v279 int32
-	_ = v279
-	var v280 int32
-	_ = v280
-	var v283 int32
-	_ = v283
-	var v284 int32
-	_ = v284
-	var v285 int32
-	_ = v285
+	var v269 int32
+	_ = v269
+	var v272 int32
+	_ = v272
+	var v281 int64
+	_ = v281
 	var v287 int32
 	_ = v287
 	var v289 int32
@@ -523,46 +525,70 @@ func F_serializeAnalyzeReceive(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v290
 	var v291 int32
 	_ = v291
-	var v293 int32
-	_ = v293
-	var v295 int32
-	_ = v295
-	var v312 int32
-	_ = v312
-	var v318 int32
-	_ = v318
-	var v323 int32
+	var v296 int64
+	_ = v296
+	var v297 int64
+	_ = v297
+	var v298 int64
+	_ = v298
+	var v305 int32
+	_ = v305
+	var v306 int32
+	_ = v306
+	var v307 int32
+	_ = v307
+	var v311 int32
+	_ = v311
+	var v313 int32
+	_ = v313
+	var v314 int64
+	_ = v314
+	var v316 int64
+	_ = v316
+	var v317 int64
+	_ = v317
+	var v321 int64
+	_ = v321
+	var v323 int64
 	_ = v323
-	var v325 int32
-	_ = v325
-	var v328 int32
+	var v324 int64
+	_ = v324
+	var v328 int64
 	_ = v328
+	var v330 int64
+	_ = v330
+	var v331 int64
+	_ = v331
+	var v335 int64
+	_ = v335
 	var v337 int64
 	_ = v337
-	var v343 int32
-	_ = v343
-	var v345 int32
+	var v338 int64
+	_ = v338
+	var v342 int64
+	_ = v342
+	var v344 int64
+	_ = v344
+	var v345 int64
 	_ = v345
-	var v346 int32
-	_ = v346
-	var v347 int32
-	_ = v347
+	var v349 int64
+	_ = v349
+	var v351 int64
+	_ = v351
 	var v352 int64
 	_ = v352
-	var v353 int64
-	_ = v353
-	var v354 int64
-	_ = v354
-	var v361 int32
-	_ = v361
-	var v362 int32
-	_ = v362
-	var v363 int32
+	var v356 int64
+	_ = v356
+	var v358 int64
+	_ = v358
+	var v359 int64
+	_ = v359
+	var v363 int64
 	_ = v363
-	var v367 int32
-	_ = v367
-	var v369 int32
-	_ = v369
+	var v365 int64
+	_ = v365
+	var v366 int64
+	_ = v366
 	var v370 int64
 	_ = v370
 	var v372 int64
@@ -611,54 +637,6 @@ func F_serializeAnalyzeReceive(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v421
 	var v422 int64
 	_ = v422
-	var v426 int64
-	_ = v426
-	var v428 int64
-	_ = v428
-	var v429 int64
-	_ = v429
-	var v433 int64
-	_ = v433
-	var v435 int64
-	_ = v435
-	var v436 int64
-	_ = v436
-	var v440 int64
-	_ = v440
-	var v442 int64
-	_ = v442
-	var v443 int64
-	_ = v443
-	var v447 int64
-	_ = v447
-	var v449 int64
-	_ = v449
-	var v450 int64
-	_ = v450
-	var v454 int64
-	_ = v454
-	var v456 int64
-	_ = v456
-	var v457 int64
-	_ = v457
-	var v461 int64
-	_ = v461
-	var v463 int64
-	_ = v463
-	var v464 int64
-	_ = v464
-	var v468 int64
-	_ = v468
-	var v470 int64
-	_ = v470
-	var v471 int64
-	_ = v471
-	var v475 int64
-	_ = v475
-	var v477 int64
-	_ = v477
-	var v478 int64
-	_ = v478
 	v12 = m.G0
 	v14 = v12 - int32(160)
 	m.G0 = v14
@@ -970,21 +948,21 @@ L43:
 	goto L46
 L44:
 	;
-	v328 = v173
+	v272 = v173
 	goto L45
 L45:
 	;
-	v337 = *(*int64)(unsafe.Add(mBase, uint32(l1)+64))
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+64)) = v337 + base.I64_extend_i32_s(v328)
+	v281 = *(*int64)(unsafe.Add(mBase, uint32(l1)+64))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+64)) = v281 + base.I64_extend_i32_s(v272)
 	*(*int32)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[0])) = v151
-	v343 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
-	F_MemoryContextReset(m, v343)
+	v287 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
+	F_MemoryContextReset(m, v287)
 	mBase = m.M
-	v345 = m.ExcPending
-	if v345 != 0 {
+	v289 = m.ExcPending
+	if v289 != 0 {
 		goto L19
 	} else {
-		goto L79
+		goto L62
 	}
 L46:
 	;
@@ -997,17 +975,17 @@ L46:
 	}
 L47:
 	;
-	v325 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-	v328 = v325
+	v269 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+	v272 = v269
 	goto L45
 L48:
 	;
-	v323 = v180 + int32(1)
-	if v323 != v17 {
-		v180 = v323
+	v267 = v180 + int32(1)
+	if v267 != v17 {
+		v180 = v267
 		goto L46
 	} else {
-		goto L78
+		goto L61
 	}
 L49:
 	;
@@ -1056,269 +1034,178 @@ L54:
 	goto L55
 L55:
 	;
-	v278 = F_SendFunctionCall(m, v208, v213)
+	v222 = F_SendFunctionCall(m, v208, v213)
 	mBase = m.M
-	v279 = m.ExcPending
-	if v279 != 0 {
+	v223 = m.ExcPending
+	if v223 != 0 {
 		goto L19
 	} else {
-		goto L75
+		goto L58
 	}
 L56:
 	;
-	if v217&int32(3) == int32(0) {
-		v242 = v217
-		goto L59
+	v219 = F_strlen(m, v217)
+	mBase = m.M
+	F_pq_sendcountedtext(m, v143, v217, v219)
+	mBase = m.M
+	v221 = m.ExcPending
+	if v221 != 0 {
+		goto L19
 	} else {
-		goto L60
+		goto L57
 	}
 L57:
 	;
-	F_pq_sendcountedtext(m, v143, v217, v275)
-	mBase = m.M
-	v277 = m.ExcPending
-	if v277 != 0 {
-		goto L19
-	} else {
-		goto L74
-	}
+	goto L48
 L58:
 	;
-	v275 = v267 - v217
-	goto L57
-L59:
-	;
-	v246 = v242
-	goto L68
-L60:
-	;
-	v226 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v217))))
-	if v226 == int32(0) {
-		goto L61
-	} else {
-		goto L62
-	}
-L61:
-	;
-	v275 = int32(0)
-	goto L57
-L62:
-	;
-	goto L63
-L63:
-	;
-	v231 = v217
-	goto L64
-L64:
-	;
-	v235 = v231 + int32(1)
-	if v235&int32(3) == int32(0) {
-		v242 = v235
-		goto L59
-	} else {
-		goto L66
-	}
-L65:
-	;
-	v267 = v235
-	goto L58
-L66:
-	;
-	v240 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v235))))
-	if v240 != 0 {
-		v231 = v235
-		goto L64
-	} else {
-		goto L67
-	}
-L67:
-	;
-	goto L65
-L68:
-	;
-	v252 = *(*int32)(unsafe.Add(mBase, uint32(v246)))
-	v255 = int32(-2139062144)
-	if (int32(16843008)-v252|v252)&v255 == v255 {
-		v246 = v246 + int32(4)
-		goto L68
-	} else {
-		goto L70
-	}
-L69:
-	;
-	v261 = v246
-	goto L71
-L70:
-	;
-	goto L69
-L71:
-	;
-	v265 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v261))))
-	if v265 != 0 {
-		v261 = v261 + int32(1)
-		goto L71
-	} else {
-		goto L73
-	}
-L72:
-	;
-	v267 = v261
-	goto L58
-L73:
-	;
-	goto L72
-L74:
-	;
-	goto L48
-L75:
-	;
-	v280 = *(*int32)(unsafe.Add(mBase, uint32(v278)))
+	v224 = *(*int32)(unsafe.Add(mBase, uint32(v222)))
 	F_enlargeStringInfo(m, v143, int32(4))
 	mBase = m.M
-	v283 = m.ExcPending
-	if v283 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
 		goto L19
 	} else {
-		goto L76
+		goto L59
 	}
-L76:
+L59:
 	;
-	v284 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-	v285 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
-	v287 = int32(2)
-	v289 = int32(4)
-	v290 = int32(base.Ui32(v280)>>(uint(v287)%32)) - v289
-	v291 = int32(24)
-	v293 = int32(_a_F_serializeAnalyzeReceive_5)
-	v295 = int32(8)
-	*(*int32)(unsafe.Add(mBase, uint32(v284+v285))) = v290<<(uint(v291)%32) | v290&v293<<(uint(v295)%32) | (int32(base.Ui32(v290)>>(uint(v295)%32))&v293 | int32(base.Ui32(v290)>>(uint(v291)%32)))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v284 + v289
-	v312 = *(*int32)(unsafe.Add(mBase, uint32(v278)))
-	F_pq_sendbytes(m, v143, v278+v289, int32(base.Ui32(v312)>>(uint(v287)%32))-v289)
+	v228 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+	v229 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
+	v231 = int32(2)
+	v233 = int32(4)
+	v234 = int32(base.Ui32(v224)>>(uint(v231)%32)) - v233
+	v235 = int32(24)
+	v237 = int32(_a_F_serializeAnalyzeReceive_5)
+	v239 = int32(8)
+	*(*int32)(unsafe.Add(mBase, uint32(v228+v229))) = v234<<(uint(v235)%32) | v234&v237<<(uint(v239)%32) | (int32(base.Ui32(v234)>>(uint(v239)%32))&v237 | int32(base.Ui32(v234)>>(uint(v235)%32)))
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+48)) = v228 + v233
+	v256 = *(*int32)(unsafe.Add(mBase, uint32(v222)))
+	F_pq_sendbytes(m, v143, v222+v233, int32(base.Ui32(v256)>>(uint(v231)%32))-v233)
 	mBase = m.M
-	v318 = m.ExcPending
-	if v318 != 0 {
+	v262 = m.ExcPending
+	if v262 != 0 {
 		goto L19
 	} else {
-		goto L77
+		goto L60
 	}
-L77:
+L60:
 	;
 	goto L48
-L78:
+L61:
 	;
 	goto L47
-L79:
+L62:
 	;
-	v346 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
-	v347 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v346)+9)))
-	if v347 != 0 {
-		goto L80
+	v290 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
+	v291 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v290)+9)))
+	if v291 != 0 {
+		goto L63
 	} else {
-		goto L81
+		goto L64
 	}
-L80:
+L63:
 	;
 	F___clock_gettime(m, int32(1), v14+int32(144))
 	mBase = m.M
-	v352 = *(*int64)(unsafe.Add(mBase, uint32(l1)+72))
-	v353 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+152)))
-	v354 = *(*int64)(unsafe.Add(mBase, uint32(v14)+144))
-	*(*int64)(unsafe.Add(mBase, uint32(l1)+72)) = v352 + (v353 + (v354*int64(1000000000) + v32))
-	v361 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
-	v362 = v361
-	goto L82
-L81:
+	v296 = *(*int64)(unsafe.Add(mBase, uint32(l1)+72))
+	v297 = int64(*(*int32)(unsafe.Add(mBase, uint32(v14)+152)))
+	v298 = *(*int64)(unsafe.Add(mBase, uint32(v14)+144))
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+72)) = v296 + (v297 + (v298*int64(1000000000) + v32))
+	v305 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
+	v306 = v305
+	goto L65
+L64:
 	;
-	v362 = v346
-	goto L82
-L82:
+	v306 = v290
+	goto L65
+L65:
 	;
-	v363 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v362)+7)))
-	if v363 == int32(1) {
-		goto L83
+	v307 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v306)+7)))
+	if v307 == int32(1) {
+		goto L66
 	} else {
-		goto L84
+		goto L67
 	}
-L83:
+L66:
 	;
-	v367 = l1 + int32(80)
-	v369 = v14 + int32(8)
-	v370 = *(*int64)(unsafe.Add(mBase, uint32(v367)))
-	v372 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[1]))
-	v373 = *(*int64)(unsafe.Add(mBase, uint32(v369)))
-	*(*int64)(unsafe.Add(mBase, uint32(v367))) = v370 + (v372 - v373)
-	v377 = *(*int64)(unsafe.Add(mBase, uint32(v367)+8))
-	v379 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[2]))
-	v380 = *(*int64)(unsafe.Add(mBase, uint32(v369)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+8)) = v377 + (v379 - v380)
-	v384 = *(*int64)(unsafe.Add(mBase, uint32(v367)+16))
-	v386 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[3]))
-	v387 = *(*int64)(unsafe.Add(mBase, uint32(v369)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+16)) = v384 + (v386 - v387)
-	v391 = *(*int64)(unsafe.Add(mBase, uint32(v367)+24))
-	v393 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[4]))
-	v394 = *(*int64)(unsafe.Add(mBase, uint32(v369)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+24)) = v391 + (v393 - v394)
-	v398 = *(*int64)(unsafe.Add(mBase, uint32(v367)+32))
-	v400 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[5]))
-	v401 = *(*int64)(unsafe.Add(mBase, uint32(v369)+32))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+32)) = v398 + (v400 - v401)
-	v405 = *(*int64)(unsafe.Add(mBase, uint32(v367)+40))
-	v407 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[6]))
-	v408 = *(*int64)(unsafe.Add(mBase, uint32(v369)+40))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+40)) = v405 + (v407 - v408)
-	v412 = *(*int64)(unsafe.Add(mBase, uint32(v367)+48))
-	v414 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[7]))
-	v415 = *(*int64)(unsafe.Add(mBase, uint32(v369)+48))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+48)) = v412 + (v414 - v415)
-	v419 = *(*int64)(unsafe.Add(mBase, uint32(v367)+56))
-	v421 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[8]))
-	v422 = *(*int64)(unsafe.Add(mBase, uint32(v369)+56))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+56)) = v419 + (v421 - v422)
-	v426 = *(*int64)(unsafe.Add(mBase, uint32(v367)+64))
-	v428 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[9]))
-	v429 = *(*int64)(unsafe.Add(mBase, uint32(v369)+64))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+64)) = v426 + (v428 - v429)
-	v433 = *(*int64)(unsafe.Add(mBase, uint32(v367)+72))
-	v435 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[10]))
-	v436 = *(*int64)(unsafe.Add(mBase, uint32(v369)+72))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+72)) = v433 + (v435 - v436)
-	v440 = *(*int64)(unsafe.Add(mBase, uint32(v367)+80))
-	v442 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[11]))
-	v443 = *(*int64)(unsafe.Add(mBase, uint32(v369)+80))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+80)) = v440 + (v442 - v443)
-	v447 = *(*int64)(unsafe.Add(mBase, uint32(v367)+88))
-	v449 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[12]))
-	v450 = *(*int64)(unsafe.Add(mBase, uint32(v369)+88))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+88)) = v447 + (v449 - v450)
-	v454 = *(*int64)(unsafe.Add(mBase, uint32(v367)+96))
-	v456 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[13]))
-	v457 = *(*int64)(unsafe.Add(mBase, uint32(v369)+96))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+96)) = v454 + (v456 - v457)
-	v461 = *(*int64)(unsafe.Add(mBase, uint32(v367)+104))
-	v463 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[14]))
-	v464 = *(*int64)(unsafe.Add(mBase, uint32(v369)+104))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+104)) = v461 + (v463 - v464)
-	v468 = *(*int64)(unsafe.Add(mBase, uint32(v367)+112))
-	v470 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[15]))
-	v471 = *(*int64)(unsafe.Add(mBase, uint32(v369)+112))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+112)) = v468 + (v470 - v471)
-	v475 = *(*int64)(unsafe.Add(mBase, uint32(v367)+120))
-	v477 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[16]))
-	v478 = *(*int64)(unsafe.Add(mBase, uint32(v369)+120))
-	*(*int64)(unsafe.Add(mBase, uint32(v367)+120)) = v475 + (v477 - v478)
-	goto L86
-L84:
+	v311 = l1 + int32(80)
+	v313 = v14 + int32(8)
+	v314 = *(*int64)(unsafe.Add(mBase, uint32(v311)))
+	v316 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[1]))
+	v317 = *(*int64)(unsafe.Add(mBase, uint32(v313)))
+	*(*int64)(unsafe.Add(mBase, uint32(v311))) = v314 + (v316 - v317)
+	v321 = *(*int64)(unsafe.Add(mBase, uint32(v311)+8))
+	v323 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[2]))
+	v324 = *(*int64)(unsafe.Add(mBase, uint32(v313)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+8)) = v321 + (v323 - v324)
+	v328 = *(*int64)(unsafe.Add(mBase, uint32(v311)+16))
+	v330 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[3]))
+	v331 = *(*int64)(unsafe.Add(mBase, uint32(v313)+16))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+16)) = v328 + (v330 - v331)
+	v335 = *(*int64)(unsafe.Add(mBase, uint32(v311)+24))
+	v337 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[4]))
+	v338 = *(*int64)(unsafe.Add(mBase, uint32(v313)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+24)) = v335 + (v337 - v338)
+	v342 = *(*int64)(unsafe.Add(mBase, uint32(v311)+32))
+	v344 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[5]))
+	v345 = *(*int64)(unsafe.Add(mBase, uint32(v313)+32))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+32)) = v342 + (v344 - v345)
+	v349 = *(*int64)(unsafe.Add(mBase, uint32(v311)+40))
+	v351 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[6]))
+	v352 = *(*int64)(unsafe.Add(mBase, uint32(v313)+40))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+40)) = v349 + (v351 - v352)
+	v356 = *(*int64)(unsafe.Add(mBase, uint32(v311)+48))
+	v358 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[7]))
+	v359 = *(*int64)(unsafe.Add(mBase, uint32(v313)+48))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+48)) = v356 + (v358 - v359)
+	v363 = *(*int64)(unsafe.Add(mBase, uint32(v311)+56))
+	v365 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[8]))
+	v366 = *(*int64)(unsafe.Add(mBase, uint32(v313)+56))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+56)) = v363 + (v365 - v366)
+	v370 = *(*int64)(unsafe.Add(mBase, uint32(v311)+64))
+	v372 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[9]))
+	v373 = *(*int64)(unsafe.Add(mBase, uint32(v313)+64))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+64)) = v370 + (v372 - v373)
+	v377 = *(*int64)(unsafe.Add(mBase, uint32(v311)+72))
+	v379 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[10]))
+	v380 = *(*int64)(unsafe.Add(mBase, uint32(v313)+72))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+72)) = v377 + (v379 - v380)
+	v384 = *(*int64)(unsafe.Add(mBase, uint32(v311)+80))
+	v386 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[11]))
+	v387 = *(*int64)(unsafe.Add(mBase, uint32(v313)+80))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+80)) = v384 + (v386 - v387)
+	v391 = *(*int64)(unsafe.Add(mBase, uint32(v311)+88))
+	v393 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[12]))
+	v394 = *(*int64)(unsafe.Add(mBase, uint32(v313)+88))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+88)) = v391 + (v393 - v394)
+	v398 = *(*int64)(unsafe.Add(mBase, uint32(v311)+96))
+	v400 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[13]))
+	v401 = *(*int64)(unsafe.Add(mBase, uint32(v313)+96))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+96)) = v398 + (v400 - v401)
+	v405 = *(*int64)(unsafe.Add(mBase, uint32(v311)+104))
+	v407 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[14]))
+	v408 = *(*int64)(unsafe.Add(mBase, uint32(v313)+104))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+104)) = v405 + (v407 - v408)
+	v412 = *(*int64)(unsafe.Add(mBase, uint32(v311)+112))
+	v414 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[15]))
+	v415 = *(*int64)(unsafe.Add(mBase, uint32(v313)+112))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+112)) = v412 + (v414 - v415)
+	v419 = *(*int64)(unsafe.Add(mBase, uint32(v311)+120))
+	v421 = *(*int64)(unsafe.Add(mBase, _c_F_serializeAnalyzeReceive[16]))
+	v422 = *(*int64)(unsafe.Add(mBase, uint32(v313)+120))
+	*(*int64)(unsafe.Add(mBase, uint32(v311)+120)) = v419 + (v421 - v422)
+	goto L69
+L67:
 	;
-	goto L85
-L85:
+	goto L68
+L68:
 	;
 	m.G0 = v14 + int32(160)
 	return int32(1)
-L86:
+L69:
 	;
-	goto L85
+	goto L68
 }
 func F_serializeAnalyzeStartup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M

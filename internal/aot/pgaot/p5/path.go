@@ -5552,272 +5552,159 @@ func F_path_is_prefix_of_path(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
+	var v4 int32
+	_ = v4
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
 	var v16 int32
 	_ = v16
-	var v20 int32
-	_ = v20
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
 	var v25 int32
 	_ = v25
-	var v27 int32
-	_ = v27
+	var v26 int32
+	_ = v26
 	var v31 int32
 	_ = v31
-	var v37 int32
-	_ = v37
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
 	var v40 int32
 	_ = v40
-	var v46 int32
-	_ = v46
+	var v41 int32
+	_ = v41
+	var v48 int32
+	_ = v48
 	var v50 int32
 	_ = v50
-	var v52 int32
-	_ = v52
-	var v60 int32
-	_ = v60
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
-	var v87 int32
-	_ = v87
-	var v89 int32
-	_ = v89
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
-	var v104 int32
-	_ = v104
-	var v106 int32
-	_ = v106
-	var v113 int32
-	_ = v113
+	var v57 int32
+	_ = v57
 	v3 = int32(0)
-	if l0&int32(3) == v3 {
-		v27 = l0
-		goto L3
+	v4 = F_strlen(m, l0)
+	mBase = m.M
+	if v4 == v3 {
+		goto L2
 	} else {
-		goto L4
+		goto L3
 	}
 L1:
 	;
-	if v60 == int32(0) {
-		goto L19
+	if v48 != 0 {
+		goto L15
 	} else {
-		goto L20
+		goto L16
 	}
 L2:
 	;
-	v60 = v52 - l0
+	v48 = int32(0)
 	goto L1
 L3:
 	;
-	v31 = v27
-	goto L12
+	goto L4
 L4:
 	;
-	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v11 == int32(0) {
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v10 != 0 {
 		goto L5
 	} else {
 		goto L6
 	}
 L5:
 	;
-	v60 = int32(0)
-	goto L1
+	v11 = l0
+	v12 = l1
+	v13 = v4
+	v14 = v10
+	goto L9
 L6:
 	;
+	v36 = l1
+	v40 = int32(0)
 	goto L7
 L7:
 	;
-	v16 = l0
-	goto L8
+	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+	v48 = v40 - v41
+	goto L1
 L8:
 	;
-	v20 = v16 + int32(1)
-	if v20&int32(3) == int32(0) {
-		v27 = v20
-		goto L3
-	} else {
-		goto L10
-	}
+	v36 = v31
+	v40 = v33
+	goto L7
 L9:
 	;
-	v52 = v20
-	goto L2
-L10:
-	;
-	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-	if v25 != 0 {
-		v16 = v20
+	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12))))
+	if v14 != v16 {
+		v31 = v12
+		v33 = v14
 		goto L8
 	} else {
 		goto L11
 	}
+L10:
+	;
+	v31 = v25
+	v33 = int32(0)
+	goto L8
 L11:
 	;
-	goto L9
+	if v16 == int32(0) {
+		v31 = v12
+		v33 = v14
+		goto L8
+	} else {
+		goto L12
+	}
 L12:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
-	v40 = int32(-2139062144)
-	if (int32(16843008)-v37|v37)&v40 == v40 {
-		v31 = v31 + int32(4)
-		goto L12
+	v21 = v13 - int32(1)
+	if v21 == int32(0) {
+		v31 = v12
+		v33 = v14
+		goto L8
 	} else {
-		goto L14
+		goto L13
 	}
 L13:
 	;
-	v46 = v31
-	goto L15
+	v24 = int32(1)
+	v25 = v12 + v24
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+1)))
+	if v26 != 0 {
+		v11 = v11 + v24
+		v12 = v25
+		v13 = v21
+		v14 = v26
+		goto L9
+	} else {
+		goto L14
+	}
 L14:
 	;
-	goto L13
+	goto L10
 L15:
 	;
-	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46))))
-	if v50 != 0 {
-		v46 = v46 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
+	v57 = v3
+	goto L17
 L16:
 	;
-	v52 = v46
-	goto L2
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4+l1))))
+	v57 = base.B2i32(v50 == int32(47)) | base.B2i32(v50 == int32(0))
+	goto L17
 L17:
 	;
-	goto L16
-L18:
-	;
-	if v104 != 0 {
-		goto L32
-	} else {
-		goto L33
-	}
-L19:
-	;
-	v104 = int32(0)
-	goto L18
-L20:
-	;
-	goto L21
-L21:
-	;
-	v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	if v66 != 0 {
-		goto L22
-	} else {
-		goto L23
-	}
-L22:
-	;
-	v67 = l0
-	v68 = l1
-	v69 = v60
-	v70 = v66
-	goto L26
-L23:
-	;
-	v92 = l1
-	v96 = int32(0)
-	goto L24
-L24:
-	;
-	v97 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v92))))
-	v104 = v96 - v97
-	goto L18
-L25:
-	;
-	v92 = v87
-	v96 = v89
-	goto L24
-L26:
-	;
-	v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v68))))
-	if v70 != v72 {
-		v87 = v68
-		v89 = v70
-		goto L25
-	} else {
-		goto L28
-	}
-L27:
-	;
-	v87 = v81
-	v89 = int32(0)
-	goto L25
-L28:
-	;
-	if v72 == int32(0) {
-		v87 = v68
-		v89 = v70
-		goto L25
-	} else {
-		goto L29
-	}
-L29:
-	;
-	v77 = v69 - int32(1)
-	if v77 == int32(0) {
-		v87 = v68
-		v89 = v70
-		goto L25
-	} else {
-		goto L30
-	}
-L30:
-	;
-	v80 = int32(1)
-	v81 = v68 + v80
-	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v67)+1)))
-	if v82 != 0 {
-		v67 = v67 + v80
-		v68 = v81
-		v69 = v77
-		v70 = v82
-		goto L26
-	} else {
-		goto L31
-	}
-L31:
-	;
-	goto L27
-L32:
-	;
-	v113 = v3
-	goto L34
-L33:
-	;
-	v106 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v60+l1))))
-	v113 = base.B2i32(v106 == int32(47)) | base.B2i32(v106 == int32(0))
-	goto L34
-L34:
-	;
-	return v113
+	return v57
 }
 func F_path_mul_pt(m *base.Module, l0 int32) int32 {
 	mBase := m.M
