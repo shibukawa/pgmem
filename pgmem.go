@@ -384,6 +384,13 @@ func (s *Server) serve(c net.Conn) {
 		}
 		break
 	}
+	// One backend serves one database; a client asking for another would
+	// silently land in this one, so refuse it the way PostgreSQL refuses a
+	// database that does not exist.
+	if db := startupParam(pkt, "database"); db != "" && db != s.opts.Database {
+		c.Write(errorResponse("3D000", fmt.Sprintf("database %q is not served by this pgmem server (serving %q)", db, s.opts.Database)))
+		return
+	}
 	id := s.connSeq.Add(1)
 	prefix := "pgmem" + strconv.FormatInt(id, 36) + "_"
 
@@ -779,6 +786,24 @@ func appendParsedNames(names []string, batch []byte) []string {
 		batch = batch[1+n:]
 	}
 	return names
+}
+
+// startupParam returns the value of key in a StartupMessage (length,
+// protocol version, then NUL-terminated key/value pairs), or "".
+func startupParam(pkt []byte, key string) string {
+	if len(pkt) < 8 {
+		return ""
+	}
+	fields := bytes.Split(pkt[8:], []byte{0})
+	for i := 0; i+1 < len(fields); i += 2 {
+		if len(fields[i]) == 0 {
+			break
+		}
+		if string(fields[i]) == key {
+			return string(fields[i+1])
+		}
+	}
+	return ""
 }
 
 func startupPacket(user, database string) []byte {

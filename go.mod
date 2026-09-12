@@ -6,6 +6,7 @@ require (
 	github.com/jackc/pgx/v5 v5.11.0
 	github.com/klauspost/compress v1.20.0
 	github.com/tetratelabs/wazero v1.12.0
+	golang.org/x/crypto v0.42.0
 	golang.org/x/sys v0.44.0
 )
 

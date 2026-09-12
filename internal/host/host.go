@@ -9,6 +9,7 @@ import (
 	"crypto/rand"
 	"crypto/sha1"
 	"crypto/sha256"
+	"crypto/sha3"
 	"crypto/sha512"
 	"encoding/binary"
 	"fmt"
@@ -21,6 +22,7 @@ import (
 	"time"
 
 	"github.com/shibukawa/pgmem/internal/vfs"
+	"golang.org/x/crypto/ripemd160"
 )
 
 // Memory is the linear memory of the guest.
@@ -95,9 +97,21 @@ type Host struct {
 	hashType map[int32]int32
 	hashFree map[int32][]hash.Hash // freed contexts per type, reused by create
 	nextHash int32
+
+	// ciphers holds pgcrypto's live cipher contexts (see
+	// wasm/pgmem_pgcrypto_openssl.inc and crypto.go), keyed by handle.
+	ciphers    map[int32]*hostCipher
+	nextCipher int32
+
+	// zstreams holds pgcrypto's live deflate/inflate contexts (see
+	// wasm/pgmem_pgcrypto_compress.inc and crypto.go), keyed by handle.
+	zstreams    map[int32]*zstream
+	nextZstream int32
 }
 
-// newHash maps PostgreSQL's pg_cryptohash_type to a Go hash.
+// newHash maps a hash type to a Go hash: 0-5 are PostgreSQL's
+// pg_cryptohash_type (src/common/cryptohash.c), 6 and up are extra digests
+// pgcrypto's digest()/hmac() accept (wasm/pgmem_pgcrypto_openssl.inc).
 func newHash(typ int32) hash.Hash {
 	switch typ {
 	case 0:
@@ -112,6 +126,16 @@ func newHash(typ int32) hash.Hash {
 		return sha512.New384()
 	case 5:
 		return sha512.New()
+	case 6:
+		return ripemd160.New()
+	case 7:
+		return sha3.New224()
+	case 8:
+		return sha3.New256()
+	case 9:
+		return sha3.New384()
+	case 10:
+		return sha3.New512()
 	}
 	return nil
 }

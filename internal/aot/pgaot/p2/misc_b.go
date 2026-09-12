@@ -24474,3 +24474,203 @@ func F_byteanlike(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_bytes_to_mpi(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v15 int32
+	_ = v15
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	v3 = int32(0)
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	if l1 == v3 {
+		v26 = v3
+		goto L2
+	} else {
+		goto L3
+	}
+L1:
+	;
+	v54 = int32(0)
+	v57 = F_pgp_mpi_alloc(m, v52, v9+int32(12))
+	mBase = m.M
+	v60 = m.ExcPending
+	if v60 != 0 {
+		goto L11
+	} else {
+		goto L12
+	}
+L2:
+	;
+	if l1 == v26 {
+		v52 = v3
+		goto L1
+	} else {
+		goto L8
+	}
+L3:
+	;
+	v15 = v3
+	goto L4
+L4:
+	;
+	v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0+v15))))
+	if v20 != 0 {
+		v26 = v15
+		goto L2
+	} else {
+		goto L6
+	}
+L5:
+	;
+	v52 = v3
+	goto L1
+L6:
+	;
+	v22 = v15 + int32(1)
+	if v22 != l1 {
+		v15 = v22
+		goto L4
+	} else {
+		goto L7
+	}
+L7:
+	;
+	goto L5
+L8:
+	;
+	v35 = (l1 + (v26 ^ int32(-1))) << (uint(int32(3)) % 32)
+	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0+v26))))
+	if v37 == int32(0) {
+		v52 = v35
+		goto L1
+	} else {
+		goto L9
+	}
+L9:
+	;
+	v52 = v35 + (int32(8)-base.I32_clz(v37<<(uint(int32(24))%32)))&int32(255)
+	goto L1
+L10:
+	;
+	m.G0 = v9 + int32(16)
+	return v78
+L11:
+	;
+	return int32(0)
+L12:
+	;
+	if v57 < int32(0) {
+		v78 = v54
+		goto L10
+	} else {
+		goto L13
+	}
+L13:
+	;
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+8))
+	if v64 != l1 {
+		goto L14
+	} else {
+		goto L15
+	}
+L14:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v64
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
+	F_px_debug(m, int32(_a_F_bytes_to_mpi_0), v9)
+	mBase = m.M
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L11
+	} else {
+		goto L17
+	}
+L15:
+	;
+	goto L16
+L16:
+	;
+	v74 = *(*int32)(unsafe.Add(mBase, uint32(v63)))
+	if l1 != 0 {
+		goto L20
+	} else {
+		goto L21
+	}
+L17:
+	;
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+	v72 = F_pgp_mpi_free(m, v71)
+	mBase = m.M
+	v73 = m.ExcPending
+	if v73 != 0 {
+		goto L11
+	} else {
+		goto L18
+	}
+L18:
+	;
+	v78 = v54
+	goto L10
+L19:
+	;
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+	v78 = v77
+	goto L10
+L20:
+	;
+	v75 = F__emscripten_memcpy_bulkmem(m, v74, l0, l1)
+	mBase = m.M
+	goto L22
+L21:
+	;
+	goto L22
+L22:
+	;
+	goto L19
+}

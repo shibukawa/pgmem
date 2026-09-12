@@ -35,6 +35,27 @@ func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
 func F_pg_finfo_mic_to_latin3(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin3_0)
 }
+func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_decrypt_0)
+}
+func F_pg_finfo_pg_decrypt_iv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_decrypt_iv_0)
+}
+func F_pg_finfo_pgp_key_id_w(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_key_id_w_0)
+}
+func F_pg_finfo_pgp_pub_decrypt_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_pub_decrypt_bytea_0)
+}
+func F_pg_finfo_pgp_sym_decrypt_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_sym_decrypt_bytea_0)
+}
+func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_sym_decrypt_text_0)
+}
+func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_sym_encrypt_text_0)
+}
 func F_pg_finfo_sjis_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_mic_0)
 }

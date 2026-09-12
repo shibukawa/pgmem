@@ -13499,6 +13499,51 @@ func F_performDeletion(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F_pkt_stream_flush(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	if v9 != 0 {
+		v24 = int32(0)
+		m.G0 = v7 + int32(16)
+		return v24
+	} else {
+		v10 = int32(0)
+		*(*uint8)(unsafe.Add(mBase, uint32(v7)+8)) = uint8(v10)
+		v15 = F_pushf_write(m, l0, v7+int32(8), int32(1))
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			if v15 < int32(0) {
+				v24 = v15
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1)
+				v24 = int32(0)
+			}
+			m.G0 = v7 + int32(16)
+			return v24
+		}
+	}
+}
 func F_plain_crypt_verify(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -22980,6 +23025,141 @@ L101:
 	;
 	v384 = v376
 	goto L1
+}
+func F_pushf_free_all(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	if l0 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v4 = l0
+	goto L4
+L2:
+	;
+	goto L3
+L3:
+	;
+	return
+L4:
+	;
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+	if v9 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L5:
+	;
+	goto L3
+L6:
+	;
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
+	m.T0[v9].(func(*base.Module, int32))(m, v10)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	if v13 != 0 {
+		goto L11
+	} else {
+		goto L12
+	}
+L9:
+	;
+	return
+L10:
+	;
+	goto L8
+L11:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(v4)+8))
+	v16 = F___memset(m, v13, int32(0), v15)
+	mBase = m.M
+	goto L14
+L12:
+	;
+	goto L13
+L13:
+	;
+	v22 = F___memset(m, v4, int32(0), int32(24))
+	mBase = m.M
+	goto L16
+L14:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	F_pfree(m, v17)
+	mBase = m.M
+	v19 = m.ExcPending
+	if v19 != 0 {
+		goto L9
+	} else {
+		goto L15
+	}
+L15:
+	;
+	goto L13
+L16:
+	;
+	F_pfree(m, v4)
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L9
+	} else {
+		goto L17
+	}
+L17:
+	;
+	if v7 != 0 {
+		v4 = v7
+		goto L4
+	} else {
+		goto L18
+	}
+L18:
+	;
+	goto L5
 }
 func F_pwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64) int32 {
 	mBase := m.M

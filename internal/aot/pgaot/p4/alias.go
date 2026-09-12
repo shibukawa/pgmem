@@ -3872,6 +3872,8 @@ func F_get_share_path(m *base.Module, l0 int32)
 func F_make_relative_path(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pg_usleep github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_usleep
 func F_pg_usleep(m *base.Module, l0 int32)
+//go:linkname F_pg_strcasecmp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_strcasecmp
+func F_pg_strcasecmp(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pg_toupper github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_toupper
 func F_pg_toupper(m *base.Module, l0 int32) int32
 //go:linkname F_pqsignal_be github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pqsignal_be
@@ -3958,6 +3960,38 @@ func F_find_among_b(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_slice_from_s(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_slice_del github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_slice_del
 func F_slice_del(m *base.Module, l0 int32) int32
+//go:linkname F_des_init github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_des_init
+func F_des_init(m *base.Module)
+//go:linkname F_pullf_read github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pullf_read
+func F_pullf_read(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pullf_read_fixed github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pullf_read_fixed
+func F_pullf_read_fixed(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pushf_create github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pushf_create
+func F_pushf_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pushf_write github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pushf_write
+func F_pushf_write(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_px_find_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_px_find_digest
+func F_px_find_digest(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_px_find_cipher github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_px_find_cipher
+func F_px_find_cipher(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_CheckBuiltinCryptoMode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CheckBuiltinCryptoMode
+func F_CheckBuiltinCryptoMode(m *base.Module)
+//go:linkname F_pgp_cfb_free github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgp_cfb_free
+func F_pgp_cfb_free(m *base.Module, l0 int32)
+//go:linkname F_pgp_cfb_decrypt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgp_cfb_decrypt
+func F_pgp_cfb_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pgp_key_free github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgp_key_free
+func F_pgp_key_free(m *base.Module, l0 int32)
+//go:linkname F_pgp_get_digest_code github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgp_get_digest_code
+func F_pgp_get_digest_code(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_get_cipher_code github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pgp_get_cipher_code
+func F_pgp_get_cipher_code(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_init github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pgp_init
+func F_pgp_init(m *base.Module, l0 int32) int32
+//go:linkname F_px_THROW_ERROR github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_px_THROW_ERROR
+func F_px_THROW_ERROR(m *base.Module, l0 int32)
+//go:linkname F_px_debug github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_px_debug
+func F_px_debug(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

@@ -72,12 +72,8 @@ func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
 	_ = v57
 	var v70 int32
 	_ = v70
-	var v72 int32
-	_ = v72
 	var v76 int32
 	_ = v76
-	var v83 int32
-	_ = v83
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_longjmp[0]))
 	if v4 == int32(0) {
 		goto L1
@@ -88,11 +84,11 @@ L1:
 	;
 	F___wasm_longjmp(m, l0, l1)
 	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L25
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L22
 	} else {
-		goto L26
+		goto L23
 	}
 L2:
 	;
@@ -213,32 +209,16 @@ L20:
 	goto L4
 L21:
 	;
-	v72 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgl_longjmp[1])))
-	if v72 == int32(0) {
-		goto L22
-	} else {
-		goto L23
-	}
-L22:
-	;
-	v76 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_pgl_longjmp[2])) = uint8(v76)
-	goto L24
-L23:
-	;
-	goto L24
-L24:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_pgl_longjmp[3])) = int32(100)
+	*(*int32)(unsafe.Add(mBase, _c_F_pgl_longjmp[1])) = int32(100)
 	m.Env.Emscripten_exit_with_live_runtime(m)
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L25:
+L22:
 	;
 	return
-L26:
+L23:
 	;
 	base.Wasm_trap_unreachable()
 	for {

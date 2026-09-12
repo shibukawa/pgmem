@@ -1979,6 +1979,33 @@ L39:
 	m.G0 = v15 + int32(32)
 	return
 }
+func F_pull_from_mbuf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v7 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v7)
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v10
+	v12 = v9 - v10
+	if l2 < v12 {
+		v14 = l2
+	} else {
+		v14 = v12
+	}
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v10 + v14
+	return v14
+}
 func F_transformFromClause(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

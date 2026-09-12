@@ -26,12 +26,16 @@ if [ ! -f "$SRC/configure" ]; then
   tar xzf "$ARCHIVE" -C "$OUT/src"
 fi
 
+# pgmem-specific source patches (idempotent); before anything is compiled,
+# pglitec.c included.
+python3 "$HERE/patches.py" "$SRC"
+
 BASE_CFLAGS="-m32 -O2 -sWASM_BIGINT -sSUPPORT_LONGJMP=$SJLJ \
  -Wno-declaration-after-statement -Wno-macro-redefined -Wno-unused-function \
  -Wno-missing-prototypes -Wno-incompatible-pointer-types -ffile-prefix-map=$ROOT/toolchain/emsdk=/emsdk -ffile-prefix-map=$ROOT=/pgmem-build"
 
 # Objects that must see the real libc names (no -D overrides).
-emcc $BASE_CFLAGS -c -o "$OUT/pglitec.o" "$SRC/pglite/src/pglitec/pglitec.c"
+emcc $BASE_CFLAGS -D__PGMEM__ -c -o "$OUT/pglitec.o" "$SRC/pglite/src/pglitec/pglitec.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_shim.o" "$HERE/pgmem_shim.c"
 
 PG_CFLAGS="$BASE_CFLAGS \
@@ -72,9 +76,6 @@ ac_cv_exeext=.js \
 --with-template=emscripten \
 --prefix=$PREFIX"
 
-# pgmem-specific source patches (idempotent).
-python3 "$HERE/patches.py" "$SRC"
-
 cd "$SRC"
 CONF_SIG="$CONFIGURE_PARAMS|$PG_CFLAGS|$LDFLAGS|$LDFLAGS_EX"
 if [ ! -f config.status ] || [ "$(cat "$OUT/configure.sig" 2>/dev/null)" != "$CONF_SIG" ]; then
@@ -109,6 +110,13 @@ for d in src/backend/utils/mb/conversion_procs/*/; do
   n=$(basename "$d")
   MODULE_DIRS="$MODULE_DIRS $n=src/backend/utils/mb/conversion_procs/$n"
 done
+# Contrib extensions linked in the same way. Their control and SQL files go
+# into the share tree below so CREATE EXTENSION finds them. pgcrypto's
+# OpenSSL-backed files are replaced by host-backed ones (patches.py).
+CONTRIB_MODULES="pgcrypto"
+for n in $CONTRIB_MODULES; do
+  MODULE_DIRS="$MODULE_DIRS $n=contrib/$n"
+done
 GEN_ARGS=""
 MODULE_OBJS=""
 for spec in $MODULE_DIRS; do
@@ -120,6 +128,10 @@ for spec in $MODULE_DIRS; do
   MODULE_OBJS="$MODULE_OBJS $(ls "$SRC/$dir"/*.o | tr '\n' ' ')"
 done
 python3 "$HERE/gen_modules.py" "$LLVM_NM" "$OUT/pgmem_modules_gen.c" $GEN_ARGS
+mkdir -p "$PREFIX/share/postgresql/extension"
+for n in $CONTRIB_MODULES; do
+  cp "$SRC/contrib/$n"/*.control "$SRC/contrib/$n"/*.sql "$PREFIX/share/postgresql/extension/"
+done
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_dl.o" "$HERE/pgmem_dl.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_modules_gen.o" "$OUT/pgmem_modules_gen.c"
 

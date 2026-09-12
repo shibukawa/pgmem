@@ -722,36 +722,6 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Win866ToWin1251(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
-	case "Pg_magic_func_euc2004_sjis2004":
-		if len(a) != 0 {
-			panic("aot: Pg_magic_func_euc2004_sjis2004: want 0 args")
-		}
-		r := pgaot.PgMagicFuncEuc2004Sjis2004(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "euc_jis_2004_to_shift_jis_2004":
-		if len(a) != 1 {
-			panic("aot: euc_jis_2004_to_shift_jis_2004: want 1 args")
-		}
-		r := pgaot.EucJis_2004_toShiftJis_2004(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_euc_jis_2004_to_shift_jis_2004":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_euc_jis_2004_to_shift_jis_2004: want 0 args")
-		}
-		r := pgaot.PgFinfoEucJis_2004_toShiftJis_2004(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_shift_jis_2004_to_euc_jis_2004":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_shift_jis_2004_to_euc_jis_2004: want 0 args")
-		}
-		r := pgaot.PgFinfoShiftJis_2004_toEucJis_2004(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "shift_jis_2004_to_euc_jis_2004":
-		if len(a) != 1 {
-			panic("aot: shift_jis_2004_to_euc_jis_2004: want 1 args")
-		}
-		r := pgaot.ShiftJis_2004_toEucJis_2004(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_euc_cn_and_mic":
 		if len(a) != 0 {
 			panic("aot: Pg_magic_func_euc_cn_and_mic: want 0 args")
@@ -968,83 +938,35 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoMicToEucTw(m)
 		return []uint64{uint64(uint32(r))}, true
-	case "Pg_magic_func_latin2_and_win1250":
+	case "Pg_magic_func_euc2004_sjis2004":
 		if len(a) != 0 {
-			panic("aot: Pg_magic_func_latin2_and_win1250: want 0 args")
+			panic("aot: Pg_magic_func_euc2004_sjis2004: want 0 args")
 		}
-		r := pgaot.PgMagicFuncLatin2AndWin1250(m)
+		r := pgaot.PgMagicFuncEuc2004Sjis2004(m)
 		return []uint64{uint64(uint32(r))}, true
-	case "latin2_to_mic":
+	case "euc_jis_2004_to_shift_jis_2004":
 		if len(a) != 1 {
-			panic("aot: latin2_to_mic: want 1 args")
+			panic("aot: euc_jis_2004_to_shift_jis_2004: want 1 args")
 		}
-		r := pgaot.Latin2ToMic(m, int32(uint32(a[0])))
+		r := pgaot.EucJis_2004_toShiftJis_2004(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
-	case "latin2_to_win1250":
+	case "pg_finfo_euc_jis_2004_to_shift_jis_2004":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_euc_jis_2004_to_shift_jis_2004: want 0 args")
+		}
+		r := pgaot.PgFinfoEucJis_2004_toShiftJis_2004(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_shift_jis_2004_to_euc_jis_2004":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_shift_jis_2004_to_euc_jis_2004: want 0 args")
+		}
+		r := pgaot.PgFinfoShiftJis_2004_toEucJis_2004(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "shift_jis_2004_to_euc_jis_2004":
 		if len(a) != 1 {
-			panic("aot: latin2_to_win1250: want 1 args")
+			panic("aot: shift_jis_2004_to_euc_jis_2004: want 1 args")
 		}
-		r := pgaot.Latin2ToWin1250(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "mic_to_latin2":
-		if len(a) != 1 {
-			panic("aot: mic_to_latin2: want 1 args")
-		}
-		r := pgaot.MicToLatin2(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "mic_to_win1250":
-		if len(a) != 1 {
-			panic("aot: mic_to_win1250: want 1 args")
-		}
-		r := pgaot.MicToWin1250(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_latin2_to_mic":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_latin2_to_mic: want 0 args")
-		}
-		r := pgaot.PgFinfoLatin2ToMic(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_latin2_to_win1250":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_latin2_to_win1250: want 0 args")
-		}
-		r := pgaot.PgFinfoLatin2ToWin1250(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_mic_to_latin2":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_mic_to_latin2: want 0 args")
-		}
-		r := pgaot.PgFinfoMicToLatin2(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_mic_to_win1250":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_mic_to_win1250: want 0 args")
-		}
-		r := pgaot.PgFinfoMicToWin1250(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_win1250_to_latin2":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_win1250_to_latin2: want 0 args")
-		}
-		r := pgaot.PgFinfoWin1250ToLatin2(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_win1250_to_mic":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_win1250_to_mic: want 0 args")
-		}
-		r := pgaot.PgFinfoWin1250ToMic(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "win1250_to_latin2":
-		if len(a) != 1 {
-			panic("aot: win1250_to_latin2: want 1 args")
-		}
-		r := pgaot.Win1250ToLatin2(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "win1250_to_mic":
-		if len(a) != 1 {
-			panic("aot: win1250_to_mic: want 1 args")
-		}
-		r := pgaot.Win1250ToMic(m, int32(uint32(a[0])))
+		r := pgaot.ShiftJis_2004_toEucJis_2004(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_latin_and_mic":
 		if len(a) != 0 {
@@ -1123,6 +1045,84 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 			panic("aot: pg_finfo_mic_to_latin4: want 0 args")
 		}
 		r := pgaot.PgFinfoMicToLatin4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_latin2_and_win1250":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_latin2_and_win1250: want 0 args")
+		}
+		r := pgaot.PgMagicFuncLatin2AndWin1250(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "latin2_to_mic":
+		if len(a) != 1 {
+			panic("aot: latin2_to_mic: want 1 args")
+		}
+		r := pgaot.Latin2ToMic(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "latin2_to_win1250":
+		if len(a) != 1 {
+			panic("aot: latin2_to_win1250: want 1 args")
+		}
+		r := pgaot.Latin2ToWin1250(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "mic_to_latin2":
+		if len(a) != 1 {
+			panic("aot: mic_to_latin2: want 1 args")
+		}
+		r := pgaot.MicToLatin2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "mic_to_win1250":
+		if len(a) != 1 {
+			panic("aot: mic_to_win1250: want 1 args")
+		}
+		r := pgaot.MicToWin1250(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_latin2_to_mic":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_latin2_to_mic: want 0 args")
+		}
+		r := pgaot.PgFinfoLatin2ToMic(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_latin2_to_win1250":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_latin2_to_win1250: want 0 args")
+		}
+		r := pgaot.PgFinfoLatin2ToWin1250(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_mic_to_latin2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_mic_to_latin2: want 0 args")
+		}
+		r := pgaot.PgFinfoMicToLatin2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_mic_to_win1250":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_mic_to_win1250: want 0 args")
+		}
+		r := pgaot.PgFinfoMicToWin1250(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_win1250_to_latin2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_win1250_to_latin2: want 0 args")
+		}
+		r := pgaot.PgFinfoWin1250ToLatin2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_win1250_to_mic":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_win1250_to_mic: want 0 args")
+		}
+		r := pgaot.PgFinfoWin1250ToMic(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "win1250_to_latin2":
+		if len(a) != 1 {
+			panic("aot: win1250_to_latin2: want 1 args")
+		}
+		r := pgaot.Win1250ToLatin2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "win1250_to_mic":
+		if len(a) != 1 {
+			panic("aot: win1250_to_mic: want 1 args")
+		}
+		r := pgaot.Win1250ToMic(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_utf8_and_big5":
 		if len(a) != 0 {
@@ -1207,36 +1207,6 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 			panic("aot: utf8_to_koi8u: want 1 args")
 		}
 		r := pgaot.Utf8ToKoi8u(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "Pg_magic_func_utf8_and_euc2004":
-		if len(a) != 0 {
-			panic("aot: Pg_magic_func_utf8_and_euc2004: want 0 args")
-		}
-		r := pgaot.PgMagicFuncUtf8AndEuc2004(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "euc_jis_2004_to_utf8":
-		if len(a) != 1 {
-			panic("aot: euc_jis_2004_to_utf8: want 1 args")
-		}
-		r := pgaot.EucJis_2004_toUtf8(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_euc_jis_2004_to_utf8":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_euc_jis_2004_to_utf8: want 0 args")
-		}
-		r := pgaot.PgFinfoEucJis_2004_toUtf8(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_utf8_to_euc_jis_2004":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_utf8_to_euc_jis_2004: want 0 args")
-		}
-		r := pgaot.PgFinfoUtf8ToEucJis_2004(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "utf8_to_euc_jis_2004":
-		if len(a) != 1 {
-			panic("aot: utf8_to_euc_jis_2004: want 1 args")
-		}
-		r := pgaot.Utf8ToEucJis_2004(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_utf8_and_euc_cn":
 		if len(a) != 0 {
@@ -1358,6 +1328,36 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Utf8ToEucTw(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_utf8_and_euc2004":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_utf8_and_euc2004: want 0 args")
+		}
+		r := pgaot.PgMagicFuncUtf8AndEuc2004(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "euc_jis_2004_to_utf8":
+		if len(a) != 1 {
+			panic("aot: euc_jis_2004_to_utf8: want 1 args")
+		}
+		r := pgaot.EucJis_2004_toUtf8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_euc_jis_2004_to_utf8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_euc_jis_2004_to_utf8: want 0 args")
+		}
+		r := pgaot.PgFinfoEucJis_2004_toUtf8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_utf8_to_euc_jis_2004":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_utf8_to_euc_jis_2004: want 0 args")
+		}
+		r := pgaot.PgFinfoUtf8ToEucJis_2004(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "utf8_to_euc_jis_2004":
+		if len(a) != 1 {
+			panic("aot: utf8_to_euc_jis_2004: want 1 args")
+		}
+		r := pgaot.Utf8ToEucJis_2004(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_utf8_and_gb18030":
 		if len(a) != 0 {
 			panic("aot: Pg_magic_func_utf8_and_gb18030: want 0 args")
@@ -1418,36 +1418,6 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Utf8ToGbk(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
-	case "Pg_magic_func_utf8_and_iso8859":
-		if len(a) != 0 {
-			panic("aot: Pg_magic_func_utf8_and_iso8859: want 0 args")
-		}
-		r := pgaot.PgMagicFuncUtf8AndIso8859(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "iso8859_to_utf8":
-		if len(a) != 1 {
-			panic("aot: iso8859_to_utf8: want 1 args")
-		}
-		r := pgaot.Iso8859ToUtf8(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_iso8859_to_utf8":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_iso8859_to_utf8: want 0 args")
-		}
-		r := pgaot.PgFinfoIso8859ToUtf8(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "pg_finfo_utf8_to_iso8859":
-		if len(a) != 0 {
-			panic("aot: pg_finfo_utf8_to_iso8859: want 0 args")
-		}
-		r := pgaot.PgFinfoUtf8ToIso8859(m)
-		return []uint64{uint64(uint32(r))}, true
-	case "utf8_to_iso8859":
-		if len(a) != 1 {
-			panic("aot: utf8_to_iso8859: want 1 args")
-		}
-		r := pgaot.Utf8ToIso8859(m, int32(uint32(a[0])))
-		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_utf8_and_iso8859_1":
 		if len(a) != 0 {
 			panic("aot: Pg_magic_func_utf8_and_iso8859_1: want 0 args")
@@ -1477,6 +1447,36 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 			panic("aot: utf8_to_iso8859_1: want 1 args")
 		}
 		r := pgaot.Utf8ToIso8859_1(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_utf8_and_iso8859":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_utf8_and_iso8859: want 0 args")
+		}
+		r := pgaot.PgMagicFuncUtf8AndIso8859(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "iso8859_to_utf8":
+		if len(a) != 1 {
+			panic("aot: iso8859_to_utf8: want 1 args")
+		}
+		r := pgaot.Iso8859ToUtf8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_iso8859_to_utf8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_iso8859_to_utf8: want 0 args")
+		}
+		r := pgaot.PgFinfoIso8859ToUtf8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_utf8_to_iso8859":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_utf8_to_iso8859: want 0 args")
+		}
+		r := pgaot.PgFinfoUtf8ToIso8859(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "utf8_to_iso8859":
+		if len(a) != 1 {
+			panic("aot: utf8_to_iso8859: want 1 args")
+		}
+		r := pgaot.Utf8ToIso8859(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "Pg_magic_func_utf8_and_johab":
 		if len(a) != 0 {
@@ -1627,6 +1627,306 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 			panic("aot: win_to_utf8: want 1 args")
 		}
 		r := pgaot.WinToUtf8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pgcrypto":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pgcrypto: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgcrypto(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_pgcrypto":
+		if len(a) != 0 {
+			panic("aot: _PG_init_pgcrypto: want 0 args")
+		}
+		pgaot.PGInitPgcrypto(m)
+		return nil, true
+	case "pg_armor":
+		if len(a) != 1 {
+			panic("aot: pg_armor: want 1 args")
+		}
+		r := pgaot.PgArmor(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_check_fipsmode":
+		if len(a) != 1 {
+			panic("aot: pg_check_fipsmode: want 1 args")
+		}
+		r := pgaot.PgCheckFipsmode(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_crypt":
+		if len(a) != 1 {
+			panic("aot: pg_crypt: want 1 args")
+		}
+		r := pgaot.PgCrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_dearmor":
+		if len(a) != 1 {
+			panic("aot: pg_dearmor: want 1 args")
+		}
+		r := pgaot.PgDearmor(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_decrypt":
+		if len(a) != 1 {
+			panic("aot: pg_decrypt: want 1 args")
+		}
+		r := pgaot.PgDecrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_decrypt_iv":
+		if len(a) != 1 {
+			panic("aot: pg_decrypt_iv: want 1 args")
+		}
+		r := pgaot.PgDecryptIv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_digest":
+		if len(a) != 1 {
+			panic("aot: pg_digest: want 1 args")
+		}
+		r := pgaot.PgDigest(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_encrypt":
+		if len(a) != 1 {
+			panic("aot: pg_encrypt: want 1 args")
+		}
+		r := pgaot.PgEncrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_encrypt_iv":
+		if len(a) != 1 {
+			panic("aot: pg_encrypt_iv: want 1 args")
+		}
+		r := pgaot.PgEncryptIv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_armor":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_armor: want 0 args")
+		}
+		r := pgaot.PgFinfoPgArmor(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_check_fipsmode":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_check_fipsmode: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCheckFipsmode(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_crypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_crypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_dearmor":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_dearmor: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDearmor(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_decrypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_decrypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDecrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_decrypt_iv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_decrypt_iv: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDecryptIv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_digest":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_digest: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDigest(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_encrypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_encrypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgEncrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_encrypt_iv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_encrypt_iv: want 0 args")
+		}
+		r := pgaot.PgFinfoPgEncryptIv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_gen_salt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_gen_salt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgGenSalt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_gen_salt_rounds":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_gen_salt_rounds: want 0 args")
+		}
+		r := pgaot.PgFinfoPgGenSaltRounds(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_hmac":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_hmac: want 0 args")
+		}
+		r := pgaot.PgFinfoPgHmac(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_random_bytes":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_random_bytes: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRandomBytes(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_random_uuid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_random_uuid: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRandomUuid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_armor_headers":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_armor_headers: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpArmorHeaders(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_key_id_w":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_key_id_w: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpKeyIdW(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_decrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_decrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubDecryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_decrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_decrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubDecryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_encrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_encrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubEncryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_encrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_encrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubEncryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_decrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_decrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymDecryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_decrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_decrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymDecryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_encrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_encrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymEncryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_encrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_encrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymEncryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_gen_salt":
+		if len(a) != 1 {
+			panic("aot: pg_gen_salt: want 1 args")
+		}
+		r := pgaot.PgGenSalt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_gen_salt_rounds":
+		if len(a) != 1 {
+			panic("aot: pg_gen_salt_rounds: want 1 args")
+		}
+		r := pgaot.PgGenSaltRounds(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_hmac":
+		if len(a) != 1 {
+			panic("aot: pg_hmac: want 1 args")
+		}
+		r := pgaot.PgHmac(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_random_bytes":
+		if len(a) != 1 {
+			panic("aot: pg_random_bytes: want 1 args")
+		}
+		r := pgaot.PgRandomBytes(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_random_uuid":
+		if len(a) != 1 {
+			panic("aot: pg_random_uuid: want 1 args")
+		}
+		r := pgaot.PgRandomUuid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_armor_headers":
+		if len(a) != 1 {
+			panic("aot: pgp_armor_headers: want 1 args")
+		}
+		r := pgaot.PgpArmorHeaders(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_key_id_w":
+		if len(a) != 1 {
+			panic("aot: pgp_key_id_w: want 1 args")
+		}
+		r := pgaot.PgpKeyIdW(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_decrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_decrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpPubDecryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_decrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_decrypt_text: want 1 args")
+		}
+		r := pgaot.PgpPubDecryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_encrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_encrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpPubEncryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_encrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_encrypt_text: want 1 args")
+		}
+		r := pgaot.PgpPubEncryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_decrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_decrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpSymDecryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_decrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_decrypt_text: want 1 args")
+		}
+		r := pgaot.PgpSymDecryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_encrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_encrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpSymEncryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_encrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_encrypt_text: want 1 args")
+		}
+		r := pgaot.PgpSymEncryptText(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {

@@ -1782,6 +1782,9 @@ func F_s_lock_stuck(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F_save_ps_display_args(m *base.Module, l0 int32, l1 int32) int32 {
+	return l1
+}
 func F_sbrk(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

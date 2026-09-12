@@ -3,8 +3,10 @@ package pgmem_test
 import (
 	"context"
 	"database/sql"
+	"errors"
 	"fmt"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
@@ -706,5 +708,105 @@ func TestNotifyInProcessDial(t *testing.T) {
 		if n := waitNotification(t, listener, 5*time.Second); n == nil {
 			t.Fatalf("notification %d missing", i)
 		}
+	}
+}
+
+// CREATE DATABASE and DROP DATABASE run fine on the live session, but the
+// backend serves only Options.Database: a connection naming another
+// database is refused (3D000) rather than silently attached to the served
+// one, which is what Prisma's shadow database or a per-worker database
+// would otherwise hit.
+func TestOtherDatabaseIsRefused(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{Database: "app"})
+	conn, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer conn.Close(ctx)
+	if _, err := conn.Exec(ctx, "CREATE DATABASE shadow"); err != nil {
+		t.Fatalf("CREATE DATABASE: %v", err)
+	}
+	var n int
+	if err := conn.QueryRow(ctx, "SELECT count(*) FROM pg_database WHERE datname = 'shadow'").Scan(&n); err != nil || n != 1 {
+		t.Fatalf("pg_database lookup: n=%d err=%v", n, err)
+	}
+
+	cfg, err := pgx.ParseConfig(s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	cfg.Database = "shadow"
+	_, err = pgx.ConnectConfig(ctx, cfg)
+	var pgErr *pgconn.PgError
+	if !errors.As(err, &pgErr) || pgErr.Code != "3D000" {
+		t.Fatalf("connecting to shadow: got %v, want SQLSTATE 3D000", err)
+	}
+	if !strings.Contains(pgErr.Message, `"shadow"`) || !strings.Contains(pgErr.Message, `"app"`) {
+		t.Fatalf("message = %q", pgErr.Message)
+	}
+
+	// the served database still accepts connections, with or without an
+	// explicit database name
+	cfg.Database = "app"
+	c2, err := pgx.ConnectConfig(ctx, cfg)
+	if err != nil {
+		t.Fatalf("reconnect: %v", err)
+	}
+	var name string
+	if err := c2.QueryRow(ctx, "SELECT current_database()").Scan(&name); err != nil || name != "app" {
+		t.Fatalf("current_database = %q err=%v", name, err)
+	}
+	c2.Close(ctx)
+
+	if _, err := conn.Exec(ctx, "DROP DATABASE shadow"); err != nil {
+		t.Fatalf("DROP DATABASE: %v", err)
+	}
+}
+
+// An execution error inside an extended-protocol batch must be answered
+// with exactly one ReadyForQuery, at the Sync. PGlite's longjmp shim used
+// to send one before the recovery had set ignore_till_sync, so a second
+// one followed at Sync; pgx then read the stray one as the reply to its
+// statement-cache Close pipeline and closed the connection.
+func TestExtendedProtocolErrorSendsOneReadyForQuery(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{})
+	conn, err := pgx.Connect(ctx, s.DSN()) // default mode caches statements
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer conn.Close(ctx)
+	var n int
+	err = conn.QueryRow(ctx, "select 1/$1::int", 0).Scan(&n)
+	var pgErr *pgconn.PgError
+	if !errors.As(err, &pgErr) || pgErr.Code != "22012" {
+		t.Fatalf("want division by zero, got %v", err)
+	}
+	// pgx now deallocates the invalidated cached statement (Close + Sync)
+	// before running the next query
+	if err := conn.QueryRow(ctx, "select 2").Scan(&n); err != nil || n != 2 {
+		t.Fatalf("after error: n=%d err=%v", n, err)
+	}
+	if err := conn.QueryRow(ctx, "select 1/$1::int", 0).Scan(&n); !errors.As(err, &pgErr) {
+		t.Fatalf("second error: %v", err)
+	}
+	if err := conn.QueryRow(ctx, "select 3").Scan(&n); err != nil || n != 3 {
+		t.Fatalf("after second error: n=%d err=%v", n, err)
+	}
+
+	// the same at the protocol level: Parse/Bind/Execute(error)/Sync gets
+	// ErrorResponse then ReadyForQuery and nothing more
+	pc, err := pgconn.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer pc.Close(ctx)
+	rr := pc.ExecParams(ctx, "select 1/$1::int", [][]byte{[]byte("0")}, nil, nil, nil)
+	if _, err := rr.Close(); !errors.As(err, &pgErr) || pgErr.Code != "22012" {
+		t.Fatalf("ExecParams: %v", err)
+	}
+	if err := pc.ExecParams(ctx, "select 1", nil, nil, nil, nil).Read().Err; err != nil {
+		t.Fatalf("ExecParams after error: %v", err)
 	}
 }

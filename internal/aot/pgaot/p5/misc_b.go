@@ -895,6 +895,46 @@ func F_bernoulli_samplescangetsamplesize(m *base.Module, l0 int32, l1 int32, l2 
 		return
 	}
 }
+func F_bf_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v22 int32
+	_ = v22
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+92))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+84)) = l2
+	if l2 != 0 {
+		v12 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), l1, l2)
+		mBase = m.M
+	} else {
+	}
+	v15 = v6 + int32(68)
+	if l3 != 0 {
+		if v8 != 0 {
+			v16 = F__emscripten_memcpy_bulkmem(m, v15, l3, v8)
+			mBase = m.M
+		} else {
+		}
+		return int32(0)
+	} else {
+		v22 = F__emscripten_memset_bulkmem(m, v15, base.I32_extend8_s(int32(0)), v8)
+		mBase = m.M
+		return int32(0)
+	}
+}
 func F_big5_to_euc_tw(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

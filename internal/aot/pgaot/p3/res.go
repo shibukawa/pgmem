@@ -136,3 +136,68 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	v2 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+96)) = v2
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v5 <= v2 {
+		v18 = F___memset(m, l0, int32(0), int32(100))
+		mBase = m.M
+		F_pfree(m, l0)
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return
+		} else {
+			return
+		}
+	} else {
+		m.Env.Pgmem_cipher_free(m, v5)
+		mBase = m.M
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+96))
+		if v9 == int32(0) {
+			v18 = F___memset(m, l0, int32(0), int32(100))
+			mBase = m.M
+			F_pfree(m, l0)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				return
+			}
+		} else {
+			F_ResourceOwnerForget(m, v9, l0, int32(_a_F_ResOwnerReleasePGMEMCipher_0))
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				v18 = F___memset(m, l0, int32(0), int32(100))
+				mBase = m.M
+				F_pfree(m, l0)
+				mBase = m.M
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
+	}
+}

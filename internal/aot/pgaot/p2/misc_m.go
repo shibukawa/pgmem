@@ -10342,6 +10342,86 @@ func F_mcv_combine_selectivities(m *base.Module, l0 float64, l1 float64, l2 floa
 	}
 	return v28
 }
+func F_mdc_free_2(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	m.T0[v2].(func(*base.Module, int32))(m, l0)
+	mBase = m.M
+	v4 = m.ExcPending
+	if v4 != 0 {
+		return
+	} else {
+		return
+	}
+}
+func F_mdc_init_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v11 = F_pgp_load_digest(m, int32(2), v6+int32(12))
+	mBase = m.M
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return int32(0)
+	} else {
+		if int32(0) <= v11 {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
+			*(*int32)(unsafe.Add(mBase, uint32(l2))) = v17
+			v20 = int32(0)
+		} else {
+			v20 = v11
+		}
+		m.G0 = v6 + int32(16)
+		return v20
+	}
+}
+func F_mdc_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	m.T0[v5].(func(*base.Module, int32, int32, int32))(m, l1, l2, l3)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		v10 = F_pushf_write(m, l0, l2, l3)
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int32(0)
+		} else {
+			return v10
+		}
+	}
+}
 func F_mdfiletagmatches(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5226)
-	m.G0 = int32(12919808)
+	m.T0 = make([]any, 5454)
+	m.G0 = int32(13007856)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -48,7 +48,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4319659
+	m.DataEnd = 4336955
 	initData_0(m)
 	return m
 }
@@ -81,8 +81,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5226)
-	m.G0 = int32(12919808)
+	m.T0 = make([]any, 5454)
+	m.G0 = int32(13007856)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -107,7 +107,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4319659
+	m.DataEnd = 4336955
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -122,8 +122,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5226)
-	m.G0 = int32(12919808)
+	m.T0 = make([]any, 5454)
+	m.G0 = int32(13007856)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -148,18 +148,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4319659
+	m.DataEnd = 4336955
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1557520])
-	copy(m.Memory[1562848:], wasm2goData_data_bin[1557520:1557529])
-	copy(m.Memory[1564896:], wasm2goData_data_bin[1557529:1570457])
-	copy(m.Memory[1589252:], wasm2goData_data_bin[1570457:1663698])
-	copy(m.Memory[1683520:], wasm2goData_data_bin[1663698:1775354])
-	copy(m.Memory[1806392:], wasm2goData_data_bin[1775354:4007808])
-	copy(m.Memory[4046336:], wasm2goData_data_bin[4007808:4281131])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1565248])
+	copy(m.Memory[1570576:], wasm2goData_data_bin[1565248:1565257])
+	copy(m.Memory[1572624:], wasm2goData_data_bin[1565257:1578185])
+	copy(m.Memory[1597444:], wasm2goData_data_bin[1578185:1671426])
+	copy(m.Memory[1691712:], wasm2goData_data_bin[1671426:1783082])
+	copy(m.Memory[1814584:], wasm2goData_data_bin[1783082:4022640])
+	copy(m.Memory[4061632:], wasm2goData_data_bin[4022640:4297963])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -970,6 +970,156 @@ func Utf8ToWin(m *base.Module, l0 int32) int32 {
 }
 func WinToUtf8(m *base.Module, l0 int32) int32 {
 	return F_win_to_utf8(m, l0)
+}
+func PgMagicFuncPgcrypto(m *base.Module) int32 {
+	return F_Pg_magic_func_pgcrypto(m)
+}
+func PGInitPgcrypto(m *base.Module) {
+	F__PG_init_pgcrypto(m)
+}
+func PgArmor(m *base.Module, l0 int32) int32 {
+	return F_pg_armor(m, l0)
+}
+func PgCheckFipsmode(m *base.Module, l0 int32) int32 {
+	return F_pg_numa_available(m, l0)
+}
+func PgCrypt(m *base.Module, l0 int32) int32 {
+	return F_pg_crypt(m, l0)
+}
+func PgDearmor(m *base.Module, l0 int32) int32 {
+	return F_pg_dearmor(m, l0)
+}
+func PgDecrypt(m *base.Module, l0 int32) int32 {
+	return F_pg_decrypt(m, l0)
+}
+func PgDecryptIv(m *base.Module, l0 int32) int32 {
+	return F_pg_decrypt_iv(m, l0)
+}
+func PgDigest(m *base.Module, l0 int32) int32 {
+	return F_pg_digest(m, l0)
+}
+func PgEncrypt(m *base.Module, l0 int32) int32 {
+	return F_pg_encrypt(m, l0)
+}
+func PgEncryptIv(m *base.Module, l0 int32) int32 {
+	return F_pg_encrypt_iv(m, l0)
+}
+func PgFinfoPgArmor(m *base.Module) int32 {
+	return F_pg_finfo_pg_armor(m)
+}
+func PgFinfoPgCheckFipsmode(m *base.Module) int32 {
+	return F_pg_finfo_pg_check_fipsmode(m)
+}
+func PgFinfoPgCrypt(m *base.Module) int32 {
+	return F_pg_finfo_pg_crypt(m)
+}
+func PgFinfoPgDearmor(m *base.Module) int32 {
+	return F_pg_finfo_pg_dearmor(m)
+}
+func PgFinfoPgDecrypt(m *base.Module) int32 {
+	return F_pg_finfo_pg_decrypt(m)
+}
+func PgFinfoPgDecryptIv(m *base.Module) int32 {
+	return F_pg_finfo_pg_decrypt_iv(m)
+}
+func PgFinfoPgDigest(m *base.Module) int32 {
+	return F_pg_finfo_pg_digest(m)
+}
+func PgFinfoPgEncrypt(m *base.Module) int32 {
+	return F_pg_finfo_pg_encrypt(m)
+}
+func PgFinfoPgEncryptIv(m *base.Module) int32 {
+	return F_pg_finfo_pg_encrypt_iv(m)
+}
+func PgFinfoPgGenSalt(m *base.Module) int32 {
+	return F_pg_finfo_pg_gen_salt(m)
+}
+func PgFinfoPgGenSaltRounds(m *base.Module) int32 {
+	return F_pg_finfo_pg_gen_salt_rounds(m)
+}
+func PgFinfoPgHmac(m *base.Module) int32 {
+	return F_pg_finfo_pg_hmac(m)
+}
+func PgFinfoPgRandomBytes(m *base.Module) int32 {
+	return F_pg_finfo_pg_random_bytes(m)
+}
+func PgFinfoPgRandomUuid(m *base.Module) int32 {
+	return F_pg_finfo_pg_random_uuid(m)
+}
+func PgFinfoPgpArmorHeaders(m *base.Module) int32 {
+	return F_pg_finfo_pgp_armor_headers(m)
+}
+func PgFinfoPgpKeyIdW(m *base.Module) int32 {
+	return F_pg_finfo_pgp_key_id_w(m)
+}
+func PgFinfoPgpPubDecryptBytea(m *base.Module) int32 {
+	return F_pg_finfo_pgp_pub_decrypt_bytea(m)
+}
+func PgFinfoPgpPubDecryptText(m *base.Module) int32 {
+	return F_pg_finfo_pgp_pub_decrypt_text(m)
+}
+func PgFinfoPgpPubEncryptBytea(m *base.Module) int32 {
+	return F_pg_finfo_pgp_pub_encrypt_bytea(m)
+}
+func PgFinfoPgpPubEncryptText(m *base.Module) int32 {
+	return F_pg_finfo_pgp_pub_encrypt_text(m)
+}
+func PgFinfoPgpSymDecryptBytea(m *base.Module) int32 {
+	return F_pg_finfo_pgp_sym_decrypt_bytea(m)
+}
+func PgFinfoPgpSymDecryptText(m *base.Module) int32 {
+	return F_pg_finfo_pgp_sym_decrypt_text(m)
+}
+func PgFinfoPgpSymEncryptBytea(m *base.Module) int32 {
+	return F_pg_finfo_pgp_sym_encrypt_bytea(m)
+}
+func PgFinfoPgpSymEncryptText(m *base.Module) int32 {
+	return F_pg_finfo_pgp_sym_encrypt_text(m)
+}
+func PgGenSalt(m *base.Module, l0 int32) int32 {
+	return F_pg_gen_salt(m, l0)
+}
+func PgGenSaltRounds(m *base.Module, l0 int32) int32 {
+	return F_pg_gen_salt_rounds(m, l0)
+}
+func PgHmac(m *base.Module, l0 int32) int32 {
+	return F_pg_hmac(m, l0)
+}
+func PgRandomBytes(m *base.Module, l0 int32) int32 {
+	return F_pg_random_bytes(m, l0)
+}
+func PgRandomUuid(m *base.Module, l0 int32) int32 {
+	return F_pg_random_uuid(m, l0)
+}
+func PgpArmorHeaders(m *base.Module, l0 int32) int32 {
+	return F_pgp_armor_headers(m, l0)
+}
+func PgpKeyIdW(m *base.Module, l0 int32) int32 {
+	return F_pgp_key_id_w(m, l0)
+}
+func PgpPubDecryptBytea(m *base.Module, l0 int32) int32 {
+	return F_pgp_pub_decrypt_bytea(m, l0)
+}
+func PgpPubDecryptText(m *base.Module, l0 int32) int32 {
+	return F_pgp_pub_decrypt_text(m, l0)
+}
+func PgpPubEncryptBytea(m *base.Module, l0 int32) int32 {
+	return F_pgp_pub_encrypt_bytea(m, l0)
+}
+func PgpPubEncryptText(m *base.Module, l0 int32) int32 {
+	return F_pgp_pub_encrypt_text(m, l0)
+}
+func PgpSymDecryptBytea(m *base.Module, l0 int32) int32 {
+	return F_pgp_sym_decrypt_bytea(m, l0)
+}
+func PgpSymDecryptText(m *base.Module, l0 int32) int32 {
+	return F_pgp_sym_decrypt_text(m, l0)
+}
+func PgpSymEncryptBytea(m *base.Module, l0 int32) int32 {
+	return F_pgp_sym_encrypt_bytea(m, l0)
+}
+func PgpSymEncryptText(m *base.Module, l0 int32) int32 {
+	return F_pgp_sym_encrypt_text(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

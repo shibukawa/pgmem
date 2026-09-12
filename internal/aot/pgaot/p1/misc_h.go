@@ -7709,6 +7709,75 @@ L27:
 	v82 = int32(1)
 	goto L1
 }
+func F_hmac_reset(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	v6 = m.T0[v5].(func(*base.Module, int32) int32)(m, v4)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
+	} else {
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+8))
+		m.T0[v8].(func(*base.Module, int32))(m, v4)
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return
+		} else {
+			v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+			m.T0[v12].(func(*base.Module, int32, int32, int32))(m, v4, v11, v6)
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				return
+			}
+		}
+	}
+}
+func F_hmac_update(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	m.T0[v5].(func(*base.Module, int32, int32, int32))(m, v4, l1, l2)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
+	} else {
+		return
+	}
+}
 func F_hungarian_ISO_8859_2_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

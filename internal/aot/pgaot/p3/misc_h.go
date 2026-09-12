@@ -7732,6 +7732,28 @@ L68:
 	*(*uint16)(unsafe.Add(mBase, uint32(l0)+50)) = uint16(v166)
 	goto L26
 }
+func F_hmac_block_size(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+4))
+	v4 = m.T0[v3].(func(*base.Module, int32) int32)(m, v2)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		return v4
+	}
+}
 func F_htonl(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2

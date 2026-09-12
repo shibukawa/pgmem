@@ -3612,27 +3612,27 @@ L18:
 func F_DefineCustomStringVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
 	var v12 int32
 	_ = v12
-	var v20 int32
-	_ = v20
-	v11 = F_init_custom_variable(m, l0, l1, int32(6), int32(1), int32(3), int32(120))
+	var v13 int32
+	_ = v13
+	var v21 int32
+	_ = v21
+	v12 = F_init_custom_variable(m, l0, l1, int32(0), int32(6), int32(1), int32(3), int32(120))
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+108)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+104)) = l5
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+100)) = l4
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+96)) = l3
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+92)) = l2
-		F_define_custom_variable(m, v11)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+108)) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = l5
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+100)) = l4
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+96)) = l3
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+92)) = l2
+		F_define_custom_variable(m, v12)
 		mBase = m.M
-		v20 = m.ExcPending
-		if v20 != 0 {
+		v21 = m.ExcPending
+		if v21 != 0 {
 			return
 		} else {
 			return
@@ -8204,6 +8204,67 @@ func F_dgamma(m *base.Module, l0 int32) int32 {
 						return v397
 					}
 				}
+			}
+		}
+	}
+}
+func F_digest_free(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
+	m.Env.Pgmem_hash_free(m, v5)
+	mBase = m.M
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
+	if v7 != 0 {
+		F_ResourceOwnerForget(m, v7, v4, int32(_a_F_digest_free_0))
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return
+		} else {
+			F_pfree(m, v4)
+			mBase = m.M
+			v12 = m.ExcPending
+			if v12 != 0 {
+				return
+			} else {
+				F_pfree(m, l0)
+				mBase = m.M
+				v14 = m.ExcPending
+				if v14 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
+	} else {
+		F_pfree(m, v4)
+		mBase = m.M
+		v12 = m.ExcPending
+		if v12 != 0 {
+			return
+		} else {
+			F_pfree(m, l0)
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				return
 			}
 		}
 	}

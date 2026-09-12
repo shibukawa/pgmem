@@ -41,6 +41,24 @@ func F_pg_finfo_mic_to_iso(m *base.Module) int32 {
 func F_pg_finfo_mic_to_latin1(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin1_0)
 }
+func F_pg_finfo_pg_random_bytes(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_random_bytes_0)
+}
+func F_pg_finfo_pg_random_uuid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_random_uuid_0)
+}
+func F_pg_finfo_pgp_pub_decrypt_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_pub_decrypt_text_0)
+}
+func F_pg_finfo_pgp_pub_encrypt_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_pub_encrypt_bytea_0)
+}
+func F_pg_finfo_pgp_pub_encrypt_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_pub_encrypt_text_0)
+}
+func F_pg_finfo_pgp_sym_encrypt_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_sym_encrypt_bytea_0)
+}
 func F_pg_finfo_sjis_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_utf8_0)
 }

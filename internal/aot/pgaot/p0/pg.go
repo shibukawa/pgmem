@@ -4972,517 +4972,27 @@ L59:
 	;
 	goto L1
 }
-func F_pg_base64_dec_len(m *base.Module, l0 int32, l1 int32) int64 {
-	return int64(base.Ui64(base.I64_extend_i32_u(l1)*int64(3)) >> (uint(int64(2)) % 64))
-}
-func F_pg_base64_decode(m *base.Module, l0 int32, l1 int32, l2 int32) int64 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v12 int32
-	_ = v12
+func F__PG_init_pgcrypto(m *base.Module) {
 	var v14 int32
 	_ = v14
-	var v16 int32
-	_ = v16
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v56 int32
-	_ = v56
-	var v68 int32
-	_ = v68
-	var v71 int32
-	_ = v71
-	var v75 int32
-	_ = v75
-	var v80 int32
-	_ = v80
-	var v89 int32
-	_ = v89
-	var v92 int32
-	_ = v92
-	var v95 int32
-	_ = v95
-	var v97 int32
-	_ = v97
-	var v101 int32
-	_ = v101
-	var v104 int32
-	_ = v104
-	var v113 int32
-	_ = v113
-	var v118 int32
-	_ = v118
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
-	var v128 int32
-	_ = v128
-	var v129 int32
-	_ = v129
-	var v131 int32
-	_ = v131
-	var v132 int32
-	_ = v132
-	var v143 int32
-	_ = v143
-	var v146 int32
-	_ = v146
-	var v148 int32
-	_ = v148
-	var v149 int32
-	_ = v149
-	var v150 int32
-	_ = v150
-	var v153 int32
-	_ = v153
-	var v157 int32
-	_ = v157
-	var v161 int32
-	_ = v161
-	var v179 int32
-	_ = v179
-	var v182 int32
-	_ = v182
-	var v183 int32
-	_ = v183
-	var v184 int32
-	_ = v184
-	var v189 int32
-	_ = v189
-	var v194 int32
-	_ = v194
-	var v198 int32
-	_ = v198
-	var v201 int32
-	_ = v201
-	var v205 int32
-	_ = v205
-	var v209 int32
-	_ = v209
-	var v214 int32
-	_ = v214
-	v4 = int32(0)
-	v12 = m.G0
-	v14 = v12 - int32(16)
-	m.G0 = v14
-	v16 = l0 + l1
-	if base.Ui32(l0) < base.Ui32(v16) {
-		goto L3
+	F_DefineCustomEnumVariable(m, int32(_a_F__PG_init_pgcrypto_0), int32(_a_F__PG_init_pgcrypto_1), int32(_a_F__PG_init_pgcrypto_2), int32(_a_F__PG_init_pgcrypto_3), int32(_a_F__PG_init_pgcrypto_4))
+	v14 = m.ExcPending
+	if v14 != 0 {
+		return
 	} else {
-		goto L4
+		F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pgcrypto_5))
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return
+		} else {
+			return
+		}
 	}
-L1:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v198 = m.ExcPending
-	if v198 != 0 {
-		goto L26
-	} else {
-		goto L48
-	}
-L2:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v179 = m.ExcPending
-	if v179 != 0 {
-		goto L26
-	} else {
-		goto L43
-	}
-L3:
-	;
-	v18 = l0
-	v21 = l2
-	v23 = v4
-	v24 = v4
-	v25 = v4
-	goto L6
-L4:
-	;
-	v161 = l2
-	goto L5
-L5:
-	;
-	m.G0 = v14 + int32(16)
-	return base.I64_extend_i32_s(v161 - l2)
-L6:
-	;
-	v30 = v18
-	goto L9
-L7:
-	;
-	if v157 != 0 {
-		goto L1
-	} else {
-		goto L42
-	}
-L8:
-	;
-	goto L7
-L9:
-	;
-	v41 = v30 + int32(1)
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30))))
-	v44 = v42 - int32(9)
-	if base.Ui32(int32(23)) < base.Ui32(v44) {
-		goto L11
-	} else {
-		goto L12
-	}
-L10:
-	;
-	if v42 == int32(61) {
-		goto L20
-	} else {
-		goto L21
-	}
-L11:
-	;
-	goto L10
-L12:
-	;
-	if int32(1)<<(uint(v44)%32)&int32(_a_F_pg_base64_decode_0) == int32(0) {
-		goto L11
-	} else {
-		goto L13
-	}
-L13:
-	;
-	if base.Ui32(v41) < base.Ui32(v16) {
-		v30 = v41
-		goto L9
-	} else {
-		goto L14
-	}
-L14:
-	;
-	v153 = v21
-	v157 = v25
-	goto L8
-L15:
-	;
-	if base.Ui32(v41) < base.Ui32(v16) {
-		v18 = v41
-		v21 = v146
-		v23 = v148
-		v24 = v149
-		v25 = v150
-		goto L6
-	} else {
-		goto L41
-	}
-L16:
-	;
-	v132 = int32(0)
-	if base.B2i32(v128 == v132)&base.B2i32(base.Ui32(v129) < base.Ui32(int32(3))) == v132 {
-		goto L38
-	} else {
-		goto L39
-	}
-L17:
-	;
-	v123 = int32(base.Ui32(v118) >> (uint(int32(8)) % 32))
-	*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)) = uint8(v123)
-	v127 = v118
-	v128 = v119
-	v129 = v120
-	v131 = v21 + int32(2)
-	goto L16
-L18:
-	;
-	v113 = int32(base.Ui32(v24) >> (uint(int32(10)) % 32))
-	*(*uint8)(unsafe.Add(mBase, uint32(v21))) = uint8(v113)
-	v118 = v24 << (uint(int32(6)) % 32)
-	v119 = v56
-	v120 = int32(2)
-	goto L17
-L19:
-	;
-	v95 = v92 + v24<<(uint(int32(6))%32)
-	v97 = v25 + int32(1)
-	if v97 != int32(4) {
-		goto L33
-	} else {
-		goto L34
-	}
-L20:
-	;
-	v56 = int32(0)
-	if v23 != 0 {
-		v92 = v56
-		goto L19
-	} else {
-		goto L23
-	}
-L21:
-	;
-	goto L22
-L22:
-	;
-	if base.Ui32(int32(125)) < base.Ui32((v42-int32(1))&int32(255)) {
-		goto L2
-	} else {
-		goto L31
-	}
-L23:
-	;
-	switch v25 - int32(2) {
-	case 0:
-		goto L25
-	case 1:
-		goto L18
-	default:
-		goto L24
-	}
-L24:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L26
-	} else {
-		goto L27
-	}
-L25:
-	;
-	v146 = v21
-	v148 = int32(1)
-	v149 = v24 << (uint(int32(6)) % 32)
-	v150 = int32(3)
-	goto L15
-L26:
-	;
-	return int64(0)
-L27:
-	;
-	F_errcode(m, int32(50856066))
-	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
-		goto L26
-	} else {
-		goto L28
-	}
-L28:
-	;
-	F_errmsg(m, int32(_a_F_pg_base64_decode_1), int32(0))
-	mBase = m.M
-	v75 = m.ExcPending
-	if v75 != 0 {
-		goto L26
-	} else {
-		goto L29
-	}
-L29:
-	;
-	F_errfinish(m, int32(_a_F_pg_base64_decode_2), int32(365), int32(_a_F_pg_base64_decode_3))
-	mBase = m.M
-	v80 = m.ExcPending
-	if v80 != 0 {
-		goto L26
-	} else {
-		goto L30
-	}
-L30:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L31:
-	;
-	v89 = int32(*(*int8)(unsafe.Add(mBase, uint32(v42)+uint32(_c_F_pg_base64_decode[0]))))
-	if v89 < int32(0) {
-		goto L2
-	} else {
-		goto L32
-	}
-L32:
-	;
-	v92 = v89
-	goto L19
-L33:
-	;
-	v146 = v21
-	v148 = v23
-	v149 = v95
-	v150 = v97
-	goto L15
-L34:
-	;
-	goto L35
-L35:
-	;
-	v101 = int32(base.Ui32(v95) >> (uint(int32(16)) % 32))
-	*(*uint8)(unsafe.Add(mBase, uint32(v21))) = uint8(v101)
-	v104 = base.B2i32(v23 == int32(0))
-	if v23 == int32(0) {
-		v118 = v95
-		v119 = v104
-		v120 = v23
-		goto L17
-	} else {
-		goto L36
-	}
-L36:
-	;
-	if base.Ui32(int32(2)) <= base.Ui32(v23) {
-		v118 = v95
-		v119 = v104
-		v120 = v23
-		goto L17
-	} else {
-		goto L37
-	}
-L37:
-	;
-	v127 = v95
-	v128 = int32(0)
-	v129 = v23
-	v131 = v21 + int32(1)
-	goto L16
-L38:
-	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v131))) = uint8(v127)
-	v143 = v131 + int32(1)
-	goto L40
-L39:
-	;
-	v143 = v131
-	goto L40
-L40:
-	;
-	v146 = v143
-	v148 = v129
-	v149 = v132
-	v150 = int32(0)
-	goto L15
-L41:
-	;
-	v153 = v146
-	v157 = v150
-	goto L8
-L42:
-	;
-	v161 = v153
-	goto L5
-L43:
-	;
-	F_errcode(m, int32(50856066))
-	mBase = m.M
-	v182 = m.ExcPending
-	if v182 != 0 {
-		goto L26
-	} else {
-		goto L44
-	}
-L44:
-	;
-	v183 = F_pg_mblen_range(m, v30, v16)
-	mBase = m.M
-	v184 = m.ExcPending
-	if v184 != 0 {
-		goto L26
-	} else {
-		goto L45
-	}
-L45:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v30
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v183
-	F_errmsg(m, int32(_a_F_pg_base64_decode_4), v14)
-	mBase = m.M
-	v189 = m.ExcPending
-	if v189 != 0 {
-		goto L26
-	} else {
-		goto L46
-	}
-L46:
-	;
-	F_errfinish(m, int32(_a_F_pg_base64_decode_2), int32(378), int32(_a_F_pg_base64_decode_3))
-	mBase = m.M
-	v194 = m.ExcPending
-	if v194 != 0 {
-		goto L26
-	} else {
-		goto L47
-	}
-L47:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L48:
-	;
-	F_errcode(m, int32(50856066))
-	mBase = m.M
-	v201 = m.ExcPending
-	if v201 != 0 {
-		goto L26
-	} else {
-		goto L49
-	}
-L49:
-	;
-	F_errmsg(m, int32(_a_F_pg_base64_decode_5), int32(0))
-	mBase = m.M
-	v205 = m.ExcPending
-	if v205 != 0 {
-		goto L26
-	} else {
-		goto L50
-	}
-L50:
-	;
-	F_errhint(m, int32(_a_F_pg_base64_decode_6), int32(0))
-	mBase = m.M
-	v209 = m.ExcPending
-	if v209 != 0 {
-		goto L26
-	} else {
-		goto L51
-	}
-L51:
-	;
-	F_errfinish(m, int32(_a_F_pg_base64_decode_2), int32(399), int32(_a_F_pg_base64_decode_3))
-	mBase = m.M
-	v214 = m.ExcPending
-	if v214 != 0 {
-		goto L26
-	} else {
-		goto L52
-	}
-L52:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
+}
+func F_pg_base64_dec_len(m *base.Module, l0 int32, l1 int32) int64 {
+	return int64(base.Ui64(base.I64_extend_i32_u(l1)*int64(3)) >> (uint(int64(2)) % 64))
 }
 func F_pg_big5_mblen(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -10301,6 +9811,207 @@ func F_pg_conversion_is_visible(m *base.Module, l0 int32) int32 {
 		}
 		m.G0 = v7 + int32(16)
 		return v23
+	}
+}
+func F_pg_crypt(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v62 int32
+	_ = v62
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = F_pg_detoast_datum_packed(m, v8)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v14 = F_pg_detoast_datum_packed(m, v13)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			v16 = F_text_to_cstring(m, v9)
+			mBase = m.M
+			v17 = m.ExcPending
+			if v17 != 0 {
+				return int32(0)
+			} else {
+				v18 = F_text_to_cstring(m, v14)
+				mBase = m.M
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return int32(0)
+				} else {
+					v21 = F_palloc0(m, int32(128))
+					mBase = m.M
+					v22 = m.ExcPending
+					if v22 != 0 {
+						return int32(0)
+					} else {
+						v24 = F_px_crypt(m, v16, v18, v21, int32(128))
+						mBase = m.M
+						v25 = m.ExcPending
+						if v25 != 0 {
+							return int32(0)
+						} else {
+							F_pfree(m, v16)
+							mBase = m.M
+							v27 = m.ExcPending
+							if v27 != 0 {
+								return int32(0)
+							} else {
+								F_pfree(m, v18)
+								mBase = m.M
+								v29 = m.ExcPending
+								if v29 != 0 {
+									return int32(0)
+								} else {
+									if v24 != 0 {
+										v30 = F_cstring_to_text(m, v24)
+										mBase = m.M
+										v31 = m.ExcPending
+										if v31 != 0 {
+											return int32(0)
+										} else {
+											F_pfree(m, v21)
+											mBase = m.M
+											v33 = m.ExcPending
+											if v33 != 0 {
+												return int32(0)
+											} else {
+												v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+												if v34 != v9 {
+													F_pfree(m, v9)
+													mBase = m.M
+													v37 = m.ExcPending
+													if v37 != 0 {
+														return int32(0)
+													} else {
+														v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+														if v38 != v14 {
+															F_pfree(m, v14)
+															mBase = m.M
+															v41 = m.ExcPending
+															if v41 != 0 {
+																return int32(0)
+															} else {
+																return v30
+															}
+														} else {
+															return v30
+														}
+													}
+												} else {
+													v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+													if v38 != v14 {
+														F_pfree(m, v14)
+														mBase = m.M
+														v41 = m.ExcPending
+														if v41 != 0 {
+															return int32(0)
+														} else {
+															return v30
+														}
+													} else {
+														return v30
+													}
+												}
+											}
+										}
+									} else {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v46 = m.ExcPending
+										if v46 != 0 {
+											return int32(0)
+										} else {
+											F_errcode(m, int32(579))
+											mBase = m.M
+											v49 = m.ExcPending
+											if v49 != 0 {
+												return int32(0)
+											} else {
+												F_errmsg(m, int32(_a_F_pg_crypt_0), int32(0))
+												mBase = m.M
+												v55 = m.ExcPending
+												if v55 != 0 {
+													return int32(0)
+												} else {
+													F_errfinish(m, int32(_a_F_pg_crypt_1), int32(236), int32(_a_F_pg_crypt_2))
+													mBase = m.M
+													v62 = m.ExcPending
+													if v62 != 0 {
+														return int32(0)
+													} else {
+														base.Wasm_trap_unreachable()
+														for {
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_pg_cryptohash_error(m *base.Module, l0 int32) int32 {

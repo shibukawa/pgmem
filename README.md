@@ -70,7 +70,7 @@ nothing to download at run time.
 | simple indexed `SELECT` via pgx over TCP | ~27 µs |
 | same, in-process via `Server.Dial` | ~8.5 µs |
 | sort + count over 200k generated rows | ~95 ms |
-| what ships | 108 MB generated Go (~35 s to compile once), 1.5 MB of data |
+| what ships | 110 MB generated Go (~35 s to compile once), 1.5 MB of data |
 | minimal program, `-ldflags="-s -w"` | 36 MB |
 
 Reference measurements and their conditions are in
@@ -119,13 +119,30 @@ is still executed as wasm, under [wazero](https://wazero.io), but only by
   MD5 and SHA-1/SHA-2 (`md5()`, `sha256()` ..., SCRAM's HMAC) run on Go's
   `crypto/*` through a host-side replacement of `src/common/cryptohash.c`,
   and `poll()` sleeps on the host so `pg_sleep` and timeouts do not spin.
-  There is no AES or TLS code: the build has no OpenSSL and no pgcrypto.
+  There is no OpenSSL: pgcrypto's OpenSSL layer (`openssl.c`,
+  `pgp-mpi-openssl.c`) is replaced by `wasm/pgmem_pgcrypto_*.inc`, which
+  hand digests, the symmetric ciphers (AES, Blowfish, DES, 3DES, CAST5 in
+  ECB/CBC/CFB) and the OpenPGP RSA/ElGamal arithmetic to Go
+  (`internal/host/crypto.go`: `crypto/*`, `golang.org/x/crypto`,
+  `math/big`), and `pgp-compress.c` by `wasm/pgmem_pgcrypto_compress.inc`,
+  which does OpenPGP ZIP/ZLIB compression on `compress/flate` and
+  `compress/zlib`. Its own `crypt()` algorithms and the OpenPGP packet
+  code are the upstream C. There is no TLS code.
+- Contrib extensions are linked in statically like plpgsql
+  (`CONTRIB_MODULES` in `wasm/build.sh`); `CREATE EXTENSION pgcrypto` works
+  out of the box. `testdata/regress` replays the upstream pgcrypto
+  regression suite against it (`TestPgcryptoRegress`).
 - `internal/aot` binds that table to the generated Go code;
   `internal/wzr` binds it to wazero for the initdb step of `pgmem-mkdata`.
 - `internal/engine` drives initdb and a single-user backend the way
   PGlite's TypeScript does: the backend runs `postgres --single`, the
   frontend/backend protocol goes through in-memory buffers, and
-  `ereport(ERROR)` unwinds are handled with PGlite's exit trick.
+  `ereport(ERROR)` unwinds are handled with PGlite's exit trick. One
+  PGlite detail is patched (`wasm/patches.py`): its longjmp shim decided
+  whether to send ReadyForQuery before the recovery block had set
+  `ignore_till_sync`, so an error inside an extended-protocol batch was
+  followed by two ReadyForQuery messages; pgx read the stray one as the
+  reply to its statement-cache `Close` and dropped the connection.
 - `pgmem.go` bridges TCP connections to that backend.
 
 Startup is fast because `internal/pgdata/pgdata.tar.zst` contains a data
@@ -185,11 +202,14 @@ on this memory-bound code (arm64; amd64 not measured).
   - A connection that waits, inside a transaction, for work another
     connection must do first (row locks, advisory locks, application-level
     hand-offs) waits forever. pgmem logs a diagnostic after 5 s.
-- `CREATE DATABASE` and other commands that wait on background processes
-  hang inside a live session. `Options.Database` and `Options.User` are
-  created at startup through a standalone child instead.
-- No extensions beyond what initdb installs (plpgsql). ICU, OpenSSL and
-  zlib are not compiled in.
+- `CREATE DATABASE` and `DROP DATABASE` work, but the backend only ever
+  serves the database it was started with (`Options.Database`); a
+  connection that asks for another database is refused with SQLSTATE
+  3D000 instead of silently landing in the served one.
+- Extensions: plpgsql and pgcrypto. ICU, OpenSSL and zlib are not compiled
+  in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
+  (so `compress-algo=1|2` and messages made by GnuPG work), and
+  `fips_mode()` is always false.
 - `io_method` is forced to `sync`. PGlite runs the backend as if under a
   postmaster, so PostgreSQL 18's default `worker` method would hand
   batched reads to IO workers that do not exist; with an in-memory

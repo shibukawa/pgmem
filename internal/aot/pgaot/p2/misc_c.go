@@ -12795,6 +12795,59 @@ func F_coerce_null_to_domain(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		}
 	}
 }
+func F_combo_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v7)+20))
+	v10 = m.T0[v9].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, v7, v8, l1, l2, l3, l4)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		return v10
+	}
+}
+func F_combo_encrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+	v10 = m.T0[v9].(func(*base.Module, int32, int32, int32, int32, int32, int32) int32)(m, v7, v8, l1, l2, l3, l4)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		return v10
+	}
+}
+func F_combo_encrypt_len(m *base.Module, l0 int32, l1 int32) int32 {
+	return l1 + int32(512)
+}
 func F_compare_distances(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -13699,6 +13752,106 @@ L59:
 L60:
 	;
 	goto L59
+}
+func F_compress_process(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	v8 = m.Env.Pgmem_deflate_write(m, v7, l2, l3)
+	mBase = m.M
+	if v8 < int32(0) {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(-105)
+L2:
+	;
+	goto L3
+L3:
+	;
+	v14 = l1 + int32(8)
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	goto L4
+L4:
+	;
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+	v23 = m.Env.Pgmem_zstream_read(m, v22, v14, v15)
+	mBase = m.M
+	if v23 < int32(0) {
+		goto L6
+	} else {
+		goto L7
+	}
+L5:
+	;
+	return v32
+L6:
+	;
+	return int32(-105)
+L7:
+	;
+	goto L8
+L8:
+	;
+	if v23 == int32(0) {
+		goto L9
+	} else {
+		goto L10
+	}
+L9:
+	;
+	return int32(0)
+L10:
+	;
+	goto L11
+L11:
+	;
+	v32 = F_pushf_write(m, l0, v14, v23)
+	mBase = m.M
+	v35 = m.ExcPending
+	if v35 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L12:
+	;
+	return int32(0)
+L13:
+	;
+	if int32(0) <= v32 {
+		goto L4
+	} else {
+		goto L14
+	}
+L14:
+	;
+	goto L5
 }
 func F_computeDistance(m *base.Module, l0 int32, l1 int32, l2 int32) float64 {
 	mBase := m.M

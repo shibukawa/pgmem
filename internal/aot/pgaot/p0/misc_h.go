@@ -12167,6 +12167,90 @@ func F_hindi_UTF_8_create_env(m *base.Module) int32 {
 		return v3
 	}
 }
+func F_hmac_free(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
+	v6 = m.T0[v5].(func(*base.Module, int32) int32)(m, v4)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
+	} else {
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+20))
+		m.T0[v9].(func(*base.Module, int32))(m, v8)
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return
+		} else {
+			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+			v14 = F___memset(m, v12, int32(0), v6)
+			mBase = m.M
+			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v17 = F___memset(m, v15, int32(0), v6)
+			mBase = m.M
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+			F_pfree(m, v18)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+				F_pfree(m, v21)
+				mBase = m.M
+				v23 = m.ExcPending
+				if v23 != 0 {
+					return
+				} else {
+					F_pfree(m, l0)
+					mBase = m.M
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return
+					} else {
+						return
+					}
+				}
+			}
+		}
+	}
+}
 func F_htons(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2

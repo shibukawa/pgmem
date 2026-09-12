@@ -5,6 +5,41 @@ import (
 	"unsafe"
 )
 
+func F_makeStringInfoExt(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v5 = F_palloc(m, int32(16))
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
+	} else {
+		v9 = F_palloc(m, l0)
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = l0
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = v9
+			v13 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v9))) = uint8(v13)
+			*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = v13
+			*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v13
+			return v5
+		}
+	}
+}
 func F_resetStringInfo(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

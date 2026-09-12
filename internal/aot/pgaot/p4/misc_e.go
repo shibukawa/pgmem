@@ -20163,6 +20163,163 @@ L20:
 	m.G0 = v10 + int32(16)
 	return
 }
+func F_encrypt_free(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v3 != 0 {
+		F_pgp_cfb_free(m, v3)
+		mBase = m.M
+		v5 = m.ExcPending
+		if v5 != 0 {
+			return
+		} else {
+			v8 = F___memset(m, l0, int32(0), int32(_a_F_encrypt_free_0))
+			mBase = m.M
+			F_pfree(m, l0)
+			mBase = m.M
+			v10 = m.ExcPending
+			if v10 != 0 {
+				return
+			} else {
+				return
+			}
+		}
+	} else {
+		v8 = F___memset(m, l0, int32(0), int32(_a_F_encrypt_free_0))
+		mBase = m.M
+		F_pfree(m, l0)
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return
+		} else {
+			return
+		}
+	}
+}
+func F_encrypt_init(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+72))
+	if v11 == int32(0) {
+		v14 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(v8)+11)) = uint8(v14)
+		v20 = F_pushf_write(m, l0, v8+int32(11), v14)
+		mBase = m.M
+		v23 = m.ExcPending
+		if v23 != 0 {
+			return int32(0)
+		} else {
+			if v20 < int32(0) {
+				v46 = v20
+				m.G0 = v8 + int32(16)
+				return v46
+			} else {
+				v27 = int32(0)
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+60))
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+164))
+				v35 = F_pgp_cfb_create(m, v8+int32(12), v30, l1+int32(132), v33, v27, int32(0))
+				mBase = m.M
+				v36 = m.ExcPending
+				if v36 != 0 {
+					return int32(0)
+				} else {
+					if v35 < int32(0) {
+						v46 = v35
+						m.G0 = v8 + int32(16)
+						return v46
+					} else {
+						v40 = F_palloc0(m, int32(_a_F_encrypt_init_0))
+						mBase = m.M
+						v41 = m.ExcPending
+						if v41 != 0 {
+							return int32(0)
+						} else {
+							v42 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+							*(*int32)(unsafe.Add(mBase, uint32(v40))) = v42
+							*(*int32)(unsafe.Add(mBase, uint32(l2))) = v40
+							v46 = int32(_a_F_encrypt_init_1)
+							m.G0 = v8 + int32(16)
+							return v46
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v27 = int32(1)
+		v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)+60))
+		v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+164))
+		v35 = F_pgp_cfb_create(m, v8+int32(12), v30, l1+int32(132), v33, v27, int32(0))
+		mBase = m.M
+		v36 = m.ExcPending
+		if v36 != 0 {
+			return int32(0)
+		} else {
+			if v35 < int32(0) {
+				v46 = v35
+				m.G0 = v8 + int32(16)
+				return v46
+			} else {
+				v40 = F_palloc0(m, int32(_a_F_encrypt_init_0))
+				mBase = m.M
+				v41 = m.ExcPending
+				if v41 != 0 {
+					return int32(0)
+				} else {
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+					*(*int32)(unsafe.Add(mBase, uint32(v40))) = v42
+					*(*int32)(unsafe.Add(mBase, uint32(l2))) = v40
+					v46 = int32(_a_F_encrypt_init_1)
+					m.G0 = v8 + int32(16)
+					return v46
+				}
+			}
+		}
+	}
+}
 func F_eqsel_internal(m *base.Module, l0 int32, l1 int32) float64 {
 	mBase := m.M
 	_ = mBase

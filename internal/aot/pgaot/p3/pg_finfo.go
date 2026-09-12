@@ -17,6 +17,15 @@ func F_pg_finfo_mic_to_latin4(m *base.Module) int32 {
 func F_pg_finfo_mic_to_win1250(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_win1250_0)
 }
+func F_pg_finfo_pg_check_fipsmode(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_check_fipsmode_0)
+}
+func F_pg_finfo_pg_dearmor(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_dearmor_0)
+}
+func F_pg_finfo_pgp_armor_headers(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgp_armor_headers_0)
+}
 func F_pg_finfo_utf8_to_shift_jis_2004(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_shift_jis_2004_0)
 }
