@@ -892,3 +892,46 @@ func TestTimezoneAliasesLoad(t *testing.T) {
 		}
 	}
 }
+
+// A parallel index build or query registers background workers that no
+// postmaster will start; the leader used to wait for them to attach
+// forever. With max_parallel_workers=0 both fall back to the leader.
+func TestParallelWorkRunsInLeader(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{})
+	conn, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer conn.Close(ctx)
+	for _, q := range []string{
+		"CREATE TABLE par (a int, b text)",
+		"INSERT INTO par SELECT i, repeat('x', 100) FROM generate_series(1, 20000) i",
+		"SET min_parallel_table_scan_size = 0",
+		"SET min_parallel_index_scan_size = 0",
+		"SET parallel_setup_cost = 0",
+		"SET parallel_tuple_cost = 0",
+		"SET max_parallel_maintenance_workers = 4",
+		"SET max_parallel_workers_per_gather = 4",
+		"CREATE INDEX par_brin ON par USING brin (a)",
+		"CREATE INDEX par_btree ON par (a)",
+	} {
+		done := make(chan error, 1)
+		go func() {
+			_, err := conn.Exec(ctx, q)
+			done <- err
+		}()
+		select {
+		case err := <-done:
+			if err != nil {
+				t.Fatalf("%s: %v", q, err)
+			}
+		case <-time.After(20 * time.Second):
+			t.Fatalf("%s: hung", q)
+		}
+	}
+	var n int
+	if err := conn.QueryRow(ctx, "SELECT count(*) FROM par WHERE a > 100").Scan(&n); err != nil || n != 19900 {
+		t.Fatalf("count = %d err=%v", n, err)
+	}
+}
