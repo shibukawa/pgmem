@@ -33,7 +33,7 @@ func F_PredicateLockPage(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[788]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[789]))
 	if v11 == int32(0) {
 		m.G0 = v8 + int32(16)
 		return
@@ -163,7 +163,7 @@ func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(96)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[789]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[790]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
 	if v13 == int32(0) {
 		m.G0 = v9 + int32(96)
@@ -397,7 +397,7 @@ func F_PredicateLockTID(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[788]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[789]))
 	if v12 == int32(0) {
 		goto L1
 	} else {
@@ -485,7 +485,7 @@ L13:
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(4294967295)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v154
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v155
-	v161 = *(*int32)(unsafe.Add(mBase, _consts[787]))
+	v161 = *(*int32)(unsafe.Add(mBase, _consts[788]))
 	v162 = int32(0)
 	v164 = F_hash_search(m, v161, v9, v162, v162)
 	mBase = m.M

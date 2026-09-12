@@ -36,15 +36,15 @@ func F_HoldPortal(m *base.Module, l0 int32) {
 	_ = v35
 	var v38 int32
 	_ = v38
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1234]))
-	v10 = F_AllocSetContextCreateInternal(m, v5, int32(62289), int32(0), int32(8192), int32(8388608))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1236]))
+	v10 = F_AllocSetContextCreateInternal(m, v5, int32(62350), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v10
-		v13 = int32(4487040)
+		v13 = int32(4489152)
 		v14 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 		*(*int32)(unsafe.Add(mBase, _consts[9])) = v10
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
@@ -143,7 +143,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			if v15&int64(4) == int64(0) {
-				v22 = *(*int32)(unsafe.Add(mBase, _consts[293]))
+				v22 = *(*int32)(unsafe.Add(mBase, _consts[294]))
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
 				v24 = v23
 			} else {
@@ -156,7 +156,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v25 != 0 {
-					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1033])))
+					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1034])))
 					if v29 != 0 {
 						v38 = int32(1)
 						return v38
@@ -538,7 +538,7 @@ L3:
 	}
 L4:
 	;
-	v232 = int32(4481700)
+	v232 = int32(4483812)
 	v234 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v234 + int32(1)
 	v239 = v220 + int32(32)
@@ -900,7 +900,7 @@ L56:
 	}
 L57:
 	;
-	v307 = int32(4481700)
+	v307 = int32(4483812)
 	v309 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v309 - int32(1)
 	v313 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
@@ -5328,13 +5328,13 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 									if v1184 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(97645), int32(0))
+										F_errmsg_internal(m, int32(97840), int32(0))
 										mBase = m.M
 										v1188 = m.ExcPending
 										if v1188 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(496821), int32(306), int32(62426))
+											F_errfinish(m, int32(498166), int32(306), int32(62487))
 											mBase = m.M
 											v1193 = m.ExcPending
 											if v1193 != 0 {
@@ -5872,19 +5872,19 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 				if v1167 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(333666), int32(0))
+					F_errmsg(m, int32(334654), int32(0))
 					mBase = m.M
 					v1171 = m.ExcPending
 					if v1171 != 0 {
 						return int32(0)
 					} else {
-						F_errhint(m, int32(556503), int32(0))
+						F_errhint(m, int32(557901), int32(0))
 						mBase = m.M
 						v1175 = m.ExcPending
 						if v1175 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496821), int32(281), int32(62426))
+							F_errfinish(m, int32(498166), int32(281), int32(62487))
 							mBase = m.M
 							v1180 = m.ExcPending
 							if v1180 != 0 {
@@ -7695,7 +7695,7 @@ L14:
 	goto L10
 L15:
 	;
-	F_errmsg_internal(m, int32(250573), int32(0))
+	F_errmsg_internal(m, int32(251313), int32(0))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -7705,7 +7705,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(490966), int32(1159), int32(160922))
+	F_errfinish(m, int32(492305), int32(1159), int32(161396))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -7720,7 +7720,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg_internal(m, int32(250573), int32(0))
+	F_errmsg_internal(m, int32(251313), int32(0))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -7730,7 +7730,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(490966), int32(1151), int32(160922))
+	F_errfinish(m, int32(492305), int32(1151), int32(161396))
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {
@@ -8273,7 +8273,7 @@ L41:
 	return v225
 L42:
 	;
-	F_errmsg_internal(m, int32(250518), int32(0))
+	F_errmsg_internal(m, int32(251258), int32(0))
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -8283,7 +8283,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(490966), int32(1194), int32(244458))
+	F_errfinish(m, int32(492305), int32(1194), int32(245198))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {

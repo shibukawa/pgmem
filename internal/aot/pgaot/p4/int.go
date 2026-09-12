@@ -407,7 +407,7 @@ L13:
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(v42)+4))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+4))
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[432]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 	if v67 != 0 {
 		goto L20
 	} else {
@@ -484,10 +484,10 @@ L24:
 	goto L22
 L25:
 	;
-	v88 = int32(90575)
+	v88 = int32(90722)
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v68)+8))
 	v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
-	v93 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1562])))
+	v93 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1560])))
 	if v93 == int32(0) {
 		v112 = v92
 		v113 = v93
@@ -725,8 +725,8 @@ L57:
 	v235 = *(*int32)(unsafe.Add(mBase, uint32(v231)+16))
 	v236 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v235)+22)))
 	v239 = v235 + v236 + int32(4)
-	v240 = int32(90575)
-	v243 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1562])))
+	v240 = int32(90722)
+	v243 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1560])))
 	v244 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v239))))
 	if v244 == int32(0) {
 		v263 = v243
@@ -841,7 +841,7 @@ L72:
 	}
 L73:
 	;
-	v323 = *(*int32)(unsafe.Add(mBase, _consts[432]))
+	v323 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 	if v323 == int32(0) {
 		goto L76
 	} else {
@@ -853,7 +853,7 @@ L74:
 	goto L75
 L75:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v341)+8)) = int32(90575)
+	*(*int32)(unsafe.Add(mBase, uint32(v341)+8)) = int32(90722)
 	*(*int32)(unsafe.Add(mBase, uint32(v341)+4)) = v64
 	v347 = F_GetSysCacheHashValue(m, int32(28), v161, int32(0))
 	mBase = m.M
@@ -892,10 +892,10 @@ L79:
 	goto L78
 L80:
 	;
-	v336 = int32(4384052)
-	v337 = *(*int32)(unsafe.Add(mBase, _consts[432]))
+	v336 = int32(4386164)
+	v337 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 	*(*int32)(unsafe.Add(mBase, uint32(v334))) = v337
-	*(*int32)(unsafe.Add(mBase, _consts[432])) = v334
+	*(*int32)(unsafe.Add(mBase, _consts[431])) = v334
 	v341 = v334
 	goto L75
 L81:
@@ -1286,13 +1286,13 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 							if v94 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(151793), int32(0))
+								F_errmsg(m, int32(152249), int32(0))
 								mBase = m.M
 								v100 = m.ExcPending
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492670), int32(108), int32(237458))
+									F_errfinish(m, int32(494009), int32(108), int32(238143))
 									mBase = m.M
 									v107 = m.ExcPending
 									if v107 != 0 {
@@ -1327,13 +1327,13 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 										if v114 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(151793), int32(0))
+											F_errmsg(m, int32(152249), int32(0))
 											mBase = m.M
 											v120 = m.ExcPending
 											if v120 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(492670), int32(109), int32(237458))
+												F_errfinish(m, int32(494009), int32(109), int32(238143))
 												mBase = m.M
 												v127 = m.ExcPending
 												if v127 != 0 {
@@ -1559,13 +1559,13 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 								if v114 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(151793), int32(0))
+									F_errmsg(m, int32(152249), int32(0))
 									mBase = m.M
 									v120 = m.ExcPending
 									if v120 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492670), int32(109), int32(237458))
+										F_errfinish(m, int32(494009), int32(109), int32(238143))
 										mBase = m.M
 										v127 = m.ExcPending
 										if v127 != 0 {

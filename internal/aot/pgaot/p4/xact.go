@@ -105,7 +105,7 @@ func F_xactGetCommittedInvalidationMessages(m *base.Module, l0 int32, l1 int32) 
 	var v115 int32
 	_ = v115
 	v3 = int32(0)
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[1369]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[1367]))
 	if v7 == v3 {
 		v10 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v10)
@@ -130,7 +130,7 @@ func F_xactGetCommittedInvalidationMessages(m *base.Module, l0 int32, l1 int32) 
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0))) = v37
-			v43 = *(*int32)(unsafe.Add(mBase, _consts[1369]))
+			v43 = *(*int32)(unsafe.Add(mBase, _consts[1367]))
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+28))
 			v45 = *(*int32)(unsafe.Add(mBase, uint32(v43)+20))
 			v46 = v44 - v45

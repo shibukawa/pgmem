@@ -3,20 +3,20 @@ package p4
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_citext(m *base.Module) int32 {
-	return int32(4376296)
+	return int32(4378280)
 }
 func F_Pg_magic_func_cube(m *base.Module) int32 {
-	return int32(4380680)
+	return int32(4382664)
 }
 func F_Pg_magic_func_cyrillic_and_mic(m *base.Module) int32 {
-	return int32(4368660)
+	return int32(4370644)
 }
 func F_Pg_magic_func_dict_snowball(m *base.Module) int32 {
-	return int32(4156872)
+	return int32(4158856)
 }
 func F_Pg_magic_func_hstore(m *base.Module) int32 {
-	return int32(4376452)
+	return int32(4378436)
 }
 func F_Pg_magic_func_latin2_and_win1250(m *base.Module) int32 {
-	return int32(4369044)
+	return int32(4371028)
 }

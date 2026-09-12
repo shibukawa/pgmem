@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6962)
-	m.G0 = int32(13052320)
+	m.T0 = make([]any, 7060)
+	m.G0 = int32(13054432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381419
+	m.DataEnd = 4383531
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6962)
-	m.G0 = int32(13052320)
+	m.T0 = make([]any, 7060)
+	m.G0 = int32(13054432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381419
+	m.DataEnd = 4383531
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6962)
-	m.G0 = int32(13052320)
+	m.T0 = make([]any, 7060)
+	m.G0 = int32(13054432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4381419
+	m.DataEnd = 4383531
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1590304])
-	copy(m.Memory[1595632:], wasm2goData_data_bin[1590304:1590313])
-	copy(m.Memory[1597680:], wasm2goData_data_bin[1590313:1603241])
-	copy(m.Memory[1622020:], wasm2goData_data_bin[1603241:1696482])
-	copy(m.Memory[1716288:], wasm2goData_data_bin[1696482:1808138])
-	copy(m.Memory[1839160:], wasm2goData_data_bin[1808138:4063072])
-	copy(m.Memory[4101584:], wasm2goData_data_bin[4063072:4342907])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1591712])
+	copy(m.Memory[1597040:], wasm2goData_data_bin[1591712:1591721])
+	copy(m.Memory[1599088:], wasm2goData_data_bin[1591721:1604649])
+	copy(m.Memory[1622020:], wasm2goData_data_bin[1604649:1697890])
+	copy(m.Memory[1716288:], wasm2goData_data_bin[1697890:1809546])
+	copy(m.Memory[1839160:], wasm2goData_data_bin[1809546:4066464])
+	copy(m.Memory[4103568:], wasm2goData_data_bin[4066464:4346427])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4753,6 +4753,183 @@ func GeoDistance(m *base.Module, l0 int32) int32 {
 }
 func PgFinfoGeoDistance(m *base.Module) int32 {
 	return F_pg_finfo_geo_distance(m)
+}
+func PgMagicFuncSeg(m *base.Module) int32 {
+	return F_Pg_magic_func_seg(m)
+}
+func GsegCompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GsegConsistent(m *base.Module, l0 int32) int32 {
+	return F_gseg_consistent(m, l0)
+}
+func GsegDecompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GsegPenalty(m *base.Module, l0 int32) int32 {
+	return F_gseg_penalty(m, l0)
+}
+func GsegPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gseg_picksplit(m, l0)
+}
+func GsegSame(m *base.Module, l0 int32) int32 {
+	return F_gseg_same(m, l0)
+}
+func GsegUnion(m *base.Module, l0 int32) int32 {
+	return F_gseg_union(m, l0)
+}
+func PgFinfoGsegCompress(m *base.Module) int32 {
+	return F_pg_finfo_gseg_compress(m)
+}
+func PgFinfoGsegConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gseg_consistent(m)
+}
+func PgFinfoGsegDecompress(m *base.Module) int32 {
+	return F_pg_finfo_gseg_decompress(m)
+}
+func PgFinfoGsegPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gseg_penalty(m)
+}
+func PgFinfoGsegPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gseg_picksplit(m)
+}
+func PgFinfoGsegSame(m *base.Module) int32 {
+	return F_pg_finfo_gseg_same(m)
+}
+func PgFinfoGsegUnion(m *base.Module) int32 {
+	return F_pg_finfo_gseg_union(m)
+}
+func PgFinfoSegCenter(m *base.Module) int32 {
+	return F_pg_finfo_seg_center(m)
+}
+func PgFinfoSegCmp(m *base.Module) int32 {
+	return F_pg_finfo_seg_cmp(m)
+}
+func PgFinfoSegContained(m *base.Module) int32 {
+	return F_pg_finfo_seg_contained(m)
+}
+func PgFinfoSegContains(m *base.Module) int32 {
+	return F_pg_finfo_seg_contains(m)
+}
+func PgFinfoSegDifferent(m *base.Module) int32 {
+	return F_pg_finfo_seg_different(m)
+}
+func PgFinfoSegGe(m *base.Module) int32 {
+	return F_pg_finfo_seg_ge(m)
+}
+func PgFinfoSegGt(m *base.Module) int32 {
+	return F_pg_finfo_seg_gt(m)
+}
+func PgFinfoSegIn(m *base.Module) int32 {
+	return F_pg_finfo_seg_in(m)
+}
+func PgFinfoSegInter(m *base.Module) int32 {
+	return F_pg_finfo_seg_inter(m)
+}
+func PgFinfoSegLe(m *base.Module) int32 {
+	return F_pg_finfo_seg_le(m)
+}
+func PgFinfoSegLeft(m *base.Module) int32 {
+	return F_pg_finfo_seg_left(m)
+}
+func PgFinfoSegLower(m *base.Module) int32 {
+	return F_pg_finfo_seg_lower(m)
+}
+func PgFinfoSegLt(m *base.Module) int32 {
+	return F_pg_finfo_seg_lt(m)
+}
+func PgFinfoSegOut(m *base.Module) int32 {
+	return F_pg_finfo_seg_out(m)
+}
+func PgFinfoSegOverLeft(m *base.Module) int32 {
+	return F_pg_finfo_seg_over_left(m)
+}
+func PgFinfoSegOverRight(m *base.Module) int32 {
+	return F_pg_finfo_seg_over_right(m)
+}
+func PgFinfoSegOverlap(m *base.Module) int32 {
+	return F_pg_finfo_seg_overlap(m)
+}
+func PgFinfoSegRight(m *base.Module) int32 {
+	return F_pg_finfo_seg_right(m)
+}
+func PgFinfoSegSame(m *base.Module) int32 {
+	return F_pg_finfo_seg_same(m)
+}
+func PgFinfoSegSize(m *base.Module) int32 {
+	return F_pg_finfo_seg_size(m)
+}
+func PgFinfoSegUnion(m *base.Module) int32 {
+	return F_pg_finfo_seg_union(m)
+}
+func PgFinfoSegUpper(m *base.Module) int32 {
+	return F_pg_finfo_seg_upper(m)
+}
+func SegCenter(m *base.Module, l0 int32) int32 {
+	return F_seg_center(m, l0)
+}
+func SegCmp(m *base.Module, l0 int32) int32 {
+	return F_seg_cmp(m, l0)
+}
+func SegContained(m *base.Module, l0 int32) int32 {
+	return F_seg_contained(m, l0)
+}
+func SegContains(m *base.Module, l0 int32) int32 {
+	return F_seg_contains(m, l0)
+}
+func SegDifferent(m *base.Module, l0 int32) int32 {
+	return F_seg_different(m, l0)
+}
+func SegGe(m *base.Module, l0 int32) int32 {
+	return F_seg_ge(m, l0)
+}
+func SegGt(m *base.Module, l0 int32) int32 {
+	return F_seg_gt(m, l0)
+}
+func SegIn(m *base.Module, l0 int32) int32 {
+	return F_seg_in(m, l0)
+}
+func SegInter(m *base.Module, l0 int32) int32 {
+	return F_seg_inter(m, l0)
+}
+func SegLe(m *base.Module, l0 int32) int32 {
+	return F_seg_le(m, l0)
+}
+func SegLeft(m *base.Module, l0 int32) int32 {
+	return F_seg_left(m, l0)
+}
+func SegLower(m *base.Module, l0 int32) int32 {
+	return F_xid8toxid(m, l0)
+}
+func SegLt(m *base.Module, l0 int32) int32 {
+	return F_seg_lt(m, l0)
+}
+func SegOut(m *base.Module, l0 int32) int32 {
+	return F_seg_out(m, l0)
+}
+func SegOverLeft(m *base.Module, l0 int32) int32 {
+	return F_seg_over_left(m, l0)
+}
+func SegOverRight(m *base.Module, l0 int32) int32 {
+	return F_seg_over_right(m, l0)
+}
+func SegOverlap(m *base.Module, l0 int32) int32 {
+	return F_seg_overlap(m, l0)
+}
+func SegRight(m *base.Module, l0 int32) int32 {
+	return F_seg_right(m, l0)
+}
+func SegSame(m *base.Module, l0 int32) int32 {
+	return F_seg_same(m, l0)
+}
+func SegSize(m *base.Module, l0 int32) int32 {
+	return F_seg_size(m, l0)
+}
+func SegUnion(m *base.Module, l0 int32) int32 {
+	return F_seg_union(m, l0)
+}
+func SegUpper(m *base.Module, l0 int32) int32 {
+	return F_tsquery_numnode(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

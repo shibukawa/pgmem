@@ -111,13 +111,13 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 					return int32(0)
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v11)+16)) = l1
-					F_errmsg_internal(m, int32(427788), v11+int32(16))
+					F_errmsg_internal(m, int32(429008), v11+int32(16))
 					mBase = m.M
 					v90 = m.ExcPending
 					if v90 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495117), int32(3344), int32(134705))
+						F_errfinish(m, int32(496456), int32(3344), int32(135139))
 						mBase = m.M
 						v95 = m.ExcPending
 						if v95 != 0 {
@@ -144,13 +144,13 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 							return int32(0)
 						} else {
 							*(*int64)(unsafe.Add(mBase, uint32(v11))) = l2
-							F_errmsg_internal(m, int32(427788), v11)
+							F_errmsg_internal(m, int32(429008), v11)
 							mBase = m.M
 							v103 = m.ExcPending
 							if v103 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495117), int32(3347), int32(134705))
+								F_errfinish(m, int32(496456), int32(3347), int32(135139))
 								mBase = m.M
 								v108 = m.ExcPending
 								if v108 != 0 {
@@ -194,7 +194,7 @@ func F_WinRowsArePeers(m *base.Module, l0 int32, l1 int64, l2 int64) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(v36)+12)) = v20
 							v39 = *(*int32)(unsafe.Add(mBase, uint32(v13)+140))
 							if v39 != 0 {
-								v40 = int32(4487040)
+								v40 = int32(4489152)
 								v41 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 								v43 = *(*int32)(unsafe.Add(mBase, uint32(v36)+20))
 								*(*int32)(unsafe.Add(mBase, _consts[28])) = v43
@@ -349,13 +349,13 @@ func F_win_to_utf8(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
-					F_errmsg(m, int32(123443), v10)
+					F_errmsg(m, int32(123829), v10)
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493347), int32(114), int32(545786))
+						F_errfinish(m, int32(494686), int32(114), int32(547184))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -383,13 +383,13 @@ func F_win_to_utf8(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
-						F_errmsg(m, int32(123443), v10)
+						F_errmsg(m, int32(123829), v10)
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493347), int32(114), int32(545786))
+							F_errfinish(m, int32(494686), int32(114), int32(547184))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -403,7 +403,7 @@ func F_win_to_utf8(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v38 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[1486])))
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[1484])))
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)+4))
 				v40 = int32(0)
 				v45 = F_LocalToUtf(m, v14, v17, v13, v39, v40, v40, v40, v15, base.B2i32(v12 != v40))

@@ -64,7 +64,7 @@ func F_ltxtq_exec(m *base.Module, l0 int32) int32 {
 			v20 = v16 + v19
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v20 + v21*int32(12)
-			v30 = F_ltree_execute(m, v20, v8+v19, int32(1), int32(6769))
+			v30 = F_ltree_execute(m, v20, v8+v19, int32(1), int32(6866))
 			mBase = m.M
 			v31 = m.ExcPending
 			if v31 != 0 {

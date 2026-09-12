@@ -903,7 +903,7 @@ L43:
 	}
 L44:
 	;
-	v514 = F_cstring_to_text(m, int32(542875))
+	v514 = F_cstring_to_text(m, int32(544273))
 	mBase = m.M
 	v515 = m.ExcPending
 	if v515 != 0 {
@@ -984,7 +984,7 @@ L52:
 	goto L51
 L53:
 	;
-	v165 = F_cstring_to_text(m, int32(452563))
+	v165 = F_cstring_to_text(m, int32(453806))
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -994,7 +994,7 @@ L53:
 	}
 L54:
 	;
-	v161 = F_cstring_to_text(m, int32(659503))
+	v161 = F_cstring_to_text(m, int32(660901))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -1004,7 +1004,7 @@ L54:
 	}
 L55:
 	;
-	v157 = F_cstring_to_text(m, int32(303052))
+	v157 = F_cstring_to_text(m, int32(303930))
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -1014,7 +1014,7 @@ L55:
 	}
 L56:
 	;
-	v153 = F_cstring_to_text(m, int32(255632))
+	v153 = F_cstring_to_text(m, int32(256372))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -1024,7 +1024,7 @@ L56:
 	}
 L57:
 	;
-	v149 = F_cstring_to_text(m, int32(340940))
+	v149 = F_cstring_to_text(m, int32(342021))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1034,7 +1034,7 @@ L57:
 	}
 L58:
 	;
-	v145 = F_cstring_to_text(m, int32(388182))
+	v145 = F_cstring_to_text(m, int32(389359))
 	mBase = m.M
 	v146 = m.ExcPending
 	if v146 != 0 {
@@ -1044,7 +1044,7 @@ L58:
 	}
 L59:
 	;
-	v141 = F_cstring_to_text(m, int32(326996))
+	v141 = F_cstring_to_text(m, int32(327965))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {
@@ -1256,7 +1256,7 @@ L91:
 	}
 L92:
 	;
-	v246 = int32(542488)
+	v246 = int32(543886)
 	goto L88
 L93:
 	;
@@ -2042,7 +2042,7 @@ L209:
 	}
 L210:
 	;
-	v913 = int32(4394944)
+	v913 = int32(4397056)
 	v916 = v908 + int32(112)
 	if (v916^v913)&int32(3) != 0 {
 		goto L214
@@ -2235,7 +2235,7 @@ L239:
 	goto L241
 L240:
 	;
-	v1037 = int32(365717)
+	v1037 = int32(366857)
 	goto L241
 L241:
 	;

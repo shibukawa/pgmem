@@ -148,7 +148,7 @@ L9:
 	goto L10
 L10:
 	;
-	v21 = int32(4487040)
+	v21 = int32(4489152)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v24

@@ -258,7 +258,7 @@ func F_table_openrv(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-					F_errmsg(m, int32(688402), v6)
+					F_errmsg(m, int32(689800), v6)
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -272,7 +272,7 @@ func F_table_openrv(m *base.Module, l0 int32, l1 int32) int32 {
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495898), int32(147), int32(422902))
+							F_errfinish(m, int32(497243), int32(147), int32(424122))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
@@ -308,7 +308,7 @@ func F_table_openrv(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-						F_errmsg(m, int32(688402), v6)
+						F_errmsg(m, int32(689800), v6)
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -322,7 +322,7 @@ func F_table_openrv(m *base.Module, l0 int32, l1 int32) int32 {
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495898), int32(147), int32(422902))
+								F_errfinish(m, int32(497243), int32(147), int32(424122))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {
@@ -402,7 +402,7 @@ func F_table_openrv_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 					} else {
 						v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v28 + int32(4)
-						F_errmsg(m, int32(688402), v7)
+						F_errmsg(m, int32(689800), v7)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -416,7 +416,7 @@ func F_table_openrv_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495898), int32(147), int32(422902))
+								F_errfinish(m, int32(497243), int32(147), int32(424122))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {
@@ -452,7 +452,7 @@ func F_table_openrv_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 						} else {
 							v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v28 + int32(4)
-							F_errmsg(m, int32(688402), v7)
+							F_errmsg(m, int32(689800), v7)
 							mBase = m.M
 							v34 = m.ExcPending
 							if v34 != 0 {
@@ -466,7 +466,7 @@ func F_table_openrv_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 								if v38 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495898), int32(147), int32(422902))
+									F_errfinish(m, int32(497243), int32(147), int32(424122))
 									mBase = m.M
 									v43 = m.ExcPending
 									if v43 != 0 {
@@ -597,7 +597,7 @@ func F_table_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v37
-								F_appendStringInfo(m, v9+int32(16), int32(197172), v9)
+								F_appendStringInfo(m, v9+int32(16), int32(197646), v9)
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -781,7 +781,7 @@ func F_try_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v27 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v27 + int32(4)
-						F_errmsg(m, int32(688402), v6)
+						F_errmsg(m, int32(689800), v6)
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -795,7 +795,7 @@ func F_try_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 							if v37 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(495898), int32(147), int32(422902))
+								F_errfinish(m, int32(497243), int32(147), int32(424122))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -831,7 +831,7 @@ func F_try_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v27 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = v27 + int32(4)
-							F_errmsg(m, int32(688402), v6)
+							F_errmsg(m, int32(689800), v6)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
@@ -845,7 +845,7 @@ func F_try_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 								if v37 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(495898), int32(147), int32(422902))
+									F_errfinish(m, int32(497243), int32(147), int32(424122))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {

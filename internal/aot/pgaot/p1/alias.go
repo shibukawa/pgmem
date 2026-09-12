@@ -3962,6 +3962,8 @@ func F_cube_yyparse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_cube_scanner_finish github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_scanner_finish
 func F_cube_scanner_finish(m *base.Module, l0 int32)
+//go:linkname F_seg_yy_scan_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_scan_bytes
+func F_seg_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

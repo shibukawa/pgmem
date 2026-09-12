@@ -197,7 +197,7 @@ L17:
 	goto L16
 L18:
 	;
-	F_s_lock(m, v18, int32(490282), int32(422), int32(167027))
+	F_s_lock(m, v18, int32(491621), int32(422), int32(167501))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -647,9 +647,9 @@ L6:
 	;
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(v18+v19<<(uint(int32(3))%32)+v40<<(uint(int32(3))%32))))
 	v49 = *(*int32)(unsafe.Add(mBase, _consts[9]))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = int32(228116)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = int32(228784)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(492025)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(493364)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = int64(0)
 	v62 = v49 + v47<<(uint(int32(6))%32)
@@ -674,7 +674,7 @@ L9:
 	goto L10
 L10:
 	;
-	v98 = int32(4102492)
+	v98 = int32(4104476)
 	v99 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 	v101 = *(*int32)(unsafe.Add(mBase, uint32(v10+int32(24))+8))
 	if v101 == int32(0) {
@@ -721,7 +721,7 @@ L16:
 	*(*int32)(unsafe.Add(mBase, uint32(v119)+8)) = v122
 	*(*int32)(unsafe.Add(mBase, uint32(v64))) = (v90 + int32(4194305)) & int32(-4194305)
 	v130 = *(*int32)(unsafe.Add(mBase, _consts[258]))
-	F_ResourceOwnerForget(m, v130, v47, int32(1609628))
+	F_ResourceOwnerForget(m, v130, v47, int32(1611036))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {

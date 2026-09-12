@@ -2866,6 +2866,8 @@ func F_float_overflow_error(m *base.Module)
 func F_float_underflow_error(m *base.Module)
 //go:linkname F_float_zero_divide_error github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_float_zero_divide_error
 func F_float_zero_divide_error(m *base.Module)
+//go:linkname F_float4in_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_float4in_internal
+func F_float4in_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) float32
 //go:linkname F_float8in_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_float8in_internal
 func F_float8in_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
 //go:linkname F_float8out_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_float8out_internal
@@ -4336,6 +4338,16 @@ func F_cube_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_yy_fatal_error_6(m *base.Module, l0 int32)
 //go:linkname F_cube_yyerror github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_yyerror
 func F_cube_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_seg_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_yyensure_buffer_stack
+func F_seg_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_seg_yy_create_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_create_buffer
+func F_seg_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_yy_fatal_error_7 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_yy_fatal_error_7
+func F_yy_fatal_error_7(m *base.Module, l0 int32)
+//go:linkname F_seg_yyrestart github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_seg_yyrestart
+func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_seg_yyerror github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_yyerror
+func F_seg_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset
@@ -4468,8 +4480,6 @@ func F___shgetc(m *base.Module, l0 int32) int32
 func F_fmodl(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64)
 //go:linkname F_scanexp github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_scanexp
 func F_scanexp(m *base.Module, l0 int32, l1 int32) int64
-//go:linkname F_strtox_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtox_1
-func F_strtox_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_strtod github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtod
 func F_strtod(m *base.Module, l0 int32, l1 int32) float64
 //go:linkname F_strtox_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strtox_2

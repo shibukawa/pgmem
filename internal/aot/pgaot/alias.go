@@ -36,6 +36,10 @@ func F_PostgresSendReadyForQueryIfNecessary(m *base.Module)
 func F_float4up(m *base.Module, l0 int32) int32
 //go:linkname F_gtsvector_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gtsvector_decompress
 func F_gtsvector_decompress(m *base.Module, l0 int32) int32
+//go:linkname F_tsquery_numnode github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tsquery_numnode
+func F_tsquery_numnode(m *base.Module, l0 int32) int32
+//go:linkname F_xid8toxid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_xid8toxid
+func F_xid8toxid(m *base.Module, l0 int32) int32
 //go:linkname F_comparetup_index_hash_tiebreak github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_comparetup_index_hash_tiebreak
 func F_comparetup_index_hash_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_clear_setitimer github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_clear_setitimer
@@ -2894,6 +2898,116 @@ func F_Pg_magic_func_earthdistance(m *base.Module) int32
 func F_pg_finfo_geo_distance(m *base.Module) int32
 //go:linkname F_geo_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_geo_distance
 func F_geo_distance(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_seg github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_Pg_magic_func_seg
+func F_Pg_magic_func_seg(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_seg_in
+func F_pg_finfo_seg_in(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_out github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_seg_out
+func F_pg_finfo_seg_out(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_size github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_seg_size
+func F_pg_finfo_seg_size(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_lower github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_lower
+func F_pg_finfo_seg_lower(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_upper github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_seg_upper
+func F_pg_finfo_seg_upper(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_center github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_center
+func F_pg_finfo_seg_center(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gseg_consistent
+func F_pg_finfo_gseg_consistent(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gseg_compress
+func F_pg_finfo_gseg_compress(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gseg_decompress
+func F_pg_finfo_gseg_decompress(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gseg_picksplit
+func F_pg_finfo_gseg_picksplit(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gseg_penalty
+func F_pg_finfo_gseg_penalty(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_union github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gseg_union
+func F_pg_finfo_gseg_union(m *base.Module) int32
+//go:linkname F_pg_finfo_gseg_same github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gseg_same
+func F_pg_finfo_gseg_same(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_seg_same
+func F_pg_finfo_seg_same(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_contains
+func F_pg_finfo_seg_contains(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_seg_contained
+func F_pg_finfo_seg_contained(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_seg_overlap
+func F_pg_finfo_seg_overlap(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_left github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_seg_left
+func F_pg_finfo_seg_left(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_over_left github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_seg_over_left
+func F_pg_finfo_seg_over_left(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_right github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_seg_right
+func F_pg_finfo_seg_right(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_over_right github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_over_right
+func F_pg_finfo_seg_over_right(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_union
+func F_pg_finfo_seg_union(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_seg_inter
+func F_pg_finfo_seg_inter(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_seg_cmp
+func F_pg_finfo_seg_cmp(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_seg_lt
+func F_pg_finfo_seg_lt(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_le github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_seg_le
+func F_pg_finfo_seg_le(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_seg_gt
+func F_pg_finfo_seg_gt(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_seg_ge
+func F_pg_finfo_seg_ge(m *base.Module) int32
+//go:linkname F_pg_finfo_seg_different github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_seg_different
+func F_pg_finfo_seg_different(m *base.Module) int32
+//go:linkname F_seg_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_seg_in
+func F_seg_in(m *base.Module, l0 int32) int32
+//go:linkname F_seg_out github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_seg_out
+func F_seg_out(m *base.Module, l0 int32) int32
+//go:linkname F_seg_center github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_seg_center
+func F_seg_center(m *base.Module, l0 int32) int32
+//go:linkname F_gseg_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gseg_consistent
+func F_gseg_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_seg_over_right github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_seg_over_right
+func F_seg_over_right(m *base.Module, l0 int32) int32
+//go:linkname F_seg_right github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_seg_right
+func F_seg_right(m *base.Module, l0 int32) int32
+//go:linkname F_seg_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_seg_overlap
+func F_seg_overlap(m *base.Module, l0 int32) int32
+//go:linkname F_seg_left github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_seg_left
+func F_seg_left(m *base.Module, l0 int32) int32
+//go:linkname F_seg_over_left github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_over_left
+func F_seg_over_left(m *base.Module, l0 int32) int32
+//go:linkname F_seg_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_contains
+func F_seg_contains(m *base.Module, l0 int32) int32
+//go:linkname F_gseg_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gseg_union
+func F_gseg_union(m *base.Module, l0 int32) int32
+//go:linkname F_seg_union github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_seg_union
+func F_seg_union(m *base.Module, l0 int32) int32
+//go:linkname F_gseg_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gseg_penalty
+func F_gseg_penalty(m *base.Module, l0 int32) int32
+//go:linkname F_gseg_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gseg_picksplit
+func F_gseg_picksplit(m *base.Module, l0 int32) int32
+//go:linkname F_gseg_same github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gseg_same
+func F_gseg_same(m *base.Module, l0 int32) int32
+//go:linkname F_seg_same github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_seg_same
+func F_seg_same(m *base.Module, l0 int32) int32
+//go:linkname F_seg_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_cmp
+func F_seg_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_seg_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_seg_contained
+func F_seg_contained(m *base.Module, l0 int32) int32
+//go:linkname F_seg_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_inter
+func F_seg_inter(m *base.Module, l0 int32) int32
+//go:linkname F_seg_size github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_size
+func F_seg_size(m *base.Module, l0 int32) int32
+//go:linkname F_seg_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_lt
+func F_seg_lt(m *base.Module, l0 int32) int32
+//go:linkname F_seg_le github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_seg_le
+func F_seg_le(m *base.Module, l0 int32) int32
+//go:linkname F_seg_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_gt
+func F_seg_gt(m *base.Module, l0 int32) int32
+//go:linkname F_seg_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_ge
+func F_seg_ge(m *base.Module, l0 int32) int32
+//go:linkname F_seg_different github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_different
+func F_seg_different(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

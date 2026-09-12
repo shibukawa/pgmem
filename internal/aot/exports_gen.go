@@ -9158,6 +9158,360 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoGeoDistance(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_seg":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_seg: want 0 args")
+		}
+		r := pgaot.PgMagicFuncSeg(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_compress":
+		if len(a) != 1 {
+			panic("aot: gseg_compress: want 1 args")
+		}
+		r := pgaot.GsegCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_consistent":
+		if len(a) != 1 {
+			panic("aot: gseg_consistent: want 1 args")
+		}
+		r := pgaot.GsegConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_decompress":
+		if len(a) != 1 {
+			panic("aot: gseg_decompress: want 1 args")
+		}
+		r := pgaot.GsegDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_penalty":
+		if len(a) != 1 {
+			panic("aot: gseg_penalty: want 1 args")
+		}
+		r := pgaot.GsegPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_picksplit":
+		if len(a) != 1 {
+			panic("aot: gseg_picksplit: want 1 args")
+		}
+		r := pgaot.GsegPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_same":
+		if len(a) != 1 {
+			panic("aot: gseg_same: want 1 args")
+		}
+		r := pgaot.GsegSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gseg_union":
+		if len(a) != 1 {
+			panic("aot: gseg_union: want 1 args")
+		}
+		r := pgaot.GsegUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gseg_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gseg_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGsegUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_center":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_center: want 0 args")
+		}
+		r := pgaot.PgFinfoSegCenter(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoSegCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_contained":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_contained: want 0 args")
+		}
+		r := pgaot.PgFinfoSegContained(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_contains":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_contains: want 0 args")
+		}
+		r := pgaot.PgFinfoSegContains(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_different":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_different: want 0 args")
+		}
+		r := pgaot.PgFinfoSegDifferent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoSegGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoSegGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_in: want 0 args")
+		}
+		r := pgaot.PgFinfoSegIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_inter":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_inter: want 0 args")
+		}
+		r := pgaot.PgFinfoSegInter(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_le: want 0 args")
+		}
+		r := pgaot.PgFinfoSegLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_left":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_left: want 0 args")
+		}
+		r := pgaot.PgFinfoSegLeft(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_lower":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_lower: want 0 args")
+		}
+		r := pgaot.PgFinfoSegLower(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoSegLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_out: want 0 args")
+		}
+		r := pgaot.PgFinfoSegOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_over_left":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_over_left: want 0 args")
+		}
+		r := pgaot.PgFinfoSegOverLeft(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_over_right":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_over_right: want 0 args")
+		}
+		r := pgaot.PgFinfoSegOverRight(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_overlap":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_overlap: want 0 args")
+		}
+		r := pgaot.PgFinfoSegOverlap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_right":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_right: want 0 args")
+		}
+		r := pgaot.PgFinfoSegRight(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_same: want 0 args")
+		}
+		r := pgaot.PgFinfoSegSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_size":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_size: want 0 args")
+		}
+		r := pgaot.PgFinfoSegSize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_union: want 0 args")
+		}
+		r := pgaot.PgFinfoSegUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_seg_upper":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_seg_upper: want 0 args")
+		}
+		r := pgaot.PgFinfoSegUpper(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_center":
+		if len(a) != 1 {
+			panic("aot: seg_center: want 1 args")
+		}
+		r := pgaot.SegCenter(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_cmp":
+		if len(a) != 1 {
+			panic("aot: seg_cmp: want 1 args")
+		}
+		r := pgaot.SegCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_contained":
+		if len(a) != 1 {
+			panic("aot: seg_contained: want 1 args")
+		}
+		r := pgaot.SegContained(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_contains":
+		if len(a) != 1 {
+			panic("aot: seg_contains: want 1 args")
+		}
+		r := pgaot.SegContains(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_different":
+		if len(a) != 1 {
+			panic("aot: seg_different: want 1 args")
+		}
+		r := pgaot.SegDifferent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_ge":
+		if len(a) != 1 {
+			panic("aot: seg_ge: want 1 args")
+		}
+		r := pgaot.SegGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_gt":
+		if len(a) != 1 {
+			panic("aot: seg_gt: want 1 args")
+		}
+		r := pgaot.SegGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_in":
+		if len(a) != 1 {
+			panic("aot: seg_in: want 1 args")
+		}
+		r := pgaot.SegIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_inter":
+		if len(a) != 1 {
+			panic("aot: seg_inter: want 1 args")
+		}
+		r := pgaot.SegInter(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_le":
+		if len(a) != 1 {
+			panic("aot: seg_le: want 1 args")
+		}
+		r := pgaot.SegLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_left":
+		if len(a) != 1 {
+			panic("aot: seg_left: want 1 args")
+		}
+		r := pgaot.SegLeft(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_lower":
+		if len(a) != 1 {
+			panic("aot: seg_lower: want 1 args")
+		}
+		r := pgaot.SegLower(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_lt":
+		if len(a) != 1 {
+			panic("aot: seg_lt: want 1 args")
+		}
+		r := pgaot.SegLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_out":
+		if len(a) != 1 {
+			panic("aot: seg_out: want 1 args")
+		}
+		r := pgaot.SegOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_over_left":
+		if len(a) != 1 {
+			panic("aot: seg_over_left: want 1 args")
+		}
+		r := pgaot.SegOverLeft(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_over_right":
+		if len(a) != 1 {
+			panic("aot: seg_over_right: want 1 args")
+		}
+		r := pgaot.SegOverRight(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_overlap":
+		if len(a) != 1 {
+			panic("aot: seg_overlap: want 1 args")
+		}
+		r := pgaot.SegOverlap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_right":
+		if len(a) != 1 {
+			panic("aot: seg_right: want 1 args")
+		}
+		r := pgaot.SegRight(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_same":
+		if len(a) != 1 {
+			panic("aot: seg_same: want 1 args")
+		}
+		r := pgaot.SegSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_size":
+		if len(a) != 1 {
+			panic("aot: seg_size: want 1 args")
+		}
+		r := pgaot.SegSize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_union":
+		if len(a) != 1 {
+			panic("aot: seg_union: want 1 args")
+		}
+		r := pgaot.SegUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "seg_upper":
+		if len(a) != 1 {
+			panic("aot: seg_upper: want 1 args")
+		}
+		r := pgaot.SegUpper(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

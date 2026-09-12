@@ -118,13 +118,13 @@ func F_get_opfamily_member_for_cmptype(m *base.Module, l0 int32, l1 int32, l2 in
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(39745), v10)
+				F_errmsg_internal(m, int32(39806), v10)
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496031), int32(1384), int32(419915))
+					F_errfinish(m, int32(497376), int32(1384), int32(421135))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {

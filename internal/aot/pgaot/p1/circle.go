@@ -1144,7 +1144,7 @@ func F_circle_out(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v31
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v29
-						F_appendStringInfo(m, v8+int32(16), int32(176426), v8)
+						F_appendStringInfo(m, v8+int32(16), int32(176900), v8)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -2188,7 +2188,7 @@ L114:
 	}
 L115:
 	;
-	F_errmsg(m, int32(271536), int32(0))
+	F_errmsg(m, int32(272338), int32(0))
 	mBase = m.M
 	v358 = m.ExcPending
 	if v358 != 0 {
@@ -2198,7 +2198,7 @@ L115:
 	}
 L116:
 	;
-	F_errfinish(m, int32(490692), int32(5239), int32(19479))
+	F_errfinish(m, int32(492031), int32(5239), int32(19519))
 	mBase = m.M
 	v363 = m.ExcPending
 	if v363 != 0 {
@@ -2223,7 +2223,7 @@ L118:
 	}
 L119:
 	;
-	F_errmsg(m, int32(118721), int32(0))
+	F_errmsg(m, int32(119088), int32(0))
 	mBase = m.M
 	v374 = m.ExcPending
 	if v374 != 0 {
@@ -2233,7 +2233,7 @@ L119:
 	}
 L120:
 	;
-	F_errfinish(m, int32(490692), int32(5244), int32(19479))
+	F_errfinish(m, int32(492031), int32(5244), int32(19519))
 	mBase = m.M
 	v379 = m.ExcPending
 	if v379 != 0 {
@@ -2258,7 +2258,7 @@ L122:
 	}
 L123:
 	;
-	F_errmsg(m, int32(438431), int32(0))
+	F_errmsg(m, int32(439651), int32(0))
 	mBase = m.M
 	v390 = m.ExcPending
 	if v390 != 0 {
@@ -2268,7 +2268,7 @@ L123:
 	}
 L124:
 	;
-	F_errfinish(m, int32(490692), int32(5253), int32(19479))
+	F_errfinish(m, int32(492031), int32(5253), int32(19519))
 	mBase = m.M
 	v395 = m.ExcPending
 	if v395 != 0 {
@@ -2362,13 +2362,13 @@ func F_circle_recv(m *base.Module, l0 int32) int32 {
 							if v27 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(345041), int32(0))
+								F_errmsg(m, int32(346122), int32(0))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490692), int32(4718), int32(36489))
+									F_errfinish(m, int32(492031), int32(4718), int32(36550))
 									mBase = m.M
 									v36 = m.ExcPending
 									if v36 != 0 {

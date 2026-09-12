@@ -46,7 +46,7 @@ func F_ExecGetTriggerOldSlot(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v24
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+72))
 	if v5 == int32(0) {
-		v8 = int32(4487040)
+		v8 = int32(4489152)
 		v9 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))

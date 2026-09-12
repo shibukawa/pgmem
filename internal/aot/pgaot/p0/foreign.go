@@ -382,13 +382,13 @@ func F_GetForeignServerExtended(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-					F_errmsg_internal(m, int32(43467), v9)
+					F_errmsg_internal(m, int32(43528), v9)
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493562), int32(137), int32(458713))
+						F_errfinish(m, int32(494901), int32(137), int32(459956))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -782,7 +782,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 		*(*uint8)(unsafe.Add(mBase, uint32(v19)+24)) = uint8(v29)
 		*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = v21
 		*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = v21
-		*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = int32(504116)
+		*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = int32(505514)
 		v37 = int32(256)
 		*(*uint16)(unsafe.Add(mBase, uint32(v19)+4)) = uint16(v37)
 		*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(181)
@@ -793,7 +793,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+44)) = uint8(v70)
 			v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 			v74 = v72
-			v75 = int32(306198)
+			v75 = int32(307076)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+45)) = uint8(v74)
 			v77 = F_SystemFuncName(m, v75)
 			mBase = m.M
@@ -832,7 +832,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 							*(*uint8)(unsafe.Add(mBase, uint32(v92)+24)) = uint8(v102)
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+20)) = v94
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+12)) = v94
-							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(504116)
+							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(505514)
 							v110 = int32(256)
 							*(*uint16)(unsafe.Add(mBase, uint32(v92)+4)) = uint16(v110)
 							*(*int32)(unsafe.Add(mBase, uint32(v92))) = int32(181)
@@ -843,7 +843,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v145)
 								v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 								v149 = v147
-								v150 = int32(419534)
+								v150 = int32(420754)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -873,13 +873,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								} else {
 									v133 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+87)))
 									*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v133
-									F_errmsg_internal(m, int32(482060), v16+int32(16))
+									F_errmsg_internal(m, int32(483373), v16+int32(16))
 									mBase = m.M
 									v139 = m.ExcPending
 									if v139 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491372), int32(13972), int32(133982))
+										F_errfinish(m, int32(492711), int32(13972), int32(134416))
 										mBase = m.M
 										v144 = m.ExcPending
 										if v144 != 0 {
@@ -895,7 +895,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v120 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v120)
 								v149 = v80
-								v150 = int32(419593)
+								v150 = int32(420813)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -920,7 +920,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v126 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v126)
 								v149 = v80
-								v150 = int32(419490)
+								v150 = int32(420710)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -945,7 +945,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v123 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v123)
 								v149 = v80
-								v150 = int32(419555)
+								v150 = int32(420775)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -970,7 +970,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v117 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v117)
 								v149 = v80
-								v150 = int32(419513)
+								v150 = int32(420733)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1005,13 +1005,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			} else {
 				v60 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+88)))
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v60
-				F_errmsg_internal(m, int32(482060), v16)
+				F_errmsg_internal(m, int32(483373), v16)
 				mBase = m.M
 				v64 = m.ExcPending
 				if v64 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(491372), int32(13912), int32(133982))
+					F_errfinish(m, int32(492711), int32(13912), int32(134416))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -1027,7 +1027,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			v47 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+44)) = uint8(v47)
 			v74 = v10
-			v75 = int32(306239)
+			v75 = int32(307117)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+45)) = uint8(v74)
 			v77 = F_SystemFuncName(m, v75)
 			mBase = m.M
@@ -1066,7 +1066,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 							*(*uint8)(unsafe.Add(mBase, uint32(v92)+24)) = uint8(v102)
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+20)) = v94
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+12)) = v94
-							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(504116)
+							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(505514)
 							v110 = int32(256)
 							*(*uint16)(unsafe.Add(mBase, uint32(v92)+4)) = uint16(v110)
 							*(*int32)(unsafe.Add(mBase, uint32(v92))) = int32(181)
@@ -1077,7 +1077,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v145)
 								v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 								v149 = v147
-								v150 = int32(419534)
+								v150 = int32(420754)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1107,13 +1107,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								} else {
 									v133 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+87)))
 									*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v133
-									F_errmsg_internal(m, int32(482060), v16+int32(16))
+									F_errmsg_internal(m, int32(483373), v16+int32(16))
 									mBase = m.M
 									v139 = m.ExcPending
 									if v139 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491372), int32(13972), int32(133982))
+										F_errfinish(m, int32(492711), int32(13972), int32(134416))
 										mBase = m.M
 										v144 = m.ExcPending
 										if v144 != 0 {
@@ -1129,7 +1129,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v120 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v120)
 								v149 = v80
-								v150 = int32(419593)
+								v150 = int32(420813)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1154,7 +1154,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v126 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v126)
 								v149 = v80
-								v150 = int32(419490)
+								v150 = int32(420710)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1179,7 +1179,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v123 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v123)
 								v149 = v80
-								v150 = int32(419555)
+								v150 = int32(420775)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1204,7 +1204,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v117 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v117)
 								v149 = v80
-								v150 = int32(419513)
+								v150 = int32(420733)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1234,7 +1234,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			v53 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+44)) = uint8(v53)
 			v74 = v10
-			v75 = int32(306154)
+			v75 = int32(307032)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+45)) = uint8(v74)
 			v77 = F_SystemFuncName(m, v75)
 			mBase = m.M
@@ -1273,7 +1273,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 							*(*uint8)(unsafe.Add(mBase, uint32(v92)+24)) = uint8(v102)
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+20)) = v94
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+12)) = v94
-							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(504116)
+							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(505514)
 							v110 = int32(256)
 							*(*uint16)(unsafe.Add(mBase, uint32(v92)+4)) = uint16(v110)
 							*(*int32)(unsafe.Add(mBase, uint32(v92))) = int32(181)
@@ -1284,7 +1284,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v145)
 								v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 								v149 = v147
-								v150 = int32(419534)
+								v150 = int32(420754)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1314,13 +1314,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								} else {
 									v133 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+87)))
 									*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v133
-									F_errmsg_internal(m, int32(482060), v16+int32(16))
+									F_errmsg_internal(m, int32(483373), v16+int32(16))
 									mBase = m.M
 									v139 = m.ExcPending
 									if v139 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491372), int32(13972), int32(133982))
+										F_errfinish(m, int32(492711), int32(13972), int32(134416))
 										mBase = m.M
 										v144 = m.ExcPending
 										if v144 != 0 {
@@ -1336,7 +1336,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v120 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v120)
 								v149 = v80
-								v150 = int32(419593)
+								v150 = int32(420813)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1361,7 +1361,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v126 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v126)
 								v149 = v80
-								v150 = int32(419490)
+								v150 = int32(420710)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1386,7 +1386,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v123 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v123)
 								v149 = v80
-								v150 = int32(419555)
+								v150 = int32(420775)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1411,7 +1411,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v117 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v117)
 								v149 = v80
-								v150 = int32(419513)
+								v150 = int32(420733)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1441,7 +1441,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			v50 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+44)) = uint8(v50)
 			v74 = v10
-			v75 = int32(306219)
+			v75 = int32(307097)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+45)) = uint8(v74)
 			v77 = F_SystemFuncName(m, v75)
 			mBase = m.M
@@ -1480,7 +1480,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 							*(*uint8)(unsafe.Add(mBase, uint32(v92)+24)) = uint8(v102)
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+20)) = v94
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+12)) = v94
-							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(504116)
+							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(505514)
 							v110 = int32(256)
 							*(*uint16)(unsafe.Add(mBase, uint32(v92)+4)) = uint16(v110)
 							*(*int32)(unsafe.Add(mBase, uint32(v92))) = int32(181)
@@ -1491,7 +1491,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v145)
 								v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 								v149 = v147
-								v150 = int32(419534)
+								v150 = int32(420754)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1521,13 +1521,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								} else {
 									v133 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+87)))
 									*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v133
-									F_errmsg_internal(m, int32(482060), v16+int32(16))
+									F_errmsg_internal(m, int32(483373), v16+int32(16))
 									mBase = m.M
 									v139 = m.ExcPending
 									if v139 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491372), int32(13972), int32(133982))
+										F_errfinish(m, int32(492711), int32(13972), int32(134416))
 										mBase = m.M
 										v144 = m.ExcPending
 										if v144 != 0 {
@@ -1543,7 +1543,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v120 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v120)
 								v149 = v80
-								v150 = int32(419593)
+								v150 = int32(420813)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1568,7 +1568,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v126 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v126)
 								v149 = v80
-								v150 = int32(419490)
+								v150 = int32(420710)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1593,7 +1593,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v123 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v123)
 								v149 = v80
-								v150 = int32(419555)
+								v150 = int32(420775)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1618,7 +1618,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v117 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v117)
 								v149 = v80
-								v150 = int32(419513)
+								v150 = int32(420733)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1648,7 +1648,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 			v44 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+44)) = uint8(v44)
 			v74 = v10
-			v75 = int32(306177)
+			v75 = int32(307055)
 			*(*uint8)(unsafe.Add(mBase, uint32(v19)+45)) = uint8(v74)
 			v77 = F_SystemFuncName(m, v75)
 			mBase = m.M
@@ -1687,7 +1687,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 							*(*uint8)(unsafe.Add(mBase, uint32(v92)+24)) = uint8(v102)
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+20)) = v94
 							*(*int32)(unsafe.Add(mBase, uint32(v92)+12)) = v94
-							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(504116)
+							*(*int32)(unsafe.Add(mBase, uint32(v92)+8)) = int32(505514)
 							v110 = int32(256)
 							*(*uint16)(unsafe.Add(mBase, uint32(v92)+4)) = uint16(v110)
 							*(*int32)(unsafe.Add(mBase, uint32(v92))) = int32(181)
@@ -1698,7 +1698,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v145)
 								v147 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+13)))
 								v149 = v147
-								v150 = int32(419534)
+								v150 = int32(420754)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1728,13 +1728,13 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								} else {
 									v133 = int32(*(*int8)(unsafe.Add(mBase, uint32(l2)+87)))
 									*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v133
-									F_errmsg_internal(m, int32(482060), v16+int32(16))
+									F_errmsg_internal(m, int32(483373), v16+int32(16))
 									mBase = m.M
 									v139 = m.ExcPending
 									if v139 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491372), int32(13972), int32(133982))
+										F_errfinish(m, int32(492711), int32(13972), int32(134416))
 										mBase = m.M
 										v144 = m.ExcPending
 										if v144 != 0 {
@@ -1750,7 +1750,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v120 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v120)
 								v149 = v80
-								v150 = int32(419593)
+								v150 = int32(420813)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1775,7 +1775,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v126 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v126)
 								v149 = v80
-								v150 = int32(419490)
+								v150 = int32(420710)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1800,7 +1800,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v123 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v123)
 								v149 = v80
-								v150 = int32(419555)
+								v150 = int32(420775)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1825,7 +1825,7 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 								v117 = int32(0)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+44)) = uint8(v117)
 								v149 = v80
-								v150 = int32(419513)
+								v150 = int32(420733)
 								*(*uint8)(unsafe.Add(mBase, uint32(v92)+45)) = uint8(v149)
 								v152 = F_SystemFuncName(m, v150)
 								mBase = m.M
@@ -1906,13 +1906,13 @@ func F_get_foreign_server_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(70575), v7)
+						F_errmsg(m, int32(70708), v7)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493562), int32(714), int32(431420))
+							F_errfinish(m, int32(494901), int32(714), int32(432640))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {

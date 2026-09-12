@@ -195,13 +195,13 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					if v230 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(537891), int32(0))
+						F_errmsg(m, int32(539289), int32(0))
 						mBase = m.M
 						v234 = m.ExcPending
 						if v234 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495976), int32(202), int32(396246))
+							F_errfinish(m, int32(497321), int32(202), int32(397439))
 							mBase = m.M
 							v239 = m.ExcPending
 							if v239 != 0 {
@@ -215,9 +215,9 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					}
 				}
 			} else {
-				v18 = *(*int32)(unsafe.Add(mBase, _consts[487]))
+				v18 = *(*int32)(unsafe.Add(mBase, _consts[486]))
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
-				v24 = *(*int32)(unsafe.Add(mBase, uint32(v19*int32(28))+uint32(_consts[1296])))
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(v19*int32(28))+uint32(_consts[1294])))
 				if v24 <= int32(1) {
 					v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10))))
 					if v27 != int32(105) {
@@ -395,7 +395,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 										} else {
 											v111 = v73 + int32(4)
 										}
-										v113 = *(*int32)(unsafe.Add(mBase, _consts[487]))
+										v113 = *(*int32)(unsafe.Add(mBase, _consts[486]))
 										v114 = *(*int32)(unsafe.Add(mBase, uint32(v113)+4))
 										if v114 == int32(6) {
 											v118 = F_UTF8_MatchText(m, v111, v109, v110, v67, int32(0))
@@ -510,7 +510,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 									} else {
 										v111 = v73 + int32(4)
 									}
-									v113 = *(*int32)(unsafe.Add(mBase, _consts[487]))
+									v113 = *(*int32)(unsafe.Add(mBase, _consts[486]))
 									v114 = *(*int32)(unsafe.Add(mBase, uint32(v113)+4))
 									if v114 == int32(6) {
 										v118 = F_UTF8_MatchText(m, v111, v109, v110, v67, int32(0))
@@ -551,19 +551,19 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			if v210 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(537838), int32(0))
+				F_errmsg(m, int32(539236), int32(0))
 				mBase = m.M
 				v214 = m.ExcPending
 				if v214 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(556503), int32(0))
+					F_errhint(m, int32(557901), int32(0))
 					mBase = m.M
 					v218 = m.ExcPending
 					if v218 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495976), int32(194), int32(396246))
+						F_errfinish(m, int32(497321), int32(194), int32(397439))
 						mBase = m.M
 						v223 = m.ExcPending
 						if v223 != 0 {

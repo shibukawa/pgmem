@@ -545,7 +545,7 @@ func F_oauth_get_mechanisms(m *base.Module, l0 int32, l1 int32) {
 	_ = v5
 	var v8 int32
 	_ = v8
-	F_appendStringInfoString(m, l1, int32(522272))
+	F_appendStringInfoString(m, l1, int32(523670))
 	v5 = m.ExcPending
 	if v5 != 0 {
 		return
@@ -873,7 +873,7 @@ L23:
 L24:
 	;
 	v75 = int32(1)
-	v76 = int32(234380)
+	v76 = int32(235048)
 	goto L22
 L25:
 	;
@@ -967,7 +967,7 @@ L38:
 	}
 L39:
 	;
-	v145 = v103 + int32(747920)
+	v145 = v103 + int32(749328)
 	goto L37
 L40:
 	;
@@ -993,7 +993,7 @@ L43:
 	}
 L44:
 	;
-	v145 = v113 + int32(747920)
+	v145 = v113 + int32(749328)
 	goto L37
 L45:
 	;
@@ -1009,7 +1009,7 @@ L46:
 	}
 L47:
 	;
-	v145 = v123 + int32(747920)
+	v145 = v123 + int32(749328)
 	goto L37
 L48:
 	;
@@ -1025,7 +1025,7 @@ L49:
 	}
 L50:
 	;
-	v145 = v133 + int32(747920)
+	v145 = v133 + int32(749328)
 	goto L37
 L51:
 	;
@@ -1034,7 +1034,7 @@ L51:
 L53:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v85))) = v81
-	F_errmsg_internal(m, int32(59243), v85)
+	F_errmsg_internal(m, int32(59304), v85)
 	mBase = m.M
 	v168 = m.ExcPending
 	if v168 != 0 {
@@ -1044,7 +1044,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(490604), int32(2777), int32(500758))
+	F_errfinish(m, int32(491943), int32(2777), int32(502103))
 	mBase = m.M
 	v173 = m.ExcPending
 	if v173 != 0 {

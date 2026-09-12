@@ -214,7 +214,7 @@ func F_BufTableInsert(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[905]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[904]))
 	v14 = F_hash_search_with_hash_value(m, v10, l0, l1, int32(1), v7+int32(15))
 	mBase = m.M
 	v17 = m.ExcPending
