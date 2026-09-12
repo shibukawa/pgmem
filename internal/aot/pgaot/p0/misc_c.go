@@ -6,6 +6,36 @@ import (
 	"unsafe"
 )
 
+func F_CMPTRGM_CHOOSE(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_CMPTRGM_CHOOSE[0]))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+256)))
+	if v9 != 0 {
+		v10 = int32(_a_F_CMPTRGM_CHOOSE_0)
+	} else {
+		v10 = int32(_a_F_CMPTRGM_CHOOSE_1)
+	}
+	*(*int32)(unsafe.Add(mBase, _c_F_CMPTRGM_CHOOSE[1])) = v10
+	v12 = m.T0[v10].(func(*base.Module, int32, int32) int32)(m, l0, l1)
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		return v12
+	}
+}
 func F_CNStoBIG5(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -28726,6 +28756,120 @@ L79:
 L80:
 	;
 	goto L70
+}
+func F_comp_trgm(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_comp_trgm[0]))
+	v5 = m.T0[v4].(func(*base.Module, int32, int32) int32)(m, l0, l1)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
+	} else {
+		return v5
+	}
+}
+func F_compact_trigram(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v61 int32
+	_ = v61
+	var v69 int32
+	_ = v69
+	v9 = int32(255)
+	switch l2 {
+	case 0:
+		v61 = l2
+		*(*uint16)(unsafe.Add(mBase, uint32(l0))) = uint16(v61)
+		v69 = int32(base.Ui32(v61) >> (uint(int32(16)) % 32))
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)) = uint8(v69)
+		return
+	default:
+		v20 = l1
+		v21 = l2
+		v23 = v9
+		v24 = v9
+		v25 = v9
+		v26 = v9
+		for {
+			v27 = int32(8)
+			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
+			v35 = *(*int32)(unsafe.Add(mBase, uint32((v29^v23)<<(uint(int32(2))%32))+uint32(_c_F_compact_trigram[0])))
+			v38 = int32(16)
+			v43 = int32(24)
+			v46 = v35 ^ (v24<<(uint(v27)%32)&int32(_a_F_compact_trigram_0) | v25<<(uint(v38)%32)&int32(16711680) | v26<<(uint(v43)%32))
+			v53 = int32(1)
+			v56 = v21 - v53
+			if v56 != 0 {
+				v20 = v20 + v53
+				v21 = v56
+				v23 = int32(base.Ui32(v46) >> (uint(v43) % 32))
+				v24 = v35
+				v25 = int32(base.Ui32(v46) >> (uint(v27) % 32))
+				v26 = int32(base.Ui32(v46) >> (uint(v38) % 32))
+				continue
+			} else {
+				break
+			}
+			break
+		}
+		v61 = v46 ^ int32(-1)
+		*(*uint16)(unsafe.Add(mBase, uint32(l0))) = uint16(v61)
+		v69 = int32(base.Ui32(v61) >> (uint(int32(16)) % 32))
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)) = uint8(v69)
+		return
+	case 3:
+		v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+		*(*uint8)(unsafe.Add(mBase, uint32(l0))) = uint8(v13)
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)) = uint8(v15)
+		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
+		*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)) = uint8(v17)
+		return
+	}
 }
 func F_compare_lexeme_textfreq(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M

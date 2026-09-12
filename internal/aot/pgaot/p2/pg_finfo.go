@@ -26,6 +26,15 @@ func F_pg_finfo_euc_tw_to_big5(m *base.Module) int32 {
 func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_tw_to_utf8_0)
 }
+func F_pg_finfo_gin_extract_trgm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_trgm_0)
+}
+func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_distance_0)
+}
+func F_pg_finfo_gtrgm_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_union_0)
+}
 func F_pg_finfo_iso8859_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_to_utf8_0)
 }
@@ -68,8 +77,20 @@ func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32 {
 func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_text_0)
 }
+func F_pg_finfo_similarity(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_similarity_0)
+}
+func F_pg_finfo_similarity_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_similarity_op_0)
+}
 func F_pg_finfo_sjis_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_mic_0)
+}
+func F_pg_finfo_strict_word_similarity_dist_commutator_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_strict_word_similarity_dist_commutator_op_0)
+}
+func F_pg_finfo_strict_word_similarity_dist_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_strict_word_similarity_dist_op_0)
 }
 func F_pg_finfo_utf8_to_big5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_big5_0)
@@ -94,4 +115,10 @@ func F_pg_finfo_win1251_to_koi8r(m *base.Module) int32 {
 }
 func F_pg_finfo_win1251_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win1251_to_mic_0)
+}
+func F_pg_finfo_word_similarity_dist_commutator_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_word_similarity_dist_commutator_op_0)
+}
+func F_pg_finfo_word_similarity_dist_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_word_similarity_dist_op_0)
 }

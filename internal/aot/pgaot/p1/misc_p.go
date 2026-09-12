@@ -1325,6 +1325,56 @@ L27:
 	;
 	return v110
 }
+func F_packArcInfoCmp(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v28 int32
+	_ = v28
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	if v6 < v7 {
+		return int32(-1)
+	} else {
+		v11 = int32(1)
+		if v7 < v6 {
+			v28 = v11
+			return v28
+		} else {
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			if v13 < v14 {
+				return int32(-1)
+			} else {
+				if v14 < v13 {
+					v28 = v11
+				} else {
+					v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+					v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+					if v20 < v21 {
+						v28 = int32(-1)
+					} else {
+						v28 = base.B2i32(v21 < v20)
+					}
+				}
+				return v28
+			}
+		}
+	}
+}
 func F_pagetable_delete(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

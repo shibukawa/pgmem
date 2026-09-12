@@ -2826,6 +2826,8 @@ func F_makeCompoundFlags(m *base.Module, l0 int32, l1 int32) int32
 func F_NormalizeSubWord(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_make_tsvector github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_make_tsvector
 func F_make_tsvector(m *base.Module, l0 int32) int32
+//go:linkname F_t_isalnum_with_len github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_with_len
+func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_parsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_parsetext
 func F_parsetext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_hlparsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hlparsetext
@@ -4644,6 +4646,14 @@ func F_px_debug(m *base.Module, l0 int32, l1 int32)
 func F_px_find_combo(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_internal_citext_pattern_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_internal_citext_pattern_cmp
 func F_internal_citext_pattern_cmp(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_generate_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_generate_trgm
+func F_generate_trgm(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_make_trigrams github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_make_trigrams
+func F_make_trigrams(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_cnt_sml github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_cnt_sml
+func F_cnt_sml(m *base.Module, l0 int32, l1 int32, l2 int32) float32
+//go:linkname F_calc_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_calc_word_similarity
+func F_calc_word_similarity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

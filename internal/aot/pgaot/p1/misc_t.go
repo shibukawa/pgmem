@@ -75,6 +75,75 @@ func F___toread(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = F_pg_mblen_with_len(m, l0, l1)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		if v8 != int32(1) {
+			v15 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_t_isalnum_with_len[0])))
+			if v15 != int32(1) {
+				F_char2wchar(m, v6+int32(4), int32(3), l0, v8, int32(0))
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
+				} else {
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+					if base.Ui32(int32(10)) <= base.Ui32(v36-int32(48)) {
+						v43 = F_iswalpha(m, v36)
+						mBase = m.M
+						v46 = base.B2i32(v43 != int32(0))
+					} else {
+						v46 = int32(1)
+					}
+					v47 = v46
+					m.G0 = v6 + int32(16)
+					return v47
+				}
+			} else {
+				v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+				v47 = base.B2i32(base.Ui32(v18-int32(48)) < base.Ui32(int32(10))) | base.B2i32(base.Ui32(v18|int32(32)-int32(97)) < base.Ui32(int32(26)))
+				m.G0 = v6 + int32(16)
+				return v47
+			}
+		} else {
+			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+			v47 = base.B2i32(base.Ui32(v18-int32(48)) < base.Ui32(int32(10))) | base.B2i32(base.Ui32(v18|int32(32)-int32(97)) < base.Ui32(int32(26)))
+			m.G0 = v6 + int32(16)
+			return v47
+		}
+	}
+}
 func F_terminate_brin_buildstate(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -15208,6 +15277,20 @@ func F_transientrel_startup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			}
 		}
 	}
+}
+func F_trgm2int(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	return v2 | (v3<<(uint(int32(8))%32) | v6<<(uint(int32(16))%32))
 }
 func F_trueTriConsistentFn(m *base.Module, l0 int32) int32 {
 	return int32(1)

@@ -5857,6 +5857,201 @@ L39:
 	;
 	goto L38
 }
+func F_trgm_presence_map(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v68 int32
+	_ = v68
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v102 int32
+	_ = v102
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v13 = int32(2)
+	v15 = int32(5)
+	v16 = int32(base.Ui32(v12)>>(uint(v13)%32)) - v15
+	v17 = int32(3)
+	v18 = base.I32_div_u_s(v16, v17)
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v23 = int32(base.Ui32(v19)>>(uint(v13)%32)) - v15
+	v25 = base.I32_div_u_s(v23, v17)
+	v26 = F_palloc0(m, v25)
+	mBase = m.M
+	v29 = m.ExcPending
+	if v29 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	if base.Ui32(int32(3)) <= base.Ui32(v23) {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v34 = int32(1)
+	if base.Ui32(v25) <= base.Ui32(v34) {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	goto L5
+L5:
+	;
+	return v26
+L6:
+	;
+	v37 = v34
+	goto L8
+L7:
+	;
+	v37 = v25
+	goto L8
+L8:
+	;
+	v45 = int32(0)
+	v48 = l0 + int32(5)
+	goto L9
+L9:
+	;
+	if base.Ui32(v16) < base.Ui32(int32(3)) {
+		goto L11
+	} else {
+		goto L12
+	}
+L10:
+	;
+	goto L5
+L11:
+	;
+	v102 = v45 + int32(1)
+	if v102 != v37 {
+		v45 = v102
+		v48 = v48 + int32(3)
+		goto L9
+	} else {
+		goto L23
+	}
+L12:
+	;
+	v55 = v18
+	v56 = int32(0)
+	goto L13
+L13:
+	;
+	v68 = int32(base.Ui32(v55+v56) >> (uint(int32(1)) % 32))
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F_trgm_presence_map[0]))
+	v74 = m.T0[v73].(func(*base.Module, int32, int32) int32)(m, v48, l1+int32(5)+v68*int32(3))
+	mBase = m.M
+	v75 = m.ExcPending
+	if v75 != 0 {
+		goto L1
+	} else {
+		goto L17
+	}
+L14:
+	;
+	v86 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v45+v26))) = uint8(v86)
+	goto L11
+L15:
+	;
+	goto L14
+L16:
+	;
+	if v83 < v82 {
+		v55 = v82
+		v56 = v83
+		goto L13
+	} else {
+		goto L22
+	}
+L17:
+	;
+	if v74 < int32(0) {
+		goto L18
+	} else {
+		goto L19
+	}
+L18:
+	;
+	v82 = v68
+	v83 = v56
+	goto L16
+L19:
+	;
+	goto L20
+L20:
+	;
+	if v74 == int32(0) {
+		goto L15
+	} else {
+		goto L21
+	}
+L21:
+	;
+	v82 = v55
+	v83 = v68 + int32(1)
+	goto L16
+L22:
+	;
+	goto L11
+L23:
+	;
+	goto L10
+}
 func F_tsearch_readline(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

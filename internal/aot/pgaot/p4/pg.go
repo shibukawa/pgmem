@@ -22293,6 +22293,109 @@ func F_pg_read_file_off_len_missing(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_reg_getnumoutarcs(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	v3 = int32(0)
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	if l1 < v3 {
+		v28 = v3
+		m.G0 = v7 + int32(16)
+		return v28
+	} else {
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		v13 = v11 + int32(20)
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+		if v14 <= l1 {
+			v28 = v3
+			m.G0 = v7 + int32(16)
+			return v28
+		} else {
+			v16 = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v16
+			F_traverse_lacons(m, v13, l1, v7+int32(12), v16, v16)
+			mBase = m.M
+			v25 = m.ExcPending
+			if v25 != 0 {
+				return int32(0)
+			} else {
+				v26 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
+				v28 = v26
+				m.G0 = v7 + int32(16)
+				return v28
+			}
+		}
+	}
+}
+func F_pg_reg_getoutarcs(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v24 int32
+	_ = v24
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	if l1 < int32(0) {
+		m.G0 = v8 + int32(16)
+		return
+	} else {
+		if l3 <= int32(0) {
+			m.G0 = v8 + int32(16)
+			return
+		} else {
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			v16 = v14 + int32(20)
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+			if v17 <= l1 {
+				m.G0 = v8 + int32(16)
+				return
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = int32(0)
+				F_traverse_lacons(m, v16, l1, v8+int32(12), l2, l3)
+				mBase = m.M
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return
+				} else {
+					m.G0 = v8 + int32(16)
+					return
+				}
+			}
+		}
+	}
+}
 func F_pg_set_regex_collation(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

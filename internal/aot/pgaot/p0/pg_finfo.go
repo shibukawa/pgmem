@@ -20,6 +20,12 @@ func F_pg_finfo_euc_kr_to_mic(m *base.Module) int32 {
 func F_pg_finfo_euc_tw_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_tw_to_mic_0)
 }
+func F_pg_finfo_gin_trgm_triconsistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_trgm_triconsistent_0)
+}
+func F_pg_finfo_gtrgm_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_picksplit_0)
+}
 func F_pg_finfo_iso8859_1_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_1_to_utf8_0)
 }
@@ -61,6 +67,9 @@ func F_pg_finfo_pgp_pub_encrypt_text(m *base.Module) int32 {
 }
 func F_pg_finfo_pgp_sym_encrypt_bytea(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_bytea_0)
+}
+func F_pg_finfo_show_limit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_show_limit_0)
 }
 func F_pg_finfo_sjis_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_utf8_0)

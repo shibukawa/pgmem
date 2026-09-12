@@ -4312,6 +4312,8 @@ func F_px_debug(m *base.Module, l0 int32, l1 int32)
 func F_citextcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_internal_citext_pattern_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_internal_citext_pattern_cmp
 func F_internal_citext_pattern_cmp(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_generate_trgm_only github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_generate_trgm_only
+func F_generate_trgm_only(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

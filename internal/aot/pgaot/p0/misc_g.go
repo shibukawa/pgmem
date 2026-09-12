@@ -4208,6 +4208,163 @@ L134:
 	for {
 	}
 }
+func F_generate_trgm(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v78 int32
+	_ = v78
+	v3 = int32(0)
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	F_generate_trgm_only(m, v11+int32(4), l0, l1, v3)
+	mBase = m.M
+	v19 = m.ExcPending
+	if v19 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	v22 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v21)+4)) = uint8(v22)
+	if int32(2) <= v20 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v27 = v21 + int32(5)
+	F_pg_qsort(m, v27, v20, int32(3), int32(_a_F_generate_trgm_0))
+	mBase = m.M
+	v31 = m.ExcPending
+	if v31 != 0 {
+		goto L1
+	} else {
+		goto L6
+	}
+L4:
+	;
+	v78 = v20
+	goto L5
+L5:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v78*int32(12) + int32(20)
+	m.G0 = v11 + int32(16)
+	return v21
+L6:
+	;
+	v34 = int32(1)
+	v35 = v3
+	goto L7
+L7:
+	;
+	v41 = int32(3)
+	v43 = v27 + v34*v41
+	v48 = *(*int32)(unsafe.Add(mBase, _c_F_generate_trgm[0]))
+	v49 = m.T0[v48].(func(*base.Module, int32, int32) int32)(m, v43, v27+v35*v41)
+	mBase = m.M
+	v50 = m.ExcPending
+	if v50 != 0 {
+		goto L1
+	} else {
+		goto L10
+	}
+L8:
+	;
+	v78 = v63 + int32(1)
+	goto L5
+L9:
+	;
+	v66 = v34 + int32(1)
+	if v66 != v20 {
+		v34 = v66
+		v35 = v63
+		goto L7
+	} else {
+		goto L13
+	}
+L10:
+	;
+	if v49 == int32(0) {
+		v63 = v35
+		goto L9
+	} else {
+		goto L11
+	}
+L11:
+	;
+	v54 = v35 + int32(1)
+	if v34 == v54 {
+		v63 = v34
+		goto L9
+	} else {
+		goto L12
+	}
+L12:
+	;
+	v58 = v27 + v54*int32(3)
+	v59 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
+	*(*uint16)(unsafe.Add(mBase, uint32(v58))) = uint16(v59)
+	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43)+2)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v58)+2)) = uint8(v61)
+	v63 = v54
+	goto L9
+L13:
+	;
+	goto L8
+}
 func F_getNextFlagFromString(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase

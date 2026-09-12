@@ -80,6 +80,8 @@ func F_CopyIndexTuple(m *base.Module, l0 int32) int32
 func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
+func F_add_local_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_untransformRelOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_untransformRelOptions
 func F_untransformRelOptions(m *base.Module, l0 int32) int32
 //go:linkname F_extractRelOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_extractRelOptions
@@ -3404,6 +3406,8 @@ func F_ShowGUCOption(m *base.Module, l0 int32, l1 int32) int32
 func F_set_config_option_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_reapply_stacked_values github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_reapply_stacked_values
 func F_reapply_stacked_values(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
+//go:linkname F_DefineCustomRealVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_DefineCustomRealVariable
+func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
 func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
@@ -3844,6 +3848,10 @@ func F_pgp_load_digest(m *base.Module, l0 int32, l1 int32) int32
 func F_px_crypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_citextcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_citextcmp
 func F_citextcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_generate_trgm_only github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_generate_trgm_only
+func F_generate_trgm_only(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_calc_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_calc_word_similarity
+func F_calc_word_similarity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

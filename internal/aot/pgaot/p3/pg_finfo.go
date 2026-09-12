@@ -11,6 +11,12 @@ func F_pg_finfo_citext_pattern_gt(m *base.Module) int32 {
 func F_pg_finfo_euc_jp_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_sjis_0)
 }
+func F_pg_finfo_gtrgm_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_compress_0)
+}
+func F_pg_finfo_gtrgm_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_out_0)
+}
 func F_pg_finfo_iso_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_win866_0)
 }
@@ -31,6 +37,12 @@ func F_pg_finfo_pg_dearmor(m *base.Module) int32 {
 }
 func F_pg_finfo_pgp_armor_headers(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_armor_headers_0)
+}
+func F_pg_finfo_show_trgm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_show_trgm_0)
+}
+func F_pg_finfo_strict_word_similarity_commutator_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_strict_word_similarity_commutator_op_0)
 }
 func F_pg_finfo_utf8_to_shift_jis_2004(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_shift_jis_2004_0)

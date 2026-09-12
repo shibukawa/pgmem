@@ -23,6 +23,12 @@ func F_pg_finfo_euc_jis_2004_to_shift_jis_2004(m *base.Module) int32 {
 func F_pg_finfo_euc_jp_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_mic_0)
 }
+func F_pg_finfo_gin_extract_query_trgm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_trgm_0)
+}
+func F_pg_finfo_gtrgm_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_options_0)
+}
 func F_pg_finfo_koi8r_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_win866_0)
 }
@@ -73,4 +79,10 @@ func F_pg_finfo_win866_to_win1251(m *base.Module) int32 {
 }
 func F_pg_finfo_win_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win_to_utf8_0)
+}
+func F_pg_finfo_word_similarity(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_word_similarity_0)
+}
+func F_pg_finfo_word_similarity_commutator_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_word_similarity_commutator_op_0)
 }

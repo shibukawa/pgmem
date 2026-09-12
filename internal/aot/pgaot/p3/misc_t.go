@@ -7455,6 +7455,131 @@ L76:
 	for {
 	}
 }
+func F_traverse_lacons(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	F_check_stack_depth(m)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return
+L2:
+	;
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v9+l1<<(uint(int32(2))%32))))
+	v14 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13))))
+	if v14 != int32(_a_F_traverse_lacons_0) {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v18 = v13
+	v22 = v14
+	goto L6
+L4:
+	;
+	goto L5
+L5:
+	;
+	return
+L6:
+	;
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if base.I32_extend16_s(v22) < v23 {
+		goto L9
+	} else {
+		goto L10
+	}
+L7:
+	;
+	goto L5
+L8:
+	;
+	v43 = v18 + int32(8)
+	v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v43))))
+	if v44 != int32(_a_F_traverse_lacons_0) {
+		v18 = v43
+		v22 = v44
+		goto L6
+	} else {
+		goto L14
+	}
+L9:
+	;
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v26 + int32(1)
+	if l4 <= v26 {
+		goto L8
+	} else {
+		goto L12
+	}
+L10:
+	;
+	goto L11
+L11:
+	;
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	F_traverse_lacons(m, l0, v38, l2, l3, l4)
+	mBase = m.M
+	v40 = m.ExcPending
+	if v40 != 0 {
+		goto L1
+	} else {
+		goto L13
+	}
+L12:
+	;
+	v33 = l3 + v26<<(uint(int32(3))%32)
+	v34 = int32(*(*int16)(unsafe.Add(mBase, uint32(v18))))
+	*(*int32)(unsafe.Add(mBase, uint32(v33))) = v34
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v33)+4)) = v36
+	goto L8
+L13:
+	;
+	goto L8
+L14:
+	;
+	goto L7
+}
 func F_trivial_subqueryscan(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

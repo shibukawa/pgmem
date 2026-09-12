@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5487)
-	m.G0 = int32(13008272)
+	m.T0 = make([]any, 5572)
+	m.G0 = int32(13009136)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -48,7 +48,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4337371
+	m.DataEnd = 4338235
 	initData_0(m)
 	return m
 }
@@ -81,8 +81,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5487)
-	m.G0 = int32(13008272)
+	m.T0 = make([]any, 5572)
+	m.G0 = int32(13009136)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -107,7 +107,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4337371
+	m.DataEnd = 4338235
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -122,8 +122,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5487)
-	m.G0 = int32(13008272)
+	m.T0 = make([]any, 5572)
+	m.G0 = int32(13009136)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -148,18 +148,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4337371
+	m.DataEnd = 4338235
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1565520])
-	copy(m.Memory[1570848:], wasm2goData_data_bin[1565520:1565529])
-	copy(m.Memory[1572896:], wasm2goData_data_bin[1565529:1578457])
-	copy(m.Memory[1597444:], wasm2goData_data_bin[1578457:1671698])
-	copy(m.Memory[1691712:], wasm2goData_data_bin[1671698:1783354])
-	copy(m.Memory[1814584:], wasm2goData_data_bin[1783354:4023264])
-	copy(m.Memory[4061984:], wasm2goData_data_bin[4023264:4298651])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1567104])
+	copy(m.Memory[1572432:], wasm2goData_data_bin[1567104:1567113])
+	copy(m.Memory[1574480:], wasm2goData_data_bin[1567113:1580041])
+	copy(m.Memory[1597444:], wasm2goData_data_bin[1580041:1673282])
+	copy(m.Memory[1691712:], wasm2goData_data_bin[1673282:1784938])
+	copy(m.Memory[1814584:], wasm2goData_data_bin[1784938:4025616])
+	copy(m.Memory[4062752:], wasm2goData_data_bin[4025616:4301099])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -1219,6 +1219,204 @@ func PgFinfoCitextPatternLt(m *base.Module) int32 {
 }
 func PgFinfoCitextSmaller(m *base.Module) int32 {
 	return F_pg_finfo_citext_smaller(m)
+}
+func PgMagicFuncPgTrgm(m *base.Module) int32 {
+	return F_Pg_magic_func_pg_trgm(m)
+}
+func PGInitPgTrgm(m *base.Module) {
+	F__PG_init_pg_trgm(m)
+}
+func GinExtractQueryTrgm(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_trgm(m, l0)
+}
+func GinExtractTrgm(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_trgm(m, l0)
+}
+func GinExtractValueTrgm(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_trgm(m, l0)
+}
+func GinTrgmConsistent(m *base.Module, l0 int32) int32 {
+	return F_gin_trgm_consistent(m, l0)
+}
+func GinTrgmTriconsistent(m *base.Module, l0 int32) int32 {
+	return F_gin_trgm_triconsistent(m, l0)
+}
+func GtrgmCompress(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_compress(m, l0)
+}
+func GtrgmConsistent(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_consistent(m, l0)
+}
+func GtrgmDecompress(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_decompress(m, l0)
+}
+func GtrgmDistance(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_distance(m, l0)
+}
+func GtrgmIn(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_in(m, l0)
+}
+func GtrgmOptions(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_options(m, l0)
+}
+func GtrgmOut(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_out(m, l0)
+}
+func GtrgmPenalty(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_penalty(m, l0)
+}
+func GtrgmPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_picksplit(m, l0)
+}
+func GtrgmSame(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_same(m, l0)
+}
+func GtrgmUnion(m *base.Module, l0 int32) int32 {
+	return F_gtrgm_union(m, l0)
+}
+func PgFinfoGinExtractQueryTrgm(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_trgm(m)
+}
+func PgFinfoGinExtractTrgm(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_trgm(m)
+}
+func PgFinfoGinExtractValueTrgm(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_trgm(m)
+}
+func PgFinfoGinTrgmConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gin_trgm_consistent(m)
+}
+func PgFinfoGinTrgmTriconsistent(m *base.Module) int32 {
+	return F_pg_finfo_gin_trgm_triconsistent(m)
+}
+func PgFinfoGtrgmCompress(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_compress(m)
+}
+func PgFinfoGtrgmConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_consistent(m)
+}
+func PgFinfoGtrgmDecompress(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_decompress(m)
+}
+func PgFinfoGtrgmDistance(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_distance(m)
+}
+func PgFinfoGtrgmIn(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_in(m)
+}
+func PgFinfoGtrgmOptions(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_options(m)
+}
+func PgFinfoGtrgmOut(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_out(m)
+}
+func PgFinfoGtrgmPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_penalty(m)
+}
+func PgFinfoGtrgmPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_picksplit(m)
+}
+func PgFinfoGtrgmSame(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_same(m)
+}
+func PgFinfoGtrgmUnion(m *base.Module) int32 {
+	return F_pg_finfo_gtrgm_union(m)
+}
+func PgFinfoSetLimit(m *base.Module) int32 {
+	return F_pg_finfo_set_limit(m)
+}
+func PgFinfoShowLimit(m *base.Module) int32 {
+	return F_pg_finfo_show_limit(m)
+}
+func PgFinfoShowTrgm(m *base.Module) int32 {
+	return F_pg_finfo_show_trgm(m)
+}
+func PgFinfoSimilarity(m *base.Module) int32 {
+	return F_pg_finfo_similarity(m)
+}
+func PgFinfoSimilarityDist(m *base.Module) int32 {
+	return F_pg_finfo_similarity_dist(m)
+}
+func PgFinfoSimilarityOp(m *base.Module) int32 {
+	return F_pg_finfo_similarity_op(m)
+}
+func PgFinfoStrictWordSimilarity(m *base.Module) int32 {
+	return F_pg_finfo_strict_word_similarity(m)
+}
+func PgFinfoStrictWordSimilarityCommutatorOp(m *base.Module) int32 {
+	return F_pg_finfo_strict_word_similarity_commutator_op(m)
+}
+func PgFinfoStrictWordSimilarityDistCommutatorOp(m *base.Module) int32 {
+	return F_pg_finfo_strict_word_similarity_dist_commutator_op(m)
+}
+func PgFinfoStrictWordSimilarityDistOp(m *base.Module) int32 {
+	return F_pg_finfo_strict_word_similarity_dist_op(m)
+}
+func PgFinfoStrictWordSimilarityOp(m *base.Module) int32 {
+	return F_pg_finfo_strict_word_similarity_op(m)
+}
+func PgFinfoWordSimilarity(m *base.Module) int32 {
+	return F_pg_finfo_word_similarity(m)
+}
+func PgFinfoWordSimilarityCommutatorOp(m *base.Module) int32 {
+	return F_pg_finfo_word_similarity_commutator_op(m)
+}
+func PgFinfoWordSimilarityDistCommutatorOp(m *base.Module) int32 {
+	return F_pg_finfo_word_similarity_dist_commutator_op(m)
+}
+func PgFinfoWordSimilarityDistOp(m *base.Module) int32 {
+	return F_pg_finfo_word_similarity_dist_op(m)
+}
+func PgFinfoWordSimilarityOp(m *base.Module) int32 {
+	return F_pg_finfo_word_similarity_op(m)
+}
+func SetLimit(m *base.Module, l0 int32) int32 {
+	return F_set_limit(m, l0)
+}
+func ShowLimit(m *base.Module, l0 int32) int32 {
+	return F_show_limit(m, l0)
+}
+func ShowTrgm(m *base.Module, l0 int32) int32 {
+	return F_show_trgm(m, l0)
+}
+func Similarity(m *base.Module, l0 int32) int32 {
+	return F_similarity(m, l0)
+}
+func SimilarityDist(m *base.Module, l0 int32) int32 {
+	return F_similarity_dist(m, l0)
+}
+func SimilarityOp(m *base.Module, l0 int32) int32 {
+	return F_similarity_op(m, l0)
+}
+func StrictWordSimilarity(m *base.Module, l0 int32) int32 {
+	return F_strict_word_similarity(m, l0)
+}
+func StrictWordSimilarityCommutatorOp(m *base.Module, l0 int32) int32 {
+	return F_strict_word_similarity_commutator_op(m, l0)
+}
+func StrictWordSimilarityDistCommutatorOp(m *base.Module, l0 int32) int32 {
+	return F_strict_word_similarity_dist_commutator_op(m, l0)
+}
+func StrictWordSimilarityDistOp(m *base.Module, l0 int32) int32 {
+	return F_strict_word_similarity_dist_op(m, l0)
+}
+func StrictWordSimilarityOp(m *base.Module, l0 int32) int32 {
+	return F_strict_word_similarity_op(m, l0)
+}
+func WordSimilarity(m *base.Module, l0 int32) int32 {
+	return F_word_similarity(m, l0)
+}
+func WordSimilarityCommutatorOp(m *base.Module, l0 int32) int32 {
+	return F_word_similarity_commutator_op(m, l0)
+}
+func WordSimilarityDistCommutatorOp(m *base.Module, l0 int32) int32 {
+	return F_word_similarity_dist_commutator_op(m, l0)
+}
+func WordSimilarityDistOp(m *base.Module, l0 int32) int32 {
+	return F_word_similarity_dist_op(m, l0)
+}
+func WordSimilarityOp(m *base.Module, l0 int32) int32 {
+	return F_word_similarity_op(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

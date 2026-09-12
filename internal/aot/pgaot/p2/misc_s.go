@@ -8120,6 +8120,28 @@ func F_similar_to_escape_2(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_similarity_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = F_DirectFunctionCall2Coll(m, int32(_a_F_similarity_dist_0), int32(0), v5, v6)
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		return int32(0)
+	} else {
+		return base.I32_reinterpret_f32(base.F32_sub(float32(1), base.F32_reinterpret_i32(v7)))
+	}
+}
 func F_sin(m *base.Module, l0 float64) float64 {
 	mBase := m.M
 	_ = mBase

@@ -6217,6 +6217,298 @@ L133:
 	for {
 	}
 }
+func F_trigramsMatchGraph(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v67 int32
+	_ = v67
+	var v82 int32
+	_ = v82
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v99 int32
+	_ = v99
+	var v102 int32
+	_ = v102
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
+	var v119 int32
+	_ = v119
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v131 int32
+	_ = v131
+	var v133 int32
+	_ = v133
+	var v143 int32
+	_ = v143
+	var v144 int32
+	_ = v144
+	var v146 int32
+	_ = v146
+	var v149 int32
+	_ = v149
+	var v150 int32
+	_ = v150
+	var v153 int32
+	_ = v153
+	var v154 int32
+	_ = v154
+	var v155 int32
+	_ = v155
+	var v164 int32
+	_ = v164
+	var v167 int32
+	_ = v167
+	var v173 int32
+	_ = v173
+	var v182 int32
+	_ = v182
+	var v197 int32
+	_ = v197
+	v3 = int32(0)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v17 = F__emscripten_memset_bulkmem(m, v13, base.I32_extend8_s(v3), v15)
+	mBase = m.M
+	goto L1
+L1:
+	;
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v22 = F__emscripten_memset_bulkmem(m, v18, base.I32_extend8_s(int32(0)), v20)
+	mBase = m.M
+	goto L2
+L2:
+	;
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if int32(0) < v23 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v30 = v3
+	v32 = v3
+	goto L6
+L4:
+	;
+	goto L5
+L5:
+	;
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v97 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v96))) = uint8(v97)
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v99))) = int32(0)
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v108 = v97
+	v110 = v3
+	goto L18
+L6:
+	;
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v26+v32<<(uint(int32(2))%32))))
+	v43 = v42 + v30
+	if v42 <= int32(0) {
+		goto L8
+	} else {
+		goto L9
+	}
+L7:
+	;
+	goto L5
+L8:
+	;
+	v82 = v32 + int32(1)
+	if v82 != v23 {
+		v30 = v43
+		v32 = v82
+		goto L6
+	} else {
+		goto L16
+	}
+L9:
+	;
+	v48 = v30
+	goto L10
+L10:
+	;
+	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1+v48))))
+	if v59 != int32(1) {
+		goto L12
+	} else {
+		goto L13
+	}
+L11:
+	;
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v67 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v65+v32))) = uint8(v67)
+	goto L8
+L12:
+	;
+	v63 = v48 + int32(1)
+	if v63 < v43 {
+		v48 = v63
+		goto L10
+	} else {
+		goto L15
+	}
+L13:
+	;
+	goto L14
+L14:
+	;
+	goto L11
+L15:
+	;
+	goto L8
+L16:
+	;
+	goto L7
+L17:
+	;
+	return v197
+L18:
+	;
+	v119 = *(*int32)(unsafe.Add(mBase, uint32(v99+v110<<(uint(int32(2))%32))))
+	v122 = v102 + v119<<(uint(int32(3))%32)
+	v123 = *(*int32)(unsafe.Add(mBase, uint32(v122)))
+	if int32(0) < v123 {
+		goto L20
+	} else {
+		goto L21
+	}
+L19:
+	;
+	v197 = int32(0)
+	goto L17
+L20:
+	;
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v127 = *(*int32)(unsafe.Add(mBase, uint32(v122)+4))
+	v131 = int32(0)
+	v133 = v108
+	goto L23
+L21:
+	;
+	v173 = v108
+	goto L22
+L22:
+	;
+	v182 = v110 + int32(1)
+	if v182 < v173 {
+		v108 = v173
+		v110 = v182
+		goto L18
+	} else {
+		goto L30
+	}
+L23:
+	;
+	v143 = v127 + v131<<(uint(int32(3))%32)
+	v144 = *(*int32)(unsafe.Add(mBase, uint32(v143)+4))
+	v146 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v126+v144))))
+	if v146 != int32(1) {
+		v164 = v133
+		goto L25
+	} else {
+		goto L26
+	}
+L24:
+	;
+	v173 = v164
+	goto L22
+L25:
+	;
+	v167 = v131 + int32(1)
+	if v167 != v123 {
+		v131 = v167
+		v133 = v164
+		goto L23
+	} else {
+		goto L29
+	}
+L26:
+	;
+	v149 = int32(1)
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v143)))
+	if v150 == v149 {
+		v197 = v149
+		goto L17
+	} else {
+		goto L27
+	}
+L27:
+	;
+	v153 = v150 + v96
+	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v153))))
+	if v154 != 0 {
+		v164 = v133
+		goto L25
+	} else {
+		goto L28
+	}
+L28:
+	;
+	v155 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v153))) = uint8(v155)
+	*(*int32)(unsafe.Add(mBase, uint32(v99+v133<<(uint(int32(2))%32)))) = v150
+	v164 = v133 + v155
+	goto L25
+L29:
+	;
+	goto L24
+L30:
+	;
+	goto L19
+}
 func F_truncate_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M
 	_ = mBase

@@ -20,6 +20,18 @@ func F_pg_finfo_euc_kr_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_gb18030_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gb18030_to_utf8_0)
 }
+func F_pg_finfo_gin_extract_value_trgm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_trgm_0)
+}
+func F_pg_finfo_gtrgm_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_decompress_0)
+}
+func F_pg_finfo_gtrgm_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_in_0)
+}
+func F_pg_finfo_gtrgm_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_penalty_0)
+}
 func F_pg_finfo_iso_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_win1251_0)
 }

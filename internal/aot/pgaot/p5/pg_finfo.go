@@ -17,6 +17,15 @@ func F_pg_finfo_euc_jp_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_gbk_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbk_to_utf8_0)
 }
+func F_pg_finfo_gin_trgm_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_trgm_consistent_0)
+}
+func F_pg_finfo_gtrgm_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_consistent_0)
+}
+func F_pg_finfo_gtrgm_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gtrgm_same_0)
+}
 func F_pg_finfo_johab_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_johab_to_utf8_0)
 }
@@ -35,6 +44,21 @@ func F_pg_finfo_pg_digest(m *base.Module) int32 {
 func F_pg_finfo_plpgsql_validator(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_validator_0)
 }
+func F_pg_finfo_set_limit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_set_limit_0)
+}
+func F_pg_finfo_similarity_dist(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_similarity_dist_0)
+}
+func F_pg_finfo_strict_word_similarity(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_strict_word_similarity_0)
+}
+func F_pg_finfo_strict_word_similarity_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_strict_word_similarity_op_0)
+}
 func F_pg_finfo_utf8_to_uhc(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_uhc_0)
+}
+func F_pg_finfo_word_similarity_op(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_word_similarity_op_0)
 }

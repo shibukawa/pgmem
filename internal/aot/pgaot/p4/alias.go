@@ -1938,6 +1938,8 @@ func F_duptraverse(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_newdfa(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_getvacant github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_getvacant
 func F_getvacant(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_traverse_lacons github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_traverse_lacons
+func F_traverse_lacons(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_pa_free_worker_info github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pa_free_worker_info
 func F_pa_free_worker_info(m *base.Module, l0 int32)
 //go:linkname F_build_index_value_desc github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_build_index_value_desc
@@ -3526,6 +3528,8 @@ func F_pg_wchar2mb_with_len(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_pg_mblen_cstr(m *base.Module, l0 int32) int32
 //go:linkname F_report_invalid_encoding_db github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_report_invalid_encoding_db
 func F_report_invalid_encoding_db(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_pg_mblen_unbounded github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_mblen_unbounded
+func F_pg_mblen_unbounded(m *base.Module, l0 int32) int32
 //go:linkname F_pg_mbcharcliplen github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_mbcharcliplen
 func F_pg_mbcharcliplen(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_check_encoding_conversion_args github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_check_encoding_conversion_args
@@ -3568,6 +3572,10 @@ func F_parse_real(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_config_enum_get_options(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_GetConfigOptionFlags github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetConfigOptionFlags
 func F_GetConfigOptionFlags(m *base.Module, l0 int32) int32
+//go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
+func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
+func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName
 func F_GetConfigOptionByName(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_ProcessGUCArray github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ProcessGUCArray
@@ -3994,6 +4002,20 @@ func F_px_THROW_ERROR(m *base.Module, l0 int32)
 func F_px_debug(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_citextcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_citextcmp
 func F_citextcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_index_strategy_get_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_index_strategy_get_limit
+func F_index_strategy_get_limit(m *base.Module, l0 int32) float64
+//go:linkname F_generate_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_generate_trgm
+func F_generate_trgm(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_generate_wildcard_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_generate_wildcard_trgm
+func F_generate_wildcard_trgm(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_trgm_contained_by github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_trgm_contained_by
+func F_trgm_contained_by(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_trgm_presence_map github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_trgm_presence_map
+func F_trgm_presence_map(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_calc_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_calc_word_similarity
+func F_calc_word_similarity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float32
+//go:linkname F_createTrgmNFA github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_createTrgmNFA
+func F_createTrgmNFA(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

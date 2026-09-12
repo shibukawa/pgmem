@@ -6,6 +6,65 @@ import (
 	"unsafe"
 )
 
+func F_CMPTRGM_UNSIGNED(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+	if v5 != v6 {
+		if base.Ui32(v5) < base.Ui32(v6) {
+			v11 = int32(-1)
+		} else {
+			v11 = int32(1)
+		}
+		return v11
+	} else {
+		v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
+		if v13 != v14 {
+			if base.Ui32(v13) < base.Ui32(v14) {
+				v19 = int32(-1)
+			} else {
+				v19 = int32(1)
+			}
+			return v19
+		} else {
+			v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
+			v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
+			if v22 != v23 {
+				if base.Ui32(v22) < base.Ui32(v23) {
+					v28 = int32(-1)
+				} else {
+					v28 = int32(1)
+				}
+				v29 = v28
+			} else {
+				v29 = int32(0)
+			}
+			return v29
+		}
+	}
+}
 func F_CheckCmdReplicaIdentity(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
@@ -12795,6 +12854,31 @@ func F_coerce_null_to_domain(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		}
 	}
 }
+func F_colorTrgmInfoPenaltyCmp(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 float32
+	_ = v8
+	var v9 float32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	v8 = *(*float32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*float32)(unsafe.Add(mBase, uint32(l1)+20))
+	if base.F32_ne(v8, v9) != 0 {
+		v11 = int32(-1)
+	} else {
+		v11 = int32(0)
+	}
+	if base.F32_lt(v8, v9) != 0 {
+		v13 = int32(1)
+	} else {
+		v13 = v11
+	}
+	return v13
+}
 func F_combo_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -12847,6 +12931,38 @@ func F_combo_encrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 }
 func F_combo_encrypt_len(m *base.Module, l0 int32, l1 int32) int32 {
 	return l1 + int32(512)
+}
+func F_comp_ptrgm(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
+	v5 = *(*int32)(unsafe.Add(mBase, _c_F_comp_ptrgm[0]))
+	v6 = m.T0[v5].(func(*base.Module, int32, int32) int32)(m, l0, l1)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		if v6 != 0 {
+			v17 = v6
+		} else {
+			v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+			v17 = base.B2i32(v11 < v10) - base.B2i32(v10 < v11)
+		}
+		return v17
+	}
 }
 func F_compare_distances(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M

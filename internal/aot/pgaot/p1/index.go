@@ -4689,6 +4689,70 @@ func F_index_restrpos(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_index_strategy_get_limit(m *base.Module, l0 int32) float64 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v34 float64
+	_ = v34
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	switch l0 - int32(1) {
+	case 0:
+		v33 = int32(_a_F_index_strategy_get_limit_0)
+		v34 = *(*float64)(unsafe.Add(mBase, uint32(v33)))
+		m.G0 = v7 + int32(16)
+		return v34
+	default:
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return float64(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
+			F_errmsg_internal(m, int32(_a_F_index_strategy_get_limit_1), v7)
+			mBase = m.M
+			v24 = m.ExcPending
+			if v24 != 0 {
+				return float64(0)
+			} else {
+				F_errfinish(m, int32(_a_F_index_strategy_get_limit_2), int32(267), int32(_a_F_index_strategy_get_limit_3))
+				mBase = m.M
+				v31 = m.ExcPending
+				if v31 != 0 {
+					return float64(0)
+				} else {
+					base.Wasm_trap_unreachable()
+					for {
+					}
+				}
+			}
+		}
+	case 6:
+		v33 = int32(_a_F_index_strategy_get_limit_4)
+		v34 = *(*float64)(unsafe.Add(mBase, uint32(v33)))
+		m.G0 = v7 + int32(16)
+		return v34
+	case 8:
+		v33 = int32(_a_F_index_strategy_get_limit_5)
+		v34 = *(*float64)(unsafe.Add(mBase, uint32(v33)))
+		m.G0 = v7 + int32(16)
+		return v34
+	}
+}
 func F_index_vacuum_cleanup(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -9787,6 +9787,122 @@ func F_transformWholeRowRef(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		}
 	}
 }
+func F_trgm_contained_by(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v10 = int32(2)
+	v12 = int32(5)
+	v14 = int32(3)
+	v15 = base.I32_div_u_s(int32(base.Ui32(v9)>>(uint(v10)%32))-v12, v14)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v22 = base.I32_div_u_s(int32(base.Ui32(v16)>>(uint(v10)%32))-v12, v14)
+	v24 = l1 + v12
+	v26 = l0 + v12
+	v28 = v26
+	v29 = v24
+	goto L1
+L1:
+	;
+	v37 = base.I32_div_s(v28-v26, int32(3))
+	v38 = base.B2i32(v22 <= v37)
+	if v22 <= v37 {
+		goto L3
+	} else {
+		goto L4
+	}
+L2:
+	;
+	return v38
+L3:
+	;
+	goto L2
+L4:
+	;
+	v41 = base.I32_div_s(v29-v24, int32(3))
+	if v15 <= v41 {
+		goto L3
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_trgm_contained_by[0]))
+	v47 = m.T0[v46].(func(*base.Module, int32, int32) int32)(m, v28, v29)
+	mBase = m.M
+	v50 = m.ExcPending
+	if v50 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	return int32(0)
+L7:
+	;
+	if v47 != 0 {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v51 = int32(0)
+	goto L10
+L9:
+	;
+	v51 = int32(3)
+	goto L10
+L10:
+	;
+	if int32(0) <= v47 {
+		v28 = v28 + v51
+		v29 = v29 + int32(3)
+		goto L1
+	} else {
+		goto L11
+	}
+L11:
+	;
+	goto L3
+}
 func F_trim_mergeclauses_for_inner_pathkeys(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
