@@ -53,6 +53,9 @@ func F_pg_finfo_daitch_mokotoff(m *base.Module) int32 {
 func F_pg_finfo_dmetaphone_alt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dmetaphone_alt_0)
 }
+func F_pg_finfo_ean13_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ean13_out_0)
+}
 func F_pg_finfo_euc_jis_2004_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jis_2004_to_utf8_0)
 }
@@ -263,11 +266,20 @@ func F_pg_finfo_hstore_svals(m *base.Module) int32 {
 func F_pg_finfo_intset(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_intset_0)
 }
+func F_pg_finfo_isn_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_isn_out_0)
+}
 func F_pg_finfo_iso8859_1_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_1_to_utf8_0)
 }
 func F_pg_finfo_iso_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_mic_0)
+}
+func F_pg_finfo_issn_cast_from_ean13(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_issn_cast_from_ean13_0)
+}
+func F_pg_finfo_issn_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_issn_in_0)
 }
 func F_pg_finfo_koi8r_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_utf8_0)

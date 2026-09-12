@@ -62,6 +62,9 @@ func F_pg_finfo_cube_send(m *base.Module) int32 {
 func F_pg_finfo_cube_subset(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_cube_subset_0)
 }
+func F_pg_finfo_ean13_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ean13_in_0)
+}
 func F_pg_finfo_euc_jp_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_sjis_0)
 }

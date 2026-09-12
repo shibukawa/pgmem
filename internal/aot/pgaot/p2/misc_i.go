@@ -12532,6 +12532,105 @@ func F_is_strict_saop(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_isbn_cast_from_ean13(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v15 int32
+	_ = v15
+	var v16 int64
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
+	F_ean2isn(m, v8, v5+int32(8), int32(3))
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		v16 = *(*int64)(unsafe.Add(mBase, uint32(v5)+8))
+		v17 = F_Int64GetDatum(m, v16)
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			m.G0 = v5 + int32(16)
+			return v17
+		}
+	}
+}
+func F_isbn_in(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int64
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v12 = F_string2ean(m, v7, v8, v5+int32(8), int32(3))
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		if v12 == int32(0) {
+			v18 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v18)
+			v24 = int32(0)
+			m.G0 = v5 + int32(16)
+			return v24
+		} else {
+			v21 = *(*int64)(unsafe.Add(mBase, uint32(v5)+8))
+			v22 = F_Int64GetDatum(m, v21)
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return int32(0)
+			} else {
+				v24 = v22
+				m.G0 = v5 + int32(16)
+				return v24
+			}
+		}
+	}
+}
 func F_isgraph(m *base.Module, l0 int32) int32 {
 	return base.B2i32(base.Ui32(l0-int32(33)) < base.Ui32(int32(94)))
 }

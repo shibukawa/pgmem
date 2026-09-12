@@ -9536,6 +9536,198 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoBlhandler(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_isn":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_isn: want 0 args")
+		}
+		r := pgaot.PgMagicFuncIsn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_isn":
+		if len(a) != 0 {
+			panic("aot: _PG_init_isn: want 0 args")
+		}
+		pgaot.PGInitIsn(m)
+		return nil, true
+	case "accept_weak_input":
+		if len(a) != 1 {
+			panic("aot: accept_weak_input: want 1 args")
+		}
+		r := pgaot.AcceptWeakInput(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ean13_in":
+		if len(a) != 1 {
+			panic("aot: ean13_in: want 1 args")
+		}
+		r := pgaot.Ean13In(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ean13_out":
+		if len(a) != 1 {
+			panic("aot: ean13_out: want 1 args")
+		}
+		r := pgaot.Ean13Out(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "is_valid":
+		if len(a) != 1 {
+			panic("aot: is_valid: want 1 args")
+		}
+		r := pgaot.IsValid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "isbn_cast_from_ean13":
+		if len(a) != 1 {
+			panic("aot: isbn_cast_from_ean13: want 1 args")
+		}
+		r := pgaot.IsbnCastFromEan13(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "isbn_in":
+		if len(a) != 1 {
+			panic("aot: isbn_in: want 1 args")
+		}
+		r := pgaot.IsbnIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ismn_cast_from_ean13":
+		if len(a) != 1 {
+			panic("aot: ismn_cast_from_ean13: want 1 args")
+		}
+		r := pgaot.IsmnCastFromEan13(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ismn_in":
+		if len(a) != 1 {
+			panic("aot: ismn_in: want 1 args")
+		}
+		r := pgaot.IsmnIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "isn_out":
+		if len(a) != 1 {
+			panic("aot: isn_out: want 1 args")
+		}
+		r := pgaot.IsnOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "issn_cast_from_ean13":
+		if len(a) != 1 {
+			panic("aot: issn_cast_from_ean13: want 1 args")
+		}
+		r := pgaot.IssnCastFromEan13(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "issn_in":
+		if len(a) != 1 {
+			panic("aot: issn_in: want 1 args")
+		}
+		r := pgaot.IssnIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "make_valid":
+		if len(a) != 1 {
+			panic("aot: make_valid: want 1 args")
+		}
+		r := pgaot.MakeValid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_accept_weak_input":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_accept_weak_input: want 0 args")
+		}
+		r := pgaot.PgFinfoAcceptWeakInput(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ean13_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ean13_in: want 0 args")
+		}
+		r := pgaot.PgFinfoEan13In(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ean13_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ean13_out: want 0 args")
+		}
+		r := pgaot.PgFinfoEan13Out(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_is_valid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_is_valid: want 0 args")
+		}
+		r := pgaot.PgFinfoIsValid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_isbn_cast_from_ean13":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_isbn_cast_from_ean13: want 0 args")
+		}
+		r := pgaot.PgFinfoIsbnCastFromEan13(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_isbn_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_isbn_in: want 0 args")
+		}
+		r := pgaot.PgFinfoIsbnIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ismn_cast_from_ean13":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ismn_cast_from_ean13: want 0 args")
+		}
+		r := pgaot.PgFinfoIsmnCastFromEan13(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ismn_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ismn_in: want 0 args")
+		}
+		r := pgaot.PgFinfoIsmnIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_isn_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_isn_out: want 0 args")
+		}
+		r := pgaot.PgFinfoIsnOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_issn_cast_from_ean13":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_issn_cast_from_ean13: want 0 args")
+		}
+		r := pgaot.PgFinfoIssnCastFromEan13(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_issn_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_issn_in: want 0 args")
+		}
+		r := pgaot.PgFinfoIssnIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_make_valid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_make_valid: want 0 args")
+		}
+		r := pgaot.PgFinfoMakeValid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_upc_cast_from_ean13":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_upc_cast_from_ean13: want 0 args")
+		}
+		r := pgaot.PgFinfoUpcCastFromEan13(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_upc_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_upc_in: want 0 args")
+		}
+		r := pgaot.PgFinfoUpcIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_weak_input_status":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_weak_input_status: want 0 args")
+		}
+		r := pgaot.PgFinfoWeakInputStatus(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "upc_cast_from_ean13":
+		if len(a) != 1 {
+			panic("aot: upc_cast_from_ean13: want 1 args")
+		}
+		r := pgaot.UpcCastFromEan13(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "upc_in":
+		if len(a) != 1 {
+			panic("aot: upc_in: want 1 args")
+		}
+		r := pgaot.UpcIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "weak_input_status":
+		if len(a) != 1 {
+			panic("aot: weak_input_status: want 1 args")
+		}
+		r := pgaot.WeakInputStatus(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

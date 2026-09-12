@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7085)
-	m.G0 = int32(13055280)
+	m.T0 = make([]any, 7117)
+	m.G0 = int32(13080960)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4383819
+	m.DataEnd = 4409499
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7085)
-	m.G0 = int32(13055280)
+	m.T0 = make([]any, 7117)
+	m.G0 = int32(13080960)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4383819
+	m.DataEnd = 4409499
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7085)
-	m.G0 = int32(13055280)
+	m.T0 = make([]any, 7117)
+	m.G0 = int32(13080960)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4383819
+	m.DataEnd = 4409499
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1591376])
-	copy(m.Memory[1596704:], wasm2goData_data_bin[1591376:1591385])
-	copy(m.Memory[1598752:], wasm2goData_data_bin[1591385:1604313])
-	copy(m.Memory[1622020:], wasm2goData_data_bin[1604313:1697554])
-	copy(m.Memory[1716288:], wasm2goData_data_bin[1697554:1809210])
-	copy(m.Memory[1839160:], wasm2goData_data_bin[1809210:4066352])
-	copy(m.Memory[4103792:], wasm2goData_data_bin[4066352:4346379])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1606976])
+	copy(m.Memory[1612304:], wasm2goData_data_bin[1606976:1606985])
+	copy(m.Memory[1614352:], wasm2goData_data_bin[1606985:1619913])
+	copy(m.Memory[1638404:], wasm2goData_data_bin[1619913:1713154])
+	copy(m.Memory[1732672:], wasm2goData_data_bin[1713154:1824810])
+	copy(m.Memory[1855544:], wasm2goData_data_bin[1824810:4082784])
+	copy(m.Memory[4121008:], wasm2goData_data_bin[4082784:4371275])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4942,6 +4942,102 @@ func Blhandler(m *base.Module, l0 int32) int32 {
 }
 func PgFinfoBlhandler(m *base.Module) int32 {
 	return F_pg_finfo_blhandler(m)
+}
+func PgMagicFuncIsn(m *base.Module) int32 {
+	return F_Pg_magic_func_isn(m)
+}
+func PGInitIsn(m *base.Module) {
+	F__PG_init_isn(m)
+}
+func AcceptWeakInput(m *base.Module, l0 int32) int32 {
+	return F_accept_weak_input(m, l0)
+}
+func Ean13In(m *base.Module, l0 int32) int32 {
+	return F_ean13_in(m, l0)
+}
+func Ean13Out(m *base.Module, l0 int32) int32 {
+	return F_ean13_out(m, l0)
+}
+func IsValid(m *base.Module, l0 int32) int32 {
+	return F_is_valid(m, l0)
+}
+func IsbnCastFromEan13(m *base.Module, l0 int32) int32 {
+	return F_isbn_cast_from_ean13(m, l0)
+}
+func IsbnIn(m *base.Module, l0 int32) int32 {
+	return F_isbn_in(m, l0)
+}
+func IsmnCastFromEan13(m *base.Module, l0 int32) int32 {
+	return F_ismn_cast_from_ean13(m, l0)
+}
+func IsmnIn(m *base.Module, l0 int32) int32 {
+	return F_ismn_in(m, l0)
+}
+func IsnOut(m *base.Module, l0 int32) int32 {
+	return F_isn_out(m, l0)
+}
+func IssnCastFromEan13(m *base.Module, l0 int32) int32 {
+	return F_issn_cast_from_ean13(m, l0)
+}
+func IssnIn(m *base.Module, l0 int32) int32 {
+	return F_issn_in(m, l0)
+}
+func MakeValid(m *base.Module, l0 int32) int32 {
+	return F_make_valid(m, l0)
+}
+func PgFinfoAcceptWeakInput(m *base.Module) int32 {
+	return F_pg_finfo_accept_weak_input(m)
+}
+func PgFinfoEan13In(m *base.Module) int32 {
+	return F_pg_finfo_ean13_in(m)
+}
+func PgFinfoEan13Out(m *base.Module) int32 {
+	return F_pg_finfo_ean13_out(m)
+}
+func PgFinfoIsValid(m *base.Module) int32 {
+	return F_pg_finfo_is_valid(m)
+}
+func PgFinfoIsbnCastFromEan13(m *base.Module) int32 {
+	return F_pg_finfo_isbn_cast_from_ean13(m)
+}
+func PgFinfoIsbnIn(m *base.Module) int32 {
+	return F_pg_finfo_isbn_in(m)
+}
+func PgFinfoIsmnCastFromEan13(m *base.Module) int32 {
+	return F_pg_finfo_ismn_cast_from_ean13(m)
+}
+func PgFinfoIsmnIn(m *base.Module) int32 {
+	return F_pg_finfo_ismn_in(m)
+}
+func PgFinfoIsnOut(m *base.Module) int32 {
+	return F_pg_finfo_isn_out(m)
+}
+func PgFinfoIssnCastFromEan13(m *base.Module) int32 {
+	return F_pg_finfo_issn_cast_from_ean13(m)
+}
+func PgFinfoIssnIn(m *base.Module) int32 {
+	return F_pg_finfo_issn_in(m)
+}
+func PgFinfoMakeValid(m *base.Module) int32 {
+	return F_pg_finfo_make_valid(m)
+}
+func PgFinfoUpcCastFromEan13(m *base.Module) int32 {
+	return F_pg_finfo_upc_cast_from_ean13(m)
+}
+func PgFinfoUpcIn(m *base.Module) int32 {
+	return F_pg_finfo_upc_in(m)
+}
+func PgFinfoWeakInputStatus(m *base.Module) int32 {
+	return F_pg_finfo_weak_input_status(m)
+}
+func UpcCastFromEan13(m *base.Module, l0 int32) int32 {
+	return F_upc_cast_from_ean13(m, l0)
+}
+func UpcIn(m *base.Module, l0 int32) int32 {
+	return F_upc_in(m, l0)
+}
+func WeakInputStatus(m *base.Module, l0 int32) int32 {
+	return F_weak_input_status(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

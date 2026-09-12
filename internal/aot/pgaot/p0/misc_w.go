@@ -1003,6 +1003,14 @@ L122:
 	;
 	goto L72
 }
+func F_weak_input_status(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_weak_input_status[0])))
+	return v3
+}
 func F_websearch_to_tsquery(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -146,6 +146,111 @@ func F_websearch_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_weight_checkdig(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	v3 = int32(0)
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v6 == v3 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v9 = l0
+	v10 = l1
+	v11 = v6
+	v12 = v3
+	goto L3
+L3:
+	;
+	v17 = (v11 - int32(48)) & int32(255)
+	v21 = base.B2i32(base.Ui32(v17) < base.Ui32(int32(10)))
+	if base.Ui32(v17) < base.Ui32(int32(10)) {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	v35 = base.I32_rem_u_s(v23, int32(11))
+	if v35 == int32(0) {
+		goto L1
+	} else {
+		goto L11
+	}
+L5:
+	;
+	goto L4
+L6:
+	;
+	v22 = v10 * v17
+	goto L8
+L7:
+	;
+	v22 = int32(0)
+	goto L8
+L8:
+	;
+	v23 = v22 + v12
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+1)))
+	if v24 == int32(0) {
+		goto L5
+	} else {
+		goto L9
+	}
+L9:
+	;
+	v27 = int32(1)
+	v29 = v10 - v21
+	if base.Ui32(v27) < base.Ui32(v29) {
+		v9 = v9 + v27
+		v10 = v29
+		v11 = v24
+		v12 = v23
+		goto L3
+	} else {
+		goto L10
+	}
+L10:
+	;
+	goto L5
+L11:
+	;
+	return int32(11) - v35
+}
 func F_width_bucket_array(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

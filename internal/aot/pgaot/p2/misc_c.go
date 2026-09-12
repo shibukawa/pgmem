@@ -11900,6 +11900,191 @@ func F_check_stage_log_stats(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		}
 	}
 }
+func F_checkdig(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
+	v2 = int32(0)
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	v12 = base.B2i32(v10 == int32(77))
+	if v10 == int32(77) {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v13 = int32(3)
+	goto L3
+L2:
+	;
+	v13 = v2
+	goto L3
+L3:
+	;
+	if v10 == int32(0) {
+		goto L5
+	} else {
+		goto L6
+	}
+L4:
+	;
+	v62 = int32(10)
+	v67 = base.I32_rem_u_s(v59*int32(3)+v58, v62)
+	if v67 != 0 {
+		goto L18
+	} else {
+		goto L19
+	}
+L5:
+	;
+	v58 = v2
+	v59 = v13
+	goto L4
+L6:
+	;
+	goto L7
+L7:
+	;
+	v17 = l0
+	v18 = v10
+	v19 = v12
+	v20 = v2
+	v21 = v13
+	v22 = int32(13)
+	goto L8
+L8:
+	;
+	v27 = (v18 - int32(48)) & int32(255)
+	if base.Ui32(v27) <= base.Ui32(int32(9)) {
+		goto L10
+	} else {
+		goto L11
+	}
+L9:
+	;
+	v58 = v44
+	v59 = v45
+	goto L4
+L10:
+	;
+	v32 = v19 & int32(1)
+	if v32 != 0 {
+		goto L13
+	} else {
+		goto L14
+	}
+L11:
+	;
+	v43 = v19
+	v44 = v20
+	v45 = v21
+	v46 = v22
+	goto L12
+L12:
+	;
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+1)))
+	if v48 == int32(0) {
+		v58 = v44
+		v59 = v45
+		goto L4
+	} else {
+		goto L16
+	}
+L13:
+	;
+	v33 = int32(0)
+	goto L15
+L14:
+	;
+	v33 = v27
+	goto L15
+L15:
+	;
+	v39 = int32(1)
+	v43 = v19 + v39
+	v44 = v33 + v20
+	v45 = (int32(0)-v32)&v27 + v21
+	v46 = v22 - v39
+	goto L12
+L16:
+	;
+	v51 = int32(1)
+	if base.Ui32(v51) < base.Ui32(v46) {
+		v17 = v17 + v51
+		v18 = v48
+		v19 = v43
+		v20 = v44
+		v21 = v45
+		v22 = v46
+		goto L8
+	} else {
+		goto L17
+	}
+L17:
+	;
+	goto L9
+L18:
+	;
+	v70 = v62 - v67
+	goto L20
+L19:
+	;
+	v70 = int32(0)
+	goto L20
+L20:
+	;
+	return v70
+}
 func F_clear_setitimer(m *base.Module) {
 	mBase := m.M
 	_ = mBase

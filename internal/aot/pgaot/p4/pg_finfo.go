@@ -272,6 +272,15 @@ func F_pg_finfo_idx(m *base.Module) int32 {
 func F_pg_finfo_intarray_push_array(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_intarray_push_array_0)
 }
+func F_pg_finfo_is_valid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_is_valid_0)
+}
+func F_pg_finfo_ismn_cast_from_ean13(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ismn_cast_from_ean13_0)
+}
+func F_pg_finfo_ismn_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ismn_in_0)
+}
 func F_pg_finfo_iso_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_win1251_0)
 }

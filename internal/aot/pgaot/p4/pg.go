@@ -1347,6 +1347,25 @@ L90:
 	m.G0 = v13 + int32(_a_F_RemovePgTempRelationFiles_0)
 	return
 }
+func F__PG_init_isn(m *base.Module) {
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_isn_0), int32(_a_F__PG_init_isn_1), int32(_a_F__PG_init_isn_2), int32(0))
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return
+	} else {
+		F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_isn_3))
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return
+		} else {
+			return
+		}
+	}
+}
 func F_create_pg_locale_libc(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

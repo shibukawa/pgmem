@@ -347,6 +347,9 @@ func F_pg_finfo_ltree_same(m *base.Module) int32 {
 func F_pg_finfo_ltree_textadd(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltree_textadd_0)
 }
+func F_pg_finfo_make_valid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_make_valid_0)
+}
 func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_big5_0)
 }

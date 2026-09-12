@@ -315,12 +315,22 @@ func F_AlterSystemSetConfigFile(m *base.Module, l0 int32) {
 	_ = v605
 	var v608 int32
 	_ = v608
-	var v623 int32
-	_ = v623
 	var v624 int32
 	_ = v624
-	var v625 int32
-	_ = v625
+	var v638 int32
+	_ = v638
+	var v640 int32
+	_ = v640
+	var v643 int32
+	_ = v643
+	var v645 int32
+	_ = v645
+	var v646 int32
+	_ = v646
+	var v647 int32
+	_ = v647
+	var v650 int32
+	_ = v650
 	var v662 int32
 	_ = v662
 	var v672 int32
@@ -1862,10 +1872,8 @@ L81:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v60
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v57
-	v623 = int32(_a_F_AlterSystemSetConfigFile_16)
 	v624 = base.I32_extend8_s(v590)
-	v625 = int32(54)
-	goto L86
+	goto L87
 L82:
 	;
 	goto L73
@@ -1888,13 +1896,61 @@ L85:
 	goto L103
 L86:
 	;
-	goto L94
+	if base.B2i32(v646 != v647) == int32(0) {
+		goto L84
+	} else {
+		goto L94
+	}
+L87:
+	;
+	goto L88
+L88:
+	;
+	v638 = int32(_a_F_AlterSystemSetConfigFile_16)
+	v640 = int32(54)
+	goto L89
+L89:
+	;
+	v643 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v638))))
+	if v643 == v624&int32(255) {
+		v699 = v638
+		v701 = v640
+		goto L85
+	} else {
+		goto L91
+	}
+L90:
+	;
+	goto L86
+L91:
+	;
+	v645 = int32(1)
+	v646 = v640 - v645
+	v647 = int32(0)
+	v650 = v638 + v645
+	if v650&int32(3) == v647 {
+		goto L86
+	} else {
+		goto L92
+	}
+L92:
+	;
+	if v646 != 0 {
+		v638 = v650
+		v640 = v646
+		goto L89
+	} else {
+		goto L93
+	}
+L93:
+	;
+	goto L90
 L94:
 	;
-	v662 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[3])))
+	v662 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v650))))
 	if v662 == v624&int32(255) {
-		v692 = v623
-		v694 = v625
+		v692 = v650
+		v694 = v646
 		goto L95
 	} else {
 		goto L96
@@ -1908,11 +1964,17 @@ L95:
 	}
 L96:
 	;
-	goto L97
+	if base.Ui32(v646) < base.Ui32(int32(4)) {
+		v692 = v650
+		v694 = v646
+		goto L95
+	} else {
+		goto L97
+	}
 L97:
 	;
-	v672 = v623
-	v674 = v625
+	v672 = v650
+	v674 = v646
 	goto L98
 L98:
 	;
@@ -2168,7 +2230,7 @@ L128:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v60
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v57
-	v987 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4]))
+	v987 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[3]))
 	v991 = F_LWLockAcquire(m, v987+int32(_a_F_AlterSystemSetConfigFile_21), int32(0))
 	mBase = m.M
 	v992 = m.ExcPending
@@ -2888,7 +2950,7 @@ L199:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v60
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v57
-	v1465 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4]))
+	v1465 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[3]))
 	v1469 = F_LWLockAcquire(m, v1465+int32(_a_F_AlterSystemSetConfigFile_21), int32(0))
 	mBase = m.M
 	v1470 = m.ExcPending
@@ -2986,8 +3048,8 @@ L207:
 	goto L208
 L208:
 	;
-	v1589 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5]))
-	v1591 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6]))
+	v1589 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4]))
+	v1591 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5]))
 	goto L213
 L209:
 	;
@@ -3081,7 +3143,7 @@ L216:
 	goto L214
 L217:
 	;
-	v2340 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7]))
+	v2340 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6]))
 	if v2340 == int32(0) {
 		goto L296
 	} else {
@@ -3089,7 +3151,7 @@ L217:
 	}
 L218:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = v1605
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5])) = v1605
 	v1625 = *(*int32)(unsafe.Add(mBase, uint32(v1603)))
 	v1626 = *(*int32)(unsafe.Add(mBase, uint32(v1602)))
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+220)) = v1606
@@ -3116,8 +3178,8 @@ L219:
 	goto L220
 L220:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5])) = v1607
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = v1606
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4])) = v1607
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5])) = v1606
 	v2300 = *(*int32)(unsafe.Add(mBase, uint32(v1603)))
 	if int32(0) <= v2300 {
 		goto L292
@@ -3178,7 +3240,7 @@ L223:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v1604
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v1602
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v1599
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = int32(0)
 	v1678 = *(*int32)(unsafe.Add(mBase, uint32(v1599)+4))
 	v1679 = *(*int32)(unsafe.Add(mBase, uint32(v1599)))
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+220)) = v1606
@@ -3225,7 +3287,7 @@ L227:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v1604
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v1602
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v1599
-	v2150 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[8])))
+	v2150 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7])))
 	if v2150 != int32(1) {
 		v2164 = int32(0)
 		goto L275
@@ -3588,7 +3650,7 @@ L261:
 	}
 L262:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = int32(0)
 	v2034 = *(*int32)(unsafe.Add(mBase, uint32(v1599)+4))
 	v2035 = *(*int32)(unsafe.Add(mBase, uint32(v1599)))
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+220)) = v1606
@@ -3611,7 +3673,7 @@ L262:
 	}
 L263:
 	;
-	v2050 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7]))
+	v2050 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6]))
 	if v2050 == int32(0) {
 		goto L266
 	} else {
@@ -3631,7 +3693,7 @@ L265:
 	}
 L266:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7])) = int32(51)
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = int32(51)
 	goto L268
 L267:
 	;
@@ -3756,7 +3818,7 @@ L278:
 	goto L275
 L279:
 	;
-	v2159 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7]))
+	v2159 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6]))
 	if v2159 == int32(27) {
 		goto L277
 	} else {
@@ -3915,8 +3977,8 @@ L288:
 	}
 L289:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5])) = v1607
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = v1606
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4])) = v1607
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[5])) = v1606
 	v2264 = *(*int32)(unsafe.Add(mBase, uint32(v1602)))
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+220)) = v1606
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+216)) = v1607
@@ -3949,7 +4011,7 @@ L290:
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+244)) = v1604
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+248)) = v1602
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+252)) = v1599
-	v2288 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[4]))
+	v2288 = *(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[3]))
 	F_LWLockRelease(m, v2288+int32(_a_F_AlterSystemSetConfigFile_21))
 	mBase = m.M
 	v2292 = m.ExcPending
@@ -4020,7 +4082,7 @@ L295:
 	goto L3
 L296:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[7])) = int32(51)
+	*(*int32)(unsafe.Add(mBase, _c_F_AlterSystemSetConfigFile[6])) = int32(51)
 	goto L298
 L297:
 	;

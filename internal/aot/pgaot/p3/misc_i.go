@@ -15065,6 +15065,45 @@ L18:
 	;
 	goto L16
 }
+func F_isn_out(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	v3 = m.G0
+	v5 = v3 - int32(32)
+	m.G0 = v5
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
+	F_ean2string(m, v8, v5, int32(1))
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v14 = F_pstrdup(m, v5)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			m.G0 = v5 + int32(32)
+			return v14
+		}
+	}
+}
 func F_iso8859_to_utf8(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

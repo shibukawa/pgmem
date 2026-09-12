@@ -26,6 +26,9 @@ func F_pg_finfo__ltree_same(m *base.Module) int32 {
 func F_pg_finfo__ltxtq_exec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltxtq_exec_0)
 }
+func F_pg_finfo_accept_weak_input(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_accept_weak_input_0)
+}
 func F_pg_finfo_cash_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_cash_dist_0)
 }
@@ -263,6 +266,12 @@ func F_pg_finfo_hstore_slice_to_hstore(m *base.Module) int32 {
 func F_pg_finfo_hstore_to_jsonb(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_to_jsonb_0)
 }
+func F_pg_finfo_isbn_cast_from_ean13(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_isbn_cast_from_ean13_0)
+}
+func F_pg_finfo_isbn_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_isbn_in_0)
+}
 func F_pg_finfo_koi8r_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_win866_0)
 }
@@ -344,6 +353,12 @@ func F_pg_finfo_uhc_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_unaccent_init(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_unaccent_init_0)
 }
+func F_pg_finfo_upc_cast_from_ean13(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_upc_cast_from_ean13_0)
+}
+func F_pg_finfo_upc_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_upc_in_0)
+}
 func F_pg_finfo_utf8_to_euc_jp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_jp_0)
 }
@@ -358,6 +373,9 @@ func F_pg_finfo_utf8_to_johab(m *base.Module) int32 {
 }
 func F_pg_finfo_utf8_to_koi8u(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_koi8u_0)
+}
+func F_pg_finfo_weak_input_status(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_weak_input_status_0)
 }
 func F_pg_finfo_win1251_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win1251_to_win866_0)

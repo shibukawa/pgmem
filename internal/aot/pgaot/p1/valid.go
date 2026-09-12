@@ -392,6 +392,39 @@ L50:
 	v149 = v142
 	goto L1
 }
+func F_is_valid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)))
+	return (v3 ^ int32(-1)) & int32(1)
+}
+func F_make_valid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int64
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(v2)))
+	v6 = F_Int64GetDatum(m, v3&int64(-2))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
+}
 func F_validOperatorName(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

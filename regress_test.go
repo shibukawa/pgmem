@@ -60,6 +60,7 @@ var contribRegress = map[string][]string{
 	// partition is cut before its two closing \d+ lines
 	"seg":   {"security", "seg", "partition"},
 	"bloom": {"bloom"},
+	"isn":   {"isn"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
