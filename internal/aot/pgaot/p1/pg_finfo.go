@@ -2,6 +2,21 @@ package p1
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__ltq_extract_regex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltq_extract_regex_0)
+}
+func F_pg_finfo__ltq_regex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltq_regex_0)
+}
+func F_pg_finfo__ltree_isparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_isparent_0)
+}
+func F_pg_finfo__ltree_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_same_0)
+}
+func F_pg_finfo__ltxtq_exec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltxtq_exec_0)
+}
 func F_pg_finfo_citext_ge(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_ge_0)
 }
@@ -68,8 +83,29 @@ func F_pg_finfo_koi8u_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_latin4_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin4_to_mic_0)
 }
+func F_pg_finfo_lca(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lca_0)
+}
+func F_pg_finfo_lquery_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lquery_in_0)
+}
+func F_pg_finfo_lt_q_regex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lt_q_regex_0)
+}
+func F_pg_finfo_lt_q_rregex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lt_q_rregex_0)
+}
+func F_pg_finfo_ltree_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_gt_0)
+}
+func F_pg_finfo_ltree_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_union_0)
+}
 func F_pg_finfo_mic_to_latin2(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin2_0)
+}
+func F_pg_finfo_nlevel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_nlevel_0)
 }
 func F_pg_finfo_plpgsql_inline_handler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_inline_handler_0)

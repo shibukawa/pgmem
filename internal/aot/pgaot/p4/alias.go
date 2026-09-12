@@ -2454,6 +2454,8 @@ func F_UtilityReturnsTuples(m *base.Module, l0 int32) int32
 func F_UtilityTupleDescriptor(m *base.Module, l0 int32) int32
 //go:linkname F_getNextFlagFromString github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_getNextFlagFromString
 func F_getNextFlagFromString(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_t_isalnum_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_cstr
+func F_t_isalnum_cstr(m *base.Module, l0 int32) int32
 //go:linkname F_LexizeExec github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_LexizeExec
 func F_LexizeExec(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_addHLParsedLex github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_addHLParsedLex
@@ -4026,6 +4028,18 @@ func F_hstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_hstore_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_exists
 func F_hstore_exists(m *base.Module, l0 int32) int32
+//go:linkname F_array_iterator github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_array_iterator
+func F_array_iterator(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_ltree_gist_alloc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_gist_alloc
+func F_ltree_gist_alloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_finish_nodeitem github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_finish_nodeitem
+func F_finish_nodeitem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_parse_lquery github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_parse_lquery
+func F_parse_lquery(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_inner_subltree github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_inner_subltree
+func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_infix_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_infix_2
+func F_infix_2(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

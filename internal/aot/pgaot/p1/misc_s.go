@@ -22550,6 +22550,105 @@ L63:
 	v245 = l3
 	goto L1
 }
+func F_subpath(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = F_pg_detoast_datum(m, v7)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+18)))
+		if v13 == int32(3) {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+			v17 = v16
+		} else {
+			v17 = int32(0)
+		}
+		if v12 < int32(0) {
+			v20 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v8)+4)))
+			v21 = v12 + v20
+			v26 = v21 + v21>>(uint(int32(31))%32)&v20
+		} else {
+			v26 = v12
+		}
+		if v17 < int32(0) {
+			v30 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v8)+4)))
+			v38 = v17 + v30
+		} else {
+			if v13 != int32(3) {
+				v36 = int32(_a_F_subpath_0)
+			} else {
+				v36 = v26
+			}
+			if v17 != 0 {
+				v37 = v26 + v17
+			} else {
+				v37 = v36
+			}
+			v38 = v37
+		}
+		v39 = F_inner_subltree(m, v8, v26, v38)
+		mBase = m.M
+		v40 = m.ExcPending
+		if v40 != 0 {
+			return int32(0)
+		} else {
+			v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			if v41 != v8 {
+				F_pfree(m, v8)
+				mBase = m.M
+				v44 = m.ExcPending
+				if v44 != 0 {
+					return int32(0)
+				} else {
+					return v39
+				}
+			} else {
+				return v39
+			}
+		}
+	}
+}
 func F_substitute_actual_srf_parameters_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

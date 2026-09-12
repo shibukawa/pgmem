@@ -2,6 +2,12 @@ package p0
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__lca(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__lca_0)
+}
+func F_pg_finfo__ltree_r_isparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_r_isparent_0)
+}
 func F_pg_finfo_akeys(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_akeys_0)
 }
@@ -74,6 +80,30 @@ func F_pg_finfo_latin1_to_mic(m *base.Module) int32 {
 func F_pg_finfo_latin2_to_win1250(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin2_to_win1250_0)
 }
+func F_pg_finfo_lquery_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lquery_out_0)
+}
+func F_pg_finfo_lquery_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lquery_send_0)
+}
+func F_pg_finfo_ltq_rregex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltq_rregex_0)
+}
+func F_pg_finfo_ltree_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_consistent_0)
+}
+func F_pg_finfo_ltree_isparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_isparent_0)
+}
+func F_pg_finfo_ltree_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_recv_0)
+}
+func F_pg_finfo_ltree_risparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_risparent_0)
+}
+func F_pg_finfo_ltxtq_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_in_0)
+}
 func F_pg_finfo_mic_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_euc_tw_0)
 }
@@ -109,6 +139,9 @@ func F_pg_finfo_sjis_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_skeys(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_skeys_0)
+}
+func F_pg_finfo_subpath(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_subpath_0)
 }
 func F_pg_finfo_tconvert(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_tconvert_0)

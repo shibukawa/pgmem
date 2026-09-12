@@ -427,7 +427,7 @@ L18:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+52)) = v50
 	v54 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v50))) = uint8(v54)
-	F_makepol(m, v13+int32(28), l1, l2)
+	F_makepol_1(m, v13+int32(28), l1, l2)
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {

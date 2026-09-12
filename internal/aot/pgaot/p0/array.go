@@ -1688,6 +1688,287 @@ func F_array_fill_with_lower_bounds(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_array_iterator(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
+	var v57 int32
+	_ = v57
+	var v76 int32
+	_ = v76
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v90 int32
+	_ = v90
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v104 int32
+	_ = v104
+	var v110 int32
+	_ = v110
+	var v117 int32
+	_ = v117
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v11 = F_ArrayGetNItems(m, v8, l0+int32(16))
+	mBase = m.M
+	v14 = m.ExcPending
+	if v14 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v15 < int32(2) {
+		goto L4
+	} else {
+		goto L5
+	}
+L3:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L1
+	} else {
+		goto L31
+	}
+L4:
+	;
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v19 = F_array_contains_nulls(m, l0)
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		goto L1
+	} else {
+		goto L7
+	}
+L5:
+	;
+	goto L6
+L6:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v81 = m.ExcPending
+	if v81 != 0 {
+		goto L1
+	} else {
+		goto L27
+	}
+L7:
+	;
+	if v19 != 0 {
+		goto L3
+	} else {
+		goto L8
+	}
+L8:
+	;
+	if l3 != 0 {
+		goto L9
+	} else {
+		goto L10
+	}
+L9:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l3))) = int32(0)
+	goto L11
+L10:
+	;
+	goto L11
+L11:
+	;
+	if int32(0) < v11 {
+		goto L13
+	} else {
+		goto L14
+	}
+L12:
+	;
+	return v76
+L13:
+	;
+	if v18 != 0 {
+		goto L16
+	} else {
+		goto L17
+	}
+L14:
+	;
+	goto L15
+L15:
+	;
+	v76 = int32(0)
+	goto L12
+L16:
+	;
+	v31 = v18
+	goto L18
+L17:
+	;
+	v31 = (v15<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+	goto L18
+L18:
+	;
+	v33 = l0 + v31
+	v37 = v11
+	goto L19
+L19:
+	;
+	v41 = F_DirectFunctionCall2Coll(m, l1, int32(0), v33, l2)
+	mBase = m.M
+	v42 = m.ExcPending
+	if v42 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
+L20:
+	;
+	goto L15
+L21:
+	;
+	if v41 != 0 {
+		goto L22
+	} else {
+		goto L23
+	}
+L22:
+	;
+	if l3 == int32(0) {
+		v76 = int32(1)
+		goto L12
+	} else {
+		goto L25
+	}
+L23:
+	;
+	goto L24
+L24:
+	;
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
+	v57 = int32(1)
+	if v57 < v37 {
+		v33 = v33 + (int32(base.Ui32(v49)>>(uint(int32(2))%32))+int32(3))&int32(2147483644)
+		v37 = v37 - v57
+		goto L19
+	} else {
+		goto L26
+	}
+L25:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v33
+	return int32(1)
+L26:
+	;
+	goto L20
+L27:
+	;
+	F_errcode(m, int32(352845954))
+	mBase = m.M
+	v84 = m.ExcPending
+	if v84 != 0 {
+		goto L1
+	} else {
+		goto L28
+	}
+L28:
+	;
+	F_errmsg(m, int32(_a_F_array_iterator_0), int32(0))
+	mBase = m.M
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L1
+	} else {
+		goto L29
+	}
+L29:
+	;
+	F_errfinish(m, int32(_a_F_array_iterator_1), int32(46), int32(_a_F_array_iterator_2))
+	mBase = m.M
+	v97 = m.ExcPending
+	if v97 != 0 {
+		goto L1
+	} else {
+		goto L30
+	}
+L30:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L31:
+	;
+	F_errcode(m, int32(67108994))
+	mBase = m.M
+	v104 = m.ExcPending
+	if v104 != 0 {
+		goto L1
+	} else {
+		goto L32
+	}
+L32:
+	;
+	F_errmsg(m, int32(_a_F_array_iterator_3), int32(0))
+	mBase = m.M
+	v110 = m.ExcPending
+	if v110 != 0 {
+		goto L1
+	} else {
+		goto L33
+	}
+L33:
+	;
+	F_errfinish(m, int32(_a_F_array_iterator_1), int32(50), int32(_a_F_array_iterator_2))
+	mBase = m.M
+	v117 = m.ExcPending
+	if v117 != 0 {
+		goto L1
+	} else {
+		goto L34
+	}
+L34:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
 func F_array_prepend_support(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

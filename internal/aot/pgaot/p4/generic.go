@@ -579,3 +579,263 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 		}
 	}
 }
+func F_generic_restriction_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 float64) float64 {
+	mBase := m.M
+	_ = mBase
+	var v8 float64
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	var v54 float64
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v62 float64
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v71 float64
+	_ = v71
+	var v78 float64
+	_ = v78
+	var v80 float64
+	_ = v80
+	var v88 float64
+	_ = v88
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v92 int32
+	_ = v92
+	var v94 float32
+	_ = v94
+	var v98 float64
+	_ = v98
+	var v100 float64
+	_ = v100
+	var v105 int32
+	_ = v105
+	var v106 float64
+	_ = v106
+	var v109 int32
+	_ = v109
+	var v111 int32
+	_ = v111
+	var v112 float64
+	_ = v112
+	var v123 float64
+	_ = v123
+	v8 = float64(0)
+	v10 = m.G0
+	v12 = v10 - int32(96)
+	m.G0 = v12
+	v20 = F_get_restriction_variable(m, l0, l3, l4, v12-int32(-64), v12+int32(60), v12+int32(59))
+	mBase = m.M
+	v23 = m.ExcPending
+	if v23 != 0 {
+		return float64(0)
+	} else {
+		if v20 == int32(0) {
+			v123 = l5
+			m.G0 = v12 + int32(96)
+			return v123
+		} else {
+			v26 = *(*int32)(unsafe.Add(mBase, uint32(v12)+60))
+			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+			if v27 != int32(7) {
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v12)+72))
+				v105 = v30
+				v106 = l5
+				if v105 != 0 {
+					v109 = *(*int32)(unsafe.Add(mBase, uint32(v12)+76))
+					m.T0[v109].(func(*base.Module, int32))(m, v105)
+					mBase = m.M
+					v111 = m.ExcPending
+					if v111 != 0 {
+						return float64(0)
+					} else {
+						v112 = float64(0)
+						if base.F64_lt(v106, v112) != 0 {
+							v123 = v112
+						} else {
+							if base.F64_gt(v106, float64(1)) == int32(0) {
+								v123 = v106
+							} else {
+								v123 = float64(1)
+							}
+						}
+						m.G0 = v12 + int32(96)
+						return v123
+					}
+				} else {
+					v112 = float64(0)
+					if base.F64_lt(v106, v112) != 0 {
+						v123 = v112
+					} else {
+						if base.F64_gt(v106, float64(1)) == int32(0) {
+							v123 = v106
+						} else {
+							v123 = float64(1)
+						}
+					}
+					m.G0 = v12 + int32(96)
+					return v123
+				}
+			} else {
+				v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+24)))
+				if v31 == int32(1) {
+					v34 = *(*int32)(unsafe.Add(mBase, uint32(v12)+72))
+					if v34 == int32(0) {
+						v123 = v8
+						m.G0 = v12 + int32(96)
+						return v123
+					} else {
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v12)+76))
+						m.T0[v37].(func(*base.Module, int32))(m, v34)
+						mBase = m.M
+						v39 = m.ExcPending
+						if v39 != 0 {
+							return float64(0)
+						} else {
+							v123 = v8
+							m.G0 = v12 + int32(96)
+							return v123
+						}
+					}
+				} else {
+					v40 = *(*int32)(unsafe.Add(mBase, uint32(v26)+20))
+					v41 = F_get_opcode(m, l1)
+					mBase = m.M
+					v42 = m.ExcPending
+					if v42 != 0 {
+						return float64(0)
+					} else {
+						F_fmgr_info(m, v41, v12+int32(28))
+						mBase = m.M
+						v46 = m.ExcPending
+						if v46 != 0 {
+							return float64(0)
+						} else {
+							v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+59)))
+							v54 = F_mcv_selectivity(m, v12-int32(-64), v12+int32(28), l2, v40, v51, v12+int32(16))
+							mBase = m.M
+							v55 = m.ExcPending
+							if v55 != 0 {
+								return float64(0)
+							} else {
+								v62 = F_histogram_selectivity(m, v12-int32(-64), v12+int32(28), l2, v40, v51, v12+int32(12))
+								mBase = m.M
+								v63 = m.ExcPending
+								if v63 != 0 {
+									return float64(0)
+								} else {
+									if base.F64_lt(v62, float64(0)) != 0 {
+										v78 = l5
+									} else {
+										v66 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
+										if int32(99) < v66 {
+											v78 = v62
+										} else {
+											v71 = base.F64_div(base.F64_convert_i32_s(v66), float64(100))
+											v78 = base.F64_add(base.F64_mul(v62, v71), base.F64_mul(l5, base.F64_sub(float64(1), v71)))
+										}
+									}
+									v80 = float64(0.0001)
+									if base.F64_lt(v78, v80) != 0 {
+										v88 = v80
+									} else {
+										if base.F64_gt(v78, float64(0.9999)) == int32(0) {
+											v88 = v78
+										} else {
+											v88 = float64(0.9999)
+										}
+									}
+									v90 = *(*int32)(unsafe.Add(mBase, uint32(v12)+72))
+									if v90 != 0 {
+										v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+16))
+										v92 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v91)+22)))
+										v94 = *(*float32)(unsafe.Add(mBase, uint32(v91+v92)+8))
+										v98 = base.F64_promote_f32(v94)
+									} else {
+										v98 = float64(0)
+									}
+									v100 = *(*float64)(unsafe.Add(mBase, uint32(v12)+16))
+									v105 = v90
+									v106 = base.F64_add(v54, base.F64_mul(v88, base.F64_sub(base.F64_sub(float64(1), v98), v100)))
+									if v105 != 0 {
+										v109 = *(*int32)(unsafe.Add(mBase, uint32(v12)+76))
+										m.T0[v109].(func(*base.Module, int32))(m, v105)
+										mBase = m.M
+										v111 = m.ExcPending
+										if v111 != 0 {
+											return float64(0)
+										} else {
+											v112 = float64(0)
+											if base.F64_lt(v106, v112) != 0 {
+												v123 = v112
+											} else {
+												if base.F64_gt(v106, float64(1)) == int32(0) {
+													v123 = v106
+												} else {
+													v123 = float64(1)
+												}
+											}
+											m.G0 = v12 + int32(96)
+											return v123
+										}
+									} else {
+										v112 = float64(0)
+										if base.F64_lt(v106, v112) != 0 {
+											v123 = v112
+										} else {
+											if base.F64_gt(v106, float64(1)) == int32(0) {
+												v123 = v106
+											} else {
+												v123 = float64(1)
+											}
+										}
+										m.G0 = v12 + int32(96)
+										return v123
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

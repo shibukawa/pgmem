@@ -5825,6 +5825,44 @@ L114:
 	for {
 	}
 }
+func F_nlevel(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = F_pg_detoast_datum(m, v4)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
+	} else {
+		v9 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v5)+4)))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		if v10 != v5 {
+			F_pfree(m, v5)
+			mBase = m.M
+			v13 = m.ExcPending
+			if v13 != 0 {
+				return int32(0)
+			} else {
+				return v9
+			}
+		} else {
+			return v9
+		}
+	}
+}
 func F_nocachegetattr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

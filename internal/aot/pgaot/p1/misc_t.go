@@ -75,6 +75,86 @@ func F___toread(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_t_isalnum_cstr(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = F_pg_mblen_cstr(m, l0)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		v12 = F_pg_mblen_with_len(m, l0, v8)
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			if v12 != int32(1) {
+				v17 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_t_isalnum_cstr[0])))
+				if v17 != int32(1) {
+					F_char2wchar(m, v6+int32(4), int32(3), l0, v12, int32(0))
+					mBase = m.M
+					v37 = m.ExcPending
+					if v37 != 0 {
+						return int32(0)
+					} else {
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+						if base.Ui32(int32(10)) <= base.Ui32(v38-int32(48)) {
+							v45 = F_iswalpha(m, v38)
+							mBase = m.M
+							v48 = base.B2i32(v45 != int32(0))
+						} else {
+							v48 = int32(1)
+						}
+						v49 = v48
+						m.G0 = v6 + int32(16)
+						return v49
+					}
+				} else {
+					v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+					v49 = base.B2i32(base.Ui32(v20-int32(48)) < base.Ui32(int32(10))) | base.B2i32(base.Ui32(v20|int32(32)-int32(97)) < base.Ui32(int32(26)))
+					m.G0 = v6 + int32(16)
+					return v49
+				}
+			} else {
+				v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+				v49 = base.B2i32(base.Ui32(v20-int32(48)) < base.Ui32(int32(10))) | base.B2i32(base.Ui32(v20|int32(32)-int32(97)) < base.Ui32(int32(26)))
+				m.G0 = v6 + int32(16)
+				return v49
+			}
+		}
+	}
+}
 func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -16219,7 +16299,7 @@ func F_tsqueryout(m *base.Module, l0 int32) int32 {
 			v33 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
 			v34 = int32(12)
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v24 + v33*v34
-			F_infix(m, v8+v34, int32(-1), v31)
+			F_infix_1(m, v8+v34, int32(-1), v31)
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {

@@ -2644,6 +2644,94 @@ L24:
 	for {
 	}
 }
+func F__ltq_regex(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_pg_detoast_datum(m, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v12 = F_pg_detoast_datum(m, v11)
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			v15 = F_array_iterator(m, v6, int32(_a_F__ltq_regex_0), v12, int32(0))
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int32(0)
+			} else {
+				v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				if v17 != v6 {
+					F_pfree(m, v6)
+					mBase = m.M
+					v20 = m.ExcPending
+					if v20 != 0 {
+						return int32(0)
+					} else {
+						v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						if v21 != v12 {
+							F_pfree(m, v12)
+							mBase = m.M
+							v24 = m.ExcPending
+							if v24 != 0 {
+								return int32(0)
+							} else {
+								return v15
+							}
+						} else {
+							return v15
+						}
+					}
+				} else {
+					v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					if v21 != v12 {
+						F_pfree(m, v12)
+						mBase = m.M
+						v24 = m.ExcPending
+						if v24 != 0 {
+							return int32(0)
+						} else {
+							return v15
+						}
+					} else {
+						return v15
+					}
+				}
+			}
+		}
+	}
+}
 func F_lappend(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -9962,6 +10050,410 @@ func F_lstat(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	v5 = F___fstatat(m, int32(-100), l0, l1, int32(256))
 	return v5
+}
+func F_lt_q_regex(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v55 int32
+	_ = v55
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v94 int32
+	_ = v94
+	var v101 int32
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v108 int32
+	_ = v108
+	var v114 int32
+	_ = v114
+	var v121 int32
+	_ = v121
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = F_pg_detoast_datum(m, v7)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v13 = F_pg_detoast_datum(m, v12)
+	mBase = m.M
+	v14 = m.ExcPending
+	if v14 != 0 {
+		goto L1
+	} else {
+		goto L3
+	}
+L3:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+	v19 = F_ArrayGetNItems(m, v16, v13+int32(16))
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		goto L1
+	} else {
+		goto L4
+	}
+L4:
+	;
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+	if v21 < int32(2) {
+		goto L6
+	} else {
+		goto L7
+	}
+L5:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v105 = m.ExcPending
+	if v105 != 0 {
+		goto L1
+	} else {
+		goto L35
+	}
+L6:
+	;
+	v24 = F_array_contains_nulls(m, v13)
+	mBase = m.M
+	v25 = m.ExcPending
+	if v25 != 0 {
+		goto L1
+	} else {
+		goto L9
+	}
+L7:
+	;
+	goto L8
+L8:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L1
+	} else {
+		goto L31
+	}
+L9:
+	;
+	if v24 != 0 {
+		goto L5
+	} else {
+		goto L10
+	}
+L10:
+	;
+	if int32(0) < v19 {
+		goto L12
+	} else {
+		goto L13
+	}
+L11:
+	;
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v73 != v8 {
+		goto L23
+	} else {
+		goto L24
+	}
+L12:
+	;
+	if v15 != 0 {
+		goto L15
+	} else {
+		goto L16
+	}
+L13:
+	;
+	goto L14
+L14:
+	;
+	v72 = int32(0)
+	goto L11
+L15:
+	;
+	v34 = v15
+	goto L17
+L16:
+	;
+	v34 = (v16<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+	goto L17
+L17:
+	;
+	v37 = v13 + v34
+	v39 = v19
+	goto L18
+L18:
+	;
+	v45 = F_DirectFunctionCall2Coll(m, int32(_a_F_lt_q_regex_0), int32(0), v8, v37)
+	mBase = m.M
+	v46 = m.ExcPending
+	if v46 != 0 {
+		goto L1
+	} else {
+		goto L20
+	}
+L19:
+	;
+	goto L14
+L20:
+	;
+	if v45 != 0 {
+		v72 = int32(1)
+		goto L11
+	} else {
+		goto L21
+	}
+L21:
+	;
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
+	v55 = int32(1)
+	if v55 < v39 {
+		v37 = v37 + (int32(base.Ui32(v47)>>(uint(int32(2))%32))+int32(3))&int32(2147483644)
+		v39 = v39 - v55
+		goto L18
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L19
+L23:
+	;
+	F_pfree(m, v8)
+	mBase = m.M
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L1
+	} else {
+		goto L26
+	}
+L24:
+	;
+	goto L25
+L25:
+	;
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	if v77 != v13 {
+		goto L27
+	} else {
+		goto L28
+	}
+L26:
+	;
+	goto L25
+L27:
+	;
+	F_pfree(m, v13)
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L1
+	} else {
+		goto L30
+	}
+L28:
+	;
+	goto L29
+L29:
+	;
+	return v72
+L30:
+	;
+	goto L29
+L31:
+	;
+	F_errcode(m, int32(352845954))
+	mBase = m.M
+	v88 = m.ExcPending
+	if v88 != 0 {
+		goto L1
+	} else {
+		goto L32
+	}
+L32:
+	;
+	F_errmsg(m, int32(_a_F_lt_q_regex_1), int32(0))
+	mBase = m.M
+	v94 = m.ExcPending
+	if v94 != 0 {
+		goto L1
+	} else {
+		goto L33
+	}
+L33:
+	;
+	F_errfinish(m, int32(_a_F_lt_q_regex_2), int32(316), int32(_a_F_lt_q_regex_3))
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L1
+	} else {
+		goto L34
+	}
+L34:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L35:
+	;
+	F_errcode(m, int32(67108994))
+	mBase = m.M
+	v108 = m.ExcPending
+	if v108 != 0 {
+		goto L1
+	} else {
+		goto L36
+	}
+L36:
+	;
+	F_errmsg(m, int32(_a_F_lt_q_regex_4), int32(0))
+	mBase = m.M
+	v114 = m.ExcPending
+	if v114 != 0 {
+		goto L1
+	} else {
+		goto L37
+	}
+L37:
+	;
+	F_errfinish(m, int32(_a_F_lt_q_regex_2), int32(320), int32(_a_F_lt_q_regex_3))
+	mBase = m.M
+	v121 = m.ExcPending
+	if v121 != 0 {
+		goto L1
+	} else {
+		goto L38
+	}
+L38:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
+func F_lt_q_rregex(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_lt_q_rregex_0), int32(0), v4, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
+}
+func F_ltreeparentsel(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v8 float64
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v8 = F_generic_restriction_selectivity(m, v2, v3, int32(0), v5, v6, float64(0.001))
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		v12 = F_Float8GetDatum(m, v8)
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			return v12
+		}
+	}
 }
 func F_lz4_decompress_datum(m *base.Module) int32 {
 	var v6 int32

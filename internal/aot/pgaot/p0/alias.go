@@ -2828,6 +2828,8 @@ func F_get_json_table_nested_columns(m *base.Module, l0 int32, l1 int32, l2 int3
 func F_get_restriction_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_statistic_proc_security_check github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_statistic_proc_security_check
 func F_statistic_proc_security_check(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_generic_restriction_selectivity github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_generic_restriction_selectivity
+func F_generic_restriction_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 float64) float64
 //go:linkname F_scalarineqsel_wrapper github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_scalarineqsel_wrapper
 func F_scalarineqsel_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_get_join_variables github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_join_variables
@@ -3858,6 +3860,10 @@ func F_hstoreUpgrade(m *base.Module, l0 int32) int32
 func F_hstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_hstorePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstorePairs
 func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_ltree_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ltree_concat
+func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_infix_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_infix_2
+func F_infix_2(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

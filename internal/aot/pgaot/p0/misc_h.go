@@ -11643,7 +11643,7 @@ L46:
 	;
 	goto L33
 }
-func F_hemdist(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_hemdist_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32

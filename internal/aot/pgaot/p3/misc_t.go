@@ -1646,6 +1646,72 @@ func F_tblspc_redo(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_text2ltree(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = F_pg_detoast_datum_packed(m, v7)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		v12 = F_text_to_cstring(m, v8)
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			v14 = F_DirectFunctionCall1Coll(m, int32(_a_F_text2ltree_0), int32(0), v12)
+			mBase = m.M
+			v15 = m.ExcPending
+			if v15 != 0 {
+				return int32(0)
+			} else {
+				F_pfree(m, v12)
+				mBase = m.M
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return int32(0)
+				} else {
+					v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+					if v18 != v8 {
+						F_pfree(m, v8)
+						mBase = m.M
+						v21 = m.ExcPending
+						if v21 != 0 {
+							return int32(0)
+						} else {
+							return v14
+						}
+					} else {
+						return v14
+					}
+				}
+			}
+		}
+	}
+}
 func F_textlename(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -11248,7 +11314,7 @@ func F_tsquerytree(m *base.Module, l0 int32) int32 {
 							v81 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 							v82 = int32(12)
 							*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v31 + v81*v82
-							F_infix(m, v11+v82, int32(-1), v79)
+							F_infix_1(m, v11+v82, int32(-1), v79)
 							mBase = m.M
 							v91 = m.ExcPending
 							if v91 != 0 {
@@ -11343,7 +11409,7 @@ func F_tsquerytree(m *base.Module, l0 int32) int32 {
 								v81 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 								v82 = int32(12)
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v31 + v81*v82
-								F_infix(m, v11+v82, int32(-1), v79)
+								F_infix_1(m, v11+v82, int32(-1), v79)
 								mBase = m.M
 								v91 = m.ExcPending
 								if v91 != 0 {
@@ -11449,7 +11515,7 @@ func F_tsquerytree(m *base.Module, l0 int32) int32 {
 										v81 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 										v82 = int32(12)
 										*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v31 + v81*v82
-										F_infix(m, v11+v82, int32(-1), v79)
+										F_infix_1(m, v11+v82, int32(-1), v79)
 										mBase = m.M
 										v91 = m.ExcPending
 										if v91 != 0 {

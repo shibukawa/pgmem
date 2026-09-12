@@ -2,6 +2,18 @@ package p3
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__ltq_rregex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltq_rregex_0)
+}
+func F_pg_finfo__ltree_gist_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_gist_options_0)
+}
+func F_pg_finfo__ltree_risparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_risparent_0)
+}
+func F_pg_finfo__ltxtq_extract_exec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltxtq_extract_exec_0)
+}
 func F_pg_finfo_citext_eq(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_eq_0)
 }
@@ -37,6 +49,15 @@ func F_pg_finfo_iso_to_win866(m *base.Module) int32 {
 }
 func F_pg_finfo_latin2_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin2_to_mic_0)
+}
+func F_pg_finfo_ltree_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_decompress_0)
+}
+func F_pg_finfo_ltree_gist_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_gist_in_0)
+}
+func F_pg_finfo_ltree_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_in_0)
 }
 func F_pg_finfo_mic_to_latin4(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin4_0)

@@ -1603,6 +1603,28 @@ func F___lseek(m *base.Module, l0 int32, l1 int64, l2 int32) int64 {
 	}
 	return v26
 }
+func F__ltq_rregex(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F__ltq_rregex_0), int32(0), v4, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
+}
 func F_latin4_to_mic(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -1809,6 +1831,217 @@ func F_launcher_determine_sleep(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		m.G0 = v10 + int32(16)
 		return
 	}
+}
+func F_lca(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v21 int32
+	_ = v21
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v77 int32
+	_ = v77
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
+	v8 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
+	v11 = F_palloc(m, v8<<(uint(int32(2))%32))
+	mBase = m.M
+	v14 = m.ExcPending
+	if v14 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v15 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
+	if int32(0) < v15 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v21 = int32(0)
+	goto L6
+L4:
+	;
+	v43 = v15
+	goto L5
+L5:
+	;
+	v48 = F_lca_inner(m, v11, v43)
+	mBase = m.M
+	v49 = m.ExcPending
+	if v49 != 0 {
+		goto L1
+	} else {
+		goto L10
+	}
+L6:
+	;
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(20)+v21<<(uint(int32(3))%32))))
+	v34 = F_pg_detoast_datum(m, v33)
+	mBase = m.M
+	v35 = m.ExcPending
+	if v35 != 0 {
+		goto L1
+	} else {
+		goto L8
+	}
+L7:
+	;
+	v43 = v39
+	goto L5
+L8:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11+v21<<(uint(int32(2))%32)))) = v34
+	v38 = v21 + int32(1)
+	v39 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
+	if v38 < v39 {
+		v21 = v38
+		goto L6
+	} else {
+		goto L9
+	}
+L9:
+	;
+	goto L7
+L10:
+	;
+	v50 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
+	if int32(0) < v50 {
+		goto L11
+	} else {
+		goto L12
+	}
+L11:
+	;
+	v57 = int32(0)
+	v58 = v50
+	goto L14
+L12:
+	;
+	goto L13
+L13:
+	;
+	F_pfree(m, v11)
+	mBase = m.M
+	v88 = m.ExcPending
+	if v88 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
+L14:
+	;
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v11+v57<<(uint(int32(2))%32))))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(20)+v57<<(uint(int32(3))%32))))
+	if v66 != v70 {
+		goto L16
+	} else {
+		goto L17
+	}
+L15:
+	;
+	goto L13
+L16:
+	;
+	F_pfree(m, v66)
+	mBase = m.M
+	v73 = m.ExcPending
+	if v73 != 0 {
+		goto L1
+	} else {
+		goto L19
+	}
+L17:
+	;
+	v75 = v58
+	goto L18
+L18:
+	;
+	v77 = v57 + int32(1)
+	if v77 < base.I32_extend16_s(v75) {
+		v57 = v77
+		v58 = v75
+		goto L14
+	} else {
+		goto L20
+	}
+L19:
+	;
+	v74 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+18)))
+	v75 = v74
+	goto L18
+L20:
+	;
+	goto L15
+L21:
+	;
+	if v48 != 0 {
+		goto L22
+	} else {
+		goto L23
+	}
+L22:
+	;
+	v92 = v48
+	goto L24
+L23:
+	;
+	v89 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v89)
+	v92 = int32(0)
+	goto L24
+L24:
+	;
+	return v92
 }
 func F_lcons_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M

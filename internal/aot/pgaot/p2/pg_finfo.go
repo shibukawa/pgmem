@@ -2,6 +2,21 @@ package p2
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__lt_q_regex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__lt_q_regex_0)
+}
+func F_pg_finfo__ltree_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_penalty_0)
+}
+func F_pg_finfo__ltree_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_picksplit_0)
+}
+func F_pg_finfo__ltree_r_risparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_r_risparent_0)
+}
+func F_pg_finfo__ltree_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_union_0)
+}
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_euc_tw_0)
 }
@@ -47,6 +62,12 @@ func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
 func F_pg_finfo_gtrgm_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_union_0)
 }
+func F_pg_finfo_hash_ltree(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_ltree_0)
+}
+func F_pg_finfo_hash_ltree_extended(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_ltree_extended_0)
+}
 func F_pg_finfo_hstore_akeys(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_akeys_0)
 }
@@ -82,6 +103,30 @@ func F_pg_finfo_koi8r_to_mic(m *base.Module) int32 {
 }
 func F_pg_finfo_latin3_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_latin3_to_mic_0)
+}
+func F_pg_finfo_ltq_regex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltq_regex_0)
+}
+func F_pg_finfo_ltree_addtext(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_addtext_0)
+}
+func F_pg_finfo_ltree_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_cmp_0)
+}
+func F_pg_finfo_ltree_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_compress_0)
+}
+func F_pg_finfo_ltree_gist_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_gist_options_0)
+}
+func F_pg_finfo_ltree_index(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_index_0)
+}
+func F_pg_finfo_ltree_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_same_0)
+}
+func F_pg_finfo_ltree_textadd(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_textadd_0)
 }
 func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_big5_0)

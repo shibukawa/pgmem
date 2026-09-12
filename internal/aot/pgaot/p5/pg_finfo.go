@@ -2,6 +2,21 @@ package p5
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__ltree_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_compress_0)
+}
+func F_pg_finfo__ltree_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_consistent_0)
+}
+func F_pg_finfo__ltree_extract_isparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_extract_isparent_0)
+}
+func F_pg_finfo__ltree_extract_risparent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltree_extract_risparent_0)
+}
+func F_pg_finfo__ltxtq_rexec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__ltxtq_rexec_0)
+}
 func F_pg_finfo_citext_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_cmp_0)
 }
@@ -74,6 +89,33 @@ func F_pg_finfo_hstore_version_diag(m *base.Module) int32 {
 func F_pg_finfo_johab_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_johab_to_utf8_0)
 }
+func F_pg_finfo_ltree_addltree(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_addltree_0)
+}
+func F_pg_finfo_ltree_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_le_0)
+}
+func F_pg_finfo_ltree_ne(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_ne_0)
+}
+func F_pg_finfo_ltree_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_penalty_0)
+}
+func F_pg_finfo_ltree_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_picksplit_0)
+}
+func F_pg_finfo_ltreeparentsel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltreeparentsel_0)
+}
+func F_pg_finfo_ltxtq_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_out_0)
+}
+func F_pg_finfo_ltxtq_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_recv_0)
+}
+func F_pg_finfo_ltxtq_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_send_0)
+}
 func F_pg_finfo_mic_to_euc_jp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_euc_jp_0)
 }
@@ -100,6 +142,9 @@ func F_pg_finfo_strict_word_similarity(m *base.Module) int32 {
 }
 func F_pg_finfo_strict_word_similarity_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_strict_word_similarity_op_0)
+}
+func F_pg_finfo_subltree(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_subltree_0)
 }
 func F_pg_finfo_utf8_to_uhc(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_uhc_0)

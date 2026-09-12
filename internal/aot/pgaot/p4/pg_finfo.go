@@ -2,6 +2,9 @@ package p4
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__lt_q_rregex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__lt_q_rregex_0)
+}
 func F_pg_finfo_citext_le(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_le_0)
 }
@@ -83,6 +86,36 @@ func F_pg_finfo_iso_to_win1251(m *base.Module) int32 {
 func F_pg_finfo_koi8r_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_win1251_0)
 }
+func F_pg_finfo_lquery_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lquery_recv_0)
+}
+func F_pg_finfo_ltree2text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree2text_0)
+}
+func F_pg_finfo_ltree_eq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_eq_0)
+}
+func F_pg_finfo_ltree_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_ge_0)
+}
+func F_pg_finfo_ltree_gist_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_gist_out_0)
+}
+func F_pg_finfo_ltree_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_lt_0)
+}
+func F_pg_finfo_ltree_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_out_0)
+}
+func F_pg_finfo_ltree_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltree_send_0)
+}
+func F_pg_finfo_ltxtq_exec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_exec_0)
+}
+func F_pg_finfo_ltxtq_rexec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ltxtq_rexec_0)
+}
 func F_pg_finfo_mic_to_euc_cn(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_euc_cn_0)
 }
@@ -121,6 +154,9 @@ func F_pg_finfo_plpgsql_call_handler(m *base.Module) int32 {
 }
 func F_pg_finfo_svals(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_svals_0)
+}
+func F_pg_finfo_text2ltree(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_text2ltree_0)
 }
 func F_pg_finfo_utf8_to_euc_kr(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_kr_0)
