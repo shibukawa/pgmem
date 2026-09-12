@@ -23,17 +23,17 @@ func F_XmlTableGetValue(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v18 = m.ExcPending
 			if v18 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(488832), int32(5068), int32(341419))
+					F_errfinish(m, int32(489702), int32(5068), int32(341995))
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return int32(0)

@@ -81,13 +81,13 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v24 - int64(1)
 					*(*int64)(unsafe.Add(mBase, uint32(v10))) = v26
-					F_errmsg(m, int32(422880), v10)
+					F_errmsg(m, int32(423584), v10)
 					mBase = m.M
 					v68 = m.ExcPending
 					if v68 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(491527), int32(3428), int32(101928))
+						F_errfinish(m, int32(492409), int32(3428), int32(102141))
 						mBase = m.M
 						v73 = m.ExcPending
 						if v73 != 0 {
@@ -116,13 +116,13 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v24 - int64(1)
 						*(*int64)(unsafe.Add(mBase, uint32(v10))) = v26
-						F_errmsg(m, int32(422880), v10)
+						F_errmsg(m, int32(423584), v10)
 						mBase = m.M
 						v68 = m.ExcPending
 						if v68 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(491527), int32(3428), int32(101928))
+							F_errfinish(m, int32(492409), int32(3428), int32(102141))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {
@@ -150,13 +150,13 @@ func F_byteaSetBit(m *base.Module, l0 int32) int32 {
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(545046), int32(0))
+							F_errmsg(m, int32(545946), int32(0))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491527), int32(3440), int32(101928))
+								F_errfinish(m, int32(492409), int32(3440), int32(102141))
 								mBase = m.M
 								v89 = m.ExcPending
 								if v89 != 0 {

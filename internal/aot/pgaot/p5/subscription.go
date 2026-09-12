@@ -60,13 +60,13 @@ func F_get_subscription_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(70230), v7)
+						F_errmsg(m, int32(70443), v7)
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490623), int32(3824), int32(427138))
+							F_errfinish(m, int32(491493), int32(3824), int32(427842))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {

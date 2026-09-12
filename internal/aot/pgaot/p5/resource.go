@@ -193,7 +193,7 @@ L18:
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v46
-	v52 = F_psprintf(m, int32(235280), v12+int32(16))
+	v52 = F_psprintf(m, int32(235692), v12+int32(16))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -222,7 +222,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v55
-	F_errmsg_internal(m, int32(200908), v12)
+	F_errmsg_internal(m, int32(201320), v12)
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -245,7 +245,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(486844), int32(395), int32(300507))
+	F_errfinish(m, int32(487714), int32(395), int32(300960))
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {

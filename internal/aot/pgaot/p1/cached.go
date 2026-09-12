@@ -672,7 +672,7 @@ L49:
 	goto L4
 L50:
 	;
-	F_errmsg_internal(m, int32(278764), int32(0))
+	F_errmsg_internal(m, int32(279176), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -682,7 +682,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(490646), int32(1292), int32(278998))
+	F_errfinish(m, int32(491516), int32(1292), int32(279410))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -2717,7 +2717,7 @@ L120:
 L121:
 	;
 	v432 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v437 = F_AllocSetContextCreateInternal(m, v432, int32(16928), int32(0), int32(1024), int32(8388608))
+	v437 = F_AllocSetContextCreateInternal(m, v432, int32(17033), int32(0), int32(1024), int32(8388608))
 	mBase = m.M
 	v438 = m.ExcPending
 	if v438 != 0 {
@@ -2849,7 +2849,7 @@ L137:
 	}
 L138:
 	;
-	v335 = int32(4470560)
+	v335 = int32(4470752)
 	v336 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v338 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v338
@@ -2987,7 +2987,7 @@ L156:
 	goto L141
 L157:
 	;
-	v403 = int32(4470560)
+	v403 = int32(4470752)
 	v404 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v406 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v406
@@ -3027,7 +3027,7 @@ L162:
 	goto L161
 L163:
 	;
-	v439 = int32(4470560)
+	v439 = int32(4470752)
 	v440 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v437
 	v443 = F_copyObjectImpl(m, v274)
@@ -3175,7 +3175,7 @@ L184:
 	}
 L185:
 	;
-	F_errmsg(m, int32(361784), int32(0))
+	F_errmsg(m, int32(362384), int32(0))
 	mBase = m.M
 	v525 = m.ExcPending
 	if v525 != 0 {
@@ -3185,7 +3185,7 @@ L185:
 	}
 L186:
 	;
-	F_errfinish(m, int32(490646), int32(860), int32(17004))
+	F_errfinish(m, int32(491516), int32(860), int32(17109))
 	mBase = m.M
 	v530 = m.ExcPending
 	if v530 != 0 {

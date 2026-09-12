@@ -7808,6 +7808,72 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.UnaccentLexize(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_tablefunc":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_tablefunc: want 0 args")
+		}
+		r := pgaot.PgMagicFuncTablefunc(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "connectby_text":
+		if len(a) != 1 {
+			panic("aot: connectby_text: want 1 args")
+		}
+		r := pgaot.ConnectbyText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "connectby_text_serial":
+		if len(a) != 1 {
+			panic("aot: connectby_text_serial: want 1 args")
+		}
+		r := pgaot.ConnectbyTextSerial(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "crosstab":
+		if len(a) != 1 {
+			panic("aot: crosstab: want 1 args")
+		}
+		r := pgaot.Crosstab(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "crosstab_hash":
+		if len(a) != 1 {
+			panic("aot: crosstab_hash: want 1 args")
+		}
+		r := pgaot.CrosstabHash(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "normal_rand":
+		if len(a) != 1 {
+			panic("aot: normal_rand: want 1 args")
+		}
+		r := pgaot.NormalRand(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_connectby_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_connectby_text: want 0 args")
+		}
+		r := pgaot.PgFinfoConnectbyText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_connectby_text_serial":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_connectby_text_serial: want 0 args")
+		}
+		r := pgaot.PgFinfoConnectbyTextSerial(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_crosstab":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_crosstab: want 0 args")
+		}
+		r := pgaot.PgFinfoCrosstab(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_crosstab_hash":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_crosstab_hash: want 0 args")
+		}
+		r := pgaot.PgFinfoCrosstabHash(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_normal_rand":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_normal_rand: want 0 args")
+		}
+		r := pgaot.PgFinfoNormalRand(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

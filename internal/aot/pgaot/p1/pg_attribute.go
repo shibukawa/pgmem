@@ -119,13 +119,13 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = l1
-						F_errmsg(m, int32(68187), v11)
+						F_errmsg(m, int32(68400), v11)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(489119), int32(3190), int32(62834))
+							F_errfinish(m, int32(489989), int32(3190), int32(63047))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
@@ -172,13 +172,13 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = l0
 							*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l1
-							F_errmsg(m, int32(68187), v11+int32(16))
+							F_errmsg(m, int32(68400), v11+int32(16))
 							mBase = m.M
 							v61 = m.ExcPending
 							if v61 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(489119), int32(3209), int32(62834))
+								F_errfinish(m, int32(489989), int32(3209), int32(63047))
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
@@ -234,13 +234,13 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 												return int64(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = l0
-												F_errmsg(m, int32(68203), v11+int32(32))
+												F_errmsg(m, int32(68416), v11+int32(32))
 												mBase = m.M
 												v102 = m.ExcPending
 												if v102 != 0 {
 													return int64(0)
 												} else {
-													F_errfinish(m, int32(489119), int32(3247), int32(62834))
+													F_errfinish(m, int32(489989), int32(3247), int32(63047))
 													mBase = m.M
 													v107 = m.ExcPending
 													if v107 != 0 {

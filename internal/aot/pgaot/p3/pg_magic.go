@@ -3,14 +3,14 @@ package p3
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_btree_gist(m *base.Module) int32 {
-	return int32(4363568)
+	return int32(4363696)
 }
 func F_Pg_magic_func_pgcrypto(m *base.Module) int32 {
-	return int32(4361680)
+	return int32(4361808)
 }
 func F_Pg_magic_func_utf8_and_euc_jp(m *base.Module) int32 {
-	return int32(4356564)
+	return int32(4356692)
 }
 func F_Pg_magic_func_utf8_and_iso8859_2(m *base.Module) int32 {
-	return int32(4358924)
+	return int32(4359052)
 }

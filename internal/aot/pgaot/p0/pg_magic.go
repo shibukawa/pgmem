@@ -3,29 +3,29 @@ package p0
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_btree_gin(m *base.Module) int32 {
-	return int32(4364192)
+	return int32(4364320)
 }
 func F_Pg_magic_func_euc_cn_and_mic(m *base.Module) int32 {
-	return int32(4355444)
-}
-func F_Pg_magic_func_euc_kr_and_mic(m *base.Module) int32 {
 	return int32(4355572)
 }
+func F_Pg_magic_func_euc_kr_and_mic(m *base.Module) int32 {
+	return int32(4355700)
+}
 func F_Pg_magic_func_utf8_and_big5(m *base.Module) int32 {
-	return int32(4355828)
+	return int32(4355956)
 }
 func F_Pg_magic_func_utf8_and_euc2004(m *base.Module) int32 {
-	return int32(4356244)
+	return int32(4356372)
 }
 func F_Pg_magic_func_utf8_and_euc_cn(m *base.Module) int32 {
-	return int32(4356404)
+	return int32(4356532)
 }
 func F_Pg_magic_func_utf8_and_euc_tw(m *base.Module) int32 {
-	return int32(4356884)
+	return int32(4357012)
 }
 func F_Pg_magic_func_utf8_and_gb18030(m *base.Module) int32 {
-	return int32(4357044)
+	return int32(4357172)
 }
 func F_Pg_magic_func_utf8_and_sjis2004(m *base.Module) int32 {
-	return int32(4359308)
+	return int32(4359436)
 }

@@ -260,13 +260,13 @@ func F_ltxtq_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
-				F_errmsg_internal(m, int32(463787), v6)
+				F_errmsg_internal(m, int32(464606), v6)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(487620), int32(437), int32(35821))
+					F_errfinish(m, int32(488490), int32(437), int32(36010))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

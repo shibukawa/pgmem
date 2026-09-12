@@ -441,13 +441,13 @@ func F_SpGistGetBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 			if v222 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(331849), int32(0))
+				F_errmsg_internal(m, int32(332391), int32(0))
 				mBase = m.M
 				v226 = m.ExcPending
 				if v226 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(485466), int32(576), int32(222800))
+					F_errfinish(m, int32(486336), int32(576), int32(223212))
 					mBase = m.M
 					v231 = m.ExcPending
 					if v231 != 0 {

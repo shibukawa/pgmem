@@ -238,7 +238,7 @@ func F_macaddr8_out(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v23
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v22
 		*(*int32)(unsafe.Add(mBase, uint32(v13))) = v21
-		v39 = F_pg_snprintf(m, v17, int32(32), int32(29228), v13)
+		v39 = F_pg_snprintf(m, v17, int32(32), int32(29362), v13)
 		mBase = m.M
 		v40 = m.ExcPending
 		if v40 != 0 {

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6665)
-	m.G0 = int32(13035840)
+	m.T0 = make([]any, 6676)
+	m.G0 = int32(13036032)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4364939
+	m.DataEnd = 4365131
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6665)
-	m.G0 = int32(13035840)
+	m.T0 = make([]any, 6676)
+	m.G0 = int32(13036032)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4364939
+	m.DataEnd = 4365131
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6665)
-	m.G0 = int32(13035840)
+	m.T0 = make([]any, 6676)
+	m.G0 = int32(13036032)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4364939
+	m.DataEnd = 4365131
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1583200])
-	copy(m.Memory[1588528:], wasm2goData_data_bin[1583200:1583209])
-	copy(m.Memory[1590576:], wasm2goData_data_bin[1583209:1596137])
-	copy(m.Memory[1613828:], wasm2goData_data_bin[1596137:1689378])
-	copy(m.Memory[1708096:], wasm2goData_data_bin[1689378:1801034])
-	copy(m.Memory[1830968:], wasm2goData_data_bin[1801034:4050816])
-	copy(m.Memory[4088240:], wasm2goData_data_bin[4050816:4327515])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1584848])
+	copy(m.Memory[1590176:], wasm2goData_data_bin[1584848:1584857])
+	copy(m.Memory[1592224:], wasm2goData_data_bin[1584857:1597785])
+	copy(m.Memory[1613828:], wasm2goData_data_bin[1597785:1691026])
+	copy(m.Memory[1708096:], wasm2goData_data_bin[1691026:1802682])
+	copy(m.Memory[1830968:], wasm2goData_data_bin[1802682:4052592])
+	copy(m.Memory[4088368:], wasm2goData_data_bin[4052592:4329355])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4078,6 +4078,39 @@ func UnaccentInit(m *base.Module, l0 int32) int32 {
 }
 func UnaccentLexize(m *base.Module, l0 int32) int32 {
 	return F_unaccent_lexize(m, l0)
+}
+func PgMagicFuncTablefunc(m *base.Module) int32 {
+	return F_Pg_magic_func_tablefunc(m)
+}
+func ConnectbyText(m *base.Module, l0 int32) int32 {
+	return F_connectby_text(m, l0)
+}
+func ConnectbyTextSerial(m *base.Module, l0 int32) int32 {
+	return F_connectby_text_serial(m, l0)
+}
+func Crosstab(m *base.Module, l0 int32) int32 {
+	return F_crosstab(m, l0)
+}
+func CrosstabHash(m *base.Module, l0 int32) int32 {
+	return F_crosstab_hash(m, l0)
+}
+func NormalRand(m *base.Module, l0 int32) int32 {
+	return F_normal_rand(m, l0)
+}
+func PgFinfoConnectbyText(m *base.Module) int32 {
+	return F_pg_finfo_connectby_text(m)
+}
+func PgFinfoConnectbyTextSerial(m *base.Module) int32 {
+	return F_pg_finfo_connectby_text_serial(m)
+}
+func PgFinfoCrosstab(m *base.Module) int32 {
+	return F_pg_finfo_crosstab(m)
+}
+func PgFinfoCrosstabHash(m *base.Module) int32 {
+	return F_pg_finfo_crosstab_hash(m)
+}
+func PgFinfoNormalRand(m *base.Module) int32 {
+	return F_pg_finfo_normal_rand(m)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

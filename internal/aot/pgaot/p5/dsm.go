@@ -14,7 +14,7 @@ func F_dsm_pin_mapping(m *base.Module, l0 int32) {
 	_ = v6
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v3 != 0 {
-		F_ResourceOwnerForget(m, v3, l0, int32(1602636))
+		F_ResourceOwnerForget(m, v3, l0, int32(1604284))
 		mBase = m.M
 		v6 = m.ExcPending
 		if v6 != 0 {
@@ -219,7 +219,7 @@ L13:
 	goto L8
 L14:
 	;
-	F_errmsg_internal(m, int32(383729), int32(0))
+	F_errmsg_internal(m, int32(384412), int32(0))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -229,7 +229,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(488591), int32(1016), int32(93603))
+	F_errfinish(m, int32(489461), int32(1016), int32(93816))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -393,7 +393,7 @@ L35:
 	goto L24
 L36:
 	;
-	F_errmsg_internal(m, int32(445201), int32(0))
+	F_errmsg_internal(m, int32(445933), int32(0))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -403,7 +403,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(488591), int32(1018), int32(93603))
+	F_errfinish(m, int32(489461), int32(1018), int32(93816))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {

@@ -91,13 +91,13 @@ func F_InitializeClientEncoding(m *base.Module) {
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[1419]))
 					v62 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_consts[484])))
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v62
-					F_errmsg(m, int32(435166), v5)
+					F_errmsg(m, int32(435870), v5)
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(485501), int32(308), int32(330293))
+						F_errfinish(m, int32(486371), int32(308), int32(330835))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -137,13 +137,13 @@ func F_InitializeClientEncoding(m *base.Module) {
 							v57 = *(*int32)(unsafe.Add(mBase, _consts[1419]))
 							v62 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_consts[484])))
 							*(*int32)(unsafe.Add(mBase, uint32(v5))) = v62
-							F_errmsg(m, int32(435166), v5)
+							F_errmsg(m, int32(435870), v5)
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(485501), int32(308), int32(330293))
+								F_errfinish(m, int32(486371), int32(308), int32(330835))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
@@ -482,7 +482,7 @@ L22:
 	goto L23
 L23:
 	;
-	v79 = int32(4468556)
+	v79 = int32(4468748)
 	v81 = *(*int32)(unsafe.Add(mBase, _consts[1420]))
 	v82 = F_list_delete_nth_cell(m, v81, v50)
 	mBase = m.M
@@ -900,7 +900,7 @@ L33:
 	goto L35
 L34:
 	;
-	v120 = int32(731620)
+	v120 = int32(733277)
 	goto L35
 L35:
 	;
@@ -949,7 +949,7 @@ L41:
 	goto L42
 L42:
 	;
-	v138 = F_format_elog_string(m, int32(590975), int32(0))
+	v138 = F_format_elog_string(m, int32(592341), int32(0))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -1015,7 +1015,7 @@ L54:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v161
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v120
-	v165 = F_format_elog_string(m, int32(622200), v9)
+	v165 = F_format_elog_string(m, int32(623737), v9)
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -1029,7 +1029,7 @@ L55:
 	goto L47
 L56:
 	;
-	v173 = F_format_elog_string(m, int32(552509), int32(0))
+	v173 = F_format_elog_string(m, int32(553409), int32(0))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -1106,7 +1106,7 @@ L66:
 	goto L64
 L67:
 	;
-	v207 = int32(532909)
+	v207 = int32(533809)
 	v210 = int32(*(*uint8)(unsafe.Add(mBase, _consts[486])))
 	v211 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v179))))
 	if v211 == int32(0) {

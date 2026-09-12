@@ -389,7 +389,7 @@ L12:
 	goto L9
 L13:
 	;
-	v41 = *(*int64)(unsafe.Add(mBase, uint32(v34)+uint32(_consts[986])))
+	v41 = *(*int64)(unsafe.Add(mBase, uint32(v34)+uint32(_consts[987])))
 	if v41 == int64(-1) {
 		goto L15
 	} else {
@@ -437,7 +437,7 @@ L18:
 	}
 L19:
 	;
-	F_errmsg_internal(m, int32(365606), int32(0))
+	F_errmsg_internal(m, int32(366265), int32(0))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -447,7 +447,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(490271), int32(1095), int32(411471))
+	F_errfinish(m, int32(491141), int32(1095), int32(412154))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -481,7 +481,7 @@ L23:
 L24:
 	;
 	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	v72 = *(*int64)(unsafe.Add(mBase, uint32(v69)+uint32(_consts[985])))
+	v72 = *(*int64)(unsafe.Add(mBase, uint32(v69)+uint32(_consts[986])))
 	v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 	if v72 != v73 {
 		goto L7
@@ -493,7 +493,7 @@ L25:
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v41
 	v76 = int32(8176)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v76
-	v78 = *(*int64)(unsafe.Add(mBase, uint32(v69)+uint32(_consts[985])))
+	v78 = *(*int64)(unsafe.Add(mBase, uint32(v69)+uint32(_consts[986])))
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v78
 	v81 = v35 + v76
 	if base.Ui32(v81) < base.Ui32(l1) {
@@ -519,7 +519,7 @@ L27:
 L28:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = v41
-	F_errmsg(m, int32(380491), v11+int32(32))
+	F_errmsg(m, int32(381174), v11+int32(32))
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -529,7 +529,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(490271), int32(288), int32(311969))
+	F_errfinish(m, int32(491141), int32(288), int32(312453))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -545,12 +545,12 @@ L30:
 L31:
 	;
 	v126 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	v129 = *(*int64)(unsafe.Add(mBase, uint32(v126)+uint32(_consts[985])))
+	v129 = *(*int64)(unsafe.Add(mBase, uint32(v126)+uint32(_consts[986])))
 	v130 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+16)) = v130
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v129
 	*(*int64)(unsafe.Add(mBase, uint32(v11))) = v41
-	F_errmsg_internal(m, int32(423133), v11)
+	F_errmsg_internal(m, int32(423837), v11)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -560,7 +560,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(490271), int32(1106), int32(411471))
+	F_errfinish(m, int32(491141), int32(1106), int32(412154))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -661,7 +661,7 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 	if v13 == int32(1) {
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-		*(*int64)(unsafe.Add(mBase, uint32(v16)+uint32(_consts[985]))) = base.I64_extend_i32_s(int32(0) - v20)
+		*(*int64)(unsafe.Add(mBase, uint32(v16)+uint32(_consts[986]))) = base.I64_extend_i32_s(int32(0) - v20)
 		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v25 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 		v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -702,14 +702,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 								return
 							} else {
 								v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-								v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+								v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 								if v66 < int64(0) {
 									v69 = int64(-1)
 								} else {
 									v69 = v66
 								}
 								*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-								v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+								v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 								if int64(0) <= v73 {
 									v78 = int32(8176)
 								} else {
@@ -760,13 +760,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-									F_errmsg(m, int32(380491), v10)
+									F_errmsg(m, int32(381174), v10)
 									mBase = m.M
 									v103 = m.ExcPending
 									if v103 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(490271), int32(288), int32(311969))
+										F_errfinish(m, int32(491141), int32(288), int32(312453))
 										mBase = m.M
 										v108 = m.ExcPending
 										if v108 != 0 {
@@ -821,14 +821,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-										v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+										v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 										if v66 < int64(0) {
 											v69 = int64(-1)
 										} else {
 											v69 = v66
 										}
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-										v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+										v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 										if int64(0) <= v73 {
 											v78 = int32(8176)
 										} else {
@@ -879,13 +879,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 											return
 										} else {
 											*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-											F_errmsg(m, int32(380491), v10)
+											F_errmsg(m, int32(381174), v10)
 											mBase = m.M
 											v103 = m.ExcPending
 											if v103 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(490271), int32(288), int32(311969))
+												F_errfinish(m, int32(491141), int32(288), int32(312453))
 												mBase = m.M
 												v108 = m.ExcPending
 												if v108 != 0 {
@@ -937,14 +937,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 								return
 							} else {
 								v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-								v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+								v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 								if v66 < int64(0) {
 									v69 = int64(-1)
 								} else {
 									v69 = v66
 								}
 								*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-								v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+								v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 								if int64(0) <= v73 {
 									v78 = int32(8176)
 								} else {
@@ -995,13 +995,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-									F_errmsg(m, int32(380491), v10)
+									F_errmsg(m, int32(381174), v10)
 									mBase = m.M
 									v103 = m.ExcPending
 									if v103 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(490271), int32(288), int32(311969))
+										F_errfinish(m, int32(491141), int32(288), int32(312453))
 										mBase = m.M
 										v108 = m.ExcPending
 										if v108 != 0 {
@@ -1051,14 +1051,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 							return
 						} else {
 							v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-							v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+							v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 							if v66 < int64(0) {
 								v69 = int64(-1)
 							} else {
 								v69 = v66
 							}
 							*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-							v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+							v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 							if int64(0) <= v73 {
 								v78 = int32(8176)
 							} else {
@@ -1109,13 +1109,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 								return
 							} else {
 								*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-								F_errmsg(m, int32(380491), v10)
+								F_errmsg(m, int32(381174), v10)
 								mBase = m.M
 								v103 = m.ExcPending
 								if v103 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(490271), int32(288), int32(311969))
+									F_errfinish(m, int32(491141), int32(288), int32(312453))
 									mBase = m.M
 									v108 = m.ExcPending
 									if v108 != 0 {
@@ -1170,14 +1170,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-									v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+									v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 									if v66 < int64(0) {
 										v69 = int64(-1)
 									} else {
 										v69 = v66
 									}
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-									v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+									v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 									if int64(0) <= v73 {
 										v78 = int32(8176)
 									} else {
@@ -1228,13 +1228,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-										F_errmsg(m, int32(380491), v10)
+										F_errmsg(m, int32(381174), v10)
 										mBase = m.M
 										v103 = m.ExcPending
 										if v103 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(490271), int32(288), int32(311969))
+											F_errfinish(m, int32(491141), int32(288), int32(312453))
 											mBase = m.M
 											v108 = m.ExcPending
 											if v108 != 0 {
@@ -1286,14 +1286,14 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 							return
 						} else {
 							v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-							v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+							v66 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 							if v66 < int64(0) {
 								v69 = int64(-1)
 							} else {
 								v69 = v66
 							}
 							*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v69
-							v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[985])))
+							v73 = *(*int64)(unsafe.Add(mBase, uint32(v63)+uint32(_consts[986])))
 							if int64(0) <= v73 {
 								v78 = int32(8176)
 							} else {
@@ -1344,13 +1344,13 @@ func F_LogicalTapeFreeze(m *base.Module, l0 int32, l1 int32) {
 								return
 							} else {
 								*(*int64)(unsafe.Add(mBase, uint32(v10))) = v46
-								F_errmsg(m, int32(380491), v10)
+								F_errmsg(m, int32(381174), v10)
 								mBase = m.M
 								v103 = m.ExcPending
 								if v103 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(490271), int32(288), int32(311969))
+									F_errfinish(m, int32(491141), int32(288), int32(312453))
 									mBase = m.M
 									v108 = m.ExcPending
 									if v108 != 0 {

@@ -49,7 +49,8 @@ var contribRegress = map[string][]string{
 		"macaddr", "macaddr8", "inet", "cidr", "text", "varchar", "char", "bytea", "bit", "varbit",
 		"numeric", "enum", "uuid", "name", "bool", "bpchar",
 	},
-	"unaccent": {"unaccent"},
+	"unaccent":  {"unaccent"},
+	"tablefunc": {"tablefunc"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

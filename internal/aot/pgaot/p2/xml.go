@@ -26,17 +26,17 @@ func F_XmlTableInitOpaque(m *base.Module, l0 int32, l1 int32) {
 		if v9 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(488832), int32(4722), int32(338824))
+					F_errfinish(m, int32(489702), int32(4722), int32(339400))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -71,17 +71,17 @@ func F_XmlTableSetDocument(m *base.Module, l0 int32, l1 int32) {
 		if v9 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(488832), int32(4779), int32(93329))
+					F_errfinish(m, int32(489702), int32(4779), int32(93542))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
@@ -116,17 +116,17 @@ func F_XmlTableSetNamespace(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		if v10 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(488832), int32(4805), int32(411569))
+					F_errfinish(m, int32(489702), int32(4805), int32(412252))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return
@@ -191,17 +191,17 @@ func F_xml_recv(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(488832), int32(431), int32(35891))
+					F_errfinish(m, int32(489702), int32(431), int32(36080))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

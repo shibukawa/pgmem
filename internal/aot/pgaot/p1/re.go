@@ -143,7 +143,7 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	v7 = m.G0
 	v9 = v7 - int32(128)
 	m.G0 = v9
-	v12 = F_pg_regexec(m, int32(4455460), l0, l1, l2, l3, l4)
+	v12 = F_pg_regexec(m, int32(4455652), l0, l1, l2, l3, l4)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -169,13 +169,13 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
-						F_errmsg(m, int32(200967), v9)
+						F_errmsg(m, int32(201379), v9)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(487160), int32(304), int32(342758))
+							F_errfinish(m, int32(488030), int32(304), int32(343334))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {

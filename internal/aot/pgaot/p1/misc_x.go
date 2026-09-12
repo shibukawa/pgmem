@@ -449,17 +449,17 @@ func F_xmlconcat(m *base.Module) int32 {
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(356992), int32(0))
+			F_errmsg(m, int32(357568), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(554342), int32(0))
+				F_errdetail(m, int32(555242), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(488832), int32(609), int32(110450))
+					F_errfinish(m, int32(489702), int32(609), int32(110663))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return int32(0)

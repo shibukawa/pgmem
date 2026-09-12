@@ -103,7 +103,7 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 			m.G0 = v12 + int32(48)
 			return v120
 		} else {
-			if v19 == v15+int32(4378712) {
+			if v19 == v15+int32(4378904) {
 				v120 = v2
 				m.G0 = v12 + int32(48)
 				return v120
@@ -133,13 +133,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 					} else {
 						v146 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v146
-						F_errmsg_internal(m, int32(82410), v12+int32(16))
+						F_errmsg_internal(m, int32(82623), v12+int32(16))
 						mBase = m.M
 						v152 = m.ExcPending
 						if v152 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(491122), int32(188), int32(85183))
+							F_errfinish(m, int32(491992), int32(188), int32(85396))
 							mBase = m.M
 							v157 = m.ExcPending
 							if v157 != 0 {
@@ -162,13 +162,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 						} else {
 							v146 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v146
-							F_errmsg_internal(m, int32(82410), v12+int32(16))
+							F_errmsg_internal(m, int32(82623), v12+int32(16))
 							mBase = m.M
 							v152 = m.ExcPending
 							if v152 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491122), int32(188), int32(85183))
+								F_errfinish(m, int32(491992), int32(188), int32(85396))
 								mBase = m.M
 								v157 = m.ExcPending
 								if v157 != 0 {
@@ -183,13 +183,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 					} else {
 						v54 = *(*int32)(unsafe.Add(mBase, _consts[644]))
 						if v54 == int32(0) {
-							v57 = int32(4378992)
+							v57 = int32(4379184)
 							*(*int32)(unsafe.Add(mBase, _consts[645])) = v57
 							v61 = v57
 						} else {
 							v61 = v54
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(4378992)
+						*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(4379184)
 						*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v61
 						*(*int32)(unsafe.Add(mBase, uint32(v61))) = v19
 						*(*int32)(unsafe.Add(mBase, _consts[644])) = v19
@@ -204,13 +204,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 							if v82 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(353947), int32(0))
+								F_errmsg_internal(m, int32(354523), int32(0))
 								mBase = m.M
 								v86 = m.ExcPending
 								if v86 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489046), int32(236), int32(445842))
+									F_errfinish(m, int32(489916), int32(236), int32(446574))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -239,13 +239,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 									v105 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_consts[647])))
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v105
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v100
-									F_errmsg_internal(m, int32(178727), v12+int32(32))
+									F_errmsg_internal(m, int32(178991), v12+int32(32))
 									mBase = m.M
 									v112 = m.ExcPending
 									if v112 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(491122), int32(197), int32(85183))
+										F_errfinish(m, int32(491992), int32(197), int32(85396))
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -271,13 +271,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = l0
-			F_errmsg_internal(m, int32(468542), v12)
+			F_errmsg_internal(m, int32(469361), v12)
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(491122), int32(168), int32(85183))
+				F_errfinish(m, int32(491992), int32(168), int32(85396))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {

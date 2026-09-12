@@ -72,13 +72,13 @@ func F_QTN2QT(m *base.Module, l0 int32) int32 {
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(393655), int32(0))
+					F_errmsg(m, int32(394338), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(488900), int32(376), int32(508783))
+						F_errfinish(m, int32(489770), int32(376), int32(509683))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -760,7 +760,7 @@ L2:
 	goto L3
 L3:
 	;
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[845])))
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[846])))
 	if v60 != 0 {
 		goto L11
 	} else {
@@ -863,7 +863,7 @@ L17:
 	goto L18
 L18:
 	;
-	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[846]))))
+	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[847]))))
 	if v73 != 0 {
 		goto L11
 	} else {
@@ -1034,7 +1034,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 	_ = v15
 	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v2 == int32(1) {
-		v6 = F_cstring_to_text(m, int32(524096))
+		v6 = F_cstring_to_text(m, int32(524996))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
