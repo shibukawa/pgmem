@@ -57,6 +57,8 @@ var contribRegress = map[string][]string{
 	// earthdistance's file is cut before its extension create/drop part,
 	// which is all \dT, \df, \do and \d
 	"earthdistance": {"earthdistance"},
+	// partition is cut before its two closing \d+ lines
+	"seg": {"security", "seg", "partition"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
@@ -100,8 +102,14 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 	// psql speaks the simple query protocol; results come back as text.
 	cfg.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
 	var notices strings.Builder
+	var cur *psqlState // the file being replayed, for its VERBOSITY
 	cfg.OnNotice = func(_ *pgconn.PgConn, n *pgconn.Notice) {
-		fmt.Fprintf(&notices, "%s:  %s\n", n.Severity, n.Message)
+		verbosity := "default"
+		if cur != nil {
+			verbosity = cur.verbosity
+		}
+		// libpq's default show_context=errors: no CONTEXT line for notices
+		notices.WriteString(formatMessage((*pgconn.PgError)(n), verbosity, "", false))
 	}
 	// what pg_regress puts in the environment for every test session
 	cfg.RuntimeParams["datestyle"] = "Postgres, MDY"
@@ -134,7 +142,8 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 					t.Fatal(err)
 				}
 			}
-			got := psqlTranscript(ctx, conn, &notices, string(sqlText), dir)
+			cur = &psqlState{vars: map[string]string{}, verbosity: "default", dir: dir, ctx: ctx, conn: conn}
+			got := psqlTranscript(cur, &notices, string(sqlText))
 			if diff := transcriptDiff(string(want), got); diff != "" {
 				out := filepath.Join(t.TempDir(), name+".out")
 				os.WriteFile(out, []byte(got), 0o644)
@@ -172,10 +181,10 @@ func (p *psqlState) active() bool {
 // psqlTranscript echoes every input line and, after each complete
 // statement, what psql -a -q would print for it: notices, the result table
 // in aligned format, or the error.
-func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builder, input string, dir string) string {
+func psqlTranscript(ps *psqlState, notices *strings.Builder, input string) string {
 	var out strings.Builder
 	var buf strings.Builder
-	ps := &psqlState{vars: map[string]string{}, verbosity: "default", dir: dir, ctx: ctx, conn: conn}
+	ctx, conn := ps.ctx, ps.conn
 	lines := strings.Split(input, "\n")
 	if len(lines) > 0 && lines[len(lines)-1] == "" {
 		lines = lines[:len(lines)-1]
@@ -374,9 +383,29 @@ func isIdent(c byte) bool {
 // quoted or dollar-quoted string.
 func scanSQL(s string) (semi int, inQuote bool) {
 	i := 0
+	// psql's begin_depth: inside BEGIN ATOMIC ... END a ';' does not end
+	// the statement; CASE ... END nests within it.
+	depth := 0
+	lastWord := ""
 	for i < len(s) {
 		c := s[i]
 		switch {
+		case isIdent(c) && !(c >= '0' && c <= '9'):
+			j := i
+			for j < len(s) && isIdent(s[j]) {
+				j++
+			}
+			word := strings.ToLower(s[i:j])
+			switch {
+			case word == "atomic" && lastWord == "begin":
+				depth++
+			case word == "case" && depth > 0:
+				depth++
+			case word == "end" && depth > 0:
+				depth--
+			}
+			lastWord = word
+			i = j
 		case c == '-' && i+1 < len(s) && s[i+1] == '-':
 			nl := strings.IndexByte(s[i:], '\n')
 			if nl < 0 {
@@ -421,7 +450,10 @@ func scanSQL(s string) (semi int, inQuote bool) {
 				i++
 			}
 		case c == ';':
-			return i, false
+			if depth == 0 {
+				return i, false
+			}
+			i++
 		default:
 			i++
 		}
@@ -458,37 +490,49 @@ func stripComments(s string) string {
 var rightAligned = map[uint32]bool{20: true, 21: true, 23: true, 26: true, 700: true, 701: true, 790: true, 1700: true}
 
 func runStatement(ctx context.Context, conn *pgx.Conn, ps *psqlState, stmt string, gset bool, prefix string) string {
-	rows, err := conn.Query(ctx, stmt)
-	if err != nil {
-		return formatError(err, ps.verbosity, stmt)
-	}
-	fields := rows.FieldDescriptions()
-	var data [][]string
-	for rows.Next() {
-		raw := rows.RawValues()
-		row := make([]string, len(raw))
-		for i, v := range raw {
-			row[i] = string(v)
+	// The raw simple-query path: the text goes to the server untouched
+	// (pgx's Query would try to bind $n placeholders itself) and several
+	// statements in one string produce several results, like psql.
+	var out strings.Builder
+	errShown := false
+	mrr := conn.PgConn().Exec(ctx, stmt)
+	for mrr.NextResult() {
+		rr := mrr.ResultReader()
+		fields := append([]pgconn.FieldDescription(nil), rr.FieldDescriptions()...)
+		var data [][]string
+		for rr.NextRow() {
+			raw := rr.Values()
+			row := make([]string, len(raw))
+			for i, v := range raw {
+				row[i] = string(v)
+			}
+			data = append(data, row)
 		}
-		data = append(data, row)
-	}
-	if err := rows.Err(); err != nil {
-		return formatError(err, ps.verbosity, stmt)
-	}
-	if len(fields) == 0 {
-		return ""
-	}
-	if gset {
-		// \\gset [prefix]: one row's columns become variables, no output
-		if len(data) != 1 {
-			return fmt.Sprintf("CLIENT ERROR: \\gset with %d rows\n", len(data))
+		if _, err := rr.Close(); err != nil {
+			out.WriteString(formatError(err, ps.verbosity, stmt))
+			errShown = true
+			break
 		}
-		for i, f := range fields {
-			ps.vars[prefix+f.Name] = data[0][i]
+		if len(fields) == 0 {
+			continue
 		}
-		return ""
+		if gset {
+			// \\gset [prefix]: one row's columns become variables, no output
+			if len(data) != 1 {
+				fmt.Fprintf(&out, "CLIENT ERROR: \\gset with %d rows\n", len(data))
+				continue
+			}
+			for i, f := range fields {
+				ps.vars[prefix+f.Name] = data[0][i]
+			}
+			continue
+		}
+		out.WriteString(formatAligned(fields, data))
 	}
-	return formatAligned(fields, data)
+	if err := mrr.Close(); err != nil && !errShown {
+		out.WriteString(formatError(err, ps.verbosity, stmt))
+	}
+	return out.String()
 }
 
 func formatError(err error, verbosity string, query string) string {
@@ -496,6 +540,13 @@ func formatError(err error, verbosity string, query string) string {
 	if !errors.As(err, &pgErr) {
 		return "CLIENT ERROR: " + err.Error() + "\n"
 	}
+	return formatMessage(pgErr, verbosity, query, true)
+}
+
+// formatMessage renders an error or notice the way psql prints it at the
+// given VERBOSITY; withContext adds the CONTEXT line (errors only, as
+// libpq's default show_context=errors).
+func formatMessage(pgErr *pgconn.PgError, verbosity string, query string, withContext bool) string {
 	var b strings.Builder
 	if verbosity == "sqlstate" {
 		fmt.Fprintf(&b, "%s:  %s\n", pgErr.Severity, pgErr.Code)
@@ -514,7 +565,7 @@ func formatError(err error, verbosity string, query string) string {
 	if pgErr.Hint != "" {
 		fmt.Fprintf(&b, "HINT:  %s\n", pgErr.Hint)
 	}
-	if pgErr.Where != "" {
+	if pgErr.Where != "" && withContext {
 		fmt.Fprintf(&b, "CONTEXT:  %s\n", pgErr.Where)
 	}
 	return b.String()
