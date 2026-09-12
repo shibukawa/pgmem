@@ -86,7 +86,7 @@ func F_GetForeignDataWrapperExtended(m *base.Module, l0 int32, l1 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496080), int32(63), int32(460761))
+						F_errfinish(m, int32(496408), int32(63), int32(461083))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {

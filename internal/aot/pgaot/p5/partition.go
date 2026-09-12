@@ -30,7 +30,7 @@ func F_CreatePartitionDirectory(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
-	v10 = int32(4489440)
+	v10 = int32(4515120)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = l0
 	v15 = F_palloc(m, int32(12))
@@ -305,7 +305,7 @@ L2:
 	goto L3
 L3:
 	;
-	v26 = int32(4489440)
+	v26 = int32(4515120)
 	v27 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+36))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v29
@@ -428,7 +428,7 @@ L17:
 	}
 L18:
 	;
-	v67 = F_MakeSingleTupleTableSlot(m, v59, int32(1601812))
+	v67 = F_MakeSingleTupleTableSlot(m, v59, int32(1617412))
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -1805,7 +1805,7 @@ L134:
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = v698
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v20))) = v696
-	F_errmsg_internal(m, int32(176045), v20)
+	F_errmsg_internal(m, int32(176135), v20)
 	mBase = m.M
 	v705 = m.ExcPending
 	if v705 != 0 {
@@ -1815,7 +1815,7 @@ L134:
 	}
 L135:
 	;
-	F_errfinish(m, int32(495664), int32(1898), int32(334098))
+	F_errfinish(m, int32(495992), int32(1898), int32(334343))
 	mBase = m.M
 	v710 = m.ExcPending
 	if v710 != 0 {
@@ -2176,7 +2176,7 @@ func F_StorePartitionBound(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v136 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495443), int32(4069), int32(424460))
+						F_errfinish(m, int32(495765), int32(4069), int32(424744))
 						mBase = m.M
 						v141 = m.ExcPending
 						if v141 != 0 {
@@ -2328,7 +2328,7 @@ L14:
 L15:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v26
-	F_errmsg_internal(m, int32(75022), v10)
+	F_errmsg_internal(m, int32(75085), v10)
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -2338,7 +2338,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(495664), int32(1739), int32(238108))
+	F_errfinish(m, int32(495992), int32(1739), int32(238198))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -2735,7 +2735,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(493627), int32(3848), int32(208835))
+	F_errfinish(m, int32(493949), int32(3848), int32(208925))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {

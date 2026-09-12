@@ -3,26 +3,26 @@ package p1
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func__int(m *base.Module) int32 {
-	return int32(4379936)
+	return int32(4397152)
 }
 func F_Pg_magic_func_euc_jp_and_sjis(m *base.Module) int32 {
-	return int32(4371060)
+	return int32(4388276)
 }
 func F_Pg_magic_func_fuzzystrmatch(m *base.Module) int32 {
-	return int32(4382824)
+	return int32(4400040)
 }
 func F_Pg_magic_func_ltree(m *base.Module) int32 {
-	return int32(4378736)
+	return int32(4395952)
 }
 func F_Pg_magic_func_pg_trgm(m *base.Module) int32 {
-	return int32(4378568)
+	return int32(4395784)
 }
 func F_Pg_magic_func_utf8_and_gbk(m *base.Module) int32 {
-	return int32(4372756)
+	return int32(4389972)
 }
 func F_Pg_magic_func_utf8_and_uhc(m *base.Module) int32 {
-	return int32(4375020)
+	return int32(4392236)
 }
 func F_Pg_magic_func_utf8_and_win(m *base.Module) int32 {
-	return int32(4375180)
+	return int32(4392396)
 }

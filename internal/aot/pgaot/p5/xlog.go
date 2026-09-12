@@ -144,14 +144,14 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			v25 = v22
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25
-		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(487662), v6)
+		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(487984), v6)
 		mBase = m.M
 		v34 = m.ExcPending
 		if v34 != 0 {
 			return int32(0)
 		} else {
 			v38 = int32(1)
-			F_SetConfigOption(m, int32(134946), v6+int32(16), v38, v38)
+			F_SetConfigOption(m, int32(135036), v6+int32(16), v38, v38)
 			mBase = m.M
 			v41 = m.ExcPending
 			if v41 != 0 {
@@ -213,7 +213,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 						}
 					}
 				} else {
-					F_SetConfigOption(m, int32(134946), v6+int32(16), int32(1), int32(10))
+					F_SetConfigOption(m, int32(135036), v6+int32(16), int32(1), int32(10))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {

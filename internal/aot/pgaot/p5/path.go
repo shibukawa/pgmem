@@ -96,13 +96,13 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-							F_errmsg(m, int32(297195), v7)
+							F_errmsg(m, int32(297420), v7)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499129), int32(1889), int32(389059))
+								F_errfinish(m, int32(499457), int32(1889), int32(389343))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -125,7 +125,7 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 				v48 = v46 | v44
 				*(*uint16)(unsafe.Add(mBase, uint32(v45))) = uint16(v48)
 				v51 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-				F_ResourceOwnerRemember(m, v51, v18, int32(1612320))
+				F_ResourceOwnerRemember(m, v51, v18, int32(1627920))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
@@ -3381,7 +3381,7 @@ L69:
 	}
 L70:
 	;
-	v274 = F_format_elog_string(m, int32(630412), int32(0))
+	v274 = F_format_elog_string(m, int32(645849), int32(0))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -4483,7 +4483,7 @@ L32:
 	goto L28
 L33:
 	;
-	F_errmsg_internal(m, int32(440854), int32(0))
+	F_errmsg_internal(m, int32(441176), int32(0))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -4493,7 +4493,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(498832), int32(2118), int32(321234))
+	F_errfinish(m, int32(499160), int32(2118), int32(321468))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {

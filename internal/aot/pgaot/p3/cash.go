@@ -45,13 +45,13 @@ func F_cash_div_int2(m *base.Module, l0 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(239346), int32(0))
+				F_errmsg(m, int32(239436), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497312), int32(161), int32(551194))
+					F_errfinish(m, int32(497640), int32(161), int32(558452))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
@@ -115,13 +115,13 @@ func F_cash_div_int4(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(239346), int32(0))
+				F_errmsg(m, int32(239436), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497312), int32(161), int32(551194))
+					F_errfinish(m, int32(497640), int32(161), int32(558452))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -188,13 +188,13 @@ func F_cash_div_int8(m *base.Module, l0 int32) int32 {
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(239346), int32(0))
+				F_errmsg(m, int32(239436), int32(0))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497312), int32(161), int32(551194))
+					F_errfinish(m, int32(497640), int32(161), int32(558452))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {

@@ -3016,6 +3016,70 @@ func F_pg_finfo_blhandler(m *base.Module) int32
 func F__PG_init_bloom(m *base.Module)
 //go:linkname F_blhandler github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_blhandler
 func F_blhandler(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_isn github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_Pg_magic_func_isn
+func F_Pg_magic_func_isn(m *base.Module) int32
+//go:linkname F__PG_init_isn github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__PG_init_isn
+func F__PG_init_isn(m *base.Module)
+//go:linkname F_pg_finfo_isn_out github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_isn_out
+func F_pg_finfo_isn_out(m *base.Module) int32
+//go:linkname F_isn_out github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_isn_out
+func F_isn_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ean13_out github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_ean13_out
+func F_pg_finfo_ean13_out(m *base.Module) int32
+//go:linkname F_ean13_out github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ean13_out
+func F_ean13_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ean13_in github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_ean13_in
+func F_pg_finfo_ean13_in(m *base.Module) int32
+//go:linkname F_ean13_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ean13_in
+func F_ean13_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_isbn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_isbn_in
+func F_pg_finfo_isbn_in(m *base.Module) int32
+//go:linkname F_isbn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_isbn_in
+func F_isbn_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ismn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_ismn_in
+func F_pg_finfo_ismn_in(m *base.Module) int32
+//go:linkname F_ismn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ismn_in
+func F_ismn_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_issn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_issn_in
+func F_pg_finfo_issn_in(m *base.Module) int32
+//go:linkname F_issn_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_issn_in
+func F_issn_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_upc_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_upc_in
+func F_pg_finfo_upc_in(m *base.Module) int32
+//go:linkname F_upc_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_upc_in
+func F_upc_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_isbn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_isbn_cast_from_ean13
+func F_pg_finfo_isbn_cast_from_ean13(m *base.Module) int32
+//go:linkname F_isbn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_isbn_cast_from_ean13
+func F_isbn_cast_from_ean13(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ismn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_ismn_cast_from_ean13
+func F_pg_finfo_ismn_cast_from_ean13(m *base.Module) int32
+//go:linkname F_ismn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ismn_cast_from_ean13
+func F_ismn_cast_from_ean13(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_issn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_issn_cast_from_ean13
+func F_pg_finfo_issn_cast_from_ean13(m *base.Module) int32
+//go:linkname F_issn_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_issn_cast_from_ean13
+func F_issn_cast_from_ean13(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_upc_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_upc_cast_from_ean13
+func F_pg_finfo_upc_cast_from_ean13(m *base.Module) int32
+//go:linkname F_upc_cast_from_ean13 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_upc_cast_from_ean13
+func F_upc_cast_from_ean13(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_is_valid github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_is_valid
+func F_pg_finfo_is_valid(m *base.Module) int32
+//go:linkname F_is_valid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_is_valid
+func F_is_valid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_make_valid github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_make_valid
+func F_pg_finfo_make_valid(m *base.Module) int32
+//go:linkname F_make_valid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_make_valid
+func F_make_valid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_accept_weak_input github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_accept_weak_input
+func F_pg_finfo_accept_weak_input(m *base.Module) int32
+//go:linkname F_accept_weak_input github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_accept_weak_input
+func F_accept_weak_input(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_weak_input_status github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_weak_input_status
+func F_pg_finfo_weak_input_status(m *base.Module) int32
+//go:linkname F_weak_input_status github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_weak_input_status
+func F_weak_input_status(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

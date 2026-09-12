@@ -342,13 +342,13 @@ func F_inet_set_masklen(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v118
-						F_errmsg(m, int32(482747), v8)
+						F_errmsg(m, int32(483069), v8)
 						mBase = m.M
 						v131 = m.ExcPending
 						if v131 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(497000), int32(334), int32(281544))
+							F_errfinish(m, int32(497328), int32(334), int32(281758))
 							mBase = m.M
 							v136 = m.ExcPending
 							if v136 != 0 {
@@ -461,13 +461,13 @@ func F_inet_set_masklen(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v118
-						F_errmsg(m, int32(482747), v8)
+						F_errmsg(m, int32(483069), v8)
 						mBase = m.M
 						v131 = m.ExcPending
 						if v131 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(497000), int32(334), int32(281544))
+							F_errfinish(m, int32(497328), int32(334), int32(281758))
 							mBase = m.M
 							v136 = m.ExcPending
 							if v136 != 0 {
@@ -512,13 +512,13 @@ func F_inet_set_masklen(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v118
-							F_errmsg(m, int32(482747), v8)
+							F_errmsg(m, int32(483069), v8)
 							mBase = m.M
 							v131 = m.ExcPending
 							if v131 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(497000), int32(334), int32(281544))
+								F_errfinish(m, int32(497328), int32(334), int32(281758))
 								mBase = m.M
 								v136 = m.ExcPending
 								if v136 != 0 {

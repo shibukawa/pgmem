@@ -202,7 +202,7 @@ func F_InitializeGUCOptionsFromEnvironment(m *base.Module) {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v9 = int32(516634)
+	v9 = int32(517016)
 	v15 = F___strchrnul(m, v9, int32(61))
 	mBase = m.M
 	if v9 == v15 {
@@ -311,7 +311,7 @@ L17:
 	;
 	v59 = int32(0)
 	v60 = int32(1)
-	v67 = F_set_config_with_handle(m, int32(80895), v59, v57, v60, int32(2), int32(10), v59, v60, v59, v59)
+	v67 = F_set_config_with_handle(m, int32(80958), v59, v57, v60, int32(2), int32(10), v59, v60, v59, v59)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -324,7 +324,7 @@ L18:
 	goto L19
 L19:
 	;
-	v69 = int32(539313)
+	v69 = int32(539725)
 	v70 = int32(0)
 	v75 = F___strchrnul(m, v69, int32(61))
 	mBase = m.M
@@ -440,7 +440,7 @@ L38:
 	;
 	v119 = int32(0)
 	v120 = int32(1)
-	v127 = F_set_config_with_handle(m, int32(381945), v119, v117, v120, int32(2), int32(10), v119, v120, v119, v119)
+	v127 = F_set_config_with_handle(m, int32(382229), v119, v117, v120, int32(2), int32(10), v119, v120, v119, v119)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -453,7 +453,7 @@ L39:
 	goto L40
 L40:
 	;
-	v129 = int32(535899)
+	v129 = int32(536311)
 	v130 = int32(0)
 	v135 = F___strchrnul(m, v129, int32(61))
 	mBase = m.M
@@ -566,7 +566,7 @@ L58:
 	;
 	v179 = int32(0)
 	v180 = int32(1)
-	v187 = F_set_config_with_handle(m, int32(335282), v179, v177, v180, int32(2), int32(10), v179, v180, v179, v179)
+	v187 = F_set_config_with_handle(m, int32(335527), v179, v177, v180, int32(2), int32(10), v179, v180, v179, v179)
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {
@@ -792,7 +792,7 @@ L96:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v282
 	v284 = int32(16)
-	v288 = F_pg_snprintf(m, v7+v284, v284, int32(487662), v7)
+	v288 = F_pg_snprintf(m, v7+v284, v284, int32(487984), v7)
 	mBase = m.M
 	v289 = m.ExcPending
 	if v289 != 0 {
@@ -819,7 +819,7 @@ L99:
 L100:
 	;
 	v299 = int32(0)
-	v303 = F_set_config_with_handle(m, int32(320000), int32(0), v7+int32(16), v294, v297, int32(10), v299, int32(1), v299, v299)
+	v303 = F_set_config_with_handle(m, int32(320234), int32(0), v7+int32(16), v294, v297, int32(10), v299, int32(1), v299, v299)
 	mBase = m.M
 	v304 = m.ExcPending
 	if v304 != 0 {
@@ -997,7 +997,7 @@ L5:
 	goto L6
 L6:
 	;
-	v159 = int32(4489440)
+	v159 = int32(4515120)
 	v160 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v163 = *(*int32)(unsafe.Add(mBase, _consts[1237]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v163
@@ -1188,7 +1188,7 @@ L31:
 	;
 	v88 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v88
-	F_errmsg(m, int32(103956), v8+int32(16))
+	F_errmsg(m, int32(104019), v8+int32(16))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -1199,7 +1199,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-	F_errdetail(m, int32(560716), v8)
+	F_errdetail(m, int32(576109), v8)
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -1209,7 +1209,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(499158), int32(5314), int32(439598))
+	F_errfinish(m, int32(499486), int32(5314), int32(439920))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -1249,7 +1249,7 @@ L38:
 	}
 L39:
 	;
-	v122 = int32(4487484)
+	v122 = int32(4513164)
 	goto L44
 L40:
 	;
@@ -1294,7 +1294,7 @@ L47:
 	goto L45
 L48:
 	;
-	v140 = int32(4487476)
+	v140 = int32(4513156)
 	goto L51
 L49:
 	;

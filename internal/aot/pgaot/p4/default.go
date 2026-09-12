@@ -438,7 +438,7 @@ L35:
 L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v123
-	F_errmsg(m, int32(193089), v14)
+	F_errmsg(m, int32(193179), v14)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -448,7 +448,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(493653), int32(2421), int32(130742))
+	F_errfinish(m, int32(493975), int32(2421), int32(130832))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -587,8 +587,8 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 	if v10 == int32(0) {
 		v15 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 		*(*int32)(unsafe.Add(mBase, _consts[141])) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(421914)
-		v22 = F_format_elog_string(m, int32(555122), v7)
+		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(422198)
+		v22 = F_format_elog_string(m, int32(570515), v7)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -606,8 +606,8 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 			v32 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 			*(*int32)(unsafe.Add(mBase, _consts[141])) = v32
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(63)
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(421914)
-			v43 = F_format_elog_string(m, int32(644923), v5+int32(-48))
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(422198)
+			v43 = F_format_elog_string(m, int32(660360), v5+int32(-48))
 			mBase = m.M
 			v44 = m.ExcPending
 			if v44 != 0 {
@@ -665,13 +665,13 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 										} else {
 											v73 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v73
-											F_errmsg(m, int32(72555), v5+int32(-32))
+											F_errmsg(m, int32(72618), v5+int32(-32))
 											mBase = m.M
 											v79 = m.ExcPending
 											if v79 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(497108), int32(137), int32(421908))
+												F_errfinish(m, int32(497436), int32(137), int32(422192))
 												mBase = m.M
 												v84 = m.ExcPending
 												if v84 != 0 {
@@ -690,7 +690,7 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 								*(*int32)(unsafe.Add(mBase, _consts[141])) = v87
 								v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v90
-								v96 = F_format_elog_string(m, int32(562625), v5+int32(-16))
+								v96 = F_format_elog_string(m, int32(578018), v5+int32(-16))
 								mBase = m.M
 								v97 = m.ExcPending
 								if v97 != 0 {

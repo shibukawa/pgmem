@@ -218,7 +218,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 			if v16 <= int32(2327) {
 				switch v16 - int32(1213) {
 				case 0:
-					F_appendStringInfoString(m, v8+int32(80), int32(418756))
+					F_appendStringInfoString(m, v8+int32(80), int32(419040))
 					mBase = m.M
 					v270 = m.ExcPending
 					if v270 != 0 {
@@ -243,7 +243,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						if v338 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493112), int32(4674), int32(246666))
+							F_errfinish(m, int32(493434), int32(4674), int32(246795))
 							mBase = m.M
 							v343 = m.ExcPending
 							if v343 != 0 {
@@ -256,7 +256,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 34:
-					F_appendStringInfoString(m, v8+int32(80), int32(370847))
+					F_appendStringInfoString(m, v8+int32(80), int32(371131))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -279,12 +279,12 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							v350 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v349)+22)))
 							v352 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v349+v350)+96)))
 							if v352 == int32(112) {
-								v355 = int32(363550)
+								v355 = int32(363795)
 							} else {
-								v355 = int32(254012)
+								v355 = int32(254141)
 							}
 							if v352 == int32(97) {
-								v358 = int32(354674)
+								v358 = int32(354919)
 							} else {
 								v358 = v355
 							}
@@ -320,7 +320,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									if v387 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(493112), int32(4798), int32(246718))
+										F_errfinish(m, int32(493434), int32(4798), int32(246847))
 										mBase = m.M
 										v392 = m.ExcPending
 										if v392 != 0 {
@@ -333,7 +333,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								}
 							} else {
-								F_appendStringInfoString(m, v8+int32(80), int32(372711))
+								F_appendStringInfoString(m, v8+int32(80), int32(372995))
 								mBase = m.M
 								v103 = m.ExcPending
 								if v103 != 0 {
@@ -370,7 +370,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									if v372 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(493112), int32(4698), int32(246691))
+										F_errfinish(m, int32(493434), int32(4698), int32(246820))
 										mBase = m.M
 										v377 = m.ExcPending
 										if v377 != 0 {
@@ -383,7 +383,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								}
 							} else {
-								F_appendStringInfoString(m, v8+int32(80), int32(263676))
+								F_appendStringInfoString(m, v8+int32(80), int32(263805))
 								mBase = m.M
 								v65 = m.ExcPending
 								if v65 != 0 {
@@ -402,19 +402,19 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							case 0, 32:
 								v81 = int32(29252)
 							default:
-								v81 = int32(263676)
+								v81 = int32(263805)
 							case 10:
-								v81 = int32(415772)
+								v81 = int32(416056)
 							case 26:
-								v81 = int32(369426)
+								v81 = int32(369710)
 							case 29:
-								v81 = int32(392702)
+								v81 = int32(392986)
 							case 36:
 								v81 = int32(32420)
 							case 39, 41:
-								v81 = int32(394698)
+								v81 = int32(394982)
 							case 43:
-								v81 = int32(391772)
+								v81 = int32(392056)
 							case 45:
 								v81 = int32(32490)
 							}
@@ -425,7 +425,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								return int32(0)
 							} else {
 								if v52 != 0 {
-									F_appendStringInfoString(m, v8+int32(80), int32(274632))
+									F_appendStringInfoString(m, v8+int32(80), int32(274761))
 									mBase = m.M
 									v90 = m.ExcPending
 									if v90 != 0 {
@@ -458,7 +458,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 47:
-					F_appendStringInfoString(m, v8+int32(80), int32(385121))
+					F_appendStringInfoString(m, v8+int32(80), int32(385405))
 					mBase = m.M
 					v255 = m.ExcPending
 					if v255 != 0 {
@@ -469,7 +469,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 48:
-					F_appendStringInfoString(m, v8+int32(80), int32(237418))
+					F_appendStringInfoString(m, v8+int32(80), int32(237508))
 					mBase = m.M
 					v260 = m.ExcPending
 					if v260 != 0 {
@@ -480,7 +480,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 49:
-					F_appendStringInfoString(m, v8+int32(80), int32(361972))
+					F_appendStringInfoString(m, v8+int32(80), int32(362217))
 					mBase = m.M
 					v265 = m.ExcPending
 					if v265 != 0 {
@@ -493,7 +493,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 				default:
 					switch v16 - int32(1417) {
 					case 0:
-						F_appendStringInfoString(m, v8+int32(80), int32(214549))
+						F_appendStringInfoString(m, v8+int32(80), int32(214639))
 						mBase = m.M
 						v282 = m.ExcPending
 						if v282 != 0 {
@@ -504,7 +504,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							return v433
 						}
 					case 1:
-						F_appendStringInfoString(m, v8+int32(80), int32(333697))
+						F_appendStringInfoString(m, v8+int32(80), int32(333942))
 						mBase = m.M
 						v287 = m.ExcPending
 						if v287 != 0 {
@@ -516,7 +516,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					default:
 						if v16 == int32(826) {
-							F_appendStringInfoString(m, v8+int32(80), int32(308081))
+							F_appendStringInfoString(m, v8+int32(80), int32(308306))
 							mBase = m.M
 							v428 = m.ExcPending
 							if v428 != 0 {
@@ -541,7 +541,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								if v338 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493112), int32(4674), int32(246666))
+									F_errfinish(m, int32(493434), int32(4674), int32(246795))
 									mBase = m.M
 									v343 = m.ExcPending
 									if v343 != 0 {
@@ -559,7 +559,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				switch v16 - int32(2601) {
 				case 0:
-					F_appendStringInfoString(m, v8+int32(80), int32(422122))
+					F_appendStringInfoString(m, v8+int32(80), int32(422406))
 					mBase = m.M
 					v196 = m.ExcPending
 					if v196 != 0 {
@@ -570,7 +570,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 1:
-					F_appendStringInfoString(m, v8+int32(80), int32(422084))
+					F_appendStringInfoString(m, v8+int32(80), int32(422368))
 					mBase = m.M
 					v201 = m.ExcPending
 					if v201 != 0 {
@@ -581,7 +581,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 2:
-					F_appendStringInfoString(m, v8+int32(80), int32(422110))
+					F_appendStringInfoString(m, v8+int32(80), int32(422394))
 					mBase = m.M
 					v206 = m.ExcPending
 					if v206 != 0 {
@@ -592,7 +592,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 3:
-					F_appendStringInfoString(m, v8+int32(80), int32(345215))
+					F_appendStringInfoString(m, v8+int32(80), int32(345460))
 					mBase = m.M
 					v166 = m.ExcPending
 					if v166 != 0 {
@@ -603,7 +603,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 4:
-					F_appendStringInfoString(m, v8+int32(80), int32(78043))
+					F_appendStringInfoString(m, v8+int32(80), int32(78106))
 					mBase = m.M
 					v113 = m.ExcPending
 					if v113 != 0 {
@@ -642,7 +642,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 										if v402 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(493112), int32(4762), int32(246637))
+											F_errfinish(m, int32(493434), int32(4762), int32(246766))
 											mBase = m.M
 											v407 = m.ExcPending
 											if v407 != 0 {
@@ -661,7 +661,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									if v134 != 0 {
 										return int32(0)
 									} else {
-										F_appendStringInfoString(m, v8+int32(80), int32(90261))
+										F_appendStringInfoString(m, v8+int32(80), int32(90324))
 										mBase = m.M
 										v139 = m.ExcPending
 										if v139 != 0 {
@@ -679,7 +679,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								v144 = v142 + v143
 								v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)+80))
 								if v145 != 0 {
-									v151 = int32(90164)
+									v151 = int32(90227)
 									F_appendStringInfoString(m, v8+int32(80), v151)
 									mBase = m.M
 									v153 = m.ExcPending
@@ -714,7 +714,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 											if v418 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(493112), int32(4778), int32(246637))
+												F_errfinish(m, int32(493434), int32(4778), int32(246766))
 												mBase = m.M
 												v423 = m.ExcPending
 												if v423 != 0 {
@@ -727,7 +727,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 											}
 										}
 									} else {
-										v151 = int32(89657)
+										v151 = int32(89720)
 										F_appendStringInfoString(m, v8+int32(80), v151)
 										mBase = m.M
 										v153 = m.ExcPending
@@ -751,7 +751,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 6:
-					F_appendStringInfoString(m, v8+int32(80), int32(270660))
+					F_appendStringInfoString(m, v8+int32(80), int32(270789))
 					mBase = m.M
 					v161 = m.ExcPending
 					if v161 != 0 {
@@ -776,7 +776,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						if v338 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493112), int32(4674), int32(246666))
+							F_errfinish(m, int32(493434), int32(4674), int32(246795))
 							mBase = m.M
 							v343 = m.ExcPending
 							if v343 != 0 {
@@ -789,7 +789,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 11:
-					F_appendStringInfoString(m, v8+int32(80), int32(402964))
+					F_appendStringInfoString(m, v8+int32(80), int32(403248))
 					mBase = m.M
 					v171 = m.ExcPending
 					if v171 != 0 {
@@ -800,7 +800,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 12:
-					F_appendStringInfoString(m, v8+int32(80), int32(111318))
+					F_appendStringInfoString(m, v8+int32(80), int32(111381))
 					mBase = m.M
 					v176 = m.ExcPending
 					if v176 != 0 {
@@ -811,7 +811,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 14:
-					F_appendStringInfoString(m, v8+int32(80), int32(505931))
+					F_appendStringInfoString(m, v8+int32(80), int32(506313))
 					mBase = m.M
 					v221 = m.ExcPending
 					if v221 != 0 {
@@ -822,7 +822,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 15:
-					F_appendStringInfoString(m, v8+int32(80), int32(130703))
+					F_appendStringInfoString(m, v8+int32(80), int32(130793))
 					mBase = m.M
 					v186 = m.ExcPending
 					if v186 != 0 {
@@ -833,7 +833,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 16:
-					F_appendStringInfoString(m, v8+int32(80), int32(209089))
+					F_appendStringInfoString(m, v8+int32(80), int32(209179))
 					mBase = m.M
 					v181 = m.ExcPending
 					if v181 != 0 {
@@ -844,7 +844,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 17:
-					F_appendStringInfoString(m, v8+int32(80), int32(382366))
+					F_appendStringInfoString(m, v8+int32(80), int32(382650))
 					mBase = m.M
 					v211 = m.ExcPending
 					if v211 != 0 {
@@ -855,7 +855,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						return v433
 					}
 				case 19:
-					F_appendStringInfoString(m, v8+int32(80), int32(224132))
+					F_appendStringInfoString(m, v8+int32(80), int32(224222))
 					mBase = m.M
 					v216 = m.ExcPending
 					if v216 != 0 {
@@ -881,7 +881,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							if v338 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(493112), int32(4674), int32(246666))
+								F_errfinish(m, int32(493434), int32(4674), int32(246795))
 								mBase = m.M
 								v343 = m.ExcPending
 								if v343 != 0 {
@@ -894,7 +894,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					} else {
-						F_appendStringInfoString(m, v8+int32(80), int32(217937))
+						F_appendStringInfoString(m, v8+int32(80), int32(218027))
 						mBase = m.M
 						v277 = m.ExcPending
 						if v277 != 0 {
@@ -923,7 +923,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					} else {
 						if v16 == int32(3079) {
-							F_appendStringInfoString(m, v8+int32(80), int32(271325))
+							F_appendStringInfoString(m, v8+int32(80), int32(271454))
 							mBase = m.M
 							v292 = m.ExcPending
 							if v292 != 0 {
@@ -949,7 +949,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 									if v338 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(493112), int32(4674), int32(246666))
+										F_errfinish(m, int32(493434), int32(4674), int32(246795))
 										mBase = m.M
 										v343 = m.ExcPending
 										if v343 != 0 {
@@ -978,7 +978,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					switch v16 - int32(3456) {
 					case 0:
-						F_appendStringInfoString(m, v8+int32(80), int32(262492))
+						F_appendStringInfoString(m, v8+int32(80), int32(262621))
 						mBase = m.M
 						v118 = m.ExcPending
 						if v118 != 0 {
@@ -1003,7 +1003,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							if v338 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(493112), int32(4674), int32(246666))
+								F_errfinish(m, int32(493434), int32(4674), int32(246795))
 								mBase = m.M
 								v343 = m.ExcPending
 								if v343 != 0 {
@@ -1016,7 +1016,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					case 10:
-						F_appendStringInfoString(m, v8+int32(80), int32(223607))
+						F_appendStringInfoString(m, v8+int32(80), int32(223697))
 						mBase = m.M
 						v297 = m.ExcPending
 						if v297 != 0 {
@@ -1042,7 +1042,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								if v338 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493112), int32(4674), int32(246666))
+									F_errfinish(m, int32(493434), int32(4674), int32(246795))
 									mBase = m.M
 									v343 = m.ExcPending
 									if v343 != 0 {
@@ -1055,7 +1055,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								}
 							}
 						} else {
-							F_appendStringInfoString(m, v8+int32(80), int32(110559))
+							F_appendStringInfoString(m, v8+int32(80), int32(110622))
 							mBase = m.M
 							v228 = m.ExcPending
 							if v228 != 0 {
@@ -1072,7 +1072,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 				if v16 <= int32(6099) {
 					switch v16 - int32(3576) {
 					case 0:
-						F_appendStringInfoString(m, v8+int32(80), int32(287568))
+						F_appendStringInfoString(m, v8+int32(80), int32(287793))
 						mBase = m.M
 						v327 = m.ExcPending
 						if v327 != 0 {
@@ -1097,7 +1097,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							if v338 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(493112), int32(4674), int32(246666))
+								F_errfinish(m, int32(493434), int32(4674), int32(246795))
 								mBase = m.M
 								v343 = m.ExcPending
 								if v343 != 0 {
@@ -1121,7 +1121,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							return v433
 						}
 					case 25:
-						F_appendStringInfoString(m, v8+int32(80), int32(217531))
+						F_appendStringInfoString(m, v8+int32(80), int32(217621))
 						mBase = m.M
 						v233 = m.ExcPending
 						if v233 != 0 {
@@ -1132,7 +1132,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							return v433
 						}
 					case 26:
-						F_appendStringInfoString(m, v8+int32(80), int32(258800))
+						F_appendStringInfoString(m, v8+int32(80), int32(258929))
 						mBase = m.M
 						v250 = m.ExcPending
 						if v250 != 0 {
@@ -1158,7 +1158,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								if v338 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493112), int32(4674), int32(246666))
+									F_errfinish(m, int32(493434), int32(4674), int32(246795))
 									mBase = m.M
 									v343 = m.ExcPending
 									if v343 != 0 {
@@ -1171,7 +1171,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								}
 							}
 						} else {
-							F_appendStringInfoString(m, v8+int32(80), int32(354257))
+							F_appendStringInfoString(m, v8+int32(80), int32(354502))
 							mBase = m.M
 							v245 = m.ExcPending
 							if v245 != 0 {
@@ -1186,7 +1186,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					switch v16 - int32(6100) {
 					case 0:
-						F_appendStringInfoString(m, v8+int32(80), int32(247146))
+						F_appendStringInfoString(m, v8+int32(80), int32(247275))
 						mBase = m.M
 						v322 = m.ExcPending
 						if v322 != 0 {
@@ -1211,7 +1211,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							if v338 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(493112), int32(4674), int32(246666))
+								F_errfinish(m, int32(493434), int32(4674), int32(246795))
 								mBase = m.M
 								v343 = m.ExcPending
 								if v343 != 0 {
@@ -1224,7 +1224,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					case 4:
-						F_appendStringInfoString(m, v8+int32(80), int32(266826))
+						F_appendStringInfoString(m, v8+int32(80), int32(266955))
 						mBase = m.M
 						v307 = m.ExcPending
 						if v307 != 0 {
@@ -1235,7 +1235,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 							return v433
 						}
 					case 6:
-						F_appendStringInfoString(m, v8+int32(80), int32(263315))
+						F_appendStringInfoString(m, v8+int32(80), int32(263444))
 						mBase = m.M
 						v317 = m.ExcPending
 						if v317 != 0 {
@@ -1248,7 +1248,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 					default:
 						switch v16 - int32(6237) {
 						case 0:
-							F_appendStringInfoString(m, v8+int32(80), int32(417905))
+							F_appendStringInfoString(m, v8+int32(80), int32(418189))
 							mBase = m.M
 							v312 = m.ExcPending
 							if v312 != 0 {
@@ -1273,7 +1273,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								if v338 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493112), int32(4674), int32(246666))
+									F_errfinish(m, int32(493434), int32(4674), int32(246795))
 									mBase = m.M
 									v343 = m.ExcPending
 									if v343 != 0 {
@@ -1286,7 +1286,7 @@ func F_getObjectTypeDescription(m *base.Module, l0 int32, l1 int32) int32 {
 								}
 							}
 						case 6:
-							F_appendStringInfoString(m, v8+int32(80), int32(533066))
+							F_appendStringInfoString(m, v8+int32(80), int32(533478))
 							mBase = m.M
 							v302 = m.ExcPending
 							if v302 != 0 {
@@ -1403,7 +1403,7 @@ L8:
 	}
 L9:
 	;
-	v61 = v19 + int32(750528)
+	v61 = v19 + int32(766128)
 	goto L7
 L10:
 	;
@@ -1429,7 +1429,7 @@ L13:
 	}
 L14:
 	;
-	v61 = v29 + int32(750528)
+	v61 = v29 + int32(766128)
 	goto L7
 L15:
 	;
@@ -1445,7 +1445,7 @@ L16:
 	}
 L17:
 	;
-	v61 = v39 + int32(750528)
+	v61 = v39 + int32(766128)
 	goto L7
 L18:
 	;
@@ -1461,7 +1461,7 @@ L19:
 	}
 L20:
 	;
-	v61 = v49 + int32(750528)
+	v61 = v49 + int32(766128)
 	goto L7
 L21:
 	;
@@ -1483,7 +1483,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(493112), int32(2777), int32(503310))
+	F_errfinish(m, int32(493434), int32(2777), int32(503692))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {

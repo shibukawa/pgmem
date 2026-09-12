@@ -202,7 +202,7 @@ func F_ShowGUCOption(m *base.Module, l0 int32, l1 int32) int32 {
 	case 4:
 		goto L3
 	default:
-		v306 = int32(545093)
+		v306 = int32(545509)
 		goto L1
 	}
 L1:
@@ -300,7 +300,7 @@ L13:
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
 	v29 = base.I64_extend_i32_s(v28)
 	*(*int64)(unsafe.Add(mBase, uint32(v13)+56)) = v29
-	v31 = int32(741336)
+	v31 = int32(756936)
 	if l1 == int32(0) {
 		v117 = v31
 		v124 = v29
@@ -316,7 +316,7 @@ L15:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v117
 	*(*int64)(unsafe.Add(mBase, uint32(v13))) = v124
-	v131 = F_pg_snprintf(m, v13-int32(-64), int32(256), int32(175606), v13)
+	v131 = F_pg_snprintf(m, v13-int32(-64), int32(256), int32(175696), v13)
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -356,11 +356,11 @@ L18:
 	}
 L19:
 	;
-	v52 = int32(1747136)
+	v52 = int32(1763520)
 	goto L21
 L20:
 	;
-	v52 = int32(1747552)
+	v52 = int32(1763936)
 	goto L21
 L21:
 	;
@@ -500,7 +500,7 @@ L46:
 	v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+92))
 	v139 = *(*float64)(unsafe.Add(mBase, uint32(v138)))
 	*(*float64)(unsafe.Add(mBase, uint32(v13)+56)) = v139
-	v141 = int32(741336)
+	v141 = int32(756936)
 	if l1 == int32(0) {
 		v220 = v141
 		v225 = v139
@@ -516,7 +516,7 @@ L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v220
 	*(*float64)(unsafe.Add(mBase, uint32(v13)+16)) = v225
-	v236 = F_pg_snprintf(m, v13-int32(-64), int32(256), int32(175601), v13+int32(16))
+	v236 = F_pg_snprintf(m, v13-int32(-64), int32(256), int32(175691), v13+int32(16))
 	mBase = m.M
 	v237 = m.ExcPending
 	if v237 != 0 {
@@ -564,11 +564,11 @@ L52:
 	goto L48
 L53:
 	;
-	v164 = int32(1747136)
+	v164 = int32(1763520)
 	goto L55
 L54:
 	;
-	v164 = int32(1747552)
+	v164 = int32(1763936)
 	goto L55
 L55:
 	;
@@ -672,7 +672,7 @@ L70:
 	goto L71
 L71:
 	;
-	v306 = int32(741336)
+	v306 = int32(756936)
 	goto L1
 L72:
 	;
@@ -755,7 +755,7 @@ L84:
 	v286 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+36)) = v286
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = v251
-	F_errmsg_internal(m, int32(181449), v13+int32(32))
+	F_errmsg_internal(m, int32(181539), v13+int32(32))
 	mBase = m.M
 	v293 = m.ExcPending
 	if v293 != 0 {
@@ -765,7 +765,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(499158), int32(3036), int32(344377))
+	F_errfinish(m, int32(499486), int32(3036), int32(344622))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -780,11 +780,11 @@ L86:
 	}
 L87:
 	;
-	v303 = int32(272805)
+	v303 = int32(272934)
 	goto L89
 L88:
 	;
-	v303 = int32(338517)
+	v303 = int32(338762)
 	goto L89
 L89:
 	;

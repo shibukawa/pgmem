@@ -167,7 +167,7 @@ L10:
 	goto L5
 L11:
 	;
-	F_s_lock(m, v38, int32(495319), int32(779), int32(112969))
+	F_s_lock(m, v38, int32(495641), int32(779), int32(113032))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {

@@ -401,7 +401,7 @@ L15:
 L16:
 	;
 	m.G0 = v14 + int32(176)
-	return int32(4474340)
+	return int32(4500020)
 L17:
 	;
 	v58 = v53
@@ -612,8 +612,8 @@ L45:
 	*(*int64)(unsafe.Add(mBase, uint32(v167))) = v168
 	v170 = *(*int64)(unsafe.Add(mBase, uint32(v70)+uint32(_consts[842])))
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+120)) = v170
-	v172 = int32(4474372)
-	v173 = int32(4474320)
+	v172 = int32(4500052)
+	v173 = int32(4500000)
 	v175 = v58 * int32(52)
 	goto L48
 L46:
@@ -817,7 +817,7 @@ L99:
 	}
 L100:
 	;
-	v388 = int32(4489440)
+	v388 = int32(4515120)
 	v389 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v386
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+120)) = v386
@@ -1016,8 +1016,8 @@ L130:
 	goto L114
 L131:
 	;
-	v470 = int32(4474372)
-	v471 = int32(4474320)
+	v470 = int32(4500052)
+	v471 = int32(4500000)
 	v473 = v467 * int32(52)
 	goto L136
 L132:
@@ -1194,7 +1194,7 @@ L181:
 L182:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v14 + int32(16)
-	F_errmsg(m, int32(201788), v14)
+	F_errmsg(m, int32(201878), v14)
 	mBase = m.M
 	v677 = m.ExcPending
 	if v677 != 0 {
@@ -1204,7 +1204,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(495032), int32(223), int32(398504))
+	F_errfinish(m, int32(495354), int32(223), int32(398788))
 	mBase = m.M
 	v682 = m.ExcPending
 	if v682 != 0 {
@@ -1255,7 +1255,7 @@ func F_ReScanExprContext(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v5 = int32(4489440)
+	v5 = int32(4515120)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v8

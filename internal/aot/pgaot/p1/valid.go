@@ -114,7 +114,7 @@ L6:
 	}
 L7:
 	;
-	v21 = int32(625554)
+	v21 = int32(640991)
 	if l2 <= int32(0) {
 		v135 = v21
 		goto L2
@@ -220,7 +220,7 @@ L23:
 	goto L13
 L24:
 	;
-	v79 = int32(625682)
+	v79 = int32(641119)
 	if l2 <= int32(0) {
 		v135 = v79
 		goto L2
@@ -229,7 +229,7 @@ L24:
 	}
 L25:
 	;
-	v57 = int32(625471)
+	v57 = int32(640908)
 	if l2 <= int32(0) {
 		v135 = v57
 		goto L2
@@ -329,7 +329,7 @@ L40:
 	goto L37
 L41:
 	;
-	v105 = int32(625785)
+	v105 = int32(641222)
 	if l2 <= int32(0) {
 		v135 = v105
 		goto L2
@@ -391,6 +391,39 @@ L50:
 	;
 	v149 = v142
 	goto L1
+}
+func F_is_valid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)))
+	return (v3 ^ int32(-1)) & int32(1)
+}
+func F_make_valid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int64
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int64)(unsafe.Add(mBase, uint32(v2)))
+	v6 = F_Int64GetDatum(m, v3&int64(-2))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
 }
 func F_validOperatorName(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -531,7 +564,7 @@ L1:
 	return v242
 L2:
 	;
-	v10 = int32(545617)
+	v10 = int32(546033)
 	v14 = m.G0
 	v16 = v14 - int32(32)
 	v17 = int64(0)
@@ -666,7 +699,7 @@ L23:
 	goto L19
 L24:
 	;
-	v96 = F_strstr(m, l0, int32(654212))
+	v96 = F_strstr(m, l0, int32(669664))
 	mBase = m.M
 	if v96 != 0 {
 		v242 = v2
@@ -676,7 +709,7 @@ L24:
 	}
 L25:
 	;
-	v98 = F_strstr(m, l0, int32(654113))
+	v98 = F_strstr(m, l0, int32(669565))
 	mBase = m.M
 	if v98 != 0 {
 		v242 = v2
@@ -750,7 +783,7 @@ L36:
 	goto L37
 L37:
 	;
-	v129 = int32(674038)
+	v129 = int32(689490)
 	v131 = int32(11)
 	goto L38
 L38:

@@ -73,7 +73,7 @@ func F_lseg_in(m *base.Module, l0 int32) int32 {
 	if v19 != 0 {
 		return int32(0)
 	} else {
-		v24 = F_path_decode(m, v12, int32(1), int32(2), v16, v9+int32(15), int32(0), int32(337265), v12, v11)
+		v24 = F_path_decode(m, v12, int32(1), int32(2), v16, v9+int32(15), int32(0), int32(337510), v12, v11)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {

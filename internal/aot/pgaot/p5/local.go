@@ -189,7 +189,7 @@ L4:
 	;
 	v193 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[636])) = v191 + v193
-	v196 = int32(4405404)
+	v196 = int32(4431084)
 	v198 = *(*int32)(unsafe.Add(mBase, _consts[637]))
 	*(*int32)(unsafe.Add(mBase, _consts[637])) = v198 + v193
 	*(*int32)(unsafe.Add(mBase, uint32(v189+v188<<(uint(int32(2))%32)))) = v190 + v191<<(uint(int32(13))%32)
@@ -301,7 +301,7 @@ L19:
 	}
 L20:
 	;
-	v75 = int32(4405384)
+	v75 = int32(4431064)
 	v77 = *(*int32)(unsafe.Add(mBase, _consts[601]))
 	v78 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[601])) = v77 + v78
@@ -319,7 +319,7 @@ L22:
 	*(*int32)(unsafe.Add(mBase, uint32(v71))) = v85 + v86
 	v90 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v52)+20))
-	F_ResourceOwnerRemember(m, v90, v91+v86, int32(1612256))
+	F_ResourceOwnerRemember(m, v90, v91+v86, int32(1627856))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -370,7 +370,7 @@ L27:
 	}
 L28:
 	;
-	F_errmsg(m, int32(395342), int32(0))
+	F_errmsg(m, int32(395626), int32(0))
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -380,7 +380,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(497682), int32(272), int32(226276))
+	F_errfinish(m, int32(498010), int32(272), int32(226366))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -532,10 +532,10 @@ L51:
 L52:
 	;
 	v225 = int32(1)
-	v239 = int32(4470696)
+	v239 = int32(4496376)
 	v240 = *(*int64)(unsafe.Add(mBase, _consts[642]))
 	*(*int64)(unsafe.Add(mBase, _consts[642])) = v240 + int64(1)
-	v245 = int32(4469736)
+	v245 = int32(4495416)
 	v246 = *(*int64)(unsafe.Add(mBase, _consts[643]))
 	*(*int64)(unsafe.Add(mBase, _consts[643])) = v246
 	F_pgstat_count_backend_io_op(m, v225, int32(3), int32(0), v225, int64(0))
@@ -558,7 +558,7 @@ func F_GetNextLocalTransactionId(m *base.Module) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v2 = int32(4406804)
+	v2 = int32(4432484)
 	v3 = int32(1)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[695]))
 	if base.Ui32(v5) <= base.Ui32(v3) {
@@ -907,7 +907,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+16)) = l7
-	F_errmsg(m, int32(481901), v20+int32(16))
+	F_errmsg(m, int32(482223), v20+int32(16))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -917,7 +917,7 @@ L9:
 	}
 L10:
 	;
-	F_errfinish(m, int32(491932), int32(733), int32(337847))
+	F_errfinish(m, int32(492254), int32(733), int32(338092))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -1074,7 +1074,7 @@ L27:
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20))) = v74
-	F_errmsg_internal(m, int32(473742), v20)
+	F_errmsg_internal(m, int32(474064), v20)
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -1084,7 +1084,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(491932), int32(781), int32(337847))
+	F_errfinish(m, int32(492254), int32(781), int32(338092))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -1816,7 +1816,7 @@ func F_UnpinLocalBuffer(m *base.Module, l0 int32) {
 	v13 = v11 - int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v13
 	if v13 == int32(0) {
-		v17 = int32(4405384)
+		v17 = int32(4431064)
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[601]))
 		v20 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[601])) = v19 - v20
@@ -1827,7 +1827,7 @@ func F_UnpinLocalBuffer(m *base.Module, l0 int32) {
 	} else {
 	}
 	v36 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-	F_ResourceOwnerForget(m, v36, l0, int32(1612256))
+	F_ResourceOwnerForget(m, v36, l0, int32(1627856))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {

@@ -1057,7 +1057,7 @@ func F_cache_multirange_element_properties(m *base.Module, l0 int32) {
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498595), int32(1068), int32(241647))
+							F_errfinish(m, int32(498923), int32(1068), int32(241737))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {

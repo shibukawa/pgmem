@@ -275,7 +275,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	v33 = int32(4489440)
+	v33 = int32(4515120)
 	v34 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = int32(128)

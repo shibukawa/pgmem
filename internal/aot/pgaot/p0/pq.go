@@ -613,13 +613,13 @@ func F_pq_getmsgend(m *base.Module, l0 int32) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(112066), int32(0))
+				F_errmsg(m, int32(112129), int32(0))
 				mBase = m.M
 				v15 = m.ExcPending
 				if v15 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492930), int32(640), int32(426618))
+					F_errfinish(m, int32(493252), int32(640), int32(426902))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
@@ -679,13 +679,13 @@ func F_pq_getmsgrawstring(m *base.Module, l0 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(404035), int32(0))
+				F_errmsg(m, int32(404319), int32(0))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492930), int32(624), int32(329258))
+					F_errfinish(m, int32(493252), int32(624), int32(329492))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
