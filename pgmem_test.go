@@ -935,3 +935,50 @@ func TestParallelWorkRunsInLeader(t *testing.T) {
 		t.Fatalf("count = %d err=%v", n, err)
 	}
 }
+
+// Single-user mode never gives the session_authorization GUC its reset
+// value, so RESET SESSION AUTHORIZATION and SET SESSION AUTHORIZATION
+// DEFAULT did nothing, and DISCARD ALL between connections left a client's
+// SET SESSION AUTHORIZATION in place for the next one.
+func TestSessionAuthorizationResets(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{})
+	c, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	var who string
+	if err := c.QueryRow(ctx, "SHOW session_authorization").Scan(&who); err != nil || who != "postgres" {
+		t.Fatalf("session_authorization = %q err=%v", who, err)
+	}
+	if _, err := c.Exec(ctx, "CREATE ROLE limited"); err != nil {
+		t.Fatal(err)
+	}
+	for _, reset := range []string{"RESET SESSION AUTHORIZATION", "SET SESSION AUTHORIZATION DEFAULT"} {
+		if _, err := c.Exec(ctx, "SET SESSION AUTHORIZATION limited"); err != nil {
+			t.Fatal(err)
+		}
+		if err := c.QueryRow(ctx, "SELECT session_user").Scan(&who); err != nil || who != "limited" {
+			t.Fatalf("after SET: %q err=%v", who, err)
+		}
+		if _, err := c.Exec(ctx, reset); err != nil {
+			t.Fatal(err)
+		}
+		if err := c.QueryRow(ctx, "SELECT session_user").Scan(&who); err != nil || who != "postgres" {
+			t.Fatalf("after %s: %q err=%v", reset, who, err)
+		}
+	}
+	// a client that leaves a session authorization set and disconnects
+	if _, err := c.Exec(ctx, "SET SESSION AUTHORIZATION limited"); err != nil {
+		t.Fatal(err)
+	}
+	c.Close(ctx)
+	c2, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer c2.Close(ctx)
+	if err := c2.QueryRow(ctx, "SELECT session_user").Scan(&who); err != nil || who != "postgres" {
+		t.Fatalf("next connection: %q err=%v", who, err)
+	}
+}

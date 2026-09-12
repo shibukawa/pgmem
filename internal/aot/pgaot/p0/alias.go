@@ -3352,10 +3352,10 @@ func F_AtEOXact_HashTables(m *base.Module, l0 int32)
 func F_GetBackendTypeDesc(m *base.Module, l0 int32) int32
 //go:linkname F_SetSessionAuthorization github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_SetSessionAuthorization
 func F_SetSessionAuthorization(m *base.Module, l0 int32, l1 int32)
-//go:linkname F_InitializeSystemUser github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitializeSystemUser
-func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_GetUserNameFromId github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetUserNameFromId
 func F_GetUserNameFromId(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_InitializeSystemUser github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitializeSystemUser
+func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_BaseInit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_BaseInit
 func F_BaseInit(m *base.Module)
 //go:linkname F_InitPostgres github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_InitPostgres

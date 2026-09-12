@@ -83,7 +83,7 @@ func F_UnlinkLockFiles(m *base.Module, l0 int32, l1 int32) {
 			if v39 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(_a_F_UnlinkLockFiles_1), int32(1198), int32(_a_F_UnlinkLockFiles_2))
+				F_errfinish(m, int32(_a_F_UnlinkLockFiles_1), int32(1215), int32(_a_F_UnlinkLockFiles_2))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {

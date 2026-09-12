@@ -303,7 +303,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1587), int32(_a_F_AddToDataDirLockFile_7))
+	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1604), int32(_a_F_AddToDataDirLockFile_7))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -378,7 +378,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1598), int32(_a_F_AddToDataDirLockFile_7))
+	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1615), int32(_a_F_AddToDataDirLockFile_7))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -813,7 +813,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1662), int32(_a_F_AddToDataDirLockFile_7))
+	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1679), int32(_a_F_AddToDataDirLockFile_7))
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -914,7 +914,7 @@ L100:
 	}
 L101:
 	;
-	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1673), int32(_a_F_AddToDataDirLockFile_7))
+	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1690), int32(_a_F_AddToDataDirLockFile_7))
 	mBase = m.M
 	v357 = m.ExcPending
 	if v357 != 0 {
@@ -965,7 +965,7 @@ L106:
 	}
 L107:
 	;
-	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1681), int32(_a_F_AddToDataDirLockFile_7))
+	F_errfinish(m, int32(_a_F_AddToDataDirLockFile_6), int32(1698), int32(_a_F_AddToDataDirLockFile_7))
 	mBase = m.M
 	v384 = m.ExcPending
 	if v384 != 0 {

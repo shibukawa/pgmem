@@ -11523,7 +11523,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1872), int32(_a_F_load_libraries_2))
+	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1889), int32(_a_F_load_libraries_2))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -11696,7 +11696,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1890), int32(_a_F_load_libraries_2))
+	F_errfinish(m, int32(_a_F_load_libraries_1), int32(1907), int32(_a_F_load_libraries_2))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {

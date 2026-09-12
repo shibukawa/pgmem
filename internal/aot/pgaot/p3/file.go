@@ -1928,7 +1928,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1300), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1317), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -2212,7 +2212,7 @@ L104:
 	}
 L105:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1372), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1389), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v299 = m.ExcPending
 	if v299 != 0 {
@@ -2787,7 +2787,7 @@ L191:
 	}
 L192:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1307), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1324), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v596 = m.ExcPending
 	if v596 != 0 {
@@ -2833,7 +2833,7 @@ L196:
 	}
 L197:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1316), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1333), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v618 = m.ExcPending
 	if v618 != 0 {
@@ -2860,7 +2860,7 @@ L199:
 	}
 L200:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1327), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1344), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v636 = m.ExcPending
 	if v636 != 0 {
@@ -2910,7 +2910,7 @@ L204:
 	}
 L205:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1410), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1427), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v663 = m.ExcPending
 	if v663 != 0 {
@@ -2956,7 +2956,7 @@ L209:
 	}
 L210:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1426), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1443), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v684 = m.ExcPending
 	if v684 != 0 {
@@ -3011,7 +3011,7 @@ L216:
 	}
 L217:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1461), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1478), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v709 = m.ExcPending
 	if v709 != 0 {
@@ -3047,7 +3047,7 @@ L220:
 	}
 L221:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1475), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1492), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v732 = m.ExcPending
 	if v732 != 0 {
@@ -3083,7 +3083,7 @@ L224:
 	}
 L225:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1486), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1503), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v752 = m.ExcPending
 	if v752 != 0 {
@@ -3119,7 +3119,7 @@ L228:
 	}
 L229:
 	;
-	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1286), int32(_a_F_CreateLockFile_4))
+	F_errfinish(m, int32(_a_F_CreateLockFile_3), int32(1303), int32(_a_F_CreateLockFile_4))
 	mBase = m.M
 	v769 = m.ExcPending
 	if v769 != 0 {

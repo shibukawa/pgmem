@@ -1846,7 +1846,7 @@ func F_GetUserNameFromId(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(_a_F_GetUserNameFromId_1), int32(1050), int32(_a_F_GetUserNameFromId_2))
+							F_errfinish(m, int32(_a_F_GetUserNameFromId_1), int32(1067), int32(_a_F_GetUserNameFromId_2))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
