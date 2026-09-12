@@ -1,6 +1,6 @@
 GO_PKGS := $(shell go list ./... | grep -v /internal/aot)
 
-.PHONY: test test-aot bench vet wasm aot mkdata
+.PHONY: test test-aot bench vet wasm aot mkdata python java
 
 test:        ## run the test suite
 	go test ./... -count=1
@@ -21,3 +21,9 @@ aot:         ## regenerate internal/aot/pgaot with the forked wasm2go
 
 mkdata:      ## regenerate the embedded initdb data directory
 	go run ./cmd/pgmem-mkdata
+
+python:      ## test and build the Python package (packages/python)
+	cd packages/python && uv run pytest -q && uv build --wheel
+
+java:        ## test and build the Java artifacts (packages/java)
+	cd packages/java && ./gradlew build

@@ -5,3 +5,9 @@
 
 # knowledge-compiler cache
 .knowledge/.cache/
+
+# language packages
+/packages/python/dist/
+/packages/python/.venv/
+/packages/python/**/__pycache__/
+/packages/python/.pytest_cache/

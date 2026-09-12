@@ -45,8 +45,12 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 		opts.MaxForks = runtime.GOMAXPROCS(0)
 	}
 	// acquire waits for any open transaction to end, so the copy is taken
-	// between transactions; CHECKPOINT then flushes every dirty page.
-	s.acquire(0)
+	// between transactions; CHECKPOINT then flushes every dirty page. A
+	// connection left idle in a transaction would block this forever, so
+	// ctx bounds the wait.
+	if err := s.acquireCtx(ctx, 0); err != nil {
+		return nil, fmt.Errorf("pgmem: snapshot waited for an open transaction to end (commit or close every connection first): %w", err)
+	}
 	defer s.release()
 	out, err := s.b.Exec(simpleQuery("CHECKPOINT"))
 	if err != nil {

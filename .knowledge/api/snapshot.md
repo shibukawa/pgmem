@@ -10,7 +10,7 @@ api:
   go: func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot, error)
   file: snapshot.go
   behavior:
-    - acquires the backend (waits for open transactions), runs CHECKPOINT
+    - acquires the backend (waits for open transactions; ctx bounds the wait via acquireCtx), runs CHECKPOINT
     - deep-copies the vfs (concept:vfs-snapshot); template keeps running
     - allocates the fork slot pool (policy:fork-pool-limit)
   methods:
@@ -20,5 +20,6 @@ api:
   options:
     - MaxForks int (0 = GOMAXPROCS)
   measured: snapshot ~10ms, fork ~20ms (metric:fork-cost)
+  wrappers: exposed as op snapshot in api:control-protocol
   later: Export(w io.Writer) tar for cross-process reuse; Prewarm
 ```

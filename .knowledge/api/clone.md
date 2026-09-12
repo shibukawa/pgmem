@@ -16,6 +16,7 @@ api:
     - Options.Prepare func(ctx, db *sql.DB, dsn string) error  # runs once on the template
   blocking: waits for a free slot when policy:fork-pool-limit is reached; t.Context() cancel aborts the wait
   cost: metric:fork-cost
+  wrappers: exposed as op fork / close in api:control-protocol
   guarantees:
     - fork state equals snapshot state at creation
     - closing a fork never affects the snapshot or other forks

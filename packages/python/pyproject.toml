@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pgmem"
+version = "0.1.0"
+description = "In-memory PostgreSQL for tests: prepare once, fork a fresh copy per test"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Yoshiki Shibukawa" }]
+keywords = ["postgresql", "testing", "pytest", "fixture"]
+classifiers = [
+  "Framework :: Pytest",
+  "Programming Language :: Python :: 3",
+  "Topic :: Database",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pytest = ["pytest>=7"]
+
+[project.entry-points.pytest11]
+pgmem = "pgmem.pytest_plugin"
+
+[project.urls]
+Homepage = "https://github.com/shibukawa/pgmem"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pgmem"]
+
+[tool.hatch.build.targets.wheel.hooks.custom]
+path = "hatch_build.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pgmem", "hatch_build.py", "README.md"]
+exclude = ["src/pgmem/_bin/pgmem", "src/pgmem/_bin/pgmem.exe"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pg8000>=1.31", "psycopg[binary]>=3.2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

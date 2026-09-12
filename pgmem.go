@@ -280,6 +280,32 @@ func (s *Server) acquire(id int64) {
 	s.holder.Store(id)
 }
 
+// acquireCtx is acquire for callers that must not wait forever: it gives
+// up with ctx.Err() when ctx ends first.
+func (s *Server) acquireCtx(ctx context.Context, id int64) error {
+	select {
+	case s.sem <- struct{}{}:
+	default:
+		t := time.NewTimer(lockWarnAfter)
+		select {
+		case s.sem <- struct{}{}:
+			t.Stop()
+		case <-ctx.Done():
+			t.Stop()
+			return ctx.Err()
+		case <-t.C:
+			s.logf("pgmem: connection %d has waited %s for the backend held by connection %d (idle in transaction?)", id, lockWarnAfter, s.holder.Load())
+			select {
+			case s.sem <- struct{}{}:
+			case <-ctx.Done():
+				return ctx.Err()
+			}
+		}
+	}
+	s.holder.Store(id)
+	return nil
+}
+
 func (s *Server) release() {
 	s.holder.Store(0)
 	<-s.sem
