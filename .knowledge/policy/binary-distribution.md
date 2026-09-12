@@ -23,7 +23,7 @@ policy:
     name: scoped (api:node-wrapper); unscoped pgmem collides with pg-mem under npm's name similarity rule
     fallback: PGMEM_BINARY env
     status: packages/node/platforms and scripts/build-npm.sh exist (2026-09-13); nothing published
-  version_check: wrapper version equals binary version; protocol integer from the ready event (api:control-protocol) checked before use
+  version_check: wrapper version equals binary version (policy:versioning); protocol integer from the ready event (api:control-protocol) checked before use
   why_no_download: offline CI, supply-chain review, reproducibility; an opt-in downloader can come later
   exercised: darwin/arm64 wheel and native jar verified end to end 2026-09-12 in a clean venv and a bare classpath; CI matrix for the other platforms is still to do
 ```

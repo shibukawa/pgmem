@@ -3,13 +3,19 @@ id: vision:pgmem
 type: vision
 title: pgmem Vision
 ---
-Real PostgreSQL 18 running fully in memory inside a Go test process, reachable through the normal wire protocol, with no Docker, binaries, or disk.
+Real PostgreSQL 18 running fully in memory, reachable through the normal wire protocol, with no Docker, binaries to download, or disk: a test database that costs one dependency and forks in 20 ms.
 
 ```yaml
 summary:
-  primary_use: automated tests
-  scope_now: Go test API (requirement:test-fixture-fork, requirement:in-memory-only)
-  scope_next: requirement:multi-language-wrapper (Python, Java via concept:server-process; Node.js per decision:node-test-integration)
+  primary_use: automated tests (requirement:test-fixture-fork, requirement:in-memory-only)
+  scope_now:
+    - Go library (api:go-server, api:clone) and pgmemtest helpers
+    - Python and Java packages bundling the binary (requirement:multi-language-wrapper)
+  scope_next:
+    - requirement:nodejs-wrapper
+    - requirement:cloud-common-extensions
+  positioning: concept:alternatives
   constraints:
     - rule:single-session-per-backend
+    - concept:limits
 ```
