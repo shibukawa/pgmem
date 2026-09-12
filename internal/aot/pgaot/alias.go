@@ -3112,6 +3112,12 @@ func F_Pg_magic_func_tsm_system_rows(m *base.Module) int32
 func F_pg_finfo_tsm_system_rows_handler(m *base.Module) int32
 //go:linkname F_tsm_system_rows_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tsm_system_rows_handler
 func F_tsm_system_rows_handler(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_tsm_system_time github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_Pg_magic_func_tsm_system_time
+func F_Pg_magic_func_tsm_system_time(m *base.Module) int32
+//go:linkname F_pg_finfo_tsm_system_time_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_tsm_system_time_handler
+func F_pg_finfo_tsm_system_time_handler(m *base.Module) int32
+//go:linkname F_tsm_system_time_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tsm_system_time_handler
+func F_tsm_system_time_handler(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

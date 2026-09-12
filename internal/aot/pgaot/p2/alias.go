@@ -4194,6 +4194,10 @@ func F_parse_array(m *base.Module, l0 int32, l1 int32) int32
 func F_parse_scalar(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_replace_percent_placeholders github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_replace_percent_placeholders
 func F_replace_percent_placeholders(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pg_prng_seed github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_prng_seed
+func F_pg_prng_seed(m *base.Module, l0 int32, l1 int64)
+//go:linkname F_pg_prng_double github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_prng_double
+func F_pg_prng_double(m *base.Module, l0 int32) float64
 //go:linkname F_psprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_psprintf
 func F_psprintf(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pvsnprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pvsnprintf

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7139)
-	m.G0 = int32(13081440)
+	m.T0 = make([]any, 7147)
+	m.G0 = int32(13081552)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4409979
+	m.DataEnd = 4410091
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7139)
-	m.G0 = int32(13081440)
+	m.T0 = make([]any, 7147)
+	m.G0 = int32(13081552)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4409979
+	m.DataEnd = 4410091
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7139)
-	m.G0 = int32(13081440)
+	m.T0 = make([]any, 7147)
+	m.G0 = int32(13081552)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4409979
+	m.DataEnd = 4410091
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1607648])
-	copy(m.Memory[1612976:], wasm2goData_data_bin[1607648:1607657])
-	copy(m.Memory[1615024:], wasm2goData_data_bin[1607657:1620585])
-	copy(m.Memory[1638404:], wasm2goData_data_bin[1620585:1713826])
-	copy(m.Memory[1732672:], wasm2goData_data_bin[1713826:1825482])
-	copy(m.Memory[1855544:], wasm2goData_data_bin[1825482:4083680])
-	copy(m.Memory[4121232:], wasm2goData_data_bin[4083680:4372427])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1607792])
+	copy(m.Memory[1613120:], wasm2goData_data_bin[1607792:1607801])
+	copy(m.Memory[1615168:], wasm2goData_data_bin[1607801:1620729])
+	copy(m.Memory[1638404:], wasm2goData_data_bin[1620729:1713970])
+	copy(m.Memory[1732672:], wasm2goData_data_bin[1713970:1825626])
+	copy(m.Memory[1855544:], wasm2goData_data_bin[1825626:4083872])
+	copy(m.Memory[4121280:], wasm2goData_data_bin[4083872:4372683])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5086,6 +5086,15 @@ func PgFinfoTsmSystemRowsHandler(m *base.Module) int32 {
 }
 func TsmSystemRowsHandler(m *base.Module, l0 int32) int32 {
 	return F_tsm_system_rows_handler(m, l0)
+}
+func PgMagicFuncTsmSystemTime(m *base.Module) int32 {
+	return F_Pg_magic_func_tsm_system_time(m)
+}
+func PgFinfoTsmSystemTimeHandler(m *base.Module) int32 {
+	return F_pg_finfo_tsm_system_time_handler(m)
+}
+func TsmSystemTimeHandler(m *base.Module, l0 int32) int32 {
+	return F_tsm_system_time_handler(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

@@ -99,3 +99,20 @@ func F_system_rows_nextsampletuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 	}
 	return v18 & int32(_a_F_system_rows_nextsampletuple_0)
 }
+func F_system_time_initsamplescan(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	v4 = F_palloc0(m, int32(48))
+	mBase = m.M
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = v4
+		return
+	}
+}

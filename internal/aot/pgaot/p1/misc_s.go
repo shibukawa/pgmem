@@ -2729,6 +2729,54 @@ L23:
 	;
 	goto L21
 }
+func F_sampler_random_init_state(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int64
+	_ = v3
+	var v7 int64
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v11 int64
+	_ = v11
+	var v12 int64
+	_ = v12
+	var v13 int64
+	_ = v13
+	var v16 int64
+	_ = v16
+	var v17 int64
+	_ = v17
+	var v18 int64
+	_ = v18
+	var v23 int64
+	_ = v23
+	var v28 int64
+	_ = v28
+	var v33 int64
+	_ = v33
+	v3 = base.I64_extend_i32_u(l0)
+	v7 = v3 + int64(4354685564936845354)
+	v8 = int64(30)
+	v11 = int64(-4658895280553007687)
+	v12 = (int64(base.Ui64(v7)>>(uint(v8)%64)) ^ v7) * v11
+	v13 = int64(27)
+	v16 = int64(-7723592293110705685)
+	v17 = (int64(base.Ui64(v12)>>(uint(v13)%64)) ^ v12) * v16
+	v18 = int64(31)
+	*(*int64)(unsafe.Add(mBase, uint32(l1)+8)) = int64(base.Ui64(v17)>>(uint(v18)%64)) ^ v17
+	v23 = v3 - int64(7046029254386353131)
+	v28 = (int64(base.Ui64(v23)>>(uint(v8)%64)) ^ v23) * v11
+	v33 = (int64(base.Ui64(v28)>>(uint(v13)%64)) ^ v28) * v16
+	*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(base.Ui64(v33)>>(uint(v18)%64)) ^ v33
+	if v23|v7 == int64(0) {
+		*(*int64)(unsafe.Add(mBase, uint32(l1)+8)) = int64(1442695040888963407)
+		*(*int64)(unsafe.Add(mBase, uint32(l1))) = int64(6364136223846793005)
+	} else {
+	}
+	return
+}
 func F_sanitize_char_2(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
