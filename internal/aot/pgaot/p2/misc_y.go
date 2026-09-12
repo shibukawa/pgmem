@@ -34,7 +34,7 @@ func F_yy_fatal_error_1(m *base.Module, l0 int32) {
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(314703), int32(39), int32(80852))
+			F_errfinish(m, int32(314764), int32(39), int32(80852))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -76,7 +76,7 @@ func F_yy_fatal_error_7(m *base.Module, l0 int32) {
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(314750), int32(26), int32(80852))
+			F_errfinish(m, int32(314811), int32(26), int32(80852))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

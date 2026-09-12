@@ -697,7 +697,7 @@ func F_populate_recordset_array_element_start(m *base.Module, l0 int32, l1 int32
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494943), int32(4277), int32(82252))
+						F_errfinish(m, int32(495078), int32(4277), int32(82252))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {

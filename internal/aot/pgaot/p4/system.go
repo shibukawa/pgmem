@@ -42,7 +42,7 @@ func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32) {
 		if v17 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1427])) = v16
+			*(*int32)(unsafe.Add(mBase, _consts[1428])) = v16
 			F_pfree(m, v11)
 			mBase = m.M
 			v20 = m.ExcPending
@@ -79,7 +79,7 @@ func F_SystemFuncName(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v8 = F_makeString(m, int32(327481))
+	v8 = F_makeString(m, int32(327542))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {

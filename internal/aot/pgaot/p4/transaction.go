@@ -285,7 +285,7 @@ func F_AbortTransaction(m *base.Module) {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = int32(4510252)
+	v9 = int32(4510364)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[171]))
 	*(*int32)(unsafe.Add(mBase, _consts[171])) = v11 + int32(1)
 	v16 = *(*int32)(unsafe.Add(mBase, _consts[25]))
@@ -386,7 +386,7 @@ L13:
 	}
 L14:
 	;
-	v53 = int32(4510260)
+	v53 = int32(4510372)
 	v55 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	v56 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v55 + v56
@@ -431,7 +431,7 @@ L17:
 L18:
 	;
 	*(*int64)(unsafe.Add(mBase, _consts[230])) = int64(0)
-	*(*int32)(unsafe.Add(mBase, _consts[231])) = int32(4411440)
+	*(*int32)(unsafe.Add(mBase, _consts[231])) = int32(4411552)
 	v198 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[130])) = v198
 	*(*int32)(unsafe.Add(mBase, _consts[232])) = v198
@@ -538,7 +538,7 @@ L31:
 	}
 L32:
 	;
-	F_sigprocmask(m, int32(4422824), int32(0))
+	F_sigprocmask(m, int32(4422936), int32(0))
 	mBase = m.M
 	v218 = m.ExcPending
 	if v218 != 0 {
@@ -596,12 +596,12 @@ L38:
 	goto L40
 L39:
 	;
-	v238 = int32(543818)
+	v238 = int32(543971)
 	goto L40
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v238
-	F_errmsg_internal(m, int32(352490), v7)
+	F_errmsg_internal(m, int32(352595), v7)
 	mBase = m.M
 	v242 = m.ExcPending
 	if v242 != 0 {
@@ -611,7 +611,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(493729), int32(2877), int32(258094))
+	F_errfinish(m, int32(493864), int32(2877), int32(258127))
 	mBase = m.M
 	v247 = m.ExcPending
 	if v247 != 0 {
@@ -831,7 +831,7 @@ L68:
 	goto L69
 L69:
 	;
-	v522 = int32(4510252)
+	v522 = int32(4510364)
 	v524 = *(*int32)(unsafe.Add(mBase, _consts[171]))
 	*(*int32)(unsafe.Add(mBase, _consts[171])) = v524 - int32(1)
 	m.G0 = v7 + int32(16)
@@ -970,7 +970,7 @@ L87:
 L88:
 	;
 	v390 = *(*int32)(unsafe.Add(mBase, _consts[152]))
-	v391 = int32(4122352)
+	v391 = int32(4122400)
 	v392 = *(*int32)(unsafe.Add(mBase, _consts[166]))
 	v393 = int32(2)
 	v396 = int32(0)
@@ -978,7 +978,7 @@ L88:
 	v399 = *(*int32)(unsafe.Add(mBase, _consts[243]))
 	v401 = *(*int32)(unsafe.Add(mBase, _consts[166]))
 	*(*int32)(unsafe.Add(mBase, uint32(v399+v401<<(uint(v393)%32)))) = v396
-	v408 = int32(4112992)
+	v408 = int32(4113040)
 	*(*int32)(unsafe.Add(mBase, _consts[244])) = v408
 	*(*int32)(unsafe.Add(mBase, _consts[245])) = v408
 	*(*int32)(unsafe.Add(mBase, _consts[246])) = v396
@@ -1155,7 +1155,7 @@ L107:
 	}
 L108:
 	;
-	v496 = int32(4510260)
+	v496 = int32(4510372)
 	v498 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	v499 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v498 + v499
@@ -1374,7 +1374,7 @@ L4:
 	}
 L5:
 	;
-	v158 = int32(4515652)
+	v158 = int32(4515764)
 	v159 = *(*int32)(unsafe.Add(mBase, _consts[182]))
 	v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	*(*int32)(unsafe.Add(mBase, _consts[182])) = v161
@@ -1637,7 +1637,7 @@ L39:
 	}
 L40:
 	;
-	v189 = int32(4411088)
+	v189 = int32(4411200)
 	v190 = *(*int32)(unsafe.Add(mBase, _consts[184]))
 	v195 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
 	*(*uint32)(unsafe.Add(mBase, uint32(v190<<(uint(int32(2))%32))+uint32(_consts[185]))) = uint32(v195)
@@ -1658,7 +1658,7 @@ L41:
 	}
 L42:
 	;
-	F_AssignTransactionId(m, int32(4410744))
+	F_AssignTransactionId(m, int32(4410856))
 	mBase = m.M
 	v212 = m.ExcPending
 	if v212 != 0 {
@@ -1704,7 +1704,7 @@ L46:
 L47:
 	;
 	v230 = *(*int32)(unsafe.Add(mBase, _consts[184]))
-	F_XLogRegisterData(m, int32(4410832), v230<<(uint(int32(2))%32))
+	F_XLogRegisterData(m, int32(4410944), v230<<(uint(int32(2))%32))
 	mBase = m.M
 	v234 = m.ExcPending
 	if v234 != 0 {
@@ -1740,7 +1740,7 @@ L50:
 	}
 L51:
 	;
-	F_errmsg(m, int32(260777), int32(0))
+	F_errmsg(m, int32(260810), int32(0))
 	mBase = m.M
 	v260 = m.ExcPending
 	if v260 != 0 {
@@ -1750,7 +1750,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(493729), int32(652), int32(465636))
+	F_errfinish(m, int32(493864), int32(652), int32(465771))
 	mBase = m.M
 	v265 = m.ExcPending
 	if v265 != 0 {
@@ -2026,7 +2026,7 @@ L23:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)))
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v50
-	F_errmsg_internal(m, int32(712668), v16)
+	F_errmsg_internal(m, int32(712821), v16)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -2043,7 +2043,7 @@ L25:
 	goto L21
 L26:
 	;
-	F_errfinish(m, int32(497441), int32(901), int32(153590))
+	F_errfinish(m, int32(497576), int32(901), int32(153590))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -2181,7 +2181,7 @@ L45:
 	goto L47
 L46:
 	;
-	v151 = int32(543818)
+	v151 = int32(543971)
 	goto L47
 L47:
 	;
@@ -2196,7 +2196,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(493729), int32(3018), int32(258171))
+	F_errfinish(m, int32(493864), int32(3018), int32(258204))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -2375,7 +2375,7 @@ func F_RequireTransactionBlock(m *base.Module, l0 int32, l1 int32) {
 						if v29 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493729), int32(3749), int32(317326))
+							F_errfinish(m, int32(493864), int32(3749), int32(317387))
 							mBase = m.M
 							v34 = m.ExcPending
 							if v34 != 0 {
@@ -2608,7 +2608,7 @@ func F_StartTransaction(m *base.Module) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = int32(4410744)
+	v11 = int32(4410856)
 	*(*int32)(unsafe.Add(mBase, _consts[25])) = v11
 	*(*int32)(unsafe.Add(mBase, _consts[186])) = int32(1)
 	*(*int64)(unsafe.Add(mBase, _consts[187])) = int64(0)
@@ -2640,7 +2640,7 @@ L2:
 	}
 L3:
 	;
-	v27 = int32(4599104)
+	v27 = int32(4599216)
 	v30 = *(*int64)(unsafe.Add(mBase, _consts[189]))
 	v31 = *(*int64)(unsafe.Add(mBase, _consts[190]))
 	v32 = v30 ^ v31
@@ -2771,7 +2771,7 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v131)+36)) = v163
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v163
 	v170 = *(*int32)(unsafe.Add(mBase, _consts[25]))
-	v173 = F_ResourceOwnerCreate(m, int32(0), int32(258190))
+	v173 = F_ResourceOwnerCreate(m, int32(0), int32(258223))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -2792,7 +2792,7 @@ L22:
 	*(*int32)(unsafe.Add(mBase, _consts[182])) = v173
 	v183 = *(*int32)(unsafe.Add(mBase, _consts[166]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v183
-	v186 = int32(4432964)
+	v186 = int32(4433076)
 	v187 = int32(1)
 	v189 = *(*int32)(unsafe.Add(mBase, _consts[215]))
 	if base.Ui32(v189) <= base.Ui32(v187) {
@@ -2939,7 +2939,7 @@ L42:
 	}
 L43:
 	;
-	v263 = int32(4510260)
+	v263 = int32(4510372)
 	v265 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	v266 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v265 + v266
@@ -2993,7 +2993,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(500054), int32(2224), int32(544469))
+	F_errfinish(m, int32(500207), int32(2224), int32(544622))
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {
@@ -3103,7 +3103,7 @@ L68:
 L69:
 	;
 	v375 = *(*int32)(unsafe.Add(mBase, _consts[25]))
-	F_ShowTransactionStateRec(m, int32(258111), v375)
+	F_ShowTransactionStateRec(m, int32(258144), v375)
 	mBase = m.M
 	v377 = m.ExcPending
 	if v377 != 0 {
@@ -3157,7 +3157,7 @@ func F_check_transaction_deferrable(m *base.Module, l0 int32, l1 int32, l2 int32
 	var v34 int32
 	_ = v34
 	v4 = int32(1)
-	v6 = int32(*(*uint8)(unsafe.Add(mBase, _consts[490])))
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 	if v6 != 0 {
 		v34 = v4
 		return v34
@@ -3165,8 +3165,8 @@ func F_check_transaction_deferrable(m *base.Module, l0 int32, l1 int32, l2 int32
 		v8 = *(*int32)(unsafe.Add(mBase, _consts[25]))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+28))
 		if int32(1) < v9 {
-			v18 = int32(255850)
-			*(*int32)(unsafe.Add(mBase, _consts[492])) = int32(16777538)
+			v18 = int32(255883)
+			*(*int32)(unsafe.Add(mBase, _consts[493])) = int32(16777538)
 			v24 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 			*(*int32)(unsafe.Add(mBase, _consts[141])) = v24
 			v29 = F_format_elog_string(m, v18, int32(0))
@@ -3175,18 +3175,18 @@ func F_check_transaction_deferrable(m *base.Module, l0 int32, l1 int32, l2 int32
 			if v32 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, _consts[493])) = v29
+				*(*int32)(unsafe.Add(mBase, _consts[494])) = v29
 				v34 = int32(0)
 				return v34
 			}
 		} else {
-			v14 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
+			v14 = int32(*(*uint8)(unsafe.Add(mBase, _consts[492])))
 			if v14 != int32(1) {
 				v34 = v4
 				return v34
 			} else {
 				v18 = int32(16248)
-				*(*int32)(unsafe.Add(mBase, _consts[492])) = int32(16777538)
+				*(*int32)(unsafe.Add(mBase, _consts[493])) = int32(16777538)
 				v24 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 				*(*int32)(unsafe.Add(mBase, _consts[141])) = v24
 				v29 = F_format_elog_string(m, v18, int32(0))
@@ -3195,7 +3195,7 @@ func F_check_transaction_deferrable(m *base.Module, l0 int32, l1 int32, l2 int32
 				if v32 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, _consts[493])) = v29
+					*(*int32)(unsafe.Add(mBase, _consts[494])) = v29
 					v34 = int32(0)
 					return v34
 				}
@@ -3265,16 +3265,16 @@ func F_check_transaction_isolation(m *base.Module, l0 int32, l1 int32, l2 int32)
 			v83 = v4
 			return v83
 		} else {
-			v17 = int32(*(*uint8)(unsafe.Add(mBase, _consts[490])))
+			v17 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 			if v17 != 0 {
 				v83 = v4
 				return v83
 			} else {
-				v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
+				v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[492])))
 				if v19 == int32(1) {
-					*(*int32)(unsafe.Add(mBase, _consts[492])) = int32(16777538)
+					*(*int32)(unsafe.Add(mBase, _consts[493])) = int32(16777538)
 					v71 = int32(16184)
-					v72 = int32(4514184)
+					v72 = int32(4514296)
 					v75 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 					*(*int32)(unsafe.Add(mBase, _consts[141])) = v75
 					v79 = F_format_elog_string(m, v71, int32(0))
@@ -3291,9 +3291,9 @@ func F_check_transaction_isolation(m *base.Module, l0 int32, l1 int32, l2 int32)
 					v28 = *(*int32)(unsafe.Add(mBase, _consts[25]))
 					v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+28))
 					if int32(1) < v29 {
-						*(*int32)(unsafe.Add(mBase, _consts[492])) = int32(16777538)
-						v71 = int32(255966)
-						v72 = int32(4514184)
+						*(*int32)(unsafe.Add(mBase, _consts[493])) = int32(16777538)
+						v71 = int32(255999)
+						v72 = int32(4514296)
 						v75 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 						*(*int32)(unsafe.Add(mBase, _consts[141])) = v75
 						v79 = F_format_elog_string(m, v71, int32(0))
@@ -3325,7 +3325,7 @@ func F_check_transaction_isolation(m *base.Module, l0 int32, l1 int32, l2 int32)
 								v83 = v4
 								return v83
 							} else {
-								*(*int32)(unsafe.Add(mBase, _consts[492])) = int32(1088)
+								*(*int32)(unsafe.Add(mBase, _consts[493])) = int32(1088)
 								v58 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 								*(*int32)(unsafe.Add(mBase, _consts[141])) = v58
 								v64 = F_format_elog_string(m, int32(23479), int32(0))
@@ -3334,9 +3334,9 @@ func F_check_transaction_isolation(m *base.Module, l0 int32, l1 int32, l2 int32)
 								if v67 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, _consts[493])) = v64
-									v71 = int32(652700)
-									v72 = int32(4514192)
+									*(*int32)(unsafe.Add(mBase, _consts[494])) = v64
+									v71 = int32(652853)
+									v72 = int32(4514304)
 									v75 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 									*(*int32)(unsafe.Add(mBase, _consts[141])) = v75
 									v79 = F_format_elog_string(m, v71, int32(0))

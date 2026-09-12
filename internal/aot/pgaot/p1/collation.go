@@ -156,7 +156,7 @@ func F_generate_collation_name(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v32
-									F_appendStringInfo(m, v7+int32(32), int32(606880), v7+int32(16))
+									F_appendStringInfo(m, v7+int32(32), int32(607033), v7+int32(16))
 									mBase = m.M
 									v41 = m.ExcPending
 									if v41 != 0 {
@@ -207,7 +207,7 @@ func F_generate_collation_name(m *base.Module, l0 int32) int32 {
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494218), int32(13553), int32(379121))
+					F_errfinish(m, int32(494353), int32(13553), int32(379256))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -279,7 +279,7 @@ func F_get_collation_actual_version_libc(m *base.Module, l0 int32) int32 {
 	_ = v130
 	var v132 int32
 	_ = v132
-	v5 = int32(544917)
+	v5 = int32(545070)
 	v6 = l0
 	goto L3
 L1:
@@ -363,7 +363,7 @@ L14:
 	goto L4
 L15:
 	;
-	v50 = int32(659854)
+	v50 = int32(660007)
 	v51 = l0
 	v52 = int32(2)
 	goto L17
@@ -459,7 +459,7 @@ L31:
 	goto L21
 L32:
 	;
-	v103 = int32(510232)
+	v103 = int32(510385)
 	v104 = l0
 	goto L34
 L33:

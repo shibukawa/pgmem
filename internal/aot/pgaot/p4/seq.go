@@ -192,7 +192,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v38
-	v47 = int32(4515600)
+	v47 = int32(4515712)
 	v48 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v13)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v50
@@ -363,13 +363,13 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(336321), int32(0))
+						F_errmsg_internal(m, int32(336382), int32(0))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(326828), int32(1034), int32(84648))
+							F_errfinish(m, int32(326889), int32(1034), int32(84648))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -433,13 +433,13 @@ func F_SeqNext(m *base.Module, l0 int32) int32 {
 				if v40 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(336321), int32(0))
+					F_errmsg_internal(m, int32(336382), int32(0))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(326828), int32(1034), int32(84648))
+						F_errfinish(m, int32(326889), int32(1034), int32(84648))
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -459,7 +459,7 @@ func F_seq_identify(m *base.Module, l0 int32) int32 {
 	var v6 int32
 	_ = v6
 	if base.Ui32(l0) < base.Ui32(int32(16)) {
-		v6 = int32(536458)
+		v6 = int32(536611)
 	} else {
 		v6 = int32(0)
 	}

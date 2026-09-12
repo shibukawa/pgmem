@@ -468,7 +468,7 @@ func F_string_agg_deserialize(m *base.Module, l0 int32) int32 {
 			}
 		}
 		if v88 != 0 {
-			v89 = int32(4515600)
+			v89 = int32(4515712)
 			v90 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v92 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v92
@@ -549,7 +549,7 @@ func F_string_agg_deserialize(m *base.Module, l0 int32) int32 {
 				if v158 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(500402), int32(5432), int32(354228))
+					F_errfinish(m, int32(500555), int32(5432), int32(354333))
 					mBase = m.M
 					v163 = m.ExcPending
 					if v163 != 0 {

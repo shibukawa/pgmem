@@ -148,7 +148,7 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						if v67 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(496530), int32(355), int32(354102))
+							F_errfinish(m, int32(496665), int32(355), int32(354207))
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {
@@ -266,7 +266,7 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 							if v67 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(496530), int32(355), int32(354102))
+								F_errfinish(m, int32(496665), int32(355), int32(354207))
 								mBase = m.M
 								v72 = m.ExcPending
 								if v72 != 0 {

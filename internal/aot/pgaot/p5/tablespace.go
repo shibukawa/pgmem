@@ -131,7 +131,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(272)
 	m.G0 = v8
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+160)) = int32(489010)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+160)) = int32(489145)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+164)) = l1
 	v16 = F_psprintf(m, int32(39163), v8+int32(160))
 	mBase = m.M
@@ -141,7 +141,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 		if v18 == int32(0) {
-			v22 = *(*int32)(unsafe.Add(mBase, _consts[308]))
+			v22 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 			v23 = F_mkdir(m, v16, v22)
 			mBase = m.M
 			if v23 < int32(0) {
@@ -160,13 +160,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+96)) = v16
-							F_errmsg(m, int32(296851), v8+int32(96))
+							F_errmsg(m, int32(296912), v8+int32(96))
 							mBase = m.M
 							v105 = m.ExcPending
 							if v105 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(499826), int32(594), int32(168083))
+								F_errfinish(m, int32(499979), int32(594), int32(168083))
 								mBase = m.M
 								v110 = m.ExcPending
 								if v110 != 0 {
@@ -180,7 +180,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(561902)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(562055)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v16
 					v36 = F_psprintf(m, int32(177111), v8+int32(80))
 					mBase = m.M
@@ -207,13 +207,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-										F_errmsg(m, int32(296480), v8+int32(32))
+										F_errmsg(m, int32(296541), v8+int32(32))
 										mBase = m.M
 										v179 = m.ExcPending
 										if v179 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(634), int32(168083))
+											F_errfinish(m, int32(499979), int32(634), int32(168083))
 											mBase = m.M
 											v184 = m.ExcPending
 											if v184 != 0 {
@@ -227,12 +227,12 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								v124 = *(*int32)(unsafe.Add(mBase, _consts[308]))
+								v124 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 								v125 = F_mkdir(m, v111, v124)
 								mBase = m.M
 								if int32(0) <= v125 {
 									if v18 != 0 {
-										v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+										v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 										if v153 == int32(1) {
 											F_remove_tablespace_symlink(m, v16)
 											mBase = m.M
@@ -256,13 +256,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-															F_errmsg(m, int32(297648), v8+int32(16))
+															F_errmsg(m, int32(297709), v8+int32(16))
 															mBase = m.M
 															v232 = m.ExcPending
 															if v232 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(499826), int32(665), int32(168083))
+																F_errfinish(m, int32(499979), int32(665), int32(168083))
 																mBase = m.M
 																v237 = m.ExcPending
 																if v237 != 0 {
@@ -311,13 +311,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -381,13 +381,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-											F_errmsg(m, int32(296851), v8)
+											F_errmsg(m, int32(296912), v8)
 											mBase = m.M
 											v137 = m.ExcPending
 											if v137 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(499826), int32(639), int32(168083))
+												F_errfinish(m, int32(499979), int32(639), int32(168083))
 												mBase = m.M
 												v142 = m.ExcPending
 												if v142 != 0 {
@@ -424,7 +424,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										if v197 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(645), int32(168083))
+											F_errfinish(m, int32(499979), int32(645), int32(168083))
 											mBase = m.M
 											v202 = m.ExcPending
 											if v202 != 0 {
@@ -438,7 +438,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								}
 							} else {
-								v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+								v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 								if v149 == int32(0) {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
@@ -453,13 +453,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-											F_errmsg(m, int32(419421), v8+int32(48))
+											F_errmsg(m, int32(419556), v8+int32(48))
 											mBase = m.M
 											v215 = m.ExcPending
 											if v215 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(499826), int32(650), int32(168083))
+												F_errfinish(m, int32(499979), int32(650), int32(168083))
 												mBase = m.M
 												v220 = m.ExcPending
 												if v220 != 0 {
@@ -474,7 +474,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									}
 								} else {
 									if v18 != 0 {
-										v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+										v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 										if v153 == int32(1) {
 											F_remove_tablespace_symlink(m, v16)
 											mBase = m.M
@@ -498,13 +498,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-															F_errmsg(m, int32(297648), v8+int32(16))
+															F_errmsg(m, int32(297709), v8+int32(16))
 															mBase = m.M
 															v232 = m.ExcPending
 															if v232 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(499826), int32(665), int32(168083))
+																F_errfinish(m, int32(499979), int32(665), int32(168083))
 																mBase = m.M
 																v237 = m.ExcPending
 																if v237 != 0 {
@@ -553,13 +553,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -615,7 +615,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(561902)
+				*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = int32(562055)
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v16
 				v36 = F_psprintf(m, int32(177111), v8+int32(80))
 				mBase = m.M
@@ -642,13 +642,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-									F_errmsg(m, int32(296480), v8+int32(32))
+									F_errmsg(m, int32(296541), v8+int32(32))
 									mBase = m.M
 									v179 = m.ExcPending
 									if v179 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(499826), int32(634), int32(168083))
+										F_errfinish(m, int32(499979), int32(634), int32(168083))
 										mBase = m.M
 										v184 = m.ExcPending
 										if v184 != 0 {
@@ -662,12 +662,12 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v124 = *(*int32)(unsafe.Add(mBase, _consts[308]))
+							v124 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 							v125 = F_mkdir(m, v111, v124)
 							mBase = m.M
 							if int32(0) <= v125 {
 								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 									if v153 == int32(1) {
 										F_remove_tablespace_symlink(m, v16)
 										mBase = m.M
@@ -691,13 +691,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -746,13 +746,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(297648), v8+int32(16))
+													F_errmsg(m, int32(297709), v8+int32(16))
 													mBase = m.M
 													v232 = m.ExcPending
 													if v232 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(499826), int32(665), int32(168083))
+														F_errfinish(m, int32(499979), int32(665), int32(168083))
 														mBase = m.M
 														v237 = m.ExcPending
 														if v237 != 0 {
@@ -816,13 +816,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-										F_errmsg(m, int32(296851), v8)
+										F_errmsg(m, int32(296912), v8)
 										mBase = m.M
 										v137 = m.ExcPending
 										if v137 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(639), int32(168083))
+											F_errfinish(m, int32(499979), int32(639), int32(168083))
 											mBase = m.M
 											v142 = m.ExcPending
 											if v142 != 0 {
@@ -859,7 +859,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									if v197 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(499826), int32(645), int32(168083))
+										F_errfinish(m, int32(499979), int32(645), int32(168083))
 										mBase = m.M
 										v202 = m.ExcPending
 										if v202 != 0 {
@@ -873,7 +873,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+							v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 							if v149 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
@@ -888,13 +888,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-										F_errmsg(m, int32(419421), v8+int32(48))
+										F_errmsg(m, int32(419556), v8+int32(48))
 										mBase = m.M
 										v215 = m.ExcPending
 										if v215 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(650), int32(168083))
+											F_errfinish(m, int32(499979), int32(650), int32(168083))
 											mBase = m.M
 											v220 = m.ExcPending
 											if v220 != 0 {
@@ -909,7 +909,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							} else {
 								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 									if v153 == int32(1) {
 										F_remove_tablespace_symlink(m, v16)
 										mBase = m.M
@@ -933,13 +933,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -988,13 +988,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(297648), v8+int32(16))
+													F_errmsg(m, int32(297709), v8+int32(16))
 													mBase = m.M
 													v232 = m.ExcPending
 													if v232 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(499826), int32(665), int32(168083))
+														F_errfinish(m, int32(499979), int32(665), int32(168083))
 														mBase = m.M
 														v237 = m.ExcPending
 														if v237 != 0 {
@@ -1050,7 +1050,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 				}
 			}
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(561902)
+			*(*int32)(unsafe.Add(mBase, uint32(v8)+148)) = int32(562055)
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+144)) = l0
 			v44 = F_psprintf(m, int32(177111), v8+int32(144))
 			mBase = m.M
@@ -1058,7 +1058,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 			if v45 != 0 {
 				return
 			} else {
-				v47 = *(*int32)(unsafe.Add(mBase, _consts[308]))
+				v47 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 				v48 = F_chmod(m, l0, v47)
 				mBase = m.M
 				if v48 == int32(0) {
@@ -1081,13 +1081,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v111
-									F_errmsg(m, int32(296480), v8+int32(32))
+									F_errmsg(m, int32(296541), v8+int32(32))
 									mBase = m.M
 									v179 = m.ExcPending
 									if v179 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(499826), int32(634), int32(168083))
+										F_errfinish(m, int32(499979), int32(634), int32(168083))
 										mBase = m.M
 										v184 = m.ExcPending
 										if v184 != 0 {
@@ -1101,12 +1101,12 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v124 = *(*int32)(unsafe.Add(mBase, _consts[308]))
+							v124 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 							v125 = F_mkdir(m, v111, v124)
 							mBase = m.M
 							if int32(0) <= v125 {
 								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 									if v153 == int32(1) {
 										F_remove_tablespace_symlink(m, v16)
 										mBase = m.M
@@ -1130,13 +1130,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -1185,13 +1185,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(297648), v8+int32(16))
+													F_errmsg(m, int32(297709), v8+int32(16))
 													mBase = m.M
 													v232 = m.ExcPending
 													if v232 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(499826), int32(665), int32(168083))
+														F_errfinish(m, int32(499979), int32(665), int32(168083))
 														mBase = m.M
 														v237 = m.ExcPending
 														if v237 != 0 {
@@ -1255,13 +1255,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v111
-										F_errmsg(m, int32(296851), v8)
+										F_errmsg(m, int32(296912), v8)
 										mBase = m.M
 										v137 = m.ExcPending
 										if v137 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(639), int32(168083))
+											F_errfinish(m, int32(499979), int32(639), int32(168083))
 											mBase = m.M
 											v142 = m.ExcPending
 											if v142 != 0 {
@@ -1298,7 +1298,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 									if v197 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(499826), int32(645), int32(168083))
+										F_errfinish(m, int32(499979), int32(645), int32(168083))
 										mBase = m.M
 										v202 = m.ExcPending
 										if v202 != 0 {
@@ -1312,7 +1312,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							}
 						} else {
-							v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+							v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 							if v149 == int32(0) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
@@ -1327,13 +1327,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v111
-										F_errmsg(m, int32(419421), v8+int32(48))
+										F_errmsg(m, int32(419556), v8+int32(48))
 										mBase = m.M
 										v215 = m.ExcPending
 										if v215 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(650), int32(168083))
+											F_errfinish(m, int32(499979), int32(650), int32(168083))
 											mBase = m.M
 											v220 = m.ExcPending
 											if v220 != 0 {
@@ -1348,7 +1348,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								}
 							} else {
 								if v18 != 0 {
-									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+									v153 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 									if v153 == int32(1) {
 										F_remove_tablespace_symlink(m, v16)
 										mBase = m.M
@@ -1372,13 +1372,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-														F_errmsg(m, int32(297648), v8+int32(16))
+														F_errmsg(m, int32(297709), v8+int32(16))
 														mBase = m.M
 														v232 = m.ExcPending
 														if v232 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(499826), int32(665), int32(168083))
+															F_errfinish(m, int32(499979), int32(665), int32(168083))
 															mBase = m.M
 															v237 = m.ExcPending
 															if v237 != 0 {
@@ -1427,13 +1427,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v16
-													F_errmsg(m, int32(297648), v8+int32(16))
+													F_errmsg(m, int32(297709), v8+int32(16))
 													mBase = m.M
 													v232 = m.ExcPending
 													if v232 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(499826), int32(665), int32(168083))
+														F_errfinish(m, int32(499979), int32(665), int32(168083))
 														mBase = m.M
 														v237 = m.ExcPending
 														if v237 != 0 {
@@ -1508,15 +1508,15 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								if v67 != 0 {
 									return
 								} else {
-									v69 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
+									v69 = int32(*(*uint8)(unsafe.Add(mBase, _consts[310])))
 									if v69 == int32(1) {
-										F_errhint(m, int32(609125), int32(0))
+										F_errhint(m, int32(609278), int32(0))
 										mBase = m.M
 										v75 = m.ExcPending
 										if v75 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499826), int32(613), int32(168083))
+											F_errfinish(m, int32(499979), int32(613), int32(168083))
 											mBase = m.M
 											v80 = m.ExcPending
 											if v80 != 0 {
@@ -1528,7 +1528,7 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 											}
 										}
 									} else {
-										F_errfinish(m, int32(499826), int32(613), int32(168083))
+										F_errfinish(m, int32(499979), int32(613), int32(168083))
 										mBase = m.M
 										v80 = m.ExcPending
 										if v80 != 0 {
@@ -1549,13 +1549,13 @@ func F_create_tablespace_directories(m *base.Module, l0 int32, l1 int32) {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+128)) = l0
-								F_errmsg(m, int32(296640), v8+int32(128))
+								F_errmsg(m, int32(296701), v8+int32(128))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(499826), int32(618), int32(168083))
+									F_errfinish(m, int32(499979), int32(618), int32(168083))
 									mBase = m.M
 									v93 = m.ExcPending
 									if v93 != 0 {
@@ -1793,9 +1793,9 @@ func F_destroy_tablespace_directories(m *base.Module, l0 int32, l1 int32) int32 
 	v10 = m.G0
 	v12 = v10 - int32(208)
 	m.G0 = v12
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+96)) = int32(489010)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+96)) = int32(489145)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+100)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(561902)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = int32(562055)
 	v22 = F_psprintf(m, int32(176985), v12+int32(96))
 	mBase = m.M
 	v25 = m.ExcPending
@@ -1909,7 +1909,7 @@ L13:
 L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v22
-	F_errmsg(m, int32(296688), v12+int32(16))
+	F_errmsg(m, int32(296749), v12+int32(16))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -1919,7 +1919,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(499826), int32(729), int32(168052))
+	F_errfinish(m, int32(499979), int32(729), int32(168052))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -1968,7 +1968,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v22
-	F_errmsg(m, int32(296688), v12+int32(32))
+	F_errmsg(m, int32(296749), v12+int32(32))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -1978,7 +1978,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(499826), int32(739), int32(168052))
+	F_errfinish(m, int32(499979), int32(739), int32(168052))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -2264,7 +2264,7 @@ L62:
 L63:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = v105
-	F_errmsg(m, int32(296815), v12-int32(-64))
+	F_errmsg(m, int32(296876), v12-int32(-64))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {
@@ -2274,7 +2274,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(499826), int32(768), int32(168052))
+	F_errfinish(m, int32(499979), int32(768), int32(168052))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -2362,7 +2362,7 @@ L77:
 L78:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v22
-	F_errmsg(m, int32(296815), v12+int32(48))
+	F_errmsg(m, int32(296876), v12+int32(48))
 	mBase = m.M
 	v218 = m.ExcPending
 	if v218 != 0 {
@@ -2372,7 +2372,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(499826), int32(781), int32(168052))
+	F_errfinish(m, int32(499979), int32(781), int32(168052))
 	mBase = m.M
 	v223 = m.ExcPending
 	if v223 != 0 {
@@ -2615,7 +2615,7 @@ L120:
 	}
 L121:
 	;
-	v372 = int32(297960)
+	v372 = int32(298021)
 	v373 = int32(805)
 	goto L108
 L122:
@@ -2713,7 +2713,7 @@ L135:
 	}
 L136:
 	;
-	v372 = int32(296815)
+	v372 = int32(296876)
 	v373 = int32(816)
 	goto L108
 L137:
@@ -2776,7 +2776,7 @@ L145:
 	}
 L146:
 	;
-	v372 = int32(297608)
+	v372 = int32(297669)
 	v373 = int32(828)
 	goto L108
 L147:
@@ -2816,12 +2816,12 @@ L151:
 	}
 L152:
 	;
-	v372 = int32(315949)
+	v372 = int32(316010)
 	v373 = int32(837)
 	goto L108
 L153:
 	;
-	F_errfinish(m, int32(499826), v373, int32(168052))
+	F_errfinish(m, int32(499979), v373, int32(168052))
 	mBase = m.M
 	v380 = m.ExcPending
 	if v380 != 0 {

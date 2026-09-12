@@ -65,7 +65,7 @@ func F_yy_fatal_error_3(m *base.Module, l0 int32) {
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(314735), int32(38), int32(80852))
+			F_errfinish(m, int32(314796), int32(38), int32(80852))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

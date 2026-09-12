@@ -1111,9 +1111,9 @@ L17:
 	*(*int32)(unsafe.Add(mBase, uint32(v51))) = v50 << (uint(int32(2)) % 32)
 	v56 = v50 + v51
 	v57 = v20 + v48
-	v59 = *(*int32)(unsafe.Add(mBase, _consts[495]))
+	v59 = *(*int32)(unsafe.Add(mBase, _consts[496]))
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)+4))
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v60*int32(28))+uint32(_consts[1304])))
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v60*int32(28))+uint32(_consts[1305])))
 	goto L19
 L18:
 	;
@@ -1616,9 +1616,9 @@ func F_text_to_stavalues(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	v9 = m.G0
 	v11 = v9 - int32(112)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[900]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[901]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = v14
-	v17 = *(*int64)(unsafe.Add(mBase, _consts[901]))
+	v17 = *(*int64)(unsafe.Add(mBase, _consts[902]))
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+16)) = v17
 	v19 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v11)+21)) = uint8(v19)
@@ -1719,7 +1719,7 @@ func F_text_to_stavalues(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 											if v81 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(493938), int32(738), int32(157823))
+												F_errfinish(m, int32(494073), int32(738), int32(157823))
 												mBase = m.M
 												v86 = m.ExcPending
 												if v86 != 0 {

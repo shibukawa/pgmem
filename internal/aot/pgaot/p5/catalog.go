@@ -111,9 +111,9 @@ L1:
 	return
 L2:
 	;
-	v24 = int32(4515600)
+	v24 = int32(4515712)
 	v25 = *(*int32)(unsafe.Add(mBase, _consts[9]))
-	v28 = *(*int32)(unsafe.Add(mBase, _consts[366]))
+	v28 = *(*int32)(unsafe.Add(mBase, _consts[367]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v28
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v22)+52))
 	v31 = F_CreateTupleDescCopyConstr(m, v30)
@@ -188,7 +188,7 @@ L11:
 	*(*int32)(unsafe.Add(mBase, uint32(v77+(l0+int32(16))))) = v171
 	*(*int32)(unsafe.Add(mBase, uint32(v77+(l0+int32(32))))) = v170
 	v178 = l0 + int32(104) + v63*int32(48)
-	v182 = *(*int32)(unsafe.Add(mBase, _consts[366]))
+	v182 = *(*int32)(unsafe.Add(mBase, _consts[367]))
 	F_fmgr_info_cxt(m, v168, v178+int32(16), v182)
 	mBase = m.M
 	v184 = m.ExcPending
@@ -248,7 +248,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(499468), int32(1178), int32(400187))
+	F_errfinish(m, int32(499621), int32(1178), int32(400322))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -402,7 +402,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(499468), int32(330), int32(173897))
+	F_errfinish(m, int32(499621), int32(330), int32(173897))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {

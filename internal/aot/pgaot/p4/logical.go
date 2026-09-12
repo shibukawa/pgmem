@@ -74,13 +74,13 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 					if v51 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(255474), int32(0))
+						F_errmsg(m, int32(255507), int32(0))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(497876), int32(128), int32(123018))
+							F_errfinish(m, int32(498011), int32(128), int32(123018))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
@@ -126,7 +126,7 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 								if v71 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(497876), int32(143), int32(123018))
+									F_errfinish(m, int32(498011), int32(143), int32(123018))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -159,13 +159,13 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 				if v35 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(729010), int32(0))
+					F_errmsg(m, int32(729163), int32(0))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(497876), int32(123), int32(123018))
+						F_errfinish(m, int32(498011), int32(123), int32(123018))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -375,7 +375,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(496297), int32(820), int32(156207))
+	F_errfinish(m, int32(496432), int32(820), int32(156207))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -640,7 +640,7 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v78
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v150
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v50 + int32(28)
-	F_errmsg(m, int32(296081), v15)
+	F_errmsg(m, int32(296142), v15)
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -650,7 +650,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(496297), int32(886), int32(156207))
+	F_errfinish(m, int32(496432), int32(886), int32(156207))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {

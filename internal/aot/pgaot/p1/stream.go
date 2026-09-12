@@ -193,7 +193,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(496374), int32(1084), int32(411679))
+	F_errfinish(m, int32(496509), int32(1084), int32(411814))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -546,12 +546,12 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v10 = v8 - int32(32)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(403081)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(403216)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v16
-	v20 = int32(4508504)
+	v20 = int32(4508616)
 	v21 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 	*(*int32)(unsafe.Add(mBase, _consts[337])) = v10 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v21
@@ -577,14 +577,14 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			if v47 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(503866)
-				F_errmsg(m, int32(318986), v10)
+				*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(504019)
+				F_errmsg(m, int32(319047), v10)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(497876), int32(1534), int32(218103))
+					F_errfinish(m, int32(498011), int32(1534), int32(218103))
 					mBase = m.M
 					v57 = m.ExcPending
 					if v57 != 0 {
@@ -646,12 +646,12 @@ func F_stream_truncate_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+104))
 	if v15 != 0 {
-		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(357703)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(357808)
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v14
 		v19 = *(*int64)(unsafe.Add(mBase, uint32(l4)))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(993)
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v19
-		v23 = int32(4508504)
+		v23 = int32(4508616)
 		v24 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 		*(*int32)(unsafe.Add(mBase, _consts[337])) = v12 + int32(4)
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v24

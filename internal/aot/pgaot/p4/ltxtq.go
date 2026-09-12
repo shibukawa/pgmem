@@ -166,13 +166,13 @@ func F_ltxtq_out(m *base.Module, l0 int32) int32 {
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errdetail(m, int32(573604), int32(0))
+						F_errdetail(m, int32(573757), int32(0))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496380), int32(581), int32(67058))
+							F_errfinish(m, int32(496515), int32(581), int32(67058))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {

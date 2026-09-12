@@ -273,7 +273,7 @@ func F_getOpFamilyDescription(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493985), int32(4190), int32(246973))
+						F_errfinish(m, int32(494120), int32(4190), int32(247006))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -312,7 +312,7 @@ func F_getOpFamilyDescription(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v84 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493985), int32(4198), int32(246973))
+							F_errfinish(m, int32(494120), int32(4198), int32(247006))
 							mBase = m.M
 							v89 = m.ExcPending
 							if v89 != 0 {
@@ -524,7 +524,7 @@ func F_getOpFamilyIdentity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					if v27 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493985), int32(6066), int32(10763))
+						F_errfinish(m, int32(494120), int32(6066), int32(10763))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -563,7 +563,7 @@ func F_getOpFamilyIdentity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						if v108 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493985), int32(6074), int32(10763))
+							F_errfinish(m, int32(494120), int32(6074), int32(10763))
 							mBase = m.M
 							v113 = m.ExcPending
 							if v113 != 0 {

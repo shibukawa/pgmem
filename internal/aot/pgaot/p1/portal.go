@@ -394,7 +394,7 @@ L18:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v43
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v54)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v51
-	F_errmsg_internal(m, int32(244582), int32(0))
+	F_errmsg_internal(m, int32(244615), int32(0))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -418,9 +418,9 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v43
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v54)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v51
-	F_getrusage(m, int32(4439240))
+	F_getrusage(m, int32(4439352))
 	mBase = m.M
-	F___gettimeofday(m, int32(4439392))
+	F___gettimeofday(m, int32(4439504))
 	mBase = m.M
 	goto L23
 L21:
@@ -435,7 +435,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v43
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v54)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v51
-	F_errfinish(m, int32(492621), int32(708), int32(244582))
+	F_errfinish(m, int32(492756), int32(708), int32(244615))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -744,7 +744,7 @@ L52:
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v278)
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	*(*int32)(unsafe.Add(mBase, uint32(v24))) = v284
-	F_errmsg_internal(m, int32(480829), v24)
+	F_errmsg_internal(m, int32(480964), v24)
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -765,7 +765,7 @@ L53:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+36)) = v176
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v278)
-	F_errfinish(m, int32(492621), int32(800), int32(244582))
+	F_errfinish(m, int32(492756), int32(800), int32(244615))
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -892,7 +892,7 @@ L70:
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+44)) = v169
 	v402 = v170 & int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v24)+43)) = uint8(v402)
-	F_ShowUsage(m, int32(524187))
+	F_ShowUsage(m, int32(524340))
 	mBase = m.M
 	v406 = m.ExcPending
 	if v406 != 0 {

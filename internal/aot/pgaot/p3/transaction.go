@@ -320,7 +320,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v131
-	F_errmsg(m, int32(713705), v11+int32(-48))
+	F_errmsg(m, int32(713858), v11+int32(-48))
 	mBase = m.M
 	v184 = m.ExcPending
 	if v184 != 0 {
@@ -604,7 +604,7 @@ L44:
 	}
 L45:
 	;
-	F_errhint(m, int32(585197), int32(0))
+	F_errhint(m, int32(585350), int32(0))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {
@@ -614,7 +614,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(495943), int32(166), int32(465616))
+	F_errfinish(m, int32(496078), int32(166), int32(465751))
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -629,7 +629,7 @@ L47:
 	}
 L48:
 	;
-	F_errmsg_internal(m, int32(260720), int32(0))
+	F_errmsg_internal(m, int32(260753), int32(0))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -639,7 +639,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(495943), int32(87), int32(465616))
+	F_errfinish(m, int32(496078), int32(87), int32(465751))
 	mBase = m.M
 	v165 = m.ExcPending
 	if v165 != 0 {
@@ -664,7 +664,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(495943), int32(103), int32(465616))
+	F_errfinish(m, int32(496078), int32(103), int32(465751))
 	mBase = m.M
 	v178 = m.ExcPending
 	if v178 != 0 {
@@ -679,7 +679,7 @@ L53:
 	}
 L54:
 	;
-	F_errhint(m, int32(585197), int32(0))
+	F_errhint(m, int32(585350), int32(0))
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {
@@ -689,7 +689,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(495943), int32(159), int32(465616))
+	F_errfinish(m, int32(496078), int32(159), int32(465751))
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {
@@ -799,7 +799,7 @@ L69:
 	}
 L70:
 	;
-	v238 = int32(585000)
+	v238 = int32(585153)
 	v239 = int32(179)
 	goto L65
 L71:
@@ -816,12 +816,12 @@ L71:
 	}
 L72:
 	;
-	v238 = int32(584814)
+	v238 = int32(584967)
 	v239 = int32(186)
 	goto L65
 L73:
 	;
-	F_errfinish(m, int32(495943), v239, int32(465616))
+	F_errfinish(m, int32(496078), v239, int32(465751))
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {
@@ -890,7 +890,7 @@ L81:
 L82:
 	;
 	v295 = base.I64_extend_i32_u(v284)
-	v296 = F_SimpleLruZeroPage(m, int32(4410128), v295)
+	v296 = F_SimpleLruZeroPage(m, int32(4410240), v295)
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -997,7 +997,7 @@ L94:
 	;
 	v349 = int32(*(*uint8)(unsafe.Add(mBase, _consts[82])))
 	v351 = base.I64_extend_i32_u(v331)
-	v352 = F_SimpleLruZeroPage(m, int32(4410212), v351)
+	v352 = F_SimpleLruZeroPage(m, int32(4410324), v351)
 	mBase = m.M
 	v353 = m.ExcPending
 	if v353 != 0 {
@@ -1209,7 +1209,7 @@ func F_TransactionIdGetStatus(m *base.Module, l0 int32, l1 int32) int32 {
 	var v48 int32
 	_ = v48
 	v10 = int32(base.Ui32(l0) >> (uint(int32(15)) % 32))
-	v12 = F_SimpleLruReadPage_ReadOnly(m, int32(4410128), base.I64_extend_i32_u(v10), l0)
+	v12 = F_SimpleLruReadPage_ReadOnly(m, int32(4410240), base.I64_extend_i32_u(v10), l0)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -1217,7 +1217,7 @@ func F_TransactionIdGetStatus(m *base.Module, l0 int32, l1 int32) int32 {
 	} else {
 		v18 = int32(2)
 		v19 = int32(base.Ui32(l0&int32(32764)) >> (uint(v18) % 32))
-		v20 = int32(4410128)
+		v20 = int32(4410240)
 		v21 = *(*int32)(unsafe.Add(mBase, _consts[81]))
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 		v26 = *(*int32)(unsafe.Add(mBase, uint32(v22+v12<<(uint(v18)%32))))
@@ -1670,7 +1670,7 @@ func F_TransactionIdSetPageStatusInternal(m *base.Module, l0 int32, l1 int32, l2
 	var v267 int32
 	_ = v267
 	v17 = base.B2i32(l4 == int64(0))
-	v18 = F_SimpleLruReadPage(m, int32(4410128), l5, v17, l0)
+	v18 = F_SimpleLruReadPage(m, int32(4410240), l5, v17, l0)
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
@@ -2007,7 +2007,7 @@ func F_check_transaction_read_only(m *base.Module, l0 int32, l1 int32, l2 int32)
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+28))
 					if int32(1) < v23 {
 						v46 = v19
-						v47 = int32(256783)
+						v47 = int32(256816)
 						*(*int32)(unsafe.Add(mBase, _consts[527])) = v46
 						v52 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 						*(*int32)(unsafe.Add(mBase, _consts[506])) = v52

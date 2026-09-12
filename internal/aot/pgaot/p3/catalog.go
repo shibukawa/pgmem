@@ -480,7 +480,7 @@ L7:
 	}
 L8:
 	;
-	v358 = int32(4515600)
+	v358 = int32(4515712)
 	v359 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v362 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v362
@@ -528,7 +528,7 @@ L9:
 	}
 L10:
 	;
-	v185 = int32(4515600)
+	v185 = int32(4515712)
 	v186 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v189 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v189
@@ -619,7 +619,7 @@ L16:
 L17:
 	;
 	v94 = int32(0)
-	v95 = int32(4502360)
+	v95 = int32(4502472)
 	v96 = *(*int32)(unsafe.Add(mBase, _consts[1064]))
 	*(*uint16)(unsafe.Add(mBase, uint32(v76)+8)) = uint16(v94)
 	*(*int32)(unsafe.Add(mBase, uint32(v76)+4)) = l3
@@ -1217,7 +1217,7 @@ L72:
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+56)) = v516
 	*(*int32)(unsafe.Add(mBase, uint32(v34)+60)) = v512
 	*(*uint8)(unsafe.Add(mBase, uint32(v34)+51)) = uint8(v547)
-	F_errfinish(m, int32(499468), int32(992), int32(400137))
+	F_errfinish(m, int32(499621), int32(992), int32(400272))
 	mBase = m.M
 	v629 = m.ExcPending
 	if v629 != 0 {
@@ -1482,7 +1482,7 @@ func F_GetCatalogSnapshot(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1195]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1196]))
 	if v4 != 0 {
 		v9 = v4
 		return v9

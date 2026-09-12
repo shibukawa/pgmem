@@ -70,7 +70,7 @@ func F_KnownAssignedXidsDisplay(m *base.Module, l0 int32) {
 	v9 = m.G0
 	v11 = v9 + int32(-64)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[515]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
 	F_initStringInfo(m, v9+int32(-16))
@@ -93,7 +93,7 @@ L2:
 	}
 L3:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[675]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[676]))
 	v26 = v16
 	v27 = v2
 	v28 = v23
@@ -126,11 +126,11 @@ L7:
 	goto L5
 L8:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[677]))
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(v37+v26<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v26
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v41
-	F_appendStringInfo(m, v9+int32(-16), int32(731558), v9+int32(-32))
+	F_appendStringInfo(m, v9+int32(-16), int32(731711), v9+int32(-32))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -156,7 +156,7 @@ L10:
 	}
 L11:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, _consts[675]))
+	v52 = *(*int32)(unsafe.Add(mBase, _consts[676]))
 	v55 = v27 + int32(1)
 	v56 = v52
 	goto L10
@@ -203,7 +203,7 @@ L16:
 	}
 L17:
 	;
-	F_errfinish(m, int32(492693), int32(5246), int32(26488))
+	F_errfinish(m, int32(492828), int32(5246), int32(26488))
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -356,7 +356,7 @@ L7:
 	goto L8
 L8:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[515]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+20))
 	v45 = *(*int32)(unsafe.Add(mBase, uint32(v43)+16))
 	v46 = v44 - v45
@@ -397,10 +397,10 @@ L13:
 	return
 L14:
 	;
-	v49 = int32(4432368)
-	v51 = *(*int32)(unsafe.Add(mBase, _consts[677]))
+	v49 = int32(4432480)
+	v51 = *(*int32)(unsafe.Add(mBase, _consts[678]))
 	v52 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[677])) = v51 + v52
+	*(*int32)(unsafe.Add(mBase, _consts[678])) = v51 + v52
 	if v46 < v47<<(uint(v52)%32) {
 		goto L13
 	} else {
@@ -439,8 +439,8 @@ L17:
 L18:
 	;
 	v62 = int32(1)
-	v65 = *(*int32)(unsafe.Add(mBase, _consts[676]))
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[675]))
+	v65 = *(*int32)(unsafe.Add(mBase, _consts[677]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[676]))
 	if v45+v62 != v44 {
 		goto L19
 	} else {
@@ -550,7 +550,7 @@ L32:
 	goto L17
 L33:
 	;
-	*(*int64)(unsafe.Add(mBase, _consts[678])) = v176 + v175*int64(1000000) - int64(946684800000000)
+	*(*int64)(unsafe.Add(mBase, _consts[679])) = v176 + v175*int64(1000000) - int64(946684800000000)
 	goto L13
 }
 func F_koi8r_to_utf8(m *base.Module, l0 int32) int32 {
@@ -589,7 +589,7 @@ func F_koi8r_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4389092), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4389140), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -632,7 +632,7 @@ func F_koi8r_to_win1251(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(23), int32(2229600), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(23), int32(2229648), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

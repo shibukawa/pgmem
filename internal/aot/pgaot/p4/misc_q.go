@@ -494,7 +494,7 @@ L68:
 	v135 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v136 = int32(*(*int8)(unsafe.Add(mBase, uint32(v135))))
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v136
-	F_errmsg_internal(m, int32(485606), v11)
+	F_errmsg_internal(m, int32(485741), v11)
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -504,7 +504,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(497706), int32(144), int32(365539))
+	F_errfinish(m, int32(497841), int32(144), int32(365644))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {

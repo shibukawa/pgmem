@@ -127,13 +127,13 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 						if v74 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(237343), int32(0))
+							F_errmsg(m, int32(237376), int32(0))
 							mBase = m.M
 							v78 = m.ExcPending
 							if v78 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498948), int32(658), int32(31245))
+								F_errfinish(m, int32(499083), int32(658), int32(31245))
 								mBase = m.M
 								v83 = m.ExcPending
 								if v83 != 0 {
@@ -242,13 +242,13 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 							if v74 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(237343), int32(0))
+								F_errmsg(m, int32(237376), int32(0))
 								mBase = m.M
 								v78 = m.ExcPending
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498948), int32(658), int32(31245))
+									F_errfinish(m, int32(499083), int32(658), int32(31245))
 									mBase = m.M
 									v83 = m.ExcPending
 									if v83 != 0 {
@@ -303,13 +303,13 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 					if v58 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(237343), int32(0))
+						F_errmsg(m, int32(237376), int32(0))
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498948), int32(658), int32(31245))
+							F_errfinish(m, int32(499083), int32(658), int32(31245))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -389,13 +389,13 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 								if v74 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(237343), int32(0))
+									F_errmsg(m, int32(237376), int32(0))
 									mBase = m.M
 									v78 = m.ExcPending
 									if v78 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498948), int32(658), int32(31245))
+										F_errfinish(m, int32(499083), int32(658), int32(31245))
 										mBase = m.M
 										v83 = m.ExcPending
 										if v83 != 0 {

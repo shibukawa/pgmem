@@ -20,7 +20,7 @@ func F_CreateCommandName(m *base.Module, l0 int32) int32 {
 	if v5 != 0 {
 		return int32(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(3))%32))+uint32(_consts[505])))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(3))%32))+uint32(_consts[506])))
 		return v10
 	}
 }
@@ -226,6 +226,6 @@ func F_GetCommandTagName(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v6 int32
 	_ = v6
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[505])))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[506])))
 	return v6
 }

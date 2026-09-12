@@ -382,7 +382,7 @@ func F_compute_tsvector_stats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 f
 	v37 = int32(10000)
 	v42 = base.I32_div_s(v27*v37+v37, int32(7))
 	v45 = v27 * int32(10)
-	v49 = F_hash_create(m, int32(393072), v45, v25+int32(44), int32(1224))
+	v49 = F_hash_create(m, int32(393207), v45, v25+int32(44), int32(1224))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -1070,7 +1070,7 @@ L96:
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+8)) = v354
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+4)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v45
-	F_errmsg_internal(m, int32(480411), v25)
+	F_errmsg_internal(m, int32(480546), v25)
 	mBase = m.M
 	v556 = m.ExcPending
 	if v556 != 0 {
@@ -1090,7 +1090,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(498646), int32(343), int32(125852))
+	F_errfinish(m, int32(498781), int32(343), int32(125852))
 	mBase = m.M
 	v561 = m.ExcPending
 	if v561 != 0 {
@@ -1146,7 +1146,7 @@ L106:
 	}
 L107:
 	;
-	v585 = int32(4515600)
+	v585 = int32(4515712)
 	v586 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v588 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v588
@@ -1227,7 +1227,7 @@ L113:
 	goto L111
 L114:
 	;
-	F_errmsg_internal(m, int32(445277), int32(0))
+	F_errmsg_internal(m, int32(445412), int32(0))
 	mBase = m.M
 	v709 = m.ExcPending
 	if v709 != 0 {
@@ -1237,7 +1237,7 @@ L114:
 	}
 L115:
 	;
-	F_errfinish(m, int32(498646), int32(467), int32(392095))
+	F_errfinish(m, int32(498781), int32(467), int32(392230))
 	mBase = m.M
 	v714 = m.ExcPending
 	if v714 != 0 {
@@ -2766,7 +2766,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v25))) = base.I32_extend8_s(v32)
-	F_errmsg_internal(m, int32(502418), v25)
+	F_errmsg_internal(m, int32(502571), v25)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -2776,7 +2776,7 @@ L9:
 	}
 L10:
 	;
-	F_errfinish(m, int32(496071), int32(308), int32(215719))
+	F_errfinish(m, int32(496206), int32(308), int32(215719))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {

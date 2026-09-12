@@ -171,7 +171,7 @@ func F_brinLockRevmapPageForUpdate(m *base.Module, l0 int32, l1 int32) int32 {
 			if v70 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(496230), int32(471), int32(225448))
+				F_errfinish(m, int32(496365), int32(471), int32(225481))
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
@@ -904,7 +904,7 @@ L65:
 	goto L66
 L66:
 	;
-	v400 = int32(4510260)
+	v400 = int32(4510372)
 	v402 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v402 + int32(1)
 	v406 = int32(61586)
@@ -1117,7 +1117,7 @@ L93:
 	}
 L94:
 	;
-	v461 = int32(4510260)
+	v461 = int32(4510372)
 	v463 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v463 - int32(1)
 	v467 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
@@ -1279,7 +1279,7 @@ L114:
 	goto L111
 L115:
 	;
-	F_errfinish(m, int32(496230), int32(586), int32(425892))
+	F_errfinish(m, int32(496365), int32(586), int32(426027))
 	mBase = m.M
 	v568 = m.ExcPending
 	if v568 != 0 {
@@ -1339,13 +1339,13 @@ func F_brin_bloom_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(24)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_real_reloption(m, v2, int32(401807), int32(402866), float64(-0.1), float64(-1), float64(2.147483647e+09), int32(8))
+	F_add_local_real_reloption(m, v2, int32(401942), int32(403001), float64(-0.1), float64(-1), float64(2.147483647e+09), int32(8))
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		F_add_local_real_reloption(m, v2, int32(354591), int32(132168), float64(0.01), float64(0.0001), float64(0.25), int32(16))
+		F_add_local_real_reloption(m, v2, int32(354696), int32(132168), float64(0.01), float64(0.0001), float64(0.25), int32(16))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
@@ -1911,7 +1911,7 @@ L36:
 	goto L33
 L37:
 	;
-	v158 = int32(4510260)
+	v158 = int32(4510372)
 	v160 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	v161 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v160 + v161
@@ -2142,7 +2142,7 @@ L76:
 	}
 L77:
 	;
-	v359 = int32(4510260)
+	v359 = int32(4510372)
 	v361 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v361 - int32(1)
 	v365 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
@@ -2369,7 +2369,7 @@ L108:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(8152)
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = l6
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = v389 + int32(4)
-	F_errmsg(m, int32(693225), v18)
+	F_errmsg(m, int32(693378), v18)
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {
@@ -2379,7 +2379,7 @@ L108:
 	}
 L109:
 	;
-	F_errfinish(m, int32(494058), int32(362), int32(81547))
+	F_errfinish(m, int32(494193), int32(362), int32(81547))
 	mBase = m.M
 	v403 = m.ExcPending
 	if v403 != 0 {
@@ -2394,7 +2394,7 @@ L110:
 	}
 L111:
 	;
-	F_errmsg_internal(m, int32(407761), int32(0))
+	F_errmsg_internal(m, int32(407896), int32(0))
 	mBase = m.M
 	v411 = m.ExcPending
 	if v411 != 0 {
@@ -2404,7 +2404,7 @@ L111:
 	}
 L112:
 	;
-	F_errfinish(m, int32(494058), int32(414), int32(81547))
+	F_errfinish(m, int32(494193), int32(414), int32(81547))
 	mBase = m.M
 	v416 = m.ExcPending
 	if v416 != 0 {
@@ -2548,7 +2548,7 @@ L13:
 	return
 L14:
 	;
-	v32 = int32(4515600)
+	v32 = int32(4515712)
 	v33 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v35
@@ -3993,7 +3993,7 @@ L11:
 	goto L12
 L12:
 	;
-	v63 = int32(4515600)
+	v63 = int32(4515712)
 	v64 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v28)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v66
@@ -4127,7 +4127,7 @@ L32:
 	goto L33
 L33:
 	;
-	v117 = int32(4515600)
+	v117 = int32(4515712)
 	v118 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v120 = *(*int32)(unsafe.Add(mBase, uint32(v28)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v120
@@ -4303,7 +4303,7 @@ L54:
 	}
 L55:
 	;
-	v203 = int32(4515600)
+	v203 = int32(4515712)
 	v204 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v201
 	v209 = F_build_expanded_ranges(m, v179, v46, v158, v25+int32(4))
@@ -5241,7 +5241,7 @@ L7:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+56)) = v44
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+52)) = v43
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v42
-	F_appendStringInfo(m, v11+int32(128), int32(482130), v11+int32(48))
+	F_appendStringInfo(m, v11+int32(128), int32(482265), v11+int32(48))
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -5579,7 +5579,7 @@ func F_brin_minmax_multi_summary_recv(m *base.Module, l0 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(497978), int32(3121), int32(36205))
+				F_errfinish(m, int32(498113), int32(3121), int32(36205))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -5708,7 +5708,7 @@ func F_brin_new_memtuple(m *base.Module, l0 int32) int32 {
 					*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)) = uint8(v40)
 					*(*int32)(unsafe.Add(mBase, uint32(v21)+20)) = v38
 					v44 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-					v49 = F_AllocSetContextCreateInternal(m, v44, int32(383609), int32(0), int32(8192), int32(8388608))
+					v49 = F_AllocSetContextCreateInternal(m, v44, int32(383744), int32(0), int32(8192), int32(8388608))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
@@ -6267,7 +6267,7 @@ L52:
 L53:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v29
-	F_errmsg_internal(m, int32(483562), v15)
+	F_errmsg_internal(m, int32(483697), v15)
 	mBase = m.M
 	v183 = m.ExcPending
 	if v183 != 0 {
@@ -6277,7 +6277,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(326784), int32(230), int32(308869))
+	F_errfinish(m, int32(326845), int32(230), int32(308930))
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {
@@ -6745,13 +6745,13 @@ func F_brin_xlog_insert_update(m *base.Module, l0 int32, l1 int32) {
 				if v272 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(228320), int32(0))
+					F_errmsg_internal(m, int32(228353), int32(0))
 					mBase = m.M
 					v276 = m.ExcPending
 					if v276 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(498358), int32(88), int32(356120))
+						F_errfinish(m, int32(498493), int32(88), int32(356225))
 						mBase = m.M
 						v281 = m.ExcPending
 						if v281 != 0 {
@@ -6778,13 +6778,13 @@ func F_brin_xlog_insert_update(m *base.Module, l0 int32, l1 int32) {
 						if v285 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(384902), int32(0))
+							F_errmsg_internal(m, int32(385037), int32(0))
 							mBase = m.M
 							v289 = m.ExcPending
 							if v289 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(498358), int32(92), int32(356120))
+								F_errfinish(m, int32(498493), int32(92), int32(356225))
 								mBase = m.M
 								v294 = m.ExcPending
 								if v294 != 0 {
@@ -7301,13 +7301,13 @@ func F_brin_xlog_insert_update(m *base.Module, l0 int32, l1 int32) {
 					if v272 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(228320), int32(0))
+						F_errmsg_internal(m, int32(228353), int32(0))
 						mBase = m.M
 						v276 = m.ExcPending
 						if v276 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498358), int32(88), int32(356120))
+							F_errfinish(m, int32(498493), int32(88), int32(356225))
 							mBase = m.M
 							v281 = m.ExcPending
 							if v281 != 0 {
@@ -7334,13 +7334,13 @@ func F_brin_xlog_insert_update(m *base.Module, l0 int32, l1 int32) {
 							if v285 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(384902), int32(0))
+								F_errmsg_internal(m, int32(385037), int32(0))
 								mBase = m.M
 								v289 = m.ExcPending
 								if v289 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(498358), int32(92), int32(356120))
+									F_errfinish(m, int32(498493), int32(92), int32(356225))
 									mBase = m.M
 									v294 = m.ExcPending
 									if v294 != 0 {

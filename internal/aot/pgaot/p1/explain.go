@@ -520,7 +520,7 @@ L13:
 L14:
 	;
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	F_appendStringInfoString(m, v47, int32(752166))
+	F_appendStringInfoString(m, v47, int32(752319))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -579,7 +579,7 @@ L21:
 	}
 L22:
 	;
-	F_ExplainDummyGroup(m, int32(516680), l2)
+	F_ExplainDummyGroup(m, int32(516833), l2)
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -589,7 +589,7 @@ L22:
 	}
 L23:
 	;
-	F_ExplainDummyGroup(m, int32(524517), l2)
+	F_ExplainDummyGroup(m, int32(524670), l2)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -607,7 +607,7 @@ L26:
 	;
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v66
-	F_errmsg_internal(m, int32(485123), v19)
+	F_errmsg_internal(m, int32(485258), v19)
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -617,7 +617,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(496941), int32(419), int32(11516))
+	F_errfinish(m, int32(497076), int32(419), int32(11516))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -888,7 +888,7 @@ L63:
 	}
 L64:
 	;
-	v160 = int32(4515600)
+	v160 = int32(4515712)
 	v161 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v158
 	v164 = v158
@@ -916,7 +916,7 @@ L68:
 	goto L67
 L69:
 	;
-	v173 = F__emscripten_memcpy_bulkmem(m, v147+int32(152), int32(4413864), int32(128))
+	v173 = F__emscripten_memcpy_bulkmem(m, v147+int32(152), int32(4413976), int32(128))
 	mBase = m.M
 	goto L71
 L71:
@@ -1363,7 +1363,7 @@ L123:
 	}
 L124:
 	;
-	F_errfinish(m, int32(499080), int32(454), int32(95963))
+	F_errfinish(m, int32(499215), int32(454), int32(95963))
 	mBase = m.M
 	v473 = m.ExcPending
 	if v473 != 0 {
@@ -1388,7 +1388,7 @@ L126:
 	}
 L127:
 	;
-	F_errfinish(m, int32(499080), int32(608), int32(17183))
+	F_errfinish(m, int32(499215), int32(608), int32(17183))
 	mBase = m.M
 	v486 = m.ExcPending
 	if v486 != 0 {
@@ -1407,7 +1407,7 @@ L129:
 L130:
 	;
 	v493 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	F_appendStringInfoString(m, v493, int32(749971))
+	F_appendStringInfoString(m, v493, int32(750124))
 	mBase = m.M
 	v496 = m.ExcPending
 	if v496 != 0 {
@@ -1692,24 +1692,24 @@ L5:
 L6:
 	;
 	v101 = *(*int32)(unsafe.Add(mBase, uint32(v21)+84))
-	v102 = int32(382723)
+	v102 = int32(382858)
 	v103 = v101
 	goto L5
 L7:
 	;
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v21)+108))
-	v102 = int32(382707)
+	v102 = int32(382842)
 	v103 = v99
 	goto L5
 L8:
 	;
 	v76 = int32(1)
-	v78 = int32(382660)
+	v78 = int32(382795)
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
 	v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
 	switch v80 {
 	case 0:
-		v105 = int32(391882)
+		v105 = int32(392017)
 		v106 = v4
 		v108 = v76
 		v109 = v78
@@ -1721,7 +1721,7 @@ L8:
 	}
 L9:
 	;
-	v48 = int32(382666)
+	v48 = int32(382801)
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+80))
 	if v49 == int32(0) {
 		goto L16
@@ -1745,7 +1745,7 @@ L11:
 L12:
 	;
 	v38 = int32(1)
-	v39 = int32(382680)
+	v39 = int32(382815)
 	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+4)))
 	if v40 != v38 {
 		v105 = v36
@@ -1896,7 +1896,7 @@ L29:
 	}
 L30:
 	;
-	v105 = int32(392423)
+	v105 = int32(392558)
 	v106 = v4
 	v108 = v76
 	v109 = v78
@@ -1905,7 +1905,7 @@ L31:
 	;
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v86
-	F_errmsg_internal(m, int32(476929), v10+int32(-16))
+	F_errmsg_internal(m, int32(477064), v10+int32(-16))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -1915,7 +1915,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(496941), int32(4459), int32(308567))
+	F_errfinish(m, int32(497076), int32(4459), int32(308628))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -1935,7 +1935,7 @@ L34:
 L35:
 	;
 	v113 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	F_appendStringInfoString(m, v113, int32(273284))
+	F_appendStringInfoString(m, v113, int32(273317))
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -2155,7 +2155,7 @@ L65:
 	goto L64
 L66:
 	;
-	F_ExplainPropertyText(m, int32(506914), v106, l2)
+	F_ExplainPropertyText(m, int32(507067), v106, l2)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {

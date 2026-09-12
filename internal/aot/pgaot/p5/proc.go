@@ -476,7 +476,7 @@ func F_ProcArrayRemove(m *base.Module, l0 int32, l1 int32) {
 	_ = v751
 	var v755 int32
 	_ = v755
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[515]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	v17 = F_LWLockAcquire(m, v13+int32(512), int32(0))
 	mBase = m.M
@@ -572,7 +572,7 @@ L13:
 	;
 	v49 = *(*int64)(unsafe.Add(mBase, uint32(v44)+56))
 	*(*int64)(unsafe.Add(mBase, uint32(v44)+56)) = v49 + int64(1)
-	v53 = int32(4439040)
+	v53 = int32(4439152)
 	v54 = *(*int32)(unsafe.Add(mBase, _consts[101]))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)+4))
 	v59 = int32(0)
@@ -1758,7 +1758,7 @@ L197:
 	goto L196
 L198:
 	;
-	v713 = *(*int32)(unsafe.Add(mBase, _consts[516]))
+	v713 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 	v714 = v26
 	goto L201
 L199:
@@ -1879,7 +1879,7 @@ func F_proc_exit(m *base.Module, l0 int32) {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[450]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[451]))
 	if v8 == int32(42) {
 		F_proc_exit_prepare(m, l0)
 		mBase = m.M
@@ -1895,13 +1895,13 @@ func F_proc_exit(m *base.Module, l0 int32) {
 			} else {
 				if v15 != 0 {
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-					F_errmsg_internal(m, int32(678723), v5)
+					F_errmsg_internal(m, int32(678876), v5)
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(500088), int32(155), int32(99494))
+						F_errfinish(m, int32(500241), int32(155), int32(99494))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -1946,7 +1946,7 @@ func F_proc_exit(m *base.Module, l0 int32) {
 			if v35 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(500088), int32(109), int32(99494))
+				F_errfinish(m, int32(500241), int32(109), int32(99494))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {

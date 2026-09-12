@@ -664,13 +664,13 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 						if v117 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(441275), int32(0))
+							F_errmsg(m, int32(441410), int32(0))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
 								return int32(0)
 							} else {
-								F_errsave_finish(m, v19, int32(494073), int32(3438), int32(279171))
+								F_errsave_finish(m, v19, int32(494208), int32(3438), int32(279204))
 								mBase = m.M
 								v126 = m.ExcPending
 								if v126 != 0 {
@@ -696,7 +696,7 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v129))) = v128 << (uint(int32(2)) % 32)
 					v135 = int32(0)
 					v137 = v129 + int32(40)
-					v142 = F_path_decode(m, v20, v135, v62, v137, v17+int32(15), v135, int32(273272), v20, v19)
+					v142 = F_path_decode(m, v20, v135, v62, v137, v17+int32(15), v135, int32(273305), v20, v19)
 					mBase = m.M
 					v143 = m.ExcPending
 					if v143 != 0 {
@@ -837,14 +837,14 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v20
-						*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(273272)
-						F_errmsg(m, int32(725323), v17)
+						*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(273305)
+						F_errmsg(m, int32(725476), v17)
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {
 							return int32(0)
 						} else {
-							F_errsave_finish(m, v19, int32(494073), int32(3429), int32(279171))
+							F_errsave_finish(m, v19, int32(494208), int32(3429), int32(279204))
 							mBase = m.M
 							v99 = m.ExcPending
 							if v99 != 0 {
@@ -879,14 +879,14 @@ func F_poly_in(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v20
-					*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(273272)
-					F_errmsg(m, int32(725323), v17)
+					*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(273305)
+					F_errmsg(m, int32(725476), v17)
 					mBase = m.M
 					v94 = m.ExcPending
 					if v94 != 0 {
 						return int32(0)
 					} else {
-						F_errsave_finish(m, v19, int32(494073), int32(3429), int32(279171))
+						F_errsave_finish(m, v19, int32(494208), int32(3429), int32(279204))
 						mBase = m.M
 						v99 = m.ExcPending
 						if v99 != 0 {

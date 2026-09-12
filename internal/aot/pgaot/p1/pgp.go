@@ -16,9 +16,9 @@ func F_pgp_cfb_decrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v12
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	if v7 != 0 {
-		v8 = int32(6867)
+		v8 = int32(6870)
 	} else {
-		v8 = int32(6868)
+		v8 = int32(6871)
 	}
 	F_cfb_process(m, l0, l1, l2, l3, v8)
 	mBase = m.M
@@ -164,7 +164,7 @@ func F_pgp_get_digest_code(m *base.Module, l0 int32) int32 {
 	_ = v341
 	var v342 int32
 	_ = v342
-	v9 = int32(557448)
+	v9 = int32(557601)
 	v10 = l0
 	goto L4
 L1:
@@ -253,14 +253,14 @@ L15:
 	goto L5
 L16:
 	;
-	v340 = int32(4394960)
+	v340 = int32(4395008)
 	goto L2
 L17:
 	;
 	goto L18
 L18:
 	;
-	v57 = int32(561770)
+	v57 = int32(561923)
 	v58 = l0
 	goto L20
 L19:
@@ -341,14 +341,14 @@ L31:
 	goto L21
 L32:
 	;
-	v340 = int32(4394968)
+	v340 = int32(4395016)
 	goto L2
 L33:
 	;
 	goto L34
 L34:
 	;
-	v105 = int32(562191)
+	v105 = int32(562344)
 	v106 = l0
 	goto L36
 L35:
@@ -429,14 +429,14 @@ L47:
 	goto L37
 L48:
 	;
-	v340 = int32(4394976)
+	v340 = int32(4395024)
 	goto L2
 L49:
 	;
 	goto L50
 L50:
 	;
-	v153 = int32(563148)
+	v153 = int32(563301)
 	v154 = l0
 	goto L52
 L51:
@@ -517,14 +517,14 @@ L63:
 	goto L53
 L64:
 	;
-	v340 = int32(4394984)
+	v340 = int32(4395032)
 	goto L2
 L65:
 	;
 	goto L66
 L66:
 	;
-	v201 = int32(557034)
+	v201 = int32(557187)
 	v202 = l0
 	goto L68
 L67:
@@ -605,14 +605,14 @@ L79:
 	goto L69
 L80:
 	;
-	v340 = int32(4394992)
+	v340 = int32(4395040)
 	goto L2
 L81:
 	;
 	goto L82
 L82:
 	;
-	v249 = int32(558928)
+	v249 = int32(559081)
 	v250 = l0
 	goto L84
 L83:
@@ -693,14 +693,14 @@ L95:
 	goto L85
 L96:
 	;
-	v340 = int32(4395000)
+	v340 = int32(4395048)
 	goto L2
 L97:
 	;
 	goto L98
 L98:
 	;
-	v298 = int32(561224)
+	v298 = int32(561377)
 	v299 = l0
 	goto L100
 L99:
@@ -782,7 +782,7 @@ L111:
 	goto L101
 L112:
 	;
-	v340 = int32(4395008)
+	v340 = int32(4395056)
 	goto L2
 }
 func F_pgp_get_digest_name(m *base.Module, l0 int32) int32 {
@@ -986,65 +986,65 @@ func F_pgp_set_s2k_cipher_algo(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = F_pg_strcasecmp(m, int32(171408), l1)
 	mBase = m.M
 	if v8 == int32(0) {
-		v77 = int32(4395024)
+		v77 = int32(4395072)
 		v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 		v79 = v78
 	} else {
-		v16 = F_pg_strcasecmp(m, int32(557283), l1)
+		v16 = F_pg_strcasecmp(m, int32(557436), l1)
 		mBase = m.M
 		if v16 == int32(0) {
-			v77 = int32(4395044)
+			v77 = int32(4395092)
 			v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 			v79 = v78
 		} else {
-			v24 = F_pg_strcasecmp(m, int32(340048), l1)
+			v24 = F_pg_strcasecmp(m, int32(340109), l1)
 			mBase = m.M
 			if v24 == int32(0) {
-				v77 = int32(4395064)
+				v77 = int32(4395112)
 				v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 				v79 = v78
 			} else {
-				v32 = F_pg_strcasecmp(m, int32(322871), l1)
+				v32 = F_pg_strcasecmp(m, int32(322932), l1)
 				mBase = m.M
 				if v32 == int32(0) {
-					v77 = int32(4395084)
+					v77 = int32(4395132)
 					v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 					v79 = v78
 				} else {
 					v40 = F_pg_strcasecmp(m, int32(171908), l1)
 					mBase = m.M
 					if v40 == int32(0) {
-						v77 = int32(4395104)
+						v77 = int32(4395152)
 						v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 						v79 = v78
 					} else {
-						v48 = F_pg_strcasecmp(m, int32(556478), l1)
+						v48 = F_pg_strcasecmp(m, int32(556631), l1)
 						mBase = m.M
 						if v48 == int32(0) {
-							v77 = int32(4395124)
+							v77 = int32(4395172)
 							v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 							v79 = v78
 						} else {
-							v56 = F_pg_strcasecmp(m, int32(561053), l1)
+							v56 = F_pg_strcasecmp(m, int32(561206), l1)
 							mBase = m.M
 							if v56 == int32(0) {
-								v77 = int32(4395144)
+								v77 = int32(4395192)
 								v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 								v79 = v78
 							} else {
-								v64 = F_pg_strcasecmp(m, int32(556999), l1)
+								v64 = F_pg_strcasecmp(m, int32(557152), l1)
 								mBase = m.M
 								if v64 == int32(0) {
-									v77 = int32(4395164)
+									v77 = int32(4395212)
 									v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 									v79 = v78
 								} else {
-									v73 = F_pg_strcasecmp(m, int32(322880), l1)
+									v73 = F_pg_strcasecmp(m, int32(322941), l1)
 									mBase = m.M
 									if v73 != 0 {
 										v79 = int32(-103)
 									} else {
-										v77 = int32(4395184)
+										v77 = int32(4395232)
 										v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
 										v79 = v78
 									}

@@ -370,7 +370,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(493710), int32(951), int32(111893))
+	F_errfinish(m, int32(493845), int32(951), int32(111893))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -383,7 +383,7 @@ L14:
 	goto L12
 L15:
 	;
-	v66 = int32(4410308)
+	v66 = int32(4410420)
 	v68 = F_SimpleLruZeroPage(m, v66, v23)
 	mBase = m.M
 	v69 = m.ExcPending
@@ -418,7 +418,7 @@ L18:
 	goto L4
 L19:
 	;
-	v92 = F_SimpleLruReadPage(m, int32(4410308), v28, int32(1), l0)
+	v92 = F_SimpleLruReadPage(m, int32(4410420), v28, int32(1), l0)
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -499,7 +499,7 @@ L27:
 	}
 L28:
 	;
-	v132 = F_SimpleLruReadPage(m, int32(4410308), v23, int32(1), v20)
+	v132 = F_SimpleLruReadPage(m, int32(4410420), v23, int32(1), v20)
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -614,7 +614,7 @@ L42:
 L43:
 	;
 	v225 = v221 << (uint(int32(2)) % 32)
-	v226 = int32(4410388)
+	v226 = int32(4410500)
 	v227 = *(*int32)(unsafe.Add(mBase, _consts[72]))
 	v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+4))
 	v230 = *(*int32)(unsafe.Add(mBase, uint32(v225+v228)))
@@ -656,7 +656,7 @@ L45:
 	goto L46
 L46:
 	;
-	v219 = F_SimpleLruReadPage(m, int32(4410388), v199, int32(1), l0)
+	v219 = F_SimpleLruReadPage(m, int32(4410500), v199, int32(1), l0)
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {

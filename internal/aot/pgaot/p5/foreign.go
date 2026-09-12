@@ -74,7 +74,7 @@ func F_ForeignRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 						m.G0 = v9 + int32(16)
 						return v46
 					} else {
-						v30 = int32(4515600)
+						v30 = int32(4515712)
 						v31 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 						v33 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 						*(*int32)(unsafe.Add(mBase, _consts[9])) = v33
@@ -100,7 +100,7 @@ func F_ForeignRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 				m.G0 = v9 + int32(16)
 				return v46
 			} else {
-				v30 = int32(4515600)
+				v30 = int32(4515712)
 				v31 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 				v33 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 				*(*int32)(unsafe.Add(mBase, _consts[9])) = v33
@@ -194,7 +194,7 @@ func F_GetForeignDataWrapperByName(m *base.Module, l0 int32, l1 int32) int32 {
 					if v36 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496976), int32(693), int32(434267))
+						F_errfinish(m, int32(497111), int32(693), int32(434402))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {
@@ -268,7 +268,7 @@ func F_get_foreign_data_wrapper_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496976), int32(693), int32(434267))
+							F_errfinish(m, int32(497111), int32(693), int32(434402))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {

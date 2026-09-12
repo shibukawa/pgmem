@@ -311,7 +311,7 @@ func F_gistBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	v21 = m.G0
 	v23 = v21 - int32(80)
 	m.G0 = v23
-	v25 = int32(4515600)
+	v25 = int32(4515712)
 	v26 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l5)+8))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
@@ -810,7 +810,7 @@ L73:
 	}
 L74:
 	;
-	F_errmsg_internal(m, int32(431470), int32(0))
+	F_errmsg_internal(m, int32(431605), int32(0))
 	mBase = m.M
 	v345 = m.ExcPending
 	if v345 != 0 {
@@ -827,7 +827,7 @@ L76:
 	goto L11
 L77:
 	;
-	F_errfinish(m, int32(499961), int32(757), int32(331308))
+	F_errfinish(m, int32(500114), int32(757), int32(331369))
 	mBase = m.M
 	v350 = m.ExcPending
 	if v350 != 0 {
@@ -1032,7 +1032,7 @@ L101:
 	*(*int64)(unsafe.Add(mBase, uint32(v23)+48)) = int64(34359738372)
 	v491 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+72)) = v491
-	v498 = F_hash_create(m, int32(238546), int32(1024), v23+int32(32), int32(1064))
+	v498 = F_hash_create(m, int32(238579), int32(1024), v23+int32(32), int32(1064))
 	mBase = m.M
 	v499 = m.ExcPending
 	if v499 != 0 {
@@ -1063,7 +1063,7 @@ L104:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v431
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v335
-	F_errmsg_internal(m, int32(480523), v23)
+	F_errmsg_internal(m, int32(480658), v23)
 	mBase = m.M
 	v513 = m.ExcPending
 	if v513 != 0 {
@@ -1073,7 +1073,7 @@ L104:
 	}
 L105:
 	;
-	F_errfinish(m, int32(499961), int32(778), int32(331308))
+	F_errfinish(m, int32(500114), int32(778), int32(331369))
 	mBase = m.M
 	v518 = m.ExcPending
 	if v518 != 0 {
@@ -1981,7 +1981,7 @@ L85:
 	}
 L86:
 	;
-	F_errfinish(m, int32(493005), int32(1017), int32(322267))
+	F_errfinish(m, int32(493140), int32(1017), int32(322328))
 	mBase = m.M
 	v443 = m.ExcPending
 	if v443 != 0 {
@@ -2062,7 +2062,7 @@ L97:
 	goto L2
 L98:
 	;
-	F_errmsg_internal(m, int32(350751), int32(0))
+	F_errmsg_internal(m, int32(350856), int32(0))
 	mBase = m.M
 	v496 = m.ExcPending
 	if v496 != 0 {
@@ -2072,7 +2072,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(493005), int32(963), int32(322267))
+	F_errfinish(m, int32(493140), int32(963), int32(322328))
 	mBase = m.M
 	v501 = m.ExcPending
 	if v501 != 0 {

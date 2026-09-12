@@ -33,7 +33,7 @@ func F_pg_advisory_unlock_all(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(32)
 	m.G0 = v5
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[1184]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[1185]))
 	F_hash_seq_init(m, v5+int32(12), v10)
 	mBase = m.M
 	v14 = m.ExcPending

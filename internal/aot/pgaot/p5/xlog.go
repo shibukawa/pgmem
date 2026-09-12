@@ -144,7 +144,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			v25 = v22
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25
-		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(488506), v6)
+		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(488641), v6)
 		mBase = m.M
 		v34 = m.ExcPending
 		if v34 != 0 {

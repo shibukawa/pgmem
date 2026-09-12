@@ -545,7 +545,7 @@ func F_ltree_gist_in(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492986), int32(26), int32(279306))
+				F_errfinish(m, int32(493121), int32(26), int32(279339))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

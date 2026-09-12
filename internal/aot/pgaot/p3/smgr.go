@@ -571,7 +571,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(493268), int32(320), int32(317185))
+	F_errfinish(m, int32(493403), int32(320), int32(317246))
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -825,7 +825,7 @@ func F_smgr_desc(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v39
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v38
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(16)
-			F_appendStringInfo(m, l0, int32(470284), v7)
+			F_appendStringInfo(m, l0, int32(470419), v7)
 			mBase = m.M
 			v47 = m.ExcPending
 			if v47 != 0 {

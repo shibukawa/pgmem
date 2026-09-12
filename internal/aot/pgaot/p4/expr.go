@@ -38,7 +38,7 @@ func F_ExecAssignExprContext(m *base.Module, l0 int32, l1 int32) {
 	_ = v45
 	var v46 int32
 	_ = v46
-	v6 = int32(4515600)
+	v6 = int32(4515712)
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v9
@@ -732,7 +732,7 @@ func F_get_call_expr_argtype(m *base.Module, l0 int32, l1 int32) int32 {
 					v47 = v3
 					return v47
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(v9<<(uint(int32(2))%32))+uint32(_consts[1362])))
+					v24 = *(*int32)(unsafe.Add(mBase, uint32(v9<<(uint(int32(2))%32))+uint32(_consts[1363])))
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0+v24)))
 					if v26 == int32(0) {
 						v47 = v3

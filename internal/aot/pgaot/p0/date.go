@@ -1207,13 +1207,13 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(402757), int32(0))
+							F_errmsg(m, int32(402892), int32(0))
 							mBase = m.M
 							v31 = m.ExcPending
 							if v31 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498948), int32(609), int32(320241))
+								F_errfinish(m, int32(499083), int32(609), int32(320302))
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {
@@ -1240,13 +1240,13 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(402757), int32(0))
+						F_errmsg(m, int32(402892), int32(0))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498948), int32(609), int32(320241))
+							F_errfinish(m, int32(499083), int32(609), int32(320302))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -1274,13 +1274,13 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(402757), int32(0))
+						F_errmsg(m, int32(402892), int32(0))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498948), int32(609), int32(320241))
+							F_errfinish(m, int32(499083), int32(609), int32(320302))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -1310,13 +1310,13 @@ func F_date_mii(m *base.Module, l0 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(402757), int32(0))
+							F_errmsg(m, int32(402892), int32(0))
 							mBase = m.M
 							v31 = m.ExcPending
 							if v31 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498948), int32(609), int32(320241))
+								F_errfinish(m, int32(499083), int32(609), int32(320302))
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {

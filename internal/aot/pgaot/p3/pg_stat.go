@@ -380,7 +380,7 @@ L3:
 	}
 L4:
 	;
-	v79 = int32(546428)
+	v79 = int32(546581)
 	goto L1
 L5:
 	;
@@ -435,7 +435,7 @@ L10:
 	}
 L11:
 	;
-	v23 = F_cstring_to_text(m, int32(546464))
+	v23 = F_cstring_to_text(m, int32(546617))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -1345,7 +1345,7 @@ func F_pg_stat_get_replication_slot(m *base.Module, l0 int32) int32 {
 		if v31 != 0 {
 			return int32(0)
 		} else {
-			F_TupleDescInitEntry(m, v30, int32(1), int32(378757), int32(25), int32(-1), int32(0))
+			F_TupleDescInitEntry(m, v30, int32(1), int32(378892), int32(25), int32(-1), int32(0))
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
@@ -2248,7 +2248,7 @@ func F_pg_stat_get_subscription_stats(m *base.Module, l0 int32) int32 {
 		if v36 != 0 {
 			return int32(0)
 		} else {
-			F_TupleDescInitEntry(m, v35, int32(1), int32(436382), int32(26), int32(-1), int32(0))
+			F_TupleDescInitEntry(m, v35, int32(1), int32(436517), int32(26), int32(-1), int32(0))
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
@@ -2284,7 +2284,7 @@ func F_pg_stat_get_subscription_stats(m *base.Module, l0 int32) int32 {
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_TupleDescInitEntry(m, v35, int32(7), int32(329541), int32(20), int32(-1), int32(0))
+									F_TupleDescInitEntry(m, v35, int32(7), int32(329602), int32(20), int32(-1), int32(0))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
@@ -2296,7 +2296,7 @@ func F_pg_stat_get_subscription_stats(m *base.Module, l0 int32) int32 {
 										if v92 != 0 {
 											return int32(0)
 										} else {
-											F_TupleDescInitEntry(m, v35, int32(9), int32(329520), int32(20), int32(-1), int32(0))
+											F_TupleDescInitEntry(m, v35, int32(9), int32(329581), int32(20), int32(-1), int32(0))
 											mBase = m.M
 											v99 = m.ExcPending
 											if v99 != 0 {
@@ -2752,7 +2752,7 @@ L8:
 	goto L6
 L9:
 	;
-	F_s_lock(m, v75, int32(495801), int32(3950), int32(135571))
+	F_s_lock(m, v75, int32(495936), int32(3950), int32(135571))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {
@@ -2908,7 +2908,7 @@ L30:
 	goto L32
 L31:
 	;
-	v180 = int32(528190)
+	v180 = int32(528343)
 	goto L32
 L32:
 	;
@@ -3170,11 +3170,11 @@ L70:
 	}
 L71:
 	;
-	v258 = int32(314118)
+	v258 = int32(314179)
 	goto L73
 L72:
 	;
-	v258 = int32(489438)
+	v258 = int32(489573)
 	goto L73
 L73:
 	;
@@ -3182,11 +3182,11 @@ L73:
 	goto L70
 L74:
 	;
-	v264 = int32(286904)
+	v264 = int32(286965)
 	goto L76
 L75:
 	;
-	v264 = int32(489488)
+	v264 = int32(489623)
 	goto L76
 L76:
 	;
@@ -3805,7 +3805,7 @@ L3:
 	v19 = v17 - int32(16)
 	m.G0 = v19
 	v24 = v12
-	v25 = int32(362720)
+	v25 = int32(362825)
 	goto L6
 L4:
 	;
@@ -3901,7 +3901,7 @@ L19:
 L20:
 	;
 	v69 = v12
-	v70 = int32(264156)
+	v70 = int32(264189)
 	goto L22
 L21:
 	;
@@ -3989,7 +3989,7 @@ L35:
 L36:
 	;
 	v114 = v12
-	v115 = int32(254492)
+	v115 = int32(254525)
 	goto L38
 L37:
 	;
@@ -4165,7 +4165,7 @@ L67:
 L68:
 	;
 	v204 = v12
-	v205 = int32(247572)
+	v205 = int32(247605)
 	goto L70
 L69:
 	;
@@ -4253,7 +4253,7 @@ L83:
 L84:
 	;
 	v249 = v12
-	v250 = int32(427391)
+	v250 = int32(427526)
 	goto L86
 L85:
 	;
@@ -4605,7 +4605,7 @@ L147:
 L148:
 	;
 	v429 = v12
-	v430 = int32(241221)
+	v430 = int32(241254)
 	goto L150
 L149:
 	;
@@ -4781,7 +4781,7 @@ L179:
 L180:
 	;
 	v519 = v12
-	v520 = int32(308849)
+	v520 = int32(308910)
 	goto L182
 L181:
 	;
@@ -5839,7 +5839,7 @@ L366:
 L367:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v12
-	F_errmsg(m, int32(727752), v19)
+	F_errmsg(m, int32(727905), v19)
 	mBase = m.M
 	v1017 = m.ExcPending
 	if v1017 != 0 {
@@ -5849,7 +5849,7 @@ L367:
 	}
 L368:
 	;
-	F_errfinish(m, int32(493736), int32(1426), int32(206587))
+	F_errfinish(m, int32(493871), int32(1426), int32(206587))
 	mBase = m.M
 	v1022 = m.ExcPending
 	if v1022 != 0 {

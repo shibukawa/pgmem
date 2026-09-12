@@ -57,14 +57,14 @@ func F_CheckSlotPermissions(m *base.Module) {
 					if v22 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(529892)
-						F_errdetail(m, int32(584398), v4)
+						*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(530045)
+						F_errdetail(m, int32(584551), v4)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493300), int32(1553), int32(143713))
+							F_errfinish(m, int32(493435), int32(1553), int32(143713))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -432,7 +432,7 @@ L23:
 	v65 = int32(4)
 	v72 = v63 + v64<<(uint(v65)%32) + v41*int32(100) + int32(20)
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, _consts[856])) = v55
+	*(*int32)(unsafe.Add(mBase, _consts[857])) = v55
 	v78 = v73 + v55<<(uint(v65)%32)
 	switch v60 - int32(98) {
 	case 0:
@@ -444,7 +444,7 @@ L23:
 	}
 L24:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[856])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[857])) = int32(-1)
 	goto L21
 L25:
 	;
@@ -549,7 +549,7 @@ L35:
 L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v55 + int32(1)
-	F_errmsg(m, int32(473506), v13)
+	F_errmsg(m, int32(473641), v13)
 	mBase = m.M
 	v183 = m.ExcPending
 	if v183 != 0 {
@@ -559,7 +559,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(495710), int32(962), int32(504295))
+	F_errfinish(m, int32(495845), int32(962), int32(504448))
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {

@@ -784,7 +784,7 @@ func F_FileSetDelete(m *base.Module, l0 int32, l1 int32) int32 {
 		return int32(0)
 	} else {
 		v286 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(235464)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(235497)
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = v286
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v7 + int32(1056)
 		v299 = F_pg_snprintf(m, v7+int32(32), int32(1024), int32(106036), v7+int32(16))
@@ -974,9 +974,9 @@ L6:
 	goto L7
 L7:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _consts[551]))
+	v27 = *(*int32)(unsafe.Add(mBase, _consts[552]))
 	v30 = v27 + l0*int32(48)
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[651]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 	if v32 < int32(0) {
 		goto L8
 	} else {
@@ -1093,7 +1093,7 @@ L22:
 	goto L21
 L23:
 	;
-	v136 = *(*int64)(unsafe.Add(mBase, _consts[652]))
+	v136 = *(*int64)(unsafe.Add(mBase, _consts[653]))
 	if base.Ui64(base.I64_extend_i32_u(v32)<<(uint(int64(10))%64)) < base.Ui64(v136+(v124-v133)) {
 		goto L1
 	} else {
@@ -1176,9 +1176,9 @@ L34:
 	}
 L35:
 	;
-	v202 = int32(4431608)
-	v204 = *(*int64)(unsafe.Add(mBase, _consts[652]))
-	*(*int64)(unsafe.Add(mBase, _consts[652])) = v204 + (v199 - v200)
+	v202 = int32(4431720)
+	v204 = *(*int64)(unsafe.Add(mBase, _consts[653]))
+	*(*int64)(unsafe.Add(mBase, _consts[653])) = v204 + (v199 - v200)
 	*(*int64)(unsafe.Add(mBase, uint32(v30)+24)) = v199
 	v213 = v183
 	goto L2
@@ -1197,9 +1197,9 @@ L37:
 	}
 L38:
 	;
-	v239 = *(*int32)(unsafe.Add(mBase, _consts[651]))
+	v239 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v239
-	F_errmsg(m, int32(682675), v17)
+	F_errmsg(m, int32(682828), v17)
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -1209,7 +1209,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(500025), int32(2295), int32(516705))
+	F_errfinish(m, int32(500178), int32(2295), int32(516858))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {

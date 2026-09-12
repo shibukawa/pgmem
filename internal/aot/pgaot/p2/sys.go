@@ -73,7 +73,7 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	if base.Ui32(l0) <= base.Ui32(int32(84)) {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1181])))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1182])))
 		if v18 != 0 {
 			v35 = m.G0
 			v37 = v35 - int32(16)
@@ -201,13 +201,13 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v37))) = v44
-							F_errmsg_internal(m, int32(481970), v37)
+							F_errmsg_internal(m, int32(482105), v37)
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499468), int32(373), int32(347670))
+								F_errfinish(m, int32(499621), int32(373), int32(347775))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -337,13 +337,13 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v37))) = v44
-						F_errmsg_internal(m, int32(481970), v37)
+						F_errmsg_internal(m, int32(482105), v37)
 						mBase = m.M
 						v83 = m.ExcPending
 						if v83 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499468), int32(373), int32(347670))
+							F_errfinish(m, int32(499621), int32(373), int32(347775))
 							mBase = m.M
 							v88 = m.ExcPending
 							if v88 != 0 {
@@ -365,13 +365,13 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(488144), v10)
+				F_errmsg_internal(m, int32(488279), v10)
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(499480), int32(669), int32(347733))
+					F_errfinish(m, int32(499633), int32(669), int32(347838))
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
@@ -392,13 +392,13 @@ func F_GetSysCacheHashValue(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-			F_errmsg_internal(m, int32(488144), v10)
+			F_errmsg_internal(m, int32(488279), v10)
 			mBase = m.M
 			v29 = m.ExcPending
 			if v29 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(499480), int32(669), int32(347733))
+				F_errfinish(m, int32(499633), int32(669), int32(347838))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
@@ -421,7 +421,7 @@ func F_SearchSysCache3(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v12
 	var v15 int32
 	_ = v15
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1181])))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1182])))
 	v12 = F_SearchCatCacheInternal(m, v9, int32(3), l1, l2, l3, int32(0))
 	mBase = m.M
 	v15 = m.ExcPending

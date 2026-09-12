@@ -460,7 +460,7 @@ func F_time_in(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v50 = v44
-				F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(376216), v15)
+				F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(376351), v15)
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
@@ -476,7 +476,7 @@ func F_time_in(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v50 = v26
-		F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(376216), v15)
+		F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(376351), v15)
 		mBase = m.M
 		v55 = m.ExcPending
 		if v55 != 0 {
@@ -1231,7 +1231,7 @@ L81:
 	}
 L82:
 	;
-	F_errfinish(m, int32(498948), int32(2281), int32(245775))
+	F_errfinish(m, int32(499083), int32(2281), int32(245808))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -1334,7 +1334,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(498948), int32(2297), int32(245775))
+	F_errfinish(m, int32(499083), int32(2297), int32(245808))
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {

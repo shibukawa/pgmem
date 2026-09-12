@@ -75,13 +75,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 				if v67 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(260670), int32(0))
+					F_errmsg(m, int32(260703), int32(0))
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493729), int32(1118), int32(96037))
+						F_errfinish(m, int32(493864), int32(1118), int32(96037))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -109,13 +109,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 					if v67 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(260670), int32(0))
+						F_errmsg(m, int32(260703), int32(0))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493729), int32(1118), int32(96037))
+							F_errfinish(m, int32(493864), int32(1118), int32(96037))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {
@@ -143,13 +143,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 						if v67 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(260670), int32(0))
+							F_errmsg(m, int32(260703), int32(0))
 							mBase = m.M
 							v71 = m.ExcPending
 							if v71 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(493729), int32(1118), int32(96037))
+								F_errfinish(m, int32(493864), int32(1118), int32(96037))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -163,7 +163,7 @@ func F_CommandCounterIncrement(m *base.Module) {
 						}
 					}
 				} else {
-					v13 = int32(4410684)
+					v13 = int32(4410796)
 					v15 = *(*int32)(unsafe.Add(mBase, _consts[112]))
 					v17 = v15 + int32(1)
 					*(*int32)(unsafe.Add(mBase, _consts[112])) = v17
@@ -181,13 +181,13 @@ func F_CommandCounterIncrement(m *base.Module) {
 							if v85 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(257796), int32(0))
+								F_errmsg(m, int32(257829), int32(0))
 								mBase = m.M
 								v89 = m.ExcPending
 								if v89 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(493729), int32(1126), int32(96037))
+									F_errfinish(m, int32(493864), int32(1126), int32(96037))
 									mBase = m.M
 									v94 = m.ExcPending
 									if v94 != 0 {
@@ -219,7 +219,7 @@ func F_CommandCounterIncrement(m *base.Module) {
 						}
 						v38 = *(*int32)(unsafe.Add(mBase, _consts[116]))
 						if v38 != 0 {
-							F_merge_map_updates(m, int32(4503872), int32(4505968), int32(1))
+							F_merge_map_updates(m, int32(4503984), int32(4506080), int32(1))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {
@@ -228,7 +228,7 @@ func F_CommandCounterIncrement(m *base.Module) {
 								*(*int32)(unsafe.Add(mBase, _consts[116])) = int32(0)
 								v48 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 								if v48 != 0 {
-									F_merge_map_updates(m, int32(4504920), int32(4506492), int32(1))
+									F_merge_map_updates(m, int32(4505032), int32(4506604), int32(1))
 									mBase = m.M
 									v53 = m.ExcPending
 									if v53 != 0 {
@@ -258,7 +258,7 @@ func F_CommandCounterIncrement(m *base.Module) {
 						} else {
 							v48 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 							if v48 != 0 {
-								F_merge_map_updates(m, int32(4504920), int32(4506492), int32(1))
+								F_merge_map_updates(m, int32(4505032), int32(4506604), int32(1))
 								mBase = m.M
 								v53 = m.ExcPending
 								if v53 != 0 {
@@ -332,7 +332,7 @@ func F_CommandEndInvalidationMessages(m *base.Module) {
 	_ = v52
 	var v55 int32
 	_ = v55
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[875]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[876]))
 	if v5 != 0 {
 		goto L1
 	} else {
@@ -371,7 +371,7 @@ L6:
 	}
 L7:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[876]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[877]))
 	F_LocalExecuteInvalidationMessage(m, v13+v9<<(uint(int32(4))%32))
 	mBase = m.M
 	v18 = m.ExcPending
@@ -415,7 +415,7 @@ L14:
 	}
 L15:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[877]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[878]))
 	F_LocalExecuteInvalidationMessage(m, v32+v28<<(uint(int32(4))%32))
 	mBase = m.M
 	v37 = m.ExcPending
@@ -454,7 +454,7 @@ L20:
 	goto L21
 L21:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, _consts[875]))
+	v51 = *(*int32)(unsafe.Add(mBase, _consts[876]))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v51)+28)) = v52
 	*(*int32)(unsafe.Add(mBase, uint32(v51))) = v52

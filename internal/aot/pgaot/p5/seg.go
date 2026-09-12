@@ -298,7 +298,7 @@ func F_seg_yy_scan_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					if v17 == int32(0) {
-						F_yy_fatal_error_7(m, int32(684015))
+						F_yy_fatal_error_7(m, int32(684168))
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -731,7 +731,7 @@ func F_seg_yyset_column(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = l0
 			return
 		} else {
-			F_yy_fatal_error_7(m, int32(225843))
+			F_yy_fatal_error_7(m, int32(225876))
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {
@@ -743,7 +743,7 @@ func F_seg_yyset_column(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	} else {
-		F_yy_fatal_error_7(m, int32(225843))
+		F_yy_fatal_error_7(m, int32(225876))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {

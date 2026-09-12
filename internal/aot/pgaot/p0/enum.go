@@ -88,7 +88,7 @@ func F_enum_out(m *base.Module, l0 int32) int32 {
 					if v26 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497355), int32(167), int32(67122))
+						F_errfinish(m, int32(497490), int32(167), int32(67122))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -194,7 +194,7 @@ func F_enum_send(m *base.Module, l0 int32) int32 {
 					if v26 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497355), int32(233), int32(426596))
+						F_errfinish(m, int32(497490), int32(233), int32(426731))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

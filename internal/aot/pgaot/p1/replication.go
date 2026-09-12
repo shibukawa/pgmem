@@ -32,7 +32,7 @@ func F_GetReplicationTransferLatency(m *base.Module) int32 {
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+1456))
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+1456)) = int32(1)
 	if v5 != 0 {
-		F_s_lock(m, v4+int32(1456), int32(494906), int32(401), int32(23192))
+		F_s_lock(m, v4+int32(1456), int32(495041), int32(401), int32(23192))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -177,19 +177,19 @@ func F_ReplicationSlotDrop(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(698163), v7)
+						F_errmsg(m, int32(698316), v7)
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
 							return
 						} else {
-							F_errdetail(m, int32(608348), int32(0))
+							F_errdetail(m, int32(608501), int32(0))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(493300), int32(858), int32(234470))
+								F_errfinish(m, int32(493435), int32(858), int32(234503))
 								mBase = m.M
 								v51 = m.ExcPending
 								if v51 != 0 {
@@ -457,7 +457,7 @@ L14:
 	}
 L15:
 	;
-	F_s_lock(m, v36, int32(493300), int32(1324), int32(528271))
+	F_s_lock(m, v36, int32(493435), int32(1324), int32(528424))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -745,7 +745,7 @@ L12:
 	}
 L13:
 	;
-	F_s_lock(m, v30, int32(493300), int32(1188), int32(276484))
+	F_s_lock(m, v30, int32(493435), int32(1188), int32(276517))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -959,7 +959,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(492693), int32(3958), int32(276452))
+	F_errfinish(m, int32(492828), int32(3958), int32(276485))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -1182,7 +1182,7 @@ L16:
 	}
 L17:
 	;
-	F_s_lock(m, v46, int32(493300), int32(1464), int32(119088))
+	F_s_lock(m, v46, int32(493435), int32(1464), int32(119088))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -1221,7 +1221,7 @@ L21:
 	}
 L22:
 	;
-	v76 = int32(4425844)
+	v76 = int32(4425956)
 	v77 = *(*int32)(unsafe.Add(mBase, _consts[667]))
 	*(*int32)(unsafe.Add(mBase, _consts[667])) = int32(0)
 	F_ReplicationSlotDropPtr(m, v77)
@@ -1275,7 +1275,7 @@ L29:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v62
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v46 + int32(24)
-	F_errmsg(m, int32(479916), v10)
+	F_errmsg(m, int32(480051), v10)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -1285,7 +1285,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(493300), int32(1500), int32(119088))
+	F_errfinish(m, int32(493435), int32(1500), int32(119088))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -1392,7 +1392,7 @@ func F_replication_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v15
 				if v15 == int32(0) {
-					F_yy_fatal_error_3(m, int32(684057))
+					F_yy_fatal_error_3(m, int32(684210))
 					mBase = m.M
 					v81 = m.ExcPending
 					if v81 != 0 {
@@ -1455,7 +1455,7 @@ func F_replication_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			F_yy_fatal_error_3(m, int32(684057))
+			F_yy_fatal_error_3(m, int32(684210))
 			mBase = m.M
 			v78 = m.ExcPending
 			if v78 != 0 {

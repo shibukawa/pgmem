@@ -109,13 +109,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v92
 				v95 = *(*int32)(unsafe.Add(mBase, _consts[111]))
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v95 + int32(38)
-				F_errmsg_internal(m, int32(680526), v10+int32(16))
+				F_errmsg_internal(m, int32(680679), v10+int32(16))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(493645), int32(282), int32(100573))
+					F_errfinish(m, int32(493780), int32(282), int32(100573))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -155,13 +155,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v35
 							v121 = *(*int32)(unsafe.Add(mBase, _consts[109]))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v121
-							F_errmsg_internal(m, int32(469371), v10)
+							F_errmsg_internal(m, int32(469506), v10)
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(493645), int32(297), int32(100573))
+								F_errfinish(m, int32(493780), int32(297), int32(100573))
 								mBase = m.M
 								v130 = m.ExcPending
 								if v130 != 0 {
@@ -224,7 +224,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(493645), int32(279), int32(100573))
+				F_errfinish(m, int32(493780), int32(279), int32(100573))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {

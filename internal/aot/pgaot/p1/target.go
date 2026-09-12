@@ -218,7 +218,7 @@ L4:
 	}
 L5:
 	;
-	v32 = int32(746542)
+	v32 = int32(746695)
 	v34 = v3
 	v37 = v3
 	v39 = v3
@@ -338,7 +338,7 @@ L19:
 	goto L21
 L20:
 	;
-	v77 = int32(545932)
+	v77 = int32(546085)
 	goto L21
 L21:
 	;
@@ -657,7 +657,7 @@ L67:
 	}
 L68:
 	;
-	F_appendContextKeyword(m, l1, int32(757603), int32(-8), int32(8), int32(4))
+	F_appendContextKeyword(m, l1, int32(757756), int32(-8), int32(8), int32(4))
 	mBase = m.M
 	v228 = m.ExcPending
 	if v228 != 0 {
@@ -686,7 +686,7 @@ L73:
 	goto L70
 L74:
 	;
-	v276 = int32(746361)
+	v276 = int32(746514)
 	v278 = v80
 	v283 = v266
 	goto L10
@@ -1436,7 +1436,7 @@ L80:
 	v274 = *(*int32)(unsafe.Add(mBase, uint32(v273)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v106
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v274
-	F_errmsg_internal(m, int32(475370), v13)
+	F_errmsg_internal(m, int32(475505), v13)
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -1446,7 +1446,7 @@ L80:
 	}
 L81:
 	;
-	F_errfinish(m, int32(493621), int32(372), int32(276989))
+	F_errfinish(m, int32(493756), int32(372), int32(277022))
 	mBase = m.M
 	v284 = m.ExcPending
 	if v284 != 0 {
@@ -1465,7 +1465,7 @@ L83:
 	v290 = *(*int32)(unsafe.Add(mBase, uint32(v289)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v106
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v290
-	F_errmsg_internal(m, int32(475409), v13+int32(16))
+	F_errmsg_internal(m, int32(475544), v13+int32(16))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -1475,7 +1475,7 @@ L83:
 	}
 L84:
 	;
-	F_errfinish(m, int32(493621), int32(418), int32(276989))
+	F_errfinish(m, int32(493756), int32(418), int32(277022))
 	mBase = m.M
 	v302 = m.ExcPending
 	if v302 != 0 {
@@ -1563,7 +1563,7 @@ func F_setTargetTable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 					if v56 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(498967), int32(192), int32(397301))
+						F_errfinish(m, int32(499102), int32(192), int32(397436))
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {

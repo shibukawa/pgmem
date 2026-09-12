@@ -95,7 +95,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(728943), int32(0))
+					F_errmsg(m, int32(729096), int32(0))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -103,7 +103,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 					} else {
 						v90 = v2
 						v92 = int32(1070)
-						F_errfinish(m, int32(500212), v92, int32(151127))
+						F_errfinish(m, int32(500365), v92, int32(151127))
 						mBase = m.M
 						v95 = m.ExcPending
 						if v95 != 0 {
@@ -118,12 +118,12 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v30 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+		v30 = *(*int32)(unsafe.Add(mBase, _consts[523]))
 		if v30 != 0 {
 			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30))))
 			if v31 != 0 {
 				v47 = int32(0)
-				v49 = int32(*(*uint8)(unsafe.Add(mBase, _consts[523])))
+				v49 = int32(*(*uint8)(unsafe.Add(mBase, _consts[524])))
 				if v49 == v47 {
 					v53 = F_errstart(m, l0, int32(0))
 					mBase = m.M
@@ -142,8 +142,8 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 							if v59 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(319597)
-								F_errmsg(m, int32(455969), v7+int32(32))
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(319658)
+								F_errmsg(m, int32(456104), v7+int32(32))
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
@@ -151,7 +151,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 								} else {
 									v90 = v47
 									v92 = int32(1100)
-									F_errfinish(m, int32(500212), v92, int32(151127))
+									F_errfinish(m, int32(500365), v92, int32(151127))
 									mBase = m.M
 									v95 = m.ExcPending
 									if v95 != 0 {
@@ -166,7 +166,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v69 = *(*int32)(unsafe.Add(mBase, _consts[524]))
+					v69 = *(*int32)(unsafe.Add(mBase, _consts[525]))
 					if v69 != 0 {
 						v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69))))
 						if v71 != 0 {
@@ -192,7 +192,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 									if v81 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(241432)
+										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(241465)
 										F_errmsg(m, int32(106837), v7+int32(16))
 										mBase = m.M
 										v88 = m.ExcPending
@@ -201,7 +201,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 										} else {
 											v90 = v73
 											v92 = int32(1114)
-											F_errfinish(m, int32(500212), v92, int32(151127))
+											F_errfinish(m, int32(500365), v92, int32(151127))
 											mBase = m.M
 											v95 = m.ExcPending
 											if v95 != 0 {
@@ -235,7 +235,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 								if v81 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(241432)
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(241465)
 									F_errmsg(m, int32(106837), v7+int32(16))
 									mBase = m.M
 									v88 = m.ExcPending
@@ -244,7 +244,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 									} else {
 										v90 = v73
 										v92 = int32(1114)
-										F_errfinish(m, int32(500212), v92, int32(151127))
+										F_errfinish(m, int32(500365), v92, int32(151127))
 										mBase = m.M
 										v95 = m.ExcPending
 										if v95 != 0 {
@@ -279,7 +279,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 						if v40 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(378749)
+							*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(378884)
 							F_errmsg(m, int32(106837), v7)
 							mBase = m.M
 							v45 = m.ExcPending
@@ -288,7 +288,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 							} else {
 								v90 = v32
 								v92 = int32(1085)
-								F_errfinish(m, int32(500212), v92, int32(151127))
+								F_errfinish(m, int32(500365), v92, int32(151127))
 								mBase = m.M
 								v95 = m.ExcPending
 								if v95 != 0 {
@@ -322,7 +322,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(378749)
+						*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(378884)
 						F_errmsg(m, int32(106837), v7)
 						mBase = m.M
 						v45 = m.ExcPending
@@ -331,7 +331,7 @@ func F_ValidateSlotSyncParams(m *base.Module, l0 int32) int32 {
 						} else {
 							v90 = v32
 							v92 = int32(1085)
-							F_errfinish(m, int32(500212), v92, int32(151127))
+							F_errfinish(m, int32(500365), v92, int32(151127))
 							mBase = m.M
 							v95 = m.ExcPending
 							if v95 != 0 {
@@ -563,7 +563,7 @@ L12:
 	;
 	v49 = v38 + int32(20)
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	*(*int32)(unsafe.Add(mBase, _consts[535])) = v45
+	*(*int32)(unsafe.Add(mBase, _consts[536])) = v45
 	v55 = v50 + v45<<(uint(int32(4))%32)
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v45))))
@@ -582,7 +582,7 @@ L13:
 	v121 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v123 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v121+v25))) = uint8(v123)
-	*(*int32)(unsafe.Add(mBase, _consts[535])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[536])) = int32(-1)
 	goto L9
 L14:
 	;
@@ -628,7 +628,7 @@ L17:
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v81 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v79+v25))) = uint8(v81)
-	*(*int32)(unsafe.Add(mBase, _consts[535])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[536])) = int32(-1)
 	goto L9
 L18:
 	;
@@ -659,7 +659,7 @@ L20:
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v110 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v108+v25))) = uint8(v110)
-	*(*int32)(unsafe.Add(mBase, _consts[535])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[536])) = int32(-1)
 	goto L9
 L21:
 	;
@@ -681,7 +681,7 @@ L23:
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v45 + int32(1)
-	F_errmsg(m, int32(473506), v12)
+	F_errmsg(m, int32(473641), v12)
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -691,7 +691,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(495710), int32(847), int32(504448))
+	F_errfinish(m, int32(495845), int32(847), int32(504601))
 	mBase = m.M
 	v181 = m.ExcPending
 	if v181 != 0 {
