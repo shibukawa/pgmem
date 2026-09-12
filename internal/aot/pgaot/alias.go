@@ -3474,6 +3474,58 @@ func F_Pg_magic_func_pg_prewarm(m *base.Module) int32
 func F_pg_finfo_pg_prewarm(m *base.Module) int32
 //go:linkname F_pg_prewarm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_prewarm
 func F_pg_prewarm(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_stat_statements github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_Pg_magic_func_pg_stat_statements
+func F_Pg_magic_func_pg_stat_statements(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_stat_statements_reset
+func F_pg_finfo_pg_stat_statements_reset(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_reset_1_7 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_stat_statements_reset_1_7
+func F_pg_finfo_pg_stat_statements_reset_1_7(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_reset_1_11 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_stat_statements_reset_1_11
+func F_pg_finfo_pg_stat_statements_reset_1_11(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_stat_statements_1_2
+func F_pg_finfo_pg_stat_statements_1_2(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_stat_statements_1_3
+func F_pg_finfo_pg_stat_statements_1_3(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_8 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_stat_statements_1_8
+func F_pg_finfo_pg_stat_statements_1_8(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_stat_statements_1_9
+func F_pg_finfo_pg_stat_statements_1_9(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_10 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_stat_statements_1_10
+func F_pg_finfo_pg_stat_statements_1_10(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_11 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_pg_stat_statements_1_11
+func F_pg_finfo_pg_stat_statements_1_11(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_1_12 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_stat_statements_1_12
+func F_pg_finfo_pg_stat_statements_1_12(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_stat_statements
+func F_pg_finfo_pg_stat_statements(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_stat_statements_info github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_pg_stat_statements_info
+func F_pg_finfo_pg_stat_statements_info(m *base.Module) int32
+//go:linkname F__PG_init_pg_stat_statements github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__PG_init_pg_stat_statements
+func F__PG_init_pg_stat_statements(m *base.Module)
+//go:linkname F_pg_stat_statements_reset_1_7 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_reset_1_7
+func F_pg_stat_statements_reset_1_7(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_reset_1_11 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_stat_statements_reset_1_11
+func F_pg_stat_statements_reset_1_11(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_stat_statements_reset
+func F_pg_stat_statements_reset(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_12 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_stat_statements_1_12
+func F_pg_stat_statements_1_12(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_11 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_stat_statements_1_11
+func F_pg_stat_statements_1_11(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_10 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_stat_statements_1_10
+func F_pg_stat_statements_1_10(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_stat_statements_1_9
+func F_pg_stat_statements_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_8 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_stat_statements_1_8
+func F_pg_stat_statements_1_8(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_1_3
+func F_pg_stat_statements_1_3(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_1_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_stat_statements_1_2
+func F_pg_stat_statements_1_2(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements
+func F_pg_stat_statements(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_info github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_stat_statements_info
+func F_pg_stat_statements_info(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

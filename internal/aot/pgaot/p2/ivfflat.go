@@ -18,16 +18,18 @@ func F_IvfflatInit(m *base.Module) {
 	_ = v17
 	var v23 int32
 	_ = v23
-	var v31 int32
-	_ = v31
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
+	var v26 int32
+	_ = v26
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
 	v3 = F_add_reloption_kind(m)
 	mBase = m.M
 	v4 = m.ExcPending
@@ -48,24 +50,25 @@ func F_IvfflatInit(m *base.Module) {
 			if v23 != 0 {
 				return
 			} else {
-				F_DefineCustomEnumVariable(m, int32(_a_F_IvfflatInit_7), int32(_a_F_IvfflatInit_8), int32(0), int32(_a_F_IvfflatInit_9), int32(_a_F_IvfflatInit_10), int32(6))
+				v26 = int32(0)
+				F_DefineCustomEnumVariable(m, int32(_a_F_IvfflatInit_7), int32(_a_F_IvfflatInit_8), v26, int32(_a_F_IvfflatInit_9), v26, int32(_a_F_IvfflatInit_10), int32(6))
 				mBase = m.M
-				v31 = m.ExcPending
-				if v31 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return
 				} else {
-					v34 = int32(0)
-					v36 = int32(_a_F_IvfflatInit_2)
-					F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_11), int32(_a_F_IvfflatInit_12), v34, int32(_a_F_IvfflatInit_13), v36, int32(1), v36, int32(6), v34)
+					v35 = int32(0)
+					v37 = int32(_a_F_IvfflatInit_2)
+					F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_11), int32(_a_F_IvfflatInit_12), v35, int32(_a_F_IvfflatInit_13), v37, int32(1), v37, int32(6), v35)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
 						F_MarkGUCPrefixReserved(m, int32(_a_F_IvfflatInit_14))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v46 = m.ExcPending
+						if v46 != 0 {
 							return
 						} else {
 							return

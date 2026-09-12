@@ -356,6 +356,12 @@ func F_pg_finfo_nlevel(m *base.Module) int32 {
 func F_pg_finfo_pg_prewarm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_prewarm_0)
 }
+func F_pg_finfo_pg_stat_statements_1_11(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_11_0)
+}
+func F_pg_finfo_pg_stat_statements_info(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_info_0)
+}
 func F_pg_finfo_pg_visibility(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_visibility_0)
 }

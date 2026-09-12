@@ -4898,18 +4898,18 @@ func F__PG_init_pg_trgm(m *base.Module) {
 	}
 }
 func F__PG_init_pgcrypto(m *base.Module) {
-	var v15 int32
-	_ = v15
-	var v19 int32
-	_ = v19
-	F_DefineCustomEnumVariable(m, int32(_a_F__PG_init_pgcrypto_0), int32(_a_F__PG_init_pgcrypto_1), int32(_a_F__PG_init_pgcrypto_2), int32(_a_F__PG_init_pgcrypto_3), int32(_a_F__PG_init_pgcrypto_4), int32(5))
-	v15 = m.ExcPending
-	if v15 != 0 {
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
+	F_DefineCustomEnumVariable(m, int32(_a_F__PG_init_pgcrypto_0), int32(_a_F__PG_init_pgcrypto_1), int32(_a_F__PG_init_pgcrypto_2), int32(_a_F__PG_init_pgcrypto_3), int32(0), int32(_a_F__PG_init_pgcrypto_4), int32(5))
+	v16 = m.ExcPending
+	if v16 != 0 {
 		return
 	} else {
 		F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pgcrypto_5))
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v20 = m.ExcPending
+		if v20 != 0 {
 			return
 		} else {
 			return

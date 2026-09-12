@@ -3831,3 +3831,286 @@ func F_pg_stat_reset_single_function_counters(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	}
 }
+func F_pg_stat_statements_1_8(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(4), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}
+func F_pg_stat_statements_info(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v16 int32
+	_ = v16
+	var v21 int32
+	_ = v21
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v41 int32
+	_ = v41
+	var v50 int32
+	_ = v50
+	var v53 int32
+	_ = v53
+	var v56 int64
+	_ = v56
+	var v57 int64
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v90 int32
+	_ = v90
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v107 int32
+	_ = v107
+	var v114 int32
+	_ = v114
+	v2 = int32(0)
+	v5 = m.G0
+	v7 = v5 - int32(32)
+	m.G0 = v7
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+16)) = int64(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(v7)+14)) = uint16(v2)
+	v16 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[0]))
+	if v16 == v2 {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v81 = m.ExcPending
+		if v81 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(325))
+			mBase = m.M
+			v84 = m.ExcPending
+			if v84 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg(m, int32(_a_F_pg_stat_statements_info_0), int32(0))
+				mBase = m.M
+				v90 = m.ExcPending
+				if v90 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_pg_stat_statements_info_1), int32(2029), int32(_a_F_pg_stat_statements_info_2))
+					mBase = m.M
+					v97 = m.ExcPending
+					if v97 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v21 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[1]))
+		if v21 == int32(0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v81 = m.ExcPending
+			if v81 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(325))
+				mBase = m.M
+				v84 = m.ExcPending
+				if v84 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_pg_stat_statements_info_0), int32(0))
+					mBase = m.M
+					v90 = m.ExcPending
+					if v90 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_pg_stat_statements_info_1), int32(2029), int32(_a_F_pg_stat_statements_info_2))
+						mBase = m.M
+						v97 = m.ExcPending
+						if v97 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v27 = F_get_call_result_type(m, l0, int32(0), v7+int32(28))
+			mBase = m.M
+			v30 = m.ExcPending
+			if v30 != 0 {
+				return int32(0)
+			} else {
+				if v27 != int32(1) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v101 = m.ExcPending
+					if v101 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg_internal(m, int32(_a_F_pg_stat_statements_info_3), int32(0))
+						mBase = m.M
+						v107 = m.ExcPending
+						if v107 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_pg_stat_statements_info_1), int32(2033), int32(_a_F_pg_stat_statements_info_2))
+							mBase = m.M
+							v114 = m.ExcPending
+							if v114 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				} else {
+					v34 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[0]))
+					v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+20))
+					*(*int32)(unsafe.Add(mBase, uint32(v34)+20)) = int32(1)
+					if v35 != 0 {
+						v41 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[0]))
+						F_s_lock(m, v41+int32(20), int32(_a_F_pg_stat_statements_info_1), int32(2036), int32(_a_F_pg_stat_statements_info_2))
+						mBase = m.M
+						v50 = m.ExcPending
+						if v50 != 0 {
+							return int32(0)
+						} else {
+							v53 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[0]))
+							*(*int32)(unsafe.Add(mBase, uint32(v53)+20)) = int32(0)
+							v56 = *(*int64)(unsafe.Add(mBase, uint32(v53)+48))
+							v57 = *(*int64)(unsafe.Add(mBase, uint32(v53)+40))
+							v58 = F_Int64GetDatum(m, v57)
+							mBase = m.M
+							v59 = m.ExcPending
+							if v59 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v58
+								v61 = F_Int64GetDatum(m, v56)
+								mBase = m.M
+								v62 = m.ExcPending
+								if v62 != 0 {
+									return int32(0)
+								} else {
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v61
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
+									v69 = F_heap_form_tuple(m, v64, v7+int32(16), v7+int32(14))
+									mBase = m.M
+									v70 = m.ExcPending
+									if v70 != 0 {
+										return int32(0)
+									} else {
+										v71 = *(*int32)(unsafe.Add(mBase, uint32(v69)+16))
+										v72 = F_HeapTupleHeaderGetDatum(m, v71)
+										mBase = m.M
+										v73 = m.ExcPending
+										if v73 != 0 {
+											return int32(0)
+										} else {
+											m.G0 = v7 + int32(32)
+											return v72
+										}
+									}
+								}
+							}
+						}
+					} else {
+						v53 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_statements_info[0]))
+						*(*int32)(unsafe.Add(mBase, uint32(v53)+20)) = int32(0)
+						v56 = *(*int64)(unsafe.Add(mBase, uint32(v53)+48))
+						v57 = *(*int64)(unsafe.Add(mBase, uint32(v53)+40))
+						v58 = F_Int64GetDatum(m, v57)
+						mBase = m.M
+						v59 = m.ExcPending
+						if v59 != 0 {
+							return int32(0)
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v58
+							v61 = F_Int64GetDatum(m, v56)
+							mBase = m.M
+							v62 = m.ExcPending
+							if v62 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v61
+								v64 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
+								v69 = F_heap_form_tuple(m, v64, v7+int32(16), v7+int32(14))
+								mBase = m.M
+								v70 = m.ExcPending
+								if v70 != 0 {
+									return int32(0)
+								} else {
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(v69)+16))
+									v72 = F_HeapTupleHeaderGetDatum(m, v71)
+									mBase = m.M
+									v73 = m.ExcPending
+									if v73 != 0 {
+										return int32(0)
+									} else {
+										m.G0 = v7 + int32(32)
+										return v72
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1160,14 +1160,16 @@ func F_ExecCloseIndices(m *base.Module, l0 int32)
 func F_ExecInsertIndexTuples(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 //go:linkname F_ExecInitJunkFilter github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecInitJunkFilter
 func F_ExecInitJunkFilter(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ExecFilterJunk github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecFilterJunk
+func F_ExecFilterJunk(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ExecutorStart github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExecutorStart
 func F_ExecutorStart(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ExecutorRun github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExecutorRun
 func F_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64)
 //go:linkname F_ExecutorFinish github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecutorFinish
 func F_ExecutorFinish(m *base.Module, l0 int32)
-//go:linkname F_ExecCloseResultRelations github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExecCloseResultRelations
-func F_ExecCloseResultRelations(m *base.Module, l0 int32)
+//go:linkname F_standard_ExecutorEnd github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_standard_ExecutorEnd
+func F_standard_ExecutorEnd(m *base.Module, l0 int32)
 //go:linkname F_ExecPartitionCheck github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecPartitionCheck
 func F_ExecPartitionCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_ExecPartitionCheckEmitError github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExecPartitionCheckEmitError
@@ -1194,6 +1196,8 @@ func F_ExecInitPartitionDispatchInfo(m *base.Module, l0 int32, l1 int32, l2 int3
 func F_ExecCleanupTupleRouting(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_MultiExecProcNode github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MultiExecProcNode
 func F_MultiExecProcNode(m *base.Module, l0 int32) int32
+//go:linkname F_ExecShutdownNode_walker github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecShutdownNode_walker
+func F_ExecShutdownNode_walker(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ExecSetTupleBound github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecSetTupleBound
 func F_ExecSetTupleBound(m *base.Module, l0 int64, l1 int32)
 //go:linkname F_CheckAndReportConflict github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CheckAndReportConflict
@@ -3514,6 +3518,8 @@ func F_get_func_input_arg_names(m *base.Module, l0 int32, l1 int32, l2 int32) in
 func F_hash_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_my_log2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_my_log2
 func F_my_log2(m *base.Module, l0 int32) int32
+//go:linkname F_hash_estimate_size github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hash_estimate_size
+func F_hash_estimate_size(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_hash_destroy github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hash_destroy
 func F_hash_destroy(m *base.Module, l0 int32)
 //go:linkname F_get_hash_value github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_hash_value
@@ -4172,6 +4178,12 @@ func F_bt_index_block_validate(m *base.Module, l0 int32, l1 int64)
 func F_GetBTPageStatistics(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_get_raw_page_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_raw_page_internal
 func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pgss_store github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgss_store
+func F_pgss_store(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32, l4 int32, l5 float64, l6 int64, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32)
+//go:linkname F_entry_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_entry_reset
+func F_entry_reset(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) int64
+//go:linkname F_pg_stat_statements_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_internal
+func F_pg_stat_statements_internal(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_tidhash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tidhash_insert_hash_internal
 func F_tidhash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_HnswInitSupport github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_HnswInitSupport

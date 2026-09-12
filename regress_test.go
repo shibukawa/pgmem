@@ -75,6 +75,12 @@ var contribRegress = map[string][]string{
 	"pg_buffercache":  {"pg_buffercache", "pg_buffercache_numa"},
 	"pg_freespacemap": {"pg_freespacemap"},
 	"pg_prewarm":      {"pg_prewarm"},
+	// left out: oldextversions (\d), extended and squashing (psql 18's
+	// \bind and \bind_named), parallel (expects launched parallel workers)
+	"pg_stat_statements": {
+		"select", "dml", "cursors", "utility", "level_tracking", "planning",
+		"user_activity", "wal", "entry_timestamp", "privileges", "cleanup",
+	},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",
@@ -82,10 +88,17 @@ var contribRegress = map[string][]string{
 	},
 }
 
-// regressSetup is run once per suite before its files, what pg_regress's
-// --load-extension does for suites whose files do not CREATE EXTENSION.
-var regressSetup = map[string]string{
-	"vector": "CREATE EXTENSION vector",
+// regressSuite holds what pg_regress passes around a suite: server
+// settings (--temp-config) and a statement run once before its files
+// (--load-extension, for suites whose files do not CREATE EXTENSION).
+type regressSuite struct {
+	params []string
+	setup  string
+}
+
+var regressSuites = map[string]regressSuite{
+	"vector":             {setup: "CREATE EXTENSION vector"},
+	"pg_stat_statements": {params: []string{"-c", "shared_preload_libraries=pg_stat_statements", "-c", "max_prepared_transactions=5"}},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
@@ -104,14 +117,22 @@ func TestContribRegress(t *testing.T) {
 			// pgmem difference from a harness one.
 			dsn := os.Getenv("REGRESS_DSN")
 			if dsn == "" {
-				s, err := pgmem.Start(context.Background(), pgmem.Options{})
+				// what pg_regress puts in the environment for every test
+				// session, as server defaults so they are not statements
+				// the tests see (pg_stat_statements counts SETs)
+				params := append([]string{
+					"-c", "datestyle=Postgres,MDY",
+					"-c", "timezone=America/Los_Angeles",
+					"-c", "intervalstyle=postgres_verbose",
+				}, regressSuites[name].params...)
+				s, err := pgmem.Start(context.Background(), pgmem.Options{Params: params})
 				if err != nil {
 					t.Fatal(err)
 				}
 				defer s.Close()
 				dsn = s.DSN()
 			}
-			if setup := regressSetup[name]; setup != "" {
+			if setup := regressSuites[name].setup; setup != "" {
 				conn, err := pgx.Connect(context.Background(), dsn)
 				if err != nil {
 					t.Fatal(err)
@@ -149,7 +170,8 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 		// libpq's default show_context=errors: no CONTEXT line for notices
 		notices.WriteString(formatMessage((*pgconn.PgError)(n), verbosity, "", false))
 	}
-	// what pg_regress puts in the environment for every test session
+	// what pg_regress puts in the environment for every test session (a
+	// pgmem server gets them as defaults; this reaches other servers)
 	cfg.RuntimeParams["datestyle"] = "Postgres, MDY"
 	cfg.RuntimeParams["timezone"] = "America/Los_Angeles"
 	cfg.RuntimeParams["intervalstyle"] = "postgres_verbose"
@@ -169,21 +191,11 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 				t.Fatal(err)
 			}
 			defer conn.Close(ctx)
-			// the startup parameters only reach the first session of a
-			// pgmem server; SET makes them stick for every connection
-			for _, q := range []string{
-				"SET datestyle = 'Postgres, MDY'",
-				"SET timezone = 'America/Los_Angeles'",
-				"SET intervalstyle = 'postgres_verbose'",
-			} {
-				if _, err := conn.Exec(ctx, q); err != nil {
-					t.Fatal(err)
-				}
-			}
 			cur = &psqlState{vars: map[string]string{}, verbosity: "default", dir: dir, ctx: ctx, conn: conn}
 			got := psqlTranscript(cur, &notices, string(sqlText))
 			if diff := transcriptDiff(string(want), got); diff != "" {
-				out := filepath.Join(t.TempDir(), name+".out")
+				// kept after the test, for looking at the whole transcript
+				out := filepath.Join(os.TempDir(), "pgmem-regress-"+filepath.Base(dir)+"-"+name+".out")
 				os.WriteFile(out, []byte(got), 0o644)
 				t.Errorf("output differs from expected (actual saved to %s):\n%s", out, diff)
 			}
@@ -272,7 +284,7 @@ func psqlTranscript(ps *psqlState, notices *strings.Builder, input string) strin
 		out.WriteString(line)
 		out.WriteByte('\n')
 		// a backslash command on its own line, or \\gset ending a query
-		if strings.HasPrefix(strings.TrimSpace(line), "\\") && !endsInQuote(buf.String()) {
+		if t := strings.TrimSpace(line); strings.HasPrefix(t, "\\") && !strings.HasPrefix(t, "\\;") && !endsInQuote(buf.String()) {
 			cmd := strings.TrimSpace(line)
 			if strings.HasPrefix(cmd, "\\gset") {
 				exec(buf.String(), true, strings.TrimSpace(strings.TrimPrefix(cmd, "\\gset")))
@@ -305,6 +317,19 @@ func psqlTranscript(ps *psqlState, notices *strings.Builder, input string) strin
 			}
 			if copyFromStdinRe.MatchString(leadingCommentsStripped(stmt)) {
 				copyStmt = leadingCommentsStripped(stmt)
+				continue
+			}
+			if copyToStdoutRe.MatchString(leadingCommentsStripped(stmt)) && ps.active() {
+				// the data goes to psql's stdout, so into the transcript
+				notices.Reset()
+				var data strings.Builder
+				_, err := conn.PgConn().CopyTo(ctx, &data, interpolate(leadingCommentsStripped(stmt), ps.vars))
+				out.WriteString(notices.String())
+				if err != nil {
+					out.WriteString(formatError(err, ps.verbosity, stmt))
+				} else {
+					out.WriteString(data.String())
+				}
 				continue
 			}
 			exec(stmt, false, "")
@@ -373,6 +398,7 @@ func (ps *psqlState) meta(cmd string) string {
 	return ""
 }
 
+var copyToStdoutRe = regexp.MustCompile(`(?is)^\s*copy\b.*\bto\s+stdout\b`)
 var copyFromStdinRe = regexp.MustCompile(`(?is)^\s*copy\b.*\bfrom\s+stdin\b`)
 var copyFromRe = regexp.MustCompile(`(?i)^(.+?)\s+from\s+'([^']+)'\s*(.*)$`)
 var copyToRe = regexp.MustCompile(`(?i)^(.+?)\s+to\s+'([^']+)'\s*(.*)$`)
@@ -564,6 +590,8 @@ func scanSQL(s string) (semi int, inQuote bool) {
 			} else {
 				i++
 			}
+		case c == '\\' && i+1 < len(s) && s[i+1] == ';':
+			i += 2 // \; : a semicolon that does not end the statement
 		case c == ';':
 			if depth == 0 {
 				return i, false
@@ -607,49 +635,84 @@ var rightAligned = map[uint32]bool{20: true, 21: true, 23: true, 26: true, 700: 
 func runStatement(ctx context.Context, conn *pgx.Conn, ps *psqlState, stmt string, gset bool, prefix string) string {
 	// The raw simple-query path: the text goes to the server untouched
 	// (pgx's Query would try to bind $n placeholders itself) and several
-	// statements in one string produce several results, like psql.
+	// statements in one string produce several results, like psql. With
+	// \gset the last result becomes variables; the ones before it print.
+	type result struct {
+		fields []pgconn.FieldDescription
+		data   [][]string
+		isSet  bool // a RowDescription arrived, even with no columns
+	}
+	var results []result
 	var out strings.Builder
 	errShown := false
+	// psql strips the backslash of \; and sends the statements as one
+	// string; error positions refer to that text
+	stmt = strings.ReplaceAll(stmt, "\\;", ";")
 	mrr := conn.PgConn().Exec(ctx, stmt)
 	for mrr.NextResult() {
 		rr := mrr.ResultReader()
-		fields := append([]pgconn.FieldDescription(nil), rr.FieldDescriptions()...)
-		var data [][]string
+		raw := rr.FieldDescriptions() // nil for a utility command, empty for SELECT WHERE ...
+		res := result{fields: append([]pgconn.FieldDescription(nil), raw...), isSet: raw != nil}
 		for rr.NextRow() {
 			raw := rr.Values()
 			row := make([]string, len(raw))
 			for i, v := range raw {
 				row[i] = string(v)
 			}
-			data = append(data, row)
+			res.data = append(res.data, row)
 		}
-		if _, err := rr.Close(); err != nil {
+		tag, err := rr.Close()
+		if err != nil {
+			// the statements before the failing one already printed
+			// their results in psql; \gset does not apply after an error
+			for _, done := range results {
+				if ps.expanded {
+					out.WriteString(formatExpanded(done.fields, done.data))
+				} else {
+					out.WriteString(formatAligned(done.fields, done.data))
+				}
+			}
+			results = nil
 			out.WriteString(formatError(err, ps.verbosity, stmt))
 			errShown = true
 			break
 		}
-		if len(fields) == 0 {
-			continue
+		_ = tag
+		// a result set, even one without columns (SELECT WHERE ...),
+		// prints; a utility command does not
+		if res.isSet {
+			results = append(results, res)
 		}
-		if gset {
-			// \\gset [prefix]: one row's columns become variables, no output
-			if len(data) != 1 {
-				fmt.Fprintf(&out, "CLIENT ERROR: \\gset with %d rows\n", len(data))
+	}
+	if err := mrr.Close(); err != nil && !errShown {
+		for _, done := range results {
+			if ps.expanded {
+				out.WriteString(formatExpanded(done.fields, done.data))
+			} else {
+				out.WriteString(formatAligned(done.fields, done.data))
+			}
+		}
+		results = nil
+		out.WriteString(formatError(err, ps.verbosity, stmt))
+		errShown = true
+	}
+	for i, res := range results {
+		if gset && !errShown && i == len(results)-1 {
+			// \gset [prefix]: one row's columns become variables, no output
+			if len(res.data) != 1 {
+				fmt.Fprintf(&out, "CLIENT ERROR: \\gset with %d rows\n", len(res.data))
 				continue
 			}
-			for i, f := range fields {
-				ps.vars[prefix+f.Name] = data[0][i]
+			for c, f := range res.fields {
+				ps.vars[prefix+f.Name] = res.data[0][c]
 			}
 			continue
 		}
 		if ps.expanded {
-			out.WriteString(formatExpanded(fields, data))
+			out.WriteString(formatExpanded(res.fields, res.data))
 		} else {
-			out.WriteString(formatAligned(fields, data))
+			out.WriteString(formatAligned(res.fields, res.data))
 		}
-	}
-	if err := mrr.Close(); err != nil && !errShown {
-		out.WriteString(formatError(err, ps.verbosity, stmt))
 	}
 	return out.String()
 }
@@ -780,6 +843,10 @@ func leadingCommentsStripped(stmt string) string {
 // '+' continuation marks on multi-line values and a "(N rows)" footer.
 func formatAligned(fields []pgconn.FieldDescription, data [][]string) string {
 	ncol := len(fields)
+	if ncol == 0 {
+		// no columns: psql prints just the divider and the row count
+		return "--\n" + rowsFooter(len(data))
+	}
 	widths := make([]int, ncol)
 	cells := make([][][]string, len(data))
 	for i, f := range fields {
@@ -854,32 +921,50 @@ func formatAligned(fields []pgconn.FieldDescription, data [][]string) string {
 			b.WriteString("\n")
 		}
 	}
-	if len(data) == 1 {
-		b.WriteString("(1 row)\n\n")
-	} else {
-		fmt.Fprintf(&b, "(%d rows)\n\n", len(data))
-	}
+	b.WriteString(rowsFooter(len(data)))
 	return b.String()
 }
 
+func rowsFooter(n int) string {
+	if n == 1 {
+		return "(1 row)\n\n"
+	}
+	return fmt.Sprintf("(%d rows)\n\n", n)
+}
+
 // psqlEscapeControl renders control characters and invalid bytes the way
-// psql's pg_wcsformat does: \r as "\r", other controls and 0x7F as \xNN,
-// newlines kept as line breaks.
+// psql's pg_wcsformat does: a tab becomes spaces up to the next multiple
+// of 8 columns in its line, \r is "\r", other controls and 0x7F are
+// \xNN, newlines are kept as line breaks.
 func psqlEscapeControl(s string) string {
 	var b strings.Builder
+	col := 0 // screen column within the current line
 	for i := 0; i < len(s); {
 		r, size := utf8.DecodeRuneInString(s[i:])
 		switch {
 		case r == utf8.RuneError && size == 1:
 			fmt.Fprintf(&b, "\\x%02X", s[i])
+			col += 4
 		case r == '\n':
 			b.WriteByte('\n')
+			col = 0
+		case r == '\t':
+			for {
+				b.WriteByte(' ')
+				col++
+				if col%8 == 0 {
+					break
+				}
+			}
 		case r == '\r':
 			b.WriteString("\\r")
+			col += 2
 		case r < 0x20 || r == 0x7f:
 			fmt.Fprintf(&b, "\\x%02X", r)
+			col += 4
 		default:
 			b.WriteRune(r)
+			col++
 		}
 		i += size
 	}

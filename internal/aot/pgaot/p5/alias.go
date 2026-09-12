@@ -1200,8 +1200,8 @@ func F_ExecCloseIndices(m *base.Module, l0 int32)
 func F_ExecInsertIndexTuples(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 //go:linkname F_check_exclusion_constraint github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_check_exclusion_constraint
 func F_check_exclusion_constraint(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
-//go:linkname F_ExecInitJunkFilter github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecInitJunkFilter
-func F_ExecInitJunkFilter(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_standard_ExecutorStart github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_standard_ExecutorStart
+func F_standard_ExecutorStart(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ExecCheckPermissions github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecCheckPermissions
 func F_ExecCheckPermissions(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_ExecutorRun github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExecutorRun
@@ -1334,8 +1334,6 @@ func F_ExecConditionalAssignProjectionInfo(m *base.Module, l0 int32, l1 int32)
 func F_ExecCreateScanSlotFromOuterPlan(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExecOpenScanRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecOpenScanRelation
 func F_ExecOpenScanRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-//go:linkname F_ExecGetRangeTableRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecGetRangeTableRelation
-func F_ExecGetRangeTableRelation(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ExecInitRangeTable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExecInitRangeTable
 func F_ExecInitRangeTable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_ExecInitResultRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecInitResultRelation
@@ -2488,6 +2486,8 @@ func F_BufFileSeekBlock(m *base.Module, l0 int32, l1 int64) int32
 func F_fsync_fname_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_CloseTransientFile github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_CloseTransientFile
 func F_CloseTransientFile(m *base.Module, l0 int32) int32
+//go:linkname F_durable_rename github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_durable_rename
+func F_durable_rename(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_OpenTransientFile github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_OpenTransientFile
 func F_OpenTransientFile(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_FileClose github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_FileClose
@@ -2838,8 +2838,6 @@ func F_DoPortalRewind(m *base.Module, l0 int32)
 func F_EnsurePortalSnapshotExists(m *base.Module)
 //go:linkname F_PreventCommandIfReadOnly github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PreventCommandIfReadOnly
 func F_PreventCommandIfReadOnly(m *base.Module, l0 int32)
-//go:linkname F_PreventCommandIfParallelMode github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PreventCommandIfParallelMode
-func F_PreventCommandIfParallelMode(m *base.Module, l0 int32)
 //go:linkname F_CreateCommandTag github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_CreateCommandTag
 func F_CreateCommandTag(m *base.Module, l0 int32) int32
 //go:linkname F_CheckRestrictedOperation github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_CheckRestrictedOperation
@@ -4026,6 +4024,8 @@ func F_hash_search(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_hash_corrupted(m *base.Module, l0 int32)
 //go:linkname F_hash_seq_search github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hash_seq_search
 func F_hash_seq_search(m *base.Module, l0 int32) int32
+//go:linkname F_hash_seq_term github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hash_seq_term
+func F_hash_seq_term(m *base.Module, l0 int32)
 //go:linkname F_GetBackendTypeDesc github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetBackendTypeDesc
 func F_GetBackendTypeDesc(m *base.Module, l0 int32) int32
 //go:linkname F_SetDatabasePath github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_SetDatabasePath
@@ -4818,6 +4818,12 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32
 func F_apw_start_leader_worker(m *base.Module)
 //go:linkname F_apw_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_apw_dump_now
 func F_apw_dump_now(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_entry_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_entry_reset
+func F_entry_reset(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) int64
+//go:linkname F_pg_stat_statements_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_internal
+func F_pg_stat_statements_internal(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_qtext_load_file github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_qtext_load_file
+func F_qtext_load_file(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

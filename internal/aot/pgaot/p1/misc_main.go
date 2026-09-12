@@ -306,8 +306,12 @@ func F_main(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v553
 	var v554 int32
 	_ = v554
-	var v557 int32
-	_ = v557
+	var v568 int32
+	_ = v568
+	var v573 int32
+	_ = v573
+	var v578 int32
+	_ = v578
 	var v587 int32
 	_ = v587
 	var v590 int32
@@ -334,6 +338,8 @@ func F_main(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v634
 	var v636 int32
 	_ = v636
+	var v644 int32
+	_ = v644
 	var v658 int32
 	_ = v658
 	var v661 int32
@@ -4569,7 +4575,6 @@ L167:
 	goto L168
 L168:
 	;
-	v557 = int32(_a_F_main_11)
 	goto L177
 L169:
 	;
@@ -4598,7 +4603,7 @@ L172:
 	}
 L173:
 	;
-	if v634 != int32(_a_F_main_11) {
+	if v644 != int32(_a_F_main_11) {
 		goto L197
 	} else {
 		goto L198
@@ -4616,23 +4621,56 @@ L176:
 	goto L175
 L177:
 	;
-	goto L181
-L181:
+	goto L180
+L180:
 	;
-	goto L182
+	v568 = int32(_a_F_main_11)
+	goto L183
 L182:
 	;
-	v587 = *(*int32)(unsafe.Add(mBase, _c_F_main[20]))
+	v587 = *(*int32)(unsafe.Add(mBase, uint32(v578)))
 	v590 = int32(-2139062144)
 	if (int32(16843008)-v587|v587)&v590 != v590 {
-		v621 = v557
+		v621 = v578
 		goto L176
 	} else {
 		goto L188
 	}
+L183:
+	;
+	v573 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v568))))
+	if v573 == int32(0) {
+		v644 = v568
+		goto L174
+	} else {
+		goto L185
+	}
+L184:
+	;
+	goto L182
+L185:
+	;
+	if int32(61) == v573 {
+		v644 = v568
+		goto L174
+	} else {
+		goto L186
+	}
+L186:
+	;
+	v578 = v568 + int32(1)
+	if v578&int32(3) != 0 {
+		v568 = v578
+		goto L183
+	} else {
+		goto L187
+	}
+L187:
+	;
+	goto L184
 L188:
 	;
-	v596 = v557
+	v596 = v578
 	v598 = v587
 	goto L189
 L189:
@@ -4668,12 +4706,14 @@ L193:
 	;
 	v636 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v634))))
 	if v636 == int32(0) {
+		v644 = v634
 		goto L174
 	} else {
 		goto L195
 	}
 L194:
 	;
+	v644 = v634
 	goto L174
 L195:
 	;
@@ -4688,7 +4728,7 @@ L196:
 	goto L194
 L197:
 	;
-	v658 = v634 - int32(_a_F_main_11)
+	v658 = v644 - int32(_a_F_main_11)
 	v661 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v658)+uint32(_c_F_main[20]))))
 	if v661 == int32(0) {
 		goto L172

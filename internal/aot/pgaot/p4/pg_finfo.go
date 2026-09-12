@@ -428,6 +428,9 @@ func F_pg_finfo_pg_relpagesbyid(m *base.Module) int32 {
 func F_pg_finfo_pg_relpagesbyid_v1_5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_relpagesbyid_v1_5_0)
 }
+func F_pg_finfo_pg_stat_statements_1_9(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_9_0)
+}
 func F_pg_finfo_pg_visibility_map(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_visibility_map_0)
 }

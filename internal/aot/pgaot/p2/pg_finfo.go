@@ -395,6 +395,15 @@ func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
 func F_pg_finfo_pg_decrypt_iv(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_decrypt_iv_0)
 }
+func F_pg_finfo_pg_stat_statements(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_0)
+}
+func F_pg_finfo_pg_stat_statements_1_10(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_10_0)
+}
+func F_pg_finfo_pg_stat_statements_reset_1_7(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_reset_1_7_0)
+}
 func F_pg_finfo_pgp_key_id_w(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_key_id_w_0)
 }

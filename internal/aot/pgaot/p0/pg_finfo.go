@@ -398,6 +398,15 @@ func F_pg_finfo_pg_relpages(m *base.Module) int32 {
 func F_pg_finfo_pg_relpages_v1_5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_relpages_v1_5_0)
 }
+func F_pg_finfo_pg_stat_statements_1_12(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_12_0)
+}
+func F_pg_finfo_pg_stat_statements_1_3(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_3_0)
+}
+func F_pg_finfo_pg_stat_statements_reset(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_reset_0)
+}
 func F_pg_finfo_pgp_pub_decrypt_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_pub_decrypt_text_0)
 }

@@ -362,6 +362,9 @@ func F_pg_finfo_pg_crypt(m *base.Module) int32 {
 func F_pg_finfo_pg_digest(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_digest_0)
 }
+func F_pg_finfo_pg_stat_statements_1_2(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_2_0)
+}
 func F_pg_finfo_pg_truncate_visibility_map(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_truncate_visibility_map_0)
 }

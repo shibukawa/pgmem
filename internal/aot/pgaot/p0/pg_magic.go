@@ -17,6 +17,9 @@ func F_Pg_magic_func_euc_kr_and_mic(m *base.Module) int32 {
 func F_Pg_magic_func_pageinspect(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pageinspect_0)
 }
+func F_Pg_magic_func_pg_stat_statements(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_pg_stat_statements_0)
+}
 func F_Pg_magic_func_seg(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_seg_0)
 }

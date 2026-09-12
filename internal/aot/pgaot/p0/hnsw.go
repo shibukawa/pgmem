@@ -976,18 +976,20 @@ func F_HnswInit(m *base.Module) {
 	_ = v65
 	var v76 int32
 	_ = v76
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v95 int32
-	_ = v95
-	var v100 float64
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v107 int32
-	_ = v107
+	var v79 int32
+	_ = v79
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v96 int32
+	_ = v96
+	var v101 float64
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v108 int32
+	_ = v108
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -1051,30 +1053,31 @@ func F_HnswInit(m *base.Module) {
 										if v76 != 0 {
 											return
 										} else {
-											F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
+											v79 = int32(0)
+											F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), v79, int32(_a_F_HnswInit_12), v79, int32(_a_F_HnswInit_13), int32(6))
 											mBase = m.M
-											v84 = m.ExcPending
-											if v84 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												v87 = int32(0)
-												F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
+												v88 = int32(0)
+												F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v88, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v88)
 												mBase = m.M
-												v95 = m.ExcPending
-												if v95 != 0 {
+												v96 = m.ExcPending
+												if v96 != 0 {
 													return
 												} else {
-													v100 = float64(1)
-													F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
+													v101 = float64(1)
+													F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v101, v101, float64(1000))
 													mBase = m.M
-													v104 = m.ExcPending
-													if v104 != 0 {
+													v105 = m.ExcPending
+													if v105 != 0 {
 														return
 													} else {
 														F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 														mBase = m.M
-														v107 = m.ExcPending
-														if v107 != 0 {
+														v108 = m.ExcPending
+														if v108 != 0 {
 															return
 														} else {
 															m.G0 = v5 + int32(16)
@@ -1139,30 +1142,31 @@ func F_HnswInit(m *base.Module) {
 											if v76 != 0 {
 												return
 											} else {
-												F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
+												v79 = int32(0)
+												F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), v79, int32(_a_F_HnswInit_12), v79, int32(_a_F_HnswInit_13), int32(6))
 												mBase = m.M
-												v84 = m.ExcPending
-												if v84 != 0 {
+												v85 = m.ExcPending
+												if v85 != 0 {
 													return
 												} else {
-													v87 = int32(0)
-													F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
+													v88 = int32(0)
+													F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v88, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v88)
 													mBase = m.M
-													v95 = m.ExcPending
-													if v95 != 0 {
+													v96 = m.ExcPending
+													if v96 != 0 {
 														return
 													} else {
-														v100 = float64(1)
-														F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
+														v101 = float64(1)
+														F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v101, v101, float64(1000))
 														mBase = m.M
-														v104 = m.ExcPending
-														if v104 != 0 {
+														v105 = m.ExcPending
+														if v105 != 0 {
 															return
 														} else {
 															F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 															mBase = m.M
-															v107 = m.ExcPending
-															if v107 != 0 {
+															v108 = m.ExcPending
+															if v108 != 0 {
 																return
 															} else {
 																m.G0 = v5 + int32(16)
@@ -1208,30 +1212,31 @@ func F_HnswInit(m *base.Module) {
 					if v76 != 0 {
 						return
 					} else {
-						F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
+						v79 = int32(0)
+						F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), v79, int32(_a_F_HnswInit_12), v79, int32(_a_F_HnswInit_13), int32(6))
 						mBase = m.M
-						v84 = m.ExcPending
-						if v84 != 0 {
+						v85 = m.ExcPending
+						if v85 != 0 {
 							return
 						} else {
-							v87 = int32(0)
-							F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
+							v88 = int32(0)
+							F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v88, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v88)
 							mBase = m.M
-							v95 = m.ExcPending
-							if v95 != 0 {
+							v96 = m.ExcPending
+							if v96 != 0 {
 								return
 							} else {
-								v100 = float64(1)
-								F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
+								v101 = float64(1)
+								F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v101, v101, float64(1000))
 								mBase = m.M
-								v104 = m.ExcPending
-								if v104 != 0 {
+								v105 = m.ExcPending
+								if v105 != 0 {
 									return
 								} else {
 									F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 									mBase = m.M
-									v107 = m.ExcPending
-									if v107 != 0 {
+									v108 = m.ExcPending
+									if v108 != 0 {
 										return
 									} else {
 										m.G0 = v5 + int32(16)

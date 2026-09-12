@@ -3527,3 +3527,20 @@ func F_pg_stat_get_xact_tuples_inserted(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_stat_statements_1_10(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(6), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}

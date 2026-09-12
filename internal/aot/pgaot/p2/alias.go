@@ -2622,6 +2622,10 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32
 func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32)
 //go:linkname F_shm_toc_lookup github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_shm_toc_lookup
 func F_shm_toc_lookup(m *base.Module, l0 int32, l1 int64, l2 int32) int32
+//go:linkname F_ShmemInitStruct github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ShmemInitStruct
+func F_ShmemInitStruct(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_ShmemInitHash github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ShmemInitHash
+func F_ShmemInitHash(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_add_size github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_add_size
 func F_add_size(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_mul_size github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_mul_size
@@ -3967,7 +3971,7 @@ func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
 func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
-func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName
 func F_GetConfigOptionByName(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_GUCArrayAdd github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GUCArrayAdd
@@ -4486,6 +4490,10 @@ func F_check_relation_block_range(m *base.Module, l0 int32, l1 int64)
 func F_verify_gist_page(m *base.Module, l0 int32) int32
 //go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
 func F_get_page_from_raw(m *base.Module, l0 int32) int32
+//go:linkname F_pgss_store github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgss_store
+func F_pgss_store(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32, l4 int32, l5 float64, l6 int64, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32)
+//go:linkname F_pg_stat_statements_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_internal
+func F_pg_stat_statements_internal(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_HnswInitLockTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswInitLockTranche
 func F_HnswInitLockTranche(m *base.Module)
 //go:linkname F_HnswParallelScanAndInsert github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswParallelScanAndInsert
@@ -4574,6 +4582,8 @@ func F___fstatat(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_fsync(m *base.Module, l0 int32) int32
 //go:linkname F___ftello_unlocked github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F___ftello_unlocked
 func F___ftello_unlocked(m *base.Module, l0 int32) int64
+//go:linkname F_ftruncate github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ftruncate
+func F_ftruncate(m *base.Module, l0 int32, l1 int64) int32
 //go:linkname F_fwrite github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_fwrite
 func F_fwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_getrusage github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_getrusage
@@ -4604,6 +4614,8 @@ func F_posix_fadvise(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int32) int
 func F_pow(m *base.Module, l0 float64, l1 float64) float64
 //go:linkname F_pread github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pread
 func F_pread(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64) int32
+//go:linkname F_pwrite github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pwrite
+func F_pwrite(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64) int32
 //go:linkname F_read github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_read
 func F_read(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_readdir github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_readdir

@@ -3803,7 +3803,7 @@ func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_DefineCustomStringVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_DefineCustomStringVariable
 func F_DefineCustomStringVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
-func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
 func F_MarkGUCPrefixReserved(m *base.Module, l0 int32)
 //go:linkname F_do_serialize github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_do_serialize
@@ -4460,6 +4460,12 @@ func F_get_page_from_raw(m *base.Module, l0 int32) int32
 func F_apw_detach_shmem(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_apw_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_apw_dump_now
 func F_apw_dump_now(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgss_store github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgss_store
+func F_pgss_store(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32, l4 int32, l5 float64, l6 int64, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32)
+//go:linkname F_entry_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_entry_reset
+func F_entry_reset(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) int64
+//go:linkname F_qtext_load_file github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_qtext_load_file
+func F_qtext_load_file(m *base.Module, l0 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1

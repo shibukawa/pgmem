@@ -329,6 +329,12 @@ func F_pg_finfo_pg_dearmor(m *base.Module) int32 {
 func F_pg_finfo_pg_freespace(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_freespace_0)
 }
+func F_pg_finfo_pg_stat_statements_1_8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_1_8_0)
+}
+func F_pg_finfo_pg_stat_statements_reset_1_11(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_stat_statements_reset_1_11_0)
+}
 func F_pg_finfo_pg_visibility_map_summary(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_visibility_map_summary_0)
 }

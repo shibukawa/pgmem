@@ -10910,6 +10910,162 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgPrewarm(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pg_stat_statements":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pg_stat_statements: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgStatStatements(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_pg_stat_statements":
+		if len(a) != 0 {
+			panic("aot: _PG_init_pg_stat_statements: want 0 args")
+		}
+		pgaot.PGInitPgStatStatements(m)
+		return nil, true
+	case "pg_finfo_pg_stat_statements":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_10":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_10: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_10(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_11":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_11: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_11(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_12":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_12: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_12(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_2: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_3":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_3: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_3(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_8: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatements_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_info: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatementsInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_reset":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_reset: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatementsReset(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_reset_1_11":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_reset_1_11: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatementsReset_1_11(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_stat_statements_reset_1_7":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_stat_statements_reset_1_7: want 0 args")
+		}
+		r := pgaot.PgFinfoPgStatStatementsReset_1_7(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements: want 1 args")
+		}
+		r := pgaot.PgStatStatements(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_10":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_10: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_10(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_11":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_11: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_11(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_12":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_12: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_12(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_2":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_2: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_3":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_3: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_3(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_8":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_8: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_1_9":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_1_9: want 1 args")
+		}
+		r := pgaot.PgStatStatements_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_info":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_info: want 1 args")
+		}
+		r := pgaot.PgStatStatementsInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_reset":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_reset: want 1 args")
+		}
+		r := pgaot.PgStatStatementsReset(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_reset_1_11":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_reset_1_11: want 1 args")
+		}
+		r := pgaot.PgStatStatementsReset_1_11(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_stat_statements_reset_1_7":
+		if len(a) != 1 {
+			panic("aot: pg_stat_statements_reset_1_7: want 1 args")
+		}
+		r := pgaot.PgStatStatementsReset_1_7(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

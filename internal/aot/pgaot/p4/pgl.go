@@ -146,7 +146,7 @@ func F_pgl_sendConnData(m *base.Module) {
 								} else {
 									v67 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 									v68 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-									*(*int32)(unsafe.Add(mBase, uint32(v67+v68))) = int32(1081623808)
+									*(*int32)(unsafe.Add(mBase, uint32(v67+v68))) = int32(1350059264)
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v67 + int32(4)
 									F_pq_endmessage(m, v7)
 									mBase = m.M

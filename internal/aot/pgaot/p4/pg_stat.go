@@ -4023,3 +4023,62 @@ func F_pg_stat_reset_subscription_stats(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_stat_statements_1_2(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(2), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}
+func F_pg_stat_statements_reset_1_11(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v5 int64
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int64
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(v4)))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v9 = F_entry_reset(m, v2, v3, v5, base.B2i32(v6 != int32(0)))
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v13 = F_Int64GetDatum(m, v9)
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return int32(0)
+		} else {
+			return v13
+		}
+	}
+}

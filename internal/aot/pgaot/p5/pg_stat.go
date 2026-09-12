@@ -2230,6 +2230,56 @@ func F_pg_stat_reset_slru(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_stat_statements_1_12(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(8), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}
+func F_pg_stat_statements_1_9(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(5), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}
+func F_pg_stat_statements_reset(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v6 int64
+	_ = v6
+	var v9 int32
+	_ = v9
+	v2 = int32(0)
+	v6 = F_entry_reset(m, v2, v2, int64(0), v2)
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
+	}
+}
 func F_pg_stat_wal_build_tuple(m *base.Module, l0 int32, l1 int64) int32 {
 	mBase := m.M
 	_ = mBase
