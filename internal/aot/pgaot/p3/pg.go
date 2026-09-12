@@ -123,7 +123,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 								if v101 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(517023), int32(1793), int32(284540))
+									F_errfinish(m, int32(517023), int32(1810), int32(284540))
 									mBase = m.M
 									v106 = m.ExcPending
 									if v106 != 0 {
@@ -150,7 +150,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 							if v51 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(517023), int32(1797), int32(284540))
+								F_errfinish(m, int32(517023), int32(1814), int32(284540))
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
@@ -209,7 +209,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 										if v131 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(517023), int32(1811), int32(284540))
+											F_errfinish(m, int32(517023), int32(1828), int32(284540))
 											mBase = m.M
 											v136 = m.ExcPending
 											if v136 != 0 {
@@ -259,7 +259,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 											if v131 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(517023), int32(1811), int32(284540))
+												F_errfinish(m, int32(517023), int32(1828), int32(284540))
 												mBase = m.M
 												v136 = m.ExcPending
 												if v136 != 0 {
@@ -308,7 +308,7 @@ func F_ValidatePgVersion(m *base.Module, l0 int32) {
 												if v157 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(517023), int32(1821), int32(284540))
+													F_errfinish(m, int32(517023), int32(1838), int32(284540))
 													mBase = m.M
 													v162 = m.ExcPending
 													if v162 != 0 {

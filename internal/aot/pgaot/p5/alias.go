@@ -4042,10 +4042,10 @@ func F_has_rolreplication(m *base.Module, l0 int32) int32
 func F_InitializeSessionUserId(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_InitializeSessionUserIdStandalone github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_InitializeSessionUserIdStandalone
 func F_InitializeSessionUserIdStandalone(m *base.Module)
-//go:linkname F_InitializeSystemUser github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitializeSystemUser
-func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_GetUserNameFromId github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetUserNameFromId
 func F_GetUserNameFromId(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_InitializeSystemUser github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitializeSystemUser
+func F_InitializeSystemUser(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_load_libraries github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_load_libraries
 func F_load_libraries(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_process_startup_options github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_process_startup_options

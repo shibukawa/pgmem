@@ -168,3 +168,41 @@ patch('src/backend/tcop/postgres.c',
 }
 """,
 'decided after ignore_till_sync is set')
+
+# Session authorization: single-user mode never gives the
+# session_authorization GUC its reset value (upstream says so in the
+# comment), so RESET SESSION AUTHORIZATION, SET ... DEFAULT and the DISCARD
+# ALL pgmem runs between connections left a SET SESSION AUTHORIZATION in
+# place for the next client of the shared backend. Set it like
+# InitializeSessionUserId() does.
+patch('src/backend/utils/init/miscinit.c',
+"""	SetSessionAuthorization(BOOTSTRAP_SUPERUSERID, true);
+
+	/* We could do SetConfigOption("role"), but let's be consistent */
+	SetCurrentRoleId(InvalidOid, false);
+}
+""",
+"""	SetSessionAuthorization(BOOTSTRAP_SUPERUSERID, true);
+
+#ifdef __PGMEM__
+	/*
+	 * pgmem: every client shares this session, and RESET SESSION
+	 * AUTHORIZATION (also DISCARD ALL between clients) must bring it back
+	 * to the superuser, so give the GUC its reset value after all. Not in
+	 * bootstrap mode (initdb): no catalog to read the name from yet.
+	 */
+	if (!IsBootstrapProcessingMode())
+	{
+		char	   *rname = GetUserNameFromId(BOOTSTRAP_SUPERUSERID, true);
+
+		if (rname != NULL)
+			SetConfigOption("session_authorization", rname,
+							PGC_BACKEND, PGC_S_OVERRIDE);
+	}
+#endif
+
+	/* We could do SetConfigOption("role"), but let's be consistent */
+	SetCurrentRoleId(InvalidOid, false);
+}
+""",
+'give the GUC its reset value after all')
