@@ -491,6 +491,11 @@ type Backend struct {
 	// Listen receives the session's LISTEN set changes at commit time
 	// (see host.Host.Listen). It runs inside Exec.
 	Listen func(channel string, op int)
+	// More is called, inside Exec, when the backend wants input beyond
+	// the batch Exec was given: a COPY FROM STDIN whose data spans
+	// batches. It returns the next messages from the client, or nil when
+	// there are none (the backend then sees end of stream).
+	More func() []byte
 }
 
 // Start boots a backend on a filesystem that already has a data directory.
@@ -563,6 +568,11 @@ func (e *Engine) Start(fs *vfs.FS, opts StartOptions) (*Backend, error) {
 }
 
 func (b *Backend) recv(buf []byte) int {
+	if b.off >= len(b.in) && b.More != nil {
+		if more := b.More(); len(more) > 0 {
+			b.in, b.off = more, 0
+		}
+	}
 	n := copy(buf, b.in[b.off:])
 	b.off += n
 	return n

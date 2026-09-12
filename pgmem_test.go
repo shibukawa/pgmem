@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 	"testing"
@@ -809,4 +810,59 @@ func TestExtendedProtocolErrorSendsOneReadyForQuery(t *testing.T) {
 	if err := pc.ExecParams(ctx, "select 1", nil, nil, nil, nil).Read().Err; err != nil {
 		t.Fatalf("ExecParams after error: %v", err)
 	}
+}
+
+// COPY FROM STDIN reads its data inside one Exec, so the backend asks for
+// more input than the first batch held; pgmem used to answer with end of
+// stream, which PostgreSQL treats as a lost connection and exits on. Both
+// a large COPY and a client vanishing mid-COPY must leave the server
+// usable.
+func TestCopyFromStdinAcrossBatches(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{})
+	conn, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer conn.Close(ctx)
+	if _, err := conn.Exec(ctx, "CREATE TABLE cp(x text)"); err != nil {
+		t.Fatal(err)
+	}
+	var sb strings.Builder
+	for i := 0; i < 20000; i++ {
+		fmt.Fprintf(&sb, "row %d %s\n", i, strings.Repeat("x", i%50))
+	}
+	tag, err := conn.PgConn().CopyFrom(ctx, strings.NewReader(sb.String()), "COPY cp FROM STDIN")
+	if err != nil || tag.RowsAffected() != 20000 {
+		t.Fatalf("copy: tag=%v err=%v", tag, err)
+	}
+
+	// a second client disconnects in the middle of its COPY
+	c2, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	pr, pw := io.Pipe()
+	done := make(chan error, 1)
+	go func() {
+		_, err := c2.PgConn().CopyFrom(ctx, pr, "COPY cp FROM STDIN")
+		done <- err
+	}()
+	pw.Write([]byte(strings.Repeat("partial row\n", 5000)))
+	c2.PgConn().Conn().Close() // vanish without CopyDone
+	pw.Close()
+	if err := <-done; err == nil {
+		t.Fatal("copy over a closed connection succeeded")
+	}
+
+	// the server and the first connection are fine, the partial rows are not there
+	var n int
+	if err := conn.QueryRow(ctx, "SELECT count(*) FROM cp").Scan(&n); err != nil || n != 20000 {
+		t.Fatalf("count = %d err=%v", n, err)
+	}
+	c3, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatalf("new connection after mid-COPY disconnect: %v", err)
+	}
+	c3.Close(ctx)
 }
