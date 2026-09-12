@@ -4322,6 +4322,20 @@ func F_intarray_concat_arrays(m *base.Module, l0 int32, l1 int32) int32
 func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_DoubleMetaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_DoubleMetaphone
 func F_DoubleMetaphone(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_write_box github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_write_box
+func F_write_box(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_write_point_as_box github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_write_point_as_box
+func F_write_point_as_box(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_cube_yylex github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_cube_yylex
+func F_cube_yylex(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_cube_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_yyensure_buffer_stack
+func F_cube_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_cube_yy_create_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_yy_create_buffer
+func F_cube_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_yy_fatal_error_6 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_yy_fatal_error_6
+func F_yy_fatal_error_6(m *base.Module, l0 int32)
+//go:linkname F_cube_yyerror github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_yyerror
+func F_cube_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

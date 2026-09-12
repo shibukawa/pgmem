@@ -38,6 +38,12 @@ func F_pg_finfo_citext_hash(m *base.Module) int32 {
 func F_pg_finfo_citext_pattern_le(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_pattern_le_0)
 }
+func F_pg_finfo_cube_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_recv_0)
+}
+func F_pg_finfo_distance_taxicab(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_distance_taxicab_0)
+}
 func F_pg_finfo_euc_jp_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_utf8_0)
 }

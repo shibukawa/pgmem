@@ -47,11 +47,32 @@ func F_pg_finfo_citext_pattern_lt(m *base.Module) int32 {
 func F_pg_finfo_crosstab(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_crosstab_0)
 }
+func F_pg_finfo_cube_contained(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_contained_0)
+}
+func F_pg_finfo_cube_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_distance_0)
+}
+func F_pg_finfo_cube_f8_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_f8_f8_0)
+}
+func F_pg_finfo_cube_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_in_0)
+}
+func F_pg_finfo_cube_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_le_0)
+}
+func F_pg_finfo_cube_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_union_0)
+}
 func F_pg_finfo_delete(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_delete_0)
 }
 func F_pg_finfo_difference(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_difference_0)
+}
+func F_pg_finfo_distance_chebyshev(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_distance_chebyshev_0)
 }
 func F_pg_finfo_each(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_each_0)
@@ -67,6 +88,12 @@ func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_fetchval(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_fetchval_0)
+}
+func F_pg_finfo_g_cube_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_penalty_0)
+}
+func F_pg_finfo_g_cube_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_union_0)
 }
 func F_pg_finfo_g_int_penalty(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_g_int_penalty_0)

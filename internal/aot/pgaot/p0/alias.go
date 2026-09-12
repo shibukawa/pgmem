@@ -3902,6 +3902,12 @@ func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
 func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_MetaphAdd github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MetaphAdd
 func F_MetaphAdd(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_yy_fatal_error_6 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_yy_fatal_error_6
+func F_yy_fatal_error_6(m *base.Module, l0 int32)
+//go:linkname F_cube_yy_scan_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_yy_scan_buffer
+func F_cube_yy_scan_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_cube_yylex_destroy github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_cube_yylex_destroy
+func F_cube_yylex_destroy(m *base.Module, l0 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

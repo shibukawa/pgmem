@@ -6499,6 +6499,53 @@ func F_booltext(m *base.Module, l0 int32) int32 {
 		return v6
 	}
 }
+func F_boot_yylex_init(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v30 int64
+	_ = v30
+	if l0 == int32(0) {
+		*(*int32)(unsafe.Add(mBase, _c_F_boot_yylex_init[0])) = int32(28)
+		return int32(1)
+	} else {
+		v11 = F_palloc(m, int32(96))
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(l0))) = v11
+			if v11 == int32(0) {
+				*(*int32)(unsafe.Add(mBase, _c_F_boot_yylex_init[0])) = int32(48)
+				return int32(1)
+			} else {
+				v26 = F__emscripten_memset_bulkmem(m, v11, base.I32_extend8_s(int32(0)), int32(96))
+				mBase = m.M
+				v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v28 = int32(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v27)+60)) = v28
+				v30 = int64(0)
+				*(*int64)(unsafe.Add(mBase, uint32(v27)+52)) = v30
+				*(*int32)(unsafe.Add(mBase, uint32(v27)+44)) = v28
+				*(*int64)(unsafe.Add(mBase, uint32(v27)+36)) = v30
+				*(*int64)(unsafe.Add(mBase, uint32(v27)+4)) = v30
+				*(*int64)(unsafe.Add(mBase, uint32(v27)+12)) = v30
+				*(*int32)(unsafe.Add(mBase, uint32(v27)+20)) = v28
+				return v28
+			}
+		}
+	}
+}
 func F_bpchargt(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

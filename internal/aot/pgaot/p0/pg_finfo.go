@@ -32,6 +32,21 @@ func F_pg_finfo_bqarr_out(m *base.Module) int32 {
 func F_pg_finfo_citext_gt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_gt_0)
 }
+func F_pg_finfo_cube_c_f8_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_c_f8_f8_0)
+}
+func F_pg_finfo_cube_contains(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_contains_0)
+}
+func F_pg_finfo_cube_coord(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_coord_0)
+}
+func F_pg_finfo_cube_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_gt_0)
+}
+func F_pg_finfo_cube_overlap(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_overlap_0)
+}
 func F_pg_finfo_daitch_mokotoff(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_daitch_mokotoff_0)
 }
@@ -49,6 +64,9 @@ func F_pg_finfo_euc_tw_to_mic(m *base.Module) int32 {
 }
 func F_pg_finfo_float4_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_float4_dist_0)
+}
+func F_pg_finfo_g_cube_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_decompress_0)
 }
 func F_pg_finfo_g_int_decompress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_g_int_decompress_0)

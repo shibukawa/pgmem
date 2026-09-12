@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6829)
-	m.G0 = int32(13045584)
+	m.T0 = make([]any, 6959)
+	m.G0 = int32(13048112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4374683
+	m.DataEnd = 4377211
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6829)
-	m.G0 = int32(13045584)
+	m.T0 = make([]any, 6959)
+	m.G0 = int32(13048112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4374683
+	m.DataEnd = 4377211
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6829)
-	m.G0 = int32(13045584)
+	m.T0 = make([]any, 6959)
+	m.G0 = int32(13048112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4374683
+	m.DataEnd = 4377211
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1586560])
-	copy(m.Memory[1591888:], wasm2goData_data_bin[1586560:1586569])
-	copy(m.Memory[1593936:], wasm2goData_data_bin[1586569:1599497])
-	copy(m.Memory[1617924:], wasm2goData_data_bin[1599497:1692738])
-	copy(m.Memory[1712192:], wasm2goData_data_bin[1692738:1804394])
-	copy(m.Memory[1835064:], wasm2goData_data_bin[1804394:4056816])
-	copy(m.Memory[4094976:], wasm2goData_data_bin[4056816:4336523])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1588720])
+	copy(m.Memory[1594048:], wasm2goData_data_bin[1588720:1588729])
+	copy(m.Memory[1596096:], wasm2goData_data_bin[1588729:1601657])
+	copy(m.Memory[1617924:], wasm2goData_data_bin[1601657:1694898])
+	copy(m.Memory[1712192:], wasm2goData_data_bin[1694898:1806554])
+	copy(m.Memory[1835064:], wasm2goData_data_bin[1806554:4061440])
+	copy(m.Memory[4097440:], wasm2goData_data_bin[4061440:4341211])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4489,6 +4489,261 @@ func PgFinfoSoundex(m *base.Module) int32 {
 }
 func Soundex(m *base.Module, l0 int32) int32 {
 	return F_soundex(m, l0)
+}
+func PgMagicFuncCube(m *base.Module) int32 {
+	return F_Pg_magic_func_cube(m)
+}
+func CubeAF8(m *base.Module, l0 int32) int32 {
+	return F_cube_a_f8(m, l0)
+}
+func CubeAF8F8(m *base.Module, l0 int32) int32 {
+	return F_cube_a_f8_f8(m, l0)
+}
+func CubeCF8(m *base.Module, l0 int32) int32 {
+	return F_cube_c_f8(m, l0)
+}
+func CubeCF8F8(m *base.Module, l0 int32) int32 {
+	return F_cube_c_f8_f8(m, l0)
+}
+func CubeCmp(m *base.Module, l0 int32) int32 {
+	return F_cube_cmp(m, l0)
+}
+func CubeContained(m *base.Module, l0 int32) int32 {
+	return F_cube_contained(m, l0)
+}
+func CubeContains(m *base.Module, l0 int32) int32 {
+	return F_cube_contains(m, l0)
+}
+func CubeCoord(m *base.Module, l0 int32) int32 {
+	return F_cube_coord(m, l0)
+}
+func CubeCoordLlur(m *base.Module, l0 int32) int32 {
+	return F_cube_coord_llur(m, l0)
+}
+func CubeDim(m *base.Module, l0 int32) int32 {
+	return F_cube_dim(m, l0)
+}
+func CubeDistance(m *base.Module, l0 int32) int32 {
+	return F_cube_distance(m, l0)
+}
+func CubeEnlarge(m *base.Module, l0 int32) int32 {
+	return F_cube_enlarge(m, l0)
+}
+func CubeEq(m *base.Module, l0 int32) int32 {
+	return F_cube_eq(m, l0)
+}
+func CubeF8(m *base.Module, l0 int32) int32 {
+	return F_cube_f8(m, l0)
+}
+func CubeF8F8(m *base.Module, l0 int32) int32 {
+	return F_cube_f8_f8(m, l0)
+}
+func CubeGe(m *base.Module, l0 int32) int32 {
+	return F_cube_ge(m, l0)
+}
+func CubeGt(m *base.Module, l0 int32) int32 {
+	return F_cube_gt(m, l0)
+}
+func CubeIn(m *base.Module, l0 int32) int32 {
+	return F_cube_in(m, l0)
+}
+func CubeInter(m *base.Module, l0 int32) int32 {
+	return F_cube_inter(m, l0)
+}
+func CubeIsPoint(m *base.Module, l0 int32) int32 {
+	return F_cube_is_point(m, l0)
+}
+func CubeLe(m *base.Module, l0 int32) int32 {
+	return F_cube_le(m, l0)
+}
+func CubeLlCoord(m *base.Module, l0 int32) int32 {
+	return F_cube_ll_coord(m, l0)
+}
+func CubeLt(m *base.Module, l0 int32) int32 {
+	return F_cube_lt(m, l0)
+}
+func CubeNe(m *base.Module, l0 int32) int32 {
+	return F_cube_ne(m, l0)
+}
+func CubeOut(m *base.Module, l0 int32) int32 {
+	return F_cube_out(m, l0)
+}
+func CubeOverlap(m *base.Module, l0 int32) int32 {
+	return F_cube_overlap(m, l0)
+}
+func CubeRecv(m *base.Module, l0 int32) int32 {
+	return F_cube_recv(m, l0)
+}
+func CubeSend(m *base.Module, l0 int32) int32 {
+	return F_cube_send(m, l0)
+}
+func CubeSize(m *base.Module, l0 int32) int32 {
+	return F_cube_size(m, l0)
+}
+func CubeSubset(m *base.Module, l0 int32) int32 {
+	return F_cube_subset(m, l0)
+}
+func CubeUnion(m *base.Module, l0 int32) int32 {
+	return F_cube_union(m, l0)
+}
+func CubeUrCoord(m *base.Module, l0 int32) int32 {
+	return F_cube_ur_coord(m, l0)
+}
+func DistanceChebyshev(m *base.Module, l0 int32) int32 {
+	return F_distance_chebyshev(m, l0)
+}
+func DistanceTaxicab(m *base.Module, l0 int32) int32 {
+	return F_distance_taxicab(m, l0)
+}
+func GCubeCompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GCubeConsistent(m *base.Module, l0 int32) int32 {
+	return F_g_cube_consistent(m, l0)
+}
+func GCubeDecompress(m *base.Module, l0 int32) int32 {
+	return F_g_cube_decompress(m, l0)
+}
+func GCubeDistance(m *base.Module, l0 int32) int32 {
+	return F_g_cube_distance(m, l0)
+}
+func GCubePenalty(m *base.Module, l0 int32) int32 {
+	return F_g_cube_penalty(m, l0)
+}
+func GCubePicksplit(m *base.Module, l0 int32) int32 {
+	return F_g_cube_picksplit(m, l0)
+}
+func GCubeSame(m *base.Module, l0 int32) int32 {
+	return F_g_cube_same(m, l0)
+}
+func GCubeUnion(m *base.Module, l0 int32) int32 {
+	return F_g_cube_union(m, l0)
+}
+func PgFinfoCubeAF8(m *base.Module) int32 {
+	return F_pg_finfo_cube_a_f8(m)
+}
+func PgFinfoCubeAF8F8(m *base.Module) int32 {
+	return F_pg_finfo_cube_a_f8_f8(m)
+}
+func PgFinfoCubeCF8(m *base.Module) int32 {
+	return F_pg_finfo_cube_c_f8(m)
+}
+func PgFinfoCubeCF8F8(m *base.Module) int32 {
+	return F_pg_finfo_cube_c_f8_f8(m)
+}
+func PgFinfoCubeCmp(m *base.Module) int32 {
+	return F_pg_finfo_cube_cmp(m)
+}
+func PgFinfoCubeContained(m *base.Module) int32 {
+	return F_pg_finfo_cube_contained(m)
+}
+func PgFinfoCubeContains(m *base.Module) int32 {
+	return F_pg_finfo_cube_contains(m)
+}
+func PgFinfoCubeCoord(m *base.Module) int32 {
+	return F_pg_finfo_cube_coord(m)
+}
+func PgFinfoCubeCoordLlur(m *base.Module) int32 {
+	return F_pg_finfo_cube_coord_llur(m)
+}
+func PgFinfoCubeDim(m *base.Module) int32 {
+	return F_pg_finfo_cube_dim(m)
+}
+func PgFinfoCubeDistance(m *base.Module) int32 {
+	return F_pg_finfo_cube_distance(m)
+}
+func PgFinfoCubeEnlarge(m *base.Module) int32 {
+	return F_pg_finfo_cube_enlarge(m)
+}
+func PgFinfoCubeEq(m *base.Module) int32 {
+	return F_pg_finfo_cube_eq(m)
+}
+func PgFinfoCubeF8(m *base.Module) int32 {
+	return F_pg_finfo_cube_f8(m)
+}
+func PgFinfoCubeF8F8(m *base.Module) int32 {
+	return F_pg_finfo_cube_f8_f8(m)
+}
+func PgFinfoCubeGe(m *base.Module) int32 {
+	return F_pg_finfo_cube_ge(m)
+}
+func PgFinfoCubeGt(m *base.Module) int32 {
+	return F_pg_finfo_cube_gt(m)
+}
+func PgFinfoCubeIn(m *base.Module) int32 {
+	return F_pg_finfo_cube_in(m)
+}
+func PgFinfoCubeInter(m *base.Module) int32 {
+	return F_pg_finfo_cube_inter(m)
+}
+func PgFinfoCubeIsPoint(m *base.Module) int32 {
+	return F_pg_finfo_cube_is_point(m)
+}
+func PgFinfoCubeLe(m *base.Module) int32 {
+	return F_pg_finfo_cube_le(m)
+}
+func PgFinfoCubeLlCoord(m *base.Module) int32 {
+	return F_pg_finfo_cube_ll_coord(m)
+}
+func PgFinfoCubeLt(m *base.Module) int32 {
+	return F_pg_finfo_cube_lt(m)
+}
+func PgFinfoCubeNe(m *base.Module) int32 {
+	return F_pg_finfo_cube_ne(m)
+}
+func PgFinfoCubeOut(m *base.Module) int32 {
+	return F_pg_finfo_cube_out(m)
+}
+func PgFinfoCubeOverlap(m *base.Module) int32 {
+	return F_pg_finfo_cube_overlap(m)
+}
+func PgFinfoCubeRecv(m *base.Module) int32 {
+	return F_pg_finfo_cube_recv(m)
+}
+func PgFinfoCubeSend(m *base.Module) int32 {
+	return F_pg_finfo_cube_send(m)
+}
+func PgFinfoCubeSize(m *base.Module) int32 {
+	return F_pg_finfo_cube_size(m)
+}
+func PgFinfoCubeSubset(m *base.Module) int32 {
+	return F_pg_finfo_cube_subset(m)
+}
+func PgFinfoCubeUnion(m *base.Module) int32 {
+	return F_pg_finfo_cube_union(m)
+}
+func PgFinfoCubeUrCoord(m *base.Module) int32 {
+	return F_pg_finfo_cube_ur_coord(m)
+}
+func PgFinfoDistanceChebyshev(m *base.Module) int32 {
+	return F_pg_finfo_distance_chebyshev(m)
+}
+func PgFinfoDistanceTaxicab(m *base.Module) int32 {
+	return F_pg_finfo_distance_taxicab(m)
+}
+func PgFinfoGCubeCompress(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_compress(m)
+}
+func PgFinfoGCubeConsistent(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_consistent(m)
+}
+func PgFinfoGCubeDecompress(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_decompress(m)
+}
+func PgFinfoGCubeDistance(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_distance(m)
+}
+func PgFinfoGCubePenalty(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_penalty(m)
+}
+func PgFinfoGCubePicksplit(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_picksplit(m)
+}
+func PgFinfoGCubeSame(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_same(m)
+}
+func PgFinfoGCubeUnion(m *base.Module) int32 {
+	return F_pg_finfo_g_cube_union(m)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

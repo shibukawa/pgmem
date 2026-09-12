@@ -10245,6 +10245,14 @@ func F_XLogPrefetcherBeginRead(m *base.Module, l0 int32, l1 int64) {
 		return
 	}
 }
+func F_XLogPrefetcherGetReader(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	return v2
+}
 func F_XLogReadAhead(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

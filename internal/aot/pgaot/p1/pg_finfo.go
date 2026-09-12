@@ -41,6 +41,18 @@ func F_pg_finfo_citext_lt(m *base.Module) int32 {
 func F_pg_finfo_citext_smaller(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_smaller_0)
 }
+func F_pg_finfo_cube_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_cmp_0)
+}
+func F_pg_finfo_cube_eq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_eq_0)
+}
+func F_pg_finfo_cube_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_f8_0)
+}
+func F_pg_finfo_cube_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_ge_0)
+}
 func F_pg_finfo_dsnowball_lexize(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dsnowball_lexize_0)
 }
@@ -49,6 +61,9 @@ func F_pg_finfo_euc_jis_2004_to_shift_jis_2004(m *base.Module) int32 {
 }
 func F_pg_finfo_euc_jp_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_mic_0)
+}
+func F_pg_finfo_g_cube_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_compress_0)
 }
 func F_pg_finfo_g_int_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_g_int_consistent_0)

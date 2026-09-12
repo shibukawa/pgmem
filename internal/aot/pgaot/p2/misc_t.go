@@ -8603,34 +8603,6 @@ func F_tzload(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v77
 	var v83 int32
 	_ = v83
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v105 int32
-	_ = v105
-	var v107 int32
-	_ = v107
-	var v108 int32
-	_ = v108
-	var v109 int32
-	_ = v109
-	var v111 int32
-	_ = v111
-	var v117 int32
-	_ = v117
-	var v118 int32
-	_ = v118
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
 	var v123 int32
 	_ = v123
 	var v129 int32
@@ -10148,111 +10120,45 @@ L21:
 	goto L22
 L22:
 	;
-	goto L25
+	goto L24
 L23:
 	;
-	if v120 == int32(0) {
-		v178 = v117
-		v179 = v118
+	if base.B2i32(v83 != int32(0)) == int32(0) {
+		v178 = v75
+		v179 = v74
 		goto L17
 	} else {
 		goto L32
 	}
 L24:
 	;
-	v117 = v75
-	v118 = v74
-	v119 = v83
-	v120 = base.B2i32(v83 != int32(0))
 	goto L23
-L25:
-	;
-	if v83 == int32(0) {
-		goto L24
-	} else {
-		goto L26
-	}
-L26:
-	;
-	v96 = v75
-	v97 = v74
-	v98 = v83
-	goto L27
-L27:
-	;
-	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v97))) = uint8(v100)
-	if v100 == int32(0) {
-		v158 = v96
-		v159 = v97
-		v160 = v98
-		goto L18
-	} else {
-		goto L29
-	}
-L28:
-	;
-	v117 = v111
-	v118 = v105
-	v119 = v107
-	v120 = v109
-	goto L23
-L29:
-	;
-	v104 = int32(1)
-	v105 = v97 + v104
-	v107 = v98 - v104
-	v108 = int32(0)
-	v109 = base.B2i32(v107 != v108)
-	v111 = v96 + v104
-	if v111&int32(3) == v108 {
-		v117 = v111
-		v118 = v105
-		v119 = v107
-		v120 = v109
-		goto L23
-	} else {
-		goto L30
-	}
-L30:
-	;
-	if v107 != 0 {
-		v96 = v111
-		v97 = v105
-		v98 = v107
-		goto L27
-	} else {
-		goto L31
-	}
-L31:
-	;
-	goto L28
 L32:
 	;
-	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117))))
+	v123 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_tzload[2])))
 	if v123 == int32(0) {
-		v151 = v117
-		v152 = v118
-		v153 = v119
+		v151 = v75
+		v152 = v74
+		v153 = v83
 		goto L19
 	} else {
 		goto L33
 	}
 L33:
 	;
-	if base.Ui32(v119) < base.Ui32(int32(4)) {
-		v151 = v117
-		v152 = v118
-		v153 = v119
+	if base.Ui32(v83) < base.Ui32(int32(4)) {
+		v151 = v75
+		v152 = v74
+		v153 = v83
 		goto L19
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v129 = v117
-	v130 = v118
-	v131 = v119
+	v129 = v75
+	v130 = v74
+	v131 = v83
 	goto L35
 L35:
 	;
@@ -10397,7 +10303,7 @@ L56:
 	goto L55
 L64:
 	;
-	v245 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_tzload[2])))
+	v245 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_tzload[3])))
 	if v245 == int32(0) {
 		v273 = v198
 		v274 = v197
@@ -12795,7 +12701,7 @@ L413:
 L414:
 	;
 	v2375 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-	v2376 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_c_F_tzload[3])))
+	v2376 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_c_F_tzload[4])))
 	if int32(0) < v2376 {
 		goto L415
 	} else {
@@ -13122,7 +13028,7 @@ L462:
 	}
 L463:
 	;
-	v2865 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_c_F_tzload[4])))
+	v2865 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_c_F_tzload[5])))
 	v2866 = int32(0)
 	if v2826 == v2866 {
 		v2993 = v2866
@@ -13405,7 +13311,7 @@ L501:
 	}
 L502:
 	;
-	v3430 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[5]))))
+	v3430 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[6]))))
 	v3433 = v967 + v3430<<(uint(int32(4))%32)
 	v3435 = int32(1)
 	goto L503
@@ -13715,7 +13621,7 @@ L543:
 	goto L525
 L544:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[6]))) = v3951
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[7]))) = v3951
 	v4020 = v3700
 	goto L225
 L545:
@@ -13736,7 +13642,7 @@ L547:
 	}
 L548:
 	;
-	v3751 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[5]))))
+	v3751 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+uint32(_c_F_tzload[6]))))
 	v3755 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v967+v3751<<(uint(int32(4))%32))+4)))
 	if v3755 != int32(1) {
 		goto L553

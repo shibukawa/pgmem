@@ -3105,6 +3105,14 @@ func F_BarrierAttach(m *base.Module, l0 int32) int32 {
 		return v19
 	}
 }
+func F_BarrierPhase(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	return v2
+}
 func F_BasicOpenFile(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

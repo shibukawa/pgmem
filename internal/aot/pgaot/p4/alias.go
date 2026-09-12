@@ -572,6 +572,8 @@ func F_boot_yyensure_buffer_stack(m *base.Module, l0 int32)
 func F_boot_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_yy_fatal_error_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_yy_fatal_error_1
 func F_yy_fatal_error_1(m *base.Module, l0 int32)
+//go:linkname F_boot_yylex_init github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_boot_yylex_init
+func F_boot_yylex_init(m *base.Module, l0 int32) int32
 //go:linkname F_boot_yyerror github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_boot_yyerror
 func F_boot_yyerror(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_closerel github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_closerel

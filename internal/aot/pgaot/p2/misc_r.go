@@ -20059,6 +20059,112 @@ func F_round_var(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
+func F_rt_cube_size(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 float64
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v27 int32
+	_ = v27
+	var v29 float64
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v40 float64
+	_ = v40
+	var v44 float64
+	_ = v44
+	var v49 int32
+	_ = v49
+	var v54 float64
+	_ = v54
+	var v58 float64
+	_ = v58
+	var v61 float64
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v67 int32
+	_ = v67
+	var v69 float64
+	_ = v69
+	var v79 int32
+	_ = v79
+	var v82 float64
+	_ = v82
+	var v86 float64
+	_ = v86
+	var v92 float64
+	_ = v92
+	v3 = float64(0)
+	v4 = int32(0)
+	if l0 == v4 {
+		v92 = v3
+	} else {
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		if v12 <= int32(0) {
+			v92 = v3
+		} else {
+			v15 = int32(1)
+			v18 = l0 + int32(8)
+			if v12 == v15 {
+				v67 = int32(0)
+				v69 = float64(1)
+			} else {
+				v27 = int32(0)
+				v29 = float64(1)
+				v32 = v4
+				for {
+					v37 = int32(3)
+					v40 = *(*float64)(unsafe.Add(mBase, uint32(v18+(v27+v12)<<(uint(v37)%32))))
+					v44 = *(*float64)(unsafe.Add(mBase, uint32(v18+v27<<(uint(v37)%32))))
+					v49 = v27 | int32(1)
+					v54 = *(*float64)(unsafe.Add(mBase, uint32(v18+(v49+v12)<<(uint(v37)%32))))
+					v58 = *(*float64)(unsafe.Add(mBase, uint32(v18+v49<<(uint(v37)%32))))
+					v61 = base.F64_mul(base.F64_mul(v29, base.F64_abs(base.F64_sub(v40, v44))), base.F64_abs(base.F64_sub(v54, v58)))
+					v62 = int32(2)
+					v63 = v27 + v62
+					v65 = v32 + v62
+					if v65 != v12&int32(2147483646) {
+						v27 = v63
+						v29 = v61
+						v32 = v65
+						continue
+					} else {
+						break
+					}
+					break
+				}
+				v67 = v63
+				v69 = v61
+			}
+			if v12&v15 == int32(0) {
+				v92 = v69
+			} else {
+				v79 = int32(3)
+				v82 = *(*float64)(unsafe.Add(mBase, uint32(v18+(v67+v12)<<(uint(v79)%32))))
+				v86 = *(*float64)(unsafe.Add(mBase, uint32(v18+v67<<(uint(v79)%32))))
+				v92 = base.F64_mul(v69, base.F64_abs(base.F64_sub(v82, v86)))
+			}
+		}
+	}
+	*(*float64)(unsafe.Add(mBase, uint32(l1))) = v92
+	return
+}
 func F_russian_KOI8_R_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -26,6 +26,24 @@ func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32 {
 func F_pg_finfo_connectby_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_connectby_text_0)
 }
+func F_pg_finfo_cube_a_f8_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_a_f8_f8_0)
+}
+func F_pg_finfo_cube_coord_llur(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_coord_llur_0)
+}
+func F_pg_finfo_cube_is_point(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_is_point_0)
+}
+func F_pg_finfo_cube_ne(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_ne_0)
+}
+func F_pg_finfo_cube_size(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_size_0)
+}
+func F_pg_finfo_cube_ur_coord(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_ur_coord_0)
+}
 func F_pg_finfo_date_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_date_dist_0)
 }
@@ -46,6 +64,12 @@ func F_pg_finfo_euc_kr_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_float8_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_float8_dist_0)
+}
+func F_pg_finfo_g_cube_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_distance_0)
+}
+func F_pg_finfo_g_cube_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_picksplit_0)
 }
 func F_pg_finfo_gb18030_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gb18030_to_utf8_0)

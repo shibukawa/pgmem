@@ -4378,6 +4378,10 @@ func F__int_unique(m *base.Module, l0 int32) int32
 func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
 func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_cube_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_yyensure_buffer_stack
+func F_cube_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_yy_fatal_error_6 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_yy_fatal_error_6
+func F_yy_fatal_error_6(m *base.Module, l0 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

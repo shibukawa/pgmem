@@ -29,8 +29,44 @@ func F_pg_finfo_connectby_text_serial(m *base.Module) int32 {
 func F_pg_finfo_crosstab_hash(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_crosstab_hash_0)
 }
+func F_pg_finfo_cube_a_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_a_f8_0)
+}
+func F_pg_finfo_cube_c_f8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_c_f8_0)
+}
+func F_pg_finfo_cube_dim(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_dim_0)
+}
+func F_pg_finfo_cube_enlarge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_enlarge_0)
+}
+func F_pg_finfo_cube_inter(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_inter_0)
+}
+func F_pg_finfo_cube_ll_coord(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_ll_coord_0)
+}
+func F_pg_finfo_cube_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_lt_0)
+}
+func F_pg_finfo_cube_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_out_0)
+}
+func F_pg_finfo_cube_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_send_0)
+}
+func F_pg_finfo_cube_subset(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cube_subset_0)
+}
 func F_pg_finfo_euc_jp_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_sjis_0)
+}
+func F_pg_finfo_g_cube_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_consistent_0)
+}
+func F_pg_finfo_g_cube_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_cube_same_0)
 }
 func F_pg_finfo_g_int_compress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_g_int_compress_0)

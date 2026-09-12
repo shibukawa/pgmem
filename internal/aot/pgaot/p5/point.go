@@ -209,3 +209,256 @@ func F_point_recv(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_write_point_as_box(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v27 int32
+	_ = v27
+	var v34 float64
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
+	var v61 int32
+	_ = v61
+	var v69 int32
+	_ = v69
+	var v73 float64
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v90 int32
+	_ = v90
+	var v94 int32
+	_ = v94
+	var v113 int32
+	_ = v113
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v16 = l0<<(uint(int32(3))%32) + int32(8)
+	v17 = F_palloc0(m, v16)
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = l0 | int32(-2147483648)
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v16 << (uint(int32(2)) % 32)
+	v27 = int32(1)
+	if l0 <= int32(0) {
+		goto L5
+	} else {
+		goto L6
+	}
+L3:
+	;
+	m.G0 = v11 + int32(16)
+	return v113
+L4:
+	;
+	v47 = int32(44)
+	v48 = F___strchrnul(m, l1, v47)
+	mBase = m.M
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48))))
+	if v50 == v47 {
+		goto L13
+	} else {
+		goto L14
+	}
+L5:
+	;
+	v46 = int32(0)
+	goto L4
+L6:
+	;
+	goto L7
+L7:
+	;
+	v34 = F_float8in_internal(m, l1, v11+int32(12), int32(_a_F_write_point_as_box_0), l1, l3)
+	mBase = m.M
+	v35 = m.ExcPending
+	if v35 != 0 {
+		goto L1
+	} else {
+		goto L8
+	}
+L8:
+	;
+	*(*float64)(unsafe.Add(mBase, uint32(v17)+8)) = v34
+	if l3 == int32(0) {
+		v46 = v27
+		goto L4
+	} else {
+		goto L9
+	}
+L9:
+	;
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
+	if v39 != int32(447) {
+		v46 = v27
+		goto L4
+	} else {
+		goto L10
+	}
+L10:
+	;
+	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)))
+	if v42 == int32(0) {
+		v46 = v27
+		goto L4
+	} else {
+		goto L11
+	}
+L11:
+	;
+	v113 = int32(0)
+	goto L3
+L12:
+	;
+	if v54 != 0 {
+		goto L16
+	} else {
+		goto L17
+	}
+L13:
+	;
+	v54 = v48
+	goto L15
+L14:
+	;
+	v54 = int32(0)
+	goto L15
+L15:
+	;
+	goto L12
+L16:
+	;
+	v57 = v54
+	v61 = v46
+	goto L19
+L17:
+	;
+	goto L18
+L18:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v17
+	v113 = int32(1)
+	goto L3
+L19:
+	;
+	v69 = v57 + int32(1)
+	v73 = F_float8in_internal(m, v69, v11+int32(12), int32(_a_F_write_point_as_box_0), l1, l3)
+	mBase = m.M
+	v74 = m.ExcPending
+	if v74 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
+L20:
+	;
+	goto L18
+L21:
+	;
+	*(*float64)(unsafe.Add(mBase, uint32(v17+int32(8)+v61<<(uint(int32(3))%32)))) = v73
+	if l3 == int32(0) {
+		goto L22
+	} else {
+		goto L23
+	}
+L22:
+	;
+	v87 = int32(44)
+	v88 = F___strchrnul(m, v69, v87)
+	mBase = m.M
+	v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88))))
+	if v90 == v87 {
+		goto L27
+	} else {
+		goto L28
+	}
+L23:
+	;
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
+	if v78 != int32(447) {
+		goto L22
+	} else {
+		goto L24
+	}
+L24:
+	;
+	v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l3)+4)))
+	if v81 == int32(0) {
+		goto L22
+	} else {
+		goto L25
+	}
+L25:
+	;
+	v113 = int32(0)
+	goto L3
+L26:
+	;
+	if v94 != 0 {
+		v57 = v94
+		v61 = v61 + int32(1)
+		goto L19
+	} else {
+		goto L30
+	}
+L27:
+	;
+	v94 = v88
+	goto L29
+L28:
+	;
+	v94 = int32(0)
+	goto L29
+L29:
+	;
+	goto L26
+L30:
+	;
+	goto L20
+}
