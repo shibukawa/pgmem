@@ -4129,6 +4129,34 @@ func F___subtf3(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64
 	m.G0 = v9 + v8
 	return
 }
+func F_sampler_random_fract(m *base.Module, l0 int32) float64 {
+	mBase := m.M
+	_ = mBase
+	var v7 int64
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v9 int64
+	_ = v9
+	var v30 float64
+	_ = v30
+	for {
+		v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+		v8 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+		v9 = v7 ^ v8
+		*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = base.I64_rotl(v9, int64(37))
+		*(*int64)(unsafe.Add(mBase, uint32(l0))) = v9<<(uint(int64(16))%64) ^ base.I64_rotl(v7, int64(24)) ^ v9
+		v30 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v7*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+		mBase = m.M
+		if base.F64_eq(v30, float64(0)) != 0 {
+			continue
+		} else {
+			break
+		}
+		break
+	}
+	return v30
+}
 func F_scalarineqsel(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) float64 {
 	mBase := m.M
 	_ = mBase

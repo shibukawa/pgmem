@@ -17,6 +17,9 @@ func F_Pg_magic_func_ltree(m *base.Module) int32 {
 func F_Pg_magic_func_pg_trgm(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pg_trgm_0)
 }
+func F_Pg_magic_func_tsm_system_rows(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_tsm_system_rows_0)
+}
 func F_Pg_magic_func_utf8_and_gbk(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_utf8_and_gbk_0)
 }

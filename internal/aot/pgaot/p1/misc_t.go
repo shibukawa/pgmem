@@ -14936,6 +14936,58 @@ func F_trgm2int(m *base.Module, l0 int32) int32 {
 func F_trueTriConsistentFn(m *base.Module, l0 int32) int32 {
 	return int32(1)
 }
+func F_tsm_system_rows_handler(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v43 int32
+	_ = v43
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v10 = F_palloc0(m, int32(36))
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(440)
+		v16 = int32(20)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v16
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v16
+		v23 = F_list_make1_impl(m, int32(472), v7+int32(8))
+		mBase = m.M
+		v24 = m.ExcPending
+		if v24 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(_a_F_tsm_system_rows_handler_0)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = int32(_a_F_tsm_system_rows_handler_1)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(_a_F_tsm_system_rows_handler_2)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(_a_F_tsm_system_rows_handler_3)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = int32(_a_F_tsm_system_rows_handler_4)
+			v43 = int32(256)
+			*(*uint16)(unsafe.Add(mBase, uint32(v10)+8)) = uint16(v43)
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v23
+			m.G0 = v7 + int32(16)
+			return v10
+		}
+	}
+}
 func F_tsq_mcontains(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
