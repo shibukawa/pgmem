@@ -691,6 +691,78 @@ L27:
 	;
 	goto L16
 }
+func F_GetRecordedFreeSpace(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int64
+	_ = v15
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	v3 = int32(0)
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	v12 = base.I32_div_u_s(l1, int32(4069))
+	v15 = base.I64_extend_i32_u(v12) << (uint(int64(32)) % 64)
+	*(*int64)(unsafe.Add(mBase, uint32(v9))) = v15
+	*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v15
+	v19 = F_fsm_readbuf(m, l0, v9, v3)
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		return int32(0)
+	} else {
+		if v19 != 0 {
+			if v19 < int32(0) {
+				v29 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecordedFreeSpace[0]))
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(v29+(v19^int32(-1))<<(uint(int32(2))%32))))
+				v43 = v35
+			} else {
+				v37 = *(*int32)(unsafe.Add(mBase, _c_F_GetRecordedFreeSpace[1]))
+				v43 = v37 + v19<<(uint(int32(13))%32) + int32(-8192)
+			}
+			v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43+(l1-v12*int32(4069)))+uint32(_c_F_GetRecordedFreeSpace[2]))))
+			F_ReleaseBuffer(m, v19)
+			mBase = m.M
+			v49 = m.ExcPending
+			if v49 != 0 {
+				return int32(0)
+			} else {
+				v53 = v47 << (uint(int32(5)) % 32)
+				m.G0 = v9 + int32(16)
+				return v53
+			}
+		} else {
+			v53 = v3
+			m.G0 = v9 + int32(16)
+			return v53
+		}
+	}
+}
 func F_GetTopMostAncestorInPublication(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

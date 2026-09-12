@@ -603,6 +603,178 @@ func F_pgstat_get_xact_stack_level(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pgstat_gist_page(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v35 int64
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v51 int32
+	_ = v51
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v64 int64
+	_ = v64
+	var v71 int32
+	_ = v71
+	var v80 int32
+	_ = v80
+	var v88 int32
+	_ = v88
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v101 int64
+	_ = v101
+	var v105 int64
+	_ = v105
+	var v106 int32
+	_ = v106
+	var v112 int64
+	_ = v112
+	var v116 int64
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v124 int32
+	_ = v124
+	var v133 int32
+	_ = v133
+	v5 = int32(0)
+	v9 = F_ReadBufferExtended(m, l1, v5, l2, v5, l3)
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		return
+	} else {
+		F_LockBuffer(m, v9, int32(1))
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return
+		} else {
+			if v9 < int32(0) {
+				v17 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_gist_page[0]))
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(v17+(v9^int32(-1))<<(uint(int32(2))%32))))
+				v31 = v23
+			} else {
+				v25 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_gist_page[1]))
+				v31 = v25 + v9<<(uint(int32(13))%32) + int32(-8192)
+			}
+			v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v31)+14)))
+			if v32 == int32(0) {
+				v35 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v35 - int64(-8192)
+				F_UnlockReleaseBuffer(m, v9)
+				mBase = m.M
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return
+				} else {
+					return
+				}
+			} else {
+				v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+19)))
+				v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v31)+16)))
+				if (v41<<(uint(int32(8))%32)-v44)&int32(_a_F_pgstat_gist_page_0) != int32(16) {
+				} else {
+					v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44+v31)+12)))
+					if v51&int32(1) == int32(0) {
+					} else {
+						v56 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v31)+12)))
+						v57 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v31)+14)))
+						v59 = v57 - v56
+						v60 = int32(0)
+						if v60 < v59 {
+							v63 = v59
+						} else {
+							v63 = v60
+						}
+						v64 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
+						*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = v64 + base.I64_extend_i32_u(v63)
+						if base.Ui32(v56) < base.Ui32(int32(25)) {
+						} else {
+							v71 = v56 + int32(_a_F_pgstat_gist_page_1)
+							if v71&int32(_a_F_pgstat_gist_page_2) == int32(0) {
+							} else {
+								v80 = int32(1)
+								v88 = v80
+								for {
+									v95 = v88<<(uint(int32(2))%32) + (v31 + int32(24)) - int32(4)
+									v96 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
+									v97 = int32(_a_F_pgstat_gist_page_3)
+									if v96&v97 == v97 {
+										v101 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
+										*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v101 + int64(1)
+										v105 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
+										v106 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
+										*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v105 + base.I64_extend_i32_u(int32(base.Ui32(v106)>>(uint(int32(17))%32)))
+									} else {
+										v112 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v112 + int64(1)
+										v116 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+										v117 = *(*int32)(unsafe.Add(mBase, uint32(v95)))
+										*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v116 + base.I64_extend_i32_u(int32(base.Ui32(v117)>>(uint(int32(17))%32)))
+									}
+									v124 = v88 + int32(1)
+									if v124 != (int32(base.Ui32(v71)>>(uint(int32(2))%32))+v80)&int32(_a_F_pgstat_gist_page_0) {
+										v88 = v124
+										continue
+									} else {
+										break
+									}
+									break
+								}
+							}
+						}
+					}
+				}
+				F_UnlockReleaseBuffer(m, v9)
+				mBase = m.M
+				v133 = m.ExcPending
+				if v133 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
+	}
+}
 func F_pgstat_prepare_report_checksum_failure(m *base.Module, l0 int32) {
 	var v2 int32
 	_ = v2

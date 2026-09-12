@@ -386,6 +386,18 @@ func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32 {
 func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_text_0)
 }
+func F_pg_finfo_pgstatindex_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatindex_v1_5_0)
+}
+func F_pg_finfo_pgstatindexbyid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatindexbyid_0)
+}
+func F_pg_finfo_pgstatindexbyid_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatindexbyid_v1_5_0)
+}
+func F_pg_finfo_pgstattuple_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstattuple_v1_5_0)
+}
 func F_pg_finfo_seg_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_seg_in_0)
 }

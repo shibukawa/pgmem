@@ -3118,6 +3118,76 @@ func F_Pg_magic_func_tsm_system_time(m *base.Module) int32
 func F_pg_finfo_tsm_system_time_handler(m *base.Module) int32
 //go:linkname F_tsm_system_time_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tsm_system_time_handler
 func F_tsm_system_time_handler(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pgstattuple_approx github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_pgstattuple_approx
+func F_pg_finfo_pgstattuple_approx(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstattuple_approx_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pgstattuple_approx_v1_5
+func F_pg_finfo_pgstattuple_approx_v1_5(m *base.Module) int32
+//go:linkname F_pgstattuple_approx github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgstattuple_approx
+func F_pgstattuple_approx(m *base.Module, l0 int32) int32
+//go:linkname F_pgstattuple_approx_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgstattuple_approx_v1_5
+func F_pgstattuple_approx_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pgstatindex github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pgstatindex
+func F_pg_finfo_pgstatindex(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstatindexbyid github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgstatindexbyid
+func F_pg_finfo_pgstatindexbyid(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_relpages github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_relpages
+func F_pg_finfo_pg_relpages(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_relpagesbyid github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_relpagesbyid
+func F_pg_finfo_pg_relpagesbyid(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstatginindex github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pgstatginindex
+func F_pg_finfo_pgstatginindex(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstathashindex github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgstathashindex
+func F_pg_finfo_pgstathashindex(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstatindex_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgstatindex_v1_5
+func F_pg_finfo_pgstatindex_v1_5(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstatindexbyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgstatindexbyid_v1_5
+func F_pg_finfo_pgstatindexbyid_v1_5(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_relpages_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_relpages_v1_5
+func F_pg_finfo_pg_relpages_v1_5(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_relpagesbyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_relpagesbyid_v1_5
+func F_pg_finfo_pg_relpagesbyid_v1_5(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstatginindex_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgstatginindex_v1_5
+func F_pg_finfo_pgstatginindex_v1_5(m *base.Module) int32
+//go:linkname F_pgstatindex github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgstatindex
+func F_pgstatindex(m *base.Module, l0 int32) int32
+//go:linkname F_pgstatindex_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgstatindex_v1_5
+func F_pgstatindex_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pgstatindexbyid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgstatindexbyid
+func F_pgstatindexbyid(m *base.Module, l0 int32) int32
+//go:linkname F_pgstatindexbyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgstatindexbyid_v1_5
+func F_pgstatindexbyid_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pg_relpages github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_relpages
+func F_pg_relpages(m *base.Module, l0 int32) int32
+//go:linkname F_pg_relpages_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_relpages_v1_5
+func F_pg_relpages_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pg_relpagesbyid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_relpagesbyid
+func F_pg_relpagesbyid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_relpagesbyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_relpagesbyid_v1_5
+func F_pg_relpagesbyid_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pgstatginindex github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgstatginindex
+func F_pgstatginindex(m *base.Module, l0 int32) int32
+//go:linkname F_pgstatginindex_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgstatginindex_v1_5
+func F_pgstatginindex_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pgstathashindex github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgstathashindex
+func F_pgstathashindex(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pgstattuple github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_pgstattuple
+func F_Pg_magic_func_pgstattuple(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstattuple github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgstattuple
+func F_pg_finfo_pgstattuple(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstattuple_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgstattuple_v1_5
+func F_pg_finfo_pgstattuple_v1_5(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstattuplebyid github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgstattuplebyid
+func F_pg_finfo_pgstattuplebyid(m *base.Module) int32
+//go:linkname F_pg_finfo_pgstattuplebyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pgstattuplebyid_v1_5
+func F_pg_finfo_pgstattuplebyid_v1_5(m *base.Module) int32
+//go:linkname F_pgstattuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgstattuple
+func F_pgstattuple(m *base.Module, l0 int32) int32
+//go:linkname F_pgstattuple_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgstattuple_v1_5
+func F_pgstattuple_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_pgstattuplebyid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgstattuplebyid
+func F_pgstattuplebyid(m *base.Module, l0 int32) int32
+//go:linkname F_pgstattuplebyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgstattuplebyid_v1_5
+func F_pgstattuplebyid_v1_5(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

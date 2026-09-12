@@ -308,6 +308,9 @@ func F_pg_finfo_mic_to_latin2(m *base.Module) int32 {
 func F_pg_finfo_nlevel(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_nlevel_0)
 }
+func F_pg_finfo_pgstattuple_approx(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstattuple_approx_0)
+}
 func F_pg_finfo_plpgsql_inline_handler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_inline_handler_0)
 }

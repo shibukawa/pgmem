@@ -359,6 +359,21 @@ func F_pg_finfo_pg_gen_salt_rounds(m *base.Module) int32 {
 func F_pg_finfo_pg_hmac(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_hmac_0)
 }
+func F_pg_finfo_pg_relpagesbyid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_relpagesbyid_0)
+}
+func F_pg_finfo_pg_relpagesbyid_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_relpagesbyid_v1_5_0)
+}
+func F_pg_finfo_pgstatginindex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatginindex_0)
+}
+func F_pg_finfo_pgstatindex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatindex_0)
+}
+func F_pg_finfo_pgstattuplebyid_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstattuplebyid_v1_5_0)
+}
 func F_pg_finfo_plpgsql_call_handler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_call_handler_0)
 }

@@ -21963,6 +21963,107 @@ func F_pg_reg_getoutarcs(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 		}
 	}
 }
+func F_pg_relpages_impl(m *base.Module, l0 int32) int64 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+119)))
+	switch v9 - int32(83) {
+	case 0, 22, 26, 31, 33:
+		v42 = F_RelationGetNumberOfBlocksInFork(m, l0, int32(0))
+		mBase = m.M
+		v43 = m.ExcPending
+		if v43 != 0 {
+			return int64(0)
+		} else {
+			F_relation_close(m, l0, int32(1))
+			mBase = m.M
+			v46 = m.ExcPending
+			if v46 != 0 {
+				return int64(0)
+			} else {
+				m.G0 = v6 + int32(16)
+				return base.I64_extend_i32_u(v42)
+			}
+		}
+	default:
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int64(0)
+		} else {
+			F_errcode(m, int32(151027844))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int64(0)
+			} else {
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v21 + int32(4)
+				F_errmsg(m, int32(_a_F_pg_relpages_impl_0), v6)
+				mBase = m.M
+				v29 = m.ExcPending
+				if v29 != 0 {
+					return int64(0)
+				} else {
+					v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+					v31 = int32(*(*int8)(unsafe.Add(mBase, uint32(v30)+119)))
+					F_errdetail_relkind_not_supported(m, v31)
+					mBase = m.M
+					v33 = m.ExcPending
+					if v33 != 0 {
+						return int64(0)
+					} else {
+						F_errfinish(m, int32(_a_F_pg_relpages_impl_1), int32(462), int32(_a_F_pg_relpages_impl_2))
+						mBase = m.M
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int64(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_pg_set_regex_collation(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

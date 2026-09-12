@@ -3990,6 +3990,12 @@ func F_BloomNewBuffer(m *base.Module, l0 int32) int32
 func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_ean2isn github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ean2isn
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
+//go:linkname F_pgstatindex_impl github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstatindex_impl
+func F_pgstatindex_impl(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pg_relpages_impl github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_relpages_impl
+func F_pg_relpages_impl(m *base.Module, l0 int32) int64
+//go:linkname F_pgstat_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstat_relation
+func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

@@ -9842,6 +9842,216 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.TsmSystemTimeHandler(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pgstattuple":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pgstattuple: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgstattuple(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_relpages":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_relpages: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRelpages(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_relpages_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_relpages_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRelpagesV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_relpagesbyid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_relpagesbyid: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRelpagesbyid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_relpagesbyid_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_relpagesbyid_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRelpagesbyidV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatginindex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatginindex: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatginindex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatginindex_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatginindex_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatginindexV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstathashindex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstathashindex: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstathashindex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatindex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatindex: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatindex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatindex_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatindex_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatindexV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatindexbyid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatindexbyid: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatindexbyid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstatindexbyid_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstatindexbyid_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstatindexbyidV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuple":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuple: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattuple(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuple_approx":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuple_approx: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattupleApprox(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuple_approx_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuple_approx_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattupleApproxV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuple_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuple_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattupleV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuplebyid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuplebyid: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattuplebyid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgstattuplebyid_v1_5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgstattuplebyid_v1_5: want 0 args")
+		}
+		r := pgaot.PgFinfoPgstattuplebyidV1_5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_relpages":
+		if len(a) != 1 {
+			panic("aot: pg_relpages: want 1 args")
+		}
+		r := pgaot.PgRelpages(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_relpages_v1_5":
+		if len(a) != 1 {
+			panic("aot: pg_relpages_v1_5: want 1 args")
+		}
+		r := pgaot.PgRelpagesV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_relpagesbyid":
+		if len(a) != 1 {
+			panic("aot: pg_relpagesbyid: want 1 args")
+		}
+		r := pgaot.PgRelpagesbyid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_relpagesbyid_v1_5":
+		if len(a) != 1 {
+			panic("aot: pg_relpagesbyid_v1_5: want 1 args")
+		}
+		r := pgaot.PgRelpagesbyidV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatginindex":
+		if len(a) != 1 {
+			panic("aot: pgstatginindex: want 1 args")
+		}
+		r := pgaot.Pgstatginindex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatginindex_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstatginindex_v1_5: want 1 args")
+		}
+		r := pgaot.PgstatginindexV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstathashindex":
+		if len(a) != 1 {
+			panic("aot: pgstathashindex: want 1 args")
+		}
+		r := pgaot.Pgstathashindex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatindex":
+		if len(a) != 1 {
+			panic("aot: pgstatindex: want 1 args")
+		}
+		r := pgaot.Pgstatindex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatindex_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstatindex_v1_5: want 1 args")
+		}
+		r := pgaot.PgstatindexV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatindexbyid":
+		if len(a) != 1 {
+			panic("aot: pgstatindexbyid: want 1 args")
+		}
+		r := pgaot.Pgstatindexbyid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstatindexbyid_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstatindexbyid_v1_5: want 1 args")
+		}
+		r := pgaot.PgstatindexbyidV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuple":
+		if len(a) != 1 {
+			panic("aot: pgstattuple: want 1 args")
+		}
+		r := pgaot.Pgstattuple(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuple_approx":
+		if len(a) != 1 {
+			panic("aot: pgstattuple_approx: want 1 args")
+		}
+		r := pgaot.PgstattupleApprox(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuple_approx_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstattuple_approx_v1_5: want 1 args")
+		}
+		r := pgaot.PgstattupleApproxV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuple_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstattuple_v1_5: want 1 args")
+		}
+		r := pgaot.PgstattupleV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuplebyid":
+		if len(a) != 1 {
+			panic("aot: pgstattuplebyid: want 1 args")
+		}
+		r := pgaot.Pgstattuplebyid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgstattuplebyid_v1_5":
+		if len(a) != 1 {
+			panic("aot: pgstattuplebyid_v1_5: want 1 args")
+		}
+		r := pgaot.PgstattuplebyidV1_5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

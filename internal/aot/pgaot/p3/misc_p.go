@@ -13160,6 +13160,254 @@ func F_performDeletion(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F_pgstatginindex_v1_5(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = F_pgstatginindex_internal(m, v2, l0)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		return v3
+	}
+}
+func F_pgstatindexbyid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v22 int32
+	_ = v22
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = F_superuser(m)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		if v4 == int32(0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v13 = m.ExcPending
+			if v13 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(16797828))
+				mBase = m.M
+				v16 = m.ExcPending
+				if v16 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_pgstatindexbyid_0), int32(0))
+					mBase = m.M
+					v22 = m.ExcPending
+					if v22 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_pgstatindexbyid_1), int32(193), int32(_a_F_pgstatindexbyid_2))
+						mBase = m.M
+						v29 = m.ExcPending
+						if v29 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v31 = F_relation_open(m, v3, int32(1))
+			mBase = m.M
+			v32 = m.ExcPending
+			if v32 != 0 {
+				return int32(0)
+			} else {
+				v33 = F_pgstatindex_impl(m, v31, l0)
+				mBase = m.M
+				v34 = m.ExcPending
+				if v34 != 0 {
+					return int32(0)
+				} else {
+					return v33
+				}
+			}
+		}
+	}
+}
+func F_pgstattuple(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = F_pg_detoast_datum_packed(m, v3)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		v8 = F_superuser(m)
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return int32(0)
+		} else {
+			if v8 == int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v15 = m.ExcPending
+				if v15 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(16797828))
+					mBase = m.M
+					v18 = m.ExcPending
+					if v18 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_pgstattuple_0), int32(0))
+						mBase = m.M
+						v24 = m.ExcPending
+						if v24 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_pgstattuple_1), int32(178), int32(_a_F_pgstattuple_2))
+							mBase = m.M
+							v31 = m.ExcPending
+							if v31 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v32 = F_textToQualifiedNameList(m, v4)
+				mBase = m.M
+				v33 = m.ExcPending
+				if v33 != 0 {
+					return int32(0)
+				} else {
+					v34 = F_makeRangeVarFromNameList(m, v32)
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return int32(0)
+					} else {
+						v37 = F_relation_openrv(m, v34, int32(1))
+						mBase = m.M
+						v38 = m.ExcPending
+						if v38 != 0 {
+							return int32(0)
+						} else {
+							v39 = F_pgstat_relation(m, v37, l0)
+							mBase = m.M
+							v40 = m.ExcPending
+							if v40 != 0 {
+								return int32(0)
+							} else {
+								return v39
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+func F_pgstattuplebyid_v1_5(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = F_relation_open(m, v2, int32(1))
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		v8 = F_pgstat_relation(m, v4, l0)
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return int32(0)
+		} else {
+			return v8
+		}
+	}
+}
 func F_pkt_stream_flush(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

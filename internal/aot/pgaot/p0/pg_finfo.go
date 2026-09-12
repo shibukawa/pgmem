@@ -332,6 +332,12 @@ func F_pg_finfo_pg_random_bytes(m *base.Module) int32 {
 func F_pg_finfo_pg_random_uuid(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_random_uuid_0)
 }
+func F_pg_finfo_pg_relpages(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_relpages_0)
+}
+func F_pg_finfo_pg_relpages_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_relpages_v1_5_0)
+}
 func F_pg_finfo_pgp_pub_decrypt_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_pub_decrypt_text_0)
 }
@@ -343,6 +349,18 @@ func F_pg_finfo_pgp_pub_encrypt_text(m *base.Module) int32 {
 }
 func F_pg_finfo_pgp_sym_encrypt_bytea(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_bytea_0)
+}
+func F_pg_finfo_pgstatginindex_v1_5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstatginindex_v1_5_0)
+}
+func F_pg_finfo_pgstathashindex(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstathashindex_0)
+}
+func F_pg_finfo_pgstattuple(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstattuple_0)
+}
+func F_pg_finfo_pgstattuplebyid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pgstattuplebyid_0)
 }
 func F_pg_finfo_seg_contained(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_seg_contained_0)

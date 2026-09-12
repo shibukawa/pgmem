@@ -16214,6 +16214,301 @@ func F_pg_read_binary_file_off_len(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_relpages(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int64
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = F_pg_detoast_datum_packed(m, v2)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		v7 = F_superuser(m)
+		mBase = m.M
+		v8 = m.ExcPending
+		if v8 != 0 {
+			return int32(0)
+		} else {
+			if v7 == int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v14 = m.ExcPending
+				if v14 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(16797828))
+					mBase = m.M
+					v17 = m.ExcPending
+					if v17 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_pg_relpages_0), int32(0))
+						mBase = m.M
+						v23 = m.ExcPending
+						if v23 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_pg_relpages_1), int32(401), int32(_a_F_pg_relpages_2))
+							mBase = m.M
+							v30 = m.ExcPending
+							if v30 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v31 = F_textToQualifiedNameList(m, v3)
+				mBase = m.M
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return int32(0)
+				} else {
+					v33 = F_makeRangeVarFromNameList(m, v31)
+					mBase = m.M
+					v34 = m.ExcPending
+					if v34 != 0 {
+						return int32(0)
+					} else {
+						v36 = F_relation_openrv(m, v33, int32(1))
+						mBase = m.M
+						v37 = m.ExcPending
+						if v37 != 0 {
+							return int32(0)
+						} else {
+							v38 = F_pg_relpages_impl(m, v36)
+							mBase = m.M
+							v39 = m.ExcPending
+							if v39 != 0 {
+								return int32(0)
+							} else {
+								v40 = F_Int64GetDatum(m, v38)
+								mBase = m.M
+								v41 = m.ExcPending
+								if v41 != 0 {
+									return int32(0)
+								} else {
+									return v40
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+func F_pg_relpages_v1_5(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int64
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = F_pg_detoast_datum_packed(m, v2)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		v7 = F_textToQualifiedNameList(m, v3)
+		mBase = m.M
+		v8 = m.ExcPending
+		if v8 != 0 {
+			return int32(0)
+		} else {
+			v9 = F_makeRangeVarFromNameList(m, v7)
+			mBase = m.M
+			v10 = m.ExcPending
+			if v10 != 0 {
+				return int32(0)
+			} else {
+				v12 = F_relation_openrv(m, v9, int32(1))
+				mBase = m.M
+				v13 = m.ExcPending
+				if v13 != 0 {
+					return int32(0)
+				} else {
+					v14 = F_pg_relpages_impl(m, v12)
+					mBase = m.M
+					v15 = m.ExcPending
+					if v15 != 0 {
+						return int32(0)
+					} else {
+						v16 = F_Int64GetDatum(m, v14)
+						mBase = m.M
+						v17 = m.ExcPending
+						if v17 != 0 {
+							return int32(0)
+						} else {
+							return v16
+						}
+					}
+				}
+			}
+		}
+	}
+}
+func F_pg_relpagesbyid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v21 int32
+	_ = v21
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int64
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = F_superuser(m)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		if v3 == int32(0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v12 = m.ExcPending
+			if v12 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(16797828))
+				mBase = m.M
+				v15 = m.ExcPending
+				if v15 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_pg_relpagesbyid_0), int32(0))
+					mBase = m.M
+					v21 = m.ExcPending
+					if v21 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_pg_relpagesbyid_1), int32(433), int32(_a_F_pg_relpagesbyid_2))
+						mBase = m.M
+						v28 = m.ExcPending
+						if v28 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v30 = F_relation_open(m, v2, int32(1))
+			mBase = m.M
+			v31 = m.ExcPending
+			if v31 != 0 {
+				return int32(0)
+			} else {
+				v32 = F_pg_relpages_impl(m, v30)
+				mBase = m.M
+				v33 = m.ExcPending
+				if v33 != 0 {
+					return int32(0)
+				} else {
+					v34 = F_Int64GetDatum(m, v32)
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return int32(0)
+					} else {
+						return v34
+					}
+				}
+			}
+		}
+	}
+}
 func F_pg_server_to_client(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

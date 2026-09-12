@@ -2012,6 +2012,8 @@ func F_read_stream_end(m *base.Module, l0 int32)
 func F_GetPrivateRefCountEntry(m *base.Module, l0 int32) int32
 //go:linkname F_ReadBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ReadBuffer
 func F_ReadBuffer(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ReadBufferExtended github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ReadBufferExtended
+func F_ReadBufferExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_ReadBufferWithoutRelcache github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ReadBufferWithoutRelcache
 func F_ReadBufferWithoutRelcache(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_StartBufferIO github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_StartBufferIO
@@ -2194,6 +2196,8 @@ func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_LockRelationOid(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ConditionalLockRelationOid github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ConditionalLockRelationOid
 func F_ConditionalLockRelationOid(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_LockRelationForExtension github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_LockRelationForExtension
+func F_LockRelationForExtension(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_LockTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_LockTuple
 func F_LockTuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_LockDatabaseObject github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_LockDatabaseObject
@@ -3918,6 +3922,8 @@ func F_seg_yy_scan_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_ean2isn github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ean2isn
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
+//go:linkname F_build_pgstattuple_type github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_build_pgstattuple_type
+func F_build_pgstattuple_type(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

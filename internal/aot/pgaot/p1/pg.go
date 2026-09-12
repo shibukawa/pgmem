@@ -18565,6 +18565,47 @@ L280:
 	v1008 = v1000
 	goto L1
 }
+func F_pg_relpagesbyid_v1_5(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = F_relation_open(m, v2, int32(1))
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		v8 = F_pg_relpages_impl(m, v4)
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return int32(0)
+		} else {
+			v10 = F_Int64GetDatum(m, v8)
+			mBase = m.M
+			v11 = m.ExcPending
+			if v11 != 0 {
+				return int32(0)
+			} else {
+				return v10
+			}
+		}
+	}
+}
 func F_pg_rewrite_query(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

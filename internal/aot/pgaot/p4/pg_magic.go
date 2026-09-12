@@ -23,3 +23,6 @@ func F_Pg_magic_func_hstore(m *base.Module) int32 {
 func F_Pg_magic_func_latin2_and_win1250(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_latin2_and_win1250_0)
 }
+func F_Pg_magic_func_pgstattuple(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_pgstattuple_0)
+}
