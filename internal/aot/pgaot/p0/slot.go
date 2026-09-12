@@ -44,13 +44,13 @@ func F_CheckSlotRequirements(m *base.Module) {
 				if v29 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(729655), int32(0))
+					F_errmsg(m, int32(729816), int32(0))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(492874), int32(1539), int32(122873))
+						F_errfinish(m, int32(492989), int32(1539), int32(122909))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
@@ -79,13 +79,13 @@ func F_CheckSlotRequirements(m *base.Module) {
 			if v13 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(570314), int32(0))
+				F_errmsg(m, int32(570441), int32(0))
 				mBase = m.M
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492874), int32(1534), int32(122873))
+					F_errfinish(m, int32(492989), int32(1534), int32(122909))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {

@@ -110,7 +110,7 @@ func F_macaddr_in(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+228)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+232)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+236)) = v7 + int32(272)
-	v35 = F_sscanf(m, v10, int32(175228), v7+int32(224))
+	v35 = F_sscanf(m, v10, int32(175282), v7+int32(224))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -149,7 +149,7 @@ L5:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+200)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+196)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+192)) = v7 + int32(284)
-	v65 = F_sscanf(m, v10, int32(175249), v7+int32(192))
+	v65 = F_sscanf(m, v10, int32(175303), v7+int32(192))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -173,7 +173,7 @@ L7:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+168)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+164)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+160)) = v7 + int32(284)
-	v93 = F_sscanf(m, v10, int32(175134), v7+int32(160))
+	v93 = F_sscanf(m, v10, int32(175188), v7+int32(160))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -197,7 +197,7 @@ L9:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+136)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+132)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+128)) = v7 + int32(284)
-	v121 = F_sscanf(m, v10, int32(175157), v7+int32(128))
+	v121 = F_sscanf(m, v10, int32(175211), v7+int32(128))
 	mBase = m.M
 	v122 = m.ExcPending
 	if v122 != 0 {
@@ -221,7 +221,7 @@ L11:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+104)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+100)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+96)) = v7 + int32(284)
-	v149 = F_sscanf(m, v10, int32(175180), v7+int32(96))
+	v149 = F_sscanf(m, v10, int32(175234), v7+int32(96))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -245,7 +245,7 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+72)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = v7 + int32(284)
-	v177 = F_sscanf(m, v10, int32(175204), v7-int32(-64))
+	v177 = F_sscanf(m, v10, int32(175258), v7-int32(-64))
 	mBase = m.M
 	v178 = m.ExcPending
 	if v178 != 0 {
@@ -269,7 +269,7 @@ L15:
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v7 + int32(276)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v7 + int32(280)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v7 + int32(284)
-	v205 = F_sscanf(m, v10, int32(175112), v7+int32(32))
+	v205 = F_sscanf(m, v10, int32(175166), v7+int32(32))
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {
@@ -316,8 +316,8 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v10
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(229087)
-	F_errmsg(m, int32(724862), v7+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(229141)
+	F_errmsg(m, int32(724989), v7+int32(16))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {
@@ -327,7 +327,7 @@ L20:
 	}
 L21:
 	;
-	F_errsave_finish(m, v9, int32(499897), int32(95), int32(279293))
+	F_errsave_finish(m, v9, int32(500024), int32(95), int32(279367))
 	mBase = m.M
 	v229 = m.ExcPending
 	if v229 != 0 {
@@ -424,7 +424,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v10
-	F_errmsg(m, int32(726457), v7)
+	F_errmsg(m, int32(726618), v7)
 	mBase = m.M
 	v259 = m.ExcPending
 	if v259 != 0 {
@@ -434,7 +434,7 @@ L33:
 	}
 L34:
 	;
-	F_errsave_finish(m, v9, int32(499897), int32(102), int32(279293))
+	F_errsave_finish(m, v9, int32(500024), int32(102), int32(279367))
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {
@@ -553,7 +553,7 @@ func F_macaddr_sortsupport(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1455)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+20)))
 	if v9 == int32(1) {
-		v12 = int32(4515248)
+		v12 = int32(4515392)
 		v13 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 		*(*int32)(unsafe.Add(mBase, _consts[28])) = v15

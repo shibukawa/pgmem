@@ -26,17 +26,17 @@ func F_XmlTableDestroyOpaque(m *base.Module, l0 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(362986), int32(0))
+			F_errmsg(m, int32(363101), int32(0))
 			v12 = m.ExcPending
 			if v12 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(578610), int32(0))
+				F_errdetail(m, int32(578737), int32(0))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(497177), int32(5115), int32(344551))
+					F_errfinish(m, int32(497304), int32(5115), int32(344666))
 					v21 = m.ExcPending
 					if v21 != 0 {
 						return

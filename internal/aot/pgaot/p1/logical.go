@@ -60,13 +60,13 @@ func F_LogicalOutputWrite(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32
 		if v18 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(419592), int32(0))
+			F_errmsg_internal(m, int32(419707), int32(0))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(494668), int32(71), int32(349742))
+				F_errfinish(m, int32(494783), int32(71), int32(349857))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
@@ -328,7 +328,7 @@ L13:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	*(*int64)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[1232]))) = base.I64_extend_i32_s(int32(0) - v37)
+	*(*int64)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[1233]))) = base.I64_extend_i32_s(int32(0) - v37)
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v42 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))

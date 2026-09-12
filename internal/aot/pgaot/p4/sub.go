@@ -355,7 +355,7 @@ func F_AbortSubTransaction(m *base.Module) {
 	m.G0 = v10
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[211]))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v14
-	v16 = int32(4509900)
+	v16 = int32(4510044)
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[171]))
 	*(*int32)(unsafe.Add(mBase, _consts[171])) = v18 + int32(1)
 	v24 = *(*int32)(unsafe.Add(mBase, _consts[25]))
@@ -414,7 +414,7 @@ L6:
 	}
 L7:
 	;
-	v45 = int32(4509908)
+	v45 = int32(4510052)
 	v47 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	v48 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v47 + v48
@@ -459,7 +459,7 @@ L10:
 L11:
 	;
 	*(*int64)(unsafe.Add(mBase, _consts[230])) = int64(0)
-	*(*int32)(unsafe.Add(mBase, _consts[231])) = int32(4411088)
+	*(*int32)(unsafe.Add(mBase, _consts[231])) = int32(4411232)
 	v190 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[130])) = v190
 	*(*int32)(unsafe.Add(mBase, _consts[232])) = v190
@@ -566,7 +566,7 @@ L24:
 	}
 L25:
 	;
-	F_sigprocmask(m, int32(4422472), int32(0))
+	F_sigprocmask(m, int32(4422616), int32(0))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -646,7 +646,7 @@ L40:
 L41:
 	;
 	v249 = *(*int32)(unsafe.Add(mBase, _consts[25]))
-	F_ShowTransactionStateRec(m, int32(257950), v249)
+	F_ShowTransactionStateRec(m, int32(258024), v249)
 	mBase = m.M
 	v251 = m.ExcPending
 	if v251 != 0 {
@@ -708,12 +708,12 @@ L49:
 	goto L51
 L50:
 	;
-	v270 = int32(543357)
+	v270 = int32(543484)
 	goto L51
 L51:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v270
-	F_errmsg_internal(m, int32(352224), v10)
+	F_errmsg_internal(m, int32(352339), v10)
 	mBase = m.M
 	v274 = m.ExcPending
 	if v274 != 0 {
@@ -723,7 +723,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(493303), int32(5283), int32(257950))
+	F_errfinish(m, int32(493418), int32(5283), int32(258024))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -800,7 +800,7 @@ L63:
 	;
 	v597 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+68)))
 	*(*uint8)(unsafe.Add(mBase, _consts[207])) = uint8(v597)
-	v599 = int32(4509900)
+	v599 = int32(4510044)
 	v601 = *(*int32)(unsafe.Add(mBase, _consts[171]))
 	*(*int32)(unsafe.Add(mBase, _consts[171])) = v601 - int32(1)
 	m.G0 = v10 + int32(16)
@@ -1540,7 +1540,7 @@ L14:
 L15:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, _consts[25]))
-	F_ShowTransactionStateRec(m, int32(258051), v50)
+	F_ShowTransactionStateRec(m, int32(258125), v50)
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -1612,12 +1612,12 @@ L24:
 	goto L26
 L25:
 	;
-	v71 = int32(543357)
+	v71 = int32(543484)
 	goto L26
 L26:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v71
-	F_errmsg_internal(m, int32(352339), v8)
+	F_errmsg_internal(m, int32(352454), v8)
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -1627,7 +1627,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(493303), int32(5391), int32(258051))
+	F_errfinish(m, int32(493418), int32(5391), int32(258125))
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -1758,7 +1758,7 @@ L46:
 	;
 	v115 = *(*int32)(unsafe.Add(mBase, uint32(v102)))
 	*(*int32)(unsafe.Add(mBase, uint32(v85))) = v115
-	F_errmsg_internal(m, int32(712207), v85)
+	F_errmsg_internal(m, int32(712334), v85)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -1775,7 +1775,7 @@ L48:
 	goto L44
 L49:
 	;
-	F_errfinish(m, int32(496980), int32(1120), int32(153467))
+	F_errfinish(m, int32(497107), int32(1120), int32(153521))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {
@@ -2036,9 +2036,9 @@ L1:
 	v44 = *(*int32)(unsafe.Add(mBase, _consts[25]))
 	v46 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, uint32(v44)+44)) = v46
-	v48 = int32(4515276)
+	v48 = int32(4515420)
 	v50 = *(*int32)(unsafe.Add(mBase, _consts[212]))
-	v55 = F_AllocSetContextCreateInternal(m, v50, int32(62139), int32(0), int32(8192), int32(8388608))
+	v55 = F_AllocSetContextCreateInternal(m, v50, int32(62155), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -2081,12 +2081,12 @@ L6:
 	goto L8
 L7:
 	;
-	v30 = int32(543357)
+	v30 = int32(543484)
 	goto L8
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v30
-	F_errmsg_internal(m, int32(352262), v8)
+	F_errmsg_internal(m, int32(352377), v8)
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -2096,7 +2096,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(493303), int32(5073), int32(257970))
+	F_errfinish(m, int32(493418), int32(5073), int32(258044))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -2115,7 +2115,7 @@ L11:
 	v62 = *(*int32)(unsafe.Add(mBase, _consts[25]))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+80))
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+40))
-	v66 = F_ResourceOwnerCreate(m, v64, int32(258086))
+	v66 = F_ResourceOwnerCreate(m, v64, int32(258160))
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -2135,7 +2135,7 @@ L13:
 	;
 	v115 = v75 * int32(24)
 	*(*int32)(unsafe.Add(mBase, uint32(v110+v115))) = int32(0)
-	v119 = int32(4412352)
+	v119 = int32(4412496)
 	v120 = *(*int32)(unsafe.Add(mBase, _consts[253]))
 	v121 = v120 + v115
 	v123 = *(*int32)(unsafe.Add(mBase, _consts[254]))
@@ -2340,7 +2340,7 @@ L47:
 L48:
 	;
 	v201 = *(*int32)(unsafe.Add(mBase, _consts[25]))
-	F_ShowTransactionStateRec(m, int32(257970), v201)
+	F_ShowTransactionStateRec(m, int32(258044), v201)
 	mBase = m.M
 	v203 = m.ExcPending
 	if v203 != 0 {
@@ -2493,7 +2493,7 @@ L12:
 L13:
 	;
 	v35 = int32(base.Ui32(v12) >> (uint(int32(11)) % 32))
-	v37 = F_SimpleLruReadPage_ReadOnly(m, int32(4410152), base.I64_extend_i32_u(v35), v12)
+	v37 = F_SimpleLruReadPage_ReadOnly(m, int32(4410296), base.I64_extend_i32_u(v35), v12)
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -2593,7 +2593,7 @@ L30:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v93
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v12
-	F_errmsg_internal(m, int32(53521), v8)
+	F_errmsg_internal(m, int32(53537), v8)
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -2603,7 +2603,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(493689), int32(185), int32(257759))
+	F_errfinish(m, int32(493804), int32(185), int32(257833))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -2717,7 +2717,7 @@ func F_SubTransSetParent(m *base.Module, l0 int32, l1 int32) {
 	if v18 != 0 {
 		return
 	} else {
-		v22 = F_SimpleLruReadPage(m, int32(4410152), base.I64_extend_i32_u(v9), int32(1), l0)
+		v22 = F_SimpleLruReadPage(m, int32(4410296), base.I64_extend_i32_u(v9), int32(1), l0)
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

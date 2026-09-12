@@ -61,13 +61,13 @@ func F_get_op_opfamily_properties(m *base.Module, l0 int32, l1 int32, l2 int32, 
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(39806), v10)
+				F_errmsg_internal(m, int32(39822), v10)
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(499018), int32(151), int32(167206))
+					F_errfinish(m, int32(499145), int32(151), int32(167260))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {

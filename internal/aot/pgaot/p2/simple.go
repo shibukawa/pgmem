@@ -358,7 +358,7 @@ L29:
 	}
 L30:
 	;
-	F_errmsg_internal(m, int32(338708), int32(0))
+	F_errmsg_internal(m, int32(338801), int32(0))
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -368,7 +368,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(497082), int32(355), int32(355845))
+	F_errfinish(m, int32(497209), int32(355), int32(355960))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -383,7 +383,7 @@ L32:
 	}
 L33:
 	;
-	F_errmsg_internal(m, int32(448360), int32(0))
+	F_errmsg_internal(m, int32(448475), int32(0))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -393,7 +393,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(497082), int32(363), int32(355845))
+	F_errfinish(m, int32(497209), int32(363), int32(355960))
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -408,7 +408,7 @@ L35:
 	}
 L36:
 	;
-	F_errmsg_internal(m, int32(446569), int32(0))
+	F_errmsg_internal(m, int32(446684), int32(0))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -418,7 +418,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(497082), int32(367), int32(355845))
+	F_errfinish(m, int32(497209), int32(367), int32(355960))
 	mBase = m.M
 	v120 = m.ExcPending
 	if v120 != 0 {
@@ -434,7 +434,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v65))) = v78
-	F_errmsg_internal(m, int32(57710), v65)
+	F_errmsg_internal(m, int32(57726), v65)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -444,7 +444,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(497082), int32(371), int32(355845))
+	F_errfinish(m, int32(497209), int32(371), int32(355960))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -1063,7 +1063,7 @@ func F_assign_simple_var(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							}
 						}
 					} else {
-						v23 = int32(4515248)
+						v23 = int32(4515392)
 						v24 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 						v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+20))
@@ -1553,7 +1553,7 @@ func F_exec_save_simple_expr(m *base.Module, l0 int32, l1 int32) {
 	goto L3
 L1:
 	;
-	F_errstart_cold(m, int32(21), int32(556047))
+	F_errstart_cold(m, int32(21), int32(556174))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -1651,7 +1651,7 @@ L13:
 	;
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v60
-	F_errmsg_internal(m, int32(485689), v8)
+	F_errmsg_internal(m, int32(485804), v8)
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -1661,7 +1661,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(499854), int32(8334), int32(206972))
+	F_errfinish(m, int32(499981), int32(8334), int32(207026))
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {
@@ -2485,7 +2485,7 @@ L46:
 	goto L4
 L47:
 	;
-	F_errmsg_internal(m, int32(115148), int32(0))
+	F_errmsg_internal(m, int32(115184), int32(0))
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -2495,7 +2495,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(499213), int32(1815), int32(15389))
+	F_errfinish(m, int32(499340), int32(1815), int32(15389))
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {

@@ -561,7 +561,7 @@ L53:
 	goto L49
 L54:
 	;
-	F_errmsg_internal(m, int32(135219), int32(0))
+	F_errmsg_internal(m, int32(135255), int32(0))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -571,7 +571,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(492842), int32(320), int32(316852))
+	F_errfinish(m, int32(492957), int32(320), int32(316926))
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -825,7 +825,7 @@ func F_smgr_desc(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v39
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v38
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(16)
-			F_appendStringInfo(m, l0, int32(469858), v7)
+			F_appendStringInfo(m, l0, int32(469973), v7)
 			mBase = m.M
 			v47 = m.ExcPending
 			if v47 != 0 {

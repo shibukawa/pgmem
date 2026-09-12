@@ -233,7 +233,7 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 				if v58 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496373), int32(200), int32(159872))
+					F_errfinish(m, int32(496500), int32(200), int32(159926))
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {

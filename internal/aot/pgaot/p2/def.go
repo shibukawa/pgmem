@@ -88,13 +88,13 @@ func F_defGetInt64(m *base.Module, l0 int32) int64 {
 				} else {
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v28
-					F_errmsg(m, int32(346503), v7+int32(16))
+					F_errmsg(m, int32(346618), v7+int32(16))
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
 						return int64(0)
 					} else {
-						F_errfinish(m, int32(498699), int32(197), int32(558603))
+						F_errfinish(m, int32(498826), int32(197), int32(558730))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -123,13 +123,13 @@ func F_defGetInt64(m *base.Module, l0 int32) int64 {
 			} else {
 				v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v53
-				F_errmsg(m, int32(346503), v7)
+				F_errmsg(m, int32(346618), v7)
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return int64(0)
 				} else {
-					F_errfinish(m, int32(498699), int32(179), int32(558603))
+					F_errfinish(m, int32(498826), int32(179), int32(558730))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -207,13 +207,13 @@ func F_defGetTypeName(m *base.Module, l0 int32) int32 {
 					} else {
 						v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v55
-						F_errmsg(m, int32(381621), v7+int32(16))
+						F_errmsg(m, int32(381736), v7+int32(16))
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498699), int32(289), int32(381969))
+							F_errfinish(m, int32(498826), int32(289), int32(382084))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -267,13 +267,13 @@ func F_defGetTypeName(m *base.Module, l0 int32) int32 {
 			} else {
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v38
-				F_errmsg(m, int32(216708), v7)
+				F_errmsg(m, int32(216762), v7)
 				mBase = m.M
 				v42 = m.ExcPending
 				if v42 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498699), int32(277), int32(381969))
+					F_errfinish(m, int32(498826), int32(277), int32(382084))
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {

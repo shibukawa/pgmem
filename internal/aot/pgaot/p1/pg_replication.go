@@ -334,7 +334,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v31 = int32(4410816)
+	v31 = int32(4410960)
 	v32 = *(*int32)(unsafe.Add(mBase, _consts[30]))
 	v33 = *(*int64)(unsafe.Add(mBase, uint32(v32)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v32)+280)) = v33
@@ -357,7 +357,7 @@ L3:
 	}
 L4:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, _consts[664]))
+	v51 = *(*int32)(unsafe.Add(mBase, _consts[665]))
 	if int32(0) < v51 {
 		goto L5
 	} else {
@@ -365,7 +365,7 @@ L4:
 	}
 L5:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v59 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	v68 = v51
 	v70 = v59
 	v74 = v2
@@ -423,7 +423,7 @@ L12:
 	}
 L13:
 	;
-	F_s_lock(m, v86, int32(494424), int32(268), int32(118442))
+	F_s_lock(m, v86, int32(494539), int32(268), int32(118478))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -483,7 +483,7 @@ L23:
 	;
 	v121 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)) = uint8(v121)
-	v126 = int32(314132)
+	v126 = int32(314206)
 	goto L22
 L24:
 	;
@@ -491,7 +491,7 @@ L24:
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+36)) = v21 + int32(249)
-	v126 = int32(314218)
+	v126 = int32(314292)
 	goto L22
 L26:
 	;
@@ -666,7 +666,7 @@ L54:
 	goto L53
 L55:
 	;
-	v327 = *(*int32)(unsafe.Add(mBase, _consts[668]))
+	v327 = *(*int32)(unsafe.Add(mBase, _consts[669]))
 	if v327 < int32(0) {
 		v353 = v318
 		goto L54
@@ -680,7 +680,7 @@ L56:
 	goto L55
 L57:
 	;
-	v305 = F_cstring_to_text(m, int32(68093))
+	v305 = F_cstring_to_text(m, int32(68109))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -731,7 +731,7 @@ L61:
 	}
 L62:
 	;
-	v181 = int32(4410816)
+	v181 = int32(4410960)
 	v182 = *(*int32)(unsafe.Add(mBase, _consts[30]))
 	v183 = *(*int64)(unsafe.Add(mBase, uint32(v182)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v182)+280)) = v183
@@ -764,7 +764,7 @@ L63:
 L64:
 	;
 	v207 = *(*int32)(unsafe.Add(mBase, _consts[30]))
-	F_s_lock(m, v207+int32(440), int32(497943), int32(3760), int32(240759))
+	F_s_lock(m, v207+int32(440), int32(498070), int32(3760), int32(240813))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -861,7 +861,7 @@ L80:
 	goto L60
 L81:
 	;
-	v269 = F_cstring_to_text(m, int32(439937))
+	v269 = F_cstring_to_text(m, int32(440052))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -871,7 +871,7 @@ L81:
 	}
 L82:
 	;
-	v265 = F_cstring_to_text(m, int32(461129))
+	v265 = F_cstring_to_text(m, int32(461244))
 	mBase = m.M
 	v266 = m.ExcPending
 	if v266 != 0 {
@@ -881,7 +881,7 @@ L82:
 	}
 L83:
 	;
-	v261 = F_cstring_to_text(m, int32(440007))
+	v261 = F_cstring_to_text(m, int32(440122))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -917,7 +917,7 @@ L88:
 	}
 L89:
 	;
-	F_s_lock(m, v86, int32(494424), int32(364), int32(118442))
+	F_s_lock(m, v86, int32(494539), int32(364), int32(118478))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -945,7 +945,7 @@ L92:
 	goto L91
 L93:
 	;
-	v300 = F_cstring_to_text(m, int32(439937))
+	v300 = F_cstring_to_text(m, int32(440052))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -970,7 +970,7 @@ L96:
 	v334 = base.I64_div_u_s(v330, v333)
 	v336 = base.I32_div_s(v332, int32(1048576))
 	v337 = base.I32_div_s(v327, v336)
-	v339 = *(*int32)(unsafe.Add(mBase, _consts[669]))
+	v339 = *(*int32)(unsafe.Add(mBase, _consts[670]))
 	v340 = base.I32_div_s(v339, v336)
 	if base.Ui32(v340) < base.Ui32(v337) {
 		goto L97
@@ -1086,7 +1086,7 @@ L111:
 	}
 L112:
 	;
-	v456 = int32(372507)
+	v456 = int32(372622)
 	if base.Ui32(int32(8)) < base.Ui32(v418) {
 		v471 = v456
 		goto L121
@@ -1155,7 +1155,7 @@ L122:
 	}
 L123:
 	;
-	v469 = *(*int32)(unsafe.Add(mBase, uint32(v418<<(uint(int32(2))%32))+uint32(_consts[670])))
+	v469 = *(*int32)(unsafe.Add(mBase, uint32(v418<<(uint(int32(2))%32))+uint32(_consts[671])))
 	v470 = *(*int32)(unsafe.Add(mBase, uint32(v469)+4))
 	v471 = v470
 	goto L121
@@ -1165,8 +1165,8 @@ L124:
 	goto L111
 L125:
 	;
-	v489 = *(*int32)(unsafe.Add(mBase, _consts[664]))
-	v491 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v489 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v491 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	v493 = v489
 	v495 = v491
 	goto L12
@@ -1230,7 +1230,7 @@ func F_pg_replication_origin_session_is_setup(m *base.Module, l0 int32) int32 {
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496373), int32(200), int32(159872))
+					F_errfinish(m, int32(496500), int32(200), int32(159926))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

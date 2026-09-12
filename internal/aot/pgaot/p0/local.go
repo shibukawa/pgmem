@@ -154,7 +154,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						v53 = v47 + (int32(-2)-v49)<<(uint(int32(2))%32)
 						v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 						if v54 == int32(0) {
-							v57 = int32(4431192)
+							v57 = int32(4431336)
 							v59 = *(*int32)(unsafe.Add(mBase, _consts[584]))
 							v60 = int32(1)
 							*(*int32)(unsafe.Add(mBase, _consts[584])) = v59 + v60
@@ -176,7 +176,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						*(*int32)(unsafe.Add(mBase, uint32(v53))) = v75 + v76
 						v80 = *(*int32)(unsafe.Add(mBase, _consts[581]))
 						v81 = *(*int32)(unsafe.Add(mBase, uint32(v44)+20))
-						F_ResourceOwnerRemember(m, v80, v81+v76, int32(1628032))
+						F_ResourceOwnerRemember(m, v80, v81+v76, int32(1628192))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -211,13 +211,13 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 									if v138 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(444803), int32(0))
+										F_errmsg_internal(m, int32(444918), int32(0))
 										mBase = m.M
 										v142 = m.ExcPending
 										if v142 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(498117), int32(159), int32(488925))
+											F_errfinish(m, int32(498244), int32(159), int32(489040))
 											mBase = m.M
 											v147 = m.ExcPending
 											if v147 != 0 {
@@ -279,7 +279,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					v53 = v47 + (int32(-2)-v49)<<(uint(int32(2))%32)
 					v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 					if v54 == int32(0) {
-						v57 = int32(4431192)
+						v57 = int32(4431336)
 						v59 = *(*int32)(unsafe.Add(mBase, _consts[584]))
 						v60 = int32(1)
 						*(*int32)(unsafe.Add(mBase, _consts[584])) = v59 + v60
@@ -301,7 +301,7 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					*(*int32)(unsafe.Add(mBase, uint32(v53))) = v75 + v76
 					v80 = *(*int32)(unsafe.Add(mBase, _consts[581]))
 					v81 = *(*int32)(unsafe.Add(mBase, uint32(v44)+20))
-					F_ResourceOwnerRemember(m, v80, v81+v76, int32(1628032))
+					F_ResourceOwnerRemember(m, v80, v81+v76, int32(1628192))
 					mBase = m.M
 					v86 = m.ExcPending
 					if v86 != 0 {
@@ -336,13 +336,13 @@ func F_LocalBufferAlloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 								if v138 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg_internal(m, int32(444803), int32(0))
+									F_errmsg_internal(m, int32(444918), int32(0))
 									mBase = m.M
 									v142 = m.ExcPending
 									if v142 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498117), int32(159), int32(488925))
+										F_errfinish(m, int32(498244), int32(159), int32(489040))
 										mBase = m.M
 										v147 = m.ExcPending
 										if v147 != 0 {
@@ -502,7 +502,7 @@ func F_local_buffer_readv_stage(m *base.Module, l0 int32, l1 int32) {
 			v49 = v42
 			v52 = int32(0)
 			for {
-				v57 = int32(4431176)
+				v57 = int32(4431320)
 				v58 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 				v61 = v25 + v49<<(uint(int32(3))%32)
 				v62 = *(*int32)(unsafe.Add(mBase, uint32(v61)))

@@ -113,7 +113,7 @@ func F_pgaio_closing_fd(m *base.Module, l0 int32) {
 	v12 = m.G0
 	v14 = v12 - int32(48)
 	m.G0 = v14
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	if v17 == int32(0) {
 		goto L1
 	} else {
@@ -146,7 +146,7 @@ L4:
 	goto L5
 L5:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, _consts[721]))
+	v47 = *(*int32)(unsafe.Add(mBase, _consts[722]))
 	v48 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47))))
 	if v48 != int32(1) {
 		goto L1
@@ -198,11 +198,11 @@ L11:
 	}
 L12:
 	;
-	v30 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v30 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v31 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30)+22)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v31
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = l0
-	F_errmsg_internal(m, int32(449794), v14+int32(32))
+	F_errmsg_internal(m, int32(449909), v14+int32(32))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -212,7 +212,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(495925), int32(1237), int32(437451))
+	F_errfinish(m, int32(496040), int32(1237), int32(437566))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -228,7 +228,7 @@ L15:
 	goto L5
 L16:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v52 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+160))
 	if v53 == int32(0) {
 		goto L1
@@ -364,7 +364,7 @@ L35:
 L36:
 	;
 	v114 = int32(0)
-	v116 = *(*int32)(unsafe.Add(mBase, _consts[716]))
+	v116 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+24))
 	v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+2)))
 	if base.Ui32(v122) <= base.Ui32(int32(2)) {
@@ -375,12 +375,12 @@ L36:
 L37:
 	;
 	v131 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+1)))
-	v136 = *(*int32)(unsafe.Add(mBase, uint32(v131<<(uint(int32(2))%32))+uint32(_consts[718])))
+	v136 = *(*int32)(unsafe.Add(mBase, uint32(v131<<(uint(int32(2))%32))+uint32(_consts[719])))
 	v137 = *(*int32)(unsafe.Add(mBase, uint32(v136)+8))
 	goto L41
 L38:
 	;
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(v122<<(uint(int32(2))%32))+uint32(_consts[717])))
+	v129 = *(*int32)(unsafe.Add(mBase, uint32(v122<<(uint(int32(2))%32))+uint32(_consts[718])))
 	v130 = v129
 	goto L40
 L39:
@@ -400,7 +400,7 @@ L41:
 	}
 L42:
 	;
-	v145 = *(*int32)(unsafe.Add(mBase, uint32(v138<<(uint(int32(2))%32))+uint32(_consts[719])))
+	v145 = *(*int32)(unsafe.Add(mBase, uint32(v138<<(uint(int32(2))%32))+uint32(_consts[720])))
 	v146 = v145
 	goto L44
 L43:
@@ -409,7 +409,7 @@ L43:
 	goto L44
 L44:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v148 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+160))
 	*(*int32)(unsafe.Add(mBase, uint32(v14+int32(16)))) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v14+int32(20)))) = v149
@@ -417,7 +417,7 @@ L44:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v130
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v137
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v146
-	F_errmsg_internal(m, int32(174548), v14)
+	F_errmsg_internal(m, int32(174602), v14)
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -427,7 +427,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(495925), int32(1276), int32(437451))
+	F_errfinish(m, int32(496040), int32(1276), int32(437566))
 	mBase = m.M
 	v163 = m.ExcPending
 	if v163 != 0 {
@@ -440,7 +440,7 @@ L46:
 	goto L34
 L47:
 	;
-	v172 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v172 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v173 = *(*int32)(unsafe.Add(mBase, uint32(v172)+160))
 	if v173 != 0 {
 		v63 = v172
@@ -466,7 +466,7 @@ func F_pgaio_io_get_wref(m *base.Module, l0 int32, l1 int32) {
 	_ = v10
 	var v12 int64
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[716]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = (l0 - v5) >> (uint(int32(7)) % 32)
 	v10 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+52)))
@@ -546,38 +546,38 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, _consts[716]))
+					v22 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+24))
 					v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
 					if base.Ui32(v28) <= base.Ui32(int32(2)) {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(v28<<(uint(int32(2))%32))+uint32(_consts[717])))
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(v28<<(uint(int32(2))%32))+uint32(_consts[718])))
 						v36 = v35
 					} else {
 						v36 = int32(0)
 					}
 					v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
-					v42 = *(*int32)(unsafe.Add(mBase, uint32(v37<<(uint(int32(2))%32))+uint32(_consts[718])))
+					v42 = *(*int32)(unsafe.Add(mBase, uint32(v37<<(uint(int32(2))%32))+uint32(_consts[719])))
 					v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+8))
 					v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 					if base.Ui32(v44) <= base.Ui32(int32(7)) {
-						v51 = *(*int32)(unsafe.Add(mBase, uint32(v44<<(uint(int32(2))%32))+uint32(_consts[719])))
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v44<<(uint(int32(2))%32))+uint32(_consts[720])))
 						v52 = v51
 					} else {
 						v52 = v3
 					}
-					v57 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(2))%32))+uint32(_consts[719])))
+					v57 = *(*int32)(unsafe.Add(mBase, uint32(v2<<(uint(int32(2))%32))+uint32(_consts[720])))
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v57
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v52
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v43
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v36
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = (l0 - v23) >> (uint(int32(7)) % 32)
-					F_errmsg_internal(m, int32(183028), v11)
+					F_errmsg_internal(m, int32(183082), v11)
 					mBase = m.M
 					v65 = m.ExcPending
 					if v65 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(495925), int32(397), int32(351708))
+						F_errfinish(m, int32(496040), int32(397), int32(351823))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -681,7 +681,7 @@ func F_pgaio_shutdown(m *base.Module, l0 int32, l1 int32) {
 	v10 = m.G0
 	v12 = v10 - int32(32)
 	m.G0 = v12
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+20)))
 	if v16 != int32(1) {
 		goto L1
@@ -690,7 +690,7 @@ func F_pgaio_shutdown(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v39 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+160))
 	if v40 != 0 {
 		goto L9
@@ -731,7 +731,7 @@ L5:
 	}
 L6:
 	;
-	F_errmsg_internal(m, int32(256250), int32(0))
+	F_errmsg_internal(m, int32(256324), int32(0))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -741,7 +741,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(495925), int32(1206), int32(240970))
+	F_errfinish(m, int32(496040), int32(1206), int32(241024))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -761,7 +761,7 @@ L10:
 	goto L11
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[720])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[721])) = int32(0)
 	m.G0 = v12 + int32(32)
 	return
 L12:
@@ -823,7 +823,7 @@ L18:
 L19:
 	;
 	v64 = int32(0)
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[716]))
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[717]))
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+24))
 	v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+2)))
 	if base.Ui32(v72) <= base.Ui32(int32(2)) {
@@ -834,12 +834,12 @@ L19:
 L20:
 	;
 	v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v54)+1)))
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v81<<(uint(int32(2))%32))+uint32(_consts[718])))
+	v86 = *(*int32)(unsafe.Add(mBase, uint32(v81<<(uint(int32(2))%32))+uint32(_consts[719])))
 	v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)+8))
 	goto L24
 L21:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(v72<<(uint(int32(2))%32))+uint32(_consts[717])))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v72<<(uint(int32(2))%32))+uint32(_consts[718])))
 	v80 = v79
 	goto L23
 L22:
@@ -859,7 +859,7 @@ L24:
 	}
 L25:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(v88<<(uint(int32(2))%32))+uint32(_consts[719])))
+	v95 = *(*int32)(unsafe.Add(mBase, uint32(v88<<(uint(int32(2))%32))+uint32(_consts[720])))
 	v96 = v95
 	goto L27
 L26:
@@ -868,14 +868,14 @@ L26:
 	goto L27
 L27:
 	;
-	v98 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v98 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v98)+160))
 	*(*int32)(unsafe.Add(mBase, uint32(v12+int32(16)))) = v99
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = (v54 - v67) >> (uint(int32(7)) % 32)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v80
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v87
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v96
-	F_errmsg_internal(m, int32(174445), v12)
+	F_errmsg_internal(m, int32(174499), v12)
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -885,7 +885,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(495925), int32(1312), int32(243582))
+	F_errfinish(m, int32(496040), int32(1312), int32(243656))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -898,7 +898,7 @@ L29:
 	goto L17
 L30:
 	;
-	v121 = *(*int32)(unsafe.Add(mBase, _consts[720]))
+	v121 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	v122 = *(*int32)(unsafe.Add(mBase, uint32(v121)+160))
 	if v122 != 0 {
 		v43 = v121

@@ -221,7 +221,7 @@ func F_InitLocalBuffers(m *base.Module) {
 					if v199 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(498117), int32(745), int32(135327))
+						F_errfinish(m, int32(498244), int32(745), int32(135363))
 						mBase = m.M
 						v204 = m.ExcPending
 						if v204 != 0 {
@@ -254,7 +254,7 @@ func F_InitLocalBuffers(m *base.Module) {
 						if v199 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498117), int32(745), int32(135327))
+							F_errfinish(m, int32(498244), int32(745), int32(135363))
 							mBase = m.M
 							v204 = m.ExcPending
 							if v204 != 0 {
@@ -287,7 +287,7 @@ func F_InitLocalBuffers(m *base.Module) {
 							if v199 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(498117), int32(745), int32(135327))
+								F_errfinish(m, int32(498244), int32(745), int32(135363))
 								mBase = m.M
 								v204 = m.ExcPending
 								if v204 != 0 {
@@ -322,7 +322,7 @@ func F_InitLocalBuffers(m *base.Module) {
 					} else {
 					}
 					*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = int64(103079215124)
-					v163 = F_hash_create(m, int32(397179), v16, v8, int32(40))
+					v163 = F_hash_create(m, int32(397294), v16, v8, int32(40))
 					mBase = m.M
 					v164 = m.ExcPending
 					if v164 != 0 {
@@ -336,13 +336,13 @@ func F_InitLocalBuffers(m *base.Module) {
 							if v208 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(393096), int32(0))
+								F_errmsg_internal(m, int32(393211), int32(0))
 								mBase = m.M
 								v212 = m.ExcPending
 								if v212 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(498117), int32(782), int32(135327))
+									F_errfinish(m, int32(498244), int32(782), int32(135363))
 									mBase = m.M
 									v217 = m.ExcPending
 									if v217 != 0 {
@@ -376,13 +376,13 @@ func F_InitLocalBuffers(m *base.Module) {
 			if v179 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(260247), int32(0))
+				F_errmsg(m, int32(260321), int32(0))
 				mBase = m.M
 				v183 = m.ExcPending
 				if v183 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(498117), int32(736), int32(135327))
+					F_errfinish(m, int32(498244), int32(736), int32(135363))
 					mBase = m.M
 					v188 = m.ExcPending
 					if v188 != 0 {

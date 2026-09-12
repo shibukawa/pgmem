@@ -58,13 +58,13 @@ func F_on_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(118609), int32(0))
+				F_errmsg_internal(m, int32(118645), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(499627), int32(377), int32(99357))
+					F_errfinish(m, int32(499754), int32(377), int32(99373))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

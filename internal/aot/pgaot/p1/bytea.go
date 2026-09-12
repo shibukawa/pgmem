@@ -100,13 +100,13 @@ func F_byteaGetByte(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v48 - int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
-					F_errmsg(m, int32(466641), v8)
+					F_errmsg(m, int32(466756), v8)
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(499941), int32(3325), int32(348422))
+						F_errfinish(m, int32(500068), int32(3325), int32(348537))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -192,13 +192,13 @@ func F_byteaSetByte(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v17 - int32(5)
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v18
-					F_errmsg(m, int32(466641), v8)
+					F_errmsg(m, int32(466756), v8)
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(499941), int32(3392), int32(348409))
+						F_errfinish(m, int32(500068), int32(3392), int32(348524))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -279,13 +279,13 @@ func F_bytea_int2(m *base.Module, l0 int32) int32 {
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(401881), int32(0))
+						F_errmsg(m, int32(401996), int32(0))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499941), int32(4149), int32(560158))
+							F_errfinish(m, int32(500068), int32(4149), int32(560285))
 							mBase = m.M
 							v75 = m.ExcPending
 							if v75 != 0 {
@@ -313,13 +313,13 @@ func F_bytea_int2(m *base.Module, l0 int32) int32 {
 						if v66 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(401881), int32(0))
+							F_errmsg(m, int32(401996), int32(0))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499941), int32(4149), int32(560158))
+								F_errfinish(m, int32(500068), int32(4149), int32(560285))
 								mBase = m.M
 								v75 = m.ExcPending
 								if v75 != 0 {
@@ -374,13 +374,13 @@ func F_bytea_int2(m *base.Module, l0 int32) int32 {
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(401881), int32(0))
+						F_errmsg(m, int32(401996), int32(0))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499941), int32(4149), int32(560158))
+							F_errfinish(m, int32(500068), int32(4149), int32(560285))
 							mBase = m.M
 							v75 = m.ExcPending
 							if v75 != 0 {
@@ -585,13 +585,13 @@ func F_bytea_int4(m *base.Module, l0 int32) int32 {
 						if v127 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(402193), int32(0))
+							F_errmsg(m, int32(402308), int32(0))
 							mBase = m.M
 							v131 = m.ExcPending
 							if v131 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499941), int32(4174), int32(557946))
+								F_errfinish(m, int32(500068), int32(4174), int32(558073))
 								mBase = m.M
 								v136 = m.ExcPending
 								if v136 != 0 {
@@ -694,13 +694,13 @@ func F_bytea_int4(m *base.Module, l0 int32) int32 {
 					if v127 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(402193), int32(0))
+						F_errmsg(m, int32(402308), int32(0))
 						mBase = m.M
 						v131 = m.ExcPending
 						if v131 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499941), int32(4174), int32(557946))
+							F_errfinish(m, int32(500068), int32(4174), int32(558073))
 							mBase = m.M
 							v136 = m.ExcPending
 							if v136 != 0 {
@@ -978,13 +978,13 @@ func F_bytea_int8(m *base.Module, l0 int32) int32 {
 						if v102 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(401903), int32(0))
+							F_errmsg(m, int32(402018), int32(0))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499941), int32(4199), int32(554462))
+								F_errfinish(m, int32(500068), int32(4199), int32(554589))
 								mBase = m.M
 								v111 = m.ExcPending
 								if v111 != 0 {
@@ -1104,13 +1104,13 @@ func F_bytea_int8(m *base.Module, l0 int32) int32 {
 					if v102 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(401903), int32(0))
+						F_errmsg(m, int32(402018), int32(0))
 						mBase = m.M
 						v106 = m.ExcPending
 						if v106 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499941), int32(4199), int32(554462))
+							F_errfinish(m, int32(500068), int32(4199), int32(554589))
 							mBase = m.M
 							v111 = m.ExcPending
 							if v111 != 0 {
@@ -1755,7 +1755,7 @@ func F_bytea_substring(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v15 = l1 + l2
 		if base.B2i32(l2 < v13)^base.B2i32(v15 < l1) == v13 {
 			if v15 <= int32(0) {
-				v25 = F_DirectFunctionCall1Coll(m, int32(579), int32(0), int32(757108))
+				v25 = F_DirectFunctionCall1Coll(m, int32(579), int32(0), int32(757269))
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return int32(0)
@@ -1799,12 +1799,12 @@ func F_bytea_substring(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v45 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(439457), int32(0))
+				F_errmsg(m, int32(439572), int32(0))
 				v49 = m.ExcPending
 				if v49 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(499941), int32(3158), int32(329634))
+					F_errfinish(m, int32(500068), int32(3158), int32(329708))
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return int32(0)

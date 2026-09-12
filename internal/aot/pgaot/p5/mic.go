@@ -556,7 +556,7 @@ func F_mic_to_iso(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_mic2latin_with_table(m, v6, v5, v10, int32(139), int32(25), int32(2229200), base.B2i32(v7 != int32(0)))
+		v22 = F_mic2latin_with_table(m, v6, v5, v10, int32(139), int32(25), int32(2229264), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -1061,7 +1061,7 @@ L46:
 	}
 L47:
 	;
-	v165 = int32(2230784)
+	v165 = int32(2230848)
 	goto L42
 L48:
 	;
@@ -1096,7 +1096,7 @@ L54:
 	;
 	v146 = v137 + int32(1)
 	v148 = v146 << (uint(int32(3)) % 32)
-	v151 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v148)+uint32(_consts[1451]))))
+	v151 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v148)+uint32(_consts[1450]))))
 	if v151 == int32(65535) {
 		goto L56
 	} else {
@@ -1104,7 +1104,7 @@ L54:
 	}
 L55:
 	;
-	v165 = v148 + int32(2230784)
+	v165 = v148 + int32(2230848)
 	goto L42
 L56:
 	;

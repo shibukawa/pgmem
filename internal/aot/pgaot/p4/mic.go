@@ -335,7 +335,7 @@ func F_mic_to_win866(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_mic2latin_with_table(m, v6, v5, v10, int32(139), int32(20), int32(2229712), base.B2i32(v7 != int32(0)))
+		v22 = F_mic2latin_with_table(m, v6, v5, v10, int32(139), int32(20), int32(2229776), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

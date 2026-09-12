@@ -2838,10 +2838,14 @@ func F_make_tsvector(m *base.Module, l0 int32) int32
 func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_t_isalnum_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_cstr
 func F_t_isalnum_cstr(m *base.Module, l0 int32) int32
+//go:linkname F_tsearch_readline_end github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tsearch_readline_end
+func F_tsearch_readline_end(m *base.Module, l0 int32)
 //go:linkname F_parsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_parsetext
 func F_parsetext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_hlparsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hlparsetext
 func F_hlparsetext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_get_tsearch_config_filename github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_get_tsearch_config_filename
+func F_get_tsearch_config_filename(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_tt_setup_firstcall github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tt_setup_firstcall
 func F_tt_setup_firstcall(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_tt_process_call github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tt_process_call
@@ -4766,6 +4770,8 @@ func F_BloomInitMetapage(m *base.Module, l0 int32, l1 int32)
 func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_ean2isn github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ean2isn
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
+//go:linkname F_find_word github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_find_word
+func F_find_word(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

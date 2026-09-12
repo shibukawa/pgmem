@@ -1718,7 +1718,7 @@ L19:
 	goto L18
 L20:
 	;
-	v104 = int32(4515248)
+	v104 = int32(4515392)
 	v105 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v107
@@ -1867,7 +1867,7 @@ L38:
 	}
 L39:
 	;
-	v212 = int32(4515248)
+	v212 = int32(4515392)
 	v213 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v215 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
 	v216 = *(*int32)(unsafe.Add(mBase, uint32(v215)+4))
@@ -2218,7 +2218,7 @@ L83:
 	goto L40
 L84:
 	;
-	F_errmsg_internal(m, int32(407948), int32(0))
+	F_errmsg_internal(m, int32(408063), int32(0))
 	mBase = m.M
 	v455 = m.ExcPending
 	if v455 != 0 {
@@ -2228,7 +2228,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(493165), int32(152), int32(77247))
+	F_errfinish(m, int32(493280), int32(152), int32(77263))
 	mBase = m.M
 	v460 = m.ExcPending
 	if v460 != 0 {
@@ -2315,7 +2315,7 @@ L95:
 	goto L38
 L96:
 	;
-	v605 = int32(4515248)
+	v605 = int32(4515392)
 	v606 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v608 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v608
@@ -2358,7 +2358,7 @@ L98:
 	}
 L99:
 	;
-	v585 = int32(4515248)
+	v585 = int32(4515392)
 	v586 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v588 = *(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[19])))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v588
@@ -2520,7 +2520,7 @@ func F_gistSortedBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	v9 = m.G0
 	v11 = v9 - int32(128)
 	m.G0 = v11
-	v13 = int32(4515248)
+	v13 = int32(4515392)
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l5)+8))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))

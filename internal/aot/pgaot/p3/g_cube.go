@@ -197,13 +197,13 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 					if v139 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(452677), int32(0))
+						F_errmsg(m, int32(452792), int32(0))
 						mBase = m.M
 						v145 = m.ExcPending
 						if v145 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499390), int32(1423), int32(417411))
+							F_errfinish(m, int32(499517), int32(1423), int32(417526))
 							mBase = m.M
 							v152 = m.ExcPending
 							if v152 != 0 {
@@ -359,13 +359,13 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = v14
-						F_errmsg_internal(m, int32(482176), v12)
+						F_errmsg_internal(m, int32(482291), v12)
 						mBase = m.M
 						v106 = m.ExcPending
 						if v106 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499390), int32(1498), int32(417411))
+							F_errfinish(m, int32(499517), int32(1498), int32(417526))
 							mBase = m.M
 							v113 = m.ExcPending
 							if v113 != 0 {
