@@ -282,7 +282,7 @@ func F_CacheInvalidateRelcacheByRelid(m *base.Module, l0 int32) {
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(497666), int32(1697), int32(435350))
+					F_errfinish(m, int32(497808), int32(1697), int32(435474))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -353,13 +353,13 @@ func F_CacheRegisterRelcacheCallback(m *base.Module, l0 int32) {
 		if v11 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(118666), int32(0))
+			F_errmsg_internal(m, int32(118696), int32(0))
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(497666), int32(1862), int32(319376))
+				F_errfinish(m, int32(497808), int32(1862), int32(319467))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
@@ -433,13 +433,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			if v90 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(118630), int32(0))
+				F_errmsg_internal(m, int32(118660), int32(0))
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(497666), int32(1823), int32(319346))
+					F_errfinish(m, int32(497808), int32(1823), int32(319437))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -491,13 +491,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v1
-			F_errmsg_internal(m, int32(488020), v10)
+			F_errmsg_internal(m, int32(488144), v10)
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(497666), int32(1821), int32(319346))
+				F_errfinish(m, int32(497808), int32(1821), int32(319437))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -612,7 +612,7 @@ func F_cache_store_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v104
 	var v113 int32
 	_ = v113
-	v8 = int32(4515488)
+	v8 = int32(4515600)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+192))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))

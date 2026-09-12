@@ -330,7 +330,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(499672), int32(1067), int32(64555))
+	F_errfinish(m, int32(499814), int32(1067), int32(64555))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -2363,13 +2363,13 @@ func F_getTypeBinaryInputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v56
-							F_errmsg(m, int32(304449), v9+int32(32))
+							F_errmsg(m, int32(304540), v9+int32(32))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(499337), int32(3094), int32(242259))
+								F_errfinish(m, int32(499479), int32(3094), int32(242322))
 								mBase = m.M
 								v68 = m.ExcPending
 								if v68 != 0 {
@@ -2405,13 +2405,13 @@ func F_getTypeBinaryInputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v76
-								F_errmsg(m, int32(189861), v9+int32(16))
+								F_errmsg(m, int32(189891), v9+int32(16))
 								mBase = m.M
 								v83 = m.ExcPending
 								if v83 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(499337), int32(3099), int32(242259))
+									F_errfinish(m, int32(499479), int32(3099), int32(242322))
 									mBase = m.M
 									v88 = m.ExcPending
 									if v88 != 0 {
@@ -2463,7 +2463,7 @@ func F_getTypeBinaryInputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v43 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(499337), int32(3087), int32(242259))
+					F_errfinish(m, int32(499479), int32(3087), int32(242322))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -2550,7 +2550,7 @@ func F_get_record_type_from_query(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				} else {
 					v22 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 					v23 = v22
-					v24 = int32(4515488)
+					v24 = int32(4515600)
 					v25 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v27 = *(*int32)(unsafe.Add(mBase, uint32(l2)+68))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v27
@@ -2573,7 +2573,7 @@ func F_get_record_type_from_query(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				}
 			} else {
 				v23 = v16
-				v24 = int32(4515488)
+				v24 = int32(4515600)
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v27 = *(*int32)(unsafe.Add(mBase, uint32(l2)+68))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v27
@@ -2608,19 +2608,19 @@ func F_get_record_type_from_query(m *base.Module, l0 int32, l1 int32, l2 int32) 
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-					F_errmsg(m, int32(186602), v7)
+					F_errmsg(m, int32(186632), v7)
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
 						return
 					} else {
-						F_errhint(m, int32(578556), int32(0))
+						F_errhint(m, int32(578698), int32(0))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(494801), int32(3677), int32(15845))
+							F_errfinish(m, int32(494943), int32(3677), int32(15845))
 							mBase = m.M
 							v61 = m.ExcPending
 							if v61 != 0 {
@@ -2796,7 +2796,7 @@ func F_has_type_privilege_name(m *base.Module, l0 int32) int32 {
 								if v38 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(497659), int32(4575), int32(379477))
+									F_errfinish(m, int32(497801), int32(4575), int32(379601))
 									mBase = m.M
 									v43 = m.ExcPending
 									if v43 != 0 {
@@ -3035,7 +3035,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(498972), int32(699), int32(435403))
+	F_errfinish(m, int32(499114), int32(699), int32(435527))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {

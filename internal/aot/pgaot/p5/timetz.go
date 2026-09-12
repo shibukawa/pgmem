@@ -136,7 +136,7 @@ func F_timetz_in(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v50 = v44
-				F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(372717), v15)
+				F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(372841), v15)
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
@@ -152,7 +152,7 @@ func F_timetz_in(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v50 = v26
-		F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(372717), v15)
+		F_DateTimeParseError(m, v50, v12+int32(8), v16, int32(372841), v15)
 		mBase = m.M
 		v55 = m.ExcPending
 		if v55 != 0 {
@@ -282,7 +282,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v71 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498806), int32(3206), int32(372348))
+								F_errfinish(m, int32(498948), int32(3206), int32(372472))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -324,7 +324,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498806), int32(3206), int32(372348))
+									F_errfinish(m, int32(498948), int32(3206), int32(372472))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -360,13 +360,13 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v41
-									F_errmsg(m, int32(350572), v10+int32(16))
+									F_errmsg(m, int32(350696), v10+int32(16))
 									mBase = m.M
 									v48 = m.ExcPending
 									if v48 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498806), int32(3199), int32(372348))
+										F_errfinish(m, int32(498948), int32(3199), int32(372472))
 										mBase = m.M
 										v53 = m.ExcPending
 										if v53 != 0 {
@@ -406,7 +406,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 									if v71 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498806), int32(3206), int32(372348))
+										F_errfinish(m, int32(498948), int32(3206), int32(372472))
 										mBase = m.M
 										v76 = m.ExcPending
 										if v76 != 0 {
@@ -451,7 +451,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v71 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498806), int32(3206), int32(372348))
+								F_errfinish(m, int32(498948), int32(3206), int32(372472))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -493,7 +493,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498806), int32(3206), int32(372348))
+									F_errfinish(m, int32(498948), int32(3206), int32(372472))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -527,13 +527,13 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v41
-								F_errmsg(m, int32(350572), v10+int32(16))
+								F_errmsg(m, int32(350696), v10+int32(16))
 								mBase = m.M
 								v48 = m.ExcPending
 								if v48 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498806), int32(3199), int32(372348))
+									F_errfinish(m, int32(498948), int32(3199), int32(372472))
 									mBase = m.M
 									v53 = m.ExcPending
 									if v53 != 0 {
@@ -615,7 +615,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498806), int32(3206), int32(372348))
+							F_errfinish(m, int32(498948), int32(3206), int32(372472))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {

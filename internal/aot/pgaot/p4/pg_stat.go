@@ -961,7 +961,7 @@ L4:
 	;
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v29 = v22
-	v30 = int32(531325)
+	v30 = int32(531467)
 	goto L8
 L5:
 	;
@@ -1063,7 +1063,7 @@ L19:
 L20:
 	;
 	v73 = v22
-	v74 = int32(537443)
+	v74 = int32(537585)
 	goto L22
 L21:
 	;
@@ -1151,7 +1151,7 @@ L35:
 L36:
 	;
 	v118 = v22
-	v119 = int32(525390)
+	v119 = int32(525532)
 	goto L38
 L37:
 	;
@@ -1239,7 +1239,7 @@ L51:
 L52:
 	;
 	v163 = v22
-	v164 = int32(510195)
+	v164 = int32(510337)
 	goto L54
 L53:
 	;
@@ -1327,7 +1327,7 @@ L67:
 L68:
 	;
 	v208 = v22
-	v209 = int32(526638)
+	v209 = int32(526780)
 	goto L70
 L69:
 	;
@@ -1415,7 +1415,7 @@ L83:
 L84:
 	;
 	v253 = v22
-	v254 = int32(509245)
+	v254 = int32(509387)
 	goto L86
 L85:
 	;
@@ -1676,7 +1676,7 @@ L124:
 L125:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v22
-	F_errmsg(m, int32(727294), v13)
+	F_errmsg(m, int32(727436), v13)
 	mBase = m.M
 	v443 = m.ExcPending
 	if v443 != 0 {
@@ -1686,7 +1686,7 @@ L125:
 	}
 L126:
 	;
-	F_errfinish(m, int32(494750), int32(280), int32(241720))
+	F_errfinish(m, int32(494892), int32(280), int32(241783))
 	mBase = m.M
 	v448 = m.ExcPending
 	if v448 != 0 {
@@ -2509,7 +2509,7 @@ func F_pg_stat_get_wal_receiver(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	v27 = *(*int32)(unsafe.Add(mBase, _consts[866]))
-	F_s_lock(m, v27+int32(1456), int32(495327), int32(1416), int32(215017))
+	F_s_lock(m, v27+int32(1456), int32(495469), int32(1416), int32(215047))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -3405,7 +3405,7 @@ L123:
 	goto L125
 L124:
 	;
-	v471 = int32(528048)
+	v471 = int32(528190)
 	goto L125
 L125:
 	;
@@ -3749,7 +3749,7 @@ L181:
 	goto L103
 L182:
 	;
-	F_errmsg_internal(m, int32(367510), int32(0))
+	F_errmsg_internal(m, int32(367634), int32(0))
 	mBase = m.M
 	v579 = m.ExcPending
 	if v579 != 0 {
@@ -3759,7 +3759,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(495327), int32(1451), int32(215017))
+	F_errfinish(m, int32(495469), int32(1451), int32(215047))
 	mBase = m.M
 	v584 = m.ExcPending
 	if v584 != 0 {
@@ -3918,7 +3918,7 @@ func F_pg_stat_reset_replication_slot(m *base.Module, l0 int32) int32 {
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(493165), int32(57), int32(84688))
+										F_errfinish(m, int32(493289), int32(57), int32(84688))
 										mBase = m.M
 										v68 = m.ExcPending
 										if v68 != 0 {
@@ -3997,7 +3997,7 @@ func F_pg_stat_reset_subscription_stats(m *base.Module, l0 int32) int32 {
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494750), int32(2039), int32(125880))
+						F_errfinish(m, int32(494892), int32(2039), int32(125910))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {

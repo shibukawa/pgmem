@@ -676,16 +676,16 @@ func F_RollbackAndReleaseCurrentSubTransaction(m *base.Module) {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[184])))
 						v35 = v34
 					} else {
-						v35 = int32(543676)
+						v35 = int32(543818)
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v35
-					F_errmsg_internal(m, int32(187190), v6)
+					F_errmsg_internal(m, int32(187220), v6)
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493605), int32(4833), int32(258232))
+						F_errfinish(m, int32(493729), int32(4833), int32(258295))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {

@@ -118,19 +118,19 @@ func F_ltxtq_send(m *base.Module, l0 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(212159), int32(0))
+					F_errmsg(m, int32(212189), int32(0))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errdetail(m, int32(573462), int32(0))
+						F_errdetail(m, int32(573604), int32(0))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496238), int32(614), int32(426424))
+							F_errfinish(m, int32(496380), int32(614), int32(426548))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {

@@ -232,13 +232,13 @@ func F_create_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = l1
 			*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(4096)
-			F_errmsg_internal(m, int32(461876), v13)
+			F_errmsg_internal(m, int32(462000), v13)
 			mBase = m.M
 			v190 = m.ExcPending
 			if v190 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(500254), int32(1240), int32(312270))
+				F_errfinish(m, int32(500396), int32(1240), int32(312361))
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {

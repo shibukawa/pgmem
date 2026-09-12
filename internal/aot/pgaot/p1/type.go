@@ -322,7 +322,7 @@ func F_typeStringToTypeName(m *base.Module, l0 int32, l1 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = int32(746407)
+	v9 = int32(746549)
 	v13 = m.G0
 	v15 = v13 - int32(32)
 	v16 = int64(0)
@@ -330,7 +330,7 @@ func F_typeStringToTypeName(m *base.Module, l0 int32, l1 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v15)+16)) = v16
 	*(*int64)(unsafe.Add(mBase, uint32(v15)+8)) = v16
 	*(*int64)(unsafe.Add(mBase, uint32(v15))) = v16
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[340])))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[339])))
 	if v24 == int32(0) {
 		goto L3
 	} else {
@@ -358,7 +358,7 @@ L4:
 	goto L5
 L5:
 	;
-	v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[341])))
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, _consts[340])))
 	if v28 == int32(0) {
 		goto L6
 	} else {
@@ -464,9 +464,9 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(498)
-	v98 = int32(4508392)
-	v99 = *(*int32)(unsafe.Add(mBase, _consts[338]))
-	*(*int32)(unsafe.Add(mBase, _consts[338])) = v7 + int32(4)
+	v98 = int32(4508504)
+	v99 = *(*int32)(unsafe.Add(mBase, _consts[337]))
+	*(*int32)(unsafe.Add(mBase, _consts[337])) = v7 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v99
 	v106 = F_raw_parser(m, l0, int32(1))
 	mBase = m.M
@@ -496,7 +496,7 @@ L26:
 L27:
 	;
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-	*(*int32)(unsafe.Add(mBase, _consts[338])) = v111
+	*(*int32)(unsafe.Add(mBase, _consts[337])) = v111
 	v113 = *(*int32)(unsafe.Add(mBase, uint32(v106)+12))
 	v114 = *(*int32)(unsafe.Add(mBase, uint32(v113)))
 	v115 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v114)+12)))
@@ -530,7 +530,7 @@ L30:
 L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg(m, int32(714837), v7)
+	F_errmsg(m, int32(714979), v7)
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -540,7 +540,7 @@ L31:
 	}
 L32:
 	;
-	F_errsave_finish(m, l1, int32(498972), int32(773), int32(382290))
+	F_errsave_finish(m, l1, int32(499114), int32(773), int32(382414))
 	mBase = m.M
 	v135 = m.ExcPending
 	if v135 != 0 {
@@ -581,7 +581,7 @@ func F_typeTypeId(m *base.Module, l0 int32) int32 {
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(498972), int32(593), int32(465690))
+				F_errfinish(m, int32(499114), int32(593), int32(465814))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {

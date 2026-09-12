@@ -67,13 +67,13 @@ func F_FunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			} else {
 				v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v46
-				F_errmsg_internal(m, int32(532635), v10)
+				F_errmsg_internal(m, int32(532777), v10)
 				mBase = m.M
 				v50 = m.ExcPending
 				if v50 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495284), int32(1217), int32(304144))
+					F_errfinish(m, int32(495426), int32(1217), int32(304235))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {

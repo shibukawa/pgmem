@@ -198,7 +198,7 @@ func F_interval_avg_serialize(m *base.Module, l0 int32) int32 {
 			if v52 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(496005), int32(4135), int32(342294))
+				F_errfinish(m, int32(496147), int32(4135), int32(342385))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
@@ -603,7 +603,7 @@ L24:
 	}
 L25:
 	;
-	F_errmsg(m, int32(239633), int32(0))
+	F_errmsg(m, int32(239696), int32(0))
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -613,7 +613,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(496005), int32(3772), int32(35484))
+	F_errfinish(m, int32(496147), int32(3772), int32(35484))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -890,7 +890,7 @@ L71:
 	}
 L72:
 	;
-	F_errmsg(m, int32(402611), int32(0))
+	F_errmsg(m, int32(402735), int32(0))
 	mBase = m.M
 	v240 = m.ExcPending
 	if v240 != 0 {
@@ -900,7 +900,7 @@ L72:
 	}
 L73:
 	;
-	F_errfinish(m, int32(496005), int32(3841), int32(35484))
+	F_errfinish(m, int32(496147), int32(3841), int32(35484))
 	mBase = m.M
 	v245 = m.ExcPending
 	if v245 != 0 {
@@ -1294,13 +1294,13 @@ func F_interval_time(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(375830), int32(0))
+							F_errmsg(m, int32(375954), int32(0))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(498806), int32(2085), int32(375226))
+								F_errfinish(m, int32(498948), int32(2085), int32(375350))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -1368,13 +1368,13 @@ func F_interval_time(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(375830), int32(0))
+						F_errmsg(m, int32(375954), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498806), int32(2085), int32(375226))
+							F_errfinish(m, int32(498948), int32(2085), int32(375350))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {

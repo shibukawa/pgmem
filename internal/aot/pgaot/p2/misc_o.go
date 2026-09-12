@@ -194,7 +194,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = v71
-	v73 = int32(4431512)
+	v73 = int32(4431624)
 	v75 = *(*int32)(unsafe.Add(mBase, _consts[758]))
 	*(*int32)(unsafe.Add(mBase, _consts[758])) = v75 + int32(1)
 	goto L17
@@ -213,7 +213,7 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
 	v93 = *(*int32)(unsafe.Add(mBase, _consts[760]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v93
-	F_errmsg(m, int32(716685), v8)
+	F_errmsg(m, int32(716827), v8)
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -223,7 +223,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(499883), int32(2720), int32(288408))
+	F_errfinish(m, int32(500025), int32(2720), int32(288499))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -652,7 +652,7 @@ func F_okeys_array_start(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494801), int32(818), int32(82200))
+					F_errfinish(m, int32(494943), int32(818), int32(82200))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -708,13 +708,13 @@ func F_okeys_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(112936)
-				F_errmsg(m, int32(229783), v6)
+				F_errmsg(m, int32(229846), v6)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494801), int32(833), int32(229547))
+					F_errfinish(m, int32(494943), int32(833), int32(229610))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -848,13 +848,13 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l0
-					F_errmsg(m, int32(462460), v7+int32(-48))
+					F_errmsg(m, int32(462584), v7+int32(-48))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(500292), int32(612), int32(386724))
+						F_errfinish(m, int32(500434), int32(612), int32(386848))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
@@ -866,7 +866,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 								return v83
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								v35 = F_psprintf(m, int32(462460), v9)
+								v35 = F_psprintf(m, int32(462584), v9)
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {
@@ -888,7 +888,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 					return v83
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-					v35 = F_psprintf(m, int32(462460), v9)
+					v35 = F_psprintf(m, int32(462584), v9)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -903,7 +903,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 			}
 		}
 	} else {
-		v39 = F_AllocateFile(m, l0, int32(230881))
+		v39 = F_AllocateFile(m, l0, int32(230944))
 		mBase = m.M
 		v40 = m.ExcPending
 		if v40 != 0 {
@@ -925,13 +925,13 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = l0
-							F_errmsg(m, int32(298767), v7+int32(-16))
+							F_errmsg(m, int32(298858), v7+int32(-16))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(500292), int32(627), int32(386724))
+								F_errfinish(m, int32(500434), int32(627), int32(386848))
 								mBase = m.M
 								v60 = m.ExcPending
 								if v60 != 0 {
@@ -940,7 +940,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 									if l3 != 0 {
 										*(*int32)(unsafe.Add(mBase, _consts[159])) = v44
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-										v67 = F_psprintf(m, int32(298767), v7+int32(-32))
+										v67 = F_psprintf(m, int32(298858), v7+int32(-32))
 										mBase = m.M
 										v68 = m.ExcPending
 										if v68 != 0 {
@@ -965,7 +965,7 @@ func F_open_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 						if l3 != 0 {
 							*(*int32)(unsafe.Add(mBase, _consts[159])) = v44
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-							v67 = F_psprintf(m, int32(298767), v7+int32(-32))
+							v67 = F_psprintf(m, int32(298858), v7+int32(-32))
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {

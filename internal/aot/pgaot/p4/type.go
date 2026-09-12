@@ -168,7 +168,7 @@ L2:
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1621)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1622)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+28)) = int64(17179869188)
-	v27 = F_hash_create(m, int32(399531), int32(64), v8+int32(-52), int32(200))
+	v27 = F_hash_create(m, int32(399655), int32(64), v8+int32(-52), int32(200))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -218,7 +218,7 @@ L8:
 	return
 L9:
 	;
-	v54 = int32(4515488)
+	v54 = int32(4515600)
 	v55 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v58 = *(*int32)(unsafe.Add(mBase, _consts[382]))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v58
@@ -250,7 +250,7 @@ L12:
 	v162 = *(*int32)(unsafe.Add(mBase, uint32(v158)+8))
 	v163 = int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v159+v162<<(uint(v163)%32))+8)) = v158
-	v167 = int32(4122272)
+	v167 = int32(4122320)
 	v169 = *(*int64)(unsafe.Add(mBase, _consts[1403]))
 	v171 = v169 + int64(1)
 	*(*int64)(unsafe.Add(mBase, _consts[1403])) = v171
@@ -377,7 +377,7 @@ L29:
 	;
 	v109 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v107)+12)) = v109
-	v111 = int32(4508372)
+	v111 = int32(4508484)
 	v113 = *(*int32)(unsafe.Add(mBase, _consts[1400]))
 	*(*int32)(unsafe.Add(mBase, _consts[1400])) = v113 + v109
 	*(*int32)(unsafe.Add(mBase, uint32(v107)+8)) = v113
@@ -560,15 +560,15 @@ func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
 							if v82 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(329840)
+								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(329931)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v81
-								F_errmsg(m, int32(190928), v6+int32(32))
+								F_errmsg(m, int32(190958), v6+int32(32))
 								mBase = m.M
 								v90 = m.ExcPending
 								if v90 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(494610), int32(2233), int32(254483))
+									F_errfinish(m, int32(494752), int32(2233), int32(254546))
 									mBase = m.M
 									v95 = m.ExcPending
 									if v95 != 0 {
@@ -616,13 +616,13 @@ func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v35
-											F_errmsg(m, int32(385936), v6+int32(16))
+											F_errmsg(m, int32(386060), v6+int32(16))
 											mBase = m.M
 											v42 = m.ExcPending
 											if v42 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(494610), int32(2240), int32(254483))
+												F_errfinish(m, int32(494752), int32(2240), int32(254546))
 												mBase = m.M
 												v47 = m.ExcPending
 												if v47 != 0 {
@@ -666,7 +666,7 @@ func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
 						if v68 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(494610), int32(2227), int32(254483))
+							F_errfinish(m, int32(494752), int32(2227), int32(254546))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {
@@ -748,7 +748,7 @@ func F_get_type_category_preferred(m *base.Module, l0 int32, l1 int32, l2 int32)
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(499337), int32(2857), int32(450343))
+					F_errfinish(m, int32(499479), int32(2857), int32(450467))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

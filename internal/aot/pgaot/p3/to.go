@@ -28,7 +28,7 @@ func F_CopyToBinaryStart(m *base.Module, l0 int32, l1 int32) {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_appendBinaryStringInfo(m, v7, int32(1616672), int32(11))
+	F_appendBinaryStringInfo(m, v7, int32(1616816), int32(11))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {

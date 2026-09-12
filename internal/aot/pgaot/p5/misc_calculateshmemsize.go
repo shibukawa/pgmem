@@ -2310,7 +2310,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												v991 = v988
 																																																																																																																																																											}
 																																																																																																																																																											*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																											v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																											v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v998 = m.ExcPending
 																																																																																																																																																											if v998 != 0 {
@@ -3105,7 +3105,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									v991 = v988
 																																																																																																																																																								}
 																																																																																																																																																								*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																								v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																								v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v998 = m.ExcPending
 																																																																																																																																																								if v998 != 0 {
@@ -3929,7 +3929,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										v991 = v988
 																																																																																																																																																									}
 																																																																																																																																																									*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																									v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																									v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v998 = m.ExcPending
 																																																																																																																																																									if v998 != 0 {
@@ -4724,7 +4724,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							v991 = v988
 																																																																																																																																																						}
 																																																																																																																																																						*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																						v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																						v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																						mBase = m.M
 																																																																																																																																																						v998 = m.ExcPending
 																																																																																																																																																						if v998 != 0 {
@@ -5771,7 +5771,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								v991 = v988
 																																																																																																																																																							}
 																																																																																																																																																							*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																							v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																							v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v998 = m.ExcPending
 																																																																																																																																																							if v998 != 0 {
@@ -6566,7 +6566,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					v991 = v988
 																																																																																																																																																				}
 																																																																																																																																																				*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																				v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																				v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																				mBase = m.M
 																																																																																																																																																				v998 = m.ExcPending
 																																																																																																																																																				if v998 != 0 {
@@ -7390,7 +7390,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						v991 = v988
 																																																																																																																																																					}
 																																																																																																																																																					*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																					v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																					v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v998 = m.ExcPending
 																																																																																																																																																					if v998 != 0 {
@@ -8185,7 +8185,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																			v991 = v988
 																																																																																																																																																		}
 																																																																																																																																																		*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																		v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488382), v971)
+																																																																																																																																																		v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(488506), v971)
 																																																																																																																																																		mBase = m.M
 																																																																																																																																																		v998 = m.ExcPending
 																																																																																																																																																		if v998 != 0 {

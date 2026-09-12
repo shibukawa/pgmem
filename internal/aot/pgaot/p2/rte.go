@@ -348,7 +348,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 			if v43 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(496480), int32(4016), int32(242511))
+				F_errfinish(m, int32(496622), int32(4016), int32(242574))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -379,7 +379,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496480), int32(4016), int32(242511))
+					F_errfinish(m, int32(496622), int32(4016), int32(242574))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -410,7 +410,7 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 					if v43 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496480), int32(4016), int32(242511))
+						F_errfinish(m, int32(496622), int32(4016), int32(242574))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
@@ -440,13 +440,13 @@ func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = v55
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v54
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v53
-						F_errmsg_internal(m, int32(671252), v7+int32(16))
+						F_errmsg_internal(m, int32(671394), v7+int32(16))
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496480), int32(4021), int32(242511))
+							F_errfinish(m, int32(496622), int32(4021), int32(242574))
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {

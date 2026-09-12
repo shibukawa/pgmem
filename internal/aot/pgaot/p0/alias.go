@@ -3682,6 +3682,8 @@ func F_pg_prng_seed(m *base.Module, l0 int32, l1 int64)
 func F_pg_prng_seed_check(m *base.Module, l0 int32) int32
 //go:linkname F_pg_prng_uint32 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_prng_uint32
 func F_pg_prng_uint32(m *base.Module) int32
+//go:linkname F_pg_prng_double github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_prng_double
+func F_pg_prng_double(m *base.Module, l0 int32) float64
 //go:linkname F_psprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_psprintf
 func F_psprintf(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetDatabasePath github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GetDatabasePath

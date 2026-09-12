@@ -27,13 +27,13 @@ func F_CreateExecutorState(m *base.Module) int32 {
 	var v31 int32
 	_ = v31
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v10 = F_AllocSetContextCreateInternal(m, v5, int32(353785), int32(0), int32(8192), int32(8388608))
+	v10 = F_AllocSetContextCreateInternal(m, v5, int32(353909), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		v14 = int32(4515488)
+		v14 = int32(4515600)
 		v15 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v10
 		v19 = F_palloc0(m, int32(200))
@@ -213,7 +213,7 @@ L2:
 	goto L3
 L3:
 	;
-	v18 = int32(4515488)
+	v18 = int32(4515600)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+100))
@@ -724,7 +724,7 @@ L5:
 	goto L3
 L6:
 	;
-	v13 = int32(4515488)
+	v13 = int32(4515600)
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v11)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v16

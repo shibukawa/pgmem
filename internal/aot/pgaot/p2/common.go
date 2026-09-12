@@ -89,7 +89,7 @@ func F_ExecGetCommonChildSlotOps(m *base.Module, l0 int32) int32 {
 								v61 = v60
 								v62 = v59
 							} else {
-								v61 = int32(1617940)
+								v61 = int32(1618084)
 								v62 = v44
 							}
 						}
@@ -135,7 +135,7 @@ func F_ExecGetCommonChildSlotOps(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				if v10&int32(1) != 0 {
-					v39 = int32(1617940)
+					v39 = int32(1618084)
 					v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+103)))
 					if v41 == int32(1) {
 						v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+99)))
@@ -152,7 +152,7 @@ func F_ExecGetCommonChildSlotOps(m *base.Module, l0 int32) int32 {
 								v61 = v60
 								v62 = v59
 							} else {
-								v61 = int32(1617940)
+								v61 = int32(1618084)
 								v62 = v44
 							}
 						}
@@ -216,7 +216,7 @@ func F_ExecGetCommonChildSlotOps(m *base.Module, l0 int32) int32 {
 							v61 = v60
 							v62 = v59
 						} else {
-							v61 = int32(1617940)
+							v61 = int32(1618084)
 							v62 = v44
 						}
 					}
@@ -290,7 +290,7 @@ func F_ExecGetCommonChildSlotOps(m *base.Module, l0 int32) int32 {
 							v61 = v60
 							v62 = v59
 						} else {
-							v61 = int32(1617940)
+							v61 = int32(1618084)
 							v62 = v44
 						}
 					}
@@ -840,7 +840,7 @@ L40:
 	goto L41
 L41:
 	;
-	v105 = int32(338563)
+	v105 = int32(338654)
 	v108 = int32(*(*uint8)(unsafe.Add(mBase, _consts[394])))
 	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14))))
 	if v109 == int32(0) {
@@ -1093,7 +1093,7 @@ L78:
 	goto L79
 L79:
 	;
-	v200 = int32(114100)
+	v200 = int32(114130)
 	v203 = int32(*(*uint8)(unsafe.Add(mBase, _consts[397])))
 	v204 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14))))
 	if v204 == int32(0) {
@@ -1268,7 +1268,7 @@ L104:
 L105:
 	;
 	v260 = int32(0)
-	v261 = int32(307993)
+	v261 = int32(308084)
 	v264 = int32(*(*uint8)(unsafe.Add(mBase, _consts[399])))
 	v265 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14))))
 	if v265 == v260 {
@@ -1380,7 +1380,7 @@ L120:
 	}
 L121:
 	;
-	F_errmsg(m, int32(250557), int32(0))
+	F_errmsg(m, int32(250620), int32(0))
 	mBase = m.M
 	v307 = m.ExcPending
 	if v307 != 0 {
@@ -1401,7 +1401,7 @@ L122:
 	}
 L123:
 	;
-	F_errfinish(m, int32(494467), int32(612), int32(348980))
+	F_errfinish(m, int32(494609), int32(612), int32(349104))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {

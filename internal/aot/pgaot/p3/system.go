@@ -47,3 +47,55 @@ func F_system_initsamplescan(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
+func F_system_rows_initsamplescan(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	v4 = F_palloc0(m, int32(40))
+	mBase = m.M
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+128)) = v4
+		return
+	}
+}
+func F_system_rows_nextsampletuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int64
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int64
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+144))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(v6)+8))
+	if v5 < v7 {
+		v9 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v6)+16)))
+		v11 = v9 + int32(1)
+		if base.Ui32(v11&int32(65535)) <= base.Ui32(l2) {
+			v16 = v11
+		} else {
+			v16 = int32(0)
+		}
+		*(*uint16)(unsafe.Add(mBase, uint32(v6)+16)) = uint16(v16)
+		v18 = v16
+	} else {
+		v18 = int32(0)
+	}
+	return v18 & int32(65535)
+}

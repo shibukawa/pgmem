@@ -1543,7 +1543,7 @@ func F_GetPageWithFreeSpace(m *base.Module, l0 int32, l1 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(499697), int32(438), int32(112574))
+				F_errfinish(m, int32(499839), int32(438), int32(112574))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -2074,7 +2074,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(499497), int32(1208), int32(351502))
+	F_errfinish(m, int32(499639), int32(1208), int32(351626))
 	mBase = m.M
 	v252 = m.ExcPending
 	if v252 != 0 {
@@ -2111,7 +2111,7 @@ L52:
 	}
 L53:
 	;
-	F_errfinish(m, int32(499497), int32(1233), int32(351502))
+	F_errfinish(m, int32(499639), int32(1233), int32(351626))
 	mBase = m.M
 	v271 = m.ExcPending
 	if v271 != 0 {
@@ -2126,7 +2126,7 @@ L54:
 	}
 L55:
 	;
-	F_errmsg_internal(m, int32(456429), int32(0))
+	F_errmsg_internal(m, int32(456553), int32(0))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -2136,7 +2136,7 @@ L55:
 	}
 L56:
 	;
-	F_errfinish(m, int32(499497), int32(1260), int32(351502))
+	F_errfinish(m, int32(499639), int32(1260), int32(351626))
 	mBase = m.M
 	v284 = m.ExcPending
 	if v284 != 0 {
@@ -2173,7 +2173,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(499497), int32(1266), int32(351502))
+	F_errfinish(m, int32(499639), int32(1266), int32(351626))
 	mBase = m.M
 	v303 = m.ExcPending
 	if v303 != 0 {
@@ -2757,7 +2757,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(499497), int32(155), int32(456742))
+	F_errfinish(m, int32(499639), int32(155), int32(456866))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {

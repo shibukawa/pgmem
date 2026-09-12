@@ -47,7 +47,7 @@ func F_deconstruct_expanded_array(m *base.Module, l0 int32) {
 	m.G0 = v13
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	if v15 == int32(0) {
-		v18 = int32(4515488)
+		v18 = int32(4515600)
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v21
@@ -207,13 +207,13 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v121
-							F_errmsg(m, int32(349365), v9)
+							F_errmsg(m, int32(349489), v9)
 							mBase = m.M
 							v126 = m.ExcPending
 							if v126 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499734), int32(232), int32(488461))
+								F_errfinish(m, int32(499876), int32(232), int32(488585))
 								mBase = m.M
 								v131 = m.ExcPending
 								if v131 != 0 {
@@ -231,7 +231,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 				v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+192))
 				v27 = v19
 				v29 = v22
-				v34 = F_AllocSetContextCreateInternal(m, l1, int32(421562), int32(0), int32(8192), int32(8388608))
+				v34 = F_AllocSetContextCreateInternal(m, l1, int32(421686), int32(0), int32(8192), int32(8388608))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -285,7 +285,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 							m.G0 = v9 + int32(16)
 							return v46
 						} else {
-							v95 = int32(4515488)
+							v95 = int32(4515600)
 							v96 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 							*(*int32)(unsafe.Add(mBase, _consts[0])) = v34
 							v99 = F_CreateTupleDescCopy(m, v27)
@@ -316,7 +316,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 		} else {
 			v27 = l0
 			v29 = v25
-			v34 = F_AllocSetContextCreateInternal(m, l1, int32(421562), int32(0), int32(8192), int32(8388608))
+			v34 = F_AllocSetContextCreateInternal(m, l1, int32(421686), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
 			v35 = m.ExcPending
 			if v35 != 0 {
@@ -370,7 +370,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 						m.G0 = v9 + int32(16)
 						return v46
 					} else {
-						v95 = int32(4515488)
+						v95 = int32(4515600)
 						v96 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 						*(*int32)(unsafe.Add(mBase, _consts[0])) = v34
 						v99 = F_CreateTupleDescCopy(m, v27)

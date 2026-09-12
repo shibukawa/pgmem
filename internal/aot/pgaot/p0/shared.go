@@ -946,7 +946,7 @@ L67:
 L68:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v309
-	F_errmsg(m, int32(289542), v18)
+	F_errmsg(m, int32(289633), v18)
 	mBase = m.M
 	v314 = m.ExcPending
 	if v314 != 0 {
@@ -956,7 +956,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(499761), int32(704), int32(168585))
+	F_errfinish(m, int32(499903), int32(704), int32(168615))
 	mBase = m.M
 	v319 = m.ExcPending
 	if v319 != 0 {
@@ -1094,11 +1094,11 @@ L87:
 	goto L86
 L88:
 	;
-	v395 = int32(185146)
+	v395 = int32(185176)
 	goto L90
 L89:
 	;
-	v395 = int32(185162)
+	v395 = int32(185192)
 	goto L90
 L90:
 	;
@@ -1182,11 +1182,11 @@ L100:
 	goto L99
 L101:
 	;
-	v428 = int32(185146)
+	v428 = int32(185176)
 	goto L103
 L102:
 	;
-	v428 = int32(185162)
+	v428 = int32(185192)
 	goto L103
 L103:
 	;
@@ -1294,11 +1294,11 @@ L117:
 	}
 L118:
 	;
-	v480 = int32(672104)
+	v480 = int32(672246)
 	goto L120
 L119:
 	;
-	v480 = int32(672151)
+	v480 = int32(672293)
 	goto L120
 L120:
 	;
@@ -1333,11 +1333,11 @@ L124:
 	goto L109
 L125:
 	;
-	v494 = int32(672260)
+	v494 = int32(672402)
 	goto L127
 L126:
 	;
-	v494 = int32(672199)
+	v494 = int32(672341)
 	goto L127
 L127:
 	;

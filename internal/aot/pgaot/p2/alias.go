@@ -2034,6 +2034,8 @@ func F_contain_volatile_functions_walker(m *base.Module, l0 int32, l1 int32) int
 func F_max_parallel_hazard_walker(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_eval_const_expressions github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_eval_const_expressions
 func F_eval_const_expressions(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_estimate_expression_value github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_estimate_expression_value
+func F_estimate_expression_value(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_make_SAOP_expr github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_make_SAOP_expr
 func F_make_SAOP_expr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_have_relevant_joinclause github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_have_relevant_joinclause

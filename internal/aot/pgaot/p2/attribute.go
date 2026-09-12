@@ -858,7 +858,7 @@ func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(757936), int32(2))
+	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(758080), int32(2))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -966,7 +966,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 	if v11 == int32(0) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1572)
 		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(51539607560)
-		v24 = F_hash_create(m, int32(399274), int32(256), v6+int32(-48), int32(72))
+		v24 = F_hash_create(m, int32(399398), int32(256), v6+int32(-48), int32(72))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {

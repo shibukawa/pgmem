@@ -170,7 +170,7 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 						if v64 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(495627), int32(409), int32(134725))
+							F_errfinish(m, int32(495769), int32(409), int32(134755))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

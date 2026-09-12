@@ -132,14 +132,14 @@ func F_show_tcp_keepalives_interval(m *base.Module) int32 {
 	}
 	m.G0 = v12 + int32(16)
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v28
-	v36 = F_pg_snprintf(m, int32(4422640), int32(16), int32(488382), v4)
+	v36 = F_pg_snprintf(m, int32(4422752), int32(16), int32(488506), v4)
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
 		return int32(0)
 	} else {
 		m.G0 = v4 + int32(16)
-		return int32(4422640)
+		return int32(4422752)
 	}
 }
 func F_show_tcp_user_timeout(m *base.Module) int32 {
@@ -206,13 +206,13 @@ func F_show_tcp_user_timeout(m *base.Module) int32 {
 	}
 	m.G0 = v12 + int32(16)
 	*(*int32)(unsafe.Add(mBase, uint32(v4))) = v28
-	v36 = F_pg_snprintf(m, int32(4422672), int32(16), int32(488382), v4)
+	v36 = F_pg_snprintf(m, int32(4422784), int32(16), int32(488506), v4)
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
 		return int32(0)
 	} else {
 		m.G0 = v4 + int32(16)
-		return int32(4422672)
+		return int32(4422784)
 	}
 }

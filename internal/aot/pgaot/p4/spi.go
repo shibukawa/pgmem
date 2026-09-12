@@ -20,12 +20,12 @@ func F_SPI_cursor_close(m *base.Module, l0 int32) {
 		if v7 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(259726), int32(0))
+			F_errmsg_internal(m, int32(259789), int32(0))
 			v11 = m.ExcPending
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(497856), int32(1865), int32(361243))
+				F_errfinish(m, int32(497998), int32(1865), int32(361367))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return
@@ -559,7 +559,7 @@ L3:
 	goto L4
 L4:
 	;
-	v53 = F_strcmp(m, int32(765468), l1)
+	v53 = F_strcmp(m, int32(765612), l1)
 	mBase = m.M
 	if v53 == int32(0) {
 		goto L23
@@ -671,14 +671,14 @@ L22:
 	}
 L23:
 	;
-	v82 = int32(765464)
+	v82 = int32(765608)
 	goto L22
 L24:
 	;
 	goto L25
 L25:
 	;
-	v58 = F_strcmp(m, int32(765568), l1)
+	v58 = F_strcmp(m, int32(765712), l1)
 	mBase = m.M
 	if v58 == int32(0) {
 		goto L26
@@ -687,14 +687,14 @@ L25:
 	}
 L26:
 	;
-	v82 = int32(765564)
+	v82 = int32(765708)
 	goto L22
 L27:
 	;
 	goto L28
 L28:
 	;
-	v63 = F_strcmp(m, int32(765668), l1)
+	v63 = F_strcmp(m, int32(765812), l1)
 	mBase = m.M
 	if v63 == int32(0) {
 		goto L29
@@ -703,14 +703,14 @@ L28:
 	}
 L29:
 	;
-	v82 = int32(765664)
+	v82 = int32(765808)
 	goto L22
 L30:
 	;
 	goto L31
 L31:
 	;
-	v68 = F_strcmp(m, int32(765768), l1)
+	v68 = F_strcmp(m, int32(765912), l1)
 	mBase = m.M
 	if v68 == int32(0) {
 		goto L32
@@ -719,14 +719,14 @@ L31:
 	}
 L32:
 	;
-	v82 = int32(765764)
+	v82 = int32(765908)
 	goto L22
 L33:
 	;
 	goto L34
 L34:
 	;
-	v73 = F_strcmp(m, int32(765868), l1)
+	v73 = F_strcmp(m, int32(766012), l1)
 	mBase = m.M
 	if v73 == int32(0) {
 		goto L35
@@ -735,14 +735,14 @@ L34:
 	}
 L35:
 	;
-	v82 = int32(765864)
+	v82 = int32(766008)
 	goto L22
 L36:
 	;
 	goto L37
 L37:
 	;
-	v80 = F_strcmp(m, int32(765968), l1)
+	v80 = F_strcmp(m, int32(766112), l1)
 	mBase = m.M
 	if v80 != 0 {
 		goto L38
@@ -755,7 +755,7 @@ L38:
 	goto L40
 L39:
 	;
-	v81 = int32(765964)
+	v81 = int32(766108)
 	goto L40
 L40:
 	;
@@ -964,7 +964,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-	F_errmsg_internal(m, int32(239232), v9)
+	F_errmsg_internal(m, int32(239295), v9)
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -974,7 +974,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(497856), int32(1424), int32(391728))
+	F_errfinish(m, int32(497998), int32(1424), int32(391852))
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -1192,7 +1192,7 @@ func F_SPI_plan_get_cached_plan(m *base.Module, l0 int32) int32 {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(779)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = v20
-				v24 = int32(4508392)
+				v24 = int32(4508504)
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[394]))
 				*(*int32)(unsafe.Add(mBase, _consts[394])) = v7 + int32(12)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v25
@@ -1480,7 +1480,7 @@ func F__SPI_error_callback(m *base.Module, l0 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v9
-						F_errcontext_msg(m, int32(709520), v7+int32(16))
+						F_errcontext_msg(m, int32(709662), v7+int32(16))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -1498,7 +1498,7 @@ func F__SPI_error_callback(m *base.Module, l0 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v9
-						F_errcontext_msg(m, int32(699364), v7+int32(32))
+						F_errcontext_msg(m, int32(699506), v7+int32(32))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -1516,7 +1516,7 @@ func F__SPI_error_callback(m *base.Module, l0 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-						F_errcontext_msg(m, int32(699479), v7)
+						F_errcontext_msg(m, int32(699621), v7)
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -1602,7 +1602,7 @@ func F__SPI_prepare_oneshot_plan(m *base.Module, l0 int32, l1 int32) {
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(779)
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = v14
-	v18 = int32(4508392)
+	v18 = int32(4508504)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[394]))
 	*(*int32)(unsafe.Add(mBase, _consts[394])) = v11 + int32(12)
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v19

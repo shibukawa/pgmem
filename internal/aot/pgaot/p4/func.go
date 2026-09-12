@@ -402,7 +402,7 @@ func F_func_strict(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(499337), int32(1908), int32(109280))
+					F_errfinish(m, int32(499479), int32(1908), int32(109280))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

@@ -141,13 +141,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(257788), int32(0))
+							F_errmsg_internal(m, int32(257851), int32(0))
 							mBase = m.M
 							v80 = m.ExcPending
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(494088), int32(388), int32(271062))
+								F_errfinish(m, int32(494230), int32(388), int32(271125))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -183,13 +183,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(l2<<(uint(int32(3))%32))+uint32(_consts[363])))
 											v102 = v101
 										} else {
-											v102 = int32(757461)
+											v102 = int32(757603)
 										}
 										if base.Ui32(l3) <= base.Ui32(int32(41)) {
 											v111 = *(*int32)(unsafe.Add(mBase, uint32(l3<<(uint(int32(3))%32))+uint32(_consts[363])))
 											v112 = v111
 										} else {
-											v112 = int32(757461)
+											v112 = int32(757603)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v112
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v102
@@ -199,7 +199,7 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 										if v117 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(494088), int32(396), int32(271062))
+											F_errfinish(m, int32(494230), int32(396), int32(271125))
 											mBase = m.M
 											v122 = m.ExcPending
 											if v122 != 0 {
@@ -233,13 +233,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-												F_errdetail(m, int32(618038), v9+int32(16))
+												F_errdetail(m, int32(618180), v9+int32(16))
 												mBase = m.M
 												v139 = m.ExcPending
 												if v139 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(494088), int32(412), int32(271062))
+													F_errfinish(m, int32(494230), int32(412), int32(271125))
 													mBase = m.M
 													v144 = m.ExcPending
 													if v144 != 0 {
@@ -294,13 +294,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l1
-																F_errdetail(m, int32(618038), v9+int32(32))
+																F_errdetail(m, int32(618180), v9+int32(32))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(494088), int32(440), int32(271062))
+																	F_errfinish(m, int32(494230), int32(440), int32(271125))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {

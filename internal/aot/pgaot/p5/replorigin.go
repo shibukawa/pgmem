@@ -48,7 +48,7 @@ func F_replorigin_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
 		v22 = int64(base.Ui64(v16) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+4)) = uint32(v22)
-		F_appendStringInfo(m, l0, int32(487101), v8)
+		F_appendStringInfo(m, l0, int32(487225), v8)
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -412,7 +412,7 @@ L31:
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v72)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v89
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v88
-	F_errmsg(m, int32(479613), v12+int32(16))
+	F_errmsg(m, int32(479737), v12+int32(16))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -422,7 +422,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(496692), int32(395), int32(230504))
+	F_errfinish(m, int32(496834), int32(395), int32(230567))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -552,7 +552,7 @@ L46:
 L47:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v19
-	F_errmsg_internal(m, int32(480086), v12)
+	F_errmsg_internal(m, int32(480210), v12)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -562,7 +562,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(496692), int32(460), int32(378402))
+	F_errfinish(m, int32(496834), int32(460), int32(378526))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {

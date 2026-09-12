@@ -66,7 +66,7 @@ func F_get_subscription_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v28 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499337), int32(3824), int32(434391))
+							F_errfinish(m, int32(499479), int32(3824), int32(434515))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {

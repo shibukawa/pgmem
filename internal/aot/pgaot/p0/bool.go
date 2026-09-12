@@ -153,7 +153,7 @@ func F_bool_accum(m *base.Module, l0 int32) int32 {
 					if v81 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497489), int32(330), int32(354066))
+						F_errfinish(m, int32(497631), int32(330), int32(354190))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -261,7 +261,7 @@ func F_bool_accum(m *base.Module, l0 int32) int32 {
 				if v81 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497489), int32(330), int32(354066))
+					F_errfinish(m, int32(497631), int32(330), int32(354190))
 					mBase = m.M
 					v86 = m.ExcPending
 					if v86 != 0 {
@@ -489,13 +489,13 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				if v213 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(291048), int32(0))
+					F_errmsg_internal(m, int32(291139), int32(0))
 					mBase = m.M
 					v217 = m.ExcPending
 					if v217 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(500183), int32(1788), int32(291393))
+						F_errfinish(m, int32(500325), int32(1788), int32(291484))
 						mBase = m.M
 						v222 = m.ExcPending
 						if v222 != 0 {
@@ -671,13 +671,13 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 					} else {
 						v181 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v181
-						F_errmsg_internal(m, int32(485380), v9)
+						F_errmsg_internal(m, int32(485504), v9)
 						mBase = m.M
 						v185 = m.ExcPending
 						if v185 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(500183), int32(1902), int32(291393))
+							F_errfinish(m, int32(500325), int32(1902), int32(291484))
 							mBase = m.M
 							v190 = m.ExcPending
 							if v190 != 0 {
@@ -957,13 +957,13 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				} else {
 					v181 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v181
-					F_errmsg_internal(m, int32(485380), v9)
+					F_errmsg_internal(m, int32(485504), v9)
 					mBase = m.M
 					v185 = m.ExcPending
 					if v185 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(500183), int32(1902), int32(291393))
+						F_errfinish(m, int32(500325), int32(1902), int32(291484))
 						mBase = m.M
 						v190 = m.ExcPending
 						if v190 != 0 {

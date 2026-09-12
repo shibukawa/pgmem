@@ -120,7 +120,7 @@ L4:
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+28)) = int64(17179869188)
 	v28 = *(*int32)(unsafe.Add(mBase, _consts[212]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v28
-	v35 = F_hash_create(m, int32(168452), int32(256), v6+int32(-52), int32(1224))
+	v35 = F_hash_create(m, int32(168482), int32(256), v6+int32(-52), int32(1224))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -267,7 +267,7 @@ func F_EventTriggerAlterTableStart(m *base.Module, l0 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			v9 = int32(4515488)
+			v9 = int32(4515600)
 			v10 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v12
@@ -518,7 +518,7 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v22
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v36
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v33
-	v57 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(349502), v33)
+	v57 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(349626), v33)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {

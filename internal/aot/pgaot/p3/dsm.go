@@ -282,7 +282,7 @@ L9:
 	}
 L10:
 	;
-	v45 = int32(4122052)
+	v45 = int32(4122100)
 	*(*int32)(unsafe.Add(mBase, _consts[827])) = v45
 	v49 = v45
 	goto L12
@@ -292,7 +292,7 @@ L11:
 	goto L12
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(4122052)
+	*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(4122100)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+4)) = v49
 	*(*int32)(unsafe.Add(mBase, uint32(v49))) = v39
 	*(*int32)(unsafe.Add(mBase, _consts[826])) = v39
@@ -307,7 +307,7 @@ L12:
 	}
 L13:
 	;
-	F_ResourceOwnerRemember(m, v61, v39, int32(1628476))
+	F_ResourceOwnerRemember(m, v61, v39, int32(1628620))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -409,8 +409,8 @@ L26:
 	goto L20
 L27:
 	;
-	v126 = int32(4599000)
-	v127 = int32(4598992)
+	v126 = int32(4599112)
+	v127 = int32(4599104)
 	v128 = *(*int64)(unsafe.Add(mBase, _consts[819]))
 	v130 = *(*int64)(unsafe.Add(mBase, _consts[818]))
 	v131 = v128 ^ v130
@@ -527,8 +527,8 @@ L43:
 	}
 L44:
 	;
-	v214 = int32(4599000)
-	v215 = int32(4598992)
+	v214 = int32(4599112)
+	v215 = int32(4599104)
 	v216 = *(*int64)(unsafe.Add(mBase, _consts[819]))
 	v218 = *(*int64)(unsafe.Add(mBase, _consts[818]))
 	v219 = v216 ^ v218
@@ -644,7 +644,7 @@ L59:
 	goto L52
 L60:
 	;
-	F_ResourceOwnerForget(m, v313, v39, int32(1628476))
+	F_ResourceOwnerForget(m, v313, v39, int32(1628620))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -703,7 +703,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(122759), int32(0))
+	F_errmsg(m, int32(122789), int32(0))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -713,7 +713,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(497238), int32(626), int32(355510))
+	F_errfinish(m, int32(497380), int32(626), int32(355634))
 	mBase = m.M
 	v342 = m.ExcPending
 	if v342 != 0 {
@@ -728,8 +728,8 @@ L69:
 	}
 L70:
 	;
-	v347 = int32(4599000)
-	v348 = int32(4598992)
+	v347 = int32(4599112)
+	v348 = int32(4599104)
 	v349 = *(*int64)(unsafe.Add(mBase, _consts[819]))
 	v351 = *(*int64)(unsafe.Add(mBase, _consts[818]))
 	v352 = v349 ^ v351

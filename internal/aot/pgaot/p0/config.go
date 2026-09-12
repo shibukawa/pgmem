@@ -252,13 +252,13 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v5))) = v8
-						F_errmsg_internal(m, int32(483845), v5)
+						F_errmsg_internal(m, int32(483969), v5)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499912), int32(2854), int32(378721))
+							F_errfinish(m, int32(500054), int32(2854), int32(378845))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -271,7 +271,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v68 = int32(544973)
+					v68 = int32(545115)
 					m.G0 = v5 + int32(48)
 					return v68
 				}
@@ -284,14 +284,14 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 			if v8 == int32(33554432) {
 				v39 = int32(*(*uint8)(unsafe.Add(mBase, _consts[960])))
 				if v39 != 0 {
-					v68 = int32(4513536)
+					v68 = int32(4513648)
 					m.G0 = v5 + int32(48)
 					return v68
 				} else {
 					v41 = int32(8)
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = v41
-					v43 = int32(4513536)
-					v49 = F_pg_snprintf(m, v43, v41, int32(544908), v5+int32(16))
+					v43 = int32(4513648)
+					v49 = F_pg_snprintf(m, v43, v41, int32(545050), v5+int32(16))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -311,13 +311,13 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v5))) = v8
-						F_errmsg_internal(m, int32(483845), v5)
+						F_errmsg_internal(m, int32(483969), v5)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499912), int32(2854), int32(378721))
+							F_errfinish(m, int32(500054), int32(2854), int32(378845))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -334,8 +334,8 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 					if v19 == int32(0) {
 						v53 = int32(8)
 						*(*int32)(unsafe.Add(mBase, uint32(v5)+32)) = v53
-						v55 = int32(4513544)
-						v61 = F_pg_snprintf(m, v55, v53, int32(544908), v5+int32(32))
+						v55 = int32(4513656)
+						v61 = F_pg_snprintf(m, v55, v53, int32(545050), v5+int32(32))
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
@@ -346,7 +346,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 							return v68
 						}
 					} else {
-						v68 = int32(4513544)
+						v68 = int32(4513656)
 						m.G0 = v5 + int32(48)
 						return v68
 					}
@@ -356,7 +356,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 	} else {
 		if v8 <= int32(268435455) {
 			if v8 == int32(67108864) {
-				v68 = int32(545002)
+				v68 = int32(545144)
 				m.G0 = v5 + int32(48)
 				return v68
 			} else {
@@ -368,13 +368,13 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v5))) = v8
-						F_errmsg_internal(m, int32(483845), v5)
+						F_errmsg_internal(m, int32(483969), v5)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499912), int32(2854), int32(378721))
+							F_errfinish(m, int32(500054), int32(2854), int32(378845))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -387,19 +387,19 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v68 = int32(545030)
+					v68 = int32(545172)
 					m.G0 = v5 + int32(48)
 					return v68
 				}
 			}
 		} else {
 			if v8 == int32(268435456) {
-				v68 = int32(151736)
+				v68 = int32(151766)
 				m.G0 = v5 + int32(48)
 				return v68
 			} else {
 				if v8 == int32(536870912) {
-					v68 = int32(206231)
+					v68 = int32(206261)
 					m.G0 = v5 + int32(48)
 					return v68
 				} else {
@@ -411,13 +411,13 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v5))) = v8
-							F_errmsg_internal(m, int32(483845), v5)
+							F_errmsg_internal(m, int32(483969), v5)
 							mBase = m.M
 							v80 = m.ExcPending
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499912), int32(2854), int32(378721))
+								F_errfinish(m, int32(500054), int32(2854), int32(378845))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -430,7 +430,7 @@ func F_get_config_unit_name(m *base.Module, l0 int32) int32 {
 							}
 						}
 					} else {
-						v68 = int32(276453)
+						v68 = int32(276516)
 						m.G0 = v5 + int32(48)
 						return v68
 					}

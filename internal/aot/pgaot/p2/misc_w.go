@@ -467,7 +467,7 @@ L43:
 	goto L46
 L46:
 	;
-	v155 = int32(4495208)
+	v155 = int32(4495320)
 	v157 = *(*int64)(unsafe.Add(mBase, _consts[87]))
 	v159 = base.I64_div_s(v129, int64(1000))
 	*(*int64)(unsafe.Add(mBase, _consts[87])) = v157 + v159
@@ -481,13 +481,13 @@ L46:
 	}
 L47:
 	;
-	v167 = int32(4413848)
+	v167 = int32(4413960)
 	v169 = *(*int64)(unsafe.Add(mBase, _consts[116]))
 	*(*int64)(unsafe.Add(mBase, _consts[116])) = v169 + v129
 	goto L39
 L48:
 	;
-	v162 = int32(4413832)
+	v162 = int32(4413944)
 	v164 = *(*int64)(unsafe.Add(mBase, _consts[114]))
 	*(*int64)(unsafe.Add(mBase, _consts[114])) = v164 + v129
 	goto L39
@@ -604,7 +604,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(495274), int32(1620), int32(98170))
+	F_errfinish(m, int32(495416), int32(1620), int32(98170))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -661,7 +661,7 @@ L73:
 	goto L13
 L74:
 	;
-	F_errmsg_internal(m, int32(464378), int32(0))
+	F_errmsg_internal(m, int32(464502), int32(0))
 	mBase = m.M
 	v329 = m.ExcPending
 	if v329 != 0 {
@@ -671,7 +671,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(495274), int32(1661), int32(135437))
+	F_errfinish(m, int32(495416), int32(1661), int32(135467))
 	mBase = m.M
 	v334 = m.ExcPending
 	if v334 != 0 {
@@ -870,7 +870,7 @@ L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v21 + int32(19)
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-	v47 = F_pg_snprintf(m, v10+int32(16), int32(2048), int32(177081), v10)
+	v47 = F_pg_snprintf(m, v10+int32(16), int32(2048), int32(177111), v10)
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -1228,7 +1228,7 @@ func F_win1250_to_mic(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_latin2mic_with_table(m, v6, v5, v10, int32(130), int32(29), int32(2234720), base.B2i32(v7 != int32(0)))
+		v22 = F_latin2mic_with_table(m, v6, v5, v10, int32(130), int32(29), int32(2234768), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -1271,7 +1271,7 @@ func F_win1251_to_win866(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(23), int32(20), int32(2230064), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(23), int32(20), int32(2230112), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -1314,7 +1314,7 @@ func F_win866_to_iso(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(20), int32(25), int32(2230704), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(20), int32(25), int32(2230752), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -1386,7 +1386,7 @@ func F_write_syslogger_file(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		return
 	} else {
 		if v24 != l1 {
-			F_write_stderr(m, int32(748979), int32(0))
+			F_write_stderr(m, int32(749121), int32(0))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {

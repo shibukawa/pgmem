@@ -321,7 +321,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(494621), int32(12179), int32(134817))
+	F_errfinish(m, int32(494763), int32(12179), int32(134847))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -347,7 +347,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(494621), int32(12182), int32(134817))
+	F_errfinish(m, int32(494763), int32(12182), int32(134847))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -426,11 +426,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(492398)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(492522)
 		v24 = int32(256)
 		*(*uint16)(unsafe.Add(mBase, uint32(v18)+4)) = uint16(v24)
 		*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(181)
-		v29 = F_SystemFuncName(m, int32(149872))
+		v29 = F_SystemFuncName(m, int32(149902))
 		mBase = m.M
 		v30 = m.ExcPending
 		if v30 != 0 {
@@ -470,11 +470,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v59)+12)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(492398)
+						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(492522)
 						v65 = int32(256)
 						*(*uint16)(unsafe.Add(mBase, uint32(v59)+4)) = uint16(v65)
 						*(*int32)(unsafe.Add(mBase, uint32(v59))) = int32(181)
-						v70 = F_SystemFuncName(m, int32(422230))
+						v70 = F_SystemFuncName(m, int32(422354))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {

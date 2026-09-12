@@ -102,9 +102,9 @@ L6:
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(229337)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(229400)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(495274)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(495416)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
@@ -124,7 +124,7 @@ L9:
 	goto L10
 L10:
 	;
-	v65 = int32(4122092)
+	v65 = int32(4122140)
 	v66 = *(*int32)(unsafe.Add(mBase, _consts[604]))
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
 	if v68 == int32(0) {

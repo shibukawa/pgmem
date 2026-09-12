@@ -237,7 +237,7 @@ L20:
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	v113 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v112 - v113
-	v117 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v117 = *(*int32)(unsafe.Add(mBase, _consts[1143]))
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v117)+4)) = v118 - v113
 	goto L6

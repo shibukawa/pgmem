@@ -35,14 +35,14 @@ func F_language_handler_out(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(219663)
-			F_errmsg(m, int32(192473), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(219726)
+			F_errmsg(m, int32(192503), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(494274), int32(368), int32(66989))
+				F_errfinish(m, int32(494416), int32(368), int32(66989))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

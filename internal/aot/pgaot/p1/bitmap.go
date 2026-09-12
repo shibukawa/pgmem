@@ -17,12 +17,12 @@ func F_ExecBitmapAnd(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(248309), int32(0))
+		F_errmsg_internal(m, int32(248372), int32(0))
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(499787), int32(44), int32(429550))
+			F_errfinish(m, int32(499929), int32(44), int32(429674))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
@@ -59,12 +59,12 @@ func F_ExecBitmapIndexScan(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(248186), int32(0))
+		F_errmsg_internal(m, int32(248249), int32(0))
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(496903), int32(40), int32(285197))
+			F_errfinish(m, int32(497045), int32(40), int32(285288))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)

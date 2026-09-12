@@ -82,7 +82,7 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 							if v30 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499128), int32(740), int32(213122))
+								F_errfinish(m, int32(499270), int32(740), int32(213152))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
@@ -98,7 +98,7 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v13
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(84710)
-					v45 = F_pg_snprintf(m, v6+int32(32), int32(1024), int32(177081), v6+int32(16))
+					v45 = F_pg_snprintf(m, v6+int32(32), int32(1024), int32(177111), v6+int32(16))
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {

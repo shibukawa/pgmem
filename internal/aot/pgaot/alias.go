@@ -3106,6 +3106,12 @@ func F_Pg_magic_func_lo(m *base.Module) int32
 func F_pg_finfo_lo_manage(m *base.Module) int32
 //go:linkname F_lo_manage github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_lo_manage
 func F_lo_manage(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_tsm_system_rows github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_Pg_magic_func_tsm_system_rows
+func F_Pg_magic_func_tsm_system_rows(m *base.Module) int32
+//go:linkname F_pg_finfo_tsm_system_rows_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_tsm_system_rows_handler
+func F_pg_finfo_tsm_system_rows_handler(m *base.Module) int32
+//go:linkname F_tsm_system_rows_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tsm_system_rows_handler
+func F_tsm_system_rows_handler(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

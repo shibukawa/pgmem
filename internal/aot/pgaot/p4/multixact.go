@@ -10,7 +10,7 @@ func F_check_multixact_offset_buffers(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_check_slru_buffers(m, int32(135064), l0)
+	v5 = F_check_slru_buffers(m, int32(135094), l0)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

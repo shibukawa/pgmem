@@ -140,13 +140,13 @@ func F_BumpContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-						F_errdetail(m, int32(664940), v10)
+						F_errdetail(m, int32(665082), v10)
 						mBase = m.M
 						v107 = m.ExcPending
 						if v107 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495988), int32(185), int32(355648))
+							F_errfinish(m, int32(496130), int32(185), int32(355772))
 							mBase = m.M
 							v112 = m.ExcPending
 							if v112 != 0 {
