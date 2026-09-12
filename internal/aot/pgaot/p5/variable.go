@@ -604,7 +604,7 @@ L24:
 L25:
 	;
 	v229 = int32(0)
-	F_resolve_special_varno(m, v22, l2, int32(1501), v229)
+	F_resolve_special_varno(m, v22, l2, int32(1502), v229)
 	mBase = m.M
 	v233 = m.ExcPending
 	if v233 != 0 {

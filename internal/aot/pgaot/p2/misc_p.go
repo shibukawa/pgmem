@@ -916,11 +916,11 @@ L9:
 L10:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	v54 = int32(913)
+	v54 = int32(914)
 	v56 = m.G0
 	v58 = v56 - int32(144)
 	m.G0 = v58
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v68 = v54
 		goto L14
@@ -933,11 +933,11 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	v495 = int32(913)
+	v495 = int32(914)
 	v497 = m.G0
 	v499 = v497 - int32(144)
 	m.G0 = v499
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v509 = v495
 		goto L111
@@ -946,11 +946,11 @@ L12:
 	}
 L13:
 	;
-	v96 = int32(914)
+	v96 = int32(915)
 	v98 = m.G0
 	v100 = v98 - int32(144)
 	m.G0 = v100
-	switch int32(916) {
+	switch int32(917) {
 	case 0, 2:
 		v110 = v96
 		goto L27
@@ -1162,7 +1162,7 @@ L54:
 	;
 	v320 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_PostgresMain[13])) = uint8(v320)
-	F_pqsignal_be(m, int32(14), int32(1784))
+	F_pqsignal_be(m, int32(14), int32(1785))
 	mBase = m.M
 	goto L52
 L55:
@@ -1188,11 +1188,11 @@ L57:
 	goto L54
 L58:
 	;
-	v368 = int32(916)
+	v368 = int32(917)
 	v370 = m.G0
 	v372 = v370 - int32(144)
 	m.G0 = v372
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v382 = v368
 		goto L72
@@ -1245,11 +1245,11 @@ L70:
 	goto L64
 L71:
 	;
-	v410 = int32(1037)
+	v410 = int32(1038)
 	v412 = m.G0
 	v414 = v412 - int32(144)
 	m.G0 = v414
-	switch int32(1039) {
+	switch int32(1040) {
 	case 0, 2:
 		v424 = v410
 		goto L85
@@ -1407,11 +1407,11 @@ L109:
 L110:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	v538 = int32(914)
+	v538 = int32(915)
 	v540 = m.G0
 	v542 = v540 - int32(144)
 	m.G0 = v542
-	switch int32(916) {
+	switch int32(917) {
 	case 0, 2:
 		v552 = v538
 		goto L124
@@ -1575,7 +1575,7 @@ L148:
 	goto L142
 L149:
 	;
-	v628 = int32(1158)
+	v628 = int32(1159)
 	goto L151
 L150:
 	;
@@ -1699,7 +1699,7 @@ L167:
 	;
 	v811 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_PostgresMain[13])) = uint8(v811)
-	F_pqsignal_be(m, int32(14), int32(1784))
+	F_pqsignal_be(m, int32(14), int32(1785))
 	mBase = m.M
 	goto L165
 L168:
@@ -1726,11 +1726,11 @@ L170:
 L171:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	v861 = int32(916)
+	v861 = int32(917)
 	v863 = m.G0
 	v865 = v863 - int32(144)
 	m.G0 = v865
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v875 = v861
 		goto L185
@@ -1842,11 +1842,11 @@ L196:
 L197:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	v947 = int32(918)
+	v947 = int32(919)
 	v949 = m.G0
 	v951 = v949 - int32(144)
 	m.G0 = v951
-	switch int32(920) {
+	switch int32(921) {
 	case 0, 2:
 		v961 = v947
 		goto L211
@@ -2293,7 +2293,7 @@ L274:
 L275:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	F_on_proc_exit(m, int32(1159))
+	F_on_proc_exit(m, int32(1160))
 	mBase = m.M
 	v1166 = m.ExcPending
 	if v1166 != 0 {
@@ -2360,7 +2360,7 @@ L284:
 	goto L281
 L285:
 	;
-	F_on_shmem_exit(m, int32(1029), int32(0))
+	F_on_shmem_exit(m, int32(1030), int32(0))
 	mBase = m.M
 	v1285 = m.ExcPending
 	if v1285 != 0 {
@@ -7912,7 +7912,7 @@ L304:
 	goto L305
 L305:
 	;
-	F_pg_qsort(m, v1283, v1077, int32(8), int32(1026))
+	F_pg_qsort(m, v1283, v1077, int32(8), int32(1027))
 	mBase = m.M
 	v1399 = m.ExcPending
 	if v1399 != 0 {
@@ -7922,7 +7922,7 @@ L305:
 	}
 L306:
 	;
-	F_pg_qsort(m, v1285, v1077, int32(8), int32(1026))
+	F_pg_qsort(m, v1285, v1077, int32(8), int32(1027))
 	mBase = m.M
 	v1403 = m.ExcPending
 	if v1403 != 0 {
@@ -7932,7 +7932,7 @@ L306:
 	}
 L307:
 	;
-	F_pg_qsort(m, v1287, v1077, int32(8), int32(1026))
+	F_pg_qsort(m, v1287, v1077, int32(8), int32(1027))
 	mBase = m.M
 	v1407 = m.ExcPending
 	if v1407 != 0 {
@@ -14857,7 +14857,7 @@ L1:
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v15 = F_replace_rte_variables(m, v10, v11, v8, int32(850), l1, v14)
+	v15 = F_replace_rte_variables(m, v10, v11, v8, int32(851), l1, v14)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -14874,7 +14874,7 @@ L3:
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+76))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v25 = F_replace_rte_variables(m, v20, v21, int32(0), int32(850), l1, v24)
+	v25 = F_replace_rte_variables(m, v20, v21, int32(0), int32(851), l1, v24)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -14896,7 +14896,7 @@ L6:
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v19)+96))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v33 = F_replace_rte_variables(m, v28, v29, int32(0), int32(850), l1, v32)
+	v33 = F_replace_rte_variables(m, v28, v29, int32(0), int32(851), l1, v32)
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -14918,7 +14918,7 @@ L8:
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+20))
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v42 = F_replace_rte_variables(m, v37, v38, int32(0), int32(850), l1, v41)
+	v42 = F_replace_rte_variables(m, v37, v38, int32(0), int32(851), l1, v41)
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -14945,7 +14945,7 @@ L11:
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+24))
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v52 = F_replace_rte_variables(m, v47, v48, int32(0), int32(850), l1, v51)
+	v52 = F_replace_rte_variables(m, v47, v48, int32(0), int32(851), l1, v51)
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -14964,7 +14964,7 @@ L13:
 	v101 = *(*int32)(unsafe.Add(mBase, uint32(v19)+72))
 	v102 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v105 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v106 = F_replace_rte_variables(m, v101, v102, v100, int32(850), l1, v105)
+	v106 = F_replace_rte_variables(m, v101, v102, v100, int32(851), l1, v105)
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -14991,7 +14991,7 @@ L16:
 	v74 = *(*int32)(unsafe.Add(mBase, uint32(v73)+16))
 	v75 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v79 = F_replace_rte_variables(m, v74, v75, int32(0), int32(850), l1, v78)
+	v79 = F_replace_rte_variables(m, v74, v75, int32(0), int32(851), l1, v78)
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -15008,7 +15008,7 @@ L18:
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(v73)+20))
 	v83 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v87 = F_replace_rte_variables(m, v82, v83, int32(0), int32(850), l1, v86)
+	v87 = F_replace_rte_variables(m, v82, v83, int32(0), int32(851), l1, v86)
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -15047,7 +15047,7 @@ L22:
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(v19)+112))
 	v113 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v116 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v117 = F_replace_rte_variables(m, v112, v113, int32(0), int32(850), l1, v116)
+	v117 = F_replace_rte_variables(m, v112, v113, int32(0), int32(851), l1, v116)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -15091,7 +15091,7 @@ L27:
 	v137 = *(*int32)(unsafe.Add(mBase, uint32(v136)+20))
 	v138 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v141 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v142 = F_replace_rte_variables(m, v137, v138, int32(0), int32(850), l1, v141)
+	v142 = F_replace_rte_variables(m, v137, v138, int32(0), int32(851), l1, v141)
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {
@@ -15164,7 +15164,7 @@ L37:
 	v184 = *(*int32)(unsafe.Add(mBase, uint32(v172)+120))
 	v185 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v188 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v189 = F_replace_rte_variables(m, v184, v185, int32(0), int32(850), l1, v188)
+	v189 = F_replace_rte_variables(m, v184, v185, int32(0), int32(851), l1, v188)
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -15177,7 +15177,7 @@ L38:
 	v176 = *(*int32)(unsafe.Add(mBase, uint32(v172)+52))
 	v177 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	v180 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
-	v181 = F_replace_rte_variables(m, v176, v177, int32(0), int32(850), l1, v180)
+	v181 = F_replace_rte_variables(m, v176, v177, int32(0), int32(851), l1, v180)
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -17553,7 +17553,7 @@ func F_phraseto_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1176), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1177), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {
@@ -22648,7 +22648,7 @@ L5:
 	;
 	v637 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v22)+20)) = uint8(v637)
-	v642 = F_expression_tree_mutator_impl(m, l0, int32(846), v22+int32(16))
+	v642 = F_expression_tree_mutator_impl(m, l0, int32(847), v22+int32(16))
 	mBase = m.M
 	v643 = m.ExcPending
 	if v643 != 0 {
@@ -27539,7 +27539,7 @@ L260:
 	v894 = m.G0
 	v896 = v894 - int32(16)
 	m.G0 = v896
-	v905 = F_TS_execute_locations_recurse(m, v30+int32(8), v28+int32(80), int32(1190), v896+int32(12))
+	v905 = F_TS_execute_locations_recurse(m, v30+int32(8), v28+int32(80), int32(1191), v896+int32(12))
 	mBase = m.M
 	v906 = m.ExcPending
 	if v906 != 0 {
@@ -30830,7 +30830,7 @@ func F_pull_paramids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			}
 		} else {
-			v17 = F_expression_tree_walker_impl(m, l0, int32(875), l1)
+			v17 = F_expression_tree_walker_impl(m, l0, int32(876), l1)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
@@ -30917,7 +30917,7 @@ func F_pull_varattnos(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		} else {
-			v29 = F_expression_tree_walker_impl(m, l0, int32(896), v8+int32(8))
+			v29 = F_expression_tree_walker_impl(m, l0, int32(897), v8+int32(8))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
@@ -30954,7 +30954,7 @@ func F_pull_varnos_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v3
-	v17 = F_query_or_expression_tree_walker_impl(m, l1, int32(895), v6+int32(4), v3)
+	v17 = F_query_or_expression_tree_walker_impl(m, l1, int32(896), v6+int32(4), v3)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {

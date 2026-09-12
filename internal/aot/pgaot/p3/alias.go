@@ -3558,6 +3558,8 @@ func F_DirectFunctionCall2Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 func F_DirectFunctionCall3Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_DirectFunctionCall4Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_DirectFunctionCall4Coll
 func F_DirectFunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_DirectFunctionCall5Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DirectFunctionCall5Coll
+func F_DirectFunctionCall5Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_FunctionCall1Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FunctionCall1Coll
 func F_FunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_FunctionCall2Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_FunctionCall2Coll
@@ -4276,8 +4278,8 @@ func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32
 func F_lca_inner(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_makepol_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_makepol_2
 func F_makepol_2(m *base.Module, l0 int32) int32
-//go:linkname F_findoprnd github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_findoprnd
-func F_findoprnd(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_findoprnd_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_findoprnd_1
+func F_findoprnd_1(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ltree_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_execute
 func F_ltree_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_gbt_num_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_union
@@ -4302,6 +4304,20 @@ func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 func F_validateConnectbyTupleDesc(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_build_tuplestore_recursively github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_build_tuplestore_recursively
 func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32)
+//go:linkname F_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_execute
+func F_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_infix_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_infix_3
+func F_infix_3(m *base.Module, l0 int32, l1 int32)
+//go:linkname F__int_unique github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__int_unique
+func F__int_unique(m *base.Module, l0 int32) int32
+//go:linkname F_new_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_new_intArrayType
+func F_new_intArrayType(m *base.Module, l0 int32) int32
+//go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
+func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_intarray_concat_arrays github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_intarray_concat_arrays
+func F_intarray_concat_arrays(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_hemdist_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hemdist_3
+func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

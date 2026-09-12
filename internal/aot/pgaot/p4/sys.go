@@ -1111,11 +1111,11 @@ L14:
 L15:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_SysLoggerMain[4])) = int32(-1)
-	v78 = int32(913)
+	v78 = int32(914)
 	v80 = m.G0
 	v82 = v80 - int32(144)
 	m.G0 = v82
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v92 = v78
 		goto L17
@@ -1409,11 +1409,11 @@ L80:
 	goto L74
 L81:
 	;
-	v330 = int32(963)
+	v330 = int32(964)
 	v332 = m.G0
 	v334 = v332 - int32(144)
 	m.G0 = v334
-	switch int32(965) {
+	switch int32(966) {
 	case 0, 2:
 		v344 = v330
 		goto L95

@@ -224,7 +224,7 @@ func F_vac_bulkdel_one_index(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = F_index_bulk_delete(m, l0, l1, int32(582), l2)
+	v11 = F_index_bulk_delete(m, l0, l1, int32(583), l2)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {

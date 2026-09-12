@@ -969,7 +969,7 @@ L21:
 	*(*int64)(unsafe.Add(mBase, uint32(v72)+16)) = v76
 	v78 = *(*int64)(unsafe.Add(mBase, uint32(v68)))
 	*(*int64)(unsafe.Add(mBase, uint32(v72)+8)) = v78
-	F_CacheInvalidateHeapTupleCommon(m, v66, v68, int32(0), int32(1599))
+	F_CacheInvalidateHeapTupleCommon(m, v66, v68, int32(0), int32(1600))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {

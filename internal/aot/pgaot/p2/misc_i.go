@@ -46,7 +46,7 @@ func F_IncrementVarSublevelsUp(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	m.G0 = v7
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l1
-	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1049), v7+int32(8), v6)
+	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1050), v7+int32(8), v6)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -524,6 +524,55 @@ func F_i8tooid(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		return base.I32_wrap_i64(v4)
+	}
+}
+func F_icount(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = F_pg_detoast_datum(m, v4)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
+	} else {
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
+		v12 = F_ArrayGetNItems(m, v9, v5+int32(16))
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			if v14 != v5 {
+				F_pfree(m, v5)
+				mBase = m.M
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return int32(0)
+				} else {
+					return v12
+				}
+			} else {
+				return v12
+			}
+		}
 	}
 }
 func F_icregexnesel(m *base.Module, l0 int32) int32 {
@@ -10729,6 +10778,372 @@ func F_int8shr(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		return v6
+	}
+}
+func F_intarray_del_elem(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v61 int32
+	_ = v61
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v91 int32
+	_ = v91
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v109 int32
+	_ = v109
+	var v119 int32
+	_ = v119
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
+	var v150 int32
+	_ = v150
+	var v156 int32
+	_ = v156
+	var v163 int32
+	_ = v163
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v13 = F_pg_detoast_datum_copy(m, v12)
+	mBase = m.M
+	v16 = m.ExcPending
+	if v16 != 0 {
+		return int32(0)
+	} else {
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v18 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+		if v18 != 0 {
+			v19 = F_array_contains_nulls(m, v13)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				if v19 != 0 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v147 = m.ExcPending
+					if v147 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(67108994))
+						mBase = m.M
+						v150 = m.ExcPending
+						if v150 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_intarray_del_elem_0), int32(0))
+							mBase = m.M
+							v156 = m.ExcPending
+							if v156 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_intarray_del_elem_1), int32(359), int32(_a_F_intarray_del_elem_2))
+								mBase = m.M
+								v163 = m.ExcPending
+								if v163 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v21 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+					v23 = v13 + int32(16)
+					v24 = F_ArrayGetNItems(m, v21, v23)
+					mBase = m.M
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return int32(0)
+					} else {
+						if v24 != 0 {
+							v26 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+							v27 = F_ArrayGetNItems(m, v26, v23)
+							mBase = m.M
+							v28 = m.ExcPending
+							if v28 != 0 {
+								return int32(0)
+							} else {
+								v29 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+								if v29 == int32(0) {
+									v32 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+									v39 = (v32<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+								} else {
+									v39 = v29
+								}
+								if v27 <= int32(0) {
+									v119 = int32(0)
+								} else {
+									v43 = v39 + v13
+									v44 = int32(1)
+									if v27 == v44 {
+										v48 = int32(0)
+										v93 = v48
+										v94 = v48
+									} else {
+										v52 = int32(0)
+										v54 = v52
+										v55 = v52
+										v61 = int32(0)
+										for {
+											v67 = v43 + v54<<(uint(int32(2))%32)
+											v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
+											if v17 == v68 {
+												v77 = v55
+											} else {
+												v71 = v55 + int32(1)
+												if v54 <= v55 {
+													v77 = v71
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v43+v55<<(uint(int32(2))%32)))) = v68
+													v77 = v71
+												}
+											}
+											v78 = *(*int32)(unsafe.Add(mBase, uint32(v67)+4))
+											if v17 == v78 {
+												v87 = v77
+											} else {
+												v81 = v77 + int32(1)
+												if v54 < v77 {
+													v87 = v81
+												} else {
+													*(*int32)(unsafe.Add(mBase, uint32(v43+v77<<(uint(int32(2))%32)))) = v78
+													v87 = v81
+												}
+											}
+											v88 = int32(2)
+											v89 = v54 + v88
+											v91 = v61 + v88
+											if v91 != v27&int32(2147483646) {
+												v54 = v89
+												v55 = v87
+												v61 = v91
+												continue
+											} else {
+												break
+											}
+											break
+										}
+										v93 = v89
+										v94 = v87
+									}
+									if v27&v44 == int32(0) {
+										v119 = v94
+									} else {
+										v109 = *(*int32)(unsafe.Add(mBase, uint32(v43+v93<<(uint(int32(2))%32))))
+										if v109 == v17 {
+											v119 = v94
+										} else {
+											if v94 < v93 {
+												*(*int32)(unsafe.Add(mBase, uint32(v43+v94<<(uint(int32(2))%32)))) = v109
+											} else {
+											}
+											v119 = v94 + int32(1)
+										}
+									}
+								}
+								v129 = F_resize_intArrayType(m, v13, v119)
+								mBase = m.M
+								v130 = m.ExcPending
+								if v130 != 0 {
+									return int32(0)
+								} else {
+									v142 = v129
+									return v142
+								}
+							}
+						} else {
+							v142 = v13
+							return v142
+						}
+					}
+				}
+			}
+		} else {
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+			v23 = v13 + int32(16)
+			v24 = F_ArrayGetNItems(m, v21, v23)
+			mBase = m.M
+			v25 = m.ExcPending
+			if v25 != 0 {
+				return int32(0)
+			} else {
+				if v24 != 0 {
+					v26 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+					v27 = F_ArrayGetNItems(m, v26, v23)
+					mBase = m.M
+					v28 = m.ExcPending
+					if v28 != 0 {
+						return int32(0)
+					} else {
+						v29 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+						if v29 == int32(0) {
+							v32 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+							v39 = (v32<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+						} else {
+							v39 = v29
+						}
+						if v27 <= int32(0) {
+							v119 = int32(0)
+						} else {
+							v43 = v39 + v13
+							v44 = int32(1)
+							if v27 == v44 {
+								v48 = int32(0)
+								v93 = v48
+								v94 = v48
+							} else {
+								v52 = int32(0)
+								v54 = v52
+								v55 = v52
+								v61 = int32(0)
+								for {
+									v67 = v43 + v54<<(uint(int32(2))%32)
+									v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
+									if v17 == v68 {
+										v77 = v55
+									} else {
+										v71 = v55 + int32(1)
+										if v54 <= v55 {
+											v77 = v71
+										} else {
+											*(*int32)(unsafe.Add(mBase, uint32(v43+v55<<(uint(int32(2))%32)))) = v68
+											v77 = v71
+										}
+									}
+									v78 = *(*int32)(unsafe.Add(mBase, uint32(v67)+4))
+									if v17 == v78 {
+										v87 = v77
+									} else {
+										v81 = v77 + int32(1)
+										if v54 < v77 {
+											v87 = v81
+										} else {
+											*(*int32)(unsafe.Add(mBase, uint32(v43+v77<<(uint(int32(2))%32)))) = v78
+											v87 = v81
+										}
+									}
+									v88 = int32(2)
+									v89 = v54 + v88
+									v91 = v61 + v88
+									if v91 != v27&int32(2147483646) {
+										v54 = v89
+										v55 = v87
+										v61 = v91
+										continue
+									} else {
+										break
+									}
+									break
+								}
+								v93 = v89
+								v94 = v87
+							}
+							if v27&v44 == int32(0) {
+								v119 = v94
+							} else {
+								v109 = *(*int32)(unsafe.Add(mBase, uint32(v43+v93<<(uint(int32(2))%32))))
+								if v109 == v17 {
+									v119 = v94
+								} else {
+									if v94 < v93 {
+										*(*int32)(unsafe.Add(mBase, uint32(v43+v94<<(uint(int32(2))%32)))) = v109
+									} else {
+									}
+									v119 = v94 + int32(1)
+								}
+							}
+						}
+						v129 = F_resize_intArrayType(m, v13, v119)
+						mBase = m.M
+						v130 = m.ExcPending
+						if v130 != 0 {
+							return int32(0)
+						} else {
+							v142 = v129
+							return v142
+						}
+					}
+				} else {
+					v142 = v13
+					return v142
+				}
+			}
+		}
 	}
 }
 func F_inter_sl(m *base.Module, l0 int32) int32 {

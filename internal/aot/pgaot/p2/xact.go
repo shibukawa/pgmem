@@ -71,7 +71,7 @@ L1:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l3
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = int32(1108)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = int32(1109)
 	v15 = int32(_a_F_XactLockTableWait_0)
 	v16 = *(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_XactLockTableWait[0])) = v8 + int32(8)

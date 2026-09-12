@@ -4295,7 +4295,7 @@ L7:
 	goto L5
 L8:
 	;
-	F_on_shmem_exit(m, int32(1113), int32(0))
+	F_on_shmem_exit(m, int32(1114), int32(0))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -4366,7 +4366,7 @@ L15:
 	}
 L16:
 	;
-	F_RegisterTimeout(m, int32(1), int32(1639))
+	F_RegisterTimeout(m, int32(1), int32(1640))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -4376,7 +4376,7 @@ L16:
 	}
 L17:
 	;
-	F_RegisterTimeout(m, int32(3), int32(1640))
+	F_RegisterTimeout(m, int32(3), int32(1641))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -4386,7 +4386,7 @@ L17:
 	}
 L18:
 	;
-	F_RegisterTimeout(m, int32(2), int32(1641))
+	F_RegisterTimeout(m, int32(2), int32(1642))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -4396,7 +4396,7 @@ L18:
 	}
 L19:
 	;
-	F_RegisterTimeout(m, int32(7), int32(1642))
+	F_RegisterTimeout(m, int32(7), int32(1643))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -4406,7 +4406,7 @@ L19:
 	}
 L20:
 	;
-	F_RegisterTimeout(m, int32(8), int32(1643))
+	F_RegisterTimeout(m, int32(8), int32(1644))
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -4416,7 +4416,7 @@ L20:
 	}
 L21:
 	;
-	F_RegisterTimeout(m, int32(9), int32(1644))
+	F_RegisterTimeout(m, int32(9), int32(1645))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -4426,7 +4426,7 @@ L21:
 	}
 L22:
 	;
-	F_RegisterTimeout(m, int32(11), int32(1645))
+	F_RegisterTimeout(m, int32(11), int32(1646))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {
@@ -4436,7 +4436,7 @@ L22:
 	}
 L23:
 	;
-	F_RegisterTimeout(m, int32(10), int32(1646))
+	F_RegisterTimeout(m, int32(10), int32(1647))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -4509,7 +4509,7 @@ L32:
 	;
 	v139 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[5])) = v139
-	F_before_shmem_exit(m, int32(929), v139)
+	F_before_shmem_exit(m, int32(930), v139)
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {
@@ -4519,7 +4519,7 @@ L32:
 	}
 L33:
 	;
-	F_before_shmem_exit(m, int32(1647), int32(0))
+	F_before_shmem_exit(m, int32(1648), int32(0))
 	mBase = m.M
 	v148 = m.ExcPending
 	if v148 != 0 {
@@ -4591,7 +4591,7 @@ L40:
 	goto L43
 L41:
 	;
-	F_CacheRegisterRelcacheCallback(m, int32(1600))
+	F_CacheRegisterRelcacheCallback(m, int32(1601))
 	mBase = m.M
 	v895 = m.ExcPending
 	if v895 != 0 {
@@ -4624,7 +4624,7 @@ L43:
 	}
 L44:
 	;
-	F_pg_qsort(m, int32(_a_F_InitPostgres_4), v586, int32(4), int32(1611))
+	F_pg_qsort(m, int32(_a_F_InitPostgres_4), v586, int32(4), int32(1612))
 	mBase = m.M
 	v615 = m.ExcPending
 	if v615 != 0 {
@@ -4863,7 +4863,7 @@ L72:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[15])) = v701
 	v745 = *(*int32)(unsafe.Add(mBase, _c_F_InitPostgres[16]))
-	F_pg_qsort(m, int32(_a_F_InitPostgres_13), v745, int32(4), int32(1611))
+	F_pg_qsort(m, int32(_a_F_InitPostgres_13), v745, int32(4), int32(1612))
 	mBase = m.M
 	v749 = m.ExcPending
 	if v749 != 0 {
@@ -5007,7 +5007,7 @@ L91:
 	}
 L92:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(47), int32(1601), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(47), int32(1602), int32(0))
 	mBase = m.M
 	v900 = m.ExcPending
 	if v900 != 0 {
@@ -5017,7 +5017,7 @@ L92:
 	}
 L93:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(82), int32(1601), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(82), int32(1602), int32(0))
 	mBase = m.M
 	v905 = m.ExcPending
 	if v905 != 0 {
@@ -5027,7 +5027,7 @@ L93:
 	}
 L94:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(38), int32(1602), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(38), int32(1603), int32(0))
 	mBase = m.M
 	v910 = m.ExcPending
 	if v910 != 0 {
@@ -5037,7 +5037,7 @@ L94:
 	}
 L95:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(40), int32(1602), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(40), int32(1603), int32(0))
 	mBase = m.M
 	v915 = m.ExcPending
 	if v915 != 0 {
@@ -5047,7 +5047,7 @@ L95:
 	}
 L96:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(3), int32(1602), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(3), int32(1603), int32(0))
 	mBase = m.M
 	v920 = m.ExcPending
 	if v920 != 0 {
@@ -5057,7 +5057,7 @@ L96:
 	}
 L97:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(32), int32(1602), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(32), int32(1603), int32(0))
 	mBase = m.M
 	v925 = m.ExcPending
 	if v925 != 0 {
@@ -5067,7 +5067,7 @@ L97:
 	}
 L98:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(30), int32(1602), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(30), int32(1603), int32(0))
 	mBase = m.M
 	v930 = m.ExcPending
 	if v930 != 0 {
@@ -5154,7 +5154,7 @@ L107:
 	goto L108
 L108:
 	;
-	F_before_shmem_exit(m, int32(1648), int32(0))
+	F_before_shmem_exit(m, int32(1649), int32(0))
 	mBase = m.M
 	v1019 = m.ExcPending
 	if v1019 != 0 {

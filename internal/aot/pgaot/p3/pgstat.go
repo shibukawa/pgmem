@@ -122,7 +122,7 @@ func F_pgstat_get_beentry_by_proc_number(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v5)+408)) = l0
 		v13 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_get_beentry_by_proc_number[0]))
 		v15 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_get_beentry_by_proc_number[1]))
-		v18 = F_bsearch(m, v5, v13, v15, int32(432), int32(1211))
+		v18 = F_bsearch(m, v5, v13, v15, int32(432), int32(1212))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {

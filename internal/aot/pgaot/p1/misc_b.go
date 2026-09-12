@@ -375,7 +375,7 @@ func F_before_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 			v30 = *(*int32)(unsafe.Add(mBase, _c_F_before_shmem_exit[4]))
 			if v30 <= int32(31) {
 				*(*int32)(unsafe.Add(mBase, _c_F_before_shmem_exit[4])) = v30 + int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_before_shmem_exit[5]))) = int32(1099)
+				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_before_shmem_exit[5]))) = int32(1100)
 			} else {
 			}
 			v45 = int32(1)
@@ -824,7 +824,7 @@ func F_begin_cb_wrapper(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_begin_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v10
 	v14 = *(*int64)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v14
 	v18 = int32(_a_F_begin_cb_wrapper_1)
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_begin_cb_wrapper[0]))
@@ -2372,7 +2372,7 @@ func F_bitshiftright(m *base.Module, l0 int32) int32 {
 			} else {
 				v25 = v16
 			}
-			v27 = F_DirectFunctionCall2Coll(m, int32(1549), v20, v12, v20-v25)
+			v27 = F_DirectFunctionCall2Coll(m, int32(1550), v20, v12, v20-v25)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
@@ -7884,7 +7884,7 @@ L62:
 	v284 = int64(4607182418800017408)
 	*(*int64)(unsafe.Add(mBase, uint32(v25)+304)) = v284
 	*(*int64)(unsafe.Add(mBase, uint32(v25)+296)) = v284
-	v290 = F_query_planner(m, v25, int32(830), int32(0))
+	v290 = F_query_planner(m, v25, int32(831), int32(0))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {

@@ -554,7 +554,7 @@ L8:
 	goto L9
 L9:
 	;
-	F_pg_qsort(m, v24, v21, int32(16), int32(1170))
+	F_pg_qsort(m, v24, v21, int32(16), int32(1171))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {

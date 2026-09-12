@@ -1450,7 +1450,7 @@ L88:
 	goto L89
 L89:
 	;
-	v408 = F_expression_tree_walker_impl(m, v382, int32(566), v342+int32(12))
+	v408 = F_expression_tree_walker_impl(m, v382, int32(567), v342+int32(12))
 	mBase = m.M
 	v409 = m.ExcPending
 	if v409 != 0 {
@@ -3402,7 +3402,7 @@ func F_checkExprHasSubLink_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		if v7 == int32(22) {
 			return int32(1)
 		} else {
-			v13 = F_expression_tree_walker_impl(m, l0, int32(1046), l1)
+			v13 = F_expression_tree_walker_impl(m, l0, int32(1047), l1)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {

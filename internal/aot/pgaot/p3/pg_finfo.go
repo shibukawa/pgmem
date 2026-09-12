@@ -2,6 +2,9 @@ package p3
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__int_different(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_different_0)
+}
 func F_pg_finfo__ltq_rregex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltq_rregex_0)
 }
@@ -28,6 +31,12 @@ func F_pg_finfo_crosstab_hash(m *base.Module) int32 {
 }
 func F_pg_finfo_euc_jp_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_sjis_0)
+}
+func F_pg_finfo_g_int_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_compress_0)
+}
+func F_pg_finfo_g_intbig_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_compress_0)
 }
 func F_pg_finfo_gbt_bool_penalty(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbt_bool_penalty_0)
@@ -176,6 +185,12 @@ func F_pg_finfo_int4_dist(m *base.Module) int32 {
 func F_pg_finfo_int8_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_int8_dist_0)
 }
+func F_pg_finfo_intarray_del_elem(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_intarray_del_elem_0)
+}
+func F_pg_finfo_intset_subtract(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_intset_subtract_0)
+}
 func F_pg_finfo_iso_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_win866_0)
 }
@@ -208,6 +223,9 @@ func F_pg_finfo_pgp_armor_headers(m *base.Module) int32 {
 }
 func F_pg_finfo_show_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_show_trgm_0)
+}
+func F_pg_finfo_sort_desc(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sort_desc_0)
 }
 func F_pg_finfo_strict_word_similarity_commutator_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_strict_word_similarity_commutator_op_0)

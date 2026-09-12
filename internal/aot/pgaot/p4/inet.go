@@ -544,7 +544,7 @@ func F_inet_server_port(m *base.Module, l0 int32) int32 {
 					m.G0 = v7 + int32(32)
 					return v39
 				} else {
-					v37 = F_DirectFunctionCall1Coll(m, int32(1423), int32(0), v7)
+					v37 = F_DirectFunctionCall1Coll(m, int32(1424), int32(0), v7)
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {

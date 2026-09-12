@@ -279,7 +279,7 @@ L1:
 	;
 	v509 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v509 + int32(1)
-	v515 = F_query_tree_walker_impl(m, l0, int32(1047), l1, int32(0))
+	v515 = F_query_tree_walker_impl(m, l0, int32(1048), l1, int32(0))
 	mBase = m.M
 	v516 = m.ExcPending
 	if v516 != 0 {
@@ -308,7 +308,7 @@ L3:
 	}
 L4:
 	;
-	v499 = F_expression_tree_walker_impl(m, l0, int32(1047), l1)
+	v499 = F_expression_tree_walker_impl(m, l0, int32(1048), l1)
 	mBase = m.M
 	v500 = m.ExcPending
 	if v500 != 0 {
@@ -3340,7 +3340,7 @@ L110:
 L111:
 	;
 	v457 = *(*int32)(unsafe.Add(mBase, uint32(v451)+168))
-	F_RegisterExprContextCallback(m, v457, int32(1470), v421)
+	F_RegisterExprContextCallback(m, v457, int32(1471), v421)
 	mBase = m.M
 	v460 = m.ExcPending
 	if v460 != 0 {

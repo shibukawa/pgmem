@@ -4920,7 +4920,7 @@ func F_numeric_poly_avg(m *base.Module, l0 int32) int32 {
 									if v255 != 0 {
 										return int32(0)
 									} else {
-										v258 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v252, v245)
+										v258 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v252, v245)
 										mBase = m.M
 										v259 = m.ExcPending
 										if v259 != 0 {

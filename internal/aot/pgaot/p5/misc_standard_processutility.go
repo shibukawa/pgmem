@@ -17001,7 +17001,7 @@ L753:
 	v2385 = *(*int32)(unsafe.Add(mBase, uint32(v2381+v2355<<(uint(int32(2))%32))))
 	v2386 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2385)+16)))
 	v2388 = int32(0)
-	v2391 = F_RangeVarGetRelidExtended(m, v2385, int32(8), v2388, int32(573), v2388)
+	v2391 = F_RangeVarGetRelidExtended(m, v2385, int32(8), v2388, int32(574), v2388)
 	mBase = m.M
 	v2392 = m.ExcPending
 	if v2392 != 0 {
@@ -48307,7 +48307,7 @@ L4781:
 	goto L4782
 L4782:
 	;
-	v18355 = F_RangeVarGetRelidExtended(m, v18347, v18349, v18353, int32(559), v46+int32(8))
+	v18355 = F_RangeVarGetRelidExtended(m, v18347, v18349, v18353, int32(560), v46+int32(8))
 	mBase = m.M
 	v18356 = m.ExcPending
 	if v18356 != 0 {

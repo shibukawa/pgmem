@@ -4015,7 +4015,7 @@ func F_pg_convert_to(m *base.Module, l0 int32) int32 {
 	if v15 != 0 {
 		return int32(0)
 	} else {
-		v16 = F_DirectFunctionCall3Coll(m, int32(1651), v2, v6, v12, v3)
+		v16 = F_DirectFunctionCall3Coll(m, int32(1652), v2, v6, v12, v3)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
@@ -19517,7 +19517,7 @@ L2:
 	v765 = int32(1)
 	v766 = v760 ^ v765
 	*(*uint8)(unsafe.Add(mBase, uint32(v754)+12)) = uint8(v766)
-	v770 = F_convert_case(m, l0, l1, l2, l3, v765, v760, int32(1477), v754)
+	v770 = F_convert_case(m, l0, l1, l2, l3, v765, v760, int32(1478), v754)
 	mBase = m.M
 	v771 = m.ExcPending
 	if v771 != 0 {

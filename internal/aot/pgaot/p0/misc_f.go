@@ -620,7 +620,7 @@ func F_FinishSortSupportFunction(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									*(*uint16)(unsafe.Add(mBase, uint32(v26)+46)) = uint16(v39)
 									*(*uint8)(unsafe.Add(mBase, uint32(v26)+44)) = uint8(v35)
 									*(*int32)(unsafe.Add(mBase, uint32(v26)+40)) = v34
-									*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1834)
+									*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1835)
 									*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v26
 									m.G0 = v8 + int32(16)
 									return
@@ -696,7 +696,7 @@ func F_FinishSortSupportFunction(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								*(*uint16)(unsafe.Add(mBase, uint32(v26)+46)) = uint16(v39)
 								*(*uint8)(unsafe.Add(mBase, uint32(v26)+44)) = uint8(v35)
 								*(*int32)(unsafe.Add(mBase, uint32(v26)+40)) = v34
-								*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1834)
+								*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1835)
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v26
 								m.G0 = v8 + int32(16)
 								return
@@ -754,7 +754,7 @@ func F_FreeDecodingContext(m *base.Module, l0 int32) {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = int64(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(_a_F_FreeDecodingContext_0)
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(992)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(993)
 		v17 = int32(_a_F_FreeDecodingContext_1)
 		v18 = *(*int32)(unsafe.Add(mBase, _c_F_FreeDecodingContext[0]))
 		*(*int32)(unsafe.Add(mBase, _c_F_FreeDecodingContext[0])) = v7 + int32(4)
@@ -5423,7 +5423,7 @@ func F_filter_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = int64(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_filter_prepare_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
 	v17 = int32(_a_F_filter_prepare_cb_wrapper_1)
 	v18 = *(*int32)(unsafe.Add(mBase, _c_F_filter_prepare_cb_wrapper[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_filter_prepare_cb_wrapper[0])) = v8 + int32(4)
@@ -11694,94 +11694,6 @@ L84:
 L85:
 	;
 	return v205
-}
-func F_findoprnd(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	goto L1
-L1:
-	;
-	F_check_stack_depth(m)
-	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
-		goto L3
-	} else {
-		goto L4
-	}
-L3:
-	;
-	return
-L4:
-	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v16 = l0 + v13*int32(12)
-	v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16))))
-	switch v17 - int32(2) {
-	case 0, 4:
-		goto L6
-	default:
-		goto L5
-	}
-L5:
-	;
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v13 + int32(1)
-	if v28 == int32(33) {
-		goto L7
-	} else {
-		goto L8
-	}
-L6:
-	;
-	v23 = int32(0)
-	*(*uint16)(unsafe.Add(mBase, uint32(l0+v13*int32(12))+2)) = uint16(v23)
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v13 + int32(1)
-	return
-L7:
-	;
-	v34 = int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v16)+2)) = uint16(v34)
-	goto L1
-L8:
-	;
-	goto L9
-L9:
-	;
-	F_findoprnd(m, l0, l1)
-	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
-		goto L3
-	} else {
-		goto L10
-	}
-L10:
-	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v39 = v38 - v13
-	*(*uint16)(unsafe.Add(mBase, uint32(v16)+2)) = uint16(v39)
-	goto L1
 }
 func F_finish_spin_delay(m *base.Module, l0 int32) {
 	mBase := m.M
@@ -20620,7 +20532,7 @@ L458:
 	v1929 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v27)+76)) = uint8(v1929)
 	*(*int32)(unsafe.Add(mBase, uint32(v27)+72)) = v1316
-	v1936 = F_query_tree_walker_impl(m, l0, int32(1041), v27+int32(72), int32(3))
+	v1936 = F_query_tree_walker_impl(m, l0, int32(1042), v27+int32(72), int32(3))
 	mBase = m.M
 	v1937 = m.ExcPending
 	if v1937 != 0 {
@@ -21529,7 +21441,7 @@ L572:
 	goto L573
 L573:
 	;
-	v2361 = F_expression_tree_walker_impl(m, v2349, int32(1040), v27+int32(61))
+	v2361 = F_expression_tree_walker_impl(m, v2349, int32(1041), v27+int32(61))
 	mBase = m.M
 	v2362 = m.ExcPending
 	if v2362 != 0 {
@@ -21560,7 +21472,7 @@ L578:
 	*(*uint8)(unsafe.Add(mBase, uint32(v27)+76)) = uint8(v2377)
 	*(*int32)(unsafe.Add(mBase, uint32(v27)+72)) = v2345
 	v2380 = *(*int32)(unsafe.Add(mBase, uint32(v27)+68))
-	v2384 = F_expression_tree_walker_impl(m, v2380, int32(1041), v27+int32(72))
+	v2384 = F_expression_tree_walker_impl(m, v2380, int32(1042), v27+int32(72))
 	mBase = m.M
 	v2385 = m.ExcPending
 	if v2385 != 0 {
@@ -21585,7 +21497,7 @@ L580:
 	goto L581
 L581:
 	;
-	v2375 = F_expression_tree_walker_impl(m, v2363, int32(1040), v27+int32(61))
+	v2375 = F_expression_tree_walker_impl(m, v2363, int32(1041), v27+int32(61))
 	mBase = m.M
 	v2376 = m.ExcPending
 	if v2376 != 0 {
@@ -21602,7 +21514,7 @@ L583:
 L584:
 	;
 	v2386 = *(*int32)(unsafe.Add(mBase, uint32(v27)+64))
-	v2390 = F_expression_tree_walker_impl(m, v2386, int32(1041), v27+int32(72))
+	v2390 = F_expression_tree_walker_impl(m, v2386, int32(1042), v27+int32(72))
 	mBase = m.M
 	v2391 = m.ExcPending
 	if v2391 != 0 {

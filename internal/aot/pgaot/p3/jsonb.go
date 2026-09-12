@@ -1586,7 +1586,7 @@ func F_JsonbHashScalarValue(m *base.Module, l0 int32, l1 int32) {
 		return
 	case 2:
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v9 = F_DirectFunctionCall1Coll(m, int32(1344), int32(0), v8)
+		v9 = F_DirectFunctionCall1Coll(m, int32(1345), int32(0), v8)
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
@@ -3471,7 +3471,7 @@ L26:
 	;
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(v7)+24))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-	v53 = F_DirectFunctionCall2Coll(m, int32(1342), int32(0), v51, v52)
+	v53 = F_DirectFunctionCall2Coll(m, int32(1343), int32(0), v51, v52)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -7166,7 +7166,7 @@ L27:
 L28:
 	;
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v109)+8))
-	F_qsort_arg(m, v118, v115, int32(44), int32(1341), v13+int32(15))
+	F_qsort_arg(m, v118, v115, int32(44), int32(1342), v13+int32(15))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {

@@ -2,6 +2,15 @@ package p5
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__int_contained(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_contained_0)
+}
+func F_pg_finfo__int_matchsel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_matchsel_0)
+}
+func F_pg_finfo__intbig_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__intbig_in_0)
+}
 func F_pg_finfo__ltree_compress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltree_compress_0)
 }
@@ -17,6 +26,9 @@ func F_pg_finfo__ltree_extract_risparent(m *base.Module) int32 {
 func F_pg_finfo__ltxtq_rexec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltxtq_rexec_0)
 }
+func F_pg_finfo_bqarr_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bqarr_in_0)
+}
 func F_pg_finfo_citext_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_cmp_0)
 }
@@ -31,6 +43,9 @@ func F_pg_finfo_euc_jp_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_exists(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_exists_0)
+}
+func F_pg_finfo_g_intbig_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_options_0)
 }
 func F_pg_finfo_gbk_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbk_to_utf8_0)
@@ -238,6 +253,9 @@ func F_pg_finfo_hstore_to_json(m *base.Module) int32 {
 }
 func F_pg_finfo_hstore_version_diag(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_version_diag_0)
+}
+func F_pg_finfo_icount(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_icount_0)
 }
 func F_pg_finfo_int2_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_int2_dist_0)

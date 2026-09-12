@@ -31,7 +31,7 @@ func F_CreateAuxProcessResourceOwner(m *base.Module) {
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+352)) = v11
 		*(*int32)(unsafe.Add(mBase, _c_F_CreateAuxProcessResourceOwner[1])) = v6
 		*(*int32)(unsafe.Add(mBase, _c_F_CreateAuxProcessResourceOwner[2])) = v6
-		F_on_shmem_exit(m, int32(1833), int32(0))
+		F_on_shmem_exit(m, int32(1834), int32(0))
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {

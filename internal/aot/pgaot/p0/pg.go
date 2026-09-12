@@ -1509,11 +1509,11 @@ L1:
 	return
 L2:
 	;
-	v18 = int32(913)
+	v18 = int32(914)
 	v20 = m.G0
 	v22 = v20 - int32(144)
 	m.G0 = v22
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v32 = v18
 		goto L4
@@ -1579,11 +1579,11 @@ L15:
 	goto L9
 L16:
 	;
-	v102 = int32(915)
+	v102 = int32(916)
 	v104 = m.G0
 	v106 = v104 - int32(144)
 	m.G0 = v106
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v116 = v102
 		goto L30
@@ -1750,11 +1750,11 @@ L54:
 	goto L48
 L55:
 	;
-	v228 = int32(916)
+	v228 = int32(917)
 	v230 = m.G0
 	v232 = v230 - int32(144)
 	m.G0 = v232
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v242 = v228
 		goto L69
@@ -1807,11 +1807,11 @@ L67:
 	goto L61
 L68:
 	;
-	v270 = int32(944)
+	v270 = int32(945)
 	v272 = m.G0
 	v274 = v272 - int32(144)
 	m.G0 = v274
-	switch int32(946) {
+	switch int32(947) {
 	case 0, 2:
 		v284 = v270
 		goto L82
@@ -1975,7 +1975,7 @@ L106:
 	goto L100
 L107:
 	;
-	F_on_shmem_exit(m, int32(945), int32(0))
+	F_on_shmem_exit(m, int32(946), int32(0))
 	mBase = m.M
 	v360 = m.ExcPending
 	if v360 != 0 {
@@ -2001,7 +2001,7 @@ L109:
 	*(*int32)(unsafe.Add(mBase, _c_F_PgArchiverMain[11])) = v368
 	v371 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v368)+4)) = v371
-	v376 = F_binaryheap_allocate(m, int32(64), int32(946), v371)
+	v376 = F_binaryheap_allocate(m, int32(64), int32(947), v371)
 	mBase = m.M
 	v377 = m.ExcPending
 	if v377 != 0 {
@@ -2083,7 +2083,7 @@ L116:
 	}
 L117:
 	;
-	v411 = int32(947)
+	v411 = int32(948)
 	goto L116
 L118:
 	;
@@ -2163,7 +2163,7 @@ L127:
 	goto L128
 L128:
 	;
-	F_before_shmem_exit(m, int32(948), int32(0))
+	F_before_shmem_exit(m, int32(949), int32(0))
 	mBase = m.M
 	v432 = m.ExcPending
 	if v432 != 0 {
@@ -22878,6 +22878,34 @@ func F_pg_timezone_names(m *base.Module, l0 int32) int32 {
 	_ = v95
 	var v101 int32
 	_ = v101
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v118 int32
+	_ = v118
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v129 int32
+	_ = v129
+	var v135 int32
+	_ = v135
+	var v136 int32
+	_ = v136
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
 	var v141 int32
 	_ = v141
 	var v147 int32
@@ -23254,45 +23282,111 @@ L34:
 	goto L35
 L35:
 	;
-	goto L37
+	goto L38
 L36:
 	;
-	if base.B2i32(v101 != int32(0)) == int32(0) {
-		v196 = v93
-		v197 = v92
+	if v138 == int32(0) {
+		v196 = v135
+		v197 = v136
 		goto L30
 	} else {
 		goto L45
 	}
 L37:
 	;
+	v135 = v93
+	v136 = v92
+	v137 = v101
+	v138 = base.B2i32(v101 != int32(0))
 	goto L36
+L38:
+	;
+	if v101 == int32(0) {
+		goto L37
+	} else {
+		goto L39
+	}
+L39:
+	;
+	v114 = v93
+	v115 = v92
+	v116 = v101
+	goto L40
+L40:
+	;
+	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v114))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v115))) = uint8(v118)
+	if v118 == int32(0) {
+		v176 = v114
+		v177 = v115
+		v178 = v116
+		goto L31
+	} else {
+		goto L42
+	}
+L41:
+	;
+	v135 = v129
+	v136 = v123
+	v137 = v125
+	v138 = v127
+	goto L36
+L42:
+	;
+	v122 = int32(1)
+	v123 = v115 + v122
+	v125 = v116 - v122
+	v126 = int32(0)
+	v127 = base.B2i32(v125 != v126)
+	v129 = v114 + v122
+	if v129&int32(3) == v126 {
+		v135 = v129
+		v136 = v123
+		v137 = v125
+		v138 = v127
+		goto L36
+	} else {
+		goto L43
+	}
+L43:
+	;
+	if v125 != 0 {
+		v114 = v129
+		v115 = v123
+		v116 = v125
+		goto L40
+	} else {
+		goto L44
+	}
+L44:
+	;
+	goto L41
 L45:
 	;
-	v141 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_timezone_names[1])))
+	v141 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v135))))
 	if v141 == int32(0) {
-		v169 = v93
-		v170 = v92
-		v171 = v101
+		v169 = v135
+		v170 = v136
+		v171 = v137
 		goto L32
 	} else {
 		goto L46
 	}
 L46:
 	;
-	if base.Ui32(v101) < base.Ui32(int32(4)) {
-		v169 = v93
-		v170 = v92
-		v171 = v101
+	if base.Ui32(v137) < base.Ui32(int32(4)) {
+		v169 = v135
+		v170 = v136
+		v171 = v137
 		goto L32
 	} else {
 		goto L47
 	}
 L47:
 	;
-	v147 = v93
-	v148 = v92
-	v149 = v101
+	v147 = v135
+	v148 = v136
+	v149 = v137
 	goto L48
 L48:
 	;
@@ -23568,7 +23662,7 @@ L86:
 	}
 L87:
 	;
-	v314 = *(*int64)(unsafe.Add(mBase, _c_F_pg_timezone_names[2]))
+	v314 = *(*int64)(unsafe.Add(mBase, _c_F_pg_timezone_names[1]))
 	v323 = F_timestamp2tm(m, v314, v9+int32(88), v9+int32(44), v9+int32(40), v9+int32(36), v307)
 	mBase = m.M
 	v324 = m.ExcPending

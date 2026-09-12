@@ -1171,7 +1171,7 @@ func F_uuid_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v30
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1542)
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1543)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+20)))
 	if v9 == int32(1) {
 		v12 = int32(_a_F_uuid_sortsupport_0)
@@ -1193,9 +1193,9 @@ func F_uuid_sortsupport(m *base.Module, l0 int32) int32 {
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+32)) = int32(1542)
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+28)) = int32(1543)
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1544)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+32)) = int32(1543)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+28)) = int32(1544)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1545)
 				*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(116)
 				*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v18
 				*(*int32)(unsafe.Add(mBase, _c_F_uuid_sortsupport[0])) = v13

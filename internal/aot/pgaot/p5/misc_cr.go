@@ -80,10 +80,10 @@ func F_CreateDestReceiver(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v37)+16)) = int32(6)
-			*(*int32)(unsafe.Add(mBase, uint32(v37)+12)) = int32(783)
-			*(*int32)(unsafe.Add(mBase, uint32(v37)+8)) = int32(784)
-			*(*int32)(unsafe.Add(mBase, uint32(v37)+4)) = int32(785)
-			*(*int32)(unsafe.Add(mBase, uint32(v37))) = int32(786)
+			*(*int32)(unsafe.Add(mBase, uint32(v37)+12)) = int32(784)
+			*(*int32)(unsafe.Add(mBase, uint32(v37)+8)) = int32(785)
+			*(*int32)(unsafe.Add(mBase, uint32(v37)+4)) = int32(786)
+			*(*int32)(unsafe.Add(mBase, uint32(v37))) = int32(787)
 			return v37
 		}
 	case 6:
@@ -118,10 +118,10 @@ func F_CreateDestReceiver(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v71)+16)) = int32(9)
-			*(*int32)(unsafe.Add(mBase, uint32(v71)+12)) = int32(687)
-			*(*int32)(unsafe.Add(mBase, uint32(v71)+8)) = int32(688)
-			*(*int32)(unsafe.Add(mBase, uint32(v71)+4)) = int32(689)
-			*(*int32)(unsafe.Add(mBase, uint32(v71))) = int32(690)
+			*(*int32)(unsafe.Add(mBase, uint32(v71)+12)) = int32(688)
+			*(*int32)(unsafe.Add(mBase, uint32(v71)+8)) = int32(689)
+			*(*int32)(unsafe.Add(mBase, uint32(v71)+4)) = int32(690)
+			*(*int32)(unsafe.Add(mBase, uint32(v71))) = int32(691)
 			return v71
 		}
 	case 9:
@@ -133,10 +133,10 @@ func F_CreateDestReceiver(m *base.Module, l0 int32) int32 {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v85)+20)) = int32(0)
 			*(*int32)(unsafe.Add(mBase, uint32(v85)+16)) = int32(10)
-			*(*int32)(unsafe.Add(mBase, uint32(v85)+12)) = int32(561)
-			*(*int32)(unsafe.Add(mBase, uint32(v85)+8)) = int32(562)
-			*(*int32)(unsafe.Add(mBase, uint32(v85)+4)) = int32(563)
-			*(*int32)(unsafe.Add(mBase, uint32(v85))) = int32(564)
+			*(*int32)(unsafe.Add(mBase, uint32(v85)+12)) = int32(562)
+			*(*int32)(unsafe.Add(mBase, uint32(v85)+8)) = int32(563)
+			*(*int32)(unsafe.Add(mBase, uint32(v85)+4)) = int32(564)
+			*(*int32)(unsafe.Add(mBase, uint32(v85))) = int32(565)
 			return v85
 		}
 	case 10:
@@ -5363,7 +5363,7 @@ L368:
 	}
 L369:
 	;
-	F_pg_qsort(m, v23+int32(288), v1142, int32(2), int32(570))
+	F_pg_qsort(m, v23+int32(288), v1142, int32(2), int32(571))
 	mBase = m.M
 	v1465 = m.ExcPending
 	if v1465 != 0 {

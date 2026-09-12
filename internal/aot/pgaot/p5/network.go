@@ -120,7 +120,7 @@ func F_match_network_subset(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 				} else {
 					v28 = int32(-1)
 					v29 = int32(0)
-					v33 = F_DirectFunctionCall1Coll(m, int32(1461), v29, v15)
+					v33 = F_DirectFunctionCall1Coll(m, int32(1462), v29, v15)
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
@@ -161,13 +161,13 @@ func F_match_network_subset(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										} else {
 											v57 = int32(-1)
 											v58 = int32(0)
-											v64 = F_DirectFunctionCall1Coll(m, int32(1463), v58, v15)
+											v64 = F_DirectFunctionCall1Coll(m, int32(1464), v58, v15)
 											mBase = m.M
 											v65 = m.ExcPending
 											if v65 != 0 {
 												return int32(0)
 											} else {
-												v67 = F_DirectFunctionCall2Coll(m, int32(1462), v58, v64, int32(-1))
+												v67 = F_DirectFunctionCall2Coll(m, int32(1463), v58, v64, int32(-1))
 												mBase = m.M
 												v68 = m.ExcPending
 												if v68 != 0 {

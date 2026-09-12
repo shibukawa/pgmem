@@ -1074,7 +1074,7 @@ L17:
 L18:
 	;
 	v61 = *(*int32)(unsafe.Add(mBase, uint32(v22)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v57)+72)) = int32(680)
+	*(*int32)(unsafe.Add(mBase, uint32(v57)+72)) = int32(681)
 	*(*int32)(unsafe.Add(mBase, uint32(v57)+60)) = v61
 	*(*int32)(unsafe.Add(mBase, uint32(v57)+76)) = v57
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v22)+20))
@@ -1097,7 +1097,7 @@ L20:
 	*(*uint8)(unsafe.Add(mBase, uint32(v75)+4)) = uint8(v237)
 	*(*uint8)(unsafe.Add(mBase, uint32(v75)+8)) = uint8(v49)
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = v75
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = int32(683)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = int32(684)
 	v243 = int32(_a_F_fmgr_sql_0)
 	v244 = *(*int32)(unsafe.Add(mBase, _c_F_fmgr_sql[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_fmgr_sql[0])) = v19 + int32(4)
@@ -1108,7 +1108,7 @@ L20:
 L21:
 	;
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-	v97 = F_cached_function_compile(m, l0, v91, int32(681), int32(682), int32(88), int32(1), int32(0))
+	v97 = F_cached_function_compile(m, l0, v91, int32(682), int32(683), int32(88), int32(1), int32(0))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -2091,7 +2091,7 @@ L161:
 L162:
 	;
 	v590 = *(*int32)(unsafe.Add(mBase, uint32(v578)+4))
-	F_UnregisterExprContextCallback(m, v590, int32(684), v75)
+	F_UnregisterExprContextCallback(m, v590, int32(685), v75)
 	mBase = m.M
 	v593 = m.ExcPending
 	if v593 != 0 {
@@ -2135,7 +2135,7 @@ L167:
 L168:
 	;
 	v611 = *(*int32)(unsafe.Add(mBase, uint32(v578)+4))
-	F_UnregisterExprContextCallback(m, v611, int32(684), v75)
+	F_UnregisterExprContextCallback(m, v611, int32(685), v75)
 	mBase = m.M
 	v614 = m.ExcPending
 	if v614 != 0 {
@@ -2448,7 +2448,7 @@ L207:
 L208:
 	;
 	v756 = *(*int32)(unsafe.Add(mBase, uint32(v718)+4))
-	F_RegisterExprContextCallback(m, v756, int32(684), v75)
+	F_RegisterExprContextCallback(m, v756, int32(685), v75)
 	mBase = m.M
 	v759 = m.ExcPending
 	if v759 != 0 {

@@ -1166,7 +1166,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_lookup_ts_config_cache[0])) = v25
-	F_CacheRegisterSyscacheCallback(m, int32(74), int32(1612), v25)
+	F_CacheRegisterSyscacheCallback(m, int32(74), int32(1613), v25)
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -1177,7 +1177,7 @@ L4:
 L5:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, _c_F_lookup_ts_config_cache[0]))
-	F_CacheRegisterSyscacheCallback(m, int32(72), int32(1612), v37)
+	F_CacheRegisterSyscacheCallback(m, int32(72), int32(1613), v37)
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {

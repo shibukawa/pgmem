@@ -1418,7 +1418,7 @@ func F_texteqfast(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_DirectFunctionCall2Coll(m, int32(1559), int32(100), l0, l1)
+	v5 = F_DirectFunctionCall2Coll(m, int32(1560), int32(100), l0, l1)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1442,7 +1442,7 @@ func F_textgtname(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1558), v3, v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1559), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -1456,7 +1456,7 @@ func F_texthashfast(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_DirectFunctionCall1Coll(m, int32(1585), int32(100), l0)
+	v4 = F_DirectFunctionCall1Coll(m, int32(1586), int32(100), l0)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -5124,7 +5124,7 @@ L236:
 	goto L235
 L237:
 	;
-	F_pg_qsort(m, v913, v908, int32(8), int32(1164))
+	F_pg_qsort(m, v913, v908, int32(8), int32(1165))
 	mBase = m.M
 	v933 = m.ExcPending
 	if v933 != 0 {
@@ -8012,7 +8012,7 @@ func F_tokenize_auth_file(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	v24 = m.G0
 	v26 = v24 - int32(80)
 	m.G0 = v26
-	*(*int32)(unsafe.Add(mBase, uint32(v26)+36)) = int32(798)
+	*(*int32)(unsafe.Add(mBase, uint32(v26)+36)) = int32(799)
 	v30 = int32(_a_F_tokenize_auth_file_0)
 	v31 = *(*int32)(unsafe.Add(mBase, _c_F_tokenize_auth_file[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_tokenize_auth_file[0])) = v26 + int32(32)
@@ -15747,7 +15747,7 @@ L19:
 	goto L20
 L20:
 	;
-	F_pg_qsort(m, v16, v76, int32(4), int32(1528))
+	F_pg_qsort(m, v16, v76, int32(4), int32(1529))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -15847,7 +15847,7 @@ L34:
 	goto L35
 L35:
 	;
-	F_pg_qsort(m, v86, v146, int32(4), int32(1528))
+	F_pg_qsort(m, v86, v146, int32(4), int32(1529))
 	mBase = m.M
 	v231 = m.ExcPending
 	if v231 != 0 {
@@ -17528,7 +17528,7 @@ L62:
 	goto L63
 L63:
 	;
-	F_qsort_arg(m, v231, v227, int32(12), int32(1534), v233)
+	F_qsort_arg(m, v231, v227, int32(12), int32(1535), v233)
 	mBase = m.M
 	v257 = m.ExcPending
 	if v257 != 0 {
@@ -17734,7 +17734,7 @@ L89:
 L90:
 	;
 	v346 = *(*int32)(unsafe.Add(mBase, uint32(v260)+4))
-	F_pg_qsort(m, v346, v343, int32(2), int32(1535))
+	F_pg_qsort(m, v346, v343, int32(2), int32(1536))
 	mBase = m.M
 	v350 = m.ExcPending
 	if v350 != 0 {
@@ -17956,7 +17956,7 @@ L121:
 L122:
 	;
 	v551 = *(*int32)(unsafe.Add(mBase, uint32(v523)+4))
-	F_pg_qsort(m, v551, v548, int32(2), int32(1535))
+	F_pg_qsort(m, v551, v548, int32(2), int32(1536))
 	mBase = m.M
 	v555 = m.ExcPending
 	if v555 != 0 {

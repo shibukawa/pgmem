@@ -3056,7 +3056,7 @@ L93:
 	;
 	v746 = *(*int32)(unsafe.Add(mBase, uint32(v410)))
 	v747 = *(*int32)(unsafe.Add(mBase, uint32(v410)+4))
-	F_pg_qsort(m, v746, v747, int32(16), int32(818))
+	F_pg_qsort(m, v746, v747, int32(16), int32(819))
 	mBase = m.M
 	v751 = m.ExcPending
 	if v751 != 0 {
@@ -10663,7 +10663,7 @@ L230:
 L231:
 	;
 	v1412 = *(*int32)(unsafe.Add(mBase, uint32(l1)+104))
-	v1413 = F_generate_implied_equalities_for_column(m, l0, l1, int32(826), int32(0), v1412)
+	v1413 = F_generate_implied_equalities_for_column(m, l0, l1, int32(827), int32(0), v1412)
 	mBase = m.M
 	v1414 = m.ExcPending
 	if v1414 != 0 {
@@ -11191,7 +11191,7 @@ L305:
 	*(*int32)(unsafe.Add(mBase, uint32(v1586)+408)) = v1633
 	v1856 = *(*int32)(unsafe.Add(mBase, uint32(v1633)+12))
 	v1860 = *(*int32)(unsafe.Add(mBase, uint32(v1856)+104))
-	v1861 = F_generate_implied_equalities_for_column(m, l0, v1856, int32(820), v1586+int32(408), v1860)
+	v1861 = F_generate_implied_equalities_for_column(m, l0, v1856, int32(821), v1586+int32(408), v1860)
 	mBase = m.M
 	v1862 = m.ExcPending
 	if v1862 != 0 {

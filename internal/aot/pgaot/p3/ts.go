@@ -1933,7 +1933,7 @@ func F_ts_headline_json(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1190), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -1966,7 +1966,7 @@ func F_ts_headline_jsonb(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1188), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -2009,7 +2009,7 @@ func F_ts_match_tq(m *base.Module, l0 int32) int32 {
 	v6 = l0 + int32(28)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = F_DirectFunctionCall1Coll(m, int32(1540), v2, v12)
+	v13 = F_DirectFunctionCall1Coll(m, int32(1541), v2, v12)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -2021,7 +2021,7 @@ func F_ts_match_tq(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v19 = F_DirectFunctionCall2Coll(m, int32(1538), v2, v17, v7)
+			v19 = F_DirectFunctionCall2Coll(m, int32(1539), v2, v17, v7)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {

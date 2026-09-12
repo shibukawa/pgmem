@@ -1337,8 +1337,8 @@ L28:
 L29:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+56)) = v17
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = int32(1656)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1657)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = int32(1657)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1658)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(34359738372)
 	v152 = base.I32_div_s(v136, int32(4))
 	v157 = F_hash_create(m, int32(_a_F_build_guc_variables_8), v152+v136, v6+int32(-48), int32(1224))

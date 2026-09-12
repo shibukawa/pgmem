@@ -387,8 +387,8 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 			v17 = int64(-1)
 			*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v17
 			*(*int64)(unsafe.Add(mBase, uint32(v11))) = v17
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1545)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1546)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1546)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1547)
 			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v11
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = v6
 			return int32(0)

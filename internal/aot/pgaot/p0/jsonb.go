@@ -168,7 +168,7 @@ func F_JsonbValueAsText(m *base.Module, l0 int32) int32 {
 		}
 	case 2:
 		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v25 = F_DirectFunctionCall1Coll(m, int32(617), int32(0), v24)
+		v25 = F_DirectFunctionCall1Coll(m, int32(618), int32(0), v24)
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -1564,7 +1564,7 @@ L8:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v18 = F_DirectFunctionCall2Coll(m, int32(1343), int32(0), v16, v17)
+	v18 = F_DirectFunctionCall2Coll(m, int32(1344), int32(0), v16, v17)
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -2913,12 +2913,12 @@ L20:
 	v90 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v71))) = uint8(v90)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+52)) = v69
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1325)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(1326)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = int32(1327)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1328)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1329)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(1330)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1326)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(1327)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = int32(1328)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1329)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1330)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(1331)
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(40)
 	v110 = F_pg_parse_json_or_errsave(m, v9+int32(60), v9, v69)
 	mBase = m.M
@@ -3306,7 +3306,7 @@ func F_jsonb_int2(m *base.Module, l0 int32) int32 {
 					}
 				case 2:
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-					v35 = F_DirectFunctionCall1Coll(m, int32(1332), int32(0), v34)
+					v35 = F_DirectFunctionCall1Coll(m, int32(1333), int32(0), v34)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -3441,7 +3441,7 @@ func F_jsonb_int8(m *base.Module, l0 int32) int32 {
 					}
 				case 2:
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-					v35 = F_DirectFunctionCall1Coll(m, int32(1276), int32(0), v34)
+					v35 = F_DirectFunctionCall1Coll(m, int32(1277), int32(0), v34)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -4570,7 +4570,7 @@ L85:
 L86:
 	;
 	v303 = *(*int32)(unsafe.Add(mBase, uint32(v12)+36))
-	v304 = F_DirectFunctionCall1Coll(m, int32(1331), int32(0), v303)
+	v304 = F_DirectFunctionCall1Coll(m, int32(1332), int32(0), v303)
 	mBase = m.M
 	v305 = m.ExcPending
 	if v305 != 0 {
@@ -5747,7 +5747,7 @@ L5:
 	goto L6
 L6:
 	;
-	v40 = F_executeJsonPath(m, v18, v33, int32(1409), int32(1410), v13, base.B2i32(v32 == int32(0)), v10+int32(8), l1)
+	v40 = F_executeJsonPath(m, v18, v33, int32(1410), int32(1411), v13, base.B2i32(v32 == int32(0)), v10+int32(8), l1)
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -6237,7 +6237,7 @@ L17:
 	return int32(0)
 L18:
 	;
-	v64 = F_DirectFunctionCall1Coll(m, int32(1313), int32(0), v56)
+	v64 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v56)
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {

@@ -1475,14 +1475,14 @@ L44:
 	;
 	v242 = *(*int32)(unsafe.Add(mBase, uint32(l2)+192))
 	v243 = int32(*(*int16)(unsafe.Add(mBase, uint32(v242)+10)))
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+8)) = int32(1840)
+	*(*int32)(unsafe.Add(mBase, uint32(v207)+8)) = int32(1841)
 	*(*int32)(unsafe.Add(mBase, uint32(v207)+40)) = v243
 	*(*int32)(unsafe.Add(mBase, uint32(v207)+60)) = v215
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+20)) = int32(1841)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+16)) = int32(1842)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+12)) = int32(1843)
-	*(*int32)(unsafe.Add(mBase, uint32(v207)+4)) = int32(1844)
-	*(*int32)(unsafe.Add(mBase, uint32(v207))) = int32(1845)
+	*(*int32)(unsafe.Add(mBase, uint32(v207)+20)) = int32(1842)
+	*(*int32)(unsafe.Add(mBase, uint32(v207)+16)) = int32(1843)
+	*(*int32)(unsafe.Add(mBase, uint32(v207)+12)) = int32(1844)
+	*(*int32)(unsafe.Add(mBase, uint32(v207)+4)) = int32(1845)
+	*(*int32)(unsafe.Add(mBase, uint32(v207))) = int32(1846)
 	v258 = F_BuildIndexInfo(m, l2)
 	mBase = m.M
 	v259 = m.ExcPending

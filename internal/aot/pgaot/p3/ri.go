@@ -1180,7 +1180,7 @@ func F_ri_PlanCheck(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, _c_F_ri_PlanCheck[3])) = v58
-						F_CacheRegisterSyscacheCallback(m, int32(19), int32(1500), int32(0))
+						F_CacheRegisterSyscacheCallback(m, int32(19), int32(1501), int32(0))
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {

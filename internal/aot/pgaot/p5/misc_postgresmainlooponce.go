@@ -9104,27 +9104,27 @@ L430:
 L431:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_34)
-	v1841 = int32(299)
+	v1841 = int32(300)
 	goto L430
 L432:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_35)
-	v1841 = int32(334)
+	v1841 = int32(335)
 	goto L430
 L433:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_36)
-	v1841 = int32(333)
+	v1841 = int32(335)
 	goto L430
 L434:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_37)
-	v1841 = int32(334)
+	v1841 = int32(335)
 	goto L430
 L435:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_38)
-	v1841 = int32(1387)
+	v1841 = int32(1393)
 	goto L430
 L436:
 	;
@@ -9134,32 +9134,32 @@ L436:
 L437:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_40)
-	v1841 = int32(1184)
+	v1841 = int32(1190)
 	goto L430
 L438:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_41)
-	v1841 = int32(332)
+	v1841 = int32(333)
 	goto L430
 L439:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_42)
-	v1841 = int32(1206)
+	v1841 = int32(1212)
 	goto L430
 L440:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_43)
-	v1841 = int32(1206)
+	v1841 = int32(1211)
 	goto L430
 L441:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_44)
-	v1841 = int32(1433)
+	v1841 = int32(1439)
 	goto L430
 L442:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_45)
-	v1841 = int32(398)
+	v1841 = int32(400)
 	goto L430
 L443:
 	;
@@ -9169,37 +9169,37 @@ L443:
 L444:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_47)
-	v1841 = int32(328)
+	v1841 = int32(329)
 	goto L430
 L445:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_48)
-	v1841 = int32(328)
+	v1841 = int32(329)
 	goto L430
 L446:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_49)
-	v1841 = int32(328)
+	v1841 = int32(329)
 	goto L430
 L447:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_50)
-	v1841 = int32(1023)
+	v1841 = int32(1027)
 	goto L430
 L448:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_51)
-	v1841 = int32(122)
+	v1841 = int32(123)
 	goto L430
 L449:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_52)
-	v1841 = int32(1111)
+	v1841 = int32(1116)
 	goto L430
 L450:
 	;
 	v1840 = int32(_a_F_PostgresMainLoopOnce_53)
-	v1841 = int32(897)
+	v1841 = int32(901)
 	goto L430
 L451:
 	;
@@ -12547,7 +12547,7 @@ L872:
 	v3033 = v3031 - int32(144)
 	m.G0 = v3033
 	*(*int32)(unsafe.Add(mBase, uint32(v3033)+120)) = int32(394)
-	*(*int32)(unsafe.Add(mBase, uint32(v3033)+116)) = int32(1030)
+	*(*int32)(unsafe.Add(mBase, uint32(v3033)+116)) = int32(1031)
 	v3039 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v3033)+112)) = v3039
 	v3043 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[88]))
@@ -13197,7 +13197,7 @@ L953:
 L954:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[97])) = int32(1)
-	F_WalSndLoop(m, int32(1036))
+	F_WalSndLoop(m, int32(1037))
 	mBase = m.M
 	v3337 = m.ExcPending
 	if v3337 != 0 {
@@ -13471,9 +13471,9 @@ L986:
 	v3498 = *(*int32)(unsafe.Add(mBase, uint32(v1982)+24))
 	v3499 = *(*int64)(unsafe.Add(mBase, uint32(v1982)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[74]))) = int32(394)
-	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[73]))) = int32(1030)
-	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[72]))) = int32(1031)
-	v3513 = F_CreateDecodingContext(m, v3499, v3498, int32(0), v685+int32(_a_F_PostgresMainLoopOnce_73), int32(1032), int32(1033), int32(1034))
+	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[73]))) = int32(1031)
+	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[72]))) = int32(1032)
+	v3513 = F_CreateDecodingContext(m, v3499, v3498, int32(0), v685+int32(_a_F_PostgresMainLoopOnce_73), int32(1033), int32(1034), int32(1035))
 	mBase = m.M
 	v3514 = m.ExcPending
 	if v3514 != 0 {
@@ -13727,7 +13727,7 @@ L1016:
 	goto L1015
 L1017:
 	;
-	F_WalSndLoop(m, int32(1035))
+	F_WalSndLoop(m, int32(1036))
 	mBase = m.M
 	v3621 = m.ExcPending
 	if v3621 != 0 {
@@ -16253,9 +16253,9 @@ L1326:
 	;
 	v5069 = *(*int32)(unsafe.Add(mBase, uint32(v2308)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[74]))) = int32(394)
-	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[73]))) = int32(1030)
-	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[72]))) = int32(1031)
-	v5082 = F_CreateInitDecodingContext(m, v5069, v5068, int64(0), v685+int32(_a_F_PostgresMainLoopOnce_73), int32(1032), int32(1033), int32(1034))
+	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[73]))) = int32(1031)
+	*(*int32)(unsafe.Add(mBase, uint32(v685)+uint32(_c_F_PostgresMainLoopOnce[72]))) = int32(1032)
+	v5082 = F_CreateInitDecodingContext(m, v5069, v5068, int64(0), v685+int32(_a_F_PostgresMainLoopOnce_73), int32(1033), int32(1034), int32(1035))
 	mBase = m.M
 	v5083 = m.ExcPending
 	if v5083 != 0 {
@@ -20111,7 +20111,7 @@ L1862:
 	v7905 = int32(_a_F_PostgresMainLoopOnce_195)
 	v7906 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(512)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1161)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1162)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+512)) = v7906
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+520)) = v39 + int32(460)
 	v7921 = F_pq_getmsgint(m, v39+int32(440), int32(2))
@@ -20220,7 +20220,7 @@ L1875:
 	v7621 = int32(_a_F_PostgresMainLoopOnce_195)
 	v7622 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(512)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1160)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1161)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+512)) = v7622
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+520)) = v39 + int32(460)
 	v7635 = F_makeParamList(m, v7535)
@@ -21986,7 +21986,7 @@ L2121:
 	v8883 = int32(_a_F_PostgresMainLoopOnce_195)
 	v8884 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(460)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+464)) = int32(1161)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+464)) = int32(1162)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+460)) = v8884
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+468)) = v39 + int32(472)
 	if v8293 <= int32(0) {

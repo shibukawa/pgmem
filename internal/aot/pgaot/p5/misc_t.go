@@ -6252,7 +6252,7 @@ func F_tsearch_readline_begin(m *base.Module, l0 int32, l1 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(1178)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(1179)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0
 				v22 = int32(_a_F_tsearch_readline_begin_1)
@@ -6382,7 +6382,7 @@ func F_tsq_mcontained(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1529), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1530), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -6538,11 +6538,11 @@ L12:
 L13:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(786)
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(787)
 	goto L12
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(788)
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(789)
 	v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	v67 = v8 << (uint(int32(2)) % 32)
 	v68 = F_MemoryContextAlloc(m, v65, v67)
@@ -6597,7 +6597,7 @@ L20:
 L21:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+40)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(787)
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(788)
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	v55 = F_MakeSingleTupleTableSlot(m, v53, int32(_a_F_tstoreStartupReceiver_1))
 	mBase = m.M

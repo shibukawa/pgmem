@@ -593,7 +593,7 @@ L50:
 	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(_a_F_LogicalSlotAdvanceAndCheckSnapState_3)
 	*(*int32)(unsafe.Add(mBase, uint32(v77))) = v100
 	*(*int32)(unsafe.Add(mBase, uint32(v75)+8)) = v77
-	*(*int32)(unsafe.Add(mBase, uint32(v75)+4)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v75)+4)) = int32(993)
 	v206 = int32(_a_F_LogicalSlotAdvanceAndCheckSnapState_4)
 	v207 = *(*int32)(unsafe.Add(mBase, _c_F_LogicalSlotAdvanceAndCheckSnapState[1]))
 	*(*int32)(unsafe.Add(mBase, uint32(v75))) = v207

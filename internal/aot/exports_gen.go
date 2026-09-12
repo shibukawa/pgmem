@@ -7874,6 +7874,636 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoNormalRand(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func__int":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func__int: want 0 args")
+		}
+		r := pgaot.PgMagicFuncInt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contained":
+		if len(a) != 1 {
+			panic("aot: _int_contained: want 1 args")
+		}
+		r := pgaot.IntContained(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contained_joinsel":
+		if len(a) != 1 {
+			panic("aot: _int_contained_joinsel: want 1 args")
+		}
+		r := pgaot.IntContainedJoinsel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contained_sel":
+		if len(a) != 1 {
+			panic("aot: _int_contained_sel: want 1 args")
+		}
+		r := pgaot.IntContainedSel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contains":
+		if len(a) != 1 {
+			panic("aot: _int_contains: want 1 args")
+		}
+		r := pgaot.IntContains(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contains_joinsel":
+		if len(a) != 1 {
+			panic("aot: _int_contains_joinsel: want 1 args")
+		}
+		r := pgaot.IntContainsJoinsel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_contains_sel":
+		if len(a) != 1 {
+			panic("aot: _int_contains_sel: want 1 args")
+		}
+		r := pgaot.IntContainsSel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_different":
+		if len(a) != 1 {
+			panic("aot: _int_different: want 1 args")
+		}
+		r := pgaot.IntDifferent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_inter":
+		if len(a) != 1 {
+			panic("aot: _int_inter: want 1 args")
+		}
+		r := pgaot.IntInter(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_matchsel":
+		if len(a) != 1 {
+			panic("aot: _int_matchsel: want 1 args")
+		}
+		r := pgaot.IntMatchsel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_overlap":
+		if len(a) != 1 {
+			panic("aot: _int_overlap: want 1 args")
+		}
+		r := pgaot.IntOverlap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_overlap_joinsel":
+		if len(a) != 1 {
+			panic("aot: _int_overlap_joinsel: want 1 args")
+		}
+		r := pgaot.IntOverlapJoinsel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_overlap_sel":
+		if len(a) != 1 {
+			panic("aot: _int_overlap_sel: want 1 args")
+		}
+		r := pgaot.IntOverlapSel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_same":
+		if len(a) != 1 {
+			panic("aot: _int_same: want 1 args")
+		}
+		r := pgaot.IntSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_int_union":
+		if len(a) != 1 {
+			panic("aot: _int_union: want 1 args")
+		}
+		r := pgaot.IntUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_intbig_in":
+		if len(a) != 1 {
+			panic("aot: _intbig_in: want 1 args")
+		}
+		r := pgaot.IntbigIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_intbig_out":
+		if len(a) != 1 {
+			panic("aot: _intbig_out: want 1 args")
+		}
+		r := pgaot.IntbigOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "boolop":
+		if len(a) != 1 {
+			panic("aot: boolop: want 1 args")
+		}
+		r := pgaot.Boolop(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bqarr_in":
+		if len(a) != 1 {
+			panic("aot: bqarr_in: want 1 args")
+		}
+		r := pgaot.BqarrIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bqarr_out":
+		if len(a) != 1 {
+			panic("aot: bqarr_out: want 1 args")
+		}
+		r := pgaot.BqarrOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_compress":
+		if len(a) != 1 {
+			panic("aot: g_int_compress: want 1 args")
+		}
+		r := pgaot.GIntCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_consistent":
+		if len(a) != 1 {
+			panic("aot: g_int_consistent: want 1 args")
+		}
+		r := pgaot.GIntConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_decompress":
+		if len(a) != 1 {
+			panic("aot: g_int_decompress: want 1 args")
+		}
+		r := pgaot.GIntDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_options":
+		if len(a) != 1 {
+			panic("aot: g_int_options: want 1 args")
+		}
+		r := pgaot.GIntOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_penalty":
+		if len(a) != 1 {
+			panic("aot: g_int_penalty: want 1 args")
+		}
+		r := pgaot.GIntPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_picksplit":
+		if len(a) != 1 {
+			panic("aot: g_int_picksplit: want 1 args")
+		}
+		r := pgaot.GIntPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_same":
+		if len(a) != 1 {
+			panic("aot: g_int_same: want 1 args")
+		}
+		r := pgaot.GIntSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_int_union":
+		if len(a) != 1 {
+			panic("aot: g_int_union: want 1 args")
+		}
+		r := pgaot.GIntUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_compress":
+		if len(a) != 1 {
+			panic("aot: g_intbig_compress: want 1 args")
+		}
+		r := pgaot.GIntbigCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_consistent":
+		if len(a) != 1 {
+			panic("aot: g_intbig_consistent: want 1 args")
+		}
+		r := pgaot.GIntbigConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_decompress":
+		if len(a) != 1 {
+			panic("aot: g_intbig_decompress: want 1 args")
+		}
+		r := pgaot.GIntbigDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_options":
+		if len(a) != 1 {
+			panic("aot: g_intbig_options: want 1 args")
+		}
+		r := pgaot.GIntbigOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_penalty":
+		if len(a) != 1 {
+			panic("aot: g_intbig_penalty: want 1 args")
+		}
+		r := pgaot.GIntbigPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_picksplit":
+		if len(a) != 1 {
+			panic("aot: g_intbig_picksplit: want 1 args")
+		}
+		r := pgaot.GIntbigPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_same":
+		if len(a) != 1 {
+			panic("aot: g_intbig_same: want 1 args")
+		}
+		r := pgaot.GIntbigSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_intbig_union":
+		if len(a) != 1 {
+			panic("aot: g_intbig_union: want 1 args")
+		}
+		r := pgaot.GIntbigUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ginint4_consistent":
+		if len(a) != 1 {
+			panic("aot: ginint4_consistent: want 1 args")
+		}
+		r := pgaot.Ginint4Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ginint4_queryextract":
+		if len(a) != 1 {
+			panic("aot: ginint4_queryextract: want 1 args")
+		}
+		r := pgaot.Ginint4Queryextract(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "icount":
+		if len(a) != 1 {
+			panic("aot: icount: want 1 args")
+		}
+		r := pgaot.Icount(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "idx":
+		if len(a) != 1 {
+			panic("aot: idx: want 1 args")
+		}
+		r := pgaot.Idx(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intarray_del_elem":
+		if len(a) != 1 {
+			panic("aot: intarray_del_elem: want 1 args")
+		}
+		r := pgaot.IntarrayDelElem(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intarray_push_array":
+		if len(a) != 1 {
+			panic("aot: intarray_push_array: want 1 args")
+		}
+		r := pgaot.IntarrayPushArray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intarray_push_elem":
+		if len(a) != 1 {
+			panic("aot: intarray_push_elem: want 1 args")
+		}
+		r := pgaot.IntarrayPushElem(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intset":
+		if len(a) != 1 {
+			panic("aot: intset: want 1 args")
+		}
+		r := pgaot.Intset(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intset_subtract":
+		if len(a) != 1 {
+			panic("aot: intset_subtract: want 1 args")
+		}
+		r := pgaot.IntsetSubtract(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "intset_union_elem":
+		if len(a) != 1 {
+			panic("aot: intset_union_elem: want 1 args")
+		}
+		r := pgaot.IntsetUnionElem(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contained":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contained: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContained(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contained_joinsel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contained_joinsel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContainedJoinsel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contained_sel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contained_sel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContainedSel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contains":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contains: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContains(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contains_joinsel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contains_joinsel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContainsJoinsel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_contains_sel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_contains_sel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntContainsSel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_different":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_different: want 0 args")
+		}
+		r := pgaot.PgFinfoIntDifferent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_inter":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_inter: want 0 args")
+		}
+		r := pgaot.PgFinfoIntInter(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_matchsel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_matchsel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntMatchsel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_overlap":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_overlap: want 0 args")
+		}
+		r := pgaot.PgFinfoIntOverlap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_overlap_joinsel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_overlap_joinsel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntOverlapJoinsel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_overlap_sel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_overlap_sel: want 0 args")
+		}
+		r := pgaot.PgFinfoIntOverlapSel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_same: want 0 args")
+		}
+		r := pgaot.PgFinfoIntSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__int_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__int_union: want 0 args")
+		}
+		r := pgaot.PgFinfoIntUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__intbig_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__intbig_in: want 0 args")
+		}
+		r := pgaot.PgFinfoIntbigIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__intbig_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__intbig_out: want 0 args")
+		}
+		r := pgaot.PgFinfoIntbigOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_boolop":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_boolop: want 0 args")
+		}
+		r := pgaot.PgFinfoBoolop(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bqarr_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bqarr_in: want 0 args")
+		}
+		r := pgaot.PgFinfoBqarrIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bqarr_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bqarr_out: want 0 args")
+		}
+		r := pgaot.PgFinfoBqarrOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_options: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_int_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_int_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_options: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_intbig_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_intbig_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGIntbigUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ginint4_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ginint4_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGinint4Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ginint4_queryextract":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ginint4_queryextract: want 0 args")
+		}
+		r := pgaot.PgFinfoGinint4Queryextract(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_icount":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_icount: want 0 args")
+		}
+		r := pgaot.PgFinfoIcount(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_idx":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_idx: want 0 args")
+		}
+		r := pgaot.PgFinfoIdx(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intarray_del_elem":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intarray_del_elem: want 0 args")
+		}
+		r := pgaot.PgFinfoIntarrayDelElem(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intarray_push_array":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intarray_push_array: want 0 args")
+		}
+		r := pgaot.PgFinfoIntarrayPushArray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intarray_push_elem":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intarray_push_elem: want 0 args")
+		}
+		r := pgaot.PgFinfoIntarrayPushElem(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intset":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intset: want 0 args")
+		}
+		r := pgaot.PgFinfoIntset(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intset_subtract":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intset_subtract: want 0 args")
+		}
+		r := pgaot.PgFinfoIntsetSubtract(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_intset_union_elem":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_intset_union_elem: want 0 args")
+		}
+		r := pgaot.PgFinfoIntsetUnionElem(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_querytree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_querytree: want 0 args")
+		}
+		r := pgaot.PgFinfoQuerytree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_rboolop":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_rboolop: want 0 args")
+		}
+		r := pgaot.PgFinfoRboolop(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sort":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sort: want 0 args")
+		}
+		r := pgaot.PgFinfoSort(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sort_asc":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sort_asc: want 0 args")
+		}
+		r := pgaot.PgFinfoSortAsc(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sort_desc":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sort_desc: want 0 args")
+		}
+		r := pgaot.PgFinfoSortDesc(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_subarray":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_subarray: want 0 args")
+		}
+		r := pgaot.PgFinfoSubarray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uniq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uniq: want 0 args")
+		}
+		r := pgaot.PgFinfoUniq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "querytree":
+		if len(a) != 1 {
+			panic("aot: querytree: want 1 args")
+		}
+		r := pgaot.Querytree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "rboolop":
+		if len(a) != 1 {
+			panic("aot: rboolop: want 1 args")
+		}
+		r := pgaot.Rboolop(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sort":
+		if len(a) != 1 {
+			panic("aot: sort: want 1 args")
+		}
+		r := pgaot.Sort(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sort_asc":
+		if len(a) != 1 {
+			panic("aot: sort_asc: want 1 args")
+		}
+		r := pgaot.SortAsc(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sort_desc":
+		if len(a) != 1 {
+			panic("aot: sort_desc: want 1 args")
+		}
+		r := pgaot.SortDesc(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "subarray":
+		if len(a) != 1 {
+			panic("aot: subarray: want 1 args")
+		}
+		r := pgaot.Subarray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uniq":
+		if len(a) != 1 {
+			panic("aot: uniq: want 1 args")
+		}
+		r := pgaot.Uniq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

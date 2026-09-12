@@ -549,7 +549,7 @@ func F_stream_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(_a_F_stream_change_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v16
 	v20 = int32(_a_F_stream_change_cb_wrapper_1)
 	v21 = *(*int32)(unsafe.Add(mBase, _c_F_stream_change_cb_wrapper[0]))
@@ -649,7 +649,7 @@ func F_stream_truncate_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, 
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(_a_F_stream_truncate_cb_wrapper_0)
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v14
 		v19 = *(*int64)(unsafe.Add(mBase, uint32(l4)))
-		*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(992)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(993)
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+24)) = v19
 		v23 = int32(_a_F_stream_truncate_cb_wrapper_1)
 		v24 = *(*int32)(unsafe.Add(mBase, _c_F_stream_truncate_cb_wrapper[0]))

@@ -580,28 +580,28 @@ func F_spg_box_quad_picksplit(m *base.Module, l0 int32) int32 {
 					} else {
 						v88 = v42
 					}
-					F_pg_qsort(m, v23, v88, int32(8), int32(1316))
+					F_pg_qsort(m, v23, v88, int32(8), int32(1317))
 					mBase = m.M
 					v106 = m.ExcPending
 					if v106 != 0 {
 						return int32(0)
 					} else {
 						v107 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-						F_pg_qsort(m, v30, v107, int32(8), int32(1316))
+						F_pg_qsort(m, v30, v107, int32(8), int32(1317))
 						mBase = m.M
 						v111 = m.ExcPending
 						if v111 != 0 {
 							return int32(0)
 						} else {
 							v112 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-							F_pg_qsort(m, v35, v112, int32(8), int32(1316))
+							F_pg_qsort(m, v35, v112, int32(8), int32(1317))
 							mBase = m.M
 							v116 = m.ExcPending
 							if v116 != 0 {
 								return int32(0)
 							} else {
 								v117 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-								F_pg_qsort(m, v40, v117, int32(8), int32(1316))
+								F_pg_qsort(m, v40, v117, int32(8), int32(1317))
 								mBase = m.M
 								v121 = m.ExcPending
 								if v121 != 0 {

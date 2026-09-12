@@ -285,15 +285,15 @@ func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		} else {
 			v29 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_tuplesort_begin_datum[1])))
 			if v29 != int32(1) {
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1861)
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1862)
 				v55 = int32(1)
 				*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v55
 				*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v26
 				*(*uint8)(unsafe.Add(mBase, uint32(v16)+36)) = uint8(v55)
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1862)
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1863)
-				*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1864)
-				*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1865)
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1863)
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1864)
+				*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1865)
+				*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1866)
 				*(*int32)(unsafe.Add(mBase, uint32(v26))) = l0
 				F_get_typlenbyval(m, l0, v13+int32(14), v13+int32(13))
 				mBase = m.M
@@ -350,15 +350,15 @@ func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 					return int32(0)
 				} else {
 					if v34 == int32(0) {
-						*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1861)
+						*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1862)
 						v55 = int32(1)
 						*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v55
 						*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v26
 						*(*uint8)(unsafe.Add(mBase, uint32(v16)+36)) = uint8(v55)
-						*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1862)
-						*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1863)
-						*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1864)
-						*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1865)
+						*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1863)
+						*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1864)
+						*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1865)
+						*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1866)
 						*(*int32)(unsafe.Add(mBase, uint32(v26))) = l0
 						F_get_typlenbyval(m, l0, v13+int32(14), v13+int32(13))
 						mBase = m.M
@@ -427,15 +427,15 @@ func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 							if v52 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1861)
+								*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = int32(1862)
 								v55 = int32(1)
 								*(*int32)(unsafe.Add(mBase, uint32(v16)+40)) = v55
 								*(*int32)(unsafe.Add(mBase, uint32(v16)+60)) = v26
 								*(*uint8)(unsafe.Add(mBase, uint32(v16)+36)) = uint8(v55)
-								*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1862)
-								*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1863)
-								*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1864)
-								*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1865)
+								*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = int32(1863)
+								*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(1864)
+								*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = int32(1865)
+								*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(1866)
 								*(*int32)(unsafe.Add(mBase, uint32(v26))) = l0
 								F_get_typlenbyval(m, l0, v13+int32(14), v13+int32(13))
 								mBase = m.M
@@ -644,10 +644,10 @@ L7:
 	v126 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+60)) = v126
 	*(*uint8)(unsafe.Add(mBase, uint32(v17)+36)) = uint8(v126)
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = int32(1857)
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+12)) = int32(1858)
-	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1859)
-	*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = int32(1860)
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = int32(1858)
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+12)) = int32(1859)
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(1860)
+	*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = int32(1861)
 	*(*int32)(unsafe.Add(mBase, _c_F_tuplesort_begin_index_gin[0])) = v22
 	m.G0 = v14 + int32(16)
 	return v17

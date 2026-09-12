@@ -8923,7 +8923,7 @@ L174:
 	m.G0 = v664
 	v666 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	v668 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+20)))
-	v670 = F_RangeVarGetRelidExtended(m, v666, int32(8), v668, int32(575), l1)
+	v670 = F_RangeVarGetRelidExtended(m, v666, int32(8), v668, int32(576), l1)
 	mBase = m.M
 	v671 = m.ExcPending
 	if v671 != 0 {

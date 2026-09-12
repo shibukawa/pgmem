@@ -895,7 +895,7 @@ func F_replorigin_session_setup(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	F_on_shmem_exit(m, int32(1013), int32(0))
+	F_on_shmem_exit(m, int32(1014), int32(0))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {

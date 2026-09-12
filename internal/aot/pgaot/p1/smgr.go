@@ -1315,7 +1315,7 @@ L109:
 	}
 L110:
 	;
-	F_pg_qsort(m, v291, v267, int32(16), int32(1077))
+	F_pg_qsort(m, v291, v267, int32(16), int32(1078))
 	mBase = m.M
 	v385 = m.ExcPending
 	if v385 != 0 {
@@ -1389,7 +1389,7 @@ L121:
 	v461 = *(*int32)(unsafe.Add(mBase, uint32(v425)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v287)+16)) = v461
 	*(*int64)(unsafe.Add(mBase, uint32(v287)+8)) = v460
-	v468 = F_bsearch(m, v287+int32(8), v291, v267, int32(16), int32(1077))
+	v468 = F_bsearch(m, v287+int32(8), v291, v267, int32(16), int32(1078))
 	mBase = m.M
 	v469 = m.ExcPending
 	if v469 != 0 {

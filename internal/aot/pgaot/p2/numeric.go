@@ -1032,7 +1032,7 @@ func F_numeric_avg(m *base.Module, l0 int32) int32 {
 												if v85 != 0 {
 													return int32(0)
 												} else {
-													v88 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v81, v62)
+													v88 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v81, v62)
 													mBase = m.M
 													v89 = m.ExcPending
 													if v89 != 0 {
@@ -1044,7 +1044,7 @@ func F_numeric_avg(m *base.Module, l0 int32) int32 {
 													}
 												}
 											} else {
-												v88 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v81, v62)
+												v88 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v81, v62)
 												mBase = m.M
 												v89 = m.ExcPending
 												if v89 != 0 {
@@ -1117,7 +1117,7 @@ func F_numeric_avg(m *base.Module, l0 int32) int32 {
 													if v85 != 0 {
 														return int32(0)
 													} else {
-														v88 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v81, v62)
+														v88 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v81, v62)
 														mBase = m.M
 														v89 = m.ExcPending
 														if v89 != 0 {
@@ -1129,7 +1129,7 @@ func F_numeric_avg(m *base.Module, l0 int32) int32 {
 														}
 													}
 												} else {
-													v88 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v81, v62)
+													v88 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v81, v62)
 													mBase = m.M
 													v89 = m.ExcPending
 													if v89 != 0 {
@@ -3029,13 +3029,13 @@ func F_numeric_float4(m *base.Module, l0 int32) int32 {
 			return v19
 		} else {
 			v22 = int32(0)
-			v25 = F_DirectFunctionCall1Coll(m, int32(617), v22, v4)
+			v25 = F_DirectFunctionCall1Coll(m, int32(618), v22, v4)
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
 				return int32(0)
 			} else {
-				v27 = F_DirectFunctionCall1Coll(m, int32(1469), v22, v25)
+				v27 = F_DirectFunctionCall1Coll(m, int32(1470), v22, v25)
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {

@@ -581,15 +581,15 @@ L2:
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(1835)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(1836)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = l0
 	v57 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v18)+36)) = uint8(v57)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = int32(1836)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(1837)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(1838)
-	*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(1839)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = int32(1837)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(1838)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(1839)
+	*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(1840)
 	v69 = F_palloc0(m, l1*int32(36))
 	mBase = m.M
 	v70 = m.ExcPending
@@ -789,14 +789,14 @@ func F_tuplesort_begin_index_brin(m *base.Module, l0 int32, l1 int32) int32 {
 	} else {
 		v14 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_tuplesort_begin_index_brin[0])))
 		if v14 != int32(1) {
-			*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1853)
+			*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1854)
 			v36 = int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+40)) = v36
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v9)+36)) = uint8(v36)
-			*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1854)
-			*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1855)
-			*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1856)
+			*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1855)
+			*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1856)
+			*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1857)
 			m.G0 = v6 + int32(16)
 			return v9
 		} else {
@@ -807,14 +807,14 @@ func F_tuplesort_begin_index_brin(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				if v19 == int32(0) {
-					*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1853)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1854)
 					v36 = int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+40)) = v36
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v9)+36)) = uint8(v36)
-					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1854)
-					*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1855)
-					*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1856)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1855)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1856)
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1857)
 					m.G0 = v6 + int32(16)
 					return v9
 				} else {
@@ -832,14 +832,14 @@ func F_tuplesort_begin_index_brin(m *base.Module, l0 int32, l1 int32) int32 {
 						if v33 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1853)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(1854)
 							v36 = int32(1)
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+40)) = v36
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(v9)+36)) = uint8(v36)
-							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1854)
-							*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1855)
-							*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1856)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(1855)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(1856)
+							*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(1857)
 							m.G0 = v6 + int32(16)
 							return v9
 						}

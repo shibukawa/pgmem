@@ -438,7 +438,7 @@ func F_begin_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(_a_F_begin_prepare_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v10
 	v14 = *(*int64)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v14
 	v18 = int32(_a_F_begin_prepare_cb_wrapper_1)
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_begin_prepare_cb_wrapper[0]))
@@ -7882,7 +7882,7 @@ func F_btfloat4sortsupport(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1310)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1311)
 	return int32(0)
 }
 func F_btfloat8sortsupport(m *base.Module, l0 int32) int32 {
@@ -7891,7 +7891,7 @@ func F_btfloat8sortsupport(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1311)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1312)
 	return int32(0)
 }
 func F_btinsert(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32 {

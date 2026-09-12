@@ -1313,9 +1313,9 @@ func F_tuplestore_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 						*(*uint8)(unsafe.Add(mBase, uint32(v68)+4)) = uint8(v69)
 						v71 = *(*int32)(unsafe.Add(mBase, uint32(v7)+92))
 						*(*int32)(unsafe.Add(mBase, uint32(v71)+8)) = v69
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = int32(1866)
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = int32(1867)
-						*(*int32)(unsafe.Add(mBase, uint32(v7)+60)) = int32(1868)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = int32(1867)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = int32(1868)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+60)) = int32(1869)
 						return v7
 					}
 				}

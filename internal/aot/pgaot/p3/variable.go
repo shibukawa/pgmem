@@ -1930,7 +1930,7 @@ func F_map_variable_attnos(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l1
 	*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v6)
-	v22 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1054), v9+int32(12))
+	v22 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1055), v9+int32(12))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {

@@ -295,9 +295,9 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 		v80 = *(*int64)(unsafe.Add(mBase, uint32(v79)))
 		if v16 != int32(2147483647) {
 			if v76 == int32(0) {
-				v98 = int32(1282)
-			} else {
 				v98 = int32(1283)
+			} else {
+				v98 = int32(1284)
 			}
 			v100 = F_Int64GetDatum(m, v78)
 			mBase = m.M
@@ -324,9 +324,9 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 		} else {
 			if v20 != int32(2147483647) {
 				if v76 == int32(0) {
-					v98 = int32(1282)
-				} else {
 					v98 = int32(1283)
+				} else {
+					v98 = int32(1284)
 				}
 				v100 = F_Int64GetDatum(m, v78)
 				mBase = m.M
@@ -353,9 +353,9 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 			} else {
 				if v64 != int64(9223372036854775807) {
 					if v76 == int32(0) {
-						v98 = int32(1282)
-					} else {
 						v98 = int32(1283)
+					} else {
+						v98 = int32(1284)
 					}
 					v100 = F_Int64GetDatum(m, v78)
 					mBase = m.M
@@ -382,7 +382,7 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 				} else {
 					if v76 != 0 {
 						if v78 != int64(9223372036854775807) {
-							v98 = int32(1283)
+							v98 = int32(1284)
 							v100 = F_Int64GetDatum(m, v78)
 							mBase = m.M
 							v103 = m.ExcPending
@@ -412,7 +412,7 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 						}
 					} else {
 						if v78 != int64(-9223372036854775807-1) {
-							v98 = int32(1282)
+							v98 = int32(1283)
 							v100 = F_Int64GetDatum(m, v78)
 							mBase = m.M
 							v103 = m.ExcPending

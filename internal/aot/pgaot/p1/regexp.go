@@ -105,7 +105,7 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v41 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v38, v20+int32(1), v24)
+				v41 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v38, v20+int32(1), v24)
 				mBase = m.M
 				v42 = m.ExcPending
 				if v42 != 0 {
@@ -191,7 +191,7 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-					v41 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v38, v20+int32(1), v24)
+					v41 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v38, v20+int32(1), v24)
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {

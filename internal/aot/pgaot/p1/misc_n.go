@@ -2106,6 +2106,45 @@ L21:
 	m.G0 = v5 + int32(16)
 	return v72
 }
+func F_new_intArrayType(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	if l0 <= int32(0) {
+		v7 = F_construct_empty_array(m, int32(23))
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return int32(0)
+		} else {
+			return v7
+		}
+	} else {
+		v15 = l0<<(uint(int32(2))%32) + int32(24)
+		v16 = F_palloc0(m, v15)
+		mBase = m.M
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = l0
+			*(*int32)(unsafe.Add(mBase, uint32(v16)+12)) = int32(23)
+			*(*int64)(unsafe.Add(mBase, uint32(v16)+4)) = int64(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v16))) = v15 << (uint(int32(2)) % 32)
+			return v16
+		}
+	}
+}
 func F_newstate(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

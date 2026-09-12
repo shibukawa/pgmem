@@ -480,7 +480,7 @@ func F_ginBeginBAScan(m *base.Module, l0 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v4
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)) = uint8(base.B2i32(v14 == int32(_a_F_ginBeginBAScan_0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = int32(789)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = int32(790)
 	m.G0 = v7 + v6
 	return
 }
@@ -3635,7 +3635,7 @@ L52:
 	*(*int32)(unsafe.Add(mBase, uint32(v265))) = v259
 	v269 = *(*int32)(unsafe.Add(mBase, uint32(v259)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v265)+12)) = uint8(base.B2i32(v269 == int32(_a_F_ginInsertCleanup_5)))
-	*(*int32)(unsafe.Add(mBase, uint32(v265)+4)) = int32(789)
+	*(*int32)(unsafe.Add(mBase, uint32(v265)+4)) = int32(790)
 	m.G0 = v262 + v261
 	goto L53
 L53:
@@ -3798,7 +3798,7 @@ L72:
 	*(*int32)(unsafe.Add(mBase, uint32(v410))) = v404
 	v414 = *(*int32)(unsafe.Add(mBase, uint32(v404)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v410)+12)) = uint8(base.B2i32(v414 == int32(_a_F_ginInsertCleanup_5)))
-	*(*int32)(unsafe.Add(mBase, uint32(v410)+4)) = int32(789)
+	*(*int32)(unsafe.Add(mBase, uint32(v410)+4)) = int32(790)
 	m.G0 = v407 + v406
 	goto L73
 L73:
@@ -7390,7 +7390,7 @@ func F_gin_extract_query_name(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2118)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2119)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -7572,7 +7572,7 @@ func F_gin_numeric_cmp(m *base.Module, l0 int32) int32 {
 		if v3 == int32(0) {
 			return int32(1)
 		} else {
-			v17 = F_DirectFunctionCall2Coll(m, int32(1342), int32(0), v4, v3)
+			v17 = F_DirectFunctionCall2Coll(m, int32(1343), int32(0), v4, v3)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {

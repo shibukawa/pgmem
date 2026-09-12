@@ -1324,7 +1324,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 												v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 												if int32(0) <= v101 {
 													v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-													v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+													v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 													mBase = m.M
 													v114 = m.ExcPending
 													if v114 != 0 {
@@ -1475,7 +1475,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 														v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 														if int32(0) <= v101 {
 															v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-															v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+															v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 															mBase = m.M
 															v114 = m.ExcPending
 															if v114 != 0 {
@@ -1626,7 +1626,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 																v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 																if int32(0) <= v101 {
 																	v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-																	v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+																	v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 																	mBase = m.M
 																	v114 = m.ExcPending
 																	if v114 != 0 {
@@ -1776,7 +1776,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 																	v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 																	if int32(0) <= v101 {
 																		v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-																		v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+																		v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 																		mBase = m.M
 																		v114 = m.ExcPending
 																		if v114 != 0 {
@@ -1901,7 +1901,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 											if int32(0) <= v101 {
 												v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-												v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+												v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 												mBase = m.M
 												v114 = m.ExcPending
 												if v114 != 0 {
@@ -2052,7 +2052,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 													v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 													if int32(0) <= v101 {
 														v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-														v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+														v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 														mBase = m.M
 														v114 = m.ExcPending
 														if v114 != 0 {
@@ -2203,7 +2203,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 															v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 															if int32(0) <= v101 {
 																v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-																v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+																v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 																mBase = m.M
 																v114 = m.ExcPending
 																if v114 != 0 {
@@ -2353,7 +2353,7 @@ func F_regexp_substr(m *base.Module, l0 int32) int32 {
 																v101 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 																if int32(0) <= v101 {
 																	v109 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
-																	v113 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v109, v98+int32(1), v101-v98)
+																	v113 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v109, v98+int32(1), v101-v98)
 																	mBase = m.M
 																	v114 = m.ExcPending
 																	if v114 != 0 {

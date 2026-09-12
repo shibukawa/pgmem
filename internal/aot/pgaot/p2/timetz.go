@@ -132,7 +132,7 @@ func F_timetz_hash_extended(m *base.Module, l0 int32) int32 {
 	_ = v104
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = F_DirectFunctionCall2Coll(m, int32(1285), int32(0), v5, v6)
+	v7 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

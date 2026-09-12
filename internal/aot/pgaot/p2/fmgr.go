@@ -417,7 +417,7 @@ L16:
 	;
 	v75 = int32(2)
 	*(*uint8)(unsafe.Add(mBase, uint32(l1)+12)) = uint8(v75)
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1626)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1627)
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = l0
 	goto L13
 L17:
@@ -485,7 +485,7 @@ L24:
 	}
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1627)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1628)
 	v296 = int32(1)
 	goto L23
 L26:

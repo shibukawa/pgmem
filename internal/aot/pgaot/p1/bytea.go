@@ -1755,7 +1755,7 @@ func F_bytea_substring(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v15 = l1 + l2
 		if base.B2i32(l2 < v13)^base.B2i32(v15 < l1) == v13 {
 			if v15 <= int32(0) {
-				v25 = F_DirectFunctionCall1Coll(m, int32(578), int32(0), int32(_a_F_bytea_substring_0))
+				v25 = F_DirectFunctionCall1Coll(m, int32(579), int32(0), int32(_a_F_bytea_substring_0))
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return int32(0)

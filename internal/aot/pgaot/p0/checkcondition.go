@@ -5,53 +5,112 @@ import (
 	"unsafe"
 )
 
-func F_checkcondition_gin(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_checkcondition_arr_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
 	var v13 int32
 	_ = v13
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
-	var v22 int32
-	_ = v22
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v9 = base.I32_div_s(l1-v6, int32(3))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v5+v9)))
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4+v11))))
-	if v13 == int32(1) {
-		v16 = int32(2)
-		v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+1)))
-		if v19 != 0 {
-			v20 = v16
-		} else {
-			v20 = int32(1)
-		}
-		if l2 != 0 {
-			v21 = v16
-		} else {
-			v21 = v20
-		}
-		v22 = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v37 int32
+	_ = v37
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if base.Ui32(v8) <= base.Ui32(v7) {
+		v37 = int32(0)
+		goto L1
 	} else {
-		v22 = v13
+		goto L2
 	}
-	return base.I32_extend8_s(v22)
+L1:
+	;
+	return v37
+L2:
+	;
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v11 = v8
+	v13 = v7
+	goto L3
+L3:
+	;
+	v18 = int32(2)
+	v21 = base.I32_div_s((v11-v13)>>(uint(v18)%32), v18)
+	v24 = v13 + v21<<(uint(v18)%32)
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
+	v26 = base.B2i32(v25 == v10)
+	if v25 == v10 {
+		v37 = v26
+		goto L1
+	} else {
+		goto L5
+	}
+L4:
+	;
+	v37 = v26
+	goto L1
+L5:
+	;
+	v29 = base.B2i32(v25 < v10)
+	if v25 < v10 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	v30 = v24 + int32(4)
+	goto L8
+L7:
+	;
+	v30 = v13
+	goto L8
+L8:
+	;
+	if v25 < v10 {
+		goto L9
+	} else {
+		goto L10
+	}
+L9:
+	;
+	v31 = v11
+	goto L11
+L10:
+	;
+	v31 = v24
+	goto L11
+L11:
+	;
+	if base.Ui32(v30) < base.Ui32(v31) {
+		v11 = v31
+		v13 = v30
+		goto L3
+	} else {
+		goto L12
+	}
+L12:
+	;
+	goto L4
 }

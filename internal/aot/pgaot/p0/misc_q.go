@@ -660,6 +660,35 @@ L46:
 	m.G0 = v17 + int32(48)
 	return
 }
+func F_querytree(m *base.Module, l0 int32) int32 {
+	var v7 int32
+	_ = v7
+	var v13 int32
+	_ = v13
+	var v20 int32
+	_ = v20
+	F_errstart_cold(m, int32(21), int32(0))
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		F_errmsg_internal(m, int32(_a_F_querytree_0), int32(0))
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			F_errfinish(m, int32(_a_F_querytree_1), int32(667), int32(_a_F_querytree_2))
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				base.Wasm_trap_unreachable()
+				for {
+				}
+			}
+		}
+	}
+}
 func F_quote_identifier(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -1044,7 +1073,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v14 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), v13)
+		v14 = F_DirectFunctionCall1Coll(m, int32(1483), int32(0), v13)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {

@@ -1638,7 +1638,7 @@ func F_ShmemInitHash(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 		}
 		break
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+36)) = int32(1104)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+36)) = int32(1105)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v49
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = v49
 	v68 = F_ShmemInitStruct(m, l0, v49<<(uint(int32(2))%32)+int32(432), v12+int32(15))
@@ -11545,7 +11545,7 @@ L24:
 	goto L22
 L25:
 	;
-	v110 = F_query_tree_walker_impl(m, l0, int32(1038), v9+int32(12), int32(3))
+	v110 = F_query_tree_walker_impl(m, l0, int32(1039), v9+int32(12), int32(3))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -11592,7 +11592,7 @@ func F_setRuleCheckAsUser_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			}
 		} else {
-			v15 = F_expression_tree_walker_impl(m, l0, int32(1038), l1)
+			v15 = F_expression_tree_walker_impl(m, l0, int32(1039), l1)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
@@ -18881,7 +18881,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+36)) = int32(0)
-	v70 = F_expression_tree_walker_impl(m, l0, int32(894), l1)
+	v70 = F_expression_tree_walker_impl(m, l0, int32(895), l1)
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -18965,7 +18965,7 @@ L29:
 	v88 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v81))) = v88
 	*(*int64)(unsafe.Add(mBase, uint32(l1)+24)) = v88
-	v93 = F_expression_tree_walker_impl(m, l0, int32(894), l1)
+	v93 = F_expression_tree_walker_impl(m, l0, int32(895), l1)
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -25942,7 +25942,7 @@ L3:
 	}
 L4:
 	;
-	v15 = F_expression_tree_mutator_impl(m, v6, int32(825), l1)
+	v15 = F_expression_tree_mutator_impl(m, v6, int32(826), l1)
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -27014,7 +27014,7 @@ func F_superuser(m *base.Module) int32 {
 							v35 = v32
 							v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 							if v37 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -27040,7 +27040,7 @@ func F_superuser(m *base.Module) int32 {
 						v35 = int32(0)
 						v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 						if v37 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -27084,7 +27084,7 @@ func F_superuser(m *base.Module) int32 {
 						v35 = v32
 						v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 						if v37 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -27110,7 +27110,7 @@ func F_superuser(m *base.Module) int32 {
 					v35 = int32(0)
 					v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 					if v37 == int32(0) {
-						F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+						F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -27162,7 +27162,7 @@ func F_superuser(m *base.Module) int32 {
 								v35 = v32
 								v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 								if v37 == int32(0) {
-									F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+									F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 									mBase = m.M
 									v44 = m.ExcPending
 									if v44 != 0 {
@@ -27188,7 +27188,7 @@ func F_superuser(m *base.Module) int32 {
 							v35 = int32(0)
 							v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 							if v37 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -27232,7 +27232,7 @@ func F_superuser(m *base.Module) int32 {
 							v35 = v32
 							v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 							if v37 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -27258,7 +27258,7 @@ func F_superuser(m *base.Module) int32 {
 						v35 = int32(0)
 						v37 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser[3])))
 						if v37 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1783), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {

@@ -2442,7 +2442,7 @@ func F_update_progress_txn_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_update_progress_txn_cb_wrapper_1)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v13
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v12
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = v9 + int32(16)
 	*(*uint8)(unsafe.Add(mBase, uint32(v13)+147)) = uint8(v4)

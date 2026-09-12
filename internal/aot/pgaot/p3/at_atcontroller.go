@@ -17142,7 +17142,7 @@ L1213:
 	v5536 = *(*int32)(unsafe.Add(mBase, uint32(v5535)+4))
 	*(*uint8)(unsafe.Add(mBase, uint32(v237)+2088)) = uint8(v5533)
 	*(*int32)(unsafe.Add(mBase, uint32(v237)+2084)) = v5536
-	v5545 = F_RangeVarGetRelidExtended(m, v5532, int32(8), v5533, int32(576), v237+int32(2080))
+	v5545 = F_RangeVarGetRelidExtended(m, v5532, int32(8), v5533, int32(577), v237+int32(2080))
 	mBase = m.M
 	v5546 = m.ExcPending
 	if v5546 != 0 {

@@ -15418,7 +15418,7 @@ func F_plainto_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1175), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1176), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {
@@ -18691,7 +18691,7 @@ L7:
 	goto L8
 L8:
 	;
-	v266 = F_expression_tree_walker_impl(m, l0, int32(849), l1)
+	v266 = F_expression_tree_walker_impl(m, l0, int32(850), l1)
 	mBase = m.M
 	v267 = m.ExcPending
 	if v267 != 0 {

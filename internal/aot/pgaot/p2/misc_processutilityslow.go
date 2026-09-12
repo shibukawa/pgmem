@@ -25570,7 +25570,7 @@ L36:
 	m.G0 = v29627
 	v29629 = *(*int32)(unsafe.Add(mBase, uint32(v295)+4))
 	v29631 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v295)+13)))
-	v29634 = F_RangeVarGetRelidExtended(m, v29629, int32(6), v29631, int32(569), int32(0))
+	v29634 = F_RangeVarGetRelidExtended(m, v29629, int32(6), v29631, int32(570), int32(0))
 	mBase = m.M
 	v29635 = m.ExcPending
 	if v29635 != 0 {
@@ -43117,7 +43117,7 @@ L1225:
 L1226:
 	;
 	v11615 = *(*int32)(unsafe.Add(mBase, uint32(v295)+8))
-	v11619 = F_RangeVarGetRelidExtended(m, v11615, int32(8), int32(0), int32(565), v295)
+	v11619 = F_RangeVarGetRelidExtended(m, v11615, int32(8), int32(0), int32(566), v295)
 	mBase = m.M
 	v11620 = m.ExcPending
 	if v11620 != 0 {
@@ -45508,7 +45508,7 @@ L1419:
 	*(*int64)(unsafe.Add(mBase, uint32(v12527)+32)) = v12710
 	*(*int64)(unsafe.Add(mBase, uint32(v12527)+24)) = v12710
 	v12720 = *(*int32)(unsafe.Add(mBase, uint32(v295)+8))
-	v12724 = F_RangeVarGetRelidExtended(m, v12720, int32(8), int32(0), int32(565), v295)
+	v12724 = F_RangeVarGetRelidExtended(m, v12720, int32(8), int32(0), int32(566), v295)
 	mBase = m.M
 	v12725 = m.ExcPending
 	if v12725 != 0 {
@@ -85913,8 +85913,8 @@ L4759:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v33144)+4)) = v32879
 	*(*int32)(unsafe.Add(mBase, uint32(v33144)+120)) = v32906
-	*(*int32)(unsafe.Add(mBase, uint32(v33144)+112)) = int32(678)
-	*(*int32)(unsafe.Add(mBase, uint32(v33144)+108)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(v33144)+112)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(v33144)+108)) = int32(680)
 	*(*int32)(unsafe.Add(mBase, uint32(v33144)+104)) = int32(0)
 	goto L4760
 L4760:
@@ -86007,8 +86007,8 @@ L4767:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v33253)+4)) = v32879
 	*(*int32)(unsafe.Add(mBase, uint32(v33253)+120)) = v32906
-	*(*int32)(unsafe.Add(mBase, uint32(v33253)+112)) = int32(678)
-	*(*int32)(unsafe.Add(mBase, uint32(v33253)+108)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(v33253)+112)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(v33253)+108)) = int32(680)
 	*(*int32)(unsafe.Add(mBase, uint32(v33253)+104)) = int32(0)
 	goto L4768
 L4768:
@@ -100433,7 +100433,7 @@ L5946:
 	*(*int32)(unsafe.Add(mBase, _c_F_ProcessUtilitySlow[0])) = v41120 + int32(-20)
 	*(*int32)(unsafe.Add(mBase, uint32(v41122)+60)) = v41239
 	*(*int32)(unsafe.Add(mBase, uint32(v41122)+56)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v41122)+48)) = int32(556)
+	*(*int32)(unsafe.Add(mBase, uint32(v41122)+48)) = int32(557)
 	*(*int32)(unsafe.Add(mBase, uint32(v41122)+44)) = v41241
 	*(*int32)(unsafe.Add(mBase, uint32(v41122)+52)) = v41120 + int32(-8)
 	v41255 = F_pg_parse_query(m, v41239)
@@ -109558,7 +109558,7 @@ L6719:
 	goto L6720
 L6720:
 	;
-	v45921 = F_RangeVarGetRelidExtended(m, v45905, v45916, int32(0), int32(557), v45415+int32(80))
+	v45921 = F_RangeVarGetRelidExtended(m, v45905, v45916, int32(0), int32(558), v45415+int32(80))
 	mBase = m.M
 	v45922 = m.ExcPending
 	if v45922 != 0 {
@@ -111472,7 +111472,7 @@ L6890:
 	*(*int32)(unsafe.Add(mBase, uint32(v93)+332)) = v296
 	*(*int32)(unsafe.Add(mBase, uint32(v93)+328)) = v297
 	v46678 = int32(0)
-	v46681 = F_RangeVarGetRelidExtended(m, v46648, v46647, v46678, int32(569), v46678)
+	v46681 = F_RangeVarGetRelidExtended(m, v46648, v46647, v46678, int32(570), v46678)
 	mBase = m.M
 	v46682 = m.ExcPending
 	if v46682 != 0 {
@@ -145268,7 +145268,7 @@ L9907:
 	*(*int32)(unsafe.Add(mBase, uint32(v93)+328)) = v297
 	v59633 = *(*int32)(unsafe.Add(mBase, uint32(v295)+4))
 	v59634 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v295)+16)))
-	v59636 = F_RangeVarGetRelidExtended(m, v59633, v59610, v59634, int32(575), v295)
+	v59636 = F_RangeVarGetRelidExtended(m, v59633, v59610, v59634, int32(576), v295)
 	mBase = m.M
 	v59637 = m.ExcPending
 	if v59637 != 0 {

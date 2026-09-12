@@ -1838,7 +1838,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_lookup_ts_dictionary_cache[0])) = v24
-	F_CacheRegisterSyscacheCallback(m, int32(76), int32(1612), v24)
+	F_CacheRegisterSyscacheCallback(m, int32(76), int32(1613), v24)
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -1849,7 +1849,7 @@ L4:
 L5:
 	;
 	v36 = *(*int32)(unsafe.Add(mBase, _c_F_lookup_ts_dictionary_cache[0]))
-	F_CacheRegisterSyscacheCallback(m, int32(80), int32(1612), v36)
+	F_CacheRegisterSyscacheCallback(m, int32(80), int32(1613), v36)
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -2521,7 +2521,7 @@ func F_ts_headline_opt(m *base.Module, l0 int32) int32 {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v11 = F_DirectFunctionCall4Coll(m, int32(1186), int32(0), v4, v8, v9, v10)
+		v11 = F_DirectFunctionCall4Coll(m, int32(1187), int32(0), v4, v8, v9, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -2562,7 +2562,7 @@ func F_ts_match_tt(m *base.Module, l0 int32) int32 {
 	_ = v25
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = F_DirectFunctionCall1Coll(m, int32(1540), v2, v8)
+	v9 = F_DirectFunctionCall1Coll(m, int32(1541), v2, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -2575,13 +2575,13 @@ func F_ts_match_tt(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-			v18 = F_DirectFunctionCall1Coll(m, int32(1541), int32(0), v17)
+			v18 = F_DirectFunctionCall1Coll(m, int32(1542), int32(0), v17)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				v20 = F_DirectFunctionCall2Coll(m, int32(1538), v2, v13, v18)
+				v20 = F_DirectFunctionCall2Coll(m, int32(1539), v2, v13, v18)
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {

@@ -6809,7 +6809,7 @@ func F_paramlist_parser_setup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(815)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(816)
 	return
 }
 func F_parse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
@@ -15323,7 +15323,7 @@ func F_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_prepare_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v11
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
 	v19 = int32(_a_F_prepare_cb_wrapper_1)
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_prepare_cb_wrapper[0]))
@@ -19236,7 +19236,7 @@ func F_pull_varattnos_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v25 = F_expression_tree_walker_impl(m, l0, int32(896), l1)
+			v25 = F_expression_tree_walker_impl(m, l0, int32(897), l1)
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {

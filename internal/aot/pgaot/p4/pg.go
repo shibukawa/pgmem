@@ -5284,7 +5284,7 @@ func F_pg_convert_from(m *base.Module, l0 int32) int32 {
 	if v14 != 0 {
 		return int32(0)
 	} else {
-		v15 = F_DirectFunctionCall3Coll(m, int32(1651), v3, v4, v5, v11)
+		v15 = F_DirectFunctionCall3Coll(m, int32(1652), v3, v4, v5, v11)
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -20322,7 +20322,7 @@ L26:
 	}
 L27:
 	;
-	v83 = F_DirectFunctionCall1Coll(m, int32(1560), int32(0), v15)
+	v83 = F_DirectFunctionCall1Coll(m, int32(1561), int32(0), v15)
 	mBase = m.M
 	v84 = m.ExcPending
 	if v84 != 0 {

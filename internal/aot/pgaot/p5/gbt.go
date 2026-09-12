@@ -355,7 +355,7 @@ func F_gbt_bpchar_ssup_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			v60 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 			v61 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
 			v62 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-			v63 = F_DirectFunctionCall2Coll(m, int32(2422), v60, v61, v62)
+			v63 = F_DirectFunctionCall2Coll(m, int32(2423), v60, v61, v62)
 			mBase = m.M
 			v64 = m.ExcPending
 			if v64 != 0 {
@@ -627,7 +627,7 @@ func F_gbt_datele(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v11
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v8 = F_DirectFunctionCall2Coll(m, int32(2429), int32(0), v6, v7)
+	v8 = F_DirectFunctionCall2Coll(m, int32(2430), int32(0), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1687,7 +1687,7 @@ func F_gbt_numeric_gt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_DirectFunctionCall2Coll(m, int32(2735), int32(0), l0, l1)
+	v7 = F_DirectFunctionCall2Coll(m, int32(2736), int32(0), l0, l1)
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -1700,7 +1700,7 @@ func F_gbt_numeric_le(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_DirectFunctionCall2Coll(m, int32(2736), int32(0), l0, l1)
+	v7 = F_DirectFunctionCall2Coll(m, int32(2737), int32(0), l0, l1)
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -1822,7 +1822,7 @@ func F_gbt_tsge(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = F_DirectFunctionCall2Coll(m, int32(2454), int32(0), l0, l1)
+	v6 = F_DirectFunctionCall2Coll(m, int32(2455), int32(0), l0, l1)
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -1851,7 +1851,7 @@ func F_gbt_tskey_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v20
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v8 = F_DirectFunctionCall2Coll(m, int32(1445), int32(0), v6, v7)
+	v8 = F_DirectFunctionCall2Coll(m, int32(1446), int32(0), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1862,7 +1862,7 @@ func F_gbt_tskey_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v20
 		} else {
 			v14 = int32(8)
-			v18 = F_DirectFunctionCall2Coll(m, int32(1445), int32(0), v6+v14, v7+v14)
+			v18 = F_DirectFunctionCall2Coll(m, int32(1446), int32(0), v6+v14, v7+v14)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -1879,7 +1879,7 @@ func F_gbt_tslt(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), l0, l1)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), l0, l1)
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

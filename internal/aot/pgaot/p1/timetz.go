@@ -28,7 +28,7 @@ func F_timetz_at_local(m *base.Module, l0 int32) int32 {
 	if v10 != 0 {
 		return int32(0)
 	} else {
-		v11 = F_DirectFunctionCall2Coll(m, int32(1289), int32(0), v7, v2)
+		v11 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v7, v2)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {

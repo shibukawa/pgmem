@@ -2212,7 +2212,7 @@ func F_namegetext(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1557), v3, v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1558), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -2655,7 +2655,7 @@ func F_nameiclike(m *base.Module, l0 int32) int32 {
 	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = F_DirectFunctionCall1Coll(m, int32(1451), int32(0), v4)
+		v12 = F_DirectFunctionCall1Coll(m, int32(1452), int32(0), v4)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
@@ -2713,7 +2713,7 @@ func F_nameicnlike(m *base.Module, l0 int32) int32 {
 	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = F_DirectFunctionCall1Coll(m, int32(1451), int32(0), v4)
+		v12 = F_DirectFunctionCall1Coll(m, int32(1452), int32(0), v4)
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
@@ -3170,7 +3170,7 @@ func F_namelttext(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1557), v3, v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1558), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

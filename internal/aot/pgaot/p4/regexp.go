@@ -182,7 +182,7 @@ L11:
 	;
 	v60 = int32(0)
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v67 = F_DirectFunctionCall3Coll(m, int32(1492), v60, v63, v41+int32(1), v45-v41)
+	v67 = F_DirectFunctionCall3Coll(m, int32(1493), v60, v63, v41+int32(1), v45-v41)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {

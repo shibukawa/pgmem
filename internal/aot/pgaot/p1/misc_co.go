@@ -597,7 +597,7 @@ func F_commit_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_commit_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v11
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
 	v19 = int32(_a_F_commit_cb_wrapper_1)
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_commit_cb_wrapper[0]))
@@ -666,7 +666,7 @@ func F_commit_prepared_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) 
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_commit_prepared_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v11
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
 	v19 = int32(_a_F_commit_prepared_cb_wrapper_1)
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_commit_prepared_cb_wrapper[0]))
@@ -1288,6 +1288,147 @@ func F_compress_free(m *base.Module, l0 int32) {
 			return
 		}
 	}
+}
+func F_contains_required_value(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	F_check_stack_depth(m)
+	mBase = m.M
+	v5 = m.ExcPending
+	if v5 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v6 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
+	if v6 == int32(2) {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	return int32(1)
+L4:
+	;
+	goto L5
+L5:
+	;
+	v11 = l0
+	goto L6
+L6:
+	;
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
+	switch v12 - int32(33) {
+	case 0:
+		goto L9
+	default:
+		goto L10
+	case 5:
+		goto L11
+	}
+L7:
+	;
+	return int32(1)
+L8:
+	;
+	F_check_stack_depth(m)
+	mBase = m.M
+	v34 = m.ExcPending
+	if v34 != 0 {
+		goto L1
+	} else {
+		goto L16
+	}
+L9:
+	;
+	return int32(0)
+L10:
+	;
+	v25 = int32(*(*int16)(unsafe.Add(mBase, uint32(v11)+2)))
+	v29 = F_contains_required_value(m, v11+v25<<(uint(int32(3))%32))
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		goto L1
+	} else {
+		goto L14
+	}
+L11:
+	;
+	v15 = int32(*(*int16)(unsafe.Add(mBase, uint32(v11)+2)))
+	v19 = F_contains_required_value(m, v11+v15<<(uint(int32(3))%32))
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		goto L1
+	} else {
+		goto L12
+	}
+L12:
+	;
+	if v19 == int32(0) {
+		goto L8
+	} else {
+		goto L13
+	}
+L13:
+	;
+	return int32(1)
+L14:
+	;
+	if v29 != 0 {
+		goto L8
+	} else {
+		goto L15
+	}
+L15:
+	;
+	goto L9
+L16:
+	;
+	v36 = v11 - int32(8)
+	v37 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v36))))
+	if v37 != int32(2) {
+		v11 = v36
+		goto L6
+	} else {
+		goto L17
+	}
+L17:
+	;
+	goto L7
 }
 func F_contains_user_functions_checker(m *base.Module, l0 int32, l1 int32) int32 {
 	return base.B2i32(base.Ui32(int32(_a_F_contains_user_functions_checker_0)) < base.Ui32(l0))

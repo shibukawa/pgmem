@@ -1728,7 +1728,7 @@ func F_textlename(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1558), v3, v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1559), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -2774,7 +2774,7 @@ func F_textregexsubstr(m *base.Module, l0 int32) int32 {
 										}
 										v92 = *(*int32)(unsafe.Add(mBase, uint32(v91)))
 										if int32(0) <= v92 {
-											v103 = F_DirectFunctionCall3Coll(m, int32(1492), int32(0), v13, v84+int32(1), v92-v84)
+											v103 = F_DirectFunctionCall3Coll(m, int32(1493), int32(0), v13, v84+int32(1), v92-v84)
 											mBase = m.M
 											v104 = m.ExcPending
 											if v104 != 0 {

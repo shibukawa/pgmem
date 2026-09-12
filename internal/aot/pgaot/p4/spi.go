@@ -1190,7 +1190,7 @@ func F_SPI_plan_get_cached_plan(m *base.Module, l0 int32) int32 {
 				v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = v18
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(778)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(779)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = v20
 				v24 = int32(_a_F_SPI_plan_get_cached_plan_0)
 				v25 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_plan_get_cached_plan[0]))
@@ -1600,7 +1600,7 @@ func F__SPI_prepare_oneshot_plan(m *base.Module, l0 int32, l1 int32) {
 	m.G0 = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = l0
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(778)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(779)
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+28)) = v14
 	v18 = int32(_a_F__SPI_prepare_oneshot_plan_0)
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F__SPI_prepare_oneshot_plan[0]))

@@ -8067,7 +8067,7 @@ L8:
 	}
 L9:
 	;
-	v97 = F_expression_tree_walker_impl(m, l1, int32(852), v8+int32(8))
+	v97 = F_expression_tree_walker_impl(m, l1, int32(853), v8+int32(8))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -8198,7 +8198,7 @@ L29:
 	;
 	v81 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v81
-	v88 = F_query_tree_walker_impl(m, l1, int32(852), v8+int32(8), int32(0))
+	v88 = F_query_tree_walker_impl(m, l1, int32(853), v8+int32(8), int32(0))
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -8339,7 +8339,7 @@ L49:
 	}
 L50:
 	;
-	v189 = F_range_table_entry_walker_impl(m, v181, int32(852), v8+int32(8), int32(0))
+	v189 = F_range_table_entry_walker_impl(m, v181, int32(853), v8+int32(8), int32(0))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -8515,7 +8515,7 @@ L3:
 	}
 L4:
 	;
-	v88 = F_expression_tree_walker_impl(m, l0, int32(852), l1)
+	v88 = F_expression_tree_walker_impl(m, l0, int32(853), l1)
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -8647,7 +8647,7 @@ L24:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v72 + int32(1)
-	v78 = F_query_tree_walker_impl(m, l0, int32(852), l1, int32(0))
+	v78 = F_query_tree_walker_impl(m, l0, int32(853), l1, int32(0))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -11118,6 +11118,94 @@ L125:
 	;
 	goto L118
 }
+func F_findoprnd_1(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	goto L1
+L1:
+	;
+	F_check_stack_depth(m)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	return
+L4:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v16 = l0 + v13*int32(12)
+	v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16))))
+	switch v17 - int32(2) {
+	case 0, 4:
+		goto L6
+	default:
+		goto L5
+	}
+L5:
+	;
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v13 + int32(1)
+	if v28 == int32(33) {
+		goto L7
+	} else {
+		goto L8
+	}
+L6:
+	;
+	v23 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0+v13*int32(12))+2)) = uint16(v23)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v13 + int32(1)
+	return
+L7:
+	;
+	v34 = int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v16)+2)) = uint16(v34)
+	goto L1
+L8:
+	;
+	goto L9
+L9:
+	;
+	F_findoprnd_1(m, l0, l1)
+	mBase = m.M
+	v37 = m.ExcPending
+	if v37 != 0 {
+		goto L3
+	} else {
+		goto L10
+	}
+L10:
+	;
+	v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v39 = v38 - v13
+	*(*uint16)(unsafe.Add(mBase, uint32(v16)+2)) = uint16(v39)
+	goto L1
+}
 func F_findwrd(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -11945,7 +12033,7 @@ func F_fix_windowagg_condition_expr_mutator(m *base.Module, l0 int32, l1 int32) 
 				}
 			}
 		} else {
-			v39 = F_expression_tree_mutator_impl(m, l0, int32(840), l1)
+			v39 = F_expression_tree_mutator_impl(m, l0, int32(841), l1)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {

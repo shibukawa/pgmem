@@ -114,7 +114,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 					return int32(0)
 				}
 			default:
-				v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+				v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
@@ -130,7 +130,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 					v51 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v51 + v48
 				}
-				v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+				v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
@@ -146,7 +146,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 					v57 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v57 + v54
 				}
-				v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+				v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
@@ -189,7 +189,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 					}
 				}
 			case 1, 2, 4, 5, 6, 7, 8:
-				v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+				v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
@@ -205,7 +205,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 					v63 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v63 + v60
 				}
-				v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+				v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
@@ -216,7 +216,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 			case 9:
 				v82 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v82 + int32(1)
-				v88 = F_query_tree_walker_impl(m, l0, int32(1049), l1, int32(16))
+				v88 = F_query_tree_walker_impl(m, l0, int32(1050), l1, int32(16))
 				mBase = m.M
 				v89 = m.ExcPending
 				if v89 != 0 {
@@ -256,7 +256,7 @@ func F_IncrementVarSublevelsUp_walker(m *base.Module, l0 int32, l1 int32) int32 
 							*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v21 + v18
 						}
 					}
-					v68 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
+					v68 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -576,7 +576,7 @@ func F_InitProcess(m *base.Module) {
 									} else {
 										v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 										*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-										F_on_shmem_exit(m, int32(1112), int32(0))
+										F_on_shmem_exit(m, int32(1113), int32(0))
 										mBase = m.M
 										v208 = m.ExcPending
 										if v208 != 0 {
@@ -801,7 +801,7 @@ func F_InitProcess(m *base.Module) {
 								} else {
 									v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-									F_on_shmem_exit(m, int32(1112), int32(0))
+									F_on_shmem_exit(m, int32(1113), int32(0))
 									mBase = m.M
 									v208 = m.ExcPending
 									if v208 != 0 {
@@ -1048,7 +1048,7 @@ func F_InitProcess(m *base.Module) {
 								} else {
 									v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-									F_on_shmem_exit(m, int32(1112), int32(0))
+									F_on_shmem_exit(m, int32(1113), int32(0))
 									mBase = m.M
 									v208 = m.ExcPending
 									if v208 != 0 {
@@ -1273,7 +1273,7 @@ func F_InitProcess(m *base.Module) {
 							} else {
 								v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 								*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-								F_on_shmem_exit(m, int32(1112), int32(0))
+								F_on_shmem_exit(m, int32(1113), int32(0))
 								mBase = m.M
 								v208 = m.ExcPending
 								if v208 != 0 {
@@ -2128,11 +2128,11 @@ L10:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v39
-	v80 = int32(913)
+	v80 = int32(914)
 	v82 = m.G0
 	v84 = v82 - int32(144)
 	m.G0 = v84
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v94 = v80
 		goto L12
@@ -2394,11 +2394,11 @@ L63:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v39
-	v315 = int32(916)
+	v315 = int32(917)
 	v317 = m.G0
 	v319 = v317 - int32(144)
 	m.G0 = v319
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v329 = v315
 		goto L77
@@ -2456,11 +2456,11 @@ L76:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v39
-	v362 = int32(915)
+	v362 = int32(916)
 	v364 = m.G0
 	v366 = v364 - int32(144)
 	m.G0 = v366
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v376 = v362
 		goto L90
@@ -2741,7 +2741,7 @@ L118:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v39
-	F_on_shmem_exit(m, int32(1068), int32(0))
+	F_on_shmem_exit(m, int32(1069), int32(0))
 	mBase = m.M
 	v544 = m.ExcPending
 	if v544 != 0 {
@@ -2788,7 +2788,7 @@ L121:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v39
-	*(*int32)(unsafe.Add(mBase, uint32(v45)+4)) = int32(1069)
+	*(*int32)(unsafe.Add(mBase, uint32(v45)+4)) = int32(1070)
 	v628 = int32(_a_F_IoWorkerMain_13)
 	v629 = *(*int32)(unsafe.Add(mBase, _c_F_IoWorkerMain[12]))
 	*(*int32)(unsafe.Add(mBase, uint32(v45))) = v629
@@ -8413,7 +8413,7 @@ L52:
 L53:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v150)+40)) = v222
-	*(*int32)(unsafe.Add(mBase, uint32(v150)+36)) = int32(686)
+	*(*int32)(unsafe.Add(mBase, uint32(v150)+36)) = int32(687)
 	v235 = int32(_a_F_init_execution_state_2)
 	v236 = *(*int32)(unsafe.Add(mBase, _c_F_init_execution_state[1]))
 	v238 = *(*int32)(unsafe.Add(mBase, uint32(v33)+84))
@@ -14481,6 +14481,94 @@ func F_int8um(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			return v27
+		}
+	}
+}
+func F_intarray_push_array(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_pg_detoast_datum(m, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v11 = F_pg_detoast_datum(m, v10)
+		mBase = m.M
+		v12 = m.ExcPending
+		if v12 != 0 {
+			return int32(0)
+		} else {
+			v13 = F_intarray_concat_arrays(m, v6, v11)
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return int32(0)
+			} else {
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				if v15 != v6 {
+					F_pfree(m, v6)
+					mBase = m.M
+					v18 = m.ExcPending
+					if v18 != 0 {
+						return int32(0)
+					} else {
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						if v19 != v11 {
+							F_pfree(m, v11)
+							mBase = m.M
+							v22 = m.ExcPending
+							if v22 != 0 {
+								return int32(0)
+							} else {
+								return v13
+							}
+						} else {
+							return v13
+						}
+					}
+				} else {
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					if v19 != v11 {
+						F_pfree(m, v11)
+						mBase = m.M
+						v22 = m.ExcPending
+						if v22 != 0 {
+							return int32(0)
+						} else {
+							return v13
+						}
+					} else {
+						return v13
+					}
+				}
+			}
 		}
 	}
 }

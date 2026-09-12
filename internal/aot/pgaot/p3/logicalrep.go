@@ -1022,7 +1022,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_logicalrep_rel_open[0])) = v47
-	F_CacheRegisterRelcacheCallback(m, int32(1014))
+	F_CacheRegisterRelcacheCallback(m, int32(1015))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -2049,7 +2049,7 @@ func F_logicalrep_worker_attach(m *base.Module, l0 int32) {
 			} else {
 				v28 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_attach[3]))
 				*(*int32)(unsafe.Add(mBase, uint32(v23)+20)) = v28
-				F_before_shmem_exit(m, int32(987), int32(0))
+				F_before_shmem_exit(m, int32(988), int32(0))
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {

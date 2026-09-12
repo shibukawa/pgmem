@@ -413,7 +413,7 @@ func F_TidRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 		if v8 != 0 {
 			v14 = v8
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-			v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(769))
+			v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(770))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -432,7 +432,7 @@ func F_TidRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 				v14 = v13
 				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-				v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(769))
+				v18 = F_bsearch(m, l1+int32(28), v14, v15, int32(6), int32(770))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {

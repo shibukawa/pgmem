@@ -2361,7 +2361,7 @@ func F_ExecCteScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(704), int32(705))
+	v4 = F_ExecScan(m, l0, int32(705), int32(706))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -7849,7 +7849,7 @@ L7:
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = v50
 	v52 = int32(8)
-	v58 = F_bsearch(m, v18+v52, int32(_a_F_ExecInterpExprStillValid_0), int32(120), v52, int32(587))
+	v58 = F_bsearch(m, v18+v52, int32(_a_F_ExecInterpExprStillValid_0), int32(120), v52, int32(588))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -14110,7 +14110,7 @@ func F_ExecValuesScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(772), int32(773))
+	v4 = F_ExecScan(m, l0, int32(773), int32(774))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -19708,11 +19708,11 @@ func F_elements_worker(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+8)) = v71
 							v73 = *(*int32)(unsafe.Add(mBase, uint32(v70)+28))
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+12)) = v73
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+36)) = int32(1366)
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = int32(1367)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+36)) = int32(1367)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = int32(1368)
 							*(*int32)(unsafe.Add(mBase, uint32(v65))) = v62
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+32)) = int32(1368)
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+28)) = int32(1369)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+32)) = int32(1369)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+28)) = int32(1370)
 							v84 = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(v62)+25)) = uint8(v84)
 							*(*uint8)(unsafe.Add(mBase, uint32(v62)+24)) = uint8(v3)
@@ -31132,4 +31132,45 @@ L108:
 L109:
 	;
 	goto L1
+}
+func F_ext_sibling_callback(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	v5 = *(*int32)(unsafe.Add(mBase, _c_F_ext_sibling_callback[0]))
+	if v5 != 0 {
+		v6 = v5
+		for {
+			if l2 != 0 {
+				v9 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
+				if v9 != l2 {
+				} else {
+					v11 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v6)+12)) = uint8(v11)
+				}
+			} else {
+				v11 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v6)+12)) = uint8(v11)
+			}
+			v13 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+			if v13 != 0 {
+				v6 = v13
+				continue
+			} else {
+				break
+			}
+			break
+		}
+	} else {
+	}
+	return
 }

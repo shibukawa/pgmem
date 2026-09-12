@@ -7789,7 +7789,7 @@ L708:
 L709:
 	;
 	v2607 = *(*int32)(unsafe.Add(mBase, uint32(v57)+52))
-	F_pg_qsort(m, v2607, v2604, int32(12), int32(1166))
+	F_pg_qsort(m, v2607, v2604, int32(12), int32(1167))
 	mBase = m.M
 	v2611 = m.ExcPending
 	if v2611 != 0 {
@@ -9975,7 +9975,7 @@ L1018:
 	;
 	v3702 = *(*int32)(unsafe.Add(mBase, uint32(v57)+52))
 	v3703 = *(*int32)(unsafe.Add(mBase, uint32(v57)+56))
-	v3706 = F_bsearch(m, v818+int32(_a_F_dispell_init_50), v3702, v3703, int32(12), int32(1166))
+	v3706 = F_bsearch(m, v818+int32(_a_F_dispell_init_50), v3702, v3703, int32(12), int32(1167))
 	mBase = m.M
 	v3707 = m.ExcPending
 	if v3707 != 0 {
@@ -10737,7 +10737,7 @@ L1130:
 	}
 L1131:
 	;
-	F_readstoplist(m, v4195, v78, int32(1162))
+	F_readstoplist(m, v4195, v78, int32(1163))
 	mBase = m.M
 	v4199 = m.ExcPending
 	if v4199 != 0 {
@@ -10971,7 +10971,7 @@ L1156:
 L1157:
 	;
 	v5199 = *(*int32)(unsafe.Add(mBase, uint32(v4299)+68))
-	F_pg_qsort(m, v5199, v5172, int32(4), int32(1168))
+	F_pg_qsort(m, v5199, v5172, int32(4), int32(1169))
 	mBase = m.M
 	v5203 = m.ExcPending
 	if v5203 != 0 {
@@ -10995,7 +10995,7 @@ L1160:
 	;
 	v4491 = *(*int32)(unsafe.Add(mBase, uint32(v4299)+68))
 	v4492 = *(*int32)(unsafe.Add(mBase, uint32(v4299)+72))
-	F_pg_qsort(m, v4491, v4492, int32(4), int32(1167))
+	F_pg_qsort(m, v4491, v4492, int32(4), int32(1168))
 	mBase = m.M
 	v4496 = m.ExcPending
 	if v4496 != 0 {
@@ -12428,7 +12428,7 @@ L1372:
 L1373:
 	;
 	v5291 = *(*int32)(unsafe.Add(mBase, uint32(v4299)+8))
-	F_pg_qsort(m, v5291, v5288, int32(24), int32(1169))
+	F_pg_qsort(m, v5291, v5288, int32(24), int32(1170))
 	mBase = m.M
 	v5295 = m.ExcPending
 	if v5295 != 0 {

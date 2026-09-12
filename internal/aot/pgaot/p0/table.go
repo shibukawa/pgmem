@@ -1326,7 +1326,7 @@ func F_ExecTableFuncScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(761), int32(762))
+	v4 = F_ExecScan(m, l0, int32(762), int32(763))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

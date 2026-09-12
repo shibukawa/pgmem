@@ -216,7 +216,7 @@ func F_sql_compile_callback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[0])) = v14 + int32(36)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = l3
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = int32(685)
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = int32(686)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v20
 	v30 = *(*int32)(unsafe.Add(mBase, _c_F_sql_compile_callback[1]))
 	v35 = F_AllocSetContextCreateInternal(m, v30, int32(_a_F_sql_compile_callback_1), v6, int32(1024), int32(_a_F_sql_compile_callback_2))

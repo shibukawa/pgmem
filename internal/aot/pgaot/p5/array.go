@@ -2818,24 +2818,24 @@ func F_array_exec_setup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						return
 					} else {
 						if v14 != 0 {
-							v39 = int32(1265)
-						} else {
 							v39 = int32(1266)
+						} else {
+							v39 = int32(1267)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v39
 						if v14 != 0 {
-							v43 = int32(1267)
-						} else {
 							v43 = int32(1268)
+						} else {
+							v43 = int32(1269)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v43
 						if v14 != 0 {
-							v47 = int32(1269)
-						} else {
 							v47 = int32(1270)
+						} else {
+							v47 = int32(1271)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(l2)+4)) = v47
-						*(*int32)(unsafe.Add(mBase, uint32(l2))) = int32(1271)
+						*(*int32)(unsafe.Add(mBase, uint32(l2))) = int32(1272)
 						m.G0 = v9 + int32(16)
 						return
 					}
@@ -7417,8 +7417,8 @@ L2:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v38
 	*(*int32)(unsafe.Add(mBase, _c_F_compute_array_stats[0])) = v38
 	v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v36)+136)) = int32(1260)
-	*(*int32)(unsafe.Add(mBase, uint32(v36)+132)) = int32(1261)
+	*(*int32)(unsafe.Add(mBase, uint32(v36)+136)) = int32(1261)
+	*(*int32)(unsafe.Add(mBase, uint32(v36)+132)) = int32(1262)
 	*(*int64)(unsafe.Add(mBase, uint32(v36)+124)) = int64(68719476740)
 	v55 = *(*int32)(unsafe.Add(mBase, _c_F_compute_array_stats[1]))
 	*(*int32)(unsafe.Add(mBase, uint32(v36)+148)) = v55
@@ -8270,7 +8270,7 @@ L112:
 	goto L113
 L113:
 	;
-	F_qsort_interruptible(m, v598, v678, int32(4), int32(1262), int32(0))
+	F_qsort_interruptible(m, v598, v678, int32(4), int32(1263), int32(0))
 	mBase = m.M
 	v728 = m.ExcPending
 	if v728 != 0 {
@@ -8288,7 +8288,7 @@ L114:
 L115:
 	;
 	v742 = int32(0)
-	F_qsort_interruptible(m, v598, v736, int32(4), int32(1263), v742)
+	F_qsort_interruptible(m, v598, v736, int32(4), int32(1264), v742)
 	mBase = m.M
 	v747 = m.ExcPending
 	if v747 != 0 {
@@ -8516,7 +8516,7 @@ L137:
 L138:
 	;
 	v1060 = int32(0)
-	F_qsort_interruptible(m, v969, v963, int32(4), int32(1264), v1060)
+	F_qsort_interruptible(m, v969, v963, int32(4), int32(1265), v1060)
 	mBase = m.M
 	v1065 = m.ExcPending
 	if v1065 != 0 {

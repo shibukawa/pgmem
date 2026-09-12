@@ -183,7 +183,7 @@ func F_AddQual(m *base.Module, l0 int32, l1 int32) {
 						if v38 != 0 {
 							return
 						} else {
-							v42 = F_query_or_expression_tree_walker_impl(m, v30, int32(1046), int32(0), int32(3))
+							v42 = F_query_or_expression_tree_walker_impl(m, v30, int32(1047), int32(0), int32(3))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {

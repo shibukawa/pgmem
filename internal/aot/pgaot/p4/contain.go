@@ -21,7 +21,7 @@ func F_contain_agg_clause(m *base.Module, l0 int32) int32 {
 		if base.Ui32(v6-int32(9)) < base.Ui32(int32(2)) {
 			return int32(1)
 		} else {
-			v15 = F_expression_tree_walker_impl(m, l0, int32(854), int32(0))
+			v15 = F_expression_tree_walker_impl(m, l0, int32(855), int32(0))
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
@@ -89,7 +89,7 @@ L4:
 	return v55
 L5:
 	;
-	v50 = F_check_functions_in_node(m, v9, int32(865), l1)
+	v50 = F_check_functions_in_node(m, v9, int32(866), l1)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -223,7 +223,7 @@ L25:
 	}
 L26:
 	;
-	v53 = F_expression_tree_walker_impl(m, v9, int32(866), l1)
+	v53 = F_expression_tree_walker_impl(m, v9, int32(867), l1)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -264,7 +264,7 @@ func F_contain_var_clause(m *base.Module, l0 int32) int32 {
 				return v29
 			} else {
 				if v9 != int32(6) {
-					v25 = F_expression_tree_walker_impl(m, l0, int32(898), int32(0))
+					v25 = F_expression_tree_walker_impl(m, l0, int32(899), int32(0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -284,7 +284,7 @@ func F_contain_var_clause(m *base.Module, l0 int32) int32 {
 				v29 = v8
 				return v29
 			} else {
-				v25 = F_expression_tree_walker_impl(m, l0, int32(898), int32(0))
+				v25 = F_expression_tree_walker_impl(m, l0, int32(899), int32(0))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
@@ -346,7 +346,7 @@ func F_contain_volatile_functions_walker(m *base.Module, l0 int32, l1 int32) int
 		return v55
 	} else {
 		v7 = int32(1)
-		v9 = F_check_functions_in_node(m, l0, int32(859), l1)
+		v9 = F_check_functions_in_node(m, l0, int32(860), l1)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -362,7 +362,7 @@ func F_contain_volatile_functions_walker(m *base.Module, l0 int32, l1 int32) int
 					v55 = v7
 					return v55
 				case 1, 2, 3, 4, 5, 6, 7:
-					v50 = F_expression_tree_walker_impl(m, l0, int32(860), l1)
+					v50 = F_expression_tree_walker_impl(m, l0, int32(861), l1)
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
@@ -371,7 +371,7 @@ func F_contain_volatile_functions_walker(m *base.Module, l0 int32, l1 int32) int
 						return v50
 					}
 				case 8:
-					v46 = F_query_tree_walker_impl(m, l0, int32(860), l1, int32(0))
+					v46 = F_query_tree_walker_impl(m, l0, int32(861), l1, int32(0))
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {
@@ -382,7 +382,7 @@ func F_contain_volatile_functions_walker(m *base.Module, l0 int32, l1 int32) int
 				default:
 					if v13 != int32(277) {
 						if v13 != int32(318) {
-							v50 = F_expression_tree_walker_impl(m, l0, int32(860), l1)
+							v50 = F_expression_tree_walker_impl(m, l0, int32(861), l1)
 							mBase = m.M
 							v51 = m.ExcPending
 							if v51 != 0 {

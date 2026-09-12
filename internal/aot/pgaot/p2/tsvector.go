@@ -374,8 +374,8 @@ func F_compute_tsvector_stats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 f
 	v25 = v23 - int32(112)
 	m.G0 = v25
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v25)+72)) = int32(1181)
-	*(*int32)(unsafe.Add(mBase, uint32(v25)+68)) = int32(1182)
+	*(*int32)(unsafe.Add(mBase, uint32(v25)+72)) = int32(1182)
+	*(*int32)(unsafe.Add(mBase, uint32(v25)+68)) = int32(1183)
 	*(*int64)(unsafe.Add(mBase, uint32(v25)+60)) = int64(68719476744)
 	v35 = *(*int32)(unsafe.Add(mBase, _c_F_compute_tsvector_stats[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+84)) = v35
@@ -1118,7 +1118,7 @@ L103:
 	goto L104
 L104:
 	;
-	F_qsort_interruptible(m, v459, v528, int32(4), int32(1183), int32(0))
+	F_qsort_interruptible(m, v459, v528, int32(4), int32(1184), int32(0))
 	mBase = m.M
 	v567 = m.ExcPending
 	if v567 != 0 {
@@ -1136,7 +1136,7 @@ L105:
 L106:
 	;
 	v579 = int32(0)
-	F_qsort_interruptible(m, v459, v576, int32(4), int32(1184), v579)
+	F_qsort_interruptible(m, v459, v576, int32(4), int32(1185), v579)
 	mBase = m.M
 	v584 = m.ExcPending
 	if v584 != 0 {

@@ -1289,7 +1289,7 @@ L23:
 	}
 L24:
 	;
-	v128 = F_RangeVarGetRelidExtended(m, v121, int32(4), int32(0), int32(1059), v36+int32(604))
+	v128 = F_RangeVarGetRelidExtended(m, v121, int32(4), int32(0), int32(1060), v36+int32(604))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {

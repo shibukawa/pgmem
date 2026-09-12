@@ -21,7 +21,7 @@ func F_contain_agg_clause_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		if base.Ui32(v7-int32(9)) < base.Ui32(int32(2)) {
 			return int32(1)
 		} else {
-			v15 = F_expression_tree_walker_impl(m, l0, int32(854), l1)
+			v15 = F_expression_tree_walker_impl(m, l0, int32(855), l1)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
@@ -150,7 +150,7 @@ func F_contain_leaked_vars_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	v139 = F_expression_tree_walker_impl(m, l0, int32(869), l1)
+	v139 = F_expression_tree_walker_impl(m, l0, int32(870), l1)
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -216,7 +216,7 @@ L7:
 	}
 L8:
 	;
-	v16 = F_check_functions_in_node(m, l0, int32(868), l1)
+	v16 = F_check_functions_in_node(m, l0, int32(869), l1)
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
@@ -622,7 +622,7 @@ func F_contain_outer_selfref_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v6 != int32(67) {
 			if v6 != int32(101) {
-				v40 = F_expression_tree_walker_impl(m, l0, int32(842), l1)
+				v40 = F_expression_tree_walker_impl(m, l0, int32(843), l1)
 				mBase = m.M
 				v41 = m.ExcPending
 				if v41 != 0 {
@@ -655,7 +655,7 @@ func F_contain_outer_selfref_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v24 + int32(1)
-			v30 = F_query_tree_walker_impl(m, l0, int32(842), l1, int32(16))
+			v30 = F_query_tree_walker_impl(m, l0, int32(843), l1, int32(16))
 			mBase = m.M
 			v33 = m.ExcPending
 			if v33 != 0 {
@@ -696,7 +696,7 @@ func F_contain_var_clause_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				return v29
 			} else {
 				if v10 != int32(6) {
-					v25 = F_expression_tree_walker_impl(m, l0, int32(898), l1)
+					v25 = F_expression_tree_walker_impl(m, l0, int32(899), l1)
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -716,7 +716,7 @@ func F_contain_var_clause_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				v29 = v9
 				return v29
 			} else {
-				v25 = F_expression_tree_walker_impl(m, l0, int32(898), l1)
+				v25 = F_expression_tree_walker_impl(m, l0, int32(899), l1)
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
@@ -765,7 +765,7 @@ func F_contain_vars_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			return base.B2i32(v19 == int32(0))
 		case 1, 2, 3, 4, 5, 6, 7, 8:
-			v44 = F_expression_tree_walker_impl(m, l0, int32(899), l1)
+			v44 = F_expression_tree_walker_impl(m, l0, int32(900), l1)
 			mBase = m.M
 			v45 = m.ExcPending
 			if v45 != 0 {
@@ -776,7 +776,7 @@ func F_contain_vars_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		case 9:
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v28 + int32(1)
-			v34 = F_query_tree_walker_impl(m, l0, int32(899), l1, int32(0))
+			v34 = F_query_tree_walker_impl(m, l0, int32(900), l1, int32(0))
 			mBase = m.M
 			v37 = m.ExcPending
 			if v37 != 0 {
@@ -791,7 +791,7 @@ func F_contain_vars_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 				v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 				if v23 != v24 {
-					v44 = F_expression_tree_walker_impl(m, l0, int32(899), l1)
+					v44 = F_expression_tree_walker_impl(m, l0, int32(900), l1)
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
@@ -804,7 +804,7 @@ func F_contain_vars_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			} else {
 				if v8 != int32(6) {
-					v44 = F_expression_tree_walker_impl(m, l0, int32(899), l1)
+					v44 = F_expression_tree_walker_impl(m, l0, int32(900), l1)
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
@@ -850,7 +850,7 @@ func F_contain_windowfuncs_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		if v7 == int32(11) {
 			return int32(1)
 		} else {
-			v13 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
+			v13 = F_expression_tree_walker_impl(m, l0, int32(1045), l1)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {

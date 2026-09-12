@@ -228,7 +228,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 			if v15 != 0 {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v15 + int32(1)
-				F_on_dsm_detach(m, l1, int32(1095), l0)
+				F_on_dsm_detach(m, l1, int32(1096), l0)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
@@ -277,7 +277,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 		if v15 != 0 {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(0)
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v15 + int32(1)
-			F_on_dsm_detach(m, l1, int32(1095), l0)
+			F_on_dsm_detach(m, l1, int32(1096), l0)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {

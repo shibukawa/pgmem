@@ -211,7 +211,7 @@ func F_in_range_int2_int2(m *base.Module, l0 int32) int32 {
 	v6 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+36)))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(1318), int32(0), v4, v5, v6, v7, v8)
+	v9 = F_DirectFunctionCall5Coll(m, int32(1319), int32(0), v4, v5, v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -242,7 +242,7 @@ func F_in_range_int4_int2(m *base.Module, l0 int32) int32 {
 	v6 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+36)))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(1317), int32(0), v4, v5, v6, v7, v8)
+	v9 = F_DirectFunctionCall5Coll(m, int32(1318), int32(0), v4, v5, v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -602,9 +602,9 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 		v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		if v20 != int32(2147483647) {
 			if v80 != 0 {
-				v113 = int32(1475)
+				v113 = int32(1476)
 			} else {
-				v113 = int32(1473)
+				v113 = int32(1474)
 			}
 			v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 			mBase = m.M
@@ -673,9 +673,9 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 		} else {
 			if v24 != int32(2147483647) {
 				if v80 != 0 {
-					v113 = int32(1475)
+					v113 = int32(1476)
 				} else {
-					v113 = int32(1473)
+					v113 = int32(1474)
 				}
 				v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 				mBase = m.M
@@ -744,9 +744,9 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 			} else {
 				if v68 != int64(9223372036854775807) {
 					if v80 != 0 {
-						v113 = int32(1475)
+						v113 = int32(1476)
 					} else {
-						v113 = int32(1473)
+						v113 = int32(1474)
 					}
 					v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 					mBase = m.M
@@ -815,7 +815,7 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 				} else {
 					v89 = *(*int32)(unsafe.Add(mBase, uint32(v81)+12))
 					if v80 != 0 {
-						v90 = int32(1475)
+						v90 = int32(1476)
 						if v89 != int32(2147483647) {
 							v113 = v90
 							v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
@@ -1027,7 +1027,7 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 						}
 					} else {
 						if v89 != int32(-2147483648) {
-							v113 = int32(1473)
+							v113 = int32(1474)
 							v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 							mBase = m.M
 							v119 = m.ExcPending
@@ -1095,7 +1095,7 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 						} else {
 							v102 = *(*int32)(unsafe.Add(mBase, uint32(v81)+8))
 							if v102 != int32(-2147483648) {
-								v113 = int32(1473)
+								v113 = int32(1474)
 								v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 								mBase = m.M
 								v119 = m.ExcPending
@@ -1163,7 +1163,7 @@ func F_in_range_interval_interval(m *base.Module, l0 int32) int32 {
 							} else {
 								v105 = *(*int64)(unsafe.Add(mBase, uint32(v81)))
 								if v105 != int64(-9223372036854775807-1) {
-									v113 = int32(1473)
+									v113 = int32(1474)
 									v116 = F_DirectFunctionCall2Coll(m, v113, int32(0), v81, v19)
 									mBase = m.M
 									v119 = m.ExcPending

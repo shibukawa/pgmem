@@ -2932,6 +2932,31 @@ func F_compare_values(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		}
 	}
 }
+func F_comparecost_3(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 float32
+	_ = v7
+	var v8 float32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v7 = *(*float32)(unsafe.Add(mBase, uint32(l0)+4))
+	v8 = *(*float32)(unsafe.Add(mBase, uint32(l1)+4))
+	if base.F32_gt(v7, v8) != 0 {
+		v10 = int32(1)
+	} else {
+		v10 = int32(-1)
+	}
+	if base.F32_ne(v7, v8) != 0 {
+		v13 = v10
+	} else {
+		v13 = int32(0)
+	}
+	return v13
+}
 func F_compatible_oper_opid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -6859,7 +6884,7 @@ func F_convert_combining_aggrefs(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v77 = F_expression_tree_mutator_impl(m, l0, int32(836), l1)
+			v77 = F_expression_tree_mutator_impl(m, l0, int32(837), l1)
 			mBase = m.M
 			v78 = m.ExcPending
 			if v78 != 0 {

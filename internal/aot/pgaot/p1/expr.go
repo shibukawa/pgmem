@@ -187,7 +187,7 @@ func F_checkExprHasSubLink(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1046), int32(0), int32(3))
+	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1047), int32(0), int32(3))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

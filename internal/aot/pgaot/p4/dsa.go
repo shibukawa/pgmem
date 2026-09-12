@@ -77,7 +77,7 @@ func F_dsa_attach(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v3)+24))
-				F_on_dsm_detach(m, v3, int32(1785), v29)
+				F_on_dsm_detach(m, v3, int32(1786), v29)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {

@@ -7904,19 +7904,19 @@ func F_interval_lerp(m *base.Module, l0 int32, l1 int32, l2 float64) int32 {
 	v7 = v5 - int32(16)
 	m.G0 = v7
 	*(*float64)(unsafe.Add(mBase, uint32(v7)+8)) = l2
-	v16 = F_DirectFunctionCall2Coll(m, int32(1475), v4, l1, l0)
+	v16 = F_DirectFunctionCall2Coll(m, int32(1476), v4, l1, l0)
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_DirectFunctionCall2Coll(m, int32(1474), v4, v16, v7+int32(8))
+		v22 = F_DirectFunctionCall2Coll(m, int32(1475), v4, v16, v7+int32(8))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
 			return int32(0)
 		} else {
-			v24 = F_DirectFunctionCall2Coll(m, int32(1473), v4, v22, l0)
+			v24 = F_DirectFunctionCall2Coll(m, int32(1474), v4, v22, l0)
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

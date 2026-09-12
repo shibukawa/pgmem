@@ -606,7 +606,7 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 		}
 	}
 	*(*uint8)(unsafe.Add(mBase, uint32(v10)+28)) = uint8(v26)
-	v31 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1053), v10+int32(12))
+	v31 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1054), v10+int32(12))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {

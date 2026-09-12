@@ -263,7 +263,7 @@ func F_ExecForeignScan(m *base.Module, l0 int32) int32 {
 			v15 = int32(0)
 			return v15
 		} else {
-			v11 = F_ExecScan(m, l0, int32(708), int32(709))
+			v11 = F_ExecScan(m, l0, int32(709), int32(710))
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {
@@ -274,7 +274,7 @@ func F_ExecForeignScan(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v11 = F_ExecScan(m, l0, int32(708), int32(709))
+		v11 = F_ExecScan(m, l0, int32(709), int32(710))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {

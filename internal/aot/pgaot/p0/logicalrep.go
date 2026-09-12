@@ -1222,7 +1222,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_logicalrep_relmap_update[0])) = v36
-	F_CacheRegisterRelcacheCallback(m, int32(1014))
+	F_CacheRegisterRelcacheCallback(m, int32(1015))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {

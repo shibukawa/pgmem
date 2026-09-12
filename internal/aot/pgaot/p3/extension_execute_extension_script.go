@@ -2982,7 +2982,7 @@ L146:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v979
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+227)) = uint8(v1027)
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+243)) = uint8(v1030)
-	v1654 = F_DirectFunctionCall4Coll(m, int32(553), int32(950), v1573, v1593, v1613, v1633)
+	v1654 = F_DirectFunctionCall4Coll(m, int32(554), int32(950), v1573, v1593, v1613, v1633)
 	mBase = m.M
 	v1655 = m.ExcPending
 	if v1655 != 0 {
@@ -3198,7 +3198,7 @@ L157:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v979
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+227)) = uint8(v1027)
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+243)) = uint8(v1030)
-	v1796 = F_DirectFunctionCall3Coll(m, int32(554), int32(950), v1654, v1756, v1775)
+	v1796 = F_DirectFunctionCall3Coll(m, int32(555), int32(950), v1654, v1756, v1775)
 	mBase = m.M
 	v1797 = m.ExcPending
 	if v1797 != 0 {
@@ -3480,7 +3480,7 @@ L172:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v979
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+227)) = uint8(v1027)
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+243)) = uint8(v1030)
-	v1993 = F_DirectFunctionCall3Coll(m, int32(554), int32(950), v1914, v1953, v1972)
+	v1993 = F_DirectFunctionCall3Coll(m, int32(555), int32(950), v1914, v1953, v1972)
 	mBase = m.M
 	v1994 = m.ExcPending
 	if v1994 != 0 {
@@ -3874,7 +3874,7 @@ L201:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v979
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+227)) = uint8(v1027)
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+243)) = uint8(v1030)
-	v2235 = F_DirectFunctionCall3Coll(m, int32(554), int32(950), v2173, v2194, v2214)
+	v2235 = F_DirectFunctionCall3Coll(m, int32(555), int32(950), v2173, v2194, v2214)
 	mBase = m.M
 	v2236 = m.ExcPending
 	if v2236 != 0 {
@@ -3922,7 +3922,7 @@ L204:
 	*(*int32)(unsafe.Add(mBase, uint32(v979)+4)) = v981
 	*(*int32)(unsafe.Add(mBase, uint32(v979))) = v2277
 	*(*int32)(unsafe.Add(mBase, uint32(v980)+8)) = v979
-	*(*int32)(unsafe.Add(mBase, uint32(v980)+4)) = int32(555)
+	*(*int32)(unsafe.Add(mBase, uint32(v980)+4)) = int32(556)
 	v2286 = int32(_a_F_execute_extension_script_35)
 	v2287 = *(*int32)(unsafe.Add(mBase, _c_F_execute_extension_script[11]))
 	*(*int32)(unsafe.Add(mBase, uint32(v980))) = v2287
@@ -4918,7 +4918,7 @@ L257:
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+268)) = v979
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+227)) = uint8(v1027)
 	*(*uint8)(unsafe.Add(mBase, uint32(v39)+243)) = uint8(v1030)
-	v3153 = F_DirectFunctionCall3Coll(m, int32(554), int32(950), v2141, v3113, v3132)
+	v3153 = F_DirectFunctionCall3Coll(m, int32(555), int32(950), v2141, v3113, v3132)
 	mBase = m.M
 	v3154 = m.ExcPending
 	if v3154 != 0 {

@@ -139,7 +139,7 @@ func F_tsvector_delete_by_indices(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	v4 = int32(0)
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if int32(2) <= l2 {
-		F_pg_qsort(m, l1, l2, int32(4), int32(1536))
+		F_pg_qsort(m, l1, l2, int32(4), int32(1537))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {

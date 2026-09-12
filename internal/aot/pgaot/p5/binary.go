@@ -877,7 +877,7 @@ L52:
 	*(*int32)(unsafe.Add(mBase, uint32(v112)+4)) = int32(_a_F_binary_upgrade_logical_slot_has_caught_up_7)
 	*(*int32)(unsafe.Add(mBase, uint32(v112))) = v135
 	*(*int32)(unsafe.Add(mBase, uint32(v111)+8)) = v112
-	*(*int32)(unsafe.Add(mBase, uint32(v111)+4)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v111)+4)) = int32(993)
 	v203 = int32(_a_F_binary_upgrade_logical_slot_has_caught_up_8)
 	v204 = *(*int32)(unsafe.Add(mBase, _c_F_binary_upgrade_logical_slot_has_caught_up[4]))
 	*(*int32)(unsafe.Add(mBase, uint32(v111))) = v204

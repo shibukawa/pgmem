@@ -8460,7 +8460,7 @@ L58:
 	}
 L59:
 	;
-	F_RegisterExprContextCallback(m, v20, int32(634), v67)
+	F_RegisterExprContextCallback(m, v20, int32(635), v67)
 	mBase = m.M
 	v354 = m.ExcPending
 	if v354 != 0 {
@@ -8615,7 +8615,7 @@ L81:
 	goto L74
 L82:
 	;
-	F_RegisterExprContextCallback(m, v20, int32(634), v67)
+	F_RegisterExprContextCallback(m, v20, int32(635), v67)
 	mBase = m.M
 	v399 = m.ExcPending
 	if v399 != 0 {
@@ -17240,7 +17240,7 @@ func F_end_MultiFuncCall(m *base.Module, l0 int32) {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_UnregisterExprContextCallback(m, v4, int32(1628), v6)
+	F_UnregisterExprContextCallback(m, v4, int32(1629), v6)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
@@ -25266,7 +25266,7 @@ L15:
 	}
 L16:
 	;
-	v1448 = F_expression_tree_mutator_impl(m, v25, int32(870), l1)
+	v1448 = F_expression_tree_mutator_impl(m, v25, int32(871), l1)
 	mBase = m.M
 	v1449 = m.ExcPending
 	if v1449 != 0 {
@@ -25415,7 +25415,7 @@ L27:
 	}
 L28:
 	;
-	v1077 = F_expression_tree_mutator_impl(m, v25, int32(870), l1)
+	v1077 = F_expression_tree_mutator_impl(m, v25, int32(871), l1)
 	mBase = m.M
 	v1078 = m.ExcPending
 	if v1078 != 0 {
@@ -25514,7 +25514,7 @@ L36:
 	}
 L37:
 	;
-	v451 = F_expression_tree_mutator_impl(m, v25, int32(870), l1)
+	v451 = F_expression_tree_mutator_impl(m, v25, int32(871), l1)
 	mBase = m.M
 	v452 = m.ExcPending
 	if v452 != 0 {
@@ -25524,7 +25524,7 @@ L37:
 	}
 L38:
 	;
-	v367 = F_expression_tree_mutator_impl(m, v25, int32(870), l1)
+	v367 = F_expression_tree_mutator_impl(m, v25, int32(871), l1)
 	mBase = m.M
 	v368 = m.ExcPending
 	if v368 != 0 {
@@ -25535,7 +25535,7 @@ L38:
 L39:
 	;
 	v288 = *(*int32)(unsafe.Add(mBase, uint32(v25)+28))
-	v290 = F_expression_tree_mutator_impl(m, v288, int32(870), l1)
+	v290 = F_expression_tree_mutator_impl(m, v288, int32(871), l1)
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -25826,7 +25826,7 @@ L75:
 	}
 L76:
 	;
-	v137 = F_expression_tree_mutator_impl(m, v132, int32(870), l1)
+	v137 = F_expression_tree_mutator_impl(m, v132, int32(871), l1)
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -26490,7 +26490,7 @@ L160:
 	}
 L161:
 	;
-	v457 = F_expression_tree_walker_impl(m, v451, int32(871), int32(0))
+	v457 = F_expression_tree_walker_impl(m, v451, int32(872), int32(0))
 	mBase = m.M
 	v458 = m.ExcPending
 	if v458 != 0 {
@@ -27928,7 +27928,7 @@ L340:
 	goto L3
 L341:
 	;
-	v1081 = F_expression_tree_walker_impl(m, v1077, int32(871), int32(0))
+	v1081 = F_expression_tree_walker_impl(m, v1077, int32(872), int32(0))
 	mBase = m.M
 	v1082 = m.ExcPending
 	if v1082 != 0 {
@@ -31347,6 +31347,248 @@ func F_exec_dynquery_with_params(m *base.Module, l0 int32, l1 int32, l2 int32, l
 			}
 		}
 	}
+}
+func F_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
+	var v91 int32
+	_ = v91
+	var v92 int32
+	_ = v92
+	v6 = int32(0)
+	F_check_stack_depth(m)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
+	if v13 == int32(2) {
+		v76 = l0
+		v82 = v6
+		goto L4
+	} else {
+		goto L5
+	}
+L3:
+	;
+	return (v91 ^ v92) & int32(1)
+L4:
+	;
+	v84 = m.T0[l4].(func(*base.Module, int32, int32, int32) int32)(m, l1, v76, l2)
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L1
+	} else {
+		goto L23
+	}
+L5:
+	;
+	v16 = l0
+	v19 = l3
+	v22 = v6
+	goto L6
+L6:
+	;
+	v26 = v16
+	goto L8
+L7:
+	;
+	v76 = v72
+	v82 = v22
+	goto L4
+L8:
+	;
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v26)+4))
+	switch v34 - int32(33) {
+	case 0:
+		goto L13
+	default:
+		goto L11
+	case 5:
+		goto L12
+	}
+L9:
+	;
+	goto L7
+L10:
+	;
+	F_check_stack_depth(m)
+	mBase = m.M
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
+L11:
+	;
+	v59 = int32(1)
+	v60 = int32(*(*int16)(unsafe.Add(mBase, uint32(v26)+2)))
+	v66 = F_execute(m, v26+v60<<(uint(int32(3))%32), l1, l2, v19&v59, l4)
+	mBase = m.M
+	v67 = m.ExcPending
+	if v67 != 0 {
+		goto L1
+	} else {
+		goto L19
+	}
+L12:
+	;
+	v52 = int32(*(*int16)(unsafe.Add(mBase, uint32(v26)+2)))
+	v56 = F_execute(m, v26+v52<<(uint(int32(3))%32), l1, l2, v19&int32(1), l4)
+	mBase = m.M
+	v57 = m.ExcPending
+	if v57 != 0 {
+		goto L1
+	} else {
+		goto L17
+	}
+L13:
+	;
+	v37 = int32(1)
+	if v19&v37 == int32(0) {
+		v91 = v37
+		v92 = v22
+		goto L3
+	} else {
+		goto L14
+	}
+L14:
+	;
+	v42 = int32(1)
+	v44 = v22 ^ v42
+	F_check_stack_depth(m)
+	mBase = m.M
+	v46 = m.ExcPending
+	if v46 != 0 {
+		goto L1
+	} else {
+		goto L15
+	}
+L15:
+	;
+	v48 = v26 - int32(8)
+	v49 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v48))))
+	if v49 != int32(2) {
+		v16 = v48
+		v19 = v42
+		v22 = v44
+		goto L6
+	} else {
+		goto L16
+	}
+L16:
+	;
+	v76 = v48
+	v82 = v44
+	goto L4
+L17:
+	;
+	if v56 != 0 {
+		goto L10
+	} else {
+		goto L18
+	}
+L18:
+	;
+	v91 = int32(0)
+	v92 = v22
+	goto L3
+L19:
+	;
+	if v66 != 0 {
+		v91 = v59
+		v92 = v22
+		goto L3
+	} else {
+		goto L20
+	}
+L20:
+	;
+	goto L10
+L21:
+	;
+	v72 = v26 - int32(8)
+	v73 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v72))))
+	if v73 != int32(2) {
+		v26 = v72
+		goto L8
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L9
+L23:
+	;
+	v91 = v84
+	v92 = v82
+	goto L3
 }
 func F_existsTimeLineHistory(m *base.Module, l0 int32) int32 {
 	mBase := m.M

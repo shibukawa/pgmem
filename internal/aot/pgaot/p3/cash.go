@@ -380,7 +380,7 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 				} else {
 					v64 = v42
 				}
-				v69 = int32(1274)
+				v69 = int32(1275)
 				v70 = int32(0)
 				v75 = F_int64_to_numeric(m, v64)
 				mBase = m.M
@@ -394,7 +394,7 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 					if v78 != 0 {
 						return int32(0)
 					} else {
-						v79 = F_DirectFunctionCall2Coll(m, int32(1275), v70, v14, v77)
+						v79 = F_DirectFunctionCall2Coll(m, int32(1276), v70, v14, v77)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {

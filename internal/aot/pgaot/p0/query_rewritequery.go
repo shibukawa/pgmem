@@ -4318,7 +4318,7 @@ L240:
 	goto L241
 L241:
 	;
-	v1512 = F_expression_tree_walker_impl(m, v1497, int32(1040), v1441+int32(348))
+	v1512 = F_expression_tree_walker_impl(m, v1497, int32(1041), v1441+int32(348))
 	mBase = m.M
 	v1513 = m.ExcPending
 	if v1513 != 0 {
@@ -4553,7 +4553,7 @@ L270:
 	goto L271
 L271:
 	;
-	v1627 = F_expression_tree_walker_impl(m, v1610, int32(1040), v1441+int32(347))
+	v1627 = F_expression_tree_walker_impl(m, v1610, int32(1041), v1441+int32(347))
 	mBase = m.M
 	v1628 = m.ExcPending
 	if v1628 != 0 {
@@ -7265,7 +7265,7 @@ L633:
 	;
 	v3968 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v2965)+348)) = uint8(v3968)
-	v3974 = F_query_tree_walker_impl(m, v3011, int32(1040), v2965+int32(348), int32(3))
+	v3974 = F_query_tree_walker_impl(m, v3011, int32(1041), v2965+int32(348), int32(3))
 	mBase = m.M
 	v3975 = m.ExcPending
 	if v3975 != 0 {

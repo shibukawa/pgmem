@@ -5135,7 +5135,7 @@ func F_expr_setup_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				v69 = v3
 				return v69
 			} else {
-				v67 = F_expression_tree_walker_impl(m, l0, int32(586), l1)
+				v67 = F_expression_tree_walker_impl(m, l0, int32(587), l1)
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
@@ -5148,7 +5148,7 @@ func F_expr_setup_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		case 17:
 			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			if v50 != int32(5) {
-				v67 = F_expression_tree_walker_impl(m, l0, int32(586), l1)
+				v67 = F_expression_tree_walker_impl(m, l0, int32(587), l1)
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
@@ -5172,7 +5172,7 @@ func F_expr_setup_walker(m *base.Module, l0 int32, l1 int32) int32 {
 						v69 = v3
 						return v69
 					} else {
-						v67 = F_expression_tree_walker_impl(m, l0, int32(586), l1)
+						v67 = F_expression_tree_walker_impl(m, l0, int32(587), l1)
 						mBase = m.M
 						v68 = m.ExcPending
 						if v68 != 0 {
@@ -5208,7 +5208,7 @@ func F_fix_scan_expr_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			v13 = F_expression_tree_walker_impl(m, l0, int32(839), l1)
+			v13 = F_expression_tree_walker_impl(m, l0, int32(840), l1)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {

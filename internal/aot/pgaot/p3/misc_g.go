@@ -1415,6 +1415,96 @@ func F_GlobalVisCheckRemovableXid(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_g_intbig_penalty(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	v2 = int32(0)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v10 == v2 {
+		v27 = v2
+	} else {
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+24))
+		if v14 == int32(0) {
+			v27 = v2
+		} else {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+			if v17 != int32(7) {
+				v27 = v2
+			} else {
+				v20 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
+				if v20 != int32(17) {
+					v27 = v2
+				} else {
+					v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+24)))
+					v27 = v23 ^ int32(1)
+				}
+			}
+		}
+	}
+	if v27&int32(1) != 0 {
+		v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v31 = F_get_fn_opclass_options(m, v30)
+		mBase = m.M
+		v34 = m.ExcPending
+		if v34 != 0 {
+			return int32(0)
+		} else {
+			v35 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+			v36 = v35
+			v37 = F_hemdist_3(m, v7, v9, v36)
+			mBase = m.M
+			*(*float32)(unsafe.Add(mBase, uint32(v5))) = base.F32_convert_i32_s(v37)
+			return v5
+		}
+	} else {
+		v36 = int32(252)
+		v37 = F_hemdist_3(m, v7, v9, v36)
+		mBase = m.M
+		*(*float32)(unsafe.Add(mBase, uint32(v5))) = base.F32_convert_i32_s(v37)
+		return v5
+	}
+}
 func F_generate_dependencies_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase

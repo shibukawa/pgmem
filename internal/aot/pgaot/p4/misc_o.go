@@ -1091,7 +1091,7 @@ L26:
 	goto L25
 L27:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v83))) = int32(791)
+	*(*int32)(unsafe.Add(mBase, uint32(v83))) = int32(792)
 	v88 = *(*int32)(unsafe.Add(mBase, _c_F_oauth_init[3]))
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v88)+40))
 	*(*int32)(unsafe.Add(mBase, uint32(v83)+8)) = v89

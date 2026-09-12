@@ -3871,7 +3871,7 @@ L32:
 	goto L11
 L33:
 	;
-	F_list_sort(m, l2, int32(878))
+	F_list_sort(m, l2, int32(879))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -3891,7 +3891,7 @@ L35:
 	}
 L36:
 	;
-	F_list_sort(m, l3, int32(879))
+	F_list_sort(m, l3, int32(880))
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {

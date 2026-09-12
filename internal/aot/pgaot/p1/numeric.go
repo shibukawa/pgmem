@@ -4757,7 +4757,7 @@ func F_numeric_to_number(m *base.Module, l0 int32) int32 {
 												if v147 != 0 {
 													return int32(0)
 												} else {
-													v148 = F_DirectFunctionCall2Coll(m, int32(1312), v137, v141, v146)
+													v148 = F_DirectFunctionCall2Coll(m, int32(1313), v137, v141, v146)
 													mBase = m.M
 													v149 = m.ExcPending
 													if v149 != 0 {
@@ -4769,7 +4769,7 @@ func F_numeric_to_number(m *base.Module, l0 int32) int32 {
 														if v151 != 0 {
 															return int32(0)
 														} else {
-															v152 = F_DirectFunctionCall2Coll(m, int32(1277), v137, v131, v150)
+															v152 = F_DirectFunctionCall2Coll(m, int32(1278), v137, v131, v150)
 															mBase = m.M
 															v153 = m.ExcPending
 															if v153 != 0 {
@@ -4829,7 +4829,7 @@ func F_numeric_to_number(m *base.Module, l0 int32) int32 {
 											if v147 != 0 {
 												return int32(0)
 											} else {
-												v148 = F_DirectFunctionCall2Coll(m, int32(1312), v137, v141, v146)
+												v148 = F_DirectFunctionCall2Coll(m, int32(1313), v137, v141, v146)
 												mBase = m.M
 												v149 = m.ExcPending
 												if v149 != 0 {
@@ -4841,7 +4841,7 @@ func F_numeric_to_number(m *base.Module, l0 int32) int32 {
 													if v151 != 0 {
 														return int32(0)
 													} else {
-														v152 = F_DirectFunctionCall2Coll(m, int32(1277), v137, v131, v150)
+														v152 = F_DirectFunctionCall2Coll(m, int32(1278), v137, v131, v150)
 														mBase = m.M
 														v153 = m.ExcPending
 														if v153 != 0 {

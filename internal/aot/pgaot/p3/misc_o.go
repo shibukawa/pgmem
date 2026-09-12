@@ -423,7 +423,7 @@ func F_OffsetVarNodes(m *base.Module, l0 int32, l1 int32) {
 					}
 				}
 			}
-			v69 = F_query_tree_walker_impl(m, l0, int32(1047), v9+int32(8), int32(0))
+			v69 = F_query_tree_walker_impl(m, l0, int32(1048), v9+int32(8), int32(0))
 			mBase = m.M
 			v70 = m.ExcPending
 			if v70 != 0 {

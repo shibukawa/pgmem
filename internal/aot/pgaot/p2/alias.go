@@ -4360,6 +4360,22 @@ func F_gbt_var_key_copy(m *base.Module, l0 int32) int32
 func F_gbt_var_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_gbt_var_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_consistent
 func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_execconsistent github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_execconsistent
+func F_execconsistent(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_gin_bool_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gin_bool_consistent
+func F_gin_bool_consistent(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_makepol_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_makepol_3
+func F_makepol_3(m *base.Module, l0 int32) int32
+//go:linkname F_findoprnd_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_findoprnd_2
+func F_findoprnd_2(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_inner_int_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_inner_int_overlap
+func F_inner_int_overlap(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F__int_unique github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__int_unique
+func F__int_unique(m *base.Module, l0 int32) int32
+//go:linkname F_resize_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_resize_intArrayType
+func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
+func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

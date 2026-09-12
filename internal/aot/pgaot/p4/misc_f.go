@@ -3149,7 +3149,7 @@ func F_find_cols_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		default:
-			v35 = F_expression_tree_walker_impl(m, l0, int32(692), l1)
+			v35 = F_expression_tree_walker_impl(m, l0, int32(693), l1)
 			mBase = m.M
 			v36 = m.ExcPending
 			if v36 != 0 {
@@ -3161,7 +3161,7 @@ func F_find_cols_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		case 3:
 			v25 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v25)
-			v28 = F_expression_tree_walker_impl(m, l0, int32(692), l1)
+			v28 = F_expression_tree_walker_impl(m, l0, int32(693), l1)
 			mBase = m.M
 			v29 = m.ExcPending
 			if v29 != 0 {
@@ -12921,7 +12921,7 @@ func F_fireRIRonSubLink(m *base.Module, l0 int32, l1 int32) int32 {
 				v19 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+44)))
 				v20 = v18 | v19
 				*(*uint8)(unsafe.Add(mBase, uint32(l1)+4)) = uint8(v20)
-				v24 = F_expression_tree_walker_impl(m, l0, int32(1041), l1)
+				v24 = F_expression_tree_walker_impl(m, l0, int32(1042), l1)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
@@ -12931,7 +12931,7 @@ func F_fireRIRonSubLink(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v24 = F_expression_tree_walker_impl(m, l0, int32(1041), l1)
+			v24 = F_expression_tree_walker_impl(m, l0, int32(1042), l1)
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
@@ -12981,7 +12981,7 @@ func F_flatten_rtes_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v7 != int32(67) {
 			if v7 != int32(101) {
-				v34 = F_expression_tree_walker_impl(m, l0, int32(833), l1)
+				v34 = F_expression_tree_walker_impl(m, l0, int32(834), l1)
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -13031,7 +13031,7 @@ func F_flatten_rtes_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v25 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = l0
-			v29 = F_query_tree_walker_impl(m, l0, int32(833), l1, int32(16))
+			v29 = F_query_tree_walker_impl(m, l0, int32(834), l1, int32(16))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {

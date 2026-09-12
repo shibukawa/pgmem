@@ -3402,7 +3402,7 @@ L66:
 	goto L17
 L67:
 	;
-	v385 = F_DirectFunctionCall2Coll(m, int32(1345), int32(0), v382, v383)
+	v385 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v382, v383)
 	mBase = m.M
 	v386 = m.ExcPending
 	if v386 != 0 {
@@ -3437,7 +3437,7 @@ L71:
 	}
 L72:
 	;
-	v395 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v388, v393)
+	v395 = F_DirectFunctionCall2Coll(m, int32(1347), int32(0), v388, v393)
 	mBase = m.M
 	v396 = m.ExcPending
 	if v396 != 0 {
@@ -4184,7 +4184,7 @@ func F_jsonb_path_exists_internal(m *base.Module, l0 int32, l1 int32) int32 {
 					v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 					v24 = v19
 					v25 = base.B2i32(v21 == int32(0))
-					v29 = F_executeJsonPath(m, v13, v24, int32(1409), int32(1410), v8, v25, int32(0), l1)
+					v29 = F_executeJsonPath(m, v13, v24, int32(1410), int32(1411), v8, v25, int32(0), l1)
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -4256,7 +4256,7 @@ func F_jsonb_path_exists_internal(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v24 = v3
 				v25 = v3
-				v29 = F_executeJsonPath(m, v13, v24, int32(1409), int32(1410), v8, v25, int32(0), l1)
+				v29 = F_executeJsonPath(m, v13, v24, int32(1410), int32(1411), v8, v25, int32(0), l1)
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
@@ -4478,7 +4478,7 @@ func F_jsonb_path_query_internal(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						v42 = F_executeJsonPath(m, v30, v33, int32(1409), int32(1410), v27, base.B2i32(v37 == int32(0)), v9+int32(16), l1)
+						v42 = F_executeJsonPath(m, v30, v33, int32(1410), int32(1411), v27, base.B2i32(v37 == int32(0)), v9+int32(16), l1)
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -4790,12 +4790,12 @@ func F_jsonb_recv(m *base.Module, l0 int32) int32 {
 					v45 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v28))) = uint8(v45)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v45
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(1325)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1326)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = int32(1327)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(1328)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(1329)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(1330)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(1326)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1327)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = int32(1328)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(1329)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(1330)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(1331)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v8 + int32(56)
 					v69 = F_pg_parse_json_or_errsave(m, v8+int32(76), v8+int32(16), v45)
 					mBase = m.M

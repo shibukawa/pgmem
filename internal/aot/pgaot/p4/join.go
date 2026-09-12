@@ -685,8 +685,8 @@ L6:
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = int32(892)
-	*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = int32(893)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = int32(893)
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = int32(894)
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = int64(34359738372)
 	v30 = *(*int32)(unsafe.Add(mBase, _c_F_find_join_rel[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+56)) = v30

@@ -1339,7 +1339,7 @@ L15:
 	v105 = v102 + v68*int32(60)
 	v106 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
 	*(*int32)(unsafe.Add(mBase, uint32(v105))) = v106
-	v112 = F_DirectFunctionCall1Coll(m, int32(580), int32(0), v93+int32(12))
+	v112 = F_DirectFunctionCall1Coll(m, int32(581), int32(0), v93+int32(12))
 	mBase = m.M
 	v113 = m.ExcPending
 	if v113 != 0 {
@@ -1664,7 +1664,7 @@ L61:
 	goto L63
 L62:
 	;
-	v336 = F_DirectFunctionCall1Coll(m, int32(580), int32(0), v330)
+	v336 = F_DirectFunctionCall1Coll(m, int32(581), int32(0), v330)
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -1702,7 +1702,7 @@ L66:
 	goto L68
 L67:
 	;
-	v349 = F_DirectFunctionCall1Coll(m, int32(580), int32(0), v344)
+	v349 = F_DirectFunctionCall1Coll(m, int32(581), int32(0), v344)
 	mBase = m.M
 	v350 = m.ExcPending
 	if v350 != 0 {
@@ -10533,7 +10533,7 @@ L108:
 	goto L94
 L109:
 	;
-	F_qsort_arg(m, v1854, v1848, int32(8), int32(907), v67)
+	F_qsort_arg(m, v1854, v1848, int32(8), int32(908), v67)
 	mBase = m.M
 	v1873 = m.ExcPending
 	if v1873 != 0 {
@@ -10611,7 +10611,7 @@ L117:
 	goto L118
 L118:
 	;
-	F_pg_qsort(m, v522, v109, int32(12), int32(905))
+	F_pg_qsort(m, v522, v109, int32(12), int32(906))
 	mBase = m.M
 	v600 = m.ExcPending
 	if v600 != 0 {
@@ -11304,7 +11304,7 @@ L207:
 	}
 L208:
 	;
-	F_qsort_arg(m, v1313, v1385, int32(4), int32(906), v67)
+	F_qsort_arg(m, v1313, v1385, int32(4), int32(907), v67)
 	mBase = m.M
 	v1405 = m.ExcPending
 	if v1405 != 0 {

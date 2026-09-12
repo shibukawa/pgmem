@@ -3932,6 +3932,16 @@ func F_gbt_var_node_cp_len(m *base.Module, l0 int32, l1 int32) int32
 func F_gbt_var_penalty(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_gin_btree_extract_query github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_btree_extract_query
 func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_query_has_required_values github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_query_has_required_values
+func F_query_has_required_values(m *base.Module, l0 int32) int32
+//go:linkname F__int_unique github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__int_unique
+func F__int_unique(m *base.Module, l0 int32) int32
+//go:linkname F_inner_int_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_inner_int_inter
+func F_inner_int_inter(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
+func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_intarray_add_elem github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_intarray_add_elem
+func F_intarray_add_elem(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

@@ -707,7 +707,7 @@ func F_int8_sum(m *base.Module, l0 int32) int32 {
 						if v163 != 0 {
 							return int32(0)
 						} else {
-							v166 = F_DirectFunctionCall2Coll(m, int32(1293), int32(0), v92, v160)
+							v166 = F_DirectFunctionCall2Coll(m, int32(1294), int32(0), v92, v160)
 							mBase = m.M
 							v167 = m.ExcPending
 							if v167 != 0 {

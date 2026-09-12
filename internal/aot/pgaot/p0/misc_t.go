@@ -13700,7 +13700,7 @@ L97:
 	;
 	v390 = v168 + int32(8)
 	v391 = *(*int32)(unsafe.Add(mBase, uint32(v168)+4))
-	F_qsort_arg(m, v390, v391, int32(4), int32(1534), v390+v391<<(uint(int32(2))%32))
+	F_qsort_arg(m, v390, v391, int32(4), int32(1535), v390+v391<<(uint(int32(2))%32))
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {

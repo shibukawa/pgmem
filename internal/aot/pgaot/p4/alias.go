@@ -62,6 +62,8 @@ func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 func F_try_relation_open(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
+func F_add_local_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_transformRelOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_transformRelOptions
 func F_transformRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_build_reloptions github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_build_reloptions
@@ -740,6 +742,8 @@ func F_AlterConstraintNamespaces(m *base.Module, l0 int32, l1 int32, l2 int32, l
 func F_heap_getattr_4(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_recordDependencyOn github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_recordDependencyOn
 func F_recordDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_getExtensionOfObject github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_getExtensionOfObject
+func F_getExtensionOfObject(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_deleteDependencyRecordsForClass github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_deleteDependencyRecordsForClass
 func F_deleteDependencyRecordsForClass(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_changeDependencyFor github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_changeDependencyFor
@@ -4078,6 +4082,18 @@ func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_placeChar github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_placeChar
 func F_placeChar(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_contains_required_value github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_contains_required_value
+func F_contains_required_value(m *base.Module, l0 int32) int32
+//go:linkname F_int_query_opr_selec github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_int_query_opr_selec
+func F_int_query_opr_selec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float32) float64
+//go:linkname F_inner_int_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_inner_int_overlap
+func F_inner_int_overlap(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_copy_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_copy_intArrayType
+func F_copy_intArrayType(m *base.Module, l0 int32) int32
+//go:linkname F_resize_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_resize_intArrayType
+func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
+func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

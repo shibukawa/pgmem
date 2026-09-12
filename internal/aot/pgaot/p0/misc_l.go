@@ -2008,7 +2008,7 @@ L5:
 	goto L6
 L6:
 	;
-	v171 = F_expression_tree_walker_impl(m, l0, int32(560), l1)
+	v171 = F_expression_tree_walker_impl(m, l0, int32(561), l1)
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -2018,7 +2018,7 @@ L6:
 	}
 L7:
 	;
-	v168 = F_query_tree_walker_impl(m, l0, int32(560), l1, int32(4))
+	v168 = F_query_tree_walker_impl(m, l0, int32(561), l1, int32(4))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {
@@ -3143,7 +3143,7 @@ func F_leftmostvalue_varbit(m *base.Module) int32 {
 	var v9 int32
 	_ = v9
 	v2 = int32(0)
-	v6 = F_DirectFunctionCall3Coll(m, int32(2652), v2, int32(_a_F_leftmostvalue_varbit_0), v2, int32(-1))
+	v6 = F_DirectFunctionCall3Coll(m, int32(2653), v2, int32(_a_F_leftmostvalue_varbit_0), v2, int32(-1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -8956,7 +8956,7 @@ L4:
 L5:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_lookup_proof_cache[0])) = v34
-	F_CacheRegisterSyscacheCallback(m, int32(3), int32(891), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(3), int32(892), int32(0))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {

@@ -2699,7 +2699,7 @@ L70:
 	goto L22
 L71:
 	;
-	F_pg_qsort(m, v90, v87, int32(24), int32(821))
+	F_pg_qsort(m, v90, v87, int32(24), int32(822))
 	mBase = m.M
 	v416 = m.ExcPending
 	if v416 != 0 {
@@ -2723,7 +2723,7 @@ L74:
 	goto L75
 L75:
 	;
-	F_pg_qsort(m, v90, v87, int32(24), int32(822))
+	F_pg_qsort(m, v90, v87, int32(24), int32(823))
 	mBase = m.M
 	v511 = m.ExcPending
 	if v511 != 0 {

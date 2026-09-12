@@ -2,6 +2,18 @@ package p2
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__int_contained_sel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_contained_sel_0)
+}
+func F_pg_finfo__int_contains_joinsel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_contains_joinsel_0)
+}
+func F_pg_finfo__int_overlap_joinsel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_overlap_joinsel_0)
+}
+func F_pg_finfo__int_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_same_0)
+}
 func F_pg_finfo__lt_q_regex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__lt_q_regex_0)
 }
@@ -52,6 +64,18 @@ func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_fetchval(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_fetchval_0)
+}
+func F_pg_finfo_g_int_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_penalty_0)
+}
+func F_pg_finfo_g_int_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_union_0)
+}
+func F_pg_finfo_g_intbig_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_decompress_0)
+}
+func F_pg_finfo_g_intbig_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_picksplit_0)
 }
 func F_pg_finfo_gbt_bit_penalty(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbt_bit_penalty_0)
@@ -235,6 +259,12 @@ func F_pg_finfo_hstore_exists_any(m *base.Module) int32 {
 }
 func F_pg_finfo_hstore_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_in_0)
+}
+func F_pg_finfo_intarray_push_elem(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_intarray_push_elem_0)
+}
+func F_pg_finfo_intset_union_elem(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_intset_union_elem_0)
 }
 func F_pg_finfo_iso8859_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_to_utf8_0)

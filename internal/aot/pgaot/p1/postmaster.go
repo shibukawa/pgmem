@@ -39,7 +39,7 @@ func F_RegisterPostmasterChildActive(m *base.Module) {
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterPostmasterChildActive[1]))
 	v5 = int32(2)
 	*(*int32)(unsafe.Add(mBase, uint32(v2+v4<<(uint(v5)%32))+44)) = v5
-	F_on_shmem_exit(m, int32(1100), int32(0))
+	F_on_shmem_exit(m, int32(1101), int32(0))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

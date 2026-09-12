@@ -2750,6 +2750,136 @@ L46:
 	v134 = v127
 	goto L1
 }
+func F_findoprnd_2(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v53 int32
+	_ = v53
+	F_check_stack_depth(m)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return
+L2:
+	;
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v12 = l0 + v9<<(uint(int32(3))%32)
+	v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v12))))
+	if v13 != int32(2) {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v18 = v9
+	v19 = v12
+	goto L6
+L4:
+	;
+	v46 = v9
+	goto L5
+L5:
+	;
+	v53 = int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(l0+v46<<(uint(int32(3))%32))+2)) = uint16(v53)
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v46 - int32(1)
+	return
+L6:
+	;
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v18 - int32(1)
+	if v22 != int32(33) {
+		goto L8
+	} else {
+		goto L9
+	}
+L7:
+	;
+	v46 = v37
+	goto L5
+L8:
+	;
+	F_findoprnd_2(m, l0, l1)
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		goto L1
+	} else {
+		goto L11
+	}
+L9:
+	;
+	v33 = int32(_a_F_findoprnd_2_0)
+	goto L10
+L10:
+	;
+	*(*uint16)(unsafe.Add(mBase, uint32(v19)+2)) = uint16(v33)
+	F_check_stack_depth(m)
+	mBase = m.M
+	v36 = m.ExcPending
+	if v36 != 0 {
+		goto L1
+	} else {
+		goto L12
+	}
+L11:
+	;
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v33 = v31 - v18
+	goto L10
+L12:
+	;
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v40 = l0 + v37<<(uint(int32(3))%32)
+	v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v40))))
+	if v41 != int32(2) {
+		v18 = v37
+		v19 = v40
+		goto L6
+	} else {
+		goto L13
+	}
+L13:
+	;
+	goto L7
+}
 func F_finnish_ISO_8859_1_create_env(m *base.Module) int32 {
 	var v3 int32
 	_ = v3
@@ -3656,7 +3786,7 @@ L61:
 	goto L54
 L62:
 	;
-	v217 = F_expression_tree_mutator_impl(m, v16, int32(835), l1)
+	v217 = F_expression_tree_mutator_impl(m, v16, int32(836), l1)
 	mBase = m.M
 	v218 = m.ExcPending
 	if v218 != 0 {

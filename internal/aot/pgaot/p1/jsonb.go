@@ -1607,7 +1607,7 @@ func F_jsonb_float4(m *base.Module, l0 int32) int32 {
 					}
 				case 2:
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-					v35 = F_DirectFunctionCall1Coll(m, int32(1334), int32(0), v34)
+					v35 = F_DirectFunctionCall1Coll(m, int32(1335), int32(0), v34)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -2726,7 +2726,7 @@ L3:
 L4:
 	;
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v29 = F_executeJsonPath(m, v17, v22, int32(1409), int32(1410), v12, base.B2i32(v26 == int32(0)), v9, l1)
+	v29 = F_executeJsonPath(m, v17, v22, int32(1410), int32(1411), v12, base.B2i32(v26 == int32(0)), v9, l1)
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {

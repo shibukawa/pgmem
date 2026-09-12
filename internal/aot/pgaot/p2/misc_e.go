@@ -7843,7 +7843,7 @@ func F_ExecNamedTuplestoreScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(738), int32(739))
+	v4 = F_ExecScan(m, l0, int32(739), int32(740))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -7856,7 +7856,7 @@ func F_ExecSampleScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(745), int32(746))
+	v4 = F_ExecScan(m, l0, int32(746), int32(747))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -9020,7 +9020,7 @@ L4:
 	}
 L5:
 	;
-	v21 = F_planstate_tree_walker_impl(m, l0, int32(633), l1)
+	v21 = F_planstate_tree_walker_impl(m, l0, int32(634), l1)
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -10407,11 +10407,11 @@ func F_each_worker(m *base.Module, l0 int32, l1 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v26
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(v22)+28))
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = v28
-					*(*int32)(unsafe.Add(mBase, uint32(v20)+36)) = int32(1362)
-					*(*int32)(unsafe.Add(mBase, uint32(v20)+12)) = int32(1363)
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+36)) = int32(1363)
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+12)) = int32(1364)
 					*(*int32)(unsafe.Add(mBase, uint32(v20))) = v17
-					*(*int32)(unsafe.Add(mBase, uint32(v20)+24)) = int32(1364)
-					*(*int32)(unsafe.Add(mBase, uint32(v20)+20)) = int32(1365)
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+24)) = int32(1365)
+					*(*int32)(unsafe.Add(mBase, uint32(v20)+20)) = int32(1366)
 					v39 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v17)+21)) = uint8(v39)
 					*(*uint8)(unsafe.Add(mBase, uint32(v17)+20)) = uint8(v2)
@@ -17921,7 +17921,7 @@ L16:
 	}
 L17:
 	;
-	v64 = F_expression_tree_walker_impl(m, l1, int32(1503), int32(0))
+	v64 = F_expression_tree_walker_impl(m, l1, int32(1504), int32(0))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -17949,7 +17949,7 @@ L21:
 	goto L19
 L22:
 	;
-	v88 = F_expression_tree_mutator_impl(m, v72, int32(1504), int32(0))
+	v88 = F_expression_tree_mutator_impl(m, v72, int32(1505), int32(0))
 	mBase = m.M
 	v89 = m.ExcPending
 	if v89 != 0 {
@@ -18358,7 +18358,7 @@ L77:
 	}
 L78:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1505)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v257
 	if v257 != 0 {
 		goto L79
@@ -19855,7 +19855,7 @@ L296:
 	}
 L297:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1505)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v914
 	if v914 == int32(0) {
 		goto L266
@@ -20102,7 +20102,7 @@ L332:
 	}
 L333:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
+	*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1507)
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v1131
 	v1171 = *(*int32)(unsafe.Add(mBase, uint32(v731)+68))
 	v1173 = F_all_rows_selectable(m, l0, v1171, int32(0))

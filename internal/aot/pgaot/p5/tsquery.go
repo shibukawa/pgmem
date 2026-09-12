@@ -321,11 +321,11 @@ func F_parse_tsquery(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 	}
 L1:
 	;
-	v21 = int32(1523)
+	v21 = int32(1524)
 	goto L3
 L2:
 	;
-	v21 = int32(1524)
+	v21 = int32(1525)
 	goto L3
 L3:
 	;
@@ -337,7 +337,7 @@ L3:
 	}
 L4:
 	;
-	v24 = int32(1522)
+	v24 = int32(1523)
 	goto L6
 L5:
 	;

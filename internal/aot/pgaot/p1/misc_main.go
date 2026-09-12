@@ -7572,11 +7572,11 @@ L548:
 	}
 L549:
 	;
-	v1920 = int32(949)
+	v1920 = int32(950)
 	v1922 = m.G0
 	v1924 = v1922 - int32(144)
 	m.G0 = v1924
-	switch int32(951) {
+	switch int32(952) {
 	case 0, 2:
 		v1934 = v1920
 		goto L551
@@ -7585,11 +7585,11 @@ L549:
 	}
 L550:
 	;
-	v1962 = int32(950)
+	v1962 = int32(951)
 	v1964 = m.G0
 	v1966 = v1964 - int32(144)
 	m.G0 = v1966
-	switch int32(952) {
+	switch int32(953) {
 	case 0, 2:
 		v1976 = v1962
 		goto L564
@@ -7642,11 +7642,11 @@ L562:
 	goto L556
 L563:
 	;
-	v2004 = int32(950)
+	v2004 = int32(951)
 	v2006 = m.G0
 	v2008 = v2006 - int32(144)
 	m.G0 = v2008
-	switch int32(952) {
+	switch int32(953) {
 	case 0, 2:
 		v2018 = v2004
 		goto L577
@@ -7699,11 +7699,11 @@ L575:
 	goto L569
 L576:
 	;
-	v2046 = int32(950)
+	v2046 = int32(951)
 	v2048 = m.G0
 	v2050 = v2048 - int32(144)
 	m.G0 = v2050
-	switch int32(952) {
+	switch int32(953) {
 	case 0, 2:
 		v2060 = v2046
 		goto L590
@@ -7870,11 +7870,11 @@ L614:
 	goto L608
 L615:
 	;
-	v2172 = int32(951)
+	v2172 = int32(952)
 	v2174 = m.G0
 	v2176 = v2174 - int32(144)
 	m.G0 = v2176
-	switch int32(953) {
+	switch int32(954) {
 	case 0, 2:
 		v2186 = v2172
 		goto L629
@@ -7927,11 +7927,11 @@ L627:
 	goto L621
 L628:
 	;
-	v2214 = int32(952)
+	v2214 = int32(953)
 	v2216 = m.G0
 	v2218 = v2216 - int32(144)
 	m.G0 = v2218
-	switch int32(954) {
+	switch int32(955) {
 	case 0, 2:
 		v2228 = v2214
 		goto L642
@@ -7984,11 +7984,11 @@ L640:
 	goto L634
 L641:
 	;
-	v2256 = int32(953)
+	v2256 = int32(954)
 	v2258 = m.G0
 	v2260 = v2258 - int32(144)
 	m.G0 = v2260
-	switch int32(955) {
+	switch int32(956) {
 	case 0, 2:
 		v2270 = v2256
 		goto L655
@@ -10547,7 +10547,7 @@ L1010:
 L1011:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_main[99])) = v3468
-	F_on_proc_exit(m, int32(954))
+	F_on_proc_exit(m, int32(955))
 	mBase = m.M
 	v3473 = m.ExcPending
 	if v3473 != 0 {
@@ -11794,7 +11794,7 @@ L1172:
 	}
 L1173:
 	;
-	F_on_proc_exit(m, int32(955))
+	F_on_proc_exit(m, int32(956))
 	mBase = m.M
 	v4235 = m.ExcPending
 	if v4235 != 0 {

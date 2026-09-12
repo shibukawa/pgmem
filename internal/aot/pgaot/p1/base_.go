@@ -709,7 +709,7 @@ L51:
 	}
 L52:
 	;
-	F_before_shmem_exit(m, int32(1212), int32(0))
+	F_before_shmem_exit(m, int32(1213), int32(0))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -860,7 +860,7 @@ L72:
 	goto L73
 L73:
 	;
-	F_before_shmem_exit(m, int32(1065), int32(0))
+	F_before_shmem_exit(m, int32(1066), int32(0))
 	mBase = m.M
 	v302 = m.ExcPending
 	if v302 != 0 {
@@ -964,7 +964,7 @@ L86:
 	v369 = int32(_a_F_BaseInit_17)
 	v371 = *(*int32)(unsafe.Add(mBase, _c_F_BaseInit[20]))
 	*(*int32)(unsafe.Add(mBase, _c_F_BaseInit[20])) = v371 - int32(1)
-	F_on_proc_exit(m, int32(1118))
+	F_on_proc_exit(m, int32(1119))
 	mBase = m.M
 	v377 = m.ExcPending
 	if v377 != 0 {
@@ -1002,7 +1002,7 @@ L87:
 L88:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_BaseInit[34])) = v421
-	F_on_shmem_exit(m, int32(1075), int32(0))
+	F_on_shmem_exit(m, int32(1076), int32(0))
 	mBase = m.M
 	v427 = m.ExcPending
 	if v427 != 0 {
@@ -1013,7 +1013,7 @@ L88:
 L89:
 	;
 	m.G0 = v380 + int32(48)
-	F_before_shmem_exit(m, int32(1089), int32(0))
+	F_before_shmem_exit(m, int32(1090), int32(0))
 	mBase = m.M
 	v434 = m.ExcPending
 	if v434 != 0 {
@@ -1146,7 +1146,7 @@ L107:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_BaseInit[41])) = v499
 	m.G0 = v491 + int32(48)
-	F_before_shmem_exit(m, int32(1025), int32(0))
+	F_before_shmem_exit(m, int32(1026), int32(0))
 	mBase = m.M
 	v508 = m.ExcPending
 	if v508 != 0 {

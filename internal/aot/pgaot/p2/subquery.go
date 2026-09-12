@@ -10,7 +10,7 @@ func F_ExecSubqueryScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(758), int32(759))
+	v4 = F_ExecScan(m, l0, int32(759), int32(760))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

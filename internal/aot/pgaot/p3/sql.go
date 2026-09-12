@@ -363,8 +363,8 @@ func F_sql_fn_parser_setup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(678)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(680)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(0)
 	return
 }

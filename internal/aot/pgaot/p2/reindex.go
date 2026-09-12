@@ -163,7 +163,7 @@ L7:
 	;
 	*(*uint8)(unsafe.Add(mBase, uint32(v12)+16)) = uint8(v14)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v25
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(558)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(559)
 	v31 = int32(0)
 	v32 = int32(_a_F_ReindexPartitions_0)
 	v33 = *(*int32)(unsafe.Add(mBase, _c_F_ReindexPartitions[0]))

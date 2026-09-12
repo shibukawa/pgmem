@@ -11291,7 +11291,7 @@ func F_array_typanalyze(m *base.Module, l0 int32) int32 {
 										v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+32))
 										*(*int32)(unsafe.Add(mBase, uint32(v37)+32)) = v59
 										*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v37
-										*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(1259)
+										*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(1260)
 										v66 = v23
 										m.G0 = v9 + int32(16)
 										return v66

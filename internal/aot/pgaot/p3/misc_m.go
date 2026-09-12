@@ -8015,7 +8015,7 @@ func F_message_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32
 		*(*int64)(unsafe.Add(mBase, uint32(v13)+24)) = l2
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = int32(_a_F_message_cb_wrapper_0)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(992)
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(993)
 		v23 = int32(_a_F_message_cb_wrapper_1)
 		v24 = *(*int32)(unsafe.Add(mBase, _c_F_message_cb_wrapper[0]))
 		*(*int32)(unsafe.Add(mBase, _c_F_message_cb_wrapper[0])) = v13 + int32(4)

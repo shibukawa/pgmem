@@ -1541,7 +1541,7 @@ L24:
 L25:
 	;
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(v52)+52))
-	F_ChangeVarNodesExtended(m, v125, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v125, v13, l2, int32(828))
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -1977,7 +1977,7 @@ L78:
 L79:
 	;
 	v280 = *(*int32)(unsafe.Add(mBase, uint32(v245)+4))
-	F_ChangeVarNodesExtended(m, v280, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v280, v13, l2, int32(828))
 	mBase = m.M
 	v283 = m.ExcPending
 	if v283 != 0 {
@@ -2361,7 +2361,7 @@ L128:
 	}
 L129:
 	;
-	F_ChangeVarNodesExtended(m, v442, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v442, v13, l2, int32(828))
 	mBase = m.M
 	v447 = m.ExcPending
 	if v447 != 0 {
@@ -2512,7 +2512,7 @@ L154:
 L155:
 	;
 	v565 = *(*int32)(unsafe.Add(mBase, uint32(v513)+100))
-	F_ChangeVarNodesExtended(m, v565, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v565, v13, l2, int32(828))
 	mBase = m.M
 	v568 = m.ExcPending
 	if v568 != 0 {

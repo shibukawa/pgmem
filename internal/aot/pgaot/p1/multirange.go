@@ -212,7 +212,7 @@ func F_make_multirange(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	}
 L1:
 	;
-	F_qsort_arg(m, l3, l2, int32(4), int32(1457), l1)
+	F_qsort_arg(m, l3, l2, int32(4), int32(1458), l1)
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {

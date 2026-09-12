@@ -1045,7 +1045,7 @@ L77:
 L78:
 	;
 	v445 = int32(4)
-	F_qsort_arg(m, v151+v445, v428, v445, int32(817), v419+v445)
+	F_qsort_arg(m, v151+v445, v428, v445, int32(818), v419+v445)
 	mBase = m.M
 	v452 = m.ExcPending
 	if v452 != 0 {
@@ -1069,7 +1069,7 @@ L81:
 L82:
 	;
 	v455 = int32(4)
-	F_qsort_arg(m, v168+v455, v429, v455, int32(817), v419+v455)
+	F_qsort_arg(m, v168+v455, v429, v455, int32(818), v419+v455)
 	mBase = m.M
 	v462 = m.ExcPending
 	if v462 != 0 {

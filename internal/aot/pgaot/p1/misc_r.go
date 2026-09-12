@@ -240,7 +240,7 @@ func F_ReplaceVarsFromTargetList(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = l4
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l3
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = l2
-	v23 = F_replace_rte_variables(m, l0, l1, int32(0), int32(1057), v12+int32(12), l7)
+	v23 = F_replace_rte_variables(m, l0, l1, int32(0), int32(1058), v12+int32(12), l7)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -298,7 +298,7 @@ func F_ReplaceVarsFromTargetList_callback(m *base.Module, l0 int32, l1 int32) in
 		if v18 != 0 {
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(0)
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v18
-			v26 = F_query_or_expression_tree_walker_impl(m, v14, int32(1049), v6+int32(8), int32(16))
+			v26 = F_query_or_expression_tree_walker_impl(m, v14, int32(1050), v6+int32(8), int32(16))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
@@ -3355,7 +3355,7 @@ func F_rangeTableEntry_used(m *base.Module, l0 int32, l1 int32) int32 {
 	m.G0 = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v3
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = l1
-	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1050), v6+int32(8), v3)
+	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1051), v6+int32(8), v3)
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -3918,6 +3918,28 @@ L67:
 	;
 	base.Wasm_trap_unreachable()
 	for {
+	}
+}
+func F_rboolop(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_DirectFunctionCall2Coll(m, int32(_a_F_rboolop_0), int32(0), v4, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
 	}
 }
 func F_read_gucstate(m *base.Module, l0 int32, l1 int32) int32 {
@@ -9488,7 +9510,7 @@ L56:
 	goto L57
 L57:
 	;
-	F_pg_qsort(m, v187, v181, int32(8), int32(828))
+	F_pg_qsort(m, v187, v181, int32(8), int32(829))
 	mBase = m.M
 	v378 = m.ExcPending
 	if v378 != 0 {
@@ -10760,7 +10782,7 @@ L236:
 	}
 L237:
 	;
-	F_ChangeVarNodesExtended(m, v1116, v1118, v1121, int32(827))
+	F_ChangeVarNodesExtended(m, v1116, v1118, v1121, int32(828))
 	mBase = m.M
 	v1125 = m.ExcPending
 	if v1125 != 0 {
@@ -10894,7 +10916,7 @@ L254:
 L255:
 	;
 	v1236 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
-	F_ChangeVarNodesExtended(m, v1234, v1199, v1236, int32(827))
+	F_ChangeVarNodesExtended(m, v1234, v1199, v1236, int32(828))
 	mBase = m.M
 	v1239 = m.ExcPending
 	if v1239 != 0 {
@@ -11238,7 +11260,7 @@ L306:
 	;
 	v1437 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v1438 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v1433, v1437, v1438, int32(827))
+	F_ChangeVarNodesExtended(m, v1433, v1437, v1438, int32(828))
 	mBase = m.M
 	v1441 = m.ExcPending
 	if v1441 != 0 {
@@ -11437,7 +11459,7 @@ L335:
 	v1572 = *(*int32)(unsafe.Add(mBase, uint32(v1568+v1543<<(uint(int32(2))%32))))
 	v1573 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v1574 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v1572, v1573, v1574, int32(827))
+	F_ChangeVarNodesExtended(m, v1572, v1573, v1574, int32(828))
 	mBase = m.M
 	v1577 = m.ExcPending
 	if v1577 != 0 {
@@ -11852,7 +11874,7 @@ L393:
 	v1830 = *(*int32)(unsafe.Add(mBase, uint32(v1816)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v1830)+4)) = v1828
 	v1832 = *(*int32)(unsafe.Add(mBase, uint32(v1816)+4))
-	F_ChangeVarNodesExtended(m, v1832, v1767, v1766, int32(827))
+	F_ChangeVarNodesExtended(m, v1832, v1767, v1766, int32(828))
 	mBase = m.M
 	v1835 = m.ExcPending
 	if v1835 != 0 {
@@ -12053,7 +12075,7 @@ L419:
 	}
 L420:
 	;
-	F_ChangeVarNodesExtended(m, v2024, v1767, v1766, int32(827))
+	F_ChangeVarNodesExtended(m, v2024, v1767, v1766, int32(828))
 	mBase = m.M
 	v2032 = m.ExcPending
 	if v2032 != 0 {
@@ -12290,7 +12312,7 @@ L453:
 	v2313 = *(*int32)(unsafe.Add(mBase, uint32(v2309+v2284<<(uint(int32(2))%32))))
 	v2314 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v2315 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v2313, v2314, v2315, int32(827))
+	F_ChangeVarNodesExtended(m, v2313, v2314, v2315, int32(828))
 	mBase = m.M
 	v2318 = m.ExcPending
 	if v2318 != 0 {
@@ -12421,7 +12443,7 @@ L470:
 	v2462 = *(*int32)(unsafe.Add(mBase, uint32(v582)+4))
 	v2463 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v2464 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v2462, v2463, v2464, int32(827))
+	F_ChangeVarNodesExtended(m, v2462, v2463, v2464, int32(828))
 	mBase = m.M
 	v2467 = m.ExcPending
 	if v2467 != 0 {
@@ -12477,7 +12499,7 @@ L477:
 	v2473 = *(*int32)(unsafe.Add(mBase, uint32(v582)+264))
 	v2474 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v2475 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v2473, v2474, v2475, int32(827))
+	F_ChangeVarNodesExtended(m, v2473, v2474, v2475, int32(828))
 	mBase = m.M
 	v2478 = m.ExcPending
 	if v2478 != 0 {
@@ -12490,7 +12512,7 @@ L478:
 	v2479 = *(*int32)(unsafe.Add(mBase, uint32(v582)+256))
 	v2480 = *(*int32)(unsafe.Add(mBase, uint32(v614)+68))
 	v2481 = *(*int32)(unsafe.Add(mBase, uint32(v705)+68))
-	F_ChangeVarNodesExtended(m, v2479, v2480, v2481, int32(827))
+	F_ChangeVarNodesExtended(m, v2479, v2480, v2481, int32(828))
 	mBase = m.M
 	v2484 = m.ExcPending
 	if v2484 != 0 {
@@ -14840,7 +14862,7 @@ L3:
 	}
 L4:
 	;
-	v780 = F_expression_tree_mutator_impl(m, l0, int32(845), l1)
+	v780 = F_expression_tree_mutator_impl(m, l0, int32(846), l1)
 	mBase = m.M
 	v781 = m.ExcPending
 	if v781 != 0 {
@@ -16676,7 +16698,7 @@ L3:
 	}
 L4:
 	;
-	v316 = F_expression_tree_mutator_impl(m, l0, int32(829), l1)
+	v316 = F_expression_tree_mutator_impl(m, l0, int32(830), l1)
 	mBase = m.M
 	v317 = m.ExcPending
 	if v317 != 0 {
@@ -17650,6 +17672,26 @@ func F_rowtype_field_matches(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 				}
 			}
 		}
+	}
+}
+func F_rt__int_size(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v6 = F_ArrayGetNItems(m, v3, l0+int32(16))
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
+	} else {
+		*(*float32)(unsafe.Add(mBase, uint32(l1))) = base.F32_convert_i32_s(v6)
+		return
 	}
 }
 func F_rtrim1(m *base.Module, l0 int32) int32 {

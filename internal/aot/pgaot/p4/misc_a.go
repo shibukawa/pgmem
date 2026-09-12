@@ -3556,11 +3556,11 @@ L26:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v90 = int32(913)
+	v90 = int32(914)
 	v92 = m.G0
 	v94 = v92 - int32(144)
 	m.G0 = v94
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v104 = v90
 		goto L29
@@ -3574,11 +3574,11 @@ L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v134 = int32(914)
+	v134 = int32(915)
 	v136 = m.G0
 	v138 = v136 - int32(144)
 	m.G0 = v138
-	switch int32(916) {
+	switch int32(917) {
 	case 0, 2:
 		v148 = v134
 		goto L42
@@ -3633,11 +3633,11 @@ L41:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v178 = int32(915)
+	v178 = int32(916)
 	v180 = m.G0
 	v182 = v180 - int32(144)
 	m.G0 = v182
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v192 = v178
 		goto L55
@@ -3796,7 +3796,7 @@ L69:
 	;
 	v362 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_AutoVacLauncherMain[15])) = uint8(v362)
-	F_pqsignal_be(m, int32(14), int32(1784))
+	F_pqsignal_be(m, int32(14), int32(1785))
 	mBase = m.M
 	goto L67
 L70:
@@ -3824,11 +3824,11 @@ L73:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v414 = int32(916)
+	v414 = int32(917)
 	v416 = m.G0
 	v418 = v416 - int32(144)
 	m.G0 = v418
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v428 = v414
 		goto L87
@@ -3883,11 +3883,11 @@ L86:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v458 = int32(917)
+	v458 = int32(918)
 	v460 = m.G0
 	v462 = v460 - int32(144)
 	m.G0 = v462
-	switch int32(919) {
+	switch int32(920) {
 	case 0, 2:
 		v472 = v458
 		goto L100
@@ -3942,11 +3942,11 @@ L99:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v38
-	v502 = int32(918)
+	v502 = int32(919)
 	v504 = m.G0
 	v506 = v504 - int32(144)
 	m.G0 = v506
-	switch int32(920) {
+	switch int32(921) {
 	case 0, 2:
 		v516 = v502
 		goto L113

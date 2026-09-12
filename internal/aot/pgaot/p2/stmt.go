@@ -1513,7 +1513,7 @@ L40:
 L41:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v24)+100)) = v103
-	v109 = F_RangeVarGetRelidExtended(m, v93, v41, int32(1), int32(572), v24+int32(96))
+	v109 = F_RangeVarGetRelidExtended(m, v93, v41, int32(1), int32(573), v24+int32(96))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {

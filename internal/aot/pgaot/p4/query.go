@@ -18,6 +18,29 @@ func F_isQueryUsingTempRelation(m *base.Module, l0 int32) int32 {
 		return v3
 	}
 }
+func F_query_has_required_values(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v3 <= int32(0) {
+		return int32(0)
+	} else {
+		v11 = F_contains_required_value(m, l0+v3<<(uint(int32(3))%32))
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return int32(0)
+		} else {
+			return v11
+		}
+	}
+}
 func F_query_to_xml(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

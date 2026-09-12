@@ -226,7 +226,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 				if v35 != 0 {
 					return int32(0)
 				} else {
-					F_CacheRegisterSyscacheCallback(m, int32(69), int32(1610), int32(0))
+					F_CacheRegisterSyscacheCallback(m, int32(69), int32(1611), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
@@ -351,7 +351,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				F_CacheRegisterSyscacheCallback(m, int32(69), int32(1610), int32(0))
+				F_CacheRegisterSyscacheCallback(m, int32(69), int32(1611), int32(0))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {

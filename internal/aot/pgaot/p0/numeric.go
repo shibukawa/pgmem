@@ -54,7 +54,7 @@ func F_convert_numeric_to_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) f
 				return v41
 			default:
 				if l1 == int32(1700) {
-					v51 = F_DirectFunctionCall1Coll(m, int32(1507), int32(0), l0)
+					v51 = F_DirectFunctionCall1Coll(m, int32(1508), int32(0), l0)
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
@@ -2903,13 +2903,13 @@ func F_numeric_float8(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			v28 = int32(0)
-			v31 = F_DirectFunctionCall1Coll(m, int32(617), v28, v4)
+			v31 = F_DirectFunctionCall1Coll(m, int32(618), v28, v4)
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {
 				return int32(0)
 			} else {
-				v33 = F_DirectFunctionCall1Coll(m, int32(1468), v28, v31)
+				v33 = F_DirectFunctionCall1Coll(m, int32(1469), v28, v31)
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {

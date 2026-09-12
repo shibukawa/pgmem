@@ -39,7 +39,7 @@ func F_ExecBitmapHeapScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(699), int32(700))
+	v4 = F_ExecScan(m, l0, int32(700), int32(701))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -598,7 +598,7 @@ L6:
 	return int32(0)
 L7:
 	;
-	F_pg_qsort(m, v27, int32(0), int32(4), int32(823))
+	F_pg_qsort(m, v27, int32(0), int32(4), int32(824))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -1228,7 +1228,7 @@ L95:
 	goto L96
 L96:
 	;
-	F_pg_qsort(m, v43, v535, int32(4), int32(823))
+	F_pg_qsort(m, v43, v535, int32(4), int32(824))
 	mBase = m.M
 	v553 = m.ExcPending
 	if v553 != 0 {

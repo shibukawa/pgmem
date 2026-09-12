@@ -624,7 +624,7 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						v55 = F_DirectFunctionCall1Coll(m, int32(1480), v42, v53)
+						v55 = F_DirectFunctionCall1Coll(m, int32(1481), v42, v53)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -744,13 +744,13 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 				if v52 != 0 {
 					return int32(0)
 				} else {
-					v53 = F_DirectFunctionCall2Coll(m, int32(1293), v42, v51, v11)
+					v53 = F_DirectFunctionCall2Coll(m, int32(1294), v42, v51, v11)
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						v55 = F_DirectFunctionCall1Coll(m, int32(1480), v42, v53)
+						v55 = F_DirectFunctionCall1Coll(m, int32(1481), v42, v53)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {

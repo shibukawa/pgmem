@@ -2777,7 +2777,7 @@ L150:
 	goto L145
 L151:
 	;
-	F_pg_qsort(m, v417, v545, int32(8), int32(1605))
+	F_pg_qsort(m, v417, v545, int32(8), int32(1606))
 	mBase = m.M
 	v593 = m.ExcPending
 	if v593 != 0 {
@@ -3234,7 +3234,7 @@ L205:
 	goto L200
 L206:
 	;
-	F_pg_qsort(m, v636, v785, int32(12), int32(1606))
+	F_pg_qsort(m, v636, v785, int32(12), int32(1607))
 	mBase = m.M
 	v831 = m.ExcPending
 	if v831 != 0 {

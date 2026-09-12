@@ -947,7 +947,7 @@ L48:
 	*(*int64)(unsafe.Add(mBase, uint32(v13)+88)) = int64(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = int32(_a_F_CreateInitDecodingContext_8)
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+80)) = v137
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+72)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+72)) = int32(993)
 	v152 = int32(_a_F_CreateInitDecodingContext_9)
 	v153 = *(*int32)(unsafe.Add(mBase, _c_F_CreateInitDecodingContext[6]))
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateInitDecodingContext[6])) = v13 + int32(68)

@@ -2,6 +2,18 @@ package p4
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__int_contains_sel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_contains_sel_0)
+}
+func F_pg_finfo__int_inter(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_inter_0)
+}
+func F_pg_finfo__int_overlap_sel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_overlap_sel_0)
+}
+func F_pg_finfo__intbig_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__intbig_out_0)
+}
 func F_pg_finfo__lt_q_rregex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__lt_q_rregex_0)
 }
@@ -224,6 +236,12 @@ func F_pg_finfo_hstore_to_jsonb_loose(m *base.Module) int32 {
 func F_pg_finfo_hstore_to_matrix(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_to_matrix_0)
 }
+func F_pg_finfo_idx(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_idx_0)
+}
+func F_pg_finfo_intarray_push_array(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_intarray_push_array_0)
+}
 func F_pg_finfo_iso_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso_to_win1251_0)
 }
@@ -299,11 +317,20 @@ func F_pg_finfo_pg_hmac(m *base.Module) int32 {
 func F_pg_finfo_plpgsql_call_handler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_call_handler_0)
 }
+func F_pg_finfo_rboolop(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_rboolop_0)
+}
+func F_pg_finfo_subarray(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_subarray_0)
+}
 func F_pg_finfo_svals(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_svals_0)
 }
 func F_pg_finfo_text2ltree(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_text2ltree_0)
+}
+func F_pg_finfo_uniq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uniq_0)
 }
 func F_pg_finfo_utf8_to_euc_kr(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_kr_0)

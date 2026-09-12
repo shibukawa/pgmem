@@ -10,7 +10,7 @@ func F_ExecTidScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(767), int32(768))
+	v4 = F_ExecScan(m, l0, int32(768), int32(769))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

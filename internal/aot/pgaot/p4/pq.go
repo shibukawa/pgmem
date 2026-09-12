@@ -971,7 +971,7 @@ func F_pq_init(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, _c_F_pq_init[10])) = v172
 			*(*uint8)(unsafe.Add(mBase, _c_F_pq_init[11])) = uint8(v172)
 			*(*uint8)(unsafe.Add(mBase, _c_F_pq_init[12])) = uint8(v172)
-			F_on_proc_exit(m, int32(800))
+			F_on_proc_exit(m, int32(801))
 			mBase = m.M
 			v191 = m.ExcPending
 			if v191 != 0 {
@@ -2528,7 +2528,7 @@ func F_pq_redirect_to_shm_mq(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[1])) = int32(_a_F_pq_redirect_to_shm_mq_0)
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[2])) = int32(2)
 	*(*int32)(unsafe.Add(mBase, _c_F_pq_redirect_to_shm_mq[3])) = int32(_a_F_pq_redirect_to_shm_mq_1)
-	F_on_dsm_detach(m, l0, int32(807), int32(0))
+	F_on_dsm_detach(m, l0, int32(808), int32(0))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {

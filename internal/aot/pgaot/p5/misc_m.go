@@ -5169,7 +5169,7 @@ L23:
 	}
 L24:
 	;
-	v54 = F_DirectFunctionCall1Coll(m, int32(580), int32(0), v49)
+	v54 = F_DirectFunctionCall1Coll(m, int32(581), int32(0), v49)
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -5497,7 +5497,7 @@ L78:
 	v235 = v185
 	v236 = v196
 	v237 = int32(0)
-	v238 = int32(1453)
+	v238 = int32(1454)
 	goto L1
 L79:
 	;
@@ -5540,11 +5540,11 @@ L86:
 	goto L83
 L87:
 	;
-	v228 = int32(1653)
+	v228 = int32(1654)
 	goto L89
 L88:
 	;
-	v228 = int32(1654)
+	v228 = int32(1655)
 	goto L89
 L89:
 	;
@@ -5555,7 +5555,7 @@ L89:
 	}
 L90:
 	;
-	v231 = int32(1652)
+	v231 = int32(1653)
 	goto L92
 L91:
 	;
@@ -13506,7 +13506,7 @@ func F_mul_d_interval(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1474), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1475), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

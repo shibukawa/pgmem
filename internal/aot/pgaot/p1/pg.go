@@ -18300,11 +18300,11 @@ L210:
 	}
 L211:
 	;
-	v818 = int32(967)
+	v818 = int32(968)
 	goto L213
 L212:
 	;
-	v818 = int32(968)
+	v818 = int32(969)
 	goto L213
 L213:
 	;
@@ -22284,7 +22284,7 @@ L9:
 L10:
 	;
 	v32 = int32(8)
-	v36 = F_bsearch(m, v9+v32, v25, v26, v32, int32(1561))
+	v36 = F_bsearch(m, v9+v32, v25, v26, v32, int32(1562))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {

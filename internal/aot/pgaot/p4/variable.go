@@ -153,7 +153,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 		if v13 != int32(67) {
 			if v13 != int32(30) {
 				if v13 != int32(6) {
-					v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+					v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 					mBase = m.M
 					v146 = m.ExcPending
 					if v146 != 0 {
@@ -167,7 +167,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 					v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					if v20 != v21 {
-						v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+						v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 						mBase = m.M
 						v146 = m.ExcPending
 						if v146 != 0 {
@@ -181,7 +181,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 						v24 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 						if v23 != v24 {
-							v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+							v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 							mBase = m.M
 							v146 = m.ExcPending
 							if v146 != 0 {
@@ -333,7 +333,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 				v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				v85 = *(*int32)(unsafe.Add(mBase, uint32(v84)))
 				if v85 != int32(6) {
-					v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+					v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 					mBase = m.M
 					v146 = m.ExcPending
 					if v146 != 0 {
@@ -347,7 +347,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 					v88 = *(*int32)(unsafe.Add(mBase, uint32(v84)+4))
 					v89 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 					if v88 != v89 {
-						v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+						v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 						mBase = m.M
 						v146 = m.ExcPending
 						if v146 != 0 {
@@ -361,7 +361,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						v91 = *(*int32)(unsafe.Add(mBase, uint32(v84)+28))
 						v92 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 						if v91 != v92 {
-							v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+							v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 							mBase = m.M
 							v146 = m.ExcPending
 							if v146 != 0 {
@@ -374,7 +374,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v94 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v84)+8)))
 							if v94 != 0 {
-								v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+								v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 								mBase = m.M
 								v146 = m.ExcPending
 								if v146 != 0 {
@@ -387,7 +387,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v95 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 								if v95 == int32(0) {
-									v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+									v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 									mBase = m.M
 									v146 = m.ExcPending
 									if v146 != 0 {
@@ -400,7 +400,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									v98 = *(*int32)(unsafe.Add(mBase, uint32(v84)+12))
 									if v95 == v98 {
-										v145 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
+										v145 = F_expression_tree_mutator_impl(m, l0, int32(1055), l1)
 										mBase = m.M
 										v146 = m.ExcPending
 										if v146 != 0 {
@@ -462,7 +462,7 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v130 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v130 + int32(1)
-			v136 = F_query_tree_mutator_impl(m, l0, int32(1054), l1, int32(0))
+			v136 = F_query_tree_mutator_impl(m, l0, int32(1055), l1, int32(0))
 			mBase = m.M
 			v137 = m.ExcPending
 			if v137 != 0 {

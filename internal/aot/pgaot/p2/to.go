@@ -2065,7 +2065,7 @@ func F_to_regproc(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regproc[1]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1493), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1494), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {

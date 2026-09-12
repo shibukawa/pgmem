@@ -198,7 +198,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 					if v67 != 0 {
 						return
 					} else {
-						F_on_shmem_exit(m, int32(1105), v22)
+						F_on_shmem_exit(m, int32(1106), v22)
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {

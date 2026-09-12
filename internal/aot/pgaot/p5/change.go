@@ -125,7 +125,7 @@ func F_ChangeVarNodesExtended(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					}
 				}
 			}
-			v69 = F_query_tree_walker_impl(m, l0, int32(1048), v10, int32(0))
+			v69 = F_query_tree_walker_impl(m, l0, int32(1049), v10, int32(0))
 			mBase = m.M
 			v70 = m.ExcPending
 			if v70 != 0 {

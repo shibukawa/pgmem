@@ -244,7 +244,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 	switch v12 {
 	case 0:
-		v23 = F_pg_ctype_get_cache(m, int32(972), int32(0))
+		v23 = F_pg_ctype_get_cache(m, int32(973), int32(0))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
@@ -266,7 +266,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 1:
-		v29 = F_pg_ctype_get_cache(m, int32(973), int32(1))
+		v29 = F_pg_ctype_get_cache(m, int32(974), int32(1))
 		mBase = m.M
 		v30 = m.ExcPending
 		if v30 != 0 {
@@ -745,7 +745,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 		}
 	case 5:
-		v224 = F_pg_ctype_get_cache(m, int32(975), int32(5))
+		v224 = F_pg_ctype_get_cache(m, int32(976), int32(5))
 		mBase = m.M
 		v225 = m.ExcPending
 		if v225 != 0 {
@@ -767,7 +767,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 6:
-		v343 = F_pg_ctype_get_cache(m, int32(980), int32(6))
+		v343 = F_pg_ctype_get_cache(m, int32(981), int32(6))
 		mBase = m.M
 		v344 = m.ExcPending
 		if v344 != 0 {
@@ -789,7 +789,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 7:
-		v331 = F_pg_ctype_get_cache(m, int32(978), int32(7))
+		v331 = F_pg_ctype_get_cache(m, int32(979), int32(7))
 		mBase = m.M
 		v332 = m.ExcPending
 		if v332 != 0 {
@@ -811,7 +811,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 8:
-		v15 = F_pg_ctype_get_cache(m, int32(971), int32(8))
+		v15 = F_pg_ctype_get_cache(m, int32(972), int32(8))
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
@@ -833,7 +833,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 9:
-		v230 = F_pg_ctype_get_cache(m, int32(976), int32(9))
+		v230 = F_pg_ctype_get_cache(m, int32(977), int32(9))
 		mBase = m.M
 		v231 = m.ExcPending
 		if v231 != 0 {
@@ -855,7 +855,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 10:
-		v325 = F_pg_ctype_get_cache(m, int32(977), int32(10))
+		v325 = F_pg_ctype_get_cache(m, int32(978), int32(10))
 		mBase = m.M
 		v326 = m.ExcPending
 		if v326 != 0 {
@@ -877,7 +877,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return v364
 		}
 	case 11:
-		v337 = F_pg_ctype_get_cache(m, int32(979), int32(11))
+		v337 = F_pg_ctype_get_cache(m, int32(980), int32(11))
 		mBase = m.M
 		v338 = m.ExcPending
 		if v338 != 0 {
@@ -1150,7 +1150,7 @@ func F_cclasscvec(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 		}
 	case 13:
-		v35 = F_pg_ctype_get_cache(m, int32(974), int32(13))
+		v35 = F_pg_ctype_get_cache(m, int32(975), int32(13))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {

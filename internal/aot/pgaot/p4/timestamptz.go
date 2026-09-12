@@ -2095,7 +2095,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 						if v100 != 0 {
 							return int32(0)
 						} else {
-							v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+							v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 							mBase = m.M
 							v104 = m.ExcPending
 							if v104 != 0 {
@@ -2137,7 +2137,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 							if v100 != 0 {
 								return int32(0)
 							} else {
-								v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+								v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 								mBase = m.M
 								v104 = m.ExcPending
 								if v104 != 0 {
@@ -2179,7 +2179,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 								if v41 != 0 {
 									return int32(0)
 								} else {
-									v44 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+									v44 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 									mBase = m.M
 									v45 = m.ExcPending
 									if v45 != 0 {
@@ -2219,7 +2219,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+									v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 									mBase = m.M
 									v104 = m.ExcPending
 									if v104 != 0 {
@@ -2264,7 +2264,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 						if v100 != 0 {
 							return int32(0)
 						} else {
-							v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+							v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 							mBase = m.M
 							v104 = m.ExcPending
 							if v104 != 0 {
@@ -2306,7 +2306,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 							if v100 != 0 {
 								return int32(0)
 							} else {
-								v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+								v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 								mBase = m.M
 								v104 = m.ExcPending
 								if v104 != 0 {
@@ -2346,7 +2346,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 							if v41 != 0 {
 								return int32(0)
 							} else {
-								v44 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+								v44 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -2391,7 +2391,7 @@ func F_timestamptz_izone(m *base.Module, l0 int32) int32 {
 					if v100 != 0 {
 						return int32(0)
 					} else {
-						v103 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v15)
+						v103 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v15)
 						mBase = m.M
 						v104 = m.ExcPending
 						if v104 != 0 {
@@ -4584,7 +4584,7 @@ L212:
 	}
 L213:
 	;
-	v711 = F_DirectFunctionCall2Coll(m, int32(1274), int32(0), v708, int32(6))
+	v711 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v708, int32(6))
 	mBase = m.M
 	v712 = m.ExcPending
 	if v712 != 0 {

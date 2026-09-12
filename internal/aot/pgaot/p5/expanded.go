@@ -60,7 +60,7 @@ func F_expanded_record_fetch_tupdesc(m *base.Module, l0 int32) int32 {
 			if int32(0) <= v13 {
 				v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 				if v16 == int32(0) {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1307)
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(1308)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = l0
 					v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					v24 = l0 + int32(108)
@@ -662,7 +662,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 								*(*int32)(unsafe.Add(mBase, uint32(v59)+28)) = v41
 								v90 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 								if int32(0) <= v90 {
-									*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1307)
+									*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1308)
 									*(*int32)(unsafe.Add(mBase, uint32(v59)+112)) = v59
 									v96 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
 									v98 = v59 + int32(108)
@@ -792,7 +792,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 							*(*int32)(unsafe.Add(mBase, uint32(v59)+28)) = v41
 							v90 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 							if int32(0) <= v90 {
-								*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1307)
+								*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1308)
 								*(*int32)(unsafe.Add(mBase, uint32(v59)+112)) = v59
 								v96 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
 								v98 = v59 + int32(108)
@@ -890,7 +890,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 						*(*int32)(unsafe.Add(mBase, uint32(v59)+28)) = v41
 						v90 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
 						if int32(0) <= v90 {
-							*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1307)
+							*(*int32)(unsafe.Add(mBase, uint32(v59)+108)) = int32(1308)
 							*(*int32)(unsafe.Add(mBase, uint32(v59)+112)) = v59
 							v96 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
 							v98 = v59 + int32(108)

@@ -12475,7 +12475,7 @@ L815:
 	goto L816
 L816:
 	;
-	F_qsort_interruptible(m, v9144, v9139, int32(12), int32(1061), v9140)
+	F_qsort_interruptible(m, v9144, v9139, int32(12), int32(1062), v9140)
 	mBase = m.M
 	v9940 = m.ExcPending
 	if v9940 != 0 {
@@ -14336,7 +14336,7 @@ L1009:
 	goto L1010
 L1010:
 	;
-	F_qsort_interruptible(m, v12749, v12675, int32(12), int32(1062), int32(0))
+	F_qsort_interruptible(m, v12749, v12675, int32(12), int32(1063), int32(0))
 	mBase = m.M
 	v12955 = m.ExcPending
 	if v12955 != 0 {
@@ -14580,7 +14580,7 @@ L1043:
 	}
 L1044:
 	;
-	F_qsort_interruptible(m, v13130, v12675, int32(12), int32(1063), v13189)
+	F_qsort_interruptible(m, v13130, v12675, int32(12), int32(1064), v13189)
 	mBase = m.M
 	v13196 = m.ExcPending
 	if v13196 != 0 {
@@ -14622,7 +14622,7 @@ L1048:
 L1049:
 	;
 	v13301 = *(*int32)(unsafe.Add(mBase, uint32(v13185)))
-	F_qsort_interruptible(m, v13301, v12675, int32(12), int32(1063), v13189)
+	F_qsort_interruptible(m, v13301, v12675, int32(12), int32(1064), v13189)
 	mBase = m.M
 	v13305 = m.ExcPending
 	if v13305 != 0 {
@@ -15035,7 +15035,7 @@ L1106:
 	*(*int32)(unsafe.Add(mBase, uint32(v12369)+20)) = v14332 + v14251
 	v14338 = *(*int32)(unsafe.Add(mBase, uint32(v13087+v14328)))
 	v14340 = *(*int32)(unsafe.Add(mBase, uint32(v14328+v13072)))
-	v14343 = F_bsearch_arg(m, v12369+int32(16), v14338, v14340, int32(12), int32(1061), v13068)
+	v14343 = F_bsearch_arg(m, v12369+int32(16), v14338, v14340, int32(12), int32(1062), v13068)
 	mBase = m.M
 	v14344 = m.ExcPending
 	if v14344 != 0 {
@@ -15469,7 +15469,7 @@ L1161:
 	*(*int32)(unsafe.Add(mBase, uint32(v15003)+240)) = v15021
 	*(*int32)(unsafe.Add(mBase, uint32(v15003)+236)) = v15019
 	v15161 = *(*int32)(unsafe.Add(mBase, uint32(v15003)+24))
-	m.T0[v15161].(func(*base.Module, int32, int32, int32, float64))(m, v15003, int32(1060), v8087, v8152)
+	m.T0[v15161].(func(*base.Module, int32, int32, int32, float64))(m, v15003, int32(1061), v8087, v8152)
 	mBase = m.M
 	v15163 = m.ExcPending
 	if v15163 != 0 {
@@ -17378,7 +17378,7 @@ L1399:
 	;
 	v20049 = *(*int32)(unsafe.Add(mBase, uint32(v19833)))
 	v20050 = *(*int32)(unsafe.Add(mBase, uint32(v20031)))
-	F_qsort_interruptible(m, v20049, v20050, int32(4), int32(1064), v20037)
+	F_qsort_interruptible(m, v20049, v20050, int32(4), int32(1065), v20037)
 	mBase = m.M
 	v20054 = m.ExcPending
 	if v20054 != 0 {
@@ -18433,7 +18433,7 @@ L1569:
 	v21769 = v21766 + v19713
 	v21770 = *(*int32)(unsafe.Add(mBase, uint32(v21769)))
 	v21774 = *(*int32)(unsafe.Add(mBase, uint32(v19719+v21718*int32(20))))
-	v21780 = F_bsearch_arg(m, v21766+v21767, v21770, v21774, int32(4), int32(1064), v19723+v21718*int32(36))
+	v21780 = F_bsearch_arg(m, v21766+v21767, v21770, v21774, int32(4), int32(1065), v19723+v21718*int32(36))
 	mBase = m.M
 	v21781 = m.ExcPending
 	if v21781 != 0 {

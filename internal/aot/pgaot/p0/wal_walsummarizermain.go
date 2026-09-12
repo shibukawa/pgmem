@@ -2135,11 +2135,11 @@ L14:
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+324)) = v115
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+328)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+332)) = v109
-	v283 = int32(913)
+	v283 = int32(914)
 	v285 = m.G0
 	v287 = v285 - int32(144)
 	m.G0 = v287
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v297 = v283
 		goto L18
@@ -2204,11 +2204,11 @@ L17:
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+324)) = v115
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+328)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+332)) = v109
-	v345 = int32(915)
+	v345 = int32(916)
 	v347 = m.G0
 	v349 = v347 - int32(144)
 	m.G0 = v349
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v359 = v345
 		goto L31
@@ -2281,11 +2281,11 @@ L30:
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+324)) = v115
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+328)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+332)) = v109
-	v407 = int32(915)
+	v407 = int32(916)
 	v409 = m.G0
 	v411 = v409 - int32(144)
 	m.G0 = v411
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v421 = v407
 		goto L44
@@ -2512,11 +2512,11 @@ L69:
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+324)) = v115
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+328)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+332)) = v109
-	v593 = int32(916)
+	v593 = int32(917)
 	v595 = m.G0
 	v597 = v595 - int32(144)
 	m.G0 = v597
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v607 = v593
 		goto L83
@@ -2666,7 +2666,7 @@ L95:
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+324)) = v115
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+328)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v59)+332)) = v109
-	F_on_shmem_exit(m, int32(964), int32(0))
+	F_on_shmem_exit(m, int32(965), int32(0))
 	mBase = m.M
 	v719 = m.ExcPending
 	if v719 != 0 {
@@ -4541,7 +4541,7 @@ L220:
 	v2072 = *(*int32)(unsafe.Add(mBase, _c_F_WalSummarizerMain[20]))
 	*(*int32)(unsafe.Add(mBase, uint32(v1210)+8)) = int32(394)
 	*(*int32)(unsafe.Add(mBase, uint32(v1210)+4)) = int32(395)
-	*(*int32)(unsafe.Add(mBase, uint32(v1210))) = int32(965)
+	*(*int32)(unsafe.Add(mBase, uint32(v1210))) = int32(966)
 	*(*int32)(unsafe.Add(mBase, uint32(v1199)+260)) = v1214
 	*(*int64)(unsafe.Add(mBase, uint32(v1199)+248)) = v1239
 	*(*int32)(unsafe.Add(mBase, uint32(v1199)+264)) = v1219
@@ -7669,7 +7669,7 @@ L466:
 L467:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v4941)+16)) = v1209
-	*(*int32)(unsafe.Add(mBase, uint32(v4941)+12)) = int32(966)
+	*(*int32)(unsafe.Add(mBase, uint32(v4941)+12)) = int32(967)
 	v4954 = int32(-1)
 	v4958 = int32(4)
 	v4959 = m.Env.Pgmem_crc32c(m, v4954, v4941+int32(8), v4958)

@@ -9519,7 +9519,7 @@ func F_aclitemsort(m *base.Module, l0 int32) {
 				v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				v17 = (v10<<(uint(int32(3))%32) + int32(23)) & int32(-8)
 			}
-			F_pg_qsort(m, v17+l0, v6, int32(16), int32(1251))
+			F_pg_qsort(m, v17+l0, v6, int32(16), int32(1252))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -10970,7 +10970,7 @@ func F_add_nulling_relids(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
-	v16 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1051), v7+int32(4))
+	v16 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1052), v7+int32(4))
 	mBase = m.M
 	v19 = m.ExcPending
 	if v19 != 0 {
@@ -20913,7 +20913,7 @@ func F_assign_random_seed(m *base.Module, l0 float64, l1 int32) {
 		if v7 != 0 {
 			return
 		} else {
-			v8 = F_DirectFunctionCall1Coll(m, int32(585), int32(0), v6)
+			v8 = F_DirectFunctionCall1Coll(m, int32(586), int32(0), v6)
 			mBase = m.M
 			v9 = m.ExcPending
 			if v9 != 0 {

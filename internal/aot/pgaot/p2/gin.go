@@ -3380,7 +3380,7 @@ func F_gin_extract_jsonb_query_path(m *base.Module, l0 int32) int32 {
 	v12 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+36)))
 	if v12 == int32(7) {
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v18 = F_DirectFunctionCall2Coll(m, int32(1340), int32(0), v17, v11)
+		v18 = F_DirectFunctionCall2Coll(m, int32(1341), int32(0), v17, v11)
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
@@ -3533,7 +3533,7 @@ func F_gin_extract_query_bool(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2723)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2724)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -3675,7 +3675,7 @@ func F_gin_extract_query_char(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2117)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2118)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -3817,7 +3817,7 @@ func F_gin_extract_query_float4(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2113)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2114)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -3963,7 +3963,7 @@ func F_gin_extract_query_float8(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2114)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2115)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -4269,7 +4269,7 @@ func F_gin_extract_query_timestamp(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(1445)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(1446)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)

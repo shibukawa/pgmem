@@ -1527,7 +1527,7 @@ L60:
 	goto L32
 L61:
 	;
-	if l0 == int32(1035) {
+	if l0 == int32(1036) {
 		goto L77
 	} else {
 		goto L78

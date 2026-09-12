@@ -269,7 +269,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+						v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
@@ -311,7 +311,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+							v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -353,7 +353,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								v41 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+								v41 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -393,7 +393,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 							if v63 != 0 {
 								return int32(0)
 							} else {
-								v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+								v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 								mBase = m.M
 								v67 = m.ExcPending
 								if v67 != 0 {
@@ -438,7 +438,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+						v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
@@ -480,7 +480,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+							v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
@@ -520,7 +520,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							v41 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+							v41 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -602,7 +602,7 @@ func F_timetz_izone(m *base.Module, l0 int32) int32 {
 				if v63 != 0 {
 					return int32(0)
 				} else {
-					v66 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v12)
+					v66 = F_DirectFunctionCall1Coll(m, int32(1289), int32(0), v12)
 					mBase = m.M
 					v67 = m.ExcPending
 					if v67 != 0 {

@@ -287,7 +287,7 @@ func F_int4_cash(m *base.Module, l0 int32) int32 {
 			if v74 != 0 {
 				return int32(0)
 			} else {
-				v75 = F_DirectFunctionCall2Coll(m, int32(1278), int32(0), v71, v73)
+				v75 = F_DirectFunctionCall2Coll(m, int32(1279), int32(0), v71, v73)
 				mBase = m.M
 				v76 = m.ExcPending
 				if v76 != 0 {

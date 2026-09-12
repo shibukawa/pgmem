@@ -4035,7 +4035,7 @@ func F_network_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v30
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1458)
+	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1459)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+20)))
 	if v9 == int32(1) {
 		v12 = int32(_a_F_network_sortsupport_0)
@@ -4057,9 +4057,9 @@ func F_network_sortsupport(m *base.Module, l0 int32) int32 {
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+32)) = int32(1458)
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+28)) = int32(1459)
-				*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1460)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+32)) = int32(1459)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+28)) = int32(1460)
+				*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1461)
 				*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(116)
 				*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = v18
 				*(*int32)(unsafe.Add(mBase, _c_F_network_sortsupport[0])) = v13

@@ -865,11 +865,11 @@ L9:
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+38)) = uint8(v47)
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+40)) = v26
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v41
-	v66 = int32(913)
+	v66 = int32(914)
 	v68 = m.G0
 	v70 = v68 - int32(144)
 	m.G0 = v70
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v80 = v66
 		goto L11
@@ -882,11 +882,11 @@ L10:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v41
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+39)) = uint8(v50)
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+38)) = uint8(v47)
-	v112 = int32(928)
+	v112 = int32(929)
 	v114 = m.G0
 	v116 = v114 - int32(144)
 	m.G0 = v116
-	switch int32(930) {
+	switch int32(931) {
 	case 0, 2:
 		v126 = v112
 		goto L24
@@ -1126,11 +1126,11 @@ L62:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v41
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+39)) = uint8(v50)
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+38)) = uint8(v47)
-	v296 = int32(916)
+	v296 = int32(917)
 	v298 = m.G0
 	v300 = v298 - int32(144)
 	m.G0 = v300
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v310 = v296
 		goto L76
@@ -1187,11 +1187,11 @@ L75:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v41
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+39)) = uint8(v50)
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+38)) = uint8(v47)
-	v342 = int32(915)
+	v342 = int32(916)
 	v344 = m.G0
 	v346 = v344 - int32(144)
 	m.G0 = v346
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v356 = v342
 		goto L89
@@ -1317,7 +1317,7 @@ L101:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = v41
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+38)) = uint8(v47)
 	*(*uint8)(unsafe.Add(mBase, uint32(v19)+39)) = uint8(v50)
-	F_before_shmem_exit(m, int32(929), int32(0))
+	F_before_shmem_exit(m, int32(930), int32(0))
 	mBase = m.M
 	v445 = m.ExcPending
 	if v445 != 0 {

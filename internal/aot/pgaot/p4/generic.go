@@ -307,7 +307,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							}
 						}
 					} else {
-						v31 = F_DirectFunctionCall1Coll(m, int32(1452), l2, l1)
+						v31 = F_DirectFunctionCall1Coll(m, int32(1453), l2, l1)
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -346,7 +346,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 										v67 = int32(base.Ui32(v61)>>(uint(int32(2))%32)) - int32(4)
 									}
 								}
-								v71 = F_DirectFunctionCall1Coll(m, int32(1452), l2, l0)
+								v71 = F_DirectFunctionCall1Coll(m, int32(1453), l2, l0)
 								mBase = m.M
 								v72 = m.ExcPending
 								if v72 != 0 {
@@ -422,7 +422,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						}
 					}
 				} else {
-					v31 = F_DirectFunctionCall1Coll(m, int32(1452), l2, l1)
+					v31 = F_DirectFunctionCall1Coll(m, int32(1453), l2, l1)
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
@@ -461,7 +461,7 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 									v67 = int32(base.Ui32(v61)>>(uint(int32(2))%32)) - int32(4)
 								}
 							}
-							v71 = F_DirectFunctionCall1Coll(m, int32(1452), l2, l0)
+							v71 = F_DirectFunctionCall1Coll(m, int32(1453), l2, l0)
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {

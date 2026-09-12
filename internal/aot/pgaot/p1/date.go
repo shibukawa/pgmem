@@ -9585,7 +9585,7 @@ func F_date_pl_interval(m *base.Module, l0 int32) int32 {
 		if v22 != 0 {
 			return int32(0)
 		} else {
-			v23 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v19, v3)
+			v23 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v19, v3)
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -9603,7 +9603,7 @@ func F_date_pl_interval(m *base.Module, l0 int32) int32 {
 			if v22 != 0 {
 				return int32(0)
 			} else {
-				v23 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v19, v3)
+				v23 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v19, v3)
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -9653,7 +9653,7 @@ func F_date_pl_interval(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					v23 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v19, v3)
+					v23 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v19, v3)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -9672,8 +9672,8 @@ func F_date_skipsupport(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1279)
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1280)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1280)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1281)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(9223372034707292160)
 	return int32(0)
 }

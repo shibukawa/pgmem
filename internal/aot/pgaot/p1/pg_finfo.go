@@ -2,6 +2,15 @@ package p1
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo__int_contains(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_contains_0)
+}
+func F_pg_finfo__int_overlap(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_overlap_0)
+}
+func F_pg_finfo__int_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo__int_union_0)
+}
 func F_pg_finfo__ltq_extract_regex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltq_extract_regex_0)
 }
@@ -40,6 +49,21 @@ func F_pg_finfo_euc_jis_2004_to_shift_jis_2004(m *base.Module) int32 {
 }
 func F_pg_finfo_euc_jp_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_mic_0)
+}
+func F_pg_finfo_g_int_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_consistent_0)
+}
+func F_pg_finfo_g_int_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_options_0)
+}
+func F_pg_finfo_g_int_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_int_same_0)
+}
+func F_pg_finfo_g_intbig_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_consistent_0)
+}
+func F_pg_finfo_g_intbig_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_g_intbig_same_0)
 }
 func F_pg_finfo_gbt_bit_same(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbt_bit_same_0)
@@ -185,6 +209,9 @@ func F_pg_finfo_gin_extract_value_int2(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_numeric(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_numeric_0)
 }
+func F_pg_finfo_ginint4_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ginint4_consistent_0)
+}
 func F_pg_finfo_gtrgm_options(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_options_0)
 }
@@ -251,6 +278,9 @@ func F_pg_finfo_nlevel(m *base.Module) int32 {
 func F_pg_finfo_plpgsql_inline_handler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_plpgsql_inline_handler_0)
 }
+func F_pg_finfo_querytree(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_querytree_0)
+}
 func F_pg_finfo_shift_jis_2004_to_euc_jis_2004(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_shift_jis_2004_to_euc_jis_2004_0)
 }
@@ -259,6 +289,12 @@ func F_pg_finfo_shift_jis_2004_to_utf8(m *base.Module) int32 {
 }
 func F_pg_finfo_sjis_to_euc_jp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_euc_jp_0)
+}
+func F_pg_finfo_sort(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sort_0)
+}
+func F_pg_finfo_sort_asc(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sort_asc_0)
 }
 func F_pg_finfo_tstz_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_tstz_dist_0)

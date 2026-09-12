@@ -2120,7 +2120,7 @@ L208:
 	goto L16
 L209:
 	;
-	F_pg_qsort(m, v806, v807, int32(6), int32(769))
+	F_pg_qsort(m, v806, v807, int32(6), int32(770))
 	mBase = m.M
 	v825 = m.ExcPending
 	if v825 != 0 {

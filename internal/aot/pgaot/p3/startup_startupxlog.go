@@ -7848,7 +7848,7 @@ L158:
 	goto L118
 L159:
 	;
-	F_walkdir(m, v665, int32(1092), int32(0), int32(15))
+	F_walkdir(m, v665, int32(1093), int32(0), int32(15))
 	mBase = m.M
 	v670 = m.ExcPending
 	if v670 != 0 {
@@ -7858,7 +7858,7 @@ L159:
 	}
 L160:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1091), int32(1), int32(14))
+	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1092), int32(1), int32(14))
 	mBase = m.M
 	v661 = m.ExcPending
 	if v661 != 0 {
@@ -7953,7 +7953,7 @@ L171:
 	goto L168
 L172:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1091), int32(0), int32(14))
+	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1092), int32(0), int32(14))
 	mBase = m.M
 	v620 = m.ExcPending
 	if v620 != 0 {
@@ -7966,7 +7966,7 @@ L173:
 	goto L160
 L174:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1091), int32(0), int32(14))
+	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1092), int32(0), int32(14))
 	mBase = m.M
 	v629 = m.ExcPending
 	if v629 != 0 {
@@ -7984,7 +7984,7 @@ L175:
 L176:
 	;
 	v634 = int32(_a_F_StartupXLOG_4)
-	F_walkdir(m, v634, int32(1091), int32(0), int32(14))
+	F_walkdir(m, v634, int32(1092), int32(0), int32(14))
 	mBase = m.M
 	v640 = m.ExcPending
 	if v640 != 0 {
@@ -7994,7 +7994,7 @@ L176:
 	}
 L177:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1091), int32(1), int32(14))
+	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1092), int32(1), int32(14))
 	mBase = m.M
 	v646 = m.ExcPending
 	if v646 != 0 {
@@ -8014,7 +8014,7 @@ L178:
 	}
 L179:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1092), int32(0), int32(15))
+	F_walkdir(m, int32(_a_F_StartupXLOG_42), int32(1093), int32(0), int32(15))
 	mBase = m.M
 	v654 = m.ExcPending
 	if v654 != 0 {
@@ -8042,7 +8042,7 @@ L182:
 	goto L159
 L183:
 	;
-	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1092), int32(1), int32(15))
+	F_walkdir(m, int32(_a_F_StartupXLOG_38), int32(1093), int32(1), int32(15))
 	mBase = m.M
 	v676 = m.ExcPending
 	if v676 != 0 {

@@ -3393,7 +3393,7 @@ L5:
 L6:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_ri_FetchPreparedPlan[1])) = v20
-	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1500), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1501), int32(0))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {

@@ -170,7 +170,7 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									v59 = F_RangeVarGetRelidExtended(m, v52, int32(4), int32(0), int32(1059), v8+int32(28))
+									v59 = F_RangeVarGetRelidExtended(m, v52, int32(4), int32(0), int32(1060), v8+int32(28))
 									mBase = m.M
 									v60 = m.ExcPending
 									if v60 != 0 {

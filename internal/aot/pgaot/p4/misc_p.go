@@ -2540,7 +2540,7 @@ func F_PrepareSortSupportComparisonShim(m *base.Module, l0 int32, l1 int32) {
 			*(*uint16)(unsafe.Add(mBase, uint32(v6)+46)) = uint16(v19)
 			*(*uint8)(unsafe.Add(mBase, uint32(v6)+44)) = uint8(v15)
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = v14
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(1834)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(1835)
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v6
 			return
 		}
@@ -14821,7 +14821,7 @@ func F_plainto_tsquery_byid(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v24 = F_parse_tsquery(m, v17, int32(1173), v6+int32(8), int32(1), int32(0))
+			v24 = F_parse_tsquery(m, v17, int32(1174), v6+int32(8), int32(1), int32(0))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
@@ -20145,7 +20145,7 @@ func F_pull_exec_paramids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v22 = F_expression_tree_walker_impl(m, l0, int32(908), l1)
+			v22 = F_expression_tree_walker_impl(m, l0, int32(909), l1)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
@@ -22059,7 +22059,7 @@ L73:
 	m.G0 = v239
 	*(*int32)(unsafe.Add(mBase, uint32(v239)+12)) = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v239)+8)) = int32(-1)
-	v249 = F_range_table_walker_impl(m, v235, int32(1049), v239+int32(8), v238)
+	v249 = F_range_table_walker_impl(m, v235, int32(1050), v239+int32(8), v238)
 	mBase = m.M
 	v250 = m.ExcPending
 	if v250 != 0 {
@@ -23334,7 +23334,7 @@ L227:
 	v944 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+72)) = v944
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+68)) = v566
-	v951 = F_query_or_expression_tree_walker_impl(m, v567, int32(851), v16+int32(68), v944)
+	v951 = F_query_or_expression_tree_walker_impl(m, v567, int32(852), v16+int32(68), v944)
 	mBase = m.M
 	v952 = m.ExcPending
 	if v952 != 0 {
@@ -23442,7 +23442,7 @@ L243:
 	v996 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v956)+8)) = v996
 	*(*int32)(unsafe.Add(mBase, uint32(v956)+4)) = v566
-	v1003 = F_query_or_expression_tree_walker_impl(m, v994, int32(851), v956+int32(4), v996)
+	v1003 = F_query_or_expression_tree_walker_impl(m, v994, int32(852), v956+int32(4), v996)
 	mBase = m.M
 	v1004 = m.ExcPending
 	if v1004 != 0 {

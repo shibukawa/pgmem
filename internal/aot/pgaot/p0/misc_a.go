@@ -5961,11 +5961,11 @@ L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v27
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v30
-	v55 = int32(913)
+	v55 = int32(914)
 	v57 = m.G0
 	v59 = v57 - int32(144)
 	m.G0 = v59
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v69 = v55
 		goto L19
@@ -5985,11 +5985,11 @@ L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v27
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v30
-	v99 = int32(914)
+	v99 = int32(915)
 	v101 = m.G0
 	v103 = v101 - int32(144)
 	m.G0 = v103
-	switch int32(916) {
+	switch int32(917) {
 	case 0, 2:
 		v113 = v99
 		goto L32
@@ -6207,7 +6207,7 @@ L59:
 	;
 	v327 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_AutoVacWorkerMain[14])) = uint8(v327)
-	F_pqsignal_be(m, int32(14), int32(1784))
+	F_pqsignal_be(m, int32(14), int32(1785))
 	mBase = m.M
 	goto L57
 L60:
@@ -6235,11 +6235,11 @@ L63:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v27
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v30
-	v379 = int32(916)
+	v379 = int32(917)
 	v381 = m.G0
 	v383 = v381 - int32(144)
 	m.G0 = v383
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v393 = v379
 		goto L77
@@ -6353,11 +6353,11 @@ L89:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v27
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v30
-	v467 = int32(918)
+	v467 = int32(919)
 	v469 = m.G0
 	v471 = v469 - int32(144)
 	m.G0 = v471
-	switch int32(920) {
+	switch int32(921) {
 	case 0, 2:
 		v481 = v467
 		goto L103
@@ -6833,7 +6833,7 @@ L160:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v566
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v567
-	F_on_shmem_exit(m, int32(920), int32(0))
+	F_on_shmem_exit(m, int32(921), int32(0))
 	mBase = m.M
 	v717 = m.ExcPending
 	if v717 != 0 {
@@ -7295,13 +7295,13 @@ func F_abs_interval(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v13 int32
 	_ = v13
-	v5 = F_DirectFunctionCall2Coll(m, int32(2459), int32(0), l0, int32(_a_F_abs_interval_0))
+	v5 = F_DirectFunctionCall2Coll(m, int32(2460), int32(0), l0, int32(_a_F_abs_interval_0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
 	} else {
 		if v5 != 0 {
-			v11 = F_DirectFunctionCall1Coll(m, int32(2463), int32(0), l0)
+			v11 = F_DirectFunctionCall1Coll(m, int32(2464), int32(0), l0)
 			v12 = m.ExcPending
 			if v12 != 0 {
 				return int32(0)
@@ -9862,7 +9862,7 @@ func F_acquireLocksOnSubLinks(m *base.Module, l0 int32, l1 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				v18 = F_expression_tree_walker_impl(m, l0, int32(1040), l1)
+				v18 = F_expression_tree_walker_impl(m, l0, int32(1041), l1)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
@@ -9872,7 +9872,7 @@ func F_acquireLocksOnSubLinks(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v18 = F_expression_tree_walker_impl(m, l0, int32(1040), l1)
+			v18 = F_expression_tree_walker_impl(m, l0, int32(1041), l1)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -10470,7 +10470,7 @@ L3:
 	}
 L4:
 	;
-	v118 = F_expression_tree_mutator_impl(m, l0, int32(1051), l1)
+	v118 = F_expression_tree_mutator_impl(m, l0, int32(1052), l1)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -10482,7 +10482,7 @@ L5:
 	;
 	v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v103 + int32(1)
-	v109 = F_query_tree_mutator_impl(m, l0, int32(1051), l1, int32(0))
+	v109 = F_query_tree_mutator_impl(m, l0, int32(1052), l1, int32(0))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {

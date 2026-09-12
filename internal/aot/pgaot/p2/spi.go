@@ -572,7 +572,7 @@ L30:
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v42)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+40)) = v76
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(778)
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(779)
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+44)) = v78
 	v82 = int32(_a_F_SPI_cursor_open_internal_0)
 	v83 = *(*int32)(unsafe.Add(mBase, _c_F_SPI_cursor_open_internal[6]))

@@ -270,7 +270,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 						*(*int32)(unsafe.Add(mBase, uint32(v46)+40)) = v73
 						v76 = *(*int32)(unsafe.Add(mBase, uint32(v27)+12))
 						if int32(0) <= v76 {
-							*(*int32)(unsafe.Add(mBase, uint32(v46)+108)) = int32(1307)
+							*(*int32)(unsafe.Add(mBase, uint32(v46)+108)) = int32(1308)
 							*(*int32)(unsafe.Add(mBase, uint32(v46)+112)) = v46
 							v82 = *(*int32)(unsafe.Add(mBase, uint32(v46)+8))
 							v84 = v46 + int32(108)
@@ -355,7 +355,7 @@ func F_make_expanded_record_from_tupdesc(m *base.Module, l0 int32, l1 int32) int
 					*(*int32)(unsafe.Add(mBase, uint32(v46)+40)) = v73
 					v76 = *(*int32)(unsafe.Add(mBase, uint32(v27)+12))
 					if int32(0) <= v76 {
-						*(*int32)(unsafe.Add(mBase, uint32(v46)+108)) = int32(1307)
+						*(*int32)(unsafe.Add(mBase, uint32(v46)+108)) = int32(1308)
 						*(*int32)(unsafe.Add(mBase, uint32(v46)+112)) = v46
 						v82 = *(*int32)(unsafe.Add(mBase, uint32(v46)+8))
 						v84 = v46 + int32(108)

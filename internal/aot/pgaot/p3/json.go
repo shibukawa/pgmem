@@ -5003,7 +5003,7 @@ L50:
 L51:
 	;
 	v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	v32 = F_DirectFunctionCall1Coll(m, int32(617), int32(0), v31)
+	v32 = F_DirectFunctionCall1Coll(m, int32(618), int32(0), v31)
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {

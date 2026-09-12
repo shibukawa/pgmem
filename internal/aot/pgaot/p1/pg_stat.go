@@ -1787,7 +1787,7 @@ L172:
 	}
 L173:
 	;
-	v730 = F_DirectFunctionCall1Coll(m, int32(1481), int32(0), v25+int32(32))
+	v730 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), v25+int32(32))
 	mBase = m.M
 	v731 = m.ExcPending
 	if v731 != 0 {

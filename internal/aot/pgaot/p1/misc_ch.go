@@ -195,7 +195,7 @@ L1:
 	;
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v168 + int32(1)
-	v174 = F_query_tree_walker_impl(m, l0, int32(1048), l1, int32(0))
+	v174 = F_query_tree_walker_impl(m, l0, int32(1049), l1, int32(0))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {
@@ -259,7 +259,7 @@ L9:
 	goto L6
 L10:
 	;
-	v161 = F_expression_tree_walker_impl(m, l0, int32(1048), l1)
+	v161 = F_expression_tree_walker_impl(m, l0, int32(1049), l1)
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {

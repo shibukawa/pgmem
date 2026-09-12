@@ -6771,7 +6771,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v13 != int32(20) {
-			v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+			v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 			mBase = m.M
 			v91 = m.ExcPending
 			if v91 != 0 {
@@ -6786,7 +6786,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+12))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 			if v18 == int32(0) {
-				v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+				v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 				mBase = m.M
 				v91 = m.ExcPending
 				if v91 != 0 {
@@ -6799,7 +6799,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 			} else {
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
 				if v21 != int32(7) {
-					v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+					v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
@@ -6812,7 +6812,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 				} else {
 					v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+24)))
 					if v24 != 0 {
-						v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+						v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
@@ -6833,7 +6833,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 								return int32(0)
 							} else {
 								if v33 == int32(0) {
-									v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+									v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -6847,7 +6847,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 									v39 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 									v40 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
 									if v39 != v40 {
-										v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+										v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 										mBase = m.M
 										v91 = m.ExcPending
 										if v91 != 0 {
@@ -6889,7 +6889,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 								return int32(0)
 							} else {
 								if v52 == int32(0) {
-									v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+									v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -6907,7 +6907,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 										return int32(0)
 									} else {
 										if v60 == int32(0) {
-											v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+											v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 											mBase = m.M
 											v91 = m.ExcPending
 											if v91 != 0 {
@@ -6921,7 +6921,7 @@ func F_convert_saop_to_hashed_saop_walker(m *base.Module, l0 int32, l1 int32) in
 											v64 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 											v65 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
 											if v64 != v65 {
-												v90 = F_expression_tree_walker_impl(m, l0, int32(873), int32(0))
+												v90 = F_expression_tree_walker_impl(m, l0, int32(874), int32(0))
 												mBase = m.M
 												v91 = m.ExcPending
 												if v91 != 0 {
@@ -7027,7 +7027,7 @@ func F_convert_testexpr_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 		case 0:
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			if v15 != int32(2) {
-				v38 = F_expression_tree_mutator_impl(m, l0, int32(844), l1)
+				v38 = F_expression_tree_mutator_impl(m, l0, int32(845), l1)
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {
@@ -7142,7 +7142,7 @@ func F_convert_testexpr_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		default:
-			v38 = F_expression_tree_mutator_impl(m, l0, int32(844), l1)
+			v38 = F_expression_tree_mutator_impl(m, l0, int32(845), l1)
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {

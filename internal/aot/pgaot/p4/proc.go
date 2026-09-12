@@ -8,8 +8,8 @@ import (
 func F_ExecSetExecProcNode(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = int32(631)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(719)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = int32(632)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(720)
 	return
 }
 func F_ProcArrayAdd(m *base.Module, l0 int32) {

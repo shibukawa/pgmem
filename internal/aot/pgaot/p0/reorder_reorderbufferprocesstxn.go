@@ -2616,7 +2616,7 @@ L68:
 	*(*uint8)(unsafe.Add(mBase, uint32(v94)+119)) = uint8(v577)
 	*(*int32)(unsafe.Add(mBase, uint32(v94)+172)) = v527
 	*(*int32)(unsafe.Add(mBase, uint32(v94)+168)) = v535
-	v991 = F_binaryheap_allocate(m, v937, int32(1017), v823)
+	v991 = F_binaryheap_allocate(m, v937, int32(1018), v823)
 	mBase = m.M
 	v992 = m.ExcPending
 	if v992 != 0 {

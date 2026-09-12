@@ -1815,7 +1815,7 @@ L97:
 	goto L98
 L98:
 	;
-	v393 = F_expression_tree_walker_impl(m, v380, int32(624), v378)
+	v393 = F_expression_tree_walker_impl(m, v380, int32(625), v378)
 	mBase = m.M
 	v394 = m.ExcPending
 	if v394 != 0 {
@@ -3308,7 +3308,7 @@ func F_index_expression_changed_walker(m *base.Module, l0 int32, l1 int32) int32
 				return v13
 			}
 		} else {
-			v19 = F_expression_tree_walker_impl(m, l0, int32(624), l1)
+			v19 = F_expression_tree_walker_impl(m, l0, int32(625), l1)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {

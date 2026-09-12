@@ -1400,7 +1400,7 @@ func F_setRuleCheckAsUser(m *base.Module, l0 int32, l1 int32) {
 				return
 			}
 		} else {
-			v19 = F_expression_tree_walker_impl(m, l0, int32(1038), v6+int32(12))
+			v19 = F_expression_tree_walker_impl(m, l0, int32(1039), v6+int32(12))
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {

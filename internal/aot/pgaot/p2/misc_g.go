@@ -22054,6 +22054,263 @@ func F_ginendscan(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_ginint4_consistent(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v68 int32
+	_ = v68
+	var v74 int32
+	_ = v74
+	var v81 int32
+	_ = v81
+	var v82 int32
+	_ = v82
+	var v87 int32
+	_ = v87
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v14 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+28)))
+	switch v14 - int32(3) {
+	case 0:
+		goto L3
+	default:
+		goto L4
+	case 3:
+		goto L7
+	case 4, 10:
+		goto L6
+	case 5, 11:
+		goto L8
+	case 17:
+		goto L5
+	}
+L1:
+	;
+	m.G0 = v9 + int32(16)
+	return v87
+L2:
+	;
+	v87 = int32(1)
+	goto L1
+L3:
+	;
+	v82 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v82)
+	goto L2
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v68 = m.ExcPending
+	if v68 != 0 {
+		goto L23
+	} else {
+		goto L26
+	}
+L5:
+	;
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v57 = F_pg_detoast_datum(m, v56)
+	mBase = m.M
+	v60 = m.ExcPending
+	if v60 != 0 {
+		goto L23
+	} else {
+		goto L24
+	}
+L6:
+	;
+	v38 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v38)
+	if v12 <= v38 {
+		goto L2
+	} else {
+		goto L16
+	}
+L7:
+	;
+	v20 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v20)
+	v23 = int32(0)
+	if v12 <= v23 {
+		v87 = v20
+		goto L1
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v17 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v17)
+	v87 = v17
+	goto L1
+L9:
+	;
+	v26 = v23
+	goto L10
+L10:
+	;
+	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26+v13))))
+	if v33 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L11:
+	;
+	v87 = int32(0)
+	goto L1
+L12:
+	;
+	v35 = v26 + int32(1)
+	if v12 != v35 {
+		v26 = v35
+		goto L10
+	} else {
+		goto L15
+	}
+L13:
+	;
+	goto L14
+L14:
+	;
+	goto L11
+L15:
+	;
+	v87 = v20
+	goto L1
+L16:
+	;
+	v43 = v38
+	goto L17
+L17:
+	;
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v43+v13))))
+	if v50 != 0 {
+		goto L19
+	} else {
+		goto L20
+	}
+L18:
+	;
+	v87 = int32(0)
+	goto L1
+L19:
+	;
+	v51 = int32(1)
+	v53 = v43 + v51
+	if v12 != v53 {
+		v43 = v53
+		goto L17
+	} else {
+		goto L22
+	}
+L20:
+	;
+	goto L21
+L21:
+	;
+	goto L18
+L22:
+	;
+	v87 = v51
+	goto L1
+L23:
+	;
+	return int32(0)
+L24:
+	;
+	v61 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v61)
+	v63 = F_gin_bool_consistent(m, v57, v13)
+	mBase = m.M
+	v64 = m.ExcPending
+	if v64 != 0 {
+		goto L23
+	} else {
+		goto L25
+	}
+L25:
+	;
+	v87 = v63
+	goto L1
+L26:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v14
+	F_errmsg_internal(m, int32(_a_F_ginint4_consistent_0), v9)
+	mBase = m.M
+	v74 = m.ExcPending
+	if v74 != 0 {
+		goto L23
+	} else {
+		goto L27
+	}
+L27:
+	;
+	F_errfinish(m, int32(_a_F_ginint4_consistent_1), int32(176), int32(_a_F_ginint4_consistent_2))
+	mBase = m.M
+	v81 = m.ExcPending
+	if v81 != 0 {
+		goto L23
+	} else {
+		goto L28
+	}
+L28:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
 func F_ginrescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M
 	_ = mBase

@@ -4259,7 +4259,7 @@ func F_locate_agg_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	m.G0 = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(-1)
-	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1043), v6+int32(8), int32(0))
+	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(1044), v6+int32(8), int32(0))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -4288,7 +4288,7 @@ func F_locate_var_of_level(m *base.Module, l0 int32, l1 int32) int32 {
 	m.G0 = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(-1)
-	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(901), v6+int32(8), int32(0))
+	v15 = F_query_or_expression_tree_walker_impl(m, l0, int32(902), v6+int32(8), int32(0))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {

@@ -3746,7 +3746,7 @@ L320:
 L321:
 	;
 	v1407 = int32(0)
-	v1411 = F_binaryheap_allocate(m, v1407, int32(1076), v1407)
+	v1411 = F_binaryheap_allocate(m, v1407, int32(1077), v1407)
 	mBase = m.M
 	v1412 = m.ExcPending
 	if v1412 != 0 {
@@ -3766,7 +3766,7 @@ L322:
 L323:
 	;
 	v1370 = int32(0)
-	v1373 = F_binaryheap_allocate(m, v1354, int32(1076), v1370)
+	v1373 = F_binaryheap_allocate(m, v1354, int32(1077), v1370)
 	mBase = m.M
 	v1374 = m.ExcPending
 	if v1374 != 0 {

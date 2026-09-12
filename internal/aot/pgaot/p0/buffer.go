@@ -209,7 +209,7 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(1074)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(1075)
 	v21 = int32(_a_F_FlushBuffer_0)
 	v22 = *(*int32)(unsafe.Add(mBase, _c_F_FlushBuffer[0]))
 	*(*int32)(unsafe.Add(mBase, _c_F_FlushBuffer[0])) = v10 + int32(-36)

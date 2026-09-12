@@ -10,7 +10,7 @@ func F_ExecSeqScanEPQ(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(753), int32(754))
+	v4 = F_ExecScan(m, l0, int32(754), int32(755))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

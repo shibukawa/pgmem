@@ -154,7 +154,7 @@ L6:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v20
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v27
-	F_before_shmem_exit(m, int32(1021), l0)
+	F_before_shmem_exit(m, int32(1022), l0)
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -228,7 +228,7 @@ L16:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v48
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v47
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v46
-	F_cancel_before_shmem_exit(m, int32(1021), v47)
+	F_cancel_before_shmem_exit(m, int32(1022), v47)
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -322,7 +322,7 @@ L23:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v48
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v47
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v46
-	F_cancel_before_shmem_exit(m, int32(1021), v47)
+	F_cancel_before_shmem_exit(m, int32(1022), v47)
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {

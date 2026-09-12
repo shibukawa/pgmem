@@ -3768,7 +3768,7 @@ L47:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[8])) = v157
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[9])) = v158
-	F_on_shmem_exit(m, int32(910), int32(0))
+	F_on_shmem_exit(m, int32(911), int32(0))
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {
@@ -4025,7 +4025,7 @@ L87:
 	goto L88
 L88:
 	;
-	F_on_shmem_exit(m, int32(911), v309)
+	F_on_shmem_exit(m, int32(912), v309)
 	mBase = m.M
 	v488 = m.ExcPending
 	if v488 != 0 {
@@ -4412,7 +4412,7 @@ L146:
 	goto L142
 L147:
 	;
-	F_on_shmem_exit(m, int32(912), v510)
+	F_on_shmem_exit(m, int32(913), v510)
 	mBase = m.M
 	v515 = m.ExcPending
 	if v515 != 0 {
@@ -5226,7 +5226,7 @@ L265:
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[15])) = v1082
 	v1158 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[16])) = v1158
-	F_on_shmem_exit(m, int32(909), v1158)
+	F_on_shmem_exit(m, int32(910), v1158)
 	mBase = m.M
 	v1163 = m.ExcPending
 	if v1163 != 0 {
@@ -6175,7 +6175,7 @@ L376:
 	goto L357
 L377:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v2431)+48)) = int32(1104)
+	*(*int32)(unsafe.Add(mBase, uint32(v2431)+48)) = int32(1105)
 	*(*int32)(unsafe.Add(mBase, uint32(v2431)+20)) = v2471
 	*(*int32)(unsafe.Add(mBase, uint32(v2431)+24)) = v2471
 	v2484 = *(*int32)(unsafe.Add(mBase, uint32(v2429+int32(-52))+8))
@@ -7882,7 +7882,7 @@ L604:
 L605:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[179])) = v3788
-	*(*int32)(unsafe.Add(mBase, uint32(v3765)+40)) = int32(1109)
+	*(*int32)(unsafe.Add(mBase, uint32(v3765)+40)) = int32(1110)
 	*(*int64)(unsafe.Add(mBase, uint32(v3765)+32)) = int64(154618822664)
 	*(*int32)(unsafe.Add(mBase, uint32(v3765)+16)) = int32(16)
 	v3799 = int32(1)
@@ -8004,7 +8004,7 @@ L618:
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[184])) = v3864
 	v3869 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[21]))
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[185])) = v3869 + v3864&int32(15)<<(uint(int32(7))%32) + int32(_a_F_CreateSharedMemoryAndSemaphores_96)
-	*(*int32)(unsafe.Add(mBase, uint32(v3827)+36)) = int32(1110)
+	*(*int32)(unsafe.Add(mBase, uint32(v3827)+36)) = int32(1111)
 	*(*int64)(unsafe.Add(mBase, uint32(v3827)+28)) = int64(137438953480)
 	*(*int32)(unsafe.Add(mBase, uint32(v3827)+12)) = int32(16)
 	v3887 = v3837 << (uint(int32(1)) % 32)
@@ -8402,7 +8402,7 @@ L661:
 	goto L662
 L662:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[192])) = int32(1111)
+	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[192])) = int32(1112)
 	v4275 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[193]))
 	v4276 = int32(0)
 	F_SimpleLruInit(m, int32(_a_F_CreateSharedMemoryAndSemaphores_104), int32(_a_F_CreateSharedMemoryAndSemaphores_105), v4275, v4276, int32(_a_F_CreateSharedMemoryAndSemaphores_106), int32(60), int32(90), int32(5), v4276)
@@ -12897,7 +12897,7 @@ L1240:
 	;
 	v8156 = *(*int32)(unsafe.Add(mBase, uint32(v7884)+76))
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[256])) = v8156
-	F_on_shmem_exit(m, int32(1096), v7881)
+	F_on_shmem_exit(m, int32(1097), v7881)
 	mBase = m.M
 	v8160 = m.ExcPending
 	if v8160 != 0 {

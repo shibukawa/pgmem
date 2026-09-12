@@ -643,7 +643,7 @@ L11:
 	*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_c_F_ginBuildCallback[9]))) = v102
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(v102)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l5)+uint32(_c_F_ginBuildCallback[10]))) = uint8(base.B2i32(v112 == int32(_a_F_ginBuildCallback_3)))
-	*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_c_F_ginBuildCallback[11]))) = int32(789)
+	*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_c_F_ginBuildCallback[11]))) = int32(790)
 	m.G0 = v105 + v104
 	goto L14
 L12:
@@ -2999,7 +2999,7 @@ func F_ginFlushBuildState(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F_ginFlushBuildState[3]))) = v22
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F_ginFlushBuildState[4]))) = uint8(base.B2i32(v32 == int32(_a_F_ginFlushBuildState_1)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F_ginFlushBuildState[5]))) = int32(789)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_c_F_ginFlushBuildState[5]))) = int32(790)
 	m.G0 = v25 + v24
 	goto L1
 L1:
@@ -6233,7 +6233,7 @@ func F_gin_extract_query_bit(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_bit_0), int32(2660))
+	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_bit_0), int32(2661))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -6321,7 +6321,7 @@ func F_gin_extract_query_int2(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2111)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2112)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -6467,7 +6467,7 @@ func F_gin_extract_query_int8(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2287)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2288)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -6541,7 +6541,7 @@ func F_gin_extract_query_interval(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(0), int32(_a_F_gin_extract_query_interval_0), int32(2539))
+	v5 = F_gin_btree_extract_query(m, l0, int32(0), int32(_a_F_gin_extract_query_interval_0), int32(2540))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -6710,7 +6710,7 @@ func F_gin_extract_query_text(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_text_0), int32(2119))
+	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_text_0), int32(2120))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -6723,7 +6723,7 @@ func F_gin_extract_query_timetz(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(0), int32(_a_F_gin_extract_query_timetz_0), int32(1442))
+	v5 = F_gin_btree_extract_query(m, l0, int32(0), int32(_a_F_gin_extract_query_timetz_0), int32(1443))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -6815,7 +6815,7 @@ func F_gin_extract_query_uuid(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(3399)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(3400)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)

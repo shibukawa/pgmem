@@ -20553,6 +20553,25 @@ L36:
 	;
 	goto L34
 }
+func F_signconsistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v10 = F_execute(m, l0+v5<<(uint(int32(3))%32), l1, l2, l3, int32(_a_F_signconsistent_0))
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		return v10
+	}
+}
 func F_sigprocmask(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
@@ -25524,7 +25543,7 @@ L16:
 	v135 = int32(0)
 	F_pgstat_report_activity(m, int32(2), v135)
 	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, uint32(v80)+4)) = int32(986)
+	*(*int32)(unsafe.Add(mBase, uint32(v80)+4)) = int32(987)
 	v140 = int32(_a_F_start_apply_4)
 	v141 = *(*int32)(unsafe.Add(mBase, _c_F_start_apply[0]))
 	*(*int32)(unsafe.Add(mBase, uint32(v80))) = v141
@@ -27120,33 +27139,6 @@ L57:
 	;
 	base.Wasm_trap_unreachable()
 	for {
-	}
-}
-func F_store_int(m *base.Module, l0 int32, l1 int32, l2 int64) {
-	mBase := m.M
-	_ = mBase
-	var v3 int64
-	_ = v3
-	v3 = l2
-	if l0 == int32(0) {
-		return
-	} else {
-		switch l1 + int32(2) {
-		case 0:
-			*(*uint8)(unsafe.Add(mBase, uint32(l0))) = uint8(v3)
-			return
-		case 1:
-			*(*uint16)(unsafe.Add(mBase, uint32(l0))) = uint16(v3)
-			return
-		case 2, 3:
-			*(*uint32)(unsafe.Add(mBase, uint32(l0))) = uint32(v3)
-			return
-		default:
-			return
-		case 5:
-			*(*int64)(unsafe.Add(mBase, uint32(l0))) = v3
-			return
-		}
 	}
 }
 func F_str_udeescape(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
@@ -31112,7 +31104,7 @@ func F_substitute_actual_parameters_mutator(m *base.Module, l0 int32, l1 int32) 
 				}
 			}
 		} else {
-			v41 = F_expression_tree_mutator_impl(m, l0, int32(877), l1)
+			v41 = F_expression_tree_mutator_impl(m, l0, int32(878), l1)
 			mBase = m.M
 			v44 = m.ExcPending
 			if v44 != 0 {

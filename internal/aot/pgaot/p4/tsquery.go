@@ -955,7 +955,7 @@ L61:
 L62:
 	;
 	v201 = int32(8)
-	v205 = F_bsearch(m, v18+v201, l2, l3, v201, int32(1179))
+	v205 = F_bsearch(m, v18+v201, l2, l3, v201, int32(1180))
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {

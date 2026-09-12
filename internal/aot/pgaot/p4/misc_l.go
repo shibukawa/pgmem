@@ -8245,7 +8245,7 @@ func F_leftmostvalue_inet(m *base.Module) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_DirectFunctionCall1Coll(m, int32(1481), int32(0), int32(_a_F_leftmostvalue_inet_0))
+	v4 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), int32(_a_F_leftmostvalue_inet_0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -10502,7 +10502,7 @@ L72:
 	}
 L73:
 	;
-	F_pg_qsort(m, v249, v244, int32(4), int32(1618))
+	F_pg_qsort(m, v249, v244, int32(4), int32(1619))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -11905,7 +11905,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			if v11 != v12 {
-				v33 = F_expression_tree_walker_impl(m, l0, int32(1043), l1)
+				v33 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
@@ -11916,7 +11916,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 				if v14 < int32(0) {
-					v33 = F_expression_tree_walker_impl(m, l0, int32(1043), l1)
+					v33 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -11933,7 +11933,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			if v20 != v21 {
-				v33 = F_expression_tree_walker_impl(m, l0, int32(1043), l1)
+				v33 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
@@ -11944,7 +11944,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 				if v23 < int32(0) {
-					v33 = F_expression_tree_walker_impl(m, l0, int32(1043), l1)
+					v33 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -11961,7 +11961,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			if v8 == int32(67) {
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v38 + int32(1)
-				v44 = F_query_tree_walker_impl(m, l0, int32(1043), l1, int32(0))
+				v44 = F_query_tree_walker_impl(m, l0, int32(1044), l1, int32(0))
 				mBase = m.M
 				v45 = m.ExcPending
 				if v45 != 0 {
@@ -11972,7 +11972,7 @@ func F_locate_agg_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 					return v44
 				}
 			} else {
-				v33 = F_expression_tree_walker_impl(m, l0, int32(1043), l1)
+				v33 = F_expression_tree_walker_impl(m, l0, int32(1044), l1)
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {

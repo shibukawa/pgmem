@@ -994,7 +994,7 @@ func F_SetVarReturningType_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v7 != int32(67) {
 			if v7 != int32(6) {
-				v38 = F_expression_tree_walker_impl(m, l0, int32(1056), l1)
+				v38 = F_expression_tree_walker_impl(m, l0, int32(1057), l1)
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {
@@ -1025,7 +1025,7 @@ func F_SetVarReturningType_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v22 + int32(1)
-			v28 = F_query_tree_walker_impl(m, l0, int32(1056), l1, int32(0))
+			v28 = F_query_tree_walker_impl(m, l0, int32(1057), l1, int32(0))
 			mBase = m.M
 			v31 = m.ExcPending
 			if v31 != 0 {
@@ -4973,7 +4973,7 @@ L5:
 	goto L6
 L6:
 	;
-	F_pg_qsort(m, v20, l0, int32(32), int32(1476))
+	F_pg_qsort(m, v20, l0, int32(32), int32(1477))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -9895,7 +9895,7 @@ L122:
 	}
 L123:
 	;
-	F_pg_qsort(m, v442, v164, int32(12), int32(1077))
+	F_pg_qsort(m, v442, v164, int32(12), int32(1078))
 	mBase = m.M
 	v541 = m.ExcPending
 	if v541 != 0 {
@@ -9969,7 +9969,7 @@ L134:
 	v632 = *(*int32)(unsafe.Add(mBase, uint32(v591)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v32)+96)) = v632
 	*(*int64)(unsafe.Add(mBase, uint32(v32)+88)) = v631
-	v639 = F_bsearch(m, v32+int32(88), v442, v164, int32(12), int32(1077))
+	v639 = F_bsearch(m, v32+int32(88), v442, v164, int32(12), int32(1078))
 	mBase = m.M
 	v640 = m.ExcPending
 	if v640 != 0 {
@@ -10493,6 +10493,146 @@ func F_snprintf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	} else {
 		m.G0 = v8 + int32(16)
 		return v11
+	}
+}
+func F_sort_asc(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v32 int32
+	_ = v32
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v53 int32
+	_ = v53
+	var v60 int32
+	_ = v60
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = F_pg_detoast_datum_copy(m, v9)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+		if v14 != 0 {
+			v15 = F_array_contains_nulls(m, v10)
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int32(0)
+			} else {
+				if v15 != 0 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v44 = m.ExcPending
+					if v44 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(67108994))
+						mBase = m.M
+						v47 = m.ExcPending
+						if v47 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_sort_asc_0), int32(0))
+							mBase = m.M
+							v53 = m.ExcPending
+							if v53 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_sort_asc_1), int32(234), int32(_a_F_sort_asc_2))
+								mBase = m.M
+								v60 = m.ExcPending
+								if v60 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+					v20 = F_ArrayGetNItems(m, v17, v10+int32(16))
+					mBase = m.M
+					v21 = m.ExcPending
+					if v21 != 0 {
+						return int32(0)
+					} else {
+						v22 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v7)+15)) = uint8(v22)
+						v24 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+						if v24 != 0 {
+							v32 = v24
+						} else {
+							v25 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+							v32 = (v25<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+						}
+						F_isort(m, v32+v10, v20, v7+int32(15))
+						mBase = m.M
+						m.G0 = v7 + int32(16)
+						return v10
+					}
+				}
+			}
+		} else {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+			v20 = F_ArrayGetNItems(m, v17, v10+int32(16))
+			mBase = m.M
+			v21 = m.ExcPending
+			if v21 != 0 {
+				return int32(0)
+			} else {
+				v22 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(v7)+15)) = uint8(v22)
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+				if v24 != 0 {
+					v32 = v24
+				} else {
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+					v32 = (v25<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+				}
+				F_isort(m, v32+v10, v20, v7+int32(15))
+				mBase = m.M
+				m.G0 = v7 + int32(16)
+				return v10
+			}
+		}
 	}
 }
 func F_sort_checkpoint_bufferids(m *base.Module, l0 int32, l1 int32) {
@@ -14166,6 +14306,146 @@ L68:
 	v100 = v99
 	goto L1
 }
+func F_sort_desc(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v32 int32
+	_ = v32
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v53 int32
+	_ = v53
+	var v60 int32
+	_ = v60
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = F_pg_detoast_datum_copy(m, v9)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+		if v14 != 0 {
+			v15 = F_array_contains_nulls(m, v10)
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return int32(0)
+			} else {
+				if v15 != 0 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v44 = m.ExcPending
+					if v44 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(67108994))
+						mBase = m.M
+						v47 = m.ExcPending
+						if v47 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_sort_desc_0), int32(0))
+							mBase = m.M
+							v53 = m.ExcPending
+							if v53 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_sort_desc_1), int32(244), int32(_a_F_sort_desc_2))
+								mBase = m.M
+								v60 = m.ExcPending
+								if v60 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+					v20 = F_ArrayGetNItems(m, v17, v10+int32(16))
+					mBase = m.M
+					v21 = m.ExcPending
+					if v21 != 0 {
+						return int32(0)
+					} else {
+						v22 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v7)+15)) = uint8(v22)
+						v24 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+						if v24 != 0 {
+							v32 = v24
+						} else {
+							v25 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+							v32 = (v25<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+						}
+						F_isort(m, v32+v10, v20, v7+int32(15))
+						mBase = m.M
+						m.G0 = v7 + int32(16)
+						return v10
+					}
+				}
+			}
+		} else {
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+			v20 = F_ArrayGetNItems(m, v17, v10+int32(16))
+			mBase = m.M
+			v21 = m.ExcPending
+			if v21 != 0 {
+				return int32(0)
+			} else {
+				v22 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v7)+15)) = uint8(v22)
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
+				if v24 != 0 {
+					v32 = v24
+				} else {
+					v25 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
+					v32 = (v25<<(uint(int32(3))%32) + int32(23)) & int32(-8)
+				}
+				F_isort(m, v32+v10, v20, v7+int32(15))
+				mBase = m.M
+				m.G0 = v7 + int32(16)
+				return v10
+			}
+		}
+	}
+}
 func F_sort_order_cmp(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -14329,7 +14609,7 @@ func F_sortins(m *base.Module, l0 int32, l1 int32) {
 					}
 				} else {
 				}
-				F_pg_qsort(m, v16, v10, int32(4), int32(969))
+				F_pg_qsort(m, v16, v10, int32(4), int32(970))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
@@ -26355,7 +26635,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				if v34 == int32(67) {
 					v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 					*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v37 + int32(1)
-					v43 = F_query_tree_walker_impl(m, l0, int32(851), l1, int32(0))
+					v43 = F_query_tree_walker_impl(m, l0, int32(852), l1, int32(0))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
@@ -26366,7 +26646,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 						return v43
 					}
 				} else {
-					v51 = F_expression_tree_walker_impl(m, l0, int32(851), l1)
+					v51 = F_expression_tree_walker_impl(m, l0, int32(852), l1)
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -26390,7 +26670,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 						if v34 == int32(67) {
 							v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v37 + int32(1)
-							v43 = F_query_tree_walker_impl(m, l0, int32(851), l1, int32(0))
+							v43 = F_query_tree_walker_impl(m, l0, int32(852), l1, int32(0))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -26401,7 +26681,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								return v43
 							}
 						} else {
-							v51 = F_expression_tree_walker_impl(m, l0, int32(851), l1)
+							v51 = F_expression_tree_walker_impl(m, l0, int32(852), l1)
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
@@ -26433,7 +26713,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v34 == int32(67) {
 									v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v37 + int32(1)
-									v43 = F_query_tree_walker_impl(m, l0, int32(851), l1, int32(0))
+									v43 = F_query_tree_walker_impl(m, l0, int32(852), l1, int32(0))
 									mBase = m.M
 									v44 = m.ExcPending
 									if v44 != 0 {
@@ -26444,7 +26724,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 										return v43
 									}
 								} else {
-									v51 = F_expression_tree_walker_impl(m, l0, int32(851), l1)
+									v51 = F_expression_tree_walker_impl(m, l0, int32(852), l1)
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -26463,7 +26743,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			if v34 == int32(67) {
 				v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v37 + int32(1)
-				v43 = F_query_tree_walker_impl(m, l0, int32(851), l1, int32(0))
+				v43 = F_query_tree_walker_impl(m, l0, int32(852), l1, int32(0))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
@@ -26474,7 +26754,7 @@ func F_substitute_phv_relids_walker(m *base.Module, l0 int32, l1 int32) int32 {
 					return v43
 				}
 			} else {
-				v51 = F_expression_tree_walker_impl(m, l0, int32(851), l1)
+				v51 = F_expression_tree_walker_impl(m, l0, int32(852), l1)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {

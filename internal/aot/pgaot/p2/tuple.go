@@ -151,10 +151,10 @@ func F_CreateTupleQueueDestReceiver(m *base.Module, l0 int32) int32 {
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v4)+20)) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(11)
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(779)
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(780)
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = int32(781)
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(782)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(780)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(781)
+		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = int32(782)
+		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(783)
 		return v4
 	}
 }

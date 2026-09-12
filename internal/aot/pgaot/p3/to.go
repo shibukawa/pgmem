@@ -634,7 +634,7 @@ func F_to_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1174), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1175), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {

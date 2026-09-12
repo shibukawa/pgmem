@@ -679,7 +679,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = int32(0)
-	F_findoprnd(m, v100, v11+int32(4))
+	F_findoprnd_1(m, v100, v11+int32(4))
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {

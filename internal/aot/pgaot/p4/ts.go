@@ -490,14 +490,14 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, _c_F_getTSCurrentConfig[2])) = v37
-						F_CacheRegisterSyscacheCallback(m, int32(74), int32(1612), v37)
+						F_CacheRegisterSyscacheCallback(m, int32(74), int32(1613), v37)
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
 							return int32(0)
 						} else {
 							v47 = *(*int32)(unsafe.Add(mBase, _c_F_getTSCurrentConfig[2]))
-							F_CacheRegisterSyscacheCallback(m, int32(72), int32(1612), v47)
+							F_CacheRegisterSyscacheCallback(m, int32(72), int32(1613), v47)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -1080,7 +1080,7 @@ func F_ts_dist(m *base.Module, l0 int32) int32 {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
 		if base.Ui64(int64(1)) < base.Ui64(v10-int64(9223372036854775807)) {
-			v28 = F_DirectFunctionCall2Coll(m, int32(1516), int32(0), v3, v9)
+			v28 = F_DirectFunctionCall2Coll(m, int32(1517), int32(0), v3, v9)
 			mBase = m.M
 			v29 = m.ExcPending
 			if v29 != 0 {
@@ -1143,7 +1143,7 @@ func F_ts_headline(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1186), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1187), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -1169,7 +1169,7 @@ func F_ts_headline_json_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1190), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1636,16 +1636,16 @@ L36:
 L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v80)+12)) = v38
-	*(*int32)(unsafe.Add(mBase, uint32(v80)+8)) = int32(1187)
+	*(*int32)(unsafe.Add(mBase, uint32(v80)+8)) = int32(1188)
 	*(*int32)(unsafe.Add(mBase, uint32(v80)+4)) = v129
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+36)) = int32(1395)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+16)) = int32(1396)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+12)) = int32(1397)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+8)) = int32(1398)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(1399)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+36)) = int32(1396)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+16)) = int32(1397)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+12)) = int32(1398)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+8)) = int32(1399)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(1400)
 	*(*int32)(unsafe.Add(mBase, uint32(v77))) = v80
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+28)) = int32(1400)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+20)) = int32(1401)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+28)) = int32(1401)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+20)) = int32(1402)
 	v152 = F_pg_parse_json(m, v74+int32(12), v77)
 	mBase = m.M
 	v153 = m.ExcPending
@@ -1880,7 +1880,7 @@ func F_ts_headline_jsonb_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1188), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

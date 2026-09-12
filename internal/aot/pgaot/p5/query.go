@@ -1041,7 +1041,7 @@ func F_ScanQueryWalker(m *base.Module, l0 int32, l1 int32) int32 {
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				v17 = F_expression_tree_walker_impl(m, l0, int32(1603), l1)
+				v17 = F_expression_tree_walker_impl(m, l0, int32(1604), l1)
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
@@ -1051,7 +1051,7 @@ func F_ScanQueryWalker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v17 = F_expression_tree_walker_impl(m, l0, int32(1603), l1)
+			v17 = F_expression_tree_walker_impl(m, l0, int32(1604), l1)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {

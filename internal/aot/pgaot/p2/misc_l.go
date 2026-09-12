@@ -5870,7 +5870,7 @@ func F_locate_var_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			v40 = v3
 			return v40
 		case 1, 2, 3, 4, 5, 6, 7, 8:
-			v37 = F_expression_tree_walker_impl(m, l0, int32(901), l1)
+			v37 = F_expression_tree_walker_impl(m, l0, int32(902), l1)
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
@@ -5882,7 +5882,7 @@ func F_locate_var_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		case 9:
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v21 + int32(1)
-			v27 = F_query_tree_walker_impl(m, l0, int32(901), l1, int32(0))
+			v27 = F_query_tree_walker_impl(m, l0, int32(902), l1, int32(0))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
@@ -5894,7 +5894,7 @@ func F_locate_var_of_level_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		default:
 			if v7 != int32(6) {
-				v37 = F_expression_tree_walker_impl(m, l0, int32(901), l1)
+				v37 = F_expression_tree_walker_impl(m, l0, int32(902), l1)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
@@ -5939,7 +5939,7 @@ func F_locate_windowfunc_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		if v8 != int32(11) {
-			v19 = F_expression_tree_walker_impl(m, l0, int32(1045), l1)
+			v19 = F_expression_tree_walker_impl(m, l0, int32(1046), l1)
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -5950,7 +5950,7 @@ func F_locate_windowfunc_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 			if v11 < int32(0) {
-				v19 = F_expression_tree_walker_impl(m, l0, int32(1045), l1)
+				v19 = F_expression_tree_walker_impl(m, l0, int32(1046), l1)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {

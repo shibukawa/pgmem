@@ -323,13 +323,13 @@ func F_InitializeLogRepWorker(m *base.Module) {
 										if v132 != 0 {
 											return
 										} else {
-											F_CacheRegisterSyscacheCallback(m, int32(67), int32(1023), int32(0))
+											F_CacheRegisterSyscacheCallback(m, int32(67), int32(1024), int32(0))
 											mBase = m.M
 											v137 = m.ExcPending
 											if v137 != 0 {
 												return
 											} else {
-												F_CacheRegisterSyscacheCallback(m, int32(11), int32(1023), int32(0))
+												F_CacheRegisterSyscacheCallback(m, int32(11), int32(1024), int32(0))
 												mBase = m.M
 												v142 = m.ExcPending
 												if v142 != 0 {
@@ -351,7 +351,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																if v204 != 0 {
 																	return
 																} else {
-																	F_before_shmem_exit(m, int32(1024), int32(0))
+																	F_before_shmem_exit(m, int32(1025), int32(0))
 																	mBase = m.M
 																	v208 = m.ExcPending
 																	if v208 != 0 {
@@ -384,7 +384,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																		if v204 != 0 {
 																			return
 																		} else {
-																			F_before_shmem_exit(m, int32(1024), int32(0))
+																			F_before_shmem_exit(m, int32(1025), int32(0))
 																			mBase = m.M
 																			v208 = m.ExcPending
 																			if v208 != 0 {
@@ -414,7 +414,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																	if v204 != 0 {
 																		return
 																	} else {
-																		F_before_shmem_exit(m, int32(1024), int32(0))
+																		F_before_shmem_exit(m, int32(1025), int32(0))
 																		mBase = m.M
 																		v208 = m.ExcPending
 																		if v208 != 0 {
@@ -447,7 +447,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																			if v204 != 0 {
 																				return
 																			} else {
-																				F_before_shmem_exit(m, int32(1024), int32(0))
+																				F_before_shmem_exit(m, int32(1025), int32(0))
 																				mBase = m.M
 																				v208 = m.ExcPending
 																				if v208 != 0 {
@@ -475,7 +475,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																	if v204 != 0 {
 																		return
 																	} else {
-																		F_before_shmem_exit(m, int32(1024), int32(0))
+																		F_before_shmem_exit(m, int32(1025), int32(0))
 																		mBase = m.M
 																		v208 = m.ExcPending
 																		if v208 != 0 {
@@ -517,7 +517,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																				if v204 != 0 {
 																					return
 																				} else {
-																					F_before_shmem_exit(m, int32(1024), int32(0))
+																					F_before_shmem_exit(m, int32(1025), int32(0))
 																					mBase = m.M
 																					v208 = m.ExcPending
 																					if v208 != 0 {
@@ -638,13 +638,13 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																if v132 != 0 {
 																	return
 																} else {
-																	F_CacheRegisterSyscacheCallback(m, int32(67), int32(1023), int32(0))
+																	F_CacheRegisterSyscacheCallback(m, int32(67), int32(1024), int32(0))
 																	mBase = m.M
 																	v137 = m.ExcPending
 																	if v137 != 0 {
 																		return
 																	} else {
-																		F_CacheRegisterSyscacheCallback(m, int32(11), int32(1023), int32(0))
+																		F_CacheRegisterSyscacheCallback(m, int32(11), int32(1024), int32(0))
 																		mBase = m.M
 																		v142 = m.ExcPending
 																		if v142 != 0 {
@@ -666,7 +666,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																						if v204 != 0 {
 																							return
 																						} else {
-																							F_before_shmem_exit(m, int32(1024), int32(0))
+																							F_before_shmem_exit(m, int32(1025), int32(0))
 																							mBase = m.M
 																							v208 = m.ExcPending
 																							if v208 != 0 {
@@ -699,7 +699,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																								if v204 != 0 {
 																									return
 																								} else {
-																									F_before_shmem_exit(m, int32(1024), int32(0))
+																									F_before_shmem_exit(m, int32(1025), int32(0))
 																									mBase = m.M
 																									v208 = m.ExcPending
 																									if v208 != 0 {
@@ -729,7 +729,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																							if v204 != 0 {
 																								return
 																							} else {
-																								F_before_shmem_exit(m, int32(1024), int32(0))
+																								F_before_shmem_exit(m, int32(1025), int32(0))
 																								mBase = m.M
 																								v208 = m.ExcPending
 																								if v208 != 0 {
@@ -762,7 +762,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																									if v204 != 0 {
 																										return
 																									} else {
-																										F_before_shmem_exit(m, int32(1024), int32(0))
+																										F_before_shmem_exit(m, int32(1025), int32(0))
 																										mBase = m.M
 																										v208 = m.ExcPending
 																										if v208 != 0 {
@@ -790,7 +790,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																							if v204 != 0 {
 																								return
 																							} else {
-																								F_before_shmem_exit(m, int32(1024), int32(0))
+																								F_before_shmem_exit(m, int32(1025), int32(0))
 																								mBase = m.M
 																								v208 = m.ExcPending
 																								if v208 != 0 {
@@ -832,7 +832,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																										if v204 != 0 {
 																											return
 																										} else {
-																											F_before_shmem_exit(m, int32(1024), int32(0))
+																											F_before_shmem_exit(m, int32(1025), int32(0))
 																											mBase = m.M
 																											v208 = m.ExcPending
 																											if v208 != 0 {
@@ -935,13 +935,13 @@ func F_InitializeLogRepWorker(m *base.Module) {
 														if v132 != 0 {
 															return
 														} else {
-															F_CacheRegisterSyscacheCallback(m, int32(67), int32(1023), int32(0))
+															F_CacheRegisterSyscacheCallback(m, int32(67), int32(1024), int32(0))
 															mBase = m.M
 															v137 = m.ExcPending
 															if v137 != 0 {
 																return
 															} else {
-																F_CacheRegisterSyscacheCallback(m, int32(11), int32(1023), int32(0))
+																F_CacheRegisterSyscacheCallback(m, int32(11), int32(1024), int32(0))
 																mBase = m.M
 																v142 = m.ExcPending
 																if v142 != 0 {
@@ -963,7 +963,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																				if v204 != 0 {
 																					return
 																				} else {
-																					F_before_shmem_exit(m, int32(1024), int32(0))
+																					F_before_shmem_exit(m, int32(1025), int32(0))
 																					mBase = m.M
 																					v208 = m.ExcPending
 																					if v208 != 0 {
@@ -996,7 +996,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																						if v204 != 0 {
 																							return
 																						} else {
-																							F_before_shmem_exit(m, int32(1024), int32(0))
+																							F_before_shmem_exit(m, int32(1025), int32(0))
 																							mBase = m.M
 																							v208 = m.ExcPending
 																							if v208 != 0 {
@@ -1026,7 +1026,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																					if v204 != 0 {
 																						return
 																					} else {
-																						F_before_shmem_exit(m, int32(1024), int32(0))
+																						F_before_shmem_exit(m, int32(1025), int32(0))
 																						mBase = m.M
 																						v208 = m.ExcPending
 																						if v208 != 0 {
@@ -1059,7 +1059,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																							if v204 != 0 {
 																								return
 																							} else {
-																								F_before_shmem_exit(m, int32(1024), int32(0))
+																								F_before_shmem_exit(m, int32(1025), int32(0))
 																								mBase = m.M
 																								v208 = m.ExcPending
 																								if v208 != 0 {
@@ -1087,7 +1087,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																					if v204 != 0 {
 																						return
 																					} else {
-																						F_before_shmem_exit(m, int32(1024), int32(0))
+																						F_before_shmem_exit(m, int32(1025), int32(0))
 																						mBase = m.M
 																						v208 = m.ExcPending
 																						if v208 != 0 {
@@ -1129,7 +1129,7 @@ func F_InitializeLogRepWorker(m *base.Module) {
 																								if v204 != 0 {
 																									return
 																								} else {
-																									F_before_shmem_exit(m, int32(1024), int32(0))
+																									F_before_shmem_exit(m, int32(1025), int32(0))
 																									mBase = m.M
 																									v208 = m.ExcPending
 																									if v208 != 0 {

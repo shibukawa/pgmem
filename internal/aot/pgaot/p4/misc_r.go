@@ -6918,7 +6918,7 @@ func F_rangeTableEntry_used_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		case 1, 2, 3, 4, 7, 8:
-			v60 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
+			v60 = F_expression_tree_walker_impl(m, l0, int32(1051), l1)
 			mBase = m.M
 			v61 = m.ExcPending
 			if v61 != 0 {
@@ -6946,7 +6946,7 @@ func F_rangeTableEntry_used_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 			v41 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			if v40 != v41 {
-				v60 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
+				v60 = F_expression_tree_walker_impl(m, l0, int32(1051), l1)
 				mBase = m.M
 				v61 = m.ExcPending
 				if v61 != 0 {
@@ -6958,7 +6958,7 @@ func F_rangeTableEntry_used_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v43 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 				if v43 != 0 {
-					v60 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
+					v60 = F_expression_tree_walker_impl(m, l0, int32(1051), l1)
 					mBase = m.M
 					v61 = m.ExcPending
 					if v61 != 0 {
@@ -6974,7 +6974,7 @@ func F_rangeTableEntry_used_walker(m *base.Module, l0 int32, l1 int32) int32 {
 		case 9:
 			v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+4)) = v46 + int32(1)
-			v52 = F_query_tree_walker_impl(m, l0, int32(1050), l1, int32(0))
+			v52 = F_query_tree_walker_impl(m, l0, int32(1051), l1, int32(0))
 			mBase = m.M
 			v53 = m.ExcPending
 			if v53 != 0 {
@@ -6986,7 +6986,7 @@ func F_rangeTableEntry_used_walker(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		default:
 			if v7 != int32(6) {
-				v60 = F_expression_tree_walker_impl(m, l0, int32(1050), l1)
+				v60 = F_expression_tree_walker_impl(m, l0, int32(1051), l1)
 				mBase = m.M
 				v61 = m.ExcPending
 				if v61 != 0 {

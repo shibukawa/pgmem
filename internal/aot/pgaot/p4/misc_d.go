@@ -6696,7 +6696,7 @@ func F_decompile_conbin(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		} else {
 			v38 = *(*int32)(unsafe.Add(mBase, uint32(v11)+80))
-			v39 = F_DirectFunctionCall2Coll(m, int32(577), int32(0), v15, v38)
+			v39 = F_DirectFunctionCall2Coll(m, int32(578), int32(0), v15, v38)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {

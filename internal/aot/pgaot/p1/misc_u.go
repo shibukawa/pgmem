@@ -1183,7 +1183,7 @@ L109:
 	v354 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v352))))
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+40)) = v204
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+44)) = v354 | v353
-	v362 = F_bsearch(m, v25+int32(40), l4, l5, int32(12), int32(1649))
+	v362 = F_bsearch(m, v25+int32(40), l4, l5, int32(12), int32(1650))
 	mBase = m.M
 	v363 = m.ExcPending
 	if v363 != 0 {
@@ -1890,6 +1890,139 @@ func F___uflow(m *base.Module, l0 int32) int32 {
 				}
 				m.G0 = v6 + int32(16)
 				return v22
+			}
+		}
+	}
+}
+func F_uniq(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v33 int32
+	_ = v33
+	var v40 int32
+	_ = v40
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v3 = F_pg_detoast_datum_copy(m, v2)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(v3)+8))
+		if v7 != 0 {
+			v8 = F_array_contains_nulls(m, v3)
+			mBase = m.M
+			v9 = m.ExcPending
+			if v9 != 0 {
+				return int32(0)
+			} else {
+				if v8 != 0 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v24 = m.ExcPending
+					if v24 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(67108994))
+						mBase = m.M
+						v27 = m.ExcPending
+						if v27 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_uniq_0), int32(0))
+							mBase = m.M
+							v33 = m.ExcPending
+							if v33 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_uniq_1), int32(254), int32(_a_F_uniq_2))
+								mBase = m.M
+								v40 = m.ExcPending
+								if v40 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v10 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
+					v13 = F_ArrayGetNItems(m, v10, v3+int32(16))
+					mBase = m.M
+					v14 = m.ExcPending
+					if v14 != 0 {
+						return int32(0)
+					} else {
+						if int32(2) <= v13 {
+							v17 = F__int_unique(m, v3)
+							mBase = m.M
+							v18 = m.ExcPending
+							if v18 != 0 {
+								return int32(0)
+							} else {
+								v19 = v17
+								return v19
+							}
+						} else {
+							v19 = v3
+							return v19
+						}
+					}
+				}
+			}
+		} else {
+			v10 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
+			v13 = F_ArrayGetNItems(m, v10, v3+int32(16))
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return int32(0)
+			} else {
+				if int32(2) <= v13 {
+					v17 = F__int_unique(m, v3)
+					mBase = m.M
+					v18 = m.ExcPending
+					if v18 != 0 {
+						return int32(0)
+					} else {
+						v19 = v17
+						return v19
+					}
+				} else {
+					v19 = v3
+					return v19
+				}
 			}
 		}
 	}

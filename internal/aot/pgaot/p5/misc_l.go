@@ -6915,7 +6915,7 @@ func F_locate_windowfunc(m *base.Module, l0 int32) int32 {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(-1)
-	v13 = F_query_or_expression_tree_walker_impl(m, l0, int32(1045), v5+int32(12), int32(0))
+	v13 = F_query_or_expression_tree_walker_impl(m, l0, int32(1046), v5+int32(12), int32(0))
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {

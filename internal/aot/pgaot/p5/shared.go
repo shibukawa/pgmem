@@ -654,7 +654,7 @@ func F_SharedFileSetInit(m *base.Module, l0 int32, l1 int32) {
 		return
 	} else {
 		if l1 != 0 {
-			F_on_dsm_detach(m, l1, int32(1095), l0)
+			F_on_dsm_detach(m, l1, int32(1096), l0)
 			mBase = m.M
 			v9 = m.ExcPending
 			if v9 != 0 {

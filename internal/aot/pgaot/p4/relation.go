@@ -9697,7 +9697,7 @@ func F_relation_statistics_update(m *base.Module, l0 int32) int32 {
 						if v66 != 0 {
 							return int32(0)
 						} else {
-							v72 = F_RangeVarGetRelidExtended(m, v65, int32(4), int32(0), int32(1059), v17+int32(-40))
+							v72 = F_RangeVarGetRelidExtended(m, v65, int32(4), int32(0), int32(1060), v17+int32(-40))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {

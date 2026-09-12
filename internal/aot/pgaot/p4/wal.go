@@ -2605,7 +2605,7 @@ L80:
 	*(*int32)(unsafe.Add(mBase, uint32(v30))) = v339
 	v344 = *(*int32)(unsafe.Add(mBase, _c_F_WalReceiverMain[1]))
 	*(*int64)(unsafe.Add(mBase, uint32(v344)+1464)) = int64(0)
-	F_on_shmem_exit(m, int32(1028), v18+int32(332))
+	F_on_shmem_exit(m, int32(1029), v18+int32(332))
 	mBase = m.M
 	v351 = m.ExcPending
 	if v351 != 0 {
@@ -2615,11 +2615,11 @@ L80:
 	}
 L81:
 	;
-	v353 = int32(913)
+	v353 = int32(914)
 	v355 = m.G0
 	v357 = v355 - int32(144)
 	m.G0 = v357
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v367 = v353
 		goto L83
@@ -2856,11 +2856,11 @@ L133:
 	goto L127
 L134:
 	;
-	v563 = int32(916)
+	v563 = int32(917)
 	v565 = m.G0
 	v567 = v565 - int32(144)
 	m.G0 = v567
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v577 = v563
 		goto L148
@@ -7461,11 +7461,11 @@ L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v18
-	v37 = int32(913)
+	v37 = int32(914)
 	v39 = m.G0
 	v41 = v39 - int32(144)
 	m.G0 = v41
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v51 = v37
 		goto L11
@@ -7476,11 +7476,11 @@ L10:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v18
-	v81 = int32(915)
+	v81 = int32(916)
 	v83 = m.G0
 	v85 = v83 - int32(144)
 	m.G0 = v85
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v95 = v81
 		goto L24
@@ -7535,11 +7535,11 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v18
-	v125 = int32(915)
+	v125 = int32(916)
 	v127 = m.G0
 	v129 = v127 - int32(144)
 	m.G0 = v129
-	switch int32(917) {
+	switch int32(918) {
 	case 0, 2:
 		v139 = v125
 		goto L37
@@ -7712,11 +7712,11 @@ L62:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v18
-	v257 = int32(916)
+	v257 = int32(917)
 	v259 = m.G0
 	v261 = v259 - int32(144)
 	m.G0 = v261
-	switch int32(918) {
+	switch int32(919) {
 	case 0, 2:
 		v271 = v257
 		goto L76

@@ -149,7 +149,7 @@ func F_stream_commit_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_stream_commit_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v11
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
 	v19 = int32(_a_F_stream_commit_cb_wrapper_1)
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_stream_commit_cb_wrapper[0]))
@@ -245,7 +245,7 @@ func F_stream_message_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64, l
 		*(*int64)(unsafe.Add(mBase, uint32(v13)+24)) = l2
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = int32(_a_F_stream_message_cb_wrapper_0)
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(992)
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(993)
 		v23 = int32(_a_F_stream_message_cb_wrapper_1)
 		v24 = *(*int32)(unsafe.Add(mBase, _c_F_stream_message_cb_wrapper[0]))
 		*(*int32)(unsafe.Add(mBase, _c_F_stream_message_cb_wrapper[0])) = v13 + int32(4)
@@ -522,7 +522,7 @@ func F_stream_prepare_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(_a_F_stream_prepare_cb_wrapper_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v11
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(l1)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = v15
 	v19 = int32(_a_F_stream_prepare_cb_wrapper_1)
 	v20 = *(*int32)(unsafe.Add(mBase, _c_F_stream_prepare_cb_wrapper[0]))

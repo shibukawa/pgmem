@@ -144,7 +144,7 @@ func F_SortAndUniqItems(m *base.Module, l0 int32, l1 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(l1))) = v55
 		if v54 <= v55 {
 			v63 = v22 + v9*int32(12)
-			F_qsort_arg(m, v13, v55, int32(4), int32(1531), v63)
+			F_qsort_arg(m, v13, v55, int32(4), int32(1532), v63)
 			mBase = m.M
 			v65 = m.ExcPending
 			if v65 != 0 {

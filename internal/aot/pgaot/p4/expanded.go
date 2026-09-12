@@ -124,7 +124,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+28)) = v62 & int32(64)
 					v66 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 					if int32(0) <= v66 {
-						*(*int32)(unsafe.Add(mBase, uint32(v30)+108)) = int32(1307)
+						*(*int32)(unsafe.Add(mBase, uint32(v30)+108)) = int32(1308)
 						*(*int32)(unsafe.Add(mBase, uint32(v30)+112)) = v30
 						v72 = *(*int32)(unsafe.Add(mBase, uint32(v30)+8))
 						v74 = v30 + int32(108)
@@ -208,7 +208,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 				*(*int32)(unsafe.Add(mBase, uint32(v30)+28)) = v62 & int32(64)
 				v66 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 				if int32(0) <= v66 {
-					*(*int32)(unsafe.Add(mBase, uint32(v30)+108)) = int32(1307)
+					*(*int32)(unsafe.Add(mBase, uint32(v30)+108)) = int32(1308)
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+112)) = v30
 					v72 = *(*int32)(unsafe.Add(mBase, uint32(v30)+8))
 					v74 = v30 + int32(108)

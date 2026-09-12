@@ -4940,7 +4940,7 @@ L4:
 	goto L5
 L5:
 	;
-	F_before_shmem_exit(m, int32(988), int32(0))
+	F_before_shmem_exit(m, int32(989), int32(0))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -4966,11 +4966,11 @@ L8:
 	v37 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[0]))
 	v39 = *(*int32)(unsafe.Add(mBase, _c_F_ApplyLauncherMain[1]))
 	*(*int32)(unsafe.Add(mBase, uint32(v37))) = v39
-	v42 = int32(913)
+	v42 = int32(914)
 	v44 = m.G0
 	v46 = v44 - int32(144)
 	m.G0 = v46
-	switch int32(915) {
+	switch int32(916) {
 	case 0, 2:
 		v56 = v42
 		goto L10
@@ -6501,7 +6501,7 @@ L42:
 	goto L43
 L43:
 	;
-	F_on_shmem_exit(m, int32(1114), v122)
+	F_on_shmem_exit(m, int32(1115), v122)
 	mBase = m.M
 	v191 = m.ExcPending
 	if v191 != 0 {
@@ -6564,7 +6564,7 @@ L48:
 	}
 L49:
 	;
-	F_before_shmem_exit(m, int32(921), int32(0))
+	F_before_shmem_exit(m, int32(922), int32(0))
 	mBase = m.M
 	v208 = m.ExcPending
 	if v208 != 0 {
@@ -9435,7 +9435,7 @@ L38:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = l0
 	v96 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v96
-	v102 = F_query_or_expression_tree_walker_impl(m, l1, int32(895), v8+int32(4), v96)
+	v102 = F_query_or_expression_tree_walker_impl(m, l1, int32(896), v8+int32(4), v96)
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -10433,7 +10433,7 @@ L9:
 	}
 L10:
 	;
-	v615 = F_expression_tree_mutator_impl(m, l0, int32(853), l1)
+	v615 = F_expression_tree_mutator_impl(m, l0, int32(854), l1)
 	mBase = m.M
 	v616 = m.ExcPending
 	if v616 != 0 {
@@ -10453,7 +10453,7 @@ L11:
 	}
 L12:
 	;
-	v261 = F_expression_tree_mutator_impl(m, l0, int32(853), l1)
+	v261 = F_expression_tree_mutator_impl(m, l0, int32(854), l1)
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {

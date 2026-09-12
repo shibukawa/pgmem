@@ -474,7 +474,7 @@ L45:
 	}
 L46:
 	;
-	v178 = F_DirectFunctionCall1Coll(m, int32(1481), int32(0), v11)
+	v178 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), v11)
 	mBase = m.M
 	v179 = m.ExcPending
 	if v179 != 0 {
@@ -2621,7 +2621,7 @@ func F_pg_stat_reset(m *base.Module, l0 int32) int32 {
 	v12 = int64(*(*int32)(unsafe.Add(mBase, uint32(v8)+8)))
 	m.G0 = v8 + v7
 	v23 = *(*int32)(unsafe.Add(mBase, _c_F_pg_stat_reset[0]))
-	F_pgstat_reset_matching_entries(m, int32(1213), v23, v12+v11*int64(1000000)-int64(946684800000000))
+	F_pgstat_reset_matching_entries(m, int32(1214), v23, v12+v11*int64(1000000)-int64(946684800000000))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
