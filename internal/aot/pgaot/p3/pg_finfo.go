@@ -326,6 +326,9 @@ func F_pg_finfo_pg_check_fipsmode(m *base.Module) int32 {
 func F_pg_finfo_pg_dearmor(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_dearmor_0)
 }
+func F_pg_finfo_pg_freespace(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_freespace_0)
+}
 func F_pg_finfo_pg_visibility_map_summary(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_visibility_map_summary_0)
 }

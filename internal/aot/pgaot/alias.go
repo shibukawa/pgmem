@@ -3446,6 +3446,12 @@ func F_pg_buffercache_evict(m *base.Module, l0 int32) int32
 func F_pg_buffercache_evict_relation(m *base.Module, l0 int32) int32
 //go:linkname F_pg_buffercache_evict_all github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_buffercache_evict_all
 func F_pg_buffercache_evict_all(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_freespacemap github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_Pg_magic_func_pg_freespacemap
+func F_Pg_magic_func_pg_freespacemap(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_freespace github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_freespace
+func F_pg_finfo_pg_freespace(m *base.Module) int32
+//go:linkname F_pg_freespace github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_freespace
+func F_pg_freespace(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

@@ -8965,7 +8965,7 @@ L417:
 L418:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_38)
-	v1785 = int32(1474)
+	v1785 = int32(1475)
 	goto L413
 L419:
 	;
@@ -8975,7 +8975,7 @@ L419:
 L420:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_40)
-	v1785 = int32(1257)
+	v1785 = int32(1258)
 	goto L413
 L421:
 	;

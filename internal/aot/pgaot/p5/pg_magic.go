@@ -8,6 +8,9 @@ func F_Pg_magic_func_dict_int(m *base.Module) int32 {
 func F_Pg_magic_func_latin_and_mic(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_latin_and_mic_0)
 }
+func F_Pg_magic_func_pg_freespacemap(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_pg_freespacemap_0)
+}
 func F_Pg_magic_func_tablefunc(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_tablefunc_0)
 }

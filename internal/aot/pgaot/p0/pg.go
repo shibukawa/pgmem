@@ -22030,34 +22030,6 @@ func F_pg_timezone_names(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v45 int32
 	_ = v45
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
 	var v85 int32
 	_ = v85
 	var v91 int32
@@ -22349,111 +22321,45 @@ L17:
 	goto L18
 L18:
 	;
-	goto L21
+	goto L20
 L19:
 	;
-	if v82 == int32(0) {
-		v140 = v79
-		v141 = v80
+	if base.B2i32(v45 != int32(0)) == int32(0) {
+		v140 = v37
+		v141 = v36
 		goto L13
 	} else {
 		goto L28
 	}
 L20:
 	;
-	v79 = v37
-	v80 = v36
-	v81 = v45
-	v82 = base.B2i32(v45 != int32(0))
 	goto L19
-L21:
-	;
-	if v45 == int32(0) {
-		goto L20
-	} else {
-		goto L22
-	}
-L22:
-	;
-	v58 = v37
-	v59 = v36
-	v60 = v45
-	goto L23
-L23:
-	;
-	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v59))) = uint8(v62)
-	if v62 == int32(0) {
-		v120 = v58
-		v121 = v59
-		v122 = v60
-		goto L14
-	} else {
-		goto L25
-	}
-L24:
-	;
-	v79 = v73
-	v80 = v67
-	v81 = v69
-	v82 = v71
-	goto L19
-L25:
-	;
-	v66 = int32(1)
-	v67 = v59 + v66
-	v69 = v60 - v66
-	v70 = int32(0)
-	v71 = base.B2i32(v69 != v70)
-	v73 = v58 + v66
-	if v73&int32(3) == v70 {
-		v79 = v73
-		v80 = v67
-		v81 = v69
-		v82 = v71
-		goto L19
-	} else {
-		goto L26
-	}
-L26:
-	;
-	if v69 != 0 {
-		v58 = v73
-		v59 = v67
-		v60 = v69
-		goto L23
-	} else {
-		goto L27
-	}
-L27:
-	;
-	goto L24
 L28:
 	;
-	v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v79))))
+	v85 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_timezone_names[1])))
 	if v85 == int32(0) {
-		v113 = v79
-		v114 = v80
-		v115 = v81
+		v113 = v37
+		v114 = v36
+		v115 = v45
 		goto L15
 	} else {
 		goto L29
 	}
 L29:
 	;
-	if base.Ui32(v81) < base.Ui32(int32(4)) {
-		v113 = v79
-		v114 = v80
-		v115 = v81
+	if base.Ui32(v45) < base.Ui32(int32(4)) {
+		v113 = v37
+		v114 = v36
+		v115 = v45
 		goto L15
 	} else {
 		goto L30
 	}
 L30:
 	;
-	v91 = v79
-	v92 = v80
-	v93 = v81
+	v91 = v37
+	v92 = v36
+	v93 = v45
 	goto L31
 L31:
 	;
@@ -22638,7 +22544,7 @@ L52:
 	}
 L53:
 	;
-	v202 = *(*int64)(unsafe.Add(mBase, _c_F_pg_timezone_names[1]))
+	v202 = *(*int64)(unsafe.Add(mBase, _c_F_pg_timezone_names[2]))
 	v211 = F_timestamp2tm(m, v202, v9+int32(88), v9+int32(44), v9+int32(40), v9+int32(36), v195)
 	mBase = m.M
 	v212 = m.ExcPending

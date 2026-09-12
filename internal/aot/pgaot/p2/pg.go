@@ -2170,6 +2170,169 @@ func F_pg_euctw_verifychar(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 	return v49
 }
+func F_pg_freespace(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int64
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v62 int32
+	_ = v62
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v75 int32
+	_ = v75
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v10 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v13 = F_relation_open(m, v11, int32(1))
+	mBase = m.M
+	v16 = m.ExcPending
+	if v16 != 0 {
+		return int32(0)
+	} else {
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(v13)+48))
+		v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+119)))
+		switch v18 - int32(83) {
+		case 0, 22, 26, 31, 33:
+			if base.Ui64(int64(4294967295)) <= base.Ui64(v10) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v53 = m.ExcPending
+				if v53 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(50856066))
+					mBase = m.M
+					v56 = m.ExcPending
+					if v56 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_pg_freespace_0), int32(0))
+						mBase = m.M
+						v62 = m.ExcPending
+						if v62 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_pg_freespace_1), int32(47), int32(_a_F_pg_freespace_2))
+							mBase = m.M
+							v69 = m.ExcPending
+							if v69 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v71 = F_GetRecordedFreeSpace(m, v13, base.I32_wrap_i64(v10))
+				mBase = m.M
+				v72 = m.ExcPending
+				if v72 != 0 {
+					return int32(0)
+				} else {
+					F_relation_close(m, v13, int32(1))
+					mBase = m.M
+					v75 = m.ExcPending
+					if v75 != 0 {
+						return int32(0)
+					} else {
+						m.G0 = v7 + int32(16)
+						return base.I32_extend16_s(v71)
+					}
+				}
+			}
+		default:
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v24 = m.ExcPending
+			if v24 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(151027844))
+				mBase = m.M
+				v27 = m.ExcPending
+				if v27 != 0 {
+					return int32(0)
+				} else {
+					v28 = *(*int32)(unsafe.Add(mBase, uint32(v13)+48))
+					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v28 + int32(4)
+					F_errmsg(m, int32(_a_F_pg_freespace_3), v7)
+					mBase = m.M
+					v36 = m.ExcPending
+					if v36 != 0 {
+						return int32(0)
+					} else {
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v13)+48))
+						v38 = int32(*(*int8)(unsafe.Add(mBase, uint32(v37)+119)))
+						F_errdetail_relkind_not_supported(m, v38)
+						mBase = m.M
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_pg_freespace_1), int32(42), int32(_a_F_pg_freespace_2))
+							mBase = m.M
+							v47 = m.ExcPending
+							if v47 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_pg_gb18030_verifystr(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

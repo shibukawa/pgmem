@@ -4281,22 +4281,12 @@ func F_ProcessCopyOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v1615
 	var v1619 int32
 	_ = v1619
+	var v1622 int32
+	_ = v1622
 	var v1623 int32
 	_ = v1623
-	var v1637 int32
-	_ = v1637
-	var v1639 int32
-	_ = v1639
-	var v1642 int32
-	_ = v1642
-	var v1644 int32
-	_ = v1644
-	var v1645 int32
-	_ = v1645
-	var v1646 int32
-	_ = v1646
-	var v1649 int32
-	_ = v1649
+	var v1624 int32
+	_ = v1624
 	var v1661 int32
 	_ = v1661
 	var v1671 int32
@@ -8925,8 +8915,10 @@ L591:
 	goto L581
 L592:
 	;
+	v1622 = int32(_a_F_ProcessCopyOptions_46)
 	v1623 = int32(*(*int8)(unsafe.Add(mBase, uint32(v1524))))
-	goto L599
+	v1624 = int32(39)
+	goto L598
 L593:
 	;
 	goto L594
@@ -8955,61 +8947,13 @@ L597:
 	goto L615
 L598:
 	;
-	if base.B2i32(v1645 != v1646) == int32(0) {
-		goto L596
-	} else {
-		goto L606
-	}
-L599:
-	;
-	goto L600
-L600:
-	;
-	v1637 = int32(_a_F_ProcessCopyOptions_46)
-	v1639 = int32(39)
-	goto L601
-L601:
-	;
-	v1642 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1637))))
-	if v1642 == v1623&int32(255) {
-		v1698 = v1637
-		v1700 = v1639
-		goto L597
-	} else {
-		goto L603
-	}
-L602:
-	;
-	goto L598
-L603:
-	;
-	v1644 = int32(1)
-	v1645 = v1639 - v1644
-	v1646 = int32(0)
-	v1649 = v1637 + v1644
-	if v1649&int32(3) == v1646 {
-		goto L598
-	} else {
-		goto L604
-	}
-L604:
-	;
-	if v1645 != 0 {
-		v1637 = v1649
-		v1639 = v1645
-		goto L601
-	} else {
-		goto L605
-	}
-L605:
-	;
-	goto L602
+	goto L606
 L606:
 	;
-	v1661 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1649))))
+	v1661 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessCopyOptions[19])))
 	if v1661 == v1623&int32(255) {
-		v1691 = v1649
-		v1693 = v1645
+		v1691 = v1622
+		v1693 = v1624
 		goto L607
 	} else {
 		goto L608
@@ -9023,17 +8967,11 @@ L607:
 	}
 L608:
 	;
-	if base.Ui32(v1645) < base.Ui32(int32(4)) {
-		v1691 = v1649
-		v1693 = v1645
-		goto L607
-	} else {
-		goto L609
-	}
+	goto L609
 L609:
 	;
-	v1671 = v1649
-	v1673 = v1645
+	v1671 = v1622
+	v1673 = v1624
 	goto L610
 L610:
 	;
