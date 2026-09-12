@@ -715,13 +715,13 @@ L6:
 	}
 L7:
 	;
-	v25 = int32(26219)
+	v25 = int32(26348)
 	v26 = v21
 	goto L9
 L8:
 	;
 	if v63 == int32(0) {
-		v154 = int32(1624400)
+		v154 = int32(1628496)
 		goto L6
 	} else {
 		goto L21
@@ -797,13 +797,13 @@ L20:
 	goto L10
 L21:
 	;
-	v70 = int32(531298)
+	v70 = int32(533706)
 	v71 = v21
 	goto L23
 L22:
 	;
 	if v108 == int32(0) {
-		v154 = int32(1624420)
+		v154 = int32(1628516)
 		goto L6
 	} else {
 		goto L35
@@ -879,7 +879,7 @@ L34:
 	goto L24
 L35:
 	;
-	v114 = int32(357469)
+	v114 = int32(359075)
 	v115 = v21
 	goto L37
 L36:
@@ -960,7 +960,7 @@ L48:
 	goto L38
 L49:
 	;
-	v154 = int32(1624440)
+	v154 = int32(1628536)
 	goto L6
 L50:
 	;
@@ -1095,7 +1095,7 @@ L69:
 L70:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v21
-	F_errmsg(m, int32(688843), v11)
+	F_errmsg(m, int32(691736), v11)
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -1105,7 +1105,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(480187), int32(66), int32(397399))
+	F_errfinish(m, int32(482568), int32(66), int32(399268))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -1130,7 +1130,7 @@ L73:
 	}
 L74:
 	;
-	F_errmsg(m, int32(384585), int32(0))
+	F_errmsg(m, int32(386291), int32(0))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -1140,7 +1140,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(480187), int32(80), int32(397399))
+	F_errfinish(m, int32(482568), int32(80), int32(399268))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -1155,7 +1155,7 @@ L76:
 	}
 L77:
 	;
-	F_errmsg_internal(m, int32(292371), int32(0))
+	F_errmsg_internal(m, int32(293811), int32(0))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -1165,7 +1165,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(480187), int32(88), int32(397399))
+	F_errfinish(m, int32(482568), int32(88), int32(399268))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {
@@ -1208,13 +1208,13 @@ func F_binary_upgrade_set_next_heap_pg_class_oid(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(101), int32(416831))
+					F_errfinish(m, int32(476159), int32(101), int32(418761))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1229,7 +1229,7 @@ func F_binary_upgrade_set_next_heap_pg_class_oid(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1127])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1126])) = v25
 		return int32(0)
 	}
 }
@@ -1262,13 +1262,13 @@ func F_binary_upgrade_set_next_multirange_pg_type_oid(m *base.Module, l0 int32) 
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(79), int32(417733))
+					F_errfinish(m, int32(476159), int32(79), int32(419663))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1283,7 +1283,7 @@ func F_binary_upgrade_set_next_multirange_pg_type_oid(m *base.Module, l0 int32) 
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[938])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[937])) = v25
 		return int32(0)
 	}
 }
@@ -1316,13 +1316,13 @@ func F_binary_upgrade_set_next_pg_authid_oid(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(178), int32(417951))
+					F_errfinish(m, int32(476159), int32(178), int32(419881))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1337,7 +1337,7 @@ func F_binary_upgrade_set_next_pg_authid_oid(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1128])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1127])) = v25
 		return int32(0)
 	}
 }

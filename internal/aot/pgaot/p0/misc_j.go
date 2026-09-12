@@ -41,7 +41,7 @@ func F_johab_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4339148), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4344780), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -105,7 +105,7 @@ func F_jsonpath_out(m *base.Module, l0 int32) int32 {
 			} else {
 				v24 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 				if int32(0) <= v24 {
-					F_appendStringInfoString(m, v6+int32(32), int32(695182))
+					F_appendStringInfoString(m, v6+int32(32), int32(698075))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -230,7 +230,7 @@ func F_jsonpath_send(m *base.Module, l0 int32) int32 {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 				if int32(0) <= v23 {
-					F_appendStringInfoString(m, v5+int32(4), int32(695182))
+					F_appendStringInfoString(m, v5+int32(4), int32(698075))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {

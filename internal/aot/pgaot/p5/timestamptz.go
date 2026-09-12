@@ -465,13 +465,13 @@ func F_timestamptz_to_char(m *base.Module, l0 int32) int32 {
 						if v193 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(386584), int32(0))
+							F_errmsg(m, int32(388290), int32(0))
 							mBase = m.M
 							v197 = m.ExcPending
 							if v197 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(478903), int32(4053), int32(220365))
+								F_errfinish(m, int32(481284), int32(4053), int32(221615))
 								mBase = m.M
 								v202 = m.ExcPending
 								if v202 != 0 {

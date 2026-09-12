@@ -3154,16 +3154,12 @@ func F_get_json_table(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_get_rule_expr_funccall(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_get_from_clause_coldeflist github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_get_from_clause_coldeflist
 func F_get_from_clause_coldeflist(m *base.Module, l0 int32, l1 int32, l2 int32)
-//go:linkname F_get_restriction_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_restriction_variable
-func F_get_restriction_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_var_eq_const github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_var_eq_const
 func F_var_eq_const(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) float64
 //go:linkname F_statistic_proc_security_check github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_statistic_proc_security_check
 func F_statistic_proc_security_check(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_mcv_selectivity github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_mcv_selectivity
-func F_mcv_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) float64
-//go:linkname F_histogram_selectivity github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_histogram_selectivity
-func F_histogram_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) float64
+//go:linkname F_generic_restriction_selectivity github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_generic_restriction_selectivity
+func F_generic_restriction_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 float64) float64
 //go:linkname F_examine_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_examine_variable
 func F_examine_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_scalarineqsel_wrapper github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_scalarineqsel_wrapper
@@ -3192,8 +3188,8 @@ func F_interval_um_internal(m *base.Module, l0 int32, l1 int32)
 func F_hemdistcache_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_findoprnd_recurse github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_findoprnd_recurse
 func F_findoprnd_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-//go:linkname F_infix github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_infix
-func F_infix(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_infix_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_infix_1
+func F_infix_1(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_maketree github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_maketree
 func F_maketree(m *base.Module, l0 int32) int32
 //go:linkname F_plainnode github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_plainnode
@@ -4264,6 +4260,18 @@ func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_hstore_fetchval(m *base.Module, l0 int32) int32
 //go:linkname F_hstoreArrayToPairs github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstoreArrayToPairs
 func F_hstoreArrayToPairs(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_parse_ltree github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_parse_ltree
+func F_parse_ltree(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ltree_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ltree_concat
+func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_lca_inner github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_lca_inner
+func F_lca_inner(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_makepol_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_makepol_2
+func F_makepol_2(m *base.Module, l0 int32) int32
+//go:linkname F_findoprnd github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_findoprnd
+func F_findoprnd(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_ltree_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_execute
+func F_ltree_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

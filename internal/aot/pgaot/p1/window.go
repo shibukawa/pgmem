@@ -181,13 +181,13 @@ func F_window_ntile(m *base.Module, l0 int32) int32 {
 								if v86 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(229683), int32(0))
+									F_errmsg(m, int32(230986), int32(0))
 									mBase = m.M
 									v90 = m.ExcPending
 									if v90 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(475464), int32(443), int32(370047))
+										F_errfinish(m, int32(477795), int32(443), int32(371712))
 										mBase = m.M
 										v95 = m.ExcPending
 										if v95 != 0 {

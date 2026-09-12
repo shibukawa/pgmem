@@ -36,7 +36,7 @@ func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = v10
 	v14 = int32(6)
 	*(*uint16)(unsafe.Add(mBase, uint32(v6)+26)) = uint16(v14)
-	v19 = F_stats_fill_fcinfo_from_arg_pairs(m, l0, v6+int32(8), int32(4069072))
+	v19 = F_stats_fill_fcinfo_from_arg_pairs(m, l0, v6+int32(8), int32(4074704))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {

@@ -290,13 +290,13 @@ func F_set_stats_slot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v20))) = v77 + int32(1)
-			F_errmsg(m, int32(469032), v20)
+			F_errmsg(m, int32(471219), v20)
 			mBase = m.M
 			v165 = m.ExcPending
 			if v165 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(474581), int32(782), int32(81091))
+				F_errfinish(m, int32(476912), int32(782), int32(81646))
 				mBase = m.M
 				v170 = m.ExcPending
 				if v170 != 0 {
@@ -351,13 +351,13 @@ func F_stats_check_required_arg(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l1+v10)))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v23
-				F_errmsg(m, int32(291053), v7)
+				F_errmsg(m, int32(292493), v7)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(474873), int32(48), int32(313484))
+					F_errfinish(m, int32(477204), int32(48), int32(315000))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

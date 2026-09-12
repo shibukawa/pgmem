@@ -3410,6 +3410,876 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Tconvert(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_ltree":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_ltree: want 0 args")
+		}
+		r := pgaot.PgMagicFuncLtree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_lca":
+		if len(a) != 1 {
+			panic("aot: _lca: want 1 args")
+		}
+		r := pgaot.Lca(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_lt_q_regex":
+		if len(a) != 1 {
+			panic("aot: _lt_q_regex: want 1 args")
+		}
+		r := pgaot.LtQRegex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_lt_q_rregex":
+		if len(a) != 1 {
+			panic("aot: _lt_q_rregex: want 1 args")
+		}
+		r := pgaot.LtQRregex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltq_extract_regex":
+		if len(a) != 1 {
+			panic("aot: _ltq_extract_regex: want 1 args")
+		}
+		r := pgaot.LtqExtractRegex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltq_regex":
+		if len(a) != 1 {
+			panic("aot: _ltq_regex: want 1 args")
+		}
+		r := pgaot.LtqRegex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltq_rregex":
+		if len(a) != 1 {
+			panic("aot: _ltq_rregex: want 1 args")
+		}
+		r := pgaot.LtqRregex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_compress":
+		if len(a) != 1 {
+			panic("aot: _ltree_compress: want 1 args")
+		}
+		r := pgaot.LtreeCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_consistent":
+		if len(a) != 1 {
+			panic("aot: _ltree_consistent: want 1 args")
+		}
+		r := pgaot.LtreeConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_extract_isparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_extract_isparent: want 1 args")
+		}
+		r := pgaot.LtreeExtractIsparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_extract_risparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_extract_risparent: want 1 args")
+		}
+		r := pgaot.LtreeExtractRisparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_gist_options":
+		if len(a) != 1 {
+			panic("aot: _ltree_gist_options: want 1 args")
+		}
+		r := pgaot.LtreeGistOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_isparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_isparent: want 1 args")
+		}
+		r := pgaot.LtreeIsparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_penalty":
+		if len(a) != 1 {
+			panic("aot: _ltree_penalty: want 1 args")
+		}
+		r := pgaot.LtreePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_picksplit":
+		if len(a) != 1 {
+			panic("aot: _ltree_picksplit: want 1 args")
+		}
+		r := pgaot.LtreePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_r_isparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_r_isparent: want 1 args")
+		}
+		r := pgaot.LtreeRIsparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_r_risparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_r_risparent: want 1 args")
+		}
+		r := pgaot.LtreeRRisparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_risparent":
+		if len(a) != 1 {
+			panic("aot: _ltree_risparent: want 1 args")
+		}
+		r := pgaot.LtreeRisparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_same":
+		if len(a) != 1 {
+			panic("aot: _ltree_same: want 1 args")
+		}
+		r := pgaot.LtreeSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltree_union":
+		if len(a) != 1 {
+			panic("aot: _ltree_union: want 1 args")
+		}
+		r := pgaot.LtreeUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltxtq_exec":
+		if len(a) != 1 {
+			panic("aot: _ltxtq_exec: want 1 args")
+		}
+		r := pgaot.LtxtqExec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltxtq_extract_exec":
+		if len(a) != 1 {
+			panic("aot: _ltxtq_extract_exec: want 1 args")
+		}
+		r := pgaot.LtxtqExtractExec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "_ltxtq_rexec":
+		if len(a) != 1 {
+			panic("aot: _ltxtq_rexec: want 1 args")
+		}
+		r := pgaot.LtxtqRexec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_ltree":
+		if len(a) != 1 {
+			panic("aot: hash_ltree: want 1 args")
+		}
+		r := pgaot.HashLtree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_ltree_extended":
+		if len(a) != 1 {
+			panic("aot: hash_ltree_extended: want 1 args")
+		}
+		r := pgaot.HashLtreeExtended(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lca":
+		if len(a) != 1 {
+			panic("aot: lca: want 1 args")
+		}
+		r := pgaot.Lca(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lquery_in":
+		if len(a) != 1 {
+			panic("aot: lquery_in: want 1 args")
+		}
+		r := pgaot.LqueryIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lquery_out":
+		if len(a) != 1 {
+			panic("aot: lquery_out: want 1 args")
+		}
+		r := pgaot.LqueryOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lquery_recv":
+		if len(a) != 1 {
+			panic("aot: lquery_recv: want 1 args")
+		}
+		r := pgaot.LqueryRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lquery_send":
+		if len(a) != 1 {
+			panic("aot: lquery_send: want 1 args")
+		}
+		r := pgaot.LquerySend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lt_q_regex":
+		if len(a) != 1 {
+			panic("aot: lt_q_regex: want 1 args")
+		}
+		r := pgaot.LtQRegex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "lt_q_rregex":
+		if len(a) != 1 {
+			panic("aot: lt_q_rregex: want 1 args")
+		}
+		r := pgaot.LtQRregex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltq_regex":
+		if len(a) != 1 {
+			panic("aot: ltq_regex: want 1 args")
+		}
+		r := pgaot.LtqRegex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltq_rregex":
+		if len(a) != 1 {
+			panic("aot: ltq_rregex: want 1 args")
+		}
+		r := pgaot.LtqRregex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree2text":
+		if len(a) != 1 {
+			panic("aot: ltree2text: want 1 args")
+		}
+		r := pgaot.Ltree2text(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_addltree":
+		if len(a) != 1 {
+			panic("aot: ltree_addltree: want 1 args")
+		}
+		r := pgaot.LtreeAddltree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_addtext":
+		if len(a) != 1 {
+			panic("aot: ltree_addtext: want 1 args")
+		}
+		r := pgaot.LtreeAddtext(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_cmp":
+		if len(a) != 1 {
+			panic("aot: ltree_cmp: want 1 args")
+		}
+		r := pgaot.LtreeCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_compress":
+		if len(a) != 1 {
+			panic("aot: ltree_compress: want 1 args")
+		}
+		r := pgaot.LtreeCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_consistent":
+		if len(a) != 1 {
+			panic("aot: ltree_consistent: want 1 args")
+		}
+		r := pgaot.LtreeConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_decompress":
+		if len(a) != 1 {
+			panic("aot: ltree_decompress: want 1 args")
+		}
+		r := pgaot.LtreeDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_eq":
+		if len(a) != 1 {
+			panic("aot: ltree_eq: want 1 args")
+		}
+		r := pgaot.LtreeEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_ge":
+		if len(a) != 1 {
+			panic("aot: ltree_ge: want 1 args")
+		}
+		r := pgaot.LtreeGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_gist_in":
+		if len(a) != 1 {
+			panic("aot: ltree_gist_in: want 1 args")
+		}
+		r := pgaot.LtreeGistIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_gist_options":
+		if len(a) != 1 {
+			panic("aot: ltree_gist_options: want 1 args")
+		}
+		r := pgaot.LtreeGistOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_gist_out":
+		if len(a) != 1 {
+			panic("aot: ltree_gist_out: want 1 args")
+		}
+		r := pgaot.LtreeGistOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_gt":
+		if len(a) != 1 {
+			panic("aot: ltree_gt: want 1 args")
+		}
+		r := pgaot.LtreeGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_in":
+		if len(a) != 1 {
+			panic("aot: ltree_in: want 1 args")
+		}
+		r := pgaot.LtreeIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_index":
+		if len(a) != 1 {
+			panic("aot: ltree_index: want 1 args")
+		}
+		r := pgaot.LtreeIndex(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_isparent":
+		if len(a) != 1 {
+			panic("aot: ltree_isparent: want 1 args")
+		}
+		r := pgaot.LtreeIsparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_le":
+		if len(a) != 1 {
+			panic("aot: ltree_le: want 1 args")
+		}
+		r := pgaot.LtreeLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_lt":
+		if len(a) != 1 {
+			panic("aot: ltree_lt: want 1 args")
+		}
+		r := pgaot.LtreeLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_ne":
+		if len(a) != 1 {
+			panic("aot: ltree_ne: want 1 args")
+		}
+		r := pgaot.LtreeNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_out":
+		if len(a) != 1 {
+			panic("aot: ltree_out: want 1 args")
+		}
+		r := pgaot.LtreeOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_penalty":
+		if len(a) != 1 {
+			panic("aot: ltree_penalty: want 1 args")
+		}
+		r := pgaot.LtreePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_picksplit":
+		if len(a) != 1 {
+			panic("aot: ltree_picksplit: want 1 args")
+		}
+		r := pgaot.LtreePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_recv":
+		if len(a) != 1 {
+			panic("aot: ltree_recv: want 1 args")
+		}
+		r := pgaot.LtreeRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_risparent":
+		if len(a) != 1 {
+			panic("aot: ltree_risparent: want 1 args")
+		}
+		r := pgaot.LtreeRisparent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_same":
+		if len(a) != 1 {
+			panic("aot: ltree_same: want 1 args")
+		}
+		r := pgaot.LtreeSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_send":
+		if len(a) != 1 {
+			panic("aot: ltree_send: want 1 args")
+		}
+		r := pgaot.LtreeSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_textadd":
+		if len(a) != 1 {
+			panic("aot: ltree_textadd: want 1 args")
+		}
+		r := pgaot.LtreeTextadd(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltree_union":
+		if len(a) != 1 {
+			panic("aot: ltree_union: want 1 args")
+		}
+		r := pgaot.LtreeUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltreeparentsel":
+		if len(a) != 1 {
+			panic("aot: ltreeparentsel: want 1 args")
+		}
+		r := pgaot.Ltreeparentsel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_exec":
+		if len(a) != 1 {
+			panic("aot: ltxtq_exec: want 1 args")
+		}
+		r := pgaot.LtxtqExec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_in":
+		if len(a) != 1 {
+			panic("aot: ltxtq_in: want 1 args")
+		}
+		r := pgaot.LtxtqIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_out":
+		if len(a) != 1 {
+			panic("aot: ltxtq_out: want 1 args")
+		}
+		r := pgaot.LtxtqOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_recv":
+		if len(a) != 1 {
+			panic("aot: ltxtq_recv: want 1 args")
+		}
+		r := pgaot.LtxtqRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_rexec":
+		if len(a) != 1 {
+			panic("aot: ltxtq_rexec: want 1 args")
+		}
+		r := pgaot.LtxtqRexec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ltxtq_send":
+		if len(a) != 1 {
+			panic("aot: ltxtq_send: want 1 args")
+		}
+		r := pgaot.LtxtqSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "nlevel":
+		if len(a) != 1 {
+			panic("aot: nlevel: want 1 args")
+		}
+		r := pgaot.Nlevel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__lca":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__lca: want 0 args")
+		}
+		r := pgaot.PgFinfoLca(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__lt_q_regex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__lt_q_regex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtQRegex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__lt_q_rregex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__lt_q_rregex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtQRregex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltq_extract_regex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltq_extract_regex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtqExtractRegex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltq_regex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltq_regex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtqRegex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltq_rregex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltq_rregex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtqRregex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_extract_isparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_extract_isparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeExtractIsparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_extract_risparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_extract_risparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeExtractRisparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_gist_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_gist_options: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGistOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_isparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_isparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeIsparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_r_isparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_r_isparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeRIsparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_r_risparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_r_risparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeRRisparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_risparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_risparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeRisparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_same: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltree_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltree_union: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltxtq_exec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltxtq_exec: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqExec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltxtq_extract_exec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltxtq_extract_exec: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqExtractExec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo__ltxtq_rexec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo__ltxtq_rexec: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqRexec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_ltree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_ltree: want 0 args")
+		}
+		r := pgaot.PgFinfoHashLtree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_ltree_extended":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_ltree_extended: want 0 args")
+		}
+		r := pgaot.PgFinfoHashLtreeExtended(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lca":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lca: want 0 args")
+		}
+		r := pgaot.PgFinfoLca(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lquery_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lquery_in: want 0 args")
+		}
+		r := pgaot.PgFinfoLqueryIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lquery_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lquery_out: want 0 args")
+		}
+		r := pgaot.PgFinfoLqueryOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lquery_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lquery_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoLqueryRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lquery_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lquery_send: want 0 args")
+		}
+		r := pgaot.PgFinfoLquerySend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lt_q_regex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lt_q_regex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtQRegex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lt_q_rregex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lt_q_rregex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtQRregex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltq_regex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltq_regex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtqRegex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltq_rregex":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltq_rregex: want 0 args")
+		}
+		r := pgaot.PgFinfoLtqRregex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree2text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree2text: want 0 args")
+		}
+		r := pgaot.PgFinfoLtree2text(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_addltree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_addltree: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeAddltree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_addtext":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_addtext: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeAddtext(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_gist_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_gist_in: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGistIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_gist_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_gist_options: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGistOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_gist_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_gist_out: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGistOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_in: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_index":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_index: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeIndex(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_isparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_isparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeIsparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_le: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_out: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_risparent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_risparent: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeRisparent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_same: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_send: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_textadd":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_textadd: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeTextadd(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltree_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltree_union: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltreeparentsel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltreeparentsel: want 0 args")
+		}
+		r := pgaot.PgFinfoLtreeparentsel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_exec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_exec: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqExec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_in: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_out: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_rexec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_rexec: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqRexec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ltxtq_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ltxtq_send: want 0 args")
+		}
+		r := pgaot.PgFinfoLtxtqSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_nlevel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_nlevel: want 0 args")
+		}
+		r := pgaot.PgFinfoNlevel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_subltree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_subltree: want 0 args")
+		}
+		r := pgaot.PgFinfoSubltree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_subpath":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_subpath: want 0 args")
+		}
+		r := pgaot.PgFinfoSubpath(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_text2ltree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_text2ltree: want 0 args")
+		}
+		r := pgaot.PgFinfoText2ltree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "subltree":
+		if len(a) != 1 {
+			panic("aot: subltree: want 1 args")
+		}
+		r := pgaot.Subltree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "subpath":
+		if len(a) != 1 {
+			panic("aot: subpath: want 1 args")
+		}
+		r := pgaot.Subpath(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "text2ltree":
+		if len(a) != 1 {
+			panic("aot: text2ltree: want 1 args")
+		}
+		r := pgaot.Text2ltree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

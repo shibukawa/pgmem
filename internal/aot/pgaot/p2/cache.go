@@ -55,7 +55,7 @@ func F_ResetPlanCache(m *base.Module) {
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[1161]))
 	if v5 == int32(0) {
 	} else {
-		if v5 == int32(4069408) {
+		if v5 == int32(4075040) {
 		} else {
 			v10 = v5
 			for {
@@ -116,7 +116,7 @@ func F_ResetPlanCache(m *base.Module) {
 					}
 				}
 				v67 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-				if v67 != int32(4069408) {
+				if v67 != int32(4075040) {
 					v10 = v67
 					continue
 				} else {
@@ -129,14 +129,14 @@ func F_ResetPlanCache(m *base.Module) {
 	v74 = *(*int32)(unsafe.Add(mBase, _consts[1162]))
 	if v74 == int32(0) {
 	} else {
-		if v74 == int32(4069416) {
+		if v74 == int32(4075048) {
 		} else {
 			v79 = v74
 			for {
 				v84 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v79-int32(16)))) = uint8(v84)
 				v86 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
-				if v86 != int32(4069416) {
+				if v86 != int32(4075048) {
 					v79 = v86
 					continue
 				} else {

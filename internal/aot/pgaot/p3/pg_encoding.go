@@ -27,7 +27,7 @@ func F_pg_encoding_mblen_or_incomplete(m *base.Module, l0 int32, l1 int32, l2 in
 	} else {
 		if l0 == int32(39) {
 			if l2 != int32(1) {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1118])))
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1119])))
 				v24 = m.T0[v23].(func(*base.Module, int32) int32)(m, l1)
 				mBase = m.M
 				v27 = m.ExcPending
@@ -40,7 +40,7 @@ func F_pg_encoding_mblen_or_incomplete(m *base.Module, l0 int32, l1 int32, l2 in
 			} else {
 				v12 = int32(*(*int8)(unsafe.Add(mBase, uint32(l1))))
 				if int32(0) <= v12 {
-					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1118])))
+					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1119])))
 					v24 = m.T0[v23].(func(*base.Module, int32) int32)(m, l1)
 					mBase = m.M
 					v27 = m.ExcPending
@@ -60,7 +60,7 @@ func F_pg_encoding_mblen_or_incomplete(m *base.Module, l0 int32, l1 int32, l2 in
 				v28 = int32(1)
 				return v28
 			} else {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1118])))
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[1119])))
 				v24 = m.T0[v23].(func(*base.Module, int32) int32)(m, l1)
 				mBase = m.M
 				v27 = m.ExcPending

@@ -87,13 +87,13 @@ func F_int4_mul_cash(m *base.Module, l0 int32) int32 {
 			if v64 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(386152), int32(0))
+				F_errmsg(m, int32(387858), int32(0))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(478678), int32(150), int32(531209))
+					F_errfinish(m, int32(481059), int32(150), int32(533617))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {
@@ -448,7 +448,7 @@ L14:
 	goto L2
 L15:
 	;
-	v57 = F_cstring_to_text(m, int32(719562))
+	v57 = F_cstring_to_text(m, int32(722455))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -533,7 +533,7 @@ L26:
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v79
 	*(*float64)(unsafe.Add(mBase, uint32(v13)+8)) = base.F64_convert_i32_s(v15)
-	v84 = F_psprintf(m, int32(403169), v13)
+	v84 = F_psprintf(m, int32(405038), v13)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {

@@ -88,13 +88,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(24703), int32(0))
+						F_errmsg_internal(m, int32(24832), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(480706), int32(6909), int32(30836))
+							F_errfinish(m, int32(483087), int32(6909), int32(31178))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -114,13 +114,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(24703), int32(0))
+					F_errmsg_internal(m, int32(24832), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(480706), int32(6909), int32(30836))
+						F_errfinish(m, int32(483087), int32(6909), int32(31178))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -160,13 +160,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(24703), int32(0))
+						F_errmsg_internal(m, int32(24832), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(480706), int32(6909), int32(30836))
+							F_errfinish(m, int32(483087), int32(6909), int32(31178))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -186,13 +186,13 @@ func F_int4_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(24703), int32(0))
+					F_errmsg_internal(m, int32(24832), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(480706), int32(6909), int32(30836))
+						F_errfinish(m, int32(483087), int32(6909), int32(31178))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {

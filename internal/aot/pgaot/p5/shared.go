@@ -229,14 +229,14 @@ L3:
 	goto L9
 L4:
 	;
-	v30 = int32(4366864)
+	v30 = int32(4372560)
 	v32 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 	*(*int32)(unsafe.Add(mBase, _consts[685])) = v32 + int32(1)
 	v37 = v32 << (uint(int32(4)) % 32)
 	v40 = *(*int64)(unsafe.Add(mBase, uint32(v37)+uint32(_consts[687])))
 	*(*int64)(unsafe.Add(mBase, uint32(v12+int32(8)))) = v40
 	v44 = *(*int64)(unsafe.Add(mBase, uint32(v37)+uint32(_consts[688])))
-	v45 = int32(4366872)
+	v45 = int32(4372568)
 	v47 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	*(*int64)(unsafe.Add(mBase, _consts[689])) = v47 + int64(1)
 	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v44
@@ -326,7 +326,7 @@ L15:
 	}
 L16:
 	;
-	F_s_lock(m, v87+int32(12), int32(474306), int32(511), int32(159536))
+	F_s_lock(m, v87+int32(12), int32(476637), int32(511), int32(160655))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -461,7 +461,7 @@ L35:
 	goto L36
 L36:
 	;
-	v220 = int32(4366864)
+	v220 = int32(4372560)
 	*(*int32)(unsafe.Add(mBase, _consts[685])) = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[686])) = v189
 	v226 = *(*int32)(unsafe.Add(mBase, _consts[685]))
@@ -479,7 +479,7 @@ L37:
 	}
 L38:
 	;
-	F_errmsg_internal(m, int32(99492), int32(0))
+	F_errmsg_internal(m, int32(100424), int32(0))
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {
@@ -492,7 +492,7 @@ L39:
 	goto L40
 L40:
 	;
-	v212 = int32(4366872)
+	v212 = int32(4372568)
 	v214 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	*(*int64)(unsafe.Add(mBase, _consts[689])) = v214 + int64(1)
 	F_InvalidateSystemCaches(m)
@@ -505,7 +505,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(478283), int32(103), int32(161988))
+	F_errfinish(m, int32(480664), int32(103), int32(163107))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -535,14 +535,14 @@ L46:
 	}
 L47:
 	;
-	v239 = int32(4366864)
+	v239 = int32(4372560)
 	v241 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 	*(*int32)(unsafe.Add(mBase, _consts[685])) = v241 + int32(1)
 	v246 = v241 << (uint(int32(4)) % 32)
 	v249 = *(*int64)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[687])))
 	*(*int64)(unsafe.Add(mBase, uint32(v12+int32(8)))) = v249
 	v253 = *(*int64)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[688])))
-	v254 = int32(4366872)
+	v254 = int32(4372568)
 	v256 = *(*int64)(unsafe.Add(mBase, _consts[689]))
 	*(*int64)(unsafe.Add(mBase, _consts[689])) = v256 + int64(1)
 	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v253
@@ -600,7 +600,7 @@ L55:
 	}
 L56:
 	;
-	F_errmsg_internal(m, int32(333996), int32(0))
+	F_errmsg_internal(m, int32(335574), int32(0))
 	mBase = m.M
 	v302 = m.ExcPending
 	if v302 != 0 {
@@ -624,7 +624,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(478283), int32(138), int32(161988))
+	F_errfinish(m, int32(480664), int32(138), int32(163107))
 	mBase = m.M
 	v307 = m.ExcPending
 	if v307 != 0 {
@@ -685,7 +685,7 @@ func F_SharedFileSetOnDetach(m *base.Module, l0 int32, l1 int32) {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l1)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+44)) = int32(1)
 	if v3 != 0 {
-		F_s_lock(m, l1+int32(44), int32(474229), int32(101), int32(312926))
+		F_s_lock(m, l1+int32(44), int32(476560), int32(101), int32(314442))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -1485,7 +1485,7 @@ func F_shared_buffer_write_error_callback(m *base.Module, l0 int32) {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v11
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v6 + int32(8)
-				F_errcontext_msg(m, int32(670084), v6)
+				F_errcontext_msg(m, int32(672977), v6)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {

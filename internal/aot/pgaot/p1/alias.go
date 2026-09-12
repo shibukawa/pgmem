@@ -2918,8 +2918,8 @@ func F_interval_part_common(m *base.Module, l0 int32, l1 int32) int32
 func F_gin_extract_tsquery(m *base.Module, l0 int32) int32
 //go:linkname F_parse_tsquery github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_parse_tsquery
 func F_parse_tsquery(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-//go:linkname F_infix github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_infix
-func F_infix(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_infix_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_infix_1
+func F_infix_1(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_QT2QTN github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_QT2QTN
 func F_QT2QTN(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_QTNFree github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_QTNFree
@@ -3890,6 +3890,20 @@ func F_hstore_each(m *base.Module, l0 int32) int32
 func F_hstoreArrayToPairs(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_hstore_to_array_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_to_array_internal
 func F_hstore_to_array_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_hemdist_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hemdist_2
+func F_hemdist_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_checkCond github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_checkCond
+func F_checkCond(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_ltree_gist_alloc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_gist_alloc
+func F_ltree_gist_alloc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_parse_lquery github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_parse_lquery
+func F_parse_lquery(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_deparse_lquery github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_deparse_lquery
+func F_deparse_lquery(m *base.Module, l0 int32) int32
+//go:linkname F_inner_subltree github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_inner_subltree
+func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_ltree_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_execute
+func F_ltree_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

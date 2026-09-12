@@ -57,7 +57,7 @@ func F_tuplesort_getgintuple(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = int32(4449520)
+	v10 = int32(4455216)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -109,7 +109,7 @@ func F_tuplesort_getheaptuple(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = int32(4449520)
+	v8 = int32(4455216)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v11
@@ -633,7 +633,7 @@ L18:
 	return int32(0)
 L19:
 	;
-	F_errmsg_internal(m, int32(75829), int32(0))
+	F_errmsg_internal(m, int32(76368), int32(0))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -643,7 +643,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(473787), int32(1498), int32(235556))
+	F_errfinish(m, int32(476118), int32(1498), int32(236859))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -875,7 +875,7 @@ L50:
 	}
 L51:
 	;
-	F_errmsg_internal(m, int32(239284), int32(0))
+	F_errmsg_internal(m, int32(240587), int32(0))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -885,7 +885,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(473787), int32(1581), int32(235556))
+	F_errfinish(m, int32(476118), int32(1581), int32(236859))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -932,7 +932,7 @@ L56:
 	}
 L57:
 	;
-	F_errmsg_internal(m, int32(239284), int32(0))
+	F_errmsg_internal(m, int32(240587), int32(0))
 	mBase = m.M
 	v148 = m.ExcPending
 	if v148 != 0 {
@@ -942,7 +942,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(473787), int32(1595), int32(235556))
+	F_errfinish(m, int32(476118), int32(1595), int32(236859))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -994,7 +994,7 @@ L63:
 	}
 L64:
 	;
-	F_errmsg_internal(m, int32(273188), int32(0))
+	F_errmsg_internal(m, int32(274612), int32(0))
 	mBase = m.M
 	v173 = m.ExcPending
 	if v173 != 0 {
@@ -1004,7 +1004,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(473787), int32(1615), int32(235556))
+	F_errfinish(m, int32(476118), int32(1615), int32(236859))
 	mBase = m.M
 	v178 = m.ExcPending
 	if v178 != 0 {
@@ -1491,7 +1491,7 @@ L135:
 	goto L123
 L136:
 	;
-	F_errmsg_internal(m, int32(337826), int32(0))
+	F_errmsg_internal(m, int32(339418), int32(0))
 	mBase = m.M
 	v436 = m.ExcPending
 	if v436 != 0 {
@@ -1501,7 +1501,7 @@ L136:
 	}
 L137:
 	;
-	F_errfinish(m, int32(473787), int32(1698), int32(235556))
+	F_errfinish(m, int32(476118), int32(1698), int32(236859))
 	mBase = m.M
 	v441 = m.ExcPending
 	if v441 != 0 {
@@ -1516,7 +1516,7 @@ L138:
 	}
 L139:
 	;
-	F_errmsg_internal(m, int32(357347), int32(0))
+	F_errmsg_internal(m, int32(358953), int32(0))
 	mBase = m.M
 	v467 = m.ExcPending
 	if v467 != 0 {
@@ -1526,7 +1526,7 @@ L139:
 	}
 L140:
 	;
-	F_errfinish(m, int32(473787), int32(2862), int32(270105))
+	F_errfinish(m, int32(476118), int32(2862), int32(271529))
 	mBase = m.M
 	v472 = m.ExcPending
 	if v472 != 0 {
@@ -1541,7 +1541,7 @@ L141:
 	}
 L142:
 	;
-	F_errmsg_internal(m, int32(273188), int32(0))
+	F_errmsg_internal(m, int32(274612), int32(0))
 	mBase = m.M
 	v480 = m.ExcPending
 	if v480 != 0 {
@@ -1551,7 +1551,7 @@ L142:
 	}
 L143:
 	;
-	F_errfinish(m, int32(473787), int32(1628), int32(235556))
+	F_errfinish(m, int32(476118), int32(1628), int32(236859))
 	mBase = m.M
 	v485 = m.ExcPending
 	if v485 != 0 {
@@ -1566,7 +1566,7 @@ L144:
 	}
 L145:
 	;
-	F_errmsg_internal(m, int32(357347), int32(0))
+	F_errmsg_internal(m, int32(358953), int32(0))
 	mBase = m.M
 	v493 = m.ExcPending
 	if v493 != 0 {
@@ -1576,7 +1576,7 @@ L145:
 	}
 L146:
 	;
-	F_errfinish(m, int32(473787), int32(2862), int32(270105))
+	F_errfinish(m, int32(476118), int32(2862), int32(271529))
 	mBase = m.M
 	v498 = m.ExcPending
 	if v498 != 0 {
@@ -1636,7 +1636,7 @@ func F_tuplesort_gettupleslot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v12 = int32(4449520)
+	v12 = int32(4455216)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v15

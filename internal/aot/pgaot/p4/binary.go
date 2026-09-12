@@ -470,13 +470,13 @@ L6:
 	}
 L7:
 	;
-	v25 = int32(26219)
+	v25 = int32(26348)
 	v26 = v21
 	goto L9
 L8:
 	;
 	if v63 == int32(0) {
-		v154 = int32(1624400)
+		v154 = int32(1628496)
 		goto L6
 	} else {
 		goto L21
@@ -552,13 +552,13 @@ L20:
 	goto L10
 L21:
 	;
-	v70 = int32(531298)
+	v70 = int32(533706)
 	v71 = v21
 	goto L23
 L22:
 	;
 	if v108 == int32(0) {
-		v154 = int32(1624420)
+		v154 = int32(1628516)
 		goto L6
 	} else {
 		goto L35
@@ -634,7 +634,7 @@ L34:
 	goto L24
 L35:
 	;
-	v114 = int32(357469)
+	v114 = int32(359075)
 	v115 = v21
 	goto L37
 L36:
@@ -715,7 +715,7 @@ L48:
 	goto L38
 L49:
 	;
-	v154 = int32(1624440)
+	v154 = int32(1628536)
 	goto L6
 L50:
 	;
@@ -850,7 +850,7 @@ L69:
 L70:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v21
-	F_errmsg(m, int32(688843), v11)
+	F_errmsg(m, int32(691736), v11)
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -860,7 +860,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(480187), int32(114), int32(397475))
+	F_errfinish(m, int32(482568), int32(114), int32(399344))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -885,7 +885,7 @@ L73:
 	}
 L74:
 	;
-	F_errmsg(m, int32(384628), int32(0))
+	F_errmsg(m, int32(386334), int32(0))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -895,7 +895,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(480187), int32(128), int32(397475))
+	F_errfinish(m, int32(482568), int32(128), int32(399344))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -910,7 +910,7 @@ L76:
 	}
 L77:
 	;
-	F_errmsg_internal(m, int32(292408), int32(0))
+	F_errmsg_internal(m, int32(293848), int32(0))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -920,7 +920,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(480187), int32(136), int32(397475))
+	F_errfinish(m, int32(482568), int32(136), int32(399344))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {
@@ -963,13 +963,13 @@ func F_binary_upgrade_set_next_heap_relfilenode(m *base.Module, l0 int32) int32 
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(112), int32(394713))
+					F_errfinish(m, int32(476159), int32(112), int32(396566))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1017,13 +1017,13 @@ func F_binary_upgrade_set_next_index_pg_class_oid(m *base.Module, l0 int32) int3
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(123), int32(416745))
+					F_errfinish(m, int32(476159), int32(123), int32(418675))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1071,13 +1071,13 @@ func F_binary_upgrade_set_next_multirange_array_pg_type_oid(m *base.Module, l0 i
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396198), int32(0))
+				F_errmsg(m, int32(398067), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473828), int32(90), int32(417644))
+					F_errfinish(m, int32(476159), int32(90), int32(419574))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1288,13 +1288,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-													F_errmsg(m, int32(332492), v10)
+													F_errmsg(m, int32(334070), v10)
 													mBase = m.M
 													v77 = m.ExcPending
 													if v77 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(480726), int32(2137), int32(198465))
+														F_errfinish(m, int32(483107), int32(2137), int32(199591))
 														mBase = m.M
 														v82 = m.ExcPending
 														if v82 != 0 {
@@ -1338,13 +1338,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 														return int32(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-														F_errmsg(m, int32(332492), v10)
+														F_errmsg(m, int32(334070), v10)
 														mBase = m.M
 														v77 = m.ExcPending
 														if v77 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(480726), int32(2137), int32(198465))
+															F_errfinish(m, int32(483107), int32(2137), int32(199591))
 															mBase = m.M
 															v82 = m.ExcPending
 															if v82 != 0 {
@@ -1395,13 +1395,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																	F_errmsg(m, int32(332424), v10+int32(16))
+																	F_errmsg(m, int32(334002), v10+int32(16))
 																	mBase = m.M
 																	v118 = m.ExcPending
 																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																		F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																		mBase = m.M
 																		v123 = m.ExcPending
 																		if v123 != 0 {
@@ -1445,13 +1445,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																		return int32(0)
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																		F_errmsg(m, int32(332424), v10+int32(16))
+																		F_errmsg(m, int32(334002), v10+int32(16))
 																		mBase = m.M
 																		v118 = m.ExcPending
 																		if v118 != 0 {
 																			return int32(0)
 																		} else {
-																			F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																			F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																			mBase = m.M
 																			v123 = m.ExcPending
 																			if v123 != 0 {
@@ -1640,13 +1640,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																			return int32(0)
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																			F_errmsg(m, int32(332424), v10+int32(16))
+																			F_errmsg(m, int32(334002), v10+int32(16))
 																			mBase = m.M
 																			v118 = m.ExcPending
 																			if v118 != 0 {
 																				return int32(0)
 																			} else {
-																				F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																				F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																				mBase = m.M
 																				v123 = m.ExcPending
 																				if v123 != 0 {
@@ -1836,13 +1836,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																	F_errmsg(m, int32(332424), v10+int32(16))
+																	F_errmsg(m, int32(334002), v10+int32(16))
 																	mBase = m.M
 																	v118 = m.ExcPending
 																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																		F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																		mBase = m.M
 																		v123 = m.ExcPending
 																		if v123 != 0 {
@@ -1886,13 +1886,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-															F_errmsg(m, int32(332492), v10)
+															F_errmsg(m, int32(334070), v10)
 															mBase = m.M
 															v77 = m.ExcPending
 															if v77 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(480726), int32(2137), int32(198465))
+																F_errfinish(m, int32(483107), int32(2137), int32(199591))
 																mBase = m.M
 																v82 = m.ExcPending
 																if v82 != 0 {
@@ -1944,13 +1944,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-															F_errmsg(m, int32(332424), v10+int32(16))
+															F_errmsg(m, int32(334002), v10+int32(16))
 															mBase = m.M
 															v118 = m.ExcPending
 															if v118 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																mBase = m.M
 																v123 = m.ExcPending
 																if v123 != 0 {
@@ -1994,13 +1994,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																F_errmsg(m, int32(332424), v10+int32(16))
+																F_errmsg(m, int32(334002), v10+int32(16))
 																mBase = m.M
 																v118 = m.ExcPending
 																if v118 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																	F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																	mBase = m.M
 																	v123 = m.ExcPending
 																	if v123 != 0 {
@@ -2189,13 +2189,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-																	F_errmsg(m, int32(332424), v10+int32(16))
+																	F_errmsg(m, int32(334002), v10+int32(16))
 																	mBase = m.M
 																	v118 = m.ExcPending
 																	if v118 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																		F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																		mBase = m.M
 																		v123 = m.ExcPending
 																		if v123 != 0 {
@@ -2385,13 +2385,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v111
-															F_errmsg(m, int32(332424), v10+int32(16))
+															F_errmsg(m, int32(334002), v10+int32(16))
 															mBase = m.M
 															v118 = m.ExcPending
 															if v118 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(480726), int32(2144), int32(198465))
+																F_errfinish(m, int32(483107), int32(2144), int32(199591))
 																mBase = m.M
 																v123 = m.ExcPending
 																if v123 != 0 {
@@ -2435,13 +2435,13 @@ func F_executeBinaryArithmExpr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-													F_errmsg(m, int32(332492), v10)
+													F_errmsg(m, int32(334070), v10)
 													mBase = m.M
 													v77 = m.ExcPending
 													if v77 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(480726), int32(2137), int32(198465))
+														F_errfinish(m, int32(483107), int32(2137), int32(199591))
 														mBase = m.M
 														v82 = m.ExcPending
 														if v82 != 0 {

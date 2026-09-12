@@ -374,7 +374,7 @@ func F_AtEOXact_LargeObject(m *base.Module, l0 int32) {
 	_ = v89
 	var v97 int32
 	_ = v97
-	v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[467])))
+	v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[466])))
 	if v8 != 0 {
 		goto L1
 	} else {
@@ -396,9 +396,9 @@ L3:
 L4:
 	;
 	v52 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[464])) = v52
 	*(*int32)(unsafe.Add(mBase, _consts[465])) = v52
-	*(*int32)(unsafe.Add(mBase, _consts[466])) = v52
-	v58 = *(*int32)(unsafe.Add(mBase, _consts[468]))
+	v58 = *(*int32)(unsafe.Add(mBase, _consts[467]))
 	if v58 != 0 {
 		goto L19
 	} else {
@@ -406,7 +406,7 @@ L4:
 	}
 L5:
 	;
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[465]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[464]))
 	if v12 <= int32(0) {
 		goto L4
 	} else {
@@ -414,7 +414,7 @@ L5:
 	}
 L6:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[466]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[465]))
 	v18 = v12
 	v19 = int32(0)
 	v20 = v16
@@ -458,7 +458,7 @@ L11:
 	}
 L12:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _consts[403]))
+	v31 = *(*int32)(unsafe.Add(mBase, _consts[402]))
 	F_UnregisterSnapshotFromOwner(m, v29, v31)
 	mBase = m.M
 	v33 = m.ExcPending
@@ -488,8 +488,8 @@ L16:
 	goto L14
 L17:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[466]))
-	v39 = *(*int32)(unsafe.Add(mBase, _consts[465]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[465]))
+	v39 = *(*int32)(unsafe.Add(mBase, _consts[464]))
 	v40 = v39
 	v41 = v37
 	goto L11
@@ -511,9 +511,9 @@ L20:
 	goto L21
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[468])) = int32(0)
-	v65 = *(*int32)(unsafe.Add(mBase, _consts[469]))
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[470]))
+	*(*int32)(unsafe.Add(mBase, _consts[467])) = int32(0)
+	v65 = *(*int32)(unsafe.Add(mBase, _consts[468]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[469]))
 	if v65|v67 != 0 {
 		goto L23
 	} else {
@@ -535,13 +535,13 @@ L24:
 L25:
 	;
 	v97 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[467])) = uint8(v97)
+	*(*uint8)(unsafe.Add(mBase, _consts[466])) = uint8(v97)
 	goto L3
 L26:
 	;
-	v69 = int32(4449572)
+	v69 = int32(4455268)
 	v70 = *(*int32)(unsafe.Add(mBase, _consts[258]))
-	v73 = *(*int32)(unsafe.Add(mBase, _consts[403]))
+	v73 = *(*int32)(unsafe.Add(mBase, _consts[402]))
 	*(*int32)(unsafe.Add(mBase, _consts[258])) = v73
 	if v67 != 0 {
 		goto L29
@@ -554,8 +554,8 @@ L27:
 L28:
 	;
 	v89 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[470])) = v89
 	*(*int32)(unsafe.Add(mBase, _consts[469])) = v89
+	*(*int32)(unsafe.Add(mBase, _consts[468])) = v89
 	goto L25
 L29:
 	;
@@ -580,7 +580,7 @@ L31:
 	}
 L32:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, _consts[469]))
+	v79 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 	v80 = v79
 	goto L31
 L33:

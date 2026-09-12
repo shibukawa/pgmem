@@ -400,13 +400,13 @@ func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-			F_errmsg_internal(m, int32(469278), v10)
+			F_errmsg_internal(m, int32(471465), v10)
 			mBase = m.M
 			v45 = m.ExcPending
 			if v45 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(479900), int32(612), int32(197601))
+				F_errfinish(m, int32(482281), int32(612), int32(198727))
 				mBase = m.M
 				v50 = m.ExcPending
 				if v50 != 0 {
@@ -429,13 +429,13 @@ func F_SysCacheGetAttr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(469278), v10)
+				F_errmsg_internal(m, int32(471465), v10)
 				mBase = m.M
 				v45 = m.ExcPending
 				if v45 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(479900), int32(612), int32(197601))
+					F_errfinish(m, int32(482281), int32(612), int32(198727))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {

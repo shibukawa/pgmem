@@ -53,7 +53,7 @@ func F_get_fn_expr_arg_stable(m *base.Module, l0 int32, l1 int32) int32 {
 					if l1 < int32(0) {
 						v48 = v3
 					} else {
-						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[1105])))
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[1104])))
 						v29 = *(*int32)(unsafe.Add(mBase, uint32(v7+v27)))
 						if v29 == int32(0) {
 							v48 = v3

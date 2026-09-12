@@ -262,7 +262,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 								return
 							} else {
 								v42 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-								F_appendStringInfoString(m, v42, int32(708083))
+								F_appendStringInfoString(m, v42, int32(710976))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -353,7 +353,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							return
 						} else {
 							v42 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-							F_appendStringInfoString(m, v42, int32(708083))
+							F_appendStringInfoString(m, v42, int32(710976))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -427,7 +427,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 			v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
 			if l1 != 0 {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-				F_appendStringInfo(m, v78, int32(707726), v8)
+				F_appendStringInfo(m, v78, int32(710619), v8)
 				mBase = m.M
 				v82 = m.ExcPending
 				if v82 != 0 {
@@ -449,7 +449,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					}
 				}
 			} else {
-				F_appendStringInfoString(m, v78, int32(708092))
+				F_appendStringInfoString(m, v78, int32(710985))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -490,7 +490,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
 					if l1 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-						F_appendStringInfo(m, v78, int32(707726), v8)
+						F_appendStringInfo(m, v78, int32(710619), v8)
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -512,7 +512,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							}
 						}
 					} else {
-						F_appendStringInfoString(m, v78, int32(708092))
+						F_appendStringInfoString(m, v78, int32(710985))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -559,7 +559,7 @@ func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 i
 	v8 = v6 - int32(48)
 	m.G0 = v8
 	*(*int64)(unsafe.Add(mBase, uint32(v8))) = l2
-	v15 = F_pg_snprintf(m, v8+int32(16), int32(32), int32(413554), v8)
+	v15 = F_pg_snprintf(m, v8+int32(16), int32(32), int32(415484), v8)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -637,12 +637,22 @@ func F_ExplainXMLTag(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v70
 	var v72 int32
 	_ = v72
-	var v74 int32
-	_ = v74
 	var v75 int32
 	_ = v75
-	var v76 int32
-	_ = v76
+	var v89 int32
+	_ = v89
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
 	var v113 int32
 	_ = v113
 	var v123 int32
@@ -874,10 +884,8 @@ L19:
 L20:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	v74 = int32(618416)
 	v75 = base.I32_extend8_s(v70)
-	v76 = int32(66)
-	goto L25
+	goto L26
 L21:
 	;
 	goto L19
@@ -899,13 +907,61 @@ L24:
 	goto L42
 L25:
 	;
-	goto L33
+	if base.B2i32(v97 != v98) == int32(0) {
+		goto L23
+	} else {
+		goto L33
+	}
+L26:
+	;
+	goto L27
+L27:
+	;
+	v89 = int32(621122)
+	v91 = int32(66)
+	goto L28
+L28:
+	;
+	v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
+	if v94 == v75&int32(255) {
+		v150 = v89
+		v152 = v91
+		goto L24
+	} else {
+		goto L30
+	}
+L29:
+	;
+	goto L25
+L30:
+	;
+	v96 = int32(1)
+	v97 = v91 - v96
+	v98 = int32(0)
+	v101 = v89 + v96
+	if v101&int32(3) == v98 {
+		goto L25
+	} else {
+		goto L31
+	}
+L31:
+	;
+	if v97 != 0 {
+		v89 = v101
+		v91 = v97
+		goto L28
+	} else {
+		goto L32
+	}
+L32:
+	;
+	goto L29
 L33:
 	;
-	v113 = int32(*(*uint8)(unsafe.Add(mBase, _consts[386])))
+	v113 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101))))
 	if v113 == v75&int32(255) {
-		v143 = v74
-		v145 = v76
+		v143 = v101
+		v145 = v97
 		goto L34
 	} else {
 		goto L35
@@ -919,11 +975,17 @@ L34:
 	}
 L35:
 	;
-	goto L36
+	if base.Ui32(v97) < base.Ui32(int32(4)) {
+		v143 = v101
+		v145 = v97
+		goto L34
+	} else {
+		goto L36
+	}
 L36:
 	;
-	v123 = v74
-	v125 = v76
+	v123 = v101
+	v125 = v97
 	goto L37
 L37:
 	;
@@ -1029,7 +1091,7 @@ L52:
 L53:
 	;
 	v194 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	F_appendStringInfoString(m, v194, int32(534799))
+	F_appendStringInfoString(m, v194, int32(537207))
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {

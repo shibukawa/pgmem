@@ -1538,6 +1538,8 @@ func F_pq_beginmessage(m *base.Module, l0 int32, l1 int32)
 func F_pq_sendbytes(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pq_sendcountedtext github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pq_sendcountedtext
 func F_pq_sendcountedtext(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_pq_sendtext github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pq_sendtext
+func F_pq_sendtext(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pq_send_ascii_string github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pq_send_ascii_string
 func F_pq_send_ascii_string(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_pq_sendfloat8 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pq_sendfloat8
@@ -2828,6 +2830,8 @@ func F_NormalizeSubWord(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_make_tsvector(m *base.Module, l0 int32) int32
 //go:linkname F_t_isalnum_with_len github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_with_len
 func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_t_isalnum_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_cstr
+func F_t_isalnum_cstr(m *base.Module, l0 int32) int32
 //go:linkname F_parsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_parsetext
 func F_parsetext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_hlparsetext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hlparsetext
@@ -3332,8 +3336,6 @@ func F_pg_strnxfrm(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 func F_create_pg_locale_builtin(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_create_pg_locale_icu github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_create_pg_locale_icu
 func F_create_pg_locale_icu(m *base.Module) int32
-//go:linkname F_char2wchar github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_char2wchar
-func F_char2wchar(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_create_pg_locale_libc github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_create_pg_locale_libc
 func F_create_pg_locale_libc(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_quote_literal_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_quote_literal_cstr
@@ -3492,6 +3494,8 @@ func F_interval_um_internal(m *base.Module, l0 int32, l1 int32)
 func F_timestamptz_pl_interval_internal(m *base.Module, l0 int64, l1 int32, l2 int32) int64
 //go:linkname F_gin_extract_tsvector github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_tsvector
 func F_gin_extract_tsvector(m *base.Module, l0 int32) int32
+//go:linkname F_makepol_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_makepol_1
+func F_makepol_1(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_findoprnd_recurse github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_findoprnd_recurse
 func F_findoprnd_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_maketree github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_maketree
@@ -4040,8 +4044,6 @@ func F_pg_mblen_cstr(m *base.Module, l0 int32) int32
 func F_report_invalid_encoding_db(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pg_mblen_range github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_mblen_range
 func F_pg_mblen_range(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_pg_mblen_with_len github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_mblen_with_len
-func F_pg_mblen_with_len(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pg_mbstrlen_with_len github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_mbstrlen_with_len
 func F_pg_mbstrlen_with_len(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pg_mbcliplen github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_mbcliplen
@@ -4672,6 +4674,14 @@ func F_hstore_contains(m *base.Module, l0 int32) int32
 func F_hstore_avals(m *base.Module, l0 int32) int32
 //go:linkname F_hstore_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_skeys
 func F_hstore_skeys(m *base.Module, l0 int32) int32
+//go:linkname F_array_iterator github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_array_iterator
+func F_array_iterator(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_deparse_lquery github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_deparse_lquery
+func F_deparse_lquery(m *base.Module, l0 int32) int32
+//go:linkname F_ltree_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ltree_concat
+func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_queryin github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_queryin
+func F_queryin(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

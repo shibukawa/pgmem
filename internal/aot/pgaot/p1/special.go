@@ -120,8 +120,8 @@ L3:
 L4:
 	;
 	v57 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0))))
-	v63 = int32(1621536)
-	v65 = int32(1622672)
+	v63 = int32(1625632)
+	v65 = int32(1626768)
 	goto L20
 L5:
 	;
@@ -409,13 +409,13 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 			if v16 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(343457), int32(0))
+				F_errmsg_internal(m, int32(345049), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(479368), int32(309), int32(343478))
+					F_errfinish(m, int32(481749), int32(309), int32(345070))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {

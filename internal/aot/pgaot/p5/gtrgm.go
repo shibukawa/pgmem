@@ -684,7 +684,7 @@ L66:
 L67:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v25
-	F_errmsg_internal(m, int32(463774), v16)
+	F_errmsg_internal(m, int32(465961), v16)
 	mBase = m.M
 	v286 = m.ExcPending
 	if v286 != 0 {
@@ -694,7 +694,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(473665), int32(525), int32(400979))
+	F_errfinish(m, int32(475982), int32(525), int32(402848))
 	mBase = m.M
 	v293 = m.ExcPending
 	if v293 != 0 {
@@ -738,14 +738,14 @@ func F_gtrgm_in(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(276989)
-			F_errmsg(m, int32(183897), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(278413)
+			F_errmsg(m, int32(185016), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(473665), int32(61), int32(267865))
+				F_errfinish(m, int32(475982), int32(61), int32(269271))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

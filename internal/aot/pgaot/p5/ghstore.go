@@ -35,14 +35,14 @@ func F_ghstore_out(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(349662)
-			F_errmsg(m, int32(183863), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(351254)
+			F_errmsg(m, int32(184982), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(473692), int32(112), int32(64739))
+				F_errfinish(m, int32(476009), int32(112), int32(65248))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

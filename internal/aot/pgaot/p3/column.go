@@ -130,7 +130,7 @@ L11:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(v29+v26<<(uint(int32(2))%32))))
-	F_appendStringInfoString(m, v13, int32(708326))
+	F_appendStringInfoString(m, v13, int32(711219))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -242,7 +242,7 @@ func F_has_column_privilege_name_id_attnum(m *base.Module, l0 int32) int32 {
 		if v21 != 0 {
 			return int32(0)
 		} else {
-			v23 = F_convert_any_priv_string(m, v16, int32(1619904))
+			v23 = F_convert_any_priv_string(m, v16, int32(1624000))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -388,7 +388,7 @@ func F_has_column_privilege_name_id_name(m *base.Module, l0 int32) int32 {
 				if v26 != 0 {
 					return int32(0)
 				} else {
-					v28 = F_convert_any_priv_string(m, v21, int32(1619904))
+					v28 = F_convert_any_priv_string(m, v21, int32(1624000))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -579,7 +579,7 @@ func F_has_column_privilege_name_name_name(m *base.Module, l0 int32) int32 {
 								if v38 != 0 {
 									return int32(0)
 								} else {
-									v40 = F_convert_any_priv_string(m, v23, int32(1619904))
+									v40 = F_convert_any_priv_string(m, v23, int32(1624000))
 									mBase = m.M
 									v41 = m.ExcPending
 									if v41 != 0 {
@@ -783,7 +783,7 @@ L2:
 	}
 L3:
 	;
-	F_scanner_yyerror(m, int32(692731), l3)
+	F_scanner_yyerror(m, int32(695624), l3)
 	mBase = m.M
 	v249 = m.ExcPending
 	if v249 != 0 {
@@ -793,7 +793,7 @@ L3:
 	}
 L4:
 	;
-	F_scanner_yyerror(m, int32(692731), l3)
+	F_scanner_yyerror(m, int32(695624), l3)
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {
@@ -803,7 +803,7 @@ L4:
 	}
 L5:
 	;
-	F_scanner_yyerror(m, int32(692731), l3)
+	F_scanner_yyerror(m, int32(695624), l3)
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {

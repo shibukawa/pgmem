@@ -80,13 +80,13 @@ func F_GetForeignDataWrapperExtended(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-					F_errmsg_internal(m, int32(41791), v9)
+					F_errmsg_internal(m, int32(42194), v9)
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(477487), int32(63), int32(443853))
+						F_errfinish(m, int32(479868), int32(63), int32(445812))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {

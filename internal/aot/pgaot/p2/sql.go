@@ -212,14 +212,14 @@ func F_sql_compile_callback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	m.G0 = v14
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+22)))
-	v19 = int32(4442424)
+	v19 = int32(4448120)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[84]))
 	*(*int32)(unsafe.Add(mBase, _consts[84])) = v14 + int32(36)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = l3
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = int32(685)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v20
 	v30 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v35 = F_AllocSetContextCreateInternal(m, v30, int32(243838), v6, int32(1024), int32(8192))
+	v35 = F_AllocSetContextCreateInternal(m, v30, int32(245141), v6, int32(1024), int32(8192))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -232,7 +232,7 @@ L1:
 	return
 L2:
 	;
-	v41 = F_AllocSetContextCreateInternal(m, v35, int32(162716), int32(0), int32(1024), int32(8192))
+	v41 = F_AllocSetContextCreateInternal(m, v35, int32(163835), int32(0), int32(1024), int32(8192))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -594,7 +594,7 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v201
-	F_errmsg(m, int32(174724), v14)
+	F_errmsg(m, int32(175843), v14)
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {
@@ -604,7 +604,7 @@ L44:
 	}
 L45:
 	;
-	F_errdetail(m, int32(621460), int32(0))
+	F_errdetail(m, int32(624166), int32(0))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -614,7 +614,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(474739), int32(1187), int32(305784))
+	F_errfinish(m, int32(477070), int32(1187), int32(307264))
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -631,7 +631,7 @@ L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3)+64)) = v218
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v30
-	v224 = *(*int32)(unsafe.Add(mBase, _consts[401]))
+	v224 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 	v228 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
 	if v228 != v224 {
 		goto L50
@@ -766,7 +766,7 @@ func F_sql_function_parse_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v15
-				F_errcontext_msg(m, int32(666370), v5)
+				F_errcontext_msg(m, int32(669263), v5)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {

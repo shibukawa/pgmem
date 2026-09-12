@@ -971,7 +971,7 @@ func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(720032), int32(2))
+	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(722928), int32(2))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -1079,14 +1079,14 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 	if v11 == int32(0) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1571)
 		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(51539607560)
-		v24 = F_hash_create(m, int32(383383), int32(256), v6+int32(-48), int32(72))
+		v24 = F_hash_create(m, int32(385066), int32(256), v6+int32(-48), int32(72))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, _consts[1152])) = v24
-			v30 = *(*int32)(unsafe.Add(mBase, _consts[401]))
+			v30 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 			if v30 == int32(0) {
 				F_CreateCacheMemoryContext(m)
 				mBase = m.M
@@ -1163,7 +1163,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 												if v68 != 0 {
 													return int32(0)
 												} else {
-													v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
+													v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 													v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 													v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 													mBase = m.M
@@ -1387,7 +1387,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 											if v68 != 0 {
 												return int32(0)
 											} else {
-												v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
+												v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 												v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 												v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 												mBase = m.M
@@ -1605,7 +1605,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 								if v68 != 0 {
 									return int32(0)
 								} else {
-									v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
+									v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 									v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 									v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 									mBase = m.M

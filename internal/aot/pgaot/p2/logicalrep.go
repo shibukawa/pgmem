@@ -43,7 +43,7 @@ func F_logicalrep_partmap_invalidate_cb(m *base.Module, l0 int32, l1 int32) {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[647]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[646]))
 	if v9 == int32(0) {
 		goto L1
 	} else {
@@ -425,7 +425,7 @@ L2:
 	goto L3
 L3:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[640]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[639]))
 	if int32(0) < v19 {
 		goto L6
 	} else {
@@ -439,7 +439,7 @@ L5:
 	goto L3
 L6:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[641]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[640]))
 	v27 = v4
 	v29 = v4
 	v30 = v19
@@ -532,8 +532,8 @@ L17:
 	goto L16
 L18:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, _consts[640]))
-	v50 = *(*int32)(unsafe.Add(mBase, _consts[641]))
+	v48 = *(*int32)(unsafe.Add(mBase, _consts[639]))
+	v50 = *(*int32)(unsafe.Add(mBase, _consts[640]))
 	v51 = v45
 	v53 = v48
 	v54 = v50

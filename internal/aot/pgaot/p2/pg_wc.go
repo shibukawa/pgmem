@@ -32,7 +32,7 @@ func F_pg_wc_islower(m *base.Module, l0 int32) int32 {
 	_ = v59
 	var v74 int32
 	_ = v74
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[587]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[586]))
 	switch v3 - int32(1) {
 	case 0:
 		goto L3
@@ -84,7 +84,7 @@ L9:
 	;
 	v25 = base.I32_div_s(v19+v20, int32(2))
 	v27 = v25 << (uint(int32(3)) % 32)
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[601])))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[600])))
 	if base.Ui32(v30) < base.Ui32(l0) {
 		goto L12
 	} else {
@@ -113,7 +113,7 @@ L13:
 	goto L14
 L14:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[602])))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[601])))
 	if base.Ui32(v36) <= base.Ui32(l0) {
 		goto L15
 	} else {
@@ -191,23 +191,23 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 	_ = v185
 	var v186 int32
 	_ = v186
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[587]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[586]))
 	switch v4 - int32(1) {
 	case 0:
 		if base.Ui32(l0) <= base.Ui32(int32(127)) {
-			v126 = l0<<(uint(int32(2))%32) + int32(1847428)
+			v126 = l0<<(uint(int32(2))%32) + int32(1851524)
 		} else {
 			v27 = int32(0)
 			if base.Ui32(l0) < base.Ui32(int32(1416)) {
 				v114 = l0
-				v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+				v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 				v121 = v119
 			} else {
 				if base.Ui32(l0) <= base.Ui32(int32(43967)) {
 					if base.Ui32(l0) <= base.Ui32(int32(8580)) {
 						if base.Ui32(l0-int32(4256)) <= base.Ui32(int32(95)) {
 							v114 = l0 - int32(2840)
-							v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+							v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 							v121 = v119
 						} else {
 							if base.Ui32(l0) < base.Ui32(int32(5024)) {
@@ -215,14 +215,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 							} else {
 								if base.Ui32(l0) <= base.Ui32(int32(5117)) {
 									v114 = l0 - int32(3512)
-									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 									v121 = v119
 								} else {
 									if base.Ui32(l0) < base.Ui32(int32(7296)) {
 										v121 = v27
 									} else {
 										v114 = l0 - int32(5690)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									}
 								}
@@ -235,14 +235,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 							if base.Ui32(l0) <= base.Ui32(int32(11565)) {
 								if base.Ui32(l0) <= base.Ui32(int32(9449)) {
 									v114 = l0 - int32(6507)
-									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 									v121 = v119
 								} else {
 									if base.Ui32(l0) < base.Ui32(int32(11264)) {
 										v121 = v27
 									} else {
 										v114 = l0 - int32(8321)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									}
 								}
@@ -252,14 +252,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 								} else {
 									if base.Ui32(l0) <= base.Ui32(int32(42998)) {
 										v114 = l0 - int32(39315)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									} else {
 										if base.Ui32(l0) < base.Ui32(int32(43859)) {
 											v121 = v27
 										} else {
 											v114 = l0 - int32(40175)
-											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 											v121 = v119
 										}
 									}
@@ -275,14 +275,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 							if base.Ui32(l0) <= base.Ui32(int32(65370)) {
 								if base.Ui32(l0) <= base.Ui32(int32(64279)) {
 									v114 = l0 - int32(60463)
-									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+									v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 									v121 = v119
 								} else {
 									if base.Ui32(l0) < base.Ui32(int32(65313)) {
 										v121 = v27
 									} else {
 										v114 = l0 - int32(61496)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									}
 								}
@@ -292,14 +292,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 								} else {
 									if base.Ui32(l0) <= base.Ui32(int32(67004)) {
 										v114 = l0 - int32(62685)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									} else {
 										if base.Ui32(l0) < base.Ui32(int32(68736)) {
 											v121 = v27
 										} else {
 											v114 = l0 - int32(64416)
-											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 											v121 = v119
 										}
 									}
@@ -312,14 +312,14 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 								if base.Ui32(l0) <= base.Ui32(int32(93823)) {
 									if base.Ui32(l0) <= base.Ui32(int32(71903)) {
 										v114 = l0 - int32(67258)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									} else {
 										if base.Ui32(l0) < base.Ui32(int32(93760)) {
 											v121 = v27
 										} else {
 											v114 = l0 - int32(89114)
-											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+											v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 											v121 = v119
 										}
 									}
@@ -328,7 +328,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 										v121 = v27
 									} else {
 										v114 = l0 - int32(120474)
-										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[605]))))
+										v119 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v114<<(uint(int32(1))%32))+uint32(_consts[604]))))
 										v121 = v119
 									}
 								}
@@ -337,7 +337,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 					}
 				}
 			}
-			v126 = v121<<(uint(int32(2))%32) + int32(1847424)
+			v126 = v121<<(uint(int32(2))%32) + int32(1851520)
 		}
 		v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)))
 		if v127 != 0 {
@@ -347,7 +347,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 		}
 		return v128
 	case 1:
-		v131 = *(*int32)(unsafe.Add(mBase, _consts[588]))
+		v131 = *(*int32)(unsafe.Add(mBase, _consts[587]))
 		if base.Ui32(int32(127)) < base.Ui32(l0) {
 			v153 = F_casemap(m, l0, int32(1))
 			mBase = m.M
@@ -368,7 +368,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 			}
 		}
 	case 2:
-		v156 = *(*int32)(unsafe.Add(mBase, _consts[588]))
+		v156 = *(*int32)(unsafe.Add(mBase, _consts[587]))
 		if base.Ui32(int32(127)) < base.Ui32(l0) {
 			if base.Ui32(int32(255)) < base.Ui32(l0) {
 				v186 = l0

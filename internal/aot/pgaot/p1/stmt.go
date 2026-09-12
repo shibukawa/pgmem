@@ -591,7 +591,7 @@ func F_free_stmt(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(21), int32(529336))
+	F_errstart_cold(m, int32(21), int32(531744))
 	mBase = m.M
 	v1017 = m.ExcPending
 	if v1017 != 0 {
@@ -2707,7 +2707,7 @@ L294:
 	;
 	v1018 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v1018
-	F_errmsg_internal(m, int32(465757), v10)
+	F_errmsg_internal(m, int32(467944), v10)
 	mBase = m.M
 	v1023 = m.ExcPending
 	if v1023 != 0 {
@@ -2717,7 +2717,7 @@ L294:
 	}
 L295:
 	;
-	F_errfinish(m, int32(475829), int32(595), int32(288898))
+	F_errfinish(m, int32(478160), int32(595), int32(290338))
 	mBase = m.M
 	v1030 = m.ExcPending
 	if v1030 != 0 {

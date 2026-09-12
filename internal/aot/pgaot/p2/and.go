@@ -328,7 +328,7 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 					if v29 != 0 {
 						return v3
 					} else {
-						v31 = *(*int32)(unsafe.Add(mBase, _consts[1087]))
+						v31 = *(*int32)(unsafe.Add(mBase, _consts[1086]))
 						v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
 						if v32 == int32(47) {
 							v36 = F_strlen(m, v31)
@@ -356,13 +356,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 									if v53 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(422499), int32(0))
+										F_errmsg(m, int32(424429), int32(0))
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(479690), int32(84), int32(362622))
+											F_errfinish(m, int32(482071), int32(84), int32(364287))
 											mBase = m.M
 											v62 = m.ExcPending
 											if v62 != 0 {
@@ -389,13 +389,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(422499), int32(0))
+									F_errmsg(m, int32(424429), int32(0))
 									mBase = m.M
 									v57 = m.ExcPending
 									if v57 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(479690), int32(84), int32(362622))
+										F_errfinish(m, int32(482071), int32(84), int32(364287))
 										mBase = m.M
 										v62 = m.ExcPending
 										if v62 != 0 {
@@ -442,13 +442,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 							if v88 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(12319), int32(0))
+								F_errmsg(m, int32(12410), int32(0))
 								mBase = m.M
 								v92 = m.ExcPending
 								if v92 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(479690), int32(89), int32(362622))
+									F_errfinish(m, int32(482071), int32(89), int32(364287))
 									mBase = m.M
 									v97 = m.ExcPending
 									if v97 != 0 {

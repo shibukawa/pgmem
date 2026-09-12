@@ -46,7 +46,7 @@ func F_InitializeMaxBackends(m *base.Module) {
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[299]))
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[315]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[314]))
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[1113]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[1114]))
 	v20 = v9 + (v11 + (v13 + v15)) + int32(2)
 	*(*int32)(unsafe.Add(mBase, _consts[102])) = v20
 	if base.Ui32(int32(262144)) <= base.Ui32(v20) {
@@ -62,7 +62,7 @@ func F_InitializeMaxBackends(m *base.Module) {
 			if v30 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(432896), int32(0))
+				F_errmsg(m, int32(434826), int32(0))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
@@ -71,19 +71,19 @@ func F_InitializeMaxBackends(m *base.Module) {
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(262142)
 					v38 = *(*int32)(unsafe.Add(mBase, _consts[314]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v38
-					v41 = *(*int32)(unsafe.Add(mBase, _consts[1113]))
+					v41 = *(*int32)(unsafe.Add(mBase, _consts[1114]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v41
 					v44 = *(*int32)(unsafe.Add(mBase, _consts[315]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v44
 					v47 = *(*int32)(unsafe.Add(mBase, _consts[299]))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = v47
-					F_errdetail(m, int32(617008), v5)
+					F_errdetail(m, int32(619714), v5)
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(474103), int32(570), int32(164465))
+						F_errfinish(m, int32(476434), int32(570), int32(165584))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -121,13 +121,13 @@ func F_MaxLivePostmasterChildren(m *base.Module) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(99037), int32(0))
+			F_errmsg_internal(m, int32(99969), int32(0))
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(480398), int32(73), int32(269723))
+				F_errfinish(m, int32(482779), int32(73), int32(271147))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {

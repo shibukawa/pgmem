@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5726)
-	m.G0 = int32(13014800)
+	m.T0 = make([]any, 5886)
+	m.G0 = int32(13020496)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -40,15 +40,17 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
+	InitElemSeg_3_4(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
+	InitElemSeg_4_4(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4343899
+	m.DataEnd = 4349595
 	initData_0(m)
 	return m
 }
@@ -81,8 +83,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5726)
-	m.G0 = int32(13014800)
+	m.T0 = make([]any, 5886)
+	m.G0 = int32(13020496)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -99,15 +101,17 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
+	InitElemSeg_3_4(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
+	InitElemSeg_4_4(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4343899
+	m.DataEnd = 4349595
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -122,8 +126,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5726)
-	m.G0 = int32(13014800)
+	m.T0 = make([]any, 5886)
+	m.G0 = int32(13020496)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -140,26 +144,28 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
+	InitElemSeg_3_4(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
+	InitElemSeg_4_4(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4343899
+	m.DataEnd = 4349595
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1571136])
-	copy(m.Memory[1576464:], wasm2goData_data_bin[1571136:1571145])
-	copy(m.Memory[1578512:], wasm2goData_data_bin[1571145:1584073])
-	copy(m.Memory[1601540:], wasm2goData_data_bin[1584073:1677314])
-	copy(m.Memory[1695808:], wasm2goData_data_bin[1677314:1788970])
-	copy(m.Memory[1818680:], wasm2goData_data_bin[1788970:4031136])
-	copy(m.Memory[4068336:], wasm2goData_data_bin[4031136:4306699])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1574032])
+	copy(m.Memory[1579360:], wasm2goData_data_bin[1574032:1574041])
+	copy(m.Memory[1581408:], wasm2goData_data_bin[1574041:1586969])
+	copy(m.Memory[1605636:], wasm2goData_data_bin[1586969:1680210])
+	copy(m.Memory[1699904:], wasm2goData_data_bin[1680210:1791866])
+	copy(m.Memory[1822776:], wasm2goData_data_bin[1791866:4035568])
+	copy(m.Memory[4073968:], wasm2goData_data_bin[4035568:4311195])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -1861,6 +1867,441 @@ func Svals(m *base.Module, l0 int32) int32 {
 }
 func Tconvert(m *base.Module, l0 int32) int32 {
 	return F_tconvert(m, l0)
+}
+func PgMagicFuncLtree(m *base.Module) int32 {
+	return F_Pg_magic_func_ltree(m)
+}
+func Lca(m *base.Module, l0 int32) int32 {
+	return F__lca(m, l0)
+}
+func LtQRegex(m *base.Module, l0 int32) int32 {
+	return F__lt_q_regex(m, l0)
+}
+func LtQRregex(m *base.Module, l0 int32) int32 {
+	return F__lt_q_rregex(m, l0)
+}
+func LtqExtractRegex(m *base.Module, l0 int32) int32 {
+	return F__ltq_extract_regex(m, l0)
+}
+func LtqRegex(m *base.Module, l0 int32) int32 {
+	return F__ltq_regex(m, l0)
+}
+func LtqRregex(m *base.Module, l0 int32) int32 {
+	return F__ltq_rregex(m, l0)
+}
+func LtreeCompress(m *base.Module, l0 int32) int32 {
+	return F__ltree_compress(m, l0)
+}
+func LtreeConsistent(m *base.Module, l0 int32) int32 {
+	return F__ltree_consistent(m, l0)
+}
+func LtreeExtractIsparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_extract_isparent(m, l0)
+}
+func LtreeExtractRisparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_extract_risparent(m, l0)
+}
+func LtreeGistOptions(m *base.Module, l0 int32) int32 {
+	return F__ltree_gist_options(m, l0)
+}
+func LtreeIsparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_isparent(m, l0)
+}
+func LtreePenalty(m *base.Module, l0 int32) int32 {
+	return F__ltree_penalty(m, l0)
+}
+func LtreePicksplit(m *base.Module, l0 int32) int32 {
+	return F__ltree_picksplit(m, l0)
+}
+func LtreeRIsparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_r_isparent(m, l0)
+}
+func LtreeRRisparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_r_risparent(m, l0)
+}
+func LtreeRisparent(m *base.Module, l0 int32) int32 {
+	return F__ltree_risparent(m, l0)
+}
+func LtreeSame(m *base.Module, l0 int32) int32 {
+	return F__ltree_same(m, l0)
+}
+func LtreeUnion(m *base.Module, l0 int32) int32 {
+	return F__ltree_union(m, l0)
+}
+func LtxtqExec(m *base.Module, l0 int32) int32 {
+	return F__ltxtq_exec(m, l0)
+}
+func LtxtqExtractExec(m *base.Module, l0 int32) int32 {
+	return F__ltxtq_extract_exec(m, l0)
+}
+func LtxtqRexec(m *base.Module, l0 int32) int32 {
+	return F__ltxtq_rexec(m, l0)
+}
+func HashLtree(m *base.Module, l0 int32) int32 {
+	return F_hash_ltree(m, l0)
+}
+func HashLtreeExtended(m *base.Module, l0 int32) int32 {
+	return F_hash_ltree_extended(m, l0)
+}
+func Lca_lca(m *base.Module, l0 int32) int32 {
+	return F_lca(m, l0)
+}
+func LqueryIn(m *base.Module, l0 int32) int32 {
+	return F_lquery_in(m, l0)
+}
+func LqueryOut(m *base.Module, l0 int32) int32 {
+	return F_lquery_out(m, l0)
+}
+func LqueryRecv(m *base.Module, l0 int32) int32 {
+	return F_lquery_recv(m, l0)
+}
+func LquerySend(m *base.Module, l0 int32) int32 {
+	return F_lquery_send(m, l0)
+}
+func LtQRegex_lt_q_regex(m *base.Module, l0 int32) int32 {
+	return F_lt_q_regex(m, l0)
+}
+func LtQRregex_lt_q_rregex(m *base.Module, l0 int32) int32 {
+	return F_lt_q_rregex(m, l0)
+}
+func LtqRegex_ltq_regex(m *base.Module, l0 int32) int32 {
+	return F_ltq_regex(m, l0)
+}
+func LtqRregex_ltq_rregex(m *base.Module, l0 int32) int32 {
+	return F_ltq_rregex(m, l0)
+}
+func Ltree2text(m *base.Module, l0 int32) int32 {
+	return F_ltree2text(m, l0)
+}
+func LtreeAddltree(m *base.Module, l0 int32) int32 {
+	return F_ltree_addltree(m, l0)
+}
+func LtreeAddtext(m *base.Module, l0 int32) int32 {
+	return F_ltree_addtext(m, l0)
+}
+func LtreeCmp(m *base.Module, l0 int32) int32 {
+	return F_ltree_cmp(m, l0)
+}
+func LtreeCompress_ltree_compress(m *base.Module, l0 int32) int32 {
+	return F_ltree_compress(m, l0)
+}
+func LtreeConsistent_ltree_consistent(m *base.Module, l0 int32) int32 {
+	return F_ltree_consistent(m, l0)
+}
+func LtreeDecompress(m *base.Module, l0 int32) int32 {
+	return F_gtsvector_decompress(m, l0)
+}
+func LtreeEq(m *base.Module, l0 int32) int32 {
+	return F_ltree_eq(m, l0)
+}
+func LtreeGe(m *base.Module, l0 int32) int32 {
+	return F_ltree_ge(m, l0)
+}
+func LtreeGistIn(m *base.Module, l0 int32) int32 {
+	return F_ltree_gist_in(m, l0)
+}
+func LtreeGistOptions_ltree_gist_options(m *base.Module, l0 int32) int32 {
+	return F_ltree_gist_options(m, l0)
+}
+func LtreeGistOut(m *base.Module, l0 int32) int32 {
+	return F_ltree_gist_out(m, l0)
+}
+func LtreeGt(m *base.Module, l0 int32) int32 {
+	return F_ltree_gt(m, l0)
+}
+func LtreeIn(m *base.Module, l0 int32) int32 {
+	return F_ltree_in(m, l0)
+}
+func LtreeIndex(m *base.Module, l0 int32) int32 {
+	return F_ltree_index(m, l0)
+}
+func LtreeIsparent_ltree_isparent(m *base.Module, l0 int32) int32 {
+	return F_ltree_isparent(m, l0)
+}
+func LtreeLe(m *base.Module, l0 int32) int32 {
+	return F_ltree_le(m, l0)
+}
+func LtreeLt(m *base.Module, l0 int32) int32 {
+	return F_ltree_lt(m, l0)
+}
+func LtreeNe(m *base.Module, l0 int32) int32 {
+	return F_ltree_ne(m, l0)
+}
+func LtreeOut(m *base.Module, l0 int32) int32 {
+	return F_ltree_out(m, l0)
+}
+func LtreePenalty_ltree_penalty(m *base.Module, l0 int32) int32 {
+	return F_ltree_penalty(m, l0)
+}
+func LtreePicksplit_ltree_picksplit(m *base.Module, l0 int32) int32 {
+	return F_ltree_picksplit(m, l0)
+}
+func LtreeRecv(m *base.Module, l0 int32) int32 {
+	return F_ltree_recv(m, l0)
+}
+func LtreeRisparent_ltree_risparent(m *base.Module, l0 int32) int32 {
+	return F_ltree_risparent(m, l0)
+}
+func LtreeSame_ltree_same(m *base.Module, l0 int32) int32 {
+	return F_ltree_same(m, l0)
+}
+func LtreeSend(m *base.Module, l0 int32) int32 {
+	return F_ltree_send(m, l0)
+}
+func LtreeTextadd(m *base.Module, l0 int32) int32 {
+	return F_ltree_textadd(m, l0)
+}
+func LtreeUnion_ltree_union(m *base.Module, l0 int32) int32 {
+	return F_ltree_union(m, l0)
+}
+func Ltreeparentsel(m *base.Module, l0 int32) int32 {
+	return F_ltreeparentsel(m, l0)
+}
+func LtxtqExec_ltxtq_exec(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_exec(m, l0)
+}
+func LtxtqIn(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_in(m, l0)
+}
+func LtxtqOut(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_out(m, l0)
+}
+func LtxtqRecv(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_recv(m, l0)
+}
+func LtxtqRexec_ltxtq_rexec(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_rexec(m, l0)
+}
+func LtxtqSend(m *base.Module, l0 int32) int32 {
+	return F_ltxtq_send(m, l0)
+}
+func Nlevel(m *base.Module, l0 int32) int32 {
+	return F_nlevel(m, l0)
+}
+func PgFinfoLca(m *base.Module) int32 {
+	return F_pg_finfo__lca(m)
+}
+func PgFinfoLtQRegex(m *base.Module) int32 {
+	return F_pg_finfo__lt_q_regex(m)
+}
+func PgFinfoLtQRregex(m *base.Module) int32 {
+	return F_pg_finfo__lt_q_rregex(m)
+}
+func PgFinfoLtqExtractRegex(m *base.Module) int32 {
+	return F_pg_finfo__ltq_extract_regex(m)
+}
+func PgFinfoLtqRegex(m *base.Module) int32 {
+	return F_pg_finfo__ltq_regex(m)
+}
+func PgFinfoLtqRregex(m *base.Module) int32 {
+	return F_pg_finfo__ltq_rregex(m)
+}
+func PgFinfoLtreeCompress(m *base.Module) int32 {
+	return F_pg_finfo__ltree_compress(m)
+}
+func PgFinfoLtreeConsistent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_consistent(m)
+}
+func PgFinfoLtreeExtractIsparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_extract_isparent(m)
+}
+func PgFinfoLtreeExtractRisparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_extract_risparent(m)
+}
+func PgFinfoLtreeGistOptions(m *base.Module) int32 {
+	return F_pg_finfo__ltree_gist_options(m)
+}
+func PgFinfoLtreeIsparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_isparent(m)
+}
+func PgFinfoLtreePenalty(m *base.Module) int32 {
+	return F_pg_finfo__ltree_penalty(m)
+}
+func PgFinfoLtreePicksplit(m *base.Module) int32 {
+	return F_pg_finfo__ltree_picksplit(m)
+}
+func PgFinfoLtreeRIsparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_r_isparent(m)
+}
+func PgFinfoLtreeRRisparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_r_risparent(m)
+}
+func PgFinfoLtreeRisparent(m *base.Module) int32 {
+	return F_pg_finfo__ltree_risparent(m)
+}
+func PgFinfoLtreeSame(m *base.Module) int32 {
+	return F_pg_finfo__ltree_same(m)
+}
+func PgFinfoLtreeUnion(m *base.Module) int32 {
+	return F_pg_finfo__ltree_union(m)
+}
+func PgFinfoLtxtqExec(m *base.Module) int32 {
+	return F_pg_finfo__ltxtq_exec(m)
+}
+func PgFinfoLtxtqExtractExec(m *base.Module) int32 {
+	return F_pg_finfo__ltxtq_extract_exec(m)
+}
+func PgFinfoLtxtqRexec(m *base.Module) int32 {
+	return F_pg_finfo__ltxtq_rexec(m)
+}
+func PgFinfoHashLtree(m *base.Module) int32 {
+	return F_pg_finfo_hash_ltree(m)
+}
+func PgFinfoHashLtreeExtended(m *base.Module) int32 {
+	return F_pg_finfo_hash_ltree_extended(m)
+}
+func PgFinfoLca_pg_finfo_lca(m *base.Module) int32 {
+	return F_pg_finfo_lca(m)
+}
+func PgFinfoLqueryIn(m *base.Module) int32 {
+	return F_pg_finfo_lquery_in(m)
+}
+func PgFinfoLqueryOut(m *base.Module) int32 {
+	return F_pg_finfo_lquery_out(m)
+}
+func PgFinfoLqueryRecv(m *base.Module) int32 {
+	return F_pg_finfo_lquery_recv(m)
+}
+func PgFinfoLquerySend(m *base.Module) int32 {
+	return F_pg_finfo_lquery_send(m)
+}
+func PgFinfoLtQRegex_pg_finfo_lt_q_regex(m *base.Module) int32 {
+	return F_pg_finfo_lt_q_regex(m)
+}
+func PgFinfoLtQRregex_pg_finfo_lt_q_rregex(m *base.Module) int32 {
+	return F_pg_finfo_lt_q_rregex(m)
+}
+func PgFinfoLtqRegex_pg_finfo_ltq_regex(m *base.Module) int32 {
+	return F_pg_finfo_ltq_regex(m)
+}
+func PgFinfoLtqRregex_pg_finfo_ltq_rregex(m *base.Module) int32 {
+	return F_pg_finfo_ltq_rregex(m)
+}
+func PgFinfoLtree2text(m *base.Module) int32 {
+	return F_pg_finfo_ltree2text(m)
+}
+func PgFinfoLtreeAddltree(m *base.Module) int32 {
+	return F_pg_finfo_ltree_addltree(m)
+}
+func PgFinfoLtreeAddtext(m *base.Module) int32 {
+	return F_pg_finfo_ltree_addtext(m)
+}
+func PgFinfoLtreeCmp(m *base.Module) int32 {
+	return F_pg_finfo_ltree_cmp(m)
+}
+func PgFinfoLtreeCompress_pg_finfo_ltree_compress(m *base.Module) int32 {
+	return F_pg_finfo_ltree_compress(m)
+}
+func PgFinfoLtreeConsistent_pg_finfo_ltree_consistent(m *base.Module) int32 {
+	return F_pg_finfo_ltree_consistent(m)
+}
+func PgFinfoLtreeDecompress(m *base.Module) int32 {
+	return F_pg_finfo_ltree_decompress(m)
+}
+func PgFinfoLtreeEq(m *base.Module) int32 {
+	return F_pg_finfo_ltree_eq(m)
+}
+func PgFinfoLtreeGe(m *base.Module) int32 {
+	return F_pg_finfo_ltree_ge(m)
+}
+func PgFinfoLtreeGistIn(m *base.Module) int32 {
+	return F_pg_finfo_ltree_gist_in(m)
+}
+func PgFinfoLtreeGistOptions_pg_finfo_ltree_gist_options(m *base.Module) int32 {
+	return F_pg_finfo_ltree_gist_options(m)
+}
+func PgFinfoLtreeGistOut(m *base.Module) int32 {
+	return F_pg_finfo_ltree_gist_out(m)
+}
+func PgFinfoLtreeGt(m *base.Module) int32 {
+	return F_pg_finfo_ltree_gt(m)
+}
+func PgFinfoLtreeIn(m *base.Module) int32 {
+	return F_pg_finfo_ltree_in(m)
+}
+func PgFinfoLtreeIndex(m *base.Module) int32 {
+	return F_pg_finfo_ltree_index(m)
+}
+func PgFinfoLtreeIsparent_pg_finfo_ltree_isparent(m *base.Module) int32 {
+	return F_pg_finfo_ltree_isparent(m)
+}
+func PgFinfoLtreeLe(m *base.Module) int32 {
+	return F_pg_finfo_ltree_le(m)
+}
+func PgFinfoLtreeLt(m *base.Module) int32 {
+	return F_pg_finfo_ltree_lt(m)
+}
+func PgFinfoLtreeNe(m *base.Module) int32 {
+	return F_pg_finfo_ltree_ne(m)
+}
+func PgFinfoLtreeOut(m *base.Module) int32 {
+	return F_pg_finfo_ltree_out(m)
+}
+func PgFinfoLtreePenalty_pg_finfo_ltree_penalty(m *base.Module) int32 {
+	return F_pg_finfo_ltree_penalty(m)
+}
+func PgFinfoLtreePicksplit_pg_finfo_ltree_picksplit(m *base.Module) int32 {
+	return F_pg_finfo_ltree_picksplit(m)
+}
+func PgFinfoLtreeRecv(m *base.Module) int32 {
+	return F_pg_finfo_ltree_recv(m)
+}
+func PgFinfoLtreeRisparent_pg_finfo_ltree_risparent(m *base.Module) int32 {
+	return F_pg_finfo_ltree_risparent(m)
+}
+func PgFinfoLtreeSame_pg_finfo_ltree_same(m *base.Module) int32 {
+	return F_pg_finfo_ltree_same(m)
+}
+func PgFinfoLtreeSend(m *base.Module) int32 {
+	return F_pg_finfo_ltree_send(m)
+}
+func PgFinfoLtreeTextadd(m *base.Module) int32 {
+	return F_pg_finfo_ltree_textadd(m)
+}
+func PgFinfoLtreeUnion_pg_finfo_ltree_union(m *base.Module) int32 {
+	return F_pg_finfo_ltree_union(m)
+}
+func PgFinfoLtreeparentsel(m *base.Module) int32 {
+	return F_pg_finfo_ltreeparentsel(m)
+}
+func PgFinfoLtxtqExec_pg_finfo_ltxtq_exec(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_exec(m)
+}
+func PgFinfoLtxtqIn(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_in(m)
+}
+func PgFinfoLtxtqOut(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_out(m)
+}
+func PgFinfoLtxtqRecv(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_recv(m)
+}
+func PgFinfoLtxtqRexec_pg_finfo_ltxtq_rexec(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_rexec(m)
+}
+func PgFinfoLtxtqSend(m *base.Module) int32 {
+	return F_pg_finfo_ltxtq_send(m)
+}
+func PgFinfoNlevel(m *base.Module) int32 {
+	return F_pg_finfo_nlevel(m)
+}
+func PgFinfoSubltree(m *base.Module) int32 {
+	return F_pg_finfo_subltree(m)
+}
+func PgFinfoSubpath(m *base.Module) int32 {
+	return F_pg_finfo_subpath(m)
+}
+func PgFinfoText2ltree(m *base.Module) int32 {
+	return F_pg_finfo_text2ltree(m)
+}
+func Subltree(m *base.Module, l0 int32) int32 {
+	return F_subltree(m, l0)
+}
+func Subpath(m *base.Module, l0 int32) int32 {
+	return F_subpath(m, l0)
+}
+func Text2ltree(m *base.Module, l0 int32) int32 {
+	return F_text2ltree(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

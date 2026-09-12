@@ -23,17 +23,17 @@ func F_XmlTableSetColumnFilter(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		if v10 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(348747), int32(0))
+			F_errmsg(m, int32(350339), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return
 			} else {
-				F_errdetail(m, int32(542794), int32(0))
+				F_errdetail(m, int32(545215), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(478114), int32(4871), int32(206754))
+					F_errfinish(m, int32(480495), int32(4871), int32(207994))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return
@@ -68,17 +68,17 @@ func F_xml_in(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(348747), int32(0))
+			F_errmsg(m, int32(350339), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(542794), int32(0))
+				F_errdetail(m, int32(545215), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(478114), int32(295), int32(267874))
+					F_errfinish(m, int32(480495), int32(295), int32(269280))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -113,17 +113,17 @@ func F_xml_is_well_formed_content(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(348747), int32(0))
+			F_errmsg(m, int32(350339), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(542794), int32(0))
+				F_errdetail(m, int32(545215), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(478114), int32(4641), int32(88530))
+					F_errfinish(m, int32(480495), int32(4641), int32(89138))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

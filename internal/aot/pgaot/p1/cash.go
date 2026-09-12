@@ -43,12 +43,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 					if v54 != 0 {
 						return int64(0)
 					} else {
-						F_errmsg(m, int32(386152), int32(0))
+						F_errmsg(m, int32(387858), int32(0))
 						v58 = m.ExcPending
 						if v58 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(478678), int32(124), int32(528272))
+							F_errfinish(m, int32(481059), int32(124), int32(530680))
 							v63 = m.ExcPending
 							if v63 != 0 {
 								return int64(0)
@@ -72,12 +72,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 						if v54 != 0 {
 							return int64(0)
 						} else {
-							F_errmsg(m, int32(386152), int32(0))
+							F_errmsg(m, int32(387858), int32(0))
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(478678), int32(124), int32(528272))
+								F_errfinish(m, int32(481059), int32(124), int32(530680))
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int64(0)
@@ -101,12 +101,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 							if v54 != 0 {
 								return int64(0)
 							} else {
-								F_errmsg(m, int32(386152), int32(0))
+								F_errmsg(m, int32(387858), int32(0))
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(478678), int32(124), int32(528272))
+									F_errfinish(m, int32(481059), int32(124), int32(530680))
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int64(0)
@@ -142,12 +142,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 						if v54 != 0 {
 							return int64(0)
 						} else {
-							F_errmsg(m, int32(386152), int32(0))
+							F_errmsg(m, int32(387858), int32(0))
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(478678), int32(124), int32(528272))
+								F_errfinish(m, int32(481059), int32(124), int32(530680))
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int64(0)
@@ -171,12 +171,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 							if v54 != 0 {
 								return int64(0)
 							} else {
-								F_errmsg(m, int32(386152), int32(0))
+								F_errmsg(m, int32(387858), int32(0))
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(478678), int32(124), int32(528272))
+									F_errfinish(m, int32(481059), int32(124), int32(530680))
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int64(0)
@@ -200,12 +200,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 								if v54 != 0 {
 									return int64(0)
 								} else {
-									F_errmsg(m, int32(386152), int32(0))
+									F_errmsg(m, int32(387858), int32(0))
 									v58 = m.ExcPending
 									if v58 != 0 {
 										return int64(0)
 									} else {
-										F_errfinish(m, int32(478678), int32(124), int32(528272))
+										F_errfinish(m, int32(481059), int32(124), int32(530680))
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int64(0)
@@ -251,12 +251,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 							if v54 != 0 {
 								return int64(0)
 							} else {
-								F_errmsg(m, int32(386152), int32(0))
+								F_errmsg(m, int32(387858), int32(0))
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(478678), int32(124), int32(528272))
+									F_errfinish(m, int32(481059), int32(124), int32(530680))
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int64(0)
@@ -280,12 +280,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 								if v54 != 0 {
 									return int64(0)
 								} else {
-									F_errmsg(m, int32(386152), int32(0))
+									F_errmsg(m, int32(387858), int32(0))
 									v58 = m.ExcPending
 									if v58 != 0 {
 										return int64(0)
 									} else {
-										F_errfinish(m, int32(478678), int32(124), int32(528272))
+										F_errfinish(m, int32(481059), int32(124), int32(530680))
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int64(0)
@@ -309,12 +309,12 @@ func F_cash_mul_float8(m *base.Module, l0 int64, l1 float64) int64 {
 									if v54 != 0 {
 										return int64(0)
 									} else {
-										F_errmsg(m, int32(386152), int32(0))
+										F_errmsg(m, int32(387858), int32(0))
 										v58 = m.ExcPending
 										if v58 != 0 {
 											return int64(0)
 										} else {
-											F_errfinish(m, int32(478678), int32(124), int32(528272))
+											F_errfinish(m, int32(481059), int32(124), int32(530680))
 											v63 = m.ExcPending
 											if v63 != 0 {
 												return int64(0)

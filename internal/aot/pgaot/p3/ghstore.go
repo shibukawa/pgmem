@@ -469,11 +469,11 @@ L32:
 	v133 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118))))
 	v135 = int32(255)
 	v137 = int32(2)
-	v140 = *(*int32)(unsafe.Add(mBase, uint32((v133^v119)&v135<<(uint(v137)%32))+uint32(_consts[1046])))
+	v140 = *(*int32)(unsafe.Add(mBase, uint32((v133^v119)&v135<<(uint(v137)%32))+uint32(_consts[1047])))
 	v141 = int32(8)
 	v143 = v140 ^ int32(base.Ui32(v119)>>(uint(v141)%32))
 	v144 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118)+1)))
-	v151 = *(*int32)(unsafe.Add(mBase, uint32((v143^v144)&v135<<(uint(v137)%32))+uint32(_consts[1046])))
+	v151 = *(*int32)(unsafe.Add(mBase, uint32((v143^v144)&v135<<(uint(v137)%32))+uint32(_consts[1047])))
 	v154 = v151 ^ int32(base.Ui32(v143)>>(uint(v141)%32))
 	v156 = v118 + v137
 	v158 = v120 + v137
@@ -496,7 +496,7 @@ L34:
 L35:
 	;
 	v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v160))))
-	v182 = *(*int32)(unsafe.Add(mBase, uint32((v161^v174)&int32(255)<<(uint(int32(2))%32))+uint32(_consts[1046])))
+	v182 = *(*int32)(unsafe.Add(mBase, uint32((v161^v174)&int32(255)<<(uint(int32(2))%32))+uint32(_consts[1047])))
 	v186 = v182 ^ int32(base.Ui32(v161)>>(uint(int32(8))%32))
 	goto L37
 L36:
@@ -592,11 +592,11 @@ L51:
 	v263 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v248))))
 	v265 = int32(255)
 	v267 = int32(2)
-	v270 = *(*int32)(unsafe.Add(mBase, uint32((v263^v249)&v265<<(uint(v267)%32))+uint32(_consts[1046])))
+	v270 = *(*int32)(unsafe.Add(mBase, uint32((v263^v249)&v265<<(uint(v267)%32))+uint32(_consts[1047])))
 	v271 = int32(8)
 	v273 = v270 ^ int32(base.Ui32(v249)>>(uint(v271)%32))
 	v274 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v248)+1)))
-	v281 = *(*int32)(unsafe.Add(mBase, uint32((v273^v274)&v265<<(uint(v267)%32))+uint32(_consts[1046])))
+	v281 = *(*int32)(unsafe.Add(mBase, uint32((v273^v274)&v265<<(uint(v267)%32))+uint32(_consts[1047])))
 	v284 = v281 ^ int32(base.Ui32(v273)>>(uint(v271)%32))
 	v286 = v248 + v267
 	v288 = v250 + v267
@@ -619,7 +619,7 @@ L53:
 L54:
 	;
 	v304 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v290))))
-	v312 = *(*int32)(unsafe.Add(mBase, uint32((v291^v304)&int32(255)<<(uint(int32(2))%32))+uint32(_consts[1046])))
+	v312 = *(*int32)(unsafe.Add(mBase, uint32((v291^v304)&int32(255)<<(uint(int32(2))%32))+uint32(_consts[1047])))
 	v316 = v312 ^ int32(base.Ui32(v291)>>(uint(int32(8))%32))
 	goto L56
 L55:
@@ -718,7 +718,7 @@ func F_ghstore_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_int_reloption(m, v2, int32(270172), int32(150952), int32(16), int32(1), int32(2024))
+	F_add_local_int_reloption(m, v2, int32(271596), int32(152071), int32(16), int32(1), int32(2024))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
