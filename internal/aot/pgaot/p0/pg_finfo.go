@@ -293,6 +293,9 @@ func F_pg_finfo_subpath(m *base.Module) int32 {
 func F_pg_finfo_tconvert(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_tconvert_0)
 }
+func F_pg_finfo_unaccent_lexize(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_unaccent_lexize_0)
+}
 func F_pg_finfo_utf8_to_euc_cn(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_cn_0)
 }

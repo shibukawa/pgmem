@@ -11,6 +11,9 @@ func F_Pg_magic_func_euc_tw_and_big5(m *base.Module) int32 {
 func F_Pg_magic_func_plpgsql(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_plpgsql_0)
 }
+func F_Pg_magic_func_unaccent(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_unaccent_0)
+}
 func F_Pg_magic_func_utf8_and_cyrillic(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_utf8_and_cyrillic_0)
 }

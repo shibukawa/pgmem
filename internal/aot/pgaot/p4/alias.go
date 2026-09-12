@@ -2456,10 +2456,18 @@ func F_UtilityTupleDescriptor(m *base.Module, l0 int32) int32
 func F_getNextFlagFromString(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_t_isalnum_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_t_isalnum_cstr
 func F_t_isalnum_cstr(m *base.Module, l0 int32) int32
+//go:linkname F_tsearch_readline_begin github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_tsearch_readline_begin
+func F_tsearch_readline_begin(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_tsearch_readline github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_tsearch_readline
+func F_tsearch_readline(m *base.Module, l0 int32) int32
+//go:linkname F_tsearch_readline_end github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tsearch_readline_end
+func F_tsearch_readline_end(m *base.Module, l0 int32)
 //go:linkname F_LexizeExec github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_LexizeExec
 func F_LexizeExec(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_addHLParsedLex github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_addHLParsedLex
 func F_addHLParsedLex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_get_tsearch_config_filename github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_get_tsearch_config_filename
+func F_get_tsearch_config_filename(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_prs_setup_firstcall github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_prs_setup_firstcall
 func F_prs_setup_firstcall(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_prs_process_call github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_prs_process_call
@@ -3176,6 +3184,8 @@ func F_op_strict(m *base.Module, l0 int32) int32
 func F_func_volatile(m *base.Module, l0 int32) int32
 //go:linkname F_get_func_name github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_func_name
 func F_get_func_name(m *base.Module, l0 int32) int32
+//go:linkname F_get_func_namespace github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_get_func_namespace
+func F_get_func_namespace(m *base.Module, l0 int32) int32
 //go:linkname F_get_func_rettype github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_func_rettype
 func F_get_func_rettype(m *base.Module, l0 int32) int32
 //go:linkname F_get_func_retset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_func_retset
@@ -3378,6 +3388,8 @@ func F_geterrcode(m *base.Module) int32
 func F_geterrposition(m *base.Module) int32
 //go:linkname F_format_elog_string github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_format_elog_string
 func F_format_elog_string(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_CopyErrorData github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_CopyErrorData
+func F_CopyErrorData(m *base.Module) int32
 //go:linkname F_FlushErrorState github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_FlushErrorState
 func F_FlushErrorState(m *base.Module)
 //go:linkname F_ThrowErrorData github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ThrowErrorData
@@ -4058,6 +4070,8 @@ func F_gbt_num_distance(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_gin_btree_extract_query github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_btree_extract_query
 func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_placeChar github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_placeChar
+func F_placeChar(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

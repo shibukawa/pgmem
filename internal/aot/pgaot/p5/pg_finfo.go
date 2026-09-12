@@ -308,6 +308,9 @@ func F_pg_finfo_subltree(m *base.Module) int32 {
 func F_pg_finfo_time_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_time_dist_0)
 }
+func F_pg_finfo_unaccent_dict(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_unaccent_dict_0)
+}
 func F_pg_finfo_utf8_to_uhc(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_uhc_0)
 }

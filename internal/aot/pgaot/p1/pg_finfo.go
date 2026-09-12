@@ -266,6 +266,9 @@ func F_pg_finfo_tstz_dist(m *base.Module) int32 {
 func F_pg_finfo_uhc_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_uhc_to_utf8_0)
 }
+func F_pg_finfo_unaccent_init(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_unaccent_init_0)
+}
 func F_pg_finfo_utf8_to_euc_jp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_jp_0)
 }

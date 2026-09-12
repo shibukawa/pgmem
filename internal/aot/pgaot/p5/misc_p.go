@@ -14238,6 +14238,194 @@ func F_pktreader_free(m *base.Module, l0 int32) {
 		return
 	}
 }
+func F_placeChar(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v30 int32
+	_ = v30
+	var v36 int32
+	_ = v36
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	if l0 == int32(0) {
+		v10 = F_palloc0(m, int32(3072))
+		mBase = m.M
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			v14 = v10
+			v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+			v18 = v14 + v15*int32(12)
+			if l2 <= int32(1) {
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+				if v21 != 0 {
+					v24 = F_errstart(m, int32(19), int32(0))
+					mBase = m.M
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return int32(0)
+					} else {
+						if v24 == int32(0) {
+							return v14
+						} else {
+							F_errcode(m, int32(22))
+							mBase = m.M
+							v30 = m.ExcPending
+							if v30 != 0 {
+								return int32(0)
+							} else {
+								F_errmsg(m, int32(_a_F_placeChar_0), int32(0))
+								mBase = m.M
+								v36 = m.ExcPending
+								if v36 != 0 {
+									return int32(0)
+								} else {
+									F_errfinish(m, int32(_a_F_placeChar_1), int32(74), int32(_a_F_placeChar_2))
+									mBase = m.M
+									v43 = m.ExcPending
+									if v43 != 0 {
+										return int32(0)
+									} else {
+										return v14
+									}
+								}
+							}
+						}
+					}
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = l4
+					v46 = F_palloc(m, l4)
+					mBase = m.M
+					v47 = m.ExcPending
+					if v47 != 0 {
+						return int32(0)
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v46
+						if l4 != 0 {
+							v49 = F__emscripten_memcpy_bulkmem(m, v46, l3, l4)
+							mBase = m.M
+						} else {
+						}
+						return v14
+					}
+				}
+			} else {
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
+				v54 = int32(1)
+				v58 = F_placeChar(m, v53, l1+v54, l2-v54, l3, l4)
+				mBase = m.M
+				v59 = m.ExcPending
+				if v59 != 0 {
+					return int32(0)
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v18))) = v58
+					return v14
+				}
+			}
+		}
+	} else {
+		v14 = l0
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+		v18 = v14 + v15*int32(12)
+		if l2 <= int32(1) {
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+			if v21 != 0 {
+				v24 = F_errstart(m, int32(19), int32(0))
+				mBase = m.M
+				v25 = m.ExcPending
+				if v25 != 0 {
+					return int32(0)
+				} else {
+					if v24 == int32(0) {
+						return v14
+					} else {
+						F_errcode(m, int32(22))
+						mBase = m.M
+						v30 = m.ExcPending
+						if v30 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_placeChar_0), int32(0))
+							mBase = m.M
+							v36 = m.ExcPending
+							if v36 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_placeChar_1), int32(74), int32(_a_F_placeChar_2))
+								mBase = m.M
+								v43 = m.ExcPending
+								if v43 != 0 {
+									return int32(0)
+								} else {
+									return v14
+								}
+							}
+						}
+					}
+				}
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = l4
+				v46 = F_palloc(m, l4)
+				mBase = m.M
+				v47 = m.ExcPending
+				if v47 != 0 {
+					return int32(0)
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v46
+					if l4 != 0 {
+						v49 = F__emscripten_memcpy_bulkmem(m, v46, l3, l4)
+						mBase = m.M
+					} else {
+					}
+					return v14
+				}
+			}
+		} else {
+			v53 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
+			v54 = int32(1)
+			v58 = F_placeChar(m, v53, l1+v54, l2-v54, l3, l4)
+			mBase = m.M
+			v59 = m.ExcPending
+			if v59 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v18))) = v58
+				return v14
+			}
+		}
+	}
+}
 func F_points_box(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

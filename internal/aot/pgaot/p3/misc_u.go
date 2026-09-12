@@ -1288,6 +1288,336 @@ func F_umask(m *base.Module, l0 int32) int32 {
 	}
 	return v14
 }
+func F_unaccent_lexize(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v68 int32
+	_ = v68
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
+	var v83 int32
+	_ = v83
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v106 int32
+	_ = v106
+	var v114 int32
+	_ = v114
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v128 int32
+	_ = v128
+	v2 = int32(0)
+	v12 = m.G0
+	v14 = v12 - int32(16)
+	m.G0 = v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v2
+	if v17 <= v2 {
+		v128 = v2
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	m.G0 = v14 + int32(16)
+	return v128
+L2:
+	;
+	v27 = v18
+	v31 = v17
+	goto L3
+L3:
+	;
+	if v16 == int32(0) {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+	if v117 == int32(0) {
+		goto L32
+	} else {
+		goto L33
+	}
+L5:
+	;
+	v114 = v31 - v106
+	if int32(0) < v114 {
+		v27 = v27 + v106
+		v31 = v114
+		goto L3
+	} else {
+		goto L31
+	}
+L6:
+	;
+	v95 = F_pg_mblen_range(m, v27, v17+v18)
+	mBase = m.M
+	v96 = m.ExcPending
+	if v96 != 0 {
+		goto L23
+	} else {
+		goto L28
+	}
+L7:
+	;
+	v38 = int32(0)
+	v41 = v38
+	v44 = v16
+	v45 = v38
+	v46 = v38
+	goto L8
+L8:
+	;
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41+v27))))
+	v56 = v44 + v53*int32(12)
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+4))
+	if v57 != 0 {
+		goto L11
+	} else {
+		goto L12
+	}
+L9:
+	;
+	if v58 == int32(0) {
+		goto L6
+	} else {
+		goto L19
+	}
+L10:
+	;
+	goto L9
+L11:
+	;
+	v58 = v56
+	goto L13
+L12:
+	;
+	v58 = v46
+	goto L13
+L13:
+	;
+	v60 = v41 + int32(1)
+	if v57 != 0 {
+		goto L14
+	} else {
+		goto L15
+	}
+L14:
+	;
+	v61 = v60
+	goto L16
+L15:
+	;
+	v61 = v45
+	goto L16
+L16:
+	;
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
+	if v62 == int32(0) {
+		goto L10
+	} else {
+		goto L17
+	}
+L17:
+	;
+	if base.Ui32(v60) < base.Ui32(v31) {
+		v41 = v60
+		v44 = v62
+		v45 = v61
+		v46 = v58
+		goto L8
+	} else {
+		goto L18
+	}
+L18:
+	;
+	goto L10
+L19:
+	;
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+	if v68 == int32(0) {
+		goto L6
+	} else {
+		goto L20
+	}
+L20:
+	;
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+	if v71 != 0 {
+		goto L21
+	} else {
+		goto L22
+	}
+L21:
+	;
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v58)+8))
+	F_appendBinaryStringInfo(m, v14, v80, v81)
+	mBase = m.M
+	v83 = m.ExcPending
+	if v83 != 0 {
+		goto L23
+	} else {
+		goto L27
+	}
+L22:
+	;
+	F_initStringInfo(m, v14)
+	mBase = m.M
+	v75 = m.ExcPending
+	if v75 != 0 {
+		goto L23
+	} else {
+		goto L24
+	}
+L23:
+	;
+	return int32(0)
+L24:
+	;
+	if v27 == v18 {
+		goto L21
+	} else {
+		goto L25
+	}
+L25:
+	;
+	F_appendBinaryStringInfo(m, v14, v18, v27-v18)
+	mBase = m.M
+	v79 = m.ExcPending
+	if v79 != 0 {
+		goto L23
+	} else {
+		goto L26
+	}
+L26:
+	;
+	goto L21
+L27:
+	;
+	v106 = v61
+	goto L5
+L28:
+	;
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+	if v97 == int32(0) {
+		v106 = v95
+		goto L5
+	} else {
+		goto L29
+	}
+L29:
+	;
+	F_appendBinaryStringInfo(m, v14, v27, v95)
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L23
+	} else {
+		goto L30
+	}
+L30:
+	;
+	v106 = v95
+	goto L5
+L31:
+	;
+	goto L4
+L32:
+	;
+	v128 = int32(0)
+	goto L1
+L33:
+	;
+	goto L34
+L34:
+	;
+	v122 = F_palloc0(m, int32(16))
+	mBase = m.M
+	v123 = m.ExcPending
+	if v123 != 0 {
+		goto L23
+	} else {
+		goto L35
+	}
+L35:
+	;
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
+	v125 = int32(4)
+	*(*uint16)(unsafe.Add(mBase, uint32(v122)+2)) = uint16(v125)
+	*(*int32)(unsafe.Add(mBase, uint32(v122)+4)) = v124
+	v128 = v122
+	goto L1
+}
 func F_union_tuples(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
