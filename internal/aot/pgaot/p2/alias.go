@@ -2440,6 +2440,8 @@ func F_LockBufferForCleanup(m *base.Module, l0 int32)
 func F_ConditionalLockBufferForCleanup(m *base.Module, l0 int32) int32
 //go:linkname F_IsBufferCleanupOK github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_IsBufferCleanupOK
 func F_IsBufferCleanupOK(m *base.Module, l0 int32) int32
+//go:linkname F_EvictUnpinnedBufferInternal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_EvictUnpinnedBufferInternal
+func F_EvictUnpinnedBufferInternal(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_StrategyFreeBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_StrategyFreeBuffer
 func F_StrategyFreeBuffer(m *base.Module, l0 int32)
 //go:linkname F_GetAccessStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetAccessStrategy

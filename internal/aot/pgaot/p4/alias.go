@@ -2116,8 +2116,6 @@ func F_read_stream_end(m *base.Module, l0 int32)
 func F_BufTableHashCode(m *base.Module, l0 int32) int32
 //go:linkname F_BufTableLookup github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_BufTableLookup
 func F_BufTableLookup(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_BufTableDelete github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BufTableDelete
-func F_BufTableDelete(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_UnpinBufferNoOwner github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnpinBufferNoOwner
 func F_UnpinBufferNoOwner(m *base.Module, l0 int32)
 //go:linkname F_ReservePrivateRefCountEntry github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ReservePrivateRefCountEntry
@@ -2164,6 +2162,10 @@ func F_UnlockBuffers(m *base.Module)
 func F_ConditionalLockBuffer(m *base.Module, l0 int32) int32
 //go:linkname F_CheckBufferIsPinnedOnce github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_CheckBufferIsPinnedOnce
 func F_CheckBufferIsPinnedOnce(m *base.Module, l0 int32)
+//go:linkname F_EvictUnpinnedBufferInternal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_EvictUnpinnedBufferInternal
+func F_EvictUnpinnedBufferInternal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_InvalidateVictimBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_InvalidateVictimBuffer
+func F_InvalidateVictimBuffer(m *base.Module, l0 int32) int32
 //go:linkname F_StrategyNotifyBgWriter github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_StrategyNotifyBgWriter
 func F_StrategyNotifyBgWriter(m *base.Module, l0 int32)
 //go:linkname F_GetAccessStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetAccessStrategy

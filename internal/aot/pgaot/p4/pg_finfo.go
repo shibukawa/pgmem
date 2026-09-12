@@ -398,6 +398,9 @@ func F_pg_finfo_page_checksum_1_9(m *base.Module) int32 {
 func F_pg_finfo_pg_armor(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_armor_0)
 }
+func F_pg_finfo_pg_buffercache_pages(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_pages_0)
+}
 func F_pg_finfo_pg_check_frozen(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_check_frozen_0)
 }

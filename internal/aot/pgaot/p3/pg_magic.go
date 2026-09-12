@@ -8,6 +8,9 @@ func F_Pg_magic_func_btree_gist(m *base.Module) int32 {
 func F_Pg_magic_func_isn(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_isn_0)
 }
+func F_Pg_magic_func_pg_buffercache(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_pg_buffercache_0)
+}
 func F_Pg_magic_func_pg_visibility(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pg_visibility_0)
 }

@@ -10736,6 +10736,96 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.TupleDataSplit(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pg_buffercache":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pg_buffercache: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgBuffercache(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_evict":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_evict: want 1 args")
+		}
+		r := pgaot.PgBuffercacheEvict(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_evict_all":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_evict_all: want 1 args")
+		}
+		r := pgaot.PgBuffercacheEvictAll(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_evict_relation":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_evict_relation: want 1 args")
+		}
+		r := pgaot.PgBuffercacheEvictRelation(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_numa_pages":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_numa_pages: want 1 args")
+		}
+		r := pgaot.PgBuffercacheNumaPages(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_pages":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_pages: want 1 args")
+		}
+		r := pgaot.PgBuffercachePages(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_summary":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_summary: want 1 args")
+		}
+		r := pgaot.PgBuffercacheSummary(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_buffercache_usage_counts":
+		if len(a) != 1 {
+			panic("aot: pg_buffercache_usage_counts: want 1 args")
+		}
+		r := pgaot.PgBuffercacheUsageCounts(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_evict":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_evict: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheEvict(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_evict_all":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_evict_all: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheEvictAll(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_evict_relation":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_evict_relation: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheEvictRelation(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_numa_pages":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_numa_pages: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheNumaPages(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_pages":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_pages: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercachePages(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_summary":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_summary: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheSummary(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_buffercache_usage_counts":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_buffercache_usage_counts: want 0 args")
+		}
+		r := pgaot.PgFinfoPgBuffercacheUsageCounts(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

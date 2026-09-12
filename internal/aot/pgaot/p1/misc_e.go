@@ -157,6 +157,160 @@ func F_ER_flatten_into(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F_EvictUnpinnedBufferInternal(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v8 int32
+	_ = v8
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	v3 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v3)
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+	if v8&int32(16777216) == v3 {
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v8 & int32(-20971521)
+		return int32(0)
+	} else {
+		if v8&int32(_a_F_EvictUnpinnedBufferInternal_0) != 0 {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v8 & int32(-4194305)
+			return int32(0)
+		} else {
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			v26 = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = (v25 + v26) & int32(-4194305)
+			v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			v32 = int32(_a_F_EvictUnpinnedBufferInternal_1)
+			v33 = *(*int32)(unsafe.Add(mBase, _c_F_EvictUnpinnedBufferInternal[0]))
+			*(*int32)(unsafe.Add(mBase, _c_F_EvictUnpinnedBufferInternal[0])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v33)+4)) = v26
+			v40 = v31 + v26
+			*(*int32)(unsafe.Add(mBase, uint32(v33))) = v40
+			v43 = *(*int32)(unsafe.Add(mBase, _c_F_EvictUnpinnedBufferInternal[1]))
+			F_ResourceOwnerRemember(m, v43, v40, int32(_a_F_EvictUnpinnedBufferInternal_2))
+			mBase = m.M
+			v48 = m.ExcPending
+			if v48 != 0 {
+				return int32(0)
+			} else {
+				if v8&int32(_a_F_EvictUnpinnedBufferInternal_3) != 0 {
+					v52 = l0 + int32(48)
+					v54 = F_LWLockAcquire(m, v52, int32(1))
+					mBase = m.M
+					v55 = m.ExcPending
+					if v55 != 0 {
+						return int32(0)
+					} else {
+						F_FlushBuffer(m, l0, int32(0), int32(3))
+						mBase = m.M
+						v59 = m.ExcPending
+						if v59 != 0 {
+							return int32(0)
+						} else {
+							v60 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v60)
+							F_LWLockRelease(m, v52)
+							mBase = m.M
+							v63 = m.ExcPending
+							if v63 != 0 {
+								return int32(0)
+							} else {
+								v65 = F_InvalidateVictimBuffer(m, l0)
+								mBase = m.M
+								v66 = m.ExcPending
+								if v66 != 0 {
+									return int32(0)
+								} else {
+									v68 = *(*int32)(unsafe.Add(mBase, _c_F_EvictUnpinnedBufferInternal[1]))
+									v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+									F_ResourceOwnerForget(m, v68, v69+int32(1), int32(_a_F_EvictUnpinnedBufferInternal_2))
+									mBase = m.M
+									v74 = m.ExcPending
+									if v74 != 0 {
+										return int32(0)
+									} else {
+										F_UnpinBufferNoOwner(m, l0)
+										mBase = m.M
+										v76 = m.ExcPending
+										if v76 != 0 {
+											return int32(0)
+										} else {
+											return v65
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v65 = F_InvalidateVictimBuffer(m, l0)
+					mBase = m.M
+					v66 = m.ExcPending
+					if v66 != 0 {
+						return int32(0)
+					} else {
+						v68 = *(*int32)(unsafe.Add(mBase, _c_F_EvictUnpinnedBufferInternal[1]))
+						v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+						F_ResourceOwnerForget(m, v68, v69+int32(1), int32(_a_F_EvictUnpinnedBufferInternal_2))
+						mBase = m.M
+						v74 = m.ExcPending
+						if v74 != 0 {
+							return int32(0)
+						} else {
+							F_UnpinBufferNoOwner(m, l0)
+							mBase = m.M
+							v76 = m.ExcPending
+							if v76 != 0 {
+								return int32(0)
+							} else {
+								return v65
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_ExecASInsertTriggers(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase

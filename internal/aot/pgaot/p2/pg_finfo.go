@@ -383,6 +383,9 @@ func F_pg_finfo_oid_dist(m *base.Module) int32 {
 func F_pg_finfo_page_header(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_page_header_0)
 }
+func F_pg_finfo_pg_buffercache_evict_relation(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_evict_relation_0)
+}
 func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_decrypt_0)
 }

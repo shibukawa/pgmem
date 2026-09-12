@@ -374,6 +374,15 @@ func F_pg_finfo_mic_to_iso(m *base.Module) int32 {
 func F_pg_finfo_mic_to_latin1(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin1_0)
 }
+func F_pg_finfo_pg_buffercache_numa_pages(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_numa_pages_0)
+}
+func F_pg_finfo_pg_buffercache_summary(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_summary_0)
+}
+func F_pg_finfo_pg_buffercache_usage_counts(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_buffercache_usage_counts_0)
+}
 func F_pg_finfo_pg_random_bytes(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_random_bytes_0)
 }

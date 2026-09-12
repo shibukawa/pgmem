@@ -2266,6 +2266,8 @@ func F_PrefetchSharedBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 func F_ReservePrivateRefCountEntry(m *base.Module)
 //go:linkname F_PinBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_PinBuffer
 func F_PinBuffer(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_LockBufHdr github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LockBufHdr
+func F_LockBufHdr(m *base.Module, l0 int32) int32
 //go:linkname F_ReadBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ReadBuffer
 func F_ReadBuffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ReadBufferExtended github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ReadBufferExtended
@@ -3888,6 +3890,8 @@ func F_repalloc(m *base.Module, l0 int32, l1 int32) int32
 func F_repalloc_extended(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_repalloc0 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_repalloc0
 func F_repalloc0(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_MemoryContextAllocHuge github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MemoryContextAllocHuge
+func F_MemoryContextAllocHuge(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_repalloc_huge github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_repalloc_huge
 func F_repalloc_huge(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_MemoryContextStrdup github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_MemoryContextStrdup
