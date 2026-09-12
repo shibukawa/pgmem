@@ -866,3 +866,29 @@ func TestCopyFromStdinAcrossBatches(t *testing.T) {
 	}
 	c3.Close(ctx)
 }
+
+// zic stores timezone aliases as hard links, which the share archive
+// carries as link entries; Untar used to skip those, so zones such as
+// Asia/Tokyo and America/Los_Angeles were listed but could not be set.
+func TestTimezoneAliasesLoad(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{})
+	conn, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer conn.Close(ctx)
+	for zone, want := range map[string]string{
+		"Asia/Tokyo":          "2000-01-01 09:00:00+09",
+		"America/Los_Angeles": "1999-12-31 16:00:00-08",
+		"UTC":                 "2000-01-01 00:00:00+00",
+	} {
+		if _, err := conn.Exec(ctx, "SET timezone = '"+zone+"'"); err != nil {
+			t.Fatalf("SET timezone = %s: %v", zone, err)
+		}
+		var got string
+		if err := conn.QueryRow(ctx, "SELECT ('2000-01-01 00:00+00'::timestamptz)::text").Scan(&got); err != nil || got != want {
+			t.Fatalf("%s: got %q err=%v, want %q", zone, got, err, want)
+		}
+	}
+}

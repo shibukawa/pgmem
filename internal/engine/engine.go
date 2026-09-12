@@ -162,6 +162,17 @@ func Untar(fs *vfs.FS, r io.Reader, root string) error {
 			if err := fs.PutFile(p, b, uint32(hdr.Mode)); err != vfs.OK {
 				return fmt.Errorf("write %s: %w", p, err)
 			}
+		case tar.TypeLink:
+			// A hard link (zic makes the timezone aliases this way):
+			// store a copy of the target already unpacked.
+			target := root + "/" + strings.TrimPrefix(strings.TrimPrefix(hdr.Linkname, "./"), "/")
+			b, errno := fs.ReadFile(target)
+			if errno != vfs.OK {
+				return fmt.Errorf("link %s -> %s: %w", p, target, errno)
+			}
+			if err := fs.PutFile(p, append([]byte(nil), b...), uint32(hdr.Mode)); err != vfs.OK {
+				return fmt.Errorf("write %s: %w", p, err)
+			}
 		case tar.TypeSymlink:
 			fs.Symlink(hdr.Linkname, p)
 		}
