@@ -437,7 +437,26 @@ func (s *Server) serve(c net.Conn) {
 				s.acquire(id)
 				held = true
 			}
+			// A COPY FROM STDIN reads its data inside this Exec, so the
+			// backend may ask for more of this connection's input than
+			// the batch holds. If the client goes away or sends
+			// Terminate in the middle, CopyFail ends the COPY with an
+			// error instead of the fatal "protocol synchronization
+			// was lost" that an EOF mid-message would cause.
+			s.b.More = func() []byte {
+				more, term, err := readBatch(r)
+				if term {
+					terminate = true
+				}
+				if err != nil || (term && len(more) == 0) {
+					return copyFail("client disconnected")
+				}
+				more = rewriteNames(more, prefix)
+				stmts = appendParsedNames(stmts, more)
+				return more
+			}
 			out, err := s.b.Exec(batch)
+			s.b.More = nil
 			out = s.afterExec(sess, out)
 			if err == nil && backendIdle(out) {
 				s.release()
@@ -485,7 +504,7 @@ func (s *Server) endSession(id int64, stmts []string, held bool) {
 		// The client went away mid-transaction, mid-pipeline or mid-COPY.
 		// CopyFail is ignored outside COPY mode and aborts it inside; Sync
 		// clears a pipelined error state; ROLLBACK ends the transaction.
-		s.b.Exec(append([]byte{'f', 0, 0, 0, 4 + 20}, "client disconnected\x00"...))
+		s.b.Exec(copyFail("client disconnected"))
 		s.b.Exec([]byte{'S', 0, 0, 0, 4})
 		s.b.Exec(simpleQuery("ROLLBACK"))
 	}
@@ -819,6 +838,17 @@ func startupPacket(user, database string) []byte {
 	var pkt bytes.Buffer
 	binary.Write(&pkt, binary.BigEndian, uint32(body.Len()+4))
 	pkt.Write(body.Bytes())
+	return pkt.Bytes()
+}
+
+// copyFail is a CopyFail message: ignored outside COPY mode, it aborts a
+// COPY FROM STDIN with an error inside it.
+func copyFail(reason string) []byte {
+	var pkt bytes.Buffer
+	pkt.WriteByte('f')
+	binary.Write(&pkt, binary.BigEndian, uint32(len(reason)+1+4))
+	pkt.WriteString(reason)
+	pkt.WriteByte(0)
 	return pkt.Bytes()
 }
 
