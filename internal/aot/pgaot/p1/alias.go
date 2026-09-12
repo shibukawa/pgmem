@@ -2532,6 +2532,8 @@ func F_format_type_be(m *base.Module, l0 int32) int32
 func F_format_type_be_qualified(m *base.Module, l0 int32) int32
 //go:linkname F_format_type_with_typemod github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_format_type_with_typemod
 func F_format_type_with_typemod(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_str_tolower github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_str_tolower
+func F_str_tolower(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_NUM_cache github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_NUM_cache
 func F_NUM_cache(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_NUM_processor github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_NUM_processor

@@ -2,6 +2,18 @@ package p1
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo_citext_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_ge_0)
+}
+func F_pg_finfo_citext_hash_extended(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_hash_extended_0)
+}
+func F_pg_finfo_citext_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_lt_0)
+}
+func F_pg_finfo_citext_smaller(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_smaller_0)
+}
 func F_pg_finfo_dsnowball_lexize(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dsnowball_lexize_0)
 }

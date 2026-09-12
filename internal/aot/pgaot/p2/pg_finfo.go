@@ -5,6 +5,18 @@ import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_euc_tw_0)
 }
+func F_pg_finfo_citext_larger(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_larger_0)
+}
+func F_pg_finfo_citext_ne(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_ne_0)
+}
+func F_pg_finfo_citext_pattern_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_pattern_ge_0)
+}
+func F_pg_finfo_citext_pattern_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_pattern_lt_0)
+}
 func F_pg_finfo_euc_cn_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_cn_to_utf8_0)
 }

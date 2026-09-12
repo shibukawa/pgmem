@@ -113,7 +113,7 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto"
+CONTRIB_MODULES="pgcrypto citext"
 for n in $CONTRIB_MODULES; do
   MODULE_DIRS="$MODULE_DIRS $n=contrib/$n"
 done
@@ -129,8 +129,13 @@ for spec in $MODULE_DIRS; do
 done
 python3 "$HERE/gen_modules.py" "$LLVM_NM" "$OUT/pgmem_modules_gen.c" $GEN_ARGS
 mkdir -p "$PREFIX/share/postgresql/extension"
+mkdir -p "$PREFIX/share/postgresql/tsearch_data"
 for n in $CONTRIB_MODULES; do
   cp "$SRC/contrib/$n"/*.control "$SRC/contrib/$n"/*.sql "$PREFIX/share/postgresql/extension/"
+  # text search dictionaries and rules (DATA_TSEARCH in the module's Makefile)
+  for f in $(sed -n 's/^DATA_TSEARCH *= *//p' "$SRC/contrib/$n/Makefile"); do
+    cp "$SRC/contrib/$n/$f" "$PREFIX/share/postgresql/tsearch_data/"
+  done
 done
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_dl.o" "$HERE/pgmem_dl.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_modules_gen.o" "$OUT/pgmem_modules_gen.c"

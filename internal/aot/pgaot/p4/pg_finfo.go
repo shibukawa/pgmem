@@ -2,6 +2,12 @@ package p4
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo_citext_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_le_0)
+}
+func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_pattern_cmp_0)
+}
 func F_pg_finfo_dsnowball_init(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dsnowball_init_0)
 }

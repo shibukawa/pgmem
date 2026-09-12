@@ -31,6 +31,7 @@ var contribRegress = map[string][]string{
 		"pgp-pubkey-decrypt", "pgp-pubkey-encrypt", "pgp-pubkey-session",
 		"pgp-info", "crypt-shacrypt",
 	},
+	"citext": {"create_index_acl", "citext", "citext_utf8"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5454)
-	m.G0 = int32(13007856)
+	m.T0 = make([]any, 5487)
+	m.G0 = int32(13008272)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -48,7 +48,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4336955
+	m.DataEnd = 4337371
 	initData_0(m)
 	return m
 }
@@ -81,8 +81,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5454)
-	m.G0 = int32(13007856)
+	m.T0 = make([]any, 5487)
+	m.G0 = int32(13008272)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -107,7 +107,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4336955
+	m.DataEnd = 4337371
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -122,8 +122,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5454)
-	m.G0 = int32(13007856)
+	m.T0 = make([]any, 5487)
+	m.G0 = int32(13008272)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -148,18 +148,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4336955
+	m.DataEnd = 4337371
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1565248])
-	copy(m.Memory[1570576:], wasm2goData_data_bin[1565248:1565257])
-	copy(m.Memory[1572624:], wasm2goData_data_bin[1565257:1578185])
-	copy(m.Memory[1597444:], wasm2goData_data_bin[1578185:1671426])
-	copy(m.Memory[1691712:], wasm2goData_data_bin[1671426:1783082])
-	copy(m.Memory[1814584:], wasm2goData_data_bin[1783082:4022640])
-	copy(m.Memory[4061632:], wasm2goData_data_bin[4022640:4297963])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1565520])
+	copy(m.Memory[1570848:], wasm2goData_data_bin[1565520:1565529])
+	copy(m.Memory[1572896:], wasm2goData_data_bin[1565529:1578457])
+	copy(m.Memory[1597444:], wasm2goData_data_bin[1578457:1671698])
+	copy(m.Memory[1691712:], wasm2goData_data_bin[1671698:1783354])
+	copy(m.Memory[1814584:], wasm2goData_data_bin[1783354:4023264])
+	copy(m.Memory[4061984:], wasm2goData_data_bin[4023264:4298651])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -1120,6 +1120,105 @@ func PgpSymEncryptBytea(m *base.Module, l0 int32) int32 {
 }
 func PgpSymEncryptText(m *base.Module, l0 int32) int32 {
 	return F_pgp_sym_encrypt_text(m, l0)
+}
+func PgMagicFuncCitext(m *base.Module) int32 {
+	return F_Pg_magic_func_citext(m)
+}
+func CitextCmp(m *base.Module, l0 int32) int32 {
+	return F_citext_cmp(m, l0)
+}
+func CitextEq(m *base.Module, l0 int32) int32 {
+	return F_citext_eq(m, l0)
+}
+func CitextGe(m *base.Module, l0 int32) int32 {
+	return F_citext_ge(m, l0)
+}
+func CitextGt(m *base.Module, l0 int32) int32 {
+	return F_citext_gt(m, l0)
+}
+func CitextHash(m *base.Module, l0 int32) int32 {
+	return F_citext_hash(m, l0)
+}
+func CitextHashExtended(m *base.Module, l0 int32) int32 {
+	return F_citext_hash_extended(m, l0)
+}
+func CitextLarger(m *base.Module, l0 int32) int32 {
+	return F_citext_larger(m, l0)
+}
+func CitextLe(m *base.Module, l0 int32) int32 {
+	return F_citext_le(m, l0)
+}
+func CitextLt(m *base.Module, l0 int32) int32 {
+	return F_citext_lt(m, l0)
+}
+func CitextNe(m *base.Module, l0 int32) int32 {
+	return F_citext_ne(m, l0)
+}
+func CitextPatternCmp(m *base.Module, l0 int32) int32 {
+	return F_citext_pattern_cmp(m, l0)
+}
+func CitextPatternGe(m *base.Module, l0 int32) int32 {
+	return F_citext_pattern_ge(m, l0)
+}
+func CitextPatternGt(m *base.Module, l0 int32) int32 {
+	return F_citext_pattern_gt(m, l0)
+}
+func CitextPatternLe(m *base.Module, l0 int32) int32 {
+	return F_citext_pattern_le(m, l0)
+}
+func CitextPatternLt(m *base.Module, l0 int32) int32 {
+	return F_citext_pattern_lt(m, l0)
+}
+func CitextSmaller(m *base.Module, l0 int32) int32 {
+	return F_citext_smaller(m, l0)
+}
+func PgFinfoCitextCmp(m *base.Module) int32 {
+	return F_pg_finfo_citext_cmp(m)
+}
+func PgFinfoCitextEq(m *base.Module) int32 {
+	return F_pg_finfo_citext_eq(m)
+}
+func PgFinfoCitextGe(m *base.Module) int32 {
+	return F_pg_finfo_citext_ge(m)
+}
+func PgFinfoCitextGt(m *base.Module) int32 {
+	return F_pg_finfo_citext_gt(m)
+}
+func PgFinfoCitextHash(m *base.Module) int32 {
+	return F_pg_finfo_citext_hash(m)
+}
+func PgFinfoCitextHashExtended(m *base.Module) int32 {
+	return F_pg_finfo_citext_hash_extended(m)
+}
+func PgFinfoCitextLarger(m *base.Module) int32 {
+	return F_pg_finfo_citext_larger(m)
+}
+func PgFinfoCitextLe(m *base.Module) int32 {
+	return F_pg_finfo_citext_le(m)
+}
+func PgFinfoCitextLt(m *base.Module) int32 {
+	return F_pg_finfo_citext_lt(m)
+}
+func PgFinfoCitextNe(m *base.Module) int32 {
+	return F_pg_finfo_citext_ne(m)
+}
+func PgFinfoCitextPatternCmp(m *base.Module) int32 {
+	return F_pg_finfo_citext_pattern_cmp(m)
+}
+func PgFinfoCitextPatternGe(m *base.Module) int32 {
+	return F_pg_finfo_citext_pattern_ge(m)
+}
+func PgFinfoCitextPatternGt(m *base.Module) int32 {
+	return F_pg_finfo_citext_pattern_gt(m)
+}
+func PgFinfoCitextPatternLe(m *base.Module) int32 {
+	return F_pg_finfo_citext_pattern_le(m)
+}
+func PgFinfoCitextPatternLt(m *base.Module) int32 {
+	return F_pg_finfo_citext_pattern_lt(m)
+}
+func PgFinfoCitextSmaller(m *base.Module) int32 {
+	return F_pg_finfo_citext_smaller(m)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

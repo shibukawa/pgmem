@@ -2,6 +2,12 @@ package p3
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo_citext_eq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_eq_0)
+}
+func F_pg_finfo_citext_pattern_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_pattern_gt_0)
+}
 func F_pg_finfo_euc_jp_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_sjis_0)
 }

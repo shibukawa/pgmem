@@ -8,6 +8,9 @@ func F_pg_finfo_big5_to_mic(m *base.Module) int32 {
 func F_pg_finfo_big5_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_utf8_0)
 }
+func F_pg_finfo_citext_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_gt_0)
+}
 func F_pg_finfo_euc_jis_2004_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jis_2004_to_utf8_0)
 }

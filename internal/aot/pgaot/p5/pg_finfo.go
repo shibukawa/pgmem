@@ -2,6 +2,15 @@ package p5
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo_citext_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_cmp_0)
+}
+func F_pg_finfo_citext_hash(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_hash_0)
+}
+func F_pg_finfo_citext_pattern_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_citext_pattern_le_0)
+}
 func F_pg_finfo_euc_jp_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_utf8_0)
 }
