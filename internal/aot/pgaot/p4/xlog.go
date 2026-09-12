@@ -151,9 +151,9 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 	case 0, 1:
 		v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+16)))
 		if v31 != 0 {
-			v32 = int32(345210)
+			v32 = int32(345417)
 		} else {
-			v32 = int32(362226)
+			v32 = int32(362446)
 		}
 		v33 = *(*int64)(unsafe.Add(mBase, uint32(v26)))
 		v37 = *(*int32)(unsafe.Add(mBase, uint32(v26)+12))
@@ -163,7 +163,7 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 			v48 = *(*int32)(unsafe.Add(mBase, uint32(v41<<(uint(int32(2))%32))+uint32(_consts[138])))
 			v49 = v48
 		} else {
-			v49 = int32(547260)
+			v49 = int32(547564)
 		}
 		v50 = *(*int64)(unsafe.Add(mBase, uint32(v26)+32))
 		v51 = *(*int64)(unsafe.Add(mBase, uint32(v26)+40))
@@ -178,9 +178,9 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+152)) = v55
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+156)) = v54
 		if v25 != 0 {
-			v64 = int32(374274)
+			v64 = int32(374494)
 		} else {
-			v64 = int32(244501)
+			v64 = int32(244625)
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+168)) = v64
 		*(*int64)(unsafe.Add(mBase, uint32(v20)+160)) = v53
@@ -193,7 +193,7 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+104)) = v38
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+108)) = v37
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+96)) = base.I32_wrap_i64(int64(base.Ui64(v33) >> (uint(int64(32)) % 64)))
-		F_appendStringInfo(m, l0, int32(199166), v20+int32(96))
+		F_appendStringInfo(m, l0, int32(199256), v20+int32(96))
 		mBase = m.M
 		v81 = m.ExcPending
 		if v81 != 0 {
@@ -214,7 +214,7 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 				*(*uint32)(unsafe.Add(mBase, uint32(v20)+52)) = uint32(v100)
 				v103 = int64(base.Ui64(v100) >> (uint(int64(32)) % 64))
 				*(*uint32)(unsafe.Add(mBase, uint32(v20)+48)) = uint32(v103)
-				F_appendStringInfo(m, l0, int32(517155), v20+int32(48))
+				F_appendStringInfo(m, l0, int32(517459), v20+int32(48))
 				mBase = m.M
 				v109 = m.ExcPending
 				if v109 != 0 {
@@ -227,9 +227,9 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 				if v93 <= int32(-113) {
 					v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
 					if v154&int32(1) != 0 {
-						v157 = int32(345210)
+						v157 = int32(345417)
 					} else {
-						v157 = int32(362226)
+						v157 = int32(362446)
 					}
 					F_appendStringInfoString(m, l0, v157)
 					mBase = m.M
@@ -255,7 +255,7 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 							*(*uint32)(unsafe.Add(mBase, uint32(v20)+20)) = uint32(v186)
 							v193 = int64(base.Ui64(v186) >> (uint(int64(32)) % 64))
 							*(*uint32)(unsafe.Add(mBase, uint32(v20)+16)) = uint32(v193)
-							F_appendStringInfo(m, l0, int32(194536), v20+int32(16))
+							F_appendStringInfo(m, l0, int32(194626), v20+int32(16))
 							mBase = m.M
 							v199 = m.ExcPending
 							if v199 != 0 {
@@ -274,10 +274,10 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 							v208 = *(*int32)(unsafe.Add(mBase, uint32(v201<<(uint(int32(2))%32))+uint32(_consts[138])))
 							v209 = v208
 						} else {
-							v209 = int32(547260)
+							v209 = int32(547564)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v209
-						F_appendStringInfo(m, l0, int32(186312), v20+int32(32))
+						F_appendStringInfo(m, l0, int32(186402), v20+int32(32))
 						mBase = m.M
 						v215 = m.ExcPending
 						if v215 != 0 {
@@ -305,13 +305,13 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 									v177 = *(*int32)(unsafe.Add(mBase, uint32(v164<<(uint(int32(2))%32))+uint32(_consts[138])))
 									v178 = v177
 								} else {
-									v178 = int32(547260)
+									v178 = int32(547564)
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v20)+12)) = v178
 								*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = v169
 								*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v165
 								*(*int32)(unsafe.Add(mBase, uint32(v20))) = v166
-								F_appendStringInfo(m, l0, int32(186282), v20)
+								F_appendStringInfo(m, l0, int32(186372), v20)
 								mBase = m.M
 								v185 = m.ExcPending
 								if v185 != 0 {
@@ -337,27 +337,27 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 					v125 = *(*int32)(unsafe.Add(mBase, uint32(v118<<(uint(int32(2))%32))+uint32(_consts[138])))
 					v126 = v125
 				} else {
-					v126 = int32(547260)
+					v126 = int32(547564)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+84)) = v126
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+80)) = v112
 				if v110&int32(1) != 0 {
-					v133 = int32(273738)
+					v133 = int32(273862)
 				} else {
-					v133 = int32(339752)
+					v133 = int32(339959)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+92)) = v133
 				if v111&int32(1) != 0 {
-					v139 = int32(273738)
+					v139 = int32(273862)
 				} else {
-					v139 = int32(339752)
+					v139 = int32(339959)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+88)) = v139
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+76)) = v113
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+72)) = v114
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+68)) = v115
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+64)) = v116
-				F_appendStringInfo(m, l0, int32(176902), v20-int32(-64))
+				F_appendStringInfo(m, l0, int32(176992), v20-int32(-64))
 				mBase = m.M
 				v149 = m.ExcPending
 				if v149 != 0 {
@@ -371,7 +371,7 @@ func F_xlog_desc(m *base.Module, l0 int32, l1 int32) {
 	case 3:
 		v82 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+176)) = v82
-		F_appendStringInfo(m, l0, int32(59721), v20+int32(176))
+		F_appendStringInfo(m, l0, int32(59790), v20+int32(176))
 		mBase = m.M
 		v88 = m.ExcPending
 		if v88 != 0 {

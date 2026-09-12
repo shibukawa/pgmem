@@ -138,7 +138,7 @@ func F_pg_lsn_in(m *base.Module, l0 int32) int32 {
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = int32(538331)
+	v11 = int32(538635)
 	v15 = m.G0
 	v17 = v15 - int32(32)
 	v18 = int64(0)
@@ -303,7 +303,7 @@ L25:
 L26:
 	;
 	v104 = v99 + int32(1)
-	v105 = int32(538331)
+	v105 = int32(538635)
 	v109 = m.G0
 	v111 = v109 - int32(32)
 	v112 = int64(0)
@@ -470,8 +470,8 @@ L52:
 L53:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v10
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(245311)
-	F_errmsg(m, int32(726561), v8)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(245435)
+	F_errmsg(m, int32(727181), v8)
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -481,7 +481,7 @@ L53:
 	}
 L54:
 	;
-	F_errsave_finish(m, v200, int32(497362), int32(74), int32(280110))
+	F_errsave_finish(m, v200, int32(497662), int32(74), int32(280234))
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {
@@ -584,13 +584,13 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(245286), int32(0))
+					F_errmsg(m, int32(245410), int32(0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497362), int32(296), int32(320797))
+						F_errfinish(m, int32(497662), int32(296), int32(321004))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -605,7 +605,7 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(38564), v6)
+			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(38633), v6)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {
@@ -710,13 +710,13 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(245261), int32(0))
+					F_errmsg(m, int32(245385), int32(0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497362), int32(262), int32(320744))
+						F_errfinish(m, int32(497662), int32(262), int32(320951))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -731,7 +731,7 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(38564), v6)
+			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(38633), v6)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {

@@ -471,9 +471,9 @@ func F_log_disconnections(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v73
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v72
 			if v71 != 0 {
-				v81 = int32(547489)
+				v81 = int32(547793)
 			} else {
-				v81 = int32(758841)
+				v81 = int32(759461)
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v81
 			v84 = base.I32_div_s(v65, int32(1000))
@@ -483,13 +483,13 @@ func F_log_disconnections(m *base.Module, l0 int32, l1 int32) {
 			v89 = base.I32_div_s(base.I32_extend16_s(v63), v88)
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = base.I32_extend16_s(v89)
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_extend16_s(v63 - v89*v88)
-			F_errmsg(m, int32(175981), v12)
+			F_errmsg(m, int32(176071), v12)
 			mBase = m.M
 			v99 = m.ExcPending
 			if v99 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(495279), int32(5432), int32(141872))
+				F_errfinish(m, int32(495567), int32(5432), int32(141941))
 				mBase = m.M
 				v104 = m.ExcPending
 				if v104 != 0 {
@@ -789,7 +789,7 @@ L29:
 L30:
 	;
 	v104 = int32(0)
-	v105 = int32(4514932)
+	v105 = int32(4515220)
 	v107 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v107 + int32(1)
 	if v93 <= v104 {
@@ -799,7 +799,7 @@ L30:
 	}
 L31:
 	;
-	v207 = int32(4514932)
+	v207 = int32(4515220)
 	v209 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v209 - int32(1)
 	if base.Ui32(v97) < base.Ui32(l2) {

@@ -67,19 +67,19 @@ func F_pg_current_wal_flush_lsn(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(128450), int32(0))
+				F_errmsg(m, int32(128519), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(574475), int32(0))
+					F_errhint(m, int32(575095), int32(0))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496030), int32(324), int32(245187))
+						F_errfinish(m, int32(496318), int32(324), int32(245311))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -94,7 +94,7 @@ func F_pg_current_wal_flush_lsn(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v40 = int32(4415840)
+		v40 = int32(4416128)
 		v41 = *(*int32)(unsafe.Add(mBase, _consts[113]))
 		v42 = *(*int64)(unsafe.Add(mBase, uint32(v41)+280))
 		*(*int64)(unsafe.Add(mBase, uint32(v41)+280)) = v42

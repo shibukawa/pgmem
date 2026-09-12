@@ -23,17 +23,17 @@ func F_xmlcomment(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(364009), int32(0))
+			F_errmsg(m, int32(364229), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(580218), int32(0))
+				F_errdetail(m, int32(580838), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498523), int32(520), int32(95286))
+					F_errfinish(m, int32(498823), int32(520), int32(95355))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

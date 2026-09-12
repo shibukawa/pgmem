@@ -107,23 +107,31 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn lo tsm_system_rows tsm_system_time pgstattuple"
+CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn lo tsm_system_rows tsm_system_time pgstattuple uuid-ossp"
 for n in $CONTRIB_MODULES; do
   # the library name (what $libdir/<name> in the extension's SQL refers to)
   # is the Makefile's MODULE_big or MODULES, not always the directory name
   # (intarray builds _int)
-  lib=$(sed -n 's/^MODULE_big *= *//p;s/^MODULES *= *//p' "$SRC/contrib/$n/Makefile" | head -1)
+  lib=$(sed -n 's/^MODULE_big[[:space:]]*=[[:space:]]*//p;s/^MODULES[[:space:]]*=[[:space:]]*//p' "$SRC/contrib/$n/Makefile" | head -1)
   MODULE_DIRS="$MODULE_DIRS ${lib:-$n}=contrib/$n"
 done
 GEN_ARGS=""
 MODULE_OBJS=""
+# uuid-ossp wants libuuid: wasm/pgmem_uuid.c is the slice it uses, on the
+# host's entropy, presented through the e2fsprogs-style header.
+emcc $BASE_CFLAGS -I"$HERE/uuid" -c -o "$OUT/pgmem_uuid.o" "$HERE/pgmem_uuid.c"
+MODULE_CFLAGS_uuid_ossp="-DHAVE_UUID_E2FS -DHAVE_UUID_UUID_H -I$HERE/uuid"
+MODULE_EXTRA_OBJS_uuid_ossp="$OUT/pgmem_uuid.o"
 for spec in $MODULE_DIRS; do
   name=${spec%%=*}; dir=${spec#*=}
+  # the C identifier suffix for the per-module renames (uuid-ossp -> uuid_ossp)
+  ident=$(printf '%s' "$name" | tr -c 'A-Za-z0-9_' '_')
+  extra_cflags_var="MODULE_CFLAGS_$ident"; extra_objs_var="MODULE_EXTRA_OBJS_$ident"
   emmake make -C "$dir" clean >/dev/null
-  emmake make -C "$dir" -j"$JOBS" CFLAGS="$PG_CFLAGS -DPg_magic_func=Pg_magic_func_$name -D_PG_init=_PG_init_$name" all >/dev/null
+  emmake make -C "$dir" -j"$JOBS" CFLAGS="$PG_CFLAGS ${!extra_cflags_var:-} -DPg_magic_func=Pg_magic_func_$ident -D_PG_init=_PG_init_$ident" all >/dev/null
   objs=$(ls "$SRC/$dir"/*.o | tr '\n' ',')
-  GEN_ARGS="$GEN_ARGS $name=$objs"
-  MODULE_OBJS="$MODULE_OBJS $(ls "$SRC/$dir"/*.o | tr '\n' ' ')"
+  GEN_ARGS="$GEN_ARGS $name=$objs${!extra_objs_var:+,${!extra_objs_var}}"
+  MODULE_OBJS="$MODULE_OBJS $(ls "$SRC/$dir"/*.o | tr '\n' ' ') ${!extra_objs_var:-}"
 done
 python3 "$HERE/gen_modules.py" "$LLVM_NM" "$OUT/pgmem_modules_gen.c" $GEN_ARGS
 mkdir -p "$PREFIX/share/postgresql/extension"

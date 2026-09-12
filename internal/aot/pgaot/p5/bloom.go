@@ -313,7 +313,7 @@ func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
 				if v70 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(250786), int32(0))
+					F_errmsg_internal(m, int32(250910), int32(0))
 					mBase = m.M
 					v74 = m.ExcPending
 					if v74 != 0 {
@@ -321,13 +321,13 @@ func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l1
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(11)
-						F_errdetail_internal(m, int32(655378), v8)
+						F_errdetail_internal(m, int32(655998), v8)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498295), int32(739), int32(242160))
+							F_errfinish(m, int32(498595), int32(739), int32(242284))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {

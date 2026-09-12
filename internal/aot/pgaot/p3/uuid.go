@@ -523,6 +523,36 @@ L18:
 	;
 	goto L2
 }
+func F_uuid_generate_v1(m *base.Module, l0 int32) int32 {
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	v3 = m.G0
+	v5 = v3 + int32(-64)
+	m.G0 = v5
+	F_uuid_generate_time(m, v5)
+	F_uuid_unparse(m, v5, v3+int32(-48))
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v18 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v3+int32(-48))
+		v19 = m.ExcPending
+		if v19 != 0 {
+			return int32(0)
+		} else {
+			m.G0 = v5 - int32(-64)
+			return v18
+		}
+	}
+}
 func F_uuid_le(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -846,4 +876,51 @@ L17:
 L18:
 	;
 	goto L2
+}
+func F_uuid_nil(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v10 int64
+	_ = v10
+	var v12 int64
+	_ = v12
+	var v14 int64
+	_ = v14
+	var v16 int64
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	v3 = m.G0
+	v5 = v3 - int32(48)
+	m.G0 = v5
+	v7 = int32(570914)
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1361]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1362]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1363]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1364]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1365]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
+	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	mBase = m.M
+	v23 = m.ExcPending
+	if v23 != 0 {
+		return int32(0)
+	} else {
+		m.G0 = v5 + int32(48)
+		return v20
+	}
 }

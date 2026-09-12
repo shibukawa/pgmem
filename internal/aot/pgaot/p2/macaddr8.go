@@ -849,8 +849,8 @@ L82:
 L83:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v23
-	*(*int32)(unsafe.Add(mBase, uint32(v20))) = int32(556417)
-	F_errmsg(m, int32(726561), v20)
+	*(*int32)(unsafe.Add(mBase, uint32(v20))) = int32(556721)
+	F_errmsg(m, int32(727181), v20)
 	mBase = m.M
 	v383 = m.ExcPending
 	if v383 != 0 {
@@ -860,7 +860,7 @@ L83:
 	}
 L84:
 	;
-	F_errsave_finish(m, v22, int32(501399), int32(227), int32(280636))
+	F_errsave_finish(m, v22, int32(501699), int32(227), int32(280760))
 	mBase = m.M
 	v388 = m.ExcPending
 	if v388 != 0 {

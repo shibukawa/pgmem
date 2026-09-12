@@ -17,7 +17,7 @@ func F_errdetail_abort(m *base.Module) {
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[137]))
 	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2)+73)))
 	if v3 == int32(1) {
-		F_errdetail(m, int32(109671), int32(0))
+		F_errdetail(m, int32(109740), int32(0))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {

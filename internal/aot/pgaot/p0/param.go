@@ -146,7 +146,7 @@ L5:
 L6:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v38 = F_AllocSetContextCreateInternal(m, v33, int32(331543), int32(0), int32(8192), int32(8388608))
+	v38 = F_AllocSetContextCreateInternal(m, v33, int32(331750), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -156,7 +156,7 @@ L6:
 	}
 L7:
 	;
-	v40 = int32(4520272)
+	v40 = int32(4520560)
 	v41 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v38
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
@@ -179,8 +179,8 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(758841)
-	F_appendStringInfo(m, v14+int32(32), int32(746728), v14+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(759461)
+	F_appendStringInfo(m, v14+int32(32), int32(747348), v14+int32(16))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -208,7 +208,7 @@ L11:
 	}
 L12:
 	;
-	F_appendStringInfoString(m, v14+int32(32), int32(534332))
+	F_appendStringInfoString(m, v14+int32(32), int32(534636))
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -296,10 +296,10 @@ L23:
 	goto L24
 L24:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(747599)
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(748219)
 	v114 = v104 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v114
-	F_appendStringInfo(m, v14+int32(32), int32(746728), v14)
+	F_appendStringInfo(m, v14+int32(32), int32(747348), v14)
 	mBase = m.M
 	v120 = m.ExcPending
 	if v120 != 0 {
@@ -348,7 +348,7 @@ L30:
 	goto L31
 L31:
 	;
-	F_appendStringInfoString(m, v14+int32(32), int32(534332))
+	F_appendStringInfoString(m, v14+int32(32), int32(534636))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -1773,7 +1773,7 @@ func F_count_param_references(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v25 = F_expression_tree_walker_impl(m, l0, int32(6859), l1)
+			v25 = F_expression_tree_walker_impl(m, l0, int32(6883), l1)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {

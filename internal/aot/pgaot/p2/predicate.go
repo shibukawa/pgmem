@@ -181,14 +181,14 @@ func F_CreatePredicateLock(m *base.Module, l0 int32, l1 int32, l2 int32) {
 											if v167 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(256585)
-												F_errhint(m, int32(668123), v10+int32(16))
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(256709)
+												F_errhint(m, int32(668743), v10+int32(16))
 												mBase = m.M
 												v174 = m.ExcPending
 												if v174 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(499840), int32(2494), int32(318424))
+													F_errfinish(m, int32(500140), int32(2494), int32(318631))
 													mBase = m.M
 													v179 = m.ExcPending
 													if v179 != 0 {
@@ -300,14 +300,14 @@ func F_CreatePredicateLock(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									if v146 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(256585)
-										F_errhint(m, int32(668123), v10)
+										*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(256709)
+										F_errhint(m, int32(668743), v10)
 										mBase = m.M
 										v151 = m.ExcPending
 										if v151 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(499840), int32(2479), int32(318424))
+											F_errfinish(m, int32(500140), int32(2479), int32(318631))
 											mBase = m.M
 											v156 = m.ExcPending
 											if v156 != 0 {
@@ -375,14 +375,14 @@ func F_CreatePredicateLock(m *base.Module, l0 int32, l1 int32, l2 int32) {
 										if v167 != 0 {
 											return
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(256585)
-											F_errhint(m, int32(668123), v10+int32(16))
+											*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(256709)
+											F_errhint(m, int32(668743), v10+int32(16))
 											mBase = m.M
 											v174 = m.ExcPending
 											if v174 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(499840), int32(2494), int32(318424))
+												F_errfinish(m, int32(500140), int32(2494), int32(318631))
 												mBase = m.M
 												v179 = m.ExcPending
 												if v179 != 0 {
@@ -494,14 +494,14 @@ func F_CreatePredicateLock(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								if v146 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(256585)
-									F_errhint(m, int32(668123), v10)
+									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(256709)
+									F_errhint(m, int32(668743), v10)
 									mBase = m.M
 									v151 = m.ExcPending
 									if v151 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(499840), int32(2479), int32(318424))
+										F_errfinish(m, int32(500140), int32(2479), int32(318631))
 										mBase = m.M
 										v156 = m.ExcPending
 										if v156 != 0 {

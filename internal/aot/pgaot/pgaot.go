@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7187)
-	m.G0 = int32(13086112)
+	m.T0 = make([]any, 7211)
+	m.G0 = int32(13086432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414651
+	m.DataEnd = 4414939
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7187)
-	m.G0 = int32(13086112)
+	m.T0 = make([]any, 7211)
+	m.G0 = int32(13086432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414651
+	m.DataEnd = 4414939
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7187)
-	m.G0 = int32(13086112)
+	m.T0 = make([]any, 7211)
+	m.G0 = int32(13086432)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414651
+	m.DataEnd = 4414939
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1610416])
-	copy(m.Memory[1615744:], wasm2goData_data_bin[1610416:1610425])
-	copy(m.Memory[1617792:], wasm2goData_data_bin[1610425:1623353])
-	copy(m.Memory[1642500:], wasm2goData_data_bin[1623353:1716594])
-	copy(m.Memory[1736768:], wasm2goData_data_bin[1716594:1828250])
-	copy(m.Memory[1859640:], wasm2goData_data_bin[1828250:4086896])
-	copy(m.Memory[4125776:], wasm2goData_data_bin[4086896:4375771])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1611040])
+	copy(m.Memory[1616368:], wasm2goData_data_bin[1611040:1611049])
+	copy(m.Memory[1618416:], wasm2goData_data_bin[1611049:1623977])
+	copy(m.Memory[1642500:], wasm2goData_data_bin[1623977:1717218])
+	copy(m.Memory[1736768:], wasm2goData_data_bin[1717218:1828874])
+	copy(m.Memory[1859640:], wasm2goData_data_bin[1828874:4087744])
+	copy(m.Memory[4126000:], wasm2goData_data_bin[4087744:4376683])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5200,6 +5200,69 @@ func Pgstattuplebyid(m *base.Module, l0 int32) int32 {
 }
 func PgstattuplebyidV1_5(m *base.Module, l0 int32) int32 {
 	return F_pgstattuplebyid_v1_5(m, l0)
+}
+func PgMagicFuncUuidOssp(m *base.Module) int32 {
+	return F_Pg_magic_func_uuid_ossp(m)
+}
+func PgFinfoUuidGenerateV1(m *base.Module) int32 {
+	return F_pg_finfo_uuid_generate_v1(m)
+}
+func PgFinfoUuidGenerateV1mc(m *base.Module) int32 {
+	return F_pg_finfo_uuid_generate_v1mc(m)
+}
+func PgFinfoUuidGenerateV3(m *base.Module) int32 {
+	return F_pg_finfo_uuid_generate_v3(m)
+}
+func PgFinfoUuidGenerateV4(m *base.Module) int32 {
+	return F_pg_finfo_uuid_generate_v4(m)
+}
+func PgFinfoUuidGenerateV5(m *base.Module) int32 {
+	return F_pg_finfo_uuid_generate_v5(m)
+}
+func PgFinfoUuidNil(m *base.Module) int32 {
+	return F_pg_finfo_uuid_nil(m)
+}
+func PgFinfoUuidNsDns(m *base.Module) int32 {
+	return F_pg_finfo_uuid_ns_dns(m)
+}
+func PgFinfoUuidNsOid(m *base.Module) int32 {
+	return F_pg_finfo_uuid_ns_oid(m)
+}
+func PgFinfoUuidNsUrl(m *base.Module) int32 {
+	return F_pg_finfo_uuid_ns_url(m)
+}
+func PgFinfoUuidNsX500(m *base.Module) int32 {
+	return F_pg_finfo_uuid_ns_x500(m)
+}
+func UuidGenerateV1(m *base.Module, l0 int32) int32 {
+	return F_uuid_generate_v1(m, l0)
+}
+func UuidGenerateV1mc(m *base.Module, l0 int32) int32 {
+	return F_uuid_generate_v1mc(m, l0)
+}
+func UuidGenerateV3(m *base.Module, l0 int32) int32 {
+	return F_uuid_generate_v3(m, l0)
+}
+func UuidGenerateV4(m *base.Module, l0 int32) int32 {
+	return F_uuid_generate_v4(m, l0)
+}
+func UuidGenerateV5(m *base.Module, l0 int32) int32 {
+	return F_uuid_generate_v5(m, l0)
+}
+func UuidNil(m *base.Module, l0 int32) int32 {
+	return F_uuid_nil(m, l0)
+}
+func UuidNsDns(m *base.Module, l0 int32) int32 {
+	return F_uuid_ns_dns(m, l0)
+}
+func UuidNsOid(m *base.Module, l0 int32) int32 {
+	return F_uuid_ns_oid(m, l0)
+}
+func UuidNsUrl(m *base.Module, l0 int32) int32 {
+	return F_uuid_ns_url(m, l0)
+}
+func UuidNsX500(m *base.Module, l0 int32) int32 {
+	return F_uuid_ns_x500(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

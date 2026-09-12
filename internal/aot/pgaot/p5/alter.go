@@ -120,13 +120,13 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
-						F_errmsg(m, int32(382091), v6+int32(-48))
+						F_errmsg(m, int32(382330), v6+int32(-48))
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(495475), int32(1085), int32(248458))
+							F_errfinish(m, int32(495763), int32(1085), int32(248582))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -147,7 +147,7 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l1
-					F_appendStringInfo(m, v6+int32(-16), int32(676940), v6+int32(-32))
+					F_appendStringInfo(m, v6+int32(-16), int32(677560), v6+int32(-32))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -192,13 +192,13 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-				F_errmsg(m, int32(247921), v8)
+				F_errmsg(m, int32(248045), v8)
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(495475), int32(1071), int32(248458))
+					F_errfinish(m, int32(495763), int32(1071), int32(248582))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {

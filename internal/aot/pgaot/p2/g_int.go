@@ -185,13 +185,13 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 							if v128 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(153041), int32(0))
+								F_errmsg(m, int32(153131), int32(0))
 								mBase = m.M
 								v134 = m.ExcPending
 								if v134 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493784), int32(71), int32(92171))
+									F_errfinish(m, int32(494072), int32(71), int32(92240))
 									mBase = m.M
 									v141 = m.ExcPending
 									if v141 != 0 {

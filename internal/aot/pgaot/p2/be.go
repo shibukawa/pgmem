@@ -56,13 +56,13 @@ func F_be_lo_close(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-				F_errmsg(m, int32(483069), v7)
+				F_errmsg(m, int32(483329), v7)
 				mBase = m.M
 				v51 = m.ExcPending
 				if v51 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496144), int32(133), int32(362000))
+					F_errfinish(m, int32(496432), int32(133), int32(362220))
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -91,13 +91,13 @@ func F_be_lo_close(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-					F_errmsg(m, int32(483069), v7)
+					F_errmsg(m, int32(483329), v7)
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496144), int32(133), int32(362000))
+						F_errfinish(m, int32(496432), int32(133), int32(362220))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -128,13 +128,13 @@ func F_be_lo_close(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-						F_errmsg(m, int32(483069), v7)
+						F_errmsg(m, int32(483329), v7)
 						mBase = m.M
 						v51 = m.ExcPending
 						if v51 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496144), int32(133), int32(362000))
+							F_errfinish(m, int32(496432), int32(133), int32(362220))
 							mBase = m.M
 							v56 = m.ExcPending
 							if v56 != 0 {
@@ -238,13 +238,13 @@ func F_be_lo_lseek64(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-				F_errmsg(m, int32(483069), v7)
+				F_errmsg(m, int32(483329), v7)
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496144), int32(241), int32(560254))
+					F_errfinish(m, int32(496432), int32(241), int32(560758))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
@@ -273,13 +273,13 @@ func F_be_lo_lseek64(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-					F_errmsg(m, int32(483069), v7)
+					F_errmsg(m, int32(483329), v7)
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496144), int32(241), int32(560254))
+						F_errfinish(m, int32(496432), int32(241), int32(560758))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -329,13 +329,13 @@ func F_be_lo_lseek64(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-						F_errmsg(m, int32(483069), v7)
+						F_errmsg(m, int32(483329), v7)
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496144), int32(241), int32(560254))
+							F_errfinish(m, int32(496432), int32(241), int32(560758))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {

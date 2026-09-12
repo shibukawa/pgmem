@@ -10052,6 +10052,132 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgstattuplebyidV1_5(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_uuid_ossp":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_uuid_ossp: want 0 args")
+		}
+		r := pgaot.PgMagicFuncUuidOssp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_generate_v1":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_generate_v1: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidGenerateV1(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_generate_v1mc":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_generate_v1mc: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidGenerateV1mc(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_generate_v3":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_generate_v3: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidGenerateV3(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_generate_v4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_generate_v4: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidGenerateV4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_generate_v5":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_generate_v5: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidGenerateV5(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_nil":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_nil: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidNil(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_ns_dns":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_ns_dns: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidNsDns(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_ns_oid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_ns_oid: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidNsOid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_ns_url":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_ns_url: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidNsUrl(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_uuid_ns_x500":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_uuid_ns_x500: want 0 args")
+		}
+		r := pgaot.PgFinfoUuidNsX500(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_generate_v1":
+		if len(a) != 1 {
+			panic("aot: uuid_generate_v1: want 1 args")
+		}
+		r := pgaot.UuidGenerateV1(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_generate_v1mc":
+		if len(a) != 1 {
+			panic("aot: uuid_generate_v1mc: want 1 args")
+		}
+		r := pgaot.UuidGenerateV1mc(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_generate_v3":
+		if len(a) != 1 {
+			panic("aot: uuid_generate_v3: want 1 args")
+		}
+		r := pgaot.UuidGenerateV3(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_generate_v4":
+		if len(a) != 1 {
+			panic("aot: uuid_generate_v4: want 1 args")
+		}
+		r := pgaot.UuidGenerateV4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_generate_v5":
+		if len(a) != 1 {
+			panic("aot: uuid_generate_v5: want 1 args")
+		}
+		r := pgaot.UuidGenerateV5(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_nil":
+		if len(a) != 1 {
+			panic("aot: uuid_nil: want 1 args")
+		}
+		r := pgaot.UuidNil(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_ns_dns":
+		if len(a) != 1 {
+			panic("aot: uuid_ns_dns: want 1 args")
+		}
+		r := pgaot.UuidNsDns(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_ns_oid":
+		if len(a) != 1 {
+			panic("aot: uuid_ns_oid: want 1 args")
+		}
+		r := pgaot.UuidNsOid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_ns_url":
+		if len(a) != 1 {
+			panic("aot: uuid_ns_url: want 1 args")
+		}
+		r := pgaot.UuidNsUrl(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "uuid_ns_x500":
+		if len(a) != 1 {
+			panic("aot: uuid_ns_x500: want 1 args")
+		}
+		r := pgaot.UuidNsX500(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

@@ -297,13 +297,13 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v57 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(363289), int32(0))
+			F_errmsg_internal(m, int32(363509), int32(0))
 			mBase = m.M
 			v61 = m.ExcPending
 			if v61 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(500431), int32(355), int32(264887))
+				F_errfinish(m, int32(500731), int32(355), int32(265011))
 				mBase = m.M
 				v66 = m.ExcPending
 				if v66 != 0 {

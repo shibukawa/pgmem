@@ -42,13 +42,13 @@ func F_SystemAttributeDefinition(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-			F_errmsg_internal(m, int32(473077), v5)
+			F_errmsg_internal(m, int32(473337), v5)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(497201), int32(239), int32(251232))
+				F_errfinish(m, int32(497501), int32(239), int32(251356))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
@@ -109,13 +109,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			if v50 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(568209), int32(0))
+				F_errmsg(m, int32(568792), int32(0))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(498317), int32(151), int32(285204))
+					F_errfinish(m, int32(498617), int32(151), int32(285328))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
@@ -142,13 +142,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				if v50 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(568209), int32(0))
+					F_errmsg(m, int32(568792), int32(0))
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(498317), int32(151), int32(285204))
+						F_errfinish(m, int32(498617), int32(151), int32(285328))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
@@ -176,13 +176,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if v50 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(568209), int32(0))
+						F_errmsg(m, int32(568792), int32(0))
 						mBase = m.M
 						v54 = m.ExcPending
 						if v54 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498317), int32(151), int32(285204))
+							F_errfinish(m, int32(498617), int32(151), int32(285328))
 							mBase = m.M
 							v59 = m.ExcPending
 							if v59 != 0 {
@@ -615,13 +615,13 @@ func F_system_time_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32,
 				if v23 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(344324), int32(0))
+					F_errmsg(m, int32(344531), int32(0))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(500081), int32(201), int32(285253))
+						F_errfinish(m, int32(500381), int32(201), int32(285377))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -648,13 +648,13 @@ func F_system_time_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32,
 			if v23 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(344324), int32(0))
+				F_errmsg(m, int32(344531), int32(0))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(500081), int32(201), int32(285253))
+					F_errfinish(m, int32(500381), int32(201), int32(285377))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {

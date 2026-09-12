@@ -381,13 +381,13 @@ func F_SlabAlloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			v237 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 			*(*int32)(unsafe.Add(mBase, uint32(v231)+4)) = v237
 			*(*int32)(unsafe.Add(mBase, uint32(v231))) = l1
-			F_errmsg_internal(m, int32(673188), v231)
+			F_errmsg_internal(m, int32(673808), v231)
 			mBase = m.M
 			v242 = m.ExcPending
 			if v242 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(501289), int32(611), int32(343162))
+				F_errfinish(m, int32(501589), int32(611), int32(343369))
 				mBase = m.M
 				v247 = m.ExcPending
 				if v247 != 0 {
@@ -873,7 +873,7 @@ func F_SlabStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 		*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = v169 - v168
 		*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v170
 		*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v22
-		v188 = F_pg_snprintf(m, v19+int32(32), int32(200), int32(450099), v19)
+		v188 = F_pg_snprintf(m, v19+int32(32), int32(200), int32(450359), v19)
 		mBase = m.M
 		v189 = m.ExcPending
 		if v189 != 0 {

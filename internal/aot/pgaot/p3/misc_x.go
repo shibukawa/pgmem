@@ -121,7 +121,7 @@ func F_xidout(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-		v17 = F_pg_snprintf(m, v10, int32(16), int32(38619), v6)
+		v17 = F_pg_snprintf(m, v10, int32(16), int32(38688), v6)
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
@@ -153,17 +153,17 @@ func F_xmlexists(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(364009), int32(0))
+			F_errmsg(m, int32(364229), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(580218), int32(0))
+				F_errdetail(m, int32(580838), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498523), int32(4555), int32(115952))
+					F_errfinish(m, int32(498823), int32(4555), int32(116021))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -196,12 +196,12 @@ func F_xmlvalidate(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(446798), int32(0))
+			F_errmsg(m, int32(447058), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(498523), int32(1123), int32(357520))
+				F_errfinish(m, int32(498823), int32(1123), int32(357727))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -235,17 +235,17 @@ func F_xpath(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(364009), int32(0))
+			F_errmsg(m, int32(364229), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(580218), int32(0))
+				F_errdetail(m, int32(580838), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498523), int32(4533), int32(321992))
+					F_errfinish(m, int32(498823), int32(4533), int32(322199))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

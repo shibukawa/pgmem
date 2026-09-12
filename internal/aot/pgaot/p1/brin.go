@@ -172,7 +172,7 @@ func F__brin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 					v37 = *(*int64)(unsafe.Add(mBase, uint32(v28)+392))
 					if int32(1)&base.B2i32(v37 != int64(0)) != 0 {
 					} else {
-						v41 = int32(4514932)
+						v41 = int32(4515220)
 						v43 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 						v44 = int32(1)
 						*(*int32)(unsafe.Add(mBase, _consts[11])) = v43 + v44
@@ -261,7 +261,7 @@ func F__brin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 									if v117 != 0 {
 										return
 									} else {
-										v121 = F___memcpy(m, int32(4418696), int32(4418536), int32(128))
+										v121 = F___memcpy(m, int32(4418984), int32(4418824), int32(128))
 										mBase = m.M
 										v124 = *(*int64)(unsafe.Add(mBase, _consts[12]))
 										*(*int64)(unsafe.Add(mBase, _consts[13])) = v124
@@ -296,7 +296,7 @@ func F__brin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 													v159 = v150 + v153<<(uint(int32(5))%32)
 													v164 = F___memset(m, v146+v153<<(uint(int32(7))%32), int32(0), int32(128))
 													mBase = m.M
-													F_BufferUsageAccumDiff(m, v164, int32(4418696))
+													F_BufferUsageAccumDiff(m, v164, int32(4418984))
 													mBase = m.M
 													v168 = v159 + int32(24)
 													v169 = int64(0)
@@ -1196,13 +1196,13 @@ func F_brin_minmax_consistent(m *base.Module, l0 int32) int32 {
 		} else {
 			v53 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+6)))
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = v53
-			F_errmsg_internal(m, int32(472496), v12)
+			F_errmsg_internal(m, int32(472756), v12)
 			mBase = m.M
 			v57 = m.ExcPending
 			if v57 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(493637), int32(195), int32(92011))
+				F_errfinish(m, int32(493925), int32(195), int32(92080))
 				mBase = m.M
 				v62 = m.ExcPending
 				if v62 != 0 {
@@ -1260,7 +1260,7 @@ func F_brin_minmax_multi_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_int_reloption(m, v2, int32(402544), int32(489648), int32(32), int32(8), int32(256))
+	F_add_local_int_reloption(m, v2, int32(402783), int32(489908), int32(32), int32(8), int32(256))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -1300,13 +1300,13 @@ func F_brin_minmax_multi_summary_in(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(17916)
-			F_errmsg(m, int32(192913), v4)
+			F_errmsg(m, int32(193003), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(498863), int32(2984), int32(279588))
+				F_errfinish(m, int32(499163), int32(2984), int32(279712))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -1901,7 +1901,7 @@ L59:
 L60:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20))) = v48
-	F_errmsg_internal(m, int32(484426), v20)
+	F_errmsg_internal(m, int32(484686), v20)
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -1911,7 +1911,7 @@ L60:
 	}
 L61:
 	;
-	F_errfinish(m, int32(327351), int32(70), int32(68101))
+	F_errfinish(m, int32(327558), int32(70), int32(68170))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {

@@ -191,13 +191,13 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v15
-											F_errmsg_internal(m, int32(455749), v8+int32(16))
+											F_errmsg_internal(m, int32(456009), v8+int32(16))
 											mBase = m.M
 											v79 = m.ExcPending
 											if v79 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(498523), int32(3080), int32(507070))
+												F_errfinish(m, int32(498823), int32(3080), int32(507370))
 												mBase = m.M
 												v84 = m.ExcPending
 												if v84 != 0 {
@@ -269,13 +269,13 @@ func F_query_to_xmlschema(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
-									F_errmsg_internal(m, int32(455778), v8)
+									F_errmsg_internal(m, int32(456038), v8)
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498523), int32(3077), int32(507070))
+										F_errfinish(m, int32(498823), int32(3077), int32(507370))
 										mBase = m.M
 										v69 = m.ExcPending
 										if v69 != 0 {

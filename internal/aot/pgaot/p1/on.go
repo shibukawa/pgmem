@@ -293,13 +293,13 @@ func F_on_proc_exit(m *base.Module, l0 int32) {
 			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(119070), int32(0))
+				F_errmsg_internal(m, int32(119139), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(501005), int32(321), int32(99771))
+					F_errfinish(m, int32(501305), int32(321), int32(99840))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

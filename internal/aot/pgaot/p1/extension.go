@@ -292,7 +292,7 @@ L26:
 	goto L24
 L27:
 	;
-	v74 = int32(302137)
+	v74 = int32(302303)
 	v77 = int32(*(*uint8)(unsafe.Add(mBase, _consts[382])))
 	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
 	if v78 == int32(0) {
@@ -375,7 +375,7 @@ L38:
 	;
 	v125 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v124))) = uint8(v125)
-	v128 = F_strstr(m, v100, int32(671308))
+	v128 = F_strstr(m, v100, int32(671928))
 	mBase = m.M
 	if v128 != 0 {
 		goto L17

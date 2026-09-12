@@ -467,7 +467,7 @@ L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v138
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v136
-	F_errmsg(m, int32(439640), v12)
+	F_errmsg(m, int32(439900), v12)
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {
@@ -477,7 +477,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(495411), int32(3532), int32(313598))
+	F_errfinish(m, int32(495699), int32(3532), int32(313805))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -531,7 +531,7 @@ func F_reindex_error_callback(m *base.Module, l0 int32) {
 	m.G0 = v6
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
 	if v8 == int32(112) {
-		v15 = int32(693354)
+		v15 = int32(693974)
 		F_set_errcontext_domain(m, int32(0))
 		mBase = m.M
 		v18 = m.ExcPending
@@ -555,7 +555,7 @@ func F_reindex_error_callback(m *base.Module, l0 int32) {
 			m.G0 = v6 + int32(16)
 			return
 		} else {
-			v15 = int32(692331)
+			v15 = int32(692951)
 			F_set_errcontext_domain(m, int32(0))
 			mBase = m.M
 			v18 = m.ExcPending

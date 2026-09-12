@@ -136,7 +136,7 @@ L3:
 	}
 L4:
 	;
-	F_s_lock(m, v16, int32(496776), int32(886), int32(312814))
+	F_s_lock(m, v16, int32(497064), int32(886), int32(312998))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -342,7 +342,7 @@ func F_shm_mq_detach_callback(m *base.Module, l0 int32, l1 int32) {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = int32(1)
 	if v3 != 0 {
-		F_s_lock(m, l1, int32(496776), int32(886), int32(312814))
+		F_s_lock(m, l1, int32(497064), int32(886), int32(312998))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
@@ -731,7 +731,7 @@ L3:
 	goto L1
 L4:
 	;
-	F_s_lock(m, l0, int32(496776), int32(1228), int32(311742))
+	F_s_lock(m, l0, int32(497064), int32(1228), int32(311926))
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -884,7 +884,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(1)
 	v11 = l0 + int32(8)
 	if v7 != 0 {
-		F_s_lock(m, v11, int32(501011), int32(184), int32(82145))
+		F_s_lock(m, v11, int32(501311), int32(184), int32(82214))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -915,7 +915,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 						if v44 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(501011), int32(200), int32(82145))
+							F_errfinish(m, int32(501311), int32(200), int32(82214))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -950,7 +950,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 							if v44 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(501011), int32(200), int32(82145))
+								F_errfinish(m, int32(501311), int32(200), int32(82214))
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
@@ -993,7 +993,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 								if v44 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(501011), int32(200), int32(82145))
+									F_errfinish(m, int32(501311), int32(200), int32(82214))
 									mBase = m.M
 									v49 = m.ExcPending
 									if v49 != 0 {
@@ -1036,7 +1036,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 					if v44 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(501011), int32(200), int32(82145))
+						F_errfinish(m, int32(501311), int32(200), int32(82214))
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -1071,7 +1071,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 						if v44 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(501011), int32(200), int32(82145))
+							F_errfinish(m, int32(501311), int32(200), int32(82214))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -1114,7 +1114,7 @@ func F_shm_toc_insert(m *base.Module, l0 int32, l1 int64, l2 int32) {
 							if v44 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(501011), int32(200), int32(82145))
+								F_errfinish(m, int32(501311), int32(200), int32(82214))
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {

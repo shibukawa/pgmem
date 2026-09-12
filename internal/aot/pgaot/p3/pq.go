@@ -135,7 +135,7 @@ L15:
 	}
 L16:
 	;
-	v31 = F__emscripten_memcpy_bulkmem(m, v9, v16+int32(4419216), v30)
+	v31 = F__emscripten_memcpy_bulkmem(m, v9, v16+int32(4419504), v30)
 	mBase = m.M
 	v32 = v31
 	goto L18
@@ -198,13 +198,13 @@ func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {
 			if v17 != 0 {
 				return float64(0)
 			} else {
-				F_errmsg(m, int32(405480), int32(0))
+				F_errmsg(m, int32(405719), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return float64(0)
 				} else {
-					F_errfinish(m, int32(494670), int32(533), int32(159122))
+					F_errfinish(m, int32(494958), int32(533), int32(159212))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
