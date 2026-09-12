@@ -3111,6 +3111,407 @@ func F_gensign(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	}
 	return
 }
+func F_geo_distance(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v10 float64
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 float64
+	_ = v12
+	var v13 float64
+	_ = v13
+	var v14 float64
+	_ = v14
+	var v18 float64
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v31 int32
+	_ = v31
+	var v38 float64
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v43 float64
+	_ = v43
+	var v44 float64
+	_ = v44
+	var v49 float64
+	_ = v49
+	var v51 float64
+	_ = v51
+	var v53 float64
+	_ = v53
+	var v56 float64
+	_ = v56
+	var v60 float64
+	_ = v60
+	var v67 float64
+	_ = v67
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v80 int32
+	_ = v80
+	var v87 float64
+	_ = v87
+	var v91 int32
+	_ = v91
+	var v92 float64
+	_ = v92
+	var v93 float64
+	_ = v93
+	var v98 float64
+	_ = v98
+	var v100 float64
+	_ = v100
+	var v102 float64
+	_ = v102
+	var v105 float64
+	_ = v105
+	var v109 float64
+	_ = v109
+	var v113 float64
+	_ = v113
+	var v114 float64
+	_ = v114
+	var v123 float64
+	_ = v123
+	var v127 float64
+	_ = v127
+	var v129 float64
+	_ = v129
+	var v133 int32
+	_ = v133
+	var v135 int32
+	_ = v135
+	var v142 int32
+	_ = v142
+	var v149 float64
+	_ = v149
+	var v153 int32
+	_ = v153
+	var v154 float64
+	_ = v154
+	var v155 float64
+	_ = v155
+	var v161 float64
+	_ = v161
+	var v162 float64
+	_ = v162
+	var v164 float64
+	_ = v164
+	var v166 float64
+	_ = v166
+	var v168 float64
+	_ = v168
+	var v178 float64
+	_ = v178
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v191 int32
+	_ = v191
+	var v198 float64
+	_ = v198
+	var v202 int32
+	_ = v202
+	var v203 float64
+	_ = v203
+	var v204 float64
+	_ = v204
+	var v210 float64
+	_ = v210
+	var v211 float64
+	_ = v211
+	var v213 float64
+	_ = v213
+	var v215 float64
+	_ = v215
+	var v217 float64
+	_ = v217
+	var v228 float64
+	_ = v228
+	var v231 float64
+	_ = v231
+	var v237 int64
+	_ = v237
+	var v242 int32
+	_ = v242
+	var v265 float64
+	_ = v265
+	var v272 float64
+	_ = v272
+	var v273 float64
+	_ = v273
+	var v274 float64
+	_ = v274
+	var v279 float64
+	_ = v279
+	var v284 float64
+	_ = v284
+	var v288 float64
+	_ = v288
+	var v297 float64
+	_ = v297
+	var v306 float64
+	_ = v306
+	var v310 float64
+	_ = v310
+	var v311 float64
+	_ = v311
+	var v319 float64
+	_ = v319
+	var v322 int32
+	_ = v322
+	var v325 int32
+	_ = v325
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v10 = *(*float64)(unsafe.Add(mBase, uint32(v9)))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = *(*float64)(unsafe.Add(mBase, uint32(v11)))
+	v13 = *(*float64)(unsafe.Add(mBase, uint32(v9)+8))
+	v14 = *(*float64)(unsafe.Add(mBase, uint32(v11)+8))
+	v18 = base.F64_mul(base.F64_div(v14, float64(360)), float64(6.283185307179586))
+	v22 = m.G0
+	v24 = v22 - int32(16)
+	m.G0 = v24
+	v31 = base.I32_wrap_i64(int64(base.Ui64(base.I64_reinterpret_f64(v18))>>(uint(int64(32))%64))) & int32(2147483647)
+	if base.Ui32(v31) <= base.Ui32(int32(1072243195)) {
+		if base.Ui32(v31) < base.Ui32(int32(1044816030)) {
+			v60 = float64(1)
+		} else {
+			v38 = F___cos(m, v18, float64(0))
+			mBase = m.M
+			v60 = v38
+		}
+	} else {
+		if base.Ui32(int32(2146435072)) <= base.Ui32(v31) {
+			v60 = base.F64_sub(v18, v18)
+		} else {
+			v42 = F___rem_pio2(m, v18, v24)
+			mBase = m.M
+			v43 = *(*float64)(unsafe.Add(mBase, uint32(v24)+8))
+			v44 = *(*float64)(unsafe.Add(mBase, uint32(v24)))
+			switch v42&int32(3) - int32(1) {
+			case 0:
+				v51 = F___sin(m, v44, v43, int32(1))
+				mBase = m.M
+				v60 = base.F64_neg(v51)
+			case 1:
+				v53 = F___cos(m, v44, v43)
+				mBase = m.M
+				v60 = base.F64_neg(v53)
+			case 2:
+				v56 = F___sin(m, v44, v43, int32(1))
+				mBase = m.M
+				v60 = v56
+			default:
+				v49 = F___cos(m, v44, v43)
+				mBase = m.M
+				v60 = v49
+			}
+		}
+	}
+	m.G0 = v24 + int32(16)
+	v67 = base.F64_mul(base.F64_div(v13, float64(360)), float64(6.283185307179586))
+	v71 = m.G0
+	v73 = v71 - int32(16)
+	m.G0 = v73
+	v80 = base.I32_wrap_i64(int64(base.Ui64(base.I64_reinterpret_f64(v67))>>(uint(int64(32))%64))) & int32(2147483647)
+	if base.Ui32(v80) <= base.Ui32(int32(1072243195)) {
+		if base.Ui32(v80) < base.Ui32(int32(1044816030)) {
+			v109 = float64(1)
+		} else {
+			v87 = F___cos(m, v67, float64(0))
+			mBase = m.M
+			v109 = v87
+		}
+	} else {
+		if base.Ui32(int32(2146435072)) <= base.Ui32(v80) {
+			v109 = base.F64_sub(v67, v67)
+		} else {
+			v91 = F___rem_pio2(m, v67, v73)
+			mBase = m.M
+			v92 = *(*float64)(unsafe.Add(mBase, uint32(v73)+8))
+			v93 = *(*float64)(unsafe.Add(mBase, uint32(v73)))
+			switch v91&int32(3) - int32(1) {
+			case 0:
+				v100 = F___sin(m, v93, v92, int32(1))
+				mBase = m.M
+				v109 = base.F64_neg(v100)
+			case 1:
+				v102 = F___cos(m, v93, v92)
+				mBase = m.M
+				v109 = base.F64_neg(v102)
+			case 2:
+				v105 = F___sin(m, v93, v92, int32(1))
+				mBase = m.M
+				v109 = v105
+			default:
+				v98 = F___cos(m, v93, v92)
+				mBase = m.M
+				v109 = v98
+			}
+		}
+	}
+	m.G0 = v73 + int32(16)
+	v113 = float64(6.283185307179586)
+	v114 = float64(360)
+	v123 = base.F64_abs(base.F64_sub(base.F64_mul(base.F64_div(v12, v114), v113), base.F64_mul(base.F64_div(v10, v114), v113)))
+	if base.F64_gt(v123, float64(3.141592653589793)) != 0 {
+		v127 = base.F64_sub(v113, v123)
+	} else {
+		v127 = v123
+	}
+	v129 = base.F64_mul(v127, float64(0.5))
+	v133 = m.G0
+	v135 = v133 - int32(16)
+	m.G0 = v135
+	v142 = base.I32_wrap_i64(int64(base.Ui64(base.I64_reinterpret_f64(v129))>>(uint(int64(32))%64))) & int32(2147483647)
+	if base.Ui32(v142) <= base.Ui32(int32(1072243195)) {
+		if base.Ui32(v142) < base.Ui32(int32(1045430272)) {
+			v168 = v129
+		} else {
+			v149 = F___sin(m, v129, float64(0), int32(0))
+			mBase = m.M
+			v168 = v149
+		}
+	} else {
+		if base.Ui32(int32(2146435072)) <= base.Ui32(v142) {
+			v168 = base.F64_sub(v129, v129)
+		} else {
+			v153 = F___rem_pio2(m, v129, v135)
+			mBase = m.M
+			v154 = *(*float64)(unsafe.Add(mBase, uint32(v135)+8))
+			v155 = *(*float64)(unsafe.Add(mBase, uint32(v135)))
+			switch v153&int32(3) - int32(1) {
+			case 0:
+				v162 = F___cos(m, v155, v154)
+				mBase = m.M
+				v168 = v162
+			case 1:
+				v164 = F___sin(m, v155, v154, int32(1))
+				mBase = m.M
+				v168 = base.F64_neg(v164)
+			case 2:
+				v166 = F___cos(m, v155, v154)
+				mBase = m.M
+				v168 = base.F64_neg(v166)
+			default:
+				v161 = F___sin(m, v155, v154, int32(1))
+				mBase = m.M
+				v168 = v161
+			}
+		}
+	}
+	m.G0 = v135 + int32(16)
+	v178 = base.F64_mul(base.F64_abs(base.F64_sub(v18, v67)), float64(0.5))
+	v182 = m.G0
+	v184 = v182 - int32(16)
+	m.G0 = v184
+	v191 = base.I32_wrap_i64(int64(base.Ui64(base.I64_reinterpret_f64(v178))>>(uint(int64(32))%64))) & int32(2147483647)
+	if base.Ui32(v191) <= base.Ui32(int32(1072243195)) {
+		if base.Ui32(v191) < base.Ui32(int32(1045430272)) {
+			v217 = v178
+		} else {
+			v198 = F___sin(m, v178, float64(0), int32(0))
+			mBase = m.M
+			v217 = v198
+		}
+	} else {
+		if base.Ui32(int32(2146435072)) <= base.Ui32(v191) {
+			v217 = base.F64_sub(v178, v178)
+		} else {
+			v202 = F___rem_pio2(m, v178, v184)
+			mBase = m.M
+			v203 = *(*float64)(unsafe.Add(mBase, uint32(v184)+8))
+			v204 = *(*float64)(unsafe.Add(mBase, uint32(v184)))
+			switch v202&int32(3) - int32(1) {
+			case 0:
+				v211 = F___cos(m, v204, v203)
+				mBase = m.M
+				v217 = v211
+			case 1:
+				v213 = F___sin(m, v204, v203, int32(1))
+				mBase = m.M
+				v217 = base.F64_neg(v213)
+			case 2:
+				v215 = F___cos(m, v204, v203)
+				mBase = m.M
+				v217 = base.F64_neg(v215)
+			default:
+				v210 = F___sin(m, v204, v203, int32(1))
+				mBase = m.M
+				v217 = v210
+			}
+		}
+	}
+	m.G0 = v184 + int32(16)
+	v228 = base.F64_sqrt(base.F64_add(base.F64_mul(v217, v217), base.F64_mul(v168, base.F64_mul(v168, base.F64_mul(v60, v109)))))
+	if base.F64_gt(v228, float64(1)) != 0 {
+		v231 = float64(1)
+	} else {
+		v231 = v228
+	}
+	v237 = base.I64_reinterpret_f64(v231)
+	v242 = base.I32_wrap_i64(int64(base.Ui64(v237)>>(uint(int64(32))%64))) & int32(2147483647)
+	if base.Ui32(int32(1072693248)) <= base.Ui32(v242) {
+		if base.I32_wrap_i64(v237)|(v242-int32(1072693248)) == int32(0) {
+			v319 = base.F64_add(base.F64_mul(v231, float64(1.5707963267948966)), float64(7.52316384526264e-37))
+		} else {
+			v319 = base.F64_div(float64(0), base.F64_sub(v231, v231))
+		}
+	} else {
+		if base.Ui32(v242) <= base.Ui32(int32(1071644671)) {
+			if base.Ui32(v242+int32(-1048576)) < base.Ui32(int32(1044381696)) {
+				v311 = v231
+				v319 = v311
+			} else {
+				v265 = F_R(m, base.F64_mul(v231, v231))
+				mBase = m.M
+				v319 = base.F64_add(base.F64_mul(v231, v265), v231)
+			}
+		} else {
+			v272 = base.F64_mul(base.F64_sub(float64(1), base.F64_abs(v231)), float64(0.5))
+			v273 = base.F64_sqrt(v272)
+			v274 = F_R(m, v272)
+			mBase = m.M
+			if base.Ui32(int32(1072640819)) <= base.Ui32(v242) {
+				v279 = base.F64_add(base.F64_mul(v273, v274), v273)
+				v306 = base.F64_sub(float64(1.5707963267948966), base.F64_add(base.F64_add(v279, v279), float64(-6.123233995736766e-17)))
+			} else {
+				v284 = float64(0.7853981633974483)
+				v288 = base.F64_reinterpret_i64(base.I64_reinterpret_f64(v273) & int64(-4294967296))
+				v297 = base.F64_div(base.F64_sub(v272, base.F64_mul(v288, v288)), base.F64_add(v273, v288))
+				v306 = base.F64_add(base.F64_sub(base.F64_sub(v284, base.F64_add(v288, v288)), base.F64_sub(base.F64_mul(base.F64_add(v273, v273), v274), base.F64_sub(float64(6.123233995736766e-17), base.F64_add(v297, v297)))), v284)
+			}
+			if v237 < int64(0) {
+				v310 = base.F64_neg(v306)
+			} else {
+				v310 = v306
+			}
+			v311 = v310
+			v319 = v311
+		}
+	}
+	v322 = F_Float8GetDatum(m, base.F64_mul(v319, float64(7917.495432)))
+	mBase = m.M
+	v325 = m.ExcPending
+	if v325 != 0 {
+		return int32(0)
+	} else {
+		return v322
+	}
+}
 func F_geqo_eval(m *base.Module, l0 int32, l1 int32, l2 int32) float64 {
 	mBase := m.M
 	_ = mBase

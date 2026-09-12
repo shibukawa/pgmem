@@ -212,6 +212,9 @@ func F_pg_finfo_gbt_uuid_penalty(m *base.Module) int32 {
 func F_pg_finfo_gbt_uuid_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbt_uuid_union_0)
 }
+func F_pg_finfo_geo_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_geo_distance_0)
+}
 func F_pg_finfo_ghstore_same(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_same_0)
 }
