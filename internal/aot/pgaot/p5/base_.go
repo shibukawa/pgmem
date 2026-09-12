@@ -191,7 +191,7 @@ L20:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v50
-	F_errmsg_internal(m, int32(456568), v7)
+	F_errmsg_internal(m, int32(463405), v7)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -201,7 +201,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(466156), int32(185), int32(14612))
+	F_errfinish(m, int32(473402), int32(185), int32(14612))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -249,13 +249,13 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-			F_errmsg_internal(m, int32(449640), v6)
+			F_errmsg_internal(m, int32(456423), v6)
 			mBase = m.M
 			v31 = m.ExcPending
 			if v31 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(468768), int32(426), int32(288698))
+				F_errfinish(m, int32(476043), int32(426), int32(292404))
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
@@ -278,13 +278,13 @@ func F_find_base_rel(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-				F_errmsg_internal(m, int32(449640), v6)
+				F_errmsg_internal(m, int32(456423), v6)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(468768), int32(426), int32(288698))
+					F_errfinish(m, int32(476043), int32(426), int32(292404))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {

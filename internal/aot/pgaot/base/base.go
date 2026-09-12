@@ -57,6 +57,18 @@ type EnvImports interface {
 	Pgmem_recv(m *Module, l0 int32, l1 int32) int32
 	Pgmem_send(m *Module, l0 int32, l1 int32) int32
 	Pgmem_run(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_hash_info(m *Module, l0 int32) int32
+	Pgmem_cipher_free(m *Module, l0 int32)
+	Pgmem_cipher_create(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+	Pgmem_cipher_run(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+	Pgmem_deflate_create(m *Module, l0 int32, l1 int32) int32
+	Pgmem_deflate_write(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_zstream_read(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_deflate_finish(m *Module, l0 int32) int32
+	Pgmem_zstream_free(m *Module, l0 int32)
+	Pgmem_inflate_all(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_bn_rand(m *Module, l0 int32, l1 int32, l2 int32) int32
+	Pgmem_bn_op(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 	X_abort_js(m *Module)
 	X__syscall_faccessat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_chdir(m *Module, l0 int32) int32

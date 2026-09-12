@@ -93,7 +93,7 @@ func F_pgaio_submit_staged(m *base.Module) {
 		m.G0 = v6 + int32(16)
 		return
 	} else {
-		v13 = int32(4419940)
+		v13 = int32(4437236)
 		v15 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 		*(*int32)(unsafe.Add(mBase, _consts[7])) = v15 + int32(1)
 		v22 = *(*int32)(unsafe.Add(mBase, _consts[726]))
@@ -104,7 +104,7 @@ func F_pgaio_submit_staged(m *base.Module) {
 		if v25 != 0 {
 			return
 		} else {
-			v26 = int32(4419940)
+			v26 = int32(4437236)
 			v28 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 			*(*int32)(unsafe.Add(mBase, _consts[7])) = v28 - int32(1)
 			v33 = *(*int32)(unsafe.Add(mBase, _consts[725]))
@@ -133,13 +133,13 @@ func F_pgaio_submit_staged(m *base.Module) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = v24
-							F_errmsg_internal(m, int32(163021), v6)
+							F_errmsg_internal(m, int32(164743), v6)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(465647), int32(1147), int32(432475))
+								F_errfinish(m, int32(472893), int32(1147), int32(438631))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {

@@ -272,21 +272,21 @@ func F_log(m *base.Module, l0 float64) float64 {
 			v25 = base.F64_add(l0, float64(-1))
 			v27 = base.F64_mul(v25, float64(1.34217728e+08))
 			v29 = base.F64_sub(base.F64_add(v25, v27), v27)
-			v32 = *(*float64)(unsafe.Add(mBase, _consts[1335]))
+			v32 = *(*float64)(unsafe.Add(mBase, _consts[1391]))
 			v33 = base.F64_mul(base.F64_mul(v29, v29), v32)
 			v34 = base.F64_add(v25, v33)
 			v35 = base.F64_mul(v25, v25)
 			v36 = base.F64_mul(v25, v35)
-			v38 = *(*float64)(unsafe.Add(mBase, _consts[1336]))
-			v41 = *(*float64)(unsafe.Add(mBase, _consts[1337]))
-			v44 = *(*float64)(unsafe.Add(mBase, _consts[1338]))
-			v47 = *(*float64)(unsafe.Add(mBase, _consts[1339]))
-			v53 = *(*float64)(unsafe.Add(mBase, _consts[1340]))
-			v56 = *(*float64)(unsafe.Add(mBase, _consts[1341]))
-			v59 = *(*float64)(unsafe.Add(mBase, _consts[1342]))
-			v65 = *(*float64)(unsafe.Add(mBase, _consts[1343]))
-			v68 = *(*float64)(unsafe.Add(mBase, _consts[1344]))
-			v71 = *(*float64)(unsafe.Add(mBase, _consts[1345]))
+			v38 = *(*float64)(unsafe.Add(mBase, _consts[1392]))
+			v41 = *(*float64)(unsafe.Add(mBase, _consts[1393]))
+			v44 = *(*float64)(unsafe.Add(mBase, _consts[1394]))
+			v47 = *(*float64)(unsafe.Add(mBase, _consts[1395]))
+			v53 = *(*float64)(unsafe.Add(mBase, _consts[1396]))
+			v56 = *(*float64)(unsafe.Add(mBase, _consts[1397]))
+			v59 = *(*float64)(unsafe.Add(mBase, _consts[1398]))
+			v65 = *(*float64)(unsafe.Add(mBase, _consts[1399]))
+			v68 = *(*float64)(unsafe.Add(mBase, _consts[1400]))
+			v71 = *(*float64)(unsafe.Add(mBase, _consts[1401]))
 			return base.F64_add(v34, base.F64_add(base.F64_mul(v36, base.F64_add(base.F64_mul(v36, base.F64_add(base.F64_mul(v36, base.F64_add(base.F64_mul(v36, v38), base.F64_add(base.F64_mul(v35, v41), base.F64_add(base.F64_mul(v25, v44), v47)))), base.F64_add(base.F64_mul(v35, v53), base.F64_add(base.F64_mul(v25, v56), v59)))), base.F64_add(base.F64_mul(v35, v65), base.F64_add(base.F64_mul(v25, v68), v71)))), base.F64_add(base.F64_mul(base.F64_mul(base.F64_sub(v25, v29), v32), base.F64_add(v25, v29)), base.F64_add(v33, base.F64_sub(v25, v34)))))
 		}
 	} else {
@@ -309,22 +309,22 @@ func F_log(m *base.Module, l0 float64) float64 {
 						v121 = base.I64_reinterpret_f64(base.F64_mul(l0, float64(4.503599627370496e+15))) - int64(234187180623265792)
 						v123 = v121 - int64(4604367669032910848)
 						v127 = base.F64_convert_i32_s(base.I32_wrap_i64(v123 >> (uint(int64(52)) % 64)))
-						v129 = *(*float64)(unsafe.Add(mBase, _consts[1346]))
+						v129 = *(*float64)(unsafe.Add(mBase, _consts[1402]))
 						v137 = base.I32_wrap_i64(int64(base.Ui64(v123)>>(uint(int64(45))%64))) & int32(127) << (uint(int32(4)) % 32)
-						v140 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1347])))
+						v140 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1403])))
 						v141 = base.F64_add(base.F64_mul(v127, v129), v140)
-						v144 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1348])))
-						v151 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1349])))
-						v155 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1350])))
+						v144 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1404])))
+						v151 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1405])))
+						v155 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1406])))
 						v157 = base.F64_mul(v144, base.F64_sub(base.F64_sub(base.F64_reinterpret_i64(v121-v123&int64(-4503599627370496)), v151), v155))
 						v158 = base.F64_add(v141, v157)
 						v159 = base.F64_mul(v157, v157)
-						v162 = *(*float64)(unsafe.Add(mBase, _consts[1351]))
-						v165 = *(*float64)(unsafe.Add(mBase, _consts[1352]))
-						v169 = *(*float64)(unsafe.Add(mBase, _consts[1353]))
-						v172 = *(*float64)(unsafe.Add(mBase, _consts[1354]))
-						v177 = *(*float64)(unsafe.Add(mBase, _consts[1355]))
-						v180 = *(*float64)(unsafe.Add(mBase, _consts[1356]))
+						v162 = *(*float64)(unsafe.Add(mBase, _consts[1407]))
+						v165 = *(*float64)(unsafe.Add(mBase, _consts[1408]))
+						v169 = *(*float64)(unsafe.Add(mBase, _consts[1409]))
+						v172 = *(*float64)(unsafe.Add(mBase, _consts[1410]))
+						v177 = *(*float64)(unsafe.Add(mBase, _consts[1411]))
+						v180 = *(*float64)(unsafe.Add(mBase, _consts[1412]))
 						v188 = base.F64_add(v158, base.F64_add(base.F64_mul(base.F64_mul(v157, v159), base.F64_add(base.F64_mul(v159, base.F64_add(base.F64_mul(v157, v162), v165)), base.F64_add(base.F64_mul(v157, v169), v172))), base.F64_add(base.F64_mul(v159, v177), base.F64_add(base.F64_mul(v127, v180), base.F64_add(v157, base.F64_sub(v141, v158))))))
 						return v188
 					}
@@ -334,22 +334,22 @@ func F_log(m *base.Module, l0 float64) float64 {
 			v121 = v11
 			v123 = v121 - int64(4604367669032910848)
 			v127 = base.F64_convert_i32_s(base.I32_wrap_i64(v123 >> (uint(int64(52)) % 64)))
-			v129 = *(*float64)(unsafe.Add(mBase, _consts[1346]))
+			v129 = *(*float64)(unsafe.Add(mBase, _consts[1402]))
 			v137 = base.I32_wrap_i64(int64(base.Ui64(v123)>>(uint(int64(45))%64))) & int32(127) << (uint(int32(4)) % 32)
-			v140 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1347])))
+			v140 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1403])))
 			v141 = base.F64_add(base.F64_mul(v127, v129), v140)
-			v144 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1348])))
-			v151 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1349])))
-			v155 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1350])))
+			v144 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1404])))
+			v151 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1405])))
+			v155 = *(*float64)(unsafe.Add(mBase, uint32(v137)+uint32(_consts[1406])))
 			v157 = base.F64_mul(v144, base.F64_sub(base.F64_sub(base.F64_reinterpret_i64(v121-v123&int64(-4503599627370496)), v151), v155))
 			v158 = base.F64_add(v141, v157)
 			v159 = base.F64_mul(v157, v157)
-			v162 = *(*float64)(unsafe.Add(mBase, _consts[1351]))
-			v165 = *(*float64)(unsafe.Add(mBase, _consts[1352]))
-			v169 = *(*float64)(unsafe.Add(mBase, _consts[1353]))
-			v172 = *(*float64)(unsafe.Add(mBase, _consts[1354]))
-			v177 = *(*float64)(unsafe.Add(mBase, _consts[1355]))
-			v180 = *(*float64)(unsafe.Add(mBase, _consts[1356]))
+			v162 = *(*float64)(unsafe.Add(mBase, _consts[1407]))
+			v165 = *(*float64)(unsafe.Add(mBase, _consts[1408]))
+			v169 = *(*float64)(unsafe.Add(mBase, _consts[1409]))
+			v172 = *(*float64)(unsafe.Add(mBase, _consts[1410]))
+			v177 = *(*float64)(unsafe.Add(mBase, _consts[1411]))
+			v180 = *(*float64)(unsafe.Add(mBase, _consts[1412]))
 			v188 = base.F64_add(v158, base.F64_add(base.F64_mul(base.F64_mul(v157, v159), base.F64_add(base.F64_mul(v159, base.F64_add(base.F64_mul(v157, v162), v165)), base.F64_add(base.F64_mul(v157, v169), v172))), base.F64_add(base.F64_mul(v159, v177), base.F64_add(base.F64_mul(v127, v180), base.F64_add(v157, base.F64_sub(v141, v158))))))
 			return v188
 		}
@@ -471,9 +471,9 @@ func F_log_disconnections(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v73
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v72
 			if v71 != 0 {
-				v81 = int32(514066)
+				v81 = int32(522065)
 			} else {
-				v81 = int32(706478)
+				v81 = int32(715212)
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v81
 			v84 = base.I32_div_s(v65, int32(1000))
@@ -483,13 +483,13 @@ func F_log_disconnections(m *base.Module, l0 int32, l1 int32) {
 			v89 = base.I32_div_s(base.I32_extend16_s(v63), v88)
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = base.I32_extend16_s(v89)
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = base.I32_extend16_s(v63 - v89*v88)
-			F_errmsg(m, int32(163696), v12)
+			F_errmsg(m, int32(165418), v12)
 			mBase = m.M
 			v99 = m.ExcPending
 			if v99 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(463798), int32(5426), int32(130475))
+				F_errfinish(m, int32(471009), int32(5432), int32(131952))
 				mBase = m.M
 				v104 = m.ExcPending
 				if v104 != 0 {
@@ -789,7 +789,7 @@ L29:
 L30:
 	;
 	v104 = int32(0)
-	v105 = int32(4419940)
+	v105 = int32(4437236)
 	v107 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v107 + int32(1)
 	if v93 <= v104 {
@@ -799,7 +799,7 @@ L30:
 	}
 L31:
 	;
-	v207 = int32(4419940)
+	v207 = int32(4437236)
 	v209 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v209 - int32(1)
 	if base.Ui32(v97) < base.Ui32(l2) {

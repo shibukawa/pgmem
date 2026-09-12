@@ -121,13 +121,13 @@ func F_cash_mul_int4(m *base.Module, l0 int32) int32 {
 			if v64 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(377941), int32(0))
+				F_errmsg(m, int32(382745), int32(0))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(467308), int32(150), int32(519000))
+					F_errfinish(m, int32(474583), int32(150), int32(527072))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {

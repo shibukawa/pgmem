@@ -20,7 +20,7 @@ func F_ResOwnerPrintFile(m *base.Module, l0 int32) int32 {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	v9 = F_psprintf(m, int32(448441), v5)
+	v9 = F_psprintf(m, int32(455224), v5)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -90,6 +90,49 @@ func F_ResOwnerReleaseCatCache(m *base.Module, l0 int32) {
 					return
 				}
 			}
+		}
+	}
+}
+func F_ResOwnerReleasePGMEMZHandle(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = int32(0)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	m.Env.Pgmem_zstream_free(m, v5)
+	mBase = m.M
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v7 != 0 {
+		F_ResourceOwnerForget(m, v7, l0, int32(4335212))
+		mBase = m.M
+		v10 = m.ExcPending
+		if v10 != 0 {
+			return
+		} else {
+			F_pfree(m, l0)
+			mBase = m.M
+			v12 = m.ExcPending
+			if v12 != 0 {
+				return
+			} else {
+				return
+			}
+		}
+	} else {
+		F_pfree(m, l0)
+		mBase = m.M
+		v12 = m.ExcPending
+		if v12 != 0 {
+			return
+		} else {
+			return
 		}
 	}
 }

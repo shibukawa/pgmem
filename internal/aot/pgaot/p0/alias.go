@@ -3404,6 +3404,10 @@ func F_ShowGUCOption(m *base.Module, l0 int32, l1 int32) int32
 func F_set_config_option_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_reapply_stacked_values github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_reapply_stacked_values
 func F_reapply_stacked_values(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
+//go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
+func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
+func F_MarkGUCPrefixReserved(m *base.Module, l0 int32)
 //go:linkname F_read_gucstate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_read_gucstate
 func F_read_gucstate(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ParseLongOption github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ParseLongOption
@@ -3746,6 +3750,8 @@ func F_pqsignal_be(m *base.Module, l0 int32, l1 int32)
 func F_pg_qsort(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_qsort_arg github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_qsort_arg
 func F_qsort_arg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_pg_vsnprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_vsnprintf
+func F_pg_vsnprintf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_dopr github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_dopr
 func F_dopr(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pg_sprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_sprintf
@@ -3810,6 +3816,32 @@ func F_replace_s(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 func F_slice_from_s(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_slice_to github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_slice_to
 func F_slice_to(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_des_init github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_des_init
+func F_des_init(m *base.Module)
+//go:linkname F_des_setkey github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_des_setkey
+func F_des_setkey(m *base.Module, l0 int32)
+//go:linkname F_do_des github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_do_des
+func F_do_des(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F__crypt_gensalt_sha github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__crypt_gensalt_sha
+func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_pullf_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pullf_create
+func F_pullf_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pushf_write github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pushf_write
+func F_pushf_write(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_px_find_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_px_find_digest
+func F_px_find_digest(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_parse_new_len github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_parse_new_len
+func F_parse_new_len(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_mpi_check github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_mpi_check
+func F_mpi_check(m *base.Module, l0 int32) int32
+//go:linkname F_bytes_to_mpi github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_bytes_to_mpi
+func F_bytes_to_mpi(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgp_mpi_free github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_mpi_free
+func F_pgp_mpi_free(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_load_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_load_digest
+func F_pgp_load_digest(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_px_crypt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_px_crypt
+func F_px_crypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
@@ -3922,6 +3954,8 @@ func F_strstr(m *base.Module, l0 int32, l1 int32) int32
 func F_strtod(m *base.Module, l0 int32, l1 int32) float64
 //go:linkname F_strtox_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strtox_2
 func F_strtox_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64) int64
+//go:linkname F_strtol github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_strtol
+func F_strtol(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___syscall_ret github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___syscall_ret
 func F___syscall_ret(m *base.Module, l0 int32) int32
 //go:linkname F___tan github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___tan

@@ -1450,6 +1450,8 @@ func F_ExecFetchSlotHeapTuple(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 func F_ExecFetchSlotMinimalTuple(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_slot_getsomeattrs_int github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_slot_getsomeattrs_int
 func F_slot_getsomeattrs_int(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_BuildTupleFromCStrings github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_BuildTupleFromCStrings
+func F_BuildTupleFromCStrings(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_HeapTupleHeaderGetDatum github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HeapTupleHeaderGetDatum
 func F_HeapTupleHeaderGetDatum(m *base.Module, l0 int32) int32
 //go:linkname F_do_tup_output github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_do_tup_output
@@ -3883,7 +3885,7 @@ func F_AtEOXact_GUC(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_BeginReportingGUCOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_BeginReportingGUCOptions
 func F_BeginReportingGUCOptions(m *base.Module)
 //go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
-func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
 func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName
@@ -4280,6 +4282,32 @@ func F_slice_from_s(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_slice_del(m *base.Module, l0 int32) int32
 //go:linkname F_slice_to github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_slice_to
 func F_slice_to(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_mbuf_append github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_mbuf_append
+func F_mbuf_append(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pullf_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pullf_create
+func F_pullf_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pullf_free github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pullf_free
+func F_pullf_free(m *base.Module, l0 int32)
+//go:linkname F_pullf_read github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pullf_read
+func F_pullf_read(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pullf_read_max github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pullf_read_max
+func F_pullf_read_max(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pullf_read_fixed github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pullf_read_fixed
+func F_pullf_read_fixed(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pgp_decompress_filter github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgp_decompress_filter
+func F_pgp_decompress_filter(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pgp_parse_pkt_hdr github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgp_parse_pkt_hdr
+func F_pgp_parse_pkt_hdr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_mpi_check github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_mpi_check
+func F_mpi_check(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_mpi_alloc github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pgp_mpi_alloc
+func F_pgp_mpi_alloc(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgp_mpi_free github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_mpi_free
+func F_pgp_mpi_free(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_load_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_load_digest
+func F_pgp_load_digest(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_px_debug github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_px_debug
+func F_px_debug(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

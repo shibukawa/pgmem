@@ -106,19 +106,19 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v14))) = v50
-						F_errmsg(m, int32(177610), v14)
+						F_errmsg(m, int32(179332), v14)
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(525217), int32(0))
+							F_errhint(m, int32(533423), int32(0))
 							mBase = m.M
 							v59 = m.ExcPending
 							if v59 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(464926), int32(217), int32(120839))
+								F_errfinish(m, int32(472161), int32(217), int32(122129))
 								mBase = m.M
 								v64 = m.ExcPending
 								if v64 != 0 {
@@ -155,19 +155,19 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v14))) = v50
-							F_errmsg(m, int32(177610), v14)
+							F_errmsg(m, int32(179332), v14)
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
 								return
 							} else {
-								F_errhint(m, int32(525217), int32(0))
+								F_errhint(m, int32(533423), int32(0))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(464926), int32(217), int32(120839))
+									F_errfinish(m, int32(472161), int32(217), int32(122129))
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
@@ -210,13 +210,13 @@ func F_get_sort_group_operators(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v72
-								F_errmsg(m, int32(177451), v14+int32(16))
+								F_errmsg(m, int32(179173), v14+int32(16))
 								mBase = m.M
 								v79 = m.ExcPending
 								if v79 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(464926), int32(222), int32(120839))
+									F_errfinish(m, int32(472161), int32(222), int32(122129))
 									mBase = m.M
 									v84 = m.ExcPending
 									if v84 != 0 {

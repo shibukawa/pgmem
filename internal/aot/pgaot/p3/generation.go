@@ -475,7 +475,7 @@ func F_GenerationContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = l1
 		*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = v72
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(1719664)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(1727856)
 		if l0 != 0 {
 			v84 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 			*(*int32)(unsafe.Add(mBase, uint32(v18)+28)) = v84
@@ -521,13 +521,13 @@ func F_GenerationContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = l1
-						F_errdetail(m, int32(615082), v11)
+						F_errdetail(m, int32(623334), v11)
 						mBase = m.M
 						v120 = m.ExcPending
 						if v120 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(465811), int32(217), int32(333762))
+							F_errfinish(m, int32(473057), int32(217), int32(338306))
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
@@ -756,7 +756,7 @@ func F_GenerationStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 		*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = v61 - v60
 		*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v63
 		*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v64
-		v77 = F_pg_snprintf(m, v16+int32(32), int32(200), int32(422425), v16)
+		v77 = F_pg_snprintf(m, v16+int32(32), int32(200), int32(428252), v16)
 		mBase = m.M
 		v78 = m.ExcPending
 		if v78 != 0 {

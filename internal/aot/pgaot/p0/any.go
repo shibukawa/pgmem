@@ -1138,7 +1138,7 @@ func F_has_any_column_privilege_id_name(m *base.Module, l0 int32) int32 {
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						v25 = F_convert_any_priv_string(m, v12, int32(1607616))
+						v25 = F_convert_any_priv_string(m, v12, int32(1615808))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {

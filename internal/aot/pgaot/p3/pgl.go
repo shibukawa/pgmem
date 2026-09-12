@@ -13,14 +13,14 @@ func F_pgl_getpwuid(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v18 int32
 	_ = v18
-	*(*int32)(unsafe.Add(mBase, _consts[1231])) = int32(4099346)
-	*(*int32)(unsafe.Add(mBase, _consts[1232])) = int32(4099331)
-	*(*int32)(unsafe.Add(mBase, _consts[1233])) = int32(4099319)
-	*(*int32)(unsafe.Add(mBase, _consts[1234])) = l0
-	*(*int32)(unsafe.Add(mBase, _consts[1235])) = l0
-	*(*int32)(unsafe.Add(mBase, _consts[1236])) = int32(4099317)
-	v18 = int32(4509544)
-	*(*int32)(unsafe.Add(mBase, _consts[1237])) = int32(4099308)
+	*(*int32)(unsafe.Add(mBase, _consts[1229])) = int32(4114642)
+	*(*int32)(unsafe.Add(mBase, _consts[1230])) = int32(4114627)
+	*(*int32)(unsafe.Add(mBase, _consts[1231])) = int32(4114615)
+	*(*int32)(unsafe.Add(mBase, _consts[1232])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1233])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1234])) = int32(4114613)
+	v18 = int32(4526840)
+	*(*int32)(unsafe.Add(mBase, _consts[1235])) = int32(4114604)
 	return v18
 }
 func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
@@ -72,12 +72,8 @@ func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
 	_ = v57
 	var v70 int32
 	_ = v70
-	var v72 int32
-	_ = v72
 	var v76 int32
 	_ = v76
-	var v83 int32
-	_ = v83
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[1227]))
 	if v4 == int32(0) {
 		goto L1
@@ -88,15 +84,15 @@ L1:
 	;
 	F___wasm_longjmp(m, l0, l1)
 	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L25
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L22
 	} else {
-		goto L26
+		goto L23
 	}
 L2:
 	;
-	v7 = int32(4509376)
+	v7 = int32(4526672)
 	v8 = int32(156)
 	goto L6
 L3:
@@ -213,32 +209,16 @@ L20:
 	goto L4
 L21:
 	;
-	v72 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1229])))
-	if v72 == int32(0) {
-		goto L22
-	} else {
-		goto L23
-	}
-L22:
-	;
-	v76 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[1230])) = uint8(v76)
-	goto L24
-L23:
-	;
-	goto L24
-L24:
-	;
 	*(*int32)(unsafe.Add(mBase, _consts[1228])) = int32(100)
 	m.Env.Emscripten_exit_with_live_runtime(m)
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L25:
+L22:
 	;
 	return
-L26:
+L23:
 	;
 	base.Wasm_trap_unreachable()
 	for {
@@ -262,7 +242,7 @@ func F_pgl_setPGliteActive(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v8 = int32(4509360)
+	v8 = int32(4526656)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[1227]))
 	*(*int32)(unsafe.Add(mBase, _consts[1227])) = l0
 	if l0 == int32(0) {
@@ -285,7 +265,7 @@ func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v4 int32
 	_ = v4
-	v3 = int32(4099304)
+	v3 = int32(4114600)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[1228]))
 	*(*int32)(unsafe.Add(mBase, _consts[1228])) = l0
 	return v4

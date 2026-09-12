@@ -23,7 +23,7 @@ func F_ResOwnerPrintRelCache(m *base.Module, l0 int32) int32 {
 	m.G0 = v5
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v7 + int32(4)
-	v12 = F_psprintf(m, int32(658668), v5)
+	v12 = F_psprintf(m, int32(667214), v5)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -84,7 +84,7 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 			v19 = v17 - int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = v19
 			if v19 == int32(0) {
-				v23 = int32(4341224)
+				v23 = int32(4358520)
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 				v26 = int32(1)
 				*(*int32)(unsafe.Add(mBase, _consts[777])) = v25 - v26
@@ -116,13 +116,13 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(0)
-			F_errmsg_internal(m, int32(458380), v6)
+			F_errmsg_internal(m, int32(465217), v6)
 			mBase = m.M
 			v63 = m.ExcPending
 			if v63 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(464766), int32(6561), int32(262896))
+				F_errfinish(m, int32(472001), int32(6561), int32(265969))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
@@ -131,6 +131,71 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 					base.Wasm_trap_unreachable()
 					for {
 					}
+				}
+			}
+		}
+	}
+}
+func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	v2 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+96)) = v2
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v5 <= v2 {
+		v18 = F___memset(m, l0, int32(0), int32(100))
+		mBase = m.M
+		F_pfree(m, l0)
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return
+		} else {
+			return
+		}
+	} else {
+		m.Env.Pgmem_cipher_free(m, v5)
+		mBase = m.M
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+96))
+		if v9 == int32(0) {
+			v18 = F___memset(m, l0, int32(0), int32(100))
+			mBase = m.M
+			F_pfree(m, l0)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				return
+			}
+		} else {
+			F_ResourceOwnerForget(m, v9, l0, int32(4335052))
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return
+			} else {
+				v18 = F___memset(m, l0, int32(0), int32(100))
+				mBase = m.M
+				F_pfree(m, l0)
+				mBase = m.M
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return
+				} else {
+					return
 				}
 			}
 		}

@@ -926,7 +926,7 @@ L33:
 	}
 L34:
 	;
-	v124 = int32(2168400)
+	v124 = int32(2177840)
 	goto L29
 L35:
 	;
@@ -960,7 +960,7 @@ L41:
 	;
 	v107 = v98 + int32(1)
 	v109 = v107 << (uint(int32(3)) % 32)
-	v112 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v109)+uint32(_consts[1075]))))
+	v112 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v109)+uint32(_consts[1073]))))
 	if v112 == int32(65535) {
 		goto L43
 	} else {
@@ -968,7 +968,7 @@ L41:
 	}
 L42:
 	;
-	v124 = v109 + int32(2168400)
+	v124 = v109 + int32(2177840)
 	goto L29
 L43:
 	;

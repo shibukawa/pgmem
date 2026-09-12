@@ -14,6 +14,8 @@ func F_IsTransactionBlock(m *base.Module) int32
 func F_pq_buffer_remaining_data(m *base.Module) int32
 //go:linkname F_main github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_main
 func F_main(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pg_numa_available github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_numa_available
+func F_pg_numa_available(m *base.Module, l0 int32) int32
 //go:linkname F_ProcessStartupPacket github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ProcessStartupPacket
 func F_ProcessStartupPacket(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_pgl_startPGlite github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgl_startPGlite
@@ -518,6 +520,104 @@ func F_pg_finfo_utf8_to_win(m *base.Module) int32
 func F_win_to_utf8(m *base.Module, l0 int32) int32
 //go:linkname F_utf8_to_win github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_utf8_to_win
 func F_utf8_to_win(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pgcrypto github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_Pg_magic_func_pgcrypto
+func F_Pg_magic_func_pgcrypto(m *base.Module) int32
+//go:linkname F__PG_init_pgcrypto github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__PG_init_pgcrypto
+func F__PG_init_pgcrypto(m *base.Module)
+//go:linkname F_pg_finfo_pg_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_digest
+func F_pg_finfo_pg_digest(m *base.Module) int32
+//go:linkname F_pg_digest github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_digest
+func F_pg_digest(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_hmac github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_hmac
+func F_pg_finfo_pg_hmac(m *base.Module) int32
+//go:linkname F_pg_hmac github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_hmac
+func F_pg_hmac(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_gen_salt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_gen_salt
+func F_pg_finfo_pg_gen_salt(m *base.Module) int32
+//go:linkname F_pg_gen_salt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_gen_salt
+func F_pg_gen_salt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_gen_salt_rounds github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_gen_salt_rounds
+func F_pg_finfo_pg_gen_salt_rounds(m *base.Module) int32
+//go:linkname F_pg_gen_salt_rounds github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_gen_salt_rounds
+func F_pg_gen_salt_rounds(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_crypt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_crypt
+func F_pg_finfo_pg_crypt(m *base.Module) int32
+//go:linkname F_pg_crypt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_crypt
+func F_pg_crypt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_encrypt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_encrypt
+func F_pg_finfo_pg_encrypt(m *base.Module) int32
+//go:linkname F_pg_encrypt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_encrypt
+func F_pg_encrypt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_decrypt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_decrypt
+func F_pg_finfo_pg_decrypt(m *base.Module) int32
+//go:linkname F_pg_decrypt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_decrypt
+func F_pg_decrypt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_encrypt_iv github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_encrypt_iv
+func F_pg_finfo_pg_encrypt_iv(m *base.Module) int32
+//go:linkname F_pg_encrypt_iv github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_encrypt_iv
+func F_pg_encrypt_iv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_decrypt_iv github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_decrypt_iv
+func F_pg_finfo_pg_decrypt_iv(m *base.Module) int32
+//go:linkname F_pg_decrypt_iv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_decrypt_iv
+func F_pg_decrypt_iv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_random_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_random_bytes
+func F_pg_finfo_pg_random_bytes(m *base.Module) int32
+//go:linkname F_pg_random_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_random_bytes
+func F_pg_random_bytes(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_random_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_random_uuid
+func F_pg_finfo_pg_random_uuid(m *base.Module) int32
+//go:linkname F_pg_random_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_random_uuid
+func F_pg_random_uuid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_pg_check_fipsmode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_check_fipsmode
+func F_pg_finfo_pg_check_fipsmode(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_sym_encrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgp_sym_encrypt_bytea
+func F_pg_finfo_pgp_sym_encrypt_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_sym_encrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgp_sym_encrypt_text
+func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_sym_decrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgp_sym_decrypt_bytea
+func F_pg_finfo_pgp_sym_decrypt_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_sym_decrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgp_sym_decrypt_text
+func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_pub_encrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgp_pub_encrypt_bytea
+func F_pg_finfo_pgp_pub_encrypt_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_pub_encrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgp_pub_encrypt_text
+func F_pg_finfo_pgp_pub_encrypt_text(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_pub_decrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgp_pub_decrypt_bytea
+func F_pg_finfo_pgp_pub_decrypt_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_pub_decrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pgp_pub_decrypt_text
+func F_pg_finfo_pgp_pub_decrypt_text(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_key_id_w github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pgp_key_id_w
+func F_pg_finfo_pgp_key_id_w(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_armor github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_armor
+func F_pg_finfo_pg_armor(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_dearmor github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_dearmor
+func F_pg_finfo_pg_dearmor(m *base.Module) int32
+//go:linkname F_pg_finfo_pgp_armor_headers github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pgp_armor_headers
+func F_pg_finfo_pgp_armor_headers(m *base.Module) int32
+//go:linkname F_pgp_sym_encrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_sym_encrypt_bytea
+func F_pgp_sym_encrypt_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_sym_encrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_sym_encrypt_text
+func F_pgp_sym_encrypt_text(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_sym_decrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_sym_decrypt_bytea
+func F_pgp_sym_decrypt_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_sym_decrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_sym_decrypt_text
+func F_pgp_sym_decrypt_text(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_pub_encrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_pub_encrypt_bytea
+func F_pgp_pub_encrypt_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_pub_encrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_pub_encrypt_text
+func F_pgp_pub_encrypt_text(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_pub_decrypt_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_pub_decrypt_bytea
+func F_pgp_pub_decrypt_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_pub_decrypt_text github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgp_pub_decrypt_text
+func F_pgp_pub_decrypt_text(m *base.Module, l0 int32) int32
+//go:linkname F_pg_armor github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_armor
+func F_pg_armor(m *base.Module, l0 int32) int32
+//go:linkname F_pg_dearmor github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_dearmor
+func F_pg_dearmor(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_armor_headers github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pgp_armor_headers
+func F_pgp_armor_headers(m *base.Module, l0 int32) int32
+//go:linkname F_pgp_key_id_w github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_key_id_w
+func F_pgp_key_id_w(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

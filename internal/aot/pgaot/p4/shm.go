@@ -17,7 +17,7 @@ func F_shm_mq_get_sender(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v3 != 0 {
-		F_s_lock(m, l0, int32(465241), int32(261), int32(213961))
+		F_s_lock(m, l0, int32(472476), int32(261), int32(216210))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -403,7 +403,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v107
-	F_errmsg(m, int32(326334), v17)
+	F_errmsg(m, int32(330762), v17)
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {
@@ -413,7 +413,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(465241), int32(384), int32(32935))
+	F_errfinish(m, int32(472476), int32(384), int32(33404))
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -742,7 +742,7 @@ L70:
 	}
 L71:
 	;
-	F_s_lock(m, v19, int32(465241), int32(526), int32(32935))
+	F_s_lock(m, v19, int32(472476), int32(526), int32(33404))
 	mBase = m.M
 	v343 = m.ExcPending
 	if v343 != 0 {
@@ -878,7 +878,7 @@ func F_shm_mq_set_receiver(m *base.Module, l0 int32, l1 int32) {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v4 != 0 {
-		F_s_lock(m, l0, int32(465241), int32(210), int32(202346))
+		F_s_lock(m, l0, int32(472476), int32(210), int32(204408))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {

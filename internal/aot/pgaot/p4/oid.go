@@ -114,13 +114,13 @@ func F_get_transform_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v27
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v24
-								F_errmsg(m, int32(68531), v8)
+								F_errmsg(m, int32(69196), v8)
 								mBase = m.M
 								v33 = m.ExcPending
 								if v33 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(464001), int32(2049), int32(408084))
+									F_errfinish(m, int32(471224), int32(2049), int32(413605))
 									mBase = m.M
 									v38 = m.ExcPending
 									if v38 != 0 {
@@ -155,7 +155,7 @@ func F_oid_elem_desc(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	m.G0 = v6
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-	F_appendStringInfo(m, l0, int32(56389), v6)
+	F_appendStringInfo(m, l0, int32(56934), v6)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {

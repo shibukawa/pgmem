@@ -540,13 +540,13 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-									F_errmsg_internal(m, int32(210857), v12+int32(16))
+									F_errmsg_internal(m, int32(213076), v12+int32(16))
 									mBase = m.M
 									v116 = m.ExcPending
 									if v116 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(465125), int32(1255), int32(211482))
+										F_errfinish(m, int32(472360), int32(1255), int32(213701))
 										mBase = m.M
 										v121 = m.ExcPending
 										if v121 != 0 {
@@ -659,13 +659,13 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-						F_errmsg_internal(m, int32(40937), v12)
+						F_errmsg_internal(m, int32(41438), v12)
 						mBase = m.M
 						v101 = m.ExcPending
 						if v101 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(465125), int32(1247), int32(211482))
+							F_errfinish(m, int32(472360), int32(1247), int32(213701))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {

@@ -80,13 +80,13 @@ func F_LockBuffer(m *base.Module, l0 int32, l1 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-				F_errmsg_internal(m, int32(457202), v6)
+				F_errmsg_internal(m, int32(464039), v6)
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(464766), int32(5617), int32(213263))
+					F_errfinish(m, int32(472001), int32(5617), int32(215512))
 					mBase = m.M
 					v37 = m.ExcPending
 					if v37 != 0 {

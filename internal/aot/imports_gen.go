@@ -112,6 +112,78 @@ func (a *imports) Pgmem_run(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	return int32(uint32(fn_env_pgmem_run.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
 }
 
+var fn_env_pgmem_hash_info = mustLookup("env", "pgmem_hash_info")
+
+func (a *imports) Pgmem_hash_info(m *base.Module, l0 int32) int32 {
+	return int32(uint32(fn_env_pgmem_hash_info.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
+}
+
+var fn_env_pgmem_cipher_free = mustLookup("env", "pgmem_cipher_free")
+
+func (a *imports) Pgmem_cipher_free(m *base.Module, l0 int32) {
+	fn_env_pgmem_cipher_free.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})
+}
+
+var fn_env_pgmem_cipher_create = mustLookup("env", "pgmem_cipher_create")
+
+func (a *imports) Pgmem_cipher_create(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
+	return int32(uint32(fn_env_pgmem_cipher_create.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3)), uint64(uint32(l4)), uint64(uint32(l5))})))
+}
+
+var fn_env_pgmem_cipher_run = mustLookup("env", "pgmem_cipher_run")
+
+func (a *imports) Pgmem_cipher_run(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32 {
+	return int32(uint32(fn_env_pgmem_cipher_run.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3)), uint64(uint32(l4)), uint64(uint32(l5)), uint64(uint32(l6))})))
+}
+
+var fn_env_pgmem_deflate_create = mustLookup("env", "pgmem_deflate_create")
+
+func (a *imports) Pgmem_deflate_create(m *base.Module, l0 int32, l1 int32) int32 {
+	return int32(uint32(fn_env_pgmem_deflate_create.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
+}
+
+var fn_env_pgmem_deflate_write = mustLookup("env", "pgmem_deflate_write")
+
+func (a *imports) Pgmem_deflate_write(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_deflate_write.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_zstream_read = mustLookup("env", "pgmem_zstream_read")
+
+func (a *imports) Pgmem_zstream_read(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_zstream_read.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_deflate_finish = mustLookup("env", "pgmem_deflate_finish")
+
+func (a *imports) Pgmem_deflate_finish(m *base.Module, l0 int32) int32 {
+	return int32(uint32(fn_env_pgmem_deflate_finish.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
+}
+
+var fn_env_pgmem_zstream_free = mustLookup("env", "pgmem_zstream_free")
+
+func (a *imports) Pgmem_zstream_free(m *base.Module, l0 int32) {
+	fn_env_pgmem_zstream_free.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})
+}
+
+var fn_env_pgmem_inflate_all = mustLookup("env", "pgmem_inflate_all")
+
+func (a *imports) Pgmem_inflate_all(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_inflate_all.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_bn_rand = mustLookup("env", "pgmem_bn_rand")
+
+func (a *imports) Pgmem_bn_rand(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env_pgmem_bn_rand.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
+}
+
+var fn_env_pgmem_bn_op = mustLookup("env", "pgmem_bn_op")
+
+func (a *imports) Pgmem_bn_op(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32 {
+	return int32(uint32(fn_env_pgmem_bn_op.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3)), uint64(uint32(l4)), uint64(uint32(l5)), uint64(uint32(l6)), uint64(uint32(l7)), uint64(uint32(l8))})))
+}
+
 var fn_wasi_snapshot_preview1_environ_sizes_get = mustLookup("wasi_snapshot_preview1", "environ_sizes_get")
 
 func (a *imports) Environ_sizes_get(m *base.Module, l0 int32, l1 int32) int32 {

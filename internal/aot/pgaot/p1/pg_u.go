@@ -365,7 +365,7 @@ L4:
 	;
 	v16 = base.I32_div_s(v10+v11, int32(2))
 	v18 = v16 << (uint(int32(3)) % 32)
-	v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1251])))
+	v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1252])))
 	if base.Ui32(v21) < base.Ui32(l0) {
 		goto L7
 	} else {
@@ -393,7 +393,7 @@ L8:
 	goto L9
 L9:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1252])))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1253])))
 	if base.Ui32(v27) <= base.Ui32(l0) {
 		goto L10
 	} else {

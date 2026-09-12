@@ -164,13 +164,13 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 					} else {
 						v60 = *(*int32)(unsafe.Add(mBase, _consts[119]))
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v60
-						F_errmsg_internal(m, int32(46446), v7)
+						F_errmsg_internal(m, int32(46947), v7)
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(465119), int32(409), int32(123991))
+							F_errfinish(m, int32(472354), int32(409), int32(125381))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

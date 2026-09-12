@@ -17,7 +17,7 @@ func F_GetMemoryChunkSpace(m *base.Module, l0 int32) int32 {
 	var v15 int32
 	_ = v15
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0-int32(8))))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4&int32(15)*int32(36))+uint32(_consts[1441])))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4&int32(15)*int32(36))+uint32(_consts[1442])))
 	v12 = m.T0[v11].(func(*base.Module, int32) int32)(m, l0)
 	mBase = m.M
 	v15 = m.ExcPending
@@ -493,8 +493,8 @@ L2:
 	}
 L3:
 	;
-	v21 = int32(303270)
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1294])))
+	v21 = int32(307124)
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1295])))
 	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18))))
 	if v25 == int32(0) {
 		v44 = v24
@@ -572,9 +572,9 @@ L14:
 	goto L5
 L15:
 	;
-	v108 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1442])))
+	v108 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1443])))
 	*(*uint8)(unsafe.Add(mBase, uint32(v16)+34)) = uint8(v108)
-	v111 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1443])))
+	v111 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1444])))
 	*(*uint16)(unsafe.Add(mBase, uint32(v16)+32)) = uint16(v111)
 	v114 = v16 + int32(32)
 	if v114&int32(3) == int32(0) {
@@ -1077,7 +1077,7 @@ L100:
 	return
 L101:
 	;
-	v378 = *(*int32)(unsafe.Add(mBase, _consts[1409]))
+	v378 = *(*int32)(unsafe.Add(mBase, _consts[1410]))
 	if int32(2) <= v19 {
 		goto L104
 	} else {
@@ -1108,7 +1108,7 @@ L106:
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v373
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v16 + int32(32)
-	v421 = F_pg_fprintf(m, v378, int32(697035), v16)
+	v421 = F_pg_fprintf(m, v378, int32(705700), v16)
 	mBase = m.M
 	v422 = m.ExcPending
 	if v422 != 0 {
@@ -1118,7 +1118,7 @@ L106:
 	}
 L107:
 	;
-	v397 = F_pg_fprintf(m, v378, int32(695481), int32(0))
+	v397 = F_pg_fprintf(m, v378, int32(704146), int32(0))
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {
@@ -1177,7 +1177,7 @@ L115:
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = v373
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v19
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+28)) = v16 + int32(32)
-	F_errmsg_internal(m, int32(163934), v16+int32(16))
+	F_errmsg_internal(m, int32(165656), v16+int32(16))
 	mBase = m.M
 	v443 = m.ExcPending
 	if v443 != 0 {
@@ -1187,7 +1187,7 @@ L115:
 	}
 L116:
 	;
-	F_errfinish(m, int32(462403), int32(1044), int32(82521))
+	F_errfinish(m, int32(469598), int32(1044), int32(83508))
 	mBase = m.M
 	v448 = m.ExcPending
 	if v448 != 0 {

@@ -894,13 +894,13 @@ func F_bms_member_index(m *base.Module, l0 int32, l1 int32) int32 {
 		if v84 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(413112), int32(0))
+			F_errmsg_internal(m, int32(418679), int32(0))
 			mBase = m.M
 			v88 = m.ExcPending
 			if v88 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(463004), int32(519), int32(215104))
+				F_errfinish(m, int32(470215), int32(519), int32(217449))
 				mBase = m.M
 				v93 = m.ExcPending
 				if v93 != 0 {

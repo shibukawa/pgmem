@@ -50,13 +50,13 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-			F_errmsg_internal(m, int32(224288), v8)
+			F_errmsg_internal(m, int32(226713), v8)
 			mBase = m.M
 			v52 = m.ExcPending
 			if v52 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(469403), int32(847), int32(459456))
+				F_errfinish(m, int32(476678), int32(847), int32(466293))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
@@ -78,13 +78,13 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-				F_errmsg_internal(m, int32(224288), v8)
+				F_errmsg_internal(m, int32(226713), v8)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(469403), int32(847), int32(459456))
+					F_errfinish(m, int32(476678), int32(847), int32(466293))
 					mBase = m.M
 					v57 = m.ExcPending
 					if v57 != 0 {
@@ -106,13 +106,13 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-					F_errmsg_internal(m, int32(224288), v8)
+					F_errmsg_internal(m, int32(226713), v8)
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(469403), int32(847), int32(459456))
+						F_errfinish(m, int32(476678), int32(847), int32(466293))
 						mBase = m.M
 						v57 = m.ExcPending
 						if v57 != 0 {
@@ -136,13 +136,13 @@ func F_SlabRealloc(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(634348), int32(0))
+						F_errmsg_internal(m, int32(642600), int32(0))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(469403), int32(854), int32(459456))
+							F_errfinish(m, int32(476678), int32(854), int32(466293))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {

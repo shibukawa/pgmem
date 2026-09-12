@@ -64,7 +64,7 @@ func F_tts_buffer_heap_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 				return v34
 			}
 		} else {
-			v9 = int32(4425280)
+			v9 = int32(4442576)
 			v10 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[3])) = v12
@@ -224,7 +224,7 @@ L5:
 	}
 L6:
 	;
-	F_errmsg(m, int32(57167), int32(0))
+	F_errmsg(m, int32(57712), int32(0))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -234,7 +234,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(463852), int32(391), int32(359810))
+	F_errfinish(m, int32(471063), int32(391), int32(364469))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {

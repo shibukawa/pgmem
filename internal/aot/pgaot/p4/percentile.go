@@ -117,13 +117,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*float64)(unsafe.Add(mBase, uint32(v9))) = v18
-					F_errmsg(m, int32(521328), v9)
+					F_errmsg(m, int32(529470), v9)
 					mBase = m.M
 					v110 = m.ExcPending
 					if v110 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(463761), int32(447), int32(294197))
+						F_errfinish(m, int32(470972), int32(447), int32(297912))
 						mBase = m.M
 						v115 = m.ExcPending
 						if v115 != 0 {
@@ -151,13 +151,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*float64)(unsafe.Add(mBase, uint32(v9))) = v18
-						F_errmsg(m, int32(521328), v9)
+						F_errmsg(m, int32(529470), v9)
 						mBase = m.M
 						v110 = m.ExcPending
 						if v110 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(463761), int32(447), int32(294197))
+							F_errfinish(m, int32(470972), int32(447), int32(297912))
 							mBase = m.M
 							v115 = m.ExcPending
 							if v115 != 0 {
@@ -185,13 +185,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*float64)(unsafe.Add(mBase, uint32(v9))) = v18
-							F_errmsg(m, int32(521328), v9)
+							F_errmsg(m, int32(529470), v9)
 							mBase = m.M
 							v110 = m.ExcPending
 							if v110 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(463761), int32(447), int32(294197))
+								F_errfinish(m, int32(470972), int32(447), int32(297912))
 								mBase = m.M
 								v115 = m.ExcPending
 								if v115 != 0 {
@@ -256,13 +256,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 												if v119 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(458841), int32(0))
+													F_errmsg_internal(m, int32(465678), int32(0))
 													mBase = m.M
 													v123 = m.ExcPending
 													if v123 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(463761), int32(480), int32(294197))
+														F_errfinish(m, int32(470972), int32(480), int32(297912))
 														mBase = m.M
 														v128 = m.ExcPending
 														if v128 != 0 {
@@ -290,13 +290,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 														if v132 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(458841), int32(0))
+															F_errmsg_internal(m, int32(465678), int32(0))
 															mBase = m.M
 															v136 = m.ExcPending
 															if v136 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(463761), int32(485), int32(294197))
+																F_errfinish(m, int32(470972), int32(485), int32(297912))
 																mBase = m.M
 																v141 = m.ExcPending
 																if v141 != 0 {
@@ -340,13 +340,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 												if v132 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(458841), int32(0))
+													F_errmsg_internal(m, int32(465678), int32(0))
 													mBase = m.M
 													v136 = m.ExcPending
 													if v136 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(463761), int32(485), int32(294197))
+														F_errfinish(m, int32(470972), int32(485), int32(297912))
 														mBase = m.M
 														v141 = m.ExcPending
 														if v141 != 0 {
@@ -404,13 +404,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 												if v119 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(458841), int32(0))
+													F_errmsg_internal(m, int32(465678), int32(0))
 													mBase = m.M
 													v123 = m.ExcPending
 													if v123 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(463761), int32(480), int32(294197))
+														F_errfinish(m, int32(470972), int32(480), int32(297912))
 														mBase = m.M
 														v128 = m.ExcPending
 														if v128 != 0 {
@@ -438,13 +438,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 														if v132 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(458841), int32(0))
+															F_errmsg_internal(m, int32(465678), int32(0))
 															mBase = m.M
 															v136 = m.ExcPending
 															if v136 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(463761), int32(485), int32(294197))
+																F_errfinish(m, int32(470972), int32(485), int32(297912))
 																mBase = m.M
 																v141 = m.ExcPending
 																if v141 != 0 {
@@ -488,13 +488,13 @@ func F_percentile_disc_final(m *base.Module, l0 int32) int32 {
 												if v132 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(458841), int32(0))
+													F_errmsg_internal(m, int32(465678), int32(0))
 													mBase = m.M
 													v136 = m.ExcPending
 													if v136 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(463761), int32(485), int32(294197))
+														F_errfinish(m, int32(470972), int32(485), int32(297912))
 														mBase = m.M
 														v141 = m.ExcPending
 														if v141 != 0 {
@@ -1094,7 +1094,7 @@ L49:
 	goto L3
 L50:
 	;
-	F_errmsg_internal(m, int32(458841), int32(0))
+	F_errmsg_internal(m, int32(465678), int32(0))
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {
@@ -1104,7 +1104,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(463761), int32(819), int32(294123))
+	F_errfinish(m, int32(470972), int32(819), int32(297838))
 	mBase = m.M
 	v251 = m.ExcPending
 	if v251 != 0 {
@@ -1119,7 +1119,7 @@ L52:
 	}
 L53:
 	;
-	F_errmsg_internal(m, int32(458841), int32(0))
+	F_errmsg_internal(m, int32(465678), int32(0))
 	mBase = m.M
 	v259 = m.ExcPending
 	if v259 != 0 {
@@ -1129,7 +1129,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(463761), int32(823), int32(294123))
+	F_errfinish(m, int32(470972), int32(823), int32(297838))
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {

@@ -237,7 +237,7 @@ L20:
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	v113 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v112 - v113
-	v117 = *(*int32)(unsafe.Add(mBase, _consts[1141]))
+	v117 = *(*int32)(unsafe.Add(mBase, _consts[1142]))
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v117)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v117)+4)) = v118 - v113
 	goto L6
@@ -451,7 +451,7 @@ func F_ReleaseCatCacheList(m *base.Module, l0 int32) {
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v5 - int32(1)
 	if v4 != 0 {
-		F_ResourceOwnerForget(m, v4, l0, int32(1690008))
+		F_ResourceOwnerForget(m, v4, l0, int32(1698200))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {

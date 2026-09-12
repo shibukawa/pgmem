@@ -111,7 +111,7 @@ L3:
 	}
 L4:
 	;
-	F_SlruInternalDeleteSegment(m, int32(4320068), l0)
+	F_SlruInternalDeleteSegment(m, int32(4337364), l0)
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -234,7 +234,7 @@ L19:
 	goto L20
 L20:
 	;
-	F_SimpleLruWaitIO(m, int32(4320068), v28)
+	F_SimpleLruWaitIO(m, int32(4337364), v28)
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -252,7 +252,7 @@ L22:
 	goto L23
 L23:
 	;
-	F_SlruInternalWritePage(m, int32(4320068), v28, int32(0))
+	F_SlruInternalWritePage(m, int32(4337364), v28, int32(0))
 	mBase = m.M
 	v77 = m.ExcPending
 	if v77 != 0 {

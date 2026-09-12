@@ -38,7 +38,7 @@ func F_system_user(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v10 int32
 	_ = v10
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1189]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1190]))
 	if v4 != 0 {
 		v5 = F_cstring_to_text(m, v4)
 		mBase = m.M

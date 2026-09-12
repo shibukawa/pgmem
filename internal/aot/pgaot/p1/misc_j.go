@@ -141,7 +141,7 @@ func F_jit_compile_expr(m *base.Module, l0 int32) int32 {
 					v23 = v2
 					return v23
 				} else {
-					v20 = *(*int32)(unsafe.Add(mBase, _consts[1243]))
+					v20 = *(*int32)(unsafe.Add(mBase, _consts[1244]))
 					v21 = m.T0[v20].(func(*base.Module, int32) int32)(m, l0)
 					mBase = m.M
 					v22 = m.ExcPending

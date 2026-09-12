@@ -65,19 +65,19 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	}
 	if v11 == int32(0) {
 		v15 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-		v20 = F_AllocSetContextCreateInternal(m, v15, int32(261504), int32(0), int32(8192), int32(8388608))
+		v20 = F_AllocSetContextCreateInternal(m, v15, int32(264577), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
 			return int32(0)
 		} else {
-			v28 = F_AllocSetContextCreateInternal(m, v20, int32(74128), int32(0), int32(8192), int32(8388608))
+			v28 = F_AllocSetContextCreateInternal(m, v20, int32(74843), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
 			v29 = m.ExcPending
 			if v29 != 0 {
 				return int32(0)
 			} else {
-				v30 = int32(4425280)
+				v30 = int32(4442576)
 				v31 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v20
 				v35 = F_palloc0(m, int32(424))
@@ -129,7 +129,7 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 								v78 = *(*int32)(unsafe.Add(mBase, uint32(v74)))
 								*(*int32)(unsafe.Add(mBase, uint32(v74))) = int32(1)
 								if v78 != 0 {
-									F_s_lock(m, v74, int32(462590), int32(2988), int32(209176))
+									F_s_lock(m, v74, int32(469785), int32(2988), int32(211364))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
@@ -174,13 +174,13 @@ func F_tuplesort_begin_common(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 		if v108 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(74216), int32(0))
+			F_errmsg_internal(m, int32(74931), int32(0))
 			mBase = m.M
 			v112 = m.ExcPending
 			if v112 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(462590), int32(651), int32(230233))
+				F_errfinish(m, int32(469785), int32(651), int32(233166))
 				mBase = m.M
 				v117 = m.ExcPending
 				if v117 != 0 {
@@ -273,7 +273,7 @@ func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	if v19 != 0 {
 		return int32(0)
 	} else {
-		v20 = int32(4425280)
+		v20 = int32(4442576)
 		v21 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v23 = *(*int32)(unsafe.Add(mBase, uint32(v16)+24))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
@@ -415,13 +415,13 @@ func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 							v43 = int32(102)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v43
-						F_errmsg_internal(m, int32(470991), v13)
+						F_errmsg_internal(m, int32(478311), v13)
 						mBase = m.M
 						v47 = m.ExcPending
 						if v47 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(463301), int32(686), int32(269033))
+							F_errfinish(m, int32(470512), int32(686), int32(272157))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
@@ -597,7 +597,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v21 = int32(4425280)
+	v21 = int32(4442576)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v17)+24))
@@ -770,7 +770,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v152
-	F_errmsg(m, int32(177662), v14)
+	F_errmsg(m, int32(179384), v14)
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -780,7 +780,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(463301), int32(647), int32(260333))
+	F_errfinish(m, int32(470512), int32(647), int32(263355))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -823,7 +823,7 @@ func F_tuplesort_getbrintuple(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = int32(4425280)
+	v10 = int32(4442576)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v13
@@ -859,10 +859,10 @@ func F_tuplesort_method_name(m *base.Module, l0 int32) int32 {
 	var v11 int32
 	_ = v11
 	if base.Ui32(l0) <= base.Ui32(int32(8)) {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1242])))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1243])))
 		v11 = v10
 	} else {
-		v11 = int32(228441)
+		v11 = int32(231199)
 	}
 	return v11
 }
@@ -1329,7 +1329,7 @@ func F_tuplesort_puttuple_common(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	v17 = m.G0
 	v19 = v17 - int32(32)
 	m.G0 = v19
-	v21 = int32(4425280)
+	v21 = int32(4442576)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v24
@@ -1890,7 +1890,7 @@ L75:
 	goto L63
 L76:
 	;
-	F_errmsg_internal(m, int32(330319), int32(0))
+	F_errmsg_internal(m, int32(334795), int32(0))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -1900,7 +1900,7 @@ L76:
 	}
 L77:
 	;
-	F_errfinish(m, int32(462590), int32(1312), int32(230406))
+	F_errfinish(m, int32(469785), int32(1312), int32(233339))
 	mBase = m.M
 	v253 = m.ExcPending
 	if v253 != 0 {
@@ -1982,7 +1982,7 @@ L85:
 	}
 L86:
 	;
-	F_errmsg_internal(m, int32(73985), int32(0))
+	F_errmsg_internal(m, int32(74700), int32(0))
 	mBase = m.M
 	v311 = m.ExcPending
 	if v311 != 0 {
@@ -1992,7 +1992,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(462590), int32(1156), int32(152549))
+	F_errfinish(m, int32(469785), int32(1156), int32(154167))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -2100,7 +2100,7 @@ L101:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v365
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v360
-	F_errmsg_internal(m, int32(188410), v19)
+	F_errmsg_internal(m, int32(190145), v19)
 	mBase = m.M
 	v371 = m.ExcPending
 	if v371 != 0 {
@@ -2110,7 +2110,7 @@ L101:
 	}
 L102:
 	;
-	F_errfinish(m, int32(462590), int32(1248), int32(230406))
+	F_errfinish(m, int32(469785), int32(1248), int32(233339))
 	mBase = m.M
 	v376 = m.ExcPending
 	if v376 != 0 {
@@ -2761,7 +2761,7 @@ func F_tuplesort_space_type_name(m *base.Module, l0 int32) int32 {
 	if l0 != 0 {
 		v4 = int32(13029)
 	} else {
-		v4 = int32(295605)
+		v4 = int32(299320)
 	}
 	return v4
 }

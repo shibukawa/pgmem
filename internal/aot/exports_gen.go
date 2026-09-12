@@ -1628,6 +1628,306 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.WinToUtf8(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pgcrypto":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pgcrypto: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgcrypto(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_pgcrypto":
+		if len(a) != 0 {
+			panic("aot: _PG_init_pgcrypto: want 0 args")
+		}
+		pgaot.PGInitPgcrypto(m)
+		return nil, true
+	case "pg_armor":
+		if len(a) != 1 {
+			panic("aot: pg_armor: want 1 args")
+		}
+		r := pgaot.PgArmor(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_check_fipsmode":
+		if len(a) != 1 {
+			panic("aot: pg_check_fipsmode: want 1 args")
+		}
+		r := pgaot.PgCheckFipsmode(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_crypt":
+		if len(a) != 1 {
+			panic("aot: pg_crypt: want 1 args")
+		}
+		r := pgaot.PgCrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_dearmor":
+		if len(a) != 1 {
+			panic("aot: pg_dearmor: want 1 args")
+		}
+		r := pgaot.PgDearmor(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_decrypt":
+		if len(a) != 1 {
+			panic("aot: pg_decrypt: want 1 args")
+		}
+		r := pgaot.PgDecrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_decrypt_iv":
+		if len(a) != 1 {
+			panic("aot: pg_decrypt_iv: want 1 args")
+		}
+		r := pgaot.PgDecryptIv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_digest":
+		if len(a) != 1 {
+			panic("aot: pg_digest: want 1 args")
+		}
+		r := pgaot.PgDigest(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_encrypt":
+		if len(a) != 1 {
+			panic("aot: pg_encrypt: want 1 args")
+		}
+		r := pgaot.PgEncrypt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_encrypt_iv":
+		if len(a) != 1 {
+			panic("aot: pg_encrypt_iv: want 1 args")
+		}
+		r := pgaot.PgEncryptIv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_armor":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_armor: want 0 args")
+		}
+		r := pgaot.PgFinfoPgArmor(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_check_fipsmode":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_check_fipsmode: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCheckFipsmode(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_crypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_crypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_dearmor":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_dearmor: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDearmor(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_decrypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_decrypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDecrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_decrypt_iv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_decrypt_iv: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDecryptIv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_digest":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_digest: want 0 args")
+		}
+		r := pgaot.PgFinfoPgDigest(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_encrypt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_encrypt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgEncrypt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_encrypt_iv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_encrypt_iv: want 0 args")
+		}
+		r := pgaot.PgFinfoPgEncryptIv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_gen_salt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_gen_salt: want 0 args")
+		}
+		r := pgaot.PgFinfoPgGenSalt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_gen_salt_rounds":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_gen_salt_rounds: want 0 args")
+		}
+		r := pgaot.PgFinfoPgGenSaltRounds(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_hmac":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_hmac: want 0 args")
+		}
+		r := pgaot.PgFinfoPgHmac(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_random_bytes":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_random_bytes: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRandomBytes(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_random_uuid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_random_uuid: want 0 args")
+		}
+		r := pgaot.PgFinfoPgRandomUuid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_armor_headers":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_armor_headers: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpArmorHeaders(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_key_id_w":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_key_id_w: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpKeyIdW(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_decrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_decrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubDecryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_decrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_decrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubDecryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_encrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_encrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubEncryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_pub_encrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_pub_encrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpPubEncryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_decrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_decrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymDecryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_decrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_decrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymDecryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_encrypt_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_encrypt_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymEncryptBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pgp_sym_encrypt_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pgp_sym_encrypt_text: want 0 args")
+		}
+		r := pgaot.PgFinfoPgpSymEncryptText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_gen_salt":
+		if len(a) != 1 {
+			panic("aot: pg_gen_salt: want 1 args")
+		}
+		r := pgaot.PgGenSalt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_gen_salt_rounds":
+		if len(a) != 1 {
+			panic("aot: pg_gen_salt_rounds: want 1 args")
+		}
+		r := pgaot.PgGenSaltRounds(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_hmac":
+		if len(a) != 1 {
+			panic("aot: pg_hmac: want 1 args")
+		}
+		r := pgaot.PgHmac(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_random_bytes":
+		if len(a) != 1 {
+			panic("aot: pg_random_bytes: want 1 args")
+		}
+		r := pgaot.PgRandomBytes(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_random_uuid":
+		if len(a) != 1 {
+			panic("aot: pg_random_uuid: want 1 args")
+		}
+		r := pgaot.PgRandomUuid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_armor_headers":
+		if len(a) != 1 {
+			panic("aot: pgp_armor_headers: want 1 args")
+		}
+		r := pgaot.PgpArmorHeaders(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_key_id_w":
+		if len(a) != 1 {
+			panic("aot: pgp_key_id_w: want 1 args")
+		}
+		r := pgaot.PgpKeyIdW(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_decrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_decrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpPubDecryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_decrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_decrypt_text: want 1 args")
+		}
+		r := pgaot.PgpPubDecryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_encrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_encrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpPubEncryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_pub_encrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_pub_encrypt_text: want 1 args")
+		}
+		r := pgaot.PgpPubEncryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_decrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_decrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpSymDecryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_decrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_decrypt_text: want 1 args")
+		}
+		r := pgaot.PgpSymDecryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_encrypt_bytea":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_encrypt_bytea: want 1 args")
+		}
+		r := pgaot.PgpSymEncryptBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pgp_sym_encrypt_text":
+		if len(a) != 1 {
+			panic("aot: pgp_sym_encrypt_text: want 1 args")
+		}
+		r := pgaot.PgpSymEncryptText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

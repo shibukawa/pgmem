@@ -27,7 +27,7 @@ func F_MemoryContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = l4
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+20)) = v10
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = l2*int32(36) + int32(1719520)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = l2*int32(36) + int32(1727712)
 	if l3 != 0 {
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(l3)+20))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v22
@@ -468,7 +468,7 @@ L25:
 L26:
 	;
 	v109 = int32(0)
-	v111 = *(*int32)(unsafe.Add(mBase, _consts[902]))
+	v111 = *(*int32)(unsafe.Add(mBase, _consts[900]))
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(v11)+92))
 	if v109 < v112 {
 		goto L29
@@ -507,7 +507,7 @@ L31:
 	v147 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v147
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v142
-	v151 = F_pg_fprintf(m, v111, int32(699776), v11)
+	v151 = F_pg_fprintf(m, v111, int32(708441), v11)
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -517,7 +517,7 @@ L31:
 	}
 L32:
 	;
-	v125 = F_pg_fprintf(m, v111, int32(695481), int32(0))
+	v125 = F_pg_fprintf(m, v111, int32(704146), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -585,7 +585,7 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = v167
 	v174 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = v174
-	F_errmsg_internal(m, int32(422323), v11+int32(32))
+	F_errmsg_internal(m, int32(428150), v11+int32(32))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -595,7 +595,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(462403), int32(956), int32(293306))
+	F_errfinish(m, int32(469598), int32(956), int32(297021))
 	mBase = m.M
 	v185 = m.ExcPending
 	if v185 != 0 {

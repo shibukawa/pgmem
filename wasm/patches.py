@@ -118,3 +118,53 @@ patch('src/backend/commands/async.c',
 	pgmem_listen("", 2);
 ''',
 'pgmem_listen("", 2)')
+
+# pgcrypto: the OpenSSL-backed files (digests, ciphers, OpenPGP bignum
+# arithmetic) and the zlib-backed OpenPGP compression are replaced by
+# host-backed bodies; see the .inc files next to build.sh. The originals stay
+# for builds without __PGMEM__.
+for rel, inc in [('contrib/pgcrypto/openssl.c', 'pgmem_pgcrypto_openssl.inc'),
+                 ('contrib/pgcrypto/pgp-mpi-openssl.c', 'pgmem_pgcrypto_mpi.inc'),
+                 ('contrib/pgcrypto/pgp-compress.c', 'pgmem_pgcrypto_compress.inc')]:
+    p = os.path.join(src, rel)
+    s = open(p).read()
+    if inc not in s:
+        open(p, 'w').write(f'#ifdef __PGMEM__\n#include "{inc}"\n#else\n' + s + '\n#endif /* __PGMEM__ */\n')
+        print(f'{rel}: patched')
+    else:
+        print(f'{rel}: already patched')
+
+# ReadyForQuery after an error: PGlite's pgl_longjmp decides whether to send
+# ReadyForQuery before PostgresMainLongJmp has set ignore_till_sync, so an
+# error inside an extended-protocol batch is followed by a ReadyForQuery
+# that real PostgreSQL withholds until Sync (the client then sees two).
+# Move the decision after the recovery block, where PostgresMain has it.
+patch('pglite/src/pglitec/pglitec.c',
+"""        // reset this as it is expected
+        if (!ignore_till_sync)
+		    send_ready_for_query = true;	/* initially, or after error */
+""",
+"""#ifndef __PGMEM__
+        // reset this as it is expected
+        if (!ignore_till_sync)
+		    send_ready_for_query = true;	/* initially, or after error */
+#endif
+""",
+'#ifndef __PGMEM__\n        // reset this as it is expected')
+
+patch('src/backend/tcop/postgres.c',
+"""		/* Now we can allow interrupts again */
+		RESUME_INTERRUPTS();
+}
+""",
+"""		/* Now we can allow interrupts again */
+		RESUME_INTERRUPTS();
+
+#ifdef __PGMEM__
+		/* Same order as PostgresMain: decided after ignore_till_sync is set. */
+		if (!ignore_till_sync)
+			send_ready_for_query = true;	/* after error */
+#endif
+}
+""",
+'decided after ignore_till_sync is set')

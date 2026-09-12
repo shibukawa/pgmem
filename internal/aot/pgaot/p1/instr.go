@@ -192,13 +192,13 @@ func F_InstrEndLoop(m *base.Module, l0 int32) {
 			if v43 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(386748), int32(0))
+				F_errmsg_internal(m, int32(391683), int32(0))
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(462844), int32(149), int32(220758))
+					F_errfinish(m, int32(470039), int32(149), int32(223183))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {

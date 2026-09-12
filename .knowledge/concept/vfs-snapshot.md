@@ -21,5 +21,5 @@ summary:
   startup_on_fork: short WAL recovery from the checkpoint record; near-empty
   optimization_later: copy-on-write data slices in cloneNode; write paths are writeAt and truncateNode only
   gotcha: io_method must be sync; PGlite sets IsUnderPostmaster so worker AIO waits forever on batched read_stream reads (pgmem.go withDefaults)
-  rejected: PostgreSQL CREATE DATABASE TEMPLATE (hangs in live single-user session; needs backend restart per database)
+  rejected: PostgreSQL CREATE DATABASE TEMPLATE (the command itself works in a live session since io_method=sync, but the single backend serves only Options.Database; connecting to the new database needs a backend restart per database)
 ```

@@ -315,8 +315,8 @@ func F_assign_timezone(m *base.Module, l0 int32, l1 int32) {
 	var v10 int32
 	_ = v10
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[329])) = v4
-	v10 = F__emscripten_memset_bulkmem(m, int32(4408656), base.I32_extend8_s(int32(0)), int32(500))
+	*(*int32)(unsafe.Add(mBase, _consts[330])) = v4
+	v10 = F__emscripten_memset_bulkmem(m, int32(4425952), base.I32_extend8_s(int32(0)), int32(500))
 	mBase = m.M
 	return
 }

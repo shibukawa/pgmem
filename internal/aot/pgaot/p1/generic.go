@@ -100,19 +100,19 @@ func F_GenericMatchText(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 			if v40 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(509228), int32(0))
+				F_errmsg(m, int32(517132), int32(0))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(526477), int32(0))
+					F_errhint(m, int32(534683), int32(0))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(468474), int32(163), int32(60379))
+						F_errfinish(m, int32(475749), int32(163), int32(61044))
 						mBase = m.M
 						v53 = m.ExcPending
 						if v53 != 0 {
