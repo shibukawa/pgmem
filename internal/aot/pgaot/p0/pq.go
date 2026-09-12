@@ -703,6 +703,40 @@ func F_pq_getmsgrawstring(m *base.Module, l0 int32) int32 {
 		return v6
 	}
 }
+func F_pq_sendfloat4(m *base.Module, l0 int32, l1 float32) {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	F_enlargeStringInfo(m, l0, int32(4))
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return
+	} else {
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v11 = base.I32_reinterpret_f32(l1)
+		v12 = int32(24)
+		v14 = int32(_a_F_pq_sendfloat4_0)
+		v16 = int32(8)
+		*(*int32)(unsafe.Add(mBase, uint32(v8+v9))) = v11<<(uint(v12)%32) | v11&v14<<(uint(v16)%32) | (int32(base.Ui32(v11)>>(uint(v16)%32))&v14 | int32(base.Ui32(v11)>>(uint(v12)%32)))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v8 + int32(4)
+		return
+	}
+}
 func F_pq_sendfloat8(m *base.Module, l0 int32, l1 float64) {
 	mBase := m.M
 	_ = mBase

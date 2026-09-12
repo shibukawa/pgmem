@@ -2924,40 +2924,37 @@ L16:
 	*(*uint16)(unsafe.Add(mBase, uint32(l0)+10)) = uint16(v65)
 	return
 }
-func F_UnlockPage(m *base.Module, l0 int32) {
+func F_UnlockPage(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
-	var v3 int32
-	_ = v3
 	var v5 int32
 	_ = v5
 	var v7 int32
 	_ = v7
 	var v9 int32
 	_ = v9
+	var v11 int32
+	_ = v11
 	var v17 int32
 	_ = v17
 	var v18 int32
 	_ = v18
-	v2 = int32(0)
-	v3 = m.G0
-	v5 = v3 - int32(16)
-	m.G0 = v5
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(16973824)
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v2
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v9
-	v17 = F_LockRelease(m, v5, int32(7), v2)
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = int32(16973824)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v11
+	v17 = F_LockRelease(m, v7, l2, int32(0))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
 		return
 	} else {
-		m.G0 = v5 + int32(16)
+		m.G0 = v7 + int32(16)
 		return
 	}
 }

@@ -22289,6 +22289,106 @@ func F_reschedule_timeouts(m *base.Module) {
 		}
 	}
 }
+func F_reservoir_init_selection_state(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int64
+	_ = v11
+	var v13 int64
+	_ = v13
+	var v14 int64
+	_ = v14
+	var v35 int64
+	_ = v35
+	var v39 int64
+	_ = v39
+	var v40 int64
+	_ = v40
+	var v43 int64
+	_ = v43
+	var v44 int64
+	_ = v44
+	var v45 int64
+	_ = v45
+	var v48 int64
+	_ = v48
+	var v49 int64
+	_ = v49
+	var v50 int64
+	_ = v50
+	var v55 int64
+	_ = v55
+	var v60 int64
+	_ = v60
+	var v65 int64
+	_ = v65
+	var v83 int64
+	_ = v83
+	var v84 int64
+	_ = v84
+	var v85 int64
+	_ = v85
+	var v106 float64
+	_ = v106
+	var v109 float64
+	_ = v109
+	var v113 float64
+	_ = v113
+	v6 = l0 + int32(8)
+	v9 = int32(_a_F_reservoir_init_selection_state_0)
+	v10 = int32(_a_F_reservoir_init_selection_state_1)
+	v11 = *(*int64)(unsafe.Add(mBase, _c_F_reservoir_init_selection_state[0]))
+	v13 = *(*int64)(unsafe.Add(mBase, _c_F_reservoir_init_selection_state[1]))
+	v14 = v11 ^ v13
+	*(*int64)(unsafe.Add(mBase, _c_F_reservoir_init_selection_state[1])) = base.I64_rotl(v14, int64(37))
+	*(*int64)(unsafe.Add(mBase, _c_F_reservoir_init_selection_state[0])) = v14<<(uint(int64(16))%64) ^ base.I64_rotl(v11, int64(24)) ^ v14
+	v35 = base.I64_extend_i32_u(base.I32_wrap_i64(int64(base.Ui64(base.I64_rotl(v11*int64(5), int64(7))*int64(9)) >> (uint(int64(32)) % 64))))
+	v39 = v35 + int64(4354685564936845354)
+	v40 = int64(30)
+	v43 = int64(-4658895280553007687)
+	v44 = (int64(base.Ui64(v39)>>(uint(v40)%64)) ^ v39) * v43
+	v45 = int64(27)
+	v48 = int64(-7723592293110705685)
+	v49 = (int64(base.Ui64(v44)>>(uint(v45)%64)) ^ v44) * v48
+	v50 = int64(31)
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(base.Ui64(v49)>>(uint(v50)%64)) ^ v49
+	v55 = v35 - int64(7046029254386353131)
+	v60 = (int64(base.Ui64(v55)>>(uint(v40)%64)) ^ v55) * v43
+	v65 = (int64(base.Ui64(v60)>>(uint(v45)%64)) ^ v60) * v48
+	*(*int64)(unsafe.Add(mBase, uint32(v6))) = int64(base.Ui64(v65)>>(uint(v50)%64)) ^ v65
+	if v55|v39 == int64(0) {
+		*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(1442695040888963407)
+		*(*int64)(unsafe.Add(mBase, uint32(v6))) = int64(6364136223846793005)
+	} else {
+	}
+	for {
+		v83 = *(*int64)(unsafe.Add(mBase, uint32(v6)))
+		v84 = *(*int64)(unsafe.Add(mBase, uint32(v6)+8))
+		v85 = v83 ^ v84
+		*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = base.I64_rotl(v85, int64(37))
+		*(*int64)(unsafe.Add(mBase, uint32(v6))) = v85<<(uint(int64(16))%64) ^ base.I64_rotl(v83, int64(24)) ^ v85
+		v106 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v83*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+		mBase = m.M
+		if base.F64_eq(v106, float64(0)) != 0 {
+			continue
+		} else {
+			break
+		}
+		break
+	}
+	v109 = F_log(m, v106)
+	mBase = m.M
+	v113 = F_exp(m, base.F64_div(base.F64_neg(v109), base.F64_convert_i32_s(l1)))
+	mBase = m.M
+	*(*float64)(unsafe.Add(mBase, uint32(l0))) = v113
+	return
+}
 func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

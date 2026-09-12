@@ -1666,24 +1666,6 @@ func F_makeAConst(m *base.Module, l0 int32, l1 int32) int32 {
 		return v27
 	}
 }
-func F_makeFloat(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	v4 = F_palloc0(m, int32(8))
-	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
-		return int32(0)
-	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(466)
-		return v4
-	}
-}
 func F_makeNullConst(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

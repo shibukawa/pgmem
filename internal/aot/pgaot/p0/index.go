@@ -246,6 +246,184 @@ func F_BuildIndexInfo(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_CheckIndex(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	v7 = l0 + l1<<(uint(int32(2))%32)
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+	if v8 < int32(0) {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v23 = m.ExcPending
+		if v23 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(130))
+			mBase = m.M
+			v26 = m.ExcPending
+			if v26 != 0 {
+				return
+			} else {
+				F_errmsg(m, int32(_a_F_CheckIndex_0), int32(0))
+				mBase = m.M
+				v30 = m.ExcPending
+				if v30 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_CheckIndex_1), int32(116), int32(_a_F_CheckIndex_2))
+					mBase = m.M
+					v35 = m.ExcPending
+					if v35 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		if l2 <= v8 {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return
+			} else {
+				F_errcode(m, int32(130))
+				mBase = m.M
+				v26 = m.ExcPending
+				if v26 != 0 {
+					return
+				} else {
+					F_errmsg(m, int32(_a_F_CheckIndex_0), int32(0))
+					mBase = m.M
+					v30 = m.ExcPending
+					if v30 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_CheckIndex_1), int32(116), int32(_a_F_CheckIndex_2))
+						mBase = m.M
+						v35 = m.ExcPending
+						if v35 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if int32(0) < l1 {
+				v16 = *(*int32)(unsafe.Add(mBase, uint32(v7-int32(4))))
+				if v8 < v16 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v39 = m.ExcPending
+					if v39 != 0 {
+						return
+					} else {
+						F_errcode(m, int32(130))
+						mBase = m.M
+						v42 = m.ExcPending
+						if v42 != 0 {
+							return
+						} else {
+							F_errmsg(m, int32(_a_F_CheckIndex_3), int32(0))
+							mBase = m.M
+							v46 = m.ExcPending
+							if v46 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_CheckIndex_1), int32(124), int32(_a_F_CheckIndex_2))
+								mBase = m.M
+								v51 = m.ExcPending
+								if v51 != 0 {
+									return
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					if v8 == v16 {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return
+						} else {
+							F_errcode(m, int32(130))
+							mBase = m.M
+							v58 = m.ExcPending
+							if v58 != 0 {
+								return
+							} else {
+								F_errmsg(m, int32(_a_F_CheckIndex_4), int32(0))
+								mBase = m.M
+								v62 = m.ExcPending
+								if v62 != 0 {
+									return
+								} else {
+									F_errfinish(m, int32(_a_F_CheckIndex_1), int32(129), int32(_a_F_CheckIndex_2))
+									mBase = m.M
+									v67 = m.ExcPending
+									if v67 != 0 {
+										return
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					} else {
+						return
+					}
+				}
+			} else {
+				return
+			}
+		}
+	}
+}
 func F_CheckIndexCompatible(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -17,6 +17,9 @@ func F_pg_finfo__intbig_out(m *base.Module) int32 {
 func F_pg_finfo__lt_q_rregex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__lt_q_rregex_0)
 }
+func F_pg_finfo_array_to_vector(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_array_to_vector_0)
+}
 func F_pg_finfo_citext_le(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_le_0)
 }
@@ -25,6 +28,9 @@ func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32 {
 }
 func F_pg_finfo_connectby_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_connectby_text_0)
+}
+func F_pg_finfo_cosine_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_cosine_distance_0)
 }
 func F_pg_finfo_cube_a_f8_f8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_cube_a_f8_f8_0)
@@ -233,6 +239,24 @@ func F_pg_finfo_gtrgm_in(m *base.Module) int32 {
 func F_pg_finfo_gtrgm_penalty(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_penalty_0)
 }
+func F_pg_finfo_halfvec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_0)
+}
+func F_pg_finfo_halfvec_accum(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_accum_0)
+}
+func F_pg_finfo_halfvec_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_gt_0)
+}
+func F_pg_finfo_halfvec_ne(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_ne_0)
+}
+func F_pg_finfo_halfvec_to_vector(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_to_vector_0)
+}
+func F_pg_finfo_halfvec_vector_dims(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_vector_dims_0)
+}
 func F_pg_finfo_hs_contained(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hs_contained_0)
 }
@@ -398,6 +422,15 @@ func F_pg_finfo_seg_over_right(m *base.Module) int32 {
 func F_pg_finfo_seg_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_seg_union_0)
 }
+func F_pg_finfo_sparsevec_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_ge_0)
+}
+func F_pg_finfo_sparsevec_inner_product(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_inner_product_0)
+}
+func F_pg_finfo_sparsevec_l2_squared_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_l2_squared_distance_0)
+}
 func F_pg_finfo_subarray(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_subarray_0)
 }
@@ -421,4 +454,16 @@ func F_pg_finfo_uuid_generate_v1(m *base.Module) int32 {
 }
 func F_pg_finfo_uuid_ns_url(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_uuid_ns_url_0)
+}
+func F_pg_finfo_vector_accum(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_accum_0)
+}
+func F_pg_finfo_vector_combine(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_combine_0)
+}
+func F_pg_finfo_vector_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_gt_0)
+}
+func F_pg_finfo_vector_ne(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_ne_0)
 }

@@ -5,6 +5,81 @@ import (
 	"unsafe"
 )
 
+func F_FunctionCall0Coll(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	v2 = int32(0)
+	v4 = m.G0
+	v6 = v4 - int32(32)
+	m.G0 = v6
+	*(*uint16)(unsafe.Add(mBase, uint32(v6)+30)) = uint16(v2)
+	*(*uint8)(unsafe.Add(mBase, uint32(v6)+28)) = uint8(v2)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = v2
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+16)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l0
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v20 = m.T0[v19].(func(*base.Module, int32) int32)(m, v6+int32(12))
+	mBase = m.M
+	v23 = m.ExcPending
+	if v23 != 0 {
+		return int32(0)
+	} else {
+		v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+28)))
+		if v24 == int32(1) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v30 = m.ExcPending
+			if v30 != 0 {
+				return int32(0)
+			} else {
+				v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v31
+				F_errmsg_internal(m, int32(_a_F_FunctionCall0Coll_0), v6)
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_FunctionCall0Coll_1), int32(1123), int32(_a_F_FunctionCall0Coll_2))
+					mBase = m.M
+					v40 = m.ExcPending
+					if v40 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		} else {
+			m.G0 = v6 + int32(32)
+			return v20
+		}
+	}
+}
 func F_FunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
 	mBase := m.M
 	_ = mBase

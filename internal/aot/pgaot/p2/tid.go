@@ -44,26 +44,26 @@ func F_TidStoreMemoryUsage(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
+	var v28 int32
+	_ = v28
 	var v33 int32
 	_ = v33
+	var v34 int32
+	_ = v34
 	var v35 int32
 	_ = v35
-	var v38 int32
-	_ = v38
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v39 int32
 	_ = v39
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
+	var v47 int32
+	_ = v47
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v4 != 0 {
@@ -90,12 +90,7 @@ L3:
 	;
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(v3)+24))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	if v26 != 0 {
-		goto L8
-	} else {
-		goto L9
-	}
+	goto L9
 L4:
 	;
 	return int32(0)
@@ -116,45 +111,50 @@ L6:
 	return v15
 L7:
 	;
-	return v43
+	return v47
 L8:
 	;
-	v29 = v25
-	v30 = v26
-	goto L11
+	goto L7
 L9:
 	;
-	v43 = v25
-	goto L10
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
+	if v28 == int32(0) {
+		v47 = v25
+		goto L8
+	} else {
+		goto L10
+	}
 L10:
 	;
-	goto L7
+	v33 = v25
+	v34 = v28
+	goto L11
 L11:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+8))
-	v32 = v31 + v29
-	v33 = *(*int32)(unsafe.Add(mBase, uint32(v30)+20))
-	if v33 != 0 {
-		v29 = v32
-		v30 = v33
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+8))
+	v36 = v35 + v33
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(v34)+20))
+	if v37 != 0 {
+		v33 = v36
+		v34 = v37
 		goto L11
 	} else {
 		goto L13
 	}
 L12:
 	;
-	v43 = v32
-	goto L10
+	v47 = v36
+	goto L8
 L13:
 	;
-	v35 = v30
+	v39 = v34
 	goto L14
 L14:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v35)+28))
-	if v38 != 0 {
-		v29 = v32
-		v30 = v38
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+28))
+	if v42 != 0 {
+		v33 = v36
+		v34 = v42
 		goto L11
 	} else {
 		goto L16
@@ -164,9 +164,9 @@ L15:
 	goto L12
 L16:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
-	if v39 != v21 {
-		v35 = v39
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(v39)+16))
+	if v43 != v21 {
+		v39 = v43
 		goto L14
 	} else {
 		goto L17

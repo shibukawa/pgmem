@@ -5,23 +5,23 @@ import (
 	"unsafe"
 )
 
-func F_CreateParallelContext(m *base.Module, l0 int32, l1 int32) int32 {
+func F_CreateParallelContext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v18 int32
-	_ = v18
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
+	var v20 int32
+	_ = v20
 	var v24 int32
 	_ = v24
 	var v25 int32
@@ -38,52 +38,52 @@ func F_CreateParallelContext(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v39
 	var v43 int32
 	_ = v43
-	v6 = int32(_a_F_CreateParallelContext_0)
-	v7 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0]))
-	v10 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[1]))
-	*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0])) = v10
-	v13 = F_palloc0(m, int32(68))
+	v7 = int32(_a_F_CreateParallelContext_0)
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0]))
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0])) = v11
+	v14 = F_palloc0(m, int32(68))
 	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v17 = m.ExcPending
+	if v17 != 0 {
 		return int32(0)
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[2]))
-		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+8))
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v19
-		v24 = F_pstrdup(m, int32(_a_F_CreateParallelContext_1))
+		v19 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[2]))
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+8))
+		*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = l2
+		*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = l2
+		*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v20
+		v24 = F_pstrdup(m, l0)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v24
-			v27 = F_pstrdup(m, l0)
+			*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v24
+			v27 = F_pstrdup(m, l1)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v27
+				*(*int32)(unsafe.Add(mBase, uint32(v14)+28)) = v27
 				v31 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[3]))
-				*(*int64)(unsafe.Add(mBase, uint32(v13)+36)) = int64(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = v31
+				*(*int64)(unsafe.Add(mBase, uint32(v14)+36)) = int64(0)
+				*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v31
 				v36 = *(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[4]))
 				if v36 == int32(0) {
-					v39 = int32(_a_F_CreateParallelContext_2)
+					v39 = int32(_a_F_CreateParallelContext_1)
 					*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[5])) = v39
 					v43 = v39
 				} else {
 					v43 = v36
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(_a_F_CreateParallelContext_2)
-				*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v43
-				*(*int32)(unsafe.Add(mBase, uint32(v43))) = v13
-				*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0])) = v7
-				*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[4])) = v13
-				return v13
+				*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(_a_F_CreateParallelContext_1)
+				*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v43
+				*(*int32)(unsafe.Add(mBase, uint32(v43))) = v14
+				*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[0])) = v8
+				*(*int32)(unsafe.Add(mBase, _c_F_CreateParallelContext[4])) = v14
+				return v14
 			}
 		}
 	}

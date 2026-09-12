@@ -484,12 +484,22 @@ func F_validOperatorName(m *base.Module, l0 int32) int32 {
 	_ = v104
 	var v110 int32
 	_ = v110
-	var v113 int32
-	_ = v113
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
+	var v129 int32
+	_ = v129
+	var v131 int32
+	_ = v131
+	var v134 int32
+	_ = v134
+	var v136 int32
+	_ = v136
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v141 int32
+	_ = v141
 	var v153 int32
 	_ = v153
 	var v163 int32
@@ -739,10 +749,8 @@ L29:
 	goto L30
 L30:
 	;
-	v113 = int32(_a_F_validOperatorName_3)
 	v115 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0+v110))))
-	v116 = int32(11)
-	goto L35
+	goto L36
 L31:
 	;
 	v242 = v2
@@ -765,13 +773,61 @@ L34:
 	goto L52
 L35:
 	;
-	goto L43
+	if base.B2i32(v137 != v138) == int32(0) {
+		goto L33
+	} else {
+		goto L43
+	}
+L36:
+	;
+	goto L37
+L37:
+	;
+	v129 = int32(_a_F_validOperatorName_3)
+	v131 = int32(11)
+	goto L38
+L38:
+	;
+	v134 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v129))))
+	if v134 == v115&int32(255) {
+		v190 = v129
+		v192 = v131
+		goto L34
+	} else {
+		goto L40
+	}
+L39:
+	;
+	goto L35
+L40:
+	;
+	v136 = int32(1)
+	v137 = v131 - v136
+	v138 = int32(0)
+	v141 = v129 + v136
+	if v141&int32(3) == v138 {
+		goto L35
+	} else {
+		goto L41
+	}
+L41:
+	;
+	if v137 != 0 {
+		v129 = v141
+		v131 = v137
+		goto L38
+	} else {
+		goto L42
+	}
+L42:
+	;
+	goto L39
 L43:
 	;
-	v153 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_validOperatorName[2])))
+	v153 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v141))))
 	if v153 == v115&int32(255) {
-		v183 = v113
-		v185 = v116
+		v183 = v141
+		v185 = v137
 		goto L44
 	} else {
 		goto L45
@@ -785,11 +841,17 @@ L44:
 	}
 L45:
 	;
-	goto L46
+	if base.Ui32(v137) < base.Ui32(int32(4)) {
+		v183 = v141
+		v185 = v137
+		goto L44
+	} else {
+		goto L46
+	}
 L46:
 	;
-	v163 = v113
-	v165 = v116
+	v163 = v141
+	v165 = v137
 	goto L47
 L47:
 	;

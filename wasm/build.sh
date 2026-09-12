@@ -139,6 +139,37 @@ for spec in $MODULE_DIRS; do
   GEN_ARGS="$GEN_ARGS $name=$objs${!extra_objs_var:+,${!extra_objs_var}}"
   MODULE_OBJS="$MODULE_OBJS $(ls "$SRC/$dir"/*.o | tr '\n' ' ') ${!extra_objs_var:-}"
 done
+# pgvector: not in the PostgreSQL tree, pinned by wasm/pgvector.lock and
+# compiled against the installed server headers like a PGXS build would,
+# minus -march=native (no SIMD in wasm) and as module "vector".
+source "$HERE/pgvector.lock"
+PGV=$OUT/src/pgvector-$version
+if [ ! -f "$PGV/Makefile" ]; then
+  ARCHIVE=$OUT/src/pgvector-$version.tar.gz
+  if [ ! -f "$ARCHIVE" ]; then
+    echo "== fetching pgvector $version"
+    curl -fsSL -o "$ARCHIVE" "$url"
+  fi
+  echo "$sha256  $ARCHIVE" | shasum -a 256 -c - >/dev/null || { echo "error: checksum mismatch for $ARCHIVE"; exit 2; }
+  tar xzf "$ARCHIVE" -C "$OUT/src"
+fi
+echo "== compile pgvector $version"
+mkdir -p "$OUT/pgvector"
+PGV_OBJS=""
+for c in "$PGV"/src/*.c; do
+  o=$OUT/pgvector/$(basename "${c%.c}").o
+  emcc $PG_CFLAGS -I"$PREFIX/include/postgresql/server" -I"$PREFIX/include/postgresql/internal" \
+    -DPg_magic_func=Pg_magic_func_vector -D_PG_init=_PG_init_vector \
+    -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math \
+    -Wno-unused-command-line-argument -c -o "$o" "$c"
+  PGV_OBJS="$PGV_OBJS $o"
+done
+GEN_ARGS="$GEN_ARGS vector=$(echo $PGV_OBJS | tr ' ' ',')"
+MODULE_OBJS="$MODULE_OBJS $PGV_OBJS"
+mkdir -p "$PREFIX/share/postgresql/extension"
+cp "$PGV"/vector.control "$PGV"/sql/*.sql "$PREFIX/share/postgresql/extension/"
+# the Makefile derives the base script for the current version from sql/vector.sql
+cp "$PGV/sql/vector.sql" "$PREFIX/share/postgresql/extension/vector--$version.sql"
 python3 "$HERE/gen_modules.py" "$LLVM_NM" "$OUT/pgmem_modules_gen.c" $GEN_ARGS
 mkdir -p "$PREFIX/share/postgresql/extension"
 mkdir -p "$PREFIX/share/postgresql/tsearch_data"

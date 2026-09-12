@@ -4491,6 +4491,28 @@ func F_offset_elem_desc(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		return
 	}
 }
+func F_offsethash_insert(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	v4 = int32(16)
+	v8 = (int32(base.Ui32(l1)>>(uint(v4)%32)) ^ l1) * int32(-2048144789)
+	v13 = (int32(base.Ui32(v8)>>(uint(int32(13))%32)) ^ v8) * int32(-1028477387)
+	v17 = F_offsethash_insert_hash_internal(m, l0, l1, int32(base.Ui32(v13)>>(uint(v4)%32))^v13, l2)
+	v20 = m.ExcPending
+	if v20 != 0 {
+		return int32(0)
+	} else {
+		return v17
+	}
+}
 func F_oidin(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

@@ -1625,6 +1625,222 @@ func F__ltq_rregex(m *base.Module, l0 int32) int32 {
 		return v6
 	}
 }
+func F_l2_distance(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v10 float32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v41 int32
+	_ = v41
+	var v47 int32
+	_ = v47
+	var v50 float32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v57 float32
+	_ = v57
+	var v59 float32
+	_ = v59
+	var v60 float32
+	_ = v60
+	var v63 float32
+	_ = v63
+	var v65 float32
+	_ = v65
+	var v66 float32
+	_ = v66
+	var v69 float32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
+	var v84 float32
+	_ = v84
+	var v89 int32
+	_ = v89
+	var v91 float32
+	_ = v91
+	var v93 float32
+	_ = v93
+	var v94 float32
+	_ = v94
+	var v99 float32
+	_ = v99
+	var v112 float64
+	_ = v112
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
+	var v123 int32
+	_ = v123
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v133 int32
+	_ = v133
+	var v138 int32
+	_ = v138
+	v10 = float32(0)
+	v12 = m.G0
+	v14 = v12 - int32(16)
+	m.G0 = v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v17 = F_pg_detoast_datum(m, v16)
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		return int32(0)
+	} else {
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v22 = F_pg_detoast_datum(m, v21)
+		mBase = m.M
+		v23 = m.ExcPending
+		if v23 != 0 {
+			return int32(0)
+		} else {
+			v24 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
+			v25 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+4)))
+			if v24 == v25 {
+				v27 = base.I32_extend16_s(v24)
+				if v27 <= int32(0) {
+					v112 = float64(0)
+				} else {
+					v31 = int32(8)
+					v32 = v22 + v31
+					v34 = v17 + v31
+					if v27 == int32(1) {
+						v75 = int32(0)
+						v84 = v10
+					} else {
+						v41 = int32(0)
+						v47 = int32(0)
+						v50 = v10
+						for {
+							v52 = int32(2)
+							v53 = v41 << (uint(v52) % 32)
+							v55 = v53 | int32(4)
+							v57 = *(*float32)(unsafe.Add(mBase, uint32(v34+v55)))
+							v59 = *(*float32)(unsafe.Add(mBase, uint32(v32+v55)))
+							v60 = base.F32_sub(v57, v59)
+							v63 = *(*float32)(unsafe.Add(mBase, uint32(v53+v34)))
+							v65 = *(*float32)(unsafe.Add(mBase, uint32(v53+v32)))
+							v66 = base.F32_sub(v63, v65)
+							v69 = base.F32_add(base.F32_mul(v60, v60), base.F32_add(base.F32_mul(v66, v66), v50))
+							v71 = v41 + v52
+							v73 = v47 + v52
+							if v73 != v27&int32(_a_F_l2_distance_0) {
+								v41 = v71
+								v47 = v73
+								v50 = v69
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v75 = v71
+						v84 = v69
+					}
+					if v27&int32(1) != 0 {
+						v89 = v75 << (uint(int32(2)) % 32)
+						v91 = *(*float32)(unsafe.Add(mBase, uint32(v34+v89)))
+						v93 = *(*float32)(unsafe.Add(mBase, uint32(v89+v32)))
+						v94 = base.F32_sub(v91, v93)
+						v99 = base.F32_add(base.F32_mul(v94, v94), v84)
+					} else {
+						v99 = v84
+					}
+					v112 = base.F64_promote_f32(v99)
+				}
+				v114 = F_Float8GetDatum(m, base.F64_sqrt(v112))
+				mBase = m.M
+				v115 = m.ExcPending
+				if v115 != 0 {
+					return int32(0)
+				} else {
+					m.G0 = v14 + int32(16)
+					return v114
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v123 = m.ExcPending
+				if v123 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(130))
+					mBase = m.M
+					v126 = m.ExcPending
+					if v126 != 0 {
+						return int32(0)
+					} else {
+						v127 = int32(*(*int16)(unsafe.Add(mBase, uint32(v17)+4)))
+						v128 = int32(*(*int16)(unsafe.Add(mBase, uint32(v22)+4)))
+						*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v128
+						*(*int32)(unsafe.Add(mBase, uint32(v14))) = v127
+						F_errmsg(m, int32(_a_F_l2_distance_1), v14)
+						mBase = m.M
+						v133 = m.ExcPending
+						if v133 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_l2_distance_2), int32(76), int32(_a_F_l2_distance_3))
+							mBase = m.M
+							v138 = m.ExcPending
+							if v138 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_latin4_to_mic(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

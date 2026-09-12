@@ -578,6 +578,8 @@ func F_AddRelationNewConstraints(m *base.Module, l0 int32, l1 int32, l2 int32, l
 func F_index_update_stats(m *base.Module, l0 int32, l1 int32, l2 float64)
 //go:linkname F_FormIndexDatum github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_FormIndexDatum
 func F_FormIndexDatum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_BuildIndexInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_BuildIndexInfo
+func F_BuildIndexInfo(m *base.Module, l0 int32) int32
 //go:linkname F_index_set_state_flags github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_index_set_state_flags
 func F_index_set_state_flags(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_IndexGetRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_IndexGetRelation
@@ -848,8 +850,6 @@ func F_check_lateral_ref_ok(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_scanNSItemForColumn(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_getRTEPermissionInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_getRTEPermissionInfo
 func F_getRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_addRTEPermissionInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_addRTEPermissionInfo
-func F_addRTEPermissionInfo(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_addRangeTableEntryForRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_addRangeTableEntryForRelation
 func F_addRangeTableEntryForRelation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_addNSItemToQuery github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_addNSItemToQuery
@@ -1548,6 +1548,8 @@ func F_pq_sendcountedtext(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_pq_sendtext(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pq_send_ascii_string github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pq_send_ascii_string
 func F_pq_send_ascii_string(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_pq_sendfloat4 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pq_sendfloat4
+func F_pq_sendfloat4(m *base.Module, l0 int32, l1 float32)
 //go:linkname F_pq_sendfloat8 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pq_sendfloat8
 func F_pq_sendfloat8(m *base.Module, l0 int32, l1 float64)
 //go:linkname F_pq_endmessage github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pq_endmessage
@@ -1560,6 +1562,8 @@ func F_pq_getmsgbyte(m *base.Module, l0 int32) int32
 func F_pq_getmsgint(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pq_getmsgint64 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pq_getmsgint64
 func F_pq_getmsgint64(m *base.Module, l0 int32) int64
+//go:linkname F_pq_getmsgfloat4 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pq_getmsgfloat4
+func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32
 //go:linkname F_pq_getmsgfloat8 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pq_getmsgfloat8
 func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64
 //go:linkname F_pq_getmsgbytes github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pq_getmsgbytes
@@ -1832,6 +1836,8 @@ func F_adjust_paths_for_srfs(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 func F_get_useful_pathkeys_for_distinct(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_expression_planner github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_expression_planner
 func F_expression_planner(m *base.Module, l0 int32) int32
+//go:linkname F_plan_create_index_workers github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_plan_create_index_workers
+func F_plan_create_index_workers(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_set_plan_references github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_set_plan_references
 func F_set_plan_references(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_fix_scan_expr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_fix_scan_expr
@@ -1970,8 +1976,6 @@ func F_create_agg_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 func F_create_limit_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int64, l6 int64) int32
 //go:linkname F_reparameterize_path github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_reparameterize_path
 func F_reparameterize_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64) int32
-//go:linkname F_estimate_rel_size github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_estimate_rel_size
-func F_estimate_rel_size(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_add_function_cost github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_add_function_cost
 func F_add_function_cost(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_predicate_implied_by github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_predicate_implied_by
@@ -2660,8 +2664,10 @@ func F_UnlockRelationIdForSession(m *base.Module, l0 int32, l1 int32)
 func F_LockRelationForExtension(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_UnlockRelationForExtension github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnlockRelationForExtension
 func F_UnlockRelationForExtension(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_LockPage github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LockPage
+func F_LockPage(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_UnlockPage github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_UnlockPage
-func F_UnlockPage(m *base.Module, l0 int32)
+func F_UnlockPage(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_LockTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_LockTuple
 func F_LockTuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_UnlockTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnlockTuple
@@ -3038,6 +3044,8 @@ func F_AppendSeconds(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 func F_EncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_datumCopy github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_datumCopy
 func F_datumCopy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_datumIsEqual github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_datumIsEqual
+func F_datumIsEqual(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_datum_image_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_datum_image_eq
 func F_datum_image_eq(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_datumSerialize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_datumSerialize
@@ -3808,8 +3816,6 @@ func F_RelationCacheInitializePhase3(m *base.Module)
 func F_RelationGetIndexList(m *base.Module, l0 int32) int32
 //go:linkname F_RelationGetIndexExpressions github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_RelationGetIndexExpressions
 func F_RelationGetIndexExpressions(m *base.Module, l0 int32) int32
-//go:linkname F_RelationGetIndexPredicate github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_RelationGetIndexPredicate
-func F_RelationGetIndexPredicate(m *base.Module, l0 int32) int32
 //go:linkname F_RelationGetIndexAttrBitmap github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_RelationGetIndexAttrBitmap
 func F_RelationGetIndexAttrBitmap(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_errtable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_errtable
@@ -4259,7 +4265,7 @@ func F_tuplesort_skiptuples(m *base.Module, l0 int32, l1 int64) int32
 //go:linkname F_tuplesort_rescan github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tuplesort_rescan
 func F_tuplesort_rescan(m *base.Module, l0 int32)
 //go:linkname F_tuplesort_begin_heap github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tuplesort_begin_heap
-func F_tuplesort_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
+func F_tuplesort_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 //go:linkname F_tuplesort_begin_datum github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tuplesort_begin_datum
 func F_tuplesort_begin_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_tuplesort_puttupleslot github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_tuplesort_puttupleslot
@@ -4788,6 +4794,80 @@ func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 func F_uuid_generate_random(m *base.Module, l0 int32)
 //go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
+func F_CheckElement_1(m *base.Module, l0 int32)
+//go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1
+func F_CheckDim_1(m *base.Module, l0 int32)
+//go:linkname F_Float4ToHalf github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Float4ToHalf
+func F_Float4ToHalf(m *base.Module, l0 float32) int32
+//go:linkname F_BuildIndex_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BuildIndex_1
+func F_BuildIndex_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_FlushPages github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_FlushPages
+func F_FlushPages(m *base.Module, l0 int32)
+//go:linkname F_HnswInsertTupleOnDisk github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_HnswInsertTupleOnDisk
+func F_HnswInsertTupleOnDisk(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_tidhash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_tidhash_create
+func F_tidhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_tidhash_destroy github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_tidhash_destroy
+func F_tidhash_destroy(m *base.Module, l0 int32)
+//go:linkname F_tidhash_insert github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tidhash_insert
+func F_tidhash_insert(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_tidhash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tidhash_insert_hash_internal
+func F_tidhash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_pointerhash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pointerhash_create
+func F_pointerhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pointerhash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pointerhash_insert_hash_internal
+func F_pointerhash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_offsethash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_offsethash_create
+func F_offsethash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_offsethash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_offsethash_insert_hash_internal
+func F_offsethash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_HnswOptionalProcInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_HnswOptionalProcInfo
+func F_HnswOptionalProcInfo(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_HnswInitElement github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_HnswInitElement
+func F_HnswInitElement(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64, l4 int32, l5 int32) int32
+//go:linkname F_HnswInitElementFromBlock github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_HnswInitElementFromBlock
+func F_HnswInitElementFromBlock(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_HnswGetMetaPageInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswGetMetaPageInfo
+func F_HnswGetMetaPageInfo(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_HnswGetEntryPoint github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_HnswGetEntryPoint
+func F_HnswGetEntryPoint(m *base.Module, l0 int32) int32
+//go:linkname F_HnswUpdateMetaPage github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_HnswUpdateMetaPage
+func F_HnswUpdateMetaPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+//go:linkname F_HnswFormIndexValue github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_HnswFormIndexValue
+func F_HnswFormIndexValue(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_HnswLoadElementFromTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_HnswLoadElementFromTuple
+func F_HnswLoadElementFromTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_HnswLoadElement github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_HnswLoadElement
+func F_HnswLoadElement(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
+//go:linkname F_HnswLoadElementImpl github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswLoadElementImpl
+func F_HnswLoadElementImpl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
+//go:linkname F_HnswLoadNeighborTids github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_HnswLoadNeighborTids
+func F_HnswLoadNeighborTids(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_HnswUpdateConnection github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_HnswUpdateConnection
+func F_HnswUpdateConnection(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float32, l4 int32, l5 int32, l6 int32, l7 int32)
+//go:linkname F_HnswFindElementNeighbors github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswFindElementNeighbors
+func F_HnswFindElementNeighbors(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32)
+//go:linkname F_NeedsUpdated github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_NeedsUpdated
+func F_NeedsUpdated(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_RepairGraphElement github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_RepairGraphElement
+func F_RepairGraphElement(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_VectorArraySet github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_VectorArraySet
+func F_VectorArraySet(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_VectorArrayInit github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_VectorArrayInit
+func F_VectorArrayInit(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_IvfflatNormVectors github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_IvfflatNormVectors
+func F_IvfflatNormVectors(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_IvfflatCheckMemoryUsage github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_IvfflatCheckMemoryUsage
+func F_IvfflatCheckMemoryUsage(m *base.Module, l0 int32)
+//go:linkname F_CheckElement_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CheckElement_2
+func F_CheckElement_2(m *base.Module, l0 float32)
+//go:linkname F_CheckIndex github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_CheckIndex
+func F_CheckIndex(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_CheckNnz github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckNnz
+func F_CheckNnz(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_CheckDim_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_CheckDim_3
+func F_CheckDim_3(m *base.Module, l0 int32)
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem
@@ -4914,8 +4994,8 @@ func F_strstr(m *base.Module, l0 int32, l1 int32) int32
 func F___shgetc(m *base.Module, l0 int32) int32
 //go:linkname F___floatscan github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___floatscan
 func F___floatscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
-//go:linkname F_strtox_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtox_1
-func F_strtox_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_strtof github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_strtof
+func F_strtof(m *base.Module, l0 int32, l1 int32) float32
 //go:linkname F_strtod github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtod
 func F_strtod(m *base.Module, l0 int32, l1 int32) float64
 //go:linkname F_strtox_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strtox_2

@@ -51,175 +51,154 @@ func F__PG_init_bloom(m *base.Module) {
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
 	var v24 int32
 	_ = v24
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
-	var v41 int32
-	_ = v41
+	var v25 int32
+	_ = v25
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
 	var v49 int32
 	_ = v49
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v62 int32
-	_ = v62
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
+	var v68 int32
+	_ = v68
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0]))
-	if base.Ui32(int32(1073741824)) <= base.Ui32(v11) {
+	v13 = F_add_reloption_kind(m)
+	mBase = m.M
+	v14 = m.ExcPending
+	if v14 != 0 {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
-		goto L4
-	} else {
-		goto L5
-	}
+	return
 L2:
 	;
-	goto L3
-L3:
-	;
-	v32 = v11 << (uint(int32(1)) % 32)
-	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0])) = v32
-	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[1])) = v32
-	F_add_int_reloption(m, v32, int32(_a_F__PG_init_bloom_0), int32(_a_F__PG_init_bloom_1), int32(80), int32(_a_F__PG_init_bloom_2))
-	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
-		goto L4
-	} else {
-		goto L9
-	}
-L4:
-	;
-	return
-L5:
-	;
-	F_errcode(m, int32(261))
-	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
-		goto L4
-	} else {
-		goto L6
-	}
-L6:
-	;
-	F_errmsg(m, int32(_a_F__PG_init_bloom_3), int32(0))
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0])) = v13
+	v16 = int32(_a_F__PG_init_bloom_0)
+	F_add_int_reloption(m, v13, v16, int32(_a_F__PG_init_bloom_1), int32(80), int32(1), int32(_a_F__PG_init_bloom_2))
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
-		goto L4
+		goto L1
+	} else {
+		goto L3
+	}
+L3:
+	;
+	v25 = int32(_a_F__PG_init_bloom_3)
+	*(*int64)(unsafe.Add(mBase, _c_F__PG_init_bloom[1])) = int64(17179869185)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[2])) = v16
+	v34 = int32(0)
+	goto L4
+L4:
+	;
+	v37 = v34 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v37
+	v39 = int32(16)
+	v45 = F_pg_snprintf(m, v8+v39, v39, int32(_a_F__PG_init_bloom_4), v8)
+	mBase = m.M
+	v46 = m.ExcPending
+	if v46 != 0 {
+		goto L1
+	} else {
+		goto L6
+	}
+L5:
+	;
+	m.G0 = v8 + int32(32)
+	return
+L6:
+	;
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0]))
+	F_add_int_reloption(m, v49, v8+int32(16), int32(_a_F__PG_init_bloom_5), int32(2), int32(1), int32(4095))
+	mBase = m.M
+	v58 = m.ExcPending
+	if v58 != 0 {
+		goto L1
 	} else {
 		goto L7
 	}
 L7:
 	;
-	F_errfinish(m, int32(_a_F__PG_init_bloom_4), int32(700), int32(_a_F__PG_init_bloom_5))
+	v60 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[3]))
+	v63 = F_MemoryContextStrdup(m, v60, v8+int32(16))
 	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
-		goto L4
+	v64 = m.ExcPending
+	if v64 != 0 {
+		goto L1
 	} else {
 		goto L8
 	}
 L8:
 	;
-	base.Wasm_trap_unreachable()
-	for {
+	v68 = v37 << (uint(int32(4)) % 32)
+	*(*int32)(unsafe.Add(mBase, uint32(v68)+uint32(_c_F__PG_init_bloom[4]))) = v34<<(uint(int32(2))%32) + int32(8)
+	*(*int32)(unsafe.Add(mBase, uint32(v68)+uint32(_c_F__PG_init_bloom[1]))) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v68)+uint32(_c_F__PG_init_bloom[2]))) = v63
+	if v37 != int32(32) {
+		v34 = v37
+		goto L4
+	} else {
+		goto L9
 	}
 L9:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F__PG_init_bloom[2])) = int64(17179869185)
-	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[3])) = int32(_a_F__PG_init_bloom_0)
-	v49 = int32(0)
-	goto L10
-L10:
-	;
-	v55 = v49 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v55
-	v57 = int32(16)
-	v61 = F_pg_snprintf(m, v8+v57, v57, int32(_a_F__PG_init_bloom_6), v8)
+	goto L5
+}
+func F__PG_init_vector(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[0])) = int32(_a_F__PG_init_vector_0)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[1])) = int32(_a_F__PG_init_vector_1)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[2])) = int32(_a_F__PG_init_vector_2)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[3])) = int32(_a_F__PG_init_vector_3)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[4])) = int32(_a_F__PG_init_vector_4)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_vector[5])) = int32(_a_F__PG_init_vector_5)
+	F_HnswInit(m)
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
-		goto L4
+	v20 = m.ExcPending
+	if v20 != 0 {
+		return
 	} else {
-		goto L12
+		F_IvfflatInit(m)
+		mBase = m.M
+		v22 = m.ExcPending
+		if v22 != 0 {
+			return
+		} else {
+			return
+		}
 	}
-L11:
-	;
-	m.G0 = v8 + int32(32)
-	return
-L12:
-	;
-	v64 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[1]))
-	F_add_int_reloption(m, v64, v8+int32(16), int32(_a_F__PG_init_bloom_7), int32(2), int32(4095))
-	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
-		goto L4
-	} else {
-		goto L13
-	}
-L13:
-	;
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[4]))
-	v76 = F_MemoryContextStrdup(m, v73, v8+int32(16))
-	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L4
-	} else {
-		goto L14
-	}
-L14:
-	;
-	v79 = v55 << (uint(int32(4)) % 32)
-	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[5]))) = v49<<(uint(int32(2))%32) + int32(8)
-	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[2]))) = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[3]))) = v76
-	if v55 != int32(32) {
-		v49 = v55
-		goto L10
-	} else {
-		goto L15
-	}
-L15:
-	;
-	goto L11
 }
 func F_create_pg_locale_builtin(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M

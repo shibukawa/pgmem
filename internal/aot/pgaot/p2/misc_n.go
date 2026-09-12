@@ -2336,6 +2336,347 @@ L261:
 	for {
 	}
 }
+func F_NeedsUpdated(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
+	var v79 int32
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v89 int32
+	_ = v89
+	var v90 int64
+	_ = v90
+	var v91 int64
+	_ = v91
+	var v92 int32
+	_ = v92
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v99 int64
+	_ = v99
+	var v100 int64
+	_ = v100
+	var v105 int64
+	_ = v105
+	var v110 int64
+	_ = v110
+	var v115 int32
+	_ = v115
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
+	var v128 int32
+	_ = v128
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
+	var v136 int32
+	_ = v136
+	var v137 int32
+	_ = v137
+	var v146 int32
+	_ = v146
+	var v154 int32
+	_ = v154
+	var v155 int32
+	_ = v155
+	var v157 int32
+	_ = v157
+	var v161 int32
+	_ = v161
+	var v163 int32
+	_ = v163
+	var v169 int32
+	_ = v169
+	var v180 int32
+	_ = v180
+	var v182 int32
+	_ = v182
+	v3 = int32(0)
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+84))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v18 = F_ReadBufferExtended(m, v13, v3, v15, v3, v17)
+	mBase = m.M
+	v21 = m.ExcPending
+	if v21 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	F_LockBuffer(m, v18, int32(1))
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L1
+	} else {
+		goto L3
+	}
+L3:
+	;
+	v25 = int32(0)
+	if v18 < v25 {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	F_UnlockReleaseBuffer(m, v18)
+	mBase = m.M
+	v182 = m.ExcPending
+	if v182 != 0 {
+		goto L1
+	} else {
+		goto L27
+	}
+L5:
+	;
+	v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+82)))
+	v45 = int32(2)
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v43+v44<<(uint(v45)%32))+20))
+	v51 = v48&int32(_a_F_NeedsUpdated_0) + v43
+	v53 = v51 + v45
+	v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v53))))
+	if v54 == int32(0) {
+		v180 = v25
+		goto L4
+	} else {
+		goto L9
+	}
+L6:
+	;
+	v29 = *(*int32)(unsafe.Add(mBase, _c_F_NeedsUpdated[0]))
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v29+(v18^int32(-1))<<(uint(int32(2))%32))))
+	v43 = v35
+	goto L5
+L7:
+	;
+	goto L8
+L8:
+	;
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_NeedsUpdated[1]))
+	v43 = v37 + v18<<(uint(int32(13))%32) + int32(-8192)
+	goto L5
+L9:
+	;
+	v61 = int32(0)
+	v62 = v54
+	goto L10
+L10:
+	;
+	v70 = v51 + int32(4) + v61*int32(6)
+	v71 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v70)+4)))
+	if v71 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
+L11:
+	;
+	v161 = int32(0)
+	v163 = v155 & int32(_a_F_NeedsUpdated_1)
+	if v163 == v161 {
+		v180 = v161
+		goto L4
+	} else {
+		goto L26
+	}
+L12:
+	;
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v73 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v70)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v11)+12)) = uint16(v73)
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v70)))
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v75
+	v79 = v11 + int32(8)
+	v84 = m.G0
+	v86 = v84 - int32(16)
+	m.G0 = v86
+	v89 = v11 + int32(12)
+	v90 = int64(*(*uint16)(unsafe.Add(mBase, uint32(v89))))
+	v91 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v79))))
+	v92 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v89))))
+	*(*uint16)(unsafe.Add(mBase, uint32(v86)+12)) = uint16(v92)
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
+	*(*int32)(unsafe.Add(mBase, uint32(v86)+8)) = v94
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(v72)+20))
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v72)+12))
+	v99 = v90 << (uint(int64(32)) % 64)
+	v100 = int64(33)
+	v105 = (int64(base.Ui64(v99)>>(uint(v100)%64)) ^ (v99 | v91)) * int64(-49064778989728563)
+	v110 = (int64(base.Ui64(v105)>>(uint(v100)%64)) ^ v105) * int64(-4265267296055464877)
+	v115 = v97 & base.I32_wrap_i64(int64(base.Ui64(v110)>>(uint(v100)%64))^v110)
+	v118 = v96 + v115<<(uint(int32(3))%32)
+	v119 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118)+6)))
+	if v119 != 0 {
+		goto L17
+	} else {
+		goto L18
+	}
+L13:
+	;
+	v155 = v62
+	goto L14
+L14:
+	;
+	v157 = v61 + int32(1)
+	if base.Ui32(v157) < base.Ui32(v155&int32(_a_F_NeedsUpdated_1)) {
+		v61 = v157
+		v62 = v155
+		goto L10
+	} else {
+		goto L25
+	}
+L15:
+	;
+	if v146 != 0 {
+		v180 = int32(1)
+		goto L4
+	} else {
+		goto L24
+	}
+L16:
+	;
+	m.G0 = v86 + int32(16)
+	goto L15
+L17:
+	;
+	v121 = v118
+	v125 = v115
+	goto L20
+L18:
+	;
+	goto L19
+L19:
+	;
+	v146 = int32(0)
+	goto L16
+L20:
+	;
+	v128 = F_ItemPointerEquals(m, v121, v86+int32(8))
+	mBase = m.M
+	if v128 != 0 {
+		v146 = v121
+		goto L16
+	} else {
+		goto L22
+	}
+L21:
+	;
+	goto L19
+L22:
+	;
+	v129 = *(*int32)(unsafe.Add(mBase, uint32(v72)+20))
+	v130 = *(*int32)(unsafe.Add(mBase, uint32(v72)+12))
+	v133 = v130 & (v125 + int32(1))
+	v136 = v129 + v133<<(uint(int32(3))%32)
+	v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v136)+6)))
+	if v137 != 0 {
+		v121 = v136
+		v125 = v133
+		goto L20
+	} else {
+		goto L23
+	}
+L23:
+	;
+	goto L21
+L24:
+	;
+	v154 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v53))))
+	v155 = v154
+	goto L14
+L25:
+	;
+	goto L11
+L26:
+	;
+	v169 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v53+v163*int32(6)))))
+	v180 = base.B2i32(v169 == int32(0))
+	goto L4
+L27:
+	;
+	m.G0 = v11 + int32(16)
+	return v180
+}
 func F_NullCommand(m *base.Module, l0 int32) {
 	var v2 int32
 	_ = v2

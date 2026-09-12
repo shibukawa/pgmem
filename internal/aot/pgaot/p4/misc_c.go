@@ -6,6 +6,85 @@ import (
 	"unsafe"
 )
 
+func F_CheckElement_3(m *base.Module, l0 float32) {
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	if base.Ui32(base.I32_reinterpret_f32(l0)&int32(2147483647)) < base.Ui32(int32(2139095041)) {
+		if base.F32_eq(base.F32_abs(l0), math.Float32frombits(uint32(0x7f800000))) != 0 {
+			F_errstart_cold(m, int32(21), int32(0))
+			v29 = m.ExcPending
+			if v29 != 0 {
+				return
+			} else {
+				F_errcode(m, int32(130))
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return
+				} else {
+					F_errmsg(m, int32(_a_F_CheckElement_3_0), int32(0))
+					v36 = m.ExcPending
+					if v36 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_CheckElement_3_1), int32(122), int32(_a_F_CheckElement_3_2))
+						v41 = m.ExcPending
+						if v41 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			return
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(130))
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return
+			} else {
+				F_errmsg(m, int32(_a_F_CheckElement_3_3), int32(0))
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_CheckElement_3_1), int32(117), int32(_a_F_CheckElement_3_2))
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_CheckRequiredParameterValues(m *base.Module) {
 	mBase := m.M
 	_ = mBase
@@ -3694,6 +3773,74 @@ L58:
 L59:
 	;
 	goto L1
+}
+func F_CompareFurthestCandidates(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 float64
+	_ = v7
+	var v8 float64
+	_ = v8
+	var v11 int32
+	_ = v11
+	v7 = *(*float64)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*float64)(unsafe.Add(mBase, uint32(l1)+20))
+	if base.F64_lt(v7, v8) != 0 {
+		v11 = int32(-1)
+	} else {
+		v11 = base.F64_gt(v7, v8)
+	}
+	return v11
+}
+func F_CompareLists(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 float64
+	_ = v9
+	var v10 float64
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v9 = *(*float64)(unsafe.Add(mBase, uint32(l0)+16))
+	v10 = *(*float64)(unsafe.Add(mBase, uint32(l1)+16))
+	if base.F64_lt(v9, v10) != 0 {
+		v12 = int32(-1)
+	} else {
+		v12 = int32(0)
+	}
+	if base.F64_gt(v9, v10) != 0 {
+		v14 = int32(1)
+	} else {
+		v14 = v12
+	}
+	return v14
+}
+func F_CompareNearestDiscardedCandidates(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 float64
+	_ = v9
+	var v10 float64
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v9 = *(*float64)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*float64)(unsafe.Add(mBase, uint32(l1)+20))
+	if base.F64_gt(v9, v10) != 0 {
+		v12 = int32(-1)
+	} else {
+		v12 = int32(0)
+	}
+	if base.F64_lt(v9, v10) != 0 {
+		v14 = int32(1)
+	} else {
+		v14 = v12
+	}
+	return v14
 }
 func F_CompleteCachedPlan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) {
 	mBase := m.M

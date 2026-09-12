@@ -756,41 +756,6 @@ L38:
 	for {
 	}
 }
-func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
-	mBase := m.M
-	_ = mBase
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v25 int32
-	_ = v25
-	v10 = F_init_custom_variable(m, l0, l1, l2, int32(5), int32(0), int32(4), int32(124))
-	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
-		return
-	} else {
-		v12 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+116)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+92)) = l3
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+112)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+108)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+104)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+100)) = l4
-		F_define_custom_variable(m, v10)
-		mBase = m.M
-		v25 = m.ExcPending
-		if v25 != 0 {
-			return
-		} else {
-			return
-		}
-	}
-}
 func F_DetermineTimeZoneAbbrevOffset(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

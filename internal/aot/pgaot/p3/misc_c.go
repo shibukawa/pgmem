@@ -986,6 +986,85 @@ func F_CheckBuiltinCryptoMode(m *base.Module) {
 		return
 	}
 }
+func F_CheckElement_2(m *base.Module, l0 float32) {
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	if base.Ui32(base.I32_reinterpret_f32(l0)&int32(2147483647)) < base.Ui32(int32(2139095041)) {
+		if base.F32_eq(base.F32_abs(l0), math.Float32frombits(uint32(0x7f800000))) != 0 {
+			F_errstart_cold(m, int32(21), int32(0))
+			v29 = m.ExcPending
+			if v29 != 0 {
+				return
+			} else {
+				F_errcode(m, int32(130))
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return
+				} else {
+					F_errmsg(m, int32(_a_F_CheckElement_2_0), int32(0))
+					v36 = m.ExcPending
+					if v36 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_CheckElement_2_1), int32(147), int32(_a_F_CheckElement_2_2))
+						v41 = m.ExcPending
+						if v41 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			return
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(130))
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return
+			} else {
+				F_errmsg(m, int32(_a_F_CheckElement_2_3), int32(0))
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_CheckElement_2_1), int32(142), int32(_a_F_CheckElement_2_2))
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_CheckSASLAuth(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -1885,6 +1964,85 @@ func F_CombineRangeTables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			return
 		}
 	}
+}
+func F_CompareCandidateDistancesOffset(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 float32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 float32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*float32)(unsafe.Add(mBase, uint32(v6)+4))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v9 = *(*float32)(unsafe.Add(mBase, uint32(v8)+4))
+	if base.F32_lt(v7, v9) != 0 {
+		v27 = int32(1)
+	} else {
+		if base.F32_gt(v7, v9) != 0 {
+			v27 = int32(-1)
+		} else {
+			v13 = int32(1)
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+			v16 = v14 - v13
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
+			v19 = v17 - v13
+			if base.Ui32(v16) < base.Ui32(v19) {
+				v27 = v13
+			} else {
+				if base.Ui32(v19) < base.Ui32(v16) {
+					v24 = int32(-1)
+				} else {
+					v24 = int32(0)
+				}
+				v27 = v24
+			}
+		}
+	}
+	return v27
+}
+func F_CompareNearestCandidates(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 float64
+	_ = v9
+	var v10 float64
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	v9 = *(*float64)(unsafe.Add(mBase, uint32(l0)+32))
+	v10 = *(*float64)(unsafe.Add(mBase, uint32(l1)+32))
+	if base.F64_gt(v9, v10) != 0 {
+		v12 = int32(-1)
+	} else {
+		v12 = int32(0)
+	}
+	if base.F64_lt(v9, v10) != 0 {
+		v14 = int32(1)
+	} else {
+		v14 = v12
+	}
+	return v14
 }
 func F_ConditionVariableTimedSleep(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M

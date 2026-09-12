@@ -12473,6 +12473,130 @@ func F_hmac_free(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_hnswbuildphasename(m *base.Module, l0 int64) int32 {
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	if l0 == int64(2) {
+		v7 = int32(_a_F_hnswbuildphasename_0)
+	} else {
+		v7 = int32(0)
+	}
+	if l0 == int64(1) {
+		v10 = int32(_a_F_hnswbuildphasename_1)
+	} else {
+		v10 = v7
+	}
+	return v10
+}
+func F_hnswendscan(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+52))
+	F_MemoryContextDelete(m, v4)
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return
+	} else {
+		F_pfree(m, v3)
+		mBase = m.M
+		v8 = m.ExcPending
+		if v8 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(0)
+			return
+		}
+	}
+}
+func F_hnswhandler(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v15 int32
+	_ = v15
+	var v67 int64
+	_ = v67
+	v3 = F_palloc0(m, int32(140))
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		v7 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+12)) = v7
+		*(*int64)(unsafe.Add(mBase, uint32(v3)+4)) = int64(72057594038124544)
+		*(*int32)(unsafe.Add(mBase, uint32(v3))) = int32(438)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+19)) = v7
+		v15 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, uint32(v3)+18)) = uint8(v15)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+108)) = int32(_a_F_hnswhandler_0)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+104)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+100)) = int32(_a_F_hnswhandler_1)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+96)) = int32(_a_F_hnswhandler_2)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+92)) = int32(_a_F_hnswhandler_3)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+88)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+84)) = int32(_a_F_hnswhandler_4)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+80)) = int32(_a_F_hnswhandler_5)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+76)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+72)) = int32(_a_F_hnswhandler_6)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+68)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+64)) = int32(_a_F_hnswhandler_7)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+60)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+56)) = int32(_a_F_hnswhandler_8)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+52)) = int32(_a_F_hnswhandler_9)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+48)) = v7
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+44)) = int32(_a_F_hnswhandler_10)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+40)) = int32(_a_F_hnswhandler_11)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+36)) = int32(_a_F_hnswhandler_12)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+32)) = v7
+		*(*uint8)(unsafe.Add(mBase, uint32(v3)+29)) = uint8(v15)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+25)) = v15
+		*(*uint16)(unsafe.Add(mBase, uint32(v3)+16)) = uint16(v7)
+		*(*uint16)(unsafe.Add(mBase, uint32(v3)+23)) = uint16(v7)
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+136)) = v7
+		v67 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v3)+128)) = v67
+		*(*int64)(unsafe.Add(mBase, uint32(v3)+120)) = v67
+		*(*int64)(unsafe.Add(mBase, uint32(v3)+112)) = v67
+		return v3
+	}
+}
+func F_hnswoptions(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	v4 = *(*int32)(unsafe.Add(mBase, _c_F_hnswoptions[0]))
+	v8 = F_build_reloptions(m, l0, l1, v4, int32(12), int32(_a_F_hnswoptions_0), int32(2))
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		return v8
+	}
+}
 func F_htons(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2

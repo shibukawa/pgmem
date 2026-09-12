@@ -333,42 +333,6 @@ L28:
 	for {
 	}
 }
-func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64) {
-	mBase := m.M
-	_ = mBase
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
-	var v26 int32
-	_ = v26
-	v10 = F_init_custom_variable(m, l0, l1, l2, int32(6), int32(0), int32(2), int32(152))
-	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
-		return
-	} else {
-		*(*float64)(unsafe.Add(mBase, uint32(v10)+136)) = l4
-		*(*float64)(unsafe.Add(mBase, uint32(v10)+96)) = l4
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+92)) = l3
-		v15 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+128)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+124)) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+120)) = v15
-		*(*float64)(unsafe.Add(mBase, uint32(v10)+112)) = float64(1)
-		*(*float64)(unsafe.Add(mBase, uint32(v10)+104)) = float64(0)
-		F_define_custom_variable(m, v10)
-		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
-			return
-		} else {
-			return
-		}
-	}
-}
 func F_DisownLatch(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

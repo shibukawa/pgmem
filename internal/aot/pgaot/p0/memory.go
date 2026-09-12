@@ -46,76 +46,81 @@ func F_MemoryContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 		return
 	}
 }
-func F_MemoryContextMemAllocated(m *base.Module, l0 int32) int32 {
+func F_MemoryContextMemAllocated(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
+	var v8 int32
+	_ = v8
 	var v13 int32
 	_ = v13
+	var v14 int32
+	_ = v14
 	var v15 int32
 	_ = v15
-	var v18 int32
-	_ = v18
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
+	var v22 int32
+	_ = v22
 	var v23 int32
 	_ = v23
+	var v27 int32
+	_ = v27
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	if v6 != 0 {
+	if l1 == int32(0) {
+		v27 = v5
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v9 = v5
-	v10 = v6
-	goto L4
+	return v27
 L2:
 	;
-	v23 = v5
-	goto L3
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v8 == int32(0) {
+		v27 = v5
+		goto L1
+	} else {
+		goto L3
+	}
 L3:
 	;
-	return v23
+	v13 = v5
+	v14 = v8
+	goto L4
 L4:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+8))
-	v12 = v11 + v9
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	if v13 != 0 {
-		v9 = v12
-		v10 = v13
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+8))
+	v16 = v15 + v13
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
+	if v17 != 0 {
+		v13 = v16
+		v14 = v17
 		goto L4
 	} else {
 		goto L6
 	}
 L5:
 	;
-	v23 = v12
-	goto L3
+	v27 = v16
+	goto L1
 L6:
 	;
-	v15 = v10
+	v19 = v14
 	goto L7
 L7:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(v15)+28))
-	if v18 != 0 {
-		v9 = v12
-		v10 = v18
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+28))
+	if v22 != 0 {
+		v13 = v16
+		v14 = v22
 		goto L4
 	} else {
 		goto L9
@@ -125,9 +130,9 @@ L8:
 	goto L5
 L9:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
-	if v19 != l0 {
-		v15 = v19
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
+	if v23 != l0 {
+		v19 = v23
 		goto L7
 	} else {
 		goto L10

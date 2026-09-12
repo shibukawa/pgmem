@@ -221,6 +221,710 @@ func F_ReleaseAuxProcessResources(m *base.Module, l0 int32) {
 		}
 	}
 }
+func F_RepairGraphElement(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v104 int32
+	_ = v104
+	var v108 int32
+	_ = v108
+	var v115 int32
+	_ = v115
+	var v118 int32
+	_ = v118
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v138 int32
+	_ = v138
+	var v145 int32
+	_ = v145
+	var v149 int32
+	_ = v149
+	var v150 int32
+	_ = v150
+	var v152 int32
+	_ = v152
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
+	var v159 int32
+	_ = v159
+	var v160 int32
+	_ = v160
+	var v161 int32
+	_ = v161
+	var v165 int32
+	_ = v165
+	var v174 int32
+	_ = v174
+	var v188 int32
+	_ = v188
+	var v190 int32
+	_ = v190
+	var v191 int32
+	_ = v191
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	var v197 int32
+	_ = v197
+	var v198 int32
+	_ = v198
+	var v199 int32
+	_ = v199
+	var v201 int32
+	_ = v201
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v208 int32
+	_ = v208
+	var v209 int32
+	_ = v209
+	var v213 int32
+	_ = v213
+	var v215 int32
+	_ = v215
+	var v219 int32
+	_ = v219
+	var v230 int32
+	_ = v230
+	var v231 int32
+	_ = v231
+	var v237 int32
+	_ = v237
+	var v242 int32
+	_ = v242
+	v12 = m.G0
+	v14 = v12 - int32(16)
+	m.G0 = v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+65)))
+	v25 = F_add_size(m, v23, int32(2))
+	mBase = m.M
+	v26 = m.ExcPending
+	if v26 != 0 {
+		return
+	} else {
+		v27 = F_mul_size(m, v25, v20)
+		mBase = m.M
+		v28 = m.ExcPending
+		if v28 != 0 {
+			return
+		} else {
+			v29 = F_mul_size(m, int32(6), v27)
+			mBase = m.M
+			v30 = m.ExcPending
+			if v30 != 0 {
+				return
+			} else {
+				v31 = F_add_size(m, int32(4), v29)
+				mBase = m.M
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return
+				} else {
+					if l2 == int32(0) {
+						v41 = int32(0)
+						F_HnswInitNeighbors(m, v41, l1, v20, v41)
+						mBase = m.M
+						v44 = m.ExcPending
+						if v44 != 0 {
+							return
+						} else {
+							v45 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(l1)+64)) = uint8(v45)
+							v49 = l0 + int32(24)
+							F_HnswFindElementNeighbors(m, v45, l1, l2, v19, v49, v20, v18, int32(1))
+							mBase = m.M
+							v52 = m.ExcPending
+							if v52 != 0 {
+								return
+							} else {
+								v57 = F__emscripten_memset_bulkmem(m, v16, base.I32_extend8_s(int32(0)), int32(_a_F_RepairGraphElement_0))
+								mBase = m.M
+								v58 = int32(0)
+								v70 = int32(2)
+								*(*uint8)(unsafe.Add(mBase, uint32(v57))) = uint8(v70)
+								v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+65)))
+								v84 = v76
+								v86 = v58
+								for {
+									v104 = *(*int32)(unsafe.Add(mBase, uint32(l1)+72))
+									v108 = *(*int32)(unsafe.Add(mBase, uint32(v104+v84<<(uint(int32(2))%32))))
+									if base.B2i32(v20 <= v58) == int32(0) {
+										v115 = int32(0)
+										v118 = *(*int32)(unsafe.Add(mBase, uint32(v108)))
+										v127 = v86
+										v128 = v115
+										for {
+											v138 = v57 + int32(4) + v127*int32(6)
+											if v128 < v118 {
+												v145 = *(*int32)(unsafe.Add(mBase, uint32(v108+int32(8)+v128*int32(12))))
+												v149 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v145)+80)))
+												v150 = *(*int32)(unsafe.Add(mBase, uint32(v145)+76))
+												v152 = int32(base.Ui32(v150) >> (uint(int32(16)) % 32))
+												*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v152)
+												v158 = v149
+												v159 = v150
+											} else {
+												v154 = int32(_a_F_RepairGraphElement_1)
+												*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v154)
+												v158 = int32(0)
+												v159 = v154
+											}
+											v160 = int32(1)
+											v161 = v127 + v160
+											*(*uint16)(unsafe.Add(mBase, uint32(v138)+4)) = uint16(v158)
+											*(*uint16)(unsafe.Add(mBase, uint32(v138)+2)) = uint16(v159)
+											v165 = v128 + v160
+											if v165 != v20<<(uint(base.B2i32(v84 == v115))%32) {
+												v127 = v161
+												v128 = v165
+												continue
+											} else {
+												break
+											}
+											break
+										}
+										v174 = v161
+									} else {
+										v174 = v86
+									}
+									if int32(0) < v84 {
+										v84 = v84 - int32(1)
+										v86 = v174
+										continue
+									} else {
+										break
+									}
+									break
+								}
+								*(*uint16)(unsafe.Add(mBase, uint32(v57)+2)) = uint16(v174)
+								v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+67)))
+								*(*uint8)(unsafe.Add(mBase, uint32(v57)+1)) = uint8(v188)
+								v190 = int32(0)
+								v191 = *(*int32)(unsafe.Add(mBase, uint32(l1)+84))
+								v193 = F_ReadBufferExtended(m, v19, v190, v191, v190, v17)
+								mBase = m.M
+								v194 = m.ExcPending
+								if v194 != 0 {
+									return
+								} else {
+									F_LockBuffer(m, v193, int32(2))
+									mBase = m.M
+									v197 = m.ExcPending
+									if v197 != 0 {
+										return
+									} else {
+										v198 = F_GenericXLogStart(m, v19)
+										mBase = m.M
+										v199 = m.ExcPending
+										if v199 != 0 {
+											return
+										} else {
+											v201 = F_GenericXLogRegisterBuffer(m, v198, v193, int32(0))
+											mBase = m.M
+											v202 = m.ExcPending
+											if v202 != 0 {
+												return
+											} else {
+												v203 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+82)))
+												v208 = F_PageIndexTupleOverwrite(m, v201, v203, v57, (v31+int32(7))&int32(-8))
+												mBase = m.M
+												v209 = m.ExcPending
+												if v209 != 0 {
+													return
+												} else {
+													if v208 == int32(0) {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v230 = m.ExcPending
+														if v230 != 0 {
+															return
+														} else {
+															v231 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+															*(*int32)(unsafe.Add(mBase, uint32(v14))) = v231 + int32(4)
+															F_errmsg_internal(m, int32(_a_F_RepairGraphElement_2), v14)
+															mBase = m.M
+															v237 = m.ExcPending
+															if v237 != 0 {
+																return
+															} else {
+																F_errfinish(m, int32(_a_F_RepairGraphElement_3), int32(266), int32(_a_F_RepairGraphElement_4))
+																mBase = m.M
+																v242 = m.ExcPending
+																if v242 != 0 {
+																	return
+																} else {
+																	base.Wasm_trap_unreachable()
+																	for {
+																	}
+																}
+															}
+														}
+													} else {
+														F_GenericXLogFinish(m, v198)
+														mBase = m.M
+														v213 = m.ExcPending
+														if v213 != 0 {
+															return
+														} else {
+															F_UnlockReleaseBuffer(m, v193)
+															mBase = m.M
+															v215 = m.ExcPending
+															if v215 != 0 {
+																return
+															} else {
+																F_HnswUpdateNeighborsOnDisk(m, v19, v49, l1, v20, int32(1), int32(0))
+																mBase = m.M
+																v219 = m.ExcPending
+																if v219 != 0 {
+																	return
+																} else {
+																	m.G0 = v14 + int32(16)
+																	return
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} else {
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(l1)+76))
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(l2)+76))
+						if v35 != v36 {
+							v41 = int32(0)
+							F_HnswInitNeighbors(m, v41, l1, v20, v41)
+							mBase = m.M
+							v44 = m.ExcPending
+							if v44 != 0 {
+								return
+							} else {
+								v45 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(l1)+64)) = uint8(v45)
+								v49 = l0 + int32(24)
+								F_HnswFindElementNeighbors(m, v45, l1, l2, v19, v49, v20, v18, int32(1))
+								mBase = m.M
+								v52 = m.ExcPending
+								if v52 != 0 {
+									return
+								} else {
+									v57 = F__emscripten_memset_bulkmem(m, v16, base.I32_extend8_s(int32(0)), int32(_a_F_RepairGraphElement_0))
+									mBase = m.M
+									v58 = int32(0)
+									v70 = int32(2)
+									*(*uint8)(unsafe.Add(mBase, uint32(v57))) = uint8(v70)
+									v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+65)))
+									v84 = v76
+									v86 = v58
+									for {
+										v104 = *(*int32)(unsafe.Add(mBase, uint32(l1)+72))
+										v108 = *(*int32)(unsafe.Add(mBase, uint32(v104+v84<<(uint(int32(2))%32))))
+										if base.B2i32(v20 <= v58) == int32(0) {
+											v115 = int32(0)
+											v118 = *(*int32)(unsafe.Add(mBase, uint32(v108)))
+											v127 = v86
+											v128 = v115
+											for {
+												v138 = v57 + int32(4) + v127*int32(6)
+												if v128 < v118 {
+													v145 = *(*int32)(unsafe.Add(mBase, uint32(v108+int32(8)+v128*int32(12))))
+													v149 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v145)+80)))
+													v150 = *(*int32)(unsafe.Add(mBase, uint32(v145)+76))
+													v152 = int32(base.Ui32(v150) >> (uint(int32(16)) % 32))
+													*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v152)
+													v158 = v149
+													v159 = v150
+												} else {
+													v154 = int32(_a_F_RepairGraphElement_1)
+													*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v154)
+													v158 = int32(0)
+													v159 = v154
+												}
+												v160 = int32(1)
+												v161 = v127 + v160
+												*(*uint16)(unsafe.Add(mBase, uint32(v138)+4)) = uint16(v158)
+												*(*uint16)(unsafe.Add(mBase, uint32(v138)+2)) = uint16(v159)
+												v165 = v128 + v160
+												if v165 != v20<<(uint(base.B2i32(v84 == v115))%32) {
+													v127 = v161
+													v128 = v165
+													continue
+												} else {
+													break
+												}
+												break
+											}
+											v174 = v161
+										} else {
+											v174 = v86
+										}
+										if int32(0) < v84 {
+											v84 = v84 - int32(1)
+											v86 = v174
+											continue
+										} else {
+											break
+										}
+										break
+									}
+									*(*uint16)(unsafe.Add(mBase, uint32(v57)+2)) = uint16(v174)
+									v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+67)))
+									*(*uint8)(unsafe.Add(mBase, uint32(v57)+1)) = uint8(v188)
+									v190 = int32(0)
+									v191 = *(*int32)(unsafe.Add(mBase, uint32(l1)+84))
+									v193 = F_ReadBufferExtended(m, v19, v190, v191, v190, v17)
+									mBase = m.M
+									v194 = m.ExcPending
+									if v194 != 0 {
+										return
+									} else {
+										F_LockBuffer(m, v193, int32(2))
+										mBase = m.M
+										v197 = m.ExcPending
+										if v197 != 0 {
+											return
+										} else {
+											v198 = F_GenericXLogStart(m, v19)
+											mBase = m.M
+											v199 = m.ExcPending
+											if v199 != 0 {
+												return
+											} else {
+												v201 = F_GenericXLogRegisterBuffer(m, v198, v193, int32(0))
+												mBase = m.M
+												v202 = m.ExcPending
+												if v202 != 0 {
+													return
+												} else {
+													v203 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+82)))
+													v208 = F_PageIndexTupleOverwrite(m, v201, v203, v57, (v31+int32(7))&int32(-8))
+													mBase = m.M
+													v209 = m.ExcPending
+													if v209 != 0 {
+														return
+													} else {
+														if v208 == int32(0) {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v230 = m.ExcPending
+															if v230 != 0 {
+																return
+															} else {
+																v231 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14))) = v231 + int32(4)
+																F_errmsg_internal(m, int32(_a_F_RepairGraphElement_2), v14)
+																mBase = m.M
+																v237 = m.ExcPending
+																if v237 != 0 {
+																	return
+																} else {
+																	F_errfinish(m, int32(_a_F_RepairGraphElement_3), int32(266), int32(_a_F_RepairGraphElement_4))
+																	mBase = m.M
+																	v242 = m.ExcPending
+																	if v242 != 0 {
+																		return
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														} else {
+															F_GenericXLogFinish(m, v198)
+															mBase = m.M
+															v213 = m.ExcPending
+															if v213 != 0 {
+																return
+															} else {
+																F_UnlockReleaseBuffer(m, v193)
+																mBase = m.M
+																v215 = m.ExcPending
+																if v215 != 0 {
+																	return
+																} else {
+																	F_HnswUpdateNeighborsOnDisk(m, v19, v49, l1, v20, int32(1), int32(0))
+																	mBase = m.M
+																	v219 = m.ExcPending
+																	if v219 != 0 {
+																		return
+																	} else {
+																		m.G0 = v14 + int32(16)
+																		return
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+80)))
+							v39 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l2)+80)))
+							if v38 == v39 {
+								m.G0 = v14 + int32(16)
+								return
+							} else {
+								v41 = int32(0)
+								F_HnswInitNeighbors(m, v41, l1, v20, v41)
+								mBase = m.M
+								v44 = m.ExcPending
+								if v44 != 0 {
+									return
+								} else {
+									v45 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(l1)+64)) = uint8(v45)
+									v49 = l0 + int32(24)
+									F_HnswFindElementNeighbors(m, v45, l1, l2, v19, v49, v20, v18, int32(1))
+									mBase = m.M
+									v52 = m.ExcPending
+									if v52 != 0 {
+										return
+									} else {
+										v57 = F__emscripten_memset_bulkmem(m, v16, base.I32_extend8_s(int32(0)), int32(_a_F_RepairGraphElement_0))
+										mBase = m.M
+										v58 = int32(0)
+										v70 = int32(2)
+										*(*uint8)(unsafe.Add(mBase, uint32(v57))) = uint8(v70)
+										v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+65)))
+										v84 = v76
+										v86 = v58
+										for {
+											v104 = *(*int32)(unsafe.Add(mBase, uint32(l1)+72))
+											v108 = *(*int32)(unsafe.Add(mBase, uint32(v104+v84<<(uint(int32(2))%32))))
+											if base.B2i32(v20 <= v58) == int32(0) {
+												v115 = int32(0)
+												v118 = *(*int32)(unsafe.Add(mBase, uint32(v108)))
+												v127 = v86
+												v128 = v115
+												for {
+													v138 = v57 + int32(4) + v127*int32(6)
+													if v128 < v118 {
+														v145 = *(*int32)(unsafe.Add(mBase, uint32(v108+int32(8)+v128*int32(12))))
+														v149 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v145)+80)))
+														v150 = *(*int32)(unsafe.Add(mBase, uint32(v145)+76))
+														v152 = int32(base.Ui32(v150) >> (uint(int32(16)) % 32))
+														*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v152)
+														v158 = v149
+														v159 = v150
+													} else {
+														v154 = int32(_a_F_RepairGraphElement_1)
+														*(*uint16)(unsafe.Add(mBase, uint32(v138))) = uint16(v154)
+														v158 = int32(0)
+														v159 = v154
+													}
+													v160 = int32(1)
+													v161 = v127 + v160
+													*(*uint16)(unsafe.Add(mBase, uint32(v138)+4)) = uint16(v158)
+													*(*uint16)(unsafe.Add(mBase, uint32(v138)+2)) = uint16(v159)
+													v165 = v128 + v160
+													if v165 != v20<<(uint(base.B2i32(v84 == v115))%32) {
+														v127 = v161
+														v128 = v165
+														continue
+													} else {
+														break
+													}
+													break
+												}
+												v174 = v161
+											} else {
+												v174 = v86
+											}
+											if int32(0) < v84 {
+												v84 = v84 - int32(1)
+												v86 = v174
+												continue
+											} else {
+												break
+											}
+											break
+										}
+										*(*uint16)(unsafe.Add(mBase, uint32(v57)+2)) = uint16(v174)
+										v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+67)))
+										*(*uint8)(unsafe.Add(mBase, uint32(v57)+1)) = uint8(v188)
+										v190 = int32(0)
+										v191 = *(*int32)(unsafe.Add(mBase, uint32(l1)+84))
+										v193 = F_ReadBufferExtended(m, v19, v190, v191, v190, v17)
+										mBase = m.M
+										v194 = m.ExcPending
+										if v194 != 0 {
+											return
+										} else {
+											F_LockBuffer(m, v193, int32(2))
+											mBase = m.M
+											v197 = m.ExcPending
+											if v197 != 0 {
+												return
+											} else {
+												v198 = F_GenericXLogStart(m, v19)
+												mBase = m.M
+												v199 = m.ExcPending
+												if v199 != 0 {
+													return
+												} else {
+													v201 = F_GenericXLogRegisterBuffer(m, v198, v193, int32(0))
+													mBase = m.M
+													v202 = m.ExcPending
+													if v202 != 0 {
+														return
+													} else {
+														v203 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+82)))
+														v208 = F_PageIndexTupleOverwrite(m, v201, v203, v57, (v31+int32(7))&int32(-8))
+														mBase = m.M
+														v209 = m.ExcPending
+														if v209 != 0 {
+															return
+														} else {
+															if v208 == int32(0) {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v230 = m.ExcPending
+																if v230 != 0 {
+																	return
+																} else {
+																	v231 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v231 + int32(4)
+																	F_errmsg_internal(m, int32(_a_F_RepairGraphElement_2), v14)
+																	mBase = m.M
+																	v237 = m.ExcPending
+																	if v237 != 0 {
+																		return
+																	} else {
+																		F_errfinish(m, int32(_a_F_RepairGraphElement_3), int32(266), int32(_a_F_RepairGraphElement_4))
+																		mBase = m.M
+																		v242 = m.ExcPending
+																		if v242 != 0 {
+																			return
+																		} else {
+																			base.Wasm_trap_unreachable()
+																			for {
+																			}
+																		}
+																	}
+																}
+															} else {
+																F_GenericXLogFinish(m, v198)
+																mBase = m.M
+																v213 = m.ExcPending
+																if v213 != 0 {
+																	return
+																} else {
+																	F_UnlockReleaseBuffer(m, v193)
+																	mBase = m.M
+																	v215 = m.ExcPending
+																	if v215 != 0 {
+																		return
+																	} else {
+																		F_HnswUpdateNeighborsOnDisk(m, v19, v49, l1, v20, int32(1), int32(0))
+																		mBase = m.M
+																		v219 = m.ExcPending
+																		if v219 != 0 {
+																			return
+																		} else {
+																			m.G0 = v14 + int32(16)
+																			return
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_ReplaceVarsFromTargetList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32 {
 	mBase := m.M
 	_ = mBase

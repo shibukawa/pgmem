@@ -29,6 +29,9 @@ func F_pg_finfo__ltree_r_risparent(m *base.Module) int32 {
 func F_pg_finfo__ltree_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltree_union_0)
 }
+func F_pg_finfo_array_to_halfvec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_array_to_halfvec_0)
+}
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_euc_tw_0)
 }
@@ -284,6 +287,9 @@ func F_pg_finfo_hash_ltree(m *base.Module) int32 {
 func F_pg_finfo_hash_ltree_extended(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hash_ltree_extended_0)
 }
+func F_pg_finfo_hnsw_sparsevec_support(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hnsw_sparsevec_support_0)
+}
 func F_pg_finfo_hstore_akeys(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_akeys_0)
 }
@@ -416,6 +422,21 @@ func F_pg_finfo_similarity_op(m *base.Module) int32 {
 func F_pg_finfo_sjis_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_mic_0)
 }
+func F_pg_finfo_sparsevec_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_cmp_0)
+}
+func F_pg_finfo_sparsevec_eq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_eq_0)
+}
+func F_pg_finfo_sparsevec_l2_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_l2_distance_0)
+}
+func F_pg_finfo_sparsevec_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_lt_0)
+}
+func F_pg_finfo_sparsevec_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_out_0)
+}
 func F_pg_finfo_strict_word_similarity_dist_commutator_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_strict_word_similarity_dist_commutator_op_0)
 }
@@ -442,6 +463,15 @@ func F_pg_finfo_uuid_nil(m *base.Module) int32 {
 }
 func F_pg_finfo_uuid_ns_x500(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_uuid_ns_x500_0)
+}
+func F_pg_finfo_vector_dims(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_dims_0)
+}
+func F_pg_finfo_vector_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_in_0)
+}
+func F_pg_finfo_vector_to_halfvec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_to_halfvec_0)
 }
 func F_pg_finfo_win1250_to_latin2(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win1250_to_latin2_0)

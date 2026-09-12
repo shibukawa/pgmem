@@ -18168,6 +18168,60 @@ L868:
 	;
 	goto L861
 }
+func F_add_reloption_kind(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	v3 = *(*int32)(unsafe.Add(mBase, _c_F_add_reloption_kind[0]))
+	if base.Ui32(int32(1073741824)) <= base.Ui32(v3) {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v11 = m.ExcPending
+		if v11 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(261))
+			mBase = m.M
+			v14 = m.ExcPending
+			if v14 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg(m, int32(_a_F_add_reloption_kind_0), int32(0))
+				mBase = m.M
+				v18 = m.ExcPending
+				if v18 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_add_reloption_kind_1), int32(700), int32(_a_F_add_reloption_kind_2))
+					mBase = m.M
+					v23 = m.ExcPending
+					if v23 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v26 = v3 << (uint(int32(1)) % 32)
+		*(*int32)(unsafe.Add(mBase, _c_F_add_reloption_kind[0])) = v26
+		return v26
+	}
+}
 func F_add_security_quals(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M
 	_ = mBase

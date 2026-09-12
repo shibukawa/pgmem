@@ -9673,6 +9673,43 @@ L851:
 	*(*int32)(unsafe.Add(mBase, uint32(v3223))) = v3249
 	goto L2
 }
+func F_LockPage(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	v4 = int32(0)
+	v5 = m.G0
+	v7 = v5 - int32(16)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = int32(16973824)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l1
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v11
+	v18 = F_LockAcquire(m, v7, l2, v4, v4)
+	mBase = m.M
+	v19 = m.ExcPending
+	if v19 != 0 {
+		return
+	} else {
+		m.G0 = v7 + int32(16)
+		return
+	}
+}
 func F_PageGetExactFreeSpace(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

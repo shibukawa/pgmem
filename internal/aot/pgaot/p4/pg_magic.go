@@ -29,3 +29,6 @@ func F_Pg_magic_func_pgstattuple(m *base.Module) int32 {
 func F_Pg_magic_func_uuid_ossp(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_uuid_ossp_0)
 }
+func F_Pg_magic_func_vector(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_vector_0)
+}

@@ -10178,6 +10178,1278 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.UuidNsX500(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "HnswParallelBuildMain":
+		if len(a) != 2 {
+			panic("aot: HnswParallelBuildMain: want 2 args")
+		}
+		pgaot.HnswParallelBuildMain(m, int32(uint32(a[0])), int32(uint32(a[1])))
+		return nil, true
+	case "IvfflatParallelBuildMain":
+		if len(a) != 2 {
+			panic("aot: IvfflatParallelBuildMain: want 2 args")
+		}
+		pgaot.IvfflatParallelBuildMain(m, int32(uint32(a[0])), int32(uint32(a[1])))
+		return nil, true
+	case "Pg_magic_func_vector":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_vector: want 0 args")
+		}
+		r := pgaot.PgMagicFuncVector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_vector":
+		if len(a) != 0 {
+			panic("aot: _PG_init_vector: want 0 args")
+		}
+		pgaot.PGInitVector(m)
+		return nil, true
+	case "array_to_halfvec":
+		if len(a) != 1 {
+			panic("aot: array_to_halfvec: want 1 args")
+		}
+		r := pgaot.ArrayToHalfvec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "array_to_sparsevec":
+		if len(a) != 1 {
+			panic("aot: array_to_sparsevec: want 1 args")
+		}
+		r := pgaot.ArrayToSparsevec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "array_to_vector":
+		if len(a) != 1 {
+			panic("aot: array_to_vector: want 1 args")
+		}
+		r := pgaot.ArrayToVector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "binary_quantize":
+		if len(a) != 1 {
+			panic("aot: binary_quantize: want 1 args")
+		}
+		r := pgaot.BinaryQuantize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cosine_distance":
+		if len(a) != 1 {
+			panic("aot: cosine_distance: want 1 args")
+		}
+		r := pgaot.CosineDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec":
+		if len(a) != 1 {
+			panic("aot: halfvec: want 1 args")
+		}
+		r := pgaot.Halfvec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_accum":
+		if len(a) != 1 {
+			panic("aot: halfvec_accum: want 1 args")
+		}
+		r := pgaot.HalfvecAccum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_add":
+		if len(a) != 1 {
+			panic("aot: halfvec_add: want 1 args")
+		}
+		r := pgaot.HalfvecAdd(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_avg":
+		if len(a) != 1 {
+			panic("aot: halfvec_avg: want 1 args")
+		}
+		r := pgaot.HalfvecAvg(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_binary_quantize":
+		if len(a) != 1 {
+			panic("aot: halfvec_binary_quantize: want 1 args")
+		}
+		r := pgaot.HalfvecBinaryQuantize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_cmp":
+		if len(a) != 1 {
+			panic("aot: halfvec_cmp: want 1 args")
+		}
+		r := pgaot.HalfvecCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_concat":
+		if len(a) != 1 {
+			panic("aot: halfvec_concat: want 1 args")
+		}
+		r := pgaot.HalfvecConcat(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_cosine_distance":
+		if len(a) != 1 {
+			panic("aot: halfvec_cosine_distance: want 1 args")
+		}
+		r := pgaot.HalfvecCosineDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_eq":
+		if len(a) != 1 {
+			panic("aot: halfvec_eq: want 1 args")
+		}
+		r := pgaot.HalfvecEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_ge":
+		if len(a) != 1 {
+			panic("aot: halfvec_ge: want 1 args")
+		}
+		r := pgaot.HalfvecGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_gt":
+		if len(a) != 1 {
+			panic("aot: halfvec_gt: want 1 args")
+		}
+		r := pgaot.HalfvecGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_in":
+		if len(a) != 1 {
+			panic("aot: halfvec_in: want 1 args")
+		}
+		r := pgaot.HalfvecIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_inner_product":
+		if len(a) != 1 {
+			panic("aot: halfvec_inner_product: want 1 args")
+		}
+		r := pgaot.HalfvecInnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_l1_distance":
+		if len(a) != 1 {
+			panic("aot: halfvec_l1_distance: want 1 args")
+		}
+		r := pgaot.HalfvecL1Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_l2_distance":
+		if len(a) != 1 {
+			panic("aot: halfvec_l2_distance: want 1 args")
+		}
+		r := pgaot.HalfvecL2Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_l2_norm":
+		if len(a) != 1 {
+			panic("aot: halfvec_l2_norm: want 1 args")
+		}
+		r := pgaot.HalfvecL2Norm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_l2_normalize":
+		if len(a) != 1 {
+			panic("aot: halfvec_l2_normalize: want 1 args")
+		}
+		r := pgaot.HalfvecL2Normalize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_l2_squared_distance":
+		if len(a) != 1 {
+			panic("aot: halfvec_l2_squared_distance: want 1 args")
+		}
+		r := pgaot.HalfvecL2SquaredDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_le":
+		if len(a) != 1 {
+			panic("aot: halfvec_le: want 1 args")
+		}
+		r := pgaot.HalfvecLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_lt":
+		if len(a) != 1 {
+			panic("aot: halfvec_lt: want 1 args")
+		}
+		r := pgaot.HalfvecLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_mul":
+		if len(a) != 1 {
+			panic("aot: halfvec_mul: want 1 args")
+		}
+		r := pgaot.HalfvecMul(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_ne":
+		if len(a) != 1 {
+			panic("aot: halfvec_ne: want 1 args")
+		}
+		r := pgaot.HalfvecNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_negative_inner_product":
+		if len(a) != 1 {
+			panic("aot: halfvec_negative_inner_product: want 1 args")
+		}
+		r := pgaot.HalfvecNegativeInnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_out":
+		if len(a) != 1 {
+			panic("aot: halfvec_out: want 1 args")
+		}
+		r := pgaot.HalfvecOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_recv":
+		if len(a) != 1 {
+			panic("aot: halfvec_recv: want 1 args")
+		}
+		r := pgaot.HalfvecRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_send":
+		if len(a) != 1 {
+			panic("aot: halfvec_send: want 1 args")
+		}
+		r := pgaot.HalfvecSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_spherical_distance":
+		if len(a) != 1 {
+			panic("aot: halfvec_spherical_distance: want 1 args")
+		}
+		r := pgaot.HalfvecSphericalDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_sub":
+		if len(a) != 1 {
+			panic("aot: halfvec_sub: want 1 args")
+		}
+		r := pgaot.HalfvecSub(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_subvector":
+		if len(a) != 1 {
+			panic("aot: halfvec_subvector: want 1 args")
+		}
+		r := pgaot.HalfvecSubvector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_to_float4":
+		if len(a) != 1 {
+			panic("aot: halfvec_to_float4: want 1 args")
+		}
+		r := pgaot.HalfvecToFloat4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_to_sparsevec":
+		if len(a) != 1 {
+			panic("aot: halfvec_to_sparsevec: want 1 args")
+		}
+		r := pgaot.HalfvecToSparsevec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_to_vector":
+		if len(a) != 1 {
+			panic("aot: halfvec_to_vector: want 1 args")
+		}
+		r := pgaot.HalfvecToVector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_typmod_in":
+		if len(a) != 1 {
+			panic("aot: halfvec_typmod_in: want 1 args")
+		}
+		r := pgaot.HalfvecTypmodIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "halfvec_vector_dims":
+		if len(a) != 1 {
+			panic("aot: halfvec_vector_dims: want 1 args")
+		}
+		r := pgaot.HalfvecVectorDims(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hamming_distance":
+		if len(a) != 1 {
+			panic("aot: hamming_distance: want 1 args")
+		}
+		r := pgaot.HammingDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hnsw_bit_support":
+		if len(a) != 1 {
+			panic("aot: hnsw_bit_support: want 1 args")
+		}
+		r := pgaot.HnswBitSupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hnsw_halfvec_support":
+		if len(a) != 1 {
+			panic("aot: hnsw_halfvec_support: want 1 args")
+		}
+		r := pgaot.HnswHalfvecSupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hnsw_sparsevec_support":
+		if len(a) != 1 {
+			panic("aot: hnsw_sparsevec_support: want 1 args")
+		}
+		r := pgaot.HnswSparsevecSupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hnswhandler":
+		if len(a) != 1 {
+			panic("aot: hnswhandler: want 1 args")
+		}
+		r := pgaot.Hnswhandler(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "inner_product":
+		if len(a) != 1 {
+			panic("aot: inner_product: want 1 args")
+		}
+		r := pgaot.InnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ivfflat_bit_support":
+		if len(a) != 1 {
+			panic("aot: ivfflat_bit_support: want 1 args")
+		}
+		r := pgaot.IvfflatBitSupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ivfflat_halfvec_support":
+		if len(a) != 1 {
+			panic("aot: ivfflat_halfvec_support: want 1 args")
+		}
+		r := pgaot.IvfflatHalfvecSupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ivfflathandler":
+		if len(a) != 1 {
+			panic("aot: ivfflathandler: want 1 args")
+		}
+		r := pgaot.Ivfflathandler(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "jaccard_distance":
+		if len(a) != 1 {
+			panic("aot: jaccard_distance: want 1 args")
+		}
+		r := pgaot.JaccardDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "l1_distance":
+		if len(a) != 1 {
+			panic("aot: l1_distance: want 1 args")
+		}
+		r := pgaot.L1Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "l2_distance":
+		if len(a) != 1 {
+			panic("aot: l2_distance: want 1 args")
+		}
+		r := pgaot.L2Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "l2_normalize":
+		if len(a) != 1 {
+			panic("aot: l2_normalize: want 1 args")
+		}
+		r := pgaot.L2Normalize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_array_to_halfvec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_array_to_halfvec: want 0 args")
+		}
+		r := pgaot.PgFinfoArrayToHalfvec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_array_to_sparsevec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_array_to_sparsevec: want 0 args")
+		}
+		r := pgaot.PgFinfoArrayToSparsevec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_array_to_vector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_array_to_vector: want 0 args")
+		}
+		r := pgaot.PgFinfoArrayToVector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_binary_quantize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_binary_quantize: want 0 args")
+		}
+		r := pgaot.PgFinfoBinaryQuantize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cosine_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cosine_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoCosineDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_accum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_accum: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecAccum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_add":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_add: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecAdd(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_avg":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_avg: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecAvg(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_binary_quantize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_binary_quantize: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecBinaryQuantize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_concat":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_concat: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecConcat(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_cosine_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_cosine_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecCosineDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_in: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_l1_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_l1_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecL1Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_l2_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_l2_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecL2Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_l2_norm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_l2_norm: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecL2Norm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_l2_normalize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_l2_normalize: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecL2Normalize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_l2_squared_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_l2_squared_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecL2SquaredDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_le: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_mul":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_mul: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecMul(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_negative_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_negative_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecNegativeInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_out: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_send: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_spherical_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_spherical_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecSphericalDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_sub":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_sub: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecSub(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_subvector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_subvector: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecSubvector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_to_float4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_to_float4: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecToFloat4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_to_sparsevec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_to_sparsevec: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecToSparsevec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_to_vector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_to_vector: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecToVector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_typmod_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_typmod_in: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecTypmodIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_halfvec_vector_dims":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_halfvec_vector_dims: want 0 args")
+		}
+		r := pgaot.PgFinfoHalfvecVectorDims(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hamming_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hamming_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoHammingDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hnsw_bit_support":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hnsw_bit_support: want 0 args")
+		}
+		r := pgaot.PgFinfoHnswBitSupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hnsw_halfvec_support":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hnsw_halfvec_support: want 0 args")
+		}
+		r := pgaot.PgFinfoHnswHalfvecSupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hnsw_sparsevec_support":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hnsw_sparsevec_support: want 0 args")
+		}
+		r := pgaot.PgFinfoHnswSparsevecSupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hnswhandler":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hnswhandler: want 0 args")
+		}
+		r := pgaot.PgFinfoHnswhandler(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ivfflat_bit_support":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ivfflat_bit_support: want 0 args")
+		}
+		r := pgaot.PgFinfoIvfflatBitSupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ivfflat_halfvec_support":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ivfflat_halfvec_support: want 0 args")
+		}
+		r := pgaot.PgFinfoIvfflatHalfvecSupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ivfflathandler":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ivfflathandler: want 0 args")
+		}
+		r := pgaot.PgFinfoIvfflathandler(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_jaccard_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_jaccard_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoJaccardDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_l1_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_l1_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoL1Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_l2_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_l2_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoL2Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_l2_normalize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_l2_normalize: want 0 args")
+		}
+		r := pgaot.PgFinfoL2Normalize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_cosine_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_cosine_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecCosineDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_in: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_l1_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_l1_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecL1Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_l2_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_l2_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecL2Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_l2_norm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_l2_norm: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecL2Norm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_l2_normalize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_l2_normalize: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecL2Normalize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_l2_squared_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_l2_squared_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecL2SquaredDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_le: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_negative_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_negative_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecNegativeInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_out: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_send: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_to_halfvec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_to_halfvec: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecToHalfvec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_to_vector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_to_vector: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecToVector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_sparsevec_typmod_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_sparsevec_typmod_in: want 0 args")
+		}
+		r := pgaot.PgFinfoSparsevecTypmodIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_subvector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_subvector: want 0 args")
+		}
+		r := pgaot.PgFinfoSubvector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector: want 0 args")
+		}
+		r := pgaot.PgFinfoVector(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_accum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_accum: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorAccum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_add":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_add: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorAdd(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_avg":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_avg: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorAvg(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_combine":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_combine: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorCombine(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_concat":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_concat: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorConcat(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_dims":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_dims: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorDims(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_in: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_l2_squared_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_l2_squared_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorL2SquaredDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_le: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_mul":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_mul: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorMul(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_negative_inner_product":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_negative_inner_product: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorNegativeInnerProduct(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_norm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_norm: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorNorm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_out: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_send: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_spherical_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_spherical_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorSphericalDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_sub":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_sub: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorSub(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_to_float4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_to_float4: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorToFloat4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_to_halfvec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_to_halfvec: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorToHalfvec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_to_sparsevec":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_to_sparsevec: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorToSparsevec(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_vector_typmod_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_vector_typmod_in: want 0 args")
+		}
+		r := pgaot.PgFinfoVectorTypmodIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec":
+		if len(a) != 1 {
+			panic("aot: sparsevec: want 1 args")
+		}
+		r := pgaot.Sparsevec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_cmp":
+		if len(a) != 1 {
+			panic("aot: sparsevec_cmp: want 1 args")
+		}
+		r := pgaot.SparsevecCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_cosine_distance":
+		if len(a) != 1 {
+			panic("aot: sparsevec_cosine_distance: want 1 args")
+		}
+		r := pgaot.SparsevecCosineDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_eq":
+		if len(a) != 1 {
+			panic("aot: sparsevec_eq: want 1 args")
+		}
+		r := pgaot.SparsevecEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_ge":
+		if len(a) != 1 {
+			panic("aot: sparsevec_ge: want 1 args")
+		}
+		r := pgaot.SparsevecGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_gt":
+		if len(a) != 1 {
+			panic("aot: sparsevec_gt: want 1 args")
+		}
+		r := pgaot.SparsevecGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_in":
+		if len(a) != 1 {
+			panic("aot: sparsevec_in: want 1 args")
+		}
+		r := pgaot.SparsevecIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_inner_product":
+		if len(a) != 1 {
+			panic("aot: sparsevec_inner_product: want 1 args")
+		}
+		r := pgaot.SparsevecInnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_l1_distance":
+		if len(a) != 1 {
+			panic("aot: sparsevec_l1_distance: want 1 args")
+		}
+		r := pgaot.SparsevecL1Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_l2_distance":
+		if len(a) != 1 {
+			panic("aot: sparsevec_l2_distance: want 1 args")
+		}
+		r := pgaot.SparsevecL2Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_l2_norm":
+		if len(a) != 1 {
+			panic("aot: sparsevec_l2_norm: want 1 args")
+		}
+		r := pgaot.SparsevecL2Norm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_l2_normalize":
+		if len(a) != 1 {
+			panic("aot: sparsevec_l2_normalize: want 1 args")
+		}
+		r := pgaot.SparsevecL2Normalize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_l2_squared_distance":
+		if len(a) != 1 {
+			panic("aot: sparsevec_l2_squared_distance: want 1 args")
+		}
+		r := pgaot.SparsevecL2SquaredDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_le":
+		if len(a) != 1 {
+			panic("aot: sparsevec_le: want 1 args")
+		}
+		r := pgaot.SparsevecLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_lt":
+		if len(a) != 1 {
+			panic("aot: sparsevec_lt: want 1 args")
+		}
+		r := pgaot.SparsevecLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_ne":
+		if len(a) != 1 {
+			panic("aot: sparsevec_ne: want 1 args")
+		}
+		r := pgaot.SparsevecNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_negative_inner_product":
+		if len(a) != 1 {
+			panic("aot: sparsevec_negative_inner_product: want 1 args")
+		}
+		r := pgaot.SparsevecNegativeInnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_out":
+		if len(a) != 1 {
+			panic("aot: sparsevec_out: want 1 args")
+		}
+		r := pgaot.SparsevecOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_recv":
+		if len(a) != 1 {
+			panic("aot: sparsevec_recv: want 1 args")
+		}
+		r := pgaot.SparsevecRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_send":
+		if len(a) != 1 {
+			panic("aot: sparsevec_send: want 1 args")
+		}
+		r := pgaot.SparsevecSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_to_halfvec":
+		if len(a) != 1 {
+			panic("aot: sparsevec_to_halfvec: want 1 args")
+		}
+		r := pgaot.SparsevecToHalfvec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_to_vector":
+		if len(a) != 1 {
+			panic("aot: sparsevec_to_vector: want 1 args")
+		}
+		r := pgaot.SparsevecToVector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "sparsevec_typmod_in":
+		if len(a) != 1 {
+			panic("aot: sparsevec_typmod_in: want 1 args")
+		}
+		r := pgaot.SparsevecTypmodIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "subvector":
+		if len(a) != 1 {
+			panic("aot: subvector: want 1 args")
+		}
+		r := pgaot.Subvector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector":
+		if len(a) != 1 {
+			panic("aot: vector: want 1 args")
+		}
+		r := pgaot.Vector(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_accum":
+		if len(a) != 1 {
+			panic("aot: vector_accum: want 1 args")
+		}
+		r := pgaot.VectorAccum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_add":
+		if len(a) != 1 {
+			panic("aot: vector_add: want 1 args")
+		}
+		r := pgaot.VectorAdd(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_avg":
+		if len(a) != 1 {
+			panic("aot: vector_avg: want 1 args")
+		}
+		r := pgaot.VectorAvg(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_cmp":
+		if len(a) != 1 {
+			panic("aot: vector_cmp: want 1 args")
+		}
+		r := pgaot.VectorCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_combine":
+		if len(a) != 1 {
+			panic("aot: vector_combine: want 1 args")
+		}
+		r := pgaot.VectorCombine(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_concat":
+		if len(a) != 1 {
+			panic("aot: vector_concat: want 1 args")
+		}
+		r := pgaot.VectorConcat(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_dims":
+		if len(a) != 1 {
+			panic("aot: vector_dims: want 1 args")
+		}
+		r := pgaot.VectorDims(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_eq":
+		if len(a) != 1 {
+			panic("aot: vector_eq: want 1 args")
+		}
+		r := pgaot.VectorEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_ge":
+		if len(a) != 1 {
+			panic("aot: vector_ge: want 1 args")
+		}
+		r := pgaot.VectorGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_gt":
+		if len(a) != 1 {
+			panic("aot: vector_gt: want 1 args")
+		}
+		r := pgaot.VectorGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_in":
+		if len(a) != 1 {
+			panic("aot: vector_in: want 1 args")
+		}
+		r := pgaot.VectorIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_l2_squared_distance":
+		if len(a) != 1 {
+			panic("aot: vector_l2_squared_distance: want 1 args")
+		}
+		r := pgaot.VectorL2SquaredDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_le":
+		if len(a) != 1 {
+			panic("aot: vector_le: want 1 args")
+		}
+		r := pgaot.VectorLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_lt":
+		if len(a) != 1 {
+			panic("aot: vector_lt: want 1 args")
+		}
+		r := pgaot.VectorLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_mul":
+		if len(a) != 1 {
+			panic("aot: vector_mul: want 1 args")
+		}
+		r := pgaot.VectorMul(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_ne":
+		if len(a) != 1 {
+			panic("aot: vector_ne: want 1 args")
+		}
+		r := pgaot.VectorNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_negative_inner_product":
+		if len(a) != 1 {
+			panic("aot: vector_negative_inner_product: want 1 args")
+		}
+		r := pgaot.VectorNegativeInnerProduct(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_norm":
+		if len(a) != 1 {
+			panic("aot: vector_norm: want 1 args")
+		}
+		r := pgaot.VectorNorm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_out":
+		if len(a) != 1 {
+			panic("aot: vector_out: want 1 args")
+		}
+		r := pgaot.VectorOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_recv":
+		if len(a) != 1 {
+			panic("aot: vector_recv: want 1 args")
+		}
+		r := pgaot.VectorRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_send":
+		if len(a) != 1 {
+			panic("aot: vector_send: want 1 args")
+		}
+		r := pgaot.VectorSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_spherical_distance":
+		if len(a) != 1 {
+			panic("aot: vector_spherical_distance: want 1 args")
+		}
+		r := pgaot.VectorSphericalDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_sub":
+		if len(a) != 1 {
+			panic("aot: vector_sub: want 1 args")
+		}
+		r := pgaot.VectorSub(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_to_float4":
+		if len(a) != 1 {
+			panic("aot: vector_to_float4: want 1 args")
+		}
+		r := pgaot.VectorToFloat4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_to_halfvec":
+		if len(a) != 1 {
+			panic("aot: vector_to_halfvec: want 1 args")
+		}
+		r := pgaot.VectorToHalfvec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_to_sparsevec":
+		if len(a) != 1 {
+			panic("aot: vector_to_sparsevec: want 1 args")
+		}
+		r := pgaot.VectorToSparsevec(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "vector_typmod_in":
+		if len(a) != 1 {
+			panic("aot: vector_typmod_in: want 1 args")
+		}
+		r := pgaot.VectorTypmodIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

@@ -15324,6 +15324,382 @@ L47:
 	;
 	goto L4
 }
+func F_subvector(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v25 int32
+	_ = v25
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v77 int32
+	_ = v77
+	var v80 float32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v86 float32
+	_ = v86
+	var v89 int32
+	_ = v89
+	var v92 float32
+	_ = v92
+	var v95 int32
+	_ = v95
+	var v98 float32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
+	var v105 int32
+	_ = v105
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
+	var v128 int32
+	_ = v128
+	var v131 float32
+	_ = v131
+	var v133 int32
+	_ = v133
+	var v136 int32
+	_ = v136
+	var v152 int32
+	_ = v152
+	var v155 int32
+	_ = v155
+	var v159 int32
+	_ = v159
+	var v164 int32
+	_ = v164
+	var v168 int32
+	_ = v168
+	var v171 int32
+	_ = v171
+	var v175 int32
+	_ = v175
+	var v180 int32
+	_ = v180
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = F_pg_detoast_datum(m, v11)
+	mBase = m.M
+	v15 = m.ExcPending
+	if v15 != 0 {
+		return int32(0)
+	} else {
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		if int32(0) < v16 {
+			v19 = int32(*(*int16)(unsafe.Add(mBase, uint32(v12)+4)))
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			if int32(0) < v21 {
+				if v19 < v21 {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v168 = m.ExcPending
+					if v168 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(130))
+						mBase = m.M
+						v171 = m.ExcPending
+						if v171 != 0 {
+							return int32(0)
+						} else {
+							F_errmsg(m, int32(_a_F_subvector_0), int32(0))
+							mBase = m.M
+							v175 = m.ExcPending
+							if v175 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_subvector_1), int32(1015), int32(_a_F_subvector_2))
+								mBase = m.M
+								v180 = m.ExcPending
+								if v180 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v25 = v21
+					if v19-v16 < v21 {
+						v31 = v19 + int32(1)
+					} else {
+						v31 = v21 + v16
+					}
+					v32 = v31 - v25
+					F_CheckDim_3(m, v32)
+					mBase = m.M
+					v34 = m.ExcPending
+					if v34 != 0 {
+						return int32(0)
+					} else {
+						v37 = F_mul_size(m, int32(4), v32)
+						mBase = m.M
+						v38 = m.ExcPending
+						if v38 != 0 {
+							return int32(0)
+						} else {
+							v39 = F_add_size(m, int32(8), v37)
+							mBase = m.M
+							v40 = m.ExcPending
+							if v40 != 0 {
+								return int32(0)
+							} else {
+								v41 = F_palloc0(m, v39)
+								mBase = m.M
+								v42 = m.ExcPending
+								if v42 != 0 {
+									return int32(0)
+								} else {
+									*(*uint16)(unsafe.Add(mBase, uint32(v41)+4)) = uint16(v32)
+									*(*int32)(unsafe.Add(mBase, uint32(v41))) = v39 << (uint(int32(2)) % 32)
+									if v32 <= int32(0) {
+									} else {
+										v50 = v32 & int32(3)
+										v52 = v41 + int32(8)
+										v57 = v12 + int32(4) + v25<<(uint(int32(2))%32)
+										v58 = int32(0)
+										if base.Ui32(v25-v31) <= base.Ui32(int32(-4)) {
+											v66 = v58
+											v70 = int32(0)
+											for {
+												v77 = v66 << (uint(int32(2)) % 32)
+												v80 = *(*float32)(unsafe.Add(mBase, uint32(v77+v57)))
+												*(*float32)(unsafe.Add(mBase, uint32(v52+v77))) = v80
+												v82 = int32(4)
+												v83 = v77 | v82
+												v86 = *(*float32)(unsafe.Add(mBase, uint32(v57+v83)))
+												*(*float32)(unsafe.Add(mBase, uint32(v52+v83))) = v86
+												v89 = v77 | int32(8)
+												v92 = *(*float32)(unsafe.Add(mBase, uint32(v57+v89)))
+												*(*float32)(unsafe.Add(mBase, uint32(v52+v89))) = v92
+												v95 = v77 | int32(12)
+												v98 = *(*float32)(unsafe.Add(mBase, uint32(v95+v57)))
+												*(*float32)(unsafe.Add(mBase, uint32(v52+v95))) = v98
+												v101 = v66 + v82
+												v103 = v70 + v82
+												if v103 != v32&int32(2147483644) {
+													v66 = v101
+													v70 = v103
+													continue
+												} else {
+													break
+												}
+												break
+											}
+											v105 = v101
+										} else {
+											v105 = v58
+										}
+										if v50 == int32(0) {
+										} else {
+											v117 = v105
+											v122 = v58
+											for {
+												v128 = v117 << (uint(int32(2)) % 32)
+												v131 = *(*float32)(unsafe.Add(mBase, uint32(v128+v57)))
+												*(*float32)(unsafe.Add(mBase, uint32(v52+v128))) = v131
+												v133 = int32(1)
+												v136 = v122 + v133
+												if v136 != v50 {
+													v117 = v117 + v133
+													v122 = v136
+													continue
+												} else {
+													break
+												}
+												break
+											}
+										}
+									}
+									return v41
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v25 = int32(1)
+				if v19-v16 < v21 {
+					v31 = v19 + int32(1)
+				} else {
+					v31 = v21 + v16
+				}
+				v32 = v31 - v25
+				F_CheckDim_3(m, v32)
+				mBase = m.M
+				v34 = m.ExcPending
+				if v34 != 0 {
+					return int32(0)
+				} else {
+					v37 = F_mul_size(m, int32(4), v32)
+					mBase = m.M
+					v38 = m.ExcPending
+					if v38 != 0 {
+						return int32(0)
+					} else {
+						v39 = F_add_size(m, int32(8), v37)
+						mBase = m.M
+						v40 = m.ExcPending
+						if v40 != 0 {
+							return int32(0)
+						} else {
+							v41 = F_palloc0(m, v39)
+							mBase = m.M
+							v42 = m.ExcPending
+							if v42 != 0 {
+								return int32(0)
+							} else {
+								*(*uint16)(unsafe.Add(mBase, uint32(v41)+4)) = uint16(v32)
+								*(*int32)(unsafe.Add(mBase, uint32(v41))) = v39 << (uint(int32(2)) % 32)
+								if v32 <= int32(0) {
+								} else {
+									v50 = v32 & int32(3)
+									v52 = v41 + int32(8)
+									v57 = v12 + int32(4) + v25<<(uint(int32(2))%32)
+									v58 = int32(0)
+									if base.Ui32(v25-v31) <= base.Ui32(int32(-4)) {
+										v66 = v58
+										v70 = int32(0)
+										for {
+											v77 = v66 << (uint(int32(2)) % 32)
+											v80 = *(*float32)(unsafe.Add(mBase, uint32(v77+v57)))
+											*(*float32)(unsafe.Add(mBase, uint32(v52+v77))) = v80
+											v82 = int32(4)
+											v83 = v77 | v82
+											v86 = *(*float32)(unsafe.Add(mBase, uint32(v57+v83)))
+											*(*float32)(unsafe.Add(mBase, uint32(v52+v83))) = v86
+											v89 = v77 | int32(8)
+											v92 = *(*float32)(unsafe.Add(mBase, uint32(v57+v89)))
+											*(*float32)(unsafe.Add(mBase, uint32(v52+v89))) = v92
+											v95 = v77 | int32(12)
+											v98 = *(*float32)(unsafe.Add(mBase, uint32(v95+v57)))
+											*(*float32)(unsafe.Add(mBase, uint32(v52+v95))) = v98
+											v101 = v66 + v82
+											v103 = v70 + v82
+											if v103 != v32&int32(2147483644) {
+												v66 = v101
+												v70 = v103
+												continue
+											} else {
+												break
+											}
+											break
+										}
+										v105 = v101
+									} else {
+										v105 = v58
+									}
+									if v50 == int32(0) {
+									} else {
+										v117 = v105
+										v122 = v58
+										for {
+											v128 = v117 << (uint(int32(2)) % 32)
+											v131 = *(*float32)(unsafe.Add(mBase, uint32(v128+v57)))
+											*(*float32)(unsafe.Add(mBase, uint32(v52+v128))) = v131
+											v133 = int32(1)
+											v136 = v122 + v133
+											if v136 != v50 {
+												v117 = v117 + v133
+												v122 = v136
+												continue
+											} else {
+												break
+											}
+											break
+										}
+									}
+								}
+								return v41
+							}
+						}
+					}
+				}
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v152 = m.ExcPending
+			if v152 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(130))
+				mBase = m.M
+				v155 = m.ExcPending
+				if v155 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_subvector_0), int32(0))
+					mBase = m.M
+					v159 = m.ExcPending
+					if v159 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_subvector_1), int32(998), int32(_a_F_subvector_2))
+						mBase = m.M
+						v164 = m.ExcPending
+						if v164 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_svals(m *base.Module, l0 int32) int32 {
 	var v2 int32
 	_ = v2

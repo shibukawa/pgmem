@@ -3230,6 +3230,428 @@ func F_uuid_generate_v3(m *base.Module, l0 int32) int32
 func F_uuid_generate_v4(m *base.Module, l0 int32) int32
 //go:linkname F_uuid_generate_v5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_v5
 func F_uuid_generate_v5(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
+func F_pg_finfo_hamming_distance(m *base.Module) int32
+//go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance
+func F_hamming_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_jaccard_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_jaccard_distance
+func F_pg_finfo_jaccard_distance(m *base.Module) int32
+//go:linkname F_jaccard_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_jaccard_distance
+func F_jaccard_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_in
+func F_pg_finfo_halfvec_in(m *base.Module) int32
+//go:linkname F_halfvec_in github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_halfvec_in
+func F_halfvec_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_out github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_halfvec_out
+func F_pg_finfo_halfvec_out(m *base.Module) int32
+//go:linkname F_halfvec_out github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_out
+func F_halfvec_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_typmod_in
+func F_pg_finfo_halfvec_typmod_in(m *base.Module) int32
+//go:linkname F_halfvec_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_halfvec_typmod_in
+func F_halfvec_typmod_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_halfvec_recv
+func F_pg_finfo_halfvec_recv(m *base.Module) int32
+//go:linkname F_halfvec_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_recv
+func F_halfvec_recv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_send github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_send
+func F_pg_finfo_halfvec_send(m *base.Module) int32
+//go:linkname F_halfvec_send github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_send
+func F_halfvec_send(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec
+func F_pg_finfo_halfvec(m *base.Module) int32
+//go:linkname F_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec
+func F_halfvec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_array_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_array_to_halfvec
+func F_pg_finfo_array_to_halfvec(m *base.Module) int32
+//go:linkname F_array_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_array_to_halfvec
+func F_array_to_halfvec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_to_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_to_float4
+func F_pg_finfo_halfvec_to_float4(m *base.Module) int32
+//go:linkname F_halfvec_to_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_halfvec_to_float4
+func F_halfvec_to_float4(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_vector_to_halfvec
+func F_pg_finfo_vector_to_halfvec(m *base.Module) int32
+//go:linkname F_vector_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_vector_to_halfvec
+func F_vector_to_halfvec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_l2_distance
+func F_pg_finfo_halfvec_l2_distance(m *base.Module) int32
+//go:linkname F_halfvec_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_l2_distance
+func F_halfvec_l2_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_l2_squared_distance
+func F_pg_finfo_halfvec_l2_squared_distance(m *base.Module) int32
+//go:linkname F_halfvec_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_l2_squared_distance
+func F_halfvec_l2_squared_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_halfvec_inner_product
+func F_pg_finfo_halfvec_inner_product(m *base.Module) int32
+//go:linkname F_halfvec_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_inner_product
+func F_halfvec_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_negative_inner_product
+func F_pg_finfo_halfvec_negative_inner_product(m *base.Module) int32
+//go:linkname F_halfvec_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_negative_inner_product
+func F_halfvec_negative_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_cosine_distance
+func F_pg_finfo_halfvec_cosine_distance(m *base.Module) int32
+//go:linkname F_halfvec_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_halfvec_cosine_distance
+func F_halfvec_cosine_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_spherical_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_spherical_distance
+func F_pg_finfo_halfvec_spherical_distance(m *base.Module) int32
+//go:linkname F_halfvec_spherical_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec_spherical_distance
+func F_halfvec_spherical_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_l1_distance
+func F_pg_finfo_halfvec_l1_distance(m *base.Module) int32
+//go:linkname F_halfvec_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_halfvec_l1_distance
+func F_halfvec_l1_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_vector_dims github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec_vector_dims
+func F_pg_finfo_halfvec_vector_dims(m *base.Module) int32
+//go:linkname F_halfvec_vector_dims github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_halfvec_vector_dims
+func F_halfvec_vector_dims(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_l2_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_l2_norm
+func F_pg_finfo_halfvec_l2_norm(m *base.Module) int32
+//go:linkname F_halfvec_l2_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_halfvec_l2_norm
+func F_halfvec_l2_norm(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_l2_normalize
+func F_pg_finfo_halfvec_l2_normalize(m *base.Module) int32
+//go:linkname F_halfvec_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_l2_normalize
+func F_halfvec_l2_normalize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_add github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_add
+func F_pg_finfo_halfvec_add(m *base.Module) int32
+//go:linkname F_halfvec_add github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec_add
+func F_halfvec_add(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_sub github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_sub
+func F_pg_finfo_halfvec_sub(m *base.Module) int32
+//go:linkname F_halfvec_sub github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_halfvec_sub
+func F_halfvec_sub(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_mul github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_mul
+func F_pg_finfo_halfvec_mul(m *base.Module) int32
+//go:linkname F_halfvec_mul github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_halfvec_mul
+func F_halfvec_mul(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_concat
+func F_pg_finfo_halfvec_concat(m *base.Module) int32
+//go:linkname F_halfvec_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_concat
+func F_halfvec_concat(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_binary_quantize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_binary_quantize
+func F_pg_finfo_halfvec_binary_quantize(m *base.Module) int32
+//go:linkname F_halfvec_binary_quantize github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec_binary_quantize
+func F_halfvec_binary_quantize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_subvector github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_subvector
+func F_pg_finfo_halfvec_subvector(m *base.Module) int32
+//go:linkname F_halfvec_subvector github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_halfvec_subvector
+func F_halfvec_subvector(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_lt
+func F_pg_finfo_halfvec_lt(m *base.Module) int32
+//go:linkname F_halfvec_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_lt
+func F_halfvec_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_le github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_halfvec_le
+func F_pg_finfo_halfvec_le(m *base.Module) int32
+//go:linkname F_halfvec_le github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec_le
+func F_halfvec_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_halfvec_eq
+func F_pg_finfo_halfvec_eq(m *base.Module) int32
+//go:linkname F_halfvec_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_eq
+func F_halfvec_eq(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec_ne
+func F_pg_finfo_halfvec_ne(m *base.Module) int32
+//go:linkname F_halfvec_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_halfvec_ne
+func F_halfvec_ne(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_ge
+func F_pg_finfo_halfvec_ge(m *base.Module) int32
+//go:linkname F_halfvec_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_ge
+func F_halfvec_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec_gt
+func F_pg_finfo_halfvec_gt(m *base.Module) int32
+//go:linkname F_halfvec_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_halfvec_gt
+func F_halfvec_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_halfvec_cmp
+func F_pg_finfo_halfvec_cmp(m *base.Module) int32
+//go:linkname F_halfvec_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_cmp
+func F_halfvec_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_accum github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec_accum
+func F_pg_finfo_halfvec_accum(m *base.Module) int32
+//go:linkname F_halfvec_accum github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_halfvec_accum
+func F_halfvec_accum(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_avg github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_avg
+func F_pg_finfo_halfvec_avg(m *base.Module) int32
+//go:linkname F_halfvec_avg github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_halfvec_avg
+func F_halfvec_avg(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec_to_halfvec
+func F_pg_finfo_sparsevec_to_halfvec(m *base.Module) int32
+//go:linkname F_sparsevec_to_halfvec github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_sparsevec_to_halfvec
+func F_sparsevec_to_halfvec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hnswhandler github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hnswhandler
+func F_pg_finfo_hnswhandler(m *base.Module) int32
+//go:linkname F_hnswhandler github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hnswhandler
+func F_hnswhandler(m *base.Module, l0 int32) int32
+//go:linkname F_HnswParallelBuildMain github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswParallelBuildMain
+func F_HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_pg_finfo_hnsw_halfvec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hnsw_halfvec_support
+func F_pg_finfo_hnsw_halfvec_support(m *base.Module) int32
+//go:linkname F_hnsw_halfvec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hnsw_halfvec_support
+func F_hnsw_halfvec_support(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hnsw_bit_support github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hnsw_bit_support
+func F_pg_finfo_hnsw_bit_support(m *base.Module) int32
+//go:linkname F_hnsw_bit_support github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hnsw_bit_support
+func F_hnsw_bit_support(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hnsw_sparsevec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hnsw_sparsevec_support
+func F_pg_finfo_hnsw_sparsevec_support(m *base.Module) int32
+//go:linkname F_hnsw_sparsevec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hnsw_sparsevec_support
+func F_hnsw_sparsevec_support(m *base.Module, l0 int32) int32
+//go:linkname F_IvfflatParallelBuildMain github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_IvfflatParallelBuildMain
+func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_pg_finfo_ivfflathandler github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ivfflathandler
+func F_pg_finfo_ivfflathandler(m *base.Module) int32
+//go:linkname F_ivfflathandler github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ivfflathandler
+func F_ivfflathandler(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ivfflat_halfvec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_ivfflat_halfvec_support
+func F_pg_finfo_ivfflat_halfvec_support(m *base.Module) int32
+//go:linkname F_ivfflat_halfvec_support github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ivfflat_halfvec_support
+func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ivfflat_bit_support github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ivfflat_bit_support
+func F_pg_finfo_ivfflat_bit_support(m *base.Module) int32
+//go:linkname F_ivfflat_bit_support github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ivfflat_bit_support
+func F_ivfflat_bit_support(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_in github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec_in
+func F_pg_finfo_sparsevec_in(m *base.Module) int32
+//go:linkname F_sparsevec_in github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sparsevec_in
+func F_sparsevec_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_out github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_sparsevec_out
+func F_pg_finfo_sparsevec_out(m *base.Module) int32
+//go:linkname F_sparsevec_out github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_sparsevec_out
+func F_sparsevec_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_sparsevec_typmod_in
+func F_pg_finfo_sparsevec_typmod_in(m *base.Module) int32
+//go:linkname F_sparsevec_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_sparsevec_typmod_in
+func F_sparsevec_typmod_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_sparsevec_recv
+func F_pg_finfo_sparsevec_recv(m *base.Module) int32
+//go:linkname F_sparsevec_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_recv
+func F_sparsevec_recv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_send github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_sparsevec_send
+func F_pg_finfo_sparsevec_send(m *base.Module) int32
+//go:linkname F_sparsevec_send github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_send
+func F_sparsevec_send(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec
+func F_pg_finfo_sparsevec(m *base.Module) int32
+//go:linkname F_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_sparsevec
+func F_sparsevec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_vector_to_sparsevec
+func F_pg_finfo_vector_to_sparsevec(m *base.Module) int32
+//go:linkname F_vector_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_to_sparsevec
+func F_vector_to_sparsevec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_halfvec_to_sparsevec
+func F_pg_finfo_halfvec_to_sparsevec(m *base.Module) int32
+//go:linkname F_halfvec_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_halfvec_to_sparsevec
+func F_halfvec_to_sparsevec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_array_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_array_to_sparsevec
+func F_pg_finfo_array_to_sparsevec(m *base.Module) int32
+//go:linkname F_array_to_sparsevec github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_array_to_sparsevec
+func F_array_to_sparsevec(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_sparsevec_l2_distance
+func F_pg_finfo_sparsevec_l2_distance(m *base.Module) int32
+//go:linkname F_sparsevec_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_l2_distance
+func F_sparsevec_l2_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_sparsevec_l2_squared_distance
+func F_pg_finfo_sparsevec_l2_squared_distance(m *base.Module) int32
+//go:linkname F_sparsevec_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_sparsevec_l2_squared_distance
+func F_sparsevec_l2_squared_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_sparsevec_inner_product
+func F_pg_finfo_sparsevec_inner_product(m *base.Module) int32
+//go:linkname F_sparsevec_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_sparsevec_inner_product
+func F_sparsevec_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_sparsevec_negative_inner_product
+func F_pg_finfo_sparsevec_negative_inner_product(m *base.Module) int32
+//go:linkname F_sparsevec_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_negative_inner_product
+func F_sparsevec_negative_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_sparsevec_cosine_distance
+func F_pg_finfo_sparsevec_cosine_distance(m *base.Module) int32
+//go:linkname F_sparsevec_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sparsevec_cosine_distance
+func F_sparsevec_cosine_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec_l1_distance
+func F_pg_finfo_sparsevec_l1_distance(m *base.Module) int32
+//go:linkname F_sparsevec_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sparsevec_l1_distance
+func F_sparsevec_l1_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_l2_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_sparsevec_l2_norm
+func F_pg_finfo_sparsevec_l2_norm(m *base.Module) int32
+//go:linkname F_sparsevec_l2_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_sparsevec_l2_norm
+func F_sparsevec_l2_norm(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_sparsevec_l2_normalize
+func F_pg_finfo_sparsevec_l2_normalize(m *base.Module) int32
+//go:linkname F_sparsevec_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_sparsevec_l2_normalize
+func F_sparsevec_l2_normalize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_sparsevec_lt
+func F_pg_finfo_sparsevec_lt(m *base.Module) int32
+//go:linkname F_sparsevec_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_lt
+func F_sparsevec_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_le github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_sparsevec_le
+func F_pg_finfo_sparsevec_le(m *base.Module) int32
+//go:linkname F_sparsevec_le github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_sparsevec_le
+func F_sparsevec_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_sparsevec_eq
+func F_pg_finfo_sparsevec_eq(m *base.Module) int32
+//go:linkname F_sparsevec_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_sparsevec_eq
+func F_sparsevec_eq(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec_ne
+func F_pg_finfo_sparsevec_ne(m *base.Module) int32
+//go:linkname F_sparsevec_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_sparsevec_ne
+func F_sparsevec_ne(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_sparsevec_ge
+func F_pg_finfo_sparsevec_ge(m *base.Module) int32
+//go:linkname F_sparsevec_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_sparsevec_ge
+func F_sparsevec_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_sparsevec_gt
+func F_pg_finfo_sparsevec_gt(m *base.Module) int32
+//go:linkname F_sparsevec_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sparsevec_gt
+func F_sparsevec_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_sparsevec_cmp
+func F_pg_finfo_sparsevec_cmp(m *base.Module) int32
+//go:linkname F_sparsevec_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_sparsevec_cmp
+func F_sparsevec_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_vector
+func F_Pg_magic_func_vector(m *base.Module) int32
+//go:linkname F__PG_init_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__PG_init_vector
+func F__PG_init_vector(m *base.Module)
+//go:linkname F_pg_finfo_vector_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_vector_in
+func F_pg_finfo_vector_in(m *base.Module) int32
+//go:linkname F_vector_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_vector_in
+func F_vector_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_out github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_out
+func F_pg_finfo_vector_out(m *base.Module) int32
+//go:linkname F_vector_out github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_out
+func F_vector_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_vector_typmod_in
+func F_pg_finfo_vector_typmod_in(m *base.Module) int32
+//go:linkname F_vector_typmod_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_vector_typmod_in
+func F_vector_typmod_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_recv
+func F_pg_finfo_vector_recv(m *base.Module) int32
+//go:linkname F_vector_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_recv
+func F_vector_recv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_send github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_vector_send
+func F_pg_finfo_vector_send(m *base.Module) int32
+//go:linkname F_vector_send github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_vector_send
+func F_vector_send(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_vector
+func F_pg_finfo_vector(m *base.Module) int32
+//go:linkname F_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_vector
+func F_vector(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_array_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_array_to_vector
+func F_pg_finfo_array_to_vector(m *base.Module) int32
+//go:linkname F_array_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_array_to_vector
+func F_array_to_vector(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_to_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_to_float4
+func F_pg_finfo_vector_to_float4(m *base.Module) int32
+//go:linkname F_vector_to_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_vector_to_float4
+func F_vector_to_float4(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_halfvec_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_halfvec_to_vector
+func F_pg_finfo_halfvec_to_vector(m *base.Module) int32
+//go:linkname F_halfvec_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_halfvec_to_vector
+func F_halfvec_to_vector(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_l2_distance
+func F_pg_finfo_l2_distance(m *base.Module) int32
+//go:linkname F_l2_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_l2_distance
+func F_l2_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_l2_squared_distance
+func F_pg_finfo_vector_l2_squared_distance(m *base.Module) int32
+//go:linkname F_vector_l2_squared_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_l2_squared_distance
+func F_vector_l2_squared_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_inner_product
+func F_pg_finfo_inner_product(m *base.Module) int32
+//go:linkname F_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_inner_product
+func F_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_vector_negative_inner_product
+func F_pg_finfo_vector_negative_inner_product(m *base.Module) int32
+//go:linkname F_vector_negative_inner_product github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_vector_negative_inner_product
+func F_vector_negative_inner_product(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cosine_distance
+func F_pg_finfo_cosine_distance(m *base.Module) int32
+//go:linkname F_cosine_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cosine_distance
+func F_cosine_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_spherical_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_vector_spherical_distance
+func F_pg_finfo_vector_spherical_distance(m *base.Module) int32
+//go:linkname F_vector_spherical_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_vector_spherical_distance
+func F_vector_spherical_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_l1_distance
+func F_pg_finfo_l1_distance(m *base.Module) int32
+//go:linkname F_l1_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_l1_distance
+func F_l1_distance(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_dims github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_vector_dims
+func F_pg_finfo_vector_dims(m *base.Module) int32
+//go:linkname F_pg_finfo_vector_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_norm
+func F_pg_finfo_vector_norm(m *base.Module) int32
+//go:linkname F_vector_norm github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_norm
+func F_vector_norm(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_l2_normalize
+func F_pg_finfo_l2_normalize(m *base.Module) int32
+//go:linkname F_l2_normalize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_l2_normalize
+func F_l2_normalize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_add github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_vector_add
+func F_pg_finfo_vector_add(m *base.Module) int32
+//go:linkname F_vector_add github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_vector_add
+func F_vector_add(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_sub github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_vector_sub
+func F_pg_finfo_vector_sub(m *base.Module) int32
+//go:linkname F_vector_sub github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_sub
+func F_vector_sub(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_mul github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_vector_mul
+func F_pg_finfo_vector_mul(m *base.Module) int32
+//go:linkname F_vector_mul github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_vector_mul
+func F_vector_mul(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_concat
+func F_pg_finfo_vector_concat(m *base.Module) int32
+//go:linkname F_vector_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_concat
+func F_vector_concat(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_binary_quantize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_binary_quantize
+func F_pg_finfo_binary_quantize(m *base.Module) int32
+//go:linkname F_binary_quantize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_binary_quantize
+func F_binary_quantize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_subvector github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_subvector
+func F_pg_finfo_subvector(m *base.Module) int32
+//go:linkname F_subvector github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_subvector
+func F_subvector(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_lt
+func F_pg_finfo_vector_lt(m *base.Module) int32
+//go:linkname F_vector_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_vector_lt
+func F_vector_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_le github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_vector_le
+func F_pg_finfo_vector_le(m *base.Module) int32
+//go:linkname F_vector_le github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_vector_le
+func F_vector_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_eq
+func F_pg_finfo_vector_eq(m *base.Module) int32
+//go:linkname F_vector_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_vector_eq
+func F_vector_eq(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_vector_ne
+func F_pg_finfo_vector_ne(m *base.Module) int32
+//go:linkname F_vector_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_vector_ne
+func F_vector_ne(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_vector_ge
+func F_pg_finfo_vector_ge(m *base.Module) int32
+//go:linkname F_vector_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_vector_ge
+func F_vector_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_vector_gt
+func F_pg_finfo_vector_gt(m *base.Module) int32
+//go:linkname F_vector_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_vector_gt
+func F_vector_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_vector_cmp
+func F_pg_finfo_vector_cmp(m *base.Module) int32
+//go:linkname F_vector_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_vector_cmp
+func F_vector_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_accum github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_vector_accum
+func F_pg_finfo_vector_accum(m *base.Module) int32
+//go:linkname F_vector_accum github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_vector_accum
+func F_vector_accum(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_combine github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_vector_combine
+func F_pg_finfo_vector_combine(m *base.Module) int32
+//go:linkname F_vector_combine github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_vector_combine
+func F_vector_combine(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_vector_avg github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_vector_avg
+func F_pg_finfo_vector_avg(m *base.Module) int32
+//go:linkname F_vector_avg github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_vector_avg
+func F_vector_avg(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_sparsevec_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_sparsevec_to_vector
+func F_pg_finfo_sparsevec_to_vector(m *base.Module) int32
+//go:linkname F_sparsevec_to_vector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_sparsevec_to_vector
+func F_sparsevec_to_vector(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem
@@ -3300,6 +3722,8 @@ func InitElemSeg_3_2(m *base.Module)
 func InitElemSeg_3_3(m *base.Module)
 //go:linkname InitElemSeg_3_4 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.InitElemSeg_3_4
 func InitElemSeg_3_4(m *base.Module)
+//go:linkname InitElemSeg_3_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.InitElemSeg_3_5
+func InitElemSeg_3_5(m *base.Module)
 //go:linkname InitElemSeg_4_0 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.InitElemSeg_4_0
 func InitElemSeg_4_0(m *base.Module)
 //go:linkname InitElemSeg_4_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.InitElemSeg_4_1
@@ -3310,6 +3734,8 @@ func InitElemSeg_4_2(m *base.Module)
 func InitElemSeg_4_3(m *base.Module)
 //go:linkname InitElemSeg_4_4 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.InitElemSeg_4_4
 func InitElemSeg_4_4(m *base.Module)
+//go:linkname InitElemSeg_4_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.InitElemSeg_4_5
+func InitElemSeg_4_5(m *base.Module)
 //go:linkname InitElemSeg_5_0 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.InitElemSeg_5_0
 func InitElemSeg_5_0(m *base.Module)
 //go:linkname InitElemSeg_5_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.InitElemSeg_5_1

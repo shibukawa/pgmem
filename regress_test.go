@@ -68,6 +68,17 @@ var contribRegress = map[string][]string{
 	"tsm_system_time": {"tsm_system_time"},
 	"pgstattuple":     {"pgstattuple"},
 	"uuid-ossp":       {"uuid_ossp"},
+	// pgvector's test/sql, in the alphabetical order its Makefile uses
+	"vector": {
+		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",
+		"hnsw_vector", "ivfflat_bit", "ivfflat_halfvec", "ivfflat_vector", "sparsevec", "vector_type",
+	},
+}
+
+// regressSetup is run once per suite before its files, what pg_regress's
+// --load-extension does for suites whose files do not CREATE EXTENSION.
+var regressSetup = map[string]string{
+	"vector": "CREATE EXTENSION vector",
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
@@ -92,6 +103,17 @@ func TestContribRegress(t *testing.T) {
 				}
 				defer s.Close()
 				dsn = s.DSN()
+			}
+			if setup := regressSetup[name]; setup != "" {
+				conn, err := pgx.Connect(context.Background(), dsn)
+				if err != nil {
+					t.Fatal(err)
+				}
+				_, err = conn.Exec(context.Background(), setup)
+				conn.Close(context.Background())
+				if err != nil {
+					t.Fatal(err)
+				}
 			}
 			runRegress(t, dsn, filepath.Join("testdata", "regress", name), contribRegress[name])
 		})
@@ -174,6 +196,7 @@ type psqlState struct {
 	ifStack   []bool // whether each open \\if branch is being executed
 	quit      bool
 	dir       string // test directory, for \\copy file paths
+	results   string // scratch directory for \\copy ... to 'results/...'
 	ctx       context.Context
 	conn      *pgx.Conn
 }
@@ -308,15 +331,54 @@ func (ps *psqlState) meta(cmd string) string {
 }
 
 var copyFromRe = regexp.MustCompile(`(?i)^(.+?)\s+from\s+'([^']+)'\s*(.*)$`)
+var copyToRe = regexp.MustCompile(`(?i)^(.+?)\s+to\s+'([^']+)'\s*(.*)$`)
 
-// clientCopy runs "\\copy <table> from '<file>' [options]" as COPY FROM
-// STDIN fed from the file, which is what psql does; it prints nothing.
+// copyPath resolves a \\copy file name: data files live in the test
+// directory, "results/..." (files a test writes and reads back) in a
+// scratch directory of this run.
+func (ps *psqlState) copyPath(name string) (string, error) {
+	if rest, ok := strings.CutPrefix(name, "results/"); ok {
+		if ps.results == "" {
+			d, err := os.MkdirTemp("", "regress-results-")
+			if err != nil {
+				return "", err
+			}
+			ps.results = d
+		}
+		return filepath.Join(ps.results, rest), nil
+	}
+	return filepath.Join(ps.dir, name), nil
+}
+
+// clientCopy runs "\\copy <table> from|to '<file>' [options]" as COPY
+// FROM STDIN / TO STDOUT against the file, which is what psql does; it
+// prints nothing.
 func (ps *psqlState) clientCopy(args string) string {
+	if m := copyToRe.FindStringSubmatch(strings.TrimSpace(args)); m != nil {
+		path, err := ps.copyPath(m[2])
+		if err != nil {
+			return "CLIENT ERROR: " + err.Error() + "\n"
+		}
+		f, err := os.Create(path)
+		if err != nil {
+			return "CLIENT ERROR: " + err.Error() + "\n"
+		}
+		defer f.Close()
+		sql := "COPY " + m[1] + " TO STDOUT " + m[3]
+		if _, err := ps.conn.PgConn().CopyTo(ps.ctx, f, sql); err != nil {
+			return formatError(err, ps.verbosity, sql)
+		}
+		return ""
+	}
 	m := copyFromRe.FindStringSubmatch(strings.TrimSpace(args))
 	if m == nil {
 		panic("regress: unsupported \\copy form: " + args)
 	}
-	f, err := os.Open(filepath.Join(ps.dir, m[2]))
+	path, err := ps.copyPath(m[2])
+	if err != nil {
+		return "CLIENT ERROR: " + err.Error() + "\n"
+	}
+	f, err := os.Open(path)
 	if err != nil {
 		return "CLIENT ERROR: " + err.Error() + "\n"
 	}

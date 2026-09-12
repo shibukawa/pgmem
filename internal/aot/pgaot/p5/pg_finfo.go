@@ -233,6 +233,21 @@ func F_pg_finfo_gtrgm_consistent(m *base.Module) int32 {
 func F_pg_finfo_gtrgm_same(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_same_0)
 }
+func F_pg_finfo_halfvec_eq(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_eq_0)
+}
+func F_pg_finfo_halfvec_inner_product(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_inner_product_0)
+}
+func F_pg_finfo_halfvec_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_out_0)
+}
+func F_pg_finfo_halfvec_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_halfvec_recv_0)
+}
+func F_pg_finfo_hnsw_halfvec_support(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hnsw_halfvec_support_0)
+}
 func F_pg_finfo_hs_concat(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hs_concat_0)
 }
@@ -272,8 +287,17 @@ func F_pg_finfo_int2_dist(m *base.Module) int32 {
 func F_pg_finfo_interval_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_interval_dist_0)
 }
+func F_pg_finfo_ivfflat_bit_support(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ivfflat_bit_support_0)
+}
+func F_pg_finfo_ivfflathandler(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ivfflathandler_0)
+}
 func F_pg_finfo_johab_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_johab_to_utf8_0)
+}
+func F_pg_finfo_l2_normalize(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_l2_normalize_0)
 }
 func F_pg_finfo_ltree_addltree(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ltree_addltree_0)
@@ -326,6 +350,18 @@ func F_pg_finfo_set_limit(m *base.Module) int32 {
 func F_pg_finfo_similarity_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_similarity_dist_0)
 }
+func F_pg_finfo_sparsevec_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_gt_0)
+}
+func F_pg_finfo_sparsevec_l2_norm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_l2_norm_0)
+}
+func F_pg_finfo_sparsevec_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_le_0)
+}
+func F_pg_finfo_sparsevec_typmod_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_sparsevec_typmod_in_0)
+}
 func F_pg_finfo_strict_word_similarity(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_strict_word_similarity_0)
 }
@@ -349,6 +385,15 @@ func F_pg_finfo_uuid_generate_v4(m *base.Module) int32 {
 }
 func F_pg_finfo_uuid_ns_oid(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_uuid_ns_oid_0)
+}
+func F_pg_finfo_vector_mul(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_mul_0)
+}
+func F_pg_finfo_vector_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_send_0)
+}
+func F_pg_finfo_vector_to_sparsevec(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_vector_to_sparsevec_0)
 }
 func F_pg_finfo_word_similarity_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_word_similarity_op_0)

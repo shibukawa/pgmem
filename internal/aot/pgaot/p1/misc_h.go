@@ -7773,6 +7773,147 @@ func F_hmac_update(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		return
 	}
 }
+func F_hnswinsert(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
+	if v13 == int32(0) {
+		v17 = *(*int32)(unsafe.Add(mBase, _c_F_hnswinsert[0]))
+		v22 = F_AllocSetContextCreateInternal(m, v17, int32(_a_F_hnswinsert_0), int32(0), int32(_a_F_hnswinsert_1), int32(_a_F_hnswinsert_2))
+		mBase = m.M
+		v25 = m.ExcPending
+		if v25 != 0 {
+			return int32(0)
+		} else {
+			v26 = int32(_a_F_hnswinsert_3)
+			v27 = *(*int32)(unsafe.Add(mBase, _c_F_hnswinsert[0]))
+			*(*int32)(unsafe.Add(mBase, _c_F_hnswinsert[0])) = v22
+			v30 = F_HnswGetTypeInfo(m, l0)
+			mBase = m.M
+			v31 = m.ExcPending
+			if v31 != 0 {
+				return int32(0)
+			} else {
+				F_HnswInitSupport(m, v11, l0)
+				mBase = m.M
+				v33 = m.ExcPending
+				if v33 != 0 {
+					return int32(0)
+				} else {
+					v36 = F_HnswFormIndexValue(m, v11+int32(12), l1, l2, v30, v11)
+					mBase = m.M
+					v37 = m.ExcPending
+					if v37 != 0 {
+						return int32(0)
+					} else {
+						if v36 != 0 {
+							v38 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
+							v40 = F_HnswInsertTupleOnDisk(m, l0, v11, v38, l3, int32(0))
+							mBase = m.M
+							v41 = m.ExcPending
+							if v41 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, _c_F_hnswinsert[0])) = v27
+								F_MemoryContextDelete(m, v22)
+								mBase = m.M
+								v45 = m.ExcPending
+								if v45 != 0 {
+									return int32(0)
+								} else {
+									m.G0 = v11 + int32(16)
+									return int32(0)
+								}
+							}
+						} else {
+							*(*int32)(unsafe.Add(mBase, _c_F_hnswinsert[0])) = v27
+							F_MemoryContextDelete(m, v22)
+							mBase = m.M
+							v45 = m.ExcPending
+							if v45 != 0 {
+								return int32(0)
+							} else {
+								m.G0 = v11 + int32(16)
+								return int32(0)
+							}
+						}
+					}
+				}
+			}
+		}
+	} else {
+		m.G0 = v11 + int32(16)
+		return int32(0)
+	}
+}
+func F_hnswvacuumcleanup(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	if l1 == int32(0) {
+		return l1
+	} else {
+		v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+		if v5&int32(1) != 0 {
+			return l1
+		} else {
+			v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			v10 = F_RelationGetNumberOfBlocksInFork(m, v8, int32(0))
+			mBase = m.M
+			v13 = m.ExcPending
+			if v13 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v10
+				return l1
+			}
+		}
+	}
+}
 func F_hungarian_ISO_8859_2_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

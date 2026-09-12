@@ -15708,6 +15708,264 @@ func F_cos(m *base.Module, l0 float64) float64 {
 	m.G0 = v7 + int32(16)
 	return v219
 }
+func F_cosine_distance(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v10 float32
+	_ = v10
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 float64
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v58 float32
+	_ = v58
+	var v59 float32
+	_ = v59
+	var v60 float32
+	_ = v60
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v71 float32
+	_ = v71
+	var v73 float32
+	_ = v73
+	var v76 float32
+	_ = v76
+	var v78 float32
+	_ = v78
+	var v81 float32
+	_ = v81
+	var v85 float32
+	_ = v85
+	var v89 float32
+	_ = v89
+	var v91 int32
+	_ = v91
+	var v93 int32
+	_ = v93
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v114 int32
+	_ = v114
+	var v123 float32
+	_ = v123
+	var v124 float32
+	_ = v124
+	var v125 float32
+	_ = v125
+	var v134 int32
+	_ = v134
+	var v136 float32
+	_ = v136
+	var v138 float32
+	_ = v138
+	var v146 float32
+	_ = v146
+	var v147 float32
+	_ = v147
+	var v150 float32
+	_ = v150
+	var v171 float64
+	_ = v171
+	var v172 float64
+	_ = v172
+	var v174 float64
+	_ = v174
+	var v182 float64
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v185 int32
+	_ = v185
+	v10 = float32(0)
+	v18 = m.G0
+	v20 = v18 - int32(16)
+	m.G0 = v20
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v23 = F_pg_detoast_datum(m, v22)
+	mBase = m.M
+	v26 = m.ExcPending
+	if v26 != 0 {
+		return int32(0)
+	} else {
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v28 = F_pg_detoast_datum(m, v27)
+		mBase = m.M
+		v29 = m.ExcPending
+		if v29 != 0 {
+			return int32(0)
+		} else {
+			v30 = float64(1)
+			v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+4)))
+			v33 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v28)+4)))
+			if v32 == v33 {
+				v35 = base.I32_extend16_s(v32)
+				if v35 <= int32(0) {
+					v171 = float64(0)
+					v172 = float64(0)
+				} else {
+					v39 = int32(8)
+					v40 = v28 + v39
+					v42 = v23 + v39
+					if v35 == int32(1) {
+						v114 = int32(0)
+						v123 = v10
+						v124 = v10
+						v125 = v10
+					} else {
+						v49 = int32(0)
+						v55 = int32(0)
+						v58 = v10
+						v59 = v10
+						v60 = v10
+						for {
+							v66 = int32(2)
+							v67 = v49 << (uint(v66) % 32)
+							v69 = v67 | int32(4)
+							v71 = *(*float32)(unsafe.Add(mBase, uint32(v42+v69)))
+							v73 = *(*float32)(unsafe.Add(mBase, uint32(v40+v69)))
+							v76 = *(*float32)(unsafe.Add(mBase, uint32(v67+v42)))
+							v78 = *(*float32)(unsafe.Add(mBase, uint32(v67+v40)))
+							v81 = base.F32_add(base.F32_mul(v71, v73), base.F32_add(base.F32_mul(v76, v78), v59))
+							v85 = base.F32_add(base.F32_mul(v73, v73), base.F32_add(base.F32_mul(v78, v78), v60))
+							v89 = base.F32_add(base.F32_mul(v71, v71), base.F32_add(base.F32_mul(v76, v76), v58))
+							v91 = v49 + v66
+							v93 = v55 + v66
+							if v93 != v35&int32(_a_F_cosine_distance_0) {
+								v49 = v91
+								v55 = v93
+								v58 = v89
+								v59 = v81
+								v60 = v85
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v114 = v91
+						v123 = v89
+						v124 = v81
+						v125 = v85
+					}
+					if v35&int32(1) != 0 {
+						v134 = v114 << (uint(int32(2)) % 32)
+						v136 = *(*float32)(unsafe.Add(mBase, uint32(v42+v134)))
+						v138 = *(*float32)(unsafe.Add(mBase, uint32(v134+v40)))
+						v146 = base.F32_add(base.F32_mul(v136, v136), v123)
+						v147 = base.F32_add(base.F32_mul(v136, v138), v124)
+						v150 = base.F32_add(base.F32_mul(v138, v138), v125)
+					} else {
+						v146 = v123
+						v147 = v124
+						v150 = v125
+					}
+					v171 = base.F64_mul(base.F64_promote_f32(v150), base.F64_promote_f32(v146))
+					v172 = base.F64_promote_f32(v147)
+				}
+				v174 = base.F64_div(v172, base.F64_sqrt(v171))
+				if base.F64_gt(v174, float64(1)) != 0 {
+					v182 = v30
+				} else {
+					if base.F64_lt(v174, float64(-1)) == int32(0) {
+						v182 = v174
+					} else {
+						v182 = float64(-1)
+					}
+				}
+				v184 = F_Float8GetDatum(m, base.F64_sub(v30, v182))
+				mBase = m.M
+				v185 = m.ExcPending
+				if v185 != 0 {
+					return int32(0)
+				} else {
+					m.G0 = v20 + int32(16)
+					return v184
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v98 = m.ExcPending
+				if v98 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(130))
+					mBase = m.M
+					v101 = m.ExcPending
+					if v101 != 0 {
+						return int32(0)
+					} else {
+						v102 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
+						v103 = int32(*(*int16)(unsafe.Add(mBase, uint32(v28)+4)))
+						*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v103
+						*(*int32)(unsafe.Add(mBase, uint32(v20))) = v102
+						F_errmsg(m, int32(_a_F_cosine_distance_1), v20)
+						mBase = m.M
+						v108 = m.ExcPending
+						if v108 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_cosine_distance_2), int32(76), int32(_a_F_cosine_distance_3))
+							mBase = m.M
+							v113 = m.ExcPending
+							if v113 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_cost_subplan(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

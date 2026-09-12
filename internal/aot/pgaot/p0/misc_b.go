@@ -202,6 +202,76 @@ L22:
 	;
 	goto L16
 }
+func F_BlockSampler_Init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int64
+	_ = v5
+	var v10 int32
+	_ = v10
+	var v11 int64
+	_ = v11
+	var v15 int64
+	_ = v15
+	var v16 int64
+	_ = v16
+	var v19 int64
+	_ = v19
+	var v20 int64
+	_ = v20
+	var v21 int64
+	_ = v21
+	var v24 int64
+	_ = v24
+	var v25 int64
+	_ = v25
+	var v26 int64
+	_ = v26
+	var v31 int64
+	_ = v31
+	var v36 int64
+	_ = v36
+	var v41 int64
+	_ = v41
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
+	v5 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v5
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = l2
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = l1
+	v10 = l0 + int32(16)
+	v11 = base.I64_extend_i32_u(l3)
+	v15 = v11 + int64(4354685564936845354)
+	v16 = int64(30)
+	v19 = int64(-4658895280553007687)
+	v20 = (int64(base.Ui64(v15)>>(uint(v16)%64)) ^ v15) * v19
+	v21 = int64(27)
+	v24 = int64(-7723592293110705685)
+	v25 = (int64(base.Ui64(v20)>>(uint(v21)%64)) ^ v20) * v24
+	v26 = int64(31)
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(base.Ui64(v25)>>(uint(v26)%64)) ^ v25
+	v31 = v11 - int64(7046029254386353131)
+	v36 = (int64(base.Ui64(v31)>>(uint(v16)%64)) ^ v31) * v19
+	v41 = (int64(base.Ui64(v36)>>(uint(v21)%64)) ^ v36) * v24
+	*(*int64)(unsafe.Add(mBase, uint32(v10))) = int64(base.Ui64(v41)>>(uint(v26)%64)) ^ v41
+	if v31|v15 == v5 {
+		*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(1442695040888963407)
+		*(*int64)(unsafe.Add(mBase, uint32(v10))) = int64(6364136223846793005)
+	} else {
+	}
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if base.Ui32(v53) < base.Ui32(v54) {
+		v56 = v53
+	} else {
+		v56 = v54
+	}
+	return v56
+}
 func F_basque_UTF_8_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

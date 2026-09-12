@@ -449,6 +449,104 @@ func F_CheckDeadLockAlert(m *base.Module) {
 		return
 	}
 }
+func F_CheckDim_2(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	if int32(0) < l0 {
+		if base.Ui32(int32(1000000001)) <= base.Ui32(l0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v33 = m.ExcPending
+			if v33 != 0 {
+				return
+			} else {
+				F_errcode(m, int32(261))
+				mBase = m.M
+				v36 = m.ExcPending
+				if v36 != 0 {
+					return
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(1000000000)
+					F_errmsg(m, int32(_a_F_CheckDim_2_0), v5)
+					mBase = m.M
+					v41 = m.ExcPending
+					if v41 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_CheckDim_2_1), int32(79), int32(_a_F_CheckDim_2_2))
+						mBase = m.M
+						v46 = m.ExcPending
+						if v46 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			m.G0 = v5 + int32(16)
+			return
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(130))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				F_errmsg(m, int32(_a_F_CheckDim_2_3), int32(0))
+				mBase = m.M
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_CheckDim_2_1), int32(74), int32(_a_F_CheckDim_2_2))
+					mBase = m.M
+					v29 = m.ExcPending
+					if v29 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_CheckDuplicateColumnOrPathNames(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

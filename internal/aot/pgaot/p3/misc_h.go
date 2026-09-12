@@ -39,6 +39,127 @@ func F_HaveRegisteredOrActiveSnapshot(m *base.Module) int32 {
 		}
 	}
 }
+func F_hamming_distance(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v49 int32
+	_ = v49
+	var v50 int64
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = F_pg_detoast_datum(m, v8)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v14 = F_pg_detoast_datum(m, v13)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
+			if v16 != v17 {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v22 = m.ExcPending
+				if v22 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(130))
+					mBase = m.M
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return int32(0)
+					} else {
+						v26 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v27
+						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v26
+						F_errmsg(m, int32(_a_F_hamming_distance_0), v6)
+						mBase = m.M
+						v32 = m.ExcPending
+						if v32 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_hamming_distance_1), int32(39), int32(_a_F_hamming_distance_2))
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+				v41 = int32(8)
+				v49 = *(*int32)(unsafe.Add(mBase, _c_F_hamming_distance[0]))
+				v50 = m.T0[v49].(func(*base.Module, int32, int32, int32, int64) int64)(m, int32(base.Ui32(v38)>>(uint(int32(2))%32))-v41, v9+v41, v14+v41, int64(0))
+				mBase = m.M
+				v52 = F_Float8GetDatum(m, base.F64_convert_i64_u(v50))
+				mBase = m.M
+				v53 = m.ExcPending
+				if v53 != 0 {
+					return int32(0)
+				} else {
+					m.G0 = v6 + int32(16)
+					return v52
+				}
+			}
+		}
+	}
+}
 func F_handle_pm_child_exit_signal(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
