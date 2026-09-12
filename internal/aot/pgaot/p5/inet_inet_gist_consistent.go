@@ -909,13 +909,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 								if v774 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg_internal(m, int32(516961), int32(0))
+									F_errmsg_internal(m, int32(517153), int32(0))
 									mBase = m.M
 									v778 = m.ExcPending
 									if v778 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492630), int32(327), int32(91755))
+										F_errfinish(m, int32(492817), int32(327), int32(91812))
 										mBase = m.M
 										v783 = m.ExcPending
 										if v783 != 0 {
@@ -1487,13 +1487,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 														if v774 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(516961), int32(0))
+															F_errmsg_internal(m, int32(517153), int32(0))
 															mBase = m.M
 															v778 = m.ExcPending
 															if v778 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(492630), int32(327), int32(91755))
+																F_errfinish(m, int32(492817), int32(327), int32(91812))
 																mBase = m.M
 																v783 = m.ExcPending
 																if v783 != 0 {
@@ -1693,13 +1693,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 														if v774 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(516961), int32(0))
+															F_errmsg_internal(m, int32(517153), int32(0))
 															mBase = m.M
 															v778 = m.ExcPending
 															if v778 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(492630), int32(327), int32(91755))
+																F_errfinish(m, int32(492817), int32(327), int32(91812))
 																mBase = m.M
 																v783 = m.ExcPending
 																if v783 != 0 {
@@ -1934,13 +1934,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 														if v774 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(516961), int32(0))
+															F_errmsg_internal(m, int32(517153), int32(0))
 															mBase = m.M
 															v778 = m.ExcPending
 															if v778 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(492630), int32(327), int32(91755))
+																F_errfinish(m, int32(492817), int32(327), int32(91812))
 																mBase = m.M
 																v783 = m.ExcPending
 																if v783 != 0 {
@@ -2140,13 +2140,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 														if v774 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(516961), int32(0))
+															F_errmsg_internal(m, int32(517153), int32(0))
 															mBase = m.M
 															v778 = m.ExcPending
 															if v778 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(492630), int32(327), int32(91755))
+																F_errfinish(m, int32(492817), int32(327), int32(91812))
 																mBase = m.M
 																v783 = m.ExcPending
 																if v783 != 0 {
@@ -2508,13 +2508,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 							if v774 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(516961), int32(0))
+								F_errmsg_internal(m, int32(517153), int32(0))
 								mBase = m.M
 								v778 = m.ExcPending
 								if v778 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492630), int32(327), int32(91755))
+									F_errfinish(m, int32(492817), int32(327), int32(91812))
 									mBase = m.M
 									v783 = m.ExcPending
 									if v783 != 0 {
@@ -3086,13 +3086,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 													if v774 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(516961), int32(0))
+														F_errmsg_internal(m, int32(517153), int32(0))
 														mBase = m.M
 														v778 = m.ExcPending
 														if v778 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492630), int32(327), int32(91755))
+															F_errfinish(m, int32(492817), int32(327), int32(91812))
 															mBase = m.M
 															v783 = m.ExcPending
 															if v783 != 0 {
@@ -3292,13 +3292,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 													if v774 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(516961), int32(0))
+														F_errmsg_internal(m, int32(517153), int32(0))
 														mBase = m.M
 														v778 = m.ExcPending
 														if v778 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492630), int32(327), int32(91755))
+															F_errfinish(m, int32(492817), int32(327), int32(91812))
 															mBase = m.M
 															v783 = m.ExcPending
 															if v783 != 0 {
@@ -3533,13 +3533,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 													if v774 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(516961), int32(0))
+														F_errmsg_internal(m, int32(517153), int32(0))
 														mBase = m.M
 														v778 = m.ExcPending
 														if v778 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492630), int32(327), int32(91755))
+															F_errfinish(m, int32(492817), int32(327), int32(91812))
 															mBase = m.M
 															v783 = m.ExcPending
 															if v783 != 0 {
@@ -3739,13 +3739,13 @@ func F_inet_gist_consistent(m *base.Module, l0 int32) int32 {
 													if v774 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(516961), int32(0))
+														F_errmsg_internal(m, int32(517153), int32(0))
 														mBase = m.M
 														v778 = m.ExcPending
 														if v778 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(492630), int32(327), int32(91755))
+															F_errfinish(m, int32(492817), int32(327), int32(91812))
 															mBase = m.M
 															v783 = m.ExcPending
 															if v783 != 0 {

@@ -107,7 +107,7 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn"
+CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist btree_gin unaccent tablefunc intarray fuzzystrmatch cube earthdistance seg bloom isn dict_int dict_xsyn lo"
 for n in $CONTRIB_MODULES; do
   # the library name (what $libdir/<name> in the extension's SQL refers to)
   # is the Makefile's MODULE_big or MODULES, not always the directory name

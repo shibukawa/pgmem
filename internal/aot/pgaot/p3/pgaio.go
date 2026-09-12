@@ -79,13 +79,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 			v19 = v18
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 			if v20 == int32(0) {
-				v23 = int32(4510044)
+				v23 = int32(4510140)
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 				*(*int32)(unsafe.Add(mBase, _consts[115])) = v25 + int32(1)
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 				if v29 == int32(0) {
 					v78 = int32(0)
-					v80 = int32(4510044)
+					v80 = int32(4510140)
 					v82 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 					*(*int32)(unsafe.Add(mBase, _consts[115])) = v82 - int32(1)
 					return v78
@@ -133,7 +133,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v71 & int32(-449)
 							v78 = v43
 						}
-						v80 = int32(4510044)
+						v80 = int32(4510140)
 						v82 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 						*(*int32)(unsafe.Add(mBase, _consts[115])) = v82 - int32(1)
 						return v78
@@ -146,13 +146,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 				if v90 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(67659), int32(0))
+					F_errmsg_internal(m, int32(67685), int32(0))
 					mBase = m.M
 					v94 = m.ExcPending
 					if v94 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496040), int32(199), int32(502823))
+						F_errfinish(m, int32(496232), int32(199), int32(503015))
 						mBase = m.M
 						v99 = m.ExcPending
 						if v99 != 0 {
@@ -170,13 +170,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 		v19 = v9
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 		if v20 == int32(0) {
-			v23 = int32(4510044)
+			v23 = int32(4510140)
 			v25 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 			*(*int32)(unsafe.Add(mBase, _consts[115])) = v25 + int32(1)
 			v29 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 			if v29 == int32(0) {
 				v78 = int32(0)
-				v80 = int32(4510044)
+				v80 = int32(4510140)
 				v82 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 				*(*int32)(unsafe.Add(mBase, _consts[115])) = v82 - int32(1)
 				return v78
@@ -224,7 +224,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v71 & int32(-449)
 						v78 = v43
 					}
-					v80 = int32(4510044)
+					v80 = int32(4510140)
 					v82 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 					*(*int32)(unsafe.Add(mBase, _consts[115])) = v82 - int32(1)
 					return v78
@@ -237,13 +237,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 			if v90 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(67659), int32(0))
+				F_errmsg_internal(m, int32(67685), int32(0))
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496040), int32(199), int32(502823))
+					F_errfinish(m, int32(496232), int32(199), int32(503015))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -287,7 +287,7 @@ func F_pgaio_sync_submit(m *base.Module, l0 int32, l1 int32) int32 {
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(499909), int32(44), int32(101261))
+			F_errfinish(m, int32(500101), int32(44), int32(101318))
 			v17 = m.ExcPending
 			if v17 != 0 {
 				return int32(0)
@@ -339,7 +339,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v16 = F_ShmemInitStruct(m, int32(348378), int32(272), v9+int32(15))
+	v16 = F_ShmemInitStruct(m, int32(348546), int32(272), v9+int32(15))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -352,7 +352,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(64)
 		} else {
 		}
-		v31 = F_ShmemInitStruct(m, int32(301422), int32(264), v9+int32(15))
+		v31 = F_ShmemInitStruct(m, int32(301590), int32(264), v9+int32(15))
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {

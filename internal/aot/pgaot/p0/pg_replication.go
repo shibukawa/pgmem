@@ -136,13 +136,13 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 				if v47 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(450083), int32(0))
+					F_errmsg(m, int32(450270), int32(0))
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496500), int32(1438), int32(127746))
+						F_errfinish(m, int32(496692), int32(1438), int32(127803))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -280,13 +280,13 @@ func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(450083), int32(0))
+					F_errmsg(m, int32(450270), int32(0))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496500), int32(1458), int32(232162))
+						F_errfinish(m, int32(496692), int32(1458), int32(232259))
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {

@@ -197,7 +197,7 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v129
 	var v136 int32
 	_ = v136
-	v8 = int32(4515392)
+	v8 = int32(4515488)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l5)+1176))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v10
@@ -316,13 +316,13 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											if v123 != 0 {
 												return
 											} else {
-												F_errmsg_internal(m, int32(407211), int32(0))
+												F_errmsg_internal(m, int32(407379), int32(0))
 												mBase = m.M
 												v129 = m.ExcPending
 												if v129 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(492921), int32(104), int32(319302))
+													F_errfinish(m, int32(493108), int32(104), int32(319470))
 													mBase = m.M
 													v136 = m.ExcPending
 													if v136 != 0 {
@@ -386,13 +386,13 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v123 != 0 {
 											return
 										} else {
-											F_errmsg_internal(m, int32(407211), int32(0))
+											F_errmsg_internal(m, int32(407379), int32(0))
 											mBase = m.M
 											v129 = m.ExcPending
 											if v129 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(492921), int32(104), int32(319302))
+												F_errfinish(m, int32(493108), int32(104), int32(319470))
 												mBase = m.M
 												v136 = m.ExcPending
 												if v136 != 0 {

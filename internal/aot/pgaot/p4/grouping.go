@@ -876,7 +876,7 @@ L21:
 	goto L1
 L22:
 	;
-	F_errmsg_internal(m, int32(73277), int32(0))
+	F_errmsg_internal(m, int32(73334), int32(0))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -886,7 +886,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(492536), int32(366), int32(383199))
+	F_errfinish(m, int32(492723), int32(366), int32(383367))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {

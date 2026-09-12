@@ -1121,7 +1121,7 @@ L117:
 	;
 	v317 = *(*int32)(unsafe.Add(mBase, uint32(v289)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v317
-	F_errmsg_internal(m, int32(482695), v14)
+	F_errmsg_internal(m, int32(482882), v14)
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -1131,7 +1131,7 @@ L117:
 	}
 L118:
 	;
-	F_errfinish(m, int32(495994), int32(149), int32(87409))
+	F_errfinish(m, int32(496181), int32(149), int32(87466))
 	mBase = m.M
 	v326 = m.ExcPending
 	if v326 != 0 {
@@ -1541,7 +1541,7 @@ L182:
 	;
 	v460 = *(*int32)(unsafe.Add(mBase, uint32(v442)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v460
-	F_errmsg_internal(m, int32(482695), v14+int32(16))
+	F_errmsg_internal(m, int32(482882), v14+int32(16))
 	mBase = m.M
 	v466 = m.ExcPending
 	if v466 != 0 {
@@ -1551,7 +1551,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(495994), int32(149), int32(87409))
+	F_errfinish(m, int32(496181), int32(149), int32(87466))
 	mBase = m.M
 	v471 = m.ExcPending
 	if v471 != 0 {
@@ -1728,13 +1728,13 @@ func F_op_error(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v10))) = v21
-					F_errmsg(m, int32(202957), v10)
+					F_errmsg(m, int32(203014), v10)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return
 					} else {
-						F_errhint(m, int32(583733), int32(0))
+						F_errhint(m, int32(583925), int32(0))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
@@ -1746,7 +1746,7 @@ func F_op_error(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32
 							if v32 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(495247), int32(633), int32(211719))
+								F_errfinish(m, int32(495434), int32(633), int32(211776))
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
@@ -1775,21 +1775,21 @@ func F_op_error(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v41
-					F_errmsg(m, int32(199224), v10+int32(16))
+					F_errmsg(m, int32(199281), v10+int32(16))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return
 					} else {
 						if l3 != 0 {
-							v51 = int32(583438)
+							v51 = int32(583630)
 						} else {
-							v51 = int32(578638)
+							v51 = int32(578830)
 						}
 						if l2 != 0 {
 							v53 = v51
 						} else {
-							v53 = int32(578638)
+							v53 = int32(578830)
 						}
 						F_errhint(m, v53, int32(0))
 						mBase = m.M
@@ -1803,7 +1803,7 @@ func F_op_error(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(495247), int32(644), int32(211719))
+								F_errfinish(m, int32(495434), int32(644), int32(211776))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -1947,13 +1947,13 @@ func F_op_input_types(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-				F_errmsg_internal(m, int32(43089), v8)
+				F_errmsg_internal(m, int32(43115), v8)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(499145), int32(1505), int32(161842))
+					F_errfinish(m, int32(499337), int32(1505), int32(161899))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -2031,7 +2031,7 @@ func F_op_signature_string(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v15
-				F_appendStringInfo(m, v7+int32(32), int32(738185), v7+int32(16))
+				F_appendStringInfo(m, v7+int32(32), int32(738377), v7+int32(16))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -2056,7 +2056,7 @@ func F_op_signature_string(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-								F_appendStringInfo(m, v7+int32(32), int32(206106), v7)
+								F_appendStringInfo(m, v7+int32(32), int32(206163), v7)
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -2091,7 +2091,7 @@ func F_op_signature_string(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-						F_appendStringInfo(m, v7+int32(32), int32(206106), v7)
+						F_appendStringInfo(m, v7+int32(32), int32(206163), v7)
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {

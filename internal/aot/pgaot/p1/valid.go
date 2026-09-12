@@ -114,7 +114,7 @@ L6:
 	}
 L7:
 	;
-	v21 = int32(641253)
+	v21 = int32(641445)
 	if l2 <= int32(0) {
 		v135 = v21
 		goto L2
@@ -220,7 +220,7 @@ L23:
 	goto L13
 L24:
 	;
-	v79 = int32(641381)
+	v79 = int32(641573)
 	if l2 <= int32(0) {
 		v135 = v79
 		goto L2
@@ -229,7 +229,7 @@ L24:
 	}
 L25:
 	;
-	v57 = int32(641170)
+	v57 = int32(641362)
 	if l2 <= int32(0) {
 		v135 = v57
 		goto L2
@@ -329,7 +329,7 @@ L40:
 	goto L37
 L41:
 	;
-	v105 = int32(641484)
+	v105 = int32(641676)
 	if l2 <= int32(0) {
 		v135 = v105
 		goto L2
@@ -554,7 +554,7 @@ L1:
 	return v242
 L2:
 	;
-	v10 = int32(546267)
+	v10 = int32(546459)
 	v14 = m.G0
 	v16 = v14 - int32(32)
 	v17 = int64(0)
@@ -689,7 +689,7 @@ L23:
 	goto L19
 L24:
 	;
-	v96 = F_strstr(m, l0, int32(669926))
+	v96 = F_strstr(m, l0, int32(670118))
 	mBase = m.M
 	if v96 != 0 {
 		v242 = v2
@@ -699,7 +699,7 @@ L24:
 	}
 L25:
 	;
-	v98 = F_strstr(m, l0, int32(669827))
+	v98 = F_strstr(m, l0, int32(670019))
 	mBase = m.M
 	if v98 != 0 {
 		v242 = v2
@@ -739,7 +739,7 @@ L29:
 	goto L30
 L30:
 	;
-	v113 = int32(689752)
+	v113 = int32(689944)
 	v115 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0+v110))))
 	v116 = int32(11)
 	goto L35

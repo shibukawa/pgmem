@@ -47,7 +47,7 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+440)) = int32(1)
 	if v15 != 0 {
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-		F_s_lock(m, v19+int32(440), int32(498070), int32(3730), int32(440375))
+		F_s_lock(m, v19+int32(440), int32(498262), int32(3730), int32(440562))
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -78,13 +78,13 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
-							F_errmsg(m, int32(440274), v9)
+							F_errmsg(m, int32(440461), v9)
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(498070), int32(3743), int32(440375))
+								F_errfinish(m, int32(498262), int32(3743), int32(440562))
 								mBase = m.M
 								v57 = m.ExcPending
 								if v57 != 0 {
@@ -130,13 +130,13 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
-						F_errmsg(m, int32(440274), v9)
+						F_errmsg(m, int32(440461), v9)
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498070), int32(3743), int32(440375))
+							F_errfinish(m, int32(498262), int32(3743), int32(440562))
 							mBase = m.M
 							v57 = m.ExcPending
 							if v57 != 0 {
@@ -236,7 +236,7 @@ func F_InstallXLogFileSegment(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	*(*uint32)(unsafe.Add(mBase, uint32(v13)+20)) = uint32(v21)
 	v24 = v15 - v20*v21
 	*(*uint32)(unsafe.Add(mBase, uint32(v13)+24)) = uint32(v24)
-	v32 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(510037), v13+int32(16))
+	v32 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(510229), v13+int32(16))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -347,7 +347,7 @@ L14:
 	*(*uint32)(unsafe.Add(mBase, uint32(v13)+4)) = uint32(v75)
 	v78 = v68 - v74*v75
 	*(*uint32)(unsafe.Add(mBase, uint32(v13)+8)) = uint32(v78)
-	v84 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(510037), v13)
+	v84 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(510229), v13)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -450,13 +450,13 @@ func F_XLogBeginInsert(m *base.Module) {
 			if v50 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(453858), int32(0))
+				F_errmsg_internal(m, int32(454045), int32(0))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492957), int32(160), int32(81859))
+					F_errfinish(m, int32(493144), int32(160), int32(81916))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
@@ -486,7 +486,7 @@ func F_XLogBeginInsert(m *base.Module) {
 			if v41 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(492957), int32(157), int32(81859))
+				F_errfinish(m, int32(493144), int32(157), int32(81916))
 				mBase = m.M
 				v46 = m.ExcPending
 				if v46 != 0 {

@@ -9788,6 +9788,24 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoDxsynLexize(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_lo":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_lo: want 0 args")
+		}
+		r := pgaot.PgMagicFuncLo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "lo_manage":
+		if len(a) != 1 {
+			panic("aot: lo_manage: want 1 args")
+		}
+		r := pgaot.LoManage(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_lo_manage":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_lo_manage: want 0 args")
+		}
+		r := pgaot.PgFinfoLoManage(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

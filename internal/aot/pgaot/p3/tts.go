@@ -198,7 +198,7 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 			v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 			v18 = v16 & int32(65533)
 			*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v18)
-			v20 = int32(4515392)
+			v20 = int32(4515488)
 			v21 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
@@ -231,7 +231,7 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 				v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 				v18 = v16 & int32(65533)
 				*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v18)
-				v20 = int32(4515392)
+				v20 = int32(4515488)
 				v21 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
@@ -463,7 +463,7 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 					v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 					v18 = v16 & int32(65533)
 					*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v18)
-					v20 = int32(4515392)
+					v20 = int32(4515488)
 					v21 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
@@ -526,7 +526,7 @@ func F_tts_buffer_heap_materialize(m *base.Module, l0 int32) {
 	_ = v38
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
 	if v4&int32(4) == int32(0) {
-		v9 = int32(4515392)
+		v9 = int32(4515488)
 		v10 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v12
@@ -629,7 +629,7 @@ func F_tts_heap_get_heap_tuple(m *base.Module, l0 int32) int32 {
 			v32 = int32(0)
 			return v32
 		} else {
-			v9 = int32(4515392)
+			v9 = int32(4515488)
 			v10 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v12
@@ -752,7 +752,7 @@ func F_tts_minimal_get_minimal_tuple(m *base.Module, l0 int32) int32 {
 			v41 = int32(0)
 			return v41
 		} else {
-			v10 = int32(4515392)
+			v10 = int32(4515488)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v13
@@ -824,7 +824,7 @@ func F_tts_minimal_materialize(m *base.Module, l0 int32) {
 	_ = v38
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
 	if v5&int32(4) == int32(0) {
-		v10 = int32(4515392)
+		v10 = int32(4515488)
 		v11 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v13

@@ -3429,13 +3429,13 @@ func F_hash_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v19
-				F_errmsg(m, int32(229686), v6)
+				F_errmsg(m, int32(229783), v6)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494614), int32(3950), int32(229519))
+					F_errfinish(m, int32(494801), int32(3950), int32(229616))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

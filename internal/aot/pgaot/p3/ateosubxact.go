@@ -37,7 +37,7 @@ L1:
 	return
 L2:
 	;
-	if v5 == int32(4112940) {
+	if v5 == int32(4112972) {
 		goto L1
 	} else {
 		goto L3
@@ -96,7 +96,7 @@ L10:
 	}
 L11:
 	;
-	F_errmsg_internal(m, int32(60927), int32(0))
+	F_errmsg_internal(m, int32(60953), int32(0))
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -106,7 +106,7 @@ L11:
 	}
 L12:
 	;
-	F_errfinish(m, int32(497417), int32(1271), int32(307834))
+	F_errfinish(m, int32(497609), int32(1271), int32(308002))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -127,7 +127,7 @@ L14:
 	}
 L15:
 	;
-	if v35 != int32(4112940) {
+	if v35 != int32(4112972) {
 		v12 = v35
 		goto L4
 	} else {

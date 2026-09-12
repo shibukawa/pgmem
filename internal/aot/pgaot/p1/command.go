@@ -66,13 +66,13 @@ func F_CommandIsReadOnly(m *base.Module, l0 int32) int32 {
 				} else {
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v28
-					F_errmsg_internal(m, int32(486253), v7)
+					F_errmsg_internal(m, int32(486440), v7)
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492275), int32(116), int32(19729))
+						F_errfinish(m, int32(492462), int32(116), int32(19729))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
@@ -1470,7 +1470,7 @@ L196:
 	;
 	v287 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v287
-	F_errmsg_internal(m, int32(486253), v9+int32(16))
+	F_errmsg_internal(m, int32(486440), v9+int32(16))
 	mBase = m.M
 	v293 = m.ExcPending
 	if v293 != 0 {
@@ -1480,7 +1480,7 @@ L196:
 	}
 L197:
 	;
-	F_errfinish(m, int32(492275), int32(3158), int32(337867))
+	F_errfinish(m, int32(492462), int32(3158), int32(338035))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -1564,7 +1564,7 @@ L207:
 	;
 	v326 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v326
-	F_errmsg_internal(m, int32(486253), v9+int32(32))
+	F_errmsg_internal(m, int32(486440), v9+int32(32))
 	mBase = m.M
 	v332 = m.ExcPending
 	if v332 != 0 {
@@ -1574,7 +1574,7 @@ L207:
 	}
 L208:
 	;
-	F_errfinish(m, int32(492275), int32(3221), int32(337867))
+	F_errfinish(m, int32(492462), int32(3221), int32(338035))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -1598,7 +1598,7 @@ L211:
 	;
 	v345 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v345
-	F_errmsg_internal(m, int32(485936), v9)
+	F_errmsg_internal(m, int32(486123), v9)
 	mBase = m.M
 	v349 = m.ExcPending
 	if v349 != 0 {
@@ -1608,7 +1608,7 @@ L211:
 	}
 L212:
 	;
-	F_errfinish(m, int32(492275), int32(3230), int32(337867))
+	F_errfinish(m, int32(492462), int32(3230), int32(338035))
 	mBase = m.M
 	v354 = m.ExcPending
 	if v354 != 0 {

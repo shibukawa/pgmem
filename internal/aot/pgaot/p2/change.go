@@ -55,13 +55,13 @@ func F_ChangeToDataDir(m *base.Module) {
 			} else {
 				v26 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 				*(*int32)(unsafe.Add(mBase, uint32(v4))) = v26
-				F_errmsg(m, int32(297271), v4)
+				F_errmsg(m, int32(297439), v4)
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(493151), int32(468), int32(213583))
+					F_errfinish(m, int32(493338), int32(468), int32(213640))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -392,7 +392,7 @@ L33:
 L34:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v126
-	F_errmsg(m, int32(111081), v11)
+	F_errmsg(m, int32(111138), v11)
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -402,7 +402,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(499583), int32(650), int32(285528))
+	F_errfinish(m, int32(499775), int32(650), int32(285696))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
