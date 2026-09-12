@@ -32,7 +32,7 @@ func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32 {
 	switch l1 - int32(1663) {
 	case 0:
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
-		v19 = F_psprintf(m, int32(39179), v6+int32(16))
+		v19 = F_psprintf(m, int32(39403), v6+int32(16))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
@@ -43,7 +43,7 @@ func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32 {
 			return v30
 		}
 	case 1:
-		v11 = F_pstrdup(m, int32(314638))
+		v11 = F_pstrdup(m, int32(315144))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
@@ -55,10 +55,10 @@ func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	default:
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(562055)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(563049)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(489145)
-		v28 = F_psprintf(m, int32(39145), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(489874)
+		v28 = F_psprintf(m, int32(39369), v6)
 		mBase = m.M
 		v29 = m.ExcPending
 		if v29 != 0 {
@@ -117,7 +117,7 @@ func F_has_database_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1656912))
+		v22 = F_convert_any_priv_string(m, v14, int32(1661008))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -203,7 +203,7 @@ func F_has_database_privilege_id_name(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					v20 = F_convert_any_priv_string(m, v11, int32(1656912))
+					v20 = F_convert_any_priv_string(m, v11, int32(1661008))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
@@ -293,7 +293,7 @@ func F_has_database_privilege_name_name(m *base.Module, l0 int32) int32 {
 					if v20 != 0 {
 						return int32(0)
 					} else {
-						v22 = F_convert_any_priv_string(m, v11, int32(1656912))
+						v22 = F_convert_any_priv_string(m, v11, int32(1661008))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
@@ -539,7 +539,7 @@ func F_rebuild_database_list(m *base.Module, l0 int32) {
 	m.G0 = v19
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+76)) = l0
 	v23 = *(*int32)(unsafe.Add(mBase, _consts[662]))
-	v28 = F_AllocSetContextCreateInternal(m, v23, int32(75556), v2, int32(8192), int32(8388608))
+	v28 = F_AllocSetContextCreateInternal(m, v23, int32(75836), v2, int32(8192), int32(8388608))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -552,7 +552,7 @@ L1:
 	return
 L2:
 	;
-	v34 = F_AllocSetContextCreateInternal(m, v28, int32(676094), int32(0), int32(8192), int32(8388608))
+	v34 = F_AllocSetContextCreateInternal(m, v28, int32(677088), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -562,12 +562,12 @@ L2:
 	}
 L3:
 	;
-	v36 = int32(4515712)
+	v36 = int32(4520272)
 	v37 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v34
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+68)) = v34
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+44)) = int64(137438953476)
-	v48 = F_hash_create(m, int32(323627), int32(20), v19+int32(28), int32(1064))
+	v48 = F_hash_create(m, int32(324133), int32(20), v19+int32(28), int32(1064))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -638,7 +638,7 @@ L10:
 	}
 L11:
 	;
-	if v67 == int32(4121632) {
+	if v67 == int32(4126128) {
 		v111 = v65
 		goto L10
 	} else {
@@ -668,7 +668,7 @@ L14:
 L15:
 	;
 	v106 = *(*int32)(unsafe.Add(mBase, uint32(v72)+4))
-	if v106 != int32(4121632) {
+	if v106 != int32(4126128) {
 		v72 = v106
 		v74 = v105
 		goto L13
@@ -712,7 +712,7 @@ L20:
 	goto L14
 L21:
 	;
-	v191 = int32(4121632)
+	v191 = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, _consts[708])) = v191
 	*(*int32)(unsafe.Add(mBase, _consts[709])) = v191
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v28
@@ -1014,7 +1014,7 @@ L61:
 	goto L59
 L62:
 	;
-	v344 = int32(4121632)
+	v344 = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, _consts[709])) = v344
 	v348 = v344
 	goto L64
@@ -1024,10 +1024,10 @@ L63:
 	goto L64
 L64:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v335)+20)) = int32(4121632)
+	*(*int32)(unsafe.Add(mBase, uint32(v335)+20)) = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, uint32(v335)+24)) = v348
 	*(*int32)(unsafe.Add(mBase, uint32(v348))) = v339
-	v353 = int32(4121636)
+	v353 = int32(4126132)
 	*(*int32)(unsafe.Add(mBase, _consts[708])) = v339
 	v355 = v330 + (v286 + v286)
 	*(*int64)(unsafe.Add(mBase, uint32(v335)+40)) = v355
@@ -1041,7 +1041,7 @@ L64:
 	}
 L65:
 	;
-	v365 = int32(4121632)
+	v365 = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, _consts[709])) = v365
 	v369 = v365
 	goto L67
@@ -1051,7 +1051,7 @@ L66:
 	goto L67
 L67:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = int32(4121632)
+	*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, uint32(v360)+24)) = v369
 	*(*int32)(unsafe.Add(mBase, uint32(v369))) = v358
 	*(*int32)(unsafe.Add(mBase, _consts[708])) = v358
@@ -1082,7 +1082,7 @@ L69:
 	}
 L70:
 	;
-	v410 = int32(4121632)
+	v410 = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, _consts[709])) = v410
 	v414 = v410
 	goto L72
@@ -1092,7 +1092,7 @@ L71:
 	goto L72
 L72:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v401)+20)) = int32(4121632)
+	*(*int32)(unsafe.Add(mBase, uint32(v401)+20)) = int32(4126128)
 	*(*int32)(unsafe.Add(mBase, uint32(v401)+24)) = v414
 	*(*int32)(unsafe.Add(mBase, uint32(v414))) = v405
 	*(*int32)(unsafe.Add(mBase, _consts[708])) = v405

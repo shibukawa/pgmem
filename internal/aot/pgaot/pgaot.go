@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7147)
-	m.G0 = int32(13081552)
+	m.T0 = make([]any, 7187)
+	m.G0 = int32(13086112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4410091
+	m.DataEnd = 4414651
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7147)
-	m.G0 = int32(13081552)
+	m.T0 = make([]any, 7187)
+	m.G0 = int32(13086112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4410091
+	m.DataEnd = 4414651
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7147)
-	m.G0 = int32(13081552)
+	m.T0 = make([]any, 7187)
+	m.G0 = int32(13086112)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4410091
+	m.DataEnd = 4414651
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1609328])
-	copy(m.Memory[1614656:], wasm2goData_data_bin[1609328:1609337])
-	copy(m.Memory[1616704:], wasm2goData_data_bin[1609337:1622265])
-	copy(m.Memory[1638404:], wasm2goData_data_bin[1622265:1715506])
-	copy(m.Memory[1732672:], wasm2goData_data_bin[1715506:1827162])
-	copy(m.Memory[1855544:], wasm2goData_data_bin[1827162:4085408])
-	copy(m.Memory[4121280:], wasm2goData_data_bin[4085408:4374219])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1610416])
+	copy(m.Memory[1615744:], wasm2goData_data_bin[1610416:1610425])
+	copy(m.Memory[1617792:], wasm2goData_data_bin[1610425:1623353])
+	copy(m.Memory[1642500:], wasm2goData_data_bin[1623353:1716594])
+	copy(m.Memory[1736768:], wasm2goData_data_bin[1716594:1828250])
+	copy(m.Memory[1859640:], wasm2goData_data_bin[1828250:4086896])
+	copy(m.Memory[4125776:], wasm2goData_data_bin[4086896:4375771])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5095,6 +5095,111 @@ func PgFinfoTsmSystemTimeHandler(m *base.Module) int32 {
 }
 func TsmSystemTimeHandler(m *base.Module, l0 int32) int32 {
 	return F_tsm_system_time_handler(m, l0)
+}
+func PgMagicFuncPgstattuple(m *base.Module) int32 {
+	return F_Pg_magic_func_pgstattuple(m)
+}
+func PgFinfoPgRelpages(m *base.Module) int32 {
+	return F_pg_finfo_pg_relpages(m)
+}
+func PgFinfoPgRelpagesV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pg_relpages_v1_5(m)
+}
+func PgFinfoPgRelpagesbyid(m *base.Module) int32 {
+	return F_pg_finfo_pg_relpagesbyid(m)
+}
+func PgFinfoPgRelpagesbyidV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pg_relpagesbyid_v1_5(m)
+}
+func PgFinfoPgstatginindex(m *base.Module) int32 {
+	return F_pg_finfo_pgstatginindex(m)
+}
+func PgFinfoPgstatginindexV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstatginindex_v1_5(m)
+}
+func PgFinfoPgstathashindex(m *base.Module) int32 {
+	return F_pg_finfo_pgstathashindex(m)
+}
+func PgFinfoPgstatindex(m *base.Module) int32 {
+	return F_pg_finfo_pgstatindex(m)
+}
+func PgFinfoPgstatindexV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstatindex_v1_5(m)
+}
+func PgFinfoPgstatindexbyid(m *base.Module) int32 {
+	return F_pg_finfo_pgstatindexbyid(m)
+}
+func PgFinfoPgstatindexbyidV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstatindexbyid_v1_5(m)
+}
+func PgFinfoPgstattuple(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuple(m)
+}
+func PgFinfoPgstattupleApprox(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuple_approx(m)
+}
+func PgFinfoPgstattupleApproxV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuple_approx_v1_5(m)
+}
+func PgFinfoPgstattupleV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuple_v1_5(m)
+}
+func PgFinfoPgstattuplebyid(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuplebyid(m)
+}
+func PgFinfoPgstattuplebyidV1_5(m *base.Module) int32 {
+	return F_pg_finfo_pgstattuplebyid_v1_5(m)
+}
+func PgRelpages(m *base.Module, l0 int32) int32 {
+	return F_pg_relpages(m, l0)
+}
+func PgRelpagesV1_5(m *base.Module, l0 int32) int32 {
+	return F_pg_relpages_v1_5(m, l0)
+}
+func PgRelpagesbyid(m *base.Module, l0 int32) int32 {
+	return F_pg_relpagesbyid(m, l0)
+}
+func PgRelpagesbyidV1_5(m *base.Module, l0 int32) int32 {
+	return F_pg_relpagesbyid_v1_5(m, l0)
+}
+func Pgstatginindex(m *base.Module, l0 int32) int32 {
+	return F_pgstatginindex(m, l0)
+}
+func PgstatginindexV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstatginindex_v1_5(m, l0)
+}
+func Pgstathashindex(m *base.Module, l0 int32) int32 {
+	return F_pgstathashindex(m, l0)
+}
+func Pgstatindex(m *base.Module, l0 int32) int32 {
+	return F_pgstatindex(m, l0)
+}
+func PgstatindexV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstatindex_v1_5(m, l0)
+}
+func Pgstatindexbyid(m *base.Module, l0 int32) int32 {
+	return F_pgstatindexbyid(m, l0)
+}
+func PgstatindexbyidV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstatindexbyid_v1_5(m, l0)
+}
+func Pgstattuple(m *base.Module, l0 int32) int32 {
+	return F_pgstattuple(m, l0)
+}
+func PgstattupleApprox(m *base.Module, l0 int32) int32 {
+	return F_pgstattuple_approx(m, l0)
+}
+func PgstattupleApproxV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstattuple_approx_v1_5(m, l0)
+}
+func PgstattupleV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstattuple_v1_5(m, l0)
+}
+func Pgstattuplebyid(m *base.Module, l0 int32) int32 {
+	return F_pgstattuplebyid(m, l0)
+}
+func PgstattuplebyidV1_5(m *base.Module, l0 int32) int32 {
+	return F_pgstattuplebyid_v1_5(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

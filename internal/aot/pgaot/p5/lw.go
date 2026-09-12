@@ -30,7 +30,7 @@ func F_LWLockRelease(m *base.Module, l0 int32) {
 		if v5 != 0 {
 			return
 		} else {
-			v6 = int32(4510364)
+			v6 = int32(4514924)
 			v8 = *(*int32)(unsafe.Add(mBase, _consts[415]))
 			*(*int32)(unsafe.Add(mBase, _consts[415])) = v8 - int32(1)
 			return

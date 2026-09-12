@@ -134,13 +134,13 @@ func F_bit_and(m *base.Module, l0 int32) int32 {
 					if v75 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(157174), int32(0))
+						F_errmsg(m, int32(157538), int32(0))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493649), int32(1261), int32(429682))
+							F_errfinish(m, int32(494399), int32(1261), int32(430303))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {
@@ -286,13 +286,13 @@ func F_bit_or(m *base.Module, l0 int32) int32 {
 					if v75 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(157133), int32(0))
+						F_errmsg(m, int32(157497), int32(0))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493649), int32(1302), int32(213010))
+							F_errfinish(m, int32(494399), int32(1302), int32(213386))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {

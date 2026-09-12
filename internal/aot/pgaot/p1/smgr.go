@@ -1203,7 +1203,7 @@ L96:
 L97:
 	;
 	m.G0 = v287 + int32(32)
-	v680 = int32(4510364)
+	v680 = int32(4514924)
 	v682 = *(*int32)(unsafe.Add(mBase, _consts[163]))
 	*(*int32)(unsafe.Add(mBase, _consts[163])) = v682 + int32(1)
 	if int32(0) < v267 {
@@ -1475,9 +1475,9 @@ L132:
 	}
 L133:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v287)+28)) = int32(229433)
+	*(*int32)(unsafe.Add(mBase, uint32(v287)+28)) = int32(229809)
 	*(*int32)(unsafe.Add(mBase, uint32(v287)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v287)+20)) = int32(495551)
+	*(*int32)(unsafe.Add(mBase, uint32(v287)+20)) = int32(496301)
 	*(*int32)(unsafe.Add(mBase, uint32(v287)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v287)+8)) = int64(0)
 	v502 = *(*int32)(unsafe.Add(mBase, uint32(v425)+24))
@@ -1497,7 +1497,7 @@ L135:
 	goto L136
 L136:
 	;
-	v549 = int32(4122188)
+	v549 = int32(4126684)
 	v550 = *(*int32)(unsafe.Add(mBase, _consts[276]))
 	v552 = *(*int32)(unsafe.Add(mBase, uint32(v287+int32(8))+8))
 	if v552 == int32(0) {
@@ -1625,14 +1625,14 @@ L156:
 	v583 = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v425)+24)) = (v582 + v583) & int32(-4194305)
 	v588 = *(*int32)(unsafe.Add(mBase, uint32(v425)+20))
-	v589 = int32(4431624)
+	v589 = int32(4436184)
 	v590 = *(*int32)(unsafe.Add(mBase, _consts[278]))
 	*(*int32)(unsafe.Add(mBase, _consts[278])) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v590)+4)) = v583
 	v597 = v588 + v583
 	*(*int32)(unsafe.Add(mBase, uint32(v590))) = v597
 	v600 = *(*int32)(unsafe.Add(mBase, _consts[175]))
-	F_ResourceOwnerRemember(m, v600, v597, int32(1628672))
+	F_ResourceOwnerRemember(m, v600, v597, int32(1629760))
 	mBase = m.M
 	v603 = m.ExcPending
 	if v603 != 0 {
@@ -1676,7 +1676,7 @@ L160:
 	;
 	v616 = *(*int32)(unsafe.Add(mBase, _consts[175]))
 	v617 = *(*int32)(unsafe.Add(mBase, uint32(v425)+20))
-	F_ResourceOwnerForget(m, v616, v617+int32(1), int32(1628672))
+	F_ResourceOwnerForget(m, v616, v617+int32(1), int32(1629760))
 	mBase = m.M
 	v622 = m.ExcPending
 	if v622 != 0 {
@@ -1712,7 +1712,7 @@ L166:
 	goto L167
 L167:
 	;
-	v766 = int32(4510364)
+	v766 = int32(4514924)
 	v768 = *(*int32)(unsafe.Add(mBase, _consts[163]))
 	*(*int32)(unsafe.Add(mBase, _consts[163])) = v768 - int32(1)
 	goto L94

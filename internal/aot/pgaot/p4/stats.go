@@ -213,7 +213,7 @@ func F_AllocSetStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v58 - v113
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = v59
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = v115
-		v175 = F_pg_snprintf(m, v18+int32(32), int32(200), int32(449559), v18)
+		v175 = F_pg_snprintf(m, v18+int32(32), int32(200), int32(450288), v18)
 		mBase = m.M
 		v176 = m.ExcPending
 		if v176 != 0 {
@@ -337,13 +337,13 @@ func F_stats_check_arg_pair(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						v55 = *(*int32)(unsafe.Add(mBase, uint32(v50<<(uint(int32(3))%32))+uint32(_consts[903])))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v55
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v49
-						F_errmsg(m, int32(457939), v9)
+						F_errmsg(m, int32(458668), v9)
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(494375), int32(116), int32(213405))
+							F_errfinish(m, int32(495125), int32(116), int32(213781))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
@@ -400,13 +400,13 @@ func F_stats_check_arg_pair(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						v55 = *(*int32)(unsafe.Add(mBase, uint32(v50<<(uint(int32(3))%32))+uint32(_consts[903])))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v55
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v49
-						F_errmsg(m, int32(457939), v9)
+						F_errmsg(m, int32(458668), v9)
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(494375), int32(116), int32(213405))
+							F_errfinish(m, int32(495125), int32(116), int32(213781))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {

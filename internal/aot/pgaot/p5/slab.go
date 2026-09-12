@@ -115,13 +115,13 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-							F_errdetail(m, int32(665235), v12+int32(16))
+							F_errdetail(m, int32(666229), v12+int32(16))
 							mBase = m.M
 							v141 = m.ExcPending
 							if v141 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(500525), int32(372), int32(355919))
+								F_errfinish(m, int32(501289), int32(372), int32(356430))
 								mBase = m.M
 								v146 = m.ExcPending
 								if v146 != 0 {
@@ -178,7 +178,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+32)) = l1
 			*(*int64)(unsafe.Add(mBase, uint32(v29)+20)) = v78
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = v53
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = int32(1768852)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = int32(1772948)
 			if l0 != 0 {
 				v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 				*(*int32)(unsafe.Add(mBase, uint32(v29)+28)) = v90
@@ -206,13 +206,13 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v19
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-			F_errmsg_internal(m, int32(153705), v12)
+			F_errmsg_internal(m, int32(154069), v12)
 			mBase = m.M
 			v115 = m.ExcPending
 			if v115 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(500525), int32(360), int32(355919))
+				F_errfinish(m, int32(501289), int32(360), int32(356430))
 				mBase = m.M
 				v120 = m.ExcPending
 				if v120 != 0 {

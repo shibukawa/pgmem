@@ -59,10 +59,10 @@ func F_pg_encoding_to_char_private(m *base.Module, l0 int32) int32 {
 	var v11 int32
 	_ = v11
 	if base.Ui32(l0) <= base.Ui32(int32(41)) {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[769])))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[770])))
 		v11 = v10
 	} else {
-		v11 = int32(757756)
+		v11 = int32(758841)
 	}
 	return v11
 }

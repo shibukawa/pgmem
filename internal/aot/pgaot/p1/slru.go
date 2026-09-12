@@ -66,7 +66,7 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 			if v26 == int32(1) {
 				*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = v2
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v25
-				v37 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(510354), v7+int32(16))
+				v37 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(511118), v7+int32(16))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
@@ -80,13 +80,13 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 					} else {
 						if v51 != 0 {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(48)
-							F_errmsg_internal(m, int32(717284), v7)
+							F_errmsg_internal(m, int32(718369), v7)
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492924), int32(1518), int32(95380))
+								F_errfinish(m, int32(493674), int32(1518), int32(95660))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -109,7 +109,7 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 			} else {
 				*(*uint32)(unsafe.Add(mBase, uint32(v7)+36)) = uint32(v2)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v25
-				v47 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(510741), v7+int32(32))
+				v47 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(511505), v7+int32(32))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -123,13 +123,13 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 					} else {
 						if v51 != 0 {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(48)
-							F_errmsg_internal(m, int32(717284), v7)
+							F_errmsg_internal(m, int32(718369), v7)
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492924), int32(1518), int32(95380))
+								F_errfinish(m, int32(493674), int32(1518), int32(95660))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -157,7 +157,7 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 		if v26 == int32(1) {
 			*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = v2
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v25
-			v37 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(510354), v7+int32(16))
+			v37 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(511118), v7+int32(16))
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
@@ -171,13 +171,13 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 				} else {
 					if v51 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(48)
-						F_errmsg_internal(m, int32(717284), v7)
+						F_errmsg_internal(m, int32(718369), v7)
 						mBase = m.M
 						v58 = m.ExcPending
 						if v58 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(492924), int32(1518), int32(95380))
+							F_errfinish(m, int32(493674), int32(1518), int32(95660))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {
@@ -200,7 +200,7 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 		} else {
 			*(*uint32)(unsafe.Add(mBase, uint32(v7)+36)) = uint32(v2)
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v25
-			v47 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(510741), v7+int32(32))
+			v47 = F_pg_snprintf(m, v7+int32(48), int32(1024), int32(511505), v7+int32(32))
 			mBase = m.M
 			v48 = m.ExcPending
 			if v48 != 0 {
@@ -214,13 +214,13 @@ func F_SlruInternalDeleteSegment(m *base.Module, l0 int32, l1 int64) {
 				} else {
 					if v51 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(48)
-						F_errmsg_internal(m, int32(717284), v7)
+						F_errmsg_internal(m, int32(718369), v7)
 						mBase = m.M
 						v58 = m.ExcPending
 						if v58 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(492924), int32(1518), int32(95380))
+							F_errfinish(m, int32(493674), int32(1518), int32(95660))
 							mBase = m.M
 							v63 = m.ExcPending
 							if v63 != 0 {

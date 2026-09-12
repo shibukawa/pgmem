@@ -102,7 +102,7 @@ func F_dsm_attach(m *base.Module, l0 int32) int32 {
 	_ = v190
 	var v195 int32
 	_ = v195
-	v11 = int32(*(*uint8)(unsafe.Add(mBase, _consts[594])))
+	v11 = int32(*(*uint8)(unsafe.Add(mBase, _consts[595])))
 	if v11 == int32(0) {
 		goto L1
 	} else {
@@ -111,14 +111,14 @@ func F_dsm_attach(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	v15 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[594])) = uint8(v15)
+	*(*uint8)(unsafe.Add(mBase, _consts[595])) = uint8(v15)
 	goto L3
 L2:
 	;
 	goto L3
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[595]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[596]))
 	if v18 == int32(0) {
 		goto L5
 	} else {
@@ -144,7 +144,7 @@ L5:
 	}
 L6:
 	;
-	if v18 == int32(4122148) {
+	if v18 == int32(4126644) {
 		goto L5
 	} else {
 		goto L7
@@ -167,7 +167,7 @@ L9:
 L10:
 	;
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
-	if v34 != int32(4122148) {
+	if v34 != int32(4126644) {
 		v24 = v34
 		goto L8
 	} else {
@@ -208,7 +208,7 @@ L16:
 	goto L14
 L17:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, _consts[595]))
+	v58 = *(*int32)(unsafe.Add(mBase, _consts[596]))
 	if v58 == int32(0) {
 		goto L18
 	} else {
@@ -216,8 +216,8 @@ L17:
 	}
 L18:
 	;
-	v61 = int32(4122148)
-	*(*int32)(unsafe.Add(mBase, _consts[596])) = v61
+	v61 = int32(4126644)
+	*(*int32)(unsafe.Add(mBase, _consts[597])) = v61
 	v65 = v61
 	goto L20
 L19:
@@ -226,10 +226,10 @@ L19:
 	goto L20
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4122148)
+	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4126644)
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+4)) = v65
 	*(*int32)(unsafe.Add(mBase, uint32(v65))) = v55
-	*(*int32)(unsafe.Add(mBase, _consts[595])) = v55
+	*(*int32)(unsafe.Add(mBase, _consts[596])) = v55
 	*(*int64)(unsafe.Add(mBase, uint32(v55)+24)) = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v55)+16)) = int64(4294967295)
 	v77 = *(*int32)(unsafe.Add(mBase, _consts[581]))
@@ -241,7 +241,7 @@ L20:
 	}
 L21:
 	;
-	F_ResourceOwnerRemember(m, v77, v55, int32(1628764))
+	F_ResourceOwnerRemember(m, v77, v55, int32(1629852))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -273,7 +273,7 @@ L24:
 	goto L23
 L25:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+	v97 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
 	if v98 == int32(0) {
 		goto L26
@@ -338,7 +338,7 @@ L32:
 	}
 L33:
 	;
-	v132 = *(*int32)(unsafe.Add(mBase, _consts[598]))
+	v132 = *(*int32)(unsafe.Add(mBase, _consts[599]))
 	v135 = v97 + v105*int32(24)
 	v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+20))
 	v137 = int32(12)
@@ -402,7 +402,7 @@ L43:
 	goto L42
 L44:
 	;
-	F_errmsg_internal(m, int32(415033), int32(0))
+	F_errmsg_internal(m, int32(415614), int32(0))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -412,7 +412,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(497515), int32(692), int32(326334))
+	F_errfinish(m, int32(498265), int32(692), int32(326840))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -531,7 +531,7 @@ func F_dsm_detach(m *base.Module, l0 int32) {
 	_ = v154
 	var v157 int32
 	_ = v157
-	v6 = int32(4510364)
+	v6 = int32(4514924)
 	v8 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 	*(*int32)(unsafe.Add(mBase, _consts[83])) = v8 + int32(1)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
@@ -549,7 +549,7 @@ L2:
 	goto L3
 L3:
 	;
-	v36 = int32(4510364)
+	v36 = int32(4514924)
 	v38 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 	*(*int32)(unsafe.Add(mBase, _consts[83])) = v38 - int32(1)
 	v43 = l0 + int32(24)
@@ -664,7 +664,7 @@ L18:
 L19:
 	;
 	v75 = v64 * int32(24)
-	v77 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+	v77 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 	v80 = v75 + v77 + int32(16)
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(v80)))
 	v83 = v81 - int32(1)
@@ -738,8 +738,8 @@ L27:
 	}
 L28:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _consts[598]))
-	v124 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+	v122 = *(*int32)(unsafe.Add(mBase, _consts[599]))
+	v124 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 	v127 = v124 + v64*int32(24)
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v127)+20))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v127)+24))
@@ -756,7 +756,7 @@ L29:
 	goto L30
 L30:
 	;
-	v134 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+	v134 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 	*(*int32)(unsafe.Add(mBase, uint32(v134+v75)+16)) = int32(0)
 	v139 = *(*int32)(unsafe.Add(mBase, _consts[29]))
 	F_LWLockRelease(m, v139+int32(4352))
@@ -775,7 +775,7 @@ L32:
 	goto L17
 L33:
 	;
-	F_ResourceOwnerForget(m, v147, l0, int32(1628764))
+	F_ResourceOwnerForget(m, v147, l0, int32(1629852))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -877,7 +877,7 @@ func F_dsm_pin_segment(m *base.Module, l0 int32) {
 	if v17 != 0 {
 		return
 	} else {
-		v19 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+		v19 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 		v22 = v20 * int32(24)
 		v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19+v22)+32)))
@@ -885,7 +885,7 @@ func F_dsm_pin_segment(m *base.Module, l0 int32) {
 			v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			if v27&int32(1) == int32(0) {
 				v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-				v37 = *(*int32)(unsafe.Add(mBase, _consts[597]))
+				v37 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 				v38 = v37
 				v39 = v33 * int32(24)
 			} else {
@@ -919,13 +919,13 @@ func F_dsm_pin_segment(m *base.Module, l0 int32) {
 			if v71 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(452724), int32(0))
+				F_errmsg_internal(m, int32(453453), int32(0))
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(497515), int32(967), int32(95128))
+					F_errfinish(m, int32(498265), int32(967), int32(95408))
 					mBase = m.M
 					v80 = m.ExcPending
 					if v80 != 0 {

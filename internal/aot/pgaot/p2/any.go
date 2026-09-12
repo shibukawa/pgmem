@@ -382,7 +382,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v43
-	F_errmsg(m, int32(727185), v12)
+	F_errmsg(m, int32(728270), v12)
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -392,7 +392,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(497936), int32(1726), int32(330044))
+	F_errfinish(m, int32(498686), int32(1726), int32(330550))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {
@@ -467,7 +467,7 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[280]))
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[279]))
 			v15 = F_textToQualifiedNameList(m, v6)
 			mBase = m.M
 			v16 = m.ExcPending
@@ -487,7 +487,7 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						v26 = F_convert_any_priv_string(m, v11, int32(1656768))
+						v26 = F_convert_any_priv_string(m, v11, int32(1660864))
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
@@ -606,7 +606,7 @@ func F_has_any_column_privilege_name_name(m *base.Module, l0 int32) int32 {
 						if v26 != 0 {
 							return int32(0)
 						} else {
-							v28 = F_convert_any_priv_string(m, v13, int32(1656768))
+							v28 = F_convert_any_priv_string(m, v13, int32(1660864))
 							mBase = m.M
 							v29 = m.ExcPending
 							if v29 != 0 {

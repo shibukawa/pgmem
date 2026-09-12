@@ -11,8 +11,8 @@ func F_HandleRecoveryConflictInterrupt(m *base.Module, l0 int32) {
 	var v6 int32
 	_ = v6
 	v6 = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[666]))) = v6
-	*(*int32)(unsafe.Add(mBase, _consts[615])) = v6
+	*(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[667]))) = v6
+	*(*int32)(unsafe.Add(mBase, _consts[616])) = v6
 	*(*int32)(unsafe.Add(mBase, _consts[1])) = v6
 	return
 }
@@ -131,7 +131,7 @@ L9:
 	goto L11
 L10:
 	;
-	v15 = int32(449284)
+	v15 = int32(450013)
 	goto L11
 L11:
 	;
@@ -152,11 +152,11 @@ L12:
 	}
 L13:
 	;
-	v21 = int32(630570)
+	v21 = int32(631564)
 	goto L15
 L14:
 	;
-	v21 = int32(628872)
+	v21 = int32(629866)
 	goto L15
 L15:
 	;
@@ -185,7 +185,7 @@ L18:
 	goto L19
 L19:
 	;
-	F_errfinish(m, int32(492731), v28, int32(365525))
+	F_errfinish(m, int32(493460), v28, int32(366036))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -219,7 +219,7 @@ L22:
 L23:
 	;
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-	F_s_lock(m, v40+int32(96), int32(492731), int32(3096), int32(354391))
+	F_s_lock(m, v40+int32(96), int32(493460), int32(3096), int32(354902))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -289,7 +289,7 @@ L32:
 L33:
 	;
 	v63 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-	F_s_lock(m, v63+int32(96), int32(492731), int32(3135), int32(449304))
+	F_s_lock(m, v63+int32(96), int32(493460), int32(3135), int32(450033))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {

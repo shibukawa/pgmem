@@ -147,7 +147,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 		return int32(0)
 	} else {
 		v24 = int32(0)
-		v26 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v26 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v26 == v24 {
 			v36 = v24
 		} else {
@@ -167,7 +167,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v68 = int32(0)
-		v70 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v70 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v70 == v68 {
 			v80 = v68
 		} else {
@@ -186,7 +186,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v112 = int32(0)
-		v114 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v114 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v114 == v112 {
 			v124 = v112
 		} else {
@@ -205,7 +205,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v156 = int32(0)
-		v158 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v158 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v158 == v156 {
 			v168 = v156
 		} else {
@@ -224,7 +224,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v200 = int32(0)
-		v202 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v202 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v202 == v200 {
 			v212 = v200
 		} else {
@@ -243,7 +243,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v244 = int32(0)
-		v246 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v246 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v246 == v244 {
 			v256 = v244
 		} else {
@@ -262,7 +262,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v288 = int32(0)
-		v290 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v290 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v290 == v288 {
 			v300 = v288
 		} else {
@@ -281,7 +281,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v332 = int32(0)
-		v334 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v334 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v334 == v332 {
 			v344 = v332
 		} else {
@@ -300,7 +300,7 @@ func F_StatsShmemSize(m *base.Module) int32 {
 			}
 		}
 		v376 = int32(0)
-		v378 = *(*int32)(unsafe.Add(mBase, _consts[684]))
+		v378 = *(*int32)(unsafe.Add(mBase, _consts[685]))
 		if v378 == v376 {
 			v388 = v376
 		} else {

@@ -256,7 +256,7 @@ L21:
 	}
 L22:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, _consts[100]))
+	v87 = *(*int32)(unsafe.Add(mBase, _consts[99]))
 	v91 = F_WaitLatch(m, v87, int32(33), int32(-1), int32(134217734))
 	mBase = m.M
 	v92 = m.ExcPending
@@ -340,7 +340,7 @@ L30:
 	}
 L31:
 	;
-	v98 = *(*int32)(unsafe.Add(mBase, _consts[100]))
+	v98 = *(*int32)(unsafe.Add(mBase, _consts[99]))
 	*(*int32)(unsafe.Add(mBase, uint32(v98))) = int32(0)
 	goto L32
 L32:
@@ -364,7 +364,7 @@ L35:
 	}
 L36:
 	;
-	F_errmsg(m, int32(341944), int32(0))
+	F_errmsg(m, int32(342455), int32(0))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -374,7 +374,7 @@ L36:
 	}
 L37:
 	;
-	F_errhint(m, int32(626079), int32(0))
+	F_errhint(m, int32(627073), int32(0))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -384,7 +384,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(497886), int32(760), int32(326555))
+	F_errfinish(m, int32(498636), int32(760), int32(327061))
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {

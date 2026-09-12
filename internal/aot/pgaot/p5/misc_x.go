@@ -67,7 +67,7 @@ func F_xid8out(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-		v18 = F_pg_snprintf(m, v11, int32(21), int32(38340), v6)
+		v18 = F_pg_snprintf(m, v11, int32(21), int32(38564), v6)
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {

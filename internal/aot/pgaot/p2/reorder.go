@@ -1347,7 +1347,7 @@ func F_ReorderBufferReplay(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int6
 					if v32 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[125])) = int32(0)
+						*(*int32)(unsafe.Add(mBase, _consts[124])) = int32(0)
 						return
 					}
 				}

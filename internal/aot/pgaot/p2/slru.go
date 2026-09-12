@@ -81,7 +81,7 @@ func F_SlruDeleteSegment(m *base.Module, l0 int64) {
 	var v102 int32
 	_ = v102
 	v2 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[148]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[147]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
 	v12 = F_LWLockAcquire(m, v10, v2)
 	mBase = m.M
@@ -111,7 +111,7 @@ L3:
 	}
 L4:
 	;
-	F_SlruInternalDeleteSegment(m, int32(4410500), l0)
+	F_SlruInternalDeleteSegment(m, int32(4415060), l0)
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -234,7 +234,7 @@ L19:
 	goto L20
 L20:
 	;
-	F_SimpleLruWaitIO(m, int32(4410500), v28)
+	F_SimpleLruWaitIO(m, int32(4415060), v28)
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -252,7 +252,7 @@ L22:
 	goto L23
 L23:
 	;
-	F_SlruInternalWritePage(m, int32(4410500), v28, int32(0))
+	F_SlruInternalWritePage(m, int32(4415060), v28, int32(0))
 	mBase = m.M
 	v77 = m.ExcPending
 	if v77 != 0 {

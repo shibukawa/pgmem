@@ -66,7 +66,7 @@ func F_ExecutorFinish(m *base.Module, l0 int32) {
 	_ = v84
 	var v87 int32
 	_ = v87
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[441]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 	if v9 != 0 {
 		goto L1
 	} else {
@@ -87,7 +87,7 @@ L2:
 	goto L3
 L3:
 	;
-	v12 = int32(4515712)
+	v12 = int32(4520272)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+100))

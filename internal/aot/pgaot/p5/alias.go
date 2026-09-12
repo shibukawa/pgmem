@@ -3982,6 +3982,8 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32
 func F_CheckFunctionValidatorAccess(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_InitMaterializedSRF github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_InitMaterializedSRF
 func F_InitMaterializedSRF(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_get_call_result_type github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_get_call_result_type
+func F_get_call_result_type(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_init_MultiFuncCall github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_init_MultiFuncCall
 func F_init_MultiFuncCall(m *base.Module, l0 int32) int32
 //go:linkname F_build_function_result_tupdesc_t github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_build_function_result_tupdesc_t
@@ -4772,6 +4774,12 @@ func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
 //go:linkname F_find_word github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_find_word
 func F_find_word(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgstatindex_impl github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstatindex_impl
+func F_pgstatindex_impl(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgstatginindex_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgstatginindex_internal
+func F_pgstatginindex_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgstat_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstat_relation
+func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

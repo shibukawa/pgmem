@@ -2498,6 +2498,8 @@ func F_RemovePgTempRelationFiles(m *base.Module, l0 int32)
 func F_fsm_readbuf(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_RecordPageWithFreeSpace github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_RecordPageWithFreeSpace
 func F_RecordPageWithFreeSpace(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_GetRecordedFreeSpace github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetRecordedFreeSpace
+func F_GetRecordedFreeSpace(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_FreeSpaceMapVacuum github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FreeSpaceMapVacuum
 func F_FreeSpaceMapVacuum(m *base.Module, l0 int32)
 //go:linkname F_FreeSpaceMapVacuumRange github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_FreeSpaceMapVacuumRange

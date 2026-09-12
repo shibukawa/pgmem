@@ -85,14 +85,14 @@ func F_AtEOSubXact_Inval(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1157])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1156])) = int32(0)
 	goto L3
 L2:
 	;
 	goto L3
 L3:
 	;
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[1158]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[1157]))
 	if v10 == int32(0) {
 		goto L4
 	} else {
@@ -222,7 +222,7 @@ L20:
 L21:
 	;
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, _consts[1158])) = v56
+	*(*int32)(unsafe.Add(mBase, _consts[1157])) = v56
 	goto L8
 L22:
 	;
@@ -242,7 +242,7 @@ L24:
 	}
 L25:
 	;
-	v65 = *(*int32)(unsafe.Add(mBase, _consts[1159]))
+	v65 = *(*int32)(unsafe.Add(mBase, _consts[1158]))
 	F_LocalExecuteInvalidationMessage(m, v65+v61<<(uint(int32(4))%32))
 	mBase = m.M
 	v70 = m.ExcPending
@@ -276,11 +276,11 @@ L30:
 L31:
 	;
 	v97 = *(*int32)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int32)(unsafe.Add(mBase, _consts[1158])) = v97
+	*(*int32)(unsafe.Add(mBase, _consts[1157])) = v97
 	goto L8
 L32:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, _consts[1160]))
+	v84 = *(*int32)(unsafe.Add(mBase, _consts[1159]))
 	F_LocalExecuteInvalidationMessage(m, v84+v80<<(uint(int32(4))%32))
 	mBase = m.M
 	v89 = m.ExcPending
@@ -361,8 +361,8 @@ func F_AtEOSubXact_RelationCache(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	*(*int32)(unsafe.Add(mBase, _consts[1173])) = v4
-	v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[289])))
+	*(*int32)(unsafe.Add(mBase, _consts[1172])) = v4
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[288])))
 	if v15 == v4 {
 		goto L2
 	} else {
@@ -374,7 +374,7 @@ L1:
 	return
 L2:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[286]))
 	if v19 <= int32(0) {
 		goto L1
 	} else {
@@ -385,7 +385,7 @@ L3:
 	goto L4
 L4:
 	;
-	v49 = *(*int32)(unsafe.Add(mBase, _consts[1174]))
+	v49 = *(*int32)(unsafe.Add(mBase, _consts[1173]))
 	F_hash_seq_init(m, v9+int32(12), v49)
 	mBase = m.M
 	v51 = m.ExcPending
@@ -400,9 +400,9 @@ L5:
 	goto L6
 L6:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[1174]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[1173]))
 	v34 = int32(0)
-	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4503728), v34, v34)
+	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4508288), v34, v34)
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -440,7 +440,7 @@ L11:
 L12:
 	;
 	v42 = v25 + int32(1)
-	v44 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+	v44 = *(*int32)(unsafe.Add(mBase, _consts[286]))
 	if v42 < v44 {
 		v25 = v42
 		goto L6
@@ -853,13 +853,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						} else {
 							v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-							F_errmsg_internal(m, int32(87361), v9)
+							F_errmsg_internal(m, int32(87641), v9)
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(499667), int32(3475), int32(232783))
+								F_errfinish(m, int32(500431), int32(3475), int32(233159))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -1109,13 +1109,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					} else {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-						F_errmsg_internal(m, int32(87361), v9)
+						F_errmsg_internal(m, int32(87641), v9)
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(499667), int32(3475), int32(232783))
+							F_errfinish(m, int32(500431), int32(3475), int32(233159))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {

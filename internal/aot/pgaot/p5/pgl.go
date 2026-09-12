@@ -149,7 +149,7 @@ func F_pgl_startPGlite(m *base.Module) {
 	v4 = m.G0
 	v6 = v4 - int32(144)
 	m.G0 = v6
-	v8 = int32(4515712)
+	v8 = int32(4520272)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v12 = *(*int32)(unsafe.Add(mBase, _consts[146]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v12
@@ -192,13 +192,13 @@ func F_pgl_startPGlite(m *base.Module) {
 				} else {
 					v84 = *(*int32)(unsafe.Add(mBase, _consts[813]))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v84
-					F_errmsg(m, int32(197245), v6)
+					F_errmsg(m, int32(197621), v6)
 					mBase = m.M
 					v88 = m.ExcPending
 					if v88 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(494529), int32(260), int32(350840))
+						F_errfinish(m, int32(495279), int32(260), int32(351351))
 						mBase = m.M
 						v93 = m.ExcPending
 						if v93 != 0 {

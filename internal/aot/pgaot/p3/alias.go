@@ -78,6 +78,8 @@ func F_index_deform_tuple_internal(m *base.Module, l0 int32, l1 int32, l2 int32,
 func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_try_relation_open github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_try_relation_open
 func F_try_relation_open(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_relation_openrv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_openrv
+func F_relation_openrv(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
@@ -4360,6 +4362,14 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32)
 func F_seg_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_BloomFillMetapage github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BloomFillMetapage
 func F_BloomFillMetapage(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_pgstatindex_impl github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstatindex_impl
+func F_pgstatindex_impl(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pg_relpages_impl github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_relpages_impl
+func F_pg_relpages_impl(m *base.Module, l0 int32) int64
+//go:linkname F_pgstatginindex_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgstatginindex_internal
+func F_pgstatginindex_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pgstat_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstat_relation
+func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

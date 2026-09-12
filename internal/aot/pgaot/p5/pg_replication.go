@@ -127,13 +127,13 @@ func F_pg_replication_origin_progress(m *base.Module, l0 int32) int32 {
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(570637), int32(0))
+				F_errmsg(m, int32(571631), int32(0))
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(496969), int32(195), int32(160013))
+					F_errfinish(m, int32(497719), int32(195), int32(160377))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {

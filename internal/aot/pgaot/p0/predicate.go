@@ -304,7 +304,7 @@ L8:
 	}
 L9:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[637]))
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[638]))
 	v67 = F_get_hash_value(m, v66, l0)
 	mBase = m.M
 	v68 = m.ExcPending
@@ -525,7 +525,7 @@ L39:
 	}
 L40:
 	;
-	v146 = *(*int32)(unsafe.Add(mBase, _consts[638]))
+	v146 = *(*int32)(unsafe.Add(mBase, _consts[639]))
 	if int32(0) <= v146 {
 		v158 = v146
 		goto L38
@@ -537,7 +537,7 @@ L41:
 	goto L42
 L42:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, _consts[639]))
+	v157 = *(*int32)(unsafe.Add(mBase, _consts[640]))
 	v158 = v157
 	goto L38
 L43:
@@ -756,7 +756,7 @@ L74:
 	goto L72
 L75:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, _consts[637]))
+	v243 = *(*int32)(unsafe.Add(mBase, _consts[638]))
 	v246 = F_get_hash_value(m, v243, v14+int32(32))
 	mBase = m.M
 	v247 = m.ExcPending
@@ -791,7 +791,7 @@ L77:
 	*(*int32)(unsafe.Add(mBase, uint32(v267)+4)) = v270
 	v272 = *(*int32)(unsafe.Add(mBase, uint32(v266)))
 	*(*int32)(unsafe.Add(mBase, uint32(v270))) = v272
-	v275 = *(*int32)(unsafe.Add(mBase, _consts[640]))
+	v275 = *(*int32)(unsafe.Add(mBase, _consts[641]))
 	v278 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
 	v284 = F_hash_search_with_hash_value(m, v275, v14+int32(16), v246^v278<<(uint(v268)%32), int32(2), int32(0))
 	mBase = m.M
@@ -826,7 +826,7 @@ L81:
 	}
 L82:
 	;
-	v295 = *(*int32)(unsafe.Add(mBase, _consts[637]))
+	v295 = *(*int32)(unsafe.Add(mBase, _consts[638]))
 	v298 = F_hash_search_with_hash_value(m, v295, v218, v246, int32(2), int32(0))
 	mBase = m.M
 	v299 = m.ExcPending

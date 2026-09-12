@@ -74,7 +74,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[290]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[289]))
 	if v15 == int32(0) {
 		v114 = v3
 		goto L3
@@ -107,7 +107,7 @@ L8:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(v30+v27<<(uint(int32(2))%32))))
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[291]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[290]))
 	if v34 != v36 {
 		goto L10
 	} else {

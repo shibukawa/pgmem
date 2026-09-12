@@ -59,7 +59,7 @@ func F_GetDefaultTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v12 = *(*int32)(unsafe.Add(mBase, _consts[311]))
 			if int32(0) < v12 {
-				v15 = int32(4431744)
+				v15 = int32(4436304)
 				v17 = *(*int32)(unsafe.Add(mBase, _consts[312]))
 				v19 = v17 + int32(1)
 				if v19 < v12 {
@@ -121,13 +121,13 @@ func F_GetDefaultTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 								if v58 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(143411), int32(0))
+									F_errmsg(m, int32(143775), int32(0))
 									mBase = m.M
 									v62 = m.ExcPending
 									if v62 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(499979), int32(1178), int32(419708))
+										F_errfinish(m, int32(500743), int32(1178), int32(420289))
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {

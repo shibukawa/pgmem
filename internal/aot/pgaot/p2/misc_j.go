@@ -76,13 +76,13 @@ func F_jsonpath_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
-				F_errmsg_internal(m, int32(482840), v6)
+				F_errmsg_internal(m, int32(483569), v6)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498258), int32(125), int32(36537))
+					F_errfinish(m, int32(499008), int32(125), int32(36761))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -164,7 +164,7 @@ func F_jsonpath_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v15
 				if v15 == int32(0) {
-					F_yy_fatal_error_5(m, int32(684210))
+					F_yy_fatal_error_5(m, int32(685204))
 					mBase = m.M
 					v81 = m.ExcPending
 					if v81 != 0 {
@@ -177,7 +177,7 @@ func F_jsonpath_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v20 = int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v20
-					v23 = *(*int32)(unsafe.Add(mBase, _consts[159]))
+					v23 = *(*int32)(unsafe.Add(mBase, _consts[158]))
 					v24 = int32(0)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v24
 					*(*uint8)(unsafe.Add(mBase, uint32(v15))) = uint8(v24)
@@ -222,12 +222,12 @@ func F_jsonpath_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(1)
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, _consts[159])) = v23
+					*(*int32)(unsafe.Add(mBase, _consts[158])) = v23
 					return v8
 				}
 			}
 		} else {
-			F_yy_fatal_error_5(m, int32(684210))
+			F_yy_fatal_error_5(m, int32(685204))
 			mBase = m.M
 			v78 = m.ExcPending
 			if v78 != 0 {
