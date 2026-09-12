@@ -64,13 +64,13 @@ func F_sparsevec(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v17
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v14
-						F_errmsg(m, int32(485731), v7)
+						F_errmsg(m, int32(487981), v7)
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521057), int32(62), int32(300297))
+							F_errfinish(m, int32(523450), int32(62), int32(301548))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
@@ -813,7 +813,7 @@ L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v21
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v19
-	F_errmsg(m, int32(485731), v12)
+	F_errmsg(m, int32(487981), v12)
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -823,7 +823,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(520926), int32(92), int32(300297))
+	F_errfinish(m, int32(523319), int32(92), int32(301548))
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -914,13 +914,13 @@ func F_sparsevec_typmod_in(m *base.Module, l0 int32) int32 {
 						if v50 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(584477), int32(0))
+							F_errmsg(m, int32(587652), int32(0))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521057), int32(495), int32(291060))
+								F_errfinish(m, int32(523450), int32(495), int32(292288))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {
@@ -948,13 +948,13 @@ func F_sparsevec_typmod_in(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(1000000000)
-								F_errmsg(m, int32(497868), v5)
+								F_errmsg(m, int32(500180), v5)
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(521057), int32(500), int32(291060))
+									F_errfinish(m, int32(523450), int32(500), int32(292288))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -985,13 +985,13 @@ func F_sparsevec_typmod_in(m *base.Module, l0 int32) int32 {
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(231932), int32(0))
+						F_errmsg(m, int32(232936), int32(0))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521057), int32(490), int32(291060))
+							F_errfinish(m, int32(523450), int32(490), int32(292288))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {

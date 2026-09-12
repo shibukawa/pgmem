@@ -1493,7 +1493,7 @@ L31:
 	}
 L32:
 	;
-	v134 = int32(4549024)
+	v134 = int32(4553888)
 	v135 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v131
 	if v103 < int32(0) {

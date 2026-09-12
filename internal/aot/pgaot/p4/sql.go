@@ -106,7 +106,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 		if l0 <= int32(1041) {
 			switch l0 - int32(16) {
 			case 0:
-				F_appendStringInfoString(m, v6+int32(128), int32(552155))
+				F_appendStringInfoString(m, v6+int32(128), int32(554863))
 				mBase = m.M
 				v118 = m.ExcPending
 				if v118 != 0 {
@@ -131,13 +131,13 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-							F_errmsg_internal(m, int32(54674), v6)
+							F_errmsg_internal(m, int32(54949), v6)
 							mBase = m.M
 							v217 = m.ExcPending
 							if v217 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(517780), int32(3833), int32(394551))
+								F_errfinish(m, int32(520163), int32(3833), int32(396149))
 								mBase = m.M
 								v222 = m.ExcPending
 								if v222 != 0 {
@@ -188,7 +188,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				}
 			case 4:
-				F_appendStringInfoString(m, v6+int32(128), int32(539360))
+				F_appendStringInfoString(m, v6+int32(128), int32(542037))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
@@ -199,7 +199,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 					return v229
 				}
 			case 5:
-				F_appendStringInfoString(m, v6+int32(128), int32(539313))
+				F_appendStringInfoString(m, v6+int32(128), int32(541990))
 				mBase = m.M
 				v98 = m.ExcPending
 				if v98 != 0 {
@@ -210,7 +210,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 					return v229
 				}
 			case 7:
-				F_appendStringInfoString(m, v6+int32(128), int32(547213))
+				F_appendStringInfoString(m, v6+int32(128), int32(549890))
 				mBase = m.M
 				v93 = m.ExcPending
 				if v93 != 0 {
@@ -223,7 +223,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 			default:
 				switch l0 - int32(700) {
 				case 0:
-					F_appendStringInfoString(m, v6+int32(128), int32(555251))
+					F_appendStringInfoString(m, v6+int32(128), int32(558011))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -234,7 +234,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 						return v229
 					}
 				case 1:
-					F_appendStringInfoString(m, v6+int32(128), int32(561661))
+					F_appendStringInfoString(m, v6+int32(128), int32(564541))
 					mBase = m.M
 					v113 = m.ExcPending
 					if v113 != 0 {
@@ -246,7 +246,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				default:
 					if l0 == int32(142) {
-						F_appendStringInfoString(m, v6+int32(128), int32(553566))
+						F_appendStringInfoString(m, v6+int32(128), int32(556274))
 						mBase = m.M
 						v227 = m.ExcPending
 						if v227 != 0 {
@@ -271,13 +271,13 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-									F_errmsg_internal(m, int32(54674), v6)
+									F_errmsg_internal(m, int32(54949), v6)
 									mBase = m.M
 									v217 = m.ExcPending
 									if v217 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(517780), int32(3833), int32(394551))
+										F_errfinish(m, int32(520163), int32(3833), int32(396149))
 										mBase = m.M
 										v222 = m.ExcPending
 										if v222 != 0 {
@@ -336,7 +336,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 				case 0:
 					if l1 != int32(-1) {
 						*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l1 - int32(4)
-						F_appendStringInfo(m, v6+int32(128), int32(483937), v6+int32(16))
+						F_appendStringInfo(m, v6+int32(128), int32(486187), v6+int32(16))
 						mBase = m.M
 						v209 = m.ExcPending
 						if v209 != 0 {
@@ -347,7 +347,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 							return v229
 						}
 					} else {
-						F_appendStringInfoString(m, v6+int32(128), int32(547342))
+						F_appendStringInfoString(m, v6+int32(128), int32(550019))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -360,7 +360,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 					}
 				case 1:
 					if l1 == int32(-1) {
-						F_appendStringInfoString(m, v6+int32(128), int32(547339))
+						F_appendStringInfoString(m, v6+int32(128), int32(550016))
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
@@ -372,7 +372,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = l1 - int32(4)
-						F_appendStringInfo(m, v6+int32(128), int32(483934), v6+int32(32))
+						F_appendStringInfo(m, v6+int32(128), int32(486184), v6+int32(32))
 						mBase = m.M
 						v73 = m.ExcPending
 						if v73 != 0 {
@@ -386,7 +386,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 				default:
 					switch l0 - int32(1082) {
 					case 0:
-						F_appendStringInfoString(m, v6+int32(128), int32(560148))
+						F_appendStringInfoString(m, v6+int32(128), int32(563012))
 						mBase = m.M
 						v176 = m.ExcPending
 						if v176 != 0 {
@@ -398,7 +398,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					case 1:
 						if l1 == int32(-1) {
-							F_appendStringInfoString(m, v6+int32(128), int32(561137))
+							F_appendStringInfoString(m, v6+int32(128), int32(564001))
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
@@ -410,7 +410,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6)+64)) = l1
-							F_appendStringInfo(m, v6+int32(128), int32(483958), v6-int32(-64))
+							F_appendStringInfo(m, v6+int32(128), int32(486208), v6-int32(-64))
 							mBase = m.M
 							v133 = m.ExcPending
 							if v133 != 0 {
@@ -436,13 +436,13 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-									F_errmsg_internal(m, int32(54674), v6)
+									F_errmsg_internal(m, int32(54949), v6)
 									mBase = m.M
 									v217 = m.ExcPending
 									if v217 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(517780), int32(3833), int32(394551))
+										F_errfinish(m, int32(520163), int32(3833), int32(396149))
 										mBase = m.M
 										v222 = m.ExcPending
 										if v222 != 0 {
@@ -498,7 +498,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 				if l0 <= int32(1265) {
 					if l0 == int32(1114) {
 						if l1 == int32(-1) {
-							F_appendStringInfoString(m, v6+int32(128), int32(548061))
+							F_appendStringInfoString(m, v6+int32(128), int32(550738))
 							mBase = m.M
 							v155 = m.ExcPending
 							if v155 != 0 {
@@ -510,7 +510,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6)+96)) = l1
-							F_appendStringInfo(m, v6+int32(128), int32(483945), v6+int32(96))
+							F_appendStringInfo(m, v6+int32(128), int32(486195), v6+int32(96))
 							mBase = m.M
 							v163 = m.ExcPending
 							if v163 != 0 {
@@ -537,13 +537,13 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-										F_errmsg_internal(m, int32(54674), v6)
+										F_errmsg_internal(m, int32(54949), v6)
 										mBase = m.M
 										v217 = m.ExcPending
 										if v217 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(517780), int32(3833), int32(394551))
+											F_errfinish(m, int32(520163), int32(3833), int32(396149))
 											mBase = m.M
 											v222 = m.ExcPending
 											if v222 != 0 {
@@ -596,7 +596,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							if l1 != int32(-1) {
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+112)) = l1
-								F_appendStringInfo(m, v6+int32(128), int32(483905), v6+int32(112))
+								F_appendStringInfo(m, v6+int32(128), int32(486155), v6+int32(112))
 								mBase = m.M
 								v171 = m.ExcPending
 								if v171 != 0 {
@@ -607,7 +607,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 									return v229
 								}
 							} else {
-								F_appendStringInfoString(m, v6+int32(128), int32(529300))
+								F_appendStringInfoString(m, v6+int32(128), int32(531924))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -623,7 +623,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					if l0 == int32(1266) {
 						if l1 == int32(-1) {
-							F_appendStringInfoString(m, v6+int32(128), int32(529314))
+							F_appendStringInfoString(m, v6+int32(128), int32(531938))
 							mBase = m.M
 							v140 = m.ExcPending
 							if v140 != 0 {
@@ -635,7 +635,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6)+80)) = l1
-							F_appendStringInfo(m, v6+int32(128), int32(483922), v6+int32(80))
+							F_appendStringInfo(m, v6+int32(128), int32(486172), v6+int32(80))
 							mBase = m.M
 							v148 = m.ExcPending
 							if v148 != 0 {
@@ -662,13 +662,13 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-										F_errmsg_internal(m, int32(54674), v6)
+										F_errmsg_internal(m, int32(54949), v6)
 										mBase = m.M
 										v217 = m.ExcPending
 										if v217 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(517780), int32(3833), int32(394551))
+											F_errfinish(m, int32(520163), int32(3833), int32(396149))
 											mBase = m.M
 											v222 = m.ExcPending
 											if v222 != 0 {
@@ -723,7 +723,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 								v75 = l1 - int32(4)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+52)) = v75 & int32(65535)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = int32(base.Ui32(v75) >> (uint(int32(16)) % 32))
-								F_appendStringInfo(m, v6+int32(128), int32(483891), v6+int32(48))
+								F_appendStringInfo(m, v6+int32(128), int32(486141), v6+int32(48))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -734,7 +734,7 @@ func F_map_sql_type_to_xml_name(m *base.Module, l0 int32, l1 int32) int32 {
 									return v229
 								}
 							} else {
-								F_appendStringInfoString(m, v6+int32(128), int32(565939))
+								F_appendStringInfoString(m, v6+int32(128), int32(568976))
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
@@ -1122,7 +1122,7 @@ L41:
 L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v130
-	F_errmsg(m, int32(205863), v12)
+	F_errmsg(m, int32(206773), v12)
 	mBase = m.M
 	v135 = m.ExcPending
 	if v135 != 0 {
@@ -1132,7 +1132,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(513265), int32(293), int32(251978))
+	F_errfinish(m, int32(515577), int32(293), int32(253123))
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {

@@ -35,14 +35,14 @@ func F_ghstore_in(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(379146)
-			F_errmsg(m, int32(201439), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(380696)
+			F_errmsg(m, int32(202349), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(511873), int32(102), int32(290786))
+				F_errfinish(m, int32(514185), int32(102), int32(292014))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
@@ -1249,7 +1249,7 @@ func F_ghstore_picksplit(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								if v26&int32(65535) == int32(1) {
-									F_pg_qsort(m, v470, v467, int32(8), int32(7349))
+									F_pg_qsort(m, v470, v467, int32(8), int32(7417))
 									mBase = m.M
 									v479 = m.ExcPending
 									if v479 != 0 {
@@ -1527,7 +1527,7 @@ func F_ghstore_picksplit(m *base.Module, l0 int32) int32 {
 										}
 										break
 									}
-									F_pg_qsort(m, v470, v467, int32(8), int32(7349))
+									F_pg_qsort(m, v470, v467, int32(8), int32(7417))
 									mBase = m.M
 									v982 = m.ExcPending
 									if v982 != 0 {
@@ -2291,7 +2291,7 @@ func F_ghstore_picksplit(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							if v26&int32(65535) == int32(1) {
-								F_pg_qsort(m, v470, v467, int32(8), int32(7349))
+								F_pg_qsort(m, v470, v467, int32(8), int32(7417))
 								mBase = m.M
 								v479 = m.ExcPending
 								if v479 != 0 {
@@ -2569,7 +2569,7 @@ func F_ghstore_picksplit(m *base.Module, l0 int32) int32 {
 									}
 									break
 								}
-								F_pg_qsort(m, v470, v467, int32(8), int32(7349))
+								F_pg_qsort(m, v470, v467, int32(8), int32(7417))
 								mBase = m.M
 								v982 = m.ExcPending
 								if v982 != 0 {

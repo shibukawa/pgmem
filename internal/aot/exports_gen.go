@@ -10334,6 +10334,408 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgVisibilityRel(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pageinspect":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pageinspect: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPageinspect(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "brin_metapage_info":
+		if len(a) != 1 {
+			panic("aot: brin_metapage_info: want 1 args")
+		}
+		r := pgaot.BrinMetapageInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "brin_page_items":
+		if len(a) != 1 {
+			panic("aot: brin_page_items: want 1 args")
+		}
+		r := pgaot.BrinPageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "brin_page_type":
+		if len(a) != 1 {
+			panic("aot: brin_page_type: want 1 args")
+		}
+		r := pgaot.BrinPageType(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "brin_revmap_data":
+		if len(a) != 1 {
+			panic("aot: brin_revmap_data: want 1 args")
+		}
+		r := pgaot.BrinRevmapData(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_metap":
+		if len(a) != 1 {
+			panic("aot: bt_metap: want 1 args")
+		}
+		r := pgaot.BtMetap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_multi_page_stats":
+		if len(a) != 1 {
+			panic("aot: bt_multi_page_stats: want 1 args")
+		}
+		r := pgaot.BtMultiPageStats(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_page_items":
+		if len(a) != 1 {
+			panic("aot: bt_page_items: want 1 args")
+		}
+		r := pgaot.BtPageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_page_items_1_9":
+		if len(a) != 1 {
+			panic("aot: bt_page_items_1_9: want 1 args")
+		}
+		r := pgaot.BtPageItems_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_page_items_bytea":
+		if len(a) != 1 {
+			panic("aot: bt_page_items_bytea: want 1 args")
+		}
+		r := pgaot.BtPageItemsBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_page_stats":
+		if len(a) != 1 {
+			panic("aot: bt_page_stats: want 1 args")
+		}
+		r := pgaot.BtPageStats(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_page_stats_1_9":
+		if len(a) != 1 {
+			panic("aot: bt_page_stats_1_9: want 1 args")
+		}
+		r := pgaot.BtPageStats_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "fsm_page_contents":
+		if len(a) != 1 {
+			panic("aot: fsm_page_contents: want 1 args")
+		}
+		r := pgaot.FsmPageContents(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "get_raw_page":
+		if len(a) != 1 {
+			panic("aot: get_raw_page: want 1 args")
+		}
+		r := pgaot.GetRawPage(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "get_raw_page_1_9":
+		if len(a) != 1 {
+			panic("aot: get_raw_page_1_9: want 1 args")
+		}
+		r := pgaot.GetRawPage_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "get_raw_page_fork":
+		if len(a) != 1 {
+			panic("aot: get_raw_page_fork: want 1 args")
+		}
+		r := pgaot.GetRawPageFork(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "get_raw_page_fork_1_9":
+		if len(a) != 1 {
+			panic("aot: get_raw_page_fork_1_9: want 1 args")
+		}
+		r := pgaot.GetRawPageFork_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_leafpage_items":
+		if len(a) != 1 {
+			panic("aot: gin_leafpage_items: want 1 args")
+		}
+		r := pgaot.GinLeafpageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_metapage_info":
+		if len(a) != 1 {
+			panic("aot: gin_metapage_info: want 1 args")
+		}
+		r := pgaot.GinMetapageInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_page_opaque_info":
+		if len(a) != 1 {
+			panic("aot: gin_page_opaque_info: want 1 args")
+		}
+		r := pgaot.GinPageOpaqueInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gist_page_items":
+		if len(a) != 1 {
+			panic("aot: gist_page_items: want 1 args")
+		}
+		r := pgaot.GistPageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gist_page_items_bytea":
+		if len(a) != 1 {
+			panic("aot: gist_page_items_bytea: want 1 args")
+		}
+		r := pgaot.GistPageItemsBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gist_page_opaque_info":
+		if len(a) != 1 {
+			panic("aot: gist_page_opaque_info: want 1 args")
+		}
+		r := pgaot.GistPageOpaqueInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_bitmap_info":
+		if len(a) != 1 {
+			panic("aot: hash_bitmap_info: want 1 args")
+		}
+		r := pgaot.HashBitmapInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_metapage_info":
+		if len(a) != 1 {
+			panic("aot: hash_metapage_info: want 1 args")
+		}
+		r := pgaot.HashMetapageInfo(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_page_items":
+		if len(a) != 1 {
+			panic("aot: hash_page_items: want 1 args")
+		}
+		r := pgaot.HashPageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_page_stats":
+		if len(a) != 1 {
+			panic("aot: hash_page_stats: want 1 args")
+		}
+		r := pgaot.HashPageStats(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hash_page_type":
+		if len(a) != 1 {
+			panic("aot: hash_page_type: want 1 args")
+		}
+		r := pgaot.HashPageType(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "heap_page_items":
+		if len(a) != 1 {
+			panic("aot: heap_page_items: want 1 args")
+		}
+		r := pgaot.HeapPageItems(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "heap_tuple_infomask_flags":
+		if len(a) != 1 {
+			panic("aot: heap_tuple_infomask_flags: want 1 args")
+		}
+		r := pgaot.HeapTupleInfomaskFlags(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "page_checksum":
+		if len(a) != 1 {
+			panic("aot: page_checksum: want 1 args")
+		}
+		r := pgaot.PageChecksum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "page_checksum_1_9":
+		if len(a) != 1 {
+			panic("aot: page_checksum_1_9: want 1 args")
+		}
+		r := pgaot.PageChecksum_1_9(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "page_header":
+		if len(a) != 1 {
+			panic("aot: page_header: want 1 args")
+		}
+		r := pgaot.PageHeader(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_brin_metapage_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_brin_metapage_info: want 0 args")
+		}
+		r := pgaot.PgFinfoBrinMetapageInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_brin_page_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_brin_page_items: want 0 args")
+		}
+		r := pgaot.PgFinfoBrinPageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_brin_page_type":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_brin_page_type: want 0 args")
+		}
+		r := pgaot.PgFinfoBrinPageType(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_brin_revmap_data":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_brin_revmap_data: want 0 args")
+		}
+		r := pgaot.PgFinfoBrinRevmapData(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_metap":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_metap: want 0 args")
+		}
+		r := pgaot.PgFinfoBtMetap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_multi_page_stats":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_multi_page_stats: want 0 args")
+		}
+		r := pgaot.PgFinfoBtMultiPageStats(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_page_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_page_items: want 0 args")
+		}
+		r := pgaot.PgFinfoBtPageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_page_items_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_page_items_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoBtPageItems_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_page_items_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_page_items_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoBtPageItemsBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_page_stats":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_page_stats: want 0 args")
+		}
+		r := pgaot.PgFinfoBtPageStats(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_page_stats_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_page_stats_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoBtPageStats_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_fsm_page_contents":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_fsm_page_contents: want 0 args")
+		}
+		r := pgaot.PgFinfoFsmPageContents(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_get_raw_page":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_get_raw_page: want 0 args")
+		}
+		r := pgaot.PgFinfoGetRawPage(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_get_raw_page_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_get_raw_page_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoGetRawPage_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_get_raw_page_fork":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_get_raw_page_fork: want 0 args")
+		}
+		r := pgaot.PgFinfoGetRawPageFork(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_get_raw_page_fork_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_get_raw_page_fork_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoGetRawPageFork_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_leafpage_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_leafpage_items: want 0 args")
+		}
+		r := pgaot.PgFinfoGinLeafpageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_metapage_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_metapage_info: want 0 args")
+		}
+		r := pgaot.PgFinfoGinMetapageInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_page_opaque_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_page_opaque_info: want 0 args")
+		}
+		r := pgaot.PgFinfoGinPageOpaqueInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gist_page_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gist_page_items: want 0 args")
+		}
+		r := pgaot.PgFinfoGistPageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gist_page_items_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gist_page_items_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoGistPageItemsBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gist_page_opaque_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gist_page_opaque_info: want 0 args")
+		}
+		r := pgaot.PgFinfoGistPageOpaqueInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_bitmap_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_bitmap_info: want 0 args")
+		}
+		r := pgaot.PgFinfoHashBitmapInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_metapage_info":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_metapage_info: want 0 args")
+		}
+		r := pgaot.PgFinfoHashMetapageInfo(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_page_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_page_items: want 0 args")
+		}
+		r := pgaot.PgFinfoHashPageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_page_stats":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_page_stats: want 0 args")
+		}
+		r := pgaot.PgFinfoHashPageStats(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hash_page_type":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hash_page_type: want 0 args")
+		}
+		r := pgaot.PgFinfoHashPageType(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_heap_page_items":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_heap_page_items: want 0 args")
+		}
+		r := pgaot.PgFinfoHeapPageItems(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_heap_tuple_infomask_flags":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_heap_tuple_infomask_flags: want 0 args")
+		}
+		r := pgaot.PgFinfoHeapTupleInfomaskFlags(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_page_checksum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_page_checksum: want 0 args")
+		}
+		r := pgaot.PgFinfoPageChecksum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_page_checksum_1_9":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_page_checksum_1_9: want 0 args")
+		}
+		r := pgaot.PgFinfoPageChecksum_1_9(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_page_header":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_page_header: want 0 args")
+		}
+		r := pgaot.PgFinfoPageHeader(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_tuple_data_split":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_tuple_data_split: want 0 args")
+		}
+		r := pgaot.PgFinfoTupleDataSplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "tuple_data_split":
+		if len(a) != 1 {
+			panic("aot: tuple_data_split: want 1 args")
+		}
+		r := pgaot.TupleDataSplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

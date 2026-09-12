@@ -778,7 +778,7 @@ L21:
 	goto L18
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(340740)
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(342135)
 	F_errmsg_internal(m, int32(26205), v11)
 	mBase = m.M
 	v104 = m.ExcPending
@@ -789,7 +789,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(520926), int32(173), int32(26696))
+	F_errfinish(m, int32(523319), int32(173), int32(26696))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -3688,13 +3688,13 @@ func F_halfvec_l2_squared_distance(m *base.Module, l0 int32) int32 {
 						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v15)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v28
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-						F_errmsg(m, int32(496628), v7)
+						F_errmsg(m, int32(498940), v7)
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(520926), int32(80), int32(158859))
+							F_errfinish(m, int32(523319), int32(80), int32(159519))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
@@ -6083,7 +6083,7 @@ L89:
 	v432 = v213 * int32(-732923)
 	v434 = int32(base.Ui32(v432) >> (uint(int32(20)) % 32))
 	v435 = v434 + v213
-	v439 = *(*int64)(unsafe.Add(mBase, uint32(int32(1872416)-v435<<(uint(int32(3))%32))))
+	v439 = *(*int64)(unsafe.Add(mBase, uint32(int32(1876512)-v435<<(uint(int32(3))%32))))
 	v441 = v439 & int64(4294967295)
 	v442 = base.I64_extend_i32_u(v207)
 	v444 = int64(32)
@@ -7484,7 +7484,7 @@ L302:
 	v1663 = v1444 * int32(-732923)
 	v1665 = int32(base.Ui32(v1663) >> (uint(int32(20)) % 32))
 	v1666 = v1665 + v1444
-	v1670 = *(*int64)(unsafe.Add(mBase, uint32(int32(1872416)-v1666<<(uint(int32(3))%32))))
+	v1670 = *(*int64)(unsafe.Add(mBase, uint32(int32(1876512)-v1666<<(uint(int32(3))%32))))
 	v1672 = v1670 & int64(4294967295)
 	v1673 = base.I64_extend_i32_u(v1438)
 	v1675 = int64(32)

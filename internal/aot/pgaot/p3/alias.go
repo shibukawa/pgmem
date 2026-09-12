@@ -174,6 +174,8 @@ func F_gistcheckpage(m *base.Module, l0 int32, l1 int32)
 func F_gistGetFakeLSN(m *base.Module, l0 int32) int64
 //go:linkname F_gistXLogUpdate github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gistXLogUpdate
 func F_gistXLogUpdate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int64
+//go:linkname F__hash_ovflblkno_to_bitno github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__hash_ovflblkno_to_bitno
+func F__hash_ovflblkno_to_bitno(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__hash_getbuf github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__hash_getbuf
 func F__hash_getbuf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F__hash_checkpage github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__hash_checkpage
@@ -4424,6 +4426,14 @@ func F_amcheck_lock_relation_and_check(m *base.Module, l0 int32, l1 int32, l2 in
 func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_GetStrictOldestNonRemovableTransactionId github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetStrictOldestNonRemovableTransactionId
 func F_GetStrictOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32
+//go:linkname F_bt_index_block_validate github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_bt_index_block_validate
+func F_bt_index_block_validate(m *base.Module, l0 int32, l1 int64)
+//go:linkname F_bt_page_print_tuples github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bt_page_print_tuples
+func F_bt_page_print_tuples(m *base.Module, l0 int32) int32
+//go:linkname F_verify_hash_page github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_verify_hash_page
+func F_verify_hash_page(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
+func F_get_page_from_raw(m *base.Module, l0 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1

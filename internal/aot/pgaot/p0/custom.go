@@ -188,7 +188,7 @@ func F_define_custom_variable(m *base.Module, l0 int32) {
 	m.G0 = v9
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[955]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[954]))
 	v19 = F_hash_search(m, v14, v9+int32(8), v2, v2)
 	mBase = m.M
 	v20 = m.ExcPending
@@ -255,7 +255,7 @@ L8:
 	}
 L9:
 	;
-	v26 = *(*int32)(unsafe.Add(mBase, _consts[955]))
+	v26 = *(*int32)(unsafe.Add(mBase, _consts[954]))
 	v30 = F_hash_search(m, v26, l0, int32(3), v9+int32(15))
 	mBase = m.M
 	v31 = m.ExcPending
@@ -317,7 +317,7 @@ L16:
 	}
 L17:
 	;
-	v58 = int32(4547068)
+	v58 = int32(4551932)
 	goto L22
 L18:
 	;
@@ -362,7 +362,7 @@ L25:
 	goto L23
 L26:
 	;
-	v74 = int32(4547060)
+	v74 = int32(4551924)
 	goto L31
 L27:
 	;
@@ -740,7 +740,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(520509), int32(1060), int32(412220))
+	F_errfinish(m, int32(522902), int32(1060), int32(413818))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -767,7 +767,7 @@ L86:
 	;
 	v235 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v235
-	F_errmsg(m, int32(728928), v9)
+	F_errmsg(m, int32(732490), v9)
 	mBase = m.M
 	v239 = m.ExcPending
 	if v239 != 0 {
@@ -777,7 +777,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(520509), int32(4972), int32(412060))
+	F_errfinish(m, int32(522902), int32(4972), int32(413658))
 	mBase = m.M
 	v244 = m.ExcPending
 	if v244 != 0 {

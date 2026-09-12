@@ -104,13 +104,13 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 					if v86 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(250312), int32(0))
+						F_errmsg(m, int32(251370), int32(0))
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521324), int32(1403), int32(575844))
+							F_errfinish(m, int32(523717), int32(1403), int32(579019))
 							mBase = m.M
 							v95 = m.ExcPending
 							if v95 != 0 {
@@ -131,7 +131,7 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					v29 = int32(4549024)
+					v29 = int32(4553888)
 					v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 					*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -248,7 +248,7 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				v29 = int32(4549024)
+				v29 = int32(4553888)
 				v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 				*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -599,7 +599,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 		if v28 != 0 {
 			return int32(0)
 		} else {
-			v29 = int32(4549024)
+			v29 = int32(4553888)
 			v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -653,13 +653,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 						if v172 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(250312), int32(0))
+							F_errmsg(m, int32(251370), int32(0))
 							mBase = m.M
 							v176 = m.ExcPending
 							if v176 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(515856), int32(6708), int32(246802))
+								F_errfinish(m, int32(518239), int32(6708), int32(247835))
 								mBase = m.M
 								v181 = m.ExcPending
 								if v181 != 0 {
@@ -1008,13 +1008,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v201 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(365013), int32(0))
+											F_errmsg(m, int32(366539), int32(0))
 											mBase = m.M
 											v205 = m.ExcPending
 											if v205 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(515856), int32(6713), int32(246802))
+												F_errfinish(m, int32(518239), int32(6713), int32(247835))
 												mBase = m.M
 												v210 = m.ExcPending
 												if v210 != 0 {
@@ -1151,13 +1151,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v201 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(365013), int32(0))
+										F_errmsg(m, int32(366539), int32(0))
 										mBase = m.M
 										v205 = m.ExcPending
 										if v205 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(515856), int32(6713), int32(246802))
+											F_errfinish(m, int32(518239), int32(6713), int32(247835))
 											mBase = m.M
 											v210 = m.ExcPending
 											if v210 != 0 {

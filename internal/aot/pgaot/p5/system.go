@@ -163,7 +163,7 @@ func F_SystemAttributeByName(m *base.Module, l0 int32) int32 {
 	_ = v178
 	var v180 int32
 	_ = v180
-	v2 = int32(793692)
+	v2 = int32(797468)
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v6 = int32(*(*uint8)(unsafe.Add(mBase, _consts[225])))
 	if v6 == int32(0) {
@@ -228,13 +228,13 @@ L8:
 	goto L6
 L9:
 	;
-	return int32(793688)
+	return int32(797464)
 L10:
 	;
 	goto L11
 L11:
 	;
-	v32 = int32(793792)
+	v32 = int32(797568)
 	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v36 = int32(*(*uint8)(unsafe.Add(mBase, _consts[226])))
 	if v36 == int32(0) {
@@ -299,13 +299,13 @@ L19:
 	goto L17
 L20:
 	;
-	return int32(793788)
+	return int32(797564)
 L21:
 	;
 	goto L22
 L22:
 	;
-	v62 = int32(793892)
+	v62 = int32(797668)
 	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[227])))
 	if v66 == int32(0) {
@@ -370,13 +370,13 @@ L30:
 	goto L28
 L31:
 	;
-	return int32(793888)
+	return int32(797664)
 L32:
 	;
 	goto L33
 L33:
 	;
-	v92 = int32(793992)
+	v92 = int32(797768)
 	v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v96 = int32(*(*uint8)(unsafe.Add(mBase, _consts[228])))
 	if v96 == int32(0) {
@@ -441,13 +441,13 @@ L41:
 	goto L39
 L42:
 	;
-	return int32(793988)
+	return int32(797764)
 L43:
 	;
 	goto L44
 L44:
 	;
-	v122 = int32(794092)
+	v122 = int32(797868)
 	v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v126 = int32(*(*uint8)(unsafe.Add(mBase, _consts[229])))
 	if v126 == int32(0) {
@@ -512,14 +512,14 @@ L52:
 	goto L50
 L53:
 	;
-	return int32(794088)
+	return int32(797864)
 L54:
 	;
 	goto L55
 L55:
 	;
 	v152 = int32(0)
-	v154 = int32(794192)
+	v154 = int32(797968)
 	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	v158 = int32(*(*uint8)(unsafe.Add(mBase, _consts[230])))
 	if v158 == v152 {
@@ -588,7 +588,7 @@ L64:
 	goto L66
 L65:
 	;
-	v180 = int32(794188)
+	v180 = int32(797964)
 	goto L66
 L66:
 	;

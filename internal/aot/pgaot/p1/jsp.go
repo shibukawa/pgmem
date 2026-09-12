@@ -465,13 +465,13 @@ func F_jspOperationName(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-			F_errmsg_internal(m, int32(503930), v6)
+			F_errmsg_internal(m, int32(506242), v6)
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(518265), int32(918), int32(397498))
+				F_errfinish(m, int32(520648), int32(918), int32(399096))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {
@@ -492,13 +492,13 @@ func F_jspOperationName(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(503930), v6)
+				F_errmsg_internal(m, int32(506242), v6)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518265), int32(918), int32(397498))
+					F_errfinish(m, int32(520648), int32(918), int32(399096))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {

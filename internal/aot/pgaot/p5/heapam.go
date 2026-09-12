@@ -1000,13 +1000,13 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 						if v141 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(247550), int32(0))
+							F_errmsg_internal(m, int32(248583), int32(0))
 							mBase = m.M
 							v145 = m.ExcPending
 							if v145 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(517668), int32(6116), int32(357666))
+								F_errfinish(m, int32(520051), int32(6116), int32(359192))
 								mBase = m.M
 								v150 = m.ExcPending
 								if v150 != 0 {
@@ -1027,13 +1027,13 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 							if v141 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(247550), int32(0))
+								F_errmsg_internal(m, int32(248583), int32(0))
 								mBase = m.M
 								v145 = m.ExcPending
 								if v145 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(517668), int32(6116), int32(357666))
+									F_errfinish(m, int32(520051), int32(6116), int32(359192))
 									mBase = m.M
 									v150 = m.ExcPending
 									if v150 != 0 {
@@ -1046,7 +1046,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 								}
 							}
 						} else {
-							v75 = int32(4543684)
+							v75 = int32(4548548)
 							v77 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 							*(*int32)(unsafe.Add(mBase, _consts[14])) = v77 + int32(1)
 							F_MarkBufferDirty(m, v31)
@@ -1063,7 +1063,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 								v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 								v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+118)))
 								if v91 != int32(112) {
-									v126 = int32(4543684)
+									v126 = int32(4548548)
 									v128 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 									*(*int32)(unsafe.Add(mBase, _consts[14])) = v128 - int32(1)
 									F_UnlockReleaseBuffer(m, v31)
@@ -1094,7 +1094,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 									if v95 <= int32(0) {
 										v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 										if v98 != 0 {
-											v126 = int32(4543684)
+											v126 = int32(4548548)
 											v128 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 											*(*int32)(unsafe.Add(mBase, _consts[14])) = v128 - int32(1)
 											F_UnlockReleaseBuffer(m, v31)
@@ -1123,7 +1123,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 										} else {
 											v99 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 											if v99 != 0 {
-												v126 = int32(4543684)
+												v126 = int32(4548548)
 												v128 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 												*(*int32)(unsafe.Add(mBase, _consts[14])) = v128 - int32(1)
 												F_UnlockReleaseBuffer(m, v31)
@@ -1158,7 +1158,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 												if v103 != 0 {
 													return
 												} else {
-													v105 = int32(4444868)
+													v105 = int32(4449732)
 													v107 = int32(*(*uint8)(unsafe.Add(mBase, _consts[44])))
 													v108 = v107 | int32(1)
 													*(*uint8)(unsafe.Add(mBase, _consts[44])) = uint8(v108)
@@ -1181,7 +1181,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 																return
 															} else {
 																*(*int64)(unsafe.Add(mBase, uint32(v53))) = base.I64_rotr(v121, int64(32))
-																v126 = int32(4543684)
+																v126 = int32(4548548)
 																v128 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 																*(*int32)(unsafe.Add(mBase, _consts[14])) = v128 - int32(1)
 																F_UnlockReleaseBuffer(m, v31)
@@ -1222,7 +1222,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 										if v103 != 0 {
 											return
 										} else {
-											v105 = int32(4444868)
+											v105 = int32(4449732)
 											v107 = int32(*(*uint8)(unsafe.Add(mBase, _consts[44])))
 											v108 = v107 | int32(1)
 											*(*uint8)(unsafe.Add(mBase, _consts[44])) = uint8(v108)
@@ -1245,7 +1245,7 @@ func F_heapam_tuple_complete_speculative(m *base.Module, l0 int32, l1 int32, l2 
 														return
 													} else {
 														*(*int64)(unsafe.Add(mBase, uint32(v53))) = base.I64_rotr(v121, int64(32))
-														v126 = int32(4543684)
+														v126 = int32(4548548)
 														v128 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 														*(*int32)(unsafe.Add(mBase, _consts[14])) = v128 - int32(1)
 														F_UnlockReleaseBuffer(m, v31)

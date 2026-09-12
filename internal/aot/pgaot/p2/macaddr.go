@@ -353,7 +353,7 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 					v231 = v212
 				}
 				if base.F64_gt(v231, float64(100000)) != 0 {
-					v235 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1101])))
+					v235 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1098])))
 					if v235 != int32(1) {
 						v259 = int32(0)
 						*(*uint8)(unsafe.Add(mBase, uint32(v14)+8)) = uint8(v259)
@@ -378,13 +378,13 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 								*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = l0
 								*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v246
 								*(*float64)(unsafe.Add(mBase, uint32(v10))) = v231
-								F_errmsg_internal(m, int32(697670), v10)
+								F_errmsg_internal(m, int32(701156), v10)
 								mBase = m.M
 								v252 = m.ExcPending
 								if v252 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(521207), int32(437), int32(86726))
+									F_errfinish(m, int32(523600), int32(437), int32(87043))
 									mBase = m.M
 									v257 = m.ExcPending
 									if v257 != 0 {
@@ -401,7 +401,7 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v262 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1101])))
+					v262 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1098])))
 					v263 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
 					if base.F64_gt(base.F64_add(base.F64_div(base.F64_convert_i64_s(v263), float64(2000)), float64(0.5)), v231) != 0 {
 						v270 = int32(1)
@@ -426,13 +426,13 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 									*(*int64)(unsafe.Add(mBase, uint32(v10)+48)) = v281
 									*(*float64)(unsafe.Add(mBase, uint32(v10)+32)) = v231
 									*(*float64)(unsafe.Add(mBase, uint32(v10)+40)) = base.F64_add(base.F64_div(base.F64_convert_i64_s(v281), float64(2000)), float64(0.5))
-									F_errmsg_internal(m, int32(698212), v10+int32(32))
+									F_errmsg_internal(m, int32(701698), v10+int32(32))
 									mBase = m.M
 									v295 = m.ExcPending
 									if v295 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(521207), int32(455), int32(86726))
+										F_errfinish(m, int32(523600), int32(455), int32(87043))
 										mBase = m.M
 										v300 = m.ExcPending
 										if v300 != 0 {
@@ -467,13 +467,13 @@ func F_macaddr_abbrev_abort(m *base.Module, l0 int32, l1 int32) int32 {
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+80)) = l0
 									*(*int64)(unsafe.Add(mBase, uint32(v10)+72)) = v311
 									*(*float64)(unsafe.Add(mBase, uint32(v10)+64)) = v231
-									F_errmsg_internal(m, int32(697979), v10-int32(-64))
+									F_errmsg_internal(m, int32(701465), v10-int32(-64))
 									mBase = m.M
 									v319 = m.ExcPending
 									if v319 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(521207), int32(462), int32(86726))
+										F_errfinish(m, int32(523600), int32(462), int32(87043))
 										mBase = m.M
 										v324 = m.ExcPending
 										if v324 != 0 {

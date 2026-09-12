@@ -92,13 +92,13 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_errmsg_internal(m, int32(38533), v7)
+				F_errmsg_internal(m, int32(38655), v7)
 				mBase = m.M
 				v65 = m.ExcPending
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(511728), int32(1254), int32(479220))
+					F_errfinish(m, int32(514040), int32(1254), int32(481470))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -120,13 +120,13 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_errmsg_internal(m, int32(38533), v7)
+				F_errmsg_internal(m, int32(38655), v7)
 				mBase = m.M
 				v65 = m.ExcPending
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(511728), int32(1254), int32(479220))
+					F_errfinish(m, int32(514040), int32(1254), int32(481470))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -265,13 +265,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-							F_errdetail(m, int32(689563), v7)
+							F_errdetail(m, int32(693034), v7)
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(511728), int32(1164), int32(378730))
+								F_errfinish(m, int32(514040), int32(1164), int32(380280))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {
@@ -308,13 +308,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 						v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-						F_errdetail(m, int32(689563), v7)
+						F_errdetail(m, int32(693034), v7)
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(511728), int32(1164), int32(378730))
+							F_errfinish(m, int32(514040), int32(1164), int32(380280))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {

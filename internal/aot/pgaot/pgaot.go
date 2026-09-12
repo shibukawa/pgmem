@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7612)
-	m.G0 = int32(13114960)
+	m.T0 = make([]any, 7680)
+	m.G0 = int32(13119824)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -56,7 +56,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4443403
+	m.DataEnd = 4448267
 	initData_0(m)
 	return m
 }
@@ -89,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7612)
-	m.G0 = int32(13114960)
+	m.T0 = make([]any, 7680)
+	m.G0 = int32(13119824)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -123,7 +123,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4443403
+	m.DataEnd = 4448267
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -138,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7612)
-	m.G0 = int32(13114960)
+	m.T0 = make([]any, 7680)
+	m.G0 = int32(13119824)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -172,18 +172,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4443403
+	m.DataEnd = 4448267
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1637264])
-	copy(m.Memory[1642592:], wasm2goData_data_bin[1637264:1637273])
-	copy(m.Memory[1644640:], wasm2goData_data_bin[1637273:1650201])
-	copy(m.Memory[1667076:], wasm2goData_data_bin[1650201:1743442])
-	copy(m.Memory[1761344:], wasm2goData_data_bin[1743442:1855098])
-	copy(m.Memory[1884216:], wasm2goData_data_bin[1855098:4117728])
-	copy(m.Memory[4154336:], wasm2goData_data_bin[4117728:4406795])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1641040])
+	copy(m.Memory[1646368:], wasm2goData_data_bin[1641040:1641049])
+	copy(m.Memory[1648416:], wasm2goData_data_bin[1641049:1653977])
+	copy(m.Memory[1671172:], wasm2goData_data_bin[1653977:1747218])
+	copy(m.Memory[1765440:], wasm2goData_data_bin[1747218:1858874])
+	copy(m.Memory[1888312:], wasm2goData_data_bin[1858874:4122176])
+	copy(m.Memory[4159104:], wasm2goData_data_bin[4122176:4411339])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5347,6 +5347,207 @@ func PgVisibilityMapSummary(m *base.Module, l0 int32) int32 {
 }
 func PgVisibilityRel(m *base.Module, l0 int32) int32 {
 	return F_pg_visibility_rel(m, l0)
+}
+func PgMagicFuncPageinspect(m *base.Module) int32 {
+	return F_Pg_magic_func_pageinspect(m)
+}
+func BrinMetapageInfo(m *base.Module, l0 int32) int32 {
+	return F_brin_metapage_info(m, l0)
+}
+func BrinPageItems(m *base.Module, l0 int32) int32 {
+	return F_brin_page_items(m, l0)
+}
+func BrinPageType(m *base.Module, l0 int32) int32 {
+	return F_brin_page_type(m, l0)
+}
+func BrinRevmapData(m *base.Module, l0 int32) int32 {
+	return F_brin_revmap_data(m, l0)
+}
+func BtMetap(m *base.Module, l0 int32) int32 {
+	return F_bt_metap(m, l0)
+}
+func BtMultiPageStats(m *base.Module, l0 int32) int32 {
+	return F_bt_multi_page_stats(m, l0)
+}
+func BtPageItems(m *base.Module, l0 int32) int32 {
+	return F_bt_page_items(m, l0)
+}
+func BtPageItems_1_9(m *base.Module, l0 int32) int32 {
+	return F_bt_page_items_1_9(m, l0)
+}
+func BtPageItemsBytea(m *base.Module, l0 int32) int32 {
+	return F_bt_page_items_bytea(m, l0)
+}
+func BtPageStats(m *base.Module, l0 int32) int32 {
+	return F_bt_page_stats(m, l0)
+}
+func BtPageStats_1_9(m *base.Module, l0 int32) int32 {
+	return F_bt_page_stats_1_9(m, l0)
+}
+func FsmPageContents(m *base.Module, l0 int32) int32 {
+	return F_fsm_page_contents(m, l0)
+}
+func GetRawPage(m *base.Module, l0 int32) int32 {
+	return F_get_raw_page(m, l0)
+}
+func GetRawPage_1_9(m *base.Module, l0 int32) int32 {
+	return F_get_raw_page_1_9(m, l0)
+}
+func GetRawPageFork(m *base.Module, l0 int32) int32 {
+	return F_get_raw_page_fork(m, l0)
+}
+func GetRawPageFork_1_9(m *base.Module, l0 int32) int32 {
+	return F_get_raw_page_fork_1_9(m, l0)
+}
+func GinLeafpageItems(m *base.Module, l0 int32) int32 {
+	return F_gin_leafpage_items(m, l0)
+}
+func GinMetapageInfo(m *base.Module, l0 int32) int32 {
+	return F_gin_metapage_info(m, l0)
+}
+func GinPageOpaqueInfo(m *base.Module, l0 int32) int32 {
+	return F_gin_page_opaque_info(m, l0)
+}
+func GistPageItems(m *base.Module, l0 int32) int32 {
+	return F_gist_page_items(m, l0)
+}
+func GistPageItemsBytea(m *base.Module, l0 int32) int32 {
+	return F_gist_page_items_bytea(m, l0)
+}
+func GistPageOpaqueInfo(m *base.Module, l0 int32) int32 {
+	return F_gist_page_opaque_info(m, l0)
+}
+func HashBitmapInfo(m *base.Module, l0 int32) int32 {
+	return F_hash_bitmap_info(m, l0)
+}
+func HashMetapageInfo(m *base.Module, l0 int32) int32 {
+	return F_hash_metapage_info(m, l0)
+}
+func HashPageItems(m *base.Module, l0 int32) int32 {
+	return F_hash_page_items(m, l0)
+}
+func HashPageStats(m *base.Module, l0 int32) int32 {
+	return F_hash_page_stats(m, l0)
+}
+func HashPageType(m *base.Module, l0 int32) int32 {
+	return F_hash_page_type(m, l0)
+}
+func HeapPageItems(m *base.Module, l0 int32) int32 {
+	return F_heap_page_items(m, l0)
+}
+func HeapTupleInfomaskFlags(m *base.Module, l0 int32) int32 {
+	return F_heap_tuple_infomask_flags(m, l0)
+}
+func PageChecksum(m *base.Module, l0 int32) int32 {
+	return F_page_checksum(m, l0)
+}
+func PageChecksum_1_9(m *base.Module, l0 int32) int32 {
+	return F_page_checksum_1_9(m, l0)
+}
+func PageHeader(m *base.Module, l0 int32) int32 {
+	return F_page_header(m, l0)
+}
+func PgFinfoBrinMetapageInfo(m *base.Module) int32 {
+	return F_pg_finfo_brin_metapage_info(m)
+}
+func PgFinfoBrinPageItems(m *base.Module) int32 {
+	return F_pg_finfo_brin_page_items(m)
+}
+func PgFinfoBrinPageType(m *base.Module) int32 {
+	return F_pg_finfo_brin_page_type(m)
+}
+func PgFinfoBrinRevmapData(m *base.Module) int32 {
+	return F_pg_finfo_brin_revmap_data(m)
+}
+func PgFinfoBtMetap(m *base.Module) int32 {
+	return F_pg_finfo_bt_metap(m)
+}
+func PgFinfoBtMultiPageStats(m *base.Module) int32 {
+	return F_pg_finfo_bt_multi_page_stats(m)
+}
+func PgFinfoBtPageItems(m *base.Module) int32 {
+	return F_pg_finfo_bt_page_items(m)
+}
+func PgFinfoBtPageItems_1_9(m *base.Module) int32 {
+	return F_pg_finfo_bt_page_items_1_9(m)
+}
+func PgFinfoBtPageItemsBytea(m *base.Module) int32 {
+	return F_pg_finfo_bt_page_items_bytea(m)
+}
+func PgFinfoBtPageStats(m *base.Module) int32 {
+	return F_pg_finfo_bt_page_stats(m)
+}
+func PgFinfoBtPageStats_1_9(m *base.Module) int32 {
+	return F_pg_finfo_bt_page_stats_1_9(m)
+}
+func PgFinfoFsmPageContents(m *base.Module) int32 {
+	return F_pg_finfo_fsm_page_contents(m)
+}
+func PgFinfoGetRawPage(m *base.Module) int32 {
+	return F_pg_finfo_get_raw_page(m)
+}
+func PgFinfoGetRawPage_1_9(m *base.Module) int32 {
+	return F_pg_finfo_get_raw_page_1_9(m)
+}
+func PgFinfoGetRawPageFork(m *base.Module) int32 {
+	return F_pg_finfo_get_raw_page_fork(m)
+}
+func PgFinfoGetRawPageFork_1_9(m *base.Module) int32 {
+	return F_pg_finfo_get_raw_page_fork_1_9(m)
+}
+func PgFinfoGinLeafpageItems(m *base.Module) int32 {
+	return F_pg_finfo_gin_leafpage_items(m)
+}
+func PgFinfoGinMetapageInfo(m *base.Module) int32 {
+	return F_pg_finfo_gin_metapage_info(m)
+}
+func PgFinfoGinPageOpaqueInfo(m *base.Module) int32 {
+	return F_pg_finfo_gin_page_opaque_info(m)
+}
+func PgFinfoGistPageItems(m *base.Module) int32 {
+	return F_pg_finfo_gist_page_items(m)
+}
+func PgFinfoGistPageItemsBytea(m *base.Module) int32 {
+	return F_pg_finfo_gist_page_items_bytea(m)
+}
+func PgFinfoGistPageOpaqueInfo(m *base.Module) int32 {
+	return F_pg_finfo_gist_page_opaque_info(m)
+}
+func PgFinfoHashBitmapInfo(m *base.Module) int32 {
+	return F_pg_finfo_hash_bitmap_info(m)
+}
+func PgFinfoHashMetapageInfo(m *base.Module) int32 {
+	return F_pg_finfo_hash_metapage_info(m)
+}
+func PgFinfoHashPageItems(m *base.Module) int32 {
+	return F_pg_finfo_hash_page_items(m)
+}
+func PgFinfoHashPageStats(m *base.Module) int32 {
+	return F_pg_finfo_hash_page_stats(m)
+}
+func PgFinfoHashPageType(m *base.Module) int32 {
+	return F_pg_finfo_hash_page_type(m)
+}
+func PgFinfoHeapPageItems(m *base.Module) int32 {
+	return F_pg_finfo_heap_page_items(m)
+}
+func PgFinfoHeapTupleInfomaskFlags(m *base.Module) int32 {
+	return F_pg_finfo_heap_tuple_infomask_flags(m)
+}
+func PgFinfoPageChecksum(m *base.Module) int32 {
+	return F_pg_finfo_page_checksum(m)
+}
+func PgFinfoPageChecksum_1_9(m *base.Module) int32 {
+	return F_pg_finfo_page_checksum_1_9(m)
+}
+func PgFinfoPageHeader(m *base.Module) int32 {
+	return F_pg_finfo_page_header(m)
+}
+func PgFinfoTupleDataSplit(m *base.Module) int32 {
+	return F_pg_finfo_tuple_data_split(m)
+}
+func TupleDataSplit(m *base.Module, l0 int32) int32 {
+	return F_tuple_data_split(m, l0)
 }
 func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	F_HnswParallelBuildMain(m, l0, l1)

@@ -272,13 +272,13 @@ func F_JsonbValueToJsonb(m *base.Module, l0 int32) int32 {
 							if v64 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(383595), int32(0))
+								F_errmsg_internal(m, int32(385193), int32(0))
 								mBase = m.M
 								v68 = m.ExcPending
 								if v68 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(517863), int32(720), int32(239656))
+									F_errfinish(m, int32(520246), int32(720), int32(240689))
 									mBase = m.M
 									v73 = m.ExcPending
 									if v73 != 0 {
@@ -512,13 +512,13 @@ func F_JsonbValueToJsonb(m *base.Module, l0 int32) int32 {
 								if v64 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg_internal(m, int32(383595), int32(0))
+									F_errmsg_internal(m, int32(385193), int32(0))
 									mBase = m.M
 									v68 = m.ExcPending
 									if v68 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(517863), int32(720), int32(239656))
+										F_errfinish(m, int32(520246), int32(720), int32(240689))
 										mBase = m.M
 										v73 = m.ExcPending
 										if v73 != 0 {
@@ -1601,7 +1601,7 @@ L76:
 	}
 L77:
 	;
-	F_errmsg(m, int32(125349), int32(0))
+	F_errmsg(m, int32(125755), int32(0))
 	mBase = m.M
 	v314 = m.ExcPending
 	if v314 != 0 {
@@ -1611,7 +1611,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(514510), int32(4734), int32(24918))
+	F_errfinish(m, int32(516846), int32(4734), int32(24918))
 	mBase = m.M
 	v319 = m.ExcPending
 	if v319 != 0 {
@@ -1636,7 +1636,7 @@ L80:
 	}
 L81:
 	;
-	F_errmsg(m, int32(239483), int32(0))
+	F_errmsg(m, int32(240516), int32(0))
 	mBase = m.M
 	v330 = m.ExcPending
 	if v330 != 0 {
@@ -1646,7 +1646,7 @@ L81:
 	}
 L82:
 	;
-	F_errfinish(m, int32(514510), int32(4739), int32(24918))
+	F_errfinish(m, int32(516846), int32(4739), int32(24918))
 	mBase = m.M
 	v335 = m.ExcPending
 	if v335 != 0 {
@@ -2399,7 +2399,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(514510), int32(1614), int32(101984))
+	F_errfinish(m, int32(516846), int32(1614), int32(102301))
 	mBase = m.M
 	v226 = m.ExcPending
 	if v226 != 0 {
@@ -2538,7 +2538,7 @@ func F_jsonb_int4(m *base.Module, l0 int32) int32 {
 						return v41
 					}
 				default:
-					F_cannotCastJsonbValue(m, v21, int32(234654))
+					F_cannotCastJsonbValue(m, v21, int32(235658))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -2576,7 +2576,7 @@ func F_jsonb_int4(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				F_cannotCastJsonbValue(m, v21, int32(234654))
+				F_cannotCastJsonbValue(m, v21, int32(235658))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -3150,7 +3150,7 @@ func F_jsonb_to_recordset(m *base.Module, l0 int32) int32 {
 	var v8 int32
 	_ = v8
 	v3 = int32(0)
-	F_populate_recordset_worker(m, l0, int32(112341), v3, v3)
+	F_populate_recordset_worker(m, l0, int32(112714), v3, v3)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

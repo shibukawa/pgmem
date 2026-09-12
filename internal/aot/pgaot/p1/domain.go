@@ -99,13 +99,13 @@ func F_checkDomainOwner(m *base.Module, l0 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v36
-					F_errmsg(m, int32(288868), v5)
+					F_errmsg(m, int32(290096), v5)
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(514319), int32(3494), int32(227972))
+						F_errfinish(m, int32(516631), int32(3494), int32(228976))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {

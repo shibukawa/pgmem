@@ -275,7 +275,7 @@ L1:
 	return
 L2:
 	;
-	if v12 == int32(4547052) {
+	if v12 == int32(4551916) {
 		goto L1
 	} else {
 		goto L3
@@ -299,7 +299,7 @@ L5:
 	goto L1
 L6:
 	;
-	if v29 != int32(4547052) {
+	if v29 != int32(4551916) {
 		v24 = v29
 		goto L4
 	} else {
@@ -1183,7 +1183,7 @@ L133:
 L134:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v24))) = v352
-	v354 = int32(4547052)
+	v354 = int32(4551916)
 	*(*int32)(unsafe.Add(mBase, uint32(v28))) = v354
 	*(*int32)(unsafe.Add(mBase, uint32(v352)+4)) = v24
 	*(*int32)(unsafe.Add(mBase, _consts[1439])) = v24
@@ -1198,7 +1198,7 @@ L136:
 	goto L137
 L137:
 	;
-	v349 = int32(4547052)
+	v349 = int32(4551916)
 	*(*int32)(unsafe.Add(mBase, _consts[432])) = v349
 	v352 = v349
 	goto L134
@@ -1223,7 +1223,7 @@ L140:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v385))) = v386 | int32(4)
 	v393 = v24 + int32(12)
-	v394 = int32(4547060)
+	v394 = int32(4551924)
 	v395 = *(*int32)(unsafe.Add(mBase, _consts[1440]))
 	*(*int32)(unsafe.Add(mBase, uint32(v393))) = v395
 	*(*int32)(unsafe.Add(mBase, _consts[1440])) = v393

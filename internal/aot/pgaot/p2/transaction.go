@@ -391,7 +391,7 @@ L24:
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v41
-	F_errmsg_internal(m, int32(196322), v9-int32(-64))
+	F_errmsg_internal(m, int32(197232), v9-int32(-64))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -406,14 +406,14 @@ L26:
 	goto L28
 L27:
 	;
-	v41 = int32(565099)
+	v41 = int32(568037)
 	goto L28
 L28:
 	;
 	goto L25
 L29:
 	;
-	F_errfinish(m, int32(512898), int32(4124), int32(329937))
+	F_errfinish(m, int32(515210), int32(4124), int32(331332))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -452,7 +452,7 @@ L34:
 L35:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v88
-	F_errmsg_internal(m, int32(196322), v9+int32(48))
+	F_errmsg_internal(m, int32(197232), v9+int32(48))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -467,14 +467,14 @@ L36:
 	goto L38
 L37:
 	;
-	v88 = int32(565099)
+	v88 = int32(568037)
 	goto L38
 L38:
 	;
 	goto L35
 L39:
 	;
-	F_errfinish(m, int32(512898), int32(4133), int32(329937))
+	F_errfinish(m, int32(515210), int32(4133), int32(331332))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -519,7 +519,7 @@ L43:
 	}
 L44:
 	;
-	F_errmsg(m, int32(135328), int32(0))
+	F_errmsg(m, int32(135851), int32(0))
 	mBase = m.M
 	v113 = m.ExcPending
 	if v113 != 0 {
@@ -529,7 +529,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(512898), int32(4154), int32(329937))
+	F_errfinish(m, int32(515210), int32(4154), int32(331332))
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -554,7 +554,7 @@ L47:
 	}
 L48:
 	;
-	F_errmsg(m, int32(270650), int32(0))
+	F_errmsg(m, int32(271878), int32(0))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -564,7 +564,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(512898), int32(4165), int32(329937))
+	F_errfinish(m, int32(515210), int32(4165), int32(331332))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -588,7 +588,7 @@ L51:
 L52:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = v149
-	F_errmsg_internal(m, int32(196322), v9+int32(96))
+	F_errmsg_internal(m, int32(197232), v9+int32(96))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -603,14 +603,14 @@ L53:
 	goto L55
 L54:
 	;
-	v149 = int32(565099)
+	v149 = int32(568037)
 	goto L55
 L55:
 	;
 	goto L52
 L56:
 	;
-	F_errfinish(m, int32(512898), int32(4183), int32(329937))
+	F_errfinish(m, int32(515210), int32(4183), int32(331332))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -635,8 +635,8 @@ L58:
 	}
 L59:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(551866)
-	F_errmsg(m, int32(162212), v9+int32(80))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(554557)
+	F_errmsg(m, int32(163023), v9+int32(80))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -646,7 +646,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(512898), int32(4150), int32(329937))
+	F_errfinish(m, int32(515210), int32(4150), int32(331332))
 	mBase = m.M
 	v181 = m.ExcPending
 	if v181 != 0 {
@@ -695,7 +695,7 @@ L66:
 	goto L5
 L67:
 	;
-	F_errmsg(m, int32(135328), int32(0))
+	F_errmsg(m, int32(135851), int32(0))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {
@@ -705,7 +705,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(512898), int32(4075), int32(329937))
+	F_errfinish(m, int32(515210), int32(4075), int32(331332))
 	mBase = m.M
 	v199 = m.ExcPending
 	if v199 != 0 {
@@ -728,8 +728,8 @@ L70:
 	}
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(551866)
-	F_errmsg(m, int32(162212), v9)
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(554557)
+	F_errmsg(m, int32(163023), v9)
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -739,7 +739,7 @@ L71:
 	}
 L72:
 	;
-	F_errfinish(m, int32(512898), int32(4071), int32(329937))
+	F_errfinish(m, int32(515210), int32(4071), int32(331332))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -827,7 +827,7 @@ L83:
 L84:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v264
-	F_errmsg_internal(m, int32(196322), v9+int32(16))
+	F_errmsg_internal(m, int32(197232), v9+int32(16))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -842,14 +842,14 @@ L85:
 	goto L87
 L86:
 	;
-	v264 = int32(565099)
+	v264 = int32(568037)
 	goto L87
 L87:
 	;
 	goto L84
 L88:
 	;
-	F_errfinish(m, int32(512898), int32(4106), int32(329937))
+	F_errfinish(m, int32(515210), int32(4106), int32(331332))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -873,7 +873,7 @@ L90:
 L91:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v301
-	F_errmsg_internal(m, int32(196322), v9+int32(32))
+	F_errmsg_internal(m, int32(197232), v9+int32(32))
 	mBase = m.M
 	v307 = m.ExcPending
 	if v307 != 0 {
@@ -888,14 +888,14 @@ L92:
 	goto L94
 L93:
 	;
-	v301 = int32(565099)
+	v301 = int32(568037)
 	goto L94
 L94:
 	;
 	goto L91
 L95:
 	;
-	F_errfinish(m, int32(512898), int32(4099), int32(329937))
+	F_errfinish(m, int32(515210), int32(4099), int32(331332))
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {
@@ -1056,13 +1056,13 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 				if v64 != 0 {
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = l1
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v29
-					F_errmsg_internal(m, int32(60869), v9+int32(32))
+					F_errmsg_internal(m, int32(61186), v9+int32(32))
 					mBase = m.M
 					v72 = m.ExcPending
 					if v72 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(515640), int32(456), int32(107366))
+						F_errfinish(m, int32(518023), int32(456), int32(107683))
 						mBase = m.M
 						v77 = m.ExcPending
 						if v77 != 0 {
@@ -1103,20 +1103,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-													F_errmsg(m, int32(149531), v9)
+													F_errmsg(m, int32(150145), v9)
 													mBase = m.M
 													v155 = m.ExcPending
 													if v155 != 0 {
 														return
 													} else {
 														v158 = int32(501)
-														F_errhint(m, int32(607338), int32(0))
+														F_errhint(m, int32(610645), int32(0))
 														mBase = m.M
 														v162 = m.ExcPending
 														if v162 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(515640), v158, int32(107366))
+															F_errfinish(m, int32(518023), v158, int32(107683))
 															mBase = m.M
 															v166 = m.ExcPending
 															if v166 != 0 {
@@ -1149,20 +1149,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-															F_errmsg(m, int32(149531), v9)
+															F_errmsg(m, int32(150145), v9)
 															mBase = m.M
 															v155 = m.ExcPending
 															if v155 != 0 {
 																return
 															} else {
 																v158 = int32(501)
-																F_errhint(m, int32(607338), int32(0))
+																F_errhint(m, int32(610645), int32(0))
 																mBase = m.M
 																v162 = m.ExcPending
 																if v162 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(515640), v158, int32(107366))
+																	F_errfinish(m, int32(518023), v158, int32(107683))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {
@@ -1188,20 +1188,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-															F_errmsg(m, int32(149592), v9+int32(16))
+															F_errmsg(m, int32(150206), v9+int32(16))
 															mBase = m.M
 															v141 = m.ExcPending
 															if v141 != 0 {
 																return
 															} else {
 																v158 = int32(494)
-																F_errhint(m, int32(607338), int32(0))
+																F_errhint(m, int32(610645), int32(0))
 																mBase = m.M
 																v162 = m.ExcPending
 																if v162 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(515640), v158, int32(107366))
+																	F_errfinish(m, int32(518023), v158, int32(107683))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {
@@ -1251,20 +1251,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 														*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-														F_errmsg(m, int32(149531), v9)
+														F_errmsg(m, int32(150145), v9)
 														mBase = m.M
 														v155 = m.ExcPending
 														if v155 != 0 {
 															return
 														} else {
 															v158 = int32(501)
-															F_errhint(m, int32(607338), int32(0))
+															F_errhint(m, int32(610645), int32(0))
 															mBase = m.M
 															v162 = m.ExcPending
 															if v162 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(515640), v158, int32(107366))
+																F_errfinish(m, int32(518023), v158, int32(107683))
 																mBase = m.M
 																v166 = m.ExcPending
 																if v166 != 0 {
@@ -1297,20 +1297,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-																F_errmsg(m, int32(149531), v9)
+																F_errmsg(m, int32(150145), v9)
 																mBase = m.M
 																v155 = m.ExcPending
 																if v155 != 0 {
 																	return
 																} else {
 																	v158 = int32(501)
-																	F_errhint(m, int32(607338), int32(0))
+																	F_errhint(m, int32(610645), int32(0))
 																	mBase = m.M
 																	v162 = m.ExcPending
 																	if v162 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(515640), v158, int32(107366))
+																		F_errfinish(m, int32(518023), v158, int32(107683))
 																		mBase = m.M
 																		v166 = m.ExcPending
 																		if v166 != 0 {
@@ -1336,20 +1336,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-																F_errmsg(m, int32(149592), v9+int32(16))
+																F_errmsg(m, int32(150206), v9+int32(16))
 																mBase = m.M
 																v141 = m.ExcPending
 																if v141 != 0 {
 																	return
 																} else {
 																	v158 = int32(494)
-																	F_errhint(m, int32(607338), int32(0))
+																	F_errhint(m, int32(610645), int32(0))
 																	mBase = m.M
 																	v162 = m.ExcPending
 																	if v162 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(515640), v158, int32(107366))
+																		F_errfinish(m, int32(518023), v158, int32(107683))
 																		mBase = m.M
 																		v166 = m.ExcPending
 																		if v166 != 0 {
@@ -1399,20 +1399,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-															F_errmsg(m, int32(149531), v9)
+															F_errmsg(m, int32(150145), v9)
 															mBase = m.M
 															v155 = m.ExcPending
 															if v155 != 0 {
 																return
 															} else {
 																v158 = int32(501)
-																F_errhint(m, int32(607338), int32(0))
+																F_errhint(m, int32(610645), int32(0))
 																mBase = m.M
 																v162 = m.ExcPending
 																if v162 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(515640), v158, int32(107366))
+																	F_errfinish(m, int32(518023), v158, int32(107683))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {
@@ -1445,20 +1445,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 																	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-																	F_errmsg(m, int32(149531), v9)
+																	F_errmsg(m, int32(150145), v9)
 																	mBase = m.M
 																	v155 = m.ExcPending
 																	if v155 != 0 {
 																		return
 																	} else {
 																		v158 = int32(501)
-																		F_errhint(m, int32(607338), int32(0))
+																		F_errhint(m, int32(610645), int32(0))
 																		mBase = m.M
 																		v162 = m.ExcPending
 																		if v162 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(515640), v158, int32(107366))
+																			F_errfinish(m, int32(518023), v158, int32(107683))
 																			mBase = m.M
 																			v166 = m.ExcPending
 																			if v166 != 0 {
@@ -1484,20 +1484,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 																	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-																	F_errmsg(m, int32(149592), v9+int32(16))
+																	F_errmsg(m, int32(150206), v9+int32(16))
 																	mBase = m.M
 																	v141 = m.ExcPending
 																	if v141 != 0 {
 																		return
 																	} else {
 																		v158 = int32(494)
-																		F_errhint(m, int32(607338), int32(0))
+																		F_errhint(m, int32(610645), int32(0))
 																		mBase = m.M
 																		v162 = m.ExcPending
 																		if v162 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(515640), v158, int32(107366))
+																			F_errfinish(m, int32(518023), v158, int32(107683))
 																			mBase = m.M
 																			v166 = m.ExcPending
 																			if v166 != 0 {
@@ -1551,20 +1551,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-																F_errmsg(m, int32(149531), v9)
+																F_errmsg(m, int32(150145), v9)
 																mBase = m.M
 																v155 = m.ExcPending
 																if v155 != 0 {
 																	return
 																} else {
 																	v158 = int32(501)
-																	F_errhint(m, int32(607338), int32(0))
+																	F_errhint(m, int32(610645), int32(0))
 																	mBase = m.M
 																	v162 = m.ExcPending
 																	if v162 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(515640), v158, int32(107366))
+																		F_errfinish(m, int32(518023), v158, int32(107683))
 																		mBase = m.M
 																		v166 = m.ExcPending
 																		if v166 != 0 {
@@ -1597,20 +1597,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 																		*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-																		F_errmsg(m, int32(149531), v9)
+																		F_errmsg(m, int32(150145), v9)
 																		mBase = m.M
 																		v155 = m.ExcPending
 																		if v155 != 0 {
 																			return
 																		} else {
 																			v158 = int32(501)
-																			F_errhint(m, int32(607338), int32(0))
+																			F_errhint(m, int32(610645), int32(0))
 																			mBase = m.M
 																			v162 = m.ExcPending
 																			if v162 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(515640), v158, int32(107366))
+																				F_errfinish(m, int32(518023), v158, int32(107683))
 																				mBase = m.M
 																				v166 = m.ExcPending
 																				if v166 != 0 {
@@ -1636,20 +1636,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 																		*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-																		F_errmsg(m, int32(149592), v9+int32(16))
+																		F_errmsg(m, int32(150206), v9+int32(16))
 																		mBase = m.M
 																		v141 = m.ExcPending
 																		if v141 != 0 {
 																			return
 																		} else {
 																			v158 = int32(494)
-																			F_errhint(m, int32(607338), int32(0))
+																			F_errhint(m, int32(610645), int32(0))
 																			mBase = m.M
 																			v162 = m.ExcPending
 																			if v162 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(515640), v158, int32(107366))
+																				F_errfinish(m, int32(518023), v158, int32(107683))
 																				mBase = m.M
 																				v166 = m.ExcPending
 																				if v166 != 0 {
@@ -1709,20 +1709,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 											*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-											F_errmsg(m, int32(149531), v9)
+											F_errmsg(m, int32(150145), v9)
 											mBase = m.M
 											v155 = m.ExcPending
 											if v155 != 0 {
 												return
 											} else {
 												v158 = int32(501)
-												F_errhint(m, int32(607338), int32(0))
+												F_errhint(m, int32(610645), int32(0))
 												mBase = m.M
 												v162 = m.ExcPending
 												if v162 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(515640), v158, int32(107366))
+													F_errfinish(m, int32(518023), v158, int32(107683))
 													mBase = m.M
 													v166 = m.ExcPending
 													if v166 != 0 {
@@ -1755,20 +1755,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-													F_errmsg(m, int32(149531), v9)
+													F_errmsg(m, int32(150145), v9)
 													mBase = m.M
 													v155 = m.ExcPending
 													if v155 != 0 {
 														return
 													} else {
 														v158 = int32(501)
-														F_errhint(m, int32(607338), int32(0))
+														F_errhint(m, int32(610645), int32(0))
 														mBase = m.M
 														v162 = m.ExcPending
 														if v162 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(515640), v158, int32(107366))
+															F_errfinish(m, int32(518023), v158, int32(107683))
 															mBase = m.M
 															v166 = m.ExcPending
 															if v166 != 0 {
@@ -1794,20 +1794,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-													F_errmsg(m, int32(149592), v9+int32(16))
+													F_errmsg(m, int32(150206), v9+int32(16))
 													mBase = m.M
 													v141 = m.ExcPending
 													if v141 != 0 {
 														return
 													} else {
 														v158 = int32(494)
-														F_errhint(m, int32(607338), int32(0))
+														F_errhint(m, int32(610645), int32(0))
 														mBase = m.M
 														v162 = m.ExcPending
 														if v162 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(515640), v158, int32(107366))
+															F_errfinish(m, int32(518023), v158, int32(107683))
 															mBase = m.M
 															v166 = m.ExcPending
 															if v166 != 0 {
@@ -1857,20 +1857,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-												F_errmsg(m, int32(149531), v9)
+												F_errmsg(m, int32(150145), v9)
 												mBase = m.M
 												v155 = m.ExcPending
 												if v155 != 0 {
 													return
 												} else {
 													v158 = int32(501)
-													F_errhint(m, int32(607338), int32(0))
+													F_errhint(m, int32(610645), int32(0))
 													mBase = m.M
 													v162 = m.ExcPending
 													if v162 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(515640), v158, int32(107366))
+														F_errfinish(m, int32(518023), v158, int32(107683))
 														mBase = m.M
 														v166 = m.ExcPending
 														if v166 != 0 {
@@ -1903,20 +1903,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 														*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-														F_errmsg(m, int32(149531), v9)
+														F_errmsg(m, int32(150145), v9)
 														mBase = m.M
 														v155 = m.ExcPending
 														if v155 != 0 {
 															return
 														} else {
 															v158 = int32(501)
-															F_errhint(m, int32(607338), int32(0))
+															F_errhint(m, int32(610645), int32(0))
 															mBase = m.M
 															v162 = m.ExcPending
 															if v162 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(515640), v158, int32(107366))
+																F_errfinish(m, int32(518023), v158, int32(107683))
 																mBase = m.M
 																v166 = m.ExcPending
 																if v166 != 0 {
@@ -1942,20 +1942,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 														*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-														F_errmsg(m, int32(149592), v9+int32(16))
+														F_errmsg(m, int32(150206), v9+int32(16))
 														mBase = m.M
 														v141 = m.ExcPending
 														if v141 != 0 {
 															return
 														} else {
 															v158 = int32(494)
-															F_errhint(m, int32(607338), int32(0))
+															F_errhint(m, int32(610645), int32(0))
 															mBase = m.M
 															v162 = m.ExcPending
 															if v162 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(515640), v158, int32(107366))
+																F_errfinish(m, int32(518023), v158, int32(107683))
 																mBase = m.M
 																v166 = m.ExcPending
 																if v166 != 0 {
@@ -2005,20 +2005,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 													*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-													F_errmsg(m, int32(149531), v9)
+													F_errmsg(m, int32(150145), v9)
 													mBase = m.M
 													v155 = m.ExcPending
 													if v155 != 0 {
 														return
 													} else {
 														v158 = int32(501)
-														F_errhint(m, int32(607338), int32(0))
+														F_errhint(m, int32(610645), int32(0))
 														mBase = m.M
 														v162 = m.ExcPending
 														if v162 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(515640), v158, int32(107366))
+															F_errfinish(m, int32(518023), v158, int32(107683))
 															mBase = m.M
 															v166 = m.ExcPending
 															if v166 != 0 {
@@ -2051,20 +2051,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-															F_errmsg(m, int32(149531), v9)
+															F_errmsg(m, int32(150145), v9)
 															mBase = m.M
 															v155 = m.ExcPending
 															if v155 != 0 {
 																return
 															} else {
 																v158 = int32(501)
-																F_errhint(m, int32(607338), int32(0))
+																F_errhint(m, int32(610645), int32(0))
 																mBase = m.M
 																v162 = m.ExcPending
 																if v162 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(515640), v158, int32(107366))
+																	F_errfinish(m, int32(518023), v158, int32(107683))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {
@@ -2090,20 +2090,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 															*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-															F_errmsg(m, int32(149592), v9+int32(16))
+															F_errmsg(m, int32(150206), v9+int32(16))
 															mBase = m.M
 															v141 = m.ExcPending
 															if v141 != 0 {
 																return
 															} else {
 																v158 = int32(494)
-																F_errhint(m, int32(607338), int32(0))
+																F_errhint(m, int32(610645), int32(0))
 																mBase = m.M
 																v162 = m.ExcPending
 																if v162 != 0 {
 																	return
 																} else {
-																	F_errfinish(m, int32(515640), v158, int32(107366))
+																	F_errfinish(m, int32(518023), v158, int32(107683))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {
@@ -2157,20 +2157,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 														*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-														F_errmsg(m, int32(149531), v9)
+														F_errmsg(m, int32(150145), v9)
 														mBase = m.M
 														v155 = m.ExcPending
 														if v155 != 0 {
 															return
 														} else {
 															v158 = int32(501)
-															F_errhint(m, int32(607338), int32(0))
+															F_errhint(m, int32(610645), int32(0))
 															mBase = m.M
 															v162 = m.ExcPending
 															if v162 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(515640), v158, int32(107366))
+																F_errfinish(m, int32(518023), v158, int32(107683))
 																mBase = m.M
 																v166 = m.ExcPending
 																if v166 != 0 {
@@ -2203,20 +2203,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v29 - v55
-																F_errmsg(m, int32(149531), v9)
+																F_errmsg(m, int32(150145), v9)
 																mBase = m.M
 																v155 = m.ExcPending
 																if v155 != 0 {
 																	return
 																} else {
 																	v158 = int32(501)
-																	F_errhint(m, int32(607338), int32(0))
+																	F_errhint(m, int32(610645), int32(0))
 																	mBase = m.M
 																	v162 = m.ExcPending
 																	if v162 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(515640), v158, int32(107366))
+																		F_errfinish(m, int32(518023), v158, int32(107683))
 																		mBase = m.M
 																		v166 = m.ExcPending
 																		if v166 != 0 {
@@ -2242,20 +2242,20 @@ func F_SetTransactionIdLimit(m *base.Module, l0 int32, l1 int32) {
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v124
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v29 - v55
-																F_errmsg(m, int32(149592), v9+int32(16))
+																F_errmsg(m, int32(150206), v9+int32(16))
 																mBase = m.M
 																v141 = m.ExcPending
 																if v141 != 0 {
 																	return
 																} else {
 																	v158 = int32(494)
-																	F_errhint(m, int32(607338), int32(0))
+																	F_errhint(m, int32(610645), int32(0))
 																	mBase = m.M
 																	v162 = m.ExcPending
 																	if v162 != 0 {
 																		return
 																	} else {
-																		F_errfinish(m, int32(515640), v158, int32(107366))
+																		F_errfinish(m, int32(518023), v158, int32(107683))
 																		mBase = m.M
 																		v166 = m.ExcPending
 																		if v166 != 0 {
@@ -2456,7 +2456,7 @@ L9:
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+84)) = v41
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+80)) = l0
-	F_errmsg_internal(m, int32(32594), v12+int32(80))
+	F_errmsg_internal(m, int32(32698), v12+int32(80))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -2466,7 +2466,7 @@ L9:
 	}
 L10:
 	;
-	F_errfinish(m, int32(512898), int32(5674), int32(510976))
+	F_errfinish(m, int32(515210), int32(5674), int32(513288))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -2503,7 +2503,7 @@ L15:
 	v65 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = v66
-	F_appendStringInfo(m, v12+int32(96), int32(62959), v12-int32(-64))
+	F_appendStringInfo(m, v12+int32(96), int32(63276), v12-int32(-64))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -2528,7 +2528,7 @@ L18:
 	v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v87+v81<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v91
-	F_appendStringInfo(m, v12+int32(96), int32(64330), v12+int32(48))
+	F_appendStringInfo(m, v12+int32(96), int32(64647), v12+int32(48))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -2562,7 +2562,7 @@ L22:
 L23:
 	;
 	v117 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	v118 = int32(565099)
+	v118 = int32(568037)
 	v120 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 	if base.Ui32(v120) <= base.Ui32(int32(19)) {
 		goto L26
@@ -2605,7 +2605,7 @@ L29:
 	goto L31
 L30:
 	;
-	v130 = int32(471295)
+	v130 = int32(473545)
 	goto L31
 L31:
 	;
@@ -2644,11 +2644,11 @@ L34:
 	}
 L35:
 	;
-	v155 = int32(703573)
+	v155 = int32(707091)
 	goto L37
 L36:
 	;
-	v155 = int32(785690)
+	v155 = int32(789461)
 	goto L37
 L37:
 	;
@@ -2657,7 +2657,7 @@ L37:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v131
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v130
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v128
-	F_errmsg_internal(m, int32(184359), v12)
+	F_errmsg_internal(m, int32(185269), v12)
 	mBase = m.M
 	v163 = m.ExcPending
 	if v163 != 0 {
@@ -2667,7 +2667,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(512898), int32(5698), int32(510976))
+	F_errfinish(m, int32(515210), int32(5698), int32(513288))
 	mBase = m.M
 	v168 = m.ExcPending
 	if v168 != 0 {
@@ -3025,7 +3025,7 @@ L15:
 	return
 L16:
 	;
-	v109 = F_SimpleLruReadPage(m, int32(4443636), base.I64_extend_i32_u(v48), int32(1), v38)
+	v109 = F_SimpleLruReadPage(m, int32(4448500), base.I64_extend_i32_u(v48), int32(1), v38)
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {

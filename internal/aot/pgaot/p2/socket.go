@@ -70,13 +70,13 @@ func F_socket_flush(m *base.Module) int32 {
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(265721), int32(0))
+					F_errmsg(m, int32(266949), int32(0))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(517558), int32(886), int32(349654))
+						F_errfinish(m, int32(519941), int32(886), int32(351162))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -93,7 +93,7 @@ func F_socket_flush(m *base.Module) int32 {
 			v13 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v10)+4)) = uint8(v13)
 			v16 = *(*int32)(unsafe.Add(mBase, _consts[478]))
-			v19 = F_internal_flush_buffer(m, v16, int32(4447944), int32(4447948))
+			v19 = F_internal_flush_buffer(m, v16, int32(4452808), int32(4452812))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {

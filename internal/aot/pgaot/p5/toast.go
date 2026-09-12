@@ -295,13 +295,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											if v337 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg_internal(m, int32(663457), int32(0))
+												F_errmsg_internal(m, int32(666846), int32(0))
 												mBase = m.M
 												v341 = m.ExcPending
 												if v341 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(518619), int32(193), int32(407985))
+													F_errfinish(m, int32(521002), int32(193), int32(409583))
 													mBase = m.M
 													v346 = m.ExcPending
 													if v346 != 0 {
@@ -315,7 +315,7 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											}
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v19
-											v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39707), v15+int32(48))
+											v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39883), v15+int32(48))
 											mBase = m.M
 											v59 = m.ExcPending
 											if v59 != 0 {
@@ -334,19 +334,19 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 													if v72 != 0 {
 														return int32(0)
 													} else {
-														F_TupleDescInitEntry(m, v71, int32(1), int32(453608), int32(26), int32(-1), int32(0))
+														F_TupleDescInitEntry(m, v71, int32(1), int32(455765), int32(26), int32(-1), int32(0))
 														mBase = m.M
 														v79 = m.ExcPending
 														if v79 != 0 {
 															return int32(0)
 														} else {
-															F_TupleDescInitEntry(m, v71, int32(2), int32(240758), int32(23), int32(-1), int32(0))
+															F_TupleDescInitEntry(m, v71, int32(2), int32(241791), int32(23), int32(-1), int32(0))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
 																return int32(0)
 															} else {
-																F_TupleDescInitEntry(m, v71, int32(3), int32(525303), int32(17), int32(-1), int32(0))
+																F_TupleDescInitEntry(m, v71, int32(3), int32(527785), int32(17), int32(-1), int32(0))
 																mBase = m.M
 																v93 = m.ExcPending
 																if v93 != 0 {
@@ -457,9 +457,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																						*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																						*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
-																						v203 = int32(453608)
+																						v203 = int32(455765)
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
-																						v205 = int32(240758)
+																						v205 = int32(241791)
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = v205
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v203
 																						*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v205
@@ -508,13 +508,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																														return int32(0)
 																													} else {
 																														*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-																														F_errmsg_internal(m, int32(49502), v15+int32(16))
+																														F_errmsg_internal(m, int32(49777), v15+int32(16))
 																														mBase = m.M
 																														v356 = m.ExcPending
 																														if v356 != 0 {
 																															return int32(0)
 																														} else {
-																															F_errfinish(m, int32(518619), int32(342), int32(407985))
+																															F_errfinish(m, int32(521002), int32(342), int32(409583))
 																															mBase = m.M
 																															v361 = m.ExcPending
 																															if v361 != 0 {
@@ -615,13 +615,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																															return int32(0)
 																														} else {
 																															*(*int32)(unsafe.Add(mBase, uint32(v15))) = v19
-																															F_errmsg_internal(m, int32(49502), v15)
+																															F_errmsg_internal(m, int32(49777), v15)
 																															mBase = m.M
 																															v369 = m.ExcPending
 																															if v369 != 0 {
 																																return int32(0)
 																															} else {
-																																F_errfinish(m, int32(518619), int32(362), int32(407985))
+																																F_errfinish(m, int32(521002), int32(362), int32(409583))
 																																mBase = m.M
 																																v374 = m.ExcPending
 																																if v374 != 0 {
@@ -750,13 +750,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v337 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg_internal(m, int32(663457), int32(0))
+											F_errmsg_internal(m, int32(666846), int32(0))
 											mBase = m.M
 											v341 = m.ExcPending
 											if v341 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(518619), int32(193), int32(407985))
+												F_errfinish(m, int32(521002), int32(193), int32(409583))
 												mBase = m.M
 												v346 = m.ExcPending
 												if v346 != 0 {
@@ -770,7 +770,7 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										}
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v19
-										v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39707), v15+int32(48))
+										v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39883), v15+int32(48))
 										mBase = m.M
 										v59 = m.ExcPending
 										if v59 != 0 {
@@ -789,19 +789,19 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 												if v72 != 0 {
 													return int32(0)
 												} else {
-													F_TupleDescInitEntry(m, v71, int32(1), int32(453608), int32(26), int32(-1), int32(0))
+													F_TupleDescInitEntry(m, v71, int32(1), int32(455765), int32(26), int32(-1), int32(0))
 													mBase = m.M
 													v79 = m.ExcPending
 													if v79 != 0 {
 														return int32(0)
 													} else {
-														F_TupleDescInitEntry(m, v71, int32(2), int32(240758), int32(23), int32(-1), int32(0))
+														F_TupleDescInitEntry(m, v71, int32(2), int32(241791), int32(23), int32(-1), int32(0))
 														mBase = m.M
 														v86 = m.ExcPending
 														if v86 != 0 {
 															return int32(0)
 														} else {
-															F_TupleDescInitEntry(m, v71, int32(3), int32(525303), int32(17), int32(-1), int32(0))
+															F_TupleDescInitEntry(m, v71, int32(3), int32(527785), int32(17), int32(-1), int32(0))
 															mBase = m.M
 															v93 = m.ExcPending
 															if v93 != 0 {
@@ -912,9 +912,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
-																					v203 = int32(453608)
+																					v203 = int32(455765)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
-																					v205 = int32(240758)
+																					v205 = int32(241791)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = v205
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v203
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v205
@@ -963,13 +963,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																													return int32(0)
 																												} else {
 																													*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-																													F_errmsg_internal(m, int32(49502), v15+int32(16))
+																													F_errmsg_internal(m, int32(49777), v15+int32(16))
 																													mBase = m.M
 																													v356 = m.ExcPending
 																													if v356 != 0 {
 																														return int32(0)
 																													} else {
-																														F_errfinish(m, int32(518619), int32(342), int32(407985))
+																														F_errfinish(m, int32(521002), int32(342), int32(409583))
 																														mBase = m.M
 																														v361 = m.ExcPending
 																														if v361 != 0 {
@@ -1070,13 +1070,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																														return int32(0)
 																													} else {
 																														*(*int32)(unsafe.Add(mBase, uint32(v15))) = v19
-																														F_errmsg_internal(m, int32(49502), v15)
+																														F_errmsg_internal(m, int32(49777), v15)
 																														mBase = m.M
 																														v369 = m.ExcPending
 																														if v369 != 0 {
 																															return int32(0)
 																														} else {
-																															F_errfinish(m, int32(518619), int32(362), int32(407985))
+																															F_errfinish(m, int32(521002), int32(362), int32(409583))
 																															mBase = m.M
 																															v374 = m.ExcPending
 																															if v374 != 0 {
@@ -1214,13 +1214,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v337 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg_internal(m, int32(663457), int32(0))
+											F_errmsg_internal(m, int32(666846), int32(0))
 											mBase = m.M
 											v341 = m.ExcPending
 											if v341 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(518619), int32(193), int32(407985))
+												F_errfinish(m, int32(521002), int32(193), int32(409583))
 												mBase = m.M
 												v346 = m.ExcPending
 												if v346 != 0 {
@@ -1234,7 +1234,7 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										}
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v19
-										v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39707), v15+int32(48))
+										v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39883), v15+int32(48))
 										mBase = m.M
 										v59 = m.ExcPending
 										if v59 != 0 {
@@ -1253,19 +1253,19 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 												if v72 != 0 {
 													return int32(0)
 												} else {
-													F_TupleDescInitEntry(m, v71, int32(1), int32(453608), int32(26), int32(-1), int32(0))
+													F_TupleDescInitEntry(m, v71, int32(1), int32(455765), int32(26), int32(-1), int32(0))
 													mBase = m.M
 													v79 = m.ExcPending
 													if v79 != 0 {
 														return int32(0)
 													} else {
-														F_TupleDescInitEntry(m, v71, int32(2), int32(240758), int32(23), int32(-1), int32(0))
+														F_TupleDescInitEntry(m, v71, int32(2), int32(241791), int32(23), int32(-1), int32(0))
 														mBase = m.M
 														v86 = m.ExcPending
 														if v86 != 0 {
 															return int32(0)
 														} else {
-															F_TupleDescInitEntry(m, v71, int32(3), int32(525303), int32(17), int32(-1), int32(0))
+															F_TupleDescInitEntry(m, v71, int32(3), int32(527785), int32(17), int32(-1), int32(0))
 															mBase = m.M
 															v93 = m.ExcPending
 															if v93 != 0 {
@@ -1376,9 +1376,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																					*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
-																					v203 = int32(453608)
+																					v203 = int32(455765)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
-																					v205 = int32(240758)
+																					v205 = int32(241791)
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = v205
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v203
 																					*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v205
@@ -1427,13 +1427,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																													return int32(0)
 																												} else {
 																													*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-																													F_errmsg_internal(m, int32(49502), v15+int32(16))
+																													F_errmsg_internal(m, int32(49777), v15+int32(16))
 																													mBase = m.M
 																													v356 = m.ExcPending
 																													if v356 != 0 {
 																														return int32(0)
 																													} else {
-																														F_errfinish(m, int32(518619), int32(342), int32(407985))
+																														F_errfinish(m, int32(521002), int32(342), int32(409583))
 																														mBase = m.M
 																														v361 = m.ExcPending
 																														if v361 != 0 {
@@ -1534,13 +1534,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																														return int32(0)
 																													} else {
 																														*(*int32)(unsafe.Add(mBase, uint32(v15))) = v19
-																														F_errmsg_internal(m, int32(49502), v15)
+																														F_errmsg_internal(m, int32(49777), v15)
 																														mBase = m.M
 																														v369 = m.ExcPending
 																														if v369 != 0 {
 																															return int32(0)
 																														} else {
-																															F_errfinish(m, int32(518619), int32(362), int32(407985))
+																															F_errfinish(m, int32(521002), int32(362), int32(409583))
 																															mBase = m.M
 																															v374 = m.ExcPending
 																															if v374 != 0 {
@@ -1669,13 +1669,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									if v337 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(663457), int32(0))
+										F_errmsg_internal(m, int32(666846), int32(0))
 										mBase = m.M
 										v341 = m.ExcPending
 										if v341 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(518619), int32(193), int32(407985))
+											F_errfinish(m, int32(521002), int32(193), int32(409583))
 											mBase = m.M
 											v346 = m.ExcPending
 											if v346 != 0 {
@@ -1689,7 +1689,7 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v19
-									v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39707), v15+int32(48))
+									v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39883), v15+int32(48))
 									mBase = m.M
 									v59 = m.ExcPending
 									if v59 != 0 {
@@ -1708,19 +1708,19 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											if v72 != 0 {
 												return int32(0)
 											} else {
-												F_TupleDescInitEntry(m, v71, int32(1), int32(453608), int32(26), int32(-1), int32(0))
+												F_TupleDescInitEntry(m, v71, int32(1), int32(455765), int32(26), int32(-1), int32(0))
 												mBase = m.M
 												v79 = m.ExcPending
 												if v79 != 0 {
 													return int32(0)
 												} else {
-													F_TupleDescInitEntry(m, v71, int32(2), int32(240758), int32(23), int32(-1), int32(0))
+													F_TupleDescInitEntry(m, v71, int32(2), int32(241791), int32(23), int32(-1), int32(0))
 													mBase = m.M
 													v86 = m.ExcPending
 													if v86 != 0 {
 														return int32(0)
 													} else {
-														F_TupleDescInitEntry(m, v71, int32(3), int32(525303), int32(17), int32(-1), int32(0))
+														F_TupleDescInitEntry(m, v71, int32(3), int32(527785), int32(17), int32(-1), int32(0))
 														mBase = m.M
 														v93 = m.ExcPending
 														if v93 != 0 {
@@ -1831,9 +1831,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																				*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																				*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
-																				v203 = int32(453608)
+																				v203 = int32(455765)
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
-																				v205 = int32(240758)
+																				v205 = int32(241791)
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = v205
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v203
 																				*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v205
@@ -1882,13 +1882,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																												return int32(0)
 																											} else {
 																												*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-																												F_errmsg_internal(m, int32(49502), v15+int32(16))
+																												F_errmsg_internal(m, int32(49777), v15+int32(16))
 																												mBase = m.M
 																												v356 = m.ExcPending
 																												if v356 != 0 {
 																													return int32(0)
 																												} else {
-																													F_errfinish(m, int32(518619), int32(342), int32(407985))
+																													F_errfinish(m, int32(521002), int32(342), int32(409583))
 																													mBase = m.M
 																													v361 = m.ExcPending
 																													if v361 != 0 {
@@ -1989,13 +1989,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																													return int32(0)
 																												} else {
 																													*(*int32)(unsafe.Add(mBase, uint32(v15))) = v19
-																													F_errmsg_internal(m, int32(49502), v15)
+																													F_errmsg_internal(m, int32(49777), v15)
 																													mBase = m.M
 																													v369 = m.ExcPending
 																													if v369 != 0 {
 																														return int32(0)
 																													} else {
-																														F_errfinish(m, int32(518619), int32(362), int32(407985))
+																														F_errfinish(m, int32(521002), int32(362), int32(409583))
 																														mBase = m.M
 																														v374 = m.ExcPending
 																														if v374 != 0 {
@@ -2123,13 +2123,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v337 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(663457), int32(0))
+						F_errmsg_internal(m, int32(666846), int32(0))
 						mBase = m.M
 						v341 = m.ExcPending
 						if v341 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518619), int32(193), int32(407985))
+							F_errfinish(m, int32(521002), int32(193), int32(409583))
 							mBase = m.M
 							v346 = m.ExcPending
 							if v346 != 0 {
@@ -2143,7 +2143,7 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					}
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v19
-					v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39707), v15+int32(48))
+					v58 = F_pg_snprintf(m, v15+int32(224), int32(64), int32(39883), v15+int32(48))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
@@ -2162,19 +2162,19 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v72 != 0 {
 								return int32(0)
 							} else {
-								F_TupleDescInitEntry(m, v71, int32(1), int32(453608), int32(26), int32(-1), int32(0))
+								F_TupleDescInitEntry(m, v71, int32(1), int32(455765), int32(26), int32(-1), int32(0))
 								mBase = m.M
 								v79 = m.ExcPending
 								if v79 != 0 {
 									return int32(0)
 								} else {
-									F_TupleDescInitEntry(m, v71, int32(2), int32(240758), int32(23), int32(-1), int32(0))
+									F_TupleDescInitEntry(m, v71, int32(2), int32(241791), int32(23), int32(-1), int32(0))
 									mBase = m.M
 									v86 = m.ExcPending
 									if v86 != 0 {
 										return int32(0)
 									} else {
-										F_TupleDescInitEntry(m, v71, int32(3), int32(525303), int32(17), int32(-1), int32(0))
+										F_TupleDescInitEntry(m, v71, int32(3), int32(527785), int32(17), int32(-1), int32(0))
 										mBase = m.M
 										v93 = m.ExcPending
 										if v93 != 0 {
@@ -2285,9 +2285,9 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																*(*int64)(unsafe.Add(mBase, uint32(v15)+144)) = int64(8495445313469)
 																*(*int64)(unsafe.Add(mBase, uint32(v15)+152)) = v172
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+140)) = v178
-																v203 = int32(453608)
+																v203 = int32(455765)
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+124)) = v203
-																v205 = int32(240758)
+																v205 = int32(241791)
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = v205
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v203
 																*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v205
@@ -2336,13 +2336,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																								return int32(0)
 																							} else {
 																								*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v19
-																								F_errmsg_internal(m, int32(49502), v15+int32(16))
+																								F_errmsg_internal(m, int32(49777), v15+int32(16))
 																								mBase = m.M
 																								v356 = m.ExcPending
 																								if v356 != 0 {
 																									return int32(0)
 																								} else {
-																									F_errfinish(m, int32(518619), int32(342), int32(407985))
+																									F_errfinish(m, int32(521002), int32(342), int32(409583))
 																									mBase = m.M
 																									v361 = m.ExcPending
 																									if v361 != 0 {
@@ -2443,13 +2443,13 @@ func F_create_toast_table(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 																									return int32(0)
 																								} else {
 																									*(*int32)(unsafe.Add(mBase, uint32(v15))) = v19
-																									F_errmsg_internal(m, int32(49502), v15)
+																									F_errmsg_internal(m, int32(49777), v15)
 																									mBase = m.M
 																									v369 = m.ExcPending
 																									if v369 != 0 {
 																										return int32(0)
 																									} else {
-																										F_errfinish(m, int32(518619), int32(362), int32(407985))
+																										F_errfinish(m, int32(521002), int32(362), int32(409583))
 																										mBase = m.M
 																										v374 = m.ExcPending
 																										if v374 != 0 {
@@ -2626,13 +2626,13 @@ func F_toast_fetch_datum_slice(m *base.Module, l0 int32, l1 int32, l2 int32) int
 		if v69 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(158618), int32(0))
+			F_errmsg_internal(m, int32(159278), int32(0))
 			mBase = m.M
 			v73 = m.ExcPending
 			if v73 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(511955), int32(405), int32(435159))
+				F_errfinish(m, int32(514267), int32(405), int32(437290))
 				mBase = m.M
 				v78 = m.ExcPending
 				if v78 != 0 {
@@ -2653,13 +2653,13 @@ func F_toast_fetch_datum_slice(m *base.Module, l0 int32, l1 int32, l2 int32) int
 			if v69 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(158618), int32(0))
+				F_errmsg_internal(m, int32(159278), int32(0))
 				mBase = m.M
 				v73 = m.ExcPending
 				if v73 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(511955), int32(405), int32(435159))
+					F_errfinish(m, int32(514267), int32(405), int32(437290))
 					mBase = m.M
 					v78 = m.ExcPending
 					if v78 != 0 {

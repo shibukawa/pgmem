@@ -19,7 +19,7 @@ func F_be_lo_create(m *base.Module, l0 int32) int32 {
 	var v12 int32
 	_ = v12
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_PreventCommandIfReadOnly(m, int32(709952))
+	F_PreventCommandIfReadOnly(m, int32(713470))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -98,7 +98,7 @@ func F_be_lo_from_bytea(m *base.Module, l0 int32) int32 {
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		F_PreventCommandIfReadOnly(m, int32(710205))
+		F_PreventCommandIfReadOnly(m, int32(713767))
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {
@@ -246,13 +246,13 @@ func F_be_lo_lseek(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v10
-				F_errmsg(m, int32(500592), v8)
+				F_errmsg(m, int32(502904), v8)
 				mBase = m.M
 				v50 = m.ExcPending
 				if v50 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(514826), int32(216), int32(328747))
+					F_errfinish(m, int32(517209), int32(216), int32(330142))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
@@ -281,13 +281,13 @@ func F_be_lo_lseek(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v10
-					F_errmsg(m, int32(500592), v8)
+					F_errmsg(m, int32(502904), v8)
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(514826), int32(216), int32(328747))
+						F_errfinish(m, int32(517209), int32(216), int32(330142))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -317,13 +317,13 @@ func F_be_lo_lseek(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v10
-						F_errmsg(m, int32(500592), v8)
+						F_errmsg(m, int32(502904), v8)
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(514826), int32(216), int32(328747))
+							F_errfinish(m, int32(517209), int32(216), int32(330142))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
@@ -359,13 +359,13 @@ func F_be_lo_lseek(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v10
-								F_errmsg(m, int32(488641), v8+int32(16))
+								F_errmsg(m, int32(490891), v8+int32(16))
 								mBase = m.M
 								v68 = m.ExcPending
 								if v68 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(514826), int32(225), int32(328747))
+									F_errfinish(m, int32(517209), int32(225), int32(330142))
 									mBase = m.M
 									v73 = m.ExcPending
 									if v73 != 0 {
@@ -400,7 +400,7 @@ func F_be_lo_truncate(m *base.Module, l0 int32) int32 {
 	_ = v11
 	v3 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+28)))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_PreventCommandIfReadOnly(m, int32(709972))
+	F_PreventCommandIfReadOnly(m, int32(713490))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -432,7 +432,7 @@ func F_be_lo_truncate64(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v4 = *(*int64)(unsafe.Add(mBase, uint32(v3)))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_PreventCommandIfReadOnly(m, int32(710374))
+	F_PreventCommandIfReadOnly(m, int32(713936))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

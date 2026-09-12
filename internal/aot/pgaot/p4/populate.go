@@ -691,13 +691,13 @@ func F_populate_recordset_array_element_start(m *base.Module, l0 int32, l1 int32
 				} else {
 					v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v24
-					F_errmsg(m, int32(132564), v6)
+					F_errmsg(m, int32(133010), v6)
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(514510), int32(4277), int32(87955))
+						F_errfinish(m, int32(516846), int32(4277), int32(88272))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {

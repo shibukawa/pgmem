@@ -101,7 +101,7 @@ L6:
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+52))
-	v30 = F_MakeSingleTupleTableSlot(m, v28, int32(1646216))
+	v30 = F_MakeSingleTupleTableSlot(m, v28, int32(1649992))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {

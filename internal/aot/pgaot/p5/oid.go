@@ -74,13 +74,13 @@ func F_OidOutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v41 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v41
-					F_errmsg_internal(m, int32(553757), v6)
+					F_errmsg_internal(m, int32(556509), v6)
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(515123), int32(1143), int32(316247))
+						F_errfinish(m, int32(517506), int32(1143), int32(317498))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {

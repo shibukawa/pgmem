@@ -50,7 +50,7 @@ func F_xidin(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v6 = F_uint32in_subr(m, v2, int32(0), int32(449901), v5)
+	v6 = F_uint32in_subr(m, v2, int32(0), int32(452058), v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

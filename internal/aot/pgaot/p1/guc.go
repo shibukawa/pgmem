@@ -460,7 +460,7 @@ func F_InitializeGUCOptions(m *base.Module) {
 	v3 = m.G0
 	v5 = v3 - int32(32)
 	m.G0 = v5
-	v9 = F_pg_tzset(m, int32(541507))
+	v9 = F_pg_tzset(m, int32(544184))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -524,7 +524,7 @@ L8:
 	*(*uint8)(unsafe.Add(mBase, _consts[1211])) = uint8(v38)
 	v43 = int32(1)
 	v44 = int32(10)
-	v50 = F_set_config_with_handle(m, int32(272782), v38, int32(458266), v43, v44, v44, v38, v43, v38, v38)
+	v50 = F_set_config_with_handle(m, int32(274010), v38, int32(460423), v43, v44, v44, v38, v43, v38, v38)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -572,7 +572,7 @@ L14:
 	v53 = int32(0)
 	v55 = int32(1)
 	v56 = int32(10)
-	v62 = F_set_config_with_handle(m, int32(19803), v53, int32(251169), v55, v56, v56, v53, v55, v53, v53)
+	v62 = F_set_config_with_handle(m, int32(19803), v53, int32(252227), v55, v56, v56, v53, v55, v53, v53)
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -585,7 +585,7 @@ L15:
 	v65 = int32(0)
 	v67 = int32(1)
 	v68 = int32(10)
-	v74 = F_set_config_with_handle(m, int32(411176), v65, int32(251169), v67, v68, v68, v65, v67, v65, v65)
+	v74 = F_set_config_with_handle(m, int32(412774), v65, int32(252227), v67, v68, v68, v65, v67, v65, v65)
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -617,7 +617,7 @@ func F_NewGUCNestLevel(m *base.Module) int32 {
 	_ = v4
 	var v6 int32
 	_ = v6
-	v2 = int32(4547064)
+	v2 = int32(4551928)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[309]))
 	v6 = v4 + int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[309])) = v6
@@ -872,7 +872,7 @@ func F_guc_restore_error_context_callback(m *base.Module, l0 int32) {
 		} else {
 			v10 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
 			*(*int64)(unsafe.Add(mBase, uint32(v5))) = v10
-			F_errcontext_msg(m, int32(730326), v5)
+			F_errcontext_msg(m, int32(733888), v5)
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {

@@ -211,7 +211,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = int64(34359738372)
-		v25 = F_hash_create(m, int32(415516), int32(16), v5+int32(-48), int32(40))
+		v25 = F_hash_create(m, int32(417114), int32(16), v5+int32(-48), int32(40))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -525,7 +525,7 @@ func F_has_tablespace_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1686000))
+		v22 = F_convert_any_priv_string(m, v14, int32(1690096))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

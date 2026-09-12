@@ -14,6 +14,8 @@ func F__brin_parallel_scan_and_build(m *base.Module, l0 int32, l1 int32, l2 int3
 func F_union_tuples(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_brin_fill_empty_ranges github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_brin_fill_empty_ranges
 func F_brin_fill_empty_ranges(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_brin_free_desc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_brin_free_desc
+func F_brin_free_desc(m *base.Module, l0 int32)
 //go:linkname F_minmax_get_strategy_procinfo github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_minmax_get_strategy_procinfo
 func F_minmax_get_strategy_procinfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_compare_expanded_ranges github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_compare_expanded_ranges
@@ -166,8 +168,6 @@ func F_createTempGistContext(m *base.Module) int32
 func F_gistfinishsplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_gistplacetopage github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gistplacetopage
 func F_gistplacetopage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32) int32
-//go:linkname F_freeGISTstate github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_freeGISTstate
-func F_freeGISTstate(m *base.Module, l0 int32)
 //go:linkname F_gist_indexsortbuild_levelstate_add github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gist_indexsortbuild_levelstate_add
 func F_gist_indexsortbuild_levelstate_add(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_gistProcessEmptyingQueue github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gistProcessEmptyingQueue
@@ -4018,6 +4018,14 @@ func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 func F_collect_visibility_data(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_collect_corrupt_items github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_collect_corrupt_items
 func F_collect_corrupt_items(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_verify_brin_page github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_verify_brin_page
+func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_bt_page_items_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_page_items_internal
+func F_bt_page_items_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_verify_hash_page github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_verify_hash_page
+func F_verify_hash_page(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
+func F_get_page_from_raw(m *base.Module, l0 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_HnswInit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswInit

@@ -4802,6 +4802,10 @@ func F_uuid_generate_random(m *base.Module, l0 int32)
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_bt_normalize_tuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_normalize_tuple
 func F_bt_normalize_tuple(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_get_raw_page_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_raw_page_internal
+func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
+func F_get_page_from_raw(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

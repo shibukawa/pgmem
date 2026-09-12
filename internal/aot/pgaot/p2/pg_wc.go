@@ -195,7 +195,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 	switch v4 - int32(1) {
 	case 0:
 		if base.Ui32(l0) <= base.Ui32(int32(127)) {
-			v126 = l0<<(uint(int32(2))%32) + int32(1912964)
+			v126 = l0<<(uint(int32(2))%32) + int32(1917060)
 		} else {
 			v27 = int32(0)
 			if base.Ui32(l0) < base.Ui32(int32(1416)) {
@@ -337,7 +337,7 @@ func F_pg_wc_toupper(m *base.Module, l0 int32) int32 {
 					}
 				}
 			}
-			v126 = v121<<(uint(int32(2))%32) + int32(1912960)
+			v126 = v121<<(uint(int32(2))%32) + int32(1917056)
 		}
 		v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)))
 		if v127 != 0 {

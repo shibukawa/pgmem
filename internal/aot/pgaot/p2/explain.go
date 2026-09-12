@@ -262,7 +262,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 								return
 							} else {
 								v42 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-								F_appendStringInfoString(m, v42, int32(774205))
+								F_appendStringInfoString(m, v42, int32(777945))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -353,7 +353,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							return
 						} else {
 							v42 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-							F_appendStringInfoString(m, v42, int32(774205))
+							F_appendStringInfoString(m, v42, int32(777945))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -427,7 +427,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 			v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
 			if l1 != 0 {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-				F_appendStringInfo(m, v78, int32(773848), v8)
+				F_appendStringInfo(m, v78, int32(777588), v8)
 				mBase = m.M
 				v82 = m.ExcPending
 				if v82 != 0 {
@@ -449,7 +449,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					}
 				}
 			} else {
-				F_appendStringInfoString(m, v78, int32(774214))
+				F_appendStringInfoString(m, v78, int32(777959))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -490,7 +490,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 					v78 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
 					if l1 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-						F_appendStringInfo(m, v78, int32(773848), v8)
+						F_appendStringInfo(m, v78, int32(777588), v8)
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -512,7 +512,7 @@ func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 							}
 						}
 					} else {
-						F_appendStringInfoString(m, v78, int32(774214))
+						F_appendStringInfoString(m, v78, int32(777959))
 						mBase = m.M
 						v86 = m.ExcPending
 						if v86 != 0 {
@@ -559,7 +559,7 @@ func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 i
 	v8 = v6 - int32(48)
 	m.G0 = v8
 	*(*int64)(unsafe.Add(mBase, uint32(v8))) = l2
-	v15 = F_pg_snprintf(m, v8+int32(16), int32(32), int32(447476), v8)
+	v15 = F_pg_snprintf(m, v8+int32(16), int32(32), int32(449633), v8)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -917,7 +917,7 @@ L26:
 	goto L27
 L27:
 	;
-	v89 = int32(679118)
+	v89 = int32(682589)
 	v91 = int32(66)
 	goto L28
 L28:
@@ -1091,7 +1091,7 @@ L52:
 L53:
 	;
 	v194 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	F_appendStringInfoString(m, v194, int32(593208))
+	F_appendStringInfoString(m, v194, int32(596383))
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {

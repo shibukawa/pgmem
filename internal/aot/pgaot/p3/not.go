@@ -58,7 +58,7 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(512484), int32(717), int32(286038))
+						F_errfinish(m, int32(514796), int32(717), int32(287266))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -85,7 +85,7 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(512484), int32(717), int32(286038))
+							F_errfinish(m, int32(514796), int32(717), int32(287266))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -112,7 +112,7 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 							if v27 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(512484), int32(717), int32(286038))
+								F_errfinish(m, int32(514796), int32(717), int32(287266))
 								mBase = m.M
 								v32 = m.ExcPending
 								if v32 != 0 {
@@ -142,7 +142,7 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 								if v27 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(512484), int32(717), int32(286038))
+									F_errfinish(m, int32(514796), int32(717), int32(287266))
 									mBase = m.M
 									v32 = m.ExcPending
 									if v32 != 0 {

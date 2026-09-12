@@ -71,7 +71,7 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 	if v14 != 0 {
 		return int32(0)
 	} else {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[642]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[643]))
 		v18 = F_PathNameOpenFilePerm(m, l0, int32(578), v17)
 		mBase = m.M
 		v19 = m.ExcPending
@@ -96,13 +96,13 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-							F_errmsg(m, int32(309426), v7)
+							F_errmsg(m, int32(310677), v7)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(520480), int32(1889), int32(405430))
+								F_errfinish(m, int32(522873), int32(1889), int32(407028))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -118,20 +118,20 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			} else {
 				v40 = v18 * int32(48)
-				v42 = *(*int32)(unsafe.Add(mBase, _consts[549]))
+				v42 = *(*int32)(unsafe.Add(mBase, _consts[550]))
 				v44 = int32(4)
 				v45 = v40 + v42 + v44
 				v46 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v45))))
 				v48 = v46 | v44
 				*(*uint16)(unsafe.Add(mBase, uint32(v45))) = uint16(v48)
 				v51 = *(*int32)(unsafe.Add(mBase, _consts[11]))
-				F_ResourceOwnerRemember(m, v51, v18, int32(1656672))
+				F_ResourceOwnerRemember(m, v51, v18, int32(1660448))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					v56 = *(*int32)(unsafe.Add(mBase, _consts[549]))
+					v56 = *(*int32)(unsafe.Add(mBase, _consts[550]))
 					v57 = v56 + v40
 					v59 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 					*(*int32)(unsafe.Add(mBase, uint32(v57)+8)) = v59
@@ -140,7 +140,7 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 					v65 = v63 | int32(2)
 					*(*uint16)(unsafe.Add(mBase, uint32(v62))) = uint16(v65)
 					v68 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, _consts[643])) = uint8(v68)
+					*(*uint8)(unsafe.Add(mBase, _consts[644])) = uint8(v68)
 					m.G0 = v7 + int32(16)
 					return v18
 				}
@@ -3381,7 +3381,7 @@ L69:
 	}
 L70:
 	;
-	v274 = F_format_elog_string(m, int32(669674), int32(0))
+	v274 = F_format_elog_string(m, int32(673063), int32(0))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -4447,10 +4447,10 @@ L28:
 	;
 	v105 = *(*float64)(unsafe.Add(mBase, uint32(v104)))
 	*(*float64)(unsafe.Add(mBase, uint32(v17)+32)) = v105
-	v108 = *(*float64)(unsafe.Add(mBase, _consts[395]))
-	v110 = *(*float64)(unsafe.Add(mBase, _consts[396]))
-	v112 = *(*float64)(unsafe.Add(mBase, _consts[385]))
-	v114 = int32(*(*uint8)(unsafe.Add(mBase, _consts[397])))
+	v108 = *(*float64)(unsafe.Add(mBase, _consts[396]))
+	v110 = *(*float64)(unsafe.Add(mBase, _consts[397]))
+	v112 = *(*float64)(unsafe.Add(mBase, _consts[386]))
+	v114 = int32(*(*uint8)(unsafe.Add(mBase, _consts[398])))
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+40)) = v93 + (v114 ^ int32(1))
 	v119 = base.F64_add(v112, v112)
 	v120 = *(*int32)(unsafe.Add(mBase, uint32(v17)+76))
@@ -4483,7 +4483,7 @@ L32:
 	goto L28
 L33:
 	;
-	F_errmsg_internal(m, int32(458867), int32(0))
+	F_errmsg_internal(m, int32(461024), int32(0))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -4493,7 +4493,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(519918), int32(2118), int32(334766))
+	F_errfinish(m, int32(522311), int32(2118), int32(336161))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -4597,7 +4597,7 @@ func F_create_sort_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64
 		mBase = m.M
 		v50 = *(*float64)(unsafe.Add(mBase, uint32(v45)+8))
 		*(*float64)(unsafe.Add(mBase, uint32(v8)+32)) = v36
-		v53 = int32(*(*uint8)(unsafe.Add(mBase, _consts[398])))
+		v53 = int32(*(*uint8)(unsafe.Add(mBase, _consts[399])))
 		v54 = base.F64_add(v35, v50)
 		*(*float64)(unsafe.Add(mBase, uint32(v8)+48)) = v54
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = v34 + (v53 ^ v27)

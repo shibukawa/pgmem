@@ -56,13 +56,13 @@ func F_FunctionCall0Coll(m *base.Module, l0 int32) int32 {
 			} else {
 				v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v31
-				F_errmsg_internal(m, int32(553757), v6)
+				F_errmsg_internal(m, int32(556509), v6)
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515123), int32(1123), int32(316265))
+					F_errfinish(m, int32(517506), int32(1123), int32(317516))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
@@ -142,13 +142,13 @@ func F_FunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			} else {
 				v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v46
-				F_errmsg_internal(m, int32(553757), v10)
+				F_errmsg_internal(m, int32(556509), v10)
 				mBase = m.M
 				v50 = m.ExcPending
 				if v50 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515123), int32(1217), int32(316175))
+					F_errfinish(m, int32(517506), int32(1217), int32(317426))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {

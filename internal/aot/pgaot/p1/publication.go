@@ -433,13 +433,13 @@ func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					*(*int32)(unsafe.Add(mBase, uint32(v10))) = v25
-					F_errmsg_internal(m, int32(60160), v10)
+					F_errmsg_internal(m, int32(60477), v10)
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(513154), int32(2876), int32(252792))
+						F_errfinish(m, int32(515466), int32(2876), int32(254020))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -522,13 +522,13 @@ func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v48
-											F_errmsg_internal(m, int32(60126), v10+int32(16))
+											F_errmsg_internal(m, int32(60443), v10+int32(16))
 											mBase = m.M
 											v64 = m.ExcPending
 											if v64 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(513154), int32(2897), int32(252792))
+												F_errfinish(m, int32(515466), int32(2897), int32(254020))
 												mBase = m.M
 												v69 = m.ExcPending
 												if v69 != 0 {
@@ -601,13 +601,13 @@ func F_get_publication_name(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-					F_errmsg_internal(m, int32(49980), v8)
+					F_errmsg_internal(m, int32(50255), v8)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519653), int32(3796), int32(394403))
+						F_errfinish(m, int32(522036), int32(3796), int32(396001))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {

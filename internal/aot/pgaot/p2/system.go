@@ -33,7 +33,7 @@ func F_SystemTypeName(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v8 = F_makeString(m, int32(341284))
+	v8 = F_makeString(m, int32(342679))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -105,13 +105,13 @@ func F_system_rows_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32,
 			if v16 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(358034), int32(0))
+				F_errmsg(m, int32(359560), int32(0))
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(513006), int32(185), int32(295835))
+					F_errfinish(m, int32(515318), int32(185), int32(297063))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {

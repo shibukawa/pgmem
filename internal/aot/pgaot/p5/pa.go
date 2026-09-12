@@ -31,14 +31,14 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v3 != 0 {
-		F_s_lock(m, l0, int32(515367), int32(1508), int32(366271))
+		F_s_lock(m, l0, int32(517750), int32(1508), int32(367797))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
 			v16 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v16
@@ -57,7 +57,7 @@ func F_pa_set_fileset_state(m *base.Module, l0 int32) {
 		}
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = int32(2)
-		v14 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+		v14 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
 		v16 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
 		*(*int64)(unsafe.Add(mBase, uint32(l0)+36)) = v16
@@ -131,13 +131,13 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v13
-			F_errmsg(m, int32(404829), v6)
+			F_errmsg(m, int32(406427), v6)
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(515367), int32(1223), int32(356669))
+				F_errfinish(m, int32(517750), int32(1223), int32(358195))
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
@@ -154,7 +154,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						if l1 == int32(0) {
-							v33 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+							v33 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 							v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+32))
 							v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 							v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
@@ -168,7 +168,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 								v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 								*(*int32)(unsafe.Add(mBase, uint32(v41))) = int32(1)
 								if v42 != 0 {
-									F_s_lock(m, v41, int32(515367), int32(1508), int32(366271))
+									F_s_lock(m, v41, int32(517750), int32(1508), int32(367797))
 									mBase = m.M
 									v49 = m.ExcPending
 									if v49 != 0 {
@@ -191,7 +191,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 							v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 							*(*int32)(unsafe.Add(mBase, uint32(v41))) = int32(1)
 							if v42 != 0 {
-								F_s_lock(m, v41, int32(515367), int32(1508), int32(366271))
+								F_s_lock(m, v41, int32(517750), int32(1508), int32(367797))
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
@@ -224,7 +224,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 				return
 			} else {
 				if l1 == int32(0) {
-					v33 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+					v33 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+32))
 					v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 					v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
@@ -238,7 +238,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 						v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 						*(*int32)(unsafe.Add(mBase, uint32(v41))) = int32(1)
 						if v42 != 0 {
-							F_s_lock(m, v41, int32(515367), int32(1508), int32(366271))
+							F_s_lock(m, v41, int32(517750), int32(1508), int32(367797))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -261,7 +261,7 @@ func F_pa_switch_to_partial_serialize(m *base.Module, l0 int32, l1 int32) {
 					v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
 					*(*int32)(unsafe.Add(mBase, uint32(v41))) = int32(1)
 					if v42 != 0 {
-						F_s_lock(m, v41, int32(515367), int32(1508), int32(366271))
+						F_s_lock(m, v41, int32(517750), int32(1508), int32(367797))
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -292,7 +292,7 @@ func F_pa_unlock_transaction(m *base.Module, l0 int32) {
 	_ = v4
 	var v8 int32
 	_ = v8
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[507]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+32))
 	F_UnlockApplyTransactionForSession(m, v4, l0, int32(1), int32(8))
 	mBase = m.M

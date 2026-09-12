@@ -390,7 +390,7 @@ func F_GenericXLogFinish(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v698 = int32(4543684)
+	v698 = int32(4548548)
 	v700 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v700 - int32(1)
 	F_pfree(m, l0)
@@ -416,7 +416,7 @@ L3:
 	goto L4
 L4:
 	;
-	v557 = int32(4543684)
+	v557 = int32(4548548)
 	v559 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v559 + int32(1)
 	v563 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[143])))
@@ -430,7 +430,7 @@ L5:
 	return
 L6:
 	;
-	v17 = int32(4543684)
+	v17 = int32(4548548)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v19 + int32(1)
 	v27 = int32(0)
@@ -1760,13 +1760,13 @@ func F_GenericXLogRegisterBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) i
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(4)
-										F_errmsg_internal(m, int32(479823), v9)
+										F_errmsg_internal(m, int32(482073), v9)
 										mBase = m.M
 										v45 = m.ExcPending
 										if v45 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(518538), int32(327), int32(236028))
+											F_errfinish(m, int32(520921), int32(327), int32(237032))
 											mBase = m.M
 											v50 = m.ExcPending
 											if v50 != 0 {
@@ -1977,13 +1977,13 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					if v230 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(562456), int32(0))
+						F_errmsg(m, int32(565336), int32(0))
 						mBase = m.M
 						v234 = m.ExcPending
 						if v234 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519598), int32(202), int32(414639))
+							F_errfinish(m, int32(521981), int32(202), int32(416237))
 							mBase = m.M
 							v239 = m.ExcPending
 							if v239 != 0 {
@@ -2333,19 +2333,19 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			if v210 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(562403), int32(0))
+				F_errmsg(m, int32(565283), int32(0))
 				mBase = m.M
 				v214 = m.ExcPending
 				if v214 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(597242), int32(0))
+					F_errhint(m, int32(600417), int32(0))
 					mBase = m.M
 					v218 = m.ExcPending
 					if v218 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519598), int32(194), int32(414639))
+						F_errfinish(m, int32(521981), int32(194), int32(416237))
 						mBase = m.M
 						v223 = m.ExcPending
 						if v223 != 0 {

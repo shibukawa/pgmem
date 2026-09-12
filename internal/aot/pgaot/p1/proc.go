@@ -47,14 +47,14 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = int32(4465812)
+	v9 = int32(4470676)
 	v10 = *(*int32)(unsafe.Add(mBase, _consts[788]))
 	*(*int32)(unsafe.Add(mBase, _consts[788])) = int32(0)
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+96))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = int32(1)
 	v18 = v10 + int32(96)
 	if v14 != 0 {
-		F_s_lock(m, v18, int32(518005), int32(243), int32(368692))
+		F_s_lock(m, v18, int32(520388), int32(243), int32(370218))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -80,13 +80,13 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v38
 						v41 = *(*int32)(unsafe.Add(mBase, _consts[789]))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v41 - int32(8)) >> (uint(int32(7)) % 32)
-						F_errmsg_internal(m, int32(487730), v7)
+						F_errmsg_internal(m, int32(489980), v7)
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518005), int32(253), int32(368692))
+							F_errfinish(m, int32(520388), int32(253), int32(370218))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
@@ -136,13 +136,13 @@ func F_CleanupProcSignalState(m *base.Module, l0 int32, l1 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v38
 					v41 = *(*int32)(unsafe.Add(mBase, _consts[789]))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = (v10 - v41 - int32(8)) >> (uint(int32(7)) % 32)
-					F_errmsg_internal(m, int32(487730), v7)
+					F_errmsg_internal(m, int32(489980), v7)
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(518005), int32(253), int32(368692))
+						F_errfinish(m, int32(520388), int32(253), int32(370218))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -248,7 +248,7 @@ func F_ProcArrayEndTransactionInternal(m *base.Module, l0 int32, l1 int32) {
 		if v39 != int32(1) {
 		} else {
 			v43 = v9 << (uint(int32(1)) % 32)
-			v44 = int32(4472464)
+			v44 = int32(4477328)
 			v45 = *(*int32)(unsafe.Add(mBase, _consts[125]))
 			v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+8))
 			v48 = int32(0)
@@ -260,7 +260,7 @@ func F_ProcArrayEndTransactionInternal(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		v43 = v9 << (uint(int32(1)) % 32)
-		v44 = int32(4472464)
+		v44 = int32(4477328)
 		v45 = *(*int32)(unsafe.Add(mBase, _consts[125]))
 		v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+8))
 		v48 = int32(0)
@@ -395,7 +395,7 @@ L4:
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[769]))
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v40
-	F_errmsg_internal(m, int32(414766), v6)
+	F_errmsg_internal(m, int32(416364), v6)
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -408,7 +408,7 @@ L5:
 	goto L6
 L6:
 	;
-	v50 = int32(4465456)
+	v50 = int32(4470320)
 	v52 = *(*int32)(unsafe.Add(mBase, _consts[769]))
 	v54 = v52 - int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[769])) = v54
@@ -419,7 +419,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(520543), int32(202), int32(380540))
+	F_errfinish(m, int32(522936), int32(202), int32(382090))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -460,7 +460,7 @@ L13:
 	goto L11
 L14:
 	;
-	v71 = int32(4465456)
+	v71 = int32(4470320)
 	v73 = *(*int32)(unsafe.Add(mBase, _consts[769]))
 	v75 = v73 - int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[769])) = v75
