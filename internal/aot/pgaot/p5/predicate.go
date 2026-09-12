@@ -33,7 +33,7 @@ func F_PredicateLockPage(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[789]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[786]))
 	if v11 == int32(0) {
 		m.G0 = v8 + int32(16)
 		return
@@ -163,7 +163,7 @@ func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(96)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[790]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[787]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
 	if v13 == int32(0) {
 		m.G0 = v9 + int32(96)
@@ -192,7 +192,7 @@ func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+76)) = v30
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v16
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v23
-				v39 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+				v39 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 				v43 = F_LWLockAcquire(m, v39+int32(3840), v30)
 				mBase = m.M
 				v44 = m.ExcPending
@@ -248,7 +248,7 @@ func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v91 != 0 {
 								return
 							} else {
-								v94 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+								v94 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 								F_LWLockRelease(m, v94+int32(3840))
 								mBase = m.M
 								v98 = m.ExcPending
@@ -260,7 +260,7 @@ func F_PredicateLockPageSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								}
 							}
 						} else {
-							v94 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+							v94 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 							F_LWLockRelease(m, v94+int32(3840))
 							mBase = m.M
 							v98 = m.ExcPending
@@ -397,7 +397,7 @@ func F_PredicateLockTID(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[789]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[786]))
 	if v12 == int32(0) {
 		goto L1
 	} else {
@@ -485,7 +485,7 @@ L13:
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(4294967295)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v154
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v155
-	v161 = *(*int32)(unsafe.Add(mBase, _consts[788]))
+	v161 = *(*int32)(unsafe.Add(mBase, _consts[785]))
 	v162 = int32(0)
 	v164 = F_hash_search(m, v161, v9, v162, v162)
 	mBase = m.M
@@ -511,7 +511,7 @@ L16:
 	goto L17
 L17:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[37]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[38]))
 	if v43 == l3 {
 		goto L18
 	} else {
@@ -526,7 +526,7 @@ L19:
 	goto L20
 L20:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, _consts[38]))
+	v47 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	if v47 <= int32(0) {
 		goto L22
 	} else {
@@ -538,7 +538,7 @@ L21:
 	goto L14
 L22:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, _consts[39]))
+	v51 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 	if v51 == int32(0) {
 		v144 = int32(0)
 		goto L21
@@ -550,7 +550,7 @@ L23:
 	goto L24
 L24:
 	;
-	v113 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+	v113 = *(*int32)(unsafe.Add(mBase, _consts[41]))
 	v115 = int32(0)
 	v117 = v47 - int32(1)
 	goto L44

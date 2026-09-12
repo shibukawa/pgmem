@@ -47,7 +47,7 @@ func F_AtEOSubXact_HashTables(m *base.Module, l0 int32, l1 int32) {
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1187]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1191]))
 	v15 = v13 - int32(1)
 	if int32(0) <= v15 {
 		goto L1
@@ -68,7 +68,7 @@ L3:
 L4:
 	;
 	v26 = v21 << (uint(int32(2)) % 32)
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1189])))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1193])))
 	if l1 <= v29 {
 		goto L6
 	} else {
@@ -97,15 +97,15 @@ L8:
 	}
 L9:
 	;
-	v53 = int32(4514352)
-	v54 = *(*int32)(unsafe.Add(mBase, _consts[1187]))
+	v53 = int32(4530064)
+	v54 = *(*int32)(unsafe.Add(mBase, _consts[1191]))
 	v56 = v54 - int32(1)
 	v58 = v56 << (uint(int32(2)) % 32)
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v58)+uint32(_consts[1188])))
-	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1188]))) = v61
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v58)+uint32(_consts[1189])))
-	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1189]))) = v65
-	*(*int32)(unsafe.Add(mBase, _consts[1187])) = v56
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v58)+uint32(_consts[1192])))
+	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1192]))) = v61
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v58)+uint32(_consts[1193])))
+	*(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1193]))) = v65
+	*(*int32)(unsafe.Add(mBase, _consts[1191])) = v56
 	goto L8
 L10:
 	;
@@ -129,9 +129,9 @@ L12:
 	}
 L13:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1188])))
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1192])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v41
-	F_errmsg_internal(m, int32(239810), v10)
+	F_errmsg_internal(m, int32(244222), v10)
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -141,7 +141,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(499376), int32(1956), int32(167678))
+	F_errfinish(m, int32(509884), int32(1956), int32(171079))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -658,7 +658,7 @@ L39:
 	v150 = v144 + int32(8)
 	*(*int32)(unsafe.Add(mBase, uint32(v144)+12)) = v150
 	*(*int32)(unsafe.Add(mBase, uint32(v144)+8)) = v150
-	v153 = int32(4503792)
+	v153 = int32(4519504)
 	v154 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 	*(*int32)(unsafe.Add(mBase, uint32(v144)+20)) = v146
 	*(*int32)(unsafe.Add(mBase, uint32(v144)+4)) = v154
@@ -795,7 +795,7 @@ L56:
 	goto L43
 L57:
 	;
-	v238 = *(*int32)(unsafe.Add(mBase, _consts[938]))
+	v238 = *(*int32)(unsafe.Add(mBase, _consts[942]))
 	v239 = *(*int64)(unsafe.Add(mBase, uint32(v238)+16))
 	*(*int64)(unsafe.Add(mBase, uint32(v238)+16)) = v239 + int64(1)
 	goto L58

@@ -5,6 +5,15 @@ import (
 	"unsafe"
 )
 
+func F_BitItemSize(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	v4 = int32(8)
+	v5 = base.I32_div_s(l0+int32(7), v4)
+	return v5 + v4
+}
 func F_bit_catenate(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -184,13 +193,13 @@ func F_bit_catenate(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(2147483640)
-				F_errmsg(m, int32(681509), v11)
+				F_errmsg(m, int32(693564), v11)
 				mBase = m.M
 				v131 = m.ExcPending
 				if v131 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494687), int32(995), int32(355588))
+					F_errfinish(m, int32(504270), int32(995), int32(362741))
 					mBase = m.M
 					v136 = m.ExcPending
 					if v136 != 0 {

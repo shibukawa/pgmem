@@ -105,13 +105,13 @@ func F_bms_add_member(m *base.Module, l0 int32, l1 int32) int32 {
 		if v80 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(440936), int32(0))
+			F_errmsg_internal(m, int32(449359), int32(0))
 			mBase = m.M
 			v84 = m.ExcPending
 			if v84 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(494729), int32(823), int32(229249))
+				F_errfinish(m, int32(504312), int32(823), int32(233445))
 				mBase = m.M
 				v89 = m.ExcPending
 				if v89 != 0 {
@@ -268,7 +268,7 @@ L17:
 	goto L7
 L18:
 	;
-	F_errmsg_internal(m, int32(440936), int32(0))
+	F_errmsg_internal(m, int32(449359), int32(0))
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -278,7 +278,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(494729), int32(876), int32(229185))
+	F_errfinish(m, int32(504312), int32(876), int32(233381))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -736,7 +736,7 @@ L16:
 	return int32(0)
 L17:
 	;
-	F_errmsg_internal(m, int32(8749), int32(0))
+	F_errmsg_internal(m, int32(8791), int32(0))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -746,7 +746,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(494729), int32(681), int32(229164))
+	F_errfinish(m, int32(504312), int32(681), int32(233360))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -761,7 +761,7 @@ L19:
 	}
 L20:
 	;
-	F_errmsg_internal(m, int32(136419), int32(0))
+	F_errmsg_internal(m, int32(138939), int32(0))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -771,7 +771,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(494729), int32(692), int32(229164))
+	F_errfinish(m, int32(504312), int32(692), int32(233360))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {

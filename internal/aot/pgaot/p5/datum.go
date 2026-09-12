@@ -30,7 +30,7 @@ func F_DatumGetExpandedArray(m *base.Module, l0 int32) int32 {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+2))
 			return v16
 		} else {
-			v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+			v9 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v11 = F_expand_array(m, l0, v9, int32(0))
 			mBase = m.M
 			v14 = m.ExcPending
@@ -43,7 +43,7 @@ func F_DatumGetExpandedArray(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 		v11 = F_expand_array(m, l0, v9, int32(0))
 		mBase = m.M
 		v14 = m.ExcPending
@@ -159,13 +159,13 @@ func F_datum_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l4
-				F_errmsg_internal(m, int32(484686), v10)
+				F_errmsg_internal(m, int32(493552), v10)
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(327558), int32(230), int32(309568))
+					F_errfinish(m, int32(333863), int32(230), int32(315052))
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -208,13 +208,13 @@ func F_datum_write(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 				if v140 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(403962), int32(0))
+					F_errmsg_internal(m, int32(411530), int32(0))
 					mBase = m.M
 					v144 = m.ExcPending
 					if v144 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495608), int32(2796), int32(350751))
+						F_errfinish(m, int32(505589), int32(2796), int32(357676))
 						mBase = m.M
 						v149 = m.ExcPending
 						if v149 != 0 {

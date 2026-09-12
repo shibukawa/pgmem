@@ -197,7 +197,7 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v129
 	var v136 int32
 	_ = v136
-	v8 = int32(4520560)
+	v8 = int32(4536272)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l5)+1176))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v10
@@ -227,8 +227,8 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		} else {
 		}
 		if base.Ui32(v21) <= base.Ui32(v26) {
-			v43 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574])))
-			*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574]))) = v43 + int32(1)
+			v43 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568])))
+			*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568]))) = v43 + int32(1)
 			v111 = *(*int64)(unsafe.Add(mBase, uint32(l5)+1168))
 			*(*int64)(unsafe.Add(mBase, uint32(l5)+1168)) = v111 + int64(1)
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v9
@@ -290,7 +290,7 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										v71 = int32(65411)
 										*(*uint16)(unsafe.Add(mBase, uint32(v70)+6)) = uint16(v71)
 										*(*uint16)(unsafe.Add(mBase, uint32(v70)+2)) = uint16(v65)
-										*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574]))) = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568]))) = int32(0)
 										v81 = *(*int32)(unsafe.Add(mBase, uint32(l5)+1164))
 										v82 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+16)))
 										v83 = v13 + v82
@@ -316,13 +316,13 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											if v123 != 0 {
 												return
 											} else {
-												F_errmsg_internal(m, int32(408458), int32(0))
+												F_errmsg_internal(m, int32(416050), int32(0))
 												mBase = m.M
 												v129 = m.ExcPending
 												if v129 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(494405), int32(104), int32(320335))
+													F_errfinish(m, int32(503855), int32(104), int32(326023))
 													mBase = m.M
 													v136 = m.ExcPending
 													if v136 != 0 {
@@ -335,8 +335,8 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 												}
 											}
 										} else {
-											v105 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574])))
-											*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574]))) = v105 + int32(1)
+											v105 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568])))
+											*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568]))) = v105 + int32(1)
 											v111 = *(*int64)(unsafe.Add(mBase, uint32(l5)+1168))
 											*(*int64)(unsafe.Add(mBase, uint32(l5)+1168)) = v111 + int64(1)
 											*(*int32)(unsafe.Add(mBase, _consts[28])) = v9
@@ -360,7 +360,7 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									v71 = int32(65411)
 									*(*uint16)(unsafe.Add(mBase, uint32(v70)+6)) = uint16(v71)
 									*(*uint16)(unsafe.Add(mBase, uint32(v70)+2)) = uint16(v65)
-									*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574]))) = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568]))) = int32(0)
 									v81 = *(*int32)(unsafe.Add(mBase, uint32(l5)+1164))
 									v82 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v13)+16)))
 									v83 = v13 + v82
@@ -386,13 +386,13 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v123 != 0 {
 											return
 										} else {
-											F_errmsg_internal(m, int32(408458), int32(0))
+											F_errmsg_internal(m, int32(416050), int32(0))
 											mBase = m.M
 											v129 = m.ExcPending
 											if v129 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(494405), int32(104), int32(320335))
+												F_errfinish(m, int32(503855), int32(104), int32(326023))
 												mBase = m.M
 												v136 = m.ExcPending
 												if v136 != 0 {
@@ -405,8 +405,8 @@ func F_bloomBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 											}
 										}
 									} else {
-										v105 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574])))
-										*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1574]))) = v105 + int32(1)
+										v105 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568])))
+										*(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[1568]))) = v105 + int32(1)
 										v111 = *(*int64)(unsafe.Add(mBase, uint32(l5)+1168))
 										*(*int64)(unsafe.Add(mBase, uint32(l5)+1168)) = v111 + int64(1)
 										*(*int32)(unsafe.Add(mBase, _consts[28])) = v9

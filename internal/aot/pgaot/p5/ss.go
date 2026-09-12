@@ -94,7 +94,7 @@ L1:
 	return
 L2:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	v15 = F_LWLockConditionalAcquire(m, v11+int32(3072), int32(0))
 	mBase = m.M
 	v16 = m.ExcPending
@@ -118,7 +118,7 @@ L5:
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[8]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
 	v28 = v24
 	goto L7
@@ -190,7 +190,7 @@ L15:
 	goto L16
 L16:
 	;
-	v65 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v65 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	F_LWLockRelease(m, v65+int32(3072))
 	mBase = m.M
 	v69 = m.ExcPending
@@ -226,7 +226,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(0)
-	v57 = *(*int32)(unsafe.Add(mBase, _consts[8]))
+	v57 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)))
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = v58
 	*(*int32)(unsafe.Add(mBase, uint32(v58))) = v28

@@ -457,13 +457,13 @@ func F_in_range_timestamp_interval(m *base.Module, l0 int32) int32 {
 			if v121 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(252230), int32(0))
+				F_errmsg(m, int32(256855), int32(0))
 				mBase = m.M
 				v125 = m.ExcPending
 				if v125 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497332), int32(3906), int32(309991))
+					F_errfinish(m, int32(507443), int32(3906), int32(315475))
 					mBase = m.M
 					v130 = m.ExcPending
 					if v130 != 0 {
@@ -773,13 +773,13 @@ func F_in_range_timestamptz_interval(m *base.Module, l0 int32) int32 {
 			if v124 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(252230), int32(0))
+				F_errmsg(m, int32(256855), int32(0))
 				mBase = m.M
 				v128 = m.ExcPending
 				if v128 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497332), int32(3869), int32(309696))
+					F_errfinish(m, int32(507443), int32(3869), int32(315180))
 					mBase = m.M
 					v133 = m.ExcPending
 					if v133 != 0 {

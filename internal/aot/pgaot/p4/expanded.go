@@ -81,7 +81,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 			return int32(0)
 		} else {
 			v13 = v9
-			v18 = F_AllocSetContextCreateInternal(m, l1, int32(422641), int32(0), int32(8192), int32(8388608))
+			v18 = F_AllocSetContextCreateInternal(m, l1, int32(430890), int32(0), int32(8192), int32(8388608))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -101,7 +101,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 					v34 = int32(769)
 					*(*uint16)(unsafe.Add(mBase, uint32(v30)+12)) = uint16(v34)
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+8)) = v18
-					*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = int32(1665648)
+					*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = int32(1677936)
 					*(*int32)(unsafe.Add(mBase, uint32(v30))) = int32(-1)
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+20)) = v30
 					*(*int32)(unsafe.Add(mBase, uint32(v30)+14)) = v30
@@ -140,7 +140,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 					} else {
 						v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+28)))
 						if v86&int32(32) != 0 {
-							v89 = int32(4520560)
+							v89 = int32(4536272)
 							v90 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 							*(*int32)(unsafe.Add(mBase, _consts[28])) = v18
 							v93 = F_CreateTupleDescCopy(m, v13)
@@ -165,7 +165,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 		}
 	} else {
 		v13 = v6
-		v18 = F_AllocSetContextCreateInternal(m, l1, int32(422641), int32(0), int32(8192), int32(8388608))
+		v18 = F_AllocSetContextCreateInternal(m, l1, int32(430890), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -185,7 +185,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 				v34 = int32(769)
 				*(*uint16)(unsafe.Add(mBase, uint32(v30)+12)) = uint16(v34)
 				*(*int32)(unsafe.Add(mBase, uint32(v30)+8)) = v18
-				*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = int32(1665648)
+				*(*int32)(unsafe.Add(mBase, uint32(v30)+4)) = int32(1677936)
 				*(*int32)(unsafe.Add(mBase, uint32(v30))) = int32(-1)
 				*(*int32)(unsafe.Add(mBase, uint32(v30)+20)) = v30
 				*(*int32)(unsafe.Add(mBase, uint32(v30)+14)) = v30
@@ -224,7 +224,7 @@ func F_make_expanded_record_from_exprecord(m *base.Module, l0 int32, l1 int32) i
 				} else {
 					v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+28)))
 					if v86&int32(32) != 0 {
-						v89 = int32(4520560)
+						v89 = int32(4536272)
 						v90 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 						*(*int32)(unsafe.Add(mBase, _consts[28])) = v18
 						v93 = F_CreateTupleDescCopy(m, v13)

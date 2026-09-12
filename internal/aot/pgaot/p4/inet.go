@@ -517,7 +517,7 @@ func F_inet_server_port(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[599]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[598]))
 	if v10 == v2 {
 		v13 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v13)

@@ -30,8 +30,8 @@ func F_pg_prng_int64_range(m *base.Module, l0 int64, l1 int64) int64 {
 	_ = v51
 	if l0 < l1 {
 		v9 = l1 - l0
-		v12 = *(*int64)(unsafe.Add(mBase, _consts[1123]))
-		v14 = *(*int64)(unsafe.Add(mBase, _consts[1122]))
+		v12 = *(*int64)(unsafe.Add(mBase, _consts[1127]))
+		v14 = *(*int64)(unsafe.Add(mBase, _consts[1126]))
 		v16 = v14
 		v18 = v12
 		for {
@@ -48,8 +48,8 @@ func F_pg_prng_int64_range(m *base.Module, l0 int64, l1 int64) int64 {
 			}
 			break
 		}
-		*(*int64)(unsafe.Add(mBase, _consts[1123])) = v24
-		*(*int64)(unsafe.Add(mBase, _consts[1122])) = v32
+		*(*int64)(unsafe.Add(mBase, _consts[1127])) = v24
+		*(*int64)(unsafe.Add(mBase, _consts[1126])) = v32
 		v51 = l0 + v37
 	} else {
 		v51 = l0

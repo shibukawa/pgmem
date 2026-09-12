@@ -24,7 +24,7 @@ func F_AtEOXact_Aio(m *base.Module) {
 	_ = v20
 	var v25 int32
 	_ = v25
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[776]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[775]))
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+20)))
 	if v4 != int32(1) {
 		return
@@ -46,13 +46,13 @@ func F_AtEOXact_Aio(m *base.Module) {
 				if v13 == int32(0) {
 					return
 				} else {
-					F_errmsg_internal(m, int32(257116), int32(0))
+					F_errmsg_internal(m, int32(261762), int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(497559), int32(1206), int32(241762))
+						F_errfinish(m, int32(507670), int32(1206), int32(246174))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -151,7 +151,7 @@ L1:
 	return
 L2:
 	;
-	if v4 == int32(4117788) {
+	if v4 == int32(4133500) {
 		goto L1
 	} else {
 		goto L3
@@ -202,7 +202,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg_internal(m, int32(61302), int32(0))
+	F_errmsg_internal(m, int32(62261), int32(0))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -212,7 +212,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(498936), int32(1290), int32(308813))
+	F_errfinish(m, int32(509444), int32(1290), int32(314297))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -233,7 +233,7 @@ L13:
 	}
 L14:
 	;
-	if v31 != int32(4117788) {
+	if v31 != int32(4133500) {
 		v10 = v31
 		goto L4
 	} else {
@@ -386,7 +386,7 @@ L2:
 	goto L3
 L3:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[936]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[935]))
 	if v22 == int32(0) {
 		goto L7
 	} else {
@@ -394,11 +394,11 @@ L3:
 	}
 L4:
 	;
-	v15 = int32(4500320)
+	v15 = int32(4516032)
 	goto L6
 L5:
 	;
-	v15 = int32(4500324)
+	v15 = int32(4516036)
 	goto L6
 L6:
 	;
@@ -407,7 +407,7 @@ L6:
 	goto L3
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[936])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[935])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
 	v196 = m.ExcPending
@@ -756,7 +756,7 @@ L6:
 	}
 L7:
 	;
-	v24 = int32(4417600)
+	v24 = int32(4433312)
 	v26 = *(*int32)(unsafe.Add(mBase, _consts[504]))
 	v27 = F_list_delete_nth_cell(m, v26, v10)
 	mBase = m.M

@@ -63,8 +63,8 @@ L3:
 	goto L4
 L4:
 	;
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[578]))
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[579]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[577]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[578]))
 	if v14 <= v16 {
 		goto L6
 	} else {
@@ -124,7 +124,7 @@ L14:
 	}
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[579])) = v30 + v16
+	*(*int32)(unsafe.Add(mBase, _consts[578])) = v30 + v16
 	v37 = v10 - v30
 	if v37 != 0 {
 		v9 = v32 + v30
@@ -135,7 +135,7 @@ L15:
 	}
 L16:
 	;
-	v31 = F__emscripten_memcpy_bulkmem(m, v9, v16+int32(4419504), v30)
+	v31 = F__emscripten_memcpy_bulkmem(m, v9, v16+int32(4435216), v30)
 	mBase = m.M
 	v32 = v31
 	goto L18
@@ -149,6 +149,75 @@ L18:
 L19:
 	;
 	goto L5
+}
+func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	if v4-v5 <= int32(3) {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return float32(0)
+		} else {
+			F_errcode(m, int32(16908800))
+			mBase = m.M
+			v17 = m.ExcPending
+			if v17 != 0 {
+				return float32(0)
+			} else {
+				F_errmsg(m, int32(413287), int32(0))
+				mBase = m.M
+				v21 = m.ExcPending
+				if v21 != 0 {
+					return float32(0)
+				} else {
+					F_errfinish(m, int32(504541), int32(533), int32(162353))
+					mBase = m.M
+					v26 = m.ExcPending
+					if v26 != 0 {
+						return float32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(v27+v5)))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v5 + int32(4)
+		v33 = int32(24)
+		v35 = int32(65280)
+		v37 = int32(8)
+		return base.F32_reinterpret_i32(v29<<(uint(v33)%32) | v29&v35<<(uint(v37)%32) | (int32(base.Ui32(v29)>>(uint(v37)%32))&v35 | int32(base.Ui32(v29)>>(uint(v33)%32))))
+	}
 }
 func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {
 	mBase := m.M
@@ -198,13 +267,13 @@ func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {
 			if v17 != 0 {
 				return float64(0)
 			} else {
-				F_errmsg(m, int32(405719), int32(0))
+				F_errmsg(m, int32(413287), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return float64(0)
 				} else {
-					F_errfinish(m, int32(494958), int32(533), int32(159212))
+					F_errfinish(m, int32(504541), int32(533), int32(162353))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

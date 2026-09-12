@@ -121,37 +121,37 @@ func F_VacuumUpdateCosts(m *base.Module) {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 	if v11 != 0 {
-		v13 = *(*float64)(unsafe.Add(mBase, _consts[723]))
+		v13 = *(*float64)(unsafe.Add(mBase, _consts[722]))
 		if base.F64_ge(v13, float64(0)) != 0 {
 			v22 = v13
 		} else {
-			v17 = *(*float64)(unsafe.Add(mBase, _consts[724]))
+			v17 = *(*float64)(unsafe.Add(mBase, _consts[723]))
 			if base.F64_ge(v17, float64(0)) != 0 {
 				v22 = v17
 			} else {
-				v21 = *(*float64)(unsafe.Add(mBase, _consts[725]))
+				v21 = *(*float64)(unsafe.Add(mBase, _consts[724]))
 				v22 = v21
 			}
 		}
-		*(*float64)(unsafe.Add(mBase, _consts[726])) = v22
-		v26 = *(*int32)(unsafe.Add(mBase, _consts[727]))
+		*(*float64)(unsafe.Add(mBase, _consts[725])) = v22
+		v26 = *(*int32)(unsafe.Add(mBase, _consts[726]))
 		if int32(0) < v26 {
 			v57 = v26
 			v59 = v22
-			*(*int32)(unsafe.Add(mBase, _consts[728])) = v57
+			*(*int32)(unsafe.Add(mBase, _consts[727])) = v57
 			v64 = v59
-			v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+			v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 			if v66 != 0 {
 			} else {
 				if base.F64_gt(v64, float64(0)) != 0 {
 					v70 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v70)
+					*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v70)
 				} else {
 					v73 = int32(0)
-					*(*int32)(unsafe.Add(mBase, _consts[475])) = v73
-					*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v73)
+					*(*int32)(unsafe.Add(mBase, _consts[474])) = v73
+					*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v73)
 				}
 			}
 			if v11 == int32(0) {
@@ -204,7 +204,7 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					if v124 != 0 {
 						return
 					} else {
-						v126 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+						v126 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 						v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)+12))
 						v128 = *(*int32)(unsafe.Add(mBase, uint32(v126)+8))
 						v130 = *(*int32)(unsafe.Add(mBase, _consts[86]))
@@ -224,40 +224,40 @@ func F_VacuumUpdateCosts(m *base.Module) {
 									m.G0 = v8 + int32(32)
 									return
 								} else {
-									v142 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+									v142 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 									v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+32))
-									v145 = *(*float64)(unsafe.Add(mBase, _consts[726]))
+									v145 = *(*float64)(unsafe.Add(mBase, _consts[725]))
 									*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v145
-									v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+									v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 									if v150 != 0 {
-										v151 = int32(157800)
+										v151 = int32(160879)
 									} else {
-										v151 = int32(241674)
+										v151 = int32(246086)
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v151
 									if base.F64_gt(v145, float64(0)) != 0 {
-										v157 = int32(157800)
+										v157 = int32(160879)
 									} else {
-										v157 = int32(241674)
+										v157 = int32(246086)
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v157
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v128
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v127
 									if v143 != 0 {
-										v163 = int32(157800)
+										v163 = int32(160879)
 									} else {
-										v163 = int32(241674)
+										v163 = int32(246086)
 									}
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v163
-									v166 = *(*int32)(unsafe.Add(mBase, _consts[728]))
+									v166 = *(*int32)(unsafe.Add(mBase, _consts[727]))
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v166
-									F_errmsg_internal(m, int32(676641), v8)
+									F_errmsg_internal(m, int32(688696), v8)
 									mBase = m.M
 									v170 = m.ExcPending
 									if v170 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(498492), int32(1710), int32(116003))
+										F_errfinish(m, int32(509000), int32(1710), int32(118196))
 										mBase = m.M
 										v175 = m.ExcPending
 										if v175 != 0 {
@@ -274,27 +274,27 @@ func F_VacuumUpdateCosts(m *base.Module) {
 				}
 			}
 		} else {
-			v31 = *(*int32)(unsafe.Add(mBase, _consts[731]))
-			v33 = *(*int32)(unsafe.Add(mBase, _consts[732]))
+			v31 = *(*int32)(unsafe.Add(mBase, _consts[730]))
+			v33 = *(*int32)(unsafe.Add(mBase, _consts[731]))
 			if int32(0) < v31 {
 				v36 = v31
 			} else {
 				v36 = v33
 			}
-			*(*int32)(unsafe.Add(mBase, _consts[728])) = v36
+			*(*int32)(unsafe.Add(mBase, _consts[727])) = v36
 			v38 = *(*int32)(unsafe.Add(mBase, uint32(v11)+32))
 			if v38 == int32(0) {
 				v64 = v22
-				v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+				v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 				if v66 != 0 {
 				} else {
 					if base.F64_gt(v64, float64(0)) != 0 {
 						v70 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v70)
+						*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v70)
 					} else {
 						v73 = int32(0)
-						*(*int32)(unsafe.Add(mBase, _consts[475])) = v73
-						*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v73)
+						*(*int32)(unsafe.Add(mBase, _consts[474])) = v73
+						*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v73)
 					}
 				}
 				if v11 == int32(0) {
@@ -347,7 +347,7 @@ func F_VacuumUpdateCosts(m *base.Module) {
 						if v124 != 0 {
 							return
 						} else {
-							v126 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+							v126 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 							v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)+12))
 							v128 = *(*int32)(unsafe.Add(mBase, uint32(v126)+8))
 							v130 = *(*int32)(unsafe.Add(mBase, _consts[86]))
@@ -367,40 +367,40 @@ func F_VacuumUpdateCosts(m *base.Module) {
 										m.G0 = v8 + int32(32)
 										return
 									} else {
-										v142 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+										v142 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 										v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+32))
-										v145 = *(*float64)(unsafe.Add(mBase, _consts[726]))
+										v145 = *(*float64)(unsafe.Add(mBase, _consts[725]))
 										*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v145
-										v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+										v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 										if v150 != 0 {
-											v151 = int32(157800)
+											v151 = int32(160879)
 										} else {
-											v151 = int32(241674)
+											v151 = int32(246086)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v151
 										if base.F64_gt(v145, float64(0)) != 0 {
-											v157 = int32(157800)
+											v157 = int32(160879)
 										} else {
-											v157 = int32(241674)
+											v157 = int32(246086)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v157
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v128
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v127
 										if v143 != 0 {
-											v163 = int32(157800)
+											v163 = int32(160879)
 										} else {
-											v163 = int32(241674)
+											v163 = int32(246086)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v163
-										v166 = *(*int32)(unsafe.Add(mBase, _consts[728]))
+										v166 = *(*int32)(unsafe.Add(mBase, _consts[727]))
 										*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v166
-										F_errmsg_internal(m, int32(676641), v8)
+										F_errmsg_internal(m, int32(688696), v8)
 										mBase = m.M
 										v170 = m.ExcPending
 										if v170 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(498492), int32(1710), int32(116003))
+											F_errfinish(m, int32(509000), int32(1710), int32(118196))
 											mBase = m.M
 											v175 = m.ExcPending
 											if v175 != 0 {
@@ -417,8 +417,8 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					}
 				}
 			} else {
-				v42 = *(*int32)(unsafe.Add(mBase, _consts[712]))
-				v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+uint32(_consts[720])))
+				v42 = *(*int32)(unsafe.Add(mBase, _consts[711]))
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+uint32(_consts[719])))
 				if v43 <= int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
@@ -426,13 +426,13 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					if v186 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(572509), int32(0))
+						F_errmsg_internal(m, int32(584041), int32(0))
 						mBase = m.M
 						v190 = m.ExcPending
 						if v190 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498492), int32(1754), int32(101568))
+							F_errfinish(m, int32(509000), int32(1754), int32(103188))
 							mBase = m.M
 							v195 = m.ExcPending
 							if v195 != 0 {
@@ -454,18 +454,18 @@ func F_VacuumUpdateCosts(m *base.Module) {
 					}
 					v57 = v50
 					v59 = v22
-					*(*int32)(unsafe.Add(mBase, _consts[728])) = v57
+					*(*int32)(unsafe.Add(mBase, _consts[727])) = v57
 					v64 = v59
-					v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+					v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 					if v66 != 0 {
 					} else {
 						if base.F64_gt(v64, float64(0)) != 0 {
 							v70 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v70)
+							*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v70)
 						} else {
 							v73 = int32(0)
-							*(*int32)(unsafe.Add(mBase, _consts[475])) = v73
-							*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v73)
+							*(*int32)(unsafe.Add(mBase, _consts[474])) = v73
+							*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v73)
 						}
 					}
 					if v11 == int32(0) {
@@ -518,7 +518,7 @@ func F_VacuumUpdateCosts(m *base.Module) {
 							if v124 != 0 {
 								return
 							} else {
-								v126 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+								v126 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 								v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)+12))
 								v128 = *(*int32)(unsafe.Add(mBase, uint32(v126)+8))
 								v130 = *(*int32)(unsafe.Add(mBase, _consts[86]))
@@ -538,40 +538,40 @@ func F_VacuumUpdateCosts(m *base.Module) {
 											m.G0 = v8 + int32(32)
 											return
 										} else {
-											v142 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+											v142 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 											v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+32))
-											v145 = *(*float64)(unsafe.Add(mBase, _consts[726]))
+											v145 = *(*float64)(unsafe.Add(mBase, _consts[725]))
 											*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v145
-											v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+											v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 											if v150 != 0 {
-												v151 = int32(157800)
+												v151 = int32(160879)
 											} else {
-												v151 = int32(241674)
+												v151 = int32(246086)
 											}
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v151
 											if base.F64_gt(v145, float64(0)) != 0 {
-												v157 = int32(157800)
+												v157 = int32(160879)
 											} else {
-												v157 = int32(241674)
+												v157 = int32(246086)
 											}
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v157
 											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v128
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v127
 											if v143 != 0 {
-												v163 = int32(157800)
+												v163 = int32(160879)
 											} else {
-												v163 = int32(241674)
+												v163 = int32(246086)
 											}
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v163
-											v166 = *(*int32)(unsafe.Add(mBase, _consts[728]))
+											v166 = *(*int32)(unsafe.Add(mBase, _consts[727]))
 											*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v166
-											F_errmsg_internal(m, int32(676641), v8)
+											F_errmsg_internal(m, int32(688696), v8)
 											mBase = m.M
 											v170 = m.ExcPending
 											if v170 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(498492), int32(1710), int32(116003))
+												F_errfinish(m, int32(509000), int32(1710), int32(118196))
 												mBase = m.M
 												v175 = m.ExcPending
 												if v175 != 0 {
@@ -591,23 +591,23 @@ func F_VacuumUpdateCosts(m *base.Module) {
 			}
 		}
 	} else {
-		v53 = *(*float64)(unsafe.Add(mBase, _consts[725]))
-		*(*float64)(unsafe.Add(mBase, _consts[726])) = v53
-		v56 = *(*int32)(unsafe.Add(mBase, _consts[732]))
+		v53 = *(*float64)(unsafe.Add(mBase, _consts[724]))
+		*(*float64)(unsafe.Add(mBase, _consts[725])) = v53
+		v56 = *(*int32)(unsafe.Add(mBase, _consts[731]))
 		v57 = v56
 		v59 = v53
-		*(*int32)(unsafe.Add(mBase, _consts[728])) = v57
+		*(*int32)(unsafe.Add(mBase, _consts[727])) = v57
 		v64 = v59
-		v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+		v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 		if v66 != 0 {
 		} else {
 			if base.F64_gt(v64, float64(0)) != 0 {
 				v70 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v70)
+				*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v70)
 			} else {
 				v73 = int32(0)
-				*(*int32)(unsafe.Add(mBase, _consts[475])) = v73
-				*(*uint8)(unsafe.Add(mBase, _consts[730])) = uint8(v73)
+				*(*int32)(unsafe.Add(mBase, _consts[474])) = v73
+				*(*uint8)(unsafe.Add(mBase, _consts[729])) = uint8(v73)
 			}
 		}
 		if v11 == int32(0) {
@@ -660,7 +660,7 @@ func F_VacuumUpdateCosts(m *base.Module) {
 				if v124 != 0 {
 					return
 				} else {
-					v126 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+					v126 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 					v127 = *(*int32)(unsafe.Add(mBase, uint32(v126)+12))
 					v128 = *(*int32)(unsafe.Add(mBase, uint32(v126)+8))
 					v130 = *(*int32)(unsafe.Add(mBase, _consts[86]))
@@ -680,40 +680,40 @@ func F_VacuumUpdateCosts(m *base.Module) {
 								m.G0 = v8 + int32(32)
 								return
 							} else {
-								v142 = *(*int32)(unsafe.Add(mBase, _consts[722]))
+								v142 = *(*int32)(unsafe.Add(mBase, _consts[721]))
 								v143 = *(*int32)(unsafe.Add(mBase, uint32(v142)+32))
-								v145 = *(*float64)(unsafe.Add(mBase, _consts[726]))
+								v145 = *(*float64)(unsafe.Add(mBase, _consts[725]))
 								*(*float64)(unsafe.Add(mBase, uint32(v8)+16)) = v145
-								v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[729])))
+								v150 = int32(*(*uint8)(unsafe.Add(mBase, _consts[728])))
 								if v150 != 0 {
-									v151 = int32(157800)
+									v151 = int32(160879)
 								} else {
-									v151 = int32(241674)
+									v151 = int32(246086)
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v151
 								if base.F64_gt(v145, float64(0)) != 0 {
-									v157 = int32(157800)
+									v157 = int32(160879)
 								} else {
-									v157 = int32(241674)
+									v157 = int32(246086)
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v157
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v128
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v127
 								if v143 != 0 {
-									v163 = int32(157800)
+									v163 = int32(160879)
 								} else {
-									v163 = int32(241674)
+									v163 = int32(246086)
 								}
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v163
-								v166 = *(*int32)(unsafe.Add(mBase, _consts[728]))
+								v166 = *(*int32)(unsafe.Add(mBase, _consts[727]))
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v166
-								F_errmsg_internal(m, int32(676641), v8)
+								F_errmsg_internal(m, int32(688696), v8)
 								mBase = m.M
 								v170 = m.ExcPending
 								if v170 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(498492), int32(1710), int32(116003))
+									F_errfinish(m, int32(509000), int32(1710), int32(118196))
 									mBase = m.M
 									v175 = m.ExcPending
 									if v175 != 0 {
@@ -823,7 +823,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									return v71
 								} else {
 									v56 = int32(760)
-									v57 = int32(104609)
+									v57 = int32(106229)
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 									F_errmsg(m, v57, v8)
 									mBase = m.M
@@ -831,7 +831,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									if v62 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498520), v56, int32(263847))
+										F_errfinish(m, int32(509028), v56, int32(268493))
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
@@ -863,7 +863,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 										return v71
 									} else {
 										v56 = int32(773)
-										v57 = int32(104655)
+										v57 = int32(106275)
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 										F_errmsg(m, v57, v8)
 										mBase = m.M
@@ -871,7 +871,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 										if v62 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(498520), v56, int32(263847))
+											F_errfinish(m, int32(509028), v56, int32(268493))
 											mBase = m.M
 											v66 = m.ExcPending
 											if v66 != 0 {
@@ -916,7 +916,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 								return v71
 							} else {
 								v56 = int32(760)
-								v57 = int32(104609)
+								v57 = int32(106229)
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 								F_errmsg(m, v57, v8)
 								mBase = m.M
@@ -924,7 +924,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 								if v62 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498520), v56, int32(263847))
+									F_errfinish(m, int32(509028), v56, int32(268493))
 									mBase = m.M
 									v66 = m.ExcPending
 									if v66 != 0 {
@@ -956,7 +956,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									return v71
 								} else {
 									v56 = int32(773)
-									v57 = int32(104655)
+									v57 = int32(106275)
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1 + int32(4)
 									F_errmsg(m, v57, v8)
 									mBase = m.M
@@ -964,7 +964,7 @@ func F_vacuum_is_permitted_for_relation(m *base.Module, l0 int32, l1 int32, l2 i
 									if v62 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498520), v56, int32(263847))
+										F_errfinish(m, int32(509028), v56, int32(268493))
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {

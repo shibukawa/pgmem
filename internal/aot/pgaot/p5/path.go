@@ -64,14 +64,14 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[10]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	F_ResourceOwnerEnlarge(m, v10)
 	mBase = m.M
 	v14 = m.ExcPending
 	if v14 != 0 {
 		return int32(0)
 	} else {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[645]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[642]))
 		v18 = F_PathNameOpenFilePerm(m, l0, int32(578), v17)
 		mBase = m.M
 		v19 = m.ExcPending
@@ -96,13 +96,13 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-							F_errmsg(m, int32(298432), v7)
+							F_errmsg(m, int32(303761), v7)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(501242), int32(1889), int32(390801))
+								F_errfinish(m, int32(512015), int32(1889), int32(398240))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -118,29 +118,29 @@ func F_PathNameCreateTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			} else {
 				v40 = v18 * int32(48)
-				v42 = *(*int32)(unsafe.Add(mBase, _consts[552]))
+				v42 = *(*int32)(unsafe.Add(mBase, _consts[549]))
 				v44 = int32(4)
 				v45 = v40 + v42 + v44
 				v46 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v45))))
 				v48 = v46 | v44
 				*(*uint16)(unsafe.Add(mBase, uint32(v45))) = uint16(v48)
-				v51 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-				F_ResourceOwnerRemember(m, v51, v18, int32(1630448))
+				v51 = *(*int32)(unsafe.Add(mBase, _consts[11]))
+				F_ResourceOwnerRemember(m, v51, v18, int32(1642656))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					v56 = *(*int32)(unsafe.Add(mBase, _consts[552]))
+					v56 = *(*int32)(unsafe.Add(mBase, _consts[549]))
 					v57 = v56 + v40
-					v59 = *(*int32)(unsafe.Add(mBase, _consts[10]))
+					v59 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 					*(*int32)(unsafe.Add(mBase, uint32(v57)+8)) = v59
 					v62 = v57 + int32(4)
 					v63 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v62))))
 					v65 = v63 | int32(2)
 					*(*uint16)(unsafe.Add(mBase, uint32(v62))) = uint16(v65)
 					v68 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, _consts[646])) = uint8(v68)
+					*(*uint8)(unsafe.Add(mBase, _consts[643])) = uint8(v68)
 					m.G0 = v7 + int32(16)
 					return v18
 				}
@@ -544,7 +544,7 @@ func F_add_path(m *base.Module, l0 int32, l1 int32) {
 	var v685 int32
 	_ = v685
 	v3 = int32(0)
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[45]))
 	if v14 != 0 {
 		goto L1
 	} else {
@@ -2916,7 +2916,7 @@ func F_check_search_path(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v11 = v9 - int32(16)
 	m.G0 = v11
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[252]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[250]))
 	if v15 == v4 {
 		v253 = v4
 		goto L3
@@ -2929,7 +2929,7 @@ L1:
 	return v295
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[253])) = v204
+	*(*int32)(unsafe.Add(mBase, _consts[251])) = v204
 	v295 = int32(1)
 	goto L1
 L3:
@@ -2957,8 +2957,8 @@ L5:
 	return int32(0)
 L6:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[239]))
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[253]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[237]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[251]))
 	if v25 == int32(0) {
 		goto L7
 	} else {
@@ -2970,7 +2970,7 @@ L7:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v13
 	v59 = *(*int64)(unsafe.Add(mBase, uint32(v11)+8))
 	*(*int64)(unsafe.Add(mBase, uint32(v11))) = v59
-	v62 = *(*int32)(unsafe.Add(mBase, _consts[254]))
+	v62 = *(*int32)(unsafe.Add(mBase, _consts[252]))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+20))
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v62)+12))
 	v71 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)))
@@ -3363,8 +3363,8 @@ L66:
 	}
 L67:
 	;
-	v268 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-	*(*int32)(unsafe.Add(mBase, _consts[87])) = v268
+	v268 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+	*(*int32)(unsafe.Add(mBase, _consts[88])) = v268
 	goto L70
 L68:
 	;
@@ -3381,7 +3381,7 @@ L69:
 	}
 L70:
 	;
-	v274 = F_format_elog_string(m, int32(648212), int32(0))
+	v274 = F_format_elog_string(m, int32(660123), int32(0))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -3391,7 +3391,7 @@ L70:
 	}
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[88])) = v274
+	*(*int32)(unsafe.Add(mBase, _consts[89])) = v274
 	F_pfree(m, v257)
 	mBase = m.M
 	v278 = m.ExcPending
@@ -4447,10 +4447,10 @@ L28:
 	;
 	v105 = *(*float64)(unsafe.Add(mBase, uint32(v104)))
 	*(*float64)(unsafe.Add(mBase, uint32(v17)+32)) = v105
-	v108 = *(*float64)(unsafe.Add(mBase, _consts[398]))
-	v110 = *(*float64)(unsafe.Add(mBase, _consts[399]))
-	v112 = *(*float64)(unsafe.Add(mBase, _consts[388]))
-	v114 = int32(*(*uint8)(unsafe.Add(mBase, _consts[400])))
+	v108 = *(*float64)(unsafe.Add(mBase, _consts[395]))
+	v110 = *(*float64)(unsafe.Add(mBase, _consts[396]))
+	v112 = *(*float64)(unsafe.Add(mBase, _consts[385]))
+	v114 = int32(*(*uint8)(unsafe.Add(mBase, _consts[397])))
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+40)) = v93 + (v114 ^ int32(1))
 	v119 = base.F64_add(v112, v112)
 	v120 = *(*int32)(unsafe.Add(mBase, uint32(v17)+76))
@@ -4483,7 +4483,7 @@ L32:
 	goto L28
 L33:
 	;
-	F_errmsg_internal(m, int32(442789), int32(0))
+	F_errmsg_internal(m, int32(451212), int32(0))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -4493,7 +4493,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(500945), int32(2118), int32(322635))
+	F_errfinish(m, int32(511453), int32(2118), int32(328323))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -4588,7 +4588,7 @@ func F_create_sort_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64
 		v36 = *(*float64)(unsafe.Add(mBase, uint32(l1)+32))
 		v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 		v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+32))
-		v41 = *(*int32)(unsafe.Add(mBase, _consts[20]))
+		v41 = *(*int32)(unsafe.Add(mBase, _consts[21]))
 		v43 = m.G0
 		v44 = int32(16)
 		v45 = v43 - v44
@@ -4597,7 +4597,7 @@ func F_create_sort_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64
 		mBase = m.M
 		v50 = *(*float64)(unsafe.Add(mBase, uint32(v45)+8))
 		*(*float64)(unsafe.Add(mBase, uint32(v8)+32)) = v36
-		v53 = int32(*(*uint8)(unsafe.Add(mBase, _consts[401])))
+		v53 = int32(*(*uint8)(unsafe.Add(mBase, _consts[398])))
 		v54 = base.F64_add(v35, v50)
 		*(*float64)(unsafe.Add(mBase, uint32(v8)+48)) = v54
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = v34 + (v53 ^ v27)

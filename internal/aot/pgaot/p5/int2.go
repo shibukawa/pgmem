@@ -222,13 +222,13 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(61451), int32(0))
+					F_errmsg_internal(m, int32(62435), int32(0))
 					mBase = m.M
 					v167 = m.ExcPending
 					if v167 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(501522), int32(5606), int32(355090))
+						F_errfinish(m, int32(512295), int32(5606), int32(362100))
 						mBase = m.M
 						v172 = m.ExcPending
 						if v172 != 0 {
@@ -241,10 +241,10 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v51 = int32(4520560)
-				v52 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+				v51 = int32(4536272)
+				v52 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
-				*(*int32)(unsafe.Add(mBase, _consts[9])) = v54
+				*(*int32)(unsafe.Add(mBase, _consts[10])) = v54
 				v57 = F_palloc0(m, int32(48))
 				mBase = m.M
 				v60 = m.ExcPending
@@ -253,7 +253,7 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 				} else {
 					v61 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v57))) = uint8(v61)
-					*(*int32)(unsafe.Add(mBase, _consts[9])) = v52
+					*(*int32)(unsafe.Add(mBase, _consts[10])) = v52
 					v65 = v57
 					v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 					if v67 == int32(0) {
@@ -360,13 +360,13 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 			if v163 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(61451), int32(0))
+				F_errmsg_internal(m, int32(62435), int32(0))
 				mBase = m.M
 				v167 = m.ExcPending
 				if v167 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(501522), int32(5606), int32(355090))
+					F_errfinish(m, int32(512295), int32(5606), int32(362100))
 					mBase = m.M
 					v172 = m.ExcPending
 					if v172 != 0 {
@@ -379,10 +379,10 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v51 = int32(4520560)
-			v52 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+			v51 = int32(4536272)
+			v52 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
-			*(*int32)(unsafe.Add(mBase, _consts[9])) = v54
+			*(*int32)(unsafe.Add(mBase, _consts[10])) = v54
 			v57 = F_palloc0(m, int32(48))
 			mBase = m.M
 			v60 = m.ExcPending
@@ -391,7 +391,7 @@ func F_int2_accum(m *base.Module, l0 int32) int32 {
 			} else {
 				v61 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(v57))) = uint8(v61)
-				*(*int32)(unsafe.Add(mBase, _consts[9])) = v52
+				*(*int32)(unsafe.Add(mBase, _consts[10])) = v52
 				v65 = v57
 				v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 				if v67 == int32(0) {

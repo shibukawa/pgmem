@@ -29,7 +29,7 @@ func F_RunNamespaceSearchHook(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)) = uint8(v8)
 	*(*uint8)(unsafe.Add(mBase, uint32(v6)+14)) = uint8(v2)
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[230]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[231]))
 	m.T0[v17].(func(*base.Module, int32, int32, int32, int32, int32))(m, int32(3), int32(2615), l0, int32(0), v6+int32(14))
 	mBase = m.M
 	v21 = m.ExcPending

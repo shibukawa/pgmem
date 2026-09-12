@@ -144,7 +144,7 @@ L5:
 	}
 L6:
 	;
-	if v18 == int32(4126868) {
+	if v18 == int32(4142580) {
 		goto L5
 	} else {
 		goto L7
@@ -167,7 +167,7 @@ L9:
 L10:
 	;
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
-	if v34 != int32(4126868) {
+	if v34 != int32(4142580) {
 		v24 = v34
 		goto L8
 	} else {
@@ -216,7 +216,7 @@ L17:
 	}
 L18:
 	;
-	v61 = int32(4126868)
+	v61 = int32(4142580)
 	*(*int32)(unsafe.Add(mBase, _consts[597])) = v61
 	v65 = v61
 	goto L20
@@ -226,7 +226,7 @@ L19:
 	goto L20
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4126868)
+	*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(4142580)
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+4)) = v65
 	*(*int32)(unsafe.Add(mBase, uint32(v65))) = v55
 	*(*int32)(unsafe.Add(mBase, _consts[596])) = v55
@@ -241,7 +241,7 @@ L20:
 	}
 L21:
 	;
-	F_ResourceOwnerRemember(m, v77, v55, int32(1630476))
+	F_ResourceOwnerRemember(m, v77, v55, int32(1642684))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -402,7 +402,7 @@ L43:
 	goto L42
 L44:
 	;
-	F_errmsg_internal(m, int32(415853), int32(0))
+	F_errmsg_internal(m, int32(423612), int32(0))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -412,7 +412,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(498565), int32(692), int32(327047))
+	F_errfinish(m, int32(509073), int32(692), int32(332939))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -531,7 +531,7 @@ func F_dsm_detach(m *base.Module, l0 int32) {
 	_ = v154
 	var v157 int32
 	_ = v157
-	v6 = int32(4515212)
+	v6 = int32(4530924)
 	v8 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 	*(*int32)(unsafe.Add(mBase, _consts[83])) = v8 + int32(1)
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
@@ -549,7 +549,7 @@ L2:
 	goto L3
 L3:
 	;
-	v36 = int32(4515212)
+	v36 = int32(4530924)
 	v38 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 	*(*int32)(unsafe.Add(mBase, _consts[83])) = v38 - int32(1)
 	v43 = l0 + int32(24)
@@ -775,7 +775,7 @@ L32:
 	goto L17
 L33:
 	;
-	F_ResourceOwnerForget(m, v147, l0, int32(1630476))
+	F_ResourceOwnerForget(m, v147, l0, int32(1642684))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -919,13 +919,13 @@ func F_dsm_pin_segment(m *base.Module, l0 int32) {
 			if v71 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(453713), int32(0))
+				F_errmsg_internal(m, int32(462176), int32(0))
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(498565), int32(967), int32(95477))
+					F_errfinish(m, int32(509073), int32(967), int32(96884))
 					mBase = m.M
 					v80 = m.ExcPending
 					if v80 != 0 {

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7211)
-	m.G0 = int32(13086432)
+	m.T0 = make([]any, 7579)
+	m.G0 = int32(13102208)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -44,17 +44,19 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
 	InitElemSeg_3_4(m)
+	InitElemSeg_3_5(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
 	InitElemSeg_4_4(m)
+	InitElemSeg_4_5(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414939
+	m.DataEnd = 4430651
 	initData_0(m)
 	return m
 }
@@ -87,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7211)
-	m.G0 = int32(13086432)
+	m.T0 = make([]any, 7579)
+	m.G0 = int32(13102208)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -109,17 +111,19 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
 	InitElemSeg_3_4(m)
+	InitElemSeg_3_5(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
 	InitElemSeg_4_4(m)
+	InitElemSeg_4_5(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414939
+	m.DataEnd = 4430651
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7211)
-	m.G0 = int32(13086432)
+	m.T0 = make([]any, 7579)
+	m.G0 = int32(13102208)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -156,28 +160,30 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_3_2(m)
 	InitElemSeg_3_3(m)
 	InitElemSeg_3_4(m)
+	InitElemSeg_3_5(m)
 	InitElemSeg_4_0(m)
 	InitElemSeg_4_1(m)
 	InitElemSeg_4_2(m)
 	InitElemSeg_4_3(m)
 	InitElemSeg_4_4(m)
+	InitElemSeg_4_5(m)
 	InitElemSeg_5_0(m)
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4414939
+	m.DataEnd = 4430651
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1611040])
-	copy(m.Memory[1616368:], wasm2goData_data_bin[1611040:1611049])
-	copy(m.Memory[1618416:], wasm2goData_data_bin[1611049:1623977])
-	copy(m.Memory[1642500:], wasm2goData_data_bin[1623977:1717218])
-	copy(m.Memory[1736768:], wasm2goData_data_bin[1717218:1828874])
-	copy(m.Memory[1859640:], wasm2goData_data_bin[1828874:4087744])
-	copy(m.Memory[4126000:], wasm2goData_data_bin[4087744:4376683])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1623248])
+	copy(m.Memory[1628576:], wasm2goData_data_bin[1623248:1623257])
+	copy(m.Memory[1630624:], wasm2goData_data_bin[1623257:1636185])
+	copy(m.Memory[1654788:], wasm2goData_data_bin[1636185:1729426])
+	copy(m.Memory[1749056:], wasm2goData_data_bin[1729426:1841082])
+	copy(m.Memory[1871928:], wasm2goData_data_bin[1841082:4103376])
+	copy(m.Memory[4141712:], wasm2goData_data_bin[4103376:4392315])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5263,6 +5269,642 @@ func UuidNsUrl(m *base.Module, l0 int32) int32 {
 }
 func UuidNsX500(m *base.Module, l0 int32) int32 {
 	return F_uuid_ns_x500(m, l0)
+}
+func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
+	F_HnswParallelBuildMain(m, l0, l1)
+}
+func IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
+	F_IvfflatParallelBuildMain(m, l0, l1)
+}
+func PgMagicFuncVector(m *base.Module) int32 {
+	return F_Pg_magic_func_vector(m)
+}
+func PGInitVector(m *base.Module) {
+	F__PG_init_vector(m)
+}
+func ArrayToHalfvec(m *base.Module, l0 int32) int32 {
+	return F_array_to_halfvec(m, l0)
+}
+func ArrayToSparsevec(m *base.Module, l0 int32) int32 {
+	return F_array_to_sparsevec(m, l0)
+}
+func ArrayToVector(m *base.Module, l0 int32) int32 {
+	return F_array_to_vector(m, l0)
+}
+func BinaryQuantize(m *base.Module, l0 int32) int32 {
+	return F_binary_quantize(m, l0)
+}
+func CosineDistance(m *base.Module, l0 int32) int32 {
+	return F_cosine_distance(m, l0)
+}
+func Halfvec(m *base.Module, l0 int32) int32 {
+	return F_halfvec(m, l0)
+}
+func HalfvecAccum(m *base.Module, l0 int32) int32 {
+	return F_halfvec_accum(m, l0)
+}
+func HalfvecAdd(m *base.Module, l0 int32) int32 {
+	return F_halfvec_add(m, l0)
+}
+func HalfvecAvg(m *base.Module, l0 int32) int32 {
+	return F_halfvec_avg(m, l0)
+}
+func HalfvecBinaryQuantize(m *base.Module, l0 int32) int32 {
+	return F_halfvec_binary_quantize(m, l0)
+}
+func HalfvecCmp(m *base.Module, l0 int32) int32 {
+	return F_halfvec_cmp(m, l0)
+}
+func HalfvecConcat(m *base.Module, l0 int32) int32 {
+	return F_halfvec_concat(m, l0)
+}
+func HalfvecCosineDistance(m *base.Module, l0 int32) int32 {
+	return F_halfvec_cosine_distance(m, l0)
+}
+func HalfvecEq(m *base.Module, l0 int32) int32 {
+	return F_halfvec_eq(m, l0)
+}
+func HalfvecGe(m *base.Module, l0 int32) int32 {
+	return F_halfvec_ge(m, l0)
+}
+func HalfvecGt(m *base.Module, l0 int32) int32 {
+	return F_halfvec_gt(m, l0)
+}
+func HalfvecIn(m *base.Module, l0 int32) int32 {
+	return F_halfvec_in(m, l0)
+}
+func HalfvecInnerProduct(m *base.Module, l0 int32) int32 {
+	return F_halfvec_inner_product(m, l0)
+}
+func HalfvecL1Distance(m *base.Module, l0 int32) int32 {
+	return F_halfvec_l1_distance(m, l0)
+}
+func HalfvecL2Distance(m *base.Module, l0 int32) int32 {
+	return F_halfvec_l2_distance(m, l0)
+}
+func HalfvecL2Norm(m *base.Module, l0 int32) int32 {
+	return F_halfvec_l2_norm(m, l0)
+}
+func HalfvecL2Normalize(m *base.Module, l0 int32) int32 {
+	return F_halfvec_l2_normalize(m, l0)
+}
+func HalfvecL2SquaredDistance(m *base.Module, l0 int32) int32 {
+	return F_halfvec_l2_squared_distance(m, l0)
+}
+func HalfvecLe(m *base.Module, l0 int32) int32 {
+	return F_halfvec_le(m, l0)
+}
+func HalfvecLt(m *base.Module, l0 int32) int32 {
+	return F_halfvec_lt(m, l0)
+}
+func HalfvecMul(m *base.Module, l0 int32) int32 {
+	return F_halfvec_mul(m, l0)
+}
+func HalfvecNe(m *base.Module, l0 int32) int32 {
+	return F_halfvec_ne(m, l0)
+}
+func HalfvecNegativeInnerProduct(m *base.Module, l0 int32) int32 {
+	return F_halfvec_negative_inner_product(m, l0)
+}
+func HalfvecOut(m *base.Module, l0 int32) int32 {
+	return F_halfvec_out(m, l0)
+}
+func HalfvecRecv(m *base.Module, l0 int32) int32 {
+	return F_halfvec_recv(m, l0)
+}
+func HalfvecSend(m *base.Module, l0 int32) int32 {
+	return F_halfvec_send(m, l0)
+}
+func HalfvecSphericalDistance(m *base.Module, l0 int32) int32 {
+	return F_halfvec_spherical_distance(m, l0)
+}
+func HalfvecSub(m *base.Module, l0 int32) int32 {
+	return F_halfvec_sub(m, l0)
+}
+func HalfvecSubvector(m *base.Module, l0 int32) int32 {
+	return F_halfvec_subvector(m, l0)
+}
+func HalfvecToFloat4(m *base.Module, l0 int32) int32 {
+	return F_halfvec_to_float4(m, l0)
+}
+func HalfvecToSparsevec(m *base.Module, l0 int32) int32 {
+	return F_halfvec_to_sparsevec(m, l0)
+}
+func HalfvecToVector(m *base.Module, l0 int32) int32 {
+	return F_halfvec_to_vector(m, l0)
+}
+func HalfvecTypmodIn(m *base.Module, l0 int32) int32 {
+	return F_halfvec_typmod_in(m, l0)
+}
+func HalfvecVectorDims(m *base.Module, l0 int32) int32 {
+	return F_halfvec_vector_dims(m, l0)
+}
+func HammingDistance(m *base.Module, l0 int32) int32 {
+	return F_hamming_distance(m, l0)
+}
+func HnswBitSupport(m *base.Module, l0 int32) int32 {
+	return F_hnsw_bit_support(m, l0)
+}
+func HnswHalfvecSupport(m *base.Module, l0 int32) int32 {
+	return F_hnsw_halfvec_support(m, l0)
+}
+func HnswSparsevecSupport(m *base.Module, l0 int32) int32 {
+	return F_hnsw_sparsevec_support(m, l0)
+}
+func Hnswhandler(m *base.Module, l0 int32) int32 {
+	return F_hnswhandler(m, l0)
+}
+func InnerProduct(m *base.Module, l0 int32) int32 {
+	return F_inner_product(m, l0)
+}
+func IvfflatBitSupport(m *base.Module, l0 int32) int32 {
+	return F_ivfflat_bit_support(m, l0)
+}
+func IvfflatHalfvecSupport(m *base.Module, l0 int32) int32 {
+	return F_ivfflat_halfvec_support(m, l0)
+}
+func Ivfflathandler(m *base.Module, l0 int32) int32 {
+	return F_ivfflathandler(m, l0)
+}
+func JaccardDistance(m *base.Module, l0 int32) int32 {
+	return F_jaccard_distance(m, l0)
+}
+func L1Distance(m *base.Module, l0 int32) int32 {
+	return F_l1_distance(m, l0)
+}
+func L2Distance(m *base.Module, l0 int32) int32 {
+	return F_l2_distance(m, l0)
+}
+func L2Normalize(m *base.Module, l0 int32) int32 {
+	return F_l2_normalize(m, l0)
+}
+func PgFinfoArrayToHalfvec(m *base.Module) int32 {
+	return F_pg_finfo_array_to_halfvec(m)
+}
+func PgFinfoArrayToSparsevec(m *base.Module) int32 {
+	return F_pg_finfo_array_to_sparsevec(m)
+}
+func PgFinfoArrayToVector(m *base.Module) int32 {
+	return F_pg_finfo_array_to_vector(m)
+}
+func PgFinfoBinaryQuantize(m *base.Module) int32 {
+	return F_pg_finfo_binary_quantize(m)
+}
+func PgFinfoCosineDistance(m *base.Module) int32 {
+	return F_pg_finfo_cosine_distance(m)
+}
+func PgFinfoHalfvec(m *base.Module) int32 {
+	return F_pg_finfo_halfvec(m)
+}
+func PgFinfoHalfvecAccum(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_accum(m)
+}
+func PgFinfoHalfvecAdd(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_add(m)
+}
+func PgFinfoHalfvecAvg(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_avg(m)
+}
+func PgFinfoHalfvecBinaryQuantize(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_binary_quantize(m)
+}
+func PgFinfoHalfvecCmp(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_cmp(m)
+}
+func PgFinfoHalfvecConcat(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_concat(m)
+}
+func PgFinfoHalfvecCosineDistance(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_cosine_distance(m)
+}
+func PgFinfoHalfvecEq(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_eq(m)
+}
+func PgFinfoHalfvecGe(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_ge(m)
+}
+func PgFinfoHalfvecGt(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_gt(m)
+}
+func PgFinfoHalfvecIn(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_in(m)
+}
+func PgFinfoHalfvecInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_inner_product(m)
+}
+func PgFinfoHalfvecL1Distance(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_l1_distance(m)
+}
+func PgFinfoHalfvecL2Distance(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_l2_distance(m)
+}
+func PgFinfoHalfvecL2Norm(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_l2_norm(m)
+}
+func PgFinfoHalfvecL2Normalize(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_l2_normalize(m)
+}
+func PgFinfoHalfvecL2SquaredDistance(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_l2_squared_distance(m)
+}
+func PgFinfoHalfvecLe(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_le(m)
+}
+func PgFinfoHalfvecLt(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_lt(m)
+}
+func PgFinfoHalfvecMul(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_mul(m)
+}
+func PgFinfoHalfvecNe(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_ne(m)
+}
+func PgFinfoHalfvecNegativeInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_negative_inner_product(m)
+}
+func PgFinfoHalfvecOut(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_out(m)
+}
+func PgFinfoHalfvecRecv(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_recv(m)
+}
+func PgFinfoHalfvecSend(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_send(m)
+}
+func PgFinfoHalfvecSphericalDistance(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_spherical_distance(m)
+}
+func PgFinfoHalfvecSub(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_sub(m)
+}
+func PgFinfoHalfvecSubvector(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_subvector(m)
+}
+func PgFinfoHalfvecToFloat4(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_to_float4(m)
+}
+func PgFinfoHalfvecToSparsevec(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_to_sparsevec(m)
+}
+func PgFinfoHalfvecToVector(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_to_vector(m)
+}
+func PgFinfoHalfvecTypmodIn(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_typmod_in(m)
+}
+func PgFinfoHalfvecVectorDims(m *base.Module) int32 {
+	return F_pg_finfo_halfvec_vector_dims(m)
+}
+func PgFinfoHammingDistance(m *base.Module) int32 {
+	return F_pg_finfo_hamming_distance(m)
+}
+func PgFinfoHnswBitSupport(m *base.Module) int32 {
+	return F_pg_finfo_hnsw_bit_support(m)
+}
+func PgFinfoHnswHalfvecSupport(m *base.Module) int32 {
+	return F_pg_finfo_hnsw_halfvec_support(m)
+}
+func PgFinfoHnswSparsevecSupport(m *base.Module) int32 {
+	return F_pg_finfo_hnsw_sparsevec_support(m)
+}
+func PgFinfoHnswhandler(m *base.Module) int32 {
+	return F_pg_finfo_hnswhandler(m)
+}
+func PgFinfoInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_inner_product(m)
+}
+func PgFinfoIvfflatBitSupport(m *base.Module) int32 {
+	return F_pg_finfo_ivfflat_bit_support(m)
+}
+func PgFinfoIvfflatHalfvecSupport(m *base.Module) int32 {
+	return F_pg_finfo_ivfflat_halfvec_support(m)
+}
+func PgFinfoIvfflathandler(m *base.Module) int32 {
+	return F_pg_finfo_ivfflathandler(m)
+}
+func PgFinfoJaccardDistance(m *base.Module) int32 {
+	return F_pg_finfo_jaccard_distance(m)
+}
+func PgFinfoL1Distance(m *base.Module) int32 {
+	return F_pg_finfo_l1_distance(m)
+}
+func PgFinfoL2Distance(m *base.Module) int32 {
+	return F_pg_finfo_l2_distance(m)
+}
+func PgFinfoL2Normalize(m *base.Module) int32 {
+	return F_pg_finfo_l2_normalize(m)
+}
+func PgFinfoSparsevec(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec(m)
+}
+func PgFinfoSparsevecCmp(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_cmp(m)
+}
+func PgFinfoSparsevecCosineDistance(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_cosine_distance(m)
+}
+func PgFinfoSparsevecEq(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_eq(m)
+}
+func PgFinfoSparsevecGe(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_ge(m)
+}
+func PgFinfoSparsevecGt(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_gt(m)
+}
+func PgFinfoSparsevecIn(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_in(m)
+}
+func PgFinfoSparsevecInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_inner_product(m)
+}
+func PgFinfoSparsevecL1Distance(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_l1_distance(m)
+}
+func PgFinfoSparsevecL2Distance(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_l2_distance(m)
+}
+func PgFinfoSparsevecL2Norm(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_l2_norm(m)
+}
+func PgFinfoSparsevecL2Normalize(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_l2_normalize(m)
+}
+func PgFinfoSparsevecL2SquaredDistance(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_l2_squared_distance(m)
+}
+func PgFinfoSparsevecLe(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_le(m)
+}
+func PgFinfoSparsevecLt(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_lt(m)
+}
+func PgFinfoSparsevecNe(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_ne(m)
+}
+func PgFinfoSparsevecNegativeInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_negative_inner_product(m)
+}
+func PgFinfoSparsevecOut(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_out(m)
+}
+func PgFinfoSparsevecRecv(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_recv(m)
+}
+func PgFinfoSparsevecSend(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_send(m)
+}
+func PgFinfoSparsevecToHalfvec(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_to_halfvec(m)
+}
+func PgFinfoSparsevecToVector(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_to_vector(m)
+}
+func PgFinfoSparsevecTypmodIn(m *base.Module) int32 {
+	return F_pg_finfo_sparsevec_typmod_in(m)
+}
+func PgFinfoSubvector(m *base.Module) int32 {
+	return F_pg_finfo_subvector(m)
+}
+func PgFinfoVector(m *base.Module) int32 {
+	return F_pg_finfo_vector(m)
+}
+func PgFinfoVectorAccum(m *base.Module) int32 {
+	return F_pg_finfo_vector_accum(m)
+}
+func PgFinfoVectorAdd(m *base.Module) int32 {
+	return F_pg_finfo_vector_add(m)
+}
+func PgFinfoVectorAvg(m *base.Module) int32 {
+	return F_pg_finfo_vector_avg(m)
+}
+func PgFinfoVectorCmp(m *base.Module) int32 {
+	return F_pg_finfo_vector_cmp(m)
+}
+func PgFinfoVectorCombine(m *base.Module) int32 {
+	return F_pg_finfo_vector_combine(m)
+}
+func PgFinfoVectorConcat(m *base.Module) int32 {
+	return F_pg_finfo_vector_concat(m)
+}
+func PgFinfoVectorDims(m *base.Module) int32 {
+	return F_pg_finfo_vector_dims(m)
+}
+func PgFinfoVectorEq(m *base.Module) int32 {
+	return F_pg_finfo_vector_eq(m)
+}
+func PgFinfoVectorGe(m *base.Module) int32 {
+	return F_pg_finfo_vector_ge(m)
+}
+func PgFinfoVectorGt(m *base.Module) int32 {
+	return F_pg_finfo_vector_gt(m)
+}
+func PgFinfoVectorIn(m *base.Module) int32 {
+	return F_pg_finfo_vector_in(m)
+}
+func PgFinfoVectorL2SquaredDistance(m *base.Module) int32 {
+	return F_pg_finfo_vector_l2_squared_distance(m)
+}
+func PgFinfoVectorLe(m *base.Module) int32 {
+	return F_pg_finfo_vector_le(m)
+}
+func PgFinfoVectorLt(m *base.Module) int32 {
+	return F_pg_finfo_vector_lt(m)
+}
+func PgFinfoVectorMul(m *base.Module) int32 {
+	return F_pg_finfo_vector_mul(m)
+}
+func PgFinfoVectorNe(m *base.Module) int32 {
+	return F_pg_finfo_vector_ne(m)
+}
+func PgFinfoVectorNegativeInnerProduct(m *base.Module) int32 {
+	return F_pg_finfo_vector_negative_inner_product(m)
+}
+func PgFinfoVectorNorm(m *base.Module) int32 {
+	return F_pg_finfo_vector_norm(m)
+}
+func PgFinfoVectorOut(m *base.Module) int32 {
+	return F_pg_finfo_vector_out(m)
+}
+func PgFinfoVectorRecv(m *base.Module) int32 {
+	return F_pg_finfo_vector_recv(m)
+}
+func PgFinfoVectorSend(m *base.Module) int32 {
+	return F_pg_finfo_vector_send(m)
+}
+func PgFinfoVectorSphericalDistance(m *base.Module) int32 {
+	return F_pg_finfo_vector_spherical_distance(m)
+}
+func PgFinfoVectorSub(m *base.Module) int32 {
+	return F_pg_finfo_vector_sub(m)
+}
+func PgFinfoVectorToFloat4(m *base.Module) int32 {
+	return F_pg_finfo_vector_to_float4(m)
+}
+func PgFinfoVectorToHalfvec(m *base.Module) int32 {
+	return F_pg_finfo_vector_to_halfvec(m)
+}
+func PgFinfoVectorToSparsevec(m *base.Module) int32 {
+	return F_pg_finfo_vector_to_sparsevec(m)
+}
+func PgFinfoVectorTypmodIn(m *base.Module) int32 {
+	return F_pg_finfo_vector_typmod_in(m)
+}
+func Sparsevec(m *base.Module, l0 int32) int32 {
+	return F_sparsevec(m, l0)
+}
+func SparsevecCmp(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_cmp(m, l0)
+}
+func SparsevecCosineDistance(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_cosine_distance(m, l0)
+}
+func SparsevecEq(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_eq(m, l0)
+}
+func SparsevecGe(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_ge(m, l0)
+}
+func SparsevecGt(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_gt(m, l0)
+}
+func SparsevecIn(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_in(m, l0)
+}
+func SparsevecInnerProduct(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_inner_product(m, l0)
+}
+func SparsevecL1Distance(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_l1_distance(m, l0)
+}
+func SparsevecL2Distance(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_l2_distance(m, l0)
+}
+func SparsevecL2Norm(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_l2_norm(m, l0)
+}
+func SparsevecL2Normalize(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_l2_normalize(m, l0)
+}
+func SparsevecL2SquaredDistance(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_l2_squared_distance(m, l0)
+}
+func SparsevecLe(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_le(m, l0)
+}
+func SparsevecLt(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_lt(m, l0)
+}
+func SparsevecNe(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_ne(m, l0)
+}
+func SparsevecNegativeInnerProduct(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_negative_inner_product(m, l0)
+}
+func SparsevecOut(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_out(m, l0)
+}
+func SparsevecRecv(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_recv(m, l0)
+}
+func SparsevecSend(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_send(m, l0)
+}
+func SparsevecToHalfvec(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_to_halfvec(m, l0)
+}
+func SparsevecToVector(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_to_vector(m, l0)
+}
+func SparsevecTypmodIn(m *base.Module, l0 int32) int32 {
+	return F_sparsevec_typmod_in(m, l0)
+}
+func Subvector(m *base.Module, l0 int32) int32 {
+	return F_subvector(m, l0)
+}
+func Vector(m *base.Module, l0 int32) int32 {
+	return F_vector(m, l0)
+}
+func VectorAccum(m *base.Module, l0 int32) int32 {
+	return F_vector_accum(m, l0)
+}
+func VectorAdd(m *base.Module, l0 int32) int32 {
+	return F_vector_add(m, l0)
+}
+func VectorAvg(m *base.Module, l0 int32) int32 {
+	return F_vector_avg(m, l0)
+}
+func VectorCmp(m *base.Module, l0 int32) int32 {
+	return F_vector_cmp(m, l0)
+}
+func VectorCombine(m *base.Module, l0 int32) int32 {
+	return F_vector_combine(m, l0)
+}
+func VectorConcat(m *base.Module, l0 int32) int32 {
+	return F_vector_concat(m, l0)
+}
+func VectorDims(m *base.Module, l0 int32) int32 {
+	return F_halfvec_vector_dims(m, l0)
+}
+func VectorEq(m *base.Module, l0 int32) int32 {
+	return F_vector_eq(m, l0)
+}
+func VectorGe(m *base.Module, l0 int32) int32 {
+	return F_vector_ge(m, l0)
+}
+func VectorGt(m *base.Module, l0 int32) int32 {
+	return F_vector_gt(m, l0)
+}
+func VectorIn(m *base.Module, l0 int32) int32 {
+	return F_vector_in(m, l0)
+}
+func VectorL2SquaredDistance(m *base.Module, l0 int32) int32 {
+	return F_vector_l2_squared_distance(m, l0)
+}
+func VectorLe(m *base.Module, l0 int32) int32 {
+	return F_vector_le(m, l0)
+}
+func VectorLt(m *base.Module, l0 int32) int32 {
+	return F_vector_lt(m, l0)
+}
+func VectorMul(m *base.Module, l0 int32) int32 {
+	return F_vector_mul(m, l0)
+}
+func VectorNe(m *base.Module, l0 int32) int32 {
+	return F_vector_ne(m, l0)
+}
+func VectorNegativeInnerProduct(m *base.Module, l0 int32) int32 {
+	return F_vector_negative_inner_product(m, l0)
+}
+func VectorNorm(m *base.Module, l0 int32) int32 {
+	return F_vector_norm(m, l0)
+}
+func VectorOut(m *base.Module, l0 int32) int32 {
+	return F_vector_out(m, l0)
+}
+func VectorRecv(m *base.Module, l0 int32) int32 {
+	return F_vector_recv(m, l0)
+}
+func VectorSend(m *base.Module, l0 int32) int32 {
+	return F_vector_send(m, l0)
+}
+func VectorSphericalDistance(m *base.Module, l0 int32) int32 {
+	return F_vector_spherical_distance(m, l0)
+}
+func VectorSub(m *base.Module, l0 int32) int32 {
+	return F_vector_sub(m, l0)
+}
+func VectorToFloat4(m *base.Module, l0 int32) int32 {
+	return F_vector_to_float4(m, l0)
+}
+func VectorToHalfvec(m *base.Module, l0 int32) int32 {
+	return F_vector_to_halfvec(m, l0)
+}
+func VectorToSparsevec(m *base.Module, l0 int32) int32 {
+	return F_vector_to_sparsevec(m, l0)
+}
+func VectorTypmodIn(m *base.Module, l0 int32) int32 {
+	return F_vector_typmod_in(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

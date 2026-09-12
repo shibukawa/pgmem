@@ -121,10 +121,10 @@ func F_find_all_inheritors(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v14 = v12 - int32(80)
 	m.G0 = v14
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+48)) = int64(34359738372)
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+72)) = v19
 	v22 = int32(32)
-	v26 = F_hash_create(m, int32(393454), v22, v14+v22, int32(1064))
+	v26 = F_hash_create(m, int32(400893), v22, v14+v22, int32(1064))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {

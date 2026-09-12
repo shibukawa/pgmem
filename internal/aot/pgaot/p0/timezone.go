@@ -262,7 +262,7 @@ L3:
 	v21 = v19 - int32(16)
 	m.G0 = v21
 	v24 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v29 = F_AllocSetContextCreateInternal(m, v24, int32(14111), v18, int32(1024), int32(8192))
+	v29 = F_AllocSetContextCreateInternal(m, v24, int32(14168), v18, int32(1024), int32(8192))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -275,7 +275,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	v33 = int32(4520560)
+	v33 = int32(4536272)
 	v34 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = int32(128)
@@ -855,7 +855,7 @@ L86:
 	goto L87
 L87:
 	;
-	v366 = F_format_elog_string(m, int32(13904), int32(0))
+	v366 = F_format_elog_string(m, int32(13961), int32(0))
 	mBase = m.M
 	v367 = m.ExcPending
 	if v367 != 0 {

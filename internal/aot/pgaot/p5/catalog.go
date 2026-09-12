@@ -111,10 +111,10 @@ L1:
 	return
 L2:
 	;
-	v24 = int32(4520560)
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[9]))
-	v28 = *(*int32)(unsafe.Add(mBase, _consts[367]))
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v28
+	v24 = int32(4536272)
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[10]))
+	v28 = *(*int32)(unsafe.Add(mBase, _consts[364]))
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v28
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v22)+52))
 	v31 = F_CreateTupleDescCopyConstr(m, v30)
 	mBase = m.M
@@ -141,7 +141,7 @@ L4:
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(v22)+48))
 	v40 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39)+117)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+96)) = uint8(v40)
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v25
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v25
 	F_sequence_close(m, v22, int32(1))
 	mBase = m.M
 	v46 = m.ExcPending
@@ -188,7 +188,7 @@ L11:
 	*(*int32)(unsafe.Add(mBase, uint32(v77+(l0+int32(16))))) = v171
 	*(*int32)(unsafe.Add(mBase, uint32(v77+(l0+int32(32))))) = v170
 	v178 = l0 + int32(104) + v63*int32(48)
-	v182 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v182 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	F_fmgr_info_cxt(m, v168, v178+int32(16), v182)
 	mBase = m.M
 	v184 = m.ExcPending
@@ -238,7 +238,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg_internal(m, int32(169700), int32(0))
+	F_errmsg_internal(m, int32(173101), int32(0))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -248,7 +248,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(500685), int32(1178), int32(401142))
+	F_errfinish(m, int32(511193), int32(1178), int32(408662))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -392,7 +392,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v104
-	F_errmsg_internal(m, int32(22424), v18)
+	F_errmsg_internal(m, int32(22555), v18)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -402,7 +402,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(500685), int32(330), int32(174363))
+	F_errfinish(m, int32(511193), int32(330), int32(177924))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {

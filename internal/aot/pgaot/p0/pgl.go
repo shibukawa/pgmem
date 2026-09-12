@@ -297,7 +297,7 @@ L20:
 	goto L21
 L21:
 	;
-	v56 = int32(4179020)
+	v56 = int32(4194732)
 	v58 = *(*int32)(unsafe.Add(mBase, _consts[1039]))
 	*(*int32)(unsafe.Add(mBase, _consts[1039])) = v58 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l2
@@ -305,7 +305,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v47))) = v58
-	v67 = int32(4605000)
+	v67 = int32(4620712)
 	v68 = *(*int32)(unsafe.Add(mBase, _consts[1038]))
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+20)) = v68
 	*(*int32)(unsafe.Add(mBase, _consts[1038])) = v47

@@ -60,7 +60,7 @@ func F_DropDatabaseBuffers(m *base.Module, l0 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[34]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[35]))
 	if v2 < v11 {
 		goto L1
 	} else {
@@ -79,7 +79,7 @@ L3:
 	return
 L4:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[16]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[17]))
 	v23 = v20 + v18<<(uint(int32(6))%32)
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
 	if v24 != l0 {
@@ -93,7 +93,7 @@ L5:
 L6:
 	;
 	v98 = v18 + int32(1)
-	v100 = *(*int32)(unsafe.Add(mBase, _consts[34]))
+	v100 = *(*int32)(unsafe.Add(mBase, _consts[35]))
 	if v98 < v100 {
 		v18 = v98
 		goto L4
@@ -102,9 +102,9 @@ L6:
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(229899)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(234095)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(496589)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(506700)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
@@ -124,8 +124,8 @@ L9:
 	goto L10
 L10:
 	;
-	v65 = int32(4126908)
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+	v65 = int32(4142620)
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[602]))
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
 	if v68 == int32(0) {
 		goto L19
@@ -175,7 +175,7 @@ L17:
 	goto L16
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[605])) = v83
+	*(*int32)(unsafe.Add(mBase, _consts[602])) = v83
 	goto L17
 L19:
 	;
@@ -278,7 +278,7 @@ func F_database_to_xml(m *base.Module, l0 int32) int32 {
 		if v8 != 0 {
 			return int32(0)
 		} else {
-			v10 = *(*int32)(unsafe.Add(mBase, _consts[107]))
+			v10 = *(*int32)(unsafe.Add(mBase, _consts[108]))
 			v11 = F_get_database_name(m, v10)
 			mBase = m.M
 			v12 = m.ExcPending

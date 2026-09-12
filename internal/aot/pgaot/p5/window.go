@@ -70,13 +70,13 @@ func F_find_window_functions_walker(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v50
-					F_errmsg_internal(m, int32(49359), v8)
+					F_errmsg_internal(m, int32(50009), v8)
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495557), int32(252), int32(222048))
+						F_errfinish(m, int32(505538), int32(252), int32(226019))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
@@ -234,7 +234,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 	_ = v161
 	v4 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[45]))
 	if v10 != 0 {
 		F_ProcessInterrupts(m)
 		mBase = m.M
@@ -259,11 +259,11 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 					} else {
 						v21 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 						if v21 <= l1 {
-							v23 = int32(4520560)
-							v24 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+							v23 = int32(4536272)
+							v24 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 							v26 = *(*int32)(unsafe.Add(mBase, uint32(v8)+64))
 							v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
-							*(*int32)(unsafe.Add(mBase, _consts[9])) = v27
+							*(*int32)(unsafe.Add(mBase, _consts[10])) = v27
 							v29 = *(*int32)(unsafe.Add(mBase, uint32(v8)+144))
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 							F_tuplestore_select_read_pointer(m, v29, v30)
@@ -289,13 +289,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 											if v103 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg_internal(m, int32(365408), int32(0))
+												F_errmsg_internal(m, int32(372632), int32(0))
 												mBase = m.M
 												v107 = m.ExcPending
 												if v107 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(499731), int32(3165), int32(85107))
+													F_errfinish(m, int32(510239), int32(3165), int32(86496))
 													mBase = m.M
 													v112 = m.ExcPending
 													if v112 != 0 {
@@ -324,13 +324,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v152 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(365408), int32(0))
+														F_errmsg_internal(m, int32(372632), int32(0))
 														mBase = m.M
 														v156 = m.ExcPending
 														if v156 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(499731), int32(3206), int32(85107))
+															F_errfinish(m, int32(510239), int32(3206), int32(86496))
 															mBase = m.M
 															v161 = m.ExcPending
 															if v161 != 0 {
@@ -346,7 +346,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													v138 = int64(1)
 													v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 													*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-													*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+													*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 													v145 = int32(1)
 													return v145
 												}
@@ -370,13 +370,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 												if v116 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(365408), int32(0))
+													F_errmsg_internal(m, int32(372632), int32(0))
 													mBase = m.M
 													v120 = m.ExcPending
 													if v120 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(499731), int32(3173), int32(85107))
+														F_errfinish(m, int32(510239), int32(3173), int32(86496))
 														mBase = m.M
 														v125 = m.ExcPending
 														if v125 != 0 {
@@ -401,7 +401,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														v138 = int64(-1)
 														v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 														*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-														*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+														*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 														v145 = int32(1)
 														return v145
 													} else {
@@ -411,13 +411,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v77 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(365408), int32(0))
+															F_errmsg_internal(m, int32(372632), int32(0))
 															mBase = m.M
 															v81 = m.ExcPending
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(499731), int32(3200), int32(85107))
+																F_errfinish(m, int32(510239), int32(3200), int32(86496))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -462,13 +462,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v152 != 0 {
 																return int32(0)
 															} else {
-																F_errmsg_internal(m, int32(365408), int32(0))
+																F_errmsg_internal(m, int32(372632), int32(0))
 																mBase = m.M
 																v156 = m.ExcPending
 																if v156 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(499731), int32(3206), int32(85107))
+																	F_errfinish(m, int32(510239), int32(3206), int32(86496))
 																	mBase = m.M
 																	v161 = m.ExcPending
 																	if v161 != 0 {
@@ -484,7 +484,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															v138 = int64(1)
 															v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 															*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-															*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+															*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 															v145 = int32(1)
 															return v145
 														}
@@ -501,7 +501,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															v138 = int64(-1)
 															v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 															*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-															*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+															*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 															v145 = int32(1)
 															return v145
 														} else {
@@ -511,13 +511,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 															if v77 != 0 {
 																return int32(0)
 															} else {
-																F_errmsg_internal(m, int32(365408), int32(0))
+																F_errmsg_internal(m, int32(372632), int32(0))
 																mBase = m.M
 																v81 = m.ExcPending
 																if v81 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(499731), int32(3200), int32(85107))
+																	F_errfinish(m, int32(510239), int32(3200), int32(86496))
 																	mBase = m.M
 																	v86 = m.ExcPending
 																	if v86 != 0 {
@@ -551,13 +551,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v152 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(365408), int32(0))
+															F_errmsg_internal(m, int32(372632), int32(0))
 															mBase = m.M
 															v156 = m.ExcPending
 															if v156 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(499731), int32(3206), int32(85107))
+																F_errfinish(m, int32(510239), int32(3206), int32(86496))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
@@ -573,7 +573,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														v138 = int64(1)
 														v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 														*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-														*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+														*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 														v145 = int32(1)
 														return v145
 													}
@@ -590,7 +590,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														v138 = int64(-1)
 														v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 														*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-														*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+														*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 														v145 = int32(1)
 														return v145
 													} else {
@@ -600,13 +600,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v77 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(365408), int32(0))
+															F_errmsg_internal(m, int32(372632), int32(0))
 															mBase = m.M
 															v81 = m.ExcPending
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(499731), int32(3200), int32(85107))
+																F_errfinish(m, int32(510239), int32(3200), int32(86496))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -632,13 +632,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 							if v90 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(250204), int32(0))
+								F_errmsg_internal(m, int32(254739), int32(0))
 								mBase = m.M
 								v94 = m.ExcPending
 								if v94 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(499731), int32(3151), int32(85107))
+									F_errfinish(m, int32(510239), int32(3151), int32(86496))
 									mBase = m.M
 									v99 = m.ExcPending
 									if v99 != 0 {
@@ -673,11 +673,11 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 				} else {
 					v21 = *(*int64)(unsafe.Add(mBase, uint32(l0)+24))
 					if v21 <= l1 {
-						v23 = int32(4520560)
-						v24 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+						v23 = int32(4536272)
+						v24 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 						v26 = *(*int32)(unsafe.Add(mBase, uint32(v8)+64))
 						v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+16))
-						*(*int32)(unsafe.Add(mBase, _consts[9])) = v27
+						*(*int32)(unsafe.Add(mBase, _consts[10])) = v27
 						v29 = *(*int32)(unsafe.Add(mBase, uint32(v8)+144))
 						v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 						F_tuplestore_select_read_pointer(m, v29, v30)
@@ -703,13 +703,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 										if v103 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg_internal(m, int32(365408), int32(0))
+											F_errmsg_internal(m, int32(372632), int32(0))
 											mBase = m.M
 											v107 = m.ExcPending
 											if v107 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(499731), int32(3165), int32(85107))
+												F_errfinish(m, int32(510239), int32(3165), int32(86496))
 												mBase = m.M
 												v112 = m.ExcPending
 												if v112 != 0 {
@@ -738,13 +738,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 												if v152 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg_internal(m, int32(365408), int32(0))
+													F_errmsg_internal(m, int32(372632), int32(0))
 													mBase = m.M
 													v156 = m.ExcPending
 													if v156 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(499731), int32(3206), int32(85107))
+														F_errfinish(m, int32(510239), int32(3206), int32(86496))
 														mBase = m.M
 														v161 = m.ExcPending
 														if v161 != 0 {
@@ -760,7 +760,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 												v138 = int64(1)
 												v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 												*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-												*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+												*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 												v145 = int32(1)
 												return v145
 											}
@@ -784,13 +784,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 											if v116 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg_internal(m, int32(365408), int32(0))
+												F_errmsg_internal(m, int32(372632), int32(0))
 												mBase = m.M
 												v120 = m.ExcPending
 												if v120 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(499731), int32(3173), int32(85107))
+													F_errfinish(m, int32(510239), int32(3173), int32(86496))
 													mBase = m.M
 													v125 = m.ExcPending
 													if v125 != 0 {
@@ -815,7 +815,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													v138 = int64(-1)
 													v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 													*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-													*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+													*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 													v145 = int32(1)
 													return v145
 												} else {
@@ -825,13 +825,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v77 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(365408), int32(0))
+														F_errmsg_internal(m, int32(372632), int32(0))
 														mBase = m.M
 														v81 = m.ExcPending
 														if v81 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(499731), int32(3200), int32(85107))
+															F_errfinish(m, int32(510239), int32(3200), int32(86496))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -876,13 +876,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v152 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(365408), int32(0))
+															F_errmsg_internal(m, int32(372632), int32(0))
 															mBase = m.M
 															v156 = m.ExcPending
 															if v156 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(499731), int32(3206), int32(85107))
+																F_errfinish(m, int32(510239), int32(3206), int32(86496))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
@@ -898,7 +898,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														v138 = int64(1)
 														v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 														*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-														*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+														*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 														v145 = int32(1)
 														return v145
 													}
@@ -915,7 +915,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														v138 = int64(-1)
 														v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 														*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-														*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+														*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 														v145 = int32(1)
 														return v145
 													} else {
@@ -925,13 +925,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 														if v77 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg_internal(m, int32(365408), int32(0))
+															F_errmsg_internal(m, int32(372632), int32(0))
 															mBase = m.M
 															v81 = m.ExcPending
 															if v81 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(499731), int32(3200), int32(85107))
+																F_errfinish(m, int32(510239), int32(3200), int32(86496))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -965,13 +965,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v152 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(365408), int32(0))
+														F_errmsg_internal(m, int32(372632), int32(0))
 														mBase = m.M
 														v156 = m.ExcPending
 														if v156 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(499731), int32(3206), int32(85107))
+															F_errfinish(m, int32(510239), int32(3206), int32(86496))
 															mBase = m.M
 															v161 = m.ExcPending
 															if v161 != 0 {
@@ -987,7 +987,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													v138 = int64(1)
 													v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 													*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-													*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+													*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 													v145 = int32(1)
 													return v145
 												}
@@ -1004,7 +1004,7 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													v138 = int64(-1)
 													v139 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 													*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v138 + v139
-													*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
+													*(*int32)(unsafe.Add(mBase, _consts[10])) = v24
 													v145 = int32(1)
 													return v145
 												} else {
@@ -1014,13 +1014,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 													if v77 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg_internal(m, int32(365408), int32(0))
+														F_errmsg_internal(m, int32(372632), int32(0))
 														mBase = m.M
 														v81 = m.ExcPending
 														if v81 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(499731), int32(3200), int32(85107))
+															F_errfinish(m, int32(510239), int32(3200), int32(86496))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -1046,13 +1046,13 @@ func F_window_gettupleslot(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(250204), int32(0))
+							F_errmsg_internal(m, int32(254739), int32(0))
 							mBase = m.M
 							v94 = m.ExcPending
 							if v94 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499731), int32(3151), int32(85107))
+								F_errfinish(m, int32(510239), int32(3151), int32(86496))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {

@@ -239,7 +239,7 @@ func F__pgp_read_public_key(m *base.Module, l0 int32, l1 int32) int32 {
 										}
 									default:
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v42
-										F_px_debug(m, int32(484235), v9)
+										F_px_debug(m, int32(493101), v9)
 										mBase = m.M
 										v124 = m.ExcPending
 										if v124 != 0 {
@@ -479,9 +479,9 @@ func F_pgp_cfb_encrypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v12
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	if v7 != 0 {
-		v8 = int32(6929)
+		v8 = int32(7259)
 	} else {
-		v8 = int32(6930)
+		v8 = int32(7260)
 	}
 	F_cfb_process(m, l0, l1, l2, l3, v8)
 	mBase = m.M
@@ -497,7 +497,7 @@ func F_pgp_compress_filter(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_pushf_create(m, l0, int32(4399552), l1, l2)
+	v5 = F_pushf_create(m, l0, int32(4415264), l1, l2)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -953,7 +953,7 @@ L10:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v56)+4)) = v54
 	*(*int32)(unsafe.Add(mBase, uint32(v56))) = v49
-	v63 = F_pullf_create(m, v14+int32(24), int32(4399600), v56, v53)
+	v63 = F_pullf_create(m, v14+int32(24), int32(4415312), v56, v53)
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -1037,7 +1037,7 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v69
-	F_px_debug(m, int32(29944), v14)
+	F_px_debug(m, int32(30434), v14)
 	mBase = m.M
 	v458 = m.ExcPending
 	if v458 != 0 {
@@ -1115,7 +1115,7 @@ L30:
 	goto L16
 L31:
 	;
-	F_px_debug(m, int32(113435), int32(0))
+	F_px_debug(m, int32(115628), int32(0))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -1185,7 +1185,7 @@ L39:
 	}
 L40:
 	;
-	F_px_debug(m, int32(215538), int32(0))
+	F_px_debug(m, int32(219464), int32(0))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -1317,7 +1317,7 @@ L57:
 	goto L54
 L58:
 	;
-	F_px_debug(m, int32(506571), int32(0))
+	F_px_debug(m, int32(517818), int32(0))
 	mBase = m.M
 	v181 = m.ExcPending
 	if v181 != 0 {
@@ -1434,7 +1434,7 @@ L70:
 	}
 L71:
 	;
-	v240 = *(*int32)(unsafe.Add(mBase, uint32(v227<<(uint(int32(2))%32))+uint32(_consts[1455])))
+	v240 = *(*int32)(unsafe.Add(mBase, uint32(v227<<(uint(int32(2))%32))+uint32(_consts[1458])))
 	v241 = *(*int32)(unsafe.Add(mBase, uint32(v240)+12))
 	v242 = v241
 	goto L69
@@ -1454,7 +1454,7 @@ L73:
 	*(*int32)(unsafe.Add(mBase, uint32(v189)+8)) = v213
 	*(*int32)(unsafe.Add(mBase, uint32(v189)+4)) = v262
 	*(*int32)(unsafe.Add(mBase, uint32(v189))) = v244
-	F_px_debug(m, int32(467466), v189)
+	F_px_debug(m, int32(476015), v189)
 	mBase = m.M
 	v268 = m.ExcPending
 	if v268 != 0 {
@@ -1475,7 +1475,7 @@ L75:
 	}
 L76:
 	;
-	v260 = *(*int32)(unsafe.Add(mBase, uint32(v247<<(uint(int32(2))%32))+uint32(_consts[1455])))
+	v260 = *(*int32)(unsafe.Add(mBase, uint32(v247<<(uint(int32(2))%32))+uint32(_consts[1458])))
 	v261 = *(*int32)(unsafe.Add(mBase, uint32(v260)+12))
 	v262 = v261
 	goto L74
@@ -1490,7 +1490,7 @@ L78:
 L79:
 	;
 	v293 = int32(0)
-	F_px_debug(m, int32(21670), v293)
+	F_px_debug(m, int32(21801), v293)
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -1514,7 +1514,7 @@ L82:
 	goto L19
 L83:
 	;
-	F_px_debug(m, int32(108370), int32(0))
+	F_px_debug(m, int32(110100), int32(0))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -1566,7 +1566,7 @@ L88:
 L89:
 	;
 	v324 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
-	v325 = F_pullf_create(m, v14+int32(76), int32(4399612), v324, v304)
+	v325 = F_pullf_create(m, v14+int32(76), int32(4415324), v324, v304)
 	mBase = m.M
 	v326 = m.ExcPending
 	if v326 != 0 {
@@ -1585,7 +1585,7 @@ L90:
 L91:
 	;
 	v332 = *(*int32)(unsafe.Add(mBase, uint32(v14)+76))
-	v333 = F_pullf_create(m, v14+int32(72), int32(4399624), l0, v332)
+	v333 = F_pullf_create(m, v14+int32(72), int32(4415336), l0, v332)
 	mBase = m.M
 	v334 = m.ExcPending
 	if v334 != 0 {
@@ -1686,7 +1686,7 @@ L104:
 L105:
 	;
 	v361 = int32(0)
-	F_px_debug(m, int32(21670), v361)
+	F_px_debug(m, int32(21801), v361)
 	mBase = m.M
 	v365 = m.ExcPending
 	if v365 != 0 {
@@ -1710,7 +1710,7 @@ L108:
 	goto L19
 L109:
 	;
-	F_px_debug(m, int32(443059), int32(0))
+	F_px_debug(m, int32(451482), int32(0))
 	mBase = m.M
 	v369 = m.ExcPending
 	if v369 != 0 {
@@ -1759,7 +1759,7 @@ L114:
 	}
 L115:
 	;
-	F_px_debug(m, int32(564399), int32(0))
+	F_px_debug(m, int32(575931), int32(0))
 	mBase = m.M
 	v394 = m.ExcPending
 	if v394 != 0 {
@@ -1806,7 +1806,7 @@ L120:
 L121:
 	;
 	v409 = *(*int32)(unsafe.Add(mBase, uint32(v14)+32))
-	v410 = F_pullf_create(m, v14+int32(76), int32(4399612), v409, v372)
+	v410 = F_pullf_create(m, v14+int32(76), int32(4415324), v409, v372)
 	mBase = m.M
 	v411 = m.ExcPending
 	if v411 != 0 {
@@ -1825,7 +1825,7 @@ L122:
 L123:
 	;
 	v417 = *(*int32)(unsafe.Add(mBase, uint32(v14)+76))
-	v418 = F_pullf_create(m, v14+int32(68), int32(4399648), l0, v417)
+	v418 = F_pullf_create(m, v14+int32(68), int32(4415360), l0, v417)
 	mBase = m.M
 	v419 = m.ExcPending
 	if v419 != 0 {
@@ -1844,7 +1844,7 @@ L124:
 L125:
 	;
 	v425 = *(*int32)(unsafe.Add(mBase, uint32(v14)+68))
-	v426 = F_pullf_create(m, v14+int32(72), int32(4399624), l0, v425)
+	v426 = F_pullf_create(m, v14+int32(72), int32(4415336), l0, v425)
 	mBase = m.M
 	v427 = m.ExcPending
 	if v427 != 0 {
@@ -2499,7 +2499,7 @@ L1:
 	return v448
 L2:
 	;
-	F_px_debug(m, int32(546896), int32(0))
+	F_px_debug(m, int32(558227), int32(0))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -2546,7 +2546,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v38
-	F_px_debug(m, int32(467621), v19+int32(16))
+	F_px_debug(m, int32(476170), v19+int32(16))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -2608,7 +2608,7 @@ L16:
 	}
 L17:
 	;
-	F_px_debug(m, int32(326308), int32(0))
+	F_px_debug(m, int32(332130), int32(0))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -2846,7 +2846,7 @@ L43:
 	}
 L44:
 	;
-	F_px_debug(m, int32(455767), int32(0))
+	F_px_debug(m, int32(464275), int32(0))
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -3065,7 +3065,7 @@ L76:
 	goto L75
 L77:
 	;
-	F_px_debug(m, int32(455615), int32(0))
+	F_px_debug(m, int32(464078), int32(0))
 	mBase = m.M
 	v384 = m.ExcPending
 	if v384 != 0 {
@@ -3088,7 +3088,7 @@ L79:
 L80:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v405
-	F_px_debug(m, int32(38988), v19)
+	F_px_debug(m, int32(39638), v19)
 	mBase = m.M
 	v411 = m.ExcPending
 	if v411 != 0 {

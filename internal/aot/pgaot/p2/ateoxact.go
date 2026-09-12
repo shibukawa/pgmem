@@ -12,9 +12,9 @@ func F_AtEOXact_ComboCid(m *base.Module) {
 	_ = v2
 	v2 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[70])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[1249])) = v2
 	*(*int32)(unsafe.Add(mBase, _consts[1251])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[1250])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[1253])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[1252])) = v2
 	return
 }
 func F_AtEOXact_Inval(m *base.Module, l0 int32) {
@@ -86,8 +86,8 @@ func F_AtEOXact_Inval(m *base.Module, l0 int32) {
 	_ = v95
 	var v97 int32
 	_ = v97
-	*(*int32)(unsafe.Add(mBase, _consts[1156])) = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[1157]))
+	*(*int32)(unsafe.Add(mBase, _consts[1159])) = int32(0)
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[1160]))
 	if v10 != 0 {
 		goto L1
 	} else {
@@ -108,7 +108,7 @@ L3:
 	return
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1157])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1160])) = int32(0)
 	goto L3
 L5:
 	;
@@ -165,12 +165,12 @@ L11:
 	return
 L12:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[1157]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[1160]))
 	v18 = v17
 	goto L10
 L13:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[1158]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[1161]))
 	F_SendSharedInvalidMessages(m, v32+v27<<(uint(int32(4))%32), v28)
 	mBase = m.M
 	v37 = m.ExcPending
@@ -199,7 +199,7 @@ L16:
 	goto L15
 L17:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, _consts[1159]))
+	v45 = *(*int32)(unsafe.Add(mBase, _consts[1162]))
 	F_SendSharedInvalidMessages(m, v45+v40<<(uint(int32(4))%32), v41)
 	mBase = m.M
 	v50 = m.ExcPending
@@ -213,7 +213,7 @@ L18:
 	goto L19
 L19:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, _consts[1157]))
+	v52 = *(*int32)(unsafe.Add(mBase, _consts[1160]))
 	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52)+16)))
 	if v53 != int32(1) {
 		goto L4
@@ -254,7 +254,7 @@ L25:
 	}
 L26:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[1158]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[1161]))
 	F_LocalExecuteInvalidationMessage(m, v67+v61<<(uint(int32(4))%32))
 	mBase = m.M
 	v72 = m.ExcPending
@@ -284,7 +284,7 @@ L30:
 	goto L31
 L31:
 	;
-	v90 = *(*int32)(unsafe.Add(mBase, _consts[1159]))
+	v90 = *(*int32)(unsafe.Add(mBase, _consts[1162]))
 	F_LocalExecuteInvalidationMessage(m, v90+v84<<(uint(int32(4))%32))
 	mBase = m.M
 	v95 = m.ExcPending
@@ -539,7 +539,7 @@ L25:
 	goto L3
 L26:
 	;
-	v69 = int32(4520612)
+	v69 = int32(4536324)
 	v70 = *(*int32)(unsafe.Add(mBase, _consts[261]))
 	v73 = *(*int32)(unsafe.Add(mBase, _consts[405]))
 	*(*int32)(unsafe.Add(mBase, _consts[261])) = v73

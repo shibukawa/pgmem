@@ -135,13 +135,13 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v34
-										F_errmsg_internal(m, int32(46087), v7+int32(16))
+										F_errmsg_internal(m, int32(46737), v7+int32(16))
 										mBase = m.M
 										v107 = m.ExcPending
 										if v107 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(500765), int32(649), int32(338210))
+											F_errfinish(m, int32(511273), int32(649), int32(344705))
 											mBase = m.M
 											v112 = m.ExcPending
 											if v112 != 0 {
@@ -237,13 +237,13 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 										} else {
 											v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											*(*int32)(unsafe.Add(mBase, uint32(v7))) = v48
-											F_errmsg(m, int32(71686), v7)
+											F_errmsg(m, int32(72761), v7)
 											mBase = m.M
 											v52 = m.ExcPending
 											if v52 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(500765), int32(635), int32(338210))
+												F_errfinish(m, int32(511273), int32(635), int32(344705))
 												mBase = m.M
 												v57 = m.ExcPending
 												if v57 != 0 {
@@ -285,13 +285,13 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 								} else {
 									v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v48
-									F_errmsg(m, int32(71686), v7)
+									F_errmsg(m, int32(72761), v7)
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(500765), int32(635), int32(338210))
+										F_errfinish(m, int32(511273), int32(635), int32(344705))
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {

@@ -65,7 +65,7 @@ func F_has_server_privilege_name(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					v21 = F_convert_any_priv_string(m, v10, int32(1661376))
+					v21 = F_convert_any_priv_string(m, v10, int32(1673664))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
@@ -117,13 +117,13 @@ func F_server_check_detail(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg(m, int32(306590), v6)
+				F_errmsg(m, int32(312035), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494774), int32(238), int32(306526))
+					F_errfinish(m, int32(504357), int32(238), int32(311971))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

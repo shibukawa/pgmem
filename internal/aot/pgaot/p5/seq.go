@@ -30,7 +30,7 @@ func F_ExecSeqScan(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[45]))
 		if v9 != 0 {
 			F_ProcessInterrupts(m)
 			mBase = m.M
@@ -186,7 +186,7 @@ func F_seq_desc(m *base.Module, l0 int32, l1 int32) {
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v15
 		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v14
-		F_appendStringInfo(m, l0, int32(39118), v7)
+		F_appendStringInfo(m, l0, int32(39768), v7)
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {

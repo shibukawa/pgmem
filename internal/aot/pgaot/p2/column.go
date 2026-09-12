@@ -129,13 +129,13 @@ func F_convert_column_name(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v29
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11
-								F_errmsg(m, int32(71977), v8)
+								F_errmsg(m, int32(73052), v8)
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498986), int32(2939), int32(380217))
+									F_errfinish(m, int32(509494), int32(2939), int32(387549))
 									mBase = m.M
 									v49 = m.ExcPending
 									if v49 != 0 {

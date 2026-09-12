@@ -105,11 +105,11 @@ func F_pgmem_module_name(m *base.Module, l0 int32) int32 {
 	if l0 < v2 {
 		v13 = v2
 	} else {
-		v6 = *(*int32)(unsafe.Add(mBase, _consts[1271]))
+		v6 = *(*int32)(unsafe.Add(mBase, _consts[1275]))
 		if v6 <= l0 {
 			v13 = v2
 		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_consts[1272])))
+			v12 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_consts[1276])))
 			v13 = v12
 		}
 	}

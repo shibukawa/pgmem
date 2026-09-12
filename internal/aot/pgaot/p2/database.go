@@ -32,7 +32,7 @@ func F_SetDatabasePath(m *base.Module, l0 int32) {
 	if v6 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1176])) = v5
+		*(*int32)(unsafe.Add(mBase, _consts[1179])) = v5
 		return
 	}
 }
@@ -171,7 +171,7 @@ L3:
 	}
 L4:
 	;
-	F_appendStringInfoString(m, v17, int32(731947))
+	F_appendStringInfoString(m, v17, int32(744159))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -190,7 +190,7 @@ L5:
 L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v11
-	F_appendStringInfo(m, v17, int32(731535), v15)
+	F_appendStringInfo(m, v17, int32(743747), v15)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -203,7 +203,7 @@ L7:
 	goto L8
 L8:
 	;
-	F_appendStringInfoString(m, v17, int32(759252))
+	F_appendStringInfoString(m, v17, int32(771464))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -226,7 +226,7 @@ L10:
 	}
 L11:
 	;
-	v34 = F_query_to_oid_list(m, int32(548204))
+	v34 = F_query_to_oid_list(m, int32(559535))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -236,7 +236,7 @@ L11:
 	}
 L12:
 	;
-	v37 = F_query_to_oid_list(m, int32(547867))
+	v37 = F_query_to_oid_list(m, int32(559198))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -494,7 +494,7 @@ func F_has_database_privilege_name(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					v21 = F_convert_any_priv_string(m, v10, int32(1661008))
+					v21 = F_convert_any_priv_string(m, v10, int32(1673296))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
@@ -571,7 +571,7 @@ func F_has_database_privilege_name_id(m *base.Module, l0 int32) int32 {
 		if v22 != 0 {
 			return int32(0)
 		} else {
-			v24 = F_convert_any_priv_string(m, v14, int32(1661008))
+			v24 = F_convert_any_priv_string(m, v14, int32(1673296))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

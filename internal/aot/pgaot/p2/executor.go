@@ -87,7 +87,7 @@ L2:
 	goto L3
 L3:
 	;
-	v12 = int32(4520560)
+	v12 = int32(4536272)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+100))

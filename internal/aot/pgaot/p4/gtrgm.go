@@ -1356,7 +1356,7 @@ L51:
 L52:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20))) = v29
-	F_errmsg_internal(m, int32(483764), v20)
+	F_errmsg_internal(m, int32(492630), v20)
 	mBase = m.M
 	v183 = m.ExcPending
 	if v183 != 0 {
@@ -1366,7 +1366,7 @@ L52:
 	}
 L53:
 	;
-	F_errfinish(m, int32(494102), int32(271), int32(92681))
+	F_errfinish(m, int32(503418), int32(271), int32(94088))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -2294,7 +2294,7 @@ L191:
 L192:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+16)) = v29
-	F_errmsg_internal(m, int32(483764), v20+int32(16))
+	F_errmsg_internal(m, int32(492630), v20+int32(16))
 	mBase = m.M
 	v957 = m.ExcPending
 	if v957 != 0 {
@@ -2304,7 +2304,7 @@ L192:
 	}
 L193:
 	;
-	F_errfinish(m, int32(494102), int32(443), int32(92681))
+	F_errfinish(m, int32(503418), int32(443), int32(94088))
 	mBase = m.M
 	v964 = m.ExcPending
 	if v964 != 0 {
@@ -2348,14 +2348,14 @@ func F_gtrgm_out(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(289830)
-			F_errmsg(m, int32(192969), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(295092)
+			F_errmsg(m, int32(196530), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(494102), int32(71), int32(67489))
+				F_errfinish(m, int32(503418), int32(71), int32(68520))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

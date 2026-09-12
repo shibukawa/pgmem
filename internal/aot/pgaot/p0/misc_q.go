@@ -72,13 +72,13 @@ func F_QTN2QT(m *base.Module, l0 int32) int32 {
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(401458), int32(0))
+					F_errmsg(m, int32(408978), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(498891), int32(376), int32(519138))
+						F_errfinish(m, int32(509399), int32(376), int32(530385))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -672,12 +672,12 @@ func F_querytree(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(447863), int32(0))
+		F_errmsg_internal(m, int32(456286), int32(0))
 		v13 = m.ExcPending
 		if v13 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(498811), int32(667), int32(411042))
+			F_errfinish(m, int32(509319), int32(667), int32(418785))
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return int32(0)
@@ -874,7 +874,7 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 				return v78
 			}
 		} else {
-			v64 = F_ScanKeywordLookup(m, l0, int32(1864988))
+			v64 = F_ScanKeywordLookup(m, l0, int32(1877276))
 			mBase = m.M
 			v67 = m.ExcPending
 			if v67 != 0 {
@@ -949,7 +949,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 	_ = v15
 	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v2 == int32(1) {
-		v6 = F_cstring_to_text(m, int32(534636))
+		v6 = F_cstring_to_text(m, int32(545892))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {

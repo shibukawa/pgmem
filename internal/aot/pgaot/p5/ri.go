@@ -14,7 +14,7 @@ func F_RI_FKey_setdefault_upd(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v12 int32
 	_ = v12
-	F_ri_CheckTrigger(m, l0, int32(423224), int32(2))
+	F_ri_CheckTrigger(m, l0, int32(431473), int32(2))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -40,7 +40,7 @@ func F_RI_FKey_setnull_del(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v12 int32
 	_ = v12
-	F_ri_CheckTrigger(m, l0, int32(308908), int32(3))
+	F_ri_CheckTrigger(m, l0, int32(314392), int32(3))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -68,7 +68,7 @@ func F_RI_FKey_trigger_type(m *base.Module, l0 int32) int32 {
 	_ = v12
 	v4 = l0 - int32(1644)
 	if base.Ui32(v4) <= base.Ui32(int32(11)) {
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[322])))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[319])))
 		v12 = v11
 	} else {
 		v12 = int32(0)

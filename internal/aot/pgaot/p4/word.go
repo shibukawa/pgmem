@@ -507,11 +507,11 @@ func F_word_similarity_commutator_op(m *base.Module, l0 int32) int32 {
 							if v99 != 0 {
 								return int32(0)
 							} else {
-								v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+								v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 								return base.F64_le(v101, base.F64_promote_f32(v90))
 							}
 						} else {
-							v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+							v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 							return base.F64_le(v101, base.F64_promote_f32(v90))
 						}
 					}
@@ -524,11 +524,11 @@ func F_word_similarity_commutator_op(m *base.Module, l0 int32) int32 {
 						if v99 != 0 {
 							return int32(0)
 						} else {
-							v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+							v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 							return base.F64_le(v101, base.F64_promote_f32(v90))
 						}
 					} else {
-						v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+						v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 						return base.F64_le(v101, base.F64_promote_f32(v90))
 					}
 				}
@@ -713,11 +713,11 @@ func F_word_similarity_op(m *base.Module, l0 int32) int32 {
 							if v99 != 0 {
 								return int32(0)
 							} else {
-								v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+								v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 								return base.F64_le(v101, base.F64_promote_f32(v90))
 							}
 						} else {
-							v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+							v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 							return base.F64_le(v101, base.F64_promote_f32(v90))
 						}
 					}
@@ -730,11 +730,11 @@ func F_word_similarity_op(m *base.Module, l0 int32) int32 {
 						if v99 != 0 {
 							return int32(0)
 						} else {
-							v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+							v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 							return base.F64_le(v101, base.F64_promote_f32(v90))
 						}
 					} else {
-						v101 = *(*float64)(unsafe.Add(mBase, _consts[1566]))
+						v101 = *(*float64)(unsafe.Add(mBase, _consts[1560]))
 						return base.F64_le(v101, base.F64_promote_f32(v90))
 					}
 				}

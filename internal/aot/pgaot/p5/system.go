@@ -30,7 +30,7 @@ func F_IsSystemRelation(m *base.Module, l0 int32) int32 {
 		if v8 == int32(99) {
 			v19 = v3
 		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, _consts[220]))
+			v13 = *(*int32)(unsafe.Add(mBase, _consts[221]))
 			v19 = base.B2i32(v13 != int32(0)) & base.B2i32(v8 == v13)
 		}
 	}
@@ -163,9 +163,9 @@ func F_SystemAttributeByName(m *base.Module, l0 int32) int32 {
 	_ = v178
 	var v180 int32
 	_ = v180
-	v2 = int32(767468)
+	v2 = int32(779676)
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v6 = int32(*(*uint8)(unsafe.Add(mBase, _consts[224])))
+	v6 = int32(*(*uint8)(unsafe.Add(mBase, _consts[225])))
 	if v6 == int32(0) {
 		v25 = v5
 		v26 = v6
@@ -228,15 +228,15 @@ L8:
 	goto L6
 L9:
 	;
-	return int32(767464)
+	return int32(779672)
 L10:
 	;
 	goto L11
 L11:
 	;
-	v32 = int32(767568)
+	v32 = int32(779776)
 	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v36 = int32(*(*uint8)(unsafe.Add(mBase, _consts[225])))
+	v36 = int32(*(*uint8)(unsafe.Add(mBase, _consts[226])))
 	if v36 == int32(0) {
 		v55 = v35
 		v56 = v36
@@ -299,15 +299,15 @@ L19:
 	goto L17
 L20:
 	;
-	return int32(767564)
+	return int32(779772)
 L21:
 	;
 	goto L22
 L22:
 	;
-	v62 = int32(767668)
+	v62 = int32(779876)
 	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[226])))
+	v66 = int32(*(*uint8)(unsafe.Add(mBase, _consts[227])))
 	if v66 == int32(0) {
 		v85 = v65
 		v86 = v66
@@ -370,15 +370,15 @@ L30:
 	goto L28
 L31:
 	;
-	return int32(767664)
+	return int32(779872)
 L32:
 	;
 	goto L33
 L33:
 	;
-	v92 = int32(767768)
+	v92 = int32(779976)
 	v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v96 = int32(*(*uint8)(unsafe.Add(mBase, _consts[227])))
+	v96 = int32(*(*uint8)(unsafe.Add(mBase, _consts[228])))
 	if v96 == int32(0) {
 		v115 = v95
 		v116 = v96
@@ -441,15 +441,15 @@ L41:
 	goto L39
 L42:
 	;
-	return int32(767764)
+	return int32(779972)
 L43:
 	;
 	goto L44
 L44:
 	;
-	v122 = int32(767868)
+	v122 = int32(780076)
 	v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v126 = int32(*(*uint8)(unsafe.Add(mBase, _consts[228])))
+	v126 = int32(*(*uint8)(unsafe.Add(mBase, _consts[229])))
 	if v126 == int32(0) {
 		v145 = v125
 		v146 = v126
@@ -512,16 +512,16 @@ L52:
 	goto L50
 L53:
 	;
-	return int32(767864)
+	return int32(780072)
 L54:
 	;
 	goto L55
 L55:
 	;
 	v152 = int32(0)
-	v154 = int32(767968)
+	v154 = int32(780176)
 	v157 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-	v158 = int32(*(*uint8)(unsafe.Add(mBase, _consts[229])))
+	v158 = int32(*(*uint8)(unsafe.Add(mBase, _consts[230])))
 	if v158 == v152 {
 		v177 = v157
 		v178 = v158
@@ -588,7 +588,7 @@ L64:
 	goto L66
 L65:
 	;
-	v180 = int32(767964)
+	v180 = int32(780172)
 	goto L66
 L66:
 	;

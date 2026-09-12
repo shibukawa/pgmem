@@ -961,7 +961,7 @@ func F_CreateCacheMemoryContext(m *base.Module) {
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[207]))
 	if v2 == int32(0) {
 		v7 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-		v12 = F_AllocSetContextCreateInternal(m, v7, int32(62315), int32(0), int32(8192), int32(8388608))
+		v12 = F_AllocSetContextCreateInternal(m, v7, int32(63326), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
@@ -1051,13 +1051,13 @@ func F_cache_multirange_element_properties(m *base.Module, l0 int32) {
 					} else {
 						v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v57
-						F_errmsg_internal(m, int32(50814), v6)
+						F_errmsg_internal(m, int32(51464), v6)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(500708), int32(1068), int32(242575))
+							F_errfinish(m, int32(511216), int32(1068), int32(246987))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {

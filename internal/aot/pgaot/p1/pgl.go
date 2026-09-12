@@ -56,7 +56,7 @@ func F_pgl_run_atexit_funcs(m *base.Module) {
 	var v72 int32
 	_ = v72
 	v1 = int32(0)
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[770]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[774]))
 	if v7 <= v1 {
 		goto L1
 	} else {
@@ -64,7 +64,7 @@ func F_pgl_run_atexit_funcs(m *base.Module) {
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[770])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[774])) = int32(0)
 	return
 L2:
 	;
@@ -96,7 +96,7 @@ L6:
 L7:
 	;
 	v20 = v15 - int32(1)
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v20<<(uint(int32(2))%32))+uint32(_consts[771])))
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v20<<(uint(int32(2))%32))+uint32(_consts[775])))
 	if v25 != 0 {
 		goto L9
 	} else {
@@ -145,7 +145,7 @@ L15:
 L16:
 	;
 	v44 = v39 << (uint(int32(2)) % 32)
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1269])))
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1273])))
 	if v47 != 0 {
 		goto L18
 	} else {
@@ -169,7 +169,7 @@ L19:
 	goto L20
 L20:
 	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1270])))
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1274])))
 	if v52 != 0 {
 		goto L22
 	} else {
@@ -194,7 +194,7 @@ L23:
 L24:
 	;
 	v56 = v39 - int32(3)
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[771])))
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[775])))
 	if v61 != 0 {
 		goto L26
 	} else {
@@ -219,7 +219,7 @@ L27:
 L28:
 	;
 	v65 = v39 - int32(4)
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v65<<(uint(int32(2))%32))+uint32(_consts[771])))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v65<<(uint(int32(2))%32))+uint32(_consts[775])))
 	if v70 != 0 {
 		goto L30
 	} else {
@@ -259,7 +259,7 @@ L34:
 func F_pgl_set_system_fn(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1268])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1272])) = l0
 	return
 }
 func F_pgl_setsockopt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
@@ -316,7 +316,7 @@ func F_pgl_shmctl(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v9 = m.G0
 	v11 = v9 - int32(32)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[761]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[765]))
 	if v14 == v4 {
 		goto L3
 	} else {
@@ -333,8 +333,8 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
-	v95 = *(*int32)(unsafe.Add(mBase, _consts[463]))
-	F_fiprintf(m, v95, int32(753262), v11)
+	v95 = *(*int32)(unsafe.Add(mBase, _consts[464]))
+	F_fiprintf(m, v95, int32(765474), v11)
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -430,7 +430,7 @@ L18:
 	goto L19
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[761])) = v44
+	*(*int32)(unsafe.Add(mBase, _consts[765])) = v44
 	goto L16
 L20:
 	;
@@ -464,8 +464,8 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l1
-	v74 = *(*int32)(unsafe.Add(mBase, _consts[463]))
-	F_fiprintf(m, v74, int32(753369), v11+int32(16))
+	v74 = *(*int32)(unsafe.Add(mBase, _consts[464]))
+	F_fiprintf(m, v74, int32(765581), v11+int32(16))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -507,7 +507,7 @@ func F_pgl_system(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1268]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1272]))
 	if v4 == int32(0) {
 		return int32(123)
 	} else {

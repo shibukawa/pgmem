@@ -56,20 +56,20 @@ func F_MultiXactMemberFreezeThreshold(m *base.Module) int32 {
 	var v61 int32
 	_ = v61
 	v1 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	v13 = F_LWLockAcquire(m, v9+int32(1664), int32(1))
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v18 = *(*int32)(unsafe.Add(mBase, _consts[78]))
+		v18 = *(*int32)(unsafe.Add(mBase, _consts[79]))
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
 		v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+24)))
-		v25 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+		v25 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 		F_LWLockRelease(m, v25+int32(1664))
 		mBase = m.M
 		v29 = m.ExcPending
@@ -82,7 +82,7 @@ func F_MultiXactMemberFreezeThreshold(m *base.Module) int32 {
 			} else {
 				v32 = v22 - v19
 				if int32(0) <= v32 {
-					v36 = *(*int32)(unsafe.Add(mBase, _consts[53]))
+					v36 = *(*int32)(unsafe.Add(mBase, _consts[54]))
 					return v36
 				} else {
 					v43 = v20 - v21
@@ -97,7 +97,7 @@ func F_MultiXactMemberFreezeThreshold(m *base.Module) int32 {
 						v61 = v1
 					} else {
 						v55 = v43 - v53
-						v57 = *(*int32)(unsafe.Add(mBase, _consts[53]))
+						v57 = *(*int32)(unsafe.Add(mBase, _consts[54]))
 						if v55 < v57 {
 							v59 = v55
 						} else {
@@ -173,31 +173,31 @@ func F_MultiXactSetNextMXact(m *base.Module, l0 int32, l1 int32) {
 	_ = v54
 	var v56 int32
 	_ = v56
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	v10 = F_LWLockAcquire(m, v6+int32(1664), int32(0))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, _consts[78]))
+		v13 = *(*int32)(unsafe.Add(mBase, _consts[79]))
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v13))) = l0
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 		F_LWLockRelease(m, v17+int32(1664))
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
 			return
 		} else {
-			v23 = int32(*(*uint8)(unsafe.Add(mBase, _consts[79])))
+			v23 = int32(*(*uint8)(unsafe.Add(mBase, _consts[80])))
 			if v23 == int32(1) {
-				v27 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+				v27 = *(*int32)(unsafe.Add(mBase, _consts[81]))
 				v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+28))
-				v30 = *(*int32)(unsafe.Add(mBase, _consts[78]))
+				v30 = *(*int32)(unsafe.Add(mBase, _consts[79]))
 				v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
 				v33 = int32(base.Ui32(v31) >> (uint(int32(11)) % 32))
-				v35 = int32(*(*uint16)(unsafe.Add(mBase, _consts[81])))
+				v35 = int32(*(*uint16)(unsafe.Add(mBase, _consts[82])))
 				v36 = base.I32_rem_u_s(v33, v35)
 				v39 = v28 + v36<<(uint(int32(7))%32)
 				v41 = F_LWLockAcquire(m, v39, int32(0))
@@ -207,14 +207,14 @@ func F_MultiXactSetNextMXact(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					v44 = base.I64_extend_i32_u(v33)
-					v45 = F_SimpleLruDoesPhysicalPageExist(m, int32(4415268), v44)
+					v45 = F_SimpleLruDoesPhysicalPageExist(m, int32(4430980), v44)
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
 						return
 					} else {
 						if v45 == int32(0) {
-							v49 = int32(4415268)
+							v49 = int32(4430980)
 							v51 = F_SimpleLruZeroPage(m, v49, v44)
 							mBase = m.M
 							v52 = m.ExcPending

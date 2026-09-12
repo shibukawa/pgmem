@@ -1296,7 +1296,7 @@ L143:
 	}
 L144:
 	;
-	F_errmsg(m, int32(217743), int32(0))
+	F_errmsg(m, int32(221669), int32(0))
 	mBase = m.M
 	v450 = m.ExcPending
 	if v450 != 0 {
@@ -1306,7 +1306,7 @@ L144:
 	}
 L145:
 	;
-	F_errfinish(m, int32(499445), int32(107), int32(64349))
+	F_errfinish(m, int32(509953), int32(107), int32(65360))
 	mBase = m.M
 	v455 = m.ExcPending
 	if v455 != 0 {
@@ -1331,7 +1331,7 @@ L147:
 	}
 L148:
 	;
-	F_errmsg(m, int32(217743), int32(0))
+	F_errmsg(m, int32(221669), int32(0))
 	mBase = m.M
 	v466 = m.ExcPending
 	if v466 != 0 {
@@ -1341,7 +1341,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(499445), int32(169), int32(64349))
+	F_errfinish(m, int32(509953), int32(169), int32(65360))
 	mBase = m.M
 	v471 = m.ExcPending
 	if v471 != 0 {
@@ -1366,7 +1366,7 @@ L151:
 	}
 L152:
 	;
-	F_errmsg(m, int32(217743), int32(0))
+	F_errmsg(m, int32(221669), int32(0))
 	mBase = m.M
 	v482 = m.ExcPending
 	if v482 != 0 {
@@ -1376,7 +1376,7 @@ L152:
 	}
 L153:
 	;
-	F_errfinish(m, int32(499445), int32(237), int32(64349))
+	F_errfinish(m, int32(509953), int32(237), int32(65360))
 	mBase = m.M
 	v487 = m.ExcPending
 	if v487 != 0 {
@@ -1527,7 +1527,7 @@ func F_utf8_to_euc_jp(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4394436), v18, v18, v18, int32(1), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4410148), v18, v18, v18, int32(1), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {

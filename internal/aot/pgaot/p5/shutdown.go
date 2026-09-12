@@ -26,7 +26,7 @@ func F_ShutdownAuxiliaryProcess(m *base.Module, l0 int32, l1 int32) {
 		if v6 != 0 {
 			return
 		} else {
-			v8 = *(*int32)(unsafe.Add(mBase, _consts[96]))
+			v8 = *(*int32)(unsafe.Add(mBase, _consts[97]))
 			*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(0)
 			return
 		}

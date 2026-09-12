@@ -41,7 +41,7 @@ func F_OidOutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 	v4 = m.G0
 	v6 = v4 + int32(-64)
 	m.G0 = v6
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	F_fmgr_info_cxt_security(m, l0, v4+int32(-56), v11, int32(0))
 	mBase = m.M
 	v16 = m.ExcPending
@@ -74,13 +74,13 @@ func F_OidOutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v41 = *(*int32)(unsafe.Add(mBase, uint32(v6)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v41
-					F_errmsg_internal(m, int32(533998), v6)
+					F_errmsg_internal(m, int32(545254), v6)
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496599), int32(1143), int32(304988))
+						F_errfinish(m, int32(506710), int32(1143), int32(310433))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -117,7 +117,7 @@ func F_OidReceiveFunctionCall(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	F_fmgr_info_cxt_security(m, l0, v8+int32(4), v13, int32(0))
 	mBase = m.M
 	v18 = m.ExcPending

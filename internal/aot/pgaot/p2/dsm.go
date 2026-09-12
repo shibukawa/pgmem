@@ -212,7 +212,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v49
-	F_errmsg_internal(m, int32(57153), v9+int32(16))
+	F_errmsg_internal(m, int32(57835), v9+int32(16))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -235,7 +235,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(498565), int32(398), int32(244370))
+	F_errfinish(m, int32(509073), int32(398), int32(248905))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -265,7 +265,7 @@ L25:
 	;
 	v96 = *(*int32)(unsafe.Add(mBase, _consts[768]))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v96
-	F_errmsg_internal(m, int32(57207), v9)
+	F_errmsg_internal(m, int32(57889), v9)
 	mBase = m.M
 	v100 = m.ExcPending
 	if v100 != 0 {
@@ -281,7 +281,7 @@ L27:
 	v107 = *(*int32)(unsafe.Add(mBase, _consts[767]))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+44)) = v107
 	v111 = *(*int32)(unsafe.Add(mBase, _consts[768]))
-	v118 = F_dsm_impl_op(m, int32(3), v111, int32(0), int32(4436616), v9+int32(44), int32(4436620), int32(15))
+	v118 = F_dsm_impl_op(m, int32(3), v111, int32(0), int32(4452328), v9+int32(44), int32(4452332), int32(15))
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -291,7 +291,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(498565), int32(408), int32(244370))
+	F_errfinish(m, int32(509073), int32(408), int32(248905))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -317,7 +317,7 @@ L31:
 	}
 L32:
 	;
-	F_errmsg(m, int32(83809), int32(0))
+	F_errmsg(m, int32(85198), int32(0))
 	mBase = m.M
 	v137 = m.ExcPending
 	if v137 != 0 {
@@ -327,7 +327,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(498565), int32(379), int32(244370))
+	F_errfinish(m, int32(509073), int32(379), int32(248905))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {

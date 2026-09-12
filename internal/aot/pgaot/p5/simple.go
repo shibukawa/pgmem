@@ -70,18 +70,18 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+56))
 	v16 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[89])) = uint8(v16)
 	*(*uint8)(unsafe.Add(mBase, _consts[90])) = uint8(v16)
+	*(*uint8)(unsafe.Add(mBase, _consts[91])) = uint8(v16)
 	v22 = v14 << (uint(int32(6)) % 32)
-	v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_consts[92])))
-	*(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_consts[92]))) = v25 + int64(1)
+	v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_consts[93])))
+	*(*int64)(unsafe.Add(mBase, uint32(v22)+uint32(_consts[93]))) = v25 + int64(1)
 	v30 = l0 + int32(16)
 	v32 = base.I64_div_s(l1, int64(32))
 	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+6)))
 	if v33 == v16 {
 		*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v32
 		*(*int32)(unsafe.Add(mBase, uint32(v11))) = v30
-		v42 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(511422), v11)
+		v42 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(522669), v11)
 		mBase = m.M
 		v45 = m.ExcPending
 		if v45 != 0 {
@@ -95,15 +95,15 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 				return int32(0)
 			} else {
 				if v60 < int32(0) {
-					v65 = *(*int32)(unsafe.Add(mBase, _consts[86]))
+					v65 = *(*int32)(unsafe.Add(mBase, _consts[87]))
 					if v65 == int32(44) {
 						v111 = v56
 						m.G0 = v11 + int32(1056)
 						return v111
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[93])) = v65
+						*(*int32)(unsafe.Add(mBase, _consts[94])) = v65
 						v71 = int32(0)
-						*(*int32)(unsafe.Add(mBase, _consts[94])) = v71
+						*(*int32)(unsafe.Add(mBase, _consts[95])) = v71
 						F_SlruReportIOError(m, l0, l1, v71)
 						mBase = m.M
 						v75 = m.ExcPending
@@ -114,9 +114,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 							v79 = F___lseek(m, v60, v77, int32(2))
 							mBase = m.M
 							if v79 < v77 {
-								*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(1)
-								v87 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-								*(*int32)(unsafe.Add(mBase, _consts[93])) = v87
+								*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+								*(*int32)(unsafe.Add(mBase, _consts[94])) = v87
 								F_SlruReportIOError(m, l0, l1, int32(0))
 								mBase = m.M
 								v91 = m.ExcPending
@@ -130,9 +130,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 										return int32(0)
 									} else {
 										if v92 != 0 {
-											*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-											v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-											*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+											*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+											v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+											*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 											v111 = v56
 										} else {
 											v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -149,9 +149,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 									return int32(0)
 								} else {
 									if v92 != 0 {
-										*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-										v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-										*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+										*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+										v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+										*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 										v111 = v56
 									} else {
 										v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -167,9 +167,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 					v79 = F___lseek(m, v60, v77, int32(2))
 					mBase = m.M
 					if v79 < v77 {
-						*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(1)
-						v87 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-						*(*int32)(unsafe.Add(mBase, _consts[93])) = v87
+						*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(1)
+						v87 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+						*(*int32)(unsafe.Add(mBase, _consts[94])) = v87
 						F_SlruReportIOError(m, l0, l1, int32(0))
 						mBase = m.M
 						v91 = m.ExcPending
@@ -183,9 +183,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 								return int32(0)
 							} else {
 								if v92 != 0 {
-									*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-									v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-									*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+									*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+									v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+									*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 									v111 = v56
 								} else {
 									v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -202,9 +202,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 							return int32(0)
 						} else {
 							if v92 != 0 {
-								*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-								v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-								*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+								*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+								v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+								*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 								v111 = v56
 							} else {
 								v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -219,7 +219,7 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	} else {
 		*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v32)
 		*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v30
-		v54 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(511809), v11+int32(16))
+		v54 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(523056), v11+int32(16))
 		mBase = m.M
 		v55 = m.ExcPending
 		if v55 != 0 {
@@ -233,15 +233,15 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 				return int32(0)
 			} else {
 				if v60 < int32(0) {
-					v65 = *(*int32)(unsafe.Add(mBase, _consts[86]))
+					v65 = *(*int32)(unsafe.Add(mBase, _consts[87]))
 					if v65 == int32(44) {
 						v111 = v56
 						m.G0 = v11 + int32(1056)
 						return v111
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[93])) = v65
+						*(*int32)(unsafe.Add(mBase, _consts[94])) = v65
 						v71 = int32(0)
-						*(*int32)(unsafe.Add(mBase, _consts[94])) = v71
+						*(*int32)(unsafe.Add(mBase, _consts[95])) = v71
 						F_SlruReportIOError(m, l0, l1, v71)
 						mBase = m.M
 						v75 = m.ExcPending
@@ -252,9 +252,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 							v79 = F___lseek(m, v60, v77, int32(2))
 							mBase = m.M
 							if v79 < v77 {
-								*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(1)
-								v87 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-								*(*int32)(unsafe.Add(mBase, _consts[93])) = v87
+								*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(1)
+								v87 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+								*(*int32)(unsafe.Add(mBase, _consts[94])) = v87
 								F_SlruReportIOError(m, l0, l1, int32(0))
 								mBase = m.M
 								v91 = m.ExcPending
@@ -268,9 +268,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 										return int32(0)
 									} else {
 										if v92 != 0 {
-											*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-											v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-											*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+											*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+											v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+											*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 											v111 = v56
 										} else {
 											v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -287,9 +287,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 									return int32(0)
 								} else {
 									if v92 != 0 {
-										*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-										v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-										*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+										*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+										v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+										*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 										v111 = v56
 									} else {
 										v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -305,9 +305,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 					v79 = F___lseek(m, v60, v77, int32(2))
 					mBase = m.M
 					if v79 < v77 {
-						*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(1)
-						v87 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-						*(*int32)(unsafe.Add(mBase, _consts[93])) = v87
+						*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(1)
+						v87 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+						*(*int32)(unsafe.Add(mBase, _consts[94])) = v87
 						F_SlruReportIOError(m, l0, l1, int32(0))
 						mBase = m.M
 						v91 = m.ExcPending
@@ -321,9 +321,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 								return int32(0)
 							} else {
 								if v92 != 0 {
-									*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-									v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-									*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+									*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+									v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+									*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 									v111 = v56
 								} else {
 									v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)
@@ -340,9 +340,9 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 							return int32(0)
 						} else {
 							if v92 != 0 {
-								*(*int32)(unsafe.Add(mBase, _consts[94])) = int32(5)
-								v99 = *(*int32)(unsafe.Add(mBase, _consts[86]))
-								*(*int32)(unsafe.Add(mBase, _consts[93])) = v99
+								*(*int32)(unsafe.Add(mBase, _consts[95])) = int32(5)
+								v99 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+								*(*int32)(unsafe.Add(mBase, _consts[94])) = v99
 								v111 = v56
 							} else {
 								v111 = base.B2i32(base.I64_extend_i32_s(base.I32_wrap_i64(l1-v32<<(uint(int64(5))%64))<<(uint(int32(13))%32)-int32(-8192)) <= v79)

@@ -180,7 +180,7 @@ func F_has_function_privilege_id(m *base.Module, l0 int32) int32 {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
 		v20 = *(*int32)(unsafe.Add(mBase, _consts[31]))
-		v22 = F_convert_any_priv_string(m, v12, int32(1661200))
+		v22 = F_convert_any_priv_string(m, v12, int32(1673488))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -253,7 +253,7 @@ func F_has_function_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1661200))
+		v22 = F_convert_any_priv_string(m, v14, int32(1673488))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -378,13 +378,13 @@ func F_has_function_privilege_name_name(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v23
-									F_errmsg(m, int32(71657), v8)
+									F_errmsg(m, int32(72732), v8)
 									mBase = m.M
 									v39 = m.ExcPending
 									if v39 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(498986), int32(3565), int32(379984))
+										F_errfinish(m, int32(509494), int32(3565), int32(387316))
 										mBase = m.M
 										v44 = m.ExcPending
 										if v44 != 0 {
@@ -398,7 +398,7 @@ func F_has_function_privilege_name_name(m *base.Module, l0 int32) int32 {
 								}
 							}
 						} else {
-							v47 = F_convert_any_priv_string(m, v17, int32(1661200))
+							v47 = F_convert_any_priv_string(m, v17, int32(1673488))
 							mBase = m.M
 							v48 = m.ExcPending
 							if v48 != 0 {

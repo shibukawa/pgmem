@@ -91,7 +91,7 @@ func F_PrepareTempTablespaces(m *base.Module) {
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[465]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[464]))
 	if int32(base.Ui32(v14^int32(-1))>>(uint(int32(31))%32)) != 0 {
 		goto L1
 	} else {
@@ -115,7 +115,7 @@ L3:
 	}
 L4:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _consts[466]))
+	v27 = *(*int32)(unsafe.Add(mBase, _consts[465]))
 	v28 = F_pstrdup(m, v27)
 	mBase = m.M
 	v29 = m.ExcPending
@@ -157,8 +157,8 @@ L8:
 L9:
 	;
 	v37 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[465])) = v37
-	*(*int32)(unsafe.Add(mBase, _consts[467])) = v37
+	*(*int32)(unsafe.Add(mBase, _consts[464])) = v37
+	*(*int32)(unsafe.Add(mBase, _consts[466])) = v37
 	goto L14
 L10:
 	;
@@ -180,7 +180,7 @@ L14:
 	goto L15
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[468])) = v37
+	*(*int32)(unsafe.Add(mBase, _consts[467])) = v37
 	goto L12
 L16:
 	;
@@ -211,8 +211,8 @@ L19:
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[465])) = v119
-	*(*int32)(unsafe.Add(mBase, _consts[467])) = v64
+	*(*int32)(unsafe.Add(mBase, _consts[464])) = v119
+	*(*int32)(unsafe.Add(mBase, _consts[466])) = v64
 	if int32(2) <= v119 {
 		goto L40
 	} else {
@@ -336,7 +336,7 @@ L39:
 	goto L5
 L40:
 	;
-	v140 = F_pg_prng_uint64_range(m, int32(4604064), int64(0), base.I64_extend_i32_u(v119-int32(1)))
+	v140 = F_pg_prng_uint64_range(m, int32(4619776), int64(0), base.I64_extend_i32_u(v119-int32(1)))
 	mBase = m.M
 	v142 = base.I32_wrap_i64(v140)
 	goto L42
@@ -346,7 +346,7 @@ L41:
 	goto L42
 L42:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[468])) = v142
+	*(*int32)(unsafe.Add(mBase, _consts[467])) = v142
 	goto L39
 L43:
 	;

@@ -59,7 +59,7 @@ func F_TwoPhaseGetXidByVirtualXID(m *base.Module, l0 int32, l1 int32) int32 {
 	var v83 int32
 	_ = v83
 	v3 = int32(0)
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	v16 = F_LWLockAcquire(m, v12+int32(2304), int32(1))
 	mBase = m.M
 	v19 = m.ExcPending
@@ -73,7 +73,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, _consts[100]))
+	v21 = *(*int32)(unsafe.Add(mBase, _consts[101]))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 	if v22 <= int32(0) {
 		v70 = v3
@@ -83,7 +83,7 @@ L2:
 	}
 L3:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v79 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	F_LWLockRelease(m, v79+int32(2304))
 	mBase = m.M
 	v83 = m.ExcPending
@@ -96,7 +96,7 @@ L4:
 	;
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v31 = *(*int32)(unsafe.Add(mBase, _consts[101]))
+	v31 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 	v32 = int32(0)
 	v34 = v3
 	goto L5
@@ -205,13 +205,13 @@ func F_TwoPhaseTransactionGid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v17 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(544960), int32(0))
+				F_errmsg_internal(m, int32(556216), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(500194), int32(2689), int32(438900))
+					F_errfinish(m, int32(510702), int32(2689), int32(447323))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -227,7 +227,7 @@ func F_TwoPhaseTransactionGid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-		v31 = F_pg_snprintf(m, l2, int32(200), int32(38794), v7)
+		v31 = F_pg_snprintf(m, l2, int32(200), int32(39444), v7)
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {

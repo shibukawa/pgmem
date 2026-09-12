@@ -5,6 +5,130 @@ import (
 	"unsafe"
 )
 
+func F_jaccard_distance(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v47 int64
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v52 float64
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = F_pg_detoast_datum(m, v8)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v14 = F_pg_detoast_datum(m, v13)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
+			if v16 != v17 {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v22 = m.ExcPending
+				if v22 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(130))
+					mBase = m.M
+					v25 = m.ExcPending
+					if v25 != 0 {
+						return int32(0)
+					} else {
+						v26 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v27
+						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v26
+						F_errmsg(m, int32(54318), v6)
+						mBase = m.M
+						v32 = m.ExcPending
+						if v32 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(512331), int32(39), int32(154322))
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+				v41 = int32(8)
+				v47 = int64(0)
+				v51 = *(*int32)(unsafe.Add(mBase, _consts[1131]))
+				v52 = m.T0[v51].(func(*base.Module, int32, int32, int32, int64, int64, int64) float64)(m, int32(base.Ui32(v38)>>(uint(int32(2))%32))-v41, v9+v41, v14+v41, v47, v47, v47)
+				mBase = m.M
+				v53 = F_Float8GetDatum(m, v52)
+				mBase = m.M
+				v54 = m.ExcPending
+				if v54 != 0 {
+					return int32(0)
+				} else {
+					m.G0 = v6 + int32(16)
+					return v53
+				}
+			}
+		}
+	}
+}
 func F_johab_to_utf8(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -41,7 +165,7 @@ func F_johab_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4396812), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4412524), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -105,7 +229,7 @@ func F_jsonpath_out(m *base.Module, l0 int32) int32 {
 			} else {
 				v24 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 				if int32(0) <= v24 {
-					F_appendStringInfoString(m, v6+int32(32), int32(735055))
+					F_appendStringInfoString(m, v6+int32(32), int32(747267))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -230,7 +354,7 @@ func F_jsonpath_send(m *base.Module, l0 int32) int32 {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 				if int32(0) <= v23 {
-					F_appendStringInfoString(m, v5+int32(4), int32(735055))
+					F_appendStringInfoString(m, v5+int32(4), int32(747267))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {

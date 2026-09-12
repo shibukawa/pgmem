@@ -62,7 +62,7 @@ func F_has_language_privilege_name_id(m *base.Module, l0 int32) int32 {
 		if v22 != 0 {
 			return int32(0)
 		} else {
-			v24 = F_convert_any_priv_string(m, v14, int32(1661248))
+			v24 = F_convert_any_priv_string(m, v14, int32(1673536))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

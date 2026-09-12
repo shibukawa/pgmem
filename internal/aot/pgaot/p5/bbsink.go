@@ -105,7 +105,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)))
 	if v11 == int32(1) {
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-		v19 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+		v19 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 		v21 = m.T0[v20].(func(*base.Module, int32, int32, int32) int32)(m, int32(100), v15, l1+int32(1))
 		mBase = m.M
@@ -196,7 +196,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 									if v132 != 0 {
 										return
 									} else {
-										v134 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+										v134 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 										v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
 										v136 = m.T0[v135].(func(*base.Module) int32)(m)
 										mBase = m.M
@@ -255,7 +255,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 								if v132 != 0 {
 									return
 								} else {
-									v134 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+									v134 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 									v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
 									v136 = m.T0[v135].(func(*base.Module) int32)(m)
 									mBase = m.M
@@ -357,7 +357,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 								if v132 != 0 {
 									return
 								} else {
-									v134 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+									v134 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 									v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
 									v136 = m.T0[v135].(func(*base.Module) int32)(m)
 									mBase = m.M
@@ -416,7 +416,7 @@ func F_bbsink_copystream_archive_contents(m *base.Module, l0 int32, l1 int32) {
 							if v132 != 0 {
 								return
 							} else {
-								v134 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+								v134 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 								v135 = *(*int32)(unsafe.Add(mBase, uint32(v134)+8))
 								v136 = m.T0[v135].(func(*base.Module) int32)(m)
 								mBase = m.M

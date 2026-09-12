@@ -34,14 +34,14 @@ func F_SetCommitTsLimit(m *base.Module, l0 int32, l1 int32) {
 	_ = v54
 	var v58 int32
 	_ = v58
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 	v10 = F_LWLockAcquire(m, v6+int32(4992), int32(0))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, _consts[68]))
+		v13 = *(*int32)(unsafe.Add(mBase, _consts[69]))
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+40))
 		if v14 != 0 {
 			if base.B2i32(base.Ui32(int32(2)) < base.Ui32(l0))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v14)) == int32(0) {
@@ -49,7 +49,7 @@ func F_SetCommitTsLimit(m *base.Module, l0 int32, l1 int32) {
 			} else {
 				v26 = int32(base.Ui32(v14-l0) >> (uint(int32(31)) % 32))
 			}
-			v28 = *(*int32)(unsafe.Add(mBase, _consts[68]))
+			v28 = *(*int32)(unsafe.Add(mBase, _consts[69]))
 			if v26 != 0 {
 				*(*int32)(unsafe.Add(mBase, uint32(v28)+40)) = l0
 			} else {
@@ -62,7 +62,7 @@ func F_SetCommitTsLimit(m *base.Module, l0 int32, l1 int32) {
 			}
 			if v42 == int32(0) {
 			} else {
-				v46 = *(*int32)(unsafe.Add(mBase, _consts[68]))
+				v46 = *(*int32)(unsafe.Add(mBase, _consts[69]))
 				v48 = v46
 				*(*int32)(unsafe.Add(mBase, uint32(v48)+44)) = l1
 			}
@@ -71,7 +71,7 @@ func F_SetCommitTsLimit(m *base.Module, l0 int32, l1 int32) {
 			v48 = v13
 			*(*int32)(unsafe.Add(mBase, uint32(v48)+44)) = l1
 		}
-		v54 = *(*int32)(unsafe.Add(mBase, _consts[7]))
+		v54 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 		F_LWLockRelease(m, v54+int32(4992))
 		mBase = m.M
 		v58 = m.ExcPending
@@ -447,7 +447,7 @@ func F_commit_ts_desc(m *base.Module, l0 int32, l1 int32) {
 	case 0:
 		v15 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
 		*(*int64)(unsafe.Add(mBase, uint32(v8))) = v15
-		F_appendStringInfo(m, l0, int32(431734), v8)
+		F_appendStringInfo(m, l0, int32(440050), v8)
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -464,7 +464,7 @@ func F_commit_ts_desc(m *base.Module, l0 int32, l1 int32) {
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v21
 		*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = v20
-		F_appendStringInfo(m, l0, int32(55114), v8+int32(16))
+		F_appendStringInfo(m, l0, int32(55796), v8+int32(16))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -626,7 +626,7 @@ func F_lookup_ts_parser_cache(m *base.Module, l0 int32) int32 {
 	v9 = v7 - int32(112)
 	m.G0 = v9
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+108)) = l0
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1141]))
 	if v13 != 0 {
 		goto L1
 	} else {
@@ -634,7 +634,7 @@ func F_lookup_ts_parser_cache(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1145]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1142]))
 	if v37 == int32(0) {
 		goto L13
 	} else {
@@ -643,7 +643,7 @@ L1:
 L2:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+76)) = int64(601295421444)
-	v22 = F_hash_create(m, int32(400407), int32(4), v9+int32(60), int32(40))
+	v22 = F_hash_create(m, int32(407927), int32(4), v9+int32(60), int32(40))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -656,7 +656,7 @@ L3:
 	return int32(0)
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1144])) = v22
+	*(*int32)(unsafe.Add(mBase, _consts[1141])) = v22
 	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1613), v22)
 	mBase = m.M
 	v30 = m.ExcPending
@@ -667,7 +667,7 @@ L4:
 	}
 L5:
 	;
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	if v32 != 0 {
 		goto L1
 	} else {
@@ -732,7 +732,7 @@ L12:
 	return v163
 L13:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v44 = *(*int32)(unsafe.Add(mBase, _consts[1141]))
 	v47 = int32(0)
 	v49 = F_hash_search(m, v44, v9+int32(108), v47, v47)
 	mBase = m.M
@@ -764,7 +764,7 @@ L16:
 	goto L13
 L17:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1145])) = v156
+	*(*int32)(unsafe.Add(mBase, _consts[1142])) = v156
 	v163 = v156
 	goto L12
 L18:
@@ -843,7 +843,7 @@ L27:
 	}
 L28:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, _consts[1144]))
+	v73 = *(*int32)(unsafe.Add(mBase, _consts[1141]))
 	v79 = F_hash_search(m, v73, v9+int32(108), int32(1), v9+int32(60))
 	mBase = m.M
 	v80 = m.ExcPending
@@ -935,7 +935,7 @@ L41:
 L42:
 	;
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(v81)+8))
-	v129 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v129 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	F_fmgr_info_cxt(m, v125, v81+int32(28), v129)
 	mBase = m.M
 	v131 = m.ExcPending
@@ -947,7 +947,7 @@ L42:
 L43:
 	;
 	v132 = *(*int32)(unsafe.Add(mBase, uint32(v81)+12))
-	v136 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v136 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	F_fmgr_info_cxt(m, v132, v81+int32(56), v136)
 	mBase = m.M
 	v138 = m.ExcPending
@@ -959,7 +959,7 @@ L43:
 L44:
 	;
 	v139 = *(*int32)(unsafe.Add(mBase, uint32(v81)+16))
-	v143 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v143 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	F_fmgr_info_cxt(m, v139, v81+int32(84), v143)
 	mBase = m.M
 	v145 = m.ExcPending
@@ -978,7 +978,7 @@ L45:
 	}
 L46:
 	;
-	v150 = *(*int32)(unsafe.Add(mBase, _consts[367]))
+	v150 = *(*int32)(unsafe.Add(mBase, _consts[364]))
 	F_fmgr_info_cxt(m, v146, v81+int32(112), v150)
 	mBase = m.M
 	v152 = m.ExcPending
@@ -1003,7 +1003,7 @@ L50:
 	;
 	v175 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v175
-	F_errmsg_internal(m, int32(44003), v9)
+	F_errmsg_internal(m, int32(44653), v9)
 	mBase = m.M
 	v179 = m.ExcPending
 	if v179 != 0 {
@@ -1013,7 +1013,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(500765), int32(156), int32(400161))
+	F_errfinish(m, int32(511273), int32(156), int32(407681))
 	mBase = m.M
 	v184 = m.ExcPending
 	if v184 != 0 {
@@ -1030,7 +1030,7 @@ L53:
 	;
 	v189 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v189
-	F_errmsg_internal(m, int32(423800), v9+int32(16))
+	F_errmsg_internal(m, int32(432049), v9+int32(16))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -1040,7 +1040,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(500765), int32(163), int32(400161))
+	F_errfinish(m, int32(511273), int32(163), int32(407681))
 	mBase = m.M
 	v200 = m.ExcPending
 	if v200 != 0 {
@@ -1057,7 +1057,7 @@ L56:
 	;
 	v205 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v205
-	F_errmsg_internal(m, int32(424005), v9+int32(32))
+	F_errmsg_internal(m, int32(432254), v9+int32(32))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -1067,7 +1067,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(500765), int32(165), int32(400161))
+	F_errfinish(m, int32(511273), int32(165), int32(407681))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -1084,7 +1084,7 @@ L59:
 	;
 	v221 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v221
-	F_errmsg_internal(m, int32(424095), v9+int32(48))
+	F_errmsg_internal(m, int32(432344), v9+int32(48))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -1094,7 +1094,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(500765), int32(167), int32(400161))
+	F_errfinish(m, int32(511273), int32(167), int32(407681))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -2192,7 +2192,7 @@ func F_ts_typanalyze(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	if v4 < int32(0) {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[1012]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[1009]))
 		*(*int32)(unsafe.Add(mBase, uint32(v3))) = v8
 		v10 = v8
 	} else {

@@ -66,13 +66,13 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 			if v60 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(250284), int32(0))
+				F_errmsg_internal(m, int32(254819), int32(0))
 				mBase = m.M
 				v64 = m.ExcPending
 				if v64 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497078), int32(1878), int32(98149))
+					F_errfinish(m, int32(507189), int32(1878), int32(99648))
 					mBase = m.M
 					v69 = m.ExcPending
 					if v69 != 0 {
@@ -124,13 +124,13 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 			if v47 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(250316), int32(0))
+				F_errmsg_internal(m, int32(254851), int32(0))
 				mBase = m.M
 				v51 = m.ExcPending
 				if v51 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497078), int32(1874), int32(98149))
+					F_errfinish(m, int32(507189), int32(1874), int32(99648))
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -152,13 +152,13 @@ func F_build_regexp_split_result(m *base.Module, l0 int32) int32 {
 				if v60 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(250284), int32(0))
+					F_errmsg_internal(m, int32(254819), int32(0))
 					mBase = m.M
 					v64 = m.ExcPending
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(497078), int32(1878), int32(98149))
+						F_errfinish(m, int32(507189), int32(1878), int32(99648))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -426,14 +426,14 @@ func F_regexp_like(m *base.Module, l0 int32) int32 {
 								if v101 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(686355)
-									F_errmsg(m, int32(247413), v10)
+									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(698410)
+									F_errmsg(m, int32(251948), v10)
 									mBase = m.M
 									v106 = m.ExcPending
 									if v106 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(497078), int32(1344), int32(399828))
+										F_errfinish(m, int32(507189), int32(1344), int32(407328))
 										mBase = m.M
 										v111 = m.ExcPending
 										if v111 != 0 {
@@ -544,14 +544,14 @@ func F_regexp_like(m *base.Module, l0 int32) int32 {
 							if v101 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(686355)
-								F_errmsg(m, int32(247413), v10)
+								*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(698410)
+								F_errmsg(m, int32(251948), v10)
 								mBase = m.M
 								v106 = m.ExcPending
 								if v106 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(497078), int32(1344), int32(399828))
+									F_errfinish(m, int32(507189), int32(1344), int32(407328))
 									mBase = m.M
 									v111 = m.ExcPending
 									if v111 != 0 {
@@ -869,9 +869,9 @@ L1:
 	return int32(0)
 L2:
 	;
-	v28 = *(*int32)(unsafe.Add(mBase, _consts[356]))
+	v28 = *(*int32)(unsafe.Add(mBase, _consts[357]))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v29*int32(28))+uint32(_consts[355])))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v29*int32(28))+uint32(_consts[356])))
 	goto L3
 L3:
 	;
@@ -1025,7 +1025,7 @@ L25:
 	goto L24
 L26:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v92 = *(*int32)(unsafe.Add(mBase, _consts[1128]))
 	if v92 == int32(0) {
 		goto L25
 	} else {
@@ -1034,7 +1034,7 @@ L26:
 L27:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+8)) = v92
-	v97 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v97 = *(*int32)(unsafe.Add(mBase, _consts[1128]))
 	v98 = int32(1)
 	v106 = v97 + v98
 	v107 = v98
@@ -1537,7 +1537,7 @@ L96:
 	}
 L97:
 	;
-	F_errmsg(m, int32(169239), int32(0))
+	F_errmsg(m, int32(172640), int32(0))
 	mBase = m.M
 	v421 = m.ExcPending
 	if v421 != 0 {
@@ -1547,7 +1547,7 @@ L97:
 	}
 L98:
 	;
-	F_errfinish(m, int32(497078), int32(1572), int32(169188))
+	F_errfinish(m, int32(507189), int32(1572), int32(172589))
 	mBase = m.M
 	v426 = m.ExcPending
 	if v426 != 0 {

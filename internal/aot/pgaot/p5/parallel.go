@@ -145,10 +145,10 @@ L3:
 	}
 L4:
 	;
-	v39 = int32(4520560)
-	v40 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v39 = int32(4536272)
+	v40 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v42
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = l1
 	v47 = F_palloc0(m, l1*int32(36))
 	mBase = m.M
@@ -177,7 +177,7 @@ L7:
 	goto L8
 L8:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v40
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v40
 	m.G0 = v13 + int32(1056)
 	return
 L9:
@@ -229,7 +229,7 @@ L15:
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v145
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v59
-	v154 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(467287), v13+int32(16))
+	v154 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(475836), v13+int32(16))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -292,7 +292,7 @@ L25:
 	;
 	v157 = v82 - int32(-64)
 	v158 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
-	v160 = *(*int32)(unsafe.Add(mBase, _consts[103]))
+	v160 = *(*int32)(unsafe.Add(mBase, _consts[104]))
 	v165 = F_sts_initialize(m, v157, v158, v160+int32(1), v54, v13+int32(32))
 	mBase = m.M
 	v166 = m.ExcPending
@@ -307,7 +307,7 @@ L26:
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v168
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v59
-	v175 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(467279), v13)
+	v175 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(475828), v13)
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -322,7 +322,7 @@ L27:
 L28:
 	;
 	v187 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
-	v189 = *(*int32)(unsafe.Add(mBase, _consts[103]))
+	v189 = *(*int32)(unsafe.Add(mBase, _consts[104]))
 	v194 = F_sts_initialize(m, v157+(v177*int32(28)+int32(83))&int32(-8), v187, v189+int32(1), v54, v13+int32(32))
 	mBase = m.M
 	v195 = m.ExcPending
@@ -1105,7 +1105,7 @@ L17:
 	goto L15
 L18:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, _consts[296]))
+	v62 = *(*int32)(unsafe.Add(mBase, _consts[293]))
 	F_shm_mq_set_receiver(m, v44, v62)
 	mBase = m.M
 	v64 = m.ExcPending
@@ -1173,8 +1173,8 @@ func F_ParallelWorkerShutdown(m *base.Module, l0 int32, l1 int32) {
 	_ = v9
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[84]))
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[85]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[85]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[86]))
 	v8 = F_SendProcSignal(m, v4, int32(2), v7)
 	mBase = m.M
 	v9 = m.ExcPending

@@ -503,10 +503,10 @@ L29:
 	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102))))
 	v119 = int32(24)
 	v122 = int32(2)
-	v126 = *(*int32)(unsafe.Add(mBase, uint32((v118^int32(base.Ui32(v103)>>(uint(v119)%32)))<<(uint(v122)%32))+uint32(_consts[1352])))
+	v126 = *(*int32)(unsafe.Add(mBase, uint32((v118^int32(base.Ui32(v103)>>(uint(v119)%32)))<<(uint(v122)%32))+uint32(_consts[1346])))
 	v127 = int32(8)
 	v129 = v126 ^ v103<<(uint(v127)%32)
-	v137 = *(*int32)(unsafe.Add(mBase, uint32((v117^int32(base.Ui32(v129)>>(uint(v119)%32)))<<(uint(v122)%32))+uint32(_consts[1352])))
+	v137 = *(*int32)(unsafe.Add(mBase, uint32((v117^int32(base.Ui32(v129)>>(uint(v119)%32)))<<(uint(v122)%32))+uint32(_consts[1346])))
 	v140 = v137 ^ v129<<(uint(v127)%32)
 	v142 = v102 + v122
 	v144 = v104 + v122
@@ -529,7 +529,7 @@ L31:
 L32:
 	;
 	v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v146))))
-	v169 = *(*int32)(unsafe.Add(mBase, uint32((v161^int32(base.Ui32(v147)>>(uint(int32(24))%32)))<<(uint(int32(2))%32))+uint32(_consts[1352])))
+	v169 = *(*int32)(unsafe.Add(mBase, uint32((v161^int32(base.Ui32(v147)>>(uint(int32(24))%32)))<<(uint(int32(2))%32))+uint32(_consts[1346])))
 	v173 = v169 ^ v147<<(uint(int32(8))%32)
 	goto L34
 L33:

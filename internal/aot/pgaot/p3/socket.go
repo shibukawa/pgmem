@@ -28,19 +28,19 @@ func F_socket_putmessage_noblock(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v26
 	var v27 int32
 	_ = v27
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[583]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[582]))
 	v10 = l2 + v7 + int32(5)
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[584]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[583]))
 	if v12 < v10 {
-		v15 = *(*int32)(unsafe.Add(mBase, _consts[585]))
+		v15 = *(*int32)(unsafe.Add(mBase, _consts[584]))
 		v16 = F_repalloc(m, v15, v10)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[584])) = v10
-			*(*int32)(unsafe.Add(mBase, _consts[585])) = v16
+			*(*int32)(unsafe.Add(mBase, _consts[583])) = v10
+			*(*int32)(unsafe.Add(mBase, _consts[584])) = v16
 			v24 = *(*int32)(unsafe.Add(mBase, _consts[465]))
 			v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+16))
 			v26 = m.T0[v25].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, l2)

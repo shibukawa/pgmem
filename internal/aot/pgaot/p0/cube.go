@@ -2309,7 +2309,7 @@ L9:
 	goto L10
 L10:
 	;
-	F_appendStringInfoString(m, v10, int32(748219))
+	F_appendStringInfoString(m, v10, int32(760431))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -2394,7 +2394,7 @@ L20:
 	}
 L21:
 	;
-	F_appendStringInfoString(m, v10, int32(687838))
+	F_appendStringInfoString(m, v10, int32(699893))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -2488,7 +2488,7 @@ L34:
 	goto L35
 L35:
 	;
-	F_appendStringInfoString(m, v10, int32(748219))
+	F_appendStringInfoString(m, v10, int32(760431))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -2737,7 +2737,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg(m, int32(401686), int32(0))
+	F_errmsg(m, int32(409206), int32(0))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -2748,7 +2748,7 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(100)
-	F_errdetail(m, int32(594093), v10)
+	F_errdetail(m, int32(605650), v10)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -2758,7 +2758,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(501068), int32(371), int32(37003))
+	F_errfinish(m, int32(511576), int32(371), int32(37607))
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -3806,7 +3806,7 @@ func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return int32(0)
 		} else {
 			if v15 == int32(0) {
-				F_yy_fatal_error_6(m, int32(685381))
+				F_yy_fatal_error_6(m, int32(697436))
 				mBase = m.M
 				v122 = m.ExcPending
 				if v122 != 0 {
@@ -3880,7 +3880,7 @@ func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					if v110 == int32(0) {
-						F_yy_fatal_error_6(m, int32(685422))
+						F_yy_fatal_error_6(m, int32(697477))
 						mBase = m.M
 						v125 = m.ExcPending
 						if v125 != 0 {
@@ -3898,7 +3898,7 @@ func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			}
 		}
 	} else {
-		F_yy_fatal_error_6(m, int32(685452))
+		F_yy_fatal_error_6(m, int32(697507))
 		mBase = m.M
 		v119 = m.ExcPending
 		if v119 != 0 {
@@ -3965,7 +3965,7 @@ func F_cube_yyensure_buffer_stack(m *base.Module, l0 int32) {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v8
 			if v8 == int32(0) {
-				F_yy_fatal_error_6(m, int32(686101))
+				F_yy_fatal_error_6(m, int32(698156))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -3994,7 +3994,7 @@ func F_cube_yyensure_buffer_stack(m *base.Module, l0 int32) {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v26
 				if v26 == int32(0) {
-					F_yy_fatal_error_6(m, int32(686101))
+					F_yy_fatal_error_6(m, int32(698156))
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {

@@ -109,7 +109,7 @@ func F_ExecCheckTupleVisible(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[323]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[320]))
 	if v10 < int32(2) {
 		goto L2
 	} else {
@@ -187,7 +187,7 @@ L10:
 	goto L11
 L11:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _consts[37]))
+	v35 = *(*int32)(unsafe.Add(mBase, _consts[38]))
 	if v35 == v23 {
 		goto L12
 	} else {
@@ -202,7 +202,7 @@ L13:
 	goto L14
 L14:
 	;
-	v39 = *(*int32)(unsafe.Add(mBase, _consts[38]))
+	v39 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	if v39 <= int32(0) {
 		goto L16
 	} else {
@@ -214,7 +214,7 @@ L15:
 	goto L8
 L16:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[39]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 	if v43 == int32(0) {
 		v136 = int32(0)
 		goto L15
@@ -226,7 +226,7 @@ L17:
 	goto L18
 L18:
 	;
-	v105 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+	v105 = *(*int32)(unsafe.Add(mBase, _consts[41]))
 	v107 = int32(0)
 	v109 = v39 - int32(1)
 	goto L38
@@ -424,7 +424,7 @@ L49:
 	}
 L50:
 	;
-	F_errmsg(m, int32(357150), int32(0))
+	F_errmsg(m, int32(364355), int32(0))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -434,7 +434,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(500592), int32(389), int32(392571))
+	F_errfinish(m, int32(511100), int32(389), int32(400010))
 	mBase = m.M
 	v165 = m.ExcPending
 	if v165 != 0 {
@@ -805,7 +805,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		*(*int32)(unsafe.Add(mBase, uint32(l7))) = v18
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-		v24 = *(*int32)(unsafe.Add(mBase, _consts[323]))
+		v24 = *(*int32)(unsafe.Add(mBase, _consts[320]))
 		v31 = *(*int32)(unsafe.Add(mBase, uint32(v17)+188))
 		v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)+104))
 		v33 = m.T0[v32].(func(*base.Module, int32, int32, int32, int32, int32, int32, int32, int32, int32) int32)(m, v17, l3, v20, l5, v21, l4, v18, base.B2i32(v24 < int32(2))<<(uint(int32(1))%32), v15+int32(28))
@@ -881,13 +881,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v133 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(385585), int32(0))
+					F_errmsg_internal(m, int32(392946), int32(0))
 					mBase = m.M
 					v137 = m.ExcPending
 					if v137 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496948), int32(3457), int32(225079))
+						F_errfinish(m, int32(507059), int32(3457), int32(229075))
 						mBase = m.M
 						v142 = m.ExcPending
 						if v142 != 0 {
@@ -919,19 +919,19 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v54 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(429243), int32(0))
+							F_errmsg(m, int32(437559), int32(0))
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return int32(0)
 							} else {
-								F_errhint(m, int32(585084), int32(0))
+								F_errhint(m, int32(596616), int32(0))
 								mBase = m.M
 								v62 = m.ExcPending
 								if v62 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496948), int32(3402), int32(225079))
+									F_errfinish(m, int32(507059), int32(3402), int32(229075))
 									mBase = m.M
 									v67 = m.ExcPending
 									if v67 != 0 {
@@ -947,7 +947,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					}
 				}
 			case 3:
-				v90 = *(*int32)(unsafe.Add(mBase, _consts[323]))
+				v90 = *(*int32)(unsafe.Add(mBase, _consts[320]))
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
 				v94 = m.ExcPending
@@ -961,13 +961,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v185 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(357150), int32(0))
+							F_errmsg(m, int32(364355), int32(0))
 							mBase = m.M
 							v189 = m.ExcPending
 							if v189 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(496948), int32(3444), int32(225079))
+								F_errfinish(m, int32(507059), int32(3444), int32(229075))
 								mBase = m.M
 								v194 = m.ExcPending
 								if v194 != 0 {
@@ -981,13 +981,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = int32(3)
-						F_errmsg_internal(m, int32(57947), v15+int32(16))
+						F_errmsg_internal(m, int32(58629), v15+int32(16))
 						mBase = m.M
 						v103 = m.ExcPending
 						if v103 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496948), int32(3445), int32(225079))
+							F_errfinish(m, int32(507059), int32(3445), int32(229075))
 							mBase = m.M
 							v108 = m.ExcPending
 							if v108 != 0 {
@@ -1001,7 +1001,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					}
 				}
 			case 4:
-				v111 = *(*int32)(unsafe.Add(mBase, _consts[323]))
+				v111 = *(*int32)(unsafe.Add(mBase, _consts[320]))
 				if v111 < int32(2) {
 					v209 = int32(0)
 					m.G0 = v15 + int32(48)
@@ -1019,13 +1019,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v120 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(352368), int32(0))
+							F_errmsg(m, int32(359378), int32(0))
 							mBase = m.M
 							v124 = m.ExcPending
 							if v124 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(496948), int32(3452), int32(225079))
+								F_errfinish(m, int32(507059), int32(3452), int32(229075))
 								mBase = m.M
 								v129 = m.ExcPending
 								if v129 != 0 {
@@ -1047,13 +1047,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v15))) = v33
-					F_errmsg_internal(m, int32(57906), v15)
+					F_errmsg_internal(m, int32(58588), v15)
 					mBase = m.M
 					v150 = m.ExcPending
 					if v150 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(496948), int32(3461), int32(225079))
+						F_errfinish(m, int32(507059), int32(3461), int32(229075))
 						mBase = m.M
 						v155 = m.ExcPending
 						if v155 != 0 {
@@ -1068,9 +1068,9 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			}
 		}
 	} else {
-		v157 = *(*int32)(unsafe.Add(mBase, _consts[246]))
+		v157 = *(*int32)(unsafe.Add(mBase, _consts[244]))
 		if v157 != 0 {
-			v159 = int32(*(*uint8)(unsafe.Add(mBase, _consts[247])))
+			v159 = int32(*(*uint8)(unsafe.Add(mBase, _consts[245])))
 			if v159&int32(1) == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -1078,13 +1078,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v198 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(337158), int32(0))
+					F_errmsg_internal(m, int32(343653), int32(0))
 					mBase = m.M
 					v202 = m.ExcPending
 					if v202 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(327602), int32(1264), int32(271728))
+						F_errfinish(m, int32(333907), int32(1264), int32(276374))
 						mBase = m.M
 						v207 = m.ExcPending
 						if v207 != 0 {
@@ -1099,7 +1099,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			} else {
 				v166 = *(*int32)(unsafe.Add(mBase, uint32(v17)+188))
 				v167 = *(*int32)(unsafe.Add(mBase, uint32(v166)+60))
-				v168 = m.T0[v167].(func(*base.Module, int32, int32, int32, int32) int32)(m, v17, l3, int32(4178704), l5)
+				v168 = m.T0[v167].(func(*base.Module, int32, int32, int32, int32) int32)(m, v17, l3, int32(4194416), l5)
 				mBase = m.M
 				v169 = m.ExcPending
 				if v169 != 0 {
@@ -1116,13 +1116,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v173 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(224532), int32(0))
+							F_errmsg_internal(m, int32(228528), int32(0))
 							mBase = m.M
 							v177 = m.ExcPending
 							if v177 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(496948), int32(3473), int32(225079))
+								F_errfinish(m, int32(507059), int32(3473), int32(229075))
 								mBase = m.M
 								v182 = m.ExcPending
 								if v182 != 0 {
@@ -1140,7 +1140,7 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		} else {
 			v166 = *(*int32)(unsafe.Add(mBase, uint32(v17)+188))
 			v167 = *(*int32)(unsafe.Add(mBase, uint32(v166)+60))
-			v168 = m.T0[v167].(func(*base.Module, int32, int32, int32, int32) int32)(m, v17, l3, int32(4178704), l5)
+			v168 = m.T0[v167].(func(*base.Module, int32, int32, int32, int32) int32)(m, v17, l3, int32(4194416), l5)
 			mBase = m.M
 			v169 = m.ExcPending
 			if v169 != 0 {
@@ -1157,13 +1157,13 @@ func F_GetTupleForTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					if v173 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(224532), int32(0))
+						F_errmsg_internal(m, int32(228528), int32(0))
 						mBase = m.M
 						v177 = m.ExcPending
 						if v177 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496948), int32(3473), int32(225079))
+							F_errfinish(m, int32(507059), int32(3473), int32(229075))
 							mBase = m.M
 							v182 = m.ExcPending
 							if v182 != 0 {
@@ -1273,7 +1273,7 @@ L7:
 	goto L3
 L8:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[45]))
 	if v43 != 0 {
 		goto L10
 	} else {

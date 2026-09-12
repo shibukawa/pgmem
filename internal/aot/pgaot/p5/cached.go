@@ -155,7 +155,7 @@ func F_BuildCachedPlan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	var v179 int32
 	_ = v179
 	v5 = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+95)))
 	if v11 == v5 {
 		goto L1
@@ -193,7 +193,7 @@ L5:
 	goto L3
 L6:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[294]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[291]))
 	goto L13
 L7:
 	;
@@ -222,7 +222,7 @@ L9:
 L10:
 	;
 	v83 = int32(0)
-	v85 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+	v85 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+92)))
 	if v86 == v83 {
 		goto L33
@@ -386,7 +386,7 @@ L32:
 	goto L10
 L33:
 	;
-	v93 = F_AllocSetContextCreateInternal(m, v85, int32(284412), int32(0), int32(1024), int32(8388608))
+	v93 = F_AllocSetContextCreateInternal(m, v85, int32(289356), int32(0), int32(1024), int32(8388608))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -426,7 +426,7 @@ L37:
 	goto L38
 L38:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v93
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v93
 	v101 = F_copyObjectImpl(m, v81)
 	mBase = m.M
 	v102 = m.ExcPending
@@ -444,7 +444,7 @@ L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+4)) = v103
 	*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(953717834)
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[239]))
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[237]))
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+12)) = v112
 	v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+85)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v106)+16)) = uint8(v114)
@@ -478,7 +478,7 @@ L43:
 	v179 = v177 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+96)) = v179
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+24)) = v179
-	*(*int32)(unsafe.Add(mBase, _consts[9])) = v10
+	*(*int32)(unsafe.Add(mBase, _consts[10])) = v10
 	return v106
 L44:
 	;
@@ -491,7 +491,7 @@ L45:
 	goto L46
 L46:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, _consts[42]))
+	v156 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 	if v153&int32(1) != 0 {
 		goto L53
 	} else {
@@ -932,7 +932,7 @@ L45:
 	v148 = int32(1)
 	v149 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v149 + v148
-	F_ResourceOwnerRemember(m, l2, l1, int32(1743276))
+	F_ResourceOwnerRemember(m, l2, l1, int32(1755564))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {

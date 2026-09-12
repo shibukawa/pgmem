@@ -28,12 +28,12 @@ func F_ReleaseCatCache(m *base.Module, l0 int32) {
 	_ = v23
 	var v27 int32
 	_ = v27
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[10]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	v7 = l0 - int32(8)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v8 - int32(1)
 	if v5 != 0 {
-		F_ResourceOwnerForget(m, v5, l0, int32(1743236))
+		F_ResourceOwnerForget(m, v5, l0, int32(1755524))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {

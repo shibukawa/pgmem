@@ -92,12 +92,12 @@ func F_smgrDoPendingDeletes(m *base.Module, l0 int32) {
 	v11 = m.G0
 	v13 = v11 - int32(16)
 	m.G0 = v13
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[39]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[40]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+28))
 	goto L1
 L1:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[260]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[258]))
 	if v19 == int32(0) {
 		goto L2
 	} else {
@@ -177,7 +177,7 @@ L12:
 	goto L13
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[260])) = v32
+	*(*int32)(unsafe.Add(mBase, _consts[258])) = v32
 	goto L10
 L14:
 	;
@@ -397,7 +397,7 @@ func F_smgr_aio_reopen(m *base.Module, l0 int32) {
 			v31 = int32(*(*int8)(unsafe.Add(mBase, uint32(v11)+20)))
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v11)+12))
 			v35 = *(*int32)(unsafe.Add(mBase, uint32(v24)+36))
-			v40 = *(*int32)(unsafe.Add(mBase, uint32(v35*int32(80))+uint32(_consts[797])))
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(v35*int32(80))+uint32(_consts[794])))
 			v41 = m.T0[v40].(func(*base.Module, int32, int32, int32, int32) int32)(m, v24, v31, v32, v8+int32(12))
 			mBase = m.M
 			v42 = m.ExcPending

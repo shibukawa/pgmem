@@ -38,7 +38,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v40
 	var v42 int32
 	_ = v42
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 	if v9 == int32(0) {
 		return
 	} else {
@@ -46,10 +46,10 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 		if v12 != 0 {
 			return
 		} else {
-			v13 = int32(4520560)
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+			v13 = int32(4536272)
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-			*(*int32)(unsafe.Add(mBase, _consts[9])) = v16
+			*(*int32)(unsafe.Add(mBase, _consts[10])) = v16
 			v19 = F_palloc(m, int32(40))
 			mBase = m.M
 			v20 = m.ExcPending
@@ -57,7 +57,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(3)
-				v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[258])))
+				v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[256])))
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+28)) = l3
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+24)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = int32(0)
@@ -71,7 +71,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v33
-					v37 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+					v37 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 					v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+28))
 					v39 = F_lappend(m, v38, v19)
 					mBase = m.M
@@ -79,9 +79,9 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 					if v40 != 0 {
 						return
 					} else {
-						v42 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+						v42 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 						*(*int32)(unsafe.Add(mBase, uint32(v42)+28)) = v39
-						*(*int32)(unsafe.Add(mBase, _consts[9])) = v14
+						*(*int32)(unsafe.Add(mBase, _consts[10])) = v14
 						return
 					}
 				}
@@ -130,7 +130,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v46
 	var v48 int32
 	_ = v48
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 	if v9 == int32(0) {
 		return
 	} else {
@@ -138,10 +138,10 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 		if v12 != 0 {
 			return
 		} else {
-			v13 = int32(4520560)
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+			v13 = int32(4536272)
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
-			*(*int32)(unsafe.Add(mBase, _consts[9])) = v16
+			*(*int32)(unsafe.Add(mBase, _consts[10])) = v16
 			v19 = F_palloc0(m, int32(40))
 			mBase = m.M
 			v20 = m.ExcPending
@@ -149,7 +149,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(6)
-				v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[258])))
+				v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[256])))
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = int32(3602)
@@ -175,7 +175,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v39
-						v43 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+						v43 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 						v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+28))
 						v45 = F_lappend(m, v44, v19)
 						mBase = m.M
@@ -183,9 +183,9 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 						if v46 != 0 {
 							return
 						} else {
-							v48 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+							v48 = *(*int32)(unsafe.Add(mBase, _consts[284]))
 							*(*int32)(unsafe.Add(mBase, uint32(v48)+28)) = v45
-							*(*int32)(unsafe.Add(mBase, _consts[9])) = v14
+							*(*int32)(unsafe.Add(mBase, _consts[10])) = v14
 							return
 						}
 					}

@@ -89,7 +89,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 		v29 = F_emscripten_builtin_malloc(m, int32(104))
 		mBase = m.M
 		if v29 == int32(0) {
-			v122 = *(*int32)(unsafe.Add(mBase, _consts[146]))
+			v122 = *(*int32)(unsafe.Add(mBase, _consts[147]))
 			F_MemoryContextStats(m, v122)
 			mBase = m.M
 			v124 = m.ExcPending
@@ -108,20 +108,20 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 					if v131 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(13904), int32(0))
+						F_errmsg(m, int32(13961), int32(0))
 						mBase = m.M
 						v135 = m.ExcPending
 						if v135 != 0 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-							F_errdetail(m, int32(666849), v12+int32(16))
+							F_errdetail(m, int32(678867), v12+int32(16))
 							mBase = m.M
 							v141 = m.ExcPending
 							if v141 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(501589), int32(372), int32(356637))
+								F_errfinish(m, int32(512756), int32(372), int32(363842))
 								mBase = m.M
 								v146 = m.ExcPending
 								if v146 != 0 {
@@ -178,7 +178,7 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+32)) = l1
 			*(*int64)(unsafe.Add(mBase, uint32(v29)+20)) = v78
 			*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = v53
-			*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = int32(1772948)
+			*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = int32(1785236)
 			if l0 != 0 {
 				v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 				*(*int32)(unsafe.Add(mBase, uint32(v29)+28)) = v90
@@ -206,13 +206,13 @@ func F_SlabContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v19
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-			F_errmsg_internal(m, int32(154159), v12)
+			F_errmsg_internal(m, int32(157238), v12)
 			mBase = m.M
 			v115 = m.ExcPending
 			if v115 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(501589), int32(360), int32(356637))
+				F_errfinish(m, int32(512756), int32(360), int32(363842))
 				mBase = m.M
 				v120 = m.ExcPending
 				if v120 != 0 {

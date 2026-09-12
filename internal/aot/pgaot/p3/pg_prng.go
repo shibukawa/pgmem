@@ -38,12 +38,12 @@ func F_pg_prng_uint32(m *base.Module) int32 {
 	_ = v7
 	var v8 int64
 	_ = v8
-	v3 = int32(4604072)
-	v4 = int32(4604064)
-	v5 = *(*int64)(unsafe.Add(mBase, _consts[819]))
-	v7 = *(*int64)(unsafe.Add(mBase, _consts[818]))
+	v3 = int32(4619784)
+	v4 = int32(4619776)
+	v5 = *(*int64)(unsafe.Add(mBase, _consts[818]))
+	v7 = *(*int64)(unsafe.Add(mBase, _consts[817]))
 	v8 = v5 ^ v7
-	*(*int64)(unsafe.Add(mBase, _consts[818])) = base.I64_rotl(v8, int64(37))
-	*(*int64)(unsafe.Add(mBase, _consts[819])) = v8<<(uint(int64(16))%64) ^ base.I64_rotl(v5, int64(24)) ^ v8
+	*(*int64)(unsafe.Add(mBase, _consts[817])) = base.I64_rotl(v8, int64(37))
+	*(*int64)(unsafe.Add(mBase, _consts[818])) = v8<<(uint(int64(16))%64) ^ base.I64_rotl(v5, int64(24)) ^ v8
 	return base.I32_wrap_i64(int64(base.Ui64(base.I64_rotl(v5*int64(5), int64(7))*int64(9)) >> (uint(int64(32)) % 64)))
 }

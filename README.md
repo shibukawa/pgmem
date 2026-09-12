@@ -149,6 +149,11 @@ Startup is fast because `internal/pgdata/pgdata.tar.zst` contains a data
 directory produced by initdb at build time (`go run ./cmd/pgmem-mkdata`),
 compressed with zstd (pure Go, `klauspost/compress`).
 
+pgvector is not part of the PostgreSQL tree: `wasm/pgvector.lock` pins
+its release and checksum, and `build.sh` compiles it against the
+installed server headers like a PGXS build would (without
+`-march=native`).
+
 ### Ahead-of-time backend
 
 `internal/aot/pgaot` is the same wasm module translated to Go by
@@ -206,7 +211,7 @@ on this memory-bound code (arm64; amd64 not measured).
   serves the database it was started with (`Options.Database`); a
   connection that asks for another database is refused with SQLSTATE
   3D000 instead of silently landing in the served one.
-- Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp. ICU, OpenSSL and zlib are not compiled
+- Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp, and pgvector 0.8.6 as `vector`. ICU, OpenSSL and zlib are not compiled
   in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
   (so `compress-algo=1|2` and messages made by GnuPG work), and
   `fips_mode()` is always false.

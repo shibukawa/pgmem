@@ -3,32 +3,32 @@ package p2
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_earthdistance(m *base.Module) int32 {
-	return int32(4405160)
+	return int32(4420872)
 }
 func F_Pg_magic_func_euc2004_sjis2004(m *base.Module) int32 {
-	return int32(4393140)
+	return int32(4408852)
 }
 func F_Pg_magic_func_euc_tw_and_big5(m *base.Module) int32 {
-	return int32(4393396)
+	return int32(4409108)
 }
 func F_Pg_magic_func_lo(m *base.Module) int32 {
-	return int32(4413996)
+	return int32(4429708)
 }
 func F_Pg_magic_func_plpgsql(m *base.Module) int32 {
-	return int32(4181128)
+	return int32(4196840)
 }
 func F_Pg_magic_func_unaccent(m *base.Module) int32 {
-	return int32(4402016)
+	return int32(4417728)
 }
 func F_Pg_magic_func_utf8_and_cyrillic(m *base.Module) int32 {
-	return int32(4393748)
+	return int32(4409460)
 }
 func F_Pg_magic_func_utf8_and_euc_kr(m *base.Module) int32 {
-	return int32(4394484)
+	return int32(4410196)
 }
 func F_Pg_magic_func_utf8_and_iso8859_1(m *base.Module) int32 {
-	return int32(4395124)
+	return int32(4410836)
 }
 func F_Pg_magic_func_utf8_and_sjis(m *base.Module) int32 {
-	return int32(4396908)
+	return int32(4412620)
 }

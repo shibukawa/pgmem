@@ -87,29 +87,29 @@ func F_AppendStringToManifest(m *base.Module, l0 int32, l1 int32) {
 			} else {
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				if v21 == int32(0) {
-					v36 = int32(13904)
+					v36 = int32(13961)
 				} else {
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
 					if v28 == int32(1) {
-						v31 = int32(305523)
+						v31 = int32(310968)
 					} else {
-						v31 = int32(130654)
+						v31 = int32(133005)
 					}
 					if v28 == int32(2) {
-						v34 = int32(13904)
+						v34 = int32(13961)
 					} else {
 						v34 = v31
 					}
 					v36 = v34
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v36
-				F_errmsg_internal(m, int32(199909), v7)
+				F_errmsg_internal(m, int32(203470), v7)
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494196), int32(393), int32(78191))
+					F_errfinish(m, int32(503512), int32(393), int32(79284))
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
@@ -685,10 +685,10 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			if v50 != 0 {
 				if v46 == int32(0) {
-					v57 = int32(4520560)
-					v58 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+					v57 = int32(4536272)
+					v58 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 					v60 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
-					*(*int32)(unsafe.Add(mBase, _consts[9])) = v60
+					*(*int32)(unsafe.Add(mBase, _consts[10])) = v60
 					v63 = v8 + int32(12)
 					v64 = int32(0)
 					v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -749,13 +749,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 						if v145 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(61835), int32(0))
+							F_errmsg_internal(m, int32(62819), int32(0))
 							mBase = m.M
 							v149 = m.ExcPending
 							if v149 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(501619), int32(5432), int32(355051))
+								F_errfinish(m, int32(512786), int32(5432), int32(362061))
 								mBase = m.M
 								v154 = m.ExcPending
 								if v154 != 0 {
@@ -768,17 +768,17 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							}
 						}
 					} else {
-						v96 = int32(4520560)
-						v97 = *(*int32)(unsafe.Add(mBase, _consts[9]))
+						v96 = int32(4536272)
+						v97 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 						v99 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-						*(*int32)(unsafe.Add(mBase, _consts[9])) = v99
+						*(*int32)(unsafe.Add(mBase, _consts[10])) = v99
 						v101 = F_makeStringInfo(m)
 						mBase = m.M
 						v104 = m.ExcPending
 						if v104 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[9])) = v97
+							*(*int32)(unsafe.Add(mBase, _consts[10])) = v97
 							v107 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
 							v108 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
 							F_appendBinaryStringInfo(m, v101, v107, v108)
@@ -789,7 +789,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							} else {
 								v111 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
 								*(*int32)(unsafe.Add(mBase, uint32(v101)+12)) = v111
-								*(*int32)(unsafe.Add(mBase, _consts[9])) = v58
+								*(*int32)(unsafe.Add(mBase, _consts[10])) = v58
 								v122 = v101
 								m.G0 = v8 + int32(16)
 								return v122
@@ -845,13 +845,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 		if v132 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(61451), int32(0))
+			F_errmsg_internal(m, int32(62435), int32(0))
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(501619), int32(5509), int32(375046))
+				F_errfinish(m, int32(512786), int32(5509), int32(382317))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {
