@@ -144,6 +144,19 @@ func F_t_isalnum_with_len(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_tconvert(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_from_text(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
+	}
+}
 func F_terminate_brin_buildstate(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

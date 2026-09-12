@@ -17,6 +17,12 @@ func F_pg_finfo_citext_pattern_ge(m *base.Module) int32 {
 func F_pg_finfo_citext_pattern_lt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_pattern_lt_0)
 }
+func F_pg_finfo_delete(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_delete_0)
+}
+func F_pg_finfo_each(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_each_0)
+}
 func F_pg_finfo_euc_cn_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_cn_to_utf8_0)
 }
@@ -26,6 +32,12 @@ func F_pg_finfo_euc_tw_to_big5(m *base.Module) int32 {
 func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_tw_to_utf8_0)
 }
+func F_pg_finfo_fetchval(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_fetchval_0)
+}
+func F_pg_finfo_ghstore_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ghstore_same_0)
+}
 func F_pg_finfo_gin_extract_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_trgm_0)
 }
@@ -34,6 +46,27 @@ func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
 }
 func F_pg_finfo_gtrgm_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_union_0)
+}
+func F_pg_finfo_hstore_akeys(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_akeys_0)
+}
+func F_pg_finfo_hstore_avals(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_avals_0)
+}
+func F_pg_finfo_hstore_defined(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_defined_0)
+}
+func F_pg_finfo_hstore_delete(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_delete_0)
+}
+func F_pg_finfo_hstore_delete_array(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_delete_array_0)
+}
+func F_pg_finfo_hstore_exists_any(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_exists_any_0)
+}
+func F_pg_finfo_hstore_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_in_0)
 }
 func F_pg_finfo_iso8859_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_to_utf8_0)

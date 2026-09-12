@@ -17462,191 +17462,191 @@ func F_rowtype_field_matches(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 	_ = mBase
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v29 int32
-	_ = v29
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
+	var v31 int32
+	_ = v31
 	var v33 int32
 	_ = v33
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
 	var v41 int32
 	_ = v41
-	var v44 int32
-	_ = v44
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
 	if l0 == int32(2249) {
-		v53 = int32(1)
-		return v53
+		v54 = int32(1)
+		return v54
 	} else {
 		v11 = int32(0)
-		v12 = F_lookup_rowtype_tupdesc_domain(m, l0)
+		v13 = F_lookup_rowtype_tupdesc_domain(m, l0, int32(-1))
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return int32(0)
 		} else {
 			if int32(0) < l1 {
-				v18 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-				if l1 <= v18 {
-					v29 = v12 + v18<<(uint(int32(4))%32) + l1*int32(100)
-					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29)+11)))
-					if v30 != 0 {
-						v40 = int32(0)
-						v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-						if v40 <= v41 {
-							v48 = v40
-							F_DecrTupleDescRefCount(m, v12)
+				v19 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+				if l1 <= v19 {
+					v30 = v13 + v19<<(uint(int32(4))%32) + l1*int32(100)
+					v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+11)))
+					if v31 != 0 {
+						v41 = int32(0)
+						v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+						if v41 <= v42 {
+							v49 = v41
+							F_DecrTupleDescRefCount(m, v13)
 							mBase = m.M
-							v51 = m.ExcPending
-							if v51 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return int32(0)
 							} else {
-								v53 = v48
-								return v53
+								v54 = v49
+								return v54
 							}
 						} else {
-							v53 = v40
-							return v53
+							v54 = v41
+							return v54
 						}
 					} else {
-						v32 = v29 - int32(80)
-						v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+68))
-						if v33 != l2 {
-							v40 = int32(0)
-							v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-							if v40 <= v41 {
-								v48 = v40
-								F_DecrTupleDescRefCount(m, v12)
+						v33 = v30 - int32(80)
+						v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+68))
+						if v34 != l2 {
+							v41 = int32(0)
+							v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+							if v41 <= v42 {
+								v49 = v41
+								F_DecrTupleDescRefCount(m, v13)
 								mBase = m.M
-								v51 = m.ExcPending
-								if v51 != 0 {
+								v52 = m.ExcPending
+								if v52 != 0 {
 									return int32(0)
 								} else {
-									v53 = v48
-									return v53
+									v54 = v49
+									return v54
 								}
 							} else {
-								v53 = v40
-								return v53
+								v54 = v41
+								return v54
 							}
 						} else {
-							v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+76))
-							if v35 != l3 {
-								v40 = int32(0)
-								v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-								if v40 <= v41 {
-									v48 = v40
-									F_DecrTupleDescRefCount(m, v12)
+							v36 = *(*int32)(unsafe.Add(mBase, uint32(v33)+76))
+							if v36 != l3 {
+								v41 = int32(0)
+								v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+								if v41 <= v42 {
+									v49 = v41
+									F_DecrTupleDescRefCount(m, v13)
 									mBase = m.M
-									v51 = m.ExcPending
-									if v51 != 0 {
+									v52 = m.ExcPending
+									if v52 != 0 {
 										return int32(0)
 									} else {
-										v53 = v48
-										return v53
+										v54 = v49
+										return v54
 									}
 								} else {
-									v53 = v40
-									return v53
+									v54 = v41
+									return v54
 								}
 							} else {
-								v37 = *(*int32)(unsafe.Add(mBase, uint32(v32)+96))
-								if v37 == l4 {
-									v44 = int32(1)
-									v45 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-									if v45 < int32(0) {
-										v53 = v44
-										return v53
+								v38 = *(*int32)(unsafe.Add(mBase, uint32(v33)+96))
+								if v38 == l4 {
+									v45 = int32(1)
+									v46 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+									if v46 < int32(0) {
+										v54 = v45
+										return v54
 									} else {
-										v48 = v44
-										F_DecrTupleDescRefCount(m, v12)
+										v49 = v45
+										F_DecrTupleDescRefCount(m, v13)
 										mBase = m.M
-										v51 = m.ExcPending
-										if v51 != 0 {
+										v52 = m.ExcPending
+										if v52 != 0 {
 											return int32(0)
 										} else {
-											v53 = v48
-											return v53
+											v54 = v49
+											return v54
 										}
 									}
 								} else {
-									v40 = int32(0)
-									v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-									if v40 <= v41 {
-										v48 = v40
-										F_DecrTupleDescRefCount(m, v12)
+									v41 = int32(0)
+									v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+									if v41 <= v42 {
+										v49 = v41
+										F_DecrTupleDescRefCount(m, v13)
 										mBase = m.M
-										v51 = m.ExcPending
-										if v51 != 0 {
+										v52 = m.ExcPending
+										if v52 != 0 {
 											return int32(0)
 										} else {
-											v53 = v48
-											return v53
+											v54 = v49
+											return v54
 										}
 									} else {
-										v53 = v40
-										return v53
+										v54 = v41
+										return v54
 									}
 								}
 							}
 						}
 					}
 				} else {
-					v21 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-					if int32(0) <= v21 {
-						v48 = v11
-						F_DecrTupleDescRefCount(m, v12)
+					v22 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+					if int32(0) <= v22 {
+						v49 = v11
+						F_DecrTupleDescRefCount(m, v13)
 						mBase = m.M
-						v51 = m.ExcPending
-						if v51 != 0 {
+						v52 = m.ExcPending
+						if v52 != 0 {
 							return int32(0)
 						} else {
-							v53 = v48
-							return v53
+							v54 = v49
+							return v54
 						}
 					} else {
-						v53 = v11
-						return v53
+						v54 = v11
+						return v54
 					}
 				}
 			} else {
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
-				if int32(0) <= v21 {
-					v48 = v11
-					F_DecrTupleDescRefCount(m, v12)
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+				if int32(0) <= v22 {
+					v49 = v11
+					F_DecrTupleDescRefCount(m, v13)
 					mBase = m.M
-					v51 = m.ExcPending
-					if v51 != 0 {
+					v52 = m.ExcPending
+					if v52 != 0 {
 						return int32(0)
 					} else {
-						v53 = v48
-						return v53
+						v54 = v49
+						return v54
 					}
 				} else {
-					v53 = v11
-					return v53
+					v54 = v11
+					return v54
 				}
 			}
 		}

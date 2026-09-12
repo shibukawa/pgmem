@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5572)
-	m.G0 = int32(13009136)
+	m.T0 = make([]any, 5726)
+	m.G0 = int32(13014800)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -48,7 +48,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4338235
+	m.DataEnd = 4343899
 	initData_0(m)
 	return m
 }
@@ -81,8 +81,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5572)
-	m.G0 = int32(13009136)
+	m.T0 = make([]any, 5726)
+	m.G0 = int32(13014800)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -107,7 +107,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4338235
+	m.DataEnd = 4343899
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -122,8 +122,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5572)
-	m.G0 = int32(13009136)
+	m.T0 = make([]any, 5726)
+	m.G0 = int32(13014800)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -148,18 +148,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4338235
+	m.DataEnd = 4343899
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1567104])
-	copy(m.Memory[1572432:], wasm2goData_data_bin[1567104:1567113])
-	copy(m.Memory[1574480:], wasm2goData_data_bin[1567113:1580041])
-	copy(m.Memory[1597444:], wasm2goData_data_bin[1580041:1673282])
-	copy(m.Memory[1691712:], wasm2goData_data_bin[1673282:1784938])
-	copy(m.Memory[1814584:], wasm2goData_data_bin[1784938:4025616])
-	copy(m.Memory[4062752:], wasm2goData_data_bin[4025616:4301099])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1569600])
+	copy(m.Memory[1574928:], wasm2goData_data_bin[1569600:1569609])
+	copy(m.Memory[1576976:], wasm2goData_data_bin[1569609:1582537])
+	copy(m.Memory[1601540:], wasm2goData_data_bin[1582537:1675778])
+	copy(m.Memory[1695808:], wasm2goData_data_bin[1675778:1787434])
+	copy(m.Memory[1818680:], wasm2goData_data_bin[1787434:4029600])
+	copy(m.Memory[4068336:], wasm2goData_data_bin[4029600:4305163])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -1417,6 +1417,450 @@ func WordSimilarityDistOp(m *base.Module, l0 int32) int32 {
 }
 func WordSimilarityOp(m *base.Module, l0 int32) int32 {
 	return F_word_similarity_op(m, l0)
+}
+func PgMagicFuncHstore(m *base.Module) int32 {
+	return F_Pg_magic_func_hstore(m)
+}
+func Akeys(m *base.Module, l0 int32) int32 {
+	return F_akeys(m, l0)
+}
+func Avals(m *base.Module, l0 int32) int32 {
+	return F_avals(m, l0)
+}
+func Defined(m *base.Module, l0 int32) int32 {
+	return F_defined(m, l0)
+}
+func Delete(m *base.Module, l0 int32) int32 {
+	return F_delete(m, l0)
+}
+func Each(m *base.Module, l0 int32) int32 {
+	return F_each(m, l0)
+}
+func Exists(m *base.Module, l0 int32) int32 {
+	return F_exists(m, l0)
+}
+func Fetchval(m *base.Module, l0 int32) int32 {
+	return F_fetchval(m, l0)
+}
+func GhstoreCompress(m *base.Module, l0 int32) int32 {
+	return F_ghstore_compress(m, l0)
+}
+func GhstoreConsistent(m *base.Module, l0 int32) int32 {
+	return F_ghstore_consistent(m, l0)
+}
+func GhstoreDecompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GhstoreIn(m *base.Module, l0 int32) int32 {
+	return F_ghstore_in(m, l0)
+}
+func GhstoreOptions(m *base.Module, l0 int32) int32 {
+	return F_ghstore_options(m, l0)
+}
+func GhstoreOut(m *base.Module, l0 int32) int32 {
+	return F_ghstore_out(m, l0)
+}
+func GhstorePenalty(m *base.Module, l0 int32) int32 {
+	return F_ghstore_penalty(m, l0)
+}
+func GhstorePicksplit(m *base.Module, l0 int32) int32 {
+	return F_ghstore_picksplit(m, l0)
+}
+func GhstoreSame(m *base.Module, l0 int32) int32 {
+	return F_ghstore_same(m, l0)
+}
+func GhstoreUnion(m *base.Module, l0 int32) int32 {
+	return F_ghstore_union(m, l0)
+}
+func GinConsistentHstore(m *base.Module, l0 int32) int32 {
+	return F_gin_consistent_hstore(m, l0)
+}
+func GinExtractHstore(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_hstore(m, l0)
+}
+func GinExtractHstoreQuery(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_hstore_query(m, l0)
+}
+func HsConcat(m *base.Module, l0 int32) int32 {
+	return F_hs_concat(m, l0)
+}
+func HsContained(m *base.Module, l0 int32) int32 {
+	return F_hs_contained(m, l0)
+}
+func HsContains(m *base.Module, l0 int32) int32 {
+	return F_hs_contains(m, l0)
+}
+func HstoreArrayToPairs(m *base.Module, l0 int32, l1 int32) int32 {
+	return F_hstoreArrayToPairs(m, l0, l1)
+}
+func HstoreCheckKeyLen(m *base.Module, l0 int32) int32 {
+	return F_hstoreCheckKeyLen(m, l0)
+}
+func HstoreCheckValLen(m *base.Module, l0 int32) int32 {
+	return F_hstoreCheckValLen(m, l0)
+}
+func HstoreFindKey(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	return F_hstoreFindKey(m, l0, l1, l2, l3)
+}
+func HstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return F_hstorePairs(m, l0, l1, l2)
+}
+func HstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return F_hstoreUniquePairs(m, l0, l1, l2)
+}
+func HstoreUpgrade(m *base.Module, l0 int32) int32 {
+	return F_hstoreUpgrade(m, l0)
+}
+func HstoreAkeys(m *base.Module, l0 int32) int32 {
+	return F_hstore_akeys(m, l0)
+}
+func HstoreAvals(m *base.Module, l0 int32) int32 {
+	return F_hstore_avals(m, l0)
+}
+func HstoreCmp(m *base.Module, l0 int32) int32 {
+	return F_hstore_cmp(m, l0)
+}
+func HstoreConcat(m *base.Module, l0 int32) int32 {
+	return F_hstore_concat(m, l0)
+}
+func HstoreContained(m *base.Module, l0 int32) int32 {
+	return F_hs_contained(m, l0)
+}
+func HstoreContains(m *base.Module, l0 int32) int32 {
+	return F_hstore_contains(m, l0)
+}
+func HstoreDefined(m *base.Module, l0 int32) int32 {
+	return F_hstore_defined(m, l0)
+}
+func HstoreDelete(m *base.Module, l0 int32) int32 {
+	return F_hstore_delete(m, l0)
+}
+func HstoreDeleteArray(m *base.Module, l0 int32) int32 {
+	return F_hstore_delete_array(m, l0)
+}
+func HstoreDeleteHstore(m *base.Module, l0 int32) int32 {
+	return F_hstore_delete_hstore(m, l0)
+}
+func HstoreEach(m *base.Module, l0 int32) int32 {
+	return F_hstore_each(m, l0)
+}
+func HstoreEq(m *base.Module, l0 int32) int32 {
+	return F_hstore_eq(m, l0)
+}
+func HstoreExists(m *base.Module, l0 int32) int32 {
+	return F_hstore_exists(m, l0)
+}
+func HstoreExistsAll(m *base.Module, l0 int32) int32 {
+	return F_hstore_exists_all(m, l0)
+}
+func HstoreExistsAny(m *base.Module, l0 int32) int32 {
+	return F_hstore_exists_any(m, l0)
+}
+func HstoreFetchval(m *base.Module, l0 int32) int32 {
+	return F_hstore_fetchval(m, l0)
+}
+func HstoreFromArray(m *base.Module, l0 int32) int32 {
+	return F_hstore_from_array(m, l0)
+}
+func HstoreFromArrays(m *base.Module, l0 int32) int32 {
+	return F_hstore_from_arrays(m, l0)
+}
+func HstoreFromRecord(m *base.Module, l0 int32) int32 {
+	return F_hstore_from_record(m, l0)
+}
+func HstoreFromText(m *base.Module, l0 int32) int32 {
+	return F_hstore_from_text(m, l0)
+}
+func HstoreGe(m *base.Module, l0 int32) int32 {
+	return F_hstore_ge(m, l0)
+}
+func HstoreGt(m *base.Module, l0 int32) int32 {
+	return F_hstore_gt(m, l0)
+}
+func HstoreHash(m *base.Module, l0 int32) int32 {
+	return F_hstore_hash(m, l0)
+}
+func HstoreHashExtended(m *base.Module, l0 int32) int32 {
+	return F_hstore_hash_extended(m, l0)
+}
+func HstoreIn(m *base.Module, l0 int32) int32 {
+	return F_hstore_in(m, l0)
+}
+func HstoreLe(m *base.Module, l0 int32) int32 {
+	return F_hstore_le(m, l0)
+}
+func HstoreLt(m *base.Module, l0 int32) int32 {
+	return F_hstore_lt(m, l0)
+}
+func HstoreNe(m *base.Module, l0 int32) int32 {
+	return F_hstore_ne(m, l0)
+}
+func HstoreOut(m *base.Module, l0 int32) int32 {
+	return F_hstore_out(m, l0)
+}
+func HstorePopulateRecord(m *base.Module, l0 int32) int32 {
+	return F_hstore_populate_record(m, l0)
+}
+func HstoreRecv(m *base.Module, l0 int32) int32 {
+	return F_hstore_recv(m, l0)
+}
+func HstoreSend(m *base.Module, l0 int32) int32 {
+	return F_hstore_send(m, l0)
+}
+func HstoreSkeys(m *base.Module, l0 int32) int32 {
+	return F_hstore_skeys(m, l0)
+}
+func HstoreSliceToArray(m *base.Module, l0 int32) int32 {
+	return F_hstore_slice_to_array(m, l0)
+}
+func HstoreSliceToHstore(m *base.Module, l0 int32) int32 {
+	return F_hstore_slice_to_hstore(m, l0)
+}
+func HstoreSubscriptHandler(m *base.Module, l0 int32) int32 {
+	return F_hstore_subscript_handler(m, l0)
+}
+func HstoreSvals(m *base.Module, l0 int32) int32 {
+	return F_hstore_svals(m, l0)
+}
+func HstoreToArray(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_array(m, l0)
+}
+func HstoreToJson(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_json(m, l0)
+}
+func HstoreToJsonLoose(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_json_loose(m, l0)
+}
+func HstoreToJsonb(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_jsonb(m, l0)
+}
+func HstoreToJsonbLoose(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_jsonb_loose(m, l0)
+}
+func HstoreToMatrix(m *base.Module, l0 int32) int32 {
+	return F_hstore_to_matrix(m, l0)
+}
+func HstoreVersionDiag(m *base.Module, l0 int32) int32 {
+	return F_hstore_version_diag(m, l0)
+}
+func PgFinfoAkeys(m *base.Module) int32 {
+	return F_pg_finfo_akeys(m)
+}
+func PgFinfoAvals(m *base.Module) int32 {
+	return F_pg_finfo_avals(m)
+}
+func PgFinfoDefined(m *base.Module) int32 {
+	return F_pg_finfo_defined(m)
+}
+func PgFinfoDelete(m *base.Module) int32 {
+	return F_pg_finfo_delete(m)
+}
+func PgFinfoEach(m *base.Module) int32 {
+	return F_pg_finfo_each(m)
+}
+func PgFinfoExists(m *base.Module) int32 {
+	return F_pg_finfo_exists(m)
+}
+func PgFinfoFetchval(m *base.Module) int32 {
+	return F_pg_finfo_fetchval(m)
+}
+func PgFinfoGhstoreCompress(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_compress(m)
+}
+func PgFinfoGhstoreConsistent(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_consistent(m)
+}
+func PgFinfoGhstoreDecompress(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_decompress(m)
+}
+func PgFinfoGhstoreIn(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_in(m)
+}
+func PgFinfoGhstoreOptions(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_options(m)
+}
+func PgFinfoGhstoreOut(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_out(m)
+}
+func PgFinfoGhstorePenalty(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_penalty(m)
+}
+func PgFinfoGhstorePicksplit(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_picksplit(m)
+}
+func PgFinfoGhstoreSame(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_same(m)
+}
+func PgFinfoGhstoreUnion(m *base.Module) int32 {
+	return F_pg_finfo_ghstore_union(m)
+}
+func PgFinfoGinConsistentHstore(m *base.Module) int32 {
+	return F_pg_finfo_gin_consistent_hstore(m)
+}
+func PgFinfoGinExtractHstore(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_hstore(m)
+}
+func PgFinfoGinExtractHstoreQuery(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_hstore_query(m)
+}
+func PgFinfoHsConcat(m *base.Module) int32 {
+	return F_pg_finfo_hs_concat(m)
+}
+func PgFinfoHsContained(m *base.Module) int32 {
+	return F_pg_finfo_hs_contained(m)
+}
+func PgFinfoHsContains(m *base.Module) int32 {
+	return F_pg_finfo_hs_contains(m)
+}
+func PgFinfoHstoreAkeys(m *base.Module) int32 {
+	return F_pg_finfo_hstore_akeys(m)
+}
+func PgFinfoHstoreAvals(m *base.Module) int32 {
+	return F_pg_finfo_hstore_avals(m)
+}
+func PgFinfoHstoreCmp(m *base.Module) int32 {
+	return F_pg_finfo_hstore_cmp(m)
+}
+func PgFinfoHstoreConcat(m *base.Module) int32 {
+	return F_pg_finfo_hstore_concat(m)
+}
+func PgFinfoHstoreContained(m *base.Module) int32 {
+	return F_pg_finfo_hstore_contained(m)
+}
+func PgFinfoHstoreContains(m *base.Module) int32 {
+	return F_pg_finfo_hstore_contains(m)
+}
+func PgFinfoHstoreDefined(m *base.Module) int32 {
+	return F_pg_finfo_hstore_defined(m)
+}
+func PgFinfoHstoreDelete(m *base.Module) int32 {
+	return F_pg_finfo_hstore_delete(m)
+}
+func PgFinfoHstoreDeleteArray(m *base.Module) int32 {
+	return F_pg_finfo_hstore_delete_array(m)
+}
+func PgFinfoHstoreDeleteHstore(m *base.Module) int32 {
+	return F_pg_finfo_hstore_delete_hstore(m)
+}
+func PgFinfoHstoreEach(m *base.Module) int32 {
+	return F_pg_finfo_hstore_each(m)
+}
+func PgFinfoHstoreEq(m *base.Module) int32 {
+	return F_pg_finfo_hstore_eq(m)
+}
+func PgFinfoHstoreExists(m *base.Module) int32 {
+	return F_pg_finfo_hstore_exists(m)
+}
+func PgFinfoHstoreExistsAll(m *base.Module) int32 {
+	return F_pg_finfo_hstore_exists_all(m)
+}
+func PgFinfoHstoreExistsAny(m *base.Module) int32 {
+	return F_pg_finfo_hstore_exists_any(m)
+}
+func PgFinfoHstoreFetchval(m *base.Module) int32 {
+	return F_pg_finfo_hstore_fetchval(m)
+}
+func PgFinfoHstoreFromArray(m *base.Module) int32 {
+	return F_pg_finfo_hstore_from_array(m)
+}
+func PgFinfoHstoreFromArrays(m *base.Module) int32 {
+	return F_pg_finfo_hstore_from_arrays(m)
+}
+func PgFinfoHstoreFromRecord(m *base.Module) int32 {
+	return F_pg_finfo_hstore_from_record(m)
+}
+func PgFinfoHstoreFromText(m *base.Module) int32 {
+	return F_pg_finfo_hstore_from_text(m)
+}
+func PgFinfoHstoreGe(m *base.Module) int32 {
+	return F_pg_finfo_hstore_ge(m)
+}
+func PgFinfoHstoreGt(m *base.Module) int32 {
+	return F_pg_finfo_hstore_gt(m)
+}
+func PgFinfoHstoreHash(m *base.Module) int32 {
+	return F_pg_finfo_hstore_hash(m)
+}
+func PgFinfoHstoreHashExtended(m *base.Module) int32 {
+	return F_pg_finfo_hstore_hash_extended(m)
+}
+func PgFinfoHstoreIn(m *base.Module) int32 {
+	return F_pg_finfo_hstore_in(m)
+}
+func PgFinfoHstoreLe(m *base.Module) int32 {
+	return F_pg_finfo_hstore_le(m)
+}
+func PgFinfoHstoreLt(m *base.Module) int32 {
+	return F_pg_finfo_hstore_lt(m)
+}
+func PgFinfoHstoreNe(m *base.Module) int32 {
+	return F_pg_finfo_hstore_ne(m)
+}
+func PgFinfoHstoreOut(m *base.Module) int32 {
+	return F_pg_finfo_hstore_out(m)
+}
+func PgFinfoHstorePopulateRecord(m *base.Module) int32 {
+	return F_pg_finfo_hstore_populate_record(m)
+}
+func PgFinfoHstoreRecv(m *base.Module) int32 {
+	return F_pg_finfo_hstore_recv(m)
+}
+func PgFinfoHstoreSend(m *base.Module) int32 {
+	return F_pg_finfo_hstore_send(m)
+}
+func PgFinfoHstoreSkeys(m *base.Module) int32 {
+	return F_pg_finfo_hstore_skeys(m)
+}
+func PgFinfoHstoreSliceToArray(m *base.Module) int32 {
+	return F_pg_finfo_hstore_slice_to_array(m)
+}
+func PgFinfoHstoreSliceToHstore(m *base.Module) int32 {
+	return F_pg_finfo_hstore_slice_to_hstore(m)
+}
+func PgFinfoHstoreSubscriptHandler(m *base.Module) int32 {
+	return F_pg_finfo_hstore_subscript_handler(m)
+}
+func PgFinfoHstoreSvals(m *base.Module) int32 {
+	return F_pg_finfo_hstore_svals(m)
+}
+func PgFinfoHstoreToArray(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_array(m)
+}
+func PgFinfoHstoreToJson(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_json(m)
+}
+func PgFinfoHstoreToJsonLoose(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_json_loose(m)
+}
+func PgFinfoHstoreToJsonb(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_jsonb(m)
+}
+func PgFinfoHstoreToJsonbLoose(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_jsonb_loose(m)
+}
+func PgFinfoHstoreToMatrix(m *base.Module) int32 {
+	return F_pg_finfo_hstore_to_matrix(m)
+}
+func PgFinfoHstoreVersionDiag(m *base.Module) int32 {
+	return F_pg_finfo_hstore_version_diag(m)
+}
+func PgFinfoSkeys(m *base.Module) int32 {
+	return F_pg_finfo_skeys(m)
+}
+func PgFinfoSvals(m *base.Module) int32 {
+	return F_pg_finfo_svals(m)
+}
+func PgFinfoTconvert(m *base.Module) int32 {
+	return F_pg_finfo_tconvert(m)
+}
+func Skeys(m *base.Module, l0 int32) int32 {
+	return F_skeys(m, l0)
+}
+func Svals(m *base.Module, l0 int32) int32 {
+	return F_svals(m, l0)
+}
+func Tconvert(m *base.Module, l0 int32) int32 {
+	return F_tconvert(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

@@ -992,6 +992,19 @@ func F_fastgetattr_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 		}
 	}
 }
+func F_fetchval(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_fetchval(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
+	}
+}
 func F_fileno(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

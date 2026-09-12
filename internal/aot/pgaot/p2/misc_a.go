@@ -9150,12 +9150,22 @@ func F_assignable_custom_variable_name(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = __phi41
 	var v45 int32
 	_ = v45
-	var v50 int32
-	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
+	var v65 int32
+	_ = v65
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v77 int32
+	_ = v77
 	var v89 int32
 	_ = v89
 	var v99 int32
@@ -9451,10 +9461,8 @@ L18:
 	goto L19
 L19:
 	;
-	v50 = int32(_a_F_assignable_custom_variable_name_2)
 	v51 = base.I32_extend8_s(v34)
-	v52 = int32(54)
-	goto L24
+	goto L25
 L20:
 	;
 	goto L12
@@ -9477,13 +9485,61 @@ L23:
 	goto L41
 L24:
 	;
-	goto L32
+	if base.B2i32(v73 != v74) == int32(0) {
+		goto L22
+	} else {
+		goto L32
+	}
+L25:
+	;
+	goto L26
+L26:
+	;
+	v65 = int32(_a_F_assignable_custom_variable_name_2)
+	v67 = int32(54)
+	goto L27
+L27:
+	;
+	v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v65))))
+	if v70 == v51&int32(255) {
+		v126 = v65
+		v128 = v67
+		goto L23
+	} else {
+		goto L29
+	}
+L28:
+	;
+	goto L24
+L29:
+	;
+	v72 = int32(1)
+	v73 = v67 - v72
+	v74 = int32(0)
+	v77 = v65 + v72
+	if v77&int32(3) == v74 {
+		goto L24
+	} else {
+		goto L30
+	}
+L30:
+	;
+	if v73 != 0 {
+		v65 = v77
+		v67 = v73
+		goto L27
+	} else {
+		goto L31
+	}
+L31:
+	;
+	goto L28
 L32:
 	;
-	v89 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_assignable_custom_variable_name[1])))
+	v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77))))
 	if v89 == v51&int32(255) {
-		v119 = v50
-		v121 = v52
+		v119 = v77
+		v121 = v73
 		goto L33
 	} else {
 		goto L34
@@ -9497,11 +9553,17 @@ L33:
 	}
 L34:
 	;
-	goto L35
+	if base.Ui32(v73) < base.Ui32(int32(4)) {
+		v119 = v77
+		v121 = v73
+		goto L33
+	} else {
+		goto L35
+	}
 L35:
 	;
-	v99 = v50
-	v101 = v52
+	v99 = v77
+	v101 = v73
 	goto L36
 L36:
 	;

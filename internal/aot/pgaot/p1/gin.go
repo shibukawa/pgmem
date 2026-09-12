@@ -5661,6 +5661,212 @@ func F_gin_compare_jsonb(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_gin_consistent_hstore(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v14 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+28)))
+	switch v14 - int32(7) {
+	case 0:
+		goto L6
+	default:
+		goto L4
+	case 2, 3:
+		goto L3
+	case 4:
+		goto L5
+	}
+L1:
+	;
+	m.G0 = v9 + int32(16)
+	return v77
+L2:
+	;
+	v77 = int32(1)
+	goto L1
+L3:
+	;
+	v72 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v72)
+	goto L2
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v58 = m.ExcPending
+	if v58 != 0 {
+		goto L21
+	} else {
+		goto L22
+	}
+L5:
+	;
+	v35 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v35)
+	if v12 <= v35 {
+		goto L2
+	} else {
+		goto L14
+	}
+L6:
+	;
+	v17 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v11))) = uint8(v17)
+	v20 = int32(0)
+	if v12 <= v20 {
+		v77 = v17
+		goto L1
+	} else {
+		goto L7
+	}
+L7:
+	;
+	v23 = v20
+	goto L8
+L8:
+	;
+	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23+v13))))
+	if v30 != 0 {
+		goto L10
+	} else {
+		goto L11
+	}
+L9:
+	;
+	v77 = int32(0)
+	goto L1
+L10:
+	;
+	v32 = v23 + int32(1)
+	if v12 != v32 {
+		v23 = v32
+		goto L8
+	} else {
+		goto L13
+	}
+L11:
+	;
+	goto L12
+L12:
+	;
+	goto L9
+L13:
+	;
+	v77 = v17
+	goto L1
+L14:
+	;
+	v40 = v35
+	goto L15
+L15:
+	;
+	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40+v13))))
+	if v47 != 0 {
+		goto L17
+	} else {
+		goto L18
+	}
+L16:
+	;
+	v77 = int32(0)
+	goto L1
+L17:
+	;
+	v48 = int32(1)
+	v50 = v40 + v48
+	if v12 != v50 {
+		v40 = v50
+		goto L15
+	} else {
+		goto L20
+	}
+L18:
+	;
+	goto L19
+L19:
+	;
+	goto L16
+L20:
+	;
+	v77 = v48
+	goto L1
+L21:
+	;
+	return int32(0)
+L22:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v14
+	F_errmsg_internal(m, int32(_a_F_gin_consistent_hstore_0), v9)
+	mBase = m.M
+	v64 = m.ExcPending
+	if v64 != 0 {
+		goto L21
+	} else {
+		goto L23
+	}
+L23:
+	;
+	F_errfinish(m, int32(_a_F_gin_consistent_hstore_1), int32(207), int32(_a_F_gin_consistent_hstore_2))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L21
+	} else {
+		goto L24
+	}
+L24:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
 func F_gin_extract_jsonb_path(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

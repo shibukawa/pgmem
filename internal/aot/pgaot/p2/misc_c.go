@@ -12964,6 +12964,265 @@ func F_comp_ptrgm(m *base.Module, l0 int32, l1 int32) int32 {
 		return v17
 	}
 }
+func F_comparePairs(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v78 int32
+	_ = v78
+	var v83 int32
+	_ = v83
+	var v85 int32
+	_ = v85
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	if v5 == v6 {
+		goto L2
+	} else {
+		goto L3
+	}
+L1:
+	;
+	return v85
+L2:
+	;
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	if base.Ui32(int32(4)) <= base.Ui32(v5) {
+		goto L8
+	} else {
+		goto L9
+	}
+L3:
+	;
+	goto L4
+L4:
+	;
+	if base.Ui32(v6) < base.Ui32(v5) {
+		goto L28
+	} else {
+		goto L29
+	}
+L5:
+	;
+	if v71 != 0 {
+		v85 = v71
+		goto L1
+	} else {
+		goto L23
+	}
+L6:
+	;
+	v71 = int32(0)
+	goto L5
+L7:
+	;
+	v45 = v40
+	v46 = v41
+	v47 = v42
+	goto L17
+L8:
+	;
+	if (v8|v9)&int32(3) != 0 {
+		v40 = v8
+		v41 = v9
+		v42 = v5
+		goto L7
+	} else {
+		goto L11
+	}
+L9:
+	;
+	v33 = v8
+	v34 = v9
+	v35 = v5
+	goto L10
+L10:
+	;
+	if v35 == int32(0) {
+		goto L6
+	} else {
+		goto L16
+	}
+L11:
+	;
+	v17 = v8
+	v18 = v9
+	v19 = v5
+	goto L12
+L12:
+	;
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
+	if v22 != v23 {
+		v40 = v17
+		v41 = v18
+		v42 = v19
+		goto L7
+	} else {
+		goto L14
+	}
+L13:
+	;
+	v33 = v28
+	v34 = v26
+	v35 = v30
+	goto L10
+L14:
+	;
+	v25 = int32(4)
+	v26 = v18 + v25
+	v28 = v17 + v25
+	v30 = v19 - v25
+	if base.Ui32(int32(3)) < base.Ui32(v30) {
+		v17 = v28
+		v18 = v26
+		v19 = v30
+		goto L12
+	} else {
+		goto L15
+	}
+L15:
+	;
+	goto L13
+L16:
+	;
+	v40 = v33
+	v41 = v34
+	v42 = v35
+	goto L7
+L17:
+	;
+	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45))))
+	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46))))
+	if v50 == v51 {
+		goto L19
+	} else {
+		goto L20
+	}
+L18:
+	;
+	v71 = v50 - v51
+	goto L5
+L19:
+	;
+	v53 = int32(1)
+	v58 = v47 - v53
+	if v58 != 0 {
+		v45 = v45 + v53
+		v46 = v46 + v53
+		v47 = v58
+		goto L17
+	} else {
+		goto L22
+	}
+L20:
+	;
+	goto L21
+L21:
+	;
+	goto L18
+L22:
+	;
+	goto L6
+L23:
+	;
+	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+17)))
+	v74 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+17)))
+	if v73 == v74 {
+		v85 = int32(0)
+		goto L1
+	} else {
+		goto L24
+	}
+L24:
+	;
+	if v74 != 0 {
+		goto L25
+	} else {
+		goto L26
+	}
+L25:
+	;
+	v78 = int32(1)
+	goto L27
+L26:
+	;
+	v78 = int32(-1)
+	goto L27
+L27:
+	;
+	return v78
+L28:
+	;
+	v83 = int32(1)
+	goto L30
+L29:
+	;
+	v83 = int32(-1)
+	goto L30
+L30:
+	;
+	v85 = v83
+	goto L1
+}
 func F_compare_distances(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

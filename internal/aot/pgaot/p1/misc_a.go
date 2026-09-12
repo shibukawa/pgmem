@@ -9377,6 +9377,19 @@ L63:
 	for {
 	}
 }
+func F_akeys(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_akeys(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
+	}
+}
 func F_anyarray_in(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

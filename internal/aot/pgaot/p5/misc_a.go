@@ -20928,3 +20928,16 @@ func F_assign_random_seed(m *base.Module, l0 float64, l1 int32) {
 		return
 	}
 }
+func F_avals(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_avals(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
+	}
+}

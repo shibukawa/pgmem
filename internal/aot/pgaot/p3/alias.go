@@ -80,6 +80,8 @@ func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 func F_try_relation_open(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
+func F_add_local_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_untransformRelOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_untransformRelOptions
 func F_untransformRelOptions(m *base.Module, l0 int32) int32
 //go:linkname F_build_reloptions github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_build_reloptions
@@ -4252,6 +4254,16 @@ func F_gin_extract_query_trgm(m *base.Module, l0 int32) int32
 func F_index_strategy_get_limit(m *base.Module, l0 int32) float64
 //go:linkname F_generate_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_generate_trgm
 func F_generate_trgm(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_hstoreCheckKeyLen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstoreCheckKeyLen
+func F_hstoreCheckKeyLen(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreCheckValLen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstoreCheckValLen
+func F_hstoreCheckValLen(m *base.Module, l0 int32) int32
+//go:linkname F_hstorePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstorePairs
+func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstore_fetchval github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstore_fetchval
+func F_hstore_fetchval(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreArrayToPairs github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstoreArrayToPairs
+func F_hstoreArrayToPairs(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

@@ -7003,7 +7003,7 @@ L57:
 	;
 	goto L56
 }
-func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32) int32 {
+func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -7040,20 +7040,20 @@ func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32) int32 {
 	_ = v41
 	var v46 int32
 	_ = v46
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
-	_ = v61
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -7075,55 +7075,55 @@ func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					if v20 == int32(0) {
-						v61 = int32(0)
+						v60 = int32(0)
 						m.G0 = v6 + int32(16)
-						return v61
+						return v60
 					} else {
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(v20)+12))
 						if int32(0) <= v25 {
-							v58 = v20
-							F_IncrTupleDescRefCount(m, v58)
+							v57 = v20
+							F_IncrTupleDescRefCount(m, v57)
 							mBase = m.M
-							v60 = m.ExcPending
-							if v60 != 0 {
+							v59 = m.ExcPending
+							if v59 != 0 {
 								return int32(0)
 							} else {
-								v61 = v58
+								v60 = v57
 								m.G0 = v6 + int32(16)
-								return v61
+								return v60
 							}
 						} else {
-							v61 = v20
+							v60 = v20
 							m.G0 = v6 + int32(16)
-							return v61
+							return v60
 						}
 					}
 				}
 			} else {
 				v28 = *(*int32)(unsafe.Add(mBase, uint32(v11)+188))
 				if v28 != 0 {
-					v51 = v28
-					if v51 == int32(0) {
-						v61 = int32(0)
+					v50 = v28
+					if v50 == int32(0) {
+						v60 = int32(0)
 						m.G0 = v6 + int32(16)
-						return v61
+						return v60
 					} else {
-						v55 = *(*int32)(unsafe.Add(mBase, uint32(v51)+12))
-						if v55 < int32(0) {
-							v61 = v51
+						v54 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
+						if v54 < int32(0) {
+							v60 = v50
 							m.G0 = v6 + int32(16)
-							return v61
+							return v60
 						} else {
-							v58 = v51
-							F_IncrTupleDescRefCount(m, v58)
+							v57 = v50
+							F_IncrTupleDescRefCount(m, v57)
 							mBase = m.M
-							v60 = m.ExcPending
-							if v60 != 0 {
+							v59 = m.ExcPending
+							if v59 != 0 {
 								return int32(0)
 							} else {
-								v61 = v58
+								v60 = v57
 								m.G0 = v6 + int32(16)
-								return v61
+								return v60
 							}
 						}
 					}
@@ -7171,34 +7171,34 @@ func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v49 = F_lookup_rowtype_tupdesc_internal(m, int32(2249), int32(-1))
+		v48 = F_lookup_rowtype_tupdesc_internal(m, int32(2249), l1)
 		mBase = m.M
-		v50 = m.ExcPending
-		if v50 != 0 {
+		v49 = m.ExcPending
+		if v49 != 0 {
 			return int32(0)
 		} else {
-			v51 = v49
-			if v51 == int32(0) {
-				v61 = int32(0)
+			v50 = v48
+			if v50 == int32(0) {
+				v60 = int32(0)
 				m.G0 = v6 + int32(16)
-				return v61
+				return v60
 			} else {
-				v55 = *(*int32)(unsafe.Add(mBase, uint32(v51)+12))
-				if v55 < int32(0) {
-					v61 = v51
+				v54 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
+				if v54 < int32(0) {
+					v60 = v50
 					m.G0 = v6 + int32(16)
-					return v61
+					return v60
 				} else {
-					v58 = v51
-					F_IncrTupleDescRefCount(m, v58)
+					v57 = v50
+					F_IncrTupleDescRefCount(m, v57)
 					mBase = m.M
-					v60 = m.ExcPending
-					if v60 != 0 {
+					v59 = m.ExcPending
+					if v59 != 0 {
 						return int32(0)
 					} else {
-						v61 = v58
+						v60 = v57
 						m.G0 = v6 + int32(16)
-						return v61
+						return v60
 					}
 				}
 			}

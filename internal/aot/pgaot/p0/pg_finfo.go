@@ -2,6 +2,12 @@ package p0
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_pg_finfo_akeys(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_akeys_0)
+}
+func F_pg_finfo_avals(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_avals_0)
+}
 func F_pg_finfo_big5_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_mic_0)
 }
@@ -20,11 +26,38 @@ func F_pg_finfo_euc_kr_to_mic(m *base.Module) int32 {
 func F_pg_finfo_euc_tw_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_tw_to_mic_0)
 }
+func F_pg_finfo_ghstore_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ghstore_consistent_0)
+}
+func F_pg_finfo_ghstore_options(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ghstore_options_0)
+}
+func F_pg_finfo_gin_consistent_hstore(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_consistent_hstore_0)
+}
 func F_pg_finfo_gin_trgm_triconsistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_trgm_triconsistent_0)
 }
 func F_pg_finfo_gtrgm_picksplit(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_picksplit_0)
+}
+func F_pg_finfo_hstore_contained(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_contained_0)
+}
+func F_pg_finfo_hstore_delete_hstore(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_delete_hstore_0)
+}
+func F_pg_finfo_hstore_each(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_each_0)
+}
+func F_pg_finfo_hstore_fetchval(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_fetchval_0)
+}
+func F_pg_finfo_hstore_from_arrays(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_from_arrays_0)
+}
+func F_pg_finfo_hstore_svals(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_svals_0)
 }
 func F_pg_finfo_iso8859_1_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_iso8859_1_to_utf8_0)
@@ -73,6 +106,12 @@ func F_pg_finfo_show_limit(m *base.Module) int32 {
 }
 func F_pg_finfo_sjis_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_sjis_to_utf8_0)
+}
+func F_pg_finfo_skeys(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_skeys_0)
+}
+func F_pg_finfo_tconvert(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_tconvert_0)
 }
 func F_pg_finfo_utf8_to_euc_cn(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_euc_cn_0)

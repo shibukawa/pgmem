@@ -6605,6 +6605,19 @@ func F_decompose_code(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 		}
 	}
 }
+func F_defined(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_defined(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
+	}
+}
 func F_degrees(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -6664,6 +6677,19 @@ func F_degrees(m *base.Module, l0 int32) int32 {
 			for {
 			}
 		}
+	}
+}
+func F_delete(m *base.Module, l0 int32) int32 {
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	v2 = F_hstore_delete(m, l0)
+	v5 = m.ExcPending
+	if v5 != 0 {
+		return int32(0)
+	} else {
+		return v2
 	}
 }
 func F_deserialize_deflist(m *base.Module, l0 int32) int32 {

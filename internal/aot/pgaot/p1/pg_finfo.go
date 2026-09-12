@@ -23,11 +23,41 @@ func F_pg_finfo_euc_jis_2004_to_shift_jis_2004(m *base.Module) int32 {
 func F_pg_finfo_euc_jp_to_mic(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_jp_to_mic_0)
 }
+func F_pg_finfo_ghstore_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_ghstore_picksplit_0)
+}
 func F_pg_finfo_gin_extract_query_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_query_trgm_0)
 }
 func F_pg_finfo_gtrgm_options(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_options_0)
+}
+func F_pg_finfo_hstore_from_array(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_from_array_0)
+}
+func F_pg_finfo_hstore_hash(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_hash_0)
+}
+func F_pg_finfo_hstore_hash_extended(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_hash_extended_0)
+}
+func F_pg_finfo_hstore_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_out_0)
+}
+func F_pg_finfo_hstore_recv(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_recv_0)
+}
+func F_pg_finfo_hstore_send(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_send_0)
+}
+func F_pg_finfo_hstore_slice_to_array(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_slice_to_array_0)
+}
+func F_pg_finfo_hstore_slice_to_hstore(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_slice_to_hstore_0)
+}
+func F_pg_finfo_hstore_to_jsonb(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hstore_to_jsonb_0)
 }
 func F_pg_finfo_koi8r_to_win866(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_win866_0)
