@@ -958,7 +958,7 @@ L8:
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+104)) = v2084
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+108)) = v2092
 	v2131 = *(*int32)(unsafe.Add(mBase, _consts[173]))
-	F_ResourceOwnerRemember(m, v2131, v2099, int32(1710488))
+	F_ResourceOwnerRemember(m, v2131, v2099, int32(1714584))
 	mBase = m.M
 	v2134 = m.ExcPending
 	if v2134 != 0 {
@@ -1190,7 +1190,7 @@ L24:
 	*(*int64)(unsafe.Add(mBase, uint32(v55)+24)) = v192
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+20)) = v191
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+16)) = v190
-	F_errmsg_internal(m, int32(121571), v55+int32(16))
+	F_errmsg_internal(m, int32(122349), v55+int32(16))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -1249,7 +1249,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+100)) = v99
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+104)) = v96
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+108)) = v93
-	F_errfinish(m, int32(487950), int32(1030), int32(114829))
+	F_errfinish(m, int32(490197), int32(1030), int32(115607))
 	mBase = m.M
 	v237 = m.ExcPending
 	if v237 != 0 {
@@ -1535,7 +1535,7 @@ L54:
 	;
 	v838 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v99))) = v838
-	v841 = int32(4451256)
+	v841 = int32(4457160)
 	v842 = *(*int32)(unsafe.Add(mBase, _consts[1354]))
 	v843 = int32(1)
 	*(*uint16)(unsafe.Add(mBase, uint32(v102)+8)) = uint16(v843)
@@ -2320,7 +2320,7 @@ L133:
 	}
 L134:
 	;
-	v1548 = int32(4464496)
+	v1548 = int32(4470400)
 	v1549 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v1552 = *(*int32)(unsafe.Add(mBase, _consts[373]))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v1552
@@ -2831,7 +2831,7 @@ L185:
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+104)) = v96
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+108)) = v93
 	*(*int32)(unsafe.Add(mBase, uint32(v55))) = v51
-	F_errmsg_internal(m, int32(471071), v55)
+	F_errmsg_internal(m, int32(473200), v55)
 	mBase = m.M
 	v2178 = m.ExcPending
 	if v2178 != 0 {
@@ -2858,7 +2858,7 @@ L186:
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+100)) = v99
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+104)) = v96
 	*(*int32)(unsafe.Add(mBase, uint32(v55)+108)) = v93
-	F_errfinish(m, int32(487950), int32(373), int32(339624))
+	F_errfinish(m, int32(490197), int32(373), int32(341271))
 	mBase = m.M
 	v2199 = m.ExcPending
 	if v2199 != 0 {

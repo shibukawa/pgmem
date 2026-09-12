@@ -142,13 +142,13 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-						F_errmsg_internal(m, int32(67318), v10)
+						F_errmsg_internal(m, int32(67779), v10)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(485102), int32(355), int32(345932))
+							F_errfinish(m, int32(487337), int32(355), int32(347579))
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {
@@ -260,13 +260,13 @@ func F_UpdateSubscriptionRelState(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-							F_errmsg_internal(m, int32(67318), v10)
+							F_errmsg_internal(m, int32(67779), v10)
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(485102), int32(355), int32(345932))
+								F_errfinish(m, int32(487337), int32(355), int32(347579))
 								mBase = m.M
 								v72 = m.ExcPending
 								if v72 != 0 {

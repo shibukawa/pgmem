@@ -292,7 +292,7 @@ func F_BlockStateAsString(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[142])))
 		v11 = v10
 	} else {
-		v11 = int32(531628)
+		v11 = int32(533975)
 	}
 	return v11
 }
@@ -339,7 +339,7 @@ func F_CreateBlockRefTableReader(m *base.Module, l0 int32, l1 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v29
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(1697321851)
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_ReportWalSummaryError(m, int32(0), int32(52250), v7)
+				F_ReportWalSummaryError(m, int32(0), int32(52614), v7)
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {

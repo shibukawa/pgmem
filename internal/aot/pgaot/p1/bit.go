@@ -184,13 +184,13 @@ func F_bit_catenate(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(2147483640)
-				F_errmsg(m, int32(650730), v11)
+				F_errmsg(m, int32(653693), v11)
 				mBase = m.M
 				v131 = m.ExcPending
 				if v131 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(482163), int32(995), int32(346595))
+					F_errfinish(m, int32(484398), int32(995), int32(348242))
 					mBase = m.M
 					v136 = m.ExcPending
 					if v136 != 0 {

@@ -43,6 +43,12 @@ var contribRegress = map[string][]string{
 		"bytea", "bit", "varbit", "numeric", "uuid", "not_equal", "enum", "bool", "partitions",
 		"stratnum",
 	},
+	"btree_gin": {
+		"install_btree_gin", "int2", "int4", "int8", "float4", "float8", "money", "oid",
+		"timestamp", "timestamptz", "time", "timetz", "date", "interval",
+		"macaddr", "macaddr8", "inet", "cidr", "text", "varchar", "char", "bytea", "bit", "varbit",
+		"numeric", "enum", "uuid", "name", "bool", "bpchar",
+	},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

@@ -613,13 +613,13 @@ func F_pq_getmsgend(m *base.Module, l0 int32) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(109381), int32(0))
+				F_errmsg(m, int32(110159), int32(0))
 				mBase = m.M
 				v15 = m.ExcPending
 				if v15 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(482434), int32(640), int32(417783))
+					F_errfinish(m, int32(484669), int32(640), int32(419721))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
@@ -816,7 +816,7 @@ L22:
 	}
 L23:
 	;
-	F_errmsg(m, int32(395653), int32(0))
+	F_errmsg(m, int32(397591), int32(0))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -826,7 +826,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(482434), int32(624), int32(322303))
+	F_errfinish(m, int32(484669), int32(624), int32(323950))
 	mBase = m.M
 	v84 = m.ExcPending
 	if v84 != 0 {

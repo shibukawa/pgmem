@@ -440,7 +440,7 @@ L37:
 	}
 L38:
 	;
-	v148 = F_makeAlias(m, int32(15096), int32(0))
+	v148 = F_makeAlias(m, int32(15317), int32(0))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -1138,7 +1138,7 @@ func F_has_any_column_privilege_id_name(m *base.Module, l0 int32) int32 {
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						v25 = F_convert_any_priv_string(m, v12, int32(1628096))
+						v25 = F_convert_any_priv_string(m, v12, int32(1632192))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {

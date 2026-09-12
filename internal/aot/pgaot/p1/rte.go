@@ -274,13 +274,13 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						if v42 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(435716), int32(0))
+							F_errmsg(m, int32(437845), int32(0))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(484772), int32(1520), int32(204849))
+								F_errfinish(m, int32(487007), int32(1520), int32(205627))
 								mBase = m.M
 								v51 = m.ExcPending
 								if v51 != 0 {

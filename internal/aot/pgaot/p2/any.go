@@ -495,7 +495,7 @@ L64:
 L65:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v43
-	F_errmsg(m, int32(697700), v12)
+	F_errmsg(m, int32(700663), v12)
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -505,7 +505,7 @@ L65:
 	}
 L66:
 	;
-	F_errfinish(m, int32(486333), int32(1726), int32(322390))
+	F_errfinish(m, int32(488580), int32(1726), int32(324037))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -600,7 +600,7 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						v26 = F_convert_any_priv_string(m, v11, int32(1628096))
+						v26 = F_convert_any_priv_string(m, v11, int32(1632192))
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
@@ -719,7 +719,7 @@ func F_has_any_column_privilege_name_name(m *base.Module, l0 int32) int32 {
 						if v26 != 0 {
 							return int32(0)
 						} else {
-							v28 = F_convert_any_priv_string(m, v13, int32(1628096))
+							v28 = F_convert_any_priv_string(m, v13, int32(1632192))
 							mBase = m.M
 							v29 = m.ExcPending
 							if v29 != 0 {

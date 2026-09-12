@@ -1000,28 +1000,28 @@ L28:
 	}
 L29:
 	;
-	m.Env.X__assert_fail(m, int32(535775), int32(485064), int32(150), int32(538425))
+	m.Env.X__assert_fail(m, int32(538122), int32(487299), int32(150), int32(541081))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L30:
 	;
-	m.Env.X__assert_fail(m, int32(538355), int32(485064), int32(121), int32(538425))
+	m.Env.X__assert_fail(m, int32(541011), int32(487299), int32(121), int32(541081))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L31:
 	;
-	m.Env.X__assert_fail(m, int32(535775), int32(485064), int32(301), int32(538406))
+	m.Env.X__assert_fail(m, int32(538122), int32(487299), int32(301), int32(541062))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
 	}
 L32:
 	;
-	m.Env.X__assert_fail(m, int32(535775), int32(485064), int32(276), int32(538406))
+	m.Env.X__assert_fail(m, int32(538122), int32(487299), int32(276), int32(541062))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
@@ -1115,7 +1115,7 @@ L46:
 	goto L47
 L47:
 	;
-	v112 = int32(1637484)
+	v112 = int32(1641580)
 	v113 = int32(11)
 	goto L52
 L48:
@@ -1127,7 +1127,7 @@ L48:
 	}
 L49:
 	;
-	v218 = v216 - int32(1637484)
+	v218 = v216 - int32(1641580)
 	if base.Ui32(int32(10)) <= base.Ui32(v218) {
 		goto L32
 	} else {
@@ -1341,7 +1341,7 @@ L88:
 	goto L89
 L89:
 	;
-	v295 = int32(1637484)
+	v295 = int32(1641580)
 	v297 = v281 & int32(255)
 	v298 = int32(11)
 	goto L94
@@ -1354,7 +1354,7 @@ L90:
 	}
 L91:
 	;
-	v403 = v401 - int32(1637484)
+	v403 = v401 - int32(1641580)
 	if base.Ui32(int32(10)) <= base.Ui32(v403) {
 		goto L31
 	} else {
@@ -1644,7 +1644,7 @@ L143:
 	goto L144
 L144:
 	;
-	v583 = int32(1637456)
+	v583 = int32(1641552)
 	if base.Ui32((v552-int32(65))&int32(255)) <= base.Ui32(int32(25)) {
 		goto L145
 	} else {
@@ -1682,7 +1682,7 @@ L151:
 	goto L148
 L152:
 	;
-	v703 = v701 - int32(1637456)
+	v703 = v701 - int32(1641552)
 	if base.Ui32(int32(16)) <= base.Ui32(v703) {
 		goto L30
 	} else {
@@ -1902,7 +1902,7 @@ L193:
 	}
 L194:
 	;
-	v901 = v899 - int32(1637473)
+	v901 = v899 - int32(1641569)
 	if base.Ui32(int32(10)) <= base.Ui32(v901) {
 		goto L29
 	} else {
@@ -1929,7 +1929,7 @@ L198:
 	goto L199
 L199:
 	;
-	v809 = int32(1637473)
+	v809 = int32(1641569)
 	v811 = int32(11)
 	goto L200
 L200:
@@ -2190,7 +2190,7 @@ L236:
 	}
 L237:
 	;
-	m.Env.X__assert_fail(m, int32(535775), int32(485064), int32(181), int32(538425))
+	m.Env.X__assert_fail(m, int32(538122), int32(487299), int32(181), int32(541081))
 	mBase = m.M
 	base.Wasm_trap_unreachable()
 	for {
@@ -2252,7 +2252,7 @@ L245:
 	}
 L246:
 	;
-	v1128 = v1126 - int32(1637473)
+	v1128 = v1126 - int32(1641569)
 	if base.Ui32(int32(10)) <= base.Ui32(v1128) {
 		goto L237
 	} else {
@@ -2279,7 +2279,7 @@ L250:
 	goto L251
 L251:
 	;
-	v1036 = int32(1637473)
+	v1036 = int32(1641569)
 	v1038 = int32(11)
 	goto L252
 L252:
@@ -2672,16 +2672,16 @@ L314:
 	}
 L315:
 	;
-	v1363 = int32(224264)
+	v1363 = int32(225139)
 	goto L317
 L316:
 	;
-	v1363 = int32(104760)
+	v1363 = int32(105538)
 	goto L317
 L317:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v1363
-	F_errmsg(m, int32(696248), v21)
+	F_errmsg(m, int32(699211), v21)
 	mBase = m.M
 	v1367 = m.ExcPending
 	if v1367 != 0 {
@@ -2691,7 +2691,7 @@ L317:
 	}
 L318:
 	;
-	F_errsave_finish(m, l2, int32(486428), int32(100), int32(273558))
+	F_errsave_finish(m, l2, int32(488675), int32(100), int32(274901))
 	mBase = m.M
 	v1372 = m.ExcPending
 	if v1372 != 0 {
@@ -2834,7 +2834,7 @@ L338:
 L339:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+16)) = l0
-	F_errmsg(m, int32(697532), v21+int32(16))
+	F_errmsg(m, int32(700495), v21+int32(16))
 	mBase = m.M
 	v1452 = m.ExcPending
 	if v1452 != 0 {
@@ -2844,7 +2844,7 @@ L339:
 	}
 L340:
 	;
-	F_errdetail(m, int32(594885), int32(0))
+	F_errdetail(m, int32(597848), int32(0))
 	mBase = m.M
 	v1456 = m.ExcPending
 	if v1456 != 0 {
@@ -2854,7 +2854,7 @@ L340:
 	}
 L341:
 	;
-	F_errsave_finish(m, l2, int32(486428), int32(111), int32(273558))
+	F_errsave_finish(m, l2, int32(488675), int32(111), int32(274901))
 	mBase = m.M
 	v1461 = m.ExcPending
 	if v1461 != 0 {
@@ -3961,7 +3961,7 @@ L42:
 	;
 	v115 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v114)+1)))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v115
-	v123 = F_pg_snprintf(m, v110+(v9+int32(16)), int32(50)-v110, int32(38216), v9)
+	v123 = F_pg_snprintf(m, v110+(v9+int32(16)), int32(50)-v110, int32(38580), v9)
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {
@@ -3988,7 +3988,7 @@ L45:
 	}
 L46:
 	;
-	F_errmsg(m, int32(287831), int32(0))
+	F_errmsg(m, int32(289272), int32(0))
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {
@@ -3998,7 +3998,7 @@ L46:
 	}
 L47:
 	;
-	F_errfinish(m, int32(486428), int32(1174), int32(30884))
+	F_errfinish(m, int32(488675), int32(1174), int32(31248))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -4038,7 +4038,7 @@ func F_network_sortsupport(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1458)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+20)))
 	if v9 == int32(1) {
-		v12 = int32(4464496)
+		v12 = int32(4470400)
 		v13 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v15

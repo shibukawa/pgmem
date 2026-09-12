@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6477)
-	m.G0 = int32(13029776)
+	m.T0 = make([]any, 6658)
+	m.G0 = int32(13035680)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4358875
+	m.DataEnd = 4364779
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6477)
-	m.G0 = int32(13029776)
+	m.T0 = make([]any, 6658)
+	m.G0 = int32(13035680)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4358875
+	m.DataEnd = 4364779
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6477)
-	m.G0 = int32(13029776)
+	m.T0 = make([]any, 6658)
+	m.G0 = int32(13035680)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4358875
+	m.DataEnd = 4364779
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1579776])
-	copy(m.Memory[1585104:], wasm2goData_data_bin[1579776:1579785])
-	copy(m.Memory[1587152:], wasm2goData_data_bin[1579785:1592713])
-	copy(m.Memory[1609732:], wasm2goData_data_bin[1592713:1685954])
-	copy(m.Memory[1704000:], wasm2goData_data_bin[1685954:1797610])
-	copy(m.Memory[1826872:], wasm2goData_data_bin[1797610:4045552])
-	copy(m.Memory[4082304:], wasm2goData_data_bin[4045552:4322123])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1582736])
+	copy(m.Memory[1588064:], wasm2goData_data_bin[1582736:1582745])
+	copy(m.Memory[1590112:], wasm2goData_data_bin[1582745:1595673])
+	copy(m.Memory[1613828:], wasm2goData_data_bin[1595673:1688914])
+	copy(m.Memory[1708096:], wasm2goData_data_bin[1688914:1800570])
+	copy(m.Memory[1830968:], wasm2goData_data_bin[1800570:4050256])
+	copy(m.Memory[4088144:], wasm2goData_data_bin[4050256:4326891])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -3532,6 +3532,531 @@ func TsDist(m *base.Module, l0 int32) int32 {
 }
 func TstzDist(m *base.Module, l0 int32) int32 {
 	return F_ts_dist(m, l0)
+}
+func PgMagicFuncBtreeGin(m *base.Module) int32 {
+	return F_Pg_magic_func_btree_gin(m)
+}
+func GinBtreeConsistent(m *base.Module, l0 int32) int32 {
+	return F_gin_btree_consistent(m, l0)
+}
+func GinComparePrefixAnyenum(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixBit(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixBool(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixBpchar(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixBytea(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixChar(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixCidr(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixDate(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixFloat4(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixFloat8(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixInet(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixInt2(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixInt4(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixInt8(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixInterval(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixMacaddr(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixMacaddr8(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixMoney(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixName(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixNumeric(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixOid(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixText(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixTime(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixTimestamp(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixTimestamptz(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixTimetz(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixUuid(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinComparePrefixVarbit(m *base.Module, l0 int32) int32 {
+	return F_gin_compare_prefix_int2(m, l0)
+}
+func GinEnumCmp(m *base.Module, l0 int32) int32 {
+	return F_gin_enum_cmp(m, l0)
+}
+func GinExtractQueryAnyenum(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_anyenum(m, l0)
+}
+func GinExtractQueryBit(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_bit(m, l0)
+}
+func GinExtractQueryBool(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_bool(m, l0)
+}
+func GinExtractQueryBpchar(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_bpchar(m, l0)
+}
+func GinExtractQueryBytea(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_bytea(m, l0)
+}
+func GinExtractQueryChar(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_char(m, l0)
+}
+func GinExtractQueryCidr(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_inet(m, l0)
+}
+func GinExtractQueryDate(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_date(m, l0)
+}
+func GinExtractQueryFloat4(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_float4(m, l0)
+}
+func GinExtractQueryFloat8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_float8(m, l0)
+}
+func GinExtractQueryInet(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_inet(m, l0)
+}
+func GinExtractQueryInt2(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_int2(m, l0)
+}
+func GinExtractQueryInt4(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_int4(m, l0)
+}
+func GinExtractQueryInt8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_int8(m, l0)
+}
+func GinExtractQueryInterval(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_interval(m, l0)
+}
+func GinExtractQueryMacaddr(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_macaddr(m, l0)
+}
+func GinExtractQueryMacaddr8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_macaddr8(m, l0)
+}
+func GinExtractQueryMoney(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_money(m, l0)
+}
+func GinExtractQueryName(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_name(m, l0)
+}
+func GinExtractQueryNumeric(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_numeric(m, l0)
+}
+func GinExtractQueryOid(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_oid(m, l0)
+}
+func GinExtractQueryText(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_text(m, l0)
+}
+func GinExtractQueryTime(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_time(m, l0)
+}
+func GinExtractQueryTimestamp(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_timestamp(m, l0)
+}
+func GinExtractQueryTimestamptz(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_timestamp(m, l0)
+}
+func GinExtractQueryTimetz(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_timetz(m, l0)
+}
+func GinExtractQueryUuid(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_uuid(m, l0)
+}
+func GinExtractQueryVarbit(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_query_varbit(m, l0)
+}
+func GinExtractValueAnyenum(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueBit(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueBool(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueBpchar(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueBytea(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueChar(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueCidr(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueDate(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueFloat4(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueFloat8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueInet(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueInt2(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueInt4(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueInt8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueInterval(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueMacaddr(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueMacaddr8(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueMoney(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueName(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueNumeric(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueOid(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueText(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinExtractValueTime(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueTimestamp(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueTimestamptz(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueTimetz(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueUuid(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_int2(m, l0)
+}
+func GinExtractValueVarbit(m *base.Module, l0 int32) int32 {
+	return F_gin_extract_value_inet(m, l0)
+}
+func GinNumericCmp(m *base.Module, l0 int32) int32 {
+	return F_gin_numeric_cmp(m, l0)
+}
+func PgFinfoGinBtreeConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gin_btree_consistent(m)
+}
+func PgFinfoGinComparePrefixAnyenum(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_anyenum(m)
+}
+func PgFinfoGinComparePrefixBit(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_bit(m)
+}
+func PgFinfoGinComparePrefixBool(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_bool(m)
+}
+func PgFinfoGinComparePrefixBpchar(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_bpchar(m)
+}
+func PgFinfoGinComparePrefixBytea(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_bytea(m)
+}
+func PgFinfoGinComparePrefixChar(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_char(m)
+}
+func PgFinfoGinComparePrefixCidr(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_cidr(m)
+}
+func PgFinfoGinComparePrefixDate(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_date(m)
+}
+func PgFinfoGinComparePrefixFloat4(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_float4(m)
+}
+func PgFinfoGinComparePrefixFloat8(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_float8(m)
+}
+func PgFinfoGinComparePrefixInet(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_inet(m)
+}
+func PgFinfoGinComparePrefixInt2(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_int2(m)
+}
+func PgFinfoGinComparePrefixInt4(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_int4(m)
+}
+func PgFinfoGinComparePrefixInt8(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_int8(m)
+}
+func PgFinfoGinComparePrefixInterval(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_interval(m)
+}
+func PgFinfoGinComparePrefixMacaddr(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_macaddr(m)
+}
+func PgFinfoGinComparePrefixMacaddr8(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_macaddr8(m)
+}
+func PgFinfoGinComparePrefixMoney(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_money(m)
+}
+func PgFinfoGinComparePrefixName(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_name(m)
+}
+func PgFinfoGinComparePrefixNumeric(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_numeric(m)
+}
+func PgFinfoGinComparePrefixOid(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_oid(m)
+}
+func PgFinfoGinComparePrefixText(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_text(m)
+}
+func PgFinfoGinComparePrefixTime(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_time(m)
+}
+func PgFinfoGinComparePrefixTimestamp(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_timestamp(m)
+}
+func PgFinfoGinComparePrefixTimestamptz(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_timestamptz(m)
+}
+func PgFinfoGinComparePrefixTimetz(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_timetz(m)
+}
+func PgFinfoGinComparePrefixUuid(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_uuid(m)
+}
+func PgFinfoGinComparePrefixVarbit(m *base.Module) int32 {
+	return F_pg_finfo_gin_compare_prefix_varbit(m)
+}
+func PgFinfoGinEnumCmp(m *base.Module) int32 {
+	return F_pg_finfo_gin_enum_cmp(m)
+}
+func PgFinfoGinExtractQueryAnyenum(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_anyenum(m)
+}
+func PgFinfoGinExtractQueryBit(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_bit(m)
+}
+func PgFinfoGinExtractQueryBool(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_bool(m)
+}
+func PgFinfoGinExtractQueryBpchar(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_bpchar(m)
+}
+func PgFinfoGinExtractQueryBytea(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_bytea(m)
+}
+func PgFinfoGinExtractQueryChar(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_char(m)
+}
+func PgFinfoGinExtractQueryCidr(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_cidr(m)
+}
+func PgFinfoGinExtractQueryDate(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_date(m)
+}
+func PgFinfoGinExtractQueryFloat4(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_float4(m)
+}
+func PgFinfoGinExtractQueryFloat8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_float8(m)
+}
+func PgFinfoGinExtractQueryInet(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_inet(m)
+}
+func PgFinfoGinExtractQueryInt2(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_int2(m)
+}
+func PgFinfoGinExtractQueryInt4(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_int4(m)
+}
+func PgFinfoGinExtractQueryInt8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_int8(m)
+}
+func PgFinfoGinExtractQueryInterval(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_interval(m)
+}
+func PgFinfoGinExtractQueryMacaddr(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_macaddr(m)
+}
+func PgFinfoGinExtractQueryMacaddr8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_macaddr8(m)
+}
+func PgFinfoGinExtractQueryMoney(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_money(m)
+}
+func PgFinfoGinExtractQueryName(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_name(m)
+}
+func PgFinfoGinExtractQueryNumeric(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_numeric(m)
+}
+func PgFinfoGinExtractQueryOid(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_oid(m)
+}
+func PgFinfoGinExtractQueryText(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_text(m)
+}
+func PgFinfoGinExtractQueryTime(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_time(m)
+}
+func PgFinfoGinExtractQueryTimestamp(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_timestamp(m)
+}
+func PgFinfoGinExtractQueryTimestamptz(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_timestamptz(m)
+}
+func PgFinfoGinExtractQueryTimetz(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_timetz(m)
+}
+func PgFinfoGinExtractQueryUuid(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_uuid(m)
+}
+func PgFinfoGinExtractQueryVarbit(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_query_varbit(m)
+}
+func PgFinfoGinExtractValueAnyenum(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_anyenum(m)
+}
+func PgFinfoGinExtractValueBit(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_bit(m)
+}
+func PgFinfoGinExtractValueBool(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_bool(m)
+}
+func PgFinfoGinExtractValueBpchar(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_bpchar(m)
+}
+func PgFinfoGinExtractValueBytea(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_bytea(m)
+}
+func PgFinfoGinExtractValueChar(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_char(m)
+}
+func PgFinfoGinExtractValueCidr(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_cidr(m)
+}
+func PgFinfoGinExtractValueDate(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_date(m)
+}
+func PgFinfoGinExtractValueFloat4(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_float4(m)
+}
+func PgFinfoGinExtractValueFloat8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_float8(m)
+}
+func PgFinfoGinExtractValueInet(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_inet(m)
+}
+func PgFinfoGinExtractValueInt2(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_int2(m)
+}
+func PgFinfoGinExtractValueInt4(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_int4(m)
+}
+func PgFinfoGinExtractValueInt8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_int8(m)
+}
+func PgFinfoGinExtractValueInterval(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_interval(m)
+}
+func PgFinfoGinExtractValueMacaddr(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_macaddr(m)
+}
+func PgFinfoGinExtractValueMacaddr8(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_macaddr8(m)
+}
+func PgFinfoGinExtractValueMoney(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_money(m)
+}
+func PgFinfoGinExtractValueName(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_name(m)
+}
+func PgFinfoGinExtractValueNumeric(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_numeric(m)
+}
+func PgFinfoGinExtractValueOid(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_oid(m)
+}
+func PgFinfoGinExtractValueText(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_text(m)
+}
+func PgFinfoGinExtractValueTime(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_time(m)
+}
+func PgFinfoGinExtractValueTimestamp(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_timestamp(m)
+}
+func PgFinfoGinExtractValueTimestamptz(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_timestamptz(m)
+}
+func PgFinfoGinExtractValueTimetz(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_timetz(m)
+}
+func PgFinfoGinExtractValueUuid(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_uuid(m)
+}
+func PgFinfoGinExtractValueVarbit(m *base.Module) int32 {
+	return F_pg_finfo_gin_extract_value_varbit(m)
+}
+func PgFinfoGinNumericCmp(m *base.Module) int32 {
+	return F_pg_finfo_gin_numeric_cmp(m)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

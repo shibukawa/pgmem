@@ -1070,7 +1070,7 @@ L22:
 	v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1000])))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[488])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v55
-	m.T0[v54].(func(*base.Module, int32, int32, int32))(m, v53, int32(19821), v10)
+	m.T0[v54].(func(*base.Module, int32, int32, int32))(m, v53, int32(20066), v10)
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -1100,7 +1100,7 @@ L25:
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1000])))
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[488])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v68
-	m.T0[v67].(func(*base.Module, int32, int32, int32))(m, v66, int32(19821), v10+int32(16))
+	m.T0[v67].(func(*base.Module, int32, int32, int32))(m, v66, int32(20066), v10+int32(16))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {

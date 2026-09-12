@@ -63,13 +63,13 @@ func F_DirectFunctionCall5Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
-				F_errmsg_internal(m, int32(520728), v11)
+				F_errmsg_internal(m, int32(523075), v11)
 				mBase = m.M
 				v53 = m.ExcPending
 				if v53 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(484031), int32(909), int32(297359))
+					F_errfinish(m, int32(486266), int32(909), int32(298897))
 					mBase = m.M
 					v58 = m.ExcPending
 					if v58 != 0 {

@@ -229,7 +229,7 @@ L12:
 	goto L13
 L13:
 	;
-	v46 = int32(298708)
+	v46 = int32(300246)
 	v49 = int32(*(*uint8)(unsafe.Add(mBase, _consts[369])))
 	v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25))))
 	if v50 == int32(0) {
@@ -780,22 +780,22 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 								} else {
 									if l2 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v27
-										F_errmsg(m, int32(686331), v7+int32(32))
+										F_errmsg(m, int32(689294), v7+int32(32))
 										mBase = m.M
 										v111 = m.ExcPending
 										if v111 != 0 {
 											return
 										} else {
-											v112 = int32(513763)
+											v112 = int32(516110)
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v112
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v112
-											F_errdetail(m, int32(600727), v7+int32(16))
+											F_errdetail(m, int32(603690), v7+int32(16))
 											mBase = m.M
 											v120 = m.ExcPending
 											if v120 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(484134), int32(2140), int32(253052))
+												F_errfinish(m, int32(486369), int32(2140), int32(254371))
 												mBase = m.M
 												v125 = m.ExcPending
 												if v125 != 0 {
@@ -809,22 +809,22 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 										}
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = v27
-										F_errmsg(m, int32(686567), v7-int32(-64))
+										F_errmsg(m, int32(689530), v7-int32(-64))
 										mBase = m.M
 										v34 = m.ExcPending
 										if v34 != 0 {
 											return
 										} else {
-											v35 = int32(513763)
+											v35 = int32(516110)
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v35
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v35
-											F_errdetail(m, int32(601261), v7+int32(48))
+											F_errdetail(m, int32(604224), v7+int32(48))
 											mBase = m.M
 											v43 = m.ExcPending
 											if v43 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(484134), int32(2147), int32(253052))
+												F_errfinish(m, int32(486369), int32(2147), int32(254371))
 												mBase = m.M
 												v48 = m.ExcPending
 												if v48 != 0 {
@@ -873,7 +873,7 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 								} else {
 									if l2 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+96)) = v59
-										F_errmsg(m, int32(686331), v7+int32(96))
+										F_errmsg(m, int32(689294), v7+int32(96))
 										mBase = m.M
 										v131 = m.ExcPending
 										if v131 != 0 {
@@ -886,14 +886,14 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v7)+84)) = v133
-												*(*int32)(unsafe.Add(mBase, uint32(v7)+80)) = int32(518588)
-												F_errdetail(m, int32(608159), v7+int32(80))
+												*(*int32)(unsafe.Add(mBase, uint32(v7)+80)) = int32(520935)
+												F_errdetail(m, int32(611122), v7+int32(80))
 												mBase = m.M
 												v142 = m.ExcPending
 												if v142 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(484134), int32(2163), int32(253052))
+													F_errfinish(m, int32(486369), int32(2163), int32(254371))
 													mBase = m.M
 													v147 = m.ExcPending
 													if v147 != 0 {
@@ -908,7 +908,7 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 										}
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+128)) = v59
-										F_errmsg(m, int32(686567), v7+int32(128))
+										F_errmsg(m, int32(689530), v7+int32(128))
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
@@ -921,14 +921,14 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v7)+116)) = v68
-												*(*int32)(unsafe.Add(mBase, uint32(v7)+112)) = int32(518588)
-												F_errdetail(m, int32(608553), v7+int32(112))
+												*(*int32)(unsafe.Add(mBase, uint32(v7)+112)) = int32(520935)
+												F_errdetail(m, int32(611516), v7+int32(112))
 												mBase = m.M
 												v77 = m.ExcPending
 												if v77 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(484134), int32(2170), int32(253052))
+													F_errfinish(m, int32(486369), int32(2170), int32(254371))
 													mBase = m.M
 													v82 = m.ExcPending
 													if v82 != 0 {
@@ -969,13 +969,13 @@ func F_check_role_membership_authorization(m *base.Module, l0 int32, l1 int32, l
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v95
-					F_errmsg(m, int32(132587), v7)
+					F_errmsg(m, int32(133365), v7)
 					mBase = m.M
 					v100 = m.ExcPending
 					if v100 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(484134), int32(2127), int32(253052))
+						F_errfinish(m, int32(486369), int32(2127), int32(254371))
 						mBase = m.M
 						v105 = m.ExcPending
 						if v105 != 0 {
@@ -1040,7 +1040,7 @@ func F_get_role_oid_or_public(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v8 = int32(480400)
+	v8 = int32(482635)
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, _consts[768])))
 	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v12 == v2 {
@@ -1159,7 +1159,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-	F_errmsg(m, int32(70737), v6)
+	F_errmsg(m, int32(71198), v6)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -1169,7 +1169,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(486333), int32(5562), int32(425318))
+	F_errfinish(m, int32(488580), int32(5562), int32(427447))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {

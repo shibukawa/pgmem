@@ -70,19 +70,19 @@ func F_SendXlogRecPtrResult(m *base.Module, l0 int64, l1 int32) {
 		if v17 != 0 {
 			return
 		} else {
-			F_TupleDescInitBuiltinEntry(m, v16, int32(1), int32(202579), int32(25))
+			F_TupleDescInitBuiltinEntry(m, v16, int32(1), int32(203357), int32(25))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
 				return
 			} else {
-				F_TupleDescInitBuiltinEntry(m, v16, int32(2), int32(312840), int32(20))
+				F_TupleDescInitBuiltinEntry(m, v16, int32(2), int32(314487), int32(20))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return
 				} else {
-					v29 = F_begin_tup_output_tupdesc(m, v13, v16, int32(1588676))
+					v29 = F_begin_tup_output_tupdesc(m, v13, v16, int32(1591636))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -91,7 +91,7 @@ func F_SendXlogRecPtrResult(m *base.Module, l0 int64, l1 int32) {
 						*(*uint32)(unsafe.Add(mBase, uint32(v8)+4)) = uint32(v1)
 						v33 = int64(base.Ui64(v1) >> (uint(int64(32)) % 64))
 						*(*uint32)(unsafe.Add(mBase, uint32(v8))) = uint32(v33)
-						v36 = F_psprintf(m, int32(504356), v8)
+						v36 = F_psprintf(m, int32(506703), v8)
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {

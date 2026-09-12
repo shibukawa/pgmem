@@ -52,7 +52,7 @@ func F_has_language_privilege_id(m *base.Module, l0 int32) int32 {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
 		v20 = *(*int32)(unsafe.Add(mBase, _consts[239]))
-		v22 = F_convert_any_priv_string(m, v12, int32(1628480))
+		v22 = F_convert_any_priv_string(m, v12, int32(1632576))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -138,7 +138,7 @@ func F_has_language_privilege_name(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					v21 = F_convert_any_priv_string(m, v10, int32(1628480))
+					v21 = F_convert_any_priv_string(m, v10, int32(1632576))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
@@ -228,7 +228,7 @@ func F_has_language_privilege_name_name(m *base.Module, l0 int32) int32 {
 					if v20 != 0 {
 						return int32(0)
 					} else {
-						v22 = F_convert_any_priv_string(m, v11, int32(1628480))
+						v22 = F_convert_any_priv_string(m, v11, int32(1632576))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {

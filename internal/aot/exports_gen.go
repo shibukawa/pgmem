@@ -6716,6 +6716,1056 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.TstzDist(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_btree_gin":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_btree_gin: want 0 args")
+		}
+		r := pgaot.PgMagicFuncBtreeGin(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_btree_consistent":
+		if len(a) != 1 {
+			panic("aot: gin_btree_consistent: want 1 args")
+		}
+		r := pgaot.GinBtreeConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_anyenum":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_anyenum: want 1 args")
+		}
+		r := pgaot.GinComparePrefixAnyenum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_bit":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_bit: want 1 args")
+		}
+		r := pgaot.GinComparePrefixBit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_bool":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_bool: want 1 args")
+		}
+		r := pgaot.GinComparePrefixBool(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_bpchar":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_bpchar: want 1 args")
+		}
+		r := pgaot.GinComparePrefixBpchar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_bytea":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_bytea: want 1 args")
+		}
+		r := pgaot.GinComparePrefixBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_char":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_char: want 1 args")
+		}
+		r := pgaot.GinComparePrefixChar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_cidr":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_cidr: want 1 args")
+		}
+		r := pgaot.GinComparePrefixCidr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_date":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_date: want 1 args")
+		}
+		r := pgaot.GinComparePrefixDate(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_float4":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_float4: want 1 args")
+		}
+		r := pgaot.GinComparePrefixFloat4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_float8":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_float8: want 1 args")
+		}
+		r := pgaot.GinComparePrefixFloat8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_inet":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_inet: want 1 args")
+		}
+		r := pgaot.GinComparePrefixInet(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_int2":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_int2: want 1 args")
+		}
+		r := pgaot.GinComparePrefixInt2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_int4":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_int4: want 1 args")
+		}
+		r := pgaot.GinComparePrefixInt4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_int8":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_int8: want 1 args")
+		}
+		r := pgaot.GinComparePrefixInt8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_interval":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_interval: want 1 args")
+		}
+		r := pgaot.GinComparePrefixInterval(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_macaddr":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_macaddr: want 1 args")
+		}
+		r := pgaot.GinComparePrefixMacaddr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_macaddr8":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_macaddr8: want 1 args")
+		}
+		r := pgaot.GinComparePrefixMacaddr8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_money":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_money: want 1 args")
+		}
+		r := pgaot.GinComparePrefixMoney(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_name":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_name: want 1 args")
+		}
+		r := pgaot.GinComparePrefixName(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_numeric":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_numeric: want 1 args")
+		}
+		r := pgaot.GinComparePrefixNumeric(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_oid":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_oid: want 1 args")
+		}
+		r := pgaot.GinComparePrefixOid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_text":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_text: want 1 args")
+		}
+		r := pgaot.GinComparePrefixText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_time":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_time: want 1 args")
+		}
+		r := pgaot.GinComparePrefixTime(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_timestamp":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_timestamp: want 1 args")
+		}
+		r := pgaot.GinComparePrefixTimestamp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_timestamptz":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_timestamptz: want 1 args")
+		}
+		r := pgaot.GinComparePrefixTimestamptz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_timetz":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_timetz: want 1 args")
+		}
+		r := pgaot.GinComparePrefixTimetz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_uuid":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_uuid: want 1 args")
+		}
+		r := pgaot.GinComparePrefixUuid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_compare_prefix_varbit":
+		if len(a) != 1 {
+			panic("aot: gin_compare_prefix_varbit: want 1 args")
+		}
+		r := pgaot.GinComparePrefixVarbit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_enum_cmp":
+		if len(a) != 1 {
+			panic("aot: gin_enum_cmp: want 1 args")
+		}
+		r := pgaot.GinEnumCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_anyenum":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_anyenum: want 1 args")
+		}
+		r := pgaot.GinExtractQueryAnyenum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_bit":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_bit: want 1 args")
+		}
+		r := pgaot.GinExtractQueryBit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_bool":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_bool: want 1 args")
+		}
+		r := pgaot.GinExtractQueryBool(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_bpchar":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_bpchar: want 1 args")
+		}
+		r := pgaot.GinExtractQueryBpchar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_bytea":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_bytea: want 1 args")
+		}
+		r := pgaot.GinExtractQueryBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_char":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_char: want 1 args")
+		}
+		r := pgaot.GinExtractQueryChar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_cidr":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_cidr: want 1 args")
+		}
+		r := pgaot.GinExtractQueryCidr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_date":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_date: want 1 args")
+		}
+		r := pgaot.GinExtractQueryDate(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_float4":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_float4: want 1 args")
+		}
+		r := pgaot.GinExtractQueryFloat4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_float8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_float8: want 1 args")
+		}
+		r := pgaot.GinExtractQueryFloat8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_inet":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_inet: want 1 args")
+		}
+		r := pgaot.GinExtractQueryInet(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_int2":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_int2: want 1 args")
+		}
+		r := pgaot.GinExtractQueryInt2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_int4":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_int4: want 1 args")
+		}
+		r := pgaot.GinExtractQueryInt4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_int8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_int8: want 1 args")
+		}
+		r := pgaot.GinExtractQueryInt8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_interval":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_interval: want 1 args")
+		}
+		r := pgaot.GinExtractQueryInterval(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_macaddr":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_macaddr: want 1 args")
+		}
+		r := pgaot.GinExtractQueryMacaddr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_macaddr8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_macaddr8: want 1 args")
+		}
+		r := pgaot.GinExtractQueryMacaddr8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_money":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_money: want 1 args")
+		}
+		r := pgaot.GinExtractQueryMoney(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_name":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_name: want 1 args")
+		}
+		r := pgaot.GinExtractQueryName(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_numeric":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_numeric: want 1 args")
+		}
+		r := pgaot.GinExtractQueryNumeric(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_oid":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_oid: want 1 args")
+		}
+		r := pgaot.GinExtractQueryOid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_text":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_text: want 1 args")
+		}
+		r := pgaot.GinExtractQueryText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_time":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_time: want 1 args")
+		}
+		r := pgaot.GinExtractQueryTime(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_timestamp":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_timestamp: want 1 args")
+		}
+		r := pgaot.GinExtractQueryTimestamp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_timestamptz":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_timestamptz: want 1 args")
+		}
+		r := pgaot.GinExtractQueryTimestamptz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_timetz":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_timetz: want 1 args")
+		}
+		r := pgaot.GinExtractQueryTimetz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_uuid":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_uuid: want 1 args")
+		}
+		r := pgaot.GinExtractQueryUuid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_query_varbit":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_varbit: want 1 args")
+		}
+		r := pgaot.GinExtractQueryVarbit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_anyenum":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_anyenum: want 1 args")
+		}
+		r := pgaot.GinExtractValueAnyenum(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_bit":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_bit: want 1 args")
+		}
+		r := pgaot.GinExtractValueBit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_bool":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_bool: want 1 args")
+		}
+		r := pgaot.GinExtractValueBool(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_bpchar":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_bpchar: want 1 args")
+		}
+		r := pgaot.GinExtractValueBpchar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_bytea":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_bytea: want 1 args")
+		}
+		r := pgaot.GinExtractValueBytea(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_char":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_char: want 1 args")
+		}
+		r := pgaot.GinExtractValueChar(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_cidr":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_cidr: want 1 args")
+		}
+		r := pgaot.GinExtractValueCidr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_date":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_date: want 1 args")
+		}
+		r := pgaot.GinExtractValueDate(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_float4":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_float4: want 1 args")
+		}
+		r := pgaot.GinExtractValueFloat4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_float8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_float8: want 1 args")
+		}
+		r := pgaot.GinExtractValueFloat8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_inet":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_inet: want 1 args")
+		}
+		r := pgaot.GinExtractValueInet(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_int2":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_int2: want 1 args")
+		}
+		r := pgaot.GinExtractValueInt2(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_int4":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_int4: want 1 args")
+		}
+		r := pgaot.GinExtractValueInt4(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_int8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_int8: want 1 args")
+		}
+		r := pgaot.GinExtractValueInt8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_interval":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_interval: want 1 args")
+		}
+		r := pgaot.GinExtractValueInterval(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_macaddr":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_macaddr: want 1 args")
+		}
+		r := pgaot.GinExtractValueMacaddr(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_macaddr8":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_macaddr8: want 1 args")
+		}
+		r := pgaot.GinExtractValueMacaddr8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_money":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_money: want 1 args")
+		}
+		r := pgaot.GinExtractValueMoney(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_name":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_name: want 1 args")
+		}
+		r := pgaot.GinExtractValueName(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_numeric":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_numeric: want 1 args")
+		}
+		r := pgaot.GinExtractValueNumeric(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_oid":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_oid: want 1 args")
+		}
+		r := pgaot.GinExtractValueOid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_text":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_text: want 1 args")
+		}
+		r := pgaot.GinExtractValueText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_time":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_time: want 1 args")
+		}
+		r := pgaot.GinExtractValueTime(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_timestamp":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_timestamp: want 1 args")
+		}
+		r := pgaot.GinExtractValueTimestamp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_timestamptz":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_timestamptz: want 1 args")
+		}
+		r := pgaot.GinExtractValueTimestamptz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_timetz":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_timetz: want 1 args")
+		}
+		r := pgaot.GinExtractValueTimetz(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_uuid":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_uuid: want 1 args")
+		}
+		r := pgaot.GinExtractValueUuid(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_varbit":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_varbit: want 1 args")
+		}
+		r := pgaot.GinExtractValueVarbit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_numeric_cmp":
+		if len(a) != 1 {
+			panic("aot: gin_numeric_cmp: want 1 args")
+		}
+		r := pgaot.GinNumericCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_btree_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_btree_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGinBtreeConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_anyenum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_anyenum: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixAnyenum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_bit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_bit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixBit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_bool":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_bool: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixBool(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_bpchar":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_bpchar: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixBpchar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_char":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_char: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixChar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_cidr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_cidr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixCidr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_date":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_date: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixDate(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_float4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_float4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixFloat4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_float8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_float8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixFloat8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_inet":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_inet: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixInet(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_int2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_int2: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixInt2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_int4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_int4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixInt4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_int8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_int8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixInt8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_interval":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_interval: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixInterval(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_macaddr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_macaddr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixMacaddr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_macaddr8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_macaddr8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixMacaddr8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_money":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_money: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixMoney(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_name":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_name: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixName(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_numeric":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_numeric: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixNumeric(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_oid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_oid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixOid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_text: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_time":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_time: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixTime(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_timestamp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_timestamp: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixTimestamp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_timestamptz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_timestamptz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixTimestamptz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_timetz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_timetz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixTimetz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_uuid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_uuid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixUuid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_compare_prefix_varbit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_compare_prefix_varbit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinComparePrefixVarbit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_enum_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_enum_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoGinEnumCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_anyenum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_anyenum: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryAnyenum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_bit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_bit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryBit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_bool":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_bool: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryBool(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_bpchar":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_bpchar: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryBpchar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_char":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_char: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryChar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_cidr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_cidr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryCidr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_date":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_date: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryDate(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_float4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_float4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryFloat4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_float8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_float8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryFloat8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_inet":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_inet: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryInet(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_int2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_int2: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryInt2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_int4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_int4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryInt4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_int8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_int8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryInt8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_interval":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_interval: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryInterval(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_macaddr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_macaddr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryMacaddr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_macaddr8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_macaddr8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryMacaddr8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_money":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_money: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryMoney(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_name":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_name: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryName(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_numeric":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_numeric: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryNumeric(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_oid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_oid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryOid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_text: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_time":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_time: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryTime(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_timestamp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_timestamp: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryTimestamp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_timestamptz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_timestamptz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryTimestamptz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_timetz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_timetz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryTimetz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_uuid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_uuid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryUuid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_varbit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_varbit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryVarbit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_anyenum":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_anyenum: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueAnyenum(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_bit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_bit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueBit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_bool":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_bool: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueBool(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_bpchar":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_bpchar: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueBpchar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_bytea":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_bytea: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueBytea(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_char":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_char: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueChar(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_cidr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_cidr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueCidr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_date":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_date: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueDate(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_float4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_float4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueFloat4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_float8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_float8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueFloat8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_inet":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_inet: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueInet(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_int2":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_int2: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueInt2(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_int4":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_int4: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueInt4(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_int8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_int8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueInt8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_interval":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_interval: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueInterval(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_macaddr":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_macaddr: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueMacaddr(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_macaddr8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_macaddr8: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueMacaddr8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_money":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_money: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueMoney(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_name":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_name: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueName(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_numeric":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_numeric: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueNumeric(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_oid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_oid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueOid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_text: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_time":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_time: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueTime(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_timestamp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_timestamp: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueTimestamp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_timestamptz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_timestamptz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueTimestamptz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_timetz":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_timetz: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueTimetz(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_uuid":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_uuid: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueUuid(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_varbit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_varbit: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueVarbit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_numeric_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_numeric_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoGinNumericCmp(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")
