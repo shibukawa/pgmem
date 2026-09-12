@@ -29,6 +29,12 @@ func F_pg_finfo__ltxtq_exec(m *base.Module) int32 {
 func F_pg_finfo_accept_weak_input(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_accept_weak_input_0)
 }
+func F_pg_finfo_brin_page_type(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_brin_page_type_0)
+}
+func F_pg_finfo_bt_page_stats(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_page_stats_0)
+}
 func F_pg_finfo_cash_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_cash_dist_0)
 }
@@ -191,6 +197,9 @@ func F_pg_finfo_gbt_tstz_compress(m *base.Module) int32 {
 func F_pg_finfo_gbt_uuid_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbt_uuid_consistent_0)
 }
+func F_pg_finfo_get_raw_page_fork_1_9(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_get_raw_page_fork_1_9_0)
+}
 func F_pg_finfo_ghstore_picksplit(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_picksplit_0)
 }
@@ -259,6 +268,9 @@ func F_pg_finfo_halfvec_to_float4(m *base.Module) int32 {
 }
 func F_pg_finfo_halfvec_to_sparsevec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_halfvec_to_sparsevec_0)
+}
+func F_pg_finfo_hash_metapage_info(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_metapage_info_0)
 }
 func F_pg_finfo_hnsw_bit_support(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hnsw_bit_support_0)

@@ -637,22 +637,12 @@ func F_ExplainXMLTag(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v70
 	var v72 int32
 	_ = v72
+	var v74 int32
+	_ = v74
 	var v75 int32
 	_ = v75
-	var v89 int32
-	_ = v89
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v96 int32
-	_ = v96
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v101 int32
-	_ = v101
+	var v76 int32
+	_ = v76
 	var v113 int32
 	_ = v113
 	var v123 int32
@@ -884,8 +874,10 @@ L19:
 L20:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
+	v74 = int32(_a_F_ExplainXMLTag_0)
 	v75 = base.I32_extend8_s(v70)
-	goto L26
+	v76 = int32(66)
+	goto L25
 L21:
 	;
 	goto L19
@@ -907,61 +899,13 @@ L24:
 	goto L42
 L25:
 	;
-	if base.B2i32(v97 != v98) == int32(0) {
-		goto L23
-	} else {
-		goto L33
-	}
-L26:
-	;
-	goto L27
-L27:
-	;
-	v89 = int32(_a_F_ExplainXMLTag_0)
-	v91 = int32(66)
-	goto L28
-L28:
-	;
-	v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
-	if v94 == v75&int32(255) {
-		v150 = v89
-		v152 = v91
-		goto L24
-	} else {
-		goto L30
-	}
-L29:
-	;
-	goto L25
-L30:
-	;
-	v96 = int32(1)
-	v97 = v91 - v96
-	v98 = int32(0)
-	v101 = v89 + v96
-	if v101&int32(3) == v98 {
-		goto L25
-	} else {
-		goto L31
-	}
-L31:
-	;
-	if v97 != 0 {
-		v89 = v101
-		v91 = v97
-		goto L28
-	} else {
-		goto L32
-	}
-L32:
-	;
-	goto L29
+	goto L33
 L33:
 	;
-	v113 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101))))
+	v113 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ExplainXMLTag[0])))
 	if v113 == v75&int32(255) {
-		v143 = v101
-		v145 = v97
+		v143 = v74
+		v145 = v76
 		goto L34
 	} else {
 		goto L35
@@ -975,17 +919,11 @@ L34:
 	}
 L35:
 	;
-	if base.Ui32(v97) < base.Ui32(int32(4)) {
-		v143 = v101
-		v145 = v97
-		goto L34
-	} else {
-		goto L36
-	}
+	goto L36
 L36:
 	;
-	v123 = v101
-	v125 = v97
+	v123 = v74
+	v125 = v76
 	goto L37
 L37:
 	;

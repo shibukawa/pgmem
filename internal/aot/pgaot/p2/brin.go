@@ -2581,6 +2581,23 @@ L17:
 	;
 	goto L8
 }
+func F_brin_free_desc(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v4 int32
+	_ = v4
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	F_MemoryContextDelete(m, v2)
+	mBase = m.M
+	v4 = m.ExcPending
+	if v4 != 0 {
+		return
+	} else {
+		return
+	}
+}
 func F_brin_inclusion_add_value(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

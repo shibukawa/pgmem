@@ -18364,23 +18364,6 @@ L27:
 	;
 	return v61
 }
-func F_freeGISTstate(m *base.Module, l0 int32) {
-	mBase := m.M
-	_ = mBase
-	var v2 int32
-	_ = v2
-	var v4 int32
-	_ = v4
-	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_MemoryContextDelete(m, v2)
-	mBase = m.M
-	v4 = m.ExcPending
-	if v4 != 0 {
-		return
-	} else {
-		return
-	}
-}
 func F_free_conversion_map(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

@@ -70,6 +70,8 @@ var contribRegress = map[string][]string{
 	"uuid-ossp":       {"uuid_ossp"},
 	"amcheck":         {"check", "check_btree", "check_gin", "check_heap"},
 	"pg_visibility":   {"pg_visibility"},
+	// oldextversions is left out: it relies on psql's \df
+	"pageinspect": {"page", "btree", "brin", "gin", "gist", "hash", "checksum"},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",
@@ -195,6 +197,7 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 type psqlState struct {
 	vars      map[string]string
 	verbosity string
+	expanded  bool   // \\x: records shown vertically
 	ifStack   []bool // whether each open \\if branch is being executed
 	quit      bool
 	dir       string // test directory, for \\copy file paths
@@ -344,6 +347,15 @@ func (ps *psqlState) meta(cmd string) string {
 		}
 	case "\\unset":
 		delete(ps.vars, args)
+	case "\\x":
+		switch strings.ToLower(args) {
+		case "":
+			ps.expanded = !ps.expanded
+		case "on", "true", "1", "yes":
+			ps.expanded = true
+		default:
+			ps.expanded = false
+		}
 	case "\\echo":
 		if ps.active() {
 			return interpolate(args, ps.vars) + "\n"
@@ -627,7 +639,11 @@ func runStatement(ctx context.Context, conn *pgx.Conn, ps *psqlState, stmt strin
 			}
 			continue
 		}
-		out.WriteString(formatAligned(fields, data))
+		if ps.expanded {
+			out.WriteString(formatExpanded(fields, data))
+		} else {
+			out.WriteString(formatAligned(fields, data))
+		}
 	}
 	if err := mrr.Close(); err != nil && !errShown {
 		out.WriteString(formatError(err, ps.verbosity, stmt))
@@ -864,6 +880,70 @@ func psqlEscapeControl(s string) string {
 		}
 		i += size
 	}
+	return b.String()
+}
+
+// formatExpanded renders rows like psql's expanded (\\x) aligned format
+// with border 1: a "-[ RECORD n ]" divider padded to the name column,
+// one "name | value" line per column, '+' on continued value lines, and
+// a "(0 rows)" footer only when there is nothing to show.
+func formatExpanded(fields []pgconn.FieldDescription, data [][]string) string {
+	if len(data) == 0 {
+		return "(0 rows)\n\n"
+	}
+	hwidth, dwidth := 0, 0
+	for _, f := range fields {
+		if w := utf8.RuneCountInString(f.Name); w > hwidth {
+			hwidth = w
+		}
+	}
+	cells := make([][][]string, len(data))
+	for r, row := range data {
+		cells[r] = make([][]string, len(fields))
+		for c, v := range row {
+			ls := strings.Split(psqlEscapeControl(v), "\n")
+			cells[r][c] = ls
+			for _, l := range ls {
+				if w := utf8.RuneCountInString(l); w > dwidth {
+					dwidth = w
+				}
+			}
+		}
+	}
+	var b strings.Builder
+	for r := range data {
+		// the divider is always hwidth+dwidth+3 wide; when the record
+		// label is wider than the name column it is just dashes to the end
+		head := fmt.Sprintf("-[ RECORD %d ]", r+1)
+		b.WriteString(head)
+		if n := hwidth + 1 - utf8.RuneCountInString(head); n >= 0 {
+			b.WriteString(strings.Repeat("-", n))
+			b.WriteString("+")
+			b.WriteString(strings.Repeat("-", dwidth+1))
+		} else if n := hwidth + dwidth + 3 - utf8.RuneCountInString(head); n > 0 {
+			b.WriteString(strings.Repeat("-", n))
+		}
+		b.WriteString("\n")
+		for c, f := range fields {
+			ls := cells[r][c]
+			for j, l := range ls {
+				name := ""
+				if j == 0 {
+					name = f.Name
+				}
+				b.WriteString(name)
+				b.WriteString(strings.Repeat(" ", hwidth-utf8.RuneCountInString(name)))
+				b.WriteString(" | ")
+				b.WriteString(l)
+				if j+1 < len(ls) {
+					b.WriteString(strings.Repeat(" ", dwidth-utf8.RuneCountInString(l)))
+					b.WriteString("+")
+				}
+				b.WriteString("\n")
+			}
+		}
+	}
+	b.WriteString("\n")
 	return b.String()
 }
 

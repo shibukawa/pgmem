@@ -6993,3 +6993,231 @@ L150:
 	m.G0 = v22 + int32(16)
 	return int32(0)
 }
+func F_brin_page_type(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v57 int32
+	_ = v57
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
+	var v74 int32
+	_ = v74
+	var v81 int32
+	_ = v81
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v98 int32
+	_ = v98
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
+	var v114 int32
+	_ = v114
+	var v121 int32
+	_ = v121
+	v5 = m.G0
+	v7 = v5 - int32(48)
+	m.G0 = v7
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = F_pg_detoast_datum(m, v9)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v14 = F_superuser(m)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			if v14 != 0 {
+				v16 = F_get_page_from_raw(m, v10)
+				mBase = m.M
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return int32(0)
+				} else {
+					v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+14)))
+					if v18 == int32(0) {
+						v21 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v21)
+						v57 = int32(0)
+						m.G0 = v7 + int32(48)
+						return v57
+					} else {
+						v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+19)))
+						v25 = int32(8)
+						v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+16)))
+						if (v24<<(uint(v25)%32)-v27)&int32(_a_F_brin_page_type_0) != v25 {
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v85 = m.ExcPending
+							if v85 != 0 {
+								return int32(0)
+							} else {
+								F_errcode(m, int32(50856066))
+								mBase = m.M
+								v88 = m.ExcPending
+								if v88 != 0 {
+									return int32(0)
+								} else {
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(_a_F_brin_page_type_1)
+									F_errmsg(m, int32(_a_F_brin_page_type_2), v7+int32(32))
+									mBase = m.M
+									v98 = m.ExcPending
+									if v98 != 0 {
+										return int32(0)
+									} else {
+										v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v16)+16)))
+										v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+19)))
+										v101 = int32(8)
+										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v101
+										*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = (v100<<(uint(v101)%32) - v99) & int32(_a_F_brin_page_type_0)
+										F_errdetail(m, int32(_a_F_brin_page_type_3), v7+int32(16))
+										mBase = m.M
+										v114 = m.ExcPending
+										if v114 != 0 {
+											return int32(0)
+										} else {
+											F_errfinish(m, int32(_a_F_brin_page_type_4), int32(67), int32(_a_F_brin_page_type_5))
+											mBase = m.M
+											v121 = m.ExcPending
+											if v121 != 0 {
+												return int32(0)
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v34 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v27+v16)+6)))
+							v36 = v34 + int32(3951)
+							if base.Ui32(int32(3)) <= base.Ui32(v36&int32(_a_F_brin_page_type_0)) {
+								*(*int32)(unsafe.Add(mBase, uint32(v7))) = v34
+								v43 = F_psprintf(m, int32(_a_F_brin_page_type_6), v7)
+								mBase = m.M
+								v44 = m.ExcPending
+								if v44 != 0 {
+									return int32(0)
+								} else {
+									v52 = v43
+									v53 = F_cstring_to_text(m, v52)
+									mBase = m.M
+									v54 = m.ExcPending
+									if v54 != 0 {
+										return int32(0)
+									} else {
+										v57 = v53
+										m.G0 = v7 + int32(48)
+										return v57
+									}
+								}
+							} else {
+								v51 = *(*int32)(unsafe.Add(mBase, uint32(v36&int32(_a_F_brin_page_type_0)<<(uint(int32(2))%32))+uint32(_c_F_brin_page_type[0])))
+								v52 = v51
+								v53 = F_cstring_to_text(m, v52)
+								mBase = m.M
+								v54 = m.ExcPending
+								if v54 != 0 {
+									return int32(0)
+								} else {
+									v57 = v53
+									m.G0 = v7 + int32(48)
+									return v57
+								}
+							}
+						}
+					}
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v65 = m.ExcPending
+				if v65 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(16797828))
+					mBase = m.M
+					v68 = m.ExcPending
+					if v68 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_brin_page_type_7), int32(0))
+						mBase = m.M
+						v74 = m.ExcPending
+						if v74 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_brin_page_type_4), int32(53), int32(_a_F_brin_page_type_5))
+							mBase = m.M
+							v81 = m.ExcPending
+							if v81 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

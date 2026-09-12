@@ -3282,6 +3282,140 @@ func F_pg_check_frozen(m *base.Module, l0 int32) int32
 func F_pg_check_visible(m *base.Module, l0 int32) int32
 //go:linkname F_pg_truncate_visibility_map github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_truncate_visibility_map
 func F_pg_truncate_visibility_map(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_brin_page_type github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_brin_page_type
+func F_pg_finfo_brin_page_type(m *base.Module) int32
+//go:linkname F_pg_finfo_brin_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_brin_page_items
+func F_pg_finfo_brin_page_items(m *base.Module) int32
+//go:linkname F_pg_finfo_brin_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_brin_metapage_info
+func F_pg_finfo_brin_metapage_info(m *base.Module) int32
+//go:linkname F_pg_finfo_brin_revmap_data github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_brin_revmap_data
+func F_pg_finfo_brin_revmap_data(m *base.Module) int32
+//go:linkname F_brin_page_type github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_brin_page_type
+func F_brin_page_type(m *base.Module, l0 int32) int32
+//go:linkname F_brin_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_brin_page_items
+func F_brin_page_items(m *base.Module, l0 int32) int32
+//go:linkname F_brin_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_brin_metapage_info
+func F_brin_metapage_info(m *base.Module, l0 int32) int32
+//go:linkname F_brin_revmap_data github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_brin_revmap_data
+func F_brin_revmap_data(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_bt_metap github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_bt_metap
+func F_pg_finfo_bt_metap(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_page_items_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_bt_page_items_1_9
+func F_pg_finfo_bt_page_items_1_9(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_bt_page_items
+func F_pg_finfo_bt_page_items(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_page_items_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_bt_page_items_bytea
+func F_pg_finfo_bt_page_items_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_page_stats_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_bt_page_stats_1_9
+func F_pg_finfo_bt_page_stats_1_9(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_bt_page_stats
+func F_pg_finfo_bt_page_stats(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_multi_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_bt_multi_page_stats
+func F_pg_finfo_bt_multi_page_stats(m *base.Module) int32
+//go:linkname F_bt_page_stats_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bt_page_stats_1_9
+func F_bt_page_stats_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_bt_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_bt_page_stats
+func F_bt_page_stats(m *base.Module, l0 int32) int32
+//go:linkname F_bt_multi_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_bt_multi_page_stats
+func F_bt_multi_page_stats(m *base.Module, l0 int32) int32
+//go:linkname F_bt_page_items_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_page_items_1_9
+func F_bt_page_items_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_bt_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_bt_page_items
+func F_bt_page_items(m *base.Module, l0 int32) int32
+//go:linkname F_bt_page_items_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_page_items_bytea
+func F_bt_page_items_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_bt_metap github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bt_metap
+func F_bt_metap(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_fsm_page_contents github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_fsm_page_contents
+func F_pg_finfo_fsm_page_contents(m *base.Module) int32
+//go:linkname F_fsm_page_contents github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_fsm_page_contents
+func F_fsm_page_contents(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_metapage_info
+func F_pg_finfo_gin_metapage_info(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_page_opaque_info github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_page_opaque_info
+func F_pg_finfo_gin_page_opaque_info(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_leafpage_items github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_leafpage_items
+func F_pg_finfo_gin_leafpage_items(m *base.Module) int32
+//go:linkname F_gin_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_metapage_info
+func F_gin_metapage_info(m *base.Module, l0 int32) int32
+//go:linkname F_gin_page_opaque_info github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_page_opaque_info
+func F_gin_page_opaque_info(m *base.Module, l0 int32) int32
+//go:linkname F_gin_leafpage_items github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_leafpage_items
+func F_gin_leafpage_items(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gist_page_opaque_info github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gist_page_opaque_info
+func F_pg_finfo_gist_page_opaque_info(m *base.Module) int32
+//go:linkname F_pg_finfo_gist_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gist_page_items
+func F_pg_finfo_gist_page_items(m *base.Module) int32
+//go:linkname F_pg_finfo_gist_page_items_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gist_page_items_bytea
+func F_pg_finfo_gist_page_items_bytea(m *base.Module) int32
+//go:linkname F_gist_page_opaque_info github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gist_page_opaque_info
+func F_gist_page_opaque_info(m *base.Module, l0 int32) int32
+//go:linkname F_gist_page_items_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gist_page_items_bytea
+func F_gist_page_items_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_gist_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gist_page_items
+func F_gist_page_items(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hash_page_type github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hash_page_type
+func F_pg_finfo_hash_page_type(m *base.Module) int32
+//go:linkname F_pg_finfo_hash_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_hash_page_stats
+func F_pg_finfo_hash_page_stats(m *base.Module) int32
+//go:linkname F_pg_finfo_hash_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hash_page_items
+func F_pg_finfo_hash_page_items(m *base.Module) int32
+//go:linkname F_pg_finfo_hash_bitmap_info github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hash_bitmap_info
+func F_pg_finfo_hash_bitmap_info(m *base.Module) int32
+//go:linkname F_pg_finfo_hash_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hash_metapage_info
+func F_pg_finfo_hash_metapage_info(m *base.Module) int32
+//go:linkname F_hash_page_type github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hash_page_type
+func F_hash_page_type(m *base.Module, l0 int32) int32
+//go:linkname F_hash_page_stats github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hash_page_stats
+func F_hash_page_stats(m *base.Module, l0 int32) int32
+//go:linkname F_hash_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hash_page_items
+func F_hash_page_items(m *base.Module, l0 int32) int32
+//go:linkname F_hash_bitmap_info github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hash_bitmap_info
+func F_hash_bitmap_info(m *base.Module, l0 int32) int32
+//go:linkname F_hash_metapage_info github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hash_metapage_info
+func F_hash_metapage_info(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_heap_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_heap_page_items
+func F_pg_finfo_heap_page_items(m *base.Module) int32
+//go:linkname F_heap_page_items github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_heap_page_items
+func F_heap_page_items(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_tuple_data_split github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_tuple_data_split
+func F_pg_finfo_tuple_data_split(m *base.Module) int32
+//go:linkname F_tuple_data_split github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tuple_data_split
+func F_tuple_data_split(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_heap_tuple_infomask_flags github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_heap_tuple_infomask_flags
+func F_pg_finfo_heap_tuple_infomask_flags(m *base.Module) int32
+//go:linkname F_heap_tuple_infomask_flags github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_heap_tuple_infomask_flags
+func F_heap_tuple_infomask_flags(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pageinspect github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_Pg_magic_func_pageinspect
+func F_Pg_magic_func_pageinspect(m *base.Module) int32
+//go:linkname F_pg_finfo_get_raw_page_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_get_raw_page_1_9
+func F_pg_finfo_get_raw_page_1_9(m *base.Module) int32
+//go:linkname F_get_raw_page_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_raw_page_1_9
+func F_get_raw_page_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_get_raw_page github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_get_raw_page
+func F_pg_finfo_get_raw_page(m *base.Module) int32
+//go:linkname F_get_raw_page github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_get_raw_page
+func F_get_raw_page(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_get_raw_page_fork_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_get_raw_page_fork_1_9
+func F_pg_finfo_get_raw_page_fork_1_9(m *base.Module) int32
+//go:linkname F_get_raw_page_fork_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_raw_page_fork_1_9
+func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_get_raw_page_fork github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_get_raw_page_fork
+func F_pg_finfo_get_raw_page_fork(m *base.Module) int32
+//go:linkname F_get_raw_page_fork github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_get_raw_page_fork
+func F_get_raw_page_fork(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_page_header github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_page_header
+func F_pg_finfo_page_header(m *base.Module) int32
+//go:linkname F_page_header github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_page_header
+func F_page_header(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_page_checksum_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_page_checksum_1_9
+func F_pg_finfo_page_checksum_1_9(m *base.Module) int32
+//go:linkname F_pg_finfo_page_checksum github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_page_checksum
+func F_pg_finfo_page_checksum(m *base.Module) int32
+//go:linkname F_page_checksum_1_9 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_page_checksum_1_9
+func F_page_checksum_1_9(m *base.Module, l0 int32) int32
+//go:linkname F_page_checksum github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_page_checksum
+func F_page_checksum(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

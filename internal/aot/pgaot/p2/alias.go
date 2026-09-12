@@ -66,6 +66,8 @@ func F_heap_deform_tuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 func F_heap_form_minimal_tuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_heap_copy_minimal_tuple github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_heap_copy_minimal_tuple
 func F_heap_copy_minimal_tuple(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_index_deform_tuple github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_index_deform_tuple
+func F_index_deform_tuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_CopyIndexTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CopyIndexTuple
 func F_CopyIndexTuple(m *base.Module, l0 int32) int32
 //go:linkname F_relation_open github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_open
@@ -4240,6 +4242,8 @@ func F_pg_prng_double(m *base.Module, l0 int32) float64
 func F_psprintf(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pvsnprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pvsnprintf
 func F_pvsnprintf(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_forkname_to_number github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_forkname_to_number
+func F_forkname_to_number(m *base.Module, l0 int32) int32
 //go:linkname F_GetDatabasePath github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GetDatabasePath
 func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetRelationPath github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetRelationPath
@@ -4454,6 +4458,12 @@ func F_get_xid_status(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_report_corruption(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_fastgetattr_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_fastgetattr_5
 func F_fastgetattr_5(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_check_relation_block_range github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_check_relation_block_range
+func F_check_relation_block_range(m *base.Module, l0 int32, l1 int64)
+//go:linkname F_verify_gist_page github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_verify_gist_page
+func F_verify_gist_page(m *base.Module, l0 int32) int32
+//go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
+func F_get_page_from_raw(m *base.Module, l0 int32) int32
 //go:linkname F_HnswInitLockTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswInitLockTranche
 func F_HnswInitLockTranche(m *base.Module)
 //go:linkname F_HnswParallelScanAndInsert github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswParallelScanAndInsert

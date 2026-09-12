@@ -32,6 +32,9 @@ func F_pg_finfo_boolop(m *base.Module) int32 {
 func F_pg_finfo_bqarr_out(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_bqarr_out_0)
 }
+func F_pg_finfo_bt_page_items(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_page_items_0)
+}
 func F_pg_finfo_citext_gt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_gt_0)
 }
@@ -280,6 +283,12 @@ func F_pg_finfo_halfvec_typmod_in(m *base.Module) int32 {
 }
 func F_pg_finfo_hamming_distance(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hamming_distance_0)
+}
+func F_pg_finfo_hash_bitmap_info(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_bitmap_info_0)
+}
+func F_pg_finfo_hash_page_type(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_page_type_0)
 }
 func F_pg_finfo_hstore_contained(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_contained_0)

@@ -23,6 +23,9 @@ func F_pg_finfo_array_to_sparsevec(m *base.Module) int32 {
 func F_pg_finfo_blhandler(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_blhandler_0)
 }
+func F_pg_finfo_bt_page_stats_1_9(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_page_stats_1_9_0)
+}
 func F_pg_finfo_citext_eq(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_eq_0)
 }
@@ -170,6 +173,9 @@ func F_pg_finfo_gbt_var_fetch(m *base.Module) int32 {
 func F_pg_finfo_gbtreekey_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gbtreekey_in_0)
 }
+func F_pg_finfo_get_raw_page_fork(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_get_raw_page_fork_0)
+}
 func F_pg_finfo_gin_compare_prefix_macaddr(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_compare_prefix_macaddr_0)
 }
@@ -215,6 +221,15 @@ func F_pg_finfo_gin_extract_value_uuid(m *base.Module) int32 {
 func F_pg_finfo_gin_index_check(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_index_check_0)
 }
+func F_pg_finfo_gist_page_items(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gist_page_items_0)
+}
+func F_pg_finfo_gist_page_items_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gist_page_items_bytea_0)
+}
+func F_pg_finfo_gist_page_opaque_info(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gist_page_opaque_info_0)
+}
 func F_pg_finfo_gseg_decompress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gseg_decompress_0)
 }
@@ -244,6 +259,12 @@ func F_pg_finfo_halfvec_send(m *base.Module) int32 {
 }
 func F_pg_finfo_halfvec_sub(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_halfvec_sub_0)
+}
+func F_pg_finfo_hash_page_stats(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_hash_page_stats_0)
+}
+func F_pg_finfo_heap_tuple_infomask_flags(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_heap_tuple_infomask_flags_0)
 }
 func F_pg_finfo_hstore_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hstore_cmp_0)

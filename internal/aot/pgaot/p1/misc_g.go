@@ -23486,7 +23486,7 @@ L162:
 L163:
 	;
 	v715 = *(*int32)(unsafe.Add(mBase, uint32(v15)+40))
-	F_freeGISTstate(m, v715)
+	F_brin_free_desc(m, v715)
 	mBase = m.M
 	v717 = m.ExcPending
 	if v717 != 0 {
@@ -23602,7 +23602,7 @@ func F_gistendscan(m *base.Module, l0 int32) {
 	_ = v5
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)))
-	F_freeGISTstate(m, v3)
+	F_brin_free_desc(m, v3)
 	mBase = m.M
 	v5 = m.ExcPending
 	if v5 != 0 {

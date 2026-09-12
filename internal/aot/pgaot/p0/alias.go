@@ -78,6 +78,8 @@ func F_index_deform_tuple_internal(m *base.Module, l0 int32, l1 int32, l2 int32,
 func F_CopyIndexTuple(m *base.Module, l0 int32) int32
 //go:linkname F_relation_open github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_open
 func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_relation_openrv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_openrv
+func F_relation_openrv(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_add_reloption_kind github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_add_reloption_kind
@@ -174,6 +176,8 @@ func F_computeDistance(m *base.Module, l0 int32, l1 int32, l2 int32) float64
 func F_gistDeCompressAtt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F__hash_pgaddmultitup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F__hash_pgaddmultitup
 func F__hash_pgaddmultitup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F__hash_ovflblkno_to_bitno github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__hash_ovflblkno_to_bitno
+func F__hash_ovflblkno_to_bitno(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__hash_addovflpage github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__hash_addovflpage
 func F__hash_addovflpage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F__hash_getbuf github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__hash_getbuf
@@ -3712,6 +3716,8 @@ func F_pg_prng_uint32(m *base.Module) int32
 func F_pg_prng_double(m *base.Module, l0 int32) float64
 //go:linkname F_psprintf github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_psprintf
 func F_psprintf(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_forkname_to_number github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_forkname_to_number
+func F_forkname_to_number(m *base.Module, l0 int32) int32
 //go:linkname F_GetDatabasePath github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GetDatabasePath
 func F_GetDatabasePath(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetRelationPath github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetRelationPath
@@ -3956,6 +3962,12 @@ func F_palloc_btree_page(m *base.Module, l0 int32, l1 int32) int32
 func F_bt_leftmost_ignoring_half_dead(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_PageGetItemIdCareful_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PageGetItemIdCareful_2
 func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_bt_page_stats_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_bt_page_stats_internal
+func F_bt_page_stats_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_get_raw_page_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_raw_page_internal
+func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
+func F_get_page_from_raw(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

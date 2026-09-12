@@ -10139,6 +10139,116 @@ func F_UnlockRelationId(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
+func F_check_relation_block_range(m *base.Module, l0 int32, l1 int64) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v30 int32
+	_ = v30
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v52 int32
+	_ = v52
+	var v59 int32
+	_ = v59
+	v4 = m.G0
+	v6 = v4 - int32(32)
+	m.G0 = v6
+	if base.Ui64(l1) < base.Ui64(int64(4294967295)) {
+		v11 = F_RelationGetNumberOfBlocksInFork(m, l0, int32(0))
+		mBase = m.M
+		v12 = m.ExcPending
+		if v12 != 0 {
+			return
+		} else {
+			if base.Ui32(v11) <= base.Ui32(base.I32_wrap_i64(l1)) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v41 = m.ExcPending
+				if v41 != 0 {
+					return
+				} else {
+					F_errcode(m, int32(50856066))
+					mBase = m.M
+					v44 = m.ExcPending
+					if v44 != 0 {
+						return
+					} else {
+						*(*int64)(unsafe.Add(mBase, uint32(v6)+16)) = l1
+						F_errmsg(m, int32(_a_F_check_relation_block_range_0), v6+int32(16))
+						mBase = m.M
+						v52 = m.ExcPending
+						if v52 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_check_relation_block_range_1), int32(214), int32(_a_F_check_relation_block_range_2))
+							mBase = m.M
+							v59 = m.ExcPending
+							if v59 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				m.G0 = v6 + int32(32)
+				return
+			}
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v21 = m.ExcPending
+		if v21 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(50856066))
+			mBase = m.M
+			v24 = m.ExcPending
+			if v24 != 0 {
+				return
+			} else {
+				*(*int64)(unsafe.Add(mBase, uint32(v6))) = l1
+				F_errmsg(m, int32(_a_F_check_relation_block_range_3), v6)
+				mBase = m.M
+				v30 = m.ExcPending
+				if v30 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(_a_F_check_relation_block_range_1), int32(209), int32(_a_F_check_relation_block_range_2))
+					mBase = m.M
+					v37 = m.ExcPending
+					if v37 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_relation_close(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

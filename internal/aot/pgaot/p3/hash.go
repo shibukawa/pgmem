@@ -2228,6 +2228,948 @@ func F_get_hash_value(m *base.Module, l0 int32, l1 int32) int32 {
 		return v5
 	}
 }
+func F_hash_bitmap_info(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int64
+	_ = v16
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
+	var v95 int32
+	_ = v95
+	var v98 int32
+	_ = v98
+	var v108 int64
+	_ = v108
+	var v111 int32
+	_ = v111
+	var v116 int32
+	_ = v116
+	var v119 int32
+	_ = v119
+	var v125 int32
+	_ = v125
+	var v130 int32
+	_ = v130
+	var v142 int32
+	_ = v142
+	var v143 int32
+	_ = v143
+	var v144 int32
+	_ = v144
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
+	var v160 int32
+	_ = v160
+	var v163 int32
+	_ = v163
+	var v164 int32
+	_ = v164
+	var v168 int32
+	_ = v168
+	var v174 int32
+	_ = v174
+	var v176 int32
+	_ = v176
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v188 int32
+	_ = v188
+	var v190 int32
+	_ = v190
+	var v193 int32
+	_ = v193
+	var v197 int32
+	_ = v197
+	var v198 int32
+	_ = v198
+	var v201 int32
+	_ = v201
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v206 int32
+	_ = v206
+	var v207 int32
+	_ = v207
+	var v214 int32
+	_ = v214
+	var v219 int32
+	_ = v219
+	var v220 int32
+	_ = v220
+	var v221 int32
+	_ = v221
+	var v222 int32
+	_ = v222
+	var v223 int32
+	_ = v223
+	var v231 int32
+	_ = v231
+	var v234 int32
+	_ = v234
+	var v238 int32
+	_ = v238
+	var v243 int32
+	_ = v243
+	var v247 int32
+	_ = v247
+	var v250 int32
+	_ = v250
+	var v251 int32
+	_ = v251
+	var v261 int32
+	_ = v261
+	var v266 int32
+	_ = v266
+	var v270 int32
+	_ = v270
+	var v273 int32
+	_ = v273
+	var v277 int32
+	_ = v277
+	var v282 int32
+	_ = v282
+	var v286 int32
+	_ = v286
+	var v289 int32
+	_ = v289
+	var v293 int32
+	_ = v293
+	var v298 int32
+	_ = v298
+	var v302 int32
+	_ = v302
+	var v305 int32
+	_ = v305
+	var v306 int32
+	_ = v306
+	var v315 int32
+	_ = v315
+	var v320 int32
+	_ = v320
+	var v324 int32
+	_ = v324
+	var v327 int32
+	_ = v327
+	var v333 int32
+	_ = v333
+	var v338 int32
+	_ = v338
+	var v342 int32
+	_ = v342
+	var v346 int32
+	_ = v346
+	var v351 int32
+	_ = v351
+	v2 = int32(0)
+	v10 = m.G0
+	v12 = v10 - int32(96)
+	m.G0 = v12
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v16 = *(*int64)(unsafe.Add(mBase, uint32(v15)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v12)+78)) = uint8(v2)
+	*(*uint16)(unsafe.Add(mBase, uint32(v12)+76)) = uint16(v2)
+	v21 = F_superuser(m)
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L7
+	} else {
+		goto L8
+	}
+L1:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v342 = m.ExcPending
+	if v342 != 0 {
+		goto L7
+	} else {
+		goto L87
+	}
+L2:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v324 = m.ExcPending
+	if v324 != 0 {
+		goto L7
+	} else {
+		goto L83
+	}
+L3:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v302 = m.ExcPending
+	if v302 != 0 {
+		goto L7
+	} else {
+		goto L79
+	}
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v286 = m.ExcPending
+	if v286 != 0 {
+		goto L7
+	} else {
+		goto L75
+	}
+L5:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v270 = m.ExcPending
+	if v270 != 0 {
+		goto L7
+	} else {
+		goto L71
+	}
+L6:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v247 = m.ExcPending
+	if v247 != 0 {
+		goto L7
+	} else {
+		goto L67
+	}
+L7:
+	;
+	return int32(0)
+L8:
+	;
+	if v21 != 0 {
+		goto L9
+	} else {
+		goto L10
+	}
+L9:
+	;
+	v26 = F_relation_open(m, v14, int32(1))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L7
+	} else {
+		goto L12
+	}
+L10:
+	;
+	goto L11
+L11:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v231 = m.ExcPending
+	if v231 != 0 {
+		goto L7
+	} else {
+		goto L63
+	}
+L12:
+	;
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
+	v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+119)))
+	if v29 != int32(105) {
+		goto L6
+	} else {
+		goto L13
+	}
+L13:
+	;
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v28)+84))
+	if v32 != int32(405) {
+		goto L6
+	} else {
+		goto L14
+	}
+L14:
+	;
+	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+118)))
+	if v35 == int32(116) {
+		goto L15
+	} else {
+		goto L16
+	}
+L15:
+	;
+	v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26)+24)))
+	if v38 == int32(0) {
+		goto L5
+	} else {
+		goto L18
+	}
+L16:
+	;
+	goto L17
+L17:
+	;
+	if base.Ui64(int64(4294967295)) <= base.Ui64(v16) {
+		goto L4
+	} else {
+		goto L19
+	}
+L18:
+	;
+	goto L17
+L19:
+	;
+	v44 = F_RelationGetNumberOfBlocksInFork(m, v26, int32(0))
+	mBase = m.M
+	v45 = m.ExcPending
+	if v45 != 0 {
+		goto L7
+	} else {
+		goto L20
+	}
+L20:
+	;
+	if base.Ui64(base.I64_extend_i32_u(v44)) <= base.Ui64(v16) {
+		goto L3
+	} else {
+		goto L21
+	}
+L21:
+	;
+	v51 = F__hash_getbuf(m, v26, int32(0), int32(1), int32(8))
+	mBase = m.M
+	v52 = m.ExcPending
+	if v52 != 0 {
+		goto L7
+	} else {
+		goto L23
+	}
+L22:
+	;
+	if v16 != int64(0) {
+		goto L29
+	} else {
+		goto L30
+	}
+L23:
+	;
+	if v51 < int32(0) {
+		goto L24
+	} else {
+		goto L25
+	}
+L24:
+	;
+	v56 = *(*int32)(unsafe.Add(mBase, _c_F_hash_bitmap_info[0]))
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v56+(v51^int32(-1))<<(uint(int32(2))%32))))
+	v70 = v62
+	goto L22
+L25:
+	;
+	goto L26
+L26:
+	;
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_hash_bitmap_info[1]))
+	v70 = v64 + v51<<(uint(int32(13))%32) + int32(-8192)
+	goto L22
+L27:
+	;
+	v142 = base.I32_wrap_i64(v16)
+	v143 = F__hash_ovflblkno_to_bitno(m, v70+int32(24), v142)
+	mBase = m.M
+	v144 = m.ExcPending
+	if v144 != 0 {
+		goto L7
+	} else {
+		goto L47
+	}
+L28:
+	;
+	v98 = int32(0)
+	goto L37
+L29:
+	;
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v70)+68))
+	if v73 == int32(0) {
+		goto L27
+	} else {
+		goto L32
+	}
+L30:
+	;
+	goto L31
+L31:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v82 = m.ExcPending
+	if v82 != 0 {
+		goto L7
+	} else {
+		goto L33
+	}
+L32:
+	;
+	goto L28
+L33:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L7
+	} else {
+		goto L34
+	}
+L34:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = int32(0)
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_0), v12)
+	mBase = m.M
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L7
+	} else {
+		goto L35
+	}
+L35:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(454), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v95 = m.ExcPending
+	if v95 != 0 {
+		goto L7
+	} else {
+		goto L36
+	}
+L36:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L37:
+	;
+	v108 = int64(*(*uint32)(unsafe.Add(mBase, uint32(v70+int32(468)+v98<<(uint(int32(2))%32)))))
+	if v108 != v16 {
+		goto L39
+	} else {
+		goto L40
+	}
+L38:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v116 = m.ExcPending
+	if v116 != 0 {
+		goto L7
+	} else {
+		goto L43
+	}
+L39:
+	;
+	v111 = v98 + int32(1)
+	if v73 != v111 {
+		v98 = v111
+		goto L37
+	} else {
+		goto L42
+	}
+L40:
+	;
+	goto L41
+L41:
+	;
+	goto L38
+L42:
+	;
+	goto L27
+L43:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v119 = m.ExcPending
+	if v119 != 0 {
+		goto L7
+	} else {
+		goto L44
+	}
+L44:
+	;
+	*(*uint32)(unsafe.Add(mBase, uint32(v12)+32)) = uint32(v16)
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_0), v12+int32(32))
+	mBase = m.M
+	v125 = m.ExcPending
+	if v125 != 0 {
+		goto L7
+	} else {
+		goto L45
+	}
+L45:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(460), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v130 = m.ExcPending
+	if v130 != 0 {
+		goto L7
+	} else {
+		goto L46
+	}
+L46:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L47:
+	;
+	v145 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v70)+46)))
+	v146 = int32(base.Ui32(v143) >> (uint(v145) % 32))
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v70)+68))
+	if base.Ui32(v147) <= base.Ui32(v146) {
+		goto L2
+	} else {
+		goto L48
+	}
+L48:
+	;
+	v149 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v70)+44)))
+	v154 = (v149<<(uint(int32(3))%32) - int32(1)) & v143
+	v158 = *(*int32)(unsafe.Add(mBase, uint32(v70+v146<<(uint(int32(2))%32))+468))
+	F_UnlockReleaseBuffer(m, v51)
+	mBase = m.M
+	v160 = m.ExcPending
+	if v160 != 0 {
+		goto L7
+	} else {
+		goto L49
+	}
+L49:
+	;
+	v163 = F__hash_getbuf(m, v26, v158, int32(1), int32(4))
+	mBase = m.M
+	v164 = m.ExcPending
+	if v164 != 0 {
+		goto L7
+	} else {
+		goto L51
+	}
+L50:
+	;
+	v184 = base.I32_div_s(v154, int32(32))
+	v188 = *(*int32)(unsafe.Add(mBase, uint32(v182+v184<<(uint(int32(2))%32))+24))
+	F_UnlockReleaseBuffer(m, v163)
+	mBase = m.M
+	v190 = m.ExcPending
+	if v190 != 0 {
+		goto L7
+	} else {
+		goto L55
+	}
+L51:
+	;
+	if v163 < int32(0) {
+		goto L52
+	} else {
+		goto L53
+	}
+L52:
+	;
+	v168 = *(*int32)(unsafe.Add(mBase, _c_F_hash_bitmap_info[0]))
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(v168+(v163^int32(-1))<<(uint(int32(2))%32))))
+	v182 = v174
+	goto L50
+L53:
+	;
+	goto L54
+L54:
+	;
+	v176 = *(*int32)(unsafe.Add(mBase, _c_F_hash_bitmap_info[1]))
+	v182 = v176 + v163<<(uint(int32(13))%32) + int32(-8192)
+	goto L50
+L55:
+	;
+	F_relation_close(m, v26, int32(1))
+	mBase = m.M
+	v193 = m.ExcPending
+	if v193 != 0 {
+		goto L7
+	} else {
+		goto L56
+	}
+L56:
+	;
+	v197 = F_get_call_result_type(m, l0, int32(0), v12+int32(92))
+	mBase = m.M
+	v198 = m.ExcPending
+	if v198 != 0 {
+		goto L7
+	} else {
+		goto L57
+	}
+L57:
+	;
+	if v197 != int32(1) {
+		goto L1
+	} else {
+		goto L58
+	}
+L58:
+	;
+	v201 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
+	v202 = F_BlessTupleDesc(m, v201)
+	mBase = m.M
+	v203 = m.ExcPending
+	if v203 != 0 {
+		goto L7
+	} else {
+		goto L59
+	}
+L59:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+92)) = v202
+	v206 = F_Int64GetDatum(m, base.I64_extend_i32_u(v158))
+	mBase = m.M
+	v207 = m.ExcPending
+	if v207 != 0 {
+		goto L7
+	} else {
+		goto L60
+	}
+L60:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+80)) = v206
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+84)) = v154
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+88)) = int32(base.Ui32(v188)>>(uint(v154)%32)) & int32(1)
+	v214 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
+	v219 = F_heap_form_tuple(m, v214, v12+int32(80), v12+int32(76))
+	mBase = m.M
+	v220 = m.ExcPending
+	if v220 != 0 {
+		goto L7
+	} else {
+		goto L61
+	}
+L61:
+	;
+	v221 = *(*int32)(unsafe.Add(mBase, uint32(v219)+16))
+	v222 = F_HeapTupleHeaderGetDatum(m, v221)
+	mBase = m.M
+	v223 = m.ExcPending
+	if v223 != 0 {
+		goto L7
+	} else {
+		goto L62
+	}
+L62:
+	;
+	m.G0 = v12 + int32(96)
+	return v222
+L63:
+	;
+	F_errcode(m, int32(16797828))
+	mBase = m.M
+	v234 = m.ExcPending
+	if v234 != 0 {
+		goto L7
+	} else {
+		goto L64
+	}
+L64:
+	;
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_3), int32(0))
+	mBase = m.M
+	v238 = m.ExcPending
+	if v238 != 0 {
+		goto L7
+	} else {
+		goto L65
+	}
+L65:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(416), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v243 = m.ExcPending
+	if v243 != 0 {
+		goto L7
+	} else {
+		goto L66
+	}
+L66:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L67:
+	;
+	F_errcode(m, int32(151027844))
+	mBase = m.M
+	v250 = m.ExcPending
+	if v250 != 0 {
+		goto L7
+	} else {
+		goto L68
+	}
+L68:
+	;
+	v251 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+68)) = int32(_a_F_hash_bitmap_info_4)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = v251 + int32(4)
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_5), v12-int32(-64))
+	mBase = m.M
+	v261 = m.ExcPending
+	if v261 != 0 {
+		goto L7
+	} else {
+		goto L69
+	}
+L69:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(424), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v266 = m.ExcPending
+	if v266 != 0 {
+		goto L7
+	} else {
+		goto L70
+	}
+L70:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L71:
+	;
+	F_errcode(m, int32(1088))
+	mBase = m.M
+	v273 = m.ExcPending
+	if v273 != 0 {
+		goto L7
+	} else {
+		goto L72
+	}
+L72:
+	;
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_6), int32(0))
+	mBase = m.M
+	v277 = m.ExcPending
+	if v277 != 0 {
+		goto L7
+	} else {
+		goto L73
+	}
+L73:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(429), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v282 = m.ExcPending
+	if v282 != 0 {
+		goto L7
+	} else {
+		goto L74
+	}
+L74:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L75:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v289 = m.ExcPending
+	if v289 != 0 {
+		goto L7
+	} else {
+		goto L76
+	}
+L76:
+	;
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_7), int32(0))
+	mBase = m.M
+	v293 = m.ExcPending
+	if v293 != 0 {
+		goto L7
+	} else {
+		goto L77
+	}
+L77:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(434), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v298 = m.ExcPending
+	if v298 != 0 {
+		goto L7
+	} else {
+		goto L78
+	}
+L78:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L79:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v305 = m.ExcPending
+	if v305 != 0 {
+		goto L7
+	} else {
+		goto L80
+	}
+L80:
+	;
+	v306 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
+	*(*int64)(unsafe.Add(mBase, uint32(v12)+48)) = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+56)) = v306 + int32(4)
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_8), v12+int32(48))
+	mBase = m.M
+	v315 = m.ExcPending
+	if v315 != 0 {
+		goto L7
+	} else {
+		goto L81
+	}
+L81:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(440), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v320 = m.ExcPending
+	if v320 != 0 {
+		goto L7
+	} else {
+		goto L82
+	}
+L82:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L83:
+	;
+	F_errcode(m, int32(50856066))
+	mBase = m.M
+	v327 = m.ExcPending
+	if v327 != 0 {
+		goto L7
+	} else {
+		goto L84
+	}
+L84:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v142
+	F_errmsg(m, int32(_a_F_hash_bitmap_info_0), v12+int32(16))
+	mBase = m.M
+	v333 = m.ExcPending
+	if v333 != 0 {
+		goto L7
+	} else {
+		goto L85
+	}
+L85:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(475), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v338 = m.ExcPending
+	if v338 != 0 {
+		goto L7
+	} else {
+		goto L86
+	}
+L86:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L87:
+	;
+	F_errmsg_internal(m, int32(_a_F_hash_bitmap_info_9), int32(0))
+	mBase = m.M
+	v346 = m.ExcPending
+	if v346 != 0 {
+		goto L7
+	} else {
+		goto L88
+	}
+L88:
+	;
+	F_errfinish(m, int32(_a_F_hash_bitmap_info_1), int32(493), int32(_a_F_hash_bitmap_info_2))
+	mBase = m.M
+	v351 = m.ExcPending
+	if v351 != 0 {
+		goto L7
+	} else {
+		goto L89
+	}
+L89:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
 func F_hash_destroy(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -3385,6 +4327,145 @@ func F_hash_mask(m *base.Module, l0 int32, l1 int32) {
 		v133 = v131 & int32(_a_F_hash_mask_5)
 		*(*uint16)(unsafe.Add(mBase, uint32(v17)+12)) = uint16(v133)
 		return
+	}
+}
+func F_hash_page_type(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v62 int32
+	_ = v62
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = F_pg_detoast_datum(m, v3)
+	mBase = m.M
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		v8 = F_superuser(m)
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return int32(0)
+		} else {
+			if v8 != 0 {
+				v11 = F_verify_hash_page(m, v4, int32(0))
+				mBase = m.M
+				v12 = m.ExcPending
+				if v12 != 0 {
+					return int32(0)
+				} else {
+					v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+14)))
+					if v13 == int32(0) {
+						v18 = F_cstring_to_text(m, int32(_a_F_hash_page_type_0))
+						mBase = m.M
+						v19 = m.ExcPending
+						if v19 != 0 {
+							return int32(0)
+						} else {
+							return v18
+						}
+					} else {
+						v21 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+16)))
+						v23 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11+v21)+12)))
+						v27 = v23&int32(15) - int32(1)
+						if base.Ui32(int32(7)) < base.Ui32(v27) {
+							v32 = F_cstring_to_text(m, int32(_a_F_hash_page_type_0))
+							mBase = m.M
+							v33 = m.ExcPending
+							if v33 != 0 {
+								return int32(0)
+							} else {
+								return v32
+							}
+						} else {
+							v39 = *(*int32)(unsafe.Add(mBase, uint32(v27<<(uint(int32(2))%32))+uint32(_c_F_hash_page_type[0])))
+							v40 = F_cstring_to_text(m, v39)
+							mBase = m.M
+							v41 = m.ExcPending
+							if v41 != 0 {
+								return int32(0)
+							} else {
+								return v40
+							}
+						}
+					}
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v46 = m.ExcPending
+				if v46 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(16797828))
+					mBase = m.M
+					v49 = m.ExcPending
+					if v49 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_hash_page_type_1), int32(0))
+						mBase = m.M
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_hash_page_type_2), int32(203), int32(_a_F_hash_page_type_3))
+							mBase = m.M
+							v62 = m.ExcPending
+							if v62 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 func F_hash_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

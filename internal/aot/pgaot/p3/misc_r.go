@@ -7951,9 +7951,6 @@ func F_r_shortv_1(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
-func F_raw_array_subscript_handler(m *base.Module, l0 int32) int32 {
-	return int32(_a_F_raw_array_subscript_handler_0)
-}
 func F_read_cursor_args(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase

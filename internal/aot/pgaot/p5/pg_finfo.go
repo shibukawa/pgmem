@@ -29,8 +29,20 @@ func F_pg_finfo__ltxtq_rexec(m *base.Module) int32 {
 func F_pg_finfo_bqarr_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_bqarr_in_0)
 }
+func F_pg_finfo_brin_page_items(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_brin_page_items_0)
+}
+func F_pg_finfo_brin_revmap_data(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_brin_revmap_data_0)
+}
 func F_pg_finfo_bt_index_check(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_bt_index_check_0)
+}
+func F_pg_finfo_bt_metap(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_metap_0)
+}
+func F_pg_finfo_bt_multi_page_stats(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_multi_page_stats_0)
 }
 func F_pg_finfo_citext_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_cmp_0)
@@ -221,6 +233,9 @@ func F_pg_finfo_gin_extract_value_name(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_text_0)
 }
+func F_pg_finfo_gin_metapage_info(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_metapage_info_0)
+}
 func F_pg_finfo_gin_trgm_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_trgm_consistent_0)
 }
@@ -382,6 +397,9 @@ func F_pg_finfo_subltree(m *base.Module) int32 {
 }
 func F_pg_finfo_time_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_time_dist_0)
+}
+func F_pg_finfo_tuple_data_split(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_tuple_data_split_0)
 }
 func F_pg_finfo_unaccent_dict(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_unaccent_dict_0)

@@ -35,6 +35,12 @@ func F_pg_finfo_array_to_halfvec(m *base.Module) int32 {
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_euc_tw_0)
 }
+func F_pg_finfo_bt_page_items_1_9(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_page_items_1_9_0)
+}
+func F_pg_finfo_bt_page_items_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_page_items_bytea_0)
+}
 func F_pg_finfo_citext_larger(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_larger_0)
 }
@@ -287,6 +293,9 @@ func F_pg_finfo_hash_ltree(m *base.Module) int32 {
 func F_pg_finfo_hash_ltree_extended(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hash_ltree_extended_0)
 }
+func F_pg_finfo_heap_page_items(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_heap_page_items_0)
+}
 func F_pg_finfo_hnsw_sparsevec_support(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_hnsw_sparsevec_support_0)
 }
@@ -370,6 +379,9 @@ func F_pg_finfo_mic_to_latin3(m *base.Module) int32 {
 }
 func F_pg_finfo_oid_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_oid_dist_0)
+}
+func F_pg_finfo_page_header(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_page_header_0)
 }
 func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_decrypt_0)

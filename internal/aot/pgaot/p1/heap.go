@@ -12537,6 +12537,1406 @@ L375:
 	;
 	goto L374
 }
+func F_heap_page_items(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v62 int64
+	_ = v62
+	var v73 int64
+	_ = v73
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v84 int64
+	_ = v84
+	var v85 int64
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v89 int64
+	_ = v89
+	var v93 int32
+	_ = v93
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
+	var v103 int32
+	_ = v103
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
+	var v122 int32
+	_ = v122
+	var v124 int32
+	_ = v124
+	var v129 int32
+	_ = v129
+	var v131 int32
+	_ = v131
+	var v133 int32
+	_ = v133
+	var v152 int32
+	_ = v152
+	var v155 int32
+	_ = v155
+	var v156 int32
+	_ = v156
+	var v158 int32
+	_ = v158
+	var v161 int32
+	_ = v161
+	var v162 int32
+	_ = v162
+	var v173 int32
+	_ = v173
+	var v179 int32
+	_ = v179
+	var v189 int32
+	_ = v189
+	var v190 int32
+	_ = v190
+	var v196 int32
+	_ = v196
+	var v198 int32
+	_ = v198
+	var v199 int32
+	_ = v199
+	var v203 int32
+	_ = v203
+	var v209 int32
+	_ = v209
+	var v211 int32
+	_ = v211
+	var v212 int32
+	_ = v212
+	var v214 int32
+	_ = v214
+	var v220 int32
+	_ = v220
+	var v241 int32
+	_ = v241
+	var v247 int32
+	_ = v247
+	var v265 int32
+	_ = v265
+	var v267 int32
+	_ = v267
+	var v268 int32
+	_ = v268
+	var v270 int32
+	_ = v270
+	var v271 int32
+	_ = v271
+	var v273 int32
+	_ = v273
+	var v279 int32
+	_ = v279
+	var v292 int32
+	_ = v292
+	var v296 int32
+	_ = v296
+	var v298 int32
+	_ = v298
+	var v300 int32
+	_ = v300
+	var v301 int32
+	_ = v301
+	var v302 int32
+	_ = v302
+	var v304 int32
+	_ = v304
+	var v305 int32
+	_ = v305
+	var v306 int32
+	_ = v306
+	var v314 int32
+	_ = v314
+	var v316 int32
+	_ = v316
+	var v319 int32
+	_ = v319
+	var v321 int32
+	_ = v321
+	var v323 int32
+	_ = v323
+	var v342 int32
+	_ = v342
+	var v347 int32
+	_ = v347
+	var v348 int32
+	_ = v348
+	var v349 int32
+	_ = v349
+	var v350 int32
+	_ = v350
+	var v351 int32
+	_ = v351
+	var v352 int32
+	_ = v352
+	var v353 int32
+	_ = v353
+	var v354 int32
+	_ = v354
+	var v356 int64
+	_ = v356
+	var v360 int32
+	_ = v360
+	var v364 int32
+	_ = v364
+	var v365 int32
+	_ = v365
+	var v368 int32
+	_ = v368
+	var v374 int32
+	_ = v374
+	var v393 int32
+	_ = v393
+	var v396 int32
+	_ = v396
+	var v400 int32
+	_ = v400
+	var v405 int32
+	_ = v405
+	var v409 int32
+	_ = v409
+	var v412 int32
+	_ = v412
+	var v416 int32
+	_ = v416
+	var v421 int32
+	_ = v421
+	var v425 int32
+	_ = v425
+	var v429 int32
+	_ = v429
+	var v434 int32
+	_ = v434
+	v16 = m.G0
+	v18 = v16 - int32(96)
+	m.G0 = v18
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v21 = F_pg_detoast_datum(m, v20)
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		return int32(0)
+	} else {
+		v25 = F_superuser(m)
+		mBase = m.M
+		v26 = m.ExcPending
+		if v26 != 0 {
+			return int32(0)
+		} else {
+			if v25 != 0 {
+				v27 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+				v31 = int32(base.Ui32(v27)>>(uint(int32(2))%32)) - int32(4)
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(v32)+16))
+				if v33 == int32(0) {
+					if base.Ui32(v31) <= base.Ui32(int32(23)) {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v409 = m.ExcPending
+						if v409 != 0 {
+							return int32(0)
+						} else {
+							F_errcode(m, int32(50856066))
+							mBase = m.M
+							v412 = m.ExcPending
+							if v412 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v18))) = v31
+								F_errmsg(m, int32(_a_F_heap_page_items_0), v18)
+								mBase = m.M
+								v416 = m.ExcPending
+								if v416 != 0 {
+									return int32(0)
+								} else {
+									F_errfinish(m, int32(_a_F_heap_page_items_1), int32(152), int32(_a_F_heap_page_items_2))
+									mBase = m.M
+									v421 = m.ExcPending
+									if v421 != 0 {
+										return int32(0)
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					} else {
+						v38 = F_init_MultiFuncCall(m, l0)
+						mBase = m.M
+						v39 = m.ExcPending
+						if v39 != 0 {
+							return int32(0)
+						} else {
+							v40 = int32(_a_F_heap_page_items_3)
+							v41 = *(*int32)(unsafe.Add(mBase, _c_F_heap_page_items[0]))
+							v43 = *(*int32)(unsafe.Add(mBase, uint32(v38)+24))
+							*(*int32)(unsafe.Add(mBase, _c_F_heap_page_items[0])) = v43
+							v46 = F_palloc(m, int32(12))
+							mBase = m.M
+							v47 = m.ExcPending
+							if v47 != 0 {
+								return int32(0)
+							} else {
+								v51 = F_get_call_result_type(m, l0, int32(0), v18+int32(32))
+								mBase = m.M
+								v52 = m.ExcPending
+								if v52 != 0 {
+									return int32(0)
+								} else {
+									if v51 != int32(1) {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v425 = m.ExcPending
+										if v425 != 0 {
+											return int32(0)
+										} else {
+											F_errmsg_internal(m, int32(_a_F_heap_page_items_4), int32(0))
+											mBase = m.M
+											v429 = m.ExcPending
+											if v429 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_heap_page_items_1), int32(161), int32(_a_F_heap_page_items_2))
+												mBase = m.M
+												v434 = m.ExcPending
+												if v434 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									} else {
+										v55 = *(*int32)(unsafe.Add(mBase, uint32(v18)+32))
+										v56 = int32(1)
+										*(*uint16)(unsafe.Add(mBase, uint32(v46)+8)) = uint16(v56)
+										*(*int32)(unsafe.Add(mBase, uint32(v46))) = v55
+										*(*int32)(unsafe.Add(mBase, uint32(v46)+4)) = v21 + int32(4)
+										v62 = int64(*(*uint16)(unsafe.Add(mBase, uint32(v21)+16)))
+										*(*int32)(unsafe.Add(mBase, uint32(v38)+16)) = v46
+										if base.Ui64(int64(25)) <= base.Ui64(v62) {
+											v73 = int64(base.Ui64(v62+int64(262120))>>(uint(int64(2))%64)) & int64(65535)
+										} else {
+											v73 = int64(0)
+										}
+										*(*int64)(unsafe.Add(mBase, uint32(v38)+8)) = v73
+										*(*int32)(unsafe.Add(mBase, _c_F_heap_page_items[0])) = v41
+										v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+										v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+16))
+										v84 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+										v85 = *(*int64)(unsafe.Add(mBase, uint32(v83)+8))
+										if base.Ui64(v84) < base.Ui64(v85) {
+											v87 = *(*int32)(unsafe.Add(mBase, uint32(v83)+16))
+											v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)+4))
+											v89 = int64(0)
+											*(*int64)(unsafe.Add(mBase, uint32(v18)+22)) = v89
+											*(*int64)(unsafe.Add(mBase, uint32(v18)+16)) = v89
+											v93 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+											v97 = *(*int32)(unsafe.Add(mBase, uint32(v88+v93<<(uint(int32(2))%32))+20))
+											*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = v93
+											v100 = int32(base.Ui32(v97) >> (uint(int32(17)) % 32))
+											*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v100
+											v103 = v97 & int32(_a_F_heap_page_items_5)
+											*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v103
+											*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = int32(base.Ui32(v97)>>(uint(int32(15))%32)) & int32(3)
+											if base.Ui32(v97) < base.Ui32(int32(_a_F_heap_page_items_6)) {
+												v323 = int32(257)
+												*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+												*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+												v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+												v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+												mBase = m.M
+												v348 = m.ExcPending
+												if v348 != 0 {
+													return int32(0)
+												} else {
+													v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+													v350 = F_HeapTupleHeaderGetDatum(m, v349)
+													mBase = m.M
+													v351 = m.ExcPending
+													if v351 != 0 {
+														return int32(0)
+													} else {
+														v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+														v353 = int32(1)
+														v354 = v352 + v353
+														*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+														v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+														*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+														v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+														v374 = v350
+														m.G0 = v18 + int32(96)
+														return v374
+													}
+												}
+											} else {
+												if v103 != (v103+int32(7))&int32(_a_F_heap_page_items_7) {
+													v323 = int32(257)
+													*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+													*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+													v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+													v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+													mBase = m.M
+													v348 = m.ExcPending
+													if v348 != 0 {
+														return int32(0)
+													} else {
+														v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+														v350 = F_HeapTupleHeaderGetDatum(m, v349)
+														mBase = m.M
+														v351 = m.ExcPending
+														if v351 != 0 {
+															return int32(0)
+														} else {
+															v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+															v353 = int32(1)
+															v354 = v352 + v353
+															*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+															v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+															*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+															v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+															*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+															v374 = v350
+															m.G0 = v18 + int32(96)
+															return v374
+														}
+													}
+												} else {
+													if v31 < v103+v100 {
+														v323 = int32(257)
+														*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+														*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+														v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+														v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+														mBase = m.M
+														v348 = m.ExcPending
+														if v348 != 0 {
+															return int32(0)
+														} else {
+															v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+															v350 = F_HeapTupleHeaderGetDatum(m, v349)
+															mBase = m.M
+															v351 = m.ExcPending
+															if v351 != 0 {
+																return int32(0)
+															} else {
+																v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																v353 = int32(1)
+																v354 = v352 + v353
+																*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																v374 = v350
+																m.G0 = v18 + int32(96)
+																return v374
+															}
+														}
+													} else {
+														v119 = v103 + v88
+														v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+48)) = v120
+														v122 = *(*int32)(unsafe.Add(mBase, uint32(v119)+4))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v122
+														v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v119 + int32(12)
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v124
+														v129 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+18)))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+64)) = v129
+														v131 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+20)))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+68)) = v131
+														v133 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = v133
+														if base.Ui32(v133) < base.Ui32(int32(23)) {
+															v319 = int32(1)
+															*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+															v321 = int32(257)
+															*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+															v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+															v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+															mBase = m.M
+															v348 = m.ExcPending
+															if v348 != 0 {
+																return int32(0)
+															} else {
+																v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																mBase = m.M
+																v351 = m.ExcPending
+																if v351 != 0 {
+																	return int32(0)
+																} else {
+																	v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																	v353 = int32(1)
+																	v354 = v352 + v353
+																	*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																	v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																	*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																	v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																	*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																	v374 = v350
+																	m.G0 = v18 + int32(96)
+																	return v374
+																}
+															}
+														} else {
+															if base.Ui32(v100) < base.Ui32(v133) {
+																v319 = int32(1)
+																*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+																v321 = int32(257)
+																*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+																v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																mBase = m.M
+																v348 = m.ExcPending
+																if v348 != 0 {
+																	return int32(0)
+																} else {
+																	v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																	v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																	mBase = m.M
+																	v351 = m.ExcPending
+																	if v351 != 0 {
+																		return int32(0)
+																	} else {
+																		v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																		v353 = int32(1)
+																		v354 = v352 + v353
+																		*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																		v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																		*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																		v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																		*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																		v374 = v350
+																		m.G0 = v18 + int32(96)
+																		return v374
+																	}
+																}
+															} else {
+																if (v133+int32(7))&int32(504) != v133 {
+																	v319 = int32(1)
+																	*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+																	v321 = int32(257)
+																	*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+																	v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																	v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																	mBase = m.M
+																	v348 = m.ExcPending
+																	if v348 != 0 {
+																		return int32(0)
+																	} else {
+																		v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																		v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																		mBase = m.M
+																		v351 = m.ExcPending
+																		if v351 != 0 {
+																			return int32(0)
+																		} else {
+																			v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																			v353 = int32(1)
+																			v354 = v352 + v353
+																			*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																			v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																			*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																			v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																			*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																			v374 = v350
+																			m.G0 = v18 + int32(96)
+																			return v374
+																		}
+																	}
+																} else {
+																	if v131&int32(1) != 0 {
+																		v152 = int32(base.Ui32(v129&int32(2047)+int32(7)) >> (uint(int32(3)) % 32))
+																		if base.Ui32(v152) <= base.Ui32(v133-int32(23)) {
+																			v155 = v119 + int32(23)
+																			v156 = int32(0)
+																			v158 = v152 << (uint(int32(3)) % 32)
+																			v161 = F_palloc(m, v158+int32(1))
+																			mBase = m.M
+																			v162 = m.ExcPending
+																			if v162 != 0 {
+																				return int32(0)
+																			} else {
+																				if v158 == int32(0) {
+																				} else {
+																					if v158 != int32(1) {
+																						v173 = v156
+																						v179 = int32(0)
+																						for {
+																							v189 = v155 + int32(base.Ui32(v173)>>(uint(int32(3))%32))
+																							v190 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189))))
+																							if int32(base.Ui32(v190)>>(uint(v173&int32(6))%32))&int32(1) != 0 {
+																								v196 = int32(49)
+																							} else {
+																								v196 = int32(48)
+																							}
+																							*(*uint8)(unsafe.Add(mBase, uint32(v161+v173))) = uint8(v196)
+																							v198 = int32(1)
+																							v199 = v173 | v198
+																							v203 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189))))
+																							if int32(base.Ui32(v203)>>(uint(v199&int32(7))%32))&v198 != 0 {
+																								v209 = int32(49)
+																							} else {
+																								v209 = int32(48)
+																							}
+																							*(*uint8)(unsafe.Add(mBase, uint32(v161+v199))) = uint8(v209)
+																							v211 = int32(2)
+																							v212 = v173 + v211
+																							v214 = v179 + v211
+																							if v214 != v158&int32(4094) {
+																								v173 = v212
+																								v179 = v214
+																								continue
+																							} else {
+																								break
+																							}
+																							break
+																						}
+																						v220 = v212
+																					} else {
+																						v220 = v156
+																					}
+																					if v158&int32(1) == int32(0) {
+																					} else {
+																						v241 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v155+int32(base.Ui32(v220)>>(uint(int32(3))%32))))))
+																						if int32(base.Ui32(v241)>>(uint(v220&int32(7))%32))&int32(1) != 0 {
+																							v247 = int32(49)
+																						} else {
+																							v247 = int32(48)
+																						}
+																						*(*uint8)(unsafe.Add(mBase, uint32(v161+v220))) = uint8(v247)
+																					}
+																				}
+																				v265 = int32(0)
+																				*(*uint8)(unsafe.Add(mBase, uint32(v161+v158))) = uint8(v265)
+																				v267 = F_cstring_to_text(m, v161)
+																				mBase = m.M
+																				v268 = m.ExcPending
+																				if v268 != 0 {
+																					return int32(0)
+																				} else {
+																					*(*int32)(unsafe.Add(mBase, uint32(v18)+76)) = v267
+																					v270 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+20)))
+																					v279 = v270
+																					if v279&int32(8) != 0 {
+																						v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																						v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+																						*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+																						v301 = v292
+																					} else {
+																						v298 = int32(1)
+																						*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+																						v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																						v301 = v300
+																					}
+																					v302 = v100 - v301
+																					v304 = v302 + int32(4)
+																					v305 = F_palloc(m, v304)
+																					mBase = m.M
+																					v306 = m.ExcPending
+																					if v306 != 0 {
+																						return int32(0)
+																					} else {
+																						*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+																						if int32(0) < v302 {
+																							v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																							if v302 != 0 {
+																								v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																								mBase = m.M
+																							} else {
+																							}
+																						} else {
+																						}
+																						*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+																						v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																						v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																						mBase = m.M
+																						v348 = m.ExcPending
+																						if v348 != 0 {
+																							return int32(0)
+																						} else {
+																							v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																							v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																							mBase = m.M
+																							v351 = m.ExcPending
+																							if v351 != 0 {
+																								return int32(0)
+																							} else {
+																								v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																								v353 = int32(1)
+																								v354 = v352 + v353
+																								*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																								v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																								*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																								v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																								*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																								v374 = v350
+																								m.G0 = v18 + int32(96)
+																								return v374
+																							}
+																						}
+																					}
+																				}
+																			}
+																		} else {
+																			v271 = int32(1)
+																			*(*uint8)(unsafe.Add(mBase, uint32(v18)+27)) = uint8(v271)
+																			v279 = v131
+																			if v279&int32(8) != 0 {
+																				v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																				v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+																				*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+																				v301 = v292
+																			} else {
+																				v298 = int32(1)
+																				*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+																				v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																				v301 = v300
+																			}
+																			v302 = v100 - v301
+																			v304 = v302 + int32(4)
+																			v305 = F_palloc(m, v304)
+																			mBase = m.M
+																			v306 = m.ExcPending
+																			if v306 != 0 {
+																				return int32(0)
+																			} else {
+																				*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+																				if int32(0) < v302 {
+																					v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																					if v302 != 0 {
+																						v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																						mBase = m.M
+																					} else {
+																					}
+																				} else {
+																				}
+																				*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+																				v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																				v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																				mBase = m.M
+																				v348 = m.ExcPending
+																				if v348 != 0 {
+																					return int32(0)
+																				} else {
+																					v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																					v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																					mBase = m.M
+																					v351 = m.ExcPending
+																					if v351 != 0 {
+																						return int32(0)
+																					} else {
+																						v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																						v353 = int32(1)
+																						v354 = v352 + v353
+																						*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																						v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																						*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																						v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																						*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																						v374 = v350
+																						m.G0 = v18 + int32(96)
+																						return v374
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		v273 = int32(1)
+																		*(*uint8)(unsafe.Add(mBase, uint32(v18)+27)) = uint8(v273)
+																		v279 = v131
+																		if v279&int32(8) != 0 {
+																			v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																			v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+																			*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+																			v301 = v292
+																		} else {
+																			v298 = int32(1)
+																			*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+																			v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																			v301 = v300
+																		}
+																		v302 = v100 - v301
+																		v304 = v302 + int32(4)
+																		v305 = F_palloc(m, v304)
+																		mBase = m.M
+																		v306 = m.ExcPending
+																		if v306 != 0 {
+																			return int32(0)
+																		} else {
+																			*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+																			if int32(0) < v302 {
+																				v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																				if v302 != 0 {
+																					v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																					mBase = m.M
+																				} else {
+																				}
+																			} else {
+																			}
+																			*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+																			v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																			v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																			mBase = m.M
+																			v348 = m.ExcPending
+																			if v348 != 0 {
+																				return int32(0)
+																			} else {
+																				v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																				v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																				mBase = m.M
+																				v351 = m.ExcPending
+																				if v351 != 0 {
+																					return int32(0)
+																				} else {
+																					v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																					v353 = int32(1)
+																					v354 = v352 + v353
+																					*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																					v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																					*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																					v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																					*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																					v374 = v350
+																					m.G0 = v18 + int32(96)
+																					return v374
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_end_MultiFuncCall(m, l0)
+											mBase = m.M
+											v364 = m.ExcPending
+											if v364 != 0 {
+												return int32(0)
+											} else {
+												v365 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v365)+20)) = int32(2)
+												v368 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v368)
+												v374 = int32(0)
+												m.G0 = v18 + int32(96)
+												return v374
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+16))
+					v84 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+					v85 = *(*int64)(unsafe.Add(mBase, uint32(v83)+8))
+					if base.Ui64(v84) < base.Ui64(v85) {
+						v87 = *(*int32)(unsafe.Add(mBase, uint32(v83)+16))
+						v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)+4))
+						v89 = int64(0)
+						*(*int64)(unsafe.Add(mBase, uint32(v18)+22)) = v89
+						*(*int64)(unsafe.Add(mBase, uint32(v18)+16)) = v89
+						v93 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+						v97 = *(*int32)(unsafe.Add(mBase, uint32(v88+v93<<(uint(int32(2))%32))+20))
+						*(*int32)(unsafe.Add(mBase, uint32(v18)+32)) = v93
+						v100 = int32(base.Ui32(v97) >> (uint(int32(17)) % 32))
+						*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v100
+						v103 = v97 & int32(_a_F_heap_page_items_5)
+						*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v103
+						*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = int32(base.Ui32(v97)>>(uint(int32(15))%32)) & int32(3)
+						if base.Ui32(v97) < base.Ui32(int32(_a_F_heap_page_items_6)) {
+							v323 = int32(257)
+							*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+							*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+							v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+							v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+							mBase = m.M
+							v348 = m.ExcPending
+							if v348 != 0 {
+								return int32(0)
+							} else {
+								v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+								v350 = F_HeapTupleHeaderGetDatum(m, v349)
+								mBase = m.M
+								v351 = m.ExcPending
+								if v351 != 0 {
+									return int32(0)
+								} else {
+									v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+									v353 = int32(1)
+									v354 = v352 + v353
+									*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+									v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+									*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+									v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+									v374 = v350
+									m.G0 = v18 + int32(96)
+									return v374
+								}
+							}
+						} else {
+							if v103 != (v103+int32(7))&int32(_a_F_heap_page_items_7) {
+								v323 = int32(257)
+								*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+								*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+								v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+								v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+								mBase = m.M
+								v348 = m.ExcPending
+								if v348 != 0 {
+									return int32(0)
+								} else {
+									v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+									v350 = F_HeapTupleHeaderGetDatum(m, v349)
+									mBase = m.M
+									v351 = m.ExcPending
+									if v351 != 0 {
+										return int32(0)
+									} else {
+										v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+										v353 = int32(1)
+										v354 = v352 + v353
+										*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+										v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+										*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+										v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+										v374 = v350
+										m.G0 = v18 + int32(96)
+										return v374
+									}
+								}
+							} else {
+								if v31 < v103+v100 {
+									v323 = int32(257)
+									*(*uint16)(unsafe.Add(mBase, uint32(v18)+28)) = uint16(v323)
+									*(*int64)(unsafe.Add(mBase, uint32(v18)+20)) = int64(72340172838076673)
+									v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+									v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+									mBase = m.M
+									v348 = m.ExcPending
+									if v348 != 0 {
+										return int32(0)
+									} else {
+										v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+										v350 = F_HeapTupleHeaderGetDatum(m, v349)
+										mBase = m.M
+										v351 = m.ExcPending
+										if v351 != 0 {
+											return int32(0)
+										} else {
+											v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+											v353 = int32(1)
+											v354 = v352 + v353
+											*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+											v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+											*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+											v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+											v374 = v350
+											m.G0 = v18 + int32(96)
+											return v374
+										}
+									}
+								} else {
+									v119 = v103 + v88
+									v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+48)) = v120
+									v122 = *(*int32)(unsafe.Add(mBase, uint32(v119)+4))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+52)) = v122
+									v124 = *(*int32)(unsafe.Add(mBase, uint32(v119)+8))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+60)) = v119 + int32(12)
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+56)) = v124
+									v129 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+18)))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+64)) = v129
+									v131 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+20)))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+68)) = v131
+									v133 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+									*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = v133
+									if base.Ui32(v133) < base.Ui32(int32(23)) {
+										v319 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+										v321 = int32(257)
+										*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+										v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+										v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+										mBase = m.M
+										v348 = m.ExcPending
+										if v348 != 0 {
+											return int32(0)
+										} else {
+											v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+											v350 = F_HeapTupleHeaderGetDatum(m, v349)
+											mBase = m.M
+											v351 = m.ExcPending
+											if v351 != 0 {
+												return int32(0)
+											} else {
+												v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+												v353 = int32(1)
+												v354 = v352 + v353
+												*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+												v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+												*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+												v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+												v374 = v350
+												m.G0 = v18 + int32(96)
+												return v374
+											}
+										}
+									} else {
+										if base.Ui32(v100) < base.Ui32(v133) {
+											v319 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+											v321 = int32(257)
+											*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+											v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+											v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+											mBase = m.M
+											v348 = m.ExcPending
+											if v348 != 0 {
+												return int32(0)
+											} else {
+												v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+												v350 = F_HeapTupleHeaderGetDatum(m, v349)
+												mBase = m.M
+												v351 = m.ExcPending
+												if v351 != 0 {
+													return int32(0)
+												} else {
+													v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+													v353 = int32(1)
+													v354 = v352 + v353
+													*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+													v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+													*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+													v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+													*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+													v374 = v350
+													m.G0 = v18 + int32(96)
+													return v374
+												}
+											}
+										} else {
+											if (v133+int32(7))&int32(504) != v133 {
+												v319 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(v18)+29)) = uint8(v319)
+												v321 = int32(257)
+												*(*uint16)(unsafe.Add(mBase, uint32(v18)+27)) = uint16(v321)
+												v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+												v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+												mBase = m.M
+												v348 = m.ExcPending
+												if v348 != 0 {
+													return int32(0)
+												} else {
+													v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+													v350 = F_HeapTupleHeaderGetDatum(m, v349)
+													mBase = m.M
+													v351 = m.ExcPending
+													if v351 != 0 {
+														return int32(0)
+													} else {
+														v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+														v353 = int32(1)
+														v354 = v352 + v353
+														*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+														v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+														*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+														v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+														*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+														v374 = v350
+														m.G0 = v18 + int32(96)
+														return v374
+													}
+												}
+											} else {
+												if v131&int32(1) != 0 {
+													v152 = int32(base.Ui32(v129&int32(2047)+int32(7)) >> (uint(int32(3)) % 32))
+													if base.Ui32(v152) <= base.Ui32(v133-int32(23)) {
+														v155 = v119 + int32(23)
+														v156 = int32(0)
+														v158 = v152 << (uint(int32(3)) % 32)
+														v161 = F_palloc(m, v158+int32(1))
+														mBase = m.M
+														v162 = m.ExcPending
+														if v162 != 0 {
+															return int32(0)
+														} else {
+															if v158 == int32(0) {
+															} else {
+																if v158 != int32(1) {
+																	v173 = v156
+																	v179 = int32(0)
+																	for {
+																		v189 = v155 + int32(base.Ui32(v173)>>(uint(int32(3))%32))
+																		v190 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189))))
+																		if int32(base.Ui32(v190)>>(uint(v173&int32(6))%32))&int32(1) != 0 {
+																			v196 = int32(49)
+																		} else {
+																			v196 = int32(48)
+																		}
+																		*(*uint8)(unsafe.Add(mBase, uint32(v161+v173))) = uint8(v196)
+																		v198 = int32(1)
+																		v199 = v173 | v198
+																		v203 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189))))
+																		if int32(base.Ui32(v203)>>(uint(v199&int32(7))%32))&v198 != 0 {
+																			v209 = int32(49)
+																		} else {
+																			v209 = int32(48)
+																		}
+																		*(*uint8)(unsafe.Add(mBase, uint32(v161+v199))) = uint8(v209)
+																		v211 = int32(2)
+																		v212 = v173 + v211
+																		v214 = v179 + v211
+																		if v214 != v158&int32(4094) {
+																			v173 = v212
+																			v179 = v214
+																			continue
+																		} else {
+																			break
+																		}
+																		break
+																	}
+																	v220 = v212
+																} else {
+																	v220 = v156
+																}
+																if v158&int32(1) == int32(0) {
+																} else {
+																	v241 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v155+int32(base.Ui32(v220)>>(uint(int32(3))%32))))))
+																	if int32(base.Ui32(v241)>>(uint(v220&int32(7))%32))&int32(1) != 0 {
+																		v247 = int32(49)
+																	} else {
+																		v247 = int32(48)
+																	}
+																	*(*uint8)(unsafe.Add(mBase, uint32(v161+v220))) = uint8(v247)
+																}
+															}
+															v265 = int32(0)
+															*(*uint8)(unsafe.Add(mBase, uint32(v161+v158))) = uint8(v265)
+															v267 = F_cstring_to_text(m, v161)
+															mBase = m.M
+															v268 = m.ExcPending
+															if v268 != 0 {
+																return int32(0)
+															} else {
+																*(*int32)(unsafe.Add(mBase, uint32(v18)+76)) = v267
+																v270 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v119)+20)))
+																v279 = v270
+																if v279&int32(8) != 0 {
+																	v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																	v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+																	*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+																	v301 = v292
+																} else {
+																	v298 = int32(1)
+																	*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+																	v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																	v301 = v300
+																}
+																v302 = v100 - v301
+																v304 = v302 + int32(4)
+																v305 = F_palloc(m, v304)
+																mBase = m.M
+																v306 = m.ExcPending
+																if v306 != 0 {
+																	return int32(0)
+																} else {
+																	*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+																	if int32(0) < v302 {
+																		v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																		if v302 != 0 {
+																			v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																			mBase = m.M
+																		} else {
+																		}
+																	} else {
+																	}
+																	*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+																	v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+																	v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+																	mBase = m.M
+																	v348 = m.ExcPending
+																	if v348 != 0 {
+																		return int32(0)
+																	} else {
+																		v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																		v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																		mBase = m.M
+																		v351 = m.ExcPending
+																		if v351 != 0 {
+																			return int32(0)
+																		} else {
+																			v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																			v353 = int32(1)
+																			v354 = v352 + v353
+																			*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																			v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																			*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																			v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																			*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																			v374 = v350
+																			m.G0 = v18 + int32(96)
+																			return v374
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														v271 = int32(1)
+														*(*uint8)(unsafe.Add(mBase, uint32(v18)+27)) = uint8(v271)
+														v279 = v131
+														if v279&int32(8) != 0 {
+															v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+															v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+															*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+															v301 = v292
+														} else {
+															v298 = int32(1)
+															*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+															v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+															v301 = v300
+														}
+														v302 = v100 - v301
+														v304 = v302 + int32(4)
+														v305 = F_palloc(m, v304)
+														mBase = m.M
+														v306 = m.ExcPending
+														if v306 != 0 {
+															return int32(0)
+														} else {
+															*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+															if int32(0) < v302 {
+																v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+																if v302 != 0 {
+																	v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																	mBase = m.M
+																} else {
+																}
+															} else {
+															}
+															*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+															v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+															v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+															mBase = m.M
+															v348 = m.ExcPending
+															if v348 != 0 {
+																return int32(0)
+															} else {
+																v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+																v350 = F_HeapTupleHeaderGetDatum(m, v349)
+																mBase = m.M
+																v351 = m.ExcPending
+																if v351 != 0 {
+																	return int32(0)
+																} else {
+																	v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																	v353 = int32(1)
+																	v354 = v352 + v353
+																	*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																	v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																	*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																	v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																	*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																	v374 = v350
+																	m.G0 = v18 + int32(96)
+																	return v374
+																}
+															}
+														}
+													}
+												} else {
+													v273 = int32(1)
+													*(*uint8)(unsafe.Add(mBase, uint32(v18)+27)) = uint8(v273)
+													v279 = v131
+													if v279&int32(8) != 0 {
+														v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+														v296 = *(*int32)(unsafe.Add(mBase, uint32(v119+v292-int32(4))))
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+80)) = v296
+														v301 = v292
+													} else {
+														v298 = int32(1)
+														*(*uint8)(unsafe.Add(mBase, uint32(v18)+28)) = uint8(v298)
+														v300 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+														v301 = v300
+													}
+													v302 = v100 - v301
+													v304 = v302 + int32(4)
+													v305 = F_palloc(m, v304)
+													mBase = m.M
+													v306 = m.ExcPending
+													if v306 != 0 {
+														return int32(0)
+													} else {
+														*(*int32)(unsafe.Add(mBase, uint32(v305))) = v304 << (uint(int32(2)) % 32)
+														if int32(0) < v302 {
+															v314 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+22)))
+															if v302 != 0 {
+																v316 = F__emscripten_memcpy_bulkmem(m, v305+int32(4), v119+v314, v302)
+																mBase = m.M
+															} else {
+															}
+														} else {
+														}
+														*(*int32)(unsafe.Add(mBase, uint32(v18)+84)) = v305
+														v342 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+														v347 = F_heap_form_tuple(m, v342, v18+int32(32), v18+int32(16))
+														mBase = m.M
+														v348 = m.ExcPending
+														if v348 != 0 {
+															return int32(0)
+														} else {
+															v349 = *(*int32)(unsafe.Add(mBase, uint32(v347)+16))
+															v350 = F_HeapTupleHeaderGetDatum(m, v349)
+															mBase = m.M
+															v351 = m.ExcPending
+															if v351 != 0 {
+																return int32(0)
+															} else {
+																v352 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)))
+																v353 = int32(1)
+																v354 = v352 + v353
+																*(*uint16)(unsafe.Add(mBase, uint32(v87)+8)) = uint16(v354)
+																v356 = *(*int64)(unsafe.Add(mBase, uint32(v83)))
+																*(*int64)(unsafe.Add(mBase, uint32(v83))) = v356 + int64(1)
+																v360 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+																*(*int32)(unsafe.Add(mBase, uint32(v360)+20)) = v353
+																v374 = v350
+																m.G0 = v18 + int32(96)
+																return v374
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} else {
+						F_end_MultiFuncCall(m, l0)
+						mBase = m.M
+						v364 = m.ExcPending
+						if v364 != 0 {
+							return int32(0)
+						} else {
+							v365 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v365)+20)) = int32(2)
+							v368 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v368)
+							v374 = int32(0)
+							m.G0 = v18 + int32(96)
+							return v374
+						}
+					}
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v393 = m.ExcPending
+				if v393 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(16797828))
+					mBase = m.M
+					v396 = m.ExcPending
+					if v396 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_heap_page_items_8), int32(0))
+						mBase = m.M
+						v400 = m.ExcPending
+						if v400 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_heap_page_items_1), int32(140), int32(_a_F_heap_page_items_2))
+							mBase = m.M
+							v405 = m.ExcPending
+							if v405 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_heap_page_prune_and_freeze(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32) {
 	mBase := m.M
 	_ = mBase

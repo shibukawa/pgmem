@@ -4,10 +4,14 @@ import (
 	base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 	_ "unsafe"
 )
+//go:linkname F_brin_build_desc github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_brin_build_desc
+func F_brin_build_desc(m *base.Module, l0 int32) int32
 //go:linkname F_add_values_to_range github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_add_values_to_range
 func F_add_values_to_range(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_brinsummarize github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_brinsummarize
 func F_brinsummarize(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+//go:linkname F_brin_free_desc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_brin_free_desc
+func F_brin_free_desc(m *base.Module, l0 int32)
 //go:linkname F_minmax_get_strategy_procinfo github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_minmax_get_strategy_procinfo
 func F_minmax_get_strategy_procinfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_brin_doinsert github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_brin_doinsert
@@ -60,6 +64,8 @@ func F_SendRowDescriptionMessage(m *base.Module, l0 int32, l1 int32, l2 int32, l
 func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_try_relation_open github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_try_relation_open
 func F_try_relation_open(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_relation_openrv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_openrv
+func F_relation_openrv(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_close github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_relation_close
 func F_relation_close(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
@@ -3896,6 +3902,8 @@ func F_pg_md5_hash(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_pg_prng_uint64_range(m *base.Module, l0 int32, l1 int64, l2 int64) int64
 //go:linkname F_pg_prng_double github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_prng_double
 func F_pg_prng_double(m *base.Module, l0 int32) float64
+//go:linkname F_forkname_to_number github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_forkname_to_number
+func F_forkname_to_number(m *base.Module, l0 int32) int32
 //go:linkname F_GetRelationPath github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetRelationPath
 func F_GetRelationPath(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_rmtree github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_rmtree
@@ -4150,6 +4158,14 @@ func F_BTreeTupleGetHeapTIDCareful(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_heap_entry_is_visible(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_bt_report_duplicate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_bt_report_duplicate
 func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+//go:linkname F_verify_brin_page github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_verify_brin_page
+func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_bt_index_block_validate github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_bt_index_block_validate
+func F_bt_index_block_validate(m *base.Module, l0 int32, l1 int64)
+//go:linkname F_GetBTPageStatistics github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetBTPageStatistics
+func F_GetBTPageStatistics(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_get_raw_page_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_raw_page_internal
+func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_tidhash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tidhash_insert_hash_internal
 func F_tidhash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_HnswInitSupport github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_HnswInitSupport

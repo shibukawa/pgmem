@@ -7702,3 +7702,164 @@ func F_gist_poly_compress(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_verify_gist_page(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
+	var v64 int32
+	_ = v64
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
+	var v78 int32
+	_ = v78
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v96 int32
+	_ = v96
+	var v103 int32
+	_ = v103
+	v5 = m.G0
+	v7 = v5 + int32(-64)
+	m.G0 = v7
+	v9 = F_get_page_from_raw(m, l0)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+14)))
+		if v13 != 0 {
+			v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+19)))
+			v17 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+16)))
+			if (v14<<(uint(int32(8))%32)-v17)&int32(_a_F_verify_gist_page_0) != int32(16) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v35 = m.ExcPending
+				if v35 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(50856066))
+					mBase = m.M
+					v38 = m.ExcPending
+					if v38 != 0 {
+						return int32(0)
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(_a_F_verify_gist_page_1)
+						F_errmsg(m, int32(_a_F_verify_gist_page_2), v5+int32(-16))
+						mBase = m.M
+						v48 = m.ExcPending
+						if v48 != 0 {
+							return int32(0)
+						} else {
+							v49 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+16)))
+							v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+19)))
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(16)
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = (v50<<(uint(int32(8))%32) - v49) & int32(_a_F_verify_gist_page_0)
+							F_errdetail(m, int32(_a_F_verify_gist_page_3), v5+int32(-32))
+							mBase = m.M
+							v64 = m.ExcPending
+							if v64 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_verify_gist_page_4), int32(56), int32(_a_F_verify_gist_page_5))
+								mBase = m.M
+								v71 = m.ExcPending
+								if v71 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v23 = v9 + v17
+				v24 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+14)))
+				if v24 != int32(_a_F_verify_gist_page_6) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v75 = m.ExcPending
+					if v75 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(50856066))
+						mBase = m.M
+						v78 = m.ExcPending
+						if v78 != 0 {
+							return int32(0)
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(_a_F_verify_gist_page_1)
+							F_errmsg(m, int32(_a_F_verify_gist_page_2), v5+int32(-48))
+							mBase = m.M
+							v88 = m.ExcPending
+							if v88 != 0 {
+								return int32(0)
+							} else {
+								v89 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23)+14)))
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v89
+								*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(_a_F_verify_gist_page_6)
+								F_errdetail(m, int32(_a_F_verify_gist_page_7), v7)
+								mBase = m.M
+								v96 = m.ExcPending
+								if v96 != 0 {
+									return int32(0)
+								} else {
+									F_errfinish(m, int32(_a_F_verify_gist_page_4), int32(65), int32(_a_F_verify_gist_page_5))
+									mBase = m.M
+									v103 = m.ExcPending
+									if v103 != 0 {
+										return int32(0)
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					m.G0 = v7 - int32(-64)
+					return v9
+				}
+			}
+		} else {
+			m.G0 = v7 - int32(-64)
+			return v9
+		}
+	}
+}
