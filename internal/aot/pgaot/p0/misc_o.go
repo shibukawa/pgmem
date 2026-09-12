@@ -1092,13 +1092,13 @@ func F_OwnLatch(m *base.Module, l0 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-			F_errmsg_internal(m, int32(458754), v6)
+			F_errmsg_internal(m, int32(461070), v6)
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(476300), int32(135), int32(310914))
+				F_errfinish(m, int32(478729), int32(135), int32(312377))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
@@ -1440,7 +1440,7 @@ L13:
 	goto L14
 L14:
 	;
-	v56 = F_uint32in_subr(m, v48, v11+int32(12), int32(415899), v15)
+	v56 = F_uint32in_subr(m, v48, v11+int32(12), int32(418045), v15)
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -1665,7 +1665,7 @@ L6:
 L7:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v15)+156)) = int64(601295421576)
-	v35 = F_hash_create(m, int32(381499), int32(256), v15+int32(140), int32(40))
+	v35 = F_hash_create(m, int32(383458), int32(256), v15+int32(140), int32(40))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -2499,7 +2499,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v83)+16)) = v379
-	v388 = F_MakeSingleTupleTableSlot(m, v379, int32(1577644))
+	v388 = F_MakeSingleTupleTableSlot(m, v379, int32(1580140))
 	mBase = m.M
 	v389 = m.ExcPending
 	if v389 != 0 {
@@ -2715,7 +2715,7 @@ L35:
 	}
 L36:
 	;
-	v76 = int32(4443856)
+	v76 = int32(4449520)
 	v77 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)+20))
@@ -3071,7 +3071,7 @@ L78:
 	goto L79
 L79:
 	;
-	F_TupleDescInitEntry(m, v260, base.I32_extend16_s(v259), int32(322502), int32(23), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v260, base.I32_extend16_s(v259), int32(324049), int32(23), int32(-1), int32(0))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -3167,7 +3167,7 @@ L89:
 	goto L3
 L90:
 	;
-	F_errmsg_internal(m, int32(59250), int32(0))
+	F_errmsg_internal(m, int32(59578), int32(0))
 	mBase = m.M
 	v340 = m.ExcPending
 	if v340 != 0 {
@@ -3177,7 +3177,7 @@ L90:
 	}
 L91:
 	;
-	F_errfinish(m, int32(472612), int32(127), int32(220699))
+	F_errfinish(m, int32(474990), int32(127), int32(221788))
 	mBase = m.M
 	v345 = m.ExcPending
 	if v345 != 0 {
@@ -3192,7 +3192,7 @@ L92:
 	}
 L93:
 	;
-	F_errmsg_internal(m, int32(59250), int32(0))
+	F_errmsg_internal(m, int32(59578), int32(0))
 	mBase = m.M
 	v353 = m.ExcPending
 	if v353 != 0 {
@@ -3202,7 +3202,7 @@ L93:
 	}
 L94:
 	;
-	F_errfinish(m, int32(472612), int32(144), int32(220699))
+	F_errfinish(m, int32(474990), int32(144), int32(221788))
 	mBase = m.M
 	v358 = m.ExcPending
 	if v358 != 0 {
@@ -3217,7 +3217,7 @@ L95:
 	}
 L96:
 	;
-	F_errmsg_internal(m, int32(339099), int32(0))
+	F_errmsg_internal(m, int32(340754), int32(0))
 	mBase = m.M
 	v366 = m.ExcPending
 	if v366 != 0 {
@@ -3227,7 +3227,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(472612), int32(146), int32(220699))
+	F_errfinish(m, int32(474990), int32(146), int32(221788))
 	mBase = m.M
 	v371 = m.ExcPending
 	if v371 != 0 {
@@ -3353,7 +3353,7 @@ L112:
 	goto L108
 L113:
 	;
-	F_errmsg_internal(m, int32(57842), int32(0))
+	F_errmsg_internal(m, int32(58170), int32(0))
 	mBase = m.M
 	v468 = m.ExcPending
 	if v468 != 0 {
@@ -3363,7 +3363,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(476572), int32(4770), int32(304946))
+	F_errfinish(m, int32(479001), int32(4770), int32(306346))
 	mBase = m.M
 	v473 = m.ExcPending
 	if v473 != 0 {
@@ -3378,7 +3378,7 @@ L115:
 	}
 L116:
 	;
-	F_errmsg_internal(m, int32(139380), int32(0))
+	F_errmsg_internal(m, int32(140267), int32(0))
 	mBase = m.M
 	v488 = m.ExcPending
 	if v488 != 0 {
@@ -3388,7 +3388,7 @@ L116:
 	}
 L117:
 	;
-	F_errfinish(m, int32(472612), int32(251), int32(220699))
+	F_errfinish(m, int32(474990), int32(251), int32(221788))
 	mBase = m.M
 	v493 = m.ExcPending
 	if v493 != 0 {
@@ -3454,7 +3454,7 @@ func F_output_plugin_error_callback(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v20
 			v30 = int64(base.Ui64(v24) >> (uint(int64(32)) % 64))
 			*(*uint32)(unsafe.Add(mBase, uint32(v9)+28)) = uint32(v30)
-			F_errcontext_msg(m, int32(493609), v9+int32(16))
+			F_errcontext_msg(m, int32(496054), v9+int32(16))
 			mBase = m.M
 			v36 = m.ExcPending
 			if v36 != 0 {
@@ -3467,7 +3467,7 @@ func F_output_plugin_error_callback(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v21
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v18
 			*(*int32)(unsafe.Add(mBase, uint32(v9))) = v20
-			F_errcontext_msg(m, int32(304500), v9)
+			F_errcontext_msg(m, int32(305900), v9)
 			mBase = m.M
 			v42 = m.ExcPending
 			if v42 != 0 {

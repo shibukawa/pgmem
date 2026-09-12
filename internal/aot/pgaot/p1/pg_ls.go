@@ -194,7 +194,7 @@ L16:
 	v37 = v27 + int32(19)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v37
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-	v46 = F_pg_snprintf(m, v9+int32(128), int32(2048), int32(167509), v9+int32(16))
+	v46 = F_pg_snprintf(m, v9+int32(128), int32(2048), int32(168545), v9+int32(16))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -256,7 +256,7 @@ L23:
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(128)
-	F_errmsg(m, int32(284292), v9)
+	F_errmsg(m, int32(285574), v9)
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {
@@ -266,7 +266,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(477261), int32(612), int32(155517))
+	F_errfinish(m, int32(479690), int32(612), int32(156524))
 	mBase = m.M
 	v77 = m.ExcPending
 	if v77 != 0 {
@@ -370,7 +370,7 @@ func F_pg_ls_logdir(m *base.Module, l0 int32) int32 {
 func F_pg_ls_waldir(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_pg_ls_dir_files(m, l0, int32(294639), int32(0))
+	F_pg_ls_dir_files(m, l0, int32(295996), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

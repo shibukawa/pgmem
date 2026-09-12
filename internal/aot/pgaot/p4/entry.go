@@ -207,7 +207,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											if v88 != 0 {
 												return
 											} else {
-												F_XLogRegisterBufData(m, int32(0), int32(4338336), int32(4))
+												F_XLogRegisterBufData(m, int32(0), int32(4344000), int32(4))
 												mBase = m.M
 												v93 = m.ExcPending
 												if v93 != 0 {
@@ -244,7 +244,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 									if v88 != 0 {
 										return
 									} else {
-										F_XLogRegisterBufData(m, int32(0), int32(4338336), int32(4))
+										F_XLogRegisterBufData(m, int32(0), int32(4344000), int32(4))
 										mBase = m.M
 										v93 = m.ExcPending
 										if v93 != 0 {
@@ -277,13 +277,13 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 						v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 						v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v110 + int32(4)
-						F_errmsg_internal(m, int32(672049), v11)
+						F_errmsg_internal(m, int32(674548), v11)
 						mBase = m.M
 						v116 = m.ExcPending
 						if v116 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(477584), int32(571), int32(391096))
+							F_errfinish(m, int32(480013), int32(571), int32(393055))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -362,7 +362,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										if v88 != 0 {
 											return
 										} else {
-											F_XLogRegisterBufData(m, int32(0), int32(4338336), int32(4))
+											F_XLogRegisterBufData(m, int32(0), int32(4344000), int32(4))
 											mBase = m.M
 											v93 = m.ExcPending
 											if v93 != 0 {
@@ -399,7 +399,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 								if v88 != 0 {
 									return
 								} else {
-									F_XLogRegisterBufData(m, int32(0), int32(4338336), int32(4))
+									F_XLogRegisterBufData(m, int32(0), int32(4344000), int32(4))
 									mBase = m.M
 									v93 = m.ExcPending
 									if v93 != 0 {
@@ -432,13 +432,13 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 					v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 					v110 = *(*int32)(unsafe.Add(mBase, uint32(v109)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = v110 + int32(4)
-					F_errmsg_internal(m, int32(672049), v11)
+					F_errmsg_internal(m, int32(674548), v11)
 					mBase = m.M
 					v116 = m.ExcPending
 					if v116 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(477584), int32(571), int32(391096))
+						F_errfinish(m, int32(480013), int32(571), int32(393055))
 						mBase = m.M
 						v121 = m.ExcPending
 						if v121 != 0 {

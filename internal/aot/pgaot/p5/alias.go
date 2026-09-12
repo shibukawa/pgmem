@@ -4324,6 +4324,8 @@ func F_get_dirent_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 func F_hash_bytes(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pg_getaddrinfo_all github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_getaddrinfo_all
 func F_pg_getaddrinfo_all(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_json_lex_number github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_json_lex_number
+func F_json_lex_number(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_makeJsonLexContextCstringLen github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_makeJsonLexContextCstringLen
 func F_makeJsonLexContextCstringLen(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_freeJsonLexContext github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_freeJsonLexContext
@@ -4654,6 +4656,22 @@ func F_make_trigrams(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_cnt_sml(m *base.Module, l0 int32, l1 int32, l2 int32) float32
 //go:linkname F_calc_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_calc_word_similarity
 func F_calc_word_similarity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float32
+//go:linkname F_hstoreUpgrade github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUpgrade
+func F_hstoreUpgrade(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreUniquePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUniquePairs
+func F_hstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstorePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstorePairs
+func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstore_defined github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_defined
+func F_hstore_defined(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_delete github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_delete
+func F_hstore_delete(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_contains
+func F_hstore_contains(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_avals github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_avals
+func F_hstore_avals(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_skeys
+func F_hstore_skeys(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

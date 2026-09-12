@@ -32,6 +32,8 @@ func F_PostgresMainLongJmp(m *base.Module)
 func F_PostgresMainLoopOnce(m *base.Module)
 //go:linkname F_PostgresSendReadyForQueryIfNecessary github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_PostgresSendReadyForQueryIfNecessary
 func F_PostgresSendReadyForQueryIfNecessary(m *base.Module)
+//go:linkname F_float4up github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_float4up
+func F_float4up(m *base.Module, l0 int32) int32
 //go:linkname F_comparetup_index_hash_tiebreak github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_comparetup_index_hash_tiebreak
 func F_comparetup_index_hash_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_clear_setitimer github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_clear_setitimer
@@ -816,6 +818,298 @@ func F_strict_word_similarity_commutator_op(m *base.Module, l0 int32) int32
 func F_strict_word_similarity_dist_op(m *base.Module, l0 int32) int32
 //go:linkname F_strict_word_similarity_dist_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strict_word_similarity_dist_commutator_op
 func F_strict_word_similarity_dist_commutator_op(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreUpgrade github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUpgrade
+func F_hstoreUpgrade(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_version_diag github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_version_diag
+func F_pg_finfo_hstore_version_diag(m *base.Module) int32
+//go:linkname F_hstore_version_diag github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstore_version_diag
+func F_hstore_version_diag(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_hstore
+func F_pg_finfo_gin_extract_hstore(m *base.Module) int32
+//go:linkname F_gin_extract_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_hstore
+func F_gin_extract_hstore(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_hstore_query github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_hstore_query
+func F_pg_finfo_gin_extract_hstore_query(m *base.Module) int32
+//go:linkname F_gin_extract_hstore_query github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_hstore_query
+func F_gin_extract_hstore_query(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_consistent_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_consistent_hstore
+func F_pg_finfo_gin_consistent_hstore(m *base.Module) int32
+//go:linkname F_gin_consistent_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_consistent_hstore
+func F_gin_consistent_hstore(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ghstore_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ghstore_in
+func F_pg_finfo_ghstore_in(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_out github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_ghstore_out
+func F_pg_finfo_ghstore_out(m *base.Module) int32
+//go:linkname F_ghstore_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ghstore_in
+func F_ghstore_in(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_out github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ghstore_out
+func F_ghstore_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_ghstore_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_ghstore_consistent
+func F_pg_finfo_ghstore_consistent(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_ghstore_compress
+func F_pg_finfo_ghstore_compress(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ghstore_decompress
+func F_pg_finfo_ghstore_decompress(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ghstore_penalty
+func F_pg_finfo_ghstore_penalty(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_ghstore_picksplit
+func F_pg_finfo_ghstore_picksplit(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_union github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_ghstore_union
+func F_pg_finfo_ghstore_union(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_same github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_ghstore_same
+func F_pg_finfo_ghstore_same(m *base.Module) int32
+//go:linkname F_pg_finfo_ghstore_options github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_ghstore_options
+func F_pg_finfo_ghstore_options(m *base.Module) int32
+//go:linkname F_ghstore_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ghstore_compress
+func F_ghstore_compress(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_same github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ghstore_same
+func F_ghstore_same(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_union github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ghstore_union
+func F_ghstore_union(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ghstore_penalty
+func F_ghstore_penalty(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ghstore_picksplit
+func F_ghstore_picksplit(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ghstore_consistent
+func F_ghstore_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_ghstore_options github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ghstore_options
+func F_ghstore_options(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_hstore
+func F_Pg_magic_func_hstore(m *base.Module) int32
+//go:linkname F_pg_finfo_tconvert github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_tconvert
+func F_pg_finfo_tconvert(m *base.Module) int32
+//go:linkname F_tconvert github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tconvert
+func F_tconvert(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_from_text github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_from_text
+func F_hstore_from_text(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreUniquePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUniquePairs
+func F_hstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstoreCheckKeyLen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstoreCheckKeyLen
+func F_hstoreCheckKeyLen(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreCheckValLen github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstoreCheckValLen
+func F_hstoreCheckValLen(m *base.Module, l0 int32) int32
+//go:linkname F_hstorePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstorePairs
+func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pg_finfo_hstore_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_in
+func F_pg_finfo_hstore_in(m *base.Module) int32
+//go:linkname F_hstore_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_in
+func F_hstore_in(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_recv
+func F_pg_finfo_hstore_recv(m *base.Module) int32
+//go:linkname F_hstore_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_recv
+func F_hstore_recv(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_from_text github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_from_text
+func F_pg_finfo_hstore_from_text(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_from_arrays github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_from_arrays
+func F_pg_finfo_hstore_from_arrays(m *base.Module) int32
+//go:linkname F_hstore_from_arrays github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstore_from_arrays
+func F_hstore_from_arrays(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_from_array github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_from_array
+func F_pg_finfo_hstore_from_array(m *base.Module) int32
+//go:linkname F_hstore_from_array github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_from_array
+func F_hstore_from_array(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_from_record github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_hstore_from_record
+func F_pg_finfo_hstore_from_record(m *base.Module) int32
+//go:linkname F_hstore_from_record github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_from_record
+func F_hstore_from_record(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_populate_record github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_hstore_populate_record
+func F_pg_finfo_hstore_populate_record(m *base.Module) int32
+//go:linkname F_hstore_populate_record github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstore_populate_record
+func F_hstore_populate_record(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_out github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_out
+func F_pg_finfo_hstore_out(m *base.Module) int32
+//go:linkname F_hstore_out github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_out
+func F_hstore_out(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_send github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_send
+func F_pg_finfo_hstore_send(m *base.Module) int32
+//go:linkname F_hstore_send github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstore_send
+func F_hstore_send(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_to_json_loose github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_to_json_loose
+func F_pg_finfo_hstore_to_json_loose(m *base.Module) int32
+//go:linkname F_hstore_to_json_loose github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_to_json_loose
+func F_hstore_to_json_loose(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_to_json github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_to_json
+func F_pg_finfo_hstore_to_json(m *base.Module) int32
+//go:linkname F_hstore_to_json github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_to_json
+func F_hstore_to_json(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_to_jsonb github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_to_jsonb
+func F_pg_finfo_hstore_to_jsonb(m *base.Module) int32
+//go:linkname F_hstore_to_jsonb github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_to_jsonb
+func F_hstore_to_jsonb(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_to_jsonb_loose github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_to_jsonb_loose
+func F_pg_finfo_hstore_to_jsonb_loose(m *base.Module) int32
+//go:linkname F_hstore_to_jsonb_loose github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_to_jsonb_loose
+func F_hstore_to_jsonb_loose(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_fetchval github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_fetchval
+func F_pg_finfo_fetchval(m *base.Module) int32
+//go:linkname F_fetchval github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_fetchval
+func F_fetchval(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_fetchval github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstore_fetchval
+func F_hstore_fetchval(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_exists
+func F_pg_finfo_exists(m *base.Module) int32
+//go:linkname F_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_exists
+func F_exists(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_exists
+func F_hstore_exists(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_defined github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_defined
+func F_pg_finfo_defined(m *base.Module) int32
+//go:linkname F_defined github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_defined
+func F_defined(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_defined github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_defined
+func F_hstore_defined(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_delete github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_delete
+func F_pg_finfo_delete(m *base.Module) int32
+//go:linkname F_delete github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_delete
+func F_delete(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_delete github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_delete
+func F_hstore_delete(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hs_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hs_concat
+func F_pg_finfo_hs_concat(m *base.Module) int32
+//go:linkname F_hs_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hs_concat
+func F_hs_concat(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_concat
+func F_hstore_concat(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hs_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hs_contains
+func F_pg_finfo_hs_contains(m *base.Module) int32
+//go:linkname F_hs_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hs_contains
+func F_hs_contains(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_contains
+func F_hstore_contains(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hs_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hs_contained
+func F_pg_finfo_hs_contained(m *base.Module) int32
+//go:linkname F_hs_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hs_contained
+func F_hs_contained(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_akeys github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_akeys
+func F_pg_finfo_akeys(m *base.Module) int32
+//go:linkname F_akeys github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_akeys
+func F_akeys(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_akeys github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstore_akeys
+func F_hstore_akeys(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_avals github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_avals
+func F_pg_finfo_avals(m *base.Module) int32
+//go:linkname F_avals github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_avals
+func F_avals(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_avals github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_avals
+func F_hstore_avals(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_skeys
+func F_pg_finfo_skeys(m *base.Module) int32
+//go:linkname F_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_skeys
+func F_skeys(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_skeys
+func F_hstore_skeys(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_svals github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_svals
+func F_pg_finfo_svals(m *base.Module) int32
+//go:linkname F_svals github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_svals
+func F_svals(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_svals github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_hstore_svals
+func F_hstore_svals(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_each github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_each
+func F_pg_finfo_each(m *base.Module) int32
+//go:linkname F_each github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_each
+func F_each(m *base.Module, l0 int32) int32
+//go:linkname F_hstore_each github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_each
+func F_hstore_each(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreFindKey github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstoreFindKey
+func F_hstoreFindKey(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_hstoreArrayToPairs github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstoreArrayToPairs
+func F_hstoreArrayToPairs(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_pg_finfo_hstore_fetchval github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_fetchval
+func F_pg_finfo_hstore_fetchval(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_exists
+func F_pg_finfo_hstore_exists(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_exists_any github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_exists_any
+func F_pg_finfo_hstore_exists_any(m *base.Module) int32
+//go:linkname F_hstore_exists_any github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_exists_any
+func F_hstore_exists_any(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_exists_all github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_hstore_exists_all
+func F_pg_finfo_hstore_exists_all(m *base.Module) int32
+//go:linkname F_hstore_exists_all github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_exists_all
+func F_hstore_exists_all(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_defined github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_defined
+func F_pg_finfo_hstore_defined(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_delete github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_delete
+func F_pg_finfo_hstore_delete(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_delete_array github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_delete_array
+func F_pg_finfo_hstore_delete_array(m *base.Module) int32
+//go:linkname F_hstore_delete_array github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_delete_array
+func F_hstore_delete_array(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_delete_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_delete_hstore
+func F_pg_finfo_hstore_delete_hstore(m *base.Module) int32
+//go:linkname F_hstore_delete_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_delete_hstore
+func F_hstore_delete_hstore(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_concat github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_concat
+func F_pg_finfo_hstore_concat(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_slice_to_array github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_slice_to_array
+func F_pg_finfo_hstore_slice_to_array(m *base.Module) int32
+//go:linkname F_hstore_slice_to_array github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_slice_to_array
+func F_hstore_slice_to_array(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_slice_to_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_slice_to_hstore
+func F_pg_finfo_hstore_slice_to_hstore(m *base.Module) int32
+//go:linkname F_hstore_slice_to_hstore github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_slice_to_hstore
+func F_hstore_slice_to_hstore(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_akeys github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_akeys
+func F_pg_finfo_hstore_akeys(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_avals github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_hstore_avals
+func F_pg_finfo_hstore_avals(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_to_array github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_to_array
+func F_pg_finfo_hstore_to_array(m *base.Module) int32
+//go:linkname F_hstore_to_array github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_to_array
+func F_hstore_to_array(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_to_matrix github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_to_matrix
+func F_pg_finfo_hstore_to_matrix(m *base.Module) int32
+//go:linkname F_hstore_to_matrix github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_to_matrix
+func F_hstore_to_matrix(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_skeys github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_skeys
+func F_pg_finfo_hstore_skeys(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_svals github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_svals
+func F_pg_finfo_hstore_svals(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_contains
+func F_pg_finfo_hstore_contains(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_contained
+func F_pg_finfo_hstore_contained(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_each github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hstore_each
+func F_pg_finfo_hstore_each(m *base.Module) int32
+//go:linkname F_pg_finfo_hstore_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_hstore_cmp
+func F_pg_finfo_hstore_cmp(m *base.Module) int32
+//go:linkname F_hstore_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_cmp
+func F_hstore_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_eq
+func F_pg_finfo_hstore_eq(m *base.Module) int32
+//go:linkname F_hstore_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_eq
+func F_hstore_eq(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_ne
+func F_pg_finfo_hstore_ne(m *base.Module) int32
+//go:linkname F_hstore_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_ne
+func F_hstore_ne(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_gt
+func F_pg_finfo_hstore_gt(m *base.Module) int32
+//go:linkname F_hstore_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstore_gt
+func F_hstore_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_ge
+func F_pg_finfo_hstore_ge(m *base.Module) int32
+//go:linkname F_hstore_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstore_ge
+func F_hstore_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_lt
+func F_pg_finfo_hstore_lt(m *base.Module) int32
+//go:linkname F_hstore_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_lt
+func F_hstore_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_le github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_hstore_le
+func F_pg_finfo_hstore_le(m *base.Module) int32
+//go:linkname F_hstore_le github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_hstore_le
+func F_hstore_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_hash
+func F_pg_finfo_hstore_hash(m *base.Module) int32
+//go:linkname F_hstore_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hstore_hash
+func F_hstore_hash(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_hash_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_hstore_hash_extended
+func F_pg_finfo_hstore_hash_extended(m *base.Module) int32
+//go:linkname F_hstore_hash_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstore_hash_extended
+func F_hstore_hash_extended(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_hstore_subscript_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_hstore_subscript_handler
+func F_pg_finfo_hstore_subscript_handler(m *base.Module) int32
+//go:linkname F_hstore_subscript_handler github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_subscript_handler
+func F_hstore_subscript_handler(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

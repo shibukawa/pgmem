@@ -205,7 +205,7 @@ L12:
 L13:
 	;
 	v50 = int32(0)
-	v51 = int32(4443856)
+	v51 = int32(4449520)
 	v52 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v54 = *(*int32)(unsafe.Add(mBase, uint32(v28)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v54
@@ -367,14 +367,14 @@ func F_VirtualXactLockTableInsert(m *base.Module, l0 int32) {
 	_ = v14
 	var v19 int32
 	_ = v19
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[296]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[295]))
 	v8 = F_LWLockAcquire(m, v4+int32(584), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return
 	} else {
-		v11 = *(*int32)(unsafe.Add(mBase, _consts[296]))
+		v11 = *(*int32)(unsafe.Add(mBase, _consts[295]))
 		v12 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(v11)+608)) = uint8(v12)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -457,7 +457,7 @@ func F_vac_cleanup_one_index(m *base.Module, l0 int32, l1 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v25
 					*(*float64)(unsafe.Add(mBase, uint32(v8)+40)) = v24
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v23 + int32(4)
-					F_errmsg(m, int32(161299), v6+int32(-32))
+					F_errmsg(m, int32(162306), v6+int32(-32))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -469,13 +469,13 @@ func F_vac_cleanup_one_index(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v38
 						*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v37
 						*(*float64)(unsafe.Add(mBase, uint32(v8))) = v36
-						F_errdetail(m, int32(601064), v8)
+						F_errdetail(m, int32(603509), v8)
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(475417), int32(2687), int32(26206))
+							F_errfinish(m, int32(477846), int32(2687), int32(26513))
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -759,7 +759,7 @@ L30:
 L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v50
-	F_errmsg(m, int32(639033), v10)
+	F_errmsg(m, int32(641478), v10)
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -769,7 +769,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(474084), int32(640), int32(219200))
+	F_errfinish(m, int32(476476), int32(640), int32(220270))
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -792,7 +792,7 @@ func F_vfprintf(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v6 = F___vfprintf_internal(m, l0, l1, l2, int32(5568), int32(5569))
+	v6 = F___vfprintf_internal(m, l0, l1, l2, int32(5722), int32(5723))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -4841,7 +4841,7 @@ L481:
 	goto L483
 L482:
 	;
-	v2045 = int32(4620004)
+	v2045 = int32(4625668)
 	goto L483
 L483:
 	;
@@ -5474,7 +5474,7 @@ func F_view_reloptions(m *base.Module, l0 int32) {
 	_ = v7
 	var v8 int32
 	_ = v8
-	v7 = F_build_reloptions(m, l0, int32(1), int32(512), int32(12), int32(717488), int32(3))
+	v7 = F_build_reloptions(m, l0, int32(1), int32(512), int32(12), int32(719984), int32(3))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return

@@ -670,7 +670,7 @@ L3:
 	}
 L4:
 	;
-	v93 = F_px_find_digest(m, int32(527653), v13+int32(12))
+	v93 = F_px_find_digest(m, int32(530098), v13+int32(12))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -893,7 +893,7 @@ L29:
 	}
 L30:
 	;
-	v100 = F_px_find_digest(m, int32(527653), v13+int32(8))
+	v100 = F_px_find_digest(m, int32(530098), v13+int32(8))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -1033,7 +1033,7 @@ L52:
 	;
 	v165 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(v165)+12))
-	m.T0[v168].(func(*base.Module, int32, int32, int32))(m, v165, int32(649934), int32(3))
+	m.T0[v168].(func(*base.Module, int32, int32, int32))(m, v165, int32(652433), int32(3))
 	mBase = m.M
 	v170 = m.ExcPending
 	if v170 != 0 {
@@ -2771,7 +2771,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v21 = int32(161979)
+	v21 = int32(162986)
 	v22 = l0
 	goto L6
 L3:
@@ -2789,7 +2789,7 @@ L4:
 L5:
 	;
 	if v59 == int32(0) {
-		v301 = int32(4336976)
+		v301 = int32(4342560)
 		goto L4
 	} else {
 		goto L18
@@ -2865,7 +2865,7 @@ L17:
 	goto L7
 L18:
 	;
-	v67 = int32(527653)
+	v67 = int32(530098)
 	v68 = l0
 	goto L20
 L19:
@@ -2946,14 +2946,14 @@ L31:
 	goto L21
 L32:
 	;
-	v301 = int32(4337000)
+	v301 = int32(4342584)
 	goto L4
 L33:
 	;
 	goto L34
 L34:
 	;
-	v115 = int32(161784)
+	v115 = int32(162791)
 	v116 = l0
 	goto L36
 L35:
@@ -3034,14 +3034,14 @@ L47:
 	goto L37
 L48:
 	;
-	v301 = int32(4337024)
+	v301 = int32(4342608)
 	goto L4
 L49:
 	;
 	goto L50
 L50:
 	;
-	v163 = int32(324403)
+	v163 = int32(325986)
 	v164 = l0
 	goto L52
 L51:
@@ -3122,14 +3122,14 @@ L63:
 	goto L53
 L64:
 	;
-	v301 = int32(4337048)
+	v301 = int32(4342632)
 	goto L4
 L65:
 	;
 	goto L66
 L66:
 	;
-	v211 = int32(79299)
+	v211 = int32(79749)
 	v212 = l0
 	goto L68
 L67:
@@ -3210,14 +3210,14 @@ L79:
 	goto L69
 L80:
 	;
-	v301 = int32(4337072)
+	v301 = int32(4342656)
 	goto L4
 L81:
 	;
 	goto L82
 L82:
 	;
-	v259 = int32(79311)
+	v259 = int32(79761)
 	v260 = l0
 	goto L84
 L83:
@@ -3305,7 +3305,7 @@ L97:
 	goto L98
 L98:
 	;
-	v301 = int32(4337096)
+	v301 = int32(4342680)
 	goto L4
 L99:
 	;
@@ -3327,7 +3327,7 @@ L101:
 	v318 = v316 - int32(16)
 	m.G0 = v318
 	*(*int32)(unsafe.Add(mBase, uint32(v318))) = v312
-	v324 = F_open(m, int32(275211), v312, v318)
+	v324 = F_open(m, int32(276493), v312, v318)
 	mBase = m.M
 	if v324 != int32(-1) {
 		goto L108

@@ -823,7 +823,7 @@ L40:
 	v282 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v200)+20)) = uint8(v282)
 	*(*int32)(unsafe.Add(mBase, uint32(v200)+24)) = v268
-	if v269 != int32(1577540) {
+	if v269 != int32(1580036) {
 		goto L39
 	} else {
 		goto L64
@@ -1131,7 +1131,7 @@ L81:
 	v428 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v346)+20)) = uint8(v428)
 	*(*int32)(unsafe.Add(mBase, uint32(v346)+24)) = v414
-	if v415 != int32(1577540) {
+	if v415 != int32(1580036) {
 		goto L80
 	} else {
 		goto L105

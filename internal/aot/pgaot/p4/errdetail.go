@@ -73,7 +73,7 @@ func F_errdetail_log_plural(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	v8 = m.G0
 	v10 = v8 - int32(32)
 	m.G0 = v10
-	v12 = int32(4436780)
+	v12 = int32(4442444)
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[1398]))
 	*(*int32)(unsafe.Add(mBase, _consts[1398])) = v14 + int32(1)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[1399]))
@@ -84,7 +84,7 @@ func F_errdetail_log_plural(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	}
 L1:
 	;
-	v22 = int32(4443856)
+	v22 = int32(4449520)
 	v23 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v26 = v19 * int32(100)
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_consts[1400])))
@@ -243,14 +243,14 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v23
-	v84 = int32(4436780)
+	v84 = int32(4442444)
 	v86 = *(*int32)(unsafe.Add(mBase, _consts[1398]))
 	*(*int32)(unsafe.Add(mBase, _consts[1398])) = v86 - int32(1)
 	m.G0 = v10 + int32(32)
 	return
 L24:
 	;
-	F_errmsg_internal(m, int32(434364), int32(0))
+	F_errmsg_internal(m, int32(436599), int32(0))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -260,7 +260,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(476435), int32(1280), int32(296062))
+	F_errfinish(m, int32(478864), int32(1280), int32(297462))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {

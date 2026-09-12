@@ -34,13 +34,13 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 		if v26 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(337337), int32(0))
+			F_errmsg_internal(m, int32(338992), int32(0))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(475678), int32(370), int32(30472))
+				F_errfinish(m, int32(478107), int32(370), int32(30779))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -61,13 +61,13 @@ func F_bool_accum_inv(m *base.Module, l0 int32) int32 {
 			if v26 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(337337), int32(0))
+				F_errmsg_internal(m, int32(338992), int32(0))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(475678), int32(370), int32(30472))
+					F_errfinish(m, int32(478107), int32(370), int32(30779))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -166,7 +166,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[249])) = int32(50856066)
 		v21 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _consts[422])) = v21
+		*(*int32)(unsafe.Add(mBase, _consts[423])) = v21
 		*(*int32)(unsafe.Add(mBase, _consts[251])) = v21
 		*(*int32)(unsafe.Add(mBase, _consts[252])) = v21
 		v29 = m.T0[v14].(func(*base.Module, int32, int32, int32) int32)(m, l1, l2, l3)
@@ -194,10 +194,10 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							v41 = *(*int32)(unsafe.Add(mBase, _consts[422]))
+							v41 = *(*int32)(unsafe.Add(mBase, _consts[423]))
 							if v41 != 0 {
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v41
-								F_errmsg_internal(m, int32(196369), v9+int32(-16))
+								F_errmsg_internal(m, int32(197405), v9+int32(-16))
 								mBase = m.M
 								v47 = m.ExcPending
 								if v47 != 0 {
@@ -206,7 +206,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 									v59 = *(*int32)(unsafe.Add(mBase, _consts[251]))
 									if v59 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v59
-										F_errdetail_internal(m, int32(196369), v9+int32(-48))
+										F_errdetail_internal(m, int32(197405), v9+int32(-48))
 										mBase = m.M
 										v65 = m.ExcPending
 										if v65 != 0 {
@@ -215,13 +215,13 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											v67 = *(*int32)(unsafe.Add(mBase, _consts[252]))
 											if v67 != 0 {
 												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v67
-												F_errhint(m, int32(196369), v11)
+												F_errhint(m, int32(197405), v11)
 												mBase = m.M
 												v71 = m.ExcPending
 												if v71 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(478038), int32(6836), int32(301038))
+													F_errfinish(m, int32(480467), int32(6836), int32(302438))
 													mBase = m.M
 													v76 = m.ExcPending
 													if v76 != 0 {
@@ -240,7 +240,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 													}
 												}
 											} else {
-												F_errfinish(m, int32(478038), int32(6836), int32(301038))
+												F_errfinish(m, int32(480467), int32(6836), int32(302438))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -263,13 +263,13 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										v67 = *(*int32)(unsafe.Add(mBase, _consts[252]))
 										if v67 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v67
-											F_errhint(m, int32(196369), v11)
+											F_errhint(m, int32(197405), v11)
 											mBase = m.M
 											v71 = m.ExcPending
 											if v71 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(478038), int32(6836), int32(301038))
+												F_errfinish(m, int32(480467), int32(6836), int32(302438))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -288,7 +288,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												}
 											}
 										} else {
-											F_errfinish(m, int32(478038), int32(6836), int32(301038))
+											F_errfinish(m, int32(480467), int32(6836), int32(302438))
 											mBase = m.M
 											v76 = m.ExcPending
 											if v76 != 0 {
@@ -313,7 +313,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 								v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v49
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v48
-								F_errmsg(m, int32(467048), v9+int32(-32))
+								F_errmsg(m, int32(469396), v9+int32(-32))
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
@@ -322,7 +322,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 									v59 = *(*int32)(unsafe.Add(mBase, _consts[251]))
 									if v59 != 0 {
 										*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v59
-										F_errdetail_internal(m, int32(196369), v9+int32(-48))
+										F_errdetail_internal(m, int32(197405), v9+int32(-48))
 										mBase = m.M
 										v65 = m.ExcPending
 										if v65 != 0 {
@@ -331,13 +331,13 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 											v67 = *(*int32)(unsafe.Add(mBase, _consts[252]))
 											if v67 != 0 {
 												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v67
-												F_errhint(m, int32(196369), v11)
+												F_errhint(m, int32(197405), v11)
 												mBase = m.M
 												v71 = m.ExcPending
 												if v71 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(478038), int32(6836), int32(301038))
+													F_errfinish(m, int32(480467), int32(6836), int32(302438))
 													mBase = m.M
 													v76 = m.ExcPending
 													if v76 != 0 {
@@ -356,7 +356,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 													}
 												}
 											} else {
-												F_errfinish(m, int32(478038), int32(6836), int32(301038))
+												F_errfinish(m, int32(480467), int32(6836), int32(302438))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -379,13 +379,13 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 										v67 = *(*int32)(unsafe.Add(mBase, _consts[252]))
 										if v67 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v67
-											F_errhint(m, int32(196369), v11)
+											F_errhint(m, int32(197405), v11)
 											mBase = m.M
 											v71 = m.ExcPending
 											if v71 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(478038), int32(6836), int32(301038))
+												F_errfinish(m, int32(480467), int32(6836), int32(302438))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
@@ -404,7 +404,7 @@ func F_call_bool_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 												}
 											}
 										} else {
-											F_errfinish(m, int32(478038), int32(6836), int32(301038))
+											F_errfinish(m, int32(480467), int32(6836), int32(302438))
 											mBase = m.M
 											v76 = m.ExcPending
 											if v76 != 0 {
@@ -683,7 +683,7 @@ L27:
 	}
 L28:
 	;
-	v75 = F_pg_strncasecmp(m, l0, int32(229579), v59)
+	v75 = F_pg_strncasecmp(m, l0, int32(230688), v59)
 	mBase = m.M
 	if v75 != 0 {
 		goto L23
@@ -692,7 +692,7 @@ L28:
 	}
 L29:
 	;
-	v71 = F_pg_strncasecmp(m, l0, int32(148083), v59)
+	v71 = F_pg_strncasecmp(m, l0, int32(149090), v59)
 	mBase = m.M
 	if v71 == int32(0) {
 		goto L22
@@ -701,7 +701,7 @@ L29:
 	}
 L30:
 	;
-	v67 = F_pg_strncasecmp(m, l0, int32(345308), v59)
+	v67 = F_pg_strncasecmp(m, l0, int32(347024), v59)
 	mBase = m.M
 	if v67 != 0 {
 		goto L23
@@ -710,7 +710,7 @@ L30:
 	}
 L31:
 	;
-	v65 = F_pg_strncasecmp(m, l0, int32(328733), v59)
+	v65 = F_pg_strncasecmp(m, l0, int32(330316), v59)
 	mBase = m.M
 	if v65 != 0 {
 		goto L23
@@ -757,7 +757,7 @@ L39:
 	goto L40
 L40:
 	;
-	v83 = F_pg_strncasecmp(m, l0, int32(260641), v82)
+	v83 = F_pg_strncasecmp(m, l0, int32(261797), v82)
 	mBase = m.M
 	if v83 == int32(0) {
 		goto L22
@@ -766,7 +766,7 @@ L40:
 	}
 L41:
 	;
-	v87 = F_pg_strncasecmp(m, l0, int32(323540), v82)
+	v87 = F_pg_strncasecmp(m, l0, int32(325123), v82)
 	mBase = m.M
 	if v87 != 0 {
 		goto L23

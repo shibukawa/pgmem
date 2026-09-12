@@ -107,7 +107,7 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto citext pg_trgm"
+CONTRIB_MODULES="pgcrypto citext pg_trgm hstore"
 for n in $CONTRIB_MODULES; do
   MODULE_DIRS="$MODULE_DIRS $n=contrib/$n"
 done

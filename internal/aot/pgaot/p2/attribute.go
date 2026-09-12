@@ -971,7 +971,7 @@ func F_attribute_reloptions(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(717536), int32(2))
+	v7 = F_build_reloptions(m, l0, l1, int32(64), int32(24), int32(720032), int32(2))
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return int32(0)
@@ -1075,18 +1075,18 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 + int32(-64)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 	if v11 == int32(0) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(1571)
 		*(*int64)(unsafe.Add(mBase, uint32(v8)+32)) = int64(51539607560)
-		v24 = F_hash_create(m, int32(381424), int32(256), v6+int32(-48), int32(72))
+		v24 = F_hash_create(m, int32(383383), int32(256), v6+int32(-48), int32(72))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1151])) = v24
-			v30 = *(*int32)(unsafe.Add(mBase, _consts[400]))
+			*(*int32)(unsafe.Add(mBase, _consts[1152])) = v24
+			v30 = *(*int32)(unsafe.Add(mBase, _consts[401]))
 			if v30 == int32(0) {
 				F_CreateCacheMemoryContext(m)
 				mBase = m.M
@@ -1100,7 +1100,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 					if v39 != 0 {
 						return int32(0)
 					} else {
-						v41 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+						v41 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 						v42 = v41
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l1
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
@@ -1163,7 +1163,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 												if v68 != 0 {
 													return int32(0)
 												} else {
-													v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
+													v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
 													v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 													v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 													mBase = m.M
@@ -1186,7 +1186,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															v86 = v82
-															v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+															v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 															v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 															mBase = m.M
 															v94 = m.ExcPending
@@ -1234,7 +1234,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													v86 = v82
-													v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+													v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 													v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 													mBase = m.M
 													v94 = m.ExcPending
@@ -1275,7 +1275,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 										}
 									} else {
 										v86 = v52
-										v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+										v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 										v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 										mBase = m.M
 										v94 = m.ExcPending
@@ -1324,7 +1324,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					v41 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+					v41 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 					v42 = v41
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = l1
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l0
@@ -1387,7 +1387,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 											if v68 != 0 {
 												return int32(0)
 											} else {
-												v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
+												v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
 												v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 												v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 												mBase = m.M
@@ -1410,7 +1410,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														v86 = v82
-														v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+														v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 														v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 														mBase = m.M
 														v94 = m.ExcPending
@@ -1458,7 +1458,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 												return int32(0)
 											} else {
 												v86 = v82
-												v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+												v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 												v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 												mBase = m.M
 												v94 = m.ExcPending
@@ -1499,7 +1499,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 									}
 								} else {
 									v86 = v52
-									v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+									v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 									v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 									mBase = m.M
 									v94 = m.ExcPending
@@ -1605,7 +1605,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 								if v68 != 0 {
 									return int32(0)
 								} else {
-									v70 = *(*int32)(unsafe.Add(mBase, _consts[400]))
+									v70 = *(*int32)(unsafe.Add(mBase, _consts[401]))
 									v71 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
 									v74 = F_MemoryContextAlloc(m, v70, int32(base.Ui32(v71)>>(uint(int32(2))%32)))
 									mBase = m.M
@@ -1628,7 +1628,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											v86 = v82
-											v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+											v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 											v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 											mBase = m.M
 											v94 = m.ExcPending
@@ -1676,7 +1676,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									v86 = v82
-									v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+									v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 									v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 									mBase = m.M
 									v94 = m.ExcPending
@@ -1717,7 +1717,7 @@ func F_get_attribute_options(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					} else {
 						v86 = v52
-						v88 = *(*int32)(unsafe.Add(mBase, _consts[1151]))
+						v88 = *(*int32)(unsafe.Add(mBase, _consts[1152]))
 						v93 = F_hash_search(m, v88, v6+int32(-48), int32(1), int32(0))
 						mBase = m.M
 						v94 = m.ExcPending

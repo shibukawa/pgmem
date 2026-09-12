@@ -19,7 +19,7 @@ func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v4 != 0 {
-		F_s_lock(m, l0, int32(474116), int32(228), int32(216799))
+		F_s_lock(m, l0, int32(476508), int32(228), int32(217869))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -163,7 +163,7 @@ L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l0
 	*(*int64)(unsafe.Add(mBase, uint32(v11))) = l1
-	F_errmsg_internal(m, int32(227697), v11)
+	F_errmsg_internal(m, int32(228806), v11)
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -173,7 +173,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(478078), int32(254), int32(222035))
+	F_errfinish(m, int32(480507), int32(254), int32(223124))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -249,7 +249,7 @@ func F_shm_unlink(m *base.Module, l0 int32) int32 {
 			if int32(2) < v22 {
 				if base.Ui32(v22) < base.Ui32(int32(256)) {
 					v45 = int32(9)
-					v46 = F___memcpy(m, v5, int32(532224), v45)
+					v46 = F___memcpy(m, v5, int32(534669), v45)
 					mBase = m.M
 					v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 					mBase = m.M
@@ -262,7 +262,7 @@ func F_shm_unlink(m *base.Module, l0 int32) int32 {
 				v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9))))
 				if v25 != int32(46) {
 					v45 = int32(9)
-					v46 = F___memcpy(m, v5, int32(532224), v45)
+					v46 = F___memcpy(m, v5, int32(534669), v45)
 					mBase = m.M
 					v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 					mBase = m.M
@@ -271,7 +271,7 @@ func F_shm_unlink(m *base.Module, l0 int32) int32 {
 					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19-int32(1)))))
 					if v30 != int32(46) {
 						v45 = int32(9)
-						v46 = F___memcpy(m, v5, int32(532224), v45)
+						v46 = F___memcpy(m, v5, int32(534669), v45)
 						mBase = m.M
 						v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 						mBase = m.M

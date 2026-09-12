@@ -442,7 +442,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v77
-	F_appendStringInfo(m, l0, int32(467291), v7)
+	F_appendStringInfo(m, l0, int32(469639), v7)
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -592,7 +592,7 @@ L2:
 	}
 L3:
 	;
-	v63 = int32(523754)
+	v63 = int32(526199)
 	goto L2
 L4:
 	;
@@ -607,7 +607,7 @@ L5:
 	}
 L6:
 	;
-	v63 = int32(690467)
+	v63 = int32(692966)
 	goto L2
 L7:
 	;

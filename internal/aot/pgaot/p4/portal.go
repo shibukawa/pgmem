@@ -329,7 +329,7 @@ L32:
 	;
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v64
-	F_errmsg_internal(m, int32(465033), v11)
+	F_errmsg_internal(m, int32(467381), v11)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -339,7 +339,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(471021), int32(270), int32(19320))
+	F_errfinish(m, int32(473369), int32(270), int32(19406))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -512,7 +512,7 @@ L58:
 	;
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v151
-	F_errmsg_internal(m, int32(465033), v11+int32(16))
+	F_errmsg_internal(m, int32(467381), v11+int32(16))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -522,7 +522,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(471021), int32(310), int32(19320))
+	F_errfinish(m, int32(473369), int32(310), int32(19406))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -575,12 +575,12 @@ func F_CreateNewPortal(m *base.Module) int32 {
 	goto L1
 L1:
 	;
-	v9 = int32(4443904)
+	v9 = int32(4449568)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[1446]))
 	v13 = v11 + int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[1446])) = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v13
-	v19 = F_pg_sprintf(m, v5+int32(16), int32(523530), v5)
+	v19 = F_pg_sprintf(m, v5+int32(16), int32(525975), v5)
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -922,9 +922,9 @@ L22:
 	}
 L23:
 	;
-	F_getrusage(m, int32(4367496))
+	F_getrusage(m, int32(4373160))
 	mBase = m.M
-	F___gettimeofday(m, int32(4367648))
+	F___gettimeofday(m, int32(4373312))
 	mBase = m.M
 	goto L26
 L24:
@@ -1057,7 +1057,7 @@ L43:
 	goto L38
 L44:
 	;
-	F_ShowUsage(m, int32(501690))
+	F_ShowUsage(m, int32(504135))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

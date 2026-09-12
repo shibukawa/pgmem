@@ -91,7 +91,7 @@ func F_tuplestore_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = v26
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = v26
 		v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
-		v35 = F_GenerationContextCreate(m, v30, int32(155316), v20, int32(8192), int32(8388608))
+		v35 = F_GenerationContextCreate(m, v30, int32(156323), v20, int32(8192), int32(8388608))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -327,13 +327,13 @@ func F_tuplestore_rescan(m *base.Module, l0 int32) {
 					if v30 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(369457), int32(0))
+						F_errmsg(m, int32(371397), int32(0))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(477047), int32(1308), int32(271424))
+							F_errfinish(m, int32(479476), int32(1308), int32(272679))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
@@ -355,13 +355,13 @@ func F_tuplestore_rescan(m *base.Module, l0 int32) {
 		if v43 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(337083), int32(0))
+			F_errmsg_internal(m, int32(338738), int32(0))
 			mBase = m.M
 			v47 = m.ExcPending
 			if v47 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(477047), int32(1311), int32(271424))
+				F_errfinish(m, int32(479476), int32(1311), int32(272679))
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {

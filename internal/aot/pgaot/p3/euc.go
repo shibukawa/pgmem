@@ -41,7 +41,7 @@ func F_euc_jis_2004_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v17 = int32(0)
-		v27 = F_LocalToUtf(m, v6, v10, v5, int32(4330820), int32(2301792), int32(25), v17, int32(5), base.B2i32(v7 != v17))
+		v27 = F_LocalToUtf(m, v6, v10, v5, int32(4336404), int32(2307088), int32(25), v17, int32(5), base.B2i32(v7 != v17))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -353,11 +353,11 @@ L29:
 	}
 L30:
 	;
-	v123 = int32(2181864)
+	v123 = int32(2187160)
 	goto L28
 L31:
 	;
-	v123 = int32(2181860)
+	v123 = int32(2187156)
 	goto L28
 L32:
 	;
@@ -381,13 +381,13 @@ L35:
 	goto L27
 L36:
 	;
-	v109 = F_BinarySearchRange(m, int32(2182320), int32(47), v70)
+	v109 = F_BinarySearchRange(m, int32(2187616), int32(47), v70)
 	mBase = m.M
 	v126 = v109
 	goto L27
 L37:
 	;
-	v106 = F_BinarySearchRange(m, int32(2182208), int32(24), v70)
+	v106 = F_BinarySearchRange(m, int32(2187504), int32(24), v70)
 	mBase = m.M
 	v126 = v106
 	goto L27
@@ -413,7 +413,7 @@ L40:
 	;
 	switch v70 - int32(8483) {
 	case 0:
-		v123 = int32(2181856)
+		v123 = int32(2187152)
 		goto L28
 	case 1:
 		goto L31
@@ -507,7 +507,7 @@ L53:
 	goto L27
 L54:
 	;
-	v123 = int32(2181868)
+	v123 = int32(2187164)
 	goto L28
 L55:
 	;

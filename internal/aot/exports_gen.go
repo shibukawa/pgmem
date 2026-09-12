@@ -2522,6 +2522,894 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.WordSimilarityOp(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_hstore":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_hstore: want 0 args")
+		}
+		r := pgaot.PgMagicFuncHstore(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "akeys":
+		if len(a) != 1 {
+			panic("aot: akeys: want 1 args")
+		}
+		r := pgaot.Akeys(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "avals":
+		if len(a) != 1 {
+			panic("aot: avals: want 1 args")
+		}
+		r := pgaot.Avals(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "defined":
+		if len(a) != 1 {
+			panic("aot: defined: want 1 args")
+		}
+		r := pgaot.Defined(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "delete":
+		if len(a) != 1 {
+			panic("aot: delete: want 1 args")
+		}
+		r := pgaot.Delete(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "each":
+		if len(a) != 1 {
+			panic("aot: each: want 1 args")
+		}
+		r := pgaot.Each(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "exists":
+		if len(a) != 1 {
+			panic("aot: exists: want 1 args")
+		}
+		r := pgaot.Exists(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "fetchval":
+		if len(a) != 1 {
+			panic("aot: fetchval: want 1 args")
+		}
+		r := pgaot.Fetchval(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_compress":
+		if len(a) != 1 {
+			panic("aot: ghstore_compress: want 1 args")
+		}
+		r := pgaot.GhstoreCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_consistent":
+		if len(a) != 1 {
+			panic("aot: ghstore_consistent: want 1 args")
+		}
+		r := pgaot.GhstoreConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_decompress":
+		if len(a) != 1 {
+			panic("aot: ghstore_decompress: want 1 args")
+		}
+		r := pgaot.GhstoreDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_in":
+		if len(a) != 1 {
+			panic("aot: ghstore_in: want 1 args")
+		}
+		r := pgaot.GhstoreIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_options":
+		if len(a) != 1 {
+			panic("aot: ghstore_options: want 1 args")
+		}
+		r := pgaot.GhstoreOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_out":
+		if len(a) != 1 {
+			panic("aot: ghstore_out: want 1 args")
+		}
+		r := pgaot.GhstoreOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_penalty":
+		if len(a) != 1 {
+			panic("aot: ghstore_penalty: want 1 args")
+		}
+		r := pgaot.GhstorePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_picksplit":
+		if len(a) != 1 {
+			panic("aot: ghstore_picksplit: want 1 args")
+		}
+		r := pgaot.GhstorePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_same":
+		if len(a) != 1 {
+			panic("aot: ghstore_same: want 1 args")
+		}
+		r := pgaot.GhstoreSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ghstore_union":
+		if len(a) != 1 {
+			panic("aot: ghstore_union: want 1 args")
+		}
+		r := pgaot.GhstoreUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_consistent_hstore":
+		if len(a) != 1 {
+			panic("aot: gin_consistent_hstore: want 1 args")
+		}
+		r := pgaot.GinConsistentHstore(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_hstore":
+		if len(a) != 1 {
+			panic("aot: gin_extract_hstore: want 1 args")
+		}
+		r := pgaot.GinExtractHstore(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_hstore_query":
+		if len(a) != 1 {
+			panic("aot: gin_extract_hstore_query: want 1 args")
+		}
+		r := pgaot.GinExtractHstoreQuery(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hs_concat":
+		if len(a) != 1 {
+			panic("aot: hs_concat: want 1 args")
+		}
+		r := pgaot.HsConcat(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hs_contained":
+		if len(a) != 1 {
+			panic("aot: hs_contained: want 1 args")
+		}
+		r := pgaot.HsContained(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hs_contains":
+		if len(a) != 1 {
+			panic("aot: hs_contains: want 1 args")
+		}
+		r := pgaot.HsContains(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreArrayToPairs":
+		if len(a) != 2 {
+			panic("aot: hstoreArrayToPairs: want 2 args")
+		}
+		r := pgaot.HstoreArrayToPairs(m, int32(uint32(a[0])), int32(uint32(a[1])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreCheckKeyLen":
+		if len(a) != 1 {
+			panic("aot: hstoreCheckKeyLen: want 1 args")
+		}
+		r := pgaot.HstoreCheckKeyLen(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreCheckValLen":
+		if len(a) != 1 {
+			panic("aot: hstoreCheckValLen: want 1 args")
+		}
+		r := pgaot.HstoreCheckValLen(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreFindKey":
+		if len(a) != 4 {
+			panic("aot: hstoreFindKey: want 4 args")
+		}
+		r := pgaot.HstoreFindKey(m, int32(uint32(a[0])), int32(uint32(a[1])), int32(uint32(a[2])), int32(uint32(a[3])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstorePairs":
+		if len(a) != 3 {
+			panic("aot: hstorePairs: want 3 args")
+		}
+		r := pgaot.HstorePairs(m, int32(uint32(a[0])), int32(uint32(a[1])), int32(uint32(a[2])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreUniquePairs":
+		if len(a) != 3 {
+			panic("aot: hstoreUniquePairs: want 3 args")
+		}
+		r := pgaot.HstoreUniquePairs(m, int32(uint32(a[0])), int32(uint32(a[1])), int32(uint32(a[2])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstoreUpgrade":
+		if len(a) != 1 {
+			panic("aot: hstoreUpgrade: want 1 args")
+		}
+		r := pgaot.HstoreUpgrade(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_akeys":
+		if len(a) != 1 {
+			panic("aot: hstore_akeys: want 1 args")
+		}
+		r := pgaot.HstoreAkeys(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_avals":
+		if len(a) != 1 {
+			panic("aot: hstore_avals: want 1 args")
+		}
+		r := pgaot.HstoreAvals(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_cmp":
+		if len(a) != 1 {
+			panic("aot: hstore_cmp: want 1 args")
+		}
+		r := pgaot.HstoreCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_concat":
+		if len(a) != 1 {
+			panic("aot: hstore_concat: want 1 args")
+		}
+		r := pgaot.HstoreConcat(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_contained":
+		if len(a) != 1 {
+			panic("aot: hstore_contained: want 1 args")
+		}
+		r := pgaot.HstoreContained(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_contains":
+		if len(a) != 1 {
+			panic("aot: hstore_contains: want 1 args")
+		}
+		r := pgaot.HstoreContains(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_defined":
+		if len(a) != 1 {
+			panic("aot: hstore_defined: want 1 args")
+		}
+		r := pgaot.HstoreDefined(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_delete":
+		if len(a) != 1 {
+			panic("aot: hstore_delete: want 1 args")
+		}
+		r := pgaot.HstoreDelete(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_delete_array":
+		if len(a) != 1 {
+			panic("aot: hstore_delete_array: want 1 args")
+		}
+		r := pgaot.HstoreDeleteArray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_delete_hstore":
+		if len(a) != 1 {
+			panic("aot: hstore_delete_hstore: want 1 args")
+		}
+		r := pgaot.HstoreDeleteHstore(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_each":
+		if len(a) != 1 {
+			panic("aot: hstore_each: want 1 args")
+		}
+		r := pgaot.HstoreEach(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_eq":
+		if len(a) != 1 {
+			panic("aot: hstore_eq: want 1 args")
+		}
+		r := pgaot.HstoreEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_exists":
+		if len(a) != 1 {
+			panic("aot: hstore_exists: want 1 args")
+		}
+		r := pgaot.HstoreExists(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_exists_all":
+		if len(a) != 1 {
+			panic("aot: hstore_exists_all: want 1 args")
+		}
+		r := pgaot.HstoreExistsAll(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_exists_any":
+		if len(a) != 1 {
+			panic("aot: hstore_exists_any: want 1 args")
+		}
+		r := pgaot.HstoreExistsAny(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_fetchval":
+		if len(a) != 1 {
+			panic("aot: hstore_fetchval: want 1 args")
+		}
+		r := pgaot.HstoreFetchval(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_from_array":
+		if len(a) != 1 {
+			panic("aot: hstore_from_array: want 1 args")
+		}
+		r := pgaot.HstoreFromArray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_from_arrays":
+		if len(a) != 1 {
+			panic("aot: hstore_from_arrays: want 1 args")
+		}
+		r := pgaot.HstoreFromArrays(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_from_record":
+		if len(a) != 1 {
+			panic("aot: hstore_from_record: want 1 args")
+		}
+		r := pgaot.HstoreFromRecord(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_from_text":
+		if len(a) != 1 {
+			panic("aot: hstore_from_text: want 1 args")
+		}
+		r := pgaot.HstoreFromText(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_ge":
+		if len(a) != 1 {
+			panic("aot: hstore_ge: want 1 args")
+		}
+		r := pgaot.HstoreGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_gt":
+		if len(a) != 1 {
+			panic("aot: hstore_gt: want 1 args")
+		}
+		r := pgaot.HstoreGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_hash":
+		if len(a) != 1 {
+			panic("aot: hstore_hash: want 1 args")
+		}
+		r := pgaot.HstoreHash(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_hash_extended":
+		if len(a) != 1 {
+			panic("aot: hstore_hash_extended: want 1 args")
+		}
+		r := pgaot.HstoreHashExtended(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_in":
+		if len(a) != 1 {
+			panic("aot: hstore_in: want 1 args")
+		}
+		r := pgaot.HstoreIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_le":
+		if len(a) != 1 {
+			panic("aot: hstore_le: want 1 args")
+		}
+		r := pgaot.HstoreLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_lt":
+		if len(a) != 1 {
+			panic("aot: hstore_lt: want 1 args")
+		}
+		r := pgaot.HstoreLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_ne":
+		if len(a) != 1 {
+			panic("aot: hstore_ne: want 1 args")
+		}
+		r := pgaot.HstoreNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_out":
+		if len(a) != 1 {
+			panic("aot: hstore_out: want 1 args")
+		}
+		r := pgaot.HstoreOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_populate_record":
+		if len(a) != 1 {
+			panic("aot: hstore_populate_record: want 1 args")
+		}
+		r := pgaot.HstorePopulateRecord(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_recv":
+		if len(a) != 1 {
+			panic("aot: hstore_recv: want 1 args")
+		}
+		r := pgaot.HstoreRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_send":
+		if len(a) != 1 {
+			panic("aot: hstore_send: want 1 args")
+		}
+		r := pgaot.HstoreSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_skeys":
+		if len(a) != 1 {
+			panic("aot: hstore_skeys: want 1 args")
+		}
+		r := pgaot.HstoreSkeys(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_slice_to_array":
+		if len(a) != 1 {
+			panic("aot: hstore_slice_to_array: want 1 args")
+		}
+		r := pgaot.HstoreSliceToArray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_slice_to_hstore":
+		if len(a) != 1 {
+			panic("aot: hstore_slice_to_hstore: want 1 args")
+		}
+		r := pgaot.HstoreSliceToHstore(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_subscript_handler":
+		if len(a) != 1 {
+			panic("aot: hstore_subscript_handler: want 1 args")
+		}
+		r := pgaot.HstoreSubscriptHandler(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_svals":
+		if len(a) != 1 {
+			panic("aot: hstore_svals: want 1 args")
+		}
+		r := pgaot.HstoreSvals(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_array":
+		if len(a) != 1 {
+			panic("aot: hstore_to_array: want 1 args")
+		}
+		r := pgaot.HstoreToArray(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_json":
+		if len(a) != 1 {
+			panic("aot: hstore_to_json: want 1 args")
+		}
+		r := pgaot.HstoreToJson(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_json_loose":
+		if len(a) != 1 {
+			panic("aot: hstore_to_json_loose: want 1 args")
+		}
+		r := pgaot.HstoreToJsonLoose(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_jsonb":
+		if len(a) != 1 {
+			panic("aot: hstore_to_jsonb: want 1 args")
+		}
+		r := pgaot.HstoreToJsonb(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_jsonb_loose":
+		if len(a) != 1 {
+			panic("aot: hstore_to_jsonb_loose: want 1 args")
+		}
+		r := pgaot.HstoreToJsonbLoose(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_to_matrix":
+		if len(a) != 1 {
+			panic("aot: hstore_to_matrix: want 1 args")
+		}
+		r := pgaot.HstoreToMatrix(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "hstore_version_diag":
+		if len(a) != 1 {
+			panic("aot: hstore_version_diag: want 1 args")
+		}
+		r := pgaot.HstoreVersionDiag(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_akeys":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_akeys: want 0 args")
+		}
+		r := pgaot.PgFinfoAkeys(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_avals":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_avals: want 0 args")
+		}
+		r := pgaot.PgFinfoAvals(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_defined":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_defined: want 0 args")
+		}
+		r := pgaot.PgFinfoDefined(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_delete":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_delete: want 0 args")
+		}
+		r := pgaot.PgFinfoDelete(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_each":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_each: want 0 args")
+		}
+		r := pgaot.PgFinfoEach(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_exists":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_exists: want 0 args")
+		}
+		r := pgaot.PgFinfoExists(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_fetchval":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_fetchval: want 0 args")
+		}
+		r := pgaot.PgFinfoFetchval(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_in: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_options: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_out: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstorePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstorePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ghstore_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ghstore_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGhstoreUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_consistent_hstore":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_consistent_hstore: want 0 args")
+		}
+		r := pgaot.PgFinfoGinConsistentHstore(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_hstore":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_hstore: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractHstore(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_hstore_query":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_hstore_query: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractHstoreQuery(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hs_concat":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hs_concat: want 0 args")
+		}
+		r := pgaot.PgFinfoHsConcat(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hs_contained":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hs_contained: want 0 args")
+		}
+		r := pgaot.PgFinfoHsContained(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hs_contains":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hs_contains: want 0 args")
+		}
+		r := pgaot.PgFinfoHsContains(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_akeys":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_akeys: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreAkeys(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_avals":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_avals: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreAvals(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_concat":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_concat: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreConcat(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_contained":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_contained: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreContained(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_contains":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_contains: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreContains(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_defined":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_defined: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreDefined(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_delete":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_delete: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreDelete(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_delete_array":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_delete_array: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreDeleteArray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_delete_hstore":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_delete_hstore: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreDeleteHstore(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_each":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_each: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreEach(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_exists":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_exists: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreExists(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_exists_all":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_exists_all: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreExistsAll(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_exists_any":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_exists_any: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreExistsAny(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_fetchval":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_fetchval: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreFetchval(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_from_array":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_from_array: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreFromArray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_from_arrays":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_from_arrays: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreFromArrays(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_from_record":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_from_record: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreFromRecord(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_from_text":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_from_text: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreFromText(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_hash":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_hash: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreHash(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_hash_extended":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_hash_extended: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreHashExtended(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_in: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_le: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_out: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_populate_record":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_populate_record: want 0 args")
+		}
+		r := pgaot.PgFinfoHstorePopulateRecord(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_send: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_skeys":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_skeys: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSkeys(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_slice_to_array":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_slice_to_array: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSliceToArray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_slice_to_hstore":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_slice_to_hstore: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSliceToHstore(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_subscript_handler":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_subscript_handler: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSubscriptHandler(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_svals":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_svals: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreSvals(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_array":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_array: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToArray(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_json":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_json: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToJson(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_json_loose":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_json_loose: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToJsonLoose(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_jsonb":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_jsonb: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToJsonb(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_jsonb_loose":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_jsonb_loose: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToJsonbLoose(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_to_matrix":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_to_matrix: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreToMatrix(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_hstore_version_diag":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_hstore_version_diag: want 0 args")
+		}
+		r := pgaot.PgFinfoHstoreVersionDiag(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_skeys":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_skeys: want 0 args")
+		}
+		r := pgaot.PgFinfoSkeys(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_svals":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_svals: want 0 args")
+		}
+		r := pgaot.PgFinfoSvals(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_tconvert":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_tconvert: want 0 args")
+		}
+		r := pgaot.PgFinfoTconvert(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "skeys":
+		if len(a) != 1 {
+			panic("aot: skeys: want 1 args")
+		}
+		r := pgaot.Skeys(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "svals":
+		if len(a) != 1 {
+			panic("aot: svals: want 1 args")
+		}
+		r := pgaot.Svals(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "tconvert":
+		if len(a) != 1 {
+			panic("aot: tconvert: want 1 args")
+		}
+		r := pgaot.Tconvert(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

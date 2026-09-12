@@ -309,7 +309,7 @@ L31:
 	;
 	v119 = *(*int64)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int64)(unsafe.Add(mBase, uint32(v8))) = v119
-	F_errmsg(m, int32(26778), v8)
+	F_errmsg(m, int32(27085), v8)
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -319,7 +319,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(474746), int32(330), int32(374421))
+	F_errfinish(m, int32(477162), int32(330), int32(376361))
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -488,7 +488,7 @@ func F_logicalrep_worker_onexit(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[303]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[302]))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+64))
 	m.T0[v11].(func(*base.Module, int32))(m, v8)
 	mBase = m.M

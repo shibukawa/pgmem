@@ -5,6 +5,74 @@ import (
 	"unsafe"
 )
 
+func F_IsValidJsonNumber(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v12 int64
+	_ = v12
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	v3 = int32(0)
+	v6 = m.G0
+	v8 = v6 - int32(80)
+	m.G0 = v8
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v3
+	v12 = int64(0)
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+60)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+52)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+44)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+36)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+28)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+20)) = v12
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+12)) = v12
+	if l1 != 0 {
+		v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+		v28 = base.B2i32(v26 == int32(45))
+		v29 = l0 + v28
+		*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v29
+		*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = l1 - v28
+		*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v29
+		v40 = F_json_lex_number(m, v8+int32(4), v29, v8+int32(79), v8+int32(72))
+		mBase = m.M
+		v43 = m.ExcPending
+		if v43 != 0 {
+			return int32(0)
+		} else {
+			v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+79)))
+			v47 = *(*int32)(unsafe.Add(mBase, uint32(v8)+72))
+			v48 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
+			v51 = (v44 ^ int32(-1)) & base.B2i32(v47 == v48)
+			m.G0 = v8 + int32(80)
+			return v51
+		}
+	} else {
+		v51 = v3
+		m.G0 = v8 + int32(80)
+		return v51
+	}
+}
 func F_check_valid_oidvector(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
@@ -36,13 +104,13 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 			if v15 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(198511), int32(0))
+				F_errmsg(m, int32(199547), int32(0))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(477992), int32(131), int32(198489))
+					F_errfinish(m, int32(480421), int32(131), int32(199525))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -70,13 +138,13 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 				if v15 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(198511), int32(0))
+					F_errmsg(m, int32(199547), int32(0))
 					mBase = m.M
 					v19 = m.ExcPending
 					if v19 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(477992), int32(131), int32(198489))
+						F_errfinish(m, int32(480421), int32(131), int32(199525))
 						mBase = m.M
 						v24 = m.ExcPending
 						if v24 != 0 {
@@ -106,13 +174,13 @@ func F_check_valid_oidvector(m *base.Module, l0 int32) {
 					if v15 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(198511), int32(0))
+						F_errmsg(m, int32(199547), int32(0))
 						mBase = m.M
 						v19 = m.ExcPending
 						if v19 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(477992), int32(131), int32(198489))
+							F_errfinish(m, int32(480421), int32(131), int32(199525))
 							mBase = m.M
 							v24 = m.ExcPending
 							if v24 != 0 {

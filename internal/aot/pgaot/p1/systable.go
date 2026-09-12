@@ -129,13 +129,13 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 						if v33 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(426756), int32(0))
+							F_errmsg_internal(m, int32(428902), int32(0))
 							mBase = m.M
 							v37 = m.ExcPending
 							if v37 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(475599), int32(536), int32(60766))
+								F_errfinish(m, int32(478028), int32(536), int32(61157))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -166,13 +166,13 @@ func F_systable_getnext(m *base.Module, l0 int32) int32 {
 				if v80 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(320864), int32(0))
+					F_errmsg_internal(m, int32(322411), int32(0))
 					mBase = m.M
 					v84 = m.ExcPending
 					if v84 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(311637), int32(1034), int32(80478))
+						F_errfinish(m, int32(313135), int32(1034), int32(80961))
 						mBase = m.M
 						v89 = m.ExcPending
 						if v89 != 0 {
@@ -365,13 +365,13 @@ func F_systable_getnext_ordered(m *base.Module, l0 int32, l1 int32) int32 {
 						if v26 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(426756), int32(0))
+							F_errmsg_internal(m, int32(428902), int32(0))
 							mBase = m.M
 							v30 = m.ExcPending
 							if v30 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(475599), int32(742), int32(431751))
+								F_errfinish(m, int32(478028), int32(742), int32(433897))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {

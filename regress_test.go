@@ -34,6 +34,7 @@ var contribRegress = map[string][]string{
 	},
 	"citext":  {"create_index_acl", "citext", "citext_utf8"},
 	"pg_trgm": {"pg_trgm", "pg_utf8_trgm", "pg_word_trgm", "pg_strict_word_trgm"},
+	"hstore":  {"hstore", "hstore_utf8"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

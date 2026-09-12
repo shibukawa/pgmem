@@ -3324,6 +3324,8 @@ func F_DomainHasConstraints(m *base.Module, l0 int32) int32
 func F_lookup_rowtype_tupdesc(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_lookup_rowtype_tupdesc_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_lookup_rowtype_tupdesc_internal
 func F_lookup_rowtype_tupdesc_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_lookup_rowtype_tupdesc_domain github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_lookup_rowtype_tupdesc_domain
+func F_lookup_rowtype_tupdesc_domain(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_find_or_make_matching_shared_tupledesc github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_find_or_make_matching_shared_tupledesc
 func F_find_or_make_matching_shared_tupledesc(m *base.Module, l0 int32) int32
 //go:linkname F_errstart_cold github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_errstart_cold
@@ -4016,6 +4018,14 @@ func F_trgm_presence_map(m *base.Module, l0 int32, l1 int32) int32
 func F_calc_word_similarity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float32
 //go:linkname F_createTrgmNFA github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_createTrgmNFA
 func F_createTrgmNFA(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_hstoreUpgrade github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUpgrade
+func F_hstoreUpgrade(m *base.Module, l0 int32) int32
+//go:linkname F_hstoreUniquePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hstoreUniquePairs
+func F_hstoreUniquePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstorePairs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hstorePairs
+func F_hstorePairs(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hstore_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_hstore_exists
+func F_hstore_exists(m *base.Module, l0 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

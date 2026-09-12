@@ -65,13 +65,13 @@ func F_cost_bitmap_tree_node(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		} else {
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v24
-			F_errmsg_internal(m, int32(465033), v7)
+			F_errmsg_internal(m, int32(467381), v7)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(476666), int32(1149), int32(392852))
+				F_errfinish(m, int32(479095), int32(1149), int32(394830))
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {

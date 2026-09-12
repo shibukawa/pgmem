@@ -67,7 +67,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v9
-	v19 = F_pg_snprintf(m, v6+int32(16), int32(64), int32(11850), v6)
+	v19 = F_pg_snprintf(m, v6+int32(16), int32(64), int32(11875), v6)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
@@ -80,7 +80,7 @@ L8:
 	return
 L9:
 	;
-	v28 = F_RestoreArchivedFile(m, v6+int32(80), v6+int32(16), int32(486464), int64(0), int32(0))
+	v28 = F_RestoreArchivedFile(m, v6+int32(80), v6+int32(16), int32(488909), int64(0), int32(0))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -224,13 +224,13 @@ func F_time_pl_interval(m *base.Module, l0 int32) int32 {
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(359069), int32(0))
+							F_errmsg(m, int32(360987), int32(0))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(476939), int32(2126), int32(295191))
+								F_errfinish(m, int32(479368), int32(2126), int32(296548))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -298,13 +298,13 @@ func F_time_pl_interval(m *base.Module, l0 int32) int32 {
 					if v35 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(359069), int32(0))
+						F_errmsg(m, int32(360987), int32(0))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476939), int32(2126), int32(295191))
+							F_errfinish(m, int32(479368), int32(2126), int32(296548))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -376,8 +376,8 @@ func F_time_scale(m *base.Module, l0 int32) int32 {
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	if base.Ui32(v7) <= base.Ui32(int32(6)) {
 		v11 = v7 << (uint(int32(3)) % 32)
-		v14 = *(*int64)(unsafe.Add(mBase, uint32(v11)+uint32(_consts[434])))
-		v17 = *(*int64)(unsafe.Add(mBase, uint32(v11)+uint32(_consts[435])))
+		v14 = *(*int64)(unsafe.Add(mBase, uint32(v11)+uint32(_consts[435])))
+		v17 = *(*int64)(unsafe.Add(mBase, uint32(v11)+uint32(_consts[436])))
 		if int64(0) <= v6 {
 			v20 = v6 + v17
 			v21 = base.I64_rem_s(v20, v14)

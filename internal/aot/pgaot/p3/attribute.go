@@ -138,7 +138,7 @@ func F_GetAttributeStorage(m *base.Module, l0 int32, l1 int32) int32 {
 	v7 = v5 - int32(32)
 	m.G0 = v7
 	v12 = l1
-	v13 = int32(265644)
+	v13 = int32(266800)
 	goto L5
 L1:
 	;
@@ -250,7 +250,7 @@ L18:
 L19:
 	;
 	v57 = l1
-	v58 = int32(296470)
+	v58 = int32(297870)
 	goto L22
 L20:
 	;
@@ -348,7 +348,7 @@ L35:
 L36:
 	;
 	v102 = l1
-	v103 = int32(441538)
+	v103 = int32(443803)
 	goto L38
 L37:
 	;
@@ -436,7 +436,7 @@ L51:
 L52:
 	;
 	v147 = l1
-	v148 = int32(265639)
+	v148 = int32(266795)
 	goto L54
 L53:
 	;
@@ -524,7 +524,7 @@ L67:
 L68:
 	;
 	v192 = l1
-	v193 = int32(92896)
+	v193 = int32(93407)
 	goto L70
 L69:
 	;
@@ -651,7 +651,7 @@ L88:
 L89:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l1
-	F_errmsg(m, int32(674436), v7+int32(16))
+	F_errmsg(m, int32(676935), v7+int32(16))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -661,7 +661,7 @@ L89:
 	}
 L90:
 	;
-	F_errfinish(m, int32(473018), int32(22100), int32(388992))
+	F_errfinish(m, int32(475396), int32(22100), int32(390951))
 	mBase = m.M
 	v267 = m.ExcPending
 	if v267 != 0 {
@@ -697,7 +697,7 @@ L93:
 L94:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v275
-	F_errmsg(m, int32(508195), v7)
+	F_errmsg(m, int32(510640), v7)
 	mBase = m.M
 	v280 = m.ExcPending
 	if v280 != 0 {
@@ -707,7 +707,7 @@ L94:
 	}
 L95:
 	;
-	F_errfinish(m, int32(473018), int32(22110), int32(388992))
+	F_errfinish(m, int32(475396), int32(22110), int32(390951))
 	mBase = m.M
 	v285 = m.ExcPending
 	if v285 != 0 {

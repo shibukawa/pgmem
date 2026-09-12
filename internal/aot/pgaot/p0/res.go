@@ -20,7 +20,7 @@ func F_ResOwnerPrintFile(m *base.Module, l0 int32) int32 {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	v9 = F_psprintf(m, int32(456852), v5)
+	v9 = F_psprintf(m, int32(459168), v5)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -110,7 +110,7 @@ func F_ResOwnerReleasePGMEMZHandle(m *base.Module, l0 int32) {
 	mBase = m.M
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v7 != 0 {
-		F_ResourceOwnerForget(m, v7, l0, int32(4336332))
+		F_ResourceOwnerForget(m, v7, l0, int32(4341916))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {

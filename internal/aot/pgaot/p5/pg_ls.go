@@ -349,7 +349,7 @@ func F_pg_ls_dir_1arg(m *base.Module, l0 int32) int32 {
 func F_pg_ls_summariesdir(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_pg_ls_dir_files(m, l0, int32(158947), int32(1))
+	F_pg_ls_dir_files(m, l0, int32(159954), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)

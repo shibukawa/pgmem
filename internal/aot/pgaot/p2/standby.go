@@ -8,13 +8,13 @@ import (
 func F_StandbyDeadLockHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[795])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[796])) = int32(1)
 	return
 }
 func F_StandbyTimeoutHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[796])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[797])) = int32(1)
 	return
 }
 func F_standby_redo(m *base.Module, l0 int32) {
@@ -316,7 +316,7 @@ L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+4)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v48))) = v44
-	F_errmsg_internal(m, int32(45049), v48)
+	F_errmsg_internal(m, int32(45377), v48)
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -329,7 +329,7 @@ L20:
 	goto L21
 L21:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+	v72 = *(*int32)(unsafe.Add(mBase, _consts[774]))
 	v78 = F_hash_search(m, v72, v48+int32(44), int32(1), v48+int32(15))
 	mBase = m.M
 	v79 = m.ExcPending
@@ -340,7 +340,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(471083), int32(1000), int32(303362))
+	F_errfinish(m, int32(473431), int32(1000), int32(304762))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -372,7 +372,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+36)) = v44
 	v87 = *(*int32)(unsafe.Add(mBase, uint32(v48)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+32)) = v87
-	v90 = *(*int32)(unsafe.Add(mBase, _consts[794]))
+	v90 = *(*int32)(unsafe.Add(mBase, _consts[795]))
 	v96 = F_hash_search(m, v90, v48+int32(32), int32(1), v48+int32(15))
 	mBase = m.M
 	v97 = m.ExcPending
@@ -417,7 +417,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v21
-	F_errmsg_internal(m, int32(49951), v12)
+	F_errmsg_internal(m, int32(50279), v12)
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -427,7 +427,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(471083), int32(1219), int32(231105))
+	F_errfinish(m, int32(473431), int32(1219), int32(232214))
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {

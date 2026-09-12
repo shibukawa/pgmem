@@ -36,13 +36,13 @@ func F_tts_buffer_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) 
 			if v17 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(57794), int32(0))
+				F_errmsg(m, int32(58122), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(472703), int32(774), int32(196478))
+					F_errfinish(m, int32(475081), int32(774), int32(197514))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -699,7 +699,7 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = base.I32_extend16_s(v104)
-	F_errmsg_internal(m, int32(462348), v19)
+	F_errmsg_internal(m, int32(464696), v19)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -709,7 +709,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(311599), int32(70), int32(64767))
+	F_errfinish(m, int32(313097), int32(70), int32(65199))
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -1104,7 +1104,7 @@ L112:
 L113:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = base.I32_extend16_s(v314)
-	F_errmsg_internal(m, int32(462348), v19+int32(32))
+	F_errmsg_internal(m, int32(464696), v19+int32(32))
 	mBase = m.M
 	v330 = m.ExcPending
 	if v330 != 0 {
@@ -1114,7 +1114,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(311599), int32(70), int32(64767))
+	F_errfinish(m, int32(313097), int32(70), int32(65199))
 	mBase = m.M
 	v335 = m.ExcPending
 	if v335 != 0 {
@@ -1492,7 +1492,7 @@ L175:
 L176:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v534
-	F_errmsg_internal(m, int32(462348), v19+int32(16))
+	F_errmsg_internal(m, int32(464696), v19+int32(16))
 	mBase = m.M
 	v571 = m.ExcPending
 	if v571 != 0 {
@@ -1502,7 +1502,7 @@ L176:
 	}
 L177:
 	;
-	F_errfinish(m, int32(311599), int32(70), int32(64767))
+	F_errfinish(m, int32(313097), int32(70), int32(65199))
 	mBase = m.M
 	v576 = m.ExcPending
 	if v576 != 0 {
@@ -1734,12 +1734,12 @@ func F_tts_minimal_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(57794), int32(0))
+			F_errmsg(m, int32(58122), int32(0))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(472703), int32(564), int32(196528))
+				F_errfinish(m, int32(475081), int32(564), int32(197564))
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return int32(0)

@@ -123,13 +123,13 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-											F_errmsg(m, int32(69508), v9)
+											F_errmsg(m, int32(69940), v9)
 											mBase = m.M
 											v56 = m.ExcPending
 											if v56 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(477817), int32(1461), int32(415720))
+												F_errfinish(m, int32(480246), int32(1461), int32(417866))
 												mBase = m.M
 												v61 = m.ExcPending
 												if v61 != 0 {
@@ -187,11 +187,11 @@ func F_get_tablespace_page_costs(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if base.F64_lt(v9, float64(0)) == int32(0) {
 					v17 = v9
 				} else {
-					v16 = *(*float64)(unsafe.Add(mBase, _consts[483]))
+					v16 = *(*float64)(unsafe.Add(mBase, _consts[484]))
 					v17 = v16
 				}
 			} else {
-				v16 = *(*float64)(unsafe.Add(mBase, _consts[483]))
+				v16 = *(*float64)(unsafe.Add(mBase, _consts[484]))
 				v17 = v16
 			}
 			*(*float64)(unsafe.Add(mBase, uint32(l1))) = v17
@@ -204,11 +204,11 @@ func F_get_tablespace_page_costs(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if base.F64_lt(v22, float64(0)) == int32(0) {
 					v30 = v22
 				} else {
-					v29 = *(*float64)(unsafe.Add(mBase, _consts[482]))
+					v29 = *(*float64)(unsafe.Add(mBase, _consts[483]))
 					v30 = v29
 				}
 			} else {
-				v29 = *(*float64)(unsafe.Add(mBase, _consts[482]))
+				v29 = *(*float64)(unsafe.Add(mBase, _consts[483]))
 				v30 = v29
 			}
 			*(*float64)(unsafe.Add(mBase, uint32(l2))) = v30

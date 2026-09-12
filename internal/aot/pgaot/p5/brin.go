@@ -375,13 +375,13 @@ func F_brin_bloom_add_value(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = int32(8144)
 					*(*int32)(unsafe.Add(mBase, uint32(v21))) = v92
-					F_errmsg_internal(m, int32(631441), v21)
+					F_errmsg_internal(m, int32(633886), v21)
 					mBase = m.M
 					v402 = m.ExcPending
 					if v402 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(475474), int32(344), int32(94259))
+						F_errfinish(m, int32(477903), int32(344), int32(94789))
 						mBase = m.M
 						v407 = m.ExcPending
 						if v407 != 0 {
@@ -1054,13 +1054,13 @@ func F_brin_inclusion_consistent(m *base.Module, l0 int32) int32 {
 			} else {
 				v138 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+6)))
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = v138
-				F_errmsg_internal(m, int32(451105), v14)
+				F_errmsg_internal(m, int32(453370), v14)
 				mBase = m.M
 				v142 = m.ExcPending
 				if v142 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(474792), int32(462), int32(87658))
+					F_errfinish(m, int32(477208), int32(462), int32(88141))
 					mBase = m.M
 					v147 = m.ExcPending
 					if v147 != 0 {

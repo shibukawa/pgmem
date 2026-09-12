@@ -575,13 +575,13 @@ func F_TupleDescInitEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = l3
-				F_errmsg_internal(m, int32(48046), v14)
+				F_errmsg_internal(m, int32(48374), v14)
 				mBase = m.M
 				v106 = m.ExcPending
 				if v106 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(478062), int32(896), int32(11544))
+					F_errfinish(m, int32(480491), int32(896), int32(11569))
 					mBase = m.M
 					v111 = m.ExcPending
 					if v111 != 0 {
@@ -1218,7 +1218,7 @@ L5:
 	goto L6
 L6:
 	;
-	v55 = int32(4443856)
+	v55 = int32(4449520)
 	v56 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v54)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v58
@@ -1420,7 +1420,7 @@ L28:
 L29:
 	;
 	v119 = *(*int32)(unsafe.Add(mBase, _consts[299]))
-	v124 = F_AllocSetContextCreateInternal(m, v119, int32(59668), int32(0), int32(8192), int32(8388608))
+	v124 = F_AllocSetContextCreateInternal(m, v119, int32(59996), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -1436,7 +1436,7 @@ L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+56)) = v127
 	*(*int64)(unsafe.Add(mBase, uint32(v106)+32)) = int64(343597383684)
-	v137 = F_hash_create(m, int32(381546), int32(64), v104+int32(-48), int32(1064))
+	v137 = F_hash_create(m, int32(383505), int32(64), v104+int32(-48), int32(1064))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -1495,7 +1495,7 @@ L37:
 	}
 L38:
 	;
-	v177 = int32(4443856)
+	v177 = int32(4449520)
 	v178 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v181 = *(*int32)(unsafe.Add(mBase, _consts[661]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v181
@@ -1521,7 +1521,7 @@ L40:
 	goto L41
 L41:
 	;
-	v163 = int32(4443856)
+	v163 = int32(4449520)
 	v164 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v167 = *(*int32)(unsafe.Add(mBase, _consts[661]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v167
@@ -2090,7 +2090,7 @@ L112:
 	goto L113
 L113:
 	;
-	v586 = int32(4443856)
+	v586 = int32(4449520)
 	v587 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v589 = *(*int32)(unsafe.Add(mBase, uint32(v585)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v589
@@ -2293,7 +2293,7 @@ L137:
 	goto L138
 L138:
 	;
-	v648 = int32(4443856)
+	v648 = int32(4449520)
 	v649 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v651 = *(*int32)(unsafe.Add(mBase, uint32(v647)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v651
@@ -2381,7 +2381,7 @@ L146:
 	goto L147
 L147:
 	;
-	v683 = int32(4443856)
+	v683 = int32(4449520)
 	v684 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v686 = *(*int32)(unsafe.Add(mBase, uint32(v682)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v686

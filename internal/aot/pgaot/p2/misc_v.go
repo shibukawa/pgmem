@@ -908,7 +908,7 @@ L15:
 	goto L16
 L16:
 	;
-	v56 = int32(485317)
+	v56 = int32(487762)
 	v58 = int32(54)
 	goto L17
 L17:
@@ -1203,7 +1203,7 @@ L57:
 L58:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = l0
-	F_errmsg(m, int32(660692), v15)
+	F_errmsg(m, int32(663191), v15)
 	mBase = m.M
 	v223 = m.ExcPending
 	if v223 != 0 {
@@ -1213,7 +1213,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(478038), int32(6767), int32(277418))
+	F_errfinish(m, int32(480467), int32(6767), int32(278700))
 	mBase = m.M
 	v228 = m.ExcPending
 	if v228 != 0 {
@@ -1471,7 +1471,7 @@ L1:
 	return
 L2:
 	;
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[575]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[576]))
 	v18 = F_quote_literal_cstr(m, v17)
 	mBase = m.M
 	v19 = m.ExcPending
@@ -1483,7 +1483,7 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v18
-	F_appendStringInfo(m, v6+int32(-24), int32(167193), v6+int32(-32))
+	F_appendStringInfo(m, v6+int32(-24), int32(168229), v6+int32(-32))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -1520,7 +1520,7 @@ L7:
 L8:
 	;
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(v8)+40))
-	v42 = *(*int32)(unsafe.Add(mBase, _consts[647]))
+	v42 = *(*int32)(unsafe.Add(mBase, _consts[648]))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+60))
 	v44 = m.T0[v43].(func(*base.Module, int32, int32, int32, int32) int32)(m, l0, v37, int32(2), v6+int32(-8))
 	mBase = m.M
@@ -1585,7 +1585,7 @@ L14:
 L15:
 	;
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v44)+16))
-	v54 = F_MakeSingleTupleTableSlot(m, v52, int32(1577644))
+	v54 = F_MakeSingleTupleTableSlot(m, v52, int32(1580140))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -1816,10 +1816,10 @@ L48:
 L49:
 	;
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
-	v110 = *(*int32)(unsafe.Add(mBase, _consts[575]))
+	v110 = *(*int32)(unsafe.Add(mBase, _consts[576]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v110
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v108
-	F_errmsg(m, int32(191308), v6+int32(-48))
+	F_errmsg(m, int32(192344), v6+int32(-48))
 	mBase = m.M
 	v117 = m.ExcPending
 	if v117 != 0 {
@@ -1829,7 +1829,7 @@ L49:
 	}
 L50:
 	;
-	F_errhint(m, int32(536500), int32(0))
+	F_errhint(m, int32(538945), int32(0))
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
@@ -1839,7 +1839,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(478196), int32(989), int32(230350))
+	F_errfinish(m, int32(480625), int32(989), int32(231459))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -1854,7 +1854,7 @@ L52:
 	}
 L53:
 	;
-	F_errmsg_internal(m, int32(688801), int32(0))
+	F_errmsg_internal(m, int32(691300), int32(0))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1864,7 +1864,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(478196), int32(994), int32(230350))
+	F_errfinish(m, int32(480625), int32(994), int32(231459))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -1889,7 +1889,7 @@ L56:
 	}
 L57:
 	;
-	F_errmsg(m, int32(204334), int32(0))
+	F_errmsg(m, int32(205370), int32(0))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1899,7 +1899,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(478196), int32(1009), int32(230350))
+	F_errfinish(m, int32(480625), int32(1009), int32(231459))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -1924,10 +1924,10 @@ L60:
 	}
 L61:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(361059)
-	v166 = *(*int32)(unsafe.Add(mBase, _consts[575]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(362999)
+	v166 = *(*int32)(unsafe.Add(mBase, _consts[576]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v166
-	F_errmsg(m, int32(204131), v8)
+	F_errmsg(m, int32(205167), v8)
 	mBase = m.M
 	v170 = m.ExcPending
 	if v170 != 0 {
@@ -1937,7 +1937,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(478196), int32(1019), int32(230350))
+	F_errfinish(m, int32(480625), int32(1019), int32(231459))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {
@@ -1971,7 +1971,7 @@ func F_varbittypmodin(m *base.Module, l0 int32) int32 {
 	if v6 != 0 {
 		return int32(0)
 	} else {
-		v8 = F_anybit_typmodin(m, v3, int32(96402))
+		v8 = F_anybit_typmodin(m, v3, int32(96959))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {

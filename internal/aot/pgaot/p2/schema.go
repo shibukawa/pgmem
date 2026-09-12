@@ -170,7 +170,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v22
-	F_errmsg(m, int32(66386), v7)
+	F_errmsg(m, int32(66818), v7)
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -180,7 +180,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(472895), int32(1851), int32(73075))
+	F_errfinish(m, int32(475273), int32(1851), int32(73507))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -241,7 +241,7 @@ func F_has_schema_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1616240))
+		v22 = F_convert_any_priv_string(m, v14, int32(1620336))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -327,7 +327,7 @@ func F_has_schema_privilege_id_name(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					v20 = F_convert_any_priv_string(m, v11, int32(1616240))
+					v20 = F_convert_any_priv_string(m, v11, int32(1620336))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {

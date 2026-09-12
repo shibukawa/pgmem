@@ -788,7 +788,7 @@ L27:
 	}
 L28:
 	;
-	F_errmsg(m, int32(233881), int32(0))
+	F_errmsg(m, int32(235014), int32(0))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -798,7 +798,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(478336), int32(664), int32(298285))
+	F_errfinish(m, int32(480765), int32(664), int32(299685))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -1253,7 +1253,7 @@ L88:
 L89:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = base.I32_extend16_s(v259)
-	F_errmsg_internal(m, int32(462348), v17+int32(16))
+	F_errmsg_internal(m, int32(464696), v17+int32(16))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -1263,7 +1263,7 @@ L89:
 	}
 L90:
 	;
-	F_errfinish(m, int32(311596), int32(70), int32(64767))
+	F_errfinish(m, int32(313094), int32(70), int32(65199))
 	mBase = m.M
 	v280 = m.ExcPending
 	if v280 != 0 {
@@ -1383,11 +1383,11 @@ L108:
 	goto L107
 L109:
 	;
-	v373 = int32(328733)
+	v373 = int32(330316)
 	goto L111
 L110:
 	;
-	v373 = int32(345308)
+	v373 = int32(347024)
 	goto L111
 L111:
 	;
@@ -2280,7 +2280,7 @@ L261:
 	}
 L262:
 	;
-	F_errmsg(m, int32(315274), int32(0))
+	F_errmsg(m, int32(316821), int32(0))
 	mBase = m.M
 	v931 = m.ExcPending
 	if v931 != 0 {
@@ -2291,7 +2291,7 @@ L262:
 L263:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(268435455)
-	F_errdetail(m, int32(558614), v17)
+	F_errdetail(m, int32(561059), v17)
 	mBase = m.M
 	v936 = m.ExcPending
 	if v936 != 0 {
@@ -2301,7 +2301,7 @@ L263:
 	}
 L264:
 	;
-	F_errsave_finish(m, int32(0), int32(478336), int32(284), int32(269494))
+	F_errsave_finish(m, int32(0), int32(480765), int32(284), int32(270749))
 	mBase = m.M
 	v942 = m.ExcPending
 	if v942 != 0 {
@@ -2426,7 +2426,7 @@ L280:
 	goto L3
 L281:
 	;
-	F_errmsg_internal(m, int32(346691), int32(0))
+	F_errmsg_internal(m, int32(348407), int32(0))
 	mBase = m.M
 	v1018 = m.ExcPending
 	if v1018 != 0 {
@@ -2436,7 +2436,7 @@ L281:
 	}
 L282:
 	;
-	F_errfinish(m, int32(478336), int32(851), int32(298285))
+	F_errfinish(m, int32(480765), int32(851), int32(299685))
 	mBase = m.M
 	v1023 = m.ExcPending
 	if v1023 != 0 {

@@ -79,7 +79,7 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 	v15 = base.I64_div_u_s(l0, v12)
 	if v10 != 0 {
 		v17 = *(*int32)(unsafe.Add(mBase, _consts[190]))
-		F_s_lock(m, v17+int32(440), int32(476414), int32(2685), int32(505783))
+		F_s_lock(m, v17+int32(440), int32(478843), int32(2685), int32(508228))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {

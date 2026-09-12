@@ -12,7 +12,7 @@ func F_assign_timezone_abbreviations(m *base.Module, l0 int32, l1 int32) {
 	_ = v9
 	if l1 != 0 {
 		*(*int32)(unsafe.Add(mBase, _consts[421])) = l1
-		v9 = F__emscripten_memset_bulkmem(m, int32(4427232), base.I32_extend8_s(int32(0)), int32(500))
+		v9 = F__emscripten_memset_bulkmem(m, int32(4432896), base.I32_extend8_s(int32(0)), int32(500))
 		mBase = m.M
 	} else {
 	}

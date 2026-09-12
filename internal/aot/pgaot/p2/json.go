@@ -45,13 +45,13 @@ func F_GetJsonTableExecContext(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-				F_errmsg_internal(m, int32(337967), v6)
+				F_errmsg_internal(m, int32(339622), v6)
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(478297), int32(4097), int32(60072))
+					F_errfinish(m, int32(480726), int32(4097), int32(60400))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -75,13 +75,13 @@ func F_GetJsonTableExecContext(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l1
-			F_errmsg_internal(m, int32(337967), v6+int32(16))
+			F_errmsg_internal(m, int32(339622), v6+int32(16))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(478297), int32(4094), int32(60072))
+				F_errfinish(m, int32(480726), int32(4094), int32(60400))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -260,13 +260,13 @@ func F_add_json(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32
 			if v39 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(354293), int32(0))
+				F_errmsg(m, int32(356192), int32(0))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(474626), int32(611), int32(233866))
+					F_errfinish(m, int32(477042), int32(611), int32(234999))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -554,7 +554,7 @@ L1:
 	return
 L2:
 	;
-	if l0 == int32(4445320) {
+	if l0 == int32(4450984) {
 		goto L1
 	} else {
 		goto L3
@@ -920,7 +920,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 		if base.Ui32(v8) <= base.Ui32(int32(3)) {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(v8<<(uint(int32(2))%32))+uint32(_consts[1144])))
+			v16 = *(*int32)(unsafe.Add(mBase, uint32(v8<<(uint(int32(2))%32))+uint32(_consts[1145])))
 			F_appendStringInfoString(m, v11, v16)
 			mBase = m.M
 			v18 = m.ExcPending
@@ -930,9 +930,9 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 				v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
 				if v22 != 0 {
-					v23 = int32(501165)
+					v23 = int32(503610)
 				} else {
-					v23 = int32(501178)
+					v23 = int32(503623)
 				}
 				F_appendStringInfoString(m, v19, v23)
 				mBase = m.M
@@ -950,7 +950,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v38 == l2 {
 								return
 							} else {
-								F_get_json_behavior(m, v35, l1, int32(502767))
+								F_get_json_behavior(m, v35, l1, int32(505212))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -971,7 +971,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								if v38 == l2 {
 									return
 								} else {
-									F_get_json_behavior(m, v35, l1, int32(502767))
+									F_get_json_behavior(m, v35, l1, int32(505212))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {
@@ -982,7 +982,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								}
 							}
 						} else {
-							F_get_json_behavior(m, v27, l1, int32(486176))
+							F_get_json_behavior(m, v27, l1, int32(488621))
 							mBase = m.M
 							v34 = m.ExcPending
 							if v34 != 0 {
@@ -996,7 +996,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									if v38 == l2 {
 										return
 									} else {
-										F_get_json_behavior(m, v35, l1, int32(502767))
+										F_get_json_behavior(m, v35, l1, int32(505212))
 										mBase = m.M
 										v42 = m.ExcPending
 										if v42 != 0 {
@@ -1015,9 +1015,9 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)))
 			if v22 != 0 {
-				v23 = int32(501165)
+				v23 = int32(503610)
 			} else {
-				v23 = int32(501178)
+				v23 = int32(503623)
 			}
 			F_appendStringInfoString(m, v19, v23)
 			mBase = m.M
@@ -1035,7 +1035,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v38 == l2 {
 							return
 						} else {
-							F_get_json_behavior(m, v35, l1, int32(502767))
+							F_get_json_behavior(m, v35, l1, int32(505212))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -1056,7 +1056,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v38 == l2 {
 								return
 							} else {
-								F_get_json_behavior(m, v35, l1, int32(502767))
+								F_get_json_behavior(m, v35, l1, int32(505212))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -1067,7 +1067,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							}
 						}
 					} else {
-						F_get_json_behavior(m, v27, l1, int32(486176))
+						F_get_json_behavior(m, v27, l1, int32(488621))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -1081,7 +1081,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								if v38 == l2 {
 									return
 								} else {
-									F_get_json_behavior(m, v35, l1, int32(502767))
+									F_get_json_behavior(m, v35, l1, int32(505212))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {
@@ -1107,7 +1107,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v38 == l2 {
 					return
 				} else {
-					F_get_json_behavior(m, v35, l1, int32(502767))
+					F_get_json_behavior(m, v35, l1, int32(505212))
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {
@@ -1128,7 +1128,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v38 == l2 {
 						return
 					} else {
-						F_get_json_behavior(m, v35, l1, int32(502767))
+						F_get_json_behavior(m, v35, l1, int32(505212))
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
@@ -1139,7 +1139,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				F_get_json_behavior(m, v27, l1, int32(486176))
+				F_get_json_behavior(m, v27, l1, int32(488621))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
@@ -1153,7 +1153,7 @@ func F_get_json_expr_options(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v38 == l2 {
 							return
 						} else {
-							F_get_json_behavior(m, v35, l1, int32(502767))
+							F_get_json_behavior(m, v35, l1, int32(505212))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -1221,7 +1221,7 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v15
-			F_appendStringInfo(m, l1, int32(188467), v9+int32(16))
+			F_appendStringInfo(m, l1, int32(189503), v9+int32(16))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -1238,9 +1238,9 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 					if v24&v30 != 0 {
 						if v24 == int32(2) {
-							v38 = int32(522357)
+							v38 = int32(524802)
 						} else {
-							v38 = int32(506123)
+							v38 = int32(508568)
 						}
 						F_appendStringInfoString(m, l1, v38)
 						mBase = m.M
@@ -1255,13 +1255,13 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								return
 							default:
 								if v42 == int32(3) {
-									v47 = int32(530201)
+									v47 = int32(532646)
 								} else {
-									v47 = int32(526776)
+									v47 = int32(529221)
 								}
 								v48 = v47
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v48
-								F_appendStringInfo(m, l1, int32(188481), v9)
+								F_appendStringInfo(m, l1, int32(189517), v9)
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1271,9 +1271,9 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									return
 								}
 							case 2:
-								v48 = int32(527428)
+								v48 = int32(529873)
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v48
-								F_appendStringInfo(m, l1, int32(188481), v9)
+								F_appendStringInfo(m, l1, int32(189517), v9)
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1294,9 +1294,9 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						return
 					} else {
 						if v24 == int32(2) {
-							v38 = int32(522357)
+							v38 = int32(524802)
 						} else {
-							v38 = int32(506123)
+							v38 = int32(508568)
 						}
 						F_appendStringInfoString(m, l1, v38)
 						mBase = m.M
@@ -1311,13 +1311,13 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								return
 							default:
 								if v42 == int32(3) {
-									v47 = int32(530201)
+									v47 = int32(532646)
 								} else {
-									v47 = int32(526776)
+									v47 = int32(529221)
 								}
 								v48 = v47
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v48
-								F_appendStringInfo(m, l1, int32(188481), v9)
+								F_appendStringInfo(m, l1, int32(189517), v9)
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1327,9 +1327,9 @@ func F_get_json_returning(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									return
 								}
 							case 2:
-								v48 = int32(527428)
+								v48 = int32(529873)
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v48
-								F_appendStringInfo(m, l1, int32(188481), v9)
+								F_appendStringInfo(m, l1, int32(189517), v9)
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1542,13 +1542,13 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 						if v148 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(354293), int32(0))
+							F_errmsg(m, int32(356192), int32(0))
 							mBase = m.M
 							v152 = m.ExcPending
 							if v152 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(474626), int32(799), int32(209939))
+								F_errfinish(m, int32(477042), int32(799), int32(211009))
 								mBase = m.M
 								v157 = m.ExcPending
 								if v157 != 0 {
@@ -1562,7 +1562,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v54 = int32(4443856)
+					v54 = int32(4449520)
 					v55 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v57 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v57
@@ -1603,7 +1603,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 											v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
 											v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
 											if int32(2) <= v84 {
-												F_appendStringInfoString(m, v83, int32(705827))
+												F_appendStringInfoString(m, v83, int32(708326))
 												mBase = m.M
 												v89 = m.ExcPending
 												if v89 != 0 {
@@ -1618,7 +1618,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 														if v95 != 0 {
 															return int32(0)
 														} else {
-															F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+															F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 															mBase = m.M
 															v99 = m.ExcPending
 															if v99 != 0 {
@@ -1679,7 +1679,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 																		return v79
 																	}
 																} else {
-																	F_appendStringInfoString(m, v101, int32(706001))
+																	F_appendStringInfoString(m, v101, int32(708500))
 																	mBase = m.M
 																	v113 = m.ExcPending
 																	if v113 != 0 {
@@ -1715,7 +1715,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 													if v95 != 0 {
 														return int32(0)
 													} else {
-														F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+														F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 														mBase = m.M
 														v99 = m.ExcPending
 														if v99 != 0 {
@@ -1776,7 +1776,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 																	return v79
 																}
 															} else {
-																F_appendStringInfoString(m, v101, int32(706001))
+																F_appendStringInfoString(m, v101, int32(708500))
 																mBase = m.M
 																v113 = m.ExcPending
 																if v113 != 0 {
@@ -1807,7 +1807,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 										v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
 										v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
 										if int32(2) <= v84 {
-											F_appendStringInfoString(m, v83, int32(705827))
+											F_appendStringInfoString(m, v83, int32(708326))
 											mBase = m.M
 											v89 = m.ExcPending
 											if v89 != 0 {
@@ -1822,7 +1822,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 													if v95 != 0 {
 														return int32(0)
 													} else {
-														F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+														F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 														mBase = m.M
 														v99 = m.ExcPending
 														if v99 != 0 {
@@ -1883,7 +1883,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 																	return v79
 																}
 															} else {
-																F_appendStringInfoString(m, v101, int32(706001))
+																F_appendStringInfoString(m, v101, int32(708500))
 																mBase = m.M
 																v113 = m.ExcPending
 																if v113 != 0 {
@@ -1919,7 +1919,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 												if v95 != 0 {
 													return int32(0)
 												} else {
-													F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+													F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 													mBase = m.M
 													v99 = m.ExcPending
 													if v99 != 0 {
@@ -1980,7 +1980,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 																return v79
 															}
 														} else {
-															F_appendStringInfoString(m, v101, int32(706001))
+															F_appendStringInfoString(m, v101, int32(708500))
 															mBase = m.M
 															v113 = m.ExcPending
 															if v113 != 0 {
@@ -2025,7 +2025,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 					v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
 					v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
 					if int32(2) <= v84 {
-						F_appendStringInfoString(m, v83, int32(705827))
+						F_appendStringInfoString(m, v83, int32(708326))
 						mBase = m.M
 						v89 = m.ExcPending
 						if v89 != 0 {
@@ -2040,7 +2040,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v95 != 0 {
 									return int32(0)
 								} else {
-									F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+									F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 									mBase = m.M
 									v99 = m.ExcPending
 									if v99 != 0 {
@@ -2101,7 +2101,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 												return v79
 											}
 										} else {
-											F_appendStringInfoString(m, v101, int32(706001))
+											F_appendStringInfoString(m, v101, int32(708500))
 											mBase = m.M
 											v113 = m.ExcPending
 											if v113 != 0 {
@@ -2137,7 +2137,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 							if v95 != 0 {
 								return int32(0)
 							} else {
-								F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+								F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
@@ -2198,7 +2198,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 											return v79
 										}
 									} else {
-										F_appendStringInfoString(m, v101, int32(706001))
+										F_appendStringInfoString(m, v101, int32(708500))
 										mBase = m.M
 										v113 = m.ExcPending
 										if v113 != 0 {
@@ -2229,7 +2229,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 				v83 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
 				v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+4))
 				if int32(2) <= v84 {
-					F_appendStringInfoString(m, v83, int32(705827))
+					F_appendStringInfoString(m, v83, int32(708326))
 					mBase = m.M
 					v89 = m.ExcPending
 					if v89 != 0 {
@@ -2244,7 +2244,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 							if v95 != 0 {
 								return int32(0)
 							} else {
-								F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+								F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
@@ -2305,7 +2305,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 											return v79
 										}
 									} else {
-										F_appendStringInfoString(m, v101, int32(706001))
+										F_appendStringInfoString(m, v101, int32(708500))
 										mBase = m.M
 										v113 = m.ExcPending
 										if v113 != 0 {
@@ -2341,7 +2341,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 						if v95 != 0 {
 							return int32(0)
 						} else {
-							F_appendBinaryStringInfo(m, v93, int32(289792), int32(4))
+							F_appendBinaryStringInfo(m, v93, int32(291122), int32(4))
 							mBase = m.M
 							v99 = m.ExcPending
 							if v99 != 0 {
@@ -2402,7 +2402,7 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 										return v79
 									}
 								} else {
-									F_appendStringInfoString(m, v101, int32(706001))
+									F_appendStringInfoString(m, v101, int32(708500))
 									mBase = m.M
 									v113 = m.ExcPending
 									if v113 != 0 {
@@ -2437,13 +2437,13 @@ func F_json_agg_transfn_worker(m *base.Module, l0 int32, l1 int32) int32 {
 		if v132 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(58995), int32(0))
+			F_errmsg_internal(m, int32(59323), int32(0))
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(474626), int32(789), int32(209939))
+				F_errfinish(m, int32(477042), int32(789), int32(211009))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {
@@ -3071,124 +3071,128 @@ func F_json_lex(m *base.Module, l0 int32) int32 {
 	_ = v1390
 	var v1397 int32
 	_ = v1397
-	var v1398 int32
-	_ = v1398
+	var v1399 int32
+	_ = v1399
 	var v1400 int32
 	_ = v1400
-	var v1401 int32
-	_ = v1401
+	var v1402 int32
+	_ = v1402
+	var v1404 int32
+	_ = v1404
 	var v1405 int32
 	_ = v1405
-	var v1406 int32
-	_ = v1406
-	var v1407 int32
-	_ = v1407
-	var v1408 int32
-	_ = v1408
-	var v1415 int32
-	_ = v1415
-	var v1420 int32
-	_ = v1420
+	var v1409 int32
+	_ = v1409
+	var v1410 int32
+	_ = v1410
+	var v1411 int32
+	_ = v1411
+	var v1412 int32
+	_ = v1412
+	var v1419 int32
+	_ = v1419
 	var v1424 int32
 	_ = v1424
 	var v1428 int32
 	_ = v1428
 	var v1432 int32
 	_ = v1432
-	var v1433 int32
-	_ = v1433
-	var v1441 int32
-	_ = v1441
-	var v1442 int32
-	_ = v1442
-	var v1443 int32
-	_ = v1443
+	var v1436 int32
+	_ = v1436
+	var v1437 int32
+	_ = v1437
+	var v1445 int32
+	_ = v1445
 	var v1446 int32
 	_ = v1446
 	var v1447 int32
 	_ = v1447
-	var v1449 int32
-	_ = v1449
 	var v1450 int32
 	_ = v1450
-	var v1452 int32
-	_ = v1452
+	var v1451 int32
+	_ = v1451
+	var v1453 int32
+	_ = v1453
 	var v1454 int32
 	_ = v1454
-	var v1464 int32
-	_ = v1464
-	var v1465 int32
-	_ = v1465
-	var v1466 int32
-	_ = v1466
+	var v1456 int32
+	_ = v1456
+	var v1458 int32
+	_ = v1458
+	var v1468 int32
+	_ = v1468
 	var v1469 int32
 	_ = v1469
 	var v1470 int32
 	_ = v1470
-	var v1471 int32
-	_ = v1471
+	var v1473 int32
+	_ = v1473
 	var v1474 int32
 	_ = v1474
 	var v1475 int32
 	_ = v1475
-	var v1477 int32
-	_ = v1477
-	var v1482 int32
-	_ = v1482
-	var v1495 int32
-	_ = v1495
-	var v1498 int32
-	_ = v1498
-	var v1504 int32
-	_ = v1504
-	var v1520 int32
-	_ = v1520
-	var v1522 int32
-	_ = v1522
-	var v1523 int32
-	_ = v1523
-	var v1539 int32
-	_ = v1539
-	var v1542 int32
-	_ = v1542
+	var v1478 int32
+	_ = v1478
+	var v1479 int32
+	_ = v1479
+	var v1481 int32
+	_ = v1481
+	var v1486 int32
+	_ = v1486
+	var v1499 int32
+	_ = v1499
+	var v1502 int32
+	_ = v1502
+	var v1508 int32
+	_ = v1508
+	var v1524 int32
+	_ = v1524
+	var v1526 int32
+	_ = v1526
+	var v1527 int32
+	_ = v1527
+	var v1543 int32
+	_ = v1543
 	var v1546 int32
 	_ = v1546
-	var v1548 int32
-	_ = v1548
 	var v1550 int32
 	_ = v1550
-	var v1551 int32
-	_ = v1551
+	var v1552 int32
+	_ = v1552
 	var v1554 int32
 	_ = v1554
-	var v1556 int32
-	_ = v1556
+	var v1555 int32
+	_ = v1555
+	var v1558 int32
+	_ = v1558
 	var v1560 int32
 	_ = v1560
-	var v1561 int32
-	_ = v1561
-	var v1562 int32
-	_ = v1562
 	var v1564 int32
 	_ = v1564
+	var v1565 int32
+	_ = v1565
+	var v1566 int32
+	_ = v1566
 	var v1568 int32
 	_ = v1568
-	var v1570 int32
-	_ = v1570
-	var v1573 int32
-	_ = v1573
-	var v1576 int32
-	_ = v1576
+	var v1572 int32
+	_ = v1572
+	var v1574 int32
+	_ = v1574
 	var v1577 int32
 	_ = v1577
-	var v1600 int32
-	_ = v1600
+	var v1580 int32
+	_ = v1580
+	var v1581 int32
+	_ = v1581
+	var v1604 int32
+	_ = v1604
 	v17 = m.G0
 	v19 = v17 - int32(80)
 	m.G0 = v19
 	v21 = int32(16)
-	if l0 == int32(4445320) {
-		v1600 = v21
+	if l0 == int32(4450984) {
+		v1604 = v21
 		goto L1
 	} else {
 		goto L2
@@ -3196,12 +3200,12 @@ func F_json_lex(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	m.G0 = v19 + int32(80)
-	return v1600
+	return v1604
 L2:
 	;
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	if v24 == int32(4445388) {
-		v1600 = v21
+	if v24 == int32(4451052) {
+		v1604 = v21
 		goto L1
 	} else {
 		goto L3
@@ -3218,42 +3222,42 @@ L3:
 	}
 L4:
 	;
-	v1600 = int32(0)
+	v1604 = int32(0)
 	goto L1
 L5:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v1523 - v1522
-	v1539 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v1539 + v1522
-	v1542 = *(*int32)(unsafe.Add(mBase, uint32(v59)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+28)) = v1542
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+56)) = v1542
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = v1542
-	v1546 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v1546
-	v1548 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v1548
-	v1550 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v1551 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v19)+36)) = uint8(v1551)
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = v1550
-	v1554 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+56)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v19)+68)) = uint8(v1554)
-	v1556 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+72)) = v1556
-	v1560 = F_json_lex(m, v19+int32(12))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v1527 - v1526
+	v1543 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v1543 + v1526
+	v1546 = *(*int32)(unsafe.Add(mBase, uint32(v59)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+28)) = v1546
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+56)) = v1546
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = v1546
+	v1550 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+52)) = v1550
+	v1552 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v1552
+	v1554 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v1555 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v19)+36)) = uint8(v1555)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+20)) = v1554
+	v1558 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+56)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v19)+68)) = uint8(v1558)
+	v1560 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+72)) = v1560
+	v1564 = F_json_lex(m, v19+int32(12))
 	mBase = m.M
-	v1561 = m.ExcPending
-	if v1561 != 0 {
+	v1565 = m.ExcPending
+	if v1565 != 0 {
 		goto L54
 	} else {
 		goto L398
 	}
 L6:
 	;
-	v1520 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v1522 = v251
-	v1523 = v1520
+	v1524 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v1526 = v251
+	v1527 = v1524
 	goto L5
 L7:
 	;
@@ -3277,7 +3281,7 @@ L7:
 	case 59:
 		goto L112
 	case 89:
-		v1498 = int32(3)
+		v1502 = int32(3)
 		goto L104
 	case 91:
 		goto L105
@@ -3457,7 +3461,7 @@ L29:
 	}
 L30:
 	;
-	v1600 = v129
+	v1604 = v129
 	goto L1
 L31:
 	;
@@ -3465,7 +3469,7 @@ L31:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v521
 	v523 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v521 + v523
-	v1600 = int32(15)
+	v1604 = int32(15)
 	goto L1
 L32:
 	;
@@ -3474,8 +3478,8 @@ L32:
 	v500 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v499)+1)))
 	v502 = v500 & v498
 	if v502 != 0 {
-		v1522 = v461
-		v1523 = v461
+		v1526 = v461
+		v1527 = v461
 		goto L5
 	} else {
 		goto L101
@@ -3493,8 +3497,8 @@ L33:
 L34:
 	;
 	if v457 != 0 {
-		v1522 = v442
-		v1523 = v443
+		v1526 = v442
+		v1527 = v443
 		goto L5
 	} else {
 		goto L99
@@ -3916,20 +3920,20 @@ L97:
 	goto L35
 L98:
 	;
-	v1522 = v461
-	v1523 = v461
+	v1526 = v461
+	v1527 = v461
 	goto L5
 L99:
 	;
 	goto L33
 L100:
 	;
-	v1600 = v493
+	v1604 = v493
 	goto L1
 L101:
 	;
 	if v502 == int32(0) {
-		v1600 = v498
+		v1604 = v498
 		goto L1
 	} else {
 		goto L102
@@ -3939,17 +3943,17 @@ L102:
 	goto L31
 L103:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v1504
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v1508
 	goto L4
 L104:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v73 + int32(1)
-	v1504 = v1498
+	v1508 = v1502
 	goto L103
 L105:
 	;
-	v1498 = int32(4)
+	v1502 = int32(4)
 	goto L104
 L106:
 	;
@@ -3960,20 +3964,22 @@ L106:
 	}
 L107:
 	;
-	v1400 = F_json_lex_number(m, l0, v73)
+	v1402 = int32(0)
+	v1404 = F_json_lex_number(m, l0, v73, v1402, v1402)
 	mBase = m.M
-	v1401 = m.ExcPending
-	if v1401 != 0 {
+	v1405 = m.ExcPending
+	if v1405 != 0 {
 		goto L54
 	} else {
 		goto L366
 	}
 L108:
 	;
-	v1397 = F_json_lex_number(m, l0, v73+int32(1))
+	v1397 = int32(0)
+	v1399 = F_json_lex_number(m, l0, v73+int32(1), v1397, v1397)
 	mBase = m.M
-	v1398 = m.ExcPending
-	if v1398 != 0 {
+	v1400 = m.ExcPending
+	if v1400 != 0 {
 		goto L54
 	} else {
 		goto L364
@@ -3994,19 +4000,19 @@ L109:
 	}
 L110:
 	;
-	v1498 = int32(8)
+	v1502 = int32(8)
 	goto L104
 L111:
 	;
-	v1498 = int32(7)
+	v1502 = int32(7)
 	goto L104
 L112:
 	;
-	v1498 = int32(6)
+	v1502 = int32(6)
 	goto L104
 L113:
 	;
-	v1498 = int32(5)
+	v1502 = int32(5)
 	goto L104
 L114:
 	;
@@ -4026,7 +4032,7 @@ L117:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v73 + int32(1)
-	v1600 = int32(15)
+	v1604 = int32(15)
 	goto L1
 L118:
 	;
@@ -4116,7 +4122,7 @@ L132:
 	;
 	m.G0 = v600 + int32(32)
 	if v1390 != 0 {
-		v1600 = v1390
+		v1604 = v1390
 		goto L1
 	} else {
 		goto L363
@@ -5139,7 +5145,7 @@ L289:
 	goto L290
 L290:
 	;
-	v1175 = int32(77312)
+	v1175 = int32(77744)
 	v1176 = int32(9)
 	goto L320
 L291:
@@ -5345,7 +5351,7 @@ L320:
 	goto L328
 L328:
 	;
-	v1213 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1273])))
+	v1213 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1274])))
 	if v1213 == v1123&int32(255) {
 		v1243 = v1175
 		v1245 = v1176
@@ -5562,160 +5568,160 @@ L362:
 	goto L132
 L363:
 	;
-	v1504 = int32(1)
+	v1508 = int32(1)
 	goto L103
 L364:
 	;
-	if v1397 != 0 {
-		v1600 = v1397
+	if v1399 != 0 {
+		v1604 = v1399
 		goto L1
 	} else {
 		goto L365
 	}
 L365:
 	;
-	v1504 = int32(2)
+	v1508 = int32(2)
 	goto L103
 L366:
 	;
-	if v1400 != 0 {
-		v1600 = v1400
+	if v1404 != 0 {
+		v1604 = v1404
 		goto L1
 	} else {
 		goto L367
 	}
 L367:
 	;
-	v1504 = int32(2)
+	v1508 = int32(2)
 	goto L103
 L368:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v571
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v63
-	v1420 = int32(15)
+	v1424 = int32(15)
 	switch v571 - v73 - int32(4) {
 	case 0:
 		goto L374
 	case 1:
 		goto L373
 	default:
-		v1600 = v1420
+		v1604 = v1424
 		goto L1
 	}
 L369:
 	;
-	v1405 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v1406 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1405)+1)))
-	if v1406 != 0 {
+	v1409 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	v1410 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1409)+1)))
+	if v1410 != 0 {
 		goto L368
 	} else {
 		goto L370
 	}
 L370:
 	;
-	v1407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v1408 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v571 != v1407+v1408 {
+	v1411 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v1412 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v571 != v1411+v1412 {
 		goto L368
 	} else {
 		goto L371
 	}
 L371:
 	;
-	F_appendBinaryStringInfo(m, v1405+int32(4), v73, v66-v73)
+	F_appendBinaryStringInfo(m, v1409+int32(4), v73, v66-v73)
 	mBase = m.M
-	v1415 = m.ExcPending
-	if v1415 != 0 {
+	v1419 = m.ExcPending
+	if v1419 != 0 {
 		goto L54
 	} else {
 		goto L372
 	}
 L372:
 	;
-	v1600 = int32(1)
+	v1604 = int32(1)
 	goto L1
 L373:
 	;
-	v1432 = int32(345308)
-	v1433 = int32(5)
+	v1436 = int32(347024)
+	v1437 = int32(5)
 	goto L382
 L374:
 	;
-	v1424 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
-	if v1424 == int32(1702195828) {
+	v1428 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
+	if v1428 == int32(1702195828) {
 		goto L375
 	} else {
 		goto L376
 	}
 L375:
 	;
-	v1504 = int32(9)
+	v1508 = int32(9)
 	goto L103
 L376:
 	;
 	goto L377
 L377:
 	;
-	v1428 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
-	if v1428 != int32(1819047278) {
-		v1600 = v1420
+	v1432 = *(*int32)(unsafe.Add(mBase, uint32(v73)))
+	if v1432 != int32(1819047278) {
+		v1604 = v1424
 		goto L1
 	} else {
 		goto L378
 	}
 L378:
 	;
-	v1504 = int32(11)
+	v1508 = int32(11)
 	goto L103
 L379:
 	;
-	if v1495 != 0 {
-		v1600 = v1420
+	if v1499 != 0 {
+		v1604 = v1424
 		goto L1
 	} else {
 		goto L397
 	}
 L380:
 	;
-	v1495 = int32(0)
+	v1499 = int32(0)
 	goto L379
 L381:
 	;
-	v1469 = v1464
-	v1470 = v1465
-	v1471 = v1466
+	v1473 = v1468
+	v1474 = v1469
+	v1475 = v1470
 	goto L391
 L382:
 	;
-	if (v73|v1432)&int32(3) != 0 {
-		v1464 = v73
-		v1465 = v1432
-		v1466 = v1433
+	if (v73|v1436)&int32(3) != 0 {
+		v1468 = v73
+		v1469 = v1436
+		v1470 = v1437
 		goto L381
 	} else {
 		goto L385
 	}
 L384:
 	;
-	if v1454 == int32(0) {
+	if v1458 == int32(0) {
 		goto L380
 	} else {
 		goto L390
 	}
 L385:
 	;
-	v1441 = v73
-	v1442 = v1432
-	v1443 = v1433
+	v1445 = v73
+	v1446 = v1436
+	v1447 = v1437
 	goto L386
 L386:
 	;
-	v1446 = *(*int32)(unsafe.Add(mBase, uint32(v1441)))
-	v1447 = *(*int32)(unsafe.Add(mBase, uint32(v1442)))
-	if v1446 != v1447 {
-		v1464 = v1441
-		v1465 = v1442
-		v1466 = v1443
+	v1450 = *(*int32)(unsafe.Add(mBase, uint32(v1445)))
+	v1451 = *(*int32)(unsafe.Add(mBase, uint32(v1446)))
+	if v1450 != v1451 {
+		v1468 = v1445
+		v1469 = v1446
+		v1470 = v1447
 		goto L381
 	} else {
 		goto L388
@@ -5725,14 +5731,14 @@ L387:
 	goto L384
 L388:
 	;
-	v1449 = int32(4)
-	v1450 = v1442 + v1449
-	v1452 = v1441 + v1449
-	v1454 = v1443 - v1449
-	if base.Ui32(int32(3)) < base.Ui32(v1454) {
-		v1441 = v1452
-		v1442 = v1450
-		v1443 = v1454
+	v1453 = int32(4)
+	v1454 = v1446 + v1453
+	v1456 = v1445 + v1453
+	v1458 = v1447 - v1453
+	if base.Ui32(int32(3)) < base.Ui32(v1458) {
+		v1445 = v1456
+		v1446 = v1454
+		v1447 = v1458
 		goto L386
 	} else {
 		goto L389
@@ -5742,31 +5748,31 @@ L389:
 	goto L387
 L390:
 	;
-	v1464 = v1452
-	v1465 = v1450
-	v1466 = v1454
+	v1468 = v1456
+	v1469 = v1454
+	v1470 = v1458
 	goto L381
 L391:
 	;
-	v1474 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1469))))
-	v1475 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1470))))
-	if v1474 == v1475 {
+	v1478 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1473))))
+	v1479 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1474))))
+	if v1478 == v1479 {
 		goto L393
 	} else {
 		goto L394
 	}
 L392:
 	;
-	v1495 = v1474 - v1475
+	v1499 = v1478 - v1479
 	goto L379
 L393:
 	;
-	v1477 = int32(1)
-	v1482 = v1471 - v1477
-	if v1482 != 0 {
-		v1469 = v1469 + v1477
-		v1470 = v1470 + v1477
-		v1471 = v1482
+	v1481 = int32(1)
+	v1486 = v1475 - v1481
+	if v1486 != 0 {
+		v1473 = v1473 + v1481
+		v1474 = v1474 + v1481
+		v1475 = v1486
 		goto L391
 	} else {
 		goto L396
@@ -5782,39 +5788,39 @@ L396:
 	goto L380
 L397:
 	;
-	v1504 = int32(10)
+	v1508 = int32(10)
 	goto L103
 L398:
 	;
-	v1562 = *(*int32)(unsafe.Add(mBase, uint32(v19)+40))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v1562
-	v1564 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
+	v1566 = *(*int32)(unsafe.Add(mBase, uint32(v19)+40))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v1566
+	v1568 = *(*int32)(unsafe.Add(mBase, uint32(v19)+52))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v1564
-	v1568 = *(*int32)(unsafe.Add(mBase, uint32(v19)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v1568
-	v1570 = *(*int32)(unsafe.Add(mBase, uint32(v19)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v1570
-	if v1560 != 0 {
-		v1600 = v1560
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v1568
+	v1572 = *(*int32)(unsafe.Add(mBase, uint32(v19)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v1572
+	v1574 = *(*int32)(unsafe.Add(mBase, uint32(v19)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v1574
+	if v1564 != 0 {
+		v1604 = v1564
 		goto L1
 	} else {
 		goto L399
 	}
 L399:
 	;
-	v1573 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
-	if v1573 != v1570-v1568 {
-		v1600 = int32(15)
+	v1577 = *(*int32)(unsafe.Add(mBase, uint32(v59)+8))
+	if v1577 != v1574-v1572 {
+		v1604 = int32(15)
 		goto L1
 	} else {
 		goto L400
 	}
 L400:
 	;
-	v1576 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v1577 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v1576)+2)) = uint8(v1577)
+	v1580 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	v1581 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v1580)+2)) = uint8(v1581)
 	goto L4
 }
 func F_json_manifest_object_end(m *base.Module, l0 int32) int32 {
@@ -6199,8 +6205,8 @@ L4:
 	;
 	v653 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v654 = *(*int32)(unsafe.Add(mBase, uint32(v653)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(408258)
-	m.T0[v654].(func(*base.Module, int32, int32, int32))(m, v653, int32(189661), v15)
+	*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(410358)
+	m.T0[v654].(func(*base.Module, int32, int32, int32))(m, v653, int32(190697), v15)
 	mBase = m.M
 	v659 = m.ExcPending
 	if v659 != 0 {
@@ -6212,8 +6218,8 @@ L5:
 	;
 	v644 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v645 = *(*int32)(unsafe.Add(mBase, uint32(v644)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+192)) = int32(505965)
-	m.T0[v645].(func(*base.Module, int32, int32, int32))(m, v644, int32(189661), v15+int32(192))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+192)) = int32(508410)
+	m.T0[v645].(func(*base.Module, int32, int32, int32))(m, v644, int32(190697), v15+int32(192))
 	mBase = m.M
 	v652 = m.ExcPending
 	if v652 != 0 {
@@ -6225,8 +6231,8 @@ L6:
 	;
 	v635 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v636 = *(*int32)(unsafe.Add(mBase, uint32(v635)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+224)) = int32(505923)
-	m.T0[v636].(func(*base.Module, int32, int32, int32))(m, v635, int32(189661), v15+int32(224))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+224)) = int32(508368)
+	m.T0[v636].(func(*base.Module, int32, int32, int32))(m, v635, int32(190697), v15+int32(224))
 	mBase = m.M
 	v643 = m.ExcPending
 	if v643 != 0 {
@@ -6238,8 +6244,8 @@ L7:
 	;
 	v626 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v627 = *(*int32)(unsafe.Add(mBase, uint32(v626)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+256)) = int32(214603)
-	m.T0[v627].(func(*base.Module, int32, int32, int32))(m, v626, int32(189661), v15+int32(256))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+256)) = int32(215673)
+	m.T0[v627].(func(*base.Module, int32, int32, int32))(m, v626, int32(190697), v15+int32(256))
 	mBase = m.M
 	v634 = m.ExcPending
 	if v634 != 0 {
@@ -6250,8 +6256,8 @@ L7:
 L8:
 	;
 	v618 = *(*int32)(unsafe.Add(mBase, uint32(v473)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+176)) = int32(505949)
-	m.T0[v618].(func(*base.Module, int32, int32, int32))(m, v473, int32(189661), v15+int32(176))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+176)) = int32(508394)
+	m.T0[v618].(func(*base.Module, int32, int32, int32))(m, v473, int32(190697), v15+int32(176))
 	mBase = m.M
 	v625 = m.ExcPending
 	if v625 != 0 {
@@ -6262,8 +6268,8 @@ L8:
 L9:
 	;
 	v610 = *(*int32)(unsafe.Add(mBase, uint32(v473)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+160)) = int32(505905)
-	m.T0[v610].(func(*base.Module, int32, int32, int32))(m, v473, int32(189661), v15+int32(160))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+160)) = int32(508350)
+	m.T0[v610].(func(*base.Module, int32, int32, int32))(m, v473, int32(190697), v15+int32(160))
 	mBase = m.M
 	v617 = m.ExcPending
 	if v617 != 0 {
@@ -6274,8 +6280,8 @@ L9:
 L10:
 	;
 	v602 = *(*int32)(unsafe.Add(mBase, uint32(v473)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+144)) = int32(356915)
-	m.T0[v602].(func(*base.Module, int32, int32, int32))(m, v473, int32(189661), v15+int32(144))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+144)) = int32(358814)
+	m.T0[v602].(func(*base.Module, int32, int32, int32))(m, v473, int32(190697), v15+int32(144))
 	mBase = m.M
 	v609 = m.ExcPending
 	if v609 != 0 {
@@ -6287,8 +6293,8 @@ L11:
 	;
 	v593 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v594 = *(*int32)(unsafe.Add(mBase, uint32(v593)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = int32(214575)
-	m.T0[v594].(func(*base.Module, int32, int32, int32))(m, v593, int32(189661), v15+int32(80))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = int32(215645)
+	m.T0[v594].(func(*base.Module, int32, int32, int32))(m, v593, int32(190697), v15+int32(80))
 	mBase = m.M
 	v601 = m.ExcPending
 	if v601 != 0 {
@@ -6300,8 +6306,8 @@ L12:
 	;
 	v584 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v585 = *(*int32)(unsafe.Add(mBase, uint32(v584)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = int32(364368)
-	m.T0[v585].(func(*base.Module, int32, int32, int32))(m, v584, int32(189661), v15+int32(96))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = int32(366308)
+	m.T0[v585].(func(*base.Module, int32, int32, int32))(m, v584, int32(190697), v15+int32(96))
 	mBase = m.M
 	v592 = m.ExcPending
 	if v592 != 0 {
@@ -6312,8 +6318,8 @@ L12:
 L13:
 	;
 	v564 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+112)) = int32(275427)
-	m.T0[v564].(func(*base.Module, int32, int32, int32))(m, v21, int32(189661), v15+int32(112))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+112)) = int32(276709)
+	m.T0[v564].(func(*base.Module, int32, int32, int32))(m, v21, int32(190697), v15+int32(112))
 	mBase = m.M
 	v571 = m.ExcPending
 	if v571 != 0 {
@@ -6324,8 +6330,8 @@ L13:
 L14:
 	;
 	v556 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = int32(325894)
-	m.T0[v556].(func(*base.Module, int32, int32, int32))(m, v21, int32(189661), v15+int32(32))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = int32(327477)
+	m.T0[v556].(func(*base.Module, int32, int32, int32))(m, v21, int32(190697), v15+int32(32))
 	mBase = m.M
 	v563 = m.ExcPending
 	if v563 != 0 {
@@ -6336,8 +6342,8 @@ L14:
 L15:
 	;
 	v548 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = int32(364093)
-	m.T0[v548].(func(*base.Module, int32, int32, int32))(m, v21, int32(189661), v15+int32(128))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = int32(366033)
+	m.T0[v548].(func(*base.Module, int32, int32, int32))(m, v21, int32(190697), v15+int32(128))
 	mBase = m.M
 	v555 = m.ExcPending
 	if v555 != 0 {
@@ -6393,8 +6399,8 @@ L21:
 L22:
 	;
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = int32(364075)
-	m.T0[v26].(func(*base.Module, int32, int32, int32))(m, v21, int32(189661), v15+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = int32(366015)
+	m.T0[v26].(func(*base.Module, int32, int32, int32))(m, v21, int32(190697), v15+int32(16))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -6754,7 +6760,7 @@ L82:
 L83:
 	;
 	v243 = v15 + int32(264)
-	v245 = F_pg_strcasecmp(m, v237, int32(356178))
+	v245 = F_pg_strcasecmp(m, v237, int32(358077))
 	mBase = m.M
 	if v245 == int32(0) {
 		goto L85
@@ -6778,7 +6784,7 @@ L86:
 	goto L87
 L87:
 	;
-	v252 = F_pg_strcasecmp(m, v237, int32(470945))
+	v252 = F_pg_strcasecmp(m, v237, int32(473293))
 	mBase = m.M
 	if v252 == int32(0) {
 		goto L88
@@ -6796,7 +6802,7 @@ L89:
 	goto L90
 L90:
 	;
-	v259 = F_pg_strcasecmp(m, v237, int32(528905))
+	v259 = F_pg_strcasecmp(m, v237, int32(531350))
 	mBase = m.M
 	if v259 == int32(0) {
 		goto L91
@@ -6813,7 +6819,7 @@ L92:
 	goto L93
 L93:
 	;
-	v266 = F_pg_strcasecmp(m, v237, int32(527287))
+	v266 = F_pg_strcasecmp(m, v237, int32(529732))
 	mBase = m.M
 	if v266 == int32(0) {
 		goto L94
@@ -6830,7 +6836,7 @@ L95:
 	goto L96
 L96:
 	;
-	v273 = F_pg_strcasecmp(m, v237, int32(528655))
+	v273 = F_pg_strcasecmp(m, v237, int32(531100))
 	mBase = m.M
 	if v273 == int32(0) {
 		goto L97
@@ -6847,7 +6853,7 @@ L98:
 	goto L99
 L99:
 	;
-	v282 = F_pg_strcasecmp(m, v237, int32(530263))
+	v282 = F_pg_strcasecmp(m, v237, int32(532708))
 	mBase = m.M
 	if v282 != 0 {
 		goto L100
@@ -6872,7 +6878,7 @@ L103:
 	v289 = *(*int32)(unsafe.Add(mBase, uint32(v21)+20))
 	v290 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v290
-	m.T0[v289].(func(*base.Module, int32, int32, int32))(m, v21, int32(686111), v15-int32(-64))
+	m.T0[v289].(func(*base.Module, int32, int32, int32))(m, v21, int32(688610), v15-int32(-64))
 	mBase = m.M
 	v296 = m.ExcPending
 	if v296 != 0 {
@@ -7021,7 +7027,7 @@ L127:
 	v465 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+52)) = v461
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v465
-	m.T0[v464].(func(*base.Module, int32, int32, int32))(m, v21, int32(687859), v15+int32(48))
+	m.T0[v464].(func(*base.Module, int32, int32, int32))(m, v21, int32(690358), v15+int32(48))
 	mBase = m.M
 	v472 = m.ExcPending
 	if v472 != 0 {
@@ -7198,7 +7204,7 @@ L156:
 	v491 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+240)) = v15 + int32(268)
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+244)) = v15 + int32(264)
-	v501 = F_sscanf(m, v491, int32(493790), v15+int32(240))
+	v501 = F_sscanf(m, v491, int32(496235), v15+int32(240))
 	mBase = m.M
 	v502 = m.ExcPending
 	if v502 != 0 {
@@ -7220,7 +7226,7 @@ L158:
 	v507 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+208)) = v15 + int32(268)
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+212)) = v15 + int32(264)
-	v517 = F_sscanf(m, v507, int32(493790), v15+int32(208))
+	v517 = F_sscanf(m, v507, int32(496235), v15+int32(208))
 	mBase = m.M
 	v518 = m.ExcPending
 	if v518 != 0 {
@@ -7761,7 +7767,7 @@ L12:
 	}
 L13:
 	;
-	F_errmsg(m, int32(115527), int32(0))
+	F_errmsg(m, int32(116286), int32(0))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -7771,7 +7777,7 @@ L13:
 	}
 L14:
 	;
-	F_errfinish(m, int32(474626), int32(1428), int32(103278))
+	F_errfinish(m, int32(477042), int32(1428), int32(103854))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -7806,7 +7812,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg(m, int32(138808), int32(0))
+	F_errmsg(m, int32(139695), int32(0))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -7816,7 +7822,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(474626), int32(1435), int32(103278))
+	F_errfinish(m, int32(477042), int32(1435), int32(103854))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -7841,7 +7847,7 @@ L21:
 	}
 L22:
 	;
-	F_errmsg(m, int32(110793), int32(0))
+	F_errmsg(m, int32(111552), int32(0))
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {
@@ -7851,7 +7857,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(474626), int32(1441), int32(103278))
+	F_errfinish(m, int32(477042), int32(1441), int32(103854))
 	mBase = m.M
 	v77 = m.ExcPending
 	if v77 != 0 {
@@ -7933,7 +7939,7 @@ L33:
 	}
 L34:
 	;
-	F_appendStringInfoString(m, v11+int32(16), int32(705827))
+	F_appendStringInfoString(m, v11+int32(16), int32(708326))
 	mBase = m.M
 	v120 = m.ExcPending
 	if v120 != 0 {
@@ -8068,7 +8074,7 @@ L55:
 	goto L56
 L56:
 	;
-	F_appendStringInfoString(m, v11+int32(16), int32(705583))
+	F_appendStringInfoString(m, v11+int32(16), int32(708082))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -8101,7 +8107,7 @@ L59:
 	}
 L60:
 	;
-	F_appendStringInfoString(m, v11+int32(16), int32(289792))
+	F_appendStringInfoString(m, v11+int32(16), int32(291122))
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {
@@ -8298,7 +8304,7 @@ L88:
 	}
 L89:
 	;
-	F_errmsg(m, int32(20078), int32(0))
+	F_errmsg(m, int32(20164), int32(0))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -8308,7 +8314,7 @@ L89:
 	}
 L90:
 	;
-	F_errfinish(m, int32(474626), int32(1457), int32(103278))
+	F_errfinish(m, int32(477042), int32(1457), int32(103854))
 	mBase = m.M
 	v300 = m.ExcPending
 	if v300 != 0 {

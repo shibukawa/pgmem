@@ -203,13 +203,13 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(359106), int32(0))
+							F_errmsg(m, int32(361024), int32(0))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(476939), int32(2697), int32(295292))
+								F_errfinish(m, int32(479368), int32(2697), int32(296649))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -305,13 +305,13 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(359106), int32(0))
+						F_errmsg(m, int32(361024), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476939), int32(2697), int32(295292))
+							F_errfinish(m, int32(479368), int32(2697), int32(296649))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -514,13 +514,13 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(384283), int32(0))
+								F_errmsg(m, int32(386242), int32(0))
 								mBase = m.M
 								v80 = m.ExcPending
 								if v80 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(476939), int32(2425), int32(33939))
+									F_errfinish(m, int32(479368), int32(2425), int32(34246))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
@@ -567,13 +567,13 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 					if v60 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(384728), int32(0))
+						F_errmsg(m, int32(386687), int32(0))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476939), int32(2417), int32(33939))
+							F_errfinish(m, int32(479368), int32(2417), int32(34246))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

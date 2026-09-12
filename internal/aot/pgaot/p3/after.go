@@ -12,7 +12,7 @@ func F_AfterTriggerBeginQuery(m *base.Module) {
 	_ = v1
 	var v3 int32
 	_ = v3
-	v1 = int32(4340948)
+	v1 = int32(4346612)
 	v3 = *(*int32)(unsafe.Add(mBase, _consts[502]))
 	*(*int32)(unsafe.Add(mBase, _consts[502])) = v3 + int32(1)
 	return
@@ -125,7 +125,7 @@ L6:
 L7:
 	;
 	v12 = int32(0)
-	v14 = F_afterTriggerMarkEvents(m, int32(4340928), v12, v12)
+	v14 = F_afterTriggerMarkEvents(m, int32(4346592), v12, v12)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -149,11 +149,11 @@ L9:
 	}
 L10:
 	;
-	v16 = int32(4340920)
+	v16 = int32(4346584)
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[504]))
 	v19 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[504])) = v18 + v19
-	v25 = F_afterTriggerInvokeEvents(m, int32(4340928), v18, int32(0), v19)
+	v25 = F_afterTriggerInvokeEvents(m, int32(4346592), v18, int32(0), v19)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -447,7 +447,7 @@ L11:
 L12:
 	;
 	v39 = *(*int32)(unsafe.Add(mBase, _consts[105]))
-	v44 = F_AllocSetContextCreateInternal(m, v39, int32(112891), int32(0), int32(8192), int32(8388608))
+	v44 = F_AllocSetContextCreateInternal(m, v39, int32(113650), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -773,7 +773,7 @@ L57:
 	}
 L58:
 	;
-	v196 = int32(4443856)
+	v196 = int32(4449520)
 	v197 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v200 = *(*int32)(unsafe.Add(mBase, _consts[501]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v200

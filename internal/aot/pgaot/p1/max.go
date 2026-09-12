@@ -108,13 +108,13 @@ func F_max_parallel_hazard_checker(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-				F_errmsg_internal(m, int32(689359), v6)
+				F_errmsg_internal(m, int32(691858), v6)
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(472639), int32(812), int32(73952))
+					F_errfinish(m, int32(475017), int32(812), int32(74384))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
