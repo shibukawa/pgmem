@@ -106,18 +106,18 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 	var v46 int32
 	_ = v46
 	v1 = int32(0)
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[456]))
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[457]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[457]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[458]))
 	if v3 == v5 {
 		v29 = v1
 		return v29
 	} else {
-		v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[458])))
+		v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[459])))
 		if v8 != 0 {
 			v29 = v1
 			return v29
 		} else {
-			v10 = *(*int32)(unsafe.Add(mBase, _consts[454]))
+			v10 = *(*int32)(unsafe.Add(mBase, _consts[455]))
 			if v10 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -131,13 +131,13 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 					if v37 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(267984), int32(0))
+						F_errmsg(m, int32(268422), int32(0))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522089), int32(886), int32(352632))
+							F_errfinish(m, int32(522971), int32(886), int32(353309))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
@@ -153,8 +153,8 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 			} else {
 				v13 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(v10)+4)) = uint8(v13)
-				*(*uint8)(unsafe.Add(mBase, _consts[458])) = uint8(v13)
-				v19 = *(*int32)(unsafe.Add(mBase, _consts[459]))
+				*(*uint8)(unsafe.Add(mBase, _consts[459])) = uint8(v13)
+				v19 = *(*int32)(unsafe.Add(mBase, _consts[460]))
 				v22 = F_internal_flush_buffer(m, v19, int32(4460984), int32(4460988))
 				mBase = m.M
 				v25 = m.ExcPending
@@ -162,7 +162,7 @@ func F_socket_flush_if_writable(m *base.Module) int32 {
 					return int32(0)
 				} else {
 					v27 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, _consts[458])) = uint8(v27)
+					*(*uint8)(unsafe.Add(mBase, _consts[459])) = uint8(v27)
 					v29 = v22
 					return v29
 				}
@@ -177,7 +177,7 @@ func F_socket_is_send_pending(m *base.Module) int32 {
 	_ = v2
 	var v4 int32
 	_ = v4
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[457]))
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[456]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[458]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[457]))
 	return base.B2i32(base.Ui32(v2) < base.Ui32(v4))
 }

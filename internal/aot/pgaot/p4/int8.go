@@ -126,13 +126,13 @@ func F_int8_avg(m *base.Module, l0 int32) int32 {
 			if v185 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(26664), int32(0))
+				F_errmsg_internal(m, int32(26697), int32(0))
 				mBase = m.M
 				v189 = m.ExcPending
 				if v189 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(525301), int32(6928), int32(343591))
+					F_errfinish(m, int32(526183), int32(6928), int32(344234))
 					mBase = m.M
 					v194 = m.ExcPending
 					if v194 != 0 {
@@ -153,13 +153,13 @@ func F_int8_avg(m *base.Module, l0 int32) int32 {
 				if v185 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(26664), int32(0))
+					F_errmsg_internal(m, int32(26697), int32(0))
 					mBase = m.M
 					v189 = m.ExcPending
 					if v189 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(525301), int32(6928), int32(343591))
+						F_errfinish(m, int32(526183), int32(6928), int32(344234))
 						mBase = m.M
 						v194 = m.ExcPending
 						if v194 != 0 {
@@ -405,13 +405,13 @@ func F_int8_avg_accum_inv(m *base.Module, l0 int32) int32 {
 		if v108 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(371009), int32(0))
+			F_errmsg_internal(m, int32(371710), int32(0))
 			mBase = m.M
 			v112 = m.ExcPending
 			if v112 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(525301), int32(6172), int32(34136))
+				F_errfinish(m, int32(526183), int32(6172), int32(34192))
 				mBase = m.M
 				v117 = m.ExcPending
 				if v117 != 0 {
@@ -432,13 +432,13 @@ func F_int8_avg_accum_inv(m *base.Module, l0 int32) int32 {
 			if v108 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(371009), int32(0))
+				F_errmsg_internal(m, int32(371710), int32(0))
 				mBase = m.M
 				v112 = m.ExcPending
 				if v112 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(525301), int32(6172), int32(34136))
+					F_errfinish(m, int32(526183), int32(6172), int32(34192))
 					mBase = m.M
 					v117 = m.ExcPending
 					if v117 != 0 {
@@ -576,13 +576,13 @@ func F_int8_mul_cash(m *base.Module, l0 int32) int32 {
 			if v65 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(421219), int32(0))
+				F_errmsg(m, int32(422007), int32(0))
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522881), int32(150), int32(586217))
+					F_errfinish(m, int32(523763), int32(150), int32(587201))
 					mBase = m.M
 					v74 = m.ExcPending
 					if v74 != 0 {

@@ -18,54 +18,57 @@ func F_IvfflatInit(m *base.Module) {
 	_ = v17
 	var v23 int32
 	_ = v23
-	var v31 int32
-	_ = v31
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
+	var v26 int32
+	_ = v26
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
 	v3 = F_add_reloption_kind(m)
 	mBase = m.M
 	v4 = m.ExcPending
 	if v4 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1462])) = v3
-		F_add_int_reloption(m, v3, int32(125638), int32(125619), int32(100), int32(1), int32(32768))
+		*(*int32)(unsafe.Add(mBase, _consts[1474])) = v3
+		F_add_int_reloption(m, v3, int32(125873), int32(125854), int32(100), int32(1), int32(32768))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return
 		} else {
 			v17 = int32(1)
-			F_DefineCustomIntVariable(m, int32(182368), int32(182383), int32(611692), int32(4735036), v17, v17, int32(32768), int32(6), int32(0))
+			F_DefineCustomIntVariable(m, int32(182692), int32(182707), int32(612890), int32(4735084), v17, v17, int32(32768), int32(6), int32(0))
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return
 			} else {
-				F_DefineCustomEnumVariable(m, int32(298467), int32(159650), int32(0), int32(4735040), int32(4120656), int32(6))
+				v26 = int32(0)
+				F_DefineCustomEnumVariable(m, int32(298905), int32(159974), v26, int32(4735088), v26, int32(4120912), int32(6))
 				mBase = m.M
-				v31 = m.ExcPending
-				if v31 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return
 				} else {
-					v34 = int32(0)
-					v36 = int32(32768)
-					F_DefineCustomIntVariable(m, int32(182349), int32(159543), v34, int32(4735044), v36, int32(1), v36, int32(6), v34)
+					v35 = int32(0)
+					v37 = int32(32768)
+					F_DefineCustomIntVariable(m, int32(182673), int32(159867), v35, int32(4735092), v37, int32(1), v37, int32(6), v35)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v43 = m.ExcPending
+					if v43 != 0 {
 						return
 					} else {
-						F_MarkGUCPrefixReserved(m, int32(119929))
+						F_MarkGUCPrefixReserved(m, int32(120149))
 						mBase = m.M
-						v45 = m.ExcPending
-						if v45 != 0 {
+						v46 = m.ExcPending
+						if v46 != 0 {
 							return
 						} else {
 							return
@@ -232,8 +235,8 @@ func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	}
 }
 func F_ivfflat_bit_support(m *base.Module, l0 int32) int32 {
-	return int32(4120784)
+	return int32(4121040)
 }
 func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(4120760)
+	return int32(4121016)
 }

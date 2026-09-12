@@ -279,7 +279,7 @@ L20:
 	goto L21
 L21:
 	;
-	v116 = *(*int32)(unsafe.Add(mBase, _consts[1359]))
+	v116 = *(*int32)(unsafe.Add(mBase, _consts[1361]))
 	if v116 != 0 {
 		goto L39
 	} else {

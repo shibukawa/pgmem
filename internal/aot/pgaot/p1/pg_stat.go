@@ -11,7 +11,7 @@ func F_pg_stat_force_next_flush(m *base.Module, l0 int32) int32 {
 	var v3 int32
 	_ = v3
 	v3 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[919])) = uint8(v3)
+	*(*uint8)(unsafe.Add(mBase, _consts[920])) = uint8(v3)
 	return int32(0)
 }
 func F_pg_stat_get_activity(m *base.Module, l0 int32) int32 {
@@ -903,7 +903,7 @@ L43:
 	}
 L44:
 	;
-	v514 = F_cstring_to_text(m, int32(573005))
+	v514 = F_cstring_to_text(m, int32(573887))
 	mBase = m.M
 	v515 = m.ExcPending
 	if v515 != 0 {
@@ -984,7 +984,7 @@ L52:
 	goto L51
 L53:
 	;
-	v165 = F_cstring_to_text(m, int32(476854))
+	v165 = F_cstring_to_text(m, int32(477701))
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -994,7 +994,7 @@ L53:
 	}
 L54:
 	;
-	v161 = F_cstring_to_text(m, int32(709395))
+	v161 = F_cstring_to_text(m, int32(710970))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -1004,7 +1004,7 @@ L54:
 	}
 L55:
 	;
-	v157 = F_cstring_to_text(m, int32(319580))
+	v157 = F_cstring_to_text(m, int32(320018))
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -1014,7 +1014,7 @@ L55:
 	}
 L56:
 	;
-	v153 = F_cstring_to_text(m, int32(269919))
+	v153 = F_cstring_to_text(m, int32(270357))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -1024,7 +1024,7 @@ L56:
 	}
 L57:
 	;
-	v149 = F_cstring_to_text(m, int32(360567))
+	v149 = F_cstring_to_text(m, int32(361244))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1034,7 +1034,7 @@ L57:
 	}
 L58:
 	;
-	v145 = F_cstring_to_text(m, int32(409490))
+	v145 = F_cstring_to_text(m, int32(410230))
 	mBase = m.M
 	v146 = m.ExcPending
 	if v146 != 0 {
@@ -1044,7 +1044,7 @@ L58:
 	}
 L59:
 	;
-	v141 = F_cstring_to_text(m, int32(345862))
+	v141 = F_cstring_to_text(m, int32(346505))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {
@@ -1182,7 +1182,7 @@ L79:
 	goto L80
 L80:
 	;
-	v197 = *(*int32)(unsafe.Add(mBase, _consts[821]))
+	v197 = *(*int32)(unsafe.Add(mBase, _consts[822]))
 	v199 = v190
 	goto L82
 L81:
@@ -1256,14 +1256,14 @@ L91:
 	}
 L92:
 	;
-	v246 = int32(572618)
+	v246 = int32(573500)
 	goto L88
 L93:
 	;
 	goto L94
 L94:
 	;
-	v244 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(v234)>>(uint(int32(22))%32))&int32(1020))+uint32(_consts[1123])))
+	v244 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(v234)>>(uint(int32(22))%32))&int32(1020))+uint32(_consts[1124])))
 	v246 = v244
 	goto L88
 L95:
@@ -1327,7 +1327,7 @@ L102:
 L103:
 	;
 	v266 = int32(-1)
-	v268 = *(*int32)(unsafe.Add(mBase, _consts[535]))
+	v268 = *(*int32)(unsafe.Add(mBase, _consts[536]))
 	if v268 <= int32(0) {
 		v322 = v266
 		goto L104
@@ -1347,7 +1347,7 @@ L104:
 	}
 L105:
 	;
-	v272 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+	v272 = *(*int32)(unsafe.Add(mBase, _consts[654]))
 	v279 = int32(0)
 	goto L106
 L106:
@@ -1988,7 +1988,7 @@ L202:
 	}
 L203:
 	;
-	v878 = *(*int32)(unsafe.Add(mBase, _consts[576]))
+	v878 = *(*int32)(unsafe.Add(mBase, _consts[577]))
 	v879 = *(*int32)(unsafe.Add(mBase, uint32(v878)))
 	if v879 <= int32(0) {
 		v995 = v869
@@ -2230,12 +2230,12 @@ L238:
 	}
 L239:
 	;
-	v1036 = *(*int32)(unsafe.Add(mBase, uint32(v865<<(uint(int32(2))%32))+uint32(_consts[584])))
+	v1036 = *(*int32)(unsafe.Add(mBase, uint32(v865<<(uint(int32(2))%32))+uint32(_consts[585])))
 	v1037 = v1036
 	goto L241
 L240:
 	;
-	v1037 = int32(386362)
+	v1037 = int32(387086)
 	goto L241
 L241:
 	;
@@ -3525,5 +3525,22 @@ func F_pg_stat_get_xact_tuples_inserted(m *base.Module, l0 int32) int32 {
 				return v14
 			}
 		}
+	}
+}
+func F_pg_stat_statements_1_10(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v9 int32
+	_ = v9
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	F_pg_stat_statements_internal(m, l0, int32(6), base.B2i32(v3 != int32(0)))
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return int32(0)
 	}
 }

@@ -38,7 +38,7 @@ func F_AtEOSubXact_Files(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v35
 	var v37 int32
 	_ = v37
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[646]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[644]))
 	if v9 != 0 {
 		goto L1
 	} else {
@@ -46,7 +46,7 @@ func F_AtEOSubXact_Files(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 L1:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[647]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[645]))
 	v15 = int32(0)
 	v16 = v9
 	v17 = v11
@@ -115,8 +115,8 @@ L11:
 	return
 L12:
 	;
-	v30 = *(*int32)(unsafe.Add(mBase, _consts[646]))
-	v32 = *(*int32)(unsafe.Add(mBase, _consts[647]))
+	v30 = *(*int32)(unsafe.Add(mBase, _consts[644]))
+	v32 = *(*int32)(unsafe.Add(mBase, _consts[645]))
 	v33 = v15 - int32(1)
 	v34 = v30
 	v35 = v32

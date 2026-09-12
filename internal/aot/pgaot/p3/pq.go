@@ -190,13 +190,13 @@ func F_pq_getmsgfloat4(m *base.Module, l0 int32) float32 {
 			if v17 != 0 {
 				return float32(0)
 			} else {
-				F_errmsg(m, int32(423777), int32(0))
+				F_errmsg(m, int32(424565), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return float32(0)
 				} else {
-					F_errfinish(m, int32(517346), int32(533), int32(168688))
+					F_errfinish(m, int32(518207), int32(533), int32(169012))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -267,13 +267,13 @@ func F_pq_getmsgfloat8(m *base.Module, l0 int32) float64 {
 			if v17 != 0 {
 				return float64(0)
 			} else {
-				F_errmsg(m, int32(423777), int32(0))
+				F_errmsg(m, int32(424565), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return float64(0)
 				} else {
-					F_errfinish(m, int32(517346), int32(533), int32(168688))
+					F_errfinish(m, int32(518207), int32(533), int32(169012))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

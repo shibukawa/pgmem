@@ -244,13 +244,13 @@ func F_halfvec(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v17
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v14
-						F_errmsg(m, int32(489736), v7)
+						F_errmsg(m, int32(490583), v7)
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(525467), int32(92), int32(302808))
+							F_errfinish(m, int32(526349), int32(92), int32(303246))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
@@ -1159,7 +1159,7 @@ L126:
 	v354 = int32(*(*int16)(unsafe.Add(mBase, uint32(v25)+4)))
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v354
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v353
-	F_errmsg(m, int32(500747), v17)
+	F_errmsg(m, int32(501594), v17)
 	mBase = m.M
 	v359 = m.ExcPending
 	if v359 != 0 {
@@ -1169,7 +1169,7 @@ L126:
 	}
 L127:
 	;
-	F_errfinish(m, int32(525467), int32(80), int32(160136))
+	F_errfinish(m, int32(526349), int32(80), int32(160460))
 	mBase = m.M
 	v364 = m.ExcPending
 	if v364 != 0 {
@@ -3673,7 +3673,7 @@ func F_halfvec_spherical_distance(m *base.Module, l0 int32) int32 {
 			v20 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
 			if v19 == v20 {
 				v24 = int32(8)
-				v29 = *(*int32)(unsafe.Add(mBase, _consts[1462]))
+				v29 = *(*int32)(unsafe.Add(mBase, _consts[1485]))
 				v30 = m.T0[v29].(func(*base.Module, int32, int32, int32) float32)(m, base.I32_extend16_s(v19), v12+v24, v17+v24)
 				mBase = m.M
 				v31 = m.ExcPending
@@ -3759,13 +3759,13 @@ func F_halfvec_spherical_distance(m *base.Module, l0 int32) int32 {
 						v137 = int32(*(*int16)(unsafe.Add(mBase, uint32(v17)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v137
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v136
-						F_errmsg(m, int32(500747), v9)
+						F_errmsg(m, int32(501594), v9)
 						mBase = m.M
 						v142 = m.ExcPending
 						if v142 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(525467), int32(80), int32(160136))
+							F_errfinish(m, int32(526349), int32(80), int32(160460))
 							mBase = m.M
 							v147 = m.ExcPending
 							if v147 != 0 {

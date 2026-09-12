@@ -117,13 +117,13 @@ func F_server_check_detail(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg(m, int32(320481), v6)
+				F_errmsg(m, int32(320919), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517162), int32(238), int32(320417))
+					F_errfinish(m, int32(518023), int32(238), int32(320855))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

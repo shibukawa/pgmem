@@ -111,13 +111,13 @@ func F_bbsink_server_end_archive(m *base.Module, l0 int32) {
 					v21 = *(*int32)(unsafe.Add(mBase, _consts[191]))
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v21+v19*int32(48))+32))
 					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v25
-					F_errmsg(m, int32(313967), v5)
+					F_errmsg(m, int32(314405), v5)
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(519632), int32(208), int32(361496))
+						F_errfinish(m, int32(520514), int32(208), int32(362173))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {

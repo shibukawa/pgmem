@@ -109,13 +109,13 @@ func F_pointerhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v108 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(419840), int32(0))
+						F_errmsg_internal(m, int32(420628), int32(0))
 						mBase = m.M
 						v112 = m.ExcPending
 						if v112 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(343318), int32(327), int32(358489))
+							F_errfinish(m, int32(343961), int32(327), int32(359166))
 							mBase = m.M
 							v117 = m.ExcPending
 							if v117 != 0 {
@@ -153,13 +153,13 @@ func F_pointerhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v95 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(419840), int32(0))
+				F_errmsg_internal(m, int32(420628), int32(0))
 				mBase = m.M
 				v99 = m.ExcPending
 				if v99 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(343318), int32(327), int32(358489))
+					F_errfinish(m, int32(343961), int32(327), int32(359166))
 					mBase = m.M
 					v104 = m.ExcPending
 					if v104 != 0 {

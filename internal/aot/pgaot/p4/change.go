@@ -234,12 +234,12 @@ func F_change_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 	v10 = v8 - int32(32)
 	m.G0 = v10
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(422413)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(423201)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v12
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = int32(993)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v16
-	v20 = int32(4554984)
+	v20 = int32(4555000)
 	v21 = *(*int32)(unsafe.Add(mBase, _consts[394]))
 	*(*int32)(unsafe.Add(mBase, _consts[394])) = v10 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v21

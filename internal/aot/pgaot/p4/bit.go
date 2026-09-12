@@ -237,10 +237,10 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				v125 = v115 | int32(1)
 				v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v97+v125))))
 				v129 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96+v125))))
-				v133 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v127^v129)+uint32(_consts[814]))))
+				v133 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v127^v129)+uint32(_consts[815]))))
 				v135 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115+v97))))
 				v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v115+v96))))
-				v141 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v135^v137)+uint32(_consts[814]))))
+				v141 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v135^v137)+uint32(_consts[815]))))
 				v143 = v133 + (v118 + v141)
 				v144 = int32(2)
 				v145 = v115 + v144
@@ -263,7 +263,7 @@ func F_BitHammingDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 		} else {
 			v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149+v97))))
 			v163 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v149+v96))))
-			v167 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v161^v163)+uint32(_consts[814]))))
+			v167 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v161^v163)+uint32(_consts[815]))))
 			v172 = v152 + v167
 		}
 	}

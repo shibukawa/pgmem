@@ -340,7 +340,7 @@ func F_gistGetFakeLSN(m *base.Module, l0 int32) int64 {
 		*(*int64)(unsafe.Add(mBase, uint32(v56)+240)) = v57 + int64(1)
 		return v57
 	case 4:
-		v8 = int32(4155280)
+		v8 = int32(4155536)
 		v10 = *(*int64)(unsafe.Add(mBase, _consts[66]))
 		*(*int64)(unsafe.Add(mBase, _consts[66])) = v10 + int64(1)
 		return v10
@@ -1034,13 +1034,13 @@ func F_gistSplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+8)) = v364 + int32(4)
 					*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = int32(8152)
 					*(*int32)(unsafe.Add(mBase, uint32(v14))) = v363 & int32(8191)
-					F_errmsg(m, int32(724654), v14)
+					F_errmsg(m, int32(726294), v14)
 					mBase = m.M
 					v375 = m.ExcPending
 					if v375 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(516299), int32(1477), int32(109584))
+						F_errfinish(m, int32(517160), int32(1477), int32(109692))
 						mBase = m.M
 						v380 = m.ExcPending
 						if v380 != 0 {
@@ -1378,13 +1378,13 @@ func F_gist_box_distance(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-			F_errmsg_internal(m, int32(505404), v6)
+			F_errmsg_internal(m, int32(506251), v6)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(525129), int32(1492), int32(437255))
+				F_errfinish(m, int32(526011), int32(1492), int32(438043))
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
@@ -2072,7 +2072,7 @@ L2:
 	goto L3
 L3:
 	;
-	v34 = int32(4562080)
+	v34 = int32(4562096)
 	v35 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(v37)+4))
@@ -2492,7 +2492,7 @@ L58:
 	v345 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v346 = *(*int32)(unsafe.Add(mBase, uint32(v345)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v20))) = v346 + int32(4)
-	F_errmsg_internal(m, int32(746304), v20)
+	F_errmsg_internal(m, int32(747944), v20)
 	mBase = m.M
 	v352 = m.ExcPending
 	if v352 != 0 {
@@ -2502,7 +2502,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(524825), int32(562), int32(338103))
+	F_errfinish(m, int32(525707), int32(562), int32(338722))
 	mBase = m.M
 	v357 = m.ExcPending
 	if v357 != 0 {
@@ -2815,13 +2815,13 @@ func F_gist_point_consistent(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v33 & int32(65535)
-				F_errmsg_internal(m, int32(505404), v12+int32(16))
+				F_errmsg_internal(m, int32(506251), v12+int32(16))
 				mBase = m.M
 				v116 = m.ExcPending
 				if v116 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(525129), int32(1322), int32(326003))
+					F_errfinish(m, int32(526011), int32(1322), int32(326441))
 					mBase = m.M
 					v121 = m.ExcPending
 					if v121 != 0 {
@@ -3035,13 +3035,13 @@ func F_gist_point_consistent(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = v24
-			F_errmsg_internal(m, int32(505404), v12)
+			F_errmsg_internal(m, int32(506251), v12)
 			mBase = m.M
 			v204 = m.ExcPending
 			if v204 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(525129), int32(1446), int32(98250))
+				F_errfinish(m, int32(526011), int32(1446), int32(98358))
 				mBase = m.M
 				v209 = m.ExcPending
 				if v209 != 0 {

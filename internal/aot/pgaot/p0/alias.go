@@ -1146,12 +1146,16 @@ func F_ExecPrepareExprList(m *base.Module, l0 int32, l1 int32) int32
 func F_ExecBuildHash32FromAttrs(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 //go:linkname F_ExecBuildGroupingEqual github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecBuildGroupingEqual
 func F_ExecBuildGroupingEqual(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
-//go:linkname F_ExecFilterJunk github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExecFilterJunk
-func F_ExecFilterJunk(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_standard_ExecutorRun github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_standard_ExecutorRun
+func F_standard_ExecutorRun(m *base.Module, l0 int32, l1 int32, l2 int64)
 //go:linkname F_ExecutorFinish github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecutorFinish
 func F_ExecutorFinish(m *base.Module, l0 int32)
+//go:linkname F_standard_ExecutorFinish github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_standard_ExecutorFinish
+func F_standard_ExecutorFinish(m *base.Module, l0 int32)
 //go:linkname F_ExecutorEnd github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExecutorEnd
 func F_ExecutorEnd(m *base.Module, l0 int32)
+//go:linkname F_ExecCloseResultRelations github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExecCloseResultRelations
+func F_ExecCloseResultRelations(m *base.Module, l0 int32)
 //go:linkname F_CheckValidResultRel github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_CheckValidResultRel
 func F_CheckValidResultRel(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_InitResultRelInfo github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitResultRelInfo
@@ -1170,8 +1174,8 @@ func F_ExecInitRoutingInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 func F_adjust_partition_colnos_using_map(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_ExecFindMatchingSubPlans github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExecFindMatchingSubPlans
 func F_ExecFindMatchingSubPlans(m *base.Module, l0 int32, l1 int32, l2 int32) int32
-//go:linkname F_ExecShutdownNode_walker github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecShutdownNode_walker
-func F_ExecShutdownNode_walker(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ExecEndNode github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExecEndNode
+func F_ExecEndNode(m *base.Module, l0 int32)
 //go:linkname F_CheckCmdReplicaIdentity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckCmdReplicaIdentity
 func F_CheckCmdReplicaIdentity(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_tupledesc_match github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_tupledesc_match
@@ -1182,6 +1186,8 @@ func F_ExecScan(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_ExecStoreMinimalTuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_MakeTupleTableSlot github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_MakeTupleTableSlot
 func F_MakeTupleTableSlot(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_ExecResetTupleTable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExecResetTupleTable
+func F_ExecResetTupleTable(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ExecDropSingleTupleTableSlot github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExecDropSingleTupleTableSlot
 func F_ExecDropSingleTupleTableSlot(m *base.Module, l0 int32)
 //go:linkname F_ExecForceStoreHeapTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExecForceStoreHeapTuple
@@ -3445,7 +3451,7 @@ func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 //go:linkname F_DefineCustomRealVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_DefineCustomRealVariable
 func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
-func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
 func F_MarkGUCPrefixReserved(m *base.Module, l0 int32)
 //go:linkname F_read_gucstate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_read_gucstate
@@ -3972,6 +3978,8 @@ func F_bt_page_stats_internal(m *base.Module, l0 int32, l1 int32) int32
 func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
 func F_get_page_from_raw(m *base.Module, l0 int32) int32
+//go:linkname F_pg_stat_statements_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_stat_statements_internal
+func F_pg_stat_statements_internal(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

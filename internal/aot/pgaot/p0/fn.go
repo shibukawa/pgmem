@@ -155,13 +155,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 			if v34 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(66625), int32(0))
+				F_errmsg(m, int32(66733), int32(0))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(519609), int32(2109), int32(145840))
+					F_errfinish(m, int32(520491), int32(2109), int32(146164))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -189,13 +189,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(66625), int32(0))
+					F_errmsg(m, int32(66733), int32(0))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519609), int32(2109), int32(145840))
+						F_errfinish(m, int32(520491), int32(2109), int32(146164))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -223,13 +223,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(66625), int32(0))
+						F_errmsg(m, int32(66733), int32(0))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519609), int32(2109), int32(145840))
+							F_errfinish(m, int32(520491), int32(2109), int32(146164))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {
@@ -257,13 +257,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(66625), int32(0))
+							F_errmsg(m, int32(66733), int32(0))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(519609), int32(2109), int32(145840))
+								F_errfinish(m, int32(520491), int32(2109), int32(146164))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {

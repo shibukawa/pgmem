@@ -71,7 +71,7 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 	m.G0 = v9
 	v12 = l0 + int32(19)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v12
-	v20 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(187765), v9+int32(32))
+	v20 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(188095), v9+int32(32))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -87,13 +87,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 			} else {
 				if v75 != 0 {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-					F_errmsg_internal(m, int32(751102), v9)
+					F_errmsg_internal(m, int32(752751), v9)
 					mBase = m.M
 					v80 = m.ExcPending
 					if v80 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(523077), int32(4045), int32(408848))
+						F_errfinish(m, int32(523959), int32(4045), int32(409588))
 						mBase = m.M
 						v85 = m.ExcPending
 						if v85 != 0 {
@@ -163,13 +163,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 				} else {
 					if v75 != 0 {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-						F_errmsg_internal(m, int32(751102), v9)
+						F_errmsg_internal(m, int32(752751), v9)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(523077), int32(4045), int32(408848))
+							F_errfinish(m, int32(523959), int32(4045), int32(409588))
 							mBase = m.M
 							v85 = m.ExcPending
 							if v85 != 0 {
@@ -240,13 +240,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 					} else {
 						if v75 != 0 {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-							F_errmsg_internal(m, int32(751102), v9)
+							F_errmsg_internal(m, int32(752751), v9)
 							mBase = m.M
 							v80 = m.ExcPending
 							if v80 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(523077), int32(4045), int32(408848))
+								F_errfinish(m, int32(523959), int32(4045), int32(409588))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -321,13 +321,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 							} else {
 								if v75 != 0 {
 									*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-									F_errmsg_internal(m, int32(751102), v9)
+									F_errmsg_internal(m, int32(752751), v9)
 									mBase = m.M
 									v80 = m.ExcPending
 									if v80 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(523077), int32(4045), int32(408848))
+										F_errfinish(m, int32(523959), int32(4045), int32(409588))
 										mBase = m.M
 										v85 = m.ExcPending
 										if v85 != 0 {
@@ -402,13 +402,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									} else {
 										if v75 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-											F_errmsg_internal(m, int32(751102), v9)
+											F_errmsg_internal(m, int32(752751), v9)
 											mBase = m.M
 											v80 = m.ExcPending
 											if v80 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(523077), int32(4045), int32(408848))
+												F_errfinish(m, int32(523959), int32(4045), int32(409588))
 												mBase = m.M
 												v85 = m.ExcPending
 												if v85 != 0 {
@@ -476,13 +476,13 @@ func F_RemoveXlogFile(m *base.Module, l0 int32, l1 int64, l2 int32, l3 int32) {
 									} else {
 										if v50 != 0 {
 											*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v12
-											F_errmsg_internal(m, int32(751172), v9+int32(16))
+											F_errmsg_internal(m, int32(752821), v9+int32(16))
 											mBase = m.M
 											v57 = m.ExcPending
 											if v57 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(523077), int32(4033), int32(408848))
+												F_errfinish(m, int32(523959), int32(4033), int32(409588))
 												mBase = m.M
 												v62 = m.ExcPending
 												if v62 != 0 {

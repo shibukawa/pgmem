@@ -494,7 +494,7 @@ L68:
 	v135 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v136 = int32(*(*int8)(unsafe.Add(mBase, uint32(v135))))
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v136
-	F_errmsg_internal(m, int32(508370), v11)
+	F_errmsg_internal(m, int32(509217), v11)
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -504,7 +504,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(522379), int32(144), int32(383558))
+	F_errfinish(m, int32(523261), int32(144), int32(384282))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -529,4 +529,621 @@ L73:
 	;
 	v152 = v149
 	goto L3
+}
+func F_qtext_load_file(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v72 int32
+	_ = v72
+	var v73 int64
+	_ = v73
+	var v77 int32
+	_ = v77
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v94 int32
+	_ = v94
+	var v101 int32
+	_ = v101
+	var v106 int32
+	_ = v106
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v116 int64
+	_ = v116
+	var v121 int64
+	_ = v121
+	var v122 int64
+	_ = v122
+	var v125 int64
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v129 int32
+	_ = v129
+	var v130 int64
+	_ = v130
+	var v133 int32
+	_ = v133
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v143 int32
+	_ = v143
+	var v150 int32
+	_ = v150
+	var v155 int32
+	_ = v155
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
+	var v164 int32
+	_ = v164
+	var v168 int32
+	_ = v168
+	var v169 int32
+	_ = v169
+	var v174 int32
+	_ = v174
+	var v175 int32
+	_ = v175
+	var v179 int32
+	_ = v179
+	var v186 int32
+	_ = v186
+	var v191 int32
+	_ = v191
+	var v196 int32
+	_ = v196
+	v2 = int32(0)
+	v9 = m.G0
+	v11 = v9 - int32(176)
+	m.G0 = v11
+	v15 = F_OpenTransientFile(m, int32(119666), v2)
+	mBase = m.M
+	v18 = m.ExcPending
+	if v18 != 0 {
+		goto L2
+	} else {
+		goto L3
+	}
+L1:
+	;
+	m.G0 = v11 + int32(176)
+	return v196
+L2:
+	;
+	return int32(0)
+L3:
+	;
+	if v15 < int32(0) {
+		goto L4
+	} else {
+		goto L5
+	}
+L4:
+	;
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[140]))
+	if v22 == int32(44) {
+		v196 = v2
+		goto L1
+	} else {
+		goto L7
+	}
+L5:
+	;
+	goto L6
+L6:
+	;
+	if v15 < int32(0) {
+		goto L14
+	} else {
+		goto L15
+	}
+L7:
+	;
+	v27 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v28 = m.ExcPending
+	if v28 != 0 {
+		goto L2
+	} else {
+		goto L8
+	}
+L8:
+	;
+	if v27 == int32(0) {
+		v196 = v2
+		goto L1
+	} else {
+		goto L9
+	}
+L9:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v32 = m.ExcPending
+	if v32 != 0 {
+		goto L2
+	} else {
+		goto L10
+	}
+L10:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(119666)
+	F_errmsg(m, int32(314376), v11)
+	mBase = m.M
+	v37 = m.ExcPending
+	if v37 != 0 {
+		goto L2
+	} else {
+		goto L11
+	}
+L11:
+	;
+	F_errfinish(m, int32(518309), int32(2321), int32(406429))
+	mBase = m.M
+	v42 = m.ExcPending
+	if v42 != 0 {
+		goto L2
+	} else {
+		goto L12
+	}
+L12:
+	;
+	v196 = v2
+	goto L1
+L13:
+	;
+	if v52 != 0 {
+		goto L17
+	} else {
+		goto L18
+	}
+L14:
+	;
+	v48 = F___syscall_ret(m, int32(-8))
+	mBase = m.M
+	v52 = v48
+	goto L13
+L15:
+	;
+	goto L16
+L16:
+	;
+	v51 = F___fstatat(m, v15, int32(793540), v11+int32(80), int32(4096))
+	mBase = m.M
+	v52 = v51
+	goto L13
+L17:
+	;
+	v55 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v56 = m.ExcPending
+	if v56 != 0 {
+		goto L2
+	} else {
+		goto L20
+	}
+L18:
+	;
+	goto L19
+L19:
+	;
+	v73 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
+	if int64(2147483647) < v73 {
+		goto L30
+	} else {
+		goto L31
+	}
+L20:
+	;
+	if v55 != 0 {
+		goto L21
+	} else {
+		goto L22
+	}
+L21:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v58 = m.ExcPending
+	if v58 != 0 {
+		goto L2
+	} else {
+		goto L24
+	}
+L22:
+	;
+	goto L23
+L23:
+	;
+	v71 = F_CloseTransientFile(m, v15)
+	mBase = m.M
+	v72 = m.ExcPending
+	if v72 != 0 {
+		goto L2
+	} else {
+		goto L27
+	}
+L24:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = int32(119666)
+	F_errmsg(m, int32(312559), v11-int32(-64))
+	mBase = m.M
+	v65 = m.ExcPending
+	if v65 != 0 {
+		goto L2
+	} else {
+		goto L25
+	}
+L25:
+	;
+	F_errfinish(m, int32(518309), int32(2331), int32(406429))
+	mBase = m.M
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L2
+	} else {
+		goto L26
+	}
+L26:
+	;
+	goto L23
+L27:
+	;
+	v196 = v2
+	goto L1
+L28:
+	;
+	v168 = F_CloseTransientFile(m, v15)
+	mBase = m.M
+	v169 = m.ExcPending
+	if v169 != 0 {
+		goto L2
+	} else {
+		goto L60
+	}
+L29:
+	;
+	v113 = v2
+	v116 = int64(0)
+	goto L43
+L30:
+	;
+	v83 = int32(0)
+	v86 = F_errstart(m, int32(15), v83)
+	mBase = m.M
+	v87 = m.ExcPending
+	if v87 != 0 {
+		goto L2
+	} else {
+		goto L34
+	}
+L31:
+	;
+	v77 = F_emscripten_builtin_malloc(m, base.I32_wrap_i64(v73))
+	mBase = m.M
+	if v77 == int32(0) {
+		goto L30
+	} else {
+		goto L32
+	}
+L32:
+	;
+	if v73 <= int64(0) {
+		v164 = v2
+		goto L28
+	} else {
+		goto L33
+	}
+L33:
+	;
+	goto L29
+L34:
+	;
+	if v86 != 0 {
+		goto L35
+	} else {
+		goto L36
+	}
+L35:
+	;
+	F_errcode(m, int32(8389))
+	mBase = m.M
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L2
+	} else {
+		goto L38
+	}
+L36:
+	;
+	goto L37
+L37:
+	;
+	v107 = F_CloseTransientFile(m, v15)
+	mBase = m.M
+	v108 = m.ExcPending
+	if v108 != 0 {
+		goto L2
+	} else {
+		goto L42
+	}
+L38:
+	;
+	F_errmsg(m, int32(14086), int32(0))
+	mBase = m.M
+	v94 = m.ExcPending
+	if v94 != 0 {
+		goto L2
+	} else {
+		goto L39
+	}
+L39:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(119666)
+	F_errdetail(m, int32(699052), v11+int32(16))
+	mBase = m.M
+	v101 = m.ExcPending
+	if v101 != 0 {
+		goto L2
+	} else {
+		goto L40
+	}
+L40:
+	;
+	F_errfinish(m, int32(518309), int32(2347), int32(406429))
+	mBase = m.M
+	v106 = m.ExcPending
+	if v106 != 0 {
+		goto L2
+	} else {
+		goto L41
+	}
+L41:
+	;
+	goto L37
+L42:
+	;
+	v196 = v83
+	goto L1
+L43:
+	;
+	*(*int32)(unsafe.Add(mBase, _consts[140])) = int32(0)
+	v121 = int64(1073741824)
+	v122 = v73 - v116
+	if v121 <= v122 {
+		goto L46
+	} else {
+		goto L47
+	}
+L44:
+	;
+	v133 = *(*int32)(unsafe.Add(mBase, _consts[140]))
+	if v133 == int32(0) {
+		goto L51
+	} else {
+		goto L52
+	}
+L45:
+	;
+	goto L44
+L46:
+	;
+	v125 = v121
+	goto L48
+L47:
+	;
+	v125 = v122
+	goto L48
+L48:
+	;
+	v126 = base.I32_wrap_i64(v125)
+	v127 = F_read(m, v15, v77+v113, v126)
+	mBase = m.M
+	if v127 != v126 {
+		goto L45
+	} else {
+		goto L49
+	}
+L49:
+	;
+	v129 = v113 + v126
+	v130 = base.I64_extend_i32_u(v129)
+	if base.Ui64(v130) < base.Ui64(v73) {
+		v113 = v129
+		v116 = v130
+		goto L43
+	} else {
+		goto L50
+	}
+L50:
+	;
+	v164 = v129
+	goto L28
+L51:
+	;
+	F_emscripten_builtin_free(m, v77)
+	mBase = m.M
+	v157 = F_CloseTransientFile(m, v15)
+	mBase = m.M
+	v158 = m.ExcPending
+	if v158 != 0 {
+		goto L2
+	} else {
+		goto L58
+	}
+L52:
+	;
+	v138 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v139 = m.ExcPending
+	if v139 != 0 {
+		goto L2
+	} else {
+		goto L53
+	}
+L53:
+	;
+	if v138 == int32(0) {
+		goto L51
+	} else {
+		goto L54
+	}
+L54:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v143 = m.ExcPending
+	if v143 != 0 {
+		goto L2
+	} else {
+		goto L55
+	}
+L55:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = int32(119666)
+	F_errmsg(m, int32(314376), v11+int32(48))
+	mBase = m.M
+	v150 = m.ExcPending
+	if v150 != 0 {
+		goto L2
+	} else {
+		goto L56
+	}
+L56:
+	;
+	F_errfinish(m, int32(518309), int32(2376), int32(406429))
+	mBase = m.M
+	v155 = m.ExcPending
+	if v155 != 0 {
+		goto L2
+	} else {
+		goto L57
+	}
+L57:
+	;
+	goto L51
+L58:
+	;
+	v196 = int32(0)
+	goto L1
+L59:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v164
+	v196 = v77
+	goto L1
+L60:
+	;
+	if v168 == int32(0) {
+		goto L59
+	} else {
+		goto L61
+	}
+L61:
+	;
+	v174 = F_errstart(m, int32(15), int32(0))
+	mBase = m.M
+	v175 = m.ExcPending
+	if v175 != 0 {
+		goto L2
+	} else {
+		goto L62
+	}
+L62:
+	;
+	if v174 == int32(0) {
+		goto L59
+	} else {
+		goto L63
+	}
+L63:
+	;
+	F_errcode_for_file_access(m)
+	mBase = m.M
+	v179 = m.ExcPending
+	if v179 != 0 {
+		goto L2
+	} else {
+		goto L64
+	}
+L64:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = int32(119666)
+	F_errmsg(m, int32(314200), v11+int32(32))
+	mBase = m.M
+	v186 = m.ExcPending
+	if v186 != 0 {
+		goto L2
+	} else {
+		goto L65
+	}
+L65:
+	;
+	F_errfinish(m, int32(518309), int32(2387), int32(406429))
+	mBase = m.M
+	v191 = m.ExcPending
+	if v191 != 0 {
+		goto L2
+	} else {
+		goto L66
+	}
+L66:
+	;
+	goto L59
 }

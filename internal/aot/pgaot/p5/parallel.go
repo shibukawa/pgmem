@@ -145,7 +145,7 @@ L3:
 	}
 L4:
 	;
-	v39 = int32(4562080)
+	v39 = int32(4562096)
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v42
@@ -229,7 +229,7 @@ L15:
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v145
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v59
-	v154 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(487837), v13+int32(16))
+	v154 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(488684), v13+int32(16))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -307,7 +307,7 @@ L26:
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v168
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v59
-	v175 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(487829), v13)
+	v175 = F_pg_snprintf(m, v13+int32(32), int32(1024), int32(488676), v13)
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -1105,7 +1105,7 @@ L17:
 	goto L15
 L18:
 	;
-	v62 = *(*int32)(unsafe.Add(mBase, _consts[292]))
+	v62 = *(*int32)(unsafe.Add(mBase, _consts[291]))
 	F_shm_mq_set_receiver(m, v44, v62)
 	mBase = m.M
 	v64 = m.ExcPending

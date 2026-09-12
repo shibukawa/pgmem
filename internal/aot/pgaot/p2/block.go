@@ -316,7 +316,7 @@ L21:
 	goto L5
 L22:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[801])))
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[800])))
 	F_BlockRefTableRead(m, l0, v8+int32(-52), int32(4))
 	mBase = m.M
 	v99 = m.ExcPending
@@ -349,11 +349,11 @@ L26:
 	;
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1272])))
 	v105 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1273])))
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[802])))
+	v106 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[801])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v100
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v102
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v106
-	m.T0[v105].(func(*base.Module, int32, int32, int32))(m, v104, int32(536262), v10)
+	m.T0[v105].(func(*base.Module, int32, int32, int32))(m, v104, int32(537144), v10)
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -644,7 +644,7 @@ L5:
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+4)) = uint32(v24)
 	v28 = int64(base.Ui64(v24) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v12))) = uint32(v28)
-	F_report_invalid_record(m, l0, int32(480265), v12)
+	F_report_invalid_record(m, l0, int32(481112), v12)
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -669,7 +669,7 @@ L9:
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+84)) = uint32(v39)
 	v43 = int64(base.Ui64(v39) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+80)) = uint32(v43)
-	F_report_invalid_record(m, l0, int32(496337), v12+int32(80))
+	F_report_invalid_record(m, l0, int32(497184), v12+int32(80))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -1012,7 +1012,7 @@ L61:
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+68)) = uint32(v250)
 	v254 = int64(base.Ui64(v250) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+64)) = uint32(v254)
-	F_report_invalid_record(m, l0, int32(496558), v12-int32(-64))
+	F_report_invalid_record(m, l0, int32(497405), v12-int32(-64))
 	mBase = m.M
 	v260 = m.ExcPending
 	if v260 != 0 {
@@ -1028,11 +1028,11 @@ L63:
 	;
 	v264 = *(*int64)(unsafe.Add(mBase, uint32(l0)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+60)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+56)) = int32(585947)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+56)) = int32(586931)
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+52)) = uint32(v264)
 	v270 = int64(base.Ui64(v264) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v12)+48)) = uint32(v270)
-	F_report_invalid_record(m, l0, int32(496473), v12+int32(48))
+	F_report_invalid_record(m, l0, int32(497320), v12+int32(48))
 	mBase = m.M
 	v276 = m.ExcPending
 	if v276 != 0 {
@@ -1060,10 +1060,10 @@ L66:
 L67:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = int32(440510)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = int32(441321)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v282
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v281
-	F_report_invalid_record(m, l0, int32(496473), v12+int32(32))
+	F_report_invalid_record(m, l0, int32(497320), v12+int32(32))
 	mBase = m.M
 	v294 = m.ExcPending
 	if v294 != 0 {
@@ -1079,7 +1079,7 @@ L69:
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v282
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v281
-	F_report_invalid_record(m, l0, int32(496399), v12+int32(16))
+	F_report_invalid_record(m, l0, int32(497246), v12+int32(16))
 	mBase = m.M
 	v303 = m.ExcPending
 	if v303 != 0 {

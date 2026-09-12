@@ -86,13 +86,13 @@ func F_replorigin_by_name(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-							F_errmsg(m, int32(77918), v8)
+							F_errmsg(m, int32(78026), v8)
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521063), int32(246), int32(396840))
+								F_errfinish(m, int32(521945), int32(246), int32(397564))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {

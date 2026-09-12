@@ -36,15 +36,15 @@ func F_HoldPortal(m *base.Module, l0 int32) {
 	_ = v35
 	var v38 int32
 	_ = v38
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1224]))
-	v10 = F_AllocSetContextCreateInternal(m, v5, int32(68360), int32(0), int32(8192), int32(8388608))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1223]))
+	v10 = F_AllocSetContextCreateInternal(m, v5, int32(68468), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v10
-		v13 = int32(4562080)
+		v13 = int32(4562096)
 		v14 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 		*(*int32)(unsafe.Add(mBase, _consts[10])) = v10
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
@@ -143,7 +143,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			if v15&int64(4) == int64(0) {
-				v22 = *(*int32)(unsafe.Add(mBase, _consts[290]))
+				v22 = *(*int32)(unsafe.Add(mBase, _consts[289]))
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)))
 				v24 = v23
 			} else {
@@ -156,7 +156,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v25 != 0 {
-					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1021])))
+					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1020])))
 					if v29 != 0 {
 						v38 = int32(1)
 						return v38
@@ -538,7 +538,7 @@ L3:
 	}
 L4:
 	;
-	v232 = int32(4556740)
+	v232 = int32(4556756)
 	v234 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v234 + int32(1)
 	v239 = v220 + int32(32)
@@ -900,7 +900,7 @@ L56:
 	}
 L57:
 	;
-	v307 = int32(4556740)
+	v307 = int32(4556756)
 	v309 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v309 - int32(1)
 	v313 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
@@ -5328,13 +5328,13 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 									if v1184 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(104737), int32(0))
+										F_errmsg_internal(m, int32(104845), int32(0))
 										mBase = m.M
 										v1188 = m.ExcPending
 										if v1188 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(525265), int32(306), int32(68497))
+											F_errfinish(m, int32(526147), int32(306), int32(68605))
 											mBase = m.M
 											v1193 = m.ExcPending
 											if v1193 != 0 {
@@ -5872,19 +5872,19 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 				if v1167 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(352727), int32(0))
+					F_errmsg(m, int32(353404), int32(0))
 					mBase = m.M
 					v1171 = m.ExcPending
 					if v1171 != 0 {
 						return int32(0)
 					} else {
-						F_errhint(m, int32(602565), int32(0))
+						F_errhint(m, int32(603763), int32(0))
 						mBase = m.M
 						v1175 = m.ExcPending
 						if v1175 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(525265), int32(281), int32(68497))
+							F_errfinish(m, int32(526147), int32(281), int32(68605))
 							mBase = m.M
 							v1180 = m.ExcPending
 							if v1180 != 0 {
@@ -8553,7 +8553,7 @@ L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v26)+72)) = v53
 	v57 = *(*int32)(unsafe.Add(mBase, _consts[10]))
-	v62 = F_AllocSetContextCreateInternal(m, v57, int32(65410), int32(0), int32(8192), int32(8388608))
+	v62 = F_AllocSetContextCreateInternal(m, v57, int32(65518), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -9120,7 +9120,7 @@ L78:
 	}
 L79:
 	;
-	v551 = int32(4562080)
+	v551 = int32(4562096)
 	v552 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v554 = *(*int32)(unsafe.Add(mBase, uint32(v99)+292))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v554
@@ -9495,7 +9495,7 @@ L124:
 	}
 L125:
 	;
-	v762 = int32(4562080)
+	v762 = int32(4562096)
 	v763 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v765 = *(*int32)(unsafe.Add(mBase, uint32(v99)+292))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v765
@@ -10863,7 +10863,7 @@ L304:
 	return v1795
 L305:
 	;
-	F_errmsg_internal(m, int32(472295), int32(0))
+	F_errmsg_internal(m, int32(473106), int32(0))
 	mBase = m.M
 	v1807 = m.ExcPending
 	if v1807 != 0 {
@@ -10873,7 +10873,7 @@ L305:
 	}
 L306:
 	;
-	F_errfinish(m, int32(521799), int32(578), int32(472319))
+	F_errfinish(m, int32(522681), int32(578), int32(473130))
 	mBase = m.M
 	v1812 = m.ExcPending
 	if v1812 != 0 {
@@ -11019,7 +11019,7 @@ func F_hnswcostestimate(m *base.Module, l0 int32, l1 int32, l2 float64, l3 int32
 						if base.F64_gt(v58, float64(0)) != 0 {
 							v61 = F_log(m, v58)
 							mBase = m.M
-							v63 = *(*int32)(unsafe.Add(mBase, _consts[1495]))
+							v63 = *(*int32)(unsafe.Add(mBase, _consts[1498]))
 							v65 = F_log(m, base.F64_convert_i32_s(v63))
 							mBase = m.M
 							v66 = float64(1)
@@ -11250,7 +11250,7 @@ L14:
 	goto L10
 L15:
 	;
-	F_errmsg_internal(m, int32(264839), int32(0))
+	F_errmsg_internal(m, int32(265277), int32(0))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -11260,7 +11260,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(518316), int32(1159), int32(171800))
+	F_errfinish(m, int32(519198), int32(1159), int32(172124))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -11275,7 +11275,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg_internal(m, int32(264839), int32(0))
+	F_errmsg_internal(m, int32(265277), int32(0))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -11285,7 +11285,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(518316), int32(1151), int32(171800))
+	F_errfinish(m, int32(519198), int32(1151), int32(172124))
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {
@@ -11828,7 +11828,7 @@ L41:
 	return v225
 L42:
 	;
-	F_errmsg_internal(m, int32(264784), int32(0))
+	F_errmsg_internal(m, int32(265222), int32(0))
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -11838,7 +11838,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(518316), int32(1194), int32(258526))
+	F_errfinish(m, int32(519198), int32(1194), int32(258964))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {

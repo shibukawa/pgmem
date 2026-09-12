@@ -321,7 +321,7 @@ L29:
 	v139 = int32(*(*int16)(unsafe.Add(mBase, uint32(v21)+4)))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v139
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v138
-	F_errmsg(m, int32(500709), v13)
+	F_errmsg(m, int32(501556), v13)
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {
@@ -331,7 +331,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(519409), int32(76), int32(160136))
+	F_errfinish(m, int32(520291), int32(76), int32(160460))
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -953,13 +953,13 @@ func F_vector_spherical_distance(m *base.Module, l0 int32) int32 {
 						v262 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v262
 						*(*int32)(unsafe.Add(mBase, uint32(v15))) = v261
-						F_errmsg(m, int32(500709), v15)
+						F_errmsg(m, int32(501556), v15)
 						mBase = m.M
 						v267 = m.ExcPending
 						if v267 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519409), int32(76), int32(160136))
+							F_errfinish(m, int32(520291), int32(76), int32(160460))
 							mBase = m.M
 							v272 = m.ExcPending
 							if v272 != 0 {
@@ -1175,7 +1175,7 @@ L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v22
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v16
-	F_errmsg(m, int32(489736), v9)
+	F_errmsg(m, int32(490583), v9)
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -1185,7 +1185,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(525467), int32(92), int32(302808))
+	F_errfinish(m, int32(526349), int32(92), int32(303246))
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {

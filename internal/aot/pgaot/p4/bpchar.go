@@ -332,7 +332,7 @@ L37:
 L38:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v23
-	F_errmsg(m, int32(710079), v10)
+	F_errmsg(m, int32(711654), v10)
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -342,7 +342,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(520042), int32(313), int32(241869))
+	F_errfinish(m, int32(520924), int32(313), int32(242199))
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -1132,7 +1132,7 @@ func F_bpchar_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v9
 	var v15 int32
 	_ = v15
-	v4 = int32(4562080)
+	v4 = int32(4562096)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))

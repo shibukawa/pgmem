@@ -121,7 +121,7 @@ func F_ProcessStartupProcInterrupts(m *base.Module) {
 	var v160 int32
 	_ = v160
 	v1 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[578]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[577]))
 	if v9 == v1 {
 		goto L1
 	} else {
@@ -137,8 +137,8 @@ L1:
 	}
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[578])) = int32(0)
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[579]))
+	*(*int32)(unsafe.Add(mBase, _consts[577])) = int32(0)
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[578]))
 	v17 = F_pstrdup(m, v16)
 	mBase = m.M
 	v18 = m.ExcPending
@@ -152,7 +152,7 @@ L3:
 	return
 L4:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[580]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[579]))
 	v21 = F_pstrdup(m, v20)
 	mBase = m.M
 	v22 = m.ExcPending
@@ -163,7 +163,7 @@ L4:
 	}
 L5:
 	;
-	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[581])))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, _consts[580])))
 	F_ProcessConfigFile(m, int32(2))
 	mBase = m.M
 	v27 = m.ExcPending
@@ -174,7 +174,7 @@ L5:
 	}
 L6:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[579]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[578]))
 	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v29))))
 	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
 	if v33 == int32(0) {
@@ -186,7 +186,7 @@ L6:
 	}
 L7:
 	;
-	v56 = *(*int32)(unsafe.Add(mBase, _consts[580]))
+	v56 = *(*int32)(unsafe.Add(mBase, _consts[579]))
 	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56))))
 	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21))))
 	if v60 == int32(0) {
@@ -318,7 +318,7 @@ L24:
 	}
 L25:
 	;
-	v84 = int32(*(*uint8)(unsafe.Add(mBase, _consts[581])))
+	v84 = int32(*(*uint8)(unsafe.Add(mBase, _consts[580])))
 	v86 = base.B2i32(v24 != v84)
 	goto L15
 L26:
@@ -340,7 +340,7 @@ L27:
 	}
 L28:
 	;
-	v96 = *(*int32)(unsafe.Add(mBase, _consts[582]))
+	v96 = *(*int32)(unsafe.Add(mBase, _consts[581]))
 	if v96 != int32(3) {
 		goto L29
 	} else {
@@ -385,7 +385,7 @@ L33:
 	}
 L34:
 	;
-	F_errmsg(m, int32(462488), int32(0))
+	F_errmsg(m, int32(463299), int32(0))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -399,11 +399,11 @@ L35:
 L36:
 	;
 	v117 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[583])) = uint8(v117)
+	*(*uint8)(unsafe.Add(mBase, _consts[582])) = uint8(v117)
 	goto L29
 L37:
 	;
-	F_errfinish(m, int32(515869), int32(4422), int32(88403))
+	F_errfinish(m, int32(516730), int32(4422), int32(88511))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -447,7 +447,7 @@ L42:
 	}
 L43:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _consts[522]))
+	v148 = *(*int32)(unsafe.Add(mBase, _consts[521]))
 	if v148 != 0 {
 		goto L48
 	} else {
@@ -456,8 +456,8 @@ L43:
 L44:
 	;
 	v134 = int32(4470804)
-	v136 = *(*int32)(unsafe.Add(mBase, _consts[584]))
-	*(*int32)(unsafe.Add(mBase, _consts[584])) = v136 + int32(1)
+	v136 = *(*int32)(unsafe.Add(mBase, _consts[583]))
+	*(*int32)(unsafe.Add(mBase, _consts[583])) = v136 + int32(1)
 	if v136&int32(1023) != 0 {
 		goto L43
 	} else {
@@ -498,7 +498,7 @@ L49:
 	goto L50
 L50:
 	;
-	v152 = *(*int32)(unsafe.Add(mBase, _consts[525]))
+	v152 = *(*int32)(unsafe.Add(mBase, _consts[524]))
 	if v152 != 0 {
 		goto L52
 	} else {
@@ -809,7 +809,7 @@ func F_disable_startup_progress_timeout(m *base.Module) {
 	_ = v2
 	var v5 int32
 	_ = v5
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[586]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 	if v2 != 0 {
 		F_disable_timeout(m, int32(12))
 		mBase = m.M
@@ -817,7 +817,7 @@ func F_disable_startup_progress_timeout(m *base.Module) {
 		if v5 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[585])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[584])) = int32(0)
 			return
 		}
 	} else {
@@ -982,7 +982,7 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(171754)
+	*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(172078)
 	v35 = v13 + int32(12)
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+368))
 	v37 = m.G0
@@ -1246,6 +1246,6 @@ L47:
 func F_startup_progress_timeout_handler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[585])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[584])) = int32(1)
 	return
 }

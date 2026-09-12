@@ -140,12 +140,12 @@ L22:
 	goto L23
 L23:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, _consts[1103]))
+	v87 = *(*int32)(unsafe.Add(mBase, _consts[1104]))
 	v88 = v87
 	goto L20
 L24:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1103])) = v75
+	*(*int32)(unsafe.Add(mBase, _consts[1104])) = v75
 	v88 = v75
 	goto L20
 L25:
@@ -154,7 +154,7 @@ L25:
 	goto L27
 L26:
 	;
-	v92 = int32(571401)
+	v92 = int32(572283)
 	goto L27
 L27:
 	;
@@ -162,7 +162,7 @@ L27:
 	goto L2
 L37:
 	;
-	v152 = int32(549620)
+	v152 = int32(550502)
 	goto L45
 L38:
 	;
@@ -183,7 +183,7 @@ L41:
 	v188 = int32(1)
 	v192 = F___memcpy(m, v185+v188, v144, v175+v188)
 	mBase = m.M
-	v194 = *(*int32)(unsafe.Add(mBase, _consts[474]))
+	v194 = *(*int32)(unsafe.Add(mBase, _consts[475]))
 	if v194 == int32(0) {
 		goto L56
 	} else {
@@ -211,7 +211,7 @@ L45:
 L46:
 	;
 	v162 = v160 - v152
-	v164 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v162)+uint32(_consts[1104]))))
+	v164 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v162)+uint32(_consts[1105]))))
 	if v164 == int32(0) {
 		goto L43
 	} else {
@@ -241,7 +241,7 @@ L53:
 	;
 	v232 = v228 << (uint(int32(2)) % 32)
 	v234 = v232 + int32(8)
-	v236 = *(*int32)(unsafe.Add(mBase, _consts[475]))
+	v236 = *(*int32)(unsafe.Add(mBase, _consts[476]))
 	if v236 == v229 {
 		goto L68
 	} else {
@@ -288,7 +288,7 @@ L60:
 	}
 L61:
 	;
-	v224 = *(*int32)(unsafe.Add(mBase, _consts[474]))
+	v224 = *(*int32)(unsafe.Add(mBase, _consts[475]))
 	v228 = v219
 	v229 = v224
 	goto L53
@@ -327,8 +327,8 @@ L67:
 	v251 = v248 + v228<<(uint(int32(2))%32)
 	*(*int32)(unsafe.Add(mBase, uint32(v251))) = v179
 	*(*int32)(unsafe.Add(mBase, uint32(v251)+4)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[474])) = v248
 	*(*int32)(unsafe.Add(mBase, _consts[475])) = v248
+	*(*int32)(unsafe.Add(mBase, _consts[476])) = v248
 	if v179 != 0 {
 		goto L76
 	} else {
@@ -368,7 +368,7 @@ L72:
 	}
 L73:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, _consts[474]))
+	v243 = *(*int32)(unsafe.Add(mBase, _consts[475]))
 	v244 = F___memcpy(m, v239, v243, v232)
 	mBase = m.M
 	goto L75
@@ -377,7 +377,7 @@ L74:
 	goto L75
 L75:
 	;
-	v246 = *(*int32)(unsafe.Add(mBase, _consts[475]))
+	v246 = *(*int32)(unsafe.Add(mBase, _consts[476]))
 	F_emscripten_builtin_free(m, v246)
 	mBase = m.M
 	v248 = v239

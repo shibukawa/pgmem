@@ -478,7 +478,7 @@ L64:
 	v266 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v266 + int32(4)
-	F_errmsg(m, int32(281485), v15+int32(16))
+	F_errmsg(m, int32(281923), v15+int32(16))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -488,7 +488,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(518745), int32(4426), int32(380693))
+	F_errfinish(m, int32(519627), int32(4426), int32(381394))
 	mBase = m.M
 	v280 = m.ExcPending
 	if v280 != 0 {
@@ -516,7 +516,7 @@ L68:
 	v288 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v288 + int32(4)
-	F_errmsg(m, int32(128277), v15)
+	F_errmsg(m, int32(128512), v15)
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -526,7 +526,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(518745), int32(4435), int32(380693))
+	F_errfinish(m, int32(519627), int32(4435), int32(381394))
 	mBase = m.M
 	v300 = m.ExcPending
 	if v300 != 0 {
@@ -633,13 +633,13 @@ func F_CreateTableAsRelExists(m *base.Module, l0 int32) int32 {
 							v66 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 							v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+12))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v67
-							F_errmsg(m, int32(124492), v7+int32(16))
+							F_errmsg(m, int32(124727), v7+int32(16))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(519363), int32(409), int32(125394))
+								F_errfinish(m, int32(520245), int32(409), int32(125629))
 								mBase = m.M
 								v78 = m.ExcPending
 								if v78 != 0 {
@@ -681,13 +681,13 @@ func F_CreateTableAsRelExists(m *base.Module, l0 int32) int32 {
 									v42 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 									v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+12))
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v43
-									F_errmsg(m, int32(350342), v7)
+									F_errmsg(m, int32(350985), v7)
 									mBase = m.M
 									v47 = m.ExcPending
 									if v47 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(519363), int32(424), int32(125394))
+										F_errfinish(m, int32(520245), int32(424), int32(125629))
 										mBase = m.M
 										v52 = m.ExcPending
 										if v52 != 0 {
@@ -788,14 +788,14 @@ func F_table_am_handler_out(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(230750)
-			F_errmsg(m, int32(203136), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(231080)
+			F_errmsg(m, int32(203466), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(518375), int32(370), int32(72852))
+				F_errfinish(m, int32(519257), int32(370), int32(72960))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -840,7 +840,7 @@ func F_table_beginscan_parallel(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v24
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+13)))
 	if v5 != 0 {
-		v17 = int32(4216240)
+		v17 = int32(4216496)
 		v18 = int32(449)
 		v19 = int32(0)
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+188))
@@ -1561,13 +1561,13 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			v131 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v131
-			F_errmsg_internal(m, int32(498349), v7+int32(16))
+			F_errmsg_internal(m, int32(499196), v7+int32(16))
 			mBase = m.M
 			v137 = m.ExcPending
 			if v137 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(524676), int32(1101), int32(97268))
+				F_errfinish(m, int32(525558), int32(1101), int32(97376))
 				mBase = m.M
 				v142 = m.ExcPending
 				if v142 != 0 {
@@ -1625,13 +1625,13 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 					if v93 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(546660), int32(0))
+						F_errmsg(m, int32(547542), int32(0))
 						mBase = m.M
 						v97 = m.ExcPending
 						if v97 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524676), int32(1077), int32(97268))
+							F_errfinish(m, int32(525558), int32(1077), int32(97376))
 							mBase = m.M
 							v102 = m.ExcPending
 							if v102 != 0 {
@@ -1655,13 +1655,13 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			v147 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v147
-			F_errmsg_internal(m, int32(507488), v7)
+			F_errmsg_internal(m, int32(508335), v7)
 			mBase = m.M
 			v151 = m.ExcPending
 			if v151 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(524676), int32(1106), int32(97268))
+				F_errfinish(m, int32(525558), int32(1106), int32(97376))
 				mBase = m.M
 				v156 = m.ExcPending
 				if v156 != 0 {
@@ -1716,7 +1716,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(175910), int32(0))
+					F_errmsg(m, int32(176234), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -1730,7 +1730,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v28 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524676), int32(1045), int32(97268))
+							F_errfinish(m, int32(525558), int32(1045), int32(97376))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
@@ -1774,7 +1774,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 				if v43 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(176088), int32(0))
+					F_errmsg(m, int32(176412), int32(0))
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {
@@ -1788,7 +1788,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v51 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524676), int32(1055), int32(97268))
+							F_errfinish(m, int32(525558), int32(1055), int32(97376))
 							mBase = m.M
 							v56 = m.ExcPending
 							if v56 != 0 {
@@ -1832,7 +1832,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 				if v66 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(176030), int32(0))
+					F_errmsg(m, int32(176354), int32(0))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -1846,7 +1846,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v74 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524676), int32(1065), int32(97268))
+							F_errfinish(m, int32(525558), int32(1065), int32(97376))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -1890,7 +1890,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 				if v113 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(175970), int32(0))
+					F_errmsg(m, int32(176294), int32(0))
 					mBase = m.M
 					v117 = m.ExcPending
 					if v117 != 0 {
@@ -1904,7 +1904,7 @@ func F_transformTableConstraint(m *base.Module, l0 int32, l1 int32) {
 						if v121 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(524676), int32(1088), int32(97268))
+							F_errfinish(m, int32(525558), int32(1088), int32(97376))
 							mBase = m.M
 							v126 = m.ExcPending
 							if v126 != 0 {

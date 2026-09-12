@@ -188,13 +188,13 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(432465), int32(0))
+				F_errmsg(m, int32(433253), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(516428), int32(46), int32(455983))
+					F_errfinish(m, int32(517289), int32(46), int32(456794))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -242,13 +242,13 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(432465), int32(0))
+				F_errmsg(m, int32(433253), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(516428), int32(57), int32(455795))
+					F_errfinish(m, int32(517289), int32(57), int32(456606))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -296,13 +296,13 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(432465), int32(0))
+				F_errmsg(m, int32(433253), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(516428), int32(156), int32(430912))
+					F_errfinish(m, int32(517289), int32(156), int32(431700))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

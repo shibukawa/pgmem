@@ -292,13 +292,13 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 															v147 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v147
 															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-															F_errmsg_internal(m, int32(50216), v12)
+															F_errmsg_internal(m, int32(50324), v12)
 															mBase = m.M
 															v152 = m.ExcPending
 															if v152 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(523273), int32(95), int32(105206))
+																F_errfinish(m, int32(524155), int32(95), int32(105314))
 																mBase = m.M
 																v157 = m.ExcPending
 																if v157 != 0 {

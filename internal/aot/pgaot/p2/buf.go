@@ -36,7 +36,7 @@ func F_BufTableDelete(m *base.Module, l0 int32, l1 int32) {
 	_ = v18
 	var v23 int32
 	_ = v23
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[740]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 	v7 = F_hash_search_with_hash_value(m, v4, l0, l1, int32(2), int32(0))
 	mBase = m.M
 	v8 = m.ExcPending
@@ -50,13 +50,13 @@ func F_BufTableDelete(m *base.Module, l0 int32, l1 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(466305), int32(0))
+				F_errmsg_internal(m, int32(467116), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(524047), int32(160), int32(369178))
+					F_errfinish(m, int32(524929), int32(160), int32(369879))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -82,7 +82,7 @@ func F_BufTableHashCode(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[740]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 	v4 = F_get_hash_value(m, v3, l0)
 	mBase = m.M
 	v7 = m.ExcPending
@@ -126,9 +126,9 @@ func F_LockBufHdr(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(241106)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(241436)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(519599)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(520481)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(0)
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
@@ -148,8 +148,8 @@ L2:
 	goto L3
 L3:
 	;
-	v45 = int32(4164444)
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[741]))
+	v45 = int32(4164700)
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[740]))
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(v6+int32(8))+8))
 	if v48 == int32(0) {
 		goto L12
@@ -195,7 +195,7 @@ L10:
 	goto L9
 L11:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[741])) = v63
+	*(*int32)(unsafe.Add(mBase, _consts[740])) = v63
 	goto L10
 L12:
 	;

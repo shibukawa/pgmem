@@ -193,7 +193,7 @@ L5:
 	goto L3
 L6:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[290]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[289]))
 	goto L13
 L7:
 	;
@@ -386,7 +386,7 @@ L32:
 	goto L10
 L33:
 	;
-	v93 = F_AllocSetContextCreateInternal(m, v85, int32(297279), int32(0), int32(1024), int32(8388608))
+	v93 = F_AllocSetContextCreateInternal(m, v85, int32(297717), int32(0), int32(1024), int32(8388608))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {

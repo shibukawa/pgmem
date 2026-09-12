@@ -447,7 +447,7 @@ L11:
 L12:
 	;
 	v39 = *(*int32)(unsafe.Add(mBase, _consts[116]))
-	v44 = F_AllocSetContextCreateInternal(m, v39, int32(128330), int32(0), int32(8192), int32(8388608))
+	v44 = F_AllocSetContextCreateInternal(m, v39, int32(128565), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -773,7 +773,7 @@ L57:
 	}
 L58:
 	;
-	v196 = int32(4562080)
+	v196 = int32(4562096)
 	v197 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v200 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v200

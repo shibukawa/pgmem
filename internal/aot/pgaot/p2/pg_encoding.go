@@ -107,7 +107,7 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				return v65
 			} else {
 				if l2 == int32(0) {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(l3*int32(28))+uint32(_consts[1231])))
+					v22 = *(*int32)(unsafe.Add(mBase, uint32(l3*int32(28))+uint32(_consts[1230])))
 					v23 = m.T0[v22].(func(*base.Module, int32, int32) int32)(m, l0, l1)
 					mBase = m.M
 					v26 = m.ExcPending
@@ -141,13 +141,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(270624), int32(0))
+							F_errmsg_internal(m, int32(271062), int32(0))
 							mBase = m.M
 							v80 = m.ExcPending
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518189), int32(388), int32(284106))
+								F_errfinish(m, int32(519071), int32(388), int32(284544))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -183,23 +183,23 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(l2<<(uint(int32(3))%32))+uint32(_consts[362])))
 											v102 = v101
 										} else {
-											v102 = int32(791891)
+											v102 = int32(793540)
 										}
 										if base.Ui32(l3) <= base.Ui32(int32(41)) {
 											v111 = *(*int32)(unsafe.Add(mBase, uint32(l3<<(uint(int32(3))%32))+uint32(_consts[362])))
 											v112 = v111
 										} else {
-											v112 = int32(791891)
+											v112 = int32(793540)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v112
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v102
-										F_errmsg(m, int32(77163), v9)
+										F_errmsg(m, int32(77271), v9)
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(518189), int32(396), int32(284106))
+											F_errfinish(m, int32(519071), int32(396), int32(284544))
 											mBase = m.M
 											v122 = m.ExcPending
 											if v122 != 0 {
@@ -226,20 +226,20 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 										if v129 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(14053), int32(0))
+											F_errmsg(m, int32(14086), int32(0))
 											mBase = m.M
 											v133 = m.ExcPending
 											if v133 != 0 {
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-												F_errdetail(m, int32(646456), v9+int32(16))
+												F_errdetail(m, int32(647979), v9+int32(16))
 												mBase = m.M
 												v139 = m.ExcPending
 												if v139 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(518189), int32(412), int32(284106))
+													F_errfinish(m, int32(519071), int32(412), int32(284544))
 													mBase = m.M
 													v144 = m.ExcPending
 													if v144 != 0 {
@@ -287,20 +287,20 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 														if v151 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg(m, int32(14053), int32(0))
+															F_errmsg(m, int32(14086), int32(0))
 															mBase = m.M
 															v155 = m.ExcPending
 															if v155 != 0 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l1
-																F_errdetail(m, int32(646456), v9+int32(32))
+																F_errdetail(m, int32(647979), v9+int32(32))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(518189), int32(440), int32(284106))
+																	F_errfinish(m, int32(519071), int32(440), int32(284544))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {

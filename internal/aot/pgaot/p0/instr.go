@@ -388,13 +388,13 @@ func F_InstrStopNode(m *base.Module, l0 int32, l1 float64) {
 			if v210 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(88911), int32(0))
+				F_errmsg_internal(m, int32(89019), int32(0))
 				mBase = m.M
 				v214 = m.ExcPending
 				if v214 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(516930), int32(96), int32(434050))
+					F_errfinish(m, int32(517791), int32(96), int32(434838))
 					mBase = m.M
 					v219 = m.ExcPending
 					if v219 != 0 {

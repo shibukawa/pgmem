@@ -407,3 +407,27 @@ func F_entryPrepareDownlink(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_entry_cmp(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 float64
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 float64
+	_ = v9
+	var v12 int32
+	_ = v12
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*float64)(unsafe.Add(mBase, uint32(v6)+256))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v9 = *(*float64)(unsafe.Add(mBase, uint32(v8)+256))
+	if base.F64_lt(v7, v9) != 0 {
+		v12 = int32(-1)
+	} else {
+		v12 = base.F64_gt(v7, v9)
+	}
+	return v12
+}

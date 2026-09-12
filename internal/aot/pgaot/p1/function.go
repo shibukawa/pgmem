@@ -378,13 +378,13 @@ func F_has_function_privilege_name_name(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v23
-									F_errmsg(m, int32(77265), v8)
+									F_errmsg(m, int32(77373), v8)
 									mBase = m.M
 									v39 = m.ExcPending
 									if v39 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(522474), int32(3565), int32(397344))
+										F_errfinish(m, int32(523356), int32(3565), int32(398068))
 										mBase = m.M
 										v44 = m.ExcPending
 										if v44 != 0 {
