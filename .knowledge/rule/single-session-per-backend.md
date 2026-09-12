@@ -12,7 +12,7 @@ rule:
   pools: any size works but serializes; api:clone handles no longer need max 1 connection
   shared_session_state: SET, temp tables, advisory locks leak between live connections; prepared statements are prefixed per connection and dropped at its end
   listen_notify: per connection; async.c commit hook (wasm/patches.py, host import pgmem_listen) feeds a channel->sessions registry in pgmem.go, NotifyResponse messages are routed to listening sessions through a per-session queue, and LISTEN is re-issued when one connection's UNLISTEN drops a channel others still want
-  fresh_session: DISCARD ALL runs at connection start only when no other connection is alive
+  fresh_session: at connection start, when no other connection is alive, pgmem_reset_session (C, exported from postgres.c) aborts any transaction, does what DISCARD ALL does and forgets the temp namespace; no statement runs, so pg_stat_statements and log_statement do not see it
   deadlock: a transaction waiting on another connection's work waits forever; diagnostic logged after 5s
   parallelism: obtained across forks, not within a fork (requirement:test-fixture-fork)
 ```

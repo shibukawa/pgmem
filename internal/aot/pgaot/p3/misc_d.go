@@ -1843,6 +1843,686 @@ L72:
 	;
 	goto L68
 }
+func F_DiscardCommand(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v50 int32
+	_ = v50
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
+	var v76 int32
+	_ = v76
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v105 int32
+	_ = v105
+	var v108 int32
+	_ = v108
+	var v114 int32
+	_ = v114
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v121 int32
+	_ = v121
+	var v124 int32
+	_ = v124
+	var v126 int32
+	_ = v126
+	var v128 int32
+	_ = v128
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
+	var v136 int32
+	_ = v136
+	var v144 int32
+	_ = v144
+	var v148 int32
+	_ = v148
+	var v153 int32
+	_ = v153
+	var v158 int32
+	_ = v158
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	var v168 int32
+	_ = v168
+	var v169 int32
+	_ = v169
+	var v172 int32
+	_ = v172
+	var v175 int32
+	_ = v175
+	var v179 int32
+	_ = v179
+	var v183 int32
+	_ = v183
+	var v186 int32
+	_ = v186
+	var v190 int32
+	_ = v190
+	var v197 int32
+	_ = v197
+	var v202 int32
+	_ = v202
+	var v207 int32
+	_ = v207
+	var v209 int32
+	_ = v209
+	var v216 int32
+	_ = v216
+	var v221 int32
+	_ = v221
+	var v223 int32
+	_ = v223
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	switch v8 {
+	case 0:
+		goto L3
+	case 1:
+		goto L6
+	case 2:
+		goto L2
+	case 3:
+		goto L5
+	default:
+		goto L4
+	}
+L1:
+	;
+	m.G0 = v6 + int32(16)
+	return
+L2:
+	;
+	v221 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[0]))
+	if v221 != 0 {
+		goto L76
+	} else {
+		goto L77
+	}
+L3:
+	;
+	F_PreventInTransactionBlock(m, l1, int32(_a_F_DiscardCommand_0))
+	mBase = m.M
+	v93 = m.ExcPending
+	if v93 != 0 {
+		goto L30
+	} else {
+		goto L35
+	}
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v80 = m.ExcPending
+	if v80 != 0 {
+		goto L30
+	} else {
+		goto L32
+	}
+L5:
+	;
+	F_ResetTempTableNamespace(m)
+	mBase = m.M
+	v76 = m.ExcPending
+	if v76 != 0 {
+		goto L30
+	} else {
+		goto L31
+	}
+L6:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[1]))
+	if v13 == int32(0) {
+		goto L8
+	} else {
+		goto L9
+	}
+L7:
+	;
+	goto L1
+L8:
+	;
+	v57 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[2]))
+	if v57 == int32(0) {
+		goto L24
+	} else {
+		goto L25
+	}
+L9:
+	;
+	if v13 == int32(_a_F_DiscardCommand_1) {
+		goto L8
+	} else {
+		goto L10
+	}
+L10:
+	;
+	v18 = v13
+	goto L11
+L11:
+	;
+	v22 = v18 - int32(5)
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22))))
+	if v23 != int32(1) {
+		goto L13
+	} else {
+		goto L14
+	}
+L12:
+	;
+	goto L8
+L13:
+	;
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	if v50 != int32(_a_F_DiscardCommand_1) {
+		v18 = v50
+		goto L11
+	} else {
+		goto L23
+	}
+L14:
+	;
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v18-int32(96))))
+	if v28 != 0 {
+		goto L16
+	} else {
+		goto L17
+	}
+L15:
+	;
+	v39 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v22))) = uint8(v39)
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(v18-int32(12))))
+	if v43 == v39 {
+		goto L13
+	} else {
+		goto L22
+	}
+L16:
+	;
+	v29 = F_stmt_requires_parse_analysis(m, v28)
+	mBase = m.M
+	if v29 != 0 {
+		goto L15
+	} else {
+		goto L19
+	}
+L17:
+	;
+	goto L18
+L18:
+	;
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v18-int32(92))))
+	if v32 == int32(0) {
+		goto L13
+	} else {
+		goto L20
+	}
+L19:
+	;
+	goto L13
+L20:
+	;
+	v35 = F_query_requires_rewrite_plan(m, v32)
+	mBase = m.M
+	if v35 == int32(0) {
+		goto L13
+	} else {
+		goto L21
+	}
+L21:
+	;
+	goto L15
+L22:
+	;
+	v46 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v43)+10)) = uint8(v46)
+	goto L13
+L23:
+	;
+	goto L12
+L24:
+	;
+	goto L7
+L25:
+	;
+	if v57 == int32(_a_F_DiscardCommand_2) {
+		goto L24
+	} else {
+		goto L26
+	}
+L26:
+	;
+	v62 = v57
+	goto L27
+L27:
+	;
+	v67 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v62-int32(16)))) = uint8(v67)
+	v69 = *(*int32)(unsafe.Add(mBase, uint32(v62)+4))
+	if v69 != int32(_a_F_DiscardCommand_2) {
+		v62 = v69
+		goto L27
+	} else {
+		goto L29
+	}
+L28:
+	;
+	goto L24
+L29:
+	;
+	goto L28
+L30:
+	;
+	return
+L31:
+	;
+	goto L1
+L32:
+	;
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v81
+	F_errmsg_internal(m, int32(_a_F_DiscardCommand_3), v6)
+	mBase = m.M
+	v85 = m.ExcPending
+	if v85 != 0 {
+		goto L30
+	} else {
+		goto L33
+	}
+L33:
+	;
+	F_errfinish(m, int32(_a_F_DiscardCommand_4), int32(52), int32(_a_F_DiscardCommand_5))
+	mBase = m.M
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L30
+	} else {
+		goto L34
+	}
+L34:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L35:
+	;
+	F_PortalHashTableDeleteAll(m)
+	mBase = m.M
+	v95 = m.ExcPending
+	if v95 != 0 {
+		goto L30
+	} else {
+		goto L36
+	}
+L36:
+	;
+	v97 = int32(0)
+	F_SetPGVariable(m, int32(_a_F_DiscardCommand_6), v97, v97)
+	mBase = m.M
+	v100 = m.ExcPending
+	if v100 != 0 {
+		goto L30
+	} else {
+		goto L37
+	}
+L37:
+	;
+	F_ResetAllOptions(m)
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L30
+	} else {
+		goto L38
+	}
+L38:
+	;
+	v103 = m.G0
+	v105 = v103 - int32(32)
+	m.G0 = v105
+	v108 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[3]))
+	if v108 == int32(0) {
+		goto L39
+	} else {
+		goto L40
+	}
+L39:
+	;
+	m.G0 = v105 + int32(32)
+	F_Async_UnlistenAll(m)
+	mBase = m.M
+	v144 = m.ExcPending
+	if v144 != 0 {
+		goto L30
+	} else {
+		goto L50
+	}
+L40:
+	;
+	F_hash_seq_init(m, v105+int32(12), v108)
+	mBase = m.M
+	v114 = m.ExcPending
+	if v114 != 0 {
+		goto L30
+	} else {
+		goto L41
+	}
+L41:
+	;
+	v117 = F_hash_seq_search(m, v105+int32(12))
+	mBase = m.M
+	v118 = m.ExcPending
+	if v118 != 0 {
+		goto L30
+	} else {
+		goto L42
+	}
+L42:
+	;
+	if v117 == int32(0) {
+		goto L39
+	} else {
+		goto L43
+	}
+L43:
+	;
+	v121 = v117
+	goto L44
+L44:
+	;
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(v121)+64))
+	F_DropCachedPlan(m, v124)
+	mBase = m.M
+	v126 = m.ExcPending
+	if v126 != 0 {
+		goto L30
+	} else {
+		goto L46
+	}
+L45:
+	;
+	goto L39
+L46:
+	;
+	v128 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[3]))
+	v131 = F_hash_search(m, v128, v121, int32(2), int32(0))
+	mBase = m.M
+	v132 = m.ExcPending
+	if v132 != 0 {
+		goto L30
+	} else {
+		goto L47
+	}
+L47:
+	;
+	v135 = F_hash_seq_search(m, v105+int32(12))
+	mBase = m.M
+	v136 = m.ExcPending
+	if v136 != 0 {
+		goto L30
+	} else {
+		goto L48
+	}
+L48:
+	;
+	if v135 != 0 {
+		v121 = v135
+		goto L44
+	} else {
+		goto L49
+	}
+L49:
+	;
+	goto L45
+L50:
+	;
+	F_LockReleaseAll(m, int32(2), int32(1))
+	mBase = m.M
+	v148 = m.ExcPending
+	if v148 != 0 {
+		goto L30
+	} else {
+		goto L51
+	}
+L51:
+	;
+	v153 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[1]))
+	if v153 == int32(0) {
+		goto L53
+	} else {
+		goto L54
+	}
+L52:
+	;
+	F_ResetTempTableNamespace(m)
+	mBase = m.M
+	v216 = m.ExcPending
+	if v216 != 0 {
+		goto L30
+	} else {
+		goto L75
+	}
+L53:
+	;
+	v197 = *(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[2]))
+	if v197 == int32(0) {
+		goto L69
+	} else {
+		goto L70
+	}
+L54:
+	;
+	if v153 == int32(_a_F_DiscardCommand_1) {
+		goto L53
+	} else {
+		goto L55
+	}
+L55:
+	;
+	v158 = v153
+	goto L56
+L56:
+	;
+	v162 = v158 - int32(5)
+	v163 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v162))))
+	if v163 != int32(1) {
+		goto L58
+	} else {
+		goto L59
+	}
+L57:
+	;
+	goto L53
+L58:
+	;
+	v190 = *(*int32)(unsafe.Add(mBase, uint32(v158)+4))
+	if v190 != int32(_a_F_DiscardCommand_1) {
+		v158 = v190
+		goto L56
+	} else {
+		goto L68
+	}
+L59:
+	;
+	v168 = *(*int32)(unsafe.Add(mBase, uint32(v158-int32(96))))
+	if v168 != 0 {
+		goto L61
+	} else {
+		goto L62
+	}
+L60:
+	;
+	v179 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v162))) = uint8(v179)
+	v183 = *(*int32)(unsafe.Add(mBase, uint32(v158-int32(12))))
+	if v183 == v179 {
+		goto L58
+	} else {
+		goto L67
+	}
+L61:
+	;
+	v169 = F_stmt_requires_parse_analysis(m, v168)
+	mBase = m.M
+	if v169 != 0 {
+		goto L60
+	} else {
+		goto L64
+	}
+L62:
+	;
+	goto L63
+L63:
+	;
+	v172 = *(*int32)(unsafe.Add(mBase, uint32(v158-int32(92))))
+	if v172 == int32(0) {
+		goto L58
+	} else {
+		goto L65
+	}
+L64:
+	;
+	goto L58
+L65:
+	;
+	v175 = F_query_requires_rewrite_plan(m, v172)
+	mBase = m.M
+	if v175 == int32(0) {
+		goto L58
+	} else {
+		goto L66
+	}
+L66:
+	;
+	goto L60
+L67:
+	;
+	v186 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v183)+10)) = uint8(v186)
+	goto L58
+L68:
+	;
+	goto L57
+L69:
+	;
+	goto L52
+L70:
+	;
+	if v197 == int32(_a_F_DiscardCommand_2) {
+		goto L69
+	} else {
+		goto L71
+	}
+L71:
+	;
+	v202 = v197
+	goto L72
+L72:
+	;
+	v207 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v202-int32(16)))) = uint8(v207)
+	v209 = *(*int32)(unsafe.Add(mBase, uint32(v202)+4))
+	if v209 != int32(_a_F_DiscardCommand_2) {
+		v202 = v209
+		goto L72
+	} else {
+		goto L74
+	}
+L73:
+	;
+	goto L69
+L74:
+	;
+	goto L73
+L75:
+	;
+	goto L2
+L76:
+	;
+	F_hash_destroy(m, v221)
+	mBase = m.M
+	v223 = m.ExcPending
+	if v223 != 0 {
+		goto L30
+	} else {
+		goto L79
+	}
+L77:
+	;
+	goto L78
+L78:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[4])) = int32(0)
+	goto L1
+L79:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_DiscardCommand[0])) = int32(0)
+	goto L78
+}
 func F_DropPreparedStatement(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

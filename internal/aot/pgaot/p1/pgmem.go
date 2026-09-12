@@ -115,3 +115,69 @@ func F_pgmem_module_name(m *base.Module, l0 int32) int32 {
 	}
 	return v13
 }
+func F_pgmem_reset_session(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	F_AbortOutOfAnyTransaction(m)
+	mBase = m.M
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return
+	} else {
+		if l0 != 0 {
+			F_StartTransactionCommand(m)
+			mBase = m.M
+			v10 = m.ExcPending
+			if v10 != 0 {
+				return
+			} else {
+				*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = int64(245)
+				F_DiscardCommand(m, v5+int32(8), int32(1))
+				mBase = m.M
+				v17 = m.ExcPending
+				if v17 != 0 {
+					return
+				} else {
+					F_CommitTransactionCommand(m)
+					mBase = m.M
+					v19 = m.ExcPending
+					if v19 != 0 {
+						return
+					} else {
+						v21 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, _c_F_pgmem_reset_session[0])) = uint8(v21)
+						v24 = int32(0)
+						*(*int32)(unsafe.Add(mBase, _c_F_pgmem_reset_session[1])) = v24
+						*(*int32)(unsafe.Add(mBase, _c_F_pgmem_reset_session[2])) = v24
+						*(*int32)(unsafe.Add(mBase, _c_F_pgmem_reset_session[3])) = v24
+						*(*uint8)(unsafe.Add(mBase, _c_F_pgmem_reset_session[4])) = uint8(v24)
+						m.G0 = v5 + int32(16)
+						return
+					}
+				}
+			}
+		} else {
+			m.G0 = v5 + int32(16)
+			return
+		}
+	}
+}

@@ -636,8 +636,6 @@ func F_isTempToastNamespace(m *base.Module, l0 int32) int32
 func F_GetTempNamespaceProcNumber(m *base.Module, l0 int32) int32
 //go:linkname F_FindDefaultConversionProc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_FindDefaultConversionProc
 func F_FindDefaultConversionProc(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_ResetTempTableNamespace github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ResetTempTableNamespace
-func F_ResetTempTableNamespace(m *base.Module)
 //go:linkname F_fetch_search_path github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_fetch_search_path
 func F_fetch_search_path(m *base.Module, l0 int32) int32
 //go:linkname F_RunObjectPostCreateHook github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_RunObjectPostCreateHook
@@ -772,10 +770,6 @@ func F_RelationDropStorage(m *base.Module, l0 int32)
 func F_RelationTruncate(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_parse_analyze_fixedparams github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_parse_analyze_fixedparams
 func F_parse_analyze_fixedparams(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
-//go:linkname F_stmt_requires_parse_analysis github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_stmt_requires_parse_analysis
-func F_stmt_requires_parse_analysis(m *base.Module, l0 int32) int32
-//go:linkname F_query_requires_rewrite_plan github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_query_requires_rewrite_plan
-func F_query_requires_rewrite_plan(m *base.Module, l0 int32) int32
 //go:linkname F_applyLockingClause github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_applyLockingClause
 func F_applyLockingClause(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_SystemFuncName github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_SystemFuncName
@@ -970,6 +964,8 @@ func F_defGetInt32(m *base.Module, l0 int32) int32
 func F_defGetInt64(m *base.Module, l0 int32) int64
 //go:linkname F_errorConflictingDefElem github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_errorConflictingDefElem
 func F_errorConflictingDefElem(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_DiscardCommand github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DiscardCommand
+func F_DiscardCommand(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_SetDatabaseHasLoginEventTriggers github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_SetDatabaseHasLoginEventTriggers
 func F_SetDatabaseHasLoginEventTriggers(m *base.Module)
 //go:linkname F_ExplainOneUtility github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainOneUtility

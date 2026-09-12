@@ -242,6 +242,12 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		pgaot.PostgresSendReadyForQueryIfNecessary(m)
 		return nil, true
+	case "pgmem_reset_session":
+		if len(a) != 1 {
+			panic("aot: pgmem_reset_session: want 1 args")
+		}
+		pgaot.PgmemResetSession(m, int32(uint32(a[0])))
+		return nil, true
 	case "pgl_setPGliteExitStatus":
 		if len(a) != 1 {
 			panic("aot: pgl_setPGliteExitStatus: want 1 args")

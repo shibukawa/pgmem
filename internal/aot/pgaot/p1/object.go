@@ -5152,7 +5152,7 @@ L265:
 	}
 L266:
 	;
-	F_errfinish(m, int32(_a_F_get_object_address_29), int32(4075), int32(_a_F_get_object_address_30))
+	F_errfinish(m, int32(_a_F_get_object_address_29), int32(4088), int32(_a_F_get_object_address_30))
 	mBase = m.M
 	v814 = m.ExcPending
 	if v814 != 0 {

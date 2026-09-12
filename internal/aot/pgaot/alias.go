@@ -32,6 +32,8 @@ func F_PostgresMainLongJmp(m *base.Module)
 func F_PostgresMainLoopOnce(m *base.Module)
 //go:linkname F_PostgresSendReadyForQueryIfNecessary github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_PostgresSendReadyForQueryIfNecessary
 func F_PostgresSendReadyForQueryIfNecessary(m *base.Module)
+//go:linkname F_pgmem_reset_session github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgmem_reset_session
+func F_pgmem_reset_session(m *base.Module, l0 int32)
 //go:linkname F_float4up github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_float4up
 func F_float4up(m *base.Module, l0 int32) int32
 //go:linkname F_gtsvector_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gtsvector_decompress

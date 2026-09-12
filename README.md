@@ -197,9 +197,12 @@ on this memory-bound code (arm64; amd64 not measured).
   consequences are the usual transaction-pooling ones:
   - Session state (`SET`, temp tables, advisory locks) is shared between
     live connections. Use `SET LOCAL`; prepared statements are fine (their
-    names are prefixed per connection and dropped when it ends). `DISCARD
-    ALL` runs when a connection starts and no other is alive, so
-    sequential connections still see a fresh session.
+    names are prefixed per connection and dropped when it ends). When a
+    connection starts and no other is alive, the session is reset to what
+    a new backend would give it (everything `DISCARD ALL` does, and no
+    temp namespace), done in C rather than as statements, so sequential
+    connections see a fresh session and pg_stat_statements does not count
+    the housekeeping.
   - `LISTEN`/`NOTIFY` work per connection: the backend reports its listen
     set to pgmem at commit time and notifications are routed to the
     connections that listen on the channel. `DISCARD ALL` issued by a

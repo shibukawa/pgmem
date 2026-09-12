@@ -698,6 +698,43 @@ func (b *Backend) Exec(msg []byte) ([]byte, error) {
 	return out, nil
 }
 
+// ResetSession aborts any open transaction and, with discard, gives the
+// session the state a new client expects (what DISCARD ALL leaves, and
+// no temp namespace) without running a statement, so pg_stat_statements
+// and the log do not see pgmem's own housekeeping.
+func (b *Backend) ResetSession(discard bool) error {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	if b.dead {
+		return errors.New("backend is closed")
+	}
+	b.in, b.off = nil, 0
+	b.out.Reset()
+	flag := uint64(0)
+	if discard {
+		flag = 1
+	}
+	_, err := b.mod.Call("pgmem_reset_session", flag)
+	if err == nil {
+		return nil
+	}
+	var ee *host.ExitError
+	if !errors.As(err, &ee) {
+		return err
+	}
+	status, _ := b.mod.CallI32("pgl_setPGliteExitStatus", uint64(uint32(0xFFFFFFFE)))
+	if status != exitLongjmp {
+		b.dead = true
+		return fmt.Errorf("backend exited during session reset (code=%d status=%d)\n%s", ee.Code, status, b.log.String())
+	}
+	// ereport(ERROR) inside the reset: run the recovery block; the
+	// session is then at least out of any transaction.
+	if _, err := b.mod.Call("PostgresMainLongJmp"); err != nil {
+		return err
+	}
+	return fmt.Errorf("session reset failed: %s", strings.TrimSpace(b.log.String()))
+}
+
 func (b *Backend) remaining() int32 {
 	n, err := b.mod.CallI32("pq_buffer_remaining_data")
 	if err != nil {
