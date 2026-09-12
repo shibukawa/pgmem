@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"testing"
 	"unicode/utf8"
@@ -15,31 +16,42 @@ import (
 	"github.com/shibukawa/pgmem"
 )
 
-// The pgcrypto regression suite from the PostgreSQL source tree
-// (contrib/pgcrypto/sql and expected, PostgreSQL License), in the order the
-// contrib Makefile runs it for a build with zlib: OpenPGP compression runs
-// on the host (wasm/pgmem_pgcrypto_compress.inc), so pgp-compression is in
-// and pgp-zlib-DISABLED is not.
-var pgcryptoRegress = []string{
-	"init", "md5", "sha1", "hmac-md5", "hmac-sha1", "blowfish", "rijndael",
-	"sha2", "des", "3des", "cast5",
-	"crypt-des", "crypt-md5", "crypt-blowfish", "crypt-xdes",
-	"pgp-armor", "pgp-decrypt", "pgp-encrypt", "pgp-encrypt-md5", "pgp-compression",
-	"pgp-pubkey-decrypt", "pgp-pubkey-encrypt", "pgp-pubkey-session",
-	"pgp-info", "crypt-shacrypt",
+// contribRegress lists, per extension, the upstream regression files
+// (contrib/<name>/sql and expected, PostgreSQL License) vendored under
+// testdata/regress/<name>, in the order the contrib Makefile runs them.
+var contribRegress = map[string][]string{
+	// pgcrypto for a build with zlib: OpenPGP compression runs on the host
+	// (wasm/pgmem_pgcrypto_compress.inc), so pgp-compression is in and
+	// pgp-zlib-DISABLED is not.
+	"pgcrypto": {
+		"init", "md5", "sha1", "hmac-md5", "hmac-sha1", "blowfish", "rijndael",
+		"sha2", "des", "3des", "cast5",
+		"crypt-des", "crypt-md5", "crypt-blowfish", "crypt-xdes",
+		"pgp-armor", "pgp-decrypt", "pgp-encrypt", "pgp-encrypt-md5", "pgp-compression",
+		"pgp-pubkey-decrypt", "pgp-pubkey-encrypt", "pgp-pubkey-session",
+		"pgp-info", "crypt-shacrypt",
+	},
 }
 
-// TestPgcryptoRegress replays PostgreSQL's own pgcrypto regression tests
-// against the host-backed crypto (wasm/pgmem_pgcrypto_*.inc,
-// internal/host/crypto.go) and compares with the upstream expected output,
-// formatted the way psql -a -q prints it.
-func TestPgcryptoRegress(t *testing.T) {
-	s, err := pgmem.Start(context.Background(), pgmem.Options{})
-	if err != nil {
-		t.Fatal(err)
+// TestContribRegress replays PostgreSQL's own regression tests for every
+// bundled extension against a fresh server each and compares with the
+// upstream expected output, formatted the way psql -a -q prints it.
+func TestContribRegress(t *testing.T) {
+	names := make([]string, 0, len(contribRegress))
+	for name := range contribRegress {
+		names = append(names, name)
 	}
-	defer s.Close()
-	runRegress(t, s.DSN(), filepath.Join("testdata", "regress", "pgcrypto"), pgcryptoRegress)
+	sort.Strings(names)
+	for _, name := range names {
+		t.Run(name, func(t *testing.T) {
+			s, err := pgmem.Start(context.Background(), pgmem.Options{})
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer s.Close()
+			runRegress(t, s.DSN(), filepath.Join("testdata", "regress", name), contribRegress[name])
+		})
+	}
 }
 
 // runRegress executes dir/sql/<name>.sql for each name on one connection
@@ -80,10 +92,29 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 				t.Errorf("output differs from expected (actual saved to %s):\n%s", out, diff)
 			}
 		})
-		if !ok && name == "init" {
-			t.Fatal("init failed; the rest would be noise")
+		if !ok && name == names[0] {
+			t.Fatal("first file failed; the rest would be noise")
 		}
 	}
+}
+
+// psqlState is the little of psql's scripting state the contrib tests use:
+// variables (\\set, \\gset, :name interpolation), \\if/\\else/\\endif
+// with \\quit, and the VERBOSITY setting for error display.
+type psqlState struct {
+	vars      map[string]string
+	verbosity string
+	ifStack   []bool // whether each open \\if branch is being executed
+	quit      bool
+}
+
+func (p *psqlState) active() bool {
+	for _, on := range p.ifStack {
+		if !on {
+			return false
+		}
+	}
+	return true
 }
 
 // psqlTranscript echoes every input line and, after each complete
@@ -92,11 +123,24 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builder, input string) string {
 	var out strings.Builder
 	var buf strings.Builder
+	ps := &psqlState{vars: map[string]string{}, verbosity: "default"}
 	lines := strings.Split(input, "\n")
 	if len(lines) > 0 && lines[len(lines)-1] == "" {
 		lines = lines[:len(lines)-1]
 	}
+	exec := func(stmt string, gset bool, prefix string) {
+		if !ps.active() {
+			return
+		}
+		notices.Reset()
+		result := runStatement(ctx, conn, ps, interpolate(leadingCommentsStripped(stmt), ps.vars), gset, prefix)
+		out.WriteString(notices.String())
+		out.WriteString(result)
+	}
 	for _, line := range lines {
+		if ps.quit {
+			break
+		}
 		// psql drops empty lines unless they sit inside a quoted string
 		// (mainloop.c: "nothing left on line? then ignore").
 		if line == "" && !endsInQuote(buf.String()) {
@@ -104,6 +148,26 @@ func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builde
 		}
 		out.WriteString(line)
 		out.WriteByte('\n')
+		// a backslash command on its own line, or \\gset ending a query
+		if strings.HasPrefix(strings.TrimSpace(line), "\\") && !endsInQuote(buf.String()) {
+			cmd := strings.TrimSpace(line)
+			if strings.HasPrefix(cmd, "\\gset") {
+				exec(buf.String(), true, strings.TrimSpace(strings.TrimPrefix(cmd, "\\gset")))
+				buf.Reset()
+				continue
+			}
+			if strings.TrimSpace(stripComments(buf.String())) != "" {
+				panic("regress: meta-command with a pending statement: " + line)
+			}
+			out.WriteString(ps.meta(cmd))
+			continue
+		}
+		if i := strings.Index(line, "\\gset"); i >= 0 && !endsInQuote(buf.String()+line[:i]) {
+			buf.WriteString(line[:i])
+			exec(buf.String(), true, strings.TrimSpace(line[i+len("\\gset"):]))
+			buf.Reset()
+			continue
+		}
 		buf.WriteString(line)
 		buf.WriteByte('\n')
 		for {
@@ -116,13 +180,116 @@ func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builde
 			if strings.TrimSpace(stripComments(stmt)) == ";" {
 				continue
 			}
-			notices.Reset()
-			result := runStatement(ctx, conn, stmt)
-			out.WriteString(notices.String())
-			out.WriteString(result)
+			exec(stmt, false, "")
 		}
 	}
 	return out.String()
+}
+
+// meta runs one backslash command and returns what it prints.
+func (ps *psqlState) meta(cmd string) string {
+	name, args, _ := strings.Cut(cmd, " ")
+	args = strings.TrimSpace(args)
+	switch name {
+	case "\\if":
+		on := ps.active() && psqlBool(interpolate(args, ps.vars))
+		ps.ifStack = append(ps.ifStack, on)
+	case "\\elif":
+		if n := len(ps.ifStack); n > 0 {
+			ps.ifStack[n-1] = !ps.ifStack[n-1] && psqlBool(interpolate(args, ps.vars))
+		}
+	case "\\else":
+		if n := len(ps.ifStack); n > 0 {
+			ps.ifStack[n-1] = !ps.ifStack[n-1]
+		}
+	case "\\endif":
+		if n := len(ps.ifStack); n > 0 {
+			ps.ifStack = ps.ifStack[:n-1]
+		}
+	case "\\quit", "\\q":
+		if ps.active() {
+			ps.quit = true
+		}
+	case "\\set":
+		if !ps.active() {
+			return ""
+		}
+		k, v, _ := strings.Cut(args, " ")
+		v = strings.TrimSpace(v)
+		if k == "VERBOSITY" {
+			ps.verbosity = v
+		} else {
+			ps.vars[k] = interpolate(v, ps.vars)
+		}
+	case "\\unset":
+		delete(ps.vars, args)
+	case "\\echo":
+		if ps.active() {
+			return interpolate(args, ps.vars) + "\n"
+		}
+	default:
+		panic("regress: unsupported meta-command " + cmd)
+	}
+	return ""
+}
+
+func psqlBool(s string) bool {
+	switch strings.ToLower(strings.TrimSpace(s)) {
+	case "t", "true", "on", "1", "yes", "y":
+		return true
+	}
+	return false
+}
+
+// interpolate replaces :name, :'name' and :"name" with the variable's
+// value the way psql does, leaving unknown names and ::casts alone.
+func interpolate(s string, vars map[string]string) string {
+	if len(vars) == 0 || !strings.Contains(s, ":") {
+		return s
+	}
+	var b strings.Builder
+	for i := 0; i < len(s); i++ {
+		c := s[i]
+		if c != ':' || (i > 0 && (s[i-1] == ':' || isIdent(s[i-1]))) || i+1 >= len(s) || s[i+1] == ':' {
+			b.WriteByte(c)
+			continue
+		}
+		quote := byte(0)
+		j := i + 1
+		if s[j] == '\'' || s[j] == '"' {
+			quote = s[j]
+			j++
+		}
+		k := j
+		for k < len(s) && isIdent(s[k]) {
+			k++
+		}
+		name := s[j:k]
+		if quote != 0 && (k >= len(s) || s[k] != quote) {
+			name = ""
+		}
+		v, ok := vars[name]
+		if name == "" || !ok {
+			b.WriteByte(c)
+			continue
+		}
+		switch quote {
+		case '\'':
+			b.WriteString("'" + strings.ReplaceAll(v, "'", "''") + "'")
+			k++
+		case '"':
+			b.WriteString("\"" + strings.ReplaceAll(v, "\"", "\"\"") + "\"")
+			k++
+		default:
+			b.WriteString(v)
+		}
+		i = k - 1
+	}
+	return b.String()
+}
+
+func isIdent(c byte) bool {
+	return c == '_' || c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'
 }
 
 // scanSQL walks s and returns the index of the first ';' outside quotes,
@@ -213,10 +380,10 @@ func stripComments(s string) string {
 
 var rightAligned = map[uint32]bool{20: true, 21: true, 23: true, 26: true, 700: true, 701: true, 790: true, 1700: true}
 
-func runStatement(ctx context.Context, conn *pgx.Conn, stmt string) string {
+func runStatement(ctx context.Context, conn *pgx.Conn, ps *psqlState, stmt string, gset bool, prefix string) string {
 	rows, err := conn.Query(ctx, stmt)
 	if err != nil {
-		return formatError(err)
+		return formatError(err, ps.verbosity, stmt)
 	}
 	fields := rows.FieldDescriptions()
 	var data [][]string
@@ -229,21 +396,41 @@ func runStatement(ctx context.Context, conn *pgx.Conn, stmt string) string {
 		data = append(data, row)
 	}
 	if err := rows.Err(); err != nil {
-		return formatError(err)
+		return formatError(err, ps.verbosity, stmt)
 	}
 	if len(fields) == 0 {
+		return ""
+	}
+	if gset {
+		// \\gset [prefix]: one row's columns become variables, no output
+		if len(data) != 1 {
+			return fmt.Sprintf("CLIENT ERROR: \\gset with %d rows\n", len(data))
+		}
+		for i, f := range fields {
+			ps.vars[prefix+f.Name] = data[0][i]
+		}
 		return ""
 	}
 	return formatAligned(fields, data)
 }
 
-func formatError(err error) string {
+func formatError(err error, verbosity string, query string) string {
 	var pgErr *pgconn.PgError
 	if !errors.As(err, &pgErr) {
 		return "CLIENT ERROR: " + err.Error() + "\n"
 	}
 	var b strings.Builder
+	if verbosity == "sqlstate" {
+		fmt.Fprintf(&b, "%s:  %s\n", pgErr.Severity, pgErr.Code)
+		return b.String()
+	}
 	fmt.Fprintf(&b, "%s:  %s\n", pgErr.Severity, pgErr.Message)
+	if verbosity == "terse" {
+		return b.String()
+	}
+	if pgErr.Position > 0 {
+		b.WriteString(errorPosition(query, int(pgErr.Position)))
+	}
 	if pgErr.Detail != "" {
 		fmt.Fprintf(&b, "DETAIL:  %s\n", pgErr.Detail)
 	}
@@ -254,6 +441,91 @@ func formatError(err error) string {
 		fmt.Fprintf(&b, "CONTEXT:  %s\n", pgErr.Where)
 	}
 	return b.String()
+}
+
+// errorPosition renders libpq's "LINE n: ..." plus caret for a 1-based
+// character position in query, following reportErrorPosition in
+// fe-protocol3.c: tabs become spaces, the line is cut to 60 screen
+// columns (right first, then left while keeping the cursor 10 columns
+// from the right edge) with "..." marking the cuts. Every character is
+// taken as one column wide.
+func errorPosition(query string, loc int) string {
+	const displaySize, minRightCut = 60, 10
+	loc--
+	if loc < 0 {
+		return ""
+	}
+	runes := []rune(strings.ReplaceAll(query, "\t", " "))
+	locLine := 1
+	ibeg := 0
+	iend := -1
+	for cno := 0; cno < len(runes); cno++ {
+		ch := runes[cno]
+		if ch == '\r' || ch == '\n' {
+			if cno < loc {
+				if ch == '\r' || cno == 0 || runes[cno-1] != '\r' {
+					locLine++
+				}
+				ibeg = cno + 1
+			} else {
+				iend = cno
+				break
+			}
+		}
+	}
+	if iend < 0 {
+		iend = len(runes)
+	}
+	if loc > len(runes) {
+		return ""
+	}
+	begTrunc, endTrunc := false, false
+	if iend-ibeg > displaySize {
+		if ibeg+displaySize >= loc+minRightCut {
+			iend = ibeg + displaySize
+			endTrunc = true
+		} else {
+			for loc+minRightCut < iend {
+				iend--
+				endTrunc = true
+			}
+			for iend-ibeg > displaySize {
+				ibeg++
+				begTrunc = true
+			}
+		}
+	}
+	var b strings.Builder
+	fmt.Fprintf(&b, "LINE %d: ", locLine)
+	if begTrunc {
+		b.WriteString("...")
+	}
+	prefixWidth := utf8.RuneCountInString(b.String())
+	b.WriteString(string(runes[ibeg:iend]))
+	if endTrunc {
+		b.WriteString("...")
+	}
+	b.WriteString("\n")
+	b.WriteString(strings.Repeat(" ", prefixWidth+loc-ibeg))
+	b.WriteString("^\n")
+	return b.String()
+}
+
+// leadingCommentsStripped drops the blank and comment-only lines before a
+// statement, as psql's query buffer starts at the first token; error
+// positions and LINE numbers count from there.
+func leadingCommentsStripped(stmt string) string {
+	lines := strings.Split(stmt, "\n")
+	i := 0
+	for i < len(lines) {
+		t := strings.TrimSpace(lines[i])
+		if t == "" || strings.HasPrefix(t, "--") {
+			i++
+			continue
+		}
+		break
+	}
+	return strings.Join(lines[i:], "\n")
 }
 
 // formatAligned renders rows like psql's default aligned format with
