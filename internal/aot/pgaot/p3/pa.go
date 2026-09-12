@@ -21,7 +21,7 @@ func F_pa_set_xact_state(m *base.Module, l0 int32, l1 int32) {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v4 != 0 {
-		F_s_lock(m, l0, int32(487795), int32(1317), int32(346196))
+		F_s_lock(m, l0, int32(489965), int32(1317), int32(347726))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {

@@ -947,7 +947,7 @@ L42:
 	}
 L43:
 	;
-	F_appendStringInfoString(m, l0, int32(722041))
+	F_appendStringInfoString(m, l0, int32(724350))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {
@@ -990,7 +990,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v177
-	F_errmsg_internal(m, int32(460399), v13)
+	F_errmsg_internal(m, int32(462375), v13)
 	mBase = m.M
 	v185 = m.ExcPending
 	if v185 != 0 {
@@ -1000,7 +1000,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(489022), int32(2974), int32(111110))
+	F_errfinish(m, int32(491213), int32(2974), int32(111732))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -1355,13 +1355,13 @@ func F_window_nth_value(m *base.Module, l0 int32) int32 {
 					if v99 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(236480), int32(0))
+						F_errmsg(m, int32(237514), int32(0))
 						mBase = m.M
 						v103 = m.ExcPending
 						if v103 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(486972), int32(707), int32(339825))
+							F_errfinish(m, int32(489126), int32(707), int32(341355))
 							mBase = m.M
 							v108 = m.ExcPending
 							if v108 != 0 {

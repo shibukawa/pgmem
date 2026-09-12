@@ -1730,7 +1730,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										if v61&int32(65535) == int32(1) {
-											F_pg_qsort(m, v961, v745, int32(8), int32(1521))
+											F_pg_qsort(m, v961, v745, int32(8), int32(1522))
 											mBase = m.M
 											v970 = m.ExcPending
 											if v970 != 0 {
@@ -1776,7 +1776,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 												}
 												break
 											}
-											F_pg_qsort(m, v961, v745, int32(8), int32(1521))
+											F_pg_qsort(m, v961, v745, int32(8), int32(1522))
 											mBase = m.M
 											v1034 = m.ExcPending
 											if v1034 != 0 {
@@ -3559,7 +3559,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									if v61&int32(65535) == int32(1) {
-										F_pg_qsort(m, v961, v745, int32(8), int32(1521))
+										F_pg_qsort(m, v961, v745, int32(8), int32(1522))
 										mBase = m.M
 										v970 = m.ExcPending
 										if v970 != 0 {
@@ -3605,7 +3605,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 											}
 											break
 										}
-										F_pg_qsort(m, v961, v745, int32(8), int32(1521))
+										F_pg_qsort(m, v961, v745, int32(8), int32(1522))
 										mBase = m.M
 										v1034 = m.ExcPending
 										if v1034 != 0 {

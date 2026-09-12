@@ -81,7 +81,7 @@ func F__ltxtq_extract_exec(m *base.Module, l0 int32) int32 {
 		if v19 != 0 {
 			return int32(0)
 		} else {
-			v22 = F_array_iterator(m, v12, int32(5653), v18, v9+int32(12))
+			v22 = F_array_iterator(m, v12, int32(5654), v18, v9+int32(12))
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
@@ -260,13 +260,13 @@ func F_ltxtq_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
-				F_errmsg_internal(m, int32(464606), v6)
+				F_errmsg_internal(m, int32(466582), v6)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(488490), int32(437), int32(36010))
+					F_errfinish(m, int32(490670), int32(437), int32(36174))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

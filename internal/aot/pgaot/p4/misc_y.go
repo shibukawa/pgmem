@@ -135,7 +135,7 @@ L7:
 	;
 	v110 = v50 >> (uint(int32(31)) % 32)
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v50 ^ v110 - v110
-	v117 = F_pg_sprintf(m, v10+int32(20), int32(458870), v10)
+	v117 = F_pg_sprintf(m, v10+int32(20), int32(460846), v10)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -150,7 +150,7 @@ L8:
 L9:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v49
-	v72 = F_pg_sprintf(m, v10+int32(20), int32(458870), v10+int32(16))
+	v72 = F_pg_sprintf(m, v10+int32(20), int32(460846), v10+int32(16))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -312,13 +312,13 @@ func F_yy_fatal_error_5(m *base.Module, l0 int32) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		F_errmsg_internal(m, int32(203498), v5)
+		F_errmsg_internal(m, int32(204393), v5)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(309805), int32(51), int32(79969))
+			F_errfinish(m, int32(311296), int32(51), int32(80251))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

@@ -139,7 +139,7 @@ func F_tsvector_delete_by_indices(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	v4 = int32(0)
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if int32(2) <= l2 {
-		F_pg_qsort(m, l1, l2, int32(4), int32(1536))
+		F_pg_qsort(m, l1, l2, int32(4), int32(1537))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
@@ -1426,7 +1426,7 @@ L5:
 	return int32(0)
 L6:
 	;
-	v24 = int32(4470752)
+	v24 = int32(4476144)
 	v25 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(v20)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v27
@@ -1441,7 +1441,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v30
-	F_TupleDescInitEntry(m, v30, int32(1), int32(370612), int32(25), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(1), int32(372197), int32(25), int32(-1), int32(0))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -1451,7 +1451,7 @@ L7:
 	}
 L8:
 	;
-	F_TupleDescInitEntry(m, v30, int32(2), int32(136835), int32(1005), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(2), int32(137635), int32(1005), int32(-1), int32(0))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -1461,7 +1461,7 @@ L8:
 	}
 L9:
 	;
-	F_TupleDescInitEntry(m, v30, int32(3), int32(122118), int32(1009), int32(-1), int32(0))
+	F_TupleDescInitEntry(m, v30, int32(3), int32(122763), int32(1009), int32(-1), int32(0))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -1709,7 +1709,7 @@ L37:
 	goto L14
 L38:
 	;
-	F_errmsg_internal(m, int32(361809), int32(0))
+	F_errmsg_internal(m, int32(363339), int32(0))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {
@@ -1719,7 +1719,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(488186), int32(653), int32(76571))
+	F_errfinish(m, int32(490366), int32(653), int32(76833))
 	mBase = m.M
 	v261 = m.ExcPending
 	if v261 != 0 {

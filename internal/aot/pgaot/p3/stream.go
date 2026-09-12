@@ -39,14 +39,14 @@ func F_stream_abort_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v10 = int32(4463656)
+	v10 = int32(4469048)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[49]))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	*(*int32)(unsafe.Add(mBase, _consts[49])) = v8 + int32(4)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = l2
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(80380)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(80662)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v12
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v8 + int32(16)
 	v27 = int32(1)
@@ -69,14 +69,14 @@ func F_stream_abort_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 			if v43 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(495635)
-				F_errmsg(m, int32(314020), v8)
+				*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(497843)
+				F_errmsg(m, int32(315511), v8)
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489940), int32(1399), int32(215071))
+					F_errfinish(m, int32(492148), int32(1399), int32(216002))
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {
@@ -140,14 +140,14 @@ func F_stream_start_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 	v6 = m.G0
 	v8 = v6 - int32(32)
 	m.G0 = v8
-	v10 = int32(4463656)
+	v10 = int32(4469048)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[49]))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	*(*int32)(unsafe.Add(mBase, _consts[49])) = v8 + int32(4)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = l2
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(81607)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(81889)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v12
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(992)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = int32(993)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = v8 + int32(16)
 	v27 = int32(1)
@@ -170,14 +170,14 @@ func F_stream_start_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int64) {
 			if v43 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(495651)
-				F_errmsg(m, int32(314020), v8)
+				*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(497859)
+				F_errmsg(m, int32(315511), v8)
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489940), int32(1309), int32(215095))
+					F_errfinish(m, int32(492148), int32(1309), int32(216026))
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {

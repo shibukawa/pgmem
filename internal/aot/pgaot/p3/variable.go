@@ -1157,7 +1157,7 @@ L116:
 	v483 = *(*int32)(unsafe.Add(mBase, uint32(v482)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v89
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v483
-	F_errmsg_internal(m, int32(467889), v12+int32(16))
+	F_errmsg_internal(m, int32(469865), v12+int32(16))
 	mBase = m.M
 	v490 = m.ExcPending
 	if v490 != 0 {
@@ -1167,7 +1167,7 @@ L116:
 	}
 L117:
 	;
-	F_errfinish(m, int32(485790), int32(1600), int32(391021))
+	F_errfinish(m, int32(487944), int32(1600), int32(392668))
 	mBase = m.M
 	v495 = m.ExcPending
 	if v495 != 0 {
@@ -1186,7 +1186,7 @@ L119:
 	v501 = *(*int32)(unsafe.Add(mBase, uint32(v500)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v89
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v501
-	F_errmsg_internal(m, int32(467928), v12)
+	F_errmsg_internal(m, int32(469904), v12)
 	mBase = m.M
 	v506 = m.ExcPending
 	if v506 != 0 {
@@ -1196,7 +1196,7 @@ L119:
 	}
 L120:
 	;
-	F_errfinish(m, int32(485790), int32(1660), int32(391021))
+	F_errfinish(m, int32(487944), int32(1660), int32(392668))
 	mBase = m.M
 	v511 = m.ExcPending
 	if v511 != 0 {
@@ -1517,7 +1517,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v43
-	F_errmsg_internal(m, int32(333218), v17)
+	F_errmsg_internal(m, int32(334709), v17)
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -1527,7 +1527,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(487199), int32(6242), int32(313322))
+	F_errfinish(m, int32(489369), int32(6242), int32(314813))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -1930,7 +1930,7 @@ func F_map_variable_attnos(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v6
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l1
 	*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v6)
-	v22 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1054), v9+int32(12))
+	v22 = F_query_or_expression_tree_mutator_impl(m, l0, int32(1055), v9+int32(12))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {

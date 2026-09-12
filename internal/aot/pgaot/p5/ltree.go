@@ -2353,7 +2353,7 @@ func F_ltree_textadd(m *base.Module, l0 int32) int32 {
 			if v17 != 0 {
 				return int32(0)
 			} else {
-				v18 = F_DirectFunctionCall1Coll(m, int32(5635), int32(0), v16)
+				v18 = F_DirectFunctionCall1Coll(m, int32(5636), int32(0), v16)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {

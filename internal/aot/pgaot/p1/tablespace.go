@@ -211,7 +211,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = int64(34359738372)
-		v25 = F_hash_create(m, int32(393599), int32(16), v5+int32(-48), int32(40))
+		v25 = F_hash_create(m, int32(395246), int32(16), v5+int32(-48), int32(40))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -226,7 +226,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 				if v35 != 0 {
 					return int32(0)
 				} else {
-					F_CacheRegisterSyscacheCallback(m, int32(69), int32(1610), int32(0))
+					F_CacheRegisterSyscacheCallback(m, int32(69), int32(1611), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
@@ -351,7 +351,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				F_CacheRegisterSyscacheCallback(m, int32(69), int32(1610), int32(0))
+				F_CacheRegisterSyscacheCallback(m, int32(69), int32(1611), int32(0))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {
@@ -525,7 +525,7 @@ func F_has_tablespace_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1632752))
+		v22 = F_convert_any_priv_string(m, v14, int32(1636848))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

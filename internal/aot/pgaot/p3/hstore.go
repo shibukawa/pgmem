@@ -157,7 +157,7 @@ L3:
 	goto L4
 L4:
 	;
-	F_pg_qsort(m, l0, l1, int32(20), int32(6479))
+	F_pg_qsort(m, l0, l1, int32(20), int32(6605))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -1207,7 +1207,7 @@ L81:
 	}
 L82:
 	;
-	F_errmsg_internal(m, int32(423413), int32(0))
+	F_errmsg_internal(m, int32(425079), int32(0))
 	mBase = m.M
 	v330 = m.ExcPending
 	if v330 != 0 {
@@ -1217,7 +1217,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(485914), int32(312), int32(408333))
+	F_errfinish(m, int32(488068), int32(312), int32(409999))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -1309,7 +1309,7 @@ L97:
 	goto L10
 L98:
 	;
-	F_errmsg_internal(m, int32(417736), int32(0))
+	F_errmsg_internal(m, int32(419402), int32(0))
 	mBase = m.M
 	v425 = m.ExcPending
 	if v425 != 0 {
@@ -1319,7 +1319,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(485914), int32(274), int32(408333))
+	F_errfinish(m, int32(488068), int32(274), int32(409999))
 	mBase = m.M
 	v432 = m.ExcPending
 	if v432 != 0 {
@@ -3488,7 +3488,7 @@ func F_hstore_each(m *base.Module, l0 int32) int32 {
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
 	if v14 == int32(0) {
-		v17 = int32(4470752)
+		v17 = int32(4476144)
 		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v19 = F_hstoreUpgrade(m, v18)
 		mBase = m.M
@@ -3535,13 +3535,13 @@ func F_hstore_each(m *base.Module, l0 int32) int32 {
 							if v165 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(361809), int32(0))
+								F_errmsg_internal(m, int32(363339), int32(0))
 								mBase = m.M
 								v171 = m.ExcPending
 								if v171 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(488210), int32(869), int32(300364))
+									F_errfinish(m, int32(490390), int32(869), int32(301658))
 									mBase = m.M
 									v178 = m.ExcPending
 									if v178 != 0 {
@@ -4298,7 +4298,7 @@ func F_hstore_gt(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(5466), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(5467), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -4320,7 +4320,7 @@ func F_hstore_ne(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(5466), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(5467), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -5821,7 +5821,7 @@ L160:
 	}
 L161:
 	;
-	F_errmsg(m, int32(298453), int32(0))
+	F_errmsg(m, int32(299747), int32(0))
 	mBase = m.M
 	v642 = m.ExcPending
 	if v642 != 0 {
@@ -5831,7 +5831,7 @@ L161:
 	}
 L162:
 	;
-	F_errfinish(m, int32(487421), int32(156), int32(275974))
+	F_errfinish(m, int32(489591), int32(156), int32(277160))
 	mBase = m.M
 	v649 = m.ExcPending
 	if v649 != 0 {

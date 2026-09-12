@@ -45,7 +45,7 @@ func F_ResOwnerPrintCatCache(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v15 | v16<<(uint(int32(16))%32)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v14
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v13
-	v30 = F_psprintf(m, int32(461005), v10)
+	v30 = F_psprintf(m, int32(462981), v10)
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -73,7 +73,7 @@ func F_ResOwnerPrintDSM(m *base.Module, l0 int32) int32 {
 	m.G0 = v5
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v7
-	v10 = F_psprintf(m, int32(40780), v5)
+	v10 = F_psprintf(m, int32(40944), v5)
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {
@@ -178,9 +178,9 @@ func F_ResOwnerReleaseBufferIO(m *base.Module, l0 int32) {
 	v7 = v5 - int32(112)
 	m.G0 = v7
 	v10 = *(*int32)(unsafe.Add(mBase, _consts[4]))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = int32(226116)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = int32(227047)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(487541)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(489711)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+16)) = int64(0)
 	v23 = v10 + l0<<(uint(int32(6))%32)
@@ -202,7 +202,7 @@ L2:
 	goto L3
 L3:
 	;
-	v53 = int32(4089276)
+	v53 = int32(4094604)
 	v54 = *(*int32)(unsafe.Add(mBase, _consts[414]))
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(16))+8))
 	if v56 == int32(0) {
@@ -297,9 +297,9 @@ L19:
 	goto L11
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+108)) = int32(226116)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+108)) = int32(227047)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+104)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+100)) = int32(487541)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+100)) = int32(489711)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+96)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+88)) = int64(0)
 	v143 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
@@ -371,7 +371,7 @@ L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v98
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v7 + int32(16)
-	F_errmsg(m, int32(183899), v7)
+	F_errmsg(m, int32(184794), v7)
 	mBase = m.M
 	v122 = m.ExcPending
 	if v122 != 0 {
@@ -381,7 +381,7 @@ L28:
 	}
 L29:
 	;
-	F_errdetail(m, int32(556694), int32(0))
+	F_errdetail(m, int32(558902), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -391,7 +391,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(487541), int32(6182), int32(519028))
+	F_errfinish(m, int32(489711), int32(6182), int32(521236))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -411,7 +411,7 @@ L33:
 	goto L34
 L34:
 	;
-	v170 = int32(4089276)
+	v170 = int32(4094604)
 	v171 = *(*int32)(unsafe.Add(mBase, _consts[414]))
 	v173 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(88))+8))
 	if v173 == int32(0) {
@@ -449,7 +449,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v25))) = v165&int32(-205520897) | int32(134217728)
-	v196 = *(*int32)(unsafe.Add(mBase, _consts[904]))
+	v196 = *(*int32)(unsafe.Add(mBase, _consts[905]))
 	v199 = *(*int32)(unsafe.Add(mBase, uint32(v23-int32(44))))
 	F_ConditionVariableBroadcast(m, v196+v199<<(uint(int32(4))%32))
 	mBase = m.M
@@ -572,7 +572,7 @@ func F_ResOwnerReleaseFile(m *base.Module, l0 int32) {
 	_ = v3
 	var v10 int32
 	_ = v10
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[943]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[944]))
 	*(*int32)(unsafe.Add(mBase, uint32(v3+l0*int32(48))+8)) = int32(0)
 	F_FileClose(m, l0)
 	mBase = m.M

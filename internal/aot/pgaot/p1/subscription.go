@@ -194,13 +194,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 													v157 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 													v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+16))
 													*(*int32)(unsafe.Add(mBase, uint32(v10))) = v158
-													F_errmsg_internal(m, int32(70443), v10)
+													F_errmsg_internal(m, int32(70705), v10)
 													mBase = m.M
 													v162 = m.ExcPending
 													if v162 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(487835), int32(4990), int32(241086))
+														F_errfinish(m, int32(490005), int32(4990), int32(242120))
 														mBase = m.M
 														v167 = m.ExcPending
 														if v167 != 0 {
@@ -371,7 +371,7 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																			v108 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 																			v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+16))
 																			*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v109
-																			F_errmsg(m, int32(444998), v10+int32(32))
+																			F_errmsg(m, int32(446699), v10+int32(32))
 																			mBase = m.M
 																			v115 = m.ExcPending
 																			if v115 != 0 {
@@ -384,13 +384,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																				*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v1)
 																				v122 = int64(base.Ui64(v1) >> (uint(v117) % 64))
 																				*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v122)
-																				F_errdetail(m, int32(633098), v10+int32(16))
+																				F_errdetail(m, int32(635306), v10+int32(16))
 																				mBase = m.M
 																				v128 = m.ExcPending
 																				if v128 != 0 {
 																					return
 																				} else {
-																					F_errfinish(m, int32(487835), int32(5028), int32(241086))
+																					F_errfinish(m, int32(490005), int32(5028), int32(242120))
 																					mBase = m.M
 																					v133 = m.ExcPending
 																					if v133 != 0 {
@@ -494,13 +494,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 												v157 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 												v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+16))
 												*(*int32)(unsafe.Add(mBase, uint32(v10))) = v158
-												F_errmsg_internal(m, int32(70443), v10)
+												F_errmsg_internal(m, int32(70705), v10)
 												mBase = m.M
 												v162 = m.ExcPending
 												if v162 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(487835), int32(4990), int32(241086))
+													F_errfinish(m, int32(490005), int32(4990), int32(242120))
 													mBase = m.M
 													v167 = m.ExcPending
 													if v167 != 0 {
@@ -671,7 +671,7 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																		v108 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 																		v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+16))
 																		*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v109
-																		F_errmsg(m, int32(444998), v10+int32(32))
+																		F_errmsg(m, int32(446699), v10+int32(32))
 																		mBase = m.M
 																		v115 = m.ExcPending
 																		if v115 != 0 {
@@ -684,13 +684,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																			*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v1)
 																			v122 = int64(base.Ui64(v1) >> (uint(v117) % 64))
 																			*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v122)
-																			F_errdetail(m, int32(633098), v10+int32(16))
+																			F_errdetail(m, int32(635306), v10+int32(16))
 																			mBase = m.M
 																			v128 = m.ExcPending
 																			if v128 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(487835), int32(5028), int32(241086))
+																				F_errfinish(m, int32(490005), int32(5028), int32(242120))
 																				mBase = m.M
 																				v133 = m.ExcPending
 																				if v133 != 0 {
@@ -805,13 +805,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 												v157 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 												v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+16))
 												*(*int32)(unsafe.Add(mBase, uint32(v10))) = v158
-												F_errmsg_internal(m, int32(70443), v10)
+												F_errmsg_internal(m, int32(70705), v10)
 												mBase = m.M
 												v162 = m.ExcPending
 												if v162 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(487835), int32(4990), int32(241086))
+													F_errfinish(m, int32(490005), int32(4990), int32(242120))
 													mBase = m.M
 													v167 = m.ExcPending
 													if v167 != 0 {
@@ -982,7 +982,7 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																		v108 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 																		v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+16))
 																		*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v109
-																		F_errmsg(m, int32(444998), v10+int32(32))
+																		F_errmsg(m, int32(446699), v10+int32(32))
 																		mBase = m.M
 																		v115 = m.ExcPending
 																		if v115 != 0 {
@@ -995,13 +995,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																			*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v1)
 																			v122 = int64(base.Ui64(v1) >> (uint(v117) % 64))
 																			*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v122)
-																			F_errdetail(m, int32(633098), v10+int32(16))
+																			F_errdetail(m, int32(635306), v10+int32(16))
 																			mBase = m.M
 																			v128 = m.ExcPending
 																			if v128 != 0 {
 																				return
 																			} else {
-																				F_errfinish(m, int32(487835), int32(5028), int32(241086))
+																				F_errfinish(m, int32(490005), int32(5028), int32(242120))
 																				mBase = m.M
 																				v133 = m.ExcPending
 																				if v133 != 0 {
@@ -1105,13 +1105,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 											v157 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 											v158 = *(*int32)(unsafe.Add(mBase, uint32(v157)+16))
 											*(*int32)(unsafe.Add(mBase, uint32(v10))) = v158
-											F_errmsg_internal(m, int32(70443), v10)
+											F_errmsg_internal(m, int32(70705), v10)
 											mBase = m.M
 											v162 = m.ExcPending
 											if v162 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(487835), int32(4990), int32(241086))
+												F_errfinish(m, int32(490005), int32(4990), int32(242120))
 												mBase = m.M
 												v167 = m.ExcPending
 												if v167 != 0 {
@@ -1282,7 +1282,7 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																	v108 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 																	v109 = *(*int32)(unsafe.Add(mBase, uint32(v108)+16))
 																	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v109
-																	F_errmsg(m, int32(444998), v10+int32(32))
+																	F_errmsg(m, int32(446699), v10+int32(32))
 																	mBase = m.M
 																	v115 = m.ExcPending
 																	if v115 != 0 {
@@ -1295,13 +1295,13 @@ func F_clear_subscription_skip_lsn(m *base.Module, l0 int64) {
 																		*(*uint32)(unsafe.Add(mBase, uint32(v10)+20)) = uint32(v1)
 																		v122 = int64(base.Ui64(v1) >> (uint(v117) % 64))
 																		*(*uint32)(unsafe.Add(mBase, uint32(v10)+16)) = uint32(v122)
-																		F_errdetail(m, int32(633098), v10+int32(16))
+																		F_errdetail(m, int32(635306), v10+int32(16))
 																		mBase = m.M
 																		v128 = m.ExcPending
 																		if v128 != 0 {
 																			return
 																		} else {
-																			F_errfinish(m, int32(487835), int32(5028), int32(241086))
+																			F_errfinish(m, int32(490005), int32(5028), int32(242120))
 																			mBase = m.M
 																			v133 = m.ExcPending
 																			if v133 != 0 {

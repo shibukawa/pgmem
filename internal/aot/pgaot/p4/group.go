@@ -61,7 +61,7 @@ func F_create_group_result_path(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 		*(*int64)(unsafe.Add(mBase, uint32(v13)+32)) = int64(4607182418800017408)
 		v34 = *(*float64)(unsafe.Add(mBase, uint32(l2)+16))
 		*(*float64)(unsafe.Add(mBase, uint32(v13)+48)) = v34
-		v37 = *(*float64)(unsafe.Add(mBase, _consts[601]))
+		v37 = *(*float64)(unsafe.Add(mBase, _consts[602]))
 		v39 = *(*float64)(unsafe.Add(mBase, uint32(l2)+24))
 		*(*float64)(unsafe.Add(mBase, uint32(v13)+56)) = base.F64_add(base.F64_add(v34, v37), v39)
 		if l3 != 0 {

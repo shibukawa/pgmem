@@ -154,7 +154,7 @@ func F_ActivateCommitTs(m *base.Module) {
 								if v62 != 0 {
 									return
 								} else {
-									v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(4365364), v33)
+									v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(4370756), v33)
 									mBase = m.M
 									v65 = m.ExcPending
 									if v65 != 0 {
@@ -172,7 +172,7 @@ func F_ActivateCommitTs(m *base.Module) {
 											if v79 != 0 {
 												return
 											} else {
-												v80 = int32(4365364)
+												v80 = int32(4370756)
 												v82 = F_SimpleLruZeroPage(m, v80, v33)
 												mBase = m.M
 												v83 = m.ExcPending
@@ -248,7 +248,7 @@ func F_ActivateCommitTs(m *base.Module) {
 							if v62 != 0 {
 								return
 							} else {
-								v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(4365364), v33)
+								v64 = F_SimpleLruDoesPhysicalPageExist(m, int32(4370756), v33)
 								mBase = m.M
 								v65 = m.ExcPending
 								if v65 != 0 {
@@ -266,7 +266,7 @@ func F_ActivateCommitTs(m *base.Module) {
 										if v79 != 0 {
 											return
 										} else {
-											v80 = int32(4365364)
+											v80 = int32(4370756)
 											v82 = F_SimpleLruZeroPage(m, v80, v33)
 											mBase = m.M
 											v83 = m.ExcPending
@@ -549,13 +549,13 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						} else {
 							v72 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-							F_errmsg_internal(m, int32(474738), v10)
+							F_errmsg_internal(m, int32(476714), v10)
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(488186), int32(1969), int32(355036))
+								F_errfinish(m, int32(490366), int32(1969), int32(356566))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -700,13 +700,13 @@ func F_TS_execute_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 					} else {
 						v72 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v72
-						F_errmsg_internal(m, int32(474738), v10)
+						F_errmsg_internal(m, int32(476714), v10)
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(488186), int32(1969), int32(355036))
+							F_errfinish(m, int32(490366), int32(1969), int32(356566))
 							mBase = m.M
 							v81 = m.ExcPending
 							if v81 != 0 {
@@ -1282,13 +1282,13 @@ func F_TS_phrase_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						} else {
 							v264 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v264
-							F_errmsg_internal(m, int32(474738), v11)
+							F_errmsg_internal(m, int32(476714), v11)
 							mBase = m.M
 							v268 = m.ExcPending
 							if v268 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(488186), int32(1837), int32(343351))
+								F_errfinish(m, int32(490366), int32(1837), int32(344881))
 								mBase = m.M
 								v273 = m.ExcPending
 								if v273 != 0 {
@@ -1654,13 +1654,13 @@ func F_TS_phrase_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					} else {
 						v264 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v264
-						F_errmsg_internal(m, int32(474738), v11)
+						F_errmsg_internal(m, int32(476714), v11)
 						mBase = m.M
 						v268 = m.ExcPending
 						if v268 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(488186), int32(1837), int32(343351))
+							F_errfinish(m, int32(490366), int32(1837), int32(344881))
 							mBase = m.M
 							v273 = m.ExcPending
 							if v273 != 0 {
@@ -1721,7 +1721,7 @@ func F_error_commit_ts_disabled(m *base.Module) {
 		if v13 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(496746), int32(0))
+			F_errmsg(m, int32(498954), int32(0))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
@@ -1737,11 +1737,11 @@ func F_error_commit_ts_disabled(m *base.Module) {
 				} else {
 					v30 = int32(0)
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(233336)
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(234314)
 				if v30 != 0 {
-					v35 = int32(584066)
+					v35 = int32(586274)
 				} else {
-					v35 = int32(558292)
+					v35 = int32(560500)
 				}
 				F_errhint(m, v35, v5)
 				mBase = m.M
@@ -1749,7 +1749,7 @@ func F_error_commit_ts_disabled(m *base.Module) {
 				if v37 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(486124), int32(390), int32(448309))
+					F_errfinish(m, int32(488278), int32(390), int32(450034))
 					mBase = m.M
 					v42 = m.ExcPending
 					if v42 != 0 {
@@ -1881,13 +1881,13 @@ func F_get_ts_parser_func(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v53
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51
-									F_errmsg(m, int32(188892), v8)
+									F_errmsg(m, int32(189787), v8)
 									mBase = m.M
 									v59 = m.ExcPending
 									if v59 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(486863), int32(126), int32(482370))
+										F_errfinish(m, int32(489017), int32(126), int32(484477))
 										mBase = m.M
 										v64 = m.ExcPending
 										if v64 != 0 {
@@ -1933,7 +1933,7 @@ func F_ts_headline_json(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1190), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -1966,7 +1966,7 @@ func F_ts_headline_jsonb(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1188), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -2009,7 +2009,7 @@ func F_ts_match_tq(m *base.Module, l0 int32) int32 {
 	v6 = l0 + int32(28)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = F_DirectFunctionCall1Coll(m, int32(1540), v2, v12)
+	v13 = F_DirectFunctionCall1Coll(m, int32(1541), v2, v12)
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -2021,7 +2021,7 @@ func F_ts_match_tq(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v19 = F_DirectFunctionCall2Coll(m, int32(1538), v2, v17, v7)
+			v19 = F_DirectFunctionCall2Coll(m, int32(1539), v2, v17, v7)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
@@ -2085,7 +2085,7 @@ func F_ts_rank_tt(m *base.Module, l0 int32) int32 {
 	} else {
 		v13 = l0 + int32(28)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-		v16 = F_calc_rank(m, int32(1714480), v8, v14, int32(0))
+		v16 = F_calc_rank(m, int32(1718576), v8, v14, int32(0))
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
@@ -2168,7 +2168,7 @@ func F_ts_rank_ttf(m *base.Module, l0 int32) int32 {
 		v13 = l0 + int32(28)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v16 = F_calc_rank(m, int32(1714480), v8, v14, v15)
+		v16 = F_calc_rank(m, int32(1718576), v8, v14, v15)
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {

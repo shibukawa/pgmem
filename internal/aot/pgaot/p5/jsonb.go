@@ -651,7 +651,7 @@ L71:
 	goto L68
 L72:
 	;
-	F_errmsg_internal(m, int32(362793), int32(0))
+	F_errmsg_internal(m, int32(364323), int32(0))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -661,7 +661,7 @@ L72:
 	}
 L73:
 	;
-	F_errfinish(m, int32(489785), int32(1876), int32(226684))
+	F_errfinish(m, int32(491993), int32(1876), int32(227615))
 	mBase = m.M
 	v284 = m.ExcPending
 	if v284 != 0 {
@@ -837,13 +837,13 @@ func F_jsonb_array_length(m *base.Module, l0 int32) int32 {
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(24510), int32(0))
+						F_errmsg(m, int32(24639), int32(0))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(487084), int32(1889), int32(315827))
+							F_errfinish(m, int32(489238), int32(1889), int32(317318))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -872,13 +872,13 @@ func F_jsonb_array_length(m *base.Module, l0 int32) int32 {
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(226627), int32(0))
+					F_errmsg(m, int32(227558), int32(0))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(487084), int32(1885), int32(315827))
+						F_errfinish(m, int32(489238), int32(1885), int32(317318))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -3402,7 +3402,7 @@ L66:
 	goto L17
 L67:
 	;
-	v385 = F_DirectFunctionCall2Coll(m, int32(1345), int32(0), v382, v383)
+	v385 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v382, v383)
 	mBase = m.M
 	v386 = m.ExcPending
 	if v386 != 0 {
@@ -3437,7 +3437,7 @@ L71:
 	}
 L72:
 	;
-	v395 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v388, v393)
+	v395 = F_DirectFunctionCall2Coll(m, int32(1347), int32(0), v388, v393)
 	mBase = m.M
 	v396 = m.ExcPending
 	if v396 != 0 {
@@ -3464,7 +3464,7 @@ L76:
 	goto L17
 L77:
 	;
-	F_errmsg_internal(m, int32(362793), int32(0))
+	F_errmsg_internal(m, int32(364323), int32(0))
 	mBase = m.M
 	v408 = m.ExcPending
 	if v408 != 0 {
@@ -3474,7 +3474,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(489785), int32(1402), int32(454856))
+	F_errfinish(m, int32(491993), int32(1402), int32(456581))
 	mBase = m.M
 	v413 = m.ExcPending
 	if v413 != 0 {
@@ -3490,7 +3490,7 @@ L79:
 L80:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v45
-	F_errmsg_internal(m, int32(480263), v10)
+	F_errmsg_internal(m, int32(482337), v10)
 	mBase = m.M
 	v437 = m.ExcPending
 	if v437 != 0 {
@@ -3500,7 +3500,7 @@ L80:
 	}
 L81:
 	;
-	F_errfinish(m, int32(488234), int32(329), int32(454335))
+	F_errfinish(m, int32(490414), int32(329), int32(456060))
 	mBase = m.M
 	v442 = m.ExcPending
 	if v442 != 0 {
@@ -3788,7 +3788,7 @@ L13:
 	}
 L14:
 	;
-	v30 = int32(4470752)
+	v30 = int32(4476144)
 	v31 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(v28)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v33
@@ -3863,8 +3863,8 @@ L20:
 	}
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(111167)
-	F_errmsg(m, int32(226562), v10+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = int32(111789)
+	F_errmsg(m, int32(227493), v10+int32(16))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -3874,7 +3874,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(487084), int32(586), int32(111167))
+	F_errfinish(m, int32(489238), int32(586), int32(111789))
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -3899,8 +3899,8 @@ L24:
 	}
 L25:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(111167)
-	F_errmsg(m, int32(25244), v10)
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(111789)
+	F_errmsg(m, int32(25373), v10)
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -3910,7 +3910,7 @@ L25:
 	}
 L26:
 	;
-	F_errfinish(m, int32(487084), int32(591), int32(111167))
+	F_errfinish(m, int32(489238), int32(591), int32(111789))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -4184,7 +4184,7 @@ func F_jsonb_path_exists_internal(m *base.Module, l0 int32, l1 int32) int32 {
 					v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 					v24 = v19
 					v25 = base.B2i32(v21 == int32(0))
-					v29 = F_executeJsonPath(m, v13, v24, int32(1409), int32(1410), v8, v25, int32(0), l1)
+					v29 = F_executeJsonPath(m, v13, v24, int32(1410), int32(1411), v8, v25, int32(0), l1)
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
@@ -4256,7 +4256,7 @@ func F_jsonb_path_exists_internal(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v24 = v3
 				v25 = v3
-				v29 = F_executeJsonPath(m, v13, v24, int32(1409), int32(1410), v8, v25, int32(0), l1)
+				v29 = F_executeJsonPath(m, v13, v24, int32(1410), int32(1411), v8, v25, int32(0), l1)
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
@@ -4452,7 +4452,7 @@ func F_jsonb_path_query_internal(m *base.Module, l0 int32, l1 int32) int32 {
 		if v20 != 0 {
 			return int32(0)
 		} else {
-			v21 = int32(4470752)
+			v21 = int32(4476144)
 			v22 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(v17)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[9])) = v24
@@ -4478,7 +4478,7 @@ func F_jsonb_path_query_internal(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-						v42 = F_executeJsonPath(m, v30, v33, int32(1409), int32(1410), v27, base.B2i32(v37 == int32(0)), v9+int32(16), l1)
+						v42 = F_executeJsonPath(m, v30, v33, int32(1410), int32(1411), v27, base.B2i32(v37 == int32(0)), v9+int32(16), l1)
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -4790,12 +4790,12 @@ func F_jsonb_recv(m *base.Module, l0 int32) int32 {
 					v45 = int32(0)
 					*(*uint8)(unsafe.Add(mBase, uint32(v28))) = uint8(v45)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v45
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(1325)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1326)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = int32(1327)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(1328)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(1329)
-					*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(1330)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(1326)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1327)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = int32(1328)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(1329)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(1330)
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(1331)
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v8 + int32(56)
 					v69 = F_pg_parse_json_or_errsave(m, v8+int32(76), v8+int32(16), v45)
 					mBase = m.M
@@ -4831,13 +4831,13 @@ func F_jsonb_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v12
-				F_errmsg_internal(m, int32(464719), v8)
+				F_errmsg_internal(m, int32(466695), v8)
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492371), int32(99), int32(36345))
+					F_errfinish(m, int32(494579), int32(99), int32(36509))
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
@@ -5130,7 +5130,7 @@ L16:
 	}
 L17:
 	;
-	v28 = int32(244190)
+	v28 = int32(245224)
 	v31 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1069])))
 	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
 	if v32 == int32(0) {
@@ -5195,7 +5195,7 @@ L25:
 	goto L23
 L26:
 	;
-	v56 = int32(297620)
+	v56 = int32(298914)
 	v59 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1070])))
 	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
 	if v60 == int32(0) {
@@ -5260,7 +5260,7 @@ L34:
 	goto L32
 L35:
 	;
-	v87 = F_DirectFunctionCall1Coll(m, int32(486), int32(0), int32(298999))
+	v87 = F_DirectFunctionCall1Coll(m, int32(486), int32(0), int32(300293))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -5273,7 +5273,7 @@ L36:
 	goto L37
 L37:
 	;
-	v95 = int32(21160)
+	v95 = int32(21233)
 	v98 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1071])))
 	v99 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
 	if v99 == int32(0) {
@@ -5367,7 +5367,7 @@ L49:
 	goto L50
 L50:
 	;
-	v126 = int32(106501)
+	v126 = int32(107068)
 	v129 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1072])))
 	v130 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v26))))
 	if v130 == int32(0) {
@@ -5459,7 +5459,7 @@ L62:
 	}
 L63:
 	;
-	F_errmsg(m, int32(704186), int32(0))
+	F_errmsg(m, int32(706454), int32(0))
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -5469,7 +5469,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(487084), int32(4933), int32(29212))
+	F_errfinish(m, int32(489238), int32(4933), int32(29376))
 	mBase = m.M
 	v171 = m.ExcPending
 	if v171 != 0 {
@@ -5494,7 +5494,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(298816), int32(0))
+	F_errmsg(m, int32(300110), int32(0))
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -5504,7 +5504,7 @@ L67:
 	}
 L68:
 	;
-	F_errdetail(m, int32(644299), int32(0))
+	F_errdetail(m, int32(646507), int32(0))
 	mBase = m.M
 	v186 = m.ExcPending
 	if v186 != 0 {
@@ -5514,7 +5514,7 @@ L68:
 	}
 L69:
 	;
-	F_errhint(m, int32(624887), int32(0))
+	F_errhint(m, int32(627095), int32(0))
 	mBase = m.M
 	v190 = m.ExcPending
 	if v190 != 0 {
@@ -5524,7 +5524,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(487084), int32(4948), int32(29212))
+	F_errfinish(m, int32(489238), int32(4948), int32(29376))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -5549,7 +5549,7 @@ L72:
 	}
 L73:
 	;
-	F_errmsg(m, int32(704186), int32(0))
+	F_errmsg(m, int32(706454), int32(0))
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {
@@ -5559,7 +5559,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(487084), int32(4975), int32(29212))
+	F_errfinish(m, int32(489238), int32(4975), int32(29376))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {

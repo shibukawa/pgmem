@@ -252,13 +252,13 @@ func F_timestamptz_timetz(m *base.Module, l0 int32) int32 {
 					if v67 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(396479), int32(0))
+						F_errmsg(m, int32(398126), int32(0))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490962), int32(2934), int32(7596))
+							F_errfinish(m, int32(493170), int32(2934), int32(7596))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {

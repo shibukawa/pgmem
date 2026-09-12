@@ -22,7 +22,7 @@ func F_ExecPrepareExpr(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v14
 	var v15 int32
 	_ = v15
-	v4 = int32(4470752)
+	v4 = int32(4476144)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v7
@@ -89,7 +89,7 @@ func F_ExecPrepareExprList(m *base.Module, l0 int32, l1 int32) int32 {
 	var v52 int32
 	_ = v52
 	v3 = int32(0)
-	v8 = int32(4470752)
+	v8 = int32(4476144)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v11
@@ -127,7 +127,7 @@ L6:
 	;
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v25+v21<<(uint(int32(2))%32))))
-	v30 = int32(4470752)
+	v30 = int32(4476144)
 	v31 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v33
@@ -187,7 +187,7 @@ func F_checkExprHasSubLink(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1046), int32(0), int32(3))
+	v5 = F_query_or_expression_tree_walker_impl(m, l0, int32(1047), int32(0), int32(3))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -277,7 +277,7 @@ func F_evaluate_expr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 	if v17 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(4470752)
+		v18 = int32(4476144)
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v14)+100))
 		*(*int32)(unsafe.Add(mBase, _consts[3])) = v21
@@ -302,7 +302,7 @@ func F_evaluate_expr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 						return int32(0)
 					} else {
 						v33 = v31
-						v34 = int32(4470752)
+						v34 = int32(4476144)
 						v35 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 						v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+20))
 						*(*int32)(unsafe.Add(mBase, _consts[3])) = v37
@@ -409,7 +409,7 @@ func F_evaluate_expr(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 					}
 				} else {
 					v33 = v28
-					v34 = int32(4470752)
+					v34 = int32(4476144)
 					v35 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 					v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+20))
 					*(*int32)(unsafe.Add(mBase, _consts[3])) = v37
@@ -1565,13 +1565,13 @@ func F_get_expr_result_tupdesc(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							if v21 == int32(2249) {
-								F_errmsg(m, int32(444470), int32(0))
+								F_errmsg(m, int32(446171), int32(0))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490081), int32(574), int32(480878))
+									F_errfinish(m, int32(492289), int32(574), int32(482952))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {
@@ -1590,13 +1590,13 @@ func F_get_expr_result_tupdesc(m *base.Module, l0 int32, l1 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v41
-									F_errmsg(m, int32(343899), v7)
+									F_errmsg(m, int32(345429), v7)
 									mBase = m.M
 									v46 = m.ExcPending
 									if v46 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490081), int32(570), int32(480878))
+										F_errfinish(m, int32(492289), int32(570), int32(482952))
 										mBase = m.M
 										v51 = m.ExcPending
 										if v51 != 0 {

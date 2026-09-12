@@ -276,7 +276,7 @@ L37:
 	}
 L38:
 	;
-	v139 = F__emscripten_memcpy_bulkmem(m, l1, int32(547104), int32(9))
+	v139 = F__emscripten_memcpy_bulkmem(m, l1, int32(549312), int32(9))
 	mBase = m.M
 	goto L40
 L40:
@@ -612,7 +612,7 @@ L27:
 	goto L1
 L28:
 	;
-	F_s_lock(m, v25, int32(488016), int32(246), int32(212256))
+	F_s_lock(m, v25, int32(490186), int32(246), int32(213151))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {

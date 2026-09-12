@@ -118,13 +118,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 									return v74
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-									F_errmsg_internal(m, int32(55308), v7)
+									F_errmsg_internal(m, int32(55472), v7)
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(489570), int32(162), int32(99407))
+										F_errfinish(m, int32(491761), int32(162), int32(99891))
 										mBase = m.M
 										v68 = m.ExcPending
 										if v68 != 0 {
@@ -178,13 +178,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 										return v74
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-										F_errmsg_internal(m, int32(55308), v7)
+										F_errmsg_internal(m, int32(55472), v7)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(489570), int32(162), int32(99407))
+											F_errfinish(m, int32(491761), int32(162), int32(99891))
 											mBase = m.M
 											v68 = m.ExcPending
 											if v68 != 0 {
@@ -233,13 +233,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 										return v74
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-										F_errmsg_internal(m, int32(55308), v7)
+										F_errmsg_internal(m, int32(55472), v7)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(489570), int32(162), int32(99407))
+											F_errfinish(m, int32(491761), int32(162), int32(99891))
 											mBase = m.M
 											v68 = m.ExcPending
 											if v68 != 0 {
@@ -338,13 +338,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 											return v74
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-											F_errmsg_internal(m, int32(55308), v7)
+											F_errmsg_internal(m, int32(55472), v7)
 											mBase = m.M
 											v63 = m.ExcPending
 											if v63 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489570), int32(162), int32(99407))
+												F_errfinish(m, int32(491761), int32(162), int32(99891))
 												mBase = m.M
 												v68 = m.ExcPending
 												if v68 != 0 {
@@ -398,13 +398,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 												return v74
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-												F_errmsg_internal(m, int32(55308), v7)
+												F_errmsg_internal(m, int32(55472), v7)
 												mBase = m.M
 												v63 = m.ExcPending
 												if v63 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(489570), int32(162), int32(99407))
+													F_errfinish(m, int32(491761), int32(162), int32(99891))
 													mBase = m.M
 													v68 = m.ExcPending
 													if v68 != 0 {
@@ -453,13 +453,13 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 												return v74
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-												F_errmsg_internal(m, int32(55308), v7)
+												F_errmsg_internal(m, int32(55472), v7)
 												mBase = m.M
 												v63 = m.ExcPending
 												if v63 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(489570), int32(162), int32(99407))
+													F_errfinish(m, int32(491761), int32(162), int32(99891))
 													mBase = m.M
 													v68 = m.ExcPending
 													if v68 != 0 {
@@ -700,7 +700,7 @@ func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32
 										v84 = int32(base.Ui32(v51-l0) >> (uint(int32(31)) % 32))
 									}
 									if v84 == int32(0) {
-										v98 = F_SimpleLruReadPage_ReadOnly(m, int32(4365364), base.I64_extend_i32_u(v14), l0)
+										v98 = F_SimpleLruReadPage_ReadOnly(m, int32(4370756), base.I64_extend_i32_u(v14), l0)
 										mBase = m.M
 										v99 = m.ExcPending
 										if v99 != 0 {
@@ -767,13 +767,13 @@ func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(0)
-				F_errmsg(m, int32(44563), v11)
+				F_errmsg(m, int32(44727), v11)
 				mBase = m.M
 				v150 = m.ExcPending
 				if v150 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(486124), int32(287), int32(497431))
+					F_errfinish(m, int32(488278), int32(287), int32(499639))
 					mBase = m.M
 					v155 = m.ExcPending
 					if v155 != 0 {

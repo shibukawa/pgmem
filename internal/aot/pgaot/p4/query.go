@@ -18,6 +18,29 @@ func F_isQueryUsingTempRelation(m *base.Module, l0 int32) int32 {
 		return v3
 	}
 }
+func F_query_has_required_values(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v3 <= int32(0) {
+		return int32(0)
+	} else {
+		v11 = F_contains_required_value(m, l0+v3<<(uint(int32(3))%32))
+		mBase = m.M
+		v14 = m.ExcPending
+		if v14 != 0 {
+			return int32(0)
+		} else {
+			return v11
+		}
+	}
+}
 func F_query_to_xml(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -259,8 +282,8 @@ L10:
 	v29 = m.G0
 	v31 = v29 - int32(48)
 	m.G0 = v31
-	*(*int32)(unsafe.Add(mBase, uint32(v31)+32)) = int32(389375)
-	F_appendStringInfo(m, v14, int32(174342), v31+int32(32))
+	*(*int32)(unsafe.Add(mBase, uint32(v31)+32)) = int32(391022)
+	F_appendStringInfo(m, v14, int32(175237), v31+int32(32))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -280,7 +303,7 @@ L12:
 	}
 L13:
 	;
-	F_appendStringInfoString(m, v14, int32(705160))
+	F_appendStringInfoString(m, v14, int32(707428))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -299,7 +322,7 @@ L14:
 L15:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31)+16)) = l4
-	F_appendStringInfo(m, v14, int32(668210), v31+int32(16))
+	F_appendStringInfo(m, v14, int32(670478), v31+int32(16))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -322,7 +345,7 @@ L18:
 	goto L17
 L19:
 	;
-	F_appendStringInfoString(m, v14, int32(729955))
+	F_appendStringInfoString(m, v14, int32(732264))
 	mBase = m.M
 	v62 = m.ExcPending
 	if v62 != 0 {
@@ -341,7 +364,7 @@ L20:
 L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v31))) = l4
-	F_appendStringInfo(m, v14, int32(706654), v31)
+	F_appendStringInfo(m, v14, int32(708963), v31)
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -354,7 +377,7 @@ L22:
 	goto L23
 L23:
 	;
-	F_appendStringInfoString(m, v14, int32(706619))
+	F_appendStringInfoString(m, v14, int32(708928))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -385,7 +408,7 @@ L27:
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = l2
-	F_appendStringInfo(m, v14, int32(732861), v10+int32(16))
+	F_appendStringInfo(m, v14, int32(735170), v10+int32(16))
 	mBase = m.M
 	v75 = m.ExcPending
 	if v75 != 0 {
@@ -398,7 +421,7 @@ L29:
 	goto L30
 L30:
 	;
-	v77 = *(*int64)(unsafe.Add(mBase, _consts[500]))
+	v77 = *(*int64)(unsafe.Add(mBase, _consts[501]))
 	if v77 != int64(0) {
 		goto L32
 	} else {
@@ -437,7 +460,7 @@ L36:
 L37:
 	;
 	v90 = v86 + int64(1)
-	v92 = *(*int64)(unsafe.Add(mBase, _consts[500]))
+	v92 = *(*int64)(unsafe.Add(mBase, _consts[501]))
 	if base.Ui64(v90) < base.Ui64(v92) {
 		v86 = v90
 		goto L35
@@ -449,8 +472,8 @@ L38:
 	goto L36
 L39:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(389375)
-	F_appendStringInfo(m, v14, int32(728511), v10)
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(391022)
+	F_appendStringInfo(m, v14, int32(730820), v10)
 	mBase = m.M
 	v107 = m.ExcPending
 	if v107 != 0 {
@@ -495,7 +518,7 @@ L45:
 	}
 L46:
 	;
-	F_errmsg(m, int32(16740), int32(0))
+	F_errmsg(m, int32(16801), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -505,7 +528,7 @@ L46:
 	}
 L47:
 	;
-	F_errfinish(m, int32(489702), int32(3019), int32(306765))
+	F_errfinish(m, int32(491910), int32(3019), int32(308256))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {

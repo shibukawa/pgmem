@@ -63,13 +63,13 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v32
-				F_errmsg_internal(m, int32(524358), v6)
+				F_errmsg_internal(m, int32(526566), v6)
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(487551), int32(1143), int32(299660))
+					F_errfinish(m, int32(489721), int32(1143), int32(300954))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
@@ -114,7 +114,7 @@ func F_oidvectorhashfast(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_DirectFunctionCall1Coll(m, int32(1587), int32(0), l0)
+	v4 = F_DirectFunctionCall1Coll(m, int32(1588), int32(0), l0)
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -243,7 +243,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 					v117 = int32(0)
 					return v117
 				} else {
-					v48 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v15)
+					v48 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v15)
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -257,7 +257,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v15
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -270,7 +270,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -303,7 +303,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				if v12&int32(1) != 0 {
-					v55 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v16)
+					v55 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v16)
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -317,7 +317,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v16
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -330,7 +330,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -362,7 +362,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					v58 = int32(0)
-					v59 = int32(1512)
+					v59 = int32(1513)
 					v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 					mBase = m.M
 					v64 = m.ExcPending
@@ -386,7 +386,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 								} else {
 									v91 = v15
 								}
-								v92 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v91)
+								v92 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v91)
 								mBase = m.M
 								v93 = m.ExcPending
 								if v93 != 0 {
@@ -404,7 +404,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v65
 								v69 = v58
-								v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -417,7 +417,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -469,7 +469,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 					v117 = int32(0)
 					return v117
 				} else {
-					v48 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v15)
+					v48 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v15)
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -483,7 +483,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v15
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -496,7 +496,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -529,7 +529,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				if v12&int32(1) != 0 {
-					v55 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v16)
+					v55 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v16)
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -543,7 +543,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v16
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -556,7 +556,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -588,7 +588,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					v58 = int32(0)
-					v59 = int32(1512)
+					v59 = int32(1513)
 					v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 					mBase = m.M
 					v64 = m.ExcPending
@@ -612,7 +612,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 								} else {
 									v91 = v15
 								}
-								v92 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v91)
+								v92 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v91)
 								mBase = m.M
 								v93 = m.ExcPending
 								if v93 != 0 {
@@ -630,7 +630,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v65
 								v69 = v58
-								v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -643,7 +643,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -678,7 +678,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			v28 = int32(0)
-			v31 = F_DirectFunctionCall2Coll(m, int32(1512), v28, v25, v17)
+			v31 = F_DirectFunctionCall2Coll(m, int32(1513), v28, v25, v17)
 			mBase = m.M
 			v34 = m.ExcPending
 			if v34 != 0 {
@@ -704,7 +704,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						v117 = int32(0)
 						return v117
 					} else {
-						v48 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v15)
+						v48 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v15)
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -718,7 +718,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v15
 								v69 = int32(1)
-								v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -731,7 +731,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -764,7 +764,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					if v12&int32(1) != 0 {
-						v55 = F_DirectFunctionCall2Coll(m, int32(1512), int32(0), v39, v16)
+						v55 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v16)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -778,7 +778,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v16
 								v69 = int32(1)
-								v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -791,7 +791,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -823,7 +823,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 						}
 					} else {
 						v58 = int32(0)
-						v59 = int32(1512)
+						v59 = int32(1513)
 						v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 						mBase = m.M
 						v64 = m.ExcPending
@@ -847,7 +847,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 									} else {
 										v91 = v15
 									}
-									v92 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v91)
+									v92 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v91)
 									mBase = m.M
 									v93 = m.ExcPending
 									if v93 != 0 {
@@ -865,7 +865,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 								} else {
 									v68 = v65
 									v69 = v58
-									v73 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v39, v68)
+									v73 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v39, v68)
 									mBase = m.M
 									v74 = m.ExcPending
 									if v74 != 0 {
@@ -878,7 +878,7 @@ func F_overlaps_timestamp(m *base.Module, l0 int32) int32 {
 												v117 = int32(0)
 												return v117
 											} else {
-												v77 = F_DirectFunctionCall2Coll(m, int32(1513), int32(0), v68, v37)
+												v77 = F_DirectFunctionCall2Coll(m, int32(1514), int32(0), v68, v37)
 												mBase = m.M
 												v78 = m.ExcPending
 												if v78 != 0 {

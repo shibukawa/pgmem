@@ -961,13 +961,13 @@ func F_gist_box_consistent(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v11
-						F_errmsg_internal(m, int32(474957), v9)
+						F_errmsg_internal(m, int32(477031), v9)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492140), int32(939), int32(91423))
+							F_errfinish(m, int32(494348), int32(939), int32(91855))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -1393,13 +1393,13 @@ func F_gist_circle_distance(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-			F_errmsg_internal(m, int32(474957), v7)
+			F_errmsg_internal(m, int32(477031), v7)
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492140), int32(1492), int32(411036))
+				F_errfinish(m, int32(494348), int32(1492), int32(412702))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
@@ -1524,13 +1524,13 @@ func F_gist_point_distance(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-			F_errmsg_internal(m, int32(474957), v7)
+			F_errmsg_internal(m, int32(477031), v7)
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492140), int32(1470), int32(411100))
+				F_errfinish(m, int32(494348), int32(1470), int32(412766))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {

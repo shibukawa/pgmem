@@ -903,7 +903,7 @@ L43:
 	}
 L44:
 	;
-	v514 = F_cstring_to_text(m, int32(537888))
+	v514 = F_cstring_to_text(m, int32(540096))
 	mBase = m.M
 	v515 = m.ExcPending
 	if v515 != 0 {
@@ -984,7 +984,7 @@ L52:
 	goto L51
 L53:
 	;
-	v165 = F_cstring_to_text(m, int32(448582))
+	v165 = F_cstring_to_text(m, int32(450307))
 	mBase = m.M
 	v166 = m.ExcPending
 	if v166 != 0 {
@@ -994,7 +994,7 @@ L53:
 	}
 L54:
 	;
-	v161 = F_cstring_to_text(m, int32(654179))
+	v161 = F_cstring_to_text(m, int32(656387))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -1004,7 +1004,7 @@ L54:
 	}
 L55:
 	;
-	v157 = F_cstring_to_text(m, int32(300395))
+	v157 = F_cstring_to_text(m, int32(301689))
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -1014,7 +1014,7 @@ L55:
 	}
 L56:
 	;
-	v153 = F_cstring_to_text(m, int32(253436))
+	v153 = F_cstring_to_text(m, int32(254470))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -1024,7 +1024,7 @@ L56:
 	}
 L57:
 	;
-	v149 = F_cstring_to_text(m, int32(337721))
+	v149 = F_cstring_to_text(m, int32(339239))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1034,7 +1034,7 @@ L57:
 	}
 L58:
 	;
-	v145 = F_cstring_to_text(m, int32(384695))
+	v145 = F_cstring_to_text(m, int32(386342))
 	mBase = m.M
 	v146 = m.ExcPending
 	if v146 != 0 {
@@ -1044,7 +1044,7 @@ L58:
 	}
 L59:
 	;
-	v141 = F_cstring_to_text(m, int32(323927))
+	v141 = F_cstring_to_text(m, int32(325418))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {
@@ -1256,7 +1256,7 @@ L91:
 	}
 L92:
 	;
-	v246 = int32(537501)
+	v246 = int32(539709)
 	goto L88
 L93:
 	;
@@ -1787,7 +1787,7 @@ L172:
 	}
 L173:
 	;
-	v730 = F_DirectFunctionCall1Coll(m, int32(1481), int32(0), v25+int32(32))
+	v730 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), v25+int32(32))
 	mBase = m.M
 	v731 = m.ExcPending
 	if v731 != 0 {
@@ -2042,7 +2042,7 @@ L209:
 	}
 L210:
 	;
-	v913 = int32(4378656)
+	v913 = int32(4384048)
 	v916 = v908 + int32(112)
 	if (v916^v913)&int32(3) != 0 {
 		goto L214
@@ -2235,7 +2235,7 @@ L239:
 	goto L241
 L240:
 	;
-	v1037 = int32(362424)
+	v1037 = int32(363954)
 	goto L241
 L241:
 	;

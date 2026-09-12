@@ -447,7 +447,7 @@ func F_commit_ts_desc(m *base.Module, l0 int32, l1 int32) {
 	case 0:
 		v15 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
 		*(*int64)(unsafe.Add(mBase, uint32(v8))) = v15
-		F_appendStringInfo(m, l0, int32(424074), v8)
+		F_appendStringInfo(m, l0, int32(425740), v8)
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -464,7 +464,7 @@ func F_commit_ts_desc(m *base.Module, l0 int32, l1 int32) {
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v21
 		*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = v20
-		F_appendStringInfo(m, l0, int32(54325), v8+int32(16))
+		F_appendStringInfo(m, l0, int32(54489), v8+int32(16))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -643,7 +643,7 @@ L1:
 L2:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+76)) = int64(601295421444)
-	v22 = F_hash_create(m, int32(393309), int32(4), v9+int32(60), int32(40))
+	v22 = F_hash_create(m, int32(394956), int32(4), v9+int32(60), int32(40))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -657,7 +657,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[1142])) = v22
-	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1612), v22)
+	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1613), v22)
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {
@@ -1003,7 +1003,7 @@ L50:
 	;
 	v175 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v175
-	F_errmsg_internal(m, int32(43270), v9)
+	F_errmsg_internal(m, int32(43434), v9)
 	mBase = m.M
 	v179 = m.ExcPending
 	if v179 != 0 {
@@ -1013,7 +1013,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(491562), int32(156), int32(393063))
+	F_errfinish(m, int32(493770), int32(156), int32(394710))
 	mBase = m.M
 	v184 = m.ExcPending
 	if v184 != 0 {
@@ -1030,7 +1030,7 @@ L53:
 	;
 	v189 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v189
-	F_errmsg_internal(m, int32(416218), v9+int32(16))
+	F_errmsg_internal(m, int32(417884), v9+int32(16))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -1040,7 +1040,7 @@ L53:
 	}
 L54:
 	;
-	F_errfinish(m, int32(491562), int32(163), int32(393063))
+	F_errfinish(m, int32(493770), int32(163), int32(394710))
 	mBase = m.M
 	v200 = m.ExcPending
 	if v200 != 0 {
@@ -1057,7 +1057,7 @@ L56:
 	;
 	v205 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v205
-	F_errmsg_internal(m, int32(416423), v9+int32(32))
+	F_errmsg_internal(m, int32(418089), v9+int32(32))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -1067,7 +1067,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(491562), int32(165), int32(393063))
+	F_errfinish(m, int32(493770), int32(165), int32(394710))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -1084,7 +1084,7 @@ L59:
 	;
 	v221 = *(*int32)(unsafe.Add(mBase, uint32(v9)+108))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v221
-	F_errmsg_internal(m, int32(416513), v9+int32(48))
+	F_errmsg_internal(m, int32(418179), v9+int32(48))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -1094,7 +1094,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(491562), int32(167), int32(393063))
+	F_errfinish(m, int32(493770), int32(167), int32(394710))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -1124,7 +1124,7 @@ func F_ts_headline_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1186), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1187), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1159,7 +1159,7 @@ func F_ts_headline_jsonb_opt(m *base.Module, l0 int32) int32 {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v11 = F_DirectFunctionCall4Coll(m, int32(1188), int32(0), v4, v8, v9, v10)
+		v11 = F_DirectFunctionCall4Coll(m, int32(1189), int32(0), v4, v8, v9, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -1838,7 +1838,7 @@ func F_ts_match_vq(m *base.Module, l0 int32) int32 {
 			v43 = v32 + v34<<(uint(int32(2))%32)
 			*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v43
 			*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v43
-			v48 = F_TS_execute_recurse(m, v36, v11, int32(0), int32(1539))
+			v48 = F_TS_execute_recurse(m, v36, v11, int32(0), int32(1540))
 			mBase = m.M
 			v49 = m.ExcPending
 			if v49 != 0 {
@@ -2198,7 +2198,7 @@ func F_ts_typanalyze(m *base.Module, l0 int32) int32 {
 	} else {
 		v10 = v4
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(v3)+24)) = int32(1180)
+	*(*int32)(unsafe.Add(mBase, uint32(v3)+24)) = int32(1181)
 	*(*int32)(unsafe.Add(mBase, uint32(v3)+28)) = v10 * int32(300)
 	return int32(1)
 }

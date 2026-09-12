@@ -401,7 +401,7 @@ L20:
 	goto L11
 L21:
 	;
-	v75 = int32(539317)
+	v75 = int32(541525)
 	v79 = m.G0
 	v81 = v79 - int32(32)
 	v82 = int64(0)
@@ -409,7 +409,7 @@ L21:
 	*(*int64)(unsafe.Add(mBase, uint32(v81)+16)) = v82
 	*(*int64)(unsafe.Add(mBase, uint32(v81)+8)) = v82
 	*(*int64)(unsafe.Add(mBase, uint32(v81))) = v82
-	v90 = int32(*(*uint8)(unsafe.Add(mBase, _consts[946])))
+	v90 = int32(*(*uint8)(unsafe.Add(mBase, _consts[947])))
 	if v90 == int32(0) {
 		goto L25
 	} else {
@@ -444,7 +444,7 @@ L26:
 	goto L27
 L27:
 	;
-	v94 = int32(*(*uint8)(unsafe.Add(mBase, _consts[947])))
+	v94 = int32(*(*uint8)(unsafe.Add(mBase, _consts[948])))
 	if v94 == int32(0) {
 		goto L28
 	} else {
@@ -779,7 +779,7 @@ L81:
 	}
 L82:
 	;
-	v286 = int32(539317)
+	v286 = int32(541525)
 	v290 = m.G0
 	v292 = v290 - int32(32)
 	v293 = int64(0)
@@ -787,7 +787,7 @@ L82:
 	*(*int64)(unsafe.Add(mBase, uint32(v292)+16)) = v293
 	*(*int64)(unsafe.Add(mBase, uint32(v292)+8)) = v293
 	*(*int64)(unsafe.Add(mBase, uint32(v292))) = v293
-	v301 = int32(*(*uint8)(unsafe.Add(mBase, _consts[946])))
+	v301 = int32(*(*uint8)(unsafe.Add(mBase, _consts[947])))
 	if v301 == int32(0) {
 		goto L85
 	} else {
@@ -814,7 +814,7 @@ L86:
 	goto L87
 L87:
 	;
-	v305 = int32(*(*uint8)(unsafe.Add(mBase, _consts[947])))
+	v305 = int32(*(*uint8)(unsafe.Add(mBase, _consts[948])))
 	if v305 == int32(0) {
 		goto L88
 	} else {
@@ -1212,9 +1212,9 @@ func F_time_recv(m *base.Module, l0 int32) int32 {
 		if base.Ui64(v6) < base.Ui64(int64(86400000001)) {
 			if base.Ui32(v4) <= base.Ui32(int32(6)) {
 				v15 = v4 << (uint(int32(3)) % 32)
-				v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+uint32(_consts[1248])))
+				v18 = *(*int64)(unsafe.Add(mBase, uint32(v15)+uint32(_consts[1249])))
 				v19 = v18 + v6
-				v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+uint32(_consts[1249])))
+				v22 = *(*int64)(unsafe.Add(mBase, uint32(v15)+uint32(_consts[1250])))
 				v23 = base.I64_rem_s(v19, v22)
 				v27 = v19 - v23
 			} else {
@@ -1241,13 +1241,13 @@ func F_time_recv(m *base.Module, l0 int32) int32 {
 				if v37 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(396582), int32(0))
+					F_errmsg(m, int32(398229), int32(0))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(490962), int32(1601), int32(36204))
+						F_errfinish(m, int32(493170), int32(1601), int32(36368))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {

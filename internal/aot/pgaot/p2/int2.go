@@ -88,13 +88,13 @@ func F_int2_avg_accum(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(25891), int32(0))
+						F_errmsg_internal(m, int32(26020), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492312), int32(6794), int32(283201))
+							F_errfinish(m, int32(494520), int32(6794), int32(284395))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -114,13 +114,13 @@ func F_int2_avg_accum(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(25891), int32(0))
+					F_errmsg_internal(m, int32(26020), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492312), int32(6794), int32(283201))
+						F_errfinish(m, int32(494520), int32(6794), int32(284395))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -160,13 +160,13 @@ func F_int2_avg_accum(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(25891), int32(0))
+						F_errmsg_internal(m, int32(26020), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492312), int32(6794), int32(283201))
+							F_errfinish(m, int32(494520), int32(6794), int32(284395))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -186,13 +186,13 @@ func F_int2_avg_accum(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(25891), int32(0))
+					F_errmsg_internal(m, int32(26020), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492312), int32(6794), int32(283201))
+						F_errfinish(m, int32(494520), int32(6794), int32(284395))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -291,13 +291,13 @@ func F_int2_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(25891), int32(0))
+						F_errmsg_internal(m, int32(26020), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492312), int32(6881), int32(32336))
+							F_errfinish(m, int32(494520), int32(6881), int32(32500))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -317,13 +317,13 @@ func F_int2_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(25891), int32(0))
+					F_errmsg_internal(m, int32(26020), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492312), int32(6881), int32(32336))
+						F_errfinish(m, int32(494520), int32(6881), int32(32500))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -363,13 +363,13 @@ func F_int2_avg_accum_inv(m *base.Module, l0 int32) int32 {
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(25891), int32(0))
+						F_errmsg_internal(m, int32(26020), int32(0))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492312), int32(6881), int32(32336))
+							F_errfinish(m, int32(494520), int32(6881), int32(32500))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -389,13 +389,13 @@ func F_int2_avg_accum_inv(m *base.Module, l0 int32) int32 {
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(25891), int32(0))
+					F_errmsg_internal(m, int32(26020), int32(0))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492312), int32(6881), int32(32336))
+						F_errfinish(m, int32(494520), int32(6881), int32(32500))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -449,13 +449,13 @@ func F_int2_dist(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396095), int32(0))
+				F_errmsg(m, int32(397742), int32(0))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492526), int32(107), int32(75167))
+					F_errfinish(m, int32(494734), int32(107), int32(75429))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -555,13 +555,13 @@ func F_int2_mul_cash(m *base.Module, l0 int32) int32 {
 			if v64 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396047), int32(0))
+				F_errmsg(m, int32(397694), int32(0))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490272), int32(150), int32(543512))
+					F_errfinish(m, int32(492480), int32(150), int32(545720))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {

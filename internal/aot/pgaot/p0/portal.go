@@ -26,7 +26,7 @@ func F_GetPortalByName(m *base.Module, l0 int32) int32 {
 	if l0 == v2 {
 		return int32(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[984]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[983]))
 		v9 = int32(0)
 		v11 = F_hash_search(m, v8, l0, v9, v9)
 		mBase = m.M

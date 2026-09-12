@@ -160,7 +160,7 @@ L9:
 L10:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
-	F_errmsg_internal(m, int32(39108), v11)
+	F_errmsg_internal(m, int32(39272), v11)
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -170,7 +170,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(491828), int32(2950), int32(63687))
+	F_errfinish(m, int32(494036), int32(2950), int32(63888))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -396,7 +396,7 @@ func F_check_commit_ts_buffers(m *base.Module, l0 int32, l1 int32, l2 int32) int
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_check_slru_buffers(m, int32(132969), l0)
+	v5 = F_check_slru_buffers(m, int32(133720), l0)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -454,15 +454,15 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[1386]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[1387]))
 	if v8 == int32(0) {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[1387]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
 		if v12 != 0 {
 			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12))))
 			if v13 != 0 {
-				v30 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
+				v30 = *(*int32)(unsafe.Add(mBase, _consts[1389]))
 				if v30 != 0 {
-					v57 = *(*int32)(unsafe.Add(mBase, _consts[1387]))
+					v57 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
 					v59 = F_stringToQualifiedNameList(m, v57, int32(0))
 					mBase = m.M
 					v60 = m.ExcPending
@@ -475,7 +475,7 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[1386])) = v62
+							*(*int32)(unsafe.Add(mBase, _consts[1387])) = v62
 							v65 = v62
 							m.G0 = v5 + int32(48)
 							return v65
@@ -483,21 +483,21 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 					}
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = int64(85899345924)
-					v37 = F_hash_create(m, int32(393461), int32(16), v5, int32(40))
+					v37 = F_hash_create(m, int32(395108), int32(16), v5, int32(40))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1388])) = v37
-						F_CacheRegisterSyscacheCallback(m, int32(74), int32(1612), v37)
+						*(*int32)(unsafe.Add(mBase, _consts[1389])) = v37
+						F_CacheRegisterSyscacheCallback(m, int32(74), int32(1613), v37)
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
 							return int32(0)
 						} else {
-							v47 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
-							F_CacheRegisterSyscacheCallback(m, int32(72), int32(1612), v47)
+							v47 = *(*int32)(unsafe.Add(mBase, _consts[1389]))
+							F_CacheRegisterSyscacheCallback(m, int32(72), int32(1613), v47)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
@@ -505,7 +505,7 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 							} else {
 								v51 = *(*int32)(unsafe.Add(mBase, _consts[373]))
 								if v51 != 0 {
-									v57 = *(*int32)(unsafe.Add(mBase, _consts[1387]))
+									v57 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
 									v59 = F_stringToQualifiedNameList(m, v57, int32(0))
 									mBase = m.M
 									v60 = m.ExcPending
@@ -518,7 +518,7 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, _consts[1386])) = v62
+											*(*int32)(unsafe.Add(mBase, _consts[1387])) = v62
 											v65 = v62
 											m.G0 = v5 + int32(48)
 											return v65
@@ -531,7 +531,7 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 									if v53 != 0 {
 										return int32(0)
 									} else {
-										v57 = *(*int32)(unsafe.Add(mBase, _consts[1387]))
+										v57 = *(*int32)(unsafe.Add(mBase, _consts[1388]))
 										v59 = F_stringToQualifiedNameList(m, v57, int32(0))
 										mBase = m.M
 										v60 = m.ExcPending
@@ -544,7 +544,7 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 											if v63 != 0 {
 												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, _consts[1386])) = v62
+												*(*int32)(unsafe.Add(mBase, _consts[1387])) = v62
 												v65 = v62
 												m.G0 = v5 + int32(48)
 												return v65
@@ -563,13 +563,13 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(104715), int32(0))
+					F_errmsg_internal(m, int32(105282), int32(0))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(491562), int32(568), int32(332318))
+						F_errfinish(m, int32(493770), int32(568), int32(333809))
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
@@ -589,13 +589,13 @@ func F_getTSCurrentConfig(m *base.Module) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(104715), int32(0))
+				F_errmsg_internal(m, int32(105282), int32(0))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491562), int32(568), int32(332318))
+					F_errfinish(m, int32(493770), int32(568), int32(333809))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -900,7 +900,7 @@ L29:
 L30:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v91
-	F_errmsg(m, int32(69690), v10)
+	F_errmsg(m, int32(69952), v10)
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -910,7 +910,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(491828), int32(2910), int32(427383))
+	F_errfinish(m, int32(494036), int32(2910), int32(429049))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -1022,13 +1022,13 @@ func F_get_ts_template_func(m *base.Module, l0 int32, l1 int32) int32 {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v44
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v41
-									F_errmsg(m, int32(188892), v7)
+									F_errmsg(m, int32(189787), v7)
 									mBase = m.M
 									v50 = m.ExcPending
 									if v50 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(486863), int32(643), int32(482459))
+										F_errfinish(m, int32(489017), int32(643), int32(484566))
 										mBase = m.M
 										v55 = m.ExcPending
 										if v55 != 0 {
@@ -1080,7 +1080,7 @@ func F_ts_dist(m *base.Module, l0 int32) int32 {
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
 		if base.Ui64(int64(1)) < base.Ui64(v10-int64(9223372036854775807)) {
-			v28 = F_DirectFunctionCall2Coll(m, int32(1516), int32(0), v3, v9)
+			v28 = F_DirectFunctionCall2Coll(m, int32(1517), int32(0), v3, v9)
 			mBase = m.M
 			v29 = m.ExcPending
 			if v29 != 0 {
@@ -1143,7 +1143,7 @@ func F_ts_headline(m *base.Module, l0 int32) int32 {
 	} else {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v10 = F_DirectFunctionCall3Coll(m, int32(1186), int32(0), v4, v8, v9)
+		v10 = F_DirectFunctionCall3Coll(m, int32(1187), int32(0), v4, v8, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -1169,7 +1169,7 @@ func F_ts_headline_json_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1190), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1556,7 +1556,7 @@ L23:
 	}
 L24:
 	;
-	v123 = *(*int32)(unsafe.Add(mBase, _consts[485]))
+	v123 = *(*int32)(unsafe.Add(mBase, _consts[486]))
 	v124 = *(*int32)(unsafe.Add(mBase, uint32(v123)+4))
 	goto L35
 L25:
@@ -1636,16 +1636,16 @@ L36:
 L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v80)+12)) = v38
-	*(*int32)(unsafe.Add(mBase, uint32(v80)+8)) = int32(1187)
+	*(*int32)(unsafe.Add(mBase, uint32(v80)+8)) = int32(1188)
 	*(*int32)(unsafe.Add(mBase, uint32(v80)+4)) = v129
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+36)) = int32(1395)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+16)) = int32(1396)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+12)) = int32(1397)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+8)) = int32(1398)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(1399)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+36)) = int32(1396)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+16)) = int32(1397)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+12)) = int32(1398)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+8)) = int32(1399)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(1400)
 	*(*int32)(unsafe.Add(mBase, uint32(v77))) = v80
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+28)) = int32(1400)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+20)) = int32(1401)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+28)) = int32(1401)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+20)) = int32(1402)
 	v152 = F_pg_parse_json(m, v74+int32(12), v77)
 	mBase = m.M
 	v153 = m.ExcPending
@@ -1840,7 +1840,7 @@ L63:
 	}
 L64:
 	;
-	F_errmsg(m, int32(260946), int32(0))
+	F_errmsg(m, int32(261980), int32(0))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -1850,7 +1850,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(487661), int32(471), int32(82937))
+	F_errfinish(m, int32(489831), int32(471), int32(83219))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -1880,7 +1880,7 @@ func F_ts_headline_jsonb_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1188), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1189), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -2595,7 +2595,7 @@ L73:
 	}
 L74:
 	;
-	F_errmsg(m, int32(260946), int32(0))
+	F_errmsg(m, int32(261980), int32(0))
 	mBase = m.M
 	v237 = m.ExcPending
 	if v237 != 0 {
@@ -2605,7 +2605,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(487661), int32(394), int32(82984))
+	F_errfinish(m, int32(489831), int32(394), int32(83266))
 	mBase = m.M
 	v242 = m.ExcPending
 	if v242 != 0 {

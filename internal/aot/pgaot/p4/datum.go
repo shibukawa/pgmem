@@ -333,7 +333,7 @@ L42:
 L43:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l2
-	F_errmsg_internal(m, int32(475762), v7)
+	F_errmsg_internal(m, int32(477836), v7)
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -343,7 +343,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(489425), int32(108), int32(337030))
+	F_errfinish(m, int32(491616), int32(108), int32(338548))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -368,7 +368,7 @@ L46:
 	}
 L47:
 	;
-	F_errmsg(m, int32(212685), int32(0))
+	F_errmsg(m, int32(213580), int32(0))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -378,7 +378,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(489425), int32(90), int32(337030))
+	F_errfinish(m, int32(491616), int32(90), int32(338548))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -403,7 +403,7 @@ L50:
 	}
 L51:
 	;
-	F_errmsg(m, int32(212685), int32(0))
+	F_errmsg(m, int32(213580), int32(0))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -413,7 +413,7 @@ L51:
 	}
 L52:
 	;
-	F_errfinish(m, int32(489425), int32(102), int32(337030))
+	F_errfinish(m, int32(491616), int32(102), int32(338548))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -818,7 +818,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		return
 	} else {
 		if l1 != 0 {
-			F_appendBinaryStringInfo(m, l2, int32(298999), int32(4))
+			F_appendBinaryStringInfo(m, l2, int32(300293), int32(4))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
@@ -838,7 +838,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						return
 					} else {
 						if l0 != 0 {
-							F_appendBinaryStringInfo(m, l2, int32(339026), int32(4))
+							F_appendBinaryStringInfo(m, l2, int32(340544), int32(4))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -860,7 +860,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								}
 							}
 						} else {
-							F_appendBinaryStringInfo(m, l2, int32(355845), int32(5))
+							F_appendBinaryStringInfo(m, l2, int32(357375), int32(5))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
@@ -1004,7 +1004,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							mBase = m.M
 							v297 = v204
 						case 1:
-							v208 = *(*int32)(unsafe.Add(mBase, _consts[467]))
+							v208 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 							v210 = base.B2i32(v208 == int32(1))
 							if v208 == int32(1) {
 								v211 = int32(12)
@@ -1058,7 +1058,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							mBase = m.M
 							v297 = v260
 						default:
-							v264 = *(*int32)(unsafe.Add(mBase, _consts[467]))
+							v264 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 							v266 = base.B2i32(v264 == int32(1))
 							if v264 == int32(1) {
 								v267 = int32(12)
@@ -1093,9 +1093,9 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						}
 						v298 = *(*int32)(unsafe.Add(mBase, uint32(v179)+20))
 						if v298 <= int32(0) {
-							v302 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1291])))
+							v302 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1292])))
 							*(*uint8)(unsafe.Add(mBase, uint32(v297)+2)) = uint8(v302)
-							v305 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1292])))
+							v305 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1293])))
 							*(*uint16)(unsafe.Add(mBase, uint32(v297))) = uint16(v305)
 							v309 = v297 + int32(3)
 						} else {
@@ -1202,13 +1202,13 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						if v26 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(241859), int32(0))
+							F_errmsg(m, int32(242893), int32(0))
 							mBase = m.M
 							v30 = m.ExcPending
 							if v30 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(488600), int32(204), int32(306614))
+								F_errfinish(m, int32(490780), int32(204), int32(308105))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {
@@ -1397,7 +1397,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				switch l3 - int32(1) {
 				case 0:
 					if l0 != 0 {
-						F_appendBinaryStringInfo(m, l2, int32(339026), int32(4))
+						F_appendBinaryStringInfo(m, l2, int32(340544), int32(4))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -1419,7 +1419,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							}
 						}
 					} else {
-						F_appendBinaryStringInfo(m, l2, int32(355845), int32(5))
+						F_appendBinaryStringInfo(m, l2, int32(357375), int32(5))
 						mBase = m.M
 						v54 = m.ExcPending
 						if v54 != 0 {
@@ -1636,7 +1636,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							mBase = m.M
 							v297 = v204
 						case 1:
-							v208 = *(*int32)(unsafe.Add(mBase, _consts[467]))
+							v208 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 							v210 = base.B2i32(v208 == int32(1))
 							if v208 == int32(1) {
 								v211 = int32(12)
@@ -1690,7 +1690,7 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							mBase = m.M
 							v297 = v260
 						default:
-							v264 = *(*int32)(unsafe.Add(mBase, _consts[467]))
+							v264 = *(*int32)(unsafe.Add(mBase, _consts[468]))
 							v266 = base.B2i32(v264 == int32(1))
 							if v264 == int32(1) {
 								v267 = int32(12)
@@ -1725,9 +1725,9 @@ func F_datum_to_json_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						}
 						v298 = *(*int32)(unsafe.Add(mBase, uint32(v179)+20))
 						if v298 <= int32(0) {
-							v302 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1291])))
+							v302 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1292])))
 							*(*uint8)(unsafe.Add(mBase, uint32(v297)+2)) = uint8(v302)
-							v305 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1292])))
+							v305 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1293])))
 							*(*uint16)(unsafe.Add(mBase, uint32(v297))) = uint16(v305)
 							v309 = v297 + int32(3)
 						} else {
@@ -2279,19 +2279,19 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	case 1:
 		v26 = *(*int32)(unsafe.Add(mBase, uint32(l1)+24))
 		if v26 == int32(0) {
-			F_errstart_cold(m, int32(21), int32(541439))
+			F_errstart_cold(m, int32(21), int32(543647))
 			mBase = m.M
 			v171 = m.ExcPending
 			if v171 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(480958), int32(0))
+				F_errmsg_internal(m, int32(483032), int32(0))
 				mBase = m.M
 				v176 = m.ExcPending
 				if v176 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492322), int32(5323), int32(282091))
+					F_errfinish(m, int32(494530), int32(5323), int32(283285))
 					mBase = m.M
 					v183 = m.ExcPending
 					if v183 != 0 {
@@ -2310,7 +2310,7 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 			if v30 != 0 {
 				return
 			} else {
-				v31 = int32(4470752)
+				v31 = int32(4476144)
 				v32 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 				v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
 				v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+20))
@@ -2323,19 +2323,19 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 					return
 				} else {
 					if v37 == int32(0) {
-						F_errstart_cold(m, int32(21), int32(541439))
+						F_errstart_cold(m, int32(21), int32(543647))
 						mBase = m.M
 						v189 = m.ExcPending
 						if v189 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(480986), int32(0))
+							F_errmsg_internal(m, int32(483060), int32(0))
 							mBase = m.M
 							v194 = m.ExcPending
 							if v194 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(492322), int32(5329), int32(282091))
+								F_errfinish(m, int32(494530), int32(5329), int32(283285))
 								mBase = m.M
 								v201 = m.ExcPending
 								if v201 != 0 {
@@ -2428,7 +2428,7 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 						return
 					} else {
 						if v101 == int32(0) {
-							F_errstart_cold(m, int32(21), int32(541439))
+							F_errstart_cold(m, int32(21), int32(543647))
 							mBase = m.M
 							v207 = m.ExcPending
 							if v207 != 0 {
@@ -2444,13 +2444,13 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 									v212 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v212
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v211
-									F_errmsg(m, int32(699113), v12+int32(16))
+									F_errmsg(m, int32(701381), v12+int32(16))
 									mBase = m.M
 									v220 = m.ExcPending
 									if v220 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(492322), int32(5412), int32(282091))
+										F_errfinish(m, int32(494530), int32(5412), int32(283285))
 										mBase = m.M
 										v227 = m.ExcPending
 										if v227 != 0 {
@@ -2594,7 +2594,7 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 					return
 				} else {
 					if v101 == int32(0) {
-						F_errstart_cold(m, int32(21), int32(541439))
+						F_errstart_cold(m, int32(21), int32(543647))
 						mBase = m.M
 						v207 = m.ExcPending
 						if v207 != 0 {
@@ -2610,13 +2610,13 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 								v212 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v212
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v211
-								F_errmsg(m, int32(699113), v12+int32(16))
+								F_errmsg(m, int32(701381), v12+int32(16))
 								mBase = m.M
 								v220 = m.ExcPending
 								if v220 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(492322), int32(5412), int32(282091))
+									F_errfinish(m, int32(494530), int32(5412), int32(283285))
 									mBase = m.M
 									v227 = m.ExcPending
 									if v227 != 0 {
@@ -2767,7 +2767,7 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 			return
 		}
 	default:
-		F_errstart_cold(m, int32(21), int32(541439))
+		F_errstart_cold(m, int32(21), int32(543647))
 		mBase = m.M
 		v141 = m.ExcPending
 		if v141 != 0 {
@@ -2775,13 +2775,13 @@ func F_exec_eval_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 		} else {
 			v142 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = v142
-			F_errmsg_internal(m, int32(476851), v12)
+			F_errmsg_internal(m, int32(478925), v12)
 			mBase = m.M
 			v147 = m.ExcPending
 			if v147 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(492322), int32(5428), int32(282091))
+				F_errfinish(m, int32(494530), int32(5428), int32(283285))
 				mBase = m.M
 				v154 = m.ExcPending
 				if v154 != 0 {

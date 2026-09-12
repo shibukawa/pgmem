@@ -1143,7 +1143,7 @@ L95:
 L96:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v26))) = v26 + int32(16)
-	F_errmsg(m, int32(201379), v26)
+	F_errmsg(m, int32(202274), v26)
 	mBase = m.M
 	v360 = m.ExcPending
 	if v360 != 0 {
@@ -1153,7 +1153,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(492409), int32(4531), int32(228375))
+	F_errfinish(m, int32(494617), int32(4531), int32(229320))
 	mBase = m.M
 	v365 = m.ExcPending
 	if v365 != 0 {
@@ -2723,7 +2723,7 @@ L42:
 	}
 L43:
 	;
-	v108 = F_DirectFunctionCall2Coll(m, int32(1559), v19, v21, v39)
+	v108 = F_DirectFunctionCall2Coll(m, int32(1560), v19, v21, v39)
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -2960,7 +2960,7 @@ L82:
 	goto L79
 L83:
 	;
-	v206 = F_DirectFunctionCall2Coll(m, int32(1559), v19, v196, v39)
+	v206 = F_DirectFunctionCall2Coll(m, int32(1560), v19, v196, v39)
 	mBase = m.M
 	v207 = m.ExcPending
 	if v207 != 0 {
@@ -3190,7 +3190,7 @@ L119:
 	goto L116
 L120:
 	;
-	v312 = F_DirectFunctionCall2Coll(m, int32(1559), v19, v302, v39)
+	v312 = F_DirectFunctionCall2Coll(m, int32(1560), v19, v302, v39)
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -3811,7 +3811,7 @@ L13:
 	}
 L14:
 	;
-	F_errmsg(m, int32(219647), int32(0))
+	F_errmsg(m, int32(220578), int32(0))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -3821,7 +3821,7 @@ L14:
 	}
 L15:
 	;
-	F_errhint(m, int32(646077), int32(0))
+	F_errhint(m, int32(648285), int32(0))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -3831,7 +3831,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(492409), int32(6191), int32(121731))
+	F_errfinish(m, int32(494617), int32(6191), int32(122376))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -3856,7 +3856,7 @@ L18:
 	}
 L19:
 	;
-	F_errmsg(m, int32(396238), int32(0))
+	F_errmsg(m, int32(397885), int32(0))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -3866,7 +3866,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(492409), int32(6190), int32(121731))
+	F_errfinish(m, int32(494617), int32(6190), int32(122376))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {
@@ -3930,12 +3930,12 @@ func F_text_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 				if v51 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(396407), int32(0))
+					F_errmsg(m, int32(398054), int32(0))
 					v55 = m.ExcPending
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492409), int32(1186), int32(26190))
+						F_errfinish(m, int32(494617), int32(1186), int32(26319))
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
@@ -3986,12 +3986,12 @@ func F_text_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(433172), int32(0))
+				F_errmsg(m, int32(434838), int32(0))
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492409), int32(1182), int32(26190))
+					F_errfinish(m, int32(494617), int32(1182), int32(26319))
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return int32(0)

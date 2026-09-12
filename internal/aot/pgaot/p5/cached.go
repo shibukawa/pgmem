@@ -386,7 +386,7 @@ L32:
 	goto L10
 L33:
 	;
-	v93 = F_AllocSetContextCreateInternal(m, v85, int32(279428), int32(0), int32(1024), int32(8388608))
+	v93 = F_AllocSetContextCreateInternal(m, v85, int32(280622), int32(0), int32(1024), int32(8388608))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -932,7 +932,7 @@ L45:
 	v148 = int32(1)
 	v149 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v149 + v148
-	F_ResourceOwnerRemember(m, l2, l1, int32(1714604))
+	F_ResourceOwnerRemember(m, l2, l1, int32(1718700))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {

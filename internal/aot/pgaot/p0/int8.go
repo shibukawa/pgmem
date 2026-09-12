@@ -201,13 +201,13 @@ func F_int8_avg_deserialize(m *base.Module, l0 int32) int32 {
 		if v128 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(60530), int32(0))
+			F_errmsg_internal(m, int32(60731), int32(0))
 			mBase = m.M
 			v132 = m.ExcPending
 			if v132 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492312), int32(6055), int32(336656))
+				F_errfinish(m, int32(494520), int32(6055), int32(338174))
 				mBase = m.M
 				v137 = m.ExcPending
 				if v137 != 0 {

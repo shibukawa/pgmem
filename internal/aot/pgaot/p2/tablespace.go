@@ -123,13 +123,13 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-											F_errmsg(m, int32(71797), v9)
+											F_errmsg(m, int32(72059), v9)
 											mBase = m.M
 											v56 = m.ExcPending
 											if v56 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(491840), int32(1461), int32(428577))
+												F_errfinish(m, int32(494048), int32(1461), int32(430243))
 												mBase = m.M
 												v61 = m.ExcPending
 												if v61 != 0 {

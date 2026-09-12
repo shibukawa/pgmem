@@ -62,7 +62,7 @@ func F_get_fn_expr_argtype(m *base.Module, l0 int32, l1 int32) int32 {
 						v51 = v3
 						return v51
 					} else {
-						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[866])))
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[865])))
 						v29 = *(*int32)(unsafe.Add(mBase, uint32(v7+v27)))
 						if v29 == int32(0) {
 							v51 = v3
@@ -155,13 +155,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 			if v34 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(60318), int32(0))
+				F_errmsg(m, int32(60519), int32(0))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(487551), int32(2109), int32(135036))
+					F_errfinish(m, int32(489721), int32(2109), int32(135810))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -189,13 +189,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(60318), int32(0))
+					F_errmsg(m, int32(60519), int32(0))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(487551), int32(2109), int32(135036))
+						F_errfinish(m, int32(489721), int32(2109), int32(135810))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -223,13 +223,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(60318), int32(0))
+						F_errmsg(m, int32(60519), int32(0))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(487551), int32(2109), int32(135036))
+							F_errfinish(m, int32(489721), int32(2109), int32(135810))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {
@@ -257,13 +257,13 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(60318), int32(0))
+							F_errmsg(m, int32(60519), int32(0))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(487551), int32(2109), int32(135036))
+								F_errfinish(m, int32(489721), int32(2109), int32(135810))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {

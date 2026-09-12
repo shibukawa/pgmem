@@ -218,7 +218,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(1)
 	v9 = l0 + int32(44)
 	if v5 != 0 {
-		F_s_lock(m, v9, int32(485737), int32(60), int32(321359))
+		F_s_lock(m, v9, int32(487891), int32(60), int32(322850))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
@@ -228,7 +228,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 			if v15 != 0 {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v15 + int32(1)
-				F_on_dsm_detach(m, l1, int32(1095), l0)
+				F_on_dsm_detach(m, l1, int32(1096), l0)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
@@ -251,13 +251,13 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 					if v32 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(431985), int32(0))
+						F_errmsg(m, int32(433651), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(485737), int32(73), int32(321359))
+							F_errfinish(m, int32(487891), int32(73), int32(322850))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -277,7 +277,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 		if v15 != 0 {
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(0)
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+48)) = v15 + int32(1)
-			F_on_dsm_detach(m, l1, int32(1095), l0)
+			F_on_dsm_detach(m, l1, int32(1096), l0)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
@@ -300,13 +300,13 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 				if v32 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(431985), int32(0))
+					F_errmsg(m, int32(433651), int32(0))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(485737), int32(73), int32(321359))
+						F_errfinish(m, int32(487891), int32(73), int32(322850))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {

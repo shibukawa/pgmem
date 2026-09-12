@@ -83,13 +83,13 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 		if v111 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(347883), int32(0))
+			F_errmsg_internal(m, int32(349413), int32(0))
 			mBase = m.M
 			v115 = m.ExcPending
 			if v115 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492312), int32(6151), int32(32373))
+				F_errfinish(m, int32(494520), int32(6151), int32(32537))
 				mBase = m.M
 				v120 = m.ExcPending
 				if v120 != 0 {
@@ -110,13 +110,13 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 			if v111 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(347883), int32(0))
+				F_errmsg_internal(m, int32(349413), int32(0))
 				mBase = m.M
 				v115 = m.ExcPending
 				if v115 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492312), int32(6151), int32(32373))
+					F_errfinish(m, int32(494520), int32(6151), int32(32537))
 					mBase = m.M
 					v120 = m.ExcPending
 					if v120 != 0 {
@@ -228,13 +228,13 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 									if v124 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(20259), int32(0))
+										F_errmsg_internal(m, int32(20320), int32(0))
 										mBase = m.M
 										v128 = m.ExcPending
 										if v128 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(492312), int32(6157), int32(32373))
+											F_errfinish(m, int32(494520), int32(6157), int32(32537))
 											mBase = m.M
 											v133 = m.ExcPending
 											if v133 != 0 {
@@ -707,7 +707,7 @@ func F_int8_sum(m *base.Module, l0 int32) int32 {
 						if v163 != 0 {
 							return int32(0)
 						} else {
-							v166 = F_DirectFunctionCall2Coll(m, int32(1293), int32(0), v92, v160)
+							v166 = F_DirectFunctionCall2Coll(m, int32(1294), int32(0), v92, v160)
 							mBase = m.M
 							v167 = m.ExcPending
 							if v167 != 0 {

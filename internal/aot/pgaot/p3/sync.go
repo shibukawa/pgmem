@@ -167,7 +167,7 @@ L10:
 	goto L5
 L11:
 	;
-	F_s_lock(m, v38, int32(488307), int32(779), int32(111385))
+	F_s_lock(m, v38, int32(490487), int32(779), int32(112007))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -262,7 +262,7 @@ L21:
 L22:
 	;
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_pg_qsort(m, v104, v97, int32(48), int32(1027))
+	F_pg_qsort(m, v104, v97, int32(48), int32(1028))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {

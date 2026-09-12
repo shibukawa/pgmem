@@ -121,13 +121,13 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			if v134 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(222586), int32(0))
+				F_errmsg(m, int32(223517), int32(0))
 				mBase = m.M
 				v140 = m.ExcPending
 				if v140 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(485585), int32(213), int32(498739))
+					F_errfinish(m, int32(487739), int32(213), int32(500947))
 					mBase = m.M
 					v147 = m.ExcPending
 					if v147 != 0 {
@@ -154,13 +154,13 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				if v134 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(222586), int32(0))
+					F_errmsg(m, int32(223517), int32(0))
 					mBase = m.M
 					v140 = m.ExcPending
 					if v140 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(485585), int32(213), int32(498739))
+						F_errfinish(m, int32(487739), int32(213), int32(500947))
 						mBase = m.M
 						v147 = m.ExcPending
 						if v147 != 0 {
@@ -176,7 +176,7 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
 			v17 = l3 + int32(3)
-			v20 = F_pg_snprintf(m, v17, int32(18), int32(666066), v9)
+			v20 = F_pg_snprintf(m, v17, int32(18), int32(668334), v9)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
@@ -195,13 +195,13 @@ func F__crypt_gensalt_sha(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v154 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(325086), int32(0))
+							F_errmsg(m, int32(326577), int32(0))
 							mBase = m.M
 							v160 = m.ExcPending
 							if v160 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(485585), int32(220), int32(498739))
+								F_errfinish(m, int32(487739), int32(220), int32(500947))
 								mBase = m.M
 								v167 = m.ExcPending
 								if v167 != 0 {

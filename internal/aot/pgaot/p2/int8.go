@@ -219,13 +219,13 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				if v159 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(60530), int32(0))
+					F_errmsg_internal(m, int32(60731), int32(0))
 					mBase = m.M
 					v163 = m.ExcPending
 					if v163 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492312), int32(5606), int32(348553))
+						F_errfinish(m, int32(494520), int32(5606), int32(350083))
 						mBase = m.M
 						v168 = m.ExcPending
 						if v168 != 0 {
@@ -238,7 +238,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v51 = int32(4470752)
+				v51 = int32(4476144)
 				v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -356,13 +356,13 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 			if v159 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(60530), int32(0))
+				F_errmsg_internal(m, int32(60731), int32(0))
 				mBase = m.M
 				v163 = m.ExcPending
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492312), int32(5606), int32(348553))
+					F_errfinish(m, int32(494520), int32(5606), int32(350083))
 					mBase = m.M
 					v168 = m.ExcPending
 					if v168 != 0 {
@@ -375,7 +375,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v51 = int32(4470752)
+			v51 = int32(4476144)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -625,7 +625,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 				return v133
 			} else {
 				if v49 == int32(0) {
-					v56 = int32(4470752)
+					v56 = int32(4476144)
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v59
@@ -689,13 +689,13 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 						if v159 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(60530), int32(0))
+							F_errmsg_internal(m, int32(60731), int32(0))
 							mBase = m.M
 							v163 = m.ExcPending
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492312), int32(5606), int32(348553))
+								F_errfinish(m, int32(494520), int32(5606), int32(350083))
 								mBase = m.M
 								v168 = m.ExcPending
 								if v168 != 0 {
@@ -759,13 +759,13 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 		if v146 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(60530), int32(0))
+			F_errmsg_internal(m, int32(60731), int32(0))
 			mBase = m.M
 			v150 = m.ExcPending
 			if v150 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492312), int32(5946), int32(368177))
+				F_errfinish(m, int32(494520), int32(5946), int32(369762))
 				mBase = m.M
 				v155 = m.ExcPending
 				if v155 != 0 {
@@ -827,13 +827,13 @@ func F_int8_dist(m *base.Module, l0 int32) int32 {
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(396117), int32(0))
+				F_errmsg(m, int32(397764), int32(0))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492476), int32(107), int32(75087))
+					F_errfinish(m, int32(494684), int32(107), int32(75349))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
@@ -1293,7 +1293,7 @@ L14:
 	goto L2
 L15:
 	;
-	v59 = F_cstring_to_text(m, int32(733277))
+	v59 = F_cstring_to_text(m, int32(735586))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -1727,7 +1727,7 @@ L79:
 	}
 L80:
 	;
-	v248 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v246)
+	v248 = F_DirectFunctionCall1Coll(m, int32(1315), int32(0), v246)
 	mBase = m.M
 	v249 = m.ExcPending
 	if v249 != 0 {
@@ -1737,7 +1737,7 @@ L80:
 	}
 L81:
 	;
-	v250 = F_DirectFunctionCall2Coll(m, int32(1278), int32(0), v242, v248)
+	v250 = F_DirectFunctionCall2Coll(m, int32(1279), int32(0), v242, v248)
 	mBase = m.M
 	v251 = m.ExcPending
 	if v251 != 0 {
@@ -1754,7 +1754,7 @@ L82:
 	goto L78
 L83:
 	;
-	v263 = F_DirectFunctionCall1Coll(m, int32(1315), int32(0), v261)
+	v263 = F_DirectFunctionCall1Coll(m, int32(1316), int32(0), v261)
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {

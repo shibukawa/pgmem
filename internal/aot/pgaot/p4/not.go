@@ -165,7 +165,7 @@ L6:
 	goto L1
 L7:
 	;
-	v52 = int32(4470752)
+	v52 = int32(4476144)
 	v53 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v19)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v55
@@ -229,7 +229,7 @@ L13:
 	}
 L14:
 	;
-	F_errmsg_internal(m, int32(354137), int32(0))
+	F_errmsg_internal(m, int32(355667), int32(0))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {
@@ -239,7 +239,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(491389), int32(3663), int32(452496))
+	F_errfinish(m, int32(493597), int32(3663), int32(454221))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -254,7 +254,7 @@ L16:
 	}
 L17:
 	;
-	v96 = int32(4470752)
+	v96 = int32(4476144)
 	v97 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(v90)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v99
@@ -407,7 +407,7 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = l1
-					F_errmsg(m, int32(686672), v7+int32(32))
+					F_errmsg(m, int32(688940), v7+int32(32))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -420,24 +420,24 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 						if v55 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(512845)
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(515053)
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = v54
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l1
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v11 + int32(4)
-							F_errdetail(m, int32(552196), v7+int32(16))
+							F_errdetail(m, int32(554404), v7+int32(16))
 							mBase = m.M
 							v67 = m.ExcPending
 							if v67 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(512856)
-								F_errhint(m, int32(581417), v7)
+								*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(515064)
+								F_errhint(m, int32(583625), v7)
 								mBase = m.M
 								v72 = m.ExcPending
 								if v72 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(486904), int32(9595), int32(385137))
+									F_errfinish(m, int32(489058), int32(9595), int32(386784))
 									mBase = m.M
 									v77 = m.ExcPending
 									if v77 != 0 {
@@ -469,7 +469,7 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+80)) = l1
-						F_errmsg(m, int32(686672), v7+int32(80))
+						F_errmsg(m, int32(688940), v7+int32(80))
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
@@ -482,24 +482,24 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 							if v93 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+76)) = int32(535035)
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+76)) = int32(537243)
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+72)) = v92
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = l1
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+64)) = v11 + int32(4)
-								F_errdetail(m, int32(552196), v7-int32(-64))
+								F_errdetail(m, int32(554404), v7-int32(-64))
 								mBase = m.M
 								v105 = m.ExcPending
 								if v105 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(510231)
-									F_errhint(m, int32(581377), v7+int32(48))
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(512439)
+									F_errhint(m, int32(583585), v7+int32(48))
 									mBase = m.M
 									v112 = m.ExcPending
 									if v112 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(486904), int32(9607), int32(385137))
+										F_errfinish(m, int32(489058), int32(9607), int32(386784))
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -529,13 +529,13 @@ func F_verifyNotNullPKCompatible(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+96)) = v28
-			F_errmsg_internal(m, int32(88982), v7+int32(96))
+			F_errmsg_internal(m, int32(89280), v7+int32(96))
 			mBase = m.M
 			v34 = m.ExcPending
 			if v34 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(486904), int32(9583), int32(385137))
+				F_errfinish(m, int32(489058), int32(9583), int32(386784))
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {

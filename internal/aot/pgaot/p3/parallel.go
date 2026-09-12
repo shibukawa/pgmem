@@ -854,7 +854,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 				v69 = F__emscripten_memset_bulkmem(m, v61+int32(20), base.I32_extend8_s(v62), v67)
 				mBase = m.M
 			}
-			v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+			v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 			mBase = m.M
 			v195 = m.ExcPending
 			if v195 != 0 {
@@ -863,7 +863,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 				return v194
 			}
 		default:
-			v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+			v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 			mBase = m.M
 			v195 = m.ExcPending
 			if v195 != 0 {
@@ -875,7 +875,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15)+36)))
 			if v16 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -895,7 +895,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -909,7 +909,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v28)+36)))
 			if v29 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -925,7 +925,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -939,7 +939,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+36)))
 			if v36 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -955,7 +955,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 				if v41 != 0 {
 					return int32(0)
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -969,7 +969,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+36)))
 			if v86 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -1004,7 +1004,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-											v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+											v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 											mBase = m.M
 											v195 = m.ExcPending
 											if v195 != 0 {
@@ -1031,7 +1031,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-													v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+													v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 													mBase = m.M
 													v195 = m.ExcPending
 													if v195 != 0 {
@@ -1055,7 +1055,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-														v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+														v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 														mBase = m.M
 														v195 = m.ExcPending
 														if v195 != 0 {
@@ -1088,7 +1088,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-													v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+													v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 													mBase = m.M
 													v195 = m.ExcPending
 													if v195 != 0 {
@@ -1115,7 +1115,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-															v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+															v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 															mBase = m.M
 															v195 = m.ExcPending
 															if v195 != 0 {
@@ -1139,7 +1139,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1169,7 +1169,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-														v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+														v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 														mBase = m.M
 														v195 = m.ExcPending
 														if v195 != 0 {
@@ -1196,7 +1196,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1220,7 +1220,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																	v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																	v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																	mBase = m.M
 																	v195 = m.ExcPending
 																	if v195 != 0 {
@@ -1259,7 +1259,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 													return int32(0)
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-													v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+													v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 													mBase = m.M
 													v195 = m.ExcPending
 													if v195 != 0 {
@@ -1286,7 +1286,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-															v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+															v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 															mBase = m.M
 															v195 = m.ExcPending
 															if v195 != 0 {
@@ -1310,7 +1310,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1343,7 +1343,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-															v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+															v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 															mBase = m.M
 															v195 = m.ExcPending
 															if v195 != 0 {
@@ -1370,7 +1370,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																	v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																	v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																	mBase = m.M
 																	v195 = m.ExcPending
 																	if v195 != 0 {
@@ -1394,7 +1394,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																		return int32(0)
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																		v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																		v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																		mBase = m.M
 																		v195 = m.ExcPending
 																		if v195 != 0 {
@@ -1424,7 +1424,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1451,7 +1451,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																		return int32(0)
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																		v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																		v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																		mBase = m.M
 																		v195 = m.ExcPending
 																		if v195 != 0 {
@@ -1475,7 +1475,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																			return int32(0)
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																			v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																			v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																			mBase = m.M
 																			v195 = m.ExcPending
 																			if v195 != 0 {
@@ -1511,7 +1511,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 														return int32(0)
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-														v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+														v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 														mBase = m.M
 														v195 = m.ExcPending
 														if v195 != 0 {
@@ -1538,7 +1538,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1562,7 +1562,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																	v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																	v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																	mBase = m.M
 																	v195 = m.ExcPending
 																	if v195 != 0 {
@@ -1595,7 +1595,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																mBase = m.M
 																v195 = m.ExcPending
 																if v195 != 0 {
@@ -1622,7 +1622,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																		return int32(0)
 																	} else {
 																		*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																		v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																		v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																		mBase = m.M
 																		v195 = m.ExcPending
 																		if v195 != 0 {
@@ -1646,7 +1646,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																			return int32(0)
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																			v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																			v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																			mBase = m.M
 																			v195 = m.ExcPending
 																			if v195 != 0 {
@@ -1676,7 +1676,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																	v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																	v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																	mBase = m.M
 																	v195 = m.ExcPending
 																	if v195 != 0 {
@@ -1703,7 +1703,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																			return int32(0)
 																		} else {
 																			*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																			v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																			v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																			mBase = m.M
 																			v195 = m.ExcPending
 																			if v195 != 0 {
@@ -1727,7 +1727,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 																				return int32(0)
 																			} else {
 																				*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-																				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+																				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 																				mBase = m.M
 																				v195 = m.ExcPending
 																				if v195 != 0 {
@@ -1751,7 +1751,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v91))) = int32(0)
-						v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+						v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 						mBase = m.M
 						v195 = m.ExcPending
 						if v195 != 0 {
@@ -1761,7 +1761,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -1775,7 +1775,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v42)+36)))
 			if v43 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -1803,7 +1803,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						if v56 != 0 {
 							return int32(0)
 						} else {
-							v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+							v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 							mBase = m.M
 							v195 = m.ExcPending
 							if v195 != 0 {
@@ -1814,7 +1814,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -1828,7 +1828,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v70 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+36)))
 			if v71 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -1856,7 +1856,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						if v84 != 0 {
 							return int32(0)
 						} else {
-							v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+							v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 							mBase = m.M
 							v195 = m.ExcPending
 							if v195 != 0 {
@@ -1867,7 +1867,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -1881,7 +1881,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 			v152 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v153 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v152)+36)))
 			if v153 != int32(1) {
-				v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+				v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {
@@ -1931,7 +1931,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 										*(*uint8)(unsafe.Add(mBase, uint32(v174)+20)) = uint8(v175)
 										F_ConditionVariableInit(m, v161+int32(80))
 										mBase = m.M
-										v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+										v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 										mBase = m.M
 										v195 = m.ExcPending
 										if v195 != 0 {
@@ -1958,7 +1958,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 								*(*uint8)(unsafe.Add(mBase, uint32(v174)+20)) = uint8(v175)
 								F_ConditionVariableInit(m, v161+int32(80))
 								mBase = m.M
-								v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+								v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 								mBase = m.M
 								v195 = m.ExcPending
 								if v195 != 0 {
@@ -1970,7 +1970,7 @@ func F_ExecParallelReInitializeDSM(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					v194 = F_planstate_tree_walker_impl(m, l0, int32(627), l1)
+					v194 = F_planstate_tree_walker_impl(m, l0, int32(628), l1)
 					mBase = m.M
 					v195 = m.ExcPending
 					if v195 != 0 {
@@ -4077,7 +4077,7 @@ L2:
 	goto L3
 L3:
 	;
-	v37 = int32(4470752)
+	v37 = int32(4476144)
 	v38 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v41 = *(*int32)(unsafe.Add(mBase, _consts[105]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v41
@@ -4210,7 +4210,7 @@ L15:
 	goto L16
 L16:
 	;
-	v80 = int32(4470752)
+	v80 = int32(4476144)
 	v81 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v84 = *(*int32)(unsafe.Add(mBase, _consts[12]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v84
@@ -4342,11 +4342,11 @@ L30:
 	v137 = m.G0
 	v139 = v137 - int32(16)
 	m.G0 = v139
-	v141 = int32(4470752)
+	v141 = int32(4476144)
 	v142 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v145 = *(*int32)(unsafe.Add(mBase, _consts[12]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v145
-	v148 = F_dshash_create(m, v129, int32(1737548), v129)
+	v148 = F_dshash_create(m, v129, int32(1741644), v129)
 	mBase = m.M
 	v149 = m.ExcPending
 	if v149 != 0 {
@@ -4356,7 +4356,7 @@ L30:
 	}
 L31:
 	;
-	v152 = F_dshash_create(m, v129, int32(1737572), int32(0))
+	v152 = F_dshash_create(m, v129, int32(1741668), int32(0))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -4422,7 +4422,7 @@ L39:
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+16)) = v152
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+12)) = v148
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+8)) = v135
-	F_on_dsm_detach(m, v107, int32(1622), int32(0))
+	F_on_dsm_detach(m, v107, int32(1623), int32(0))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -4576,7 +4576,7 @@ L57:
 	goto L35
 L58:
 	;
-	F_errmsg_internal(m, int32(415844), int32(0))
+	F_errmsg_internal(m, int32(417510), int32(0))
 	mBase = m.M
 	v309 = m.ExcPending
 	if v309 != 0 {
@@ -4586,7 +4586,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(491505), int32(2253), int32(99012))
+	F_errfinish(m, int32(493713), int32(2253), int32(99496))
 	mBase = m.M
 	v314 = m.ExcPending
 	if v314 != 0 {
@@ -4621,7 +4621,7 @@ L62:
 	}
 L63:
 	;
-	v322 = int32(4365212)
+	v322 = int32(4370604)
 	v323 = *(*int32)(unsafe.Add(mBase, _consts[108]))
 	*(*int32)(unsafe.Add(mBase, uint32(v323))) = v107
 	v326 = *(*int32)(unsafe.Add(mBase, _consts[108]))
@@ -4863,7 +4863,7 @@ L95:
 	goto L93
 L96:
 	;
-	if v517 == int32(4468780) {
+	if v517 == int32(4474172) {
 		v977 = v515
 		goto L95
 	} else {
@@ -5512,7 +5512,7 @@ L201:
 L202:
 	;
 	v958 = *(*int32)(unsafe.Add(mBase, uint32(v534)+4))
-	if v958 != int32(4468780) {
+	if v958 != int32(4474172) {
 		v534 = v958
 		v538 = v956
 		goto L98
@@ -5527,7 +5527,7 @@ L204:
 	v1030 = *(*int32)(unsafe.Add(mBase, uint32(v565)))
 	*(*int32)(unsafe.Add(mBase, uint32(v513)+4)) = v1030
 	*(*int32)(unsafe.Add(mBase, uint32(v513))) = v702
-	F_errmsg_internal(m, int32(179024), v513)
+	F_errmsg_internal(m, int32(179919), v513)
 	mBase = m.M
 	v1035 = m.ExcPending
 	if v1035 != 0 {
@@ -5537,7 +5537,7 @@ L204:
 	}
 L205:
 	;
-	F_errfinish(m, int32(492061), int32(3036), int32(339545))
+	F_errfinish(m, int32(494269), int32(3036), int32(341075))
 	mBase = m.M
 	v1040 = m.ExcPending
 	if v1040 != 0 {
@@ -7024,7 +7024,7 @@ L394:
 	goto L389
 L395:
 	;
-	if v2017 == int32(4468780) {
+	if v2017 == int32(4474172) {
 		v2358 = v2014
 		goto L394
 	} else {
@@ -7051,7 +7051,7 @@ L398:
 L399:
 	;
 	v2351 = *(*int32)(unsafe.Add(mBase, uint32(v2031)+4))
-	if v2351 != int32(4468780) {
+	if v2351 != int32(4474172) {
 		v2026 = v2324
 		v2031 = v2351
 		goto L397
@@ -7073,7 +7073,7 @@ L401:
 	v2064 = v2031 + int32(-64)
 	v2065 = *(*int32)(unsafe.Add(mBase, uint32(v2064)))
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+96)) = v2065
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(203498), v2008+int32(96))
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(204393), v2008+int32(96))
 	mBase = m.M
 	v2075 = m.ExcPending
 	if v2075 != 0 {
@@ -7157,7 +7157,7 @@ L409:
 	v2104 = *(*float64)(unsafe.Add(mBase, uint32(v2103)))
 	*(*float64)(unsafe.Add(mBase, uint32(v2008)+40)) = v2104
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+32)) = int32(17)
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(413613), v2008+int32(32))
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(415279), v2008+int32(32))
 	mBase = m.M
 	v2116 = m.ExcPending
 	if v2116 != 0 {
@@ -7170,7 +7170,7 @@ L410:
 	v2091 = *(*int32)(unsafe.Add(mBase, uint32(v2031)+28))
 	v2092 = *(*int32)(unsafe.Add(mBase, uint32(v2091)))
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+16)) = v2092
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(480823), v2008+int32(16))
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(482897), v2008+int32(16))
 	mBase = m.M
 	v2102 = m.ExcPending
 	if v2102 != 0 {
@@ -7189,11 +7189,11 @@ L411:
 	}
 L412:
 	;
-	v2087 = int32(339026)
+	v2087 = int32(340544)
 	goto L414
 L413:
 	;
-	v2087 = int32(355845)
+	v2087 = int32(357375)
 	goto L414
 L414:
 	;
@@ -7220,12 +7220,12 @@ L418:
 	goto L420
 L419:
 	;
-	v2120 = int32(733277)
+	v2120 = int32(735586)
 	goto L420
 L420:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+48)) = v2120
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(203498), v2008+int32(48))
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(204393), v2008+int32(48))
 	mBase = m.M
 	v2130 = m.ExcPending
 	if v2130 != 0 {
@@ -7251,7 +7251,7 @@ L423:
 L424:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+80)) = v2167
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(203498), v2008+int32(80))
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(204393), v2008+int32(80))
 	mBase = m.M
 	v2185 = m.ExcPending
 	if v2185 != 0 {
@@ -7294,12 +7294,12 @@ L431:
 	goto L433
 L432:
 	;
-	v2221 = int32(733277)
+	v2221 = int32(735586)
 	goto L433
 L433:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v2008))) = v2221
-	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(203498), v2008)
+	F_do_serialize(m, v2008+int32(108), v2008+int32(104), int32(204393), v2008)
 	mBase = m.M
 	v2229 = m.ExcPending
 	if v2229 != 0 {
@@ -7339,7 +7339,7 @@ L439:
 	v2268 = *(*int32)(unsafe.Add(mBase, uint32(v2064)))
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+68)) = v2268
 	*(*int32)(unsafe.Add(mBase, uint32(v2008)+64)) = v2132
-	F_errmsg_internal(m, int32(179024), v2008-int32(-64))
+	F_errmsg_internal(m, int32(179919), v2008-int32(-64))
 	mBase = m.M
 	v2275 = m.ExcPending
 	if v2275 != 0 {
@@ -7349,7 +7349,7 @@ L439:
 	}
 L440:
 	;
-	F_errfinish(m, int32(492061), int32(3036), int32(339545))
+	F_errfinish(m, int32(494269), int32(3036), int32(341075))
 	mBase = m.M
 	v2280 = m.ExcPending
 	if v2280 != 0 {
@@ -7406,7 +7406,7 @@ L446:
 	goto L398
 L447:
 	;
-	F_errmsg_internal(m, int32(348086), int32(0))
+	F_errmsg_internal(m, int32(349616), int32(0))
 	mBase = m.M
 	v2397 = m.ExcPending
 	if v2397 != 0 {
@@ -7416,7 +7416,7 @@ L447:
 	}
 L448:
 	;
-	F_errfinish(m, int32(492061), int32(6020), int32(17647))
+	F_errfinish(m, int32(494269), int32(6020), int32(17708))
 	mBase = m.M
 	v2402 = m.ExcPending
 	if v2402 != 0 {
@@ -7431,7 +7431,7 @@ L449:
 	}
 L450:
 	;
-	F_errmsg_internal(m, int32(348086), int32(0))
+	F_errmsg_internal(m, int32(349616), int32(0))
 	mBase = m.M
 	v2410 = m.ExcPending
 	if v2410 != 0 {
@@ -7441,7 +7441,7 @@ L450:
 	}
 L451:
 	;
-	F_errfinish(m, int32(492061), int32(6020), int32(17647))
+	F_errfinish(m, int32(494269), int32(6020), int32(17708))
 	mBase = m.M
 	v2415 = m.ExcPending
 	if v2415 != 0 {
@@ -7456,7 +7456,7 @@ L452:
 	}
 L453:
 	;
-	F_errmsg_internal(m, int32(348086), int32(0))
+	F_errmsg_internal(m, int32(349616), int32(0))
 	mBase = m.M
 	v2423 = m.ExcPending
 	if v2423 != 0 {
@@ -7466,7 +7466,7 @@ L453:
 	}
 L454:
 	;
-	F_errfinish(m, int32(492061), int32(6020), int32(17647))
+	F_errfinish(m, int32(494269), int32(6020), int32(17708))
 	mBase = m.M
 	v2428 = m.ExcPending
 	if v2428 != 0 {
@@ -7481,7 +7481,7 @@ L455:
 	}
 L456:
 	;
-	F_errmsg_internal(m, int32(348086), int32(0))
+	F_errmsg_internal(m, int32(349616), int32(0))
 	mBase = m.M
 	v2436 = m.ExcPending
 	if v2436 != 0 {
@@ -7491,7 +7491,7 @@ L456:
 	}
 L457:
 	;
-	F_errfinish(m, int32(492061), int32(6020), int32(17647))
+	F_errfinish(m, int32(494269), int32(6020), int32(17708))
 	mBase = m.M
 	v2441 = m.ExcPending
 	if v2441 != 0 {
@@ -7592,7 +7592,7 @@ L471:
 	goto L468
 L472:
 	;
-	F_errmsg_internal(m, int32(347997), int32(0))
+	F_errmsg_internal(m, int32(349527), int32(0))
 	mBase = m.M
 	v2473 = m.ExcPending
 	if v2473 != 0 {
@@ -7602,7 +7602,7 @@ L472:
 	}
 L473:
 	;
-	F_errfinish(m, int32(492021), int32(327), int32(348748))
+	F_errfinish(m, int32(494229), int32(327), int32(350278))
 	mBase = m.M
 	v2478 = m.ExcPending
 	if v2478 != 0 {
@@ -8160,7 +8160,7 @@ L554:
 	}
 L555:
 	;
-	v2889 = F_hash_create(m, int32(129474), v2885, v2807+int32(32), int32(1064))
+	v2889 = F_hash_create(m, int32(130225), v2885, v2807+int32(32), int32(1064))
 	mBase = m.M
 	v2890 = m.ExcPending
 	if v2890 != 0 {
@@ -8569,7 +8569,7 @@ L613:
 	goto L618
 L614:
 	;
-	v3324 = F__emscripten_memcpy_bulkmem(m, v3320, int32(4459024), int32(524))
+	v3324 = F__emscripten_memcpy_bulkmem(m, v3320, int32(4464416), int32(524))
 	mBase = m.M
 	goto L616
 L616:
@@ -8588,7 +8588,7 @@ L617:
 	}
 L618:
 	;
-	v3330 = F__emscripten_memcpy_bulkmem(m, v3324+v3326, int32(4460072), v3326)
+	v3330 = F__emscripten_memcpy_bulkmem(m, v3324+v3326, int32(4465464), v3326)
 	mBase = m.M
 	goto L620
 L620:
@@ -9871,13 +9871,13 @@ func F_parallel_vacuum_process_one_index(m *base.Module, l0 int32, l1 int32, l2 
 				v50 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v50
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v49 + int32(4)
-				F_errmsg_internal(m, int32(669375), v10)
+				F_errmsg_internal(m, int32(671643), v10)
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489809), int32(904), int32(27884))
+					F_errfinish(m, int32(492017), int32(904), int32(28035))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

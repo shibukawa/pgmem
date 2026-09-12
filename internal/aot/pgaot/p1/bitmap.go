@@ -17,12 +17,12 @@ func F_ExecBitmapAnd(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(244716), int32(0))
+		F_errmsg_internal(m, int32(245750), int32(0))
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(491936), int32(44), int32(423009))
+			F_errfinish(m, int32(494144), int32(44), int32(424675))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
@@ -39,7 +39,7 @@ func F_ExecBitmapHeapScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(699), int32(700))
+	v4 = F_ExecScan(m, l0, int32(700), int32(701))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -59,12 +59,12 @@ func F_ExecBitmapIndexScan(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(244593), int32(0))
+		F_errmsg_internal(m, int32(245627), int32(0))
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(489126), int32(40), int32(280811))
+			F_errfinish(m, int32(491317), int32(40), int32(282005))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
@@ -598,7 +598,7 @@ L6:
 	return int32(0)
 L7:
 	;
-	F_pg_qsort(m, v27, int32(0), int32(4), int32(823))
+	F_pg_qsort(m, v27, int32(0), int32(4), int32(824))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -1228,7 +1228,7 @@ L95:
 	goto L96
 L96:
 	;
-	F_pg_qsort(m, v43, v535, int32(4), int32(823))
+	F_pg_qsort(m, v43, v535, int32(4), int32(824))
 	mBase = m.M
 	v553 = m.ExcPending
 	if v553 != 0 {

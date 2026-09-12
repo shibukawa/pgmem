@@ -85,13 +85,13 @@ func F_inet_abbrev(m *base.Module, l0 int32) int32 {
 					if v33 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(289854), int32(0))
+						F_errmsg(m, int32(291148), int32(0))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489960), int32(1199), int32(35328))
+							F_errfinish(m, int32(492168), int32(1199), int32(35492))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -1365,13 +1365,13 @@ func F_inet_to_cidr(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v30
-				F_errmsg_internal(m, int32(475851), v10)
+				F_errmsg_internal(m, int32(477925), v10)
 				mBase = m.M
 				v128 = m.ExcPending
 				if v128 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489960), int32(316), int32(225671))
+					F_errfinish(m, int32(492168), int32(316), int32(226602))
 					mBase = m.M
 					v133 = m.ExcPending
 					if v133 != 0 {

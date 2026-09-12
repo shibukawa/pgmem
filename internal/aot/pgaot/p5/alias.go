@@ -4708,6 +4708,24 @@ func F_gbt_var_node_cp_len(m *base.Module, l0 int32, l1 int32) int32
 func F_gbt_var_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_gbt_var_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_consistent
 func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_inner_int_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_inner_int_union
+func F_inner_int_union(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_copy_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_copy_intArrayType
+func F_copy_intArrayType(m *base.Module, l0 int32) int32
+//go:linkname F__int_unique github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__int_unique
+func F__int_unique(m *base.Module, l0 int32) int32
+//go:linkname F_inner_int_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_inner_int_inter
+func F_inner_int_inter(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_rt__int_size github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_rt__int_size
+func F_rt__int_size(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_intarray_match_first github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_intarray_match_first
+func F_intarray_match_first(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_intarray_add_elem github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_intarray_add_elem
+func F_intarray_add_elem(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_int_to_intset github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_int_to_intset
+func F_int_to_intset(m *base.Module, l0 int32) int32
+//go:linkname F_hemdist_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hemdist_3
+func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

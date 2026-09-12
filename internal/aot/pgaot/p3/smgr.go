@@ -219,7 +219,7 @@ L3:
 	return
 L4:
 	;
-	F_pg_qsort(m, v27, v25, int32(12), int32(1115))
+	F_pg_qsort(m, v27, v25, int32(12), int32(1116))
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -561,7 +561,7 @@ L53:
 	goto L49
 L54:
 	;
-	F_errmsg_internal(m, int32(133154), int32(0))
+	F_errmsg_internal(m, int32(133905), int32(0))
 	mBase = m.M
 	v316 = m.ExcPending
 	if v316 != 0 {
@@ -571,7 +571,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(485448), int32(320), int32(312219))
+	F_errfinish(m, int32(487602), int32(320), int32(313710))
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -694,7 +694,7 @@ L74:
 	;
 	v442 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v443 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	F_smgrextend(m, v442, v443, v423, int32(1605632), int32(1))
+	F_smgrextend(m, v442, v443, v423, int32(1609728), int32(1))
 	mBase = m.M
 	v447 = m.ExcPending
 	if v447 != 0 {
@@ -825,7 +825,7 @@ func F_smgr_desc(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v39
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v38
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(16)
-			F_appendStringInfo(m, l0, int32(463074), v7)
+			F_appendStringInfo(m, l0, int32(465050), v7)
 			mBase = m.M
 			v47 = m.ExcPending
 			if v47 != 0 {

@@ -328,7 +328,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					m.G0 = v9 + int32(16)
 					return v106
 				case 36, 41:
-					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
@@ -339,7 +339,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 43:
-					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v76 = m.ExcPending
 					if v76 != 0 {
@@ -357,7 +357,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 45:
-					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 					mBase = m.M
 					v98 = m.ExcPending
 					if v98 != 0 {
@@ -401,7 +401,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						m.G0 = v9 + int32(16)
 						return v106
 					case 36, 41:
-						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
@@ -412,7 +412,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 43:
-						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -430,7 +430,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 45:
-						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 						mBase = m.M
 						v98 = m.ExcPending
 						if v98 != 0 {
@@ -471,7 +471,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						m.G0 = v9 + int32(16)
 						return v106
 					case 36, 41:
-						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
@@ -482,7 +482,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 43:
-						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -500,7 +500,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 45:
-						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 						mBase = m.M
 						v98 = m.ExcPending
 						if v98 != 0 {
@@ -519,13 +519,13 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v26
-						F_errmsg_internal(m, int32(475879), v9)
+						F_errmsg_internal(m, int32(477953), v9)
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(321683), int32(70), int32(67010))
+							F_errfinish(m, int32(323174), int32(70), int32(67251))
 							mBase = m.M
 							v48 = m.ExcPending
 							if v48 != 0 {
@@ -567,7 +567,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						m.G0 = v9 + int32(16)
 						return v106
 					case 36, 41:
-						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+						v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
@@ -578,7 +578,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 43:
-						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+						v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -596,7 +596,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return v106
 						}
 					case 45:
-						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+						v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 						mBase = m.M
 						v98 = m.ExcPending
 						if v98 != 0 {
@@ -644,7 +644,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					m.G0 = v9 + int32(16)
 					return v106
 				case 36, 41:
-					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
@@ -655,7 +655,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 43:
-					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v76 = m.ExcPending
 					if v76 != 0 {
@@ -673,7 +673,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 45:
-					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 					mBase = m.M
 					v98 = m.ExcPending
 					if v98 != 0 {
@@ -727,7 +727,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					m.G0 = v9 + int32(16)
 					return v106
 				case 36, 41:
-					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(733312), int32(24))
+					v90 = F_build_reloptions(m, v62, int32(0), int32(1), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
@@ -738,7 +738,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 43:
-					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(733312), int32(24))
+					v75 = F_build_reloptions(m, v62, int32(0), int32(2), int32(128), int32(735632), int32(24))
 					mBase = m.M
 					v76 = m.ExcPending
 					if v76 != 0 {
@@ -756,7 +756,7 @@ func F_extractRelOptions(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return v106
 					}
 				case 45:
-					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(733696), int32(3))
+					v97 = F_build_reloptions(m, v62, int32(0), int32(512), int32(12), int32(736016), int32(3))
 					mBase = m.M
 					v98 = m.ExcPending
 					if v98 != 0 {
@@ -1541,7 +1541,7 @@ L24:
 L25:
 	;
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(v52)+52))
-	F_ChangeVarNodesExtended(m, v125, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v125, v13, l2, int32(828))
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -1977,7 +1977,7 @@ L78:
 L79:
 	;
 	v280 = *(*int32)(unsafe.Add(mBase, uint32(v245)+4))
-	F_ChangeVarNodesExtended(m, v280, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v280, v13, l2, int32(828))
 	mBase = m.M
 	v283 = m.ExcPending
 	if v283 != 0 {
@@ -2361,7 +2361,7 @@ L128:
 	}
 L129:
 	;
-	F_ChangeVarNodesExtended(m, v442, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v442, v13, l2, int32(828))
 	mBase = m.M
 	v447 = m.ExcPending
 	if v447 != 0 {
@@ -2512,7 +2512,7 @@ L154:
 L155:
 	;
 	v565 = *(*int32)(unsafe.Add(mBase, uint32(v513)+100))
-	F_ChangeVarNodesExtended(m, v565, v13, l2, int32(827))
+	F_ChangeVarNodesExtended(m, v565, v13, l2, int32(828))
 	mBase = m.M
 	v568 = m.ExcPending
 	if v568 != 0 {

@@ -46,7 +46,7 @@ func F__ltree_risparent(m *base.Module, l0 int32) int32 {
 		if v13 != 0 {
 			return int32(0)
 		} else {
-			v15 = F_array_iterator(m, v6, int32(5647), v12, int32(0))
+			v15 = F_array_iterator(m, v6, int32(5648), v12, int32(0))
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
@@ -538,14 +538,14 @@ func F_ltree_gist_in(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(74866)
-			F_errmsg(m, int32(189835), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(75128)
+			F_errmsg(m, int32(190730), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(485177), int32(26), int32(275124))
+				F_errfinish(m, int32(487331), int32(26), int32(276272))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

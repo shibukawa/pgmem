@@ -28,7 +28,7 @@ func F_CopyToBinaryStart(m *base.Module, l0 int32, l1 int32) {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_appendBinaryStringInfo(m, v7, int32(1592480), int32(11))
+	F_appendBinaryStringInfo(m, v7, int32(1594800), int32(11))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -634,7 +634,7 @@ func F_to_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1174), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1175), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {

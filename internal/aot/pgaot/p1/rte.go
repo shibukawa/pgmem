@@ -240,7 +240,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 			if v32 != v33 {
-				v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+				v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
@@ -252,7 +252,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v35 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 				if v35 != 0 {
-					v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+					v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 					mBase = m.M
 					v75 = m.ExcPending
 					if v75 != 0 {
@@ -274,13 +274,13 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 						if v42 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(438904), int32(0))
+							F_errmsg(m, int32(440570), int32(0))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(488292), int32(1520), int32(206175))
+								F_errfinish(m, int32(490472), int32(1520), int32(207070))
 								mBase = m.M
 								v51 = m.ExcPending
 								if v51 != 0 {
@@ -296,7 +296,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		case 1, 2, 3, 4, 5, 6, 7, 8:
-			v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+			v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 			mBase = m.M
 			v75 = m.ExcPending
 			if v75 != 0 {
@@ -311,7 +311,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 			v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)))
 			v57 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+39)))
 			*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v57)
-			v61 = F_query_tree_mutator_impl(m, l0, int32(1053), l1, int32(0))
+			v61 = F_query_tree_mutator_impl(m, l0, int32(1054), l1, int32(0))
 			mBase = m.M
 			v62 = m.ExcPending
 			if v62 != 0 {
@@ -328,7 +328,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		default:
 			if v8 != int32(6) {
-				v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+				v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 				mBase = m.M
 				v75 = m.ExcPending
 				if v75 != 0 {
@@ -341,7 +341,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 				v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 				if v13 != v14 {
-					v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+					v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 					mBase = m.M
 					v75 = m.ExcPending
 					if v75 != 0 {
@@ -354,7 +354,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 					v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 					v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					if v16 != v17 {
-						v74 = F_expression_tree_mutator_impl(m, l0, int32(1053), l1)
+						v74 = F_expression_tree_mutator_impl(m, l0, int32(1054), l1)
 						mBase = m.M
 						v75 = m.ExcPending
 						if v75 != 0 {
@@ -376,7 +376,7 @@ func F_replace_rte_variables_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 								v76 = v20
 								return v76
 							} else {
-								v28 = F_query_or_expression_tree_walker_impl(m, v20, int32(1046), int32(0), int32(3))
+								v28 = F_query_or_expression_tree_walker_impl(m, v20, int32(1047), int32(0), int32(3))
 								mBase = m.M
 								v29 = m.ExcPending
 								if v29 != 0 {

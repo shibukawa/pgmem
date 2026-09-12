@@ -56,9 +56,9 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	switch v6 - int32(1) {
 	case 0:
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(881)
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(882)
-		*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(883)
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(882)
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(883)
+		*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(884)
 		return int32(1)
 	default:
 		v84 = v3
@@ -100,9 +100,9 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 									v84 = v3
 									return v84
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(885)
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(886)
-									*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(887)
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(886)
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(887)
+									*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(888)
 									v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)))
 									if v65 != 0 {
 										v66 = int32(2)
@@ -126,9 +126,9 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 						if int32(100) < v70 {
 							v84 = v3
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(888)
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(889)
-							*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(890)
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(889)
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(890)
+							*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(891)
 							v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)))
 							if v81 != 0 {
 								v82 = int32(2)
@@ -138,9 +138,9 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 							v84 = v82
 						}
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(888)
-						*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(889)
-						*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(890)
+						*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(889)
+						*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(890)
+						*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(891)
 						v81 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+20)))
 						if v81 != 0 {
 							v82 = int32(2)
@@ -157,14 +157,14 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 		switch v17 {
 		case 0:
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(881)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(882)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(884)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(882)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(883)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(885)
 			return int32(1)
 		case 1:
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(881)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(882)
-			*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(884)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(882)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(883)
+			*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(885)
 			return int32(2)
 		default:
 			v84 = v3

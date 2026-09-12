@@ -3884,6 +3884,22 @@ func F_gbt_num_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_build_tuplestore_recursively github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_build_tuplestore_recursively
 func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32)
+//go:linkname F_signconsistent github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_signconsistent
+func F_signconsistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_execute
+func F_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_inner_int_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_inner_int_contains
+func F_inner_int_contains(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_inner_int_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_inner_int_union
+func F_inner_int_union(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F__int_unique github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__int_unique
+func F__int_unique(m *base.Module, l0 int32) int32
+//go:linkname F_new_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_new_intArrayType
+func F_new_intArrayType(m *base.Module, l0 int32) int32
+//go:linkname F_resize_intArrayType github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_resize_intArrayType
+func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
+func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

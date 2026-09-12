@@ -142,7 +142,7 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 								if v59 != 0 {
 									return int32(0)
 								} else {
-									v61 = *(*int32)(unsafe.Add(mBase, _consts[831]))
+									v61 = *(*int32)(unsafe.Add(mBase, _consts[832]))
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v61 + int32(24)
 									v65 = *(*int64)(unsafe.Add(mBase, uint32(v61)+120))
 									v66 = F_Int64GetDatum(m, v65)
@@ -212,13 +212,13 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 			if v94 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(361809), int32(0))
+				F_errmsg_internal(m, int32(363339), int32(0))
 				mBase = m.M
 				v98 = m.ExcPending
 				if v98 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(487009), int32(183), int32(84068))
+					F_errfinish(m, int32(489163), int32(183), int32(84350))
 					mBase = m.M
 					v103 = m.ExcPending
 					if v103 != 0 {

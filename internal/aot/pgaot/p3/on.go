@@ -37,7 +37,7 @@ func F_on_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 			v30 = *(*int32)(unsafe.Add(mBase, _consts[828]))
 			if v30 <= int32(31) {
 				*(*int32)(unsafe.Add(mBase, _consts[828])) = v30 + int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_consts[829]))) = int32(1099)
+				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_consts[829]))) = int32(1100)
 			} else {
 			}
 			v45 = int32(1)
@@ -58,13 +58,13 @@ func F_on_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(116797), int32(0))
+				F_errmsg_internal(m, int32(117442), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(492095), int32(377), int32(98079))
+					F_errfinish(m, int32(494303), int32(377), int32(98563))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

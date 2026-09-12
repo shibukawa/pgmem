@@ -10,7 +10,7 @@ func F_ExecTidScan(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_ExecScan(m, l0, int32(767), int32(768))
+	v4 = F_ExecScan(m, l0, int32(768), int32(769))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1932,7 +1932,7 @@ L28:
 L29:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+48)) = v89
-	F_errmsg_internal(m, int32(58319), v23+int32(48))
+	F_errmsg_internal(m, int32(58520), v23+int32(48))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {
@@ -1942,7 +1942,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(491083), int32(396), int32(122182))
+	F_errfinish(m, int32(493291), int32(396), int32(122827))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -4509,7 +4509,7 @@ L399:
 L400:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v132
-	F_errmsg_internal(m, int32(58319), v23)
+	F_errmsg_internal(m, int32(58520), v23)
 	mBase = m.M
 	v2532 = m.ExcPending
 	if v2532 != 0 {
@@ -4519,7 +4519,7 @@ L400:
 	}
 L401:
 	;
-	F_errfinish(m, int32(491083), int32(375), int32(122182))
+	F_errfinish(m, int32(493291), int32(375), int32(122827))
 	mBase = m.M
 	v2537 = m.ExcPending
 	if v2537 != 0 {

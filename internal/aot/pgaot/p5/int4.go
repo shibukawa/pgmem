@@ -79,13 +79,13 @@ func F_int4_accum_inv(m *base.Module, l0 int32) int32 {
 		if v109 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(347921), int32(0))
+			F_errmsg_internal(m, int32(349451), int32(0))
 			mBase = m.M
 			v113 = m.ExcPending
 			if v113 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492312), int32(6126), int32(32388))
+				F_errfinish(m, int32(494520), int32(6126), int32(32552))
 				mBase = m.M
 				v118 = m.ExcPending
 				if v118 != 0 {
@@ -106,13 +106,13 @@ func F_int4_accum_inv(m *base.Module, l0 int32) int32 {
 			if v109 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(347921), int32(0))
+				F_errmsg_internal(m, int32(349451), int32(0))
 				mBase = m.M
 				v113 = m.ExcPending
 				if v113 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492312), int32(6126), int32(32388))
+					F_errfinish(m, int32(494520), int32(6126), int32(32552))
 					mBase = m.M
 					v118 = m.ExcPending
 					if v118 != 0 {
@@ -287,7 +287,7 @@ func F_int4_cash(m *base.Module, l0 int32) int32 {
 			if v74 != 0 {
 				return int32(0)
 			} else {
-				v75 = F_DirectFunctionCall2Coll(m, int32(1278), int32(0), v71, v73)
+				v75 = F_DirectFunctionCall2Coll(m, int32(1279), int32(0), v71, v73)
 				mBase = m.M
 				v76 = m.ExcPending
 				if v76 != 0 {

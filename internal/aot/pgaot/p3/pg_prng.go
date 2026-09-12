@@ -38,8 +38,8 @@ func F_pg_prng_uint32(m *base.Module) int32 {
 	_ = v7
 	var v8 int64
 	_ = v8
-	v3 = int32(4554264)
-	v4 = int32(4554256)
+	v3 = int32(4559656)
+	v4 = int32(4559648)
 	v5 = *(*int64)(unsafe.Add(mBase, _consts[810]))
 	v7 = *(*int64)(unsafe.Add(mBase, _consts[809]))
 	v8 = v5 ^ v7

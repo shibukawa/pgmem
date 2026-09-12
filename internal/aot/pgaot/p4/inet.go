@@ -517,7 +517,7 @@ func F_inet_server_port(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[588]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[589]))
 	if v10 == v2 {
 		v13 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v13)
@@ -544,7 +544,7 @@ func F_inet_server_port(m *base.Module, l0 int32) int32 {
 					m.G0 = v7 + int32(32)
 					return v39
 				} else {
-					v37 = F_DirectFunctionCall1Coll(m, int32(1423), int32(0), v7)
+					v37 = F_DirectFunctionCall1Coll(m, int32(1424), int32(0), v7)
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {

@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6676)
-	m.G0 = int32(13036032)
+	m.T0 = make([]any, 6808)
+	m.G0 = int32(13041424)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4365131
+	m.DataEnd = 4370523
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6676)
-	m.G0 = int32(13036032)
+	m.T0 = make([]any, 6808)
+	m.G0 = int32(13041424)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4365131
+	m.DataEnd = 4370523
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6676)
-	m.G0 = int32(13036032)
+	m.T0 = make([]any, 6808)
+	m.G0 = int32(13041424)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4365131
+	m.DataEnd = 4370523
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1584848])
-	copy(m.Memory[1590176:], wasm2goData_data_bin[1584848:1584857])
-	copy(m.Memory[1592224:], wasm2goData_data_bin[1584857:1597785])
-	copy(m.Memory[1613828:], wasm2goData_data_bin[1597785:1691026])
-	copy(m.Memory[1708096:], wasm2goData_data_bin[1691026:1802682])
-	copy(m.Memory[1830968:], wasm2goData_data_bin[1802682:4052592])
-	copy(m.Memory[4088368:], wasm2goData_data_bin[4052592:4329355])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1587168])
+	copy(m.Memory[1592496:], wasm2goData_data_bin[1587168:1587177])
+	copy(m.Memory[1594544:], wasm2goData_data_bin[1587177:1600105])
+	copy(m.Memory[1617924:], wasm2goData_data_bin[1600105:1693346])
+	copy(m.Memory[1712192:], wasm2goData_data_bin[1693346:1805002])
+	copy(m.Memory[1835064:], wasm2goData_data_bin[1805002:4056144])
+	copy(m.Memory[4093696:], wasm2goData_data_bin[4056144:4332971])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4111,6 +4111,321 @@ func PgFinfoCrosstabHash(m *base.Module) int32 {
 }
 func PgFinfoNormalRand(m *base.Module) int32 {
 	return F_pg_finfo_normal_rand(m)
+}
+func PgMagicFuncInt(m *base.Module) int32 {
+	return F_Pg_magic_func__int(m)
+}
+func IntContained(m *base.Module, l0 int32) int32 {
+	return F__int_contained(m, l0)
+}
+func IntContainedJoinsel(m *base.Module, l0 int32) int32 {
+	return F__int_contained_joinsel(m, l0)
+}
+func IntContainedSel(m *base.Module, l0 int32) int32 {
+	return F__int_contained_sel(m, l0)
+}
+func IntContains(m *base.Module, l0 int32) int32 {
+	return F__int_contains(m, l0)
+}
+func IntContainsJoinsel(m *base.Module, l0 int32) int32 {
+	return F__int_contains_joinsel(m, l0)
+}
+func IntContainsSel(m *base.Module, l0 int32) int32 {
+	return F__int_contains_sel(m, l0)
+}
+func IntDifferent(m *base.Module, l0 int32) int32 {
+	return F__int_different(m, l0)
+}
+func IntInter(m *base.Module, l0 int32) int32 {
+	return F__int_inter(m, l0)
+}
+func IntMatchsel(m *base.Module, l0 int32) int32 {
+	return F__int_matchsel(m, l0)
+}
+func IntOverlap(m *base.Module, l0 int32) int32 {
+	return F__int_overlap(m, l0)
+}
+func IntOverlapJoinsel(m *base.Module, l0 int32) int32 {
+	return F__int_overlap_joinsel(m, l0)
+}
+func IntOverlapSel(m *base.Module, l0 int32) int32 {
+	return F__int_overlap_sel(m, l0)
+}
+func IntSame(m *base.Module, l0 int32) int32 {
+	return F__int_same(m, l0)
+}
+func IntUnion(m *base.Module, l0 int32) int32 {
+	return F__int_union(m, l0)
+}
+func IntbigIn(m *base.Module, l0 int32) int32 {
+	return F__intbig_in(m, l0)
+}
+func IntbigOut(m *base.Module, l0 int32) int32 {
+	return F__intbig_out(m, l0)
+}
+func Boolop(m *base.Module, l0 int32) int32 {
+	return F_boolop(m, l0)
+}
+func BqarrIn(m *base.Module, l0 int32) int32 {
+	return F_bqarr_in(m, l0)
+}
+func BqarrOut(m *base.Module, l0 int32) int32 {
+	return F_bqarr_out(m, l0)
+}
+func GIntCompress(m *base.Module, l0 int32) int32 {
+	return F_g_int_compress(m, l0)
+}
+func GIntConsistent(m *base.Module, l0 int32) int32 {
+	return F_g_int_consistent(m, l0)
+}
+func GIntDecompress(m *base.Module, l0 int32) int32 {
+	return F_g_int_decompress(m, l0)
+}
+func GIntOptions(m *base.Module, l0 int32) int32 {
+	return F_g_int_options(m, l0)
+}
+func GIntPenalty(m *base.Module, l0 int32) int32 {
+	return F_g_int_penalty(m, l0)
+}
+func GIntPicksplit(m *base.Module, l0 int32) int32 {
+	return F_g_int_picksplit(m, l0)
+}
+func GIntSame(m *base.Module, l0 int32) int32 {
+	return F_g_int_same(m, l0)
+}
+func GIntUnion(m *base.Module, l0 int32) int32 {
+	return F_g_int_union(m, l0)
+}
+func GIntbigCompress(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_compress(m, l0)
+}
+func GIntbigConsistent(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_consistent(m, l0)
+}
+func GIntbigDecompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GIntbigOptions(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_options(m, l0)
+}
+func GIntbigPenalty(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_penalty(m, l0)
+}
+func GIntbigPicksplit(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_picksplit(m, l0)
+}
+func GIntbigSame(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_same(m, l0)
+}
+func GIntbigUnion(m *base.Module, l0 int32) int32 {
+	return F_g_intbig_union(m, l0)
+}
+func Ginint4Consistent(m *base.Module, l0 int32) int32 {
+	return F_ginint4_consistent(m, l0)
+}
+func Ginint4Queryextract(m *base.Module, l0 int32) int32 {
+	return F_ginint4_queryextract(m, l0)
+}
+func Icount(m *base.Module, l0 int32) int32 {
+	return F_icount(m, l0)
+}
+func Idx(m *base.Module, l0 int32) int32 {
+	return F_idx(m, l0)
+}
+func IntarrayDelElem(m *base.Module, l0 int32) int32 {
+	return F_intarray_del_elem(m, l0)
+}
+func IntarrayPushArray(m *base.Module, l0 int32) int32 {
+	return F_intarray_push_array(m, l0)
+}
+func IntarrayPushElem(m *base.Module, l0 int32) int32 {
+	return F_intarray_push_elem(m, l0)
+}
+func Intset(m *base.Module, l0 int32) int32 {
+	return F_intset(m, l0)
+}
+func IntsetSubtract(m *base.Module, l0 int32) int32 {
+	return F_intset_subtract(m, l0)
+}
+func IntsetUnionElem(m *base.Module, l0 int32) int32 {
+	return F_intset_union_elem(m, l0)
+}
+func PgFinfoIntContained(m *base.Module) int32 {
+	return F_pg_finfo__int_contained(m)
+}
+func PgFinfoIntContainedJoinsel(m *base.Module) int32 {
+	return F_pg_finfo__int_contained_joinsel(m)
+}
+func PgFinfoIntContainedSel(m *base.Module) int32 {
+	return F_pg_finfo__int_contained_sel(m)
+}
+func PgFinfoIntContains(m *base.Module) int32 {
+	return F_pg_finfo__int_contains(m)
+}
+func PgFinfoIntContainsJoinsel(m *base.Module) int32 {
+	return F_pg_finfo__int_contains_joinsel(m)
+}
+func PgFinfoIntContainsSel(m *base.Module) int32 {
+	return F_pg_finfo__int_contains_sel(m)
+}
+func PgFinfoIntDifferent(m *base.Module) int32 {
+	return F_pg_finfo__int_different(m)
+}
+func PgFinfoIntInter(m *base.Module) int32 {
+	return F_pg_finfo__int_inter(m)
+}
+func PgFinfoIntMatchsel(m *base.Module) int32 {
+	return F_pg_finfo__int_matchsel(m)
+}
+func PgFinfoIntOverlap(m *base.Module) int32 {
+	return F_pg_finfo__int_overlap(m)
+}
+func PgFinfoIntOverlapJoinsel(m *base.Module) int32 {
+	return F_pg_finfo__int_overlap_joinsel(m)
+}
+func PgFinfoIntOverlapSel(m *base.Module) int32 {
+	return F_pg_finfo__int_overlap_sel(m)
+}
+func PgFinfoIntSame(m *base.Module) int32 {
+	return F_pg_finfo__int_same(m)
+}
+func PgFinfoIntUnion(m *base.Module) int32 {
+	return F_pg_finfo__int_union(m)
+}
+func PgFinfoIntbigIn(m *base.Module) int32 {
+	return F_pg_finfo__intbig_in(m)
+}
+func PgFinfoIntbigOut(m *base.Module) int32 {
+	return F_pg_finfo__intbig_out(m)
+}
+func PgFinfoBoolop(m *base.Module) int32 {
+	return F_pg_finfo_boolop(m)
+}
+func PgFinfoBqarrIn(m *base.Module) int32 {
+	return F_pg_finfo_bqarr_in(m)
+}
+func PgFinfoBqarrOut(m *base.Module) int32 {
+	return F_pg_finfo_bqarr_out(m)
+}
+func PgFinfoGIntCompress(m *base.Module) int32 {
+	return F_pg_finfo_g_int_compress(m)
+}
+func PgFinfoGIntConsistent(m *base.Module) int32 {
+	return F_pg_finfo_g_int_consistent(m)
+}
+func PgFinfoGIntDecompress(m *base.Module) int32 {
+	return F_pg_finfo_g_int_decompress(m)
+}
+func PgFinfoGIntOptions(m *base.Module) int32 {
+	return F_pg_finfo_g_int_options(m)
+}
+func PgFinfoGIntPenalty(m *base.Module) int32 {
+	return F_pg_finfo_g_int_penalty(m)
+}
+func PgFinfoGIntPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_g_int_picksplit(m)
+}
+func PgFinfoGIntSame(m *base.Module) int32 {
+	return F_pg_finfo_g_int_same(m)
+}
+func PgFinfoGIntUnion(m *base.Module) int32 {
+	return F_pg_finfo_g_int_union(m)
+}
+func PgFinfoGIntbigCompress(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_compress(m)
+}
+func PgFinfoGIntbigConsistent(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_consistent(m)
+}
+func PgFinfoGIntbigDecompress(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_decompress(m)
+}
+func PgFinfoGIntbigOptions(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_options(m)
+}
+func PgFinfoGIntbigPenalty(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_penalty(m)
+}
+func PgFinfoGIntbigPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_picksplit(m)
+}
+func PgFinfoGIntbigSame(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_same(m)
+}
+func PgFinfoGIntbigUnion(m *base.Module) int32 {
+	return F_pg_finfo_g_intbig_union(m)
+}
+func PgFinfoGinint4Consistent(m *base.Module) int32 {
+	return F_pg_finfo_ginint4_consistent(m)
+}
+func PgFinfoGinint4Queryextract(m *base.Module) int32 {
+	return F_pg_finfo_ginint4_queryextract(m)
+}
+func PgFinfoIcount(m *base.Module) int32 {
+	return F_pg_finfo_icount(m)
+}
+func PgFinfoIdx(m *base.Module) int32 {
+	return F_pg_finfo_idx(m)
+}
+func PgFinfoIntarrayDelElem(m *base.Module) int32 {
+	return F_pg_finfo_intarray_del_elem(m)
+}
+func PgFinfoIntarrayPushArray(m *base.Module) int32 {
+	return F_pg_finfo_intarray_push_array(m)
+}
+func PgFinfoIntarrayPushElem(m *base.Module) int32 {
+	return F_pg_finfo_intarray_push_elem(m)
+}
+func PgFinfoIntset(m *base.Module) int32 {
+	return F_pg_finfo_intset(m)
+}
+func PgFinfoIntsetSubtract(m *base.Module) int32 {
+	return F_pg_finfo_intset_subtract(m)
+}
+func PgFinfoIntsetUnionElem(m *base.Module) int32 {
+	return F_pg_finfo_intset_union_elem(m)
+}
+func PgFinfoQuerytree(m *base.Module) int32 {
+	return F_pg_finfo_querytree(m)
+}
+func PgFinfoRboolop(m *base.Module) int32 {
+	return F_pg_finfo_rboolop(m)
+}
+func PgFinfoSort(m *base.Module) int32 {
+	return F_pg_finfo_sort(m)
+}
+func PgFinfoSortAsc(m *base.Module) int32 {
+	return F_pg_finfo_sort_asc(m)
+}
+func PgFinfoSortDesc(m *base.Module) int32 {
+	return F_pg_finfo_sort_desc(m)
+}
+func PgFinfoSubarray(m *base.Module) int32 {
+	return F_pg_finfo_subarray(m)
+}
+func PgFinfoUniq(m *base.Module) int32 {
+	return F_pg_finfo_uniq(m)
+}
+func Querytree(m *base.Module, l0 int32) int32 {
+	return F_querytree(m, l0)
+}
+func Rboolop(m *base.Module, l0 int32) int32 {
+	return F_rboolop(m, l0)
+}
+func Sort(m *base.Module, l0 int32) int32 {
+	return F_sort(m, l0)
+}
+func SortAsc(m *base.Module, l0 int32) int32 {
+	return F_sort_asc(m, l0)
+}
+func SortDesc(m *base.Module, l0 int32) int32 {
+	return F_sort_desc(m, l0)
+}
+func Subarray(m *base.Module, l0 int32) int32 {
+	return F_subarray(m, l0)
+}
+func Uniq(m *base.Module, l0 int32) int32 {
+	return F_uniq(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

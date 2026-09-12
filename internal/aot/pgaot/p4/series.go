@@ -104,13 +104,13 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 					if v86 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(236752), int32(0))
+						F_errmsg(m, int32(237786), int32(0))
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492482), int32(1403), int32(539585))
+							F_errfinish(m, int32(494690), int32(1403), int32(541793))
 							mBase = m.M
 							v95 = m.ExcPending
 							if v95 != 0 {
@@ -131,7 +131,7 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					v29 = int32(4470752)
+					v29 = int32(4476144)
 					v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 					*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -248,7 +248,7 @@ func F_generate_series_step_int8(m *base.Module, l0 int32) int32 {
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				v29 = int32(4470752)
+				v29 = int32(4476144)
 				v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 				*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -599,7 +599,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 		if v28 != 0 {
 			return int32(0)
 		} else {
-			v29 = int32(4470752)
+			v29 = int32(4476144)
 			v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v25)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v32
@@ -653,13 +653,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 						if v172 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(236752), int32(0))
+							F_errmsg(m, int32(237786), int32(0))
 							mBase = m.M
 							v176 = m.ExcPending
 							if v176 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(488262), int32(6708), int32(233444))
+								F_errfinish(m, int32(490442), int32(6708), int32(234422))
 								mBase = m.M
 								v181 = m.ExcPending
 								if v181 != 0 {
@@ -692,7 +692,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v150 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+										v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 										mBase = m.M
 										v154 = m.ExcPending
 										if v154 != 0 {
@@ -755,7 +755,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v150 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+										v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 										mBase = m.M
 										v154 = m.ExcPending
 										if v154 != 0 {
@@ -799,7 +799,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v150 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+											v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 											mBase = m.M
 											v154 = m.ExcPending
 											if v154 != 0 {
@@ -862,7 +862,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v150 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+											v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 											mBase = m.M
 											v154 = m.ExcPending
 											if v154 != 0 {
@@ -906,7 +906,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 											if v150 != 0 {
 												return int32(0)
 											} else {
-												v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+												v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 												mBase = m.M
 												v154 = m.ExcPending
 												if v154 != 0 {
@@ -969,7 +969,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 											if v150 != 0 {
 												return int32(0)
 											} else {
-												v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+												v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 												mBase = m.M
 												v154 = m.ExcPending
 												if v154 != 0 {
@@ -1008,13 +1008,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v201 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(344994), int32(0))
+											F_errmsg(m, int32(346524), int32(0))
 											mBase = m.M
 											v205 = m.ExcPending
 											if v205 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(488262), int32(6713), int32(233444))
+												F_errfinish(m, int32(490442), int32(6713), int32(234422))
 												mBase = m.M
 												v210 = m.ExcPending
 												if v210 != 0 {
@@ -1048,7 +1048,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v150 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+										v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 										mBase = m.M
 										v154 = m.ExcPending
 										if v154 != 0 {
@@ -1111,7 +1111,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v150 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+										v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 										mBase = m.M
 										v154 = m.ExcPending
 										if v154 != 0 {
@@ -1151,13 +1151,13 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 									if v201 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(344994), int32(0))
+										F_errmsg(m, int32(346524), int32(0))
 										mBase = m.M
 										v205 = m.ExcPending
 										if v205 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(488262), int32(6713), int32(233444))
+											F_errfinish(m, int32(490442), int32(6713), int32(234422))
 											mBase = m.M
 											v210 = m.ExcPending
 											if v210 != 0 {
@@ -1187,7 +1187,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v150 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+											v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 											mBase = m.M
 											v154 = m.ExcPending
 											if v154 != 0 {
@@ -1250,7 +1250,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 										if v150 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+											v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 											mBase = m.M
 											v154 = m.ExcPending
 											if v154 != 0 {
@@ -1297,7 +1297,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 				if v150 != 0 {
 					return int32(0)
 				} else {
-					v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+					v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 					mBase = m.M
 					v154 = m.ExcPending
 					if v154 != 0 {
@@ -1360,7 +1360,7 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 				if v150 != 0 {
 					return int32(0)
 				} else {
-					v153 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v149, v139+int32(16))
+					v153 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v149, v139+int32(16))
 					mBase = m.M
 					v154 = m.ExcPending
 					if v154 != 0 {

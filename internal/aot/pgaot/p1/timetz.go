@@ -28,7 +28,7 @@ func F_timetz_at_local(m *base.Module, l0 int32) int32 {
 	if v10 != 0 {
 		return int32(0)
 	} else {
-		v11 = F_DirectFunctionCall2Coll(m, int32(1289), int32(0), v7, v2)
+		v11 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v7, v2)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -448,8 +448,8 @@ L22:
 L23:
 	;
 	v77 = int32(*(*int8)(unsafe.Add(mBase, uint32(v62))))
-	v83 = int32(1634976)
-	v85 = int32(1635936)
+	v83 = int32(1639072)
+	v85 = int32(1640032)
 	goto L25
 L24:
 	;
@@ -578,8 +578,8 @@ L44:
 L45:
 	;
 	v149 = int32(*(*int8)(unsafe.Add(mBase, uint32(v62))))
-	v155 = int32(1633824)
-	v157 = int32(1634960)
+	v155 = int32(1637920)
+	v157 = int32(1639056)
 	goto L47
 L46:
 	;
@@ -848,7 +848,7 @@ L84:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v290
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v62
-	F_errmsg(m, int32(187419), v15)
+	F_errmsg(m, int32(188314), v15)
 	mBase = m.M
 	v296 = m.ExcPending
 	if v296 != 0 {
@@ -858,7 +858,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(490962), int32(3077), int32(242057))
+	F_errfinish(m, int32(493170), int32(3077), int32(243091))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -954,7 +954,7 @@ L97:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v329
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v62
-	F_errmsg(m, int32(187382), v15+int32(16))
+	F_errmsg(m, int32(188277), v15+int32(16))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -964,7 +964,7 @@ L97:
 	}
 L98:
 	;
-	F_errfinish(m, int32(490962), int32(3097), int32(242057))
+	F_errfinish(m, int32(493170), int32(3097), int32(243091))
 	mBase = m.M
 	v342 = m.ExcPending
 	if v342 != 0 {

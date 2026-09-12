@@ -130,7 +130,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v54
 		v58 = v45 - v53
 		*(*int32)(unsafe.Add(mBase, _consts[156])) = v58
-		v60 = int32(4365788)
+		v60 = int32(4371180)
 		v62 = *(*int32)(unsafe.Add(mBase, _consts[158]))
 		v64 = v62 + v53
 		*(*int32)(unsafe.Add(mBase, _consts[158])) = v64
@@ -160,7 +160,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v74 != 0 {
 					return
 				} else {
-					v75 = int32(4365776)
+					v75 = int32(4371168)
 					v76 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 					*(*int32)(unsafe.Add(mBase, uint32(v76)+8)) = v73
 					*(*int32)(unsafe.Add(mBase, _consts[157])) = v73
@@ -172,7 +172,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						v86 = v69
 					}
 					*(*int32)(unsafe.Add(mBase, _consts[156])) = v86
-					v88 = int32(4365780)
+					v88 = int32(4371172)
 					v90 = *(*int32)(unsafe.Add(mBase, _consts[159]))
 					*(*int32)(unsafe.Add(mBase, _consts[159])) = v90 + int32(1)
 					v94 = F_palloc(m, v86)
@@ -214,14 +214,14 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		if v18 != 0 {
 			return
 		} else {
-			v19 = int32(4365776)
+			v19 = int32(4371168)
 			v20 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 			*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = v17
 			*(*int32)(unsafe.Add(mBase, _consts[157])) = v17
 			*(*int64)(unsafe.Add(mBase, uint32(v17)+4)) = int64(0)
 			v27 = int32(512)
 			*(*int32)(unsafe.Add(mBase, _consts[156])) = v27
-			v29 = int32(4365780)
+			v29 = int32(4371172)
 			v31 = *(*int32)(unsafe.Add(mBase, _consts[159]))
 			*(*int32)(unsafe.Add(mBase, _consts[159])) = v31 + int32(1)
 			v36 = F_palloc(m, v27)
@@ -248,7 +248,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v43)+4)) = v54
 				v58 = v45 - v53
 				*(*int32)(unsafe.Add(mBase, _consts[156])) = v58
-				v60 = int32(4365788)
+				v60 = int32(4371180)
 				v62 = *(*int32)(unsafe.Add(mBase, _consts[158]))
 				v64 = v62 + v53
 				*(*int32)(unsafe.Add(mBase, _consts[158])) = v64
@@ -278,7 +278,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v74 != 0 {
 							return
 						} else {
-							v75 = int32(4365776)
+							v75 = int32(4371168)
 							v76 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 							*(*int32)(unsafe.Add(mBase, uint32(v76)+8)) = v73
 							*(*int32)(unsafe.Add(mBase, _consts[157])) = v73
@@ -290,7 +290,7 @@ func F_RegisterTwoPhaseRecord(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								v86 = v69
 							}
 							*(*int32)(unsafe.Add(mBase, _consts[156])) = v86
-							v88 = int32(4365780)
+							v88 = int32(4371172)
 							v90 = *(*int32)(unsafe.Add(mBase, _consts[159]))
 							*(*int32)(unsafe.Add(mBase, _consts[159])) = v90 + int32(1)
 							v94 = F_palloc(m, v86)

@@ -111,7 +111,7 @@ L1:
 	return
 L2:
 	;
-	v24 = int32(4470752)
+	v24 = int32(4476144)
 	v25 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v28 = *(*int32)(unsafe.Add(mBase, _consts[366]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v28
@@ -200,8 +200,8 @@ L11:
 L12:
 	;
 	v168 = v165
-	v170 = int32(1583)
-	v171 = int32(1584)
+	v170 = int32(1584)
+	v171 = int32(1585)
 	goto L11
 L13:
 	;
@@ -238,7 +238,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg_internal(m, int32(166720), int32(0))
+	F_errmsg_internal(m, int32(167605), int32(0))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -248,7 +248,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(491482), int32(1178), int32(394044))
+	F_errfinish(m, int32(493690), int32(1178), int32(395691))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -270,14 +270,14 @@ L21:
 L22:
 	;
 	v168 = int32(679)
-	v170 = int32(1581)
-	v171 = int32(1582)
+	v170 = int32(1582)
+	v171 = int32(1583)
 	goto L11
 L23:
 	;
 	v168 = int32(67)
-	v170 = int32(1579)
-	v171 = int32(1580)
+	v170 = int32(1580)
+	v171 = int32(1581)
 	goto L11
 L24:
 	;
@@ -286,14 +286,14 @@ L24:
 L25:
 	;
 	v168 = int32(63)
-	v170 = int32(1577)
-	v171 = int32(1578)
+	v170 = int32(1578)
+	v171 = int32(1579)
 	goto L11
 L26:
 	;
 	v168 = int32(62)
-	v170 = int32(1575)
-	v171 = int32(1576)
+	v170 = int32(1576)
+	v171 = int32(1577)
 	goto L11
 L27:
 	;
@@ -307,8 +307,8 @@ L27:
 	}
 L28:
 	;
-	v108 = int32(1573)
-	v109 = int32(1574)
+	v108 = int32(1574)
+	v109 = int32(1575)
 	switch v104 - int32(16) {
 	case 0:
 		v168 = int32(60)
@@ -392,7 +392,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v104
-	F_errmsg_internal(m, int32(22239), v18)
+	F_errmsg_internal(m, int32(22312), v18)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -402,7 +402,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(491482), int32(330), int32(171310))
+	F_errfinish(m, int32(493690), int32(330), int32(172205))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {

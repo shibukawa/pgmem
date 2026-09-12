@@ -343,13 +343,13 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 		} else {
 			v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 			*(*int32)(unsafe.Add(mBase, uint32(v22))) = v39
-			F_errmsg_internal(m, int32(478564), v22)
+			F_errmsg_internal(m, int32(480638), v22)
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
 				return float64(0)
 			} else {
-				F_errfinish(m, int32(490689), int32(1149), int32(404926))
+				F_errfinish(m, int32(492897), int32(1149), int32(406592))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -1462,7 +1462,7 @@ L26:
 	;
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v117)))
 	*(*int32)(unsafe.Add(mBase, uint32(v82))) = v128
-	F_errmsg_internal(m, int32(478564), v82)
+	F_errmsg_internal(m, int32(480638), v82)
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -1472,7 +1472,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(490689), int32(1149), int32(404926))
+	F_errfinish(m, int32(492897), int32(1149), int32(406592))
 	mBase = m.M
 	v137 = m.ExcPending
 	if v137 != 0 {
@@ -2699,7 +2699,7 @@ L70:
 	goto L22
 L71:
 	;
-	F_pg_qsort(m, v90, v87, int32(24), int32(821))
+	F_pg_qsort(m, v90, v87, int32(24), int32(822))
 	mBase = m.M
 	v416 = m.ExcPending
 	if v416 != 0 {
@@ -2723,7 +2723,7 @@ L74:
 	goto L75
 L75:
 	;
-	F_pg_qsort(m, v90, v87, int32(24), int32(822))
+	F_pg_qsort(m, v90, v87, int32(24), int32(823))
 	mBase = m.M
 	v511 = m.ExcPending
 	if v511 != 0 {
@@ -3787,7 +3787,7 @@ L215:
 	;
 	v1239 = *(*int32)(unsafe.Add(mBase, uint32(v1227)))
 	*(*int32)(unsafe.Add(mBase, uint32(v1176))) = v1239
-	F_errmsg_internal(m, int32(478564), v1176)
+	F_errmsg_internal(m, int32(480638), v1176)
 	mBase = m.M
 	v1243 = m.ExcPending
 	if v1243 != 0 {
@@ -3797,7 +3797,7 @@ L215:
 	}
 L216:
 	;
-	F_errfinish(m, int32(490689), int32(1149), int32(404926))
+	F_errfinish(m, int32(492897), int32(1149), int32(406592))
 	mBase = m.M
 	v1248 = m.ExcPending
 	if v1248 != 0 {

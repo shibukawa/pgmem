@@ -5,127 +5,19 @@ import (
 	"unsafe"
 )
 
-func F_checkcondition_arr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+func F_checkcondition_gin_2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v45 int32
-	_ = v45
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+2)))
-	if v7 != 0 {
-		v45 = int32(2)
-		goto L1
-	} else {
-		goto L2
-	}
-L1:
-	;
-	return v45
-L2:
-	;
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if base.Ui32(v8) < base.Ui32(v9) {
-		goto L3
-	} else {
-		goto L4
-	}
-L3:
-	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v12 = v9
-	v14 = v8
-	goto L6
-L4:
-	;
-	goto L5
-L5:
-	;
-	v45 = int32(0)
-	goto L1
-L6:
-	;
-	v17 = int32(2)
-	v22 = base.I32_div_s((v12-v14)>>(uint(v17)%32), v17)
-	v25 = v14 + v22<<(uint(v17)%32)
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
-	if v26 == v11 {
-		v45 = v17
-		goto L1
-	} else {
-		goto L8
-	}
-L7:
-	;
-	goto L5
-L8:
-	;
-	v30 = base.B2i32(v26 < v11)
-	if v26 < v11 {
-		goto L9
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v31 = v25 + int32(4)
-	goto L11
-L10:
-	;
-	v31 = v14
-	goto L11
-L11:
-	;
-	if v26 < v11 {
-		goto L12
-	} else {
-		goto L13
-	}
-L12:
-	;
-	v32 = v12
-	goto L14
-L13:
-	;
-	v32 = v25
-	goto L14
-L14:
-	;
-	if base.Ui32(v31) < base.Ui32(v32) {
-		v12 = v32
-		v14 = v31
-		goto L6
-	} else {
-		goto L15
-	}
-L15:
-	;
-	goto L7
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v10 int32
+	_ = v10
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4+(l1-v5)>>(uint(int32(3))%32)))))
+	return v10
 }
 func F_checkcondition_str_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
@@ -1289,7 +1181,7 @@ L133:
 L134:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v187
-	F_pg_qsort(m, v187, v188, int32(2), int32(1535))
+	F_pg_qsort(m, v187, v188, int32(2), int32(1536))
 	mBase = m.M
 	v388 = m.ExcPending
 	if v388 != 0 {

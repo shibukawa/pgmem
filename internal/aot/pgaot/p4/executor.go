@@ -92,7 +92,7 @@ func F_ExecutorEnd(m *base.Module, l0 int32) {
 	_ = v126
 	var v127 int32
 	_ = v127
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[489]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[490]))
 	if v10 != 0 {
 		goto L1
 	} else {
@@ -140,7 +140,7 @@ L7:
 	goto L8
 L8:
 	;
-	v39 = int32(4470752)
+	v39 = int32(4476144)
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v42
@@ -362,7 +362,7 @@ func F_ExecutorRewind(m *base.Module, l0 int32) {
 	_ = v9
 	var v11 int32
 	_ = v11
-	v3 = int32(4470752)
+	v3 = int32(4476144)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))

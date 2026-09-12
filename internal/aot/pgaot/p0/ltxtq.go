@@ -18,7 +18,7 @@ func F__ltxtq_rexec(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(5601), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(5602), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -178,7 +178,7 @@ L6:
 	}
 L7:
 	;
-	F_errmsg(m, int32(209437), int32(0))
+	F_errmsg(m, int32(210332), int32(0))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -188,7 +188,7 @@ L7:
 	}
 L8:
 	;
-	F_errdetail(m, int32(549775), int32(0))
+	F_errdetail(m, int32(551983), int32(0))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
@@ -198,7 +198,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(488490), int32(614), int32(419902))
+	F_errfinish(m, int32(490670), int32(614), int32(421568))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {

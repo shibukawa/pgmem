@@ -66,17 +66,17 @@ func F_map_sql_identifier_to_xml_name(m *base.Module) int32 {
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(357568), int32(0))
+			F_errmsg(m, int32(359098), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(555242), int32(0))
+				F_errdetail(m, int32(557450), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489702), int32(2425), int32(373258))
+					F_errfinish(m, int32(491910), int32(2425), int32(374905))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return int32(0)
@@ -156,7 +156,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-					F_errcontext_msg(m, int32(461191), v7)
+					F_errcontext_msg(m, int32(463167), v7)
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
@@ -167,7 +167,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 					}
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v31
-					F_errcontext_msg(m, int32(228880), v7+int32(16))
+					F_errcontext_msg(m, int32(229825), v7+int32(16))
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
@@ -195,7 +195,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-						F_errcontext_msg(m, int32(461191), v7)
+						F_errcontext_msg(m, int32(463167), v7)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -206,7 +206,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v31
-						F_errcontext_msg(m, int32(228880), v7+int32(16))
+						F_errcontext_msg(m, int32(229825), v7+int32(16))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -251,7 +251,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 									v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v34
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = v31
-									F_errcontext_msg(m, int32(461191), v7)
+									F_errcontext_msg(m, int32(463167), v7)
 									mBase = m.M
 									v39 = m.ExcPending
 									if v39 != 0 {
@@ -262,7 +262,7 @@ func F_sql_exec_error_callback(m *base.Module, l0 int32) {
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v31
-									F_errcontext_msg(m, int32(228880), v7+int32(16))
+									F_errcontext_msg(m, int32(229825), v7+int32(16))
 									mBase = m.M
 									v45 = m.ExcPending
 									if v45 != 0 {
@@ -363,8 +363,8 @@ func F_sql_fn_parser_setup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+120)) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(678)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+112)) = int32(679)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = int32(680)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = int32(0)
 	return
 }
@@ -434,7 +434,7 @@ func F_sql_inline_error_callback(m *base.Module, l0 int32) {
 						} else {
 							v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							*(*int32)(unsafe.Add(mBase, uint32(v6))) = v23
-							F_errcontext_msg(m, int32(330021), v6)
+							F_errcontext_msg(m, int32(331512), v6)
 							mBase = m.M
 							v27 = m.ExcPending
 							if v27 != 0 {
@@ -456,7 +456,7 @@ func F_sql_inline_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v23
-				F_errcontext_msg(m, int32(330021), v6)
+				F_errcontext_msg(m, int32(331512), v6)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {

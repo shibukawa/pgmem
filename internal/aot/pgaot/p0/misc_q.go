@@ -72,13 +72,13 @@ func F_QTN2QT(m *base.Module, l0 int32) int32 {
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(394338), int32(0))
+					F_errmsg(m, int32(395985), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(489770), int32(376), int32(509683))
+						F_errfinish(m, int32(491978), int32(376), int32(511891))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -660,6 +660,35 @@ L46:
 	m.G0 = v17 + int32(48)
 	return
 }
+func F_querytree(m *base.Module, l0 int32) int32 {
+	var v7 int32
+	_ = v7
+	var v13 int32
+	_ = v13
+	var v20 int32
+	_ = v20
+	F_errstart_cold(m, int32(21), int32(0))
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		F_errmsg_internal(m, int32(441694), int32(0))
+		v13 = m.ExcPending
+		if v13 != 0 {
+			return int32(0)
+		} else {
+			F_errfinish(m, int32(491898), int32(667), int32(405395))
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				base.Wasm_trap_unreachable()
+				for {
+				}
+			}
+		}
+	}
+}
 func F_quote_identifier(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -760,7 +789,7 @@ L2:
 	goto L3
 L3:
 	;
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[846])))
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[845])))
 	if v60 != 0 {
 		goto L11
 	} else {
@@ -837,7 +866,7 @@ L12:
 	}
 L13:
 	;
-	v64 = F_ScanKeywordLookup(m, l0, int32(1836316))
+	v64 = F_ScanKeywordLookup(m, l0, int32(1840412))
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -863,7 +892,7 @@ L17:
 	goto L18
 L18:
 	;
-	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[847]))))
+	v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[846]))))
 	if v73 != 0 {
 		goto L11
 	} else {
@@ -1034,7 +1063,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 	_ = v15
 	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v2 == int32(1) {
-		v6 = F_cstring_to_text(m, int32(524996))
+		v6 = F_cstring_to_text(m, int32(527204))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
@@ -1044,7 +1073,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v14 = F_DirectFunctionCall1Coll(m, int32(1482), int32(0), v13)
+		v14 = F_DirectFunctionCall1Coll(m, int32(1483), int32(0), v13)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {
