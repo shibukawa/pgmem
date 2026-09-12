@@ -460,7 +460,7 @@ L34:
 	goto L4
 L35:
 	;
-	F_errmsg_internal(m, int32(435021), int32(0))
+	F_errmsg_internal(m, int32(435644), int32(0))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {
@@ -470,7 +470,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(518730), int32(1112), int32(36693))
+	F_errfinish(m, int32(519399), int32(1112), int32(36814))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -488,7 +488,7 @@ L38:
 	v186 = *(*int32)(unsafe.Add(mBase, uint32(v176)+16))
 	v187 = *(*int32)(unsafe.Add(mBase, uint32(v186)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v187
-	F_errmsg_internal(m, int32(506946), v10+int32(16))
+	F_errmsg_internal(m, int32(507592), v10+int32(16))
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {
@@ -498,7 +498,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(518730), int32(1144), int32(36693))
+	F_errfinish(m, int32(519399), int32(1144), int32(36814))
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {
@@ -516,7 +516,7 @@ L41:
 	v210 = *(*int32)(unsafe.Add(mBase, uint32(v200)+12))
 	v211 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v211
-	F_errmsg_internal(m, int32(506946), v10)
+	F_errmsg_internal(m, int32(507592), v10)
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -526,7 +526,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(518730), int32(1129), int32(36693))
+	F_errfinish(m, int32(519399), int32(1129), int32(36814))
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {
@@ -625,13 +625,13 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 					if v56 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(110870), int32(0))
+						F_errmsg_internal(m, int32(111057), int32(0))
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518269), int32(1475), int32(176361))
+							F_errfinish(m, int32(518938), int32(1475), int32(176676))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
@@ -659,13 +659,13 @@ func F_replace_rte_variables(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 						if v56 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(110870), int32(0))
+							F_errmsg_internal(m, int32(111057), int32(0))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518269), int32(1475), int32(176361))
+								F_errfinish(m, int32(518938), int32(1475), int32(176676))
 								mBase = m.M
 								v65 = m.ExcPending
 								if v65 != 0 {

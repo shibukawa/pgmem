@@ -1986,6 +1986,8 @@ func F_IncrBufferRefCount(m *base.Module, l0 int32)
 func F_MarkBufferDirtyHint(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ConditionalLockBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ConditionalLockBuffer
 func F_ConditionalLockBuffer(m *base.Module, l0 int32) int32
+//go:linkname F_InvalidateVictimBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_InvalidateVictimBuffer
+func F_InvalidateVictimBuffer(m *base.Module, l0 int32) int32
 //go:linkname F_StrategyFreeBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_StrategyFreeBuffer
 func F_StrategyFreeBuffer(m *base.Module, l0 int32)
 //go:linkname F_GetAccessStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetAccessStrategy

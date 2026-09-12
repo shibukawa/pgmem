@@ -136,7 +136,7 @@ L8:
 	}
 L9:
 	;
-	v61 = v19 + int32(798656)
+	v61 = v19 + int32(799360)
 	goto L7
 L10:
 	;
@@ -162,7 +162,7 @@ L13:
 	}
 L14:
 	;
-	v61 = v29 + int32(798656)
+	v61 = v29 + int32(799360)
 	goto L7
 L15:
 	;
@@ -178,7 +178,7 @@ L16:
 	}
 L17:
 	;
-	v61 = v39 + int32(798656)
+	v61 = v39 + int32(799360)
 	goto L7
 L18:
 	;
@@ -194,7 +194,7 @@ L19:
 	}
 L20:
 	;
-	v61 = v49 + int32(798656)
+	v61 = v49 + int32(799360)
 	goto L7
 L21:
 	;
@@ -206,7 +206,7 @@ L23:
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg_internal(m, int32(64596), v7)
+	F_errmsg_internal(m, int32(64771), v7)
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -216,7 +216,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(515466), int32(2777), int32(527606))
+	F_errfinish(m, int32(516112), int32(2777), int32(528275))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -330,7 +330,7 @@ L8:
 	}
 L9:
 	;
-	v61 = v19 + int32(798656)
+	v61 = v19 + int32(799360)
 	goto L7
 L10:
 	;
@@ -356,7 +356,7 @@ L13:
 	}
 L14:
 	;
-	v61 = v29 + int32(798656)
+	v61 = v29 + int32(799360)
 	goto L7
 L15:
 	;
@@ -372,7 +372,7 @@ L16:
 	}
 L17:
 	;
-	v61 = v39 + int32(798656)
+	v61 = v39 + int32(799360)
 	goto L7
 L18:
 	;
@@ -388,7 +388,7 @@ L19:
 	}
 L20:
 	;
-	v61 = v49 + int32(798656)
+	v61 = v49 + int32(799360)
 	goto L7
 L21:
 	;
@@ -400,7 +400,7 @@ L23:
 L24:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg_internal(m, int32(64596), v7)
+	F_errmsg_internal(m, int32(64771), v7)
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -410,7 +410,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(515466), int32(2777), int32(527606))
+	F_errfinish(m, int32(516112), int32(2777), int32(528275))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {

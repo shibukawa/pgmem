@@ -372,7 +372,7 @@ L11:
 	return
 L12:
 	;
-	v36 = int32(4448596)
+	v36 = int32(4448836)
 	v38 = F_SimpleLruZeroPage(m, v36, v19)
 	mBase = m.M
 	v39 = m.ExcPending
@@ -414,7 +414,7 @@ L16:
 L17:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = v19
-	F_errmsg_internal(m, int32(276675), v12+int32(16))
+	F_errmsg_internal(m, int32(277140), v12+int32(16))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -424,7 +424,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(515191), int32(3512), int32(254086))
+	F_errfinish(m, int32(515837), int32(3512), int32(254512))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -473,7 +473,7 @@ L24:
 	;
 	v75 = *(*int64)(unsafe.Add(mBase, _consts[149]))
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+32)) = v75
-	F_errmsg_internal(m, int32(232465), v12+int32(32))
+	F_errmsg_internal(m, int32(232862), v12+int32(32))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -490,7 +490,7 @@ L26:
 	goto L22
 L27:
 	;
-	F_errfinish(m, int32(515191), int32(3551), int32(254086))
+	F_errfinish(m, int32(515837), int32(3551), int32(254512))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -696,7 +696,7 @@ L56:
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+80)) = base.I64_extend_i32_u(int32(base.Ui32(v179) >> (uint(v212) % 32)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = v180
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+72)) = base.I64_extend_i32_u(int32(base.Ui32(v180) >> (uint(v212) % 32)))
-	F_errmsg_internal(m, int32(698735), v12-int32(-64))
+	F_errmsg_internal(m, int32(699404), v12-int32(-64))
 	mBase = m.M
 	v225 = m.ExcPending
 	if v225 != 0 {
@@ -706,7 +706,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(515191), int32(3592), int32(254086))
+	F_errfinish(m, int32(515837), int32(3592), int32(254512))
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -775,7 +775,7 @@ L66:
 L67:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+48)) = v253
-	F_errmsg_internal(m, int32(27619), v12+int32(48))
+	F_errmsg_internal(m, int32(27740), v12+int32(48))
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {
@@ -798,7 +798,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(515191), int32(3132), int32(277618))
+	F_errfinish(m, int32(515837), int32(3132), int32(278083))
 	mBase = m.M
 	v269 = m.ExcPending
 	if v269 != 0 {
@@ -845,7 +845,7 @@ L78:
 	goto L79
 L79:
 	;
-	F_SimpleLruTruncate(m, int32(4448596), base.I64_extend_i32_u(v296))
+	F_SimpleLruTruncate(m, int32(4448836), base.I64_extend_i32_u(v296))
 	mBase = m.M
 	v299 = m.ExcPending
 	if v299 != 0 {
@@ -870,7 +870,7 @@ L81:
 L82:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v15 & int32(240)
-	F_errmsg_internal(m, int32(57019), v12)
+	F_errmsg_internal(m, int32(57194), v12)
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {
@@ -880,7 +880,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(515191), int32(3609), int32(254086))
+	F_errfinish(m, int32(515837), int32(3609), int32(254512))
 	mBase = m.M
 	v320 = m.ExcPending
 	if v320 != 0 {
@@ -895,7 +895,7 @@ L84:
 	}
 L85:
 	;
-	v336 = int32(4448676)
+	v336 = int32(4448916)
 	v338 = F_SimpleLruZeroPage(m, v336, v325)
 	mBase = m.M
 	v339 = m.ExcPending

@@ -109,13 +109,13 @@ func F_has_sequence_privilege_id(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9))) = v42
-									F_errmsg(m, int32(434681), v9)
+									F_errmsg(m, int32(435304), v9)
 									mBase = m.M
 									v47 = m.ExcPending
 									if v47 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(520326), int32(2222), int32(456431))
+										F_errfinish(m, int32(520995), int32(2222), int32(457077))
 										mBase = m.M
 										v52 = m.ExcPending
 										if v52 != 0 {
@@ -281,13 +281,13 @@ func F_has_sequence_privilege_id_name(m *base.Module, l0 int32) int32 {
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v8))) = v43
-												F_errmsg(m, int32(434681), v8)
+												F_errmsg(m, int32(435304), v8)
 												mBase = m.M
 												v48 = m.ExcPending
 												if v48 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(520326), int32(2253), int32(397815))
+													F_errfinish(m, int32(520995), int32(2253), int32(398399))
 													mBase = m.M
 													v53 = m.ExcPending
 													if v53 != 0 {

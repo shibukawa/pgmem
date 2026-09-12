@@ -267,14 +267,14 @@ func F_ltree_gist_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_int_reloption(m, v2, int32(294450), int32(168462), int32(8), int32(4), int32(2024))
+	F_add_local_int_reloption(m, v2, int32(294915), int32(168777), int32(8), int32(4), int32(2024))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
 		return int32(0)
 	} else {
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(v2)+4))
-		v18 = F_lappend(m, v16, int32(7427))
+		v18 = F_lappend(m, v16, int32(7442))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -320,13 +320,13 @@ func F_ltree_gist_relopts_validator(m *base.Module, l0 int32, l1 int32, l2 int32
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(4)
-				F_errmsg(m, int32(495281), v6)
+				F_errmsg(m, int32(495927), v6)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(514200), int32(731), int32(219880))
+					F_errfinish(m, int32(514846), int32(731), int32(220277))
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
@@ -1441,13 +1441,13 @@ func F_ltree_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
-				F_errmsg_internal(m, int32(492141), v6)
+				F_errmsg_internal(m, int32(492787), v6)
 				mBase = m.M
 				v25 = m.ExcPending
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518520), int32(238), int32(37941))
+					F_errfinish(m, int32(519189), int32(238), int32(38062))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

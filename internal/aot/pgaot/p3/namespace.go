@@ -213,7 +213,7 @@ L5:
 	}
 L6:
 	;
-	v7 = int32(531391)
+	v7 = int32(532060)
 	goto L11
 L7:
 	;
@@ -321,7 +321,7 @@ L22:
 	goto L18
 L23:
 	;
-	v55 = int32(531376)
+	v55 = int32(532045)
 	goto L26
 L24:
 	;
@@ -435,7 +435,7 @@ L40:
 	}
 L41:
 	;
-	v108 = int32(531391)
+	v108 = int32(532060)
 	goto L46
 L42:
 	;
@@ -541,7 +541,7 @@ L57:
 	goto L53
 L58:
 	;
-	v156 = int32(531376)
+	v156 = int32(532045)
 	goto L61
 L59:
 	;
@@ -668,7 +668,7 @@ L76:
 	}
 L77:
 	;
-	F_errmsg(m, int32(530371), int32(0))
+	F_errmsg(m, int32(531040), int32(0))
 	mBase = m.M
 	v222 = m.ExcPending
 	if v222 != 0 {
@@ -678,7 +678,7 @@ L77:
 	}
 L78:
 	;
-	F_errfinish(m, int32(522397), int32(3474), int32(437471))
+	F_errfinish(m, int32(523066), int32(3474), int32(438094))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -706,7 +706,7 @@ L81:
 	}
 L82:
 	;
-	F_errmsg(m, int32(184088), int32(0))
+	F_errmsg(m, int32(184485), int32(0))
 	mBase = m.M
 	v244 = m.ExcPending
 	if v244 != 0 {
@@ -716,7 +716,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(522397), int32(3468), int32(437471))
+	F_errfinish(m, int32(523066), int32(3468), int32(438094))
 	mBase = m.M
 	v249 = m.ExcPending
 	if v249 != 0 {
@@ -755,7 +755,7 @@ func F_get_namespace_name_or_temp(m *base.Module, l0 int32) int32 {
 	_ = v31
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[137]))
 	if base.B2i32(v5 != int32(0))&base.B2i32(l0 == v5) != 0 {
-		v11 = F_pstrdup(m, int32(246608))
+		v11 = F_pstrdup(m, int32(247034))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
@@ -846,13 +846,13 @@ func F_get_namespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(78437), v7)
+						F_errmsg(m, int32(78612), v7)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522397), int32(3547), int32(454240))
+							F_errfinish(m, int32(523066), int32(3547), int32(454886))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -909,13 +909,13 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-					F_errmsg_internal(m, int32(62910), v7)
+					F_errmsg_internal(m, int32(63085), v7)
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(517601), int32(144), int32(116406))
+						F_errfinish(m, int32(518270), int32(144), int32(116623))
 						mBase = m.M
 						v58 = m.ExcPending
 						if v58 != 0 {
@@ -928,7 +928,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				v25 = int32(755488)
+				v25 = int32(756187)
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
 				v29 = m.ExcPending
@@ -955,7 +955,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(517601), int32(150), int32(116406))
+								F_errfinish(m, int32(518270), int32(150), int32(116623))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -971,7 +971,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		} else {
-			v25 = int32(755745)
+			v25 = int32(756444)
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v29 = m.ExcPending
@@ -998,7 +998,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(517601), int32(150), int32(116406))
+							F_errfinish(m, int32(518270), int32(150), int32(116623))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -1016,7 +1016,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	} else {
 		switch l0 - int32(3600) {
 		case 0:
-			v25 = int32(755430)
+			v25 = int32(756129)
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v29 = m.ExcPending
@@ -1043,7 +1043,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(517601), int32(150), int32(116406))
+							F_errfinish(m, int32(518270), int32(150), int32(116623))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -1058,7 +1058,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		case 1:
-			v25 = int32(755541)
+			v25 = int32(756240)
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v29 = m.ExcPending
@@ -1085,7 +1085,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(517601), int32(150), int32(116406))
+							F_errfinish(m, int32(518270), int32(150), int32(116623))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -1100,7 +1100,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		case 2:
-			v25 = int32(755595)
+			v25 = int32(756294)
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
 			v29 = m.ExcPending
@@ -1127,7 +1127,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(517601), int32(150), int32(116406))
+							F_errfinish(m, int32(518270), int32(150), int32(116623))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
@@ -1150,13 +1150,13 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-					F_errmsg_internal(m, int32(62910), v7)
+					F_errmsg_internal(m, int32(63085), v7)
 					mBase = m.M
 					v53 = m.ExcPending
 					if v53 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(517601), int32(144), int32(116406))
+						F_errfinish(m, int32(518270), int32(144), int32(116623))
 						mBase = m.M
 						v58 = m.ExcPending
 						if v58 != 0 {
@@ -1169,7 +1169,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				v25 = int32(755854)
+				v25 = int32(756553)
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
 				v29 = m.ExcPending
@@ -1196,7 +1196,7 @@ func F_report_namespace_conflict(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(517601), int32(150), int32(116406))
+								F_errfinish(m, int32(518270), int32(150), int32(116623))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {

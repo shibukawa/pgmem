@@ -1713,13 +1713,13 @@ func F_text_to_stavalues(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
-											F_errmsg(m, int32(167553), v11)
+											F_errmsg(m, int32(167868), v11)
 											mBase = m.M
 											v81 = m.ExcPending
 											if v81 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(515419), int32(738), int32(166952))
+												F_errfinish(m, int32(516065), int32(738), int32(167267))
 												mBase = m.M
 												v86 = m.ExcPending
 												if v86 != 0 {

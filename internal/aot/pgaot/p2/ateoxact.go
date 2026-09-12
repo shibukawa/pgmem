@@ -539,7 +539,7 @@ L25:
 	goto L3
 L26:
 	;
-	v69 = int32(4553940)
+	v69 = int32(4554180)
 	v70 = *(*int32)(unsafe.Add(mBase, _consts[261]))
 	v73 = *(*int32)(unsafe.Add(mBase, _consts[405]))
 	*(*int32)(unsafe.Add(mBase, _consts[261])) = v73

@@ -158,13 +158,13 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 										if v134 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(152008), int32(0))
+											F_errmsg(m, int32(152323), int32(0))
 											mBase = m.M
 											v140 = m.ExcPending
 											if v140 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(522165), int32(176), int32(326227))
+												F_errfinish(m, int32(522834), int32(176), int32(326768))
 												mBase = m.M
 												v147 = m.ExcPending
 												if v147 != 0 {
@@ -200,13 +200,13 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 													v155 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2
 													*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v155 + int32(4)
-													F_errmsg(m, int32(736489), v8+int32(16))
+													F_errmsg(m, int32(737188), v8+int32(16))
 													mBase = m.M
 													v166 = m.ExcPending
 													if v166 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(522165), int32(182), int32(326227))
+														F_errfinish(m, int32(522834), int32(182), int32(326768))
 														mBase = m.M
 														v173 = m.ExcPending
 														if v173 != 0 {
@@ -302,13 +302,13 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 												v155 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2
 												*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v155 + int32(4)
-												F_errmsg(m, int32(736489), v8+int32(16))
+												F_errmsg(m, int32(737188), v8+int32(16))
 												mBase = m.M
 												v166 = m.ExcPending
 												if v166 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(522165), int32(182), int32(326227))
+													F_errfinish(m, int32(522834), int32(182), int32(326768))
 													mBase = m.M
 													v173 = m.ExcPending
 													if v173 != 0 {
@@ -396,7 +396,7 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 								} else {
 									v32 = *(*int32)(unsafe.Add(mBase, uint32(v19)+48))
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v32 + int32(4)
-									F_errmsg(m, int32(738551), v8)
+									F_errmsg(m, int32(739250), v8)
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {
@@ -410,7 +410,7 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 										if v44 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(522165), int32(166), int32(326227))
+											F_errfinish(m, int32(522834), int32(166), int32(326768))
 											mBase = m.M
 											v51 = m.ExcPending
 											if v51 != 0 {
@@ -441,13 +441,13 @@ func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 				if v114 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(149184), int32(0))
+					F_errmsg(m, int32(149499), int32(0))
 					mBase = m.M
 					v120 = m.ExcPending
 					if v120 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(522165), int32(156), int32(326227))
+						F_errfinish(m, int32(522834), int32(156), int32(326768))
 						mBase = m.M
 						v127 = m.ExcPending
 						if v127 != 0 {

@@ -1274,7 +1274,7 @@ func F_gtrgm_picksplit(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										if v77 == int32(1) {
-											F_pg_qsort(m, v521, v66, int32(8), int32(7408))
+											F_pg_qsort(m, v521, v66, int32(8), int32(7423))
 											mBase = m.M
 											v528 = m.ExcPending
 											if v528 != 0 {
@@ -1315,7 +1315,7 @@ func F_gtrgm_picksplit(m *base.Module, l0 int32) int32 {
 												}
 												break
 											}
-											F_pg_qsort(m, v521, v66, int32(8), int32(7408))
+											F_pg_qsort(m, v521, v66, int32(8), int32(7423))
 											mBase = m.M
 											v593 = m.ExcPending
 											if v593 != 0 {
@@ -2849,7 +2849,7 @@ func F_gtrgm_picksplit(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									if v77 == int32(1) {
-										F_pg_qsort(m, v521, v66, int32(8), int32(7408))
+										F_pg_qsort(m, v521, v66, int32(8), int32(7423))
 										mBase = m.M
 										v528 = m.ExcPending
 										if v528 != 0 {
@@ -2890,7 +2890,7 @@ func F_gtrgm_picksplit(m *base.Module, l0 int32) int32 {
 											}
 											break
 										}
-										F_pg_qsort(m, v521, v66, int32(8), int32(7408))
+										F_pg_qsort(m, v521, v66, int32(8), int32(7423))
 										mBase = m.M
 										v593 = m.ExcPending
 										if v593 != 0 {

@@ -903,7 +903,7 @@ func F_uuid_nil(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(594425)
+	v7 = int32(595094)
 	v8 = *(*int64)(unsafe.Add(mBase, _consts[1368]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
 	v10 = *(*int64)(unsafe.Add(mBase, _consts[1369]))

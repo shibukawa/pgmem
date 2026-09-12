@@ -181,13 +181,13 @@ func F_RecoveryRestartPoint(m *base.Module, l0 int32, l1 int32) {
 				*(*uint32)(unsafe.Add(mBase, uint32(v9)+4)) = uint32(v94)
 				v97 = int64(base.Ui64(v94) >> (uint(int64(32)) % 64))
 				*(*uint32)(unsafe.Add(mBase, uint32(v9))) = uint32(v97)
-				F_errmsg_internal(m, int32(180593), v9)
+				F_errmsg_internal(m, int32(180973), v9)
 				mBase = m.M
 				v101 = m.ExcPending
 				if v101 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(520929), int32(7606), int32(95185))
+					F_errfinish(m, int32(521598), int32(7606), int32(95372))
 					mBase = m.M
 					v106 = m.ExcPending
 					if v106 != 0 {
@@ -205,7 +205,7 @@ func F_RecoveryRestartPoint(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v108)+440)) = int32(1)
 		if v109 != 0 {
 			v113 = *(*int32)(unsafe.Add(mBase, _consts[199]))
-			F_s_lock(m, v113+int32(440), int32(520929), int32(7614), int32(95185))
+			F_s_lock(m, v113+int32(440), int32(521598), int32(7614), int32(95372))
 			mBase = m.M
 			v120 = m.ExcPending
 			if v120 != 0 {
@@ -724,7 +724,7 @@ L37:
 	;
 	v161 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 	*(*int32)(unsafe.Add(mBase, uint32(v161))) = int32(0)
-	v164 = int32(4159996)
+	v164 = int32(4160172)
 	v165 = int32(1000000)
 	v167 = *(*int32)(unsafe.Add(mBase, _consts[1167]))
 	v169 = v167 << (uint(int32(1)) % 32)
@@ -1107,7 +1107,7 @@ func F_check_recovery_target(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v50
 	v4 = int32(1)
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = int32(371263)
+	v6 = int32(371835)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, _consts[309])))
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5))))
 	if v10 == int32(0) {
@@ -1190,7 +1190,7 @@ L11:
 	goto L12
 L12:
 	;
-	v45 = F_format_elog_string(m, int32(696925), int32(0))
+	v45 = F_format_elog_string(m, int32(697594), int32(0))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -1356,7 +1356,7 @@ L2:
 	*(*uint8)(unsafe.Add(mBase, uint32(v11)+15)) = uint8(v15)
 	v19 = v11 + int32(15)
 	*(*uint8)(unsafe.Add(mBase, uint32(v19))) = uint8(v15)
-	v22 = int32(561258)
+	v22 = int32(561927)
 	v26 = m.G0
 	v28 = v26 - int32(32)
 	v29 = int64(0)
@@ -1389,7 +1389,7 @@ L5:
 L6:
 	;
 	v119 = v110 + int32(1)
-	v120 = int32(561258)
+	v120 = int32(561927)
 	v124 = m.G0
 	v126 = v124 - int32(32)
 	v127 = int64(0)
@@ -1790,7 +1790,7 @@ func F_check_recovery_target_timeline(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v99
 	v4 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v7 = int32(99584)
+	v7 = int32(99771)
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, _consts[312])))
 	v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
 	if v11 == v4 {
@@ -1870,7 +1870,7 @@ L10:
 	goto L8
 L11:
 	;
-	v35 = int32(83081)
+	v35 = int32(83256)
 	v38 = int32(*(*uint8)(unsafe.Add(mBase, _consts[313])))
 	v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
 	if v39 == int32(0) {
@@ -1992,7 +1992,7 @@ L30:
 	return v91
 L31:
 	;
-	v98 = F_format_elog_string(m, int32(637016), int32(0))
+	v98 = F_format_elog_string(m, int32(637685), int32(0))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {

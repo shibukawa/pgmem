@@ -48,7 +48,7 @@ func F_replorigin_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v8))) = v15
 		v22 = int64(base.Ui64(v16) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v8)+4)) = uint32(v22)
-		F_appendStringInfo(m, l0, int32(507924), v8)
+		F_appendStringInfo(m, l0, int32(508570), v8)
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -63,7 +63,7 @@ func F_replorigin_desc(m *base.Module, l0 int32, l1 int32) {
 	case 16:
 		v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11))))
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v27
-		F_appendStringInfo(m, l0, int32(47660), v8+int32(16))
+		F_appendStringInfo(m, l0, int32(47835), v8+int32(16))
 		mBase = m.M
 		v33 = m.ExcPending
 		if v33 != 0 {
@@ -290,7 +290,7 @@ L13:
 	goto L6
 L14:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	if v46 <= int32(0) {
 		goto L15
 	} else {
@@ -313,7 +313,7 @@ L16:
 	goto L17
 L17:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, _consts[518]))
+	v59 = *(*int32)(unsafe.Add(mBase, _consts[517]))
 	v62 = int32(0)
 	goto L19
 L18:
@@ -412,7 +412,7 @@ L31:
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v72)+24))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v89
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v88
-	F_errmsg(m, int32(500436), v12+int32(16))
+	F_errmsg(m, int32(501082), v12+int32(16))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -422,7 +422,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(518942), int32(395), int32(241309))
+	F_errfinish(m, int32(519611), int32(395), int32(241735))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -486,7 +486,7 @@ L38:
 	}
 L39:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+	v139 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	if int32(0) < v139 {
 		v56 = v139
 		goto L17
@@ -552,7 +552,7 @@ L46:
 L47:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v19
-	F_errmsg_internal(m, int32(500909), v12)
+	F_errmsg_internal(m, int32(501555), v12)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -562,7 +562,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(518942), int32(460), int32(395291))
+	F_errfinish(m, int32(519611), int32(460), int32(395875))
 	mBase = m.M
 	v194 = m.ExcPending
 	if v194 != 0 {
@@ -607,14 +607,14 @@ func F_replorigin_session_advance(m *base.Module, l0 int64, l1 int64) {
 	_ = v16
 	var v22 int32
 	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[519]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 	v9 = F_LWLockAcquire(m, v5+int32(40), int32(0))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
 		return
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[519]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 		v13 = *(*int64)(unsafe.Add(mBase, uint32(v12)+16))
 		if base.Ui64(v13) < base.Ui64(l1) {
 			*(*int64)(unsafe.Add(mBase, uint32(v12)+16)) = l1
@@ -650,14 +650,14 @@ func F_replorigin_session_get_progress(m *base.Module) int64 {
 	_ = v15
 	var v19 int32
 	_ = v19
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[519]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 	v8 = F_LWLockAcquire(m, v4+int32(40), int32(1))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return int64(0)
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, _consts[519]))
+		v13 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 		v15 = *(*int64)(unsafe.Add(mBase, uint32(v13)+8))
 		F_LWLockRelease(m, v13+int32(40))
 		mBase = m.M

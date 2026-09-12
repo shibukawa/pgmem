@@ -336,7 +336,7 @@ L8:
 	}
 L9:
 	;
-	v45 = F_MakeSingleTupleTableSlot(m, v16, int32(1649992))
+	v45 = F_MakeSingleTupleTableSlot(m, v16, int32(1650696))
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {

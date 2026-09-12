@@ -2402,6 +2402,8 @@ func F_BufTableHashCode(m *base.Module, l0 int32) int32
 func F_BufTableLookup(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_BufTableInsert github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_BufTableInsert
 func F_BufTableInsert(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_BufTableDelete github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BufTableDelete
+func F_BufTableDelete(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_UnpinBufferNoOwner github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnpinBufferNoOwner
 func F_UnpinBufferNoOwner(m *base.Module, l0 int32)
 //go:linkname F_PinBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_PinBuffer

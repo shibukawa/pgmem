@@ -523,7 +523,7 @@ L1:
 	v39 = l0
 	v40 = l1
 	v57 = v37
-	v58 = int32(4551932)
+	v58 = int32(4552172)
 	goto L4
 L2:
 	;
@@ -2439,7 +2439,7 @@ L275:
 	}
 L276:
 	;
-	v1192 = int32(4551916)
+	v1192 = int32(4552156)
 	*(*int32)(unsafe.Add(mBase, uint32(v93))) = v1192
 	*(*int32)(unsafe.Add(mBase, uint32(v95))) = v1191
 	*(*int32)(unsafe.Add(mBase, uint32(v1191)+4)) = v95
@@ -2455,7 +2455,7 @@ L278:
 	goto L279
 L279:
 	;
-	v1188 = int32(4551916)
+	v1188 = int32(4552156)
 	*(*int32)(unsafe.Add(mBase, _consts[1278])) = v1188
 	v1191 = v1188
 	goto L276
@@ -2536,7 +2536,7 @@ L289:
 L290:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v85))) = v1258 | int32(4)
-	v1264 = int32(4551924)
+	v1264 = int32(4552164)
 	v1265 = *(*int32)(unsafe.Add(mBase, _consts[1281]))
 	*(*int32)(unsafe.Add(mBase, uint32(v83))) = v1265
 	*(*int32)(unsafe.Add(mBase, _consts[1281])) = v83
@@ -2569,7 +2569,7 @@ func F_AtEOXact_MultiXact(m *base.Module) {
 	var v20 int32
 	_ = v20
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[73]))
-	v3 = int32(4160224)
+	v3 = int32(4160400)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[74]))
 	v5 = int32(2)
 	v8 = int32(0)
@@ -2577,7 +2577,7 @@ func F_AtEOXact_MultiXact(m *base.Module) {
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[75]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[74]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11+v13<<(uint(v5)%32)))) = v8
-	v20 = int32(4150864)
+	v20 = int32(4151040)
 	*(*int32)(unsafe.Add(mBase, _consts[76])) = v20
 	*(*int32)(unsafe.Add(mBase, _consts[77])) = v20
 	*(*int32)(unsafe.Add(mBase, _consts[78])) = v8

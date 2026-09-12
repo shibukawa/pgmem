@@ -67,7 +67,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v9
-	v19 = F_pg_snprintf(m, v6+int32(16), int32(64), int32(12957), v6)
+	v19 = F_pg_snprintf(m, v6+int32(16), int32(64), int32(12965), v6)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
@@ -80,7 +80,7 @@ L8:
 	return
 L9:
 	;
-	v28 = F_RestoreArchivedFile(m, v6+int32(80), v6+int32(16), int32(532487), int64(0), int32(0))
+	v28 = F_RestoreArchivedFile(m, v6+int32(80), v6+int32(16), int32(533156), int64(0), int32(0))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -257,13 +257,13 @@ func F_time_pl_interval(m *base.Module, l0 int32) int32 {
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(392760), int32(0))
+							F_errmsg(m, int32(393344), int32(0))
 							mBase = m.M
 							v39 = m.ExcPending
 							if v39 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(521473), int32(2126), int32(322874))
+								F_errfinish(m, int32(522142), int32(2126), int32(323415))
 								mBase = m.M
 								v44 = m.ExcPending
 								if v44 != 0 {
@@ -331,13 +331,13 @@ func F_time_pl_interval(m *base.Module, l0 int32) int32 {
 					if v35 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(392760), int32(0))
+						F_errmsg(m, int32(393344), int32(0))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521473), int32(2126), int32(322874))
+							F_errfinish(m, int32(522142), int32(2126), int32(323415))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {

@@ -633,7 +633,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								if v55&int32(65535) == int32(1) {
-									F_pg_qsort(m, v230, v227, int32(8), int32(7423))
+									F_pg_qsort(m, v230, v227, int32(8), int32(7438))
 									mBase = m.M
 									v239 = m.ExcPending
 									if v239 != 0 {
@@ -676,7 +676,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 										}
 										break
 									}
-									F_pg_qsort(m, v230, v227, int32(8), int32(7423))
+									F_pg_qsort(m, v230, v227, int32(8), int32(7438))
 									mBase = m.M
 									v296 = m.ExcPending
 									if v296 != 0 {
@@ -1054,7 +1054,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							if v55&int32(65535) == int32(1) {
-								F_pg_qsort(m, v230, v227, int32(8), int32(7423))
+								F_pg_qsort(m, v230, v227, int32(8), int32(7438))
 								mBase = m.M
 								v239 = m.ExcPending
 								if v239 != 0 {
@@ -1097,7 +1097,7 @@ func F__ltree_picksplit(m *base.Module, l0 int32) int32 {
 									}
 									break
 								}
-								F_pg_qsort(m, v230, v227, int32(8), int32(7423))
+								F_pg_qsort(m, v230, v227, int32(8), int32(7438))
 								mBase = m.M
 								v296 = m.ExcPending
 								if v296 != 0 {
@@ -2261,13 +2261,13 @@ func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = int32(65535)
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = v14
-				F_errmsg(m, int32(708982), v10)
+				F_errmsg(m, int32(709651), v10)
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518200), int32(353), int32(119715))
+					F_errfinish(m, int32(518869), int32(353), int32(119932))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
@@ -6423,7 +6423,7 @@ L458:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+12)) = v51
 	v1968 = int32(8)
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v52 + v1968
-	v1977 = F_ltree_execute(m, v1947+v1968, v19+v1968, int32(0), int32(7426))
+	v1977 = F_ltree_execute(m, v1947+v1968, v19+v1968, int32(0), int32(7441))
 	mBase = m.M
 	v1978 = m.ExcPending
 	if v1978 != 0 {
@@ -6985,7 +6985,7 @@ L547:
 	}
 L548:
 	;
-	F_errmsg(m, int32(161667), int32(0))
+	F_errmsg(m, int32(161982), int32(0))
 	mBase = m.M
 	v2427 = m.ExcPending
 	if v2427 != 0 {
@@ -6995,7 +6995,7 @@ L548:
 	}
 L549:
 	;
-	F_errfinish(m, int32(514200), int32(604), int32(155744))
+	F_errfinish(m, int32(514846), int32(604), int32(156059))
 	mBase = m.M
 	v2434 = m.ExcPending
 	if v2434 != 0 {
@@ -7020,7 +7020,7 @@ L551:
 	}
 L552:
 	;
-	F_errmsg(m, int32(327003), int32(0))
+	F_errmsg(m, int32(327544), int32(0))
 	mBase = m.M
 	v2447 = m.ExcPending
 	if v2447 != 0 {
@@ -7030,7 +7030,7 @@ L552:
 	}
 L553:
 	;
-	F_errfinish(m, int32(514200), int32(600), int32(155744))
+	F_errfinish(m, int32(514846), int32(600), int32(156059))
 	mBase = m.M
 	v2454 = m.ExcPending
 	if v2454 != 0 {
@@ -7200,7 +7200,7 @@ L580:
 L581:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v22
-	F_errmsg_internal(m, int32(503502), v19)
+	F_errmsg_internal(m, int32(504148), v19)
 	mBase = m.M
 	v2593 = m.ExcPending
 	if v2593 != 0 {
@@ -7210,7 +7210,7 @@ L581:
 	}
 L582:
 	;
-	F_errfinish(m, int32(514200), int32(715), int32(99047))
+	F_errfinish(m, int32(514846), int32(715), int32(99234))
 	mBase = m.M
 	v2600 = m.ExcPending
 	if v2600 != 0 {
@@ -7662,14 +7662,14 @@ func F_ltree_gist_out(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(81435)
-			F_errmsg(m, int32(202315), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(81610)
+			F_errmsg(m, int32(202712), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(514200), int32(36), int32(72338))
+				F_errfinish(m, int32(514846), int32(36), int32(72513))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

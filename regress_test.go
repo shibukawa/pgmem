@@ -71,7 +71,8 @@ var contribRegress = map[string][]string{
 	"amcheck":         {"check", "check_btree", "check_gin", "check_heap"},
 	"pg_visibility":   {"pg_visibility"},
 	// oldextversions is left out: it relies on psql's \df
-	"pageinspect": {"page", "btree", "brin", "gin", "gist", "hash", "checksum"},
+	"pageinspect":    {"page", "btree", "brin", "gin", "gist", "hash", "checksum"},
+	"pg_buffercache": {"pg_buffercache", "pg_buffercache_numa"},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",

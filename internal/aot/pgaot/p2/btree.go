@@ -184,7 +184,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v28
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v27
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v26
-		F_appendStringInfo(m, l0, int32(504437), v12+int32(16))
+		F_appendStringInfo(m, l0, int32(505083), v12+int32(16))
 		mBase = m.M
 		v38 = m.ExcPending
 		if v38 != 0 {
@@ -196,7 +196,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	default:
 		v21 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15))))
 		*(*int32)(unsafe.Add(mBase, uint32(v12))) = v21
-		F_appendStringInfo(m, l0, int32(63719), v12)
+		F_appendStringInfo(m, l0, int32(63894), v12)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -208,7 +208,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	case 3:
 		v39 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15))))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v39
-		F_appendStringInfo(m, l0, int32(62939), v12+int32(32))
+		F_appendStringInfo(m, l0, int32(63114), v12+int32(32))
 		mBase = m.M
 		v45 = m.ExcPending
 		if v45 != 0 {
@@ -231,7 +231,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 			v102 = int32(70)
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+76)) = v102
-		F_appendStringInfo(m, l0, int32(525914), v12-int32(-64))
+		F_appendStringInfo(m, l0, int32(526583), v12-int32(-64))
 		mBase = m.M
 		v108 = m.ExcPending
 		if v108 != 0 {
@@ -285,7 +285,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+112)) = v158
 		v165 = int64(base.Ui64(v160) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v12)+124)) = uint32(v165)
-		F_appendStringInfo(m, l0, int32(777976), v12+int32(112))
+		F_appendStringInfo(m, l0, int32(778675), v12+int32(112))
 		mBase = m.M
 		v171 = m.ExcPending
 		if v171 != 0 {
@@ -295,7 +295,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 			v173 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
 			*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = v173
 			*(*int64)(unsafe.Add(mBase, uint32(v12)+96)) = v172
-			F_appendStringInfo(m, l0, int32(62481), v12+int32(96))
+			F_appendStringInfo(m, l0, int32(62656), v12+int32(96))
 			mBase = m.M
 			v180 = m.ExcPending
 			if v180 != 0 {
@@ -308,7 +308,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 	case 7:
 		v181 = *(*int32)(unsafe.Add(mBase, uint32(v15)+4))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+144)) = v181
-		F_appendStringInfo(m, l0, int32(63412), v12+int32(144))
+		F_appendStringInfo(m, l0, int32(63587), v12+int32(144))
 		mBase = m.M
 		v187 = m.ExcPending
 		if v187 != 0 {
@@ -324,7 +324,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+84)) = v149
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+88)) = v148
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+80)) = v147
-		F_appendStringInfo(m, l0, int32(62528), v12+int32(80))
+		F_appendStringInfo(m, l0, int32(62703), v12+int32(80))
 		mBase = m.M
 		v157 = m.ExcPending
 		if v157 != 0 {
@@ -338,7 +338,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		v47 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v15)+2)))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+52)) = v47
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = v46
-		F_appendStringInfo(m, l0, int32(64103), v12+int32(48))
+		F_appendStringInfo(m, l0, int32(64278), v12+int32(48))
 		mBase = m.M
 		v54 = m.ExcPending
 		if v54 != 0 {
@@ -399,7 +399,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		*(*int64)(unsafe.Add(mBase, uint32(v12)+160)) = v188
 		v200 = int64(base.Ui64(v191) >> (uint(int64(32)) % 64))
 		*(*uint32)(unsafe.Add(mBase, uint32(v12)+172)) = uint32(v200)
-		F_appendStringInfo(m, l0, int32(525762), v12+int32(160))
+		F_appendStringInfo(m, l0, int32(526431), v12+int32(160))
 		mBase = m.M
 		v206 = m.ExcPending
 		if v206 != 0 {
@@ -431,7 +431,7 @@ func F_btree_desc(m *base.Module, l0 int32, l1 int32) {
 		}
 		v237 = *(*int32)(unsafe.Add(mBase, uint32(v233)+20))
 		*(*int32)(unsafe.Add(mBase, uint32(v12)+192)) = v237
-		F_appendStringInfo(m, l0, int32(63007), v12+int32(192))
+		F_appendStringInfo(m, l0, int32(63182), v12+int32(192))
 		mBase = m.M
 		v243 = m.ExcPending
 		if v243 != 0 {

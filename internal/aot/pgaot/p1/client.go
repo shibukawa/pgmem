@@ -220,13 +220,13 @@ func F_assign_client_encoding(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v5))) = v11
-						F_errmsg_internal(m, int32(474339), v5)
+						F_errmsg_internal(m, int32(474985), v5)
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(521921), int32(799), int32(351339))
+							F_errfinish(m, int32(522590), int32(799), int32(351911))
 							mBase = m.M
 							v30 = m.ExcPending
 							if v30 != 0 {

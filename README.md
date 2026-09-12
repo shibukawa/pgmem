@@ -211,7 +211,7 @@ on this memory-bound code (arm64; amd64 not measured).
   serves the database it was started with (`Options.Database`); a
   connection that asks for another database is refused with SQLSTATE
   3D000 instead of silently landing in the served one.
-- Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp, amcheck, pg_visibility, pageinspect, and pgvector 0.8.6 as `vector`. ICU, OpenSSL and zlib are not compiled
+- Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp, amcheck, pg_visibility, pageinspect, pg_buffercache, and pgvector 0.8.6 as `vector`. ICU, OpenSSL and zlib are not compiled
   in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
   (so `compress-algo=1|2` and messages made by GnuPG work), and
   `fips_mode()` is always false.

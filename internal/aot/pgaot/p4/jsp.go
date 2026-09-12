@@ -119,13 +119,13 @@ func F_jspInitByBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		} else {
 			v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v61
-			F_errmsg_internal(m, int32(506242), v10)
+			F_errmsg_internal(m, int32(506888), v10)
 			mBase = m.M
 			v65 = m.ExcPending
 			if v65 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(520648), int32(1076), int32(236831))
+				F_errfinish(m, int32(521317), int32(1076), int32(237228))
 				mBase = m.M
 				v70 = m.ExcPending
 				if v70 != 0 {

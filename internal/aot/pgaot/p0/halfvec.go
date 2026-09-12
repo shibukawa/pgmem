@@ -778,8 +778,8 @@ L21:
 	goto L18
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(342135)
-	F_errmsg_internal(m, int32(26205), v11)
+	*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(342707)
+	F_errmsg_internal(m, int32(26326), v11)
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -789,7 +789,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(523319), int32(173), int32(26696))
+	F_errfinish(m, int32(523988), int32(173), int32(26817))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -3688,13 +3688,13 @@ func F_halfvec_l2_squared_distance(m *base.Module, l0 int32) int32 {
 						v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v15)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v28
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-						F_errmsg(m, int32(498940), v7)
+						F_errmsg(m, int32(499586), v7)
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523319), int32(80), int32(159519))
+							F_errfinish(m, int32(523988), int32(80), int32(159834))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {

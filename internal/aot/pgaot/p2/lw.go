@@ -30,7 +30,7 @@ func F_LWLockNewTrancheId(m *base.Module) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(1)
 	if v8 != 0 {
 		v12 = *(*int32)(unsafe.Add(mBase, _consts[810]))
-		F_s_lock(m, v12, int32(520459), int32(622), int32(485744))
+		F_s_lock(m, v12, int32(521128), int32(622), int32(486390))
 		mBase = m.M
 		v19 = m.ExcPending
 		if v19 != 0 {
@@ -115,7 +115,7 @@ func F_LWLockRegisterTranche(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, _consts[809])) = v29
 					*(*int32)(unsafe.Add(mBase, _consts[808])) = v42
 					v48 = v42
-					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(450427)
+					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(451064)
 					return
 				}
 			} else {
@@ -129,13 +129,13 @@ func F_LWLockRegisterTranche(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, _consts[809])) = v29
 					*(*int32)(unsafe.Add(mBase, _consts[808])) = v42
 					v48 = v42
-					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(450427)
+					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(451064)
 					return
 				}
 			}
 		} else {
 			v48 = v9
-			*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(450427)
+			*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(451064)
 			return
 		}
 	} else {

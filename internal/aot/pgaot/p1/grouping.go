@@ -193,7 +193,7 @@ L20:
 	goto L1
 L21:
 	;
-	F_errmsg_internal(m, int32(79040), int32(0))
+	F_errmsg_internal(m, int32(79215), int32(0))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -203,7 +203,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(514061), int32(366), int32(400256))
+	F_errfinish(m, int32(514707), int32(366), int32(400840))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -650,7 +650,7 @@ L40:
 	}
 L41:
 	;
-	F_errmsg(m, int32(130803), int32(0))
+	F_errmsg(m, int32(131118), int32(0))
 	mBase = m.M
 	v185 = m.ExcPending
 	if v185 != 0 {
@@ -671,7 +671,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(521492), int32(2587), int32(115418))
+	F_errfinish(m, int32(522161), int32(2587), int32(115605))
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {

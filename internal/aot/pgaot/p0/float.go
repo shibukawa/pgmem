@@ -24,12 +24,12 @@ func F_float_underflow_error(m *base.Module) {
 		if v7 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(32797), int32(0))
+			F_errmsg(m, int32(32918), int32(0))
 			v11 = m.ExcPending
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(515258), int32(98), int32(221934))
+				F_errfinish(m, int32(515904), int32(98), int32(222331))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return

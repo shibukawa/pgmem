@@ -1421,7 +1421,7 @@ L16:
 	}
 L17:
 	;
-	F_errmsg(m, int32(130606), int32(0))
+	F_errmsg(m, int32(130921), int32(0))
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -1431,7 +1431,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(518508), int32(744), int32(24707))
+	F_errfinish(m, int32(519177), int32(744), int32(24828))
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -1466,7 +1466,7 @@ L21:
 	}
 L22:
 	;
-	F_errmsg(m, int32(156163), int32(0))
+	F_errmsg(m, int32(156478), int32(0))
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -1476,7 +1476,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(518508), int32(751), int32(24707))
+	F_errfinish(m, int32(519177), int32(751), int32(24828))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -1501,7 +1501,7 @@ L25:
 	}
 L26:
 	;
-	F_errmsg(m, int32(125755), int32(0))
+	F_errmsg(m, int32(126033), int32(0))
 	mBase = m.M
 	v87 = m.ExcPending
 	if v87 != 0 {
@@ -1511,7 +1511,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(518508), int32(757), int32(24707))
+	F_errfinish(m, int32(519177), int32(757), int32(24828))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -1705,7 +1705,7 @@ L52:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = int32(53687091)
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v106
-	F_errmsg(m, int32(708742), v14)
+	F_errmsg(m, int32(709411), v14)
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -1715,7 +1715,7 @@ L52:
 	}
 L53:
 	;
-	F_errfinish(m, int32(518508), int32(769), int32(24707))
+	F_errfinish(m, int32(519177), int32(769), int32(24828))
 	mBase = m.M
 	v255 = m.ExcPending
 	if v255 != 0 {
@@ -1740,7 +1740,7 @@ L55:
 	}
 L56:
 	;
-	F_errmsg(m, int32(22631), int32(0))
+	F_errmsg(m, int32(22752), int32(0))
 	mBase = m.M
 	v268 = m.ExcPending
 	if v268 != 0 {
@@ -1750,7 +1750,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(518508), int32(778), int32(24707))
+	F_errfinish(m, int32(519177), int32(778), int32(24828))
 	mBase = m.M
 	v275 = m.ExcPending
 	if v275 != 0 {
@@ -1775,7 +1775,7 @@ L59:
 	}
 L60:
 	;
-	F_errmsg(m, int32(22600), int32(0))
+	F_errmsg(m, int32(22721), int32(0))
 	mBase = m.M
 	v288 = m.ExcPending
 	if v288 != 0 {
@@ -1785,7 +1785,7 @@ L60:
 	}
 L61:
 	;
-	F_errfinish(m, int32(518508), int32(413), int32(294991))
+	F_errfinish(m, int32(519177), int32(413), int32(295456))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -1810,7 +1810,7 @@ L63:
 	}
 L64:
 	;
-	F_errmsg(m, int32(22600), int32(0))
+	F_errmsg(m, int32(22721), int32(0))
 	mBase = m.M
 	v308 = m.ExcPending
 	if v308 != 0 {
@@ -1820,7 +1820,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(518508), int32(413), int32(294991))
+	F_errfinish(m, int32(519177), int32(413), int32(295456))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {
@@ -1845,7 +1845,7 @@ L67:
 	}
 L68:
 	;
-	F_errmsg(m, int32(362195), int32(0))
+	F_errmsg(m, int32(362767), int32(0))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {
@@ -1855,7 +1855,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(518508), int32(433), int32(295009))
+	F_errfinish(m, int32(519177), int32(433), int32(295474))
 	mBase = m.M
 	v335 = m.ExcPending
 	if v335 != 0 {
@@ -2160,13 +2160,13 @@ func F_hstore_from_text(m *base.Module, l0 int32) int32 {
 									if v172 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(362195), int32(0))
+										F_errmsg(m, int32(362767), int32(0))
 										mBase = m.M
 										v178 = m.ExcPending
 										if v178 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(518508), int32(433), int32(295009))
+											F_errfinish(m, int32(519177), int32(433), int32(295474))
 											mBase = m.M
 											v185 = m.ExcPending
 											if v185 != 0 {
@@ -2251,13 +2251,13 @@ func F_hstore_from_text(m *base.Module, l0 int32) int32 {
 						if v152 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(22600), int32(0))
+							F_errmsg(m, int32(22721), int32(0))
 							mBase = m.M
 							v158 = m.ExcPending
 							if v158 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518508), int32(413), int32(294991))
+								F_errfinish(m, int32(519177), int32(413), int32(295456))
 								mBase = m.M
 								v165 = m.ExcPending
 								if v165 != 0 {
@@ -2417,13 +2417,13 @@ func F_hstore_from_text(m *base.Module, l0 int32) int32 {
 										if v172 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(362195), int32(0))
+											F_errmsg(m, int32(362767), int32(0))
 											mBase = m.M
 											v178 = m.ExcPending
 											if v178 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(518508), int32(433), int32(295009))
+												F_errfinish(m, int32(519177), int32(433), int32(295474))
 												mBase = m.M
 												v185 = m.ExcPending
 												if v185 != 0 {
@@ -2493,5 +2493,5 @@ func F_hstore_from_text(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_hstore_subscript_handler(m *base.Module, l0 int32) int32 {
-	return int32(4434036)
+	return int32(4434212)
 }

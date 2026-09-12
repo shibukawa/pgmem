@@ -74,7 +74,7 @@ func F_GUC_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 		mBase = m.M
 		*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v13
 		if v13 == int32(0) {
-			F_GUC_flex_fatal(m, int32(713078))
+			F_GUC_flex_fatal(m, int32(713777))
 			mBase = m.M
 			v67 = m.ExcPending
 			if v67 != 0 {
@@ -131,7 +131,7 @@ func F_GUC_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 			return v9
 		}
 	} else {
-		F_GUC_flex_fatal(m, int32(713078))
+		F_GUC_flex_fatal(m, int32(713777))
 		mBase = m.M
 		v64 = m.ExcPending
 		if v64 != 0 {
@@ -633,13 +633,13 @@ func F_guc_malloc(m *base.Module, l0 int32) int32 {
 					if v17 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(14012), int32(0))
+						F_errmsg(m, int32(14020), int32(0))
 						mBase = m.M
 						v21 = m.ExcPending
 						if v21 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522902), int32(647), int32(509841))
+							F_errfinish(m, int32(523571), int32(647), int32(510487))
 							mBase = m.M
 							v26 = m.ExcPending
 							if v26 != 0 {
@@ -689,12 +689,12 @@ func F_set_guc_source(m *base.Module, l0 int32, l1 int32) {
 				v15 = *(*int32)(unsafe.Add(mBase, _consts[952]))
 				v20 = v15
 			} else {
-				v17 = int32(4551916)
+				v17 = int32(4552156)
 				*(*int32)(unsafe.Add(mBase, _consts[118])) = v17
 				v20 = v17
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v20
-			v22 = int32(4551916)
+			v22 = int32(4552156)
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v22
 			*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v11
 			*(*int32)(unsafe.Add(mBase, _consts[952])) = v11

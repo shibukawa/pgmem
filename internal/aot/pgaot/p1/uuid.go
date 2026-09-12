@@ -660,7 +660,7 @@ func F_uuid_ns_dns(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(580755)
+	v7 = int32(581424)
 	v8 = *(*int64)(unsafe.Add(mBase, _consts[1451]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
 	v10 = *(*int64)(unsafe.Add(mBase, _consts[1452]))
@@ -707,7 +707,7 @@ func F_uuid_ns_url(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(580718)
+	v7 = int32(581387)
 	v8 = *(*int64)(unsafe.Add(mBase, _consts[1456]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
 	v10 = *(*int64)(unsafe.Add(mBase, _consts[1457]))

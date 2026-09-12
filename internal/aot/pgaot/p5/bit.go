@@ -208,11 +208,11 @@ func F_BitJaccardDistanceDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l
 		for {
 			v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100+v94))))
 			v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100+v93))))
-			v120 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114&v116)+uint32(_consts[1108]))))
+			v120 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114&v116)+uint32(_consts[1107]))))
 			v121 = v103 + v120
-			v124 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114)+uint32(_consts[1108]))))
+			v124 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v114)+uint32(_consts[1107]))))
 			v125 = v105 + v124
-			v128 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v116)+uint32(_consts[1108]))))
+			v128 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v116)+uint32(_consts[1107]))))
 			v129 = v104 + v128
 			v131 = v100 + int32(1)
 			if v131 != v92 {
@@ -590,13 +590,13 @@ func F_bit_and(m *base.Module, l0 int32) int32 {
 					if v75 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(166303), int32(0))
+						F_errmsg(m, int32(166618), int32(0))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(514995), int32(1261), int32(448415))
+							F_errfinish(m, int32(515641), int32(1261), int32(449052))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {
@@ -742,13 +742,13 @@ func F_bit_or(m *base.Module, l0 int32) int32 {
 					if v75 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(166262), int32(0))
+						F_errmsg(m, int32(166577), int32(0))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(514995), int32(1302), int32(223326))
+							F_errfinish(m, int32(515641), int32(1302), int32(223723))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {

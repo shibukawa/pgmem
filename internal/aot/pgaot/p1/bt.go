@@ -3520,7 +3520,7 @@ L58:
 	goto L15
 L59:
 	;
-	F_errmsg_internal(m, int32(425306), int32(0))
+	F_errmsg_internal(m, int32(425919), int32(0))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -3530,7 +3530,7 @@ L59:
 	}
 L60:
 	;
-	F_errfinish(m, int32(514297), int32(735), int32(243394))
+	F_errfinish(m, int32(514943), int32(735), int32(243820))
 	mBase = m.M
 	v300 = m.ExcPending
 	if v300 != 0 {
@@ -3545,7 +3545,7 @@ L61:
 	}
 L62:
 	;
-	F_errmsg_internal(m, int32(425265), int32(0))
+	F_errmsg_internal(m, int32(425878), int32(0))
 	mBase = m.M
 	v308 = m.ExcPending
 	if v308 != 0 {
@@ -3555,7 +3555,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(514297), int32(938), int32(483275))
+	F_errfinish(m, int32(514943), int32(938), int32(483921))
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -3597,7 +3597,7 @@ L68:
 	}
 L69:
 	;
-	F_errmsg_internal(m, int32(425306), int32(0))
+	F_errmsg_internal(m, int32(425919), int32(0))
 	mBase = m.M
 	v347 = m.ExcPending
 	if v347 != 0 {
@@ -3607,7 +3607,7 @@ L69:
 	}
 L70:
 	;
-	F_errfinish(m, int32(514297), int32(735), int32(243394))
+	F_errfinish(m, int32(514943), int32(735), int32(243820))
 	mBase = m.M
 	v352 = m.ExcPending
 	if v352 != 0 {
@@ -3726,19 +3726,19 @@ func F__bt_checkpage(m *base.Module, l0 int32, l1 int32) {
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v109
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v90 + int32(4)
-					F_errmsg(m, int32(51642), v7+int32(16))
+					F_errmsg(m, int32(51817), v7+int32(16))
 					mBase = m.M
 					v118 = m.ExcPending
 					if v118 != 0 {
 						return
 					} else {
-						F_errhint(m, int32(607726), int32(0))
+						F_errhint(m, int32(608395), int32(0))
 						mBase = m.M
 						v122 = m.ExcPending
 						if v122 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(522175), int32(824), int32(424697))
+							F_errfinish(m, int32(522844), int32(824), int32(425310))
 							mBase = m.M
 							v127 = m.ExcPending
 							if v127 != 0 {
@@ -3781,19 +3781,19 @@ func F__bt_checkpage(m *base.Module, l0 int32, l1 int32) {
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v66
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v47 + int32(4)
-				F_errmsg(m, int32(51589), v7)
+				F_errmsg(m, int32(51764), v7)
 				mBase = m.M
 				v73 = m.ExcPending
 				if v73 != 0 {
 					return
 				} else {
-					F_errhint(m, int32(607726), int32(0))
+					F_errhint(m, int32(608395), int32(0))
 					mBase = m.M
 					v77 = m.ExcPending
 					if v77 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(522175), int32(813), int32(424697))
+						F_errfinish(m, int32(522844), int32(813), int32(425310))
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -4156,7 +4156,7 @@ L20:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = l2
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = l3
-	F_errmsg_internal(m, int32(42228), v11)
+	F_errmsg_internal(m, int32(42403), v11)
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -4166,7 +4166,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(515287), int32(2605), int32(102354))
+	F_errfinish(m, int32(515933), int32(2605), int32(102541))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -4182,7 +4182,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v23
-	F_errmsg_internal(m, int32(46515), v11+int32(16))
+	F_errmsg_internal(m, int32(46690), v11+int32(16))
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -4192,7 +4192,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(515287), int32(2608), int32(102354))
+	F_errfinish(m, int32(515933), int32(2608), int32(102541))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -4388,13 +4388,13 @@ func F__bt_getmeta(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v60 + int32(4)
-				F_errmsg(m, int32(428625), v7)
+				F_errmsg(m, int32(429238), v7)
 				mBase = m.M
 				v66 = m.ExcPending
 				if v66 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522175), int32(158), int32(527482))
+					F_errfinish(m, int32(522844), int32(158), int32(528151))
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
@@ -4425,13 +4425,13 @@ func F__bt_getmeta(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v60 + int32(4)
-					F_errmsg(m, int32(428625), v7)
+					F_errmsg(m, int32(429238), v7)
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(522175), int32(158), int32(527482))
+						F_errfinish(m, int32(522844), int32(158), int32(528151))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -4465,13 +4465,13 @@ func F__bt_getmeta(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = int64(8589934596)
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v79
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v80 + int32(4)
-						F_errmsg(m, int32(493531), v7+int32(16))
+						F_errmsg(m, int32(494177), v7+int32(16))
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522175), int32(167), int32(527482))
+							F_errfinish(m, int32(522844), int32(167), int32(528151))
 							mBase = m.M
 							v96 = m.ExcPending
 							if v96 != 0 {
@@ -6391,7 +6391,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	v20 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v17)+4)))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+132)) = v20
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+128)) = v18 | v19<<(uint(int32(16))%32)
-	v26 = int32(699622)
+	v26 = int32(700291)
 	v29 = F_psprintf(m, v26, v15+int32(128))
 	mBase = m.M
 	v30 = m.ExcPending
@@ -6423,7 +6423,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 				if l3 != v51 {
 					*(*int32)(unsafe.Add(mBase, uint32(v15)+84)) = l4
 					*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = l3
-					v64 = F_psprintf(m, int32(699621), v15+int32(80))
+					v64 = F_psprintf(m, int32(700290), v15+int32(80))
 					mBase = m.M
 					v65 = m.ExcPending
 					if v65 != 0 {
@@ -6432,9 +6432,9 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						v67 = v64
 						v69 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 						if v69 < int32(0) {
-							v80 = int32(789461)
+							v80 = int32(790160)
 							if l5 < int32(0) {
-								v92 = int32(789461)
+								v92 = int32(790160)
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
 								v96 = m.ExcPending
@@ -6450,7 +6450,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 										v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-										F_errmsg(m, int32(722749), v15+int32(32))
+										F_errmsg(m, int32(723448), v15+int32(32))
 										mBase = m.M
 										v111 = m.ExcPending
 										if v111 != 0 {
@@ -6466,13 +6466,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 											*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-											F_errdetail(m, int32(684266), v15)
+											F_errdetail(m, int32(684935), v15)
 											mBase = m.M
 											v126 = m.ExcPending
 											if v126 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(522285), int32(906), int32(374207))
+												F_errfinish(m, int32(522954), int32(906), int32(374779))
 												mBase = m.M
 												v133 = m.ExcPending
 												if v133 != 0 {
@@ -6488,7 +6488,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								}
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-								v90 = F_psprintf(m, int32(52658), v15+int32(48))
+								v90 = F_psprintf(m, int32(52833), v15+int32(48))
 								mBase = m.M
 								v91 = m.ExcPending
 								if v91 != 0 {
@@ -6510,7 +6510,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-											F_errmsg(m, int32(722749), v15+int32(32))
+											F_errmsg(m, int32(723448), v15+int32(32))
 											mBase = m.M
 											v111 = m.ExcPending
 											if v111 != 0 {
@@ -6526,13 +6526,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 												*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-												F_errdetail(m, int32(684266), v15)
+												F_errdetail(m, int32(684935), v15)
 												mBase = m.M
 												v126 = m.ExcPending
 												if v126 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(522285), int32(906), int32(374207))
+													F_errfinish(m, int32(522954), int32(906), int32(374779))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -6550,7 +6550,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v69
-							v78 = F_psprintf(m, int32(52658), v15-int32(-64))
+							v78 = F_psprintf(m, int32(52833), v15-int32(-64))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -6558,7 +6558,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							} else {
 								v80 = v78
 								if l5 < int32(0) {
-									v92 = int32(789461)
+									v92 = int32(790160)
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
 									v96 = m.ExcPending
@@ -6574,7 +6574,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-											F_errmsg(m, int32(722749), v15+int32(32))
+											F_errmsg(m, int32(723448), v15+int32(32))
 											mBase = m.M
 											v111 = m.ExcPending
 											if v111 != 0 {
@@ -6590,13 +6590,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 												*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-												F_errdetail(m, int32(684266), v15)
+												F_errdetail(m, int32(684935), v15)
 												mBase = m.M
 												v126 = m.ExcPending
 												if v126 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(522285), int32(906), int32(374207))
+													F_errfinish(m, int32(522954), int32(906), int32(374779))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -6612,7 +6612,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-									v90 = F_psprintf(m, int32(52658), v15+int32(48))
+									v90 = F_psprintf(m, int32(52833), v15+int32(48))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -6634,7 +6634,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 												v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-												F_errmsg(m, int32(722749), v15+int32(32))
+												F_errmsg(m, int32(723448), v15+int32(32))
 												mBase = m.M
 												v111 = m.ExcPending
 												if v111 != 0 {
@@ -6650,13 +6650,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 													*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-													F_errdetail(m, int32(684266), v15)
+													F_errdetail(m, int32(684935), v15)
 													mBase = m.M
 													v126 = m.ExcPending
 													if v126 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(522285), int32(906), int32(374207))
+														F_errfinish(m, int32(522954), int32(906), int32(374779))
 														mBase = m.M
 														v133 = m.ExcPending
 														if v133 != 0 {
@@ -6680,7 +6680,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					if l4 != v54 {
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+84)) = l4
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+80)) = l3
-						v64 = F_psprintf(m, int32(699621), v15+int32(80))
+						v64 = F_psprintf(m, int32(700290), v15+int32(80))
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {
@@ -6689,9 +6689,9 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							v67 = v64
 							v69 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 							if v69 < int32(0) {
-								v80 = int32(789461)
+								v80 = int32(790160)
 								if l5 < int32(0) {
-									v92 = int32(789461)
+									v92 = int32(790160)
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
 									v96 = m.ExcPending
@@ -6707,7 +6707,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-											F_errmsg(m, int32(722749), v15+int32(32))
+											F_errmsg(m, int32(723448), v15+int32(32))
 											mBase = m.M
 											v111 = m.ExcPending
 											if v111 != 0 {
@@ -6723,13 +6723,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 												*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-												F_errdetail(m, int32(684266), v15)
+												F_errdetail(m, int32(684935), v15)
 												mBase = m.M
 												v126 = m.ExcPending
 												if v126 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(522285), int32(906), int32(374207))
+													F_errfinish(m, int32(522954), int32(906), int32(374779))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -6745,7 +6745,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-									v90 = F_psprintf(m, int32(52658), v15+int32(48))
+									v90 = F_psprintf(m, int32(52833), v15+int32(48))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -6767,7 +6767,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 												v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-												F_errmsg(m, int32(722749), v15+int32(32))
+												F_errmsg(m, int32(723448), v15+int32(32))
 												mBase = m.M
 												v111 = m.ExcPending
 												if v111 != 0 {
@@ -6783,13 +6783,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 													*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-													F_errdetail(m, int32(684266), v15)
+													F_errdetail(m, int32(684935), v15)
 													mBase = m.M
 													v126 = m.ExcPending
 													if v126 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(522285), int32(906), int32(374207))
+														F_errfinish(m, int32(522954), int32(906), int32(374779))
 														mBase = m.M
 														v133 = m.ExcPending
 														if v133 != 0 {
@@ -6807,7 +6807,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								}
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v69
-								v78 = F_psprintf(m, int32(52658), v15-int32(-64))
+								v78 = F_psprintf(m, int32(52833), v15-int32(-64))
 								mBase = m.M
 								v79 = m.ExcPending
 								if v79 != 0 {
@@ -6815,7 +6815,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								} else {
 									v80 = v78
 									if l5 < int32(0) {
-										v92 = int32(789461)
+										v92 = int32(790160)
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
 										v96 = m.ExcPending
@@ -6831,7 +6831,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 												v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-												F_errmsg(m, int32(722749), v15+int32(32))
+												F_errmsg(m, int32(723448), v15+int32(32))
 												mBase = m.M
 												v111 = m.ExcPending
 												if v111 != 0 {
@@ -6847,13 +6847,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 													*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-													F_errdetail(m, int32(684266), v15)
+													F_errdetail(m, int32(684935), v15)
 													mBase = m.M
 													v126 = m.ExcPending
 													if v126 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(522285), int32(906), int32(374207))
+														F_errfinish(m, int32(522954), int32(906), int32(374779))
 														mBase = m.M
 														v133 = m.ExcPending
 														if v133 != 0 {
@@ -6869,7 +6869,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 										}
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-										v90 = F_psprintf(m, int32(52658), v15+int32(48))
+										v90 = F_psprintf(m, int32(52833), v15+int32(48))
 										mBase = m.M
 										v91 = m.ExcPending
 										if v91 != 0 {
@@ -6891,7 +6891,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 													v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-													F_errmsg(m, int32(722749), v15+int32(32))
+													F_errmsg(m, int32(723448), v15+int32(32))
 													mBase = m.M
 													v111 = m.ExcPending
 													if v111 != 0 {
@@ -6907,13 +6907,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 														*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 														*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 														*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-														F_errdetail(m, int32(684266), v15)
+														F_errdetail(m, int32(684935), v15)
 														mBase = m.M
 														v126 = m.ExcPending
 														if v126 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(522285), int32(906), int32(374207))
+															F_errfinish(m, int32(522954), int32(906), int32(374779))
 															mBase = m.M
 															v133 = m.ExcPending
 															if v133 != 0 {
@@ -6933,12 +6933,12 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							}
 						}
 					} else {
-						v67 = int32(789461)
+						v67 = int32(790160)
 						v69 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 						if v69 < int32(0) {
-							v80 = int32(789461)
+							v80 = int32(790160)
 							if l5 < int32(0) {
-								v92 = int32(789461)
+								v92 = int32(790160)
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
 								v96 = m.ExcPending
@@ -6954,7 +6954,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 										v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-										F_errmsg(m, int32(722749), v15+int32(32))
+										F_errmsg(m, int32(723448), v15+int32(32))
 										mBase = m.M
 										v111 = m.ExcPending
 										if v111 != 0 {
@@ -6970,13 +6970,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 											*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-											F_errdetail(m, int32(684266), v15)
+											F_errdetail(m, int32(684935), v15)
 											mBase = m.M
 											v126 = m.ExcPending
 											if v126 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(522285), int32(906), int32(374207))
+												F_errfinish(m, int32(522954), int32(906), int32(374779))
 												mBase = m.M
 												v133 = m.ExcPending
 												if v133 != 0 {
@@ -6992,7 +6992,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 								}
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-								v90 = F_psprintf(m, int32(52658), v15+int32(48))
+								v90 = F_psprintf(m, int32(52833), v15+int32(48))
 								mBase = m.M
 								v91 = m.ExcPending
 								if v91 != 0 {
@@ -7014,7 +7014,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-											F_errmsg(m, int32(722749), v15+int32(32))
+											F_errmsg(m, int32(723448), v15+int32(32))
 											mBase = m.M
 											v111 = m.ExcPending
 											if v111 != 0 {
@@ -7030,13 +7030,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 												*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-												F_errdetail(m, int32(684266), v15)
+												F_errdetail(m, int32(684935), v15)
 												mBase = m.M
 												v126 = m.ExcPending
 												if v126 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(522285), int32(906), int32(374207))
+													F_errfinish(m, int32(522954), int32(906), int32(374779))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -7054,7 +7054,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+64)) = v69
-							v78 = F_psprintf(m, int32(52658), v15-int32(-64))
+							v78 = F_psprintf(m, int32(52833), v15-int32(-64))
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
@@ -7062,7 +7062,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							} else {
 								v80 = v78
 								if l5 < int32(0) {
-									v92 = int32(789461)
+									v92 = int32(790160)
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
 									v96 = m.ExcPending
@@ -7078,7 +7078,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 											v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-											F_errmsg(m, int32(722749), v15+int32(32))
+											F_errmsg(m, int32(723448), v15+int32(32))
 											mBase = m.M
 											v111 = m.ExcPending
 											if v111 != 0 {
@@ -7094,13 +7094,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 												*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-												F_errdetail(m, int32(684266), v15)
+												F_errdetail(m, int32(684935), v15)
 												mBase = m.M
 												v126 = m.ExcPending
 												if v126 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(522285), int32(906), int32(374207))
+													F_errfinish(m, int32(522954), int32(906), int32(374779))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -7116,7 +7116,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 									}
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l5
-									v90 = F_psprintf(m, int32(52658), v15+int32(48))
+									v90 = F_psprintf(m, int32(52833), v15+int32(48))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -7138,7 +7138,7 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 												v101 = *(*int32)(unsafe.Add(mBase, uint32(v100)+48))
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v101 + int32(4)
-												F_errmsg(m, int32(722749), v15+int32(32))
+												F_errmsg(m, int32(723448), v15+int32(32))
 												mBase = m.M
 												v111 = m.ExcPending
 												if v111 != 0 {
@@ -7154,13 +7154,13 @@ func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v67
 													*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v80
 													*(*int32)(unsafe.Add(mBase, uint32(v15))) = v49
-													F_errdetail(m, int32(684266), v15)
+													F_errdetail(m, int32(684935), v15)
 													mBase = m.M
 													v126 = m.ExcPending
 													if v126 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(522285), int32(906), int32(374207))
+														F_errfinish(m, int32(522954), int32(906), int32(374779))
 														mBase = m.M
 														v133 = m.ExcPending
 														if v133 != 0 {

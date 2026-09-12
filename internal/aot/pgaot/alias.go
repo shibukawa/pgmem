@@ -3416,6 +3416,36 @@ func F_pg_finfo_page_checksum(m *base.Module) int32
 func F_page_checksum_1_9(m *base.Module, l0 int32) int32
 //go:linkname F_page_checksum github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_page_checksum
 func F_page_checksum(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_buffercache github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_Pg_magic_func_pg_buffercache
+func F_Pg_magic_func_pg_buffercache(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_pages github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_buffercache_pages
+func F_pg_finfo_pg_buffercache_pages(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_numa_pages github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_buffercache_numa_pages
+func F_pg_finfo_pg_buffercache_numa_pages(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_summary github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_buffercache_summary
+func F_pg_finfo_pg_buffercache_summary(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_usage_counts github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_pg_buffercache_usage_counts
+func F_pg_finfo_pg_buffercache_usage_counts(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_evict github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_buffercache_evict
+func F_pg_finfo_pg_buffercache_evict(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_evict_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_pg_buffercache_evict_relation
+func F_pg_finfo_pg_buffercache_evict_relation(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_buffercache_evict_all github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_buffercache_evict_all
+func F_pg_finfo_pg_buffercache_evict_all(m *base.Module) int32
+//go:linkname F_pg_buffercache_pages github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_buffercache_pages
+func F_pg_buffercache_pages(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_numa_pages github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_buffercache_numa_pages
+func F_pg_buffercache_numa_pages(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_summary github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_buffercache_summary
+func F_pg_buffercache_summary(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_usage_counts github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_buffercache_usage_counts
+func F_pg_buffercache_usage_counts(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_evict github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_buffercache_evict
+func F_pg_buffercache_evict(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_evict_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_buffercache_evict_relation
+func F_pg_buffercache_evict_relation(m *base.Module, l0 int32) int32
+//go:linkname F_pg_buffercache_evict_all github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_buffercache_evict_all
+func F_pg_buffercache_evict_all(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

@@ -68,7 +68,7 @@ func F_HnswGetTypeInfo(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v34 int32
 	_ = v34
-	v3 = int32(4116160)
+	v3 = int32(4116336)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+216))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+204))
 	v8 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v7)+6)))
@@ -157,7 +157,7 @@ func F_HnswInitElement(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64,
 			return int32(0)
 		} else {
 			v19 = v12
-			v20 = int32(4637392)
+			v20 = int32(4637632)
 			v23 = *(*int64)(unsafe.Add(mBase, _consts[189]))
 			v24 = *(*int64)(unsafe.Add(mBase, _consts[190]))
 			v25 = v23 ^ v24
@@ -206,7 +206,7 @@ func F_HnswInitElement(m *base.Module, l0 int32, l1 int32, l2 int32, l3 float64,
 			return int32(0)
 		} else {
 			v19 = v17
-			v20 = int32(4637392)
+			v20 = int32(4637632)
 			v23 = *(*int64)(unsafe.Add(mBase, _consts[189]))
 			v24 = *(*int64)(unsafe.Add(mBase, _consts[190]))
 			v25 = v23 ^ v24
@@ -1238,7 +1238,7 @@ func F_HnswUpdateNeighborsOnDisk(m *base.Module, l0 int32, l1 int32, l2 int32, l
 	m.G0 = v27
 	v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v32 = int32(131072)
-	v35 = F_GenerationContextCreate(m, v30, int32(67332), v32, v32, v32)
+	v35 = F_GenerationContextCreate(m, v30, int32(67507), v32, v32, v32)
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -1320,7 +1320,7 @@ L8:
 	v102 = v66 + int32(8) + v94*int32(12)
 	v103 = *(*float32)(unsafe.Add(mBase, uint32(v102)+4))
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(v102)))
-	v105 = int32(4553888)
+	v105 = int32(4554128)
 	v106 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v55
 	*(*int32)(unsafe.Add(mBase, uint32(v46)+12)) = int32(-1)
@@ -1843,5 +1843,5 @@ L85:
 	return
 }
 func F_hnsw_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(4116176)
+	return int32(4116352)
 }

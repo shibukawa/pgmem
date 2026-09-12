@@ -271,7 +271,7 @@ func F_InstrStartParallelQuery(m *base.Module) {
 	_ = v16
 	var v20 int64
 	_ = v20
-	v4 = F__emscripten_memcpy_bulkmem(m, int32(4452312), int32(4452152), int32(128))
+	v4 = F__emscripten_memcpy_bulkmem(m, int32(4452552), int32(4452392), int32(128))
 	mBase = m.M
 	v8 = *(*int64)(unsafe.Add(mBase, _consts[74]))
 	*(*int64)(unsafe.Add(mBase, _consts[535])) = v8

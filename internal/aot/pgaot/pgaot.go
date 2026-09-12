@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7680)
-	m.G0 = int32(13119824)
+	m.T0 = make([]any, 7695)
+	m.G0 = int32(13120064)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -56,7 +56,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448267
+	m.DataEnd = 4448507
 	initData_0(m)
 	return m
 }
@@ -89,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7680)
-	m.G0 = int32(13119824)
+	m.T0 = make([]any, 7695)
+	m.G0 = int32(13120064)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -123,7 +123,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448267
+	m.DataEnd = 4448507
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -138,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7680)
-	m.G0 = int32(13119824)
+	m.T0 = make([]any, 7695)
+	m.G0 = int32(13120064)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -172,18 +172,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448267
+	m.DataEnd = 4448507
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1641040])
-	copy(m.Memory[1646368:], wasm2goData_data_bin[1641040:1641049])
-	copy(m.Memory[1648416:], wasm2goData_data_bin[1641049:1653977])
-	copy(m.Memory[1671172:], wasm2goData_data_bin[1653977:1747218])
-	copy(m.Memory[1765440:], wasm2goData_data_bin[1747218:1858874])
-	copy(m.Memory[1888312:], wasm2goData_data_bin[1858874:4122176])
-	copy(m.Memory[4159104:], wasm2goData_data_bin[4122176:4411339])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1641744])
+	copy(m.Memory[1647072:], wasm2goData_data_bin[1641744:1641753])
+	copy(m.Memory[1649120:], wasm2goData_data_bin[1641753:1654681])
+	copy(m.Memory[1671172:], wasm2goData_data_bin[1654681:1747922])
+	copy(m.Memory[1765440:], wasm2goData_data_bin[1747922:1859578])
+	copy(m.Memory[1888312:], wasm2goData_data_bin[1859578:4123056])
+	copy(m.Memory[4159280:], wasm2goData_data_bin[4123056:4412283])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5548,6 +5548,51 @@ func PgFinfoTupleDataSplit(m *base.Module) int32 {
 }
 func TupleDataSplit(m *base.Module, l0 int32) int32 {
 	return F_tuple_data_split(m, l0)
+}
+func PgMagicFuncPgBuffercache(m *base.Module) int32 {
+	return F_Pg_magic_func_pg_buffercache(m)
+}
+func PgBuffercacheEvict(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_evict(m, l0)
+}
+func PgBuffercacheEvictAll(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_evict_all(m, l0)
+}
+func PgBuffercacheEvictRelation(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_evict_relation(m, l0)
+}
+func PgBuffercacheNumaPages(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_numa_pages(m, l0)
+}
+func PgBuffercachePages(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_pages(m, l0)
+}
+func PgBuffercacheSummary(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_summary(m, l0)
+}
+func PgBuffercacheUsageCounts(m *base.Module, l0 int32) int32 {
+	return F_pg_buffercache_usage_counts(m, l0)
+}
+func PgFinfoPgBuffercacheEvict(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_evict(m)
+}
+func PgFinfoPgBuffercacheEvictAll(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_evict_all(m)
+}
+func PgFinfoPgBuffercacheEvictRelation(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_evict_relation(m)
+}
+func PgFinfoPgBuffercacheNumaPages(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_numa_pages(m)
+}
+func PgFinfoPgBuffercachePages(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_pages(m)
+}
+func PgFinfoPgBuffercacheSummary(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_summary(m)
+}
+func PgFinfoPgBuffercacheUsageCounts(m *base.Module) int32 {
+	return F_pg_finfo_pg_buffercache_usage_counts(m)
 }
 func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	F_HnswParallelBuildMain(m, l0, l1)

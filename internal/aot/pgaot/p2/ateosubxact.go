@@ -402,7 +402,7 @@ L6:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, _consts[1173]))
 	v34 = int32(0)
-	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4541904), v34, v34)
+	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4542144), v34, v34)
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -853,13 +853,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						} else {
 							v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-							F_errmsg_internal(m, int32(93470), v9)
+							F_errmsg_internal(m, int32(93645), v9)
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(522071), int32(3475), int32(243592))
+								F_errfinish(m, int32(522740), int32(3475), int32(244018))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -1109,13 +1109,13 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					} else {
 						v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34 + int32(4)
-						F_errmsg_internal(m, int32(93470), v9)
+						F_errmsg_internal(m, int32(93645), v9)
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(522071), int32(3475), int32(243592))
+							F_errfinish(m, int32(522740), int32(3475), int32(244018))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {
