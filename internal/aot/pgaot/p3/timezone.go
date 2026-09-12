@@ -762,7 +762,7 @@ func F_DecodeTimezoneAbbrev(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	v16 = v14 - int32(272)
 	m.G0 = v16
 	v19 = l0 * int32(20)
-	v21 = v19 + int32(4463680)
+	v21 = v19 + int32(4470304)
 	goto L5
 L1:
 	;
@@ -2157,7 +2157,7 @@ func F_show_timezone(m *base.Module) int32 {
 	if v3 != 0 {
 		v5 = v3
 	} else {
-		v5 = int32(241456)
+		v5 = int32(242380)
 	}
 	return v5
 }

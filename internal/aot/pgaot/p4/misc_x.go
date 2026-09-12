@@ -116,15 +116,15 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 						if v62 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(544122)
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = int32(546142)
 							*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v7
-							F_errmsg(m, int32(188409), v11+int32(16))
+							F_errmsg(m, int32(189002), v11+int32(16))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
 								return int32(0)
 							} else {
-								F_errsave_finish(m, v8, int32(488931), int32(1010), int32(227296))
+								F_errsave_finish(m, v8, int32(490743), int32(1010), int32(228127))
 								mBase = m.M
 								v75 = m.ExcPending
 								if v75 != 0 {
@@ -200,14 +200,14 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v7
-								*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = int32(544122)
-								F_errmsg(m, int32(704449), v11+int32(32))
+								*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = int32(546142)
+								F_errmsg(m, int32(706620), v11+int32(32))
 								mBase = m.M
 								v106 = m.ExcPending
 								if v106 != 0 {
 									return int32(0)
 								} else {
-									F_errsave_finish(m, v8, int32(488931), int32(1026), int32(227296))
+									F_errsave_finish(m, v8, int32(490743), int32(1026), int32(228127))
 									mBase = m.M
 									v111 = m.ExcPending
 									if v111 != 0 {
@@ -257,14 +257,14 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v7
-						*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(544122)
-						F_errmsg(m, int32(704449), v11)
+						*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(546142)
+						F_errmsg(m, int32(706620), v11)
 						mBase = m.M
 						v47 = m.ExcPending
 						if v47 != 0 {
 							return int32(0)
 						} else {
-							F_errsave_finish(m, v8, int32(488931), int32(1004), int32(227296))
+							F_errsave_finish(m, v8, int32(490743), int32(1004), int32(228127))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
@@ -313,14 +313,14 @@ func F_xid8in(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v7
-					*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(544122)
-					F_errmsg(m, int32(704449), v11)
+					*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(546142)
+					F_errmsg(m, int32(706620), v11)
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {
 						return int32(0)
 					} else {
-						F_errsave_finish(m, v8, int32(488931), int32(1004), int32(227296))
+						F_errsave_finish(m, v8, int32(490743), int32(1004), int32(228127))
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
@@ -364,17 +364,17 @@ func F_xmlparse(m *base.Module) int32 {
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(359491), int32(0))
+			F_errmsg(m, int32(360861), int32(0))
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(558348), int32(0))
+				F_errdetail(m, int32(560427), int32(0))
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492362), int32(1004), int32(357266))
+					F_errfinish(m, int32(494174), int32(1004), int32(358636))
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return int32(0)
@@ -409,17 +409,17 @@ func F_xmltext(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(359491), int32(0))
+			F_errmsg(m, int32(360861), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(558348), int32(0))
+				F_errdetail(m, int32(560427), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492362), int32(542), int32(62284))
+					F_errfinish(m, int32(494174), int32(542), int32(62397))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -454,17 +454,17 @@ func F_xpath_exists(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(359491), int32(0))
+			F_errmsg(m, int32(360861), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(558348), int32(0))
+				F_errdetail(m, int32(560427), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492362), int32(4579), int32(114584))
+					F_errfinish(m, int32(494174), int32(4579), int32(114991))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

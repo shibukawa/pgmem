@@ -115,7 +115,7 @@ func F_line_out(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v24
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v11
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(123)
-				v33 = F_psprintf(m, int32(495215), v7)
+				v33 = F_psprintf(m, int32(497034), v7)
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {

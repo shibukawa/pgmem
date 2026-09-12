@@ -53,6 +53,7 @@ var contribRegress = map[string][]string{
 	"tablefunc":     {"tablefunc"},
 	"intarray":      {"_int"},
 	"fuzzystrmatch": {"fuzzystrmatch", "fuzzystrmatch_utf8"},
+	"cube":          {"cube", "cube_sci"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

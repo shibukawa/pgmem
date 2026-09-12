@@ -94,7 +94,7 @@ func F_BumpContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = l1
 		*(*int64)(unsafe.Add(mBase, uint32(v13)+20)) = v58
 		*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = int32(1748444)
+		*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = int32(1752540)
 		if l0 != 0 {
 			v70 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 			*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v70
@@ -133,20 +133,20 @@ func F_BumpContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v99 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(13845), int32(0))
+					F_errmsg(m, int32(13869), int32(0))
 					mBase = m.M
 					v103 = m.ExcPending
 					if v103 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = l1
-						F_errdetail(m, int32(644226), v10)
+						F_errdetail(m, int32(646394), v10)
 						mBase = m.M
 						v107 = m.ExcPending
 						if v107 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(490877), int32(185), int32(351966))
+							F_errfinish(m, int32(492689), int32(185), int32(353323))
 							mBase = m.M
 							v112 = m.ExcPending
 							if v112 != 0 {

@@ -2532,6 +2532,8 @@ func F_float_overflow_error(m *base.Module)
 func F_float_underflow_error(m *base.Module)
 //go:linkname F_float_zero_divide_error github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_float_zero_divide_error
 func F_float_zero_divide_error(m *base.Module)
+//go:linkname F_float8in_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_float8in_internal
+func F_float8in_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
 //go:linkname F_float8out_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_float8out_internal
 func F_float8out_internal(m *base.Module, l0 float64) int32
 //go:linkname F_format_type_be github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_format_type_be
@@ -3952,6 +3954,14 @@ func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_intarray_add_elem(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_update_node github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_update_node
 func F_update_node(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32)
+//go:linkname F_cube_union_v0 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_union_v0
+func F_cube_union_v0(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_cube_yyparse github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_yyparse
+func F_cube_yyparse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_cube_yy_scan_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_yy_scan_bytes
+func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_cube_scanner_finish github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_scanner_finish
+func F_cube_scanner_finish(m *base.Module, l0 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

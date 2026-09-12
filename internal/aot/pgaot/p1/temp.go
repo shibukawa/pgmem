@@ -31,8 +31,8 @@ func F_TempTablespacePath(m *base.Module, l0 int32, l1 int32) {
 		v13 = int32(0)
 	}
 	if v13 == int32(0) {
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(233316)
-		v22 = F_pg_snprintf(m, l0, int32(1024), int32(175657), v6+int32(16))
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(234164)
+		v22 = F_pg_snprintf(m, l0, int32(1024), int32(176250), v6+int32(16))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -42,11 +42,11 @@ func F_TempTablespacePath(m *base.Module, l0 int32, l1 int32) {
 			return
 		}
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(233316)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(548650)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(234164)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = int32(550670)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(483853)
-		v33 = F_pg_snprintf(m, l0, int32(1024), int32(175553), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(485645)
+		v33 = F_pg_snprintf(m, l0, int32(1024), int32(176146), v6)
 		mBase = m.M
 		v34 = m.ExcPending
 		if v34 != 0 {

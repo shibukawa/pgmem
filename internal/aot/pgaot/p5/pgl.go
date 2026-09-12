@@ -12,10 +12,10 @@ func F_pgl_atexit(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v19 int32
 	_ = v19
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[1336]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[1338]))
 	if v6 <= int32(31) {
-		*(*int32)(unsafe.Add(mBase, _consts[1336])) = v6 + int32(1)
-		*(*int32)(unsafe.Add(mBase, uint32(v6<<(uint(int32(2))%32))+uint32(_consts[1337]))) = l0
+		*(*int32)(unsafe.Add(mBase, _consts[1338])) = v6 + int32(1)
+		*(*int32)(unsafe.Add(mBase, uint32(v6<<(uint(int32(2))%32))+uint32(_consts[1339]))) = l0
 		v19 = int32(0)
 	} else {
 		v19 = int32(-1)
@@ -54,7 +54,7 @@ func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1338])) = v8
+			*(*int32)(unsafe.Add(mBase, _consts[1340])) = v8
 			return v8
 		}
 	case 1:
@@ -65,11 +65,11 @@ func F_pgl_freopen(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1339])) = v17
+			*(*int32)(unsafe.Add(mBase, _consts[1341])) = v17
 			return v17
 		}
 	case 2:
-		v22 = *(*int32)(unsafe.Add(mBase, _consts[466]))
+		v22 = *(*int32)(unsafe.Add(mBase, _consts[467]))
 		v23 = F_freopen(m, l0, l1, v22)
 		mBase = m.M
 		v24 = m.ExcPending
@@ -89,7 +89,7 @@ func F_pgl_getMyProcPort(m *base.Module) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[380]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[381]))
 	return v2
 }
 func F_pgl_getPGliteExitStatus(m *base.Module) int32 {
@@ -97,14 +97,14 @@ func F_pgl_getPGliteExitStatus(m *base.Module) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[858]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[859]))
 	return v2
 }
 func F_pgl_set_rw_cbs(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1340])) = l1
-	*(*int32)(unsafe.Add(mBase, _consts[1341])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[1342])) = l1
+	*(*int32)(unsafe.Add(mBase, _consts[1343])) = l0
 	return
 }
 func F_pgl_startPGlite(m *base.Module) {
@@ -149,7 +149,7 @@ func F_pgl_startPGlite(m *base.Module) {
 	v4 = m.G0
 	v6 = v4 - int32(144)
 	m.G0 = v6
-	v8 = int32(4480304)
+	v8 = int32(4486928)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v12 = *(*int32)(unsafe.Add(mBase, _consts[146]))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v12
@@ -169,14 +169,14 @@ func F_pgl_startPGlite(m *base.Module) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[9])) = v9
-		*(*int32)(unsafe.Add(mBase, _consts[380])) = v54
-		*(*int32)(unsafe.Add(mBase, _consts[281])) = int32(2)
+		*(*int32)(unsafe.Add(mBase, _consts[381])) = v54
+		*(*int32)(unsafe.Add(mBase, _consts[282])) = int32(2)
 		v64 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[19])) = v64
-		*(*uint8)(unsafe.Add(mBase, _consts[810])) = uint8(v64)
+		*(*uint8)(unsafe.Add(mBase, _consts[811])) = uint8(v64)
 		*(*uint8)(unsafe.Add(mBase, _consts[184])) = uint8(v64)
 		v73 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[811])) = uint8(v73)
+		*(*uint8)(unsafe.Add(mBase, _consts[812])) = uint8(v73)
 		v75 = F_load_hba(m)
 		mBase = m.M
 		v76 = m.ExcPending
@@ -190,15 +190,15 @@ func F_pgl_startPGlite(m *base.Module) {
 				if v82 != 0 {
 					return
 				} else {
-					v84 = *(*int32)(unsafe.Add(mBase, _consts[812]))
+					v84 = *(*int32)(unsafe.Add(mBase, _consts[813]))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v84
-					F_errmsg(m, int32(195676), v6)
+					F_errmsg(m, int32(196269), v6)
 					mBase = m.M
 					v88 = m.ExcPending
 					if v88 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(489141), int32(260), int32(347068))
+						F_errfinish(m, int32(490953), int32(260), int32(348376))
 						mBase = m.M
 						v93 = m.ExcPending
 						if v93 != 0 {

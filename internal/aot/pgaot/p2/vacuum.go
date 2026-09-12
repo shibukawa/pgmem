@@ -114,7 +114,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v28
 					*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v27
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v20
-					F_errcontext_msg(m, int32(670754), v8+int32(16))
+					F_errcontext_msg(m, int32(672925), v8+int32(16))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -127,7 +127,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 					v37 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
 					*(*int64)(unsafe.Add(mBase, uint32(v8)+36)) = v37
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v20
-					F_errcontext_msg(m, int32(670863), v8+int32(32))
+					F_errcontext_msg(m, int32(673034), v8+int32(32))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
@@ -147,7 +147,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v48 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
 				*(*int64)(unsafe.Add(mBase, uint32(v8))) = v48
-				F_errcontext_msg(m, int32(670689), v8)
+				F_errcontext_msg(m, int32(672860), v8)
 				mBase = m.M
 				v52 = m.ExcPending
 				if v52 != 0 {
@@ -171,7 +171,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+104)) = v100
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+100)) = v99
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+96)) = v98
-			F_errcontext_msg(m, int32(671001), v8+int32(96))
+			F_errcontext_msg(m, int32(673172), v8+int32(96))
 			mBase = m.M
 			v108 = m.ExcPending
 			if v108 != 0 {
@@ -198,7 +198,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v68
 					*(*int64)(unsafe.Add(mBase, uint32(v8)+72)) = v67
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v60
-					F_errcontext_msg(m, int32(670808), v8-int32(-64))
+					F_errcontext_msg(m, int32(672979), v8-int32(-64))
 					mBase = m.M
 					v76 = m.ExcPending
 					if v76 != 0 {
@@ -211,7 +211,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 					v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
 					*(*int64)(unsafe.Add(mBase, uint32(v8)+84)) = v77
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+80)) = v60
-					F_errcontext_msg(m, int32(670907), v8+int32(80))
+					F_errcontext_msg(m, int32(673078), v8+int32(80))
 					mBase = m.M
 					v84 = m.ExcPending
 					if v84 != 0 {
@@ -231,7 +231,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v88 = *(*int64)(unsafe.Add(mBase, uint32(l0)+72))
 				*(*int64)(unsafe.Add(mBase, uint32(v8)+48)) = v88
-				F_errcontext_msg(m, int32(670721), v8+int32(48))
+				F_errcontext_msg(m, int32(672892), v8+int32(48))
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
@@ -255,7 +255,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+120)) = v114
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+116)) = v113
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+112)) = v112
-			F_errcontext_msg(m, int32(670952), v8+int32(112))
+			F_errcontext_msg(m, int32(673123), v8+int32(112))
 			mBase = m.M
 			v122 = m.ExcPending
 			if v122 != 0 {
@@ -281,7 +281,7 @@ func F_vacuum_error_callback(m *base.Module, l0 int32) {
 				v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+84))
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+136)) = v130
 				*(*int64)(unsafe.Add(mBase, uint32(v8)+128)) = v129
-				F_errcontext_msg(m, int32(152511), v8+int32(128))
+				F_errcontext_msg(m, int32(152993), v8+int32(128))
 				mBase = m.M
 				v137 = m.ExcPending
 				if v137 != 0 {

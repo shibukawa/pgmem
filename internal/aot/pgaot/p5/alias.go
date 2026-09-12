@@ -4728,6 +4728,16 @@ func F_intarray_add_elem(m *base.Module, l0 int32, l1 int32) int32
 func F_int_to_intset(m *base.Module, l0 int32) int32
 //go:linkname F_hemdist_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hemdist_3
 func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_cube_union_v0 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_union_v0
+func F_cube_union_v0(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_cube_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_yyensure_buffer_stack
+func F_cube_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_cube_yy_create_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_yy_create_buffer
+func F_cube_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_yy_fatal_error_6 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_yy_fatal_error_6
+func F_yy_fatal_error_6(m *base.Module, l0 int32)
+//go:linkname F_cube_yyrestart github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_yyrestart
+func F_cube_yyrestart(m *base.Module, l0 int32, l1 int32)
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

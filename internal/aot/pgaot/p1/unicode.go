@@ -509,20 +509,20 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 				v89 = int32(8191)
 				v100 = int32(13687)
 				v101 = base.I32_rem_u_s(v74+(v80+(v86+v88*v89)*v89)*v89+int32(402620417), v100)
-				v106 = int32(*(*int16)(unsafe.Add(mBase, uint32(v101<<(uint(v72)%32))+uint32(_consts[1256]))))
+				v106 = int32(*(*int16)(unsafe.Add(mBase, uint32(v101<<(uint(v72)%32))+uint32(_consts[1255]))))
 				v107 = int32(257)
 				v117 = base.I32_rem_u_s(((v88*v107+v86)*v107+v80)*v107+v74, v100)
-				v122 = int32(*(*int16)(unsafe.Add(mBase, uint32(v117<<(uint(v72)%32))+uint32(_consts[1256]))))
+				v122 = int32(*(*int16)(unsafe.Add(mBase, uint32(v117<<(uint(v72)%32))+uint32(_consts[1255]))))
 				v123 = v106 + v122
 				if base.Ui32(int32(6842)) < base.Ui32(v123) {
 					v176 = v72
 				} else {
 					v127 = v123 << (uint(int32(3)) % 32)
-					v130 = *(*int32)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1257])))
+					v130 = *(*int32)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1256])))
 					if v37 != v130 {
 						v176 = v72
 					} else {
-						v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1258]))))
+						v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1257]))))
 						v134 = v132 & int32(31)
 						if v134 == int32(0) {
 							v176 = v72
@@ -535,15 +535,15 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 							if v140 == int32(0) {
 								v176 = v72
 							} else {
-								v143 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1259]))))
+								v143 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1258]))))
 								if v132&int32(64) != 0 {
-									v146 = int32(4563824)
-									*(*int32)(unsafe.Add(mBase, _consts[1260])) = v143
+									v146 = int32(4570448)
+									*(*int32)(unsafe.Add(mBase, _consts[1259])) = v143
 									v154 = int32(1)
 									v155 = v146
 								} else {
 									v154 = v134
-									v155 = v143<<(uint(int32(2))%32) + int32(2041408)
+									v155 = v143<<(uint(int32(2))%32) + int32(2045504)
 								}
 								v156 = int32(0)
 								v158 = v156
@@ -646,10 +646,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 						v337 = int32(13687)
 						v338 = base.I32_rem_u_s(v311+(v317+(v323+v325*v326)*v326)*v326+int32(402620417), v337)
 						v339 = int32(1)
-						v343 = int32(*(*int16)(unsafe.Add(mBase, uint32(v338<<(uint(v339)%32))+uint32(_consts[1256]))))
+						v343 = int32(*(*int16)(unsafe.Add(mBase, uint32(v338<<(uint(v339)%32))+uint32(_consts[1255]))))
 						v344 = int32(257)
 						v354 = base.I32_rem_u_s(((v325*v344+v323)*v344+v317)*v344+v311, v337)
-						v359 = int32(*(*int16)(unsafe.Add(mBase, uint32(v354<<(uint(v339)%32))+uint32(_consts[1256]))))
+						v359 = int32(*(*int16)(unsafe.Add(mBase, uint32(v354<<(uint(v339)%32))+uint32(_consts[1255]))))
 						v360 = v343 + v359
 						if base.Ui32(int32(6842)) < base.Ui32(v360) {
 							v381 = *(*int32)(unsafe.Add(mBase, uint32(v256)))
@@ -659,7 +659,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(v258))) = v394 + int32(1)
 						} else {
 							v364 = v360 << (uint(int32(3)) % 32)
-							v367 = *(*int32)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1257])))
+							v367 = *(*int32)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1256])))
 							if v236 != v367 {
 								v381 = *(*int32)(unsafe.Add(mBase, uint32(v256)))
 								v382 = *(*int32)(unsafe.Add(mBase, uint32(v258)))
@@ -667,7 +667,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 								v394 = *(*int32)(unsafe.Add(mBase, uint32(v258)))
 								*(*int32)(unsafe.Add(mBase, uint32(v258))) = v394 + int32(1)
 							} else {
-								v369 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1258]))))
+								v369 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1257]))))
 								v371 = v369 & int32(31)
 								if v371 == int32(0) {
 									v381 = *(*int32)(unsafe.Add(mBase, uint32(v256)))
@@ -677,15 +677,15 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 									*(*int32)(unsafe.Add(mBase, uint32(v258))) = v394 + int32(1)
 								} else {
 									if v29 == int32(2) {
-										v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1259]))))
+										v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1258]))))
 										if v369&int32(64) != 0 {
-											v401 = int32(4563824)
-											*(*int32)(unsafe.Add(mBase, _consts[1260])) = v398
+											v401 = int32(4570448)
+											*(*int32)(unsafe.Add(mBase, _consts[1259])) = v398
 											v409 = int32(1)
 											v410 = v401
 										} else {
 											v409 = v371
-											v410 = v398<<(uint(int32(2))%32) + int32(2041408)
+											v410 = v398<<(uint(int32(2))%32) + int32(2045504)
 										}
 										v412 = int32(0)
 										for {
@@ -703,15 +703,15 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 										}
 									} else {
 										if v369&int32(32) == int32(0) {
-											v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1259]))))
+											v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1258]))))
 											if v369&int32(64) != 0 {
-												v401 = int32(4563824)
-												*(*int32)(unsafe.Add(mBase, _consts[1260])) = v398
+												v401 = int32(4570448)
+												*(*int32)(unsafe.Add(mBase, _consts[1259])) = v398
 												v409 = int32(1)
 												v410 = v401
 											} else {
 												v409 = v371
-												v410 = v398<<(uint(int32(2))%32) + int32(2041408)
+												v410 = v398<<(uint(int32(2))%32) + int32(2045504)
 											}
 											v412 = int32(0)
 											for {
@@ -778,20 +778,20 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 						v541 = int32(13687)
 						v542 = base.I32_rem_u_s(((v515*v516+v523)*v516+v532)*v516+v537+int32(402620417), v541)
 						v543 = int32(1)
-						v547 = int32(*(*int16)(unsafe.Add(mBase, uint32(v542<<(uint(v543)%32))+uint32(_consts[1256]))))
+						v547 = int32(*(*int16)(unsafe.Add(mBase, uint32(v542<<(uint(v543)%32))+uint32(_consts[1255]))))
 						v548 = int32(257)
 						v558 = base.I32_rem_u_s(((v515*v548+v523)*v548+v532)*v548+v537, v541)
-						v563 = int32(*(*int16)(unsafe.Add(mBase, uint32(v558<<(uint(v543)%32))+uint32(_consts[1256]))))
+						v563 = int32(*(*int16)(unsafe.Add(mBase, uint32(v558<<(uint(v543)%32))+uint32(_consts[1255]))))
 						v564 = v547 + v563
 						if base.Ui32(int32(6842)) < base.Ui32(v564) {
 							v575 = v511
 						} else {
 							v568 = v564 << (uint(int32(3)) % 32)
-							v571 = *(*int32)(unsafe.Add(mBase, uint32(v568)+uint32(_consts[1257])))
+							v571 = *(*int32)(unsafe.Add(mBase, uint32(v568)+uint32(_consts[1256])))
 							if v513 != v571 {
 								v575 = v511
 							} else {
-								v573 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v568)+uint32(_consts[1261]))))
+								v573 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v568)+uint32(_consts[1260]))))
 								v575 = v573
 							}
 						}
@@ -804,16 +804,16 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 						v603 = int32(13687)
 						v604 = base.I32_rem_u_s(v577+(v583+(v589+v591*v592)*v592)*v592+int32(402620417), v603)
 						v605 = int32(1)
-						v609 = int32(*(*int16)(unsafe.Add(mBase, uint32(v604<<(uint(v605)%32))+uint32(_consts[1256]))))
+						v609 = int32(*(*int16)(unsafe.Add(mBase, uint32(v604<<(uint(v605)%32))+uint32(_consts[1255]))))
 						v610 = int32(257)
 						v620 = base.I32_rem_u_s(((v591*v610+v589)*v610+v583)*v610+v577, v603)
-						v625 = int32(*(*int16)(unsafe.Add(mBase, uint32(v620<<(uint(v605)%32))+uint32(_consts[1256]))))
+						v625 = int32(*(*int16)(unsafe.Add(mBase, uint32(v620<<(uint(v605)%32))+uint32(_consts[1255]))))
 						v626 = v609 + v625
 						if base.Ui32(int32(6842)) < base.Ui32(v626) {
 							v650 = v485
 						} else {
 							v630 = v626 << (uint(int32(3)) % 32)
-							v633 = *(*int32)(unsafe.Add(mBase, uint32(v630)+uint32(_consts[1257])))
+							v633 = *(*int32)(unsafe.Add(mBase, uint32(v630)+uint32(_consts[1256])))
 							if v510 != v633 {
 								v650 = v485
 							} else {
@@ -821,7 +821,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 								if v636 == int32(0) {
 									v650 = v485
 								} else {
-									v639 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v630)+uint32(_consts[1261]))))
+									v639 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v630)+uint32(_consts[1260]))))
 									if v639 == int32(0) {
 										v650 = v485
 									} else {
@@ -889,20 +889,20 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 									v748 = int32(13687)
 									v749 = base.I32_rem_u_s(((v722*v723+v730)*v723+v739)*v723+v744+int32(402620417), v748)
 									v750 = int32(1)
-									v754 = int32(*(*int16)(unsafe.Add(mBase, uint32(v749<<(uint(v750)%32))+uint32(_consts[1256]))))
+									v754 = int32(*(*int16)(unsafe.Add(mBase, uint32(v749<<(uint(v750)%32))+uint32(_consts[1255]))))
 									v755 = int32(257)
 									v765 = base.I32_rem_u_s(((v722*v755+v730)*v755+v739)*v755+v744, v748)
-									v770 = int32(*(*int16)(unsafe.Add(mBase, uint32(v765<<(uint(v750)%32))+uint32(_consts[1256]))))
+									v770 = int32(*(*int16)(unsafe.Add(mBase, uint32(v765<<(uint(v750)%32))+uint32(_consts[1255]))))
 									v771 = v754 + v770
 									if base.Ui32(int32(6842)) < base.Ui32(v771) {
 										v781 = v716
 									} else {
 										v775 = v771 << (uint(int32(3)) % 32)
-										v778 = *(*int32)(unsafe.Add(mBase, uint32(v775)+uint32(_consts[1257])))
+										v778 = *(*int32)(unsafe.Add(mBase, uint32(v775)+uint32(_consts[1256])))
 										if v720 != v778 {
 											v781 = v716
 										} else {
-											v780 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v775)+uint32(_consts[1261]))))
+											v780 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v775)+uint32(_consts[1260]))))
 											v781 = v780
 										}
 									}
@@ -958,10 +958,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 												v906 = int32(1923)
 												v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 												v908 = int32(1)
-												v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+												v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 												v913 = int32(257)
 												v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-												v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+												v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 												v941 = v912 + v940
 												if base.Ui32(int32(960)) < base.Ui32(v941) {
 													*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -985,11 +985,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 													v1007 = v999
 													v1010 = v998
 												} else {
-													v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+													v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 													v950 = v948 << (uint(int32(3)) % 32)
-													v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+													v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 													v955 = v953 << (uint(int32(2)) % 32)
-													v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+													v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 													if v696 != v958 {
 														*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 														if v784 != 0 {
@@ -1012,7 +1012,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 														v1007 = v999
 														v1010 = v998
 													} else {
-														v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+														v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 														if v720 != v962 {
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 															if v784 != 0 {
@@ -1035,7 +1035,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v1007 = v999
 															v1010 = v998
 														} else {
-															v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+															v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 															v979 = v966
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 															v1003 = v693
@@ -1074,10 +1074,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 													v906 = int32(1923)
 													v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 													v908 = int32(1)
-													v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+													v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 													v913 = int32(257)
 													v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-													v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+													v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 													v941 = v912 + v940
 													if base.Ui32(int32(960)) < base.Ui32(v941) {
 														*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -1101,11 +1101,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 														v1007 = v999
 														v1010 = v998
 													} else {
-														v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+														v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 														v950 = v948 << (uint(int32(3)) % 32)
-														v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+														v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 														v955 = v953 << (uint(int32(2)) % 32)
-														v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+														v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 														if v696 != v958 {
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 															if v784 != 0 {
@@ -1128,7 +1128,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v1007 = v999
 															v1010 = v998
 														} else {
-															v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+															v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 															if v720 != v962 {
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																if v784 != 0 {
@@ -1151,7 +1151,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																v1007 = v999
 																v1010 = v998
 															} else {
-																v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+																v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 																v979 = v966
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 																v1003 = v693
@@ -1190,10 +1190,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 														v906 = int32(1923)
 														v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 														v908 = int32(1)
-														v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+														v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 														v913 = int32(257)
 														v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-														v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+														v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 														v941 = v912 + v940
 														if base.Ui32(int32(960)) < base.Ui32(v941) {
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -1217,11 +1217,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v1007 = v999
 															v1010 = v998
 														} else {
-															v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+															v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 															v950 = v948 << (uint(int32(3)) % 32)
-															v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+															v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 															v955 = v953 << (uint(int32(2)) % 32)
-															v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+															v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 															if v696 != v958 {
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																if v784 != 0 {
@@ -1244,7 +1244,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																v1007 = v999
 																v1010 = v998
 															} else {
-																v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+																v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 																if v720 != v962 {
 																	*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																	if v784 != 0 {
@@ -1267,7 +1267,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																	v1007 = v999
 																	v1010 = v998
 																} else {
-																	v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+																	v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 																	v979 = v966
 																	*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 																	v1003 = v693
@@ -1317,10 +1317,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 													v906 = int32(1923)
 													v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 													v908 = int32(1)
-													v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+													v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 													v913 = int32(257)
 													v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-													v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+													v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 													v941 = v912 + v940
 													if base.Ui32(int32(960)) < base.Ui32(v941) {
 														*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -1344,11 +1344,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 														v1007 = v999
 														v1010 = v998
 													} else {
-														v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+														v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 														v950 = v948 << (uint(int32(3)) % 32)
-														v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+														v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 														v955 = v953 << (uint(int32(2)) % 32)
-														v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+														v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 														if v696 != v958 {
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 															if v784 != 0 {
@@ -1371,7 +1371,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v1007 = v999
 															v1010 = v998
 														} else {
-															v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+															v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 															if v720 != v962 {
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																if v784 != 0 {
@@ -1394,7 +1394,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																v1007 = v999
 																v1010 = v998
 															} else {
-																v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+																v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 																v979 = v966
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 																v1003 = v693
@@ -1433,10 +1433,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 														v906 = int32(1923)
 														v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 														v908 = int32(1)
-														v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+														v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 														v913 = int32(257)
 														v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-														v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+														v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 														v941 = v912 + v940
 														if base.Ui32(int32(960)) < base.Ui32(v941) {
 															*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -1460,11 +1460,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v1007 = v999
 															v1010 = v998
 														} else {
-															v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+															v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 															v950 = v948 << (uint(int32(3)) % 32)
-															v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+															v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 															v955 = v953 << (uint(int32(2)) % 32)
-															v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+															v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 															if v696 != v958 {
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																if v784 != 0 {
@@ -1487,7 +1487,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																v1007 = v999
 																v1010 = v998
 															} else {
-																v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+																v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 																if v720 != v962 {
 																	*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																	if v784 != 0 {
@@ -1510,7 +1510,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																	v1007 = v999
 																	v1010 = v998
 																} else {
-																	v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+																	v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 																	v979 = v966
 																	*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 																	v1003 = v693
@@ -1549,10 +1549,10 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 															v906 = int32(1923)
 															v907 = base.I32_rem_u_s(((((((v841*v842+v847)*v842+v854)*v842+v859)*v842+v869)*v842+v892)*v842+v898)*v842+v904, v906)
 															v908 = int32(1)
-															v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1262]))))
+															v912 = int32(*(*int16)(unsafe.Add(mBase, uint32(v907<<(uint(v908)%32))+uint32(_consts[1261]))))
 															v913 = int32(257)
 															v935 = base.I32_rem_u_s(((((((v841*v913+v847)*v913+v854)*v913+v859)*v913+v869)*v913+v892)*v913+v898)*v913+v904, v906)
-															v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1262]))))
+															v940 = int32(*(*int16)(unsafe.Add(mBase, uint32(v935<<(uint(v908)%32))+uint32(_consts[1261]))))
 															v941 = v912 + v940
 															if base.Ui32(int32(960)) < base.Ui32(v941) {
 																*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
@@ -1576,11 +1576,11 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																v1007 = v999
 																v1010 = v998
 															} else {
-																v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1263]))))
+																v948 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v941<<(uint(int32(1))%32))+uint32(_consts[1262]))))
 																v950 = v948 << (uint(int32(3)) % 32)
-																v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1259]))))
+																v953 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1258]))))
 																v955 = v953 << (uint(int32(2)) % 32)
-																v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
+																v958 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1263])))
 																if v696 != v958 {
 																	*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																	if v784 != 0 {
@@ -1603,7 +1603,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																	v1007 = v999
 																	v1010 = v998
 																} else {
-																	v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1265])))
+																	v962 = *(*int32)(unsafe.Add(mBase, uint32(v955)+uint32(_consts[1264])))
 																	if v720 != v962 {
 																		*(*int32)(unsafe.Add(mBase, uint32(v679+v693<<(uint(int32(2))%32)))) = v720
 																		if v784 != 0 {
@@ -1626,7 +1626,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 																		v1007 = v999
 																		v1010 = v998
 																	} else {
-																		v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1257])))
+																		v966 = *(*int32)(unsafe.Add(mBase, uint32(v950)+uint32(_consts[1256])))
 																		v979 = v966
 																		*(*int32)(unsafe.Add(mBase, uint32(v679+v704<<(uint(int32(2))%32)))) = v979
 																		v1003 = v693

@@ -310,7 +310,7 @@ func F_get_collation_actual_version_builtin(m *base.Module, l0 int32) int32 {
 L1:
 	;
 	m.G0 = v5 + int32(16)
-	return int32(549222)
+	return int32(551242)
 L2:
 	;
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
@@ -324,8 +324,8 @@ L3:
 	goto L4
 L4:
 	;
-	v13 = int32(544486)
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[808])))
+	v13 = int32(546506)
+	v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[809])))
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v17 == int32(0) {
 		v36 = v16
@@ -392,8 +392,8 @@ L13:
 	goto L11
 L14:
 	;
-	v41 = int32(511969)
-	v44 = int32(*(*uint8)(unsafe.Add(mBase, _consts[809])))
+	v41 = int32(513870)
+	v44 = int32(*(*uint8)(unsafe.Add(mBase, _consts[810])))
 	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v45 == int32(0) {
 		v64 = v44
@@ -481,7 +481,7 @@ L25:
 L26:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	F_errmsg(m, int32(225541), v5)
+	F_errmsg(m, int32(226372), v5)
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -491,7 +491,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(491500), int32(189), int32(272658))
+	F_errfinish(m, int32(493312), int32(189), int32(273680))
 	mBase = m.M
 	v86 = m.ExcPending
 	if v86 != 0 {
@@ -630,7 +630,7 @@ func F_merge_collation_state(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v56
 									*(*int32)(unsafe.Add(mBase, uint32(v11))) = v54
-									F_errmsg(m, int32(701962), v11)
+									F_errmsg(m, int32(704133), v11)
 									mBase = m.M
 									v62 = m.ExcPending
 									if v62 != 0 {
@@ -643,7 +643,7 @@ func F_merge_collation_state(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 										if v65 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(493513), int32(858), int32(348251))
+											F_errfinish(m, int32(495325), int32(858), int32(349608))
 											mBase = m.M
 											v70 = m.ExcPending
 											if v70 != 0 {

@@ -163,20 +163,20 @@ func F_dshash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v88 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(13845), int32(0))
+									F_errmsg(m, int32(13869), int32(0))
 									mBase = m.M
 									v92 = m.ExcPending
 									if v92 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(512)
-										F_errdetail(m, int32(556734), v11)
+										F_errdetail(m, int32(558813), v11)
 										mBase = m.M
 										v97 = m.ExcPending
 										if v97 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(492906), int32(255), int32(351854))
+											F_errfinish(m, int32(494718), int32(255), int32(353211))
 											mBase = m.M
 											v102 = m.ExcPending
 											if v102 != 0 {

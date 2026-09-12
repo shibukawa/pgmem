@@ -172,7 +172,7 @@ func F_utf8_to_big5(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4362676), v18, v18, v18, int32(36), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4369236), v18, v18, v18, int32(36), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -218,7 +218,7 @@ func F_utf8_to_euc_jis_2004(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v17 = int32(0)
-		v27 = F_UtfToLocal(m, v6, v10, v5, int32(4363092), int32(2331232), int32(25), v17, int32(5), base.B2i32(v7 != v17))
+		v27 = F_UtfToLocal(m, v6, v10, v5, int32(4369652), int32(2336384), int32(25), v17, int32(5), base.B2i32(v7 != v17))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -264,7 +264,7 @@ func F_utf8_to_euc_kr(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4363572), v18, v18, v18, int32(3), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4370132), v18, v18, v18, int32(3), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -345,13 +345,13 @@ func F_utf8_to_iso8859_1(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v10))) = v16
-					F_errmsg(m, int32(123085), v10)
+					F_errmsg(m, int32(123492), v10)
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(495133), int32(169), int32(542373))
+						F_errfinish(m, int32(496952), int32(169), int32(544274))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -379,13 +379,13 @@ func F_utf8_to_iso8859_1(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v16
-						F_errmsg(m, int32(123085), v10)
+						F_errmsg(m, int32(123492), v10)
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(495133), int32(169), int32(542373))
+							F_errfinish(m, int32(496952), int32(169), int32(544274))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -451,7 +451,7 @@ func F_utf8_to_koi8r(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4362788), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4369348), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {

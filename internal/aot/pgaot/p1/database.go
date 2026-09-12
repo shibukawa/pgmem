@@ -12,7 +12,7 @@ func F_GetDatabaseEncodingName(m *base.Module) int32 {
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[357]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[356]))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)))
 	return v3
 }
@@ -279,7 +279,7 @@ L14:
 	goto L15
 L15:
 	;
-	v60 = int32(4480304)
+	v60 = int32(4486928)
 	v61 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v14
 	v65 = F_palloc(m, int32(20))
@@ -301,7 +301,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v39 + int32(4)
-	F_errmsg_internal(m, int32(693119), v11)
+	F_errmsg_internal(m, int32(695290), v11)
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -311,7 +311,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(492031), int32(1842), int32(73483))
+	F_errfinish(m, int32(493843), int32(1842), int32(73660))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -506,13 +506,13 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-											F_errmsg(m, int32(71698), v10)
+											F_errmsg(m, int32(71875), v10)
 											mBase = m.M
 											v55 = m.ExcPending
 											if v55 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489260), int32(3202), int32(430386))
+												F_errfinish(m, int32(491072), int32(3202), int32(432085))
 												mBase = m.M
 												v60 = m.ExcPending
 												if v60 != 0 {

@@ -76,13 +76,13 @@ func F_get_language_name(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-					F_errmsg_internal(m, int32(51729), v8)
+					F_errmsg_internal(m, int32(51842), v8)
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494169), int32(1270), int32(376621))
+						F_errfinish(m, int32(495981), int32(1270), int32(378029))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -145,7 +145,7 @@ func F_has_language_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(1636672))
+		v22 = F_convert_any_priv_string(m, v14, int32(1640768))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -231,7 +231,7 @@ func F_has_language_privilege_id_name(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					v20 = F_convert_any_priv_string(m, v11, int32(1636672))
+					v20 = F_convert_any_priv_string(m, v11, int32(1640768))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
@@ -281,14 +281,14 @@ func F_language_handler_in(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(217958)
-			F_errmsg(m, int32(190968), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(218609)
+			F_errmsg(m, int32(191561), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(489163), int32(368), int32(276743))
+				F_errfinish(m, int32(490975), int32(368), int32(277793))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

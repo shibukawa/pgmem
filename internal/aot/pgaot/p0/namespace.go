@@ -48,7 +48,7 @@ func F_LookupNamespaceNoError(m *base.Module, l0 int32) int32 {
 	_ = v53
 	var v55 int32
 	_ = v55
-	v2 = int32(233532)
+	v2 = int32(234380)
 	v5 = int32(*(*uint8)(unsafe.Add(mBase, _consts[214])))
 	v6 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v6 == int32(0) {
@@ -674,7 +674,7 @@ L12:
 	}
 L13:
 	;
-	v33 = int32(4480304)
+	v33 = int32(4486928)
 	v34 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v37 = *(*int32)(unsafe.Add(mBase, _consts[212]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v37
@@ -755,7 +755,7 @@ L22:
 	;
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
 	v71 = *(*int32)(unsafe.Add(mBase, uint32(v67+v58<<(uint(int32(2))%32))))
-	v72 = int32(215972)
+	v72 = int32(216623)
 	v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[213])))
 	v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
 	if v76 == int32(0) {
@@ -848,7 +848,7 @@ L34:
 	goto L35
 L35:
 	;
-	v126 = int32(233532)
+	v126 = int32(234380)
 	v129 = int32(*(*uint8)(unsafe.Add(mBase, _consts[214])))
 	v130 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71))))
 	if v130 == int32(0) {
@@ -1128,7 +1128,7 @@ L72:
 	;
 	v221 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = v221
-	v223 = int32(4480304)
+	v223 = int32(4486928)
 	v224 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v227 = *(*int32)(unsafe.Add(mBase, _consts[212]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v227
@@ -1306,7 +1306,7 @@ L98:
 	goto L76
 L99:
 	;
-	F_errmsg_internal(m, int32(29321), int32(0))
+	F_errmsg_internal(m, int32(29387), int32(0))
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {
@@ -1316,7 +1316,7 @@ L99:
 	}
 L100:
 	;
-	F_errfinish(m, int32(494504), int32(4126), int32(319010))
+	F_errfinish(m, int32(496316), int32(4126), int32(320178))
 	mBase = m.M
 	v317 = m.ExcPending
 	if v317 != 0 {
@@ -1566,7 +1566,7 @@ L139:
 	goto L1
 L140:
 	;
-	v462 = int32(4480304)
+	v462 = int32(4486928)
 	v463 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v466 = *(*int32)(unsafe.Add(mBase, _consts[87]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v466
@@ -1634,7 +1634,7 @@ L146:
 	*(*int32)(unsafe.Add(mBase, _consts[216])) = v468
 	*(*int32)(unsafe.Add(mBase, _consts[217])) = v479
 	*(*uint8)(unsafe.Add(mBase, _consts[219])) = uint8(v482)
-	v492 = int32(4095112)
+	v492 = int32(4101672)
 	v494 = *(*int64)(unsafe.Add(mBase, _consts[220]))
 	*(*int64)(unsafe.Add(mBase, _consts[220])) = v494 + int64(1)
 	v499 = int32(0)

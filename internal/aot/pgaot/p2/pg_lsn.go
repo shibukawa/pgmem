@@ -43,7 +43,7 @@ func F_pg_lsn_mi(m *base.Module, l0 int32) int32 {
 	v12 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
 	if base.Ui64(v10) < base.Ui64(v12) {
 		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v12 - v10
-		v20 = F_pg_snprintf(m, v7+int32(32), int32(256), int32(37666), v7)
+		v20 = F_pg_snprintf(m, v7+int32(32), int32(256), int32(37779), v7)
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -62,7 +62,7 @@ func F_pg_lsn_mi(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+16)) = v10 - v12
-		v32 = F_pg_snprintf(m, v7+int32(32), int32(256), int32(38081), v7+int32(16))
+		v32 = F_pg_snprintf(m, v7+int32(32), int32(256), int32(38194), v7+int32(16))
 		mBase = m.M
 		v33 = m.ExcPending
 		if v33 != 0 {

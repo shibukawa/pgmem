@@ -186,7 +186,7 @@ L11:
 	goto L10
 L12:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -212,7 +212,7 @@ L14:
 	;
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v60
-	F_errmsg_internal(m, int32(479377), v12)
+	F_errmsg_internal(m, int32(481169), v12)
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -222,7 +222,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(494998), int32(1367), int32(149173))
+	F_errfinish(m, int32(496817), int32(1367), int32(149655))
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {
@@ -258,23 +258,23 @@ func F_plpgsql_adddatum(m *base.Module, l0 int32) {
 	_ = v32
 	var v33 int32
 	_ = v33
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[1041]))
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1042]))
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[1043]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[1042]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1043]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
 	if v11 == v14 {
-		*(*int32)(unsafe.Add(mBase, _consts[1043])) = v11 << (uint(int32(1)) % 32)
+		*(*int32)(unsafe.Add(mBase, _consts[1044])) = v11 << (uint(int32(1)) % 32)
 		v26 = F_repalloc(m, v8, v11<<(uint(int32(3))%32))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1041])) = v26
-			v31 = *(*int32)(unsafe.Add(mBase, _consts[1042]))
+			*(*int32)(unsafe.Add(mBase, _consts[1042])) = v26
+			v31 = *(*int32)(unsafe.Add(mBase, _consts[1043]))
 			v32 = v31
 			v33 = v26
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v32
-			*(*int32)(unsafe.Add(mBase, _consts[1042])) = v32 + int32(1)
+			*(*int32)(unsafe.Add(mBase, _consts[1043])) = v32 + int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v33+v32<<(uint(int32(2))%32)))) = l0
 			return
 		}
@@ -282,7 +282,7 @@ func F_plpgsql_adddatum(m *base.Module, l0 int32) {
 		v32 = v11
 		v33 = v8
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v32
-		*(*int32)(unsafe.Add(mBase, _consts[1042])) = v32 + int32(1)
+		*(*int32)(unsafe.Add(mBase, _consts[1043])) = v32 + int32(1)
 		*(*int32)(unsafe.Add(mBase, uint32(v33+v32<<(uint(int32(2))%32)))) = l0
 		return
 	}
@@ -351,7 +351,7 @@ func F_plpgsql_build_datatype_arrayof(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			if v14 == int32(0) {
-				F_errstart_cold(m, int32(21), int32(544475))
+				F_errstart_cold(m, int32(21), int32(546495))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {
@@ -371,13 +371,13 @@ func F_plpgsql_build_datatype_arrayof(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v48
-							F_errmsg(m, int32(191858), v8)
+							F_errmsg(m, int32(192451), v8)
 							mBase = m.M
 							v53 = m.ExcPending
 							if v53 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490884), int32(2102), int32(335004))
+								F_errfinish(m, int32(492696), int32(2102), int32(336280))
 								mBase = m.M
 								v58 = m.ExcPending
 								if v58 != 0 {
@@ -401,20 +401,20 @@ func F_plpgsql_build_datatype_arrayof(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					if v23 == int32(0) {
-						F_errstart_cold(m, int32(21), int32(544475))
+						F_errstart_cold(m, int32(21), int32(546495))
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v14
-							F_errmsg_internal(m, int32(50097), v8+int32(16))
+							F_errmsg_internal(m, int32(50210), v8+int32(16))
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490884), int32(1960), int32(362507))
+								F_errfinish(m, int32(492696), int32(1960), int32(363877))
 								mBase = m.M
 								v73 = m.ExcPending
 								if v73 != 0 {
@@ -499,20 +499,20 @@ func F_plpgsql_compile_error_callback(m *base.Module, l0 int32) {
 				m.G0 = v7 + int32(16)
 				return
 			} else {
-				v15 = *(*int32)(unsafe.Add(mBase, _consts[1040]))
+				v15 = *(*int32)(unsafe.Add(mBase, _consts[1041]))
 				if v15 != 0 {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						v27 = *(*int32)(unsafe.Add(mBase, _consts[1040]))
+						v27 = *(*int32)(unsafe.Add(mBase, _consts[1041]))
 						v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 						v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+196))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v29
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-						F_errcontext_msg(m, int32(472140), v7)
+						F_errcontext_msg(m, int32(473894), v7)
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
@@ -529,23 +529,23 @@ func F_plpgsql_compile_error_callback(m *base.Module, l0 int32) {
 			}
 		}
 	} else {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[1040]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[1041]))
 		if v17 == int32(0) {
 			m.G0 = v7 + int32(16)
 			return
 		} else {
-			F_set_errcontext_domain(m, int32(544475))
+			F_set_errcontext_domain(m, int32(546495))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
 				return
 			} else {
-				v27 = *(*int32)(unsafe.Add(mBase, _consts[1040]))
+				v27 = *(*int32)(unsafe.Add(mBase, _consts[1041]))
 				v28 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+196))
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v29
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v27
-				F_errcontext_msg(m, int32(472140), v7)
+				F_errcontext_msg(m, int32(473894), v7)
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -649,7 +649,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 		if v21 != 0 {
 			if v20 <= int32(0) {
-				F_set_errcontext_domain(m, int32(544475))
+				F_set_errcontext_domain(m, int32(546495))
 				mBase = m.M
 				v127 = m.ExcPending
 				if v127 != 0 {
@@ -660,7 +660,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v130
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v129
-					F_errcontext_msg(m, int32(179153), v6+int32(-48))
+					F_errcontext_msg(m, int32(179746), v6+int32(-48))
 					mBase = m.M
 					v138 = m.ExcPending
 					if v138 != 0 {
@@ -671,7 +671,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				F_set_errcontext_domain(m, int32(544475))
+				F_set_errcontext_domain(m, int32(546495))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
@@ -683,7 +683,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+56)) = v31
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v20
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v30
-					F_errcontext_msg(m, int32(195707), v6+int32(-16))
+					F_errcontext_msg(m, int32(196300), v6+int32(-16))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
@@ -697,7 +697,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 		} else {
 			v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
 			if v41 == int32(0) {
-				F_set_errcontext_domain(m, int32(544475))
+				F_set_errcontext_domain(m, int32(546495))
 				mBase = m.M
 				v114 = m.ExcPending
 				if v114 != 0 {
@@ -706,7 +706,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 					v116 = *(*int32)(unsafe.Add(mBase, uint32(v115)+32))
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v116
-					F_errcontext_msg(m, int32(182205), v8)
+					F_errcontext_msg(m, int32(182798), v8)
 					mBase = m.M
 					v121 = m.ExcPending
 					if v121 != 0 {
@@ -718,7 +718,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 				}
 			} else {
 				if v20 <= int32(0) {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v114 = m.ExcPending
 					if v114 != 0 {
@@ -727,7 +727,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						v116 = *(*int32)(unsafe.Add(mBase, uint32(v115)+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v116
-						F_errcontext_msg(m, int32(182205), v8)
+						F_errcontext_msg(m, int32(182798), v8)
 						mBase = m.M
 						v121 = m.ExcPending
 						if v121 != 0 {
@@ -738,7 +738,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						}
 					}
 				} else {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
@@ -750,92 +750,92 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						v56 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 						switch v56 {
 						case 0:
-							v96 = int32(313571)
+							v96 = int32(314699)
 							v98 = v96
 						case 1:
-							v98 = int32(94226)
+							v98 = int32(94518)
 						case 2:
-							v98 = int32(531783)
+							v98 = int32(533684)
 						case 3:
-							v98 = int32(534106)
+							v98 = int32(536007)
 						case 4:
-							v98 = int32(521543)
+							v98 = int32(523444)
 						case 5:
-							v98 = int32(535072)
+							v98 = int32(536973)
 						case 6:
-							v98 = int32(392838)
+							v98 = int32(394246)
 						case 7:
-							v98 = int32(112889)
+							v98 = int32(113296)
 						case 8:
-							v98 = int32(208555)
+							v98 = int32(209173)
 						case 9:
-							v98 = int32(24890)
+							v98 = int32(24933)
 						case 10:
 							v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+12)))
 							if v68 != 0 {
-								v69 = int32(515345)
+								v69 = int32(517246)
 							} else {
-								v69 = int32(532308)
+								v69 = int32(534209)
 							}
 							v98 = v69
 						case 11:
-							v98 = int32(523190)
+							v98 = int32(525091)
 						case 12:
-							v98 = int32(511713)
+							v98 = int32(513614)
 						case 13:
-							v98 = int32(503441)
+							v98 = int32(505342)
 						case 14:
-							v98 = int32(534089)
+							v98 = int32(535990)
 						case 15:
-							v98 = int32(512111)
+							v98 = int32(514012)
 						case 16:
-							v98 = int32(95111)
+							v98 = int32(95403)
 						case 17:
-							v98 = int32(532607)
+							v98 = int32(534508)
 						case 18:
-							v98 = int32(95125)
+							v98 = int32(95417)
 						case 19:
 							v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+12)))
 							if v80 != 0 {
-								v81 = int32(518582)
+								v81 = int32(520483)
 							} else {
-								v81 = int32(518528)
+								v81 = int32(520429)
 							}
 							v98 = v81
 						case 20:
-							v98 = int32(525488)
+							v98 = int32(527389)
 						case 21:
 							v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+32)))
 							if v85 != 0 {
-								v86 = int32(532194)
+								v86 = int32(534095)
 							} else {
-								v86 = int32(530753)
+								v86 = int32(532654)
 							}
 							v98 = v86
 						case 22:
-							v98 = int32(533971)
+							v98 = int32(535872)
 						case 23:
-							v98 = int32(526026)
+							v98 = int32(527927)
 						case 24:
 							v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+16)))
 							if v91 != 0 {
-								v92 = int32(528260)
+								v92 = int32(530161)
 							} else {
-								v92 = int32(522350)
+								v92 = int32(524251)
 							}
 							v98 = v92
 						case 25:
-							v98 = int32(515688)
+							v98 = int32(517589)
 						case 26:
-							v98 = int32(528864)
+							v98 = int32(530765)
 						default:
-							v96 = int32(241456)
+							v96 = int32(242380)
 							v98 = v96
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = v98
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v20
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v52
-						F_errcontext_msg(m, int32(178266), v6+int32(-32))
+						F_errcontext_msg(m, int32(178859), v6+int32(-32))
 						mBase = m.M
 						v107 = m.ExcPending
 						if v107 != 0 {
@@ -853,7 +853,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 		if v13 == int32(0) {
 			v108 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 			if v108 != 0 {
-				F_set_errcontext_domain(m, int32(544475))
+				F_set_errcontext_domain(m, int32(546495))
 				mBase = m.M
 				v127 = m.ExcPending
 				if v127 != 0 {
@@ -864,7 +864,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v130
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v129
-					F_errcontext_msg(m, int32(179153), v6+int32(-48))
+					F_errcontext_msg(m, int32(179746), v6+int32(-48))
 					mBase = m.M
 					v138 = m.ExcPending
 					if v138 != 0 {
@@ -875,7 +875,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					}
 				}
 			} else {
-				F_set_errcontext_domain(m, int32(544475))
+				F_set_errcontext_domain(m, int32(546495))
 				mBase = m.M
 				v114 = m.ExcPending
 				if v114 != 0 {
@@ -884,7 +884,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 					v116 = *(*int32)(unsafe.Add(mBase, uint32(v115)+32))
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v116
-					F_errcontext_msg(m, int32(182205), v8)
+					F_errcontext_msg(m, int32(182798), v8)
 					mBase = m.M
 					v121 = m.ExcPending
 					if v121 != 0 {
@@ -901,7 +901,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 			if v21 != 0 {
 				if v20 <= int32(0) {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v127 = m.ExcPending
 					if v127 != 0 {
@@ -912,7 +912,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+132))
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v130
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v129
-						F_errcontext_msg(m, int32(179153), v6+int32(-48))
+						F_errcontext_msg(m, int32(179746), v6+int32(-48))
 						mBase = m.M
 						v138 = m.ExcPending
 						if v138 != 0 {
@@ -923,7 +923,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						}
 					}
 				} else {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -935,7 +935,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+56)) = v31
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+52)) = v20
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v30
-						F_errcontext_msg(m, int32(195707), v6+int32(-16))
+						F_errcontext_msg(m, int32(196300), v6+int32(-16))
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
@@ -949,7 +949,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 			} else {
 				v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+124))
 				if v41 == int32(0) {
-					F_set_errcontext_domain(m, int32(544475))
+					F_set_errcontext_domain(m, int32(546495))
 					mBase = m.M
 					v114 = m.ExcPending
 					if v114 != 0 {
@@ -958,7 +958,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 						v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						v116 = *(*int32)(unsafe.Add(mBase, uint32(v115)+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v116
-						F_errcontext_msg(m, int32(182205), v8)
+						F_errcontext_msg(m, int32(182798), v8)
 						mBase = m.M
 						v121 = m.ExcPending
 						if v121 != 0 {
@@ -970,7 +970,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 					}
 				} else {
 					if v20 <= int32(0) {
-						F_set_errcontext_domain(m, int32(544475))
+						F_set_errcontext_domain(m, int32(546495))
 						mBase = m.M
 						v114 = m.ExcPending
 						if v114 != 0 {
@@ -979,7 +979,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 							v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							v116 = *(*int32)(unsafe.Add(mBase, uint32(v115)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v116
-							F_errcontext_msg(m, int32(182205), v8)
+							F_errcontext_msg(m, int32(182798), v8)
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -990,7 +990,7 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 							}
 						}
 					} else {
-						F_set_errcontext_domain(m, int32(544475))
+						F_set_errcontext_domain(m, int32(546495))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -1002,92 +1002,92 @@ func F_plpgsql_exec_error_callback(m *base.Module, l0 int32) {
 							v56 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 							switch v56 {
 							case 0:
-								v96 = int32(313571)
+								v96 = int32(314699)
 								v98 = v96
 							case 1:
-								v98 = int32(94226)
+								v98 = int32(94518)
 							case 2:
-								v98 = int32(531783)
+								v98 = int32(533684)
 							case 3:
-								v98 = int32(534106)
+								v98 = int32(536007)
 							case 4:
-								v98 = int32(521543)
+								v98 = int32(523444)
 							case 5:
-								v98 = int32(535072)
+								v98 = int32(536973)
 							case 6:
-								v98 = int32(392838)
+								v98 = int32(394246)
 							case 7:
-								v98 = int32(112889)
+								v98 = int32(113296)
 							case 8:
-								v98 = int32(208555)
+								v98 = int32(209173)
 							case 9:
-								v98 = int32(24890)
+								v98 = int32(24933)
 							case 10:
 								v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+12)))
 								if v68 != 0 {
-									v69 = int32(515345)
+									v69 = int32(517246)
 								} else {
-									v69 = int32(532308)
+									v69 = int32(534209)
 								}
 								v98 = v69
 							case 11:
-								v98 = int32(523190)
+								v98 = int32(525091)
 							case 12:
-								v98 = int32(511713)
+								v98 = int32(513614)
 							case 13:
-								v98 = int32(503441)
+								v98 = int32(505342)
 							case 14:
-								v98 = int32(534089)
+								v98 = int32(535990)
 							case 15:
-								v98 = int32(512111)
+								v98 = int32(514012)
 							case 16:
-								v98 = int32(95111)
+								v98 = int32(95403)
 							case 17:
-								v98 = int32(532607)
+								v98 = int32(534508)
 							case 18:
-								v98 = int32(95125)
+								v98 = int32(95417)
 							case 19:
 								v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+12)))
 								if v80 != 0 {
-									v81 = int32(518582)
+									v81 = int32(520483)
 								} else {
-									v81 = int32(518528)
+									v81 = int32(520429)
 								}
 								v98 = v81
 							case 20:
-								v98 = int32(525488)
+								v98 = int32(527389)
 							case 21:
 								v85 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+32)))
 								if v85 != 0 {
-									v86 = int32(532194)
+									v86 = int32(534095)
 								} else {
-									v86 = int32(530753)
+									v86 = int32(532654)
 								}
 								v98 = v86
 							case 22:
-								v98 = int32(533971)
+								v98 = int32(535872)
 							case 23:
-								v98 = int32(526026)
+								v98 = int32(527927)
 							case 24:
 								v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53)+16)))
 								if v91 != 0 {
-									v92 = int32(528260)
+									v92 = int32(530161)
 								} else {
-									v92 = int32(522350)
+									v92 = int32(524251)
 								}
 								v98 = v92
 							case 25:
-								v98 = int32(515688)
+								v98 = int32(517589)
 							case 26:
-								v98 = int32(528864)
+								v98 = int32(530765)
 							default:
-								v96 = int32(241456)
+								v96 = int32(242380)
 								v98 = v96
 							}
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = v98
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = v20
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v52
-							F_errcontext_msg(m, int32(178266), v6+int32(-32))
+							F_errcontext_msg(m, int32(178859), v6+int32(-32))
 							mBase = m.M
 							v107 = m.ExcPending
 							if v107 != 0 {
@@ -1462,9 +1462,9 @@ L2:
 	;
 	*(*uint8)(unsafe.Add(mBase, uint32(v12)+63)) = uint8(v6)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+120)) = l4
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(6504)
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(349191)
-	v29 = int32(4473208)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(6634)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(350548)
+	v29 = int32(4479832)
 	v30 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	*(*int32)(unsafe.Add(mBase, _consts[77])) = v12 + int32(20)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v30
@@ -1480,7 +1480,7 @@ L2:
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(165565)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(166066)
 	v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	if int32(0) < v45 {
 		goto L4
@@ -1497,7 +1497,7 @@ L5:
 	goto L6
 L6:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(12390)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(12414)
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v12)+100))
 	v191 = *(*int32)(unsafe.Add(mBase, uint32(v12)+92))
 	v195 = *(*int32)(unsafe.Add(mBase, uint32(v190+v191<<(uint(int32(2))%32))))
@@ -1548,7 +1548,7 @@ L10:
 	goto L37
 L11:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -1732,7 +1732,7 @@ L34:
 	v144 = *(*int32)(unsafe.Add(mBase, uint32(v140+v55<<(uint(int32(2))%32))))
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v145
-	F_errmsg_internal(m, int32(479377), v12)
+	F_errmsg_internal(m, int32(481169), v12)
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1742,7 +1742,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(494998), int32(614), int32(249174))
+	F_errfinish(m, int32(496817), int32(614), int32(250098))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -1773,7 +1773,7 @@ L39:
 	goto L8
 L40:
 	;
-	v202 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+	v202 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
 	v203 = *(*int32)(unsafe.Add(mBase, uint32(v202)))
 	if v203 == int32(0) {
 		goto L42
@@ -1838,7 +1838,7 @@ L48:
 	}
 L49:
 	;
-	v222 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+	v222 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
 	v223 = *(*int32)(unsafe.Add(mBase, uint32(v222)))
 	v224 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = v224
@@ -1897,7 +1897,7 @@ L56:
 	goto L55
 L57:
 	;
-	v250 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+	v250 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
 	v251 = *(*int32)(unsafe.Add(mBase, uint32(v250)))
 	if v251 == int32(0) {
 		goto L58
@@ -1935,7 +1935,7 @@ L61:
 	goto L58
 L62:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v500 = m.ExcPending
 	if v500 != 0 {
@@ -1945,7 +1945,7 @@ L62:
 	}
 L63:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v479 = m.ExcPending
 	if v479 != 0 {
@@ -1955,7 +1955,7 @@ L63:
 	}
 L64:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(364809)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(366179)
 	v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+48)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l1)+16)) = uint8(v268)
 	v271 = l1 + int32(16)
@@ -1971,7 +1971,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(0)
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v458 = m.ExcPending
 	if v458 != 0 {
@@ -1981,8 +1981,8 @@ L66:
 	}
 L67:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(98806)
-	v405 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+164)) = int32(99115)
+	v405 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
 	v406 = *(*int32)(unsafe.Add(mBase, uint32(v405)))
 	if v406 == int32(0) {
 		goto L106
@@ -2035,7 +2035,7 @@ L73:
 L74:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v275)+24)) = v288
-	v290 = int32(4480304)
+	v290 = int32(4486928)
 	v291 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v292 = *(*int32)(unsafe.Add(mBase, uint32(v12)+80))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v292
@@ -2140,7 +2140,7 @@ L87:
 	goto L67
 L88:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v357 = m.ExcPending
 	if v357 != 0 {
@@ -2218,7 +2218,7 @@ L96:
 	goto L67
 L97:
 	;
-	F_errmsg_internal(m, int32(363732), int32(0))
+	F_errmsg_internal(m, int32(365102), int32(0))
 	mBase = m.M
 	v362 = m.ExcPending
 	if v362 != 0 {
@@ -2228,7 +2228,7 @@ L97:
 	}
 L98:
 	;
-	F_errfinish(m, int32(494998), int32(746), int32(249174))
+	F_errfinish(m, int32(496817), int32(746), int32(250098))
 	mBase = m.M
 	v369 = m.ExcPending
 	if v369 != 0 {
@@ -2293,8 +2293,8 @@ L105:
 	goto L67
 L106:
 	;
-	v417 = int32(4573520)
-	v418 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
+	v417 = int32(4580144)
+	v418 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
 	v419 = *(*int32)(unsafe.Add(mBase, uint32(v418)+8))
 	F_pfree(m, v418)
 	mBase = m.M
@@ -2327,7 +2327,7 @@ L109:
 	goto L106
 L110:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1045])) = v419
+	*(*int32)(unsafe.Add(mBase, _consts[1046])) = v419
 	v423 = *(*int32)(unsafe.Add(mBase, uint32(v12)+152))
 	F_FreeExprContext(m, v423, int32(1))
 	mBase = m.M
@@ -2400,7 +2400,7 @@ L117:
 	}
 L118:
 	;
-	F_errmsg(m, int32(523094), int32(0))
+	F_errmsg(m, int32(524995), int32(0))
 	mBase = m.M
 	v466 = m.ExcPending
 	if v466 != 0 {
@@ -2410,7 +2410,7 @@ L118:
 	}
 L119:
 	;
-	F_errfinish(m, int32(494998), int32(641), int32(249174))
+	F_errfinish(m, int32(496817), int32(641), int32(250098))
 	mBase = m.M
 	v473 = m.ExcPending
 	if v473 != 0 {
@@ -2435,7 +2435,7 @@ L121:
 	}
 L122:
 	;
-	F_errmsg(m, int32(105805), int32(0))
+	F_errmsg(m, int32(106212), int32(0))
 	mBase = m.M
 	v487 = m.ExcPending
 	if v487 != 0 {
@@ -2445,7 +2445,7 @@ L122:
 	}
 L123:
 	;
-	F_errfinish(m, int32(494998), int32(659), int32(249174))
+	F_errfinish(m, int32(496817), int32(659), int32(250098))
 	mBase = m.M
 	v494 = m.ExcPending
 	if v494 != 0 {
@@ -2470,7 +2470,7 @@ L125:
 	}
 L126:
 	;
-	F_errmsg(m, int32(60116), int32(0))
+	F_errmsg(m, int32(60229), int32(0))
 	mBase = m.M
 	v508 = m.ExcPending
 	if v508 != 0 {
@@ -2480,7 +2480,7 @@ L126:
 	}
 L127:
 	;
-	F_errfinish(m, int32(494998), int32(664), int32(249174))
+	F_errfinish(m, int32(496817), int32(664), int32(250098))
 	mBase = m.M
 	v515 = m.ExcPending
 	if v515 != 0 {
@@ -2500,7 +2500,7 @@ func F_plpgsql_extra_errors_assign_hook(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[1054])) = v4
+	*(*int32)(unsafe.Add(mBase, _consts[1055])) = v4
 	return
 }
 func F_plpgsql_inline_handler(m *base.Module, l0 int32) int32 {
@@ -2865,7 +2865,7 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v39
-	v124 = F_ResourceOwnerCreate(m, int32(0), int32(145186))
+	v124 = F_ResourceOwnerCreate(m, int32(0), int32(145645))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -3073,7 +3073,7 @@ L28:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v140
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v137
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v139
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v250 = m.ExcPending
 	if v250 != 0 {
@@ -3116,7 +3116,7 @@ L30:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v137
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v139
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v261
-	F_errmsg_internal(m, int32(202569), v18)
+	F_errmsg_internal(m, int32(203162), v18)
 	mBase = m.M
 	v276 = m.ExcPending
 	if v276 != 0 {
@@ -3137,7 +3137,7 @@ L31:
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+36)) = v140
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+40)) = v137
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+44)) = v139
-	F_errfinish(m, int32(490387), int32(427), int32(217935))
+	F_errfinish(m, int32(492199), int32(427), int32(218586))
 	mBase = m.M
 	v294 = m.ExcPending
 	if v294 != 0 {
@@ -3414,19 +3414,19 @@ func F_plpgsql_push_back_token(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	v19 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+72))
 	if int32(4) <= v20 {
-		F_errstart_cold(m, int32(21), int32(544475))
+		F_errstart_cold(m, int32(21), int32(546495))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(316473), int32(0))
+			F_errmsg_internal(m, int32(317601), int32(0))
 			mBase = m.M
 			v33 = m.ExcPending
 			if v33 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(490357), int32(388), int32(279478))
+				F_errfinish(m, int32(492169), int32(388), int32(280545))
 				mBase = m.M
 				v40 = m.ExcPending
 				if v40 != 0 {
@@ -3491,7 +3491,7 @@ L1:
 	return
 L2:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
 	if v13 == int32(0) {
 		goto L1
 	} else {
@@ -3528,8 +3528,8 @@ L7:
 	return
 L8:
 	;
-	v28 = int32(4573520)
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[1045]))
+	v28 = int32(4580144)
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
 	F_pfree(m, v29)
 	mBase = m.M
@@ -3541,7 +3541,7 @@ L8:
 	}
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1045])) = v30
+	*(*int32)(unsafe.Add(mBase, _consts[1046])) = v30
 	if v30 != 0 {
 		v20 = v30
 		goto L4
@@ -3702,7 +3702,7 @@ func F_plpgsql_validator(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v267 = m.ExcPending
 	if v267 != 0 {
@@ -3712,7 +3712,7 @@ L1:
 	}
 L2:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -3722,7 +3722,7 @@ L2:
 	}
 L3:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {
@@ -3732,7 +3732,7 @@ L3:
 	}
 L4:
 	;
-	F_errstart_cold(m, int32(21), int32(544475))
+	F_errstart_cold(m, int32(21), int32(546495))
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -3907,7 +3907,7 @@ L29:
 	goto L30
 L30:
 	;
-	v128 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1055])))
+	v128 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1056])))
 	if v128 == int32(1) {
 		goto L50
 	} else {
@@ -4140,7 +4140,7 @@ L63:
 L64:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v15
-	F_errmsg_internal(m, int32(44459), v11)
+	F_errmsg_internal(m, int32(44572), v11)
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -4150,7 +4150,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(490387), int32(462), int32(208008))
+	F_errfinish(m, int32(492199), int32(462), int32(208626))
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {
@@ -4176,7 +4176,7 @@ L67:
 L68:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+48)) = v225
-	F_errmsg_internal(m, int32(202569), v11+int32(48))
+	F_errmsg_internal(m, int32(203162), v11+int32(48))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -4186,7 +4186,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(490387), int32(544), int32(208008))
+	F_errfinish(m, int32(492199), int32(544), int32(208626))
 	mBase = m.M
 	v237 = m.ExcPending
 	if v237 != 0 {
@@ -4224,7 +4224,7 @@ L72:
 L73:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v250
-	F_errmsg(m, int32(187105), v11+int32(32))
+	F_errmsg(m, int32(187698), v11+int32(32))
 	mBase = m.M
 	v257 = m.ExcPending
 	if v257 != 0 {
@@ -4234,7 +4234,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(490387), int32(497), int32(208008))
+	F_errfinish(m, int32(492199), int32(497), int32(208626))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -4271,7 +4271,7 @@ L77:
 L78:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v272
-	F_errmsg(m, int32(189900), v11+int32(16))
+	F_errmsg(m, int32(190493), v11+int32(16))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -4281,7 +4281,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(490387), int32(481), int32(208008))
+	F_errfinish(m, int32(492199), int32(481), int32(208626))
 	mBase = m.M
 	v284 = m.ExcPending
 	if v284 != 0 {
@@ -4314,9 +4314,9 @@ func F_plpgsql_xact_cb(m *base.Module, l0 int32, l1 int32) {
 		if l0&int32(-2) != int32(2) {
 		} else {
 			v37 = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[1052])) = v37
-			*(*int32)(unsafe.Add(mBase, _consts[1045])) = v37
-			*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[1053])) = v37
+			*(*int32)(unsafe.Add(mBase, _consts[1046])) = v37
+			*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 		}
 		return
 	} else {
@@ -4324,14 +4324,14 @@ func F_plpgsql_xact_cb(m *base.Module, l0 int32, l1 int32) {
 			if l0&int32(-2) != int32(2) {
 			} else {
 				v37 = int32(0)
-				*(*int32)(unsafe.Add(mBase, _consts[1052])) = v37
-				*(*int32)(unsafe.Add(mBase, _consts[1045])) = v37
-				*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+				*(*int32)(unsafe.Add(mBase, _consts[1053])) = v37
+				*(*int32)(unsafe.Add(mBase, _consts[1046])) = v37
+				*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 			}
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[1045])) = int32(0)
-			v18 = *(*int32)(unsafe.Add(mBase, _consts[1052]))
+			*(*int32)(unsafe.Add(mBase, _consts[1046])) = int32(0)
+			v18 = *(*int32)(unsafe.Add(mBase, _consts[1053]))
 			if v18 != 0 {
 				F_FreeExecutorState(m, v18)
 				mBase = m.M
@@ -4340,10 +4340,10 @@ func F_plpgsql_xact_cb(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					v21 = int32(0)
-					*(*int32)(unsafe.Add(mBase, _consts[1052])) = v21
-					v28 = *(*int32)(unsafe.Add(mBase, _consts[1053]))
+					*(*int32)(unsafe.Add(mBase, _consts[1053])) = v21
+					v28 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 					if v28 == v21 {
-						*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+						*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 						return
 					} else {
 						F_ReleaseAllPlanCacheRefsInOwner(m, v28)
@@ -4352,17 +4352,17 @@ func F_plpgsql_xact_cb(m *base.Module, l0 int32, l1 int32) {
 						if v32 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+							*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 							return
 						}
 					}
 				}
 			} else {
 				v21 = int32(0)
-				*(*int32)(unsafe.Add(mBase, _consts[1052])) = v21
-				v28 = *(*int32)(unsafe.Add(mBase, _consts[1053]))
+				*(*int32)(unsafe.Add(mBase, _consts[1053])) = v21
+				v28 = *(*int32)(unsafe.Add(mBase, _consts[1054]))
 				if v28 == v21 {
-					*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+					*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 					return
 				} else {
 					F_ReleaseAllPlanCacheRefsInOwner(m, v28)
@@ -4371,7 +4371,7 @@ func F_plpgsql_xact_cb(m *base.Module, l0 int32, l1 int32) {
 					if v32 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[1053])) = int32(0)
+						*(*int32)(unsafe.Add(mBase, _consts[1054])) = int32(0)
 						return
 					}
 				}

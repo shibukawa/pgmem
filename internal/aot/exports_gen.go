@@ -8630,6 +8630,516 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Soundex(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_cube":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_cube: want 0 args")
+		}
+		r := pgaot.PgMagicFuncCube(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_a_f8":
+		if len(a) != 1 {
+			panic("aot: cube_a_f8: want 1 args")
+		}
+		r := pgaot.CubeAF8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_a_f8_f8":
+		if len(a) != 1 {
+			panic("aot: cube_a_f8_f8: want 1 args")
+		}
+		r := pgaot.CubeAF8F8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_c_f8":
+		if len(a) != 1 {
+			panic("aot: cube_c_f8: want 1 args")
+		}
+		r := pgaot.CubeCF8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_c_f8_f8":
+		if len(a) != 1 {
+			panic("aot: cube_c_f8_f8: want 1 args")
+		}
+		r := pgaot.CubeCF8F8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_cmp":
+		if len(a) != 1 {
+			panic("aot: cube_cmp: want 1 args")
+		}
+		r := pgaot.CubeCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_contained":
+		if len(a) != 1 {
+			panic("aot: cube_contained: want 1 args")
+		}
+		r := pgaot.CubeContained(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_contains":
+		if len(a) != 1 {
+			panic("aot: cube_contains: want 1 args")
+		}
+		r := pgaot.CubeContains(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_coord":
+		if len(a) != 1 {
+			panic("aot: cube_coord: want 1 args")
+		}
+		r := pgaot.CubeCoord(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_coord_llur":
+		if len(a) != 1 {
+			panic("aot: cube_coord_llur: want 1 args")
+		}
+		r := pgaot.CubeCoordLlur(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_dim":
+		if len(a) != 1 {
+			panic("aot: cube_dim: want 1 args")
+		}
+		r := pgaot.CubeDim(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_distance":
+		if len(a) != 1 {
+			panic("aot: cube_distance: want 1 args")
+		}
+		r := pgaot.CubeDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_enlarge":
+		if len(a) != 1 {
+			panic("aot: cube_enlarge: want 1 args")
+		}
+		r := pgaot.CubeEnlarge(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_eq":
+		if len(a) != 1 {
+			panic("aot: cube_eq: want 1 args")
+		}
+		r := pgaot.CubeEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_f8":
+		if len(a) != 1 {
+			panic("aot: cube_f8: want 1 args")
+		}
+		r := pgaot.CubeF8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_f8_f8":
+		if len(a) != 1 {
+			panic("aot: cube_f8_f8: want 1 args")
+		}
+		r := pgaot.CubeF8F8(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_ge":
+		if len(a) != 1 {
+			panic("aot: cube_ge: want 1 args")
+		}
+		r := pgaot.CubeGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_gt":
+		if len(a) != 1 {
+			panic("aot: cube_gt: want 1 args")
+		}
+		r := pgaot.CubeGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_in":
+		if len(a) != 1 {
+			panic("aot: cube_in: want 1 args")
+		}
+		r := pgaot.CubeIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_inter":
+		if len(a) != 1 {
+			panic("aot: cube_inter: want 1 args")
+		}
+		r := pgaot.CubeInter(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_is_point":
+		if len(a) != 1 {
+			panic("aot: cube_is_point: want 1 args")
+		}
+		r := pgaot.CubeIsPoint(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_le":
+		if len(a) != 1 {
+			panic("aot: cube_le: want 1 args")
+		}
+		r := pgaot.CubeLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_ll_coord":
+		if len(a) != 1 {
+			panic("aot: cube_ll_coord: want 1 args")
+		}
+		r := pgaot.CubeLlCoord(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_lt":
+		if len(a) != 1 {
+			panic("aot: cube_lt: want 1 args")
+		}
+		r := pgaot.CubeLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_ne":
+		if len(a) != 1 {
+			panic("aot: cube_ne: want 1 args")
+		}
+		r := pgaot.CubeNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_out":
+		if len(a) != 1 {
+			panic("aot: cube_out: want 1 args")
+		}
+		r := pgaot.CubeOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_overlap":
+		if len(a) != 1 {
+			panic("aot: cube_overlap: want 1 args")
+		}
+		r := pgaot.CubeOverlap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_recv":
+		if len(a) != 1 {
+			panic("aot: cube_recv: want 1 args")
+		}
+		r := pgaot.CubeRecv(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_send":
+		if len(a) != 1 {
+			panic("aot: cube_send: want 1 args")
+		}
+		r := pgaot.CubeSend(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_size":
+		if len(a) != 1 {
+			panic("aot: cube_size: want 1 args")
+		}
+		r := pgaot.CubeSize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_subset":
+		if len(a) != 1 {
+			panic("aot: cube_subset: want 1 args")
+		}
+		r := pgaot.CubeSubset(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_union":
+		if len(a) != 1 {
+			panic("aot: cube_union: want 1 args")
+		}
+		r := pgaot.CubeUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "cube_ur_coord":
+		if len(a) != 1 {
+			panic("aot: cube_ur_coord: want 1 args")
+		}
+		r := pgaot.CubeUrCoord(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "distance_chebyshev":
+		if len(a) != 1 {
+			panic("aot: distance_chebyshev: want 1 args")
+		}
+		r := pgaot.DistanceChebyshev(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "distance_taxicab":
+		if len(a) != 1 {
+			panic("aot: distance_taxicab: want 1 args")
+		}
+		r := pgaot.DistanceTaxicab(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_compress":
+		if len(a) != 1 {
+			panic("aot: g_cube_compress: want 1 args")
+		}
+		r := pgaot.GCubeCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_consistent":
+		if len(a) != 1 {
+			panic("aot: g_cube_consistent: want 1 args")
+		}
+		r := pgaot.GCubeConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_decompress":
+		if len(a) != 1 {
+			panic("aot: g_cube_decompress: want 1 args")
+		}
+		r := pgaot.GCubeDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_distance":
+		if len(a) != 1 {
+			panic("aot: g_cube_distance: want 1 args")
+		}
+		r := pgaot.GCubeDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_penalty":
+		if len(a) != 1 {
+			panic("aot: g_cube_penalty: want 1 args")
+		}
+		r := pgaot.GCubePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_picksplit":
+		if len(a) != 1 {
+			panic("aot: g_cube_picksplit: want 1 args")
+		}
+		r := pgaot.GCubePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_same":
+		if len(a) != 1 {
+			panic("aot: g_cube_same: want 1 args")
+		}
+		r := pgaot.GCubeSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "g_cube_union":
+		if len(a) != 1 {
+			panic("aot: g_cube_union: want 1 args")
+		}
+		r := pgaot.GCubeUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_a_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_a_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeAF8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_a_f8_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_a_f8_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeAF8F8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_c_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_c_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeCF8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_c_f8_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_c_f8_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeCF8F8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_contained":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_contained: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeContained(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_contains":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_contains: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeContains(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_coord":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_coord: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeCoord(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_coord_llur":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_coord_llur: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeCoordLlur(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_dim":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_dim: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeDim(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_enlarge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_enlarge: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeEnlarge(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeF8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_f8_f8":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_f8_f8: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeF8F8(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_in: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_inter":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_inter: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeInter(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_is_point":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_is_point: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeIsPoint(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_le: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_ll_coord":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_ll_coord: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeLlCoord(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_out: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_overlap":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_overlap: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeOverlap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_recv":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_recv: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeRecv(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_send":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_send: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeSend(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_size":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_size: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeSize(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_subset":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_subset: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeSubset(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_union: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cube_ur_coord":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cube_ur_coord: want 0 args")
+		}
+		r := pgaot.PgFinfoCubeUrCoord(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_distance_chebyshev":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_distance_chebyshev: want 0 args")
+		}
+		r := pgaot.PgFinfoDistanceChebyshev(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_distance_taxicab":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_distance_taxicab: want 0 args")
+		}
+		r := pgaot.PgFinfoDistanceTaxicab(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_g_cube_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_g_cube_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGCubeUnion(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

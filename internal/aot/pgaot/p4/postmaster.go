@@ -60,13 +60,13 @@ func F_PostmasterIsAliveInternal(m *base.Module) int32 {
 			if v24 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(292563), int32(0))
+				F_errmsg_internal(m, int32(293648), int32(0))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492576), int32(382), int32(309769))
+					F_errfinish(m, int32(494388), int32(382), int32(310886))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
@@ -90,13 +90,13 @@ func F_PostmasterIsAliveInternal(m *base.Module) int32 {
 			if v39 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(368165), int32(0))
+				F_errmsg_internal(m, int32(369535), int32(0))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492576), int32(384), int32(309769))
+					F_errfinish(m, int32(494388), int32(384), int32(310886))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {

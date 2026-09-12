@@ -65,7 +65,7 @@ L1:
 	return int64(0)
 L2:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[644]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[643]))
 	if v19 <= int32(0) {
 		goto L4
 	} else {
@@ -92,7 +92,7 @@ L5:
 	goto L6
 L6:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[645]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[644]))
 	v26 = int32(0)
 	goto L8
 L7:

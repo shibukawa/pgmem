@@ -2720,6 +2720,174 @@ func F_soundex(m *base.Module, l0 int32) int32
 func F_pg_finfo_difference(m *base.Module) int32
 //go:linkname F_difference github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_difference
 func F_difference(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_cube github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_cube
+func F_Pg_magic_func_cube(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_in github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_in
+func F_pg_finfo_cube_in(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_a_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_a_f8_f8
+func F_pg_finfo_cube_a_f8_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_a_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_a_f8
+func F_pg_finfo_cube_a_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_out github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_out
+func F_pg_finfo_cube_out(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_send github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_send
+func F_pg_finfo_cube_send(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_cube_recv
+func F_pg_finfo_cube_recv(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_cube_f8
+func F_pg_finfo_cube_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_f8_f8
+func F_pg_finfo_cube_f8_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_c_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_c_f8
+func F_pg_finfo_cube_c_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_c_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_cube_c_f8_f8
+func F_pg_finfo_cube_c_f8_f8(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_dim github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_dim
+func F_pg_finfo_cube_dim(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_ll_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_ll_coord
+func F_pg_finfo_cube_ll_coord(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_ur_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_ur_coord
+func F_pg_finfo_cube_ur_coord(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_cube_coord
+func F_pg_finfo_cube_coord(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_coord_llur github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_coord_llur
+func F_pg_finfo_cube_coord_llur(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_subset github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_subset
+func F_pg_finfo_cube_subset(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_g_cube_consistent
+func F_pg_finfo_g_cube_consistent(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_g_cube_compress
+func F_pg_finfo_g_cube_compress(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_g_cube_decompress
+func F_pg_finfo_g_cube_decompress(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_g_cube_penalty
+func F_pg_finfo_g_cube_penalty(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_g_cube_picksplit
+func F_pg_finfo_g_cube_picksplit(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_union github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_g_cube_union
+func F_pg_finfo_g_cube_union(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_g_cube_same
+func F_pg_finfo_g_cube_same(m *base.Module) int32
+//go:linkname F_pg_finfo_g_cube_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_g_cube_distance
+func F_pg_finfo_g_cube_distance(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_cube_eq
+func F_pg_finfo_cube_eq(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_ne
+func F_pg_finfo_cube_ne(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_lt
+func F_pg_finfo_cube_lt(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_cube_gt
+func F_pg_finfo_cube_gt(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_le github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_le
+func F_pg_finfo_cube_le(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_cube_ge
+func F_pg_finfo_cube_ge(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_cube_cmp
+func F_pg_finfo_cube_cmp(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_cube_contains
+func F_pg_finfo_cube_contains(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_contained
+func F_pg_finfo_cube_contained(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_cube_overlap
+func F_pg_finfo_cube_overlap(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_union github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_union
+func F_pg_finfo_cube_union(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_inter
+func F_pg_finfo_cube_inter(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_size github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_size
+func F_pg_finfo_cube_size(m *base.Module) int32
+//go:linkname F_pg_finfo_distance_taxicab github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_distance_taxicab
+func F_pg_finfo_distance_taxicab(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_cube_distance
+func F_pg_finfo_cube_distance(m *base.Module) int32
+//go:linkname F_pg_finfo_distance_chebyshev github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_distance_chebyshev
+func F_pg_finfo_distance_chebyshev(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_is_point github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_cube_is_point
+func F_pg_finfo_cube_is_point(m *base.Module) int32
+//go:linkname F_pg_finfo_cube_enlarge github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_cube_enlarge
+func F_pg_finfo_cube_enlarge(m *base.Module) int32
+//go:linkname F_cube_in github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_in
+func F_cube_in(m *base.Module, l0 int32) int32
+//go:linkname F_cube_a_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_a_f8_f8
+func F_cube_a_f8_f8(m *base.Module, l0 int32) int32
+//go:linkname F_cube_a_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_a_f8
+func F_cube_a_f8(m *base.Module, l0 int32) int32
+//go:linkname F_cube_subset github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_cube_subset
+func F_cube_subset(m *base.Module, l0 int32) int32
+//go:linkname F_cube_out github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_out
+func F_cube_out(m *base.Module, l0 int32) int32
+//go:linkname F_cube_send github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_send
+func F_cube_send(m *base.Module, l0 int32) int32
+//go:linkname F_cube_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_recv
+func F_cube_recv(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_g_cube_consistent
+func F_g_cube_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_union github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_g_cube_union
+func F_g_cube_union(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_g_cube_decompress
+func F_g_cube_decompress(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_g_cube_penalty
+func F_g_cube_penalty(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_g_cube_picksplit
+func F_g_cube_picksplit(m *base.Module, l0 int32) int32
+//go:linkname F_cube_inter github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_inter
+func F_cube_inter(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_same github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_g_cube_same
+func F_g_cube_same(m *base.Module, l0 int32) int32
+//go:linkname F_cube_union github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_cube_union
+func F_cube_union(m *base.Module, l0 int32) int32
+//go:linkname F_cube_size github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_size
+func F_cube_size(m *base.Module, l0 int32) int32
+//go:linkname F_cube_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_cmp
+func F_cube_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_cube_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_eq
+func F_cube_eq(m *base.Module, l0 int32) int32
+//go:linkname F_cube_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_ne
+func F_cube_ne(m *base.Module, l0 int32) int32
+//go:linkname F_cube_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_cube_lt
+func F_cube_lt(m *base.Module, l0 int32) int32
+//go:linkname F_cube_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_gt
+func F_cube_gt(m *base.Module, l0 int32) int32
+//go:linkname F_cube_le github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_le
+func F_cube_le(m *base.Module, l0 int32) int32
+//go:linkname F_cube_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_ge
+func F_cube_ge(m *base.Module, l0 int32) int32
+//go:linkname F_cube_contains github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_contains
+func F_cube_contains(m *base.Module, l0 int32) int32
+//go:linkname F_cube_contained github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_contained
+func F_cube_contained(m *base.Module, l0 int32) int32
+//go:linkname F_cube_overlap github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_overlap
+func F_cube_overlap(m *base.Module, l0 int32) int32
+//go:linkname F_cube_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_cube_distance
+func F_cube_distance(m *base.Module, l0 int32) int32
+//go:linkname F_distance_taxicab github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_distance_taxicab
+func F_distance_taxicab(m *base.Module, l0 int32) int32
+//go:linkname F_distance_chebyshev github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_distance_chebyshev
+func F_distance_chebyshev(m *base.Module, l0 int32) int32
+//go:linkname F_g_cube_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_g_cube_distance
+func F_g_cube_distance(m *base.Module, l0 int32) int32
+//go:linkname F_cube_is_point github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_is_point
+func F_cube_is_point(m *base.Module, l0 int32) int32
+//go:linkname F_cube_dim github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_dim
+func F_cube_dim(m *base.Module, l0 int32) int32
+//go:linkname F_cube_ll_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_ll_coord
+func F_cube_ll_coord(m *base.Module, l0 int32) int32
+//go:linkname F_cube_ur_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_cube_ur_coord
+func F_cube_ur_coord(m *base.Module, l0 int32) int32
+//go:linkname F_cube_coord github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_cube_coord
+func F_cube_coord(m *base.Module, l0 int32) int32
+//go:linkname F_cube_coord_llur github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_coord_llur
+func F_cube_coord_llur(m *base.Module, l0 int32) int32
+//go:linkname F_cube_enlarge github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_cube_enlarge
+func F_cube_enlarge(m *base.Module, l0 int32) int32
+//go:linkname F_cube_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_f8
+func F_cube_f8(m *base.Module, l0 int32) int32
+//go:linkname F_cube_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_f8_f8
+func F_cube_f8_f8(m *base.Module, l0 int32) int32
+//go:linkname F_cube_c_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_cube_c_f8
+func F_cube_c_f8(m *base.Module, l0 int32) int32
+//go:linkname F_cube_c_f8_f8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_cube_c_f8_f8
+func F_cube_c_f8_f8(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

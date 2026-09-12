@@ -313,7 +313,7 @@ L33:
 	return v127
 L34:
 	;
-	F_errmsg_internal(m, int32(324985), int32(0))
+	F_errmsg_internal(m, int32(326225), int32(0))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -323,7 +323,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(493740), int32(143), int32(338214))
+	F_errfinish(m, int32(495552), int32(143), int32(339522))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {

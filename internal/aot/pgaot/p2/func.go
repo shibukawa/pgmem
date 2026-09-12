@@ -59,13 +59,13 @@ func F_get_func_signature(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-				F_errmsg_internal(m, int32(44459), v9)
+				F_errmsg_internal(m, int32(44572), v9)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(494169), int32(1844), int32(359303))
+					F_errfinish(m, int32(495981), int32(1844), int32(360673))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

@@ -47,13 +47,13 @@ func F_get_opfamily_method(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(39632), v6)
+				F_errmsg_internal(m, int32(39745), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494169), int32(1384), int32(418185))
+					F_errfinish(m, int32(495981), int32(1384), int32(419865))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

@@ -404,8 +404,8 @@ L19:
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(518951)
-	F_errmsg(m, int32(184905), v14+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = int32(520852)
+	F_errmsg(m, int32(185498), v14+int32(16))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -415,7 +415,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(492649), int32(1212), int32(528460))
+	F_errfinish(m, int32(494461), int32(1212), int32(530361))
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -458,8 +458,8 @@ L26:
 	}
 L27:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = int32(517342)
-	F_errmsg(m, int32(184905), v14+int32(32))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = int32(519243)
+	F_errmsg(m, int32(185498), v14+int32(32))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -469,7 +469,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(492649), int32(1223), int32(528460))
+	F_errfinish(m, int32(494461), int32(1223), int32(530361))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -486,7 +486,7 @@ L30:
 	;
 	v100 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v100
-	F_errmsg_internal(m, int32(479909), v14)
+	F_errmsg_internal(m, int32(481701), v14)
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -496,7 +496,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(492649), int32(1231), int32(528460))
+	F_errfinish(m, int32(494461), int32(1231), int32(530361))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -1058,7 +1058,7 @@ L102:
 func F_assign_default_text_search_config(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1172])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1171])) = int32(0)
 	return
 }
 func F_check_default_with_oids(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
@@ -1074,16 +1074,16 @@ func F_check_default_with_oids(m *base.Module, l0 int32, l1 int32, l2 int32) int
 	_ = v20
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v4 == int32(1) {
-		*(*int32)(unsafe.Add(mBase, _consts[428])) = int32(1088)
+		*(*int32)(unsafe.Add(mBase, _consts[427])) = int32(1088)
 		v11 = *(*int32)(unsafe.Add(mBase, _consts[137]))
-		*(*int32)(unsafe.Add(mBase, _consts[426])) = v11
-		v17 = F_format_elog_string(m, int32(439524), int32(0))
+		*(*int32)(unsafe.Add(mBase, _consts[425])) = v11
+		v17 = F_format_elog_string(m, int32(441223), int32(0))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[427])) = v17
+			*(*int32)(unsafe.Add(mBase, _consts[426])) = v17
 			return v4 ^ int32(1)
 		}
 	} else {

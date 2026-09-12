@@ -354,7 +354,7 @@ L25:
 	goto L26
 L26:
 	;
-	v210 = *(*int32)(unsafe.Add(mBase, _consts[878]))
+	v210 = *(*int32)(unsafe.Add(mBase, _consts[879]))
 	v211 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
 	if v211 != 0 {
 		goto L77
@@ -364,7 +364,7 @@ L26:
 L27:
 	;
 	v126 = *(*int32)(unsafe.Add(mBase, _consts[226]))
-	v128 = *(*int32)(unsafe.Add(mBase, _consts[877]))
+	v128 = *(*int32)(unsafe.Add(mBase, _consts[878]))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v33)+4))
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	if v129 < v130 {
@@ -600,7 +600,7 @@ L66:
 	goto L67
 L67:
 	;
-	v168 = *(*int32)(unsafe.Add(mBase, _consts[879]))
+	v168 = *(*int32)(unsafe.Add(mBase, _consts[880]))
 	if v168 <= v130 {
 		goto L68
 	} else {
@@ -634,8 +634,8 @@ L70:
 	goto L12
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[879])) = v184
-	*(*int32)(unsafe.Add(mBase, _consts[877])) = v185
+	*(*int32)(unsafe.Add(mBase, _consts[880])) = v184
+	*(*int32)(unsafe.Add(mBase, _consts[878])) = v185
 	v190 = v185
 	goto L70
 L72:
@@ -961,7 +961,7 @@ func F_CreateCacheMemoryContext(m *base.Module) {
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[207]))
 	if v2 == int32(0) {
 		v7 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-		v12 = F_AllocSetContextCreateInternal(m, v7, int32(61646), int32(0), int32(8192), int32(8388608))
+		v12 = F_AllocSetContextCreateInternal(m, v7, int32(61759), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
@@ -1051,13 +1051,13 @@ func F_cache_multirange_element_properties(m *base.Module, l0 int32) {
 					} else {
 						v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v57
-						F_errmsg_internal(m, int32(50206), v6)
+						F_errmsg_internal(m, int32(50319), v6)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(494181), int32(1068), int32(239689))
+							F_errfinish(m, int32(495993), int32(1068), int32(240613))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {

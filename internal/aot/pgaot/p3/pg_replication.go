@@ -59,13 +59,13 @@ func F_pg_replication_origin_drop(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(14362), int32(0))
+				F_errmsg(m, int32(14386), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491558), int32(200), int32(158610))
+					F_errfinish(m, int32(493370), int32(200), int32(159111))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

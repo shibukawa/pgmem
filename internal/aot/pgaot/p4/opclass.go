@@ -47,13 +47,13 @@ func F_get_opclass_input_type(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(42047), v6)
+				F_errmsg_internal(m, int32(42160), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494169), int32(1312), int32(362590))
+					F_errfinish(m, int32(495981), int32(1312), int32(363960))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

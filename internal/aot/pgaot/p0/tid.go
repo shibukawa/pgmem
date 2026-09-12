@@ -359,7 +359,7 @@ L40:
 	goto L15
 L41:
 	;
-	F_errmsg_internal(m, int32(332967), int32(0))
+	F_errmsg_internal(m, int32(334227), int32(0))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -369,7 +369,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(323556), int32(1264), int32(268613))
+	F_errfinish(m, int32(324744), int32(1264), int32(269537))
 	mBase = m.M
 	v146 = m.ExcPending
 	if v146 != 0 {
@@ -444,4 +444,12 @@ func F_TidRecheck(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		}
 	}
+}
+func F_TidStoreGetDSA(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	return v2
 }

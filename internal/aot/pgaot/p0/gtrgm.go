@@ -15,7 +15,7 @@ func F_gtrgm_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_int_reloption(m, v2, int32(279231), int32(157868), int32(12), int32(1), int32(2024))
+	F_add_local_int_reloption(m, v2, int32(280298), int32(158369), int32(12), int32(1), int32(2024))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -349,7 +349,7 @@ L35:
 L36:
 	;
 	v115 = v107 * int32(3)
-	v119 = *(*int32)(unsafe.Add(mBase, _consts[1097]))
+	v119 = *(*int32)(unsafe.Add(mBase, _consts[1098]))
 	v120 = m.T0[v119].(func(*base.Module, int32, int32) int32)(m, v10+v98+v115, v115+(v9+v98))
 	mBase = m.M
 	v121 = m.ExcPending

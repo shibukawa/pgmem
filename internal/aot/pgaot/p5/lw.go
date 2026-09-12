@@ -30,9 +30,9 @@ func F_LWLockRelease(m *base.Module, l0 int32) {
 		if v5 != 0 {
 			return
 		} else {
-			v6 = int32(4474956)
-			v8 = *(*int32)(unsafe.Add(mBase, _consts[414]))
-			*(*int32)(unsafe.Add(mBase, _consts[414])) = v8 - int32(1)
+			v6 = int32(4481580)
+			v8 = *(*int32)(unsafe.Add(mBase, _consts[415]))
+			*(*int32)(unsafe.Add(mBase, _consts[415])) = v8 - int32(1)
 			return
 		}
 	}
@@ -135,7 +135,7 @@ func F_LWLockShmemSize(m *base.Module) int32 {
 	var v159 int32
 	_ = v159
 	v1 = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[784]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[785]))
 	if v10 <= v1 {
 		goto L1
 	} else {
@@ -148,7 +148,7 @@ L1:
 L2:
 	;
 	v15 = v10 & int32(3)
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[786]))
 	if base.Ui32(int32(4)) <= base.Ui32(v10) {
 		goto L4
 	} else {
@@ -260,7 +260,7 @@ L17:
 	}
 L18:
 	;
-	v126 = *(*int32)(unsafe.Add(mBase, _consts[784]))
+	v126 = *(*int32)(unsafe.Add(mBase, _consts[785]))
 	v128 = F_mul_size(m, v126, int32(8))
 	mBase = m.M
 	v129 = m.ExcPending
@@ -281,7 +281,7 @@ L19:
 	}
 L20:
 	;
-	v133 = *(*int32)(unsafe.Add(mBase, _consts[784]))
+	v133 = *(*int32)(unsafe.Add(mBase, _consts[785]))
 	if int32(0) < v133 {
 		goto L21
 	} else {
@@ -301,7 +301,7 @@ L23:
 	return v159
 L24:
 	;
-	v145 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+	v145 = *(*int32)(unsafe.Add(mBase, _consts[786]))
 	v149 = F_strlen(m, v145+v140*int32(68))
 	mBase = m.M
 	v152 = F_add_size(m, v136, v149+int32(1))
@@ -319,7 +319,7 @@ L25:
 L26:
 	;
 	v155 = v140 + int32(1)
-	v157 = *(*int32)(unsafe.Add(mBase, _consts[784]))
+	v157 = *(*int32)(unsafe.Add(mBase, _consts[785]))
 	if v155 < v157 {
 		v136 = v152
 		v140 = v155

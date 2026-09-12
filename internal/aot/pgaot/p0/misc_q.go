@@ -72,13 +72,13 @@ func F_QTN2QT(m *base.Module, l0 int32) int32 {
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(396417), int32(0))
+					F_errmsg(m, int32(397864), int32(0))
 					mBase = m.M
 					v40 = m.ExcPending
 					if v40 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(492430), int32(376), int32(512411))
+						F_errfinish(m, int32(494242), int32(376), int32(514312))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
@@ -672,12 +672,12 @@ func F_querytree(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(442146), int32(0))
+		F_errmsg_internal(m, int32(443845), int32(0))
 		v13 = m.ExcPending
 		if v13 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(492350), int32(667), int32(405827))
+			F_errfinish(m, int32(494162), int32(667), int32(407319))
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return int32(0)
@@ -791,7 +791,7 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 		v57 = v16
 		v58 = int32(3)
 	}
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[845])))
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, _consts[846])))
 	if v60 != 0 {
 		v76 = F_strlen(m, l0)
 		mBase = m.M
@@ -874,7 +874,7 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 				return v78
 			}
 		} else {
-			v64 = F_ScanKeywordLookup(m, l0, int32(1840412))
+			v64 = F_ScanKeywordLookup(m, l0, int32(1844508))
 			mBase = m.M
 			v67 = m.ExcPending
 			if v67 != 0 {
@@ -883,7 +883,7 @@ func F_quote_identifier(m *base.Module, l0 int32) int32 {
 				if v64 < int32(0) {
 					return l0
 				} else {
-					v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[846]))))
+					v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[847]))))
 					if v73 != 0 {
 						v76 = F_strlen(m, l0)
 						mBase = m.M
@@ -949,7 +949,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 	_ = v15
 	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
 	if v2 == int32(1) {
-		v6 = F_cstring_to_text(m, int32(527879))
+		v6 = F_cstring_to_text(m, int32(529780))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
