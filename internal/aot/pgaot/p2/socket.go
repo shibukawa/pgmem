@@ -12,9 +12,9 @@ func F_socket_close(m *base.Module, l0 int32, l1 int32) {
 	_ = v4
 	var v6 int32
 	_ = v6
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[475]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[474]))
 	if v4 != 0 {
-		v6 = *(*int32)(unsafe.Add(mBase, _consts[475]))
+		v6 = *(*int32)(unsafe.Add(mBase, _consts[474]))
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(-1)
 	} else {
 	}
@@ -52,11 +52,11 @@ func F_socket_flush(m *base.Module) int32 {
 	var v43 int32
 	_ = v43
 	v1 = int32(0)
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[481])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[480])))
 	if v3 == v1 {
 		v7 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v7)
-		v10 = *(*int32)(unsafe.Add(mBase, _consts[475]))
+		*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v7)
+		v10 = *(*int32)(unsafe.Add(mBase, _consts[474]))
 		if v10 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -70,13 +70,13 @@ func F_socket_flush(m *base.Module) int32 {
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(265545), int32(0))
+					F_errmsg(m, int32(265721), int32(0))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(517208), int32(886), int32(349384))
+						F_errfinish(m, int32(517558), int32(886), int32(349654))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -92,15 +92,15 @@ func F_socket_flush(m *base.Module) int32 {
 		} else {
 			v13 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(v10)+4)) = uint8(v13)
-			v16 = *(*int32)(unsafe.Add(mBase, _consts[479]))
-			v19 = F_internal_flush_buffer(m, v16, int32(4447688), int32(4447692))
+			v16 = *(*int32)(unsafe.Add(mBase, _consts[478]))
+			v19 = F_internal_flush_buffer(m, v16, int32(4447944), int32(4447948))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
 				return int32(0)
 			} else {
 				v24 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v24)
+				*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v24)
 				v26 = v19
 				return v26
 			}
@@ -159,10 +159,10 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v7 = v5 - int32(16)
 	m.G0 = v7
 	*(*uint8)(unsafe.Add(mBase, uint32(v7)+15)) = uint8(v1)
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, _consts[481])))
+	v12 = int32(*(*uint8)(unsafe.Add(mBase, _consts[480])))
 	if v12 == v4 {
 		v16 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v16)
+		*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v16)
 		v21 = F_internal_putbytes(m, v7+int32(15), v16)
 		mBase = m.M
 		v24 = m.ExcPending
@@ -172,7 +172,7 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v21 != 0 {
 				v54 = int32(-1)
 				v56 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v56)
+				*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v56)
 				v58 = v54
 				m.G0 = v7 + int32(16)
 				return v58
@@ -192,7 +192,7 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v46 != 0 {
 						v54 = int32(-1)
 						v56 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v56)
+						*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v56)
 						v58 = v54
 						m.G0 = v7 + int32(16)
 						return v58
@@ -209,7 +209,7 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								v54 = int32(0)
 							}
 							v56 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, _consts[481])) = uint8(v56)
+							*(*uint8)(unsafe.Add(mBase, _consts[480])) = uint8(v56)
 							v58 = v54
 							m.G0 = v7 + int32(16)
 							return v58

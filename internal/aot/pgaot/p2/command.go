@@ -15,8 +15,8 @@ func F_GetCommandTagNameAndLen(m *base.Module, l0 int32, l1 int32) int32 {
 	var v11 int32
 	_ = v11
 	v4 = l0 << (uint(int32(3)) % 32)
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[836]))))
+	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[835]))))
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v7
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[466])))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[465])))
 	return v11
 }

@@ -1674,7 +1674,7 @@ L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v41
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v39
-	F_appendStringInfo(m, v11+int32(32), int32(186144), v11+int32(16))
+	F_appendStringInfo(m, v11+int32(32), int32(186230), v11+int32(16))
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -1774,7 +1774,7 @@ L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v87
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v85
-	F_appendStringInfo(m, v11+int32(32), int32(186144), v11)
+	F_appendStringInfo(m, v11+int32(32), int32(186230), v11)
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -2363,13 +2363,13 @@ func F_path_poly(m *base.Module, l0 int32) int32 {
 				if v169 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(283892), int32(0))
+					F_errmsg(m, int32(284068), int32(0))
 					mBase = m.M
 					v173 = m.ExcPending
 					if v173 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(512892), int32(4463), int32(19669))
+						F_errfinish(m, int32(513242), int32(4463), int32(19755))
 						mBase = m.M
 						v178 = m.ExcPending
 						if v178 != 0 {

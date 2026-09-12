@@ -207,7 +207,7 @@ L19:
 	goto L43
 L20:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _consts[1042]))
+	v35 = *(*int32)(unsafe.Add(mBase, _consts[1034]))
 	if int32(0) < v35 {
 		goto L23
 	} else {
@@ -218,7 +218,7 @@ L21:
 	goto L22
 L22:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, _consts[1043]))
+	v63 = *(*int32)(unsafe.Add(mBase, _consts[1035]))
 	if int32(0) < v63 {
 		goto L31
 	} else {
@@ -233,7 +233,7 @@ L24:
 	goto L25
 L25:
 	;
-	v58 = *(*int32)(unsafe.Add(mBase, _consts[1044]))
+	v58 = *(*int32)(unsafe.Add(mBase, _consts[1036]))
 	if v58 <= int32(0) {
 		v128 = v29
 		goto L17
@@ -243,9 +243,9 @@ L25:
 L26:
 	;
 	v44 = v40 << (uint(int32(3)) % 32)
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1045])))
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v44)+uint32(_consts[1037])))
 	if v7 == v47 {
-		v119 = v44 + int32(4538096)
+		v119 = v44 + int32(4538352)
 		goto L18
 	} else {
 		goto L28
@@ -277,7 +277,7 @@ L32:
 	goto L33
 L33:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, _consts[1046]))
+	v86 = *(*int32)(unsafe.Add(mBase, _consts[1038]))
 	if v86 <= int32(0) {
 		v128 = v29
 		goto L17
@@ -287,9 +287,9 @@ L33:
 L34:
 	;
 	v72 = v68 << (uint(int32(3)) % 32)
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v72)+uint32(_consts[1047])))
+	v75 = *(*int32)(unsafe.Add(mBase, uint32(v72)+uint32(_consts[1039])))
 	if v7 == v75 {
-		v119 = v72 + int32(4537048)
+		v119 = v72 + int32(4537304)
 		goto L18
 	} else {
 		goto L36
@@ -316,9 +316,9 @@ L38:
 L39:
 	;
 	v96 = v92 << (uint(int32(3)) % 32)
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v96)+uint32(_consts[1048])))
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v96)+uint32(_consts[1040])))
 	if v7 == v99 {
-		v119 = v96 + int32(4537572)
+		v119 = v96 + int32(4537828)
 		goto L18
 	} else {
 		goto L41
@@ -342,9 +342,9 @@ L42:
 L43:
 	;
 	v110 = v106 << (uint(int32(3)) % 32)
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(v110)+uint32(_consts[1049])))
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v110)+uint32(_consts[1041])))
 	if v7 == v113 {
-		v119 = v110 + int32(4538620)
+		v119 = v110 + int32(4538876)
 		goto L18
 	} else {
 		goto L45

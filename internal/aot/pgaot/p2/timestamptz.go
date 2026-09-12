@@ -58,7 +58,7 @@ func F_timestamptz_lt_date(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+4)) = int64(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[1067]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[1066]))
 				v37 = F_DetermineTimeZoneOffset(m, v9+int32(4), v36)
 				mBase = m.M
 				v44 = base.I64_extend_i32_s(v37)*int64(1000000) + base.I64_extend_i32_s(v2)*int64(86400000000)
@@ -252,13 +252,13 @@ func F_timestamptz_timetz(m *base.Module, l0 int32) int32 {
 					if v67 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(418183), int32(0))
+						F_errmsg(m, int32(418494), int32(0))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518740), int32(2934), int32(7596))
+							F_errfinish(m, int32(519090), int32(2934), int32(7596))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {

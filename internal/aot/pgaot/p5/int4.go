@@ -79,13 +79,13 @@ func F_int4_accum_inv(m *base.Module, l0 int32) int32 {
 		if v109 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(367864), int32(0))
+			F_errmsg_internal(m, int32(368134), int32(0))
 			mBase = m.M
 			v113 = m.ExcPending
 			if v113 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(520410), int32(6126), int32(33821))
+				F_errfinish(m, int32(520760), int32(6126), int32(33907))
 				mBase = m.M
 				v118 = m.ExcPending
 				if v118 != 0 {
@@ -106,13 +106,13 @@ func F_int4_accum_inv(m *base.Module, l0 int32) int32 {
 			if v109 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(367864), int32(0))
+				F_errmsg_internal(m, int32(368134), int32(0))
 				mBase = m.M
 				v113 = m.ExcPending
 				if v113 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520410), int32(6126), int32(33821))
+					F_errfinish(m, int32(520760), int32(6126), int32(33907))
 					mBase = m.M
 					v118 = m.ExcPending
 					if v118 != 0 {

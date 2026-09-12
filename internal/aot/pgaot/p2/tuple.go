@@ -237,7 +237,7 @@ func F_GetTupleTransactionInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l1))) = v15
 		v20 = int32(0)
-		v22 = int32(*(*uint8)(unsafe.Add(mBase, _consts[642])))
+		v22 = int32(*(*uint8)(unsafe.Add(mBase, _consts[641])))
 		if v22 == v20 {
 			v25 = int32(0)
 			*(*uint16)(unsafe.Add(mBase, uint32(l2))) = uint16(v25)

@@ -265,7 +265,7 @@ func F_CheckTableForSerializableConflictIn(m *base.Module, l0 int32) {
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[859]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[868]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
 	if v17 == int32(0) {
 		goto L1
@@ -304,7 +304,7 @@ L4:
 L5:
 	;
 	v32 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[860])) = uint8(v32)
+	*(*uint8)(unsafe.Add(mBase, _consts[869])) = uint8(v32)
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v36 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v40 = F_LWLockAcquire(m, v36+int32(3840), int32(0))
@@ -507,7 +507,7 @@ L23:
 	}
 L24:
 	;
-	v164 = *(*int32)(unsafe.Add(mBase, _consts[861]))
+	v164 = *(*int32)(unsafe.Add(mBase, _consts[870]))
 	F_hash_seq_init(m, v13+int32(12), v164)
 	mBase = m.M
 	v166 = m.ExcPending
@@ -1371,7 +1371,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-					F_errmsg(m, int32(734511), v6)
+					F_errmsg(m, int32(734861), v6)
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -1385,7 +1385,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519170), int32(147), int32(441996))
+							F_errfinish(m, int32(519520), int32(147), int32(442330))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
@@ -1421,7 +1421,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-						F_errmsg(m, int32(734511), v6)
+						F_errmsg(m, int32(734861), v6)
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -1435,7 +1435,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(519170), int32(147), int32(441996))
+								F_errfinish(m, int32(519520), int32(147), int32(442330))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {

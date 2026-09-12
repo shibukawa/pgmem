@@ -784,10 +784,10 @@ func F_FileSetDelete(m *base.Module, l0 int32, l1 int32) int32 {
 		return int32(0)
 	} else {
 		v286 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(245252)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(245359)
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = v286
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v7 + int32(1056)
-		v299 = F_pg_snprintf(m, v7+int32(32), int32(1024), int32(112217), v7+int32(16))
+		v299 = F_pg_snprintf(m, v7+int32(32), int32(1024), int32(112303), v7+int32(16))
 		mBase = m.M
 		v300 = m.ExcPending
 		if v300 != 0 {
@@ -795,7 +795,7 @@ func F_FileSetDelete(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v7 + int32(32)
-			v309 = F_pg_snprintf(m, v7+int32(1056), int32(1024), int32(185927), v7)
+			v309 = F_pg_snprintf(m, v7+int32(1056), int32(1024), int32(186013), v7)
 			mBase = m.M
 			v310 = m.ExcPending
 			if v310 != 0 {
@@ -1176,7 +1176,7 @@ L34:
 	}
 L35:
 	;
-	v202 = int32(4464776)
+	v202 = int32(4465032)
 	v204 = *(*int64)(unsafe.Add(mBase, _consts[650]))
 	*(*int64)(unsafe.Add(mBase, _consts[650])) = v204 + (v199 - v200)
 	*(*int64)(unsafe.Add(mBase, uint32(v30)+24)) = v199
@@ -1199,7 +1199,7 @@ L38:
 	;
 	v239 = *(*int32)(unsafe.Add(mBase, _consts[649]))
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v239
-	F_errmsg(m, int32(707712), v17)
+	F_errmsg(m, int32(708062), v17)
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -1209,7 +1209,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(520130), int32(2295), int32(537326))
+	F_errfinish(m, int32(520480), int32(2295), int32(537676))
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {

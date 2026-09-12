@@ -295,13 +295,13 @@ func F_TupleDescInitBuiltinEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v13))) = l3
-			F_errmsg_internal(m, int32(54807), v13)
+			F_errmsg_internal(m, int32(54893), v13)
 			mBase = m.M
 			v94 = m.ExcPending
 			if v94 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(520183), int32(1013), int32(12619))
+				F_errfinish(m, int32(520533), int32(1013), int32(12670))
 				mBase = m.M
 				v99 = m.ExcPending
 				if v99 != 0 {
@@ -388,13 +388,13 @@ func F_TupleDescInitBuiltinEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v13))) = l3
-				F_errmsg_internal(m, int32(54807), v13)
+				F_errmsg_internal(m, int32(54893), v13)
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(520183), int32(1013), int32(12619))
+					F_errfinish(m, int32(520533), int32(1013), int32(12670))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {

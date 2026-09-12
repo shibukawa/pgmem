@@ -71,7 +71,7 @@ func F_errdetail_log(m *base.Module, l0 int32, l1 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = int32(4541692)
+	v11 = int32(4541948)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[1175]))
 	*(*int32)(unsafe.Add(mBase, _consts[1175])) = v13 + int32(1)
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[1176]))
@@ -82,7 +82,7 @@ func F_errdetail_log(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v21 = int32(4548768)
+	v21 = int32(4549024)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v25 = v18 * int32(100)
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1181])))
@@ -226,14 +226,14 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v22
-	v78 = int32(4541692)
+	v78 = int32(4541948)
 	v80 = *(*int32)(unsafe.Add(mBase, _consts[1175]))
 	*(*int32)(unsafe.Add(mBase, _consts[1175])) = v80 - int32(1)
 	m.G0 = v9 + int32(32)
 	return
 L21:
 	;
-	F_errmsg_internal(m, int32(471275), int32(0))
+	F_errmsg_internal(m, int32(471609), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -243,7 +243,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(518217), int32(1258), int32(341101))
+	F_errfinish(m, int32(518567), int32(1258), int32(341371))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -303,7 +303,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 	m.G0 = v6
 	switch l0 - int32(73) {
 	case 0:
-		v33 = int32(618195)
+		v33 = int32(618545)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -321,13 +321,13 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-			F_errmsg_internal(m, int32(715113), v6)
+			F_errmsg_internal(m, int32(715463), v6)
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(512833), int32(49), int32(458686))
+				F_errfinish(m, int32(513183), int32(49), int32(459020))
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
@@ -340,7 +340,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			}
 		}
 	case 10:
-		v33 = int32(624394)
+		v33 = int32(624744)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -351,7 +351,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 26:
-		v33 = int32(620952)
+		v33 = int32(621302)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -362,7 +362,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 29:
-		v33 = int32(622893)
+		v33 = int32(623243)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -373,7 +373,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 32:
-		v33 = int32(618064)
+		v33 = int32(618414)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -384,7 +384,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 36:
-		v33 = int32(605644)
+		v33 = int32(605994)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -395,7 +395,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 39:
-		v33 = int32(623155)
+		v33 = int32(623505)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -406,7 +406,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 41:
-		v33 = int32(622685)
+		v33 = int32(623035)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -417,7 +417,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 43:
-		v33 = int32(623341)
+		v33 = int32(623691)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -428,7 +428,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 45:
-		v33 = int32(605601)
+		v33 = int32(605951)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending

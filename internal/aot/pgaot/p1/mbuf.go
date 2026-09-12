@@ -40,7 +40,7 @@ func F_mbuf_append(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v48
 	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v7 == int32(1) {
-		F_px_debug(m, int32(364056), int32(0))
+		F_px_debug(m, int32(364326), int32(0))
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {

@@ -39,7 +39,7 @@ func F_SetTempTablespaces(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, _consts[816])) = l1
 	*(*int32)(unsafe.Add(mBase, _consts[818])) = l0
 	if int32(2) <= l1 {
-		v11 = int32(4632272)
+		v11 = int32(4632528)
 		v12 = int64(0)
 		v15 = base.I64_extend_i32_u(l1 - int32(1))
 		if base.Ui64(v15) <= base.Ui64(v12) {
@@ -254,7 +254,7 @@ L3:
 L4:
 	;
 	v11 = int32(8)
-	v12 = int32(528417)
+	v12 = int32(528767)
 	goto L8
 L5:
 	;
@@ -354,7 +354,7 @@ L19:
 L20:
 	;
 	v60 = int32(14)
-	v61 = int32(528402)
+	v61 = int32(528752)
 	goto L23
 L21:
 	;

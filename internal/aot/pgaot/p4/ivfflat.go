@@ -83,13 +83,13 @@ func F_IvfflatGetMetaPageInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v41 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(452795), int32(0))
+					F_errmsg_internal(m, int32(453129), int32(0))
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(513303), int32(220), int32(252548))
+						F_errfinish(m, int32(513653), int32(220), int32(252724))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -128,7 +128,7 @@ func F_IvfflatGetTypeInfo(m *base.Module, l0 int32) int32 {
 	_ = v32
 	var v34 int32
 	_ = v34
-	v3 = int32(4111344)
+	v3 = int32(4111536)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+216))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+204))
 	v8 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v7)+6)))

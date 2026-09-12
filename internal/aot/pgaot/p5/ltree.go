@@ -556,7 +556,7 @@ func F_ltree_prefix_eq_ci(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v167
 	var v173 int32
 	_ = v173
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[1461]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[1453]))
 	if v12 == int32(0) {
 		goto L1
 	} else {
@@ -589,7 +589,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1461])) = v17
+	*(*int32)(unsafe.Add(mBase, _consts[1453])) = v17
 	v22 = v17
 	goto L3
 L6:
@@ -715,7 +715,7 @@ L28:
 	}
 L29:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, _consts[1461]))
+	v81 = *(*int32)(unsafe.Add(mBase, _consts[1453]))
 	v82 = F_pg_strfold(m, v73, v72, l0, l1, v81)
 	mBase = m.M
 	v83 = m.ExcPending
@@ -749,7 +749,7 @@ L32:
 	goto L33
 L33:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, _consts[1461]))
+	v99 = *(*int32)(unsafe.Add(mBase, _consts[1453]))
 	v100 = F_pg_strfold(m, v77, v76, l2, l3, v99)
 	mBase = m.M
 	v101 = m.ExcPending
@@ -760,7 +760,7 @@ L33:
 	}
 L34:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, _consts[1461]))
+	v92 = *(*int32)(unsafe.Add(mBase, _consts[1453]))
 	v93 = F_pg_strfold(m, v88, v85, l0, l1, v92)
 	mBase = m.M
 	v94 = m.ExcPending
@@ -806,7 +806,7 @@ L39:
 	}
 L40:
 	;
-	v110 = *(*int32)(unsafe.Add(mBase, _consts[1461]))
+	v110 = *(*int32)(unsafe.Add(mBase, _consts[1453]))
 	v111 = F_pg_strfold(m, v106, v103, l2, l3, v110)
 	mBase = m.M
 	v112 = m.ExcPending

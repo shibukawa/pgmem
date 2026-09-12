@@ -424,13 +424,13 @@ func F_pointerhash_stat(m *base.Module, l0 int32) {
 					*(*float64)(unsafe.Add(mBase, uint32(v17)+16)) = v153
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = v159
 					*(*int64)(unsafe.Add(mBase, uint32(v17))) = v158
-					F_errmsg_internal(m, int32(354062), v17)
+					F_errmsg_internal(m, int32(354332), v17)
 					mBase = m.M
 					v171 = m.ExcPending
 					if v171 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(340209), int32(1144), int32(118591))
+						F_errfinish(m, int32(340479), int32(1144), int32(118677))
 						mBase = m.M
 						v176 = m.ExcPending
 						if v176 != 0 {

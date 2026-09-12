@@ -202,6 +202,8 @@ func F_heap_delete(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 func F_compute_new_xmax_infomask(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_test_lockmode_for_conflict github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_test_lockmode_for_conflict
 func F_test_lockmode_for_conflict(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_HeapTupleSatisfiesVacuum github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HeapTupleSatisfiesVacuum
+func F_HeapTupleSatisfiesVacuum(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_HeapTupleHeaderIsOnlyLocked github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_HeapTupleHeaderIsOnlyLocked
 func F_HeapTupleHeaderIsOnlyLocked(m *base.Module, l0 int32) int32
 //go:linkname F_HeapTupleSatisfiesVisibility github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_HeapTupleSatisfiesVisibility
@@ -218,6 +220,8 @@ func F_visibilitymap_clear(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_visibilitymap_pin(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_visibilitymap_set github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_visibilitymap_set
 func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_visibilitymap_get_status github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_visibilitymap_get_status
+func F_visibilitymap_get_status(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_GetIndexAmRoutineByAmId github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetIndexAmRoutineByAmId
 func F_GetIndexAmRoutineByAmId(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_IndexAmTranslateCompareType github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_IndexAmTranslateCompareType
@@ -4418,6 +4422,8 @@ func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 func F_amcheck_lock_relation_and_check(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_PageGetItemIdCareful_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PageGetItemIdCareful_2
 func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_GetStrictOldestNonRemovableTransactionId github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetStrictOldestNonRemovableTransactionId
+func F_GetStrictOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1

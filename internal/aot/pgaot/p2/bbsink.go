@@ -77,7 +77,7 @@ func F_bbsink_copystream_begin_archive(m *base.Module, l0 int32, l1 int32) {
 				if v33 != 0 {
 					v35 = v33
 				} else {
-					v35 = int32(785340)
+					v35 = int32(785690)
 				}
 				F_pq_sendstring(m, v7, v35)
 				mBase = m.M
@@ -258,7 +258,7 @@ L4:
 	}
 L5:
 	;
-	F_TupleDescInitBuiltinEntry(m, v36, int32(1), int32(450396), int32(26))
+	F_TupleDescInitBuiltinEntry(m, v36, int32(1), int32(450730), int32(26))
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -268,7 +268,7 @@ L5:
 	}
 L6:
 	;
-	F_TupleDescInitBuiltinEntry(m, v36, int32(2), int32(275686), int32(25))
+	F_TupleDescInitBuiltinEntry(m, v36, int32(2), int32(275862), int32(25))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -278,7 +278,7 @@ L6:
 	}
 L7:
 	;
-	F_TupleDescInitBuiltinEntry(m, v36, int32(3), int32(355686), int32(20))
+	F_TupleDescInitBuiltinEntry(m, v36, int32(3), int32(355956), int32(20))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -288,7 +288,7 @@ L7:
 	}
 L8:
 	;
-	v54 = F_begin_tup_output_tupdesc(m, v33, v36, int32(1645812))
+	v54 = F_begin_tup_output_tupdesc(m, v33, v36, int32(1646164))
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -633,7 +633,7 @@ func F_bbsink_progress_begin_backup(m *base.Module, l0 int32) {
 		v46 = int32(*(*uint8)(unsafe.Add(mBase, _consts[28])))
 		if v46&int32(1) == int32(0) {
 		} else {
-			v51 = int32(4543428)
+			v51 = int32(4543684)
 			v53 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 			v54 = int32(1)
 			*(*int32)(unsafe.Add(mBase, _consts[7])) = v53 + v54
@@ -660,7 +660,7 @@ func F_bbsink_progress_begin_backup(m *base.Module, l0 int32) {
 			v187 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 			v188 = int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v40))) = v187 + v188
-			v191 = int32(4543428)
+			v191 = int32(4543684)
 			v193 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 			*(*int32)(unsafe.Add(mBase, _consts[7])) = v193 - v188
 		}
@@ -760,19 +760,19 @@ func F_bbsink_server_manifest_contents(m *base.Module, l0 int32, l1 int32) {
 						v71 = *(*int32)(unsafe.Add(mBase, _consts[265]))
 						v75 = *(*int32)(unsafe.Add(mBase, uint32(v71+v69*int32(48))+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v75
-						F_errmsg(m, int32(310851), v9)
+						F_errmsg(m, int32(311063), v9)
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(667506), int32(0))
+							F_errhint(m, int32(667856), int32(0))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(514796), int32(268), int32(127427))
+								F_errfinish(m, int32(515146), int32(268), int32(127513))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -800,19 +800,19 @@ func F_bbsink_server_manifest_contents(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = l1
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v20
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v38
-						F_errmsg(m, int32(43672), v9+int32(16))
+						F_errmsg(m, int32(43758), v9+int32(16))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
 							return
 						} else {
-							F_errhint(m, int32(667506), int32(0))
+							F_errhint(m, int32(667856), int32(0))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(514796), int32(275), int32(127427))
+								F_errfinish(m, int32(515146), int32(275), int32(127513))
 								mBase = m.M
 								v57 = m.ExcPending
 								if v57 != 0 {

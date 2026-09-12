@@ -430,7 +430,7 @@ func F_SPI_returntuple(m *base.Module, l0 int32, l1 int32) int32 {
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 			if v23 != int32(2249) {
 				v35 = v15
-				v36 = int32(4548768)
+				v36 = int32(4549024)
 				v37 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+28))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v39
@@ -454,7 +454,7 @@ func F_SPI_returntuple(m *base.Module, l0 int32, l1 int32) int32 {
 				v26 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 				if int32(0) <= v26 {
 					v35 = v15
-					v36 = int32(4548768)
+					v36 = int32(4549024)
 					v37 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+28))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v39
@@ -483,7 +483,7 @@ func F_SPI_returntuple(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v34 = *(*int32)(unsafe.Add(mBase, _consts[540]))
 						v35 = v34
-						v36 = int32(4548768)
+						v36 = int32(4549024)
 						v37 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 						v39 = *(*int32)(unsafe.Add(mBase, uint32(v35)+28))
 						*(*int32)(unsafe.Add(mBase, _consts[0])) = v39
@@ -1002,7 +1002,7 @@ L1:
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+48)) = int32(779)
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+60)) = v50
-	v54 = int32(4541672)
+	v54 = int32(4541928)
 	v55 = *(*int32)(unsafe.Add(mBase, _consts[52]))
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v27 + int32(-20)
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+44)) = v55
@@ -1196,7 +1196,7 @@ L28:
 	}
 L29:
 	;
-	F_errmsg(m, int32(172823), int32(0))
+	F_errmsg(m, int32(172909), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -1206,7 +1206,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(517790), int32(2496), int32(294216))
+	F_errfinish(m, int32(518140), int32(2496), int32(294428))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -1439,7 +1439,7 @@ L61:
 	goto L64
 L62:
 	;
-	v192 = int32(547804)
+	v192 = int32(548154)
 	goto L63
 L63:
 	;
@@ -1468,7 +1468,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v29))) = v192
-	F_errmsg(m, int32(172858), v29)
+	F_errmsg(m, int32(172944), v29)
 	mBase = m.M
 	v203 = m.ExcPending
 	if v203 != 0 {
@@ -1478,7 +1478,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(517790), int32(2570), int32(294216))
+	F_errfinish(m, int32(518140), int32(2570), int32(294428))
 	mBase = m.M
 	v208 = m.ExcPending
 	if v208 != 0 {
@@ -2403,7 +2403,7 @@ L201:
 L202:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+16)) = v553
-	F_errmsg(m, int32(264204), v27+int32(-48))
+	F_errmsg(m, int32(264380), v27+int32(-48))
 	mBase = m.M
 	v560 = m.ExcPending
 	if v560 != 0 {
@@ -2413,7 +2413,7 @@ L202:
 	}
 L203:
 	;
-	F_errfinish(m, int32(517790), int32(2658), int32(294216))
+	F_errfinish(m, int32(518140), int32(2658), int32(294428))
 	mBase = m.M
 	v565 = m.ExcPending
 	if v565 != 0 {
@@ -2428,7 +2428,7 @@ L204:
 	}
 L205:
 	;
-	F_errmsg_internal(m, int32(471383), int32(0))
+	F_errmsg_internal(m, int32(471717), int32(0))
 	mBase = m.M
 	v573 = m.ExcPending
 	if v573 != 0 {
@@ -2438,7 +2438,7 @@ L205:
 	}
 L206:
 	;
-	F_errfinish(m, int32(517790), int32(2940), int32(15430))
+	F_errfinish(m, int32(518140), int32(2940), int32(15481))
 	mBase = m.M
 	v578 = m.ExcPending
 	if v578 != 0 {
@@ -2610,7 +2610,7 @@ func F__SPI_prepare_plan(m *base.Module, l0 int32, l1 int32) {
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(779)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v15
-	v19 = int32(4541672)
+	v19 = int32(4541928)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[52]))
 	*(*int32)(unsafe.Add(mBase, _consts[52])) = v12 + int32(12)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v20
@@ -2837,13 +2837,13 @@ func F_spi_printtup(m *base.Module, l0 int32, l1 int32) int32 {
 			if v66 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(241390), int32(0))
+				F_errmsg_internal(m, int32(241497), int32(0))
 				mBase = m.M
 				v70 = m.ExcPending
 				if v70 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517790), int32(2181), int32(241407))
+					F_errfinish(m, int32(518140), int32(2181), int32(241514))
 					mBase = m.M
 					v75 = m.ExcPending
 					if v75 != 0 {
@@ -2856,7 +2856,7 @@ func F_spi_printtup(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			v11 = int32(4548768)
+			v11 = int32(4549024)
 			v12 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v14 = *(*int32)(unsafe.Add(mBase, uint32(v8)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v14
@@ -2915,13 +2915,13 @@ func F_spi_printtup(m *base.Module, l0 int32, l1 int32) int32 {
 		if v53 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(555142), int32(0))
+			F_errmsg_internal(m, int32(555492), int32(0))
 			mBase = m.M
 			v57 = m.ExcPending
 			if v57 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(517790), int32(2177), int32(241407))
+				F_errfinish(m, int32(518140), int32(2177), int32(241514))
 				mBase = m.M
 				v62 = m.ExcPending
 				if v62 != 0 {

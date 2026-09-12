@@ -10232,6 +10232,108 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.VerifyHeapam(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pg_visibility":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pg_visibility: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgVisibility(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_check_frozen":
+		if len(a) != 1 {
+			panic("aot: pg_check_frozen: want 1 args")
+		}
+		r := pgaot.PgCheckFrozen(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_check_visible":
+		if len(a) != 1 {
+			panic("aot: pg_check_visible: want 1 args")
+		}
+		r := pgaot.PgCheckVisible(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_check_frozen":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_check_frozen: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCheckFrozen(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_check_visible":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_check_visible: want 0 args")
+		}
+		r := pgaot.PgFinfoPgCheckVisible(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_truncate_visibility_map":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_truncate_visibility_map: want 0 args")
+		}
+		r := pgaot.PgFinfoPgTruncateVisibilityMap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_visibility":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_visibility: want 0 args")
+		}
+		r := pgaot.PgFinfoPgVisibility(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_visibility_map":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_visibility_map: want 0 args")
+		}
+		r := pgaot.PgFinfoPgVisibilityMap(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_visibility_map_rel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_visibility_map_rel: want 0 args")
+		}
+		r := pgaot.PgFinfoPgVisibilityMapRel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_visibility_map_summary":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_visibility_map_summary: want 0 args")
+		}
+		r := pgaot.PgFinfoPgVisibilityMapSummary(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_visibility_rel":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_visibility_rel: want 0 args")
+		}
+		r := pgaot.PgFinfoPgVisibilityRel(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_truncate_visibility_map":
+		if len(a) != 1 {
+			panic("aot: pg_truncate_visibility_map: want 1 args")
+		}
+		r := pgaot.PgTruncateVisibilityMap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_visibility":
+		if len(a) != 1 {
+			panic("aot: pg_visibility: want 1 args")
+		}
+		r := pgaot.PgVisibility(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_visibility_map":
+		if len(a) != 1 {
+			panic("aot: pg_visibility_map: want 1 args")
+		}
+		r := pgaot.PgVisibilityMap(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_visibility_map_rel":
+		if len(a) != 1 {
+			panic("aot: pg_visibility_map_rel: want 1 args")
+		}
+		r := pgaot.PgVisibilityMapRel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_visibility_map_summary":
+		if len(a) != 1 {
+			panic("aot: pg_visibility_map_summary: want 1 args")
+		}
+		r := pgaot.PgVisibilityMapSummary(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_visibility_rel":
+		if len(a) != 1 {
+			panic("aot: pg_visibility_rel: want 1 args")
+		}
+		r := pgaot.PgVisibilityRel(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

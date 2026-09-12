@@ -82,13 +82,13 @@ func F_enum_out(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v9
-					F_errmsg(m, int32(62973), v6)
+					F_errmsg(m, int32(63059), v6)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(517140), int32(167), int32(72352))
+						F_errfinish(m, int32(517490), int32(167), int32(72438))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -188,13 +188,13 @@ func F_enum_send(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v9
-					F_errmsg(m, int32(62973), v6)
+					F_errmsg(m, int32(63059), v6)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(517140), int32(233), int32(442953))
+						F_errfinish(m, int32(517490), int32(233), int32(443287))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

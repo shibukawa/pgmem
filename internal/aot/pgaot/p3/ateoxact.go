@@ -46,13 +46,13 @@ func F_AtEOXact_Aio(m *base.Module) {
 				if v13 == int32(0) {
 					return
 				} else {
-					F_errmsg_internal(m, int32(266889), int32(0))
+					F_errmsg_internal(m, int32(267065), int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(515733), int32(1206), int32(251081))
+						F_errfinish(m, int32(516083), int32(1206), int32(251257))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -151,7 +151,7 @@ L1:
 	return
 L2:
 	;
-	if v4 == int32(4145932) {
+	if v4 == int32(4146124) {
 		goto L1
 	} else {
 		goto L3
@@ -202,7 +202,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg_internal(m, int32(66034), int32(0))
+	F_errmsg_internal(m, int32(66120), int32(0))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -212,7 +212,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(517543), int32(1290), int32(320065))
+	F_errfinish(m, int32(517893), int32(1290), int32(320335))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -233,7 +233,7 @@ L13:
 	}
 L14:
 	;
-	if v31 != int32(4145932) {
+	if v31 != int32(4146124) {
 		v10 = v31
 		goto L4
 	} else {
@@ -386,7 +386,7 @@ L2:
 	goto L3
 L3:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[937]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[946]))
 	if v22 == int32(0) {
 		goto L7
 	} else {
@@ -394,11 +394,11 @@ L3:
 	}
 L4:
 	;
-	v15 = int32(4528528)
+	v15 = int32(4528784)
 	goto L6
 L5:
 	;
-	v15 = int32(4528532)
+	v15 = int32(4528788)
 	goto L6
 L6:
 	;
@@ -407,7 +407,7 @@ L6:
 	goto L3
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[937])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[946])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
 	v196 = m.ExcPending
@@ -756,7 +756,7 @@ L6:
 	}
 L7:
 	;
-	v24 = int32(4445808)
+	v24 = int32(4446064)
 	v26 = *(*int32)(unsafe.Add(mBase, _consts[506]))
 	v27 = F_list_delete_nth_cell(m, v26, v10)
 	mBase = m.M

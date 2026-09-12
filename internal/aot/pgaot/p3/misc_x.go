@@ -46,9 +46,9 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[139]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+56))
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[1061]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[1070]))
 	if v7 == v9 {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[1062]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[1071]))
 		v30 = v12
 		if base.Ui32(v3) <= base.Ui32(int32(2)) {
 			v34 = int32(2147483647)
@@ -57,9 +57,9 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 		}
 		return v34
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1061])) = v7
+		*(*int32)(unsafe.Add(mBase, _consts[1070])) = v7
 		v17 = *(*int32)(unsafe.Add(mBase, _consts[83]))
-		*(*int32)(unsafe.Add(mBase, _consts[1062])) = v17
+		*(*int32)(unsafe.Add(mBase, _consts[1071])) = v17
 		if v17 == int32(0) {
 			v22 = F_ReadNextFullTransactionId(m)
 			mBase = m.M
@@ -68,7 +68,7 @@ func F_xid_age(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				v26 = base.I32_wrap_i64(v22)
-				*(*int32)(unsafe.Add(mBase, _consts[1062])) = v26
+				*(*int32)(unsafe.Add(mBase, _consts[1071])) = v26
 				v28 = v26
 				v30 = v28
 				if base.Ui32(v3) <= base.Ui32(int32(2)) {
@@ -121,7 +121,7 @@ func F_xidout(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-		v17 = F_pg_snprintf(m, v10, int32(16), int32(39502), v6)
+		v17 = F_pg_snprintf(m, v10, int32(16), int32(39588), v6)
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
@@ -153,17 +153,17 @@ func F_xmlexists(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(377961), int32(0))
+			F_errmsg(m, int32(378231), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(601220), int32(0))
+				F_errdetail(m, int32(601570), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517430), int32(4555), int32(122494))
+					F_errfinish(m, int32(517780), int32(4555), int32(122580))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -196,12 +196,12 @@ func F_xmlvalidate(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(462802), int32(0))
+			F_errmsg(m, int32(463136), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(517430), int32(1123), int32(371420))
+				F_errfinish(m, int32(517780), int32(1123), int32(371690))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -235,17 +235,17 @@ func F_xpath(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(377961), int32(0))
+			F_errmsg(m, int32(378231), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(601220), int32(0))
+				F_errdetail(m, int32(601570), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517430), int32(4533), int32(334060))
+					F_errfinish(m, int32(517780), int32(4533), int32(334330))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
