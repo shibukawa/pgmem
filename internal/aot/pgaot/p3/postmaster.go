@@ -103,7 +103,7 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 			m.G0 = v12 + int32(48)
 			return v120
 		} else {
-			if v19 == v15+int32(4423272) {
+			if v19 == v15+int32(4423400) {
 				v120 = v2
 				m.G0 = v12 + int32(48)
 				return v120
@@ -139,7 +139,7 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 						if v152 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(499417), int32(188), int32(86244))
+							F_errfinish(m, int32(499524), int32(188), int32(86244))
 							mBase = m.M
 							v157 = m.ExcPending
 							if v157 != 0 {
@@ -168,7 +168,7 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 							if v152 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(499417), int32(188), int32(86244))
+								F_errfinish(m, int32(499524), int32(188), int32(86244))
 								mBase = m.M
 								v157 = m.ExcPending
 								if v157 != 0 {
@@ -183,13 +183,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 					} else {
 						v54 = *(*int32)(unsafe.Add(mBase, _consts[653]))
 						if v54 == int32(0) {
-							v57 = int32(4423552)
+							v57 = int32(4423680)
 							*(*int32)(unsafe.Add(mBase, _consts[654])) = v57
 							v61 = v57
 						} else {
 							v61 = v54
 						}
-						*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(4423552)
+						*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(4423680)
 						*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v61
 						*(*int32)(unsafe.Add(mBase, uint32(v61))) = v19
 						*(*int32)(unsafe.Add(mBase, _consts[653])) = v19
@@ -204,13 +204,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 							if v82 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(359760), int32(0))
+								F_errmsg_internal(m, int32(359856), int32(0))
 								mBase = m.M
 								v86 = m.ExcPending
 								if v86 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(497284), int32(236), int32(452900))
+									F_errfinish(m, int32(497391), int32(236), int32(452996))
 									mBase = m.M
 									v91 = m.ExcPending
 									if v91 != 0 {
@@ -239,13 +239,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 									v105 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(12))+uint32(_consts[656])))
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v105
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v100
-									F_errmsg_internal(m, int32(181506), v12+int32(32))
+									F_errmsg_internal(m, int32(181552), v12+int32(32))
 									mBase = m.M
 									v112 = m.ExcPending
 									if v112 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(499417), int32(197), int32(86244))
+										F_errfinish(m, int32(499524), int32(197), int32(86244))
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -271,13 +271,13 @@ func F_AssignPostmasterChildSlot(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = l0
-			F_errmsg_internal(m, int32(476320), v12)
+			F_errmsg_internal(m, int32(476416), v12)
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(499417), int32(168), int32(86244))
+				F_errfinish(m, int32(499524), int32(168), int32(86244))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {

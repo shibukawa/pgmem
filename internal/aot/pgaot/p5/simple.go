@@ -81,7 +81,7 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	if v33 == v16 {
 		*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v32
 		*(*int32)(unsafe.Add(mBase, uint32(v11))) = v30
-		v42 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(509633), v11)
+		v42 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(509740), v11)
 		mBase = m.M
 		v45 = m.ExcPending
 		if v45 != 0 {
@@ -219,7 +219,7 @@ func F_SimpleLruDoesPhysicalPageExist(m *base.Module, l0 int32, l1 int64) int32 
 	} else {
 		*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v32)
 		*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v30
-		v54 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(510020), v11+int32(16))
+		v54 = F_pg_snprintf(m, v11+int32(32), int32(1024), int32(510127), v11+int32(16))
 		mBase = m.M
 		v55 = m.ExcPending
 		if v55 != 0 {

@@ -92,7 +92,7 @@ func F_replorigin_by_name(m *base.Module, l0 int32, l1 int32) int32 {
 							if v33 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(496266), int32(246), int32(378069))
+								F_errfinish(m, int32(496373), int32(246), int32(378165))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {

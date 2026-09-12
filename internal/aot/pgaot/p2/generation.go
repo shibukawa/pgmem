@@ -117,13 +117,13 @@ func F_build_generation_expression(m *base.Module, l0 int32, l1 int32) int32 {
 				v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 				*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v47 + int32(4)
-				F_errmsg_internal(m, int32(719302), v9)
+				F_errmsg_internal(m, int32(719437), v9)
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(495102), int32(4533), int32(268794))
+					F_errfinish(m, int32(495209), int32(4533), int32(268840))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {

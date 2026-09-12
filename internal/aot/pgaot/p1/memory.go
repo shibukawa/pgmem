@@ -680,7 +680,7 @@ func F_MemoryContextSizeFailure(m *base.Module, l0 int32) {
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(492304), int32(1177), int32(363420))
+			F_errfinish(m, int32(492400), int32(1177), int32(363516))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -749,7 +749,7 @@ func F_MemoryContextStats(m *base.Module, l0 int32) {
 		v30 = *(*int32)(unsafe.Add(mBase, uint32(v6)+36))
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v30
 		v33 = *(*int32)(unsafe.Add(mBase, _consts[463]))
-		v35 = F_pg_fprintf(m, v33, int32(750094), v6)
+		v35 = F_pg_fprintf(m, v33, int32(750266), v6)
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {

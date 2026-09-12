@@ -85,7 +85,7 @@ func F_pg_lsn_out(m *base.Module, l0 int32) int32 {
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+4)) = uint32(v9)
 	v12 = int64(base.Ui64(v9) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v6))) = uint32(v12)
-	v18 = F_pg_snprintf(m, v6+int32(16), int32(18), int32(515670), v6)
+	v18 = F_pg_snprintf(m, v6+int32(16), int32(18), int32(515777), v6)
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {

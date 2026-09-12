@@ -78,19 +78,19 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(127964), int32(0))
+				F_errmsg(m, int32(128010), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(572732), int32(0))
+					F_errhint(m, int32(572867), int32(0))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494594), int32(282), int32(244434))
+						F_errfinish(m, int32(494701), int32(282), int32(244480))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -105,7 +105,7 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v39 = int32(4410688)
+		v39 = int32(4410816)
 		v40 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		v41 = *(*int64)(unsafe.Add(mBase, uint32(v40)+280))
 		*(*int64)(unsafe.Add(mBase, uint32(v40)+280)) = v41

@@ -402,7 +402,7 @@ L6:
 	;
 	v29 = *(*int32)(unsafe.Add(mBase, _consts[1173]))
 	v34 = int32(0)
-	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4503136), v34, v34)
+	v36 = F_hash_search(m, v29, v25<<(uint(int32(2))%32)+int32(4503264), v34, v34)
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -859,7 +859,7 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 							if v40 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(498946), int32(3475), int32(232490))
+								F_errfinish(m, int32(499053), int32(3475), int32(232536))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
@@ -1115,7 +1115,7 @@ func F_AtEOSubXact_cleanup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 						if v40 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(498946), int32(3475), int32(232490))
+							F_errfinish(m, int32(499053), int32(3475), int32(232536))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {

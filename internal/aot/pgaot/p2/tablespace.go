@@ -129,7 +129,7 @@ func F_get_tablespace_oid(m *base.Module, l0 int32, l1 int32) int32 {
 											if v56 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(499258), int32(1461), int32(434728))
+												F_errfinish(m, int32(499365), int32(1461), int32(434824))
 												mBase = m.M
 												v61 = m.ExcPending
 												if v61 != 0 {

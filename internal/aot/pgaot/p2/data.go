@@ -13,7 +13,7 @@ func F_CreateDataDirLockFile(m *base.Module, l0 int32) {
 	var v8 int32
 	_ = v8
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[204]))
-	F_CreateLockFile(m, int32(433113), l0, int32(756936), int32(1), v6)
+	F_CreateLockFile(m, int32(433209), l0, int32(757108), int32(1), v6)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
@@ -926,7 +926,7 @@ L97:
 	}
 L98:
 	;
-	F_XLogRegisterBufData(m, int32(0), int32(4409588), int32(12))
+	F_XLogRegisterBufData(m, int32(0), int32(4409716), int32(12))
 	mBase = m.M
 	v360 = m.ExcPending
 	if v360 != 0 {
@@ -1352,7 +1352,7 @@ L11:
 	}
 L12:
 	;
-	F_px_debug(m, int32(491652), int32(0))
+	F_px_debug(m, int32(491748), int32(0))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -1419,7 +1419,7 @@ L21:
 	goto L22
 L22:
 	;
-	v73 = F_pullf_create(m, v15+int32(36), int32(4394644), l0, l2)
+	v73 = F_pullf_create(m, v15+int32(36), int32(4394708), l0, l2)
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -1431,7 +1431,7 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v56)+4)) = v54
 	*(*int32)(unsafe.Add(mBase, uint32(v56))) = v36
-	v63 = F_pullf_create(m, v15+int32(36), int32(4394608), v56, l2)
+	v63 = F_pullf_create(m, v15+int32(36), int32(4394672), v56, l2)
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -1481,7 +1481,7 @@ L29:
 L30:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v80
-	F_px_debug(m, int32(466169), v15)
+	F_px_debug(m, int32(466265), v15)
 	mBase = m.M
 	v339 = m.ExcPending
 	if v339 != 0 {
@@ -1565,7 +1565,7 @@ L39:
 	}
 L40:
 	;
-	F_px_debug(m, int32(338353), int32(0))
+	F_px_debug(m, int32(338424), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -1613,7 +1613,7 @@ L47:
 L48:
 	;
 	v130 = int32(0)
-	F_px_debug(m, int32(270513), v130)
+	F_px_debug(m, int32(270559), v130)
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1639,7 +1639,7 @@ L51:
 L52:
 	;
 	v135 = int32(0)
-	F_px_debug(m, int32(439564), v135)
+	F_px_debug(m, int32(439660), v135)
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -1690,7 +1690,7 @@ L57:
 	}
 L58:
 	;
-	F_px_debug(m, int32(367867), int32(0))
+	F_px_debug(m, int32(367963), int32(0))
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {
@@ -1700,7 +1700,7 @@ L58:
 	}
 L59:
 	;
-	F_px_debug(m, int32(441219), int32(0))
+	F_px_debug(m, int32(441315), int32(0))
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -1803,7 +1803,7 @@ L72:
 L73:
 	;
 	v201 = int32(0)
-	F_px_debug(m, int32(544244), v201)
+	F_px_debug(m, int32(544351), v201)
 	mBase = m.M
 	v205 = m.ExcPending
 	if v205 != 0 {
@@ -1911,7 +1911,7 @@ L87:
 	}
 L88:
 	;
-	F_px_debug(m, int32(491715), int32(0))
+	F_px_debug(m, int32(491811), int32(0))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -1925,7 +1925,7 @@ L89:
 L90:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v220
-	F_px_debug(m, int32(465943), v15+int32(32))
+	F_px_debug(m, int32(466039), v15+int32(32))
 	mBase = m.M
 	v239 = m.ExcPending
 	if v239 != 0 {
@@ -2075,7 +2075,7 @@ L113:
 	}
 L114:
 	;
-	F_px_debug(m, int32(454098), int32(0))
+	F_px_debug(m, int32(454194), int32(0))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {
@@ -2126,7 +2126,7 @@ L121:
 	}
 L122:
 	;
-	F_px_debug(m, int32(504287), int32(0))
+	F_px_debug(m, int32(504394), int32(0))
 	mBase = m.M
 	v362 = m.ExcPending
 	if v362 != 0 {
@@ -2167,7 +2167,7 @@ L128:
 	}
 L129:
 	;
-	F_px_debug(m, int32(491689), int32(0))
+	F_px_debug(m, int32(491785), int32(0))
 	mBase = m.M
 	v372 = m.ExcPending
 	if v372 != 0 {
@@ -2188,7 +2188,7 @@ L131:
 	}
 L132:
 	;
-	F_px_debug(m, int32(338353), int32(0))
+	F_px_debug(m, int32(338424), int32(0))
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {
@@ -2231,7 +2231,7 @@ L138:
 L139:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v91
-	F_px_debug(m, int32(500015), v15+int32(16))
+	F_px_debug(m, int32(500122), v15+int32(16))
 	mBase = m.M
 	v417 = m.ExcPending
 	if v417 != 0 {
@@ -2524,7 +2524,7 @@ L183:
 	}
 L184:
 	;
-	v555 = F_mbuf_append(m, l1, int32(745880), int32(1))
+	v555 = F_mbuf_append(m, l1, int32(746052), int32(1))
 	mBase = m.M
 	v556 = m.ExcPending
 	if v556 != 0 {

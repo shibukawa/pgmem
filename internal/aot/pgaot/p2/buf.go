@@ -50,13 +50,13 @@ func F_BufTableDelete(m *base.Module, l0 int32, l1 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(444741), int32(0))
+				F_errmsg_internal(m, int32(444837), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(498774), int32(160), int32(351165))
+					F_errfinish(m, int32(498881), int32(160), int32(351261))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -126,9 +126,9 @@ func F_LockBufHdr(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(229140)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = int32(229186)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(494865)
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(494972)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = int64(0)
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
@@ -148,7 +148,7 @@ L2:
 	goto L3
 L3:
 	;
-	v45 = int32(4121916)
+	v45 = int32(4121980)
 	v46 = *(*int32)(unsafe.Add(mBase, _consts[740]))
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(v6+int32(8))+8))
 	if v48 == int32(0) {

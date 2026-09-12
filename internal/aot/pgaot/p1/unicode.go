@@ -537,7 +537,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v143 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v127)+uint32(_consts[1258]))))
 								if v132&int32(64) != 0 {
-									v146 = int32(4598640)
+									v146 = int32(4598768)
 									*(*int32)(unsafe.Add(mBase, _consts[1259])) = v143
 									v154 = int32(1)
 									v155 = v146
@@ -679,7 +679,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 									if v29 == int32(2) {
 										v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1258]))))
 										if v369&int32(64) != 0 {
-											v401 = int32(4598640)
+											v401 = int32(4598768)
 											*(*int32)(unsafe.Add(mBase, _consts[1259])) = v398
 											v409 = int32(1)
 											v410 = v401
@@ -705,7 +705,7 @@ func F_unicode_normalize(m *base.Module, l0 int32, l1 int32) int32 {
 										if v369&int32(32) == int32(0) {
 											v398 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v364)+uint32(_consts[1258]))))
 											if v369&int32(64) != 0 {
-												v401 = int32(4598640)
+												v401 = int32(4598768)
 												*(*int32)(unsafe.Add(mBase, _consts[1259])) = v398
 												v409 = int32(1)
 												v410 = v401

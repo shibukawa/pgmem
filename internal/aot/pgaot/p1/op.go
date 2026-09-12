@@ -243,13 +243,13 @@ func F_CreateOpFamily(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 						v129 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v129
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-						F_errmsg(m, int32(117050), v12)
+						F_errmsg(m, int32(117096), v12)
 						mBase = m.M
 						v134 = m.ExcPending
 						if v134 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493999), int32(268), int32(19990))
+							F_errfinish(m, int32(494106), int32(268), int32(19990))
 							mBase = m.M
 							v139 = m.ExcPending
 							if v139 != 0 {
@@ -740,7 +740,7 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 				if v47 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(498911), int32(1622), int32(109131))
+					F_errfinish(m, int32(499018), int32(1622), int32(109177))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -776,7 +776,7 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 						if v47 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(498911), int32(1622), int32(109131))
+							F_errfinish(m, int32(499018), int32(1622), int32(109177))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
@@ -809,7 +809,7 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 								if v62 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(498911), int32(1908), int32(109141))
+									F_errfinish(m, int32(499018), int32(1908), int32(109187))
 									mBase = m.M
 									v67 = m.ExcPending
 									if v67 != 0 {

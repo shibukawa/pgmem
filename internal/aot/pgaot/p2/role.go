@@ -63,7 +63,7 @@ func F_get_role_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(497233), int32(5562), int32(434657))
+							F_errfinish(m, int32(497340), int32(5562), int32(434753))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -106,12 +106,12 @@ func F_show_role(m *base.Module) int32 {
 	if v10 != 0 {
 		v12 = v10
 	} else {
-		v12 = int32(372411)
+		v12 = int32(372507)
 	}
 	if v8 != 0 {
 		v14 = v12
 	} else {
-		v14 = int32(372411)
+		v14 = int32(372507)
 	}
 	return v14
 }

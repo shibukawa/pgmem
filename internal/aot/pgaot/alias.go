@@ -3080,6 +3080,16 @@ func F_accept_weak_input(m *base.Module, l0 int32) int32
 func F_pg_finfo_weak_input_status(m *base.Module) int32
 //go:linkname F_weak_input_status github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_weak_input_status
 func F_weak_input_status(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_dict_int github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_Pg_magic_func_dict_int
+func F_Pg_magic_func_dict_int(m *base.Module) int32
+//go:linkname F_pg_finfo_dintdict_init github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_dintdict_init
+func F_pg_finfo_dintdict_init(m *base.Module) int32
+//go:linkname F_pg_finfo_dintdict_lexize github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_dintdict_lexize
+func F_pg_finfo_dintdict_lexize(m *base.Module) int32
+//go:linkname F_dintdict_init github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dintdict_init
+func F_dintdict_init(m *base.Module, l0 int32) int32
+//go:linkname F_dintdict_lexize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dintdict_lexize
+func F_dintdict_lexize(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

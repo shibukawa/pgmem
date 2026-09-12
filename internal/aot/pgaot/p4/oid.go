@@ -120,7 +120,7 @@ func F_get_transform_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v33 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(494058), int32(2049), int32(434180))
+									F_errfinish(m, int32(494165), int32(2049), int32(434276))
 									mBase = m.M
 									v38 = m.ExcPending
 									if v38 != 0 {

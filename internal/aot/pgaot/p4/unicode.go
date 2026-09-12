@@ -114,19 +114,19 @@ func F_addUnicodeChar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(415847), int32(0))
+					F_errmsg(m, int32(415943), int32(0))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errdetail(m, int32(577796), int32(0))
+						F_errdetail(m, int32(577931), int32(0))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
 							return int32(0)
 						} else {
-							F_errsave_finish(m, l1, int32(314378), int32(585), int32(230233))
+							F_errsave_finish(m, l1, int32(314438), int32(585), int32(230279))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
@@ -236,13 +236,13 @@ func F_addUnicodeChar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v50 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(335636), int32(0))
+									F_errmsg(m, int32(335707), int32(0))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
 										return int32(0)
 									} else {
-										F_errsave_finish(m, l1, int32(314378), int32(602), int32(230233))
+										F_errsave_finish(m, l1, int32(314438), int32(602), int32(230279))
 										mBase = m.M
 										v59 = m.ExcPending
 										if v59 != 0 {

@@ -9728,6 +9728,36 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.WeakInputStatus(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_dict_int":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_dict_int: want 0 args")
+		}
+		r := pgaot.PgMagicFuncDictInt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "dintdict_init":
+		if len(a) != 1 {
+			panic("aot: dintdict_init: want 1 args")
+		}
+		r := pgaot.DintdictInit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "dintdict_lexize":
+		if len(a) != 1 {
+			panic("aot: dintdict_lexize: want 1 args")
+		}
+		r := pgaot.DintdictLexize(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_dintdict_init":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_dintdict_init: want 0 args")
+		}
+		r := pgaot.PgFinfoDintdictInit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_dintdict_lexize":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_dintdict_lexize: want 0 args")
+		}
+		r := pgaot.PgFinfoDintdictLexize(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

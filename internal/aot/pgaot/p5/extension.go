@@ -63,7 +63,7 @@ func F_get_extension_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496169), int32(199), int32(434100))
+							F_errfinish(m, int32(496276), int32(199), int32(434196))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
