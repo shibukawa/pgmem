@@ -113,7 +113,7 @@ done
 # Contrib extensions linked in the same way. Their control and SQL files go
 # into the share tree below so CREATE EXTENSION finds them. pgcrypto's
 # OpenSSL-backed files are replaced by host-backed ones (patches.py).
-CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree"
+CONTRIB_MODULES="pgcrypto citext pg_trgm hstore ltree btree_gist"
 for n in $CONTRIB_MODULES; do
   MODULE_DIRS="$MODULE_DIRS $n=contrib/$n"
 done
@@ -165,6 +165,6 @@ done
 # wasm/out as inputs for gen-aot.sh (postgres) and pgmem-mkdata (initdb).
 ASSETS="$ROOT/internal/assets"
 mkdir -p "$ASSETS"
-(cd "$PREFIX/share/postgresql" && tar cf - --exclude='postgres.description' --exclude='postgres.shdescription' .) | gzip -9 > "$ASSETS/share.tar.gz"
+python3 "$HERE/share-tarball.py" "$PREFIX/share/postgresql" "$ASSETS/share.tar.gz"
 ls -la "$ASSETS"
 echo "== done"
