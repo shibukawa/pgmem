@@ -1028,7 +1028,7 @@ L8:
 	;
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	v47 = F_bsearch(m, v7+int32(1044), v43, v44, int32(12), int32(1167))
+	v47 = F_bsearch(m, v7+int32(1044), v43, v44, int32(12), int32(1170))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {

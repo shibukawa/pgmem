@@ -1503,7 +1503,7 @@ L83:
 	goto L15
 L84:
 	;
-	v408 = F_bsearch(m, v20+int32(28), l4, l5, int32(12), int32(1651))
+	v408 = F_bsearch(m, v20+int32(28), l4, l5, int32(12), int32(1654))
 	mBase = m.M
 	v409 = m.ExcPending
 	if v409 != 0 {

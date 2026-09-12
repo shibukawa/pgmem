@@ -8955,17 +8955,17 @@ L415:
 L416:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_36)
-	v1785 = int32(361)
+	v1785 = int32(362)
 	goto L413
 L417:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_37)
-	v1785 = int32(361)
+	v1785 = int32(362)
 	goto L413
 L418:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_38)
-	v1785 = int32(1475)
+	v1785 = int32(1478)
 	goto L413
 L419:
 	;
@@ -8975,27 +8975,27 @@ L419:
 L420:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_40)
-	v1785 = int32(1258)
+	v1785 = int32(1261)
 	goto L413
 L421:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_41)
-	v1785 = int32(360)
+	v1785 = int32(361)
 	goto L413
 L422:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_42)
-	v1785 = int32(1281)
+	v1785 = int32(1285)
 	goto L413
 L423:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_43)
-	v1785 = int32(1281)
+	v1785 = int32(1284)
 	goto L413
 L424:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_44)
-	v1785 = int32(1522)
+	v1785 = int32(1526)
 	goto L413
 L425:
 	;
@@ -9010,7 +9010,7 @@ L426:
 L427:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_47)
-	v1785 = int32(355)
+	v1785 = int32(356)
 	goto L413
 L428:
 	;
@@ -9025,7 +9025,7 @@ L429:
 L430:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_50)
-	v1785 = int32(1086)
+	v1785 = int32(1089)
 	goto L413
 L431:
 	;
@@ -9035,12 +9035,12 @@ L431:
 L432:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_52)
-	v1785 = int32(1180)
+	v1785 = int32(1183)
 	goto L413
 L433:
 	;
 	v1784 = int32(_a_F_PostgresMainLoopOnce_53)
-	v1785 = int32(955)
+	v1785 = int32(957)
 	goto L413
 L434:
 	;
@@ -19860,7 +19860,7 @@ L1828:
 	v7793 = int32(_a_F_PostgresMainLoopOnce_195)
 	v7794 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(512)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1162)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1165)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+512)) = v7794
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+520)) = v39 + int32(460)
 	v7809 = F_pq_getmsgint(m, v39+int32(440), int32(2))
@@ -19969,7 +19969,7 @@ L1841:
 	v7509 = int32(_a_F_PostgresMainLoopOnce_195)
 	v7510 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(512)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1161)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+516)) = int32(1164)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+512)) = v7510
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+520)) = v39 + int32(460)
 	v7523 = F_makeParamList(m, v7423)
@@ -21735,7 +21735,7 @@ L2087:
 	v8771 = int32(_a_F_PostgresMainLoopOnce_195)
 	v8772 = *(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130]))
 	*(*int32)(unsafe.Add(mBase, _c_F_PostgresMainLoopOnce[130])) = v39 + int32(460)
-	*(*int32)(unsafe.Add(mBase, uint32(v39)+464)) = int32(1162)
+	*(*int32)(unsafe.Add(mBase, uint32(v39)+464)) = int32(1165)
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+460)) = v8772
 	*(*int32)(unsafe.Add(mBase, uint32(v39)+468)) = v39 + int32(472)
 	if v8181 <= int32(0) {

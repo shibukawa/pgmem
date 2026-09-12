@@ -4205,7 +4205,7 @@ func F_pgstat_reset_of_kind(m *base.Module, l0 int32) {
 			return
 		}
 	} else {
-		F_pgstat_reset_matching_entries(m, int32(1249), l0, v47)
+		F_pgstat_reset_matching_entries(m, int32(1252), l0, v47)
 		mBase = m.M
 		v56 = m.ExcPending
 		if v56 != 0 {

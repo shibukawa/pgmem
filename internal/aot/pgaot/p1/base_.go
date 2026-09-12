@@ -709,7 +709,7 @@ L51:
 	}
 L52:
 	;
-	F_before_shmem_exit(m, int32(1213), int32(0))
+	F_before_shmem_exit(m, int32(1216), int32(0))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -964,7 +964,7 @@ L86:
 	v369 = int32(_a_F_BaseInit_17)
 	v371 = *(*int32)(unsafe.Add(mBase, _c_F_BaseInit[20]))
 	*(*int32)(unsafe.Add(mBase, _c_F_BaseInit[20])) = v371 - int32(1)
-	F_on_proc_exit(m, int32(1119))
+	F_on_proc_exit(m, int32(1122))
 	mBase = m.M
 	v377 = m.ExcPending
 	if v377 != 0 {

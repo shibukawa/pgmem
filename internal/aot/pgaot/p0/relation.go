@@ -1159,64 +1159,48 @@ func F_RelationCopyStorage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v60
 	var v61 int32
 	_ = v61
-	var v63 int32
-	_ = v63
-	var v65 int32
-	_ = v65
 	var v66 int32
 	_ = v66
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v76 int32
+	_ = v76
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
-	var v82 int32
-	_ = v82
-	var v83 int32
-	_ = v83
-	var v89 int32
-	_ = v89
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
 	var v90 int32
 	_ = v90
-	var v93 int32
-	_ = v93
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v103 int32
-	_ = v103
-	var v109 int32
-	_ = v109
+	var v92 int32
+	_ = v92
+	var v104 int32
+	_ = v104
+	var v110 int32
+	_ = v110
 	var v111 int32
 	_ = v111
-	var v123 int32
-	_ = v123
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
+	var v119 int32
+	_ = v119
+	var v122 int32
+	_ = v122
 	var v129 int32
 	_ = v129
-	var v130 int32
-	_ = v130
-	var v131 int32
-	_ = v131
-	var v132 int32
-	_ = v132
 	var v134 int32
 	_ = v134
-	var v138 int32
-	_ = v138
-	var v141 int32
-	_ = v141
-	var v148 int32
-	_ = v148
-	var v153 int32
-	_ = v153
 	v5 = int32(0)
 	v10 = m.G0
 	v12 = v10 - int32(96)
@@ -1288,14 +1272,14 @@ L7:
 	}
 L8:
 	;
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v131 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	F_GetRelationPath(m, v12+int32(20), v129, v130, v131, v132, l2)
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	F_GetRelationPath(m, v12+int32(20), v110, v111, v112, v113, l2)
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L4
 	} else {
 		goto L34
@@ -1318,8 +1302,8 @@ L12:
 	;
 	F_smgr_bulk_finish(m, v29)
 	mBase = m.M
-	v123 = m.ExcPending
-	if v123 != 0 {
+	v104 = m.ExcPending
+	if v104 != 0 {
 		goto L4
 	} else {
 		goto L33
@@ -1364,65 +1348,55 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v60
-	v63 = int32(_a_F_RelationCopyStorage_0)
-	v65 = *(*int32)(unsafe.Add(mBase, _c_F_RelationCopyStorage[3]))
-	v66 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_RelationCopyStorage[3])) = v65 + v66
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v72*int32(80))+uint32(_c_F_RelationCopyStorage[4])))
-	m.T0[v77].(func(*base.Module, int32, int32, int32, int32, int32))(m, l0, l2, v52, v12+int32(20), v66)
+	F_smgrreadv(m, l0, l2, v52, v12+int32(20))
 	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
+	v66 = m.ExcPending
+	if v66 != 0 {
 		goto L4
 	} else {
 		goto L20
 	}
 L20:
 	;
-	v80 = int32(_a_F_RelationCopyStorage_0)
-	v82 = *(*int32)(unsafe.Add(mBase, _c_F_RelationCopyStorage[3]))
-	v83 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_RelationCopyStorage[3])) = v82 - v83
-	v89 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RelationCopyStorage[5])))
-	if v89 != 0 {
+	v70 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RelationCopyStorage[3])))
+	if v70 != 0 {
 		goto L21
 	} else {
 		goto L22
 	}
 L21:
 	;
-	v90 = int32(5)
+	v71 = int32(5)
 	goto L23
 L22:
 	;
-	v90 = v83
+	v71 = int32(1)
 	goto L23
 L23:
 	;
-	v93 = F_PageIsVerified(m, v60, v52, v90, v12+int32(95))
+	v74 = F_PageIsVerified(m, v60, v52, v71, v12+int32(95))
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L4
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+95)))
-	if v95 == int32(1) {
+	v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+95)))
+	if v76 == int32(1) {
 		goto L25
 	} else {
 		goto L26
 	}
 L25:
 	;
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	F_pgstat_prepare_report_checksum_failure(m, v98)
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	F_pgstat_prepare_report_checksum_failure(m, v79)
 	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
+	v81 = m.ExcPending
+	if v81 != 0 {
 		goto L4
 	} else {
 		goto L28
@@ -1432,17 +1406,17 @@ L26:
 	goto L27
 L27:
 	;
-	if v93 == int32(0) {
+	if v74 == int32(0) {
 		goto L8
 	} else {
 		goto L30
 	}
 L28:
 	;
-	F_pgstat_report_checksum_failures_in_db(m, v98, int32(1))
+	F_pgstat_report_checksum_failures_in_db(m, v79, int32(1))
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v84 = m.ExcPending
+	if v84 != 0 {
 		goto L4
 	} else {
 		goto L29
@@ -1454,17 +1428,17 @@ L30:
 	;
 	F_smgr_bulk_write(m, v29, v52, v60, int32(0))
 	mBase = m.M
-	v109 = m.ExcPending
-	if v109 != 0 {
+	v90 = m.ExcPending
+	if v90 != 0 {
 		goto L4
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v111 = v52 + int32(1)
-	if v111 != v45 {
-		v52 = v111
+	v92 = v52 + int32(1)
+	if v92 != v45 {
+		v52 = v92
 		goto L13
 	} else {
 		goto L32
@@ -1480,8 +1454,8 @@ L34:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v138 = m.ExcPending
-	if v138 != 0 {
+	v119 = m.ExcPending
+	if v119 != 0 {
 		goto L4
 	} else {
 		goto L35
@@ -1490,8 +1464,8 @@ L35:
 	;
 	F_errcode(m, int32(16779816))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v122 = m.ExcPending
+	if v122 != 0 {
 		goto L4
 	} else {
 		goto L36
@@ -1500,20 +1474,20 @@ L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v52
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v12 + int32(20)
-	F_errmsg(m, int32(_a_F_RelationCopyStorage_1), v12)
+	F_errmsg(m, int32(_a_F_RelationCopyStorage_0), v12)
 	mBase = m.M
-	v148 = m.ExcPending
-	if v148 != 0 {
+	v129 = m.ExcPending
+	if v129 != 0 {
 		goto L4
 	} else {
 		goto L37
 	}
 L37:
 	;
-	F_errfinish(m, int32(_a_F_RelationCopyStorage_2), int32(550), int32(_a_F_RelationCopyStorage_3))
+	F_errfinish(m, int32(_a_F_RelationCopyStorage_1), int32(550), int32(_a_F_RelationCopyStorage_2))
 	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
+	v134 = m.ExcPending
+	if v134 != 0 {
 		goto L4
 	} else {
 		goto L38

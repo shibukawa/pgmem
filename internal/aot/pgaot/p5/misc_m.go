@@ -5271,7 +5271,7 @@ L61:
 	v179 = v129
 	v180 = v140
 	v181 = int32(0)
-	v182 = int32(1454)
+	v182 = int32(1457)
 	goto L1
 L62:
 	;
@@ -5314,11 +5314,11 @@ L69:
 	goto L66
 L70:
 	;
-	v172 = int32(1654)
+	v172 = int32(1657)
 	goto L72
 L71:
 	;
-	v172 = int32(1655)
+	v172 = int32(1658)
 	goto L72
 L72:
 	;
@@ -5329,7 +5329,7 @@ L72:
 	}
 L73:
 	;
-	v175 = int32(1653)
+	v175 = int32(1656)
 	goto L75
 L74:
 	;
@@ -15653,7 +15653,7 @@ func F_mul_d_interval(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1475), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1478), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

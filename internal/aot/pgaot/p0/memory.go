@@ -278,7 +278,7 @@ func F_MemoryContextStatsInternal(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+92)) = l1
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+32))
-	m.T0[v18].(func(*base.Module, int32, int32, int32, int32, int32))(m, l0, int32(1787), v11+int32(92), l4, l5)
+	m.T0[v18].(func(*base.Module, int32, int32, int32, int32, int32))(m, l0, int32(1790), v11+int32(92), l4, l5)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {

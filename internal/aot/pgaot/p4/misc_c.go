@@ -5466,7 +5466,7 @@ func F_CreateAuxProcessResourceOwner(m *base.Module) {
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+352)) = v11
 		*(*int32)(unsafe.Add(mBase, _c_F_CreateAuxProcessResourceOwner[1])) = v6
 		*(*int32)(unsafe.Add(mBase, _c_F_CreateAuxProcessResourceOwner[2])) = v6
-		F_on_shmem_exit(m, int32(1834), int32(0))
+		F_on_shmem_exit(m, int32(1837), int32(0))
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
@@ -19678,86 +19678,86 @@ func F_collect_visibility_data(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v43
 	var v48 int32
 	_ = v48
-	var v55 int32
-	_ = v55
 	var v56 int32
 	_ = v56
 	var v57 int32
 	_ = v57
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v72 int32
-	_ = v72
-	var v74 int32
-	_ = v74
-	var v77 int32
-	_ = v77
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
+	var v73 int32
+	_ = v73
+	var v75 int32
+	_ = v75
 	var v78 int32
 	_ = v78
-	var v81 int32
-	_ = v81
+	var v79 int32
+	_ = v79
 	var v82 int32
 	_ = v82
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
+	var v83 int32
+	_ = v83
+	var v85 int32
+	_ = v85
 	var v90 int32
 	_ = v90
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
+	var v91 int32
+	_ = v91
+	var v93 int32
+	_ = v93
 	var v97 int32
 	_ = v97
-	var v100 int32
-	_ = v100
-	var v104 int32
-	_ = v104
-	var v110 int32
-	_ = v110
-	var v112 int32
-	_ = v112
-	var v118 int32
-	_ = v118
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v111 int32
+	_ = v111
+	var v113 int32
+	_ = v113
 	var v119 int32
 	_ = v119
-	var v122 int32
-	_ = v122
+	var v120 int32
+	_ = v120
 	var v123 int32
 	_ = v123
-	var v125 int32
-	_ = v125
-	var v129 int32
-	_ = v129
-	var v133 int32
-	_ = v133
-	var v146 int32
-	_ = v146
+	var v124 int32
+	_ = v124
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
+	var v134 int32
+	_ = v134
 	var v147 int32
 	_ = v147
-	var v149 int32
-	_ = v149
-	var v152 int32
-	_ = v152
-	var v160 int32
-	_ = v160
-	var v163 int32
-	_ = v163
+	var v148 int32
+	_ = v148
+	var v150 int32
+	_ = v150
+	var v153 int32
+	_ = v153
+	var v161 int32
+	_ = v161
 	var v164 int32
 	_ = v164
-	var v172 int32
-	_ = v172
+	var v165 int32
+	_ = v165
 	var v173 int32
 	_ = v173
 	var v174 int32
 	_ = v174
-	var v176 int32
-	_ = v176
-	var v183 int32
-	_ = v183
+	var v175 int32
+	_ = v175
+	var v177 int32
+	_ = v177
+	var v184 int32
+	_ = v184
 	v3 = int32(0)
 	v11 = m.G0
 	v13 = v11 - int32(16)
@@ -19788,8 +19788,8 @@ L3:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v160 = m.ExcPending
-	if v160 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L1
 	} else {
 		goto L52
@@ -19845,17 +19845,17 @@ L9:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = v38
 	v48 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v48
-	v55 = F_read_stream_begin_relation(m, int32(12), v18, v23, int32(120), v13+int32(4), v48)
+	v56 = F_read_stream_begin_relation(m, int32(12), v18, v23, v48, int32(120), v13+int32(4), v48)
 	mBase = m.M
-	v56 = m.ExcPending
-	if v56 != 0 {
+	v57 = m.ExcPending
+	if v57 != 0 {
 		goto L1
 	} else {
 		goto L12
 	}
 L10:
 	;
-	v57 = v3
+	v58 = v3
 	goto L11
 L11:
 	;
@@ -19866,12 +19866,12 @@ L11:
 	}
 L12:
 	;
-	v57 = v55
+	v58 = v56
 	goto L11
 L13:
 	;
-	v59 = v42 + int32(8)
-	v61 = int32(0)
+	v60 = v42 + int32(8)
+	v62 = int32(0)
 	goto L16
 L14:
 	;
@@ -19885,8 +19885,8 @@ L15:
 	}
 L16:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[0]))
-	if v72 != 0 {
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[0]))
+	if v73 != 0 {
 		goto L18
 	} else {
 		goto L19
@@ -19898,8 +19898,8 @@ L18:
 	;
 	F_ProcessInterrupts(m)
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L1
 	} else {
 		goto L21
@@ -19909,10 +19909,10 @@ L19:
 	goto L20
 L20:
 	;
-	v77 = F_visibilitymap_get_status(m, v23, v61, v13+int32(12))
+	v78 = F_visibilitymap_get_status(m, v23, v62, v13+int32(12))
 	mBase = m.M
-	v78 = m.ExcPending
-	if v78 != 0 {
+	v79 = m.ExcPending
+	if v79 != 0 {
 		goto L1
 	} else {
 		goto L22
@@ -19922,34 +19922,34 @@ L21:
 	goto L20
 L22:
 	;
-	if v77&int32(1) != 0 {
+	if v78&int32(1) != 0 {
 		goto L23
 	} else {
 		goto L24
 	}
 L23:
 	;
-	v81 = v61 + v59
-	v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v81))))
-	v84 = v82 | int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v81))) = uint8(v84)
+	v82 = v62 + v60
+	v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v82))))
+	v85 = v83 | int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(v82))) = uint8(v85)
 	goto L25
 L24:
 	;
 	goto L25
 L25:
 	;
-	if v77&int32(2) != 0 {
+	if v78&int32(2) != 0 {
 		goto L26
 	} else {
 		goto L27
 	}
 L26:
 	;
-	v89 = v61 + v59
-	v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
-	v92 = v90 | int32(2)
-	*(*uint8)(unsafe.Add(mBase, uint32(v89))) = uint8(v92)
+	v90 = v62 + v60
+	v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90))))
+	v93 = v91 | int32(2)
+	*(*uint8)(unsafe.Add(mBase, uint32(v90))) = uint8(v93)
 	goto L28
 L27:
 	;
@@ -19963,10 +19963,10 @@ L28:
 	}
 L29:
 	;
-	v96 = F_read_stream_next_buffer(m, v57, int32(0))
+	v97 = F_read_stream_next_buffer(m, v58, int32(0))
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v98 = m.ExcPending
+	if v98 != 0 {
 		goto L1
 	} else {
 		goto L32
@@ -19976,68 +19976,68 @@ L30:
 	goto L31
 L31:
 	;
-	v133 = v61 + int32(1)
-	if v133 != v38 {
-		v61 = v133
+	v134 = v62 + int32(1)
+	if v134 != v38 {
+		v62 = v134
 		goto L16
 	} else {
 		goto L42
 	}
 L32:
 	;
-	F_LockBuffer(m, v96, int32(1))
+	F_LockBuffer(m, v97, int32(1))
 	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L1
 	} else {
 		goto L33
 	}
 L33:
 	;
-	if v96 < int32(0) {
+	if v97 < int32(0) {
 		goto L35
 	} else {
 		goto L36
 	}
 L34:
 	;
-	v119 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118)+10)))
-	if v119&int32(4) != 0 {
+	v120 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v119)+10)))
+	if v120&int32(4) != 0 {
 		goto L38
 	} else {
 		goto L39
 	}
 L35:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[1]))
-	v110 = *(*int32)(unsafe.Add(mBase, uint32(v104+(v96^int32(-1))<<(uint(int32(2))%32))))
-	v118 = v110
+	v105 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[1]))
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(v105+(v97^int32(-1))<<(uint(int32(2))%32))))
+	v119 = v111
 	goto L34
 L36:
 	;
 	goto L37
 L37:
 	;
-	v112 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[2]))
-	v118 = v112 + v96<<(uint(int32(13))%32) + int32(-8192)
+	v113 = *(*int32)(unsafe.Add(mBase, _c_F_collect_visibility_data[2]))
+	v119 = v113 + v97<<(uint(int32(13))%32) + int32(-8192)
 	goto L34
 L38:
 	;
-	v122 = v61 + v59
-	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v122))))
-	v125 = v123 | int32(4)
-	*(*uint8)(unsafe.Add(mBase, uint32(v122))) = uint8(v125)
+	v123 = v62 + v60
+	v124 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v123))))
+	v126 = v124 | int32(4)
+	*(*uint8)(unsafe.Add(mBase, uint32(v123))) = uint8(v126)
 	goto L40
 L39:
 	;
 	goto L40
 L40:
 	;
-	F_UnlockReleaseBuffer(m, v96)
+	F_UnlockReleaseBuffer(m, v97)
 	mBase = m.M
-	v129 = m.ExcPending
-	if v129 != 0 {
+	v130 = m.ExcPending
+	if v130 != 0 {
 		goto L1
 	} else {
 		goto L41
@@ -20050,10 +20050,10 @@ L42:
 	goto L17
 L43:
 	;
-	F_read_stream_end(m, v57)
+	F_read_stream_end(m, v58)
 	mBase = m.M
-	v146 = m.ExcPending
-	if v146 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L1
 	} else {
 		goto L46
@@ -20063,8 +20063,8 @@ L44:
 	goto L45
 L45:
 	;
-	v147 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	if v147 != 0 {
+	v148 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+	if v148 != 0 {
 		goto L47
 	} else {
 		goto L48
@@ -20074,10 +20074,10 @@ L46:
 	goto L45
 L47:
 	;
-	F_ReleaseBuffer(m, v147)
+	F_ReleaseBuffer(m, v148)
 	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
+	v150 = m.ExcPending
+	if v150 != 0 {
 		goto L1
 	} else {
 		goto L50
@@ -20089,8 +20089,8 @@ L49:
 	;
 	F_relation_close(m, v23, int32(1))
 	mBase = m.M
-	v152 = m.ExcPending
-	if v152 != 0 {
+	v153 = m.ExcPending
+	if v153 != 0 {
 		goto L1
 	} else {
 		goto L51
@@ -20106,32 +20106,32 @@ L52:
 	;
 	F_errcode(m, int32(151027844))
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v164 = m.ExcPending
+	if v164 != 0 {
 		goto L1
 	} else {
 		goto L53
 	}
 L53:
 	;
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v23)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v164 + int32(4)
+	v165 = *(*int32)(unsafe.Add(mBase, uint32(v23)+48))
+	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v165 + int32(4)
 	F_errmsg(m, int32(_a_F_collect_visibility_data_0), v13)
 	mBase = m.M
-	v172 = m.ExcPending
-	if v172 != 0 {
+	v173 = m.ExcPending
+	if v173 != 0 {
 		goto L1
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v173 = *(*int32)(unsafe.Add(mBase, uint32(v23)+48))
-	v174 = int32(*(*int8)(unsafe.Add(mBase, uint32(v173)+119)))
-	F_errdetail_relkind_not_supported(m, v174)
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(v23)+48))
+	v175 = int32(*(*int8)(unsafe.Add(mBase, uint32(v174)+119)))
+	F_errdetail_relkind_not_supported(m, v175)
 	mBase = m.M
-	v176 = m.ExcPending
-	if v176 != 0 {
+	v177 = m.ExcPending
+	if v177 != 0 {
 		goto L1
 	} else {
 		goto L55
@@ -20140,8 +20140,8 @@ L55:
 	;
 	F_errfinish(m, int32(_a_F_collect_visibility_data_1), int32(951), int32(_a_F_collect_visibility_data_2))
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v184 = m.ExcPending
+	if v184 != 0 {
 		goto L1
 	} else {
 		goto L56

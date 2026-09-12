@@ -23918,7 +23918,7 @@ L9:
 L10:
 	;
 	v32 = int32(8)
-	v36 = F_bsearch(m, v9+v32, v25, v26, v32, int32(1562))
+	v36 = F_bsearch(m, v9+v32, v25, v26, v32, int32(1565))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {

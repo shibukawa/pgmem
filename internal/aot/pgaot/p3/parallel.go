@@ -4178,7 +4178,7 @@ L39:
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+16)) = v152
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+12)) = v148
 	*(*int32)(unsafe.Add(mBase, uint32(v291)+8)) = v135
-	F_on_dsm_detach(m, v107, int32(1623), int32(0))
+	F_on_dsm_detach(m, v107, int32(1626), int32(0))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {

@@ -334,7 +334,7 @@ func F_tsquery_phrase(m *base.Module, l0 int32) int32 {
 	_ = v10
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1528), int32(0), v4, v5, int32(1))
+	v7 = F_DirectFunctionCall3Coll(m, int32(1531), int32(0), v4, v5, int32(1))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

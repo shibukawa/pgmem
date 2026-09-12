@@ -1133,11 +1133,11 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v80))) = v93
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+36)) = int32(1371)
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+12)) = int32(1372)
+	*(*int32)(unsafe.Add(mBase, uint32(v83)+36)) = int32(1374)
+	*(*int32)(unsafe.Add(mBase, uint32(v83)+12)) = int32(1375)
 	*(*int32)(unsafe.Add(mBase, uint32(v83))) = v80
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+24)) = int32(1373)
-	*(*int32)(unsafe.Add(mBase, uint32(v83)+20)) = int32(1374)
+	*(*int32)(unsafe.Add(mBase, uint32(v83)+24)) = int32(1376)
+	*(*int32)(unsafe.Add(mBase, uint32(v83)+20)) = int32(1377)
 	v105 = *(*int32)(unsafe.Add(mBase, uint32(v80)))
 	v106 = F_pg_parse_json(m, v105, v83)
 	mBase = m.M

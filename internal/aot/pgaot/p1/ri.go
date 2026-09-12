@@ -420,7 +420,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_ri_FetchConstraintInfo[0])) = v27
-	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1501), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1504), int32(0))
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {

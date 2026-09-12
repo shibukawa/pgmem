@@ -1916,6 +1916,8 @@ func F_launcher_determine_sleep(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_get_database_list(m *base.Module) int32
 //go:linkname F_AuxiliaryProcessMainCommon github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_AuxiliaryProcessMainCommon
 func F_AuxiliaryProcessMainCommon(m *base.Module)
+//go:linkname F_RegisterBackgroundWorker github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_RegisterBackgroundWorker
+func F_RegisterBackgroundWorker(m *base.Module, l0 int32)
 //go:linkname F_SanityCheckBackgroundWorker github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_SanityCheckBackgroundWorker
 func F_SanityCheckBackgroundWorker(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_AbsorbSyncRequests github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_AbsorbSyncRequests
@@ -2105,7 +2107,7 @@ func F_AtEOXact_Aio(m *base.Module)
 //go:linkname F_pgaio_result_report github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgaio_result_report
 func F_pgaio_result_report(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_read_stream_begin_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_read_stream_begin_relation
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_read_stream_look_ahead github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_read_stream_look_ahead
 func F_read_stream_look_ahead(m *base.Module, l0 int32)
 //go:linkname F_read_stream_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_read_stream_reset
@@ -3631,11 +3633,13 @@ func F_config_enum_get_options(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 //go:linkname F_GetConfigOptionFlags github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetConfigOptionFlags
 func F_GetConfigOptionFlags(m *base.Module, l0 int32) int32
 //go:linkname F_DefineCustomBoolVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DefineCustomBoolVariable
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
 func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
 func F_define_custom_variable(m *base.Module, l0 int32)
+//go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
+func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
 func F_MarkGUCPrefixReserved(m *base.Module, l0 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName

@@ -7161,57 +7161,57 @@ L64:
 	for {
 	}
 }
-func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
+func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v24 int64
-	_ = v24
-	var v26 int32
-	_ = v26
+	var v23 int32
+	_ = v23
+	var v25 int64
+	_ = v25
 	var v27 int32
 	_ = v27
-	var v30 int32
-	_ = v30
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
 	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
 	var v43 int32
 	_ = v43
 	var v44 int32
 	_ = v44
-	var v46 int32
-	_ = v46
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
 	var v60 int32
 	_ = v60
 	var v62 int32
@@ -7230,80 +7230,80 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v72
 	var v77 int32
 	_ = v77
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
 	var v91 int32
 	_ = v91
 	var v92 int32
 	_ = v92
-	var v93 int32
-	_ = v93
-	var v95 int64
-	_ = v95
+	var v94 int64
+	_ = v94
+	var v98 int32
+	_ = v98
 	var v99 int32
 	_ = v99
-	var v100 int32
-	_ = v100
+	var v102 int32
+	_ = v102
 	var v103 int32
 	_ = v103
 	var v104 int32
 	_ = v104
-	var v105 int32
-	_ = v105
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
-	var v111 int32
-	_ = v111
-	var v115 int32
-	_ = v115
-	var v117 int32
-	_ = v117
-	var v120 int32
-	_ = v120
-	var v131 int32
-	_ = v131
-	var v134 int32
-	_ = v134
-	var v138 int32
-	_ = v138
-	var v143 int32
-	_ = v143
-	v7 = m.G0
-	v9 = v7 - int32(32)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v11)+118)))
-	if v12 == int32(116) {
-		v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+24)))
-		if v15 == int32(0) {
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
+	var v118 int32
+	_ = v118
+	var v129 int32
+	_ = v129
+	var v132 int32
+	_ = v132
+	var v136 int32
+	_ = v136
+	var v141 int32
+	_ = v141
+	v8 = m.G0
+	v10 = v8 - int32(32)
+	m.G0 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+118)))
+	if v13 == int32(116) {
+		v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+24)))
+		if v16 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v131 = m.ExcPending
-			if v131 != 0 {
+			v129 = m.ExcPending
+			if v129 != 0 {
 				return
 			} else {
 				F_errcode(m, int32(1088))
 				mBase = m.M
-				v134 = m.ExcPending
-				if v134 != 0 {
+				v132 = m.ExcPending
+				if v132 != 0 {
 					return
 				} else {
 					F_errmsg(m, int32(_a_F_PrefetchBuffer_0), int32(0))
 					mBase = m.M
-					v138 = m.ExcPending
-					if v138 != 0 {
+					v136 = m.ExcPending
+					if v136 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_PrefetchBuffer_1), int32(662), int32(_a_F_PrefetchBuffer_2))
 						mBase = m.M
-						v143 = m.ExcPending
-						if v143 != 0 {
+						v141 = m.ExcPending
+						if v141 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -7314,52 +7314,52 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				}
 			}
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-			if v18 == int32(0) {
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
-				v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v22
-				v24 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-				*(*int64)(unsafe.Add(mBase, uint32(v9))) = v24
-				v26 = F_smgropen(m, v9, v21)
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+			if v19 == int32(0) {
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v23
+				v25 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+				*(*int64)(unsafe.Add(mBase, uint32(v10))) = v25
+				v27 = F_smgropen(m, v10, v22)
 				mBase = m.M
-				v27 = m.ExcPending
-				if v27 != 0 {
+				v28 = m.ExcPending
+				if v28 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v26
-					v30 = *(*int32)(unsafe.Add(mBase, uint32(v26)+72))
-					if v30 != 0 {
-						v38 = v30
+					*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v27
+					v31 = *(*int32)(unsafe.Add(mBase, uint32(v27)+72))
+					if v31 != 0 {
+						v39 = v31
 					} else {
-						v31 = *(*int32)(unsafe.Add(mBase, uint32(v26)+76))
-						v32 = *(*int32)(unsafe.Add(mBase, uint32(v26)+80))
-						*(*int32)(unsafe.Add(mBase, uint32(v31)+4)) = v32
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v26)+76))
-						*(*int32)(unsafe.Add(mBase, uint32(v32))) = v34
-						v36 = *(*int32)(unsafe.Add(mBase, uint32(v26)+72))
-						v38 = v36
+						v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+76))
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(v27)+80))
+						*(*int32)(unsafe.Add(mBase, uint32(v32)+4)) = v33
+						v35 = *(*int32)(unsafe.Add(mBase, uint32(v27)+76))
+						*(*int32)(unsafe.Add(mBase, uint32(v33))) = v35
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v27)+72))
+						v39 = v37
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v26)+72)) = v38 + int32(1)
-					v42 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-					v43 = v42
-					v44 = m.G0
-					v46 = v44 - int32(32)
-					m.G0 = v46
+					*(*int32)(unsafe.Add(mBase, uint32(v27)+72)) = v39 + int32(1)
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+					v44 = v43
+					v45 = m.G0
+					v47 = v45 - int32(32)
+					m.G0 = v47
 					*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
-					v50 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-					*(*int32)(unsafe.Add(mBase, uint32(v46)+12)) = v50
-					v52 = *(*int32)(unsafe.Add(mBase, uint32(v43)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(v46)+16)) = v52
-					v54 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v46)+28)) = l2
-					*(*int32)(unsafe.Add(mBase, uint32(v46)+24)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v46)+20)) = v54
+					v51 = *(*int32)(unsafe.Add(mBase, uint32(v44)))
+					*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = v51
+					v53 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
+					*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = v53
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v47)+28)) = l3
+					*(*int32)(unsafe.Add(mBase, uint32(v47)+24)) = l2
+					*(*int32)(unsafe.Add(mBase, uint32(v47)+20)) = v55
 					v60 = *(*int32)(unsafe.Add(mBase, _c_F_PrefetchBuffer[0]))
 					if v60 != 0 {
 						v65 = v60
 						v68 = int32(0)
-						v70 = F_hash_search(m, v65, v46+int32(12), v68, v68)
+						v70 = F_hash_search(m, v65, v47+int32(12), v68, v68)
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -7368,29 +7368,29 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v70 != 0 {
 								v72 = *(*int32)(unsafe.Add(mBase, uint32(v70)+20))
 								*(*int32)(unsafe.Add(mBase, uint32(l0))) = v72 ^ int32(-1)
-								m.G0 = v46 + int32(32)
-								m.G0 = v9 + int32(32)
+								m.G0 = v47 + int32(32)
+								m.G0 = v10 + int32(32)
 								return
 							} else {
 								v77 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PrefetchBuffer[1])))
 								if v77&int32(1) != 0 {
-									m.G0 = v46 + int32(32)
-									m.G0 = v9 + int32(32)
+									m.G0 = v47 + int32(32)
+									m.G0 = v10 + int32(32)
 									return
 								} else {
-									v82 = F_smgrprefetch(m, v43, int32(0), l2, int32(1))
+									v81 = F_smgrprefetch(m, v44, l2, l3, int32(1))
 									mBase = m.M
-									v83 = m.ExcPending
-									if v83 != 0 {
+									v82 = m.ExcPending
+									if v82 != 0 {
 										return
 									} else {
-										if v82 == int32(0) {
+										if v81 == int32(0) {
 										} else {
-											v86 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v86)
+											v85 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v85)
 										}
-										m.G0 = v46 + int32(32)
-										m.G0 = v9 + int32(32)
+										m.G0 = v47 + int32(32)
+										m.G0 = v10 + int32(32)
 										return
 									}
 								}
@@ -7406,7 +7406,7 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							v64 = *(*int32)(unsafe.Add(mBase, _c_F_PrefetchBuffer[0]))
 							v65 = v64
 							v68 = int32(0)
-							v70 = F_hash_search(m, v65, v46+int32(12), v68, v68)
+							v70 = F_hash_search(m, v65, v47+int32(12), v68, v68)
 							mBase = m.M
 							v71 = m.ExcPending
 							if v71 != 0 {
@@ -7415,29 +7415,29 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								if v70 != 0 {
 									v72 = *(*int32)(unsafe.Add(mBase, uint32(v70)+20))
 									*(*int32)(unsafe.Add(mBase, uint32(l0))) = v72 ^ int32(-1)
-									m.G0 = v46 + int32(32)
-									m.G0 = v9 + int32(32)
+									m.G0 = v47 + int32(32)
+									m.G0 = v10 + int32(32)
 									return
 								} else {
 									v77 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PrefetchBuffer[1])))
 									if v77&int32(1) != 0 {
-										m.G0 = v46 + int32(32)
-										m.G0 = v9 + int32(32)
+										m.G0 = v47 + int32(32)
+										m.G0 = v10 + int32(32)
 										return
 									} else {
-										v82 = F_smgrprefetch(m, v43, int32(0), l2, int32(1))
+										v81 = F_smgrprefetch(m, v44, l2, l3, int32(1))
 										mBase = m.M
-										v83 = m.ExcPending
-										if v83 != 0 {
+										v82 = m.ExcPending
+										if v82 != 0 {
 											return
 										} else {
-											if v82 == int32(0) {
+											if v81 == int32(0) {
 											} else {
-												v86 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v86)
+												v85 = int32(1)
+												*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v85)
 											}
-											m.G0 = v46 + int32(32)
-											m.G0 = v9 + int32(32)
+											m.G0 = v47 + int32(32)
+											m.G0 = v10 + int32(32)
 											return
 										}
 									}
@@ -7447,24 +7447,24 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				v43 = v18
-				v44 = m.G0
-				v46 = v44 - int32(32)
-				m.G0 = v46
+				v44 = v19
+				v45 = m.G0
+				v47 = v45 - int32(32)
+				m.G0 = v47
 				*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
-				v50 = *(*int32)(unsafe.Add(mBase, uint32(v43)))
-				*(*int32)(unsafe.Add(mBase, uint32(v46)+12)) = v50
-				v52 = *(*int32)(unsafe.Add(mBase, uint32(v43)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(v46)+16)) = v52
-				v54 = *(*int32)(unsafe.Add(mBase, uint32(v43)+8))
-				*(*int32)(unsafe.Add(mBase, uint32(v46)+28)) = l2
-				*(*int32)(unsafe.Add(mBase, uint32(v46)+24)) = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v46)+20)) = v54
+				v51 = *(*int32)(unsafe.Add(mBase, uint32(v44)))
+				*(*int32)(unsafe.Add(mBase, uint32(v47)+12)) = v51
+				v53 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = v53
+				v55 = *(*int32)(unsafe.Add(mBase, uint32(v44)+8))
+				*(*int32)(unsafe.Add(mBase, uint32(v47)+28)) = l3
+				*(*int32)(unsafe.Add(mBase, uint32(v47)+24)) = l2
+				*(*int32)(unsafe.Add(mBase, uint32(v47)+20)) = v55
 				v60 = *(*int32)(unsafe.Add(mBase, _c_F_PrefetchBuffer[0]))
 				if v60 != 0 {
 					v65 = v60
 					v68 = int32(0)
-					v70 = F_hash_search(m, v65, v46+int32(12), v68, v68)
+					v70 = F_hash_search(m, v65, v47+int32(12), v68, v68)
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
@@ -7473,29 +7473,29 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v70 != 0 {
 							v72 = *(*int32)(unsafe.Add(mBase, uint32(v70)+20))
 							*(*int32)(unsafe.Add(mBase, uint32(l0))) = v72 ^ int32(-1)
-							m.G0 = v46 + int32(32)
-							m.G0 = v9 + int32(32)
+							m.G0 = v47 + int32(32)
+							m.G0 = v10 + int32(32)
 							return
 						} else {
 							v77 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PrefetchBuffer[1])))
 							if v77&int32(1) != 0 {
-								m.G0 = v46 + int32(32)
-								m.G0 = v9 + int32(32)
+								m.G0 = v47 + int32(32)
+								m.G0 = v10 + int32(32)
 								return
 							} else {
-								v82 = F_smgrprefetch(m, v43, int32(0), l2, int32(1))
+								v81 = F_smgrprefetch(m, v44, l2, l3, int32(1))
 								mBase = m.M
-								v83 = m.ExcPending
-								if v83 != 0 {
+								v82 = m.ExcPending
+								if v82 != 0 {
 									return
 								} else {
-									if v82 == int32(0) {
+									if v81 == int32(0) {
 									} else {
-										v86 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v86)
+										v85 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v85)
 									}
-									m.G0 = v46 + int32(32)
-									m.G0 = v9 + int32(32)
+									m.G0 = v47 + int32(32)
+									m.G0 = v10 + int32(32)
 									return
 								}
 							}
@@ -7511,7 +7511,7 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						v64 = *(*int32)(unsafe.Add(mBase, _c_F_PrefetchBuffer[0]))
 						v65 = v64
 						v68 = int32(0)
-						v70 = F_hash_search(m, v65, v46+int32(12), v68, v68)
+						v70 = F_hash_search(m, v65, v47+int32(12), v68, v68)
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -7520,29 +7520,29 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v70 != 0 {
 								v72 = *(*int32)(unsafe.Add(mBase, uint32(v70)+20))
 								*(*int32)(unsafe.Add(mBase, uint32(l0))) = v72 ^ int32(-1)
-								m.G0 = v46 + int32(32)
-								m.G0 = v9 + int32(32)
+								m.G0 = v47 + int32(32)
+								m.G0 = v10 + int32(32)
 								return
 							} else {
 								v77 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PrefetchBuffer[1])))
 								if v77&int32(1) != 0 {
-									m.G0 = v46 + int32(32)
-									m.G0 = v9 + int32(32)
+									m.G0 = v47 + int32(32)
+									m.G0 = v10 + int32(32)
 									return
 								} else {
-									v82 = F_smgrprefetch(m, v43, int32(0), l2, int32(1))
+									v81 = F_smgrprefetch(m, v44, l2, l3, int32(1))
 									mBase = m.M
-									v83 = m.ExcPending
-									if v83 != 0 {
+									v82 = m.ExcPending
+									if v82 != 0 {
 										return
 									} else {
-										if v82 == int32(0) {
+										if v81 == int32(0) {
 										} else {
-											v86 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v86)
+											v85 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v85)
 										}
-										m.G0 = v46 + int32(32)
-										m.G0 = v9 + int32(32)
+										m.G0 = v47 + int32(32)
+										m.G0 = v10 + int32(32)
 										return
 									}
 								}
@@ -7553,53 +7553,53 @@ func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			}
 		}
 	} else {
-		v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-		if v91 != 0 {
-			v117 = v91
-			F_PrefetchSharedBuffer(m, l0, v117, int32(0), l2)
+		v90 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+		if v90 != 0 {
+			v116 = v90
+			F_PrefetchSharedBuffer(m, l0, v116, l2, l3)
 			mBase = m.M
-			v120 = m.ExcPending
-			if v120 != 0 {
+			v118 = m.ExcPending
+			if v118 != 0 {
 				return
 			} else {
-				m.G0 = v9 + int32(32)
+				m.G0 = v10 + int32(32)
 				return
 			}
 		} else {
-			v92 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
-			v93 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v93
-			v95 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-			*(*int64)(unsafe.Add(mBase, uint32(v9)+16)) = v95
-			v99 = F_smgropen(m, v9+int32(16), v92)
+			v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+20))
+			v92 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = v92
+			v94 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+			*(*int64)(unsafe.Add(mBase, uint32(v10)+16)) = v94
+			v98 = F_smgropen(m, v10+int32(16), v91)
 			mBase = m.M
-			v100 = m.ExcPending
-			if v100 != 0 {
+			v99 = m.ExcPending
+			if v99 != 0 {
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v99
-				v103 = *(*int32)(unsafe.Add(mBase, uint32(v99)+72))
-				if v103 != 0 {
-					v111 = v103
+				*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v98
+				v102 = *(*int32)(unsafe.Add(mBase, uint32(v98)+72))
+				if v102 != 0 {
+					v110 = v102
 				} else {
-					v104 = *(*int32)(unsafe.Add(mBase, uint32(v99)+76))
-					v105 = *(*int32)(unsafe.Add(mBase, uint32(v99)+80))
-					*(*int32)(unsafe.Add(mBase, uint32(v104)+4)) = v105
-					v107 = *(*int32)(unsafe.Add(mBase, uint32(v99)+76))
-					*(*int32)(unsafe.Add(mBase, uint32(v105))) = v107
-					v109 = *(*int32)(unsafe.Add(mBase, uint32(v99)+72))
-					v111 = v109
+					v103 = *(*int32)(unsafe.Add(mBase, uint32(v98)+76))
+					v104 = *(*int32)(unsafe.Add(mBase, uint32(v98)+80))
+					*(*int32)(unsafe.Add(mBase, uint32(v103)+4)) = v104
+					v106 = *(*int32)(unsafe.Add(mBase, uint32(v98)+76))
+					*(*int32)(unsafe.Add(mBase, uint32(v104))) = v106
+					v108 = *(*int32)(unsafe.Add(mBase, uint32(v98)+72))
+					v110 = v108
 				}
-				*(*int32)(unsafe.Add(mBase, uint32(v99)+72)) = v111 + int32(1)
-				v115 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-				v117 = v115
-				F_PrefetchSharedBuffer(m, l0, v117, int32(0), l2)
+				*(*int32)(unsafe.Add(mBase, uint32(v98)+72)) = v110 + int32(1)
+				v114 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+				v116 = v114
+				F_PrefetchSharedBuffer(m, l0, v116, l2, l3)
 				mBase = m.M
-				v120 = m.ExcPending
-				if v120 != 0 {
+				v118 = m.ExcPending
+				if v118 != 0 {
 					return
 				} else {
-					m.G0 = v9 + int32(32)
+					m.G0 = v10 + int32(32)
 					return
 				}
 			}
@@ -14875,7 +14875,7 @@ func F_plainto_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1176), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1179), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {

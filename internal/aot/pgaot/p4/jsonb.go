@@ -1726,10 +1726,10 @@ L2:
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = int32(1403)
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = int32(1404)
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+4)) = int32(1405)
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = int32(1406)
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = int32(1406)
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = int32(1407)
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+4)) = int32(1408)
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = int32(1409)
 	return
 L4:
 	;
@@ -2550,7 +2550,7 @@ func F_jsonb_int4(m *base.Module, l0 int32) int32 {
 					}
 				case 2:
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v8)+16))
-					v35 = F_DirectFunctionCall1Coll(m, int32(1334), int32(0), v34)
+					v35 = F_DirectFunctionCall1Coll(m, int32(1337), int32(0), v34)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {

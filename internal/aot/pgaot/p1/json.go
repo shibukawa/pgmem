@@ -691,7 +691,7 @@ func F_JsonTableResetRowPattern(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v74
 					} else {
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = int32(1409)
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+64)) = int32(1412)
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+60)) = v27
 					v83 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
 					*(*int64)(unsafe.Add(mBase, uint32(v11)+76)) = int64(0)
@@ -2262,10 +2262,10 @@ func F_json_array_length(m *base.Module, l0 int32) int32 {
 					if v68 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v67)+36)) = int32(1360)
-						*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = int32(1361)
+						*(*int32)(unsafe.Add(mBase, uint32(v67)+36)) = int32(1363)
+						*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = int32(1364)
 						*(*int32)(unsafe.Add(mBase, uint32(v67))) = v17
-						*(*int32)(unsafe.Add(mBase, uint32(v67)+28)) = int32(1362)
+						*(*int32)(unsafe.Add(mBase, uint32(v67)+28)) = int32(1365)
 						v76 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 						v77 = F_pg_parse_json(m, v76, v67)
 						mBase = m.M
@@ -2738,10 +2738,10 @@ func F_json_object_keys(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v32)+4)) = v89
-									*(*int32)(unsafe.Add(mBase, uint32(v35)+36)) = int32(1348)
-									*(*int32)(unsafe.Add(mBase, uint32(v35)+12)) = int32(1349)
+									*(*int32)(unsafe.Add(mBase, uint32(v35)+36)) = int32(1351)
+									*(*int32)(unsafe.Add(mBase, uint32(v35)+12)) = int32(1352)
 									*(*int32)(unsafe.Add(mBase, uint32(v35))) = v32
-									*(*int32)(unsafe.Add(mBase, uint32(v35)+20)) = int32(1350)
+									*(*int32)(unsafe.Add(mBase, uint32(v35)+20)) = int32(1353)
 									v101 = F_pg_parse_json(m, v13+int32(12), v35)
 									mBase = m.M
 									v102 = m.ExcPending

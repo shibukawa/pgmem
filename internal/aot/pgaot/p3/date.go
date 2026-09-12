@@ -304,7 +304,7 @@ func F_date_dist(m *base.Module, l0 int32) int32 {
 	_ = v11
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(2443), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(2446), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -401,7 +401,7 @@ func F_date_mi_interval(m *base.Module, l0 int32) int32 {
 		if v22 != 0 {
 			return int32(0)
 		} else {
-			v23 = F_DirectFunctionCall2Coll(m, int32(1284), int32(0), v19, v3)
+			v23 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v19, v3)
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -419,7 +419,7 @@ func F_date_mi_interval(m *base.Module, l0 int32) int32 {
 			if v22 != 0 {
 				return int32(0)
 			} else {
-				v23 = F_DirectFunctionCall2Coll(m, int32(1284), int32(0), v19, v3)
+				v23 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v19, v3)
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -469,7 +469,7 @@ func F_date_mi_interval(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					v23 = F_DirectFunctionCall2Coll(m, int32(1284), int32(0), v19, v3)
+					v23 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v19, v3)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {

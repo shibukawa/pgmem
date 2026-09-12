@@ -24508,7 +24508,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 							v33 = v30
 							v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 							if v35 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -24534,7 +24534,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 						v33 = int32(0)
 						v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 						if v35 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -24578,7 +24578,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 						v33 = v30
 						v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 						if v35 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {
@@ -24604,7 +24604,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 					v33 = int32(0)
 					v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 					if v35 == int32(0) {
-						F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+						F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
@@ -24656,7 +24656,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 								v33 = v30
 								v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 								if v35 == int32(0) {
-									F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+									F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {
@@ -24682,7 +24682,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 							v33 = int32(0)
 							v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 							if v35 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -24726,7 +24726,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 							v33 = v30
 							v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 							if v35 == int32(0) {
-								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+								F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 								mBase = m.M
 								v42 = m.ExcPending
 								if v42 != 0 {
@@ -24752,7 +24752,7 @@ func F_superuser_arg(m *base.Module, l0 int32) int32 {
 						v33 = int32(0)
 						v35 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_superuser_arg[2])))
 						if v35 == int32(0) {
-							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1784), int32(0))
+							F_CacheRegisterSyscacheCallback(m, int32(11), int32(1787), int32(0))
 							mBase = m.M
 							v42 = m.ExcPending
 							if v42 != 0 {

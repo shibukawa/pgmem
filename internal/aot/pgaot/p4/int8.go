@@ -312,7 +312,7 @@ func F_int8_avg(m *base.Module, l0 int32) int32 {
 										if v162 != 0 {
 											return int32(0)
 										} else {
-											v165 = F_DirectFunctionCall2Coll(m, int32(1276), int32(0), v159, v90)
+											v165 = F_DirectFunctionCall2Coll(m, int32(1279), int32(0), v159, v90)
 											mBase = m.M
 											v166 = m.ExcPending
 											if v166 != 0 {

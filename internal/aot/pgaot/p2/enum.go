@@ -431,7 +431,7 @@ L38:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v52)+24)) = l0
 	v95 = v62 + int32(12)
-	v98 = F_bsearch(m, v52+int32(24), v95, v88, int32(8), int32(1624))
+	v98 = F_bsearch(m, v52+int32(24), v95, v88, int32(8), int32(1627))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -450,7 +450,7 @@ L39:
 L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v52)+24)) = l1
-	v108 = F_bsearch(m, v52+int32(24), v95, v100, int32(8), int32(1624))
+	v108 = F_bsearch(m, v52+int32(24), v95, v100, int32(8), int32(1627))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -500,7 +500,7 @@ L46:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v52)+24)) = l0
 	v125 = v117 + int32(12)
-	v128 = F_bsearch(m, v52+int32(24), v125, v118, int32(8), int32(1624))
+	v128 = F_bsearch(m, v52+int32(24), v125, v118, int32(8), int32(1627))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -519,7 +519,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v52)+24)) = l1
-	v138 = F_bsearch(m, v52+int32(24), v125, v130, int32(8), int32(1624))
+	v138 = F_bsearch(m, v52+int32(24), v125, v130, int32(8), int32(1627))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {

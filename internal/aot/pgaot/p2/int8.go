@@ -1570,7 +1570,7 @@ L62:
 	}
 L63:
 	;
-	v192 = F_DirectFunctionCall1Coll(m, int32(1315), int32(0), v190)
+	v192 = F_DirectFunctionCall1Coll(m, int32(1318), int32(0), v190)
 	mBase = m.M
 	v193 = m.ExcPending
 	if v193 != 0 {
@@ -1580,7 +1580,7 @@ L63:
 	}
 L64:
 	;
-	v194 = F_DirectFunctionCall2Coll(m, int32(1279), int32(0), v186, v192)
+	v194 = F_DirectFunctionCall2Coll(m, int32(1282), int32(0), v186, v192)
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -1597,7 +1597,7 @@ L65:
 	goto L61
 L66:
 	;
-	v207 = F_DirectFunctionCall1Coll(m, int32(1316), int32(0), v205)
+	v207 = F_DirectFunctionCall1Coll(m, int32(1319), int32(0), v205)
 	mBase = m.M
 	v208 = m.ExcPending
 	if v208 != 0 {

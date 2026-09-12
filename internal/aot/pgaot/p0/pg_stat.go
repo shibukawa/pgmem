@@ -1828,7 +1828,7 @@ L44:
 	goto L45
 L45:
 	;
-	v169 = F_DirectFunctionCall1Coll(m, int32(1424), int32(0), v11)
+	v169 = F_DirectFunctionCall1Coll(m, int32(1427), int32(0), v11)
 	mBase = m.M
 	v170 = m.ExcPending
 	if v170 != 0 {

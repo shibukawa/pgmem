@@ -8074,7 +8074,7 @@ L133:
 	goto L130
 L134:
 	;
-	F_qsort_arg(m, v285, v282, int32(16), int32(1485), v44)
+	F_qsort_arg(m, v285, v282, int32(16), int32(1488), v44)
 	mBase = m.M
 	v349 = m.ExcPending
 	if v349 != 0 {
@@ -8097,7 +8097,7 @@ L137:
 	goto L134
 L138:
 	;
-	F_qsort_arg(m, v345, v282, int32(16), int32(1486), v44)
+	F_qsort_arg(m, v345, v282, int32(16), int32(1489), v44)
 	mBase = m.M
 	v353 = m.ExcPending
 	if v353 != 0 {
@@ -9062,7 +9062,7 @@ L272:
 	goto L239
 L273:
 	;
-	F_pg_qsort(m, v872, v997, int32(16), int32(1487))
+	F_pg_qsort(m, v872, v997, int32(16), int32(1490))
 	mBase = m.M
 	v1013 = m.ExcPending
 	if v1013 != 0 {
@@ -9484,7 +9484,7 @@ L336:
 	goto L313
 L337:
 	;
-	F_qsort_arg(m, v285, v282, int32(16), int32(1485), v44)
+	F_qsort_arg(m, v285, v282, int32(16), int32(1488), v44)
 	mBase = m.M
 	v1357 = m.ExcPending
 	if v1357 != 0 {
@@ -9507,7 +9507,7 @@ L340:
 	goto L337
 L341:
 	;
-	F_qsort_arg(m, v1353, v282, int32(16), int32(1486), v44)
+	F_qsort_arg(m, v1353, v282, int32(16), int32(1489), v44)
 	mBase = m.M
 	v1361 = m.ExcPending
 	if v1361 != 0 {
@@ -10584,7 +10584,7 @@ func F_range_sortsupport(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v3 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = v3
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1484)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(1487)
 	return v3
 }
 func F_range_super_union(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

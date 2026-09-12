@@ -129,7 +129,7 @@ func F_time_dist(m *base.Module, l0 int32) int32 {
 	_ = v11
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(2721), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(2724), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

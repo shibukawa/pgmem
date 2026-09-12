@@ -3175,9 +3175,9 @@ func F_json_validate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			*(*int64)(unsafe.Add(mBase, uint32(v7)+160)) = int64(51539607564)
 			v49 = *(*int32)(unsafe.Add(mBase, _c_F_json_validate[0]))
 			*(*int32)(unsafe.Add(mBase, uint32(v35))) = v49
-			*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(1321)
+			*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(1324)
 			*(*int64)(unsafe.Add(mBase, uint32(v7)+144)) = v29
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+172)) = int32(1322)
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+172)) = int32(1325)
 			v62 = F_hash_create(m, int32(_a_F_json_validate_0), int32(32), v7+int32(144), int32(1224))
 			mBase = m.M
 			v63 = m.ExcPending
@@ -3185,9 +3185,9 @@ func F_json_validate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v62
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = int32(1323)
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = int32(1324)
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = int32(1325)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = int32(1326)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = int32(1327)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = int32(1328)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v7 + int32(12)
 				v78 = F_pg_parse_json(m, v7+int32(76), v7+int32(32))
 				mBase = m.M

@@ -8,7 +8,7 @@ import (
 func F_CacheInvalidateHeapTuple(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	var v6 int32
 	_ = v6
-	F_CacheInvalidateHeapTupleCommon(m, l0, l1, l2, int32(1598))
+	F_CacheInvalidateHeapTupleCommon(m, l0, l1, l2, int32(1601))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return

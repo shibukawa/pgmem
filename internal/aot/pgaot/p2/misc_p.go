@@ -1162,7 +1162,7 @@ L54:
 	;
 	v320 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_PostgresMain[13])) = uint8(v320)
-	F_pqsignal_be(m, int32(14), int32(1785))
+	F_pqsignal_be(m, int32(14), int32(1788))
 	mBase = m.M
 	goto L52
 L55:
@@ -1575,7 +1575,7 @@ L148:
 	goto L142
 L149:
 	;
-	v628 = int32(1159)
+	v628 = int32(1162)
 	goto L151
 L150:
 	;
@@ -1699,7 +1699,7 @@ L167:
 	;
 	v811 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_PostgresMain[13])) = uint8(v811)
-	F_pqsignal_be(m, int32(14), int32(1785))
+	F_pqsignal_be(m, int32(14), int32(1788))
 	mBase = m.M
 	goto L165
 L168:
@@ -2293,7 +2293,7 @@ L274:
 L275:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v31
-	F_on_proc_exit(m, int32(1160))
+	F_on_proc_exit(m, int32(1163))
 	mBase = m.M
 	v1166 = m.ExcPending
 	if v1166 != 0 {
@@ -21619,7 +21619,7 @@ func F_phraseto_tsquery(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1177), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1180), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {
@@ -31539,7 +31539,7 @@ L260:
 	v894 = m.G0
 	v896 = v894 - int32(16)
 	m.G0 = v896
-	v905 = F_TS_execute_locations_recurse(m, v30+int32(8), v28+int32(80), int32(1191), v896+int32(12))
+	v905 = F_TS_execute_locations_recurse(m, v30+int32(8), v28+int32(80), int32(1194), v896+int32(12))
 	mBase = m.M
 	v906 = m.ExcPending
 	if v906 != 0 {

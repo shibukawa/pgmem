@@ -353,6 +353,9 @@ func F_pg_finfo_mic_to_latin2(m *base.Module) int32 {
 func F_pg_finfo_nlevel(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_nlevel_0)
 }
+func F_pg_finfo_pg_prewarm(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_prewarm_0)
+}
 func F_pg_finfo_pg_visibility(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_visibility_0)
 }

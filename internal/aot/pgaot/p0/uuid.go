@@ -388,7 +388,7 @@ func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
 	v16 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[4]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -434,8 +434,8 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 			v17 = int64(-1)
 			*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v17
 			*(*int64)(unsafe.Add(mBase, uint32(v11))) = v17
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1546)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1547)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1549)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1550)
 			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v11
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = v6
 			return int32(0)

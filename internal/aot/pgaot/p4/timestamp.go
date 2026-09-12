@@ -3218,7 +3218,7 @@ L218:
 	}
 L219:
 	;
-	v799 = F_DirectFunctionCall2Coll(m, int32(1275), int32(0), v796, int32(6))
+	v799 = F_DirectFunctionCall2Coll(m, int32(1278), int32(0), v796, int32(6))
 	mBase = m.M
 	v800 = m.ExcPending
 	if v800 != 0 {

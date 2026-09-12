@@ -620,7 +620,7 @@ func F_FinishSortSupportFunction(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									*(*uint16)(unsafe.Add(mBase, uint32(v26)+46)) = uint16(v39)
 									*(*uint8)(unsafe.Add(mBase, uint32(v26)+44)) = uint8(v35)
 									*(*int32)(unsafe.Add(mBase, uint32(v26)+40)) = v34
-									*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1835)
+									*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1838)
 									*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v26
 									m.G0 = v8 + int32(16)
 									return
@@ -696,7 +696,7 @@ func F_FinishSortSupportFunction(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								*(*uint16)(unsafe.Add(mBase, uint32(v26)+46)) = uint16(v39)
 								*(*uint8)(unsafe.Add(mBase, uint32(v26)+44)) = uint8(v35)
 								*(*int32)(unsafe.Add(mBase, uint32(v26)+40)) = v34
-								*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1835)
+								*(*int32)(unsafe.Add(mBase, uint32(l2)+16)) = int32(1838)
 								*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v26
 								m.G0 = v8 + int32(16)
 								return

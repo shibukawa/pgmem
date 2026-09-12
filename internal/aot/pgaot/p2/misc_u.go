@@ -2527,7 +2527,7 @@ func F_uuidv7_interval(m *base.Module, l0 int32) int32 {
 	if v36 != 0 {
 		return int32(0)
 	} else {
-		v37 = F_DirectFunctionCall2Coll(m, int32(1548), int32(0), v33, v11)
+		v37 = F_DirectFunctionCall2Coll(m, int32(1551), int32(0), v33, v11)
 		mBase = m.M
 		v38 = m.ExcPending
 		if v38 != 0 {

@@ -38,7 +38,7 @@ func F_shm_mq_attach(m *base.Module, l0 int32, l1 int32) int32 {
 		v22 = *(*int32)(unsafe.Add(mBase, _c_F_shm_mq_attach[0]))
 		*(*int32)(unsafe.Add(mBase, uint32(v5)+40)) = v22
 		if l1 != 0 {
-			F_on_dsm_detach(m, l1, int32(1104), l0)
+			F_on_dsm_detach(m, l1, int32(1107), l0)
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
@@ -246,7 +246,7 @@ L23:
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v46)))
 	v52 = v46 - int32(8)
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)))
-	if v53 != int32(1104) {
+	if v53 != int32(1107) {
 		goto L25
 	} else {
 		goto L26

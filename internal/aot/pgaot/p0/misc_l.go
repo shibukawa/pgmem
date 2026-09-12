@@ -3420,7 +3420,7 @@ func F_leftmostvalue_varbit(m *base.Module) int32 {
 	var v9 int32
 	_ = v9
 	v2 = int32(0)
-	v6 = F_DirectFunctionCall3Coll(m, int32(2653), v2, int32(_a_F_leftmostvalue_varbit_0), v2, int32(-1))
+	v6 = F_DirectFunctionCall3Coll(m, int32(2656), v2, int32(_a_F_leftmostvalue_varbit_0), v2, int32(-1))
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)

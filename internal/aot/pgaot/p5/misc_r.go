@@ -4077,7 +4077,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_RelidByRelfilenumber[0])) = v68
-	F_CacheRegisterRelcacheCallback(m, int32(1610))
+	F_CacheRegisterRelcacheCallback(m, int32(1613))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {

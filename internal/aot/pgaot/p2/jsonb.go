@@ -952,7 +952,7 @@ L56:
 L57:
 	;
 	v187 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	v188 = F_DirectFunctionCall1Coll(m, int32(1332), int32(0), v187)
+	v188 = F_DirectFunctionCall1Coll(m, int32(1335), int32(0), v187)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -4378,7 +4378,7 @@ func F_jsonb_path_query_first_internal(m *base.Module, l0 int32, l1 int32) int32
 				return int32(0)
 			} else {
 				v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-				v30 = F_executeJsonPath(m, v16, v21, int32(1410), int32(1411), v11, base.B2i32(v25 == int32(0)), v8+int32(8), l1)
+				v30 = F_executeJsonPath(m, v16, v21, int32(1413), int32(1414), v11, base.B2i32(v25 == int32(0)), v8+int32(8), l1)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {

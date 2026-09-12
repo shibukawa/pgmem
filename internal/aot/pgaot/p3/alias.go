@@ -2247,7 +2247,7 @@ func F_pgaio_io_register_callbacks(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pgaio_io_perform_synchronously github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgaio_io_perform_synchronously
 func F_pgaio_io_perform_synchronously(m *base.Module, l0 int32)
 //go:linkname F_read_stream_begin_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_read_stream_begin_relation
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_read_stream_next_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_read_stream_next_buffer
 func F_read_stream_next_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_read_stream_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_read_stream_reset
@@ -2420,6 +2420,8 @@ func F_dsm_unpin_segment(m *base.Module, l0 int32)
 func F_on_dsm_detach(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_dsm_impl_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dsm_impl_op
 func F_dsm_impl_op(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_GetNamedDSMSegment github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetNamedDSMSegment
+func F_GetNamedDSMSegment(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_proc_exit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_proc_exit
 func F_proc_exit(m *base.Module, l0 int32)
 //go:linkname F_proc_exit_prepare github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_proc_exit_prepare
@@ -2568,6 +2570,8 @@ func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 func F_ReleaseLockIfHeld(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_VirtualXactLockTableInsert github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_VirtualXactLockTableInsert
 func F_VirtualXactLockTableInsert(m *base.Module, l0 int32)
+//go:linkname F_LWLockRegisterTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LWLockRegisterTranche
+func F_LWLockRegisterTranche(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_LWLockAcquire github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LWLockAcquire
 func F_LWLockAcquire(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_LWLockRelease github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_LWLockRelease
@@ -3781,7 +3785,7 @@ func F_parse_and_validate_value(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 //go:linkname F_set_config_option_ext github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_set_config_option_ext
 func F_set_config_option_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_DefineCustomBoolVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DefineCustomBoolVariable
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
 func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
@@ -4438,6 +4442,10 @@ func F_bt_page_print_tuples(m *base.Module, l0 int32) int32
 func F_verify_hash_page(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
 func F_get_page_from_raw(m *base.Module, l0 int32) int32
+//go:linkname F_apw_detach_shmem github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_apw_detach_shmem
+func F_apw_detach_shmem(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_apw_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_apw_dump_now
+func F_apw_dump_now(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1

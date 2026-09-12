@@ -5462,7 +5462,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 						if v36 == int32(2) {
 							v59 = int32(0)
 							v62 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
-							v64 = F_DirectFunctionCall2Coll(m, int32(1442), v59, v62, v59)
+							v64 = F_DirectFunctionCall2Coll(m, int32(1445), v59, v62, v59)
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
@@ -5577,7 +5577,7 @@ func F_getArrayIndex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 				if v36 == int32(2) {
 					v59 = int32(0)
 					v62 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
-					v64 = F_DirectFunctionCall2Coll(m, int32(1442), v59, v62, v59)
+					v64 = F_DirectFunctionCall2Coll(m, int32(1445), v59, v62, v59)
 					mBase = m.M
 					v65 = m.ExcPending
 					if v65 != 0 {

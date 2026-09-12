@@ -445,7 +445,7 @@ L37:
 	}
 L38:
 	;
-	v92 = F_DirectFunctionCall1Coll(m, int32(1289), v85, v90)
+	v92 = F_DirectFunctionCall1Coll(m, int32(1292), v85, v90)
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {

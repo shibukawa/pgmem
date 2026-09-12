@@ -602,13 +602,13 @@ func F_numeric_cash(m *base.Module, l0 int32) int32 {
 		if v74 != 0 {
 			return int32(0)
 		} else {
-			v75 = F_DirectFunctionCall2Coll(m, int32(1278), v70, v7, v73)
+			v75 = F_DirectFunctionCall2Coll(m, int32(1281), v70, v7, v73)
 			mBase = m.M
 			v76 = m.ExcPending
 			if v76 != 0 {
 				return int32(0)
 			} else {
-				v77 = F_DirectFunctionCall1Coll(m, int32(1277), v70, v75)
+				v77 = F_DirectFunctionCall1Coll(m, int32(1280), v70, v75)
 				mBase = m.M
 				v78 = m.ExcPending
 				if v78 != 0 {
@@ -11267,7 +11267,7 @@ func F_numeric_sortsupport(m *base.Module, l0 int32) int32 {
 	var v39 int32
 	_ = v39
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(1465)
+	*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(1468)
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v5)+20)))
 	if v8 == int32(1) {
 		v11 = int32(_a_F_numeric_sortsupport_0)
@@ -11297,10 +11297,10 @@ func F_numeric_sortsupport(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = v17
-					*(*int32)(unsafe.Add(mBase, uint32(v5)+28)) = int32(1466)
-					*(*int32)(unsafe.Add(mBase, uint32(v5)+24)) = int32(1467)
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+28)) = int32(1469)
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+24)) = int32(1470)
 					v39 = *(*int32)(unsafe.Add(mBase, uint32(v5)+16))
-					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(1468)
+					*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = int32(1471)
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+32)) = v39
 					*(*int32)(unsafe.Add(mBase, _c_F_numeric_sortsupport[0])) = v12
 					return int32(0)

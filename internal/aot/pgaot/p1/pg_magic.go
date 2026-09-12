@@ -17,6 +17,9 @@ func F_Pg_magic_func_fuzzystrmatch(m *base.Module) int32 {
 func F_Pg_magic_func_ltree(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_ltree_0)
 }
+func F_Pg_magic_func_pg_prewarm(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_pg_prewarm_0)
+}
 func F_Pg_magic_func_pg_trgm(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pg_trgm_0)
 }

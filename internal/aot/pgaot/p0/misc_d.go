@@ -10889,7 +10889,7 @@ L85:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v161))) = v280
 	v288 = *(*int32)(unsafe.Add(mBase, uint32(v161)+4))
-	F_pg_qsort(m, v288, v280, int32(16), int32(1164))
+	F_pg_qsort(m, v288, v280, int32(16), int32(1167))
 	mBase = m.M
 	v292 = m.ExcPending
 	if v292 != 0 {

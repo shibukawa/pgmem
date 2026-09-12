@@ -543,7 +543,7 @@ func F_uuid_generate_v1(m *base.Module, l0 int32) int32 {
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		v18 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v3+int32(-48))
+		v18 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v3+int32(-48))
 		v19 = m.ExcPending
 		if v19 != 0 {
 			return int32(0)
@@ -914,7 +914,7 @@ func F_uuid_nil(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
 	v16 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_nil[4]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {

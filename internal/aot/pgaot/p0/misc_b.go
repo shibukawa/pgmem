@@ -12216,7 +12216,7 @@ L48:
 	}
 L49:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v25)+52)) = int32(1506)
+	*(*int32)(unsafe.Add(mBase, uint32(v25)+52)) = int32(1509)
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+48)) = v372
 	v376 = v372
 	goto L48

@@ -590,7 +590,7 @@ func F_table_to_xml_and_xmlschema(m *base.Module, l0 int32) int32 {
 						if v34 != 0 {
 							return int32(0)
 						} else {
-							v37 = F_DirectFunctionCall1Coll(m, int32(1563), int32(0), v12)
+							v37 = F_DirectFunctionCall1Coll(m, int32(1566), int32(0), v12)
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {

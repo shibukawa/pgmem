@@ -4443,7 +4443,7 @@ func F_neqjoinsel(m *base.Module, l0 int32) int32 {
 					return v72
 				}
 			} else {
-				v62 = F_DirectFunctionCall5Coll(m, int32(1509), v53, v15, v55, v14, base.I32_extend16_s(v16), v13)
+				v62 = F_DirectFunctionCall5Coll(m, int32(1512), v53, v15, v55, v14, base.I32_extend16_s(v16), v13)
 				mBase = m.M
 				v63 = m.ExcPending
 				if v63 != 0 {

@@ -1604,10 +1604,18 @@ func F_GetFdwRoutine(m *base.Module, l0 int32) int32
 func F_GetFdwRoutineByRelId(m *base.Module, l0 int32) int32
 //go:linkname F_GetFdwRoutineForRelation github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GetFdwRoutineForRelation
 func F_GetFdwRoutineForRelation(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_dshash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dshash_create
+func F_dshash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_dshash_attach github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_dshash_attach
+func F_dshash_attach(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_dshash_find github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dshash_find
 func F_dshash_find(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_dshash_find_or_insert github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dshash_find_or_insert
+func F_dshash_find_or_insert(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_dshash_delete_key github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_dshash_delete_key
 func F_dshash_delete_key(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_dshash_release_lock github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dshash_release_lock
+func F_dshash_release_lock(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_dshash_seq_next github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dshash_seq_next
 func F_dshash_seq_next(m *base.Module, l0 int32) int32
 //go:linkname F_pairingheap_allocate github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pairingheap_allocate
@@ -2375,7 +2383,7 @@ func F_pgaio_closing_fd(m *base.Module, l0 int32)
 //go:linkname F_pgaio_result_report github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgaio_result_report
 func F_pgaio_result_report(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_read_stream_begin_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_read_stream_begin_relation
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_read_stream_next_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_read_stream_next_buffer
 func F_read_stream_next_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_read_stream_reset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_read_stream_reset
@@ -2389,7 +2397,7 @@ func F_BufTableInsert(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_UnpinBufferNoOwner github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnpinBufferNoOwner
 func F_UnpinBufferNoOwner(m *base.Module, l0 int32)
 //go:linkname F_PrefetchBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_PrefetchBuffer
-func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32)
+func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_ReservePrivateRefCountEntry github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ReservePrivateRefCountEntry
 func F_ReservePrivateRefCountEntry(m *base.Module)
 //go:linkname F_PinBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_PinBuffer
@@ -2540,10 +2548,16 @@ func F_RecordFreeIndexPage(m *base.Module, l0 int32, l1 int32)
 func F_BarrierArriveAndDetach(m *base.Module, l0 int32) int32
 //go:linkname F_BarrierAttach github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_BarrierAttach
 func F_BarrierAttach(m *base.Module, l0 int32) int32
+//go:linkname F_dsm_create github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dsm_create
+func F_dsm_create(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_dsm_attach github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dsm_attach
 func F_dsm_attach(m *base.Module, l0 int32) int32
 //go:linkname F_dsm_detach github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dsm_detach
 func F_dsm_detach(m *base.Module, l0 int32)
+//go:linkname F_dsm_pin_mapping github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_dsm_pin_mapping
+func F_dsm_pin_mapping(m *base.Module, l0 int32)
+//go:linkname F_dsm_pin_segment github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dsm_pin_segment
+func F_dsm_pin_segment(m *base.Module, l0 int32)
 //go:linkname F_on_dsm_detach github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_on_dsm_detach
 func F_on_dsm_detach(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_dsm_impl_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dsm_impl_op
@@ -3951,7 +3965,7 @@ func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
 func F_define_custom_variable(m *base.Module, l0 int32)
 //go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
-func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
 func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName
@@ -3982,8 +3996,14 @@ func F_superuser_arg(m *base.Module, l0 int32) int32
 func F_schedule_alarm(m *base.Module, l0 int64)
 //go:linkname F_AllocSetContextCreateInternal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_AllocSetContextCreateInternal
 func F_AllocSetContextCreateInternal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_dsa_create_ext github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dsa_create_ext
+func F_dsa_create_ext(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_dsa_attach github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_dsa_attach
+func F_dsa_attach(m *base.Module, l0 int32) int32
 //go:linkname F_attach_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_attach_internal
 func F_attach_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_dsa_pin_mapping github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dsa_pin_mapping
+func F_dsa_pin_mapping(m *base.Module, l0 int32)
 //go:linkname F_dsa_allocate_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dsa_allocate_extended
 func F_dsa_allocate_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_dsa_free github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dsa_free

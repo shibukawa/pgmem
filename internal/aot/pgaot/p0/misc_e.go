@@ -13352,7 +13352,7 @@ L21:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-	v35 = F_DirectFunctionCall2Coll(m, int32(1343), int32(0), v33, v34)
+	v35 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v33, v34)
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -14070,7 +14070,7 @@ L131:
 	}
 L132:
 	;
-	v306 = int32(1443)
+	v306 = int32(1446)
 	if int32(1183) < v294 {
 		goto L125
 	} else {
@@ -14108,7 +14108,7 @@ L136:
 	;
 	switch v294 - int32(1082) {
 	case 0:
-		v821 = int32(1444)
+		v821 = int32(1447)
 		v822 = v295
 		v823 = v296
 		goto L10
@@ -14325,7 +14325,7 @@ L171:
 		v893 = v30
 		goto L1
 	case 1:
-		v821 = int32(1445)
+		v821 = int32(1448)
 		v822 = v295
 		v823 = v296
 		goto L10
@@ -14359,7 +14359,7 @@ L175:
 	}
 L176:
 	;
-	v423 = F_DirectFunctionCall1Coll(m, int32(1432), int32(0), v296)
+	v423 = F_DirectFunctionCall1Coll(m, int32(1435), int32(0), v296)
 	mBase = m.M
 	v424 = m.ExcPending
 	if v424 != 0 {
@@ -14369,7 +14369,7 @@ L176:
 	}
 L177:
 	;
-	v821 = int32(1443)
+	v821 = int32(1446)
 	v822 = v295
 	v823 = v423
 	goto L10
@@ -14417,7 +14417,7 @@ L183:
 	goto L10
 L184:
 	;
-	v453 = F_DirectFunctionCall1Coll(m, int32(1432), int32(0), v295)
+	v453 = F_DirectFunctionCall1Coll(m, int32(1435), int32(0), v295)
 	mBase = m.M
 	v454 = m.ExcPending
 	if v454 != 0 {
@@ -14507,7 +14507,7 @@ L195:
 	}
 L196:
 	;
-	v821 = int32(1446)
+	v821 = int32(1449)
 	v822 = v295
 	v823 = v296
 	goto L10
@@ -15079,7 +15079,7 @@ L274:
 	}
 L275:
 	;
-	v821 = int32(1446)
+	v821 = int32(1449)
 	v822 = v295
 	v823 = v296
 	goto L10

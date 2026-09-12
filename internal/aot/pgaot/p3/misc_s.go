@@ -21667,6 +21667,43 @@ func F_smgrnblocks(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_smgrreadv(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	v5 = int32(_a_F_smgrreadv_0)
+	v7 = *(*int32)(unsafe.Add(mBase, _c_F_smgrreadv[0]))
+	v8 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_smgrreadv[0])) = v7 + v8
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v12*int32(80))+uint32(_c_F_smgrreadv[1])))
+	m.T0[v17].(func(*base.Module, int32, int32, int32, int32, int32))(m, l0, l1, l2, l3, v8)
+	mBase = m.M
+	v19 = m.ExcPending
+	if v19 != 0 {
+		return
+	} else {
+		v20 = int32(_a_F_smgrreadv_0)
+		v22 = *(*int32)(unsafe.Add(mBase, _c_F_smgrreadv[0]))
+		*(*int32)(unsafe.Add(mBase, _c_F_smgrreadv[0])) = v22 - int32(1)
+		return
+	}
+}
 func F_smgrshutdown(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

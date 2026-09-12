@@ -7315,7 +7315,7 @@ L200:
 	*(*int32)(unsafe.Add(mBase, _c_F_ParallelWorkerMain[5])) = v778
 	v801 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelWorkerMain[46]))
 	v802 = *(*int32)(unsafe.Add(mBase, uint32(v801)))
-	F_on_dsm_detach(m, v802, int32(1623), v775)
+	F_on_dsm_detach(m, v802, int32(1626), v775)
 	mBase = m.M
 	v805 = m.ExcPending
 	if v805 != 0 {
@@ -7458,7 +7458,7 @@ L214:
 L215:
 	;
 	v1007 = *(*int32)(unsafe.Add(mBase, uint32(v839)))
-	*(*int32)(unsafe.Add(mBase, uint32(v843)+20)) = int32(1659)
+	*(*int32)(unsafe.Add(mBase, uint32(v843)+20)) = int32(1662)
 	v1010 = int32(_a_F_ParallelWorkerMain_28)
 	v1011 = *(*int32)(unsafe.Add(mBase, _c_F_ParallelWorkerMain[48]))
 	*(*int32)(unsafe.Add(mBase, _c_F_ParallelWorkerMain[48])) = v843 + int32(16)

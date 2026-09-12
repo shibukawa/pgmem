@@ -52,90 +52,90 @@ func F_LWLockNewTrancheId(m *base.Module) int32 {
 		return v22
 	}
 }
-func F_LWLockRegisterTranche(m *base.Module, l0 int32) {
+func F_LWLockRegisterTranche(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
-	var v29 int32
-	_ = v29
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
-	var v40 int32
-	_ = v40
+	var v38 int32
+	_ = v38
 	var v41 int32
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v48 int32
-	_ = v48
+	var v43 int32
+	_ = v43
+	var v49 int32
+	_ = v49
 	if int32(95) <= l0 {
-		v9 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0]))
-		v11 = l0 - int32(95)
-		v13 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1]))
-		if v13 <= v11 {
-			v17 = int32(102)
-			if base.Ui32(l0) <= base.Ui32(v17) {
-				v20 = v17
+		v10 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0]))
+		v12 = l0 - int32(95)
+		v14 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1]))
+		if v14 <= v12 {
+			v18 = int32(102)
+			if base.Ui32(l0) <= base.Ui32(v18) {
+				v21 = v18
 			} else {
-				v20 = l0
+				v21 = l0
 			}
-			v22 = v20 - int32(94)
-			if v22&(v20-int32(95)) != 0 {
-				v29 = int32(1) << (uint(int32(32)-base.I32_clz(v22)) % 32)
+			v23 = v21 - int32(94)
+			if v23&(v21-int32(95)) != 0 {
+				v30 = int32(1) << (uint(int32(32)-base.I32_clz(v23)) % 32)
 			} else {
-				v29 = v22
+				v30 = v23
 			}
-			v31 = v29 << (uint(int32(2)) % 32)
-			if v9 == int32(0) {
-				v35 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[2]))
-				v36 = F_MemoryContextAllocZero(m, v35, v31)
+			v32 = v30 << (uint(int32(2)) % 32)
+			if v10 == int32(0) {
+				v36 = *(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[2]))
+				v37 = F_MemoryContextAllocZero(m, v36, v32)
 				mBase = m.M
-				v37 = m.ExcPending
-				if v37 != 0 {
+				v38 = m.ExcPending
+				if v38 != 0 {
 					return
 				} else {
-					v42 = v36
-					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1])) = v29
-					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0])) = v42
-					v48 = v42
-					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(_a_F_LWLockRegisterTranche_0)
+					v43 = v37
+					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1])) = v30
+					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0])) = v43
+					v49 = v43
+					*(*int32)(unsafe.Add(mBase, uint32(v49+v12<<(uint(int32(2))%32)))) = l1
 					return
 				}
 			} else {
-				v40 = F_repalloc0(m, v9, v13<<(uint(int32(2))%32), v31)
+				v41 = F_repalloc0(m, v10, v14<<(uint(int32(2))%32), v32)
 				mBase = m.M
-				v41 = m.ExcPending
-				if v41 != 0 {
+				v42 = m.ExcPending
+				if v42 != 0 {
 					return
 				} else {
-					v42 = v40
-					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1])) = v29
-					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0])) = v42
-					v48 = v42
-					*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(_a_F_LWLockRegisterTranche_0)
+					v43 = v41
+					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[1])) = v30
+					*(*int32)(unsafe.Add(mBase, _c_F_LWLockRegisterTranche[0])) = v43
+					v49 = v43
+					*(*int32)(unsafe.Add(mBase, uint32(v49+v12<<(uint(int32(2))%32)))) = l1
 					return
 				}
 			}
 		} else {
-			v48 = v9
-			*(*int32)(unsafe.Add(mBase, uint32(v48+v11<<(uint(int32(2))%32)))) = int32(_a_F_LWLockRegisterTranche_0)
+			v49 = v10
+			*(*int32)(unsafe.Add(mBase, uint32(v49+v12<<(uint(int32(2))%32)))) = l1
 			return
 		}
 	} else {

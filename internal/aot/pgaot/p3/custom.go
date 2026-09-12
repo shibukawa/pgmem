@@ -5,33 +5,33 @@ import (
 	"unsafe"
 )
 
-func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
+func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
 	var v12 int32
 	_ = v12
-	var v16 int32
-	_ = v16
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
 	var v26 int32
 	_ = v26
-	v11 = F_init_custom_variable(m, l0, l1, l2, int32(6), int32(0), int32(1), int32(128))
+	v12 = F_init_custom_variable(m, l0, l1, l2, l7, l8, int32(1), int32(128))
 	mBase = m.M
-	v12 = m.ExcPending
-	if v12 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+120)) = l4
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+96)) = l4
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+92)) = l3
-		v16 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+116)) = v16
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+112)) = v16
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+108)) = v16
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+104)) = l5
-		*(*int32)(unsafe.Add(mBase, uint32(v11)+100)) = int32(1)
-		F_define_custom_variable(m, v11)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+120)) = l4
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+96)) = l4
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+92)) = l3
+		v17 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+116)) = v17
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+112)) = v17
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+108)) = v17
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+104)) = l6
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+100)) = l5
+		F_define_custom_variable(m, v12)
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {

@@ -272,7 +272,7 @@ func F_on_proc_exit(m *base.Module, l0 int32) {
 			v30 = *(*int32)(unsafe.Add(mBase, _c_F_on_proc_exit[4]))
 			if v30 <= int32(31) {
 				*(*int32)(unsafe.Add(mBase, _c_F_on_proc_exit[4])) = v30 + int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_on_proc_exit[5]))) = int32(1100)
+				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_on_proc_exit[5]))) = int32(1103)
 			} else {
 			}
 			v45 = int32(1)

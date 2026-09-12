@@ -613,7 +613,7 @@ func F_percentile_cont_interval_final(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = F_percentile_cont_final_common(m, l0, int32(1473))
+	v3 = F_percentile_cont_final_common(m, l0, int32(1476))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

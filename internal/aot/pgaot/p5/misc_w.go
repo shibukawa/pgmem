@@ -134,7 +134,7 @@ func F_websearch_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v24 = F_parse_tsquery(m, v17, int32(1174), v6+int32(8), int32(2), int32(0))
+			v24 = F_parse_tsquery(m, v17, int32(1177), v6+int32(8), int32(2), int32(0))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {

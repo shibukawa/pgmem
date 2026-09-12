@@ -1459,13 +1459,13 @@ L107:
 	v250 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v249))) = v250
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+92)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v249))) = int32(1375)
+	*(*int32)(unsafe.Add(mBase, uint32(v249))) = int32(1378)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+108)) = v246
 	*(*int64)(unsafe.Add(mBase, uint32(v18)+76)) = v250
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+104)) = int32(1376)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+100)) = int32(1377)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+96)) = int32(1378)
-	*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = int32(1379)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+104)) = int32(1379)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+100)) = int32(1380)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+96)) = int32(1381)
+	*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = int32(1382)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+112)) = v18 + int32(32)
 	*(*int32)(unsafe.Add(mBase, uint32(v18)+68)) = v18 + int32(108)
 	v275 = F_pg_parse_json(m, v246, v18+int32(68))
@@ -3683,14 +3683,14 @@ L70:
 	}
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+36)) = int32(1380)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+28)) = int32(1381)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+12)) = int32(1382)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+36)) = int32(1383)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+28)) = int32(1384)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+12)) = int32(1385)
 	*(*int32)(unsafe.Add(mBase, uint32(v143))) = v115
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+24)) = int32(1383)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+20)) = int32(1384)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+8)) = int32(1385)
-	*(*int32)(unsafe.Add(mBase, uint32(v143)+4)) = int32(1386)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+24)) = int32(1386)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+20)) = int32(1387)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+8)) = int32(1388)
+	*(*int32)(unsafe.Add(mBase, uint32(v143)+4)) = int32(1389)
 	v207 = v16 + int32(44)
 	*(*int32)(unsafe.Add(mBase, uint32(v115))) = v207
 	v211 = F_pg_parse_json(m, v207, v143)

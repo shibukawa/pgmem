@@ -358,7 +358,7 @@ func F_has_function_privilege_name_name(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					v25 = F_DirectFunctionCall1Coll(m, int32(1253), int32(0), v23)
+					v25 = F_DirectFunctionCall1Coll(m, int32(1256), int32(0), v23)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

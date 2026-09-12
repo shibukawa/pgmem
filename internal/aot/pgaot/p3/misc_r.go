@@ -3498,7 +3498,7 @@ L139:
 	;
 	v636 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_ReplSlotSyncWorkerMain[22])) = uint8(v636)
-	F_pqsignal_be(m, int32(14), int32(1785))
+	F_pqsignal_be(m, int32(14), int32(1788))
 	mBase = m.M
 	goto L137
 L140:

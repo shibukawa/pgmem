@@ -6267,7 +6267,7 @@ L4:
 L5:
 	;
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v25 = F_DirectFunctionCall2Coll(m, int32(1336), int32(0), v24, v18)
+	v25 = F_DirectFunctionCall2Coll(m, int32(1339), int32(0), v24, v18)
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -7540,7 +7540,7 @@ func F_gin_extract_query_varbit(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_varbit_0), int32(2661))
+	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_varbit_0), int32(2664))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)

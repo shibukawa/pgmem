@@ -20299,11 +20299,11 @@ func F_elements_worker(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+8)) = v71
 							v73 = *(*int32)(unsafe.Add(mBase, uint32(v70)+28))
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+12)) = v73
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+36)) = int32(1367)
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = int32(1368)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+36)) = int32(1370)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = int32(1371)
 							*(*int32)(unsafe.Add(mBase, uint32(v65))) = v62
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+32)) = int32(1369)
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+28)) = int32(1370)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+32)) = int32(1372)
+							*(*int32)(unsafe.Add(mBase, uint32(v65)+28)) = int32(1373)
 							v84 = int32(0)
 							*(*uint8)(unsafe.Add(mBase, uint32(v62)+25)) = uint8(v84)
 							*(*uint8)(unsafe.Add(mBase, uint32(v62)+24)) = uint8(v3)

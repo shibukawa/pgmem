@@ -148,7 +148,7 @@ L3:
 	}
 L4:
 	;
-	v109 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5+int32(80))
+	v109 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5+int32(80))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -671,7 +671,7 @@ func F_uuid_ns_dns(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
 	v16 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_dns[4]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -718,7 +718,7 @@ func F_uuid_ns_url(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
 	v16 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_url[4]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {

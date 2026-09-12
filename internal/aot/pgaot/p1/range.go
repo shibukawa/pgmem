@@ -5504,7 +5504,7 @@ L55:
 	}
 L56:
 	;
-	F_qsort_interruptible(m, v39, v189, int32(8), int32(1491), v35)
+	F_qsort_interruptible(m, v39, v189, int32(8), int32(1494), v35)
 	mBase = m.M
 	v234 = m.ExcPending
 	if v234 != 0 {
@@ -5527,7 +5527,7 @@ L58:
 	}
 L59:
 	;
-	F_qsort_interruptible(m, v41, v189, int32(8), int32(1491), v35)
+	F_qsort_interruptible(m, v41, v189, int32(8), int32(1494), v35)
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -5600,7 +5600,7 @@ L67:
 	v342 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+11)))
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+219)) = uint8(v342)
 	v344 = int32(0)
-	F_qsort_interruptible(m, v43, v189, int32(8), int32(1492), v344)
+	F_qsort_interruptible(m, v43, v189, int32(8), int32(1495), v344)
 	mBase = m.M
 	v349 = m.ExcPending
 	if v349 != 0 {

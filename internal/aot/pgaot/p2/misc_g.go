@@ -569,6 +569,705 @@ func F_GetLatestXTime(m *base.Module) int64 {
 		return v23
 	}
 }
+func F_GetNamedDSMSegment(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v92 int32
+	_ = v92
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v112 int32
+	_ = v112
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v128 int32
+	_ = v128
+	var v130 int32
+	_ = v130
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
+	var v136 int32
+	_ = v136
+	var v142 int32
+	_ = v142
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v165 int32
+	_ = v165
+	var v166 int32
+	_ = v166
+	var v167 int32
+	_ = v167
+	var v168 int32
+	_ = v168
+	var v172 int32
+	_ = v172
+	var v175 int32
+	_ = v175
+	var v179 int32
+	_ = v179
+	var v181 int32
+	_ = v181
+	var v183 int32
+	_ = v183
+	var v190 int32
+	_ = v190
+	var v194 int32
+	_ = v194
+	var v199 int32
+	_ = v199
+	var v203 int32
+	_ = v203
+	var v207 int32
+	_ = v207
+	var v212 int32
+	_ = v212
+	var v216 int32
+	_ = v216
+	var v220 int32
+	_ = v220
+	var v225 int32
+	_ = v225
+	var v229 int32
+	_ = v229
+	var v233 int32
+	_ = v233
+	var v238 int32
+	_ = v238
+	if l0 == int32(0) {
+		goto L4
+	} else {
+		goto L5
+	}
+L1:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v229 = m.ExcPending
+	if v229 != 0 {
+		goto L11
+	} else {
+		goto L65
+	}
+L2:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v216 = m.ExcPending
+	if v216 != 0 {
+		goto L11
+	} else {
+		goto L62
+	}
+L3:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v203 = m.ExcPending
+	if v203 != 0 {
+		goto L11
+	} else {
+		goto L59
+	}
+L4:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v190 = m.ExcPending
+	if v190 != 0 {
+		goto L11
+	} else {
+		goto L56
+	}
+L5:
+	;
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	if v9 == int32(0) {
+		goto L4
+	} else {
+		goto L6
+	}
+L6:
+	;
+	v12 = F_strlen(m, l0)
+	mBase = m.M
+	if base.Ui32(int32(64)) <= base.Ui32(v12) {
+		goto L3
+	} else {
+		goto L7
+	}
+L7:
+	;
+	v15 = int32(_a_F_GetNamedDSMSegment_0)
+	v16 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[0]))
+	v19 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[1]))
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[0])) = v19
+	v22 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2]))
+	if v22 != 0 {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v100 = v22
+	goto L10
+L9:
+	;
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[3]))
+	v28 = F_LWLockAcquire(m, v24+int32(_a_F_GetNamedDSMSegment_1), int32(0))
+	mBase = m.M
+	v31 = m.ExcPending
+	if v31 != 0 {
+		goto L11
+	} else {
+		goto L12
+	}
+L10:
+	;
+	v101 = F_dshash_find_or_insert(m, v100, l0, l2)
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L11
+	} else {
+		goto L27
+	}
+L11:
+	;
+	return int32(0)
+L12:
+	;
+	v33 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[4]))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+4))
+	if v34 == int32(0) {
+		goto L14
+	} else {
+		goto L15
+	}
+L13:
+	;
+	v92 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[3]))
+	F_LWLockRelease(m, v92+int32(_a_F_GetNamedDSMSegment_1))
+	mBase = m.M
+	v96 = m.ExcPending
+	if v96 != 0 {
+		goto L11
+	} else {
+		goto L26
+	}
+L14:
+	;
+	v41 = F_dsa_create_ext(m, int32(84), int32(_a_F_GetNamedDSMSegment_2), int32(134217728))
+	mBase = m.M
+	v42 = m.ExcPending
+	if v42 != 0 {
+		goto L11
+	} else {
+		goto L17
+	}
+L15:
+	;
+	goto L16
+L16:
+	;
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
+	v74 = F_dsa_attach(m, v73)
+	mBase = m.M
+	v75 = m.ExcPending
+	if v75 != 0 {
+		goto L11
+	} else {
+		goto L23
+	}
+L17:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5])) = v41
+	v47 = F_dshash_create(m, v41, int32(_a_F_GetNamedDSMSegment_3), int32(0))
+	mBase = m.M
+	v48 = m.ExcPending
+	if v48 != 0 {
+		goto L11
+	} else {
+		goto L18
+	}
+L18:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2])) = v47
+	v51 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5]))
+	F_dsa_pin(m, v51)
+	mBase = m.M
+	v53 = m.ExcPending
+	if v53 != 0 {
+		goto L11
+	} else {
+		goto L19
+	}
+L19:
+	;
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5]))
+	F_dsa_pin_mapping(m, v55)
+	mBase = m.M
+	v57 = m.ExcPending
+	if v57 != 0 {
+		goto L11
+	} else {
+		goto L20
+	}
+L20:
+	;
+	v59 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5]))
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v59)))
+	v61 = *(*int32)(unsafe.Add(mBase, uint32(v60)+28))
+	goto L21
+L21:
+	;
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v63))) = v61
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2]))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+32))
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(v67)))
+	goto L22
+L22:
+	;
+	v70 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[4]))
+	*(*int32)(unsafe.Add(mBase, uint32(v70)+4)) = v68
+	goto L13
+L23:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5])) = v74
+	F_dsa_pin_mapping(m, v74)
+	mBase = m.M
+	v78 = m.ExcPending
+	if v78 != 0 {
+		goto L11
+	} else {
+		goto L24
+	}
+L24:
+	;
+	v81 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[5]))
+	v84 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[4]))
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(v84)+4))
+	v87 = F_dshash_attach(m, v81, int32(_a_F_GetNamedDSMSegment_3), v85, int32(0))
+	mBase = m.M
+	v88 = m.ExcPending
+	if v88 != 0 {
+		goto L11
+	} else {
+		goto L25
+	}
+L25:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2])) = v87
+	goto L13
+L26:
+	;
+	v98 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2]))
+	v100 = v98
+	goto L10
+L27:
+	;
+	v103 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2))))
+	if v103 == int32(0) {
+		goto L31
+	} else {
+		goto L32
+	}
+L28:
+	;
+	v179 = *(*int32)(unsafe.Add(mBase, uint32(v175)+24))
+	v181 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[2]))
+	F_dshash_release_lock(m, v181, v101)
+	mBase = m.M
+	v183 = m.ExcPending
+	if v183 != 0 {
+		goto L11
+	} else {
+		goto L55
+	}
+L29:
+	;
+	v136 = *(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[6]))
+	if v136 == int32(0) {
+		goto L44
+	} else {
+		goto L45
+	}
+L30:
+	;
+	v120 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v120)
+	v124 = F_dsm_create(m, int32(44), v120)
+	mBase = m.M
+	v125 = m.ExcPending
+	if v125 != 0 {
+		goto L11
+	} else {
+		goto L36
+	}
+L31:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v101)+68)) = int32(44)
+	*(*int32)(unsafe.Add(mBase, uint32(v101)+64)) = int32(0)
+	v118 = v101 - int32(-64)
+	goto L30
+L32:
+	;
+	goto L33
+L33:
+	;
+	v112 = *(*int32)(unsafe.Add(mBase, uint32(v101)+68))
+	if v112 != int32(44) {
+		goto L2
+	} else {
+		goto L34
+	}
+L34:
+	;
+	v116 = v101 - int32(-64)
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v101)+64))
+	if v117 != 0 {
+		goto L29
+	} else {
+		goto L35
+	}
+L35:
+	;
+	v118 = v116
+	goto L30
+L36:
+	;
+	if l1 != 0 {
+		goto L37
+	} else {
+		goto L38
+	}
+L37:
+	;
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(v124)+24))
+	m.T0[l1].(func(*base.Module, int32))(m, v126)
+	mBase = m.M
+	v128 = m.ExcPending
+	if v128 != 0 {
+		goto L11
+	} else {
+		goto L40
+	}
+L38:
+	;
+	goto L39
+L39:
+	;
+	F_dsm_pin_segment(m, v124)
+	mBase = m.M
+	v130 = m.ExcPending
+	if v130 != 0 {
+		goto L11
+	} else {
+		goto L41
+	}
+L40:
+	;
+	goto L39
+L41:
+	;
+	F_dsm_pin_mapping(m, v124)
+	mBase = m.M
+	v132 = m.ExcPending
+	if v132 != 0 {
+		goto L11
+	} else {
+		goto L42
+	}
+L42:
+	;
+	v133 = *(*int32)(unsafe.Add(mBase, uint32(v124)+12))
+	*(*int32)(unsafe.Add(mBase, uint32(v118))) = v133
+	v175 = v124
+	goto L28
+L43:
+	;
+	if v165 != 0 {
+		v175 = v165
+		goto L28
+	} else {
+		goto L51
+	}
+L44:
+	;
+	v165 = int32(0)
+	goto L43
+L45:
+	;
+	if v136 == int32(_a_F_GetNamedDSMSegment_4) {
+		goto L44
+	} else {
+		goto L46
+	}
+L46:
+	;
+	v142 = v136
+	goto L47
+L47:
+	;
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v142)+12))
+	if v117 == v147 {
+		v165 = v142
+		goto L43
+	} else {
+		goto L49
+	}
+L48:
+	;
+	goto L44
+L49:
+	;
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v142)+4))
+	if v149 != int32(_a_F_GetNamedDSMSegment_4) {
+		v142 = v149
+		goto L47
+	} else {
+		goto L50
+	}
+L50:
+	;
+	goto L48
+L51:
+	;
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
+	v167 = F_dsm_attach(m, v166)
+	mBase = m.M
+	v168 = m.ExcPending
+	if v168 != 0 {
+		goto L11
+	} else {
+		goto L52
+	}
+L52:
+	;
+	if v167 == int32(0) {
+		goto L1
+	} else {
+		goto L53
+	}
+L53:
+	;
+	F_dsm_pin_mapping(m, v167)
+	mBase = m.M
+	v172 = m.ExcPending
+	if v172 != 0 {
+		goto L11
+	} else {
+		goto L54
+	}
+L54:
+	;
+	v175 = v167
+	goto L28
+L55:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_GetNamedDSMSegment[0])) = v16
+	return v179
+L56:
+	;
+	F_errmsg(m, int32(_a_F_GetNamedDSMSegment_5), int32(0))
+	mBase = m.M
+	v194 = m.ExcPending
+	if v194 != 0 {
+		goto L11
+	} else {
+		goto L57
+	}
+L57:
+	;
+	F_errfinish(m, int32(_a_F_GetNamedDSMSegment_6), int32(144), int32(_a_F_GetNamedDSMSegment_7))
+	mBase = m.M
+	v199 = m.ExcPending
+	if v199 != 0 {
+		goto L11
+	} else {
+		goto L58
+	}
+L58:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L59:
+	;
+	F_errmsg(m, int32(_a_F_GetNamedDSMSegment_8), int32(0))
+	mBase = m.M
+	v207 = m.ExcPending
+	if v207 != 0 {
+		goto L11
+	} else {
+		goto L60
+	}
+L60:
+	;
+	F_errfinish(m, int32(_a_F_GetNamedDSMSegment_6), int32(148), int32(_a_F_GetNamedDSMSegment_7))
+	mBase = m.M
+	v212 = m.ExcPending
+	if v212 != 0 {
+		goto L11
+	} else {
+		goto L61
+	}
+L61:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L62:
+	;
+	F_errmsg(m, int32(_a_F_GetNamedDSMSegment_9), int32(0))
+	mBase = m.M
+	v220 = m.ExcPending
+	if v220 != 0 {
+		goto L11
+	} else {
+		goto L63
+	}
+L63:
+	;
+	F_errfinish(m, int32(_a_F_GetNamedDSMSegment_6), int32(168), int32(_a_F_GetNamedDSMSegment_7))
+	mBase = m.M
+	v225 = m.ExcPending
+	if v225 != 0 {
+		goto L11
+	} else {
+		goto L64
+	}
+L64:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L65:
+	;
+	F_errmsg_internal(m, int32(_a_F_GetNamedDSMSegment_10), int32(0))
+	mBase = m.M
+	v233 = m.ExcPending
+	if v233 != 0 {
+		goto L11
+	} else {
+		goto L66
+	}
+L66:
+	;
+	F_errfinish(m, int32(_a_F_GetNamedDSMSegment_6), int32(192), int32(_a_F_GetNamedDSMSegment_7))
+	mBase = m.M
+	v238 = m.ExcPending
+	if v238 != 0 {
+		goto L11
+	} else {
+		goto L67
+	}
+L67:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+}
 func F_GetOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

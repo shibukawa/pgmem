@@ -471,7 +471,7 @@ L15:
 L16:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_EventCacheLookup[2])) = v41
-	F_CacheRegisterSyscacheCallback(m, int32(26), int32(1593), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(26), int32(1596), int32(0))
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -2347,11 +2347,11 @@ func F_InitializeWaitEventSupport(m *base.Module) {
 			if v71 != 0 {
 				return
 			} else {
-				v73 = int32(1107)
+				v73 = int32(1110)
 				v75 = m.G0
 				v77 = v75 - int32(144)
 				m.G0 = v77
-				switch int32(1109) {
+				switch int32(1112) {
 				case 0, 2:
 					v87 = v73
 				default:

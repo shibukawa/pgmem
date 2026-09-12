@@ -2052,7 +2052,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 					v117 = int32(0)
 					return v117
 				} else {
-					v48 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v15)
+					v48 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v15)
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -2066,7 +2066,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v15
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -2079,7 +2079,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2112,7 +2112,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				if v12&int32(1) != 0 {
-					v55 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v16)
+					v55 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v16)
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -2126,7 +2126,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v16
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -2139,7 +2139,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2171,7 +2171,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					v58 = int32(0)
-					v59 = int32(1287)
+					v59 = int32(1290)
 					v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 					mBase = m.M
 					v64 = m.ExcPending
@@ -2195,7 +2195,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 								} else {
 									v91 = v15
 								}
-								v92 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v91)
+								v92 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v91)
 								mBase = m.M
 								v93 = m.ExcPending
 								if v93 != 0 {
@@ -2213,7 +2213,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v65
 								v69 = v58
-								v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -2226,7 +2226,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2278,7 +2278,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 					v117 = int32(0)
 					return v117
 				} else {
-					v48 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v15)
+					v48 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v15)
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -2292,7 +2292,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v15
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -2305,7 +2305,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2338,7 +2338,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				if v12&int32(1) != 0 {
-					v55 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v16)
+					v55 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v16)
 					mBase = m.M
 					v56 = m.ExcPending
 					if v56 != 0 {
@@ -2352,7 +2352,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						} else {
 							v68 = v16
 							v69 = int32(1)
-							v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+							v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 							mBase = m.M
 							v74 = m.ExcPending
 							if v74 != 0 {
@@ -2365,7 +2365,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 										v117 = int32(0)
 										return v117
 									} else {
-										v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+										v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 										mBase = m.M
 										v78 = m.ExcPending
 										if v78 != 0 {
@@ -2397,7 +2397,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					v58 = int32(0)
-					v59 = int32(1287)
+					v59 = int32(1290)
 					v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 					mBase = m.M
 					v64 = m.ExcPending
@@ -2421,7 +2421,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 								} else {
 									v91 = v15
 								}
-								v92 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v91)
+								v92 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v91)
 								mBase = m.M
 								v93 = m.ExcPending
 								if v93 != 0 {
@@ -2439,7 +2439,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v65
 								v69 = v58
-								v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -2452,7 +2452,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2487,7 +2487,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			v28 = int32(0)
-			v31 = F_DirectFunctionCall2Coll(m, int32(1287), v28, v25, v17)
+			v31 = F_DirectFunctionCall2Coll(m, int32(1290), v28, v25, v17)
 			mBase = m.M
 			v34 = m.ExcPending
 			if v34 != 0 {
@@ -2513,7 +2513,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						v117 = int32(0)
 						return v117
 					} else {
-						v48 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v15)
+						v48 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v15)
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
@@ -2527,7 +2527,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v15
 								v69 = int32(1)
-								v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -2540,7 +2540,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2573,7 +2573,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 					}
 				} else {
 					if v12&int32(1) != 0 {
-						v55 = F_DirectFunctionCall2Coll(m, int32(1287), int32(0), v39, v16)
+						v55 = F_DirectFunctionCall2Coll(m, int32(1290), int32(0), v39, v16)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -2587,7 +2587,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 							} else {
 								v68 = v16
 								v69 = int32(1)
-								v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+								v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 								mBase = m.M
 								v74 = m.ExcPending
 								if v74 != 0 {
@@ -2600,7 +2600,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 											v117 = int32(0)
 											return v117
 										} else {
-											v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+											v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 											mBase = m.M
 											v78 = m.ExcPending
 											if v78 != 0 {
@@ -2632,7 +2632,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 						}
 					} else {
 						v58 = int32(0)
-						v59 = int32(1287)
+						v59 = int32(1290)
 						v63 = F_DirectFunctionCall2Coll(m, v59, v58, v16, v15)
 						mBase = m.M
 						v64 = m.ExcPending
@@ -2656,7 +2656,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 									} else {
 										v91 = v15
 									}
-									v92 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v91)
+									v92 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v91)
 									mBase = m.M
 									v93 = m.ExcPending
 									if v93 != 0 {
@@ -2674,7 +2674,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 								} else {
 									v68 = v65
 									v69 = v58
-									v73 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v39, v68)
+									v73 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v39, v68)
 									mBase = m.M
 									v74 = m.ExcPending
 									if v74 != 0 {
@@ -2687,7 +2687,7 @@ func F_overlaps_timetz(m *base.Module, l0 int32) int32 {
 												v117 = int32(0)
 												return v117
 											} else {
-												v77 = F_DirectFunctionCall2Coll(m, int32(1288), int32(0), v68, v37)
+												v77 = F_DirectFunctionCall2Coll(m, int32(1291), int32(0), v68, v37)
 												mBase = m.M
 												v78 = m.ExcPending
 												if v78 != 0 {

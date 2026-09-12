@@ -6062,7 +6062,7 @@ L359:
 	goto L340
 L360:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v2375)+48)) = int32(1105)
+	*(*int32)(unsafe.Add(mBase, uint32(v2375)+48)) = int32(1108)
 	*(*int32)(unsafe.Add(mBase, uint32(v2375)+20)) = v2415
 	*(*int32)(unsafe.Add(mBase, uint32(v2375)+24)) = v2415
 	v2428 = *(*int32)(unsafe.Add(mBase, uint32(v2373+int32(-52))+8))
@@ -7769,7 +7769,7 @@ L587:
 L588:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[179])) = v3732
-	*(*int32)(unsafe.Add(mBase, uint32(v3709)+40)) = int32(1110)
+	*(*int32)(unsafe.Add(mBase, uint32(v3709)+40)) = int32(1113)
 	*(*int64)(unsafe.Add(mBase, uint32(v3709)+32)) = int64(154618822664)
 	*(*int32)(unsafe.Add(mBase, uint32(v3709)+16)) = int32(16)
 	v3743 = int32(1)
@@ -7891,7 +7891,7 @@ L601:
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[184])) = v3808
 	v3813 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[21]))
 	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[185])) = v3813 + v3808&int32(15)<<(uint(int32(7))%32) + int32(_a_F_CreateSharedMemoryAndSemaphores_96)
-	*(*int32)(unsafe.Add(mBase, uint32(v3771)+36)) = int32(1111)
+	*(*int32)(unsafe.Add(mBase, uint32(v3771)+36)) = int32(1114)
 	*(*int64)(unsafe.Add(mBase, uint32(v3771)+28)) = int64(137438953480)
 	*(*int32)(unsafe.Add(mBase, uint32(v3771)+12)) = int32(16)
 	v3831 = v3781 << (uint(int32(1)) % 32)
@@ -8289,7 +8289,7 @@ L644:
 	goto L645
 L645:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[192])) = int32(1112)
+	*(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[192])) = int32(1115)
 	v4219 = *(*int32)(unsafe.Add(mBase, _c_F_CreateSharedMemoryAndSemaphores[193]))
 	v4220 = int32(0)
 	F_SimpleLruInit(m, int32(_a_F_CreateSharedMemoryAndSemaphores_104), int32(_a_F_CreateSharedMemoryAndSemaphores_105), v4219, v4220, int32(_a_F_CreateSharedMemoryAndSemaphores_106), int32(60), int32(90), int32(5), v4220)

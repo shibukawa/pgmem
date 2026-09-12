@@ -24,7 +24,7 @@ func F__int_contains_joinsel(m *base.Module, l0 int32) int32 {
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(4010), int32(0), v4, int32(2751), v6, v7, v8)
+	v9 = F_DirectFunctionCall5Coll(m, int32(4013), int32(0), v4, int32(2751), v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -49,7 +49,7 @@ func F__int_contains_sel(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = F_DirectFunctionCall4Coll(m, int32(4009), int32(0), v4, int32(2751), v6, v7)
+	v8 = F_DirectFunctionCall4Coll(m, int32(4012), int32(0), v4, int32(2751), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {

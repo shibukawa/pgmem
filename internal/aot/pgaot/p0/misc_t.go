@@ -13138,7 +13138,7 @@ L80:
 	;
 	v334 = v112 + int32(8)
 	v335 = *(*int32)(unsafe.Add(mBase, uint32(v112)+4))
-	F_qsort_arg(m, v334, v335, int32(4), int32(1535), v334+v335<<(uint(int32(2))%32))
+	F_qsort_arg(m, v334, v335, int32(4), int32(1538), v334+v335<<(uint(int32(2))%32))
 	mBase = m.M
 	v342 = m.ExcPending
 	if v342 != 0 {

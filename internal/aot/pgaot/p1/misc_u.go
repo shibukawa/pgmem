@@ -1183,7 +1183,7 @@ L109:
 	v354 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v352))))
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+40)) = v204
 	*(*int32)(unsafe.Add(mBase, uint32(v25)+44)) = v354 | v353
-	v362 = F_bsearch(m, v25+int32(40), l4, l5, int32(12), int32(1650))
+	v362 = F_bsearch(m, v25+int32(40), l4, l5, int32(12), int32(1653))
 	mBase = m.M
 	v363 = m.ExcPending
 	if v363 != 0 {

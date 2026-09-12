@@ -14833,7 +14833,7 @@ func F_gtsquery_picksplit(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v24&int32(_a_F_gtsquery_picksplit_1) == int32(1) {
-					F_pg_qsort(m, v225, v222, int32(8), int32(1527))
+					F_pg_qsort(m, v225, v222, int32(8), int32(1530))
 					mBase = m.M
 					v234 = m.ExcPending
 					if v234 != 0 {
@@ -14924,7 +14924,7 @@ func F_gtsquery_picksplit(m *base.Module, l0 int32) int32 {
 						}
 						break
 					}
-					F_pg_qsort(m, v225, v222, int32(8), int32(1527))
+					F_pg_qsort(m, v225, v222, int32(8), int32(1530))
 					mBase = m.M
 					v399 = m.ExcPending
 					if v399 != 0 {

@@ -531,7 +531,7 @@ L41:
 	}
 L42:
 	;
-	v197 = F_DirectFunctionCall1Coll(m, int32(1417), int32(0), v107)
+	v197 = F_DirectFunctionCall1Coll(m, int32(1420), int32(0), v107)
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {
@@ -541,7 +541,7 @@ L42:
 	}
 L43:
 	;
-	v188 = F_DirectFunctionCall1Coll(m, int32(1416), int32(0), v107)
+	v188 = F_DirectFunctionCall1Coll(m, int32(1419), int32(0), v107)
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -551,7 +551,7 @@ L43:
 	}
 L44:
 	;
-	v179 = F_DirectFunctionCall1Coll(m, int32(1415), int32(0), v107)
+	v179 = F_DirectFunctionCall1Coll(m, int32(1418), int32(0), v107)
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -561,7 +561,7 @@ L44:
 	}
 L45:
 	;
-	v170 = F_DirectFunctionCall1Coll(m, int32(1414), int32(0), v107)
+	v170 = F_DirectFunctionCall1Coll(m, int32(1417), int32(0), v107)
 	mBase = m.M
 	v171 = m.ExcPending
 	if v171 != 0 {
@@ -571,7 +571,7 @@ L45:
 	}
 L46:
 	;
-	v161 = F_DirectFunctionCall1Coll(m, int32(1413), int32(0), v107)
+	v161 = F_DirectFunctionCall1Coll(m, int32(1416), int32(0), v107)
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {

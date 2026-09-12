@@ -2437,7 +2437,7 @@ func F_textgename(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1559), v3, v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1562), v3, v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -4225,7 +4225,7 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+8)) = v126
 	v130 = int32(8)
 	v132 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
-	v135 = F_bsearch(m, v16+v130, v132, v122, v130, int32(1166))
+	v135 = F_bsearch(m, v16+v130, v132, v122, v130, int32(1169))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -4672,7 +4672,7 @@ L113:
 	*(*int64)(unsafe.Add(mBase, uint32(v16)+8)) = int64(0)
 	v538 = int32(8)
 	v540 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
-	v543 = F_bsearch(m, v16+v538, v540, v533, v538, int32(1166))
+	v543 = F_bsearch(m, v16+v538, v540, v533, v538, int32(1169))
 	mBase = m.M
 	v544 = m.ExcPending
 	if v544 != 0 {
@@ -9617,7 +9617,7 @@ func F_tsqueryin(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v4 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v7 = F_parse_tsquery(m, v2, int32(1526), v4, v4, v6)
+	v7 = F_parse_tsquery(m, v2, int32(1529), v4, v4, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

@@ -422,7 +422,7 @@ func F_TS_execute_ternary(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_TS_execute_recurse(m, l0, l1, int32(2), int32(1518))
+	v5 = F_TS_execute_recurse(m, l0, l1, int32(2), int32(1521))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -1621,7 +1621,7 @@ func F_ts_headline_json_opt(m *base.Module, l0 int32) int32 {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v11 = F_DirectFunctionCall4Coll(m, int32(1190), int32(0), v4, v8, v9, v10)
+		v11 = F_DirectFunctionCall4Coll(m, int32(1193), int32(0), v4, v8, v9, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -1644,7 +1644,7 @@ func F_ts_match_qv(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1539), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1542), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

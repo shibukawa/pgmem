@@ -1665,7 +1665,7 @@ func F_searchstoplist(m *base.Module, l0 int32, l1 int32) int32 {
 			m.G0 = v7 + int32(16)
 			return v28
 		} else {
-			v21 = F_bsearch(m, v7+int32(12), v11, v14, int32(4), int32(1186))
+			v21 = F_bsearch(m, v7+int32(12), v11, v14, int32(4), int32(1189))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {

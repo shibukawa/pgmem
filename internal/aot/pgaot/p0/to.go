@@ -2479,7 +2479,7 @@ func F_to_regclass(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regclass[1]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1497), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1500), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
@@ -2550,7 +2550,7 @@ func F_to_regtype(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regtype[1]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1254), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1257), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
@@ -2615,7 +2615,7 @@ func F_to_tsquery_byid(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			v22 = int32(0)
-			v24 = F_parse_tsquery(m, v17, int32(1174), v6+int32(8), v22, v22)
+			v24 = F_parse_tsquery(m, v17, int32(1177), v6+int32(8), v22, v22)
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
@@ -2657,7 +2657,7 @@ func F_to_tsvector(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			v11 = F_DirectFunctionCall2Coll(m, int32(1172), int32(0), v9, v3)
+			v11 = F_DirectFunctionCall2Coll(m, int32(1175), int32(0), v9, v3)
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {

@@ -11099,7 +11099,7 @@ L29:
 	v101 = v86 << (uint(int32(2)) % 32)
 	v105 = *(*int32)(unsafe.Add(mBase, uint32(v18)+24))
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(v105+v101)))
-	v108 = F_DirectFunctionCall1Coll(m, int32(1335), int32(0), v107)
+	v108 = F_DirectFunctionCall1Coll(m, int32(1338), int32(0), v107)
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -11728,7 +11728,7 @@ func F_array_typanalyze(m *base.Module, l0 int32) int32 {
 										v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+32))
 										*(*int32)(unsafe.Add(mBase, uint32(v37)+32)) = v59
 										*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v37
-										*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(1260)
+										*(*int32)(unsafe.Add(mBase, uint32(v11)+24)) = int32(1263)
 										v66 = v23
 										m.G0 = v9 + int32(16)
 										return v66

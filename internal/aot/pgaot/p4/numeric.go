@@ -5711,7 +5711,7 @@ L93:
 	;
 	v307 = int32(0)
 	v310 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
-	v311 = F_DirectFunctionCall2Coll(m, int32(1275), v307, v304, v310)
+	v311 = F_DirectFunctionCall2Coll(m, int32(1278), v307, v304, v310)
 	mBase = m.M
 	v312 = m.ExcPending
 	if v312 != 0 {
@@ -5732,7 +5732,7 @@ L94:
 	}
 L95:
 	;
-	v293 = F_DirectFunctionCall2Coll(m, int32(1313), v283, v287, v291)
+	v293 = F_DirectFunctionCall2Coll(m, int32(1316), v283, v287, v291)
 	mBase = m.M
 	v294 = m.ExcPending
 	if v294 != 0 {
@@ -5752,7 +5752,7 @@ L96:
 	}
 L97:
 	;
-	v297 = F_DirectFunctionCall2Coll(m, int32(1278), v283, v15, v295)
+	v297 = F_DirectFunctionCall2Coll(m, int32(1281), v283, v15, v295)
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {

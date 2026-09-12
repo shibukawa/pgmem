@@ -1567,7 +1567,7 @@ func F_timestamp_mi(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(0)
-				v65 = F_DirectFunctionCall1Coll(m, int32(1515), int32(0), v10)
+				v65 = F_DirectFunctionCall1Coll(m, int32(1518), int32(0), v10)
 				mBase = m.M
 				v66 = m.ExcPending
 				if v66 != 0 {
@@ -1620,7 +1620,7 @@ func F_timestamp_mi_interval(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v19 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v17, v6)
+			v19 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v17, v6)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
@@ -1646,8 +1646,8 @@ func F_timestamp_skipsupport(m *base.Module, l0 int32) int32 {
 	var v15 int32
 	_ = v15
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1511)
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1512)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1514)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1515)
 	v8 = F_Int64GetDatum(m, int64(-9223372036854775807-1))
 	mBase = m.M
 	v11 = m.ExcPending

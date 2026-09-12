@@ -32,6 +32,9 @@ func F_pg_finfo__ltree_union(m *base.Module) int32 {
 func F_pg_finfo_array_to_halfvec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_array_to_halfvec_0)
 }
+func F_pg_finfo_autoprewarm_start_worker(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_autoprewarm_start_worker_0)
+}
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_big5_to_euc_tw_0)
 }

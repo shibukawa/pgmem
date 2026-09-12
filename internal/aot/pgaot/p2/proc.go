@@ -1554,7 +1554,7 @@ L124:
 	}
 L125:
 	;
-	F_pg_qsort(m, v559, v596, int32(4), int32(1102))
+	F_pg_qsort(m, v559, v596, int32(4), int32(1105))
 	mBase = m.M
 	v611 = m.ExcPending
 	if v611 != 0 {
@@ -2555,7 +2555,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 					*(*int32)(unsafe.Add(mBase, uint32(v34))) = v98
 					if v40 == v99 {
 						*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-						F_on_shmem_exit(m, int32(1103), int32(0))
+						F_on_shmem_exit(m, int32(1106), int32(0))
 						mBase = m.M
 						v129 = m.ExcPending
 						if v129 != 0 {
@@ -2573,7 +2573,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 						} else {
 							if v106 == int32(0) {
 								*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-								F_on_shmem_exit(m, int32(1103), int32(0))
+								F_on_shmem_exit(m, int32(1106), int32(0))
 								mBase = m.M
 								v129 = m.ExcPending
 								if v129 != 0 {
@@ -2600,7 +2600,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-										F_on_shmem_exit(m, int32(1103), int32(0))
+										F_on_shmem_exit(m, int32(1106), int32(0))
 										mBase = m.M
 										v129 = m.ExcPending
 										if v129 != 0 {
@@ -2660,7 +2660,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v34))) = v98
 				if v40 == v99 {
 					*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-					F_on_shmem_exit(m, int32(1103), int32(0))
+					F_on_shmem_exit(m, int32(1106), int32(0))
 					mBase = m.M
 					v129 = m.ExcPending
 					if v129 != 0 {
@@ -2678,7 +2678,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 					} else {
 						if v106 == int32(0) {
 							*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-							F_on_shmem_exit(m, int32(1103), int32(0))
+							F_on_shmem_exit(m, int32(1106), int32(0))
 							mBase = m.M
 							v129 = m.ExcPending
 							if v129 != 0 {
@@ -2705,7 +2705,7 @@ func F_ProcSignalInit(m *base.Module, l0 int32, l1 int32) {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, _c_F_ProcSignalInit[4])) = v34
-									F_on_shmem_exit(m, int32(1103), int32(0))
+									F_on_shmem_exit(m, int32(1106), int32(0))
 									mBase = m.M
 									v129 = m.ExcPending
 									if v129 != 0 {

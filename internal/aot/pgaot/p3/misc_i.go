@@ -994,7 +994,7 @@ func F_InitProcess(m *base.Module) {
 									} else {
 										v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 										*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-										F_on_shmem_exit(m, int32(1113), int32(0))
+										F_on_shmem_exit(m, int32(1116), int32(0))
 										mBase = m.M
 										v208 = m.ExcPending
 										if v208 != 0 {
@@ -1219,7 +1219,7 @@ func F_InitProcess(m *base.Module) {
 								} else {
 									v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-									F_on_shmem_exit(m, int32(1113), int32(0))
+									F_on_shmem_exit(m, int32(1116), int32(0))
 									mBase = m.M
 									v208 = m.ExcPending
 									if v208 != 0 {
@@ -1466,7 +1466,7 @@ func F_InitProcess(m *base.Module) {
 								} else {
 									v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 									*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-									F_on_shmem_exit(m, int32(1113), int32(0))
+									F_on_shmem_exit(m, int32(1116), int32(0))
 									mBase = m.M
 									v208 = m.ExcPending
 									if v208 != 0 {
@@ -1691,7 +1691,7 @@ func F_InitProcess(m *base.Module) {
 							} else {
 								v197 = *(*int32)(unsafe.Add(mBase, _c_F_InitProcess[1]))
 								*(*int32)(unsafe.Add(mBase, _c_F_InitProcess[9])) = v197 + int32(548)
-								F_on_shmem_exit(m, int32(1113), int32(0))
+								F_on_shmem_exit(m, int32(1116), int32(0))
 								mBase = m.M
 								v208 = m.ExcPending
 								if v208 != 0 {

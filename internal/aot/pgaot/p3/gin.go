@@ -2560,7 +2560,7 @@ func F_gin_enum_cmp(m *base.Module, l0 int32) int32 {
 		} else {
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-			v19 = F_CallerFInfoFunctionCall2(m, int32(3811), v17, v18, v5, v4)
+			v19 = F_CallerFInfoFunctionCall2(m, int32(3814), v17, v18, v5, v4)
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -3241,7 +3241,7 @@ func F_gin_extract_query_bytea(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_bytea_0), int32(2863))
+	v5 = F_gin_btree_extract_query(m, l0, int32(1), int32(_a_F_gin_extract_query_bytea_0), int32(2866))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -3329,7 +3329,7 @@ func F_gin_extract_query_int4(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2113)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2116)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -3475,7 +3475,7 @@ func F_gin_extract_query_time(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(1445)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(1448)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)

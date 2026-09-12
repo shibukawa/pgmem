@@ -24127,7 +24127,7 @@ func F_examine_indexcol_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				return
 			} else {
 				v101 = v62
-				*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
+				*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1509)
 				*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v101
 				return
 			}
@@ -24147,7 +24147,7 @@ func F_examine_indexcol_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						return
 					} else {
 						v101 = v62
-						*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
+						*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1509)
 						*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v101
 						return
 					}
@@ -24201,7 +24201,7 @@ func F_examine_indexcol_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				return
 			} else {
 				v101 = v95
-				*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
+				*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1509)
 				*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v101
 				return
 			}
@@ -24220,7 +24220,7 @@ func F_examine_indexcol_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						return
 					} else {
 						v101 = v95
-						*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1506)
+						*(*int32)(unsafe.Add(mBase, uint32(l3)+12)) = int32(1509)
 						*(*int32)(unsafe.Add(mBase, uint32(l3)+8)) = v101
 						return
 					}

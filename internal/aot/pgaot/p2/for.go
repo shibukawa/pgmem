@@ -5,6 +5,189 @@ import (
 	"unsafe"
 )
 
+func F_WaitForBackgroundWorkerShutdown(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int64
+	_ = v23
+	var v26 int32
+	_ = v26
+	var v27 int64
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
+	var v53 int32
+	_ = v53
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
+	goto L1
+L1:
+	;
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[0]))
+	if v8 != 0 {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	F_ProcessInterrupts(m)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	goto L5
+L5:
+	;
+	v14 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[1]))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[2]))
+	v21 = F_LWLockAcquire(m, v17+int32(_a_F_WaitForBackgroundWorkerShutdown_0), int32(1))
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		goto L6
+	} else {
+		goto L8
+	}
+L6:
+	;
+	return int32(0)
+L7:
+	;
+	goto L5
+L8:
+	;
+	v23 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
+	v26 = v14 + v15*int32(1480)
+	v27 = *(*int64)(unsafe.Add(mBase, uint32(v26)+24))
+	if v23 == v27 {
+		goto L10
+	} else {
+		goto L11
+	}
+L9:
+	;
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(v30)+4))
+	v43 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[2]))
+	F_LWLockRelease(m, v43+int32(_a_F_WaitForBackgroundWorkerShutdown_0))
+	mBase = m.M
+	v47 = m.ExcPending
+	if v47 != 0 {
+		goto L6
+	} else {
+		goto L15
+	}
+L10:
+	;
+	v30 = v26 + int32(16)
+	v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30))))
+	if v31 != 0 {
+		goto L9
+	} else {
+		goto L13
+	}
+L11:
+	;
+	goto L12
+L12:
+	;
+	v34 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[2]))
+	F_LWLockRelease(m, v34+int32(_a_F_WaitForBackgroundWorkerShutdown_0))
+	mBase = m.M
+	v38 = m.ExcPending
+	if v38 != 0 {
+		goto L6
+	} else {
+		goto L14
+	}
+L13:
+	;
+	goto L12
+L14:
+	;
+	return int32(2)
+L15:
+	;
+	if v41 == int32(0) {
+		goto L16
+	} else {
+		goto L17
+	}
+L16:
+	;
+	return int32(2)
+L17:
+	;
+	goto L18
+L18:
+	;
+	v53 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[3]))
+	v57 = F_WaitLatch(m, v53, int32(17), int32(0), int32(134217733))
+	mBase = m.M
+	v58 = m.ExcPending
+	if v58 != 0 {
+		goto L6
+	} else {
+		goto L19
+	}
+L19:
+	;
+	if v57&int32(16) != 0 {
+		goto L20
+	} else {
+		goto L21
+	}
+L20:
+	;
+	return int32(3)
+L21:
+	;
+	goto L22
+L22:
+	;
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_WaitForBackgroundWorkerShutdown[3]))
+	*(*int32)(unsafe.Add(mBase, uint32(v64))) = int32(0)
+	goto L23
+L23:
+	;
+	goto L1
+}
 func F_WaitForParallelWorkersToAttach(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase

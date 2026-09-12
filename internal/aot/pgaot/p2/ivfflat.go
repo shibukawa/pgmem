@@ -14,16 +14,20 @@ func F_IvfflatInit(m *base.Module) {
 	_ = v4
 	var v12 int32
 	_ = v12
-	var v20 int32
-	_ = v20
-	var v28 int32
-	_ = v28
-	var v33 int32
-	_ = v33
+	var v17 int32
+	_ = v17
+	var v23 int32
+	_ = v23
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
-	var v39 int32
-	_ = v39
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
 	v3 = F_add_reloption_kind(m)
 	mBase = m.M
 	v4 = m.ExcPending
@@ -37,29 +41,31 @@ func F_IvfflatInit(m *base.Module) {
 		if v12 != 0 {
 			return
 		} else {
-			F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_3), int32(_a_F_IvfflatInit_4), int32(_a_F_IvfflatInit_5), int32(_a_F_IvfflatInit_6), int32(1), int32(_a_F_IvfflatInit_2))
+			v17 = int32(1)
+			F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_3), int32(_a_F_IvfflatInit_4), int32(_a_F_IvfflatInit_5), int32(_a_F_IvfflatInit_6), v17, v17, int32(_a_F_IvfflatInit_2), int32(6), int32(0))
 			mBase = m.M
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v23 = m.ExcPending
+			if v23 != 0 {
 				return
 			} else {
 				F_DefineCustomEnumVariable(m, int32(_a_F_IvfflatInit_7), int32(_a_F_IvfflatInit_8), int32(0), int32(_a_F_IvfflatInit_9), int32(_a_F_IvfflatInit_10), int32(6))
 				mBase = m.M
-				v28 = m.ExcPending
-				if v28 != 0 {
+				v31 = m.ExcPending
+				if v31 != 0 {
 					return
 				} else {
-					v33 = int32(_a_F_IvfflatInit_2)
-					F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_11), int32(_a_F_IvfflatInit_12), int32(0), int32(_a_F_IvfflatInit_13), v33, v33)
+					v34 = int32(0)
+					v36 = int32(_a_F_IvfflatInit_2)
+					F_DefineCustomIntVariable(m, int32(_a_F_IvfflatInit_11), int32(_a_F_IvfflatInit_12), v34, int32(_a_F_IvfflatInit_13), v36, int32(1), v36, int32(6), v34)
 					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
+					v42 = m.ExcPending
+					if v42 != 0 {
 						return
 					} else {
 						F_MarkGUCPrefixReserved(m, int32(_a_F_IvfflatInit_14))
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return
 						} else {
 							return

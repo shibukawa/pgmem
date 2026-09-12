@@ -959,7 +959,7 @@ func F_quote_nullable(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v14 = F_DirectFunctionCall1Coll(m, int32(1483), int32(0), v13)
+		v14 = F_DirectFunctionCall1Coll(m, int32(1486), int32(0), v13)
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {

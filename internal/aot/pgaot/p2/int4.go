@@ -560,7 +560,7 @@ L35:
 	goto L36
 L36:
 	;
-	v115 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v15)
+	v115 = F_DirectFunctionCall1Coll(m, int32(1317), int32(0), v15)
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -570,7 +570,7 @@ L36:
 	}
 L37:
 	;
-	v108 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v106*v15)
+	v108 = F_DirectFunctionCall1Coll(m, int32(1317), int32(0), v106*v15)
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {

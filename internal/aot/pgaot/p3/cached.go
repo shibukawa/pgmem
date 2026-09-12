@@ -1739,8 +1739,8 @@ L107:
 	}
 L108:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v650)+28)) = int32(1594)
-	*(*int32)(unsafe.Add(mBase, uint32(v650)+24)) = int32(1595)
+	*(*int32)(unsafe.Add(mBase, uint32(v650)+28)) = int32(1597)
+	*(*int32)(unsafe.Add(mBase, uint32(v650)+24)) = int32(1598)
 	*(*int64)(unsafe.Add(mBase, uint32(v650)+16)) = int64(1855425872300)
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+16)) = v655
 	*(*int32)(unsafe.Add(mBase, uint32(v30)+12)) = v52

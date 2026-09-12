@@ -30,7 +30,7 @@ func F_pgstat_beinit(m *base.Module) {
 	v3 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_beinit[0]))
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_pgstat_beinit[1]))
 	*(*int32)(unsafe.Add(mBase, _c_F_pgstat_beinit[2])) = v3 + v5*int32(408)
-	F_on_shmem_exit(m, int32(1211), int32(0))
+	F_on_shmem_exit(m, int32(1214), int32(0))
 	mBase = m.M
 	v13 = m.ExcPending
 	if v13 != 0 {

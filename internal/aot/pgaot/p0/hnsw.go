@@ -962,30 +962,32 @@ func F_HnswInit(m *base.Module) {
 	_ = v39
 	var v41 int32
 	_ = v41
-	var v43 int32
-	_ = v43
-	var v46 int32
-	_ = v46
+	var v44 int32
+	_ = v44
 	var v47 int32
 	_ = v47
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v64 int32
-	_ = v64
-	var v72 int32
-	_ = v72
-	var v80 int32
-	_ = v80
-	var v88 int32
-	_ = v88
-	var v93 float64
-	_ = v93
-	var v97 int32
-	_ = v97
-	var v100 int32
+	var v48 int32
+	_ = v48
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
+	var v65 int32
+	_ = v65
+	var v76 int32
+	_ = v76
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v95 int32
+	_ = v95
+	var v100 float64
 	_ = v100
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -1017,61 +1019,62 @@ func F_HnswInit(m *base.Module) {
 						return
 					} else {
 						v41 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[2]))
-						F_LWLockRegisterTranche(m, v41)
+						F_LWLockRegisterTranche(m, v41, int32(_a_F_HnswInit_1))
 						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
+						v44 = m.ExcPending
+						if v44 != 0 {
 							return
 						} else {
-							v46 = F_add_reloption_kind(m)
+							v47 = F_add_reloption_kind(m)
 							mBase = m.M
-							v47 = m.ExcPending
-							if v47 != 0 {
+							v48 = m.ExcPending
+							if v48 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v46
-								F_add_int_reloption(m, v46, int32(_a_F_HnswInit_1), int32(_a_F_HnswInit_2), int32(16), int32(2), int32(100))
+								*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v47
+								F_add_int_reloption(m, v47, int32(_a_F_HnswInit_2), int32(_a_F_HnswInit_3), int32(16), int32(2), int32(100))
 								mBase = m.M
-								v55 = m.ExcPending
-								if v55 != 0 {
+								v56 = m.ExcPending
+								if v56 != 0 {
 									return
 								} else {
-									v57 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
-									F_add_int_reloption(m, v57, int32(_a_F_HnswInit_3), int32(_a_F_HnswInit_4), int32(64), int32(4), int32(1000))
+									v58 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
+									F_add_int_reloption(m, v58, int32(_a_F_HnswInit_4), int32(_a_F_HnswInit_5), int32(64), int32(4), int32(1000))
 									mBase = m.M
-									v64 = m.ExcPending
-									if v64 != 0 {
+									v65 = m.ExcPending
+									if v65 != 0 {
 										return
 									} else {
-										F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_5), int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(40), int32(1000))
+										F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(_a_F_HnswInit_9), int32(40), int32(1), int32(1000), int32(6), int32(0))
 										mBase = m.M
-										v72 = m.ExcPending
-										if v72 != 0 {
+										v76 = m.ExcPending
+										if v76 != 0 {
 											return
 										} else {
-											F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_9), int32(_a_F_HnswInit_10), int32(0), int32(_a_F_HnswInit_11), int32(_a_F_HnswInit_12), int32(6))
+											F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
 											mBase = m.M
-											v80 = m.ExcPending
-											if v80 != 0 {
+											v84 = m.ExcPending
+											if v84 != 0 {
 												return
 											} else {
-												F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_13), int32(_a_F_HnswInit_14), int32(0), int32(_a_F_HnswInit_15), int32(_a_F_HnswInit_16), int32(2147483647))
+												v87 = int32(0)
+												F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
 												mBase = m.M
-												v88 = m.ExcPending
-												if v88 != 0 {
+												v95 = m.ExcPending
+												if v95 != 0 {
 													return
 												} else {
-													v93 = float64(1)
-													F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_17), int32(_a_F_HnswInit_18), int32(0), int32(_a_F_HnswInit_19), v93, v93, float64(1000))
+													v100 = float64(1)
+													F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
 													mBase = m.M
-													v97 = m.ExcPending
-													if v97 != 0 {
+													v104 = m.ExcPending
+													if v104 != 0 {
 														return
 													} else {
-														F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_20))
+														F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 														mBase = m.M
-														v100 = m.ExcPending
-														if v100 != 0 {
+														v107 = m.ExcPending
+														if v107 != 0 {
 															return
 														} else {
 															m.G0 = v5 + int32(16)
@@ -1104,61 +1107,62 @@ func F_HnswInit(m *base.Module) {
 							return
 						} else {
 							v41 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[2]))
-							F_LWLockRegisterTranche(m, v41)
+							F_LWLockRegisterTranche(m, v41, int32(_a_F_HnswInit_1))
 							mBase = m.M
-							v43 = m.ExcPending
-							if v43 != 0 {
+							v44 = m.ExcPending
+							if v44 != 0 {
 								return
 							} else {
-								v46 = F_add_reloption_kind(m)
+								v47 = F_add_reloption_kind(m)
 								mBase = m.M
-								v47 = m.ExcPending
-								if v47 != 0 {
+								v48 = m.ExcPending
+								if v48 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v46
-									F_add_int_reloption(m, v46, int32(_a_F_HnswInit_1), int32(_a_F_HnswInit_2), int32(16), int32(2), int32(100))
+									*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v47
+									F_add_int_reloption(m, v47, int32(_a_F_HnswInit_2), int32(_a_F_HnswInit_3), int32(16), int32(2), int32(100))
 									mBase = m.M
-									v55 = m.ExcPending
-									if v55 != 0 {
+									v56 = m.ExcPending
+									if v56 != 0 {
 										return
 									} else {
-										v57 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
-										F_add_int_reloption(m, v57, int32(_a_F_HnswInit_3), int32(_a_F_HnswInit_4), int32(64), int32(4), int32(1000))
+										v58 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
+										F_add_int_reloption(m, v58, int32(_a_F_HnswInit_4), int32(_a_F_HnswInit_5), int32(64), int32(4), int32(1000))
 										mBase = m.M
-										v64 = m.ExcPending
-										if v64 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return
 										} else {
-											F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_5), int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(40), int32(1000))
+											F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(_a_F_HnswInit_9), int32(40), int32(1), int32(1000), int32(6), int32(0))
 											mBase = m.M
-											v72 = m.ExcPending
-											if v72 != 0 {
+											v76 = m.ExcPending
+											if v76 != 0 {
 												return
 											} else {
-												F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_9), int32(_a_F_HnswInit_10), int32(0), int32(_a_F_HnswInit_11), int32(_a_F_HnswInit_12), int32(6))
+												F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
 												mBase = m.M
-												v80 = m.ExcPending
-												if v80 != 0 {
+												v84 = m.ExcPending
+												if v84 != 0 {
 													return
 												} else {
-													F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_13), int32(_a_F_HnswInit_14), int32(0), int32(_a_F_HnswInit_15), int32(_a_F_HnswInit_16), int32(2147483647))
+													v87 = int32(0)
+													F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
 													mBase = m.M
-													v88 = m.ExcPending
-													if v88 != 0 {
+													v95 = m.ExcPending
+													if v95 != 0 {
 														return
 													} else {
-														v93 = float64(1)
-														F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_17), int32(_a_F_HnswInit_18), int32(0), int32(_a_F_HnswInit_19), v93, v93, float64(1000))
+														v100 = float64(1)
+														F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
 														mBase = m.M
-														v97 = m.ExcPending
-														if v97 != 0 {
+														v104 = m.ExcPending
+														if v104 != 0 {
 															return
 														} else {
-															F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_20))
+															F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 															mBase = m.M
-															v100 = m.ExcPending
-															if v100 != 0 {
+															v107 = m.ExcPending
+															if v107 != 0 {
 																return
 															} else {
 																m.G0 = v5 + int32(16)
@@ -1178,55 +1182,56 @@ func F_HnswInit(m *base.Module) {
 			}
 		}
 	} else {
-		v46 = F_add_reloption_kind(m)
+		v47 = F_add_reloption_kind(m)
 		mBase = m.M
-		v47 = m.ExcPending
-		if v47 != 0 {
+		v48 = m.ExcPending
+		if v48 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v46
-			F_add_int_reloption(m, v46, int32(_a_F_HnswInit_1), int32(_a_F_HnswInit_2), int32(16), int32(2), int32(100))
+			*(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3])) = v47
+			F_add_int_reloption(m, v47, int32(_a_F_HnswInit_2), int32(_a_F_HnswInit_3), int32(16), int32(2), int32(100))
 			mBase = m.M
-			v55 = m.ExcPending
-			if v55 != 0 {
+			v56 = m.ExcPending
+			if v56 != 0 {
 				return
 			} else {
-				v57 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
-				F_add_int_reloption(m, v57, int32(_a_F_HnswInit_3), int32(_a_F_HnswInit_4), int32(64), int32(4), int32(1000))
+				v58 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInit[3]))
+				F_add_int_reloption(m, v58, int32(_a_F_HnswInit_4), int32(_a_F_HnswInit_5), int32(64), int32(4), int32(1000))
 				mBase = m.M
-				v64 = m.ExcPending
-				if v64 != 0 {
+				v65 = m.ExcPending
+				if v65 != 0 {
 					return
 				} else {
-					F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_5), int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(40), int32(1000))
+					F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_6), int32(_a_F_HnswInit_7), int32(_a_F_HnswInit_8), int32(_a_F_HnswInit_9), int32(40), int32(1), int32(1000), int32(6), int32(0))
 					mBase = m.M
-					v72 = m.ExcPending
-					if v72 != 0 {
+					v76 = m.ExcPending
+					if v76 != 0 {
 						return
 					} else {
-						F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_9), int32(_a_F_HnswInit_10), int32(0), int32(_a_F_HnswInit_11), int32(_a_F_HnswInit_12), int32(6))
+						F_DefineCustomEnumVariable(m, int32(_a_F_HnswInit_10), int32(_a_F_HnswInit_11), int32(0), int32(_a_F_HnswInit_12), int32(_a_F_HnswInit_13), int32(6))
 						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
+						v84 = m.ExcPending
+						if v84 != 0 {
 							return
 						} else {
-							F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_13), int32(_a_F_HnswInit_14), int32(0), int32(_a_F_HnswInit_15), int32(_a_F_HnswInit_16), int32(2147483647))
+							v87 = int32(0)
+							F_DefineCustomIntVariable(m, int32(_a_F_HnswInit_14), int32(_a_F_HnswInit_15), v87, int32(_a_F_HnswInit_16), int32(_a_F_HnswInit_17), int32(1), int32(2147483647), int32(6), v87)
 							mBase = m.M
-							v88 = m.ExcPending
-							if v88 != 0 {
+							v95 = m.ExcPending
+							if v95 != 0 {
 								return
 							} else {
-								v93 = float64(1)
-								F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_17), int32(_a_F_HnswInit_18), int32(0), int32(_a_F_HnswInit_19), v93, v93, float64(1000))
+								v100 = float64(1)
+								F_DefineCustomRealVariable(m, int32(_a_F_HnswInit_18), int32(_a_F_HnswInit_19), int32(0), int32(_a_F_HnswInit_20), v100, v100, float64(1000))
 								mBase = m.M
-								v97 = m.ExcPending
-								if v97 != 0 {
+								v104 = m.ExcPending
+								if v104 != 0 {
 									return
 								} else {
-									F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_20))
+									F_MarkGUCPrefixReserved(m, int32(_a_F_HnswInit_21))
 									mBase = m.M
-									v100 = m.ExcPending
-									if v100 != 0 {
+									v107 = m.ExcPending
+									if v107 != 0 {
 										return
 									} else {
 										m.G0 = v5 + int32(16)
@@ -1274,8 +1279,8 @@ func F_HnswInitLockTranche(m *base.Module) {
 	_ = v35
 	var v37 int32
 	_ = v37
-	var v39 int32
-	_ = v39
+	var v40 int32
+	_ = v40
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -1305,10 +1310,10 @@ func F_HnswInitLockTranche(m *base.Module) {
 					return
 				} else {
 					v37 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInitLockTranche[1]))
-					F_LWLockRegisterTranche(m, v37)
+					F_LWLockRegisterTranche(m, v37, int32(_a_F_HnswInitLockTranche_1))
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v40 = m.ExcPending
+					if v40 != 0 {
 						return
 					} else {
 						m.G0 = v5 + int32(16)
@@ -1333,10 +1338,10 @@ func F_HnswInitLockTranche(m *base.Module) {
 						return
 					} else {
 						v37 = *(*int32)(unsafe.Add(mBase, _c_F_HnswInitLockTranche[1]))
-						F_LWLockRegisterTranche(m, v37)
+						F_LWLockRegisterTranche(m, v37, int32(_a_F_HnswInitLockTranche_1))
 						mBase = m.M
-						v39 = m.ExcPending
-						if v39 != 0 {
+						v40 = m.ExcPending
+						if v40 != 0 {
 							return
 						} else {
 							m.G0 = v5 + int32(16)

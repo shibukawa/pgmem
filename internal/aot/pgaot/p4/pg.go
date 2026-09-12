@@ -1348,21 +1348,82 @@ L90:
 	return
 }
 func F__PG_init_isn(m *base.Module) {
-	var v11 int32
-	_ = v11
-	var v15 int32
-	_ = v15
-	F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_isn_0), int32(_a_F__PG_init_isn_1), int32(_a_F__PG_init_isn_2), int32(0))
-	v11 = m.ExcPending
-	if v11 != 0 {
+	var v12 int32
+	_ = v12
+	var v16 int32
+	_ = v16
+	F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_isn_0), int32(_a_F__PG_init_isn_1), int32(_a_F__PG_init_isn_2), int32(0), int32(6))
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return
 	} else {
 		F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_isn_3))
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return
 		} else {
 			return
+		}
+	}
+}
+func F__PG_init_pg_prewarm(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	F_DefineCustomIntVariable(m, int32(_a_F__PG_init_pg_prewarm_0), int32(_a_F__PG_init_pg_prewarm_1), int32(_a_F__PG_init_pg_prewarm_2), int32(_a_F__PG_init_pg_prewarm_3), int32(300), int32(0), int32(_a_F__PG_init_pg_prewarm_4), int32(2), int32(536870912))
+	mBase = m.M
+	v18 = m.ExcPending
+	if v18 != 0 {
+		return
+	} else {
+		v20 = int32(*(*uint8)(unsafe.Add(mBase, _c_F__PG_init_pg_prewarm[0])))
+		if v20 != int32(1) {
+			return
+		} else {
+			v28 = int32(_a_F__PG_init_pg_prewarm_5)
+			v30 = int32(1)
+			F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_prewarm_6), int32(_a_F__PG_init_pg_prewarm_7), v28, v30, v30)
+			mBase = m.M
+			v33 = m.ExcPending
+			if v33 != 0 {
+				return
+			} else {
+				F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pg_prewarm_8))
+				mBase = m.M
+				v37 = m.ExcPending
+				if v37 != 0 {
+					return
+				} else {
+					v38 = int32(*(*uint8)(unsafe.Add(mBase, _c_F__PG_init_pg_prewarm[1])))
+					if v38 != int32(1) {
+						return
+					} else {
+						F_apw_start_leader_worker(m)
+						mBase = m.M
+						v42 = m.ExcPending
+						if v42 != 0 {
+							return
+						} else {
+							return
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -5721,7 +5782,7 @@ func F_pg_convert_from(m *base.Module, l0 int32) int32 {
 	if v14 != 0 {
 		return int32(0)
 	} else {
-		v15 = F_DirectFunctionCall3Coll(m, int32(1652), v3, v4, v5, v11)
+		v15 = F_DirectFunctionCall3Coll(m, int32(1655), v3, v4, v5, v11)
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -20420,7 +20481,7 @@ L26:
 	}
 L27:
 	;
-	v83 = F_DirectFunctionCall1Coll(m, int32(1561), int32(0), v15)
+	v83 = F_DirectFunctionCall1Coll(m, int32(1564), int32(0), v15)
 	mBase = m.M
 	v84 = m.ExcPending
 	if v84 != 0 {

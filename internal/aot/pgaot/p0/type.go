@@ -8107,7 +8107,7 @@ L3:
 	goto L4
 L4:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = int32(1614)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = int32(1617)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+88)) = int64(1408749273092)
 	v26 = int32(72)
 	v29 = F_hash_create(m, int32(_a_F_lookup_type_cache_14), int32(64), v10+v26, v26)
@@ -8136,7 +8136,7 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_lookup_type_cache[5])) = v42
-	F_CacheRegisterRelcacheCallback(m, int32(1615))
+	F_CacheRegisterRelcacheCallback(m, int32(1618))
 	mBase = m.M
 	v47 = m.ExcPending
 	if v47 != 0 {
@@ -8146,7 +8146,7 @@ L7:
 	}
 L8:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(82), int32(1616), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(82), int32(1619), int32(0))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -8156,7 +8156,7 @@ L8:
 	}
 L9:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(14), int32(1617), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(14), int32(1620), int32(0))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -8166,7 +8166,7 @@ L9:
 	}
 L10:
 	;
-	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1618), int32(0))
+	F_CacheRegisterSyscacheCallback(m, int32(19), int32(1621), int32(0))
 	mBase = m.M
 	v62 = m.ExcPending
 	if v62 != 0 {

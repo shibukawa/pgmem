@@ -657,7 +657,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_lookup_ts_parser_cache[0])) = v22
-	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1613), v22)
+	F_CacheRegisterSyscacheCallback(m, int32(78), int32(1616), v22)
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {
@@ -1124,7 +1124,7 @@ func F_ts_headline_byid(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1187), int32(0), v4, v5, v6)
+	v7 = F_DirectFunctionCall3Coll(m, int32(1190), int32(0), v4, v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1159,7 +1159,7 @@ func F_ts_headline_jsonb_opt(m *base.Module, l0 int32) int32 {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v11 = F_DirectFunctionCall4Coll(m, int32(1189), int32(0), v4, v8, v9, v10)
+		v11 = F_DirectFunctionCall4Coll(m, int32(1192), int32(0), v4, v8, v9, v10)
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
@@ -1838,7 +1838,7 @@ func F_ts_match_vq(m *base.Module, l0 int32) int32 {
 			v43 = v32 + v34<<(uint(int32(2))%32)
 			*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v43
 			*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v43
-			v48 = F_TS_execute_recurse(m, v36, v11, int32(0), int32(1540))
+			v48 = F_TS_execute_recurse(m, v36, v11, int32(0), int32(1543))
 			mBase = m.M
 			v49 = m.ExcPending
 			if v49 != 0 {
@@ -2198,7 +2198,7 @@ func F_ts_typanalyze(m *base.Module, l0 int32) int32 {
 	} else {
 		v10 = v4
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(v3)+24)) = int32(1181)
+	*(*int32)(unsafe.Add(mBase, uint32(v3)+24)) = int32(1184)
 	*(*int32)(unsafe.Add(mBase, uint32(v3)+28)) = v10 * int32(300)
 	return int32(1)
 }

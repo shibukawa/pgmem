@@ -951,11 +951,11 @@ L7:
 	v42 = int32(_a_F_BackendMain_2)
 	*(*int32)(unsafe.Add(mBase, uint32(v33)+292)) = v42
 	*(*int32)(unsafe.Add(mBase, uint32(v33)+276)) = v42
-	v47 = int32(1148)
+	v47 = int32(1151)
 	v49 = m.G0
 	v51 = v49 - int32(144)
 	m.G0 = v51
-	switch int32(1150) {
+	switch int32(1153) {
 	case 0, 2:
 		v61 = v47
 		goto L9
@@ -1063,7 +1063,7 @@ L23:
 	;
 	v229 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_BackendMain[17])) = uint8(v229)
-	F_pqsignal_be(m, int32(14), int32(1785))
+	F_pqsignal_be(m, int32(14), int32(1788))
 	mBase = m.M
 	goto L21
 L24:
@@ -1333,7 +1333,7 @@ L58:
 	goto L47
 L59:
 	;
-	F_RegisterTimeout(m, int32(0), int32(1149))
+	F_RegisterTimeout(m, int32(0), int32(1152))
 	mBase = m.M
 	v557 = m.ExcPending
 	if v557 != 0 {
@@ -3399,7 +3399,7 @@ L109:
 	;
 	v461 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_BackgroundWorkerMain[19])) = uint8(v461)
-	F_pqsignal_be(m, int32(14), int32(1785))
+	F_pqsignal_be(m, int32(14), int32(1788))
 	mBase = m.M
 	goto L107
 L110:

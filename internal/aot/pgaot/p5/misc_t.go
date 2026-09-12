@@ -6252,7 +6252,7 @@ func F_tsearch_readline_begin(m *base.Module, l0 int32, l1 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(1179)
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = int32(1182)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0
 				v22 = int32(_a_F_tsearch_readline_begin_1)
@@ -6382,7 +6382,7 @@ func F_tsq_mcontained(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v6 = F_DirectFunctionCall2Coll(m, int32(1530), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(1533), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

@@ -4332,7 +4332,7 @@ L4:
 	goto L5
 L5:
 	;
-	F_qsort_arg(m, v26, v23, int32(12), int32(1488), l0)
+	F_qsort_arg(m, v26, v23, int32(12), int32(1491), l0)
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

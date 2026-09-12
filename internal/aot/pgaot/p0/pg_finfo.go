@@ -14,6 +14,9 @@ func F_pg_finfo__ltree_r_isparent(m *base.Module) int32 {
 func F_pg_finfo_akeys(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_akeys_0)
 }
+func F_pg_finfo_autoprewarm_dump_now(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_autoprewarm_dump_now_0)
+}
 func F_pg_finfo_avals(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_avals_0)
 }

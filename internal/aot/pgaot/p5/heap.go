@@ -1527,24 +1527,24 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	_ = v59
 	var v60 int32
 	_ = v60
-	var v63 int32
-	_ = v63
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
+	var v65 int32
+	_ = v65
 	var v67 int32
 	_ = v67
-	var v73 int32
-	_ = v73
+	var v68 int32
+	_ = v68
 	var v74 int32
 	_ = v74
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
+	var v75 int32
+	_ = v75
 	var v79 int32
 	_ = v79
+	var v80 int32
+	_ = v80
+	var v81 int32
+	_ = v81
 	F_RelationIncrementReferenceCount(m, l0)
 	mBase = m.M
 	v11 = m.ExcPending
@@ -1617,36 +1617,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 										if v55&int32(17) != 0 {
 											v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 											v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-											v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-											if v63 != 0 {
-												v64 = int32(138)
+											v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+											if v64 != 0 {
+												v65 = int32(138)
 											} else {
-												v64 = int32(139)
+												v65 = int32(139)
 											}
-											v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+											v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 											mBase = m.M
-											v67 = m.ExcPending
-											if v67 != 0 {
+											v68 = m.ExcPending
+											if v68 != 0 {
 												return int32(0)
 											} else {
-												v79 = v66
-												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+												v81 = v67
+												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 												return v13
 											}
 										} else {
 											if v55&int32(2) == int32(0) {
 												return v13
 											} else {
-												v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-												v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-												v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+												v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+												v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+												v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 												mBase = m.M
-												v78 = m.ExcPending
-												if v78 != 0 {
+												v80 = m.ExcPending
+												if v80 != 0 {
 													return int32(0)
 												} else {
-													v79 = v77
-													*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+													v81 = v79
+													*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 													return v13
 												}
 											}
@@ -1667,36 +1667,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 									if v55&int32(17) != 0 {
 										v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 										v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-										if v63 != 0 {
-											v64 = int32(138)
+										v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+										if v64 != 0 {
+											v65 = int32(138)
 										} else {
-											v64 = int32(139)
+											v65 = int32(139)
 										}
-										v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+										v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 										mBase = m.M
-										v67 = m.ExcPending
-										if v67 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return int32(0)
 										} else {
-											v79 = v66
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v67
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									} else {
 										if v55&int32(2) == int32(0) {
 											return v13
 										} else {
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-											v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+											v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+											v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return int32(0)
 											} else {
-												v79 = v77
-												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+												v81 = v79
+												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 												return v13
 											}
 										}
@@ -1727,36 +1727,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 									if v55&int32(17) != 0 {
 										v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 										v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-										if v63 != 0 {
-											v64 = int32(138)
+										v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+										if v64 != 0 {
+											v65 = int32(138)
 										} else {
-											v64 = int32(139)
+											v65 = int32(139)
 										}
-										v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+										v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 										mBase = m.M
-										v67 = m.ExcPending
-										if v67 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return int32(0)
 										} else {
-											v79 = v66
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v67
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									} else {
 										if v55&int32(2) == int32(0) {
 											return v13
 										} else {
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-											v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+											v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+											v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return int32(0)
 											} else {
-												v79 = v77
-												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+												v81 = v79
+												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 												return v13
 											}
 										}
@@ -1777,36 +1777,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 								if v55&int32(17) != 0 {
 									v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 									v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-									v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-									if v63 != 0 {
-										v64 = int32(138)
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+									if v64 != 0 {
+										v65 = int32(138)
 									} else {
-										v64 = int32(139)
+										v65 = int32(139)
 									}
-									v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+									v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return int32(0)
 									} else {
-										v79 = v66
-										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+										v81 = v67
+										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 										return v13
 									}
 								} else {
 									if v55&int32(2) == int32(0) {
 										return v13
 									} else {
-										v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+										v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+										v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 										mBase = m.M
-										v78 = m.ExcPending
-										if v78 != 0 {
+										v80 = m.ExcPending
+										if v80 != 0 {
 											return int32(0)
 										} else {
-											v79 = v77
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v79
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									}
@@ -1848,36 +1848,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 									if v55&int32(17) != 0 {
 										v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 										v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-										if v63 != 0 {
-											v64 = int32(138)
+										v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+										if v64 != 0 {
+											v65 = int32(138)
 										} else {
-											v64 = int32(139)
+											v65 = int32(139)
 										}
-										v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+										v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 										mBase = m.M
-										v67 = m.ExcPending
-										if v67 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return int32(0)
 										} else {
-											v79 = v66
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v67
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									} else {
 										if v55&int32(2) == int32(0) {
 											return v13
 										} else {
-											v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-											v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+											v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+											v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+											v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 											mBase = m.M
-											v78 = m.ExcPending
-											if v78 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return int32(0)
 											} else {
-												v79 = v77
-												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+												v81 = v79
+												*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 												return v13
 											}
 										}
@@ -1898,36 +1898,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 								if v55&int32(17) != 0 {
 									v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 									v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-									v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-									if v63 != 0 {
-										v64 = int32(138)
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+									if v64 != 0 {
+										v65 = int32(138)
 									} else {
-										v64 = int32(139)
+										v65 = int32(139)
 									}
-									v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+									v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return int32(0)
 									} else {
-										v79 = v66
-										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+										v81 = v67
+										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 										return v13
 									}
 								} else {
 									if v55&int32(2) == int32(0) {
 										return v13
 									} else {
-										v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+										v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+										v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 										mBase = m.M
-										v78 = m.ExcPending
-										if v78 != 0 {
+										v80 = m.ExcPending
+										if v80 != 0 {
 											return int32(0)
 										} else {
-											v79 = v77
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v79
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									}
@@ -1958,36 +1958,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 								if v55&int32(17) != 0 {
 									v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 									v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-									v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-									if v63 != 0 {
-										v64 = int32(138)
+									v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+									if v64 != 0 {
+										v65 = int32(138)
 									} else {
-										v64 = int32(139)
+										v65 = int32(139)
 									}
-									v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+									v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return int32(0)
 									} else {
-										v79 = v66
-										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+										v81 = v67
+										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 										return v13
 									}
 								} else {
 									if v55&int32(2) == int32(0) {
 										return v13
 									} else {
-										v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-										v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+										v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+										v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 										mBase = m.M
-										v78 = m.ExcPending
-										if v78 != 0 {
+										v80 = m.ExcPending
+										if v80 != 0 {
 											return int32(0)
 										} else {
-											v79 = v77
-											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+											v81 = v79
+											*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 											return v13
 										}
 									}
@@ -2008,36 +2008,36 @@ func F_heap_beginscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 							if v55&int32(17) != 0 {
 								v59 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
 								v60 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-								v63 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
-								if v63 != 0 {
-									v64 = int32(138)
+								v64 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
+								if v64 != 0 {
+									v65 = int32(138)
 								} else {
-									v64 = int32(139)
+									v65 = int32(139)
 								}
-								v66 = F_read_stream_begin_relation(m, int32(10), v59, v60, v64, v13, int32(0))
+								v67 = F_read_stream_begin_relation(m, int32(10), v59, v60, int32(0), v65, v13, int32(0))
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v68 = m.ExcPending
+								if v68 != 0 {
 									return int32(0)
 								} else {
-									v79 = v66
-									*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+									v81 = v67
+									*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 									return v13
 								}
 							} else {
 								if v55&int32(2) == int32(0) {
 									return v13
 								} else {
-									v73 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
-									v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-									v77 = F_read_stream_begin_relation(m, int32(8), v73, v74, int32(140), v13, int32(12))
+									v74 = *(*int32)(unsafe.Add(mBase, uint32(v13)+60))
+									v75 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+									v79 = F_read_stream_begin_relation(m, int32(8), v74, v75, int32(0), int32(140), v13, int32(12))
 									mBase = m.M
-									v78 = m.ExcPending
-									if v78 != 0 {
+									v80 = m.ExcPending
+									if v80 != 0 {
 										return int32(0)
 									} else {
-										v79 = v77
-										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v79
+										v81 = v79
+										*(*int32)(unsafe.Add(mBase, uint32(v13)+84)) = v81
 										return v13
 									}
 								}

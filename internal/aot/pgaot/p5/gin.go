@@ -7367,7 +7367,7 @@ func F_gin_extract_query_name(m *base.Module, l0 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
 				v32 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
-				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2119)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2122)
 				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
 				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
@@ -8267,7 +8267,7 @@ func F_gin_numeric_cmp(m *base.Module, l0 int32) int32 {
 		if v3 == int32(0) {
 			return int32(1)
 		} else {
-			v17 = F_DirectFunctionCall2Coll(m, int32(1343), int32(0), v4, v3)
+			v17 = F_DirectFunctionCall2Coll(m, int32(1346), int32(0), v4, v3)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
@@ -8781,7 +8781,7 @@ L48:
 	goto L47
 L49:
 	;
-	v162 = F_DirectFunctionCall1Coll(m, int32(2911), int32(0), v154)
+	v162 = F_DirectFunctionCall1Coll(m, int32(2914), int32(0), v154)
 	mBase = m.M
 	v163 = m.ExcPending
 	if v163 != 0 {

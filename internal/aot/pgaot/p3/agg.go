@@ -653,7 +653,7 @@ L2:
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
-	F_resolve_special_varno(m, v26, l1, int32(1503), l2)
+	F_resolve_special_varno(m, v26, l1, int32(1506), l2)
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {

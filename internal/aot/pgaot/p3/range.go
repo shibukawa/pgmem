@@ -5233,7 +5233,7 @@ func F_range_typanalyze(m *base.Module, l0 int32) int32 {
 				v18 = v12
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v4)+32)) = v10
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1490)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+24)) = int32(1493)
 			*(*int32)(unsafe.Add(mBase, uint32(v4)+28)) = v18 * int32(300)
 			return int32(1)
 		}

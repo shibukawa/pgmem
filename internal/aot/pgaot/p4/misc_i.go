@@ -105,11 +105,11 @@ func F_InitializeTimeouts(m *base.Module) {
 	}
 	v142 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _c_F_InitializeTimeouts[9])) = uint8(v142)
-	v145 = int32(1785)
+	v145 = int32(1788)
 	v147 = m.G0
 	v149 = v147 - int32(144)
 	m.G0 = v149
-	switch int32(1787) {
+	switch int32(1790) {
 	case 0, 2:
 		v159 = v145
 	default:
@@ -2761,7 +2761,7 @@ func F_init_MultiFuncCall(m *base.Module, l0 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v65)+16)) = v54
 						v67 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
 						v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-						F_RegisterExprContextCallback(m, v67, int32(1629), v69)
+						F_RegisterExprContextCallback(m, v67, int32(1632), v69)
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -14519,11 +14519,11 @@ func F_iterate_json_values(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = l1
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = l2
-					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(1173)
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = int32(1176)
 					*(*int32)(unsafe.Add(mBase, uint32(v18))) = v64
-					*(*int32)(unsafe.Add(mBase, uint32(v15)+36)) = int32(1394)
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+36)) = int32(1397)
 					*(*int32)(unsafe.Add(mBase, uint32(v15))) = v18
-					*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = int32(1395)
+					*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = int32(1398)
 					v78 = F_pg_parse_json(m, v12+int32(12), v15)
 					mBase = m.M
 					v79 = m.ExcPending

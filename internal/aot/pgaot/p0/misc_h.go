@@ -11028,6 +11028,17 @@ func F_hashvarlenaextended(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_have_free_buffer(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v3 int32
+	_ = v3
+	v2 = *(*int32)(unsafe.Add(mBase, _c_F_have_free_buffer[0]))
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+8))
+	return int32(base.Ui32(v3^int32(-1)) >> (uint(int32(31)) % 32))
+}
 func F_heapgettup_pagemode(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase

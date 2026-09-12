@@ -55,6 +55,621 @@ func F_ReadNextFullTransactionId(m *base.Module) int64 {
 		}
 	}
 }
+func F_RegisterBackgroundWorker(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v88 int32
+	_ = v88
+	var v89 int32
+	_ = v89
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v107 int32
+	_ = v107
+	var v114 int32
+	_ = v114
+	var v119 int32
+	_ = v119
+	var v121 int32
+	_ = v121
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v130 int32
+	_ = v130
+	var v131 int32
+	_ = v131
+	var v136 int32
+	_ = v136
+	var v140 int32
+	_ = v140
+	var v145 int32
+	_ = v145
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v156 int32
+	_ = v156
+	var v159 int32
+	_ = v159
+	var v163 int32
+	_ = v163
+	var v168 int32
+	_ = v168
+	var v180 int32
+	_ = v180
+	var v186 int32
+	_ = v186
+	var v191 int32
+	_ = v191
+	v4 = m.G0
+	v6 = v4 - int32(96)
+	m.G0 = v6
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[0])))
+	if v9 == int32(0) {
+		v13 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[1])))
+		if v13 != 0 {
+			v35 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[2]))
+			if v35 != 0 {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v180 = m.ExcPending
+				if v180 != 0 {
+					return
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v6)+80)) = l0
+					F_errmsg_internal(m, int32(_a_F_RegisterBackgroundWorker_0), v6+int32(80))
+					mBase = m.M
+					v186 = m.ExcPending
+					if v186 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(977), int32(_a_F_RegisterBackgroundWorker_2))
+						mBase = m.M
+						v191 = m.ExcPending
+						if v191 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			} else {
+				v38 = F_errstart(m, int32(14), int32(0))
+				mBase = m.M
+				v39 = m.ExcPending
+				if v39 != 0 {
+					return
+				} else {
+					if v38 != 0 {
+						*(*int32)(unsafe.Add(mBase, uint32(v6)+64)) = l0
+						F_errmsg_internal(m, int32(_a_F_RegisterBackgroundWorker_3), v6-int32(-64))
+						mBase = m.M
+						v45 = m.ExcPending
+						if v45 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(980), int32(_a_F_RegisterBackgroundWorker_2))
+							mBase = m.M
+							v50 = m.ExcPending
+							if v50 != 0 {
+								return
+							} else {
+								v52 = F_SanityCheckBackgroundWorker(m, l0, int32(15))
+								mBase = m.M
+								v53 = m.ExcPending
+								if v53 != 0 {
+									return
+								} else {
+									if v52 == int32(0) {
+										m.G0 = v6 + int32(96)
+										return
+									} else {
+										v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1456))
+										if v56 != 0 {
+											v59 = F_errstart(m, int32(15), int32(0))
+											mBase = m.M
+											v60 = m.ExcPending
+											if v60 != 0 {
+												return
+											} else {
+												if v59 == int32(0) {
+													m.G0 = v6 + int32(96)
+													return
+												} else {
+													F_errcode(m, int32(1088))
+													mBase = m.M
+													v65 = m.ExcPending
+													if v65 != 0 {
+														return
+													} else {
+														*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = l0
+														F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_4), v6+int32(48))
+														mBase = m.M
+														v71 = m.ExcPending
+														if v71 != 0 {
+															return
+														} else {
+															F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(990), int32(_a_F_RegisterBackgroundWorker_2))
+															mBase = m.M
+															v76 = m.ExcPending
+															if v76 != 0 {
+																return
+															} else {
+																m.G0 = v6 + int32(96)
+																return
+															}
+														}
+													}
+												}
+											}
+										} else {
+											v77 = int32(_a_F_RegisterBackgroundWorker_5)
+											v79 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[3]))
+											v81 = v79 + int32(1)
+											*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[3])) = v81
+											v84 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[4]))
+											if v84 < v81 {
+												v88 = F_errstart(m, int32(15), int32(0))
+												mBase = m.M
+												v89 = m.ExcPending
+												if v89 != 0 {
+													return
+												} else {
+													if v88 == int32(0) {
+														m.G0 = v6 + int32(96)
+														return
+													} else {
+														F_errcode(m, int32(_a_F_RegisterBackgroundWorker_6))
+														mBase = m.M
+														v94 = m.ExcPending
+														if v94 != 0 {
+															return
+														} else {
+															F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_7), int32(0))
+															mBase = m.M
+															v98 = m.ExcPending
+															if v98 != 0 {
+																return
+															} else {
+																v100 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[4]))
+																*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v100
+																F_errdetail_plural(m, int32(_a_F_RegisterBackgroundWorker_8), int32(_a_F_RegisterBackgroundWorker_9), v100, v6+int32(32))
+																mBase = m.M
+																v107 = m.ExcPending
+																if v107 != 0 {
+																	return
+																} else {
+																	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_RegisterBackgroundWorker_10)
+																	F_errhint(m, int32(_a_F_RegisterBackgroundWorker_11), v6+int32(16))
+																	mBase = m.M
+																	v114 = m.ExcPending
+																	if v114 != 0 {
+																		return
+																	} else {
+																		F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(1009), int32(_a_F_RegisterBackgroundWorker_2))
+																		mBase = m.M
+																		v119 = m.ExcPending
+																		if v119 != 0 {
+																			return
+																		} else {
+																			m.G0 = v6 + int32(96)
+																			return
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											} else {
+												v121 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[5]))
+												v124 = F_MemoryContextAllocExtended(m, v121, int32(1488), int32(2))
+												mBase = m.M
+												v125 = m.ExcPending
+												if v125 != 0 {
+													return
+												} else {
+													if v124 == int32(0) {
+														v130 = F_errstart(m, int32(15), int32(0))
+														mBase = m.M
+														v131 = m.ExcPending
+														if v131 != 0 {
+															return
+														} else {
+															if v130 == int32(0) {
+																m.G0 = v6 + int32(96)
+																return
+															} else {
+																F_errcode(m, int32(_a_F_RegisterBackgroundWorker_12))
+																mBase = m.M
+																v136 = m.ExcPending
+																if v136 != 0 {
+																	return
+																} else {
+																	F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_13), int32(0))
+																	mBase = m.M
+																	v140 = m.ExcPending
+																	if v140 != 0 {
+																		return
+																	} else {
+																		F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(1023), int32(_a_F_RegisterBackgroundWorker_2))
+																		mBase = m.M
+																		v145 = m.ExcPending
+																		if v145 != 0 {
+																			return
+																		} else {
+																			m.G0 = v6 + int32(96)
+																			return
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														v147 = F__emscripten_memcpy_bulkmem(m, v124, l0, int32(1460))
+														mBase = m.M
+														v149 = int32(0)
+														*(*uint8)(unsafe.Add(mBase, uint32(v147)+1476)) = uint8(v149)
+														*(*int64)(unsafe.Add(mBase, uint32(v147)+1464)) = int64(0)
+														*(*int32)(unsafe.Add(mBase, uint32(v147)+1460)) = v149
+														v156 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[6]))
+														if v156 == v149 {
+															v159 = int32(_a_F_RegisterBackgroundWorker_14)
+															*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[7])) = v159
+															v163 = v159
+														} else {
+															v163 = v156
+														}
+														*(*int32)(unsafe.Add(mBase, uint32(v147)+1480)) = int32(_a_F_RegisterBackgroundWorker_14)
+														*(*int32)(unsafe.Add(mBase, uint32(v147)+1484)) = v163
+														v168 = v147 + int32(1480)
+														*(*int32)(unsafe.Add(mBase, uint32(v163))) = v168
+														*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[6])) = v168
+														m.G0 = v6 + int32(96)
+														return
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} else {
+						v52 = F_SanityCheckBackgroundWorker(m, l0, int32(15))
+						mBase = m.M
+						v53 = m.ExcPending
+						if v53 != 0 {
+							return
+						} else {
+							if v52 == int32(0) {
+								m.G0 = v6 + int32(96)
+								return
+							} else {
+								v56 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1456))
+								if v56 != 0 {
+									v59 = F_errstart(m, int32(15), int32(0))
+									mBase = m.M
+									v60 = m.ExcPending
+									if v60 != 0 {
+										return
+									} else {
+										if v59 == int32(0) {
+											m.G0 = v6 + int32(96)
+											return
+										} else {
+											F_errcode(m, int32(1088))
+											mBase = m.M
+											v65 = m.ExcPending
+											if v65 != 0 {
+												return
+											} else {
+												*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = l0
+												F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_4), v6+int32(48))
+												mBase = m.M
+												v71 = m.ExcPending
+												if v71 != 0 {
+													return
+												} else {
+													F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(990), int32(_a_F_RegisterBackgroundWorker_2))
+													mBase = m.M
+													v76 = m.ExcPending
+													if v76 != 0 {
+														return
+													} else {
+														m.G0 = v6 + int32(96)
+														return
+													}
+												}
+											}
+										}
+									}
+								} else {
+									v77 = int32(_a_F_RegisterBackgroundWorker_5)
+									v79 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[3]))
+									v81 = v79 + int32(1)
+									*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[3])) = v81
+									v84 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[4]))
+									if v84 < v81 {
+										v88 = F_errstart(m, int32(15), int32(0))
+										mBase = m.M
+										v89 = m.ExcPending
+										if v89 != 0 {
+											return
+										} else {
+											if v88 == int32(0) {
+												m.G0 = v6 + int32(96)
+												return
+											} else {
+												F_errcode(m, int32(_a_F_RegisterBackgroundWorker_6))
+												mBase = m.M
+												v94 = m.ExcPending
+												if v94 != 0 {
+													return
+												} else {
+													F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_7), int32(0))
+													mBase = m.M
+													v98 = m.ExcPending
+													if v98 != 0 {
+														return
+													} else {
+														v100 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[4]))
+														*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v100
+														F_errdetail_plural(m, int32(_a_F_RegisterBackgroundWorker_8), int32(_a_F_RegisterBackgroundWorker_9), v100, v6+int32(32))
+														mBase = m.M
+														v107 = m.ExcPending
+														if v107 != 0 {
+															return
+														} else {
+															*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = int32(_a_F_RegisterBackgroundWorker_10)
+															F_errhint(m, int32(_a_F_RegisterBackgroundWorker_11), v6+int32(16))
+															mBase = m.M
+															v114 = m.ExcPending
+															if v114 != 0 {
+																return
+															} else {
+																F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(1009), int32(_a_F_RegisterBackgroundWorker_2))
+																mBase = m.M
+																v119 = m.ExcPending
+																if v119 != 0 {
+																	return
+																} else {
+																	m.G0 = v6 + int32(96)
+																	return
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									} else {
+										v121 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[5]))
+										v124 = F_MemoryContextAllocExtended(m, v121, int32(1488), int32(2))
+										mBase = m.M
+										v125 = m.ExcPending
+										if v125 != 0 {
+											return
+										} else {
+											if v124 == int32(0) {
+												v130 = F_errstart(m, int32(15), int32(0))
+												mBase = m.M
+												v131 = m.ExcPending
+												if v131 != 0 {
+													return
+												} else {
+													if v130 == int32(0) {
+														m.G0 = v6 + int32(96)
+														return
+													} else {
+														F_errcode(m, int32(_a_F_RegisterBackgroundWorker_12))
+														mBase = m.M
+														v136 = m.ExcPending
+														if v136 != 0 {
+															return
+														} else {
+															F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_13), int32(0))
+															mBase = m.M
+															v140 = m.ExcPending
+															if v140 != 0 {
+																return
+															} else {
+																F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(1023), int32(_a_F_RegisterBackgroundWorker_2))
+																mBase = m.M
+																v145 = m.ExcPending
+																if v145 != 0 {
+																	return
+																} else {
+																	m.G0 = v6 + int32(96)
+																	return
+																}
+															}
+														}
+													}
+												}
+											} else {
+												v147 = F__emscripten_memcpy_bulkmem(m, v124, l0, int32(1460))
+												mBase = m.M
+												v149 = int32(0)
+												*(*uint8)(unsafe.Add(mBase, uint32(v147)+1476)) = uint8(v149)
+												*(*int64)(unsafe.Add(mBase, uint32(v147)+1464)) = int64(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v147)+1460)) = v149
+												v156 = *(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[6]))
+												if v156 == v149 {
+													v159 = int32(_a_F_RegisterBackgroundWorker_14)
+													*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[7])) = v159
+													v163 = v159
+												} else {
+													v163 = v156
+												}
+												*(*int32)(unsafe.Add(mBase, uint32(v147)+1480)) = int32(_a_F_RegisterBackgroundWorker_14)
+												*(*int32)(unsafe.Add(mBase, uint32(v147)+1484)) = v163
+												v168 = v147 + int32(1480)
+												*(*int32)(unsafe.Add(mBase, uint32(v163))) = v168
+												*(*int32)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[6])) = v168
+												m.G0 = v6 + int32(96)
+												return
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v15 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[8])))
+			if v15 != 0 {
+				m.G0 = v6 + int32(96)
+				return
+			} else {
+				v18 = F_errstart(m, int32(15), int32(0))
+				mBase = m.M
+				v19 = m.ExcPending
+				if v19 != 0 {
+					return
+				} else {
+					if v18 == int32(0) {
+						m.G0 = v6 + int32(96)
+						return
+					} else {
+						F_errcode(m, int32(1088))
+						mBase = m.M
+						v24 = m.ExcPending
+						if v24 != 0 {
+							return
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
+							F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_15), v6)
+							mBase = m.M
+							v28 = m.ExcPending
+							if v28 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(967), int32(_a_F_RegisterBackgroundWorker_2))
+								mBase = m.M
+								v33 = m.ExcPending
+								if v33 != 0 {
+									return
+								} else {
+									m.G0 = v6 + int32(96)
+									return
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_RegisterBackgroundWorker[8])))
+		if v15 != 0 {
+			m.G0 = v6 + int32(96)
+			return
+		} else {
+			v18 = F_errstart(m, int32(15), int32(0))
+			mBase = m.M
+			v19 = m.ExcPending
+			if v19 != 0 {
+				return
+			} else {
+				if v18 == int32(0) {
+					m.G0 = v6 + int32(96)
+					return
+				} else {
+					F_errcode(m, int32(1088))
+					mBase = m.M
+					v24 = m.ExcPending
+					if v24 != 0 {
+						return
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
+						F_errmsg(m, int32(_a_F_RegisterBackgroundWorker_15), v6)
+						mBase = m.M
+						v28 = m.ExcPending
+						if v28 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_RegisterBackgroundWorker_1), int32(967), int32(_a_F_RegisterBackgroundWorker_2))
+							mBase = m.M
+							v33 = m.ExcPending
+							if v33 != 0 {
+								return
+							} else {
+								m.G0 = v6 + int32(96)
+								return
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_RegisterCatcacheInvalidation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase

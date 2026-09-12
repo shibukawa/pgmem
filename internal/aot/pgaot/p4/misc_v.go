@@ -2498,7 +2498,7 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v11 == int32(1) {
 				if l1 != int32(19) {
 					if l1 != int32(1042) {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1555)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1558)
 						v37 = int32(1)
 						if v8&v37 == int32(0) {
 							return
@@ -2552,8 +2552,8 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 												if v83 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1556)
-													*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1557)
+													*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1559)
+													*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1560)
 													v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 													*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v88
 													*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(116)
@@ -2566,7 +2566,7 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							}
 						}
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1551)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1554)
 						v20 = int32(1)
 						if v8&v20 != 0 {
 							v42 = v20
@@ -2618,8 +2618,8 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 												if v83 != 0 {
 													return
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1556)
-													*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1557)
+													*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1559)
+													*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1560)
 													v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 													*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v88
 													*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(116)
@@ -2635,15 +2635,15 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1552)
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(1555)
 					return
 				}
 			} else {
 				v28 = base.B2i32(l1 != int32(19))
 				if l1 != int32(19) {
-					v29 = int32(1553)
+					v29 = int32(1556)
 				} else {
-					v29 = int32(1554)
+					v29 = int32(1557)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v29
 				v31 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
@@ -2696,8 +2696,8 @@ func F_varstr_sortsupport(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									if v83 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1556)
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1557)
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = int32(1559)
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = int32(1560)
 										v88 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v88
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = int32(116)

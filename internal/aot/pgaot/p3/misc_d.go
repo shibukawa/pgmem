@@ -10933,7 +10933,7 @@ L23:
 	}
 L24:
 	;
-	F_readstoplist(m, v69, v15, int32(1163))
+	F_readstoplist(m, v69, v15, int32(1166))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -11221,7 +11221,7 @@ func F_dsynonym_lexize(m *base.Module, l0 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v28
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 					v33 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-					v36 = F_bsearch(m, v8, v32, v33, int32(16), int32(1164))
+					v36 = F_bsearch(m, v8, v32, v33, int32(16), int32(1167))
 					mBase = m.M
 					v37 = m.ExcPending
 					if v37 != 0 {
@@ -11277,7 +11277,7 @@ func F_dsynonym_lexize(m *base.Module, l0 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v28
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
 					v33 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-					v36 = F_bsearch(m, v8, v32, v33, int32(16), int32(1164))
+					v36 = F_bsearch(m, v8, v32, v33, int32(16), int32(1167))
 					mBase = m.M
 					v37 = m.ExcPending
 					if v37 != 0 {

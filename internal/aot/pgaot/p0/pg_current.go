@@ -169,7 +169,7 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 						return v23
 					} else {
 						v116 = v23 + int32(24)
-						F_pg_qsort(m, v116, v112, int32(8), int32(1562))
+						F_pg_qsort(m, v116, v112, int32(8), int32(1565))
 						mBase = m.M
 						v120 = m.ExcPending
 						if v120 != 0 {

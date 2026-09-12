@@ -2046,10 +2046,16 @@ func F_gen_partprune_steps_internal(m *base.Module, l0 int32, l1 int32) int32
 func F_get_matching_partitions(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_AuxiliaryProcessMainCommon github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_AuxiliaryProcessMainCommon
 func F_AuxiliaryProcessMainCommon(m *base.Module)
+//go:linkname F_BackgroundWorkerUnblockSignals github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_BackgroundWorkerUnblockSignals
+func F_BackgroundWorkerUnblockSignals(m *base.Module)
 //go:linkname F_BackgroundWorkerInitializeConnectionByOid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_BackgroundWorkerInitializeConnectionByOid
 func F_BackgroundWorkerInitializeConnectionByOid(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_RegisterDynamicBackgroundWorker github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_RegisterDynamicBackgroundWorker
+func F_RegisterDynamicBackgroundWorker(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetBackgroundWorkerPid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetBackgroundWorkerPid
 func F_GetBackgroundWorkerPid(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_WaitForBackgroundWorkerShutdown github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_WaitForBackgroundWorkerShutdown
+func F_WaitForBackgroundWorkerShutdown(m *base.Module, l0 int32) int32
 //go:linkname F_RequestCheckpoint github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_RequestCheckpoint
 func F_RequestCheckpoint(m *base.Module, l0 int32)
 //go:linkname F_ForwardSyncRequest github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ForwardSyncRequest
@@ -2391,7 +2397,7 @@ func F_pgaio_io_update_state(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_pgaio_closing_fd github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pgaio_closing_fd
 func F_pgaio_closing_fd(m *base.Module, l0 int32)
 //go:linkname F_read_stream_begin_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_read_stream_begin_relation
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_read_stream_next_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_read_stream_next_buffer
 func F_read_stream_next_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_read_stream_end github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_read_stream_end
@@ -2556,6 +2562,8 @@ func F_dsm_detach(m *base.Module, l0 int32)
 func F_on_dsm_detach(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_dsm_impl_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dsm_impl_op
 func F_dsm_impl_op(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_GetNamedDSMSegment github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetNamedDSMSegment
+func F_GetNamedDSMSegment(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_proc_exit_prepare github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_proc_exit_prepare
 func F_proc_exit_prepare(m *base.Module, l0 int32)
 //go:linkname F_before_shmem_exit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_before_shmem_exit
@@ -2710,6 +2718,8 @@ func F_LockReleaseAll(m *base.Module, l0 int32, l1 int32)
 func F_GetLockConflicts(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_VirtualXactLock github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_VirtualXactLock
 func F_VirtualXactLock(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_LWLockRegisterTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LWLockRegisterTranche
+func F_LWLockRegisterTranche(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_LWLockAcquire github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LWLockAcquire
 func F_LWLockAcquire(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_LWLockConditionalAcquire github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LWLockConditionalAcquire
@@ -4808,6 +4818,10 @@ func F_bt_normalize_tuple(m *base.Module, l0 int32, l1 int32) int32
 func F_get_raw_page_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_get_page_from_raw github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_get_page_from_raw
 func F_get_page_from_raw(m *base.Module, l0 int32) int32
+//go:linkname F_apw_start_leader_worker github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_apw_start_leader_worker
+func F_apw_start_leader_worker(m *base.Module)
+//go:linkname F_apw_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_apw_dump_now
+func F_apw_dump_now(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

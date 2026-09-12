@@ -2083,7 +2083,7 @@ func F_StartupProcessMain(m *base.Module, l0 int32, l1 int32) {
 			}
 			v279 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, _c_F_StartupProcessMain[13])) = uint8(v279)
-			F_pqsignal_be(m, int32(14), int32(1785))
+			F_pqsignal_be(m, int32(14), int32(1788))
 			mBase = m.M
 			v285 = int32(-2)
 			v287 = m.G0

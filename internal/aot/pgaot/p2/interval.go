@@ -733,7 +733,7 @@ func F_interval_avg(m *base.Module, l0 int32) int32 {
 					if v62 != 0 {
 						return int32(0)
 					} else {
-						v63 = F_DirectFunctionCall2Coll(m, int32(1516), int32(0), v8+int32(8), v61)
+						v63 = F_DirectFunctionCall2Coll(m, int32(1519), int32(0), v8+int32(8), v61)
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -1034,20 +1034,20 @@ func F_interval_dist(m *base.Module, l0 int32) int32 {
 	v2 = int32(0)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v9 = F_DirectFunctionCall2Coll(m, int32(1476), v2, v7, v8)
+	v9 = F_DirectFunctionCall2Coll(m, int32(1479), v2, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		v15 = F_DirectFunctionCall2Coll(m, int32(2460), v2, v9, int32(_a_F_interval_dist_0))
+		v15 = F_DirectFunctionCall2Coll(m, int32(2463), v2, v9, int32(_a_F_interval_dist_0))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
 			return int32(0)
 		} else {
 			if v15 != 0 {
-				v19 = F_DirectFunctionCall1Coll(m, int32(2464), int32(0), v9)
+				v19 = F_DirectFunctionCall1Coll(m, int32(2467), int32(0), v9)
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
@@ -1093,7 +1093,7 @@ func F_interval_hash_extended(m *base.Module, l0 int32) int32 {
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = (v9*int64(30)+v12)*int64(86400000000) + v16
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v24 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v6+int32(8), v23)
+	v24 = F_DirectFunctionCall2Coll(m, int32(1289), int32(0), v6+int32(8), v23)
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {

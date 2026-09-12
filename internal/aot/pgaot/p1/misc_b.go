@@ -427,7 +427,7 @@ func F_before_shmem_exit(m *base.Module, l0 int32, l1 int32) {
 			v30 = *(*int32)(unsafe.Add(mBase, _c_F_before_shmem_exit[4]))
 			if v30 <= int32(31) {
 				*(*int32)(unsafe.Add(mBase, _c_F_before_shmem_exit[4])) = v30 + int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_before_shmem_exit[5]))) = int32(1100)
+				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_c_F_before_shmem_exit[5]))) = int32(1103)
 			} else {
 			}
 			v45 = int32(1)
@@ -2424,7 +2424,7 @@ func F_bitshiftright(m *base.Module, l0 int32) int32 {
 			} else {
 				v25 = v16
 			}
-			v27 = F_DirectFunctionCall2Coll(m, int32(1550), v20, v12, v20-v25)
+			v27 = F_DirectFunctionCall2Coll(m, int32(1553), v20, v12, v20-v25)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {

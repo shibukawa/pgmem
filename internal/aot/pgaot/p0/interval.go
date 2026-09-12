@@ -296,7 +296,7 @@ func F_interval_hash(m *base.Module, l0 int32) int32 {
 	v11 = int64(*(*int32)(unsafe.Add(mBase, uint32(v7)+8)))
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = (v8*int64(30)+v11)*int64(86400000000) + v15
-	v22 = F_DirectFunctionCall1Coll(m, int32(1285), int32(0), v5+int32(8))
+	v22 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v5+int32(8))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {

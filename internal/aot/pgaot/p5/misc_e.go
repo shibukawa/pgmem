@@ -16788,7 +16788,7 @@ func F_end_MultiFuncCall(m *base.Module, l0 int32) {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_UnregisterExprContextCallback(m, v4, int32(1629), v6)
+	F_UnregisterExprContextCallback(m, v4, int32(1632), v6)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {

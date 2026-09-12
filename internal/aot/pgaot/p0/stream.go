@@ -5,103 +5,103 @@ import (
 	"unsafe"
 )
 
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32 {
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
 	var v13 int32
 	_ = v13
 	var v14 int32
 	_ = v14
-	var v16 int64
-	_ = v16
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
+	var v15 int32
+	_ = v15
+	var v17 int64
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
 	var v25 int32
 	_ = v25
 	var v26 int32
 	_ = v26
-	var v28 int32
-	_ = v28
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
 	var v43 int32
 	_ = v43
-	v8 = m.G0
-	v10 = v8 - int32(16)
-	m.G0 = v10
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-	if v12 != 0 {
-		v38 = v12
-		v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
-		v40 = int32(*(*int8)(unsafe.Add(mBase, uint32(v39)+118)))
-		v42 = F_read_stream_begin_impl(m, l0, l1, l2, v38, v40, int32(0), l3, l4, l5)
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+	if v13 != 0 {
+		v39 = v13
+		v40 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
+		v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v40)+118)))
+		v42 = F_read_stream_begin_impl(m, l0, l1, l2, v39, v41, l3, l4, l5, l6)
 		mBase = m.M
 		v43 = m.ExcPending
 		if v43 != 0 {
 			return int32(0)
 		} else {
-			m.G0 = v10 + int32(16)
+			m.G0 = v11 + int32(16)
 			return v42
 		}
 	} else {
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
-		v14 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v14
-		v16 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
-		*(*int64)(unsafe.Add(mBase, uint32(v10))) = v16
-		v18 = F_smgropen(m, v10, v13)
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
+		*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v15
+		v17 = *(*int64)(unsafe.Add(mBase, uint32(l2)))
+		*(*int64)(unsafe.Add(mBase, uint32(v11))) = v17
+		v19 = F_smgropen(m, v11, v14)
 		mBase = m.M
-		v21 = m.ExcPending
-		if v21 != 0 {
+		v22 = m.ExcPending
+		if v22 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v18
-			v24 = *(*int32)(unsafe.Add(mBase, uint32(v18)+72))
-			if v24 != 0 {
-				v32 = v24
+			*(*int32)(unsafe.Add(mBase, uint32(l2)+12)) = v19
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v19)+72))
+			if v25 != 0 {
+				v33 = v25
 			} else {
-				v25 = *(*int32)(unsafe.Add(mBase, uint32(v18)+76))
-				v26 = *(*int32)(unsafe.Add(mBase, uint32(v18)+80))
-				*(*int32)(unsafe.Add(mBase, uint32(v25)+4)) = v26
-				v28 = *(*int32)(unsafe.Add(mBase, uint32(v18)+76))
-				*(*int32)(unsafe.Add(mBase, uint32(v26))) = v28
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(v18)+72))
-				v32 = v30
+				v26 = *(*int32)(unsafe.Add(mBase, uint32(v19)+76))
+				v27 = *(*int32)(unsafe.Add(mBase, uint32(v19)+80))
+				*(*int32)(unsafe.Add(mBase, uint32(v26)+4)) = v27
+				v29 = *(*int32)(unsafe.Add(mBase, uint32(v19)+76))
+				*(*int32)(unsafe.Add(mBase, uint32(v27))) = v29
+				v31 = *(*int32)(unsafe.Add(mBase, uint32(v19)+72))
+				v33 = v31
 			}
-			*(*int32)(unsafe.Add(mBase, uint32(v18)+72)) = v32 + int32(1)
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-			v38 = v36
-			v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
-			v40 = int32(*(*int8)(unsafe.Add(mBase, uint32(v39)+118)))
-			v42 = F_read_stream_begin_impl(m, l0, l1, l2, v38, v40, int32(0), l3, l4, l5)
+			*(*int32)(unsafe.Add(mBase, uint32(v19)+72)) = v33 + int32(1)
+			v37 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+			v39 = v37
+			v40 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
+			v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v40)+118)))
+			v42 = F_read_stream_begin_impl(m, l0, l1, l2, v39, v41, l3, l4, l5, l6)
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
 				return int32(0)
 			} else {
-				m.G0 = v10 + int32(16)
+				m.G0 = v11 + int32(16)
 				return v42
 			}
 		}

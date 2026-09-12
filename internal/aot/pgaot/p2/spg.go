@@ -4863,7 +4863,7 @@ L6:
 	return int32(0)
 L7:
 	;
-	F_qsort_arg(m, v29, v68, int32(8), int32(1489), v24)
+	F_qsort_arg(m, v29, v68, int32(8), int32(1492), v24)
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -5004,7 +5004,7 @@ L23:
 	goto L21
 L24:
 	;
-	F_qsort_arg(m, v34, v68, int32(8), int32(1489), v24)
+	F_qsort_arg(m, v34, v68, int32(8), int32(1492), v24)
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {

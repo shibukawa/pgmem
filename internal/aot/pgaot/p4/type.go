@@ -165,8 +165,8 @@ L1:
 	}
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1621)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1622)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1624)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1625)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+28)) = int64(17179869188)
 	v27 = F_hash_create(m, int32(_a_F_assign_record_type_typmod_3), int32(64), v8+int32(-52), int32(200))
 	mBase = m.M

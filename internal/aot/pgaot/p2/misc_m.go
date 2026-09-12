@@ -10154,7 +10154,7 @@ L49:
 	}
 L50:
 	;
-	F_pg_qsort(m, v52, v283, int32(4), int32(1258))
+	F_pg_qsort(m, v52, v283, int32(4), int32(1261))
 	mBase = m.M
 	v477 = m.ExcPending
 	if v477 != 0 {
@@ -11142,7 +11142,7 @@ func F_mcelem_array_selec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 		if v38 <= v37 {
 			v95 = v10
 			v103 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-			F_qsort_arg(m, v103, v95, int32(4), int32(1259), l1)
+			F_qsort_arg(m, v103, v95, int32(4), int32(1262), l1)
 			mBase = m.M
 			v107 = m.ExcPending
 			if v107 != 0 {
@@ -11291,7 +11291,7 @@ func F_mcelem_array_selec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 			} else {
 				v95 = v75
 				v103 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-				F_qsort_arg(m, v103, v95, int32(4), int32(1259), l1)
+				F_qsort_arg(m, v103, v95, int32(4), int32(1262), l1)
 				mBase = m.M
 				v107 = m.ExcPending
 				if v107 != 0 {

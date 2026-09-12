@@ -9036,19 +9036,19 @@ func F_initialize_acl(m *base.Module) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, _c_F_initialize_acl[2])) = v8
-			F_CacheRegisterSyscacheCallback(m, int32(9), int32(1255), int32(0))
+			F_CacheRegisterSyscacheCallback(m, int32(9), int32(1258), int32(0))
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
 			} else {
-				F_CacheRegisterSyscacheCallback(m, int32(11), int32(1255), int32(0))
+				F_CacheRegisterSyscacheCallback(m, int32(11), int32(1258), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return
 				} else {
-					F_CacheRegisterSyscacheCallback(m, int32(21), int32(1255), int32(0))
+					F_CacheRegisterSyscacheCallback(m, int32(21), int32(1258), int32(0))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
