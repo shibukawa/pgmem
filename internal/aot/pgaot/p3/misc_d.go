@@ -6980,6 +6980,166 @@ L73:
 	v315 = v298
 	goto L52
 }
+func F_dintdict_lexize(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = F_palloc0(m, int32(16))
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+5)))
+		if v15 != int32(1) {
+			v27 = F_pnstrdup(m, v6, v5)
+			mBase = m.M
+			v28 = m.ExcPending
+			if v28 != 0 {
+				return int32(0)
+			} else {
+				v29 = v5
+				v30 = v27
+				v31 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+				if v31 < v29 {
+					v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+4)))
+					if v33 == int32(1) {
+						F_pfree(m, v30)
+						mBase = m.M
+						v37 = m.ExcPending
+						if v37 != 0 {
+							return int32(0)
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(0)
+							return v9
+						}
+					} else {
+						v42 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v30+v31))) = uint8(v42)
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+						return v9
+					}
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+					return v9
+				}
+			}
+		} else {
+			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
+			switch v18 - int32(43) {
+			case 0, 2:
+				v21 = int32(1)
+				v24 = v5 - v21
+				v25 = F_pnstrdup(m, v6+v21, v24)
+				mBase = m.M
+				v26 = m.ExcPending
+				if v26 != 0 {
+					return int32(0)
+				} else {
+					v29 = v24
+					v30 = v25
+					v31 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+					if v31 < v29 {
+						v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+4)))
+						if v33 == int32(1) {
+							F_pfree(m, v30)
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(0)
+								return v9
+							}
+						} else {
+							v42 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v30+v31))) = uint8(v42)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+							return v9
+						}
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+						return v9
+					}
+				}
+			default:
+				v27 = F_pnstrdup(m, v6, v5)
+				mBase = m.M
+				v28 = m.ExcPending
+				if v28 != 0 {
+					return int32(0)
+				} else {
+					v29 = v5
+					v30 = v27
+					v31 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+					if v31 < v29 {
+						v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+4)))
+						if v33 == int32(1) {
+							F_pfree(m, v30)
+							mBase = m.M
+							v37 = m.ExcPending
+							if v37 != 0 {
+								return int32(0)
+							} else {
+								*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(0)
+								return v9
+							}
+						} else {
+							v42 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v30+v31))) = uint8(v42)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+							return v9
+						}
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v30
+						return v9
+					}
+				}
+			}
+		}
+	}
+}
 func F_dispell_lexize(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

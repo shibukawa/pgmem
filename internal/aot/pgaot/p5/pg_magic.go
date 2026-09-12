@@ -2,6 +2,9 @@ package p5
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_Pg_magic_func_dict_int(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_dict_int_0)
+}
 func F_Pg_magic_func_latin_and_mic(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_latin_and_mic_0)
 }

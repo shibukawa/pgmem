@@ -17741,6 +17741,34 @@ func F_pg_getnameinfo_all(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v77
 	var v83 int32
 	_ = v83
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v104 int32
+	_ = v104
+	var v105 int32
+	_ = v105
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
+	var v111 int32
+	_ = v111
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v123 int32
 	_ = v123
 	var v129 int32
@@ -17805,6 +17833,34 @@ func F_pg_getnameinfo_all(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v195
 	var v201 int32
 	_ = v201
+	var v214 int32
+	_ = v214
+	var v215 int32
+	_ = v215
+	var v216 int32
+	_ = v216
+	var v218 int32
+	_ = v218
+	var v222 int32
+	_ = v222
+	var v223 int32
+	_ = v223
+	var v225 int32
+	_ = v225
+	var v226 int32
+	_ = v226
+	var v227 int32
+	_ = v227
+	var v229 int32
+	_ = v229
+	var v235 int32
+	_ = v235
+	var v236 int32
+	_ = v236
+	var v237 int32
+	_ = v237
+	var v238 int32
+	_ = v238
 	var v241 int32
 	_ = v241
 	var v247 int32
@@ -18119,45 +18175,111 @@ L39:
 	goto L40
 L40:
 	;
-	goto L42
+	goto L43
 L41:
 	;
-	if base.B2i32(v83 != int32(0)) == int32(0) {
-		v178 = v77
-		v179 = l2
+	if v120 == int32(0) {
+		v178 = v117
+		v179 = v118
 		goto L35
 	} else {
 		goto L50
 	}
 L42:
 	;
+	v117 = v77
+	v118 = l2
+	v119 = v83
+	v120 = base.B2i32(v83 != int32(0))
 	goto L41
+L43:
+	;
+	if v83 == int32(0) {
+		goto L42
+	} else {
+		goto L44
+	}
+L44:
+	;
+	v96 = v77
+	v97 = l2
+	v98 = v83
+	goto L45
+L45:
+	;
+	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v96))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v97))) = uint8(v100)
+	if v100 == int32(0) {
+		v158 = v96
+		v159 = v97
+		v160 = v98
+		goto L36
+	} else {
+		goto L47
+	}
+L46:
+	;
+	v117 = v111
+	v118 = v105
+	v119 = v107
+	v120 = v109
+	goto L41
+L47:
+	;
+	v104 = int32(1)
+	v105 = v97 + v104
+	v107 = v98 - v104
+	v108 = int32(0)
+	v109 = base.B2i32(v107 != v108)
+	v111 = v96 + v104
+	if v111&int32(3) == v108 {
+		v117 = v111
+		v118 = v105
+		v119 = v107
+		v120 = v109
+		goto L41
+	} else {
+		goto L48
+	}
+L48:
+	;
+	if v107 != 0 {
+		v96 = v111
+		v97 = v105
+		v98 = v107
+		goto L45
+	} else {
+		goto L49
+	}
+L49:
+	;
+	goto L46
 L50:
 	;
-	v123 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_getnameinfo_all[0])))
+	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117))))
 	if v123 == int32(0) {
-		v151 = v77
-		v152 = l2
-		v153 = v83
+		v151 = v117
+		v152 = v118
+		v153 = v119
 		goto L37
 	} else {
 		goto L51
 	}
 L51:
 	;
-	if base.Ui32(v83) < base.Ui32(int32(4)) {
-		v151 = v77
-		v152 = l2
-		v153 = v83
+	if base.Ui32(v119) < base.Ui32(int32(4)) {
+		v151 = v117
+		v152 = v118
+		v153 = v119
 		goto L37
 	} else {
 		goto L52
 	}
 L52:
 	;
-	v129 = v77
-	v130 = l2
-	v131 = v83
+	v129 = v117
+	v130 = v118
+	v131 = v119
 	goto L53
 L53:
 	;
@@ -18304,45 +18426,111 @@ L74:
 	goto L75
 L75:
 	;
-	goto L77
+	goto L78
 L76:
 	;
-	if base.B2i32(v201 != int32(0)) == int32(0) {
-		v296 = v195
-		v297 = l4
+	if v238 == int32(0) {
+		v296 = v235
+		v297 = v236
 		goto L70
 	} else {
 		goto L85
 	}
 L77:
 	;
+	v235 = v195
+	v236 = l4
+	v237 = v201
+	v238 = base.B2i32(v201 != int32(0))
 	goto L76
+L78:
+	;
+	if v201 == int32(0) {
+		goto L77
+	} else {
+		goto L79
+	}
+L79:
+	;
+	v214 = v195
+	v215 = l4
+	v216 = v201
+	goto L80
+L80:
+	;
+	v218 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v214))))
+	*(*uint8)(unsafe.Add(mBase, uint32(v215))) = uint8(v218)
+	if v218 == int32(0) {
+		v276 = v214
+		v277 = v215
+		v278 = v216
+		goto L71
+	} else {
+		goto L82
+	}
+L81:
+	;
+	v235 = v229
+	v236 = v223
+	v237 = v225
+	v238 = v227
+	goto L76
+L82:
+	;
+	v222 = int32(1)
+	v223 = v215 + v222
+	v225 = v216 - v222
+	v226 = int32(0)
+	v227 = base.B2i32(v225 != v226)
+	v229 = v214 + v222
+	if v229&int32(3) == v226 {
+		v235 = v229
+		v236 = v223
+		v237 = v225
+		v238 = v227
+		goto L76
+	} else {
+		goto L83
+	}
+L83:
+	;
+	if v225 != 0 {
+		v214 = v229
+		v215 = v223
+		v216 = v225
+		goto L80
+	} else {
+		goto L84
+	}
+L84:
+	;
+	goto L81
 L85:
 	;
-	v241 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pg_getnameinfo_all[0])))
+	v241 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v235))))
 	if v241 == int32(0) {
-		v269 = v195
-		v270 = l4
-		v271 = v201
+		v269 = v235
+		v270 = v236
+		v271 = v237
 		goto L72
 	} else {
 		goto L86
 	}
 L86:
 	;
-	if base.Ui32(v201) < base.Ui32(int32(4)) {
-		v269 = v195
-		v270 = l4
-		v271 = v201
+	if base.Ui32(v237) < base.Ui32(int32(4)) {
+		v269 = v235
+		v270 = v236
+		v271 = v237
 		goto L72
 	} else {
 		goto L87
 	}
 L87:
 	;
-	v247 = v195
-	v248 = l4
-	v249 = v201
+	v247 = v235
+	v248 = v236
+	v249 = v237
 	goto L88
 L88:
 	;

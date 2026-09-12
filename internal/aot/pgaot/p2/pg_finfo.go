@@ -71,6 +71,9 @@ func F_pg_finfo_delete(m *base.Module) int32 {
 func F_pg_finfo_difference(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_difference_0)
 }
+func F_pg_finfo_dintdict_lexize(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_dintdict_lexize_0)
+}
 func F_pg_finfo_distance_chebyshev(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_distance_chebyshev_0)
 }
