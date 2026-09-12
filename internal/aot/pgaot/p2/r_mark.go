@@ -45,7 +45,7 @@ func F_r_mark_lAr(m *base.Module, l0 int32) int32 {
 				v27 = v2
 				return v27
 			} else {
-				v21 = F_find_among_b(m, l0, int32(4324128), int32(2))
+				v21 = F_find_among_b(m, l0, int32(4324896), int32(2))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -317,7 +317,7 @@ L3:
 	}
 L4:
 	;
-	v27 = F_find_among_b(m, l0, int32(4324752), int32(10))
+	v27 = F_find_among_b(m, l0, int32(4325520), int32(10))
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {

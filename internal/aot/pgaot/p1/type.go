@@ -344,7 +344,7 @@ func F_typeStringToTypeName(m *base.Module, l0 int32, l1 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v9 = int32(704426)
+	v9 = int32(706009)
 	v13 = m.G0
 	v15 = v13 - int32(32)
 	v16 = int64(0)
@@ -577,7 +577,7 @@ L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(498)
-	v154 = int32(4435896)
+	v154 = int32(4436760)
 	v155 = *(*int32)(unsafe.Add(mBase, _consts[337]))
 	*(*int32)(unsafe.Add(mBase, _consts[337])) = v7 + int32(4)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v155
@@ -643,7 +643,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-	F_errmsg(m, int32(673180), v7)
+	F_errmsg(m, int32(674763), v7)
 	mBase = m.M
 	v186 = m.ExcPending
 	if v186 != 0 {
@@ -653,7 +653,7 @@ L48:
 	}
 L49:
 	;
-	F_errsave_finish(m, l1, int32(475707), int32(773), int32(363447))
+	F_errsave_finish(m, l1, int32(477105), int32(773), int32(364668))
 	mBase = m.M
 	v191 = m.ExcPending
 	if v191 != 0 {
@@ -688,13 +688,13 @@ func F_typeTypeId(m *base.Module, l0 int32) int32 {
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(101188), int32(0))
+			F_errmsg_internal(m, int32(101609), int32(0))
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(475707), int32(593), int32(444056))
+				F_errfinish(m, int32(477105), int32(593), int32(445416))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {

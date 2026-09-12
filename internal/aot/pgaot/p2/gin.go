@@ -454,7 +454,7 @@ func F__gin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_consts[32]))) = v43
 						*(*int64)(unsafe.Add(mBase, uint32(v12)+uint32(_consts[33]))) = v47
 						v66 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-						v71 = F_AllocSetContextCreateInternal(m, v66, int32(57354), v43, int32(8192), int32(8388608))
+						v71 = F_AllocSetContextCreateInternal(m, v66, int32(57514), v43, int32(8192), int32(8388608))
 						mBase = m.M
 						v72 = m.ExcPending
 						if v72 != 0 {
@@ -462,7 +462,7 @@ func F__gin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_consts[34]))) = v71
 							v75 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-							v80 = F_AllocSetContextCreateInternal(m, v75, int32(241495), int32(0), int32(8192), int32(8388608))
+							v80 = F_AllocSetContextCreateInternal(m, v75, int32(242372), int32(0), int32(8192), int32(8388608))
 							mBase = m.M
 							v81 = m.ExcPending
 							if v81 != 0 {
@@ -488,7 +488,7 @@ func F__gin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 										if v93 != 0 {
 											return
 										} else {
-											v97 = F___memcpy(m, int32(4341416), int32(4341256), int32(128))
+											v97 = F___memcpy(m, int32(4342280), int32(4342120), int32(128))
 											mBase = m.M
 											v100 = *(*int64)(unsafe.Add(mBase, _consts[37]))
 											*(*int64)(unsafe.Add(mBase, _consts[38])) = v100
@@ -523,7 +523,7 @@ func F__gin_parallel_build_main(m *base.Module, l0 int32, l1 int32) {
 														v136 = v127 + v130<<(uint(int32(5))%32)
 														v141 = F___memset(m, v123+v130<<(uint(int32(7))%32), int32(0), int32(128))
 														mBase = m.M
-														F_BufferUsageAccumDiff(m, v141, int32(4341416))
+														F_BufferUsageAccumDiff(m, v141, int32(4342280))
 														mBase = m.M
 														v145 = v136 + int32(24)
 														v146 = int64(0)
@@ -1167,7 +1167,7 @@ L17:
 	}
 L18:
 	;
-	v80 = int32(4437652)
+	v80 = int32(4438516)
 	v82 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	v83 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v82 + v83
@@ -1204,7 +1204,7 @@ L22:
 	}
 L23:
 	;
-	v120 = int32(4437652)
+	v120 = int32(4438516)
 	v122 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	v123 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v122 + v123
@@ -2043,7 +2043,7 @@ L134:
 	}
 L135:
 	;
-	F_s_lock(m, l1+int32(28), int32(470180), int32(2086), int32(410151))
+	F_s_lock(m, l1+int32(28), int32(471552), int32(2086), int32(411511))
 	mBase = m.M
 	v535 = m.ExcPending
 	if v535 != 0 {
@@ -2270,7 +2270,7 @@ L10:
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v41
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v40 + int32(4)
-	F_errmsg_internal(m, int32(651766), v9)
+	F_errmsg_internal(m, int32(653349), v9)
 	mBase = m.M
 	v48 = m.ExcPending
 	if v48 != 0 {
@@ -2293,7 +2293,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(476300), int32(783), int32(95635))
+	F_errfinish(m, int32(477698), int32(783), int32(96056))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -2491,13 +2491,13 @@ func F_ginStepRight(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(350289), int32(0))
+						F_errmsg_internal(m, int32(351490), int32(0))
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476300), int32(192), int32(97387))
+							F_errfinish(m, int32(477698), int32(192), int32(97808))
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {
@@ -2745,7 +2745,7 @@ L25:
 L26:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v15
-	F_errmsg_internal(m, int32(460098), v10)
+	F_errmsg_internal(m, int32(461458), v10)
 	mBase = m.M
 	v82 = m.ExcPending
 	if v82 != 0 {
@@ -2755,7 +2755,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(473574), int32(1007), int32(479471))
+	F_errfinish(m, int32(474972), int32(1007), int32(480869))
 	mBase = m.M
 	v87 = m.ExcPending
 	if v87 != 0 {
@@ -2846,13 +2846,13 @@ func F_gin_extract_jsonb_query_path(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v12
-				F_errmsg_internal(m, int32(460098), v8)
+				F_errmsg_internal(m, int32(461458), v8)
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(473574), int32(1212), int32(305812))
+					F_errfinish(m, int32(474972), int32(1212), int32(306994))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {

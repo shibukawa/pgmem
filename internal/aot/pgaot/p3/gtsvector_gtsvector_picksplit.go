@@ -1475,7 +1475,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 												}
 											}
 										}
-										v630 = F_hemdistcache(m, v79+v388<<(uint(int32(3))%32), v79+v363<<(uint(int32(3))%32), v60)
+										v630 = F_hemdistcache_1(m, v79+v388<<(uint(int32(3))%32), v79+v363<<(uint(int32(3))%32), v60)
 										mBase = m.M
 										v631 = base.B2i32(v397 < v630)
 										if v397 < v630 {
@@ -1757,9 +1757,9 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 												v1009 = v961 + v1008
 												*(*uint16)(unsafe.Add(mBase, uint32(v1009-int32(8)))) = uint16(v977)
 												v1015 = v1008 + v79
-												v1016 = F_hemdistcache(m, v692, v1015, v60)
+												v1016 = F_hemdistcache_1(m, v692, v1015, v60)
 												mBase = m.M
-												v1017 = F_hemdistcache(m, v722, v1015, v60)
+												v1017 = F_hemdistcache_1(m, v722, v1015, v60)
 												mBase = m.M
 												v1018 = v1016 - v1017
 												v1020 = v1018 >> (uint(int32(31)) % 32)
@@ -3304,7 +3304,7 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 											}
 										}
 									}
-									v630 = F_hemdistcache(m, v79+v388<<(uint(int32(3))%32), v79+v363<<(uint(int32(3))%32), v60)
+									v630 = F_hemdistcache_1(m, v79+v388<<(uint(int32(3))%32), v79+v363<<(uint(int32(3))%32), v60)
 									mBase = m.M
 									v631 = base.B2i32(v397 < v630)
 									if v397 < v630 {
@@ -3586,9 +3586,9 @@ func F_gtsvector_picksplit(m *base.Module, l0 int32) int32 {
 											v1009 = v961 + v1008
 											*(*uint16)(unsafe.Add(mBase, uint32(v1009-int32(8)))) = uint16(v977)
 											v1015 = v1008 + v79
-											v1016 = F_hemdistcache(m, v692, v1015, v60)
+											v1016 = F_hemdistcache_1(m, v692, v1015, v60)
 											mBase = m.M
-											v1017 = F_hemdistcache(m, v722, v1015, v60)
+											v1017 = F_hemdistcache_1(m, v722, v1015, v60)
 											mBase = m.M
 											v1018 = v1016 - v1017
 											v1020 = v1018 >> (uint(int32(31)) % 32)

@@ -354,7 +354,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l0
-	F_errmsg_internal(m, int32(633489), v11+int32(16))
+	F_errmsg_internal(m, int32(635072), v11+int32(16))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -364,7 +364,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(476821), int32(602), int32(19395))
+	F_errfinish(m, int32(478219), int32(602), int32(19495))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -607,7 +607,7 @@ L56:
 	}
 L57:
 	;
-	v163 = int32(4442992)
+	v163 = int32(4443856)
 	v164 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v167 = *(*int32)(unsafe.Add(mBase, _consts[166]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v167
@@ -986,7 +986,7 @@ L112:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v339)+8)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v339)+4)) = v347
-	v352 = int32(4339944)
+	v352 = int32(4340808)
 	v353 = *(*int32)(unsafe.Add(mBase, _consts[347]))
 	*(*int32)(unsafe.Add(mBase, uint32(v339)+12)) = v353
 	*(*int32)(unsafe.Add(mBase, _consts[347])) = v339
@@ -1029,7 +1029,7 @@ L118:
 	goto L105
 L119:
 	;
-	F_errmsg_internal(m, int32(210215), int32(0))
+	F_errmsg_internal(m, int32(210735), int32(0))
 	mBase = m.M
 	v377 = m.ExcPending
 	if v377 != 0 {
@@ -1039,7 +1039,7 @@ L119:
 	}
 L120:
 	;
-	F_errfinish(m, int32(476821), int32(599), int32(19395))
+	F_errfinish(m, int32(478219), int32(599), int32(19495))
 	mBase = m.M
 	v382 = m.ExcPending
 	if v382 != 0 {
@@ -1074,7 +1074,7 @@ L123:
 	}
 L124:
 	;
-	F_errfinish(m, int32(476821), int32(611), int32(19395))
+	F_errfinish(m, int32(478219), int32(611), int32(19495))
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {
@@ -1099,7 +1099,7 @@ L126:
 	}
 L127:
 	;
-	F_errmsg(m, int32(311801), int32(0))
+	F_errmsg(m, int32(313002), int32(0))
 	mBase = m.M
 	v409 = m.ExcPending
 	if v409 != 0 {
@@ -1109,7 +1109,7 @@ L127:
 	}
 L128:
 	;
-	F_errfinish(m, int32(476821), int32(617), int32(19395))
+	F_errfinish(m, int32(478219), int32(617), int32(19495))
 	mBase = m.M
 	v414 = m.ExcPending
 	if v414 != 0 {
@@ -1134,7 +1134,7 @@ L130:
 	}
 L131:
 	;
-	F_errmsg(m, int32(311704), int32(0))
+	F_errmsg(m, int32(312905), int32(0))
 	mBase = m.M
 	v425 = m.ExcPending
 	if v425 != 0 {
@@ -1144,7 +1144,7 @@ L131:
 	}
 L132:
 	;
-	F_errfinish(m, int32(476821), int32(622), int32(19395))
+	F_errfinish(m, int32(478219), int32(622), int32(19495))
 	mBase = m.M
 	v430 = m.ExcPending
 	if v430 != 0 {
@@ -1195,7 +1195,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 				m.G0 = v4 + int32(16)
 				return
 			} else {
-				F_queue_listen(m, int32(2), int32(715480))
+				F_queue_listen(m, int32(2), int32(717063))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
@@ -1206,7 +1206,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 				}
 			}
 		} else {
-			F_queue_listen(m, int32(2), int32(715480))
+			F_queue_listen(m, int32(2), int32(717063))
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
@@ -1231,7 +1231,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 						m.G0 = v4 + int32(16)
 						return
 					} else {
-						F_queue_listen(m, int32(2), int32(715480))
+						F_queue_listen(m, int32(2), int32(717063))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
@@ -1242,7 +1242,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 						}
 					}
 				} else {
-					F_queue_listen(m, int32(2), int32(715480))
+					F_queue_listen(m, int32(2), int32(717063))
 					mBase = m.M
 					v38 = m.ExcPending
 					if v38 != 0 {
@@ -1255,13 +1255,13 @@ func F_Async_UnlistenAll(m *base.Module) {
 			} else {
 				v17 = *(*int32)(unsafe.Add(mBase, _consts[350]))
 				*(*int32)(unsafe.Add(mBase, uint32(v4))) = v17
-				F_errmsg_internal(m, int32(637383), v4)
+				F_errmsg_internal(m, int32(638966), v4)
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(476821), int32(772), int32(290508))
+					F_errfinish(m, int32(478219), int32(772), int32(291690))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -1274,7 +1274,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 								m.G0 = v4 + int32(16)
 								return
 							} else {
-								F_queue_listen(m, int32(2), int32(715480))
+								F_queue_listen(m, int32(2), int32(717063))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -1285,7 +1285,7 @@ func F_Async_UnlistenAll(m *base.Module) {
 								}
 							}
 						} else {
-							F_queue_listen(m, int32(2), int32(715480))
+							F_queue_listen(m, int32(2), int32(717063))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
@@ -1331,7 +1331,7 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 	m.G0 = v5
 	v8 = int32(*(*uint8)(unsafe.Add(mBase, _consts[346])))
 	if v8 != int32(1) {
-		m.Env.Pgmem_listen(m, int32(715480), int32(2))
+		m.Env.Pgmem_listen(m, int32(717063), int32(2))
 		mBase = m.M
 		v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
 		F_list_free_deep(m, v32)
@@ -1359,7 +1359,7 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 			return
 		} else {
 			if v13 == int32(0) {
-				m.Env.Pgmem_listen(m, int32(715480), int32(2))
+				m.Env.Pgmem_listen(m, int32(717063), int32(2))
 				mBase = m.M
 				v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
 				F_list_free_deep(m, v32)
@@ -1382,19 +1382,19 @@ func F_Async_UnlistenOnExit(m *base.Module, l0 int32, l1 int32) {
 			} else {
 				v18 = *(*int32)(unsafe.Add(mBase, _consts[350]))
 				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v18
-				F_errmsg_internal(m, int32(637237), v5)
+				F_errmsg_internal(m, int32(638820), v5)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(476821), int32(1205), int32(94606))
+					F_errfinish(m, int32(478219), int32(1205), int32(94938))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return
 					} else {
-						m.Env.Pgmem_listen(m, int32(715480), int32(2))
+						m.Env.Pgmem_listen(m, int32(717063), int32(2))
 						mBase = m.M
 						v32 = *(*int32)(unsafe.Add(mBase, _consts[351]))
 						F_list_free_deep(m, v32)

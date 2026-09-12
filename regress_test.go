@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 	"testing"
@@ -31,7 +32,8 @@ var contribRegress = map[string][]string{
 		"pgp-pubkey-decrypt", "pgp-pubkey-encrypt", "pgp-pubkey-session",
 		"pgp-info", "crypt-shacrypt",
 	},
-	"citext": {"create_index_acl", "citext", "citext_utf8"},
+	"citext":  {"create_index_acl", "citext", "citext_utf8"},
+	"pg_trgm": {"pg_trgm", "pg_utf8_trgm", "pg_word_trgm", "pg_strict_word_trgm"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
@@ -86,7 +88,7 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			got := psqlTranscript(ctx, conn, &notices, string(sqlText))
+			got := psqlTranscript(ctx, conn, &notices, string(sqlText), dir)
 			if diff := transcriptDiff(string(want), got); diff != "" {
 				out := filepath.Join(t.TempDir(), name+".out")
 				os.WriteFile(out, []byte(got), 0o644)
@@ -107,6 +109,9 @@ type psqlState struct {
 	verbosity string
 	ifStack   []bool // whether each open \\if branch is being executed
 	quit      bool
+	dir       string // test directory, for \\copy file paths
+	ctx       context.Context
+	conn      *pgx.Conn
 }
 
 func (p *psqlState) active() bool {
@@ -121,10 +126,10 @@ func (p *psqlState) active() bool {
 // psqlTranscript echoes every input line and, after each complete
 // statement, what psql -a -q would print for it: notices, the result table
 // in aligned format, or the error.
-func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builder, input string) string {
+func psqlTranscript(ctx context.Context, conn *pgx.Conn, notices *strings.Builder, input string, dir string) string {
 	var out strings.Builder
 	var buf strings.Builder
-	ps := &psqlState{vars: map[string]string{}, verbosity: "default"}
+	ps := &psqlState{vars: map[string]string{}, verbosity: "default", dir: dir, ctx: ctx, conn: conn}
 	lines := strings.Split(input, "\n")
 	if len(lines) > 0 && lines[len(lines)-1] == "" {
 		lines = lines[:len(lines)-1]
@@ -228,8 +233,33 @@ func (ps *psqlState) meta(cmd string) string {
 		if ps.active() {
 			return interpolate(args, ps.vars) + "\n"
 		}
+	case "\\copy":
+		if ps.active() {
+			return ps.clientCopy(args)
+		}
 	default:
 		panic("regress: unsupported meta-command " + cmd)
+	}
+	return ""
+}
+
+var copyFromRe = regexp.MustCompile(`(?i)^(.+?)\s+from\s+'([^']+)'\s*(.*)$`)
+
+// clientCopy runs "\\copy <table> from '<file>' [options]" as COPY FROM
+// STDIN fed from the file, which is what psql does; it prints nothing.
+func (ps *psqlState) clientCopy(args string) string {
+	m := copyFromRe.FindStringSubmatch(strings.TrimSpace(args))
+	if m == nil {
+		panic("regress: unsupported \\copy form: " + args)
+	}
+	f, err := os.Open(filepath.Join(ps.dir, m[2]))
+	if err != nil {
+		return "CLIENT ERROR: " + err.Error() + "\n"
+	}
+	defer f.Close()
+	sql := "COPY " + m[1] + " FROM STDIN " + m[3]
+	if _, err := ps.conn.PgConn().CopyFrom(ps.ctx, f, sql); err != nil {
+		return formatError(err, ps.verbosity, sql)
 	}
 	return ""
 }

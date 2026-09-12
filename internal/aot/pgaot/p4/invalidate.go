@@ -38,7 +38,7 @@ func F_InvalidateCatalogSnapshot(m *base.Module) {
 	if v3 == int32(0) {
 		return
 	} else {
-		F_pairingheap_remove(m, int32(4114840), v3+int32(52))
+		F_pairingheap_remove(m, int32(4115608), v3+int32(52))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {
@@ -188,13 +188,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v75
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v8 + int32(24)
-							F_errmsg_internal(m, int32(639242), v8)
+							F_errmsg_internal(m, int32(640825), v8)
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(475184), int32(637), int32(215577))
+								F_errfinish(m, int32(476582), int32(637), int32(216097))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {
@@ -222,13 +222,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 							if v92 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(424301), int32(0))
+								F_errmsg_internal(m, int32(425661), int32(0))
 								mBase = m.M
 								v96 = m.ExcPending
 								if v96 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(475184), int32(643), int32(215577))
+									F_errfinish(m, int32(476582), int32(643), int32(216097))
 									mBase = m.M
 									v101 = m.ExcPending
 									if v101 != 0 {
@@ -265,13 +265,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						if v92 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(424301), int32(0))
+							F_errmsg_internal(m, int32(425661), int32(0))
 							mBase = m.M
 							v96 = m.ExcPending
 							if v96 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(475184), int32(643), int32(215577))
+								F_errfinish(m, int32(476582), int32(643), int32(216097))
 								mBase = m.M
 								v101 = m.ExcPending
 								if v101 != 0 {
@@ -324,13 +324,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v75
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v8 + int32(24)
-						F_errmsg_internal(m, int32(639242), v8)
+						F_errmsg_internal(m, int32(640825), v8)
 						mBase = m.M
 						v83 = m.ExcPending
 						if v83 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(475184), int32(637), int32(215577))
+							F_errfinish(m, int32(476582), int32(637), int32(216097))
 							mBase = m.M
 							v88 = m.ExcPending
 							if v88 != 0 {
@@ -358,13 +358,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						if v92 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(424301), int32(0))
+							F_errmsg_internal(m, int32(425661), int32(0))
 							mBase = m.M
 							v96 = m.ExcPending
 							if v96 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(475184), int32(643), int32(215577))
+								F_errfinish(m, int32(476582), int32(643), int32(216097))
 								mBase = m.M
 								v101 = m.ExcPending
 								if v101 != 0 {
@@ -401,13 +401,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 					if v92 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(424301), int32(0))
+						F_errmsg_internal(m, int32(425661), int32(0))
 						mBase = m.M
 						v96 = m.ExcPending
 						if v96 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(475184), int32(643), int32(215577))
+							F_errfinish(m, int32(476582), int32(643), int32(216097))
 							mBase = m.M
 							v101 = m.ExcPending
 							if v101 != 0 {

@@ -214,7 +214,7 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 				v36 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1)
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v36
-				v46 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(445170), v8+int32(16))
+				v46 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(446530), v8+int32(16))
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
@@ -230,7 +230,7 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 						v53 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(0)
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v53
-						v61 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(445170), v8)
+						v61 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(446530), v8)
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
@@ -507,7 +507,7 @@ L14:
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v51
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v50
-	F_errmsg(m, int32(285085), v12+int32(16))
+	F_errmsg(m, int32(286259), v12+int32(16))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -517,7 +517,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(475873), int32(776), int32(300596))
+	F_errfinish(m, int32(477271), int32(776), int32(301778))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -533,7 +533,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l3
-	F_errmsg_internal(m, int32(464680), v12)
+	F_errmsg_internal(m, int32(466040), v12)
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -543,7 +543,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(475873), int32(779), int32(300596))
+	F_errfinish(m, int32(477271), int32(779), int32(301778))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {

@@ -71,10 +71,10 @@ func F_errdetail_log(m *base.Module, l0 int32, l1 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = int32(4435916)
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[1171]))
-	*(*int32)(unsafe.Add(mBase, _consts[1171])) = v13 + int32(1)
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[1172]))
+	v11 = int32(4436780)
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[1172]))
+	*(*int32)(unsafe.Add(mBase, _consts[1172])) = v13 + int32(1)
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[1173]))
 	if int32(0) <= v18 {
 		goto L1
 	} else {
@@ -82,10 +82,10 @@ func F_errdetail_log(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v21 = int32(4442992)
+	v21 = int32(4443856)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v25 = v18 * int32(100)
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1177])))
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1178])))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v28
 	F_initStringInfo(m, v9+int32(16))
 	mBase = m.M
@@ -100,7 +100,7 @@ L2:
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1172])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[1173])) = int32(-1)
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
 	v93 = m.ExcPending
@@ -114,7 +114,7 @@ L4:
 	return
 L5:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1176])))
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1177])))
 	*(*int32)(unsafe.Add(mBase, _consts[137])) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l1
 	v40 = F_appendStringInfoVA(m, v9+int32(16), l0, l1)
@@ -141,7 +141,7 @@ L8:
 	goto L9
 L9:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1180])))
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1181])))
 	if v66 != 0 {
 		goto L15
 	} else {
@@ -162,7 +162,7 @@ L11:
 	goto L9
 L12:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1176])))
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1177])))
 	*(*int32)(unsafe.Add(mBase, _consts[137])) = v53
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l1
 	v58 = F_appendStringInfoVA(m, v9+int32(16), l0, l1)
@@ -213,7 +213,7 @@ L18:
 	goto L17
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1180]))) = v70
+	*(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1181]))) = v70
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v9)+16))
 	F_pfree(m, v73)
 	mBase = m.M
@@ -226,14 +226,14 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v22
-	v78 = int32(4435916)
-	v80 = *(*int32)(unsafe.Add(mBase, _consts[1171]))
-	*(*int32)(unsafe.Add(mBase, _consts[1171])) = v80 - int32(1)
+	v78 = int32(4436780)
+	v80 = *(*int32)(unsafe.Add(mBase, _consts[1172]))
+	*(*int32)(unsafe.Add(mBase, _consts[1172])) = v80 - int32(1)
 	m.G0 = v9 + int32(32)
 	return
 L21:
 	;
-	F_errmsg_internal(m, int32(433004), int32(0))
+	F_errmsg_internal(m, int32(434364), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -243,7 +243,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(475037), int32(1258), int32(311113))
+	F_errfinish(m, int32(476435), int32(1258), int32(312314))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -303,7 +303,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 	m.G0 = v6
 	switch l0 - int32(73) {
 	case 0:
-		v33 = int32(555700)
+		v33 = int32(557124)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -321,13 +321,13 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-			F_errmsg_internal(m, int32(648165), v6)
+			F_errmsg_internal(m, int32(649748), v6)
 			mBase = m.M
 			v26 = m.ExcPending
 			if v26 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(470907), int32(49), int32(420923))
+				F_errfinish(m, int32(472279), int32(49), int32(422283))
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
@@ -340,7 +340,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			}
 		}
 	case 10:
-		v33 = int32(561899)
+		v33 = int32(563323)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -351,7 +351,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 26:
-		v33 = int32(558457)
+		v33 = int32(559881)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -362,7 +362,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 29:
-		v33 = int32(560398)
+		v33 = int32(561822)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -373,7 +373,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 32:
-		v33 = int32(555569)
+		v33 = int32(556993)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -384,7 +384,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 36:
-		v33 = int32(543349)
+		v33 = int32(544773)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -395,7 +395,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 39:
-		v33 = int32(560660)
+		v33 = int32(562084)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -406,7 +406,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 41:
-		v33 = int32(560190)
+		v33 = int32(561614)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -417,7 +417,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 43:
-		v33 = int32(560846)
+		v33 = int32(562270)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending
@@ -428,7 +428,7 @@ func F_errdetail_relkind_not_supported(m *base.Module, l0 int32) {
 			return
 		}
 	case 45:
-		v33 = int32(543306)
+		v33 = int32(544730)
 		F_errdetail(m, v33, int32(0))
 		mBase = m.M
 		v36 = m.ExcPending

@@ -684,6 +684,138 @@ func F_citext_smaller(m *base.Module, l0 int32) int32
 func F_pg_finfo_citext_larger(m *base.Module) int32
 //go:linkname F_citext_larger github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_larger
 func F_citext_larger(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_trgm
+func F_pg_finfo_gin_extract_trgm(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_value_trgm
+func F_pg_finfo_gin_extract_value_trgm(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_extract_query_trgm
+func F_pg_finfo_gin_extract_query_trgm(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_trgm_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_trgm_consistent
+func F_pg_finfo_gin_trgm_consistent(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_trgm_triconsistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_trgm_triconsistent
+func F_pg_finfo_gin_trgm_triconsistent(m *base.Module) int32
+//go:linkname F_gin_extract_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_trgm
+func F_gin_extract_trgm(m *base.Module, l0 int32) int32
+//go:linkname F_gin_extract_query_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_trgm
+func F_gin_extract_query_trgm(m *base.Module, l0 int32) int32
+//go:linkname F_gin_extract_value_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_value_trgm
+func F_gin_extract_value_trgm(m *base.Module, l0 int32) int32
+//go:linkname F_gin_trgm_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_trgm_consistent
+func F_gin_trgm_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_gin_trgm_triconsistent github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_trgm_triconsistent
+func F_gin_trgm_triconsistent(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gtrgm_in github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gtrgm_in
+func F_pg_finfo_gtrgm_in(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_out github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gtrgm_out
+func F_pg_finfo_gtrgm_out(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gtrgm_compress
+func F_pg_finfo_gtrgm_compress(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gtrgm_decompress
+func F_pg_finfo_gtrgm_decompress(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gtrgm_consistent
+func F_pg_finfo_gtrgm_consistent(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gtrgm_distance
+func F_pg_finfo_gtrgm_distance(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_union github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gtrgm_union
+func F_pg_finfo_gtrgm_union(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_same github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gtrgm_same
+func F_pg_finfo_gtrgm_same(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gtrgm_penalty
+func F_pg_finfo_gtrgm_penalty(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gtrgm_picksplit
+func F_pg_finfo_gtrgm_picksplit(m *base.Module) int32
+//go:linkname F_pg_finfo_gtrgm_options github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gtrgm_options
+func F_pg_finfo_gtrgm_options(m *base.Module) int32
+//go:linkname F_gtrgm_in github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gtrgm_in
+func F_gtrgm_in(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_out github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gtrgm_out
+func F_gtrgm_out(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gtrgm_compress
+func F_gtrgm_compress(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_decompress github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gtrgm_decompress
+func F_gtrgm_decompress(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gtrgm_consistent
+func F_gtrgm_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gtrgm_distance
+func F_gtrgm_distance(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_union github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gtrgm_union
+func F_gtrgm_union(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_same github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gtrgm_same
+func F_gtrgm_same(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gtrgm_penalty
+func F_gtrgm_penalty(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gtrgm_picksplit
+func F_gtrgm_picksplit(m *base.Module, l0 int32) int32
+//go:linkname F_gtrgm_options github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gtrgm_options
+func F_gtrgm_options(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_Pg_magic_func_pg_trgm
+func F_Pg_magic_func_pg_trgm(m *base.Module) int32
+//go:linkname F_pg_finfo_set_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_set_limit
+func F_pg_finfo_set_limit(m *base.Module) int32
+//go:linkname F_pg_finfo_show_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_show_limit
+func F_pg_finfo_show_limit(m *base.Module) int32
+//go:linkname F_pg_finfo_show_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_show_trgm
+func F_pg_finfo_show_trgm(m *base.Module) int32
+//go:linkname F_pg_finfo_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_similarity
+func F_pg_finfo_similarity(m *base.Module) int32
+//go:linkname F_pg_finfo_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_word_similarity
+func F_pg_finfo_word_similarity(m *base.Module) int32
+//go:linkname F_pg_finfo_strict_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_strict_word_similarity
+func F_pg_finfo_strict_word_similarity(m *base.Module) int32
+//go:linkname F_pg_finfo_similarity_dist github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_similarity_dist
+func F_pg_finfo_similarity_dist(m *base.Module) int32
+//go:linkname F_pg_finfo_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_similarity_op
+func F_pg_finfo_similarity_op(m *base.Module) int32
+//go:linkname F_pg_finfo_word_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_word_similarity_op
+func F_pg_finfo_word_similarity_op(m *base.Module) int32
+//go:linkname F_pg_finfo_word_similarity_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_word_similarity_commutator_op
+func F_pg_finfo_word_similarity_commutator_op(m *base.Module) int32
+//go:linkname F_pg_finfo_word_similarity_dist_op github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_word_similarity_dist_op
+func F_pg_finfo_word_similarity_dist_op(m *base.Module) int32
+//go:linkname F_pg_finfo_word_similarity_dist_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_word_similarity_dist_commutator_op
+func F_pg_finfo_word_similarity_dist_commutator_op(m *base.Module) int32
+//go:linkname F_pg_finfo_strict_word_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_strict_word_similarity_op
+func F_pg_finfo_strict_word_similarity_op(m *base.Module) int32
+//go:linkname F_pg_finfo_strict_word_similarity_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_strict_word_similarity_commutator_op
+func F_pg_finfo_strict_word_similarity_commutator_op(m *base.Module) int32
+//go:linkname F_pg_finfo_strict_word_similarity_dist_op github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_strict_word_similarity_dist_op
+func F_pg_finfo_strict_word_similarity_dist_op(m *base.Module) int32
+//go:linkname F_pg_finfo_strict_word_similarity_dist_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_strict_word_similarity_dist_commutator_op
+func F_pg_finfo_strict_word_similarity_dist_commutator_op(m *base.Module) int32
+//go:linkname F__PG_init_pg_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__PG_init_pg_trgm
+func F__PG_init_pg_trgm(m *base.Module)
+//go:linkname F_set_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_set_limit
+func F_set_limit(m *base.Module, l0 int32) int32
+//go:linkname F_show_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_show_limit
+func F_show_limit(m *base.Module, l0 int32) int32
+//go:linkname F_show_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_show_trgm
+func F_show_trgm(m *base.Module, l0 int32) int32
+//go:linkname F_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_similarity
+func F_similarity(m *base.Module, l0 int32) int32
+//go:linkname F_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_word_similarity
+func F_word_similarity(m *base.Module, l0 int32) int32
+//go:linkname F_strict_word_similarity github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strict_word_similarity
+func F_strict_word_similarity(m *base.Module, l0 int32) int32
+//go:linkname F_similarity_dist github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_similarity_dist
+func F_similarity_dist(m *base.Module, l0 int32) int32
+//go:linkname F_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_similarity_op
+func F_similarity_op(m *base.Module, l0 int32) int32
+//go:linkname F_word_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_word_similarity_op
+func F_word_similarity_op(m *base.Module, l0 int32) int32
+//go:linkname F_word_similarity_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_word_similarity_commutator_op
+func F_word_similarity_commutator_op(m *base.Module, l0 int32) int32
+//go:linkname F_word_similarity_dist_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_word_similarity_dist_op
+func F_word_similarity_dist_op(m *base.Module, l0 int32) int32
+//go:linkname F_word_similarity_dist_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_word_similarity_dist_commutator_op
+func F_word_similarity_dist_commutator_op(m *base.Module, l0 int32) int32
+//go:linkname F_strict_word_similarity_op github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strict_word_similarity_op
+func F_strict_word_similarity_op(m *base.Module, l0 int32) int32
+//go:linkname F_strict_word_similarity_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_strict_word_similarity_commutator_op
+func F_strict_word_similarity_commutator_op(m *base.Module, l0 int32) int32
+//go:linkname F_strict_word_similarity_dist_op github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_strict_word_similarity_dist_op
+func F_strict_word_similarity_dist_op(m *base.Module, l0 int32) int32
+//go:linkname F_strict_word_similarity_dist_commutator_op github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strict_word_similarity_dist_commutator_op
+func F_strict_word_similarity_dist_commutator_op(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

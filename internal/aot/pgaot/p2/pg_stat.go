@@ -923,7 +923,7 @@ L5:
 L6:
 	;
 	v29 = *(*int64)(unsafe.Add(mBase, _consts[1128]))
-	F_pg_stat_io_build_tuples(m, v10, int32(4367192)+v18*int32(2880), v18, v29)
+	F_pg_stat_io_build_tuples(m, v10, int32(4368056)+v18*int32(2880), v18, v29)
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -1174,7 +1174,7 @@ func F_pg_stat_get_wal(m *base.Module, l0 int32) int32 {
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		v13 = int32(4419544)
+		v13 = int32(4420408)
 		v14 = *(*int64)(unsafe.Add(mBase, _consts[1132]))
 		v15 = *(*int64)(unsafe.Add(mBase, _consts[1133]))
 		*(*int64)(unsafe.Add(mBase, uint32(v6)+24)) = v15
@@ -1637,7 +1637,7 @@ L2:
 	goto L4
 L3:
 	;
-	v173 = int32(350465)
+	v173 = int32(351666)
 	goto L4
 L4:
 	;
@@ -1686,7 +1686,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v237))) = v186
-	F_errmsg_internal(m, int32(461363), v237)
+	F_errmsg_internal(m, int32(462723), v237)
 	mBase = m.M
 	v248 = m.ExcPending
 	if v248 != 0 {
@@ -1696,7 +1696,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(473167), int32(273), int32(359976))
+	F_errfinish(m, int32(474554), int32(273), int32(361197))
 	mBase = m.M
 	v253 = m.ExcPending
 	if v253 != 0 {
@@ -1751,7 +1751,7 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v327))) = v271
-	F_errmsg_internal(m, int32(461330), v327)
+	F_errmsg_internal(m, int32(462690), v327)
 	mBase = m.M
 	v338 = m.ExcPending
 	if v338 != 0 {
@@ -1761,7 +1761,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(473167), int32(256), int32(359791))
+	F_errfinish(m, int32(474554), int32(256), int32(361012))
 	mBase = m.M
 	v343 = m.ExcPending
 	if v343 != 0 {
@@ -2538,7 +2538,7 @@ L134:
 	;
 	v729 = *(*int64)(unsafe.Add(mBase, uint32(l1+v263+v704+v702)))
 	*(*int64)(unsafe.Add(mBase, uint32(v62))) = v729
-	v735 = F_pg_snprintf(m, v62+int32(16), int32(256), int32(410048), v62)
+	v735 = F_pg_snprintf(m, v62+int32(16), int32(256), int32(411408), v62)
 	mBase = m.M
 	v736 = m.ExcPending
 	if v736 != 0 {

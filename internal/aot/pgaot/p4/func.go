@@ -396,13 +396,13 @@ func F_func_strict(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(42248), v6)
+				F_errmsg_internal(m, int32(42408), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(476072), int32(1908), int32(101670))
+					F_errfinish(m, int32(477470), int32(1908), int32(102091))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

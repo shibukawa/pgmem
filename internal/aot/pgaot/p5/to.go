@@ -1624,13 +1624,13 @@ func F_add_cast_to(m *base.Module, l0 int32, l1 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-				F_errmsg_internal(m, int32(47886), v8)
+				F_errmsg_internal(m, int32(48046), v8)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(471101), int32(13488), int32(227069))
+					F_errfinish(m, int32(472473), int32(13488), int32(227946))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -1667,7 +1667,7 @@ func F_add_cast_to(m *base.Module, l0 int32, l1 int32) {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = v38
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v34
-						F_appendStringInfo(m, l0, int32(167134), v8+int32(16))
+						F_appendStringInfo(m, l0, int32(167654), v8+int32(16))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {
@@ -2471,7 +2471,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v14
-	F_errmsg(m, int32(362922), v7)
+	F_errmsg(m, int32(364143), v7)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -2481,7 +2481,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(474708), int32(128), int32(359565))
+	F_errfinish(m, int32(476106), int32(128), int32(360786))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {
@@ -2653,9 +2653,9 @@ func F_to_regcollation(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
+			v17 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _consts[1113]))
+			v20 = *(*int64)(unsafe.Add(mBase, _consts[1112]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
 			v26 = F_DirectInputFunctionCallSafe(m, int32(1497), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
@@ -2724,9 +2724,9 @@ func F_to_regnamespace(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
+			v17 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _consts[1113]))
+			v20 = *(*int64)(unsafe.Add(mBase, _consts[1112]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
 			v26 = F_DirectInputFunctionCallSafe(m, int32(1499), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
@@ -2795,9 +2795,9 @@ func F_to_regprocedure(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
+			v17 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _consts[1113]))
+			v20 = *(*int64)(unsafe.Add(mBase, _consts[1112]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
 			v26 = F_DirectInputFunctionCallSafe(m, int32(1252), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M

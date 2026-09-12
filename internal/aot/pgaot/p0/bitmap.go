@@ -343,13 +343,13 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 		} else {
 			v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 			*(*int32)(unsafe.Add(mBase, uint32(v22))) = v39
-			F_errmsg_internal(m, int32(463673), v22)
+			F_errmsg_internal(m, int32(465033), v22)
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
 				return float64(0)
 			} else {
-				F_errfinish(m, int32(475268), int32(1149), int32(391620))
+				F_errfinish(m, int32(476666), int32(1149), int32(392852))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -1462,7 +1462,7 @@ L26:
 	;
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v117)))
 	*(*int32)(unsafe.Add(mBase, uint32(v82))) = v128
-	F_errmsg_internal(m, int32(463673), v82)
+	F_errmsg_internal(m, int32(465033), v82)
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -1472,7 +1472,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(475268), int32(1149), int32(391620))
+	F_errfinish(m, int32(476666), int32(1149), int32(392852))
 	mBase = m.M
 	v137 = m.ExcPending
 	if v137 != 0 {
@@ -3787,7 +3787,7 @@ L215:
 	;
 	v1239 = *(*int32)(unsafe.Add(mBase, uint32(v1227)))
 	*(*int32)(unsafe.Add(mBase, uint32(v1176))) = v1239
-	F_errmsg_internal(m, int32(463673), v1176)
+	F_errmsg_internal(m, int32(465033), v1176)
 	mBase = m.M
 	v1243 = m.ExcPending
 	if v1243 != 0 {
@@ -3797,7 +3797,7 @@ L215:
 	}
 L216:
 	;
-	F_errfinish(m, int32(475268), int32(1149), int32(391620))
+	F_errfinish(m, int32(476666), int32(1149), int32(392852))
 	mBase = m.M
 	v1248 = m.ExcPending
 	if v1248 != 0 {

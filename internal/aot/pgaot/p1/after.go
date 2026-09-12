@@ -88,7 +88,7 @@ func F_AfterTriggerEndQuery(m *base.Module, l0 int32) {
 	_ = v139
 	var v148 int32
 	_ = v148
-	v9 = int32(4340084)
+	v9 = int32(4340948)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[400]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[401]))
 	if v11 < v13 {
@@ -100,7 +100,7 @@ L1:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, _consts[402]))
 	v19 = v16 + v11*int32(20)
-	v22 = F_afterTriggerMarkEvents(m, v19, int32(4340064), int32(1))
+	v22 = F_afterTriggerMarkEvents(m, v19, int32(4340928), int32(1))
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -144,7 +144,7 @@ L7:
 	goto L8
 L8:
 	;
-	v34 = int32(4340056)
+	v34 = int32(4340920)
 	v36 = *(*int32)(unsafe.Add(mBase, _consts[405]))
 	*(*int32)(unsafe.Add(mBase, _consts[405])) = v36 + int32(1)
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
@@ -186,7 +186,7 @@ L13:
 	goto L14
 L14:
 	;
-	v119 = F_afterTriggerMarkEvents(m, v50, int32(4340064), int32(1))
+	v119 = F_afterTriggerMarkEvents(m, v50, int32(4340928), int32(1))
 	mBase = m.M
 	v120 = m.ExcPending
 	if v120 != 0 {

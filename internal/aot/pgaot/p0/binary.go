@@ -202,13 +202,13 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 							if v32 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(392988), int32(0))
+								F_errmsg(m, int32(394220), int32(0))
 								mBase = m.M
 								v36 = m.ExcPending
 								if v36 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(470094), int32(268), int32(328376))
+									F_errfinish(m, int32(471466), int32(268), int32(329577))
 									mBase = m.M
 									v41 = m.ExcPending
 									if v41 != 0 {
@@ -277,13 +277,13 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v44)+4)) = v9
 												*(*int32)(unsafe.Add(mBase, uint32(v44))) = v18
-												F_errmsg_internal(m, int32(43957), v44)
+												F_errmsg_internal(m, int32(44117), v44)
 												mBase = m.M
 												v195 = m.ExcPending
 												if v195 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(473108), int32(2113), int32(313033))
+													F_errfinish(m, int32(474495), int32(2113), int32(314234))
 													mBase = m.M
 													v200 = m.ExcPending
 													if v200 != 0 {
@@ -341,13 +341,13 @@ func F_binary_upgrade_set_missing_value(m *base.Module, l0 int32) int32 {
 														} else {
 															v137 = *(*int32)(unsafe.Add(mBase, uint32(v95)+12))
 															*(*int32)(unsafe.Add(mBase, uint32(v95))) = v137
-															F_errmsg_internal(m, int32(508732), v95)
+															F_errmsg_internal(m, int32(510130), v95)
 															mBase = m.M
 															v141 = m.ExcPending
 															if v141 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(472279), int32(1190), int32(289223))
+																F_errfinish(m, int32(473651), int32(1190), int32(290405))
 																mBase = m.M
 																v146 = m.ExcPending
 																if v146 != 0 {
@@ -448,13 +448,13 @@ func F_binary_upgrade_set_next_index_relfilenode(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(392988), int32(0))
+				F_errmsg(m, int32(394220), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(470094), int32(134), int32(391419))
+					F_errfinish(m, int32(471466), int32(134), int32(392651))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -502,13 +502,13 @@ func F_binary_upgrade_set_next_pg_enum_oid(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(392988), int32(0))
+				F_errmsg(m, int32(394220), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(470094), int32(167), int32(413807))
+					F_errfinish(m, int32(471466), int32(167), int32(415167))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

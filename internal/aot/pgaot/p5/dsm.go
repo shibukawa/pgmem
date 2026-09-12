@@ -14,7 +14,7 @@ func F_dsm_pin_mapping(m *base.Module, l0 int32) {
 	_ = v6
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v3 != 0 {
-		F_ResourceOwnerForget(m, v3, l0, int32(1586492))
+		F_ResourceOwnerForget(m, v3, l0, int32(1588076))
 		mBase = m.M
 		v6 = m.ExcPending
 		if v6 != 0 {
@@ -146,7 +146,7 @@ L1:
 	return
 L2:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[657]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[656]))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
 	if v21 != 0 {
 		goto L4
@@ -219,7 +219,7 @@ L13:
 	goto L8
 L14:
 	;
-	F_errmsg_internal(m, int32(371416), int32(0))
+	F_errmsg_internal(m, int32(372648), int32(0))
 	mBase = m.M
 	v56 = m.ExcPending
 	if v56 != 0 {
@@ -229,7 +229,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(474046), int32(1016), int32(89142))
+	F_errfinish(m, int32(475444), int32(1016), int32(89474))
 	mBase = m.M
 	v61 = m.ExcPending
 	if v61 != 0 {
@@ -269,7 +269,7 @@ L20:
 	goto L22
 L21:
 	;
-	v69 = *(*int32)(unsafe.Add(mBase, _consts[657]))
+	v69 = *(*int32)(unsafe.Add(mBase, _consts[656]))
 	v70 = v69
 	goto L22
 L22:
@@ -314,7 +314,7 @@ L25:
 	}
 L26:
 	;
-	v136 = *(*int32)(unsafe.Add(mBase, _consts[657]))
+	v136 = *(*int32)(unsafe.Add(mBase, _consts[656]))
 	*(*int32)(unsafe.Add(mBase, uint32(v136+v63)+16)) = int32(0)
 	v141 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	F_LWLockRelease(m, v141+int32(4352))
@@ -372,8 +372,8 @@ L32:
 	goto L26
 L33:
 	;
-	v124 = *(*int32)(unsafe.Add(mBase, _consts[658]))
-	v126 = *(*int32)(unsafe.Add(mBase, _consts[657]))
+	v124 = *(*int32)(unsafe.Add(mBase, _consts[657]))
+	v126 = *(*int32)(unsafe.Add(mBase, _consts[656]))
 	v129 = v126 + v27*int32(24)
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+20))
 	v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+24))
@@ -393,7 +393,7 @@ L35:
 	goto L24
 L36:
 	;
-	F_errmsg_internal(m, int32(431639), int32(0))
+	F_errmsg_internal(m, int32(432999), int32(0))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -403,7 +403,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(474046), int32(1018), int32(89142))
+	F_errfinish(m, int32(475444), int32(1018), int32(89474))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {

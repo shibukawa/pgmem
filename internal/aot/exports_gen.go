@@ -2126,6 +2126,402 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFinfoCitextSmaller(m)
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pg_trgm":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pg_trgm: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgTrgm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_pg_trgm":
+		if len(a) != 0 {
+			panic("aot: _PG_init_pg_trgm: want 0 args")
+		}
+		pgaot.PGInitPgTrgm(m)
+		return nil, true
+	case "gin_extract_query_trgm":
+		if len(a) != 1 {
+			panic("aot: gin_extract_query_trgm: want 1 args")
+		}
+		r := pgaot.GinExtractQueryTrgm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_trgm":
+		if len(a) != 1 {
+			panic("aot: gin_extract_trgm: want 1 args")
+		}
+		r := pgaot.GinExtractTrgm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_extract_value_trgm":
+		if len(a) != 1 {
+			panic("aot: gin_extract_value_trgm: want 1 args")
+		}
+		r := pgaot.GinExtractValueTrgm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_trgm_consistent":
+		if len(a) != 1 {
+			panic("aot: gin_trgm_consistent: want 1 args")
+		}
+		r := pgaot.GinTrgmConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_trgm_triconsistent":
+		if len(a) != 1 {
+			panic("aot: gin_trgm_triconsistent: want 1 args")
+		}
+		r := pgaot.GinTrgmTriconsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_compress":
+		if len(a) != 1 {
+			panic("aot: gtrgm_compress: want 1 args")
+		}
+		r := pgaot.GtrgmCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_consistent":
+		if len(a) != 1 {
+			panic("aot: gtrgm_consistent: want 1 args")
+		}
+		r := pgaot.GtrgmConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_decompress":
+		if len(a) != 1 {
+			panic("aot: gtrgm_decompress: want 1 args")
+		}
+		r := pgaot.GtrgmDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_distance":
+		if len(a) != 1 {
+			panic("aot: gtrgm_distance: want 1 args")
+		}
+		r := pgaot.GtrgmDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_in":
+		if len(a) != 1 {
+			panic("aot: gtrgm_in: want 1 args")
+		}
+		r := pgaot.GtrgmIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_options":
+		if len(a) != 1 {
+			panic("aot: gtrgm_options: want 1 args")
+		}
+		r := pgaot.GtrgmOptions(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_out":
+		if len(a) != 1 {
+			panic("aot: gtrgm_out: want 1 args")
+		}
+		r := pgaot.GtrgmOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_penalty":
+		if len(a) != 1 {
+			panic("aot: gtrgm_penalty: want 1 args")
+		}
+		r := pgaot.GtrgmPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_picksplit":
+		if len(a) != 1 {
+			panic("aot: gtrgm_picksplit: want 1 args")
+		}
+		r := pgaot.GtrgmPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_same":
+		if len(a) != 1 {
+			panic("aot: gtrgm_same: want 1 args")
+		}
+		r := pgaot.GtrgmSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gtrgm_union":
+		if len(a) != 1 {
+			panic("aot: gtrgm_union: want 1 args")
+		}
+		r := pgaot.GtrgmUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_query_trgm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_query_trgm: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractQueryTrgm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_trgm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_trgm: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractTrgm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_extract_value_trgm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_extract_value_trgm: want 0 args")
+		}
+		r := pgaot.PgFinfoGinExtractValueTrgm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_trgm_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_trgm_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGinTrgmConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_trgm_triconsistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_trgm_triconsistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGinTrgmTriconsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_in: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_options":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_options: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmOptions(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_out: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gtrgm_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gtrgm_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGtrgmUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_set_limit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_set_limit: want 0 args")
+		}
+		r := pgaot.PgFinfoSetLimit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_show_limit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_show_limit: want 0 args")
+		}
+		r := pgaot.PgFinfoShowLimit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_show_trgm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_show_trgm: want 0 args")
+		}
+		r := pgaot.PgFinfoShowTrgm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_similarity":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_similarity: want 0 args")
+		}
+		r := pgaot.PgFinfoSimilarity(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_similarity_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_similarity_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoSimilarityDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_similarity_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_similarity_op: want 0 args")
+		}
+		r := pgaot.PgFinfoSimilarityOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_strict_word_similarity":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_strict_word_similarity: want 0 args")
+		}
+		r := pgaot.PgFinfoStrictWordSimilarity(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_strict_word_similarity_commutator_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_strict_word_similarity_commutator_op: want 0 args")
+		}
+		r := pgaot.PgFinfoStrictWordSimilarityCommutatorOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_strict_word_similarity_dist_commutator_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_strict_word_similarity_dist_commutator_op: want 0 args")
+		}
+		r := pgaot.PgFinfoStrictWordSimilarityDistCommutatorOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_strict_word_similarity_dist_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_strict_word_similarity_dist_op: want 0 args")
+		}
+		r := pgaot.PgFinfoStrictWordSimilarityDistOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_strict_word_similarity_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_strict_word_similarity_op: want 0 args")
+		}
+		r := pgaot.PgFinfoStrictWordSimilarityOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_word_similarity":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_word_similarity: want 0 args")
+		}
+		r := pgaot.PgFinfoWordSimilarity(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_word_similarity_commutator_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_word_similarity_commutator_op: want 0 args")
+		}
+		r := pgaot.PgFinfoWordSimilarityCommutatorOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_word_similarity_dist_commutator_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_word_similarity_dist_commutator_op: want 0 args")
+		}
+		r := pgaot.PgFinfoWordSimilarityDistCommutatorOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_word_similarity_dist_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_word_similarity_dist_op: want 0 args")
+		}
+		r := pgaot.PgFinfoWordSimilarityDistOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_word_similarity_op":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_word_similarity_op: want 0 args")
+		}
+		r := pgaot.PgFinfoWordSimilarityOp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "set_limit":
+		if len(a) != 1 {
+			panic("aot: set_limit: want 1 args")
+		}
+		r := pgaot.SetLimit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "show_limit":
+		if len(a) != 1 {
+			panic("aot: show_limit: want 1 args")
+		}
+		r := pgaot.ShowLimit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "show_trgm":
+		if len(a) != 1 {
+			panic("aot: show_trgm: want 1 args")
+		}
+		r := pgaot.ShowTrgm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "similarity":
+		if len(a) != 1 {
+			panic("aot: similarity: want 1 args")
+		}
+		r := pgaot.Similarity(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "similarity_dist":
+		if len(a) != 1 {
+			panic("aot: similarity_dist: want 1 args")
+		}
+		r := pgaot.SimilarityDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "similarity_op":
+		if len(a) != 1 {
+			panic("aot: similarity_op: want 1 args")
+		}
+		r := pgaot.SimilarityOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "strict_word_similarity":
+		if len(a) != 1 {
+			panic("aot: strict_word_similarity: want 1 args")
+		}
+		r := pgaot.StrictWordSimilarity(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "strict_word_similarity_commutator_op":
+		if len(a) != 1 {
+			panic("aot: strict_word_similarity_commutator_op: want 1 args")
+		}
+		r := pgaot.StrictWordSimilarityCommutatorOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "strict_word_similarity_dist_commutator_op":
+		if len(a) != 1 {
+			panic("aot: strict_word_similarity_dist_commutator_op: want 1 args")
+		}
+		r := pgaot.StrictWordSimilarityDistCommutatorOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "strict_word_similarity_dist_op":
+		if len(a) != 1 {
+			panic("aot: strict_word_similarity_dist_op: want 1 args")
+		}
+		r := pgaot.StrictWordSimilarityDistOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "strict_word_similarity_op":
+		if len(a) != 1 {
+			panic("aot: strict_word_similarity_op: want 1 args")
+		}
+		r := pgaot.StrictWordSimilarityOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "word_similarity":
+		if len(a) != 1 {
+			panic("aot: word_similarity: want 1 args")
+		}
+		r := pgaot.WordSimilarity(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "word_similarity_commutator_op":
+		if len(a) != 1 {
+			panic("aot: word_similarity_commutator_op: want 1 args")
+		}
+		r := pgaot.WordSimilarityCommutatorOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "word_similarity_dist_commutator_op":
+		if len(a) != 1 {
+			panic("aot: word_similarity_dist_commutator_op: want 1 args")
+		}
+		r := pgaot.WordSimilarityDistCommutatorOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "word_similarity_dist_op":
+		if len(a) != 1 {
+			panic("aot: word_similarity_dist_op: want 1 args")
+		}
+		r := pgaot.WordSimilarityDistOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "word_similarity_op":
+		if len(a) != 1 {
+			panic("aot: word_similarity_op: want 1 args")
+		}
+		r := pgaot.WordSimilarityOp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

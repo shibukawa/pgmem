@@ -223,13 +223,13 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v9))) = v33
-											F_errmsg_internal(m, int32(431253), v9)
+											F_errmsg_internal(m, int32(432613), v9)
 											mBase = m.M
 											v164 = m.ExcPending
 											if v164 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(472969), int32(1604), int32(198432))
+												F_errfinish(m, int32(474356), int32(1604), int32(198952))
 												mBase = m.M
 												v169 = m.ExcPending
 												if v169 != 0 {
@@ -252,13 +252,13 @@ func F_map_variable_attnos_mutator(m *base.Module, l0 int32, l1 int32) int32 {
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9))) = v33
-												F_errmsg_internal(m, int32(431253), v9)
+												F_errmsg_internal(m, int32(432613), v9)
 												mBase = m.M
 												v164 = m.ExcPending
 												if v164 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(472969), int32(1604), int32(198432))
+													F_errfinish(m, int32(474356), int32(1604), int32(198952))
 													mBase = m.M
 													v169 = m.ExcPending
 													if v169 != 0 {
@@ -581,7 +581,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v18
-						F_errmsg(m, int32(445426), v11)
+						F_errmsg(m, int32(446786), v11)
 						mBase = m.M
 						v68 = m.ExcPending
 						if v68 != 0 {
@@ -594,7 +594,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 							if v71 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(474178), int32(206), int32(299788))
+								F_errfinish(m, int32(475576), int32(206), int32(300970))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
@@ -626,7 +626,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v18
-							F_errmsg(m, int32(445426), v11)
+							F_errmsg(m, int32(446786), v11)
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {
@@ -639,7 +639,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(474178), int32(206), int32(299788))
+									F_errfinish(m, int32(475576), int32(206), int32(300970))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -696,7 +696,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v18
-									F_errmsg(m, int32(445381), v11+int32(32))
+									F_errmsg(m, int32(446741), v11+int32(32))
 									mBase = m.M
 									v89 = m.ExcPending
 									if v89 != 0 {
@@ -717,7 +717,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v93
 												*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v91
-												F_errdetail(m, int32(169727), v11+int32(16))
+												F_errdetail(m, int32(170247), v11+int32(16))
 												mBase = m.M
 												v101 = m.ExcPending
 												if v101 != 0 {
@@ -730,7 +730,7 @@ func F_variable_coerce_param_hook(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													if v104 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(474178), int32(227), int32(299788))
+														F_errfinish(m, int32(475576), int32(227), int32(300970))
 														mBase = m.M
 														v109 = m.ExcPending
 														if v109 != 0 {

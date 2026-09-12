@@ -1008,7 +1008,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 	_ = v1099
 	var v1100 int32
 	_ = v1100
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 	v7 = v5 + int32(38)
 	if l0 != 0 {
 		*(*int32)(unsafe.Add(mBase, uint32(l0))) = v7
@@ -1038,7 +1038,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					v24 = *(*int32)(unsafe.Add(mBase, _consts[662]))
+					v24 = *(*int32)(unsafe.Add(mBase, _consts[661]))
 					v27 = F_add_size(m, v21, v24<<(uint(int32(20))%32))
 					mBase = m.M
 					v28 = m.ExcPending
@@ -1152,8 +1152,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																						if v86 != 0 {
 																							return int32(0)
 																						} else {
-																							v89 = *(*int32)(unsafe.Add(mBase, _consts[663]))
-																							v91 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																							v89 = *(*int32)(unsafe.Add(mBase, _consts[662]))
+																							v91 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																							v93 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 																							v94 = F_add_size(m, v91, v93)
 																							mBase = m.M
@@ -1204,8 +1204,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																														if v115 != 0 {
 																															return int32(0)
 																														} else {
-																															v118 = *(*int32)(unsafe.Add(mBase, _consts[664]))
-																															v120 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																															v118 = *(*int32)(unsafe.Add(mBase, _consts[663]))
+																															v120 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																															v122 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 																															v123 = F_add_size(m, v120, v122)
 																															mBase = m.M
@@ -1250,7 +1250,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																					if v142 != 0 {
 																																						return int32(0)
 																																					} else {
-																																						v144 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																						v144 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																						v146 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 																																						v148 = F_add_size(m, v141, int32(64))
 																																						mBase = m.M
@@ -1314,7 +1314,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																															if v178 != 0 {
 																																																return int32(0)
 																																															} else {
-																																																v180 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+																																																v180 = *(*int32)(unsafe.Add(mBase, _consts[664]))
 																																																v186 = int32(7)
 																																																v188 = int32(-8)
 																																																v189 = (v180<<(uint(int32(2))%32) + v186) & v188
@@ -1356,7 +1356,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																					if v241 != 0 {
 																																																						return int32(0)
 																																																					} else {
-																																																						v244 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																						v244 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																						v247 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 																																																						v248 = F_add_size(m, int32(38), v247)
 																																																						mBase = m.M
@@ -1370,7 +1370,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																							if v251 != 0 {
 																																																								return int32(0)
 																																																							} else {
-																																																								v253 = *(*int32)(unsafe.Add(mBase, _consts[666]))
+																																																								v253 = *(*int32)(unsafe.Add(mBase, _consts[665]))
 																																																								v256 = F_mul_size(m, v250, v253*int32(72))
 																																																								mBase = m.M
 																																																								v257 = m.ExcPending
@@ -1425,7 +1425,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																if v276 != 0 {
 																																																																	return int32(0)
 																																																																} else {
-																																																																	v278 = *(*int32)(unsafe.Add(mBase, _consts[667]))
+																																																																	v278 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 																																																																	if v278 == int32(0) {
 																																																																		v283 = int32(16)
 																																																																		v285 = *(*int32)(unsafe.Add(mBase, _consts[34]))
@@ -1469,7 +1469,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																	if v354 != 0 {
 																																																																		return int32(0)
 																																																																	} else {
-																																																																		v356 = *(*int32)(unsafe.Add(mBase, _consts[668]))
+																																																																		v356 = *(*int32)(unsafe.Add(mBase, _consts[667]))
 																																																																		if v356 == int32(0) {
 																																																																			v361 = int32(16)
 																																																																			v363 = *(*int32)(unsafe.Add(mBase, _consts[34]))
@@ -1512,7 +1512,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																		if v434 != 0 {
 																																																																			return int32(0)
 																																																																		} else {
-																																																																			v436 = *(*int32)(unsafe.Add(mBase, _consts[669]))
+																																																																			v436 = *(*int32)(unsafe.Add(mBase, _consts[668]))
 																																																																			if v436 == int32(0) {
 																																																																				v441 = int32(16)
 																																																																				v443 = *(*int32)(unsafe.Add(mBase, _consts[34]))
@@ -1587,7 +1587,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																								if v533 != 0 {
 																																																																									return int32(0)
 																																																																								} else {
-																																																																									v536 = *(*int32)(unsafe.Add(mBase, _consts[434]))
+																																																																									v536 = *(*int32)(unsafe.Add(mBase, _consts[433]))
 																																																																									v538 = F_mul_size(m, v536, int32(1480))
 																																																																									mBase = m.M
 																																																																									v539 = m.ExcPending
@@ -1607,7 +1607,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																												return int32(0)
 																																																																											} else {
 																																																																												v547 = *(*int32)(unsafe.Add(mBase, _consts[102]))
-																																																																												v549 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																												v549 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																												v551 = F_mul_size(m, int32(8), v547+v549)
 																																																																												mBase = m.M
 																																																																												v552 = m.ExcPending
@@ -1620,7 +1620,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																													if v554 != 0 {
 																																																																														return int32(0)
 																																																																													} else {
-																																																																														v556 = *(*int32)(unsafe.Add(mBase, _consts[670]))
+																																																																														v556 = *(*int32)(unsafe.Add(mBase, _consts[669]))
 																																																																														v562 = int32(7)
 																																																																														v564 = int32(-8)
 																																																																														v565 = (v556<<(uint(int32(2))%32) + v562) & v564
@@ -1632,7 +1632,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																														if v604 != 0 {
 																																																																															return int32(0)
 																																																																														} else {
-																																																																															v606 = *(*int32)(unsafe.Add(mBase, _consts[671]))
+																																																																															v606 = *(*int32)(unsafe.Add(mBase, _consts[670]))
 																																																																															v612 = int32(7)
 																																																																															v614 = int32(-8)
 																																																																															v615 = (v606<<(uint(int32(2))%32) + v612) & v614
@@ -1663,7 +1663,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																			return int32(0)
 																																																																																		} else {
 																																																																																			v664 = *(*int32)(unsafe.Add(mBase, _consts[102]))
-																																																																																			v666 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																			v666 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																			v668 = F_mul_size(m, int32(4), v664+v666)
 																																																																																			mBase = m.M
 																																																																																			v669 = m.ExcPending
@@ -1679,7 +1679,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																					v673 = int32(*(*uint8)(unsafe.Add(mBase, _consts[138])))
 																																																																																					if v673 == int32(1) {
 																																																																																						v678 = *(*int32)(unsafe.Add(mBase, _consts[102]))
-																																																																																						v680 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																						v680 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																						v684 = F_mul_size(m, int32(4), (v678+v680)*int32(65))
 																																																																																						mBase = m.M
 																																																																																						v685 = m.ExcPending
@@ -1693,7 +1693,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																								return int32(0)
 																																																																																							} else {
 																																																																																								v690 = *(*int32)(unsafe.Add(mBase, _consts[102]))
-																																																																																								v692 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																								v692 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																								v696 = F_mul_size(m, int32(1), (v690+v692)*int32(65))
 																																																																																								mBase = m.M
 																																																																																								v697 = m.ExcPending
@@ -1713,14 +1713,14 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																										if v702 != 0 {
 																																																																																											return int32(0)
 																																																																																										} else {
-																																																																																											v705 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																											v705 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																											v708 = F_mul_size(m, int32(408), v705+int32(38))
 																																																																																											mBase = m.M
 																																																																																											v709 = m.ExcPending
 																																																																																											if v709 != 0 {
 																																																																																												return int32(0)
 																																																																																											} else {
-																																																																																												v712 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																												v712 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																												v715 = F_mul_size(m, int32(64), v712+int32(38))
 																																																																																												mBase = m.M
 																																																																																												v716 = m.ExcPending
@@ -1733,7 +1733,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																													if v718 != 0 {
 																																																																																														return int32(0)
 																																																																																													} else {
-																																																																																														v721 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																														v721 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																														v724 = F_mul_size(m, int32(64), v721+int32(38))
 																																																																																														mBase = m.M
 																																																																																														v725 = m.ExcPending
@@ -1746,8 +1746,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																															if v727 != 0 {
 																																																																																																return int32(0)
 																																																																																															} else {
-																																																																																																v729 = *(*int32)(unsafe.Add(mBase, _consts[672]))
-																																																																																																v731 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																v729 = *(*int32)(unsafe.Add(mBase, _consts[671]))
+																																																																																																v731 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																v734 = F_mul_size(m, v729, v731+int32(38))
 																																																																																																mBase = m.M
 																																																																																																v735 = m.ExcPending
@@ -1766,7 +1766,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																		if v739 != 0 {
 																																																																																																			return int32(0)
 																																																																																																		} else {
-																																																																																																			v743 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																			v743 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																			v746 = F_mul_size(m, int32(16), v743+int32(38))
 																																																																																																			mBase = m.M
 																																																																																																			v747 = m.ExcPending
@@ -1779,7 +1779,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																				if v749 != 0 {
 																																																																																																					return int32(0)
 																																																																																																				} else {
-																																																																																																					v752 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																					v752 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																					v755 = F_mul_size(m, int32(4), v752+int32(38))
 																																																																																																					mBase = m.M
 																																																																																																					v756 = m.ExcPending
@@ -1822,7 +1822,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																											if v770 != 0 {
 																																																																																																												return int32(0)
 																																																																																																											} else {
-																																																																																																												v772 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																												v772 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																												v776 = F_mul_size(m, v772+int32(38), int32(128))
 																																																																																																												mBase = m.M
 																																																																																																												v777 = m.ExcPending
@@ -1866,7 +1866,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																	if v796 != 0 {
 																																																																																																																		return int32(0)
 																																																																																																																	} else {
-																																																																																																																		v799 = *(*int32)(unsafe.Add(mBase, _consts[432]))
+																																																																																																																		v799 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 																																																																																																																		v801 = F_mul_size(m, v799, int32(40))
 																																																																																																																		mBase = m.M
 																																																																																																																		v802 = m.ExcPending
@@ -1885,7 +1885,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																				if v806 != 0 {
 																																																																																																																					return int32(0)
 																																																																																																																				} else {
-																																																																																																																					v808 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																																																																																																																					v808 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																																																																																																																					if v808 != 0 {
 																																																																																																																						v811 = F_mul_size(m, v808, int32(288))
 																																																																																																																						mBase = m.M
@@ -1906,7 +1906,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																								if v818 != 0 {
 																																																																																																																									return int32(0)
 																																																																																																																								} else {
-																																																																																																																									v820 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																									v820 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																									if v820 != 0 {
 																																																																																																																										v823 = F_add_size(m, int32(0), int32(8))
 																																																																																																																										mBase = m.M
@@ -1914,7 +1914,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																										if v824 != 0 {
 																																																																																																																											return int32(0)
 																																																																																																																										} else {
-																																																																																																																											v826 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																											v826 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																											v828 = F_mul_size(m, v826, int32(56))
 																																																																																																																											mBase = m.M
 																																																																																																																											v829 = m.ExcPending
@@ -1934,7 +1934,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																													if v835 != 0 {
 																																																																																																																														return int32(0)
 																																																																																																																													} else {
-																																																																																																																														v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																														v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																														v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																														mBase = m.M
 																																																																																																																														v841 = m.ExcPending
@@ -1983,7 +1983,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																					if v860 != 0 {
 																																																																																																																																						return int32(0)
 																																																																																																																																					} else {
-																																																																																																																																						v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																						v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																						v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																						mBase = m.M
 																																																																																																																																						v866 = m.ExcPending
@@ -2003,7 +2003,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																									return int32(0)
 																																																																																																																																								} else {
 																																																																																																																																									v871 = int32(12)
-																																																																																																																																									v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																									v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																									v875 = F_mul_size(m, v873, v871)
 																																																																																																																																									mBase = m.M
 																																																																																																																																									v876 = m.ExcPending
@@ -2028,7 +2028,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																												if v883 != 0 {
 																																																																																																																																													return int32(0)
 																																																																																																																																												} else {
-																																																																																																																																													v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																													v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																													v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																													mBase = m.M
 																																																																																																																																													v888 = m.ExcPending
@@ -2041,7 +2041,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																														if v891 != 0 {
 																																																																																																																																															return int32(0)
 																																																																																																																																														} else {
-																																																																																																																																															v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																															v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																															v899 = int32(7)
 																																																																																																																																															v901 = int32(-8)
 																																																																																																																																															v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -2116,7 +2116,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										v969 = m.G0
 																																																																																																																																																										v971 = v969 - int32(48)
 																																																																																																																																																										m.G0 = v971
-																																																																																																																																																										v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																										v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																										if v974 != int32(-1) {
 																																																																																																																																																											v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																											mBase = m.M
@@ -2124,7 +2124,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1021 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1028 = m.ExcPending
@@ -2137,8 +2137,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1030 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																														v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1039 = m.ExcPending
@@ -2157,15 +2157,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1043 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																	v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1052 = m.ExcPending
 																																																																																																																																																																	if v1052 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1056 = m.ExcPending
@@ -2184,15 +2184,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1060 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																					v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1069 = m.ExcPending
 																																																																																																																																																																					if v1069 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																						v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1073 = m.ExcPending
@@ -2211,7 +2211,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1077 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																									v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																									if v1080 != 0 {
 																																																																																																																																																																										v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -2234,7 +2234,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																												if v1090 != 0 {
 																																																																																																																																																																													return int32(0)
 																																																																																																																																																																												} else {
-																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																													v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																													mBase = m.M
 																																																																																																																																																																													v1094 = m.ExcPending
@@ -2262,7 +2262,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -2297,7 +2297,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										} else {
 																																																																																																																																																											v978 = int32(1)
 																																																																																																																																																											v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																											v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																											v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																											v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																											if v985 <= v978 {
 																																																																																																																																																												v988 = v978
@@ -2310,20 +2310,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												v991 = v988
 																																																																																																																																																											}
 																																																																																																																																																											*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																											v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																											v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v998 = m.ExcPending
 																																																																																																																																																											if v998 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
 																																																																																																																																																												v1002 = int32(1)
-																																																																																																																																																												F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																												F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1005 = m.ExcPending
 																																																																																																																																																												if v1005 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													if v1007 != int32(-1) {
 																																																																																																																																																														v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																														mBase = m.M
@@ -2331,7 +2331,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1021 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1028 = m.ExcPending
@@ -2344,8 +2344,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1030 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																																	v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																																	v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																	v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1039 = m.ExcPending
@@ -2364,15 +2364,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1043 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																				v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																				v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																				v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1052 = m.ExcPending
 																																																																																																																																																																				if v1052 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																					v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1056 = m.ExcPending
@@ -2391,15 +2391,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1060 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																								v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																								v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																								v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																								v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1069 = m.ExcPending
 																																																																																																																																																																								if v1069 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																									v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																									v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1073 = m.ExcPending
@@ -2418,7 +2418,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																											if v1077 != 0 {
 																																																																																																																																																																												return int32(0)
 																																																																																																																																																																											} else {
-																																																																																																																																																																												v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																												v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																												v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																												if v1080 != 0 {
 																																																																																																																																																																													v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -2441,7 +2441,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																															if v1090 != 0 {
 																																																																																																																																																																																return int32(0)
 																																																																																																																																																																															} else {
-																																																																																																																																																																																v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																																v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																																v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																																mBase = m.M
 																																																																																																																																																																																v1094 = m.ExcPending
@@ -2469,7 +2469,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																													if v1090 != 0 {
 																																																																																																																																																																														return int32(0)
 																																																																																																																																																																													} else {
-																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																														v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																														mBase = m.M
 																																																																																																																																																																														v1094 = m.ExcPending
@@ -2502,7 +2502,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															}
 																																																																																																																																																														}
 																																																																																																																																																													} else {
-																																																																																																																																																														F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																														F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1016 = m.ExcPending
 																																																																																																																																																														if v1016 != 0 {
@@ -2514,7 +2514,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1021 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1028 = m.ExcPending
@@ -2527,8 +2527,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1030 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																																		v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																																		v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1039 = m.ExcPending
@@ -2547,15 +2547,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1043 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																					v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																					v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																					v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1052 = m.ExcPending
 																																																																																																																																																																					if v1052 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																						v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1056 = m.ExcPending
@@ -2574,15 +2574,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1060 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																									v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																									v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																									v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																									v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1069 = m.ExcPending
 																																																																																																																																																																									if v1069 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																										v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																										v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1073 = m.ExcPending
@@ -2601,7 +2601,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																												if v1077 != 0 {
 																																																																																																																																																																													return int32(0)
 																																																																																																																																																																												} else {
-																																																																																																																																																																													v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																													v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																													v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																													if v1080 != 0 {
 																																																																																																																																																																														v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -2624,7 +2624,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																																if v1090 != 0 {
 																																																																																																																																																																																	return int32(0)
 																																																																																																																																																																																} else {
-																																																																																																																																																																																	v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																																	v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																																	v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																																	v1094 = m.ExcPending
@@ -2652,7 +2652,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																														if v1090 != 0 {
 																																																																																																																																																																															return int32(0)
 																																																																																																																																																																														} else {
-																																																																																																																																																																															v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																															v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																															v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																															mBase = m.M
 																																																																																																																																																																															v1094 = m.ExcPending
@@ -2729,7 +2729,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																										if v835 != 0 {
 																																																																																																																											return int32(0)
 																																																																																																																										} else {
-																																																																																																																											v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																											v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																											v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																											mBase = m.M
 																																																																																																																											v841 = m.ExcPending
@@ -2778,7 +2778,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																		if v860 != 0 {
 																																																																																																																																			return int32(0)
 																																																																																																																																		} else {
-																																																																																																																																			v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																			v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																			v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																			mBase = m.M
 																																																																																																																																			v866 = m.ExcPending
@@ -2798,7 +2798,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																						return int32(0)
 																																																																																																																																					} else {
 																																																																																																																																						v871 = int32(12)
-																																																																																																																																						v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																						v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																						v875 = F_mul_size(m, v873, v871)
 																																																																																																																																						mBase = m.M
 																																																																																																																																						v876 = m.ExcPending
@@ -2823,7 +2823,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																									if v883 != 0 {
 																																																																																																																																										return int32(0)
 																																																																																																																																									} else {
-																																																																																																																																										v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																										v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																										v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																										mBase = m.M
 																																																																																																																																										v888 = m.ExcPending
@@ -2836,7 +2836,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																											if v891 != 0 {
 																																																																																																																																												return int32(0)
 																																																																																																																																											} else {
-																																																																																																																																												v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																												v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																												v899 = int32(7)
 																																																																																																																																												v901 = int32(-8)
 																																																																																																																																												v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -2911,7 +2911,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							v969 = m.G0
 																																																																																																																																																							v971 = v969 - int32(48)
 																																																																																																																																																							m.G0 = v971
-																																																																																																																																																							v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																							v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																							if v974 != int32(-1) {
 																																																																																																																																																								v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																								mBase = m.M
@@ -2919,7 +2919,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								if v1021 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																									v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1028 = m.ExcPending
@@ -2932,8 +2932,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1030 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																											v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1039 = m.ExcPending
@@ -2952,15 +2952,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1043 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																														v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1052 = m.ExcPending
 																																																																																																																																																														if v1052 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1056 = m.ExcPending
@@ -2979,15 +2979,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1060 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																		v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1069 = m.ExcPending
 																																																																																																																																																																		if v1069 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																			v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1073 = m.ExcPending
@@ -3006,7 +3006,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1077 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																						v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																						if v1080 != 0 {
 																																																																																																																																																																							v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -3029,7 +3029,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1090 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																										v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1094 = m.ExcPending
@@ -3057,7 +3057,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1090 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																								v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1094 = m.ExcPending
@@ -3092,7 +3092,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							} else {
 																																																																																																																																																								v978 = int32(1)
 																																																																																																																																																								v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																								v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																								v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																								v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																								if v985 <= v978 {
 																																																																																																																																																									v988 = v978
@@ -3105,20 +3105,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									v991 = v988
 																																																																																																																																																								}
 																																																																																																																																																								*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																								v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																								v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v998 = m.ExcPending
 																																																																																																																																																								if v998 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
 																																																																																																																																																									v1002 = int32(1)
-																																																																																																																																																									F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																									F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1005 = m.ExcPending
 																																																																																																																																																									if v1005 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																										v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																										if v1007 != int32(-1) {
 																																																																																																																																																											v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																											mBase = m.M
@@ -3126,7 +3126,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1021 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1028 = m.ExcPending
@@ -3139,8 +3139,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1030 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																														v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1039 = m.ExcPending
@@ -3159,15 +3159,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1043 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																	v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1052 = m.ExcPending
 																																																																																																																																																																	if v1052 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1056 = m.ExcPending
@@ -3186,15 +3186,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1060 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																					v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1069 = m.ExcPending
 																																																																																																																																																																					if v1069 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																						v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1073 = m.ExcPending
@@ -3213,7 +3213,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1077 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																									v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																									if v1080 != 0 {
 																																																																																																																																																																										v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -3236,7 +3236,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																												if v1090 != 0 {
 																																																																																																																																																																													return int32(0)
 																																																																																																																																																																												} else {
-																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																													v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																													mBase = m.M
 																																																																																																																																																																													v1094 = m.ExcPending
@@ -3264,7 +3264,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -3297,7 +3297,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												}
 																																																																																																																																																											}
 																																																																																																																																																										} else {
-																																																																																																																																																											F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																											F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1016 = m.ExcPending
 																																																																																																																																																											if v1016 != 0 {
@@ -3309,7 +3309,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1021 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																													v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																													v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1028 = m.ExcPending
@@ -3322,8 +3322,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1030 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																															v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																															v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1039 = m.ExcPending
@@ -3342,15 +3342,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1043 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																		v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																		v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																		v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1052 = m.ExcPending
 																																																																																																																																																																		if v1052 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																			v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1056 = m.ExcPending
@@ -3369,15 +3369,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1060 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																						v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																						v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																						v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1069 = m.ExcPending
 																																																																																																																																																																						if v1069 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																							v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																							v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1073 = m.ExcPending
@@ -3396,7 +3396,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1077 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																										v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																										v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																										if v1080 != 0 {
 																																																																																																																																																																											v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -3419,7 +3419,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																													if v1090 != 0 {
 																																																																																																																																																																														return int32(0)
 																																																																																																																																																																													} else {
-																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																														v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																														mBase = m.M
 																																																																																																																																																																														v1094 = m.ExcPending
@@ -3447,7 +3447,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																											if v1090 != 0 {
 																																																																																																																																																																												return int32(0)
 																																																																																																																																																																											} else {
-																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																												v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																												mBase = m.M
 																																																																																																																																																																												v1094 = m.ExcPending
@@ -3525,7 +3525,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																						if v818 != 0 {
 																																																																																																																							return int32(0)
 																																																																																																																						} else {
-																																																																																																																							v820 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																							v820 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																							if v820 != 0 {
 																																																																																																																								v823 = F_add_size(m, int32(0), int32(8))
 																																																																																																																								mBase = m.M
@@ -3533,7 +3533,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																								if v824 != 0 {
 																																																																																																																									return int32(0)
 																																																																																																																								} else {
-																																																																																																																									v826 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																									v826 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																									v828 = F_mul_size(m, v826, int32(56))
 																																																																																																																									mBase = m.M
 																																																																																																																									v829 = m.ExcPending
@@ -3553,7 +3553,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																											if v835 != 0 {
 																																																																																																																												return int32(0)
 																																																																																																																											} else {
-																																																																																																																												v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																												v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																												v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																												mBase = m.M
 																																																																																																																												v841 = m.ExcPending
@@ -3602,7 +3602,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																			if v860 != 0 {
 																																																																																																																																				return int32(0)
 																																																																																																																																			} else {
-																																																																																																																																				v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																				v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																				v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																				mBase = m.M
 																																																																																																																																				v866 = m.ExcPending
@@ -3622,7 +3622,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																							return int32(0)
 																																																																																																																																						} else {
 																																																																																																																																							v871 = int32(12)
-																																																																																																																																							v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																							v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																							v875 = F_mul_size(m, v873, v871)
 																																																																																																																																							mBase = m.M
 																																																																																																																																							v876 = m.ExcPending
@@ -3647,7 +3647,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																										if v883 != 0 {
 																																																																																																																																											return int32(0)
 																																																																																																																																										} else {
-																																																																																																																																											v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																											v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																											v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																											mBase = m.M
 																																																																																																																																											v888 = m.ExcPending
@@ -3660,7 +3660,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																												if v891 != 0 {
 																																																																																																																																													return int32(0)
 																																																																																																																																												} else {
-																																																																																																																																													v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																													v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																													v899 = int32(7)
 																																																																																																																																													v901 = int32(-8)
 																																																																																																																																													v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -3735,7 +3735,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								v969 = m.G0
 																																																																																																																																																								v971 = v969 - int32(48)
 																																																																																																																																																								m.G0 = v971
-																																																																																																																																																								v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																								v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																								if v974 != int32(-1) {
 																																																																																																																																																									v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																									mBase = m.M
@@ -3743,7 +3743,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1021 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																										v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1028 = m.ExcPending
@@ -3756,8 +3756,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1030 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																												v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1039 = m.ExcPending
@@ -3776,15 +3776,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1043 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1052 = m.ExcPending
 																																																																																																																																																															if v1052 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1056 = m.ExcPending
@@ -3803,15 +3803,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1060 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																			v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1069 = m.ExcPending
 																																																																																																																																																																			if v1069 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																				v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1073 = m.ExcPending
@@ -3830,7 +3830,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1077 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																							v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																							if v1080 != 0 {
 																																																																																																																																																																								v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -3853,7 +3853,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -3881,7 +3881,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1090 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																									v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1094 = m.ExcPending
@@ -3916,7 +3916,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								} else {
 																																																																																																																																																									v978 = int32(1)
 																																																																																																																																																									v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																									v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																									v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																									v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																									if v985 <= v978 {
 																																																																																																																																																										v988 = v978
@@ -3929,20 +3929,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										v991 = v988
 																																																																																																																																																									}
 																																																																																																																																																									*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																									v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																									v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v998 = m.ExcPending
 																																																																																																																																																									if v998 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
 																																																																																																																																																										v1002 = int32(1)
-																																																																																																																																																										F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																										F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1005 = m.ExcPending
 																																																																																																																																																										if v1005 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																											if v1007 != int32(-1) {
 																																																																																																																																																												v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																												mBase = m.M
@@ -3950,7 +3950,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1021 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																													v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																													v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1028 = m.ExcPending
@@ -3963,8 +3963,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1030 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																															v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																															v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1039 = m.ExcPending
@@ -3983,15 +3983,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1043 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																		v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																		v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																		v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1052 = m.ExcPending
 																																																																																																																																																																		if v1052 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																			v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1056 = m.ExcPending
@@ -4010,15 +4010,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1060 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																						v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																						v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																						v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1069 = m.ExcPending
 																																																																																																																																																																						if v1069 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																							v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																							v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1073 = m.ExcPending
@@ -4037,7 +4037,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1077 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																										v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																										v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																										if v1080 != 0 {
 																																																																																																																																																																											v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -4060,7 +4060,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																													if v1090 != 0 {
 																																																																																																																																																																														return int32(0)
 																																																																																																																																																																													} else {
-																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																														v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																														v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																														mBase = m.M
 																																																																																																																																																																														v1094 = m.ExcPending
@@ -4088,7 +4088,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																											if v1090 != 0 {
 																																																																																																																																																																												return int32(0)
 																																																																																																																																																																											} else {
-																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																												v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																												mBase = m.M
 																																																																																																																																																																												v1094 = m.ExcPending
@@ -4121,7 +4121,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													}
 																																																																																																																																																												}
 																																																																																																																																																											} else {
-																																																																																																																																																												F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																												F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1016 = m.ExcPending
 																																																																																																																																																												if v1016 != 0 {
@@ -4133,7 +4133,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1021 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																														v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																														v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1028 = m.ExcPending
@@ -4146,8 +4146,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1030 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																																v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																																v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1039 = m.ExcPending
@@ -4166,15 +4166,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1043 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																			v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																			v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																			v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1052 = m.ExcPending
 																																																																																																																																																																			if v1052 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																				v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1056 = m.ExcPending
@@ -4193,15 +4193,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1060 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																							v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																							v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																							v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																							v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1069 = m.ExcPending
 																																																																																																																																																																							if v1069 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																								v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																								v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1073 = m.ExcPending
@@ -4220,7 +4220,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1077 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																											v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																											v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																											if v1080 != 0 {
 																																																																																																																																																																												v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -4243,7 +4243,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																														if v1090 != 0 {
 																																																																																																																																																																															return int32(0)
 																																																																																																																																																																														} else {
-																																																																																																																																																																															v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																															v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																															v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																															mBase = m.M
 																																																																																																																																																																															v1094 = m.ExcPending
@@ -4271,7 +4271,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																												if v1090 != 0 {
 																																																																																																																																																																													return int32(0)
 																																																																																																																																																																												} else {
-																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																													v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																													mBase = m.M
 																																																																																																																																																																													v1094 = m.ExcPending
@@ -4348,7 +4348,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																								if v835 != 0 {
 																																																																																																																									return int32(0)
 																																																																																																																								} else {
-																																																																																																																									v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																									v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																									v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																									mBase = m.M
 																																																																																																																									v841 = m.ExcPending
@@ -4397,7 +4397,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																if v860 != 0 {
 																																																																																																																																	return int32(0)
 																																																																																																																																} else {
-																																																																																																																																	v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																	v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																	v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																	mBase = m.M
 																																																																																																																																	v866 = m.ExcPending
@@ -4417,7 +4417,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																				return int32(0)
 																																																																																																																																			} else {
 																																																																																																																																				v871 = int32(12)
-																																																																																																																																				v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																				v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																				v875 = F_mul_size(m, v873, v871)
 																																																																																																																																				mBase = m.M
 																																																																																																																																				v876 = m.ExcPending
@@ -4442,7 +4442,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																							if v883 != 0 {
 																																																																																																																																								return int32(0)
 																																																																																																																																							} else {
-																																																																																																																																								v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																								v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																								v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																								mBase = m.M
 																																																																																																																																								v888 = m.ExcPending
@@ -4455,7 +4455,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																									if v891 != 0 {
 																																																																																																																																										return int32(0)
 																																																																																																																																									} else {
-																																																																																																																																										v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																										v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																										v899 = int32(7)
 																																																																																																																																										v901 = int32(-8)
 																																																																																																																																										v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -4530,7 +4530,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					v969 = m.G0
 																																																																																																																																																					v971 = v969 - int32(48)
 																																																																																																																																																					m.G0 = v971
-																																																																																																																																																					v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																					v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																					if v974 != int32(-1) {
 																																																																																																																																																						v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																						mBase = m.M
@@ -4538,7 +4538,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						if v1021 != 0 {
 																																																																																																																																																							return int32(0)
 																																																																																																																																																						} else {
-																																																																																																																																																							v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																							v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																							v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v1028 = m.ExcPending
@@ -4551,8 +4551,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								if v1030 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																									v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																									v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																									v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																									v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1039 = m.ExcPending
@@ -4571,15 +4571,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1043 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																												v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1052 = m.ExcPending
 																																																																																																																																																												if v1052 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1056 = m.ExcPending
@@ -4598,15 +4598,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1060 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1069 = m.ExcPending
 																																																																																																																																																																if v1069 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																	v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1073 = m.ExcPending
@@ -4625,7 +4625,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1077 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																				v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																				v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																				if v1080 != 0 {
 																																																																																																																																																																					v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -4648,7 +4648,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1090 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																								v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1094 = m.ExcPending
@@ -4676,7 +4676,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1090 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																						v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1094 = m.ExcPending
@@ -4711,7 +4711,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					} else {
 																																																																																																																																																						v978 = int32(1)
 																																																																																																																																																						v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																						v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																						v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																						v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																						if v985 <= v978 {
 																																																																																																																																																							v988 = v978
@@ -4724,20 +4724,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							v991 = v988
 																																																																																																																																																						}
 																																																																																																																																																						*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																						v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																						v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																						mBase = m.M
 																																																																																																																																																						v998 = m.ExcPending
 																																																																																																																																																						if v998 != 0 {
 																																																																																																																																																							return int32(0)
 																																																																																																																																																						} else {
 																																																																																																																																																							v1002 = int32(1)
-																																																																																																																																																							F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																							F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v1005 = m.ExcPending
 																																																																																																																																																							if v1005 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																								v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																								if v1007 != int32(-1) {
 																																																																																																																																																									v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																									mBase = m.M
@@ -4745,7 +4745,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1021 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																										v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1028 = m.ExcPending
@@ -4758,8 +4758,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1030 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																												v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1039 = m.ExcPending
@@ -4778,15 +4778,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1043 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1052 = m.ExcPending
 																																																																																																																																																															if v1052 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1056 = m.ExcPending
@@ -4805,15 +4805,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1060 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																			v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1069 = m.ExcPending
 																																																																																																																																																																			if v1069 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																				v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1073 = m.ExcPending
@@ -4832,7 +4832,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1077 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																							v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																							if v1080 != 0 {
 																																																																																																																																																																								v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -4855,7 +4855,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -4883,7 +4883,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1090 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																									v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1094 = m.ExcPending
@@ -4916,7 +4916,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										}
 																																																																																																																																																									}
 																																																																																																																																																								} else {
-																																																																																																																																																									F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																									F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1016 = m.ExcPending
 																																																																																																																																																									if v1016 != 0 {
@@ -4928,7 +4928,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1021 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																											v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																											v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1028 = m.ExcPending
@@ -4941,8 +4941,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1030 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																													v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																													v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1039 = m.ExcPending
@@ -4961,15 +4961,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1043 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1052 = m.ExcPending
 																																																																																																																																																																if v1052 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																	v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1056 = m.ExcPending
@@ -4988,15 +4988,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1060 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																				v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																				v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																				v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1069 = m.ExcPending
 																																																																																																																																																																				if v1069 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																					v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1073 = m.ExcPending
@@ -5015,7 +5015,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1077 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																								v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																								v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																								if v1080 != 0 {
 																																																																																																																																																																									v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -5038,7 +5038,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																											if v1090 != 0 {
 																																																																																																																																																																												return int32(0)
 																																																																																																																																																																											} else {
-																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																												v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																												mBase = m.M
 																																																																																																																																																																												v1094 = m.ExcPending
@@ -5066,7 +5066,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1090 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																										v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1094 = m.ExcPending
@@ -5174,14 +5174,14 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																						if v702 != 0 {
 																																																																																							return int32(0)
 																																																																																						} else {
-																																																																																							v705 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																							v705 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																							v708 = F_mul_size(m, int32(408), v705+int32(38))
 																																																																																							mBase = m.M
 																																																																																							v709 = m.ExcPending
 																																																																																							if v709 != 0 {
 																																																																																								return int32(0)
 																																																																																							} else {
-																																																																																								v712 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																								v712 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																								v715 = F_mul_size(m, int32(64), v712+int32(38))
 																																																																																								mBase = m.M
 																																																																																								v716 = m.ExcPending
@@ -5194,7 +5194,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																									if v718 != 0 {
 																																																																																										return int32(0)
 																																																																																									} else {
-																																																																																										v721 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																										v721 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																										v724 = F_mul_size(m, int32(64), v721+int32(38))
 																																																																																										mBase = m.M
 																																																																																										v725 = m.ExcPending
@@ -5207,8 +5207,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																											if v727 != 0 {
 																																																																																												return int32(0)
 																																																																																											} else {
-																																																																																												v729 = *(*int32)(unsafe.Add(mBase, _consts[672]))
-																																																																																												v731 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																												v729 = *(*int32)(unsafe.Add(mBase, _consts[671]))
+																																																																																												v731 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																												v734 = F_mul_size(m, v729, v731+int32(38))
 																																																																																												mBase = m.M
 																																																																																												v735 = m.ExcPending
@@ -5227,7 +5227,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																														if v739 != 0 {
 																																																																																															return int32(0)
 																																																																																														} else {
-																																																																																															v743 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																															v743 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																															v746 = F_mul_size(m, int32(16), v743+int32(38))
 																																																																																															mBase = m.M
 																																																																																															v747 = m.ExcPending
@@ -5240,7 +5240,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																if v749 != 0 {
 																																																																																																	return int32(0)
 																																																																																																} else {
-																																																																																																	v752 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																	v752 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																	v755 = F_mul_size(m, int32(4), v752+int32(38))
 																																																																																																	mBase = m.M
 																																																																																																	v756 = m.ExcPending
@@ -5283,7 +5283,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																							if v770 != 0 {
 																																																																																																								return int32(0)
 																																																																																																							} else {
-																																																																																																								v772 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																								v772 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																								v776 = F_mul_size(m, v772+int32(38), int32(128))
 																																																																																																								mBase = m.M
 																																																																																																								v777 = m.ExcPending
@@ -5327,7 +5327,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																													if v796 != 0 {
 																																																																																																														return int32(0)
 																																																																																																													} else {
-																																																																																																														v799 = *(*int32)(unsafe.Add(mBase, _consts[432]))
+																																																																																																														v799 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 																																																																																																														v801 = F_mul_size(m, v799, int32(40))
 																																																																																																														mBase = m.M
 																																																																																																														v802 = m.ExcPending
@@ -5346,7 +5346,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																if v806 != 0 {
 																																																																																																																	return int32(0)
 																																																																																																																} else {
-																																																																																																																	v808 = *(*int32)(unsafe.Add(mBase, _consts[561]))
+																																																																																																																	v808 = *(*int32)(unsafe.Add(mBase, _consts[560]))
 																																																																																																																	if v808 != 0 {
 																																																																																																																		v811 = F_mul_size(m, v808, int32(288))
 																																																																																																																		mBase = m.M
@@ -5367,7 +5367,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																				if v818 != 0 {
 																																																																																																																					return int32(0)
 																																																																																																																				} else {
-																																																																																																																					v820 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																					v820 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																					if v820 != 0 {
 																																																																																																																						v823 = F_add_size(m, int32(0), int32(8))
 																																																																																																																						mBase = m.M
@@ -5375,7 +5375,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																						if v824 != 0 {
 																																																																																																																							return int32(0)
 																																																																																																																						} else {
-																																																																																																																							v826 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																							v826 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																							v828 = F_mul_size(m, v826, int32(56))
 																																																																																																																							mBase = m.M
 																																																																																																																							v829 = m.ExcPending
@@ -5395,7 +5395,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																									if v835 != 0 {
 																																																																																																																										return int32(0)
 																																																																																																																									} else {
-																																																																																																																										v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																										v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																										v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																										mBase = m.M
 																																																																																																																										v841 = m.ExcPending
@@ -5444,7 +5444,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																	if v860 != 0 {
 																																																																																																																																		return int32(0)
 																																																																																																																																	} else {
-																																																																																																																																		v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																		v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																		v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																		mBase = m.M
 																																																																																																																																		v866 = m.ExcPending
@@ -5464,7 +5464,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																					return int32(0)
 																																																																																																																																				} else {
 																																																																																																																																					v871 = int32(12)
-																																																																																																																																					v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																					v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																					v875 = F_mul_size(m, v873, v871)
 																																																																																																																																					mBase = m.M
 																																																																																																																																					v876 = m.ExcPending
@@ -5489,7 +5489,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																								if v883 != 0 {
 																																																																																																																																									return int32(0)
 																																																																																																																																								} else {
-																																																																																																																																									v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																									v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																									v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																									mBase = m.M
 																																																																																																																																									v888 = m.ExcPending
@@ -5502,7 +5502,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																										if v891 != 0 {
 																																																																																																																																											return int32(0)
 																																																																																																																																										} else {
-																																																																																																																																											v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																											v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																											v899 = int32(7)
 																																																																																																																																											v901 = int32(-8)
 																																																																																																																																											v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -5577,7 +5577,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						v969 = m.G0
 																																																																																																																																																						v971 = v969 - int32(48)
 																																																																																																																																																						m.G0 = v971
-																																																																																																																																																						v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																						v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																						if v974 != int32(-1) {
 																																																																																																																																																							v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																							mBase = m.M
@@ -5585,7 +5585,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							if v1021 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																								v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																								v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1028 = m.ExcPending
@@ -5598,8 +5598,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1030 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																										v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																										v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																										v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																										v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1039 = m.ExcPending
@@ -5618,15 +5618,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1043 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																													v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																													v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																													v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1052 = m.ExcPending
 																																																																																																																																																													if v1052 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																														v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1056 = m.ExcPending
@@ -5645,15 +5645,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1060 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																	v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																	v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																	v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1069 = m.ExcPending
 																																																																																																																																																																	if v1069 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1073 = m.ExcPending
@@ -5672,7 +5672,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1077 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																					v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																					v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																					if v1080 != 0 {
 																																																																																																																																																																						v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -5695,7 +5695,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1090 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																									v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1094 = m.ExcPending
@@ -5723,7 +5723,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1090 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																							v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1094 = m.ExcPending
@@ -5758,7 +5758,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						} else {
 																																																																																																																																																							v978 = int32(1)
 																																																																																																																																																							v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																							v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																							v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																							v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																							if v985 <= v978 {
 																																																																																																																																																								v988 = v978
@@ -5771,20 +5771,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								v991 = v988
 																																																																																																																																																							}
 																																																																																																																																																							*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																							v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																							v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v998 = m.ExcPending
 																																																																																																																																																							if v998 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
 																																																																																																																																																								v1002 = int32(1)
-																																																																																																																																																								F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																								F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1005 = m.ExcPending
 																																																																																																																																																								if v1005 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																									v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																									if v1007 != int32(-1) {
 																																																																																																																																																										v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																										mBase = m.M
@@ -5792,7 +5792,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1021 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																											v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																											v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1028 = m.ExcPending
@@ -5805,8 +5805,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1030 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																													v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																													v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1039 = m.ExcPending
@@ -5825,15 +5825,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1043 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1052 = m.ExcPending
 																																																																																																																																																																if v1052 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																	v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1056 = m.ExcPending
@@ -5852,15 +5852,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1060 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																				v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																				v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																				v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1069 = m.ExcPending
 																																																																																																																																																																				if v1069 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																					v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1073 = m.ExcPending
@@ -5879,7 +5879,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1077 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																								v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																								v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																								if v1080 != 0 {
 																																																																																																																																																																									v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -5902,7 +5902,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																											if v1090 != 0 {
 																																																																																																																																																																												return int32(0)
 																																																																																																																																																																											} else {
-																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																												v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																												v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																												mBase = m.M
 																																																																																																																																																																												v1094 = m.ExcPending
@@ -5930,7 +5930,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1090 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																										v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1094 = m.ExcPending
@@ -5963,7 +5963,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											}
 																																																																																																																																																										}
 																																																																																																																																																									} else {
-																																																																																																																																																										F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																										F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1016 = m.ExcPending
 																																																																																																																																																										if v1016 != 0 {
@@ -5975,7 +5975,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1021 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1028 = m.ExcPending
@@ -5988,8 +5988,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1030 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																														v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																														v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1039 = m.ExcPending
@@ -6008,15 +6008,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1043 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																	v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																	v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1052 = m.ExcPending
 																																																																																																																																																																	if v1052 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1056 = m.ExcPending
@@ -6035,15 +6035,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1060 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																					v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																					v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																					v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1069 = m.ExcPending
 																																																																																																																																																																					if v1069 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																						v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																						v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1073 = m.ExcPending
@@ -6062,7 +6062,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1077 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																									v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																									v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																									if v1080 != 0 {
 																																																																																																																																																																										v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -6085,7 +6085,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																												if v1090 != 0 {
 																																																																																																																																																																													return int32(0)
 																																																																																																																																																																												} else {
-																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																													v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																													v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																													mBase = m.M
 																																																																																																																																																																													v1094 = m.ExcPending
@@ -6113,7 +6113,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -6190,7 +6190,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																						if v835 != 0 {
 																																																																																																																							return int32(0)
 																																																																																																																						} else {
-																																																																																																																							v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																							v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																							v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																							mBase = m.M
 																																																																																																																							v841 = m.ExcPending
@@ -6239,7 +6239,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																														if v860 != 0 {
 																																																																																																																															return int32(0)
 																																																																																																																														} else {
-																																																																																																																															v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																															v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																															v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																															mBase = m.M
 																																																																																																																															v866 = m.ExcPending
@@ -6259,7 +6259,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																		return int32(0)
 																																																																																																																																	} else {
 																																																																																																																																		v871 = int32(12)
-																																																																																																																																		v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																		v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																		v875 = F_mul_size(m, v873, v871)
 																																																																																																																																		mBase = m.M
 																																																																																																																																		v876 = m.ExcPending
@@ -6284,7 +6284,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																					if v883 != 0 {
 																																																																																																																																						return int32(0)
 																																																																																																																																					} else {
-																																																																																																																																						v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																						v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																						v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																						mBase = m.M
 																																																																																																																																						v888 = m.ExcPending
@@ -6297,7 +6297,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																							if v891 != 0 {
 																																																																																																																																								return int32(0)
 																																																																																																																																							} else {
-																																																																																																																																								v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																								v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																								v899 = int32(7)
 																																																																																																																																								v901 = int32(-8)
 																																																																																																																																								v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -6372,7 +6372,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																			v969 = m.G0
 																																																																																																																																																			v971 = v969 - int32(48)
 																																																																																																																																																			m.G0 = v971
-																																																																																																																																																			v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																			v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																			if v974 != int32(-1) {
 																																																																																																																																																				v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																				mBase = m.M
@@ -6380,7 +6380,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																				if v1021 != 0 {
 																																																																																																																																																					return int32(0)
 																																																																																																																																																				} else {
-																																																																																																																																																					v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																					v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																					v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v1028 = m.ExcPending
@@ -6393,8 +6393,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						if v1030 != 0 {
 																																																																																																																																																							return int32(0)
 																																																																																																																																																						} else {
-																																																																																																																																																							v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																							v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																							v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																							v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																							v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v1039 = m.ExcPending
@@ -6413,15 +6413,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1043 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																										v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																										v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																										v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																										v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1052 = m.ExcPending
 																																																																																																																																																										if v1052 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																											v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1056 = m.ExcPending
@@ -6440,15 +6440,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1060 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																														v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																														v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																														v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1069 = m.ExcPending
 																																																																																																																																																														if v1069 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1073 = m.ExcPending
@@ -6467,7 +6467,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1077 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																		v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																		v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																		if v1080 != 0 {
 																																																																																																																																																																			v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -6490,7 +6490,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1090 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																						v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1094 = m.ExcPending
@@ -6518,7 +6518,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1090 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																				v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																				v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1094 = m.ExcPending
@@ -6553,7 +6553,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																			} else {
 																																																																																																																																																				v978 = int32(1)
 																																																																																																																																																				v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																				v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																				v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																				v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																				if v985 <= v978 {
 																																																																																																																																																					v988 = v978
@@ -6566,20 +6566,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					v991 = v988
 																																																																																																																																																				}
 																																																																																																																																																				*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																				v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																				v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																				mBase = m.M
 																																																																																																																																																				v998 = m.ExcPending
 																																																																																																																																																				if v998 != 0 {
 																																																																																																																																																					return int32(0)
 																																																																																																																																																				} else {
 																																																																																																																																																					v1002 = int32(1)
-																																																																																																																																																					F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																					F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v1005 = m.ExcPending
 																																																																																																																																																					if v1005 != 0 {
 																																																																																																																																																						return int32(0)
 																																																																																																																																																					} else {
-																																																																																																																																																						v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																						v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																						if v1007 != int32(-1) {
 																																																																																																																																																							v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																							mBase = m.M
@@ -6587,7 +6587,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							if v1021 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																								v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																								v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1028 = m.ExcPending
@@ -6600,8 +6600,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1030 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																										v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																										v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																										v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																										v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1039 = m.ExcPending
@@ -6620,15 +6620,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																												if v1043 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																													v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																													v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																													v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1052 = m.ExcPending
 																																																																																																																																																													if v1052 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																														v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1056 = m.ExcPending
@@ -6647,15 +6647,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																if v1060 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																	v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																	v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																	v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1069 = m.ExcPending
 																																																																																																																																																																	if v1069 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																		v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1073 = m.ExcPending
@@ -6674,7 +6674,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1077 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																					v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																					v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																					if v1080 != 0 {
 																																																																																																																																																																						v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -6697,7 +6697,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1090 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																									v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1094 = m.ExcPending
@@ -6725,7 +6725,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1090 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																							v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1094 = m.ExcPending
@@ -6758,7 +6758,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								}
 																																																																																																																																																							}
 																																																																																																																																																						} else {
-																																																																																																																																																							F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																							F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v1016 = m.ExcPending
 																																																																																																																																																							if v1016 != 0 {
@@ -6770,7 +6770,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								if v1021 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																									v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1028 = m.ExcPending
@@ -6783,8 +6783,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1030 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																											v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1039 = m.ExcPending
@@ -6803,15 +6803,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1043 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																														v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1052 = m.ExcPending
 																																																																																																																																																														if v1052 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1056 = m.ExcPending
@@ -6830,15 +6830,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1060 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																		v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1069 = m.ExcPending
 																																																																																																																																																																		if v1069 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																			v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1073 = m.ExcPending
@@ -6857,7 +6857,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1077 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																						v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																						if v1080 != 0 {
 																																																																																																																																																																							v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -6880,7 +6880,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1090 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																										v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1094 = m.ExcPending
@@ -6908,7 +6908,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1090 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																								v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1094 = m.ExcPending
@@ -6986,7 +6986,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																		if v818 != 0 {
 																																																																																																																			return int32(0)
 																																																																																																																		} else {
-																																																																																																																			v820 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																			v820 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																			if v820 != 0 {
 																																																																																																																				v823 = F_add_size(m, int32(0), int32(8))
 																																																																																																																				mBase = m.M
@@ -6994,7 +6994,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																				if v824 != 0 {
 																																																																																																																					return int32(0)
 																																																																																																																				} else {
-																																																																																																																					v826 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+																																																																																																																					v826 = *(*int32)(unsafe.Add(mBase, _consts[519]))
 																																																																																																																					v828 = F_mul_size(m, v826, int32(56))
 																																																																																																																					mBase = m.M
 																																																																																																																					v829 = m.ExcPending
@@ -7014,7 +7014,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																							if v835 != 0 {
 																																																																																																																								return int32(0)
 																																																																																																																							} else {
-																																																																																																																								v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																								v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																								v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																								mBase = m.M
 																																																																																																																								v841 = m.ExcPending
@@ -7063,7 +7063,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																															if v860 != 0 {
 																																																																																																																																return int32(0)
 																																																																																																																															} else {
-																																																																																																																																v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																																v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																																v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																																mBase = m.M
 																																																																																																																																v866 = m.ExcPending
@@ -7083,7 +7083,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																			return int32(0)
 																																																																																																																																		} else {
 																																																																																																																																			v871 = int32(12)
-																																																																																																																																			v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																			v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																			v875 = F_mul_size(m, v873, v871)
 																																																																																																																																			mBase = m.M
 																																																																																																																																			v876 = m.ExcPending
@@ -7108,7 +7108,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																						if v883 != 0 {
 																																																																																																																																							return int32(0)
 																																																																																																																																						} else {
-																																																																																																																																							v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																							v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																							v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																							mBase = m.M
 																																																																																																																																							v888 = m.ExcPending
@@ -7121,7 +7121,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																								if v891 != 0 {
 																																																																																																																																									return int32(0)
 																																																																																																																																								} else {
-																																																																																																																																									v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																									v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																									v899 = int32(7)
 																																																																																																																																									v901 = int32(-8)
 																																																																																																																																									v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -7196,7 +7196,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																				v969 = m.G0
 																																																																																																																																																				v971 = v969 - int32(48)
 																																																																																																																																																				m.G0 = v971
-																																																																																																																																																				v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																				v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																				if v974 != int32(-1) {
 																																																																																																																																																					v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																					mBase = m.M
@@ -7204,7 +7204,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					if v1021 != 0 {
 																																																																																																																																																						return int32(0)
 																																																																																																																																																					} else {
-																																																																																																																																																						v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																						v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																						v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																						mBase = m.M
 																																																																																																																																																						v1028 = m.ExcPending
@@ -7217,8 +7217,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							if v1030 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																								v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																								v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																								v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																								v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1039 = m.ExcPending
@@ -7237,15 +7237,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1043 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																											v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																											v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																											v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1052 = m.ExcPending
 																																																																																																																																																											if v1052 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																												v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1056 = m.ExcPending
@@ -7264,15 +7264,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1060 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																															v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1069 = m.ExcPending
 																																																																																																																																																															if v1069 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1073 = m.ExcPending
@@ -7291,7 +7291,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1077 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																			v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																			v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																			if v1080 != 0 {
 																																																																																																																																																																				v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -7314,7 +7314,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1090 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																							v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1094 = m.ExcPending
@@ -7342,7 +7342,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1090 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																					v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																					v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1094 = m.ExcPending
@@ -7377,7 +7377,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																				} else {
 																																																																																																																																																					v978 = int32(1)
 																																																																																																																																																					v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																					v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																					v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																					v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																					if v985 <= v978 {
 																																																																																																																																																						v988 = v978
@@ -7390,20 +7390,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						v991 = v988
 																																																																																																																																																					}
 																																																																																																																																																					*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																					v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																					v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v998 = m.ExcPending
 																																																																																																																																																					if v998 != 0 {
 																																																																																																																																																						return int32(0)
 																																																																																																																																																					} else {
 																																																																																																																																																						v1002 = int32(1)
-																																																																																																																																																						F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																						F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																						mBase = m.M
 																																																																																																																																																						v1005 = m.ExcPending
 																																																																																																																																																						if v1005 != 0 {
 																																																																																																																																																							return int32(0)
 																																																																																																																																																						} else {
-																																																																																																																																																							v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																							v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																							if v1007 != int32(-1) {
 																																																																																																																																																								v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																								mBase = m.M
@@ -7411,7 +7411,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								if v1021 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																									v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																									v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1028 = m.ExcPending
@@ -7424,8 +7424,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1030 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																											v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																											v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1039 = m.ExcPending
@@ -7444,15 +7444,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																													if v1043 != 0 {
 																																																																																																																																																														return int32(0)
 																																																																																																																																																													} else {
-																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																														v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																														v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																														v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																														mBase = m.M
 																																																																																																																																																														v1052 = m.ExcPending
 																																																																																																																																																														if v1052 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																															v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1056 = m.ExcPending
@@ -7471,15 +7471,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1060 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																		v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																		v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																		v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1069 = m.ExcPending
 																																																																																																																																																																		if v1069 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																			v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1073 = m.ExcPending
@@ -7498,7 +7498,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1077 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																						v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																						v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																						if v1080 != 0 {
 																																																																																																																																																																							v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -7521,7 +7521,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																									if v1090 != 0 {
 																																																																																																																																																																										return int32(0)
 																																																																																																																																																																									} else {
-																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																										v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																										v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																										mBase = m.M
 																																																																																																																																																																										v1094 = m.ExcPending
@@ -7549,7 +7549,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1090 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																								v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1094 = m.ExcPending
@@ -7582,7 +7582,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									}
 																																																																																																																																																								}
 																																																																																																																																																							} else {
-																																																																																																																																																								F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																								F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1016 = m.ExcPending
 																																																																																																																																																								if v1016 != 0 {
@@ -7594,7 +7594,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																									if v1021 != 0 {
 																																																																																																																																																										return int32(0)
 																																																																																																																																																									} else {
-																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																										v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																										v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																										mBase = m.M
 																																																																																																																																																										v1028 = m.ExcPending
@@ -7607,8 +7607,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1030 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																												v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																												v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1039 = m.ExcPending
@@ -7627,15 +7627,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1043 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1052 = m.ExcPending
 																																																																																																																																																															if v1052 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1056 = m.ExcPending
@@ -7654,15 +7654,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1060 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																			v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																			v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																			v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																			mBase = m.M
 																																																																																																																																																																			v1069 = m.ExcPending
 																																																																																																																																																																			if v1069 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																				v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																				v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1073 = m.ExcPending
@@ -7681,7 +7681,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1077 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																							v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																							v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																							if v1080 != 0 {
 																																																																																																																																																																								v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -7704,7 +7704,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																										if v1090 != 0 {
 																																																																																																																																																																											return int32(0)
 																																																																																																																																																																										} else {
-																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																											v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																											v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																											mBase = m.M
 																																																																																																																																																																											v1094 = m.ExcPending
@@ -7732,7 +7732,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																								if v1090 != 0 {
 																																																																																																																																																																									return int32(0)
 																																																																																																																																																																								} else {
-																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																									v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																									v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																									mBase = m.M
 																																																																																																																																																																									v1094 = m.ExcPending
@@ -7809,7 +7809,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																				if v835 != 0 {
 																																																																																																																					return int32(0)
 																																																																																																																				} else {
-																																																																																																																					v838 = *(*int32)(unsafe.Add(mBase, _consts[436]))
+																																																																																																																					v838 = *(*int32)(unsafe.Add(mBase, _consts[435]))
 																																																																																																																					v840 = F_mul_size(m, v838, int32(96))
 																																																																																																																					mBase = m.M
 																																																																																																																					v841 = m.ExcPending
@@ -7858,7 +7858,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																												if v860 != 0 {
 																																																																																																																													return int32(0)
 																																																																																																																												} else {
-																																																																																																																													v863 = *(*int32)(unsafe.Add(mBase, _consts[514]))
+																																																																																																																													v863 = *(*int32)(unsafe.Add(mBase, _consts[513]))
 																																																																																																																													v865 = F_mul_size(m, v863, int32(112))
 																																																																																																																													mBase = m.M
 																																																																																																																													v866 = m.ExcPending
@@ -7878,7 +7878,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																return int32(0)
 																																																																																																																															} else {
 																																																																																																																																v871 = int32(12)
-																																																																																																																																v873 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																v873 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																v875 = F_mul_size(m, v873, v871)
 																																																																																																																																mBase = m.M
 																																																																																																																																v876 = m.ExcPending
@@ -7903,7 +7903,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																			if v883 != 0 {
 																																																																																																																																				return int32(0)
 																																																																																																																																			} else {
-																																																																																																																																				v885 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																				v885 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																				v887 = F_mul_size(m, v885, int32(32))
 																																																																																																																																				mBase = m.M
 																																																																																																																																				v888 = m.ExcPending
@@ -7916,7 +7916,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																					if v891 != 0 {
 																																																																																																																																						return int32(0)
 																																																																																																																																					} else {
-																																																																																																																																						v893 = *(*int32)(unsafe.Add(mBase, _consts[673]))
+																																																																																																																																						v893 = *(*int32)(unsafe.Add(mBase, _consts[672]))
 																																																																																																																																						v899 = int32(7)
 																																																																																																																																						v901 = int32(-8)
 																																																																																																																																						v902 = (v893<<(uint(int32(2))%32) + v899) & v901
@@ -7991,7 +7991,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																	v969 = m.G0
 																																																																																																																																																	v971 = v969 - int32(48)
 																																																																																																																																																	m.G0 = v971
-																																																																																																																																																	v974 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																	v974 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																	if v974 != int32(-1) {
 																																																																																																																																																		v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																		mBase = m.M
@@ -7999,7 +7999,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																		if v1021 != 0 {
 																																																																																																																																																			return int32(0)
 																																																																																																																																																		} else {
-																																																																																																																																																			v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																			v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																			v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																			mBase = m.M
 																																																																																																																																																			v1028 = m.ExcPending
@@ -8012,8 +8012,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																				if v1030 != 0 {
 																																																																																																																																																					return int32(0)
 																																																																																																																																																				} else {
-																																																																																																																																																					v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																					v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																					v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																					v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																					v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v1039 = m.ExcPending
@@ -8032,15 +8032,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							if v1043 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																								v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																								v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																								v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																								v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1052 = m.ExcPending
 																																																																																																																																																								if v1052 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																									v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																									v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1056 = m.ExcPending
@@ -8059,15 +8059,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1060 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																												v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1069 = m.ExcPending
 																																																																																																																																																												if v1069 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1073 = m.ExcPending
@@ -8086,7 +8086,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1077 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																if v1080 != 0 {
 																																																																																																																																																																	v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -8109,7 +8109,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1090 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																				v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																				v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																				mBase = m.M
 																																																																																																																																																																				v1094 = m.ExcPending
@@ -8137,7 +8137,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																	if v1090 != 0 {
 																																																																																																																																																																		return int32(0)
 																																																																																																																																																																	} else {
-																																																																																																																																																																		v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																		v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																		v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																		mBase = m.M
 																																																																																																																																																																		v1094 = m.ExcPending
@@ -8172,7 +8172,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																	} else {
 																																																																																																																																																		v978 = int32(1)
 																																																																																																																																																		v980 = *(*int32)(unsafe.Add(mBase, _consts[34]))
-																																																																																																																																																		v982 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																		v982 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																		v985 = base.I32_div_u_s(v980, v982+int32(38))
 																																																																																																																																																		if v985 <= v978 {
 																																																																																																																																																			v988 = v978
@@ -8185,20 +8185,20 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																			v991 = v988
 																																																																																																																																																		}
 																																																																																																																																																		*(*int32)(unsafe.Add(mBase, uint32(v971))) = v991
-																																																																																																																																																		v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(465932), v971)
+																																																																																																																																																		v997 = F_pg_snprintf(m, v971+int32(16), int32(32), int32(467292), v971)
 																																																																																																																																																		mBase = m.M
 																																																																																																																																																		v998 = m.ExcPending
 																																																																																																																																																		if v998 != 0 {
 																																																																																																																																																			return int32(0)
 																																																																																																																																																		} else {
 																																																																																																																																																			v1002 = int32(1)
-																																																																																																																																																			F_SetConfigOption(m, int32(21580), v971+int32(16), v1002, v1002)
+																																																																																																																																																			F_SetConfigOption(m, int32(21680), v971+int32(16), v1002, v1002)
 																																																																																																																																																			mBase = m.M
 																																																																																																																																																			v1005 = m.ExcPending
 																																																																																																																																																			if v1005 != 0 {
 																																																																																																																																																				return int32(0)
 																																																																																																																																																			} else {
-																																																																																																																																																				v1007 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																				v1007 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																				if v1007 != int32(-1) {
 																																																																																																																																																					v1020 = F_add_size(m, int32(0), int32(28))
 																																																																																																																																																					mBase = m.M
@@ -8206,7 +8206,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																					if v1021 != 0 {
 																																																																																																																																																						return int32(0)
 																																																																																																																																																					} else {
-																																																																																																																																																						v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																						v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																						v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																						mBase = m.M
 																																																																																																																																																						v1028 = m.ExcPending
@@ -8219,8 +8219,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																							if v1030 != 0 {
 																																																																																																																																																								return int32(0)
 																																																																																																																																																							} else {
-																																																																																																																																																								v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																								v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																								v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																								v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																								v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																								mBase = m.M
 																																																																																																																																																								v1039 = m.ExcPending
@@ -8239,15 +8239,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																										if v1043 != 0 {
 																																																																																																																																																											return int32(0)
 																																																																																																																																																										} else {
-																																																																																																																																																											v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																											v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																											v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																											v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																											v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																											mBase = m.M
 																																																																																																																																																											v1052 = m.ExcPending
 																																																																																																																																																											if v1052 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																												v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1056 = m.ExcPending
@@ -8266,15 +8266,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																														if v1060 != 0 {
 																																																																																																																																																															return int32(0)
 																																																																																																																																																														} else {
-																																																																																																																																																															v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																															v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																															v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																															v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																															v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																															mBase = m.M
 																																																																																																																																																															v1069 = m.ExcPending
 																																																																																																																																																															if v1069 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1073 = m.ExcPending
@@ -8293,7 +8293,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																		if v1077 != 0 {
 																																																																																																																																																																			return int32(0)
 																																																																																																																																																																		} else {
-																																																																																																																																																																			v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																			v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																			v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																			if v1080 != 0 {
 																																																																																																																																																																				v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -8316,7 +8316,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																						if v1090 != 0 {
 																																																																																																																																																																							return int32(0)
 																																																																																																																																																																						} else {
-																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																							v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																							v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																							mBase = m.M
 																																																																																																																																																																							v1094 = m.ExcPending
@@ -8344,7 +8344,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																				if v1090 != 0 {
 																																																																																																																																																																					return int32(0)
 																																																																																																																																																																				} else {
-																																																																																																																																																																					v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																					v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																					v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																					mBase = m.M
 																																																																																																																																																																					v1094 = m.ExcPending
@@ -8377,7 +8377,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						}
 																																																																																																																																																					}
 																																																																																																																																																				} else {
-																																																																																																																																																					F_SetConfigOption(m, int32(21580), v971+int32(16), int32(1), int32(10))
+																																																																																																																																																					F_SetConfigOption(m, int32(21680), v971+int32(16), int32(1), int32(10))
 																																																																																																																																																					mBase = m.M
 																																																																																																																																																					v1016 = m.ExcPending
 																																																																																																																																																					if v1016 != 0 {
@@ -8389,7 +8389,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																						if v1021 != 0 {
 																																																																																																																																																							return int32(0)
 																																																																																																																																																						} else {
-																																																																																																																																																							v1023 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																							v1023 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																							v1027 = F_mul_size(m, v1023+int32(38), int32(164))
 																																																																																																																																																							mBase = m.M
 																																																																																																																																																							v1028 = m.ExcPending
@@ -8402,8 +8402,8 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																								if v1030 != 0 {
 																																																																																																																																																									return int32(0)
 																																																																																																																																																								} else {
-																																																																																																																																																									v1032 = *(*int32)(unsafe.Add(mBase, _consts[661]))
-																																																																																																																																																									v1036 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																									v1032 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+																																																																																																																																																									v1036 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																									v1038 = F_mul_size(m, v1036, int32(128))
 																																																																																																																																																									mBase = m.M
 																																																																																																																																																									v1039 = m.ExcPending
@@ -8422,15 +8422,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																											if v1043 != 0 {
 																																																																																																																																																												return int32(0)
 																																																																																																																																																											} else {
-																																																																																																																																																												v1046 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																												v1048 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																												v1046 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																												v1048 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																												v1051 = F_mul_size(m, v1046, v1048+int32(38))
 																																																																																																																																																												mBase = m.M
 																																																																																																																																																												v1052 = m.ExcPending
 																																																																																																																																																												if v1052 != 0 {
 																																																																																																																																																													return int32(0)
 																																																																																																																																																												} else {
-																																																																																																																																																													v1054 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																													v1054 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																													v1055 = F_mul_size(m, v1051, v1054)
 																																																																																																																																																													mBase = m.M
 																																																																																																																																																													v1056 = m.ExcPending
@@ -8449,15 +8449,15 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																															if v1060 != 0 {
 																																																																																																																																																																return int32(0)
 																																																																																																																																																															} else {
-																																																																																																																																																																v1063 = *(*int32)(unsafe.Add(mBase, _consts[675]))
-																																																																																																																																																																v1065 = *(*int32)(unsafe.Add(mBase, _consts[661]))
+																																																																																																																																																																v1063 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																v1065 = *(*int32)(unsafe.Add(mBase, _consts[660]))
 																																																																																																																																																																v1068 = F_mul_size(m, v1063, v1065+int32(38))
 																																																																																																																																																																mBase = m.M
 																																																																																																																																																																v1069 = m.ExcPending
 																																																																																																																																																																if v1069 != 0 {
 																																																																																																																																																																	return int32(0)
 																																																																																																																																																																} else {
-																																																																																																																																																																	v1071 = *(*int32)(unsafe.Add(mBase, _consts[674]))
+																																																																																																																																																																	v1071 = *(*int32)(unsafe.Add(mBase, _consts[673]))
 																																																																																																																																																																	v1072 = F_mul_size(m, v1068, v1071)
 																																																																																																																																																																	mBase = m.M
 																																																																																																																																																																	v1073 = m.ExcPending
@@ -8476,7 +8476,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																			if v1077 != 0 {
 																																																																																																																																																																				return int32(0)
 																																																																																																																																																																			} else {
-																																																																																																																																																																				v1079 = *(*int32)(unsafe.Add(mBase, _consts[601]))
+																																																																																																																																																																				v1079 = *(*int32)(unsafe.Add(mBase, _consts[600]))
 																																																																																																																																																																				v1080 = *(*int32)(unsafe.Add(mBase, uint32(v1079)+4))
 																																																																																																																																																																				if v1080 != 0 {
 																																																																																																																																																																					v1081 = m.T0[v1080].(func(*base.Module) int32)(m)
@@ -8499,7 +8499,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																							if v1090 != 0 {
 																																																																																																																																																																								return int32(0)
 																																																																																																																																																																							} else {
-																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																								v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																								v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																								mBase = m.M
 																																																																																																																																																																								v1094 = m.ExcPending
@@ -8527,7 +8527,7 @@ func F_CalculateShmemSize(m *base.Module, l0 int32) int32 {
 																																																																																																																																																																					if v1090 != 0 {
 																																																																																																																																																																						return int32(0)
 																																																																																																																																																																					} else {
-																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[676]))
+																																																																																																																																																																						v1092 = *(*int32)(unsafe.Add(mBase, _consts[675]))
 																																																																																																																																																																						v1093 = F_add_size(m, v1089, v1092)
 																																																																																																																																																																						mBase = m.M
 																																																																																																																																																																						v1094 = m.ExcPending

@@ -455,7 +455,7 @@ func F_BumpStats(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int3
 		*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v54
 		*(*int32)(unsafe.Add(mBase, uint32(v15))) = v53
 		*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v53 - v54
-		v67 = F_pg_snprintf(m, v15+int32(16), int32(200), int32(428200), v15)
+		v67 = F_pg_snprintf(m, v15+int32(16), int32(200), int32(429560), v15)
 		mBase = m.M
 		v68 = m.ExcPending
 		if v68 != 0 {

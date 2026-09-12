@@ -3186,8 +3186,8 @@ func F_TimestampDifference(m *base.Module, l0 int64, l1 int64, l2 int32, l3 int3
 func F_timestamptz_to_str(m *base.Module, l0 int64) int32
 //go:linkname F_interval_um_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_interval_um_internal
 func F_interval_um_internal(m *base.Module, l0 int32, l1 int32)
-//go:linkname F_hemdistcache github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hemdistcache
-func F_hemdistcache(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_hemdistcache_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hemdistcache_1
+func F_hemdistcache_1(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_findoprnd_recurse github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_findoprnd_recurse
 func F_findoprnd_recurse(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_infix github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_infix
@@ -4246,6 +4246,12 @@ func F_px_THROW_ERROR(m *base.Module, l0 int32)
 func F_px_debug(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_citextcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_citextcmp
 func F_citextcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_gin_extract_query_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_trgm
+func F_gin_extract_query_trgm(m *base.Module, l0 int32) int32
+//go:linkname F_index_strategy_get_limit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_index_strategy_get_limit
+func F_index_strategy_get_limit(m *base.Module, l0 int32) float64
+//go:linkname F_generate_trgm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_generate_trgm
+func F_generate_trgm(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

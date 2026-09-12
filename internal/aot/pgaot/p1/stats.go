@@ -12,10 +12,10 @@ func F_assign_stats_fetch_consistency(m *base.Module, l0 int32, l1 int32) {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[925]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[926]))
 	if l0 != v4 {
 		v7 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[932])) = uint8(v7)
+		*(*uint8)(unsafe.Add(mBase, _consts[933])) = uint8(v7)
 	} else {
 	}
 	return
@@ -290,13 +290,13 @@ func F_set_stats_slot(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v20))) = v77 + int32(1)
-			F_errmsg(m, int32(465324), v20)
+			F_errmsg(m, int32(466684), v20)
 			mBase = m.M
 			v165 = m.ExcPending
 			if v165 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(470831), int32(782), int32(80372))
+				F_errfinish(m, int32(472203), int32(782), int32(80608))
 				mBase = m.M
 				v170 = m.ExcPending
 				if v170 != 0 {
@@ -351,13 +351,13 @@ func F_stats_check_required_arg(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(l1+v10)))
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v23
-				F_errmsg(m, int32(288541), v7)
+				F_errmsg(m, int32(289723), v7)
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(471123), int32(48), int32(310785))
+					F_errfinish(m, int32(472495), int32(48), int32(311986))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

@@ -18,7 +18,7 @@ func F_bytea_sortsupport(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v14 int32
 	_ = v14
-	v3 = int32(4442992)
+	v3 = int32(4443856)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))

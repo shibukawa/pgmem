@@ -211,7 +211,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v92
-	F_errmsg_internal(m, int32(189092), v7)
+	F_errmsg_internal(m, int32(189612), v7)
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -221,7 +221,7 @@ L23:
 	}
 L24:
 	;
-	v92 = int32(12790)
+	v92 = int32(12890)
 	goto L23
 L25:
 	;
@@ -236,11 +236,11 @@ L26:
 	}
 L27:
 	;
-	v87 = int32(289806)
+	v87 = int32(290988)
 	goto L29
 L28:
 	;
-	v87 = int32(121034)
+	v87 = int32(121505)
 	goto L29
 L29:
 	;
@@ -251,7 +251,7 @@ L29:
 	}
 L30:
 	;
-	v90 = int32(12790)
+	v90 = int32(12890)
 	goto L32
 L31:
 	;
@@ -263,7 +263,7 @@ L32:
 	goto L23
 L33:
 	;
-	F_errfinish(m, int32(469983), int32(393), int32(74185))
+	F_errfinish(m, int32(471355), int32(393), int32(74421))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -844,7 +844,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			if v50 != 0 {
 				if v46 == int32(0) {
-					v57 = int32(4442992)
+					v57 = int32(4443856)
 					v58 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 					v60 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[9])) = v60
@@ -908,13 +908,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 						if v145 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(58852), int32(0))
+							F_errmsg_internal(m, int32(59044), int32(0))
 							mBase = m.M
 							v149 = m.ExcPending
 							if v149 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(476976), int32(5432), int32(336934))
+								F_errfinish(m, int32(478374), int32(5432), int32(338135))
 								mBase = m.M
 								v154 = m.ExcPending
 								if v154 != 0 {
@@ -927,7 +927,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							}
 						}
 					} else {
-						v96 = int32(4442992)
+						v96 = int32(4443856)
 						v97 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 						v99 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
 						*(*int32)(unsafe.Add(mBase, _consts[9])) = v99
@@ -1004,13 +1004,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 		if v132 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(58468), int32(0))
+			F_errmsg_internal(m, int32(58660), int32(0))
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(476976), int32(5509), int32(356211))
+				F_errfinish(m, int32(478374), int32(5509), int32(357412))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {

@@ -36,15 +36,15 @@ func F_HoldPortal(m *base.Module, l0 int32) {
 	_ = v35
 	var v38 int32
 	_ = v38
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
-	v10 = F_AllocSetContextCreateInternal(m, v5, int32(59862), int32(0), int32(8192), int32(8388608))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1237]))
+	v10 = F_AllocSetContextCreateInternal(m, v5, int32(60054), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+108)) = v10
-		v13 = int32(4442992)
+		v13 = int32(4443856)
 		v14 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 		*(*int32)(unsafe.Add(mBase, _consts[9])) = v10
 		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+76))
@@ -156,7 +156,7 @@ func F_has_largeobject_privilege_id(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				if v25 != 0 {
-					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
+					v29 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1034])))
 					if v29 != 0 {
 						v38 = int32(1)
 						return v38
@@ -538,7 +538,7 @@ L3:
 	}
 L4:
 	;
-	v232 = int32(4437652)
+	v232 = int32(4438516)
 	v234 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v234 + int32(1)
 	v239 = v220 + int32(32)
@@ -900,7 +900,7 @@ L56:
 	}
 L57:
 	;
-	v307 = int32(4437652)
+	v307 = int32(4438516)
 	v309 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v309 - int32(1)
 	v313 = *(*int32)(unsafe.Add(mBase, uint32(v21)+12))
@@ -5328,13 +5328,13 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 									if v1184 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg_internal(m, int32(92121), int32(0))
+										F_errmsg_internal(m, int32(92453), int32(0))
 										mBase = m.M
 										v1188 = m.ExcPending
 										if v1188 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(476855), int32(306), int32(59999))
+											F_errfinish(m, int32(478253), int32(306), int32(60191))
 											mBase = m.M
 											v1193 = m.ExcPending
 											if v1193 != 0 {
@@ -5872,19 +5872,19 @@ func F_hashtext(m *base.Module, l0 int32) int32 {
 				if v1167 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(319165), int32(0))
+					F_errmsg(m, int32(320366), int32(0))
 					mBase = m.M
 					v1171 = m.ExcPending
 					if v1171 != 0 {
 						return int32(0)
 					} else {
-						F_errhint(m, int32(534951), int32(0))
+						F_errhint(m, int32(536375), int32(0))
 						mBase = m.M
 						v1175 = m.ExcPending
 						if v1175 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476855), int32(281), int32(59999))
+							F_errfinish(m, int32(478253), int32(281), int32(60191))
 							mBase = m.M
 							v1180 = m.ExcPending
 							if v1180 != 0 {
@@ -7682,7 +7682,7 @@ L14:
 	goto L10
 L15:
 	;
-	F_errmsg_internal(m, int32(239522), int32(0))
+	F_errmsg_internal(m, int32(240399), int32(0))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -7692,7 +7692,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(471240), int32(1159), int32(151884))
+	F_errfinish(m, int32(472612), int32(1159), int32(152404))
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -7707,7 +7707,7 @@ L17:
 	}
 L18:
 	;
-	F_errmsg_internal(m, int32(239522), int32(0))
+	F_errmsg_internal(m, int32(240399), int32(0))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -7717,7 +7717,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(471240), int32(1151), int32(151884))
+	F_errfinish(m, int32(472612), int32(1151), int32(152404))
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {
@@ -8260,7 +8260,7 @@ L41:
 	return v225
 L42:
 	;
-	F_errmsg_internal(m, int32(239467), int32(0))
+	F_errmsg_internal(m, int32(240344), int32(0))
 	mBase = m.M
 	v238 = m.ExcPending
 	if v238 != 0 {
@@ -8270,7 +8270,7 @@ L42:
 	}
 L43:
 	;
-	F_errfinish(m, int32(471240), int32(1194), int32(233407))
+	F_errfinish(m, int32(472612), int32(1194), int32(234284))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {

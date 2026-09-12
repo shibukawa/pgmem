@@ -31,7 +31,7 @@ func F_gen_pgmem_free(m *base.Module, l0 int32) {
 	}
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v4)+96))
 	if v9 != 0 {
-		F_ResourceOwnerForget(m, v9, v4, int32(4335404))
+		F_ResourceOwnerForget(m, v9, v4, int32(4336172))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {

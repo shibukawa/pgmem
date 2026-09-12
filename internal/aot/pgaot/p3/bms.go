@@ -29,13 +29,13 @@ func F_bms_make_singleton(m *base.Module, l0 int32) int32 {
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(418917), int32(0))
+			F_errmsg_internal(m, int32(420277), int32(0))
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(470483), int32(223), int32(232927))
+				F_errfinish(m, int32(471855), int32(223), int32(233804))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
@@ -305,7 +305,7 @@ L14:
 	return int32(0)
 L15:
 	;
-	F_errmsg_internal(m, int32(418917), int32(0))
+	F_errmsg_internal(m, int32(420277), int32(0))
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -315,7 +315,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(470483), int32(624), int32(70581))
+	F_errfinish(m, int32(471855), int32(624), int32(70792))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
