@@ -65,6 +65,9 @@ func F_pg_finfo_cube_subset(m *base.Module) int32 {
 func F_pg_finfo_dintdict_init(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_dintdict_init_0)
 }
+func F_pg_finfo_dxsyn_lexize(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_dxsyn_lexize_0)
+}
 func F_pg_finfo_ean13_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ean13_in_0)
 }

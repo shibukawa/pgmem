@@ -156,22 +156,12 @@ func F_ProcessConfigFileInternal(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v302
 	var v304 int32
 	_ = v304
+	var v310 int32
+	_ = v310
 	var v311 int32
 	_ = v311
-	var v325 int32
-	_ = v325
-	var v327 int32
-	_ = v327
-	var v330 int32
-	_ = v330
-	var v332 int32
-	_ = v332
-	var v333 int32
-	_ = v333
-	var v334 int32
-	_ = v334
-	var v337 int32
-	_ = v337
+	var v312 int32
+	_ = v312
 	var v349 int32
 	_ = v349
 	var v359 int32
@@ -1107,8 +1097,10 @@ L81:
 	goto L82
 L82:
 	;
+	v310 = int32(_a_F_ProcessConfigFileInternal_2)
 	v311 = base.I32_extend8_s(v290)
-	goto L88
+	v312 = int32(54)
+	goto L87
 L83:
 	;
 	goto L75
@@ -1131,61 +1123,13 @@ L86:
 	goto L104
 L87:
 	;
-	if base.B2i32(v333 != v334) == int32(0) {
-		goto L85
-	} else {
-		goto L95
-	}
-L88:
-	;
-	goto L89
-L89:
-	;
-	v325 = int32(_a_F_ProcessConfigFileInternal_2)
-	v327 = int32(54)
-	goto L90
-L90:
-	;
-	v330 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v325))))
-	if v330 == v311&int32(255) {
-		v386 = v325
-		v388 = v327
-		goto L86
-	} else {
-		goto L92
-	}
-L91:
-	;
-	goto L87
-L92:
-	;
-	v332 = int32(1)
-	v333 = v327 - v332
-	v334 = int32(0)
-	v337 = v325 + v332
-	if v337&int32(3) == v334 {
-		goto L87
-	} else {
-		goto L93
-	}
-L93:
-	;
-	if v333 != 0 {
-		v325 = v337
-		v327 = v333
-		goto L90
-	} else {
-		goto L94
-	}
-L94:
-	;
-	goto L91
+	goto L95
 L95:
 	;
-	v349 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v337))))
+	v349 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[4])))
 	if v349 == v311&int32(255) {
-		v379 = v337
-		v381 = v333
+		v379 = v310
+		v381 = v312
 		goto L96
 	} else {
 		goto L97
@@ -1199,17 +1143,11 @@ L96:
 	}
 L97:
 	;
-	if base.Ui32(v333) < base.Ui32(int32(4)) {
-		v379 = v337
-		v381 = v333
-		goto L96
-	} else {
-		goto L98
-	}
+	goto L98
 L98:
 	;
-	v359 = v337
-	v361 = v333
+	v359 = v310
+	v361 = v312
 	goto L99
 L99:
 	;
@@ -1787,7 +1725,7 @@ L179:
 	}
 L180:
 	;
-	v737 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[4]))
+	v737 = *(*int32)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[5]))
 	v738 = *(*int32)(unsafe.Add(mBase, uint32(v737)))
 	goto L181
 L181:
@@ -1873,7 +1811,7 @@ L190:
 	}
 L191:
 	;
-	v769 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[5])))
+	v769 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[6])))
 	if v769 != 0 {
 		v779 = int32(0)
 		goto L190
@@ -2118,7 +2056,7 @@ L224:
 	v855 = *(*int32)(unsafe.Add(mBase, uint32(v752)+16))
 	v856 = *(*int32)(unsafe.Add(mBase, uint32(v752)+12))
 	v857 = *(*int32)(unsafe.Add(mBase, uint32(v752)))
-	v863 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[5])))
+	v863 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[6])))
 	if v863 != 0 {
 		goto L225
 	} else {
@@ -2224,7 +2162,7 @@ L238:
 	goto L239
 L239:
 	;
-	*(*int64)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[6])) = v920 + v919*int64(1000000) - int64(946684800000000)
+	*(*int64)(unsafe.Add(mBase, _c_F_ProcessConfigFileInternal[7])) = v920 + v919*int64(1000000) - int64(946684800000000)
 	v934 = int32(1)
 	v938 = v901
 	v939 = v902

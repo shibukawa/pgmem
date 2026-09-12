@@ -77,6 +77,9 @@ func F_pg_finfo_dintdict_lexize(m *base.Module) int32 {
 func F_pg_finfo_distance_chebyshev(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_distance_chebyshev_0)
 }
+func F_pg_finfo_dxsyn_init(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_dxsyn_init_0)
+}
 func F_pg_finfo_each(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_each_0)
 }

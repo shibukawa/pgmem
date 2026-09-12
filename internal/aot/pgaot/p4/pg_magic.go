@@ -14,6 +14,9 @@ func F_Pg_magic_func_cyrillic_and_mic(m *base.Module) int32 {
 func F_Pg_magic_func_dict_snowball(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_dict_snowball_0)
 }
+func F_Pg_magic_func_dict_xsyn(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_dict_xsyn_0)
+}
 func F_Pg_magic_func_hstore(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_hstore_0)
 }
