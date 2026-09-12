@@ -100,12 +100,12 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 				v62 = *(*int32)(unsafe.Add(mBase, _consts[1370]))
 				v67 = v62
 			} else {
-				v64 = int32(4094768)
+				v64 = int32(4096048)
 				*(*int32)(unsafe.Add(mBase, _consts[460])) = v64
 				v67 = v64
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-			v69 = int32(4094768)
+			v69 = int32(4096048)
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
 			v72 = l0 + int32(100)
 			*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
@@ -159,12 +159,12 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 					v62 = *(*int32)(unsafe.Add(mBase, _consts[1370]))
 					v67 = v62
 				} else {
-					v64 = int32(4094768)
+					v64 = int32(4096048)
 					*(*int32)(unsafe.Add(mBase, _consts[460])) = v64
 					v67 = v64
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-				v69 = int32(4094768)
+				v69 = int32(4096048)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
 				v72 = l0 + int32(100)
 				*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
@@ -216,12 +216,12 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 						v62 = *(*int32)(unsafe.Add(mBase, _consts[1370]))
 						v67 = v62
 					} else {
-						v64 = int32(4094768)
+						v64 = int32(4096048)
 						*(*int32)(unsafe.Add(mBase, _consts[460])) = v64
 						v67 = v64
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-					v69 = int32(4094768)
+					v69 = int32(4096048)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
 					v72 = l0 + int32(100)
 					*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
@@ -277,12 +277,12 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 							v62 = *(*int32)(unsafe.Add(mBase, _consts[1370]))
 							v67 = v62
 						} else {
-							v64 = int32(4094768)
+							v64 = int32(4096048)
 							*(*int32)(unsafe.Add(mBase, _consts[460])) = v64
 							v67 = v64
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+100)) = v67
-						v69 = int32(4094768)
+						v69 = int32(4096048)
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+104)) = v69
 						v72 = l0 + int32(100)
 						*(*int32)(unsafe.Add(mBase, uint32(v67)+4)) = v72
@@ -301,13 +301,13 @@ func F_SaveCachedPlan(m *base.Module, l0 int32) {
 		if v81 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(280337), int32(0))
+			F_errmsg_internal(m, int32(280615), int32(0))
 			mBase = m.M
 			v85 = m.ExcPending
 			if v85 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(493724), int32(539), int32(280618))
+				F_errfinish(m, int32(494192), int32(539), int32(280896))
 				mBase = m.M
 				v90 = m.ExcPending
 				if v90 != 0 {
@@ -411,13 +411,13 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10))) = v79
-								F_errmsg(m, int32(345429), v10)
+								F_errmsg(m, int32(345822), v10)
 								mBase = m.M
 								v84 = m.ExcPending
 								if v84 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490299), int32(2504), int32(361535))
+									F_errfinish(m, int32(490751), int32(2504), int32(361928))
 									mBase = m.M
 									v89 = m.ExcPending
 									if v89 != 0 {
@@ -478,13 +478,13 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10))) = v79
-									F_errmsg(m, int32(345429), v10)
+									F_errmsg(m, int32(345822), v10)
 									mBase = m.M
 									v84 = m.ExcPending
 									if v84 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490299), int32(2504), int32(361535))
+										F_errfinish(m, int32(490751), int32(2504), int32(361928))
 										mBase = m.M
 										v89 = m.ExcPending
 										if v89 != 0 {
@@ -551,13 +551,13 @@ func F_get_cached_rowtype(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = v79
-										F_errmsg(m, int32(345429), v10)
+										F_errmsg(m, int32(345822), v10)
 										mBase = m.M
 										v84 = m.ExcPending
 										if v84 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(490299), int32(2504), int32(361535))
+											F_errfinish(m, int32(490751), int32(2504), int32(361928))
 											mBase = m.M
 											v89 = m.ExcPending
 											if v89 != 0 {

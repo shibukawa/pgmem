@@ -613,13 +613,13 @@ func F_pq_getmsgend(m *base.Module, l0 int32) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(111104), int32(0))
+				F_errmsg(m, int32(111179), int32(0))
 				mBase = m.M
 				v15 = m.ExcPending
 				if v15 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(488108), int32(640), int32(422425))
+					F_errfinish(m, int32(488560), int32(640), int32(422877))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
@@ -645,199 +645,62 @@ func F_pq_getmsgrawstring(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v6 int32
 	_ = v6
-	var v14 int32
-	_ = v14
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
 	var v23 int32
 	_ = v23
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v49 int32
-	_ = v49
-	var v53 int32
-	_ = v53
-	var v55 int32
-	_ = v55
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v6 = v4 + v5
-	if v6&int32(3) == int32(0) {
-		v30 = v6
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v64 = v63 + v4
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v65 <= v64 {
-		goto L18
-	} else {
-		goto L19
-	}
-L2:
-	;
-	v63 = v55 - v6
-	goto L1
-L3:
-	;
-	v34 = v30
-	goto L12
-L4:
-	;
-	v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
-	if v14 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v63 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v19 = v6
-	goto L8
-L8:
-	;
-	v23 = v19 + int32(1)
-	if v23&int32(3) == int32(0) {
-		v30 = v23
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v55 = v23
-	goto L2
-L10:
-	;
-	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23))))
-	if v28 != 0 {
-		v19 = v23
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-	v43 = int32(-2139062144)
-	if (int32(16843008)-v40|v40)&v43 == v43 {
-		v34 = v34 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v49 = v34
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49))))
-	if v53 != 0 {
-		v49 = v49 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v55 = v49
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
+	v7 = F_strlen(m, v6)
 	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
-		goto L21
+	v8 = v7 + v4
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v9 <= v8 {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(16908800))
+			mBase = m.M
+			v19 = m.ExcPending
+			if v19 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg(m, int32(400708), int32(0))
+				mBase = m.M
+				v23 = m.ExcPending
+				if v23 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(488560), int32(624), int32(326529))
+					mBase = m.M
+					v28 = m.ExcPending
+					if v28 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
 	} else {
-		goto L22
-	}
-L19:
-	;
-	goto L20
-L20:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v64 + int32(1)
-	return v6
-L21:
-	;
-	return int32(0)
-L22:
-	;
-	F_errcode(m, int32(16908800))
-	mBase = m.M
-	v75 = m.ExcPending
-	if v75 != 0 {
-		goto L21
-	} else {
-		goto L23
-	}
-L23:
-	;
-	F_errmsg(m, int32(400276), int32(0))
-	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
-		goto L21
-	} else {
-		goto L24
-	}
-L24:
-	;
-	F_errfinish(m, int32(488108), int32(624), int32(326191))
-	mBase = m.M
-	v84 = m.ExcPending
-	if v84 != 0 {
-		goto L21
-	} else {
-		goto L25
-	}
-L25:
-	;
-	base.Wasm_trap_unreachable()
-	for {
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = v8 + int32(1)
+		return v6
 	}
 }
 func F_pq_sendfloat8(m *base.Module, l0 int32, l1 float64) {

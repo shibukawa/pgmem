@@ -3240,8 +3240,10 @@ func F_replace_text_regexp(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 func F_split_text(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_array_to_text_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_array_to_text_internal
 func F_array_to_text_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_varstr_levenshtein github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_varstr_levenshtein
+func F_varstr_levenshtein(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_varstr_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_varstr_levenshtein_less_equal
-func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 //go:linkname F_query_to_xml_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_query_to_xml_internal
 func F_query_to_xml_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_map_sql_table_to_xmlschema github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_map_sql_table_to_xmlschema
@@ -4318,6 +4320,8 @@ func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_intarray_concat_arrays(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_hemdist_3 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_hemdist_3
 func F_hemdist_3(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_DoubleMetaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_DoubleMetaphone
+func F_DoubleMetaphone(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset
@@ -4460,6 +4464,8 @@ func F_strtox_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64) int64
 func F_strtol(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___tan github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___tan
 func F___tan(m *base.Module, l0 float64, l1 float64, l2 int32) float64
+//go:linkname F_toupper github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_toupper
+func F_toupper(m *base.Module, l0 int32) int32
 //go:linkname F_casemap github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_casemap
 func F_casemap(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_unlink github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_unlink

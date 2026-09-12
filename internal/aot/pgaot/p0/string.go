@@ -5,6 +5,222 @@ import (
 	"unsafe"
 )
 
+func F_StringAt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v25 int32
+	_ = v25
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v75 int32
+	_ = v75
+	var v81 int32
+	_ = v81
+	v5 = int32(0)
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	if l1 < v5 {
+		v81 = v5
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	m.G0 = v9 + int32(16)
+	return v81
+L2:
+	;
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v13 <= l1 {
+		v81 = v5
+		goto L1
+	} else {
+		goto L3
+	}
+L3:
+	;
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = l3
+	v17 = l1 + v15
+	v21 = l3
+	goto L4
+L4:
+	;
+	v25 = v21 + int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = v25
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v21)))
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27))))
+	if v28 == int32(0) {
+		goto L6
+	} else {
+		goto L7
+	}
+L5:
+	;
+	v81 = int32(1)
+	goto L1
+L6:
+	;
+	v81 = int32(0)
+	goto L1
+L7:
+	;
+	goto L8
+L8:
+	;
+	if l2 == int32(0) {
+		goto L10
+	} else {
+		goto L11
+	}
+L9:
+	;
+	if v75 != 0 {
+		v21 = v25
+		goto L4
+	} else {
+		goto L23
+	}
+L10:
+	;
+	v75 = int32(0)
+	goto L9
+L11:
+	;
+	goto L12
+L12:
+	;
+	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
+	if v37 != 0 {
+		goto L13
+	} else {
+		goto L14
+	}
+L13:
+	;
+	v38 = v17
+	v39 = v27
+	v40 = l2
+	v41 = v37
+	goto L17
+L14:
+	;
+	v63 = v27
+	v67 = int32(0)
+	goto L15
+L15:
+	;
+	v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63))))
+	v75 = v67 - v68
+	goto L9
+L16:
+	;
+	v63 = v58
+	v67 = v60
+	goto L15
+L17:
+	;
+	v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v39))))
+	if v41 != v43 {
+		v58 = v39
+		v60 = v41
+		goto L16
+	} else {
+		goto L19
+	}
+L18:
+	;
+	v58 = v52
+	v60 = int32(0)
+	goto L16
+L19:
+	;
+	if v43 == int32(0) {
+		v58 = v39
+		v60 = v41
+		goto L16
+	} else {
+		goto L20
+	}
+L20:
+	;
+	v48 = v40 - int32(1)
+	if v48 == int32(0) {
+		v58 = v39
+		v60 = v41
+		goto L16
+	} else {
+		goto L21
+	}
+L21:
+	;
+	v51 = int32(1)
+	v52 = v39 + v51
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38)+1)))
+	if v53 != 0 {
+		v38 = v38 + v51
+		v39 = v52
+		v40 = v48
+		v41 = v53
+		goto L17
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L18
+L23:
+	;
+	goto L5
+}
 func F_makeStringInfoExt(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

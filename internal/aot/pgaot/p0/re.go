@@ -401,7 +401,7 @@ L15:
 L16:
 	;
 	m.G0 = v14 + int32(176)
-	return int32(4461044)
+	return int32(4465204)
 L17:
 	;
 	v58 = v53
@@ -612,8 +612,8 @@ L45:
 	*(*int64)(unsafe.Add(mBase, uint32(v167))) = v168
 	v170 = *(*int64)(unsafe.Add(mBase, uint32(v70)+uint32(_consts[841])))
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+120)) = v170
-	v172 = int32(4461076)
-	v173 = int32(4461024)
+	v172 = int32(4465236)
+	v173 = int32(4465184)
 	v175 = v58 * int32(52)
 	goto L48
 L46:
@@ -765,7 +765,7 @@ L92:
 L93:
 	;
 	v362 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-	v367 = F_AllocSetContextCreateInternal(m, v362, int32(61589), int32(0), int32(1024), int32(8192))
+	v367 = F_AllocSetContextCreateInternal(m, v362, int32(61640), int32(0), int32(1024), int32(8192))
 	mBase = m.M
 	v370 = m.ExcPending
 	if v370 != 0 {
@@ -807,7 +807,7 @@ L98:
 L99:
 	;
 	v381 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v386 = F_AllocSetContextCreateInternal(m, v381, int32(61552), int32(0), int32(1024), int32(8192))
+	v386 = F_AllocSetContextCreateInternal(m, v381, int32(61603), int32(0), int32(1024), int32(8192))
 	mBase = m.M
 	v387 = m.ExcPending
 	if v387 != 0 {
@@ -817,7 +817,7 @@ L99:
 	}
 L100:
 	;
-	v388 = int32(4476144)
+	v388 = int32(4480304)
 	v389 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v386
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+120)) = v386
@@ -1016,8 +1016,8 @@ L130:
 	goto L114
 L131:
 	;
-	v470 = int32(4461076)
-	v471 = int32(4461024)
+	v470 = int32(4465236)
+	v471 = int32(4465184)
 	v473 = v467 * int32(52)
 	goto L136
 L132:
@@ -1194,7 +1194,7 @@ L181:
 L182:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v14 + int32(16)
-	F_errmsg(m, int32(200258), v14)
+	F_errmsg(m, int32(200496), v14)
 	mBase = m.M
 	v677 = m.ExcPending
 	if v677 != 0 {
@@ -1204,7 +1204,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(490200), int32(223), int32(394795))
+	F_errfinish(m, int32(490652), int32(223), int32(395227))
 	mBase = m.M
 	v682 = m.ExcPending
 	if v682 != 0 {
@@ -1255,7 +1255,7 @@ func F_ReScanExprContext(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v5 = int32(4476144)
+	v5 = int32(4480304)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v8

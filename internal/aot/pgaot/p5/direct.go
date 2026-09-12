@@ -57,13 +57,13 @@ func F_DirectFunctionCall2Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-				F_errmsg_internal(m, int32(526598), v8)
+				F_errmsg_internal(m, int32(527273), v8)
 				mBase = m.M
 				v41 = m.ExcPending
 				if v41 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489721), int32(828), int32(300924))
+					F_errfinish(m, int32(490173), int32(828), int32(301202))
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
@@ -137,13 +137,13 @@ func F_DirectFunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(526598), v10)
+				F_errmsg_internal(m, int32(527273), v10)
 				mBase = m.M
 				v49 = m.ExcPending
 				if v49 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489721), int32(880), int32(300876))
+					F_errfinish(m, int32(490173), int32(880), int32(301154))
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {

@@ -10,362 +10,114 @@ func F__jumbleAlias(m *base.Module, l0 int32, l1 int32) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v12 int32
-	_ = v12
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v4 != 0 {
-		goto L2
+		v5 = F_strlen(m, v4)
+		mBase = m.M
+		F_AppendJumble(m, l0, v4, v5+int32(1))
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return
+		} else {
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			F__jumbleNode(m, l0, v14)
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return
+			} else {
+				return
+			}
+		}
 	} else {
-		goto L3
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v10 + int32(1)
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+		F__jumbleNode(m, l0, v14)
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return
+		} else {
+			return
+		}
 	}
-L1:
-	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	F__jumbleNode(m, l0, v70)
-	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
-		goto L22
-	} else {
-		goto L24
-	}
-L2:
-	;
-	if v4&int32(3) == int32(0) {
-		v28 = v4
-		goto L7
-	} else {
-		goto L8
-	}
-L3:
-	;
-	goto L4
-L4:
-	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v66 + int32(1)
-	goto L1
-L5:
-	;
-	F_AppendJumble(m, l0, v4, v61+int32(1))
-	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
-		goto L22
-	} else {
-		goto L23
-	}
-L6:
-	;
-	v61 = v53 - v4
-	goto L5
-L7:
-	;
-	v32 = v28
-	goto L16
-L8:
-	;
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4))))
-	if v12 == int32(0) {
-		goto L9
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v61 = int32(0)
-	goto L5
-L10:
-	;
-	goto L11
-L11:
-	;
-	v17 = v4
-	goto L12
-L12:
-	;
-	v21 = v17 + int32(1)
-	if v21&int32(3) == int32(0) {
-		v28 = v21
-		goto L7
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v53 = v21
-	goto L6
-L14:
-	;
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21))))
-	if v26 != 0 {
-		v17 = v21
-		goto L12
-	} else {
-		goto L15
-	}
-L15:
-	;
-	goto L13
-L16:
-	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v32)))
-	v41 = int32(-2139062144)
-	if (int32(16843008)-v38|v38)&v41 == v41 {
-		v32 = v32 + int32(4)
-		goto L16
-	} else {
-		goto L18
-	}
-L17:
-	;
-	v47 = v32
-	goto L19
-L18:
-	;
-	goto L17
-L19:
-	;
-	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47))))
-	if v51 != 0 {
-		v47 = v47 + int32(1)
-		goto L19
-	} else {
-		goto L21
-	}
-L20:
-	;
-	v53 = v47
-	goto L6
-L21:
-	;
-	goto L20
-L22:
-	;
-	return
-L23:
-	;
-	goto L1
-L24:
-	;
-	return
 }
 func F__jumbleAlterTableSpaceOptionsStmt(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v12 int32
-	_ = v12
-	var v17 int32
-	_ = v17
-	var v21 int32
-	_ = v21
-	var v26 int32
-	_ = v26
-	var v28 int32
-	_ = v28
-	var v32 int32
-	_ = v32
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	var v70 int32
-	_ = v70
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v16 int32
+	_ = v16
+	var v20 int32
+	_ = v20
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v4 != 0 {
-		goto L2
+		v5 = F_strlen(m, v4)
+		mBase = m.M
+		F_AppendJumble(m, l0, v4, v5+int32(1))
+		mBase = m.M
+		v9 = m.ExcPending
+		if v9 != 0 {
+			return
+		} else {
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			F__jumbleNode(m, l0, v14)
+			mBase = m.M
+			v16 = m.ExcPending
+			if v16 != 0 {
+				return
+			} else {
+				F_AppendJumble8(m, l0, l1+int32(12))
+				mBase = m.M
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return
+				} else {
+					return
+				}
+			}
+		}
 	} else {
-		goto L3
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v10 + int32(1)
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+		F__jumbleNode(m, l0, v14)
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return
+		} else {
+			F_AppendJumble8(m, l0, l1+int32(12))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				return
+			}
+		}
 	}
-L1:
-	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	F__jumbleNode(m, l0, v70)
-	mBase = m.M
-	v72 = m.ExcPending
-	if v72 != 0 {
-		goto L22
-	} else {
-		goto L24
-	}
-L2:
-	;
-	if v4&int32(3) == int32(0) {
-		v28 = v4
-		goto L7
-	} else {
-		goto L8
-	}
-L3:
-	;
-	goto L4
-L4:
-	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v66 + int32(1)
-	goto L1
-L5:
-	;
-	F_AppendJumble(m, l0, v4, v61+int32(1))
-	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
-		goto L22
-	} else {
-		goto L23
-	}
-L6:
-	;
-	v61 = v53 - v4
-	goto L5
-L7:
-	;
-	v32 = v28
-	goto L16
-L8:
-	;
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4))))
-	if v12 == int32(0) {
-		goto L9
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v61 = int32(0)
-	goto L5
-L10:
-	;
-	goto L11
-L11:
-	;
-	v17 = v4
-	goto L12
-L12:
-	;
-	v21 = v17 + int32(1)
-	if v21&int32(3) == int32(0) {
-		v28 = v21
-		goto L7
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v53 = v21
-	goto L6
-L14:
-	;
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v21))))
-	if v26 != 0 {
-		v17 = v21
-		goto L12
-	} else {
-		goto L15
-	}
-L15:
-	;
-	goto L13
-L16:
-	;
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(v32)))
-	v41 = int32(-2139062144)
-	if (int32(16843008)-v38|v38)&v41 == v41 {
-		v32 = v32 + int32(4)
-		goto L16
-	} else {
-		goto L18
-	}
-L17:
-	;
-	v47 = v32
-	goto L19
-L18:
-	;
-	goto L17
-L19:
-	;
-	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47))))
-	if v51 != 0 {
-		v47 = v47 + int32(1)
-		goto L19
-	} else {
-		goto L21
-	}
-L20:
-	;
-	v53 = v47
-	goto L6
-L21:
-	;
-	goto L20
-L22:
-	;
-	return
-L23:
-	;
-	goto L1
-L24:
-	;
-	F_AppendJumble8(m, l0, l1+int32(12))
-	mBase = m.M
-	v76 = m.ExcPending
-	if v76 != 0 {
-		goto L22
-	} else {
-		goto L25
-	}
-L25:
-	;
-	return
 }
 func F__jumbleJsonReturning(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

@@ -199,7 +199,7 @@ func F_LookupTypeNameOid(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v26
-							F_errmsg(m, int32(71694), v8)
+							F_errmsg(m, int32(71745), v8)
 							mBase = m.M
 							v31 = m.ExcPending
 							if v31 != 0 {
@@ -212,7 +212,7 @@ func F_LookupTypeNameOid(m *base.Module, l0 int32, l1 int32) int32 {
 								if v35 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(493336), int32(245), int32(432722))
+									F_errfinish(m, int32(493804), int32(245), int32(433174))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {
@@ -323,15 +323,15 @@ func F_findTypeAnalyzeFunction(m *base.Module, l0 int32) int32 {
 							if v56 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(281119)
+								*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(281397)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v55
-								F_errmsg(m, int32(189530), v6+int32(16))
+								F_errmsg(m, int32(189768), v6+int32(16))
 								mBase = m.M
 								v64 = m.ExcPending
 								if v64 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489047), int32(2267), int32(252136))
+									F_errfinish(m, int32(489499), int32(2267), int32(252374))
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
@@ -370,13 +370,13 @@ func F_findTypeAnalyzeFunction(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v37
-						F_errmsg(m, int32(69195), v6)
+						F_errmsg(m, int32(69246), v6)
 						mBase = m.M
 						v42 = m.ExcPending
 						if v42 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489047), int32(2261), int32(252136))
+							F_errfinish(m, int32(489499), int32(2261), int32(252374))
 							mBase = m.M
 							v47 = m.ExcPending
 							if v47 != 0 {
@@ -489,15 +489,15 @@ func F_findTypeSendFunction(m *base.Module, l0 int32, l1 int32) int32 {
 							if v81 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(501495)
+								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(501963)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v80
-								F_errmsg(m, int32(189620), v6+int32(32))
+								F_errmsg(m, int32(189858), v6+int32(32))
 								mBase = m.M
 								v89 = m.ExcPending
 								if v89 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489047), int32(2165), int32(252222))
+									F_errfinish(m, int32(489499), int32(2165), int32(252460))
 									mBase = m.M
 									v94 = m.ExcPending
 									if v94 != 0 {
@@ -545,13 +545,13 @@ func F_findTypeSendFunction(m *base.Module, l0 int32, l1 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v34
-											F_errmsg(m, int32(381849), v6+int32(16))
+											F_errmsg(m, int32(382281), v6+int32(16))
 											mBase = m.M
 											v41 = m.ExcPending
 											if v41 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489047), int32(2172), int32(252222))
+												F_errfinish(m, int32(489499), int32(2172), int32(252460))
 												mBase = m.M
 												v46 = m.ExcPending
 												if v46 != 0 {
@@ -589,13 +589,13 @@ func F_findTypeSendFunction(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v62
-						F_errmsg(m, int32(69195), v6)
+						F_errmsg(m, int32(69246), v6)
 						mBase = m.M
 						v67 = m.ExcPending
 						if v67 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489047), int32(2159), int32(252222))
+							F_errfinish(m, int32(489499), int32(2159), int32(252460))
 							mBase = m.M
 							v72 = m.ExcPending
 							if v72 != 0 {
@@ -708,15 +708,15 @@ func F_findTypeTypmodinFunction(m *base.Module, l0 int32) int32 {
 							if v82 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(223217)
+								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(223455)
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v81
-								F_errmsg(m, int32(189387), v6+int32(32))
+								F_errmsg(m, int32(189625), v6+int32(32))
 								mBase = m.M
 								v90 = m.ExcPending
 								if v90 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(489047), int32(2199), int32(252026))
+									F_errfinish(m, int32(489499), int32(2199), int32(252264))
 									mBase = m.M
 									v95 = m.ExcPending
 									if v95 != 0 {
@@ -764,13 +764,13 @@ func F_findTypeTypmodinFunction(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v35
-											F_errmsg(m, int32(381700), v6+int32(16))
+											F_errmsg(m, int32(382132), v6+int32(16))
 											mBase = m.M
 											v42 = m.ExcPending
 											if v42 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489047), int32(2206), int32(252026))
+												F_errfinish(m, int32(489499), int32(2206), int32(252264))
 												mBase = m.M
 												v47 = m.ExcPending
 												if v47 != 0 {
@@ -808,13 +808,13 @@ func F_findTypeTypmodinFunction(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v63
-						F_errmsg(m, int32(69195), v6)
+						F_errmsg(m, int32(69246), v6)
 						mBase = m.M
 						v68 = m.ExcPending
 						if v68 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(489047), int32(2193), int32(252026))
+							F_errfinish(m, int32(489499), int32(2193), int32(252264))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {
@@ -924,13 +924,13 @@ func F_getTypeOutputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v57
-							F_errmsg(m, int32(301187), v10+int32(32))
+							F_errmsg(m, int32(301465), v10+int32(32))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(493701), int32(3061), int32(239741))
+								F_errfinish(m, int32(494169), int32(3061), int32(239979))
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
@@ -966,13 +966,13 @@ func F_getTypeOutputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v77
-								F_errmsg(m, int32(188043), v10+int32(16))
+								F_errmsg(m, int32(188281), v10+int32(16))
 								mBase = m.M
 								v84 = m.ExcPending
 								if v84 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(493701), int32(3066), int32(239741))
+									F_errfinish(m, int32(494169), int32(3066), int32(239979))
 									mBase = m.M
 									v89 = m.ExcPending
 									if v89 != 0 {
@@ -1015,13 +1015,13 @@ func F_getTypeOutputInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-				F_errmsg_internal(m, int32(50080), v10)
+				F_errmsg_internal(m, int32(50097), v10)
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(493701), int32(3054), int32(239741))
+					F_errfinish(m, int32(494169), int32(3054), int32(239979))
 					mBase = m.M
 					v49 = m.ExcPending
 					if v49 != 0 {
@@ -1128,13 +1128,13 @@ func F_get_type_io_data(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 				if v30 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(235709), int32(0))
+					F_errmsg_internal(m, int32(235947), int32(0))
 					mBase = m.M
 					v34 = m.ExcPending
 					if v34 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493701), int32(2503), int32(498452))
+						F_errfinish(m, int32(494169), int32(2503), int32(498920))
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
@@ -1163,13 +1163,13 @@ func F_get_type_io_data(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v13))) = l0
-					F_errmsg_internal(m, int32(50080), v13)
+					F_errmsg_internal(m, int32(50097), v13)
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(493701), int32(2511), int32(498452))
+						F_errfinish(m, int32(494169), int32(2511), int32(498920))
 						mBase = m.M
 						v96 = m.ExcPending
 						if v96 != 0 {
@@ -1457,13 +1457,13 @@ func F_has_type_privilege_id_name(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v21
-								F_errmsg(m, int32(71694), v8)
+								F_errmsg(m, int32(71745), v8)
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492073), int32(4575), int32(375153))
+									F_errfinish(m, int32(492525), int32(4575), int32(375585))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {
@@ -1682,13 +1682,13 @@ func F_has_type_privilege_name_name(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v23
-									F_errmsg(m, int32(71694), v8)
+									F_errmsg(m, int32(71745), v8)
 									mBase = m.M
 									v39 = m.ExcPending
 									if v39 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(492073), int32(4575), int32(375153))
+										F_errfinish(m, int32(492525), int32(4575), int32(375585))
 										mBase = m.M
 										v44 = m.ExcPending
 										if v44 != 0 {
@@ -1803,13 +1803,13 @@ func F_typeIsOfTypedTable(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-						F_errmsg_internal(m, int32(46015), v7)
+						F_errmsg_internal(m, int32(46032), v7)
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(494007), int32(3392), int32(393073))
+							F_errfinish(m, int32(494475), int32(3392), int32(393505))
 							mBase = m.M
 							v45 = m.ExcPending
 							if v45 != 0 {

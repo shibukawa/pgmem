@@ -977,7 +977,7 @@ L109:
 L110:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v291
-	F_errmsg(m, int32(317948), v13)
+	F_errmsg(m, int32(318258), v13)
 	mBase = m.M
 	v296 = m.ExcPending
 	if v296 != 0 {
@@ -987,7 +987,7 @@ L110:
 	}
 L111:
 	;
-	F_errfinish(m, int32(494540), int32(3124), int32(283382))
+	F_errfinish(m, int32(495008), int32(3124), int32(283660))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -1158,7 +1158,7 @@ func F_JsonTableFetchRow(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v9 int32
 	_ = v9
-	v3 = F_GetJsonTableExecContext(m, l0, int32(31738))
+	v3 = F_GetJsonTableExecContext(m, l0, int32(31755))
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
@@ -1409,7 +1409,7 @@ L5:
 	;
 	switch v16 - int32(1) {
 	case 0, 2:
-		v26 = int32(527119)
+		v26 = int32(527794)
 		goto L4
 	default:
 		goto L3
@@ -1421,7 +1421,7 @@ L7:
 	;
 	switch v16 - int32(2) {
 	case 0, 2:
-		v26 = int32(527135)
+		v26 = int32(527810)
 		goto L4
 	default:
 		goto L3
@@ -1431,7 +1431,7 @@ L8:
 	goto L3
 L9:
 	;
-	F_appendStringInfoString(m, v10+int32(16), int32(516539))
+	F_appendStringInfoString(m, v10+int32(16), int32(517069))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -1526,7 +1526,7 @@ L22:
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v63
-	F_errmsg_internal(m, int32(480536), v10)
+	F_errmsg_internal(m, int32(480988), v10)
 	mBase = m.M
 	v67 = m.ExcPending
 	if v67 != 0 {
@@ -1536,7 +1536,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(488513), int32(11786), int32(206197))
+	F_errfinish(m, int32(488965), int32(11786), int32(206435))
 	mBase = m.M
 	v72 = m.ExcPending
 	if v72 != 0 {
@@ -1739,7 +1739,7 @@ L15:
 L16:
 	;
 	v60 = int32(0)
-	F_appendContextKeyword(m, l2, int32(722897), v60, v60, v60)
+	F_appendContextKeyword(m, l2, int32(723815), v60, v60, v60)
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -1775,7 +1775,7 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v73
-	F_appendStringInfo(m, v70, int32(196280), v9)
+	F_appendStringInfo(m, v70, int32(196518), v9)
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {
@@ -1800,7 +1800,7 @@ L21:
 func F_json_array_elements(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_elements_worker(m, l0, int32(121770), int32(0))
+	F_elements_worker(m, l0, int32(121914), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1811,7 +1811,7 @@ func F_json_array_elements(m *base.Module, l0 int32) int32 {
 func F_json_array_elements_text(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_elements_worker(m, l0, int32(62611), int32(1))
+	F_elements_worker(m, l0, int32(62662), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -1824,7 +1824,7 @@ func F_json_build_array_noargs(m *base.Module, l0 int32) int32 {
 	_ = v4
 	var v7 int32
 	_ = v7
-	v4 = F_cstring_to_text_with_len(m, int32(502030), int32(2))
+	v4 = F_cstring_to_text_with_len(m, int32(502498), int32(2))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -2674,8 +2674,8 @@ func F_json_manifest_array_end(m *base.Module, l0 int32) int32 {
 	default:
 		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(422502)
-		m.T0[v19].(func(*base.Module, int32, int32, int32))(m, v18, int32(197685), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(422954)
+		m.T0[v19].(func(*base.Module, int32, int32, int32))(m, v18, int32(197923), v6)
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -2695,7 +2695,7 @@ func F_json_to_record(m *base.Module, l0 int32) int32 {
 	var v9 int32
 	_ = v9
 	v4 = int32(0)
-	v6 = F_populate_record_worker(m, l0, int32(415744), int32(1), v4, v4)
+	v6 = F_populate_record_worker(m, l0, int32(416196), int32(1), v4, v4)
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return int32(0)
@@ -2706,7 +2706,7 @@ func F_json_to_record(m *base.Module, l0 int32) int32 {
 func F_json_to_recordset(m *base.Module, l0 int32) int32 {
 	var v8 int32
 	_ = v8
-	F_populate_recordset_worker(m, l0, int32(104913), int32(1), int32(0))
+	F_populate_recordset_worker(m, l0, int32(104988), int32(1), int32(0))
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -2793,13 +2793,13 @@ func F_json_typeof(m *base.Module, l0 int32) int32 {
 							} else {
 								v52 = *(*int32)(unsafe.Add(mBase, uint32(v5)+40))
 								*(*int32)(unsafe.Add(mBase, uint32(v5))) = v52
-								F_errmsg_internal(m, int32(477771), v5)
+								F_errmsg_internal(m, int32(478223), v5)
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490780), int32(1909), int32(334821))
+									F_errfinish(m, int32(491232), int32(1909), int32(335189))
 									mBase = m.M
 									v61 = m.ExcPending
 									if v61 != 0 {
@@ -2821,13 +2821,13 @@ func F_json_typeof(m *base.Module, l0 int32) int32 {
 								} else {
 									v52 = *(*int32)(unsafe.Add(mBase, uint32(v5)+40))
 									*(*int32)(unsafe.Add(mBase, uint32(v5))) = v52
-									F_errmsg_internal(m, int32(477771), v5)
+									F_errmsg_internal(m, int32(478223), v5)
 									mBase = m.M
 									v56 = m.ExcPending
 									if v56 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490780), int32(1909), int32(334821))
+										F_errfinish(m, int32(491232), int32(1909), int32(335189))
 										mBase = m.M
 										v61 = m.ExcPending
 										if v61 != 0 {
@@ -2865,13 +2865,13 @@ func F_json_typeof(m *base.Module, l0 int32) int32 {
 						} else {
 							v52 = *(*int32)(unsafe.Add(mBase, uint32(v5)+40))
 							*(*int32)(unsafe.Add(mBase, uint32(v5))) = v52
-							F_errmsg_internal(m, int32(477771), v5)
+							F_errmsg_internal(m, int32(478223), v5)
 							mBase = m.M
 							v56 = m.ExcPending
 							if v56 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(490780), int32(1909), int32(334821))
+								F_errfinish(m, int32(491232), int32(1909), int32(335189))
 								mBase = m.M
 								v61 = m.ExcPending
 								if v61 != 0 {
@@ -2893,13 +2893,13 @@ func F_json_typeof(m *base.Module, l0 int32) int32 {
 							} else {
 								v52 = *(*int32)(unsafe.Add(mBase, uint32(v5)+40))
 								*(*int32)(unsafe.Add(mBase, uint32(v5))) = v52
-								F_errmsg_internal(m, int32(477771), v5)
+								F_errmsg_internal(m, int32(478223), v5)
 								mBase = m.M
 								v56 = m.ExcPending
 								if v56 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(490780), int32(1909), int32(334821))
+									F_errfinish(m, int32(491232), int32(1909), int32(335189))
 									mBase = m.M
 									v61 = m.ExcPending
 									if v61 != 0 {
@@ -2970,46 +2970,24 @@ func F_json_unique_object_field_start(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v22 int32
-	_ = v22
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
+	var v28 int32
+	_ = v28
 	var v31 int32
 	_ = v31
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -3028,149 +3006,58 @@ L2:
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l1
-	if l1&int32(3) == int32(0) {
-		v38 = l1
-		goto L5
+	v15 = F_strlen(m, l1)
+	mBase = m.M
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v13
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v15
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v24 = F_hash_search(m, v18, v7+int32(4), int32(1), v7+int32(3))
+	mBase = m.M
+	v27 = m.ExcPending
+	if v27 != 0 {
+		goto L3
 	} else {
-		goto L6
+		goto L4
 	}
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = v13
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v71
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v80 = F_hash_search(m, v74, v7+int32(4), int32(1), v7+int32(3))
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
+	return int32(0)
 L4:
 	;
-	v71 = v63 - l1
-	goto L3
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+3)))
+	if v28 != int32(1) {
+		goto L1
+	} else {
+		goto L5
+	}
 L5:
 	;
-	v42 = v38
-	goto L14
+	v31 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
+	goto L6
 L6:
 	;
-	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	if v22 == int32(0) {
-		goto L7
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v37 == int32(0) {
+		goto L1
 	} else {
 		goto L8
 	}
-L7:
-	;
-	v71 = int32(0)
-	goto L3
 L8:
 	;
-	goto L9
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v40
+	F_pfree(m, v37)
+	mBase = m.M
+	v43 = m.ExcPending
+	if v43 != 0 {
+		goto L3
+	} else {
+		goto L9
+	}
 L9:
 	;
-	v27 = l1
-	goto L10
-L10:
-	;
-	v31 = v27 + int32(1)
-	if v31&int32(3) == int32(0) {
-		v38 = v31
-		goto L5
-	} else {
-		goto L12
-	}
-L11:
-	;
-	v63 = v31
-	goto L4
-L12:
-	;
-	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
-	if v36 != 0 {
-		v27 = v31
-		goto L10
-	} else {
-		goto L13
-	}
-L13:
-	;
-	goto L11
-L14:
-	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
-	v51 = int32(-2139062144)
-	if (int32(16843008)-v48|v48)&v51 == v51 {
-		v42 = v42 + int32(4)
-		goto L14
-	} else {
-		goto L16
-	}
-L15:
-	;
-	v57 = v42
-	goto L17
-L16:
-	;
-	goto L15
-L17:
-	;
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v57))))
-	if v61 != 0 {
-		v57 = v57 + int32(1)
-		goto L17
-	} else {
-		goto L19
-	}
-L18:
-	;
-	v63 = v57
-	goto L4
-L19:
-	;
-	goto L18
-L20:
-	;
-	return int32(0)
-L21:
-	;
-	v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+3)))
-	if v84 != int32(1) {
-		goto L1
-	} else {
-		goto L22
-	}
-L22:
-	;
-	v87 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v87)
-	goto L23
-L23:
-	;
-	v93 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v93 == int32(0) {
-		goto L1
-	} else {
-		goto L25
-	}
-L25:
-	;
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(v93)))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v96
-	F_pfree(m, v93)
-	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
-		goto L20
-	} else {
-		goto L26
-	}
-L26:
-	;
-	goto L23
+	goto L6
 }
 func F_makeJsonTablePathSpec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M

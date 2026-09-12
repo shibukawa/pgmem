@@ -37,13 +37,13 @@ func F_GetCurrentCommandId(m *base.Module, l0 int32) int32 {
 				if v20 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(218937), int32(0))
+					F_errmsg(m, int32(219175), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(488052), int32(843), int32(460644))
+						F_errfinish(m, int32(488504), int32(843), int32(461096))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -90,7 +90,7 @@ func F_current_database(m *base.Module, l0 int32) int32 {
 	if v6 != 0 {
 		return int32(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[108]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[107]))
 		v9 = F_get_database_name(m, v8)
 		mBase = m.M
 		v10 = m.ExcPending

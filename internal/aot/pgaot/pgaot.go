@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 6808)
-	m.G0 = int32(13041424)
+	m.T0 = make([]any, 6829)
+	m.G0 = int32(13045584)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -54,7 +54,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4370523
+	m.DataEnd = 4374683
 	initData_0(m)
 	return m
 }
@@ -87,8 +87,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6808)
-	m.G0 = int32(13041424)
+	m.T0 = make([]any, 6829)
+	m.G0 = int32(13045584)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -119,7 +119,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4370523
+	m.DataEnd = 4374683
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -134,8 +134,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 6808)
-	m.G0 = int32(13041424)
+	m.T0 = make([]any, 6829)
+	m.G0 = int32(13045584)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -166,18 +166,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4370523
+	m.DataEnd = 4374683
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1587168])
-	copy(m.Memory[1592496:], wasm2goData_data_bin[1587168:1587177])
-	copy(m.Memory[1594544:], wasm2goData_data_bin[1587177:1600105])
-	copy(m.Memory[1617924:], wasm2goData_data_bin[1600105:1693346])
-	copy(m.Memory[1712192:], wasm2goData_data_bin[1693346:1805002])
-	copy(m.Memory[1835064:], wasm2goData_data_bin[1805002:4056144])
-	copy(m.Memory[4093696:], wasm2goData_data_bin[4056144:4332971])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1588080])
+	copy(m.Memory[1593408:], wasm2goData_data_bin[1588080:1588089])
+	copy(m.Memory[1595456:], wasm2goData_data_bin[1588089:1601017])
+	copy(m.Memory[1617924:], wasm2goData_data_bin[1601017:1694258])
+	copy(m.Memory[1712192:], wasm2goData_data_bin[1694258:1805914])
+	copy(m.Memory[1835064:], wasm2goData_data_bin[1805914:4058336])
+	copy(m.Memory[4094976:], wasm2goData_data_bin[4058336:4338043])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -4426,6 +4426,69 @@ func Subarray(m *base.Module, l0 int32) int32 {
 }
 func Uniq(m *base.Module, l0 int32) int32 {
 	return F_uniq(m, l0)
+}
+func PgMagicFuncFuzzystrmatch(m *base.Module) int32 {
+	return F_Pg_magic_func_fuzzystrmatch(m)
+}
+func DaitchMokotoff(m *base.Module, l0 int32) int32 {
+	return F_daitch_mokotoff(m, l0)
+}
+func Difference(m *base.Module, l0 int32) int32 {
+	return F_difference(m, l0)
+}
+func Dmetaphone(m *base.Module, l0 int32) int32 {
+	return F_dmetaphone(m, l0)
+}
+func DmetaphoneAlt(m *base.Module, l0 int32) int32 {
+	return F_dmetaphone_alt(m, l0)
+}
+func Levenshtein(m *base.Module, l0 int32) int32 {
+	return F_levenshtein(m, l0)
+}
+func LevenshteinLessEqual(m *base.Module, l0 int32) int32 {
+	return F_levenshtein_less_equal(m, l0)
+}
+func LevenshteinLessEqualWithCosts(m *base.Module, l0 int32) int32 {
+	return F_levenshtein_less_equal_with_costs(m, l0)
+}
+func LevenshteinWithCosts(m *base.Module, l0 int32) int32 {
+	return F_levenshtein_with_costs(m, l0)
+}
+func Metaphone(m *base.Module, l0 int32) int32 {
+	return F_metaphone(m, l0)
+}
+func PgFinfoDaitchMokotoff(m *base.Module) int32 {
+	return F_pg_finfo_daitch_mokotoff(m)
+}
+func PgFinfoDifference(m *base.Module) int32 {
+	return F_pg_finfo_difference(m)
+}
+func PgFinfoDmetaphone(m *base.Module) int32 {
+	return F_pg_finfo_dmetaphone(m)
+}
+func PgFinfoDmetaphoneAlt(m *base.Module) int32 {
+	return F_pg_finfo_dmetaphone_alt(m)
+}
+func PgFinfoLevenshtein(m *base.Module) int32 {
+	return F_pg_finfo_levenshtein(m)
+}
+func PgFinfoLevenshteinLessEqual(m *base.Module) int32 {
+	return F_pg_finfo_levenshtein_less_equal(m)
+}
+func PgFinfoLevenshteinLessEqualWithCosts(m *base.Module) int32 {
+	return F_pg_finfo_levenshtein_less_equal_with_costs(m)
+}
+func PgFinfoLevenshteinWithCosts(m *base.Module) int32 {
+	return F_pg_finfo_levenshtein_with_costs(m)
+}
+func PgFinfoMetaphone(m *base.Module) int32 {
+	return F_pg_finfo_metaphone(m)
+}
+func PgFinfoSoundex(m *base.Module) int32 {
+	return F_pg_finfo_soundex(m)
+}
+func Soundex(m *base.Module, l0 int32) int32 {
+	return F_soundex(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

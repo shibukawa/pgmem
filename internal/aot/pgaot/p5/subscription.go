@@ -32,7 +32,7 @@ func F_get_subscription_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[108]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[107]))
 	v14 = F_GetSysCacheOid(m, int32(66), v11, l0, v3, v3)
 	mBase = m.M
 	v17 = m.ExcPending
@@ -60,13 +60,13 @@ func F_get_subscription_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(70705), v7)
+						F_errmsg(m, int32(70756), v7)
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493701), int32(3824), int32(429508))
+							F_errfinish(m, int32(494169), int32(3824), int32(429960))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {

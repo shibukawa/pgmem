@@ -69,13 +69,13 @@ func F_FunctionCall5Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			} else {
 				v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = v50
-				F_errmsg_internal(m, int32(526566), v11)
+				F_errmsg_internal(m, int32(527241), v11)
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489721), int32(1246), int32(300858))
+					F_errfinish(m, int32(490173), int32(1246), int32(301136))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
@@ -161,13 +161,13 @@ func F_FunctionCall7Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 			} else {
 				v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v13))) = v58
-				F_errmsg_internal(m, int32(526566), v13)
+				F_errmsg_internal(m, int32(527241), v13)
 				mBase = m.M
 				v62 = m.ExcPending
 				if v62 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489721), int32(1312), int32(300816))
+					F_errfinish(m, int32(490173), int32(1312), int32(301094))
 					mBase = m.M
 					v67 = m.ExcPending
 					if v67 != 0 {
@@ -311,7 +311,7 @@ func F_coerce_function_result_tuple(m *base.Module, l0 int32, l1 int32) {
 			if v76 != 0 {
 				return
 			} else {
-				v78 = F_convert_tuples_by_position(m, v75, l1, int32(366418))
+				v78 = F_convert_tuples_by_position(m, v75, l1, int32(366811))
 				mBase = m.M
 				v79 = m.ExcPending
 				if v79 != 0 {
@@ -402,7 +402,7 @@ func F_coerce_function_result_tuple(m *base.Module, l0 int32, l1 int32) {
 				if v76 != 0 {
 					return
 				} else {
-					v78 = F_convert_tuples_by_position(m, v75, l1, int32(366418))
+					v78 = F_convert_tuples_by_position(m, v75, l1, int32(366811))
 					mBase = m.M
 					v79 = m.ExcPending
 					if v79 != 0 {
@@ -474,7 +474,7 @@ func F_coerce_function_result_tuple(m *base.Module, l0 int32, l1 int32) {
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+44))
 			if v20 != 0 {
 				v23 = v20
-				v25 = F_convert_tuples_by_position(m, v23, l1, int32(366418))
+				v25 = F_convert_tuples_by_position(m, v23, l1, int32(366811))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
@@ -606,7 +606,7 @@ func F_coerce_function_result_tuple(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					v23 = v21
-					v25 = F_convert_tuples_by_position(m, v23, l1, int32(366418))
+					v25 = F_convert_tuples_by_position(m, v23, l1, int32(366811))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -824,13 +824,13 @@ func F_has_function_privilege_id_name(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v21
-								F_errmsg(m, int32(70738), v8)
+								F_errmsg(m, int32(70789), v8)
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(492073), int32(3565), int32(374628))
+									F_errfinish(m, int32(492525), int32(3565), int32(375060))
 									mBase = m.M
 									v42 = m.ExcPending
 									if v42 != 0 {

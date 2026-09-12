@@ -176,7 +176,7 @@ L9:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, _consts[1376]))
 	v35 = int32(0)
-	v37 = F_hash_search(m, v30, v25<<(uint(int32(2))%32)+int32(4464160), v35, v35)
+	v37 = F_hash_search(m, v30, v25<<(uint(int32(2))%32)+int32(4468320), v35, v35)
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -264,7 +264,7 @@ L21:
 	;
 	v61 = *(*int32)(unsafe.Add(mBase, uint32(v41)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v61 + int32(4)
-	F_errmsg_internal(m, int32(86722), v8+int32(16))
+	F_errmsg_internal(m, int32(86773), v8+int32(16))
 	mBase = m.M
 	v69 = m.ExcPending
 	if v69 != 0 {
@@ -274,7 +274,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(493736), int32(3365), int32(230384))
+	F_errfinish(m, int32(494204), int32(3365), int32(230622))
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -394,7 +394,7 @@ L40:
 	;
 	v122 = *(*int32)(unsafe.Add(mBase, uint32(v102)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v122 + int32(4)
-	F_errmsg_internal(m, int32(86722), v8)
+	F_errmsg_internal(m, int32(86773), v8)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -404,7 +404,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(493736), int32(3365), int32(230384))
+	F_errfinish(m, int32(494204), int32(3365), int32(230622))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -607,7 +607,7 @@ func F_AtEOXact_Snapshot(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	F_pairingheap_remove(m, int32(4146552), v12+int32(52))
+	F_pairingheap_remove(m, int32(4147832), v12+int32(52))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -681,7 +681,7 @@ L13:
 L14:
 	;
 	v61 = *(*int32)(unsafe.Add(mBase, uint32(v37)+4))
-	F_pairingheap_remove(m, int32(4146552), v61+int32(52))
+	F_pairingheap_remove(m, int32(4147832), v61+int32(52))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -710,7 +710,7 @@ L17:
 	;
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(v37)))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v48
-	F_errmsg_internal(m, int32(295652), v9+int32(16))
+	F_errmsg_internal(m, int32(295930), v9+int32(16))
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -720,7 +720,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(489701), int32(1057), int32(86599))
+	F_errfinish(m, int32(490153), int32(1057), int32(86650))
 	mBase = m.M
 	v59 = m.ExcPending
 	if v59 != 0 {
@@ -753,7 +753,7 @@ L22:
 	}
 L23:
 	;
-	F_pairingheap_remove(m, int32(4146552), v86+int32(52))
+	F_pairingheap_remove(m, int32(4147832), v86+int32(52))
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -871,7 +871,7 @@ L38:
 	}
 L39:
 	;
-	F_errmsg_internal(m, int32(230500), int32(0))
+	F_errmsg_internal(m, int32(230738), int32(0))
 	mBase = m.M
 	v147 = m.ExcPending
 	if v147 != 0 {
@@ -881,7 +881,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(489701), int32(1075), int32(86599))
+	F_errfinish(m, int32(490153), int32(1075), int32(86650))
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -919,7 +919,7 @@ L45:
 L46:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v159
-	F_errmsg_internal(m, int32(339221), v9)
+	F_errmsg_internal(m, int32(339614), v9)
 	mBase = m.M
 	v170 = m.ExcPending
 	if v170 != 0 {
@@ -941,7 +941,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(489701), int32(1079), int32(86599))
+	F_errfinish(m, int32(490153), int32(1079), int32(86650))
 	mBase = m.M
 	v175 = m.ExcPending
 	if v175 != 0 {

@@ -3114,6 +3114,8 @@ func F_SplitGUCList(m *base.Module, l0 int32, l1 int32) int32
 func F_replace_text_regexp(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_array_to_text_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_array_to_text_internal
 func F_array_to_text_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_varstr_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_varstr_levenshtein_less_equal
+func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 //go:linkname F_unicode_norm_form_from_string github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_unicode_norm_form_from_string
 func F_unicode_norm_form_from_string(m *base.Module, l0 int32) int32
 //go:linkname F_map_sql_identifier_to_xml_name github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_map_sql_identifier_to_xml_name

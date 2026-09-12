@@ -82,7 +82,7 @@ func F_px_find_digest(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v154
 	var v155 int32
 	_ = v155
-	v10 = int32(544409)
+	v10 = int32(545237)
 	v11 = l0
 	goto L3
 L1:
@@ -174,7 +174,7 @@ L14:
 	goto L4
 L15:
 	;
-	v112 = int32(4366432)
+	v112 = int32(4367712)
 	goto L1
 L16:
 	;
@@ -193,7 +193,7 @@ L18:
 	}
 L19:
 	;
-	v112 = v64 + int32(4366432)
+	v112 = v64 + int32(4367712)
 	goto L1
 L20:
 	;
@@ -359,7 +359,7 @@ L46:
 	*(*int32)(unsafe.Add(mBase, uint32(v123)+4)) = v132 & int32(65535)
 	v148 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	*(*int32)(unsafe.Add(mBase, uint32(v123)+12)) = v148
-	F_ResourceOwnerRemember(m, v148, v123, int32(4366856))
+	F_ResourceOwnerRemember(m, v148, v123, int32(4368136))
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -383,12 +383,12 @@ L48:
 L49:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v154)+24)) = v123
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+20)) = int32(6523)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+16)) = int32(6524)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+12)) = int32(6525)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+8)) = int32(6526)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+4)) = int32(6527)
-	*(*int32)(unsafe.Add(mBase, uint32(v154))) = int32(6528)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+20)) = int32(6544)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+16)) = int32(6545)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+12)) = int32(6546)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+8)) = int32(6547)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+4)) = int32(6548)
+	*(*int32)(unsafe.Add(mBase, uint32(v154))) = int32(6549)
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v154
 	return int32(0)
 }

@@ -3454,6 +3454,8 @@ func F_varstrfastcmp_locale(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 func F_textToQualifiedNameList(m *base.Module, l0 int32) int32
 //go:linkname F_text_format github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_text_format
 func F_text_format(m *base.Module, l0 int32) int32
+//go:linkname F_varstr_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_varstr_levenshtein_less_equal
+func F_varstr_levenshtein_less_equal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) int32
 //go:linkname F_xmlconcat github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_xmlconcat
 func F_xmlconcat(m *base.Module) int32
 //go:linkname F_xmlparse github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_xmlparse

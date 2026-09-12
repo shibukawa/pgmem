@@ -324,7 +324,7 @@ L37:
 	;
 	v147 = *(*int32)(unsafe.Add(mBase, uint32(v101)))
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = int32(base.Ui32(v147) >> (uint(int32(2)) % 32))
-	F_errmsg_internal(m, int32(403084), v17)
+	F_errmsg_internal(m, int32(403516), v17)
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -334,7 +334,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(487551), int32(171), int32(347550))
+	F_errfinish(m, int32(488003), int32(171), int32(347943))
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -397,7 +397,7 @@ func F_spg_xlog_startup(m *base.Module) {
 	var v9 int32
 	_ = v9
 	v3 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v8 = F_AllocSetContextCreateInternal(m, v3, int32(59645), int32(0), int32(8192), int32(8388608))
+	v8 = F_AllocSetContextCreateInternal(m, v3, int32(59696), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

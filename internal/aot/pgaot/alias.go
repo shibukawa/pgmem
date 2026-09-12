@@ -2678,6 +2678,48 @@ func F_g_intbig_picksplit(m *base.Module, l0 int32) int32
 func F_g_intbig_consistent(m *base.Module, l0 int32) int32
 //go:linkname F_g_intbig_options github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_g_intbig_options
 func F_g_intbig_options(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_daitch_mokotoff github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_daitch_mokotoff
+func F_pg_finfo_daitch_mokotoff(m *base.Module) int32
+//go:linkname F_daitch_mokotoff github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_daitch_mokotoff
+func F_daitch_mokotoff(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_dmetaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_dmetaphone
+func F_pg_finfo_dmetaphone(m *base.Module) int32
+//go:linkname F_dmetaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dmetaphone
+func F_dmetaphone(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_dmetaphone_alt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_dmetaphone_alt
+func F_pg_finfo_dmetaphone_alt(m *base.Module) int32
+//go:linkname F_dmetaphone_alt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_dmetaphone_alt
+func F_dmetaphone_alt(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_fuzzystrmatch github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_Pg_magic_func_fuzzystrmatch
+func F_Pg_magic_func_fuzzystrmatch(m *base.Module) int32
+//go:linkname F_pg_finfo_levenshtein_with_costs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_levenshtein_with_costs
+func F_pg_finfo_levenshtein_with_costs(m *base.Module) int32
+//go:linkname F_levenshtein_with_costs github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_levenshtein_with_costs
+func F_levenshtein_with_costs(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_levenshtein github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_levenshtein
+func F_pg_finfo_levenshtein(m *base.Module) int32
+//go:linkname F_levenshtein github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_levenshtein
+func F_levenshtein(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_levenshtein_less_equal_with_costs github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_levenshtein_less_equal_with_costs
+func F_pg_finfo_levenshtein_less_equal_with_costs(m *base.Module) int32
+//go:linkname F_levenshtein_less_equal_with_costs github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_levenshtein_less_equal_with_costs
+func F_levenshtein_less_equal_with_costs(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_levenshtein_less_equal
+func F_pg_finfo_levenshtein_less_equal(m *base.Module) int32
+//go:linkname F_levenshtein_less_equal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_levenshtein_less_equal
+func F_levenshtein_less_equal(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_metaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_metaphone
+func F_pg_finfo_metaphone(m *base.Module) int32
+//go:linkname F_metaphone github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_metaphone
+func F_metaphone(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_soundex github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_soundex
+func F_pg_finfo_soundex(m *base.Module) int32
+//go:linkname F_soundex github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_soundex
+func F_soundex(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_difference github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_difference
+func F_pg_finfo_difference(m *base.Module) int32
+//go:linkname F_difference github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_difference
+func F_difference(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

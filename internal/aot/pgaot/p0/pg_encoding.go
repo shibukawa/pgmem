@@ -62,7 +62,7 @@ func F_pg_encoding_to_char_private(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[769])))
 		v11 = v10
 	} else {
-		v11 = int32(735586)
+		v11 = int32(736510)
 	}
 	return v11
 }

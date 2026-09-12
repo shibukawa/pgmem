@@ -538,14 +538,14 @@ func F_ltree_gist_in(m *base.Module, l0 int32) int32 {
 		if v15 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(75128)
-			F_errmsg(m, int32(190730), v5)
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(75179)
+			F_errmsg(m, int32(190968), v5)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(487331), int32(26), int32(276272))
+				F_errfinish(m, int32(487783), int32(26), int32(276550))
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {

@@ -29,7 +29,7 @@ func F_SPI_copytuple(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, _consts[351])) = int32(-4)
 			return int32(0)
 		} else {
-			v20 = int32(4476144)
+			v20 = int32(4480304)
 			v21 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(v12)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
@@ -599,7 +599,7 @@ L14:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v32
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v29
-	F_errmsg(m, int32(258773), int32(0))
+	F_errmsg(m, int32(259011), int32(0))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -615,7 +615,7 @@ L15:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v32
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v29
-	F_errfinish(m, int32(492270), int32(341), int32(315278))
+	F_errfinish(m, int32(492722), int32(341), int32(315588))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {
@@ -683,7 +683,7 @@ L22:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v32
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v29
-	F_errmsg(m, int32(339171), int32(0))
+	F_errmsg(m, int32(339564), int32(0))
 	mBase = m.M
 	v112 = m.ExcPending
 	if v112 != 0 {
@@ -699,7 +699,7 @@ L23:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v35
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v32
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = v29
-	F_errfinish(m, int32(492270), int32(347), int32(315278))
+	F_errfinish(m, int32(492722), int32(347), int32(315588))
 	mBase = m.M
 	v122 = m.ExcPending
 	if v122 != 0 {

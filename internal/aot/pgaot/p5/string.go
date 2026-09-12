@@ -12,276 +12,117 @@ func F_AppendStringToManifest(m *base.Module, l0 int32, l1 int32) {
 	_ = v5
 	var v7 int32
 	_ = v7
-	var v16 int32
-	_ = v16
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
 	var v21 int32
 	_ = v21
-	var v25 int32
-	_ = v25
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
-	var v42 int32
-	_ = v42
+	var v40 int32
+	_ = v40
 	var v45 int32
 	_ = v45
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v101 int32
-	_ = v101
-	var v102 int32
-	_ = v102
-	var v104 int32
-	_ = v104
-	var v105 int64
-	_ = v105
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v49 int64
+	_ = v49
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	if l1&int32(3) == int32(0) {
-		v32 = l1
-		goto L3
-	} else {
-		goto L4
-	}
-L1:
-	;
-	v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)))
-	if v66 != int32(1) {
-		goto L18
-	} else {
-		goto L19
-	}
-L2:
-	;
-	v65 = v57 - l1
-	goto L1
-L3:
-	;
-	v36 = v32
-	goto L12
-L4:
-	;
-	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
-	if v16 == int32(0) {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	v65 = int32(0)
-	goto L1
-L6:
-	;
-	goto L7
-L7:
-	;
-	v21 = l1
-	goto L8
-L8:
-	;
-	v25 = v21 + int32(1)
-	if v25&int32(3) == int32(0) {
-		v32 = v25
-		goto L3
-	} else {
-		goto L10
-	}
-L9:
-	;
-	v57 = v25
-	goto L2
-L10:
-	;
-	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25))))
-	if v30 != 0 {
-		v21 = v25
-		goto L8
-	} else {
-		goto L11
-	}
-L11:
-	;
-	goto L9
-L12:
-	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
-	v45 = int32(-2139062144)
-	if (int32(16843008)-v42|v42)&v45 == v45 {
-		v36 = v36 + int32(4)
-		goto L12
-	} else {
-		goto L14
-	}
-L13:
-	;
-	v51 = v36
-	goto L15
-L14:
-	;
-	goto L13
-L15:
-	;
-	v55 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
-	if v55 != 0 {
-		v51 = v51 + int32(1)
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v57 = v51
-	goto L2
-L17:
-	;
-	goto L16
-L18:
-	;
-	v102 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	F_BufFileWrite(m, v102, l1, v65)
+	v9 = F_strlen(m, l1)
 	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
-		goto L21
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+26)))
+	if v10 != int32(1) {
+		v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		F_BufFileWrite(m, v46, l1, v9)
+		mBase = m.M
+		v48 = m.ExcPending
+		if v48 != 0 {
+			return
+		} else {
+			v49 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+			*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v49 + base.I64_extend_i32_s(v9)
+			m.G0 = v7 + int32(16)
+			return
+		}
 	} else {
-		goto L35
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+		v14 = F_pg_cryptohash_update(m, v13, l1, v9)
+		mBase = m.M
+		if int32(0) <= v14 {
+			v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			F_BufFileWrite(m, v46, l1, v9)
+			mBase = m.M
+			v48 = m.ExcPending
+			if v48 != 0 {
+				return
+			} else {
+				v49 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+				*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v49 + base.I64_extend_i32_s(v9)
+				m.G0 = v7 + int32(16)
+				return
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+				if v21 == int32(0) {
+					v36 = int32(13845)
+				} else {
+					v28 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
+					if v28 == int32(1) {
+						v31 = int32(301767)
+					} else {
+						v31 = int32(128975)
+					}
+					if v28 == int32(2) {
+						v34 = int32(13845)
+					} else {
+						v34 = v31
+					}
+					v36 = v34
+				}
+				*(*int32)(unsafe.Add(mBase, uint32(v7))) = v36
+				F_errmsg_internal(m, int32(197874), v7)
+				mBase = m.M
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return
+				} else {
+					F_errfinish(m, int32(487820), int32(393), int32(77292))
+					mBase = m.M
+					v45 = m.ExcPending
+					if v45 != 0 {
+						return
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
 	}
-L19:
-	;
-	v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v70 = F_pg_cryptohash_update(m, v69, l1, v65)
-	mBase = m.M
-	if int32(0) <= v70 {
-		goto L18
-	} else {
-		goto L20
-	}
-L20:
-	;
-	F_errstart_cold(m, int32(21), int32(0))
-	mBase = m.M
-	v76 = m.ExcPending
-	if v76 != 0 {
-		goto L21
-	} else {
-		goto L22
-	}
-L21:
-	;
-	return
-L22:
-	;
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v77 == int32(0) {
-		goto L24
-	} else {
-		goto L25
-	}
-L23:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v92
-	F_errmsg_internal(m, int32(197636), v7)
-	mBase = m.M
-	v96 = m.ExcPending
-	if v96 != 0 {
-		goto L21
-	} else {
-		goto L33
-	}
-L24:
-	;
-	v92 = int32(13845)
-	goto L23
-L25:
-	;
-	goto L26
-L26:
-	;
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v77)+4))
-	if v84 == int32(1) {
-		goto L27
-	} else {
-		goto L28
-	}
-L27:
-	;
-	v87 = int32(301489)
-	goto L29
-L28:
-	;
-	v87 = int32(128831)
-	goto L29
-L29:
-	;
-	if v84 == int32(2) {
-		goto L30
-	} else {
-		goto L31
-	}
-L30:
-	;
-	v90 = int32(13845)
-	goto L32
-L31:
-	;
-	v90 = v87
-	goto L32
-L32:
-	;
-	v92 = v90
-	goto L23
-L33:
-	;
-	F_errfinish(m, int32(487368), int32(393), int32(77241))
-	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
-		goto L21
-	} else {
-		goto L34
-	}
-L34:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L35:
-	;
-	v105 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v105 + base.I64_extend_i32_s(v65)
-	m.G0 = v7 + int32(16)
-	return
 }
 func F_appendStringInfoChar(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
@@ -844,7 +685,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 			v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			if v50 != 0 {
 				if v46 == int32(0) {
-					v57 = int32(4476144)
+					v57 = int32(4480304)
 					v58 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 					v60 = *(*int32)(unsafe.Add(mBase, uint32(v8)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[9])) = v60
@@ -908,13 +749,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 						if v145 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(61115), int32(0))
+							F_errmsg_internal(m, int32(61166), int32(0))
 							mBase = m.M
 							v149 = m.ExcPending
 							if v149 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(494617), int32(5432), int32(350044))
+								F_errfinish(m, int32(495085), int32(5432), int32(350437))
 								mBase = m.M
 								v154 = m.ExcPending
 								if v154 != 0 {
@@ -927,7 +768,7 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 							}
 						}
 					} else {
-						v96 = int32(4476144)
+						v96 = int32(4480304)
 						v97 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 						v99 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
 						*(*int32)(unsafe.Add(mBase, _consts[9])) = v99
@@ -1004,13 +845,13 @@ func F_string_agg_combine(m *base.Module, l0 int32) int32 {
 		if v132 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(60731), int32(0))
+			F_errmsg_internal(m, int32(60782), int32(0))
 			mBase = m.M
 			v136 = m.ExcPending
 			if v136 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(494617), int32(5509), int32(369814))
+				F_errfinish(m, int32(495085), int32(5509), int32(370246))
 				mBase = m.M
 				v141 = m.ExcPending
 				if v141 != 0 {

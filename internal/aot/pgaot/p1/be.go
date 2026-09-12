@@ -16,14 +16,14 @@ func F_be_lo_creat(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	F_PreventCommandIfReadOnly(m, int32(661799))
+	F_PreventCommandIfReadOnly(m, int32(662697))
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)
 	} else {
 		v8 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[443])) = uint8(v8)
+		*(*uint8)(unsafe.Add(mBase, _consts[444])) = uint8(v8)
 		v11 = F_inv_create(m, int32(0))
 		mBase = m.M
 		v12 = m.ExcPending
@@ -71,13 +71,13 @@ func F_be_lo_get_fragment(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(339401), int32(0))
+				F_errmsg(m, int32(339794), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(489554), int32(821), int32(94596))
+					F_errfinish(m, int32(490006), int32(821), int32(94647))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {

@@ -76,13 +76,13 @@ func F_get_language_name(m *base.Module, l0 int32, l1 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-					F_errmsg_internal(m, int32(51712), v8)
+					F_errmsg_internal(m, int32(51729), v8)
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493701), int32(1270), int32(376189))
+						F_errfinish(m, int32(494169), int32(1270), int32(376621))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -281,14 +281,14 @@ func F_language_handler_in(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(217720)
-			F_errmsg(m, int32(190730), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(217958)
+			F_errmsg(m, int32(190968), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(488711), int32(368), int32(276465))
+				F_errfinish(m, int32(489163), int32(368), int32(276743))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

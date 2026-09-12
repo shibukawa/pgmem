@@ -825,7 +825,7 @@ L4:
 	v1148 = v839 + (v1136-v839)&v1138
 	v1149 = v421 + v1140
 	v1150 = v1148 - v1149
-	v1152 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	v1152 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
 	if v1152 == v1148 {
 		goto L253
 	} else {
@@ -838,7 +838,7 @@ L5:
 	goto L1
 L6:
 	;
-	v1098 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
+	v1098 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
 	if base.Ui32(v1098) <= base.Ui32(v421) {
 		goto L5
 	} else {
@@ -846,7 +846,7 @@ L6:
 	}
 L7:
 	;
-	v821 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
+	v821 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
 	if base.Ui32(v675) < base.Ui32(v821) {
 		goto L203
 	} else {
@@ -862,7 +862,7 @@ L9:
 	goto L2
 L10:
 	;
-	v430 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
+	v430 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
 	if base.Ui32(v421) <= base.Ui32(v430) {
 		goto L120
 	} else {
@@ -870,7 +870,7 @@ L10:
 	}
 L11:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[1479]))
 	v22 = int32(11)
 	if base.Ui32(l0) < base.Ui32(v22) {
 		goto L14
@@ -910,8 +910,8 @@ L17:
 	;
 	v38 = (v31^int32(-1))&int32(1) + v30
 	v40 = v38 << (uint(int32(3)) % 32)
-	v42 = v40 + int32(4652336)
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1479])))
+	v42 = v40 + int32(4656496)
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1480])))
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+8))
 	if v42 == v46 {
 		goto L21
@@ -923,7 +923,7 @@ L18:
 	goto L19
 L19:
 	;
-	v68 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
+	v68 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
 	if base.Ui32(v28) <= base.Ui32(v68) {
 		v421 = v28
 		goto L10
@@ -942,7 +942,7 @@ L20:
 	goto L1
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v20 & base.I32_rotl(int32(-2), v38)
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v20 & base.I32_rotl(int32(-2), v38)
 	goto L20
 L22:
 	;
@@ -950,7 +950,7 @@ L22:
 L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v46)+12)) = v42
-	*(*int32)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1479]))) = v46
+	*(*int32)(unsafe.Add(mBase, uint32(v40)+uint32(_consts[1480]))) = v46
 	goto L20
 L24:
 	;
@@ -964,8 +964,8 @@ L25:
 	v72 = int32(2) << (uint(v30) % 32)
 	v77 = base.I32_ctz(v31 << (uint(v30) % 32) & (v72 | (int32(0) - v72)))
 	v79 = v77 << (uint(int32(3)) % 32)
-	v81 = v79 + int32(4652336)
-	v84 = *(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1479])))
+	v81 = v79 + int32(4656496)
+	v84 = *(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1480])))
 	v85 = *(*int32)(unsafe.Add(mBase, uint32(v84)+8))
 	if v81 == v85 {
 		goto L29
@@ -977,7 +977,7 @@ L26:
 	goto L27
 L27:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, _consts[1480]))
+	v139 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
 	if v139 == int32(0) {
 		v421 = v28
 		goto L10
@@ -1001,7 +1001,7 @@ L28:
 L29:
 	;
 	v90 = v20 & base.I32_rotl(int32(-2), v77)
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v90
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v90
 	v94 = v90
 	goto L28
 L30:
@@ -1010,14 +1010,14 @@ L30:
 L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v85)+12)) = v81
-	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1479]))) = v85
+	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1480]))) = v85
 	v94 = v20
 	goto L28
 L32:
 	;
 	v108 = v68 & int32(-8)
-	v110 = v108 + int32(4652336)
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
+	v110 = v108 + int32(4656496)
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[1482]))
 	v116 = int32(1) << (uint(int32(base.Ui32(v68)>>(uint(int32(3))%32))) % 32)
 	if v94&v116 == int32(0) {
 		goto L36
@@ -1029,20 +1029,20 @@ L33:
 	goto L34
 L34:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v98
-	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v101
+	*(*int32)(unsafe.Add(mBase, _consts[1482])) = v98
+	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v101
 	v1741 = v84 + int32(8)
 	goto L1
 L35:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v108)+uint32(_consts[1479]))) = v112
+	*(*int32)(unsafe.Add(mBase, uint32(v108)+uint32(_consts[1480]))) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v124)+12)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v112)+12)) = v110
 	*(*int32)(unsafe.Add(mBase, uint32(v112)+8)) = v124
 	goto L34
 L36:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v116 | v94
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v116 | v94
 	v124 = v110
 	goto L35
 L37:
@@ -1050,12 +1050,12 @@ L37:
 	goto L38
 L38:
 	;
-	v123 = *(*int32)(unsafe.Add(mBase, uint32(v108)+uint32(_consts[1479])))
+	v123 = *(*int32)(unsafe.Add(mBase, uint32(v108)+uint32(_consts[1480])))
 	v124 = v123
 	goto L35
 L39:
 	;
-	v147 = *(*int32)(unsafe.Add(mBase, uint32(base.I32_ctz(v139)<<(uint(int32(2))%32))+uint32(_consts[1482])))
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(base.I32_ctz(v139)<<(uint(int32(2))%32))+uint32(_consts[1483])))
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(v147)+4))
 	v153 = v148&int32(-8) - v28
 	v154 = v147
@@ -1215,7 +1215,7 @@ L64:
 	;
 	v218 = l0 + int32(11)
 	v220 = v218 & int32(-8)
-	v222 = *(*int32)(unsafe.Add(mBase, _consts[1480]))
+	v222 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
 	if v222 == int32(0) {
 		v421 = v220
 		goto L10
@@ -1243,7 +1243,7 @@ L68:
 	;
 	v243 = int32(0)
 	v244 = v243 - v220
-	v249 = *(*int32)(unsafe.Add(mBase, uint32(v242<<(uint(int32(2))%32))+uint32(_consts[1482])))
+	v249 = *(*int32)(unsafe.Add(mBase, uint32(v242<<(uint(int32(2))%32))+uint32(_consts[1483])))
 	if v249 == v243 {
 		goto L72
 	} else {
@@ -1409,7 +1409,7 @@ L92:
 	}
 L93:
 	;
-	v324 = *(*int32)(unsafe.Add(mBase, uint32(base.I32_ctz(v316)<<(uint(int32(2))%32))+uint32(_consts[1482])))
+	v324 = *(*int32)(unsafe.Add(mBase, uint32(base.I32_ctz(v316)<<(uint(int32(2))%32))+uint32(_consts[1483])))
 	v325 = v324
 	v326 = v310
 	goto L92
@@ -1489,7 +1489,7 @@ L106:
 	goto L96
 L107:
 	;
-	v378 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
+	v378 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
 	if base.Ui32(v378-v220) <= base.Ui32(v364) {
 		v421 = v220
 		goto L10
@@ -1582,7 +1582,7 @@ L119:
 	goto L117
 L120:
 	;
-	v433 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
+	v433 = *(*int32)(unsafe.Add(mBase, _consts[1482]))
 	v434 = v430 - v421
 	if base.Ui32(int32(16)) <= base.Ui32(v434) {
 		goto L124
@@ -1594,7 +1594,7 @@ L121:
 	goto L122
 L122:
 	;
-	v466 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
+	v466 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
 	if base.Ui32(v421) < base.Ui32(v466) {
 		goto L127
 	} else {
@@ -1602,8 +1602,8 @@ L122:
 	}
 L123:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v458
-	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v457
+	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v458
+	*(*int32)(unsafe.Add(mBase, _consts[1482])) = v457
 	v1741 = v433 + int32(8)
 	goto L1
 L124:
@@ -1631,11 +1631,11 @@ L126:
 L127:
 	;
 	v469 = v466 - v421
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v469
-	v471 = int32(4652320)
-	v473 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v469
+	v471 = int32(4656480)
+	v473 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
 	v474 = v473 + v421
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v474
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v474
 	*(*int32)(unsafe.Add(mBase, uint32(v474)+4)) = v469 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v473)+4)) = v421 | int32(3)
 	v1741 = v473 + int32(8)
@@ -1647,7 +1647,7 @@ L129:
 	;
 	v484 = int32(0)
 	v486 = v421 + int32(47)
-	v488 = *(*int32)(unsafe.Add(mBase, _consts[1483]))
+	v488 = *(*int32)(unsafe.Add(mBase, _consts[1484]))
 	if v488 != 0 {
 		goto L131
 	} else {
@@ -1666,7 +1666,7 @@ L130:
 	}
 L131:
 	;
-	v490 = *(*int32)(unsafe.Add(mBase, _consts[1484]))
+	v490 = *(*int32)(unsafe.Add(mBase, _consts[1485]))
 	v512 = v490
 	goto L130
 L132:
@@ -1674,17 +1674,17 @@ L132:
 	goto L133
 L133:
 	;
-	*(*int64)(unsafe.Add(mBase, _consts[1485])) = int64(-1)
-	*(*int64)(unsafe.Add(mBase, _consts[1486])) = int64(17592186048512)
-	*(*int32)(unsafe.Add(mBase, _consts[1483])) = (v15+int32(12))&int32(-16) ^ int32(1431655768)
+	*(*int64)(unsafe.Add(mBase, _consts[1486])) = int64(-1)
+	*(*int64)(unsafe.Add(mBase, _consts[1487])) = int64(17592186048512)
+	*(*int32)(unsafe.Add(mBase, _consts[1484])) = (v15+int32(12))&int32(-16) ^ int32(1431655768)
 	v506 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1487])) = v506
 	*(*int32)(unsafe.Add(mBase, _consts[1488])) = v506
+	*(*int32)(unsafe.Add(mBase, _consts[1489])) = v506
 	v512 = int32(4096)
 	goto L130
 L134:
 	;
-	v519 = *(*int32)(unsafe.Add(mBase, _consts[1489]))
+	v519 = *(*int32)(unsafe.Add(mBase, _consts[1490]))
 	if v519 != 0 {
 		goto L135
 	} else {
@@ -1692,7 +1692,7 @@ L134:
 	}
 L135:
 	;
-	v521 = *(*int32)(unsafe.Add(mBase, _consts[1490]))
+	v521 = *(*int32)(unsafe.Add(mBase, _consts[1491]))
 	v522 = v521 + v516
 	if base.Ui32(v522) <= base.Ui32(v521) {
 		v1741 = v484
@@ -1705,7 +1705,7 @@ L136:
 	goto L137
 L137:
 	;
-	v528 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1488])))
+	v528 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1489])))
 	if v528&int32(4) == int32(0) {
 		goto L141
 	} else {
@@ -1724,11 +1724,11 @@ L139:
 	goto L137
 L140:
 	;
-	v685 = int32(4652728)
-	v687 = *(*int32)(unsafe.Add(mBase, _consts[1490]))
+	v685 = int32(4656888)
+	v687 = *(*int32)(unsafe.Add(mBase, _consts[1491]))
 	v688 = v687 + v679
-	*(*int32)(unsafe.Add(mBase, _consts[1490])) = v688
-	v691 = *(*int32)(unsafe.Add(mBase, _consts[1491]))
+	*(*int32)(unsafe.Add(mBase, _consts[1491])) = v688
+	v691 = *(*int32)(unsafe.Add(mBase, _consts[1492]))
 	if base.Ui32(v691) < base.Ui32(v688) {
 		goto L180
 	} else {
@@ -1736,7 +1736,7 @@ L140:
 	}
 L141:
 	;
-	v534 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	v534 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
 	if v534 != 0 {
 		goto L148
 	} else {
@@ -1758,9 +1758,9 @@ L143:
 	}
 L144:
 	;
-	v643 = int32(4652740)
-	v645 = *(*int32)(unsafe.Add(mBase, _consts[1488]))
-	*(*int32)(unsafe.Add(mBase, _consts[1488])) = v645 | int32(4)
+	v643 = int32(4656900)
+	v645 = *(*int32)(unsafe.Add(mBase, _consts[1489]))
+	*(*int32)(unsafe.Add(mBase, _consts[1489])) = v645 | int32(4)
 	goto L143
 L145:
 	;
@@ -1792,7 +1792,7 @@ L147:
 	}
 L148:
 	;
-	v536 = int32(4652744)
+	v536 = int32(4656904)
 	goto L151
 L149:
 	;
@@ -1845,7 +1845,7 @@ L157:
 	goto L152
 L158:
 	;
-	v571 = *(*int32)(unsafe.Add(mBase, _consts[1486]))
+	v571 = *(*int32)(unsafe.Add(mBase, _consts[1487]))
 	v573 = v571 - int32(1)
 	if v573&v567 != 0 {
 		goto L159
@@ -1869,7 +1869,7 @@ L161:
 	}
 L162:
 	;
-	v584 = *(*int32)(unsafe.Add(mBase, _consts[1489]))
+	v584 = *(*int32)(unsafe.Add(mBase, _consts[1490]))
 	if v584 != 0 {
 		goto L163
 	} else {
@@ -1877,7 +1877,7 @@ L162:
 	}
 L163:
 	;
-	v586 = *(*int32)(unsafe.Add(mBase, _consts[1490]))
+	v586 = *(*int32)(unsafe.Add(mBase, _consts[1491]))
 	v587 = v586 + v581
 	if base.Ui32(v587) <= base.Ui32(v586) {
 		goto L144
@@ -1935,7 +1935,7 @@ L172:
 	goto L173
 L173:
 	;
-	v619 = *(*int32)(unsafe.Add(mBase, _consts[1484]))
+	v619 = *(*int32)(unsafe.Add(mBase, _consts[1485]))
 	v624 = (v619 + (v486 - v607)) & (int32(0) - v619)
 	v625 = F_sbrk(m, v624)
 	mBase = m.M
@@ -1981,14 +1981,14 @@ L179:
 	goto L140
 L180:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1491])) = v688
+	*(*int32)(unsafe.Add(mBase, _consts[1492])) = v688
 	goto L182
 L181:
 	;
 	goto L182
 L182:
 	;
-	v696 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	v696 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
 	if v696 != 0 {
 		goto L184
 	} else {
@@ -2003,14 +2003,14 @@ L183:
 	}
 L184:
 	;
-	v698 = int32(4652744)
+	v698 = int32(4656904)
 	goto L187
 L185:
 	;
 	goto L186
 L186:
 	;
-	v716 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
+	v716 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
 	if base.Ui32(v716) <= base.Ui32(v675) {
 		goto L191
 	} else {
@@ -2057,7 +2057,7 @@ L193:
 	}
 L194:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v675
+	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v675
 	goto L196
 L195:
 	;
@@ -2065,20 +2065,20 @@ L195:
 L196:
 	;
 	v724 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[1492])) = v679
-	*(*int32)(unsafe.Add(mBase, _consts[1493])) = v675
-	*(*int32)(unsafe.Add(mBase, _consts[1494])) = int32(-1)
-	v734 = *(*int32)(unsafe.Add(mBase, _consts[1483]))
-	*(*int32)(unsafe.Add(mBase, _consts[1495])) = v734
-	*(*int32)(unsafe.Add(mBase, _consts[1496])) = v724
+	*(*int32)(unsafe.Add(mBase, _consts[1493])) = v679
+	*(*int32)(unsafe.Add(mBase, _consts[1494])) = v675
+	*(*int32)(unsafe.Add(mBase, _consts[1495])) = int32(-1)
+	v734 = *(*int32)(unsafe.Add(mBase, _consts[1484]))
+	*(*int32)(unsafe.Add(mBase, _consts[1496])) = v734
+	*(*int32)(unsafe.Add(mBase, _consts[1497])) = v724
 	v739 = v724
 	goto L197
 L197:
 	;
 	v752 = v739 << (uint(int32(3)) % 32)
-	v756 = v752 + int32(4652336)
-	*(*int32)(unsafe.Add(mBase, uint32(v752)+uint32(_consts[1479]))) = v756
-	*(*int32)(unsafe.Add(mBase, uint32(v752)+uint32(_consts[1497]))) = v756
+	v756 = v752 + int32(4656496)
+	*(*int32)(unsafe.Add(mBase, uint32(v752)+uint32(_consts[1480]))) = v756
+	*(*int32)(unsafe.Add(mBase, uint32(v752)+uint32(_consts[1498]))) = v756
 	v762 = v739 + int32(1)
 	if v762 != int32(32) {
 		v739 = v762
@@ -2092,13 +2092,13 @@ L198:
 	v767 = v679 - v766
 	v771 = (int32(-8) - v675) & int32(7)
 	v772 = v767 - v771
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v772
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v772
 	v775 = v771 + v675
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v775
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v775
 	*(*int32)(unsafe.Add(mBase, uint32(v775)+4)) = v772 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v767+v675)+4)) = v766
-	v785 = *(*int32)(unsafe.Add(mBase, _consts[1498]))
-	*(*int32)(unsafe.Add(mBase, _consts[1499])) = v785
+	v785 = *(*int32)(unsafe.Add(mBase, _consts[1499]))
+	*(*int32)(unsafe.Add(mBase, _consts[1500])) = v785
 	goto L6
 L199:
 	;
@@ -2123,31 +2123,31 @@ L202:
 	*(*int32)(unsafe.Add(mBase, uint32(v698)+4)) = v711 + v679
 	v798 = (int32(-8) - v696) & int32(7)
 	v799 = v696 + v798
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v799
-	v801 = int32(4652308)
-	v803 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v799
+	v801 = int32(4656468)
+	v803 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
 	v804 = v803 + v679
 	v805 = v804 - v798
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v805
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v805
 	*(*int32)(unsafe.Add(mBase, uint32(v799)+4)) = v805 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v696+v804)+4)) = int32(40)
-	v815 = *(*int32)(unsafe.Add(mBase, _consts[1498]))
-	*(*int32)(unsafe.Add(mBase, _consts[1499])) = v815
+	v815 = *(*int32)(unsafe.Add(mBase, _consts[1499]))
+	*(*int32)(unsafe.Add(mBase, _consts[1500])) = v815
 	goto L6
 L203:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v675
+	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v675
 	goto L205
 L204:
 	;
 	goto L205
 L205:
 	;
-	v827 = int32(4652744)
+	v827 = int32(4656904)
 	goto L207
 L206:
 	;
-	v849 = int32(4652744)
+	v849 = int32(4656904)
 	goto L214
 L207:
 	;
@@ -2201,13 +2201,13 @@ L215:
 	v873 = int32(7)
 	v874 = (int32(-8) - v675) & v873
 	v875 = v870 - v874
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v875
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v875
 	v878 = v675 + v874
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v878
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v878
 	*(*int32)(unsafe.Add(mBase, uint32(v878)+4)) = v875 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v870+v675)+4)) = v869
-	v888 = *(*int32)(unsafe.Add(mBase, _consts[1498]))
-	*(*int32)(unsafe.Add(mBase, _consts[1499])) = v888
+	v888 = *(*int32)(unsafe.Add(mBase, _consts[1499]))
+	*(*int32)(unsafe.Add(mBase, _consts[1500])) = v888
 	v896 = v864 + (int32(39)-v864)&v873 - int32(47)
 	if base.Ui32(v896) < base.Ui32(v696+int32(16)) {
 		goto L221
@@ -2248,16 +2248,16 @@ L222:
 L223:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v900)+4)) = int32(27)
-	v903 = int32(4652752)
-	v904 = *(*int64)(unsafe.Add(mBase, _consts[1500]))
+	v903 = int32(4656912)
+	v904 = *(*int64)(unsafe.Add(mBase, _consts[1501]))
 	*(*int64)(unsafe.Add(mBase, uint32(v900)+16)) = v904
-	v906 = int32(4652744)
-	v907 = *(*int64)(unsafe.Add(mBase, _consts[1493]))
+	v906 = int32(4656904)
+	v907 = *(*int64)(unsafe.Add(mBase, _consts[1494]))
 	*(*int64)(unsafe.Add(mBase, uint32(v900)+8)) = v907
-	*(*int32)(unsafe.Add(mBase, _consts[1500])) = v900 + int32(8)
-	*(*int32)(unsafe.Add(mBase, _consts[1492])) = v679
-	*(*int32)(unsafe.Add(mBase, _consts[1493])) = v675
-	*(*int32)(unsafe.Add(mBase, _consts[1496])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1501])) = v900 + int32(8)
+	*(*int32)(unsafe.Add(mBase, _consts[1493])) = v679
+	*(*int32)(unsafe.Add(mBase, _consts[1494])) = v675
+	*(*int32)(unsafe.Add(mBase, _consts[1497])) = int32(0)
 	v922 = v900 + int32(24)
 	goto L224
 L224:
@@ -2299,8 +2299,8 @@ L228:
 L229:
 	;
 	v954 = v946 & int32(-8)
-	v956 = v954 + int32(4652336)
-	v958 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
+	v956 = v954 + int32(4656496)
+	v958 = *(*int32)(unsafe.Add(mBase, _consts[1479]))
 	v962 = int32(1) << (uint(int32(base.Ui32(v946)>>(uint(int32(3))%32))) % 32)
 	if v958&v962 == int32(0) {
 		goto L233
@@ -2319,7 +2319,7 @@ L231:
 	}
 L232:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v954)+uint32(_consts[1479]))) = v696
+	*(*int32)(unsafe.Add(mBase, uint32(v954)+uint32(_consts[1480]))) = v696
 	*(*int32)(unsafe.Add(mBase, uint32(v970)+12)) = v696
 	v1068 = v956
 	v1070 = int32(12)
@@ -2328,7 +2328,7 @@ L232:
 	goto L228
 L233:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v962 | v958
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v962 | v958
 	v970 = v956
 	goto L232
 L234:
@@ -2336,7 +2336,7 @@ L234:
 	goto L235
 L235:
 	;
-	v969 = *(*int32)(unsafe.Add(mBase, uint32(v954)+uint32(_consts[1479])))
+	v969 = *(*int32)(unsafe.Add(mBase, uint32(v954)+uint32(_consts[1480])))
 	v970 = v969
 	goto L232
 L236:
@@ -2354,7 +2354,7 @@ L238:
 	*(*int32)(unsafe.Add(mBase, uint32(v696)+28)) = v991
 	*(*int64)(unsafe.Add(mBase, uint32(v696)+16)) = int64(0)
 	v996 = v991 << (uint(int32(2)) % 32)
-	v1000 = *(*int32)(unsafe.Add(mBase, _consts[1480]))
+	v1000 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
 	v1002 = int32(1) << (uint(v991) % 32)
 	if v1000&v1002 == int32(0) {
 		goto L241
@@ -2381,9 +2381,9 @@ L240:
 	goto L228
 L241:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v1000 | v1002
-	*(*int32)(unsafe.Add(mBase, uint32(v996)+uint32(_consts[1482]))) = v696
-	*(*int32)(unsafe.Add(mBase, uint32(v696)+24)) = v996 + int32(4652600)
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1000 | v1002
+	*(*int32)(unsafe.Add(mBase, uint32(v996)+uint32(_consts[1483]))) = v696
+	*(*int32)(unsafe.Add(mBase, uint32(v696)+24)) = v996 + int32(4656760)
 	goto L240
 L242:
 	;
@@ -2405,7 +2405,7 @@ L245:
 	goto L246
 L246:
 	;
-	v1020 = *(*int32)(unsafe.Add(mBase, uint32(v996)+uint32(_consts[1482])))
+	v1020 = *(*int32)(unsafe.Add(mBase, uint32(v996)+uint32(_consts[1483])))
 	v1021 = v946 << (uint(v1018) % 32)
 	v1026 = v1020
 	goto L247
@@ -2439,11 +2439,11 @@ L250:
 L251:
 	;
 	v1101 = v1098 - v421
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v1101
-	v1103 = int32(4652320)
-	v1105 = *(*int32)(unsafe.Add(mBase, _consts[1474]))
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v1101
+	v1103 = int32(4656480)
+	v1105 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
 	v1106 = v1105 + v421
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v1106
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v1106
 	*(*int32)(unsafe.Add(mBase, uint32(v1106)+4)) = v1101 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v1105)+4)) = v421 | int32(3)
 	v1741 = v1105 + int32(8)
@@ -2454,11 +2454,11 @@ L252:
 	goto L1
 L253:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1474])) = v1149
-	v1156 = int32(4652308)
-	v1158 = *(*int32)(unsafe.Add(mBase, _consts[1475]))
+	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v1149
+	v1156 = int32(4656468)
+	v1158 = *(*int32)(unsafe.Add(mBase, _consts[1476]))
 	v1159 = v1158 + v1150
-	*(*int32)(unsafe.Add(mBase, _consts[1475])) = v1159
+	*(*int32)(unsafe.Add(mBase, _consts[1476])) = v1159
 	*(*int32)(unsafe.Add(mBase, uint32(v1149)+4)) = v1159 | int32(1)
 	goto L252
 L254:
@@ -2466,7 +2466,7 @@ L254:
 	goto L255
 L255:
 	;
-	v1165 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
+	v1165 = *(*int32)(unsafe.Add(mBase, _consts[1482]))
 	if v1165 == v1148 {
 		goto L256
 	} else {
@@ -2474,11 +2474,11 @@ L255:
 	}
 L256:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1149
-	v1169 = int32(4652304)
-	v1171 = *(*int32)(unsafe.Add(mBase, _consts[1477]))
+	*(*int32)(unsafe.Add(mBase, _consts[1482])) = v1149
+	v1169 = int32(4656464)
+	v1171 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
 	v1172 = v1171 + v1150
-	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v1172
+	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v1172
 	*(*int32)(unsafe.Add(mBase, uint32(v1149)+4)) = v1172 | int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v1149+v1172))) = v1172
 	goto L252
@@ -2547,9 +2547,9 @@ L265:
 	}
 L266:
 	;
-	v1191 = int32(4652296)
-	v1193 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v1193 & base.I32_rotl(int32(-2), int32(base.Ui32(v1179)>>(uint(int32(3))%32)))
+	v1191 = int32(4656456)
+	v1193 = *(*int32)(unsafe.Add(mBase, _consts[1479]))
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v1193 & base.I32_rotl(int32(-2), int32(base.Ui32(v1179)>>(uint(int32(3))%32)))
 	goto L262
 L267:
 	;
@@ -2649,7 +2649,7 @@ L282:
 	;
 	v1252 = *(*int32)(unsafe.Add(mBase, uint32(v1148)+28))
 	v1254 = v1252 << (uint(int32(2)) % 32)
-	v1257 = *(*int32)(unsafe.Add(mBase, uint32(v1254)+uint32(_consts[1482])))
+	v1257 = *(*int32)(unsafe.Add(mBase, uint32(v1254)+uint32(_consts[1483])))
 	if v1257 == v1148 {
 		goto L284
 	} else {
@@ -2666,7 +2666,7 @@ L283:
 	}
 L284:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1254)+uint32(_consts[1482]))) = v1242
+	*(*int32)(unsafe.Add(mBase, uint32(v1254)+uint32(_consts[1483]))) = v1242
 	if v1242 != 0 {
 		goto L283
 	} else {
@@ -2685,9 +2685,9 @@ L286:
 	}
 L287:
 	;
-	v1260 = int32(4652300)
-	v1262 = *(*int32)(unsafe.Add(mBase, _consts[1480]))
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v1262 & base.I32_rotl(int32(-2), v1252)
+	v1260 = int32(4656460)
+	v1262 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1262 & base.I32_rotl(int32(-2), v1252)
 	goto L262
 L288:
 	;
@@ -2734,8 +2734,8 @@ L296:
 L297:
 	;
 	v1320 = v1299 & int32(-8)
-	v1322 = v1320 + int32(4652336)
-	v1324 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
+	v1322 = v1320 + int32(4656496)
+	v1324 = *(*int32)(unsafe.Add(mBase, _consts[1479]))
 	v1328 = int32(1) << (uint(int32(base.Ui32(v1299)>>(uint(int32(3))%32))) % 32)
 	if v1324&v1328 == int32(0) {
 		goto L301
@@ -2754,14 +2754,14 @@ L299:
 	}
 L300:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1320)+uint32(_consts[1479]))) = v1149
+	*(*int32)(unsafe.Add(mBase, uint32(v1320)+uint32(_consts[1480]))) = v1149
 	*(*int32)(unsafe.Add(mBase, uint32(v1336)+12)) = v1149
 	*(*int32)(unsafe.Add(mBase, uint32(v1149)+12)) = v1322
 	*(*int32)(unsafe.Add(mBase, uint32(v1149)+8)) = v1336
 	goto L252
 L301:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v1328 | v1324
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v1328 | v1324
 	v1336 = v1322
 	goto L300
 L302:
@@ -2769,7 +2769,7 @@ L302:
 	goto L303
 L303:
 	;
-	v1335 = *(*int32)(unsafe.Add(mBase, uint32(v1320)+uint32(_consts[1479])))
+	v1335 = *(*int32)(unsafe.Add(mBase, uint32(v1320)+uint32(_consts[1480])))
 	v1336 = v1335
 	goto L300
 L304:
@@ -2787,7 +2787,7 @@ L306:
 	*(*int32)(unsafe.Add(mBase, uint32(v1149)+28)) = v1357
 	*(*int64)(unsafe.Add(mBase, uint32(v1149)+16)) = int64(0)
 	v1362 = v1357 << (uint(int32(2)) % 32)
-	v1366 = *(*int32)(unsafe.Add(mBase, _consts[1480]))
+	v1366 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
 	v1368 = int32(1) << (uint(v1357) % 32)
 	if v1366&v1368 == int32(0) {
 		goto L309
@@ -2810,9 +2810,9 @@ L308:
 	goto L252
 L309:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v1366 | v1368
-	*(*int32)(unsafe.Add(mBase, uint32(v1362)+uint32(_consts[1482]))) = v1149
-	*(*int32)(unsafe.Add(mBase, uint32(v1149)+24)) = v1362 + int32(4652600)
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1366 | v1368
+	*(*int32)(unsafe.Add(mBase, uint32(v1362)+uint32(_consts[1483]))) = v1149
+	*(*int32)(unsafe.Add(mBase, uint32(v1149)+24)) = v1362 + int32(4656760)
 	goto L308
 L310:
 	;
@@ -2834,7 +2834,7 @@ L313:
 	goto L314
 L314:
 	;
-	v1386 = *(*int32)(unsafe.Add(mBase, uint32(v1362)+uint32(_consts[1482])))
+	v1386 = *(*int32)(unsafe.Add(mBase, uint32(v1362)+uint32(_consts[1483])))
 	v1387 = v1386
 	v1391 = v1299 << (uint(v1384) % 32)
 	goto L315
@@ -2876,7 +2876,7 @@ L320:
 	;
 	v1462 = *(*int32)(unsafe.Add(mBase, uint32(v368)+28))
 	v1464 = v1462 << (uint(int32(2)) % 32)
-	v1467 = *(*int32)(unsafe.Add(mBase, uint32(v1464)+uint32(_consts[1482])))
+	v1467 = *(*int32)(unsafe.Add(mBase, uint32(v1464)+uint32(_consts[1483])))
 	if v1467 == v368 {
 		goto L322
 	} else {
@@ -2893,7 +2893,7 @@ L321:
 	}
 L322:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1464)+uint32(_consts[1482]))) = v1448
+	*(*int32)(unsafe.Add(mBase, uint32(v1464)+uint32(_consts[1483]))) = v1448
 	if v1448 != 0 {
 		goto L321
 	} else {
@@ -2913,7 +2913,7 @@ L324:
 L325:
 	;
 	v1473 = v222 & base.I32_rotl(int32(-2), v1462)
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v1473
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1473
 	v1492 = v1473
 	goto L319
 L326:
@@ -2990,8 +2990,8 @@ L338:
 L339:
 	;
 	v1516 = v364 & int32(-8)
-	v1518 = v1516 + int32(4652336)
-	v1520 = *(*int32)(unsafe.Add(mBase, _consts[1478]))
+	v1518 = v1516 + int32(4656496)
+	v1520 = *(*int32)(unsafe.Add(mBase, _consts[1479]))
 	v1524 = int32(1) << (uint(int32(base.Ui32(v364)>>(uint(int32(3))%32))) % 32)
 	if v1520&v1524 == int32(0) {
 		goto L343
@@ -3010,14 +3010,14 @@ L341:
 	}
 L342:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1516)+uint32(_consts[1479]))) = v1507
+	*(*int32)(unsafe.Add(mBase, uint32(v1516)+uint32(_consts[1480]))) = v1507
 	*(*int32)(unsafe.Add(mBase, uint32(v1532)+12)) = v1507
 	*(*int32)(unsafe.Add(mBase, uint32(v1507)+12)) = v1518
 	*(*int32)(unsafe.Add(mBase, uint32(v1507)+8)) = v1532
 	goto L335
 L343:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v1524 | v1520
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v1524 | v1520
 	v1532 = v1518
 	goto L342
 L344:
@@ -3025,7 +3025,7 @@ L344:
 	goto L345
 L345:
 	;
-	v1531 = *(*int32)(unsafe.Add(mBase, uint32(v1516)+uint32(_consts[1479])))
+	v1531 = *(*int32)(unsafe.Add(mBase, uint32(v1516)+uint32(_consts[1480])))
 	v1532 = v1531
 	goto L342
 L346:
@@ -3065,9 +3065,9 @@ L350:
 	goto L335
 L351:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v1562 | v1492
-	*(*int32)(unsafe.Add(mBase, uint32(v1558)+uint32(_consts[1482]))) = v1507
-	*(*int32)(unsafe.Add(mBase, uint32(v1507)+24)) = v1558 + int32(4652600)
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1562 | v1492
+	*(*int32)(unsafe.Add(mBase, uint32(v1558)+uint32(_consts[1483]))) = v1507
+	*(*int32)(unsafe.Add(mBase, uint32(v1507)+24)) = v1558 + int32(4656760)
 	goto L350
 L352:
 	;
@@ -3089,7 +3089,7 @@ L355:
 	goto L356
 L356:
 	;
-	v1580 = *(*int32)(unsafe.Add(mBase, uint32(v1558)+uint32(_consts[1482])))
+	v1580 = *(*int32)(unsafe.Add(mBase, uint32(v1558)+uint32(_consts[1483])))
 	v1581 = v364 << (uint(v1578) % 32)
 	v1584 = v1580
 	goto L357
@@ -3131,7 +3131,7 @@ L362:
 	;
 	v1656 = *(*int32)(unsafe.Add(mBase, uint32(v154)+28))
 	v1658 = v1656 << (uint(int32(2)) % 32)
-	v1661 = *(*int32)(unsafe.Add(mBase, uint32(v1658)+uint32(_consts[1482])))
+	v1661 = *(*int32)(unsafe.Add(mBase, uint32(v1658)+uint32(_consts[1483])))
 	if v1661 == v154 {
 		goto L364
 	} else {
@@ -3148,7 +3148,7 @@ L363:
 	}
 L364:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1658)+uint32(_consts[1482]))) = v1642
+	*(*int32)(unsafe.Add(mBase, uint32(v1658)+uint32(_consts[1483]))) = v1642
 	if v1642 != 0 {
 		goto L363
 	} else {
@@ -3167,7 +3167,7 @@ L366:
 	}
 L367:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1480])) = v139 & base.I32_rotl(int32(-2), v1656)
+	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v139 & base.I32_rotl(int32(-2), v1656)
 	goto L361
 L368:
 	;
@@ -3240,8 +3240,8 @@ L380:
 L381:
 	;
 	v1707 = v68 & int32(-8)
-	v1709 = v1707 + int32(4652336)
-	v1711 = *(*int32)(unsafe.Add(mBase, _consts[1481]))
+	v1709 = v1707 + int32(4656496)
+	v1711 = *(*int32)(unsafe.Add(mBase, _consts[1482]))
 	v1715 = int32(1) << (uint(int32(base.Ui32(v68)>>(uint(int32(3))%32))) % 32)
 	if v1715&v20 == int32(0) {
 		goto L385
@@ -3253,19 +3253,19 @@ L382:
 	goto L383
 L383:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1481])) = v1700
-	*(*int32)(unsafe.Add(mBase, _consts[1477])) = v153
+	*(*int32)(unsafe.Add(mBase, _consts[1482])) = v1700
+	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v153
 	goto L377
 L384:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v1707)+uint32(_consts[1479]))) = v1711
+	*(*int32)(unsafe.Add(mBase, uint32(v1707)+uint32(_consts[1480]))) = v1711
 	*(*int32)(unsafe.Add(mBase, uint32(v1723)+12)) = v1711
 	*(*int32)(unsafe.Add(mBase, uint32(v1711)+12)) = v1709
 	*(*int32)(unsafe.Add(mBase, uint32(v1711)+8)) = v1723
 	goto L383
 L385:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1478])) = v1715 | v20
+	*(*int32)(unsafe.Add(mBase, _consts[1479])) = v1715 | v20
 	v1723 = v1709
 	goto L384
 L386:
@@ -3273,7 +3273,7 @@ L386:
 	goto L387
 L387:
 	;
-	v1722 = *(*int32)(unsafe.Add(mBase, uint32(v1707)+uint32(_consts[1479])))
+	v1722 = *(*int32)(unsafe.Add(mBase, uint32(v1707)+uint32(_consts[1480])))
 	v1723 = v1722
 	goto L384
 }

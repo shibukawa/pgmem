@@ -671,206 +671,62 @@ func F_ReorderBufferChangeSize(m *base.Module, l0 int32) int32 {
 	_ = v15
 	var v20 int32
 	_ = v20
-	var v28 int32
-	_ = v28
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
 	var v33 int32
 	_ = v33
-	var v37 int32
-	_ = v37
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
 	var v48 int32
 	_ = v48
-	var v54 int32
-	_ = v54
-	var v57 int32
-	_ = v57
-	var v63 int32
-	_ = v63
-	var v67 int32
-	_ = v67
-	var v69 int32
-	_ = v69
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
-	var v83 int32
-	_ = v83
-	var v89 int32
-	_ = v89
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v98 int32
-	_ = v98
-	var v104 int32
-	_ = v104
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	switch v5 {
 	case 0, 1, 2, 8:
-		goto L6
+		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+		if v7 != 0 {
+			v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+			v12 = v8 + int32(84)
+		} else {
+			v12 = int32(64)
+		}
+		if v6 == int32(0) {
+			v48 = v12
+			return v48
+		} else {
+			v15 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+			return v12 + v15 + int32(20)
+		}
 	case 3:
-		goto L5
+		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v21 = F_strlen(m, v20)
+		mBase = m.M
+		v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		return v21 + v22 + int32(73)
 	case 4:
-		goto L4
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		return v27<<(uint(int32(4))%32) - int32(-64)
 	case 5:
-		goto L3
+		v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+24))
+		v35 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
+		return (v34+v35)<<(uint(int32(2))%32) + int32(136)
 	default:
-		v104 = int32(64)
-		goto L1
+		v48 = int32(64)
+		return v48
 	case 11:
-		goto L2
+		v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v48 = v42<<(uint(int32(2))%32) - int32(-64)
+		return v48
 	}
-L1:
-	;
-	return v104
-L2:
-	;
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v104 = v98<<(uint(int32(2))%32) - int32(-64)
-	goto L1
-L3:
-	;
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v90 = *(*int32)(unsafe.Add(mBase, uint32(v89)+24))
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v89)+16))
-	return (v90+v91)<<(uint(int32(2))%32) + int32(136)
-L4:
-	;
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	return v83<<(uint(int32(4))%32) - int32(-64)
-L5:
-	;
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	if v20&int32(3) == int32(0) {
-		v44 = v20
-		goto L13
-	} else {
-		goto L14
-	}
-L6:
-	;
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	if v7 != 0 {
-		goto L7
-	} else {
-		goto L8
-	}
-L7:
-	;
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-	v12 = v8 + int32(84)
-	goto L9
-L8:
-	;
-	v12 = int32(64)
-	goto L9
-L9:
-	;
-	if v6 == int32(0) {
-		v104 = v12
-		goto L1
-	} else {
-		goto L10
-	}
-L10:
-	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	return v12 + v15 + int32(20)
-L11:
-	;
-	v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-	return v77 + v78 + int32(73)
-L12:
-	;
-	v77 = v69 - v20
-	goto L11
-L13:
-	;
-	v48 = v44
-	goto L22
-L14:
-	;
-	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20))))
-	if v28 == int32(0) {
-		goto L15
-	} else {
-		goto L16
-	}
-L15:
-	;
-	v77 = int32(0)
-	goto L11
-L16:
-	;
-	goto L17
-L17:
-	;
-	v33 = v20
-	goto L18
-L18:
-	;
-	v37 = v33 + int32(1)
-	if v37&int32(3) == int32(0) {
-		v44 = v37
-		goto L13
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v69 = v37
-	goto L12
-L20:
-	;
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37))))
-	if v42 != 0 {
-		v33 = v37
-		goto L18
-	} else {
-		goto L21
-	}
-L21:
-	;
-	goto L19
-L22:
-	;
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-	v57 = int32(-2139062144)
-	if (int32(16843008)-v54|v54)&v57 == v57 {
-		v48 = v48 + int32(4)
-		goto L22
-	} else {
-		goto L24
-	}
-L23:
-	;
-	v63 = v48
-	goto L25
-L24:
-	;
-	goto L23
-L25:
-	;
-	v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63))))
-	if v67 != 0 {
-		v63 = v63 + int32(1)
-		goto L25
-	} else {
-		goto L27
-	}
-L26:
-	;
-	v69 = v63
-	goto L12
-L27:
-	;
-	goto L26
 }
 func F_ReorderBufferCopySnap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M

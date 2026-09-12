@@ -57,13 +57,13 @@ func F_get_role_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(71719), v7)
+						F_errmsg(m, int32(71770), v7)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492073), int32(5562), int32(430172))
+							F_errfinish(m, int32(492525), int32(5562), int32(430624))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -95,23 +95,23 @@ func F_show_role(m *base.Module) int32 {
 	_ = v12
 	var v14 int32
 	_ = v14
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[423]))
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, _consts[424])))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[424]))
+	v7 = int32(*(*uint8)(unsafe.Add(mBase, _consts[425])))
 	if v7 != 0 {
 		v8 = v4
 	} else {
 		v8 = int32(0)
 	}
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[425]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[426]))
 	if v10 != 0 {
 		v12 = v10
 	} else {
-		v12 = int32(368580)
+		v12 = int32(368973)
 	}
 	if v8 != 0 {
 		v14 = v12
 	} else {
-		v14 = int32(368580)
+		v14 = int32(368973)
 	}
 	return v14
 }

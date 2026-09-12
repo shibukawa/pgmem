@@ -42,13 +42,13 @@ func F_SystemAttributeDefinition(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-			F_errmsg_internal(m, int32(466756), v5)
+			F_errmsg_internal(m, int32(467208), v5)
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(490611), int32(239), int32(248119))
+				F_errfinish(m, int32(491063), int32(239), int32(248357))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
@@ -109,13 +109,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			if v50 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(548703), int32(0))
+				F_errmsg(m, int32(549558), int32(0))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(491704), int32(151), int32(281478))
+					F_errfinish(m, int32(492156), int32(151), int32(281756))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {
@@ -142,13 +142,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				if v50 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(548703), int32(0))
+					F_errmsg(m, int32(549558), int32(0))
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(491704), int32(151), int32(281478))
+						F_errfinish(m, int32(492156), int32(151), int32(281756))
 						mBase = m.M
 						v59 = m.ExcPending
 						if v59 != 0 {
@@ -176,13 +176,13 @@ func F_system_beginsamplescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if v50 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(548703), int32(0))
+						F_errmsg(m, int32(549558), int32(0))
 						mBase = m.M
 						v54 = m.ExcPending
 						if v54 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(491704), int32(151), int32(281478))
+							F_errfinish(m, int32(492156), int32(151), int32(281756))
 							mBase = m.M
 							v59 = m.ExcPending
 							if v59 != 0 {

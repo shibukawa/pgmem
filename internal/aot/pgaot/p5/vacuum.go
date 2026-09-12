@@ -34,8 +34,8 @@ func F_check_vacuum_buffer_usage_limit(m *base.Module, l0 int32, l1 int32, l2 in
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[86]))
 		*(*int32)(unsafe.Add(mBase, _consts[87])) = v19
 		*(*int64)(unsafe.Add(mBase, uint32(v6)+4)) = int64(72057594037928064)
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(100217)
-		v28 = F_format_elog_string(m, int32(638189), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(100292)
+		v28 = F_format_elog_string(m, int32(639087), v6)
 		mBase = m.M
 		v31 = m.ExcPending
 		if v31 != 0 {
@@ -351,7 +351,7 @@ L14:
 	goto L8
 L15:
 	;
-	v87 = int32(4470804)
+	v87 = int32(4474964)
 	v89 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v89 + int32(1)
 	v94 = v50 & int32(65535)
@@ -362,7 +362,7 @@ L15:
 	}
 L16:
 	;
-	v372 = int32(4470804)
+	v372 = int32(4474964)
 	v374 = *(*int32)(unsafe.Add(mBase, _consts[13]))
 	*(*int32)(unsafe.Add(mBase, _consts[13])) = v374 - int32(1)
 	m.G0 = v22 + int32(1648)

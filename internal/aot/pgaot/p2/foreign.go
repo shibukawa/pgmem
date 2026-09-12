@@ -187,7 +187,7 @@ L12:
 	}
 L13:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[403])))
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[404])))
 	v64 = v63
 	goto L15
 L14:
@@ -311,7 +311,7 @@ L33:
 L34:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-	F_errmsg_internal(m, int32(40404), v12)
+	F_errmsg_internal(m, int32(40421), v12)
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -321,7 +321,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(489058), int32(12179), int32(133410))
+	F_errfinish(m, int32(489510), int32(12179), int32(133554))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -337,7 +337,7 @@ L36:
 L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-	F_errmsg_internal(m, int32(40473), v12+int32(16))
+	F_errmsg_internal(m, int32(40490), v12+int32(16))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -347,7 +347,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(489058), int32(12182), int32(133410))
+	F_errfinish(m, int32(489510), int32(12182), int32(133554))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -426,11 +426,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(486867)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(487319)
 		v24 = int32(256)
 		*(*uint16)(unsafe.Add(mBase, uint32(v18)+4)) = uint16(v24)
 		*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(181)
-		v29 = F_SystemFuncName(m, int32(148410))
+		v29 = F_SystemFuncName(m, int32(148554))
 		mBase = m.M
 		v30 = m.ExcPending
 		if v30 != 0 {
@@ -470,11 +470,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v59)+12)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(486867)
+						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(487319)
 						v65 = int32(256)
 						*(*uint16)(unsafe.Add(mBase, uint32(v59)+4)) = uint16(v65)
 						*(*int32)(unsafe.Add(mBase, uint32(v59))) = int32(181)
-						v70 = F_SystemFuncName(m, int32(417393))
+						v70 = F_SystemFuncName(m, int32(417845))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {

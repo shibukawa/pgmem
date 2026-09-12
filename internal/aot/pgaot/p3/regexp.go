@@ -147,7 +147,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						v29 = int32(4476144)
+						v29 = int32(4480304)
 						v30 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 						v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+24))
 						*(*int32)(unsafe.Add(mBase, _consts[0])) = v32
@@ -171,14 +171,14 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 									if v100 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(662795)
-										F_errmsg(m, int32(244230), v9)
+										*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(663693)
+										F_errmsg(m, int32(244468), v9)
 										mBase = m.M
 										v105 = m.ExcPending
 										if v105 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(490200), int32(1771), int32(387918))
+											F_errfinish(m, int32(490652), int32(1771), int32(388350))
 											mBase = m.M
 											v110 = m.ExcPending
 											if v110 != 0 {
@@ -265,7 +265,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					v29 = int32(4476144)
+					v29 = int32(4480304)
 					v30 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+24))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v32
@@ -289,14 +289,14 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(662795)
-									F_errmsg(m, int32(244230), v9)
+									*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(663693)
+									F_errmsg(m, int32(244468), v9)
 									mBase = m.M
 									v105 = m.ExcPending
 									if v105 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(490200), int32(1771), int32(387918))
+										F_errfinish(m, int32(490652), int32(1771), int32(388350))
 										mBase = m.M
 										v110 = m.ExcPending
 										if v110 != 0 {

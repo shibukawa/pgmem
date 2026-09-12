@@ -16,7 +16,7 @@ func F_ParseExprKindName(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[443])))
 		v11 = v10
 	} else {
-		v11 = int32(420804)
+		v11 = int32(421256)
 	}
 	return v11
 }
