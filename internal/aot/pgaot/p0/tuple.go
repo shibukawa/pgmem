@@ -301,7 +301,7 @@ func F_TupleDescInitBuiltinEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l
 			if v94 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(490800), int32(1013), int32(12469))
+				F_errfinish(m, int32(491215), int32(1013), int32(12469))
 				mBase = m.M
 				v99 = m.ExcPending
 				if v99 != 0 {
@@ -394,7 +394,7 @@ func F_TupleDescInitBuiltinEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				if v94 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(490800), int32(1013), int32(12469))
+					F_errfinish(m, int32(491215), int32(1013), int32(12469))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {

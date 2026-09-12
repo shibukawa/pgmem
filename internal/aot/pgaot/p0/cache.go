@@ -354,7 +354,7 @@ L25:
 	goto L26
 L26:
 	;
-	v210 = *(*int32)(unsafe.Add(mBase, _consts[879]))
+	v210 = *(*int32)(unsafe.Add(mBase, _consts[878]))
 	v211 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
 	if v211 != 0 {
 		goto L77
@@ -364,7 +364,7 @@ L26:
 L27:
 	;
 	v126 = *(*int32)(unsafe.Add(mBase, _consts[226]))
-	v128 = *(*int32)(unsafe.Add(mBase, _consts[878]))
+	v128 = *(*int32)(unsafe.Add(mBase, _consts[877]))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v33)+4))
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	if v129 < v130 {
@@ -600,7 +600,7 @@ L66:
 	goto L67
 L67:
 	;
-	v168 = *(*int32)(unsafe.Add(mBase, _consts[880]))
+	v168 = *(*int32)(unsafe.Add(mBase, _consts[879]))
 	if v168 <= v130 {
 		goto L68
 	} else {
@@ -634,8 +634,8 @@ L70:
 	goto L12
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[880])) = v184
-	*(*int32)(unsafe.Add(mBase, _consts[878])) = v185
+	*(*int32)(unsafe.Add(mBase, _consts[879])) = v184
+	*(*int32)(unsafe.Add(mBase, _consts[877])) = v185
 	v190 = v185
 	goto L70
 L72:
@@ -1057,7 +1057,7 @@ func F_cache_multirange_element_properties(m *base.Module, l0 int32) {
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(490220), int32(1068), int32(237835))
+							F_errfinish(m, int32(490635), int32(1068), int32(238005))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {

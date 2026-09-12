@@ -13,14 +13,14 @@ func F_pgl_getpwuid(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v18 int32
 	_ = v18
-	*(*int32)(unsafe.Add(mBase, _consts[1230])) = int32(4141154)
-	*(*int32)(unsafe.Add(mBase, _consts[1231])) = int32(4141139)
-	*(*int32)(unsafe.Add(mBase, _consts[1232])) = int32(4141127)
+	*(*int32)(unsafe.Add(mBase, _consts[1230])) = int32(4141250)
+	*(*int32)(unsafe.Add(mBase, _consts[1231])) = int32(4141235)
+	*(*int32)(unsafe.Add(mBase, _consts[1232])) = int32(4141223)
 	*(*int32)(unsafe.Add(mBase, _consts[1233])) = l0
 	*(*int32)(unsafe.Add(mBase, _consts[1234])) = l0
-	*(*int32)(unsafe.Add(mBase, _consts[1235])) = int32(4141125)
-	v18 = int32(4554664)
-	*(*int32)(unsafe.Add(mBase, _consts[1236])) = int32(4141116)
+	*(*int32)(unsafe.Add(mBase, _consts[1235])) = int32(4141221)
+	v18 = int32(4554824)
+	*(*int32)(unsafe.Add(mBase, _consts[1236])) = int32(4141212)
 	return v18
 }
 func F_pgl_longjmp(m *base.Module, l0 int32, l1 int32) {
@@ -92,7 +92,7 @@ L1:
 	}
 L2:
 	;
-	v7 = int32(4554496)
+	v7 = int32(4554656)
 	v8 = int32(156)
 	goto L6
 L3:
@@ -242,7 +242,7 @@ func F_pgl_setPGliteActive(m *base.Module, l0 int32) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v8 = int32(4554480)
+	v8 = int32(4554640)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[1228]))
 	*(*int32)(unsafe.Add(mBase, _consts[1228])) = l0
 	if l0 == int32(0) {
@@ -265,7 +265,7 @@ func F_pgl_setPGliteExitStatus(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v4 int32
 	_ = v4
-	v3 = int32(4141112)
+	v3 = int32(4141208)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[1229]))
 	*(*int32)(unsafe.Add(mBase, _consts[1229])) = l0
 	return v4

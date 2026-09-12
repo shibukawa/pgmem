@@ -182,7 +182,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(490543), int32(2283), int32(63499))
+	F_errfinish(m, int32(490958), int32(2283), int32(63499))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -456,7 +456,7 @@ func F_get_opfamily_name(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490208), int32(1404), int32(371521))
+					F_errfinish(m, int32(490623), int32(1404), int32(371754))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

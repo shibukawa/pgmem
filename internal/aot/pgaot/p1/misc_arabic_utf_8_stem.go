@@ -2603,7 +2603,7 @@ L2:
 	}
 L3:
 	;
-	v29 = F_find_among(m, l0, int32(4197184), int32(4))
+	v29 = F_find_among(m, l0, int32(4197280), int32(4))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -2888,7 +2888,7 @@ L46:
 L47:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v219
-	v228 = F_find_among(m, l0, int32(4197264), int32(144))
+	v228 = F_find_among(m, l0, int32(4197360), int32(144))
 	mBase = m.M
 	v229 = m.ExcPending
 	if v229 != 0 {
@@ -3045,7 +3045,7 @@ L54:
 	goto L210
 L55:
 	;
-	v534 = F_slice_from_s(m, l0, int32(4), int32(2155183))
+	v534 = F_slice_from_s(m, l0, int32(4), int32(2155263))
 	mBase = m.M
 	v535 = m.ExcPending
 	if v535 != 0 {
@@ -3055,7 +3055,7 @@ L55:
 	}
 L56:
 	;
-	v528 = F_slice_from_s(m, l0, int32(4), int32(2155179))
+	v528 = F_slice_from_s(m, l0, int32(4), int32(2155259))
 	mBase = m.M
 	v529 = m.ExcPending
 	if v529 != 0 {
@@ -3065,7 +3065,7 @@ L56:
 	}
 L57:
 	;
-	v522 = F_slice_from_s(m, l0, int32(4), int32(2155175))
+	v522 = F_slice_from_s(m, l0, int32(4), int32(2155255))
 	mBase = m.M
 	v523 = m.ExcPending
 	if v523 != 0 {
@@ -3075,7 +3075,7 @@ L57:
 	}
 L58:
 	;
-	v516 = F_slice_from_s(m, l0, int32(4), int32(2155171))
+	v516 = F_slice_from_s(m, l0, int32(4), int32(2155251))
 	mBase = m.M
 	v517 = m.ExcPending
 	if v517 != 0 {
@@ -3085,7 +3085,7 @@ L58:
 	}
 L59:
 	;
-	v510 = F_slice_from_s(m, l0, int32(2), int32(2155169))
+	v510 = F_slice_from_s(m, l0, int32(2), int32(2155249))
 	mBase = m.M
 	v511 = m.ExcPending
 	if v511 != 0 {
@@ -3095,7 +3095,7 @@ L59:
 	}
 L60:
 	;
-	v504 = F_slice_from_s(m, l0, int32(2), int32(2155167))
+	v504 = F_slice_from_s(m, l0, int32(2), int32(2155247))
 	mBase = m.M
 	v505 = m.ExcPending
 	if v505 != 0 {
@@ -3105,7 +3105,7 @@ L60:
 	}
 L61:
 	;
-	v498 = F_slice_from_s(m, l0, int32(2), int32(2155165))
+	v498 = F_slice_from_s(m, l0, int32(2), int32(2155245))
 	mBase = m.M
 	v499 = m.ExcPending
 	if v499 != 0 {
@@ -3115,7 +3115,7 @@ L61:
 	}
 L62:
 	;
-	v492 = F_slice_from_s(m, l0, int32(2), int32(2155163))
+	v492 = F_slice_from_s(m, l0, int32(2), int32(2155243))
 	mBase = m.M
 	v493 = m.ExcPending
 	if v493 != 0 {
@@ -3125,7 +3125,7 @@ L62:
 	}
 L63:
 	;
-	v486 = F_slice_from_s(m, l0, int32(2), int32(2155161))
+	v486 = F_slice_from_s(m, l0, int32(2), int32(2155241))
 	mBase = m.M
 	v487 = m.ExcPending
 	if v487 != 0 {
@@ -3135,7 +3135,7 @@ L63:
 	}
 L64:
 	;
-	v480 = F_slice_from_s(m, l0, int32(2), int32(2155159))
+	v480 = F_slice_from_s(m, l0, int32(2), int32(2155239))
 	mBase = m.M
 	v481 = m.ExcPending
 	if v481 != 0 {
@@ -3145,7 +3145,7 @@ L64:
 	}
 L65:
 	;
-	v474 = F_slice_from_s(m, l0, int32(2), int32(2155157))
+	v474 = F_slice_from_s(m, l0, int32(2), int32(2155237))
 	mBase = m.M
 	v475 = m.ExcPending
 	if v475 != 0 {
@@ -3155,7 +3155,7 @@ L65:
 	}
 L66:
 	;
-	v468 = F_slice_from_s(m, l0, int32(2), int32(2155155))
+	v468 = F_slice_from_s(m, l0, int32(2), int32(2155235))
 	mBase = m.M
 	v469 = m.ExcPending
 	if v469 != 0 {
@@ -3165,7 +3165,7 @@ L66:
 	}
 L67:
 	;
-	v462 = F_slice_from_s(m, l0, int32(2), int32(2155153))
+	v462 = F_slice_from_s(m, l0, int32(2), int32(2155233))
 	mBase = m.M
 	v463 = m.ExcPending
 	if v463 != 0 {
@@ -3175,7 +3175,7 @@ L67:
 	}
 L68:
 	;
-	v456 = F_slice_from_s(m, l0, int32(2), int32(2155151))
+	v456 = F_slice_from_s(m, l0, int32(2), int32(2155231))
 	mBase = m.M
 	v457 = m.ExcPending
 	if v457 != 0 {
@@ -3185,7 +3185,7 @@ L68:
 	}
 L69:
 	;
-	v450 = F_slice_from_s(m, l0, int32(2), int32(2155149))
+	v450 = F_slice_from_s(m, l0, int32(2), int32(2155229))
 	mBase = m.M
 	v451 = m.ExcPending
 	if v451 != 0 {
@@ -3195,7 +3195,7 @@ L69:
 	}
 L70:
 	;
-	v444 = F_slice_from_s(m, l0, int32(2), int32(2155147))
+	v444 = F_slice_from_s(m, l0, int32(2), int32(2155227))
 	mBase = m.M
 	v445 = m.ExcPending
 	if v445 != 0 {
@@ -3205,7 +3205,7 @@ L70:
 	}
 L71:
 	;
-	v438 = F_slice_from_s(m, l0, int32(2), int32(2155145))
+	v438 = F_slice_from_s(m, l0, int32(2), int32(2155225))
 	mBase = m.M
 	v439 = m.ExcPending
 	if v439 != 0 {
@@ -3215,7 +3215,7 @@ L71:
 	}
 L72:
 	;
-	v432 = F_slice_from_s(m, l0, int32(2), int32(2155143))
+	v432 = F_slice_from_s(m, l0, int32(2), int32(2155223))
 	mBase = m.M
 	v433 = m.ExcPending
 	if v433 != 0 {
@@ -3225,7 +3225,7 @@ L72:
 	}
 L73:
 	;
-	v426 = F_slice_from_s(m, l0, int32(2), int32(2155141))
+	v426 = F_slice_from_s(m, l0, int32(2), int32(2155221))
 	mBase = m.M
 	v427 = m.ExcPending
 	if v427 != 0 {
@@ -3235,7 +3235,7 @@ L73:
 	}
 L74:
 	;
-	v420 = F_slice_from_s(m, l0, int32(2), int32(2155139))
+	v420 = F_slice_from_s(m, l0, int32(2), int32(2155219))
 	mBase = m.M
 	v421 = m.ExcPending
 	if v421 != 0 {
@@ -3245,7 +3245,7 @@ L74:
 	}
 L75:
 	;
-	v414 = F_slice_from_s(m, l0, int32(2), int32(2155137))
+	v414 = F_slice_from_s(m, l0, int32(2), int32(2155217))
 	mBase = m.M
 	v415 = m.ExcPending
 	if v415 != 0 {
@@ -3255,7 +3255,7 @@ L75:
 	}
 L76:
 	;
-	v408 = F_slice_from_s(m, l0, int32(2), int32(2155135))
+	v408 = F_slice_from_s(m, l0, int32(2), int32(2155215))
 	mBase = m.M
 	v409 = m.ExcPending
 	if v409 != 0 {
@@ -3265,7 +3265,7 @@ L76:
 	}
 L77:
 	;
-	v402 = F_slice_from_s(m, l0, int32(2), int32(2155133))
+	v402 = F_slice_from_s(m, l0, int32(2), int32(2155213))
 	mBase = m.M
 	v403 = m.ExcPending
 	if v403 != 0 {
@@ -3275,7 +3275,7 @@ L77:
 	}
 L78:
 	;
-	v396 = F_slice_from_s(m, l0, int32(2), int32(2155131))
+	v396 = F_slice_from_s(m, l0, int32(2), int32(2155211))
 	mBase = m.M
 	v397 = m.ExcPending
 	if v397 != 0 {
@@ -3285,7 +3285,7 @@ L78:
 	}
 L79:
 	;
-	v390 = F_slice_from_s(m, l0, int32(2), int32(2155129))
+	v390 = F_slice_from_s(m, l0, int32(2), int32(2155209))
 	mBase = m.M
 	v391 = m.ExcPending
 	if v391 != 0 {
@@ -3295,7 +3295,7 @@ L79:
 	}
 L80:
 	;
-	v384 = F_slice_from_s(m, l0, int32(2), int32(2155127))
+	v384 = F_slice_from_s(m, l0, int32(2), int32(2155207))
 	mBase = m.M
 	v385 = m.ExcPending
 	if v385 != 0 {
@@ -3305,7 +3305,7 @@ L80:
 	}
 L81:
 	;
-	v378 = F_slice_from_s(m, l0, int32(2), int32(2155125))
+	v378 = F_slice_from_s(m, l0, int32(2), int32(2155205))
 	mBase = m.M
 	v379 = m.ExcPending
 	if v379 != 0 {
@@ -3315,7 +3315,7 @@ L81:
 	}
 L82:
 	;
-	v372 = F_slice_from_s(m, l0, int32(2), int32(2155123))
+	v372 = F_slice_from_s(m, l0, int32(2), int32(2155203))
 	mBase = m.M
 	v373 = m.ExcPending
 	if v373 != 0 {
@@ -3325,7 +3325,7 @@ L82:
 	}
 L83:
 	;
-	v366 = F_slice_from_s(m, l0, int32(2), int32(2155121))
+	v366 = F_slice_from_s(m, l0, int32(2), int32(2155201))
 	mBase = m.M
 	v367 = m.ExcPending
 	if v367 != 0 {
@@ -3335,7 +3335,7 @@ L83:
 	}
 L84:
 	;
-	v360 = F_slice_from_s(m, l0, int32(2), int32(2155119))
+	v360 = F_slice_from_s(m, l0, int32(2), int32(2155199))
 	mBase = m.M
 	v361 = m.ExcPending
 	if v361 != 0 {
@@ -3345,7 +3345,7 @@ L84:
 	}
 L85:
 	;
-	v354 = F_slice_from_s(m, l0, int32(2), int32(2155117))
+	v354 = F_slice_from_s(m, l0, int32(2), int32(2155197))
 	mBase = m.M
 	v355 = m.ExcPending
 	if v355 != 0 {
@@ -3355,7 +3355,7 @@ L85:
 	}
 L86:
 	;
-	v348 = F_slice_from_s(m, l0, int32(2), int32(2155115))
+	v348 = F_slice_from_s(m, l0, int32(2), int32(2155195))
 	mBase = m.M
 	v349 = m.ExcPending
 	if v349 != 0 {
@@ -3365,7 +3365,7 @@ L86:
 	}
 L87:
 	;
-	v342 = F_slice_from_s(m, l0, int32(2), int32(2155113))
+	v342 = F_slice_from_s(m, l0, int32(2), int32(2155193))
 	mBase = m.M
 	v343 = m.ExcPending
 	if v343 != 0 {
@@ -3375,7 +3375,7 @@ L87:
 	}
 L88:
 	;
-	v336 = F_slice_from_s(m, l0, int32(2), int32(2155111))
+	v336 = F_slice_from_s(m, l0, int32(2), int32(2155191))
 	mBase = m.M
 	v337 = m.ExcPending
 	if v337 != 0 {
@@ -3385,7 +3385,7 @@ L88:
 	}
 L89:
 	;
-	v330 = F_slice_from_s(m, l0, int32(2), int32(2155109))
+	v330 = F_slice_from_s(m, l0, int32(2), int32(2155189))
 	mBase = m.M
 	v331 = m.ExcPending
 	if v331 != 0 {
@@ -3395,7 +3395,7 @@ L89:
 	}
 L90:
 	;
-	v324 = F_slice_from_s(m, l0, int32(2), int32(2155107))
+	v324 = F_slice_from_s(m, l0, int32(2), int32(2155187))
 	mBase = m.M
 	v325 = m.ExcPending
 	if v325 != 0 {
@@ -3405,7 +3405,7 @@ L90:
 	}
 L91:
 	;
-	v318 = F_slice_from_s(m, l0, int32(2), int32(2155105))
+	v318 = F_slice_from_s(m, l0, int32(2), int32(2155185))
 	mBase = m.M
 	v319 = m.ExcPending
 	if v319 != 0 {
@@ -3415,7 +3415,7 @@ L91:
 	}
 L92:
 	;
-	v312 = F_slice_from_s(m, l0, int32(2), int32(2155103))
+	v312 = F_slice_from_s(m, l0, int32(2), int32(2155183))
 	mBase = m.M
 	v313 = m.ExcPending
 	if v313 != 0 {
@@ -3425,7 +3425,7 @@ L92:
 	}
 L93:
 	;
-	v306 = F_slice_from_s(m, l0, int32(2), int32(2155101))
+	v306 = F_slice_from_s(m, l0, int32(2), int32(2155181))
 	mBase = m.M
 	v307 = m.ExcPending
 	if v307 != 0 {
@@ -3435,7 +3435,7 @@ L93:
 	}
 L94:
 	;
-	v300 = F_slice_from_s(m, l0, int32(2), int32(2155099))
+	v300 = F_slice_from_s(m, l0, int32(2), int32(2155179))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -3445,7 +3445,7 @@ L94:
 	}
 L95:
 	;
-	v294 = F_slice_from_s(m, l0, int32(1), int32(2155098))
+	v294 = F_slice_from_s(m, l0, int32(1), int32(2155178))
 	mBase = m.M
 	v295 = m.ExcPending
 	if v295 != 0 {
@@ -3455,7 +3455,7 @@ L95:
 	}
 L96:
 	;
-	v288 = F_slice_from_s(m, l0, int32(1), int32(2155097))
+	v288 = F_slice_from_s(m, l0, int32(1), int32(2155177))
 	mBase = m.M
 	v289 = m.ExcPending
 	if v289 != 0 {
@@ -3465,7 +3465,7 @@ L96:
 	}
 L97:
 	;
-	v282 = F_slice_from_s(m, l0, int32(1), int32(2155096))
+	v282 = F_slice_from_s(m, l0, int32(1), int32(2155176))
 	mBase = m.M
 	v283 = m.ExcPending
 	if v283 != 0 {
@@ -3475,7 +3475,7 @@ L97:
 	}
 L98:
 	;
-	v276 = F_slice_from_s(m, l0, int32(1), int32(2155095))
+	v276 = F_slice_from_s(m, l0, int32(1), int32(2155175))
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -3485,7 +3485,7 @@ L98:
 	}
 L99:
 	;
-	v270 = F_slice_from_s(m, l0, int32(1), int32(2155094))
+	v270 = F_slice_from_s(m, l0, int32(1), int32(2155174))
 	mBase = m.M
 	v271 = m.ExcPending
 	if v271 != 0 {
@@ -3495,7 +3495,7 @@ L99:
 	}
 L100:
 	;
-	v264 = F_slice_from_s(m, l0, int32(1), int32(2155093))
+	v264 = F_slice_from_s(m, l0, int32(1), int32(2155173))
 	mBase = m.M
 	v265 = m.ExcPending
 	if v265 != 0 {
@@ -3505,7 +3505,7 @@ L100:
 	}
 L101:
 	;
-	v258 = F_slice_from_s(m, l0, int32(1), int32(2155092))
+	v258 = F_slice_from_s(m, l0, int32(1), int32(2155172))
 	mBase = m.M
 	v259 = m.ExcPending
 	if v259 != 0 {
@@ -3515,7 +3515,7 @@ L101:
 	}
 L102:
 	;
-	v252 = F_slice_from_s(m, l0, int32(1), int32(2155091))
+	v252 = F_slice_from_s(m, l0, int32(1), int32(2155171))
 	mBase = m.M
 	v253 = m.ExcPending
 	if v253 != 0 {
@@ -3525,7 +3525,7 @@ L102:
 	}
 L103:
 	;
-	v246 = F_slice_from_s(m, l0, int32(1), int32(2155090))
+	v246 = F_slice_from_s(m, l0, int32(1), int32(2155170))
 	mBase = m.M
 	v247 = m.ExcPending
 	if v247 != 0 {
@@ -3535,7 +3535,7 @@ L103:
 	}
 L104:
 	;
-	v240 = F_slice_from_s(m, l0, int32(1), int32(2155089))
+	v240 = F_slice_from_s(m, l0, int32(1), int32(2155169))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -4300,7 +4300,7 @@ L237:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v605
 	v607 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v608 = int32(1)
-	v611 = F_find_among_b(m, l0, int32(4200144), int32(12))
+	v611 = F_find_among_b(m, l0, int32(4200240), int32(12))
 	mBase = m.M
 	v612 = m.ExcPending
 	if v612 != 0 {
@@ -4367,7 +4367,7 @@ L245:
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v886
 	v889 = v615 - int32(1)
 	v890 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v893 = F_find_among_b(m, l0, int32(4200144), int32(12))
+	v893 = F_find_among_b(m, l0, int32(4200240), int32(12))
 	mBase = m.M
 	v894 = m.ExcPending
 	if v894 != 0 {
@@ -4922,7 +4922,7 @@ L326:
 	}
 L327:
 	;
-	v939 = F_find_among_b(m, l0, int32(4200608), int32(2))
+	v939 = F_find_among_b(m, l0, int32(4200704), int32(2))
 	mBase = m.M
 	v940 = m.ExcPending
 	if v940 != 0 {
@@ -5353,7 +5353,7 @@ L394:
 	}
 L395:
 	;
-	v1202 = F_find_among_b(m, l0, int32(4200656), int32(2))
+	v1202 = F_find_among_b(m, l0, int32(4200752), int32(2))
 	mBase = m.M
 	v1203 = m.ExcPending
 	if v1203 != 0 {
@@ -5587,7 +5587,7 @@ L428:
 	}
 L429:
 	;
-	v1333 = F_find_among_b(m, l0, int32(4200704), int32(1))
+	v1333 = F_find_among_b(m, l0, int32(4200800), int32(1))
 	mBase = m.M
 	v1334 = m.ExcPending
 	if v1334 != 0 {
@@ -5793,7 +5793,7 @@ L459:
 L460:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = v1431
-	v1438 = F_find_among_b(m, l0, int32(4200736), int32(10))
+	v1438 = F_find_among_b(m, l0, int32(4200832), int32(10))
 	mBase = m.M
 	v1439 = m.ExcPending
 	if v1439 != 0 {
@@ -6616,7 +6616,7 @@ L592:
 	}
 L593:
 	;
-	v1833 = F_find_among_b(m, l0, int32(4201072), int32(1))
+	v1833 = F_find_among_b(m, l0, int32(4201168), int32(1))
 	mBase = m.M
 	v1834 = m.ExcPending
 	if v1834 != 0 {
@@ -7133,7 +7133,7 @@ L674:
 	}
 L675:
 	;
-	v2060 = F_find_among_b(m, l0, int32(4201104), int32(1))
+	v2060 = F_find_among_b(m, l0, int32(4201200), int32(1))
 	mBase = m.M
 	v2061 = m.ExcPending
 	if v2061 != 0 {
@@ -7315,7 +7315,7 @@ L701:
 	}
 L702:
 	;
-	v2178 = F_find_among_b(m, l0, int32(4201136), int32(1))
+	v2178 = F_find_among_b(m, l0, int32(4201232), int32(1))
 	mBase = m.M
 	v2179 = m.ExcPending
 	if v2179 != 0 {
@@ -7335,7 +7335,7 @@ L704:
 	;
 	v2182 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v2182
-	v2186 = F_slice_from_s(m, l0, int32(2), int32(2155760))
+	v2186 = F_slice_from_s(m, l0, int32(2), int32(2155840))
 	mBase = m.M
 	v2187 = m.ExcPending
 	if v2187 != 0 {
@@ -7392,7 +7392,7 @@ L711:
 	}
 L712:
 	;
-	v2235 = F_find_among(m, l0, int32(4201168), int32(5))
+	v2235 = F_find_among(m, l0, int32(4201264), int32(5))
 	mBase = m.M
 	v2236 = m.ExcPending
 	if v2236 != 0 {
@@ -7570,7 +7570,7 @@ L735:
 	goto L734
 L736:
 	;
-	v2328 = F_slice_from_s(m, l0, int32(2), int32(2155764))
+	v2328 = F_slice_from_s(m, l0, int32(2), int32(2155844))
 	mBase = m.M
 	v2329 = m.ExcPending
 	if v2329 != 0 {
@@ -7696,7 +7696,7 @@ L755:
 	goto L754
 L756:
 	;
-	v2417 = F_slice_from_s(m, l0, int32(2), int32(2155766))
+	v2417 = F_slice_from_s(m, l0, int32(2), int32(2155846))
 	mBase = m.M
 	v2418 = m.ExcPending
 	if v2418 != 0 {
@@ -7822,7 +7822,7 @@ L775:
 	goto L774
 L776:
 	;
-	v2506 = F_slice_from_s(m, l0, int32(2), int32(2155768))
+	v2506 = F_slice_from_s(m, l0, int32(2), int32(2155848))
 	mBase = m.M
 	v2507 = m.ExcPending
 	if v2507 != 0 {
@@ -7948,7 +7948,7 @@ L795:
 	goto L794
 L796:
 	;
-	v2595 = F_slice_from_s(m, l0, int32(2), int32(2155770))
+	v2595 = F_slice_from_s(m, l0, int32(2), int32(2155850))
 	mBase = m.M
 	v2596 = m.ExcPending
 	if v2596 != 0 {
@@ -7994,7 +7994,7 @@ L801:
 	}
 L802:
 	;
-	v2615 = F_find_among(m, l0, int32(4201280), int32(2))
+	v2615 = F_find_among(m, l0, int32(4201376), int32(2))
 	mBase = m.M
 	v2616 = m.ExcPending
 	if v2616 != 0 {
@@ -8151,7 +8151,7 @@ L824:
 L825:
 	;
 	v2713 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v2715 = F_memcmp(m, v2713+v2704, int32(2155792), v2705)
+	v2715 = F_memcmp(m, v2713+v2704, int32(2155872), v2705)
 	mBase = m.M
 	if v2715 != 0 {
 		v2719 = v2707
@@ -8221,7 +8221,7 @@ L832:
 	}
 L833:
 	;
-	v2746 = F_find_among(m, l0, int32(4201328), int32(4))
+	v2746 = F_find_among(m, l0, int32(4201424), int32(4))
 	mBase = m.M
 	v2747 = m.ExcPending
 	if v2747 != 0 {
@@ -8574,7 +8574,7 @@ L883:
 	}
 L884:
 	;
-	v2949 = F_find_among(m, l0, int32(4201408), int32(4))
+	v2949 = F_find_among(m, l0, int32(4201504), int32(4))
 	mBase = m.M
 	v2950 = m.ExcPending
 	if v2950 != 0 {
@@ -8873,7 +8873,7 @@ L927:
 	goto L926
 L928:
 	;
-	v3129 = F_slice_from_s(m, l0, int32(2), int32(2155818))
+	v3129 = F_slice_from_s(m, l0, int32(2), int32(2155898))
 	mBase = m.M
 	v3130 = m.ExcPending
 	if v3130 != 0 {
@@ -9000,7 +9000,7 @@ L947:
 	goto L946
 L948:
 	;
-	v3218 = F_slice_from_s(m, l0, int32(2), int32(2155820))
+	v3218 = F_slice_from_s(m, l0, int32(2), int32(2155900))
 	mBase = m.M
 	v3219 = m.ExcPending
 	if v3219 != 0 {
@@ -9089,7 +9089,7 @@ L964:
 	v3246 = int32(0)
 	v3247 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v3247
-	v3251 = F_find_among(m, l0, int32(4201488), int32(4))
+	v3251 = F_find_among(m, l0, int32(4201584), int32(4))
 	mBase = m.M
 	v3252 = m.ExcPending
 	if v3252 != 0 {
@@ -9280,7 +9280,7 @@ L989:
 	goto L988
 L990:
 	;
-	v3344 = F_slice_from_s(m, l0, int32(2), int32(2155836))
+	v3344 = F_slice_from_s(m, l0, int32(2), int32(2155916))
 	mBase = m.M
 	v3345 = m.ExcPending
 	if v3345 != 0 {
@@ -9407,7 +9407,7 @@ L1009:
 	goto L1008
 L1010:
 	;
-	v3433 = F_slice_from_s(m, l0, int32(2), int32(2155838))
+	v3433 = F_slice_from_s(m, l0, int32(2), int32(2155918))
 	mBase = m.M
 	v3434 = m.ExcPending
 	if v3434 != 0 {
@@ -9534,7 +9534,7 @@ L1029:
 	goto L1028
 L1030:
 	;
-	v3522 = F_slice_from_s(m, l0, int32(2), int32(2155840))
+	v3522 = F_slice_from_s(m, l0, int32(2), int32(2155920))
 	mBase = m.M
 	v3523 = m.ExcPending
 	if v3523 != 0 {
@@ -9661,7 +9661,7 @@ L1049:
 	goto L1048
 L1050:
 	;
-	v3611 = F_slice_from_s(m, l0, int32(2), int32(2155842))
+	v3611 = F_slice_from_s(m, l0, int32(2), int32(2155922))
 	mBase = m.M
 	v3612 = m.ExcPending
 	if v3612 != 0 {
@@ -9730,7 +9730,7 @@ L1059:
 	}
 L1060:
 	;
-	v3637 = F_find_among(m, l0, int32(4201568), int32(3))
+	v3637 = F_find_among(m, l0, int32(4201664), int32(3))
 	mBase = m.M
 	v3638 = m.ExcPending
 	if v3638 != 0 {
@@ -9868,7 +9868,7 @@ L1080:
 	;
 	v3726 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int64)(unsafe.Add(mBase, uint32(v3726)+4)) = int64(1)
-	v3732 = F_slice_from_s(m, l0, int32(6), int32(2155860))
+	v3732 = F_slice_from_s(m, l0, int32(6), int32(2155940))
 	mBase = m.M
 	v3733 = m.ExcPending
 	if v3733 != 0 {
@@ -9926,7 +9926,7 @@ L1089:
 	}
 L1090:
 	;
-	v3773 = F_find_among_b(m, l0, int32(4201632), int32(5))
+	v3773 = F_find_among_b(m, l0, int32(4201728), int32(5))
 	mBase = m.M
 	v3774 = m.ExcPending
 	if v3774 != 0 {
@@ -9945,7 +9945,7 @@ L1092:
 	;
 	v3777 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v3777
-	v3781 = F_slice_from_s(m, l0, int32(2), int32(2155884))
+	v3781 = F_slice_from_s(m, l0, int32(2), int32(2155964))
 	mBase = m.M
 	v3782 = m.ExcPending
 	if v3782 != 0 {
@@ -10024,7 +10024,7 @@ L1101:
 	}
 L1102:
 	;
-	v3814 = F_find_among(m, l0, int32(4201744), int32(5))
+	v3814 = F_find_among(m, l0, int32(4201840), int32(5))
 	mBase = m.M
 	v3815 = m.ExcPending
 	if v3815 != 0 {
@@ -10157,7 +10157,7 @@ L1126:
 	goto L1095
 L1127:
 	;
-	v3896 = F_slice_from_s(m, l0, int32(2), int32(2155890))
+	v3896 = F_slice_from_s(m, l0, int32(2), int32(2155970))
 	mBase = m.M
 	v3897 = m.ExcPending
 	if v3897 != 0 {
@@ -10167,7 +10167,7 @@ L1127:
 	}
 L1128:
 	;
-	v3890 = F_slice_from_s(m, l0, int32(2), int32(2155888))
+	v3890 = F_slice_from_s(m, l0, int32(2), int32(2155968))
 	mBase = m.M
 	v3891 = m.ExcPending
 	if v3891 != 0 {
@@ -10177,7 +10177,7 @@ L1128:
 	}
 L1129:
 	;
-	v3884 = F_slice_from_s(m, l0, int32(2), int32(2155886))
+	v3884 = F_slice_from_s(m, l0, int32(2), int32(2155966))
 	mBase = m.M
 	v3885 = m.ExcPending
 	if v3885 != 0 {

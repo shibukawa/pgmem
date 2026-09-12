@@ -401,7 +401,7 @@ L20:
 	goto L11
 L21:
 	;
-	v75 = int32(538002)
+	v75 = int32(538417)
 	v79 = m.G0
 	v81 = v79 - int32(32)
 	v82 = int64(0)
@@ -779,7 +779,7 @@ L81:
 	}
 L82:
 	;
-	v286 = int32(538002)
+	v286 = int32(538417)
 	v290 = m.G0
 	v292 = v290 - int32(32)
 	v293 = int64(0)
@@ -1241,13 +1241,13 @@ func F_time_recv(m *base.Module, l0 int32) int32 {
 				if v37 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(395544), int32(0))
+					F_errmsg(m, int32(395899), int32(0))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(489677), int32(1601), int32(36015))
+						F_errfinish(m, int32(490092), int32(1601), int32(36015))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {

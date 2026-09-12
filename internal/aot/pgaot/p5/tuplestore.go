@@ -119,7 +119,7 @@ func F_tuplestore_puttuple(m *base.Module, l0 int32, l1 int32) {
 	_ = v11
 	var v13 int32
 	_ = v13
-	v4 = int32(4470400)
+	v4 = int32(4470560)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v7
@@ -166,7 +166,7 @@ func F_tuplestore_puttupleslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v22 int32
 	_ = v22
-	v5 = int32(4470400)
+	v5 = int32(4470560)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v8
@@ -275,13 +275,13 @@ func F_tuplestore_set_eflags(m *base.Module, l0 int32, l1 int32) {
 		if v118 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(153783), int32(0))
+			F_errmsg_internal(m, int32(153919), int32(0))
 			mBase = m.M
 			v122 = m.ExcPending
 			if v122 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(489785), int32(376), int32(153800))
+				F_errfinish(m, int32(490200), int32(376), int32(153936))
 				mBase = m.M
 				v127 = m.ExcPending
 				if v127 != 0 {
@@ -302,13 +302,13 @@ func F_tuplestore_set_eflags(m *base.Module, l0 int32, l1 int32) {
 			if v118 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(153783), int32(0))
+				F_errmsg_internal(m, int32(153919), int32(0))
 				mBase = m.M
 				v122 = m.ExcPending
 				if v122 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(489785), int32(376), int32(153800))
+					F_errfinish(m, int32(490200), int32(376), int32(153936))
 					mBase = m.M
 					v127 = m.ExcPending
 					if v127 != 0 {

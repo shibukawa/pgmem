@@ -211,7 +211,7 @@ func F_get_tablespace(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = int64(34359738372)
-		v25 = F_hash_create(m, int32(392561), int32(16), v5+int32(-48), int32(40))
+		v25 = F_hash_create(m, int32(392916), int32(16), v5+int32(-48), int32(40))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {

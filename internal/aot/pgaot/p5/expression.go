@@ -277,7 +277,7 @@ func F_expression_returns_set_rows(m *base.Module, l0 int32, l1 int32) float64 {
 							if v76 != 0 {
 								return float64(0)
 							} else {
-								F_errfinish(m, int32(484680), int32(2194), int32(111470))
+								F_errfinish(m, int32(485095), int32(2194), int32(111580))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -439,7 +439,7 @@ func F_expression_returns_set_rows(m *base.Module, l0 int32, l1 int32) float64 {
 								if v76 != 0 {
 									return float64(0)
 								} else {
-									F_errfinish(m, int32(484680), int32(2194), int32(111470))
+									F_errfinish(m, int32(485095), int32(2194), int32(111580))
 									mBase = m.M
 									v81 = m.ExcPending
 									if v81 != 0 {
@@ -3890,7 +3890,7 @@ L308:
 	;
 	v554 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v554
-	F_errmsg_internal(m, int32(477341), v10)
+	F_errmsg_internal(m, int32(477745), v10)
 	mBase = m.M
 	v558 = m.ExcPending
 	if v558 != 0 {
@@ -3900,7 +3900,7 @@ L308:
 	}
 L309:
 	;
-	F_errfinish(m, int32(486087), int32(2669), int32(296056))
+	F_errfinish(m, int32(486502), int32(2669), int32(296264))
 	mBase = m.M
 	v563 = m.ExcPending
 	if v563 != 0 {

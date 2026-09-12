@@ -20,7 +20,7 @@ func F_ResOwnerPrintBufferIO(m *base.Module, l0 int32) int32 {
 	v5 = v3 - int32(16)
 	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-	v9 = F_psprintf(m, int32(462982), v5)
+	v9 = F_psprintf(m, int32(463386), v5)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -60,7 +60,7 @@ func F_ResOwnerPrintCatCacheList(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v11
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v10
-	v18 = F_psprintf(m, int32(459822), v7)
+	v18 = F_psprintf(m, int32(460226), v7)
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -87,7 +87,7 @@ func F_ResOwnerReleasePGMEMDigest(m *base.Module, l0 int32) {
 	mBase = m.M
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	if v7 != 0 {
-		F_ResourceOwnerForget(m, v7, l0, int32(4361304))
+		F_ResourceOwnerForget(m, v7, l0, int32(4361400))
 		mBase = m.M
 		v10 = m.ExcPending
 		if v10 != 0 {

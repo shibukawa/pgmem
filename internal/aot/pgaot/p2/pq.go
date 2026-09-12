@@ -105,13 +105,13 @@ func F_pq_getmsgint(m *base.Module, l0 int32, l1 int32) int32 {
 				if v80 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(397533), int32(0))
+					F_errmsg(m, int32(397888), int32(0))
 					mBase = m.M
 					v84 = m.ExcPending
 					if v84 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(484669), int32(533), int32(156014))
+						F_errfinish(m, int32(485084), int32(533), int32(156150))
 						mBase = m.M
 						v89 = m.ExcPending
 						if v89 != 0 {
@@ -148,13 +148,13 @@ func F_pq_getmsgint(m *base.Module, l0 int32, l1 int32) int32 {
 				if v96 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(397533), int32(0))
+					F_errmsg(m, int32(397888), int32(0))
 					mBase = m.M
 					v100 = m.ExcPending
 					if v100 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(484669), int32(533), int32(156014))
+						F_errfinish(m, int32(485084), int32(533), int32(156150))
 						mBase = m.M
 						v105 = m.ExcPending
 						if v105 != 0 {
@@ -184,13 +184,13 @@ func F_pq_getmsgint(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-			F_errmsg_internal(m, int32(466474), v7)
+			F_errmsg_internal(m, int32(466878), v7)
 			mBase = m.M
 			v129 = m.ExcPending
 			if v129 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(484669), int32(437), int32(87978))
+				F_errfinish(m, int32(485084), int32(437), int32(88024))
 				mBase = m.M
 				v134 = m.ExcPending
 				if v134 != 0 {
@@ -218,13 +218,13 @@ func F_pq_getmsgint(m *base.Module, l0 int32, l1 int32) int32 {
 				if v112 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(397533), int32(0))
+					F_errmsg(m, int32(397888), int32(0))
 					mBase = m.M
 					v116 = m.ExcPending
 					if v116 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(484669), int32(533), int32(156014))
+						F_errfinish(m, int32(485084), int32(533), int32(156150))
 						mBase = m.M
 						v121 = m.ExcPending
 						if v121 != 0 {
@@ -298,13 +298,13 @@ func F_pq_getmsgint64(m *base.Module, l0 int32) int64 {
 			if v17 != 0 {
 				return int64(0)
 			} else {
-				F_errmsg(m, int32(397533), int32(0))
+				F_errmsg(m, int32(397888), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return int64(0)
 				} else {
-					F_errfinish(m, int32(484669), int32(533), int32(156014))
+					F_errfinish(m, int32(485084), int32(533), int32(156150))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

@@ -2434,6 +2434,20 @@ func F_pg_finfo_gin_extract_query_bool(m *base.Module) int32
 func F_gin_extract_query_bool(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_gin_compare_prefix_bool github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_bool
 func F_pg_finfo_gin_compare_prefix_bool(m *base.Module) int32
+//go:linkname F_Pg_magic_func_unaccent github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Pg_magic_func_unaccent
+func F_Pg_magic_func_unaccent(m *base.Module) int32
+//go:linkname F_pg_finfo_unaccent_init github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_unaccent_init
+func F_pg_finfo_unaccent_init(m *base.Module) int32
+//go:linkname F_unaccent_init github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_unaccent_init
+func F_unaccent_init(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_unaccent_lexize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_unaccent_lexize
+func F_pg_finfo_unaccent_lexize(m *base.Module) int32
+//go:linkname F_unaccent_lexize github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_unaccent_lexize
+func F_unaccent_lexize(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_unaccent_dict github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_unaccent_dict
+func F_pg_finfo_unaccent_dict(m *base.Module) int32
+//go:linkname F_unaccent_dict github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_unaccent_dict
+func F_unaccent_dict(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

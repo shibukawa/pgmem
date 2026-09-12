@@ -1039,7 +1039,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 										v782 = int32(1)
 										v783 = v777 - v782
 										v784 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v778))))
-										v787 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v784)+uint32(_consts[1119]))))
+										v787 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v784)+uint32(_consts[1117]))))
 										v788 = v781 + v787
 										v790 = v778 + v782
 										v792 = v779 + v782
@@ -1066,13 +1066,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v809 = v800
 									for {
 										v810 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+3)))
-										v813 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v810)+uint32(_consts[1119]))))
+										v813 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v810)+uint32(_consts[1117]))))
 										v814 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+2)))
-										v817 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v814)+uint32(_consts[1119]))))
+										v817 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v814)+uint32(_consts[1117]))))
 										v818 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+1)))
-										v821 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v818)+uint32(_consts[1119]))))
+										v821 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v818)+uint32(_consts[1117]))))
 										v822 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803))))
-										v825 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v822)+uint32(_consts[1119]))))
+										v825 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v822)+uint32(_consts[1117]))))
 										v829 = v813 + (v817 + (v821 + (v809 + v825)))
 										v830 = int32(4)
 										v833 = v805 - v830
@@ -1104,13 +1104,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v233 = v15
 									for {
 										v234 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+3)))
-										v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1119]))))
+										v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1117]))))
 										v238 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+2)))
-										v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1119]))))
+										v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1117]))))
 										v242 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+1)))
-										v245 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v242)+uint32(_consts[1119]))))
+										v245 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v242)+uint32(_consts[1117]))))
 										v246 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221))))
-										v249 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[1119]))))
+										v249 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[1117]))))
 										v253 = v237 + (v241 + (v245 + (v233 + v249)))
 										v254 = int32(4)
 										v255 = v221 + v254
@@ -1136,7 +1136,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v291 = v273
 									for {
 										v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v279))))
-										v295 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v292)+uint32(_consts[1119]))))
+										v295 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v292)+uint32(_consts[1117]))))
 										v296 = v291 + v295
 										v297 = int32(1)
 										v300 = v278 + v297
@@ -1172,11 +1172,11 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								for {
 									v332 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v317+v52))))
 									v334 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v317))))
-									v338 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v332^v334)+uint32(_consts[1119]))))
+									v338 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v332^v334)+uint32(_consts[1117]))))
 									v341 = v317 | int32(1)
 									v343 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52+v341))))
 									v345 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v341))))
-									v349 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v343^v345)+uint32(_consts[1119]))))
+									v349 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v343^v345)+uint32(_consts[1117]))))
 									v350 = v319 + v338 + v349
 									v351 = int32(2)
 									v352 = v317 + v351
@@ -1197,7 +1197,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 							if v46&v305 != 0 {
 								v372 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v357+v52))))
 								v374 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v357))))
-								v378 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v372^v374)+uint32(_consts[1119]))))
+								v378 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v372^v374)+uint32(_consts[1117]))))
 								v380 = v359 + v378
 							} else {
 								v380 = v359
@@ -1327,7 +1327,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 										v945 = int32(1)
 										v946 = v940 - v945
 										v947 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v941))))
-										v950 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v947)+uint32(_consts[1119]))))
+										v950 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v947)+uint32(_consts[1117]))))
 										v951 = v944 + v950
 										v953 = v941 + v945
 										v955 = v942 + v945
@@ -1354,13 +1354,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v972 = v963
 									for {
 										v973 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+3)))
-										v976 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v973)+uint32(_consts[1119]))))
+										v976 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v973)+uint32(_consts[1117]))))
 										v977 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+2)))
-										v980 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v977)+uint32(_consts[1119]))))
+										v980 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v977)+uint32(_consts[1117]))))
 										v981 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+1)))
-										v984 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v981)+uint32(_consts[1119]))))
+										v984 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v981)+uint32(_consts[1117]))))
 										v985 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966))))
-										v988 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v985)+uint32(_consts[1119]))))
+										v988 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v985)+uint32(_consts[1117]))))
 										v992 = v976 + (v980 + (v984 + (v972 + v988)))
 										v993 = int32(4)
 										v996 = v968 - v993
@@ -1393,13 +1393,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v424 = v15
 									for {
 										v425 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+3)))
-										v428 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v425)+uint32(_consts[1119]))))
+										v428 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v425)+uint32(_consts[1117]))))
 										v429 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+2)))
-										v432 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v429)+uint32(_consts[1119]))))
+										v432 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v429)+uint32(_consts[1117]))))
 										v433 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+1)))
-										v436 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v433)+uint32(_consts[1119]))))
+										v436 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v433)+uint32(_consts[1117]))))
 										v437 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410))))
-										v440 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v437)+uint32(_consts[1119]))))
+										v440 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v437)+uint32(_consts[1117]))))
 										v444 = v428 + (v432 + (v436 + (v424 + v440)))
 										v445 = int32(4)
 										v446 = v410 + v445
@@ -1425,7 +1425,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v482 = v464
 									for {
 										v483 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v468))))
-										v486 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v483)+uint32(_consts[1119]))))
+										v486 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v483)+uint32(_consts[1117]))))
 										v487 = v482 + v486
 										v488 = int32(1)
 										v491 = v470 + v488
@@ -1549,7 +1549,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 										v1108 = int32(1)
 										v1109 = v1103 - v1108
 										v1110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1104))))
-										v1113 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1110)+uint32(_consts[1119]))))
+										v1113 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1110)+uint32(_consts[1117]))))
 										v1114 = v1107 + v1113
 										v1116 = v1104 + v1108
 										v1118 = v1105 + v1108
@@ -1576,13 +1576,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v1135 = v1126
 									for {
 										v1136 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+3)))
-										v1139 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1136)+uint32(_consts[1119]))))
+										v1139 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1136)+uint32(_consts[1117]))))
 										v1140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+2)))
-										v1143 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1140)+uint32(_consts[1119]))))
+										v1143 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1140)+uint32(_consts[1117]))))
 										v1144 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+1)))
-										v1147 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1144)+uint32(_consts[1119]))))
+										v1147 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1144)+uint32(_consts[1117]))))
 										v1148 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129))))
-										v1151 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1148)+uint32(_consts[1119]))))
+										v1151 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1148)+uint32(_consts[1117]))))
 										v1155 = v1139 + (v1143 + (v1147 + (v1135 + v1151)))
 										v1156 = int32(4)
 										v1159 = v1131 - v1156
@@ -1615,13 +1615,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v527 = v15
 									for {
 										v528 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+3)))
-										v531 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v528)+uint32(_consts[1119]))))
+										v531 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v528)+uint32(_consts[1117]))))
 										v532 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+2)))
-										v535 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v532)+uint32(_consts[1119]))))
+										v535 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v532)+uint32(_consts[1117]))))
 										v536 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+1)))
-										v539 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v536)+uint32(_consts[1119]))))
+										v539 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v536)+uint32(_consts[1117]))))
 										v540 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515))))
-										v543 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v540)+uint32(_consts[1119]))))
+										v543 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v540)+uint32(_consts[1117]))))
 										v547 = v531 + (v535 + (v539 + (v527 + v543)))
 										v548 = int32(4)
 										v549 = v515 + v548
@@ -1647,7 +1647,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v585 = v567
 									for {
 										v586 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v573))))
-										v589 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v586)+uint32(_consts[1119]))))
+										v589 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v586)+uint32(_consts[1117]))))
 										v590 = v585 + v589
 										v591 = int32(1)
 										v594 = v571 + v591
@@ -1683,11 +1683,11 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								for {
 									v626 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v610+v600))))
 									v628 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v610+v52))))
-									v632 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v626^v628)+uint32(_consts[1119]))))
+									v632 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v626^v628)+uint32(_consts[1117]))))
 									v635 = v610 | int32(1)
 									v637 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v600+v635))))
 									v639 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v635+v52))))
-									v643 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v637^v639)+uint32(_consts[1119]))))
+									v643 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v637^v639)+uint32(_consts[1117]))))
 									v644 = v611 + v632 + v643
 									v645 = int32(2)
 									v646 = v610 + v645
@@ -1710,7 +1710,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 							} else {
 								v670 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v650+v600))))
 								v672 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v650+v52))))
-								v676 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v670^v672)+uint32(_consts[1119]))))
+								v676 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v670^v672)+uint32(_consts[1117]))))
 								v1202 = v651 + v676
 							}
 						}
@@ -1928,7 +1928,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v782 = int32(1)
 									v783 = v777 - v782
 									v784 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v778))))
-									v787 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v784)+uint32(_consts[1119]))))
+									v787 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v784)+uint32(_consts[1117]))))
 									v788 = v781 + v787
 									v790 = v778 + v782
 									v792 = v779 + v782
@@ -1955,13 +1955,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v809 = v800
 								for {
 									v810 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+3)))
-									v813 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v810)+uint32(_consts[1119]))))
+									v813 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v810)+uint32(_consts[1117]))))
 									v814 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+2)))
-									v817 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v814)+uint32(_consts[1119]))))
+									v817 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v814)+uint32(_consts[1117]))))
 									v818 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803)+1)))
-									v821 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v818)+uint32(_consts[1119]))))
+									v821 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v818)+uint32(_consts[1117]))))
 									v822 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v803))))
-									v825 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v822)+uint32(_consts[1119]))))
+									v825 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v822)+uint32(_consts[1117]))))
 									v829 = v813 + (v817 + (v821 + (v809 + v825)))
 									v830 = int32(4)
 									v833 = v805 - v830
@@ -1993,13 +1993,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v233 = v15
 								for {
 									v234 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+3)))
-									v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1119]))))
+									v237 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v234)+uint32(_consts[1117]))))
 									v238 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+2)))
-									v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1119]))))
+									v241 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v238)+uint32(_consts[1117]))))
 									v242 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221)+1)))
-									v245 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v242)+uint32(_consts[1119]))))
+									v245 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v242)+uint32(_consts[1117]))))
 									v246 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v221))))
-									v249 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[1119]))))
+									v249 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v246)+uint32(_consts[1117]))))
 									v253 = v237 + (v241 + (v245 + (v233 + v249)))
 									v254 = int32(4)
 									v255 = v221 + v254
@@ -2025,7 +2025,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v291 = v273
 								for {
 									v292 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v279))))
-									v295 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v292)+uint32(_consts[1119]))))
+									v295 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v292)+uint32(_consts[1117]))))
 									v296 = v291 + v295
 									v297 = int32(1)
 									v300 = v278 + v297
@@ -2061,11 +2061,11 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 							for {
 								v332 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v317+v52))))
 								v334 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v317))))
-								v338 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v332^v334)+uint32(_consts[1119]))))
+								v338 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v332^v334)+uint32(_consts[1117]))))
 								v341 = v317 | int32(1)
 								v343 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v52+v341))))
 								v345 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v341))))
-								v349 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v343^v345)+uint32(_consts[1119]))))
+								v349 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v343^v345)+uint32(_consts[1117]))))
 								v350 = v319 + v338 + v349
 								v351 = int32(2)
 								v352 = v317 + v351
@@ -2086,7 +2086,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 						if v46&v305 != 0 {
 							v372 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v357+v52))))
 							v374 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56+v357))))
-							v378 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v372^v374)+uint32(_consts[1119]))))
+							v378 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v372^v374)+uint32(_consts[1117]))))
 							v380 = v359 + v378
 						} else {
 							v380 = v359
@@ -2216,7 +2216,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v945 = int32(1)
 									v946 = v940 - v945
 									v947 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v941))))
-									v950 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v947)+uint32(_consts[1119]))))
+									v950 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v947)+uint32(_consts[1117]))))
 									v951 = v944 + v950
 									v953 = v941 + v945
 									v955 = v942 + v945
@@ -2243,13 +2243,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v972 = v963
 								for {
 									v973 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+3)))
-									v976 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v973)+uint32(_consts[1119]))))
+									v976 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v973)+uint32(_consts[1117]))))
 									v977 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+2)))
-									v980 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v977)+uint32(_consts[1119]))))
+									v980 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v977)+uint32(_consts[1117]))))
 									v981 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966)+1)))
-									v984 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v981)+uint32(_consts[1119]))))
+									v984 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v981)+uint32(_consts[1117]))))
 									v985 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v966))))
-									v988 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v985)+uint32(_consts[1119]))))
+									v988 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v985)+uint32(_consts[1117]))))
 									v992 = v976 + (v980 + (v984 + (v972 + v988)))
 									v993 = int32(4)
 									v996 = v968 - v993
@@ -2282,13 +2282,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v424 = v15
 								for {
 									v425 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+3)))
-									v428 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v425)+uint32(_consts[1119]))))
+									v428 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v425)+uint32(_consts[1117]))))
 									v429 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+2)))
-									v432 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v429)+uint32(_consts[1119]))))
+									v432 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v429)+uint32(_consts[1117]))))
 									v433 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410)+1)))
-									v436 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v433)+uint32(_consts[1119]))))
+									v436 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v433)+uint32(_consts[1117]))))
 									v437 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v410))))
-									v440 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v437)+uint32(_consts[1119]))))
+									v440 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v437)+uint32(_consts[1117]))))
 									v444 = v428 + (v432 + (v436 + (v424 + v440)))
 									v445 = int32(4)
 									v446 = v410 + v445
@@ -2314,7 +2314,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v482 = v464
 								for {
 									v483 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v468))))
-									v486 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v483)+uint32(_consts[1119]))))
+									v486 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v483)+uint32(_consts[1117]))))
 									v487 = v482 + v486
 									v488 = int32(1)
 									v491 = v470 + v488
@@ -2438,7 +2438,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 									v1108 = int32(1)
 									v1109 = v1103 - v1108
 									v1110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1104))))
-									v1113 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1110)+uint32(_consts[1119]))))
+									v1113 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1110)+uint32(_consts[1117]))))
 									v1114 = v1107 + v1113
 									v1116 = v1104 + v1108
 									v1118 = v1105 + v1108
@@ -2465,13 +2465,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v1135 = v1126
 								for {
 									v1136 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+3)))
-									v1139 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1136)+uint32(_consts[1119]))))
+									v1139 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1136)+uint32(_consts[1117]))))
 									v1140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+2)))
-									v1143 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1140)+uint32(_consts[1119]))))
+									v1143 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1140)+uint32(_consts[1117]))))
 									v1144 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129)+1)))
-									v1147 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1144)+uint32(_consts[1119]))))
+									v1147 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1144)+uint32(_consts[1117]))))
 									v1148 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1129))))
-									v1151 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1148)+uint32(_consts[1119]))))
+									v1151 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v1148)+uint32(_consts[1117]))))
 									v1155 = v1139 + (v1143 + (v1147 + (v1135 + v1151)))
 									v1156 = int32(4)
 									v1159 = v1131 - v1156
@@ -2504,13 +2504,13 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v527 = v15
 								for {
 									v528 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+3)))
-									v531 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v528)+uint32(_consts[1119]))))
+									v531 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v528)+uint32(_consts[1117]))))
 									v532 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+2)))
-									v535 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v532)+uint32(_consts[1119]))))
+									v535 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v532)+uint32(_consts[1117]))))
 									v536 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515)+1)))
-									v539 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v536)+uint32(_consts[1119]))))
+									v539 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v536)+uint32(_consts[1117]))))
 									v540 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v515))))
-									v543 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v540)+uint32(_consts[1119]))))
+									v543 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v540)+uint32(_consts[1117]))))
 									v547 = v531 + (v535 + (v539 + (v527 + v543)))
 									v548 = int32(4)
 									v549 = v515 + v548
@@ -2536,7 +2536,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 								v585 = v567
 								for {
 									v586 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v573))))
-									v589 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v586)+uint32(_consts[1119]))))
+									v589 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v586)+uint32(_consts[1117]))))
 									v590 = v585 + v589
 									v591 = int32(1)
 									v594 = v571 + v591
@@ -2572,11 +2572,11 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 							for {
 								v626 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v610+v600))))
 								v628 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v610+v52))))
-								v632 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v626^v628)+uint32(_consts[1119]))))
+								v632 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v626^v628)+uint32(_consts[1117]))))
 								v635 = v610 | int32(1)
 								v637 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v600+v635))))
 								v639 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v635+v52))))
-								v643 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v637^v639)+uint32(_consts[1119]))))
+								v643 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v637^v639)+uint32(_consts[1117]))))
 								v644 = v611 + v632 + v643
 								v645 = int32(2)
 								v646 = v610 + v645
@@ -2599,7 +2599,7 @@ func F_gtsvector_penalty(m *base.Module, l0 int32) int32 {
 						} else {
 							v670 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v650+v600))))
 							v672 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v650+v52))))
-							v676 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v670^v672)+uint32(_consts[1119]))))
+							v676 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v670^v672)+uint32(_consts[1117]))))
 							v1202 = v651 + v676
 						}
 					}

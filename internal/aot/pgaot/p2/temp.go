@@ -155,7 +155,7 @@ L4:
 L5:
 	;
 	v12 = int32(8)
-	v13 = int32(498299)
+	v13 = int32(498714)
 	goto L9
 L6:
 	;
@@ -260,7 +260,7 @@ L20:
 L21:
 	;
 	v60 = int32(14)
-	v61 = int32(498284)
+	v61 = int32(498699)
 	goto L26
 L22:
 	;
@@ -488,7 +488,7 @@ func F_assign_temp_tablespaces(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, _consts[405])) = v5
 		*(*int32)(unsafe.Add(mBase, _consts[406])) = l1 + int32(4)
 		if int32(2) <= v5 {
-			v19 = F_pg_prng_uint64_range(m, int32(4553904), int64(0), base.I64_extend_i32_u(v5-int32(1)))
+			v19 = F_pg_prng_uint64_range(m, int32(4554064), int64(0), base.I64_extend_i32_u(v5-int32(1)))
 			mBase = m.M
 			v21 = base.I32_wrap_i64(v19)
 		} else {

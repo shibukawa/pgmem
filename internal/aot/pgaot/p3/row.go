@@ -1269,7 +1269,7 @@ func F_row_is_in_frame(m *base.Module, l0 int32, l1 int64, l2 int32) int32 {
 										}
 									}
 								} else {
-									v48 = int32(4470400)
+									v48 = int32(4470560)
 									v49 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 									v51 = *(*int32)(unsafe.Add(mBase, uint32(v38)+20))
 									*(*int32)(unsafe.Add(mBase, _consts[0])) = v51

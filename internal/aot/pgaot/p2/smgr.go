@@ -109,7 +109,7 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v26)+120)) = v27 & int32(-2)
 						v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-						v33 = int32(4465052)
+						v33 = int32(4465212)
 						v35 = *(*int32)(unsafe.Add(mBase, _consts[186]))
 						*(*int32)(unsafe.Add(mBase, _consts[186])) = v35 + int32(1)
 						v39 = *(*int32)(unsafe.Add(mBase, uint32(v31)+36))
@@ -120,7 +120,7 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 						if v46 != 0 {
 							return
 						} else {
-							v47 = int32(4465052)
+							v47 = int32(4465212)
 							v49 = *(*int32)(unsafe.Add(mBase, _consts[186]))
 							*(*int32)(unsafe.Add(mBase, _consts[186])) = v49 - int32(1)
 							v55 = F_errstart(m, int32(14), int32(0))
@@ -138,7 +138,7 @@ func F_smgr_bulk_finish(m *base.Module, l0 int32) {
 									if v62 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(489511), int32(214), int32(316828))
+										F_errfinish(m, int32(489926), int32(214), int32(317036))
 										mBase = m.M
 										v67 = m.ExcPending
 										if v67 != 0 {
@@ -179,12 +179,12 @@ func F_smgr_identify(m *base.Module, l0 int32) int32 {
 	_ = v12
 	v6 = l0 & int32(240)
 	if v6 == int32(32) {
-		v9 = int32(529383)
+		v9 = int32(529798)
 	} else {
 		v9 = int32(0)
 	}
 	if v6 == int32(16) {
-		v12 = int32(529014)
+		v12 = int32(529429)
 	} else {
 		v12 = v9
 	}

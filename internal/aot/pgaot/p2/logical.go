@@ -577,7 +577,7 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(1)
 	if v15 != 0 {
-		F_s_lock(m, v14, int32(488655), int32(1757), int32(84969))
+		F_s_lock(m, v14, int32(489070), int32(1757), int32(85015))
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
@@ -627,13 +627,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
 								v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-								F_errmsg_internal(m, int32(504528), v11)
+								F_errmsg_internal(m, int32(504943), v11)
 								mBase = m.M
 								v58 = m.ExcPending
 								if v58 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(488655), int32(1792), int32(84969))
+									F_errfinish(m, int32(489070), int32(1792), int32(85015))
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
@@ -675,13 +675,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
 								v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-								F_errmsg_internal(m, int32(505205), v9+int32(-48))
+								F_errmsg_internal(m, int32(505620), v9+int32(-48))
 								mBase = m.M
 								v97 = m.ExcPending
 								if v97 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(488655), int32(1810), int32(84969))
+									F_errfinish(m, int32(489070), int32(1810), int32(85015))
 									mBase = m.M
 									v102 = m.ExcPending
 									if v102 != 0 {
@@ -742,13 +742,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v2)
 							v54 = int64(base.Ui64(v2) >> (uint(v49) % 64))
 							*(*uint32)(unsafe.Add(mBase, uint32(v11))) = uint32(v54)
-							F_errmsg_internal(m, int32(504528), v11)
+							F_errmsg_internal(m, int32(504943), v11)
 							mBase = m.M
 							v58 = m.ExcPending
 							if v58 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(488655), int32(1792), int32(84969))
+								F_errfinish(m, int32(489070), int32(1792), int32(85015))
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
@@ -790,13 +790,13 @@ func F_LogicalIncreaseRestartDecodingForSlot(m *base.Module, l0 int64, l1 int64)
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+20)) = uint32(v2)
 							v91 = int64(base.Ui64(v2) >> (uint(v74) % 64))
 							*(*uint32)(unsafe.Add(mBase, uint32(v11)+16)) = uint32(v91)
-							F_errmsg_internal(m, int32(505205), v9+int32(-48))
+							F_errmsg_internal(m, int32(505620), v9+int32(-48))
 							mBase = m.M
 							v97 = m.ExcPending
 							if v97 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(488655), int32(1810), int32(84969))
+								F_errfinish(m, int32(489070), int32(1810), int32(85015))
 								mBase = m.M
 								v102 = m.ExcPending
 								if v102 != 0 {
@@ -845,7 +845,7 @@ func F_LogicalRepWorkersWakeupAtCommit(m *base.Module, l0 int32) {
 	_ = v11
 	var v12 int32
 	_ = v12
-	v3 = int32(4470400)
+	v3 = int32(4470560)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[68]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v7
@@ -1160,7 +1160,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(489856), int32(797), int32(344026))
+	F_errfinish(m, int32(490271), int32(797), int32(344259))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {
@@ -1306,7 +1306,7 @@ func F_logical_rewrite_log_mapping(m *base.Module, l0 int32, l1 int32, l2 int32)
 					v45 = v29
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v45
-				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(153548)
+				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(153684)
 				v55 = F_pg_snprintf(m, v12+int32(48), int32(1024), int32(29405), v12+int32(16))
 				mBase = m.M
 				v56 = m.ExcPending
@@ -1341,13 +1341,13 @@ func F_logical_rewrite_log_mapping(m *base.Module, l0 int32, l1 int32, l2 int32)
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12))) = v12 + int32(48)
-									F_errmsg(m, int32(294270), v12)
+									F_errmsg(m, int32(294478), v12)
 									mBase = m.M
 									v141 = m.ExcPending
 									if v141 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(487127), int32(977), int32(328292))
+										F_errfinish(m, int32(487542), int32(977), int32(328500))
 										mBase = m.M
 										v146 = m.ExcPending
 										if v146 != 0 {

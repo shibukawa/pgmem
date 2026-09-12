@@ -67,7 +67,7 @@ func F_get_op_opfamily_properties(m *base.Module, l0 int32, l1 int32, l2 int32, 
 				if v28 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(490208), int32(151), int32(164472))
+					F_errfinish(m, int32(490623), int32(151), int32(164608))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {

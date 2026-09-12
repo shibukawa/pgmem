@@ -214,13 +214,13 @@ func F_seq_redo(m *base.Module, l0 int32) {
 						if v132 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(400882), int32(0))
+							F_errmsg_internal(m, int32(401237), int32(0))
 							mBase = m.M
 							v136 = m.ExcPending
 							if v136 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(490529), int32(1930), int32(238540))
+								F_errfinish(m, int32(490944), int32(1930), int32(238710))
 								mBase = m.M
 								v141 = m.ExcPending
 								if v141 != 0 {
@@ -277,7 +277,7 @@ func F_seq_redo(m *base.Module, l0 int32) {
 			if v123 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(490529), int32(1905), int32(238540))
+				F_errfinish(m, int32(490944), int32(1905), int32(238710))
 				mBase = m.M
 				v128 = m.ExcPending
 				if v128 != 0 {

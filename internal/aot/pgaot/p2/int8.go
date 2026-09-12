@@ -225,7 +225,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					if v163 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(491015), int32(5606), int32(347744))
+						F_errfinish(m, int32(491430), int32(5606), int32(347977))
 						mBase = m.M
 						v168 = m.ExcPending
 						if v168 != 0 {
@@ -238,7 +238,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v51 = int32(4470400)
+				v51 = int32(4470560)
 				v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -362,7 +362,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491015), int32(5606), int32(347744))
+					F_errfinish(m, int32(491430), int32(5606), int32(347977))
 					mBase = m.M
 					v168 = m.ExcPending
 					if v168 != 0 {
@@ -375,7 +375,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v51 = int32(4470400)
+			v51 = int32(4470560)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -625,7 +625,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 				return v133
 			} else {
 				if v49 == int32(0) {
-					v56 = int32(4470400)
+					v56 = int32(4470560)
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v59
@@ -695,7 +695,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491015), int32(5606), int32(347744))
+								F_errfinish(m, int32(491430), int32(5606), int32(347977))
 								mBase = m.M
 								v168 = m.ExcPending
 								if v168 != 0 {
@@ -765,7 +765,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 			if v150 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(491015), int32(5946), int32(367285))
+				F_errfinish(m, int32(491430), int32(5946), int32(367518))
 				mBase = m.M
 				v155 = m.ExcPending
 				if v155 != 0 {
@@ -827,13 +827,13 @@ func F_int8_dist(m *base.Module, l0 int32) int32 {
 			if v28 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(395079), int32(0))
+				F_errmsg(m, int32(395434), int32(0))
 				mBase = m.M
 				v34 = m.ExcPending
 				if v34 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491179), int32(107), int32(74828))
+					F_errfinish(m, int32(491594), int32(107), int32(74874))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {
@@ -1293,7 +1293,7 @@ L14:
 	goto L2
 L15:
 	;
-	v59 = F_cstring_to_text(m, int32(731167))
+	v59 = F_cstring_to_text(m, int32(731620))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {

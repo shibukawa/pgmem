@@ -111,7 +111,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = v61
-										F_errmsg(m, int32(185282), v10)
+										F_errmsg(m, int32(185418), v10)
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
@@ -123,7 +123,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 											if v68 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489843), int32(570), int32(258661))
+												F_errfinish(m, int32(490258), int32(570), int32(258831))
 												mBase = m.M
 												v73 = m.ExcPending
 												if v73 != 0 {
@@ -147,7 +147,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 				*(*int32)(unsafe.Add(mBase, uint32(v25)+4)) = v18
 				*(*int32)(unsafe.Add(mBase, uint32(v25))) = l0
 				*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v25
-				v31 = int32(4463304)
+				v31 = int32(4463464)
 				v32 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 				*(*int32)(unsafe.Add(mBase, uint32(v25)+8)) = v32
 				*(*int32)(unsafe.Add(mBase, _consts[77])) = v10 + int32(20)
@@ -188,7 +188,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = v61
-										F_errmsg(m, int32(185282), v10)
+										F_errmsg(m, int32(185418), v10)
 										mBase = m.M
 										v66 = m.ExcPending
 										if v66 != 0 {
@@ -200,7 +200,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 											if v68 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(489843), int32(570), int32(258661))
+												F_errfinish(m, int32(490258), int32(570), int32(258831))
 												mBase = m.M
 												v73 = m.ExcPending
 												if v73 != 0 {
@@ -256,7 +256,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10))) = v61
-								F_errmsg(m, int32(185282), v10)
+								F_errmsg(m, int32(185418), v10)
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
@@ -268,7 +268,7 @@ func F_GetColumnDefCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 									if v68 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(489843), int32(570), int32(258661))
+										F_errfinish(m, int32(490258), int32(570), int32(258831))
 										mBase = m.M
 										v73 = m.ExcPending
 										if v73 != 0 {

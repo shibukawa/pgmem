@@ -332,7 +332,7 @@ L35:
 	}
 L36:
 	;
-	v106 = int32(4465060)
+	v106 = int32(4465220)
 	v108 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	v109 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[11])) = v108 + v109
@@ -713,7 +713,7 @@ L7:
 	goto L6
 L8:
 	;
-	v41 = F__emscripten_memcpy_bulkmem(m, v14+int32(8), int32(4368664), int32(128))
+	v41 = F__emscripten_memcpy_bulkmem(m, v14+int32(8), int32(4368824), int32(128))
 	mBase = m.M
 	goto L10
 L10:
@@ -875,7 +875,7 @@ L31:
 	;
 	v102 = int32(*(*int8)(unsafe.Add(mBase, uint32(l1)+24)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v102
-	F_errmsg(m, int32(478108), v14)
+	F_errmsg(m, int32(478512), v14)
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -885,7 +885,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(486680), int32(94), int32(237791))
+	F_errfinish(m, int32(487095), int32(94), int32(237961))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -929,7 +929,7 @@ L38:
 	goto L39
 L39:
 	;
-	v150 = int32(4470400)
+	v150 = int32(4470560)
 	v151 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v153 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v153
@@ -1351,7 +1351,7 @@ func F_serializeAnalyzeStartup(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	default:
 	}
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v19 = F_AllocSetContextCreateInternal(m, v14, int32(337997), int32(0), int32(8192), int32(8388608))
+	v19 = F_AllocSetContextCreateInternal(m, v14, int32(338230), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {

@@ -75,7 +75,7 @@ func F_pg_replication_origin_progress(m *base.Module, l0 int32) int32 {
 	_ = v39
 	var v44 int32
 	_ = v44
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[520]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[518]))
 	if v6 != 0 {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v8 = F_text_to_cstring(m, v7)
@@ -127,13 +127,13 @@ func F_pg_replication_origin_progress(m *base.Module, l0 int32) int32 {
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(545383), int32(0))
+				F_errmsg(m, int32(545798), int32(0))
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(487641), int32(195), int32(157138))
+					F_errfinish(m, int32(488056), int32(195), int32(157274))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {

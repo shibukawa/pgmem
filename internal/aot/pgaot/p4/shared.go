@@ -218,7 +218,7 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = int32(1)
 	v9 = l0 + int32(44)
 	if v5 != 0 {
-		F_s_lock(m, v9, int32(484452), int32(60), int32(320609))
+		F_s_lock(m, v9, int32(484867), int32(60), int32(320817))
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
@@ -251,13 +251,13 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 					if v32 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(430926), int32(0))
+						F_errmsg(m, int32(431281), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(484452), int32(73), int32(320609))
+							F_errfinish(m, int32(484867), int32(73), int32(320817))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -300,13 +300,13 @@ func F_SharedFileSetAttach(m *base.Module, l0 int32, l1 int32) {
 				if v32 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(430926), int32(0))
+					F_errmsg(m, int32(431281), int32(0))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(484452), int32(73), int32(320609))
+						F_errfinish(m, int32(484867), int32(73), int32(320817))
 						mBase = m.M
 						v41 = m.ExcPending
 						if v41 != 0 {

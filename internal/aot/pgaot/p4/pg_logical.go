@@ -212,13 +212,13 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 			if v94 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(360976), int32(0))
+				F_errmsg_internal(m, int32(361209), int32(0))
 				mBase = m.M
 				v98 = m.ExcPending
 				if v98 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(485724), int32(183), int32(83809))
+					F_errfinish(m, int32(486139), int32(183), int32(83855))
 					mBase = m.M
 					v103 = m.ExcPending
 					if v103 != 0 {

@@ -141,7 +141,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(485304), int32(796), int32(376586))
+	F_errfinish(m, int32(485719), int32(796), int32(376932))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -448,7 +448,7 @@ func F_tts_heap_copy_minimal_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 				return v35
 			}
 		} else {
-			v10 = int32(4470400)
+			v10 = int32(4470560)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -1115,7 +1115,7 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = base.I32_extend16_s(v104)
-	F_errmsg_internal(m, int32(474656), v19)
+	F_errmsg_internal(m, int32(475060), v19)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -1125,7 +1125,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(320936), int32(70), int32(66797))
+	F_errfinish(m, int32(321144), int32(70), int32(66797))
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -1520,7 +1520,7 @@ L112:
 L113:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = base.I32_extend16_s(v314)
-	F_errmsg_internal(m, int32(474656), v19+int32(32))
+	F_errmsg_internal(m, int32(475060), v19+int32(32))
 	mBase = m.M
 	v330 = m.ExcPending
 	if v330 != 0 {
@@ -1530,7 +1530,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(320936), int32(70), int32(66797))
+	F_errfinish(m, int32(321144), int32(70), int32(66797))
 	mBase = m.M
 	v335 = m.ExcPending
 	if v335 != 0 {
@@ -1908,7 +1908,7 @@ L175:
 L176:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v534
-	F_errmsg_internal(m, int32(474656), v19+int32(16))
+	F_errmsg_internal(m, int32(475060), v19+int32(16))
 	mBase = m.M
 	v571 = m.ExcPending
 	if v571 != 0 {
@@ -1918,7 +1918,7 @@ L176:
 	}
 L177:
 	;
-	F_errfinish(m, int32(320936), int32(70), int32(66797))
+	F_errfinish(m, int32(321144), int32(70), int32(66797))
 	mBase = m.M
 	v576 = m.ExcPending
 	if v576 != 0 {
@@ -2168,7 +2168,7 @@ func F_tts_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(485304), int32(369), int32(203039))
+					F_errfinish(m, int32(485719), int32(369), int32(203175))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -2317,7 +2317,7 @@ func F_tts_minimal_copy_heap_tuple(m *base.Module, l0 int32) int32 {
 				return v47
 			}
 		} else {
-			v10 = int32(4470400)
+			v10 = int32(4470560)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[9])) = v13
@@ -2398,7 +2398,7 @@ func F_tts_minimal_copyslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v18 int32
 	_ = v18
-	v4 = int32(4470400)
+	v4 = int32(4470560)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v7

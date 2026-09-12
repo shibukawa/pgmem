@@ -53,7 +53,7 @@ func F_get_opfamily_method(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(490208), int32(1384), int32(415029))
+					F_errfinish(m, int32(490623), int32(1384), int32(415384))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

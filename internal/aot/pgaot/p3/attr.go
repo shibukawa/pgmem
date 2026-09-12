@@ -153,7 +153,7 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v12)+220)) = v52
 					v55 = *(*int32)(unsafe.Add(mBase, uint32(v38)+52))
-					v59 = F_heap_form_tuple(m, v55, v12+int32(208), int32(4367212))
+					v59 = F_heap_form_tuple(m, v55, v12+int32(208), int32(4367372))
 					mBase = m.M
 					v60 = m.ExcPending
 					if v60 != 0 {
@@ -298,7 +298,7 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 															if v152 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(489342), int32(95), int32(97005))
+																F_errfinish(m, int32(489757), int32(95), int32(97074))
 																mBase = m.M
 																v157 = m.ExcPending
 																if v157 != 0 {

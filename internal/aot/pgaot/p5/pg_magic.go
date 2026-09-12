@@ -3,8 +3,8 @@ package p5
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_Pg_magic_func_latin_and_mic(m *base.Module) int32 {
-	return int32(4355668)
+	return int32(4355764)
 }
 func F_Pg_magic_func_utf8_and_johab(m *base.Module) int32 {
-	return int32(4358892)
+	return int32(4358988)
 }

@@ -353,7 +353,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(491035), int32(3629), int32(365185))
+	F_errfinish(m, int32(491450), int32(3629), int32(365418))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -370,7 +370,7 @@ L35:
 	;
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(v55)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v108
-	F_errmsg_internal(m, int32(476862), v10+int32(-32))
+	F_errmsg_internal(m, int32(477266), v10+int32(-32))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {
@@ -380,7 +380,7 @@ L35:
 	}
 L36:
 	;
-	F_errfinish(m, int32(491035), int32(1680), int32(25861))
+	F_errfinish(m, int32(491450), int32(1680), int32(25861))
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -517,13 +517,13 @@ func F_write_item(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v46 != 0 {
 								return
 							} else {
-								F_errmsg_internal(m, int32(289704), int32(0))
+								F_errmsg_internal(m, int32(289874), int32(0))
 								mBase = m.M
 								v50 = m.ExcPending
 								if v50 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(490243), int32(6806), int32(285935))
+									F_errfinish(m, int32(490658), int32(6806), int32(286105))
 									mBase = m.M
 									v55 = m.ExcPending
 									if v55 != 0 {
@@ -558,13 +558,13 @@ func F_write_item(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v31 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(289704), int32(0))
+					F_errmsg_internal(m, int32(289874), int32(0))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(490243), int32(6802), int32(285935))
+						F_errfinish(m, int32(490658), int32(6802), int32(286105))
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
