@@ -650,6 +650,8 @@ func F_find_expr_references_walker(m *base.Module, l0 int32, l1 int32) int32
 func F_add_exact_object_address(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_record_object_address_dependencies github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_record_object_address_dependencies
 func F_record_object_address_dependencies(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_SystemAttributeByName github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_SystemAttributeByName
+func F_SystemAttributeByName(m *base.Module, l0 int32) int32
 //go:linkname F_RemoveStatistics github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_RemoveStatistics
 func F_RemoveStatistics(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_RelationClearMissing github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_RelationClearMissing
@@ -3000,6 +3002,8 @@ func F_multirange_contains_multirange_internal(m *base.Module, l0 int32, l1 int3
 func F_range_adjacent_multirange_internal(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_multirange_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_multirange_cmp
 func F_multirange_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_namestrcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_namestrcmp
+func F_namestrcmp(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_network_recv github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_network_recv
 func F_network_recv(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_inet_spg_consistent_bitmap github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_inet_spg_consistent_bitmap

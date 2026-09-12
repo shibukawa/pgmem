@@ -287,6 +287,9 @@ func F_pg_finfo_iso_to_win1251(m *base.Module) int32 {
 func F_pg_finfo_koi8r_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_koi8r_to_win1251_0)
 }
+func F_pg_finfo_lo_manage(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_lo_manage_0)
+}
 func F_pg_finfo_lquery_recv(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_lquery_recv_0)
 }

@@ -11,6 +11,9 @@ func F_Pg_magic_func_euc2004_sjis2004(m *base.Module) int32 {
 func F_Pg_magic_func_euc_tw_and_big5(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_euc_tw_and_big5_0)
 }
+func F_Pg_magic_func_lo(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_lo_0)
+}
 func F_Pg_magic_func_plpgsql(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_plpgsql_0)
 }

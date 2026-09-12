@@ -3100,6 +3100,12 @@ func F_pg_finfo_dxsyn_lexize(m *base.Module) int32
 func F_dxsyn_init(m *base.Module, l0 int32) int32
 //go:linkname F_dxsyn_lexize github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_dxsyn_lexize
 func F_dxsyn_lexize(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_lo github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_Pg_magic_func_lo
+func F_Pg_magic_func_lo(m *base.Module) int32
+//go:linkname F_pg_finfo_lo_manage github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_lo_manage
+func F_pg_finfo_lo_manage(m *base.Module) int32
+//go:linkname F_lo_manage github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_lo_manage
+func F_lo_manage(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem
