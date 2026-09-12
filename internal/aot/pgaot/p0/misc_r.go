@@ -13659,6 +13659,98 @@ L36:
 	*(*int32)(unsafe.Add(mBase, uint32(v27)+32)) = v134
 	goto L1
 }
+func F_report_corruption(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int64
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	v10 = m.G0
+	v12 = v10 - int32(32)
+	m.G0 = v12
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+140))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+136))
+	v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+100)))
+	v17 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+84)))
+	v18 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+124)))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = int32(0)
+	v21 = F_Int64GetDatum(m, v17)
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		return
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = base.I32_extend16_s(v18)
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v16
+		*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v21
+		v28 = int32(base.Ui32(v18) >> (uint(int32(15)) % 32))
+		*(*uint8)(unsafe.Add(mBase, uint32(v12)+14)) = uint8(v28)
+		v30 = F_cstring_to_text(m, l1)
+		mBase = m.M
+		v31 = m.ExcPending
+		if v31 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = v30
+			F_pfree(m, l1)
+			mBase = m.M
+			v34 = m.ExcPending
+			if v34 != 0 {
+				return
+			} else {
+				v39 = F_heap_form_tuple(m, v15, v12+int32(16), v12+int32(12))
+				mBase = m.M
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return
+				} else {
+					F_tuplestore_puttuple(m, v14, v39)
+					mBase = m.M
+					v42 = m.ExcPending
+					if v42 != 0 {
+						return
+					} else {
+						v43 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+132)) = uint8(v43)
+						m.G0 = v12 + int32(32)
+						return
+					}
+				}
+			}
+		}
+	}
+}
 func F_report_invalid_encoding_int(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
 	_ = mBase

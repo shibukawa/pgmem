@@ -9876,6 +9876,2994 @@ func F_p_isxdigit(m *base.Module, l0 int32) int32 {
 		return v65
 	}
 }
+func F_palloc_btree_page(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v101 int32
+	_ = v101
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
+	var v113 int32
+	_ = v113
+	var v121 int32
+	_ = v121
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v139 int32
+	_ = v139
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
+	var v158 int32
+	_ = v158
+	var v160 int32
+	_ = v160
+	var v164 int32
+	_ = v164
+	var v170 int32
+	_ = v170
+	var v171 int32
+	_ = v171
+	var v176 int32
+	_ = v176
+	var v179 int32
+	_ = v179
+	var v180 int32
+	_ = v180
+	var v181 int32
+	_ = v181
+	var v192 int32
+	_ = v192
+	var v199 int32
+	_ = v199
+	var v200 int32
+	_ = v200
+	var v201 int32
+	_ = v201
+	var v206 int32
+	_ = v206
+	var v207 int32
+	_ = v207
+	var v211 int32
+	_ = v211
+	var v214 int32
+	_ = v214
+	var v221 int32
+	_ = v221
+	var v237 int32
+	_ = v237
+	var v240 int32
+	_ = v240
+	var v241 int32
+	_ = v241
+	var v242 int32
+	_ = v242
+	var v251 int32
+	_ = v251
+	var v258 int32
+	_ = v258
+	var v262 int32
+	_ = v262
+	var v265 int32
+	_ = v265
+	var v266 int32
+	_ = v266
+	var v267 int32
+	_ = v267
+	var v277 int32
+	_ = v277
+	var v284 int32
+	_ = v284
+	var v288 int32
+	_ = v288
+	var v291 int32
+	_ = v291
+	var v292 int32
+	_ = v292
+	var v293 int32
+	_ = v293
+	var v304 int32
+	_ = v304
+	var v311 int32
+	_ = v311
+	var v315 int32
+	_ = v315
+	var v318 int32
+	_ = v318
+	var v319 int32
+	_ = v319
+	var v320 int32
+	_ = v320
+	var v333 int32
+	_ = v333
+	var v340 int32
+	_ = v340
+	var v344 int32
+	_ = v344
+	var v347 int32
+	_ = v347
+	var v348 int32
+	_ = v348
+	var v349 int32
+	_ = v349
+	var v360 int32
+	_ = v360
+	var v367 int32
+	_ = v367
+	var v371 int32
+	_ = v371
+	var v374 int32
+	_ = v374
+	var v375 int32
+	_ = v375
+	var v376 int32
+	_ = v376
+	var v387 int32
+	_ = v387
+	var v392 int32
+	_ = v392
+	var v399 int32
+	_ = v399
+	var v403 int32
+	_ = v403
+	var v406 int32
+	_ = v406
+	var v407 int32
+	_ = v407
+	var v408 int32
+	_ = v408
+	var v419 int32
+	_ = v419
+	var v426 int32
+	_ = v426
+	var v430 int32
+	_ = v430
+	var v433 int32
+	_ = v433
+	var v434 int32
+	_ = v434
+	var v435 int32
+	_ = v435
+	var v446 int32
+	_ = v446
+	var v453 int32
+	_ = v453
+	var v457 int32
+	_ = v457
+	var v460 int32
+	_ = v460
+	var v461 int32
+	_ = v461
+	var v462 int32
+	_ = v462
+	var v473 int32
+	_ = v473
+	var v480 int32
+	_ = v480
+	v12 = m.G0
+	v14 = v12 - int32(192)
+	m.G0 = v14
+	v17 = F_palloc(m, int32(_a_F_palloc_btree_page_0))
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		return int32(0)
+	} else {
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v22 = int32(0)
+		v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v25 = F_ReadBufferExtended(m, v21, v22, l1, v22, v24)
+		mBase = m.M
+		v26 = m.ExcPending
+		if v26 != 0 {
+			return int32(0)
+		} else {
+			F_LockBuffer(m, v25, int32(1))
+			mBase = m.M
+			v29 = m.ExcPending
+			if v29 != 0 {
+				return int32(0)
+			} else {
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				F__bt_checkpage(m, v30, v25)
+				mBase = m.M
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return int32(0)
+				} else {
+					if v25 < int32(0) {
+						v36 = *(*int32)(unsafe.Add(mBase, _c_F_palloc_btree_page[0]))
+						v42 = *(*int32)(unsafe.Add(mBase, uint32(v36+(v25^int32(-1))<<(uint(int32(2))%32))))
+						v50 = v42
+					} else {
+						v44 = *(*int32)(unsafe.Add(mBase, _c_F_palloc_btree_page[1]))
+						v50 = v44 + v25<<(uint(int32(13))%32) + int32(-8192)
+					}
+					v52 = F__emscripten_memcpy_bulkmem(m, v17, v50, int32(_a_F_palloc_btree_page_0))
+					mBase = m.M
+					F_UnlockReleaseBuffer(m, v25)
+					mBase = m.M
+					v55 = m.ExcPending
+					if v55 != 0 {
+						return int32(0)
+					} else {
+						v57 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v52)+16)))
+						v58 = v52 + v57
+						v59 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v58)+12)))
+						if v59&int32(8) != 0 {
+							v62 = l1
+						} else {
+							v62 = int32(0)
+						}
+						if v62 == int32(0) {
+							if l1 == int32(0) {
+								if v59&int32(8) == int32(0) {
+									F_errstart_cold(m, int32(21), int32(0))
+									mBase = m.M
+									v262 = m.ExcPending
+									if v262 != 0 {
+										return int32(0)
+									} else {
+										F_errcode(m, int32(33557032))
+										mBase = m.M
+										v265 = m.ExcPending
+										if v265 != 0 {
+											return int32(0)
+										} else {
+											v266 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+											v267 = *(*int32)(unsafe.Add(mBase, uint32(v266)+48))
+											*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v267 + int32(4)
+											F_errmsg(m, int32(_a_F_palloc_btree_page_1), v14+int32(16))
+											mBase = m.M
+											v277 = m.ExcPending
+											if v277 != 0 {
+												return int32(0)
+											} else {
+												F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3337), int32(_a_F_palloc_btree_page_3))
+												mBase = m.M
+												v284 = m.ExcPending
+												if v284 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									}
+								} else {
+									v71 = *(*int32)(unsafe.Add(mBase, uint32(v52)+24))
+									if v71 != int32(_a_F_palloc_btree_page_4) {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v262 = m.ExcPending
+										if v262 != 0 {
+											return int32(0)
+										} else {
+											F_errcode(m, int32(33557032))
+											mBase = m.M
+											v265 = m.ExcPending
+											if v265 != 0 {
+												return int32(0)
+											} else {
+												v266 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												v267 = *(*int32)(unsafe.Add(mBase, uint32(v266)+48))
+												*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v267 + int32(4)
+												F_errmsg(m, int32(_a_F_palloc_btree_page_1), v14+int32(16))
+												mBase = m.M
+												v277 = m.ExcPending
+												if v277 != 0 {
+													return int32(0)
+												} else {
+													F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3337), int32(_a_F_palloc_btree_page_3))
+													mBase = m.M
+													v284 = m.ExcPending
+													if v284 != 0 {
+														return int32(0)
+													} else {
+														base.Wasm_trap_unreachable()
+														for {
+														}
+													}
+												}
+											}
+										}
+									} else {
+										v74 = *(*int32)(unsafe.Add(mBase, uint32(v52)+28))
+										if base.Ui32(int32(-4)) < base.Ui32(v74-int32(5)) {
+											m.G0 = v14 + int32(192)
+											return v52
+										} else {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v82 = m.ExcPending
+											if v82 != 0 {
+												return int32(0)
+											} else {
+												F_errcode(m, int32(33557032))
+												mBase = m.M
+												v85 = m.ExcPending
+												if v85 != 0 {
+													return int32(0)
+												} else {
+													v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													v87 = *(*int32)(unsafe.Add(mBase, uint32(v86)+48))
+													v88 = *(*int32)(unsafe.Add(mBase, uint32(v52)+28))
+													*(*int64)(unsafe.Add(mBase, uint32(v14)+40)) = int64(8589934596)
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v88
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v87 + int32(4)
+													F_errmsg(m, int32(_a_F_palloc_btree_page_5), v14+int32(32))
+													mBase = m.M
+													v101 = m.ExcPending
+													if v101 != 0 {
+														return int32(0)
+													} else {
+														F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3347), int32(_a_F_palloc_btree_page_3))
+														mBase = m.M
+														v108 = m.ExcPending
+														if v108 != 0 {
+															return int32(0)
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							} else {
+								v110 = v59 & int32(260)
+								if v110 == int32(4) {
+									v150 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v52)+12)))
+									if base.Ui32(int32(25)) <= base.Ui32(v150) {
+										v158 = int32(base.Ui32(v150+int32(_a_F_palloc_btree_page_6)) >> (uint(int32(2)) % 32))
+									} else {
+										v158 = int32(0)
+									}
+									v160 = v158 & int32(_a_F_palloc_btree_page_7)
+									if base.Ui32(int32(409)) <= base.Ui32(v160) {
+										F_errstart_cold(m, int32(21), int32(0))
+										mBase = m.M
+										v315 = m.ExcPending
+										if v315 != 0 {
+											return int32(0)
+										} else {
+											F_errcode(m, int32(33557032))
+											mBase = m.M
+											v318 = m.ExcPending
+											if v318 != 0 {
+												return int32(0)
+											} else {
+												v319 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+												v320 = *(*int32)(unsafe.Add(mBase, uint32(v319)+48))
+												*(*int32)(unsafe.Add(mBase, uint32(v14)+56)) = int32(408)
+												*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = l1
+												*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = v320 + int32(4)
+												F_errmsg(m, int32(_a_F_palloc_btree_page_8), v14+int32(48))
+												mBase = m.M
+												v333 = m.ExcPending
+												if v333 != 0 {
+													return int32(0)
+												} else {
+													F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3402), int32(_a_F_palloc_btree_page_3))
+													mBase = m.M
+													v340 = m.ExcPending
+													if v340 != 0 {
+														return int32(0)
+													} else {
+														base.Wasm_trap_unreachable()
+														for {
+														}
+													}
+												}
+											}
+										}
+									} else {
+										v164 = v59 & int32(5)
+										if v164 == int32(0) {
+											v170 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+											if v170 != 0 {
+												v171 = int32(2)
+											} else {
+												v171 = int32(1)
+											}
+											if base.Ui32(v171) <= base.Ui32(v160) {
+												v207 = int32(0)
+												if v207 != 0 {
+													v211 = int32(0)
+												} else {
+													v211 = v59 & int32(16)
+												}
+												if v211 != 0 {
+													F_errstart_cold(m, int32(21), int32(0))
+													mBase = m.M
+													v371 = m.ExcPending
+													if v371 != 0 {
+														return int32(0)
+													} else {
+														F_errcode(m, int32(33557032))
+														mBase = m.M
+														v374 = m.ExcPending
+														if v374 != 0 {
+															return int32(0)
+														} else {
+															v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+															F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+															mBase = m.M
+															v387 = m.ExcPending
+															if v387 != 0 {
+																return int32(0)
+															} else {
+																F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																mBase = m.M
+																v392 = m.ExcPending
+																if v392 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v399 = m.ExcPending
+																	if v399 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													}
+												} else {
+													v214 = int32(0)
+													if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v403 = m.ExcPending
+														if v403 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v406 = m.ExcPending
+															if v406 != 0 {
+																return int32(0)
+															} else {
+																v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																mBase = m.M
+																v419 = m.ExcPending
+																if v419 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v426 = m.ExcPending
+																	if v426 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														if v110 == int32(256) {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v430 = m.ExcPending
+															if v430 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v433 = m.ExcPending
+																if v433 != 0 {
+																	return int32(0)
+																} else {
+																	v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																	F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																	mBase = m.M
+																	v446 = m.ExcPending
+																	if v446 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																		mBase = m.M
+																		v453 = m.ExcPending
+																		if v453 != 0 {
+																			return int32(0)
+																		} else {
+																			base.Wasm_trap_unreachable()
+																			for {
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v221 = int32(20)
+															if v59&v221 == v221 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v457 = m.ExcPending
+																if v457 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v460 = m.ExcPending
+																	if v460 != 0 {
+																		return int32(0)
+																	} else {
+																		v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																		mBase = m.M
+																		v473 = m.ExcPending
+																		if v473 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v480 = m.ExcPending
+																			if v480 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																m.G0 = v14 + int32(192)
+																return v52
+															}
+														}
+													}
+												}
+											} else {
+												F_errstart_cold(m, int32(21), int32(0))
+												mBase = m.M
+												v176 = m.ExcPending
+												if v176 != 0 {
+													return int32(0)
+												} else {
+													F_errcode(m, int32(33557032))
+													mBase = m.M
+													v179 = m.ExcPending
+													if v179 != 0 {
+														return int32(0)
+													} else {
+														v180 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														v181 = *(*int32)(unsafe.Add(mBase, uint32(v180)+48))
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = l1
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v181 + int32(4)
+														F_errmsg(m, int32(_a_F_palloc_btree_page_14), v14-int32(-64))
+														mBase = m.M
+														v192 = m.ExcPending
+														if v192 != 0 {
+															return int32(0)
+														} else {
+															F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3408), int32(_a_F_palloc_btree_page_3))
+															mBase = m.M
+															v199 = m.ExcPending
+															if v199 != 0 {
+																return int32(0)
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
+												}
+											}
+										} else {
+											v200 = int32(1)
+											v201 = v59 & v200
+											if v164 != v200 {
+												v207 = v201
+												if v207 != 0 {
+													v211 = int32(0)
+												} else {
+													v211 = v59 & int32(16)
+												}
+												if v211 != 0 {
+													F_errstart_cold(m, int32(21), int32(0))
+													mBase = m.M
+													v371 = m.ExcPending
+													if v371 != 0 {
+														return int32(0)
+													} else {
+														F_errcode(m, int32(33557032))
+														mBase = m.M
+														v374 = m.ExcPending
+														if v374 != 0 {
+															return int32(0)
+														} else {
+															v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+															v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+															*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+															F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+															mBase = m.M
+															v387 = m.ExcPending
+															if v387 != 0 {
+																return int32(0)
+															} else {
+																F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																mBase = m.M
+																v392 = m.ExcPending
+																if v392 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v399 = m.ExcPending
+																	if v399 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													}
+												} else {
+													v214 = int32(0)
+													if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v403 = m.ExcPending
+														if v403 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v406 = m.ExcPending
+															if v406 != 0 {
+																return int32(0)
+															} else {
+																v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																mBase = m.M
+																v419 = m.ExcPending
+																if v419 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v426 = m.ExcPending
+																	if v426 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														if v110 == int32(256) {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v430 = m.ExcPending
+															if v430 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v433 = m.ExcPending
+																if v433 != 0 {
+																	return int32(0)
+																} else {
+																	v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																	F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																	mBase = m.M
+																	v446 = m.ExcPending
+																	if v446 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																		mBase = m.M
+																		v453 = m.ExcPending
+																		if v453 != 0 {
+																			return int32(0)
+																		} else {
+																			base.Wasm_trap_unreachable()
+																			for {
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v221 = int32(20)
+															if v59&v221 == v221 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v457 = m.ExcPending
+																if v457 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v460 = m.ExcPending
+																	if v460 != 0 {
+																		return int32(0)
+																	} else {
+																		v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																		mBase = m.M
+																		v473 = m.ExcPending
+																		if v473 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v480 = m.ExcPending
+																			if v480 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																m.G0 = v14 + int32(192)
+																return v52
+															}
+														}
+													}
+												}
+											} else {
+												if v158&int32(_a_F_palloc_btree_page_7) != 0 {
+													v207 = v201
+													if v207 != 0 {
+														v211 = int32(0)
+													} else {
+														v211 = v59 & int32(16)
+													}
+													if v211 != 0 {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v371 = m.ExcPending
+														if v371 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v374 = m.ExcPending
+															if v374 != 0 {
+																return int32(0)
+															} else {
+																v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																mBase = m.M
+																v387 = m.ExcPending
+																if v387 != 0 {
+																	return int32(0)
+																} else {
+																	F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																	mBase = m.M
+																	v392 = m.ExcPending
+																	if v392 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																		mBase = m.M
+																		v399 = m.ExcPending
+																		if v399 != 0 {
+																			return int32(0)
+																		} else {
+																			base.Wasm_trap_unreachable()
+																			for {
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														v214 = int32(0)
+														if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v403 = m.ExcPending
+															if v403 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v406 = m.ExcPending
+																if v406 != 0 {
+																	return int32(0)
+																} else {
+																	v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																	F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																	mBase = m.M
+																	v419 = m.ExcPending
+																	if v419 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																		mBase = m.M
+																		v426 = m.ExcPending
+																		if v426 != 0 {
+																			return int32(0)
+																		} else {
+																			base.Wasm_trap_unreachable()
+																			for {
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															if v110 == int32(256) {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v430 = m.ExcPending
+																if v430 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v433 = m.ExcPending
+																	if v433 != 0 {
+																		return int32(0)
+																	} else {
+																		v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																		mBase = m.M
+																		v446 = m.ExcPending
+																		if v446 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v453 = m.ExcPending
+																			if v453 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																v221 = int32(20)
+																if v59&v221 == v221 {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v457 = m.ExcPending
+																	if v457 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v460 = m.ExcPending
+																		if v460 != 0 {
+																			return int32(0)
+																		} else {
+																			v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																			mBase = m.M
+																			v473 = m.ExcPending
+																			if v473 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v480 = m.ExcPending
+																				if v480 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	m.G0 = v14 + int32(192)
+																	return v52
+																}
+															}
+														}
+													}
+												} else {
+													v206 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+													if v206 != 0 {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v344 = m.ExcPending
+														if v344 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v347 = m.ExcPending
+															if v347 != 0 {
+																return int32(0)
+															} else {
+																v348 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v349 = *(*int32)(unsafe.Add(mBase, uint32(v348)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+144)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+148)) = v349 + int32(4)
+																F_errmsg(m, int32(_a_F_palloc_btree_page_15), v14+int32(144))
+																mBase = m.M
+																v360 = m.ExcPending
+																if v360 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3414), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v367 = m.ExcPending
+																	if v367 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													} else {
+														v207 = v201
+														if v207 != 0 {
+															v211 = int32(0)
+														} else {
+															v211 = v59 & int32(16)
+														}
+														if v211 != 0 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v371 = m.ExcPending
+															if v371 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v374 = m.ExcPending
+																if v374 != 0 {
+																	return int32(0)
+																} else {
+																	v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																	F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																	mBase = m.M
+																	v387 = m.ExcPending
+																	if v387 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																		mBase = m.M
+																		v392 = m.ExcPending
+																		if v392 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v399 = m.ExcPending
+																			if v399 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v214 = int32(0)
+															if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v403 = m.ExcPending
+																if v403 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v406 = m.ExcPending
+																	if v406 != 0 {
+																		return int32(0)
+																	} else {
+																		v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																		mBase = m.M
+																		v419 = m.ExcPending
+																		if v419 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v426 = m.ExcPending
+																			if v426 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																if v110 == int32(256) {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v430 = m.ExcPending
+																	if v430 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v433 = m.ExcPending
+																		if v433 != 0 {
+																			return int32(0)
+																		} else {
+																			v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																			mBase = m.M
+																			v446 = m.ExcPending
+																			if v446 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v453 = m.ExcPending
+																				if v453 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v221 = int32(20)
+																	if v59&v221 == v221 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v457 = m.ExcPending
+																		if v457 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v460 = m.ExcPending
+																			if v460 != 0 {
+																				return int32(0)
+																			} else {
+																				v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																				mBase = m.M
+																				v473 = m.ExcPending
+																				if v473 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v480 = m.ExcPending
+																					if v480 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		m.G0 = v14 + int32(192)
+																		return v52
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								} else {
+									v113 = *(*int32)(unsafe.Add(mBase, uint32(v58)+8))
+									if v59&int32(1) != 0 {
+										if v113 == int32(0) {
+											v150 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v52)+12)))
+											if base.Ui32(int32(25)) <= base.Ui32(v150) {
+												v158 = int32(base.Ui32(v150+int32(_a_F_palloc_btree_page_6)) >> (uint(int32(2)) % 32))
+											} else {
+												v158 = int32(0)
+											}
+											v160 = v158 & int32(_a_F_palloc_btree_page_7)
+											if base.Ui32(int32(409)) <= base.Ui32(v160) {
+												F_errstart_cold(m, int32(21), int32(0))
+												mBase = m.M
+												v315 = m.ExcPending
+												if v315 != 0 {
+													return int32(0)
+												} else {
+													F_errcode(m, int32(33557032))
+													mBase = m.M
+													v318 = m.ExcPending
+													if v318 != 0 {
+														return int32(0)
+													} else {
+														v319 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														v320 = *(*int32)(unsafe.Add(mBase, uint32(v319)+48))
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+56)) = int32(408)
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = l1
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = v320 + int32(4)
+														F_errmsg(m, int32(_a_F_palloc_btree_page_8), v14+int32(48))
+														mBase = m.M
+														v333 = m.ExcPending
+														if v333 != 0 {
+															return int32(0)
+														} else {
+															F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3402), int32(_a_F_palloc_btree_page_3))
+															mBase = m.M
+															v340 = m.ExcPending
+															if v340 != 0 {
+																return int32(0)
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
+												}
+											} else {
+												v164 = v59 & int32(5)
+												if v164 == int32(0) {
+													v170 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+													if v170 != 0 {
+														v171 = int32(2)
+													} else {
+														v171 = int32(1)
+													}
+													if base.Ui32(v171) <= base.Ui32(v160) {
+														v207 = int32(0)
+														if v207 != 0 {
+															v211 = int32(0)
+														} else {
+															v211 = v59 & int32(16)
+														}
+														if v211 != 0 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v371 = m.ExcPending
+															if v371 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v374 = m.ExcPending
+																if v374 != 0 {
+																	return int32(0)
+																} else {
+																	v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																	F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																	mBase = m.M
+																	v387 = m.ExcPending
+																	if v387 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																		mBase = m.M
+																		v392 = m.ExcPending
+																		if v392 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v399 = m.ExcPending
+																			if v399 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v214 = int32(0)
+															if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v403 = m.ExcPending
+																if v403 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v406 = m.ExcPending
+																	if v406 != 0 {
+																		return int32(0)
+																	} else {
+																		v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																		mBase = m.M
+																		v419 = m.ExcPending
+																		if v419 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v426 = m.ExcPending
+																			if v426 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																if v110 == int32(256) {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v430 = m.ExcPending
+																	if v430 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v433 = m.ExcPending
+																		if v433 != 0 {
+																			return int32(0)
+																		} else {
+																			v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																			mBase = m.M
+																			v446 = m.ExcPending
+																			if v446 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v453 = m.ExcPending
+																				if v453 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v221 = int32(20)
+																	if v59&v221 == v221 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v457 = m.ExcPending
+																		if v457 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v460 = m.ExcPending
+																			if v460 != 0 {
+																				return int32(0)
+																			} else {
+																				v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																				mBase = m.M
+																				v473 = m.ExcPending
+																				if v473 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v480 = m.ExcPending
+																					if v480 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		m.G0 = v14 + int32(192)
+																		return v52
+																	}
+																}
+															}
+														}
+													} else {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v176 = m.ExcPending
+														if v176 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v179 = m.ExcPending
+															if v179 != 0 {
+																return int32(0)
+															} else {
+																v180 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v181 = *(*int32)(unsafe.Add(mBase, uint32(v180)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v181 + int32(4)
+																F_errmsg(m, int32(_a_F_palloc_btree_page_14), v14-int32(-64))
+																mBase = m.M
+																v192 = m.ExcPending
+																if v192 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3408), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v199 = m.ExcPending
+																	if v199 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													}
+												} else {
+													v200 = int32(1)
+													v201 = v59 & v200
+													if v164 != v200 {
+														v207 = v201
+														if v207 != 0 {
+															v211 = int32(0)
+														} else {
+															v211 = v59 & int32(16)
+														}
+														if v211 != 0 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v371 = m.ExcPending
+															if v371 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v374 = m.ExcPending
+																if v374 != 0 {
+																	return int32(0)
+																} else {
+																	v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																	F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																	mBase = m.M
+																	v387 = m.ExcPending
+																	if v387 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																		mBase = m.M
+																		v392 = m.ExcPending
+																		if v392 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v399 = m.ExcPending
+																			if v399 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v214 = int32(0)
+															if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v403 = m.ExcPending
+																if v403 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v406 = m.ExcPending
+																	if v406 != 0 {
+																		return int32(0)
+																	} else {
+																		v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																		mBase = m.M
+																		v419 = m.ExcPending
+																		if v419 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v426 = m.ExcPending
+																			if v426 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																if v110 == int32(256) {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v430 = m.ExcPending
+																	if v430 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v433 = m.ExcPending
+																		if v433 != 0 {
+																			return int32(0)
+																		} else {
+																			v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																			mBase = m.M
+																			v446 = m.ExcPending
+																			if v446 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v453 = m.ExcPending
+																				if v453 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v221 = int32(20)
+																	if v59&v221 == v221 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v457 = m.ExcPending
+																		if v457 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v460 = m.ExcPending
+																			if v460 != 0 {
+																				return int32(0)
+																			} else {
+																				v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																				mBase = m.M
+																				v473 = m.ExcPending
+																				if v473 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v480 = m.ExcPending
+																					if v480 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		m.G0 = v14 + int32(192)
+																		return v52
+																	}
+																}
+															}
+														}
+													} else {
+														if v158&int32(_a_F_palloc_btree_page_7) != 0 {
+															v207 = v201
+															if v207 != 0 {
+																v211 = int32(0)
+															} else {
+																v211 = v59 & int32(16)
+															}
+															if v211 != 0 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v371 = m.ExcPending
+																if v371 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v374 = m.ExcPending
+																	if v374 != 0 {
+																		return int32(0)
+																	} else {
+																		v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																		F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																		mBase = m.M
+																		v387 = m.ExcPending
+																		if v387 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																			mBase = m.M
+																			v392 = m.ExcPending
+																			if v392 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v399 = m.ExcPending
+																				if v399 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																v214 = int32(0)
+																if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v403 = m.ExcPending
+																	if v403 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v406 = m.ExcPending
+																		if v406 != 0 {
+																			return int32(0)
+																		} else {
+																			v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																			mBase = m.M
+																			v419 = m.ExcPending
+																			if v419 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v426 = m.ExcPending
+																				if v426 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	if v110 == int32(256) {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v430 = m.ExcPending
+																		if v430 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v433 = m.ExcPending
+																			if v433 != 0 {
+																				return int32(0)
+																			} else {
+																				v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																				mBase = m.M
+																				v446 = m.ExcPending
+																				if v446 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v453 = m.ExcPending
+																					if v453 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		v221 = int32(20)
+																		if v59&v221 == v221 {
+																			F_errstart_cold(m, int32(21), int32(0))
+																			mBase = m.M
+																			v457 = m.ExcPending
+																			if v457 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errcode(m, int32(33557032))
+																				mBase = m.M
+																				v460 = m.ExcPending
+																				if v460 != 0 {
+																					return int32(0)
+																				} else {
+																					v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																					v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																					F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																					mBase = m.M
+																					v473 = m.ExcPending
+																					if v473 != 0 {
+																						return int32(0)
+																					} else {
+																						F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																						mBase = m.M
+																						v480 = m.ExcPending
+																						if v480 != 0 {
+																							return int32(0)
+																						} else {
+																							base.Wasm_trap_unreachable()
+																							for {
+																							}
+																						}
+																					}
+																				}
+																			}
+																		} else {
+																			m.G0 = v14 + int32(192)
+																			return v52
+																		}
+																	}
+																}
+															}
+														} else {
+															v206 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+															if v206 != 0 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v344 = m.ExcPending
+																if v344 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v347 = m.ExcPending
+																	if v347 != 0 {
+																		return int32(0)
+																	} else {
+																		v348 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v349 = *(*int32)(unsafe.Add(mBase, uint32(v348)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+144)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+148)) = v349 + int32(4)
+																		F_errmsg(m, int32(_a_F_palloc_btree_page_15), v14+int32(144))
+																		mBase = m.M
+																		v360 = m.ExcPending
+																		if v360 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3414), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v367 = m.ExcPending
+																			if v367 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																v207 = v201
+																if v207 != 0 {
+																	v211 = int32(0)
+																} else {
+																	v211 = v59 & int32(16)
+																}
+																if v211 != 0 {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v371 = m.ExcPending
+																	if v371 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v374 = m.ExcPending
+																		if v374 != 0 {
+																			return int32(0)
+																		} else {
+																			v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																			F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																			mBase = m.M
+																			v387 = m.ExcPending
+																			if v387 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																				mBase = m.M
+																				v392 = m.ExcPending
+																				if v392 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v399 = m.ExcPending
+																					if v399 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v214 = int32(0)
+																	if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v403 = m.ExcPending
+																		if v403 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v406 = m.ExcPending
+																			if v406 != 0 {
+																				return int32(0)
+																			} else {
+																				v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																				mBase = m.M
+																				v419 = m.ExcPending
+																				if v419 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v426 = m.ExcPending
+																					if v426 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		if v110 == int32(256) {
+																			F_errstart_cold(m, int32(21), int32(0))
+																			mBase = m.M
+																			v430 = m.ExcPending
+																			if v430 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errcode(m, int32(33557032))
+																				mBase = m.M
+																				v433 = m.ExcPending
+																				if v433 != 0 {
+																					return int32(0)
+																				} else {
+																					v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																					v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																					F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																					mBase = m.M
+																					v446 = m.ExcPending
+																					if v446 != 0 {
+																						return int32(0)
+																					} else {
+																						F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																						mBase = m.M
+																						v453 = m.ExcPending
+																						if v453 != 0 {
+																							return int32(0)
+																						} else {
+																							base.Wasm_trap_unreachable()
+																							for {
+																							}
+																						}
+																					}
+																				}
+																			}
+																		} else {
+																			v221 = int32(20)
+																			if v59&v221 == v221 {
+																				F_errstart_cold(m, int32(21), int32(0))
+																				mBase = m.M
+																				v457 = m.ExcPending
+																				if v457 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errcode(m, int32(33557032))
+																					mBase = m.M
+																					v460 = m.ExcPending
+																					if v460 != 0 {
+																						return int32(0)
+																					} else {
+																						v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																						v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																						*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																						*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																						F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																						mBase = m.M
+																						v473 = m.ExcPending
+																						if v473 != 0 {
+																							return int32(0)
+																						} else {
+																							F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																							mBase = m.M
+																							v480 = m.ExcPending
+																							if v480 != 0 {
+																								return int32(0)
+																							} else {
+																								base.Wasm_trap_unreachable()
+																								for {
+																								}
+																							}
+																						}
+																					}
+																				}
+																			} else {
+																				m.G0 = v14 + int32(192)
+																				return v52
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v121 = m.ExcPending
+											if v121 != 0 {
+												return int32(0)
+											} else {
+												F_errcode(m, int32(33557032))
+												mBase = m.M
+												v124 = m.ExcPending
+												if v124 != 0 {
+													return int32(0)
+												} else {
+													v125 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+48))
+													v127 = *(*int32)(unsafe.Add(mBase, uint32(v58)+8))
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+180)) = l1
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+176)) = v127
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+184)) = v126 + int32(4)
+													F_errmsg_internal(m, int32(_a_F_palloc_btree_page_16), v14+int32(176))
+													mBase = m.M
+													v139 = m.ExcPending
+													if v139 != 0 {
+														return int32(0)
+													} else {
+														F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3367), int32(_a_F_palloc_btree_page_3))
+														mBase = m.M
+														v146 = m.ExcPending
+														if v146 != 0 {
+															return int32(0)
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										}
+									} else {
+										if v113 == int32(0) {
+											F_errstart_cold(m, int32(21), int32(0))
+											mBase = m.M
+											v288 = m.ExcPending
+											if v288 != 0 {
+												return int32(0)
+											} else {
+												F_errcode(m, int32(33557032))
+												mBase = m.M
+												v291 = m.ExcPending
+												if v291 != 0 {
+													return int32(0)
+												} else {
+													v292 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+													v293 = *(*int32)(unsafe.Add(mBase, uint32(v292)+48))
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+160)) = l1
+													*(*int32)(unsafe.Add(mBase, uint32(v14)+164)) = v293 + int32(4)
+													F_errmsg_internal(m, int32(_a_F_palloc_btree_page_17), v14+int32(160))
+													mBase = m.M
+													v304 = m.ExcPending
+													if v304 != 0 {
+														return int32(0)
+													} else {
+														F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3374), int32(_a_F_palloc_btree_page_3))
+														mBase = m.M
+														v311 = m.ExcPending
+														if v311 != 0 {
+															return int32(0)
+														} else {
+															base.Wasm_trap_unreachable()
+															for {
+															}
+														}
+													}
+												}
+											}
+										} else {
+											v150 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v52)+12)))
+											if base.Ui32(int32(25)) <= base.Ui32(v150) {
+												v158 = int32(base.Ui32(v150+int32(_a_F_palloc_btree_page_6)) >> (uint(int32(2)) % 32))
+											} else {
+												v158 = int32(0)
+											}
+											v160 = v158 & int32(_a_F_palloc_btree_page_7)
+											if base.Ui32(int32(409)) <= base.Ui32(v160) {
+												F_errstart_cold(m, int32(21), int32(0))
+												mBase = m.M
+												v315 = m.ExcPending
+												if v315 != 0 {
+													return int32(0)
+												} else {
+													F_errcode(m, int32(33557032))
+													mBase = m.M
+													v318 = m.ExcPending
+													if v318 != 0 {
+														return int32(0)
+													} else {
+														v319 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+														v320 = *(*int32)(unsafe.Add(mBase, uint32(v319)+48))
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+56)) = int32(408)
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+48)) = l1
+														*(*int32)(unsafe.Add(mBase, uint32(v14)+52)) = v320 + int32(4)
+														F_errmsg(m, int32(_a_F_palloc_btree_page_8), v14+int32(48))
+														mBase = m.M
+														v333 = m.ExcPending
+														if v333 != 0 {
+															return int32(0)
+														} else {
+															F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3402), int32(_a_F_palloc_btree_page_3))
+															mBase = m.M
+															v340 = m.ExcPending
+															if v340 != 0 {
+																return int32(0)
+															} else {
+																base.Wasm_trap_unreachable()
+																for {
+																}
+															}
+														}
+													}
+												}
+											} else {
+												v164 = v59 & int32(5)
+												if v164 == int32(0) {
+													v170 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+													if v170 != 0 {
+														v171 = int32(2)
+													} else {
+														v171 = int32(1)
+													}
+													if base.Ui32(v171) <= base.Ui32(v160) {
+														v207 = int32(0)
+														if v207 != 0 {
+															v211 = int32(0)
+														} else {
+															v211 = v59 & int32(16)
+														}
+														if v211 != 0 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v371 = m.ExcPending
+															if v371 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v374 = m.ExcPending
+																if v374 != 0 {
+																	return int32(0)
+																} else {
+																	v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																	F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																	mBase = m.M
+																	v387 = m.ExcPending
+																	if v387 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																		mBase = m.M
+																		v392 = m.ExcPending
+																		if v392 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v399 = m.ExcPending
+																			if v399 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v214 = int32(0)
+															if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v403 = m.ExcPending
+																if v403 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v406 = m.ExcPending
+																	if v406 != 0 {
+																		return int32(0)
+																	} else {
+																		v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																		mBase = m.M
+																		v419 = m.ExcPending
+																		if v419 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v426 = m.ExcPending
+																			if v426 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																if v110 == int32(256) {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v430 = m.ExcPending
+																	if v430 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v433 = m.ExcPending
+																		if v433 != 0 {
+																			return int32(0)
+																		} else {
+																			v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																			mBase = m.M
+																			v446 = m.ExcPending
+																			if v446 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v453 = m.ExcPending
+																				if v453 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v221 = int32(20)
+																	if v59&v221 == v221 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v457 = m.ExcPending
+																		if v457 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v460 = m.ExcPending
+																			if v460 != 0 {
+																				return int32(0)
+																			} else {
+																				v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																				mBase = m.M
+																				v473 = m.ExcPending
+																				if v473 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v480 = m.ExcPending
+																					if v480 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		m.G0 = v14 + int32(192)
+																		return v52
+																	}
+																}
+															}
+														}
+													} else {
+														F_errstart_cold(m, int32(21), int32(0))
+														mBase = m.M
+														v176 = m.ExcPending
+														if v176 != 0 {
+															return int32(0)
+														} else {
+															F_errcode(m, int32(33557032))
+															mBase = m.M
+															v179 = m.ExcPending
+															if v179 != 0 {
+																return int32(0)
+															} else {
+																v180 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																v181 = *(*int32)(unsafe.Add(mBase, uint32(v180)+48))
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+64)) = l1
+																*(*int32)(unsafe.Add(mBase, uint32(v14)+68)) = v181 + int32(4)
+																F_errmsg(m, int32(_a_F_palloc_btree_page_14), v14-int32(-64))
+																mBase = m.M
+																v192 = m.ExcPending
+																if v192 != 0 {
+																	return int32(0)
+																} else {
+																	F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3408), int32(_a_F_palloc_btree_page_3))
+																	mBase = m.M
+																	v199 = m.ExcPending
+																	if v199 != 0 {
+																		return int32(0)
+																	} else {
+																		base.Wasm_trap_unreachable()
+																		for {
+																		}
+																	}
+																}
+															}
+														}
+													}
+												} else {
+													v200 = int32(1)
+													v201 = v59 & v200
+													if v164 != v200 {
+														v207 = v201
+														if v207 != 0 {
+															v211 = int32(0)
+														} else {
+															v211 = v59 & int32(16)
+														}
+														if v211 != 0 {
+															F_errstart_cold(m, int32(21), int32(0))
+															mBase = m.M
+															v371 = m.ExcPending
+															if v371 != 0 {
+																return int32(0)
+															} else {
+																F_errcode(m, int32(33557032))
+																mBase = m.M
+																v374 = m.ExcPending
+																if v374 != 0 {
+																	return int32(0)
+																} else {
+																	v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																	v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																	*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																	F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																	mBase = m.M
+																	v387 = m.ExcPending
+																	if v387 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																		mBase = m.M
+																		v392 = m.ExcPending
+																		if v392 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v399 = m.ExcPending
+																			if v399 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														} else {
+															v214 = int32(0)
+															if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v403 = m.ExcPending
+																if v403 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v406 = m.ExcPending
+																	if v406 != 0 {
+																		return int32(0)
+																	} else {
+																		v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																		F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																		mBase = m.M
+																		v419 = m.ExcPending
+																		if v419 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v426 = m.ExcPending
+																			if v426 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																if v110 == int32(256) {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v430 = m.ExcPending
+																	if v430 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v433 = m.ExcPending
+																		if v433 != 0 {
+																			return int32(0)
+																		} else {
+																			v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																			mBase = m.M
+																			v446 = m.ExcPending
+																			if v446 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v453 = m.ExcPending
+																				if v453 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v221 = int32(20)
+																	if v59&v221 == v221 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v457 = m.ExcPending
+																		if v457 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v460 = m.ExcPending
+																			if v460 != 0 {
+																				return int32(0)
+																			} else {
+																				v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																				mBase = m.M
+																				v473 = m.ExcPending
+																				if v473 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v480 = m.ExcPending
+																					if v480 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		m.G0 = v14 + int32(192)
+																		return v52
+																	}
+																}
+															}
+														}
+													} else {
+														if v158&int32(_a_F_palloc_btree_page_7) != 0 {
+															v207 = v201
+															if v207 != 0 {
+																v211 = int32(0)
+															} else {
+																v211 = v59 & int32(16)
+															}
+															if v211 != 0 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v371 = m.ExcPending
+																if v371 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v374 = m.ExcPending
+																	if v374 != 0 {
+																		return int32(0)
+																	} else {
+																		v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																		F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																		mBase = m.M
+																		v387 = m.ExcPending
+																		if v387 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																			mBase = m.M
+																			v392 = m.ExcPending
+																			if v392 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v399 = m.ExcPending
+																				if v399 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																v214 = int32(0)
+																if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v403 = m.ExcPending
+																	if v403 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v406 = m.ExcPending
+																		if v406 != 0 {
+																			return int32(0)
+																		} else {
+																			v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																			F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																			mBase = m.M
+																			v419 = m.ExcPending
+																			if v419 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																				mBase = m.M
+																				v426 = m.ExcPending
+																				if v426 != 0 {
+																					return int32(0)
+																				} else {
+																					base.Wasm_trap_unreachable()
+																					for {
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	if v110 == int32(256) {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v430 = m.ExcPending
+																		if v430 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v433 = m.ExcPending
+																			if v433 != 0 {
+																				return int32(0)
+																			} else {
+																				v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																				mBase = m.M
+																				v446 = m.ExcPending
+																				if v446 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v453 = m.ExcPending
+																					if v453 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		v221 = int32(20)
+																		if v59&v221 == v221 {
+																			F_errstart_cold(m, int32(21), int32(0))
+																			mBase = m.M
+																			v457 = m.ExcPending
+																			if v457 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errcode(m, int32(33557032))
+																				mBase = m.M
+																				v460 = m.ExcPending
+																				if v460 != 0 {
+																					return int32(0)
+																				} else {
+																					v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																					v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																					F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																					mBase = m.M
+																					v473 = m.ExcPending
+																					if v473 != 0 {
+																						return int32(0)
+																					} else {
+																						F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																						mBase = m.M
+																						v480 = m.ExcPending
+																						if v480 != 0 {
+																							return int32(0)
+																						} else {
+																							base.Wasm_trap_unreachable()
+																							for {
+																							}
+																						}
+																					}
+																				}
+																			}
+																		} else {
+																			m.G0 = v14 + int32(192)
+																			return v52
+																		}
+																	}
+																}
+															}
+														} else {
+															v206 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+															if v206 != 0 {
+																F_errstart_cold(m, int32(21), int32(0))
+																mBase = m.M
+																v344 = m.ExcPending
+																if v344 != 0 {
+																	return int32(0)
+																} else {
+																	F_errcode(m, int32(33557032))
+																	mBase = m.M
+																	v347 = m.ExcPending
+																	if v347 != 0 {
+																		return int32(0)
+																	} else {
+																		v348 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																		v349 = *(*int32)(unsafe.Add(mBase, uint32(v348)+48))
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+144)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v14)+148)) = v349 + int32(4)
+																		F_errmsg(m, int32(_a_F_palloc_btree_page_15), v14+int32(144))
+																		mBase = m.M
+																		v360 = m.ExcPending
+																		if v360 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3414), int32(_a_F_palloc_btree_page_3))
+																			mBase = m.M
+																			v367 = m.ExcPending
+																			if v367 != 0 {
+																				return int32(0)
+																			} else {
+																				base.Wasm_trap_unreachable()
+																				for {
+																				}
+																			}
+																		}
+																	}
+																}
+															} else {
+																v207 = v201
+																if v207 != 0 {
+																	v211 = int32(0)
+																} else {
+																	v211 = v59 & int32(16)
+																}
+																if v211 != 0 {
+																	F_errstart_cold(m, int32(21), int32(0))
+																	mBase = m.M
+																	v371 = m.ExcPending
+																	if v371 != 0 {
+																		return int32(0)
+																	} else {
+																		F_errcode(m, int32(33557032))
+																		mBase = m.M
+																		v374 = m.ExcPending
+																		if v374 != 0 {
+																			return int32(0)
+																		} else {
+																			v375 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																			v376 = *(*int32)(unsafe.Add(mBase, uint32(v375)+48))
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+128)) = l1
+																			*(*int32)(unsafe.Add(mBase, uint32(v14)+132)) = v376 + int32(4)
+																			F_errmsg(m, int32(_a_F_palloc_btree_page_9), v14+int32(128))
+																			mBase = m.M
+																			v387 = m.ExcPending
+																			if v387 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errhint(m, int32(_a_F_palloc_btree_page_10), int32(0))
+																				mBase = m.M
+																				v392 = m.ExcPending
+																				if v392 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3428), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v399 = m.ExcPending
+																					if v399 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																} else {
+																	v214 = int32(0)
+																	if base.B2i32(v59&int32(64) == v214)|v207 == v214 {
+																		F_errstart_cold(m, int32(21), int32(0))
+																		mBase = m.M
+																		v403 = m.ExcPending
+																		if v403 != 0 {
+																			return int32(0)
+																		} else {
+																			F_errcode(m, int32(33557032))
+																			mBase = m.M
+																			v406 = m.ExcPending
+																			if v406 != 0 {
+																				return int32(0)
+																			} else {
+																				v407 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																				v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)+48))
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+112)) = l1
+																				*(*int32)(unsafe.Add(mBase, uint32(v14)+116)) = v408 + int32(4)
+																				F_errmsg_internal(m, int32(_a_F_palloc_btree_page_11), v14+int32(112))
+																				mBase = m.M
+																				v419 = m.ExcPending
+																				if v419 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3438), int32(_a_F_palloc_btree_page_3))
+																					mBase = m.M
+																					v426 = m.ExcPending
+																					if v426 != 0 {
+																						return int32(0)
+																					} else {
+																						base.Wasm_trap_unreachable()
+																						for {
+																						}
+																					}
+																				}
+																			}
+																		}
+																	} else {
+																		if v110 == int32(256) {
+																			F_errstart_cold(m, int32(21), int32(0))
+																			mBase = m.M
+																			v430 = m.ExcPending
+																			if v430 != 0 {
+																				return int32(0)
+																			} else {
+																				F_errcode(m, int32(33557032))
+																				mBase = m.M
+																				v433 = m.ExcPending
+																				if v433 != 0 {
+																					return int32(0)
+																				} else {
+																					v434 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																					v435 = *(*int32)(unsafe.Add(mBase, uint32(v434)+48))
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+80)) = l1
+																					*(*int32)(unsafe.Add(mBase, uint32(v14)+84)) = v435 + int32(4)
+																					F_errmsg_internal(m, int32(_a_F_palloc_btree_page_12), v14+int32(80))
+																					mBase = m.M
+																					v446 = m.ExcPending
+																					if v446 != 0 {
+																						return int32(0)
+																					} else {
+																						F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3444), int32(_a_F_palloc_btree_page_3))
+																						mBase = m.M
+																						v453 = m.ExcPending
+																						if v453 != 0 {
+																							return int32(0)
+																						} else {
+																							base.Wasm_trap_unreachable()
+																							for {
+																							}
+																						}
+																					}
+																				}
+																			}
+																		} else {
+																			v221 = int32(20)
+																			if v59&v221 == v221 {
+																				F_errstart_cold(m, int32(21), int32(0))
+																				mBase = m.M
+																				v457 = m.ExcPending
+																				if v457 != 0 {
+																					return int32(0)
+																				} else {
+																					F_errcode(m, int32(33557032))
+																					mBase = m.M
+																					v460 = m.ExcPending
+																					if v460 != 0 {
+																						return int32(0)
+																					} else {
+																						v461 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+																						v462 = *(*int32)(unsafe.Add(mBase, uint32(v461)+48))
+																						*(*int32)(unsafe.Add(mBase, uint32(v14)+96)) = l1
+																						*(*int32)(unsafe.Add(mBase, uint32(v14)+100)) = v462 + int32(4)
+																						F_errmsg_internal(m, int32(_a_F_palloc_btree_page_13), v14+int32(96))
+																						mBase = m.M
+																						v473 = m.ExcPending
+																						if v473 != 0 {
+																							return int32(0)
+																						} else {
+																							F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3450), int32(_a_F_palloc_btree_page_3))
+																							mBase = m.M
+																							v480 = m.ExcPending
+																							if v480 != 0 {
+																								return int32(0)
+																							} else {
+																								base.Wasm_trap_unreachable()
+																								for {
+																								}
+																							}
+																						}
+																					}
+																				}
+																			} else {
+																				m.G0 = v14 + int32(192)
+																				return v52
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v237 = m.ExcPending
+							if v237 != 0 {
+								return int32(0)
+							} else {
+								F_errcode(m, int32(33557032))
+								mBase = m.M
+								v240 = m.ExcPending
+								if v240 != 0 {
+									return int32(0)
+								} else {
+									v241 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+									v242 = *(*int32)(unsafe.Add(mBase, uint32(v241)+48))
+									*(*int32)(unsafe.Add(mBase, uint32(v14))) = l1
+									*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v242 + int32(4)
+									F_errmsg(m, int32(_a_F_palloc_btree_page_18), v14)
+									mBase = m.M
+									v251 = m.ExcPending
+									if v251 != 0 {
+										return int32(0)
+									} else {
+										F_errfinish(m, int32(_a_F_palloc_btree_page_2), int32(3325), int32(_a_F_palloc_btree_page_3))
+										mBase = m.M
+										v258 = m.ExcPending
+										if v258 != 0 {
+											return int32(0)
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_parse_ident(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

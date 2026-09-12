@@ -22110,6 +22110,276 @@ func F_allcases(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_amcheck_lock_relation_and_check(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
+	mBase := m.M
+	_ = mBase
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v60 int32
+	_ = v60
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
+	var v82 int32
+	_ = v82
+	var v88 int32
+	_ = v88
+	var v91 int32
+	_ = v91
+	var v92 int32
+	_ = v92
+	var v100 int32
+	_ = v100
+	var v107 int32
+	_ = v107
+	v11 = m.G0
+	v13 = v11 - int32(16)
+	m.G0 = v13
+	v16 = F_IndexGetRelation(m, l0, int32(1))
+	mBase = m.M
+	v17 = m.ExcPending
+	if v17 != 0 {
+		return
+	} else {
+		if v16 == int32(0) {
+			*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(-1)
+			*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = int32(0)
+			v24 = F_index_open(m, l0, l3)
+			mBase = m.M
+			v25 = m.ExcPending
+			if v25 != 0 {
+				return
+			} else {
+				v82 = v24
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v88 = m.ExcPending
+				if v88 != 0 {
+					return
+				} else {
+					F_errcode(m, int32(16908420))
+					mBase = m.M
+					v91 = m.ExcPending
+					if v91 != 0 {
+						return
+					} else {
+						v92 = *(*int32)(unsafe.Add(mBase, uint32(v82)+48))
+						*(*int32)(unsafe.Add(mBase, uint32(v13))) = v92 + int32(4)
+						F_errmsg(m, int32(_a_F_amcheck_lock_relation_and_check_0), v13)
+						mBase = m.M
+						v100 = m.ExcPending
+						if v100 != 0 {
+							return
+						} else {
+							F_errfinish(m, int32(_a_F_amcheck_lock_relation_and_check_1), int32(128), int32(_a_F_amcheck_lock_relation_and_check_2))
+							mBase = m.M
+							v107 = m.ExcPending
+							if v107 != 0 {
+								return
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v26 = F_table_open(m, v16, l3)
+			mBase = m.M
+			v27 = m.ExcPending
+			if v27 != 0 {
+				return
+			} else {
+				v33 = *(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[0]))
+				*(*int32)(unsafe.Add(mBase, uint32(v13+int32(12)))) = v33
+				v36 = *(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[1]))
+				*(*int32)(unsafe.Add(mBase, uint32(v13+int32(8)))) = v36
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
+				v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)+80))
+				v40 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+				*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[1])) = v40 | int32(2)
+				*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[0])) = v39
+				v48 = int32(_a_F_amcheck_lock_relation_and_check_3)
+				v50 = *(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[2]))
+				v52 = v50 + int32(1)
+				*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[2])) = v52
+				v54 = F_index_open(m, l0, l3)
+				mBase = m.M
+				v55 = m.ExcPending
+				if v55 != 0 {
+					return
+				} else {
+					v57 = F_IndexGetRelation(m, l0, int32(0))
+					mBase = m.M
+					v58 = m.ExcPending
+					if v58 != 0 {
+						return
+					} else {
+						if v57 != v16 {
+							v82 = v54
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v88 = m.ExcPending
+							if v88 != 0 {
+								return
+							} else {
+								F_errcode(m, int32(16908420))
+								mBase = m.M
+								v91 = m.ExcPending
+								if v91 != 0 {
+									return
+								} else {
+									v92 = *(*int32)(unsafe.Add(mBase, uint32(v82)+48))
+									*(*int32)(unsafe.Add(mBase, uint32(v13))) = v92 + int32(4)
+									F_errmsg(m, int32(_a_F_amcheck_lock_relation_and_check_0), v13)
+									mBase = m.M
+									v100 = m.ExcPending
+									if v100 != 0 {
+										return
+									} else {
+										F_errfinish(m, int32(_a_F_amcheck_lock_relation_and_check_1), int32(128), int32(_a_F_amcheck_lock_relation_and_check_2))
+										mBase = m.M
+										v107 = m.ExcPending
+										if v107 != 0 {
+											return
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v60 = F_index_checkable(m, v54, l1)
+							mBase = m.M
+							v61 = m.ExcPending
+							if v61 != 0 {
+								return
+							} else {
+								if v60 != 0 {
+									m.T0[l2].(func(*base.Module, int32, int32, int32, int32))(m, v54, v26, l4, base.B2i32(l3 == int32(5)))
+									mBase = m.M
+									v65 = m.ExcPending
+									if v65 != 0 {
+										return
+									} else {
+										F_AtEOXact_GUC(m, int32(0), v52)
+										mBase = m.M
+										v68 = m.ExcPending
+										if v68 != 0 {
+											return
+										} else {
+											v69 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+											v70 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+											*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[1])) = v70
+											*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[0])) = v69
+											F_relation_close(m, v54, l3)
+											mBase = m.M
+											v76 = m.ExcPending
+											if v76 != 0 {
+												return
+											} else {
+												F_sequence_close(m, v26, l3)
+												mBase = m.M
+												v78 = m.ExcPending
+												if v78 != 0 {
+													return
+												} else {
+													m.G0 = v13 + int32(16)
+													return
+												}
+											}
+										}
+									}
+								} else {
+									F_AtEOXact_GUC(m, int32(0), v52)
+									mBase = m.M
+									v68 = m.ExcPending
+									if v68 != 0 {
+										return
+									} else {
+										v69 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+										v70 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
+										*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[1])) = v70
+										*(*int32)(unsafe.Add(mBase, _c_F_amcheck_lock_relation_and_check[0])) = v69
+										F_relation_close(m, v54, l3)
+										mBase = m.M
+										v76 = m.ExcPending
+										if v76 != 0 {
+											return
+										} else {
+											F_sequence_close(m, v26, l3)
+											mBase = m.M
+											v78 = m.ExcPending
+											if v78 != 0 {
+												return
+											} else {
+												m.G0 = v13 + int32(16)
+												return
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_anyarray_recv(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

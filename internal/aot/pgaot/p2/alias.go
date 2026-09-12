@@ -110,8 +110,12 @@ func F_TidStoreDestroy(m *base.Module, l0 int32)
 func F_TidStoreSetBlockOffsets(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_toast_open_indexes github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_toast_open_indexes
 func F_toast_open_indexes(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_toast_close_indexes github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_toast_close_indexes
+func F_toast_close_indexes(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_toast_delete_datum github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_toast_delete_datum
 func F_toast_delete_datum(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_get_toast_snapshot github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_toast_snapshot
+func F_get_toast_snapshot(m *base.Module) int32
 //go:linkname F_convert_tuples_by_position github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_convert_tuples_by_position
 func F_convert_tuples_by_position(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_convert_tuples_by_name github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_convert_tuples_by_name
@@ -286,6 +290,10 @@ func F_systable_getnext(m *base.Module, l0 int32) int32
 func F_systable_recheck_tuple(m *base.Module, l0 int32) int32
 //go:linkname F_systable_endscan github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_systable_endscan
 func F_systable_endscan(m *base.Module, l0 int32)
+//go:linkname F_systable_getnext_ordered github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_systable_getnext_ordered
+func F_systable_getnext_ordered(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_systable_endscan_ordered github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_systable_endscan_ordered
+func F_systable_endscan_ordered(m *base.Module, l0 int32)
 //go:linkname F_systable_inplace_update_begin github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_systable_inplace_update_begin
 func F_systable_inplace_update_begin(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_systable_inplace_update_finish github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_systable_inplace_update_finish
@@ -426,6 +434,8 @@ func F_GetMultiXactIdMembers(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_MultiXactIdSetOldestMember(m *base.Module)
 //go:linkname F_ReadNextMultiXactId github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ReadNextMultiXactId
 func F_ReadNextMultiXactId(m *base.Module) int32
+//go:linkname F_ReadMultiXactIdRange github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ReadMultiXactIdRange
+func F_ReadMultiXactIdRange(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_SetMultiXactIdLimit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_SetMultiXactIdLimit
 func F_SetMultiXactIdLimit(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_CreateParallelContext github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_CreateParallelContext
@@ -4438,6 +4448,12 @@ func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
 func F_uuid_generate_random(m *base.Module, l0 int32)
 //go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_get_xid_status github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_xid_status
+func F_get_xid_status(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_report_corruption github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_report_corruption
+func F_report_corruption(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_fastgetattr_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_fastgetattr_5
+func F_fastgetattr_5(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_HnswInitLockTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswInitLockTranche
 func F_HnswInitLockTranche(m *base.Module)
 //go:linkname F_HnswParallelScanAndInsert github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswParallelScanAndInsert

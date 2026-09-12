@@ -266,6 +266,8 @@ func F_index_fetch_heap(m *base.Module, l0 int32, l1 int32) int32
 func F_index_getprocinfo(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_btoidvectorcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_btoidvectorcmp
 func F_btoidvectorcmp(m *base.Module, l0 int32) int32
+//go:linkname F__bt_form_posting github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__bt_form_posting
+func F__bt_form_posting(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__bt_update_posting github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__bt_update_posting
 func F__bt_update_posting(m *base.Module, l0 int32)
 //go:linkname F__bt_swap_posting github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__bt_swap_posting
@@ -298,6 +300,8 @@ func F__bt_parallel_seize(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 func F__bt_search(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F__bt_compare github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F__bt_compare
 func F__bt_compare(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F__bt_binsrch_insert github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__bt_binsrch_insert
+func F__bt_binsrch_insert(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__bt_readnextpage github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F__bt_readnextpage
 func F__bt_readnextpage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F__bt_readfirstpage github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__bt_readfirstpage
@@ -306,6 +310,8 @@ func F__bt_readfirstpage(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F__bt_next(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__bt_mkscankey github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F__bt_mkscankey
 func F__bt_mkscankey(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_BTreeTupleGetHeapTID github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_BTreeTupleGetHeapTID
+func F_BTreeTupleGetHeapTID(m *base.Module, l0 int32) int32
 //go:linkname F__bt_binsrch_array_skey github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F__bt_binsrch_array_skey
 func F__bt_binsrch_array_skey(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32) int32
 //go:linkname F__bt_start_array_keys github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__bt_start_array_keys
@@ -1358,6 +1364,8 @@ func F_GetForeignServerIdByRelId(m *base.Module, l0 int32) int32
 func F_GetFdwRoutineByServerId(m *base.Module, l0 int32) int32
 //go:linkname F_GetFdwRoutineByRelId github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetFdwRoutineByRelId
 func F_GetFdwRoutineByRelId(m *base.Module, l0 int32) int32
+//go:linkname F_bloom_add_element github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bloom_add_element
+func F_bloom_add_element(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_dshash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dshash_create
 func F_dshash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_dshash_seq_next github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dshash_seq_next
@@ -2150,6 +2158,8 @@ func F_ConditionalLockBuffer(m *base.Module, l0 int32) int32
 func F_CheckBufferIsPinnedOnce(m *base.Module, l0 int32)
 //go:linkname F_StrategyNotifyBgWriter github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_StrategyNotifyBgWriter
 func F_StrategyNotifyBgWriter(m *base.Module, l0 int32)
+//go:linkname F_GetAccessStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetAccessStrategy
+func F_GetAccessStrategy(m *base.Module, l0 int32) int32
 //go:linkname F_UnpinLocalBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_UnpinLocalBuffer
 func F_UnpinLocalBuffer(m *base.Module, l0 int32)
 //go:linkname F_BufFileCreateTemp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_BufFileCreateTemp
@@ -4120,6 +4130,22 @@ func F_BloomFormTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 func F_BloomNewBuffer(m *base.Module, l0 int32) int32
 //go:linkname F_pgstattuple_approx_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pgstattuple_approx_internal
 func F_pgstattuple_approx_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_amcheck_lock_relation_and_check github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_amcheck_lock_relation_and_check
+func F_amcheck_lock_relation_and_check(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_palloc_btree_page github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_palloc_btree_page
+func F_palloc_btree_page(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_bt_child_highkey_check github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bt_child_highkey_check
+func F_bt_child_highkey_check(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_bt_normalize_tuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_normalize_tuple
+func F_bt_normalize_tuple(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_invariant_l_offset github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_invariant_l_offset
+func F_invariant_l_offset(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_BTreeTupleGetHeapTIDCareful github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_BTreeTupleGetHeapTIDCareful
+func F_BTreeTupleGetHeapTIDCareful(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_heap_entry_is_visible github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_heap_entry_is_visible
+func F_heap_entry_is_visible(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_bt_report_duplicate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_bt_report_duplicate
+func F_bt_report_duplicate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_tidhash_insert_hash_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_tidhash_insert_hash_internal
 func F_tidhash_insert_hash_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_HnswInitSupport github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_HnswInitSupport

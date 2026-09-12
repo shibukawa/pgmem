@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7579)
-	m.G0 = int32(13098112)
+	m.T0 = make([]any, 7594)
+	m.G0 = int32(13110608)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -56,7 +56,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4426555
+	m.DataEnd = 4439051
 	initData_0(m)
 	return m
 }
@@ -89,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7579)
-	m.G0 = int32(13098112)
+	m.T0 = make([]any, 7594)
+	m.G0 = int32(13110608)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -123,7 +123,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4426555
+	m.DataEnd = 4439051
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -138,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7579)
-	m.G0 = int32(13098112)
+	m.T0 = make([]any, 7594)
+	m.G0 = int32(13110608)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -172,18 +172,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4426555
+	m.DataEnd = 4439051
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1620352])
-	copy(m.Memory[1625680:], wasm2goData_data_bin[1620352:1620361])
-	copy(m.Memory[1627728:], wasm2goData_data_bin[1620361:1633289])
-	copy(m.Memory[1650692:], wasm2goData_data_bin[1633289:1726530])
-	copy(m.Memory[1744960:], wasm2goData_data_bin[1726530:1838186])
-	copy(m.Memory[1867832:], wasm2goData_data_bin[1838186:4100480])
-	copy(m.Memory[4137616:], wasm2goData_data_bin[4100480:4389419])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1634016])
+	copy(m.Memory[1639344:], wasm2goData_data_bin[1634016:1634025])
+	copy(m.Memory[1641392:], wasm2goData_data_bin[1634025:1646953])
+	copy(m.Memory[1662980:], wasm2goData_data_bin[1646953:1740194])
+	copy(m.Memory[1757248:], wasm2goData_data_bin[1740194:1851850])
+	copy(m.Memory[1880120:], wasm2goData_data_bin[1851850:4114288])
+	copy(m.Memory[4150048:], wasm2goData_data_bin[4114288:4403291])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5269,6 +5269,33 @@ func UuidNsUrl(m *base.Module, l0 int32) int32 {
 }
 func UuidNsX500(m *base.Module, l0 int32) int32 {
 	return F_uuid_ns_x500(m, l0)
+}
+func PgMagicFuncAmcheck(m *base.Module) int32 {
+	return F_Pg_magic_func_amcheck(m)
+}
+func BtIndexCheck(m *base.Module, l0 int32) int32 {
+	return F_bt_index_check(m, l0)
+}
+func BtIndexParentCheck(m *base.Module, l0 int32) int32 {
+	return F_bt_index_parent_check(m, l0)
+}
+func GinIndexCheck(m *base.Module, l0 int32) int32 {
+	return F_gin_index_check(m, l0)
+}
+func PgFinfoBtIndexCheck(m *base.Module) int32 {
+	return F_pg_finfo_bt_index_check(m)
+}
+func PgFinfoBtIndexParentCheck(m *base.Module) int32 {
+	return F_pg_finfo_bt_index_parent_check(m)
+}
+func PgFinfoGinIndexCheck(m *base.Module) int32 {
+	return F_pg_finfo_gin_index_check(m)
+}
+func PgFinfoVerifyHeapam(m *base.Module) int32 {
+	return F_pg_finfo_verify_heapam(m)
+}
+func VerifyHeapam(m *base.Module, l0 int32) int32 {
+	return F_verify_heapam(m, l0)
 }
 func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	F_HnswParallelBuildMain(m, l0, l1)

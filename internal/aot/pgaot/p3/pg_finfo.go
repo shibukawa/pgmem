@@ -212,6 +212,9 @@ func F_pg_finfo_gin_extract_value_timetz(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_uuid(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_uuid_0)
 }
+func F_pg_finfo_gin_index_check(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_index_check_0)
+}
 func F_pg_finfo_gseg_decompress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gseg_decompress_0)
 }

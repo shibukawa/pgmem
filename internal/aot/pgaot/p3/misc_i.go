@@ -15334,6 +15334,162 @@ func F_intervaltypmodleastfield(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_invariant_l_offset(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	v10 = F_PageGetItemIdCareful_2(m, l0, v8, v9, l2)
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
+		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+		v17 = F__bt_compare(m, v15, l1, v16, l2)
+		mBase = m.M
+		v18 = m.ExcPending
+		if v18 != 0 {
+			return int32(0)
+		} else {
+			if v14 == int32(0) {
+				return base.B2i32(v17 <= int32(0))
+			} else {
+				if v17 == int32(0) {
+					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
+					v30 = v26 + v27&int32(_a_F_invariant_l_offset_0)
+					v32 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26)+16)))
+					v33 = v26 + v32
+					v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+12)))
+					if v34&int32(1) != 0 {
+						v37 = *(*int32)(unsafe.Add(mBase, uint32(v33)+4))
+						v45 = base.B2i32(v37 == int32(0)) | base.B2i32(base.Ui32(int32(1)) < base.Ui32(l2&int32(_a_F_invariant_l_offset_1)))
+					} else {
+						v45 = int32(0)
+					}
+					v46 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+192))
+					v48 = int32(*(*int16)(unsafe.Add(mBase, uint32(v47)+10)))
+					v49 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v30)+7)))
+					if v49&int32(32) != 0 {
+						v52 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30)+4)))
+						if v52&int32(_a_F_invariant_l_offset_2) != 0 {
+							v55 = int32(*(*int16)(unsafe.Add(mBase, uint32(v47)+8)))
+							if v48 < v55 {
+								v66 = v48
+							} else {
+								v57 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+8)))
+								v63 = v57
+								v66 = base.I32_extend16_s(v63)
+							}
+						} else {
+							v59 = v52 & int32(4095)
+							if v48 < v59 {
+								v66 = v48
+							} else {
+								v66 = v59
+							}
+						}
+					} else {
+						v61 = int32(*(*int16)(unsafe.Add(mBase, uint32(v47)+8)))
+						if v48 < v61 {
+							v66 = v48
+						} else {
+							v63 = v61
+							v66 = base.I32_extend16_s(v63)
+						}
+					}
+					v69 = F_BTreeTupleGetHeapTIDCareful(m, l0, v30, v45)
+					mBase = m.M
+					v70 = m.ExcPending
+					if v70 != 0 {
+						return int32(0)
+					} else {
+						v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+						if v66 == v71 {
+							v73 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+							v74 = int32(0)
+							return base.B2i32(v73 == v74) & base.B2i32(v69 != v74)
+						} else {
+							return base.B2i32(v71 < v66)
+						}
+					}
+				} else {
+					return int32(base.Ui32(v17) >> (uint(int32(31)) % 32))
+				}
+			}
+		}
+	}
+}
 func F_is_encoding_supported_by_icu(m *base.Module, l0 int32) int32 {
 	var v12 int32
 	_ = v12

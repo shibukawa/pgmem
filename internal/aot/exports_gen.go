@@ -10178,6 +10178,60 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.UuidNsX500(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_amcheck":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_amcheck: want 0 args")
+		}
+		r := pgaot.PgMagicFuncAmcheck(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_index_check":
+		if len(a) != 1 {
+			panic("aot: bt_index_check: want 1 args")
+		}
+		r := pgaot.BtIndexCheck(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "bt_index_parent_check":
+		if len(a) != 1 {
+			panic("aot: bt_index_parent_check: want 1 args")
+		}
+		r := pgaot.BtIndexParentCheck(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gin_index_check":
+		if len(a) != 1 {
+			panic("aot: gin_index_check: want 1 args")
+		}
+		r := pgaot.GinIndexCheck(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_index_check":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_index_check: want 0 args")
+		}
+		r := pgaot.PgFinfoBtIndexCheck(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_bt_index_parent_check":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_bt_index_parent_check: want 0 args")
+		}
+		r := pgaot.PgFinfoBtIndexParentCheck(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gin_index_check":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gin_index_check: want 0 args")
+		}
+		r := pgaot.PgFinfoGinIndexCheck(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_verify_heapam":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_verify_heapam: want 0 args")
+		}
+		r := pgaot.PgFinfoVerifyHeapam(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "verify_heapam":
+		if len(a) != 1 {
+			panic("aot: verify_heapam: want 1 args")
+		}
+		r := pgaot.VerifyHeapam(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

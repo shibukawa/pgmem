@@ -5,6 +5,477 @@ import (
 	"unsafe"
 )
 
+func F_BTreeTupleGetHeapTID(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	v4 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)))
+	if v4&int32(_a_F_BTreeTupleGetHeapTID_0) == int32(0) {
+		return l0
+	} else {
+		v10 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
+		if v10&int32(_a_F_BTreeTupleGetHeapTID_0) == int32(0) {
+			v15 = int32(0)
+			if v10&int32(_a_F_BTreeTupleGetHeapTID_1) == v15 {
+				v32 = v15
+				return v32
+			} else {
+				return l0 + v4&int32(_a_F_BTreeTupleGetHeapTID_2) - int32(6)
+			}
+		} else {
+			v26 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+2)))
+			v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
+			v32 = l0 + (v26 | v27<<(uint(int32(16))%32))
+			return v32
+		}
+	}
+}
+func F_BTreeTupleGetHeapTIDCareful(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v79 int32
+	_ = v79
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
+	var v87 int32
+	_ = v87
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v103 int32
+	_ = v103
+	var v112 int32
+	_ = v112
+	var v119 int32
+	_ = v119
+	var v125 int32
+	_ = v125
+	var v128 int32
+	_ = v128
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
+	var v131 int32
+	_ = v131
+	var v142 int32
+	_ = v142
+	var v149 int32
+	_ = v149
+	v9 = m.G0
+	v11 = v9 - int32(48)
+	m.G0 = v11
+	v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+6)))
+	if v13&int32(_a_F_BTreeTupleGetHeapTIDCareful_0) != 0 {
+		v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+4)))
+		v18 = v16 & int32(_a_F_BTreeTupleGetHeapTIDCareful_0)
+		if l2 == int32(0) {
+			if v18 != 0 {
+				v52 = l2
+			} else {
+				v52 = int32(1)
+			}
+			if v52 == int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v125 = m.ExcPending
+				if v125 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(33557032))
+					mBase = m.M
+					v128 = m.ExcPending
+					if v128 != 0 {
+						return int32(0)
+					} else {
+						v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+48))
+						v131 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v131
+						*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v130 + int32(4)
+						F_errmsg_internal(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_1), v11+int32(16))
+						mBase = m.M
+						v142 = m.ExcPending
+						if v142 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3557), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+							mBase = m.M
+							v149 = m.ExcPending
+							if v149 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v56 = l2 ^ int32(1)
+				if v18 == int32(0) {
+					v59 = int32(0)
+					if v16&int32(_a_F_BTreeTupleGetHeapTIDCareful_4) == v59 {
+						v84 = int32(0)
+						v85 = v59
+						v87 = v56
+					} else {
+						v76 = l1 + v13&int32(_a_F_BTreeTupleGetHeapTIDCareful_5) - int32(6)
+						v79 = v56
+						v81 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v76)+4)))
+						v84 = v76
+						v85 = base.B2i32(v81 != int32(0))
+						v87 = v79
+					}
+				} else {
+					v70 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+2)))
+					v71 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1))))
+					v76 = l1 + (v70 | v71<<(uint(int32(16))%32))
+					v79 = v56
+					v81 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v76)+4)))
+					v84 = v76
+					v85 = base.B2i32(v81 != int32(0))
+					v87 = v79
+				}
+				if v87|v85 != 0 {
+					m.G0 = v11 + int32(48)
+					return v84
+				} else {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v97 = m.ExcPending
+					if v97 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(33557032))
+						mBase = m.M
+						v100 = m.ExcPending
+						if v100 != 0 {
+							return int32(0)
+						} else {
+							v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							v102 = *(*int32)(unsafe.Add(mBase, uint32(v101)+48))
+							v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v103
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v102 + int32(4)
+							F_errmsg(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_6), v11)
+							mBase = m.M
+							v112 = m.ExcPending
+							if v112 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3565), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+								mBase = m.M
+								v119 = m.ExcPending
+								if v119 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if v18 != 0 {
+				if v18 != 0 {
+					v52 = l2
+				} else {
+					v52 = int32(1)
+				}
+				if v52 == int32(0) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v125 = m.ExcPending
+					if v125 != 0 {
+						return int32(0)
+					} else {
+						F_errcode(m, int32(33557032))
+						mBase = m.M
+						v128 = m.ExcPending
+						if v128 != 0 {
+							return int32(0)
+						} else {
+							v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+48))
+							v131 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v131
+							*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v130 + int32(4)
+							F_errmsg_internal(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_1), v11+int32(16))
+							mBase = m.M
+							v142 = m.ExcPending
+							if v142 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3557), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+								mBase = m.M
+								v149 = m.ExcPending
+								if v149 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				} else {
+					v56 = l2 ^ int32(1)
+					if v18 == int32(0) {
+						v59 = int32(0)
+						if v16&int32(_a_F_BTreeTupleGetHeapTIDCareful_4) == v59 {
+							v84 = int32(0)
+							v85 = v59
+							v87 = v56
+						} else {
+							v76 = l1 + v13&int32(_a_F_BTreeTupleGetHeapTIDCareful_5) - int32(6)
+							v79 = v56
+							v81 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v76)+4)))
+							v84 = v76
+							v85 = base.B2i32(v81 != int32(0))
+							v87 = v79
+						}
+					} else {
+						v70 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+2)))
+						v71 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1))))
+						v76 = l1 + (v70 | v71<<(uint(int32(16))%32))
+						v79 = v56
+						v81 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v76)+4)))
+						v84 = v76
+						v85 = base.B2i32(v81 != int32(0))
+						v87 = v79
+					}
+					if v87|v85 != 0 {
+						m.G0 = v11 + int32(48)
+						return v84
+					} else {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v97 = m.ExcPending
+						if v97 != 0 {
+							return int32(0)
+						} else {
+							F_errcode(m, int32(33557032))
+							mBase = m.M
+							v100 = m.ExcPending
+							if v100 != 0 {
+								return int32(0)
+							} else {
+								v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								v102 = *(*int32)(unsafe.Add(mBase, uint32(v101)+48))
+								v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+								*(*int32)(unsafe.Add(mBase, uint32(v11))) = v103
+								*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v102 + int32(4)
+								F_errmsg(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_6), v11)
+								mBase = m.M
+								v112 = m.ExcPending
+								if v112 != 0 {
+									return int32(0)
+								} else {
+									F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3565), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+									mBase = m.M
+									v119 = m.ExcPending
+									if v119 != 0 {
+										return int32(0)
+									} else {
+										base.Wasm_trap_unreachable()
+										for {
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v26 = m.ExcPending
+				if v26 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(33557032))
+					mBase = m.M
+					v29 = m.ExcPending
+					if v29 != 0 {
+						return int32(0)
+					} else {
+						v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+48))
+						v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v32
+						*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v31 + int32(4)
+						F_errmsg_internal(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_7), v11+int32(32))
+						mBase = m.M
+						v43 = m.ExcPending
+						if v43 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3550), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+							mBase = m.M
+							v50 = m.ExcPending
+							if v50 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	} else {
+		if l2 != 0 {
+			v76 = l1
+			v79 = int32(0)
+			v81 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v76)+4)))
+			v84 = v76
+			v85 = base.B2i32(v81 != int32(0))
+			v87 = v79
+			if v87|v85 != 0 {
+				m.G0 = v11 + int32(48)
+				return v84
+			} else {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v97 = m.ExcPending
+				if v97 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(33557032))
+					mBase = m.M
+					v100 = m.ExcPending
+					if v100 != 0 {
+						return int32(0)
+					} else {
+						v101 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v102 = *(*int32)(unsafe.Add(mBase, uint32(v101)+48))
+						v103 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+						*(*int32)(unsafe.Add(mBase, uint32(v11))) = v103
+						*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v102 + int32(4)
+						F_errmsg(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_6), v11)
+						mBase = m.M
+						v112 = m.ExcPending
+						if v112 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3565), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+							mBase = m.M
+							v119 = m.ExcPending
+							if v119 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v125 = m.ExcPending
+			if v125 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(33557032))
+				mBase = m.M
+				v128 = m.ExcPending
+				if v128 != 0 {
+					return int32(0)
+				} else {
+					v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v130 = *(*int32)(unsafe.Add(mBase, uint32(v129)+48))
+					v131 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v131
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v130 + int32(4)
+					F_errmsg_internal(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_1), v11+int32(16))
+					mBase = m.M
+					v142 = m.ExcPending
+					if v142 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_BTreeTupleGetHeapTIDCareful_2), int32(3557), int32(_a_F_BTreeTupleGetHeapTIDCareful_3))
+						mBase = m.M
+						v149 = m.ExcPending
+						if v149 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_BackendMain(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

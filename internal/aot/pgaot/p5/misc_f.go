@@ -4251,6 +4251,160 @@ func F___fstatat(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	}
 	return v41
 }
+func F_fastgetattr_5(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
+	v5 = int32(0)
+	v8 = m.G0
+	v10 = v8 - int32(16)
+	m.G0 = v10
+	*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v5)
+	v14 = int32(1)
+	v15 = l1 - v14
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+20)))
+	if v17&v14 == v5 {
+		v24 = l2 + v15<<(uint(int32(4))%32)
+		v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+		if v25 < int32(0) {
+			v72 = F_nocachegetattr(m, l0, l1, l2)
+			mBase = m.M
+			v73 = m.ExcPending
+			if v73 != 0 {
+				return int32(0)
+			} else {
+				v78 = v72
+				m.G0 = v10 + int32(16)
+				return v78
+			}
+		} else {
+			v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+22)))
+			v30 = v16 + v28 + v25
+			v32 = v24 + int32(20)
+			v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32)+6)))
+			if v33 != int32(1) {
+				v78 = v30
+				m.G0 = v10 + int32(16)
+				return v78
+			} else {
+				v36 = int32(*(*int16)(unsafe.Add(mBase, uint32(v32)+4)))
+				switch v36&int32(_a_F_fastgetattr_5_0) - int32(1) {
+				case 0:
+					v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v30))))
+					v78 = v41
+					m.G0 = v10 + int32(16)
+					return v78
+				case 1:
+					v42 = int32(*(*int16)(unsafe.Add(mBase, uint32(v30))))
+					v78 = v42
+					m.G0 = v10 + int32(16)
+					return v78
+				default:
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v49 = m.ExcPending
+					if v49 != 0 {
+						return int32(0)
+					} else {
+						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v36
+						F_errmsg_internal(m, int32(_a_F_fastgetattr_5_1), v10)
+						mBase = m.M
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_fastgetattr_5_2), int32(70), int32(_a_F_fastgetattr_5_3))
+							mBase = m.M
+							v62 = m.ExcPending
+							if v62 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				case 3:
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
+					v78 = v43
+					m.G0 = v10 + int32(16)
+					return v78
+				}
+			}
+		}
+	} else {
+		v63 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+23)))
+		if int32(base.Ui32(v63)>>(uint(v15)%32))&int32(1) != 0 {
+			v72 = F_nocachegetattr(m, l0, l1, l2)
+			mBase = m.M
+			v73 = m.ExcPending
+			if v73 != 0 {
+				return int32(0)
+			} else {
+				v78 = v72
+				m.G0 = v10 + int32(16)
+				return v78
+			}
+		} else {
+			v67 = int32(1)
+			*(*uint8)(unsafe.Add(mBase, uint32(l3))) = uint8(v67)
+			v78 = int32(0)
+			m.G0 = v10 + int32(16)
+			return v78
+		}
+	}
+}
 func F_fdw_handler_out(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

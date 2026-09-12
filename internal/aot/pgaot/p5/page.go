@@ -782,6 +782,200 @@ L18:
 	;
 	goto L16
 }
+func F_PageGetItemIdCareful_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v71 int32
+	_ = v71
+	var v78 int32
+	_ = v78
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v118 int32
+	_ = v118
+	var v125 int32
+	_ = v125
+	v7 = m.G0
+	v9 = v7 - int32(96)
+	m.G0 = v9
+	v15 = l3<<(uint(int32(2))%32) + l2 + int32(20)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+	if base.Ui32(v16&int32(_a_F_PageGetItemIdCareful_1_0)+int32(base.Ui32(v16)>>(uint(int32(17))%32))) < base.Ui32(int32(_a_F_PageGetItemIdCareful_1_1)) {
+		if base.Ui32(v16) < base.Ui32(int32(_a_F_PageGetItemIdCareful_1_2)) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v82 = m.ExcPending
+			if v82 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(33557032))
+				mBase = m.M
+				v85 = m.ExcPending
+				if v85 != 0 {
+					return int32(0)
+				} else {
+					v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v86 + int32(4)
+					F_errmsg(m, int32(_a_F_PageGetItemIdCareful_1_3), v9+int32(80))
+					mBase = m.M
+					v96 = m.ExcPending
+					if v96 != 0 {
+						return int32(0)
+					} else {
+						v99 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+						*(*int32)(unsafe.Add(mBase, uint32(v9-int32(-64)))) = int32(base.Ui32(v99)>>(uint(int32(15))%32)) & int32(3)
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+52)) = l3
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = l1
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(base.Ui32(v99) >> (uint(int32(17)) % 32))
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+56)) = v99 & int32(_a_F_PageGetItemIdCareful_1_0)
+						F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_1_4), v9+int32(48))
+						mBase = m.M
+						v118 = m.ExcPending
+						if v118 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_5), int32(791), int32(_a_F_PageGetItemIdCareful_1_6))
+							mBase = m.M
+							v125 = m.ExcPending
+							if v125 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if v16&int32(_a_F_PageGetItemIdCareful_1_7) != int32(_a_F_PageGetItemIdCareful_1_8) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v82 = m.ExcPending
+				if v82 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(33557032))
+					mBase = m.M
+					v85 = m.ExcPending
+					if v85 != 0 {
+						return int32(0)
+					} else {
+						v86 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v86 + int32(4)
+						F_errmsg(m, int32(_a_F_PageGetItemIdCareful_1_3), v9+int32(80))
+						mBase = m.M
+						v96 = m.ExcPending
+						if v96 != 0 {
+							return int32(0)
+						} else {
+							v99 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+							*(*int32)(unsafe.Add(mBase, uint32(v9-int32(-64)))) = int32(base.Ui32(v99)>>(uint(int32(15))%32)) & int32(3)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+52)) = l3
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = l1
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(base.Ui32(v99) >> (uint(int32(17)) % 32))
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+56)) = v99 & int32(_a_F_PageGetItemIdCareful_1_0)
+							F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_1_4), v9+int32(48))
+							mBase = m.M
+							v118 = m.ExcPending
+							if v118 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_5), int32(791), int32(_a_F_PageGetItemIdCareful_1_6))
+								mBase = m.M
+								v125 = m.ExcPending
+								if v125 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			} else {
+				m.G0 = v9 + int32(96)
+				return v15
+			}
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v39 = m.ExcPending
+		if v39 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(33557032))
+			mBase = m.M
+			v42 = m.ExcPending
+			if v42 != 0 {
+				return int32(0)
+			} else {
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+				*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v43 + int32(4)
+				F_errmsg(m, int32(_a_F_PageGetItemIdCareful_1_9), v9+int32(32))
+				mBase = m.M
+				v53 = m.ExcPending
+				if v53 != 0 {
+					return int32(0)
+				} else {
+					v54 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(base.Ui32(v54)>>(uint(int32(15))%32)) & int32(3)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = l3
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(base.Ui32(v54) >> (uint(int32(17)) % 32))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v54 & int32(_a_F_PageGetItemIdCareful_1_0)
+					F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_1_4), v9)
+					mBase = m.M
+					v71 = m.ExcPending
+					if v71 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_PageGetItemIdCareful_1_5), int32(775), int32(_a_F_PageGetItemIdCareful_1_6))
+						mBase = m.M
+						v78 = m.ExcPending
+						if v78 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_PageGetTempPageCopy(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

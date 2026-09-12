@@ -29,6 +29,9 @@ func F_pg_finfo__ltxtq_rexec(m *base.Module) int32 {
 func F_pg_finfo_bqarr_in(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_bqarr_in_0)
 }
+func F_pg_finfo_bt_index_check(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_index_check_0)
+}
 func F_pg_finfo_citext_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_cmp_0)
 }

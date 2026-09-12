@@ -3230,6 +3230,24 @@ func F_uuid_generate_v3(m *base.Module, l0 int32) int32
 func F_uuid_generate_v4(m *base.Module, l0 int32) int32
 //go:linkname F_uuid_generate_v5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_v5
 func F_uuid_generate_v5(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_index_check github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_index_check
+func F_pg_finfo_gin_index_check(m *base.Module) int32
+//go:linkname F_gin_index_check github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gin_index_check
+func F_gin_index_check(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_verify_heapam github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_verify_heapam
+func F_pg_finfo_verify_heapam(m *base.Module) int32
+//go:linkname F_verify_heapam github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_verify_heapam
+func F_verify_heapam(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_amcheck github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_Pg_magic_func_amcheck
+func F_Pg_magic_func_amcheck(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_index_check github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_bt_index_check
+func F_pg_finfo_bt_index_check(m *base.Module) int32
+//go:linkname F_pg_finfo_bt_index_parent_check github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_bt_index_parent_check
+func F_pg_finfo_bt_index_parent_check(m *base.Module) int32
+//go:linkname F_bt_index_check github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_bt_index_check
+func F_bt_index_check(m *base.Module, l0 int32) int32
+//go:linkname F_bt_index_parent_check github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_index_parent_check
+func F_bt_index_parent_check(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

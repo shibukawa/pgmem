@@ -1552,24 +1552,14 @@ func F_core_yylex(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v1667
 	var v1670 int32
 	_ = v1670
+	var v1671 int32
+	_ = v1671
 	var v1672 int32
 	_ = v1672
 	var v1673 int32
 	_ = v1673
-	var v1687 int32
-	_ = v1687
-	var v1689 int32
-	_ = v1689
-	var v1692 int32
-	_ = v1692
-	var v1694 int32
-	_ = v1694
-	var v1695 int32
-	_ = v1695
-	var v1696 int32
-	_ = v1696
-	var v1699 int32
-	_ = v1699
+	var v1674 int32
+	_ = v1674
 	var v1711 int32
 	_ = v1711
 	var v1721 int32
@@ -6601,9 +6591,11 @@ L427:
 	}
 L428:
 	;
+	v1671 = int32(_a_F_core_yylex_38)
 	v1672 = *(*int32)(unsafe.Add(mBase, uint32(l2)+80))
 	v1673 = int32(*(*int8)(unsafe.Add(mBase, uint32(v1672))))
-	goto L447
+	v1674 = int32(18)
+	goto L446
 L429:
 	;
 	if v1613 <= int32(63) {
@@ -6710,7 +6702,7 @@ L440:
 	goto L441
 L441:
 	;
-	F_scanner_yyerror(m, int32(_a_F_core_yylex_38), l2)
+	F_scanner_yyerror(m, int32(_a_F_core_yylex_39), l2)
 	mBase = m.M
 	v1670 = m.ExcPending
 	if v1670 != 0 {
@@ -6742,61 +6734,13 @@ L445:
 	goto L463
 L446:
 	;
-	if base.B2i32(v1695 != v1696) == int32(0) {
-		goto L444
-	} else {
-		goto L454
-	}
-L447:
-	;
-	goto L448
-L448:
-	;
-	v1687 = int32(_a_F_core_yylex_39)
-	v1689 = int32(18)
-	goto L449
-L449:
-	;
-	v1692 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1687))))
-	if v1692 == v1673&int32(255) {
-		v1748 = v1687
-		v1750 = v1689
-		goto L445
-	} else {
-		goto L451
-	}
-L450:
-	;
-	goto L446
-L451:
-	;
-	v1694 = int32(1)
-	v1695 = v1689 - v1694
-	v1696 = int32(0)
-	v1699 = v1687 + v1694
-	if v1699&int32(3) == v1696 {
-		goto L446
-	} else {
-		goto L452
-	}
-L452:
-	;
-	if v1695 != 0 {
-		v1687 = v1699
-		v1689 = v1695
-		goto L449
-	} else {
-		goto L453
-	}
-L453:
-	;
-	goto L450
+	goto L454
 L454:
 	;
-	v1711 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1699))))
+	v1711 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_core_yylex[7])))
 	if v1711 == v1673&int32(255) {
-		v1741 = v1699
-		v1743 = v1695
+		v1741 = v1671
+		v1743 = v1674
 		goto L455
 	} else {
 		goto L456
@@ -6810,17 +6754,11 @@ L455:
 	}
 L456:
 	;
-	if base.Ui32(v1695) < base.Ui32(int32(4)) {
-		v1741 = v1699
-		v1743 = v1695
-		goto L455
-	} else {
-		goto L457
-	}
+	goto L457
 L457:
 	;
-	v1721 = v1699
-	v1723 = v1695
+	v1721 = v1671
+	v1723 = v1674
 	goto L458
 L458:
 	;
@@ -7618,7 +7556,7 @@ L575:
 	goto L576
 L576:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8])) = int32(0)
 	v2467 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
 	v2468 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 	v2472 = *(*int32)(unsafe.Add(mBase, uint32(v2467+v2468<<(uint(int32(2))%32))))
@@ -7802,7 +7740,7 @@ L603:
 	goto L604
 L604:
 	;
-	v2508 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7]))
+	v2508 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8]))
 	if v2508 != int32(27) {
 		goto L53
 	} else {
@@ -7811,7 +7749,7 @@ L604:
 L605:
 	;
 	v2512 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7])) = v2512
+	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8])) = v2512
 	v2514 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	v2515 = *(*int32)(unsafe.Add(mBase, uint32(v2514)+76))
 	if v2512 <= v2515 {
@@ -8058,7 +7996,7 @@ L636:
 	}
 L637:
 	;
-	v2713 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7]))
+	v2713 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8]))
 	v2714 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 	v2718 = *(*int32)(unsafe.Add(mBase, uint32(v2711+v2714<<(uint(int32(2))%32))))
 	if v2718 == int32(0) {
@@ -8117,7 +8055,7 @@ L643:
 	}
 L644:
 	;
-	v2709 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7]))
+	v2709 = *(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8]))
 	v2756 = int32(0)
 	v2759 = v2709
 	goto L636
@@ -8180,7 +8118,7 @@ L649:
 L650:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v2756)+24)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[7])) = v2759
+	*(*int32)(unsafe.Add(mBase, _c_F_core_yylex[8])) = v2759
 	v2776 = *(*int32)(unsafe.Add(mBase, uint32(l2)+20))
 	v2777 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 	v2780 = v2776 + v2777<<(uint(int32(2))%32)

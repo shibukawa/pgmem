@@ -2854,6 +2854,107 @@ L27:
 	;
 	return
 }
+func F_heap_entry_is_visible(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v46 int32
+	_ = v46
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v8 = F_table_slot_create(m, v6, int32(0))
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return int32(0)
+	} else {
+		v14 = *(*int32)(unsafe.Add(mBase, _c_F_heap_entry_is_visible[0]))
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_heap_entry_is_visible[1])))
+		if v15&int32(1) != 0 {
+			v18 = int32(0)
+		} else {
+			v18 = v14
+		}
+		if v18 == int32(0) {
+			v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v21)+188))
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+60))
+			v25 = m.T0[v24].(func(*base.Module, int32, int32, int32, int32) int32)(m, v21, l1, v22, v8)
+			mBase = m.M
+			v26 = m.ExcPending
+			if v26 != 0 {
+				return int32(0)
+			} else {
+				if v8 != 0 {
+					F_ExecDropSingleTupleTableSlot(m, v8)
+					mBase = m.M
+					v28 = m.ExcPending
+					if v28 != 0 {
+						return int32(0)
+					} else {
+						return v25
+					}
+				} else {
+					return v25
+				}
+			}
+		} else {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v33 = m.ExcPending
+			if v33 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg_internal(m, int32(_a_F_heap_entry_is_visible_0), int32(0))
+				mBase = m.M
+				v39 = m.ExcPending
+				if v39 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_heap_entry_is_visible_1), int32(1264), int32(_a_F_heap_entry_is_visible_2))
+					mBase = m.M
+					v46 = m.ExcPending
+					if v46 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_heap_fetch(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase

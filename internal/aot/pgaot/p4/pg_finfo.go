@@ -20,6 +20,9 @@ func F_pg_finfo__lt_q_rregex(m *base.Module) int32 {
 func F_pg_finfo_array_to_vector(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_array_to_vector_0)
 }
+func F_pg_finfo_bt_index_parent_check(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_bt_index_parent_check_0)
+}
 func F_pg_finfo_citext_le(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_le_0)
 }

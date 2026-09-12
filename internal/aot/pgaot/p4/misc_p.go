@@ -5,6 +5,208 @@ import (
 	"unsafe"
 )
 
+func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
+	var v44 int32
+	_ = v44
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v72 int32
+	_ = v72
+	var v79 int32
+	_ = v79
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v120 int32
+	_ = v120
+	var v127 int32
+	_ = v127
+	v7 = m.G0
+	v9 = v7 - int32(96)
+	m.G0 = v9
+	v15 = l3<<(uint(int32(2))%32) + l2 + int32(20)
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+	if base.Ui32(v16&int32(_a_F_PageGetItemIdCareful_2_0)+int32(base.Ui32(v16)>>(uint(int32(17))%32))) < base.Ui32(int32(_a_F_PageGetItemIdCareful_2_1)) {
+		switch int32(base.Ui32(v16)>>(uint(int32(15))%32)) & int32(3) {
+		case 0, 2:
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v83 = m.ExcPending
+			if v83 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(33557032))
+				mBase = m.M
+				v86 = m.ExcPending
+				if v86 != 0 {
+					return int32(0)
+				} else {
+					v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)+48))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v88 + int32(4)
+					F_errmsg(m, int32(_a_F_PageGetItemIdCareful_2_2), v9+int32(80))
+					mBase = m.M
+					v98 = m.ExcPending
+					if v98 != 0 {
+						return int32(0)
+					} else {
+						v101 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+						*(*int32)(unsafe.Add(mBase, uint32(v9-int32(-64)))) = int32(base.Ui32(v101)>>(uint(int32(15))%32)) & int32(3)
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+52)) = l3
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = l1
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(base.Ui32(v101) >> (uint(int32(17)) % 32))
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+56)) = v101 & int32(_a_F_PageGetItemIdCareful_2_0)
+						F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_2_3), v9+int32(48))
+						mBase = m.M
+						v120 = m.ExcPending
+						if v120 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_PageGetItemIdCareful_2_4), int32(3524), int32(_a_F_PageGetItemIdCareful_2_5))
+							mBase = m.M
+							v127 = m.ExcPending
+							if v127 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			}
+		default:
+			if base.Ui32(v16) <= base.Ui32(int32(_a_F_PageGetItemIdCareful_2_6)) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v83 = m.ExcPending
+				if v83 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(33557032))
+					mBase = m.M
+					v86 = m.ExcPending
+					if v86 != 0 {
+						return int32(0)
+					} else {
+						v87 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+						v88 = *(*int32)(unsafe.Add(mBase, uint32(v87)+48))
+						*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v88 + int32(4)
+						F_errmsg(m, int32(_a_F_PageGetItemIdCareful_2_2), v9+int32(80))
+						mBase = m.M
+						v98 = m.ExcPending
+						if v98 != 0 {
+							return int32(0)
+						} else {
+							v101 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+							*(*int32)(unsafe.Add(mBase, uint32(v9-int32(-64)))) = int32(base.Ui32(v101)>>(uint(int32(15))%32)) & int32(3)
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+52)) = l3
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = l1
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+60)) = int32(base.Ui32(v101) >> (uint(int32(17)) % 32))
+							*(*int32)(unsafe.Add(mBase, uint32(v9)+56)) = v101 & int32(_a_F_PageGetItemIdCareful_2_0)
+							F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_2_3), v9+int32(48))
+							mBase = m.M
+							v120 = m.ExcPending
+							if v120 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_PageGetItemIdCareful_2_4), int32(3524), int32(_a_F_PageGetItemIdCareful_2_5))
+								mBase = m.M
+								v127 = m.ExcPending
+								if v127 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			} else {
+				m.G0 = v9 + int32(96)
+				return v15
+			}
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v39 = m.ExcPending
+		if v39 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(33557032))
+			mBase = m.M
+			v42 = m.ExcPending
+			if v42 != 0 {
+				return int32(0)
+			} else {
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+48))
+				*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v44 + int32(4)
+				F_errmsg(m, int32(_a_F_PageGetItemIdCareful_2_7), v9+int32(32))
+				mBase = m.M
+				v54 = m.ExcPending
+				if v54 != 0 {
+					return int32(0)
+				} else {
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(v15)))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(base.Ui32(v55)>>(uint(int32(15))%32)) & int32(3)
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = l3
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = l1
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(base.Ui32(v55) >> (uint(int32(17)) % 32))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v55 & int32(_a_F_PageGetItemIdCareful_2_0)
+					F_errdetail_internal(m, int32(_a_F_PageGetItemIdCareful_2_3), v9)
+					mBase = m.M
+					v72 = m.ExcPending
+					if v72 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_PageGetItemIdCareful_2_4), int32(3508), int32(_a_F_PageGetItemIdCareful_2_5))
+						mBase = m.M
+						v79 = m.ExcPending
+						if v79 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_ParseComplexProjection(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -4079,22 +4281,12 @@ func F_ProcessCopyOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v1615
 	var v1619 int32
 	_ = v1619
+	var v1622 int32
+	_ = v1622
 	var v1623 int32
 	_ = v1623
-	var v1637 int32
-	_ = v1637
-	var v1639 int32
-	_ = v1639
-	var v1642 int32
-	_ = v1642
-	var v1644 int32
-	_ = v1644
-	var v1645 int32
-	_ = v1645
-	var v1646 int32
-	_ = v1646
-	var v1649 int32
-	_ = v1649
+	var v1624 int32
+	_ = v1624
 	var v1661 int32
 	_ = v1661
 	var v1671 int32
@@ -8723,8 +8915,10 @@ L591:
 	goto L581
 L592:
 	;
+	v1622 = int32(_a_F_ProcessCopyOptions_46)
 	v1623 = int32(*(*int8)(unsafe.Add(mBase, uint32(v1524))))
-	goto L599
+	v1624 = int32(39)
+	goto L598
 L593:
 	;
 	goto L594
@@ -8753,61 +8947,13 @@ L597:
 	goto L615
 L598:
 	;
-	if base.B2i32(v1645 != v1646) == int32(0) {
-		goto L596
-	} else {
-		goto L606
-	}
-L599:
-	;
-	goto L600
-L600:
-	;
-	v1637 = int32(_a_F_ProcessCopyOptions_46)
-	v1639 = int32(39)
-	goto L601
-L601:
-	;
-	v1642 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1637))))
-	if v1642 == v1623&int32(255) {
-		v1698 = v1637
-		v1700 = v1639
-		goto L597
-	} else {
-		goto L603
-	}
-L602:
-	;
-	goto L598
-L603:
-	;
-	v1644 = int32(1)
-	v1645 = v1639 - v1644
-	v1646 = int32(0)
-	v1649 = v1637 + v1644
-	if v1649&int32(3) == v1646 {
-		goto L598
-	} else {
-		goto L604
-	}
-L604:
-	;
-	if v1645 != 0 {
-		v1637 = v1649
-		v1639 = v1645
-		goto L601
-	} else {
-		goto L605
-	}
-L605:
-	;
-	goto L602
+	goto L606
 L606:
 	;
-	v1661 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1649))))
+	v1661 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessCopyOptions[19])))
 	if v1661 == v1623&int32(255) {
-		v1691 = v1649
-		v1693 = v1645
+		v1691 = v1622
+		v1693 = v1624
 		goto L607
 	} else {
 		goto L608
@@ -8821,17 +8967,11 @@ L607:
 	}
 L608:
 	;
-	if base.Ui32(v1645) < base.Ui32(int32(4)) {
-		v1691 = v1649
-		v1693 = v1645
-		goto L607
-	} else {
-		goto L609
-	}
+	goto L609
 L609:
 	;
-	v1671 = v1649
-	v1673 = v1645
+	v1671 = v1622
+	v1673 = v1624
 	goto L610
 L610:
 	;

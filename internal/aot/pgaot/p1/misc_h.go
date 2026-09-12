@@ -7497,6 +7497,97 @@ L211:
 	;
 	goto L32
 }
+func F_heapcheck_read_stream_next_unskippable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	goto L1
+L1:
+	;
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v9 + int32(1)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if base.Ui32(v13) <= base.Ui32(v9) {
+		goto L3
+	} else {
+		goto L4
+	}
+L2:
+	;
+	return v9
+L3:
+	;
+	return int32(-1)
+L4:
+	;
+	goto L5
+L5:
+	;
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v19 = F_visibilitymap_get_status(m, v17, v9, v18)
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L6:
+	;
+	return int32(0)
+L7:
+	;
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	if v19&int32(2) != 0 {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v27 = v23
+	goto L10
+L9:
+	;
+	v27 = int32(1)
+	goto L10
+L10:
+	;
+	if v27 == int32(0) {
+		goto L1
+	} else {
+		goto L11
+	}
+L11:
+	;
+	v30 = int32(1)
+	if v19&v30&base.B2i32(v23 == v30) != 0 {
+		goto L1
+	} else {
+		goto L12
+	}
+L12:
+	;
+	goto L2
+}
 func F_hindi_UTF_8_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

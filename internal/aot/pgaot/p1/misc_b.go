@@ -5,6 +5,34 @@ import (
 	"unsafe"
 )
 
+func F_BTreeTupleGetPointsToTID(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	v2 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+7)))
+	if v2&int32(32) == int32(0) {
+		v18 = l0
+	} else {
+		v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+5)))
+		if v7&int32(32) == int32(0) {
+			v18 = l0
+		} else {
+			v12 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+2)))
+			v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0))))
+			v18 = l0 + (v12 | v13<<(uint(int32(16))%32))
+		}
+	}
+	return v18
+}
 func F_BackgroundWorkerInitializeConnectionByOid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase

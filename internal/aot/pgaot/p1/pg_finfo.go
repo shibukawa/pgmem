@@ -440,6 +440,9 @@ func F_pg_finfo_vector_recv(m *base.Module) int32 {
 func F_pg_finfo_vector_to_float4(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_vector_to_float4_0)
 }
+func F_pg_finfo_verify_heapam(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_verify_heapam_0)
+}
 func F_pg_finfo_weak_input_status(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_weak_input_status_0)
 }
