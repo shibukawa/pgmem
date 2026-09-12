@@ -8,7 +8,7 @@ import (
 func F_pa_reset_subtrans(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[507])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[506])) = int32(0)
 	return
 }
 func F_pa_shutdown(m *base.Module, l0 int32, l1 int32) {
@@ -24,7 +24,7 @@ func F_pa_shutdown(m *base.Module, l0 int32, l1 int32) {
 	_ = v9
 	var v11 int32
 	_ = v11
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[506]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[505]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+64))
 	v8 = F_SendProcSignal(m, v5, int32(6), int32(-1))
 	mBase = m.M

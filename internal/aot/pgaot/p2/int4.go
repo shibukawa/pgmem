@@ -87,13 +87,13 @@ func F_int4_mul_cash(m *base.Module, l0 int32) int32 {
 			if v64 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(420330), int32(0))
+				F_errmsg(m, int32(421219), int32(0))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521472), int32(150), int32(584808))
+					F_errfinish(m, int32(522881), int32(150), int32(586217))
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {
@@ -404,7 +404,7 @@ L14:
 	goto L2
 L15:
 	;
-	v57 = F_cstring_to_text(m, int32(790230))
+	v57 = F_cstring_to_text(m, int32(791891))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -489,7 +489,7 @@ L26:
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v13)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v79
 	*(*float64)(unsafe.Add(mBase, uint32(v13)+8)) = base.F64_convert_i32_s(v15)
-	v84 = F_psprintf(m, int32(439595), v13)
+	v84 = F_psprintf(m, int32(440484), v13)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -560,7 +560,7 @@ L35:
 	goto L36
 L36:
 	;
-	v115 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v15)
+	v115 = F_DirectFunctionCall1Coll(m, int32(1317), int32(0), v15)
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -570,7 +570,7 @@ L36:
 	}
 L37:
 	;
-	v108 = F_DirectFunctionCall1Coll(m, int32(1314), int32(0), v106*v15)
+	v108 = F_DirectFunctionCall1Coll(m, int32(1317), int32(0), v106*v15)
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {

@@ -51,9 +51,9 @@ func F_GenericMatchText(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 		if v9 != 0 {
 			return int32(0)
 		} else {
-			v11 = *(*int32)(unsafe.Add(mBase, _consts[357]))
+			v11 = *(*int32)(unsafe.Add(mBase, _consts[356]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+4))
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v12*int32(28))+uint32(_consts[356])))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v12*int32(28))+uint32(_consts[355])))
 			if v17 == int32(1) {
 				v20 = F_SB_MatchText(m, l0, l1, l2, l3, v6)
 				mBase = m.M
@@ -64,7 +64,7 @@ func F_GenericMatchText(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 					return v20
 				}
 			} else {
-				v24 = *(*int32)(unsafe.Add(mBase, _consts[357]))
+				v24 = *(*int32)(unsafe.Add(mBase, _consts[356]))
 				v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+4))
 				if v25 == int32(6) {
 					v28 = F_UTF8_MatchText(m, l0, l1, l2, l3, v6)
@@ -100,19 +100,19 @@ func F_GenericMatchText(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 			if v40 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(566131), int32(0))
+				F_errmsg(m, int32(567540), int32(0))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(601156), int32(0))
+					F_errhint(m, int32(602565), int32(0))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(522720), int32(163), int32(69745))
+						F_errfinish(m, int32(524129), int32(163), int32(69821))
 						mBase = m.M
 						v53 = m.ExcPending
 						if v53 != 0 {

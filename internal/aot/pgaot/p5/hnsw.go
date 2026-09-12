@@ -925,7 +925,7 @@ func F_HnswSearchLayer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	v36 = m.G0
 	v38 = v36 - int32(1232)
 	m.G0 = v38
-	v42 = F_pairingheap_allocate(m, int32(7660), v15)
+	v42 = F_pairingheap_allocate(m, int32(7677), v15)
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -938,7 +938,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v48 = F_pairingheap_allocate(m, int32(7661), int32(0))
+	v48 = F_pairingheap_allocate(m, int32(7678), int32(0))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -1072,7 +1072,7 @@ L20:
 	}
 L21:
 	;
-	v90 = F_pairingheap_allocate(m, int32(7662), int32(0))
+	v90 = F_pairingheap_allocate(m, int32(7679), int32(0))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -2305,5 +2305,5 @@ L210:
 	goto L207
 }
 func F_hnsw_sparsevec_support(m *base.Module, l0 int32) int32 {
-	return int32(4116432)
+	return int32(4120640)
 }

@@ -63,15 +63,15 @@ func F_extract_jsp_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(0)
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if l2 != 0 {
-		v21 = int32(1337)
+		v21 = int32(1340)
 	} else {
-		v21 = int32(1338)
+		v21 = int32(1341)
 	}
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+56)) = v21
 	if l2 != 0 {
-		v25 = int32(1339)
+		v25 = int32(1342)
 	} else {
-		v25 = int32(1340)
+		v25 = int32(1343)
 	}
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+52)) = v25
 	v28 = int32(base.Ui32(v18) >> (uint(int32(31)) % 32))

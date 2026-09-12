@@ -62,13 +62,13 @@ func F_VectorArrayInit(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(25449), int32(0))
+			F_errmsg_internal(m, int32(25482), int32(0))
 			mBase = m.M
 			v18 = m.ExcPending
 			if v18 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(516663), int32(29), int32(107027))
+				F_errfinish(m, int32(518045), int32(29), int32(107189))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
@@ -88,13 +88,13 @@ func F_VectorArrayInit(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(25449), int32(0))
+				F_errmsg_internal(m, int32(25482), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(516663), int32(29), int32(107027))
+					F_errfinish(m, int32(518045), int32(29), int32(107189))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -143,13 +143,13 @@ func F_VectorArrayInit(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v14 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(25449), int32(0))
+					F_errmsg_internal(m, int32(25482), int32(0))
 					mBase = m.M
 					v18 = m.ExcPending
 					if v18 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(516663), int32(29), int32(107027))
+						F_errfinish(m, int32(518045), int32(29), int32(107189))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {
@@ -911,7 +911,7 @@ L33:
 	v166 = int32(*(*int16)(unsafe.Add(mBase, uint32(v22)+4)))
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v166
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v165
-	F_errmsg(m, int32(499600), v14)
+	F_errmsg(m, int32(500709), v14)
 	mBase = m.M
 	v171 = m.ExcPending
 	if v171 != 0 {
@@ -921,7 +921,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(518027), int32(76), int32(159834))
+	F_errfinish(m, int32(519409), int32(76), int32(160136))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -1176,13 +1176,13 @@ func F_vector_negative_inner_product(m *base.Module, l0 int32) int32 {
 						v161 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v161
 						*(*int32)(unsafe.Add(mBase, uint32(v15))) = v160
-						F_errmsg(m, int32(499600), v15)
+						F_errmsg(m, int32(500709), v15)
 						mBase = m.M
 						v166 = m.ExcPending
 						if v166 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518027), int32(76), int32(159834))
+							F_errfinish(m, int32(519409), int32(76), int32(160136))
 							mBase = m.M
 							v171 = m.ExcPending
 							if v171 != 0 {

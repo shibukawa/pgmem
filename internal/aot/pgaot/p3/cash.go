@@ -45,13 +45,13 @@ func F_cash_div_int2(m *base.Module, l0 int32) int32 {
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(251260), int32(0))
+				F_errmsg(m, int32(251839), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521472), int32(161), int32(584779))
+					F_errfinish(m, int32(522881), int32(161), int32(586188))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
@@ -115,13 +115,13 @@ func F_cash_div_int4(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(251260), int32(0))
+				F_errmsg(m, int32(251839), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521472), int32(161), int32(584779))
+					F_errfinish(m, int32(522881), int32(161), int32(586188))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -188,13 +188,13 @@ func F_cash_div_int8(m *base.Module, l0 int32) int32 {
 			if v15 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(251260), int32(0))
+				F_errmsg(m, int32(251839), int32(0))
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521472), int32(161), int32(584779))
+					F_errfinish(m, int32(522881), int32(161), int32(586188))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
@@ -380,7 +380,7 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 				} else {
 					v64 = v42
 				}
-				v69 = int32(1275)
+				v69 = int32(1278)
 				v70 = int32(0)
 				v75 = F_int64_to_numeric(m, v64)
 				mBase = m.M
@@ -394,7 +394,7 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 					if v78 != 0 {
 						return int32(0)
 					} else {
-						v79 = F_DirectFunctionCall2Coll(m, int32(1276), v70, v14, v77)
+						v79 = F_DirectFunctionCall2Coll(m, int32(1279), v70, v14, v77)
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {

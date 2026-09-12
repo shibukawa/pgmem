@@ -931,7 +931,7 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 	v4 = m.G0
 	v6 = v4 - int32(48)
 	m.G0 = v6
-	v9 = int32(*(*uint8)(unsafe.Add(mBase, _consts[256])))
+	v9 = int32(*(*uint8)(unsafe.Add(mBase, _consts[254])))
 	if v9 != int32(1) {
 		m.G0 = v6 + int32(48)
 		return
@@ -946,7 +946,7 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 				return
 			} else {
 				if v14 != 0 {
-					v17 = *(*int32)(unsafe.Add(mBase, _consts[222]))
+					v17 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 					if v14 == v17 {
 						m.G0 = v6 + int32(48)
 						return
@@ -977,13 +977,13 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v29
 										*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v27
-										F_errmsg(m, int32(742174), v6+int32(16))
+										F_errmsg(m, int32(743811), v6+int32(16))
 										mBase = m.M
 										v37 = m.ExcPending
 										if v37 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(523239), int32(227), int32(284249))
+											F_errfinish(m, int32(524648), int32(227), int32(284871))
 											mBase = m.M
 											v42 = m.ExcPending
 											if v42 != 0 {
@@ -1018,7 +1018,7 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 							if v52 != 0 {
 								return
 							} else {
-								v54 = *(*int32)(unsafe.Add(mBase, _consts[222]))
+								v54 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 								v55 = F_get_extension_name(m, v54)
 								mBase = m.M
 								v56 = m.ExcPending
@@ -1027,19 +1027,19 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v55
 									*(*int32)(unsafe.Add(mBase, uint32(v6))) = v51
-									F_errmsg(m, int32(742215), v6)
+									F_errmsg(m, int32(743852), v6)
 									mBase = m.M
 									v61 = m.ExcPending
 									if v61 != 0 {
 										return
 									} else {
-										F_errdetail(m, int32(639691), int32(0))
+										F_errdetail(m, int32(641131), int32(0))
 										mBase = m.M
 										v65 = m.ExcPending
 										if v65 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(523239), int32(235), int32(284249))
+											F_errfinish(m, int32(524648), int32(235), int32(284871))
 											mBase = m.M
 											v70 = m.ExcPending
 											if v70 != 0 {
@@ -1060,7 +1060,7 @@ func F_recordDependencyOnCurrentExtension(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(3079)
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(0)
-			v76 = *(*int32)(unsafe.Add(mBase, _consts[222]))
+			v76 = *(*int32)(unsafe.Add(mBase, _consts[220]))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = v76
 			F_recordMultipleDependencies(m, l0, v6+int32(36), int32(1), int32(101))
 			mBase = m.M

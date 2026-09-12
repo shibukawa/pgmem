@@ -17,7 +17,7 @@ func F_GetMemoryChunkContext(m *base.Module, l0 int32) int32 {
 	var v15 int32
 	_ = v15
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0-int32(8))))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4&int32(15)*int32(36))+uint32(_consts[1233])))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v4&int32(15)*int32(36))+uint32(_consts[1232])))
 	v12 = m.T0[v11].(func(*base.Module, int32) int32)(m, l0)
 	mBase = m.M
 	v15 = m.ExcPending
@@ -674,13 +674,13 @@ func F_MemoryContextSizeFailure(m *base.Module, l0 int32) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		F_errmsg_internal(m, int32(38830), v5)
+		F_errmsg_internal(m, int32(38906), v5)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(514738), int32(1177), int32(380925))
+			F_errfinish(m, int32(516120), int32(1177), int32(381793))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -748,8 +748,8 @@ func F_MemoryContextStats(m *base.Module, l0 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v23
 		v30 = *(*int32)(unsafe.Add(mBase, uint32(v6)+36))
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v30
-		v33 = *(*int32)(unsafe.Add(mBase, _consts[464]))
-		v35 = F_pg_fprintf(m, v33, int32(783362), v6)
+		v33 = *(*int32)(unsafe.Add(mBase, _consts[463]))
+		v35 = F_pg_fprintf(m, v33, int32(785015), v6)
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {

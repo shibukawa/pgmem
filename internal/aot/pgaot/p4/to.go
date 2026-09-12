@@ -922,13 +922,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v112
-									F_errmsg(m, int32(760206), v7+int32(16))
+									F_errmsg(m, int32(761843), v7+int32(16))
 									mBase = m.M
 									v119 = m.ExcPending
 									if v119 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(521728), int32(4173), int32(374252))
+										F_errfinish(m, int32(523137), int32(4173), int32(375120))
 										mBase = m.M
 										v124 = m.ExcPending
 										if v124 != 0 {
@@ -987,13 +987,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v7))) = v93
-											F_errmsg(m, int32(760206), v7)
+											F_errmsg(m, int32(761843), v7)
 											mBase = m.M
 											v98 = m.ExcPending
 											if v98 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(521728), int32(4182), int32(374252))
+												F_errfinish(m, int32(523137), int32(4182), int32(375120))
 												mBase = m.M
 												v103 = m.ExcPending
 												if v103 != 0 {
@@ -1028,13 +1028,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v112
-										F_errmsg(m, int32(760206), v7+int32(16))
+										F_errmsg(m, int32(761843), v7+int32(16))
 										mBase = m.M
 										v119 = m.ExcPending
 										if v119 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(4173), int32(374252))
+											F_errfinish(m, int32(523137), int32(4173), int32(375120))
 											mBase = m.M
 											v124 = m.ExcPending
 											if v124 != 0 {
@@ -1095,13 +1095,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v93
-										F_errmsg(m, int32(760206), v7)
+										F_errmsg(m, int32(761843), v7)
 										mBase = m.M
 										v98 = m.ExcPending
 										if v98 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(4182), int32(374252))
+											F_errfinish(m, int32(523137), int32(4182), int32(375120))
 											mBase = m.M
 											v103 = m.ExcPending
 											if v103 != 0 {
@@ -1137,13 +1137,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v112
-										F_errmsg(m, int32(760206), v7+int32(16))
+										F_errmsg(m, int32(761843), v7+int32(16))
 										mBase = m.M
 										v119 = m.ExcPending
 										if v119 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(4173), int32(374252))
+											F_errfinish(m, int32(523137), int32(4173), int32(375120))
 											mBase = m.M
 											v124 = m.ExcPending
 											if v124 != 0 {
@@ -1179,13 +1179,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v112
-											F_errmsg(m, int32(760206), v7+int32(16))
+											F_errmsg(m, int32(761843), v7+int32(16))
 											mBase = m.M
 											v119 = m.ExcPending
 											if v119 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(521728), int32(4173), int32(374252))
+												F_errfinish(m, int32(523137), int32(4173), int32(375120))
 												mBase = m.M
 												v124 = m.ExcPending
 												if v124 != 0 {
@@ -1242,13 +1242,13 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v7))) = v93
-												F_errmsg(m, int32(760206), v7)
+												F_errmsg(m, int32(761843), v7)
 												mBase = m.M
 												v98 = m.ExcPending
 												if v98 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(521728), int32(4182), int32(374252))
+													F_errfinish(m, int32(523137), int32(4182), int32(375120))
 													mBase = m.M
 													v103 = m.ExcPending
 													if v103 != 0 {
@@ -1322,7 +1322,7 @@ func F_to_regoper(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _consts[1328]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1495), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1498), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
@@ -1393,7 +1393,7 @@ func F_to_regoperator(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _consts[1328]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1496), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1499), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {
@@ -1464,7 +1464,7 @@ func F_to_regrole(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
 			v20 = *(*int64)(unsafe.Add(mBase, _consts[1328]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1499), v14, int32(-1), v7, v7+int32(12))
+			v26 = F_DirectInputFunctionCallSafe(m, int32(1502), v14, int32(-1), v7, v7+int32(12))
 			mBase = m.M
 			v27 = m.ExcPending
 			if v27 != 0 {

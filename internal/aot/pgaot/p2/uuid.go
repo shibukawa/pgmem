@@ -25,7 +25,7 @@ func F_uuid_generate_v4(m *base.Module, l0 int32) int32 {
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		v18 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v3+int32(-48))
+		v18 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v3+int32(-48))
 		v19 = m.ExcPending
 		if v19 != 0 {
 			return int32(0)

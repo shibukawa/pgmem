@@ -197,13 +197,13 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 					if v139 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(473369), int32(0))
+						F_errmsg(m, int32(474354), int32(0))
 						mBase = m.M
 						v145 = m.ExcPending
 						if v145 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523173), int32(1423), int32(436928))
+							F_errfinish(m, int32(524582), int32(1423), int32(437817))
 							mBase = m.M
 							v152 = m.ExcPending
 							if v152 != 0 {
@@ -295,7 +295,7 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 			} else {
 				switch v14 - int32(16) {
 				case 0:
-					v116 = F_DirectFunctionCall2Coll(m, int32(6574), int32(0), v17, v83)
+					v116 = F_DirectFunctionCall2Coll(m, int32(6577), int32(0), v17, v83)
 					mBase = m.M
 					v117 = m.ExcPending
 					if v117 != 0 {
@@ -314,7 +314,7 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 						}
 					}
 				case 1:
-					v89 = F_DirectFunctionCall2Coll(m, int32(6512), int32(0), v17, v83)
+					v89 = F_DirectFunctionCall2Coll(m, int32(6515), int32(0), v17, v83)
 					mBase = m.M
 					v90 = m.ExcPending
 					if v90 != 0 {
@@ -333,7 +333,7 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 						}
 					}
 				case 2:
-					v94 = F_DirectFunctionCall2Coll(m, int32(6573), int32(0), v17, v83)
+					v94 = F_DirectFunctionCall2Coll(m, int32(6576), int32(0), v17, v83)
 					mBase = m.M
 					v95 = m.ExcPending
 					if v95 != 0 {
@@ -359,13 +359,13 @@ func F_g_cube_distance(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = v14
-						F_errmsg_internal(m, int32(503999), v12)
+						F_errmsg_internal(m, int32(505366), v12)
 						mBase = m.M
 						v106 = m.ExcPending
 						if v106 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523173), int32(1498), int32(436928))
+							F_errfinish(m, int32(524582), int32(1498), int32(437817))
 							mBase = m.M
 							v113 = m.ExcPending
 							if v113 != 0 {

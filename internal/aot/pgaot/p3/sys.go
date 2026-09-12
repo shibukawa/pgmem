@@ -22,7 +22,7 @@ func F_SearchSysCacheAttName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v12
 	var v17 int32
 	_ = v17
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1100]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1101]))
 	v5 = F_SearchCatCache2(m, v4, l0, l1)
 	mBase = m.M
 	v8 = m.ExcPending
@@ -69,7 +69,7 @@ func F_SearchSysCacheExistsAttName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v15
 	var v19 int32
 	_ = v19
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1100]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1101]))
 	v6 = F_SearchCatCache2(m, v5, l0, l1)
 	mBase = m.M
 	v9 = m.ExcPending

@@ -3452,6 +3452,26 @@ func F_Pg_magic_func_pg_freespacemap(m *base.Module) int32
 func F_pg_finfo_pg_freespace(m *base.Module) int32
 //go:linkname F_pg_freespace github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_freespace
 func F_pg_freespace(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_autoprewarm_start_worker github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_autoprewarm_start_worker
+func F_pg_finfo_autoprewarm_start_worker(m *base.Module) int32
+//go:linkname F_pg_finfo_autoprewarm_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_autoprewarm_dump_now
+func F_pg_finfo_autoprewarm_dump_now(m *base.Module) int32
+//go:linkname F__PG_init_pg_prewarm github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F__PG_init_pg_prewarm
+func F__PG_init_pg_prewarm(m *base.Module)
+//go:linkname F_autoprewarm_main github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_autoprewarm_main
+func F_autoprewarm_main(m *base.Module, l0 int32)
+//go:linkname F_autoprewarm_database_main github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_autoprewarm_database_main
+func F_autoprewarm_database_main(m *base.Module, l0 int32)
+//go:linkname F_autoprewarm_start_worker github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_autoprewarm_start_worker
+func F_autoprewarm_start_worker(m *base.Module, l0 int32) int32
+//go:linkname F_autoprewarm_dump_now github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_autoprewarm_dump_now
+func F_autoprewarm_dump_now(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_prewarm github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_Pg_magic_func_pg_prewarm
+func F_Pg_magic_func_pg_prewarm(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_prewarm github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_pg_prewarm
+func F_pg_finfo_pg_prewarm(m *base.Module) int32
+//go:linkname F_pg_prewarm github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_prewarm
+func F_pg_prewarm(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

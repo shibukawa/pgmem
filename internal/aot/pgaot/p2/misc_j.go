@@ -76,13 +76,13 @@ func F_jsonpath_recv(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v10
-				F_errmsg_internal(m, int32(504102), v6)
+				F_errmsg_internal(m, int32(505469), v6)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(521387), int32(125), int32(37927))
+					F_errfinish(m, int32(522796), int32(125), int32(38003))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -164,7 +164,7 @@ func F_jsonpath_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v15
 				if v15 == int32(0) {
-					F_yy_fatal_error_5(m, int32(713847))
+					F_yy_fatal_error_5(m, int32(715442))
 					mBase = m.M
 					v81 = m.ExcPending
 					if v81 != 0 {
@@ -227,7 +227,7 @@ func F_jsonpath_yy_create_buffer(m *base.Module, l0 int32, l1 int32) int32 {
 				}
 			}
 		} else {
-			F_yy_fatal_error_5(m, int32(713847))
+			F_yy_fatal_error_5(m, int32(715442))
 			mBase = m.M
 			v78 = m.ExcPending
 			if v78 != 0 {

@@ -185,13 +185,13 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 							if v128 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(161982), int32(0))
+								F_errmsg(m, int32(162284), int32(0))
 								mBase = m.M
 								v134 = m.ExcPending
 								if v134 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(514811), int32(71), int32(98205))
+									F_errfinish(m, int32(516193), int32(71), int32(98281))
 									mBase = m.M
 									v141 = m.ExcPending
 									if v141 != 0 {
@@ -271,7 +271,7 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 									v74 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v73)+16)))
 									v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73+v74)+12)))
 									if v76&int32(1) != 0 {
-										v83 = F_DirectFunctionCall3Coll(m, int32(6382), int32(0), v72, v62, v9+int32(15))
+										v83 = F_DirectFunctionCall3Coll(m, int32(6385), int32(0), v72, v62, v9+int32(15))
 										mBase = m.M
 										v84 = m.ExcPending
 										if v84 != 0 {
@@ -443,7 +443,7 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 							v74 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v73)+16)))
 							v76 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v73+v74)+12)))
 							if v76&int32(1) != 0 {
-								v83 = F_DirectFunctionCall3Coll(m, int32(6382), int32(0), v72, v62, v9+int32(15))
+								v83 = F_DirectFunctionCall3Coll(m, int32(6385), int32(0), v72, v62, v9+int32(15))
 								mBase = m.M
 								v84 = m.ExcPending
 								if v84 != 0 {

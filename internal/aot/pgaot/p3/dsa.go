@@ -47,7 +47,7 @@ func F_dsa_create_ext(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				return int32(0)
 			} else {
 				v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)+24))
-				F_on_dsm_detach(m, v6, int32(1786), v17)
+				F_on_dsm_detach(m, v6, int32(1789), v17)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
@@ -941,7 +941,7 @@ L60:
 	v199 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v83)+26)))
 	*(*uint16)(unsafe.Add(mBase, uint32(v151))) = uint16(v199)
 	v202 = int32(1)
-	v206 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152<<(uint(v202)%32))+uint32(_consts[1201]))))
+	v206 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152<<(uint(v202)%32))+uint32(_consts[1202]))))
 	v207 = base.I32_div_u_s(v151-v118, v206)
 	*(*uint16)(unsafe.Add(mBase, uint32(v83)+26)) = uint16(v207)
 	v209 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v83)+24)))

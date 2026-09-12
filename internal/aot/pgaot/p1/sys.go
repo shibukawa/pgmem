@@ -14,7 +14,7 @@ func F_SearchSysCache2(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1148])))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1147])))
 	v9 = F_SearchCatCache2(m, v8, l1, l2)
 	mBase = m.M
 	v12 = m.ExcPending
@@ -33,7 +33,7 @@ func F_SearchSysCache4(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	_ = v12
 	var v15 int32
 	_ = v15
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1148])))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1147])))
 	v12 = F_SearchCatCacheInternal(m, v10, int32(4), l1, l2, l3, l4)
 	mBase = m.M
 	v15 = m.ExcPending
@@ -54,7 +54,7 @@ func F_SearchSysCacheExists(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v14
 	var v16 int32
 	_ = v16
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1148])))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[1147])))
 	v11 = F_SearchCatCache(m, v10, l1, l2, l3, l4)
 	mBase = m.M
 	v14 = m.ExcPending

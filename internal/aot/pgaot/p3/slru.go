@@ -634,7 +634,7 @@ L44:
 	goto L40
 L45:
 	;
-	v292 = int32(4548900)
+	v292 = int32(4556740)
 	v294 = *(*int32)(unsafe.Add(mBase, _consts[17]))
 	*(*int32)(unsafe.Add(mBase, _consts[17])) = v294 + int32(1)
 	F_XLogFlush(m, v286)
@@ -647,7 +647,7 @@ L45:
 	}
 L46:
 	;
-	v300 = int32(4548900)
+	v300 = int32(4556740)
 	v302 = *(*int32)(unsafe.Add(mBase, _consts[17]))
 	*(*int32)(unsafe.Add(mBase, _consts[17])) = v302 - int32(1)
 	goto L16
@@ -680,7 +680,7 @@ L50:
 	;
 	v467 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[43])) = v467
-	v469 = int32(4160316)
+	v469 = int32(4164524)
 	v470 = *(*int32)(unsafe.Add(mBase, _consts[42]))
 	*(*int32)(unsafe.Add(mBase, uint32(v470))) = int32(167772213)
 	v473 = *(*int32)(unsafe.Add(mBase, uint32(v125)+4))
@@ -770,7 +770,7 @@ L62:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v23)+8)) = v142
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v390
-	v400 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(534555), v23)
+	v400 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(535964), v23)
 	mBase = m.M
 	v401 = m.ExcPending
 	if v401 != 0 {
@@ -785,7 +785,7 @@ L64:
 	;
 	*(*uint32)(unsafe.Add(mBase, uint32(v23)+20)) = uint32(v142)
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+16)) = v390
-	v410 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(534949), v23+int32(16))
+	v410 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(536358), v23+int32(16))
 	mBase = m.M
 	v411 = m.ExcPending
 	if v411 != 0 {
@@ -1116,10 +1116,10 @@ L108:
 	goto L47
 L109:
 	;
-	v719 = int32(4449956)
+	v719 = int32(4457780)
 	v721 = *(*int32)(unsafe.Add(mBase, _consts[159]))
 	*(*int32)(unsafe.Add(mBase, _consts[159])) = v721 + int32(1)
-	v725 = int32(4533944)
+	v725 = int32(4541784)
 	v727 = *(*int64)(unsafe.Add(mBase, _consts[160]))
 	*(*int64)(unsafe.Add(mBase, _consts[160])) = v727 + int64(1)
 	goto L1
@@ -1194,7 +1194,7 @@ L2:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-	v21 = F_pg_snprintf(m, l2, int32(1024), int32(534555), v9)
+	v21 = F_pg_snprintf(m, l2, int32(1024), int32(535964), v9)
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -1209,7 +1209,7 @@ L4:
 	;
 	*(*uint32)(unsafe.Add(mBase, uint32(v9)+20)) = uint32(v13)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v12
-	v31 = F_pg_snprintf(m, l2, int32(1024), int32(534949), v9+int32(16))
+	v31 = F_pg_snprintf(m, l2, int32(1024), int32(536358), v9+int32(16))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {

@@ -11,6 +11,6 @@ func F_socket_comm_reset(m *base.Module) {
 	var v2 int32
 	_ = v2
 	v2 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[371])) = uint8(v2)
+	*(*uint8)(unsafe.Add(mBase, _consts[370])) = uint8(v2)
 	return
 }

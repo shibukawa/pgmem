@@ -121,11 +121,11 @@ L3:
 	return int32(0)
 L4:
 	;
-	v17 = int32(5646)
+	v17 = int32(5649)
 	goto L6
 L5:
 	;
-	v17 = int32(5645)
+	v17 = int32(5648)
 	goto L6
 L6:
 	;

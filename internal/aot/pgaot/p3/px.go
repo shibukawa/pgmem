@@ -196,12 +196,12 @@ L4:
 L5:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+28)) = v163
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(7420)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(7421)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(7422)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(7423)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(7424)
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(7425)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(7433)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = int32(7434)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(7435)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(7436)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(7437)
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(7438)
 	F_pfree(m, v13)
 	mBase = m.M
 	v188 = m.ExcPending
@@ -372,8 +372,8 @@ L32:
 	;
 	v60 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v56))) = uint8(v60)
-	v62 = int32(484205)
-	v65 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1324])))
+	v62 = int32(485262)
+	v65 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1325])))
 	v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27))))
 	if v66 == v60 {
 		v85 = v65
@@ -468,8 +468,8 @@ L46:
 	}
 L47:
 	;
-	v100 = int32(184082)
-	v103 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1325])))
+	v100 = int32(184506)
+	v103 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1326])))
 	v104 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v91))))
 	if v104 == int32(0) {
 		v123 = v103
@@ -534,8 +534,8 @@ L55:
 	goto L53
 L56:
 	;
-	v128 = int32(390159)
-	v131 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1326])))
+	v128 = int32(391048)
+	v131 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1327])))
 	v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v91))))
 	if v132 == int32(0) {
 		v151 = v131

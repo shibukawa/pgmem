@@ -193,7 +193,7 @@ L5:
 	goto L3
 L6:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[291]))
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[290]))
 	goto L13
 L7:
 	;
@@ -386,7 +386,7 @@ L32:
 	goto L10
 L33:
 	;
-	v93 = F_AllocSetContextCreateInternal(m, v85, int32(296614), int32(0), int32(1024), int32(8388608))
+	v93 = F_AllocSetContextCreateInternal(m, v85, int32(297279), int32(0), int32(1024), int32(8388608))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -444,7 +444,7 @@ L40:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+4)) = v103
 	*(*int32)(unsafe.Add(mBase, uint32(v106))) = int32(953717834)
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[237]))
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[235]))
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+12)) = v112
 	v114 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+85)))
 	*(*uint8)(unsafe.Add(mBase, uint32(v106)+16)) = uint8(v114)
@@ -932,7 +932,7 @@ L45:
 	v148 = int32(1)
 	v149 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 	*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v149 + v148
-	F_ResourceOwnerRemember(m, l2, l1, int32(1771948))
+	F_ResourceOwnerRemember(m, l2, l1, int32(1776044))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {

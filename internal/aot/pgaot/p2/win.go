@@ -172,13 +172,13 @@ func F_WinGetFuncArgInFrame(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		if v26 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(395183), int32(0))
+			F_errmsg_internal(m, int32(396072), int32(0))
 			mBase = m.M
 			v30 = m.ExcPending
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(521810), int32(3482), int32(395224))
+				F_errfinish(m, int32(523219), int32(3482), int32(396113))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -462,13 +462,13 @@ func F_WinGetFuncArgInFrame(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 					} else {
 						v78 = *(*int32)(unsafe.Add(mBase, uint32(v18)+228))
 						*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = v78
-						F_errmsg_internal(m, int32(31075), v16+int32(16))
+						F_errmsg_internal(m, int32(31108), v16+int32(16))
 						mBase = m.M
 						v84 = m.ExcPending
 						if v84 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521810), int32(3542), int32(395224))
+							F_errfinish(m, int32(523219), int32(3542), int32(396113))
 							mBase = m.M
 							v89 = m.ExcPending
 							if v89 != 0 {
@@ -891,13 +891,13 @@ func F_WinGetFuncArgInFrame(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 					} else {
 						v151 = *(*int32)(unsafe.Add(mBase, uint32(v18)+228))
 						*(*int32)(unsafe.Add(mBase, uint32(v16)+32)) = v151
-						F_errmsg_internal(m, int32(31075), v16+int32(32))
+						F_errmsg_internal(m, int32(31108), v16+int32(32))
 						mBase = m.M
 						v157 = m.ExcPending
 						if v157 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(521810), int32(3612), int32(395224))
+							F_errfinish(m, int32(523219), int32(3612), int32(396113))
 							mBase = m.M
 							v162 = m.ExcPending
 							if v162 != 0 {
@@ -1038,13 +1038,13 @@ func F_WinGetFuncArgInFrame(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = l2
-			F_errmsg_internal(m, int32(507131), v16)
+			F_errmsg_internal(m, int32(508498), v16)
 			mBase = m.M
 			v170 = m.ExcPending
 			if v170 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(521810), int32(3618), int32(395224))
+				F_errfinish(m, int32(523219), int32(3618), int32(396113))
 				mBase = m.M
 				v175 = m.ExcPending
 				if v175 != 0 {
@@ -1179,13 +1179,13 @@ func F_WinSetMarkPosition(m *base.Module, l0 int32, l1 int64) {
 		if v35 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(441547), int32(0))
+			F_errmsg_internal(m, int32(442436), int32(0))
 			mBase = m.M
 			v39 = m.ExcPending
 			if v39 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(521810), int32(3292), int32(261886))
+				F_errfinish(m, int32(523219), int32(3292), int32(262465))
 				mBase = m.M
 				v44 = m.ExcPending
 				if v44 != 0 {

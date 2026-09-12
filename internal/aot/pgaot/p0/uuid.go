@@ -377,18 +377,18 @@ func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(581420)
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[1127]))
+	v7 = int32(582829)
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1126]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
-	v10 = *(*int64)(unsafe.Add(mBase, _consts[1128]))
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1127]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[1129]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1128]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[1130]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1129]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[1131]))
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1130]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -434,8 +434,8 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 			v17 = int64(-1)
 			*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v17
 			*(*int64)(unsafe.Add(mBase, uint32(v11))) = v17
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1546)
-			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1547)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+12)) = int32(1549)
+			*(*int32)(unsafe.Add(mBase, uint32(v4)+8)) = int32(1550)
 			*(*int32)(unsafe.Add(mBase, uint32(v4)+4)) = v11
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = v6
 			return int32(0)
@@ -520,7 +520,7 @@ func F_uuid_unparse(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = v24
 	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v23
-	v57 = F_snprintf(m, l1, int32(37), int32(30772), v21)
+	v57 = F_snprintf(m, l1, int32(37), int32(30805), v21)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {

@@ -23,17 +23,17 @@ func F_xml_is_well_formed(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(380395), int32(0))
+			F_errmsg(m, int32(381263), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(605576), int32(0))
+				F_errdetail(m, int32(606985), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520902), int32(4615), int32(474042))
+					F_errfinish(m, int32(522311), int32(4615), int32(475027))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

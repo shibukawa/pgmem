@@ -126,7 +126,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v17
-	v26 = F_pg_sprintf(m, v13, int32(526840), v9+int32(16))
+	v26 = F_pg_sprintf(m, v13, int32(528249), v9+int32(16))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -199,7 +199,7 @@ L14:
 	goto L15
 L15:
 	;
-	v57 = F_pg_sprintf(m, v54, int32(689274), int32(0))
+	v57 = F_pg_sprintf(m, v54, int32(690762), int32(0))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -210,7 +210,7 @@ L15:
 L16:
 	;
 	v48 = v46 + v29
-	v51 = F_pg_sprintf(m, v48, int32(779143), int32(0))
+	v51 = F_pg_sprintf(m, v48, int32(780780), int32(0))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -233,7 +233,7 @@ L18:
 L19:
 	;
 	v62 = v54 + v57
-	v65 = F_pg_sprintf(m, v62, int32(779143), int32(0))
+	v65 = F_pg_sprintf(m, v62, int32(780780), int32(0))
 	mBase = m.M
 	v66 = m.ExcPending
 	if v66 != 0 {
@@ -266,7 +266,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = base.I32_extend8_s(v68)
-	v77 = F_pg_sprintf(m, v67, int32(526840), v9)
+	v77 = F_pg_sprintf(m, v67, int32(528249), v9)
 	mBase = m.M
 	v78 = m.ExcPending
 	if v78 != 0 {
@@ -324,7 +324,7 @@ func F_seg_same(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(6670), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(6673), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

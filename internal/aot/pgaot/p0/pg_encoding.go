@@ -16,7 +16,7 @@ func F_pg_encoding_max_length_sql(m *base.Module, l0 int32) int32 {
 	_ = v12
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	if base.Ui32(v3) <= base.Ui32(int32(41)) {
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(v3*int32(28))+uint32(_consts[863])))
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(v3*int32(28))+uint32(_consts[862])))
 		return v10
 	} else {
 		v12 = int32(1)
@@ -36,7 +36,7 @@ func F_pg_encoding_mblen(m *base.Module, l0 int32, l1 int32) int32 {
 	var v16 int32
 	_ = v16
 	if base.Ui32(l0) <= base.Ui32(int32(41)) {
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[952])))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0*int32(28))+uint32(_consts[951])))
 		v12 = m.T0[v11].(func(*base.Module, int32) int32)(m, l1)
 		mBase = m.M
 		v15 = m.ExcPending
@@ -62,7 +62,7 @@ func F_pg_encoding_to_char_private(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(3))%32))+uint32(_consts[768])))
 		v11 = v10
 	} else {
-		v11 = int32(790230)
+		v11 = int32(791891)
 	}
 	return v11
 }

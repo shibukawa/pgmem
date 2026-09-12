@@ -134,7 +134,7 @@ func F_InstrEndParallelQuery(m *base.Module, l0 int32, l1 int32) {
 	_ = v157
 	v8 = F__emscripten_memset_bulkmem(m, l0, base.I32_extend8_s(int32(0)), int32(128))
 	mBase = m.M
-	v9 = int32(4452664)
+	v9 = int32(4460488)
 	v10 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
 	v12 = *(*int64)(unsafe.Add(mBase, _consts[103]))
 	v13 = *(*int64)(unsafe.Add(mBase, _consts[441]))
@@ -269,13 +269,13 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 			if v51 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(32226), int32(0))
+				F_errmsg_internal(m, int32(32259), int32(0))
 				mBase = m.M
 				v55 = m.ExcPending
 				if v55 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(515548), int32(72), int32(433133))
+					F_errfinish(m, int32(516930), int32(72), int32(434022))
 					mBase = m.M
 					v60 = m.ExcPending
 					if v60 != 0 {
@@ -295,7 +295,7 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v15 + v16*int64(1000000000)
 			v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
 			if v21 == int32(1) {
-				v28 = F__emscripten_memcpy_bulkmem(m, l0+int32(40), int32(4452504), int32(128))
+				v28 = F__emscripten_memcpy_bulkmem(m, l0+int32(40), int32(4460328), int32(128))
 				mBase = m.M
 			} else {
 			}
@@ -317,7 +317,7 @@ func F_InstrStartNode(m *base.Module, l0 int32) {
 	} else {
 		v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
 		if v21 == int32(1) {
-			v28 = F__emscripten_memcpy_bulkmem(m, l0+int32(40), int32(4452504), int32(128))
+			v28 = F__emscripten_memcpy_bulkmem(m, l0+int32(40), int32(4460328), int32(128))
 			mBase = m.M
 		} else {
 		}

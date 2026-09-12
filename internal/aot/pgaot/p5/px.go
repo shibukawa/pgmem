@@ -82,7 +82,7 @@ func F_px_find_digest(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v154
 	var v155 int32
 	_ = v155
-	v10 = int32(582898)
+	v10 = int32(584307)
 	v11 = l0
 	goto L3
 L1:
@@ -174,7 +174,7 @@ L14:
 	goto L4
 L15:
 	;
-	v112 = int32(4432064)
+	v112 = int32(4436272)
 	goto L1
 L16:
 	;
@@ -193,7 +193,7 @@ L18:
 	}
 L19:
 	;
-	v112 = v64 + int32(4432064)
+	v112 = v64 + int32(4436272)
 	goto L1
 L20:
 	;
@@ -204,7 +204,7 @@ L21:
 L22:
 	;
 	v64 = v58 << (uint(int32(3)) % 32)
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[1448])))
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v64)+uint32(_consts[1449])))
 	v70 = v67
 	v71 = l0
 	goto L24
@@ -294,7 +294,7 @@ L37:
 L38:
 	;
 	v119 = *(*int32)(unsafe.Add(mBase, uint32(v112)+4))
-	v121 = *(*int32)(unsafe.Add(mBase, _consts[147]))
+	v121 = *(*int32)(unsafe.Add(mBase, _consts[145]))
 	v123 = F_MemoryContextAlloc(m, v121, int32(16))
 	mBase = m.M
 	v124 = m.ExcPending
@@ -359,7 +359,7 @@ L46:
 	*(*int32)(unsafe.Add(mBase, uint32(v123)+4)) = v132 & int32(65535)
 	v148 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	*(*int32)(unsafe.Add(mBase, uint32(v123)+12)) = v148
-	F_ResourceOwnerRemember(m, v148, v123, int32(4432488))
+	F_ResourceOwnerRemember(m, v148, v123, int32(4436696))
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -383,12 +383,12 @@ L48:
 L49:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v154)+24)) = v123
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+20)) = int32(7354)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+16)) = int32(7355)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+12)) = int32(7356)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+8)) = int32(7357)
-	*(*int32)(unsafe.Add(mBase, uint32(v154)+4)) = int32(7358)
-	*(*int32)(unsafe.Add(mBase, uint32(v154))) = int32(7359)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+20)) = int32(7367)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+16)) = int32(7368)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+12)) = int32(7369)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+8)) = int32(7370)
+	*(*int32)(unsafe.Add(mBase, uint32(v154)+4)) = int32(7371)
+	*(*int32)(unsafe.Add(mBase, uint32(v154))) = int32(7372)
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v154
 	return int32(0)
 }

@@ -1921,7 +1921,7 @@ func F_pgaio_io_register_callbacks(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_pgaio_result_report github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgaio_result_report
 func F_pgaio_result_report(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_read_stream_begin_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_read_stream_begin_relation
-func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+func F_read_stream_begin_relation(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_read_stream_next_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_read_stream_next_buffer
 func F_read_stream_next_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_read_stream_start_pending_read github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_read_stream_start_pending_read
@@ -1937,7 +1937,7 @@ func F_BufTableDelete(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_UnpinBufferNoOwner github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_UnpinBufferNoOwner
 func F_UnpinBufferNoOwner(m *base.Module, l0 int32)
 //go:linkname F_PrefetchBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_PrefetchBuffer
-func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32)
+func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_ReservePrivateRefCountEntry github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ReservePrivateRefCountEntry
 func F_ReservePrivateRefCountEntry(m *base.Module)
 //go:linkname F_LockBufHdr github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LockBufHdr
@@ -2214,6 +2214,8 @@ func F_LockRelease(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_LockRefindAndRelease(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_VirtualXactLock github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_VirtualXactLock
 func F_VirtualXactLock(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_LWLockNewTrancheId github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LWLockNewTrancheId
+func F_LWLockNewTrancheId(m *base.Module) int32
 //go:linkname F_LWLockAcquire github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LWLockAcquire
 func F_LWLockAcquire(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_LWLockQueueSelf github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_LWLockQueueSelf

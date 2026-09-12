@@ -2022,6 +2022,8 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 func F_read_stream_next_buffer(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_read_stream_end github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_read_stream_end
 func F_read_stream_end(m *base.Module, l0 int32)
+//go:linkname F_PrefetchBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_PrefetchBuffer
+func F_PrefetchBuffer(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_GetPrivateRefCountEntry github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetPrivateRefCountEntry
 func F_GetPrivateRefCountEntry(m *base.Module, l0 int32) int32
 //go:linkname F_ReadBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ReadBuffer
@@ -2231,7 +2233,7 @@ func F_LockRelease(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_GetSingleProcBlockerStatusData github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GetSingleProcBlockerStatusData
 func F_GetSingleProcBlockerStatusData(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_LWLockRegisterTranche github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LWLockRegisterTranche
-func F_LWLockRegisterTranche(m *base.Module, l0 int32)
+func F_LWLockRegisterTranche(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_LWLockNewTrancheId github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_LWLockNewTrancheId
 func F_LWLockNewTrancheId(m *base.Module) int32
 //go:linkname F_LWLockAcquire github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_LWLockAcquire
@@ -2298,6 +2300,8 @@ func F_smgrexists(m *base.Module, l0 int32, l1 int32) int32
 func F_smgrcreate(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_smgrextend github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_smgrextend
 func F_smgrextend(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_smgrreadv github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_smgrreadv
+func F_smgrreadv(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_smgrwritev github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_smgrwritev
 func F_smgrwritev(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_smgrnblocks github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_smgrnblocks
@@ -3437,7 +3441,7 @@ func F_set_config_option_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 //go:linkname F_reapply_stacked_values github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_reapply_stacked_values
 func F_reapply_stacked_values(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
-func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
+func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_DefineCustomRealVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_DefineCustomRealVariable
 func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable

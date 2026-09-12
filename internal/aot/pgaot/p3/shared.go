@@ -109,13 +109,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v92
 				v95 = *(*int32)(unsafe.Add(mBase, _consts[114]))
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v95 + int32(38)
-				F_errmsg_internal(m, int32(710170), v10+int32(16))
+				F_errmsg_internal(m, int32(711765), v10+int32(16))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(515824), int32(282), int32(107134))
+					F_errfinish(m, int32(517206), int32(282), int32(107296))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -155,13 +155,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v35
 							v121 = *(*int32)(unsafe.Add(mBase, _consts[112]))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v121
-							F_errmsg_internal(m, int32(490094), v10)
+							F_errmsg_internal(m, int32(491151), v10)
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(515824), int32(297), int32(107134))
+								F_errfinish(m, int32(517206), int32(297), int32(107296))
 								mBase = m.M
 								v130 = m.ExcPending
 								if v130 != 0 {
@@ -198,7 +198,7 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 					if v67 != 0 {
 						return
 					} else {
-						F_on_shmem_exit(m, int32(1106), v22)
+						F_on_shmem_exit(m, int32(1109), v22)
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -218,13 +218,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 		if v77 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(113188), int32(0))
+			F_errmsg_internal(m, int32(113350), int32(0))
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(515824), int32(279), int32(107134))
+				F_errfinish(m, int32(517206), int32(279), int32(107296))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -287,18 +287,18 @@ func F_process_shared_preload_libraries(m *base.Module) {
 	var v14 int32
 	_ = v14
 	v2 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[1130])) = uint8(v2)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1131]))
-	F_load_libraries(m, v5, int32(178220), int32(0))
+	*(*uint8)(unsafe.Add(mBase, _consts[1131])) = uint8(v2)
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1132]))
+	F_load_libraries(m, v5, int32(178644), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return
 	} else {
 		v11 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[1132])) = uint8(v11)
+		*(*uint8)(unsafe.Add(mBase, _consts[1133])) = uint8(v11)
 		v14 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[1130])) = uint8(v14)
+		*(*uint8)(unsafe.Add(mBase, _consts[1131])) = uint8(v14)
 		return
 	}
 }

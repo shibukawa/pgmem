@@ -162,13 +162,13 @@ func F_read_seq_tuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					v84 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v84
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v83 + int32(4)
-					F_errmsg_internal(m, int32(534909), v9)
+					F_errmsg_internal(m, int32(536318), v9)
 					mBase = m.M
 					v91 = m.ExcPending
 					if v91 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(523122), int32(1205), int32(401321))
+						F_errfinish(m, int32(524531), int32(1205), int32(402210))
 						mBase = m.M
 						v96 = m.ExcPending
 						if v96 != 0 {

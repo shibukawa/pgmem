@@ -116,7 +116,7 @@ func F_queue_listen(m *base.Module, l0 int32, l1 int32) {
 	goto L1
 L1:
 	;
-	v14 = int32(4554240)
+	v14 = int32(4562080)
 	v15 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[141]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v18
@@ -340,7 +340,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v109)+4)) = v117
-	v120 = int32(4451196)
+	v120 = int32(4459020)
 	v121 = *(*int32)(unsafe.Add(mBase, _consts[151]))
 	*(*int32)(unsafe.Add(mBase, uint32(v109)+8)) = v121
 	*(*int32)(unsafe.Add(mBase, _consts[151])) = v109
@@ -412,16 +412,16 @@ func F_quickdie(m *base.Module, l0 int32) {
 	_ = v118
 	var v121 int32
 	_ = v121
-	v24 = int32(4461592)
-	v25 = *(*int32)(unsafe.Add(mBase, _consts[845]))
-	*(*int32)(unsafe.Add(mBase, _consts[845])) = v25 | int32(4)
-	F_sigprocmask(m, int32(4461592), int32(0))
+	v24 = int32(4469416)
+	v25 = *(*int32)(unsafe.Add(mBase, _consts[844]))
+	*(*int32)(unsafe.Add(mBase, _consts[844])) = v25 | int32(4)
+	F_sigprocmask(m, int32(4469416), int32(0))
 	mBase = m.M
 	v34 = m.ExcPending
 	if v34 != 0 {
 		return
 	} else {
-		v35 = int32(4548892)
+		v35 = int32(4556732)
 		v37 = *(*int32)(unsafe.Add(mBase, _consts[163]))
 		v38 = int32(1)
 		*(*int32)(unsafe.Add(mBase, _consts[163])) = v37 + v38
@@ -435,12 +435,12 @@ func F_quickdie(m *base.Module, l0 int32) {
 			}
 		}
 		v53 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _consts[338])) = v53
+		*(*int32)(unsafe.Add(mBase, _consts[337])) = v53
 		v58 = int32(*(*uint8)(unsafe.Add(mBase, _consts[131])))
 		if v58 != int32(1) {
 			v66 = v53
 		} else {
-			v62 = *(*int32)(unsafe.Add(mBase, _consts[572]))
+			v62 = *(*int32)(unsafe.Add(mBase, _consts[566]))
 			if v62 == int32(0) {
 				v66 = v53
 			} else {
@@ -469,14 +469,14 @@ func F_quickdie(m *base.Module, l0 int32) {
 					if v76 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(328225), int32(0))
+						F_errmsg(m, int32(329067), int32(0))
 						mBase = m.M
 						v80 = m.ExcPending
 						if v80 != 0 {
 							return
 						} else {
 							v118 = int32(3089)
-							F_errfinish(m, int32(516971), v118, int32(417055))
+							F_errfinish(m, int32(518353), v118, int32(417944))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -512,26 +512,26 @@ func F_quickdie(m *base.Module, l0 int32) {
 					if v90 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(137105), int32(0))
+						F_errmsg(m, int32(137267), int32(0))
 						mBase = m.M
 						v94 = m.ExcPending
 						if v94 != 0 {
 							return
 						} else {
-							F_errdetail(m, int32(598382), int32(0))
+							F_errdetail(m, int32(599791), int32(0))
 							mBase = m.M
 							v98 = m.ExcPending
 							if v98 != 0 {
 								return
 							} else {
-								F_errhint(m, int32(673302), int32(0))
+								F_errhint(m, int32(674742), int32(0))
 								mBase = m.M
 								v102 = m.ExcPending
 								if v102 != 0 {
 									return
 								} else {
 									v118 = int32(3101)
-									F_errfinish(m, int32(516971), v118, int32(417055))
+									F_errfinish(m, int32(518353), v118, int32(417944))
 									mBase = m.M
 									v121 = m.ExcPending
 									if v121 != 0 {
@@ -569,14 +569,14 @@ func F_quickdie(m *base.Module, l0 int32) {
 					if v112 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(448390), int32(0))
+						F_errmsg(m, int32(449279), int32(0))
 						mBase = m.M
 						v116 = m.ExcPending
 						if v116 != 0 {
 							return
 						} else {
 							v118 = int32(3107)
-							F_errfinish(m, int32(516971), v118, int32(417055))
+							F_errfinish(m, int32(518353), v118, int32(417944))
 							mBase = m.M
 							v121 = m.ExcPending
 							if v121 != 0 {
@@ -641,7 +641,7 @@ func F_quote_qualified_identifier(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v14
-				F_appendStringInfo(m, v6+int32(16), int32(633500), v6)
+				F_appendStringInfo(m, v6+int32(16), int32(634909), v6)
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {

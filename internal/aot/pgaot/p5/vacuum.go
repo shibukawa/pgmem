@@ -31,17 +31,17 @@ func F_check_vacuum_buffer_usage_limit(m *base.Module, l0 int32, l1 int32, l2 in
 	v9 = int32(0)
 	v15 = base.B2i32(v8 == v9) | base.B2i32(base.Ui32(v8-int32(128)) < base.Ui32(int32(16777089)))
 	if v15 == v9 {
-		v19 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-		*(*int32)(unsafe.Add(mBase, _consts[88])) = v19
+		v19 = *(*int32)(unsafe.Add(mBase, _consts[85]))
+		*(*int32)(unsafe.Add(mBase, _consts[86])) = v19
 		*(*int64)(unsafe.Add(mBase, uint32(v6)+4)) = int64(72057594037928064)
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(107777)
-		v28 = F_format_elog_string(m, int32(688327), v6)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(107939)
+		v28 = F_format_elog_string(m, int32(689815), v6)
 		mBase = m.M
 		v31 = m.ExcPending
 		if v31 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[89])) = v28
+			*(*int32)(unsafe.Add(mBase, _consts[87])) = v28
 			m.G0 = v6 + int32(16)
 			return v15
 		}
@@ -351,7 +351,7 @@ L14:
 	goto L8
 L15:
 	;
-	v87 = int32(4548900)
+	v87 = int32(4556740)
 	v89 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v89 + int32(1)
 	v94 = v50 & int32(65535)
@@ -362,7 +362,7 @@ L15:
 	}
 L16:
 	;
-	v372 = int32(4548900)
+	v372 = int32(4556740)
 	v374 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v374 - int32(1)
 	m.G0 = v22 + int32(1648)

@@ -102,9 +102,9 @@ L6:
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(240560)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = int32(241106)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(518217)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(519599)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = int64(0)
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v23)+24))
@@ -124,8 +124,8 @@ L9:
 	goto L10
 L10:
 	;
-	v65 = int32(4160236)
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[602]))
+	v65 = int32(4164444)
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(8))+8))
 	if v68 == int32(0) {
 		goto L19
@@ -175,7 +175,7 @@ L17:
 	goto L16
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[602])) = v83
+	*(*int32)(unsafe.Add(mBase, _consts[603])) = v83
 	goto L17
 L19:
 	;
@@ -278,7 +278,7 @@ func F_database_to_xml(m *base.Module, l0 int32) int32 {
 		if v8 != 0 {
 			return int32(0)
 		} else {
-			v10 = *(*int32)(unsafe.Add(mBase, _consts[108]))
+			v10 = *(*int32)(unsafe.Add(mBase, _consts[106]))
 			v11 = F_get_database_name(m, v10)
 			mBase = m.M
 			v12 = m.ExcPending

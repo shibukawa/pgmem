@@ -139,7 +139,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	v5 = l4
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[4]))
 	if v19 == int32(0) {
-		v33 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+		v33 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 		v51 = v33
 		v53 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 		if l1 == int32(0) {
@@ -185,10 +185,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		v91 = v89 * int32(84)
 		v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 		if v93 != int32(-1) {
-			v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+			v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 			v100 = v97
 		} else {
-			v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+			v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 			v100 = v99
 		}
 		if base.Ui32(v85) < base.Ui32(v100) {
@@ -218,7 +218,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 			} else {
 			}
-			v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+			v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 			v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 			*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -318,7 +318,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 		if l2 != 0 {
 			v23 = *(*int32)(unsafe.Add(mBase, uint32(l2)+56))
 			if base.Ui32(v23) < base.Ui32(int32(12000)) {
-				v33 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+				v33 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 				v51 = v33
 				v53 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 				if l1 == int32(0) {
@@ -364,10 +364,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				v91 = v89 * int32(84)
 				v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 				if v93 != int32(-1) {
-					v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+					v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 					v100 = v97
 				} else {
-					v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+					v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 					v100 = v99
 				}
 				if base.Ui32(v85) < base.Ui32(v100) {
@@ -397,7 +397,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 					} else {
 					}
-					v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+					v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 					v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 					*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -547,10 +547,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							v91 = v89 * int32(84)
 							v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 							if v93 != int32(-1) {
-								v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+								v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 								v100 = v97
 							} else {
-								v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+								v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 								v100 = v99
 							}
 							if base.Ui32(v85) < base.Ui32(v100) {
@@ -580,7 +580,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 								} else {
 								}
-								v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+								v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 								v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 								*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -689,11 +689,11 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								if int32(0) <= v43 {
 									v49 = v43
 								} else {
-									v48 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+									v48 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 									v49 = v48
 								}
 							} else {
-								v48 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+								v48 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 								v49 = v48
 							}
 							v51 = v49
@@ -741,10 +741,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							v91 = v89 * int32(84)
 							v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 							if v93 != int32(-1) {
-								v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+								v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 								v100 = v97
 							} else {
-								v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+								v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 								v100 = v99
 							}
 							if base.Ui32(v85) < base.Ui32(v100) {
@@ -774,7 +774,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 								} else {
 								}
-								v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+								v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 								v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 								*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 								*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -872,7 +872,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						}
 					}
 				} else {
-					v33 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+					v33 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 					v51 = v33
 					v53 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 					if l1 == int32(0) {
@@ -918,10 +918,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					v91 = v89 * int32(84)
 					v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 					if v93 != int32(-1) {
-						v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+						v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 						v100 = v97
 					} else {
-						v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+						v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 						v100 = v99
 					}
 					if base.Ui32(v85) < base.Ui32(v100) {
@@ -951,7 +951,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 						} else {
 						}
-						v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+						v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 						v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 						*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 						*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -1103,10 +1103,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						v91 = v89 * int32(84)
 						v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 						if v93 != int32(-1) {
-							v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+							v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 							v100 = v97
 						} else {
-							v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+							v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 							v100 = v99
 						}
 						if base.Ui32(v85) < base.Ui32(v100) {
@@ -1136,7 +1136,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 							} else {
 							}
-							v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+							v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 							v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 							*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -1245,11 +1245,11 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							if int32(0) <= v43 {
 								v49 = v43
 							} else {
-								v48 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+								v48 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 								v49 = v48
 							}
 						} else {
-							v48 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+							v48 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 							v49 = v48
 						}
 						v51 = v49
@@ -1297,10 +1297,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						v91 = v89 * int32(84)
 						v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 						if v93 != int32(-1) {
-							v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+							v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 							v100 = v97
 						} else {
-							v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+							v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 							v100 = v99
 						}
 						if base.Ui32(v85) < base.Ui32(v100) {
@@ -1330,7 +1330,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 							} else {
 							}
-							v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+							v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 							v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 							*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 							*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))
@@ -1428,7 +1428,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					}
 				}
 			} else {
-				v33 = *(*int32)(unsafe.Add(mBase, _consts[735]))
+				v33 = *(*int32)(unsafe.Add(mBase, _consts[736]))
 				v51 = v33
 				v53 = *(*int32)(unsafe.Add(mBase, _consts[431]))
 				if l1 == int32(0) {
@@ -1474,10 +1474,10 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				v91 = v89 * int32(84)
 				v93 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
 				if v93 != int32(-1) {
-					v97 = *(*int32)(unsafe.Add(mBase, _consts[736]))
+					v97 = *(*int32)(unsafe.Add(mBase, _consts[737]))
 					v100 = v97
 				} else {
-					v99 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+					v99 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 					v100 = v99
 				}
 				if base.Ui32(v85) < base.Ui32(v100) {
@@ -1507,7 +1507,7 @@ func F_read_stream_begin_impl(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						*(*int32)(unsafe.Add(mBase, uint32(v122)+60)) = (v127 + v91 + int32(7)) & int32(-8)
 					} else {
 					}
-					v136 = *(*int32)(unsafe.Add(mBase, _consts[738]))
+					v136 = *(*int32)(unsafe.Add(mBase, _consts[739]))
 					v140 = int32(base.Ui32(l0)>>(uint(int32(3))%32)) & int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v122)+25)) = uint8(v140)
 					*(*uint8)(unsafe.Add(mBase, uint32(v122)+24)) = uint8(base.B2i32(v136 == int32(0)))

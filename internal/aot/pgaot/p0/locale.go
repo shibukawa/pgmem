@@ -11,7 +11,7 @@ func F_assign_locale_time(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[807])) = uint8(v4)
+	*(*uint8)(unsafe.Add(mBase, _consts[806])) = uint8(v4)
 	return
 }
 func F_check_locale_messages(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

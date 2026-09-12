@@ -21,12 +21,12 @@ func F_float_overflow_error(m *base.Module) {
 		if v7 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(32889), int32(0))
+			F_errmsg(m, int32(32965), int32(0))
 			v11 = m.ExcPending
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(515956), int32(90), int32(222310))
+				F_errfinish(m, int32(517338), int32(90), int32(222734))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return
@@ -58,12 +58,12 @@ func F_float_zero_divide_error(m *base.Module) {
 		if v7 != 0 {
 			return
 		} else {
-			F_errmsg(m, int32(251260), int32(0))
+			F_errmsg(m, int32(251839), int32(0))
 			v11 = m.ExcPending
 			if v11 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(515956), int32(106), int32(222780))
+				F_errfinish(m, int32(517338), int32(106), int32(223204))
 				v16 = m.ExcPending
 				if v16 != 0 {
 					return

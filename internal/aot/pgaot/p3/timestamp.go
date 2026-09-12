@@ -229,7 +229,7 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						}
 					}
 					v183 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[959])))
+					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[960])))
 					if v168 <= v189 {
 						v199 = int32(0)
 					} else {
@@ -264,7 +264,7 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						}
 					}
 					v183 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[959])))
+					v189 = *(*int32)(unsafe.Add(mBase, uint32(v180*int32(52)+v183<<(uint(int32(2))%32))+uint32(_consts[960])))
 					if v168 <= v189 {
 						v199 = int32(0)
 					} else {
@@ -300,13 +300,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l2
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+100)) = l1
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = l0
-						F_errmsg(m, int32(486666), v15+int32(96))
+						F_errmsg(m, int32(487723), v15+int32(96))
 						mBase = m.M
 						v468 = m.ExcPending
 						if v468 != 0 {
 							return int64(0)
 						} else {
-							F_errfinish(m, int32(518960), int32(607), int32(325722))
+							F_errfinish(m, int32(520342), int32(607), int32(326564))
 							mBase = m.M
 							v473 = m.ExcPending
 							if v473 != 0 {
@@ -384,13 +384,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								*(*float64)(unsafe.Add(mBase, uint32(v15)+8)) = l5
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = l4
 								*(*int32)(unsafe.Add(mBase, uint32(v15))) = l3
-								F_errmsg(m, int32(354229), v15)
+								F_errmsg(m, int32(355097), v15)
 								mBase = m.M
 								v398 = m.ExcPending
 								if v398 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(518960), int32(616), int32(325722))
+									F_errfinish(m, int32(520342), int32(616), int32(326564))
 									mBase = m.M
 									v403 = m.ExcPending
 									if v403 != 0 {
@@ -438,13 +438,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-									F_errmsg(m, int32(354179), v15+int32(16))
+									F_errmsg(m, int32(355047), v15+int32(16))
 									mBase = m.M
 									v423 = m.ExcPending
 									if v423 != 0 {
 										return int64(0)
 									} else {
-										F_errfinish(m, int32(518960), int32(628), int32(325722))
+										F_errfinish(m, int32(520342), int32(628), int32(326564))
 										mBase = m.M
 										v428 = m.ExcPending
 										if v428 != 0 {
@@ -487,13 +487,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-										F_errmsg(m, int32(354179), v15+int32(16))
+										F_errmsg(m, int32(355047), v15+int32(16))
 										mBase = m.M
 										v423 = m.ExcPending
 										if v423 != 0 {
 											return int64(0)
 										} else {
-											F_errfinish(m, int32(518960), int32(628), int32(325722))
+											F_errfinish(m, int32(520342), int32(628), int32(326564))
 											mBase = m.M
 											v428 = m.ExcPending
 											if v428 != 0 {
@@ -526,13 +526,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+56)) = l2
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+52)) = l1
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l0
-											F_errmsg(m, int32(354179), v15+int32(48))
+											F_errmsg(m, int32(355047), v15+int32(48))
 											mBase = m.M
 											v448 = m.ExcPending
 											if v448 != 0 {
 												return int64(0)
 											} else {
-												F_errfinish(m, int32(518960), int32(636), int32(325722))
+												F_errfinish(m, int32(520342), int32(636), int32(326564))
 												mBase = m.M
 												v453 = m.ExcPending
 												if v453 != 0 {
@@ -568,13 +568,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l2
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+100)) = l1
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = l0
-							F_errmsg(m, int32(486666), v15+int32(96))
+							F_errmsg(m, int32(487723), v15+int32(96))
 							mBase = m.M
 							v468 = m.ExcPending
 							if v468 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(518960), int32(607), int32(325722))
+								F_errfinish(m, int32(520342), int32(607), int32(326564))
 								mBase = m.M
 								v473 = m.ExcPending
 								if v473 != 0 {
@@ -654,13 +654,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 							*(*float64)(unsafe.Add(mBase, uint32(v15)+8)) = l5
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = l4
 							*(*int32)(unsafe.Add(mBase, uint32(v15))) = l3
-							F_errmsg(m, int32(354229), v15)
+							F_errmsg(m, int32(355097), v15)
 							mBase = m.M
 							v398 = m.ExcPending
 							if v398 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(518960), int32(616), int32(325722))
+								F_errfinish(m, int32(520342), int32(616), int32(326564))
 								mBase = m.M
 								v403 = m.ExcPending
 								if v403 != 0 {
@@ -708,13 +708,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-								F_errmsg(m, int32(354179), v15+int32(16))
+								F_errmsg(m, int32(355047), v15+int32(16))
 								mBase = m.M
 								v423 = m.ExcPending
 								if v423 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(518960), int32(628), int32(325722))
+									F_errfinish(m, int32(520342), int32(628), int32(326564))
 									mBase = m.M
 									v428 = m.ExcPending
 									if v428 != 0 {
@@ -757,13 +757,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-									F_errmsg(m, int32(354179), v15+int32(16))
+									F_errmsg(m, int32(355047), v15+int32(16))
 									mBase = m.M
 									v423 = m.ExcPending
 									if v423 != 0 {
 										return int64(0)
 									} else {
-										F_errfinish(m, int32(518960), int32(628), int32(325722))
+										F_errfinish(m, int32(520342), int32(628), int32(326564))
 										mBase = m.M
 										v428 = m.ExcPending
 										if v428 != 0 {
@@ -796,13 +796,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+56)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+52)) = l1
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l0
-										F_errmsg(m, int32(354179), v15+int32(48))
+										F_errmsg(m, int32(355047), v15+int32(48))
 										mBase = m.M
 										v448 = m.ExcPending
 										if v448 != 0 {
 											return int64(0)
 										} else {
-											F_errfinish(m, int32(518960), int32(636), int32(325722))
+											F_errfinish(m, int32(520342), int32(636), int32(326564))
 											mBase = m.M
 											v453 = m.ExcPending
 											if v453 != 0 {
@@ -839,13 +839,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l2
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+100)) = l1
 							*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = l0
-							F_errmsg(m, int32(486666), v15+int32(96))
+							F_errmsg(m, int32(487723), v15+int32(96))
 							mBase = m.M
 							v468 = m.ExcPending
 							if v468 != 0 {
 								return int64(0)
 							} else {
-								F_errfinish(m, int32(518960), int32(607), int32(325722))
+								F_errfinish(m, int32(520342), int32(607), int32(326564))
 								mBase = m.M
 								v473 = m.ExcPending
 								if v473 != 0 {
@@ -875,13 +875,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+104)) = l2
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+100)) = l1
 								*(*int32)(unsafe.Add(mBase, uint32(v15)+96)) = l0
-								F_errmsg(m, int32(486666), v15+int32(96))
+								F_errmsg(m, int32(487723), v15+int32(96))
 								mBase = m.M
 								v468 = m.ExcPending
 								if v468 != 0 {
 									return int64(0)
 								} else {
-									F_errfinish(m, int32(518960), int32(607), int32(325722))
+									F_errfinish(m, int32(520342), int32(607), int32(326564))
 									mBase = m.M
 									v473 = m.ExcPending
 									if v473 != 0 {
@@ -958,13 +958,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									*(*float64)(unsafe.Add(mBase, uint32(v15)+8)) = l5
 									*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = l4
 									*(*int32)(unsafe.Add(mBase, uint32(v15))) = l3
-									F_errmsg(m, int32(354229), v15)
+									F_errmsg(m, int32(355097), v15)
 									mBase = m.M
 									v398 = m.ExcPending
 									if v398 != 0 {
 										return int64(0)
 									} else {
-										F_errfinish(m, int32(518960), int32(616), int32(325722))
+										F_errfinish(m, int32(520342), int32(616), int32(326564))
 										mBase = m.M
 										v403 = m.ExcPending
 										if v403 != 0 {
@@ -1012,13 +1012,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 										*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-										F_errmsg(m, int32(354179), v15+int32(16))
+										F_errmsg(m, int32(355047), v15+int32(16))
 										mBase = m.M
 										v423 = m.ExcPending
 										if v423 != 0 {
 											return int64(0)
 										} else {
-											F_errfinish(m, int32(518960), int32(628), int32(325722))
+											F_errfinish(m, int32(520342), int32(628), int32(326564))
 											mBase = m.M
 											v428 = m.ExcPending
 											if v428 != 0 {
@@ -1061,13 +1061,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = l2
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = l1
 											*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = l0
-											F_errmsg(m, int32(354179), v15+int32(16))
+											F_errmsg(m, int32(355047), v15+int32(16))
 											mBase = m.M
 											v423 = m.ExcPending
 											if v423 != 0 {
 												return int64(0)
 											} else {
-												F_errfinish(m, int32(518960), int32(628), int32(325722))
+												F_errfinish(m, int32(520342), int32(628), int32(326564))
 												mBase = m.M
 												v428 = m.ExcPending
 												if v428 != 0 {
@@ -1100,13 +1100,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+56)) = l2
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+52)) = l1
 												*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = l0
-												F_errmsg(m, int32(354179), v15+int32(48))
+												F_errmsg(m, int32(355047), v15+int32(48))
 												mBase = m.M
 												v448 = m.ExcPending
 												if v448 != 0 {
 													return int64(0)
 												} else {
-													F_errfinish(m, int32(518960), int32(636), int32(325722))
+													F_errfinish(m, int32(520342), int32(636), int32(326564))
 													mBase = m.M
 													v453 = m.ExcPending
 													if v453 != 0 {
@@ -1146,13 +1146,13 @@ func F_make_timestamp_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				*(*int32)(unsafe.Add(mBase, uint32(v15)+120)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v15)+116)) = l1
 				*(*int32)(unsafe.Add(mBase, uint32(v15)+112)) = l0
-				F_errmsg(m, int32(486622), v15+int32(112))
+				F_errmsg(m, int32(487679), v15+int32(112))
 				mBase = m.M
 				v380 = m.ExcPending
 				if v380 != 0 {
 					return int64(0)
 				} else {
-					F_errfinish(m, int32(518960), int32(601), int32(325722))
+					F_errfinish(m, int32(520342), int32(601), int32(326564))
 					mBase = m.M
 					v385 = m.ExcPending
 					if v385 != 0 {
@@ -1254,13 +1254,13 @@ func F_timestamp_date(m *base.Module, l0 int32) int32 {
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(420796), int32(0))
+							F_errmsg(m, int32(421685), int32(0))
 							mBase = m.M
 							v75 = m.ExcPending
 							if v75 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(522212), int32(1379), int32(374237))
+								F_errfinish(m, int32(523621), int32(1379), int32(375105))
 								mBase = m.M
 								v80 = m.ExcPending
 								if v80 != 0 {
@@ -1466,13 +1466,13 @@ func F_timestamp_mi(m *base.Module, l0 int32) int32 {
 							if v74 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(420859), int32(0))
+								F_errmsg(m, int32(421748), int32(0))
 								mBase = m.M
 								v78 = m.ExcPending
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(518960), int32(2866), int32(334893))
+									F_errfinish(m, int32(520342), int32(2866), int32(335735))
 									mBase = m.M
 									v83 = m.ExcPending
 									if v83 != 0 {
@@ -1505,13 +1505,13 @@ func F_timestamp_mi(m *base.Module, l0 int32) int32 {
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(420859), int32(0))
+							F_errmsg(m, int32(421748), int32(0))
 							mBase = m.M
 							v94 = m.ExcPending
 							if v94 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518960), int32(2875), int32(334893))
+								F_errfinish(m, int32(520342), int32(2875), int32(335735))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
@@ -1546,13 +1546,13 @@ func F_timestamp_mi(m *base.Module, l0 int32) int32 {
 					if v106 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(420859), int32(0))
+						F_errmsg(m, int32(421748), int32(0))
 						mBase = m.M
 						v110 = m.ExcPending
 						if v110 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518960), int32(2890), int32(334893))
+							F_errfinish(m, int32(520342), int32(2890), int32(335735))
 							mBase = m.M
 							v115 = m.ExcPending
 							if v115 != 0 {
@@ -1567,7 +1567,7 @@ func F_timestamp_mi(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = int64(0)
-				v65 = F_DirectFunctionCall1Coll(m, int32(1515), int32(0), v10)
+				v65 = F_DirectFunctionCall1Coll(m, int32(1518), int32(0), v10)
 				mBase = m.M
 				v66 = m.ExcPending
 				if v66 != 0 {
@@ -1620,7 +1620,7 @@ func F_timestamp_mi_interval(m *base.Module, l0 int32) int32 {
 		if v18 != 0 {
 			return int32(0)
 		} else {
-			v19 = F_DirectFunctionCall2Coll(m, int32(1283), int32(0), v17, v6)
+			v19 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v17, v6)
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
@@ -1646,8 +1646,8 @@ func F_timestamp_skipsupport(m *base.Module, l0 int32) int32 {
 	var v15 int32
 	_ = v15
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1511)
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1512)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = int32(1514)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(1515)
 	v8 = F_Int64GetDatum(m, int64(-9223372036854775807-1))
 	mBase = m.M
 	v11 = m.ExcPending

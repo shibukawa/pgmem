@@ -5,13 +5,13 @@ import (
 	"unsafe"
 )
 
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v5 int32
-	_ = v5
+	var v6 int32
+	_ = v6
 	var v10 int32
 	_ = v10
 	var v11 int32
@@ -21,8 +21,8 @@ func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	var v22 int32
 	_ = v22
 	v4 = l3
-	v5 = int32(0)
-	v10 = F_init_custom_variable(m, l0, l1, v5, int32(6), v5, v5, int32(120))
+	v6 = int32(0)
+	v10 = F_init_custom_variable(m, l0, l1, v6, l4, v6, v6, int32(120))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {

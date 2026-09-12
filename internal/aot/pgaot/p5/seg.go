@@ -79,7 +79,7 @@ func F_seg_in(m *base.Module, l0 int32) int32 {
 				if v21 != 0 {
 					v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					v24 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
-					F_seg_yyerror(m, v11, v23, v24, int32(70560))
+					F_seg_yyerror(m, v11, v23, v24, int32(70636))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -125,7 +125,7 @@ func F_seg_le(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(6670), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(6673), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -298,7 +298,7 @@ func F_seg_yy_scan_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					return int32(0)
 				} else {
 					if v17 == int32(0) {
-						F_yy_fatal_error_7(m, int32(713805))
+						F_yy_fatal_error_7(m, int32(715400))
 						mBase = m.M
 						v82 = m.ExcPending
 						if v82 != 0 {
@@ -522,7 +522,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(v8+v9<<(uint(int32(2))%32))))
 		if v13 != 0 {
 			v27 = v13
-			v29 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+			v29 = *(*int32)(unsafe.Add(mBase, _consts[85]))
 			v30 = int32(0)
 			*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v30
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
@@ -560,7 +560,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v72+v27))) = v70
 			*(*int32)(unsafe.Add(mBase, uint32(v27)+24)) = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[87])) = v29
+			*(*int32)(unsafe.Add(mBase, _consts[85])) = v29
 			v79 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v79
 			v81 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
@@ -589,7 +589,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 					v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v21+v22<<(uint(int32(2))%32)))) = v19
 					v27 = v19
-					v29 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+					v29 = *(*int32)(unsafe.Add(mBase, _consts[85]))
 					v30 = int32(0)
 					*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v30
 					v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
@@ -627,7 +627,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v72+v27))) = v70
 					*(*int32)(unsafe.Add(mBase, uint32(v27)+24)) = int32(0)
-					*(*int32)(unsafe.Add(mBase, _consts[87])) = v29
+					*(*int32)(unsafe.Add(mBase, _consts[85])) = v29
 					v79 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
 					*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v79
 					v81 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
@@ -659,7 +659,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 				*(*int32)(unsafe.Add(mBase, uint32(v21+v22<<(uint(int32(2))%32)))) = v19
 				v27 = v19
-				v29 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+				v29 = *(*int32)(unsafe.Add(mBase, _consts[85]))
 				v30 = int32(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v30
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
@@ -697,7 +697,7 @@ func F_seg_yyrestart(m *base.Module, l0 int32, l1 int32) {
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v72+v27))) = v70
 				*(*int32)(unsafe.Add(mBase, uint32(v27)+24)) = int32(0)
-				*(*int32)(unsafe.Add(mBase, _consts[87])) = v29
+				*(*int32)(unsafe.Add(mBase, _consts[85])) = v29
 				v79 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = v79
 				v81 = *(*int32)(unsafe.Add(mBase, uint32(v50)+8))
@@ -731,7 +731,7 @@ func F_seg_yyset_column(m *base.Module, l0 int32, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = l0
 			return
 		} else {
-			F_yy_fatal_error_7(m, int32(236675))
+			F_yy_fatal_error_7(m, int32(237202))
 			mBase = m.M
 			v13 = m.ExcPending
 			if v13 != 0 {
@@ -743,7 +743,7 @@ func F_seg_yyset_column(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	} else {
-		F_yy_fatal_error_7(m, int32(236675))
+		F_yy_fatal_error_7(m, int32(237202))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {

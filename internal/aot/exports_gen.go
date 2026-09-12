@@ -10844,6 +10844,66 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgFreespace(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_pg_prewarm":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_pg_prewarm: want 0 args")
+		}
+		r := pgaot.PgMagicFuncPgPrewarm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_pg_prewarm":
+		if len(a) != 0 {
+			panic("aot: _PG_init_pg_prewarm: want 0 args")
+		}
+		pgaot.PGInitPgPrewarm(m)
+		return nil, true
+	case "autoprewarm_database_main":
+		if len(a) != 1 {
+			panic("aot: autoprewarm_database_main: want 1 args")
+		}
+		pgaot.AutoprewarmDatabaseMain(m, int32(uint32(a[0])))
+		return nil, true
+	case "autoprewarm_dump_now":
+		if len(a) != 1 {
+			panic("aot: autoprewarm_dump_now: want 1 args")
+		}
+		r := pgaot.AutoprewarmDumpNow(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "autoprewarm_main":
+		if len(a) != 1 {
+			panic("aot: autoprewarm_main: want 1 args")
+		}
+		pgaot.AutoprewarmMain(m, int32(uint32(a[0])))
+		return nil, true
+	case "autoprewarm_start_worker":
+		if len(a) != 1 {
+			panic("aot: autoprewarm_start_worker: want 1 args")
+		}
+		r := pgaot.AutoprewarmStartWorker(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_autoprewarm_dump_now":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_autoprewarm_dump_now: want 0 args")
+		}
+		r := pgaot.PgFinfoAutoprewarmDumpNow(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_autoprewarm_start_worker":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_autoprewarm_start_worker: want 0 args")
+		}
+		r := pgaot.PgFinfoAutoprewarmStartWorker(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_pg_prewarm":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_pg_prewarm: want 0 args")
+		}
+		r := pgaot.PgFinfoPgPrewarm(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_prewarm":
+		if len(a) != 1 {
+			panic("aot: pg_prewarm: want 1 args")
+		}
+		r := pgaot.PgPrewarm(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

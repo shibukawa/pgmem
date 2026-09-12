@@ -543,7 +543,7 @@ func F_uuid_generate_v1(m *base.Module, l0 int32) int32 {
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		v18 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v3+int32(-48))
+		v18 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v3+int32(-48))
 		v19 = m.ExcPending
 		if v19 != 0 {
 			return int32(0)
@@ -903,18 +903,18 @@ func F_uuid_nil(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(595164)
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[1368]))
+	v7 = int32(596573)
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1369]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
-	v10 = *(*int64)(unsafe.Add(mBase, _consts[1369]))
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1370]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[1370]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1371]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[1371]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1372]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[1372]))
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1373]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {

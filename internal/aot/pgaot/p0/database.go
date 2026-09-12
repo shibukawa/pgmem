@@ -90,7 +90,7 @@ func F_has_database_privilege_id(m *base.Module, l0 int32) int32 {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
 		v20 = *(*int32)(unsafe.Add(mBase, _consts[4]))
-		v22 = F_convert_any_priv_string(m, v12, int32(1689680))
+		v22 = F_convert_any_priv_string(m, v12, int32(1693776))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

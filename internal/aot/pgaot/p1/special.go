@@ -98,7 +98,7 @@ func F_DecodeSpecial(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v147
 	var v148 int32
 	_ = v148
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[1072]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[1071]))
 	if v9 != 0 {
 		goto L2
 	} else {
@@ -106,7 +106,7 @@ func F_DecodeSpecial(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1072])) = v140
+	*(*int32)(unsafe.Add(mBase, _consts[1071])) = v140
 	v147 = int32(*(*int8)(unsafe.Add(mBase, uint32(v140)+11)))
 	v148 = *(*int32)(unsafe.Add(mBase, uint32(v140)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v148
@@ -120,8 +120,8 @@ L3:
 L4:
 	;
 	v57 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0))))
-	v63 = int32(1691168)
-	v65 = int32(1692304)
+	v63 = int32(1695264)
+	v65 = int32(1696400)
 	goto L20
 L5:
 	;
@@ -397,9 +397,9 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 	_ = v30
 	if l0 != int32(2147483647) {
 		if l0 == int32(-2147483648) {
-			v8 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1060])))
+			v8 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1059])))
 			*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v8)
-			v11 = *(*int64)(unsafe.Add(mBase, _consts[1061]))
+			v11 = *(*int64)(unsafe.Add(mBase, _consts[1060]))
 			*(*int64)(unsafe.Add(mBase, uint32(l1))) = v11
 			return
 		} else {
@@ -409,13 +409,13 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 			if v16 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(374995), int32(0))
+				F_errmsg_internal(m, int32(375863), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(522212), int32(309), int32(375016))
+					F_errfinish(m, int32(523621), int32(309), int32(375884))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
@@ -429,9 +429,9 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 			}
 		}
 	} else {
-		v27 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1062])))
+		v27 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1061])))
 		*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)) = uint8(v27)
-		v30 = *(*int64)(unsafe.Add(mBase, _consts[1063]))
+		v30 = *(*int64)(unsafe.Add(mBase, _consts[1062]))
 		*(*int64)(unsafe.Add(mBase, uint32(l1))) = v30
 		return
 	}

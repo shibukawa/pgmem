@@ -85,7 +85,7 @@ func F_AtEOXact_Files(m *base.Module, l0 int32) {
 	v9 = m.G0
 	v11 = v9 - int32(32)
 	m.G0 = v11
-	v14 = int32(*(*uint8)(unsafe.Add(mBase, _consts[755])))
+	v14 = int32(*(*uint8)(unsafe.Add(mBase, _consts[754])))
 	if v14 != 0 {
 		goto L1
 	} else {
@@ -93,7 +93,7 @@ func F_AtEOXact_Files(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[754]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[753]))
 	if base.Ui32(int32(2)) <= base.Ui32(v16) {
 		goto L4
 	} else {
@@ -104,7 +104,7 @@ L2:
 	goto L3
 L3:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, _consts[756]))
+	v95 = *(*int32)(unsafe.Add(mBase, _consts[755]))
 	if l0 == int32(0) {
 		v119 = v95
 		goto L22
@@ -113,7 +113,7 @@ L3:
 	}
 L4:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _consts[753]))
+	v20 = *(*int32)(unsafe.Add(mBase, _consts[752]))
 	v23 = int32(1)
 	v26 = v16
 	v27 = v20
@@ -124,7 +124,7 @@ L5:
 L6:
 	;
 	v84 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[755])) = uint8(v84)
+	*(*uint8)(unsafe.Add(mBase, _consts[754])) = uint8(v84)
 	goto L3
 L7:
 	;
@@ -193,10 +193,10 @@ L14:
 	}
 L15:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _consts[753]))
+	v50 = *(*int32)(unsafe.Add(mBase, _consts[752]))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v50+v31)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v52
-	F_errmsg_internal(m, int32(268698), v11+int32(16))
+	F_errmsg_internal(m, int32(269277), v11+int32(16))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -219,7 +219,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(523612), int32(3302), int32(175103))
+	F_errfinish(m, int32(525021), int32(3302), int32(175527))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -232,8 +232,8 @@ L19:
 	goto L17
 L20:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[754]))
-	v69 = *(*int32)(unsafe.Add(mBase, _consts[753]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[753]))
+	v69 = *(*int32)(unsafe.Add(mBase, _consts[752]))
 	v70 = v67
 	v71 = v69
 	goto L9
@@ -267,7 +267,7 @@ L24:
 	}
 L25:
 	;
-	v105 = *(*int32)(unsafe.Add(mBase, _consts[756]))
+	v105 = *(*int32)(unsafe.Add(mBase, _consts[755]))
 	if v102 == int32(0) {
 		v119 = v105
 		goto L22
@@ -277,7 +277,7 @@ L25:
 L26:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v105
-	F_errmsg_internal(m, int32(268630), v11)
+	F_errmsg_internal(m, int32(269209), v11)
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -287,7 +287,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(523612), int32(3314), int32(175103))
+	F_errfinish(m, int32(525021), int32(3314), int32(175527))
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -297,7 +297,7 @@ L27:
 	}
 L28:
 	;
-	v118 = *(*int32)(unsafe.Add(mBase, _consts[756]))
+	v118 = *(*int32)(unsafe.Add(mBase, _consts[755]))
 	v119 = v118
 	goto L22
 L29:
@@ -308,13 +308,13 @@ L30:
 	goto L31
 L31:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[762])) = int32(-1)
-	*(*int32)(unsafe.Add(mBase, _consts[763])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[761])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[762])) = int32(0)
 	m.G0 = v11 + int32(32)
 	return
 L32:
 	;
-	v132 = *(*int32)(unsafe.Add(mBase, _consts[757]))
+	v132 = *(*int32)(unsafe.Add(mBase, _consts[756]))
 	v133 = F_FreeDesc(m, v132)
 	mBase = m.M
 	v134 = m.ExcPending
@@ -328,7 +328,7 @@ L33:
 	goto L31
 L34:
 	;
-	v136 = *(*int32)(unsafe.Add(mBase, _consts[756]))
+	v136 = *(*int32)(unsafe.Add(mBase, _consts[755]))
 	if int32(0) < v136 {
 		goto L32
 	} else {
@@ -375,13 +375,13 @@ func F_AtEOXact_HashTables(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1191])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[1190])) = int32(0)
 	m.G0 = v5 + int32(16)
 	return
 L2:
 	;
 	v9 = int32(0)
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1191]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1190]))
 	if v11 <= v9 {
 		goto L1
 	} else {
@@ -416,9 +416,9 @@ L7:
 	}
 L8:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v14<<(uint(int32(2))%32))+uint32(_consts[1192])))
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v14<<(uint(int32(2))%32))+uint32(_consts[1191])))
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v24
-	F_errmsg_internal(m, int32(250813), v5)
+	F_errmsg_internal(m, int32(251359), v5)
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -432,7 +432,7 @@ L9:
 L10:
 	;
 	v35 = v14 + int32(1)
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1191]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1190]))
 	if v35 < v37 {
 		v14 = v35
 		goto L4
@@ -441,7 +441,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(521455), int32(1933), int32(177154))
+	F_errfinish(m, int32(522864), int32(1933), int32(177578))
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -515,11 +515,11 @@ func F_AtEOXact_LogicalRepWorkers(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[667])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[666])) = int32(0)
 	return
 L2:
 	;
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[667]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	if v8 == int32(0) {
 		goto L1
 	} else {
@@ -541,7 +541,7 @@ L4:
 	return
 L5:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[667]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[666]))
 	if v19 == int32(0) {
 		goto L6
 	} else {

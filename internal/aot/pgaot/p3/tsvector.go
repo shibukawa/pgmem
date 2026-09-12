@@ -77,7 +77,7 @@ func F_init_tsvector_parser(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v15
 			v19 = *(*int32)(unsafe.Add(mBase, _consts[462]))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+4))
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v20*int32(28))+uint32(_consts[989])))
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v20*int32(28))+uint32(_consts[990])))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = l2
 			v29 = int32(1)
 			v30 = int32(base.Ui32(l1)>>(uint(int32(2))%32)) & v29
@@ -554,7 +554,7 @@ L8:
 	goto L9
 L9:
 	;
-	F_pg_qsort(m, v24, v21, int32(16), int32(1171))
+	F_pg_qsort(m, v24, v21, int32(16), int32(1174))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -1296,7 +1296,7 @@ L108:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = int32(1048575)
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v303
-	F_errmsg(m, int32(703851), v19)
+	F_errmsg(m, int32(705446), v19)
 	mBase = m.M
 	v609 = m.ExcPending
 	if v609 != 0 {
@@ -1306,7 +1306,7 @@ L108:
 	}
 L109:
 	;
-	F_errfinish(m, int32(514541), int32(194), int32(218656))
+	F_errfinish(m, int32(515923), int32(194), int32(219080))
 	mBase = m.M
 	v614 = m.ExcPending
 	if v614 != 0 {
@@ -1737,7 +1737,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v25))) = base.I32_extend8_s(v81)
-	F_errmsg(m, int32(762659), v25)
+	F_errmsg(m, int32(764296), v25)
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -1747,7 +1747,7 @@ L18:
 	}
 L19:
 	;
-	F_errfinish(m, int32(518884), int32(869), int32(226519))
+	F_errfinish(m, int32(520266), int32(869), int32(226943))
 	mBase = m.M
 	v104 = m.ExcPending
 	if v104 != 0 {
@@ -2292,7 +2292,7 @@ L100:
 	}
 L101:
 	;
-	F_errmsg(m, int32(161860), int32(0))
+	F_errmsg(m, int32(162162), int32(0))
 	mBase = m.M
 	v551 = m.ExcPending
 	if v551 != 0 {
@@ -2302,7 +2302,7 @@ L101:
 	}
 L102:
 	;
-	F_errfinish(m, int32(518884), int32(845), int32(226519))
+	F_errfinish(m, int32(520266), int32(845), int32(226943))
 	mBase = m.M
 	v556 = m.ExcPending
 	if v556 != 0 {

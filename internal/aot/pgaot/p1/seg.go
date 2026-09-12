@@ -48,7 +48,7 @@ func F_seg_different(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(6670), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(6673), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -70,7 +70,7 @@ func F_seg_gt(m *base.Module, l0 int32) int32 {
 	_ = v9
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v6 = F_DirectFunctionCall2Coll(m, int32(6670), int32(0), v4, v5)
+	v6 = F_DirectFunctionCall2Coll(m, int32(6673), int32(0), v4, v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -151,13 +151,13 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 				if v17 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(309262), int32(0))
+					F_errmsg_internal(m, int32(310015), int32(0))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(329099), int32(104), int32(106537))
+						F_errfinish(m, int32(329941), int32(104), int32(106699))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
@@ -180,13 +180,13 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 		if v17 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(309262), int32(0))
+			F_errmsg_internal(m, int32(310015), int32(0))
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(329099), int32(104), int32(106537))
+				F_errfinish(m, int32(329941), int32(104), int32(106699))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {

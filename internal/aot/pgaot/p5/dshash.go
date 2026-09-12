@@ -297,3 +297,22 @@ func F_dshash_memhash(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v4 = F_hash_bytes(m, l0, l1)
 	return v4
 }
+func F_dshash_strhash(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	v4 = F_strlen(m, l0)
+	v6 = l1 - int32(1)
+	if base.Ui32(v4) < base.Ui32(v6) {
+		v8 = v4
+	} else {
+		v8 = v6
+	}
+	v9 = F_hash_bytes(m, l0, v8)
+	return v9
+}

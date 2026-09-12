@@ -188,13 +188,13 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(431576), int32(0))
+				F_errmsg(m, int32(432465), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515046), int32(46), int32(454998))
+					F_errfinish(m, int32(516428), int32(46), int32(455983))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -209,7 +209,7 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1036])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1037])) = v25
 		return int32(0)
 	}
 }
@@ -242,13 +242,13 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(431576), int32(0))
+				F_errmsg(m, int32(432465), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515046), int32(57), int32(454810))
+					F_errfinish(m, int32(516428), int32(57), int32(455795))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -263,7 +263,7 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1037])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1038])) = v25
 		return int32(0)
 	}
 }
@@ -296,13 +296,13 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(431576), int32(0))
+				F_errmsg(m, int32(432465), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515046), int32(156), int32(430023))
+					F_errfinish(m, int32(516428), int32(156), int32(430912))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -317,7 +317,7 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1038])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1039])) = v25
 		return int32(0)
 	}
 }

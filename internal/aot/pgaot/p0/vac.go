@@ -54,13 +54,13 @@ func F_vac_bulkdel_one_index(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 				v21 = *(*int64)(unsafe.Add(mBase, uint32(l3)+8))
 				*(*int64)(unsafe.Add(mBase, uint32(v8)+8)) = v21
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = v20 + int32(4)
-				F_errmsg(m, int32(155553), v8)
+				F_errmsg(m, int32(155855), v8)
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520592), int32(2661), int32(28899))
+					F_errfinish(m, int32(521974), int32(2661), int32(28932))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {

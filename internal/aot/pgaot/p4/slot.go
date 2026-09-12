@@ -51,20 +51,20 @@ func F_CheckSlotPermissions(m *base.Module) {
 				if v18 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(126598), int32(0))
+					F_errmsg(m, int32(126760), int32(0))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(554279)
-						F_errdetail(m, int32(610968), v4)
+						*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(555688)
+						F_errdetail(m, int32(612377), v4)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(515479), int32(1553), int32(152158))
+							F_errfinish(m, int32(516861), int32(1553), int32(152460))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -549,7 +549,7 @@ L35:
 L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v55 + int32(1)
-	F_errmsg(m, int32(494327), v13)
+	F_errmsg(m, int32(495384), v13)
 	mBase = m.M
 	v183 = m.ExcPending
 	if v183 != 0 {
@@ -559,7 +559,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(518511), int32(962), int32(528380))
+	F_errfinish(m, int32(519893), int32(962), int32(529789))
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {

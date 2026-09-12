@@ -620,7 +620,7 @@ L12:
 	;
 	v261 = *(*int32)(unsafe.Add(mBase, uint32(v80)))
 	v262 = *(*int32)(unsafe.Add(mBase, uint32(v115)))
-	v263 = F_DirectFunctionCall2Coll(m, int32(6520), int32(0), v261, v262)
+	v263 = F_DirectFunctionCall2Coll(m, int32(6523), int32(0), v261, v262)
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {

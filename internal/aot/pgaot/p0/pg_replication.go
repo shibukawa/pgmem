@@ -49,7 +49,7 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 	if v10 != 0 {
 		return int32(0)
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 		if v12 != 0 {
 			v16 = F_LWLockAcquire(m, v12+int32(40), int32(1))
 			mBase = m.M
@@ -57,7 +57,7 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 			if v17 != 0 {
 				return int32(0)
 			} else {
-				v19 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+				v19 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 				v20 = *(*int64)(unsafe.Add(mBase, uint32(v19)+16))
 				v21 = *(*int64)(unsafe.Add(mBase, uint32(v19)+8))
 				F_LWLockRelease(m, v19+int32(40))
@@ -136,13 +136,13 @@ func F_pg_replication_origin_session_progress(m *base.Module, l0 int32) int32 {
 				if v47 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(470620), int32(0))
+					F_errmsg(m, int32(471605), int32(0))
 					mBase = m.M
 					v51 = m.ExcPending
 					if v51 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519681), int32(1438), int32(135774))
+						F_errfinish(m, int32(521063), int32(1438), int32(135936))
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -202,7 +202,7 @@ func F_pg_replication_origin_session_setup(m *base.Module, l0 int32) int32 {
 				if v15 != 0 {
 					return int32(0)
 				} else {
-					*(*uint16)(unsafe.Add(mBase, _consts[521])) = uint16(v11)
+					*(*uint16)(unsafe.Add(mBase, _consts[520])) = uint16(v11)
 					F_pfree(m, v8)
 					mBase = m.M
 					v19 = m.ExcPending
@@ -230,8 +230,8 @@ func F_pg_replication_origin_xact_reset(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v7 = int64(0)
-		*(*int64)(unsafe.Add(mBase, _consts[523])) = v7
 		*(*int64)(unsafe.Add(mBase, _consts[522])) = v7
+		*(*int64)(unsafe.Add(mBase, _consts[521])) = v7
 		return int32(0)
 	}
 }
@@ -266,7 +266,7 @@ func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
 	if v8 != 0 {
 		return int32(0)
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+		v10 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 		if v10 == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -280,13 +280,13 @@ func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
 				if v19 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(470620), int32(0))
+					F_errmsg(m, int32(471605), int32(0))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519681), int32(1458), int32(243551))
+						F_errfinish(m, int32(521063), int32(1458), int32(244097))
 						mBase = m.M
 						v28 = m.ExcPending
 						if v28 != 0 {
@@ -300,10 +300,10 @@ func F_pg_replication_origin_xact_setup(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			*(*int64)(unsafe.Add(mBase, _consts[522])) = v4
+			*(*int64)(unsafe.Add(mBase, _consts[521])) = v4
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 			v33 = *(*int64)(unsafe.Add(mBase, uint32(v32)))
-			*(*int64)(unsafe.Add(mBase, _consts[523])) = v33
+			*(*int64)(unsafe.Add(mBase, _consts[522])) = v33
 			return int32(0)
 		}
 	}

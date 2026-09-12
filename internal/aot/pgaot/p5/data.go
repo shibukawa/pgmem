@@ -128,7 +128,7 @@ func F_CopyErrorData(m *base.Module) int32 {
 	_ = v101
 	var v106 int32
 	_ = v106
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1136]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1137]))
 	if int32(0) <= v4 {
 		goto L1
 	} else {
@@ -149,7 +149,7 @@ L2:
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1136])) = int32(-1)
+	*(*int32)(unsafe.Add(mBase, _consts[1137])) = int32(-1)
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
@@ -175,7 +175,7 @@ L6:
 	}
 L7:
 	;
-	v17 = F__emscripten_memcpy_bulkmem(m, v8, v4*v12+int32(4547168), v12)
+	v17 = F__emscripten_memcpy_bulkmem(m, v8, v4*v12+int32(4555008), v12)
 	mBase = m.M
 	goto L9
 L9:
@@ -605,7 +605,7 @@ L77:
 	goto L76
 L78:
 	;
-	F_errmsg_internal(m, int32(474557), int32(0))
+	F_errmsg_internal(m, int32(475542), int32(0))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -615,7 +615,7 @@ L78:
 	}
 L79:
 	;
-	F_errfinish(m, int32(521689), int32(1760), int32(529803))
+	F_errfinish(m, int32(523098), int32(1760), int32(531212))
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -906,9 +906,9 @@ L14:
 	}
 L15:
 	;
-	v37 = int32(4548896)
-	v39 = *(*int32)(unsafe.Add(mBase, _consts[283]))
-	*(*int32)(unsafe.Add(mBase, _consts[283])) = v39 + int32(1)
+	v37 = int32(4556736)
+	v39 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+	*(*int32)(unsafe.Add(mBase, _consts[282])) = v39 + int32(1)
 	F_pq_startmsgread(m)
 	mBase = m.M
 	v46 = m.ExcPending
@@ -989,9 +989,9 @@ L26:
 	}
 L27:
 	;
-	v67 = int32(4548896)
-	v69 = *(*int32)(unsafe.Add(mBase, _consts[283]))
-	*(*int32)(unsafe.Add(mBase, _consts[283])) = v69 - int32(1)
+	v67 = int32(4556736)
+	v69 = *(*int32)(unsafe.Add(mBase, _consts[282]))
+	*(*int32)(unsafe.Add(mBase, _consts[282])) = v69 - int32(1)
 	switch v50 {
 	case 0, 11:
 		goto L15
@@ -1045,7 +1045,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v87
-	F_errmsg(m, int32(214320), v11+int32(16))
+	F_errmsg(m, int32(214744), v11+int32(16))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -1055,7 +1055,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(522246), int32(318), int32(529750))
+	F_errfinish(m, int32(523655), int32(318), int32(531159))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -1080,7 +1080,7 @@ L36:
 	}
 L37:
 	;
-	F_errmsg(m, int32(269360), int32(0))
+	F_errmsg(m, int32(269939), int32(0))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -1090,7 +1090,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(522246), int32(303), int32(529750))
+	F_errfinish(m, int32(523655), int32(303), int32(531159))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -1138,7 +1138,7 @@ L43:
 	}
 L44:
 	;
-	F_errmsg(m, int32(269360), int32(0))
+	F_errmsg(m, int32(269939), int32(0))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -1148,7 +1148,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(522246), int32(278), int32(529750))
+	F_errfinish(m, int32(523655), int32(278), int32(531159))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1174,7 +1174,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v47
-	F_errmsg(m, int32(289882), v11)
+	F_errmsg(m, int32(290504), v11)
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -1184,7 +1184,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(522246), int32(295), int32(529750))
+	F_errfinish(m, int32(523655), int32(295), int32(531159))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -1300,7 +1300,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(308606), int32(0))
+	F_errmsg(m, int32(309359), int32(0))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -1310,7 +1310,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(522246), int32(256), int32(529750))
+	F_errfinish(m, int32(523655), int32(256), int32(531159))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -1370,11 +1370,11 @@ func F_checkDataDir(m *base.Module) {
 	v4 = m.G0
 	v6 = v4 - int32(144)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[134]))
 	v14 = F___fstatat(m, int32(-100), v9, v6+int32(48), int32(0))
 	mBase = m.M
 	if v14 != 0 {
-		v16 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+		v16 = *(*int32)(unsafe.Add(mBase, _consts[85]))
 		F_errstart_cold(m, int32(22), int32(0))
 		mBase = m.M
 		v20 = m.ExcPending
@@ -1387,16 +1387,16 @@ func F_checkDataDir(m *base.Module) {
 			if v22 != 0 {
 				return
 			} else {
-				v24 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+				v24 = *(*int32)(unsafe.Add(mBase, _consts[134]))
 				if v16 == int32(44) {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v24
-					F_errmsg(m, int32(76325), v6+int32(16))
+					F_errmsg(m, int32(76401), v6+int32(16))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(515641), int32(359), int32(224399))
+						F_errfinish(m, int32(517023), int32(359), int32(224823))
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
@@ -1409,13 +1409,13 @@ func F_checkDataDir(m *base.Module) {
 					}
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v24
-					F_errmsg(m, int32(310174), v6+int32(32))
+					F_errmsg(m, int32(310927), v6+int32(32))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(515641), int32(364), int32(224399))
+						F_errfinish(m, int32(517023), int32(364), int32(224823))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
@@ -1444,15 +1444,15 @@ func F_checkDataDir(m *base.Module) {
 				if v67 != 0 {
 					return
 				} else {
-					v69 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+					v69 = *(*int32)(unsafe.Add(mBase, _consts[134]))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v69
-					F_errmsg(m, int32(13635), v6)
+					F_errmsg(m, int32(13668), v6)
 					mBase = m.M
 					v73 = m.ExcPending
 					if v73 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(515641), int32(372), int32(224399))
+						F_errfinish(m, int32(517023), int32(372), int32(224823))
 						mBase = m.M
 						v78 = m.ExcPending
 						if v78 != 0 {
@@ -1466,7 +1466,7 @@ func F_checkDataDir(m *base.Module) {
 				}
 			}
 		} else {
-			v44 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+			v44 = *(*int32)(unsafe.Add(mBase, _consts[134]))
 			F_ValidatePgVersion(m, v44)
 			mBase = m.M
 			v46 = m.ExcPending

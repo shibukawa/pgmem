@@ -63,7 +63,7 @@ func F_WaitIO(m *base.Module, l0 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[745]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[744]))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v15 = v11 + v12<<(uint(int32(4))%32)
 	F_ConditionVariablePrepareToSleep(m, v15)
@@ -83,9 +83,9 @@ L2:
 	goto L3
 L3:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = int32(240560)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+44)) = int32(241106)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(518217)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = int32(519599)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = int64(0)
 	v35 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
@@ -115,7 +115,7 @@ L6:
 	goto L7
 L7:
 	;
-	v64 = int32(4160236)
+	v64 = int32(4164444)
 	v65 = *(*int32)(unsafe.Add(mBase, _consts[276]))
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v8+int32(24))+8))
 	if v67 == int32(0) {

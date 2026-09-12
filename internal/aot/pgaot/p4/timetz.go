@@ -55,7 +55,7 @@ func F_timetz_hash(m *base.Module, l0 int32) int32 {
 	var v35 int32
 	_ = v35
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = F_DirectFunctionCall1Coll(m, int32(1285), int32(0), v4)
+	v5 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {

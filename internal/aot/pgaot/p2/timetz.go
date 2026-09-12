@@ -132,7 +132,7 @@ func F_timetz_hash_extended(m *base.Module, l0 int32) int32 {
 	_ = v104
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v5, v6)
+	v7 = F_DirectFunctionCall2Coll(m, int32(1289), int32(0), v5, v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -291,13 +291,13 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(393374), int32(0))
+							F_errmsg(m, int32(394263), int32(0))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(522212), int32(2670), int32(323387))
+								F_errfinish(m, int32(523621), int32(2670), int32(324229))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -393,13 +393,13 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(393374), int32(0))
+						F_errmsg(m, int32(394263), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522212), int32(2670), int32(323387))
+							F_errfinish(m, int32(523621), int32(2670), int32(324229))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -621,13 +621,13 @@ func F_timetz_zone(m *base.Module, l0 int32) int32 {
 								if v101 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(420796), int32(0))
+									F_errmsg(m, int32(421685), int32(0))
 									mBase = m.M
 									v105 = m.ExcPending
 									if v105 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(522212), int32(3166), int32(389835))
+										F_errfinish(m, int32(523621), int32(3166), int32(390724))
 										mBase = m.M
 										v110 = m.ExcPending
 										if v110 != 0 {

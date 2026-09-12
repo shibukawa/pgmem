@@ -297,7 +297,7 @@ L1:
 	}
 L2:
 	;
-	v111 = *(*float64)(unsafe.Add(mBase, _consts[600]))
+	v111 = *(*float64)(unsafe.Add(mBase, _consts[597]))
 	v113 = base.F64_add(base.F64_mul(v111, l5), v108)
 	if l2&int32(-2) != int32(2) {
 		v350 = l5
@@ -310,7 +310,7 @@ L2:
 	}
 L3:
 	;
-	v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[601])))
+	v75 = int32(*(*uint8)(unsafe.Add(mBase, _consts[598])))
 	if l3 != 0 {
 		goto L17
 	} else {
@@ -325,7 +325,7 @@ L4:
 	}
 L5:
 	;
-	v48 = int32(*(*uint8)(unsafe.Add(mBase, _consts[601])))
+	v48 = int32(*(*uint8)(unsafe.Add(mBase, _consts[598])))
 	v52 = l7 + (v48 ^ int32(1))
 	goto L4
 L6:
@@ -338,7 +338,7 @@ L6:
 L7:
 	;
 	v42 = base.F64_add(v40, v41)
-	v44 = *(*float64)(unsafe.Add(mBase, _consts[600]))
+	v44 = *(*float64)(unsafe.Add(mBase, _consts[597]))
 	v350 = float64(1)
 	v351 = l7
 	v352 = v42
@@ -376,7 +376,7 @@ L12:
 	goto L13
 L13:
 	;
-	v58 = *(*float64)(unsafe.Add(mBase, _consts[602]))
+	v58 = *(*float64)(unsafe.Add(mBase, _consts[599]))
 	if l3 != 0 {
 		goto L14
 	} else {
@@ -414,7 +414,7 @@ L18:
 	goto L19
 L19:
 	;
-	v84 = *(*float64)(unsafe.Add(mBase, _consts[602]))
+	v84 = *(*float64)(unsafe.Add(mBase, _consts[599]))
 	if l3 != 0 {
 		goto L20
 	} else {
@@ -750,7 +750,7 @@ L78:
 	goto L41
 L79:
 	;
-	v313 = *(*float64)(unsafe.Add(mBase, _consts[600]))
+	v313 = *(*float64)(unsafe.Add(mBase, _consts[597]))
 	v314 = base.F64_convert_i32_s(v311)
 	v315 = base.F64_mul(l10, v314)
 	v317 = base.F64_mul(v313, base.F64_add(v315, v315))
@@ -828,9 +828,9 @@ L92:
 	;
 	v334 = base.F64_mul(base.F64_mul(base.F64_mul(l10, base.F64_convert_i32_u((v323+int32(7))&int32(-8)+int32(24))), float64(0.0001220703125)), v314)
 	v335 = base.F64_add(v334, v334)
-	v337 = *(*float64)(unsafe.Add(mBase, _consts[603]))
+	v337 = *(*float64)(unsafe.Add(mBase, _consts[600]))
 	v338 = base.F64_mul(v335, v337)
-	v342 = *(*float64)(unsafe.Add(mBase, _consts[604]))
+	v342 = *(*float64)(unsafe.Add(mBase, _consts[601]))
 	v350 = l5
 	v351 = v101
 	v352 = base.F64_add(base.F64_add(v338, v102), v317)

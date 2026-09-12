@@ -112,7 +112,7 @@ func F_makeItemUnary(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(2)
 						v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						v21 = F_DirectFunctionCall1Coll(m, int32(1422), int32(0), v20)
+						v21 = F_DirectFunctionCall1Coll(m, int32(1425), int32(0), v20)
 						mBase = m.M
 						v22 = m.ExcPending
 						if v22 != 0 {
@@ -132,7 +132,7 @@ func F_makeItemUnary(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v8))) = int64(2)
 					v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					v21 = F_DirectFunctionCall1Coll(m, int32(1422), int32(0), v20)
+					v21 = F_DirectFunctionCall1Coll(m, int32(1425), int32(0), v20)
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {

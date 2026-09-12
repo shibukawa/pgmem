@@ -73,7 +73,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(48)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 	if v9 != int32(-1) {
 		v58 = F_mul_size(m, int32(128), int32(9))
 		mBase = m.M
@@ -87,7 +87,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			if v61 != 0 {
 				return int32(0)
 			} else {
-				v64 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+				v64 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 				v65 = F_mul_size(m, int32(8), v64)
 				mBase = m.M
 				v66 = m.ExcPending
@@ -106,7 +106,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 						if v71 != 0 {
 							return int32(0)
 						} else {
-							v74 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+							v74 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 							v75 = F_mul_size(m, int32(8192), v74)
 							mBase = m.M
 							v76 = m.ExcPending
@@ -131,7 +131,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 	} else {
 		v14 = *(*int32)(unsafe.Add(mBase, _consts[35]))
 		v16 = base.I32_div_s(v14, int32(32))
-		v18 = *(*int32)(unsafe.Add(mBase, _consts[117]))
+		v18 = *(*int32)(unsafe.Add(mBase, _consts[115]))
 		v20 = base.I32_div_s(v18, int32(8192))
 		if v16 < v20 {
 			v22 = v16
@@ -144,20 +144,20 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 			v25 = v22
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25
-		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(509903), v6)
+		v31 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(511270), v6)
 		mBase = m.M
 		v34 = m.ExcPending
 		if v34 != 0 {
 			return int32(0)
 		} else {
 			v38 = int32(1)
-			F_SetConfigOption(m, int32(143486), v6+int32(16), v38, v38)
+			F_SetConfigOption(m, int32(143721), v6+int32(16), v38, v38)
 			mBase = m.M
 			v41 = m.ExcPending
 			if v41 != 0 {
 				return int32(0)
 			} else {
-				v43 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+				v43 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 				if v43 != int32(-1) {
 					v58 = F_mul_size(m, int32(128), int32(9))
 					mBase = m.M
@@ -171,7 +171,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							v64 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+							v64 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 							v65 = F_mul_size(m, int32(8), v64)
 							mBase = m.M
 							v66 = m.ExcPending
@@ -190,7 +190,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 									if v71 != 0 {
 										return int32(0)
 									} else {
-										v74 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+										v74 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 										v75 = F_mul_size(m, int32(8192), v74)
 										mBase = m.M
 										v76 = m.ExcPending
@@ -213,7 +213,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 						}
 					}
 				} else {
-					F_SetConfigOption(m, int32(143486), v6+int32(16), int32(1), int32(10))
+					F_SetConfigOption(m, int32(143721), v6+int32(16), int32(1), int32(10))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -231,7 +231,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 							if v61 != 0 {
 								return int32(0)
 							} else {
-								v64 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+								v64 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 								v65 = F_mul_size(m, int32(8), v64)
 								mBase = m.M
 								v66 = m.ExcPending
@@ -250,7 +250,7 @@ func F_XLOGShmemSize(m *base.Module) int32 {
 										if v71 != 0 {
 											return int32(0)
 										} else {
-											v74 = *(*int32)(unsafe.Add(mBase, _consts[130]))
+											v74 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 											v75 = F_mul_size(m, int32(8192), v74)
 											mBase = m.M
 											v76 = m.ExcPending

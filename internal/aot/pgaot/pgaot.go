@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7698)
-	m.G0 = int32(13120176)
+	m.T0 = make([]any, 7715)
+	m.G0 = int32(13136304)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -56,7 +56,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448619
+	m.DataEnd = 4452907
 	initData_0(m)
 	return m
 }
@@ -89,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7698)
-	m.G0 = int32(13120176)
+	m.T0 = make([]any, 7715)
+	m.G0 = int32(13136304)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -123,7 +123,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448619
+	m.DataEnd = 4452907
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -138,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7698)
-	m.G0 = int32(13120176)
+	m.T0 = make([]any, 7715)
+	m.G0 = int32(13136304)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -172,18 +172,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4448619
+	m.DataEnd = 4452907
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1641808])
-	copy(m.Memory[1647136:], wasm2goData_data_bin[1641808:1641817])
-	copy(m.Memory[1649184:], wasm2goData_data_bin[1641817:1654745])
-	copy(m.Memory[1671172:], wasm2goData_data_bin[1654745:1747986])
-	copy(m.Memory[1765440:], wasm2goData_data_bin[1747986:1859642])
-	copy(m.Memory[1888312:], wasm2goData_data_bin[1859642:4123168])
-	copy(m.Memory[4159328:], wasm2goData_data_bin[4123168:4412459])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1643472])
+	copy(m.Memory[1648800:], wasm2goData_data_bin[1643472:1643481])
+	copy(m.Memory[1650848:], wasm2goData_data_bin[1643481:1656425])
+	copy(m.Memory[1675268:], wasm2goData_data_bin[1656425:1749666])
+	copy(m.Memory[1769536:], wasm2goData_data_bin[1749666:1861322])
+	copy(m.Memory[1892408:], wasm2goData_data_bin[1861322:4124960])
+	copy(m.Memory[4163536:], wasm2goData_data_bin[4124960:4414331])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5602,6 +5602,36 @@ func PgFinfoPgFreespace(m *base.Module) int32 {
 }
 func PgFreespace(m *base.Module, l0 int32) int32 {
 	return F_pg_freespace(m, l0)
+}
+func PgMagicFuncPgPrewarm(m *base.Module) int32 {
+	return F_Pg_magic_func_pg_prewarm(m)
+}
+func PGInitPgPrewarm(m *base.Module) {
+	F__PG_init_pg_prewarm(m)
+}
+func AutoprewarmDatabaseMain(m *base.Module, l0 int32) {
+	F_autoprewarm_database_main(m, l0)
+}
+func AutoprewarmDumpNow(m *base.Module, l0 int32) int32 {
+	return F_autoprewarm_dump_now(m, l0)
+}
+func AutoprewarmMain(m *base.Module, l0 int32) {
+	F_autoprewarm_main(m, l0)
+}
+func AutoprewarmStartWorker(m *base.Module, l0 int32) int32 {
+	return F_autoprewarm_start_worker(m, l0)
+}
+func PgFinfoAutoprewarmDumpNow(m *base.Module) int32 {
+	return F_pg_finfo_autoprewarm_dump_now(m)
+}
+func PgFinfoAutoprewarmStartWorker(m *base.Module) int32 {
+	return F_pg_finfo_autoprewarm_start_worker(m)
+}
+func PgFinfoPgPrewarm(m *base.Module) int32 {
+	return F_pg_finfo_pg_prewarm(m)
+}
+func PgPrewarm(m *base.Module, l0 int32) int32 {
+	return F_pg_prewarm(m, l0)
 }
 func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	F_HnswParallelBuildMain(m, l0, l1)

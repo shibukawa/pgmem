@@ -348,7 +348,7 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 							v228 = int32(1)
 							v229 = v223 - v228
 							v230 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224))))
-							v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1064]))))
+							v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1065]))))
 							v234 = v227 + v233
 							v236 = v224 + v228
 							v238 = v225 + v228
@@ -375,13 +375,13 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 						v255 = v246
 						for {
 							v256 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+3)))
-							v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1064]))))
+							v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1065]))))
 							v260 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+2)))
-							v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1064]))))
+							v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1065]))))
 							v264 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+1)))
-							v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1064]))))
+							v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1065]))))
 							v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249))))
-							v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1064]))))
+							v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1065]))))
 							v275 = v259 + (v263 + (v267 + (v255 + v271)))
 							v276 = int32(4)
 							v279 = v251 - v276
@@ -515,7 +515,7 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 								v228 = int32(1)
 								v229 = v223 - v228
 								v230 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224))))
-								v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1064]))))
+								v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1065]))))
 								v234 = v227 + v233
 								v236 = v224 + v228
 								v238 = v225 + v228
@@ -542,13 +542,13 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 							v255 = v246
 							for {
 								v256 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+3)))
-								v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1064]))))
+								v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1065]))))
 								v260 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+2)))
-								v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1064]))))
+								v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1065]))))
 								v264 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+1)))
-								v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1064]))))
+								v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1065]))))
 								v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249))))
-								v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1064]))))
+								v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1065]))))
 								v275 = v259 + (v263 + (v267 + (v255 + v271)))
 								v276 = int32(4)
 								v279 = v251 - v276
@@ -595,13 +595,13 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 							v66 = v6
 							for {
 								v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+3)))
-								v70 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v67)+uint32(_consts[1064]))))
+								v70 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v67)+uint32(_consts[1065]))))
 								v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+2)))
-								v74 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v71)+uint32(_consts[1064]))))
+								v74 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v71)+uint32(_consts[1065]))))
 								v75 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+1)))
-								v78 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v75)+uint32(_consts[1064]))))
+								v78 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v75)+uint32(_consts[1065]))))
 								v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61))))
-								v82 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1064]))))
+								v82 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1065]))))
 								v86 = v70 + (v74 + (v78 + (v66 + v82)))
 								v87 = int32(4)
 								v88 = v61 + v87
@@ -627,7 +627,7 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 							v106 = v97
 							for {
 								v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101))))
-								v110 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v107)+uint32(_consts[1064]))))
+								v110 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v107)+uint32(_consts[1065]))))
 								v111 = v106 + v110
 								v112 = int32(1)
 								v115 = v102 + v112
@@ -768,7 +768,7 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 							v228 = int32(1)
 							v229 = v223 - v228
 							v230 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v224))))
-							v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1064]))))
+							v233 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v230)+uint32(_consts[1065]))))
 							v234 = v227 + v233
 							v236 = v224 + v228
 							v238 = v225 + v228
@@ -795,13 +795,13 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 						v255 = v246
 						for {
 							v256 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+3)))
-							v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1064]))))
+							v259 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v256)+uint32(_consts[1065]))))
 							v260 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+2)))
-							v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1064]))))
+							v263 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v260)+uint32(_consts[1065]))))
 							v264 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249)+1)))
-							v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1064]))))
+							v267 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v264)+uint32(_consts[1065]))))
 							v268 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v249))))
-							v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1064]))))
+							v271 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v268)+uint32(_consts[1065]))))
 							v275 = v259 + (v263 + (v267 + (v255 + v271)))
 							v276 = int32(4)
 							v279 = v251 - v276
@@ -848,13 +848,13 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 						v66 = v6
 						for {
 							v67 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+3)))
-							v70 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v67)+uint32(_consts[1064]))))
+							v70 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v67)+uint32(_consts[1065]))))
 							v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+2)))
-							v74 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v71)+uint32(_consts[1064]))))
+							v74 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v71)+uint32(_consts[1065]))))
 							v75 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+1)))
-							v78 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v75)+uint32(_consts[1064]))))
+							v78 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v75)+uint32(_consts[1065]))))
 							v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61))))
-							v82 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1064]))))
+							v82 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v79)+uint32(_consts[1065]))))
 							v86 = v70 + (v74 + (v78 + (v66 + v82)))
 							v87 = int32(4)
 							v88 = v61 + v87
@@ -880,7 +880,7 @@ func F_bytea_bit_count(m *base.Module, l0 int32) int32 {
 						v106 = v97
 						for {
 							v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101))))
-							v110 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v107)+uint32(_consts[1064]))))
+							v110 = int64(*(*uint8)(unsafe.Add(mBase, uint32(v107)+uint32(_consts[1065]))))
 							v111 = v106 + v110
 							v112 = int32(1)
 							v115 = v102 + v112

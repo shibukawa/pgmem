@@ -74,6 +74,7 @@ var contribRegress = map[string][]string{
 	"pageinspect":     {"page", "btree", "brin", "gin", "gist", "hash", "checksum"},
 	"pg_buffercache":  {"pg_buffercache", "pg_buffercache_numa"},
 	"pg_freespacemap": {"pg_freespacemap"},
+	"pg_prewarm":      {"pg_prewarm"},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",

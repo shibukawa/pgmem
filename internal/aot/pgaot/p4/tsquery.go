@@ -955,7 +955,7 @@ L61:
 L62:
 	;
 	v201 = int32(8)
-	v205 = F_bsearch(m, v18+v201, l2, l3, v201, int32(1180))
+	v205 = F_bsearch(m, v18+v201, l2, l3, v201, int32(1183))
 	mBase = m.M
 	v206 = m.ExcPending
 	if v206 != 0 {
@@ -1053,7 +1053,7 @@ L74:
 	;
 	v248 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+1)))
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = v248
-	F_errmsg_internal(m, int32(503682), v18)
+	F_errmsg_internal(m, int32(505049), v18)
 	mBase = m.M
 	v252 = m.ExcPending
 	if v252 != 0 {
@@ -1063,7 +1063,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(517683), int32(417), int32(513924))
+	F_errfinish(m, int32(519065), int32(417), int32(515291))
 	mBase = m.M
 	v257 = m.ExcPending
 	if v257 != 0 {

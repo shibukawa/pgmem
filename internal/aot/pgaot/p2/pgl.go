@@ -14,7 +14,7 @@ func F_pgl_pclose(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[1294]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[1298]))
 	if v4 != 0 {
 		v5 = m.T0[v4].(func(*base.Module, int32) int32)(m, l0)
 		mBase = m.M
@@ -38,7 +38,7 @@ func F_pgl_recv(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	_ = v7
 	var v10 int32
 	_ = v10
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[1295]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[1299]))
 	v7 = m.T0[v6].(func(*base.Module, int32, int32) int32)(m, l1, l2)
 	mBase = m.M
 	v10 = m.ExcPending

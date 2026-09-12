@@ -653,7 +653,7 @@ L2:
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)))
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+4))
-	F_resolve_special_varno(m, v26, l1, int32(1503), l2)
+	F_resolve_special_varno(m, v26, l1, int32(1506), l2)
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -680,7 +680,7 @@ L6:
 	goto L1
 L7:
 	;
-	F_appendStringInfoString(m, v17, int32(777489))
+	F_appendStringInfoString(m, v17, int32(779126))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -790,16 +790,16 @@ L24:
 	goto L23
 L25:
 	;
-	v89 = int32(777009)
+	v89 = int32(778646)
 	goto L27
 L26:
 	;
-	v89 = int32(790230)
+	v89 = int32(791891)
 	goto L27
 L27:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v89
-	F_appendStringInfo(m, v17, int32(187572), v15)
+	F_appendStringInfo(m, v17, int32(187996), v15)
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -858,7 +858,7 @@ L33:
 	}
 L34:
 	;
-	F_appendStringInfoString(m, v17, int32(776685))
+	F_appendStringInfoString(m, v17, int32(778322))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -978,7 +978,7 @@ L51:
 	}
 L52:
 	;
-	v146 = int32(778962)
+	v146 = int32(780599)
 	goto L53
 L53:
 	;
@@ -992,7 +992,7 @@ L53:
 	}
 L54:
 	;
-	v146 = int32(778713)
+	v146 = int32(780350)
 	goto L53
 L55:
 	;
@@ -1016,7 +1016,7 @@ L57:
 	}
 L58:
 	;
-	F_appendStringInfoString(m, v17, int32(777941))
+	F_appendStringInfoString(m, v17, int32(779578))
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -1036,7 +1036,7 @@ L61:
 	goto L44
 L62:
 	;
-	F_appendStringInfoString(m, v17, int32(776711))
+	F_appendStringInfoString(m, v17, int32(778348))
 	mBase = m.M
 	v183 = m.ExcPending
 	if v183 != 0 {
@@ -1076,7 +1076,7 @@ L68:
 	goto L67
 L69:
 	;
-	F_appendStringInfoString(m, v17, int32(777792))
+	F_appendStringInfoString(m, v17, int32(779429))
 	mBase = m.M
 	v218 = m.ExcPending
 	if v218 != 0 {

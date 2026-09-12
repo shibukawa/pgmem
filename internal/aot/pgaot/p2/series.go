@@ -91,13 +91,13 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 					if v81 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(251826), int32(0))
+						F_errmsg(m, int32(252405), int32(0))
 						mBase = m.M
 						v85 = m.ExcPending
 						if v85 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(515515), int32(1558), int32(583680))
+							F_errfinish(m, int32(516897), int32(1558), int32(585089))
 							mBase = m.M
 							v90 = m.ExcPending
 							if v90 != 0 {
@@ -118,7 +118,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					v26 = int32(4554240)
+					v26 = int32(4562080)
 					v27 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v29 = *(*int32)(unsafe.Add(mBase, uint32(v22)+24))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v29
@@ -221,7 +221,7 @@ func F_generate_series_step_int4(m *base.Module, l0 int32) int32 {
 			if v25 != 0 {
 				return int32(0)
 			} else {
-				v26 = int32(4554240)
+				v26 = int32(4562080)
 				v27 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v22)+24))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v29

@@ -569,7 +569,7 @@ L18:
 L19:
 	;
 	v57 = v41 + int32(1)
-	v58 = int32(1698944)
+	v58 = int32(1703040)
 	v60 = base.I32_extend8_s(v43)
 	v61 = int32(17)
 	goto L26
@@ -626,7 +626,7 @@ L26:
 	goto L34
 L34:
 	;
-	v98 = int32(*(*uint8)(unsafe.Add(mBase, _consts[985])))
+	v98 = int32(*(*uint8)(unsafe.Add(mBase, _consts[986])))
 	if v98 == v60&int32(255) {
 		v128 = v58
 		v130 = v61
@@ -720,7 +720,7 @@ L48:
 	goto L44
 L49:
 	;
-	v167 = int32(1698976)
+	v167 = int32(1703072)
 	v169 = int32(17)
 	goto L55
 L50:
@@ -758,7 +758,7 @@ L55:
 	goto L63
 L63:
 	;
-	v206 = int32(*(*uint8)(unsafe.Add(mBase, _consts[986])))
+	v206 = int32(*(*uint8)(unsafe.Add(mBase, _consts[987])))
 	if v206 == v60&int32(255) {
 		v236 = v167
 		v238 = v169
@@ -1010,7 +1010,7 @@ L101:
 	goto L102
 L102:
 	;
-	v381 = int32(1698993)
+	v381 = int32(1703089)
 	v383 = int32(11)
 	goto L103
 L103:
@@ -1179,7 +1179,7 @@ L128:
 	}
 L129:
 	;
-	v480 = v471 - int32(1698993) + v348*int32(10)
+	v480 = v471 - int32(1703089) + v348*int32(10)
 	if base.Ui32(v480) < base.Ui32(int32(256)) {
 		v346 = v346 + int32(1)
 		v348 = v480
@@ -1224,7 +1224,7 @@ L135:
 	goto L4
 L136:
 	;
-	v515 = int32(1699004)
+	v515 = int32(1703100)
 	v516 = int32(11)
 	goto L140
 L137:
@@ -1248,7 +1248,7 @@ L140:
 	goto L148
 L148:
 	;
-	v553 = int32(*(*uint8)(unsafe.Add(mBase, _consts[987])))
+	v553 = int32(*(*uint8)(unsafe.Add(mBase, _consts[988])))
 	if v553 == v512&int32(255) {
 		v583 = v515
 		v585 = v516
@@ -1365,7 +1365,7 @@ L166:
 L167:
 	;
 	v624 = int32(1)
-	v632 = v619 - int32(1699004) + v499*int32(10)
+	v632 = v619 - int32(1703100) + v499*int32(10)
 	if v632 < int32(129) {
 		v497 = v497 + v624
 		v499 = v632
@@ -1408,7 +1408,7 @@ L172:
 	}
 L173:
 	;
-	v658 = int32(1699004)
+	v658 = int32(1703100)
 	v659 = int32(11)
 	goto L179
 L174:
@@ -1438,7 +1438,7 @@ L179:
 	goto L187
 L187:
 	;
-	v696 = int32(*(*uint8)(unsafe.Add(mBase, _consts[987])))
+	v696 = int32(*(*uint8)(unsafe.Add(mBase, _consts[988])))
 	if v696 == v657&int32(255) {
 		v726 = v658
 		v728 = v659
@@ -1555,7 +1555,7 @@ L205:
 L206:
 	;
 	v767 = int32(1)
-	v775 = v762 - int32(1699004) + v644*int32(10)
+	v775 = v762 - int32(1703100) + v644*int32(10)
 	if v775 < int32(129) {
 		v642 = v642 + v767
 		v644 = v775
@@ -2427,7 +2427,7 @@ L63:
 	}
 L64:
 	;
-	F_errmsg(m, int32(178342), int32(0))
+	F_errmsg(m, int32(178766), int32(0))
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -2437,7 +2437,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(521160), int32(1450), int32(418288))
+	F_errfinish(m, int32(522569), int32(1450), int32(419177))
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {

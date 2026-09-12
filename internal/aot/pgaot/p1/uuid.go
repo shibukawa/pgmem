@@ -148,7 +148,7 @@ L3:
 	}
 L4:
 	;
-	v109 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5+int32(80))
+	v109 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5+int32(80))
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -660,18 +660,18 @@ func F_uuid_ns_dns(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(581494)
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[1452]))
+	v7 = int32(582903)
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1451]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
-	v10 = *(*int64)(unsafe.Add(mBase, _consts[1453]))
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1452]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[1454]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1453]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[1455]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1454]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[1456]))
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1455]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {
@@ -707,18 +707,18 @@ func F_uuid_ns_url(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(581457)
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[1457]))
+	v7 = int32(582866)
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[1456]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
-	v10 = *(*int64)(unsafe.Add(mBase, _consts[1458]))
+	v10 = *(*int64)(unsafe.Add(mBase, _consts[1457]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[1459]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[1458]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
-	v14 = *(*int64)(unsafe.Add(mBase, _consts[1460]))
+	v14 = *(*int64)(unsafe.Add(mBase, _consts[1459]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[1461]))
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[1460]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
-	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	v20 = F_DirectFunctionCall1Coll(m, int32(3395), int32(0), v5)
 	mBase = m.M
 	v23 = m.ExcPending
 	if v23 != 0 {

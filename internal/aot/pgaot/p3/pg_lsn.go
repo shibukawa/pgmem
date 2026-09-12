@@ -138,7 +138,7 @@ func F_pg_lsn_in(m *base.Module, l0 int32) int32 {
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = int32(561997)
+	v11 = int32(563406)
 	v15 = m.G0
 	v17 = v15 - int32(32)
 	v18 = int64(0)
@@ -146,7 +146,7 @@ func F_pg_lsn_in(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v17)+16)) = v18
 	*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = v18
 	*(*int64)(unsafe.Add(mBase, uint32(v17))) = v18
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1034])))
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
 	if v26 == int32(0) {
 		goto L5
 	} else {
@@ -189,7 +189,7 @@ L6:
 	goto L7
 L7:
 	;
-	v30 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
+	v30 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1036])))
 	if v30 == int32(0) {
 		goto L8
 	} else {
@@ -303,7 +303,7 @@ L25:
 L26:
 	;
 	v104 = v99 + int32(1)
-	v105 = int32(561997)
+	v105 = int32(563406)
 	v109 = m.G0
 	v111 = v109 - int32(32)
 	v112 = int64(0)
@@ -311,7 +311,7 @@ L26:
 	*(*int64)(unsafe.Add(mBase, uint32(v111)+16)) = v112
 	*(*int64)(unsafe.Add(mBase, uint32(v111)+8)) = v112
 	*(*int64)(unsafe.Add(mBase, uint32(v111))) = v112
-	v120 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1034])))
+	v120 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
 	if v120 == int32(0) {
 		goto L28
 	} else {
@@ -333,7 +333,7 @@ L29:
 	goto L30
 L30:
 	;
-	v124 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1035])))
+	v124 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1036])))
 	if v124 == int32(0) {
 		goto L31
 	} else {
@@ -470,8 +470,8 @@ L52:
 L53:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v10
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(256903)
-	F_errmsg(m, int32(757762), v8)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(257482)
+	F_errmsg(m, int32(759399), v8)
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -481,7 +481,7 @@ L53:
 	}
 L54:
 	;
-	F_errsave_finish(m, v200, int32(519308), int32(74), int32(292275))
+	F_errsave_finish(m, v200, int32(520690), int32(74), int32(292940))
 	mBase = m.M
 	v220 = m.ExcPending
 	if v220 != 0 {
@@ -584,13 +584,13 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(256878), int32(0))
+					F_errmsg(m, int32(257457), int32(0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519308), int32(296), int32(335132))
+						F_errfinish(m, int32(520690), int32(296), int32(335974))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -605,7 +605,7 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(39884), v6)
+			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(39960), v6)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {
@@ -624,7 +624,7 @@ func F_pg_lsn_mii(m *base.Module, l0 int32) int32 {
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						v55 = F_DirectFunctionCall1Coll(m, int32(1481), v42, v53)
+						v55 = F_DirectFunctionCall1Coll(m, int32(1484), v42, v53)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {
@@ -710,13 +710,13 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 				if v24 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(256853), int32(0))
+					F_errmsg(m, int32(257432), int32(0))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519308), int32(262), int32(335079))
+						F_errfinish(m, int32(520690), int32(262), int32(335921))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -731,7 +731,7 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			*(*int64)(unsafe.Add(mBase, uint32(v6))) = v9
-			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(39884), v6)
+			v39 = F_pg_snprintf(m, v6+int32(16), int32(32), int32(39960), v6)
 			mBase = m.M
 			v40 = m.ExcPending
 			if v40 != 0 {
@@ -744,13 +744,13 @@ func F_pg_lsn_pli(m *base.Module, l0 int32) int32 {
 				if v52 != 0 {
 					return int32(0)
 				} else {
-					v53 = F_DirectFunctionCall2Coll(m, int32(1294), v42, v51, v11)
+					v53 = F_DirectFunctionCall2Coll(m, int32(1297), v42, v51, v11)
 					mBase = m.M
 					v54 = m.ExcPending
 					if v54 != 0 {
 						return int32(0)
 					} else {
-						v55 = F_DirectFunctionCall1Coll(m, int32(1481), v42, v53)
+						v55 = F_DirectFunctionCall1Coll(m, int32(1484), v42, v53)
 						mBase = m.M
 						v56 = m.ExcPending
 						if v56 != 0 {

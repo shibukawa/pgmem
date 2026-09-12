@@ -28,13 +28,13 @@ func F_yy_fatal_error_1(m *base.Module, l0 int32) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		F_errmsg_internal(m, int32(216470), v5)
+		F_errmsg_internal(m, int32(216894), v5)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(329052), int32(39), int32(86917))
+			F_errfinish(m, int32(329894), int32(39), int32(86993))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
@@ -70,13 +70,13 @@ func F_yy_fatal_error_7(m *base.Module, l0 int32) {
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		F_errmsg_internal(m, int32(216470), v5)
+		F_errmsg_internal(m, int32(216894), v5)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(329099), int32(26), int32(86917))
+			F_errfinish(m, int32(329941), int32(26), int32(86993))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

@@ -23,7 +23,7 @@ func F_GetCurrentCommandId(m *base.Module, l0 int32) int32 {
 	var v29 int32
 	_ = v29
 	if l0 != 0 {
-		v3 = *(*int32)(unsafe.Add(mBase, _consts[104]))
+		v3 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 		if int32(0) <= v3 {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -37,13 +37,13 @@ func F_GetCurrentCommandId(m *base.Module, l0 int32) int32 {
 				if v20 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(231750), int32(0))
+					F_errmsg(m, int32(232277), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(515908), int32(843), int32(486491))
+						F_errfinish(m, int32(517290), int32(843), int32(487548))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -58,12 +58,12 @@ func F_GetCurrentCommandId(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			v7 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, _consts[105])) = uint8(v7)
-			v10 = *(*int32)(unsafe.Add(mBase, _consts[106]))
+			*(*uint8)(unsafe.Add(mBase, _consts[103])) = uint8(v7)
+			v10 = *(*int32)(unsafe.Add(mBase, _consts[104]))
 			return v10
 		}
 	} else {
-		v10 = *(*int32)(unsafe.Add(mBase, _consts[106]))
+		v10 = *(*int32)(unsafe.Add(mBase, _consts[104]))
 		return v10
 	}
 }
@@ -90,7 +90,7 @@ func F_current_database(m *base.Module, l0 int32) int32 {
 	if v6 != 0 {
 		return int32(0)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[108]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[106]))
 		v9 = F_get_database_name(m, v8)
 		mBase = m.M
 		v10 = m.ExcPending

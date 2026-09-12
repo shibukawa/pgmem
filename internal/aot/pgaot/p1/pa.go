@@ -52,20 +52,20 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 	_ = v57
 	var v61 int32
 	_ = v61
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+20))
 	if v5 == int32(0) {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
 		if v8 != 0 {
-			v12 = *(*int32)(unsafe.Add(mBase, _consts[653]))
-			F_s_lock(m, v12, int32(518471), int32(1531), int32(368420))
+			v12 = *(*int32)(unsafe.Add(mBase, _consts[652]))
+			F_s_lock(m, v12, int32(519853), int32(1531), int32(369288))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
 				return
 			} else {
-				v19 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+				v19 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 				*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(0)
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
 				if v22 != 0 {
@@ -77,13 +77,13 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 					if v26 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(596690), int32(0))
+						F_errmsg_internal(m, int32(598099), int32(0))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518471), int32(1611), int32(331243))
+							F_errfinish(m, int32(519853), int32(1611), int32(332085))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
@@ -98,7 +98,7 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 				}
 			}
 		} else {
-			v19 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+			v19 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 			*(*int32)(unsafe.Add(mBase, uint32(v19))) = int32(0)
 			v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+32))
 			if v22 != 0 {
@@ -110,13 +110,13 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 				if v26 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(596690), int32(0))
+					F_errmsg_internal(m, int32(598099), int32(0))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(518471), int32(1611), int32(331243))
+						F_errfinish(m, int32(519853), int32(1611), int32(332085))
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
@@ -137,9 +137,9 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 		if v36 != v37 {
 			return
 		} else {
-			v43 = *(*int32)(unsafe.Add(mBase, _consts[652]))
+			v43 = *(*int32)(unsafe.Add(mBase, _consts[651]))
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+32))
-			v46 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+			v46 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 			v47 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
 			F_LockApplyTransactionForSession(m, v44, v47, int32(0), int32(1))
 			mBase = m.M
@@ -147,9 +147,9 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 			if v51 != 0 {
 				return
 			} else {
-				v53 = *(*int32)(unsafe.Add(mBase, _consts[652]))
+				v53 = *(*int32)(unsafe.Add(mBase, _consts[651]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+32))
-				v56 = *(*int32)(unsafe.Add(mBase, _consts[653]))
+				v56 = *(*int32)(unsafe.Add(mBase, _consts[652]))
 				v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+4))
 				F_UnlockApplyTransactionForSession(m, v54, v57, int32(0), int32(1))
 				mBase = m.M
@@ -212,7 +212,7 @@ func F_pa_send_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v79
 	var v94 int32
 	_ = v94
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[651]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[650]))
 	if v8 == int32(1) {
 		v94 = int32(0)
 		goto L1
@@ -244,7 +244,7 @@ L4:
 	goto L1
 L5:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+	v42 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	v46 = F_WaitLatch(m, v42, int32(41), int32(1000), int32(134217757))
 	mBase = m.M
 	v47 = m.ExcPending
@@ -289,7 +289,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg(m, int32(364520), int32(0))
+	F_errmsg(m, int32(365388), int32(0))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -299,7 +299,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(518471), int32(1187), int32(528633))
+	F_errfinish(m, int32(519853), int32(1187), int32(530042))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -334,7 +334,7 @@ L14:
 	}
 L15:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, _consts[517]))
+	v53 = *(*int32)(unsafe.Add(mBase, _consts[516]))
 	*(*int32)(unsafe.Add(mBase, uint32(v53))) = int32(0)
 	goto L16
 L16:
@@ -395,7 +395,7 @@ func F_pa_unlock_stream(m *base.Module, l0 int32) {
 	_ = v4
 	var v8 int32
 	_ = v8
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[652]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[651]))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(v3)+32))
 	F_UnlockApplyTransactionForSession(m, v4, l0, int32(0), int32(8))
 	mBase = m.M

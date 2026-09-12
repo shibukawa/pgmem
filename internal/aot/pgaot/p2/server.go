@@ -75,7 +75,7 @@ func F_has_server_privilege_name_name(m *base.Module, l0 int32) int32 {
 					if v20 != 0 {
 						return int32(0)
 					} else {
-						v22 = F_convert_any_priv_string(m, v11, int32(1690048))
+						v22 = F_convert_any_priv_string(m, v11, int32(1694144))
 						mBase = m.M
 						v23 = m.ExcPending
 						if v23 != 0 {

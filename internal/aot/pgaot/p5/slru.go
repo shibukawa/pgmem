@@ -65,17 +65,17 @@ func F_check_slru_buffers(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v10 = v8 & int32(15)
 	if v10 != 0 {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-		*(*int32)(unsafe.Add(mBase, _consts[88])) = v12
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[85]))
+		*(*int32)(unsafe.Add(mBase, _consts[86])) = v12
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = int32(16)
 		*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-		v20 = F_format_elog_string(m, int32(682016), v6)
+		v20 = F_format_elog_string(m, int32(683504), v6)
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[89])) = v20
+			*(*int32)(unsafe.Add(mBase, _consts[87])) = v20
 			m.G0 = v6 + int32(16)
 			return base.B2i32(v10 == int32(0))
 		}

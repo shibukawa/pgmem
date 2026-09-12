@@ -18,7 +18,7 @@ func F_dsa_create_in_place_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 		return int32(0)
 	} else {
 		if l3 != 0 {
-			F_on_dsm_detach(m, l3, int32(1786), l0)
+			F_on_dsm_detach(m, l3, int32(1789), l0)
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return int32(0)

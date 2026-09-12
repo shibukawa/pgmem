@@ -165,7 +165,7 @@ func F_ExecSeqScanWithProject(m *base.Module, l0 int32) int32 {
 								if v42 != 0 {
 									return int32(0)
 								} else {
-									v43 = int32(4554240)
+									v43 = int32(4562080)
 									v44 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 									v46 = *(*int32)(unsafe.Add(mBase, uint32(v37)+20))
 									*(*int32)(unsafe.Add(mBase, _consts[0])) = v46
@@ -235,7 +235,7 @@ func F_ExecSeqScanWithProject(m *base.Module, l0 int32) int32 {
 							if v42 != 0 {
 								return int32(0)
 							} else {
-								v43 = int32(4554240)
+								v43 = int32(4562080)
 								v44 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 								v46 = *(*int32)(unsafe.Add(mBase, uint32(v37)+20))
 								*(*int32)(unsafe.Add(mBase, _consts[0])) = v46
@@ -518,7 +518,7 @@ L10:
 	goto L9
 L17:
 	;
-	v128 = int32(4548900)
+	v128 = int32(4556740)
 	v130 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v130 + int32(1)
 	F_MarkBufferDirty(m, v23)
@@ -616,7 +616,7 @@ L29:
 	}
 L30:
 	;
-	v186 = int32(4548900)
+	v186 = int32(4556740)
 	v188 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v188 - int32(1)
 	F_UnlockReleaseBuffer(m, v23)
@@ -737,7 +737,7 @@ L44:
 	return
 L45:
 	;
-	F_errmsg_internal(m, int32(426668), int32(0))
+	F_errmsg_internal(m, int32(427557), int32(0))
 	mBase = m.M
 	v204 = m.ExcPending
 	if v204 != 0 {
@@ -747,7 +747,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(523122), int32(405), int32(528535))
+	F_errfinish(m, int32(524531), int32(405), int32(529944))
 	mBase = m.M
 	v209 = m.ExcPending
 	if v209 != 0 {

@@ -70,13 +70,13 @@ func F_bms_add_range(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v122 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(459828), int32(0))
+				F_errmsg_internal(m, int32(460813), int32(0))
 				mBase = m.M
 				v126 = m.ExcPending
 				if v126 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(515735), int32(1040), int32(420101))
+					F_errfinish(m, int32(517117), int32(1040), int32(420990))
 					mBase = m.M
 					v131 = m.ExcPending
 					if v131 != 0 {
@@ -479,13 +479,13 @@ func F_bms_is_member(m *base.Module, l0 int32, l1 int32) int32 {
 		if v28 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(459828), int32(0))
+			F_errmsg_internal(m, int32(460813), int32(0))
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(515735), int32(519), int32(239811))
+				F_errfinish(m, int32(517117), int32(519), int32(240357))
 				mBase = m.M
 				v37 = m.ExcPending
 				if v37 != 0 {
