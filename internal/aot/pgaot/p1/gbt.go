@@ -215,16 +215,16 @@ func F_gbt_enumkey_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v12
 	var v13 int32
 	_ = v13
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
@@ -233,50 +233,50 @@ func F_gbt_enumkey_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		v12 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 		if v12 == v13 {
-			v26 = int32(0)
-			return v26
+			v28 = int32(0)
+			return v28
 		} else {
-			v16 = F_CallerFInfoFunctionCall2(m, int32(3810), l2, v12, v13)
+			v17 = F_CallerFInfoFunctionCall2(m, int32(3810), l2, int32(0), v12, v13)
 			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
+			v20 = m.ExcPending
+			if v20 != 0 {
 				return int32(0)
 			} else {
-				return v16
+				return v17
 			}
 		}
 	} else {
-		v22 = F_CallerFInfoFunctionCall2(m, int32(3810), l2, v7, v9)
+		v24 = F_CallerFInfoFunctionCall2(m, int32(3810), l2, int32(0), v7, v9)
 		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
+		v25 = m.ExcPending
+		if v25 != 0 {
 			return int32(0)
 		} else {
-			v26 = v22
-			return v26
+			v28 = v24
+			return v28
 		}
 	}
 }
 func F_gbt_enumlt(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
 	var v6 int32
 	_ = v6
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v7 = F_CallerFInfoFunctionCall2(m, int32(3806), l2, v5, v6)
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v8 = F_CallerFInfoFunctionCall2(m, int32(3806), l2, int32(0), v6, v7)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v11 = m.ExcPending
+	if v11 != 0 {
 		return int32(0)
 	} else {
-		return base.B2i32(v7 != int32(0))
+		return base.B2i32(v8 != int32(0))
 	}
 }
 func F_gbt_float4_same(m *base.Module, l0 int32) int32 {

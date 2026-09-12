@@ -842,24 +842,24 @@ func F_gbt_enum_ssup_cmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = mBase
 	var v5 int32
 	_ = v5
-	var v6 int32
-	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v8 = F_CallerFInfoFunctionCall2(m, int32(3810), v5, v6, v7)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v9 = F_CallerFInfoFunctionCall2(m, int32(3810), v5, int32(0), v7, v8)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return int32(0)
 	} else {
-		return v8
+		return v9
 	}
 }
 func F_gbt_float4_sortsupport(m *base.Module, l0 int32) int32 {

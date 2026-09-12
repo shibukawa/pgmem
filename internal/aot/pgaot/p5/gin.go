@@ -6850,6 +6850,132 @@ func F_gin_cmp_tslexeme(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_gin_compare_prefix_int2(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v39 int32
+	_ = v39
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v8))))
+	if base.Ui32((v16-int32(1))&int32(_a_F_gin_compare_prefix_int2_0)) < base.Ui32(int32(2)) {
+		v23 = v8 + int32(4)
+	} else {
+		v23 = l0 + int32(20)
+	}
+	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v26 = F_CallerFInfoFunctionCall2(m, v9, v10, v11, v24, v25)
+	mBase = m.M
+	v29 = m.ExcPending
+	if v29 != 0 {
+		return int32(0)
+	} else {
+		v30 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v8))))
+		switch v30 - int32(1) {
+		case 0:
+			v61 = base.B2i32(v26 <= int32(0))
+			m.G0 = v6 + int32(16)
+			return v61
+		case 1:
+			v61 = int32(base.Ui32(v26) >> (uint(int32(31)) % 32))
+			m.G0 = v6 + int32(16)
+			return v61
+		case 2:
+			v61 = base.B2i32(v26 != int32(0))
+			m.G0 = v6 + int32(16)
+			return v61
+		case 3:
+			v61 = base.B2i32(int32(0) < v26)
+			m.G0 = v6 + int32(16)
+			return v61
+		case 4:
+			v39 = int32(0)
+			if v26 < v39 {
+				v61 = v39
+			} else {
+				if v26 != 0 {
+					v44 = int32(1)
+				} else {
+					v44 = int32(-1)
+				}
+				v61 = v44
+			}
+			m.G0 = v6 + int32(16)
+			return v61
+		default:
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v48 = m.ExcPending
+			if v48 != 0 {
+				return int32(0)
+			} else {
+				v49 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v8))))
+				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v49
+				F_errmsg_internal(m, int32(_a_F_gin_compare_prefix_int2_1), v6)
+				mBase = m.M
+				v53 = m.ExcPending
+				if v53 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_gin_compare_prefix_int2_2), int32(166), int32(_a_F_gin_compare_prefix_int2_3))
+					mBase = m.M
+					v58 = m.ExcPending
+					if v58 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_gin_extract_jsonb(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -7180,6 +7306,159 @@ L30:
 	v100 = v93
 	goto L12
 }
+func F_gin_extract_query_name(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v61 int32
+	_ = v61
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	v9 = m.G0
+	v11 = v9 - int32(16)
+	m.G0 = v11
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v19 = F_palloc(m, int32(4))
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		return int32(0)
+	} else {
+		v24 = F_palloc(m, int32(16))
+		mBase = m.M
+		v25 = m.ExcPending
+		if v25 != 0 {
+			return int32(0)
+		} else {
+			v26 = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v17))) = v26
+			v29 = F_palloc(m, v26)
+			mBase = m.M
+			v30 = m.ExcPending
+			if v30 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v16))) = v29
+				v32 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v32)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+12)) = int32(2118)
+				*(*uint8)(unsafe.Add(mBase, uint32(v24)+8)) = uint8(v32)
+				*(*int32)(unsafe.Add(mBase, uint32(v24)+4)) = v15
+				*(*uint16)(unsafe.Add(mBase, uint32(v24))) = uint16(v14)
+				v41 = F_palloc(m, int32(4))
+				mBase = m.M
+				v42 = m.ExcPending
+				if v42 != 0 {
+					return int32(0)
+				} else {
+					*(*int32)(unsafe.Add(mBase, uint32(v13))) = v41
+					*(*int32)(unsafe.Add(mBase, uint32(v41))) = v24
+					v46 = v14 & int32(_a_F_gin_extract_query_name_0)
+					switch v46 - int32(1) {
+					case 0, 1:
+						v70 = F_palloc0(m, int32(64))
+						mBase = m.M
+						v71 = m.ExcPending
+						if v71 != 0 {
+							return int32(0)
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v19))) = v70
+							v73 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v73)
+							m.G0 = v11 + int32(16)
+							return v19
+						}
+					case 2:
+						*(*int32)(unsafe.Add(mBase, uint32(v19))) = v15
+						m.G0 = v11 + int32(16)
+						return v19
+					case 3, 4:
+						v49 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v29))) = uint8(v49)
+						*(*int32)(unsafe.Add(mBase, uint32(v19))) = v15
+						m.G0 = v11 + int32(16)
+						return v19
+					default:
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v55 = m.ExcPending
+						if v55 != 0 {
+							return int32(0)
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v11))) = v46
+							F_errmsg_internal(m, int32(_a_F_gin_extract_query_name_1), v11)
+							mBase = m.M
+							v61 = m.ExcPending
+							if v61 != 0 {
+								return int32(0)
+							} else {
+								F_errfinish(m, int32(_a_F_gin_extract_query_name_2), int32(97), int32(_a_F_gin_extract_query_name_3))
+								mBase = m.M
+								v68 = m.ExcPending
+								if v68 != 0 {
+									return int32(0)
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_gin_extract_tsvector_2args(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -7229,6 +7508,78 @@ func F_gin_extract_tsvector_2args(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			return v20
+		}
+	}
+}
+func F_gin_extract_value_inet(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = F_palloc(m, int32(4))
+	mBase = m.M
+	v10 = m.ExcPending
+	if v10 != 0 {
+		return int32(0)
+	} else {
+		v11 = F_pg_detoast_datum(m, v5)
+		mBase = m.M
+		v12 = m.ExcPending
+		if v12 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v11
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
+			return v7
+		}
+	}
+}
+func F_gin_numeric_cmp(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v9 int32
+	_ = v9
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if v4 == int32(0) {
+		if v3 != 0 {
+			v9 = int32(-1)
+		} else {
+			v9 = int32(0)
+		}
+		return v9
+	} else {
+		if v3 == int32(0) {
+			return int32(1)
+		} else {
+			v17 = F_DirectFunctionCall2Coll(m, int32(1342), int32(0), v4, v3)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				return v17
+			}
 		}
 	}
 }

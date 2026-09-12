@@ -3135,6 +3135,22 @@ func F_latin2_to_mic(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_leftmostvalue_varbit(m *base.Module) int32 {
+	var v2 int32
+	_ = v2
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v2 = int32(0)
+	v6 = F_DirectFunctionCall3Coll(m, int32(2652), v2, int32(_a_F_leftmostvalue_varbit_0), v2, int32(-1))
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
+}
 func F_length_in_encoding(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

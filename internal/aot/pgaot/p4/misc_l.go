@@ -8240,6 +8240,19 @@ L43:
 	v135 = int32(0)
 	goto L2
 }
+func F_leftmostvalue_inet(m *base.Module) int32 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = F_DirectFunctionCall1Coll(m, int32(1481), int32(0), int32(_a_F_leftmostvalue_inet_0))
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
+	} else {
+		return v4
+	}
+}
 func F_lexeme_match(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

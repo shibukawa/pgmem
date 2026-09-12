@@ -2194,6 +2194,246 @@ func F_gbt_uuid_picksplit(m *base.Module, l0 int32) int32
 func F_gbt_uuid_same(m *base.Module, l0 int32) int32
 //go:linkname F_gbt_uuid_sortsupport github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gbt_uuid_sortsupport
 func F_gbt_uuid_sortsupport(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_btree_gin github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_Pg_magic_func_btree_gin
+func F_Pg_magic_func_btree_gin(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_btree_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_btree_consistent
+func F_pg_finfo_gin_btree_consistent(m *base.Module) int32
+//go:linkname F_gin_btree_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_btree_consistent
+func F_gin_btree_consistent(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_value_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_extract_value_int2
+func F_pg_finfo_gin_extract_value_int2(m *base.Module) int32
+//go:linkname F_gin_extract_value_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_value_int2
+func F_gin_extract_value_int2(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_query_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_query_int2
+func F_pg_finfo_gin_extract_query_int2(m *base.Module) int32
+//go:linkname F_gin_extract_query_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_int2
+func F_gin_extract_query_int2(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_compare_prefix_int2
+func F_pg_finfo_gin_compare_prefix_int2(m *base.Module) int32
+//go:linkname F_gin_compare_prefix_int2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_compare_prefix_int2
+func F_gin_compare_prefix_int2(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_value_int4 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_value_int4
+func F_pg_finfo_gin_extract_value_int4(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_int4 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_int4
+func F_pg_finfo_gin_extract_query_int4(m *base.Module) int32
+//go:linkname F_gin_extract_query_int4 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_query_int4
+func F_gin_extract_query_int4(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_int4 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_compare_prefix_int4
+func F_pg_finfo_gin_compare_prefix_int4(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_int8 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_value_int8
+func F_pg_finfo_gin_extract_value_int8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_int8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_query_int8
+func F_pg_finfo_gin_extract_query_int8(m *base.Module) int32
+//go:linkname F_gin_extract_query_int8 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_int8
+func F_gin_extract_query_int8(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_int8 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_compare_prefix_int8
+func F_pg_finfo_gin_compare_prefix_int8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_value_float4
+func F_pg_finfo_gin_extract_value_float4(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_float4
+func F_pg_finfo_gin_extract_query_float4(m *base.Module) int32
+//go:linkname F_gin_extract_query_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_float4
+func F_gin_extract_query_float4(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_float4 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_float4
+func F_pg_finfo_gin_compare_prefix_float4(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_float8 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_value_float8
+func F_pg_finfo_gin_extract_value_float8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_float8 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_float8
+func F_pg_finfo_gin_extract_query_float8(m *base.Module) int32
+//go:linkname F_gin_extract_query_float8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_float8
+func F_gin_extract_query_float8(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_float8 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_float8
+func F_pg_finfo_gin_compare_prefix_float8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_money github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_value_money
+func F_pg_finfo_gin_extract_value_money(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_money github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_query_money
+func F_pg_finfo_gin_extract_query_money(m *base.Module) int32
+//go:linkname F_gin_extract_query_money github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_money
+func F_gin_extract_query_money(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_money github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_compare_prefix_money
+func F_pg_finfo_gin_compare_prefix_money(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_oid
+func F_pg_finfo_gin_extract_value_oid(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_query_oid
+func F_pg_finfo_gin_extract_query_oid(m *base.Module) int32
+//go:linkname F_gin_extract_query_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_oid
+func F_gin_extract_query_oid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_oid
+func F_pg_finfo_gin_compare_prefix_oid(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_timestamp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_timestamp
+func F_pg_finfo_gin_extract_value_timestamp(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_timestamp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_query_timestamp
+func F_pg_finfo_gin_extract_query_timestamp(m *base.Module) int32
+//go:linkname F_gin_extract_query_timestamp github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_timestamp
+func F_gin_extract_query_timestamp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_timestamp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_timestamp
+func F_pg_finfo_gin_compare_prefix_timestamp(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_timestamptz github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_timestamptz
+func F_pg_finfo_gin_extract_value_timestamptz(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_timestamptz github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_timestamptz
+func F_pg_finfo_gin_extract_query_timestamptz(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_timestamptz github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_compare_prefix_timestamptz
+func F_pg_finfo_gin_compare_prefix_timestamptz(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_time github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_time
+func F_pg_finfo_gin_extract_value_time(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_time github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_time
+func F_pg_finfo_gin_extract_query_time(m *base.Module) int32
+//go:linkname F_gin_extract_query_time github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_query_time
+func F_gin_extract_query_time(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_time github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_compare_prefix_time
+func F_pg_finfo_gin_compare_prefix_time(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_timetz github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_timetz
+func F_pg_finfo_gin_extract_value_timetz(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_timetz github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_timetz
+func F_pg_finfo_gin_extract_query_timetz(m *base.Module) int32
+//go:linkname F_gin_extract_query_timetz github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_timetz
+func F_gin_extract_query_timetz(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_timetz github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_compare_prefix_timetz
+func F_pg_finfo_gin_compare_prefix_timetz(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_date github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_value_date
+func F_pg_finfo_gin_extract_value_date(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_date github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_extract_query_date
+func F_pg_finfo_gin_extract_query_date(m *base.Module) int32
+//go:linkname F_gin_extract_query_date github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_date
+func F_gin_extract_query_date(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_date github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_compare_prefix_date
+func F_pg_finfo_gin_compare_prefix_date(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_value_interval
+func F_pg_finfo_gin_extract_value_interval(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_query_interval
+func F_pg_finfo_gin_extract_query_interval(m *base.Module) int32
+//go:linkname F_gin_extract_query_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_interval
+func F_gin_extract_query_interval(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_compare_prefix_interval
+func F_pg_finfo_gin_compare_prefix_interval(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_macaddr github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_value_macaddr
+func F_pg_finfo_gin_extract_value_macaddr(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_macaddr github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_query_macaddr
+func F_pg_finfo_gin_extract_query_macaddr(m *base.Module) int32
+//go:linkname F_gin_extract_query_macaddr github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_macaddr
+func F_gin_extract_query_macaddr(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_macaddr github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_compare_prefix_macaddr
+func F_pg_finfo_gin_compare_prefix_macaddr(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_macaddr8 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_macaddr8
+func F_pg_finfo_gin_extract_value_macaddr8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_macaddr8 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_macaddr8
+func F_pg_finfo_gin_extract_query_macaddr8(m *base.Module) int32
+//go:linkname F_gin_extract_query_macaddr8 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_macaddr8
+func F_gin_extract_query_macaddr8(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_macaddr8 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_macaddr8
+func F_pg_finfo_gin_compare_prefix_macaddr8(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_inet github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_value_inet
+func F_pg_finfo_gin_extract_value_inet(m *base.Module) int32
+//go:linkname F_gin_extract_value_inet github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_extract_value_inet
+func F_gin_extract_value_inet(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_query_inet github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_inet
+func F_pg_finfo_gin_extract_query_inet(m *base.Module) int32
+//go:linkname F_gin_extract_query_inet github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_inet
+func F_gin_extract_query_inet(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_inet github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_inet
+func F_pg_finfo_gin_compare_prefix_inet(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_cidr github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_cidr
+func F_pg_finfo_gin_extract_value_cidr(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_cidr github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_cidr
+func F_pg_finfo_gin_extract_query_cidr(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_cidr github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_compare_prefix_cidr
+func F_pg_finfo_gin_compare_prefix_cidr(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_text github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_value_text
+func F_pg_finfo_gin_extract_value_text(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_text github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_query_text
+func F_pg_finfo_gin_extract_query_text(m *base.Module) int32
+//go:linkname F_gin_extract_query_text github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_text
+func F_gin_extract_query_text(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_text github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_compare_prefix_text
+func F_pg_finfo_gin_compare_prefix_text(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_bpchar github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_value_bpchar
+func F_pg_finfo_gin_extract_value_bpchar(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_bpchar github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_bpchar
+func F_pg_finfo_gin_extract_query_bpchar(m *base.Module) int32
+//go:linkname F_gin_extract_query_bpchar github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gin_extract_query_bpchar
+func F_gin_extract_query_bpchar(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_bpchar github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_compare_prefix_bpchar
+func F_pg_finfo_gin_compare_prefix_bpchar(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_char github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_value_char
+func F_pg_finfo_gin_extract_value_char(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_char github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_query_char
+func F_pg_finfo_gin_extract_query_char(m *base.Module) int32
+//go:linkname F_gin_extract_query_char github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_char
+func F_gin_extract_query_char(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_char github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_compare_prefix_char
+func F_pg_finfo_gin_compare_prefix_char(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_bytea
+func F_pg_finfo_gin_extract_value_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_query_bytea
+func F_pg_finfo_gin_extract_query_bytea(m *base.Module) int32
+//go:linkname F_gin_extract_query_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_query_bytea
+func F_gin_extract_query_bytea(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_bytea github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_compare_prefix_bytea
+func F_pg_finfo_gin_compare_prefix_bytea(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_bit github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_bit
+func F_pg_finfo_gin_extract_value_bit(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_bit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_bit
+func F_pg_finfo_gin_extract_query_bit(m *base.Module) int32
+//go:linkname F_gin_extract_query_bit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_bit
+func F_gin_extract_query_bit(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_bit github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_compare_prefix_bit
+func F_pg_finfo_gin_compare_prefix_bit(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_varbit github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_value_varbit
+func F_pg_finfo_gin_extract_value_varbit(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_varbit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_query_varbit
+func F_pg_finfo_gin_extract_query_varbit(m *base.Module) int32
+//go:linkname F_gin_extract_query_varbit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gin_extract_query_varbit
+func F_gin_extract_query_varbit(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_varbit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_varbit
+func F_pg_finfo_gin_compare_prefix_varbit(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_numeric_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_numeric_cmp
+func F_pg_finfo_gin_numeric_cmp(m *base.Module) int32
+//go:linkname F_gin_numeric_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_numeric_cmp
+func F_gin_numeric_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_value_numeric github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_extract_value_numeric
+func F_pg_finfo_gin_extract_value_numeric(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_numeric github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_query_numeric
+func F_pg_finfo_gin_extract_query_numeric(m *base.Module) int32
+//go:linkname F_gin_extract_query_numeric github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_numeric
+func F_gin_extract_query_numeric(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_numeric github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_compare_prefix_numeric
+func F_pg_finfo_gin_compare_prefix_numeric(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_enum_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_enum_cmp
+func F_pg_finfo_gin_enum_cmp(m *base.Module) int32
+//go:linkname F_gin_enum_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_enum_cmp
+func F_gin_enum_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_extract_value_anyenum github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_anyenum
+func F_pg_finfo_gin_extract_value_anyenum(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_anyenum github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_anyenum
+func F_pg_finfo_gin_extract_query_anyenum(m *base.Module) int32
+//go:linkname F_gin_extract_query_anyenum github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gin_extract_query_anyenum
+func F_gin_extract_query_anyenum(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_anyenum github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_compare_prefix_anyenum
+func F_pg_finfo_gin_compare_prefix_anyenum(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_gin_extract_value_uuid
+func F_pg_finfo_gin_extract_value_uuid(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_extract_query_uuid
+func F_pg_finfo_gin_extract_query_uuid(m *base.Module) int32
+//go:linkname F_gin_extract_query_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gin_extract_query_uuid
+func F_gin_extract_query_uuid(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_uuid github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_compare_prefix_uuid
+func F_pg_finfo_gin_compare_prefix_uuid(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_name github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_extract_value_name
+func F_pg_finfo_gin_extract_value_name(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_name github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_gin_extract_query_name
+func F_pg_finfo_gin_extract_query_name(m *base.Module) int32
+//go:linkname F_gin_extract_query_name github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gin_extract_query_name
+func F_gin_extract_query_name(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_name github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_gin_compare_prefix_name
+func F_pg_finfo_gin_compare_prefix_name(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_value_bool github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_gin_extract_value_bool
+func F_pg_finfo_gin_extract_value_bool(m *base.Module) int32
+//go:linkname F_pg_finfo_gin_extract_query_bool github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_gin_extract_query_bool
+func F_pg_finfo_gin_extract_query_bool(m *base.Module) int32
+//go:linkname F_gin_extract_query_bool github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_extract_query_bool
+func F_gin_extract_query_bool(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_gin_compare_prefix_bool github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_gin_compare_prefix_bool
+func F_pg_finfo_gin_compare_prefix_bool(m *base.Module) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

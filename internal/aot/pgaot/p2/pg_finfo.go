@@ -158,8 +158,47 @@ func F_pg_finfo_gbt_uuid_union(m *base.Module) int32 {
 func F_pg_finfo_ghstore_same(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_same_0)
 }
+func F_pg_finfo_gin_compare_prefix_bit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_bit_0)
+}
+func F_pg_finfo_gin_compare_prefix_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_bytea_0)
+}
+func F_pg_finfo_gin_compare_prefix_interval(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_interval_0)
+}
+func F_pg_finfo_gin_extract_query_bytea(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_bytea_0)
+}
+func F_pg_finfo_gin_extract_query_int2(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_int2_0)
+}
+func F_pg_finfo_gin_extract_query_int8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_int8_0)
+}
+func F_pg_finfo_gin_extract_query_interval(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_interval_0)
+}
+func F_pg_finfo_gin_extract_query_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_text_0)
+}
 func F_pg_finfo_gin_extract_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_trgm_0)
+}
+func F_pg_finfo_gin_extract_value_bool(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_bool_0)
+}
+func F_pg_finfo_gin_extract_value_float4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_float4_0)
+}
+func F_pg_finfo_gin_extract_value_inet(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_inet_0)
+}
+func F_pg_finfo_gin_extract_value_money(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_money_0)
+}
+func F_pg_finfo_gin_extract_value_varbit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_varbit_0)
 }
 func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_distance_0)

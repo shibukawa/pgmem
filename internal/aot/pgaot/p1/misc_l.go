@@ -1069,6 +1069,40 @@ func F_lcons_int(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_leftmostvalue_bit(m *base.Module) int32 {
+	var v2 int32
+	_ = v2
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	v2 = int32(0)
+	v6 = F_DirectFunctionCall3Coll(m, int32(490), v2, int32(_a_F_leftmostvalue_bit_0), v2, int32(-1))
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		return v6
+	}
+}
+func F_leftmostvalue_interval(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = F_palloc(m, int32(16))
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		*(*int64)(unsafe.Add(mBase, uint32(v3)+8)) = int64(-9223372034707292160)
+		*(*int64)(unsafe.Add(mBase, uint32(v3))) = int64(-9223372036854775807 - 1)
+		return v3
+	}
+}
 func F_like_escape(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

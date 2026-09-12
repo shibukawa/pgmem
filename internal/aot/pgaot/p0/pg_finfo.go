@@ -131,8 +131,62 @@ func F_pg_finfo_ghstore_consistent(m *base.Module) int32 {
 func F_pg_finfo_ghstore_options(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_options_0)
 }
+func F_pg_finfo_gin_compare_prefix_int2(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_int2_0)
+}
+func F_pg_finfo_gin_compare_prefix_int4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_int4_0)
+}
+func F_pg_finfo_gin_compare_prefix_numeric(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_numeric_0)
+}
+func F_pg_finfo_gin_compare_prefix_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_text_0)
+}
+func F_pg_finfo_gin_compare_prefix_time(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_time_0)
+}
 func F_pg_finfo_gin_consistent_hstore(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_consistent_hstore_0)
+}
+func F_pg_finfo_gin_extract_query_anyenum(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_anyenum_0)
+}
+func F_pg_finfo_gin_extract_query_bit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_bit_0)
+}
+func F_pg_finfo_gin_extract_query_int4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_int4_0)
+}
+func F_pg_finfo_gin_extract_query_name(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_name_0)
+}
+func F_pg_finfo_gin_extract_query_time(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_time_0)
+}
+func F_pg_finfo_gin_extract_query_timetz(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_timetz_0)
+}
+func F_pg_finfo_gin_extract_value_char(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_char_0)
+}
+func F_pg_finfo_gin_extract_value_cidr(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_cidr_0)
+}
+func F_pg_finfo_gin_extract_value_macaddr8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_macaddr8_0)
+}
+func F_pg_finfo_gin_extract_value_oid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_oid_0)
+}
+func F_pg_finfo_gin_extract_value_timestamp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_timestamp_0)
+}
+func F_pg_finfo_gin_extract_value_timestamptz(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_timestamptz_0)
+}
+func F_pg_finfo_gin_numeric_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_numeric_cmp_0)
 }
 func F_pg_finfo_gin_trgm_triconsistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_trgm_triconsistent_0)

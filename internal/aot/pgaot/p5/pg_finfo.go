@@ -134,6 +134,69 @@ func F_pg_finfo_ghstore_penalty(m *base.Module) int32 {
 func F_pg_finfo_ghstore_union(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_union_0)
 }
+func F_pg_finfo_gin_compare_prefix_bool(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_bool_0)
+}
+func F_pg_finfo_gin_compare_prefix_float4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_float4_0)
+}
+func F_pg_finfo_gin_compare_prefix_float8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_float8_0)
+}
+func F_pg_finfo_gin_compare_prefix_inet(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_inet_0)
+}
+func F_pg_finfo_gin_compare_prefix_macaddr8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_macaddr8_0)
+}
+func F_pg_finfo_gin_compare_prefix_oid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_oid_0)
+}
+func F_pg_finfo_gin_compare_prefix_timestamp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_timestamp_0)
+}
+func F_pg_finfo_gin_compare_prefix_varbit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_varbit_0)
+}
+func F_pg_finfo_gin_extract_query_bpchar(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_bpchar_0)
+}
+func F_pg_finfo_gin_extract_query_cidr(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_cidr_0)
+}
+func F_pg_finfo_gin_extract_query_float4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_float4_0)
+}
+func F_pg_finfo_gin_extract_query_float8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_float8_0)
+}
+func F_pg_finfo_gin_extract_query_inet(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_inet_0)
+}
+func F_pg_finfo_gin_extract_query_macaddr8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_macaddr8_0)
+}
+func F_pg_finfo_gin_extract_query_timestamptz(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_timestamptz_0)
+}
+func F_pg_finfo_gin_extract_query_varbit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_varbit_0)
+}
+func F_pg_finfo_gin_extract_value_int4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_int4_0)
+}
+func F_pg_finfo_gin_extract_value_int8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_int8_0)
+}
+func F_pg_finfo_gin_extract_value_interval(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_interval_0)
+}
+func F_pg_finfo_gin_extract_value_name(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_name_0)
+}
+func F_pg_finfo_gin_extract_value_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_text_0)
+}
 func F_pg_finfo_gin_trgm_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_trgm_consistent_0)
 }

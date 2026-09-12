@@ -1802,6 +1802,14 @@ func F_StartupXLOG(m *base.Module) {
 	_ = v3472
 	var v3473 int32
 	_ = v3473
+	var v3481 int32
+	_ = v3481
+	var v3486 int32
+	_ = v3486
+	var v3490 int32
+	_ = v3490
+	var v3495 int32
+	_ = v3495
 	var v3501 int32
 	_ = v3501
 	var v3507 int32
@@ -1812,8 +1820,10 @@ func F_StartupXLOG(m *base.Module) {
 	_ = v3516
 	var v3520 int32
 	_ = v3520
-	var v3525 int32
-	_ = v3525
+	var v3522 int32
+	_ = v3522
+	var v3530 int32
+	_ = v3530
 	var v3533 int32
 	_ = v3533
 	var v3534 int32
@@ -13180,7 +13190,7 @@ L807:
 L808:
 	;
 	v3473 = int32(_a_F_StartupXLOG_137)
-	goto L827
+	goto L828
 L809:
 	;
 	v3472 = v3464 - v3398
@@ -13268,19 +13278,62 @@ L824:
 	goto L823
 L825:
 	;
-	if base.Ui32(v3525) <= base.Ui32(v3472) {
+	if base.Ui32(v3530) <= base.Ui32(v3472) {
 		goto L842
 	} else {
 		goto L843
 	}
 L826:
 	;
-	v3525 = v3516 - v3473
+	v3530 = v3522 - v3473
 	goto L825
 L827:
 	;
-	v3501 = v3473
+	v3501 = v3490
 	goto L836
+L828:
+	;
+	v3481 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_StartupXLOG[58])))
+	if v3481 == int32(0) {
+		goto L829
+	} else {
+		goto L830
+	}
+L829:
+	;
+	v3530 = int32(0)
+	goto L825
+L830:
+	;
+	goto L831
+L831:
+	;
+	v3486 = v3473
+	goto L832
+L832:
+	;
+	v3490 = v3486 + int32(1)
+	if v3490&int32(3) == int32(0) {
+		goto L827
+	} else {
+		goto L834
+	}
+L833:
+	;
+	v3522 = v3490
+	goto L826
+L834:
+	;
+	v3495 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3490))))
+	if v3495 != 0 {
+		v3486 = v3490
+		goto L832
+	} else {
+		goto L835
+	}
+L835:
+	;
+	goto L833
 L836:
 	;
 	v3507 = *(*int32)(unsafe.Add(mBase, uint32(v3501)))
@@ -13309,13 +13362,14 @@ L839:
 	}
 L840:
 	;
+	v3522 = v3516
 	goto L826
 L841:
 	;
 	goto L840
 L842:
 	;
-	v3533 = v3398 + (v3472 - v3525)
+	v3533 = v3398 + (v3472 - v3530)
 	v3534 = int32(_a_F_StartupXLOG_137)
 	v3537 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_StartupXLOG[58])))
 	v3538 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3533))))

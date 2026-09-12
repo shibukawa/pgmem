@@ -2394,6 +2394,37 @@ func F_lazy_check_wraparound_failsafe(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_leftmostvalue_text(m *base.Module) int32 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = F_cstring_to_text_with_len(m, int32(_a_F_leftmostvalue_text_0), int32(0))
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		return v3
+	}
+}
+func F_leftmostvalue_timetz(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = F_palloc(m, int32(16))
+	mBase = m.M
+	v6 = m.ExcPending
+	if v6 != 0 {
+		return int32(0)
+	} else {
+		*(*int32)(unsafe.Add(mBase, uint32(v3)+8)) = int32(-86400)
+		*(*int64)(unsafe.Add(mBase, uint32(v3))) = int64(0)
+		return v3
+	}
+}
 func F_lexdigits(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase

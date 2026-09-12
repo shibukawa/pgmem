@@ -137,8 +137,44 @@ func F_pg_finfo_ghstore_compress(m *base.Module) int32 {
 func F_pg_finfo_ghstore_out(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_out_0)
 }
+func F_pg_finfo_gin_compare_prefix_anyenum(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_anyenum_0)
+}
+func F_pg_finfo_gin_compare_prefix_int8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_int8_0)
+}
+func F_pg_finfo_gin_compare_prefix_name(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_name_0)
+}
+func F_pg_finfo_gin_compare_prefix_timetz(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_timetz_0)
+}
+func F_pg_finfo_gin_compare_prefix_uuid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_compare_prefix_uuid_0)
+}
+func F_pg_finfo_gin_enum_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_enum_cmp_0)
+}
 func F_pg_finfo_gin_extract_hstore_query(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_hstore_query_0)
+}
+func F_pg_finfo_gin_extract_query_numeric(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_numeric_0)
+}
+func F_pg_finfo_gin_extract_query_uuid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_query_uuid_0)
+}
+func F_pg_finfo_gin_extract_value_bpchar(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_bpchar_0)
+}
+func F_pg_finfo_gin_extract_value_date(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_date_0)
+}
+func F_pg_finfo_gin_extract_value_float8(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_float8_0)
+}
+func F_pg_finfo_gin_extract_value_macaddr(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gin_extract_value_macaddr_0)
 }
 func F_pg_finfo_gin_extract_value_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_trgm_0)

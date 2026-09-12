@@ -428,23 +428,23 @@ func F_gbt_enum_picksplit(m *base.Module, l0 int32) int32 {
 func F_gbt_enumge(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
 	var v6 int32
 	_ = v6
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v7 = F_CallerFInfoFunctionCall2(m, int32(3809), l2, v5, v6)
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v8 = F_CallerFInfoFunctionCall2(m, int32(3809), l2, int32(0), v6, v7)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v11 = m.ExcPending
+	if v11 != 0 {
 		return int32(0)
 	} else {
-		return base.B2i32(v7 != int32(0))
+		return base.B2i32(v8 != int32(0))
 	}
 }
 func F_gbt_float4_dist(m *base.Module, l0 int32, l1 int32, l2 int32) float64 {
