@@ -4410,6 +4410,10 @@ func F_pg_encoding_verifymbchar(m *base.Module, l0 int32, l1 int32, l2 int32) in
 func F_pg_cryptohash_create(m *base.Module, l0 int32) int32
 //go:linkname F_pg_cryptohash_init github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_cryptohash_init
 func F_pg_cryptohash_init(m *base.Module, l0 int32) int32
+//go:linkname F_pg_cryptohash_final github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_cryptohash_final
+func F_pg_cryptohash_final(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_pg_cryptohash_free github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_cryptohash_free
+func F_pg_cryptohash_free(m *base.Module, l0 int32)
 //go:linkname F_pg_cryptohash_error github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_cryptohash_error
 func F_pg_cryptohash_error(m *base.Module, l0 int32) int32
 //go:linkname F_pg_hmac_create github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_hmac_create
@@ -4780,6 +4784,10 @@ func F_pgstatindex_impl(m *base.Module, l0 int32, l1 int32) int32
 func F_pgstatginindex_internal(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_pgstat_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstat_relation
 func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_uuid_generate_random github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_random
+func F_uuid_generate_random(m *base.Module, l0 int32)
+//go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
+func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

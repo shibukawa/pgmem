@@ -407,3 +407,12 @@ func F_pg_finfo_utf8_to_gb18030(m *base.Module) int32 {
 func F_pg_finfo_utf8_to_koi8r(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_koi8r_0)
 }
+func F_pg_finfo_uuid_generate_v3(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_generate_v3_0)
+}
+func F_pg_finfo_uuid_generate_v5(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_generate_v5_0)
+}
+func F_pg_finfo_uuid_ns_dns(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_ns_dns_0)
+}

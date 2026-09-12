@@ -26,3 +26,6 @@ func F_Pg_magic_func_latin2_and_win1250(m *base.Module) int32 {
 func F_Pg_magic_func_pgstattuple(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_pgstattuple_0)
 }
+func F_Pg_magic_func_uuid_ossp(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_uuid_ossp_0)
+}

@@ -5,6 +5,36 @@ import (
 	"unsafe"
 )
 
+func F_uuid_generate_v4(m *base.Module, l0 int32) int32 {
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	v3 = m.G0
+	v5 = v3 + int32(-64)
+	m.G0 = v5
+	F_uuid_generate_random(m, v5)
+	F_uuid_unparse(m, v5, v3+int32(-48))
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		v18 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v3+int32(-48))
+		v19 = m.ExcPending
+		if v19 != 0 {
+			return int32(0)
+		} else {
+			m.G0 = v5 - int32(-64)
+			return v18
+		}
+	}
+}
 func F_uuid_hash(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

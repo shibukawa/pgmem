@@ -416,3 +416,9 @@ func F_pg_finfo_utf8_to_euc_kr(m *base.Module) int32 {
 func F_pg_finfo_utf8_to_iso8859_1(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_iso8859_1_0)
 }
+func F_pg_finfo_uuid_generate_v1(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_generate_v1_0)
+}
+func F_pg_finfo_uuid_ns_url(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_ns_url_0)
+}

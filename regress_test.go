@@ -67,6 +67,7 @@ var contribRegress = map[string][]string{
 	"tsm_system_rows": {"tsm_system_rows"},
 	"tsm_system_time": {"tsm_system_time"},
 	"pgstattuple":     {"pgstattuple"},
+	"uuid-ossp":       {"uuid_ossp"},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every

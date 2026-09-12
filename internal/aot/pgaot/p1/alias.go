@@ -3996,6 +3996,12 @@ func F_pgstatindex_impl(m *base.Module, l0 int32, l1 int32) int32
 func F_pg_relpages_impl(m *base.Module, l0 int32) int64
 //go:linkname F_pgstat_relation github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pgstat_relation
 func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_uuid_generate_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_uuid_generate_internal
+func F_uuid_generate_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_uuid_generate_time github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_uuid_generate_time
+func F_uuid_generate_time(m *base.Module, l0 int32)
+//go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
+func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

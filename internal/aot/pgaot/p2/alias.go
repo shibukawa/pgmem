@@ -4408,6 +4408,10 @@ func F_BloomInitMetapage(m *base.Module, l0 int32, l1 int32)
 func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_ean2isn github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ean2isn
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
+//go:linkname F_uuid_generate_random github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_random
+func F_uuid_generate_random(m *base.Module, l0 int32)
+//go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
+func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

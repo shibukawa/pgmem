@@ -344,6 +344,12 @@ func F_pg_finfo_unaccent_dict(m *base.Module) int32 {
 func F_pg_finfo_utf8_to_uhc(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_uhc_0)
 }
+func F_pg_finfo_uuid_generate_v4(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_generate_v4_0)
+}
+func F_pg_finfo_uuid_ns_oid(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_ns_oid_0)
+}
 func F_pg_finfo_word_similarity_op(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_word_similarity_op_0)
 }

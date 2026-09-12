@@ -434,6 +434,15 @@ func F_pg_finfo_utf8_to_euc_tw(m *base.Module) int32 {
 func F_pg_finfo_utf8_to_sjis(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_utf8_to_sjis_0)
 }
+func F_pg_finfo_uuid_generate_v1mc(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_generate_v1mc_0)
+}
+func F_pg_finfo_uuid_nil(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_nil_0)
+}
+func F_pg_finfo_uuid_ns_x500(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_uuid_ns_x500_0)
+}
 func F_pg_finfo_win1250_to_latin2(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_win1250_to_latin2_0)
 }

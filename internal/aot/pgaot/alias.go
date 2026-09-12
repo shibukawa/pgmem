@@ -3188,6 +3188,48 @@ func F_pgstattuple_v1_5(m *base.Module, l0 int32) int32
 func F_pgstattuplebyid(m *base.Module, l0 int32) int32
 //go:linkname F_pgstattuplebyid_v1_5 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pgstattuplebyid_v1_5
 func F_pgstattuplebyid_v1_5(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_uuid_ossp github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_uuid_ossp
+func F_Pg_magic_func_uuid_ossp(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_nil github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_uuid_nil
+func F_pg_finfo_uuid_nil(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_ns_dns github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_uuid_ns_dns
+func F_pg_finfo_uuid_ns_dns(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_ns_url github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_uuid_ns_url
+func F_pg_finfo_uuid_ns_url(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_ns_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_uuid_ns_oid
+func F_pg_finfo_uuid_ns_oid(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_ns_x500 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_uuid_ns_x500
+func F_pg_finfo_uuid_ns_x500(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_generate_v1 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_uuid_generate_v1
+func F_pg_finfo_uuid_generate_v1(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_generate_v1mc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_uuid_generate_v1mc
+func F_pg_finfo_uuid_generate_v1mc(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_generate_v3 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_uuid_generate_v3
+func F_pg_finfo_uuid_generate_v3(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_generate_v4 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_uuid_generate_v4
+func F_pg_finfo_uuid_generate_v4(m *base.Module) int32
+//go:linkname F_pg_finfo_uuid_generate_v5 github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_uuid_generate_v5
+func F_pg_finfo_uuid_generate_v5(m *base.Module) int32
+//go:linkname F_uuid_nil github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_uuid_nil
+func F_uuid_nil(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_ns_dns github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_ns_dns
+func F_uuid_ns_dns(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_ns_url github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_ns_url
+func F_uuid_ns_url(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_ns_oid github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_ns_oid
+func F_uuid_ns_oid(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_ns_x500 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_uuid_ns_x500
+func F_uuid_ns_x500(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_generate_v1 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_uuid_generate_v1
+func F_uuid_generate_v1(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_generate_v1mc github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_v1mc
+func F_uuid_generate_v1mc(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_generate_v3 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_v3
+func F_uuid_generate_v3(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_generate_v4 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_uuid_generate_v4
+func F_uuid_generate_v4(m *base.Module, l0 int32) int32
+//go:linkname F_uuid_generate_v5 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_uuid_generate_v5
+func F_uuid_generate_v5(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

@@ -351,6 +351,53 @@ L18:
 	;
 	goto L2
 }
+func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v8 int64
+	_ = v8
+	var v10 int64
+	_ = v10
+	var v12 int64
+	_ = v12
+	var v14 int64
+	_ = v14
+	var v16 int64
+	_ = v16
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	v3 = m.G0
+	v5 = v3 - int32(48)
+	m.G0 = v5
+	v7 = int32(_a_F_uuid_ns_oid_0)
+	v8 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[0]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
+	v10 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[1]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+24)) = v10
+	v12 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[2]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+16)) = v12
+	v14 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[3]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5))) = v14
+	v16 = *(*int64)(unsafe.Add(mBase, _c_F_uuid_ns_oid[4]))
+	*(*int64)(unsafe.Add(mBase, uint32(v5)+8)) = v16
+	v20 = F_DirectFunctionCall1Coll(m, int32(3392), int32(0), v5)
+	mBase = m.M
+	v23 = m.ExcPending
+	if v23 != 0 {
+		return int32(0)
+	} else {
+		m.G0 = v5 + int32(48)
+		return v20
+	}
+}
 func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -393,5 +440,93 @@ func F_uuid_skipsupport(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v4))) = v6
 			return int32(0)
 		}
+	}
+}
+func F_uuid_unparse(m *base.Module, l0 int32, l1 int32) {
+	mBase := m.M
+	_ = mBase
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	v19 = m.G0
+	v21 = v19 + int32(-64)
+	m.G0 = v21
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
+	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+5)))
+	v29 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+6)))
+	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+7)))
+	v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+8)))
+	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)))
+	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+10)))
+	v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+11)))
+	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+12)))
+	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+13)))
+	v37 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+14)))
+	v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+15)))
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+60)) = v38
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+56)) = v37
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+52)) = v36
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+48)) = v35
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+44)) = v34
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+40)) = v33
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+36)) = v32
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+32)) = v31
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+28)) = v30
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+24)) = v29
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+20)) = v28
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+16)) = v27
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+12)) = v26
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = v25
+	*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = v24
+	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v23
+	v57 = F_snprintf(m, l1, int32(37), int32(_a_F_uuid_unparse_0), v21)
+	mBase = m.M
+	v58 = m.ExcPending
+	if v58 != 0 {
+		return
+	} else {
+		m.G0 = v21 - int32(-64)
+		return
 	}
 }
