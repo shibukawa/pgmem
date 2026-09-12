@@ -36,6 +36,13 @@ var contribRegress = map[string][]string{
 	"pg_trgm": {"pg_trgm", "pg_utf8_trgm", "pg_word_trgm", "pg_strict_word_trgm"},
 	"hstore":  {"hstore", "hstore_utf8"},
 	"ltree":   {"ltree"},
+	// without_overlaps uses \d, which the psql emulation does not have
+	"btree_gist": {
+		"init", "int2", "int4", "int8", "float4", "float8", "cash", "oid", "timestamp", "timestamptz",
+		"time", "timetz", "date", "interval", "macaddr", "macaddr8", "inet", "cidr", "text", "varchar", "char",
+		"bytea", "bit", "varbit", "numeric", "uuid", "not_equal", "enum", "bool", "partitions",
+		"stratnum",
+	},
 }
 
 // TestContribRegress replays PostgreSQL's own regression tests for every
@@ -49,18 +56,26 @@ func TestContribRegress(t *testing.T) {
 	sort.Strings(names)
 	for _, name := range names {
 		t.Run(name, func(t *testing.T) {
-			s, err := pgmem.Start(context.Background(), pgmem.Options{})
-			if err != nil {
-				t.Fatal(err)
+			// REGRESS_DSN points the same replay at another server (a real
+			// PostgreSQL with the contrib modules installed) to tell a
+			// pgmem difference from a harness one.
+			dsn := os.Getenv("REGRESS_DSN")
+			if dsn == "" {
+				s, err := pgmem.Start(context.Background(), pgmem.Options{})
+				if err != nil {
+					t.Fatal(err)
+				}
+				defer s.Close()
+				dsn = s.DSN()
 			}
-			defer s.Close()
-			runRegress(t, s.DSN(), filepath.Join("testdata", "regress", name), contribRegress[name])
+			runRegress(t, dsn, filepath.Join("testdata", "regress", name), contribRegress[name])
 		})
 	}
 }
 
-// runRegress executes dir/sql/<name>.sql for each name on one connection
-// and compares the psql-style transcript with dir/expected/<name>.out.
+// runRegress executes dir/sql/<name>.sql for each name, each on a fresh
+// connection the way pg_regress starts a psql per file, and compares the
+// psql-style transcript with dir/expected/<name>.out.
 func runRegress(t *testing.T, dsn, dir string, names []string) {
 	t.Helper()
 	ctx := context.Background()
@@ -74,11 +89,10 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 	cfg.OnNotice = func(_ *pgconn.PgConn, n *pgconn.Notice) {
 		fmt.Fprintf(&notices, "%s:  %s\n", n.Severity, n.Message)
 	}
-	conn, err := pgx.ConnectConfig(ctx, cfg)
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer conn.Close(ctx)
+	// what pg_regress puts in the environment for every test session
+	cfg.RuntimeParams["datestyle"] = "Postgres, MDY"
+	cfg.RuntimeParams["timezone"] = "America/Los_Angeles"
+	cfg.RuntimeParams["intervalstyle"] = "postgres_verbose"
 
 	for _, name := range names {
 		ok := t.Run(name, func(t *testing.T) {
@@ -89,6 +103,22 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 			want, err := os.ReadFile(filepath.Join(dir, "expected", name+".out"))
 			if err != nil {
 				t.Fatal(err)
+			}
+			conn, err := pgx.ConnectConfig(ctx, cfg)
+			if err != nil {
+				t.Fatal(err)
+			}
+			defer conn.Close(ctx)
+			// the startup parameters only reach the first session of a
+			// pgmem server; SET makes them stick for every connection
+			for _, q := range []string{
+				"SET datestyle = 'Postgres, MDY'",
+				"SET timezone = 'America/Los_Angeles'",
+				"SET intervalstyle = 'postgres_verbose'",
+			} {
+				if _, err := conn.Exec(ctx, q); err != nil {
+					t.Fatal(err)
+				}
 			}
 			got := psqlTranscript(ctx, conn, &notices, string(sqlText), dir)
 			if diff := transcriptDiff(string(want), got); diff != "" {
