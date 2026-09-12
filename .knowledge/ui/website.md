@@ -28,8 +28,8 @@ ui:
         children: [concept:vfs-snapshot, concept:server-process, rule:single-session-per-backend, decision:data-plane-transport]
       - kind: page
         id: extensions
-        target: concept:static-modules
-        children: [flow:add-extension, requirement:cloud-common-extensions]
+        target: policy:bundled-extensions
+        children: [concept:static-modules, decision:pgcrypto-on-host]
       - kind: page
         id: limits
         target: concept:limits

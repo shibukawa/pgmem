@@ -9,11 +9,11 @@ PostgreSQL 18.3 (PGlite fork) compiled to wasm once, translated to Go ahead of t
 summary:
   layers:
     - name: postgres source
-      what: electric-sql/postgres-pglite pinned by commit and sha256 in wasm/postgres-pglite.lock; patched at build time by wasm/patches.py (CRC-32C, cryptohash, UUID entropy, LISTEN commit hook routed to the host)
+      what: electric-sql/postgres-pglite pinned by commit and sha256 in wasm/postgres-pglite.lock; patched at build time by wasm/patches.py (CRC-32C, cryptohash, UUID entropy, LISTEN commit hook routed to the host, pgcrypto OpenSSL and zlib layers per decision:pgcrypto-on-host, PGlite ReadyForQuery fix for extended-protocol errors)
     - name: wasm module
-      what: wasm/build.sh links one static module with Emscripten 3.1.74; no dynamic linking, loadable modules statically linked (concept:static-modules); no OpenSSL, ICU, zlib
+      what: wasm/build.sh links one static module with Emscripten 3.1.74; no dynamic linking; plpgsql, contrib extensions and pgvector statically linked (concept:static-modules, policy:bundled-extensions); no OpenSSL, ICU, zlib
     - name: generated Go
-      what: wasm2go pure-Go backend turns postgres.wasm into internal/aot/pgaot (102 MB source, ~35 s compile once); the wasm file is a build intermediate and does not ship
+      what: wasm2go pure-Go backend (shibukawa/wasm2go-fork branch pgmem, pinned by wasm/wasm2go.lock) turns postgres.wasm into internal/aot/pgaot (104 MB source, ~35 s compile once); functions are named after PostgreSQL symbols and grouped into files by subject so a rebuild changes only the functions that changed; the wasm file is a build intermediate and does not ship
     - name: host table
       what: internal/host implements the Emscripten env and WASI imports (syscalls, clock, memory growth, exit unwinding); entropy, CRC-32C and hashes run on Go crypto and hash packages
     - name: vfs
@@ -39,8 +39,9 @@ summary:
     pgmemtest/: Go test helpers (decision:clone-release-style)
     cmd/pgmem: standalone binary and control protocol
     cmd/pgmem-mkdata: regenerates the embedded data directory
-    wasm/: build scripts, patches, static module table
+    wasm/: build scripts, patches, static module table, lock files for postgres-pglite, pgvector and wasm2go
+    testdata/regress: upstream contrib regression files replayed by regress_test.go
     packages/python, packages/java: wrappers (requirement:multi-language-wrapper)
   rebuild: emsdk 3.1.74 at toolchain/emsdk; ./wasm/build.sh, ./wasm/gen-aot.sh, go run ./cmd/pgmem-mkdata, go test ./...
-  aot_backend_choice: pure Go beats the wasm2go asm backend on size (102 vs 281 MB) and speed (95 vs 122 ms sort of 200k rows); asm stays available with ASM=1
+  aot_backend_choice: pure Go beats the wasm2go asm backend on size (104 vs 281 MB) and speed (95 vs 122 ms sort of 200k rows); asm stays available with ASM=1
 ```

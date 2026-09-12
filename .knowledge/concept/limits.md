@@ -10,8 +10,10 @@ summary:
   one_session: rule:single-session-per-backend; pools work but serialize at transaction boundaries; parallelism comes from forks (requirement:test-fixture-fork)
   session_state: SET, temp tables and advisory locks are shared between live connections; use SET LOCAL; prepared statements are safe (per-connection name prefix)
   cross_connection_waits: a transaction waiting for another connection's row lock or advisory lock waits forever; diagnostic logged after 5 s
-  databases: only Options.Database is served; the README of 2026-09-12 still says CREATE DATABASE hangs, a later probe showed it completes in ~10 ms, and refusing connections to other databases with 3D000 plus multi-database serving are in progress
-  extensions: plpgsql only (concept:static-modules); no ICU, OpenSSL, zlib, pgcrypto
+  databases: CREATE DATABASE and DROP DATABASE work, but only Options.Database is served; a connection naming another database is refused with SQLSTATE 3D000; multi-database serving (Prisma shadow database) is still open
+  extensions: the bundled set only (policy:bundled-extensions); no ICU, OpenSSL or zlib, pgcrypto runs its crypto on Go (decision:pgcrypto-on-host), fips_mode() is always false
+  parallel_query: max_parallel_workers=0; no postmaster starts workers, so parallel plans and parallel index builds are off
+  fresh_session: a connection that starts while no other is alive gets a reset session (everything DISCARD ALL does plus no temp namespace) done in C, invisible to pg_stat_statements
   io_method: forced to sync; worker AIO would wait on IO workers that do not exist
   memory: ~150 MB resident per server (metric:server-footprint); Options.Params can raise shared_buffers when a test needs cache
   timeouts: statement_timeout fires between protocol messages and on clock reads or sleeps, not inside a pure CPU loop

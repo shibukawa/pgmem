@@ -27,6 +27,6 @@ summary:
   nodejs: 'planned (requirement:nodejs-wrapper): Prisma migrate deploy with DATABASE_URL (shadow database needs multi-database serving), drizzle-kit migrate, TypeORM runMigrations, knex.migrate.latest'
   gotchas:
     - tools that open a second connection inside a transaction (advisory-lock based locking in golang-migrate and Flyway) work because the lock and the migration run on the same connection; a tool that waits on another connection would hang (rule:single-session-per-backend)
-    - CREATE EXTENSION beyond plpgsql fails until concept:static-modules grows
+    - CREATE EXTENSION works for the bundled set only (policy:bundled-extensions); pgvector is available as vector
     - migration history tables are part of the snapshot, so forks report the schema as up to date
 ```

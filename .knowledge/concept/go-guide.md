@@ -7,7 +7,7 @@ Using pgmem from Go tests: install, a first test, initialization through pgmemte
 
 ```yaml
 summary:
-  install: go get github.com/shibukawa/pgmem; first go build compiles 102 MB of generated Go once (~35 s), cached after that
+  install: go get github.com/shibukawa/pgmem; first go build compiles ~110 MB of generated Go once (~35 s), cached after that
   basic_test: |
     s, err := pgmem.Start(ctx, pgmem.Options{Database: "app"})  // api:go-server
     defer s.Close()

@@ -16,7 +16,7 @@ metric:
   rss_with_setup_child_mb: 161    # -database app -user tester
   rss_shared_buffers_128mb_mb: 230
   binary_stripped_mb: 36.2        # minimal program, -ldflags="-s -w"
-  generated_go_source_mb: 102
+  generated_go_source_mb: 104   # backend; 110 MB shipped in total with the aot glue
   compile_once_s: 35
   fork: metric:fork-cost
   unmeasured: [amd64, Linux, Windows]

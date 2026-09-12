@@ -14,6 +14,6 @@ summary:
   distribution: optionalDependencies per platform, esbuild style (policy:binary-distribution); avoid the npm name pg-mem (existing emulator)
   blockers:
     - Prisma migrate dev needs a shadow database, so multi-database serving must land first (concept:limits)
-    - extensions common in cloud PostgreSQL that Prisma and Drizzle schemas assume (requirement:cloud-common-extensions)
+  extensions: pgvector, pgcrypto and the contrib set ORM schemas assume are bundled (policy:bundled-extensions)
   mechanism: same concept:server-process and api:control-protocol; lifecycle flow:wrapper-test-lifecycle
 ```

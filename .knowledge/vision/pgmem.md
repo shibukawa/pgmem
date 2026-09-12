@@ -13,7 +13,6 @@ summary:
     - Python and Java packages bundling the binary (requirement:multi-language-wrapper)
   scope_next:
     - requirement:nodejs-wrapper
-    - requirement:cloud-common-extensions
   positioning: concept:alternatives
   constraints:
     - rule:single-session-per-backend
