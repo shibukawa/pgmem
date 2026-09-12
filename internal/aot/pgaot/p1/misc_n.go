@@ -2659,6 +2659,357 @@ func F_newstate(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_normal_rand(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 float64
+	_ = v5
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v25 int32
+	_ = v25
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v34 float64
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v37 float64
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int64
+	_ = v52
+	var v53 int64
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v57 float64
+	_ = v57
+	var v59 float64
+	_ = v59
+	var v60 float64
+	_ = v60
+	var v73 int32
+	_ = v73
+	var v76 int64
+	_ = v76
+	var v77 int64
+	_ = v77
+	var v78 int64
+	_ = v78
+	var v99 float64
+	_ = v99
+	var v102 float64
+	_ = v102
+	var v106 int64
+	_ = v106
+	var v107 int64
+	_ = v107
+	var v108 int64
+	_ = v108
+	var v129 float64
+	_ = v129
+	var v132 float64
+	_ = v132
+	var v134 float64
+	_ = v134
+	var v139 float64
+	_ = v139
+	var v143 float64
+	_ = v143
+	var v147 float64
+	_ = v147
+	var v148 float64
+	_ = v148
+	var v154 int64
+	_ = v154
+	var v160 float64
+	_ = v160
+	var v167 int64
+	_ = v167
+	var v168 int32
+	_ = v168
+	var v173 int32
+	_ = v173
+	var v176 int32
+	_ = v176
+	var v177 int32
+	_ = v177
+	var v180 int32
+	_ = v180
+	var v181 int32
+	_ = v181
+	var v184 int32
+	_ = v184
+	var v191 int32
+	_ = v191
+	var v194 int32
+	_ = v194
+	var v200 int32
+	_ = v200
+	var v207 int32
+	_ = v207
+	v5 = float64(0)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
+	if v14 == int32(0) {
+		v17 = int32(_a_F_normal_rand_0)
+		v18 = F_init_MultiFuncCall(m, l0)
+		mBase = m.M
+		v21 = m.ExcPending
+		if v21 != 0 {
+			return int32(0)
+		} else {
+			v22 = *(*int32)(unsafe.Add(mBase, _c_F_normal_rand[0]))
+			v23 = *(*int32)(unsafe.Add(mBase, uint32(v18)+24))
+			*(*int32)(unsafe.Add(mBase, _c_F_normal_rand[0])) = v23
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			if v25 < int32(0) {
+				F_errstart_cold(m, int32(21), int32(0))
+				mBase = m.M
+				v191 = m.ExcPending
+				if v191 != 0 {
+					return int32(0)
+				} else {
+					F_errcode(m, int32(50856066))
+					mBase = m.M
+					v194 = m.ExcPending
+					if v194 != 0 {
+						return int32(0)
+					} else {
+						F_errmsg(m, int32(_a_F_normal_rand_1), int32(0))
+						mBase = m.M
+						v200 = m.ExcPending
+						if v200 != 0 {
+							return int32(0)
+						} else {
+							F_errfinish(m, int32(_a_F_normal_rand_2), int32(206), int32(_a_F_normal_rand_3))
+							mBase = m.M
+							v207 = m.ExcPending
+							if v207 != 0 {
+								return int32(0)
+							} else {
+								base.Wasm_trap_unreachable()
+								for {
+								}
+							}
+						}
+					}
+				}
+			} else {
+				*(*int64)(unsafe.Add(mBase, uint32(v18)+8)) = base.I64_extend_i32_u(v25)
+				v31 = F_palloc(m, int32(32))
+				mBase = m.M
+				v32 = m.ExcPending
+				if v32 != 0 {
+					return int32(0)
+				} else {
+					v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v34 = *(*float64)(unsafe.Add(mBase, uint32(v33)))
+					*(*float64)(unsafe.Add(mBase, uint32(v31))) = v34
+					v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+					v37 = *(*float64)(unsafe.Add(mBase, uint32(v36)))
+					v38 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, uint32(v31)+24)) = uint8(v38)
+					*(*int64)(unsafe.Add(mBase, uint32(v31)+16)) = int64(0)
+					*(*float64)(unsafe.Add(mBase, uint32(v31)+8)) = v37
+					*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v31
+					*(*int32)(unsafe.Add(mBase, _c_F_normal_rand[0])) = v22
+					v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
+					v52 = *(*int64)(unsafe.Add(mBase, uint32(v51)))
+					v53 = *(*int64)(unsafe.Add(mBase, uint32(v51)+8))
+					if base.Ui64(v52) < base.Ui64(v53) {
+						v55 = *(*int32)(unsafe.Add(mBase, uint32(v51)+16))
+						v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v55)+24)))
+						if v56 != 0 {
+							v57 = *(*float64)(unsafe.Add(mBase, uint32(v55)+16))
+							v160 = v57
+							v167 = v52
+							v168 = int32(0)
+						} else {
+							v59 = *(*float64)(unsafe.Add(mBase, uint32(v55)+8))
+							v60 = *(*float64)(unsafe.Add(mBase, uint32(v55)))
+							for {
+								v73 = int32(_a_F_normal_rand_4)
+								v76 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1]))
+								v77 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2]))
+								v78 = v76 ^ v77
+								*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2])) = base.I64_rotl(v78, int64(37))
+								*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1])) = v78<<(uint(int64(16))%64) ^ base.I64_rotl(v76, int64(24)) ^ v78
+								v99 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v76*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+								mBase = m.M
+								v102 = base.F64_add(base.F64_add(v99, v99), float64(-1))
+								v106 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1]))
+								v107 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2]))
+								v108 = v106 ^ v107
+								*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2])) = base.I64_rotl(v108, int64(37))
+								*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1])) = v108<<(uint(int64(16))%64) ^ base.I64_rotl(v106, int64(24)) ^ v108
+								v129 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v106*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+								mBase = m.M
+								v132 = base.F64_add(base.F64_add(v129, v129), float64(-1))
+								v134 = base.F64_add(base.F64_mul(v102, v102), base.F64_mul(v132, v132))
+								if base.F64_ge(v134, float64(1)) != 0 {
+									continue
+								} else {
+									break
+								}
+								break
+							}
+							if base.F64_ne(v134, float64(0)) != 0 {
+								v139 = F_log(m, v134)
+								mBase = m.M
+								v143 = base.F64_sqrt(base.F64_div(base.F64_mul(v139, float64(-2)), v134))
+								v147 = base.F64_mul(v102, v143)
+								v148 = base.F64_mul(v132, v143)
+							} else {
+								v147 = v5
+								v148 = v5
+							}
+							*(*float64)(unsafe.Add(mBase, uint32(v55)+16)) = base.F64_add(base.F64_mul(v59, v148), v60)
+							v154 = *(*int64)(unsafe.Add(mBase, uint32(v51)))
+							v160 = base.F64_add(base.F64_mul(v59, v147), v60)
+							v167 = v154
+							v168 = int32(1)
+						}
+						*(*uint8)(unsafe.Add(mBase, uint32(v55)+24)) = uint8(v168)
+						*(*int64)(unsafe.Add(mBase, uint32(v51))) = v167 + int64(1)
+						v173 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v173)+20)) = int32(1)
+						v176 = F_Float8GetDatum(m, v160)
+						mBase = m.M
+						v177 = m.ExcPending
+						if v177 != 0 {
+							return int32(0)
+						} else {
+							return v176
+						}
+					} else {
+						F_end_MultiFuncCall(m, l0)
+						mBase = m.M
+						v180 = m.ExcPending
+						if v180 != 0 {
+							return int32(0)
+						} else {
+							v181 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+							*(*int32)(unsafe.Add(mBase, uint32(v181)+20)) = int32(2)
+							v184 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v184)
+							return int32(0)
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+16))
+		v52 = *(*int64)(unsafe.Add(mBase, uint32(v51)))
+		v53 = *(*int64)(unsafe.Add(mBase, uint32(v51)+8))
+		if base.Ui64(v52) < base.Ui64(v53) {
+			v55 = *(*int32)(unsafe.Add(mBase, uint32(v51)+16))
+			v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v55)+24)))
+			if v56 != 0 {
+				v57 = *(*float64)(unsafe.Add(mBase, uint32(v55)+16))
+				v160 = v57
+				v167 = v52
+				v168 = int32(0)
+			} else {
+				v59 = *(*float64)(unsafe.Add(mBase, uint32(v55)+8))
+				v60 = *(*float64)(unsafe.Add(mBase, uint32(v55)))
+				for {
+					v73 = int32(_a_F_normal_rand_4)
+					v76 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1]))
+					v77 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2]))
+					v78 = v76 ^ v77
+					*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2])) = base.I64_rotl(v78, int64(37))
+					*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1])) = v78<<(uint(int64(16))%64) ^ base.I64_rotl(v76, int64(24)) ^ v78
+					v99 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v76*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+					mBase = m.M
+					v102 = base.F64_add(base.F64_add(v99, v99), float64(-1))
+					v106 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1]))
+					v107 = *(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2]))
+					v108 = v106 ^ v107
+					*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[2])) = base.I64_rotl(v108, int64(37))
+					*(*int64)(unsafe.Add(mBase, _c_F_normal_rand[1])) = v108<<(uint(int64(16))%64) ^ base.I64_rotl(v106, int64(24)) ^ v108
+					v129 = F_ldexp(m, base.F64_convert_i64_u(int64(base.Ui64(base.I64_rotl(v106*int64(5), int64(7))*int64(9))>>(uint(int64(12))%64))), int32(-52))
+					mBase = m.M
+					v132 = base.F64_add(base.F64_add(v129, v129), float64(-1))
+					v134 = base.F64_add(base.F64_mul(v102, v102), base.F64_mul(v132, v132))
+					if base.F64_ge(v134, float64(1)) != 0 {
+						continue
+					} else {
+						break
+					}
+					break
+				}
+				if base.F64_ne(v134, float64(0)) != 0 {
+					v139 = F_log(m, v134)
+					mBase = m.M
+					v143 = base.F64_sqrt(base.F64_div(base.F64_mul(v139, float64(-2)), v134))
+					v147 = base.F64_mul(v102, v143)
+					v148 = base.F64_mul(v132, v143)
+				} else {
+					v147 = v5
+					v148 = v5
+				}
+				*(*float64)(unsafe.Add(mBase, uint32(v55)+16)) = base.F64_add(base.F64_mul(v59, v148), v60)
+				v154 = *(*int64)(unsafe.Add(mBase, uint32(v51)))
+				v160 = base.F64_add(base.F64_mul(v59, v147), v60)
+				v167 = v154
+				v168 = int32(1)
+			}
+			*(*uint8)(unsafe.Add(mBase, uint32(v55)+24)) = uint8(v168)
+			*(*int64)(unsafe.Add(mBase, uint32(v51))) = v167 + int64(1)
+			v173 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			*(*int32)(unsafe.Add(mBase, uint32(v173)+20)) = int32(1)
+			v176 = F_Float8GetDatum(m, v160)
+			mBase = m.M
+			v177 = m.ExcPending
+			if v177 != 0 {
+				return int32(0)
+			} else {
+				return v176
+			}
+		} else {
+			F_end_MultiFuncCall(m, l0)
+			mBase = m.M
+			v180 = m.ExcPending
+			if v180 != 0 {
+				return int32(0)
+			} else {
+				v181 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+				*(*int32)(unsafe.Add(mBase, uint32(v181)+20)) = int32(2)
+				v184 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v184)
+				return int32(0)
+			}
+		}
+	}
+}
 func F_norwegian_ISO_8859_1_stem(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

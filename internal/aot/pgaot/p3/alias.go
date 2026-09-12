@@ -1416,6 +1416,8 @@ func F_SPI_connect_ext(m *base.Module, l0 int32)
 func F_SPI_finish(m *base.Module) int32
 //go:linkname F_AtEOSubXact_SPI github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_AtEOSubXact_SPI
 func F_AtEOSubXact_SPI(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_SPI_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_SPI_execute
+func F_SPI_execute(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_SPI_freetuptable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_SPI_freetuptable
 func F_SPI_freetuptable(m *base.Module, l0 int32)
 //go:linkname F_SPI_prepare github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_SPI_prepare
@@ -1424,6 +1426,8 @@ func F_SPI_prepare(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F__SPI_make_plan_non_temp(m *base.Module, l0 int32) int32
 //go:linkname F_SPI_keepplan github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_SPI_keepplan
 func F_SPI_keepplan(m *base.Module, l0 int32)
+//go:linkname F_SPI_getvalue github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_SPI_getvalue
+func F_SPI_getvalue(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_SPI_palloc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_SPI_palloc
 func F_SPI_palloc(m *base.Module, l0 int32) int32
 //go:linkname F_SPI_datumTransfer github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_SPI_datumTransfer
@@ -2870,6 +2874,8 @@ func F_float8out_internal(m *base.Module, l0 float64) int32
 func F_format_type_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_format_type_be github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_format_type_be
 func F_format_type_be(m *base.Module, l0 int32) int32
+//go:linkname F_format_type_with_typemod github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_format_type_with_typemod
+func F_format_type_with_typemod(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_str_tolower github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_str_tolower
 func F_str_tolower(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_parse_format github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_parse_format
@@ -3890,6 +3896,8 @@ func F_tuplestore_begin_heap(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_tuplestore_end(m *base.Module, l0 int32)
 //go:linkname F_tuplestore_select_read_pointer github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tuplestore_select_read_pointer
 func F_tuplestore_select_read_pointer(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_tuplestore_puttuple github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_tuplestore_puttuple
+func F_tuplestore_puttuple(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_tuplestore_putvalues github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_tuplestore_putvalues
 func F_tuplestore_putvalues(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_tuplestore_gettupleslot github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_tuplestore_gettupleslot
@@ -4290,6 +4298,10 @@ func F_gbt_var_penalty(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 func F_gbt_var_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_gin_btree_extract_query github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gin_btree_extract_query
 func F_gin_btree_extract_query(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_validateConnectbyTupleDesc github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_validateConnectbyTupleDesc
+func F_validateConnectbyTupleDesc(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_build_tuplestore_recursively github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_build_tuplestore_recursively
+func F_build_tuplestore_recursively(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int32)
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

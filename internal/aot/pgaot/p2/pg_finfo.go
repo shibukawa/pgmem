@@ -32,6 +32,9 @@ func F_pg_finfo_citext_pattern_ge(m *base.Module) int32 {
 func F_pg_finfo_citext_pattern_lt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_pattern_lt_0)
 }
+func F_pg_finfo_crosstab(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_crosstab_0)
+}
 func F_pg_finfo_delete(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_delete_0)
 }

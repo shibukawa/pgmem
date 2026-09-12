@@ -466,6 +466,370 @@ L22:
 	;
 	return
 }
+func F_validateConnectbyTupleDesc(m *base.Module, l0 int32, l1 int32, l2 int32) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v50 int32
+	_ = v50
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
+	var v87 int32
+	_ = v87
+	var v94 int32
+	_ = v94
+	var v98 int32
+	_ = v98
+	var v101 int32
+	_ = v101
+	var v107 int32
+	_ = v107
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v117 int32
+	_ = v117
+	var v124 int32
+	_ = v124
+	var v128 int32
+	_ = v128
+	var v131 int32
+	_ = v131
+	var v137 int32
+	_ = v137
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v147 int32
+	_ = v147
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
+	var v161 int32
+	_ = v161
+	var v167 int32
+	_ = v167
+	var v169 int32
+	_ = v169
+	var v170 int32
+	_ = v170
+	var v177 int32
+	_ = v177
+	var v184 int32
+	_ = v184
+	v6 = m.G0
+	v8 = v6 - int32(80)
+	m.G0 = v8
+	if l1 != 0 {
+		v12 = int32(4)
+	} else {
+		v12 = int32(3)
+	}
+	v13 = v12 + l2
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	if v13 == v14 {
+		v18 = l0 + v13<<(uint(int32(4))%32)
+		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+288))
+		if v19 != int32(23) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v98 = m.ExcPending
+			if v98 != 0 {
+				return
+			} else {
+				F_errcode(m, int32(67141764))
+				mBase = m.M
+				v101 = m.ExcPending
+				if v101 != 0 {
+					return
+				} else {
+					F_errmsg(m, int32(_a_F_validateConnectbyTupleDesc_0), int32(0))
+					mBase = m.M
+					v107 = m.ExcPending
+					if v107 != 0 {
+						return
+					} else {
+						v109 = F_format_type_be(m, int32(23))
+						mBase = m.M
+						v110 = m.ExcPending
+						if v110 != 0 {
+							return
+						} else {
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = v109
+							F_errdetail(m, int32(_a_F_validateConnectbyTupleDesc_1), v8+int32(48))
+							mBase = m.M
+							v117 = m.ExcPending
+							if v117 != 0 {
+								return
+							} else {
+								F_errfinish(m, int32(_a_F_validateConnectbyTupleDesc_2), int32(1434), int32(_a_F_validateConnectbyTupleDesc_3))
+								mBase = m.M
+								v124 = m.ExcPending
+								if v124 != 0 {
+									return
+								} else {
+									base.Wasm_trap_unreachable()
+									for {
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} else {
+			if l1 != 0 {
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(v18)+388))
+				if v22 != int32(25) {
+					F_errstart_cold(m, int32(21), int32(0))
+					mBase = m.M
+					v128 = m.ExcPending
+					if v128 != 0 {
+						return
+					} else {
+						F_errcode(m, int32(67141764))
+						mBase = m.M
+						v131 = m.ExcPending
+						if v131 != 0 {
+							return
+						} else {
+							F_errmsg(m, int32(_a_F_validateConnectbyTupleDesc_0), int32(0))
+							mBase = m.M
+							v137 = m.ExcPending
+							if v137 != 0 {
+								return
+							} else {
+								v139 = F_format_type_be(m, int32(25))
+								mBase = m.M
+								v140 = m.ExcPending
+								if v140 != 0 {
+									return
+								} else {
+									*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v139
+									F_errdetail(m, int32(_a_F_validateConnectbyTupleDesc_4), v8+int32(16))
+									mBase = m.M
+									v147 = m.ExcPending
+									if v147 != 0 {
+										return
+									} else {
+										F_errfinish(m, int32(_a_F_validateConnectbyTupleDesc_2), int32(1442), int32(_a_F_validateConnectbyTupleDesc_3))
+										mBase = m.M
+										v154 = m.ExcPending
+										if v154 != 0 {
+											return
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					if l2 == int32(0) {
+						m.G0 = v8 + int32(80)
+						return
+					} else {
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v18)+488))
+						if v27 == int32(23) {
+							m.G0 = v8 + int32(80)
+							return
+						} else {
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v33 = m.ExcPending
+							if v33 != 0 {
+								return
+							} else {
+								F_errcode(m, int32(67141764))
+								mBase = m.M
+								v36 = m.ExcPending
+								if v36 != 0 {
+									return
+								} else {
+									F_errmsg(m, int32(_a_F_validateConnectbyTupleDesc_0), int32(0))
+									mBase = m.M
+									v42 = m.ExcPending
+									if v42 != 0 {
+										return
+									} else {
+										v44 = F_format_type_be(m, int32(23))
+										mBase = m.M
+										v45 = m.ExcPending
+										if v45 != 0 {
+											return
+										} else {
+											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v44
+											F_errdetail(m, int32(_a_F_validateConnectbyTupleDesc_5), v8)
+											mBase = m.M
+											v50 = m.ExcPending
+											if v50 != 0 {
+												return
+											} else {
+												F_errfinish(m, int32(_a_F_validateConnectbyTupleDesc_2), int32(1451), int32(_a_F_validateConnectbyTupleDesc_3))
+												mBase = m.M
+												v57 = m.ExcPending
+												if v57 != 0 {
+													return
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			} else {
+				if l2 == int32(0) {
+					m.G0 = v8 + int32(80)
+					return
+				} else {
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(v18)+388))
+					if v60 != int32(23) {
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v158 = m.ExcPending
+						if v158 != 0 {
+							return
+						} else {
+							F_errcode(m, int32(67141764))
+							mBase = m.M
+							v161 = m.ExcPending
+							if v161 != 0 {
+								return
+							} else {
+								F_errmsg(m, int32(_a_F_validateConnectbyTupleDesc_0), int32(0))
+								mBase = m.M
+								v167 = m.ExcPending
+								if v167 != 0 {
+									return
+								} else {
+									v169 = F_format_type_be(m, int32(23))
+									mBase = m.M
+									v170 = m.ExcPending
+									if v170 != 0 {
+										return
+									} else {
+										*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v169
+										F_errdetail(m, int32(_a_F_validateConnectbyTupleDesc_6), v8+int32(32))
+										mBase = m.M
+										v177 = m.ExcPending
+										if v177 != 0 {
+											return
+										} else {
+											F_errfinish(m, int32(_a_F_validateConnectbyTupleDesc_2), int32(1458), int32(_a_F_validateConnectbyTupleDesc_3))
+											mBase = m.M
+											v184 = m.ExcPending
+											if v184 != 0 {
+												return
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					} else {
+						m.G0 = v8 + int32(80)
+						return
+					}
+				}
+			}
+		}
+	} else {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v69 = m.ExcPending
+		if v69 != 0 {
+			return
+		} else {
+			F_errcode(m, int32(67141764))
+			mBase = m.M
+			v72 = m.ExcPending
+			if v72 != 0 {
+				return
+			} else {
+				F_errmsg(m, int32(_a_F_validateConnectbyTupleDesc_0), int32(0))
+				mBase = m.M
+				v78 = m.ExcPending
+				if v78 != 0 {
+					return
+				} else {
+					v79 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+68)) = v79
+					*(*int32)(unsafe.Add(mBase, uint32(v8)+64)) = v13
+					F_errdetail(m, int32(_a_F_validateConnectbyTupleDesc_7), v8-int32(-64))
+					mBase = m.M
+					v87 = m.ExcPending
+					if v87 != 0 {
+						return
+					} else {
+						F_errfinish(m, int32(_a_F_validateConnectbyTupleDesc_2), int32(1424), int32(_a_F_validateConnectbyTupleDesc_3))
+						mBase = m.M
+						v94 = m.ExcPending
+						if v94 != 0 {
+							return
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_varlenafastcmp_locale(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

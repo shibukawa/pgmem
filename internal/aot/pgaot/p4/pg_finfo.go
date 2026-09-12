@@ -11,6 +11,9 @@ func F_pg_finfo_citext_le(m *base.Module) int32 {
 func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_pattern_cmp_0)
 }
+func F_pg_finfo_connectby_text(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_connectby_text_0)
+}
 func F_pg_finfo_date_dist(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_date_dist_0)
 }
@@ -271,6 +274,9 @@ func F_pg_finfo_mic_to_sjis(m *base.Module) int32 {
 }
 func F_pg_finfo_mic_to_win1251(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_win1251_0)
+}
+func F_pg_finfo_normal_rand(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_normal_rand_0)
 }
 func F_pg_finfo_pg_armor(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_armor_0)

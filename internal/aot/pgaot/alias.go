@@ -2448,6 +2448,28 @@ func F_unaccent_lexize(m *base.Module, l0 int32) int32
 func F_pg_finfo_unaccent_dict(m *base.Module) int32
 //go:linkname F_unaccent_dict github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_unaccent_dict
 func F_unaccent_dict(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_tablefunc github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_Pg_magic_func_tablefunc
+func F_Pg_magic_func_tablefunc(m *base.Module) int32
+//go:linkname F_pg_finfo_normal_rand github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_normal_rand
+func F_pg_finfo_normal_rand(m *base.Module) int32
+//go:linkname F_normal_rand github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_normal_rand
+func F_normal_rand(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_crosstab github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_crosstab
+func F_pg_finfo_crosstab(m *base.Module) int32
+//go:linkname F_crosstab github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_crosstab
+func F_crosstab(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_crosstab_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_crosstab_hash
+func F_pg_finfo_crosstab_hash(m *base.Module) int32
+//go:linkname F_crosstab_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_crosstab_hash
+func F_crosstab_hash(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_connectby_text github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_connectby_text
+func F_pg_finfo_connectby_text(m *base.Module) int32
+//go:linkname F_connectby_text github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_connectby_text
+func F_connectby_text(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_connectby_text_serial github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_connectby_text_serial
+func F_pg_finfo_connectby_text_serial(m *base.Module) int32
+//go:linkname F_connectby_text_serial github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_connectby_text_serial
+func F_connectby_text_serial(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

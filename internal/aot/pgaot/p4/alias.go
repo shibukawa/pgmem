@@ -1208,6 +1208,10 @@ func F_ExecCleanTypeFromTL(m *base.Module, l0 int32) int32
 func F_ExecTypeFromExprList(m *base.Module, l0 int32) int32
 //go:linkname F_BlessTupleDesc github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BlessTupleDesc
 func F_BlessTupleDesc(m *base.Module, l0 int32) int32
+//go:linkname F_TupleDescGetAttInMetadata github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_TupleDescGetAttInMetadata
+func F_TupleDescGetAttInMetadata(m *base.Module, l0 int32) int32
+//go:linkname F_BuildTupleFromCStrings github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_BuildTupleFromCStrings
+func F_BuildTupleFromCStrings(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_HeapTupleHeaderGetDatum github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HeapTupleHeaderGetDatum
 func F_HeapTupleHeaderGetDatum(m *base.Module, l0 int32) int32
 //go:linkname F_CreateExecutorState github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_CreateExecutorState
@@ -2906,6 +2910,8 @@ func F_pg_strlower(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 in
 func F_strlower_libc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_report_newlocale_failure github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_report_newlocale_failure
 func F_report_newlocale_failure(m *base.Module, l0 int32)
+//go:linkname F_quote_literal_cstr github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_quote_literal_cstr
+func F_quote_literal_cstr(m *base.Module, l0 int32) int32
 //go:linkname F_get_range_io_data github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_get_range_io_data
 func F_get_range_io_data(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_range_serialize github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_range_serialize
