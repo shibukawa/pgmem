@@ -226,6 +226,8 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 func F_visibilitymap_get_status(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_visibilitymap_count github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_visibilitymap_count
 func F_visibilitymap_count(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_visibilitymap_prepare_truncate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_visibilitymap_prepare_truncate
+func F_visibilitymap_prepare_truncate(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetIndexAmRoutineByAmId github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetIndexAmRoutineByAmId
 func F_GetIndexAmRoutineByAmId(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_IndexAmTranslateStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_IndexAmTranslateStrategy
@@ -2454,6 +2456,8 @@ func F_smgrcreate(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_smgrdounlinkall(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_smgrnblocks github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_smgrnblocks
 func F_smgrnblocks(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_smgrtruncate github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_smgrtruncate
+func F_smgrtruncate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_ProcessInterrupts github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ProcessInterrupts
 func F_ProcessInterrupts(m *base.Module)
 //go:linkname F_ShowUsage github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ShowUsage

@@ -3326,6 +3326,136 @@ func F_pg_cancel_backend(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_pg_check_frozen(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v35 int64
+	_ = v35
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v45 int32
+	_ = v45
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
+	if v7 == int32(0) {
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v11 = int32(_a_F_pg_check_frozen_0)
+		v12 = F_init_MultiFuncCall(m, l0)
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			v16 = *(*int32)(unsafe.Add(mBase, _c_F_pg_check_frozen[0]))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v12)+24))
+			*(*int32)(unsafe.Add(mBase, _c_F_pg_check_frozen[0])) = v17
+			v21 = F_collect_corrupt_items(m, v10, int32(0), int32(1))
+			mBase = m.M
+			v22 = m.ExcPending
+			if v22 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v21
+				*(*int32)(unsafe.Add(mBase, _c_F_pg_check_frozen[0])) = v16
+				v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+				v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+16))
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
+				v33 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+				if base.Ui32(v32) < base.Ui32(v33) {
+					v35 = *(*int64)(unsafe.Add(mBase, uint32(v30)))
+					*(*int64)(unsafe.Add(mBase, uint32(v30))) = v35 + int64(1)
+					v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					v40 = int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v39)+20)) = v40
+					*(*int32)(unsafe.Add(mBase, uint32(v31))) = v32 + v40
+					v45 = *(*int32)(unsafe.Add(mBase, uint32(v31)+8))
+					return v45 + v32*int32(6)
+				} else {
+					F_end_MultiFuncCall(m, l0)
+					mBase = m.M
+					v51 = m.ExcPending
+					if v51 != 0 {
+						return int32(0)
+					} else {
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v52)+20)) = int32(2)
+						v55 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v55)
+						return int32(0)
+					}
+				}
+			}
+		}
+	} else {
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+		v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+16))
+		v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)))
+		v33 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
+		if base.Ui32(v32) < base.Ui32(v33) {
+			v35 = *(*int64)(unsafe.Add(mBase, uint32(v30)))
+			*(*int64)(unsafe.Add(mBase, uint32(v30))) = v35 + int64(1)
+			v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+			v40 = int32(1)
+			*(*int32)(unsafe.Add(mBase, uint32(v39)+20)) = v40
+			*(*int32)(unsafe.Add(mBase, uint32(v31))) = v32 + v40
+			v45 = *(*int32)(unsafe.Add(mBase, uint32(v31)+8))
+			return v45 + v32*int32(6)
+		} else {
+			F_end_MultiFuncCall(m, l0)
+			mBase = m.M
+			v51 = m.ExcPending
+			if v51 != 0 {
+				return int32(0)
+			} else {
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+				*(*int32)(unsafe.Add(mBase, uint32(v52)+20)) = int32(2)
+				v55 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v55)
+				return int32(0)
+			}
+		}
+	}
+}
 func F_pg_checksum_update(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase

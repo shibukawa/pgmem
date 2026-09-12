@@ -1232,6 +1232,555 @@ func F_GetPrivateRefCountEntry(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_GetRunningTransactionData(m *base.Module) int32 {
+	mBase := m.M
+	_ = mBase
+	var v1 int32
+	_ = v1
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int64
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v78 int32
+	_ = v78
+	var v80 int32
+	_ = v80
+	var v92 int32
+	_ = v92
+	var v104 int32
+	_ = v104
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
+	var v112 int32
+	_ = v112
+	var v114 int32
+	_ = v114
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
+	var v125 int32
+	_ = v125
+	var v133 int32
+	_ = v133
+	var v134 int32
+	_ = v134
+	var v135 int32
+	_ = v135
+	var v136 int32
+	_ = v136
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v140 int32
+	_ = v140
+	var v146 int32
+	_ = v146
+	var v151 int32
+	_ = v151
+	var v152 int32
+	_ = v152
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
+	var v159 int32
+	_ = v159
+	var v160 int32
+	_ = v160
+	var v173 int32
+	_ = v173
+	var v174 int32
+	_ = v174
+	var v178 int32
+	_ = v178
+	var v182 int32
+	_ = v182
+	var v189 int32
+	_ = v189
+	var v190 int32
+	_ = v190
+	var v193 int32
+	_ = v193
+	var v195 int32
+	_ = v195
+	var v196 int32
+	_ = v196
+	var v197 int32
+	_ = v197
+	var v199 int32
+	_ = v199
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v206 int32
+	_ = v206
+	var v207 int32
+	_ = v207
+	var v208 int32
+	_ = v208
+	var v220 int32
+	_ = v220
+	var v224 int32
+	_ = v224
+	var v225 int64
+	_ = v225
+	var v239 int32
+	_ = v239
+	var v242 int32
+	_ = v242
+	var v246 int32
+	_ = v246
+	var v251 int32
+	_ = v251
+	v1 = int32(0)
+	v16 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[0]))
+	v18 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
+	v21 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[2]))
+	if v21 == v1 {
+		v26 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[3]))
+		v28 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[4]))
+		v32 = F_emscripten_builtin_malloc(m, (v26+v28)*int32(260))
+		mBase = m.M
+		*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[2])) = v32
+		if v32 == int32(0) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v239 = m.ExcPending
+			if v239 != 0 {
+				return int32(0)
+			} else {
+				F_errcode(m, int32(_a_F_GetRunningTransactionData_0))
+				mBase = m.M
+				v242 = m.ExcPending
+				if v242 != 0 {
+					return int32(0)
+				} else {
+					F_errmsg(m, int32(_a_F_GetRunningTransactionData_1), int32(0))
+					mBase = m.M
+					v246 = m.ExcPending
+					if v246 != 0 {
+						return int32(0)
+					} else {
+						F_errfinish(m, int32(_a_F_GetRunningTransactionData_2), int32(2727), int32(_a_F_GetRunningTransactionData_3))
+						mBase = m.M
+						v251 = m.ExcPending
+						if v251 != 0 {
+							return int32(0)
+						} else {
+							base.Wasm_trap_unreachable()
+							for {
+							}
+						}
+					}
+				}
+			}
+		} else {
+			v36 = v32
+			v38 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[5]))
+			v42 = F_LWLockAcquire(m, v38+int32(512), int32(1))
+			mBase = m.M
+			v45 = m.ExcPending
+			if v45 != 0 {
+				return int32(0)
+			} else {
+				v47 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[5]))
+				v51 = F_LWLockAcquire(m, v47+int32(384), int32(1))
+				mBase = m.M
+				v52 = m.ExcPending
+				if v52 != 0 {
+					return int32(0)
+				} else {
+					v54 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+					v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
+					v56 = *(*int64)(unsafe.Add(mBase, uint32(v54)+48))
+					v57 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+					if v57 <= int32(0) {
+						v202 = v1
+						v203 = v1
+						v206 = v1
+						v207 = v55
+						v208 = v55
+					} else {
+						v64 = v1
+						v65 = int32(0)
+						v66 = v57
+						v67 = v1
+						v68 = v55
+						v69 = v55
+						for {
+							v78 = v65 << (uint(int32(2)) % 32)
+							v80 = *(*int32)(unsafe.Add(mBase, uint32(v19+v78)))
+							if v80 != 0 {
+								if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v68))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v80)) == int32(0) {
+									v92 = base.B2i32(base.Ui32(v80) < base.Ui32(v68))
+								} else {
+									v92 = int32(base.Ui32(v80-v68) >> (uint(int32(31)) % 32))
+								}
+								if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v69))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v80)) == int32(0) {
+									v104 = base.B2i32(base.Ui32(v80) < base.Ui32(v69))
+								} else {
+									v104 = int32(base.Ui32(v80-v69) >> (uint(int32(31)) % 32))
+								}
+								if v104 != 0 {
+									v106 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
+									v108 = *(*int32)(unsafe.Add(mBase, uint32(v16+int32(36)+v78)))
+									v112 = *(*int32)(unsafe.Add(mBase, uint32(v106+v108*int32(640))+60))
+									v114 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[8]))
+									if v112 == v114 {
+										v116 = v80
+									} else {
+										v116 = v69
+									}
+									v117 = v116
+								} else {
+									v117 = v69
+								}
+								if v92 != 0 {
+									v118 = v80
+								} else {
+									v118 = v68
+								}
+								v120 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
+								v121 = *(*int32)(unsafe.Add(mBase, uint32(v120)+8))
+								v122 = int32(1)
+								v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v121+v65<<(uint(v122)%32))+1)))
+								*(*int32)(unsafe.Add(mBase, uint32(v36+v67<<(uint(int32(2))%32)))) = v80
+								v133 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+								v134 = v64 | v125
+								v135 = v133
+								v136 = v67 + v122
+								v137 = v118
+								v138 = v117
+							} else {
+								v134 = v64
+								v135 = v66
+								v136 = v67
+								v137 = v68
+								v138 = v69
+							}
+							v140 = v65 + int32(1)
+							if v140 < v135 {
+								v64 = v134
+								v65 = v140
+								v66 = v135
+								v67 = v136
+								v68 = v137
+								v69 = v138
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						if v134&int32(1) != 0 {
+							v202 = int32(2)
+							v203 = int32(0)
+							v206 = v136
+							v207 = v137
+							v208 = v138
+						} else {
+							v146 = int32(0)
+							if v135 <= v146 {
+								v202 = v146
+								v203 = int32(0)
+								v206 = v136
+								v207 = v137
+								v208 = v138
+							} else {
+								v151 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
+								v152 = *(*int32)(unsafe.Add(mBase, uint32(v151)+8))
+								v156 = v146
+								v157 = int32(0)
+								v159 = v135
+								v160 = v136
+								for {
+									v173 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v152+v156<<(uint(int32(1))%32)))))
+									if v173 != 0 {
+										v174 = int32(2)
+										v178 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
+										v182 = *(*int32)(unsafe.Add(mBase, uint32(v16+int32(36)+v156<<(uint(v174)%32))))
+										v189 = v173 << (uint(v174) % 32)
+										if v189 != 0 {
+											v190 = F__emscripten_memcpy_bulkmem(m, v36+v160<<(uint(v174)%32), v178+v182*int32(640)+int32(280), v189)
+											mBase = m.M
+										} else {
+										}
+										v193 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+										v195 = v157 + v173
+										v196 = v193
+										v197 = v173 + v160
+									} else {
+										v195 = v157
+										v196 = v159
+										v197 = v160
+									}
+									v199 = v156 + int32(1)
+									if v199 < v196 {
+										v156 = v199
+										v157 = v195
+										v159 = v196
+										v160 = v197
+										continue
+									} else {
+										break
+									}
+									break
+								}
+								v202 = int32(0)
+								v203 = v195
+								v206 = v197
+								v207 = v137
+								v208 = v138
+							}
+						}
+					}
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v202
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v203
+					v220 = int32(_a_F_GetRunningTransactionData_4)
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v206 - v203
+					v224 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+					v225 = *(*int64)(unsafe.Add(mBase, uint32(v224)+8))
+					*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[12])) = uint32(v56)
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v208
+					*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v207
+					*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v225)
+					return v220
+				}
+			}
+		}
+	} else {
+		v36 = v21
+		v38 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[5]))
+		v42 = F_LWLockAcquire(m, v38+int32(512), int32(1))
+		mBase = m.M
+		v45 = m.ExcPending
+		if v45 != 0 {
+			return int32(0)
+		} else {
+			v47 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[5]))
+			v51 = F_LWLockAcquire(m, v47+int32(384), int32(1))
+			mBase = m.M
+			v52 = m.ExcPending
+			if v52 != 0 {
+				return int32(0)
+			} else {
+				v54 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+				v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)+8))
+				v56 = *(*int64)(unsafe.Add(mBase, uint32(v54)+48))
+				v57 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+				if v57 <= int32(0) {
+					v202 = v1
+					v203 = v1
+					v206 = v1
+					v207 = v55
+					v208 = v55
+				} else {
+					v64 = v1
+					v65 = int32(0)
+					v66 = v57
+					v67 = v1
+					v68 = v55
+					v69 = v55
+					for {
+						v78 = v65 << (uint(int32(2)) % 32)
+						v80 = *(*int32)(unsafe.Add(mBase, uint32(v19+v78)))
+						if v80 != 0 {
+							if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v68))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v80)) == int32(0) {
+								v92 = base.B2i32(base.Ui32(v80) < base.Ui32(v68))
+							} else {
+								v92 = int32(base.Ui32(v80-v68) >> (uint(int32(31)) % 32))
+							}
+							if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v69))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v80)) == int32(0) {
+								v104 = base.B2i32(base.Ui32(v80) < base.Ui32(v69))
+							} else {
+								v104 = int32(base.Ui32(v80-v69) >> (uint(int32(31)) % 32))
+							}
+							if v104 != 0 {
+								v106 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
+								v108 = *(*int32)(unsafe.Add(mBase, uint32(v16+int32(36)+v78)))
+								v112 = *(*int32)(unsafe.Add(mBase, uint32(v106+v108*int32(640))+60))
+								v114 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[8]))
+								if v112 == v114 {
+									v116 = v80
+								} else {
+									v116 = v69
+								}
+								v117 = v116
+							} else {
+								v117 = v69
+							}
+							if v92 != 0 {
+								v118 = v80
+							} else {
+								v118 = v68
+							}
+							v120 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
+							v121 = *(*int32)(unsafe.Add(mBase, uint32(v120)+8))
+							v122 = int32(1)
+							v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v121+v65<<(uint(v122)%32))+1)))
+							*(*int32)(unsafe.Add(mBase, uint32(v36+v67<<(uint(int32(2))%32)))) = v80
+							v133 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+							v134 = v64 | v125
+							v135 = v133
+							v136 = v67 + v122
+							v137 = v118
+							v138 = v117
+						} else {
+							v134 = v64
+							v135 = v66
+							v136 = v67
+							v137 = v68
+							v138 = v69
+						}
+						v140 = v65 + int32(1)
+						if v140 < v135 {
+							v64 = v134
+							v65 = v140
+							v66 = v135
+							v67 = v136
+							v68 = v137
+							v69 = v138
+							continue
+						} else {
+							break
+						}
+						break
+					}
+					if v134&int32(1) != 0 {
+						v202 = int32(2)
+						v203 = int32(0)
+						v206 = v136
+						v207 = v137
+						v208 = v138
+					} else {
+						v146 = int32(0)
+						if v135 <= v146 {
+							v202 = v146
+							v203 = int32(0)
+							v206 = v136
+							v207 = v137
+							v208 = v138
+						} else {
+							v151 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[1]))
+							v152 = *(*int32)(unsafe.Add(mBase, uint32(v151)+8))
+							v156 = v146
+							v157 = int32(0)
+							v159 = v135
+							v160 = v136
+							for {
+								v173 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v152+v156<<(uint(int32(1))%32)))))
+								if v173 != 0 {
+									v174 = int32(2)
+									v178 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[7]))
+									v182 = *(*int32)(unsafe.Add(mBase, uint32(v16+int32(36)+v156<<(uint(v174)%32))))
+									v189 = v173 << (uint(v174) % 32)
+									if v189 != 0 {
+										v190 = F__emscripten_memcpy_bulkmem(m, v36+v160<<(uint(v174)%32), v178+v182*int32(640)+int32(280), v189)
+										mBase = m.M
+									} else {
+									}
+									v193 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+									v195 = v157 + v173
+									v196 = v193
+									v197 = v173 + v160
+								} else {
+									v195 = v157
+									v196 = v159
+									v197 = v160
+								}
+								v199 = v156 + int32(1)
+								if v199 < v196 {
+									v156 = v199
+									v157 = v195
+									v159 = v196
+									v160 = v197
+									continue
+								} else {
+									break
+								}
+								break
+							}
+							v202 = int32(0)
+							v203 = v195
+							v206 = v197
+							v207 = v137
+							v208 = v138
+						}
+					}
+				}
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[9])) = v202
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[10])) = v203
+				v220 = int32(_a_F_GetRunningTransactionData_4)
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[11])) = v206 - v203
+				v224 = *(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[6]))
+				v225 = *(*int64)(unsafe.Add(mBase, uint32(v224)+8))
+				*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[12])) = uint32(v56)
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[13])) = v208
+				*(*int32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[14])) = v207
+				*(*uint32)(unsafe.Add(mBase, _c_F_GetRunningTransactionData[15])) = uint32(v225)
+				return v220
+			}
+		}
+	}
+}
 func F_GetUserNameFromId(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

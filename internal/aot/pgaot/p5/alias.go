@@ -2580,6 +2580,8 @@ func F_GlobalVisHorizonKindForRel(m *base.Module, l0 int32) int32
 func F_GetOldestTransactionIdConsideredRunning(m *base.Module) int32
 //go:linkname F_GetSnapshotData github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetSnapshotData
 func F_GetSnapshotData(m *base.Module, l0 int32) int32
+//go:linkname F_GetRunningTransactionData github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetRunningTransactionData
+func F_GetRunningTransactionData(m *base.Module) int32
 //go:linkname F_CountOtherDBBackends github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CountOtherDBBackends
 func F_CountOtherDBBackends(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_GlobalVisTestIsRemovableXid github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GlobalVisTestIsRemovableXid

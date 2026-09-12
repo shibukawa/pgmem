@@ -69,6 +69,7 @@ var contribRegress = map[string][]string{
 	"pgstattuple":     {"pgstattuple"},
 	"uuid-ossp":       {"uuid_ossp"},
 	"amcheck":         {"check", "check_btree", "check_gin", "check_heap"},
+	"pg_visibility":   {"pg_visibility"},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",

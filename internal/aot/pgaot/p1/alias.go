@@ -2108,6 +2108,8 @@ func F_GetOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32
 func F_ComputeXidHorizons(m *base.Module, l0 int32)
 //go:linkname F_GlobalVisHorizonKindForRel github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GlobalVisHorizonKindForRel
 func F_GlobalVisHorizonKindForRel(m *base.Module, l0 int32) int32
+//go:linkname F_GetRunningTransactionData github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetRunningTransactionData
+func F_GetRunningTransactionData(m *base.Module) int32
 //go:linkname F_BackendPidGetProc github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_BackendPidGetProc
 func F_BackendPidGetProc(m *base.Module, l0 int32) int32
 //go:linkname F_GetCurrentVirtualXIDs github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetCurrentVirtualXIDs
@@ -4012,6 +4014,10 @@ func F_uuid_generate_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 func F_uuid_generate_time(m *base.Module, l0 int32)
 //go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_collect_visibility_data github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_collect_visibility_data
+func F_collect_visibility_data(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_collect_corrupt_items github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_collect_corrupt_items
+func F_collect_corrupt_items(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_HnswInit github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_HnswInit

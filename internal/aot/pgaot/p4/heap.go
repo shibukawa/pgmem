@@ -11830,3 +11830,91 @@ func F_heap_set_tidrange(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	m.G0 = v8 + int32(16)
 	return
 }
+func F_heap_tuple_needs_eventual_freeze(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v9 int32
+	_ = v9
+	var v14 int32
+	_ = v14
+	var v27 int32
+	_ = v27
+	v4 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+20)))
+	v5 = int32(768)
+	if v4&v5 == v5 {
+		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		if v4&int32(_a_F_heap_tuple_needs_eventual_freeze_0) != 0 {
+			if v14 == int32(0) {
+				if base.Ui32(v4) < base.Ui32(int32(_a_F_heap_tuple_needs_eventual_freeze_1)) {
+					return int32(0)
+				} else {
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					if base.Ui32(v27) <= base.Ui32(int32(2)) {
+						return int32(0)
+					} else {
+						return int32(1)
+					}
+				}
+			} else {
+				return int32(1)
+			}
+		} else {
+			if base.Ui32(v14) <= base.Ui32(int32(2)) {
+				if base.Ui32(v4) < base.Ui32(int32(_a_F_heap_tuple_needs_eventual_freeze_1)) {
+					return int32(0)
+				} else {
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					if base.Ui32(v27) <= base.Ui32(int32(2)) {
+						return int32(0)
+					} else {
+						return int32(1)
+					}
+				}
+			} else {
+				return int32(1)
+			}
+		}
+	} else {
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		if base.Ui32(v9) <= base.Ui32(int32(2)) {
+			v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			if v4&int32(_a_F_heap_tuple_needs_eventual_freeze_0) != 0 {
+				if v14 == int32(0) {
+					if base.Ui32(v4) < base.Ui32(int32(_a_F_heap_tuple_needs_eventual_freeze_1)) {
+						return int32(0)
+					} else {
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						if base.Ui32(v27) <= base.Ui32(int32(2)) {
+							return int32(0)
+						} else {
+							return int32(1)
+						}
+					}
+				} else {
+					return int32(1)
+				}
+			} else {
+				if base.Ui32(v14) <= base.Ui32(int32(2)) {
+					if base.Ui32(v4) < base.Ui32(int32(_a_F_heap_tuple_needs_eventual_freeze_1)) {
+						return int32(0)
+					} else {
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						if base.Ui32(v27) <= base.Ui32(int32(2)) {
+							return int32(0)
+						} else {
+							return int32(1)
+						}
+					}
+				} else {
+					return int32(1)
+				}
+			}
+		} else {
+			return int32(1)
+		}
+	}
+}

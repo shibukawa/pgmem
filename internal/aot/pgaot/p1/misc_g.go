@@ -1151,6 +1151,223 @@ L48:
 	m.G0 = v18 + int32(16)
 	return
 }
+func F_GetStrictOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v10 int32
+	_ = v10
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v56 int32
+	_ = v56
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
+	var v68 int32
+	_ = v68
+	var v70 int32
+	_ = v70
+	var v71 int32
+	_ = v71
+	v5 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[0])))
+	if v5 == int32(1) {
+		v10 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[1]))
+		v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+316))
+		v13 = base.B2i32(v11 != int32(2))
+		*(*uint8)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[0])) = uint8(v13)
+		v15 = v13
+	} else {
+		v15 = int32(0)
+	}
+	if v15 != 0 {
+		v16 = int32(_a_F_GetStrictOldestNonRemovableTransactionId_0)
+		v17 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+		v21 = F_LWLockAcquire(m, v17+int32(384), int32(1))
+		mBase = m.M
+		v24 = m.ExcPending
+		if v24 != 0 {
+			return int32(0)
+		} else {
+			v26 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[3]))
+			v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+8))
+			v28 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+			F_LWLockRelease(m, v28+int32(384))
+			mBase = m.M
+			v32 = m.ExcPending
+			if v32 != 0 {
+				return int32(0)
+			} else {
+				return v27
+			}
+		}
+	} else {
+		if l0 != 0 {
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+			v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+117)))
+			if v35 != int32(1) {
+				v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)))
+				if v53 != 0 {
+					v70 = F_GetOldestNonRemovableTransactionId(m, l0)
+					mBase = m.M
+					v71 = m.ExcPending
+					if v71 != 0 {
+						return int32(0)
+					} else {
+						return v70
+					}
+				} else {
+					v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+					if v54 != 0 {
+						v70 = F_GetOldestNonRemovableTransactionId(m, l0)
+						mBase = m.M
+						v71 = m.ExcPending
+						if v71 != 0 {
+							return int32(0)
+						} else {
+							return v70
+						}
+					} else {
+						v55 = int32(_a_F_GetStrictOldestNonRemovableTransactionId_0)
+						v56 = F_GetRunningTransactionData(m)
+						mBase = m.M
+						v57 = m.ExcPending
+						if v57 != 0 {
+							return int32(0)
+						} else {
+							v58 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+							F_LWLockRelease(m, v58+int32(512))
+							mBase = m.M
+							v62 = m.ExcPending
+							if v62 != 0 {
+								return int32(0)
+							} else {
+								v63 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+								F_LWLockRelease(m, v63+int32(384))
+								mBase = m.M
+								v67 = m.ExcPending
+								if v67 != 0 {
+									return int32(0)
+								} else {
+									v68 = *(*int32)(unsafe.Add(mBase, uint32(v56)+20))
+									return v68
+								}
+							}
+						}
+					}
+				}
+			} else {
+				v38 = int32(_a_F_GetStrictOldestNonRemovableTransactionId_0)
+				v39 = F_GetRunningTransactionData(m)
+				mBase = m.M
+				v40 = m.ExcPending
+				if v40 != 0 {
+					return int32(0)
+				} else {
+					v41 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+					F_LWLockRelease(m, v41+int32(512))
+					mBase = m.M
+					v45 = m.ExcPending
+					if v45 != 0 {
+						return int32(0)
+					} else {
+						v46 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+						F_LWLockRelease(m, v46+int32(384))
+						mBase = m.M
+						v50 = m.ExcPending
+						if v50 != 0 {
+							return int32(0)
+						} else {
+							v51 = *(*int32)(unsafe.Add(mBase, uint32(v39)+16))
+							return v51
+						}
+					}
+				}
+			}
+		} else {
+			v38 = int32(_a_F_GetStrictOldestNonRemovableTransactionId_0)
+			v39 = F_GetRunningTransactionData(m)
+			mBase = m.M
+			v40 = m.ExcPending
+			if v40 != 0 {
+				return int32(0)
+			} else {
+				v41 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+				F_LWLockRelease(m, v41+int32(512))
+				mBase = m.M
+				v45 = m.ExcPending
+				if v45 != 0 {
+					return int32(0)
+				} else {
+					v46 = *(*int32)(unsafe.Add(mBase, _c_F_GetStrictOldestNonRemovableTransactionId[2]))
+					F_LWLockRelease(m, v46+int32(384))
+					mBase = m.M
+					v50 = m.ExcPending
+					if v50 != 0 {
+						return int32(0)
+					} else {
+						v51 = *(*int32)(unsafe.Add(mBase, uint32(v39)+16))
+						return v51
+					}
+				}
+			}
+		}
+	}
+}
 func F_GetUserIdAndSecContext(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

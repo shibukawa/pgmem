@@ -3248,6 +3248,40 @@ func F_pg_finfo_bt_index_parent_check(m *base.Module) int32
 func F_bt_index_check(m *base.Module, l0 int32) int32
 //go:linkname F_bt_index_parent_check github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_index_parent_check
 func F_bt_index_parent_check(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_pg_visibility github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_Pg_magic_func_pg_visibility
+func F_Pg_magic_func_pg_visibility(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_visibility_map github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_visibility_map
+func F_pg_finfo_pg_visibility_map(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_visibility_map_rel github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_visibility_map_rel
+func F_pg_finfo_pg_visibility_map_rel(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_visibility github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_pg_visibility
+func F_pg_finfo_pg_visibility(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_visibility_rel github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_visibility_rel
+func F_pg_finfo_pg_visibility_rel(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_visibility_map_summary github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_pg_visibility_map_summary
+func F_pg_finfo_pg_visibility_map_summary(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_check_frozen github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_check_frozen
+func F_pg_finfo_pg_check_frozen(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_check_visible github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_pg_check_visible
+func F_pg_finfo_pg_check_visible(m *base.Module) int32
+//go:linkname F_pg_finfo_pg_truncate_visibility_map github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_pg_truncate_visibility_map
+func F_pg_finfo_pg_truncate_visibility_map(m *base.Module) int32
+//go:linkname F_pg_visibility_map github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_visibility_map
+func F_pg_visibility_map(m *base.Module, l0 int32) int32
+//go:linkname F_pg_visibility github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_visibility
+func F_pg_visibility(m *base.Module, l0 int32) int32
+//go:linkname F_pg_visibility_map_rel github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_visibility_map_rel
+func F_pg_visibility_map_rel(m *base.Module, l0 int32) int32
+//go:linkname F_pg_visibility_rel github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_visibility_rel
+func F_pg_visibility_rel(m *base.Module, l0 int32) int32
+//go:linkname F_pg_visibility_map_summary github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_visibility_map_summary
+func F_pg_visibility_map_summary(m *base.Module, l0 int32) int32
+//go:linkname F_pg_check_frozen github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_check_frozen
+func F_pg_check_frozen(m *base.Module, l0 int32) int32
+//go:linkname F_pg_check_visible github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_check_visible
+func F_pg_check_visible(m *base.Module, l0 int32) int32
+//go:linkname F_pg_truncate_visibility_map github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_truncate_visibility_map
+func F_pg_truncate_visibility_map(m *base.Module, l0 int32) int32
 //go:linkname F_pg_finfo_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_hamming_distance
 func F_pg_finfo_hamming_distance(m *base.Module) int32
 //go:linkname F_hamming_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_hamming_distance

@@ -371,6 +371,12 @@ func F_pg_finfo_normal_rand(m *base.Module) int32 {
 func F_pg_finfo_pg_armor(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_armor_0)
 }
+func F_pg_finfo_pg_check_frozen(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_check_frozen_0)
+}
+func F_pg_finfo_pg_check_visible(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_check_visible_0)
+}
 func F_pg_finfo_pg_encrypt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_encrypt_0)
 }
@@ -391,6 +397,12 @@ func F_pg_finfo_pg_relpagesbyid(m *base.Module) int32 {
 }
 func F_pg_finfo_pg_relpagesbyid_v1_5(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_relpagesbyid_v1_5_0)
+}
+func F_pg_finfo_pg_visibility_map(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_visibility_map_0)
+}
+func F_pg_finfo_pg_visibility_map_rel(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_pg_visibility_map_rel_0)
 }
 func F_pg_finfo_pgstatginindex(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgstatginindex_0)

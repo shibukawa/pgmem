@@ -22,8 +22,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 7594)
-	m.G0 = int32(13110608)
+	m.T0 = make([]any, 7612)
+	m.G0 = int32(13110864)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -56,7 +56,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4439051
+	m.DataEnd = 4439307
 	initData_0(m)
 	return m
 }
@@ -89,8 +89,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7594)
-	m.G0 = int32(13110608)
+	m.T0 = make([]any, 7612)
+	m.G0 = int32(13110864)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -123,7 +123,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4439051
+	m.DataEnd = 4439307
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -138,8 +138,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 7594)
-	m.G0 = int32(13110608)
+	m.T0 = make([]any, 7612)
+	m.G0 = int32(13110864)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
@@ -172,18 +172,18 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
 	InitElemSeg_5_4(m)
-	m.DataEnd = 4439051
+	m.DataEnd = 4439307
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1634016])
-	copy(m.Memory[1639344:], wasm2goData_data_bin[1634016:1634025])
-	copy(m.Memory[1641392:], wasm2goData_data_bin[1634025:1646953])
-	copy(m.Memory[1662980:], wasm2goData_data_bin[1646953:1740194])
-	copy(m.Memory[1757248:], wasm2goData_data_bin[1740194:1851850])
-	copy(m.Memory[1880120:], wasm2goData_data_bin[1851850:4114288])
-	copy(m.Memory[4150048:], wasm2goData_data_bin[4114288:4403291])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1634368])
+	copy(m.Memory[1639696:], wasm2goData_data_bin[1634368:1634377])
+	copy(m.Memory[1641744:], wasm2goData_data_bin[1634377:1647305])
+	copy(m.Memory[1662980:], wasm2goData_data_bin[1647305:1740546])
+	copy(m.Memory[1757248:], wasm2goData_data_bin[1740546:1852202])
+	copy(m.Memory[1880120:], wasm2goData_data_bin[1852202:4114832])
+	copy(m.Memory[4150240:], wasm2goData_data_bin[4114832:4403899])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -5296,6 +5296,57 @@ func PgFinfoVerifyHeapam(m *base.Module) int32 {
 }
 func VerifyHeapam(m *base.Module, l0 int32) int32 {
 	return F_verify_heapam(m, l0)
+}
+func PgMagicFuncPgVisibility(m *base.Module) int32 {
+	return F_Pg_magic_func_pg_visibility(m)
+}
+func PgCheckFrozen(m *base.Module, l0 int32) int32 {
+	return F_pg_check_frozen(m, l0)
+}
+func PgCheckVisible(m *base.Module, l0 int32) int32 {
+	return F_pg_check_visible(m, l0)
+}
+func PgFinfoPgCheckFrozen(m *base.Module) int32 {
+	return F_pg_finfo_pg_check_frozen(m)
+}
+func PgFinfoPgCheckVisible(m *base.Module) int32 {
+	return F_pg_finfo_pg_check_visible(m)
+}
+func PgFinfoPgTruncateVisibilityMap(m *base.Module) int32 {
+	return F_pg_finfo_pg_truncate_visibility_map(m)
+}
+func PgFinfoPgVisibility(m *base.Module) int32 {
+	return F_pg_finfo_pg_visibility(m)
+}
+func PgFinfoPgVisibilityMap(m *base.Module) int32 {
+	return F_pg_finfo_pg_visibility_map(m)
+}
+func PgFinfoPgVisibilityMapRel(m *base.Module) int32 {
+	return F_pg_finfo_pg_visibility_map_rel(m)
+}
+func PgFinfoPgVisibilityMapSummary(m *base.Module) int32 {
+	return F_pg_finfo_pg_visibility_map_summary(m)
+}
+func PgFinfoPgVisibilityRel(m *base.Module) int32 {
+	return F_pg_finfo_pg_visibility_rel(m)
+}
+func PgTruncateVisibilityMap(m *base.Module, l0 int32) int32 {
+	return F_pg_truncate_visibility_map(m, l0)
+}
+func PgVisibility(m *base.Module, l0 int32) int32 {
+	return F_pg_visibility(m, l0)
+}
+func PgVisibilityMap(m *base.Module, l0 int32) int32 {
+	return F_pg_visibility_map(m, l0)
+}
+func PgVisibilityMapRel(m *base.Module, l0 int32) int32 {
+	return F_pg_visibility_map_rel(m, l0)
+}
+func PgVisibilityMapSummary(m *base.Module, l0 int32) int32 {
+	return F_pg_visibility_map_summary(m, l0)
+}
+func PgVisibilityRel(m *base.Module, l0 int32) int32 {
+	return F_pg_visibility_rel(m, l0)
 }
 func HnswParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	F_HnswParallelBuildMain(m, l0, l1)
