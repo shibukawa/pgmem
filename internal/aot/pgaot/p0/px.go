@@ -1181,7 +1181,7 @@ L119:
 	v559 = int32(6)
 	v562 = int32(12)
 	v565 = int32(18)
-	v577 = int32(4548496)
+	v577 = int32(4557776)
 	goto L160
 L120:
 	;
@@ -1750,7 +1750,7 @@ L214:
 	goto L207
 L215:
 	;
-	v803 = int32(4548496)
+	v803 = int32(4557776)
 	if v755 != 0 {
 		goto L227
 	} else {
@@ -1826,7 +1826,7 @@ L229:
 	*(*uint8)(unsafe.Add(mBase, _consts[1093])) = uint8(v139)
 	v816 = v802 + v778<<(uint(int32(6))%32)
 	v820 = int32(25)
-	v829 = int32(4548498)
+	v829 = int32(4557778)
 	goto L24
 L230:
 	;
@@ -1989,7 +1989,7 @@ L251:
 	*(*uint8)(unsafe.Add(mBase, uint32(v829)+7)) = uint8(v995)
 	v1002 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v991)>>(uint(int32(12))%32))&v930)+uint32(_consts[1094]))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v829)+5)) = uint8(v1002)
-	v1006 = int32(4548496)
+	v1006 = int32(4557776)
 	goto L23
 L252:
 	;
@@ -2003,7 +2003,7 @@ L252:
 	}
 L253:
 	;
-	F_errmsg(m, int32(94530), int32(0))
+	F_errmsg(m, int32(96766), int32(0))
 	mBase = m.M
 	v1040 = m.ExcPending
 	if v1040 != 0 {
@@ -2013,7 +2013,7 @@ L253:
 	}
 L254:
 	;
-	F_errfinish(m, int32(477452), int32(697), int32(164091))
+	F_errfinish(m, int32(483109), int32(697), int32(167732))
 	mBase = m.M
 	v1047 = m.ExcPending
 	if v1047 != 0 {
@@ -2038,7 +2038,7 @@ L256:
 	}
 L257:
 	;
-	F_errmsg(m, int32(94530), int32(0))
+	F_errmsg(m, int32(96766), int32(0))
 	mBase = m.M
 	v1060 = m.ExcPending
 	if v1060 != 0 {
@@ -2048,7 +2048,7 @@ L257:
 	}
 L258:
 	;
-	F_errfinish(m, int32(477452), int32(745), int32(164091))
+	F_errfinish(m, int32(483109), int32(745), int32(167732))
 	mBase = m.M
 	v1067 = m.ExcPending
 	if v1067 != 0 {
@@ -2208,13 +2208,13 @@ func F_px_find_hmac(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v28)+36)) = v33
 								v36 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+24)) = int32(5839)
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+20)) = int32(5840)
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = int32(5841)
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = int32(5842)
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = int32(5843)
-								*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(5844)
-								*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(5845)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+24)) = int32(6263)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+20)) = int32(6264)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = int32(6265)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+12)) = int32(6266)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+8)) = int32(6267)
+								*(*int32)(unsafe.Add(mBase, uint32(v28)+4)) = int32(6268)
+								*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(6269)
 								*(*int32)(unsafe.Add(mBase, uint32(v28)+28)) = v36
 								*(*int32)(unsafe.Add(mBase, uint32(l1))) = v28
 								v62 = int32(0)
@@ -2256,13 +2256,13 @@ func F_px_strerror(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return int32(304078)
+	return int32(308329)
 L2:
 	;
 	goto L3
 L3:
 	;
-	v13 = int32(4348368)
+	v13 = int32(4356704)
 	goto L5
 L4:
 	;
@@ -2296,7 +2296,7 @@ L9:
 	goto L6
 L10:
 	;
-	return int32(399547)
+	return int32(404798)
 L11:
 	;
 	goto L12

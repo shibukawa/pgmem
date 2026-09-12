@@ -2688,6 +2688,8 @@ func F_network_out(m *base.Module, l0 int32, l1 int32) int32
 func F_cidr_set_masklen_internal(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_match_network_subset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_match_network_subset
 func F_match_network_subset(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_convert_network_to_scalar github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_convert_network_to_scalar
+func F_convert_network_to_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) float64
 //go:linkname F_inet_spg_consistent_bitmap github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_inet_spg_consistent_bitmap
 func F_inet_spg_consistent_bitmap(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_make_result_opt_error github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_make_result_opt_error
@@ -3296,6 +3298,8 @@ func F_DirectFunctionCall3Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 func F_DirectFunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_DirectFunctionCall5Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DirectFunctionCall5Coll
 func F_DirectFunctionCall5Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
+//go:linkname F_CallerFInfoFunctionCall2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CallerFInfoFunctionCall2
+func F_CallerFInfoFunctionCall2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_FunctionCall1Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FunctionCall1Coll
 func F_FunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_FunctionCall2Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_FunctionCall2Coll
@@ -3904,6 +3908,28 @@ func F_deparse_lquery(m *base.Module, l0 int32) int32
 func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_ltree_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_execute
 func F_ltree_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_compress
+func F_gbt_num_compress(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_fetch github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_fetch
+func F_gbt_num_fetch(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_union
+func F_gbt_num_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_same
+func F_gbt_num_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_num_consistent
+func F_gbt_num_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_gbt_num_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gbt_num_distance
+func F_gbt_num_distance(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
+//go:linkname F_gbt_num_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_picksplit
+func F_gbt_num_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_var_key_copy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_var_key_copy
+func F_gbt_var_key_copy(m *base.Module, l0 int32) int32
+//go:linkname F_gbt_var_union github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_var_union
+func F_gbt_var_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_gbt_var_node_cp_len github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_node_cp_len
+func F_gbt_var_node_cp_len(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_var_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_var_penalty
+func F_gbt_var_penalty(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

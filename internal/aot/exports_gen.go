@@ -4280,6 +4280,2442 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.Text2ltree(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_btree_gist":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_btree_gist: want 0 args")
+		}
+		r := pgaot.PgMagicFuncBtreeGist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "cash_dist":
+		if len(a) != 1 {
+			panic("aot: cash_dist: want 1 args")
+		}
+		r := pgaot.CashDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "date_dist":
+		if len(a) != 1 {
+			panic("aot: date_dist: want 1 args")
+		}
+		r := pgaot.DateDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "float4_dist":
+		if len(a) != 1 {
+			panic("aot: float4_dist: want 1 args")
+		}
+		r := pgaot.Float4Dist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "float8_dist":
+		if len(a) != 1 {
+			panic("aot: float8_dist: want 1 args")
+		}
+		r := pgaot.Float8Dist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_compress: want 1 args")
+		}
+		r := pgaot.GbtBitCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_consistent: want 1 args")
+		}
+		r := pgaot.GbtBitConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_penalty: want 1 args")
+		}
+		r := pgaot.GbtBitPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_picksplit: want 1 args")
+		}
+		r := pgaot.GbtBitPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_same":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_same: want 1 args")
+		}
+		r := pgaot.GbtBitSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtBitSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bit_union":
+		if len(a) != 1 {
+			panic("aot: gbt_bit_union: want 1 args")
+		}
+		r := pgaot.GbtBitUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_compress: want 1 args")
+		}
+		r := pgaot.GbtBoolCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_consistent: want 1 args")
+		}
+		r := pgaot.GbtBoolConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_fetch: want 1 args")
+		}
+		r := pgaot.GbtBoolFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_penalty: want 1 args")
+		}
+		r := pgaot.GbtBoolPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_picksplit: want 1 args")
+		}
+		r := pgaot.GbtBoolPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_same":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_same: want 1 args")
+		}
+		r := pgaot.GbtBoolSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtBoolSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bool_union":
+		if len(a) != 1 {
+			panic("aot: gbt_bool_union: want 1 args")
+		}
+		r := pgaot.GbtBoolUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bpchar_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_bpchar_compress: want 1 args")
+		}
+		r := pgaot.GbtBpcharCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bpchar_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_bpchar_consistent: want 1 args")
+		}
+		r := pgaot.GbtBpcharConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bpchar_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_bpchar_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtBpcharSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_compress: want 1 args")
+		}
+		r := pgaot.GbtByteaCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_consistent: want 1 args")
+		}
+		r := pgaot.GbtByteaConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_penalty: want 1 args")
+		}
+		r := pgaot.GbtByteaPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_picksplit: want 1 args")
+		}
+		r := pgaot.GbtByteaPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_same":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_same: want 1 args")
+		}
+		r := pgaot.GbtByteaSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtByteaSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_bytea_union":
+		if len(a) != 1 {
+			panic("aot: gbt_bytea_union: want 1 args")
+		}
+		r := pgaot.GbtByteaUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_compress: want 1 args")
+		}
+		r := pgaot.GbtCashCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_consistent: want 1 args")
+		}
+		r := pgaot.GbtCashConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_distance: want 1 args")
+		}
+		r := pgaot.GbtCashDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_fetch: want 1 args")
+		}
+		r := pgaot.GbtCashFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_penalty: want 1 args")
+		}
+		r := pgaot.GbtCashPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_picksplit: want 1 args")
+		}
+		r := pgaot.GbtCashPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_same":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_same: want 1 args")
+		}
+		r := pgaot.GbtCashSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtCashSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_cash_union":
+		if len(a) != 1 {
+			panic("aot: gbt_cash_union: want 1 args")
+		}
+		r := pgaot.GbtCashUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_date_compress: want 1 args")
+		}
+		r := pgaot.GbtDateCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_date_consistent: want 1 args")
+		}
+		r := pgaot.GbtDateConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_date_distance: want 1 args")
+		}
+		r := pgaot.GbtDateDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_date_fetch: want 1 args")
+		}
+		r := pgaot.GbtDateFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_date_penalty: want 1 args")
+		}
+		r := pgaot.GbtDatePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_date_picksplit: want 1 args")
+		}
+		r := pgaot.GbtDatePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_same":
+		if len(a) != 1 {
+			panic("aot: gbt_date_same: want 1 args")
+		}
+		r := pgaot.GbtDateSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_date_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtDateSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_date_union":
+		if len(a) != 1 {
+			panic("aot: gbt_date_union: want 1 args")
+		}
+		r := pgaot.GbtDateUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_decompress":
+		if len(a) != 1 {
+			panic("aot: gbt_decompress: want 1 args")
+		}
+		r := pgaot.GbtDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_compress: want 1 args")
+		}
+		r := pgaot.GbtEnumCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_consistent: want 1 args")
+		}
+		r := pgaot.GbtEnumConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_fetch: want 1 args")
+		}
+		r := pgaot.GbtEnumFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_penalty: want 1 args")
+		}
+		r := pgaot.GbtEnumPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_picksplit: want 1 args")
+		}
+		r := pgaot.GbtEnumPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_same":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_same: want 1 args")
+		}
+		r := pgaot.GbtEnumSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtEnumSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_enum_union":
+		if len(a) != 1 {
+			panic("aot: gbt_enum_union: want 1 args")
+		}
+		r := pgaot.GbtEnumUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_compress: want 1 args")
+		}
+		r := pgaot.GbtFloat4Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_consistent: want 1 args")
+		}
+		r := pgaot.GbtFloat4Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_distance: want 1 args")
+		}
+		r := pgaot.GbtFloat4Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_fetch: want 1 args")
+		}
+		r := pgaot.GbtFloat4Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_penalty: want 1 args")
+		}
+		r := pgaot.GbtFloat4Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_picksplit: want 1 args")
+		}
+		r := pgaot.GbtFloat4Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_same":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_same: want 1 args")
+		}
+		r := pgaot.GbtFloat4Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtFloat4Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float4_union":
+		if len(a) != 1 {
+			panic("aot: gbt_float4_union: want 1 args")
+		}
+		r := pgaot.GbtFloat4Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_compress: want 1 args")
+		}
+		r := pgaot.GbtFloat8Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_consistent: want 1 args")
+		}
+		r := pgaot.GbtFloat8Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_distance: want 1 args")
+		}
+		r := pgaot.GbtFloat8Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_fetch: want 1 args")
+		}
+		r := pgaot.GbtFloat8Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_penalty: want 1 args")
+		}
+		r := pgaot.GbtFloat8Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_picksplit: want 1 args")
+		}
+		r := pgaot.GbtFloat8Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_same":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_same: want 1 args")
+		}
+		r := pgaot.GbtFloat8Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtFloat8Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_float8_union":
+		if len(a) != 1 {
+			panic("aot: gbt_float8_union: want 1 args")
+		}
+		r := pgaot.GbtFloat8Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_compress: want 1 args")
+		}
+		r := pgaot.GbtInetCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_consistent: want 1 args")
+		}
+		r := pgaot.GbtInetConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_penalty: want 1 args")
+		}
+		r := pgaot.GbtInetPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_picksplit: want 1 args")
+		}
+		r := pgaot.GbtInetPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_same":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_same: want 1 args")
+		}
+		r := pgaot.GbtInetSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtInetSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_inet_union":
+		if len(a) != 1 {
+			panic("aot: gbt_inet_union: want 1 args")
+		}
+		r := pgaot.GbtInetUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_compress: want 1 args")
+		}
+		r := pgaot.GbtInt2Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_consistent: want 1 args")
+		}
+		r := pgaot.GbtInt2Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_distance: want 1 args")
+		}
+		r := pgaot.GbtInt2Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_fetch: want 1 args")
+		}
+		r := pgaot.GbtInt2Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_penalty: want 1 args")
+		}
+		r := pgaot.GbtInt2Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_picksplit: want 1 args")
+		}
+		r := pgaot.GbtInt2Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_same":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_same: want 1 args")
+		}
+		r := pgaot.GbtInt2Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtInt2Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int2_union":
+		if len(a) != 1 {
+			panic("aot: gbt_int2_union: want 1 args")
+		}
+		r := pgaot.GbtInt2Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_compress: want 1 args")
+		}
+		r := pgaot.GbtInt4Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_consistent: want 1 args")
+		}
+		r := pgaot.GbtInt4Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_distance: want 1 args")
+		}
+		r := pgaot.GbtInt4Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_fetch: want 1 args")
+		}
+		r := pgaot.GbtInt4Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_penalty: want 1 args")
+		}
+		r := pgaot.GbtInt4Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_picksplit: want 1 args")
+		}
+		r := pgaot.GbtInt4Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_same":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_same: want 1 args")
+		}
+		r := pgaot.GbtInt4Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtInt4Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int4_union":
+		if len(a) != 1 {
+			panic("aot: gbt_int4_union: want 1 args")
+		}
+		r := pgaot.GbtInt4Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_compress: want 1 args")
+		}
+		r := pgaot.GbtInt8Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_consistent: want 1 args")
+		}
+		r := pgaot.GbtInt8Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_distance: want 1 args")
+		}
+		r := pgaot.GbtInt8Distance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_fetch: want 1 args")
+		}
+		r := pgaot.GbtInt8Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_penalty: want 1 args")
+		}
+		r := pgaot.GbtInt8Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_picksplit: want 1 args")
+		}
+		r := pgaot.GbtInt8Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_same":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_same: want 1 args")
+		}
+		r := pgaot.GbtInt8Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtInt8Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_int8_union":
+		if len(a) != 1 {
+			panic("aot: gbt_int8_union: want 1 args")
+		}
+		r := pgaot.GbtInt8Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_compress: want 1 args")
+		}
+		r := pgaot.GbtIntvCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_consistent: want 1 args")
+		}
+		r := pgaot.GbtIntvConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_decompress":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_decompress: want 1 args")
+		}
+		r := pgaot.GbtIntvDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_distance: want 1 args")
+		}
+		r := pgaot.GbtIntvDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_fetch: want 1 args")
+		}
+		r := pgaot.GbtIntvFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_penalty: want 1 args")
+		}
+		r := pgaot.GbtIntvPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_picksplit: want 1 args")
+		}
+		r := pgaot.GbtIntvPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_same":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_same: want 1 args")
+		}
+		r := pgaot.GbtIntvSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtIntvSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_intv_union":
+		if len(a) != 1 {
+			panic("aot: gbt_intv_union: want 1 args")
+		}
+		r := pgaot.GbtIntvUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_compress: want 1 args")
+		}
+		r := pgaot.GbtMacad8Compress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_consistent: want 1 args")
+		}
+		r := pgaot.GbtMacad8Consistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_fetch: want 1 args")
+		}
+		r := pgaot.GbtMacad8Fetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_penalty: want 1 args")
+		}
+		r := pgaot.GbtMacad8Penalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_picksplit: want 1 args")
+		}
+		r := pgaot.GbtMacad8Picksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_same":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_same: want 1 args")
+		}
+		r := pgaot.GbtMacad8Same(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtMacad8Sortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad8_union":
+		if len(a) != 1 {
+			panic("aot: gbt_macad8_union: want 1 args")
+		}
+		r := pgaot.GbtMacad8Union(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_compress: want 1 args")
+		}
+		r := pgaot.GbtMacadCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_consistent: want 1 args")
+		}
+		r := pgaot.GbtMacadConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_fetch: want 1 args")
+		}
+		r := pgaot.GbtMacadFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_penalty: want 1 args")
+		}
+		r := pgaot.GbtMacadPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_picksplit: want 1 args")
+		}
+		r := pgaot.GbtMacadPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_same":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_same: want 1 args")
+		}
+		r := pgaot.GbtMacadSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macad_union":
+		if len(a) != 1 {
+			panic("aot: gbt_macad_union: want 1 args")
+		}
+		r := pgaot.GbtMacadUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_macaddr_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_macaddr_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtMacaddrSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_compress: want 1 args")
+		}
+		r := pgaot.GbtNumericCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_consistent: want 1 args")
+		}
+		r := pgaot.GbtNumericConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_penalty: want 1 args")
+		}
+		r := pgaot.GbtNumericPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_picksplit: want 1 args")
+		}
+		r := pgaot.GbtNumericPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_same":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_same: want 1 args")
+		}
+		r := pgaot.GbtNumericSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtNumericSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_numeric_union":
+		if len(a) != 1 {
+			panic("aot: gbt_numeric_union: want 1 args")
+		}
+		r := pgaot.GbtNumericUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_compress: want 1 args")
+		}
+		r := pgaot.GbtOidCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_consistent: want 1 args")
+		}
+		r := pgaot.GbtOidConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_distance: want 1 args")
+		}
+		r := pgaot.GbtOidDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_fetch: want 1 args")
+		}
+		r := pgaot.GbtOidFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_penalty: want 1 args")
+		}
+		r := pgaot.GbtOidPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_picksplit: want 1 args")
+		}
+		r := pgaot.GbtOidPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_same":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_same: want 1 args")
+		}
+		r := pgaot.GbtOidSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtOidSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_oid_union":
+		if len(a) != 1 {
+			panic("aot: gbt_oid_union: want 1 args")
+		}
+		r := pgaot.GbtOidUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_text_compress: want 1 args")
+		}
+		r := pgaot.GbtTextCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_text_consistent: want 1 args")
+		}
+		r := pgaot.GbtTextConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_text_penalty: want 1 args")
+		}
+		r := pgaot.GbtTextPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_text_picksplit: want 1 args")
+		}
+		r := pgaot.GbtTextPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_same":
+		if len(a) != 1 {
+			panic("aot: gbt_text_same: want 1 args")
+		}
+		r := pgaot.GbtTextSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_text_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtTextSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_text_union":
+		if len(a) != 1 {
+			panic("aot: gbt_text_union: want 1 args")
+		}
+		r := pgaot.GbtTextUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_time_compress: want 1 args")
+		}
+		r := pgaot.GbtTimeCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_time_consistent: want 1 args")
+		}
+		r := pgaot.GbtTimeConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_time_distance: want 1 args")
+		}
+		r := pgaot.GbtTimeDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_time_fetch: want 1 args")
+		}
+		r := pgaot.GbtTimeFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_time_penalty: want 1 args")
+		}
+		r := pgaot.GbtTimePenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_time_picksplit: want 1 args")
+		}
+		r := pgaot.GbtTimePicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_same":
+		if len(a) != 1 {
+			panic("aot: gbt_time_same: want 1 args")
+		}
+		r := pgaot.GbtTimeSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_time_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtTimeSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_time_union":
+		if len(a) != 1 {
+			panic("aot: gbt_time_union: want 1 args")
+		}
+		r := pgaot.GbtTimeUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_timetz_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_timetz_compress: want 1 args")
+		}
+		r := pgaot.GbtTimetzCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_timetz_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_timetz_consistent: want 1 args")
+		}
+		r := pgaot.GbtTimetzConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_compress: want 1 args")
+		}
+		r := pgaot.GbtTsCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_consistent: want 1 args")
+		}
+		r := pgaot.GbtTsConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_distance: want 1 args")
+		}
+		r := pgaot.GbtTsDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_fetch: want 1 args")
+		}
+		r := pgaot.GbtTsFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_penalty: want 1 args")
+		}
+		r := pgaot.GbtTsPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_picksplit: want 1 args")
+		}
+		r := pgaot.GbtTsPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_same":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_same: want 1 args")
+		}
+		r := pgaot.GbtTsSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtTsSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_ts_union":
+		if len(a) != 1 {
+			panic("aot: gbt_ts_union: want 1 args")
+		}
+		r := pgaot.GbtTsUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_tstz_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_tstz_compress: want 1 args")
+		}
+		r := pgaot.GbtTstzCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_tstz_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_tstz_consistent: want 1 args")
+		}
+		r := pgaot.GbtTstzConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_tstz_distance":
+		if len(a) != 1 {
+			panic("aot: gbt_tstz_distance: want 1 args")
+		}
+		r := pgaot.GbtTstzDistance(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_compress":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_compress: want 1 args")
+		}
+		r := pgaot.GbtUuidCompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_consistent":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_consistent: want 1 args")
+		}
+		r := pgaot.GbtUuidConsistent(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_fetch: want 1 args")
+		}
+		r := pgaot.GbtUuidFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_penalty":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_penalty: want 1 args")
+		}
+		r := pgaot.GbtUuidPenalty(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_picksplit":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_picksplit: want 1 args")
+		}
+		r := pgaot.GbtUuidPicksplit(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_same":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_same: want 1 args")
+		}
+		r := pgaot.GbtUuidSame(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtUuidSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_uuid_union":
+		if len(a) != 1 {
+			panic("aot: gbt_uuid_union: want 1 args")
+		}
+		r := pgaot.GbtUuidUnion(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_var_decompress":
+		if len(a) != 1 {
+			panic("aot: gbt_var_decompress: want 1 args")
+		}
+		r := pgaot.GbtVarDecompress(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_var_fetch":
+		if len(a) != 1 {
+			panic("aot: gbt_var_fetch: want 1 args")
+		}
+		r := pgaot.GbtVarFetch(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbt_varbit_sortsupport":
+		if len(a) != 1 {
+			panic("aot: gbt_varbit_sortsupport: want 1 args")
+		}
+		r := pgaot.GbtVarbitSortsupport(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbtreekey_in":
+		if len(a) != 1 {
+			panic("aot: gbtreekey_in: want 1 args")
+		}
+		r := pgaot.GbtreekeyIn(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gbtreekey_out":
+		if len(a) != 1 {
+			panic("aot: gbtreekey_out: want 1 args")
+		}
+		r := pgaot.GbtreekeyOut(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "gist_translate_cmptype_btree":
+		if len(a) != 1 {
+			panic("aot: gist_translate_cmptype_btree: want 1 args")
+		}
+		r := pgaot.GistTranslateCmptypeBtree(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "int2_dist":
+		if len(a) != 1 {
+			panic("aot: int2_dist: want 1 args")
+		}
+		r := pgaot.Int2Dist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "int4_dist":
+		if len(a) != 1 {
+			panic("aot: int4_dist: want 1 args")
+		}
+		r := pgaot.Int4Dist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "int8_dist":
+		if len(a) != 1 {
+			panic("aot: int8_dist: want 1 args")
+		}
+		r := pgaot.Int8Dist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "interval_dist":
+		if len(a) != 1 {
+			panic("aot: interval_dist: want 1 args")
+		}
+		r := pgaot.IntervalDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "oid_dist":
+		if len(a) != 1 {
+			panic("aot: oid_dist: want 1 args")
+		}
+		r := pgaot.OidDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_cash_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_cash_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoCashDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_date_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_date_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoDateDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_float4_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_float4_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoFloat4Dist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_float8_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_float8_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoFloat8Dist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bit_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bit_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBitUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bool_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bool_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBoolUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bpchar_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bpchar_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBpcharCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bpchar_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bpchar_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBpcharConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bpchar_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bpchar_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtBpcharSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_bytea_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_bytea_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtByteaUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_cash_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_cash_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtCashUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDatePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDatePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_date_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_date_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDateUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_enum_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_enum_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtEnumUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float4_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float4_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat4Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_float8_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_float8_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtFloat8Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_inet_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_inet_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInetUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int2_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int2_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt2Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int4_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int4_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt4Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Distance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_int8_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_int8_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtInt8Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_intv_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_intv_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtIntvUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Compress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Consistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Fetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Penalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Picksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Same(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Sortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad8_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad8_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacad8Union(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macad_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macad_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacadUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_macaddr_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_macaddr_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtMacaddrSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_numeric_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_numeric_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtNumericUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_oid_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_oid_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtOidUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_text_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_text_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTextUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimePenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimePicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_time_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_time_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimeUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_timetz_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_timetz_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimetzCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_timetz_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_timetz_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimetzConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_timetz_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_timetz_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTimetzSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_ts_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_ts_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTsUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_tstz_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_tstz_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTstzCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_tstz_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_tstz_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTstzConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_tstz_distance":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_tstz_distance: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtTstzDistance(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_compress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_compress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidCompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_consistent":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_consistent: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidConsistent(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_penalty":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_penalty: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidPenalty(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_picksplit":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_picksplit: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidPicksplit(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_same":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_same: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidSame(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_uuid_union":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_uuid_union: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtUuidUnion(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_var_decompress":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_var_decompress: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtVarDecompress(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_var_fetch":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_var_fetch: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtVarFetch(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbt_varbit_sortsupport":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbt_varbit_sortsupport: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtVarbitSortsupport(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbtreekey_in":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbtreekey_in: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtreekeyIn(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gbtreekey_out":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gbtreekey_out: want 0 args")
+		}
+		r := pgaot.PgFinfoGbtreekeyOut(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_gist_translate_cmptype_btree":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_gist_translate_cmptype_btree: want 0 args")
+		}
+		r := pgaot.PgFinfoGistTranslateCmptypeBtree(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_int2_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_int2_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoInt2Dist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_int4_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_int4_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoInt4Dist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_int8_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_int8_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoInt8Dist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_interval_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_interval_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoIntervalDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_oid_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_oid_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoOidDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_time_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_time_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoTimeDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_ts_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_ts_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoTsDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_tstz_dist":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_tstz_dist: want 0 args")
+		}
+		r := pgaot.PgFinfoTstzDist(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "time_dist":
+		if len(a) != 1 {
+			panic("aot: time_dist: want 1 args")
+		}
+		r := pgaot.TimeDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "ts_dist":
+		if len(a) != 1 {
+			panic("aot: ts_dist: want 1 args")
+		}
+		r := pgaot.TsDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "tstz_dist":
+		if len(a) != 1 {
+			panic("aot: tstz_dist: want 1 args")
+		}
+		r := pgaot.TstzDist(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

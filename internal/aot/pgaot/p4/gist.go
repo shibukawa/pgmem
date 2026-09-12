@@ -311,7 +311,7 @@ func F_gistBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	v21 = m.G0
 	v23 = v21 - int32(80)
 	m.G0 = v23
-	v25 = int32(4455216)
+	v25 = int32(4464496)
 	v26 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l5)+8))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v28)+4))
@@ -810,7 +810,7 @@ L73:
 	}
 L74:
 	;
-	F_errmsg_internal(m, int32(416207), int32(0))
+	F_errmsg_internal(m, int32(421800), int32(0))
 	mBase = m.M
 	v345 = m.ExcPending
 	if v345 != 0 {
@@ -827,7 +827,7 @@ L76:
 	goto L11
 L77:
 	;
-	F_errfinish(m, int32(482755), int32(757), int32(318959))
+	F_errfinish(m, int32(488436), int32(757), int32(323635))
 	mBase = m.M
 	v350 = m.ExcPending
 	if v350 != 0 {
@@ -988,7 +988,7 @@ L98:
 	*(*int32)(unsafe.Add(mBase, uint32(v437))) = v454
 	*(*int32)(unsafe.Add(mBase, uint32(v434)+40)) = v454
 	*(*int64)(unsafe.Add(mBase, uint32(v434)+16)) = int64(103079215108)
-	v462 = F_hash_create(m, int32(128106), int32(1024), v434, int32(1064))
+	v462 = F_hash_create(m, int32(131747), int32(1024), v434, int32(1064))
 	mBase = m.M
 	v463 = m.ExcPending
 	if v463 != 0 {
@@ -1032,7 +1032,7 @@ L101:
 	*(*int64)(unsafe.Add(mBase, uint32(v23)+48)) = int64(34359738372)
 	v491 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+72)) = v491
-	v498 = F_hash_create(m, int32(229593), int32(1024), v23+int32(32), int32(1064))
+	v498 = F_hash_create(m, int32(233234), int32(1024), v23+int32(32), int32(1064))
 	mBase = m.M
 	v499 = m.ExcPending
 	if v499 != 0 {
@@ -1063,7 +1063,7 @@ L104:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v431
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v335
-	F_errmsg_internal(m, int32(463980), v23)
+	F_errmsg_internal(m, int32(469624), v23)
 	mBase = m.M
 	v513 = m.ExcPending
 	if v513 != 0 {
@@ -1073,7 +1073,7 @@ L104:
 	}
 L105:
 	;
-	F_errfinish(m, int32(482755), int32(778), int32(318959))
+	F_errfinish(m, int32(488436), int32(778), int32(323635))
 	mBase = m.M
 	v518 = m.ExcPending
 	if v518 != 0 {
@@ -1971,7 +1971,7 @@ L85:
 	v431 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v238
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v431 + int32(4)
-	F_errmsg_internal(m, int32(46337), v16)
+	F_errmsg_internal(m, int32(46923), v16)
 	mBase = m.M
 	v438 = m.ExcPending
 	if v438 != 0 {
@@ -1981,7 +1981,7 @@ L85:
 	}
 L86:
 	;
-	F_errfinish(m, int32(476030), int32(1017), int32(310643))
+	F_errfinish(m, int32(481687), int32(1017), int32(314894))
 	mBase = m.M
 	v443 = m.ExcPending
 	if v443 != 0 {
@@ -2062,7 +2062,7 @@ L97:
 	goto L2
 L98:
 	;
-	F_errmsg_internal(m, int32(338029), int32(0))
+	F_errmsg_internal(m, int32(342705), int32(0))
 	mBase = m.M
 	v496 = m.ExcPending
 	if v496 != 0 {
@@ -2072,7 +2072,7 @@ L98:
 	}
 L99:
 	;
-	F_errfinish(m, int32(476030), int32(963), int32(310643))
+	F_errfinish(m, int32(481687), int32(963), int32(314894))
 	mBase = m.M
 	v501 = m.ExcPending
 	if v501 != 0 {
@@ -2907,6 +2907,21 @@ func F_gist_mask(m *base.Module, l0 int32, l1 int32) {
 		*(*uint16)(unsafe.Add(mBase, uint32(l0+v137)+12)) = uint16(v141)
 		return
 	}
+}
+func F_gist_translate_cmptype_btree(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if base.Ui32(v2-int32(1)) < base.Ui32(int32(5)) {
+		v8 = v2
+	} else {
+		v8 = int32(0)
+	}
+	return v8
 }
 func F_gist_xlog_startup(m *base.Module) {
 	mBase := m.M

@@ -3256,6 +3256,8 @@ func F_namestrcmp(m *base.Module, l0 int32, l1 int32) int32
 func F_network_send(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_cidr_set_masklen_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cidr_set_masklen_internal
 func F_cidr_set_masklen_internal(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_convert_network_to_scalar github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_convert_network_to_scalar
+func F_convert_network_to_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) float64
 //go:linkname F_inet_hist_value_sel github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_inet_hist_value_sel
 func F_inet_hist_value_sel(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) float64
 //go:linkname F_mul_var github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_mul_var
@@ -4682,6 +4684,28 @@ func F_deparse_lquery(m *base.Module, l0 int32) int32
 func F_ltree_concat(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_queryin github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_queryin
 func F_queryin(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_compress
+func F_gbt_num_compress(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_fetch github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_fetch
+func F_gbt_num_fetch(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_union
+func F_gbt_num_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_same
+func F_gbt_num_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gbt_num_distance
+func F_gbt_num_distance(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
+//go:linkname F_gbt_num_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_picksplit
+func F_gbt_num_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_var_bin_union github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gbt_var_bin_union
+func F_gbt_var_bin_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_gbt_var_union github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_var_union
+func F_gbt_var_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_gbt_var_node_cp_len github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_node_cp_len
+func F_gbt_var_node_cp_len(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_var_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gbt_var_picksplit
+func F_gbt_var_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_gbt_var_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_consistent
+func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

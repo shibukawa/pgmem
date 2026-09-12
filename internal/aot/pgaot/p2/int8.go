@@ -219,13 +219,13 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				if v159 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(59391), int32(0))
+					F_errmsg_internal(m, int32(59977), int32(0))
 					mBase = m.M
 					v163 = m.ExcPending
 					if v163 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(483087), int32(5606), int32(341421))
+						F_errfinish(m, int32(488768), int32(5606), int32(346097))
 						mBase = m.M
 						v168 = m.ExcPending
 						if v168 != 0 {
@@ -238,7 +238,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v51 = int32(4455216)
+				v51 = int32(4464496)
 				v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -356,13 +356,13 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 			if v159 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(59391), int32(0))
+				F_errmsg_internal(m, int32(59977), int32(0))
 				mBase = m.M
 				v163 = m.ExcPending
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(483087), int32(5606), int32(341421))
+					F_errfinish(m, int32(488768), int32(5606), int32(346097))
 					mBase = m.M
 					v168 = m.ExcPending
 					if v168 != 0 {
@@ -375,7 +375,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v51 = int32(4455216)
+			v51 = int32(4464496)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -625,7 +625,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 				return v133
 			} else {
 				if v49 == int32(0) {
-					v56 = int32(4455216)
+					v56 = int32(4464496)
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v59
@@ -689,13 +689,13 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 						if v159 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(59391), int32(0))
+							F_errmsg_internal(m, int32(59977), int32(0))
 							mBase = m.M
 							v163 = m.ExcPending
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(483087), int32(5606), int32(341421))
+								F_errfinish(m, int32(488768), int32(5606), int32(346097))
 								mBase = m.M
 								v168 = m.ExcPending
 								if v168 != 0 {
@@ -759,13 +759,13 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 		if v146 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(59391), int32(0))
+			F_errmsg_internal(m, int32(59977), int32(0))
 			mBase = m.M
 			v150 = m.ExcPending
 			if v150 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(483087), int32(5946), int32(360865))
+				F_errfinish(m, int32(488768), int32(5946), int32(365541))
 				mBase = m.M
 				v155 = m.ExcPending
 				if v155 != 0 {
@@ -776,6 +776,85 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 					}
 				}
 			}
+		}
+	}
+}
+func F_int8_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int64
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v9 int64
+	_ = v9
+	var v10 int64
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v34 int32
+	_ = v34
+	var v41 int32
+	_ = v41
+	var v43 int64
+	_ = v43
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int64)(unsafe.Add(mBase, uint32(v4)))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v9 = *(*int64)(unsafe.Add(mBase, uint32(v8)))
+	v10 = v9 - v5
+	v13 = int32(0)
+	if base.B2i32(base.B2i32(int64(0) < v5)^base.B2i32(v10 < v9) == v13)&base.B2i32(v10 != int64(-9223372036854775807-1)) == v13 {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v25 = m.ExcPending
+		if v25 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(50331778))
+			mBase = m.M
+			v28 = m.ExcPending
+			if v28 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg(m, int32(393141), int32(0))
+				mBase = m.M
+				v34 = m.ExcPending
+				if v34 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(488932), int32(107), int32(74367))
+					mBase = m.M
+					v41 = m.ExcPending
+					if v41 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v43 = v10 >> (uint(int64(63)) % 64)
+		v46 = F_Int64GetDatum(m, v10^v43-v43)
+		mBase = m.M
+		v47 = m.ExcPending
+		if v47 != 0 {
+			return int32(0)
+		} else {
+			return v46
 		}
 	}
 }
@@ -1214,7 +1293,7 @@ L14:
 	goto L2
 L15:
 	;
-	v59 = F_cstring_to_text(m, int32(722455))
+	v59 = F_cstring_to_text(m, int32(728204))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {

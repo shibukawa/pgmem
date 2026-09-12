@@ -33,7 +33,7 @@ func F_SystemTypeName(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v8 = F_makeString(m, int32(315241))
+	v8 = F_makeString(m, int32(319917))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {

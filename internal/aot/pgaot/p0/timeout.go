@@ -111,13 +111,13 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 													if v65 != 0 {
 														return
 													} else {
-														F_errmsg(m, int32(130041), int32(0))
+														F_errmsg(m, int32(133682), int32(0))
 														mBase = m.M
 														v69 = m.ExcPending
 														if v69 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(475898), int32(520), int32(64283))
+															F_errfinish(m, int32(481542), int32(520), int32(64869))
 															mBase = m.M
 															v74 = m.ExcPending
 															if v74 != 0 {

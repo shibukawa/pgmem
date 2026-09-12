@@ -52,13 +52,13 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg_internal(m, int32(23588), int32(0))
+					F_errmsg_internal(m, int32(24174), int32(0))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(476329), int32(717), int32(264950))
+						F_errfinish(m, int32(481986), int32(717), int32(269166))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {
@@ -79,13 +79,13 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(23588), int32(0))
+						F_errmsg_internal(m, int32(24174), int32(0))
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476329), int32(717), int32(264950))
+							F_errfinish(m, int32(481986), int32(717), int32(269166))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
@@ -106,13 +106,13 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 						if v23 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(23588), int32(0))
+							F_errmsg_internal(m, int32(24174), int32(0))
 							mBase = m.M
 							v27 = m.ExcPending
 							if v27 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(476329), int32(717), int32(264950))
+								F_errfinish(m, int32(481986), int32(717), int32(269166))
 								mBase = m.M
 								v32 = m.ExcPending
 								if v32 != 0 {
@@ -136,13 +136,13 @@ func F_extractNotNullColumn(m *base.Module, l0 int32) int32 {
 							if v23 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg_internal(m, int32(23588), int32(0))
+								F_errmsg_internal(m, int32(24174), int32(0))
 								mBase = m.M
 								v27 = m.ExcPending
 								if v27 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(476329), int32(717), int32(264950))
+									F_errfinish(m, int32(481986), int32(717), int32(269166))
 									mBase = m.M
 									v32 = m.ExcPending
 									if v32 != 0 {

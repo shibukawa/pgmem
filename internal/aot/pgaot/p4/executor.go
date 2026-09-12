@@ -140,7 +140,7 @@ L7:
 	goto L8
 L8:
 	;
-	v39 = int32(4455216)
+	v39 = int32(4464496)
 	v40 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v42
@@ -362,7 +362,7 @@ func F_ExecutorRewind(m *base.Module, l0 int32) {
 	_ = v9
 	var v11 int32
 	_ = v11
-	v3 = int32(4455216)
+	v3 = int32(4464496)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+100))

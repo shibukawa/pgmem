@@ -92,13 +92,13 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_errmsg_internal(m, int32(35761), v7)
+				F_errmsg_internal(m, int32(36347), v7)
 				mBase = m.M
 				v65 = m.ExcPending
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(475891), int32(1254), int32(446008))
+					F_errfinish(m, int32(481535), int32(1254), int32(451601))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -120,13 +120,13 @@ func F_MemoryContextAllocExtended(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_errmsg_internal(m, int32(35761), v7)
+				F_errmsg_internal(m, int32(36347), v7)
 				mBase = m.M
 				v65 = m.ExcPending
 				if v65 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(475891), int32(1254), int32(446008))
+					F_errfinish(m, int32(481535), int32(1254), int32(451601))
 					mBase = m.M
 					v70 = m.ExcPending
 					if v70 != 0 {
@@ -256,7 +256,7 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 					if v25 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(13006), int32(0))
+						F_errmsg(m, int32(13575), int32(0))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -265,13 +265,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 							v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-							F_errdetail(m, int32(630282), v7)
+							F_errdetail(m, int32(636031), v7)
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(475891), int32(1164), int32(350838))
+								F_errfinish(m, int32(481535), int32(1164), int32(355514))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {
@@ -299,7 +299,7 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 				if v25 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(13006), int32(0))
+					F_errmsg(m, int32(13575), int32(0))
 					mBase = m.M
 					v29 = m.ExcPending
 					if v29 != 0 {
@@ -308,13 +308,13 @@ func F_MemoryContextAllocationFailure(m *base.Module, l0 int32, l1 int32, l2 int
 						v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v30
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-						F_errdetail(m, int32(630282), v7)
+						F_errdetail(m, int32(636031), v7)
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(475891), int32(1164), int32(350838))
+							F_errfinish(m, int32(481535), int32(1164), int32(355514))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {

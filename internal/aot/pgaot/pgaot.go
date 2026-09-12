@@ -22,20 +22,23 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemSize.Store(33554432)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 2147483648
-	m.T0 = make([]any, 5886)
-	m.G0 = int32(13020496)
+	m.T0 = make([]any, 6477)
+	m.G0 = int32(13029776)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
+	InitElemSeg_0_4(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
+	InitElemSeg_1_4(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
+	InitElemSeg_2_4(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -50,7 +53,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4349595
+	InitElemSeg_5_4(m)
+	m.DataEnd = 4358875
 	initData_0(m)
 	return m
 }
@@ -83,20 +87,23 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5886)
-	m.G0 = int32(13020496)
+	m.T0 = make([]any, 6477)
+	m.G0 = int32(13029776)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
+	InitElemSeg_0_4(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
+	InitElemSeg_1_4(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
+	InitElemSeg_2_4(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -111,7 +118,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4349595
+	InitElemSeg_5_4(m)
+	m.DataEnd = 4358875
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -126,20 +134,23 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemSize.Store(memSize)
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 5886)
-	m.G0 = int32(13020496)
+	m.T0 = make([]any, 6477)
+	m.G0 = int32(13029776)
 	InitElemSeg_0_0(m)
 	InitElemSeg_0_1(m)
 	InitElemSeg_0_2(m)
 	InitElemSeg_0_3(m)
+	InitElemSeg_0_4(m)
 	InitElemSeg_1_0(m)
 	InitElemSeg_1_1(m)
 	InitElemSeg_1_2(m)
 	InitElemSeg_1_3(m)
+	InitElemSeg_1_4(m)
 	InitElemSeg_2_0(m)
 	InitElemSeg_2_1(m)
 	InitElemSeg_2_2(m)
 	InitElemSeg_2_3(m)
+	InitElemSeg_2_4(m)
 	InitElemSeg_3_0(m)
 	InitElemSeg_3_1(m)
 	InitElemSeg_3_2(m)
@@ -154,18 +165,19 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_5_1(m)
 	InitElemSeg_5_2(m)
 	InitElemSeg_5_3(m)
-	m.DataEnd = 4349595
+	InitElemSeg_5_4(m)
+	m.DataEnd = 4358875
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[4096:], wasm2goData_data_bin[0:1574032])
-	copy(m.Memory[1579360:], wasm2goData_data_bin[1574032:1574041])
-	copy(m.Memory[1581408:], wasm2goData_data_bin[1574041:1586969])
-	copy(m.Memory[1605636:], wasm2goData_data_bin[1586969:1680210])
-	copy(m.Memory[1699904:], wasm2goData_data_bin[1680210:1791866])
-	copy(m.Memory[1822776:], wasm2goData_data_bin[1791866:4035568])
-	copy(m.Memory[4073968:], wasm2goData_data_bin[4035568:4311195])
+	copy(m.Memory[4096:], wasm2goData_data_bin[0:1579776])
+	copy(m.Memory[1585104:], wasm2goData_data_bin[1579776:1579785])
+	copy(m.Memory[1587152:], wasm2goData_data_bin[1579785:1592713])
+	copy(m.Memory[1609732:], wasm2goData_data_bin[1592713:1685954])
+	copy(m.Memory[1704000:], wasm2goData_data_bin[1685954:1797610])
+	copy(m.Memory[1826872:], wasm2goData_data_bin[1797610:4045552])
+	copy(m.Memory[4082304:], wasm2goData_data_bin[4045552:4322123])
 }
 func InitData(m *base.Module) {
 	initData_0(m)
@@ -2302,6 +2314,1224 @@ func Subpath(m *base.Module, l0 int32) int32 {
 }
 func Text2ltree(m *base.Module, l0 int32) int32 {
 	return F_text2ltree(m, l0)
+}
+func PgMagicFuncBtreeGist(m *base.Module) int32 {
+	return F_Pg_magic_func_btree_gist(m)
+}
+func CashDist(m *base.Module, l0 int32) int32 {
+	return F_cash_dist(m, l0)
+}
+func DateDist(m *base.Module, l0 int32) int32 {
+	return F_date_dist(m, l0)
+}
+func Float4Dist(m *base.Module, l0 int32) int32 {
+	return F_float4_dist(m, l0)
+}
+func Float8Dist(m *base.Module, l0 int32) int32 {
+	return F_float8_dist(m, l0)
+}
+func GbtBitCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_compress(m, l0)
+}
+func GbtBitConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_consistent(m, l0)
+}
+func GbtBitPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_penalty(m, l0)
+}
+func GbtBitPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_picksplit(m, l0)
+}
+func GbtBitSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_same(m, l0)
+}
+func GbtBitSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_sortsupport(m, l0)
+}
+func GbtBitUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_union(m, l0)
+}
+func GbtBoolCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_compress(m, l0)
+}
+func GbtBoolConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_consistent(m, l0)
+}
+func GbtBoolFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_fetch(m, l0)
+}
+func GbtBoolPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_penalty(m, l0)
+}
+func GbtBoolPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_picksplit(m, l0)
+}
+func GbtBoolSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_same(m, l0)
+}
+func GbtBoolSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_sortsupport(m, l0)
+}
+func GbtBoolUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_bool_union(m, l0)
+}
+func GbtBpcharCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_compress(m, l0)
+}
+func GbtBpcharConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_bpchar_consistent(m, l0)
+}
+func GbtBpcharSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_bpchar_sortsupport(m, l0)
+}
+func GbtByteaCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_compress(m, l0)
+}
+func GbtByteaConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_consistent(m, l0)
+}
+func GbtByteaPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_penalty(m, l0)
+}
+func GbtByteaPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_picksplit(m, l0)
+}
+func GbtByteaSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_same(m, l0)
+}
+func GbtByteaSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_sortsupport(m, l0)
+}
+func GbtByteaUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_bytea_union(m, l0)
+}
+func GbtCashCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_compress(m, l0)
+}
+func GbtCashConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_consistent(m, l0)
+}
+func GbtCashDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_distance(m, l0)
+}
+func GbtCashFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_fetch(m, l0)
+}
+func GbtCashPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_penalty(m, l0)
+}
+func GbtCashPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_picksplit(m, l0)
+}
+func GbtCashSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_same(m, l0)
+}
+func GbtCashSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_sortsupport(m, l0)
+}
+func GbtCashUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_union(m, l0)
+}
+func GbtDateCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_compress(m, l0)
+}
+func GbtDateConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_consistent(m, l0)
+}
+func GbtDateDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_distance(m, l0)
+}
+func GbtDateFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_fetch(m, l0)
+}
+func GbtDatePenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_penalty(m, l0)
+}
+func GbtDatePicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_picksplit(m, l0)
+}
+func GbtDateSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_same(m, l0)
+}
+func GbtDateSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_sortsupport(m, l0)
+}
+func GbtDateUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_date_union(m, l0)
+}
+func GbtDecompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GbtEnumCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_compress(m, l0)
+}
+func GbtEnumConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_consistent(m, l0)
+}
+func GbtEnumFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_fetch(m, l0)
+}
+func GbtEnumPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_penalty(m, l0)
+}
+func GbtEnumPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_picksplit(m, l0)
+}
+func GbtEnumSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_same(m, l0)
+}
+func GbtEnumSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_sortsupport(m, l0)
+}
+func GbtEnumUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_union(m, l0)
+}
+func GbtFloat4Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_compress(m, l0)
+}
+func GbtFloat4Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_consistent(m, l0)
+}
+func GbtFloat4Distance(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_distance(m, l0)
+}
+func GbtFloat4Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_fetch(m, l0)
+}
+func GbtFloat4Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_penalty(m, l0)
+}
+func GbtFloat4Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_picksplit(m, l0)
+}
+func GbtFloat4Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_same(m, l0)
+}
+func GbtFloat4Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_sortsupport(m, l0)
+}
+func GbtFloat4Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_float4_union(m, l0)
+}
+func GbtFloat8Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_compress(m, l0)
+}
+func GbtFloat8Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_consistent(m, l0)
+}
+func GbtFloat8Distance(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_distance(m, l0)
+}
+func GbtFloat8Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_fetch(m, l0)
+}
+func GbtFloat8Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_penalty(m, l0)
+}
+func GbtFloat8Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_picksplit(m, l0)
+}
+func GbtFloat8Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_same(m, l0)
+}
+func GbtFloat8Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_sortsupport(m, l0)
+}
+func GbtFloat8Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_union(m, l0)
+}
+func GbtInetCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_compress(m, l0)
+}
+func GbtInetConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_consistent(m, l0)
+}
+func GbtInetPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_float8_penalty(m, l0)
+}
+func GbtInetPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_picksplit(m, l0)
+}
+func GbtInetSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_same(m, l0)
+}
+func GbtInetSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_sortsupport(m, l0)
+}
+func GbtInetUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_inet_union(m, l0)
+}
+func GbtInt2Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_compress(m, l0)
+}
+func GbtInt2Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_consistent(m, l0)
+}
+func GbtInt2Distance(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_distance(m, l0)
+}
+func GbtInt2Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_fetch(m, l0)
+}
+func GbtInt2Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_penalty(m, l0)
+}
+func GbtInt2Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_picksplit(m, l0)
+}
+func GbtInt2Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_same(m, l0)
+}
+func GbtInt2Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_sortsupport(m, l0)
+}
+func GbtInt2Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_int2_union(m, l0)
+}
+func GbtInt4Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_compress(m, l0)
+}
+func GbtInt4Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_consistent(m, l0)
+}
+func GbtInt4Distance(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_distance(m, l0)
+}
+func GbtInt4Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_fetch(m, l0)
+}
+func GbtInt4Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_penalty(m, l0)
+}
+func GbtInt4Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_picksplit(m, l0)
+}
+func GbtInt4Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_same(m, l0)
+}
+func GbtInt4Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_sortsupport(m, l0)
+}
+func GbtInt4Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_int4_union(m, l0)
+}
+func GbtInt8Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_compress(m, l0)
+}
+func GbtInt8Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_consistent(m, l0)
+}
+func GbtInt8Distance(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_distance(m, l0)
+}
+func GbtInt8Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_fetch(m, l0)
+}
+func GbtInt8Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_cash_penalty(m, l0)
+}
+func GbtInt8Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_picksplit(m, l0)
+}
+func GbtInt8Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_same(m, l0)
+}
+func GbtInt8Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_sortsupport(m, l0)
+}
+func GbtInt8Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_int8_union(m, l0)
+}
+func GbtIntvCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_compress(m, l0)
+}
+func GbtIntvConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_consistent(m, l0)
+}
+func GbtIntvDecompress(m *base.Module, l0 int32) int32 {
+	return F_float4up(m, l0)
+}
+func GbtIntvDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_distance(m, l0)
+}
+func GbtIntvFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_fetch(m, l0)
+}
+func GbtIntvPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_penalty(m, l0)
+}
+func GbtIntvPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_picksplit(m, l0)
+}
+func GbtIntvSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_same(m, l0)
+}
+func GbtIntvSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_sortsupport(m, l0)
+}
+func GbtIntvUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_intv_union(m, l0)
+}
+func GbtMacad8Compress(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_compress(m, l0)
+}
+func GbtMacad8Consistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_consistent(m, l0)
+}
+func GbtMacad8Fetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_fetch(m, l0)
+}
+func GbtMacad8Penalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_penalty(m, l0)
+}
+func GbtMacad8Picksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_picksplit(m, l0)
+}
+func GbtMacad8Same(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_same(m, l0)
+}
+func GbtMacad8Sortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_sortsupport(m, l0)
+}
+func GbtMacad8Union(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad8_union(m, l0)
+}
+func GbtMacadCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_compress(m, l0)
+}
+func GbtMacadConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_consistent(m, l0)
+}
+func GbtMacadFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_fetch(m, l0)
+}
+func GbtMacadPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_penalty(m, l0)
+}
+func GbtMacadPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_picksplit(m, l0)
+}
+func GbtMacadSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_same(m, l0)
+}
+func GbtMacadUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_macad_union(m, l0)
+}
+func GbtMacaddrSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_macaddr_sortsupport(m, l0)
+}
+func GbtNumericCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_compress(m, l0)
+}
+func GbtNumericConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_consistent(m, l0)
+}
+func GbtNumericPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_penalty(m, l0)
+}
+func GbtNumericPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_picksplit(m, l0)
+}
+func GbtNumericSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_same(m, l0)
+}
+func GbtNumericSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_sortsupport(m, l0)
+}
+func GbtNumericUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_numeric_union(m, l0)
+}
+func GbtOidCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_compress(m, l0)
+}
+func GbtOidConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_consistent(m, l0)
+}
+func GbtOidDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_distance(m, l0)
+}
+func GbtOidFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_fetch(m, l0)
+}
+func GbtOidPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_enum_penalty(m, l0)
+}
+func GbtOidPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_picksplit(m, l0)
+}
+func GbtOidSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_same(m, l0)
+}
+func GbtOidSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_sortsupport(m, l0)
+}
+func GbtOidUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_oid_union(m, l0)
+}
+func GbtTextCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_compress(m, l0)
+}
+func GbtTextConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_consistent(m, l0)
+}
+func GbtTextPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_penalty(m, l0)
+}
+func GbtTextPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_picksplit(m, l0)
+}
+func GbtTextSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_same(m, l0)
+}
+func GbtTextSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_sortsupport(m, l0)
+}
+func GbtTextUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_text_union(m, l0)
+}
+func GbtTimeCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_compress(m, l0)
+}
+func GbtTimeConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_consistent(m, l0)
+}
+func GbtTimeDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_distance(m, l0)
+}
+func GbtTimeFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_fetch(m, l0)
+}
+func GbtTimePenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_penalty(m, l0)
+}
+func GbtTimePicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_picksplit(m, l0)
+}
+func GbtTimeSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_same(m, l0)
+}
+func GbtTimeSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_sortsupport(m, l0)
+}
+func GbtTimeUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_time_union(m, l0)
+}
+func GbtTimetzCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_timetz_compress(m, l0)
+}
+func GbtTimetzConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_timetz_consistent(m, l0)
+}
+func GbtTsCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_compress(m, l0)
+}
+func GbtTsConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_consistent(m, l0)
+}
+func GbtTsDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_distance(m, l0)
+}
+func GbtTsFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_fetch(m, l0)
+}
+func GbtTsPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_penalty(m, l0)
+}
+func GbtTsPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_picksplit(m, l0)
+}
+func GbtTsSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_same(m, l0)
+}
+func GbtTsSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_sortsupport(m, l0)
+}
+func GbtTsUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_ts_union(m, l0)
+}
+func GbtTstzCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_tstz_compress(m, l0)
+}
+func GbtTstzConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_tstz_consistent(m, l0)
+}
+func GbtTstzDistance(m *base.Module, l0 int32) int32 {
+	return F_gbt_tstz_distance(m, l0)
+}
+func GbtUuidCompress(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_compress(m, l0)
+}
+func GbtUuidConsistent(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_consistent(m, l0)
+}
+func GbtUuidFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_fetch(m, l0)
+}
+func GbtUuidPenalty(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_penalty(m, l0)
+}
+func GbtUuidPicksplit(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_picksplit(m, l0)
+}
+func GbtUuidSame(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_same(m, l0)
+}
+func GbtUuidSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_sortsupport(m, l0)
+}
+func GbtUuidUnion(m *base.Module, l0 int32) int32 {
+	return F_gbt_uuid_union(m, l0)
+}
+func GbtVarDecompress(m *base.Module, l0 int32) int32 {
+	return F_gtsvector_decompress(m, l0)
+}
+func GbtVarFetch(m *base.Module, l0 int32) int32 {
+	return F_gbt_var_fetch(m, l0)
+}
+func GbtVarbitSortsupport(m *base.Module, l0 int32) int32 {
+	return F_gbt_bit_sortsupport(m, l0)
+}
+func GbtreekeyIn(m *base.Module, l0 int32) int32 {
+	return F_gbtreekey_in(m, l0)
+}
+func GbtreekeyOut(m *base.Module, l0 int32) int32 {
+	return F_gbtreekey_out(m, l0)
+}
+func GistTranslateCmptypeBtree(m *base.Module, l0 int32) int32 {
+	return F_gist_translate_cmptype_btree(m, l0)
+}
+func Int2Dist(m *base.Module, l0 int32) int32 {
+	return F_int2_dist(m, l0)
+}
+func Int4Dist(m *base.Module, l0 int32) int32 {
+	return F_int4_dist(m, l0)
+}
+func Int8Dist(m *base.Module, l0 int32) int32 {
+	return F_int8_dist(m, l0)
+}
+func IntervalDist(m *base.Module, l0 int32) int32 {
+	return F_interval_dist(m, l0)
+}
+func OidDist(m *base.Module, l0 int32) int32 {
+	return F_oid_dist(m, l0)
+}
+func PgFinfoCashDist(m *base.Module) int32 {
+	return F_pg_finfo_cash_dist(m)
+}
+func PgFinfoDateDist(m *base.Module) int32 {
+	return F_pg_finfo_date_dist(m)
+}
+func PgFinfoFloat4Dist(m *base.Module) int32 {
+	return F_pg_finfo_float4_dist(m)
+}
+func PgFinfoFloat8Dist(m *base.Module) int32 {
+	return F_pg_finfo_float8_dist(m)
+}
+func PgFinfoGbtBitCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_compress(m)
+}
+func PgFinfoGbtBitConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_consistent(m)
+}
+func PgFinfoGbtBitPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_penalty(m)
+}
+func PgFinfoGbtBitPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_picksplit(m)
+}
+func PgFinfoGbtBitSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_same(m)
+}
+func PgFinfoGbtBitSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_sortsupport(m)
+}
+func PgFinfoGbtBitUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bit_union(m)
+}
+func PgFinfoGbtBoolCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_compress(m)
+}
+func PgFinfoGbtBoolConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_consistent(m)
+}
+func PgFinfoGbtBoolFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_fetch(m)
+}
+func PgFinfoGbtBoolPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_penalty(m)
+}
+func PgFinfoGbtBoolPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_picksplit(m)
+}
+func PgFinfoGbtBoolSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_same(m)
+}
+func PgFinfoGbtBoolSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_sortsupport(m)
+}
+func PgFinfoGbtBoolUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bool_union(m)
+}
+func PgFinfoGbtBpcharCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bpchar_compress(m)
+}
+func PgFinfoGbtBpcharConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bpchar_consistent(m)
+}
+func PgFinfoGbtBpcharSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bpchar_sortsupport(m)
+}
+func PgFinfoGbtByteaCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_compress(m)
+}
+func PgFinfoGbtByteaConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_consistent(m)
+}
+func PgFinfoGbtByteaPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_penalty(m)
+}
+func PgFinfoGbtByteaPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_picksplit(m)
+}
+func PgFinfoGbtByteaSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_same(m)
+}
+func PgFinfoGbtByteaSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_sortsupport(m)
+}
+func PgFinfoGbtByteaUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_bytea_union(m)
+}
+func PgFinfoGbtCashCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_compress(m)
+}
+func PgFinfoGbtCashConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_consistent(m)
+}
+func PgFinfoGbtCashDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_distance(m)
+}
+func PgFinfoGbtCashFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_fetch(m)
+}
+func PgFinfoGbtCashPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_penalty(m)
+}
+func PgFinfoGbtCashPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_picksplit(m)
+}
+func PgFinfoGbtCashSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_same(m)
+}
+func PgFinfoGbtCashSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_sortsupport(m)
+}
+func PgFinfoGbtCashUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_cash_union(m)
+}
+func PgFinfoGbtDateCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_compress(m)
+}
+func PgFinfoGbtDateConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_consistent(m)
+}
+func PgFinfoGbtDateDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_distance(m)
+}
+func PgFinfoGbtDateFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_fetch(m)
+}
+func PgFinfoGbtDatePenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_penalty(m)
+}
+func PgFinfoGbtDatePicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_picksplit(m)
+}
+func PgFinfoGbtDateSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_same(m)
+}
+func PgFinfoGbtDateSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_sortsupport(m)
+}
+func PgFinfoGbtDateUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_date_union(m)
+}
+func PgFinfoGbtDecompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_decompress(m)
+}
+func PgFinfoGbtEnumCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_compress(m)
+}
+func PgFinfoGbtEnumConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_consistent(m)
+}
+func PgFinfoGbtEnumFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_fetch(m)
+}
+func PgFinfoGbtEnumPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_penalty(m)
+}
+func PgFinfoGbtEnumPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_picksplit(m)
+}
+func PgFinfoGbtEnumSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_same(m)
+}
+func PgFinfoGbtEnumSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_sortsupport(m)
+}
+func PgFinfoGbtEnumUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_enum_union(m)
+}
+func PgFinfoGbtFloat4Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_compress(m)
+}
+func PgFinfoGbtFloat4Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_consistent(m)
+}
+func PgFinfoGbtFloat4Distance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_distance(m)
+}
+func PgFinfoGbtFloat4Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_fetch(m)
+}
+func PgFinfoGbtFloat4Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_penalty(m)
+}
+func PgFinfoGbtFloat4Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_picksplit(m)
+}
+func PgFinfoGbtFloat4Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_same(m)
+}
+func PgFinfoGbtFloat4Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_sortsupport(m)
+}
+func PgFinfoGbtFloat4Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float4_union(m)
+}
+func PgFinfoGbtFloat8Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_compress(m)
+}
+func PgFinfoGbtFloat8Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_consistent(m)
+}
+func PgFinfoGbtFloat8Distance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_distance(m)
+}
+func PgFinfoGbtFloat8Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_fetch(m)
+}
+func PgFinfoGbtFloat8Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_penalty(m)
+}
+func PgFinfoGbtFloat8Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_picksplit(m)
+}
+func PgFinfoGbtFloat8Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_same(m)
+}
+func PgFinfoGbtFloat8Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_sortsupport(m)
+}
+func PgFinfoGbtFloat8Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_float8_union(m)
+}
+func PgFinfoGbtInetCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_compress(m)
+}
+func PgFinfoGbtInetConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_consistent(m)
+}
+func PgFinfoGbtInetPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_penalty(m)
+}
+func PgFinfoGbtInetPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_picksplit(m)
+}
+func PgFinfoGbtInetSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_same(m)
+}
+func PgFinfoGbtInetSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_sortsupport(m)
+}
+func PgFinfoGbtInetUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_inet_union(m)
+}
+func PgFinfoGbtInt2Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_compress(m)
+}
+func PgFinfoGbtInt2Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_consistent(m)
+}
+func PgFinfoGbtInt2Distance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_distance(m)
+}
+func PgFinfoGbtInt2Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_fetch(m)
+}
+func PgFinfoGbtInt2Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_penalty(m)
+}
+func PgFinfoGbtInt2Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_picksplit(m)
+}
+func PgFinfoGbtInt2Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_same(m)
+}
+func PgFinfoGbtInt2Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_sortsupport(m)
+}
+func PgFinfoGbtInt2Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int2_union(m)
+}
+func PgFinfoGbtInt4Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_compress(m)
+}
+func PgFinfoGbtInt4Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_consistent(m)
+}
+func PgFinfoGbtInt4Distance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_distance(m)
+}
+func PgFinfoGbtInt4Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_fetch(m)
+}
+func PgFinfoGbtInt4Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_penalty(m)
+}
+func PgFinfoGbtInt4Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_picksplit(m)
+}
+func PgFinfoGbtInt4Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_same(m)
+}
+func PgFinfoGbtInt4Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_sortsupport(m)
+}
+func PgFinfoGbtInt4Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int4_union(m)
+}
+func PgFinfoGbtInt8Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_compress(m)
+}
+func PgFinfoGbtInt8Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_consistent(m)
+}
+func PgFinfoGbtInt8Distance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_distance(m)
+}
+func PgFinfoGbtInt8Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_fetch(m)
+}
+func PgFinfoGbtInt8Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_penalty(m)
+}
+func PgFinfoGbtInt8Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_picksplit(m)
+}
+func PgFinfoGbtInt8Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_same(m)
+}
+func PgFinfoGbtInt8Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_sortsupport(m)
+}
+func PgFinfoGbtInt8Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_int8_union(m)
+}
+func PgFinfoGbtIntvCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_compress(m)
+}
+func PgFinfoGbtIntvConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_consistent(m)
+}
+func PgFinfoGbtIntvDecompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_decompress(m)
+}
+func PgFinfoGbtIntvDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_distance(m)
+}
+func PgFinfoGbtIntvFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_fetch(m)
+}
+func PgFinfoGbtIntvPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_penalty(m)
+}
+func PgFinfoGbtIntvPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_picksplit(m)
+}
+func PgFinfoGbtIntvSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_same(m)
+}
+func PgFinfoGbtIntvSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_sortsupport(m)
+}
+func PgFinfoGbtIntvUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_intv_union(m)
+}
+func PgFinfoGbtMacad8Compress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_compress(m)
+}
+func PgFinfoGbtMacad8Consistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_consistent(m)
+}
+func PgFinfoGbtMacad8Fetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_fetch(m)
+}
+func PgFinfoGbtMacad8Penalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_penalty(m)
+}
+func PgFinfoGbtMacad8Picksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_picksplit(m)
+}
+func PgFinfoGbtMacad8Same(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_same(m)
+}
+func PgFinfoGbtMacad8Sortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_sortsupport(m)
+}
+func PgFinfoGbtMacad8Union(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad8_union(m)
+}
+func PgFinfoGbtMacadCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_compress(m)
+}
+func PgFinfoGbtMacadConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_consistent(m)
+}
+func PgFinfoGbtMacadFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_fetch(m)
+}
+func PgFinfoGbtMacadPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_penalty(m)
+}
+func PgFinfoGbtMacadPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_picksplit(m)
+}
+func PgFinfoGbtMacadSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_same(m)
+}
+func PgFinfoGbtMacadUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macad_union(m)
+}
+func PgFinfoGbtMacaddrSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_macaddr_sortsupport(m)
+}
+func PgFinfoGbtNumericCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_compress(m)
+}
+func PgFinfoGbtNumericConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_consistent(m)
+}
+func PgFinfoGbtNumericPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_penalty(m)
+}
+func PgFinfoGbtNumericPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_picksplit(m)
+}
+func PgFinfoGbtNumericSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_same(m)
+}
+func PgFinfoGbtNumericSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_sortsupport(m)
+}
+func PgFinfoGbtNumericUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_numeric_union(m)
+}
+func PgFinfoGbtOidCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_compress(m)
+}
+func PgFinfoGbtOidConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_consistent(m)
+}
+func PgFinfoGbtOidDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_distance(m)
+}
+func PgFinfoGbtOidFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_fetch(m)
+}
+func PgFinfoGbtOidPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_penalty(m)
+}
+func PgFinfoGbtOidPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_picksplit(m)
+}
+func PgFinfoGbtOidSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_same(m)
+}
+func PgFinfoGbtOidSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_sortsupport(m)
+}
+func PgFinfoGbtOidUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_oid_union(m)
+}
+func PgFinfoGbtTextCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_compress(m)
+}
+func PgFinfoGbtTextConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_consistent(m)
+}
+func PgFinfoGbtTextPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_penalty(m)
+}
+func PgFinfoGbtTextPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_picksplit(m)
+}
+func PgFinfoGbtTextSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_same(m)
+}
+func PgFinfoGbtTextSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_sortsupport(m)
+}
+func PgFinfoGbtTextUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_text_union(m)
+}
+func PgFinfoGbtTimeCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_compress(m)
+}
+func PgFinfoGbtTimeConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_consistent(m)
+}
+func PgFinfoGbtTimeDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_distance(m)
+}
+func PgFinfoGbtTimeFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_fetch(m)
+}
+func PgFinfoGbtTimePenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_penalty(m)
+}
+func PgFinfoGbtTimePicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_picksplit(m)
+}
+func PgFinfoGbtTimeSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_same(m)
+}
+func PgFinfoGbtTimeSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_sortsupport(m)
+}
+func PgFinfoGbtTimeUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_time_union(m)
+}
+func PgFinfoGbtTimetzCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_timetz_compress(m)
+}
+func PgFinfoGbtTimetzConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_timetz_consistent(m)
+}
+func PgFinfoGbtTimetzSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_timetz_sortsupport(m)
+}
+func PgFinfoGbtTsCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_compress(m)
+}
+func PgFinfoGbtTsConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_consistent(m)
+}
+func PgFinfoGbtTsDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_distance(m)
+}
+func PgFinfoGbtTsFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_fetch(m)
+}
+func PgFinfoGbtTsPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_penalty(m)
+}
+func PgFinfoGbtTsPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_picksplit(m)
+}
+func PgFinfoGbtTsSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_same(m)
+}
+func PgFinfoGbtTsSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_sortsupport(m)
+}
+func PgFinfoGbtTsUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_ts_union(m)
+}
+func PgFinfoGbtTstzCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_tstz_compress(m)
+}
+func PgFinfoGbtTstzConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_tstz_consistent(m)
+}
+func PgFinfoGbtTstzDistance(m *base.Module) int32 {
+	return F_pg_finfo_gbt_tstz_distance(m)
+}
+func PgFinfoGbtUuidCompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_compress(m)
+}
+func PgFinfoGbtUuidConsistent(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_consistent(m)
+}
+func PgFinfoGbtUuidFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_fetch(m)
+}
+func PgFinfoGbtUuidPenalty(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_penalty(m)
+}
+func PgFinfoGbtUuidPicksplit(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_picksplit(m)
+}
+func PgFinfoGbtUuidSame(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_same(m)
+}
+func PgFinfoGbtUuidSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_sortsupport(m)
+}
+func PgFinfoGbtUuidUnion(m *base.Module) int32 {
+	return F_pg_finfo_gbt_uuid_union(m)
+}
+func PgFinfoGbtVarDecompress(m *base.Module) int32 {
+	return F_pg_finfo_gbt_var_decompress(m)
+}
+func PgFinfoGbtVarFetch(m *base.Module) int32 {
+	return F_pg_finfo_gbt_var_fetch(m)
+}
+func PgFinfoGbtVarbitSortsupport(m *base.Module) int32 {
+	return F_pg_finfo_gbt_varbit_sortsupport(m)
+}
+func PgFinfoGbtreekeyIn(m *base.Module) int32 {
+	return F_pg_finfo_gbtreekey_in(m)
+}
+func PgFinfoGbtreekeyOut(m *base.Module) int32 {
+	return F_pg_finfo_gbtreekey_out(m)
+}
+func PgFinfoGistTranslateCmptypeBtree(m *base.Module) int32 {
+	return F_pg_finfo_gist_translate_cmptype_btree(m)
+}
+func PgFinfoInt2Dist(m *base.Module) int32 {
+	return F_pg_finfo_int2_dist(m)
+}
+func PgFinfoInt4Dist(m *base.Module) int32 {
+	return F_pg_finfo_int4_dist(m)
+}
+func PgFinfoInt8Dist(m *base.Module) int32 {
+	return F_pg_finfo_int8_dist(m)
+}
+func PgFinfoIntervalDist(m *base.Module) int32 {
+	return F_pg_finfo_interval_dist(m)
+}
+func PgFinfoOidDist(m *base.Module) int32 {
+	return F_pg_finfo_oid_dist(m)
+}
+func PgFinfoTimeDist(m *base.Module) int32 {
+	return F_pg_finfo_time_dist(m)
+}
+func PgFinfoTsDist(m *base.Module) int32 {
+	return F_pg_finfo_ts_dist(m)
+}
+func PgFinfoTstzDist(m *base.Module) int32 {
+	return F_pg_finfo_tstz_dist(m)
+}
+func TimeDist(m *base.Module, l0 int32) int32 {
+	return F_time_dist(m, l0)
+}
+func TsDist(m *base.Module, l0 int32) int32 {
+	return F_ts_dist(m, l0)
+}
+func TstzDist(m *base.Module, l0 int32) int32 {
+	return F_ts_dist(m, l0)
 }
 func EmscriptenMemcpyBulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	return F__emscripten_memcpy_bulkmem(m, l0, l1, l2)

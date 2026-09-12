@@ -27,7 +27,7 @@ func F_MemoryContextCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = l4
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+20)) = v10
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = l2*int32(36) + int32(1735904)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+12)) = l2*int32(36) + int32(1740000)
 	if l3 != 0 {
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(l3)+20))
 		*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v22
@@ -507,7 +507,7 @@ L31:
 	v147 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v147
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = v142
-	v151 = F_pg_fprintf(m, v111, int32(715684), v11)
+	v151 = F_pg_fprintf(m, v111, int32(721433), v11)
 	mBase = m.M
 	v152 = m.ExcPending
 	if v152 != 0 {
@@ -517,7 +517,7 @@ L31:
 	}
 L32:
 	;
-	v125 = F_pg_fprintf(m, v111, int32(711389), int32(0))
+	v125 = F_pg_fprintf(m, v111, int32(717138), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -585,7 +585,7 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = v167
 	v174 = *(*int32)(unsafe.Add(mBase, uint32(v11)+72))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+44)) = v174
-	F_errmsg_internal(m, int32(433824), v11+int32(32))
+	F_errmsg_internal(m, int32(439417), v11+int32(32))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -595,7 +595,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(475891), int32(956), int32(301237))
+	F_errfinish(m, int32(481535), int32(956), int32(305488))
 	mBase = m.M
 	v185 = m.ExcPending
 	if v185 != 0 {

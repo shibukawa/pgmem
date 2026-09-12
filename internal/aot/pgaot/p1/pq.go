@@ -49,13 +49,13 @@ func F_pq_getmsgbyte(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(390416), int32(0))
+				F_errmsg(m, int32(395629), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(476777), int32(404), int32(335977))
+					F_errfinish(m, int32(482434), int32(404), int32(340653))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -271,7 +271,7 @@ L4:
 	goto L3
 L5:
 	;
-	v10 = int32(4354160)
+	v10 = int32(4363440)
 	v12 = v4 + v10
 	v13 = v8 - v4
 	if v10 == v12 {
@@ -285,12 +285,12 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[452])) = int32(0)
-	v166 = int32(4354128)
+	v166 = int32(4363408)
 	goto L4
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[453])) = v13
-	v166 = int32(4354132)
+	v166 = int32(4363412)
 	goto L4
 L9:
 	;
@@ -559,7 +559,7 @@ L59:
 	*(*int32)(unsafe.Add(mBase, _consts[137])) = int32(0)
 	v182 = *(*int32)(unsafe.Add(mBase, _consts[454]))
 	v184 = *(*int32)(unsafe.Add(mBase, _consts[453]))
-	v189 = F_secure_read(m, v182, v184+int32(4354160), int32(8192)-v184)
+	v189 = F_secure_read(m, v182, v184+int32(4363440), int32(8192)-v184)
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {
@@ -626,7 +626,7 @@ L67:
 	}
 L68:
 	;
-	F_errmsg(m, int32(281977), int32(0))
+	F_errmsg(m, int32(286215), int32(0))
 	mBase = m.M
 	v212 = m.ExcPending
 	if v212 != 0 {
@@ -636,7 +636,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(480297), int32(942), int32(325937))
+	F_errfinish(m, int32(485972), int32(942), int32(330613))
 	mBase = m.M
 	v217 = m.ExcPending
 	if v217 != 0 {
@@ -649,7 +649,7 @@ L70:
 	return int32(-1)
 L71:
 	;
-	v223 = int32(4354128)
+	v223 = int32(4363408)
 	v225 = *(*int32)(unsafe.Add(mBase, _consts[453]))
 	*(*int32)(unsafe.Add(mBase, _consts[453])) = v225 + v189
 	v228 = int32(0)
@@ -666,7 +666,7 @@ L72:
 	}
 L73:
 	;
-	F_errmsg(m, int32(245980), int32(0))
+	F_errmsg(m, int32(249621), int32(0))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -676,7 +676,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(480297), int32(886), int32(323379))
+	F_errfinish(m, int32(485972), int32(886), int32(328055))
 	mBase = m.M
 	v246 = m.ExcPending
 	if v246 != 0 {

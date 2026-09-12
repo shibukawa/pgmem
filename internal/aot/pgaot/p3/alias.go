@@ -4272,6 +4272,22 @@ func F_makepol_2(m *base.Module, l0 int32) int32
 func F_findoprnd(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ltree_execute github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ltree_execute
 func F_ltree_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_union
+func F_gbt_num_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_num_consistent
+func F_gbt_num_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_gbt_num_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gbt_num_distance
+func F_gbt_num_distance(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
+//go:linkname F_gbt_num_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_picksplit
+func F_gbt_num_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_var_bin_union github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gbt_var_bin_union
+func F_gbt_var_bin_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_gbt_var_node_cp_len github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_node_cp_len
+func F_gbt_var_node_cp_len(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_var_penalty github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_var_penalty
+func F_gbt_var_penalty(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_gbt_var_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_gbt_var_picksplit
+func F_gbt_var_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memset github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memset

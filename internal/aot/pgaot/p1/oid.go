@@ -72,13 +72,13 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 				} else {
 					v43 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v43
-					F_errmsg_internal(m, int32(514983), v7)
+					F_errmsg_internal(m, int32(520696), v7)
 					mBase = m.M
 					v47 = m.ExcPending
 					if v47 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(478374), int32(1143), int32(293223))
+						F_errfinish(m, int32(484031), int32(1143), int32(297461))
 						mBase = m.M
 						v52 = m.ExcPending
 						if v52 != 0 {
@@ -96,6 +96,24 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			}
 		}
 	}
+}
+func F_oid_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	if base.Ui32(v4) < base.Ui32(v3) {
+		v8 = v3 - v4
+	} else {
+		v8 = v4 - v3
+	}
+	return v8
 }
 func F_readOidCols(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -331,7 +349,7 @@ L23:
 	goto L7
 L24:
 	;
-	F_errmsg_internal(m, int32(23721), int32(0))
+	F_errmsg_internal(m, int32(24307), int32(0))
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {
@@ -341,7 +359,7 @@ L24:
 	}
 L25:
 	;
-	F_errfinish(m, int32(478148), int32(693), int32(144825))
+	F_errfinish(m, int32(483805), int32(693), int32(148466))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -359,7 +377,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v12
 	v94 = *(*int32)(unsafe.Add(mBase, uint32(v8)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v94
-	F_errmsg_internal(m, int32(655739), v8)
+	F_errmsg_internal(m, int32(661488), v8)
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -369,7 +387,7 @@ L27:
 	}
 L28:
 	;
-	F_errfinish(m, int32(478148), int32(693), int32(144825))
+	F_errfinish(m, int32(483805), int32(693), int32(148466))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -384,7 +402,7 @@ L29:
 	}
 L30:
 	;
-	F_errmsg_internal(m, int32(23721), int32(0))
+	F_errmsg_internal(m, int32(24307), int32(0))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {
@@ -394,7 +412,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(478148), int32(693), int32(144825))
+	F_errfinish(m, int32(483805), int32(693), int32(148466))
 	mBase = m.M
 	v116 = m.ExcPending
 	if v116 != 0 {
@@ -409,7 +427,7 @@ L32:
 	}
 L33:
 	;
-	F_errmsg_internal(m, int32(23721), int32(0))
+	F_errmsg_internal(m, int32(24307), int32(0))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {
@@ -419,7 +437,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(478148), int32(693), int32(144825))
+	F_errfinish(m, int32(483805), int32(693), int32(148466))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {

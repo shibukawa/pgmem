@@ -282,13 +282,13 @@ func F_multirange_adjacent_multirange(m *base.Module, l0 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v11))) = v27
-										F_errmsg_internal(m, int32(357371), v11)
+										F_errmsg_internal(m, int32(362047), v11)
 										mBase = m.M
 										v122 = m.ExcPending
 										if v122 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(477394), int32(558), int32(384823))
+											F_errfinish(m, int32(483051), int32(558), int32(390036))
 											mBase = m.M
 											v127 = m.ExcPending
 											if v127 != 0 {
@@ -454,13 +454,13 @@ func F_multirange_adjacent_multirange(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v11))) = v27
-									F_errmsg_internal(m, int32(357371), v11)
+									F_errmsg_internal(m, int32(362047), v11)
 									mBase = m.M
 									v122 = m.ExcPending
 									if v122 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(477394), int32(558), int32(384823))
+										F_errfinish(m, int32(483051), int32(558), int32(390036))
 										mBase = m.M
 										v127 = m.ExcPending
 										if v127 != 0 {
@@ -714,13 +714,13 @@ func F_multirange_contained_by_range(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
-								F_errmsg_internal(m, int32(357371), v9)
+								F_errmsg_internal(m, int32(362047), v9)
 								mBase = m.M
 								v47 = m.ExcPending
 								if v47 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(477394), int32(558), int32(384823))
+									F_errfinish(m, int32(483051), int32(558), int32(390036))
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -765,13 +765,13 @@ func F_multirange_contained_by_range(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
-							F_errmsg_internal(m, int32(357371), v9)
+							F_errmsg_internal(m, int32(362047), v9)
 							mBase = m.M
 							v47 = m.ExcPending
 							if v47 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(477394), int32(558), int32(384823))
+								F_errfinish(m, int32(483051), int32(558), int32(390036))
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -902,13 +902,13 @@ func F_multirange_contains_range(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
-								F_errmsg_internal(m, int32(357371), v9)
+								F_errmsg_internal(m, int32(362047), v9)
 								mBase = m.M
 								v47 = m.ExcPending
 								if v47 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(477394), int32(558), int32(384823))
+									F_errfinish(m, int32(483051), int32(558), int32(390036))
 									mBase = m.M
 									v52 = m.ExcPending
 									if v52 != 0 {
@@ -953,13 +953,13 @@ func F_multirange_contains_range(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
-							F_errmsg_internal(m, int32(357371), v9)
+							F_errmsg_internal(m, int32(362047), v9)
 							mBase = m.M
 							v47 = m.ExcPending
 							if v47 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(477394), int32(558), int32(384823))
+								F_errfinish(m, int32(483051), int32(558), int32(390036))
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1983,7 +1983,7 @@ L42:
 L43:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v23
-	F_errmsg_internal(m, int32(357371), v13)
+	F_errmsg_internal(m, int32(362047), v13)
 	mBase = m.M
 	v179 = m.ExcPending
 	if v179 != 0 {
@@ -1993,7 +1993,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(477394), int32(558), int32(384823))
+	F_errfinish(m, int32(483051), int32(558), int32(390036))
 	mBase = m.M
 	v184 = m.ExcPending
 	if v184 != 0 {

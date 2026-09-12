@@ -243,13 +243,13 @@ func F_CreateOpFamily(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 						v129 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 						*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v129
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = l2
-						F_errmsg(m, int32(111316), v12)
+						F_errmsg(m, int32(114183), v12)
 						mBase = m.M
 						v134 = m.ExcPending
 						if v134 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(477514), int32(268), int32(18897))
+							F_errfinish(m, int32(483171), int32(268), int32(19483))
 							mBase = m.M
 							v139 = m.ExcPending
 							if v139 != 0 {
@@ -734,13 +734,13 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-				F_errmsg_internal(m, int32(66682), v7)
+				F_errmsg_internal(m, int32(67291), v7)
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(482280), int32(1622), int32(103589))
+					F_errfinish(m, int32(487961), int32(1622), int32(106456))
 					mBase = m.M
 					v52 = m.ExcPending
 					if v52 != 0 {
@@ -770,13 +770,13 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg_internal(m, int32(66682), v7)
+						F_errmsg_internal(m, int32(67291), v7)
 						mBase = m.M
 						v47 = m.ExcPending
 						if v47 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(482280), int32(1622), int32(103589))
+							F_errfinish(m, int32(487961), int32(1622), int32(106456))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
@@ -803,13 +803,13 @@ func F_op_strict(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v19
-								F_errmsg_internal(m, int32(43139), v7+int32(16))
+								F_errmsg_internal(m, int32(43725), v7+int32(16))
 								mBase = m.M
 								v62 = m.ExcPending
 								if v62 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(482280), int32(1908), int32(103599))
+									F_errfinish(m, int32(487961), int32(1908), int32(106466))
 									mBase = m.M
 									v67 = m.ExcPending
 									if v67 != 0 {

@@ -120,7 +120,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg_internal(m, int32(282086), int32(0))
+	F_errmsg_internal(m, int32(286324), int32(0))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -130,7 +130,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(478441), int32(1428), int32(112047))
+	F_errfinish(m, int32(484098), int32(1428), int32(114914))
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {

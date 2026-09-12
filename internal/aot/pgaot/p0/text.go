@@ -14,7 +14,7 @@ func F_text_concat(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	v5 = F_concat_internal(m, int32(722455), int32(0), l0)
+	v5 = F_concat_internal(m, int32(728204), int32(0), l0)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
@@ -79,12 +79,12 @@ func F_text_format_append_string(m *base.Module, l0 int32, l1 int32, l2 int32, l
 					if v45 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(388049), int32(0))
+						F_errmsg(m, int32(393262), int32(0))
 						v49 = m.ExcPending
 						if v49 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(483184), int32(6372), int32(317926))
+							F_errfinish(m, int32(488865), int32(6372), int32(322602))
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return
@@ -1155,7 +1155,7 @@ L55:
 	}
 L56:
 	;
-	F_errmsg(m, int32(236373), int32(0))
+	F_errmsg(m, int32(240014), int32(0))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -1165,7 +1165,7 @@ L56:
 	}
 L57:
 	;
-	F_errhint(m, int32(541241), int32(0))
+	F_errhint(m, int32(546990), int32(0))
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {
@@ -1175,7 +1175,7 @@ L57:
 	}
 L58:
 	;
-	F_errfinish(m, int32(483184), int32(1648), int32(100695))
+	F_errfinish(m, int32(488865), int32(1648), int32(103562))
 	mBase = m.M
 	v169 = m.ExcPending
 	if v169 != 0 {
@@ -1200,7 +1200,7 @@ L60:
 	}
 L61:
 	;
-	F_errmsg(m, int32(161847), int32(0))
+	F_errmsg(m, int32(165488), int32(0))
 	mBase = m.M
 	v180 = m.ExcPending
 	if v180 != 0 {
@@ -1210,7 +1210,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(483184), int32(1920), int32(309098))
+	F_errfinish(m, int32(488865), int32(1920), int32(313349))
 	mBase = m.M
 	v185 = m.ExcPending
 	if v185 != 0 {

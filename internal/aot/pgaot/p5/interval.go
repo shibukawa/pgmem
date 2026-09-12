@@ -2415,8 +2415,8 @@ L77:
 L78:
 	;
 	v571 = int32(*(*int8)(unsafe.Add(mBase, uint32(v520))))
-	v583 = int32(1627744)
-	v584 = int32(1626784)
+	v583 = int32(1631840)
+	v584 = int32(1630880)
 	goto L94
 L79:
 	;
@@ -2690,8 +2690,8 @@ L124:
 L125:
 	;
 	v806 = int32(*(*int8)(unsafe.Add(mBase, uint32(v520))))
-	v818 = int32(1626768)
-	v819 = int32(1625632)
+	v818 = int32(1630864)
+	v819 = int32(1629728)
 	goto L141
 L126:
 	;
@@ -3192,7 +3192,7 @@ L201:
 	}
 L202:
 	;
-	v1128 = int32(529931)
+	v1128 = int32(535655)
 	v1132 = m.G0
 	v1134 = v1132 - int32(32)
 	v1135 = int64(0)
@@ -5373,7 +5373,7 @@ L564:
 	;
 	v2510 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2423))))
 	v2513 = v2423 + base.B2i32(v2510 == int32(45))
-	v2514 = int32(529931)
+	v2514 = int32(535655)
 	v2518 = m.G0
 	v2520 = v2518 - int32(32)
 	v2521 = int64(0)
@@ -6986,7 +6986,7 @@ L836:
 	;
 	v3446 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v2423))))
 	v3449 = v2423 + base.B2i32(v3446 == int32(45))
-	v3450 = int32(529931)
+	v3450 = int32(535655)
 	v3454 = m.G0
 	v3456 = v3454 - int32(32)
 	v3457 = int64(0)
@@ -7714,7 +7714,7 @@ L948:
 	goto L949
 L949:
 	;
-	F_DateTimeParseError(m, v4014, v40+int32(8), v44, int32(298371), v43)
+	F_DateTimeParseError(m, v4014, v40+int32(8), v44, int32(302622), v43)
 	mBase = m.M
 	v4019 = m.ExcPending
 	if v4019 != 0 {
@@ -7823,7 +7823,7 @@ L961:
 	}
 L962:
 	;
-	F_errmsg(m, int32(388353), int32(0))
+	F_errmsg(m, int32(393566), int32(0))
 	mBase = m.M
 	v4054 = m.ExcPending
 	if v4054 != 0 {
@@ -7833,7 +7833,7 @@ L962:
 	}
 L963:
 	;
-	F_errsave_finish(m, v43, int32(479085), int32(948), int32(269296))
+	F_errsave_finish(m, v43, int32(484742), int32(948), int32(273534))
 	mBase = m.M
 	v4059 = m.ExcPending
 	if v4059 != 0 {
@@ -7850,7 +7850,7 @@ L965:
 	*(*int32)(unsafe.Add(mBase, uint32(v40)+4)) = v44
 	v4069 = *(*int32)(unsafe.Add(mBase, uint32(v40)+500))
 	*(*int32)(unsafe.Add(mBase, uint32(v40))) = v4069
-	F_errmsg_internal(m, int32(677796), v40)
+	F_errmsg_internal(m, int32(683545), v40)
 	mBase = m.M
 	v4073 = m.ExcPending
 	if v4073 != 0 {
@@ -7860,7 +7860,7 @@ L965:
 	}
 L966:
 	;
-	F_errfinish(m, int32(479085), int32(961), int32(269296))
+	F_errfinish(m, int32(484742), int32(961), int32(273534))
 	mBase = m.M
 	v4078 = m.ExcPending
 	if v4078 != 0 {
@@ -8535,8 +8535,8 @@ L21:
 L22:
 	;
 	v79 = int32(*(*int8)(unsafe.Add(mBase, uint32(v64))))
-	v85 = int32(1626784)
-	v87 = int32(1627744)
+	v85 = int32(1630880)
+	v87 = int32(1631840)
 	goto L24
 L23:
 	;
@@ -8666,8 +8666,8 @@ L43:
 L44:
 	;
 	v151 = int32(*(*int8)(unsafe.Add(mBase, uint32(v64))))
-	v157 = int32(1625632)
-	v159 = int32(1626768)
+	v157 = int32(1629728)
+	v159 = int32(1630864)
 	goto L46
 L45:
 	;
@@ -8859,7 +8859,7 @@ L74:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+52)) = v237
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+48)) = v64
-	F_errmsg(m, int32(182563), v17+int32(48))
+	F_errmsg(m, int32(186204), v17+int32(48))
 	mBase = m.M
 	v245 = m.ExcPending
 	if v245 != 0 {
@@ -8869,7 +8869,7 @@ L74:
 	}
 L75:
 	;
-	F_errfinish(m, int32(479085), int32(6058), int32(80069))
+	F_errfinish(m, int32(484742), int32(6058), int32(81560))
 	mBase = m.M
 	v250 = m.ExcPending
 	if v250 != 0 {
@@ -8950,7 +8950,7 @@ L86:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+68)) = v269
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+64)) = v64
-	F_errmsg(m, int32(182600), v17-int32(-64))
+	F_errmsg(m, int32(186241), v17-int32(-64))
 	mBase = m.M
 	v277 = m.ExcPending
 	if v277 != 0 {
@@ -8960,7 +8960,7 @@ L86:
 	}
 L87:
 	;
-	F_errfinish(m, int32(479085), int32(6089), int32(80069))
+	F_errfinish(m, int32(484742), int32(6089), int32(81560))
 	mBase = m.M
 	v282 = m.ExcPending
 	if v282 != 0 {
@@ -8996,7 +8996,7 @@ L91:
 L92:
 	;
 	v286 = int32(0)
-	v290 = F_DirectFunctionCall3Coll(m, int32(408), v286, int32(10548), v286, int32(-1))
+	v290 = F_DirectFunctionCall3Coll(m, int32(408), v286, int32(11117), v286, int32(-1))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -9010,7 +9010,7 @@ L93:
 L94:
 	;
 	v293 = int32(0)
-	v297 = F_DirectFunctionCall3Coll(m, int32(408), v293, int32(10559), v293, int32(-1))
+	v297 = F_DirectFunctionCall3Coll(m, int32(408), v293, int32(11128), v293, int32(-1))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -9265,7 +9265,7 @@ L130:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v408
 	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v64
-	F_errmsg(m, int32(182600), v17)
+	F_errmsg(m, int32(186241), v17)
 	mBase = m.M
 	v414 = m.ExcPending
 	if v414 != 0 {
@@ -9275,7 +9275,7 @@ L130:
 	}
 L131:
 	;
-	F_errfinish(m, int32(479085), int32(6233), int32(236556))
+	F_errfinish(m, int32(484742), int32(6233), int32(240197))
 	mBase = m.M
 	v419 = m.ExcPending
 	if v419 != 0 {
@@ -9444,7 +9444,7 @@ L150:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+36)) = v537
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+32)) = v64
-	F_errmsg(m, int32(182563), v17+int32(32))
+	F_errmsg(m, int32(186204), v17+int32(32))
 	mBase = m.M
 	v545 = m.ExcPending
 	if v545 != 0 {
@@ -9454,7 +9454,7 @@ L150:
 	}
 L151:
 	;
-	F_errfinish(m, int32(479085), int32(6294), int32(236556))
+	F_errfinish(m, int32(484742), int32(6294), int32(240197))
 	mBase = m.M
 	v550 = m.ExcPending
 	if v550 != 0 {
@@ -9593,13 +9593,13 @@ func F_interval_sum(m *base.Module, l0 int32) int32 {
 						if v62 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(388353), int32(0))
+							F_errmsg(m, int32(393566), int32(0))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(479085), int32(4285), int32(276208))
+								F_errfinish(m, int32(484742), int32(4285), int32(280446))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {

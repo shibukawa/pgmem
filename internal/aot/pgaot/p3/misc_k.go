@@ -160,7 +160,7 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	v8 = v6 - int32(2176)
 	m.G0 = v8
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
-	v17 = F_pg_snprintf(m, v8+int32(1152), int32(1024), int32(169685), v8+int32(16))
+	v17 = F_pg_snprintf(m, v8+int32(1152), int32(1024), int32(173326), v8+int32(16))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -544,7 +544,7 @@ L55:
 	goto L53
 L56:
 	;
-	F_s_lock(m, v181, int32(478749), int32(3596), int32(447940))
+	F_s_lock(m, v181, int32(484406), int32(3596), int32(453533))
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -606,7 +606,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(1152)
-	F_errmsg(m, int32(288466), v8)
+	F_errmsg(m, int32(292704), v8)
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -616,7 +616,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(481526), int32(400), int32(331532))
+	F_errfinish(m, int32(487207), int32(400), int32(336208))
 	mBase = m.M
 	v235 = m.ExcPending
 	if v235 != 0 {
@@ -978,7 +978,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		if l0 == int32(2) {
-			v23 = int32(4371984)
+			v23 = int32(4381264)
 			v25 = *(*int32)(unsafe.Add(mBase, _consts[834]))
 			v26 = int32(1)
 			*(*int32)(unsafe.Add(mBase, _consts[834])) = v25 + v26
@@ -1947,7 +1947,7 @@ func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2187792), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2195296), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

@@ -71,7 +71,7 @@ func F_errdetail(m *base.Module, l0 int32, l1 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = int32(4448140)
+	v11 = int32(4457420)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[1184]))
 	*(*int32)(unsafe.Add(mBase, _consts[1184])) = v13 + int32(1)
 	v18 = *(*int32)(unsafe.Add(mBase, _consts[1185]))
@@ -82,7 +82,7 @@ func F_errdetail(m *base.Module, l0 int32, l1 int32) {
 	}
 L1:
 	;
-	v21 = int32(4455216)
+	v21 = int32(4464496)
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v25 = v18 * int32(100)
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v25)+uint32(_consts[1197])))
@@ -226,14 +226,14 @@ L19:
 L20:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v22
-	v78 = int32(4448140)
+	v78 = int32(4457420)
 	v80 = *(*int32)(unsafe.Add(mBase, _consts[1184]))
 	*(*int32)(unsafe.Add(mBase, _consts[1184])) = v80 - int32(1)
 	m.G0 = v9 + int32(32)
 	return
 L21:
 	;
-	F_errmsg_internal(m, int32(438529), int32(0))
+	F_errmsg_internal(m, int32(444122), int32(0))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -243,7 +243,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(481245), int32(1210), int32(294657))
+	F_errfinish(m, int32(486926), int32(1210), int32(298895))
 	mBase = m.M
 	v102 = m.ExcPending
 	if v102 != 0 {

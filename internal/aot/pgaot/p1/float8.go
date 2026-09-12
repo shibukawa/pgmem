@@ -6,6 +6,74 @@ import (
 	"unsafe"
 )
 
+func F_float8_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 float64
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 float64
+	_ = v8
+	var v10 float64
+	_ = v10
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = *(*float64)(unsafe.Add(mBase, uint32(v5)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v8 = *(*float64)(unsafe.Add(mBase, uint32(v7)))
+	v10 = base.F64_abs(base.F64_sub(v6, v8))
+	if base.F64_ne(v10, math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
+		v23 = F_Float8GetDatum(m, v10)
+		mBase = m.M
+		v24 = m.ExcPending
+		if v24 != 0 {
+			return int32(0)
+		} else {
+			return v23
+		}
+	} else {
+		if base.F64_eq(base.F64_abs(v6), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
+			v23 = F_Float8GetDatum(m, v10)
+			mBase = m.M
+			v24 = m.ExcPending
+			if v24 != 0 {
+				return int32(0)
+			} else {
+				return v23
+			}
+		} else {
+			if base.F64_eq(base.F64_abs(v8), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
+				v23 = F_Float8GetDatum(m, v10)
+				mBase = m.M
+				v24 = m.ExcPending
+				if v24 != 0 {
+					return int32(0)
+				} else {
+					return v23
+				}
+			} else {
+				F_float_overflow_error(m)
+				mBase = m.M
+				v22 = m.ExcPending
+				if v22 != 0 {
+					return int32(0)
+				} else {
+					base.Wasm_trap_unreachable()
+					for {
+					}
+				}
+			}
+		}
+	}
+}
 func F_float8_timestamptz(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
@@ -96,13 +164,13 @@ func F_float8_timestamptz(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*float64)(unsafe.Add(mBase, uint32(v7))) = v10
-						F_errmsg(m, int32(694085), v7)
+						F_errmsg(m, int32(699834), v7)
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(479085), int32(753), int32(7404))
+							F_errfinish(m, int32(484742), int32(753), int32(7404))
 							mBase = m.M
 							v84 = m.ExcPending
 							if v84 != 0 {
@@ -130,13 +198,13 @@ func F_float8_timestamptz(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							*(*float64)(unsafe.Add(mBase, uint32(v7))) = v10
-							F_errmsg(m, int32(694085), v7)
+							F_errmsg(m, int32(699834), v7)
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(479085), int32(753), int32(7404))
+								F_errfinish(m, int32(484742), int32(753), int32(7404))
 								mBase = m.M
 								v84 = m.ExcPending
 								if v84 != 0 {
@@ -173,13 +241,13 @@ func F_float8_timestamptz(m *base.Module, l0 int32) int32 {
 								v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 								v93 = *(*float64)(unsafe.Add(mBase, uint32(v92)))
 								*(*float64)(unsafe.Add(mBase, uint32(v7)+16)) = v93
-								F_errmsg(m, int32(694085), v7+int32(16))
+								F_errmsg(m, int32(699834), v7+int32(16))
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(479085), int32(766), int32(7404))
+									F_errfinish(m, int32(484742), int32(766), int32(7404))
 									mBase = m.M
 									v104 = m.ExcPending
 									if v104 != 0 {
@@ -220,13 +288,13 @@ func F_float8_timestamptz(m *base.Module, l0 int32) int32 {
 			if v59 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(510153), int32(0))
+				F_errmsg(m, int32(515866), int32(0))
 				mBase = m.M
 				v63 = m.ExcPending
 				if v63 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(479085), int32(735), int32(7404))
+					F_errfinish(m, int32(484742), int32(735), int32(7404))
 					mBase = m.M
 					v68 = m.ExcPending
 					if v68 != 0 {

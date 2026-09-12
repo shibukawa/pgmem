@@ -28,13 +28,13 @@ func F_get_collation_actual_version(m *base.Module, l0 int32, l1 int32) int32 {
 			return v6
 		}
 	case 1:
-		v12 = F_pg_strcasecmp(m, int32(526998), l1)
+		v12 = F_pg_strcasecmp(m, int32(532711), l1)
 		if v12 == int32(0) {
 		} else {
-			v17 = F_pg_strncasecmp(m, int32(625153), l1, int32(2))
+			v17 = F_pg_strncasecmp(m, int32(630902), l1, int32(2))
 			if v17 == int32(0) {
 			} else {
-				v21 = F_pg_strcasecmp(m, int32(492637), l1)
+				v21 = F_pg_strcasecmp(m, int32(498350), l1)
 			}
 		}
 		v23 = int32(0)

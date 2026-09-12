@@ -3398,6 +3398,8 @@ func F_fmgr_info_cxt(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_fmgr_info_copy(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_DirectFunctionCall2Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_DirectFunctionCall2Coll
 func F_DirectFunctionCall2Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_CallerFInfoFunctionCall2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CallerFInfoFunctionCall2
+func F_CallerFInfoFunctionCall2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_FunctionCall1Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FunctionCall1Coll
 func F_FunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_FunctionCall2Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_FunctionCall2Coll
@@ -4040,6 +4042,20 @@ func F_parse_lquery(m *base.Module, l0 int32, l1 int32) int32
 func F_inner_subltree(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_infix_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_infix_2
 func F_infix_2(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_abs_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_abs_interval
+func F_abs_interval(m *base.Module, l0 int32) int32
+//go:linkname F_gbt_num_compress github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_compress
+func F_gbt_num_compress(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_fetch github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_fetch
+func F_gbt_num_fetch(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_same
+func F_gbt_num_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_num_consistent
+func F_gbt_num_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_gbt_num_distance github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_gbt_num_distance
+func F_gbt_num_distance(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) float64
+//go:linkname F_gbt_var_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_consistent
+func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

@@ -3756,6 +3756,8 @@ func F_DirectFunctionCall2Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 func F_DirectFunctionCall3Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
 //go:linkname F_DirectFunctionCall4Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_DirectFunctionCall4Coll
 func F_DirectFunctionCall4Coll(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_CallerFInfoFunctionCall2 github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_CallerFInfoFunctionCall2
+func F_CallerFInfoFunctionCall2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_FunctionCall1Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FunctionCall1Coll
 func F_FunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_FunctionCall3Coll github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FunctionCall3Coll
@@ -4340,6 +4342,24 @@ func F_finish_nodeitem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 func F_lca_inner(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_queryin github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_queryin
 func F_queryin(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_abs_interval github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_abs_interval
+func F_abs_interval(m *base.Module, l0 int32) int32
+//go:linkname F_gbt_num_fetch github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_fetch
+func F_gbt_num_fetch(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_gbt_num_union github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_union
+func F_gbt_num_union(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_same github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_gbt_num_same
+func F_gbt_num_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_num_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_num_consistent
+func F_gbt_num_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
+//go:linkname F_gbt_num_picksplit github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_gbt_num_picksplit
+func F_gbt_num_picksplit(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_gbt_var_key_copy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_gbt_var_key_copy
+func F_gbt_var_key_copy(m *base.Module, l0 int32) int32
+//go:linkname F_gbt_var_same github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_same
+func F_gbt_var_same(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+//go:linkname F_gbt_var_consistent github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_gbt_var_consistent
+func F_gbt_var_consistent(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

@@ -49,7 +49,7 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 	v12 = l0 + int32(8)
 	v16 = (l1 + int32(31)) & int32(-32)
 	if v8 != 0 {
-		F_s_lock(m, v12, int32(482888), int32(104), int32(344590))
+		F_s_lock(m, v12, int32(488569), int32(104), int32(349266))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -75,13 +75,13 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 					if v46 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(13192), int32(0))
+						F_errmsg(m, int32(13761), int32(0))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(482888), int32(118), int32(344590))
+							F_errfinish(m, int32(488569), int32(118), int32(349266))
 							mBase = m.M
 							v55 = m.ExcPending
 							if v55 != 0 {
@@ -122,13 +122,13 @@ func F_shm_toc_allocate(m *base.Module, l0 int32, l1 int32) int32 {
 				if v46 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(13192), int32(0))
+					F_errmsg(m, int32(13761), int32(0))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(482888), int32(118), int32(344590))
+						F_errfinish(m, int32(488569), int32(118), int32(349266))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {

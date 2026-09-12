@@ -109,13 +109,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v92
 				v95 = *(*int32)(unsafe.Add(mBase, _consts[102]))
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v95 + int32(38)
-				F_errmsg_internal(m, int32(645705), v10+int32(16))
+				F_errmsg_internal(m, int32(651454), v10+int32(16))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(476637), int32(282), int32(96081))
+					F_errfinish(m, int32(482294), int32(282), int32(98317))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -155,13 +155,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v35
 							v121 = *(*int32)(unsafe.Add(mBase, _consts[100]))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v121
-							F_errmsg_internal(m, int32(453216), v10)
+							F_errmsg_internal(m, int32(458809), v10)
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(476637), int32(297), int32(96081))
+								F_errfinish(m, int32(482294), int32(297), int32(98317))
 								mBase = m.M
 								v130 = m.ExcPending
 								if v130 != 0 {
@@ -218,13 +218,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 		if v77 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(100777), int32(0))
+			F_errmsg_internal(m, int32(103644), int32(0))
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(476637), int32(279), int32(96081))
+				F_errfinish(m, int32(482294), int32(279), int32(98317))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -289,7 +289,7 @@ func F_process_shared_preload_libraries(m *base.Module) {
 	v2 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, _consts[1111])) = uint8(v2)
 	v5 = *(*int32)(unsafe.Add(mBase, _consts[1112]))
-	F_load_libraries(m, v5, int32(161019), int32(0))
+	F_load_libraries(m, v5, int32(164660), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

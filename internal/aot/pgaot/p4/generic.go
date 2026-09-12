@@ -195,13 +195,13 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 					if v230 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(523595), int32(0))
+						F_errmsg(m, int32(529308), int32(0))
 						mBase = m.M
 						v234 = m.ExcPending
 						if v234 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(482225), int32(202), int32(384562))
+							F_errfinish(m, int32(487906), int32(202), int32(389775))
 							mBase = m.M
 							v239 = m.ExcPending
 							if v239 != 0 {
@@ -551,19 +551,19 @@ func F_Generic_Text_IC_like(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			if v210 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(523542), int32(0))
+				F_errmsg(m, int32(529255), int32(0))
 				mBase = m.M
 				v214 = m.ExcPending
 				if v214 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(541241), int32(0))
+					F_errhint(m, int32(546990), int32(0))
 					mBase = m.M
 					v218 = m.ExcPending
 					if v218 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(482225), int32(194), int32(384562))
+						F_errfinish(m, int32(487906), int32(194), int32(389775))
 						mBase = m.M
 						v223 = m.ExcPending
 						if v223 != 0 {

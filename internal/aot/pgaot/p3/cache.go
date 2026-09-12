@@ -276,13 +276,13 @@ func F_CacheInvalidateRelcacheByRelid(m *base.Module, l0 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-				F_errmsg_internal(m, int32(44712), v8)
+				F_errmsg_internal(m, int32(45298), v8)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(480665), int32(1697), int32(420020))
+					F_errfinish(m, int32(486340), int32(1697), int32(425613))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -353,13 +353,13 @@ func F_CacheRegisterRelcacheCallback(m *base.Module, l0 int32) {
 		if v11 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(112793), int32(0))
+			F_errmsg_internal(m, int32(115660), int32(0))
 			mBase = m.M
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(480665), int32(1862), int32(307911))
+				F_errfinish(m, int32(486340), int32(1862), int32(312162))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
@@ -433,13 +433,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			if v90 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(112757), int32(0))
+				F_errmsg_internal(m, int32(115624), int32(0))
 				mBase = m.M
 				v94 = m.ExcPending
 				if v94 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(480665), int32(1823), int32(307881))
+					F_errfinish(m, int32(486340), int32(1823), int32(312132))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -491,13 +491,13 @@ func F_CacheRegisterSyscacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = v1
-			F_errmsg_internal(m, int32(471465), v10)
+			F_errmsg_internal(m, int32(477109), v10)
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(480665), int32(1821), int32(307881))
+				F_errfinish(m, int32(486340), int32(1821), int32(312132))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -612,7 +612,7 @@ func F_cache_store_tuple(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v104
 	var v113 int32
 	_ = v113
-	v8 = int32(4455216)
+	v8 = int32(4464496)
 	v9 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+192))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+176))

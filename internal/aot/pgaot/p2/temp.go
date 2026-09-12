@@ -155,7 +155,7 @@ L4:
 L5:
 	;
 	v12 = int32(8)
-	v13 = int32(490239)
+	v13 = int32(495952)
 	goto L9
 L6:
 	;
@@ -260,7 +260,7 @@ L20:
 L21:
 	;
 	v60 = int32(14)
-	v61 = int32(490224)
+	v61 = int32(495937)
 	goto L26
 L22:
 	;
@@ -488,7 +488,7 @@ func F_assign_temp_tablespaces(m *base.Module, l0 int32, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, _consts[405])) = v5
 		*(*int32)(unsafe.Add(mBase, _consts[406])) = l1 + int32(4)
 		if int32(2) <= v5 {
-			v19 = F_pg_prng_uint64_range(m, int32(4538720), int64(0), base.I64_extend_i32_u(v5-int32(1)))
+			v19 = F_pg_prng_uint64_range(m, int32(4548000), int64(0), base.I64_extend_i32_u(v5-int32(1)))
 			mBase = m.M
 			v21 = base.I32_wrap_i64(v19)
 		} else {
@@ -514,7 +514,7 @@ func F_createTempGistContext(m *base.Module) int32 {
 	var v10 int32
 	_ = v10
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v7 = F_AllocSetContextCreateInternal(m, v2, int32(58308), int32(0), int32(8192), int32(8388608))
+	v7 = F_AllocSetContextCreateInternal(m, v2, int32(58894), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
