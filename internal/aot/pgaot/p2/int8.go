@@ -225,7 +225,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					if v163 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(476611), int32(5606), int32(336798))
+						F_errfinish(m, int32(476879), int32(5606), int32(336973))
 						mBase = m.M
 						v168 = m.ExcPending
 						if v168 != 0 {
@@ -238,7 +238,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v51 = int32(4442576)
+				v51 = int32(4442992)
 				v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 				v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 				*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -362,7 +362,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				if v163 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(476611), int32(5606), int32(336798))
+					F_errfinish(m, int32(476879), int32(5606), int32(336973))
 					mBase = m.M
 					v168 = m.ExcPending
 					if v168 != 0 {
@@ -375,7 +375,7 @@ func F_int8_avg_accum(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v51 = int32(4442576)
+			v51 = int32(4442992)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v54
@@ -625,7 +625,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 				return v133
 			} else {
 				if v49 == int32(0) {
-					v56 = int32(4442576)
+					v56 = int32(4442992)
 					v57 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v59 = *(*int32)(unsafe.Add(mBase, uint32(v11)+8))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v59
@@ -695,7 +695,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(476611), int32(5606), int32(336798))
+								F_errfinish(m, int32(476879), int32(5606), int32(336973))
 								mBase = m.M
 								v168 = m.ExcPending
 								if v168 != 0 {
@@ -765,7 +765,7 @@ func F_int8_avg_combine(m *base.Module, l0 int32) int32 {
 			if v150 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(476611), int32(5946), int32(355984))
+				F_errfinish(m, int32(476879), int32(5946), int32(356159))
 				mBase = m.M
 				v155 = m.ExcPending
 				if v155 != 0 {
@@ -1214,7 +1214,7 @@ L14:
 	goto L2
 L15:
 	;
-	v59 = F_cstring_to_text(m, int32(715212))
+	v59 = F_cstring_to_text(m, int32(715480))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {

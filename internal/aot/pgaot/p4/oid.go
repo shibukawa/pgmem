@@ -114,13 +114,13 @@ func F_get_transform_oid(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v27
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = v24
-								F_errmsg(m, int32(69196), v8)
+								F_errmsg(m, int32(69217), v8)
 								mBase = m.M
 								v33 = m.ExcPending
 								if v33 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(471224), int32(2049), int32(413605))
+									F_errfinish(m, int32(471492), int32(2049), int32(413843))
 									mBase = m.M
 									v38 = m.ExcPending
 									if v38 != 0 {

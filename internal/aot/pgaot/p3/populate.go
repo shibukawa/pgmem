@@ -307,13 +307,13 @@ func F_populate_compact_attribute(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			v75 = int32(*(*int8)(unsafe.Add(mBase, uint32(v52)+83)))
 			*(*int32)(unsafe.Add(mBase, uint32(v11))) = v75
-			F_errmsg_internal(m, int32(478989), v11)
+			F_errmsg_internal(m, int32(479257), v11)
 			mBase = m.M
 			v79 = m.ExcPending
 			if v79 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(476396), int32(105), int32(296605))
+				F_errfinish(m, int32(476664), int32(105), int32(296759))
 				mBase = m.M
 				v84 = m.ExcPending
 				if v84 != 0 {
@@ -379,13 +379,13 @@ func F_populate_recordset_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) i
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v19
-				F_errmsg(m, int32(218441), v6)
+				F_errmsg(m, int32(218528), v6)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(471558), int32(4298), int32(218179))
+					F_errfinish(m, int32(471826), int32(4298), int32(218266))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -492,7 +492,7 @@ L2:
 	}
 L3:
 	;
-	v15 = int32(4442576)
+	v15 = int32(4442992)
 	v16 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[12]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v19
@@ -549,7 +549,7 @@ L9:
 	goto L7
 L10:
 	;
-	v34 = int32(4339080)
+	v34 = int32(4339496)
 	v36 = *(*int32)(unsafe.Add(mBase, _consts[416]))
 	v37 = F_lappend(m, v36, v32)
 	mBase = m.M

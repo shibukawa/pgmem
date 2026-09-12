@@ -74,13 +74,13 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 					if v51 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(242755), int32(0))
+						F_errmsg(m, int32(242909), int32(0))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(474257), int32(128), int32(114925))
+							F_errfinish(m, int32(474525), int32(128), int32(114990))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
@@ -126,7 +126,7 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 								if v71 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(474257), int32(143), int32(114925))
+									F_errfinish(m, int32(474525), int32(143), int32(114990))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -159,13 +159,13 @@ func F_CheckLogicalDecodingRequirements(m *base.Module) {
 				if v35 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(686686), int32(0))
+					F_errmsg(m, int32(686954), int32(0))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(474257), int32(123), int32(114925))
+						F_errfinish(m, int32(474525), int32(123), int32(114990))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -351,7 +351,7 @@ L6:
 	;
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v24
-	F_errmsg_internal(m, int32(157683), v15+int32(16))
+	F_errmsg_internal(m, int32(157748), v15+int32(16))
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {
@@ -375,7 +375,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(472821), int32(820), int32(146385))
+	F_errfinish(m, int32(473089), int32(820), int32(146450))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -640,7 +640,7 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v78
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v150
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v50 + int32(28)
-	F_errmsg(m, int32(281123), v15)
+	F_errmsg(m, int32(281277), v15)
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {
@@ -650,7 +650,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(472821), int32(886), int32(146385))
+	F_errfinish(m, int32(473089), int32(886), int32(146450))
 	mBase = m.M
 	v221 = m.ExcPending
 	if v221 != 0 {

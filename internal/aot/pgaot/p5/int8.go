@@ -83,13 +83,13 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 		if v111 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(336128), int32(0))
+			F_errmsg_internal(m, int32(336303), int32(0))
 			mBase = m.M
 			v115 = m.ExcPending
 			if v115 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(476611), int32(6151), int32(30425))
+				F_errfinish(m, int32(476879), int32(6151), int32(30425))
 				mBase = m.M
 				v120 = m.ExcPending
 				if v120 != 0 {
@@ -110,13 +110,13 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 			if v111 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(336128), int32(0))
+				F_errmsg_internal(m, int32(336303), int32(0))
 				mBase = m.M
 				v115 = m.ExcPending
 				if v115 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(476611), int32(6151), int32(30425))
+					F_errfinish(m, int32(476879), int32(6151), int32(30425))
 					mBase = m.M
 					v120 = m.ExcPending
 					if v120 != 0 {
@@ -234,7 +234,7 @@ func F_int8_accum_inv(m *base.Module, l0 int32) int32 {
 										if v128 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(476611), int32(6157), int32(30425))
+											F_errfinish(m, int32(476879), int32(6157), int32(30425))
 											mBase = m.M
 											v133 = m.ExcPending
 											if v133 != 0 {

@@ -439,7 +439,7 @@ func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 					if v29 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(470610), int32(2876), int32(230031))
+						F_errfinish(m, int32(470878), int32(2876), int32(230185))
 						mBase = m.M
 						v34 = m.ExcPending
 						if v34 != 0 {
@@ -528,7 +528,7 @@ func F_getPublicationSchemaInfo(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 											if v64 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(470610), int32(2897), int32(230031))
+												F_errfinish(m, int32(470878), int32(2897), int32(230185))
 												mBase = m.M
 												v69 = m.ExcPending
 												if v69 != 0 {
@@ -607,7 +607,7 @@ func F_get_publication_name(m *base.Module, l0 int32, l1 int32) int32 {
 					if v24 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(475804), int32(3796), int32(360131))
+						F_errfinish(m, int32(476072), int32(3796), int32(360325))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {

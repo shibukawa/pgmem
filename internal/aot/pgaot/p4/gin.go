@@ -228,7 +228,7 @@ func F_ginBuildCallbackParallel(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	v15 = int32(16)
 	v16 = v14 - v15
 	m.G0 = v16
-	v18 = int32(4442576)
+	v18 = int32(4442992)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[45])))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v21
@@ -328,7 +328,7 @@ L14:
 	;
 	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l3+v68))))
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(l2+v68<<(uint(int32(2))%32))))
-	v83 = int32(4442576)
+	v83 = int32(4442992)
 	v84 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(l5)+uint32(_consts[76])))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v86
@@ -1390,13 +1390,13 @@ func F_ginFinishOldSplit(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			*(*int32)(unsafe.Add(mBase, uint32(v8))) = v16
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v15 + int32(4)
-			F_errmsg_internal(m, int32(651498), v8)
+			F_errmsg_internal(m, int32(651766), v8)
 			mBase = m.M
 			v23 = m.ExcPending
 			if v23 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(476032), int32(783), int32(95592))
+				F_errfinish(m, int32(476300), int32(783), int32(95635))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
@@ -1852,7 +1852,7 @@ L9:
 	v108 = v23 + int32(7)
 	v110 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v110)))
-	if v111 == int32(4061816) {
+	if v111 == int32(4062168) {
 		goto L12
 	} else {
 		goto L13
@@ -1957,7 +1957,7 @@ L24:
 L25:
 	;
 	v153 = *(*int32)(unsafe.Add(mBase, uint32(v122+v151)))
-	if v153 != int32(4061816) {
+	if v153 != int32(4062168) {
 		v122 = v153
 		goto L15
 	} else {
@@ -1969,7 +1969,7 @@ L26:
 L27:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v183)+12)) = v178
-	v186 = int32(4061816)
+	v186 = int32(4062168)
 	*(*int32)(unsafe.Add(mBase, uint32(v183)+8)) = v186
 	*(*int32)(unsafe.Add(mBase, uint32(v183)+4)) = v186
 	v190 = int32(1)
@@ -2140,7 +2140,7 @@ L52:
 	v285 = *(*int32)(unsafe.Add(mBase, uint32(v284)+4))
 	v286 = *(*int32)(unsafe.Add(mBase, uint32(v285)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v284)+4)) = v286
-	if v286 != int32(4061816) {
+	if v286 != int32(4062168) {
 		goto L72
 	} else {
 		goto L73
@@ -2157,7 +2157,7 @@ L55:
 	;
 	v251 = *(*int32)(unsafe.Add(mBase, uint32(v249)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v219)+8)) = v251
-	if v251 != int32(4061816) {
+	if v251 != int32(4062168) {
 		goto L56
 	} else {
 		goto L57
@@ -2174,7 +2174,7 @@ L57:
 	goto L58
 L58:
 	;
-	if v221 != int32(4061816) {
+	if v221 != int32(4062168) {
 		goto L59
 	} else {
 		goto L60
@@ -2196,7 +2196,7 @@ L61:
 L62:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v249)+4)) = v219
-	if v219 == int32(4061816) {
+	if v219 == int32(4062168) {
 		goto L69
 	} else {
 		goto L70
@@ -2231,7 +2231,7 @@ L69:
 	;
 	v270 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	v273 = v270
-	v274 = int32(4061816)
+	v274 = int32(4062168)
 	goto L52
 L70:
 	;
@@ -2252,7 +2252,7 @@ L73:
 L74:
 	;
 	v291 = *(*int32)(unsafe.Add(mBase, uint32(v284)+12))
-	if v285 != int32(4061816) {
+	if v285 != int32(4062168) {
 		goto L75
 	} else {
 		goto L76
@@ -2274,7 +2274,7 @@ L77:
 L78:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v285)+8)) = v284
-	if v284 == int32(4061816) {
+	if v284 == int32(4062168) {
 		v373 = v274
 		goto L45
 	} else {
@@ -2348,7 +2348,7 @@ L89:
 	v353 = *(*int32)(unsafe.Add(mBase, uint32(v352)+8))
 	v354 = *(*int32)(unsafe.Add(mBase, uint32(v353)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v352)+8)) = v354
-	if v354 != int32(4061816) {
+	if v354 != int32(4062168) {
 		goto L109
 	} else {
 		goto L110
@@ -2365,7 +2365,7 @@ L92:
 	;
 	v319 = *(*int32)(unsafe.Add(mBase, uint32(v317)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v219)+4)) = v319
-	if v319 != int32(4061816) {
+	if v319 != int32(4062168) {
 		goto L93
 	} else {
 		goto L94
@@ -2382,7 +2382,7 @@ L94:
 	goto L95
 L95:
 	;
-	if v221 != int32(4061816) {
+	if v221 != int32(4062168) {
 		goto L96
 	} else {
 		goto L97
@@ -2404,7 +2404,7 @@ L98:
 L99:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v317)+8)) = v219
-	if v219 == int32(4061816) {
+	if v219 == int32(4062168) {
 		goto L106
 	} else {
 		goto L107
@@ -2439,7 +2439,7 @@ L106:
 	;
 	v338 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	v341 = v338
-	v342 = int32(4061816)
+	v342 = int32(4062168)
 	goto L89
 L107:
 	;
@@ -2460,7 +2460,7 @@ L110:
 L111:
 	;
 	v359 = *(*int32)(unsafe.Add(mBase, uint32(v352)+12))
-	if v353 != int32(4061816) {
+	if v353 != int32(4062168) {
 		goto L112
 	} else {
 		goto L113
@@ -2482,7 +2482,7 @@ L114:
 L115:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v353)+4)) = v352
-	if v352 == int32(4061816) {
+	if v352 == int32(4062168) {
 		v373 = v342
 		goto L45
 	} else {
@@ -2853,13 +2853,13 @@ func F_ginReadTuple(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
 						v35 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v35
-						F_errmsg_internal(m, int32(438979), v9)
+						F_errmsg_internal(m, int32(439217), v9)
 						mBase = m.M
 						v39 = m.ExcPending
 						if v39 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(475918), int32(177), int32(366144))
+							F_errfinish(m, int32(476186), int32(177), int32(366338))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -3060,7 +3060,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				v29 = *(*int32)(unsafe.Add(mBase, _consts[2]))
 				v35 = v29 + v13<<(uint(int32(13))%32) + int32(-8192)
 			}
-			v36 = int32(4437236)
+			v36 = int32(4437652)
 			v38 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 			*(*int32)(unsafe.Add(mBase, _consts[26])) = v38 + int32(1)
 			v42 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
@@ -3088,7 +3088,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v114 != 0 {
 						return
 					} else {
-						v115 = int32(4437236)
+						v115 = int32(4437652)
 						v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 						*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 						m.G0 = v10 + int32(96)
@@ -3105,7 +3105,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v114 != 0 {
 								return
 							} else {
-								v115 = int32(4437236)
+								v115 = int32(4437652)
 								v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 								*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 								m.G0 = v10 + int32(96)
@@ -3119,7 +3119,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 								if v114 != 0 {
 									return
 								} else {
-									v115 = int32(4437236)
+									v115 = int32(4437652)
 									v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 									*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 									m.G0 = v10 + int32(96)
@@ -3180,7 +3180,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 													if v114 != 0 {
 														return
 													} else {
-														v115 = int32(4437236)
+														v115 = int32(4437652)
 														v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 														*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 														m.G0 = v10 + int32(96)
@@ -3197,7 +3197,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 									if v114 != 0 {
 										return
 									} else {
-										v115 = int32(4437236)
+										v115 = int32(4437652)
 										v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 										*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 										m.G0 = v10 + int32(96)
@@ -3214,7 +3214,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v114 != 0 {
 								return
 							} else {
-								v115 = int32(4437236)
+								v115 = int32(4437652)
 								v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 								*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 								m.G0 = v10 + int32(96)
@@ -3273,7 +3273,7 @@ func F_ginUpdateStats(m *base.Module, l0 int32, l1 int32, l2 int32) {
 											if v114 != 0 {
 												return
 											} else {
-												v115 = int32(4437236)
+												v115 = int32(4437652)
 												v117 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 												*(*int32)(unsafe.Add(mBase, _consts[26])) = v117 - int32(1)
 												m.G0 = v10 + int32(96)
@@ -3677,7 +3677,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 			v30 = int32(70)
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+64)) = v30
-		F_appendStringInfo(m, l0, int32(478967), v10-int32(-64))
+		F_appendStringInfo(m, l0, int32(479235), v10-int32(-64))
 		mBase = m.M
 		v36 = m.ExcPending
 		if v36 != 0 {
@@ -3703,7 +3703,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 					if v62 == int32(1) {
 						v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+106)))
 						if v65 == int32(1) {
-							F_appendStringInfoString(m, l0, int32(635527))
+							F_appendStringInfoString(m, l0, int32(635795))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -3713,7 +3713,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 								return
 							}
 						} else {
-							F_appendStringInfoString(m, l0, int32(634467))
+							F_appendStringInfoString(m, l0, int32(634735))
 							mBase = m.M
 							v73 = m.ExcPending
 							if v73 != 0 {
@@ -3753,7 +3753,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 								v112 = int32(70)
 							}
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v112
-							F_appendStringInfo(m, l0, int32(479016), v10+int32(16))
+							F_appendStringInfo(m, l0, int32(479284), v10+int32(16))
 							mBase = m.M
 							v118 = m.ExcPending
 							if v118 != 0 {
@@ -3802,7 +3802,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 				if v62 == int32(1) {
 					v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+106)))
 					if v65 == int32(1) {
-						F_appendStringInfoString(m, l0, int32(635527))
+						F_appendStringInfoString(m, l0, int32(635795))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -3812,7 +3812,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 							return
 						}
 					} else {
-						F_appendStringInfoString(m, l0, int32(634467))
+						F_appendStringInfoString(m, l0, int32(634735))
 						mBase = m.M
 						v73 = m.ExcPending
 						if v73 != 0 {
@@ -3852,7 +3852,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 							v112 = int32(70)
 						}
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v112
-						F_appendStringInfo(m, l0, int32(479016), v10+int32(16))
+						F_appendStringInfo(m, l0, int32(479284), v10+int32(16))
 						mBase = m.M
 						v118 = m.ExcPending
 						if v118 != 0 {
@@ -3904,7 +3904,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 			v147 = int32(70)
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+96)) = v147
-		F_appendStringInfo(m, l0, int32(478622), v10+int32(96))
+		F_appendStringInfo(m, l0, int32(478890), v10+int32(96))
 		mBase = m.M
 		v153 = m.ExcPending
 		if v153 != 0 {
@@ -3923,7 +3923,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 				v165 = int32(70)
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(v10)+80)) = v165
-			F_appendStringInfo(m, l0, int32(478966), v10+int32(80))
+			F_appendStringInfo(m, l0, int32(479234), v10+int32(80))
 			mBase = m.M
 			v171 = m.ExcPending
 			if v171 != 0 {
@@ -3939,7 +3939,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 	case 6:
 		v216 = *(*int32)(unsafe.Add(mBase, uint32(v13)+56))
 		*(*int32)(unsafe.Add(mBase, uint32(v10))) = v216
-		F_appendStringInfo(m, l0, int32(465043), v10)
+		F_appendStringInfo(m, l0, int32(465311), v10)
 		mBase = m.M
 		v220 = m.ExcPending
 		if v220 != 0 {
@@ -3953,7 +3953,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 		if v172 == int32(1) {
 			v175 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+106)))
 			if v175 == int32(1) {
-				F_appendStringInfoString(m, l0, int32(635527))
+				F_appendStringInfoString(m, l0, int32(635795))
 				mBase = m.M
 				v180 = m.ExcPending
 				if v180 != 0 {
@@ -3963,7 +3963,7 @@ func F_gin_desc(m *base.Module, l0 int32, l1 int32) {
 					return
 				}
 			} else {
-				F_appendStringInfoString(m, l0, int32(634467))
+				F_appendStringInfoString(m, l0, int32(634735))
 				mBase = m.M
 				v183 = m.ExcPending
 				if v183 != 0 {

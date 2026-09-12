@@ -64,7 +64,7 @@ func F_tts_buffer_heap_copy_minimal_tuple(m *base.Module, l0 int32, l1 int32) in
 				return v35
 			}
 		} else {
-			v10 = int32(4442576)
+			v10 = int32(4442992)
 			v11 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v13
@@ -196,7 +196,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v57
 	var v62 int32
 	_ = v62
-	v5 = int32(4442576)
+	v5 = int32(4442992)
 	v6 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
 	*(*int32)(unsafe.Add(mBase, _consts[28])) = v8
@@ -210,7 +210,7 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		*(*int32)(unsafe.Add(mBase, _consts[28])) = v6
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-		if v16 == int32(1575736) {
+		if v16 == int32(1576008) {
 			v19 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
 			if v19&int32(4) != 0 {
 				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
@@ -269,13 +269,13 @@ func F_tts_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 			if v53 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(81389), int32(0))
+				F_errmsg_internal(m, int32(81410), int32(0))
 				mBase = m.M
 				v57 = m.ExcPending
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(471063), int32(1553), int32(365929))
+					F_errfinish(m, int32(471331), int32(1553), int32(366123))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {
@@ -309,12 +309,12 @@ func F_tts_minimal_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(365256), int32(0))
+			F_errmsg(m, int32(365450), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(471063), int32(581), int32(364534))
+				F_errfinish(m, int32(471331), int32(581), int32(364728))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -339,12 +339,12 @@ func F_tts_virtual_getsomeattrs(m *base.Module, l0 int32, l1 int32) {
 	if v6 != 0 {
 		return
 	} else {
-		F_errmsg_internal(m, int32(81566), int32(0))
+		F_errmsg_internal(m, int32(81587), int32(0))
 		v10 = m.ExcPending
 		if v10 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(471063), int32(132), int32(121772))
+			F_errfinish(m, int32(471331), int32(132), int32(121837))
 			v15 = m.ExcPending
 			if v15 != 0 {
 				return
@@ -375,12 +375,12 @@ func F_tts_virtual_is_current_xact_tuple(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(365256), int32(0))
+			F_errmsg(m, int32(365450), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(471063), int32(163), int32(364500))
+				F_errfinish(m, int32(471331), int32(163), int32(364694))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)

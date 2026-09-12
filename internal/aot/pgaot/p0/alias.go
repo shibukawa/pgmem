@@ -3842,6 +3842,8 @@ func F_pgp_mpi_free(m *base.Module, l0 int32) int32
 func F_pgp_load_digest(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_px_crypt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_px_crypt
 func F_px_crypt(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_citextcmp github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_citextcmp
+func F_citextcmp(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

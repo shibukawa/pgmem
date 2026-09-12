@@ -141,7 +141,7 @@ L6:
 L7:
 	;
 	v22 = *(*int32)(unsafe.Add(mBase, _consts[664]))
-	F_s_lock(m, v22, int32(474257), int32(1834), int32(252653))
+	F_s_lock(m, v22, int32(474525), int32(1834), int32(252807))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -305,7 +305,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(474257), int32(1906), int32(252653))
+	F_errfinish(m, int32(474525), int32(1906), int32(252807))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -329,7 +329,7 @@ L32:
 L33:
 	;
 	v100 = *(*int32)(unsafe.Add(mBase, _consts[664]))
-	F_s_lock(m, v100, int32(474257), int32(1917), int32(252653))
+	F_s_lock(m, v100, int32(474525), int32(1917), int32(252807))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -374,7 +374,7 @@ L38:
 L39:
 	;
 	v121 = *(*int32)(unsafe.Add(mBase, _consts[664]))
-	F_s_lock(m, v121, int32(474257), int32(1927), int32(252653))
+	F_s_lock(m, v121, int32(474525), int32(1927), int32(252807))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {

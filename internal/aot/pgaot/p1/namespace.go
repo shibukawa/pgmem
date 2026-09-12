@@ -103,13 +103,13 @@ func F_NamespaceCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
-						F_errmsg(m, int32(109243), v11)
+						F_errmsg(m, int32(109308), v11)
 						mBase = m.M
 						v120 = m.ExcPending
 						if v120 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(476136), int32(64), int32(338564))
+							F_errfinish(m, int32(476404), int32(64), int32(338739))
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
@@ -370,13 +370,13 @@ func F_NamespaceCreate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v100 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(435085), int32(0))
+			F_errmsg_internal(m, int32(435323), int32(0))
 			mBase = m.M
 			v104 = m.ExcPending
 			if v104 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(476136), int32(58), int32(338564))
+				F_errfinish(m, int32(476404), int32(58), int32(338739))
 				mBase = m.M
 				v109 = m.ExcPending
 				if v109 != 0 {

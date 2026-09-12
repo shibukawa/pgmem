@@ -1928,6 +1928,204 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgpSymEncryptText(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_citext":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_citext: want 0 args")
+		}
+		r := pgaot.PgMagicFuncCitext(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_cmp":
+		if len(a) != 1 {
+			panic("aot: citext_cmp: want 1 args")
+		}
+		r := pgaot.CitextCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_eq":
+		if len(a) != 1 {
+			panic("aot: citext_eq: want 1 args")
+		}
+		r := pgaot.CitextEq(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_ge":
+		if len(a) != 1 {
+			panic("aot: citext_ge: want 1 args")
+		}
+		r := pgaot.CitextGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_gt":
+		if len(a) != 1 {
+			panic("aot: citext_gt: want 1 args")
+		}
+		r := pgaot.CitextGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_hash":
+		if len(a) != 1 {
+			panic("aot: citext_hash: want 1 args")
+		}
+		r := pgaot.CitextHash(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_hash_extended":
+		if len(a) != 1 {
+			panic("aot: citext_hash_extended: want 1 args")
+		}
+		r := pgaot.CitextHashExtended(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_larger":
+		if len(a) != 1 {
+			panic("aot: citext_larger: want 1 args")
+		}
+		r := pgaot.CitextLarger(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_le":
+		if len(a) != 1 {
+			panic("aot: citext_le: want 1 args")
+		}
+		r := pgaot.CitextLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_lt":
+		if len(a) != 1 {
+			panic("aot: citext_lt: want 1 args")
+		}
+		r := pgaot.CitextLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_ne":
+		if len(a) != 1 {
+			panic("aot: citext_ne: want 1 args")
+		}
+		r := pgaot.CitextNe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_pattern_cmp":
+		if len(a) != 1 {
+			panic("aot: citext_pattern_cmp: want 1 args")
+		}
+		r := pgaot.CitextPatternCmp(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_pattern_ge":
+		if len(a) != 1 {
+			panic("aot: citext_pattern_ge: want 1 args")
+		}
+		r := pgaot.CitextPatternGe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_pattern_gt":
+		if len(a) != 1 {
+			panic("aot: citext_pattern_gt: want 1 args")
+		}
+		r := pgaot.CitextPatternGt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_pattern_le":
+		if len(a) != 1 {
+			panic("aot: citext_pattern_le: want 1 args")
+		}
+		r := pgaot.CitextPatternLe(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_pattern_lt":
+		if len(a) != 1 {
+			panic("aot: citext_pattern_lt: want 1 args")
+		}
+		r := pgaot.CitextPatternLt(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "citext_smaller":
+		if len(a) != 1 {
+			panic("aot: citext_smaller: want 1 args")
+		}
+		r := pgaot.CitextSmaller(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_eq":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_eq: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextEq(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_hash":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_hash: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextHash(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_hash_extended":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_hash_extended: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextHashExtended(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_larger":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_larger: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextLarger(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_le: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_ne":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_ne: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextNe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_pattern_cmp":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_pattern_cmp: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextPatternCmp(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_pattern_ge":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_pattern_ge: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextPatternGe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_pattern_gt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_pattern_gt: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextPatternGt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_pattern_le":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_pattern_le: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextPatternLe(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_pattern_lt":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_pattern_lt: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextPatternLt(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_citext_smaller":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_citext_smaller: want 0 args")
+		}
+		r := pgaot.PgFinfoCitextSmaller(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")

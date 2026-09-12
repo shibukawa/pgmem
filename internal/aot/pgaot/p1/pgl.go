@@ -334,7 +334,7 @@ L3:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = l0
 	v95 = *(*int32)(unsafe.Add(mBase, _consts[463]))
-	F_fiprintf(m, v95, int32(709013), v11)
+	F_fiprintf(m, v95, int32(709281), v11)
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -465,7 +465,7 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = l1
 	v74 = *(*int32)(unsafe.Add(mBase, _consts[463]))
-	F_fiprintf(m, v74, int32(709120), v11+int32(16))
+	F_fiprintf(m, v74, int32(709388), v11+int32(16))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {

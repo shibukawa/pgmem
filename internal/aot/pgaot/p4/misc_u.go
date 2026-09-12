@@ -78,7 +78,7 @@ func F_UnregisterSnapshotNoOwner(m *base.Module, l0 int32) {
 	if v5 != 0 {
 		return
 	} else {
-		F_pairingheap_remove(m, int32(4114488), l0+int32(52))
+		F_pairingheap_remove(m, int32(4114840), l0+int32(52))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -218,13 +218,13 @@ func F_unlink_if_exists_fname(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-							F_errmsg(m, int32(281857), v7)
+							F_errmsg(m, int32(282011), v7)
 							mBase = m.M
 							v26 = m.ExcPending
 							if v26 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(476343), int32(3849), int32(359067))
+								F_errfinish(m, int32(476611), int32(3849), int32(359261))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
@@ -303,13 +303,13 @@ func F_unlink_initfile(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-						F_errmsg(m, int32(284674), v6)
+						F_errmsg(m, int32(284828), v6)
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(475839), int32(6966), int32(367138))
+							F_errfinish(m, int32(476107), int32(6966), int32(367332))
 							mBase = m.M
 							v30 = m.ExcPending
 							if v30 != 0 {
@@ -1476,12 +1476,12 @@ func F_update_progress_txn_cb_wrapper(m *base.Module, l0 int32, l1 int32, l2 int
 	v7 = m.G0
 	v9 = v7 - int32(32)
 	m.G0 = v9
-	v11 = int32(4435480)
+	v11 = int32(4435896)
 	v12 = *(*int32)(unsafe.Add(mBase, _consts[385]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	*(*int32)(unsafe.Add(mBase, _consts[385])) = v9 + int32(4)
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+24)) = l2
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(231047)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = int32(231201)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = int32(992)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v12

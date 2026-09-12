@@ -618,6 +618,72 @@ func F_pg_dearmor(m *base.Module, l0 int32) int32
 func F_pgp_armor_headers(m *base.Module, l0 int32) int32
 //go:linkname F_pgp_key_id_w github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pgp_key_id_w
 func F_pgp_key_id_w(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_citext github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_Pg_magic_func_citext
+func F_Pg_magic_func_citext(m *base.Module) int32
+//go:linkname F_pg_finfo_citext_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_citext_cmp
+func F_pg_finfo_citext_cmp(m *base.Module) int32
+//go:linkname F_citext_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_citext_cmp
+func F_citext_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_pattern_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_citext_pattern_cmp
+func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32
+//go:linkname F_citext_pattern_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_pattern_cmp
+func F_citext_pattern_cmp(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_citext_hash
+func F_pg_finfo_citext_hash(m *base.Module) int32
+//go:linkname F_citext_hash github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_citext_hash
+func F_citext_hash(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_hash_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_citext_hash_extended
+func F_pg_finfo_citext_hash_extended(m *base.Module) int32
+//go:linkname F_citext_hash_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_citext_hash_extended
+func F_citext_hash_extended(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_citext_eq
+func F_pg_finfo_citext_eq(m *base.Module) int32
+//go:linkname F_citext_eq github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_citext_eq
+func F_citext_eq(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_citext_ne
+func F_pg_finfo_citext_ne(m *base.Module) int32
+//go:linkname F_citext_ne github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_ne
+func F_citext_ne(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_citext_lt
+func F_pg_finfo_citext_lt(m *base.Module) int32
+//go:linkname F_citext_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_citext_lt
+func F_citext_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_le github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_pg_finfo_citext_le
+func F_pg_finfo_citext_le(m *base.Module) int32
+//go:linkname F_citext_le github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_le
+func F_citext_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pg_finfo_citext_gt
+func F_pg_finfo_citext_gt(m *base.Module) int32
+//go:linkname F_citext_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_gt
+func F_citext_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_citext_ge
+func F_pg_finfo_citext_ge(m *base.Module) int32
+//go:linkname F_citext_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_citext_ge
+func F_citext_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_pattern_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_citext_pattern_lt
+func F_pg_finfo_citext_pattern_lt(m *base.Module) int32
+//go:linkname F_citext_pattern_lt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_pattern_lt
+func F_citext_pattern_lt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_pattern_le github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_pg_finfo_citext_pattern_le
+func F_pg_finfo_citext_pattern_le(m *base.Module) int32
+//go:linkname F_citext_pattern_le github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_citext_pattern_le
+func F_citext_pattern_le(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_pattern_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_citext_pattern_gt
+func F_pg_finfo_citext_pattern_gt(m *base.Module) int32
+//go:linkname F_citext_pattern_gt github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_citext_pattern_gt
+func F_citext_pattern_gt(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_pattern_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_citext_pattern_ge
+func F_pg_finfo_citext_pattern_ge(m *base.Module) int32
+//go:linkname F_citext_pattern_ge github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_citext_pattern_ge
+func F_citext_pattern_ge(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_smaller github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_pg_finfo_citext_smaller
+func F_pg_finfo_citext_smaller(m *base.Module) int32
+//go:linkname F_citext_smaller github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_citext_smaller
+func F_citext_smaller(m *base.Module, l0 int32) int32
+//go:linkname F_pg_finfo_citext_larger github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_pg_finfo_citext_larger
+func F_pg_finfo_citext_larger(m *base.Module) int32
+//go:linkname F_citext_larger github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_citext_larger
+func F_citext_larger(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

@@ -438,7 +438,7 @@ L35:
 L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v123
-	F_errmsg(m, int32(183105), v14)
+	F_errmsg(m, int32(183170), v14)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -448,7 +448,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(471141), int32(2421), int32(121702))
+	F_errfinish(m, int32(471409), int32(2421), int32(121767))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -633,8 +633,8 @@ L4:
 	}
 L5:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(402109)
-	v22 = F_format_elog_string(m, int32(530710), v7)
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(402347)
+	v22 = F_format_elog_string(m, int32(530978), v7)
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -759,8 +759,8 @@ L27:
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(63)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(402109)
-	v99 = F_format_elog_string(m, int32(619253), v5+int32(-48))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(402347)
+	v99 = F_format_elog_string(m, int32(619521), v5+int32(-48))
 	mBase = m.M
 	v100 = m.ExcPending
 	if v100 != 0 {
@@ -856,7 +856,7 @@ L40:
 	;
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v129
-	F_errmsg(m, int32(69307), v5+int32(-32))
+	F_errmsg(m, int32(69328), v5+int32(-32))
 	mBase = m.M
 	v135 = m.ExcPending
 	if v135 != 0 {
@@ -866,7 +866,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(474385), int32(137), int32(402103))
+	F_errfinish(m, int32(474653), int32(137), int32(402341))
 	mBase = m.M
 	v140 = m.ExcPending
 	if v140 != 0 {
@@ -882,7 +882,7 @@ L43:
 	;
 	v146 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v146
-	v152 = F_format_elog_string(m, int32(538200), v5+int32(-16))
+	v152 = F_format_elog_string(m, int32(538468), v5+int32(-16))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {

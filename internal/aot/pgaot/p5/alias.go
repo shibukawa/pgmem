@@ -4642,6 +4642,8 @@ func F_px_THROW_ERROR(m *base.Module, l0 int32)
 func F_px_debug(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_px_find_combo github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_px_find_combo
 func F_px_find_combo(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_internal_citext_pattern_cmp github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_internal_citext_pattern_cmp
+func F_internal_citext_pattern_cmp(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

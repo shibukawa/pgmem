@@ -63,13 +63,13 @@ func F_OutputFunctionCall(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v32
-				F_errmsg_internal(m, int32(508464), v6)
+				F_errmsg_internal(m, int32(508732), v6)
 				mBase = m.M
 				v36 = m.ExcPending
 				if v36 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(472011), int32(1143), int32(289117))
+					F_errfinish(m, int32(472279), int32(1143), int32(289271))
 					mBase = m.M
 					v41 = m.ExcPending
 					if v41 != 0 {

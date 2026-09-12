@@ -81,20 +81,20 @@ func F_pg_wal_replay_resume(m *base.Module, l0 int32) int32 {
 					if v57 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(317860), int32(0))
+						F_errmsg(m, int32(318035), int32(0))
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(642453)
-							F_errhint(m, int32(607924), v4)
+							*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(642721)
+							F_errhint(m, int32(608192), v4)
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(471744), int32(561), int32(356497))
+								F_errfinish(m, int32(472012), int32(561), int32(356691))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
@@ -133,19 +133,19 @@ func F_pg_wal_replay_resume(m *base.Module, l0 int32) int32 {
 			if v37 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(118726), int32(0))
+				F_errmsg(m, int32(118791), int32(0))
 				mBase = m.M
 				v41 = m.ExcPending
 				if v41 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(532803), int32(0))
+					F_errhint(m, int32(533071), int32(0))
 					mBase = m.M
 					v45 = m.ExcPending
 					if v45 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(471744), int32(554), int32(356497))
+						F_errfinish(m, int32(472012), int32(554), int32(356691))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -617,7 +617,7 @@ L45:
 L46:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v10))) = v25
-	F_errmsg(m, int32(409462), v10)
+	F_errmsg(m, int32(409700), v10)
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -627,7 +627,7 @@ L46:
 	}
 L47:
 	;
-	F_errfinish(m, int32(471403), int32(95), int32(112447))
+	F_errfinish(m, int32(471671), int32(95), int32(112512))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {

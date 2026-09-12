@@ -73,7 +73,7 @@ L3:
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	F_appendStringInfoString(m, v13, int32(715212))
+	F_appendStringInfoString(m, v13, int32(715480))
 	mBase = m.M
 	v16 = m.ExcPending
 	if v16 != 0 {
@@ -143,7 +143,7 @@ L13:
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(v36+v35<<(uint(int32(2))%32))))
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	F_appendStringInfoString(m, v41, int32(703976))
+	F_appendStringInfoString(m, v41, int32(704244))
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -268,7 +268,7 @@ func F_get_rule_sortgroupclause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 		if l2 != 0 {
 			v17 = int32(*(*int16)(unsafe.Add(mBase, uint32(v12)+8)))
 			*(*int32)(unsafe.Add(mBase, uint32(v9))) = v17
-			F_appendStringInfo(m, v11, int32(465664), v9)
+			F_appendStringInfo(m, v11, int32(465932), v9)
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {

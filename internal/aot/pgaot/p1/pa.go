@@ -59,7 +59,7 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(1)
 		if v8 != 0 {
 			v12 = *(*int32)(unsafe.Add(mBase, _consts[649]))
-			F_s_lock(m, v12, int32(472255), int32(1531), int32(334420))
+			F_s_lock(m, v12, int32(472523), int32(1531), int32(334595))
 			mBase = m.M
 			v17 = m.ExcPending
 			if v17 != 0 {
@@ -77,13 +77,13 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 					if v26 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(530273), int32(0))
+						F_errmsg_internal(m, int32(530541), int32(0))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(472255), int32(1611), int32(300916))
+							F_errfinish(m, int32(472523), int32(1611), int32(301070))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
@@ -110,13 +110,13 @@ func F_pa_decr_and_wait_stream_block(m *base.Module) {
 				if v26 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(530273), int32(0))
+					F_errmsg_internal(m, int32(530541), int32(0))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(472255), int32(1611), int32(300916))
+						F_errfinish(m, int32(472523), int32(1611), int32(301070))
 						mBase = m.M
 						v35 = m.ExcPending
 						if v35 != 0 {
@@ -289,7 +289,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg(m, int32(330671), int32(0))
+	F_errmsg(m, int32(330846), int32(0))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -299,7 +299,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(472255), int32(1187), int32(480682))
+	F_errfinish(m, int32(472523), int32(1187), int32(480950))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {

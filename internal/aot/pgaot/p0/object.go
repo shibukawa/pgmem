@@ -184,7 +184,7 @@ func F_GetNewObjectId(m *base.Module) int32 {
 			if v101 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(472523), int32(561), int32(443460))
+				F_errfinish(m, int32(472791), int32(561), int32(443728))
 				mBase = m.M
 				v106 = m.ExcPending
 				if v106 != 0 {
@@ -460,13 +460,13 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if v215 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(206886), int32(0))
+						F_errmsg(m, int32(206951), int32(0))
 						mBase = m.M
 						v219 = m.ExcPending
 						if v219 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(470610), int32(2551), int32(225379))
+							F_errfinish(m, int32(470878), int32(2551), int32(225533))
 							mBase = m.M
 							v224 = m.ExcPending
 							if v224 != 0 {
@@ -521,13 +521,13 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = l1
-			F_errmsg_internal(m, int32(462253), v9+int32(96))
+			F_errmsg_internal(m, int32(462521), v9+int32(96))
 			mBase = m.M
 			v234 = m.ExcPending
 			if v234 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(470610), int32(2561), int32(225379))
+				F_errfinish(m, int32(470878), int32(2561), int32(225533))
 				mBase = m.M
 				v239 = m.ExcPending
 				if v239 != 0 {
@@ -625,13 +625,13 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v121
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v119
-												F_errmsg(m, int32(180093), v9+int32(32))
+												F_errmsg(m, int32(180158), v9+int32(32))
 												mBase = m.M
 												v129 = m.ExcPending
 												if v129 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(470610), int32(2496), int32(225379))
+													F_errfinish(m, int32(470878), int32(2496), int32(225533))
 													mBase = m.M
 													v134 = m.ExcPending
 													if v134 != 0 {
@@ -748,13 +748,13 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v29
-					F_errmsg_internal(m, int32(65643), v9)
+					F_errmsg_internal(m, int32(65664), v9)
 					mBase = m.M
 					v247 = m.ExcPending
 					if v247 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(470610), int32(2426), int32(225379))
+						F_errfinish(m, int32(470878), int32(2426), int32(225533))
 						mBase = m.M
 						v252 = m.ExcPending
 						if v252 != 0 {
@@ -837,7 +837,7 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							if v91 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(470610), int32(2480), int32(225379))
+								F_errfinish(m, int32(470878), int32(2480), int32(225533))
 								mBase = m.M
 								v96 = m.ExcPending
 								if v96 != 0 {
@@ -884,20 +884,20 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							if v157 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(434979), int32(0))
+								F_errmsg(m, int32(435217), int32(0))
 								mBase = m.M
 								v161 = m.ExcPending
 								if v161 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = int32(501531)
-									F_errdetail(m, int32(588947), v9+int32(48))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = int32(501799)
+									F_errdetail(m, int32(589215), v9+int32(48))
 									mBase = m.M
 									v168 = m.ExcPending
 									if v168 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(470610), int32(2523), int32(225379))
+										F_errfinish(m, int32(470878), int32(2523), int32(225533))
 										mBase = m.M
 										v173 = m.ExcPending
 										if v173 != 0 {
@@ -933,20 +933,20 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 							if v259 != 0 {
 								return
 							} else {
-								F_errmsg(m, int32(434979), int32(0))
+								F_errmsg(m, int32(435217), int32(0))
 								mBase = m.M
 								v263 = m.ExcPending
 								if v263 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(516063)
-									F_errdetail(m, int32(588947), v9+int32(80))
+									*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = int32(516331)
+									F_errdetail(m, int32(589215), v9+int32(80))
 									mBase = m.M
 									v270 = m.ExcPending
 									if v270 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(470610), int32(2532), int32(225379))
+										F_errfinish(m, int32(470878), int32(2532), int32(225533))
 										mBase = m.M
 										v275 = m.ExcPending
 										if v275 != 0 {
@@ -983,7 +983,7 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									if v186 != 0 {
 										return
 									} else {
-										F_errmsg(m, int32(434979), int32(0))
+										F_errmsg(m, int32(435217), int32(0))
 										mBase = m.M
 										v190 = m.ExcPending
 										if v190 != 0 {
@@ -996,14 +996,14 @@ func F_check_object_ownership(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v192
-												*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = int32(506356)
-												F_errdetail(m, int32(625444), v9-int32(-64))
+												*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = int32(506624)
+												F_errdetail(m, int32(625712), v9-int32(-64))
 												mBase = m.M
 												v201 = m.ExcPending
 												if v201 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(470610), int32(2540), int32(225379))
+													F_errfinish(m, int32(470878), int32(2540), int32(225533))
 													mBase = m.M
 													v206 = m.ExcPending
 													if v206 != 0 {
@@ -1145,13 +1145,13 @@ func F_get_object_address_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v27
-							F_errmsg(m, int32(68911), v9)
+							F_errmsg(m, int32(68932), v9)
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(470610), int32(1624), int32(348756))
+								F_errfinish(m, int32(470878), int32(1624), int32(348931))
 								mBase = m.M
 								v37 = m.ExcPending
 								if v37 != 0 {
@@ -1198,13 +1198,13 @@ func F_get_object_address_type(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v63
-									F_errmsg(m, int32(264181), v9+int32(16))
+									F_errmsg(m, int32(264335), v9+int32(16))
 									mBase = m.M
 									v70 = m.ExcPending
 									if v70 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(470610), int32(1635), int32(348756))
+										F_errfinish(m, int32(470878), int32(1635), int32(348931))
 										mBase = m.M
 										v75 = m.ExcPending
 										if v75 != 0 {

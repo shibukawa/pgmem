@@ -130,7 +130,7 @@ L8:
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(v37+v26<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v26
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v41
-	F_appendStringInfo(m, v9+int32(-16), int32(689193), v9+int32(-32))
+	F_appendStringInfo(m, v9+int32(-16), int32(689461), v9+int32(-32))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -179,7 +179,7 @@ L14:
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v63
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v72
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+8)) = v71
-	F_errmsg_internal(m, int32(195726), v11)
+	F_errmsg_internal(m, int32(195791), v11)
 	mBase = m.M
 	v80 = m.ExcPending
 	if v80 != 0 {
@@ -203,7 +203,7 @@ L16:
 	}
 L17:
 	;
-	F_errfinish(m, int32(469465), int32(5246), int32(24625))
+	F_errfinish(m, int32(469733), int32(5246), int32(24625))
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -397,7 +397,7 @@ L13:
 	return
 L14:
 	;
-	v49 = int32(4359344)
+	v49 = int32(4359760)
 	v51 = *(*int32)(unsafe.Add(mBase, _consts[679]))
 	v52 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[679])) = v51 + v52
@@ -589,7 +589,7 @@ func F_koi8r_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4329492), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4329844), v18, v18, v18, int32(22), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -632,7 +632,7 @@ func F_koi8r_to_win1251(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(23), int32(2176512), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(23), int32(2176800), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

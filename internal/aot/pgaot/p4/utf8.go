@@ -41,7 +41,7 @@ func F_utf8_to_gbk(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4330708), v18, v18, v18, int32(37), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4331060), v18, v18, v18, int32(37), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -87,7 +87,7 @@ func F_utf8_to_shift_jis_2004(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v17 = int32(0)
-		v27 = F_UtfToLocal(m, v6, v10, v5, int32(4332812), int32(3698048), int32(25), v17, int32(41), base.B2i32(v7 != v17))
+		v27 = F_UtfToLocal(m, v6, v10, v5, int32(4333164), int32(3698336), int32(25), v17, int32(41), base.B2i32(v7 != v17))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -133,7 +133,7 @@ func F_utf8_to_uhc(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4332972), v18, v18, v18, int32(38), base.B2i32(v7 != v18))
+		v24 = F_UtfToLocal(m, v6, v10, v5, int32(4333324), v18, v18, v18, int32(38), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -214,13 +214,13 @@ func F_utf8_to_win(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v10))) = v16
-					F_errmsg(m, int32(116089), v10)
+					F_errmsg(m, int32(116154), v10)
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(473224), int32(150), int32(261529))
+						F_errfinish(m, int32(473492), int32(150), int32(261683))
 						mBase = m.M
 						v70 = m.ExcPending
 						if v70 != 0 {
@@ -248,13 +248,13 @@ func F_utf8_to_win(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = v16
-						F_errmsg(m, int32(116089), v10)
+						F_errmsg(m, int32(116154), v10)
 						mBase = m.M
 						v63 = m.ExcPending
 						if v63 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(473224), int32(150), int32(261529))
+							F_errfinish(m, int32(473492), int32(150), int32(261683))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {

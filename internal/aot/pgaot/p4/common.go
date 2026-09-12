@@ -159,7 +159,7 @@ L15:
 	goto L3
 L16:
 	;
-	v42 = int32(1575684)
+	v42 = int32(1575956)
 	goto L3
 L17:
 	;
@@ -230,7 +230,7 @@ L27:
 	}
 L28:
 	;
-	v78 = int32(1575684)
+	v78 = int32(1575956)
 	v79 = v61
 	goto L22
 L29:
@@ -351,13 +351,13 @@ func F_select_common_collation(m *base.Module, l0 int32, l1 int32, l2 int32) int
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v35
 								*(*int32)(unsafe.Add(mBase, uint32(v7))) = v32
-								F_errmsg(m, int32(680830), v7)
+								F_errmsg(m, int32(681098), v7)
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(551505), int32(0))
+									F_errhint(m, int32(551773), int32(0))
 									mBase = m.M
 									v45 = m.ExcPending
 									if v45 != 0 {
@@ -371,7 +371,7 @@ func F_select_common_collation(m *base.Module, l0 int32, l1 int32, l2 int32) int
 										if v49 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(475148), int32(232), int32(249842))
+											F_errfinish(m, int32(475416), int32(232), int32(249996))
 											mBase = m.M
 											v54 = m.ExcPending
 											if v54 != 0 {
@@ -756,7 +756,7 @@ L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v100
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v97
-	F_errmsg(m, int32(437708), v10)
+	F_errmsg(m, int32(437946), v10)
 	mBase = m.M
 	v106 = m.ExcPending
 	if v106 != 0 {
@@ -766,7 +766,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(476110), int32(1536), int32(163268))
+	F_errfinish(m, int32(476378), int32(1536), int32(163333))
 	mBase = m.M
 	v111 = m.ExcPending
 	if v111 != 0 {

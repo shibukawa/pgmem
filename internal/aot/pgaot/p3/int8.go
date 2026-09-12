@@ -363,7 +363,7 @@ func F_int8_avg_serialize(m *base.Module, l0 int32) int32 {
 			if v142 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(476611), int32(6007), int32(325260))
+				F_errfinish(m, int32(476879), int32(6007), int32(325435))
 				mBase = m.M
 				v147 = m.ExcPending
 				if v147 != 0 {

@@ -249,7 +249,7 @@ L8:
 	goto L9
 L9:
 	;
-	v65 = F_strcmp(m, int32(723212), l1)
+	v65 = F_strcmp(m, int32(723484), l1)
 	mBase = m.M
 	if v65 == int32(0) {
 		goto L28
@@ -363,14 +363,14 @@ L27:
 	}
 L28:
 	;
-	v94 = int32(723208)
+	v94 = int32(723480)
 	goto L27
 L29:
 	;
 	goto L30
 L30:
 	;
-	v70 = F_strcmp(m, int32(723312), l1)
+	v70 = F_strcmp(m, int32(723584), l1)
 	mBase = m.M
 	if v70 == int32(0) {
 		goto L31
@@ -379,14 +379,14 @@ L30:
 	}
 L31:
 	;
-	v94 = int32(723308)
+	v94 = int32(723580)
 	goto L27
 L32:
 	;
 	goto L33
 L33:
 	;
-	v75 = F_strcmp(m, int32(723412), l1)
+	v75 = F_strcmp(m, int32(723684), l1)
 	mBase = m.M
 	if v75 == int32(0) {
 		goto L34
@@ -395,14 +395,14 @@ L33:
 	}
 L34:
 	;
-	v94 = int32(723408)
+	v94 = int32(723680)
 	goto L27
 L35:
 	;
 	goto L36
 L36:
 	;
-	v80 = F_strcmp(m, int32(723512), l1)
+	v80 = F_strcmp(m, int32(723784), l1)
 	mBase = m.M
 	if v80 == int32(0) {
 		goto L37
@@ -411,14 +411,14 @@ L36:
 	}
 L37:
 	;
-	v94 = int32(723508)
+	v94 = int32(723780)
 	goto L27
 L38:
 	;
 	goto L39
 L39:
 	;
-	v85 = F_strcmp(m, int32(723612), l1)
+	v85 = F_strcmp(m, int32(723884), l1)
 	mBase = m.M
 	if v85 == int32(0) {
 		goto L40
@@ -427,14 +427,14 @@ L39:
 	}
 L40:
 	;
-	v94 = int32(723608)
+	v94 = int32(723880)
 	goto L27
 L41:
 	;
 	goto L42
 L42:
 	;
-	v92 = F_strcmp(m, int32(723712), l1)
+	v92 = F_strcmp(m, int32(723984), l1)
 	mBase = m.M
 	if v92 != 0 {
 		goto L43
@@ -447,7 +447,7 @@ L43:
 	goto L45
 L44:
 	;
-	v93 = int32(723708)
+	v93 = int32(723980)
 	goto L45
 L45:
 	;
@@ -597,13 +597,13 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 									return int32(0)
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10))) = v128
-									F_errmsg(m, int32(332183), v10)
+									F_errmsg(m, int32(332358), v10)
 									mBase = m.M
 									v133 = m.ExcPending
 									if v133 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(476194), int32(100), int32(415172))
+										F_errfinish(m, int32(476462), int32(100), int32(415410))
 										mBase = m.M
 										v138 = m.ExcPending
 										if v138 != 0 {
@@ -622,7 +622,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 						v40 = v29
 						v41 = v28
 						v42 = v32
-						v47 = F_AllocSetContextCreateInternal(m, l2, int32(401075), int32(0), int32(8192), int32(8388608))
+						v47 = F_AllocSetContextCreateInternal(m, l2, int32(401313), int32(0), int32(8192), int32(8388608))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
@@ -727,13 +727,13 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v10))) = v128
-								F_errmsg(m, int32(332183), v10)
+								F_errmsg(m, int32(332358), v10)
 								mBase = m.M
 								v133 = m.ExcPending
 								if v133 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(476194), int32(100), int32(415172))
+									F_errfinish(m, int32(476462), int32(100), int32(415410))
 									mBase = m.M
 									v138 = m.ExcPending
 									if v138 != 0 {
@@ -752,7 +752,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 					v40 = v29
 					v41 = v28
 					v42 = v32
-					v47 = F_AllocSetContextCreateInternal(m, l2, int32(401075), int32(0), int32(8192), int32(8388608))
+					v47 = F_AllocSetContextCreateInternal(m, l2, int32(401313), int32(0), int32(8192), int32(8388608))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {
@@ -850,7 +850,7 @@ func F_make_expanded_record_from_typeid(m *base.Module, l0 int32, l1 int32, l2 i
 				v40 = v34
 				v41 = v4
 				v42 = v37
-				v47 = F_AllocSetContextCreateInternal(m, l2, int32(401075), int32(0), int32(8192), int32(8388608))
+				v47 = F_AllocSetContextCreateInternal(m, l2, int32(401313), int32(0), int32(8192), int32(8388608))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {

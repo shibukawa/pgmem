@@ -54,12 +54,12 @@ func F_ExecBitmapOr(m *base.Module, l0 int32) int32 {
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errmsg_internal(m, int32(235524), int32(0))
+		F_errmsg_internal(m, int32(235678), int32(0))
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(472454), int32(45), int32(219200))
+			F_errfinish(m, int32(472722), int32(45), int32(219287))
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return int32(0)
