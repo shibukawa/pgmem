@@ -41,7 +41,7 @@ func F_InvalidateAttoptCacheCallback(m *base.Module, l0 int32, l1 int32, l2 int3
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[867]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[865]))
 	if l2 == int32(0) {
 		goto L2
 	} else {
@@ -136,7 +136,7 @@ L14:
 	goto L15
 L15:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, _consts[867]))
+	v33 = *(*int32)(unsafe.Add(mBase, _consts[865]))
 	v36 = F_hash_search(m, v33, v25, int32(2), int32(0))
 	mBase = m.M
 	v37 = m.ExcPending
@@ -160,7 +160,7 @@ L18:
 	goto L10
 L19:
 	;
-	F_errmsg_internal(m, int32(454824), int32(0))
+	F_errmsg_internal(m, int32(462145), int32(0))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -170,7 +170,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(511179), int32(76), int32(325959))
+	F_errfinish(m, int32(519278), int32(76), int32(332132))
 	mBase = m.M
 	v50 = m.ExcPending
 	if v50 != 0 {
@@ -193,21 +193,21 @@ func F_InvalidateEventCacheCallback(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v9
 	var v11 int32
 	_ = v11
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[868]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[866]))
 	if v5 == int32(2) {
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[870]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[868]))
 		F_MemoryContextReset(m, v9)
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[869])) = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[868])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[867])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[866])) = int32(0)
 			return
 		}
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[868])) = int32(0)
+		*(*int32)(unsafe.Add(mBase, _consts[866])) = int32(0)
 		return
 	}
 }
@@ -245,7 +245,7 @@ func F_InvalidateTableSpaceCacheCallback(m *base.Module, l0 int32, l1 int32, l2 
 	v4 = m.G0
 	v6 = v4 - int32(32)
 	m.G0 = v6
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[886]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[884]))
 	F_hash_seq_init(m, v6+int32(12), v11)
 	mBase = m.M
 	v13 = m.ExcPending
@@ -314,7 +314,7 @@ L9:
 	goto L10
 L10:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, _consts[886]))
+	v27 = *(*int32)(unsafe.Add(mBase, _consts[884]))
 	v30 = F_hash_search(m, v27, v19, int32(2), int32(0))
 	mBase = m.M
 	v31 = m.ExcPending
@@ -338,7 +338,7 @@ L13:
 	goto L5
 L14:
 	;
-	F_errmsg_internal(m, int32(454824), int32(0))
+	F_errmsg_internal(m, int32(462145), int32(0))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -348,7 +348,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(511250), int32(69), int32(325989))
+	F_errfinish(m, int32(519349), int32(69), int32(332162))
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {

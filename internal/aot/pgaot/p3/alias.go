@@ -406,6 +406,8 @@ func F_findNewestTimeLine(m *base.Module, l0 int32) int32
 func F_tliSwitchPoint(m *base.Module, l0 int32, l1 int32, l2 int32) int64
 //go:linkname F_TransactionIdDidCommit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_TransactionIdDidCommit
 func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32
+//go:linkname F_TransactionIdPrecedes github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_TransactionIdPrecedes
+func F_TransactionIdPrecedes(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_TransactionIdDidAbort github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_TransactionIdDidAbort
 func F_TransactionIdDidAbort(m *base.Module, l0 int32) int32
 //go:linkname F_TransactionIdCommitTree github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_TransactionIdCommitTree
@@ -1464,8 +1466,10 @@ func F_SPI_plan_get_cached_plan(m *base.Module, l0 int32) int32
 func F_GetForeignDataWrapperExtended(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_GetForeignServerExtended github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetForeignServerExtended
 func F_GetForeignServerExtended(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_bloom_create github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_bloom_create
+func F_bloom_create(m *base.Module, l0 int64, l1 int32, l2 int64) int32
 //go:linkname F_bloom_add_element github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_bloom_add_element
-func F_bloom_add_element(m *base.Module, l0 int32, l1 int32)
+func F_bloom_add_element(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_dshash_create github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_dshash_create
 func F_dshash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_dshash_find_or_insert github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_dshash_find_or_insert
@@ -2438,6 +2442,8 @@ func F_ProcArrayApplyRecoveryInfo(m *base.Module, l0 int32)
 func F_RecordKnownAssignedTransactionIds(m *base.Module, l0 int32)
 //go:linkname F_KnownAssignedXidsRemoveTree github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_KnownAssignedXidsRemoveTree
 func F_KnownAssignedXidsRemoveTree(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_TransactionIdIsInProgress github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_TransactionIdIsInProgress
+func F_TransactionIdIsInProgress(m *base.Module, l0 int32) int32
 //go:linkname F_GetOldestNonRemovableTransactionId github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetOldestNonRemovableTransactionId
 func F_GetOldestNonRemovableTransactionId(m *base.Module, l0 int32) int32
 //go:linkname F_ComputeXidHorizons github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ComputeXidHorizons
@@ -4408,6 +4414,10 @@ func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 func F_uuid_generate_time(m *base.Module, l0 int32)
 //go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_amcheck_lock_relation_and_check github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_amcheck_lock_relation_and_check
+func F_amcheck_lock_relation_and_check(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+//go:linkname F_PageGetItemIdCareful_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PageGetItemIdCareful_2
+func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_InitBitVector github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_InitBitVector
 func F_InitBitVector(m *base.Module, l0 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1

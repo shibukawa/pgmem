@@ -40,64 +40,64 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 	_ = v74
 	if base.Ui32(l0) < base.Ui32(int32(13)) {
 		v53 = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+		*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 		return
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, _consts[970]))
+		v7 = *(*int32)(unsafe.Add(mBase, _consts[968]))
 		if v7 == int32(0) {
 			v53 = int32(13)
-			*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+			*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 			return
 		} else {
-			v11 = *(*int32)(unsafe.Add(mBase, _consts[971]))
+			v11 = *(*int32)(unsafe.Add(mBase, _consts[969]))
 			if v11 == int32(0) {
 				v53 = int32(14)
-				*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+				*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 				return
 			} else {
-				v16 = *(*int32)(unsafe.Add(mBase, _consts[972]))
+				v16 = *(*int32)(unsafe.Add(mBase, _consts[970]))
 				if v16 == int32(0) {
 					v53 = int32(15)
-					*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+					*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 					return
 				} else {
-					v21 = *(*int32)(unsafe.Add(mBase, _consts[973]))
+					v21 = *(*int32)(unsafe.Add(mBase, _consts[971]))
 					if v21 == int32(0) {
 						v53 = int32(16)
-						*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+						*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 						return
 					} else {
-						v26 = *(*int32)(unsafe.Add(mBase, _consts[974]))
+						v26 = *(*int32)(unsafe.Add(mBase, _consts[972]))
 						if v26 == int32(0) {
 							v53 = int32(17)
-							*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+							*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 							return
 						} else {
-							v31 = *(*int32)(unsafe.Add(mBase, _consts[975]))
+							v31 = *(*int32)(unsafe.Add(mBase, _consts[973]))
 							if v31 == int32(0) {
 								v53 = int32(18)
-								*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+								*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 								return
 							} else {
-								v36 = *(*int32)(unsafe.Add(mBase, _consts[976]))
+								v36 = *(*int32)(unsafe.Add(mBase, _consts[974]))
 								if v36 == int32(0) {
 									v53 = int32(19)
-									*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+									*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 									return
 								} else {
-									v41 = *(*int32)(unsafe.Add(mBase, _consts[977]))
+									v41 = *(*int32)(unsafe.Add(mBase, _consts[975]))
 									if v41 == int32(0) {
 										v53 = int32(20)
-										*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+										*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 										return
 									} else {
-										v46 = *(*int32)(unsafe.Add(mBase, _consts[978]))
+										v46 = *(*int32)(unsafe.Add(mBase, _consts[976]))
 										if v46 == int32(0) {
 											v53 = int32(21)
-											*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+											*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 											return
 										} else {
-											v51 = *(*int32)(unsafe.Add(mBase, _consts[979]))
+											v51 = *(*int32)(unsafe.Add(mBase, _consts[977]))
 											if v51 != 0 {
 												F_errstart_cold(m, int32(22), int32(0))
 												mBase = m.M
@@ -111,13 +111,13 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 													if v65 != 0 {
 														return
 													} else {
-														F_errmsg(m, int32(139903), int32(0))
+														F_errmsg(m, int32(144354), int32(0))
 														mBase = m.M
 														v69 = m.ExcPending
 														if v69 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(503322), int32(520), int32(67545))
+															F_errfinish(m, int32(511385), int32(520), int32(71395))
 															mBase = m.M
 															v74 = m.ExcPending
 															if v74 != 0 {
@@ -132,7 +132,7 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 												}
 											} else {
 												v53 = int32(22)
-												*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[409]))) = l1
+												*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_consts[407]))) = l1
 												return
 											}
 										}
@@ -165,7 +165,7 @@ func F_enable_timeout_after(m *base.Module, l0 int32, l1 int32) {
 	_ = v31
 	var v33 int32
 	_ = v33
-	*(*int32)(unsafe.Add(mBase, _consts[404])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[402])) = int32(0)
 	v10 = m.G0
 	v11 = int32(16)
 	v12 = v10 - v11

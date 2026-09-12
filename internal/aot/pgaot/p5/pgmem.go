@@ -196,10 +196,10 @@ func F_pgmem_des3_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 func F_pgmem_init(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1345])) = int32(4732)
-	*(*int32)(unsafe.Add(mBase, _consts[1346])) = int32(4731)
-	*(*int32)(unsafe.Add(mBase, _consts[1347])) = int32(4733)
-	*(*int32)(unsafe.Add(mBase, _consts[1348])) = int32(4734)
-	*(*int32)(unsafe.Add(mBase, _consts[1349])) = int32(4735)
+	*(*int32)(unsafe.Add(mBase, _consts[1344])) = int32(4732)
+	*(*int32)(unsafe.Add(mBase, _consts[1345])) = int32(4731)
+	*(*int32)(unsafe.Add(mBase, _consts[1346])) = int32(4733)
+	*(*int32)(unsafe.Add(mBase, _consts[1347])) = int32(4734)
+	*(*int32)(unsafe.Add(mBase, _consts[1348])) = int32(4735)
 	return
 }

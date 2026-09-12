@@ -3,491 +3,491 @@ package p2
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
 func F_pg_finfo__int_contained_sel(m *base.Module) int32 {
-	return int32(4094068)
+	return int32(4106468)
 }
 func F_pg_finfo__int_contains_joinsel(m *base.Module) int32 {
-	return int32(4094076)
+	return int32(4106476)
 }
 func F_pg_finfo__int_overlap_joinsel(m *base.Module) int32 {
-	return int32(4094072)
+	return int32(4106472)
 }
 func F_pg_finfo__int_same(m *base.Module) int32 {
-	return int32(4093984)
+	return int32(4106384)
 }
 func F_pg_finfo__lt_q_regex(m *base.Module) int32 {
-	return int32(4092476)
+	return int32(4104876)
 }
 func F_pg_finfo__ltree_penalty(m *base.Module) int32 {
-	return int32(4092436)
+	return int32(4104836)
 }
 func F_pg_finfo__ltree_picksplit(m *base.Module) int32 {
-	return int32(4092440)
+	return int32(4104840)
 }
 func F_pg_finfo__ltree_r_risparent(m *base.Module) int32 {
-	return int32(4092464)
+	return int32(4104864)
 }
 func F_pg_finfo__ltree_union(m *base.Module) int32 {
-	return int32(4092432)
+	return int32(4104832)
 }
 func F_pg_finfo_array_to_halfvec(m *base.Module) int32 {
-	return int32(4098556)
+	return int32(4110988)
 }
 func F_pg_finfo_big5_to_euc_tw(m *base.Module) int32 {
-	return int32(2254312)
+	return int32(2266712)
 }
 func F_pg_finfo_citext_larger(m *base.Module) int32 {
-	return int32(4091968)
+	return int32(4104368)
 }
 func F_pg_finfo_citext_ne(m *base.Module) int32 {
-	return int32(4091928)
+	return int32(4104328)
 }
 func F_pg_finfo_citext_pattern_ge(m *base.Module) int32 {
-	return int32(4091960)
+	return int32(4104360)
 }
 func F_pg_finfo_citext_pattern_lt(m *base.Module) int32 {
-	return int32(4091948)
+	return int32(4104348)
 }
 func F_pg_finfo_crosstab(m *base.Module) int32 {
-	return int32(4093904)
+	return int32(4106304)
 }
 func F_pg_finfo_cube_contained(m *base.Module) int32 {
-	return int32(4095356)
+	return int32(4107756)
 }
 func F_pg_finfo_cube_distance(m *base.Module) int32 {
-	return int32(4095380)
+	return int32(4107780)
 }
 func F_pg_finfo_cube_f8_f8(m *base.Module) int32 {
-	return int32(4095256)
+	return int32(4107656)
 }
 func F_pg_finfo_cube_in(m *base.Module) int32 {
-	return int32(4095228)
+	return int32(4107628)
 }
 func F_pg_finfo_cube_le(m *base.Module) int32 {
-	return int32(4095340)
+	return int32(4107740)
 }
 func F_pg_finfo_cube_union(m *base.Module) int32 {
-	return int32(4095364)
+	return int32(4107764)
 }
 func F_pg_finfo_delete(m *base.Module) int32 {
-	return int32(4092268)
+	return int32(4104668)
 }
 func F_pg_finfo_difference(m *base.Module) int32 {
-	return int32(4095192)
+	return int32(4107592)
 }
 func F_pg_finfo_dintdict_lexize(m *base.Module) int32 {
-	return int32(4098392)
+	return int32(4110792)
 }
 func F_pg_finfo_distance_chebyshev(m *base.Module) int32 {
-	return int32(4095384)
+	return int32(4107784)
 }
 func F_pg_finfo_dxsyn_init(m *base.Module) int32 {
-	return int32(4098396)
+	return int32(4110796)
 }
 func F_pg_finfo_each(m *base.Module) int32 {
-	return int32(4092300)
+	return int32(4104700)
 }
 func F_pg_finfo_euc_cn_to_utf8(m *base.Module) int32 {
-	return int32(2577756)
+	return int32(2590156)
 }
 func F_pg_finfo_euc_tw_to_big5(m *base.Module) int32 {
-	return int32(2254308)
+	return int32(2266708)
 }
 func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
-	return int32(2904884)
+	return int32(2917284)
 }
 func F_pg_finfo_fetchval(m *base.Module) int32 {
-	return int32(4092256)
+	return int32(4104656)
 }
 func F_pg_finfo_g_cube_penalty(m *base.Module) int32 {
-	return int32(4095304)
+	return int32(4107704)
 }
 func F_pg_finfo_g_cube_union(m *base.Module) int32 {
-	return int32(4095312)
+	return int32(4107712)
 }
 func F_pg_finfo_g_int_penalty(m *base.Module) int32 {
-	return int32(4093960)
+	return int32(4106360)
 }
 func F_pg_finfo_g_int_union(m *base.Module) int32 {
-	return int32(4093968)
+	return int32(4106368)
 }
 func F_pg_finfo_g_intbig_decompress(m *base.Module) int32 {
-	return int32(4094096)
+	return int32(4106496)
 }
 func F_pg_finfo_g_intbig_picksplit(m *base.Module) int32 {
-	return int32(4094104)
+	return int32(4106504)
 }
 func F_pg_finfo_gbt_bit_penalty(m *base.Module) int32 {
-	return int32(4092728)
+	return int32(4105128)
 }
 func F_pg_finfo_gbt_bit_picksplit(m *base.Module) int32 {
-	return int32(4092720)
+	return int32(4105120)
 }
 func F_pg_finfo_gbt_bit_sortsupport(m *base.Module) int32 {
-	return int32(4092736)
+	return int32(4105136)
 }
 func F_pg_finfo_gbt_bool_same(m *base.Module) int32 {
-	return int32(4092768)
+	return int32(4105168)
 }
 func F_pg_finfo_gbt_bpchar_consistent(m *base.Module) int32 {
-	return int32(4093372)
+	return int32(4105772)
 }
 func F_pg_finfo_gbt_bytea_picksplit(m *base.Module) int32 {
-	return int32(4092784)
+	return int32(4105184)
 }
 func F_pg_finfo_gbt_cash_sortsupport(m *base.Module) int32 {
-	return int32(4092836)
+	return int32(4105236)
 }
 func F_pg_finfo_gbt_date_compress(m *base.Module) int32 {
-	return int32(4092844)
+	return int32(4105244)
 }
 func F_pg_finfo_gbt_enum_penalty(m *base.Module) int32 {
-	return int32(4092904)
+	return int32(4105304)
 }
 func F_pg_finfo_gbt_enum_union(m *base.Module) int32 {
-	return int32(4092892)
+	return int32(4105292)
 }
 func F_pg_finfo_gbt_float4_consistent(m *base.Module) int32 {
-	return int32(4092932)
+	return int32(4105332)
 }
 func F_pg_finfo_gbt_float4_same(m *base.Module) int32 {
-	return int32(4092944)
+	return int32(4105344)
 }
 func F_pg_finfo_gbt_float8_fetch(m *base.Module) int32 {
-	return int32(4092960)
+	return int32(4105360)
 }
 func F_pg_finfo_gbt_inet_consistent(m *base.Module) int32 {
-	return int32(4093024)
+	return int32(4105424)
 }
 func F_pg_finfo_gbt_int2_penalty(m *base.Module) int32 {
-	return int32(4093064)
+	return int32(4105464)
 }
 func F_pg_finfo_gbt_int4_sortsupport(m *base.Module) int32 {
-	return int32(4093112)
+	return int32(4105512)
 }
 func F_pg_finfo_gbt_int4_union(m *base.Module) int32 {
-	return int32(4093088)
+	return int32(4105488)
 }
 func F_pg_finfo_gbt_int8_distance(m *base.Module) int32 {
-	return int32(4093140)
+	return int32(4105540)
 }
 func F_pg_finfo_gbt_intv_distance(m *base.Module) int32 {
-	return int32(4093184)
+	return int32(4105584)
 }
 func F_pg_finfo_gbt_intv_sortsupport(m *base.Module) int32 {
-	return int32(4093196)
+	return int32(4105596)
 }
 func F_pg_finfo_gbt_intv_union(m *base.Module) int32 {
-	return int32(4093172)
+	return int32(4105572)
 }
 func F_pg_finfo_gbt_macad8_consistent(m *base.Module) int32 {
-	return int32(4093268)
+	return int32(4105668)
 }
 func F_pg_finfo_gbt_macad8_fetch(m *base.Module) int32 {
-	return int32(4093256)
+	return int32(4105656)
 }
 func F_pg_finfo_gbt_macad_same(m *base.Module) int32 {
-	return int32(4093244)
+	return int32(4105644)
 }
 func F_pg_finfo_gbt_numeric_sortsupport(m *base.Module) int32 {
-	return int32(4093308)
+	return int32(4105708)
 }
 func F_pg_finfo_gbt_oid_fetch(m *base.Module) int32 {
-	return int32(4093316)
+	return int32(4105716)
 }
 func F_pg_finfo_gbt_text_picksplit(m *base.Module) int32 {
-	return int32(4093364)
+	return int32(4105764)
 }
 func F_pg_finfo_gbt_text_union(m *base.Module) int32 {
-	return int32(4093360)
+	return int32(4105760)
 }
 func F_pg_finfo_gbt_time_union(m *base.Module) int32 {
-	return int32(4093404)
+	return int32(4105804)
 }
 func F_pg_finfo_gbt_ts_penalty(m *base.Module) int32 {
-	return int32(4093480)
+	return int32(4105880)
 }
 func F_pg_finfo_gbt_ts_picksplit(m *base.Module) int32 {
-	return int32(4093460)
+	return int32(4105860)
 }
 func F_pg_finfo_gbt_ts_sortsupport(m *base.Module) int32 {
-	return int32(4093488)
+	return int32(4105888)
 }
 func F_pg_finfo_gbt_tstz_distance(m *base.Module) int32 {
-	return int32(4093476)
+	return int32(4105876)
 }
 func F_pg_finfo_gbt_uuid_penalty(m *base.Module) int32 {
-	return int32(4093528)
+	return int32(4105928)
 }
 func F_pg_finfo_gbt_uuid_union(m *base.Module) int32 {
-	return int32(4093516)
+	return int32(4105916)
 }
 func F_pg_finfo_geo_distance(m *base.Module) int32 {
-	return int32(4096628)
+	return int32(4109028)
 }
 func F_pg_finfo_ghstore_same(m *base.Module) int32 {
-	return int32(4092192)
+	return int32(4104592)
 }
 func F_pg_finfo_gin_compare_prefix_bit(m *base.Module) int32 {
-	return int32(4093804)
+	return int32(4106204)
 }
 func F_pg_finfo_gin_compare_prefix_bytea(m *base.Module) int32 {
-	return int32(4093792)
+	return int32(4106192)
 }
 func F_pg_finfo_gin_compare_prefix_interval(m *base.Module) int32 {
-	return int32(4093696)
+	return int32(4106096)
 }
 func F_pg_finfo_gin_extract_query_bytea(m *base.Module) int32 {
-	return int32(4093788)
+	return int32(4106188)
 }
 func F_pg_finfo_gin_extract_query_int2(m *base.Module) int32 {
-	return int32(4093548)
+	return int32(4105948)
 }
 func F_pg_finfo_gin_extract_query_int8(m *base.Module) int32 {
-	return int32(4093572)
+	return int32(4105972)
 }
 func F_pg_finfo_gin_extract_query_interval(m *base.Module) int32 {
-	return int32(4093692)
+	return int32(4106092)
 }
 func F_pg_finfo_gin_extract_query_text(m *base.Module) int32 {
-	return int32(4093752)
+	return int32(4106152)
 }
 func F_pg_finfo_gin_extract_trgm(m *base.Module) int32 {
-	return int32(4091972)
+	return int32(4104372)
 }
 func F_pg_finfo_gin_extract_value_bool(m *base.Module) int32 {
-	return int32(4093876)
+	return int32(4106276)
 }
 func F_pg_finfo_gin_extract_value_float4(m *base.Module) int32 {
-	return int32(4093580)
+	return int32(4105980)
 }
 func F_pg_finfo_gin_extract_value_inet(m *base.Module) int32 {
-	return int32(4093724)
+	return int32(4106124)
 }
 func F_pg_finfo_gin_extract_value_money(m *base.Module) int32 {
-	return int32(4093604)
+	return int32(4106004)
 }
 func F_pg_finfo_gin_extract_value_varbit(m *base.Module) int32 {
-	return int32(4093808)
+	return int32(4106208)
 }
 func F_pg_finfo_gseg_compress(m *base.Module) int32 {
-	return int32(4096660)
+	return int32(4109060)
 }
 func F_pg_finfo_gseg_same(m *base.Module) int32 {
-	return int32(4096680)
+	return int32(4109080)
 }
 func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
-	return int32(4092012)
+	return int32(4104412)
 }
 func F_pg_finfo_gtrgm_union(m *base.Module) int32 {
-	return int32(4092016)
+	return int32(4104416)
 }
 func F_pg_finfo_hash_ltree(m *base.Module) int32 {
-	return int32(4092628)
+	return int32(4105028)
 }
 func F_pg_finfo_hash_ltree_extended(m *base.Module) int32 {
-	return int32(4092632)
+	return int32(4105032)
 }
 func F_pg_finfo_hnsw_sparsevec_support(m *base.Module) int32 {
-	return int32(4098812)
+	return int32(4111244)
 }
 func F_pg_finfo_hstore_akeys(m *base.Module) int32 {
-	return int32(4092348)
+	return int32(4104748)
 }
 func F_pg_finfo_hstore_avals(m *base.Module) int32 {
-	return int32(4092352)
+	return int32(4104752)
 }
 func F_pg_finfo_hstore_defined(m *base.Module) int32 {
-	return int32(4092320)
+	return int32(4104720)
 }
 func F_pg_finfo_hstore_delete(m *base.Module) int32 {
-	return int32(4092324)
+	return int32(4104724)
 }
 func F_pg_finfo_hstore_delete_array(m *base.Module) int32 {
-	return int32(4092328)
+	return int32(4104728)
 }
 func F_pg_finfo_hstore_exists_any(m *base.Module) int32 {
-	return int32(4092312)
+	return int32(4104712)
 }
 func F_pg_finfo_hstore_in(m *base.Module) int32 {
-	return int32(4092204)
+	return int32(4104604)
 }
 func F_pg_finfo_intarray_push_elem(m *base.Module) int32 {
-	return int32(4094040)
+	return int32(4106440)
 }
 func F_pg_finfo_intset_union_elem(m *base.Module) int32 {
-	return int32(4094052)
+	return int32(4106452)
 }
 func F_pg_finfo_iso8859_to_utf8(m *base.Module) int32 {
-	return int32(3508652)
+	return int32(3521052)
 }
 func F_pg_finfo_iso_to_koi8r(m *base.Module) int32 {
-	return int32(2248908)
+	return int32(2261308)
 }
 func F_pg_finfo_koi8r_to_iso(m *base.Module) int32 {
-	return int32(2248912)
+	return int32(2261312)
 }
 func F_pg_finfo_koi8r_to_mic(m *base.Module) int32 {
-	return int32(2248852)
+	return int32(2261252)
 }
 func F_pg_finfo_latin3_to_mic(m *base.Module) int32 {
-	return int32(2254632)
+	return int32(2267032)
 }
 func F_pg_finfo_levenshtein_with_costs(m *base.Module) int32 {
-	return int32(4095168)
+	return int32(4107568)
 }
 func F_pg_finfo_ltq_regex(m *base.Module) int32 {
-	return int32(4092512)
+	return int32(4104912)
 }
 func F_pg_finfo_ltree_addtext(m *base.Module) int32 {
-	return int32(4092664)
+	return int32(4105064)
 }
 func F_pg_finfo_ltree_cmp(m *base.Module) int32 {
-	return int32(4092600)
+	return int32(4105000)
 }
 func F_pg_finfo_ltree_compress(m *base.Module) int32 {
-	return int32(4092536)
+	return int32(4104936)
 }
 func F_pg_finfo_ltree_gist_options(m *base.Module) int32 {
-	return int32(4092564)
+	return int32(4104964)
 }
 func F_pg_finfo_ltree_index(m *base.Module) int32 {
-	return int32(4092656)
+	return int32(4105056)
 }
 func F_pg_finfo_ltree_same(m *base.Module) int32 {
-	return int32(4092544)
+	return int32(4104944)
 }
 func F_pg_finfo_ltree_textadd(m *base.Module) int32 {
-	return int32(4092668)
+	return int32(4105068)
 }
 func F_pg_finfo_make_valid(m *base.Module) int32 {
-	return int32(4097876)
+	return int32(4110276)
 }
 func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
-	return int32(2254328)
+	return int32(2266728)
 }
 func F_pg_finfo_mic_to_latin3(m *base.Module) int32 {
-	return int32(2254636)
+	return int32(2267036)
 }
 func F_pg_finfo_oid_dist(m *base.Module) int32 {
-	return int32(4093348)
+	return int32(4105748)
 }
 func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
-	return int32(4091724)
+	return int32(4104124)
 }
 func F_pg_finfo_pg_decrypt_iv(m *base.Module) int32 {
-	return int32(4091732)
+	return int32(4104132)
 }
 func F_pg_finfo_pgp_key_id_w(m *base.Module) int32 {
-	return int32(4091892)
+	return int32(4104292)
 }
 func F_pg_finfo_pgp_pub_decrypt_bytea(m *base.Module) int32 {
-	return int32(4091884)
+	return int32(4104284)
 }
 func F_pg_finfo_pgp_sym_decrypt_bytea(m *base.Module) int32 {
-	return int32(4091868)
+	return int32(4104268)
 }
 func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32 {
-	return int32(4091872)
+	return int32(4104272)
 }
 func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32 {
-	return int32(4091864)
+	return int32(4104264)
 }
 func F_pg_finfo_pgstatindex_v1_5(m *base.Module) int32 {
-	return int32(4098448)
+	return int32(4110848)
 }
 func F_pg_finfo_pgstatindexbyid(m *base.Module) int32 {
-	return int32(4098428)
+	return int32(4110828)
 }
 func F_pg_finfo_pgstatindexbyid_v1_5(m *base.Module) int32 {
-	return int32(4098452)
+	return int32(4110852)
 }
 func F_pg_finfo_pgstattuple_v1_5(m *base.Module) int32 {
-	return int32(4098472)
+	return int32(4110872)
 }
 func F_pg_finfo_seg_in(m *base.Module) int32 {
-	return int32(4096632)
+	return int32(4109032)
 }
 func F_pg_finfo_seg_left(m *base.Module) int32 {
-	return int32(4096700)
+	return int32(4109100)
 }
 func F_pg_finfo_seg_overlap(m *base.Module) int32 {
-	return int32(4096696)
+	return int32(4109096)
 }
 func F_pg_finfo_similarity(m *base.Module) int32 {
-	return int32(4092048)
+	return int32(4104448)
 }
 func F_pg_finfo_similarity_op(m *base.Module) int32 {
-	return int32(4092064)
+	return int32(4104464)
 }
 func F_pg_finfo_sjis_to_mic(m *base.Module) int32 {
-	return int32(2250512)
+	return int32(2262912)
 }
 func F_pg_finfo_sparsevec_cmp(m *base.Module) int32 {
-	return int32(4099072)
+	return int32(4111504)
 }
 func F_pg_finfo_sparsevec_eq(m *base.Module) int32 {
-	return int32(4099056)
+	return int32(4111488)
 }
 func F_pg_finfo_sparsevec_l2_distance(m *base.Module) int32 {
-	return int32(4099016)
+	return int32(4111448)
 }
 func F_pg_finfo_sparsevec_lt(m *base.Module) int32 {
-	return int32(4099048)
+	return int32(4111480)
 }
 func F_pg_finfo_sparsevec_out(m *base.Module) int32 {
-	return int32(4098984)
+	return int32(4111416)
 }
 func F_pg_finfo_strict_word_similarity_dist_commutator_op(m *base.Module) int32 {
-	return int32(4092096)
+	return int32(4104496)
 }
 func F_pg_finfo_strict_word_similarity_dist_op(m *base.Module) int32 {
-	return int32(4092092)
+	return int32(4104492)
 }
 func F_pg_finfo_utf8_to_big5(m *base.Module) int32 {
-	return int32(2254652)
+	return int32(2267052)
 }
 func F_pg_finfo_utf8_to_euc_jis_2004(m *base.Module) int32 {
-	return int32(2373572)
+	return int32(2385972)
 }
 func F_pg_finfo_utf8_to_euc_tw(m *base.Module) int32 {
-	return int32(2904888)
+	return int32(2917288)
 }
 func F_pg_finfo_utf8_to_sjis(m *base.Module) int32 {
-	return int32(3689468)
+	return int32(3701868)
 }
 func F_pg_finfo_uuid_generate_v1mc(m *base.Module) int32 {
-	return int32(4098508)
+	return int32(4110908)
 }
 func F_pg_finfo_uuid_nil(m *base.Module) int32 {
-	return int32(4098484)
+	return int32(4110884)
 }
 func F_pg_finfo_uuid_ns_x500(m *base.Module) int32 {
-	return int32(4098500)
+	return int32(4110900)
 }
 func F_pg_finfo_vector_dims(m *base.Module) int32 {
-	return int32(4099204)
+	return int32(4111636)
 }
 func F_pg_finfo_vector_in(m *base.Module) int32 {
-	return int32(4099140)
+	return int32(4111572)
 }
 func F_pg_finfo_vector_to_halfvec(m *base.Module) int32 {
-	return int32(4098564)
+	return int32(4110996)
 }
 func F_pg_finfo_win1250_to_latin2(m *base.Module) int32 {
-	return int32(2254352)
+	return int32(2266752)
 }
 func F_pg_finfo_win1251_to_iso(m *base.Module) int32 {
-	return int32(2248920)
+	return int32(2261320)
 }
 func F_pg_finfo_win1251_to_koi8r(m *base.Module) int32 {
-	return int32(2248888)
+	return int32(2261288)
 }
 func F_pg_finfo_win1251_to_mic(m *base.Module) int32 {
-	return int32(2248868)
+	return int32(2261268)
 }
 func F_pg_finfo_word_similarity_dist_commutator_op(m *base.Module) int32 {
-	return int32(4092080)
+	return int32(4104480)
 }
 func F_pg_finfo_word_similarity_dist_op(m *base.Module) int32 {
-	return int32(4092076)
+	return int32(4104476)
 }

@@ -1066,9 +1066,9 @@ L21:
 	}
 L22:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[487])))
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[485])))
 	v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1000])))
-	v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[488])))
+	v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[486])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v55
 	m.T0[v54].(func(*base.Module, int32, int32, int32))(m, v53, int32(20504), v10)
 	mBase = m.M
@@ -1096,9 +1096,9 @@ L24:
 	}
 L25:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[487])))
+	v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[485])))
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1000])))
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[488])))
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[486])))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v68
 	m.T0[v67].(func(*base.Module, int32, int32, int32))(m, v66, int32(20504), v10+int32(16))
 	mBase = m.M

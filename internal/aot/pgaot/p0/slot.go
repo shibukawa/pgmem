@@ -28,7 +28,7 @@ func F_CheckSlotRequirements(m *base.Module) {
 	_ = v33
 	var v38 int32
 	_ = v38
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[543]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[541]))
 	if v2 != 0 {
 		v4 = *(*int32)(unsafe.Add(mBase, _consts[8]))
 		if v4 <= int32(0) {
@@ -44,13 +44,13 @@ func F_CheckSlotRequirements(m *base.Module) {
 				if v29 != 0 {
 					return
 				} else {
-					F_errmsg(m, int32(744220), int32(0))
+					F_errmsg(m, int32(757887), int32(0))
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(504056), int32(1539), int32(125616))
+						F_errfinish(m, int32(512119), int32(1539), int32(129896))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
@@ -79,13 +79,13 @@ func F_CheckSlotRequirements(m *base.Module) {
 			if v13 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(584074), int32(0))
+				F_errmsg(m, int32(592570), int32(0))
 				mBase = m.M
 				v17 = m.ExcPending
 				if v17 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(504056), int32(1534), int32(125616))
+					F_errfinish(m, int32(512119), int32(1534), int32(129896))
 					mBase = m.M
 					v22 = m.ExcPending
 					if v22 != 0 {
@@ -213,7 +213,7 @@ func F_SlotExistsInSyncStandbySlots(m *base.Module, l0 int32) int32 {
 	var v60 int32
 	_ = v60
 	v2 = int32(0)
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[545]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[543]))
 	if v8 == v2 {
 		v60 = v2
 		goto L1

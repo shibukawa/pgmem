@@ -19,7 +19,7 @@ func F_shm_mq_set_sender(m *base.Module, l0 int32, l1 int32) {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = int32(1)
 	if v4 != 0 {
-		F_s_lock(m, l0, int32(507175), int32(228), int32(232089))
+		F_s_lock(m, l0, int32(515238), int32(228), int32(236939))
 		mBase = m.M
 		v11 = m.ExcPending
 		if v11 != 0 {
@@ -163,7 +163,7 @@ L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = l0
 	*(*int64)(unsafe.Add(mBase, uint32(v11))) = l1
-	F_errmsg_internal(m, int32(244134), v11)
+	F_errmsg_internal(m, int32(249041), v11)
 	mBase = m.M
 	v55 = m.ExcPending
 	if v55 != 0 {
@@ -173,7 +173,7 @@ L12:
 	}
 L13:
 	;
-	F_errfinish(m, int32(512084), int32(254), int32(237990))
+	F_errfinish(m, int32(520199), int32(254), int32(242897))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -237,32 +237,32 @@ func F_shm_unlink(m *base.Module, l0 int32) int32 {
 	v19 = F___strchrnul(m, v9, int32(47))
 	mBase = m.M
 	if v19 == v9 {
-		*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(28)
+		*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(28)
 		v53 = int32(0)
 	} else {
 		v21 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19))))
 		if v21 != 0 {
-			*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(28)
+			*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(28)
 			v53 = int32(0)
 		} else {
 			v22 = v19 - v9
 			if int32(2) < v22 {
 				if base.Ui32(v22) < base.Ui32(int32(256)) {
 					v45 = int32(9)
-					v46 = F___memcpy(m, v5, int32(584232), v45)
+					v46 = F___memcpy(m, v5, int32(592728), v45)
 					mBase = m.M
 					v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 					mBase = m.M
 					v53 = v5
 				} else {
-					*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(37)
+					*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(37)
 					v53 = int32(0)
 				}
 			} else {
 				v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9))))
 				if v25 != int32(46) {
 					v45 = int32(9)
-					v46 = F___memcpy(m, v5, int32(584232), v45)
+					v46 = F___memcpy(m, v5, int32(592728), v45)
 					mBase = m.M
 					v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 					mBase = m.M
@@ -271,13 +271,13 @@ func F_shm_unlink(m *base.Module, l0 int32) int32 {
 					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19-int32(1)))))
 					if v30 != int32(46) {
 						v45 = int32(9)
-						v46 = F___memcpy(m, v5, int32(584232), v45)
+						v46 = F___memcpy(m, v5, int32(592728), v45)
 						mBase = m.M
 						v51 = F___memcpy(m, v5+v45, v9, v22+int32(1))
 						mBase = m.M
 						v53 = v5
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(28)
+						*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(28)
 						v53 = int32(0)
 					}
 				}

@@ -59,7 +59,7 @@ func F_inet_client_addr(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(256)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[360]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[358]))
 	if v11 == v2 {
 		v14 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v14)
@@ -164,7 +164,7 @@ func F_inet_client_port(m *base.Module, l0 int32) int32 {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[360]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[358]))
 	if v10 == v2 {
 		v13 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v13)
@@ -1757,7 +1757,7 @@ func F_inet_server_addr(m *base.Module, l0 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(256)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[360]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[358]))
 	if v11 == v2 {
 		v14 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v14)

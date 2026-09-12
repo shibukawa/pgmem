@@ -53,13 +53,13 @@ func F_AllTablesyncsReady(m *base.Module) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					v25 = *(*int32)(unsafe.Add(mBase, _consts[536]))
+					v25 = *(*int32)(unsafe.Add(mBase, _consts[534]))
 					m.G0 = v6 + int32(16)
 					return v12 & base.B2i32(v25 == int32(0))
 				}
 			}
 		} else {
-			v25 = *(*int32)(unsafe.Add(mBase, _consts[536]))
+			v25 = *(*int32)(unsafe.Add(mBase, _consts[534]))
 			m.G0 = v6 + int32(16)
 			return v12 & base.B2i32(v25 == int32(0))
 		}
@@ -105,7 +105,7 @@ func F_ExecGetAllUpdatedCols(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			v12 = v8
-			v13 = int32(4536272)
+			v13 = int32(4548768)
 			v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v16
@@ -150,7 +150,7 @@ func F_ExecGetAllUpdatedCols(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	} else {
 		v12 = v5
-		v13 = int32(4536272)
+		v13 = int32(4548768)
 		v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v16

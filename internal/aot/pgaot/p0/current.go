@@ -41,18 +41,18 @@ func F_GetCurrentReplayRecPtr(m *base.Module, l0 int32) int64 {
 	_ = v25
 	var v26 int32
 	_ = v26
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+96))
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+96)) = int32(1)
 	if v7 != 0 {
-		v11 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-		F_s_lock(m, v11+int32(96), int32(503064), int32(4609), int32(210723))
+		v11 = *(*int32)(unsafe.Add(mBase, _consts[183]))
+		F_s_lock(m, v11+int32(96), int32(511127), int32(4609), int32(215573))
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {
 			return int64(0)
 		} else {
-			v22 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+			v22 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 			*(*int32)(unsafe.Add(mBase, uint32(v22)+96)) = int32(0)
 			v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
 			if l0 != 0 {
@@ -63,7 +63,7 @@ func F_GetCurrentReplayRecPtr(m *base.Module, l0 int32) int64 {
 			return v25
 		}
 	} else {
-		v22 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+		v22 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 		*(*int32)(unsafe.Add(mBase, uint32(v22)+96)) = int32(0)
 		v25 = *(*int64)(unsafe.Add(mBase, uint32(v22)+48))
 		if l0 != 0 {
@@ -83,8 +83,8 @@ func F_GetCurrentRoleId(m *base.Module) int32 {
 	_ = v5
 	var v6 int32
 	_ = v6
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[949]))
-	v5 = int32(*(*uint8)(unsafe.Add(mBase, _consts[946])))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[947]))
+	v5 = int32(*(*uint8)(unsafe.Add(mBase, _consts[944])))
 	if v5 != 0 {
 		v6 = v2
 	} else {
@@ -135,36 +135,36 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v65
 	var v70 int32
 	_ = v70
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[775]))
-	v9 = *(*int64)(unsafe.Add(mBase, _consts[96]))
-	v11 = *(*int64)(unsafe.Add(mBase, _consts[777]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+	v9 = *(*int64)(unsafe.Add(mBase, _consts[93]))
+	v11 = *(*int64)(unsafe.Add(mBase, _consts[775]))
 	if v9 == v11 {
-		v14 = *(*int32)(unsafe.Add(mBase, _consts[778]))
+		v14 = *(*int32)(unsafe.Add(mBase, _consts[776]))
 		if v7 == v14 {
-			v32 = *(*int32)(unsafe.Add(mBase, _consts[779]))
+			v32 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 			*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v32
-			v35 = *(*int64)(unsafe.Add(mBase, _consts[780]))
+			v35 = *(*int64)(unsafe.Add(mBase, _consts[778]))
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v35
-			v38 = *(*int64)(unsafe.Add(mBase, _consts[781]))
+			v38 = *(*int64)(unsafe.Add(mBase, _consts[779]))
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v38
-			v41 = *(*int64)(unsafe.Add(mBase, _consts[782]))
+			v41 = *(*int64)(unsafe.Add(mBase, _consts[780]))
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v41
-			v44 = *(*int64)(unsafe.Add(mBase, _consts[783]))
+			v44 = *(*int64)(unsafe.Add(mBase, _consts[781]))
 			*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v44
-			v47 = *(*int64)(unsafe.Add(mBase, _consts[784]))
+			v47 = *(*int64)(unsafe.Add(mBase, _consts[782]))
 			*(*int64)(unsafe.Add(mBase, uint32(l0))) = v47
-			v50 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+			v50 = *(*int32)(unsafe.Add(mBase, _consts[783]))
 			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v50
 			if l2 != 0 {
-				v53 = *(*int32)(unsafe.Add(mBase, _consts[786]))
+				v53 = *(*int32)(unsafe.Add(mBase, _consts[784]))
 				*(*int32)(unsafe.Add(mBase, uint32(l2))) = v53
 			} else {
 			}
 			return
 		} else {
 			v17 = int32(0)
-			*(*int32)(unsafe.Add(mBase, _consts[778])) = v17
-			v23 = F_timestamp2tm(m, v9, int32(4519636), int32(4519588), int32(4519632), v17, v7)
+			*(*int32)(unsafe.Add(mBase, _consts[776])) = v17
+			v23 = F_timestamp2tm(m, v9, int32(4532132), int32(4532084), int32(4532128), v17, v7)
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -183,13 +183,13 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v61 != 0 {
 							return
 						} else {
-							F_errmsg(m, int32(411195), int32(0))
+							F_errmsg(m, int32(418183), int32(0))
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(510878), int32(432), int32(502342))
+								F_errfinish(m, int32(518977), int32(432), int32(510405))
 								mBase = m.M
 								v70 = m.ExcPending
 								if v70 != 0 {
@@ -203,25 +203,25 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						}
 					}
 				} else {
-					*(*int64)(unsafe.Add(mBase, _consts[777])) = v9
-					v29 = *(*int32)(unsafe.Add(mBase, _consts[775]))
-					*(*int32)(unsafe.Add(mBase, _consts[778])) = v29
-					v32 = *(*int32)(unsafe.Add(mBase, _consts[779]))
+					*(*int64)(unsafe.Add(mBase, _consts[775])) = v9
+					v29 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+					*(*int32)(unsafe.Add(mBase, _consts[776])) = v29
+					v32 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v32
-					v35 = *(*int64)(unsafe.Add(mBase, _consts[780]))
+					v35 = *(*int64)(unsafe.Add(mBase, _consts[778]))
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v35
-					v38 = *(*int64)(unsafe.Add(mBase, _consts[781]))
+					v38 = *(*int64)(unsafe.Add(mBase, _consts[779]))
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v38
-					v41 = *(*int64)(unsafe.Add(mBase, _consts[782]))
+					v41 = *(*int64)(unsafe.Add(mBase, _consts[780]))
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v41
-					v44 = *(*int64)(unsafe.Add(mBase, _consts[783]))
+					v44 = *(*int64)(unsafe.Add(mBase, _consts[781]))
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v44
-					v47 = *(*int64)(unsafe.Add(mBase, _consts[784]))
+					v47 = *(*int64)(unsafe.Add(mBase, _consts[782]))
 					*(*int64)(unsafe.Add(mBase, uint32(l0))) = v47
-					v50 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+					v50 = *(*int32)(unsafe.Add(mBase, _consts[783]))
 					*(*int32)(unsafe.Add(mBase, uint32(l1))) = v50
 					if l2 != 0 {
-						v53 = *(*int32)(unsafe.Add(mBase, _consts[786]))
+						v53 = *(*int32)(unsafe.Add(mBase, _consts[784]))
 						*(*int32)(unsafe.Add(mBase, uint32(l2))) = v53
 					} else {
 					}
@@ -231,8 +231,8 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	} else {
 		v17 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _consts[778])) = v17
-		v23 = F_timestamp2tm(m, v9, int32(4519636), int32(4519588), int32(4519632), v17, v7)
+		*(*int32)(unsafe.Add(mBase, _consts[776])) = v17
+		v23 = F_timestamp2tm(m, v9, int32(4532132), int32(4532084), int32(4532128), v17, v7)
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
@@ -251,13 +251,13 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v61 != 0 {
 						return
 					} else {
-						F_errmsg(m, int32(411195), int32(0))
+						F_errmsg(m, int32(418183), int32(0))
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(510878), int32(432), int32(502342))
+							F_errfinish(m, int32(518977), int32(432), int32(510405))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
@@ -271,25 +271,25 @@ func F_GetCurrentTimeUsec(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				*(*int64)(unsafe.Add(mBase, _consts[777])) = v9
-				v29 = *(*int32)(unsafe.Add(mBase, _consts[775]))
-				*(*int32)(unsafe.Add(mBase, _consts[778])) = v29
-				v32 = *(*int32)(unsafe.Add(mBase, _consts[779]))
+				*(*int64)(unsafe.Add(mBase, _consts[775])) = v9
+				v29 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+				*(*int32)(unsafe.Add(mBase, _consts[776])) = v29
+				v32 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v32
-				v35 = *(*int64)(unsafe.Add(mBase, _consts[780]))
+				v35 = *(*int64)(unsafe.Add(mBase, _consts[778]))
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+32)) = v35
-				v38 = *(*int64)(unsafe.Add(mBase, _consts[781]))
+				v38 = *(*int64)(unsafe.Add(mBase, _consts[779]))
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+24)) = v38
-				v41 = *(*int64)(unsafe.Add(mBase, _consts[782]))
+				v41 = *(*int64)(unsafe.Add(mBase, _consts[780]))
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+16)) = v41
-				v44 = *(*int64)(unsafe.Add(mBase, _consts[783]))
+				v44 = *(*int64)(unsafe.Add(mBase, _consts[781]))
 				*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = v44
-				v47 = *(*int64)(unsafe.Add(mBase, _consts[784]))
+				v47 = *(*int64)(unsafe.Add(mBase, _consts[782]))
 				*(*int64)(unsafe.Add(mBase, uint32(l0))) = v47
-				v50 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+				v50 = *(*int32)(unsafe.Add(mBase, _consts[783]))
 				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v50
 				if l2 != 0 {
-					v53 = *(*int32)(unsafe.Add(mBase, _consts[786]))
+					v53 = *(*int32)(unsafe.Add(mBase, _consts[784]))
 					*(*int32)(unsafe.Add(mBase, uint32(l2))) = v53
 				} else {
 				}
@@ -389,19 +389,19 @@ func F_GetCurrentVirtualXIDs(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v28 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
 			if int32(0) < v28 {
-				v34 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+				v34 = *(*int32)(unsafe.Add(mBase, _consts[602]))
 				v40 = v3
 				v41 = v3
 				v43 = v34
 				for {
 					v49 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(36)+v40<<(uint(int32(2))%32))))
 					v52 = v43 + v49*int32(640)
-					v54 = *(*int32)(unsafe.Add(mBase, _consts[91]))
+					v54 = *(*int32)(unsafe.Add(mBase, _consts[88]))
 					if v52 == v54 {
 						v101 = v41
 						v102 = v43
 					} else {
-						v57 = *(*int32)(unsafe.Add(mBase, _consts[94]))
+						v57 = *(*int32)(unsafe.Add(mBase, _consts[91]))
 						v58 = *(*int32)(unsafe.Add(mBase, uint32(v57)+12))
 						v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58+v40))))
 						if v60&int32(7) != 0 {
@@ -409,7 +409,7 @@ func F_GetCurrentVirtualXIDs(m *base.Module, l0 int32, l1 int32) int32 {
 							v102 = v43
 						} else {
 							v63 = *(*int32)(unsafe.Add(mBase, uint32(v52)+60))
-							v65 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+							v65 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 							if v63 != v65 {
 								v101 = v41
 								v102 = v43
@@ -425,7 +425,7 @@ func F_GetCurrentVirtualXIDs(m *base.Module, l0 int32, l1 int32) int32 {
 										} else {
 											v81 = base.B2i32(v67-l0 <= int32(0))
 										}
-										v83 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+										v83 = *(*int32)(unsafe.Add(mBase, _consts[602]))
 										if v81 == int32(0) {
 											v101 = v41
 											v102 = v83
@@ -513,22 +513,22 @@ func F_SetCurrentRoleId(m *base.Module, l0 int32, l1 int32) {
 	_ = v32
 	if l0 == int32(0) {
 		v6 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[946])) = uint8(v6)
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[947]))
+		*(*uint8)(unsafe.Add(mBase, _consts[944])) = uint8(v6)
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[945]))
 		if v9 == v6 {
 			return
 		} else {
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[948])))
+			v13 = int32(*(*uint8)(unsafe.Add(mBase, _consts[946])))
 			v17 = v9
 			v18 = v13
 			*(*int32)(unsafe.Add(mBase, _consts[4])) = v17
-			*(*int32)(unsafe.Add(mBase, _consts[949])) = v17
+			*(*int32)(unsafe.Add(mBase, _consts[947])) = v17
 			if v18&int32(1) != 0 {
-				v28 = int32(278626)
+				v28 = int32(283938)
 			} else {
-				v28 = int32(346467)
+				v28 = int32(352854)
 			}
-			F_SetConfigOption(m, int32(221983), v28, int32(0), int32(1))
+			F_SetConfigOption(m, int32(226833), v28, int32(0), int32(1))
 			mBase = m.M
 			v32 = m.ExcPending
 			if v32 != 0 {
@@ -539,17 +539,17 @@ func F_SetCurrentRoleId(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		v15 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[946])) = uint8(v15)
+		*(*uint8)(unsafe.Add(mBase, _consts[944])) = uint8(v15)
 		v17 = l0
 		v18 = l1
 		*(*int32)(unsafe.Add(mBase, _consts[4])) = v17
-		*(*int32)(unsafe.Add(mBase, _consts[949])) = v17
+		*(*int32)(unsafe.Add(mBase, _consts[947])) = v17
 		if v18&int32(1) != 0 {
-			v28 = int32(278626)
+			v28 = int32(283938)
 		} else {
-			v28 = int32(346467)
+			v28 = int32(352854)
 		}
-		F_SetConfigOption(m, int32(221983), v28, int32(0), int32(1))
+		F_SetConfigOption(m, int32(226833), v28, int32(0), int32(1))
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {
@@ -574,7 +574,7 @@ func F_SetCurrentStatementStartTimestamp(m *base.Module) {
 	_ = v14
 	var v15 int64
 	_ = v15
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[55]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[52]))
 	if v2 < int32(0) {
 		v9 = m.G0
 		v10 = int32(16)
@@ -585,7 +585,7 @@ func F_SetCurrentStatementStartTimestamp(m *base.Module) {
 		v14 = *(*int64)(unsafe.Add(mBase, uint32(v11)))
 		v15 = int64(*(*int32)(unsafe.Add(mBase, uint32(v11)+8)))
 		m.G0 = v11 + v10
-		*(*int64)(unsafe.Add(mBase, _consts[95])) = v15 + v14*int64(1000000) - int64(946684800000000)
+		*(*int64)(unsafe.Add(mBase, _consts[92])) = v15 + v14*int64(1000000) - int64(946684800000000)
 	} else {
 	}
 	return
@@ -601,7 +601,7 @@ func F_current_query(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v10 int32
 	_ = v10
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[46]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 	if v4 != 0 {
 		v5 = F_cstring_to_text(m, v4)
 		mBase = m.M
@@ -886,7 +886,7 @@ L26:
 	;
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v74)+4))
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v130
-	F_errmsg_internal(m, int32(545254), v14)
+	F_errmsg_internal(m, int32(553407), v14)
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -896,7 +896,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(503661), int32(258), int32(237417))
+	F_errfinish(m, int32(511724), int32(258), int32(242324))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {

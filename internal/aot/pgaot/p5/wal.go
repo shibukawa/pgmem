@@ -18,13 +18,13 @@ func F_WalSndKill(m *base.Module, l0 int32, l1 int32) {
 	_ = v17
 	var v18 int32
 	_ = v18
-	v3 = int32(4446684)
+	v3 = int32(4459180)
 	v4 = *(*int32)(unsafe.Add(mBase, _consts[213]))
 	*(*int32)(unsafe.Add(mBase, _consts[213])) = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v4)+76))
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+76)) = int32(1)
 	if v8 != 0 {
-		F_s_lock(m, v4+int32(76), int32(507085), int32(3023), int32(310586))
+		F_s_lock(m, v4+int32(76), int32(515148), int32(3023), int32(316188))
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
@@ -403,7 +403,7 @@ L8:
 	}
 L9:
 	;
-	v40 = F_format_elog_string(m, int32(660123), int32(0))
+	v40 = F_format_elog_string(m, int32(669324), int32(0))
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -470,7 +470,7 @@ L17:
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v48)+12))
 	v70 = *(*int32)(unsafe.Add(mBase, uint32(v66+v61<<(uint(int32(2))%32))))
 	v74 = v70
-	v75 = int32(311680)
+	v75 = int32(317282)
 	goto L21
 L18:
 	;
@@ -808,7 +808,7 @@ L74:
 L75:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v70
-	v284 = F_format_elog_string(m, int32(681935), v13)
+	v284 = F_format_elog_string(m, int32(692335), v13)
 	mBase = m.M
 	v285 = m.ExcPending
 	if v285 != 0 {
@@ -864,7 +864,7 @@ func F_check_wal_segment_size(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 	if v14 == v12 {
 		v18 = *(*int32)(unsafe.Add(mBase, _consts[87]))
 		*(*int32)(unsafe.Add(mBase, _consts[88])) = v18
-		v24 = F_format_elog_string(m, int32(673665), int32(0))
+		v24 = F_format_elog_string(m, int32(683810), int32(0))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {
@@ -927,7 +927,7 @@ func F_wal_segment_open(m *base.Module, l0 int32, l1 int64, l2 int32) {
 	*(*uint32)(unsafe.Add(mBase, uint32(v9)+36)) = uint32(v16)
 	v19 = l1 - v15*v16
 	*(*uint32)(unsafe.Add(mBase, uint32(v9)+40)) = uint32(v19)
-	v27 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(522839), v9+int32(32))
+	v27 = F_pg_snprintf(m, v9+int32(48), int32(1024), int32(530992), v9+int32(32))
 	mBase = m.M
 	v28 = m.ExcPending
 	if v28 != 0 {
@@ -956,13 +956,13 @@ func F_wal_segment_open(m *base.Module, l0 int32, l1 int64, l2 int32) {
 					} else {
 						if v38 == int32(44) {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(48)
-							F_errmsg(m, int32(450099), v9)
+							F_errmsg(m, int32(457379), v9)
 							mBase = m.M
 							v68 = m.ExcPending
 							if v68 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(505228), int32(821), int32(287292))
+								F_errfinish(m, int32(513291), int32(821), int32(292615))
 								mBase = m.M
 								v73 = m.ExcPending
 								if v73 != 0 {
@@ -975,13 +975,13 @@ func F_wal_segment_open(m *base.Module, l0 int32, l1 int64, l2 int32) {
 							}
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v9 + int32(48)
-							F_errmsg(m, int32(304813), v9+int32(16))
+							F_errmsg(m, int32(310266), v9+int32(16))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(505228), int32(826), int32(287292))
+								F_errfinish(m, int32(513291), int32(826), int32(292615))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {

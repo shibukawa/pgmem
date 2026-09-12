@@ -15,7 +15,7 @@ func F_PathNameOpenFile(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v5
 	var v8 int32
 	_ = v8
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[587]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[585]))
 	v5 = F_PathNameOpenFilePerm(m, l0, l1, v4)
 	mBase = m.M
 	v8 = m.ExcPending
@@ -133,7 +133,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v15 = *(*int64)(unsafe.Add(mBase, _consts[220]))
+	v15 = *(*int64)(unsafe.Add(mBase, _consts[217]))
 	v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)+8))
 	if v15 == v16 {
 		v144 = int32(1)
@@ -146,7 +146,7 @@ L3:
 	return v144
 L4:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[216]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[213]))
 	if v19 != 0 {
 		goto L10
 	} else {
@@ -164,7 +164,7 @@ L5:
 L6:
 	;
 	v72 = int32(0)
-	v74 = *(*int32)(unsafe.Add(mBase, _consts[217]))
+	v74 = *(*int32)(unsafe.Add(mBase, _consts[214]))
 	if v70 == v72 {
 		v79 = v72
 		v82 = v74
@@ -176,7 +176,7 @@ L6:
 L7:
 	;
 	v66 = int32(0)
-	v68 = *(*int32)(unsafe.Add(mBase, _consts[217]))
+	v68 = *(*int32)(unsafe.Add(mBase, _consts[214]))
 	v79 = v66
 	v82 = v68
 	v83 = v66
@@ -193,7 +193,7 @@ L8:
 L9:
 	;
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
-	v34 = *(*int32)(unsafe.Add(mBase, _consts[125]))
+	v34 = *(*int32)(unsafe.Add(mBase, _consts[122]))
 	if v32 != v34 {
 		v144 = int32(0)
 		goto L3
@@ -781,8 +781,8 @@ L18:
 L19:
 	;
 	v282 = *(*float64)(unsafe.Add(mBase, uint32(v20)+32))
-	v284 = *(*float64)(unsafe.Add(mBase, _consts[380]))
-	v286 = *(*float64)(unsafe.Add(mBase, _consts[384]))
+	v284 = *(*float64)(unsafe.Add(mBase, _consts[378]))
+	v286 = *(*float64)(unsafe.Add(mBase, _consts[382]))
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+40)) = v275
 	v288 = base.F64_add(v286, v286)
 	v289 = int32(2)
@@ -1018,7 +1018,7 @@ L52:
 	v199 = *(*float64)(unsafe.Add(mBase, uint32(v124)+32))
 	v200 = *(*int32)(unsafe.Add(mBase, uint32(v124)+12))
 	v201 = *(*int32)(unsafe.Add(mBase, uint32(v200)+32))
-	v204 = *(*int32)(unsafe.Add(mBase, _consts[326]))
+	v204 = *(*int32)(unsafe.Add(mBase, _consts[324]))
 	v205 = *(*float64)(unsafe.Add(mBase, uint32(v20)+80))
 	v207 = m.G0
 	v208 = int32(16)
@@ -1028,7 +1028,7 @@ L52:
 	mBase = m.M
 	v214 = *(*float64)(unsafe.Add(mBase, uint32(v209)+8))
 	*(*float64)(unsafe.Add(mBase, uint32(v196)+32)) = v199
-	v217 = int32(*(*uint8)(unsafe.Add(mBase, _consts[255])))
+	v217 = int32(*(*uint8)(unsafe.Add(mBase, _consts[252])))
 	v218 = base.F64_add(v198, v214)
 	*(*float64)(unsafe.Add(mBase, uint32(v196)+48)) = v218
 	*(*int32)(unsafe.Add(mBase, uint32(v196)+40)) = v197 + (v217 ^ int32(1))
@@ -1674,7 +1674,7 @@ L11:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v41
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v39
-	F_appendStringInfo(m, v11+int32(32), int32(181355), v11+int32(16))
+	F_appendStringInfo(m, v11+int32(32), int32(186144), v11+int32(16))
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -1774,7 +1774,7 @@ L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v87
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v85
-	F_appendStringInfo(m, v11+int32(32), int32(181355), v11)
+	F_appendStringInfo(m, v11+int32(32), int32(186144), v11)
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -2363,13 +2363,13 @@ func F_path_poly(m *base.Module, l0 int32) int32 {
 				if v169 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(278580), int32(0))
+					F_errmsg(m, int32(283892), int32(0))
 					mBase = m.M
 					v173 = m.ExcPending
 					if v173 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(504829), int32(4463), int32(19669))
+						F_errfinish(m, int32(512892), int32(4463), int32(19669))
 						mBase = m.M
 						v178 = m.ExcPending
 						if v178 != 0 {

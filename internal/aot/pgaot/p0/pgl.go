@@ -52,7 +52,7 @@ func F_pgl_exit(m *base.Module, l0 int32) {
 					} else {
 						*(*int32)(unsafe.Add(mBase, _consts[1036])) = int32(0)
 						*(*int32)(unsafe.Add(mBase, _consts[1037])) = int32(-1)
-						*(*int32)(unsafe.Add(mBase, _consts[671])) = int32(1)
+						*(*int32)(unsafe.Add(mBase, _consts[669])) = int32(1)
 						m.Env.Exit(m, l0)
 						mBase = m.M
 						base.Wasm_trap_unreachable()
@@ -62,7 +62,7 @@ func F_pgl_exit(m *base.Module, l0 int32) {
 				}
 			} else {
 				*(*int32)(unsafe.Add(mBase, _consts[1037])) = int32(-1)
-				*(*int32)(unsafe.Add(mBase, _consts[671])) = int32(1)
+				*(*int32)(unsafe.Add(mBase, _consts[669])) = int32(1)
 				m.Env.Exit(m, l0)
 				mBase = m.M
 				base.Wasm_trap_unreachable()
@@ -88,7 +88,7 @@ func F_pgl_exit(m *base.Module, l0 int32) {
 				} else {
 					*(*int32)(unsafe.Add(mBase, _consts[1036])) = int32(0)
 					*(*int32)(unsafe.Add(mBase, _consts[1037])) = int32(-1)
-					*(*int32)(unsafe.Add(mBase, _consts[671])) = int32(1)
+					*(*int32)(unsafe.Add(mBase, _consts[669])) = int32(1)
 					m.Env.Exit(m, l0)
 					mBase = m.M
 					base.Wasm_trap_unreachable()
@@ -98,7 +98,7 @@ func F_pgl_exit(m *base.Module, l0 int32) {
 			}
 		} else {
 			*(*int32)(unsafe.Add(mBase, _consts[1037])) = int32(-1)
-			*(*int32)(unsafe.Add(mBase, _consts[671])) = int32(1)
+			*(*int32)(unsafe.Add(mBase, _consts[669])) = int32(1)
 			m.Env.Exit(m, l0)
 			mBase = m.M
 			base.Wasm_trap_unreachable()
@@ -127,7 +127,7 @@ func F_pgl_popen(m *base.Module, l0 int32, l1 int32) int32 {
 			return v6
 		}
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(52)
+		*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(52)
 		return int32(0)
 	}
 }
@@ -248,7 +248,7 @@ L11:
 	goto L12
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(44)
+	*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(44)
 	return int32(-1)
 L13:
 	;
@@ -272,7 +272,7 @@ L15:
 	goto L14
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(48)
+	*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(48)
 	return int32(-1)
 L17:
 	;
@@ -290,14 +290,14 @@ L19:
 	;
 	F_emscripten_builtin_free(m, v38)
 	mBase = m.M
-	*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(48)
+	*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(48)
 	return int32(-1)
 L20:
 	;
 	goto L21
 L21:
 	;
-	v56 = int32(4194732)
+	v56 = int32(4207164)
 	v58 = *(*int32)(unsafe.Add(mBase, _consts[1039]))
 	*(*int32)(unsafe.Add(mBase, _consts[1039])) = v58 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+16)) = l2
@@ -305,7 +305,7 @@ L21:
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+8)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+4)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v47))) = v58
-	v67 = int32(4620712)
+	v67 = int32(4633208)
 	v68 = *(*int32)(unsafe.Add(mBase, _consts[1038]))
 	*(*int32)(unsafe.Add(mBase, uint32(v47)+20)) = v68
 	*(*int32)(unsafe.Add(mBase, _consts[1038])) = v47

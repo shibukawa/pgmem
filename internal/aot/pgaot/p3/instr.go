@@ -271,15 +271,15 @@ func F_InstrStartParallelQuery(m *base.Module) {
 	_ = v16
 	var v20 int64
 	_ = v20
-	v4 = F__emscripten_memcpy_bulkmem(m, int32(4434696), int32(4434536), int32(128))
+	v4 = F__emscripten_memcpy_bulkmem(m, int32(4447192), int32(4447032), int32(128))
 	mBase = m.M
-	v8 = *(*int64)(unsafe.Add(mBase, _consts[71]))
-	*(*int64)(unsafe.Add(mBase, _consts[533])) = v8
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[68]))
-	*(*int64)(unsafe.Add(mBase, _consts[534])) = v12
-	v16 = *(*int64)(unsafe.Add(mBase, _consts[70]))
-	*(*int64)(unsafe.Add(mBase, _consts[535])) = v16
-	v20 = *(*int64)(unsafe.Add(mBase, _consts[69]))
-	*(*int64)(unsafe.Add(mBase, _consts[536])) = v20
+	v8 = *(*int64)(unsafe.Add(mBase, _consts[74]))
+	*(*int64)(unsafe.Add(mBase, _consts[535])) = v8
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[71]))
+	*(*int64)(unsafe.Add(mBase, _consts[536])) = v12
+	v16 = *(*int64)(unsafe.Add(mBase, _consts[73]))
+	*(*int64)(unsafe.Add(mBase, _consts[537])) = v16
+	v20 = *(*int64)(unsafe.Add(mBase, _consts[72]))
+	*(*int64)(unsafe.Add(mBase, _consts[538])) = v20
 	return
 }

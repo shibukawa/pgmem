@@ -69,13 +69,13 @@ func F_publicationListToArray(m *base.Module, l0 int32) int32 {
 	_ = v36
 	v2 = int32(0)
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v12 = F_AllocSetContextCreateInternal(m, v7, int32(25274), v2, int32(8192), int32(8388608))
+	v12 = F_AllocSetContextCreateInternal(m, v7, int32(25383), v2, int32(8192), int32(8388608))
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(4536272)
+		v16 = int32(4548768)
 		v17 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v12
 		if l0 != 0 {
@@ -265,9 +265,9 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						return
 					} else {
 						if l3 != 0 {
-							v27 = *(*int64)(unsafe.Add(mBase, _consts[224]))
+							v27 = *(*int64)(unsafe.Add(mBase, _consts[221]))
 							*(*int64)(unsafe.Add(mBase, uint32(l0))) = v27
-							v30 = *(*int32)(unsafe.Add(mBase, _consts[225]))
+							v30 = *(*int32)(unsafe.Add(mBase, _consts[222]))
 							*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v30
 							m.G0 = v10 + int32(80)
 							return
@@ -293,13 +293,13 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										v41 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v41
 										*(*int32)(unsafe.Add(mBase, uint32(v10))) = v39
-										F_errmsg(m, int32(723472), v10)
+										F_errmsg(m, int32(737081), v10)
 										mBase = m.M
 										v46 = m.ExcPending
 										if v46 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(507953), int32(701), int32(518971))
+											F_errfinish(m, int32(516032), int32(701), int32(527124))
 											mBase = m.M
 											v51 = m.ExcPending
 											if v51 != 0 {
@@ -336,19 +336,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
-									F_errmsg(m, int32(272029), v10+int32(16))
+									F_errmsg(m, int32(277218), v10+int32(16))
 									mBase = m.M
 									v146 = m.ExcPending
 									if v146 != 0 {
 										return
 									} else {
-										F_errdetail(m, int32(616349), int32(0))
+										F_errdetail(m, int32(625199), int32(0))
 										mBase = m.M
 										v150 = m.ExcPending
 										if v150 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(507953), int32(103), int32(518965))
+											F_errfinish(m, int32(516032), int32(103), int32(527118))
 											mBase = m.M
 											v155 = m.ExcPending
 											if v155 != 0 {
@@ -391,19 +391,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
-										F_errmsg(m, int32(272029), v10+int32(16))
+										F_errmsg(m, int32(277218), v10+int32(16))
 										mBase = m.M
 										v146 = m.ExcPending
 										if v146 != 0 {
 											return
 										} else {
-											F_errdetail(m, int32(616349), int32(0))
+											F_errdetail(m, int32(625199), int32(0))
 											mBase = m.M
 											v150 = m.ExcPending
 											if v150 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(507953), int32(103), int32(518965))
+												F_errfinish(m, int32(516032), int32(103), int32(527118))
 												mBase = m.M
 												v155 = m.ExcPending
 												if v155 != 0 {
@@ -445,19 +445,19 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 												return
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v163
-												F_errmsg(m, int32(272029), v10+int32(32))
+												F_errmsg(m, int32(277218), v10+int32(32))
 												mBase = m.M
 												v170 = m.ExcPending
 												if v170 != 0 {
 													return
 												} else {
-													F_errdetail(m, int32(662268), int32(0))
+													F_errdetail(m, int32(671489), int32(0))
 													mBase = m.M
 													v174 = m.ExcPending
 													if v174 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(507953), int32(111), int32(518965))
+														F_errfinish(m, int32(516032), int32(111), int32(527118))
 														mBase = m.M
 														v179 = m.ExcPending
 														if v179 != 0 {

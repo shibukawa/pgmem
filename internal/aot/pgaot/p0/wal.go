@@ -39,22 +39,22 @@ func F_InitializeWalConsistencyChecking(m *base.Module) {
 	_ = v18
 	var v22 int32
 	_ = v22
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[179])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[176])))
 	if v3 != 0 {
 		v5 = int32(0)
-		v8 = F_find_option(m, int32(343059), v5, v5, int32(21))
+		v8 = F_find_option(m, int32(349446), v5, v5, int32(21))
 		mBase = m.M
 		v9 = m.ExcPending
 		if v9 != 0 {
 			return
 		} else {
 			v11 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, _consts[179])) = uint8(v11)
-			v15 = *(*int32)(unsafe.Add(mBase, _consts[180]))
+			*(*uint8)(unsafe.Add(mBase, _consts[176])) = uint8(v11)
+			v15 = *(*int32)(unsafe.Add(mBase, _consts[177]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v8)+40))
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v8)+32))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-			F_set_config_option_ext(m, int32(343059), v15, v16, v17, v18, v11, int32(21))
+			F_set_config_option_ext(m, int32(349446), v15, v16, v17, v18, v11, int32(21))
 			mBase = m.M
 			v22 = m.ExcPending
 			if v22 != 0 {
@@ -96,7 +96,7 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 	_ = v36
 	var v38 int32
 	_ = v38
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[492]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[490]))
 	if v2 != 0 {
 		F_ProcessProcSignalBarrier(m)
 		mBase = m.M
@@ -104,20 +104,20 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 		if v4 != 0 {
 			return
 		} else {
-			v6 = *(*int32)(unsafe.Add(mBase, _consts[305]))
+			v6 = *(*int32)(unsafe.Add(mBase, _consts[303]))
 			if v6 != 0 {
-				*(*int32)(unsafe.Add(mBase, _consts[305])) = int32(0)
+				*(*int32)(unsafe.Add(mBase, _consts[303])) = int32(0)
 				F_ProcessConfigFile(m, int32(2))
 				mBase = m.M
 				v12 = m.ExcPending
 				if v12 != 0 {
 					return
 				} else {
-					v14 = *(*int32)(unsafe.Add(mBase, _consts[441]))
+					v14 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 					if v14 == int32(0) {
-						v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[493])))
+						v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 						if v18 != 0 {
-							v36 = *(*int32)(unsafe.Add(mBase, _consts[494]))
+							v36 = *(*int32)(unsafe.Add(mBase, _consts[492]))
 							if v36 != 0 {
 								F_ProcessLogMemoryContextInterrupt(m)
 								mBase = m.M
@@ -138,13 +138,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 								return
 							} else {
 								if v21 != 0 {
-									F_errmsg_internal(m, int32(249516), int32(0))
+									F_errmsg_internal(m, int32(254589), int32(0))
 									mBase = m.M
 									v26 = m.ExcPending
 									if v26 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(506717), int32(875), int32(120759))
+										F_errfinish(m, int32(514780), int32(875), int32(125039))
 										mBase = m.M
 										v31 = m.ExcPending
 										if v31 != 0 {
@@ -184,13 +184,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 							return
 						} else {
 							if v21 != 0 {
-								F_errmsg_internal(m, int32(249516), int32(0))
+								F_errmsg_internal(m, int32(254589), int32(0))
 								mBase = m.M
 								v26 = m.ExcPending
 								if v26 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(506717), int32(875), int32(120759))
+									F_errfinish(m, int32(514780), int32(875), int32(125039))
 									mBase = m.M
 									v31 = m.ExcPending
 									if v31 != 0 {
@@ -224,11 +224,11 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 					}
 				}
 			} else {
-				v14 = *(*int32)(unsafe.Add(mBase, _consts[441]))
+				v14 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 				if v14 == int32(0) {
-					v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[493])))
+					v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 					if v18 != 0 {
-						v36 = *(*int32)(unsafe.Add(mBase, _consts[494]))
+						v36 = *(*int32)(unsafe.Add(mBase, _consts[492]))
 						if v36 != 0 {
 							F_ProcessLogMemoryContextInterrupt(m)
 							mBase = m.M
@@ -249,13 +249,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 							return
 						} else {
 							if v21 != 0 {
-								F_errmsg_internal(m, int32(249516), int32(0))
+								F_errmsg_internal(m, int32(254589), int32(0))
 								mBase = m.M
 								v26 = m.ExcPending
 								if v26 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(506717), int32(875), int32(120759))
+									F_errfinish(m, int32(514780), int32(875), int32(125039))
 									mBase = m.M
 									v31 = m.ExcPending
 									if v31 != 0 {
@@ -295,13 +295,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 						return
 					} else {
 						if v21 != 0 {
-							F_errmsg_internal(m, int32(249516), int32(0))
+							F_errmsg_internal(m, int32(254589), int32(0))
 							mBase = m.M
 							v26 = m.ExcPending
 							if v26 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(506717), int32(875), int32(120759))
+								F_errfinish(m, int32(514780), int32(875), int32(125039))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
@@ -336,20 +336,20 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 			}
 		}
 	} else {
-		v6 = *(*int32)(unsafe.Add(mBase, _consts[305]))
+		v6 = *(*int32)(unsafe.Add(mBase, _consts[303]))
 		if v6 != 0 {
-			*(*int32)(unsafe.Add(mBase, _consts[305])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[303])) = int32(0)
 			F_ProcessConfigFile(m, int32(2))
 			mBase = m.M
 			v12 = m.ExcPending
 			if v12 != 0 {
 				return
 			} else {
-				v14 = *(*int32)(unsafe.Add(mBase, _consts[441]))
+				v14 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 				if v14 == int32(0) {
-					v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[493])))
+					v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 					if v18 != 0 {
-						v36 = *(*int32)(unsafe.Add(mBase, _consts[494]))
+						v36 = *(*int32)(unsafe.Add(mBase, _consts[492]))
 						if v36 != 0 {
 							F_ProcessLogMemoryContextInterrupt(m)
 							mBase = m.M
@@ -370,13 +370,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 							return
 						} else {
 							if v21 != 0 {
-								F_errmsg_internal(m, int32(249516), int32(0))
+								F_errmsg_internal(m, int32(254589), int32(0))
 								mBase = m.M
 								v26 = m.ExcPending
 								if v26 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(506717), int32(875), int32(120759))
+									F_errfinish(m, int32(514780), int32(875), int32(125039))
 									mBase = m.M
 									v31 = m.ExcPending
 									if v31 != 0 {
@@ -416,13 +416,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 						return
 					} else {
 						if v21 != 0 {
-							F_errmsg_internal(m, int32(249516), int32(0))
+							F_errmsg_internal(m, int32(254589), int32(0))
 							mBase = m.M
 							v26 = m.ExcPending
 							if v26 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(506717), int32(875), int32(120759))
+								F_errfinish(m, int32(514780), int32(875), int32(125039))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
@@ -456,11 +456,11 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 				}
 			}
 		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[441]))
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[439]))
 			if v14 == int32(0) {
-				v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[493])))
+				v18 = int32(*(*uint8)(unsafe.Add(mBase, _consts[491])))
 				if v18 != 0 {
-					v36 = *(*int32)(unsafe.Add(mBase, _consts[494]))
+					v36 = *(*int32)(unsafe.Add(mBase, _consts[492]))
 					if v36 != 0 {
 						F_ProcessLogMemoryContextInterrupt(m)
 						mBase = m.M
@@ -481,13 +481,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 						return
 					} else {
 						if v21 != 0 {
-							F_errmsg_internal(m, int32(249516), int32(0))
+							F_errmsg_internal(m, int32(254589), int32(0))
 							mBase = m.M
 							v26 = m.ExcPending
 							if v26 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(506717), int32(875), int32(120759))
+								F_errfinish(m, int32(514780), int32(875), int32(125039))
 								mBase = m.M
 								v31 = m.ExcPending
 								if v31 != 0 {
@@ -527,13 +527,13 @@ func F_ProcessWalSummarizerInterrupts(m *base.Module) {
 					return
 				} else {
 					if v21 != 0 {
-						F_errmsg_internal(m, int32(249516), int32(0))
+						F_errmsg_internal(m, int32(254589), int32(0))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(506717), int32(875), int32(120759))
+							F_errfinish(m, int32(514780), int32(875), int32(125039))
 							mBase = m.M
 							v31 = m.ExcPending
 							if v31 != 0 {
@@ -589,7 +589,7 @@ func F_SetWalWriterSleeping(m *base.Module, l0 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v5)+440)) = int32(1)
 	if v6 != 0 {
 		v10 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-		F_s_lock(m, v10+int32(440), int32(510097), int32(9567), int32(341899))
+		F_s_lock(m, v10+int32(440), int32(518196), int32(9567), int32(348286))
 		mBase = m.M
 		v17 = m.ExcPending
 		if v17 != 0 {
@@ -688,105 +688,105 @@ func F_WALInsertLockAcquireExclusive(m *base.Module) {
 	_ = v116
 	var v118 int32
 	_ = v118
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 	v5 = F_LWLockAcquire(m, v3, int32(0))
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 		F_LWLockUpdateVar(m, v8, v8+int32(16), int64(-1))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
 			return
 		} else {
-			v15 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+			v15 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 			v19 = F_LWLockAcquire(m, v15+int32(128), int32(0))
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return
 			} else {
-				v22 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+				v22 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 				F_LWLockUpdateVar(m, v22+int32(128), v22+int32(144), int64(-1))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
 					return
 				} else {
-					v31 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+					v31 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 					v35 = F_LWLockAcquire(m, v31+int32(256), int32(0))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
 						return
 					} else {
-						v38 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+						v38 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 						F_LWLockUpdateVar(m, v38+int32(256), v38+int32(272), int64(-1))
 						mBase = m.M
 						v45 = m.ExcPending
 						if v45 != 0 {
 							return
 						} else {
-							v47 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+							v47 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 							v51 = F_LWLockAcquire(m, v47+int32(384), int32(0))
 							mBase = m.M
 							v52 = m.ExcPending
 							if v52 != 0 {
 								return
 							} else {
-								v54 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+								v54 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 								F_LWLockUpdateVar(m, v54+int32(384), v54+int32(400), int64(-1))
 								mBase = m.M
 								v61 = m.ExcPending
 								if v61 != 0 {
 									return
 								} else {
-									v63 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+									v63 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 									v67 = F_LWLockAcquire(m, v63+int32(512), int32(0))
 									mBase = m.M
 									v68 = m.ExcPending
 									if v68 != 0 {
 										return
 									} else {
-										v70 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+										v70 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 										F_LWLockUpdateVar(m, v70+int32(512), v70+int32(528), int64(-1))
 										mBase = m.M
 										v77 = m.ExcPending
 										if v77 != 0 {
 											return
 										} else {
-											v79 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+											v79 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 											v83 = F_LWLockAcquire(m, v79+int32(640), int32(0))
 											mBase = m.M
 											v84 = m.ExcPending
 											if v84 != 0 {
 												return
 											} else {
-												v86 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+												v86 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 												F_LWLockUpdateVar(m, v86+int32(640), v86+int32(656), int64(-1))
 												mBase = m.M
 												v93 = m.ExcPending
 												if v93 != 0 {
 													return
 												} else {
-													v95 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+													v95 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 													v99 = F_LWLockAcquire(m, v95+int32(768), int32(0))
 													mBase = m.M
 													v100 = m.ExcPending
 													if v100 != 0 {
 														return
 													} else {
-														v102 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+														v102 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 														F_LWLockUpdateVar(m, v102+int32(768), v102+int32(784), int64(-1))
 														mBase = m.M
 														v109 = m.ExcPending
 														if v109 != 0 {
 															return
 														} else {
-															v111 = *(*int32)(unsafe.Add(mBase, _consts[160]))
+															v111 = *(*int32)(unsafe.Add(mBase, _consts[157]))
 															v115 = F_LWLockAcquire(m, v111+int32(896), int32(0))
 															mBase = m.M
 															v116 = m.ExcPending
@@ -794,7 +794,7 @@ func F_WALInsertLockAcquireExclusive(m *base.Module) {
 																return
 															} else {
 																v118 = int32(1)
-																*(*uint8)(unsafe.Add(mBase, _consts[161])) = uint8(v118)
+																*(*uint8)(unsafe.Add(mBase, _consts[158])) = uint8(v118)
 																return
 															}
 														}
@@ -841,12 +841,12 @@ func F_WalRcvRunning(m *base.Module) int32 {
 	_ = v52
 	var v53 int32
 	_ = v53
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[550]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[548]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+1456))
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+1456)) = int32(1)
 	v11 = v6 + int32(1456)
 	if v7 != 0 {
-		F_s_lock(m, v11, int32(506060), int32(82), int32(342487))
+		F_s_lock(m, v11, int32(514123), int32(82), int32(348874))
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
@@ -868,7 +868,7 @@ func F_WalRcvRunning(m *base.Module) int32 {
 					v30 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
 					if v30 != 0 {
-						F_s_lock(m, v11, int32(506060), int32(103), int32(342487))
+						F_s_lock(m, v11, int32(514123), int32(103), int32(348874))
 						mBase = m.M
 						v37 = m.ExcPending
 						if v37 != 0 {
@@ -935,7 +935,7 @@ func F_WalRcvRunning(m *base.Module) int32 {
 				v30 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
 				if v30 != 0 {
-					F_s_lock(m, v11, int32(506060), int32(103), int32(342487))
+					F_s_lock(m, v11, int32(514123), int32(103), int32(348874))
 					mBase = m.M
 					v37 = m.ExcPending
 					if v37 != 0 {
@@ -998,7 +998,7 @@ func F_WalSndWakeup(m *base.Module, l0 int32, l1 int32) {
 	var v14 int32
 	_ = v14
 	if l0 != 0 {
-		v4 = *(*int32)(unsafe.Add(mBase, _consts[547]))
+		v4 = *(*int32)(unsafe.Add(mBase, _consts[545]))
 		F_ConditionVariableBroadcast(m, v4+int32(52))
 		mBase = m.M
 		v8 = m.ExcPending
@@ -1006,7 +1006,7 @@ func F_WalSndWakeup(m *base.Module, l0 int32, l1 int32) {
 			return
 		} else {
 			if l1 != 0 {
-				v10 = *(*int32)(unsafe.Add(mBase, _consts[547]))
+				v10 = *(*int32)(unsafe.Add(mBase, _consts[545]))
 				F_ConditionVariableBroadcast(m, v10-int32(-64))
 				mBase = m.M
 				v14 = m.ExcPending
@@ -1021,7 +1021,7 @@ func F_WalSndWakeup(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		if l1 != 0 {
-			v10 = *(*int32)(unsafe.Add(mBase, _consts[547]))
+			v10 = *(*int32)(unsafe.Add(mBase, _consts[545]))
 			F_ConditionVariableBroadcast(m, v10-int32(-64))
 			mBase = m.M
 			v14 = m.ExcPending

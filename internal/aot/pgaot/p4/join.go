@@ -129,13 +129,13 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 											if v72 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg(m, int32(257450), int32(0))
+												F_errmsg(m, int32(262577), int32(0))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(505718), int32(379), int32(213809))
+													F_errfinish(m, int32(513781), int32(379), int32(218659))
 													mBase = m.M
 													v81 = m.ExcPending
 													if v81 != 0 {
@@ -200,15 +200,15 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 									if v108 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(567878)
+										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(576332)
 										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
-										F_errmsg(m, int32(195122), v7)
+										F_errmsg(m, int32(199911), v7)
 										mBase = m.M
 										v114 = m.ExcPending
 										if v114 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(505718), int32(371), int32(213809))
+											F_errfinish(m, int32(513781), int32(371), int32(218659))
 											mBase = m.M
 											v119 = m.ExcPending
 											if v119 != 0 {
@@ -244,13 +244,13 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v38
-								F_errmsg(m, int32(172720), v5+int32(-48))
+								F_errmsg(m, int32(177481), v5+int32(-48))
 								mBase = m.M
 								v45 = m.ExcPending
 								if v45 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(505718), int32(356), int32(213809))
+									F_errfinish(m, int32(513781), int32(356), int32(218659))
 									mBase = m.M
 									v50 = m.ExcPending
 									if v50 != 0 {
@@ -298,13 +298,13 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 											if v72 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg(m, int32(257450), int32(0))
+												F_errmsg(m, int32(262577), int32(0))
 												mBase = m.M
 												v76 = m.ExcPending
 												if v76 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(505718), int32(379), int32(213809))
+													F_errfinish(m, int32(513781), int32(379), int32(218659))
 													mBase = m.M
 													v81 = m.ExcPending
 													if v81 != 0 {
@@ -369,15 +369,15 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 									if v108 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(567878)
+										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(576332)
 										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
-										F_errmsg(m, int32(195122), v7)
+										F_errmsg(m, int32(199911), v7)
 										mBase = m.M
 										v114 = m.ExcPending
 										if v114 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(505718), int32(371), int32(213809))
+											F_errfinish(m, int32(513781), int32(371), int32(218659))
 											mBase = m.M
 											v119 = m.ExcPending
 											if v119 != 0 {
@@ -431,13 +431,13 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 												if v72 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg(m, int32(257450), int32(0))
+													F_errmsg(m, int32(262577), int32(0))
 													mBase = m.M
 													v76 = m.ExcPending
 													if v76 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(505718), int32(379), int32(213809))
+														F_errfinish(m, int32(513781), int32(379), int32(218659))
 														mBase = m.M
 														v81 = m.ExcPending
 														if v81 != 0 {
@@ -502,15 +502,15 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 										if v108 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(567878)
+											*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(576332)
 											*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
-											F_errmsg(m, int32(195122), v7)
+											F_errmsg(m, int32(199911), v7)
 											mBase = m.M
 											v114 = m.ExcPending
 											if v114 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(505718), int32(371), int32(213809))
+												F_errfinish(m, int32(513781), int32(371), int32(218659))
 												mBase = m.M
 												v119 = m.ExcPending
 												if v119 != 0 {
@@ -690,7 +690,7 @@ L7:
 	*(*int64)(unsafe.Add(mBase, uint32(v11)+32)) = int64(34359738372)
 	v30 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+56)) = v30
-	v37 = F_hash_create(m, int32(405881), int32(256), v9+int32(-48), int32(1224))
+	v37 = F_hash_create(m, int32(412869), int32(256), v9+int32(-48), int32(1224))
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -1342,13 +1342,13 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 						} else {
 							v71 = *(*int32)(unsafe.Add(mBase, uint32(v25)+12))
 							*(*int32)(unsafe.Add(mBase, uint32(v25))) = v71
-							F_errmsg_internal(m, int32(545254), v25)
+							F_errmsg_internal(m, int32(553407), v25)
 							mBase = m.M
 							v75 = m.ExcPending
 							if v75 != 0 {
 								return float64(0)
 							} else {
-								F_errfinish(m, int32(506710), int32(1246), int32(310337))
+								F_errfinish(m, int32(514773), int32(1246), int32(315939))
 								mBase = m.M
 								v80 = m.ExcPending
 								if v80 != 0 {
@@ -1375,13 +1375,13 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 								return float64(0)
 							} else {
 								*(*float64)(unsafe.Add(mBase, uint32(v13))) = v84
-								F_errmsg_internal(m, int32(347622), v13)
+								F_errmsg_internal(m, int32(354033), v13)
 								mBase = m.M
 								v99 = m.ExcPending
 								if v99 != 0 {
 									return float64(0)
 								} else {
-									F_errfinish(m, int32(504552), int32(2048), int32(9971))
+									F_errfinish(m, int32(512615), int32(2048), int32(9971))
 									mBase = m.M
 									v104 = m.ExcPending
 									if v104 != 0 {

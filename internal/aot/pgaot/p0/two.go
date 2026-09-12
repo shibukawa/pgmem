@@ -70,7 +70,7 @@ func F_TwoPhaseGetGXact(m *base.Module, l0 int32, l1 int32) int32 {
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[148]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[145]))
 	if v13 == l0 {
 		goto L3
 	} else {
@@ -92,7 +92,7 @@ L2:
 	return v76
 L3:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[149]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[146]))
 	v76 = v16
 	goto L2
 L4:
@@ -121,7 +121,7 @@ L7:
 	goto L8
 L8:
 	;
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[150]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[147]))
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
 	if v30 <= int32(0) {
 		v55 = int32(0)
@@ -198,14 +198,14 @@ L20:
 	goto L19
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[149])) = v55
-	*(*int32)(unsafe.Add(mBase, _consts[148])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[146])) = v55
+	*(*int32)(unsafe.Add(mBase, _consts[145])) = l0
 	v76 = v55
 	goto L2
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-	F_errmsg_internal(m, int32(54661), v10)
+	F_errmsg_internal(m, int32(58248), v10)
 	mBase = m.M
 	v92 = m.ExcPending
 	if v92 != 0 {
@@ -215,7 +215,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(510702), int32(835), int32(114274))
+	F_errfinish(m, int32(518801), int32(835), int32(118532))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

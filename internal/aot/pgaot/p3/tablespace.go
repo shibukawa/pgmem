@@ -190,7 +190,7 @@ func F_has_tablespace_privilege_id_name(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					v20 = F_convert_any_priv_string(m, v11, int32(1673712))
+					v20 = F_convert_any_priv_string(m, v11, int32(1686000))
 					mBase = m.M
 					v21 = m.ExcPending
 					if v21 != 0 {
@@ -271,7 +271,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 	v12 = F___fstatat(m, int32(-100), l0, v6-int32(-64), int32(256))
 	mBase = m.M
 	if v12 < int32(0) {
-		v16 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+		v16 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 		if v16 == int32(44) {
 			m.G0 = v6 + int32(160)
 			return
@@ -289,13 +289,13 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-					F_errmsg(m, int32(303915), v6)
+					F_errmsg(m, int32(309368), v6)
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(511551), int32(893), int32(322271))
+						F_errfinish(m, int32(519666), int32(893), int32(328153))
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -327,13 +327,13 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
-						F_errmsg(m, int32(322386), v6+int32(16))
+						F_errmsg(m, int32(328268), v6+int32(16))
 						mBase = m.M
 						v101 = m.ExcPending
 						if v101 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(511551), int32(922), int32(322271))
+							F_errfinish(m, int32(519666), int32(922), int32(328153))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {
@@ -353,7 +353,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 					m.G0 = v6 + int32(160)
 					return
 				} else {
-					v45 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+					v45 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 					if v45 == int32(44) {
 						m.G0 = v6 + int32(160)
 						return
@@ -371,13 +371,13 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = l0
-								F_errmsg(m, int32(302770), v6+int32(32))
+								F_errmsg(m, int32(308223), v6+int32(32))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {
 									return
 								} else {
-									F_errfinish(m, int32(511551), int32(906), int32(322271))
+									F_errfinish(m, int32(519666), int32(906), int32(328153))
 									mBase = m.M
 									v64 = m.ExcPending
 									if v64 != 0 {
@@ -400,7 +400,7 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 				m.G0 = v6 + int32(160)
 				return
 			} else {
-				v69 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+				v69 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 				if v69 == int32(44) {
 					m.G0 = v6 + int32(160)
 					return
@@ -418,13 +418,13 @@ func F_remove_tablespace_symlink(m *base.Module, l0 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = l0
-							F_errmsg(m, int32(303563), v6+int32(48))
+							F_errmsg(m, int32(309016), v6+int32(48))
 							mBase = m.M
 							v83 = m.ExcPending
 							if v83 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(511551), int32(914), int32(322271))
+								F_errfinish(m, int32(519666), int32(914), int32(328153))
 								mBase = m.M
 								v88 = m.ExcPending
 								if v88 != 0 {

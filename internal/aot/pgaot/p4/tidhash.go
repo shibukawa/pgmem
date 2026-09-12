@@ -109,13 +109,13 @@ func F_tidhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v108 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(409411), int32(0))
+						F_errmsg_internal(m, int32(416399), int32(0))
 						mBase = m.M
 						v112 = m.ExcPending
 						if v112 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(333945), int32(327), int32(348921))
+							F_errfinish(m, int32(340209), int32(327), int32(355332))
 							mBase = m.M
 							v117 = m.ExcPending
 							if v117 != 0 {
@@ -153,13 +153,13 @@ func F_tidhash_create(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			if v95 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(409411), int32(0))
+				F_errmsg_internal(m, int32(416399), int32(0))
 				mBase = m.M
 				v99 = m.ExcPending
 				if v99 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(333945), int32(327), int32(348921))
+					F_errfinish(m, int32(340209), int32(327), int32(355332))
 					mBase = m.M
 					v104 = m.ExcPending
 					if v104 != 0 {

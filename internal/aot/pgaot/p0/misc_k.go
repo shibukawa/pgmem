@@ -170,7 +170,7 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
 	if v73 < v72 {
-		v76 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+		v76 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 		v77 = int32(2)
 		v82 = *(*int32)(unsafe.Add(mBase, uint32(v76+v72<<(uint(v77)%32)-int32(4))))
 		if base.B2i32(base.Ui32(v77) < base.Ui32(l0))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(v82)) == int32(0) {
@@ -191,13 +191,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v202 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(177583), int32(0))
+					F_errmsg_internal(m, int32(182351), int32(0))
 					mBase = m.M
 					v206 = m.ExcPending
 					if v206 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(503161), int32(4831), int32(473376))
+						F_errfinish(m, int32(511224), int32(4831), int32(480829))
 						mBase = m.M
 						v211 = m.ExcPending
 						if v211 != 0 {
@@ -228,13 +228,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v215 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(177556), int32(0))
+							F_errmsg_internal(m, int32(182324), int32(0))
 							mBase = m.M
 							v219 = m.ExcPending
 							if v219 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(503161), int32(4848), int32(473376))
+								F_errfinish(m, int32(511224), int32(4848), int32(480829))
 								mBase = m.M
 								v224 = m.ExcPending
 								if v224 != 0 {
@@ -251,8 +251,8 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v66 <= int32(0) {
 							v185 = v105
 						} else {
-							v109 = *(*int32)(unsafe.Add(mBase, _consts[606]))
-							v111 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+							v109 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+							v111 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 							if v66 != int32(1) {
 								v116 = l0
 								v119 = v105
@@ -319,8 +319,8 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v66 <= int32(0) {
 					v185 = v105
 				} else {
-					v109 = *(*int32)(unsafe.Add(mBase, _consts[606]))
-					v111 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+					v109 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+					v111 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 					if v66 != int32(1) {
 						v116 = l0
 						v119 = v105
@@ -400,13 +400,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v215 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(177556), int32(0))
+						F_errmsg_internal(m, int32(182324), int32(0))
 						mBase = m.M
 						v219 = m.ExcPending
 						if v219 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(503161), int32(4848), int32(473376))
+							F_errfinish(m, int32(511224), int32(4848), int32(480829))
 							mBase = m.M
 							v224 = m.ExcPending
 							if v224 != 0 {
@@ -423,8 +423,8 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v66 <= int32(0) {
 						v185 = v105
 					} else {
-						v109 = *(*int32)(unsafe.Add(mBase, _consts[606]))
-						v111 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+						v109 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+						v111 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 						if v66 != int32(1) {
 							v116 = l0
 							v119 = v105
@@ -491,8 +491,8 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v66 <= int32(0) {
 				v185 = v105
 			} else {
-				v109 = *(*int32)(unsafe.Add(mBase, _consts[606]))
-				v111 = *(*int32)(unsafe.Add(mBase, _consts[605]))
+				v109 = *(*int32)(unsafe.Add(mBase, _consts[604]))
+				v111 = *(*int32)(unsafe.Add(mBase, _consts[603]))
 				if v66 != int32(1) {
 					v116 = l0
 					v119 = v105
@@ -572,7 +572,7 @@ func F_kill(m *base.Module, l0 int32, l1 int32) int32 {
 			return v5
 		}
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[166])) = int32(63)
+		*(*int32)(unsafe.Add(mBase, _consts[163])) = int32(63)
 		return int32(-1)
 	}
 }

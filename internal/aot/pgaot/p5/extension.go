@@ -57,13 +57,13 @@ func F_get_extension_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(73247), v7)
+						F_errmsg(m, int32(77126), v7)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(508033), int32(199), int32(444070))
+							F_errfinish(m, int32(516112), int32(199), int32(451162))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {

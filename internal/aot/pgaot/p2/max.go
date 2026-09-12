@@ -84,7 +84,7 @@ func F_check_max_stack_depth(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	v8 = v6 - int32(32)
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[1240]))
 	if v12 == int32(0) {
 		v15 = int32(16)
 		v16 = v8 + v15
@@ -157,7 +157,7 @@ func F_check_max_stack_depth(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		} else {
 			v86 = v83
 		}
-		*(*int32)(unsafe.Add(mBase, _consts[1238])) = v86
+		*(*int32)(unsafe.Add(mBase, _consts[1240])) = v86
 		v88 = v86
 	} else {
 		v88 = v12
@@ -178,7 +178,7 @@ func F_check_max_stack_depth(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 			*(*int32)(unsafe.Add(mBase, _consts[253])) = v100
 			v104 = base.I32_div_s(v94, int32(1024))
 			*(*int32)(unsafe.Add(mBase, uint32(v8))) = v104
-			v108 = F_format_elog_string(m, int32(673581), v8)
+			v108 = F_format_elog_string(m, int32(683726), v8)
 			mBase = m.M
 			v111 = m.ExcPending
 			if v111 != 0 {
@@ -187,7 +187,7 @@ func F_check_max_stack_depth(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 				*(*int32)(unsafe.Add(mBase, _consts[254])) = v108
 				v114 = *(*int32)(unsafe.Add(mBase, _consts[158]))
 				*(*int32)(unsafe.Add(mBase, _consts[253])) = v114
-				v120 = F_format_elog_string(m, int32(594122), int32(0))
+				v120 = F_format_elog_string(m, int32(602972), int32(0))
 				mBase = m.M
 				v121 = m.ExcPending
 				if v121 != 0 {

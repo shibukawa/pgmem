@@ -452,7 +452,7 @@ L42:
 	}
 L43:
 	;
-	v187 = *(*int32)(unsafe.Add(mBase, _consts[113]))
+	v187 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	v188 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
 	goto L44
 L44:
@@ -640,7 +640,7 @@ func F_RollbackAndReleaseCurrentSubTransaction(m *base.Module) {
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[72]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[75]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
 	if base.Ui32(int32(19)) < base.Ui32(v10) {
 		F_CleanupSubTransaction(m)
@@ -673,19 +673,19 @@ func F_RollbackAndReleaseCurrentSubTransaction(m *base.Module) {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
 					if base.Ui32(v25) <= base.Ui32(int32(19)) {
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[184])))
+						v34 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[186])))
 						v35 = v34
 					} else {
-						v35 = int32(556295)
+						v35 = int32(564749)
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v35
-					F_errmsg_internal(m, int32(191247), v6)
+					F_errmsg_internal(m, int32(196036), v6)
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(504485), int32(4833), int32(263502))
+						F_errfinish(m, int32(512548), int32(4833), int32(268629))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {

@@ -104,14 +104,14 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 	v15 = v12 + int32(24)
 	v17 = v12 + int32(16)
 	v19 = v12 + int32(8)
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v27 = F_LWLockAcquire(m, v23+int32(6272), int32(1))
 	mBase = m.M
 	v30 = m.ExcPending
 	if v30 != 0 {
 		return int32(0)
 	} else {
-		v32 = *(*int32)(unsafe.Add(mBase, _consts[423]))
+		v32 = *(*int32)(unsafe.Add(mBase, _consts[425]))
 		v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32))))
 		if v33 == int32(0) {
 			*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(0)
@@ -132,7 +132,7 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 			} else {
 				v52 = *(*int64)(unsafe.Add(mBase, uint32(v32)+24))
 				*(*int64)(unsafe.Add(mBase, uint32(v19))) = v52
-				v56 = *(*int32)(unsafe.Add(mBase, _consts[150]))
+				v56 = *(*int32)(unsafe.Add(mBase, _consts[152]))
 				v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
 				v61 = *(*int32)(unsafe.Add(mBase, uint32(v57+v43*int32(640))+44))
 				if v61 <= int32(0) {
@@ -144,7 +144,7 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 			}
 		}
 		*(*int32)(unsafe.Add(mBase, uint32(v12+int32(4)))) = v65
-		v71 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+		v71 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 		F_LWLockRelease(m, v71+int32(6272))
 		mBase = m.M
 		v75 = m.ExcPending
@@ -218,13 +218,13 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 					if v118 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(375740), int32(0))
+						F_errmsg_internal(m, int32(382397), int32(0))
 						mBase = m.M
 						v122 = m.ExcPending
 						if v122 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(505942), int32(192), int32(359689))
+							F_errfinish(m, int32(514005), int32(192), int32(366100))
 							mBase = m.M
 							v127 = m.ExcPending
 							if v127 != 0 {

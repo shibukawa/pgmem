@@ -102,8 +102,12 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32
 func F_toast_open_indexes(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_toastrel_valueid_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_toastrel_valueid_exists
 func F_toastrel_valueid_exists(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_toast_close_indexes github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_toast_close_indexes
+func F_toast_close_indexes(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_toast_delete_datum github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_toast_delete_datum
 func F_toast_delete_datum(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_get_toast_snapshot github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_get_toast_snapshot
+func F_get_toast_snapshot(m *base.Module) int32
 //go:linkname F_toast_get_valid_index github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_toast_get_valid_index
 func F_toast_get_valid_index(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_convert_tuples_by_name_attrmap github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_convert_tuples_by_name_attrmap
@@ -132,6 +136,8 @@ func F_DecrTupleDescRefCount(m *base.Module, l0 int32)
 func F_TupleDescInitEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_BuildDescFromLists github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_BuildDescFromLists
 func F_BuildDescFromLists(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_GinDataLeafPageGetItems github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GinDataLeafPageGetItems
+func F_GinDataLeafPageGetItems(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_disassembleLeaf github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_disassembleLeaf
 func F_disassembleLeaf(m *base.Module, l0 int32) int32
 //go:linkname F_computeLeafRecompressWALData github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_computeLeafRecompressWALData
@@ -3940,6 +3946,16 @@ func F_string2ean(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_ean2isn(m *base.Module, l0 int64, l1 int32, l2 int32)
 //go:linkname F_build_pgstattuple_type github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_build_pgstattuple_type
 func F_build_pgstattuple_type(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_index_checkable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_index_checkable
+func F_index_checkable(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_PageGetItemIdCareful_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_PageGetItemIdCareful_1
+func F_PageGetItemIdCareful_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_palloc_btree_page github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_palloc_btree_page
+func F_palloc_btree_page(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_bt_leftmost_ignoring_half_dead github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_bt_leftmost_ignoring_half_dead
+func F_bt_leftmost_ignoring_half_dead(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_PageGetItemIdCareful_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_PageGetItemIdCareful_2
+func F_PageGetItemIdCareful_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

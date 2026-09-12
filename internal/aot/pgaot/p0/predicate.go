@@ -250,7 +250,7 @@ func F_PredicateLockAcquire(m *base.Module, l0 int32) {
 	v12 = m.G0
 	v14 = v12 - int32(48)
 	m.G0 = v14
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[135]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[132]))
 	v20 = F_hash_search(m, v17, l0, v2, v2)
 	mBase = m.M
 	v21 = m.ExcPending
@@ -304,7 +304,7 @@ L8:
 	}
 L9:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[638]))
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[636]))
 	v67 = F_get_hash_value(m, v66, l0)
 	mBase = m.M
 	v68 = m.ExcPending
@@ -323,7 +323,7 @@ L11:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = v48
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = v46
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v47
-	v53 = *(*int32)(unsafe.Add(mBase, _consts[135]))
+	v53 = *(*int32)(unsafe.Add(mBase, _consts[132]))
 	v58 = F_hash_search(m, v53, v14+int32(32), v48, v48)
 	mBase = m.M
 	v59 = m.ExcPending
@@ -372,7 +372,7 @@ L18:
 	goto L1
 L19:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, _consts[135]))
+	v70 = *(*int32)(unsafe.Add(mBase, _consts[132]))
 	v74 = F_hash_search_with_hash_value(m, v70, l0, v67, int32(1), v14+int32(14))
 	mBase = m.M
 	v75 = m.ExcPending
@@ -400,7 +400,7 @@ L22:
 	goto L23
 L23:
 	;
-	v84 = *(*int32)(unsafe.Add(mBase, _consts[133]))
+	v84 = *(*int32)(unsafe.Add(mBase, _consts[130]))
 	F_CreatePredicateLock(m, l0, v67, v84)
 	mBase = m.M
 	v86 = m.ExcPending
@@ -443,7 +443,7 @@ L28:
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+40)) = v112
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+36)) = v113
 	*(*int32)(unsafe.Add(mBase, uint32(v14)+44)) = int32(0)
-	v119 = *(*int32)(unsafe.Add(mBase, _consts[135]))
+	v119 = *(*int32)(unsafe.Add(mBase, _consts[132]))
 	v125 = F_hash_search(m, v119, v14+int32(32), int32(1), v14+int32(15))
 	mBase = m.M
 	v126 = m.ExcPending
@@ -525,7 +525,7 @@ L39:
 	}
 L40:
 	;
-	v146 = *(*int32)(unsafe.Add(mBase, _consts[639]))
+	v146 = *(*int32)(unsafe.Add(mBase, _consts[637]))
 	if int32(0) <= v146 {
 		v158 = v146
 		goto L38
@@ -537,12 +537,12 @@ L41:
 	goto L42
 L42:
 	;
-	v157 = *(*int32)(unsafe.Add(mBase, _consts[640]))
+	v157 = *(*int32)(unsafe.Add(mBase, _consts[638]))
 	v158 = v157
 	goto L38
 L43:
 	;
-	v150 = *(*int32)(unsafe.Add(mBase, _consts[134]))
+	v150 = *(*int32)(unsafe.Add(mBase, _consts[131]))
 	v153 = base.I32_div_s(v150, int32(0)-v146)
 	v158 = v153 - int32(1)
 	goto L38
@@ -592,7 +592,7 @@ L49:
 	}
 L50:
 	;
-	v180 = *(*int32)(unsafe.Add(mBase, _consts[133]))
+	v180 = *(*int32)(unsafe.Add(mBase, _consts[130]))
 	v185 = *(*int32)(unsafe.Add(mBase, _consts[37]))
 	v186 = *(*int32)(unsafe.Add(mBase, uint32(v185)+72))
 	if v186 != 0 {
@@ -756,7 +756,7 @@ L74:
 	goto L72
 L75:
 	;
-	v243 = *(*int32)(unsafe.Add(mBase, _consts[638]))
+	v243 = *(*int32)(unsafe.Add(mBase, _consts[636]))
 	v246 = F_get_hash_value(m, v243, v14+int32(32))
 	mBase = m.M
 	v247 = m.ExcPending
@@ -791,7 +791,7 @@ L77:
 	*(*int32)(unsafe.Add(mBase, uint32(v267)+4)) = v270
 	v272 = *(*int32)(unsafe.Add(mBase, uint32(v266)))
 	*(*int32)(unsafe.Add(mBase, uint32(v270))) = v272
-	v275 = *(*int32)(unsafe.Add(mBase, _consts[641]))
+	v275 = *(*int32)(unsafe.Add(mBase, _consts[639]))
 	v278 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
 	v284 = F_hash_search_with_hash_value(m, v275, v14+int32(16), v246^v278<<(uint(v268)%32), int32(2), int32(0))
 	mBase = m.M
@@ -826,7 +826,7 @@ L81:
 	}
 L82:
 	;
-	v295 = *(*int32)(unsafe.Add(mBase, _consts[638]))
+	v295 = *(*int32)(unsafe.Add(mBase, _consts[636]))
 	v298 = F_hash_search_with_hash_value(m, v295, v218, v246, int32(2), int32(0))
 	mBase = m.M
 	v299 = m.ExcPending
@@ -956,7 +956,7 @@ func F_PredicateLockRelation(m *base.Module, l0 int32, l1 int32) {
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[133]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[130]))
 	if v10 == int32(0) {
 		m.G0 = v7 + int32(16)
 		return

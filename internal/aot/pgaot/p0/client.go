@@ -15,9 +15,9 @@ func F_ClientCheckTimeoutHandler(m *base.Module) {
 	var v10 int32
 	_ = v10
 	v2 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[950])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[948])) = v2
 	*(*int32)(unsafe.Add(mBase, _consts[1])) = v2
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	F_SetLatch(m, v8)
 	mBase = m.M
 	v10 = m.ExcPending

@@ -203,13 +203,13 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(384272), int32(0))
+							F_errmsg(m, int32(390929), int32(0))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(510641), int32(2697), int32(315686))
+								F_errfinish(m, int32(518740), int32(2697), int32(321454))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -305,13 +305,13 @@ func F_timetz_mi_interval(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(384272), int32(0))
+						F_errmsg(m, int32(390929), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(510641), int32(2697), int32(315686))
+							F_errfinish(m, int32(518740), int32(2697), int32(321454))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -397,7 +397,7 @@ func F_timetz_out(m *base.Module, l0 int32) int32 {
 	v29 = v7 + int32(132)
 	v34 = int32(1)
 	v35 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[776]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[774]))
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
 	v39 = int32(2)
 	v40 = F_pg_ultostr_zeropad(m, v7, v38, v39)
@@ -514,13 +514,13 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 							if v76 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(410853), int32(0))
+								F_errmsg(m, int32(417841), int32(0))
 								mBase = m.M
 								v80 = m.ExcPending
 								if v80 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(510641), int32(2425), int32(37024))
+									F_errfinish(m, int32(518740), int32(2425), int32(37188))
 									mBase = m.M
 									v85 = m.ExcPending
 									if v85 != 0 {
@@ -536,8 +536,8 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 					} else {
 						if base.Ui32(v7) <= base.Ui32(int32(6)) {
 							v30 = v7 << (uint(int32(3)) % 32)
-							v33 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_consts[773])))
-							v36 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_consts[774])))
+							v33 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_consts[771])))
+							v36 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_consts[772])))
 							v37 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
 							if int64(0) <= v37 {
 								v40 = v36 + v37
@@ -567,13 +567,13 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 					if v60 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(411298), int32(0))
+						F_errmsg(m, int32(418286), int32(0))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(510641), int32(2417), int32(37024))
+							F_errfinish(m, int32(518740), int32(2417), int32(37188))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {
@@ -635,8 +635,8 @@ func F_timetz_scale(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v16
 		if base.Ui32(v7) <= base.Ui32(int32(6)) {
 			v21 = v7 << (uint(int32(3)) % 32)
-			v24 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_consts[773])))
-			v27 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_consts[774])))
+			v24 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_consts[771])))
+			v27 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_consts[772])))
 			if int64(0) <= v14 {
 				v30 = v14 + v27
 				v31 = base.I64_rem_s(v30, v24)

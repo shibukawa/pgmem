@@ -134,13 +134,13 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 							if v84 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(156210), int32(0))
+								F_errmsg(m, int32(160770), int32(0))
 								mBase = m.M
 								v90 = m.ExcPending
 								if v90 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(507357), int32(38), int32(152567))
+									F_errfinish(m, int32(515420), int32(38), int32(157018))
 									mBase = m.M
 									v97 = m.ExcPending
 									if v97 != 0 {
@@ -175,13 +175,13 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 										if v104 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(156210), int32(0))
+											F_errmsg(m, int32(160770), int32(0))
 											mBase = m.M
 											v110 = m.ExcPending
 											if v110 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(507357), int32(39), int32(152567))
+												F_errfinish(m, int32(515420), int32(39), int32(157018))
 												mBase = m.M
 												v117 = m.ExcPending
 												if v117 != 0 {
@@ -373,13 +373,13 @@ func F__int_contains(m *base.Module, l0 int32) int32 {
 								if v104 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(156210), int32(0))
+									F_errmsg(m, int32(160770), int32(0))
 									mBase = m.M
 									v110 = m.ExcPending
 									if v110 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(507357), int32(39), int32(152567))
+										F_errfinish(m, int32(515420), int32(39), int32(157018))
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
@@ -694,13 +694,13 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(156210), int32(0))
+								F_errmsg(m, int32(160770), int32(0))
 								mBase = m.M
 								v86 = m.ExcPending
 								if v86 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(507357), int32(131), int32(277598))
+									F_errfinish(m, int32(515420), int32(131), int32(282910))
 									mBase = m.M
 									v93 = m.ExcPending
 									if v93 != 0 {
@@ -735,13 +735,13 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 										if v100 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(156210), int32(0))
+											F_errmsg(m, int32(160770), int32(0))
 											mBase = m.M
 											v106 = m.ExcPending
 											if v106 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(507357), int32(132), int32(277598))
+												F_errfinish(m, int32(515420), int32(132), int32(282910))
 												mBase = m.M
 												v113 = m.ExcPending
 												if v113 != 0 {
@@ -905,13 +905,13 @@ func F__int_union(m *base.Module, l0 int32) int32 {
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(156210), int32(0))
+									F_errmsg(m, int32(160770), int32(0))
 									mBase = m.M
 									v106 = m.ExcPending
 									if v106 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(507357), int32(132), int32(277598))
+										F_errfinish(m, int32(515420), int32(132), int32(282910))
 										mBase = m.M
 										v113 = m.ExcPending
 										if v113 != 0 {

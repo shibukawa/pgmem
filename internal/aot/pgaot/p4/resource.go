@@ -272,7 +272,7 @@ L28:
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v122
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v121
-	F_errmsg_internal(m, int32(186170), v13+int32(16))
+	F_errmsg_internal(m, int32(190959), v13+int32(16))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -282,7 +282,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(506873), int32(622), int32(110211))
+	F_errfinish(m, int32(514936), int32(622), int32(114469))
 	mBase = m.M
 	v135 = m.ExcPending
 	if v135 != 0 {
@@ -299,7 +299,7 @@ L31:
 	;
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = v151
-	F_errmsg_internal(m, int32(454499), v13)
+	F_errmsg_internal(m, int32(461820), v13)
 	mBase = m.M
 	v155 = m.ExcPending
 	if v155 != 0 {
@@ -309,7 +309,7 @@ L31:
 	}
 L32:
 	;
-	F_errfinish(m, int32(506873), int32(572), int32(110211))
+	F_errfinish(m, int32(514936), int32(572), int32(114469))
 	mBase = m.M
 	v160 = m.ExcPending
 	if v160 != 0 {
@@ -357,13 +357,13 @@ func F_ResourceOwnerRemember(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		if v12 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(309980), int32(0))
+			F_errmsg_internal(m, int32(315582), int32(0))
 			mBase = m.M
 			v16 = m.ExcPending
 			if v16 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(506873), int32(542), int32(233307))
+				F_errfinish(m, int32(514936), int32(542), int32(238214))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {

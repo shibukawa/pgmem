@@ -19,7 +19,7 @@ func F_ResetTempTableNamespace(m *base.Module) {
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[125]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[122]))
 	if v8 != 0 {
 		*(*int32)(unsafe.Add(mBase, uint32(v5)+12)) = int32(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v5)+8)) = v8
@@ -43,6 +43,6 @@ func F_isTempToastNamespace(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[124]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[121]))
 	return base.B2i32(v4 != int32(0)) & base.B2i32(l0 == v4)
 }

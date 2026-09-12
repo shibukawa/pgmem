@@ -50,7 +50,7 @@ func F_cost_bitmap_tree_node(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		*(*float64)(unsafe.Add(mBase, uint32(l1))) = v34
 		v36 = *(*float64)(unsafe.Add(mBase, uint32(l0)+104))
 		*(*float64)(unsafe.Add(mBase, uint32(l2))) = v36
-		v39 = *(*float64)(unsafe.Add(mBase, _consts[596]))
+		v39 = *(*float64)(unsafe.Add(mBase, _consts[598]))
 		v42 = *(*float64)(unsafe.Add(mBase, uint32(l0)+32))
 		v44 = *(*float64)(unsafe.Add(mBase, uint32(l1)))
 		*(*float64)(unsafe.Add(mBase, uint32(l1))) = base.F64_add(base.F64_mul(base.F64_mul(v39, float64(0.1)), v42), v44)
@@ -65,13 +65,13 @@ func F_cost_bitmap_tree_node(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		} else {
 			v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v24
-			F_errmsg_internal(m, int32(496237), v7)
+			F_errmsg_internal(m, int32(504300), v7)
 			mBase = m.M
 			v28 = m.ExcPending
 			if v28 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(510355), int32(1149), int32(420021))
+				F_errfinish(m, int32(518454), int32(1149), int32(427113))
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {

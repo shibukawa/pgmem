@@ -47,13 +47,13 @@ func F_IvfflatCheckMemoryUsage(m *base.Module, l0 int32) {
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[32]))
 				v27 = base.I32_div_s(v25, int32(1024))
 				*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v27
-				F_errmsg(m, int32(557642), v5)
+				F_errmsg(m, int32(566096), v5)
 				mBase = m.M
 				v31 = m.ExcPending
 				if v31 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(505240), int32(128), int32(414225))
+					F_errfinish(m, int32(513303), int32(128), int32(421213))
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -168,7 +168,7 @@ func F_IvfflatNormVectors(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	var v127 int32
 	_ = v127
 	v5 = int32(0)
-	v10 = int32(4536272)
+	v10 = int32(4548768)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = l3
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
@@ -382,7 +382,7 @@ L33:
 	goto L8
 L34:
 	;
-	F_errmsg_internal(m, int32(464098), int32(0))
+	F_errmsg_internal(m, int32(471551), int32(0))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -392,7 +392,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(333450), int32(326), int32(110858))
+	F_errfinish(m, int32(339714), int32(326), int32(115116))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -407,7 +407,7 @@ L36:
 	}
 L37:
 	;
-	F_errmsg_internal(m, int32(464098), int32(0))
+	F_errmsg_internal(m, int32(471551), int32(0))
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
@@ -417,7 +417,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(333450), int32(337), int32(110585))
+	F_errfinish(m, int32(339714), int32(337), int32(114843))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {
@@ -432,7 +432,7 @@ L39:
 	}
 L40:
 	;
-	F_errmsg_internal(m, int32(464098), int32(0))
+	F_errmsg_internal(m, int32(471551), int32(0))
 	mBase = m.M
 	v122 = m.ExcPending
 	if v122 != 0 {
@@ -442,7 +442,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(333450), int32(326), int32(110858))
+	F_errfinish(m, int32(339714), int32(326), int32(115116))
 	mBase = m.M
 	v127 = m.ExcPending
 	if v127 != 0 {

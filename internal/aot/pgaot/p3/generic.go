@@ -37,7 +37,7 @@ func F_GenericXLogStart(m *base.Module, l0 int32) int32 {
 		if v12 != int32(112) {
 			v25 = int32(0)
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _consts[15]))
+			v17 = *(*int32)(unsafe.Add(mBase, _consts[18]))
 			if int32(0) < v17 {
 				v25 = int32(1)
 			} else {
@@ -50,16 +50,16 @@ func F_GenericXLogStart(m *base.Module, l0 int32) int32 {
 				}
 			}
 		}
-		*(*uint8)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[89]))) = uint8(v25)
+		*(*uint8)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[92]))) = uint8(v25)
 		v27 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[90]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[91]))) = v6 - int32(-8192)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[92]))) = v6 + int32(16384)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[93]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[94]))) = v6 + int32(24576)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[95]))) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[94]))) = v6 - int32(-8192)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[95]))) = v6 + int32(16384)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[96]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[97]))) = v6
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[97]))) = v6 + int32(24576)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[98]))) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[99]))) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_consts[100]))) = v6
 		return v6
 	}
 }

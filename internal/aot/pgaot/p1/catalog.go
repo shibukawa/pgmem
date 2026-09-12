@@ -387,13 +387,13 @@ func F_CatalogCacheComputeTupleHashValue(m *base.Module, l0 int32, l1 int32, l2 
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-			F_errmsg_internal(m, int32(491960), v12)
+			F_errmsg_internal(m, int32(500023), v12)
 			mBase = m.M
 			v102 = m.ExcPending
 			if v102 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(511193), int32(428), int32(355447))
+				F_errfinish(m, int32(519292), int32(428), int32(361858))
 				mBase = m.M
 				v107 = m.ExcPending
 				if v107 != 0 {
@@ -557,7 +557,7 @@ L8:
 	}
 L9:
 	;
-	v70 = v28 + int32(780864)
+	v70 = v28 + int32(794528)
 	goto L7
 L10:
 	;
@@ -583,7 +583,7 @@ L13:
 	}
 L14:
 	;
-	v70 = v38 + int32(780864)
+	v70 = v38 + int32(794528)
 	goto L7
 L15:
 	;
@@ -599,7 +599,7 @@ L16:
 	}
 L17:
 	;
-	v70 = v48 + int32(780864)
+	v70 = v48 + int32(794528)
 	goto L7
 L18:
 	;
@@ -615,7 +615,7 @@ L19:
 	}
 L20:
 	;
-	v70 = v58 + int32(780864)
+	v70 = v58 + int32(794528)
 	goto L7
 L21:
 	;
@@ -767,7 +767,7 @@ L44:
 L45:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v13
-	F_errmsg_internal(m, int32(60420), v11)
+	F_errmsg_internal(m, int32(64193), v11)
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -777,7 +777,7 @@ L45:
 	}
 L46:
 	;
-	F_errfinish(m, int32(504741), int32(2777), int32(516685))
+	F_errfinish(m, int32(512804), int32(2777), int32(524800))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {

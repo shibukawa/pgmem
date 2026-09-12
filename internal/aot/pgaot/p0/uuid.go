@@ -377,7 +377,7 @@ func F_uuid_ns_oid(m *base.Module, l0 int32) int32 {
 	v3 = m.G0
 	v5 = v3 - int32(48)
 	m.G0 = v5
-	v7 = int32(568702)
+	v7 = int32(577156)
 	v8 = *(*int64)(unsafe.Add(mBase, _consts[1126]))
 	*(*int64)(unsafe.Add(mBase, uint32(v5)+29)) = v8
 	v10 = *(*int64)(unsafe.Add(mBase, _consts[1127]))
@@ -520,7 +520,7 @@ func F_uuid_unparse(m *base.Module, l0 int32, l1 int32) {
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = v25
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = v24
 	*(*int32)(unsafe.Add(mBase, uint32(v21))) = v23
-	v57 = F_snprintf(m, l1, int32(37), int32(30365), v21)
+	v57 = F_snprintf(m, l1, int32(37), int32(30474), v21)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {

@@ -275,7 +275,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	v33 = int32(4536272)
+	v33 = int32(4548768)
 	v34 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v29
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+8)) = int32(128)
@@ -850,8 +850,8 @@ L85:
 	goto L24
 L86:
 	;
-	v360 = *(*int32)(unsafe.Add(mBase, _consts[166]))
-	*(*int32)(unsafe.Add(mBase, _consts[189])) = v360
+	v360 = *(*int32)(unsafe.Add(mBase, _consts[163]))
+	*(*int32)(unsafe.Add(mBase, _consts[186])) = v360
 	goto L87
 L87:
 	;
@@ -865,7 +865,7 @@ L87:
 	}
 L88:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[322])) = v366
+	*(*int32)(unsafe.Add(mBase, _consts[320])) = v366
 	v371 = int32(0)
 	goto L7
 L89:

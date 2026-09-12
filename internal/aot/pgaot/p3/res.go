@@ -23,7 +23,7 @@ func F_ResOwnerPrintRelCache(m *base.Module, l0 int32) int32 {
 	m.G0 = v5
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v7 + int32(4)
-	v12 = F_psprintf(m, int32(723194), v5)
+	v12 = F_psprintf(m, int32(736803), v5)
 	mBase = m.M
 	v15 = m.ExcPending
 	if v15 != 0 {
@@ -77,17 +77,17 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 	m.G0 = v6
 	if l0 != 0 {
 		if l0 < int32(0) {
-			v11 = *(*int32)(unsafe.Add(mBase, _consts[784]))
+			v11 = *(*int32)(unsafe.Add(mBase, _consts[786]))
 			v13 = l0 ^ int32(-1)
 			v16 = v11 + v13<<(uint(int32(2))%32)
 			v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
 			v19 = v17 - int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = v19
 			if v19 == int32(0) {
-				v23 = int32(4452216)
-				v25 = *(*int32)(unsafe.Add(mBase, _consts[785]))
+				v23 = int32(4464712)
+				v25 = *(*int32)(unsafe.Add(mBase, _consts[787]))
 				v26 = int32(1)
-				*(*int32)(unsafe.Add(mBase, _consts[785])) = v25 - v26
+				*(*int32)(unsafe.Add(mBase, _consts[787])) = v25 - v26
 				v30 = *(*int32)(unsafe.Add(mBase, _consts[6]))
 				v35 = v30 + v13<<(uint(int32(6))%32) + int32(24)
 				v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
@@ -116,13 +116,13 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(0)
-			F_errmsg_internal(m, int32(498049), v6)
+			F_errmsg_internal(m, int32(506112), v6)
 			mBase = m.M
 			v63 = m.ExcPending
 			if v63 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(506700), int32(6561), int32(285734))
+				F_errfinish(m, int32(514763), int32(6561), int32(291046))
 				mBase = m.M
 				v68 = m.ExcPending
 				if v68 != 0 {
@@ -181,7 +181,7 @@ func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
 				return
 			}
 		} else {
-			F_ResourceOwnerForget(m, v9, l0, int32(4415132))
+			F_ResourceOwnerForget(m, v9, l0, int32(4427564))
 			mBase = m.M
 			v14 = m.ExcPending
 			if v14 != 0 {

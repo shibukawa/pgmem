@@ -56,7 +56,7 @@ func F_smgrGetPendingDeletes(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v63
 	v7 = *(*int32)(unsafe.Add(mBase, _consts[37]))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[228]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[225]))
 	if v10 != 0 {
 		v13 = v10
 		v14 = int32(0)
@@ -91,7 +91,7 @@ func F_smgrGetPendingDeletes(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(l1))) = v37
-				v43 = *(*int32)(unsafe.Add(mBase, _consts[228]))
+				v43 = *(*int32)(unsafe.Add(mBase, _consts[225]))
 				if v43 != 0 {
 					v45 = v37
 					v46 = v43
@@ -576,7 +576,7 @@ L23:
 	}
 L24:
 	;
-	v175 = int32(4530932)
+	v175 = int32(4543428)
 	v177 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v177 + int32(1)
 	F_smgrtruncate(m, v34, v16+int32(100), v172, v16+int32(76), v16+int32(88))
@@ -654,7 +654,7 @@ L32:
 	goto L24
 L33:
 	;
-	v189 = int32(4530932)
+	v189 = int32(4543428)
 	v191 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v191 - int32(1)
 	goto L23
@@ -691,7 +691,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = v21
-	F_errmsg_internal(m, int32(53393), v16)
+	F_errmsg_internal(m, int32(56728), v16)
 	mBase = m.M
 	v211 = m.ExcPending
 	if v211 != 0 {
@@ -701,7 +701,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(511308), int32(1094), int32(247805))
+	F_errfinish(m, int32(519407), int32(1094), int32(252712))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {

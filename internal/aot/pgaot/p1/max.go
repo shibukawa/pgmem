@@ -8,7 +8,7 @@ import (
 func F_assign_max_stack_depth(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1222])) = l0 << (uint(int32(10)) % 32)
+	*(*int32)(unsafe.Add(mBase, _consts[1221])) = l0 << (uint(int32(10)) % 32)
 	return
 }
 func F_assign_max_wal_size(m *base.Module, l0 int32, l1 int32) {
@@ -108,13 +108,13 @@ func F_max_parallel_hazard_checker(m *base.Module, l0 int32, l1 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v8
-				F_errmsg_internal(m, int32(743902), v6)
+				F_errmsg_internal(m, int32(757569), v6)
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(505538), int32(812), int32(78815))
+					F_errfinish(m, int32(513601), int32(812), int32(82694))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {

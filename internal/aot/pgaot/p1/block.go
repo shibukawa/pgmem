@@ -73,7 +73,7 @@ func F_BlockRefTableReaderGetBlocks(m *base.Module, l0 int32, l1 int32, l2 int32
 	var v129 int32
 	_ = v129
 	v10 = l0 + int32(65580)
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[795])))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[794])))
 	v16 = int32(0)
 	v17 = v11
 	goto L1
@@ -97,8 +97,8 @@ L3:
 	}
 L4:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251])))
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1252])))
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250])))
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251])))
 	v24 = int32(1)
 	v25 = v17 - v24
 	v29 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v23+v25<<(uint(v24)%32)))))
@@ -144,9 +144,9 @@ L10:
 	v47 = int32(1)
 	v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10+v39<<(uint(v47)%32)))))
 	*(*int32)(unsafe.Add(mBase, uint32(l1+v40<<(uint(int32(2))%32)))) = v25<<(uint(int32(16))%32) | v50
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251])))
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250])))
 	v55 = v53 + v47
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251]))) = v55
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250]))) = v55
 	v58 = v40 + v47
 	if base.Ui32(v29) <= base.Ui32(v55) {
 		v105 = v58
@@ -198,7 +198,7 @@ L17:
 L18:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l1+v70<<(uint(int32(2))%32)))) = v69 + v25<<(uint(int32(16))%32)
-	v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251])))
+	v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250])))
 	v93 = v70 + int32(1)
 	v94 = v92
 	goto L20
@@ -210,7 +210,7 @@ L19:
 L20:
 	;
 	v96 = v94 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251]))) = v96
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250]))) = v96
 	if base.Ui32(int32(65535)) < base.Ui32(v96) {
 		v105 = v93
 		goto L3
@@ -234,8 +234,8 @@ L23:
 	goto L2
 L24:
 	;
-	v110 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[795])))
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[796])))
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[794])))
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[795])))
 	if v110 == v111 {
 		goto L23
 	} else {
@@ -243,7 +243,7 @@ L24:
 	}
 L25:
 	;
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1252])))
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251])))
 	v117 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v113+v110<<(uint(int32(1))%32)))))
 	if v117 != 0 {
 		goto L26
@@ -266,9 +266,9 @@ L27:
 	goto L28
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1251]))) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[1250]))) = int32(0)
 	v129 = v125 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[795]))) = v129
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[794]))) = v129
 	v16 = v105
 	v17 = v129
 	goto L1
@@ -277,7 +277,7 @@ L29:
 	return int32(0)
 L30:
 	;
-	v124 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[795])))
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(l0)+uint32(_consts[794])))
 	v125 = v124
 	goto L28
 }
@@ -292,7 +292,7 @@ func F_BlockStateAsString(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_consts[142])))
 		v11 = v10
 	} else {
-		v11 = int32(556295)
+		v11 = int32(564749)
 	}
 	return v11
 }
@@ -322,12 +322,12 @@ func F_CreateBlockRefTableReader(m *base.Module, l0 int32, l1 int32) int32 {
 	if v13 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1250]))) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[794]))) = int32(433)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[798]))) = l1
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[1249]))) = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[793]))) = int32(433)
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[797]))) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(432)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[797]))) = int32(-1)
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+uint32(_consts[796]))) = int32(-1)
 		F_BlockRefTableRead(m, v10, v7+int32(12), int32(4))
 		mBase = m.M
 		v28 = m.ExcPending
@@ -339,7 +339,7 @@ func F_CreateBlockRefTableReader(m *base.Module, l0 int32, l1 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v29
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(1697321851)
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_ReportWalSummaryError(m, int32(0), int32(54242), v7)
+				F_ReportWalSummaryError(m, int32(0), int32(57577), v7)
 				mBase = m.M
 				v39 = m.ExcPending
 				if v39 != 0 {

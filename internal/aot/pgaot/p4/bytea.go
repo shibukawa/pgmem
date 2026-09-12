@@ -106,13 +106,13 @@ func F_byteaGetBit(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v53 - int64(1)
 					*(*int64)(unsafe.Add(mBase, uint32(v9))) = v17
-					F_errmsg(m, int32(439560), v9)
+					F_errmsg(m, int32(446652), v9)
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(512786), int32(3356), int32(105685))
+						F_errfinish(m, int32(520901), int32(3356), int32(109787))
 						mBase = m.M
 						v76 = m.ExcPending
 						if v76 != 0 {
@@ -192,12 +192,12 @@ func F_bytea_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 				if v55 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(411123), int32(0))
+					F_errmsg(m, int32(418111), int32(0))
 					v59 = m.ExcPending
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(512786), int32(3240), int32(26677))
+						F_errfinish(m, int32(520901), int32(3240), int32(26786))
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return int32(0)
@@ -254,12 +254,12 @@ func F_bytea_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int
 			if v39 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(449397), int32(0))
+				F_errmsg(m, int32(456677), int32(0))
 				v43 = m.ExcPending
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(512786), int32(3236), int32(26677))
+					F_errfinish(m, int32(520901), int32(3236), int32(26786))
 					v48 = m.ExcPending
 					if v48 != 0 {
 						return int32(0)
@@ -721,13 +721,13 @@ func F_bytea_string_agg_transfn(m *base.Module, l0 int32) int32 {
 					if v209 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(62819), int32(0))
+						F_errmsg_internal(m, int32(66669), int32(0))
 						mBase = m.M
 						v213 = m.ExcPending
 						if v213 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(512786), int32(5432), int32(362061))
+							F_errfinish(m, int32(520901), int32(5432), int32(368497))
 							mBase = m.M
 							v218 = m.ExcPending
 							if v218 != 0 {
@@ -740,7 +740,7 @@ func F_bytea_string_agg_transfn(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v61 = int32(4536272)
+					v61 = int32(4548768)
 					v62 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 					v64 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
 					*(*int32)(unsafe.Add(mBase, _consts[28])) = v64

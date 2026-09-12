@@ -47,7 +47,7 @@ func F_AtEOSubXact_LargeObject(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	var v52 int32
 	_ = v52
 	v4 = int32(0)
-	v10 = *(*int32)(unsafe.Add(mBase, _consts[364]))
+	v10 = *(*int32)(unsafe.Add(mBase, _consts[362]))
 	if v10 == v4 {
 		goto L1
 	} else {
@@ -58,7 +58,7 @@ L1:
 	return
 L2:
 	;
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[361]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[359]))
 	if v14 <= int32(0) {
 		goto L1
 	} else {
@@ -66,7 +66,7 @@ L2:
 	}
 L3:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[362]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[360]))
 	v22 = v14
 	v24 = v18
 	v25 = v4
@@ -133,7 +133,7 @@ L11:
 	}
 L12:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _consts[365]))
+	v40 = *(*int32)(unsafe.Add(mBase, _consts[363]))
 	F_UnregisterSnapshotFromOwner(m, v38, v40)
 	mBase = m.M
 	v42 = m.ExcPending
@@ -163,8 +163,8 @@ L16:
 	goto L14
 L17:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[361]))
-	v48 = *(*int32)(unsafe.Add(mBase, _consts[362]))
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[359]))
+	v48 = *(*int32)(unsafe.Add(mBase, _consts[360]))
 	v49 = v46
 	v50 = v48
 	goto L6

@@ -46,7 +46,7 @@ func F_EventTriggerCollectAlterOpFam(m *base.Module, l0 int32, l1 int32, l2 int3
 		if v12 != 0 {
 			return
 		} else {
-			v13 = int32(4536272)
+			v13 = int32(4548768)
 			v14 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 			*(*int32)(unsafe.Add(mBase, _consts[10])) = v16
@@ -138,7 +138,7 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 		if v12 != 0 {
 			return
 		} else {
-			v13 = int32(4536272)
+			v13 = int32(4548768)
 			v14 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 			v16 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 			*(*int32)(unsafe.Add(mBase, _consts[10])) = v16

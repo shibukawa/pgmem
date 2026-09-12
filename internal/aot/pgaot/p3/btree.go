@@ -779,11 +779,11 @@ func F_btree_redo(m *base.Module, l0 int32) {
 	v18 = m.G0
 	v20 = v18 + int32(-64)
 	m.G0 = v20
-	v22 = int32(4536272)
+	v22 = int32(4548768)
 	v23 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+96))
 	v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+48)))
-	v28 = *(*int32)(unsafe.Add(mBase, _consts[73]))
+	v28 = *(*int32)(unsafe.Add(mBase, _consts[76]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v28
 	v31 = v25 & int32(240)
 	switch int32(base.Ui32(v31)>>(uint(int32(4))%32)) - int32(1) {
@@ -851,7 +851,7 @@ L3:
 L4:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v23
-	v1189 = *(*int32)(unsafe.Add(mBase, _consts[73]))
+	v1189 = *(*int32)(unsafe.Add(mBase, _consts[76]))
 	F_MemoryContextReset(m, v1189)
 	mBase = m.M
 	v1191 = m.ExcPending
@@ -893,7 +893,7 @@ L7:
 	}
 L8:
 	;
-	v1132 = *(*int32)(unsafe.Add(mBase, _consts[33]))
+	v1132 = *(*int32)(unsafe.Add(mBase, _consts[36]))
 	if base.Ui32(v1132) < base.Ui32(int32(2)) {
 		goto L4
 	} else {
@@ -940,7 +940,7 @@ L12:
 	;
 	v532 = *(*int32)(unsafe.Add(mBase, uint32(v24)+64))
 	v533 = *(*int64)(unsafe.Add(mBase, uint32(l0)+40))
-	v535 = *(*int32)(unsafe.Add(mBase, _consts[33]))
+	v535 = *(*int32)(unsafe.Add(mBase, _consts[36]))
 	if base.Ui32(int32(2)) <= base.Ui32(v535) {
 		goto L133
 	} else {
@@ -1433,7 +1433,7 @@ L82:
 	}
 L83:
 	;
-	F_errmsg_internal(m, int32(76883), int32(0))
+	F_errmsg_internal(m, int32(80762), int32(0))
 	mBase = m.M
 	v297 = m.ExcPending
 	if v297 != 0 {
@@ -1443,7 +1443,7 @@ L83:
 	}
 L84:
 	;
-	F_errfinish(m, int32(510021), int32(526), int32(238834))
+	F_errfinish(m, int32(518120), int32(526), int32(243741))
 	mBase = m.M
 	v302 = m.ExcPending
 	if v302 != 0 {
@@ -2836,7 +2836,7 @@ L285:
 L286:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v20)+32)) = v31
-	F_errmsg_internal(m, int32(53706), v18+int32(-32))
+	F_errmsg_internal(m, int32(57041), v18+int32(-32))
 	mBase = m.M
 	v1158 = m.ExcPending
 	if v1158 != 0 {
@@ -2846,7 +2846,7 @@ L286:
 	}
 L287:
 	;
-	F_errfinish(m, int32(510021), int32(1070), int32(247928))
+	F_errfinish(m, int32(518120), int32(1070), int32(252835))
 	mBase = m.M
 	v1163 = m.ExcPending
 	if v1163 != 0 {
@@ -2868,7 +2868,7 @@ L290:
 	return
 L291:
 	;
-	F_errmsg_internal(m, int32(21242), int32(0))
+	F_errmsg_internal(m, int32(21270), int32(0))
 	mBase = m.M
 	v1202 = m.ExcPending
 	if v1202 != 0 {
@@ -2878,7 +2878,7 @@ L291:
 	}
 L292:
 	;
-	F_errfinish(m, int32(510021), int32(508), int32(238834))
+	F_errfinish(m, int32(518120), int32(508), int32(243741))
 	mBase = m.M
 	v1207 = m.ExcPending
 	if v1207 != 0 {
@@ -2893,7 +2893,7 @@ L293:
 	}
 L294:
 	;
-	F_errmsg_internal(m, int32(417064), int32(0))
+	F_errmsg_internal(m, int32(424087), int32(0))
 	mBase = m.M
 	v1215 = m.ExcPending
 	if v1215 != 0 {
@@ -2903,7 +2903,7 @@ L294:
 	}
 L295:
 	;
-	F_errfinish(m, int32(510021), int32(793), int32(474284))
+	F_errfinish(m, int32(518120), int32(793), int32(481737))
 	mBase = m.M
 	v1220 = m.ExcPending
 	if v1220 != 0 {
@@ -2918,7 +2918,7 @@ L296:
 	}
 L297:
 	;
-	F_errmsg_internal(m, int32(417064), int32(0))
+	F_errmsg_internal(m, int32(424087), int32(0))
 	mBase = m.M
 	v1228 = m.ExcPending
 	if v1228 != 0 {
@@ -2928,7 +2928,7 @@ L297:
 	}
 L298:
 	;
-	F_errfinish(m, int32(510021), int32(928), int32(415872))
+	F_errfinish(m, int32(518120), int32(928), int32(422877))
 	mBase = m.M
 	v1233 = m.ExcPending
 	if v1233 != 0 {
@@ -3389,7 +3389,7 @@ L40:
 	}
 L41:
 	;
-	F_errmsg_internal(m, int32(297071), int32(0))
+	F_errmsg_internal(m, int32(302456), int32(0))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {
@@ -3399,7 +3399,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(510021), int32(191), int32(83456))
+	F_errfinish(m, int32(518120), int32(191), int32(87335))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -3512,7 +3512,7 @@ L60:
 	goto L59
 L61:
 	;
-	F_errmsg_internal(m, int32(297034), int32(0))
+	F_errmsg_internal(m, int32(302419), int32(0))
 	mBase = m.M
 	v210 = m.ExcPending
 	if v210 != 0 {
@@ -3522,7 +3522,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(510021), int32(230), int32(83456))
+	F_errfinish(m, int32(518120), int32(230), int32(87335))
 	mBase = m.M
 	v215 = m.ExcPending
 	if v215 != 0 {
@@ -3546,13 +3546,13 @@ func F_btree_xlog_startup(m *base.Module) {
 	var v9 int32
 	_ = v9
 	v3 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v8 = F_AllocSetContextCreateInternal(m, v3, int32(60607), int32(0), int32(8192), int32(8388608))
+	v8 = F_AllocSetContextCreateInternal(m, v3, int32(64380), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[73])) = v8
+		*(*int32)(unsafe.Add(mBase, _consts[76])) = v8
 		return
 	}
 }

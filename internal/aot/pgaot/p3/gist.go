@@ -853,7 +853,7 @@ L22:
 	goto L23
 L23:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, _consts[15]))
+	v76 = *(*int32)(unsafe.Add(mBase, _consts[18]))
 	if v76 <= int32(0) {
 		v173 = v29
 		goto L1
@@ -929,7 +929,7 @@ L34:
 	v89 = m.G0
 	v91 = v89 - int32(32)
 	m.G0 = v91
-	v94 = *(*int32)(unsafe.Add(mBase, _consts[15]))
+	v94 = *(*int32)(unsafe.Add(mBase, _consts[18]))
 	if v94 < int32(2) {
 		v115 = v3
 		goto L35
@@ -1718,7 +1718,7 @@ L19:
 	goto L18
 L20:
 	;
-	v104 = int32(4536272)
+	v104 = int32(4548768)
 	v105 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v107 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v107
@@ -1785,9 +1785,9 @@ L27:
 L28:
 	;
 	v140 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[18]))) = v140
+	*(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[21]))) = v140
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+52)) = v140
-	v144 = *(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[19])))
+	v144 = *(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[22])))
 	if v144 != 0 {
 		goto L29
 	} else {
@@ -1867,7 +1867,7 @@ L38:
 	}
 L39:
 	;
-	v212 = int32(4536272)
+	v212 = int32(4548768)
 	v213 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v215 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
 	v216 = *(*int32)(unsafe.Add(mBase, uint32(v215)+4))
@@ -2218,7 +2218,7 @@ L83:
 	goto L40
 L84:
 	;
-	F_errmsg_internal(m, int32(416902), int32(0))
+	F_errmsg_internal(m, int32(423925), int32(0))
 	mBase = m.M
 	v455 = m.ExcPending
 	if v455 != 0 {
@@ -2228,7 +2228,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(504347), int32(152), int32(78762))
+	F_errfinish(m, int32(512410), int32(152), int32(82641))
 	mBase = m.M
 	v460 = m.ExcPending
 	if v460 != 0 {
@@ -2315,7 +2315,7 @@ L95:
 	goto L38
 L96:
 	;
-	v605 = int32(4536272)
+	v605 = int32(4548768)
 	v606 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v608 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v608
@@ -2339,14 +2339,14 @@ L97:
 	}
 L98:
 	;
-	v568 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[18]))))
+	v568 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[21]))))
 	v569 = int32(4)
 	v571 = v164 + v568<<(uint(v569)%32)
 	v572 = *(*int32)(unsafe.Add(mBase, uint32(v221)))
 	*(*int32)(unsafe.Add(mBase, uint32(v571))) = v572
 	v574 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v221)+4)))
 	*(*uint16)(unsafe.Add(mBase, uint32(v571)+4)) = uint16(v574)
-	v576 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[18]))))
+	v576 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[21]))))
 	v579 = v164 + v576<<(uint(v569)%32)
 	*(*uint16)(unsafe.Add(mBase, uint32(v579)+12)) = uint16(v184)
 	*(*uint8)(unsafe.Add(mBase, uint32(v579)+6)) = uint8(v519)
@@ -2358,9 +2358,9 @@ L98:
 	}
 L99:
 	;
-	v585 = int32(4536272)
+	v585 = int32(4548768)
 	v586 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v588 = *(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[19])))
+	v588 = *(*int32)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[22])))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v588
 	v590 = F_gistFetchTuple(m, v34, v35, v221)
 	mBase = m.M
@@ -2377,11 +2377,11 @@ L100:
 L101:
 	;
 	v603 = v599 + int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[18]))) = uint16(v603)
+	*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[21]))) = uint16(v603)
 	goto L38
 L102:
 	;
-	v592 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[18]))))
+	v592 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v33)+uint32(_consts[21]))))
 	*(*int32)(unsafe.Add(mBase, uint32(v164+v592<<(uint(int32(4))%32))+8)) = v590
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v586
 	v599 = v592
@@ -2520,7 +2520,7 @@ func F_gistSortedBuildCallback(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	v9 = m.G0
 	v11 = v9 - int32(128)
 	m.G0 = v11
-	v13 = int32(4536272)
+	v13 = int32(4548768)
 	v14 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l5)+8))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
@@ -2649,7 +2649,7 @@ func F_gist_translate_cmptype_common(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = v3 - int32(1)
 	if base.Ui32(v5) <= base.Ui32(int32(7)) {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(v5<<(uint(int32(2))%32))+uint32(_consts[25])))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(v5<<(uint(int32(2))%32))+uint32(_consts[28])))
 		v13 = v12
 	} else {
 		v13 = int32(0)
@@ -2663,7 +2663,7 @@ func F_gist_xlog_cleanup(m *base.Module) {
 	_ = v2
 	var v4 int32
 	_ = v4
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[29]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[32]))
 	F_MemoryContextDelete(m, v2)
 	mBase = m.M
 	v4 = m.ExcPending

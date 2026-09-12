@@ -16,7 +16,7 @@ func F_on_dsm_detach(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v9
 	var v12 int32
 	_ = v12
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[87]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[84]))
 	v8 = F_MemoryContextAlloc(m, v6, int32(12))
 	mBase = m.M
 	v9 = m.ExcPending

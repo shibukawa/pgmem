@@ -961,13 +961,13 @@ func F_gist_box_consistent(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v11
-						F_errmsg_internal(m, int32(492630), v9)
+						F_errmsg_internal(m, int32(500693), v9)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(512123), int32(939), int32(94348))
+							F_errfinish(m, int32(520238), int32(939), int32(98316))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -1393,13 +1393,13 @@ func F_gist_circle_distance(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-			F_errmsg_internal(m, int32(492630), v7)
+			F_errmsg_internal(m, int32(500693), v7)
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(512123), int32(1492), int32(426179))
+				F_errfinish(m, int32(520238), int32(1492), int32(433271))
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
@@ -1447,7 +1447,7 @@ func F_gist_identify(m *base.Module, l0 int32) int32 {
 	_ = v13
 	v2 = int32(0)
 	if v2 <= base.I32_extend8_s(l0) {
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(l0)>>(uint(int32(2))%32))&int32(60))+uint32(_consts[57])))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(int32(base.Ui32(l0)>>(uint(int32(2))%32))&int32(60))+uint32(_consts[54])))
 		v13 = v12
 	} else {
 		v13 = v2
@@ -1524,13 +1524,13 @@ func F_gist_point_distance(m *base.Module, l0 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v7))) = v9
-			F_errmsg_internal(m, int32(492630), v7)
+			F_errmsg_internal(m, int32(500693), v7)
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(512123), int32(1470), int32(426243))
+				F_errfinish(m, int32(520238), int32(1470), int32(433335))
 				mBase = m.M
 				v43 = m.ExcPending
 				if v43 != 0 {

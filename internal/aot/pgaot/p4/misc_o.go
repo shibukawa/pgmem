@@ -292,7 +292,7 @@ L27:
 	}
 L28:
 	;
-	v101 = F___memcpy(m, int32(4703660), v90, int32(140))
+	v101 = F___memcpy(m, int32(4716156), v90, int32(140))
 	mBase = m.M
 	goto L30
 L29:
@@ -358,7 +358,7 @@ L41:
 	}
 L42:
 	;
-	v150 = F___memcpy(m, int32(4703660), v139, int32(140))
+	v150 = F___memcpy(m, int32(4716156), v139, int32(140))
 	mBase = m.M
 	goto L44
 L43:
@@ -393,7 +393,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v162)+4)) = v168
-	v170 = int32(4452296)
+	v170 = int32(4464792)
 	v172 = *(*int32)(unsafe.Add(mBase, _consts[952]))
 	*(*int32)(unsafe.Add(mBase, _consts[952])) = v172 + int32(1)
 	v176 = *(*int32)(unsafe.Add(mBase, uint32(v162)+8))
@@ -449,7 +449,7 @@ L54:
 	}
 L55:
 	;
-	F_errfinish(m, int32(512015), int32(2793), int32(298250))
+	F_errfinish(m, int32(520130), int32(2793), int32(303703))
 	mBase = m.M
 	v195 = m.ExcPending
 	if v195 != 0 {
@@ -496,7 +496,7 @@ L62:
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
 	v222 = *(*int32)(unsafe.Add(mBase, _consts[955]))
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v222
-	F_errmsg(m, int32(736649), v8)
+	F_errmsg(m, int32(750316), v8)
 	mBase = m.M
 	v226 = m.ExcPending
 	if v226 != 0 {
@@ -506,7 +506,7 @@ L62:
 	}
 L63:
 	;
-	F_errfinish(m, int32(512015), int32(2765), int32(298250))
+	F_errfinish(m, int32(520130), int32(2765), int32(303703))
 	mBase = m.M
 	v231 = m.ExcPending
 	if v231 != 0 {
@@ -580,22 +580,22 @@ func F_OpenTemporaryFileInTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 		v13 = int32(0)
 	}
 	if v13 == int32(0) {
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = int32(240345)
-		v24 = F_pg_snprintf(m, v6+int32(1088), int32(1024), int32(181179), v6+int32(48))
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+48)) = int32(245252)
+		v24 = F_pg_snprintf(m, v6+int32(1088), int32(1024), int32(185968), v6+int32(48))
 		mBase = m.M
 		v27 = m.ExcPending
 		if v27 != 0 {
 			return int32(0)
 		} else {
-			v43 = int32(4452316)
+			v43 = int32(4464812)
 			v45 = *(*int32)(unsafe.Add(mBase, _consts[949]))
 			*(*int32)(unsafe.Add(mBase, _consts[949])) = v45 + int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(240345)
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(245252)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[712]))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = v52
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = v45
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v6 + int32(1088)
-			v64 = F_pg_snprintf(m, v6-int32(-64), int32(1024), int32(441648), v6+int32(16))
+			v64 = F_pg_snprintf(m, v6-int32(-64), int32(1024), int32(448740), v6+int32(16))
 			mBase = m.M
 			v65 = m.ExcPending
 			if v65 != 0 {
@@ -640,13 +640,13 @@ func F_OpenTemporaryFileInTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v6))) = v6 - int32(-64)
-										F_errmsg_internal(m, int32(303761), v6)
+										F_errmsg_internal(m, int32(309214), v6)
 										mBase = m.M
 										v100 = m.ExcPending
 										if v100 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(512015), int32(1850), int32(428825))
+											F_errfinish(m, int32(520130), int32(1850), int32(435917))
 											mBase = m.M
 											v105 = m.ExcPending
 											if v105 != 0 {
@@ -666,25 +666,25 @@ func F_OpenTemporaryFileInTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		}
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(240345)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = int32(575000)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(245252)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+40)) = int32(583454)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = int32(499000)
-		v41 = F_pg_snprintf(m, v6+int32(1088), int32(1024), int32(181075), v6+int32(32))
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = int32(507063)
+		v41 = F_pg_snprintf(m, v6+int32(1088), int32(1024), int32(185864), v6+int32(32))
 		mBase = m.M
 		v42 = m.ExcPending
 		if v42 != 0 {
 			return int32(0)
 		} else {
-			v43 = int32(4452316)
+			v43 = int32(4464812)
 			v45 = *(*int32)(unsafe.Add(mBase, _consts[949]))
 			*(*int32)(unsafe.Add(mBase, _consts[949])) = v45 + int32(1)
-			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(240345)
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(245252)
 			v52 = *(*int32)(unsafe.Add(mBase, _consts[712]))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+24)) = v52
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+28)) = v45
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v6 + int32(1088)
-			v64 = F_pg_snprintf(m, v6-int32(-64), int32(1024), int32(441648), v6+int32(16))
+			v64 = F_pg_snprintf(m, v6-int32(-64), int32(1024), int32(448740), v6+int32(16))
 			mBase = m.M
 			v65 = m.ExcPending
 			if v65 != 0 {
@@ -729,13 +729,13 @@ func F_OpenTemporaryFileInTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v6))) = v6 - int32(-64)
-										F_errmsg_internal(m, int32(303761), v6)
+										F_errmsg_internal(m, int32(309214), v6)
 										mBase = m.M
 										v100 = m.ExcPending
 										if v100 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(512015), int32(1850), int32(428825))
+											F_errfinish(m, int32(520130), int32(1850), int32(435917))
 											mBase = m.M
 											v105 = m.ExcPending
 											if v105 != 0 {
@@ -868,7 +868,7 @@ func F_oauth_init(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v5 = m.G0
 	v7 = v5 + int32(-64)
 	m.G0 = v7
-	v9 = int32(538295)
+	v9 = int32(546448)
 	v12 = int32(*(*uint8)(unsafe.Add(mBase, _consts[513])))
 	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v13 == int32(0) {
@@ -1000,7 +1000,7 @@ L16:
 	*(*int32)(unsafe.Add(mBase, uint32(v38)+12)) = v49
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+380))
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v51)+412))
-	v56 = F_load_external_function(m, v52, int32(102200), v43, v43)
+	v56 = F_load_external_function(m, v52, int32(106225), v43, v43)
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -1115,7 +1115,7 @@ L29:
 	}
 L30:
 	;
-	F_errmsg(m, int32(293557), int32(0))
+	F_errmsg(m, int32(298880), int32(0))
 	mBase = m.M
 	v108 = m.ExcPending
 	if v108 != 0 {
@@ -1125,7 +1125,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(509767), int32(109), int32(102178))
+	F_errfinish(m, int32(517866), int32(109), int32(106203))
 	mBase = m.M
 	v113 = m.ExcPending
 	if v113 != 0 {
@@ -1140,10 +1140,10 @@ L32:
 	}
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(102200)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(106225)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v52
-	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(214078)
-	F_errmsg(m, int32(189685), v7)
+	*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(218928)
+	F_errmsg(m, int32(194474), v7)
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -1153,7 +1153,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(509767), int32(761), int32(17631))
+	F_errfinish(m, int32(517866), int32(761), int32(17631))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -1169,8 +1169,8 @@ L35:
 L36:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+52)) = v52
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(214078)
-	F_errmsg(m, int32(331431), v5+int32(-16))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(218928)
+	F_errmsg(m, int32(337604), v5+int32(-16))
 	mBase = m.M
 	v142 = m.ExcPending
 	if v142 != 0 {
@@ -1184,7 +1184,7 @@ L37:
 	v145 = *(*int32)(unsafe.Add(mBase, uint32(v144)))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(539296288)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = v145
-	F_errdetail(m, int32(670310), v5+int32(-32))
+	F_errdetail(m, int32(679531), v5+int32(-32))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -1194,7 +1194,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(509767), int32(776), int32(17631))
+	F_errfinish(m, int32(517866), int32(776), int32(17631))
 	mBase = m.M
 	v158 = m.ExcPending
 	if v158 != 0 {
@@ -1209,10 +1209,10 @@ L39:
 	}
 L40:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(516206)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(524321)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v52
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(214078)
-	F_errmsg(m, int32(325605), v5+int32(-48))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(218928)
+	F_errmsg(m, int32(331778), v5+int32(-48))
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -1222,7 +1222,7 @@ L40:
 	}
 L41:
 	;
-	F_errfinish(m, int32(509767), int32(785), int32(17631))
+	F_errfinish(m, int32(517866), int32(785), int32(17631))
 	mBase = m.M
 	v177 = m.ExcPending
 	if v177 != 0 {

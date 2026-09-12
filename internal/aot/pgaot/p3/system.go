@@ -24,7 +24,7 @@ func F_IsSystemClass(m *base.Module, l0 int32, l1 int32) int32 {
 		if v7 == int32(99) {
 			v18 = v4
 		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+			v12 = *(*int32)(unsafe.Add(mBase, _consts[138]))
 			v18 = base.B2i32(v12 != int32(0)) & base.B2i32(v7 == v12)
 		}
 	}

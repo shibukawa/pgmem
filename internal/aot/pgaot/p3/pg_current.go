@@ -16,7 +16,7 @@ func F_pg_current_xact_id_if_assigned(m *base.Module, l0 int32) int32 {
 	_ = v12
 	var v15 int32
 	_ = v15
-	v4 = *(*int64)(unsafe.Add(mBase, _consts[80]))
+	v4 = *(*int64)(unsafe.Add(mBase, _consts[83]))
 	if base.I32_wrap_i64(v4) == int32(0) {
 		v8 = int32(1)
 		*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v8)

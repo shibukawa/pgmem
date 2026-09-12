@@ -575,13 +575,13 @@ func F_TupleDescInitEntry(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = l3
-				F_errmsg_internal(m, int32(51355), v14)
+				F_errmsg_internal(m, int32(54588), v14)
 				mBase = m.M
 				v106 = m.ExcPending
 				if v106 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(512068), int32(896), int32(12600))
+					F_errfinish(m, int32(520183), int32(896), int32(12600))
 					mBase = m.M
 					v111 = m.ExcPending
 					if v111 != 0 {
@@ -1218,7 +1218,7 @@ L5:
 	goto L6
 L6:
 	;
-	v55 = int32(4536272)
+	v55 = int32(4548768)
 	v56 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v54)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v58
@@ -1389,7 +1389,7 @@ L25:
 	v108 = *(*int32)(unsafe.Add(mBase, uint32(v62)+56))
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+12)) = v108
 	v110 = *(*int32)(unsafe.Add(mBase, uint32(v31)+44))
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[664]))
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[663]))
 	if v112 != 0 {
 		goto L26
 	} else {
@@ -1401,7 +1401,7 @@ L26:
 	goto L28
 L27:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v114 = *(*int32)(unsafe.Add(mBase, _consts[664]))
 	if v114 == int32(0) {
 		goto L29
 	} else {
@@ -1420,7 +1420,7 @@ L28:
 L29:
 	;
 	v119 = *(*int32)(unsafe.Add(mBase, _consts[299]))
-	v124 = F_AllocSetContextCreateInternal(m, v119, int32(63470), int32(0), int32(8192), int32(8388608))
+	v124 = F_AllocSetContextCreateInternal(m, v119, int32(67320), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -1436,7 +1436,7 @@ L31:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v106)+56)) = v127
 	*(*int64)(unsafe.Add(mBase, uint32(v106)+32)) = int64(343597383684)
-	v137 = F_hash_create(m, int32(407995), int32(64), v104+int32(-48), int32(1064))
+	v137 = F_hash_create(m, int32(414983), int32(64), v104+int32(-48), int32(1064))
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -1446,12 +1446,12 @@ L31:
 	}
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[665])) = v124
+	*(*int32)(unsafe.Add(mBase, _consts[664])) = v124
 	v127 = v124
 	goto L31
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[664])) = v137
+	*(*int32)(unsafe.Add(mBase, _consts[663])) = v137
 	F_CacheRegisterRelcacheCallback(m, int32(1016))
 	mBase = m.M
 	v142 = m.ExcPending
@@ -1462,7 +1462,7 @@ L33:
 	}
 L34:
 	;
-	v144 = *(*int32)(unsafe.Add(mBase, _consts[664]))
+	v144 = *(*int32)(unsafe.Add(mBase, _consts[663]))
 	v146 = v144
 	goto L28
 L35:
@@ -1495,9 +1495,9 @@ L37:
 	}
 L38:
 	;
-	v177 = int32(4536272)
+	v177 = int32(4548768)
 	v178 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v181 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v181 = *(*int32)(unsafe.Add(mBase, _consts[664]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v181
 	v184 = v152 + int32(52)
 	v185 = *(*int32)(unsafe.Add(mBase, uint32(v152)+52))
@@ -1521,9 +1521,9 @@ L40:
 	goto L41
 L41:
 	;
-	v163 = int32(4536272)
+	v163 = int32(4548768)
 	v164 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-	v167 = *(*int32)(unsafe.Add(mBase, _consts[665]))
+	v167 = *(*int32)(unsafe.Add(mBase, _consts[664]))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v167
 	v172 = F__emscripten_memset_bulkmem(m, v152, base.I32_extend8_s(int32(0)), int32(80))
 	mBase = m.M
@@ -2090,7 +2090,7 @@ L112:
 	goto L113
 L113:
 	;
-	v586 = int32(4536272)
+	v586 = int32(4548768)
 	v587 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v589 = *(*int32)(unsafe.Add(mBase, uint32(v585)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v589
@@ -2293,7 +2293,7 @@ L137:
 	goto L138
 L138:
 	;
-	v648 = int32(4536272)
+	v648 = int32(4548768)
 	v649 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v651 = *(*int32)(unsafe.Add(mBase, uint32(v647)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v651
@@ -2381,7 +2381,7 @@ L146:
 	goto L147
 L147:
 	;
-	v683 = int32(4536272)
+	v683 = int32(4548768)
 	v684 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 	v686 = *(*int32)(unsafe.Add(mBase, uint32(v682)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[3])) = v686

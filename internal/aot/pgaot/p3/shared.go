@@ -95,9 +95,9 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 	v8 = m.G0
 	v10 = v8 - int32(32)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[109]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[112]))
 	if int32(0) <= v13 {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[111]))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[114]))
 		if v17+int32(38) <= v13 {
 			F_errstart_cold(m, int32(23), int32(0))
 			mBase = m.M
@@ -105,17 +105,17 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 			if v90 != 0 {
 				return
 			} else {
-				v92 = *(*int32)(unsafe.Add(mBase, _consts[109]))
+				v92 = *(*int32)(unsafe.Add(mBase, _consts[112]))
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v92
-				v95 = *(*int32)(unsafe.Add(mBase, _consts[111]))
+				v95 = *(*int32)(unsafe.Add(mBase, _consts[114]))
 				*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = v95 + int32(38)
-				F_errmsg_internal(m, int32(694348), v10+int32(16))
+				F_errmsg_internal(m, int32(705563), v10+int32(16))
 				mBase = m.M
 				v103 = m.ExcPending
 				if v103 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(504401), int32(282), int32(102519))
+					F_errfinish(m, int32(512464), int32(282), int32(106544))
 					mBase = m.M
 					v108 = m.ExcPending
 					if v108 != 0 {
@@ -128,8 +128,8 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				}
 			}
 		} else {
-			v22 = *(*int32)(unsafe.Add(mBase, _consts[845]))
-			v24 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+			v22 = *(*int32)(unsafe.Add(mBase, _consts[847]))
+			v24 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 			v28 = F_LWLockAcquire(m, v24+int32(768), int32(0))
 			mBase = m.M
 			v29 = m.ExcPending
@@ -137,9 +137,9 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 				return
 			} else {
 				v32 = v22 + v13<<(uint(int32(4))%32)
-				v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[846])))
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[848])))
 				if v35 != 0 {
-					v110 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+					v110 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 					F_LWLockRelease(m, v110+int32(768))
 					mBase = m.M
 					v114 = m.ExcPending
@@ -153,15 +153,15 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v35
-							v121 = *(*int32)(unsafe.Add(mBase, _consts[109]))
+							v121 = *(*int32)(unsafe.Add(mBase, _consts[112]))
 							*(*int32)(unsafe.Add(mBase, uint32(v10))) = v121
-							F_errmsg_internal(m, int32(479107), v10)
+							F_errmsg_internal(m, int32(486812), v10)
 							mBase = m.M
 							v125 = m.ExcPending
 							if v125 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(504401), int32(297), int32(102519))
+								F_errfinish(m, int32(512464), int32(297), int32(106544))
 								mBase = m.M
 								v130 = m.ExcPending
 								if v130 != 0 {
@@ -175,23 +175,23 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 						}
 					}
 				} else {
-					v37 = *(*int32)(unsafe.Add(mBase, _consts[109]))
-					v39 = *(*int32)(unsafe.Add(mBase, _consts[845]))
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[847])))
-					*(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[847]))) = v40 + int32(1)
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[848])))
+					v37 = *(*int32)(unsafe.Add(mBase, _consts[112]))
+					v39 = *(*int32)(unsafe.Add(mBase, _consts[847]))
+					v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[849])))
+					*(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[849]))) = v40 + int32(1)
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(v39)+uint32(_consts[850])))
 					*(*int32)(unsafe.Add(mBase, uint32(v44+v40<<(uint(int32(2))%32)))) = v37
-					v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[849])))
-					*(*int32)(unsafe.Add(mBase, _consts[283])) = v50
-					v53 = *(*int32)(unsafe.Add(mBase, _consts[138]))
-					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[846]))) = v53
+					v50 = *(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[851])))
+					*(*int32)(unsafe.Add(mBase, _consts[285])) = v50
+					v53 = *(*int32)(unsafe.Add(mBase, _consts[140]))
+					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[848]))) = v53
 					v55 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
-					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[850]))) = uint8(v1)
+					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[852]))) = uint8(v1)
 					v57 = int32(0)
-					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[851]))) = uint8(v57)
-					*(*uint16)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[852]))) = uint16(v57)
-					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[853]))) = v55
-					v63 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+					*(*uint8)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[853]))) = uint8(v57)
+					*(*uint16)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[854]))) = uint16(v57)
+					*(*int32)(unsafe.Add(mBase, uint32(v32)+uint32(_consts[855]))) = v55
+					v63 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 					F_LWLockRelease(m, v63+int32(768))
 					mBase = m.M
 					v67 = m.ExcPending
@@ -218,13 +218,13 @@ func F_SharedInvalBackendInit(m *base.Module, l0 int32) {
 		if v77 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(108440), int32(0))
+			F_errmsg_internal(m, int32(112542), int32(0))
 			mBase = m.M
 			v81 = m.ExcPending
 			if v81 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(504401), int32(279), int32(102519))
+				F_errfinish(m, int32(512464), int32(279), int32(106544))
 				mBase = m.M
 				v86 = m.ExcPending
 				if v86 != 0 {
@@ -287,18 +287,18 @@ func F_process_shared_preload_libraries(m *base.Module) {
 	var v14 int32
 	_ = v14
 	v2 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[1119])) = uint8(v2)
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[1120]))
-	F_load_libraries(m, v5, int32(172168), int32(0))
+	*(*uint8)(unsafe.Add(mBase, _consts[1121])) = uint8(v2)
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[1122]))
+	F_load_libraries(m, v5, int32(176929), int32(0))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
 		return
 	} else {
 		v11 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _consts[1121])) = uint8(v11)
+		*(*uint8)(unsafe.Add(mBase, _consts[1123])) = uint8(v11)
 		v14 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, _consts[1119])) = uint8(v14)
+		*(*uint8)(unsafe.Add(mBase, _consts[1121])) = uint8(v14)
 		return
 	}
 }
@@ -359,7 +359,7 @@ func F_shared_record_typmod_registry_detach(m *base.Module, l0 int32, l1 int32) 
 	_ = v17
 	var v20 int32
 	_ = v20
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[117]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[119]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
 	if v5 != 0 {
 		F_pfree(m, v5)
@@ -368,7 +368,7 @@ func F_shared_record_typmod_registry_detach(m *base.Module, l0 int32, l1 int32) 
 		if v7 != 0 {
 			return
 		} else {
-			v9 = *(*int32)(unsafe.Add(mBase, _consts[117]))
+			v9 = *(*int32)(unsafe.Add(mBase, _consts[119]))
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
 			v12 = v9
 			v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
@@ -379,7 +379,7 @@ func F_shared_record_typmod_registry_detach(m *base.Module, l0 int32, l1 int32) 
 				if v15 != 0 {
 					return
 				} else {
-					v17 = *(*int32)(unsafe.Add(mBase, _consts[117]))
+					v17 = *(*int32)(unsafe.Add(mBase, _consts[119]))
 					*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = int32(0)
 					v20 = v17
 					*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = int32(0)
@@ -401,7 +401,7 @@ func F_shared_record_typmod_registry_detach(m *base.Module, l0 int32, l1 int32) 
 			if v15 != 0 {
 				return
 			} else {
-				v17 = *(*int32)(unsafe.Add(mBase, _consts[117]))
+				v17 = *(*int32)(unsafe.Add(mBase, _consts[119]))
 				*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = int32(0)
 				v20 = v17
 				*(*int32)(unsafe.Add(mBase, uint32(v20)+8)) = int32(0)

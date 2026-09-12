@@ -73,11 +73,11 @@ func F_DecodeTimezone(m *base.Module, l0 int32, l1 int32) int32 {
 	v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	switch v14 - int32(43) {
 	case 0, 2:
-		*(*int32)(unsafe.Add(mBase, _consts[40])) = int32(0)
+		*(*int32)(unsafe.Add(mBase, _consts[43])) = int32(0)
 		v25 = F_strtol(m, l0+int32(1), v11+int32(12), int32(10))
 		mBase = m.M
 		v26 = int32(-5)
-		v28 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+		v28 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 		if v28 == int32(68) {
 			v104 = v26
 		} else {
@@ -118,10 +118,10 @@ func F_DecodeTimezone(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, _consts[40])) = int32(0)
+					*(*int32)(unsafe.Add(mBase, _consts[43])) = int32(0)
 					v44 = F_strtol(m, v31+int32(1), v11+int32(12), int32(10))
 					mBase = m.M
-					v46 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+					v46 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 					if v46 == int32(68) {
 						v104 = v26
 					} else {
@@ -161,10 +161,10 @@ func F_DecodeTimezone(m *base.Module, l0 int32, l1 int32) int32 {
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[40])) = int32(0)
+							*(*int32)(unsafe.Add(mBase, _consts[43])) = int32(0)
 							v61 = F_strtol(m, v49+int32(1), v11+int32(12), int32(10))
 							mBase = m.M
-							v63 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+							v63 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 							if v63 != int32(68) {
 								v75 = v44
 								v76 = v25
@@ -762,7 +762,7 @@ func F_DecodeTimezoneAbbrev(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	v16 = v14 - int32(272)
 	m.G0 = v16
 	v19 = l0 * int32(20)
-	v21 = v19 + int32(4519648)
+	v21 = v19 + int32(4532144)
 	goto L5
 L1:
 	;
@@ -864,11 +864,11 @@ L16:
 	goto L12
 L17:
 	;
-	v69 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[949]))))
+	v69 = int32(*(*int8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951]))))
 	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v69
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[950])))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[952])))
 	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v71
-	v73 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951])))
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[953])))
 	*(*int32)(unsafe.Add(mBase, uint32(l4))) = v73
 	goto L2
 L18:
@@ -876,7 +876,7 @@ L18:
 	goto L19
 L19:
 	;
-	v76 = *(*int32)(unsafe.Add(mBase, _consts[524]))
+	v76 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	if v76 == int32(0) {
 		goto L20
 	} else {
@@ -884,7 +884,7 @@ L19:
 	}
 L20:
 	;
-	v508 = *(*int32)(unsafe.Add(mBase, _consts[952]))
+	v508 = *(*int32)(unsafe.Add(mBase, _consts[954]))
 	if v508 == int32(0) {
 		goto L132
 	} else {
@@ -1385,7 +1385,7 @@ L94:
 L95:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v362
-	v366 = *(*int32)(unsafe.Add(mBase, _consts[524]))
+	v366 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	if v361 != 0 {
 		goto L96
 	} else {
@@ -1408,11 +1408,11 @@ L98:
 L99:
 	;
 	v488 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[949]))) = uint8(v488)
+	*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951]))) = uint8(v488)
 	v490 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[950]))) = v490
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[952]))) = v490
 	v492 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951]))) = v492
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[953]))) = v492
 	v790 = v351
 	goto L1
 L100:
@@ -1911,11 +1911,11 @@ L172:
 L173:
 	;
 	v770 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[949]))) = uint8(v770)
+	*(*uint8)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951]))) = uint8(v770)
 	v772 = *(*int32)(unsafe.Add(mBase, uint32(l3)))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[950]))) = v772
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[952]))) = v772
 	v774 = *(*int32)(unsafe.Add(mBase, uint32(l4)))
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[951]))) = v774
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+uint32(_consts[953]))) = v774
 	goto L2
 L174:
 	;
@@ -2153,11 +2153,11 @@ func F_show_timezone(m *base.Module) int32 {
 	_ = v3
 	var v5 int32
 	_ = v5
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[524]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[526]))
 	if v3 != 0 {
 		v5 = v3
 	} else {
-		v5 = int32(248897)
+		v5 = int32(253804)
 	}
 	return v5
 }

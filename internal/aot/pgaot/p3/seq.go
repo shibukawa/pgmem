@@ -271,7 +271,7 @@ L26:
 	}
 L27:
 	;
-	v57 = int32(4536272)
+	v57 = int32(4548768)
 	v58 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v60 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v60
@@ -322,7 +322,7 @@ L32:
 	}
 L33:
 	;
-	v81 = int32(4536272)
+	v81 = int32(4548768)
 	v82 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v75)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v84

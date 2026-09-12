@@ -191,7 +191,7 @@ func F_CacheInvalidateHeapTupleCommon(m *base.Module, l0 int32, l1 int32, l2 int
 	v12 = m.G0
 	v14 = v12 - int32(16)
 	m.G0 = v14
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[205]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[202]))
 	if v17 == int32(0) {
 		goto L1
 	} else {
@@ -354,7 +354,7 @@ L25:
 	goto L26
 L26:
 	;
-	v210 = *(*int32)(unsafe.Add(mBase, _consts[879]))
+	v210 = *(*int32)(unsafe.Add(mBase, _consts[877]))
 	v211 = *(*int32)(unsafe.Add(mBase, uint32(v210)))
 	if v211 != 0 {
 		goto L77
@@ -363,8 +363,8 @@ L26:
 	}
 L27:
 	;
-	v126 = *(*int32)(unsafe.Add(mBase, _consts[226]))
-	v128 = *(*int32)(unsafe.Add(mBase, _consts[878]))
+	v126 = *(*int32)(unsafe.Add(mBase, _consts[223]))
+	v128 = *(*int32)(unsafe.Add(mBase, _consts[876]))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v33)+4))
 	v130 = *(*int32)(unsafe.Add(mBase, uint32(v33)+12))
 	if v129 < v130 {
@@ -600,7 +600,7 @@ L66:
 	goto L67
 L67:
 	;
-	v168 = *(*int32)(unsafe.Add(mBase, _consts[880]))
+	v168 = *(*int32)(unsafe.Add(mBase, _consts[878]))
 	if v168 <= v130 {
 		goto L68
 	} else {
@@ -634,13 +634,13 @@ L70:
 	goto L12
 L71:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[880])) = v184
-	*(*int32)(unsafe.Add(mBase, _consts[878])) = v185
+	*(*int32)(unsafe.Add(mBase, _consts[878])) = v184
+	*(*int32)(unsafe.Add(mBase, _consts[876])) = v185
 	v190 = v185
 	goto L70
 L72:
 	;
-	v174 = *(*int32)(unsafe.Add(mBase, _consts[76]))
+	v174 = *(*int32)(unsafe.Add(mBase, _consts[73]))
 	v176 = F_MemoryContextAlloc(m, v174, int32(512))
 	mBase = m.M
 	v177 = m.ExcPending
@@ -743,7 +743,7 @@ L87:
 L88:
 	;
 	v242 = *(*int32)(unsafe.Add(mBase, uint32(v229)))
-	v245 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v245 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v248 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v216-int32(4)))))
 	if v248 != 0 {
 		goto L89
@@ -836,7 +836,7 @@ L100:
 	v307 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v308 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v307)+22)))
 	v310 = *(*int32)(unsafe.Add(mBase, uint32(v307+v308)))
-	v312 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v312 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v324 = v310
 	v325 = v312
 	goto L98
@@ -845,13 +845,13 @@ L101:
 	v301 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v302 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v301)+22)))
 	v304 = *(*int32)(unsafe.Add(mBase, uint32(v301+v302)))
-	v306 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v306 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v324 = v304
 	v325 = v306
 	goto L98
 L102:
 	;
-	v294 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v294 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v295 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v296 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v295)+22)))
 	v297 = v295 + v296
@@ -895,7 +895,7 @@ L107:
 	}
 L108:
 	;
-	v323 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v323 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v324 = v319
 	v325 = v323
 	goto L98
@@ -922,7 +922,7 @@ func F_CacheInvalidateRelcache(m *base.Module, l0 int32) {
 	_ = v12
 	var v14 int32
 	_ = v14
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+117)))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
@@ -958,16 +958,16 @@ func F_CreateCacheMemoryContext(m *base.Module) {
 	_ = v12
 	var v13 int32
 	_ = v13
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[207]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 	if v2 == int32(0) {
-		v7 = *(*int32)(unsafe.Add(mBase, _consts[87]))
-		v12 = F_AllocSetContextCreateInternal(m, v7, int32(63326), int32(0), int32(8192), int32(8388608))
+		v7 = *(*int32)(unsafe.Add(mBase, _consts[84]))
+		v12 = F_AllocSetContextCreateInternal(m, v7, int32(67176), int32(0), int32(8192), int32(8388608))
 		mBase = m.M
 		v13 = m.ExcPending
 		if v13 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, _consts[207])) = v12
+			*(*int32)(unsafe.Add(mBase, _consts[204])) = v12
 			return
 		}
 	} else {
@@ -1051,13 +1051,13 @@ func F_cache_multirange_element_properties(m *base.Module, l0 int32) {
 					} else {
 						v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v57
-						F_errmsg_internal(m, int32(51464), v6)
+						F_errmsg_internal(m, int32(54697), v6)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(511216), int32(1068), int32(246987))
+							F_errfinish(m, int32(519315), int32(1068), int32(251894))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {

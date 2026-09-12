@@ -27,14 +27,14 @@ func F_BumpFree(m *base.Module, l0 int32) {
 	if v9 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(419395)
-		F_errmsg_internal(m, int32(214094), v4)
+		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(426487)
+		F_errmsg_internal(m, int32(218944), v4)
 		mBase = m.M
 		v14 = m.ExcPending
 		if v14 != 0 {
 			return
 		} else {
-			F_errfinish(m, int32(507426), int32(619), int32(419621))
+			F_errfinish(m, int32(515489), int32(619), int32(426713))
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {

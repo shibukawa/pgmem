@@ -43,11 +43,11 @@ func F_appendStringInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[40]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[43]))
 	goto L1
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[40])) = v14
+	*(*int32)(unsafe.Add(mBase, _consts[43])) = v14
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+12)) = l2
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
@@ -468,7 +468,7 @@ func F_string_agg_deserialize(m *base.Module, l0 int32) int32 {
 			}
 		}
 		if v88 != 0 {
-			v89 = int32(4536272)
+			v89 = int32(4548768)
 			v90 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 			v92 = *(*int32)(unsafe.Add(mBase, uint32(v10)+28))
 			*(*int32)(unsafe.Add(mBase, _consts[0])) = v92
@@ -543,13 +543,13 @@ func F_string_agg_deserialize(m *base.Module, l0 int32) int32 {
 			if v154 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(62819), int32(0))
+				F_errmsg_internal(m, int32(66669), int32(0))
 				mBase = m.M
 				v158 = m.ExcPending
 				if v158 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(512786), int32(5432), int32(362061))
+					F_errfinish(m, int32(520901), int32(5432), int32(368497))
 					mBase = m.M
 					v163 = m.ExcPending
 					if v163 != 0 {

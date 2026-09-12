@@ -272,6 +272,8 @@ func F_index_getprocinfo(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_index_opclass_options(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F__bt_dedup_finish_pending github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__bt_dedup_finish_pending
 func F__bt_dedup_finish_pending(m *base.Module, l0 int32, l1 int32)
+//go:linkname F__bt_form_posting github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__bt_form_posting
+func F__bt_form_posting(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__bt_swap_posting github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__bt_swap_posting
 func F__bt_swap_posting(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__bt_stepright github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F__bt_stepright
@@ -1488,6 +1490,8 @@ func F_GetFdwRoutineByRelId(m *base.Module, l0 int32) int32
 func F_GetFdwRoutineForRelation(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_hk_depth_search github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_hk_depth_search
 func F_hk_depth_search(m *base.Module, l0 int32, l1 int32) int32
+//go:linkname F_bloom_lacks_element github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bloom_lacks_element
+func F_bloom_lacks_element(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_initHyperLogLog github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_initHyperLogLog
 func F_initHyperLogLog(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_pairingheap_allocate github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_pairingheap_allocate
@@ -4794,6 +4798,8 @@ func F_pgstat_relation(m *base.Module, l0 int32, l1 int32) int32
 func F_uuid_generate_random(m *base.Module, l0 int32)
 //go:linkname F_uuid_unparse github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_uuid_unparse
 func F_uuid_unparse(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_bt_normalize_tuple github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_bt_normalize_tuple
+func F_bt_normalize_tuple(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_CheckElement_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckElement_1
 func F_CheckElement_1(m *base.Module, l0 int32)
 //go:linkname F_CheckDim_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_CheckDim_1

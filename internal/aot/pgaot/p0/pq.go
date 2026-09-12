@@ -420,8 +420,8 @@ func F_pq_buffer_remaining_data(m *base.Module) int32 {
 	_ = v2
 	var v4 int32
 	_ = v4
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[372]))
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[370]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[370]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[368]))
 	return v2 - v4
 }
 func F_pq_endmessage(m *base.Module, l0 int32) {
@@ -448,7 +448,7 @@ func F_pq_endmessage(m *base.Module, l0 int32) {
 	v2 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+12)))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[136]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[133]))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
 	v8 = m.T0[v7].(func(*base.Module, int32, int32, int32) int32)(m, v2, v3, v4)
 	mBase = m.M
@@ -496,13 +496,13 @@ func F_pq_getbyte(m *base.Module) int32 {
 	goto L2
 L1:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[370])) = v4 + int32(1)
-	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[371]))))
+	*(*int32)(unsafe.Add(mBase, _consts[368])) = v4 + int32(1)
+	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_consts[369]))))
 	return v22
 L2:
 	;
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[370]))
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[372]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[368]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[370]))
 	if v4 < v6 {
 		goto L1
 	} else {
@@ -613,13 +613,13 @@ func F_pq_getmsgend(m *base.Module, l0 int32) {
 			if v11 != 0 {
 				return
 			} else {
-				F_errmsg(m, int32(114631), int32(0))
+				F_errmsg(m, int32(118889), int32(0))
 				mBase = m.M
 				v15 = m.ExcPending
 				if v15 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(504541), int32(640), int32(436735))
+					F_errfinish(m, int32(512604), int32(640), int32(443827))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
@@ -679,13 +679,13 @@ func F_pq_getmsgrawstring(m *base.Module, l0 int32) int32 {
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(413345), int32(0))
+				F_errmsg(m, int32(420333), int32(0))
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(504541), int32(624), int32(337165))
+					F_errfinish(m, int32(512604), int32(624), int32(343429))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {
@@ -786,8 +786,8 @@ func F_pq_sendfloat8(m *base.Module, l0 int32, l1 float64) {
 func F_pq_set_parallel_leader(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[92])) = l1
-	*(*int32)(unsafe.Add(mBase, _consts[93])) = l0
+	*(*int32)(unsafe.Add(mBase, _consts[89])) = l1
+	*(*int32)(unsafe.Add(mBase, _consts[90])) = l0
 	return
 }
 func F_pq_setkeepalivesinterval(m *base.Module, l0 int32, l1 int32) {

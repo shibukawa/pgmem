@@ -50,10 +50,10 @@ func F_LookupCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = l2
 		*(*int32)(unsafe.Add(mBase, uint32(v17))) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v17
-		v23 = int32(4529176)
-		v24 = *(*int32)(unsafe.Add(mBase, _consts[49]))
+		v23 = int32(4541672)
+		v24 = *(*int32)(unsafe.Add(mBase, _consts[52]))
 		*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = v24
-		*(*int32)(unsafe.Add(mBase, _consts[49])) = v7 + int32(20)
+		*(*int32)(unsafe.Add(mBase, _consts[52])) = v7 + int32(20)
 		v31 = F_get_collation_oid(m, l1, int32(0))
 		mBase = m.M
 		v32 = m.ExcPending
@@ -61,7 +61,7 @@ func F_LookupCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return int32(0)
 		} else {
 			v36 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(12))+8))
-			*(*int32)(unsafe.Add(mBase, _consts[49])) = v36
+			*(*int32)(unsafe.Add(mBase, _consts[52])) = v36
 			v38 = v31
 			m.G0 = v7 + int32(32)
 			return v38
@@ -113,13 +113,13 @@ func F_get_collation_isdeterministic(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(46906), v6)
+				F_errmsg_internal(m, int32(49088), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(511204), int32(1154), int32(500741))
+					F_errfinish(m, int32(519303), int32(1154), int32(508804))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

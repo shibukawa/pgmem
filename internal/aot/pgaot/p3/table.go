@@ -265,7 +265,7 @@ func F_CheckTableForSerializableConflictIn(m *base.Module, l0 int32) {
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[857]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[859]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
 	if v17 == int32(0) {
 		goto L1
@@ -278,7 +278,7 @@ L1:
 	return
 L2:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, _consts[141]))
+	v21 = *(*int32)(unsafe.Add(mBase, _consts[143]))
 	if v21 == int32(0) {
 		goto L1
 	} else {
@@ -304,9 +304,9 @@ L4:
 L5:
 	;
 	v32 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[858])) = uint8(v32)
+	*(*uint8)(unsafe.Add(mBase, _consts[860])) = uint8(v32)
 	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v40 = F_LWLockAcquire(m, v36+int32(3840), int32(0))
 	mBase = m.M
 	v41 = m.ExcPending
@@ -320,7 +320,7 @@ L6:
 	return
 L7:
 	;
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v47 = F_LWLockAcquire(m, v43+int32(25344), int32(1))
 	mBase = m.M
 	v48 = m.ExcPending
@@ -331,7 +331,7 @@ L7:
 	}
 L8:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v50 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v54 = F_LWLockAcquire(m, v50+int32(25472), int32(1))
 	mBase = m.M
 	v55 = m.ExcPending
@@ -342,7 +342,7 @@ L8:
 	}
 L9:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v57 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v61 = F_LWLockAcquire(m, v57+int32(25600), int32(1))
 	mBase = m.M
 	v62 = m.ExcPending
@@ -353,7 +353,7 @@ L9:
 	}
 L10:
 	;
-	v64 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v64 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v68 = F_LWLockAcquire(m, v64+int32(25728), int32(1))
 	mBase = m.M
 	v69 = m.ExcPending
@@ -364,7 +364,7 @@ L10:
 	}
 L11:
 	;
-	v71 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v71 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v75 = F_LWLockAcquire(m, v71+int32(25856), int32(1))
 	mBase = m.M
 	v76 = m.ExcPending
@@ -375,7 +375,7 @@ L11:
 	}
 L12:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v78 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v82 = F_LWLockAcquire(m, v78+int32(25984), int32(1))
 	mBase = m.M
 	v83 = m.ExcPending
@@ -386,7 +386,7 @@ L12:
 	}
 L13:
 	;
-	v85 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v85 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v89 = F_LWLockAcquire(m, v85+int32(26112), int32(1))
 	mBase = m.M
 	v90 = m.ExcPending
@@ -397,7 +397,7 @@ L13:
 	}
 L14:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v92 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v96 = F_LWLockAcquire(m, v92+int32(26240), int32(1))
 	mBase = m.M
 	v97 = m.ExcPending
@@ -408,7 +408,7 @@ L14:
 	}
 L15:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v99 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v103 = F_LWLockAcquire(m, v99+int32(26368), int32(1))
 	mBase = m.M
 	v104 = m.ExcPending
@@ -419,7 +419,7 @@ L15:
 	}
 L16:
 	;
-	v106 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v106 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v110 = F_LWLockAcquire(m, v106+int32(26496), int32(1))
 	mBase = m.M
 	v111 = m.ExcPending
@@ -430,7 +430,7 @@ L16:
 	}
 L17:
 	;
-	v113 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v113 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v117 = F_LWLockAcquire(m, v113+int32(26624), int32(1))
 	mBase = m.M
 	v118 = m.ExcPending
@@ -441,7 +441,7 @@ L17:
 	}
 L18:
 	;
-	v120 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v120 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v124 = F_LWLockAcquire(m, v120+int32(26752), int32(1))
 	mBase = m.M
 	v125 = m.ExcPending
@@ -452,7 +452,7 @@ L18:
 	}
 L19:
 	;
-	v127 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v127 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v131 = F_LWLockAcquire(m, v127+int32(26880), int32(1))
 	mBase = m.M
 	v132 = m.ExcPending
@@ -463,7 +463,7 @@ L19:
 	}
 L20:
 	;
-	v134 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v134 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v138 = F_LWLockAcquire(m, v134+int32(27008), int32(1))
 	mBase = m.M
 	v139 = m.ExcPending
@@ -474,7 +474,7 @@ L20:
 	}
 L21:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v141 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v145 = F_LWLockAcquire(m, v141+int32(27136), int32(1))
 	mBase = m.M
 	v146 = m.ExcPending
@@ -485,7 +485,7 @@ L21:
 	}
 L22:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v148 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v152 = F_LWLockAcquire(m, v148+int32(27264), int32(1))
 	mBase = m.M
 	v153 = m.ExcPending
@@ -496,7 +496,7 @@ L22:
 	}
 L23:
 	;
-	v155 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v155 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	v159 = F_LWLockAcquire(m, v155+int32(3584), int32(0))
 	mBase = m.M
 	v160 = m.ExcPending
@@ -507,7 +507,7 @@ L23:
 	}
 L24:
 	;
-	v164 = *(*int32)(unsafe.Add(mBase, _consts[859]))
+	v164 = *(*int32)(unsafe.Add(mBase, _consts[861]))
 	F_hash_seq_init(m, v13+int32(12), v164)
 	mBase = m.M
 	v166 = m.ExcPending
@@ -542,7 +542,7 @@ L28:
 	goto L29
 L29:
 	;
-	v290 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v290 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v290+int32(3584))
 	mBase = m.M
 	v294 = m.ExcPending
@@ -598,7 +598,7 @@ L35:
 	}
 L36:
 	;
-	v192 = *(*int32)(unsafe.Add(mBase, _consts[141]))
+	v192 = *(*int32)(unsafe.Add(mBase, _consts[143]))
 	v193 = v185
 	v194 = v192
 	goto L37
@@ -711,7 +711,7 @@ L51:
 	goto L49
 L52:
 	;
-	v253 = *(*int32)(unsafe.Add(mBase, _consts[141]))
+	v253 = *(*int32)(unsafe.Add(mBase, _consts[143]))
 	v255 = v253
 	goto L39
 L53:
@@ -730,7 +730,7 @@ L55:
 	goto L31
 L56:
 	;
-	v296 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v296 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v296+int32(27264))
 	mBase = m.M
 	v300 = m.ExcPending
@@ -741,7 +741,7 @@ L56:
 	}
 L57:
 	;
-	v302 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v302 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v302+int32(27136))
 	mBase = m.M
 	v306 = m.ExcPending
@@ -752,7 +752,7 @@ L57:
 	}
 L58:
 	;
-	v308 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v308 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v308+int32(27008))
 	mBase = m.M
 	v312 = m.ExcPending
@@ -763,7 +763,7 @@ L58:
 	}
 L59:
 	;
-	v314 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v314 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v314+int32(26880))
 	mBase = m.M
 	v318 = m.ExcPending
@@ -774,7 +774,7 @@ L59:
 	}
 L60:
 	;
-	v320 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v320 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v320+int32(26752))
 	mBase = m.M
 	v324 = m.ExcPending
@@ -785,7 +785,7 @@ L60:
 	}
 L61:
 	;
-	v326 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v326 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v326+int32(26624))
 	mBase = m.M
 	v330 = m.ExcPending
@@ -796,7 +796,7 @@ L61:
 	}
 L62:
 	;
-	v332 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v332 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v332+int32(26496))
 	mBase = m.M
 	v336 = m.ExcPending
@@ -807,7 +807,7 @@ L62:
 	}
 L63:
 	;
-	v338 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v338 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v338+int32(26368))
 	mBase = m.M
 	v342 = m.ExcPending
@@ -818,7 +818,7 @@ L63:
 	}
 L64:
 	;
-	v344 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v344 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v344+int32(26240))
 	mBase = m.M
 	v348 = m.ExcPending
@@ -829,7 +829,7 @@ L64:
 	}
 L65:
 	;
-	v350 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v350 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v350+int32(26112))
 	mBase = m.M
 	v354 = m.ExcPending
@@ -840,7 +840,7 @@ L65:
 	}
 L66:
 	;
-	v356 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v356 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v356+int32(25984))
 	mBase = m.M
 	v360 = m.ExcPending
@@ -851,7 +851,7 @@ L66:
 	}
 L67:
 	;
-	v362 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v362 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v362+int32(25856))
 	mBase = m.M
 	v366 = m.ExcPending
@@ -862,7 +862,7 @@ L67:
 	}
 L68:
 	;
-	v368 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v368 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v368+int32(25728))
 	mBase = m.M
 	v372 = m.ExcPending
@@ -873,7 +873,7 @@ L68:
 	}
 L69:
 	;
-	v374 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v374 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v374+int32(25600))
 	mBase = m.M
 	v378 = m.ExcPending
@@ -884,7 +884,7 @@ L69:
 	}
 L70:
 	;
-	v380 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v380 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v380+int32(25472))
 	mBase = m.M
 	v384 = m.ExcPending
@@ -895,7 +895,7 @@ L70:
 	}
 L71:
 	;
-	v386 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v386 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v386+int32(25344))
 	mBase = m.M
 	v390 = m.ExcPending
@@ -906,7 +906,7 @@ L71:
 	}
 L72:
 	;
-	v392 = *(*int32)(unsafe.Add(mBase, _consts[44]))
+	v392 = *(*int32)(unsafe.Add(mBase, _consts[47]))
 	F_LWLockRelease(m, v392+int32(3840))
 	mBase = m.M
 	v396 = m.ExcPending
@@ -979,7 +979,7 @@ func F_has_table_privilege_id(m *base.Module, l0 int32) int32 {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
 		v19 = *(*int32)(unsafe.Add(mBase, _consts[3]))
-		v21 = F_convert_any_priv_string(m, v12, int32(1672768))
+		v21 = F_convert_any_priv_string(m, v12, int32(1685056))
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
@@ -1052,7 +1052,7 @@ func F_has_table_privilege_id_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v18 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v21 = F_convert_any_priv_string(m, v14, int32(1672768))
+		v21 = F_convert_any_priv_string(m, v14, int32(1685056))
 		mBase = m.M
 		v22 = m.ExcPending
 		if v22 != 0 {
@@ -1151,7 +1151,7 @@ func F_has_table_privilege_id_name(m *base.Module, l0 int32) int32 {
 					if v22 != 0 {
 						return int32(0)
 					} else {
-						v24 = F_convert_any_priv_string(m, v11, int32(1672768))
+						v24 = F_convert_any_priv_string(m, v11, int32(1685056))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -1245,7 +1245,7 @@ func F_has_table_privilege_name(m *base.Module, l0 int32) int32 {
 					if v23 != 0 {
 						return int32(0)
 					} else {
-						v25 = F_convert_any_priv_string(m, v10, int32(1672768))
+						v25 = F_convert_any_priv_string(m, v10, int32(1685056))
 						mBase = m.M
 						v26 = m.ExcPending
 						if v26 != 0 {
@@ -1371,7 +1371,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-					F_errmsg(m, int32(720929), v6)
+					F_errmsg(m, int32(734511), v6)
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -1385,7 +1385,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 						if v35 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(511071), int32(147), int32(434904))
+							F_errfinish(m, int32(519170), int32(147), int32(441996))
 							mBase = m.M
 							v40 = m.ExcPending
 							if v40 != 0 {
@@ -1421,7 +1421,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 					} else {
 						v25 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
 						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v25 + int32(4)
-						F_errmsg(m, int32(720929), v6)
+						F_errmsg(m, int32(734511), v6)
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {
@@ -1435,7 +1435,7 @@ func F_table_open(m *base.Module, l0 int32, l1 int32) int32 {
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(511071), int32(147), int32(434904))
+								F_errfinish(m, int32(519170), int32(147), int32(441996))
 								mBase = m.M
 								v40 = m.ExcPending
 								if v40 != 0 {

@@ -54,7 +54,7 @@ L1:
 	return
 L2:
 	;
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[72]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[75]))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+24))
 	switch v5 {
 	case 0:
@@ -346,7 +346,7 @@ func F_GetCurrentTransactionIdIfAny(m *base.Module) int32 {
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[72]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[75]))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)))
 	return v3
 }
@@ -369,7 +369,7 @@ func F_GetCurrentTransactionStopTimestamp(m *base.Module) int64 {
 	_ = v24
 	var v26 int64
 	_ = v26
-	v3 = *(*int64)(unsafe.Add(mBase, _consts[169]))
+	v3 = *(*int64)(unsafe.Add(mBase, _consts[171]))
 	if v3 == int64(0) {
 		v10 = m.G0
 		v11 = int32(16)
@@ -381,7 +381,7 @@ func F_GetCurrentTransactionStopTimestamp(m *base.Module) int64 {
 		v16 = int64(*(*int32)(unsafe.Add(mBase, uint32(v12)+8)))
 		m.G0 = v12 + v11
 		v24 = v16 + v15*int64(1000000) - int64(946684800000000)
-		*(*int64)(unsafe.Add(mBase, _consts[169])) = v24
+		*(*int64)(unsafe.Add(mBase, _consts[171])) = v24
 		v26 = v24
 	} else {
 		v26 = v3

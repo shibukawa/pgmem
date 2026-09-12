@@ -57,20 +57,20 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 	v4 = m.G0
 	v6 = v4 - int32(96)
 	m.G0 = v6
-	v10 = int32(*(*uint8)(unsafe.Add(mBase, _consts[184])))
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, _consts[181])))
 	if v10 != 0 {
 		v75 = int32(1)
 		m.G0 = v6 + int32(96)
 		return v75
 	} else {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[185]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[182]))
 		if v12 == int32(0) {
 			v75 = int32(0)
 			m.G0 = v6 + int32(96)
 			return v75
 		} else {
 			v16 = int32(0)
-			v20 = F___fstatat(m, int32(-100), int32(357202), v6, v16)
+			v20 = F___fstatat(m, int32(-100), int32(363613), v6, v16)
 			mBase = m.M
 			if v20 != 0 {
 				v75 = v16
@@ -84,38 +84,38 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 					return int32(0)
 				} else {
 					if v23 != 0 {
-						F_errmsg(m, int32(78597), int32(0))
+						F_errmsg(m, int32(82476), int32(0))
 						mBase = m.M
 						v30 = m.ExcPending
 						if v30 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(503064), int32(4482), int32(228945))
+							F_errfinish(m, int32(511127), int32(4482), int32(233795))
 							mBase = m.M
 							v35 = m.ExcPending
 							if v35 != 0 {
 								return int32(0)
 							} else {
-								v37 = F_unlink(m, int32(357202))
+								v37 = F_unlink(m, int32(363613))
 								mBase = m.M
-								*(*int32)(unsafe.Add(mBase, _consts[185])) = int32(0)
-								v42 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+								*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
+								v42 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 								v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+96))
 								*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
 								if v43 != 0 {
-									v47 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-									F_s_lock(m, v47+int32(96), int32(503064), int32(4456), int32(460927))
+									v47 = *(*int32)(unsafe.Add(mBase, _consts[183]))
+									F_s_lock(m, v47+int32(96), int32(511127), int32(4456), int32(468324))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
 										return int32(0)
 									} else {
-										v55 = int32(4432196)
-										v56 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+										v55 = int32(4444692)
+										v56 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 										v57 = int32(1)
 										*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
 										*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-										v62 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+										v62 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 										v63 = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
 										*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
@@ -126,19 +126,19 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 											return int32(0)
 										} else {
 											v71 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, _consts[184])) = uint8(v71)
+											*(*uint8)(unsafe.Add(mBase, _consts[181])) = uint8(v71)
 											v75 = v71
 											m.G0 = v6 + int32(96)
 											return v75
 										}
 									}
 								} else {
-									v55 = int32(4432196)
-									v56 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+									v55 = int32(4444692)
+									v56 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 									v57 = int32(1)
 									*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
 									*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-									v62 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+									v62 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 									v63 = int32(0)
 									*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
 									*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
@@ -149,7 +149,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 										return int32(0)
 									} else {
 										v71 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, _consts[184])) = uint8(v71)
+										*(*uint8)(unsafe.Add(mBase, _consts[181])) = uint8(v71)
 										v75 = v71
 										m.G0 = v6 + int32(96)
 										return v75
@@ -158,26 +158,26 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 							}
 						}
 					} else {
-						v37 = F_unlink(m, int32(357202))
+						v37 = F_unlink(m, int32(363613))
 						mBase = m.M
-						*(*int32)(unsafe.Add(mBase, _consts[185])) = int32(0)
-						v42 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+						*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
+						v42 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 						v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+96))
 						*(*int32)(unsafe.Add(mBase, uint32(v42)+96)) = int32(1)
 						if v43 != 0 {
-							v47 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-							F_s_lock(m, v47+int32(96), int32(503064), int32(4456), int32(460927))
+							v47 = *(*int32)(unsafe.Add(mBase, _consts[183]))
+							F_s_lock(m, v47+int32(96), int32(511127), int32(4456), int32(468324))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return int32(0)
 							} else {
-								v55 = int32(4432196)
-								v56 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+								v55 = int32(4444692)
+								v56 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 								v57 = int32(1)
 								*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
 								*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-								v62 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+								v62 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 								v63 = int32(0)
 								*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
 								*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
@@ -188,19 +188,19 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 									return int32(0)
 								} else {
 									v71 = int32(1)
-									*(*uint8)(unsafe.Add(mBase, _consts[184])) = uint8(v71)
+									*(*uint8)(unsafe.Add(mBase, _consts[181])) = uint8(v71)
 									v75 = v71
 									m.G0 = v6 + int32(96)
 									return v75
 								}
 							}
 						} else {
-							v55 = int32(4432196)
-							v56 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+							v55 = int32(4444692)
+							v56 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 							v57 = int32(1)
 							*(*int32)(unsafe.Add(mBase, uint32(v56)+96)) = v57
 							*(*uint8)(unsafe.Add(mBase, uint32(v56)+1)) = uint8(v57)
-							v62 = *(*int32)(unsafe.Add(mBase, _consts[186]))
+							v62 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 							v63 = int32(0)
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+96)) = v63
 							*(*int32)(unsafe.Add(mBase, uint32(v62)+80)) = v63
@@ -211,7 +211,7 @@ func F_CheckForStandbyTrigger(m *base.Module) int32 {
 								return int32(0)
 							} else {
 								v71 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, _consts[184])) = uint8(v71)
+								*(*uint8)(unsafe.Add(mBase, _consts[181])) = uint8(v71)
 								v75 = v71
 								m.G0 = v6 + int32(96)
 								return v75
@@ -381,7 +381,7 @@ L10:
 	goto L12
 L11:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+	v97 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	v101 = F_WaitLatch(m, v97, int32(33), int32(-1), int32(134217768))
 	mBase = m.M
 	v102 = m.ExcPending
@@ -519,7 +519,7 @@ L30:
 	goto L22
 L31:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+	v104 = *(*int32)(unsafe.Add(mBase, _consts[77]))
 	*(*int32)(unsafe.Add(mBase, uint32(v104))) = int32(0)
 	goto L32
 L32:
@@ -542,7 +542,7 @@ L34:
 L35:
 	;
 	v121 = *(*int64)(unsafe.Add(mBase, uint32(v119)+72))
-	v123 = *(*int64)(unsafe.Add(mBase, _consts[81]))
+	v123 = *(*int64)(unsafe.Add(mBase, _consts[78]))
 	if base.Ui64(v121) <= base.Ui64(v123) {
 		goto L33
 	} else {
@@ -550,7 +550,7 @@ L35:
 	}
 L36:
 	;
-	*(*int64)(unsafe.Add(mBase, _consts[81])) = v121
+	*(*int64)(unsafe.Add(mBase, _consts[78])) = v121
 	goto L33
 L37:
 	;
@@ -564,7 +564,7 @@ L37:
 	}
 L38:
 	;
-	F_errmsg(m, int32(349517), int32(0))
+	F_errmsg(m, int32(355928), int32(0))
 	mBase = m.M
 	v141 = m.ExcPending
 	if v141 != 0 {
@@ -574,7 +574,7 @@ L38:
 	}
 L39:
 	;
-	F_errhint(m, int32(639540), int32(0))
+	F_errhint(m, int32(648680), int32(0))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {
@@ -584,7 +584,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(509444), int32(879), int32(329194))
+	F_errfinish(m, int32(517543), int32(879), int32(335367))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -631,7 +631,7 @@ func F_WaitForStandbyConfirmation(m *base.Module, l0 int64) {
 	_ = v42
 	var v44 int32
 	_ = v44
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[512]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[510]))
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+202)))
 	if v4 != int32(1) {
 		goto L1
@@ -643,7 +643,7 @@ L1:
 	return
 L2:
 	;
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[545]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[543]))
 	if v8 == int32(0) {
 		goto L1
 	} else {
@@ -651,7 +651,7 @@ L2:
 	}
 L3:
 	;
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[547]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[545]))
 	F_ConditionVariablePrepareToSleep(m, v12+int32(76))
 	mBase = m.M
 	v16 = m.ExcPending
@@ -699,7 +699,7 @@ L9:
 	goto L10
 L10:
 	;
-	v23 = *(*int32)(unsafe.Add(mBase, _consts[305]))
+	v23 = *(*int32)(unsafe.Add(mBase, _consts[303]))
 	if v23 != 0 {
 		goto L12
 	} else {
@@ -710,7 +710,7 @@ L11:
 	goto L10
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[305])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[303])) = int32(0)
 	F_ProcessConfigFile(m, int32(2))
 	mBase = m.M
 	v29 = m.ExcPending
@@ -744,7 +744,7 @@ L16:
 	}
 L17:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[547]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[545]))
 	v41 = F_ConditionVariableTimedSleep(m, v36+int32(76), int32(1000), int32(100663302))
 	mBase = m.M
 	v42 = m.ExcPending

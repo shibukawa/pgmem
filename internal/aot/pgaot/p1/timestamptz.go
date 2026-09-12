@@ -354,21 +354,21 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 							if v417 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(380967)
+								*(*int32)(unsafe.Add(mBase, uint32(v14))) = int32(387624)
 								*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v14 + int32(96)
-								F_errmsg(m, int32(739236), v14)
+								F_errmsg(m, int32(752903), v14)
 								mBase = m.M
 								v425 = m.ExcPending
 								if v425 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(622809), int32(0))
+									F_errhint(m, int32(631761), int32(0))
 									mBase = m.M
 									v429 = m.ExcPending
 									if v429 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(507443), int32(514), int32(380649))
+										F_errfinish(m, int32(515506), int32(514), int32(387306))
 										mBase = m.M
 										v434 = m.ExcPending
 										if v434 != 0 {
@@ -391,7 +391,7 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 						v175 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v161))))
 						switch v175 - int32(43) {
 						case 0, 2:
-							v178 = int32(4700964)
+							v178 = int32(4713460)
 							*(*int32)(unsafe.Add(mBase, _consts[137])) = int32(0)
 							v185 = F_strtoint(m, v14+int32(97), v172+int32(12))
 							mBase = m.M
@@ -437,7 +437,7 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 											}
 										}
 									} else {
-										v196 = int32(4700964)
+										v196 = int32(4713460)
 										*(*int32)(unsafe.Add(mBase, _consts[137])) = int32(0)
 										v203 = F_strtoint(m, v191+int32(1), v172+int32(12))
 										mBase = m.M
@@ -481,7 +481,7 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 													}
 												}
 											} else {
-												v212 = int32(4700964)
+												v212 = int32(4713460)
 												*(*int32)(unsafe.Add(mBase, _consts[137])) = int32(0)
 												v219 = F_strtoint(m, v208+int32(1), v172+int32(12))
 												mBase = m.M
@@ -591,13 +591,13 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 									if v461 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(411195), int32(0))
+										F_errmsg(m, int32(418183), int32(0))
 										mBase = m.M
 										v465 = m.ExcPending
 										if v465 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(507443), int32(716), int32(380607))
+											F_errfinish(m, int32(515506), int32(716), int32(387264))
 											mBase = m.M
 											v470 = m.ExcPending
 											if v470 != 0 {
@@ -637,13 +637,13 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v14)+32)) = v14 + int32(96)
-											F_errmsg(m, int32(411333), v14+int32(32))
+											F_errmsg(m, int32(418321), v14+int32(32))
 											mBase = m.M
 											v449 = m.ExcPending
 											if v449 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(507443), int32(526), int32(380649))
+												F_errfinish(m, int32(515506), int32(526), int32(387306))
 												mBase = m.M
 												v454 = m.ExcPending
 												if v454 != 0 {
@@ -670,13 +670,13 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = v14 + int32(96)
-											F_errmsg(m, int32(447915), v14+int32(16))
+											F_errmsg(m, int32(455195), v14+int32(16))
 											mBase = m.M
 											v290 = m.ExcPending
 											if v290 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(507443), int32(530), int32(380649))
+												F_errfinish(m, int32(515506), int32(530), int32(387306))
 												mBase = m.M
 												v295 = m.ExcPending
 												if v295 != 0 {
@@ -769,13 +769,13 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 											if v461 != 0 {
 												return int32(0)
 											} else {
-												F_errmsg(m, int32(411195), int32(0))
+												F_errmsg(m, int32(418183), int32(0))
 												mBase = m.M
 												v465 = m.ExcPending
 												if v465 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(507443), int32(716), int32(380607))
+													F_errfinish(m, int32(515506), int32(716), int32(387264))
 													mBase = m.M
 													v470 = m.ExcPending
 													if v470 != 0 {
@@ -817,13 +817,13 @@ func F_make_timestamptz_at_timezone(m *base.Module, l0 int32) int32 {
 					if v401 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(411195), int32(0))
+						F_errmsg(m, int32(418183), int32(0))
 						mBase = m.M
 						v405 = m.ExcPending
 						if v405 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(507443), int32(707), int32(380607))
+							F_errfinish(m, int32(515506), int32(707), int32(387264))
 							mBase = m.M
 							v410 = m.ExcPending
 							if v410 != 0 {
@@ -893,7 +893,7 @@ func F_timestamptz_ne_date(m *base.Module, l0 int32) int32 {
 				mBase = m.M
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+4)) = int64(0)
 				*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = int32(0)
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[1068]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[1067]))
 				v37 = F_DetermineTimeZoneOffset(m, v9+int32(4), v36)
 				mBase = m.M
 				v44 = base.I64_extend_i32_s(v37)*int64(1000000) + base.I64_extend_i32_s(v2)*int64(86400000000)
@@ -1077,13 +1077,13 @@ func F_timestamptz_recv(m *base.Module, l0 int32) int32 {
 						if v43 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(411195), int32(0))
+							F_errmsg(m, int32(418183), int32(0))
 							mBase = m.M
 							v47 = m.ExcPending
 							if v47 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(507443), int32(827), int32(37007))
+								F_errfinish(m, int32(515506), int32(827), int32(37171))
 								mBase = m.M
 								v52 = m.ExcPending
 								if v52 != 0 {
@@ -1133,7 +1133,7 @@ func F_timestamptz_trunc(m *base.Module, l0 int32) int32 {
 	} else {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
-		v10 = *(*int32)(unsafe.Add(mBase, _consts[1068]))
+		v10 = *(*int32)(unsafe.Add(mBase, _consts[1067]))
 		v11 = F_timestamptz_trunc_internal(m, v3, v8, v10)
 		mBase = m.M
 		v12 = m.ExcPending

@@ -165,12 +165,12 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 	v8 = m.G0
 	v10 = v8 + int32(-64)
 	m.G0 = v10
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 	if v13 == int32(0) {
 		m.G0 = v10 - int32(-64)
 		return
 	} else {
-		v16 = int32(4536272)
+		v16 = int32(4548768)
 		v17 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
 		*(*int32)(unsafe.Add(mBase, _consts[0])) = v19
@@ -212,7 +212,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-								v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+								v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 								v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 								*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -243,7 +243,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-										v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+										v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 										v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 										*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 										*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -289,7 +289,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-								v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+								v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 								v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 								*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -313,7 +313,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 				}
 			case 11:
 				v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				v36 = *(*int32)(unsafe.Add(mBase, _consts[135]))
+				v36 = *(*int32)(unsafe.Add(mBase, _consts[137]))
 				if base.B2i32(v36 != int32(0))&base.B2i32(v33 == v36) != 0 {
 					v41 = int32(1)
 					*(*uint8)(unsafe.Add(mBase, uint32(v22)+38)) = uint8(v41)
@@ -339,7 +339,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-								v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+								v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 								v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 								*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 								*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -380,7 +380,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-										v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+										v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 										v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 										*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 										*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -467,7 +467,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 													return
 												} else {
 													*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-													v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+													v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 													v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 													*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 													*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -501,7 +501,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 															return
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-															v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+															v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 															v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 															*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 															*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -594,7 +594,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-														v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+														v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 														v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 														*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 														*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -628,7 +628,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 																return
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-																v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+																v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 																v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 																*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 																*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -679,7 +679,7 @@ func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v22)+24)) = v189
-									v193 = *(*int32)(unsafe.Add(mBase, _consts[428]))
+									v193 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 									v194 = *(*int32)(unsafe.Add(mBase, uint32(v193)+4))
 									*(*int32)(unsafe.Add(mBase, uint32(v22)+40)) = v194
 									*(*int32)(unsafe.Add(mBase, uint32(v193)+4)) = v22 + int32(40)
@@ -1046,14 +1046,14 @@ func F_event_trigger_in(m *base.Module, l0 int32) int32 {
 		if v14 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(228238)
-			F_errmsg(m, int32(196564), v4)
+			*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(233088)
+			F_errmsg(m, int32(201353), v4)
 			mBase = m.M
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(505570), int32(367), int32(284980))
+				F_errfinish(m, int32(513633), int32(367), int32(290292))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {

@@ -273,7 +273,7 @@ func F_initSpGistState(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = v166
-						v170 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+						v170 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 						v171 = int32(0)
 						*(*uint8)(unsafe.Add(mBase, uint32(l0)+80)) = uint8(v171)
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v170
@@ -291,7 +291,7 @@ func F_initSpGistState(m *base.Module, l0 int32, l1 int32) {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+72)) = v166
-				v170 = *(*int32)(unsafe.Add(mBase, _consts[80]))
+				v170 = *(*int32)(unsafe.Add(mBase, _consts[83]))
 				v171 = int32(0)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+80)) = uint8(v171)
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+76)) = v170

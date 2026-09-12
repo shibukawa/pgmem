@@ -216,7 +216,7 @@ L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+16)) = l2
-	v153 = F_pg_snprintf(m, v16+int32(128), int32(64), int32(475786), v16+int32(16))
+	v153 = F_pg_snprintf(m, v16+int32(128), int32(64), int32(483448), v16+int32(16))
 	mBase = m.M
 	v154 = m.ExcPending
 	if v154 != 0 {
@@ -675,7 +675,7 @@ L69:
 	v288 = v166 + int32(1)
 	*(*int32)(unsafe.Add(mBase, uint32(v16)+4)) = v288
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = l2
-	v295 = F_pg_snprintf(m, v16+int32(128), int32(64), int32(475786), v16)
+	v295 = F_pg_snprintf(m, v16+int32(128), int32(64), int32(483448), v16)
 	mBase = m.M
 	v296 = m.ExcPending
 	if v296 != 0 {
@@ -829,13 +829,13 @@ func F_get_constraint_type(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(41998), v6)
+				F_errmsg_internal(m, int32(43273), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(511204), int32(1242), int32(374585))
+					F_errfinish(m, int32(519303), int32(1242), int32(381242))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

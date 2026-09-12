@@ -139,7 +139,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	switch v24 - int32(280) {
 	case 0:
-		v50 = *(*float64)(unsafe.Add(mBase, _consts[384]))
+		v50 = *(*float64)(unsafe.Add(mBase, _consts[382]))
 		v53 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
 		v55 = *(*float64)(unsafe.Add(mBase, uint32(l2)+96))
 		v59 = base.F64_add(base.F64_mul(base.F64_mul(v50, float64(0.1)), v53), v55)
@@ -179,7 +179,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 			v89 = v87
 		}
 		v90 = int32(16)
-		v92 = *(*int32)(unsafe.Add(mBase, _consts[326]))
+		v92 = *(*int32)(unsafe.Add(mBase, _consts[324]))
 		v96 = base.I32_div_u_s(v92<<(uint(int32(10))%32), int32(56))
 		if base.Ui32(v96) <= base.Ui32(v90) {
 			v99 = v90
@@ -205,7 +205,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 				v111 = base.F64_convert_i32_u(v110)
 				v112 = base.F64_add(v111, v111)
 				v113 = float64(1)
-				v115 = *(*int32)(unsafe.Add(mBase, _consts[385]))
+				v115 = *(*int32)(unsafe.Add(mBase, _consts[383]))
 				v118 = *(*float64)(unsafe.Add(mBase, uint32(l0)+288))
 				v119 = base.F64_add(v104, v118)
 				if base.F64_gt(v119, v113) != 0 {
@@ -343,13 +343,13 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 		} else {
 			v39 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 			*(*int32)(unsafe.Add(mBase, uint32(v22))) = v39
-			F_errmsg_internal(m, int32(496237), v22)
+			F_errmsg_internal(m, int32(504300), v22)
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
 				return float64(0)
 			} else {
-				F_errfinish(m, int32(510355), int32(1149), int32(420021))
+				F_errfinish(m, int32(518454), int32(1149), int32(427113))
 				mBase = m.M
 				v48 = m.ExcPending
 				if v48 != 0 {
@@ -400,7 +400,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 			v89 = v87
 		}
 		v90 = int32(16)
-		v92 = *(*int32)(unsafe.Add(mBase, _consts[326]))
+		v92 = *(*int32)(unsafe.Add(mBase, _consts[324]))
 		v96 = base.I32_div_u_s(v92<<(uint(int32(10))%32), int32(56))
 		if base.Ui32(v96) <= base.Ui32(v90) {
 			v99 = v90
@@ -426,7 +426,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 				v111 = base.F64_convert_i32_u(v110)
 				v112 = base.F64_add(v111, v111)
 				v113 = float64(1)
-				v115 = *(*int32)(unsafe.Add(mBase, _consts[385]))
+				v115 = *(*int32)(unsafe.Add(mBase, _consts[383]))
 				v118 = *(*float64)(unsafe.Add(mBase, uint32(l0)+288))
 				v119 = base.F64_add(v104, v118)
 				if base.F64_gt(v119, v113) != 0 {
@@ -594,7 +594,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 			v89 = v87
 		}
 		v90 = int32(16)
-		v92 = *(*int32)(unsafe.Add(mBase, _consts[326]))
+		v92 = *(*int32)(unsafe.Add(mBase, _consts[324]))
 		v96 = base.I32_div_u_s(v92<<(uint(int32(10))%32), int32(56))
 		if base.Ui32(v96) <= base.Ui32(v90) {
 			v99 = v90
@@ -620,7 +620,7 @@ func F_compute_bitmap_pages(m *base.Module, l0 int32, l1 int32, l2 int32, l3 flo
 				v111 = base.F64_convert_i32_u(v110)
 				v112 = base.F64_add(v111, v111)
 				v113 = float64(1)
-				v115 = *(*int32)(unsafe.Add(mBase, _consts[385]))
+				v115 = *(*int32)(unsafe.Add(mBase, _consts[383]))
 				v118 = *(*float64)(unsafe.Add(mBase, uint32(l0)+288))
 				v119 = base.F64_add(v104, v118)
 				if base.F64_gt(v119, v113) != 0 {
@@ -964,7 +964,7 @@ L13:
 	goto L7
 L14:
 	;
-	v139 = *(*float64)(unsafe.Add(mBase, _consts[380]))
+	v139 = *(*float64)(unsafe.Add(mBase, _consts[378]))
 	v141 = *(*float64)(unsafe.Add(mBase, uint32(v17)+24))
 	v142 = base.F64_mul(base.F64_add(v137, v139), v141)
 	v143 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
@@ -1056,7 +1056,7 @@ L25:
 	v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v185 = *(*float64)(unsafe.Add(mBase, uint32(v184)+24))
 	v186 = *(*float64)(unsafe.Add(mBase, uint32(v184)+16))
-	v188 = int32(*(*uint8)(unsafe.Add(mBase, _consts[383])))
+	v188 = int32(*(*uint8)(unsafe.Add(mBase, _consts[381])))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v188 ^ int32(1)
 	v192 = float64(0)
 	v195 = base.F64_add(v186, base.F64_add(base.F64_add(v33, v192), v135))
@@ -1076,7 +1076,7 @@ L27:
 L28:
 	;
 	v147 = base.F64_convert_i32_u(v143)
-	v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[381])))
+	v149 = int32(*(*uint8)(unsafe.Add(mBase, _consts[379])))
 	if v149 == int32(1) {
 		goto L29
 	} else {
@@ -1404,7 +1404,7 @@ L18:
 	goto L19
 L19:
 	;
-	v96 = *(*float64)(unsafe.Add(mBase, _consts[384]))
+	v96 = *(*float64)(unsafe.Add(mBase, _consts[382]))
 	v99 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 	v104 = v69
 	v109 = v8
@@ -1462,7 +1462,7 @@ L26:
 	;
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v117)))
 	*(*int32)(unsafe.Add(mBase, uint32(v82))) = v128
-	F_errmsg_internal(m, int32(496237), v82)
+	F_errmsg_internal(m, int32(504300), v82)
 	mBase = m.M
 	v132 = m.ExcPending
 	if v132 != 0 {
@@ -1472,7 +1472,7 @@ L26:
 	}
 L27:
 	;
-	F_errfinish(m, int32(510355), int32(1149), int32(420021))
+	F_errfinish(m, int32(518454), int32(1149), int32(427113))
 	mBase = m.M
 	v137 = m.ExcPending
 	if v137 != 0 {
@@ -3713,7 +3713,7 @@ L205:
 	goto L206
 L206:
 	;
-	v1189 = *(*float64)(unsafe.Add(mBase, _consts[384]))
+	v1189 = *(*float64)(unsafe.Add(mBase, _consts[382]))
 	v1192 = *(*int32)(unsafe.Add(mBase, uint32(v1048)+12))
 	v1205 = v1161
 	v1220 = float64(0)
@@ -3787,7 +3787,7 @@ L215:
 	;
 	v1239 = *(*int32)(unsafe.Add(mBase, uint32(v1227)))
 	*(*int32)(unsafe.Add(mBase, uint32(v1176))) = v1239
-	F_errmsg_internal(m, int32(496237), v1176)
+	F_errmsg_internal(m, int32(504300), v1176)
 	mBase = m.M
 	v1243 = m.ExcPending
 	if v1243 != 0 {
@@ -3797,7 +3797,7 @@ L215:
 	}
 L216:
 	;
-	F_errfinish(m, int32(510355), int32(1149), int32(420021))
+	F_errfinish(m, int32(518454), int32(1149), int32(427113))
 	mBase = m.M
 	v1248 = m.ExcPending
 	if v1248 != 0 {

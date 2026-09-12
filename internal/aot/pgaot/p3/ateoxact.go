@@ -24,7 +24,7 @@ func F_AtEOXact_Aio(m *base.Module) {
 	_ = v20
 	var v25 int32
 	_ = v25
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[775]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3)+20)))
 	if v4 != int32(1) {
 		return
@@ -46,13 +46,13 @@ func F_AtEOXact_Aio(m *base.Module) {
 				if v13 == int32(0) {
 					return
 				} else {
-					F_errmsg_internal(m, int32(261762), int32(0))
+					F_errmsg_internal(m, int32(266889), int32(0))
 					mBase = m.M
 					v20 = m.ExcPending
 					if v20 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(507670), int32(1206), int32(246174))
+						F_errfinish(m, int32(515733), int32(1206), int32(251081))
 						mBase = m.M
 						v25 = m.ExcPending
 						if v25 != 0 {
@@ -72,8 +72,8 @@ func F_AtEOXact_Enum(m *base.Module) {
 	var v2 int32
 	_ = v2
 	v2 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _consts[126])) = v2
-	*(*int32)(unsafe.Add(mBase, _consts[125])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[128])) = v2
+	*(*int32)(unsafe.Add(mBase, _consts[127])) = v2
 	return
 }
 func F_AtEOXact_Namespace(m *base.Module, l0 int32, l1 int32) {
@@ -92,7 +92,7 @@ func F_AtEOXact_Namespace(m *base.Module, l0 int32, l1 int32) {
 	if l1 != 0 {
 		return
 	} else {
-		v4 = *(*int32)(unsafe.Add(mBase, _consts[180]))
+		v4 = *(*int32)(unsafe.Add(mBase, _consts[182]))
 		if v4 == int32(0) {
 			return
 		} else {
@@ -103,19 +103,19 @@ func F_AtEOXact_Namespace(m *base.Module, l0 int32, l1 int32) {
 				if v10 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, _consts[180])) = int32(0)
+					*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
 					return
 				}
 			} else {
 				v12 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, _consts[432])) = uint8(v12)
+				*(*uint8)(unsafe.Add(mBase, _consts[434])) = uint8(v12)
 				v15 = int32(0)
-				*(*int32)(unsafe.Add(mBase, _consts[136])) = v15
-				*(*int32)(unsafe.Add(mBase, _consts[135])) = v15
-				*(*uint8)(unsafe.Add(mBase, _consts[433])) = uint8(v15)
-				v24 = *(*int32)(unsafe.Add(mBase, _consts[137]))
+				*(*int32)(unsafe.Add(mBase, _consts[138])) = v15
+				*(*int32)(unsafe.Add(mBase, _consts[137])) = v15
+				*(*uint8)(unsafe.Add(mBase, _consts[435])) = uint8(v15)
+				v24 = *(*int32)(unsafe.Add(mBase, _consts[139]))
 				*(*int32)(unsafe.Add(mBase, uint32(v24)+68)) = v15
-				*(*int32)(unsafe.Add(mBase, _consts[180])) = int32(0)
+				*(*int32)(unsafe.Add(mBase, _consts[182])) = int32(0)
 				return
 			}
 		}
@@ -140,7 +140,7 @@ func F_AtEOXact_Parallel(m *base.Module, l0 int32) {
 	_ = v29
 	var v31 int32
 	_ = v31
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[151]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[153]))
 	if v4 == int32(0) {
 		goto L1
 	} else {
@@ -151,7 +151,7 @@ L1:
 	return
 L2:
 	;
-	if v4 == int32(4133500) {
+	if v4 == int32(4145932) {
 		goto L1
 	} else {
 		goto L3
@@ -202,7 +202,7 @@ L9:
 	}
 L10:
 	;
-	F_errmsg_internal(m, int32(62261), int32(0))
+	F_errmsg_internal(m, int32(66034), int32(0))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -212,7 +212,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(509444), int32(1290), int32(314297))
+	F_errfinish(m, int32(517543), int32(1290), int32(320065))
 	mBase = m.M
 	v27 = m.ExcPending
 	if v27 != 0 {
@@ -225,7 +225,7 @@ L12:
 	goto L6
 L13:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, _consts[151]))
+	v31 = *(*int32)(unsafe.Add(mBase, _consts[153]))
 	if v31 == int32(0) {
 		goto L1
 	} else {
@@ -233,7 +233,7 @@ L13:
 	}
 L14:
 	;
-	if v31 != int32(4133500) {
+	if v31 != int32(4145932) {
 		v10 = v31
 		goto L4
 	} else {
@@ -386,7 +386,7 @@ L2:
 	goto L3
 L3:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[935]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[937]))
 	if v22 == int32(0) {
 		goto L7
 	} else {
@@ -394,11 +394,11 @@ L3:
 	}
 L4:
 	;
-	v15 = int32(4516032)
+	v15 = int32(4528528)
 	goto L6
 L5:
 	;
-	v15 = int32(4516036)
+	v15 = int32(4528532)
 	goto L6
 L6:
 	;
@@ -407,7 +407,7 @@ L6:
 	goto L3
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[935])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[937])) = int32(0)
 	F_pgstat_clear_snapshot(m)
 	mBase = m.M
 	v196 = m.ExcPending
@@ -668,7 +668,7 @@ L41:
 	goto L30
 L42:
 	;
-	v177 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+	v177 = *(*int32)(unsafe.Add(mBase, _consts[278]))
 	v178 = *(*int64)(unsafe.Add(mBase, uint32(v177)+16))
 	*(*int64)(unsafe.Add(mBase, uint32(v177)+16)) = v178 + int64(1)
 	goto L43
@@ -711,7 +711,7 @@ func F_AtEOXact_on_commit_actions(m *base.Module, l0 int32) {
 	var v31 int32
 	_ = v31
 	v2 = int32(0)
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[504]))
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[506]))
 	if v6 == v2 {
 		goto L1
 	} else {
@@ -756,8 +756,8 @@ L6:
 	}
 L7:
 	;
-	v24 = int32(4433312)
-	v26 = *(*int32)(unsafe.Add(mBase, _consts[504]))
+	v24 = int32(4445808)
+	v26 = *(*int32)(unsafe.Add(mBase, _consts[506]))
 	v27 = F_list_delete_nth_cell(m, v26, v10)
 	mBase = m.M
 	v28 = m.ExcPending
@@ -796,7 +796,7 @@ L13:
 	return
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[504])) = v27
+	*(*int32)(unsafe.Add(mBase, _consts[506])) = v27
 	F_pfree(m, v19)
 	mBase = m.M
 	v31 = m.ExcPending

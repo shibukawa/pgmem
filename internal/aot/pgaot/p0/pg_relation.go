@@ -61,7 +61,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	if v12 != 0 {
 		F_ScanKeyInit(m, v9, int32(1), int32(3), int32(184), l0)
 		mBase = m.M
@@ -89,7 +89,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return int32(0)
 						} else {
 							v29 = v27
-							v33 = int32(*(*uint8)(unsafe.Add(mBase, _consts[881])))
+							v33 = int32(*(*uint8)(unsafe.Add(mBase, _consts[879])))
 							v36 = F_systable_beginscan(m, v22, int32(2662), l1&v33, v29, int32(1), v9)
 							mBase = m.M
 							v37 = m.ExcPending
@@ -190,7 +190,7 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					}
 				} else {
 					v29 = int32(0)
-					v33 = int32(*(*uint8)(unsafe.Add(mBase, _consts[881])))
+					v33 = int32(*(*uint8)(unsafe.Add(mBase, _consts[879])))
 					v36 = F_systable_beginscan(m, v22, int32(2662), l1&v33, v29, int32(1), v9)
 					mBase = m.M
 					v37 = m.ExcPending
@@ -297,13 +297,13 @@ func F_ScanPgRelation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		if v57 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(370733), int32(0))
+			F_errmsg_internal(m, int32(377241), int32(0))
 			mBase = m.M
 			v61 = m.ExcPending
 			if v61 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(511239), int32(355), int32(269657))
+				F_errfinish(m, int32(519338), int32(355), int32(274846))
 				mBase = m.M
 				v66 = m.ExcPending
 				if v66 != 0 {

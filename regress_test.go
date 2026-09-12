@@ -68,6 +68,7 @@ var contribRegress = map[string][]string{
 	"tsm_system_time": {"tsm_system_time"},
 	"pgstattuple":     {"pgstattuple"},
 	"uuid-ossp":       {"uuid_ossp"},
+	"amcheck":         {"check", "check_btree", "check_gin", "check_heap"},
 	// pgvector's test/sql, in the alphabetical order its Makefile uses
 	"vector": {
 		"bit", "btree", "cast", "copy", "halfvec", "hnsw_bit", "hnsw_halfvec", "hnsw_sparsevec",
@@ -230,9 +231,31 @@ func psqlTranscript(ps *psqlState, notices *strings.Builder, input string) strin
 		out.WriteString(notices.String())
 		out.WriteString(result)
 	}
+	// COPY ... FROM stdin: the lines up to "\\." are the data
+	var copyStmt string
+	var copyData strings.Builder
 	for _, line := range lines {
 		if ps.quit {
 			break
+		}
+		if copyStmt != "" {
+			// psql reads the data straight from the script: not echoed
+			if line == "\\." {
+				if ps.active() {
+					notices.Reset()
+					_, err := conn.PgConn().CopyFrom(ctx, strings.NewReader(copyData.String()), copyStmt)
+					out.WriteString(notices.String())
+					if err != nil {
+						out.WriteString(formatError(err, ps.verbosity, copyStmt))
+					}
+				}
+				copyStmt = ""
+				copyData.Reset()
+				continue
+			}
+			copyData.WriteString(line)
+			copyData.WriteByte('\n')
+			continue
 		}
 		// psql drops empty lines unless they sit inside a quoted string
 		// (mainloop.c: "nothing left on line? then ignore").
@@ -271,6 +294,10 @@ func psqlTranscript(ps *psqlState, notices *strings.Builder, input string) strin
 			buf.Reset()
 			buf.WriteString(rest)
 			if strings.TrimSpace(stripComments(stmt)) == ";" {
+				continue
+			}
+			if copyFromStdinRe.MatchString(leadingCommentsStripped(stmt)) {
+				copyStmt = leadingCommentsStripped(stmt)
 				continue
 			}
 			exec(stmt, false, "")
@@ -330,6 +357,7 @@ func (ps *psqlState) meta(cmd string) string {
 	return ""
 }
 
+var copyFromStdinRe = regexp.MustCompile(`(?is)^\s*copy\b.*\bfrom\s+stdin\b`)
 var copyFromRe = regexp.MustCompile(`(?i)^(.+?)\s+from\s+'([^']+)'\s*(.*)$`)
 var copyToRe = regexp.MustCompile(`(?i)^(.+?)\s+to\s+'([^']+)'\s*(.*)$`)
 

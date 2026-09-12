@@ -9,10 +9,10 @@ import (
 func F_HalfvecInit(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[1486])) = int32(7530)
-	*(*int32)(unsafe.Add(mBase, _consts[1487])) = int32(7531)
-	*(*int32)(unsafe.Add(mBase, _consts[1488])) = int32(7532)
-	*(*int32)(unsafe.Add(mBase, _consts[1489])) = int32(7533)
+	*(*int32)(unsafe.Add(mBase, _consts[1485])) = int32(7545)
+	*(*int32)(unsafe.Add(mBase, _consts[1486])) = int32(7546)
+	*(*int32)(unsafe.Add(mBase, _consts[1487])) = int32(7547)
+	*(*int32)(unsafe.Add(mBase, _consts[1488])) = int32(7548)
 	return
 }
 func F_halfvec_accum(m *base.Module, l0 int32) int32 {
@@ -901,8 +901,8 @@ L123:
 	return v322
 L124:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(293430)
-	F_errmsg_internal(m, int32(26010), v13)
+	*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(298753)
+	F_errmsg_internal(m, int32(26119), v13)
 	mBase = m.M
 	v339 = m.ExcPending
 	if v339 != 0 {
@@ -912,7 +912,7 @@ L124:
 	}
 L125:
 	;
-	F_errfinish(m, int32(512461), int32(173), int32(26501))
+	F_errfinish(m, int32(520576), int32(173), int32(26610))
 	mBase = m.M
 	v344 = m.ExcPending
 	if v344 != 0 {
@@ -939,7 +939,7 @@ L128:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v33
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = base.I32_extend16_s(v35)
-	F_errmsg(m, int32(477735), v13+int32(16))
+	F_errmsg(m, int32(485397), v13+int32(16))
 	mBase = m.M
 	v359 = m.ExcPending
 	if v359 != 0 {
@@ -949,7 +949,7 @@ L128:
 	}
 L129:
 	;
-	F_errfinish(m, int32(512461), int32(92), int32(294762))
+	F_errfinish(m, int32(520576), int32(92), int32(300085))
 	mBase = m.M
 	v364 = m.ExcPending
 	if v364 != 0 {
@@ -1832,13 +1832,13 @@ func F_halfvec_to_vector(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v26
 						*(*int32)(unsafe.Add(mBase, uint32(v13))) = v20
-						F_errmsg(m, int32(477735), v13)
+						F_errmsg(m, int32(485397), v13)
 						mBase = m.M
 						v182 = m.ExcPending
 						if v182 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(506510), int32(88), int32(294762))
+							F_errfinish(m, int32(514573), int32(88), int32(300085))
 							mBase = m.M
 							v187 = m.ExcPending
 							if v187 != 0 {
@@ -1932,13 +1932,13 @@ func F_halfvec_typmod_in(m *base.Module, l0 int32) int32 {
 						if v50 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(575626), int32(0))
+							F_errmsg(m, int32(584080), int32(0))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(512461), int32(358), int32(285545))
+								F_errfinish(m, int32(520576), int32(358), int32(290857))
 								mBase = m.M
 								v59 = m.ExcPending
 								if v59 != 0 {
@@ -1966,13 +1966,13 @@ func F_halfvec_typmod_in(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(16000)
-								F_errmsg(m, int32(489426), v5)
+								F_errmsg(m, int32(497489), v5)
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(512461), int32(363), int32(285545))
+									F_errfinish(m, int32(520576), int32(363), int32(290857))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -2003,13 +2003,13 @@ func F_halfvec_typmod_in(m *base.Module, l0 int32) int32 {
 					if v34 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(226996), int32(0))
+						F_errmsg(m, int32(231846), int32(0))
 						mBase = m.M
 						v38 = m.ExcPending
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(512461), int32(353), int32(285545))
+							F_errfinish(m, int32(520576), int32(353), int32(290857))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {

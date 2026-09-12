@@ -218,7 +218,7 @@ L4:
 	m.G0 = v30
 	v32 = *(*float64)(unsafe.Add(mBase, uint32(l3)+32))
 	v33 = *(*float64)(unsafe.Add(mBase, uint32(l2)+32))
-	v35 = *(*float64)(unsafe.Add(mBase, _consts[384]))
+	v35 = *(*float64)(unsafe.Add(mBase, _consts[382]))
 	if l4 != 0 {
 		goto L7
 	} else {
@@ -253,7 +253,7 @@ L9:
 	v42 = *(*float64)(unsafe.Add(mBase, uint32(l2)+56))
 	v43 = *(*float64)(unsafe.Add(mBase, uint32(l2)+48))
 	v45 = float64(0)
-	v48 = *(*float64)(unsafe.Add(mBase, _consts[380]))
+	v48 = *(*float64)(unsafe.Add(mBase, _consts[378]))
 	v53 = *(*float64)(unsafe.Add(mBase, uint32(l3)+56))
 	if l7 != 0 {
 		goto L10
@@ -264,7 +264,7 @@ L10:
 	;
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(l3)+24))
 	v56 = base.F64_convert_i32_s(v55)
-	v58 = int32(*(*uint8)(unsafe.Add(mBase, _consts[381])))
+	v58 = int32(*(*uint8)(unsafe.Add(mBase, _consts[379])))
 	if v58 == int32(1) {
 		goto L13
 	} else {
@@ -278,7 +278,7 @@ L12:
 	;
 	v75 = base.F64_add(base.F64_mul(v40, v33), base.F64_add(base.F64_sub(v42, v43), v45))
 	v76 = base.F64_add(base.F64_mul(base.F64_add(v40, v48), v32), base.F64_add(base.F64_add(v43, v45), v53))
-	v78 = int32(*(*uint8)(unsafe.Add(mBase, _consts[391])))
+	v78 = int32(*(*uint8)(unsafe.Add(mBase, _consts[389])))
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
 	v80 = *(*int32)(unsafe.Add(mBase, uint32(l3)+40))
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(l3)+12))
@@ -322,7 +322,7 @@ L18:
 	goto L15
 L19:
 	;
-	v96 = *(*float64)(unsafe.Add(mBase, _consts[386]))
+	v96 = *(*float64)(unsafe.Add(mBase, _consts[384]))
 	v97 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+32))
 	v99 = int32(7)

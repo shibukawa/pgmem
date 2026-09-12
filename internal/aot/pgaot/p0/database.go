@@ -31,7 +31,7 @@ func F_UnlockDatabaseObject(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	*(*uint16)(unsafe.Add(mBase, uint32(v7)+12)) = uint16(v4)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l0
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[226]))
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[223]))
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v16
 	v19 = F_LockRelease(m, v7, l2, v4)
 	mBase = m.M
@@ -90,7 +90,7 @@ func F_has_database_privilege_id(m *base.Module, l0 int32) int32 {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
 		v20 = *(*int32)(unsafe.Add(mBase, _consts[4]))
-		v22 = F_convert_any_priv_string(m, v12, int32(1673296))
+		v22 = F_convert_any_priv_string(m, v12, int32(1685584))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

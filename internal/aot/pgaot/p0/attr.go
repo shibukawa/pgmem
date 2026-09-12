@@ -49,9 +49,9 @@ func F_GetAttrDefaultColumnAddress(m *base.Module, l0 int32, l1 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v12 = *(*int64)(unsafe.Add(mBase, _consts[224]))
+	v12 = *(*int64)(unsafe.Add(mBase, _consts[221]))
 	*(*int64)(unsafe.Add(mBase, uint32(l0))) = v12
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[225]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[222]))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v15
 	v19 = F_table_open(m, int32(2604), int32(1))
 	mBase = m.M
@@ -323,7 +323,7 @@ L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = l1
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = l0
-	F_errmsg_internal(m, int32(483628), v13)
+	F_errmsg_internal(m, int32(491431), v13)
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -333,7 +333,7 @@ L20:
 	}
 L21:
 	;
-	F_errfinish(m, int32(510293), int32(196), int32(100411))
+	F_errfinish(m, int32(518392), int32(196), int32(104436))
 	mBase = m.M
 	v99 = m.ExcPending
 	if v99 != 0 {
@@ -492,7 +492,7 @@ L14:
 	}
 L15:
 	;
-	F_errmsg(m, int32(413876), int32(0))
+	F_errmsg(m, int32(420864), int32(0))
 	mBase = m.M
 	v54 = m.ExcPending
 	if v54 != 0 {
@@ -513,9 +513,9 @@ L16:
 	}
 L17:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(4435024)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(4447520)
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
-	F_errdetail(m, int32(681737), v8+int32(16))
+	F_errdetail(m, int32(692137), v8+int32(16))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -525,7 +525,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(509192), int32(753), int32(352928))
+	F_errfinish(m, int32(517284), int32(753), int32(359339))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -550,7 +550,7 @@ L20:
 	}
 L21:
 	;
-	F_errmsg(m, int32(413876), int32(0))
+	F_errmsg(m, int32(420864), int32(0))
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -561,7 +561,7 @@ L21:
 L22:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-	F_errdetail(m, int32(683155), v8)
+	F_errdetail(m, int32(693619), v8)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -571,7 +571,7 @@ L22:
 	}
 L23:
 	;
-	F_errfinish(m, int32(509192), int32(760), int32(352928))
+	F_errfinish(m, int32(517284), int32(760), int32(359339))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {

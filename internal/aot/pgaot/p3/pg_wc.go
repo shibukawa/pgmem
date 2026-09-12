@@ -32,7 +32,7 @@ func F_pg_wc_isupper(m *base.Module, l0 int32) int32 {
 	_ = v59
 	var v74 int32
 	_ = v74
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[660]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[662]))
 	switch v3 - int32(1) {
 	case 0:
 		goto L3
@@ -84,7 +84,7 @@ L9:
 	;
 	v25 = base.I32_div_s(v19+v20, int32(2))
 	v27 = v25 << (uint(int32(3)) % 32)
-	v30 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[666])))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[668])))
 	if base.Ui32(v30) < base.Ui32(l0) {
 		goto L12
 	} else {
@@ -113,7 +113,7 @@ L13:
 	goto L14
 L14:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[667])))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v27)+uint32(_consts[669])))
 	if base.Ui32(v36) <= base.Ui32(l0) {
 		goto L15
 	} else {

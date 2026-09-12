@@ -55,12 +55,12 @@ func F_bit_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 				if v51 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(411123), int32(0))
+					F_errmsg(m, int32(418111), int32(0))
 					v55 = m.ExcPending
 					if v55 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(504270), int32(1195), int32(26665))
+						F_errfinish(m, int32(512333), int32(1195), int32(26774))
 						v60 = m.ExcPending
 						if v60 != 0 {
 							return int32(0)
@@ -111,12 +111,12 @@ func F_bit_overlay(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 			if v35 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(449397), int32(0))
+				F_errmsg(m, int32(456677), int32(0))
 				v39 = m.ExcPending
 				if v39 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(504270), int32(1191), int32(26665))
+					F_errfinish(m, int32(512333), int32(1191), int32(26774))
 					v44 = m.ExcPending
 					if v44 != 0 {
 						return int32(0)
@@ -212,13 +212,13 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v11
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v14
-						F_errmsg(m, int32(692606), v9)
+						F_errmsg(m, int32(703821), v9)
 						mBase = m.M
 						v91 = m.ExcPending
 						if v91 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(504270), int32(357), int32(37217))
+							F_errfinish(m, int32(512333), int32(357), int32(37381))
 							mBase = m.M
 							v96 = m.ExcPending
 							if v96 != 0 {
@@ -277,13 +277,13 @@ func F_bit_recv(m *base.Module, l0 int32) int32 {
 				if v70 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(337775), int32(0))
+					F_errmsg(m, int32(344039), int32(0))
 					mBase = m.M
 					v74 = m.ExcPending
 					if v74 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(504270), int32(347), int32(37217))
+						F_errfinish(m, int32(512333), int32(347), int32(37381))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
