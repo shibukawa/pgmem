@@ -1348,18 +1348,21 @@ L90:
 	return
 }
 func F__PG_init_isn(m *base.Module) {
-	var v12 int32
-	_ = v12
-	var v16 int32
-	_ = v16
-	F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_isn_0), int32(_a_F__PG_init_isn_1), int32(_a_F__PG_init_isn_2), int32(0), int32(6))
-	v12 = m.ExcPending
-	if v12 != 0 {
+	var v1 int32
+	_ = v1
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	v1 = int32(0)
+	F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_isn_0), int32(_a_F__PG_init_isn_1), v1, int32(_a_F__PG_init_isn_2), v1, int32(6))
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return
 	} else {
 		F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_isn_3))
-		v16 = m.ExcPending
-		if v16 != 0 {
+		v17 = m.ExcPending
+		if v17 != 0 {
 			return
 		} else {
 			return
@@ -1373,18 +1376,18 @@ func F__PG_init_pg_prewarm(m *base.Module) {
 	_ = v18
 	var v20 int32
 	_ = v20
-	var v28 int32
-	_ = v28
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
+	var v34 int32
+	_ = v34
 	var v38 int32
 	_ = v38
-	var v42 int32
-	_ = v42
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
 	F_DefineCustomIntVariable(m, int32(_a_F__PG_init_pg_prewarm_0), int32(_a_F__PG_init_pg_prewarm_1), int32(_a_F__PG_init_pg_prewarm_2), int32(_a_F__PG_init_pg_prewarm_3), int32(300), int32(0), int32(_a_F__PG_init_pg_prewarm_4), int32(2), int32(536870912))
 	mBase = m.M
 	v18 = m.ExcPending
@@ -1395,28 +1398,28 @@ func F__PG_init_pg_prewarm(m *base.Module) {
 		if v20 != int32(1) {
 			return
 		} else {
-			v28 = int32(_a_F__PG_init_pg_prewarm_5)
-			v30 = int32(1)
-			F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_prewarm_6), int32(_a_F__PG_init_pg_prewarm_7), v28, v30, v30)
+			v29 = int32(_a_F__PG_init_pg_prewarm_5)
+			v31 = int32(1)
+			F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_prewarm_6), int32(_a_F__PG_init_pg_prewarm_7), int32(0), v29, v31, v31)
 			mBase = m.M
-			v33 = m.ExcPending
-			if v33 != 0 {
+			v34 = m.ExcPending
+			if v34 != 0 {
 				return
 			} else {
 				F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pg_prewarm_8))
 				mBase = m.M
-				v37 = m.ExcPending
-				if v37 != 0 {
+				v38 = m.ExcPending
+				if v38 != 0 {
 					return
 				} else {
-					v38 = int32(*(*uint8)(unsafe.Add(mBase, _c_F__PG_init_pg_prewarm[1])))
-					if v38 != int32(1) {
+					v39 = int32(*(*uint8)(unsafe.Add(mBase, _c_F__PG_init_pg_prewarm[1])))
+					if v39 != int32(1) {
 						return
 					} else {
 						F_apw_start_leader_worker(m)
 						mBase = m.M
-						v42 = m.ExcPending
-						if v42 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return
 						} else {
 							return

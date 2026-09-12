@@ -1010,6 +1010,12 @@ func F_AlterEventTriggerOwner_internal(m *base.Module, l0 int32, l1 int32, l2 in
 func F_EventTriggerSQLDropAddObject(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_EventTriggerCollectSimpleCommand github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_EventTriggerCollectSimpleCommand
 func F_EventTriggerCollectSimpleCommand(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_ExplainPrintPlan github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainPrintPlan
+func F_ExplainPrintPlan(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_ExplainPrintTriggers github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainPrintTriggers
+func F_ExplainPrintTriggers(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_ExplainPrintJIT github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExplainPrintJIT
+func F_ExplainPrintJIT(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainXMLTag github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainXMLTag
 func F_ExplainXMLTag(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainIndentText github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_ExplainIndentText
@@ -1022,6 +1028,12 @@ func F_ExplainPropertyInteger(m *base.Module, l0 int32, l1 int32, l2 int64, l3 i
 func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_ExplainCloseGroup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainCloseGroup
 func F_ExplainCloseGroup(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_ExplainBeginOutput github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainBeginOutput
+func F_ExplainBeginOutput(m *base.Module, l0 int32)
+//go:linkname F_ExplainEndOutput github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainEndOutput
+func F_ExplainEndOutput(m *base.Module, l0 int32)
+//go:linkname F_NewExplainState github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_NewExplainState
+func F_NewExplainState(m *base.Module) int32
 //go:linkname F_heap_getattr_7 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_heap_getattr_7
 func F_heap_getattr_7(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_AlterForeignServerOwner_internal github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_AlterForeignServerOwner_internal
@@ -3449,7 +3461,7 @@ func F_reapply_stacked_values(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 //go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
 func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
 //go:linkname F_DefineCustomRealVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_DefineCustomRealVariable
-func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64)
+func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64, l7 int32)
 //go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
 func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
 //go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved

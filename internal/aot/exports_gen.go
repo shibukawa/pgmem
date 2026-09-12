@@ -11066,6 +11066,18 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.PgStatStatementsReset_1_7(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_auto_explain":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_auto_explain: want 0 args")
+		}
+		r := pgaot.PgMagicFuncAutoExplain(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_auto_explain":
+		if len(a) != 0 {
+			panic("aot: _PG_init_auto_explain: want 0 args")
+		}
+		pgaot.PGInitAutoExplain(m)
+		return nil, true
 	case "HnswParallelBuildMain":
 		if len(a) != 2 {
 			panic("aot: HnswParallelBuildMain: want 2 args")

@@ -186,50 +186,52 @@ func F__PG_init_pg_stat_statements(m *base.Module) {
 	_ = v21
 	var v30 int32
 	_ = v30
-	var v37 int32
-	_ = v37
-	var v44 int32
-	_ = v44
-	var v51 int32
-	_ = v51
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
 	var v54 int32
 	_ = v54
-	var v56 int32
-	_ = v56
 	var v57 int32
 	_ = v57
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v69 int32
-	_ = v69
-	var v70 int32
-	_ = v70
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v83 int32
-	_ = v83
-	var v84 int32
-	_ = v84
-	var v90 int32
-	_ = v90
-	var v91 int32
-	_ = v91
-	var v97 int32
-	_ = v97
-	var v98 int32
-	_ = v98
-	var v104 int32
-	_ = v104
-	var v105 int32
-	_ = v105
-	var v111 int32
-	_ = v111
-	var v112 int32
-	_ = v112
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v100 int32
+	_ = v100
+	var v101 int32
+	_ = v101
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v114 int32
+	_ = v114
+	var v115 int32
+	_ = v115
 	v3 = int32(*(*uint8)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[0])))
 	if v3 == int32(1) {
 		v7 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[1]))
@@ -251,66 +253,67 @@ func F__PG_init_pg_stat_statements(m *base.Module) {
 			if v30 != 0 {
 				return
 			} else {
-				F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_8), int32(_a_F__PG_init_pg_stat_statements_9), int32(_a_F__PG_init_pg_stat_statements_10), int32(1), int32(5))
+				F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_8), int32(_a_F__PG_init_pg_stat_statements_9), int32(0), int32(_a_F__PG_init_pg_stat_statements_10), int32(1), int32(5))
 				mBase = m.M
-				v37 = m.ExcPending
-				if v37 != 0 {
+				v38 = m.ExcPending
+				if v38 != 0 {
 					return
 				} else {
-					F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_11), int32(_a_F__PG_init_pg_stat_statements_12), int32(_a_F__PG_init_pg_stat_statements_13), int32(0), int32(5))
+					v41 = int32(0)
+					F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_11), int32(_a_F__PG_init_pg_stat_statements_12), v41, int32(_a_F__PG_init_pg_stat_statements_13), v41, int32(5))
 					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
+					v46 = m.ExcPending
+					if v46 != 0 {
 						return
 					} else {
-						F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_14), int32(_a_F__PG_init_pg_stat_statements_15), int32(_a_F__PG_init_pg_stat_statements_16), int32(1), int32(2))
+						F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_pg_stat_statements_14), int32(_a_F__PG_init_pg_stat_statements_15), int32(0), int32(_a_F__PG_init_pg_stat_statements_16), int32(1), int32(2))
 						mBase = m.M
-						v51 = m.ExcPending
-						if v51 != 0 {
+						v54 = m.ExcPending
+						if v54 != 0 {
 							return
 						} else {
 							F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pg_stat_statements_17))
 							mBase = m.M
-							v54 = m.ExcPending
-							if v54 != 0 {
+							v57 = m.ExcPending
+							if v57 != 0 {
 								return
 							} else {
-								v56 = int32(_a_F__PG_init_pg_stat_statements_18)
-								v57 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[3]))
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[4])) = v57
+								v59 = int32(_a_F__PG_init_pg_stat_statements_18)
+								v60 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[3]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[4])) = v60
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[3])) = int32(_a_F__PG_init_pg_stat_statements_19)
-								v62 = int32(_a_F__PG_init_pg_stat_statements_20)
-								v63 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[5]))
+								v65 = int32(_a_F__PG_init_pg_stat_statements_20)
+								v66 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[5]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[5])) = int32(_a_F__PG_init_pg_stat_statements_21)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[6])) = v63
-								v69 = int32(_a_F__PG_init_pg_stat_statements_22)
-								v70 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[7]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[6])) = v66
+								v72 = int32(_a_F__PG_init_pg_stat_statements_22)
+								v73 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[7]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[7])) = int32(_a_F__PG_init_pg_stat_statements_23)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[8])) = v70
-								v76 = int32(_a_F__PG_init_pg_stat_statements_24)
-								v77 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[9]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[8])) = v73
+								v79 = int32(_a_F__PG_init_pg_stat_statements_24)
+								v80 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[9]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[9])) = int32(_a_F__PG_init_pg_stat_statements_25)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[10])) = v77
-								v83 = int32(_a_F__PG_init_pg_stat_statements_26)
-								v84 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[11]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[10])) = v80
+								v86 = int32(_a_F__PG_init_pg_stat_statements_26)
+								v87 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[11]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[11])) = int32(_a_F__PG_init_pg_stat_statements_27)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[12])) = v84
-								v90 = int32(_a_F__PG_init_pg_stat_statements_28)
-								v91 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[13]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[12])) = v87
+								v93 = int32(_a_F__PG_init_pg_stat_statements_28)
+								v94 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[13]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[13])) = int32(_a_F__PG_init_pg_stat_statements_29)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[14])) = v91
-								v97 = int32(_a_F__PG_init_pg_stat_statements_30)
-								v98 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[15]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[14])) = v94
+								v100 = int32(_a_F__PG_init_pg_stat_statements_30)
+								v101 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[15]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[15])) = int32(_a_F__PG_init_pg_stat_statements_31)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[16])) = v98
-								v104 = int32(_a_F__PG_init_pg_stat_statements_32)
-								v105 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[17]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[16])) = v101
+								v107 = int32(_a_F__PG_init_pg_stat_statements_32)
+								v108 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[17]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[17])) = int32(_a_F__PG_init_pg_stat_statements_33)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[18])) = v105
-								v111 = int32(_a_F__PG_init_pg_stat_statements_34)
-								v112 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[19]))
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[18])) = v108
+								v114 = int32(_a_F__PG_init_pg_stat_statements_34)
+								v115 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[19]))
 								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[19])) = int32(_a_F__PG_init_pg_stat_statements_35)
-								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[20])) = v112
+								*(*int32)(unsafe.Add(mBase, _c_F__PG_init_pg_stat_statements[20])) = v115
 								return
 							}
 						}

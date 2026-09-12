@@ -4862,33 +4862,33 @@ L59:
 func F__PG_init_pg_trgm(m *base.Module) {
 	var v8 int32
 	_ = v8
-	var v16 int32
-	_ = v16
-	var v27 int32
-	_ = v27
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
+	var v17 int32
+	_ = v17
+	var v29 int32
+	_ = v29
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
 	v8 = int32(_a_F__PG_init_pg_trgm_0)
-	F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_1), int32(_a_F__PG_init_pg_trgm_2), v8, int32(_a_F__PG_init_pg_trgm_3), float64(0.30000001192092896), float64(0), float64(1))
-	v16 = m.ExcPending
-	if v16 != 0 {
+	F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_1), int32(_a_F__PG_init_pg_trgm_2), v8, int32(_a_F__PG_init_pg_trgm_3), float64(0.30000001192092896), float64(0), float64(1), int32(6))
+	v17 = m.ExcPending
+	if v17 != 0 {
 		return
 	} else {
-		F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_4), int32(_a_F__PG_init_pg_trgm_5), v8, int32(_a_F__PG_init_pg_trgm_6), float64(0.6000000238418579), float64(0), float64(1))
-		v27 = m.ExcPending
-		if v27 != 0 {
+		F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_4), int32(_a_F__PG_init_pg_trgm_5), v8, int32(_a_F__PG_init_pg_trgm_6), float64(0.6000000238418579), float64(0), float64(1), int32(6))
+		v29 = m.ExcPending
+		if v29 != 0 {
 			return
 		} else {
-			F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_7), int32(_a_F__PG_init_pg_trgm_8), v8, int32(_a_F__PG_init_pg_trgm_9), float64(0.5), float64(0), float64(1))
-			v38 = m.ExcPending
-			if v38 != 0 {
+			F_DefineCustomRealVariable(m, int32(_a_F__PG_init_pg_trgm_7), int32(_a_F__PG_init_pg_trgm_8), v8, int32(_a_F__PG_init_pg_trgm_9), float64(0.5), float64(0), float64(1), int32(6))
+			v41 = m.ExcPending
+			if v41 != 0 {
 				return
 			} else {
 				F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_pg_trgm_10))
-				v42 = m.ExcPending
-				if v42 != 0 {
+				v45 = m.ExcPending
+				if v45 != 0 {
 					return
 				} else {
 					return

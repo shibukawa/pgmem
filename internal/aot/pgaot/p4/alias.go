@@ -1006,16 +1006,14 @@ func F_errorConflictingDefElem(m *base.Module, l0 int32, l1 int32)
 func F_EventTriggerCommonSetup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_EventTriggerInvoke github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_EventTriggerInvoke
 func F_EventTriggerInvoke(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_ExplainPrintPlan github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainPrintPlan
+func F_ExplainPrintPlan(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_show_buffer_usage github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_show_buffer_usage
 func F_show_buffer_usage(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_ExplainPrintTriggers github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainPrintTriggers
+func F_ExplainPrintTriggers(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_ExplainPrintJIT github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_ExplainPrintJIT
 func F_ExplainPrintJIT(m *base.Module, l0 int32, l1 int32, l2 int32)
-//go:linkname F_ExplainPreScanNode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainPreScanNode
-func F_ExplainPreScanNode(m *base.Module, l0 int32, l1 int32) int32
-//go:linkname F_ExplainNode github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainNode
-func F_ExplainNode(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
-//go:linkname F_report_triggers github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_report_triggers
-func F_report_triggers(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainPropertyList github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainPropertyList
 func F_ExplainPropertyList(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_ExplainPropertyText github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainPropertyText
@@ -3639,7 +3637,7 @@ func F_config_enum_get_options(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 //go:linkname F_GetConfigOptionFlags github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_GetConfigOptionFlags
 func F_GetConfigOptionFlags(m *base.Module, l0 int32) int32
 //go:linkname F_DefineCustomBoolVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DefineCustomBoolVariable
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
 func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable

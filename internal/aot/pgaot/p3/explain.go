@@ -5,6 +5,85 @@ import (
 	"unsafe"
 )
 
+func F_ExplainBeginOutput(m *base.Module, l0 int32) {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	switch v2 - int32(1) {
+	case 0:
+		v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		F_appendStringInfoString(m, v5, int32(_a_F_ExplainBeginOutput_0))
+		mBase = m.M
+		v8 = m.ExcPending
+		if v8 != 0 {
+			return
+		} else {
+			v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v9 + int32(1)
+			return
+		}
+	case 1:
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		F_appendStringInfoChar(m, v13, int32(91))
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return
+		} else {
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+			v19 = F_lcons_int(m, int32(0), v18)
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v19
+				v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v22 + int32(1)
+				return
+			}
+		}
+	case 2:
+		v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v28 = F_lcons_int(m, int32(0), v27)
+		mBase = m.M
+		v29 = m.ExcPending
+		if v29 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v28
+			return
+		}
+	default:
+		return
+	}
+}
 func F_ExplainOpenWorker(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

@@ -986,8 +986,14 @@ func F_ExplainPropertyBool(m *base.Module, l0 int32, l1 int32, l2 int32)
 func F_ExplainOpenGroup(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_ExplainCloseGroup github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_ExplainCloseGroup
 func F_ExplainCloseGroup(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_ExplainBeginOutput github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ExplainBeginOutput
+func F_ExplainBeginOutput(m *base.Module, l0 int32)
+//go:linkname F_ExplainEndOutput github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_ExplainEndOutput
+func F_ExplainEndOutput(m *base.Module, l0 int32)
 //go:linkname F_ExplainSeparatePlans github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_ExplainSeparatePlans
 func F_ExplainSeparatePlans(m *base.Module, l0 int32)
+//go:linkname F_NewExplainState github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_NewExplainState
+func F_NewExplainState(m *base.Module) int32
 //go:linkname F_get_extension_name github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_get_extension_name
 func F_get_extension_name(m *base.Module, l0 int32) int32
 //go:linkname F_extension_file_exists github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_extension_file_exists
@@ -4130,10 +4136,20 @@ func F_parse_int(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 func F_parse_and_validate_value(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) int32
 //go:linkname F_AlterSystemSetConfigFile github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_AlterSystemSetConfigFile
 func F_AlterSystemSetConfigFile(m *base.Module, l0 int32)
+//go:linkname F_DefineCustomBoolVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_DefineCustomBoolVariable
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_init_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_init_custom_variable
 func F_init_custom_variable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) int32
 //go:linkname F_define_custom_variable github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_define_custom_variable
 func F_define_custom_variable(m *base.Module, l0 int32)
+//go:linkname F_DefineCustomIntVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_DefineCustomIntVariable
+func F_DefineCustomIntVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32)
+//go:linkname F_DefineCustomRealVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_DefineCustomRealVariable
+func F_DefineCustomRealVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 float64, l5 float64, l6 float64, l7 int32)
+//go:linkname F_DefineCustomEnumVariable github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_DefineCustomEnumVariable
+func F_DefineCustomEnumVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32)
+//go:linkname F_MarkGUCPrefixReserved github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MarkGUCPrefixReserved
+func F_MarkGUCPrefixReserved(m *base.Module, l0 int32)
 //go:linkname F_GetConfigOptionByName github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_GetConfigOptionByName
 func F_GetConfigOptionByName(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_TransformGUCArray github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_TransformGUCArray

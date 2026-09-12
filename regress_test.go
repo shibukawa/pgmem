@@ -75,6 +75,7 @@ var contribRegress = map[string][]string{
 	"pg_buffercache":  {"pg_buffercache", "pg_buffercache_numa"},
 	"pg_freespacemap": {"pg_freespacemap"},
 	"pg_prewarm":      {"pg_prewarm"},
+	"auto_explain":    {"alter_reset"},
 	// left out: oldextversions (\d), extended and squashing (psql 18's
 	// \bind and \bind_named), parallel (expects launched parallel workers)
 	"pg_stat_statements": {

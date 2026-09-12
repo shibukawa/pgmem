@@ -633,24 +633,6 @@ func F_pgss_shmem_request(m *base.Module) {
 	_ = v85
 	var v92 int32
 	_ = v92
-	var v105 int32
-	_ = v105
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
-	var v113 int32
-	_ = v113
-	var v114 int32
-	_ = v114
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v120 int32
-	_ = v120
 	var v132 int32
 	_ = v132
 	var v138 int32
@@ -986,91 +968,32 @@ L39:
 	goto L40
 L40:
 	;
-	goto L43
+	goto L42
 L41:
 	;
-	if base.B2i32(v116 != v117) == int32(0) {
-		v187 = v120
-		v188 = v114
-		goto L35
-	} else {
-		goto L50
-	}
-L43:
-	;
-	goto L44
-L44:
-	;
-	v105 = v85
-	v106 = v84
-	v107 = v92
-	goto L45
-L45:
-	;
-	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v105))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v106))) = uint8(v109)
-	if v109 == int32(0) {
-		v167 = v105
-		v168 = v106
-		v169 = v107
-		goto L36
-	} else {
-		goto L47
-	}
-L46:
+	goto L50
+L42:
 	;
 	goto L41
-L47:
-	;
-	v113 = int32(1)
-	v114 = v106 + v113
-	v116 = v107 - v113
-	v117 = int32(0)
-	v120 = v105 + v113
-	if v120&int32(3) == v117 {
-		goto L41
-	} else {
-		goto L48
-	}
-L48:
-	;
-	if v116 != 0 {
-		v105 = v120
-		v106 = v114
-		v107 = v116
-		goto L45
-	} else {
-		goto L49
-	}
-L49:
-	;
-	goto L46
 L50:
 	;
-	v132 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120))))
+	v132 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pgss_shmem_request[8])))
 	if v132 == int32(0) {
-		v160 = v120
-		v161 = v114
-		v162 = v116
+		v160 = v85
+		v161 = v84
+		v162 = v92
 		goto L37
 	} else {
 		goto L51
 	}
 L51:
 	;
-	if base.Ui32(v116) < base.Ui32(int32(4)) {
-		v160 = v120
-		v161 = v114
-		v162 = v116
-		goto L37
-	} else {
-		goto L52
-	}
+	goto L52
 L52:
 	;
-	v138 = v120
-	v139 = v114
-	v140 = v116
+	v138 = v85
+	v139 = v84
+	v140 = v92
 	goto L53
 L53:
 	;

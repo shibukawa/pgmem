@@ -2,6 +2,9 @@ package p2
 
 import base "github.com/shibukawa/pgmem/internal/aot/pgaot/base"
 
+func F_Pg_magic_func_auto_explain(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_auto_explain_0)
+}
 func F_Pg_magic_func_earthdistance(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_earthdistance_0)
 }

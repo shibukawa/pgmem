@@ -658,6 +658,199 @@ L70:
 	;
 	goto L1
 }
+func F__PG_init_auto_explain(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v14 int32
+	_ = v14
+	var v20 int32
+	_ = v20
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	var v57 int32
+	_ = v57
+	var v62 int32
+	_ = v62
+	var v68 int32
+	_ = v68
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v84 int32
+	_ = v84
+	var v90 int32
+	_ = v90
+	var v102 int32
+	_ = v102
+	var v107 int32
+	_ = v107
+	var v115 int32
+	_ = v115
+	var v128 int32
+	_ = v128
+	var v133 int32
+	_ = v133
+	var v139 int32
+	_ = v139
+	var v150 int32
+	_ = v150
+	var v158 float64
+	_ = v158
+	var v163 int32
+	_ = v163
+	var v167 int32
+	_ = v167
+	var v170 int32
+	_ = v170
+	var v171 int32
+	_ = v171
+	var v177 int32
+	_ = v177
+	var v178 int32
+	_ = v178
+	var v185 int32
+	_ = v185
+	var v186 int32
+	_ = v186
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	v14 = int32(-1)
+	F_DefineCustomIntVariable(m, int32(_a_F__PG_init_auto_explain_0), int32(_a_F__PG_init_auto_explain_1), int32(_a_F__PG_init_auto_explain_2), int32(_a_F__PG_init_auto_explain_3), v14, v14, int32(2147483647), int32(5), int32(268435456))
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		return
+	} else {
+		v29 = int32(-1)
+		F_DefineCustomIntVariable(m, int32(_a_F__PG_init_auto_explain_4), int32(_a_F__PG_init_auto_explain_5), int32(_a_F__PG_init_auto_explain_6), int32(_a_F__PG_init_auto_explain_7), v29, v29, int32(2147483647), int32(5), int32(83886080))
+		mBase = m.M
+		v35 = m.ExcPending
+		if v35 != 0 {
+			return
+		} else {
+			v40 = int32(0)
+			F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_8), int32(_a_F__PG_init_auto_explain_9), v40, int32(_a_F__PG_init_auto_explain_10), v40, int32(5))
+			mBase = m.M
+			v46 = m.ExcPending
+			if v46 != 0 {
+				return
+			} else {
+				v51 = int32(0)
+				F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_11), int32(_a_F__PG_init_auto_explain_12), v51, int32(_a_F__PG_init_auto_explain_13), v51, int32(5))
+				mBase = m.M
+				v57 = m.ExcPending
+				if v57 != 0 {
+					return
+				} else {
+					v62 = int32(0)
+					F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_14), int32(_a_F__PG_init_auto_explain_15), v62, int32(_a_F__PG_init_auto_explain_16), v62, int32(5))
+					mBase = m.M
+					v68 = m.ExcPending
+					if v68 != 0 {
+						return
+					} else {
+						v73 = int32(0)
+						F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_17), int32(_a_F__PG_init_auto_explain_18), v73, int32(_a_F__PG_init_auto_explain_19), v73, int32(5))
+						mBase = m.M
+						v79 = m.ExcPending
+						if v79 != 0 {
+							return
+						} else {
+							v84 = int32(0)
+							F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_20), int32(_a_F__PG_init_auto_explain_21), v84, int32(_a_F__PG_init_auto_explain_22), v84, int32(5))
+							mBase = m.M
+							v90 = m.ExcPending
+							if v90 != 0 {
+								return
+							} else {
+								F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_23), int32(_a_F__PG_init_auto_explain_24), int32(_a_F__PG_init_auto_explain_25), int32(_a_F__PG_init_auto_explain_26), int32(0), int32(5))
+								mBase = m.M
+								v102 = m.ExcPending
+								if v102 != 0 {
+									return
+								} else {
+									v107 = int32(0)
+									F_DefineCustomEnumVariable(m, int32(_a_F__PG_init_auto_explain_27), int32(_a_F__PG_init_auto_explain_28), v107, int32(_a_F__PG_init_auto_explain_29), v107, int32(_a_F__PG_init_auto_explain_30), int32(5))
+									mBase = m.M
+									v115 = m.ExcPending
+									if v115 != 0 {
+										return
+									} else {
+										F_DefineCustomEnumVariable(m, int32(_a_F__PG_init_auto_explain_31), int32(_a_F__PG_init_auto_explain_32), int32(0), int32(_a_F__PG_init_auto_explain_33), int32(15), int32(_a_F__PG_init_auto_explain_34), int32(5))
+										mBase = m.M
+										v128 = m.ExcPending
+										if v128 != 0 {
+											return
+										} else {
+											v133 = int32(0)
+											F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_35), int32(_a_F__PG_init_auto_explain_36), v133, int32(_a_F__PG_init_auto_explain_37), v133, int32(5))
+											mBase = m.M
+											v139 = m.ExcPending
+											if v139 != 0 {
+												return
+											} else {
+												F_DefineCustomBoolVariable(m, int32(_a_F__PG_init_auto_explain_38), int32(_a_F__PG_init_auto_explain_39), int32(0), int32(_a_F__PG_init_auto_explain_40), int32(1), int32(5))
+												mBase = m.M
+												v150 = m.ExcPending
+												if v150 != 0 {
+													return
+												} else {
+													v158 = float64(1)
+													F_DefineCustomRealVariable(m, int32(_a_F__PG_init_auto_explain_41), int32(_a_F__PG_init_auto_explain_42), int32(0), int32(_a_F__PG_init_auto_explain_43), v158, float64(0), v158, int32(5))
+													mBase = m.M
+													v163 = m.ExcPending
+													if v163 != 0 {
+														return
+													} else {
+														F_MarkGUCPrefixReserved(m, int32(_a_F__PG_init_auto_explain_44))
+														mBase = m.M
+														v167 = m.ExcPending
+														if v167 != 0 {
+															return
+														} else {
+															v170 = int32(_a_F__PG_init_auto_explain_45)
+															v171 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[0]))
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[1])) = v171
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[0])) = int32(_a_F__PG_init_auto_explain_46)
+															v177 = int32(_a_F__PG_init_auto_explain_47)
+															v178 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[2]))
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[2])) = int32(_a_F__PG_init_auto_explain_48)
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[3])) = v178
+															v185 = int32(_a_F__PG_init_auto_explain_49)
+															v186 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[4]))
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[4])) = int32(_a_F__PG_init_auto_explain_50)
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[5])) = v186
+															v193 = int32(_a_F__PG_init_auto_explain_51)
+															v194 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[6]))
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[6])) = int32(_a_F__PG_init_auto_explain_52)
+															*(*int32)(unsafe.Add(mBase, _c_F__PG_init_auto_explain[7])) = v194
+															return
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_do_pg_abort_backup(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase

@@ -5,13 +5,13 @@ import (
 	"unsafe"
 )
 
-func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
+func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
 	var v10 int32
 	_ = v10
 	var v11 int32
@@ -20,17 +20,17 @@ func F_DefineCustomBoolVariable(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v15
 	var v22 int32
 	_ = v22
-	v4 = l3
-	v6 = int32(0)
-	v10 = F_init_custom_variable(m, l0, l1, v6, l4, v6, v6, int32(120))
+	v5 = l4
+	v7 = int32(0)
+	v10 = F_init_custom_variable(m, l0, l1, l2, l5, v7, v7, int32(120))
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
 		return
 	} else {
-		*(*uint8)(unsafe.Add(mBase, uint32(v10)+112)) = uint8(v4)
-		*(*uint8)(unsafe.Add(mBase, uint32(v10)+96)) = uint8(v4)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+92)) = l2
+		*(*uint8)(unsafe.Add(mBase, uint32(v10)+112)) = uint8(v5)
+		*(*uint8)(unsafe.Add(mBase, uint32(v10)+96)) = uint8(v5)
+		*(*int32)(unsafe.Add(mBase, uint32(v10)+92)) = l3
 		v15 = int32(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+108)) = v15
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+104)) = v15
