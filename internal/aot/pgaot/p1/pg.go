@@ -44,6 +44,183 @@ func F_SetPGVariable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F__PG_init_bloom(m *base.Module) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v41 int32
+	_ = v41
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v57 int32
+	_ = v57
+	var v61 int32
+	_ = v61
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	v6 = m.G0
+	v8 = v6 - int32(32)
+	m.G0 = v8
+	v11 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0]))
+	if base.Ui32(int32(1073741824)) <= base.Ui32(v11) {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v17 = m.ExcPending
+	if v17 != 0 {
+		goto L4
+	} else {
+		goto L5
+	}
+L2:
+	;
+	goto L3
+L3:
+	;
+	v32 = v11 << (uint(int32(1)) % 32)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[0])) = v32
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[1])) = v32
+	F_add_int_reloption(m, v32, int32(_a_F__PG_init_bloom_0), int32(_a_F__PG_init_bloom_1), int32(80), int32(_a_F__PG_init_bloom_2))
+	mBase = m.M
+	v41 = m.ExcPending
+	if v41 != 0 {
+		goto L4
+	} else {
+		goto L9
+	}
+L4:
+	;
+	return
+L5:
+	;
+	F_errcode(m, int32(261))
+	mBase = m.M
+	v20 = m.ExcPending
+	if v20 != 0 {
+		goto L4
+	} else {
+		goto L6
+	}
+L6:
+	;
+	F_errmsg(m, int32(_a_F__PG_init_bloom_3), int32(0))
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L4
+	} else {
+		goto L7
+	}
+L7:
+	;
+	F_errfinish(m, int32(_a_F__PG_init_bloom_4), int32(700), int32(_a_F__PG_init_bloom_5))
+	mBase = m.M
+	v29 = m.ExcPending
+	if v29 != 0 {
+		goto L4
+	} else {
+		goto L8
+	}
+L8:
+	;
+	base.Wasm_trap_unreachable()
+	for {
+	}
+L9:
+	;
+	*(*int64)(unsafe.Add(mBase, _c_F__PG_init_bloom[2])) = int64(17179869185)
+	*(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[3])) = int32(_a_F__PG_init_bloom_0)
+	v49 = int32(0)
+	goto L10
+L10:
+	;
+	v55 = v49 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v55
+	v57 = int32(16)
+	v61 = F_pg_snprintf(m, v8+v57, v57, int32(_a_F__PG_init_bloom_6), v8)
+	mBase = m.M
+	v62 = m.ExcPending
+	if v62 != 0 {
+		goto L4
+	} else {
+		goto L12
+	}
+L11:
+	;
+	m.G0 = v8 + int32(32)
+	return
+L12:
+	;
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[1]))
+	F_add_int_reloption(m, v64, v8+int32(16), int32(_a_F__PG_init_bloom_7), int32(2), int32(4095))
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L4
+	} else {
+		goto L13
+	}
+L13:
+	;
+	v73 = *(*int32)(unsafe.Add(mBase, _c_F__PG_init_bloom[4]))
+	v76 = F_MemoryContextStrdup(m, v73, v8+int32(16))
+	mBase = m.M
+	v77 = m.ExcPending
+	if v77 != 0 {
+		goto L4
+	} else {
+		goto L14
+	}
+L14:
+	;
+	v79 = v55 << (uint(int32(4)) % 32)
+	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[5]))) = v49<<(uint(int32(2))%32) + int32(8)
+	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[2]))) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F__PG_init_bloom[3]))) = v76
+	if v55 != int32(32) {
+		v49 = v55
+		goto L10
+	} else {
+		goto L15
+	}
+L15:
+	;
+	goto L11
+}
 func F_create_pg_locale_builtin(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

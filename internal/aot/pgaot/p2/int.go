@@ -27,6 +27,251 @@ func F__int_contained(m *base.Module, l0 int32) int32 {
 		return v6
 	}
 }
+func F_add_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v40 int32
+	_ = v40
+	var v42 int32
+	_ = v42
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v88 int32
+	_ = v88
+	v6 = int32(0)
+	if l0 != 0 {
+		v9 = int32(_a_F_add_int_reloption_0)
+		v10 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0]))
+		v13 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[1]))
+		*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v13
+		v15 = v10
+	} else {
+		v15 = v6
+	}
+	v17 = F_palloc(m, int32(36))
+	mBase = m.M
+	v18 = m.ExcPending
+	if v18 != 0 {
+		return
+	} else {
+		v19 = F_pstrdup(m, l1)
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v17))) = v19
+			if l2 != 0 {
+				v22 = F_pstrdup(m, l2)
+				mBase = m.M
+				v23 = m.ExcPending
+				if v23 != 0 {
+					return
+				} else {
+					v24 = v22
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = l0
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v24
+					v27 = F_strlen(m, l1)
+					mBase = m.M
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+20)) = int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v27
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+12)) = int32(8)
+					if v15 != 0 {
+						*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v15
+					} else {
+					}
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+32)) = l4
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+28)) = int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v17)+24)) = l3
+					v40 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+					v42 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3]))
+					if v40 < v42 {
+						v45 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4]))
+						v77 = v45
+						v78 = v40
+						*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+						*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+						v88 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+						return
+					} else {
+						v46 = int32(_a_F_add_int_reloption_0)
+						v47 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0]))
+						v50 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[1]))
+						*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v50
+						if v42 == int32(0) {
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3])) = int32(8)
+							v58 = F_palloc(m, int32(32))
+							mBase = m.M
+							v59 = m.ExcPending
+							if v59 != 0 {
+								return
+							} else {
+								v70 = v58
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v47
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4])) = v70
+								v76 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+								v77 = v70
+								v78 = v76
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+								v88 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+								return
+							}
+						} else {
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3])) = v42 << (uint(int32(1)) % 32)
+							v65 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4]))
+							v68 = F_repalloc(m, v65, v42<<(uint(int32(3))%32))
+							mBase = m.M
+							v69 = m.ExcPending
+							if v69 != 0 {
+								return
+							} else {
+								v70 = v68
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v47
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4])) = v70
+								v76 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+								v77 = v70
+								v78 = v76
+								*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+								*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+								v88 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+								return
+							}
+						}
+					}
+				}
+			} else {
+				v24 = v6
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = l0
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = v24
+				v27 = F_strlen(m, l1)
+				mBase = m.M
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+20)) = int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v27
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+12)) = int32(8)
+				if v15 != 0 {
+					*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v15
+				} else {
+				}
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+32)) = l4
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+28)) = int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(v17)+24)) = l3
+				v40 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+				v42 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3]))
+				if v40 < v42 {
+					v45 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4]))
+					v77 = v45
+					v78 = v40
+					*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+					*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+					v88 = int32(0)
+					*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+					return
+				} else {
+					v46 = int32(_a_F_add_int_reloption_0)
+					v47 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0]))
+					v50 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[1]))
+					*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v50
+					if v42 == int32(0) {
+						*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3])) = int32(8)
+						v58 = F_palloc(m, int32(32))
+						mBase = m.M
+						v59 = m.ExcPending
+						if v59 != 0 {
+							return
+						} else {
+							v70 = v58
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v47
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4])) = v70
+							v76 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+							v77 = v70
+							v78 = v76
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+							*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+							v88 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+							return
+						}
+					} else {
+						*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[3])) = v42 << (uint(int32(1)) % 32)
+						v65 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4]))
+						v68 = F_repalloc(m, v65, v42<<(uint(int32(3))%32))
+						mBase = m.M
+						v69 = m.ExcPending
+						if v69 != 0 {
+							return
+						} else {
+							v70 = v68
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[0])) = v47
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[4])) = v70
+							v76 = *(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2]))
+							v77 = v70
+							v78 = v76
+							*(*int32)(unsafe.Add(mBase, _c_F_add_int_reloption[2])) = v78 + int32(1)
+							*(*int32)(unsafe.Add(mBase, uint32(v77+v78<<(uint(int32(2))%32)))) = v17
+							v88 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, _c_F_add_int_reloption[5])) = uint8(v88)
+							return
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_readIntCols(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

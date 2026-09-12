@@ -4079,22 +4079,12 @@ func F_ProcessCopyOptions(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v1615
 	var v1619 int32
 	_ = v1619
+	var v1622 int32
+	_ = v1622
 	var v1623 int32
 	_ = v1623
-	var v1637 int32
-	_ = v1637
-	var v1639 int32
-	_ = v1639
-	var v1642 int32
-	_ = v1642
-	var v1644 int32
-	_ = v1644
-	var v1645 int32
-	_ = v1645
-	var v1646 int32
-	_ = v1646
-	var v1649 int32
-	_ = v1649
+	var v1624 int32
+	_ = v1624
 	var v1661 int32
 	_ = v1661
 	var v1671 int32
@@ -8723,8 +8713,10 @@ L591:
 	goto L581
 L592:
 	;
+	v1622 = int32(_a_F_ProcessCopyOptions_46)
 	v1623 = int32(*(*int8)(unsafe.Add(mBase, uint32(v1524))))
-	goto L599
+	v1624 = int32(39)
+	goto L598
 L593:
 	;
 	goto L594
@@ -8753,61 +8745,13 @@ L597:
 	goto L615
 L598:
 	;
-	if base.B2i32(v1645 != v1646) == int32(0) {
-		goto L596
-	} else {
-		goto L606
-	}
-L599:
-	;
-	goto L600
-L600:
-	;
-	v1637 = int32(_a_F_ProcessCopyOptions_46)
-	v1639 = int32(39)
-	goto L601
-L601:
-	;
-	v1642 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1637))))
-	if v1642 == v1623&int32(255) {
-		v1698 = v1637
-		v1700 = v1639
-		goto L597
-	} else {
-		goto L603
-	}
-L602:
-	;
-	goto L598
-L603:
-	;
-	v1644 = int32(1)
-	v1645 = v1639 - v1644
-	v1646 = int32(0)
-	v1649 = v1637 + v1644
-	if v1649&int32(3) == v1646 {
-		goto L598
-	} else {
-		goto L604
-	}
-L604:
-	;
-	if v1645 != 0 {
-		v1637 = v1649
-		v1639 = v1645
-		goto L601
-	} else {
-		goto L605
-	}
-L605:
-	;
-	goto L602
+	goto L606
 L606:
 	;
-	v1661 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v1649))))
+	v1661 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_ProcessCopyOptions[19])))
 	if v1661 == v1623&int32(255) {
-		v1691 = v1649
-		v1693 = v1645
+		v1691 = v1622
+		v1693 = v1624
 		goto L607
 	} else {
 		goto L608
@@ -8821,17 +8765,11 @@ L607:
 	}
 L608:
 	;
-	if base.Ui32(v1645) < base.Ui32(int32(4)) {
-		v1691 = v1649
-		v1693 = v1645
-		goto L607
-	} else {
-		goto L609
-	}
+	goto L609
 L609:
 	;
-	v1671 = v1649
-	v1673 = v1645
+	v1671 = v1622
+	v1673 = v1624
 	goto L610
 L610:
 	;
@@ -12200,44 +12138,44 @@ func F_pairingheap_add(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
-func F_palloc_aligned(m *base.Module, l0 int32, l1 int32) int32 {
+func F_palloc_aligned(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v22 int32
+	_ = v22
 	var v24 int32
 	_ = v24
-	var v26 int32
-	_ = v26
 	v6 = *(*int32)(unsafe.Add(mBase, _c_F_palloc_aligned[0]))
 	if base.Ui32(l1) <= base.Ui32(int32(8)) {
-		v10 = F_MemoryContextAllocExtended(m, v6, l0, int32(4))
+		v9 = F_MemoryContextAllocExtended(m, v6, l0, l2)
 		mBase = m.M
-		v13 = m.ExcPending
-		if v13 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			return v10
+			return v9
 		}
 	} else {
-		v17 = F_MemoryContextAllocExtended(m, v6, l0+l1, int32(4))
+		v15 = F_MemoryContextAllocExtended(m, v6, l0+l1, l2)
 		mBase = m.M
-		v18 = m.ExcPending
-		if v18 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return int32(0)
 		} else {
-			v24 = (v17 + l1 + int32(7)) & (int32(0) - l1)
-			v26 = v24 - int32(8)
-			*(*int64)(unsafe.Add(mBase, uint32(v26))) = base.I64_extend_i32_u(l1)<<(uint(int64(5))%64) | base.I64_extend_i32_u(v26-v17)<<(uint(int64(34))%64) | int64(6)
-			return v24
+			v22 = (v15 + l1 + int32(7)) & (int32(0) - l1)
+			v24 = v22 - int32(8)
+			*(*int64)(unsafe.Add(mBase, uint32(v24))) = base.I64_extend_i32_u(l1)<<(uint(int64(5))%64) | base.I64_extend_i32_u(v24-v15)<<(uint(int64(34))%64) | int64(6)
+			return v22
 		}
 	}
 }

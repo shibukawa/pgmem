@@ -7737,6 +7737,128 @@ func F_sigdelset(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
+func F_signValue(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
+	mBase := m.M
+	_ = mBase
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v33 int32
+	_ = v33
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v85 int32
+	_ = v85
+	var v86 int32
+	_ = v86
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
+	v8 = int32(_a_F_signValue_0)
+	v10 = base.I32_rem_s(l3, int32(2147483646))
+	*(*int32)(unsafe.Add(mBase, _c_F_signValue[0])) = v10 + int32(1)
+	v19 = l0 + l3<<(uint(int32(2))%32)
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+896))
+	v21 = F_FunctionCall1Coll(m, l0+l3*int32(28), v20, l2)
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		return
+	} else {
+		v23 = *(*int32)(unsafe.Add(mBase, _c_F_signValue[0]))
+		v24 = int32(_a_F_signValue_1)
+		v25 = base.I32_div_s(v23, v24)
+		v33 = v25*int32(-2836) + (v23-v25*v24)*int32(_a_F_signValue_2)
+		if v33 < int32(0) {
+			v38 = v33 + int32(2147483647)
+		} else {
+			v38 = v33
+		}
+		v39 = int32(1)
+		v43 = base.I32_rem_s(v21^(v38-v39), int32(2147483646))
+		v45 = v43 + v39
+		*(*int32)(unsafe.Add(mBase, _c_F_signValue[0])) = v45
+		v49 = *(*int32)(unsafe.Add(mBase, uint32(v19+int32(1032))))
+		if int32(0) < v49 {
+			v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1028))
+			v56 = int32(0)
+			v59 = v45
+			for {
+				v63 = int32(_a_F_signValue_1)
+				v64 = base.I32_div_s(v59, v63)
+				v72 = v64*int32(-2836) + (v59-v64*v63)*int32(_a_F_signValue_2)
+				if v72 < int32(0) {
+					v77 = v72 + int32(2147483647)
+				} else {
+					v77 = v72
+				}
+				v78 = int32(1)
+				v80 = base.I32_rem_s(v77-v78, v52<<(uint(int32(4))%32))
+				v82 = base.I32_div_s(v80, int32(16))
+				v85 = l1 + v82<<(uint(v78)%32)
+				v86 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v85))))
+				v91 = v86 | v78<<(uint(v80&int32(15))%32)
+				*(*uint16)(unsafe.Add(mBase, uint32(v85))) = uint16(v91)
+				v94 = v56 + v78
+				if v94 != v49 {
+					v56 = v94
+					v59 = v77
+					continue
+				} else {
+					break
+				}
+				break
+			}
+			*(*int32)(unsafe.Add(mBase, _c_F_signValue[0])) = v77
+		} else {
+		}
+		return
+	}
+}
 func F_similar_to_escape_2(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

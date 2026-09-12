@@ -1463,64 +1463,64 @@ func F__mdfd_getseg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 	_ = v87
 	var v91 int32
 	_ = v91
-	var v100 int32
-	_ = v100
 	var v101 int32
 	_ = v101
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v118 int32
-	_ = v118
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
-	var v134 int32
-	_ = v134
-	var v139 int32
-	_ = v139
-	var v143 int32
-	_ = v143
-	var v145 int32
-	_ = v145
+	var v102 int32
+	_ = v102
+	var v104 int32
+	_ = v104
+	var v106 int32
+	_ = v106
+	var v119 int32
+	_ = v119
+	var v121 int32
+	_ = v121
+	var v125 int32
+	_ = v125
+	var v135 int32
+	_ = v135
+	var v140 int32
+	_ = v140
+	var v144 int32
+	_ = v144
 	var v146 int32
 	_ = v146
-	var v148 int32
-	_ = v148
-	var v152 int32
-	_ = v152
-	var v156 int32
-	_ = v156
-	var v161 int32
-	_ = v161
-	var v165 int32
-	_ = v165
-	var v169 int32
-	_ = v169
-	var v174 int32
-	_ = v174
-	var v176 int32
-	_ = v176
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v153 int32
+	_ = v153
+	var v157 int32
+	_ = v157
+	var v162 int32
+	_ = v162
+	var v166 int32
+	_ = v166
+	var v170 int32
+	_ = v170
+	var v175 int32
+	_ = v175
 	var v177 int32
 	_ = v177
 	var v178 int32
 	_ = v178
-	var v185 int32
-	_ = v185
-	var v192 int32
-	_ = v192
-	var v194 int32
-	_ = v194
-	var v198 int32
-	_ = v198
-	var v207 int32
-	_ = v207
-	var v212 int32
-	_ = v212
-	var v221 int32
-	_ = v221
+	var v179 int32
+	_ = v179
+	var v186 int32
+	_ = v186
+	var v193 int32
+	_ = v193
+	var v195 int32
+	_ = v195
+	var v199 int32
+	_ = v199
+	var v208 int32
+	_ = v208
+	var v213 int32
+	_ = v213
+	var v222 int32
+	_ = v222
 	v15 = m.G0
 	v17 = v15 - int32(224)
 	m.G0 = v17
@@ -1536,11 +1536,11 @@ func F__mdfd_getseg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 L1:
 	;
 	m.G0 = v17 + int32(224)
-	return v221
+	return v222
 L2:
 	;
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v23)+56))
-	v221 = v28 + v20<<(uint(int32(3))%32)
+	v222 = v28 + v20<<(uint(int32(3))%32)
 	goto L1
 L3:
 	;
@@ -1549,7 +1549,7 @@ L4:
 	;
 	v32 = int32(0)
 	if base.Ui32(int32(31)) < base.Ui32(l4) {
-		v221 = v32
+		v222 = v32
 		goto L1
 	} else {
 		goto L5
@@ -1593,7 +1593,7 @@ L10:
 L11:
 	;
 	if v44 == int32(0) {
-		v221 = v32
+		v222 = v32
 		goto L1
 	} else {
 		goto L12
@@ -1606,7 +1606,7 @@ L12:
 	goto L6
 L13:
 	;
-	v221 = v52
+	v222 = v52
 	goto L1
 L14:
 	;
@@ -1629,14 +1629,14 @@ L16:
 	}
 L17:
 	;
-	v221 = v177
+	v222 = v178
 	goto L1
 L18:
 	;
-	v177 = F__mdfd_openseg(m, l0, l1, v67, v176)
+	v178 = F__mdfd_openseg(m, l0, l1, v67, v177)
 	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
+	v179 = m.ExcPending
+	if v179 != 0 {
 		goto L10
 	} else {
 		goto L51
@@ -1645,8 +1645,8 @@ L19:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v165 = m.ExcPending
-	if v165 != 0 {
+	v166 = m.ExcPending
+	if v166 != 0 {
 		goto L10
 	} else {
 		goto L48
@@ -1673,8 +1673,8 @@ L23:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v143 = m.ExcPending
-	if v143 != 0 {
+	v144 = m.ExcPending
+	if v144 != 0 {
 		goto L10
 	} else {
 		goto L43
@@ -1689,7 +1689,7 @@ L24:
 L25:
 	;
 	if v81 == int32(_a_F__mdfd_getseg_1) {
-		v176 = int32(0)
+		v177 = int32(0)
 		goto L18
 	} else {
 		goto L34
@@ -1709,7 +1709,7 @@ L28:
 	;
 	v91 = int32(64)
 	if v81 == int32(_a_F__mdfd_getseg_1) {
-		v176 = v91
+		v177 = v91
 		goto L18
 	} else {
 		goto L30
@@ -1719,37 +1719,37 @@ L29:
 	goto L28
 L30:
 	;
-	v100 = F_palloc_aligned(m, int32(_a_F__mdfd_getseg_2), int32(_a_F__mdfd_getseg_3))
+	v101 = F_palloc_aligned(m, int32(_a_F__mdfd_getseg_2), int32(_a_F__mdfd_getseg_3), int32(4))
 	mBase = m.M
-	v101 = m.ExcPending
-	if v101 != 0 {
+	v102 = m.ExcPending
+	if v102 != 0 {
 		goto L10
 	} else {
 		goto L31
 	}
 L31:
 	;
-	F_mdextend(m, l0, l1, v67<<(uint(int32(17))%32)-int32(1), v100, l3)
+	F_mdextend(m, l0, l1, v67<<(uint(int32(17))%32)-int32(1), v101, l3)
 	mBase = m.M
-	v103 = m.ExcPending
-	if v103 != 0 {
+	v104 = m.ExcPending
+	if v104 != 0 {
 		goto L10
 	} else {
 		goto L32
 	}
 L32:
 	;
-	F_pfree(m, v100)
+	F_pfree(m, v101)
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
+	v106 = m.ExcPending
+	if v106 != 0 {
 		goto L10
 	} else {
 		goto L33
 	}
 L33:
 	;
-	v176 = v91
+	v177 = v91
 	goto L18
 L34:
 	;
@@ -1761,7 +1761,7 @@ L34:
 L35:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F__mdfd_getseg[1])) = int32(44)
-	v221 = int32(0)
+	v222 = int32(0)
 	goto L1
 L36:
 	;
@@ -1770,8 +1770,8 @@ L37:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
+	v119 = m.ExcPending
+	if v119 != 0 {
 		goto L10
 	} else {
 		goto L38
@@ -1780,8 +1780,8 @@ L38:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v120 = m.ExcPending
-	if v120 != 0 {
+	v121 = m.ExcPending
+	if v121 != 0 {
 		goto L10
 	} else {
 		goto L39
@@ -1790,8 +1790,8 @@ L39:
 	;
 	F__mdfd_segpath(m, v17+int32(141), l0, l1, v67)
 	mBase = m.M
-	v124 = m.ExcPending
-	if v124 != 0 {
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L10
 	} else {
 		goto L40
@@ -1803,8 +1803,8 @@ L40:
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+32)) = v17 + int32(141)
 	F_errmsg(m, int32(_a_F__mdfd_getseg_4), v17+int32(32))
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v135 = m.ExcPending
+	if v135 != 0 {
 		goto L10
 	} else {
 		goto L41
@@ -1813,8 +1813,8 @@ L41:
 	;
 	F_errfinish(m, int32(_a_F__mdfd_getseg_5), int32(1848), int32(_a_F__mdfd_getseg_6))
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v140 = m.ExcPending
+	if v140 != 0 {
 		goto L10
 	} else {
 		goto L42
@@ -1828,25 +1828,25 @@ L43:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v145 = m.ExcPending
-	if v145 != 0 {
+	v146 = m.ExcPending
+	if v146 != 0 {
 		goto L10
 	} else {
 		goto L44
 	}
 L44:
 	;
-	v146 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
-	v148 = *(*int32)(unsafe.Add(mBase, _c_F__mdfd_getseg[2]))
-	v152 = *(*int32)(unsafe.Add(mBase, uint32(v148+v146*int32(48))+32))
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v65)))
+	v149 = *(*int32)(unsafe.Add(mBase, _c_F__mdfd_getseg[2]))
+	v153 = *(*int32)(unsafe.Add(mBase, uint32(v149+v147*int32(48))+32))
 	goto L45
 L45:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v152
+	*(*int32)(unsafe.Add(mBase, uint32(v17))) = v153
 	F_errmsg(m, int32(_a_F__mdfd_getseg_7), v17)
 	mBase = m.M
-	v156 = m.ExcPending
-	if v156 != 0 {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L10
 	} else {
 		goto L46
@@ -1855,8 +1855,8 @@ L46:
 	;
 	F_errfinish(m, int32(_a_F__mdfd_getseg_5), int32(1882), int32(_a_F__mdfd_getseg_8))
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
+	v162 = m.ExcPending
+	if v162 != 0 {
 		goto L10
 	} else {
 		goto L47
@@ -1870,8 +1870,8 @@ L48:
 	;
 	F_errmsg_internal(m, int32(_a_F__mdfd_getseg_9), int32(0))
 	mBase = m.M
-	v169 = m.ExcPending
-	if v169 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L10
 	} else {
 		goto L49
@@ -1880,8 +1880,8 @@ L49:
 	;
 	F_errfinish(m, int32(_a_F__mdfd_getseg_5), int32(1794), int32(_a_F__mdfd_getseg_6))
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
+	v175 = m.ExcPending
+	if v175 != 0 {
 		goto L10
 	} else {
 		goto L50
@@ -1893,7 +1893,7 @@ L50:
 	}
 L51:
 	;
-	if v177 == int32(0) {
+	if v178 == int32(0) {
 		goto L52
 	} else {
 		goto L53
@@ -1911,7 +1911,7 @@ L53:
 L54:
 	;
 	if v67 != v20 {
-		v65 = v177
+		v65 = v178
 		v67 = v67 + int32(1)
 		goto L16
 	} else {
@@ -1919,9 +1919,9 @@ L54:
 	}
 L55:
 	;
-	v185 = *(*int32)(unsafe.Add(mBase, _c_F__mdfd_getseg[1]))
-	if v185 == int32(44) {
-		v221 = int32(0)
+	v186 = *(*int32)(unsafe.Add(mBase, _c_F__mdfd_getseg[1]))
+	if v186 == int32(44) {
+		v222 = int32(0)
 		goto L1
 	} else {
 		goto L58
@@ -1933,8 +1933,8 @@ L57:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v192 = m.ExcPending
-	if v192 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L10
 	} else {
 		goto L59
@@ -1946,8 +1946,8 @@ L59:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v194 = m.ExcPending
-	if v194 != 0 {
+	v195 = m.ExcPending
+	if v195 != 0 {
 		goto L10
 	} else {
 		goto L60
@@ -1956,8 +1956,8 @@ L60:
 	;
 	F__mdfd_segpath(m, v17+int32(58), l0, l1, v67)
 	mBase = m.M
-	v198 = m.ExcPending
-	if v198 != 0 {
+	v199 = m.ExcPending
+	if v199 != 0 {
 		goto L10
 	} else {
 		goto L61
@@ -1968,8 +1968,8 @@ L61:
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v17 + int32(58)
 	F_errmsg(m, int32(_a_F__mdfd_getseg_10), v17+int32(16))
 	mBase = m.M
-	v207 = m.ExcPending
-	if v207 != 0 {
+	v208 = m.ExcPending
+	if v208 != 0 {
 		goto L10
 	} else {
 		goto L62
@@ -1978,8 +1978,8 @@ L62:
 	;
 	F_errfinish(m, int32(_a_F__mdfd_getseg_5), int32(1862), int32(_a_F__mdfd_getseg_6))
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v213 = m.ExcPending
+	if v213 != 0 {
 		goto L10
 	} else {
 		goto L63

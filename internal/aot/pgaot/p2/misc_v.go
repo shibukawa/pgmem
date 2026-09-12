@@ -678,22 +678,12 @@ func F_validate_option_array_item(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v32
 	var v34 int32
 	_ = v34
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
-	var v56 int32
-	_ = v56
-	var v58 int32
-	_ = v58
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v68 int32
-	_ = v68
+	var v43 int32
+	_ = v43
 	var v80 int32
 	_ = v80
 	var v90 int32
@@ -873,8 +863,10 @@ L8:
 	goto L9
 L9:
 	;
+	v41 = int32(_a_F_validate_option_array_item_0)
 	v42 = base.I32_extend8_s(v24)
-	goto L15
+	v43 = int32(54)
+	goto L14
 L10:
 	;
 	v176 = int32(0)
@@ -898,61 +890,13 @@ L13:
 	goto L31
 L14:
 	;
-	if base.B2i32(v64 != v65) == int32(0) {
-		goto L12
-	} else {
-		goto L22
-	}
-L15:
-	;
-	goto L16
-L16:
-	;
-	v56 = int32(_a_F_validate_option_array_item_0)
-	v58 = int32(54)
-	goto L17
-L17:
-	;
-	v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v56))))
-	if v61 == v42&int32(255) {
-		v117 = v56
-		v119 = v58
-		goto L13
-	} else {
-		goto L19
-	}
-L18:
-	;
-	goto L14
-L19:
-	;
-	v63 = int32(1)
-	v64 = v58 - v63
-	v65 = int32(0)
-	v68 = v56 + v63
-	if v68&int32(3) == v65 {
-		goto L14
-	} else {
-		goto L20
-	}
-L20:
-	;
-	if v64 != 0 {
-		v56 = v68
-		v58 = v64
-		goto L17
-	} else {
-		goto L21
-	}
-L21:
-	;
-	goto L18
+	goto L22
 L22:
 	;
-	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v68))))
+	v80 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_validate_option_array_item[0])))
 	if v80 == v42&int32(255) {
-		v110 = v68
-		v112 = v64
+		v110 = v41
+		v112 = v43
 		goto L23
 	} else {
 		goto L24
@@ -966,17 +910,11 @@ L23:
 	}
 L24:
 	;
-	if base.Ui32(v64) < base.Ui32(int32(4)) {
-		v110 = v68
-		v112 = v64
-		goto L23
-	} else {
-		goto L25
-	}
+	goto L25
 L25:
 	;
-	v90 = v68
-	v92 = v64
+	v90 = v41
+	v92 = v43
 	goto L26
 L26:
 	;
@@ -1154,7 +1092,7 @@ L52:
 	}
 L53:
 	;
-	v205 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[0]))
+	v205 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[1]))
 	v207 = F_pg_parameter_aclcheck(m, l0, v205, int64(4096))
 	mBase = m.M
 	v208 = m.ExcPending
@@ -1263,7 +1201,7 @@ L64:
 	}
 L65:
 	;
-	v235 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[0]))
+	v235 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[1]))
 	v237 = F_pg_parameter_aclcheck(m, l0, v235, int64(4096))
 	mBase = m.M
 	v238 = m.ExcPending
@@ -1310,7 +1248,7 @@ L72:
 	goto L73
 L73:
 	;
-	v252 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[0]))
+	v252 = *(*int32)(unsafe.Add(mBase, _c_F_validate_option_array_item[1]))
 	v253 = int32(0)
 	v257 = F_set_config_with_handle(m, l0, int32(0), l1, v249, int32(12), v252, v253, v253, v253, v253)
 	mBase = m.M

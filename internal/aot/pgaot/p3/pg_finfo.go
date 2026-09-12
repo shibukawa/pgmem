@@ -17,6 +17,9 @@ func F_pg_finfo__ltree_risparent(m *base.Module) int32 {
 func F_pg_finfo__ltxtq_extract_exec(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo__ltxtq_extract_exec_0)
 }
+func F_pg_finfo_blhandler(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_blhandler_0)
+}
 func F_pg_finfo_citext_eq(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_eq_0)
 }

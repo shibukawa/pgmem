@@ -356,6 +356,8 @@ func F_TransactionTreeSetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int
 func F_TransactionIdGetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_SetCommitTsLimit github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_SetCommitTsLimit
 func F_SetCommitTsLimit(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_GenericXLogStart github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GenericXLogStart
+func F_GenericXLogStart(m *base.Module, l0 int32) int32
 //go:linkname F_MultiXactIdCreate github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_MultiXactIdCreate
 func F_MultiXactIdCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 //go:linkname F_MultiXactIdCreateFromMembers github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_MultiXactIdCreateFromMembers
@@ -4104,6 +4106,10 @@ func F_restore(m *base.Module, l0 int32, l1 float32, l2 int32) int32
 func F_seg_yyensure_buffer_stack(m *base.Module, l0 int32)
 //go:linkname F_seg_yy_scan_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_scan_bytes
 func F_seg_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_BloomFormTuple github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_BloomFormTuple
+func F_BloomFormTuple(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
+//go:linkname F_BloomNewBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_BloomNewBuffer
+func F_BloomNewBuffer(m *base.Module, l0 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

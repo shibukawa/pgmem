@@ -17832,6 +17832,468 @@ func F_compare_scalars(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		return v42
 	}
 }
+func F_computeRegionDelta(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) {
+	mBase := m.M
+	_ = mBase
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v17 int32
+	_ = v17
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v26 int32
+	_ = v26
+	var v30 int32
+	_ = v30
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
+	var v67 int32
+	_ = v67
+	var v71 int32
+	_ = v71
+	var v77 int32
+	_ = v77
+	var v79 int32
+	_ = v79
+	var v85 int32
+	_ = v85
+	var v96 int32
+	_ = v96
+	var v98 int32
+	_ = v98
+	var v100 int32
+	_ = v100
+	var v102 int32
+	_ = v102
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v112 int32
+	_ = v112
+	var v115 int32
+	_ = v115
+	var v118 int32
+	_ = v118
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
+	var v124 int32
+	_ = v124
+	var v127 int32
+	_ = v127
+	var v128 int32
+	_ = v128
+	var v137 int32
+	_ = v137
+	var v139 int32
+	_ = v139
+	var v144 int32
+	_ = v144
+	var v145 int32
+	_ = v145
+	var v146 int32
+	_ = v146
+	var v150 int32
+	_ = v150
+	var v151 int32
+	_ = v151
+	var v152 int32
+	_ = v152
+	var v154 int32
+	_ = v154
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
+	var v161 int32
+	_ = v161
+	var v164 int32
+	_ = v164
+	var v165 int32
+	_ = v165
+	var v166 int32
+	_ = v166
+	v13 = int32(-1)
+	v15 = base.B2i32(base.Ui32(l3) < base.Ui32(l5))
+	if base.Ui32(l3) < base.Ui32(l5) {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v16 = l3
+	goto L3
+L2:
+	;
+	v16 = v13
+	goto L3
+L3:
+	;
+	if base.Ui32(l3) < base.Ui32(l5) {
+		goto L5
+	} else {
+		goto L6
+	}
+L4:
+	;
+	if v137 < int32(0) {
+		goto L46
+	} else {
+		goto L47
+	}
+L5:
+	;
+	v17 = l5
+	goto L7
+L6:
+	;
+	v17 = l3
+	goto L7
+L7:
+	;
+	if base.Ui32(l4) < base.Ui32(l6) {
+		goto L8
+	} else {
+		goto L9
+	}
+L8:
+	;
+	v19 = l4
+	goto L10
+L9:
+	;
+	v19 = l6
+	goto L10
+L10:
+	;
+	if base.Ui32(v19) <= base.Ui32(v17) {
+		v137 = v16
+		v139 = v13
+		goto L4
+	} else {
+		goto L11
+	}
+L11:
+	;
+	v22 = l0 + int32(16)
+	v26 = v17
+	v30 = v16
+	goto L12
+L12:
+	;
+	v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1+v26))))
+	v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v26))))
+	if v36 != v38 {
+		goto L14
+	} else {
+		goto L15
+	}
+L13:
+	;
+	v137 = v127
+	v139 = v128
+	goto L4
+L14:
+	;
+	if v30 < int32(0) {
+		goto L17
+	} else {
+		goto L18
+	}
+L15:
+	;
+	v67 = v26
+	v71 = v30
+	goto L16
+L16:
+	;
+	v77 = v67 + int32(1)
+	if v77 < v19 {
+		goto L26
+	} else {
+		goto L27
+	}
+L17:
+	;
+	v42 = v26
+	goto L19
+L18:
+	;
+	v42 = v30
+	goto L19
+L19:
+	;
+	v46 = v26
+	goto L20
+L20:
+	;
+	v56 = v46 + int32(1)
+	if v19 <= v56 {
+		goto L22
+	} else {
+		goto L23
+	}
+L21:
+	;
+	v67 = v56
+	v71 = v42
+	goto L16
+L22:
+	;
+	v137 = v42
+	v139 = int32(-1)
+	goto L4
+L23:
+	;
+	goto L24
+L24:
+	;
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1+v56))))
+	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v56))))
+	if v60 != v62 {
+		v46 = v56
+		goto L20
+	} else {
+		goto L25
+	}
+L25:
+	;
+	goto L21
+L26:
+	;
+	v79 = v19
+	goto L28
+L27:
+	;
+	v79 = v77
+	goto L28
+L28:
+	;
+	v85 = v67
+	goto L29
+L29:
+	;
+	if v85 == v79-int32(1) {
+		goto L32
+	} else {
+		goto L33
+	}
+L30:
+	;
+	if v71 < int32(0) {
+		goto L37
+	} else {
+		goto L38
+	}
+L31:
+	;
+	goto L30
+L32:
+	;
+	v102 = v79
+	goto L31
+L33:
+	;
+	goto L34
+L34:
+	;
+	v96 = v85 + int32(1)
+	v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1+v96))))
+	v100 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2+v96))))
+	if v98 == v100 {
+		v85 = v96
+		goto L29
+	} else {
+		goto L35
+	}
+L35:
+	;
+	v102 = v96
+	goto L31
+L36:
+	;
+	if v102 < v19 {
+		v26 = v102
+		v30 = v127
+		goto L12
+	} else {
+		goto L45
+	}
+L37:
+	;
+	v127 = int32(-1)
+	v128 = v67
+	goto L36
+L38:
+	;
+	goto L39
+L39:
+	;
+	if base.Ui32(v102-v67) < base.Ui32(int32(5)) {
+		v127 = v71
+		v128 = v67
+		goto L36
+	} else {
+		goto L40
+	}
+L40:
+	;
+	v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v110 = v22 + v109
+	*(*uint16)(unsafe.Add(mBase, uint32(v110))) = uint16(v71)
+	v112 = v67 - v71
+	*(*uint16)(unsafe.Add(mBase, uint32(v110)+2)) = uint16(v112)
+	v115 = v110 + int32(4)
+	v118 = v112 & int32(_a_F_computeRegionDelta_0)
+	if v118 != 0 {
+		goto L42
+	} else {
+		goto L43
+	}
+L41:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v120 + v118 - v22
+	v124 = int32(-1)
+	v127 = v124
+	v128 = v124
+	goto L36
+L42:
+	;
+	v119 = F__emscripten_memcpy_bulkmem(m, v115, l2+v71, v118)
+	mBase = m.M
+	v120 = v119
+	goto L44
+L43:
+	;
+	v120 = v115
+	goto L44
+L44:
+	;
+	goto L41
+L45:
+	;
+	goto L13
+L46:
+	;
+	v144 = v19
+	goto L48
+L47:
+	;
+	v144 = v137
+	goto L48
+L48:
+	;
+	v145 = base.B2i32(base.Ui32(l6) < base.Ui32(l4))
+	if base.Ui32(l6) < base.Ui32(l4) {
+		goto L49
+	} else {
+		goto L50
+	}
+L49:
+	;
+	v146 = v144
+	goto L51
+L50:
+	;
+	v146 = v137
+	goto L51
+L51:
+	;
+	if int32(0) <= v146 {
+		goto L52
+	} else {
+		goto L53
+	}
+L52:
+	;
+	v150 = l0 + int32(16)
+	v151 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v152 = v150 + v151
+	*(*uint16)(unsafe.Add(mBase, uint32(v152))) = uint16(v146)
+	if base.Ui32(l6) < base.Ui32(l4) {
+		goto L55
+	} else {
+		goto L56
+	}
+L53:
+	;
+	goto L54
+L54:
+	;
+	return
+L55:
+	;
+	v154 = l4
+	goto L57
+L56:
+	;
+	v154 = v139
+	goto L57
+L57:
+	;
+	if v154 < int32(0) {
+		goto L58
+	} else {
+		goto L59
+	}
+L58:
+	;
+	v157 = l4
+	goto L60
+L59:
+	;
+	v157 = v154
+	goto L60
+L60:
+	;
+	v158 = v157 - v146
+	*(*uint16)(unsafe.Add(mBase, uint32(v152)+2)) = uint16(v158)
+	v161 = v152 + int32(4)
+	v164 = v158 & int32(_a_F_computeRegionDelta_0)
+	if v164 != 0 {
+		goto L62
+	} else {
+		goto L63
+	}
+L61:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v166 + v164 - v150
+	goto L54
+L62:
+	;
+	v165 = F__emscripten_memcpy_bulkmem(m, v161, l2+v146, v164)
+	mBase = m.M
+	v166 = v165
+	goto L64
+L63:
+	;
+	v166 = v161
+	goto L64
+L64:
+	;
+	goto L61
+}
 func F_compute_remaining_iovec(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
