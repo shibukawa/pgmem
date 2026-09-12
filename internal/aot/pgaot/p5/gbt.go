@@ -25,7 +25,7 @@ func F_gbt_bit_picksplit(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_var_picksplit(m, v3, v4, v5, int32(4434288), v7)
+	v8 = F_gbt_var_picksplit(m, v3, v4, v5, int32(4434336), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -86,7 +86,7 @@ func F_gbt_bool_consistent(m *base.Module, l0 int32) int32 {
 	v31 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30)+16)))
 	v33 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30+v31)+12)))
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v38 = F_gbt_num_consistent(m, v7+int32(4), v7+int32(15), v7+int32(12), v33&v20, int32(4434328), v37)
+	v38 = F_gbt_num_consistent(m, v7+int32(4), v7+int32(15), v7+int32(12), v33&v20, int32(4434376), v37)
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -115,7 +115,7 @@ func F_gbt_bool_same(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_num_same(m, v4, v5, int32(4434328), v7)
+	v8 = F_gbt_num_same(m, v4, v5, int32(4434376), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -227,12 +227,12 @@ func F_gbt_bpchar_consistent(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v20)+4)) = v40
 		v42 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v18))) = uint8(v42)
-		v45 = *(*int32)(unsafe.Add(mBase, _consts[1455]))
+		v45 = *(*int32)(unsafe.Add(mBase, _consts[1454]))
 		if v45 == v42 {
 			v50 = *(*int32)(unsafe.Add(mBase, _consts[249]))
 			v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
 			v56 = *(*int32)(unsafe.Add(mBase, uint32(v51*int32(28))+uint32(_consts[1048])))
-			*(*int32)(unsafe.Add(mBase, _consts[1455])) = v56
+			*(*int32)(unsafe.Add(mBase, _consts[1454])) = v56
 		} else {
 		}
 		v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
@@ -240,7 +240,7 @@ func F_gbt_bpchar_consistent(m *base.Module, l0 int32) int32 {
 		v64 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v63)+16)))
 		v66 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v63+v64)+12)))
 		v70 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v71 = F_gbt_var_consistent(m, v9+int32(8), v13, v17&int32(65535), v62, v66&int32(1), int32(4435072), v70)
+		v71 = F_gbt_var_consistent(m, v9+int32(8), v13, v17&int32(65535), v62, v66&int32(1), int32(4435120), v70)
 		mBase = m.M
 		v72 = m.ExcPending
 		if v72 != 0 {
@@ -425,7 +425,7 @@ func F_gbt_bytea_penalty(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_var_penalty(m, v2, v3, v4, v5, int32(4434368), v7)
+	v8 = F_gbt_var_penalty(m, v2, v3, v4, v5, int32(4434416), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -453,7 +453,7 @@ func F_gbt_bytea_union(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4434368), v6)
+	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4434416), v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -478,7 +478,7 @@ func F_gbt_cash_picksplit(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434408), v5)
+	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434456), v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -585,7 +585,7 @@ func F_gbt_date_consistent(m *base.Module, l0 int32) int32 {
 	v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26)+16)))
 	v29 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26+v27)+12)))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v34 = F_gbt_num_consistent(m, v7, v7+int32(12), v7+int32(10), v29&int32(1), int32(4434448), v33)
+	v34 = F_gbt_num_consistent(m, v7, v7+int32(12), v7+int32(10), v29&int32(1), int32(4434496), v33)
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -605,7 +605,7 @@ func F_gbt_date_fetch(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_fetch(m, v2, int32(4434448))
+	v4 = F_gbt_num_fetch(m, v2, int32(4434496))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -712,7 +712,7 @@ func F_gbt_enum_sortsupport(m *base.Module, l0 int32) int32 {
 	var v15 int32
 	_ = v15
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	*(*int32)(unsafe.Add(mBase, uint32(v3)+16)) = int32(7482)
+	*(*int32)(unsafe.Add(mBase, uint32(v3)+16)) = int32(7485)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
 	v9 = F_MemoryContextAlloc(m, v7, int32(28))
 	mBase = m.M
@@ -759,7 +759,7 @@ func F_gbt_enum_union(m *base.Module, l0 int32) int32 {
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(8)
 		v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v15 = F_gbt_num_union(m, v6, v4, int32(4434488), v14)
+		v15 = F_gbt_num_union(m, v6, v4, int32(4434536), v14)
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -790,7 +790,7 @@ func F_gbt_float4_compress(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_compress(m, v2, int32(4434528))
+	v4 = F_gbt_num_compress(m, v2, int32(4434576))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -848,7 +848,7 @@ func F_gbt_float4_consistent(m *base.Module, l0 int32) int32 {
 	v27 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26)+16)))
 	v29 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v26+v27)+12)))
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v34 = F_gbt_num_consistent(m, v7, v7+int32(12), v7+int32(10), v29&int32(1), int32(4434528), v33)
+	v34 = F_gbt_num_consistent(m, v7, v7+int32(12), v7+int32(10), v29&int32(1), int32(4434576), v33)
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -868,7 +868,7 @@ func F_gbt_float4_fetch(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_fetch(m, v2, int32(4434528))
+	v4 = F_gbt_num_fetch(m, v2, int32(4434576))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -975,7 +975,7 @@ func F_gbt_float8_same(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_num_same(m, v4, v5, int32(4434568), v7)
+	v8 = F_gbt_num_same(m, v4, v5, int32(4434616), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1133,7 +1133,7 @@ func F_gbt_inet_same(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_num_same(m, v4, v5, int32(4434672), v7)
+	v8 = F_gbt_num_same(m, v4, v5, int32(4434720), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1159,7 +1159,7 @@ func F_gbt_int2_picksplit(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434712), v5)
+	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434760), v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -1298,7 +1298,7 @@ func F_gbt_int8_distance(m *base.Module, l0 int32) int32 {
 	v21 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20)+16)))
 	v23 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v20+v21)+12)))
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v28 = F_gbt_num_distance(m, v7, v7+v14, v23&int32(1), int32(4434792), v27)
+	v28 = F_gbt_num_distance(m, v7, v7+v14, v23&int32(1), int32(4434840), v27)
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -1331,7 +1331,7 @@ func F_gbt_int8_picksplit(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434792), v5)
+	v6 = F_gbt_num_picksplit(m, v2, v3, int32(4434840), v5)
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {
@@ -1350,7 +1350,7 @@ func F_gbt_macad8_compress(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_compress(m, v2, int32(4434912))
+	v4 = F_gbt_num_compress(m, v2, int32(4434960))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -1369,7 +1369,7 @@ func F_gbt_macad8_fetch(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_fetch(m, v2, int32(4434912))
+	v4 = F_gbt_num_fetch(m, v2, int32(4434960))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -1401,7 +1401,7 @@ func F_gbt_macad_compress(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v4 = F_gbt_num_compress(m, v2, int32(4434872))
+	v4 = F_gbt_num_compress(m, v2, int32(4434920))
 	mBase = m.M
 	v7 = m.ExcPending
 	if v7 != 0 {
@@ -1429,7 +1429,7 @@ func F_gbt_macad_same(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_num_same(m, v4, v5, int32(4434872), v7)
+	v8 = F_gbt_num_same(m, v4, v5, int32(4434920), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1727,7 +1727,7 @@ func F_gbt_numeric_union(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4434952), v6)
+	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4435000), v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1755,7 +1755,7 @@ func F_gbt_oid_same(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v8 = F_gbt_num_same(m, v4, v5, int32(4434992), v7)
+	v8 = F_gbt_num_same(m, v4, v5, int32(4435040), v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -1795,7 +1795,7 @@ func F_gbt_text_union(m *base.Module, l0 int32) int32 {
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4435032), v6)
+	v7 = F_gbt_var_union(m, v2, v3, v4, int32(4435080), v6)
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {
@@ -1814,7 +1814,7 @@ func F_gbt_time_sortsupport(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v3 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+12)) = v3
-	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(7587)
+	*(*int32)(unsafe.Add(mBase, uint32(v2)+16)) = int32(7590)
 	return v3
 }
 func F_gbt_tsge(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

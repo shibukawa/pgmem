@@ -30,7 +30,7 @@ func F_CreatePartitionDirectory(m *base.Module, l0 int32, l1 int32) int32 {
 	v6 = m.G0
 	v8 = v6 - int32(48)
 	m.G0 = v8
-	v10 = int32(4554128)
+	v10 = int32(4554240)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = l0
 	v15 = F_palloc(m, int32(12))
@@ -305,7 +305,7 @@ L2:
 	goto L3
 L3:
 	;
-	v26 = int32(4554128)
+	v26 = int32(4554240)
 	v27 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(l1)+36))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v29
@@ -428,7 +428,7 @@ L17:
 	}
 L18:
 	;
-	v67 = F_MakeSingleTupleTableSlot(m, v59, int32(1650644))
+	v67 = F_MakeSingleTupleTableSlot(m, v59, int32(1650708))
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -1815,7 +1815,7 @@ L134:
 	}
 L135:
 	;
-	F_errfinish(m, int32(519337), int32(1898), int32(350753))
+	F_errfinish(m, int32(519407), int32(1898), int32(350783))
 	mBase = m.M
 	v710 = m.ExcPending
 	if v710 != 0 {
@@ -2176,7 +2176,7 @@ func F_StorePartitionBound(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v136 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(519077), int32(4069), int32(444641))
+						F_errfinish(m, int32(519147), int32(4069), int32(444693))
 						mBase = m.M
 						v141 = m.ExcPending
 						if v141 != 0 {
@@ -2338,7 +2338,7 @@ L15:
 	}
 L16:
 	;
-	F_errfinish(m, int32(519337), int32(1739), int32(249964))
+	F_errfinish(m, int32(519407), int32(1739), int32(249994))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -2735,7 +2735,7 @@ L23:
 	}
 L24:
 	;
-	F_errfinish(m, int32(517048), int32(3848), int32(219825))
+	F_errfinish(m, int32(517100), int32(3848), int32(219825))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {

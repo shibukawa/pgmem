@@ -98,7 +98,7 @@ func F_ExecStoreBufferHeapTuple(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	var v53 int32
 	_ = v53
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	if v5 == int32(1650800) {
+	if v5 == int32(1650864) {
 		v8 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l1)+4)))
 		if v8&int32(4) != 0 {
 			v11 = *(*int32)(unsafe.Add(mBase, uint32(l1)+40))
@@ -249,7 +249,7 @@ func F_ExecStoreBufferHeapTuple(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v48 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(516973), int32(1594), int32(402888))
+				F_errfinish(m, int32(517025), int32(1594), int32(402918))
 				mBase = m.M
 				v53 = m.ExcPending
 				if v53 != 0 {
@@ -573,7 +573,7 @@ L6:
 	}
 L7:
 	;
-	v40 = int32(4452424)
+	v40 = int32(4452536)
 	v42 = *(*int64)(unsafe.Add(mBase, _consts[107]))
 	*(*int64)(unsafe.Add(mBase, _consts[107])) = v42 + int64(1)
 	v269 = v32
@@ -644,7 +644,7 @@ L12:
 	}
 L13:
 	;
-	v257 = int32(4452392)
+	v257 = int32(4452504)
 	v259 = *(*int64)(unsafe.Add(mBase, _consts[103]))
 	*(*int64)(unsafe.Add(mBase, _consts[103])) = v259 + int64(1)
 	v269 = v251
@@ -756,7 +756,7 @@ L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+44)) = int32(240560)
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+40)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+36)) = int32(518165)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+36)) = int32(518217)
 	v125 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = v125
 	*(*int64)(unsafe.Add(mBase, uint32(v19)+24)) = int64(0)
@@ -776,7 +776,7 @@ L27:
 	;
 	v229 = *(*int32)(unsafe.Add(mBase, _consts[261]))
 	v230 = *(*int32)(unsafe.Add(mBase, uint32(v113)))
-	F_ResourceOwnerForget(m, v229, v230+int32(1), int32(1661088))
+	F_ResourceOwnerForget(m, v229, v230+int32(1), int32(1661152))
 	mBase = m.M
 	v235 = m.ExcPending
 	if v235 != 0 {
@@ -793,8 +793,8 @@ L29:
 	goto L30
 L30:
 	;
-	v183 = int32(4160188)
-	v184 = *(*int32)(unsafe.Add(mBase, _consts[739]))
+	v183 = int32(4160236)
+	v184 = *(*int32)(unsafe.Add(mBase, _consts[740]))
 	v186 = *(*int32)(unsafe.Add(mBase, uint32(v19+int32(24))+8))
 	if v186 == int32(0) {
 		goto L38
@@ -847,7 +847,7 @@ L36:
 	goto L35
 L37:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[739])) = v201
+	*(*int32)(unsafe.Add(mBase, _consts[740])) = v201
 	goto L36
 L38:
 	;
@@ -1004,10 +1004,10 @@ L59:
 L60:
 	;
 	v334 = v270*int32(320) + v276<<(uint(int32(6))%32)
-	v340 = *(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[740])))
-	*(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[740]))) = v340 + int64(1)
-	v346 = *(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[741])))
-	*(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[741]))) = v346
+	v340 = *(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[741])))
+	*(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[741]))) = v340 + int64(1)
+	v346 = *(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[742])))
+	*(*int64)(unsafe.Add(mBase, uint32(v334)+uint32(_consts[742]))) = v346
 	v348 = int32(1)
 	F_pgstat_count_backend_io_op(m, v270, v276, int32(2), v348, int64(0))
 	mBase = m.M
@@ -1135,7 +1135,7 @@ L79:
 	goto L60
 L80:
 	;
-	v358 = int32(*(*uint8)(unsafe.Add(mBase, _consts[742])))
+	v358 = int32(*(*uint8)(unsafe.Add(mBase, _consts[743])))
 	if v358 != int32(1) {
 		goto L59
 	} else {
@@ -1143,10 +1143,10 @@ L80:
 	}
 L81:
 	;
-	v361 = int32(4548848)
-	v363 = *(*int32)(unsafe.Add(mBase, _consts[743]))
-	v365 = *(*int32)(unsafe.Add(mBase, _consts[744]))
-	*(*int32)(unsafe.Add(mBase, _consts[743])) = v363 + v365
+	v361 = int32(4548960)
+	v363 = *(*int32)(unsafe.Add(mBase, _consts[744]))
+	v365 = *(*int32)(unsafe.Add(mBase, _consts[745]))
+	*(*int32)(unsafe.Add(mBase, _consts[744])) = v363 + v365
 	goto L59
 L82:
 	;
@@ -1171,7 +1171,7 @@ L85:
 	goto L86
 L86:
 	;
-	v389 = *(*int32)(unsafe.Add(mBase, _consts[737]))
+	v389 = *(*int32)(unsafe.Add(mBase, _consts[738]))
 	if v389 != 0 {
 		goto L87
 	} else {
@@ -1243,7 +1243,7 @@ func F_UnpinBuffer(m *base.Module, l0 int32) {
 	_ = v11
 	v3 = *(*int32)(unsafe.Add(mBase, _consts[261]))
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_ResourceOwnerForget(m, v3, v4+int32(1), int32(1661088))
+	F_ResourceOwnerForget(m, v3, v4+int32(1), int32(1661152))
 	mBase = m.M
 	v9 = m.ExcPending
 	if v9 != 0 {

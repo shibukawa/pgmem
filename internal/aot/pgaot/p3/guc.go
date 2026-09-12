@@ -1497,7 +1497,7 @@ L46:
 	}
 L47:
 	;
-	F_GUC_flex_fatal(m, int32(713689))
+	F_GUC_flex_fatal(m, int32(713759))
 	mBase = m.M
 	v1354 = m.ExcPending
 	if v1354 != 0 {
@@ -1543,7 +1543,7 @@ L51:
 	goto L50
 L52:
 	;
-	F_GUC_flex_fatal(m, int32(474657))
+	F_GUC_flex_fatal(m, int32(474709))
 	mBase = m.M
 	v878 = m.ExcPending
 	if v878 != 0 {
@@ -1553,7 +1553,7 @@ L52:
 	}
 L53:
 	;
-	F_GUC_flex_fatal(m, int32(470313))
+	F_GUC_flex_fatal(m, int32(470365))
 	mBase = m.M
 	v875 = m.ExcPending
 	if v875 != 0 {
@@ -1582,7 +1582,7 @@ L59:
 	return int32(1)
 L60:
 	;
-	F_GUC_flex_fatal(m, int32(443687))
+	F_GUC_flex_fatal(m, int32(443739))
 	mBase = m.M
 	v861 = m.ExcPending
 	if v861 != 0 {
@@ -1647,7 +1647,7 @@ L64:
 	return int32(0)
 L65:
 	;
-	F_GUC_flex_fatal(m, int32(474009))
+	F_GUC_flex_fatal(m, int32(474061))
 	mBase = m.M
 	v273 = m.ExcPending
 	if v273 != 0 {
@@ -1663,7 +1663,7 @@ L67:
 	return int32(5)
 L68:
 	;
-	v259 = int32(4552724)
+	v259 = int32(4552836)
 	v261 = *(*int32)(unsafe.Add(mBase, _consts[1153]))
 	*(*int32)(unsafe.Add(mBase, _consts[1153])) = v261 + int32(1)
 	return int32(99)
@@ -2339,7 +2339,7 @@ L165:
 	goto L162
 L166:
 	;
-	F_GUC_flex_fatal(m, int32(474657))
+	F_GUC_flex_fatal(m, int32(474709))
 	mBase = m.M
 	v770 = m.ExcPending
 	if v770 != 0 {

@@ -144,7 +144,7 @@ func F_pgp_armor_headers(m *base.Module, l0 int32) int32 {
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
 	if v16 == int32(0) {
-		v19 = int32(4554128)
+		v19 = int32(4554240)
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v21 = F_pg_detoast_datum_packed(m, v20)
 		mBase = m.M
@@ -174,13 +174,13 @@ func F_pgp_armor_headers(m *base.Module, l0 int32) int32 {
 						if v157 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(384849), int32(0))
+							F_errmsg_internal(m, int32(384879), int32(0))
 							mBase = m.M
 							v163 = m.ExcPending
 							if v163 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(520759), int32(937), int32(143973))
+								F_errfinish(m, int32(520829), int32(937), int32(143973))
 								mBase = m.M
 								v170 = m.ExcPending
 								if v170 != 0 {
@@ -432,7 +432,7 @@ func F_pgp_expect_packet_end(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		if int32(0) < v10 {
-			F_px_debug(m, int32(528680), int32(0))
+			F_px_debug(m, int32(528750), int32(0))
 			v19 = m.ExcPending
 			if v19 != 0 {
 				return int32(0)
@@ -785,14 +785,14 @@ L9:
 	}
 L10:
 	;
-	v35 = int32(555006)
+	v35 = int32(555076)
 	goto L12
 L12:
 	;
 	goto L13
 L13:
 	;
-	v38 = int32(*(*int8)(unsafe.Add(mBase, _consts[1392])))
+	v38 = int32(*(*int8)(unsafe.Add(mBase, _consts[1394])))
 	v42 = l0
 	goto L14
 L14:
@@ -1031,14 +1031,14 @@ L49:
 	}
 L50:
 	;
-	v147 = int32(567556)
+	v147 = int32(567626)
 	goto L51
 L51:
 	;
 	goto L53
 L53:
 	;
-	v152 = int32(*(*int8)(unsafe.Add(mBase, _consts[1393])))
+	v152 = int32(*(*int8)(unsafe.Add(mBase, _consts[1395])))
 	v156 = v131
 	goto L54
 L54:
@@ -1613,7 +1613,7 @@ L136:
 	;
 	v432 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v431))) = uint8(v432)
-	v435 = F_strstr(m, v419, int32(778644))
+	v435 = F_strstr(m, v419, int32(778714))
 	mBase = m.M
 	if v435 == v432 {
 		v486 = v16
@@ -1703,7 +1703,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(518119), int32(473), int32(143938))
+	F_errfinish(m, int32(518171), int32(473), int32(143938))
 	mBase = m.M
 	v508 = m.ExcPending
 	if v508 != 0 {
@@ -1728,7 +1728,7 @@ L151:
 	}
 L152:
 	;
-	F_errfinish(m, int32(518119), int32(484), int32(143938))
+	F_errfinish(m, int32(518171), int32(484), int32(143938))
 	mBase = m.M
 	v525 = m.ExcPending
 	if v525 != 0 {
@@ -2002,14 +2002,14 @@ L15:
 	goto L5
 L16:
 	;
-	v436 = int32(4433072)
+	v436 = int32(4433120)
 	goto L2
 L17:
 	;
 	goto L18
 L18:
 	;
-	v57 = int32(582663)
+	v57 = int32(582733)
 	v58 = l0
 	goto L20
 L19:
@@ -2090,14 +2090,14 @@ L31:
 	goto L21
 L32:
 	;
-	v436 = int32(4433092)
+	v436 = int32(4433140)
 	goto L2
 L33:
 	;
 	goto L34
 L34:
 	;
-	v105 = int32(356067)
+	v105 = int32(356097)
 	v106 = l0
 	goto L36
 L35:
@@ -2178,14 +2178,14 @@ L47:
 	goto L37
 L48:
 	;
-	v436 = int32(4433112)
+	v436 = int32(4433160)
 	goto L2
 L49:
 	;
 	goto L50
 L50:
 	;
-	v153 = int32(337743)
+	v153 = int32(337773)
 	v154 = l0
 	goto L52
 L51:
@@ -2266,7 +2266,7 @@ L63:
 	goto L53
 L64:
 	;
-	v436 = int32(4433132)
+	v436 = int32(4433180)
 	goto L2
 L65:
 	;
@@ -2354,14 +2354,14 @@ L79:
 	goto L69
 L80:
 	;
-	v436 = int32(4433152)
+	v436 = int32(4433200)
 	goto L2
 L81:
 	;
 	goto L82
 L82:
 	;
-	v249 = int32(581826)
+	v249 = int32(581896)
 	v250 = l0
 	goto L84
 L83:
@@ -2442,14 +2442,14 @@ L95:
 	goto L85
 L96:
 	;
-	v436 = int32(4433172)
+	v436 = int32(4433220)
 	goto L2
 L97:
 	;
 	goto L98
 L98:
 	;
-	v297 = int32(586768)
+	v297 = int32(586838)
 	v298 = l0
 	goto L100
 L99:
@@ -2530,14 +2530,14 @@ L111:
 	goto L101
 L112:
 	;
-	v436 = int32(4433192)
+	v436 = int32(4433240)
 	goto L2
 L113:
 	;
 	goto L114
 L114:
 	;
-	v345 = int32(582347)
+	v345 = int32(582417)
 	v346 = l0
 	goto L116
 L115:
@@ -2618,14 +2618,14 @@ L127:
 	goto L117
 L128:
 	;
-	v436 = int32(4433212)
+	v436 = int32(4433260)
 	goto L2
 L129:
 	;
 	goto L130
 L130:
 	;
-	v394 = int32(337752)
+	v394 = int32(337782)
 	v395 = l0
 	goto L132
 L131:
@@ -2707,7 +2707,7 @@ L143:
 	goto L133
 L144:
 	;
-	v436 = int32(4433232)
+	v436 = int32(4433280)
 	goto L2
 }
 func F_pgp_get_cipher_key_size(m *base.Module, l0 int32) int32 {
@@ -2731,7 +2731,7 @@ func F_pgp_get_cipher_key_size(m *base.Module, l0 int32) int32 {
 		if int32(base.Ui32(int32(487))>>(uint(v4)%32))&int32(1) == int32(0) {
 			v19 = v2
 		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1394])))
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_consts[1396])))
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
 			v19 = v18
 		}

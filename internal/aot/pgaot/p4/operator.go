@@ -110,7 +110,7 @@ func F_generate_operator_clause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v31
-								F_appendStringInfo(m, l0, int32(629775), v12+int32(32))
+								F_appendStringInfo(m, l0, int32(629845), v12+int32(32))
 								mBase = m.M
 								v38 = m.ExcPending
 								if v38 != 0 {
@@ -171,7 +171,7 @@ func F_generate_operator_clause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 							return
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v31
-							F_appendStringInfo(m, l0, int32(629775), v12+int32(32))
+							F_appendStringInfo(m, l0, int32(629845), v12+int32(32))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {
@@ -240,7 +240,7 @@ func F_generate_operator_clause(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				if v63 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(516743), int32(13451), int32(375148))
+					F_errfinish(m, int32(516795), int32(13451), int32(375178))
 					mBase = m.M
 					v68 = m.ExcPending
 					if v68 != 0 {

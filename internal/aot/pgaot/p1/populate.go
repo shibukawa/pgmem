@@ -42,7 +42,7 @@ func F_populate_recordset_object_start(m *base.Module, l0 int32) int32 {
 			*(*int64)(unsafe.Add(mBase, uint32(v6)+32)) = int64(309237645376)
 			v15 = *(*int32)(unsafe.Add(mBase, _consts[3]))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+56)) = v15
-			v22 = F_hash_create(m, int32(409938), int32(100), v4+int32(-48), int32(1048))
+			v22 = F_hash_create(m, int32(409968), int32(100), v4+int32(-48), int32(1048))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
@@ -77,7 +77,7 @@ func F_populate_recordset_object_start(m *base.Module, l0 int32) int32 {
 				if v43 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517515), int32(4226), int32(88486))
+					F_errfinish(m, int32(517567), int32(4226), int32(88486))
 					mBase = m.M
 					v48 = m.ExcPending
 					if v48 != 0 {

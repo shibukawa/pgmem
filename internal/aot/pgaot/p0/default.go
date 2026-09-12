@@ -102,9 +102,9 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 			m.G0 = v7 + int32(48)
 			return v93
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, _consts[887]))
+			v21 = *(*int32)(unsafe.Add(mBase, _consts[888]))
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+40)) = v21
-			v24 = *(*int64)(unsafe.Add(mBase, _consts[888]))
+			v24 = *(*int64)(unsafe.Add(mBase, _consts[889]))
 			*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = v24
 			v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 			v29 = F_stringToQualifiedNameList(m, v26, v7+int32(32))
@@ -141,7 +141,7 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 										if v107 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(522774), int32(649), int32(353442))
+											F_errfinish(m, int32(522844), int32(649), int32(353472))
 											mBase = m.M
 											v112 = m.ExcPending
 											if v112 != 0 {
@@ -243,7 +243,7 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 											if v52 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(522774), int32(635), int32(353442))
+												F_errfinish(m, int32(522844), int32(635), int32(353472))
 												mBase = m.M
 												v57 = m.ExcPending
 												if v57 != 0 {
@@ -291,7 +291,7 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 									if v52 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(522774), int32(635), int32(353442))
+										F_errfinish(m, int32(522844), int32(635), int32(353472))
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {

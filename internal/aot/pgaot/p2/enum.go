@@ -584,7 +584,7 @@ L56:
 	}
 L57:
 	;
-	F_errfinish(m, int32(522717), int32(2719), int32(300430))
+	F_errfinish(m, int32(522787), int32(2719), int32(300460))
 	mBase = m.M
 	v161 = m.ExcPending
 	if v161 != 0 {
@@ -626,7 +626,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(522717), int32(2722), int32(300430))
+	F_errfinish(m, int32(522787), int32(2722), int32(300460))
 	mBase = m.M
 	v198 = m.ExcPending
 	if v198 != 0 {
@@ -662,7 +662,7 @@ L65:
 	}
 L66:
 	;
-	F_errfinish(m, int32(520542), int32(292), int32(325674))
+	F_errfinish(m, int32(520612), int32(292), int32(325704))
 	mBase = m.M
 	v227 = m.ExcPending
 	if v227 != 0 {
@@ -780,13 +780,13 @@ func F_enum_recv(m *base.Module, l0 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v16
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v68
-								F_errmsg(m, int32(757654), v7+int32(16))
+								F_errmsg(m, int32(757724), v7+int32(16))
 								mBase = m.M
 								v76 = m.ExcPending
 								if v76 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(520542), int32(206), int32(37881))
+									F_errfinish(m, int32(520612), int32(206), int32(37881))
 									mBase = m.M
 									v81 = m.ExcPending
 									if v81 != 0 {
@@ -850,13 +850,13 @@ func F_enum_recv(m *base.Module, l0 int32) int32 {
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v16
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v49
-						F_errmsg(m, int32(757654), v7)
+						F_errmsg(m, int32(757724), v7)
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(520542), int32(196), int32(37881))
+							F_errfinish(m, int32(520612), int32(196), int32(37881))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {

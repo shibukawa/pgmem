@@ -336,7 +336,7 @@ L39:
 	goto L5
 L40:
 	;
-	v140 = F_pg_prng_uint64_range(m, int32(4637632), int64(0), base.I64_extend_i32_u(v119-int32(1)))
+	v140 = F_pg_prng_uint64_range(m, int32(4637744), int64(0), base.I64_extend_i32_u(v119-int32(1)))
 	mBase = m.M
 	v142 = base.I32_wrap_i64(v140)
 	goto L42

@@ -79,7 +79,7 @@ func F_get_toast_snapshot(m *base.Module) int32 {
 			if v30 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(516845), int32(653), int32(92621))
+				F_errfinish(m, int32(516897), int32(653), int32(92621))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -92,7 +92,7 @@ func F_get_toast_snapshot(m *base.Module) int32 {
 			}
 		}
 	} else {
-		return int32(4212056)
+		return int32(4212104)
 	}
 }
 func F_toast_close_indexes(m *base.Module, l0 int32, l1 int32) {

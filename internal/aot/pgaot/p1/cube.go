@@ -652,7 +652,7 @@ L61:
 	}
 L62:
 	;
-	F_errfinish(m, int32(523103), int32(158), int32(581291))
+	F_errfinish(m, int32(523173), int32(158), int32(581361))
 	mBase = m.M
 	v405 = m.ExcPending
 	if v405 != 0 {
@@ -677,7 +677,7 @@ L64:
 	}
 L65:
 	;
-	F_errmsg(m, int32(439525), int32(0))
+	F_errmsg(m, int32(439577), int32(0))
 	mBase = m.M
 	v418 = m.ExcPending
 	if v418 != 0 {
@@ -688,7 +688,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(100)
-	F_errdetail(m, int32(618826), v16)
+	F_errdetail(m, int32(618896), v16)
 	mBase = m.M
 	v424 = m.ExcPending
 	if v424 != 0 {
@@ -698,7 +698,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(523103), int32(166), int32(581291))
+	F_errfinish(m, int32(523173), int32(166), int32(581361))
 	mBase = m.M
 	v431 = m.ExcPending
 	if v431 != 0 {
@@ -723,7 +723,7 @@ L69:
 	}
 L70:
 	;
-	F_errmsg(m, int32(336028), int32(0))
+	F_errmsg(m, int32(336058), int32(0))
 	mBase = m.M
 	v444 = m.ExcPending
 	if v444 != 0 {
@@ -733,7 +733,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(523103), int32(171), int32(581291))
+	F_errfinish(m, int32(523173), int32(171), int32(581361))
 	mBase = m.M
 	v451 = m.ExcPending
 	if v451 != 0 {
@@ -1291,20 +1291,20 @@ func F_cube_c_f8_f8(m *base.Module, l0 int32) int32 {
 				if v385 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(439525), int32(0))
+					F_errmsg(m, int32(439577), int32(0))
 					mBase = m.M
 					v391 = m.ExcPending
 					if v391 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v21))) = int32(100)
-						F_errdetail(m, int32(618826), v21)
+						F_errdetail(m, int32(618896), v21)
 						mBase = m.M
 						v397 = m.ExcPending
 						if v397 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523103), int32(1883), int32(581269))
+							F_errfinish(m, int32(523173), int32(1883), int32(581339))
 							mBase = m.M
 							v404 = m.ExcPending
 							if v404 != 0 {
@@ -1855,13 +1855,13 @@ func F_cube_coord_llur(m *base.Module, l0 int32) int32 {
 				if v71 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(473317), int32(0))
+					F_errmsg(m, int32(473369), int32(0))
 					mBase = m.M
 					v77 = m.ExcPending
 					if v77 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(523103), int32(1659), int32(216568))
+						F_errfinish(m, int32(523173), int32(1659), int32(216568))
 						mBase = m.M
 						v84 = m.ExcPending
 						if v84 != 0 {
@@ -3067,13 +3067,13 @@ func F_cube_scanner_init(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(309232), int32(0))
+					F_errmsg_internal(m, int32(309262), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(329079), int32(108), int32(106554))
+						F_errfinish(m, int32(329109), int32(108), int32(106554))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -3096,13 +3096,13 @@ func F_cube_scanner_init(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		if v20 != 0 {
 			return
 		} else {
-			F_errmsg_internal(m, int32(309232), int32(0))
+			F_errmsg_internal(m, int32(309262), int32(0))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(329079), int32(108), int32(106554))
+				F_errfinish(m, int32(329109), int32(108), int32(106554))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {

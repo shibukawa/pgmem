@@ -153,17 +153,17 @@ func F_xmlexists(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(380365), int32(0))
+			F_errmsg(m, int32(380395), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(605506), int32(0))
+				F_errdetail(m, int32(605576), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520832), int32(4555), int32(123264))
+					F_errfinish(m, int32(520902), int32(4555), int32(123264))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)
@@ -196,12 +196,12 @@ func F_xmlvalidate(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(465939), int32(0))
+			F_errmsg(m, int32(465991), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(520832), int32(1123), int32(373788))
+				F_errfinish(m, int32(520902), int32(1123), int32(373818))
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return int32(0)
@@ -235,17 +235,17 @@ func F_xpath(m *base.Module, l0 int32) int32 {
 		if v10 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg(m, int32(380365), int32(0))
+			F_errmsg(m, int32(380395), int32(0))
 			v14 = m.ExcPending
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errdetail(m, int32(605506), int32(0))
+				F_errdetail(m, int32(605576), int32(0))
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520832), int32(4533), int32(336297))
+					F_errfinish(m, int32(520902), int32(4533), int32(336327))
 					v23 = m.ExcPending
 					if v23 != 0 {
 						return int32(0)

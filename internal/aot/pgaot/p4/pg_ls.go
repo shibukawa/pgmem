@@ -82,7 +82,7 @@ func F_pg_ls_replslotdir(m *base.Module, l0 int32) int32 {
 							if v30 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(522496), int32(740), int32(223865))
+								F_errfinish(m, int32(522566), int32(740), int32(223865))
 								mBase = m.M
 								v35 = m.ExcPending
 								if v35 != 0 {

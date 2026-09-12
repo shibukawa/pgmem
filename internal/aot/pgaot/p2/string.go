@@ -179,16 +179,16 @@ func F_stringToNode(m *base.Module, l0 int32) int32 {
 	var v12 int32
 	_ = v12
 	v2 = int32(0)
-	v3 = int32(4461756)
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[483]))
-	*(*int32)(unsafe.Add(mBase, _consts[483])) = l0
+	v3 = int32(4461868)
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[484]))
+	*(*int32)(unsafe.Add(mBase, _consts[484])) = l0
 	v9 = F_nodeRead(m, v2, v2)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[483])) = v4
+		*(*int32)(unsafe.Add(mBase, _consts[484])) = v4
 		return v9
 	}
 }
@@ -437,7 +437,7 @@ func F_string_agg_transfn(m *base.Module, l0 int32) int32 {
 						if v213 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(524313), int32(5432), int32(370865))
+							F_errfinish(m, int32(524383), int32(5432), int32(370895))
 							mBase = m.M
 							v218 = m.ExcPending
 							if v218 != 0 {
@@ -450,7 +450,7 @@ func F_string_agg_transfn(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v61 = int32(4554128)
+					v61 = int32(4554240)
 					v62 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 					v64 = *(*int32)(unsafe.Add(mBase, uint32(v12)+12))
 					*(*int32)(unsafe.Add(mBase, _consts[0])) = v64

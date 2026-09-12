@@ -146,7 +146,7 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 				v45 = int32(*(*uint8)(unsafe.Add(mBase, _consts[10])))
 				if v45&int32(1) == int32(0) {
 				} else {
-					v50 = int32(4548788)
+					v50 = int32(4548900)
 					v52 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 					v53 = int32(1)
 					*(*int32)(unsafe.Add(mBase, _consts[11])) = v52 + v53
@@ -218,7 +218,7 @@ func F_bbsink_progress_archive_contents(m *base.Module, l0 int32, l1 int32) {
 					v186 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
 					v187 = int32(1)
 					*(*int32)(unsafe.Add(mBase, uint32(v39))) = v186 + v187
-					v190 = int32(4548788)
+					v190 = int32(4548900)
 					v192 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 					*(*int32)(unsafe.Add(mBase, _consts[11])) = v192 - v187
 				}

@@ -166,8 +166,8 @@ L2:
 	}
 L3:
 	;
-	v16 = int32(511619)
-	v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1298])))
+	v16 = int32(511671)
+	v19 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1300])))
 	v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v20 == int32(0) {
 		v39 = v19
@@ -240,7 +240,7 @@ L12:
 L13:
 	;
 	v42 = int32(106914)
-	v45 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1299])))
+	v45 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1301])))
 	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1))))
 	if v46 == int32(0) {
 		v65 = v45
@@ -257,7 +257,7 @@ L15:
 	v68 = F_strlen(m, l1)
 	mBase = m.M
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = l1
-	v76 = F_snprintf(m, v10+int32(32), int32(256), int32(532041), v10+int32(16))
+	v76 = F_snprintf(m, v10+int32(32), int32(256), int32(532111), v10+int32(16))
 	mBase = m.M
 	v79 = m.ExcPending
 	if v79 != 0 {
@@ -431,7 +431,7 @@ L41:
 L42:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v140
-	v202 = F_snprintf(m, int32(4646800), int32(512), int32(212625), v10)
+	v202 = F_snprintf(m, int32(4646912), int32(512), int32(212625), v10)
 	mBase = m.M
 	v203 = m.ExcPending
 	if v203 != 0 {
@@ -536,7 +536,7 @@ L57:
 L58:
 	;
 	v206 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[1300])) = uint8(v206)
+	*(*uint8)(unsafe.Add(mBase, _consts[1302])) = uint8(v206)
 	v210 = int32(0)
 	goto L1
 }

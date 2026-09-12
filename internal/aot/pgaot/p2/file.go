@@ -1691,13 +1691,13 @@ func F_FileSetCreate(m *base.Module, l0 int32, l1 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v620)+16)) = v617
-															F_errmsg(m, int32(309815), v620+int32(16))
+															F_errmsg(m, int32(309845), v620+int32(16))
 															mBase = m.M
 															v665 = m.ExcPending
 															if v665 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(523542), int32(1685), int32(224170))
+																F_errfinish(m, int32(523612), int32(1685), int32(224170))
 																mBase = m.M
 																v670 = m.ExcPending
 																if v670 != 0 {
@@ -1742,13 +1742,13 @@ func F_FileSetCreate(m *base.Module, l0 int32, l1 int32) int32 {
 																	return int32(0)
 																} else {
 																	*(*int32)(unsafe.Add(mBase, uint32(v620))) = v623
-																	F_errmsg(m, int32(309769), v620)
+																	F_errmsg(m, int32(309799), v620)
 																	mBase = m.M
 																	v680 = m.ExcPending
 																	if v680 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(523542), int32(1692), int32(224170))
+																		F_errfinish(m, int32(523612), int32(1692), int32(224170))
 																		mBase = m.M
 																		v685 = m.ExcPending
 																		if v685 != 0 {
@@ -1808,13 +1808,13 @@ func F_FileSetCreate(m *base.Module, l0 int32, l1 int32) int32 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v620))) = v623
-																F_errmsg(m, int32(309769), v620)
+																F_errmsg(m, int32(309799), v620)
 																mBase = m.M
 																v680 = m.ExcPending
 																if v680 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(523542), int32(1692), int32(224170))
+																	F_errfinish(m, int32(523612), int32(1692), int32(224170))
 																	mBase = m.M
 																	v685 = m.ExcPending
 																	if v685 != 0 {
@@ -1947,11 +1947,11 @@ func F_FileSetInit(m *base.Module, l0 int32) {
 	v2 = int32(0)
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[353]))
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v13
-	v15 = int32(4470176)
-	v16 = *(*int32)(unsafe.Add(mBase, _consts[763]))
+	v15 = int32(4470288)
+	v16 = *(*int32)(unsafe.Add(mBase, _consts[764]))
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v16
 	v22 = base.I32_rem_u_s(v16+int32(1), int32(2147483647))
-	*(*int32)(unsafe.Add(mBase, _consts[763])) = v22
+	*(*int32)(unsafe.Add(mBase, _consts[764])) = v22
 	F_PrepareTempTablespaces(m)
 	mBase = m.M
 	v25 = m.ExcPending
@@ -1960,14 +1960,14 @@ func F_FileSetInit(m *base.Module, l0 int32) {
 	} else {
 		v27 = l0 + int32(12)
 		v28 = int32(8)
-		v30 = *(*int32)(unsafe.Add(mBase, _consts[408]))
+		v30 = *(*int32)(unsafe.Add(mBase, _consts[409]))
 		if v28 < v30 {
 			v33 = v28
 		} else {
 			v33 = v30
 		}
 		if int32(0) < v33 {
-			v37 = *(*int32)(unsafe.Add(mBase, _consts[409]))
+			v37 = *(*int32)(unsafe.Add(mBase, _consts[410]))
 			if base.Ui32(int32(4)) <= base.Ui32(v33) {
 				v44 = v2
 				v50 = v2

@@ -96,7 +96,7 @@ func F_jaccard_distance(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523858), int32(39), int32(159834))
+							F_errfinish(m, int32(523928), int32(39), int32(159834))
 							mBase = m.M
 							v37 = m.ExcPending
 							if v37 != 0 {
@@ -113,7 +113,7 @@ func F_jaccard_distance(m *base.Module, l0 int32) int32 {
 				v38 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 				v41 = int32(8)
 				v47 = int64(0)
-				v51 = *(*int32)(unsafe.Add(mBase, _consts[1138]))
+				v51 = *(*int32)(unsafe.Add(mBase, _consts[1139]))
 				v52 = m.T0[v51].(func(*base.Module, int32, int32, int32, int64, int64, int64) float64)(m, int32(base.Ui32(v38)>>(uint(int32(2))%32))-v41, v9+v41, v14+v41, v47, v47, v47)
 				mBase = m.M
 				v53 = F_Float8GetDatum(m, v52)
@@ -165,7 +165,7 @@ func F_johab_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v18 = int32(0)
-		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4430092), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
+		v24 = F_LocalToUtf(m, v6, v10, v5, int32(4430140), v18, v18, v18, int32(40), base.B2i32(v7 != v18))
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -229,7 +229,7 @@ func F_jsonpath_out(m *base.Module, l0 int32) int32 {
 			} else {
 				v24 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 				if int32(0) <= v24 {
-					F_appendStringInfoString(m, v6+int32(32), int32(765723))
+					F_appendStringInfoString(m, v6+int32(32), int32(765793))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
@@ -354,7 +354,7 @@ func F_jsonpath_send(m *base.Module, l0 int32) int32 {
 			} else {
 				v23 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 				if int32(0) <= v23 {
-					F_appendStringInfoString(m, v5+int32(4), int32(765723))
+					F_appendStringInfoString(m, v5+int32(4), int32(765793))
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {

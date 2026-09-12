@@ -1630,7 +1630,7 @@ func F_add_cast_to(m *base.Module, l0 int32, l1 int32) {
 				if v22 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(516743), int32(13488), int32(250944))
+					F_errfinish(m, int32(516795), int32(13488), int32(250974))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -2471,7 +2471,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v14
-	F_errmsg(m, int32(399238), v7)
+	F_errmsg(m, int32(399268), v7)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -2481,7 +2481,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(521253), int32(128), int32(395760))
+	F_errfinish(m, int32(521323), int32(128), int32(395790))
 	mBase = m.M
 	v124 = m.ExcPending
 	if v124 != 0 {

@@ -214,7 +214,7 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 				v36 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+20)) = int32(1)
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v36
-				v46 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(487497), v8+int32(16))
+				v46 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(487549), v8+int32(16))
 				mBase = m.M
 				v47 = m.ExcPending
 				if v47 != 0 {
@@ -230,7 +230,7 @@ func F_BufFileCreateFileSet(m *base.Module, l0 int32, l1 int32) int32 {
 						v53 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = int32(0)
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v53
-						v61 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(487497), v8)
+						v61 = F_pg_snprintf(m, v8+int32(32), int32(1024), int32(487549), v8)
 						mBase = m.M
 						v62 = m.ExcPending
 						if v62 != 0 {
@@ -499,7 +499,7 @@ L13:
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(v37+v38<<(uint(int32(2))%32)-int32(4))))
-	v46 = *(*int32)(unsafe.Add(mBase, _consts[752]))
+	v46 = *(*int32)(unsafe.Add(mBase, _consts[753]))
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v46+v44*int32(48))+32))
 	goto L14
 L14:
@@ -507,7 +507,7 @@ L14:
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v51
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v50
-	F_errmsg(m, int32(313305), v12+int32(16))
+	F_errmsg(m, int32(313335), v12+int32(16))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -517,7 +517,7 @@ L14:
 	}
 L15:
 	;
-	F_errfinish(m, int32(522506), int32(776), int32(330739))
+	F_errfinish(m, int32(522576), int32(776), int32(330769))
 	mBase = m.M
 	v63 = m.ExcPending
 	if v63 != 0 {
@@ -533,7 +533,7 @@ L16:
 L17:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l3
-	F_errmsg_internal(m, int32(508599), v12)
+	F_errmsg_internal(m, int32(508651), v12)
 	mBase = m.M
 	v71 = m.ExcPending
 	if v71 != 0 {
@@ -543,7 +543,7 @@ L17:
 	}
 L18:
 	;
-	F_errfinish(m, int32(522506), int32(779), int32(330739))
+	F_errfinish(m, int32(522576), int32(779), int32(330769))
 	mBase = m.M
 	v76 = m.ExcPending
 	if v76 != 0 {
@@ -759,7 +759,7 @@ func F_BufTableLookup(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v10
 	var v15 int32
 	_ = v15
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[725]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[726]))
 	v5 = int32(0)
 	v7 = F_hash_search_with_hash_value(m, v4, l0, l1, v5, v5)
 	mBase = m.M

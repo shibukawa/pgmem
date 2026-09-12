@@ -1708,7 +1708,7 @@ L182:
 	;
 	v1013 = int32(100)
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = v1013
-	F_errmsg_plural(m, int32(266278), int32(266326), v1013, v19)
+	F_errmsg_plural(m, int32(266308), int32(266356), v1013, v19)
 	mBase = m.M
 	v1019 = m.ExcPending
 	if v1019 != 0 {
@@ -1718,7 +1718,7 @@ L182:
 	}
 L183:
 	;
-	F_errfinish(m, int32(523809), int32(1036), int32(373895))
+	F_errfinish(m, int32(523879), int32(1036), int32(373925))
 	mBase = m.M
 	v1024 = m.ExcPending
 	if v1024 != 0 {
@@ -1780,7 +1780,7 @@ func F_func_volatile(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522705), int32(1927), int32(403772))
+					F_errfinish(m, int32(522775), int32(1927), int32(403802))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -1856,7 +1856,7 @@ func F_get_func_variadictype(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522705), int32(1870), int32(383456))
+					F_errfinish(m, int32(522775), int32(1870), int32(383486))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {
@@ -2379,7 +2379,7 @@ L47:
 	}
 L48:
 	;
-	F_errfinish(m, int32(517223), int32(501), int32(511528))
+	F_errfinish(m, int32(517275), int32(501), int32(511580))
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
@@ -2396,7 +2396,7 @@ L50:
 	;
 	v181 = *(*int32)(unsafe.Add(mBase, uint32(v42)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = v181
-	F_errmsg_internal(m, int32(458151), v13+int32(16))
+	F_errmsg_internal(m, int32(458203), v13+int32(16))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {
@@ -2406,7 +2406,7 @@ L50:
 	}
 L51:
 	;
-	F_errfinish(m, int32(517223), int32(561), int32(145863))
+	F_errfinish(m, int32(517275), int32(561), int32(145863))
 	mBase = m.M
 	v192 = m.ExcPending
 	if v192 != 0 {

@@ -544,7 +544,7 @@ L55:
 	goto L53
 L56:
 	;
-	F_s_lock(m, v181, int32(518550), int32(3596), int32(484196))
+	F_s_lock(m, v181, int32(518602), int32(3596), int32(484248))
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -606,7 +606,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(1152)
-	F_errmsg(m, int32(312790), v8)
+	F_errmsg(m, int32(312820), v8)
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -616,7 +616,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(521906), int32(400), int32(360689))
+	F_errfinish(m, int32(521976), int32(400), int32(360719))
 	mBase = m.M
 	v235 = m.ExcPending
 	if v235 != 0 {
@@ -978,7 +978,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		if l0 == int32(2) {
-			v23 = int32(4470896)
+			v23 = int32(4471008)
 			v25 = *(*int32)(unsafe.Add(mBase, _consts[844]))
 			v26 = int32(1)
 			*(*int32)(unsafe.Add(mBase, _consts[844])) = v25 + v26
@@ -1947,7 +1947,7 @@ func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2266288), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2266336), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

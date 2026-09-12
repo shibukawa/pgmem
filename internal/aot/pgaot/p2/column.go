@@ -135,7 +135,7 @@ func F_convert_column_name(m *base.Module, l0 int32, l1 int32) int32 {
 								if v44 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(520995), int32(2939), int32(396658))
+									F_errfinish(m, int32(521065), int32(2939), int32(396688))
 									mBase = m.M
 									v49 = m.ExcPending
 									if v49 != 0 {

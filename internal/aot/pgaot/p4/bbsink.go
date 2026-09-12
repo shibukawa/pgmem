@@ -295,7 +295,7 @@ func F_bbsink_progress_end_archive(m *base.Module, l0 int32) {
 			v21 = int32(*(*uint8)(unsafe.Add(mBase, _consts[56])))
 			if v21 != int32(1) {
 			} else {
-				v24 = int32(4548788)
+				v24 = int32(4548900)
 				v26 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 				v27 = int32(1)
 				*(*int32)(unsafe.Add(mBase, _consts[26])) = v26 + v27
@@ -384,13 +384,13 @@ func F_bbsink_server_begin_archive(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v16
-						F_errmsg(m, int32(312915), v8)
+						F_errmsg(m, int32(312945), v8)
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518198), int32(149), int32(360570))
+							F_errfinish(m, int32(518250), int32(149), int32(360600))
 							mBase = m.M
 							v38 = m.ExcPending
 							if v38 != 0 {

@@ -228,7 +228,7 @@ func F_tuplesort_getdatum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	v10 = m.G0
 	v12 = v10 - int32(16)
 	m.G0 = v12
-	v14 = int32(4554128)
+	v14 = int32(4554240)
 	v15 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v17
@@ -704,7 +704,7 @@ func F_tuplesort_performsort(m *base.Module, l0 int32) {
 	v18 = m.G0
 	v20 = v18 + int32(-64)
 	m.G0 = v20
-	v22 = int32(4554128)
+	v22 = int32(4554240)
 	v23 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v25
@@ -772,7 +772,7 @@ L6:
 	}
 L7:
 	;
-	F_errfinish(m, int32(514953), int32(1369), int32(84245))
+	F_errfinish(m, int32(515005), int32(1369), int32(84245))
 	mBase = m.M
 	v53 = m.ExcPending
 	if v53 != 0 {
@@ -944,7 +944,7 @@ L26:
 	}
 L27:
 	;
-	F_s_lock(m, v74, int32(514953), int32(3034), int32(389373))
+	F_s_lock(m, v74, int32(515005), int32(3034), int32(389403))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -970,7 +970,7 @@ L30:
 	goto L29
 L31:
 	;
-	F_s_lock(m, v56, int32(514953), int32(3079), int32(172363))
+	F_s_lock(m, v56, int32(515005), int32(3079), int32(172363))
 	mBase = m.M
 	v117 = m.ExcPending
 	if v117 != 0 {
@@ -1319,7 +1319,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(522506), int32(912), int32(446548))
+	F_errfinish(m, int32(522576), int32(912), int32(446600))
 	mBase = m.M
 	v356 = m.ExcPending
 	if v356 != 0 {
@@ -1600,7 +1600,7 @@ L112:
 	goto L111
 L113:
 	;
-	F_errmsg_internal(m, int32(368861), int32(0))
+	F_errmsg_internal(m, int32(368891), int32(0))
 	mBase = m.M
 	v666 = m.ExcPending
 	if v666 != 0 {
@@ -1610,7 +1610,7 @@ L113:
 	}
 L114:
 	;
-	F_errfinish(m, int32(514953), int32(1444), int32(84245))
+	F_errfinish(m, int32(515005), int32(1444), int32(84245))
 	mBase = m.M
 	v671 = m.ExcPending
 	if v671 != 0 {
@@ -1664,7 +1664,7 @@ L120:
 	}
 L121:
 	;
-	F_errfinish(m, int32(514953), v746, int32(84245))
+	F_errfinish(m, int32(515005), v746, int32(84245))
 	mBase = m.M
 	v749 = m.ExcPending
 	if v749 != 0 {
@@ -1750,7 +1750,7 @@ L131:
 	goto L118
 L132:
 	;
-	F_errmsg_internal(m, int32(337497), int32(0))
+	F_errmsg_internal(m, int32(337527), int32(0))
 	mBase = m.M
 	v764 = m.ExcPending
 	if v764 != 0 {
@@ -1760,7 +1760,7 @@ L132:
 	}
 L133:
 	;
-	F_errfinish(m, int32(514953), int32(3084), int32(172363))
+	F_errfinish(m, int32(515005), int32(3084), int32(172363))
 	mBase = m.M
 	v769 = m.ExcPending
 	if v769 != 0 {
@@ -1816,7 +1816,7 @@ func F_tuplesort_putgintuple(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v10 = int32(4554128)
+	v10 = int32(4554240)
 	v11 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v13
@@ -1942,7 +1942,7 @@ func F_tuplesort_puttupleslot(m *base.Module, l0 int32, l1 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v11 = int32(4554128)
+	v11 = int32(4554240)
 	v12 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v14

@@ -576,7 +576,7 @@ L23:
 	}
 L24:
 	;
-	v175 = int32(4548788)
+	v175 = int32(4548900)
 	v177 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v177 + int32(1)
 	F_smgrtruncate(m, v34, v16+int32(100), v172, v16+int32(76), v16+int32(88))
@@ -654,7 +654,7 @@ L32:
 	goto L24
 L33:
 	;
-	v189 = int32(4548788)
+	v189 = int32(4548900)
 	v191 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v191 - int32(1)
 	goto L23
@@ -701,7 +701,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(522809), int32(1094), int32(254542))
+	F_errfinish(m, int32(522879), int32(1094), int32(254572))
 	mBase = m.M
 	v216 = m.ExcPending
 	if v216 != 0 {

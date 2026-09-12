@@ -474,7 +474,7 @@ L51:
 	goto L15
 L52:
 	;
-	F_errmsg_internal(m, int32(483103), int32(0))
+	F_errmsg_internal(m, int32(483155), int32(0))
 	mBase = m.M
 	v231 = m.ExcPending
 	if v231 != 0 {
@@ -484,7 +484,7 @@ L52:
 	}
 L53:
 	;
-	F_errfinish(m, int32(342446), int32(630), int32(326242))
+	F_errfinish(m, int32(342476), int32(630), int32(326272))
 	mBase = m.M
 	v236 = m.ExcPending
 	if v236 != 0 {
@@ -758,13 +758,13 @@ func F_tidhash_stat(m *base.Module, l0 int32) {
 					*(*float64)(unsafe.Add(mBase, uint32(v18)+16)) = v163
 					*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = v169
 					*(*int64)(unsafe.Add(mBase, uint32(v18))) = v168
-					F_errmsg_internal(m, int32(356412), v18)
+					F_errmsg_internal(m, int32(356442), v18)
 					mBase = m.M
 					v181 = m.ExcPending
 					if v181 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(342446), int32(1144), int32(119317))
+						F_errfinish(m, int32(342476), int32(1144), int32(119317))
 						mBase = m.M
 						v186 = m.ExcPending
 						if v186 != 0 {

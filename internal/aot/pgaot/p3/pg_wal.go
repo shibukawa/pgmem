@@ -218,13 +218,13 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 					if v118 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(384849), int32(0))
+						F_errmsg_internal(m, int32(384879), int32(0))
 						mBase = m.M
 						v122 = m.ExcPending
 						if v122 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(517336), int32(192), int32(368468))
+							F_errfinish(m, int32(517388), int32(192), int32(368498))
 							mBase = m.M
 							v127 = m.ExcPending
 							if v127 != 0 {

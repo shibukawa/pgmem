@@ -750,7 +750,7 @@ L11:
 	goto L12
 L12:
 	;
-	F_CheckTableNotInUse(m, v32, int32(565563))
+	F_CheckTableNotInUse(m, v32, int32(565633))
 	mBase = m.M
 	v43 = m.ExcPending
 	if v43 != 0 {
@@ -817,7 +817,7 @@ L19:
 	}
 L20:
 	;
-	F_errfinish(m, int32(517311), int32(4460), int32(428853))
+	F_errfinish(m, int32(517363), int32(4460), int32(428883))
 	mBase = m.M
 	v77 = m.ExcPending
 	if v77 != 0 {

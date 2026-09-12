@@ -439,13 +439,13 @@ func F_inner_product(m *base.Module, l0 int32) int32 {
 						v172 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23)+4)))
 						*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v172
 						*(*int32)(unsafe.Add(mBase, uint32(v15))) = v171
-						F_errmsg(m, int32(499548), v15)
+						F_errmsg(m, int32(499600), v15)
 						mBase = m.M
 						v177 = m.ExcPending
 						if v177 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(517975), int32(76), int32(159834))
+							F_errfinish(m, int32(518027), int32(76), int32(159834))
 							mBase = m.M
 							v182 = m.ExcPending
 							if v182 != 0 {

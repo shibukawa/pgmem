@@ -37,6 +37,7 @@ policy:
     - pg_visibility
     - pageinspect
     - pg_buffercache
+    - pg_freespacemap
   add_one:
     - append the contrib name to CONTRIB_MODULES in wasm/build.sh (control, SQL and DATA_TSEARCH files are copied into the share tree)
     - ./wasm/build.sh then ./wasm/gen-aot.sh (the symbol-named split keeps the pgaot diff to the new functions)

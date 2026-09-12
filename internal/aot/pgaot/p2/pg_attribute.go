@@ -115,25 +115,25 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 	v8 = v6 - int32(32)
 	m.G0 = v8
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+28)) = v2
-	F_stats_check_required_arg(m, l0, int32(4159808), v2)
+	F_stats_check_required_arg(m, l0, int32(4159856), v2)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
 		return int32(0)
 	} else {
-		F_stats_check_required_arg(m, l0, int32(4159808), int32(1))
+		F_stats_check_required_arg(m, l0, int32(4159856), int32(1))
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
 			return int32(0)
 		} else {
-			F_stats_check_required_arg(m, l0, int32(4159808), int32(2))
+			F_stats_check_required_arg(m, l0, int32(4159856), int32(2))
 			mBase = m.M
 			v25 = m.ExcPending
 			if v25 != 0 {
 				return int32(0)
 			} else {
-				F_stats_check_required_arg(m, l0, int32(4159808), int32(3))
+				F_stats_check_required_arg(m, l0, int32(4159856), int32(3))
 				mBase = m.M
 				v29 = m.ExcPending
 				if v29 != 0 {
@@ -203,13 +203,13 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 															return int32(0)
 														} else {
 															*(*int32)(unsafe.Add(mBase, uint32(v8))) = v62
-															F_errmsg(m, int32(743831), v8)
+															F_errmsg(m, int32(743901), v8)
 															mBase = m.M
 															v126 = m.ExcPending
 															if v126 != 0 {
 																return int32(0)
 															} else {
-																F_errfinish(m, int32(516065), int32(950), int32(133907))
+																F_errfinish(m, int32(516117), int32(950), int32(133907))
 																mBase = m.M
 																v131 = m.ExcPending
 																if v131 != 0 {
@@ -250,7 +250,7 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 																	if v147 != 0 {
 																		return int32(0)
 																	} else {
-																		F_errfinish(m, int32(516065), int32(956), int32(133907))
+																		F_errfinish(m, int32(516117), int32(956), int32(133907))
 																		mBase = m.M
 																		v152 = m.ExcPending
 																		if v152 != 0 {
@@ -354,13 +354,13 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 										if v106 != 0 {
 											return int32(0)
 										} else {
-											F_errhint(m, int32(599414), int32(0))
+											F_errhint(m, int32(599484), int32(0))
 											mBase = m.M
 											v110 = m.ExcPending
 											if v110 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(516065), int32(937), int32(133907))
+												F_errfinish(m, int32(516117), int32(937), int32(133907))
 												mBase = m.M
 												v115 = m.ExcPending
 												if v115 != 0 {

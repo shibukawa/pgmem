@@ -267,7 +267,7 @@ func F_EventTriggerAlterTableStart(m *base.Module, l0 int32) {
 		if v8 != 0 {
 			return
 		} else {
-			v9 = int32(4554128)
+			v9 = int32(4554240)
 			v10 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 			v12 = *(*int32)(unsafe.Add(mBase, uint32(v5)))
 			*(*int32)(unsafe.Add(mBase, _consts[28])) = v12
@@ -518,7 +518,7 @@ L13:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v22
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v36
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v33
-	v57 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(366153), v33)
+	v57 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(366183), v33)
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {

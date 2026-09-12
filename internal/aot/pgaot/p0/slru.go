@@ -207,7 +207,7 @@ L10:
 	}
 L11:
 	;
-	v43 = int32(561950)
+	v43 = int32(562020)
 	v47 = m.G0
 	v49 = v47 - int32(32)
 	v50 = int64(0)
@@ -411,7 +411,7 @@ L43:
 	}
 L44:
 	;
-	F_errfinish(m, int32(514649), int32(1813), int32(13704))
+	F_errfinish(m, int32(514701), int32(1813), int32(13704))
 	mBase = m.M
 	v145 = m.ExcPending
 	if v145 != 0 {

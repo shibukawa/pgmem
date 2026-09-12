@@ -202,7 +202,7 @@ func F_InitializeGUCOptionsFromEnvironment(m *base.Module) {
 	v5 = m.G0
 	v7 = v5 - int32(32)
 	m.G0 = v7
-	v9 = int32(541901)
+	v9 = int32(541971)
 	v15 = F___strchrnul(m, v9, int32(61))
 	mBase = m.M
 	if v9 == v15 {
@@ -227,7 +227,7 @@ L3:
 L4:
 	;
 	v18 = v15 - v9
-	v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1231]))))
+	v20 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+uint32(_consts[1232]))))
 	if v20 != 0 {
 		v50 = v1
 		goto L5
@@ -240,7 +240,7 @@ L5:
 	goto L1
 L6:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[1232]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[1233]))
 	if v22 == int32(0) {
 		v50 = v1
 		goto L5
@@ -324,7 +324,7 @@ L18:
 	goto L19
 L19:
 	;
-	v69 = int32(564806)
+	v69 = int32(564876)
 	v70 = int32(0)
 	v75 = F___strchrnul(m, v69, int32(61))
 	mBase = m.M
@@ -356,7 +356,7 @@ L24:
 L25:
 	;
 	v78 = v75 - v69
-	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v78)+uint32(_consts[1233]))))
+	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v78)+uint32(_consts[1234]))))
 	if v80 != 0 {
 		v110 = v70
 		goto L26
@@ -369,7 +369,7 @@ L26:
 	goto L22
 L27:
 	;
-	v82 = *(*int32)(unsafe.Add(mBase, _consts[1232]))
+	v82 = *(*int32)(unsafe.Add(mBase, _consts[1233]))
 	if v82 == int32(0) {
 		v110 = v70
 		goto L26
@@ -440,7 +440,7 @@ L38:
 	;
 	v119 = int32(0)
 	v120 = int32(1)
-	v127 = F_set_config_with_handle(m, int32(400081), v119, v117, v120, int32(2), int32(10), v119, v120, v119, v119)
+	v127 = F_set_config_with_handle(m, int32(400111), v119, v117, v120, int32(2), int32(10), v119, v120, v119, v119)
 	mBase = m.M
 	v128 = m.ExcPending
 	if v128 != 0 {
@@ -453,7 +453,7 @@ L39:
 	goto L40
 L40:
 	;
-	v129 = int32(561380)
+	v129 = int32(561450)
 	v130 = int32(0)
 	v135 = F___strchrnul(m, v129, int32(61))
 	mBase = m.M
@@ -482,7 +482,7 @@ L44:
 L45:
 	;
 	v138 = v135 - v129
-	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v138)+uint32(_consts[1234]))))
+	v140 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v138)+uint32(_consts[1235]))))
 	if v140 != 0 {
 		v170 = v130
 		goto L46
@@ -495,7 +495,7 @@ L46:
 	goto L42
 L47:
 	;
-	v142 = *(*int32)(unsafe.Add(mBase, _consts[1232]))
+	v142 = *(*int32)(unsafe.Add(mBase, _consts[1233]))
 	if v142 == int32(0) {
 		v170 = v130
 		goto L46
@@ -566,7 +566,7 @@ L58:
 	;
 	v179 = int32(0)
 	v180 = int32(1)
-	v187 = F_set_config_with_handle(m, int32(351937), v179, v177, v180, int32(2), int32(10), v179, v180, v179, v179)
+	v187 = F_set_config_with_handle(m, int32(351967), v179, v177, v180, int32(2), int32(10), v179, v180, v179, v179)
 	mBase = m.M
 	v188 = m.ExcPending
 	if v188 != 0 {
@@ -582,7 +582,7 @@ L60:
 	v189 = m.G0
 	v191 = v189 - int32(16)
 	m.G0 = v191
-	v194 = *(*int32)(unsafe.Add(mBase, _consts[1235]))
+	v194 = *(*int32)(unsafe.Add(mBase, _consts[1236]))
 	if v194 == int32(0) {
 		goto L62
 	} else {
@@ -762,7 +762,7 @@ L89:
 	goto L90
 L90:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[1235])) = v266
+	*(*int32)(unsafe.Add(mBase, _consts[1236])) = v266
 	v268 = v266
 	goto L64
 L91:
@@ -792,7 +792,7 @@ L96:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v282
 	v284 = int32(16)
-	v288 = F_pg_snprintf(m, v7+v284, v284, int32(509851), v7)
+	v288 = F_pg_snprintf(m, v7+v284, v284, int32(509903), v7)
 	mBase = m.M
 	v289 = m.ExcPending
 	if v289 != 0 {
@@ -819,7 +819,7 @@ L99:
 L100:
 	;
 	v299 = int32(0)
-	v303 = F_set_config_with_handle(m, int32(335499), int32(0), v7+int32(16), v294, v297, int32(10), v299, int32(1), v299, v299)
+	v303 = F_set_config_with_handle(m, int32(335529), int32(0), v7+int32(16), v294, v297, int32(10), v299, int32(1), v299, v299)
 	mBase = m.M
 	v304 = m.ExcPending
 	if v304 != 0 {
@@ -959,7 +959,7 @@ func F_MarkGUCPrefixReserved(m *base.Module, l0 int32) {
 	m.G0 = v8
 	v10 = F_strlen(m, l0)
 	mBase = m.M
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[1228]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[1229]))
 	F_hash_seq_init(m, v8+int32(28), v14)
 	mBase = m.M
 	v16 = m.ExcPending
@@ -997,11 +997,11 @@ L5:
 	goto L6
 L6:
 	;
-	v159 = int32(4554128)
+	v159 = int32(4554240)
 	v160 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v163 = *(*int32)(unsafe.Add(mBase, _consts[1237]))
+	v163 = *(*int32)(unsafe.Add(mBase, _consts[1238]))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v163
-	v166 = *(*int32)(unsafe.Add(mBase, _consts[1236]))
+	v166 = *(*int32)(unsafe.Add(mBase, _consts[1237]))
 	v167 = F_pstrdup(m, l0)
 	mBase = m.M
 	v168 = m.ExcPending
@@ -1175,7 +1175,7 @@ L29:
 	goto L30
 L30:
 	;
-	v105 = *(*int32)(unsafe.Add(mBase, _consts[1228]))
+	v105 = *(*int32)(unsafe.Add(mBase, _consts[1229]))
 	v108 = F_hash_search(m, v105, v26, int32(2), int32(0))
 	mBase = m.M
 	v109 = m.ExcPending
@@ -1199,7 +1199,7 @@ L31:
 L32:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
-	F_errdetail(m, int32(602694), v8)
+	F_errdetail(m, int32(602764), v8)
 	mBase = m.M
 	v98 = m.ExcPending
 	if v98 != 0 {
@@ -1209,7 +1209,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(523571), int32(5314), int32(460373))
+	F_errfinish(m, int32(523641), int32(5314), int32(460425))
 	mBase = m.M
 	v103 = m.ExcPending
 	if v103 != 0 {
@@ -1249,7 +1249,7 @@ L38:
 	}
 L39:
 	;
-	v122 = int32(4552172)
+	v122 = int32(4552284)
 	goto L44
 L40:
 	;
@@ -1294,7 +1294,7 @@ L47:
 	goto L45
 L48:
 	;
-	v140 = int32(4552164)
+	v140 = int32(4552276)
 	goto L51
 L49:
 	;
@@ -1350,7 +1350,7 @@ L57:
 L58:
 	;
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v160
-	*(*int32)(unsafe.Add(mBase, _consts[1236])) = v169
+	*(*int32)(unsafe.Add(mBase, _consts[1237])) = v169
 	m.G0 = v8 + int32(48)
 	return
 }

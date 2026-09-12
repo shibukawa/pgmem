@@ -462,7 +462,7 @@ L30:
 	}
 L31:
 	;
-	F_errfinish(m, int32(521070), int32(2138), int32(370560))
+	F_errfinish(m, int32(521140), int32(2138), int32(370590))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -590,11 +590,11 @@ L49:
 L50:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v77)+8)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(255897)
+	*(*int32)(unsafe.Add(mBase, uint32(v77)+4)) = int32(255927)
 	*(*int32)(unsafe.Add(mBase, uint32(v77))) = v100
 	*(*int32)(unsafe.Add(mBase, uint32(v75)+8)) = v77
 	*(*int32)(unsafe.Add(mBase, uint32(v75)+4)) = int32(993)
-	v206 = int32(4547032)
+	v206 = int32(4547144)
 	v207 = *(*int32)(unsafe.Add(mBase, _consts[142]))
 	*(*int32)(unsafe.Add(mBase, uint32(v75))) = v207
 	*(*int32)(unsafe.Add(mBase, _consts[142])) = v75
@@ -853,7 +853,7 @@ func F_LogicalTapeCreate(m *base.Module, l0 int32) int32 {
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522321), int32(690), int32(372862))
+					F_errfinish(m, int32(522391), int32(690), int32(372892))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -1840,7 +1840,7 @@ L38:
 	goto L35
 L39:
 	;
-	v104 = int32(4449696)
+	v104 = int32(4449808)
 	v105 = *(*int32)(unsafe.Add(mBase, _consts[114]))
 	v106 = *(*int64)(unsafe.Add(mBase, uint32(v105)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v105)+280)) = v106
@@ -2192,7 +2192,7 @@ L89:
 	}
 L90:
 	;
-	F_errfinish(m, int32(518550), int32(2789), int32(73618))
+	F_errfinish(m, int32(518602), int32(2789), int32(73618))
 	mBase = m.M
 	v240 = m.ExcPending
 	if v240 != 0 {

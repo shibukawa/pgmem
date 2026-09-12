@@ -892,7 +892,7 @@ L79:
 	goto L78
 L80:
 	;
-	v336 = int32(4451140)
+	v336 = int32(4451252)
 	v337 = *(*int32)(unsafe.Add(mBase, _consts[440]))
 	*(*int32)(unsafe.Add(mBase, uint32(v334))) = v337
 	*(*int32)(unsafe.Add(mBase, _consts[440])) = v334
@@ -1292,7 +1292,7 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(518822), int32(108), int32(250293))
+									F_errfinish(m, int32(518874), int32(108), int32(250323))
 									mBase = m.M
 									v107 = m.ExcPending
 									if v107 != 0 {
@@ -1333,7 +1333,7 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 											if v120 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(518822), int32(109), int32(250293))
+												F_errfinish(m, int32(518874), int32(109), int32(250323))
 												mBase = m.M
 												v127 = m.ExcPending
 												if v127 != 0 {
@@ -1565,7 +1565,7 @@ func F__int_overlap(m *base.Module, l0 int32) int32 {
 									if v120 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(518822), int32(109), int32(250293))
+										F_errfinish(m, int32(518874), int32(109), int32(250323))
 										mBase = m.M
 										v127 = m.ExcPending
 										if v127 != 0 {

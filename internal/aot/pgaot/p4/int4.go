@@ -94,7 +94,7 @@ func F_int4_avg_accum(m *base.Module, l0 int32) int32 {
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523822), int32(6822), int32(300640))
+							F_errfinish(m, int32(523892), int32(6822), int32(300670))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -120,7 +120,7 @@ func F_int4_avg_accum(m *base.Module, l0 int32) int32 {
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(523822), int32(6822), int32(300640))
+						F_errfinish(m, int32(523892), int32(6822), int32(300670))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -166,7 +166,7 @@ func F_int4_avg_accum(m *base.Module, l0 int32) int32 {
 						if v59 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523822), int32(6822), int32(300640))
+							F_errfinish(m, int32(523892), int32(6822), int32(300670))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -192,7 +192,7 @@ func F_int4_avg_accum(m *base.Module, l0 int32) int32 {
 					if v59 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(523822), int32(6822), int32(300640))
+						F_errfinish(m, int32(523892), int32(6822), int32(300670))
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
@@ -320,7 +320,7 @@ func F_int4_avg_combine(m *base.Module, l0 int32) int32 {
 						if v100 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(523822), int32(6847), int32(391391))
+							F_errfinish(m, int32(523892), int32(6847), int32(391421))
 							mBase = m.M
 							v105 = m.ExcPending
 							if v105 != 0 {
@@ -347,7 +347,7 @@ func F_int4_avg_combine(m *base.Module, l0 int32) int32 {
 							if v100 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(523822), int32(6847), int32(391391))
+								F_errfinish(m, int32(523892), int32(6847), int32(391421))
 								mBase = m.M
 								v105 = m.ExcPending
 								if v105 != 0 {
@@ -374,7 +374,7 @@ func F_int4_avg_combine(m *base.Module, l0 int32) int32 {
 								if v113 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(523822), int32(6851), int32(391391))
+									F_errfinish(m, int32(523892), int32(6851), int32(391421))
 									mBase = m.M
 									v118 = m.ExcPending
 									if v118 != 0 {
@@ -401,7 +401,7 @@ func F_int4_avg_combine(m *base.Module, l0 int32) int32 {
 									if v113 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(523822), int32(6851), int32(391391))
+										F_errfinish(m, int32(523892), int32(6851), int32(391421))
 										mBase = m.M
 										v118 = m.ExcPending
 										if v118 != 0 {
@@ -447,7 +447,7 @@ func F_int4_avg_combine(m *base.Module, l0 int32) int32 {
 			if v87 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(523822), int32(6840), int32(391391))
+				F_errfinish(m, int32(523892), int32(6840), int32(391421))
 				mBase = m.M
 				v92 = m.ExcPending
 				if v92 != 0 {
@@ -499,13 +499,13 @@ func F_int4_dist(m *base.Module, l0 int32) int32 {
 			if v26 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(420694), int32(0))
+				F_errmsg(m, int32(420724), int32(0))
 				mBase = m.M
 				v32 = m.ExcPending
 				if v32 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(524417), int32(105), int32(81871))
+					F_errfinish(m, int32(524487), int32(105), int32(81871))
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {

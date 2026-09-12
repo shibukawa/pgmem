@@ -260,23 +260,23 @@ func F_on_proc_exit(m *base.Module, l0 int32) {
 	_ = v57
 	var v62 int32
 	_ = v62
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[769]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[770]))
 	if v5 < int32(20) {
 		v9 = v5 << (uint(int32(3)) % 32)
 		v12 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v9)+uint32(_consts[770]))) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v9)+uint32(_consts[771]))) = l0
-		*(*int32)(unsafe.Add(mBase, _consts[769])) = v5 + int32(1)
-		v22 = int32(*(*uint8)(unsafe.Add(mBase, _consts[772])))
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+uint32(_consts[771]))) = v12
+		*(*int32)(unsafe.Add(mBase, uint32(v9)+uint32(_consts[772]))) = l0
+		*(*int32)(unsafe.Add(mBase, _consts[770])) = v5 + int32(1)
+		v22 = int32(*(*uint8)(unsafe.Add(mBase, _consts[773])))
 		if v22 == v12 {
-			v30 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+			v30 = *(*int32)(unsafe.Add(mBase, _consts[774]))
 			if v30 <= int32(31) {
-				*(*int32)(unsafe.Add(mBase, _consts[773])) = v30 + int32(1)
-				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_consts[774]))) = int32(1100)
+				*(*int32)(unsafe.Add(mBase, _consts[774])) = v30 + int32(1)
+				*(*int32)(unsafe.Add(mBase, uint32(v30<<(uint(int32(2))%32))+uint32(_consts[775]))) = int32(1100)
 			} else {
 			}
 			v45 = int32(1)
-			*(*uint8)(unsafe.Add(mBase, _consts[772])) = uint8(v45)
+			*(*uint8)(unsafe.Add(mBase, _consts[773])) = uint8(v45)
 		} else {
 		}
 		return
@@ -299,7 +299,7 @@ func F_on_proc_exit(m *base.Module, l0 int32) {
 				if v57 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(523605), int32(321), int32(106015))
+					F_errfinish(m, int32(523675), int32(321), int32(106015))
 					mBase = m.M
 					v62 = m.ExcPending
 					if v62 != 0 {

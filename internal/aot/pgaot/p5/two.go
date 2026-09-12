@@ -205,13 +205,13 @@ func F_TwoPhaseTransactionGid(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v17 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(568627), int32(0))
+				F_errmsg_internal(m, int32(568697), int32(0))
 				mBase = m.M
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(522203), int32(2689), int32(457740))
+					F_errfinish(m, int32(522273), int32(2689), int32(457792))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {

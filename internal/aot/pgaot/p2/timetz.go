@@ -291,13 +291,13 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 						if v32 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(393344), int32(0))
+							F_errmsg(m, int32(393374), int32(0))
 							mBase = m.M
 							v36 = m.ExcPending
 							if v36 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(522142), int32(2670), int32(323357))
+								F_errfinish(m, int32(522212), int32(2670), int32(323387))
 								mBase = m.M
 								v41 = m.ExcPending
 								if v41 != 0 {
@@ -393,13 +393,13 @@ func F_timetz_pl_interval(m *base.Module, l0 int32) int32 {
 					if v32 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(393344), int32(0))
+						F_errmsg(m, int32(393374), int32(0))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(522142), int32(2670), int32(323357))
+							F_errfinish(m, int32(522212), int32(2670), int32(323387))
 							mBase = m.M
 							v41 = m.ExcPending
 							if v41 != 0 {
@@ -556,7 +556,7 @@ func F_timetz_zone(m *base.Module, l0 int32) int32 {
 						return v58
 					}
 				case 1:
-					v36 = *(*int64)(unsafe.Add(mBase, _consts[432]))
+					v36 = *(*int64)(unsafe.Add(mBase, _consts[433]))
 					v39 = *(*int32)(unsafe.Add(mBase, uint32(v10)+56))
 					v42 = F_DetermineTimeZoneAbbrevOffsetTS(m, v36, v10-int32(-64), v39, v10+int32(12))
 					mBase = m.M
@@ -600,7 +600,7 @@ func F_timetz_zone(m *base.Module, l0 int32) int32 {
 						}
 					}
 				default:
-					v46 = *(*int64)(unsafe.Add(mBase, _consts[432]))
+					v46 = *(*int64)(unsafe.Add(mBase, _consts[433]))
 					v54 = *(*int32)(unsafe.Add(mBase, uint32(v10)+56))
 					v55 = F_timestamp2tm(m, v46, v10+int32(332), v10+int32(12), v10+int32(8), int32(0), v54)
 					mBase = m.M
@@ -621,13 +621,13 @@ func F_timetz_zone(m *base.Module, l0 int32) int32 {
 								if v101 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(420766), int32(0))
+									F_errmsg(m, int32(420796), int32(0))
 									mBase = m.M
 									v105 = m.ExcPending
 									if v105 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(522142), int32(3166), int32(389805))
+										F_errfinish(m, int32(522212), int32(3166), int32(389835))
 										mBase = m.M
 										v110 = m.ExcPending
 										if v110 != 0 {

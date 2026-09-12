@@ -371,7 +371,7 @@ L4:
 L5:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+32)) = v16
-	v19 = int32(4554128)
+	v19 = int32(4554240)
 	v20 = *(*int32)(unsafe.Add(mBase, _consts[10]))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v16)+100))
 	*(*int32)(unsafe.Add(mBase, _consts[10])) = v22
@@ -1695,7 +1695,7 @@ L55:
 	}
 L56:
 	;
-	F_errfinish(m, int32(521856), int32(5006), int32(232567))
+	F_errfinish(m, int32(521926), int32(5006), int32(232567))
 	mBase = m.M
 	v256 = m.ExcPending
 	if v256 != 0 {

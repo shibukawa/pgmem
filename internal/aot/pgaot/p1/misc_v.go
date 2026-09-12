@@ -500,7 +500,7 @@ L38:
 	}
 L39:
 	;
-	F_errfinish(m, int32(517311), int32(21849), int32(30466))
+	F_errfinish(m, int32(517363), int32(21849), int32(30466))
 	mBase = m.M
 	v153 = m.ExcPending
 	if v153 != 0 {
@@ -527,7 +527,7 @@ L41:
 	}
 L42:
 	;
-	F_errfinish(m, int32(517311), int32(21875), int32(30466))
+	F_errfinish(m, int32(517363), int32(21875), int32(30466))
 	mBase = m.M
 	v167 = m.ExcPending
 	if v167 != 0 {
@@ -1850,7 +1850,7 @@ L148:
 	}
 L149:
 	;
-	F_errfinish(m, int32(519692), int32(135), int32(324017))
+	F_errfinish(m, int32(519762), int32(135), int32(324047))
 	mBase = m.M
 	v1035 = m.ExcPending
 	if v1035 != 0 {
@@ -2186,7 +2186,7 @@ L21:
 	goto L18
 L22:
 	;
-	v97 = int32(4548788)
+	v97 = int32(4548900)
 	v99 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	*(*int32)(unsafe.Add(mBase, _consts[11])) = v99 + int32(1)
 	v104 = int32(8167) - v75
@@ -2277,7 +2277,7 @@ L34:
 L35:
 	;
 	v174 = int32(1)
-	v176 = int32(4548788)
+	v176 = int32(4548900)
 	v178 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	*(*int32)(unsafe.Add(mBase, _consts[11])) = v178 - v174
 	F_UnlockReleaseBuffer(m, v70)
@@ -2625,7 +2625,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 				if v252 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518975), int32(270), int32(113088))
+					F_errfinish(m, int32(519027), int32(270), int32(113088))
 					mBase = m.M
 					v257 = m.ExcPending
 					if v257 != 0 {
@@ -2651,7 +2651,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 					if v265 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(518975), int32(274), int32(113088))
+						F_errfinish(m, int32(519027), int32(274), int32(113088))
 						mBase = m.M
 						v270 = m.ExcPending
 						if v270 != 0 {
@@ -2686,7 +2686,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 						if v265 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518975), int32(274), int32(113088))
+							F_errfinish(m, int32(519027), int32(274), int32(113088))
 							mBase = m.M
 							v270 = m.ExcPending
 							if v270 != 0 {
@@ -2718,7 +2718,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 						v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
 						v93 = int32(base.Ui32(v90)>>(uint(v58)%32)) & int32(3)
 						if v7 != v93 {
-							v95 = int32(4548788)
+							v95 = int32(4548900)
 							v97 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 							*(*int32)(unsafe.Add(mBase, _consts[11])) = v97 + int32(1)
 							v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
@@ -2733,7 +2733,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 								v107 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 								v108 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107)+118)))
 								if v108 != int32(112) {
-									v231 = int32(4548788)
+									v231 = int32(4548900)
 									v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 									*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 									F_LockBuffer(m, l4, int32(0))
@@ -2749,7 +2749,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 									if v112 <= int32(0) {
 										v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 										if v115 != 0 {
-											v231 = int32(4548788)
+											v231 = int32(4548900)
 											v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 											*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 											F_LockBuffer(m, l4, int32(0))
@@ -2763,7 +2763,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 										} else {
 											v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 											if v116 != 0 {
-												v231 = int32(4548788)
+												v231 = int32(4548900)
 												v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 												*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 												F_LockBuffer(m, l4, int32(0))
@@ -2778,7 +2778,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 												if l3 != int64(0) {
 													v220 = l3
 													*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-													v231 = int32(4548788)
+													v231 = int32(4548900)
 													v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 													*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 													F_LockBuffer(m, l4, int32(0))
@@ -2904,7 +2904,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 																			v220 = v183
 																		}
 																		*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-																		v231 = int32(4548788)
+																		v231 = int32(4548900)
 																		v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 																		*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 																		F_LockBuffer(m, l4, int32(0))
@@ -2927,7 +2927,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 										if l3 != int64(0) {
 											v220 = l3
 											*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-											v231 = int32(4548788)
+											v231 = int32(4548900)
 											v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 											*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 											F_LockBuffer(m, l4, int32(0))
@@ -3053,7 +3053,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 																	v220 = v183
 																}
 																*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-																v231 = int32(4548788)
+																v231 = int32(4548900)
 																v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 																*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 																F_LockBuffer(m, l4, int32(0))
@@ -3101,7 +3101,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 				if v265 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518975), int32(274), int32(113088))
+					F_errfinish(m, int32(519027), int32(274), int32(113088))
 					mBase = m.M
 					v270 = m.ExcPending
 					if v270 != 0 {
@@ -3136,7 +3136,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 					if v265 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(518975), int32(274), int32(113088))
+						F_errfinish(m, int32(519027), int32(274), int32(113088))
 						mBase = m.M
 						v270 = m.ExcPending
 						if v270 != 0 {
@@ -3168,7 +3168,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 					v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
 					v93 = int32(base.Ui32(v90)>>(uint(v58)%32)) & int32(3)
 					if v7 != v93 {
-						v95 = int32(4548788)
+						v95 = int32(4548900)
 						v97 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 						*(*int32)(unsafe.Add(mBase, _consts[11])) = v97 + int32(1)
 						v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v89))))
@@ -3183,7 +3183,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 							v107 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 							v108 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107)+118)))
 							if v108 != int32(112) {
-								v231 = int32(4548788)
+								v231 = int32(4548900)
 								v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 								*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 								F_LockBuffer(m, l4, int32(0))
@@ -3199,7 +3199,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 								if v112 <= int32(0) {
 									v115 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 									if v115 != 0 {
-										v231 = int32(4548788)
+										v231 = int32(4548900)
 										v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 										*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 										F_LockBuffer(m, l4, int32(0))
@@ -3213,7 +3213,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 									} else {
 										v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 										if v116 != 0 {
-											v231 = int32(4548788)
+											v231 = int32(4548900)
 											v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 											*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 											F_LockBuffer(m, l4, int32(0))
@@ -3228,7 +3228,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 											if l3 != int64(0) {
 												v220 = l3
 												*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-												v231 = int32(4548788)
+												v231 = int32(4548900)
 												v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 												*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 												F_LockBuffer(m, l4, int32(0))
@@ -3354,7 +3354,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 																		v220 = v183
 																	}
 																	*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-																	v231 = int32(4548788)
+																	v231 = int32(4548900)
 																	v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 																	*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 																	F_LockBuffer(m, l4, int32(0))
@@ -3377,7 +3377,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 									if l3 != int64(0) {
 										v220 = l3
 										*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-										v231 = int32(4548788)
+										v231 = int32(4548900)
 										v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 										*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 										F_LockBuffer(m, l4, int32(0))
@@ -3503,7 +3503,7 @@ func F_visibilitymap_set(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64,
 																v220 = v183
 															}
 															*(*int64)(unsafe.Add(mBase, uint32(v81))) = base.I64_rotr(v220, int64(32))
-															v231 = int32(4548788)
+															v231 = int32(4548900)
 															v233 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 															*(*int32)(unsafe.Add(mBase, _consts[11])) = v233 - int32(1)
 															F_LockBuffer(m, l4, int32(0))

@@ -533,7 +533,7 @@ L57:
 	}
 L58:
 	;
-	v202 = int32(4548788)
+	v202 = int32(4548900)
 	v204 = *(*int32)(unsafe.Add(mBase, _consts[26]))
 	v205 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[26])) = v204 + v205
@@ -643,7 +643,7 @@ func F_get_raw_page_fork_1_9(m *base.Module, l0 int32) int32 {
 								if v33 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(522834), int32(113), int32(572993))
+									F_errfinish(m, int32(522904), int32(113), int32(573063))
 									mBase = m.M
 									v40 = m.ExcPending
 									if v40 != 0 {

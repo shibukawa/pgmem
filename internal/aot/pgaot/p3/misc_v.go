@@ -835,13 +835,13 @@ func F_varbit_recv(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v11
-						F_errmsg(m, int32(708474), v9)
+						F_errmsg(m, int32(708544), v9)
 						mBase = m.M
 						v90 = m.ExcPending
 						if v90 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(515641), int32(662), int32(37707))
+							F_errfinish(m, int32(515693), int32(662), int32(37707))
 							mBase = m.M
 							v95 = m.ExcPending
 							if v95 != 0 {
@@ -900,13 +900,13 @@ func F_varbit_recv(m *base.Module, l0 int32) int32 {
 				if v70 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(346347), int32(0))
+					F_errmsg(m, int32(346377), int32(0))
 					mBase = m.M
 					v74 = m.ExcPending
 					if v74 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(515641), int32(652), int32(37707))
+						F_errfinish(m, int32(515693), int32(652), int32(37707))
 						mBase = m.M
 						v79 = m.ExcPending
 						if v79 != 0 {
@@ -3590,7 +3590,7 @@ L80:
 	}
 L81:
 	;
-	F_errmsg(m, int32(257570), int32(0))
+	F_errmsg(m, int32(257600), int32(0))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -3600,7 +3600,7 @@ L81:
 	}
 L82:
 	;
-	F_errhint(m, int32(601086), int32(0))
+	F_errhint(m, int32(601156), int32(0))
 	mBase = m.M
 	v236 = m.ExcPending
 	if v236 != 0 {
@@ -3610,7 +3610,7 @@ L82:
 	}
 L83:
 	;
-	F_errfinish(m, int32(524313), int32(1648), int32(113106))
+	F_errfinish(m, int32(524383), int32(1648), int32(113106))
 	mBase = m.M
 	v241 = m.ExcPending
 	if v241 != 0 {
@@ -4765,7 +4765,7 @@ func F_void_out(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = F_pstrdup(m, int32(790160))
+	v3 = F_pstrdup(m, int32(790230))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return int32(0)

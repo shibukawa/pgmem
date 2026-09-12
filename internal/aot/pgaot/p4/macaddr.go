@@ -317,7 +317,7 @@ L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v10
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(240461)
-	F_errmsg(m, int32(757692), v7+int32(16))
+	F_errmsg(m, int32(757762), v7+int32(16))
 	mBase = m.M
 	v224 = m.ExcPending
 	if v224 != 0 {
@@ -327,7 +327,7 @@ L20:
 	}
 L21:
 	;
-	F_errsave_finish(m, v9, int32(524269), int32(95), int32(292186))
+	F_errsave_finish(m, v9, int32(524339), int32(95), int32(292216))
 	mBase = m.M
 	v229 = m.ExcPending
 	if v229 != 0 {
@@ -424,7 +424,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v10
-	F_errmsg(m, int32(759388), v7)
+	F_errmsg(m, int32(759458), v7)
 	mBase = m.M
 	v259 = m.ExcPending
 	if v259 != 0 {
@@ -434,7 +434,7 @@ L33:
 	}
 L34:
 	;
-	F_errsave_finish(m, v9, int32(524269), int32(102), int32(292186))
+	F_errsave_finish(m, v9, int32(524339), int32(102), int32(292216))
 	mBase = m.M
 	v264 = m.ExcPending
 	if v264 != 0 {
@@ -553,7 +553,7 @@ func F_macaddr_sortsupport(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v4)+16)) = int32(1455)
 	v9 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+20)))
 	if v9 == int32(1) {
-		v12 = int32(4554128)
+		v12 = int32(4554240)
 		v13 = *(*int32)(unsafe.Add(mBase, _consts[28]))
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
 		*(*int32)(unsafe.Add(mBase, _consts[28])) = v15

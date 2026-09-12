@@ -8,7 +8,7 @@ import (
 func F_StandbyLockTimeoutHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[798])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[799])) = int32(1)
 	return
 }
 func F_StandbyRecoverPreparedTransactions(m *base.Module) {
@@ -318,7 +318,7 @@ L7:
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v34)+8))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v36
 	*(*int64)(unsafe.Add(mBase, uint32(v10))) = v35
-	F_appendStringInfo(m, l0, int32(764093), v10)
+	F_appendStringInfo(m, l0, int32(764163), v10)
 	mBase = m.M
 	v41 = m.ExcPending
 	if v41 != 0 {
@@ -364,7 +364,7 @@ L13:
 L14:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+64)) = v57
-	F_appendStringInfo(m, l0, int32(572445), v10-int32(-64))
+	F_appendStringInfo(m, l0, int32(572515), v10-int32(-64))
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -414,7 +414,7 @@ L20:
 	goto L18
 L21:
 	;
-	F_appendStringInfoString(m, l0, int32(460274))
+	F_appendStringInfoString(m, l0, int32(460326))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -439,7 +439,7 @@ L24:
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v106
-	F_appendStringInfo(m, l0, int32(572418), v10+int32(32))
+	F_appendStringInfo(m, l0, int32(572488), v10+int32(32))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {

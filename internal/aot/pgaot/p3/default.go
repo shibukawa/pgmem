@@ -111,7 +111,7 @@ func F_check_default_tablespace(m *base.Module, l0 int32, l1 int32, l2 int32) in
 										if v46 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(523078), int32(1112), int32(438441))
+											F_errfinish(m, int32(523148), int32(1112), int32(438471))
 											mBase = m.M
 											v51 = m.ExcPending
 											if v51 != 0 {
@@ -130,7 +130,7 @@ func F_check_default_tablespace(m *base.Module, l0 int32, l1 int32, l2 int32) in
 							*(*int32)(unsafe.Add(mBase, _consts[508])) = v54
 							v57 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = v57
-							v63 = F_format_elog_string(m, int32(605017), v8+int32(16))
+							v63 = F_format_elog_string(m, int32(605087), v8+int32(16))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
@@ -243,7 +243,7 @@ func F_update_default_partition_oid(m *base.Module, l0 int32, l1 int32) {
 					if v27 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(519325), int32(352), int32(454213))
+						F_errfinish(m, int32(519395), int32(352), int32(454265))
 						mBase = m.M
 						v32 = m.ExcPending
 						if v32 != 0 {

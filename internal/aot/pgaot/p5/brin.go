@@ -375,13 +375,13 @@ func F_brin_bloom_add_value(m *base.Module, l0 int32) int32 {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v21)+4)) = int32(8144)
 					*(*int32)(unsafe.Add(mBase, uint32(v21))) = v92
-					F_errmsg_internal(m, int32(700144), v21)
+					F_errmsg_internal(m, int32(700214), v21)
 					mBase = m.M
 					v402 = m.ExcPending
 					if v402 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(520597), int32(344), int32(106668))
+						F_errfinish(m, int32(520667), int32(344), int32(106668))
 						mBase = m.M
 						v407 = m.ExcPending
 						if v407 != 0 {
@@ -1054,13 +1054,13 @@ func F_brin_inclusion_consistent(m *base.Module, l0 int32) int32 {
 			} else {
 				v138 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+6)))
 				*(*int32)(unsafe.Add(mBase, uint32(v14))) = v138
-				F_errmsg_internal(m, int32(492303), v14)
+				F_errmsg_internal(m, int32(492355), v14)
 				mBase = m.M
 				v142 = m.ExcPending
 				if v142 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(519451), int32(462), int32(98541))
+					F_errfinish(m, int32(519521), int32(462), int32(98541))
 					mBase = m.M
 					v147 = m.ExcPending
 					if v147 != 0 {
@@ -1548,8 +1548,8 @@ func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = int32(554907)
-						F_errmsg(m, int32(426463), v6+int32(-16))
+						*(*int32)(unsafe.Add(mBase, uint32(v8)+48)) = int32(554977)
+						F_errmsg(m, int32(426493), v6+int32(-16))
 						mBase = m.M
 						v48 = m.ExcPending
 						if v48 != 0 {
@@ -1560,13 +1560,13 @@ func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							v51 = int32(8)
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v51
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+36)) = (v50<<(uint(v51)%32) - v49) & int32(65535)
-							F_errdetail(m, int32(680523), v6+int32(-32))
+							F_errdetail(m, int32(680593), v6+int32(-32))
 							mBase = m.M
 							v64 = m.ExcPending
 							if v64 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(517544), int32(107), int32(425571))
+								F_errfinish(m, int32(517596), int32(107), int32(425601))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
@@ -1596,7 +1596,7 @@ func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l2
-							F_errmsg(m, int32(746831), v6+int32(-48))
+							F_errmsg(m, int32(746901), v6+int32(-48))
 							mBase = m.M
 							v86 = m.ExcPending
 							if v86 != 0 {
@@ -1606,13 +1606,13 @@ func F_verify_brin_page(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								v89 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10+v87)+6)))
 								*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v89
 								*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
-								F_errdetail(m, int32(603089), v8)
+								F_errdetail(m, int32(603159), v8)
 								mBase = m.M
 								v95 = m.ExcPending
 								if v95 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(517544), int32(115), int32(425571))
+									F_errfinish(m, int32(517596), int32(115), int32(425601))
 									mBase = m.M
 									v102 = m.ExcPending
 									if v102 != 0 {

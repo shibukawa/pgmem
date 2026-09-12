@@ -546,7 +546,7 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									if v116 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(518524), int32(1255), int32(235388))
+										F_errfinish(m, int32(518576), int32(1255), int32(235388))
 										mBase = m.M
 										v121 = m.ExcPending
 										if v121 != 0 {
@@ -665,7 +665,7 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 						if v101 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518524), int32(1247), int32(235388))
+							F_errfinish(m, int32(518576), int32(1247), int32(235388))
 							mBase = m.M
 							v106 = m.ExcPending
 							if v106 != 0 {

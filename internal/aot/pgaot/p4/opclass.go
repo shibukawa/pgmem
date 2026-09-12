@@ -53,7 +53,7 @@ func F_get_opclass_input_type(m *base.Module, l0 int32) int32 {
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(522705), int32(1312), int32(383613))
+					F_errfinish(m, int32(522775), int32(1312), int32(383643))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

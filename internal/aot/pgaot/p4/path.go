@@ -116,13 +116,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_errmsg(m, int32(311143), v9)
+								F_errmsg(m, int32(311173), v9)
 								mBase = m.M
 								v49 = m.ExcPending
 								if v49 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(523542), int32(1966), int32(407584))
+									F_errfinish(m, int32(523612), int32(1966), int32(407614))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
@@ -159,13 +159,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-								F_errmsg(m, int32(311338), v9+int32(32))
+								F_errmsg(m, int32(311368), v9+int32(32))
 								mBase = m.M
 								v71 = m.ExcPending
 								if v71 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(523542), int32(1977), int32(407584))
+									F_errfinish(m, int32(523612), int32(1977), int32(407614))
 									mBase = m.M
 									v76 = m.ExcPending
 									if v76 != 0 {
@@ -220,7 +220,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 										if v102 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(523542), int32(1546), int32(423830))
+											F_errfinish(m, int32(523612), int32(1546), int32(423860))
 											mBase = m.M
 											v107 = m.ExcPending
 											if v107 != 0 {
@@ -283,7 +283,7 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 								if v102 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(523542), int32(1546), int32(423830))
+									F_errfinish(m, int32(523612), int32(1546), int32(423860))
 									mBase = m.M
 									v107 = m.ExcPending
 									if v107 != 0 {
@@ -330,13 +330,13 @@ func F_PathNameDeleteTemporaryFile(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_errmsg(m, int32(311143), v9)
+							F_errmsg(m, int32(311173), v9)
 							mBase = m.M
 							v49 = m.ExcPending
 							if v49 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(523542), int32(1966), int32(407584))
+								F_errfinish(m, int32(523612), int32(1966), int32(407614))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {

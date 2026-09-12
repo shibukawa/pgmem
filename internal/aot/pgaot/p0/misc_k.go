@@ -197,7 +197,7 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v206 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(514532), int32(4831), int32(484059))
+						F_errfinish(m, int32(514584), int32(4831), int32(484111))
 						mBase = m.M
 						v211 = m.ExcPending
 						if v211 != 0 {
@@ -234,7 +234,7 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 							if v219 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(514532), int32(4848), int32(484059))
+								F_errfinish(m, int32(514584), int32(4848), int32(484111))
 								mBase = m.M
 								v224 = m.ExcPending
 								if v224 != 0 {
@@ -406,7 +406,7 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v219 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(514532), int32(4848), int32(484059))
+							F_errfinish(m, int32(514584), int32(4848), int32(484111))
 							mBase = m.M
 							v224 = m.ExcPending
 							if v224 != 0 {

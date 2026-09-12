@@ -2738,7 +2738,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(521728), int32(821), int32(232269))
+									F_errfinish(m, int32(521798), int32(821), int32(232269))
 									mBase = m.M
 									v83 = m.ExcPending
 									if v83 != 0 {
@@ -2783,7 +2783,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v132 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(648598), int32(0))
+									F_errhint(m, int32(648668), int32(0))
 									mBase = m.M
 									v136 = m.ExcPending
 									if v136 != 0 {
@@ -2798,7 +2798,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 										if v140 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(815), int32(232269))
+											F_errfinish(m, int32(521798), int32(815), int32(232269))
 											mBase = m.M
 											v145 = m.ExcPending
 											if v145 != 0 {
@@ -2855,7 +2855,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v132 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(648598), int32(0))
+									F_errhint(m, int32(648668), int32(0))
 									mBase = m.M
 									v136 = m.ExcPending
 									if v136 != 0 {
@@ -2870,7 +2870,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 										if v140 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(815), int32(232269))
+											F_errfinish(m, int32(521798), int32(815), int32(232269))
 											mBase = m.M
 											v145 = m.ExcPending
 											if v145 != 0 {
@@ -3063,7 +3063,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v78 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(521728), int32(821), int32(232269))
+									F_errfinish(m, int32(521798), int32(821), int32(232269))
 									mBase = m.M
 									v83 = m.ExcPending
 									if v83 != 0 {
@@ -3108,7 +3108,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v132 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(648598), int32(0))
+									F_errhint(m, int32(648668), int32(0))
 									mBase = m.M
 									v136 = m.ExcPending
 									if v136 != 0 {
@@ -3123,7 +3123,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 										if v140 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(815), int32(232269))
+											F_errfinish(m, int32(521798), int32(815), int32(232269))
 											mBase = m.M
 											v145 = m.ExcPending
 											if v145 != 0 {
@@ -3180,7 +3180,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 								if v132 != 0 {
 									return int32(0)
 								} else {
-									F_errhint(m, int32(648598), int32(0))
+									F_errhint(m, int32(648668), int32(0))
 									mBase = m.M
 									v136 = m.ExcPending
 									if v136 != 0 {
@@ -3195,7 +3195,7 @@ func F_check_agg_arguments_walker(m *base.Module, l0 int32, l1 int32) int32 {
 										if v140 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(521728), int32(815), int32(232269))
+											F_errfinish(m, int32(521798), int32(815), int32(232269))
 											mBase = m.M
 											v145 = m.ExcPending
 											if v145 != 0 {

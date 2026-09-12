@@ -202,7 +202,7 @@ func F_ShowGUCOption(m *base.Module, l0 int32, l1 int32) int32 {
 	case 4:
 		goto L3
 	default:
-		v306 = int32(571139)
+		v306 = int32(571209)
 		goto L1
 	}
 L1:
@@ -300,7 +300,7 @@ L13:
 	v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
 	v29 = base.I64_extend_i32_s(v28)
 	*(*int64)(unsafe.Add(mBase, uint32(v13)+56)) = v29
-	v31 = int32(790160)
+	v31 = int32(790230)
 	if l1 == int32(0) {
 		v117 = v31
 		v124 = v29
@@ -500,7 +500,7 @@ L46:
 	v138 = *(*int32)(unsafe.Add(mBase, uint32(l0)+92))
 	v139 = *(*float64)(unsafe.Add(mBase, uint32(v138)))
 	*(*float64)(unsafe.Add(mBase, uint32(v13)+56)) = v139
-	v141 = int32(790160)
+	v141 = int32(790230)
 	if l1 == int32(0) {
 		v220 = v141
 		v225 = v139
@@ -672,7 +672,7 @@ L70:
 	goto L71
 L71:
 	;
-	v306 = int32(790160)
+	v306 = int32(790230)
 	goto L1
 L72:
 	;
@@ -765,7 +765,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(523571), int32(3036), int32(361582))
+	F_errfinish(m, int32(523641), int32(3036), int32(361612))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -780,11 +780,11 @@ L86:
 	}
 L87:
 	;
-	v303 = int32(285807)
+	v303 = int32(285837)
 	goto L89
 L88:
 	;
-	v303 = int32(355204)
+	v303 = int32(355234)
 	goto L89
 L89:
 	;

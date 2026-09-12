@@ -2698,7 +2698,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(517739), int32(454), int32(253414))
+	F_errfinish(m, int32(517791), int32(454), int32(253444))
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -2770,7 +2770,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(517739), int32(460), int32(253414))
+	F_errfinish(m, int32(517791), int32(460), int32(253444))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -2949,7 +2949,7 @@ L64:
 	}
 L65:
 	;
-	F_errfinish(m, int32(517739), int32(416), int32(253414))
+	F_errfinish(m, int32(517791), int32(416), int32(253444))
 	mBase = m.M
 	v243 = m.ExcPending
 	if v243 != 0 {
@@ -2975,7 +2975,7 @@ L67:
 L68:
 	;
 	v251 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+68)) = int32(338694)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+68)) = int32(338724)
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+64)) = v251 + int32(4)
 	F_errmsg(m, int32(29213), v12-int32(-64))
 	mBase = m.M
@@ -2987,7 +2987,7 @@ L68:
 	}
 L69:
 	;
-	F_errfinish(m, int32(517739), int32(424), int32(253414))
+	F_errfinish(m, int32(517791), int32(424), int32(253444))
 	mBase = m.M
 	v266 = m.ExcPending
 	if v266 != 0 {
@@ -3022,7 +3022,7 @@ L72:
 	}
 L73:
 	;
-	F_errfinish(m, int32(517739), int32(429), int32(253414))
+	F_errfinish(m, int32(517791), int32(429), int32(253444))
 	mBase = m.M
 	v282 = m.ExcPending
 	if v282 != 0 {
@@ -3057,7 +3057,7 @@ L76:
 	}
 L77:
 	;
-	F_errfinish(m, int32(517739), int32(434), int32(253414))
+	F_errfinish(m, int32(517791), int32(434), int32(253444))
 	mBase = m.M
 	v298 = m.ExcPending
 	if v298 != 0 {
@@ -3085,7 +3085,7 @@ L80:
 	v306 = *(*int32)(unsafe.Add(mBase, uint32(v26)+48))
 	*(*int64)(unsafe.Add(mBase, uint32(v12)+48)) = v16
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+56)) = v306 + int32(4)
-	F_errmsg(m, int32(737238), v12+int32(48))
+	F_errmsg(m, int32(737308), v12+int32(48))
 	mBase = m.M
 	v315 = m.ExcPending
 	if v315 != 0 {
@@ -3095,7 +3095,7 @@ L80:
 	}
 L81:
 	;
-	F_errfinish(m, int32(517739), int32(440), int32(253414))
+	F_errfinish(m, int32(517791), int32(440), int32(253444))
 	mBase = m.M
 	v320 = m.ExcPending
 	if v320 != 0 {
@@ -3131,7 +3131,7 @@ L84:
 	}
 L85:
 	;
-	F_errfinish(m, int32(517739), int32(475), int32(253414))
+	F_errfinish(m, int32(517791), int32(475), int32(253444))
 	mBase = m.M
 	v338 = m.ExcPending
 	if v338 != 0 {
@@ -3146,7 +3146,7 @@ L86:
 	}
 L87:
 	;
-	F_errmsg_internal(m, int32(384849), int32(0))
+	F_errmsg_internal(m, int32(384879), int32(0))
 	mBase = m.M
 	v346 = m.ExcPending
 	if v346 != 0 {
@@ -3156,7 +3156,7 @@ L87:
 	}
 L88:
 	;
-	F_errfinish(m, int32(517739), int32(493), int32(253414))
+	F_errfinish(m, int32(517791), int32(493), int32(253444))
 	mBase = m.M
 	v351 = m.ExcPending
 	if v351 != 0 {
@@ -4398,7 +4398,7 @@ func F_hash_page_type(m *base.Module, l0 int32) int32 {
 				} else {
 					v13 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11)+14)))
 					if v13 == int32(0) {
-						v18 = F_cstring_to_text(m, int32(469270))
+						v18 = F_cstring_to_text(m, int32(469322))
 						mBase = m.M
 						v19 = m.ExcPending
 						if v19 != 0 {
@@ -4411,7 +4411,7 @@ func F_hash_page_type(m *base.Module, l0 int32) int32 {
 						v23 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v11+v21)+12)))
 						v27 = v23&int32(15) - int32(1)
 						if base.Ui32(int32(7)) < base.Ui32(v27) {
-							v32 = F_cstring_to_text(m, int32(469270))
+							v32 = F_cstring_to_text(m, int32(469322))
 							mBase = m.M
 							v33 = m.ExcPending
 							if v33 != 0 {
@@ -4451,7 +4451,7 @@ func F_hash_page_type(m *base.Module, l0 int32) int32 {
 						if v55 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(517739), int32(203), int32(384083))
+							F_errfinish(m, int32(517791), int32(203), int32(384113))
 							mBase = m.M
 							v62 = m.ExcPending
 							if v62 != 0 {
@@ -4516,7 +4516,7 @@ func F_hash_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(517515), int32(3950), int32(240847))
+					F_errfinish(m, int32(517567), int32(3950), int32(240847))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

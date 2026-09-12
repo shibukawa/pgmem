@@ -45,7 +45,7 @@ func F_ResOwnerPrintCatCache(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v15 | v16<<(uint(int32(16))%32)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+4)) = v14
 	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v13
-	v30 = F_psprintf(m, int32(488843), v10)
+	v30 = F_psprintf(m, int32(488895), v10)
 	mBase = m.M
 	v33 = m.ExcPending
 	if v33 != 0 {
@@ -180,7 +180,7 @@ func F_ResOwnerReleaseBufferIO(m *base.Module, l0 int32) {
 	v10 = *(*int32)(unsafe.Add(mBase, _consts[4]))
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+36)) = int32(240560)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(518165)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(518217)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+16)) = int64(0)
 	v23 = v10 + l0<<(uint(int32(6))%32)
@@ -202,7 +202,7 @@ L2:
 	goto L3
 L3:
 	;
-	v53 = int32(4160188)
+	v53 = int32(4160236)
 	v54 = *(*int32)(unsafe.Add(mBase, _consts[423]))
 	v56 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(16))+8))
 	if v56 == int32(0) {
@@ -299,7 +299,7 @@ L20:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+108)) = int32(240560)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+104)) = int32(6259)
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+100)) = int32(518165)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+100)) = int32(518217)
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+96)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+88)) = int64(0)
 	v143 = *(*int32)(unsafe.Add(mBase, uint32(v25)))
@@ -381,7 +381,7 @@ L28:
 	}
 L29:
 	;
-	F_errdetail(m, int32(606998), int32(0))
+	F_errdetail(m, int32(607068), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -391,7 +391,7 @@ L29:
 	}
 L30:
 	;
-	F_errfinish(m, int32(518165), int32(6182), int32(551689))
+	F_errfinish(m, int32(518217), int32(6182), int32(551759))
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -411,7 +411,7 @@ L33:
 	goto L34
 L34:
 	;
-	v170 = int32(4160188)
+	v170 = int32(4160236)
 	v171 = *(*int32)(unsafe.Add(mBase, _consts[423]))
 	v173 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(88))+8))
 	if v173 == int32(0) {

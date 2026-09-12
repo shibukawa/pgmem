@@ -100,7 +100,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 	v6 = v4 - int32(560)
 	m.G0 = v6
 	if l0 == int32(-1) {
-		v15 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(313506), int32(0))
+		v15 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(313536), int32(0))
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
@@ -122,7 +122,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 			v26 = int32(base.Ui32(l0)>>(uint(int32(8))%32)) & int32(255)
 			switch v26 - int32(126) {
 			case 0:
-				v34 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(409641), int32(0))
+				v34 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(409671), int32(0))
 				mBase = m.M
 				v35 = m.ExcPending
 				if v35 != 0 {
@@ -139,7 +139,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 					}
 				}
 			case 1:
-				v41 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(443558), int32(0))
+				v41 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(443610), int32(0))
 				mBase = m.M
 				v42 = m.ExcPending
 				if v42 != 0 {
@@ -157,7 +157,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 				}
 			default:
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v26
-				v48 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(498992), v6)
+				v48 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(499044), v6)
 				mBase = m.M
 				v49 = m.ExcPending
 				if v49 != 0 {
@@ -176,7 +176,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 			}
 		} else {
 			if base.Ui32(l0&int32(65535)-int32(1)) <= base.Ui32(int32(254)) {
-				v58 = int32(4142048)
+				v58 = int32(4142096)
 				if base.Ui32(v20-int32(65)) < base.Ui32(int32(-64)) {
 					v75 = v58
 				} else {
@@ -205,7 +205,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 				if v75 != 0 {
 					v77 = v75
 				} else {
-					v77 = int32(328175)
+					v77 = int32(328205)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = v77
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v20
@@ -227,7 +227,7 @@ func F_wait_result_to_str(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = l0
-				v95 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(489824), v6+int32(32))
+				v95 = F_pg_snprintf(m, v6+int32(48), int32(512), int32(489876), v6+int32(32))
 				mBase = m.M
 				v96 = m.ExcPending
 				if v96 != 0 {

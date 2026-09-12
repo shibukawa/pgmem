@@ -568,13 +568,13 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 										if v461 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(420766), int32(0))
+											F_errmsg(m, int32(420796), int32(0))
 											mBase = m.M
 											v465 = m.ExcPending
 											if v465 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(519269), int32(375), int32(393639))
+												F_errfinish(m, int32(519339), int32(375), int32(393669))
 												mBase = m.M
 												v470 = m.ExcPending
 												if v470 != 0 {
@@ -604,7 +604,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v214 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(519269), int32(418), int32(393639))
+								F_errfinish(m, int32(519339), int32(418), int32(393669))
 								mBase = m.M
 								v219 = m.ExcPending
 								if v219 != 0 {
@@ -686,13 +686,13 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									if v195 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(420766), int32(0))
+										F_errmsg(m, int32(420796), int32(0))
 										mBase = m.M
 										v199 = m.ExcPending
 										if v199 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(519269), int32(414), int32(393639))
+											F_errfinish(m, int32(519339), int32(414), int32(393669))
 											mBase = m.M
 											v204 = m.ExcPending
 											if v204 != 0 {
@@ -723,7 +723,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 							if v214 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(519269), int32(418), int32(393639))
+								F_errfinish(m, int32(519339), int32(418), int32(393669))
 								mBase = m.M
 								v219 = m.ExcPending
 								if v219 != 0 {
@@ -1026,13 +1026,13 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 									if v461 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(420766), int32(0))
+										F_errmsg(m, int32(420796), int32(0))
 										mBase = m.M
 										v465 = m.ExcPending
 										if v465 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(519269), int32(375), int32(393639))
+											F_errfinish(m, int32(519339), int32(375), int32(393669))
 											mBase = m.M
 											v470 = m.ExcPending
 											if v470 != 0 {
@@ -1062,7 +1062,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v214 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519269), int32(418), int32(393639))
+							F_errfinish(m, int32(519339), int32(418), int32(393669))
 							mBase = m.M
 							v219 = m.ExcPending
 							if v219 != 0 {
@@ -1144,13 +1144,13 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 								if v195 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(420766), int32(0))
+									F_errmsg(m, int32(420796), int32(0))
 									mBase = m.M
 									v199 = m.ExcPending
 									if v199 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(519269), int32(414), int32(393639))
+										F_errfinish(m, int32(519339), int32(414), int32(393669))
 										mBase = m.M
 										v204 = m.ExcPending
 										if v204 != 0 {
@@ -1181,7 +1181,7 @@ func F_JsonEncodeDateTime(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 						if v214 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(519269), int32(418), int32(393639))
+							F_errfinish(m, int32(519339), int32(418), int32(393669))
 							mBase = m.M
 							v219 = m.ExcPending
 							if v219 != 0 {
@@ -1707,7 +1707,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 		m.G0 = v9 + int32(208)
 		return v182
 	} else {
-		if l1 == int32(4555592) {
+		if l1 == int32(4555704) {
 			v182 = v11
 			m.G0 = v9 + int32(208)
 			return v182
@@ -1723,15 +1723,15 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 				case 0:
 					v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+24)))
 					if v34 != 0 {
-						v35 = int32(634580)
+						v35 = int32(634650)
 					} else {
-						v35 = int32(634533)
+						v35 = int32(634603)
 					}
 					v182 = v35
 					m.G0 = v9 + int32(208)
 					return v182
 				case 1:
-					v182 = int32(688827)
+					v182 = int32(688897)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 2:
@@ -1740,7 +1740,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v161 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v161
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v160 - v161
-					F_appendStringInfo(m, v159, int32(673756), v9+int32(32))
+					F_appendStringInfo(m, v159, int32(673826), v9+int32(32))
 					mBase = m.M
 					v169 = m.ExcPending
 					if v169 != 0 {
@@ -1756,7 +1756,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1776,7 +1776,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 					v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37))))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v38
-					F_appendStringInfo(m, v36, int32(676982), v9+int32(48))
+					F_appendStringInfo(m, v36, int32(677052), v9+int32(48))
 					mBase = m.M
 					v44 = m.ExcPending
 					if v44 != 0 {
@@ -1792,7 +1792,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1813,7 +1813,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v58 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+84)) = v58
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v57 - v58
-					F_appendStringInfo(m, v56, int32(693066), v9+int32(80))
+					F_appendStringInfo(m, v56, int32(693136), v9+int32(80))
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
@@ -1829,7 +1829,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1850,7 +1850,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v69 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+100)) = v69
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = v68 - v69
-					F_appendStringInfo(m, v67, int32(693115), v9+int32(96))
+					F_appendStringInfo(m, v67, int32(693185), v9+int32(96))
 					mBase = m.M
 					v77 = m.ExcPending
 					if v77 != 0 {
@@ -1866,7 +1866,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1887,7 +1887,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v80 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+116)) = v80
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+112)) = v79 - v80
-					F_appendStringInfo(m, v78, int32(693154), v9+int32(112))
+					F_appendStringInfo(m, v78, int32(693224), v9+int32(112))
 					mBase = m.M
 					v88 = m.ExcPending
 					if v88 != 0 {
@@ -1903,7 +1903,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1924,7 +1924,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v47
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v46 - v47
-					F_appendStringInfo(m, v45, int32(692870), v9-int32(-64))
+					F_appendStringInfo(m, v45, int32(692940), v9-int32(-64))
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
@@ -1940,7 +1940,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1961,7 +1961,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+132)) = v91
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+128)) = v90 - v91
-					F_appendStringInfo(m, v89, int32(692946), v9+int32(128))
+					F_appendStringInfo(m, v89, int32(693016), v9+int32(128))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -1977,7 +1977,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -1993,7 +1993,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 9:
-					v182 = int32(601977)
+					v182 = int32(602047)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 10:
@@ -2002,7 +2002,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = v103
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+144)) = v102 - v103
-					F_appendStringInfo(m, v101, int32(692985), v9+int32(144))
+					F_appendStringInfo(m, v101, int32(693055), v9+int32(144))
 					mBase = m.M
 					v111 = m.ExcPending
 					if v111 != 0 {
@@ -2018,7 +2018,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -2039,7 +2039,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v114 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+164)) = v114
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+160)) = v113 - v114
-					F_appendStringInfo(m, v112, int32(693027), v9+int32(160))
+					F_appendStringInfo(m, v112, int32(693097), v9+int32(160))
 					mBase = m.M
 					v122 = m.ExcPending
 					if v122 != 0 {
@@ -2055,7 +2055,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -2076,7 +2076,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v125 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+180)) = v125
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+176)) = v124 - v125
-					F_appendStringInfo(m, v123, int32(692911), v9+int32(176))
+					F_appendStringInfo(m, v123, int32(692981), v9+int32(176))
 					mBase = m.M
 					v133 = m.ExcPending
 					if v133 != 0 {
@@ -2092,7 +2092,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -2113,7 +2113,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					v136 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+196)) = v136
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+192)) = v135 - v136
-					F_appendStringInfo(m, v134, int32(673792), v9+int32(192))
+					F_appendStringInfo(m, v134, int32(673862), v9+int32(192))
 					mBase = m.M
 					v144 = m.ExcPending
 					if v144 != 0 {
@@ -2129,7 +2129,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -2155,7 +2155,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						return v182
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-						F_appendStringInfo(m, v173, int32(506587), v9)
+						F_appendStringInfo(m, v173, int32(506639), v9)
 						mBase = m.M
 						v178 = m.ExcPending
 						if v178 != 0 {
@@ -2170,22 +2170,22 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						}
 					}
 				case 15:
-					v182 = int32(604827)
+					v182 = int32(604897)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 16:
-					v182 = int32(613278)
+					v182 = int32(613348)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 17:
-					v182 = int32(688435)
+					v182 = int32(688505)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 18:
 					v149 = *(*int32)(unsafe.Add(mBase, _consts[249]))
 					v150 = *(*int32)(unsafe.Add(mBase, uint32(v149)))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v150
-					v155 = F_psprintf(m, int32(631953), v9+int32(16))
+					v155 = F_psprintf(m, int32(632023), v9+int32(16))
 					mBase = m.M
 					v156 = m.ExcPending
 					if v156 != 0 {
@@ -2196,11 +2196,11 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						return v182
 					}
 				case 19:
-					v182 = int32(658712)
+					v182 = int32(658782)
 					m.G0 = v9 + int32(208)
 					return v182
 				case 20:
-					v182 = int32(658660)
+					v182 = int32(658730)
 					m.G0 = v9 + int32(208)
 					return v182
 				}
@@ -2216,15 +2216,15 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 					case 0:
 						v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+24)))
 						if v34 != 0 {
-							v35 = int32(634580)
+							v35 = int32(634650)
 						} else {
-							v35 = int32(634533)
+							v35 = int32(634603)
 						}
 						v182 = v35
 						m.G0 = v9 + int32(208)
 						return v182
 					case 1:
-						v182 = int32(688827)
+						v182 = int32(688897)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 2:
@@ -2233,7 +2233,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v161 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+36)) = v161
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = v160 - v161
-						F_appendStringInfo(m, v159, int32(673756), v9+int32(32))
+						F_appendStringInfo(m, v159, int32(673826), v9+int32(32))
 						mBase = m.M
 						v169 = m.ExcPending
 						if v169 != 0 {
@@ -2249,7 +2249,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2269,7 +2269,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v37 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 						v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37))))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+48)) = v38
-						F_appendStringInfo(m, v36, int32(676982), v9+int32(48))
+						F_appendStringInfo(m, v36, int32(677052), v9+int32(48))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {
@@ -2285,7 +2285,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2306,7 +2306,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v58 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+84)) = v58
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+80)) = v57 - v58
-						F_appendStringInfo(m, v56, int32(693066), v9+int32(80))
+						F_appendStringInfo(m, v56, int32(693136), v9+int32(80))
 						mBase = m.M
 						v66 = m.ExcPending
 						if v66 != 0 {
@@ -2322,7 +2322,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2343,7 +2343,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v69 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+100)) = v69
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+96)) = v68 - v69
-						F_appendStringInfo(m, v67, int32(693115), v9+int32(96))
+						F_appendStringInfo(m, v67, int32(693185), v9+int32(96))
 						mBase = m.M
 						v77 = m.ExcPending
 						if v77 != 0 {
@@ -2359,7 +2359,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2380,7 +2380,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v80 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+116)) = v80
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+112)) = v79 - v80
-						F_appendStringInfo(m, v78, int32(693154), v9+int32(112))
+						F_appendStringInfo(m, v78, int32(693224), v9+int32(112))
 						mBase = m.M
 						v88 = m.ExcPending
 						if v88 != 0 {
@@ -2396,7 +2396,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2417,7 +2417,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+68)) = v47
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+64)) = v46 - v47
-						F_appendStringInfo(m, v45, int32(692870), v9-int32(-64))
+						F_appendStringInfo(m, v45, int32(692940), v9-int32(-64))
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -2433,7 +2433,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2454,7 +2454,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+132)) = v91
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+128)) = v90 - v91
-						F_appendStringInfo(m, v89, int32(692946), v9+int32(128))
+						F_appendStringInfo(m, v89, int32(693016), v9+int32(128))
 						mBase = m.M
 						v99 = m.ExcPending
 						if v99 != 0 {
@@ -2470,7 +2470,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2486,7 +2486,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					case 9:
-						v182 = int32(601977)
+						v182 = int32(602047)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 10:
@@ -2495,7 +2495,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+148)) = v103
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+144)) = v102 - v103
-						F_appendStringInfo(m, v101, int32(692985), v9+int32(144))
+						F_appendStringInfo(m, v101, int32(693055), v9+int32(144))
 						mBase = m.M
 						v111 = m.ExcPending
 						if v111 != 0 {
@@ -2511,7 +2511,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2532,7 +2532,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v114 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+164)) = v114
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+160)) = v113 - v114
-						F_appendStringInfo(m, v112, int32(693027), v9+int32(160))
+						F_appendStringInfo(m, v112, int32(693097), v9+int32(160))
 						mBase = m.M
 						v122 = m.ExcPending
 						if v122 != 0 {
@@ -2548,7 +2548,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2569,7 +2569,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v125 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+180)) = v125
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+176)) = v124 - v125
-						F_appendStringInfo(m, v123, int32(692911), v9+int32(176))
+						F_appendStringInfo(m, v123, int32(692981), v9+int32(176))
 						mBase = m.M
 						v133 = m.ExcPending
 						if v133 != 0 {
@@ -2585,7 +2585,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2606,7 +2606,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 						v136 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+196)) = v136
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+192)) = v135 - v136
-						F_appendStringInfo(m, v134, int32(673792), v9+int32(192))
+						F_appendStringInfo(m, v134, int32(673862), v9+int32(192))
 						mBase = m.M
 						v144 = m.ExcPending
 						if v144 != 0 {
@@ -2622,7 +2622,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 								return v182
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_appendStringInfo(m, v173, int32(506587), v9)
+								F_appendStringInfo(m, v173, int32(506639), v9)
 								mBase = m.M
 								v178 = m.ExcPending
 								if v178 != 0 {
@@ -2648,7 +2648,7 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_appendStringInfo(m, v173, int32(506587), v9)
+							F_appendStringInfo(m, v173, int32(506639), v9)
 							mBase = m.M
 							v178 = m.ExcPending
 							if v178 != 0 {
@@ -2663,22 +2663,22 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							}
 						}
 					case 15:
-						v182 = int32(604827)
+						v182 = int32(604897)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 16:
-						v182 = int32(613278)
+						v182 = int32(613348)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 17:
-						v182 = int32(688435)
+						v182 = int32(688505)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 18:
 						v149 = *(*int32)(unsafe.Add(mBase, _consts[249]))
 						v150 = *(*int32)(unsafe.Add(mBase, uint32(v149)))
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v150
-						v155 = F_psprintf(m, int32(631953), v9+int32(16))
+						v155 = F_psprintf(m, int32(632023), v9+int32(16))
 						mBase = m.M
 						v156 = m.ExcPending
 						if v156 != 0 {
@@ -2689,11 +2689,11 @@ func F_json_errdetail(m *base.Module, l0 int32, l1 int32) int32 {
 							return v182
 						}
 					case 19:
-						v182 = int32(658712)
+						v182 = int32(658782)
 						m.G0 = v9 + int32(208)
 						return v182
 					case 20:
-						v182 = int32(658660)
+						v182 = int32(658730)
 						m.G0 = v9 + int32(208)
 						return v182
 					}
@@ -3178,7 +3178,7 @@ func F_json_validate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v39))) = int32(1321)
 			*(*int64)(unsafe.Add(mBase, uint32(v7)+144)) = v29
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+172)) = int32(1322)
-			v62 = F_hash_create(m, int32(409938), int32(32), v7+int32(144), int32(1224))
+			v62 = F_hash_create(m, int32(409968), int32(32), v7+int32(144), int32(1224))
 			mBase = m.M
 			v63 = m.ExcPending
 			if v63 != 0 {
@@ -3241,13 +3241,13 @@ func F_json_validate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									if v105 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(362160), int32(0))
+										F_errmsg(m, int32(362190), int32(0))
 										mBase = m.M
 										v109 = m.ExcPending
 										if v109 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(519269), int32(1850), int32(373857))
+											F_errfinish(m, int32(519339), int32(1850), int32(373887))
 											mBase = m.M
 											v114 = m.ExcPending
 											if v114 != 0 {
@@ -3465,7 +3465,7 @@ func F_transformJsonParseArg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 											if v85 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(517940), int32(4102), int32(343110))
+												F_errfinish(m, int32(517992), int32(4102), int32(343140))
 												mBase = m.M
 												v90 = m.ExcPending
 												if v90 != 0 {
@@ -3521,7 +3521,7 @@ func F_transformJsonParseArg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 												if v85 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(517940), int32(4102), int32(343110))
+													F_errfinish(m, int32(517992), int32(4102), int32(343140))
 													mBase = m.M
 													v90 = m.ExcPending
 													if v90 != 0 {
@@ -3579,7 +3579,7 @@ func F_transformJsonParseArg(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 											if v85 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(517940), int32(4102), int32(343110))
+												F_errfinish(m, int32(517992), int32(4102), int32(343140))
 												mBase = m.M
 												v90 = m.ExcPending
 												if v90 != 0 {

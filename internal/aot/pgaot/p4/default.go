@@ -448,7 +448,7 @@ L36:
 	}
 L37:
 	;
-	F_errfinish(m, int32(517074), int32(2421), int32(139166))
+	F_errfinish(m, int32(517126), int32(2421), int32(139166))
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -587,8 +587,8 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 	if v10 == int32(0) {
 		v15 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 		*(*int32)(unsafe.Add(mBase, _consts[141])) = v15
-		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(442095)
-		v22 = F_format_elog_string(m, int32(597100), v7)
+		*(*int32)(unsafe.Add(mBase, uint32(v7))) = int32(442147)
+		v22 = F_format_elog_string(m, int32(597170), v7)
 		mBase = m.M
 		v25 = m.ExcPending
 		if v25 != 0 {
@@ -606,8 +606,8 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 			v32 = *(*int32)(unsafe.Add(mBase, _consts[140]))
 			*(*int32)(unsafe.Add(mBase, _consts[141])) = v32
 			*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = int32(63)
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(442095)
-			v43 = F_format_elog_string(m, int32(689492), v5+int32(-48))
+			*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(442147)
+			v43 = F_format_elog_string(m, int32(689562), v5+int32(-48))
 			mBase = m.M
 			v44 = m.ExcPending
 			if v44 != 0 {
@@ -671,7 +671,7 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 											if v79 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(521198), int32(137), int32(442089))
+												F_errfinish(m, int32(521268), int32(137), int32(442141))
 												mBase = m.M
 												v84 = m.ExcPending
 												if v84 != 0 {
@@ -690,7 +690,7 @@ func F_check_default_table_access_method(m *base.Module, l0 int32, l1 int32, l2 
 								*(*int32)(unsafe.Add(mBase, _consts[141])) = v87
 								v90 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 								*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v90
-								v96 = F_format_elog_string(m, int32(605049), v5+int32(-16))
+								v96 = F_format_elog_string(m, int32(605119), v5+int32(-16))
 								mBase = m.M
 								v97 = m.ExcPending
 								if v97 != 0 {

@@ -30,27 +30,27 @@ func F_IvfflatInit(m *base.Module) {
 	if v4 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1456])) = v3
+		*(*int32)(unsafe.Add(mBase, _consts[1458])) = v3
 		F_add_int_reloption(m, v3, int32(125476), int32(125457), int32(100), int32(1), int32(32768))
 		mBase = m.M
 		v12 = m.ExcPending
 		if v12 != 0 {
 			return
 		} else {
-			F_DefineCustomIntVariable(m, int32(181944), int32(181959), int32(610213), int32(4718804), int32(1), int32(32768))
+			F_DefineCustomIntVariable(m, int32(181944), int32(181959), int32(610283), int32(4718916), int32(1), int32(32768))
 			mBase = m.M
 			v20 = m.ExcPending
 			if v20 != 0 {
 				return
 			} else {
-				F_DefineCustomEnumVariable(m, int32(297772), int32(159348), int32(0), int32(4718808), int32(4116400), int32(6))
+				F_DefineCustomEnumVariable(m, int32(297802), int32(159348), int32(0), int32(4718920), int32(4116448), int32(6))
 				mBase = m.M
 				v28 = m.ExcPending
 				if v28 != 0 {
 					return
 				} else {
 					v33 = int32(32768)
-					F_DefineCustomIntVariable(m, int32(181925), int32(159241), int32(0), int32(4718812), v33, v33)
+					F_DefineCustomIntVariable(m, int32(181925), int32(159241), int32(0), int32(4718924), v33, v33)
 					mBase = m.M
 					v36 = m.ExcPending
 					if v36 != 0 {
@@ -226,8 +226,8 @@ func F_IvfflatParallelBuildMain(m *base.Module, l0 int32, l1 int32) {
 	}
 }
 func F_ivfflat_bit_support(m *base.Module, l0 int32) int32 {
-	return int32(4116528)
+	return int32(4116576)
 }
 func F_ivfflat_halfvec_support(m *base.Module, l0 int32) int32 {
-	return int32(4116504)
+	return int32(4116552)
 }

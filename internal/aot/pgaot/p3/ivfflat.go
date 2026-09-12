@@ -342,7 +342,7 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 						v75 = int32(0)
 						v81 = *(*int32)(unsafe.Add(mBase, uint32(v72)+188))
 						v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+140))
-						v83 = m.T0[v82].(func(*base.Module, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32) float64)(m, v72, v73, v25, int32(1), v75, l5, v75, int32(-1), int32(7663), v14+int32(16), v70)
+						v83 = m.T0[v82].(func(*base.Module, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32, int32) float64)(m, v72, v73, v25, int32(1), v75, l5, v75, int32(-1), int32(7666), v14+int32(16), v70)
 						mBase = m.M
 						v84 = m.ExcPending
 						if v84 != 0 {
@@ -358,7 +358,7 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 								v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+28))
 								*(*int32)(unsafe.Add(mBase, uint32(l1)+28)) = int32(1)
 								if v88 != 0 {
-									F_s_lock(m, l1+int32(28), int32(523370), int32(692), int32(87424))
+									F_s_lock(m, l1+int32(28), int32(523440), int32(692), int32(87424))
 									mBase = m.M
 									v97 = m.ExcPending
 									if v97 != 0 {
@@ -403,7 +403,7 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 													} else {
 														v130 = int32(705)
 													}
-													F_errfinish(m, int32(523370), v130, int32(87424))
+													F_errfinish(m, int32(523440), v130, int32(87424))
 													mBase = m.M
 													v133 = m.ExcPending
 													if v133 != 0 {
@@ -537,7 +537,7 @@ func F_IvfflatParallelScanAndSort(m *base.Module, l0 int32, l1 int32, l2 int32, 
 												} else {
 													v130 = int32(705)
 												}
-												F_errfinish(m, int32(523370), v130, int32(87424))
+												F_errfinish(m, int32(523440), v130, int32(87424))
 												mBase = m.M
 												v133 = m.ExcPending
 												if v133 != 0 {

@@ -42,7 +42,7 @@ func F_EncodeSpecialTimestamp(m *base.Module, l0 int64, l1 int32) {
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(518908), int32(1594), int32(248814))
+					F_errfinish(m, int32(518960), int32(1594), int32(248814))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {

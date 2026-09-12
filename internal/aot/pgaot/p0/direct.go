@@ -80,13 +80,13 @@ func F_DirectInputFunctionCallSafe(m *base.Module, l0 int32, l1 int32, l2 int32,
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-						F_errmsg_internal(m, int32(557204), v9)
+						F_errmsg_internal(m, int32(557274), v9)
 						mBase = m.M
 						v61 = m.ExcPending
 						if v61 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518175), int32(1670), int32(428875))
+							F_errfinish(m, int32(518227), int32(1670), int32(428905))
 							mBase = m.M
 							v66 = m.ExcPending
 							if v66 != 0 {
@@ -116,13 +116,13 @@ func F_DirectInputFunctionCallSafe(m *base.Module, l0 int32, l1 int32, l2 int32,
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-							F_errmsg_internal(m, int32(557204), v9)
+							F_errmsg_internal(m, int32(557274), v9)
 							mBase = m.M
 							v61 = m.ExcPending
 							if v61 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518175), int32(1670), int32(428875))
+								F_errfinish(m, int32(518227), int32(1670), int32(428905))
 								mBase = m.M
 								v66 = m.ExcPending
 								if v66 != 0 {
@@ -156,13 +156,13 @@ func F_DirectInputFunctionCallSafe(m *base.Module, l0 int32, l1 int32, l2 int32,
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = l0
-								F_errmsg_internal(m, int32(557204), v9)
+								F_errmsg_internal(m, int32(557274), v9)
 								mBase = m.M
 								v61 = m.ExcPending
 								if v61 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(518175), int32(1670), int32(428875))
+									F_errfinish(m, int32(518227), int32(1670), int32(428905))
 									mBase = m.M
 									v66 = m.ExcPending
 									if v66 != 0 {

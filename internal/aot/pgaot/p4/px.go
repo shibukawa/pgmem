@@ -428,7 +428,7 @@ L3:
 	}
 L4:
 	;
-	v93 = F_px_find_digest(m, int32(582828), v13+int32(12))
+	v93 = F_px_find_digest(m, int32(582898), v13+int32(12))
 	mBase = m.M
 	v96 = m.ExcPending
 	if v96 != 0 {
@@ -651,7 +651,7 @@ L29:
 	}
 L30:
 	;
-	v100 = F_px_find_digest(m, int32(582828), v13+int32(8))
+	v100 = F_px_find_digest(m, int32(582898), v13+int32(8))
 	mBase = m.M
 	v101 = m.ExcPending
 	if v101 != 0 {
@@ -700,7 +700,7 @@ L35:
 	;
 	v109 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(v109)+12))
-	m.T0[v112].(func(*base.Module, int32, int32, int32))(m, v109, int32(719914), int32(3))
+	m.T0[v112].(func(*base.Module, int32, int32, int32))(m, v109, int32(719984), int32(3))
 	mBase = m.M
 	v114 = m.ExcPending
 	if v114 != 0 {
@@ -1524,7 +1524,7 @@ L4:
 L5:
 	;
 	if v59 == int32(0) {
-		v301 = int32(4433504)
+		v301 = int32(4433552)
 		goto L4
 	} else {
 		goto L18
@@ -1600,7 +1600,7 @@ L17:
 	goto L7
 L18:
 	;
-	v67 = int32(582828)
+	v67 = int32(582898)
 	v68 = l0
 	goto L20
 L19:
@@ -1681,7 +1681,7 @@ L31:
 	goto L21
 L32:
 	;
-	v301 = int32(4433528)
+	v301 = int32(4433576)
 	goto L4
 L33:
 	;
@@ -1769,14 +1769,14 @@ L47:
 	goto L37
 L48:
 	;
-	v301 = int32(4433552)
+	v301 = int32(4433600)
 	goto L4
 L49:
 	;
 	goto L50
 L50:
 	;
-	v163 = int32(356067)
+	v163 = int32(356097)
 	v164 = l0
 	goto L52
 L51:
@@ -1857,7 +1857,7 @@ L63:
 	goto L53
 L64:
 	;
-	v301 = int32(4433576)
+	v301 = int32(4433624)
 	goto L4
 L65:
 	;
@@ -1945,7 +1945,7 @@ L79:
 	goto L69
 L80:
 	;
-	v301 = int32(4433600)
+	v301 = int32(4433648)
 	goto L4
 L81:
 	;
@@ -2040,7 +2040,7 @@ L97:
 	goto L98
 L98:
 	;
-	v301 = int32(4433624)
+	v301 = int32(4433672)
 	goto L4
 L99:
 	;
@@ -2062,7 +2062,7 @@ L101:
 	v318 = v316 - int32(16)
 	m.G0 = v318
 	*(*int32)(unsafe.Add(mBase, uint32(v318))) = v312
-	v324 = F_open(m, int32(301794), v312, v318)
+	v324 = F_open(m, int32(301824), v312, v318)
 	mBase = m.M
 	if v324 != int32(-1) {
 		goto L108

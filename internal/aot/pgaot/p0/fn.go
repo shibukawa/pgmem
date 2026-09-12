@@ -62,7 +62,7 @@ func F_get_fn_expr_argtype(m *base.Module, l0 int32, l1 int32) int32 {
 						v51 = v3
 						return v51
 					} else {
-						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[864])))
+						v27 = *(*int32)(unsafe.Add(mBase, uint32(v12<<(uint(int32(2))%32))+uint32(_consts[865])))
 						v29 = *(*int32)(unsafe.Add(mBase, uint32(v7+v27)))
 						if v29 == int32(0) {
 							v51 = v3
@@ -161,7 +161,7 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 				if v38 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(518175), int32(2109), int32(145538))
+					F_errfinish(m, int32(518227), int32(2109), int32(145538))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -195,7 +195,7 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 					if v38 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(518175), int32(2109), int32(145538))
+						F_errfinish(m, int32(518227), int32(2109), int32(145538))
 						mBase = m.M
 						v43 = m.ExcPending
 						if v43 != 0 {
@@ -229,7 +229,7 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 						if v38 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(518175), int32(2109), int32(145538))
+							F_errfinish(m, int32(518227), int32(2109), int32(145538))
 							mBase = m.M
 							v43 = m.ExcPending
 							if v43 != 0 {
@@ -263,7 +263,7 @@ func F_get_fn_opclass_options(m *base.Module, l0 int32) int32 {
 							if v38 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(518175), int32(2109), int32(145538))
+								F_errfinish(m, int32(518227), int32(2109), int32(145538))
 								mBase = m.M
 								v43 = m.ExcPending
 								if v43 != 0 {

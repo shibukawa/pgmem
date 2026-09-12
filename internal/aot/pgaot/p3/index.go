@@ -240,7 +240,7 @@ L15:
 L16:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v88
-	F_appendStringInfo(m, v14+int32(16), int32(715828), v14)
+	F_appendStringInfo(m, v14+int32(16), int32(715898), v14)
 	mBase = m.M
 	v95 = m.ExcPending
 	if v95 != 0 {
@@ -275,7 +275,7 @@ L19:
 	}
 L20:
 	;
-	v114 = int32(317344)
+	v114 = int32(317374)
 	goto L22
 L21:
 	;
@@ -353,11 +353,11 @@ L29:
 	}
 L30:
 	;
-	v152 = int32(317344)
+	v152 = int32(317374)
 	goto L31
 L31:
 	;
-	F_appendStringInfoString(m, v14+int32(16), int32(778892))
+	F_appendStringInfoString(m, v14+int32(16), int32(778962))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -843,7 +843,7 @@ L43:
 	goto L2
 L44:
 	;
-	F_errmsg_internal(m, int32(250106), int32(0))
+	F_errmsg_internal(m, int32(250136), int32(0))
 	mBase = m.M
 	v196 = m.ExcPending
 	if v196 != 0 {
@@ -853,7 +853,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(514581), int32(2571), int32(253934))
+	F_errfinish(m, int32(514633), int32(2571), int32(253964))
 	mBase = m.M
 	v201 = m.ExcPending
 	if v201 != 0 {
@@ -1308,7 +1308,7 @@ L21:
 	goto L22
 L22:
 	;
-	v108 = int32(4554128)
+	v108 = int32(4554240)
 	v109 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v46)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v111
@@ -2352,7 +2352,7 @@ L23:
 	goto L24
 L24:
 	;
-	v68 = int32(4554128)
+	v68 = int32(4554240)
 	v69 = *(*int32)(unsafe.Add(mBase, _consts[0]))
 	v71 = *(*int32)(unsafe.Add(mBase, uint32(v19)+20))
 	*(*int32)(unsafe.Add(mBase, _consts[0])) = v71
@@ -2489,7 +2489,7 @@ func F_build_index_value_desc(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 			return int32(0)
 		} else {
 			v18 = *(*int32)(unsafe.Add(mBase, uint32(l2)+8))
-			if v18 != int32(1650644) {
+			if v18 != int32(1650708) {
 				v29 = l2
 				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+152))
 				if v30 != 0 {
@@ -2772,13 +2772,13 @@ func F_check_index_is_clusterable(m *base.Module, l0 int32, l1 int32, l2 int32) 
 					v47 = int32(4)
 					*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v46 + v47
 					*(*int32)(unsafe.Add(mBase, uint32(v7))) = v45 + v47
-					F_errmsg(m, int32(750208), v7)
+					F_errmsg(m, int32(750278), v7)
 					mBase = m.M
 					v55 = m.ExcPending
 					if v55 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(518232), int32(509), int32(413415))
+						F_errfinish(m, int32(518284), int32(509), int32(413445))
 						mBase = m.M
 						v60 = m.ExcPending
 						if v60 != 0 {
@@ -2812,13 +2812,13 @@ func F_check_index_is_clusterable(m *base.Module, l0 int32, l1 int32, l2 int32) 
 						v47 = int32(4)
 						*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v46 + v47
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v45 + v47
-						F_errmsg(m, int32(750208), v7)
+						F_errmsg(m, int32(750278), v7)
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(518232), int32(509), int32(413415))
+							F_errfinish(m, int32(518284), int32(509), int32(413445))
 							mBase = m.M
 							v60 = m.ExcPending
 							if v60 != 0 {
@@ -2849,13 +2849,13 @@ func F_check_index_is_clusterable(m *base.Module, l0 int32, l1 int32, l2 int32) 
 						} else {
 							v68 = *(*int32)(unsafe.Add(mBase, uint32(v9)+48))
 							*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = v68 + int32(4)
-							F_errmsg(m, int32(347102), v5+int32(-16))
+							F_errmsg(m, int32(347132), v5+int32(-16))
 							mBase = m.M
 							v76 = m.ExcPending
 							if v76 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(518232), int32(516), int32(413415))
+								F_errfinish(m, int32(518284), int32(516), int32(413445))
 								mBase = m.M
 								v81 = m.ExcPending
 								if v81 != 0 {
@@ -2891,13 +2891,13 @@ func F_check_index_is_clusterable(m *base.Module, l0 int32, l1 int32, l2 int32) 
 								} else {
 									v89 = *(*int32)(unsafe.Add(mBase, uint32(v9)+48))
 									*(*int32)(unsafe.Add(mBase, uint32(v7)+32)) = v89 + int32(4)
-									F_errmsg(m, int32(726655), v5+int32(-32))
+									F_errmsg(m, int32(726725), v5+int32(-32))
 									mBase = m.M
 									v97 = m.ExcPending
 									if v97 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(518232), int32(528), int32(413415))
+										F_errfinish(m, int32(518284), int32(528), int32(413445))
 										mBase = m.M
 										v102 = m.ExcPending
 										if v102 != 0 {
@@ -2928,13 +2928,13 @@ func F_check_index_is_clusterable(m *base.Module, l0 int32, l1 int32, l2 int32) 
 									} else {
 										v110 = *(*int32)(unsafe.Add(mBase, uint32(v9)+48))
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v110 + int32(4)
-										F_errmsg(m, int32(729088), v5+int32(-48))
+										F_errmsg(m, int32(729158), v5+int32(-48))
 										mBase = m.M
 										v118 = m.ExcPending
 										if v118 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(518232), int32(542), int32(413415))
+											F_errfinish(m, int32(518284), int32(542), int32(413445))
 											mBase = m.M
 											v123 = m.ExcPending
 											if v123 != 0 {
@@ -3169,15 +3169,15 @@ func F_index_beginscan_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 				return int32(0)
 			} else {
 				v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-				*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(297383)
+				*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = int32(297413)
 				*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v71 + int32(4)
-				F_errmsg_internal(m, int32(723492), v11+int32(16))
+				F_errmsg_internal(m, int32(723562), v11+int32(16))
 				mBase = m.M
 				v81 = m.ExcPending
 				if v81 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520666), int32(321), int32(325821))
+					F_errfinish(m, int32(520736), int32(321), int32(325851))
 					mBase = m.M
 					v86 = m.ExcPending
 					if v86 != 0 {
@@ -3257,13 +3257,13 @@ func F_index_beginscan_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			} else {
 				v55 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = v55 + int32(4)
-				F_errmsg(m, int32(458793), v11)
+				F_errmsg(m, int32(458845), v11)
 				mBase = m.M
 				v61 = m.ExcPending
 				if v61 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(520666), int32(320), int32(325821))
+					F_errfinish(m, int32(520736), int32(320), int32(325851))
 					mBase = m.M
 					v66 = m.ExcPending
 					if v66 != 0 {
@@ -3413,13 +3413,13 @@ func F_index_getattr_2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v32
-						F_errmsg_internal(m, int32(504907), v9)
+						F_errmsg_internal(m, int32(504959), v9)
 						mBase = m.M
 						v49 = m.ExcPending
 						if v49 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(342364), int32(70), int32(73673))
+							F_errfinish(m, int32(342394), int32(70), int32(73673))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
@@ -3567,15 +3567,15 @@ func F_index_rescan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 i
 		} else {
 			v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 			v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+48))
-			*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(297462)
+			*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(297492)
 			*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v40 + int32(4)
-			F_errmsg_internal(m, int32(723492), v11)
+			F_errmsg_internal(m, int32(723562), v11)
 			mBase = m.M
 			v48 = m.ExcPending
 			if v48 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(520666), int32(361), int32(297480))
+				F_errfinish(m, int32(520736), int32(361), int32(297510))
 				mBase = m.M
 				v53 = m.ExcPending
 				if v53 != 0 {
@@ -3693,7 +3693,7 @@ func F_index_set_state_flags(m *base.Module, l0 int32, l1 int32) {
 					if v48 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(514581), int32(3515), int32(166303))
+						F_errfinish(m, int32(514633), int32(3515), int32(166303))
 						mBase = m.M
 						v53 = m.ExcPending
 						if v53 != 0 {

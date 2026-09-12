@@ -79,13 +79,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 			v19 = v18
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 			if v20 == int32(0) {
-				v23 = int32(4548780)
+				v23 = int32(4548892)
 				v25 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 				*(*int32)(unsafe.Add(mBase, _consts[117])) = v25 + int32(1)
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 				if v29 == int32(0) {
 					v78 = int32(0)
-					v80 = int32(4548780)
+					v80 = int32(4548892)
 					v82 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 					*(*int32)(unsafe.Add(mBase, _consts[117])) = v82 - int32(1)
 					return v78
@@ -133,7 +133,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 							*(*int32)(unsafe.Add(mBase, uint32(l1))) = v71 & int32(-449)
 							v78 = v43
 						}
-						v80 = int32(4548780)
+						v80 = int32(4548892)
 						v82 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 						*(*int32)(unsafe.Add(mBase, _consts[117])) = v82 - int32(1)
 						return v78
@@ -152,7 +152,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 					if v94 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(519135), int32(199), int32(527109))
+						F_errfinish(m, int32(519205), int32(199), int32(527179))
 						mBase = m.M
 						v99 = m.ExcPending
 						if v99 != 0 {
@@ -170,13 +170,13 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 		v19 = v9
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+16))
 		if v20 == int32(0) {
-			v23 = int32(4548780)
+			v23 = int32(4548892)
 			v25 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 			*(*int32)(unsafe.Add(mBase, _consts[117])) = v25 + int32(1)
 			v29 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 			if v29 == int32(0) {
 				v78 = int32(0)
-				v80 = int32(4548780)
+				v80 = int32(4548892)
 				v82 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 				*(*int32)(unsafe.Add(mBase, _consts[117])) = v82 - int32(1)
 				return v78
@@ -224,7 +224,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(l1))) = v71 & int32(-449)
 						v78 = v43
 					}
-					v80 = int32(4548780)
+					v80 = int32(4548892)
 					v82 = *(*int32)(unsafe.Add(mBase, _consts[117]))
 					*(*int32)(unsafe.Add(mBase, _consts[117])) = v82 - int32(1)
 					return v78
@@ -243,7 +243,7 @@ func F_pgaio_io_acquire_nb(m *base.Module, l0 int32, l1 int32) int32 {
 				if v94 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(519135), int32(199), int32(527109))
+					F_errfinish(m, int32(519205), int32(199), int32(527179))
 					mBase = m.M
 					v99 = m.ExcPending
 					if v99 != 0 {
@@ -287,7 +287,7 @@ func F_pgaio_sync_submit(m *base.Module, l0 int32, l1 int32) int32 {
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(523760), int32(44), int32(107902))
+			F_errfinish(m, int32(523830), int32(44), int32(107902))
 			v17 = m.ExcPending
 			if v17 != 0 {
 				return int32(0)
@@ -339,7 +339,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
-	v16 = F_ShmemInitStruct(m, int32(365197), int32(272), v9+int32(15))
+	v16 = F_ShmemInitStruct(m, int32(365227), int32(272), v9+int32(15))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -352,7 +352,7 @@ func F_pgaio_worker_shmem_init(m *base.Module, l0 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v16))) = int32(64)
 		} else {
 		}
-		v31 = F_ShmemInitStruct(m, int32(315279), int32(264), v9+int32(15))
+		v31 = F_ShmemInitStruct(m, int32(315309), int32(264), v9+int32(15))
 		mBase = m.M
 		v32 = m.ExcPending
 		if v32 != 0 {

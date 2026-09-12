@@ -65,7 +65,7 @@ func F_get_func_signature(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v23 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(522705), int32(1844), int32(380117))
+					F_errfinish(m, int32(522775), int32(1844), int32(380147))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

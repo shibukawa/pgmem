@@ -42,7 +42,7 @@ func F_tts_buffer_heap_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) 
 				if v21 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(516973), int32(774), int32(216604))
+					F_errfinish(m, int32(517025), int32(774), int32(216604))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
@@ -633,7 +633,7 @@ L43:
 L44:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = base.I32_extend16_s(v104)
-	F_errmsg_internal(m, int32(504907), v19)
+	F_errmsg_internal(m, int32(504959), v19)
 	mBase = m.M
 	v118 = m.ExcPending
 	if v118 != 0 {
@@ -643,7 +643,7 @@ L44:
 	}
 L45:
 	;
-	F_errfinish(m, int32(342367), int32(70), int32(73673))
+	F_errfinish(m, int32(342397), int32(70), int32(73673))
 	mBase = m.M
 	v123 = m.ExcPending
 	if v123 != 0 {
@@ -947,7 +947,7 @@ L95:
 L96:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+32)) = base.I32_extend16_s(v258)
-	F_errmsg_internal(m, int32(504907), v19+int32(32))
+	F_errmsg_internal(m, int32(504959), v19+int32(32))
 	mBase = m.M
 	v274 = m.ExcPending
 	if v274 != 0 {
@@ -957,7 +957,7 @@ L96:
 	}
 L97:
 	;
-	F_errfinish(m, int32(342367), int32(70), int32(73673))
+	F_errfinish(m, int32(342397), int32(70), int32(73673))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -1244,7 +1244,7 @@ L141:
 L142:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v422
-	F_errmsg_internal(m, int32(504907), v19+int32(16))
+	F_errmsg_internal(m, int32(504959), v19+int32(16))
 	mBase = m.M
 	v459 = m.ExcPending
 	if v459 != 0 {
@@ -1254,7 +1254,7 @@ L142:
 	}
 L143:
 	;
-	F_errfinish(m, int32(342367), int32(70), int32(73673))
+	F_errfinish(m, int32(342397), int32(70), int32(73673))
 	mBase = m.M
 	v464 = m.ExcPending
 	if v464 != 0 {
@@ -1400,7 +1400,7 @@ func F_tts_minimal_getsysattr(m *base.Module, l0 int32, l1 int32, l2 int32) int3
 			if v16 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(516973), int32(564), int32(216654))
+				F_errfinish(m, int32(517025), int32(564), int32(216654))
 				v21 = m.ExcPending
 				if v21 != 0 {
 					return int32(0)

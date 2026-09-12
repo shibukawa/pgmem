@@ -210,14 +210,14 @@ func F_MultiXactSetNextMXact(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					v44 = base.I64_extend_i32_u(v33)
-					v45 = F_SimpleLruDoesPhysicalPageExist(m, int32(4448836), v44)
+					v45 = F_SimpleLruDoesPhysicalPageExist(m, int32(4448948), v44)
 					mBase = m.M
 					v46 = m.ExcPending
 					if v46 != 0 {
 						return
 					} else {
 						if v45 == int32(0) {
-							v49 = int32(4448836)
+							v49 = int32(4448948)
 							v51 = F_SimpleLruZeroPage(m, v49, v44)
 							mBase = m.M
 							v52 = m.ExcPending
