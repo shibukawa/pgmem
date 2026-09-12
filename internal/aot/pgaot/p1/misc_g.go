@@ -842,6 +842,82 @@ L9:
 	;
 	goto L4
 }
+func F_gbtreekey_out(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v23 int32
+	_ = v23
+	var v30 int32
+	_ = v30
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		F_errcode(m, int32(1088))
+		mBase = m.M
+		v15 = m.ExcPending
+		if v15 != 0 {
+			return int32(0)
+		} else {
+			*(*int32)(unsafe.Add(mBase, uint32(v5))) = int32(_a_F_gbtreekey_out_0)
+			F_errmsg(m, int32(_a_F_gbtreekey_out_1), v5)
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return int32(0)
+			} else {
+				F_errfinish(m, int32(_a_F_gbtreekey_out_2), int32(45), int32(_a_F_gbtreekey_out_3))
+				mBase = m.M
+				v30 = m.ExcPending
+				if v30 != 0 {
+					return int32(0)
+				} else {
+					base.Wasm_trap_unreachable()
+					for {
+					}
+				}
+			}
+		}
+	}
+}
+func F_gdb_date_dist(m *base.Module, l0 int32, l1 int32, l2 int32) float64 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v8 = F_DirectFunctionCall2Coll(m, int32(2442), int32(0), v6, v7)
+	mBase = m.M
+	v11 = m.ExcPending
+	if v11 != 0 {
+		return float64(0)
+	} else {
+		v13 = v8 >> (uint(int32(31)) % 32)
+		return base.F64_convert_i32_u(v8 ^ v13 - v13)
+	}
+}
 func F_generate_matching_part_pairs(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32) {
 	mBase := m.M
 	_ = mBase

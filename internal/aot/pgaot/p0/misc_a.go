@@ -7284,6 +7284,37 @@ func F_AutoVacuumingActive(m *base.Module) int32 {
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_AutoVacuumingActive[1])))
 	return v2 & v4 & int32(1)
 }
+func F_abs_interval(m *base.Module, l0 int32) int32 {
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	v5 = F_DirectFunctionCall2Coll(m, int32(2459), int32(0), l0, int32(_a_F_abs_interval_0))
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
+	} else {
+		if v5 != 0 {
+			v11 = F_DirectFunctionCall1Coll(m, int32(2463), int32(0), l0)
+			v12 = m.ExcPending
+			if v12 != 0 {
+				return int32(0)
+			} else {
+				v13 = v11
+				return v13
+			}
+		} else {
+			v13 = l0
+			return v13
+		}
+	}
+}
 func F_access(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

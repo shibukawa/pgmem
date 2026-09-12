@@ -1051,6 +1051,75 @@ func F_get_ts_template_func(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_ts_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int64
+	_ = v4
+	var v9 int32
+	_ = v9
+	var v10 int64
+	_ = v10
+	var v17 int32
+	_ = v17
+	var v20 int32
+	_ = v20
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(v3)))
+	if base.Ui64(int64(2)) <= base.Ui64(v4-int64(9223372036854775807)) {
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v10 = *(*int64)(unsafe.Add(mBase, uint32(v9)))
+		if base.Ui64(int64(1)) < base.Ui64(v10-int64(9223372036854775807)) {
+			v28 = F_DirectFunctionCall2Coll(m, int32(1516), int32(0), v3, v9)
+			mBase = m.M
+			v29 = m.ExcPending
+			if v29 != 0 {
+				return int32(0)
+			} else {
+				v30 = F_abs_interval(m, v28)
+				mBase = m.M
+				v31 = m.ExcPending
+				if v31 != 0 {
+					return int32(0)
+				} else {
+					return v30
+				}
+			}
+		} else {
+			v17 = F_palloc(m, int32(16))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				*(*int64)(unsafe.Add(mBase, uint32(v17))) = int64(9223372036854775807)
+				*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = int64(9223372034707292159)
+				return v17
+			}
+		}
+	} else {
+		v17 = F_palloc(m, int32(16))
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return int32(0)
+		} else {
+			*(*int64)(unsafe.Add(mBase, uint32(v17))) = int64(9223372036854775807)
+			*(*int64)(unsafe.Add(mBase, uint32(v17)+8)) = int64(9223372034707292159)
+			return v17
+		}
+	}
+}
 func F_ts_headline(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

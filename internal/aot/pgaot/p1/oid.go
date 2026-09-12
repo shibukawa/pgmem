@@ -97,6 +97,24 @@ func F_OidFunctionCall1Coll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 		}
 	}
 }
+func F_oid_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v8 int32
+	_ = v8
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	if base.Ui32(v4) < base.Ui32(v3) {
+		v8 = v3 - v4
+	} else {
+		v8 = v4 - v3
+	}
+	return v8
+}
 func F_readOidCols(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

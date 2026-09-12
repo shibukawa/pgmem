@@ -515,6 +515,31 @@ L62:
 	v232 = v207
 	goto L1
 }
+func F_date_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v11 int32
+	_ = v11
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = F_DirectFunctionCall2Coll(m, int32(2442), int32(0), v4, v5)
+	mBase = m.M
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
+	} else {
+		v11 = v6 >> (uint(int32(31)) % 32)
+		return v6 ^ v11 - v11
+	}
+}
 func F_date_ge(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

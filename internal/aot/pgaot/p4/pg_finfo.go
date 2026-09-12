@@ -11,6 +11,9 @@ func F_pg_finfo_citext_le(m *base.Module) int32 {
 func F_pg_finfo_citext_pattern_cmp(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_citext_pattern_cmp_0)
 }
+func F_pg_finfo_date_dist(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_date_dist_0)
+}
 func F_pg_finfo_defined(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_defined_0)
 }
@@ -23,8 +26,110 @@ func F_pg_finfo_euc_cn_to_mic(m *base.Module) int32 {
 func F_pg_finfo_euc_kr_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_euc_kr_to_utf8_0)
 }
+func F_pg_finfo_float8_dist(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_float8_dist_0)
+}
 func F_pg_finfo_gb18030_to_utf8(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gb18030_to_utf8_0)
+}
+func F_pg_finfo_gbt_bool_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bool_compress_0)
+}
+func F_pg_finfo_gbt_bool_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bool_fetch_0)
+}
+func F_pg_finfo_gbt_bpchar_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bpchar_compress_0)
+}
+func F_pg_finfo_gbt_bytea_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bytea_penalty_0)
+}
+func F_pg_finfo_gbt_bytea_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bytea_sortsupport_0)
+}
+func F_pg_finfo_gbt_cash_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_cash_penalty_0)
+}
+func F_pg_finfo_gbt_date_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_date_consistent_0)
+}
+func F_pg_finfo_gbt_date_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_date_same_0)
+}
+func F_pg_finfo_gbt_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_decompress_0)
+}
+func F_pg_finfo_gbt_enum_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_enum_picksplit_0)
+}
+func F_pg_finfo_gbt_float4_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float4_fetch_0)
+}
+func F_pg_finfo_gbt_float8_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float8_compress_0)
+}
+func F_pg_finfo_gbt_float8_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float8_consistent_0)
+}
+func F_pg_finfo_gbt_int2_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int2_sortsupport_0)
+}
+func F_pg_finfo_gbt_int4_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int4_picksplit_0)
+}
+func F_pg_finfo_gbt_int8_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int8_sortsupport_0)
+}
+func F_pg_finfo_gbt_int8_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int8_union_0)
+}
+func F_pg_finfo_gbt_intv_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_intv_decompress_0)
+}
+func F_pg_finfo_gbt_intv_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_intv_picksplit_0)
+}
+func F_pg_finfo_gbt_macad8_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad8_compress_0)
+}
+func F_pg_finfo_gbt_macad_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad_consistent_0)
+}
+func F_pg_finfo_gbt_macad_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad_fetch_0)
+}
+func F_pg_finfo_gbt_numeric_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_numeric_penalty_0)
+}
+func F_pg_finfo_gbt_numeric_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_numeric_picksplit_0)
+}
+func F_pg_finfo_gbt_oid_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_oid_consistent_0)
+}
+func F_pg_finfo_gbt_oid_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_oid_same_0)
+}
+func F_pg_finfo_gbt_time_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_time_penalty_0)
+}
+func F_pg_finfo_gbt_time_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_time_picksplit_0)
+}
+func F_pg_finfo_gbt_time_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_time_sortsupport_0)
+}
+func F_pg_finfo_gbt_timetz_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_timetz_sortsupport_0)
+}
+func F_pg_finfo_gbt_ts_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_ts_distance_0)
+}
+func F_pg_finfo_gbt_uuid_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_uuid_sortsupport_0)
+}
+func F_pg_finfo_gbtreekey_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbtreekey_out_0)
 }
 func F_pg_finfo_ghstore_compress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_compress_0)

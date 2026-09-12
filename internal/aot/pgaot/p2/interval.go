@@ -1008,6 +1008,61 @@ func F_interval_avg_combine(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_interval_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
+	v2 = int32(0)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = F_DirectFunctionCall2Coll(m, int32(1475), v2, v7, v8)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		v15 = F_DirectFunctionCall2Coll(m, int32(2459), v2, v9, int32(_a_F_interval_dist_0))
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return int32(0)
+		} else {
+			if v15 != 0 {
+				v19 = F_DirectFunctionCall1Coll(m, int32(2463), int32(0), v9)
+				mBase = m.M
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return int32(0)
+				} else {
+					v21 = v19
+					return v21
+				}
+			} else {
+				v21 = v9
+				return v21
+			}
+		}
+	}
+}
 func F_interval_hash_extended(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

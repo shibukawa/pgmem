@@ -5500,6 +5500,71 @@ func F_gather_merge_readnext(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 		}
 	}
 }
+func F_gbtreekey_in(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v26 int32
+	_ = v26
+	var v33 int32
+	_ = v33
+	v3 = m.G0
+	v5 = v3 - int32(16)
+	m.G0 = v5
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	F_errstart_cold(m, int32(21), int32(0))
+	mBase = m.M
+	v13 = m.ExcPending
+	if v13 != 0 {
+		return int32(0)
+	} else {
+		F_errcode(m, int32(1088))
+		mBase = m.M
+		v16 = m.ExcPending
+		if v16 != 0 {
+			return int32(0)
+		} else {
+			v19 = F_format_type_extended(m, v7, int32(-1), int32(2))
+			mBase = m.M
+			v20 = m.ExcPending
+			if v20 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v5))) = v19
+				F_errmsg(m, int32(_a_F_gbtreekey_in_0), v5)
+				mBase = m.M
+				v26 = m.ExcPending
+				if v26 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_gbtreekey_in_1), int32(34), int32(_a_F_gbtreekey_in_2))
+					mBase = m.M
+					v33 = m.ExcPending
+					if v33 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	}
+}
 func F_gen_partprune_steps_internal(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase

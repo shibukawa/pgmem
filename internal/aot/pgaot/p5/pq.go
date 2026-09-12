@@ -1279,6 +1279,14 @@ func F_pq_puttextmessage(m *base.Module) {
 	_ = mBase
 	var v4 int32
 	_ = v4
+	var v13 int32
+	_ = v13
+	var v18 int32
+	_ = v18
+	var v22 int32
+	_ = v22
+	var v27 int32
+	_ = v27
 	var v33 int32
 	_ = v33
 	var v39 int32
@@ -1289,8 +1297,10 @@ func F_pq_puttextmessage(m *base.Module) {
 	_ = v48
 	var v52 int32
 	_ = v52
-	var v57 int32
-	_ = v57
+	var v54 int32
+	_ = v54
+	var v62 int32
+	_ = v62
 	var v63 int32
 	_ = v63
 	var v64 int32
@@ -1334,10 +1344,10 @@ func F_pq_puttextmessage(m *base.Module) {
 	var v139 int32
 	_ = v139
 	v4 = int32(_a_F_pq_puttextmessage_0)
-	goto L3
+	goto L4
 L1:
 	;
-	v63 = F_pg_server_to_client(m, v4, v57)
+	v63 = F_pg_server_to_client(m, v4, v62)
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -1347,12 +1357,55 @@ L1:
 	}
 L2:
 	;
-	v57 = v48 - v4
+	v62 = v54 - v4
 	goto L1
 L3:
 	;
-	v33 = v4
+	v33 = v22
 	goto L12
+L4:
+	;
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_pq_puttextmessage[0])))
+	if v13 == int32(0) {
+		goto L5
+	} else {
+		goto L6
+	}
+L5:
+	;
+	v62 = int32(0)
+	goto L1
+L6:
+	;
+	goto L7
+L7:
+	;
+	v18 = v4
+	goto L8
+L8:
+	;
+	v22 = v18 + int32(1)
+	if v22&int32(3) == int32(0) {
+		goto L3
+	} else {
+		goto L10
+	}
+L9:
+	;
+	v54 = v22
+	goto L2
+L10:
+	;
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22))))
+	if v27 != 0 {
+		v18 = v22
+		goto L8
+	} else {
+		goto L11
+	}
+L11:
+	;
+	goto L9
 L12:
 	;
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(v33)))
@@ -1381,6 +1434,7 @@ L15:
 	}
 L16:
 	;
+	v54 = v48
 	goto L2
 L17:
 	;
@@ -1390,7 +1444,7 @@ L18:
 	return
 L19:
 	;
-	v66 = *(*int32)(unsafe.Add(mBase, _c_F_pq_puttextmessage[0]))
+	v66 = *(*int32)(unsafe.Add(mBase, _c_F_pq_puttextmessage[1]))
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v66)+16))
 	if v63 != int32(_a_F_pq_puttextmessage_0) {
 		goto L20
@@ -1410,7 +1464,7 @@ L21:
 	goto L22
 L22:
 	;
-	v138 = m.T0[v67].(func(*base.Module, int32, int32, int32) int32)(m, int32(67), int32(_a_F_pq_puttextmessage_0), v57+int32(1))
+	v138 = m.T0[v67].(func(*base.Module, int32, int32, int32) int32)(m, int32(67), int32(_a_F_pq_puttextmessage_0), v62+int32(1))
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {

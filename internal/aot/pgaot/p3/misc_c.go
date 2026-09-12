@@ -51,6 +51,82 @@ func F_CLOGPagePrecedes(m *base.Module, l0 int64, l1 int64) int32 {
 	}
 	return v42
 }
+func F_CallerFInfoFunctionCall2(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v16 int32
+	_ = v16
+	var v27 int32
+	_ = v27
+	var v30 int32
+	_ = v30
+	var v31 int32
+	_ = v31
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	v5 = int32(0)
+	v6 = m.G0
+	v8 = v6 - int32(48)
+	m.G0 = v8
+	*(*uint8)(unsafe.Add(mBase, uint32(v8)+44)) = uint8(v5)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+40)) = l3
+	*(*uint8)(unsafe.Add(mBase, uint32(v8)+36)) = uint8(v5)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l2
+	v16 = int32(2)
+	*(*uint16)(unsafe.Add(mBase, uint32(v8)+30)) = uint16(v16)
+	*(*uint8)(unsafe.Add(mBase, uint32(v8)+28)) = uint8(v5)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+24)) = v5
+	*(*int64)(unsafe.Add(mBase, uint32(v8)+16)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+12)) = l1
+	v27 = m.T0[l0].(func(*base.Module, int32) int32)(m, v8+int32(12))
+	mBase = m.M
+	v30 = m.ExcPending
+	if v30 != 0 {
+		return int32(0)
+	} else {
+		v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+28)))
+		if v31 == int32(1) {
+			F_errstart_cold(m, int32(21), int32(0))
+			mBase = m.M
+			v37 = m.ExcPending
+			if v37 != 0 {
+				return int32(0)
+			} else {
+				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l0
+				F_errmsg_internal(m, int32(_a_F_CallerFInfoFunctionCall2_0), v8)
+				mBase = m.M
+				v41 = m.ExcPending
+				if v41 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_CallerFInfoFunctionCall2_1), int32(1101), int32(_a_F_CallerFInfoFunctionCall2_2))
+					mBase = m.M
+					v46 = m.ExcPending
+					if v46 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		} else {
+			m.G0 = v8 + int32(48)
+			return v27
+		}
+	}
+}
 func F_CastCreate(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32) {
 	mBase := m.M
 	_ = mBase

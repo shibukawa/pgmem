@@ -50,6 +50,111 @@ func F_pg_finfo_euc_tw_to_utf8(m *base.Module) int32 {
 func F_pg_finfo_fetchval(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_fetchval_0)
 }
+func F_pg_finfo_gbt_bit_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bit_penalty_0)
+}
+func F_pg_finfo_gbt_bit_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bit_picksplit_0)
+}
+func F_pg_finfo_gbt_bit_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bit_sortsupport_0)
+}
+func F_pg_finfo_gbt_bool_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bool_same_0)
+}
+func F_pg_finfo_gbt_bpchar_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bpchar_consistent_0)
+}
+func F_pg_finfo_gbt_bytea_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_bytea_picksplit_0)
+}
+func F_pg_finfo_gbt_cash_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_cash_sortsupport_0)
+}
+func F_pg_finfo_gbt_date_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_date_compress_0)
+}
+func F_pg_finfo_gbt_enum_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_enum_penalty_0)
+}
+func F_pg_finfo_gbt_enum_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_enum_union_0)
+}
+func F_pg_finfo_gbt_float4_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float4_consistent_0)
+}
+func F_pg_finfo_gbt_float4_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float4_same_0)
+}
+func F_pg_finfo_gbt_float8_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_float8_fetch_0)
+}
+func F_pg_finfo_gbt_inet_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_inet_consistent_0)
+}
+func F_pg_finfo_gbt_int2_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int2_penalty_0)
+}
+func F_pg_finfo_gbt_int4_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int4_sortsupport_0)
+}
+func F_pg_finfo_gbt_int4_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int4_union_0)
+}
+func F_pg_finfo_gbt_int8_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_int8_distance_0)
+}
+func F_pg_finfo_gbt_intv_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_intv_distance_0)
+}
+func F_pg_finfo_gbt_intv_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_intv_sortsupport_0)
+}
+func F_pg_finfo_gbt_intv_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_intv_union_0)
+}
+func F_pg_finfo_gbt_macad8_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad8_consistent_0)
+}
+func F_pg_finfo_gbt_macad8_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad8_fetch_0)
+}
+func F_pg_finfo_gbt_macad_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_macad_same_0)
+}
+func F_pg_finfo_gbt_numeric_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_numeric_sortsupport_0)
+}
+func F_pg_finfo_gbt_oid_fetch(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_oid_fetch_0)
+}
+func F_pg_finfo_gbt_text_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_text_picksplit_0)
+}
+func F_pg_finfo_gbt_text_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_text_union_0)
+}
+func F_pg_finfo_gbt_time_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_time_union_0)
+}
+func F_pg_finfo_gbt_ts_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_ts_penalty_0)
+}
+func F_pg_finfo_gbt_ts_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_ts_picksplit_0)
+}
+func F_pg_finfo_gbt_ts_sortsupport(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_ts_sortsupport_0)
+}
+func F_pg_finfo_gbt_tstz_distance(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_tstz_distance_0)
+}
+func F_pg_finfo_gbt_uuid_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_uuid_penalty_0)
+}
+func F_pg_finfo_gbt_uuid_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gbt_uuid_union_0)
+}
 func F_pg_finfo_ghstore_same(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ghstore_same_0)
 }
@@ -133,6 +238,9 @@ func F_pg_finfo_mic_to_big5(m *base.Module) int32 {
 }
 func F_pg_finfo_mic_to_latin3(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_mic_to_latin3_0)
+}
+func F_pg_finfo_oid_dist(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_oid_dist_0)
 }
 func F_pg_finfo_pg_decrypt(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pg_decrypt_0)

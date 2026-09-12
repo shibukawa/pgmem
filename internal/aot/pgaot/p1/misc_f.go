@@ -7514,14 +7514,24 @@ func F_finish_nodeitem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 	_ = v21
 	var v23 int32
 	_ = v23
-	var v29 int32
-	_ = v29
 	var v31 int32
 	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
 	var v70 int32
 	_ = v70
 	var v80 int32
@@ -7635,11 +7645,9 @@ L3:
 	goto L4
 L4:
 	;
-	v29 = int32(_a_F_finish_nodeitem_0)
 	v31 = v21 - int32(1)
 	v32 = int32(*(*int8)(unsafe.Add(mBase, uint32(v31))))
-	v33 = int32(4)
-	goto L9
+	goto L10
 L5:
 	;
 	v147 = v14
@@ -7665,13 +7673,61 @@ L8:
 	goto L26
 L9:
 	;
-	goto L17
+	if base.B2i32(v54 != v55) == int32(0) {
+		goto L7
+	} else {
+		goto L17
+	}
+L10:
+	;
+	goto L11
+L11:
+	;
+	v46 = int32(_a_F_finish_nodeitem_0)
+	v48 = int32(4)
+	goto L12
+L12:
+	;
+	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v46))))
+	if v51 == v32&int32(255) {
+		v107 = v46
+		v109 = v48
+		goto L8
+	} else {
+		goto L14
+	}
+L13:
+	;
+	goto L9
+L14:
+	;
+	v53 = int32(1)
+	v54 = v48 - v53
+	v55 = int32(0)
+	v58 = v46 + v53
+	if v58&int32(3) == v55 {
+		goto L9
+	} else {
+		goto L15
+	}
+L15:
+	;
+	if v54 != 0 {
+		v46 = v58
+		v48 = v54
+		goto L12
+	} else {
+		goto L16
+	}
+L16:
+	;
+	goto L13
 L17:
 	;
-	v70 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_finish_nodeitem[0])))
+	v70 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v58))))
 	if v70 == v32&int32(255) {
-		v100 = v29
-		v102 = v33
+		v100 = v58
+		v102 = v54
 		goto L18
 	} else {
 		goto L19
@@ -7685,11 +7741,17 @@ L18:
 	}
 L19:
 	;
-	goto L20
+	if base.Ui32(v54) < base.Ui32(int32(4)) {
+		v100 = v58
+		v102 = v54
+		goto L18
+	} else {
+		goto L20
+	}
 L20:
 	;
-	v80 = v29
-	v82 = v33
+	v80 = v58
+	v82 = v54
 	goto L21
 L21:
 	;

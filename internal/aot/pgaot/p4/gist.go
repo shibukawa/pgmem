@@ -2908,6 +2908,21 @@ func F_gist_mask(m *base.Module, l0 int32, l1 int32) {
 		return
 	}
 }
+func F_gist_translate_cmptype_btree(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v8 int32
+	_ = v8
+	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	if base.Ui32(v2-int32(1)) < base.Ui32(int32(5)) {
+		v8 = v2
+	} else {
+		v8 = int32(0)
+	}
+	return v8
+}
 func F_gist_xlog_startup(m *base.Module) {
 	mBase := m.M
 	_ = mBase

@@ -7305,6 +7305,43 @@ func F_float48ne(m *base.Module, l0 int32) int32 {
 		return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v9)) | base.F64_ne(v6, v11)
 	}
 }
+func F_float4_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v5 float32
+	_ = v5
+	var v6 float32
+	_ = v6
+	var v8 float32
+	_ = v8
+	var v20 int32
+	_ = v20
+	v5 = *(*float32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = *(*float32)(unsafe.Add(mBase, uint32(l0)+28))
+	v8 = base.F32_abs(base.F32_sub(v5, v6))
+	if base.F32_ne(v8, math.Float32frombits(uint32(0x7f800000))) != 0 {
+		return base.I32_reinterpret_f32(v8)
+	} else {
+		if base.F32_eq(base.F32_abs(v5), math.Float32frombits(uint32(0x7f800000))) != 0 {
+			return base.I32_reinterpret_f32(v8)
+		} else {
+			if base.F32_eq(base.F32_abs(v6), math.Float32frombits(uint32(0x7f800000))) != 0 {
+				return base.I32_reinterpret_f32(v8)
+			} else {
+				F_float_overflow_error(m)
+				mBase = m.M
+				v20 = m.ExcPending
+				if v20 != 0 {
+					return int32(0)
+				} else {
+					base.Wasm_trap_unreachable()
+					for {
+					}
+				}
+			}
+		}
+	}
+}
 func F_float4_to_char(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

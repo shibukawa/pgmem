@@ -411,6 +411,68 @@ func F_int2_avg_accum_inv(m *base.Module, l0 int32) int32 {
 		}
 	}
 }
+func F_int2_dist(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v3 int32
+	_ = v3
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v20 int32
+	_ = v20
+	var v23 int32
+	_ = v23
+	var v29 int32
+	_ = v29
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
+	v3 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+20)))
+	v4 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+28)))
+	v5 = v3 - v4
+	v6 = base.I32_extend16_s(v5)
+	if base.B2i32(v6 == v5)&base.B2i32(v5&int32(_a_F_int2_dist_0) != int32(_a_F_int2_dist_1)) == int32(0) {
+		F_errstart_cold(m, int32(21), int32(0))
+		mBase = m.M
+		v20 = m.ExcPending
+		if v20 != 0 {
+			return int32(0)
+		} else {
+			F_errcode(m, int32(50331778))
+			mBase = m.M
+			v23 = m.ExcPending
+			if v23 != 0 {
+				return int32(0)
+			} else {
+				F_errmsg(m, int32(_a_F_int2_dist_2), int32(0))
+				mBase = m.M
+				v29 = m.ExcPending
+				if v29 != 0 {
+					return int32(0)
+				} else {
+					F_errfinish(m, int32(_a_F_int2_dist_3), int32(107), int32(_a_F_int2_dist_4))
+					mBase = m.M
+					v36 = m.ExcPending
+					if v36 != 0 {
+						return int32(0)
+					} else {
+						base.Wasm_trap_unreachable()
+						for {
+						}
+					}
+				}
+			}
+		}
+	} else {
+		v38 = v6 >> (uint(int32(31)) % 32)
+		return v6 ^ v38 - v38
+	}
+}
 func F_int2_mul_cash(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
