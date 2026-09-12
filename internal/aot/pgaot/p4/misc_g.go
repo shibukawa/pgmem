@@ -25739,6 +25739,86 @@ func F_gistvacuumcleanup(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 	}
 }
+func F_gseg_union(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v18 int32
+	_ = v18
+	var v20 int32
+	_ = v20
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v33 int32
+	_ = v33
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(12)
+	if int32(2) <= v9 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	v18 = int32(1)
+	v20 = v8
+	goto L4
+L2:
+	;
+	v41 = int32(0)
+	goto L3
+L3:
+	;
+	return v41
+L4:
+	;
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(4)+v18<<(uint(int32(4))%32))))
+	v30 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_union_0), int32(0), v20, v29)
+	mBase = m.M
+	v33 = m.ExcPending
+	if v33 != 0 {
+		goto L6
+	} else {
+		goto L7
+	}
+L5:
+	;
+	v41 = v30
+	goto L3
+L6:
+	;
+	return int32(0)
+L7:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(12)
+	v37 = v18 + int32(1)
+	if v37 != v9 {
+		v18 = v37
+		v20 = v30
+		goto L4
+	} else {
+		goto L8
+	}
+L8:
+	;
+	goto L5
+}
 func F_gtsquery_penalty(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

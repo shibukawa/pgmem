@@ -14247,6 +14247,172 @@ func F_sigfillset(m *base.Module, l0 int32) {
 	*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(-15032385537)
 	return
 }
+func F_significant_digits(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 int32
+	_ = v6
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v58 int32
+	_ = v58
+	var v65 int32
+	_ = v65
+	v6 = l0
+	goto L1
+L1:
+	;
+	v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6))))
+	v12 = v10 - int32(43)
+	if base.Ui32(int32(5)) < base.Ui32(v12) {
+		goto L3
+	} else {
+		goto L4
+	}
+L2:
+	;
+	v23 = v6
+	v24 = v10
+	v26 = int32(1)
+	goto L9
+L3:
+	;
+	goto L2
+L4:
+	;
+	if int32(1)<<(uint(v12)%32)&int32(37) == int32(0) {
+		goto L3
+	} else {
+		goto L5
+	}
+L5:
+	;
+	v6 = v6 + int32(1)
+	goto L1
+L6:
+	;
+	return v65
+L7:
+	;
+	v65 = v26
+	goto L6
+L8:
+	;
+	v38 = v23
+	v39 = v24
+	v40 = int32(0)
+	goto L15
+L9:
+	;
+	switch v24 - int32(46) {
+	case 0:
+		v32 = v26
+		goto L12
+	case 1:
+		goto L8
+	case 2:
+		goto L13
+	default:
+		goto L11
+	}
+L10:
+	;
+	if v24 == int32(0) {
+		goto L7
+	} else {
+		goto L14
+	}
+L11:
+	;
+	goto L10
+L12:
+	;
+	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
+	v23 = v23 + int32(1)
+	v24 = v33
+	v26 = v32
+	goto L9
+L13:
+	;
+	v32 = v26 + int32(1)
+	goto L12
+L14:
+	;
+	goto L8
+L15:
+	;
+	if v39 != int32(46) {
+		goto L18
+	} else {
+		goto L19
+	}
+L16:
+	;
+	if v58 != 0 {
+		v65 = v58
+		goto L6
+	} else {
+		goto L23
+	}
+L17:
+	;
+	goto L16
+L18:
+	;
+	if base.Ui32(int32(9)) < base.Ui32((v39-int32(48))&int32(255)) {
+		v58 = v40
+		goto L17
+	} else {
+		goto L21
+	}
+L19:
+	;
+	goto L20
+L20:
+	;
+	v52 = v40 + base.B2i32(v39 != int32(46))
+	v53 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38)+1)))
+	if v53 != 0 {
+		v38 = v38 + int32(1)
+		v39 = v53
+		v40 = v52
+		goto L15
+	} else {
+		goto L22
+	}
+L21:
+	;
+	goto L20
+L22:
+	;
+	v58 = v52
+	goto L17
+L23:
+	;
+	goto L7
+}
 func F_sjis_to_euc_jp(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

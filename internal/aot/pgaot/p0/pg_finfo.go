@@ -332,6 +332,18 @@ func F_pg_finfo_pgp_pub_encrypt_text(m *base.Module) int32 {
 func F_pg_finfo_pgp_sym_encrypt_bytea(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_bytea_0)
 }
+func F_pg_finfo_seg_contained(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_contained_0)
+}
+func F_pg_finfo_seg_gt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_gt_0)
+}
+func F_pg_finfo_seg_le(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_le_0)
+}
+func F_pg_finfo_seg_size(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_size_0)
+}
 func F_pg_finfo_show_limit(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_show_limit_0)
 }

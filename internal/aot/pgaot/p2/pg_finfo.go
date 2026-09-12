@@ -260,6 +260,12 @@ func F_pg_finfo_gin_extract_value_money(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_varbit(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_varbit_0)
 }
+func F_pg_finfo_gseg_compress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_compress_0)
+}
+func F_pg_finfo_gseg_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_same_0)
+}
 func F_pg_finfo_gtrgm_distance(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_distance_0)
 }
@@ -370,6 +376,15 @@ func F_pg_finfo_pgp_sym_decrypt_text(m *base.Module) int32 {
 }
 func F_pg_finfo_pgp_sym_encrypt_text(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_sym_encrypt_text_0)
+}
+func F_pg_finfo_seg_in(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_in_0)
+}
+func F_pg_finfo_seg_left(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_left_0)
+}
+func F_pg_finfo_seg_overlap(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_overlap_0)
 }
 func F_pg_finfo_similarity(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_similarity_0)

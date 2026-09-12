@@ -26786,6 +26786,171 @@ L169:
 	m.G0 = v20 + int32(304)
 	return v697 & int32(1)
 }
+func F_gseg_consistent(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 int32
+	_ = v2
+	var v7 int32
+	_ = v7
+	var v8 int32
+	_ = v8
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v17 int32
+	_ = v17
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v65 int32
+	_ = v65
+	var v66 int32
+	_ = v66
+	var v72 int32
+	_ = v72
+	var v73 int32
+	_ = v73
+	var v79 int32
+	_ = v79
+	var v80 int32
+	_ = v80
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v99 int32
+	_ = v99
+	v2 = int32(0)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
+	*(*uint8)(unsafe.Add(mBase, uint32(v10))) = uint8(v2)
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+	v15 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v14)+16)))
+	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14+v15)+12)))
+	if v17&int32(1) != 0 {
+		v21 = v7 - int32(1)
+		v23 = v21 & int32(_a_F_gseg_consistent_0)
+		if base.Ui32(int32(13)) < base.Ui32(v23) {
+			v99 = v2
+			return v99
+		} else {
+			if int32(base.Ui32(int32(_a_F_gseg_consistent_1))>>(uint(v23)%32))&int32(1) == int32(0) {
+				v99 = v2
+				return v99
+			} else {
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v21&int32(_a_F_gseg_consistent_0)<<(uint(int32(2))%32))+uint32(_c_F_gseg_consistent[0])))
+				v40 = F_DirectFunctionCall2Coll(m, v38, int32(0), v13, v8)
+				mBase = m.M
+				v43 = m.ExcPending
+				if v43 != 0 {
+					return int32(0)
+				} else {
+					return v40
+				}
+			}
+		}
+	} else {
+		switch v7&int32(_a_F_gseg_consistent_0) - int32(1) {
+		case 0:
+			v51 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_2), int32(0), v13, v8)
+			mBase = m.M
+			v52 = m.ExcPending
+			if v52 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v51 == int32(0))
+			}
+		case 1:
+			v58 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_3), int32(0), v13, v8)
+			mBase = m.M
+			v59 = m.ExcPending
+			if v59 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v58 == int32(0))
+			}
+		case 2:
+			v65 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_4), int32(0), v13, v8)
+			mBase = m.M
+			v66 = m.ExcPending
+			if v66 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v65 != int32(0))
+			}
+		case 3:
+			v72 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_5), int32(0), v13, v8)
+			mBase = m.M
+			v73 = m.ExcPending
+			if v73 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v72 == int32(0))
+			}
+		case 4:
+			v79 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_6), int32(0), v13, v8)
+			mBase = m.M
+			v80 = m.ExcPending
+			if v80 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v79 == int32(0))
+			}
+		case 5, 6, 12:
+			v86 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_7), int32(0), v13, v8)
+			mBase = m.M
+			v87 = m.ExcPending
+			if v87 != 0 {
+				return int32(0)
+			} else {
+				return base.B2i32(v86 != int32(0))
+			}
+		case 7, 13:
+			v93 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_consistent_4), int32(0), v13, v8)
+			mBase = m.M
+			v94 = m.ExcPending
+			if v94 != 0 {
+				return int32(0)
+			} else {
+				v99 = base.B2i32(v93 != int32(0))
+				return v99
+			}
+		default:
+			v99 = v2
+			return v99
+		}
+	}
+}
 func F_gtsquery_same(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

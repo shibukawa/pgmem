@@ -28359,6 +28359,78 @@ L389:
 	for {
 	}
 }
+func F_gseg_penalty(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v2 float32
+	_ = v2
+	var v8 int32
+	_ = v8
+	var v11 int32
+	_ = v11
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
+	var v21 float32
+	_ = v21
+	var v22 float32
+	_ = v22
+	var v26 float32
+	_ = v26
+	var v29 int32
+	_ = v29
+	var v32 float32
+	_ = v32
+	var v33 float32
+	_ = v33
+	var v39 float32
+	_ = v39
+	v2 = float32(0)
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+	v15 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_penalty_0), int32(0), v12, v14)
+	mBase = m.M
+	v18 = m.ExcPending
+	if v18 != 0 {
+		return int32(0)
+	} else {
+		if v15 == int32(0) {
+			v26 = v2
+		} else {
+			v21 = *(*float32)(unsafe.Add(mBase, uint32(v15)+4))
+			v22 = *(*float32)(unsafe.Add(mBase, uint32(v15)))
+			if base.F32_le(v21, v22) != 0 {
+				v26 = v2
+			} else {
+				v26 = base.F32_abs(base.F32_sub(v21, v22))
+			}
+		}
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
+		if v29 == int32(0) {
+			v39 = v2
+		} else {
+			v32 = *(*float32)(unsafe.Add(mBase, uint32(v29)+4))
+			v33 = *(*float32)(unsafe.Add(mBase, uint32(v29)))
+			if base.F32_le(v32, v33) != 0 {
+				v39 = v2
+			} else {
+				v39 = base.F32_abs(base.F32_sub(v32, v33))
+			}
+		}
+		*(*float32)(unsafe.Add(mBase, uint32(v8))) = base.F32_sub(v26, v39)
+		return v8
+	}
+}
 func F_gtsvectorin(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

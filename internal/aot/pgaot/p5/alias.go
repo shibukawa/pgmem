@@ -4738,6 +4738,20 @@ func F_cube_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_yy_fatal_error_6(m *base.Module, l0 int32)
 //go:linkname F_cube_yyrestart github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_cube_yyrestart
 func F_cube_yyrestart(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_cube_scanner_finish github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_cube_scanner_finish
+func F_cube_scanner_finish(m *base.Module, l0 int32)
+//go:linkname F_seg_yyparse github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_seg_yyparse
+func F_seg_yyparse(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_seg_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_yyensure_buffer_stack
+func F_seg_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_seg_yy_create_buffer github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_create_buffer
+func F_seg_yy_create_buffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_yy_fatal_error_7 github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_yy_fatal_error_7
+func F_yy_fatal_error_7(m *base.Module, l0 int32)
+//go:linkname F_seg_yyerror github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_yyerror
+func F_seg_yyerror(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_seg_scanner_init github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_scanner_init
+func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32)
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem
@@ -4864,6 +4878,8 @@ func F_strstr(m *base.Module, l0 int32, l1 int32) int32
 func F___shgetc(m *base.Module, l0 int32) int32
 //go:linkname F___floatscan github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F___floatscan
 func F___floatscan(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_strtox_1 github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtox_1
+func F_strtox_1(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
 //go:linkname F_strtod github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_strtod
 func F_strtod(m *base.Module, l0 int32, l1 int32) float64
 //go:linkname F_strtox_2 github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_strtox_2

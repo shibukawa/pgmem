@@ -13967,6 +13967,405 @@ L48:
 	;
 	goto L47
 }
+func F_gseg_picksplit(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v12 int32
+	_ = v12
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v36 int32
+	_ = v36
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v51 float32
+	_ = v51
+	var v52 float32
+	_ = v52
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
+	var v64 float32
+	_ = v64
+	var v87 int32
+	_ = v87
+	var v88 int32
+	_ = v88
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
+	var v92 int32
+	_ = v92
+	var v94 int32
+	_ = v94
+	var v95 int32
+	_ = v95
+	var v97 int32
+	_ = v97
+	var v101 int32
+	_ = v101
+	var v103 int32
+	_ = v103
+	var v104 int32
+	_ = v104
+	var v105 int32
+	_ = v105
+	var v106 int64
+	_ = v106
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
+	var v117 int32
+	_ = v117
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
+	var v127 int32
+	_ = v127
+	var v135 int32
+	_ = v135
+	var v136 int32
+	_ = v136
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
+	var v148 int32
+	_ = v148
+	var v157 int32
+	_ = v157
+	var v162 int32
+	_ = v162
+	var v163 int32
+	_ = v163
+	var v166 int32
+	_ = v166
+	var v167 int32
+	_ = v167
+	var v168 int64
+	_ = v168
+	var v170 int32
+	_ = v170
+	var v172 int32
+	_ = v172
+	var v174 int32
+	_ = v174
+	var v175 int32
+	_ = v175
+	var v179 int32
+	_ = v179
+	var v181 int32
+	_ = v181
+	var v182 int32
+	_ = v182
+	var v184 int32
+	_ = v184
+	var v196 int32
+	_ = v196
+	var v197 int32
+	_ = v197
+	var v198 int32
+	_ = v198
+	var v199 int32
+	_ = v199
+	var v200 int32
+	_ = v200
+	var v202 int32
+	_ = v202
+	var v203 int32
+	_ = v203
+	var v209 int32
+	_ = v209
+	var v214 int32
+	_ = v214
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+	v18 = (v14 - int32(1)) & int32(_a_F_gseg_picksplit_0)
+	v21 = F_palloc(m, v18*int32(12))
+	mBase = m.M
+	v24 = m.ExcPending
+	if v24 != 0 {
+		goto L1
+	} else {
+		goto L2
+	}
+L1:
+	;
+	return int32(0)
+L2:
+	;
+	if v14&int32(_a_F_gseg_picksplit_0) != int32(1) {
+		goto L3
+	} else {
+		goto L4
+	}
+L3:
+	;
+	v29 = int32(1)
+	if base.Ui32(v18) <= base.Ui32(v29) {
+		goto L6
+	} else {
+		goto L7
+	}
+L4:
+	;
+	goto L5
+L5:
+	;
+	F_pg_qsort(m, v21, v18, int32(12), int32(_a_F_gseg_picksplit_1))
+	mBase = m.M
+	v87 = m.ExcPending
+	if v87 != 0 {
+		goto L1
+	} else {
+		goto L12
+	}
+L6:
+	;
+	v32 = v29
+	goto L8
+L7:
+	;
+	v32 = v18
+	goto L8
+L8:
+	;
+	v36 = int32(1)
+	goto L9
+L9:
+	;
+	v47 = int32(4)
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(4)+v36<<(uint(v47)%32))))
+	v51 = *(*float32)(unsafe.Add(mBase, uint32(v50)))
+	v52 = *(*float32)(unsafe.Add(mBase, uint32(v50)+4))
+	v53 = int32(12)
+	v55 = v21 + v36*v53
+	*(*int32)(unsafe.Add(mBase, uint32(v55-v47))) = v50
+	*(*uint16)(unsafe.Add(mBase, uint32(v55-int32(8)))) = uint16(v36)
+	v64 = float32(0.5)
+	*(*float32)(unsafe.Add(mBase, uint32(v55-v53))) = base.F32_add(base.F32_mul(v51, v64), base.F32_mul(v52, v64))
+	if v36 != v32 {
+		v36 = v36 + int32(1)
+		goto L9
+	} else {
+		goto L11
+	}
+L10:
+	;
+	goto L5
+L11:
+	;
+	goto L10
+L12:
+	;
+	v88 = int32(1)
+	v90 = v18 << (uint(v88) % 32)
+	v91 = F_palloc(m, v90)
+	mBase = m.M
+	v92 = m.ExcPending
+	if v92 != 0 {
+		goto L1
+	} else {
+		goto L13
+	}
+L13:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v91
+	v94 = F_palloc(m, v90)
+	mBase = m.M
+	v95 = m.ExcPending
+	if v95 != 0 {
+		goto L1
+	} else {
+		goto L14
+	}
+L14:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v94
+	v97 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v97
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v97
+	v101 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+	v103 = F_palloc(m, int32(12))
+	mBase = m.M
+	v104 = m.ExcPending
+	if v104 != 0 {
+		goto L1
+	} else {
+		goto L15
+	}
+L15:
+	;
+	v105 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
+	v106 = *(*int64)(unsafe.Add(mBase, uint32(v105)))
+	*(*int64)(unsafe.Add(mBase, uint32(v103))) = v106
+	v108 = *(*int32)(unsafe.Add(mBase, uint32(v105)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v103)+8)) = v108
+	v110 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v21)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v101))) = uint16(v110)
+	v112 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+	v113 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v112 + v113
+	v117 = int32(base.Ui32(v18) >> (uint(v113) % 32))
+	if base.Ui32(int32(4)) <= base.Ui32(v18) {
+		goto L16
+	} else {
+		goto L17
+	}
+L16:
+	;
+	v121 = v101
+	v123 = v88
+	v127 = v103
+	goto L19
+L17:
+	;
+	v157 = v103
+	goto L18
+L18:
+	;
+	v162 = F_palloc(m, int32(12))
+	mBase = m.M
+	v163 = m.ExcPending
+	if v163 != 0 {
+		goto L1
+	} else {
+		goto L23
+	}
+L19:
+	;
+	v135 = v21 + v123*int32(12)
+	v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+8))
+	v137 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_picksplit_2), int32(0), v127, v136)
+	mBase = m.M
+	v138 = m.ExcPending
+	if v138 != 0 {
+		goto L1
+	} else {
+		goto L21
+	}
+L20:
+	;
+	v157 = v137
+	goto L18
+L21:
+	;
+	v139 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v135)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v121)+2)) = uint16(v139)
+	v141 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+	v142 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v141 + v142
+	v148 = v123 + v142
+	if v148 != v117 {
+		v121 = v121 + int32(2)
+		v123 = v148
+		v127 = v137
+		goto L19
+	} else {
+		goto L22
+	}
+L22:
+	;
+	goto L20
+L23:
+	;
+	v166 = v21 + v117*int32(12)
+	v167 = *(*int32)(unsafe.Add(mBase, uint32(v166)+8))
+	v168 = *(*int64)(unsafe.Add(mBase, uint32(v167)))
+	*(*int64)(unsafe.Add(mBase, uint32(v162))) = v168
+	v170 = *(*int32)(unsafe.Add(mBase, uint32(v167)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v162)+8)) = v170
+	v172 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v166)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v94))) = uint16(v172)
+	v174 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
+	v175 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v174 + v175
+	v179 = v117 + v175
+	if base.Ui32(v179) < base.Ui32(v18) {
+		goto L24
+	} else {
+		goto L25
+	}
+L24:
+	;
+	v181 = v94
+	v182 = v179
+	v184 = v162
+	goto L27
+L25:
+	;
+	v214 = v162
+	goto L26
+L26:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v214
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v157
+	return v12
+L27:
+	;
+	v196 = v21 + v182*int32(12)
+	v197 = *(*int32)(unsafe.Add(mBase, uint32(v196)+8))
+	v198 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_picksplit_2), int32(0), v184, v197)
+	mBase = m.M
+	v199 = m.ExcPending
+	if v199 != 0 {
+		goto L1
+	} else {
+		goto L29
+	}
+L28:
+	;
+	v214 = v198
+	goto L26
+L29:
+	;
+	v200 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v196)+4)))
+	*(*uint16)(unsafe.Add(mBase, uint32(v181)+2)) = uint16(v200)
+	v202 = *(*int32)(unsafe.Add(mBase, uint32(v12)+20))
+	v203 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = v202 + v203
+	v209 = v182 + v203
+	if v209 != v18 {
+		v181 = v181 + int32(2)
+		v182 = v209
+		v184 = v198
+		goto L27
+	} else {
+		goto L30
+	}
+L30:
+	;
+	goto L28
+}
 func F_gtsquery_picksplit(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase

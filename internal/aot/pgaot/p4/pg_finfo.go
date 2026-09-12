@@ -221,6 +221,9 @@ func F_pg_finfo_gin_extract_value_macaddr(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_trgm_0)
 }
+func F_pg_finfo_gseg_consistent(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_consistent_0)
+}
 func F_pg_finfo_gtrgm_decompress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_decompress_0)
 }
@@ -349,6 +352,24 @@ func F_pg_finfo_plpgsql_call_handler(m *base.Module) int32 {
 }
 func F_pg_finfo_rboolop(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_rboolop_0)
+}
+func F_pg_finfo_seg_center(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_center_0)
+}
+func F_pg_finfo_seg_contains(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_contains_0)
+}
+func F_pg_finfo_seg_different(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_different_0)
+}
+func F_pg_finfo_seg_lower(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_lower_0)
+}
+func F_pg_finfo_seg_over_right(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_over_right_0)
+}
+func F_pg_finfo_seg_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_union_0)
 }
 func F_pg_finfo_subarray(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_subarray_0)

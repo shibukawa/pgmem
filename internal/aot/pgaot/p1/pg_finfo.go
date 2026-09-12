@@ -227,6 +227,12 @@ func F_pg_finfo_gin_extract_value_numeric(m *base.Module) int32 {
 func F_pg_finfo_ginint4_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_ginint4_consistent_0)
 }
+func F_pg_finfo_gseg_penalty(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_penalty_0)
+}
+func F_pg_finfo_gseg_union(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_union_0)
+}
 func F_pg_finfo_gtrgm_options(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_options_0)
 }
@@ -298,6 +304,18 @@ func F_pg_finfo_plpgsql_inline_handler(m *base.Module) int32 {
 }
 func F_pg_finfo_querytree(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_querytree_0)
+}
+func F_pg_finfo_seg_inter(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_inter_0)
+}
+func F_pg_finfo_seg_lt(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_lt_0)
+}
+func F_pg_finfo_seg_out(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_out_0)
+}
+func F_pg_finfo_seg_upper(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_upper_0)
 }
 func F_pg_finfo_shift_jis_2004_to_euc_jis_2004(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_shift_jis_2004_to_euc_jis_2004_0)

@@ -197,6 +197,9 @@ func F_pg_finfo_gin_extract_value_timetz(m *base.Module) int32 {
 func F_pg_finfo_gin_extract_value_uuid(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gin_extract_value_uuid_0)
 }
+func F_pg_finfo_gseg_decompress(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_decompress_0)
+}
 func F_pg_finfo_gtrgm_compress(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_compress_0)
 }
@@ -259,6 +262,21 @@ func F_pg_finfo_pg_dearmor(m *base.Module) int32 {
 }
 func F_pg_finfo_pgp_armor_headers(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_pgp_armor_headers_0)
+}
+func F_pg_finfo_seg_cmp(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_cmp_0)
+}
+func F_pg_finfo_seg_ge(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_ge_0)
+}
+func F_pg_finfo_seg_over_left(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_over_left_0)
+}
+func F_pg_finfo_seg_right(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_right_0)
+}
+func F_pg_finfo_seg_same(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_seg_same_0)
 }
 func F_pg_finfo_show_trgm(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_show_trgm_0)

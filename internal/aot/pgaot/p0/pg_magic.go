@@ -11,6 +11,9 @@ func F_Pg_magic_func_euc_cn_and_mic(m *base.Module) int32 {
 func F_Pg_magic_func_euc_kr_and_mic(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_euc_kr_and_mic_0)
 }
+func F_Pg_magic_func_seg(m *base.Module) int32 {
+	return int32(_a_F_Pg_magic_func_seg_0)
+}
 func F_Pg_magic_func_utf8_and_big5(m *base.Module) int32 {
 	return int32(_a_F_Pg_magic_func_utf8_and_big5_0)
 }

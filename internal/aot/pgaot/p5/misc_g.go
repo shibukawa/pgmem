@@ -22141,3 +22141,47 @@ func F_gistunionsubkey(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		}
 	}
 }
+func F_gseg_picksplit_item_cmp(m *base.Module, l0 int32, l1 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v6 float32
+	_ = v6
+	var v7 float32
+	_ = v7
+	var v10 int32
+	_ = v10
+	v6 = *(*float32)(unsafe.Add(mBase, uint32(l0)))
+	v7 = *(*float32)(unsafe.Add(mBase, uint32(l1)))
+	if base.F32_lt(v6, v7) != 0 {
+		v10 = int32(-1)
+	} else {
+		v10 = base.F32_ne(v6, v7)
+	}
+	return v10
+}
+func F_gseg_same(m *base.Module, l0 int32) int32 {
+	mBase := m.M
+	_ = mBase
+	var v4 int32
+	_ = v4
+	var v5 int32
+	_ = v5
+	var v6 int32
+	_ = v6
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+	v9 = F_DirectFunctionCall2Coll(m, int32(_a_F_gseg_same_0), int32(0), v5, v4)
+	mBase = m.M
+	v12 = m.ExcPending
+	if v12 != 0 {
+		return int32(0)
+	} else {
+		*(*uint8)(unsafe.Add(mBase, uint32(v6))) = uint8(base.B2i32(v9 != int32(0)))
+		return v6
+	}
+}

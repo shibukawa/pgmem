@@ -224,6 +224,9 @@ func F_pg_finfo_gin_trgm_consistent(m *base.Module) int32 {
 func F_pg_finfo_gist_translate_cmptype_btree(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gist_translate_cmptype_btree_0)
 }
+func F_pg_finfo_gseg_picksplit(m *base.Module) int32 {
+	return int32(_a_F_pg_finfo_gseg_picksplit_0)
+}
 func F_pg_finfo_gtrgm_consistent(m *base.Module) int32 {
 	return int32(_a_F_pg_finfo_gtrgm_consistent_0)
 }

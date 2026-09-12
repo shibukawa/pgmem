@@ -4098,6 +4098,12 @@ func F_copy_intArrayType(m *base.Module, l0 int32) int32
 func F_resize_intArrayType(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_isort github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_isort
 func F_isort(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_restore github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_restore
+func F_restore(m *base.Module, l0 int32, l1 float32, l2 int32) int32
+//go:linkname F_seg_yyensure_buffer_stack github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_seg_yyensure_buffer_stack
+func F_seg_yyensure_buffer_stack(m *base.Module, l0 int32)
+//go:linkname F_seg_yy_scan_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_scan_bytes
+func F_seg_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
