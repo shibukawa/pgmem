@@ -10,7 +10,7 @@ func F_check_multixact_offset_buffers(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v5
 	var v8 int32
 	_ = v8
-	v5 = F_check_slru_buffers(m, int32(134694), l0)
+	v5 = F_check_slru_buffers(m, int32(134835), l0)
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return int32(0)
@@ -50,7 +50,7 @@ func F_multixact_twophase_recover(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	if v7 != 0 {
 		return
 	} else {
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[143]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[152]))
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 		*(*int32)(unsafe.Add(mBase, uint32(v9+v6<<(uint(int32(2))%32)))) = v13
 		return

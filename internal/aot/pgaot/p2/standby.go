@@ -8,13 +8,13 @@ import (
 func F_StandbyDeadLockHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[795])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[799])) = int32(1)
 	return
 }
 func F_StandbyTimeoutHandler(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	*(*int32)(unsafe.Add(mBase, _consts[796])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[800])) = int32(1)
 	return
 }
 func F_standby_redo(m *base.Module, l0 int32) {
@@ -135,7 +135,7 @@ func F_standby_redo(m *base.Module, l0 int32) {
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[51]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[55]))
 	if v15 == int32(0) {
 		goto L1
 	} else {
@@ -316,7 +316,7 @@ L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+4)) = v45
 	*(*int32)(unsafe.Add(mBase, uint32(v48))) = v44
-	F_errmsg_internal(m, int32(47274), v48)
+	F_errmsg_internal(m, int32(47317), v48)
 	mBase = m.M
 	v65 = m.ExcPending
 	if v65 != 0 {
@@ -329,7 +329,7 @@ L20:
 	goto L21
 L21:
 	;
-	v72 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+	v72 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 	v78 = F_hash_search(m, v72, v48+int32(44), int32(1), v48+int32(15))
 	mBase = m.M
 	v79 = m.ExcPending
@@ -340,7 +340,7 @@ L21:
 	}
 L22:
 	;
-	F_errfinish(m, int32(490681), int32(1000), int32(316679))
+	F_errfinish(m, int32(491839), int32(1000), int32(317180))
 	mBase = m.M
 	v70 = m.ExcPending
 	if v70 != 0 {
@@ -372,7 +372,7 @@ L27:
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+36)) = v44
 	v87 = *(*int32)(unsafe.Add(mBase, uint32(v48)+44))
 	*(*int32)(unsafe.Add(mBase, uint32(v48)+32)) = v87
-	v90 = *(*int32)(unsafe.Add(mBase, _consts[794]))
+	v90 = *(*int32)(unsafe.Add(mBase, _consts[798]))
 	v96 = F_hash_search(m, v90, v48+int32(32), int32(1), v48+int32(15))
 	mBase = m.M
 	v97 = m.ExcPending
@@ -417,7 +417,7 @@ L32:
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v21
-	F_errmsg_internal(m, int32(52176), v12)
+	F_errmsg_internal(m, int32(52219), v12)
 	mBase = m.M
 	v138 = m.ExcPending
 	if v138 != 0 {
@@ -427,7 +427,7 @@ L33:
 	}
 L34:
 	;
-	F_errfinish(m, int32(490681), int32(1219), int32(241995))
+	F_errfinish(m, int32(491839), int32(1219), int32(242289))
 	mBase = m.M
 	v143 = m.ExcPending
 	if v143 != 0 {

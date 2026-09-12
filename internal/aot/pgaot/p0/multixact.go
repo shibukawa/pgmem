@@ -42,13 +42,13 @@ func F_find_multixact_start(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v41
 	var v46 int32
 	_ = v46
-	F_SimpleLruWriteAll(m, int32(4383860))
+	F_SimpleLruWriteAll(m, int32(4384148))
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
 		return int32(0)
 	} else {
-		F_SimpleLruWriteAll(m, int32(4383940))
+		F_SimpleLruWriteAll(m, int32(4384228))
 		mBase = m.M
 		v15 = m.ExcPending
 		if v15 != 0 {
@@ -56,14 +56,14 @@ func F_find_multixact_start(m *base.Module, l0 int32, l1 int32) int32 {
 		} else {
 			v18 = int32(base.Ui32(l0) >> (uint(int32(11)) % 32))
 			v19 = base.I64_extend_i32_u(v18)
-			v20 = F_SimpleLruDoesPhysicalPageExist(m, int32(4383860), v19)
+			v20 = F_SimpleLruDoesPhysicalPageExist(m, int32(4384148), v19)
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
 				return int32(0)
 			} else {
 				if v20 != 0 {
-					v23 = F_SimpleLruReadPage_ReadOnly(m, int32(4383860), v19, l0)
+					v23 = F_SimpleLruReadPage_ReadOnly(m, int32(4384148), v19, l0)
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {

@@ -11,6 +11,6 @@ func F_assign_locale_monetary(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[1305])) = uint8(v4)
+	*(*uint8)(unsafe.Add(mBase, _consts[1315])) = uint8(v4)
 	return
 }

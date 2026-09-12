@@ -91,7 +91,7 @@ L5:
 	}
 L6:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(28)
+	*(*int32)(unsafe.Add(mBase, _consts[159])) = int32(28)
 	return int32(0)
 L7:
 	;
@@ -264,7 +264,7 @@ L35:
 	goto L6
 L36:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(37)
+	*(*int32)(unsafe.Add(mBase, _consts[159])) = int32(37)
 	return int32(0)
 L37:
 	;
@@ -276,7 +276,7 @@ L37:
 	}
 L38:
 	;
-	v139 = F__emscripten_memcpy_bulkmem(m, l1, int32(553737), int32(9))
+	v139 = F__emscripten_memcpy_bulkmem(m, l1, int32(554944), int32(9))
 	mBase = m.M
 	goto L40
 L40:
@@ -612,7 +612,7 @@ L27:
 	goto L1
 L28:
 	;
-	F_s_lock(m, v25, int32(493839), int32(246), int32(214525))
+	F_s_lock(m, v25, int32(495018), int32(246), int32(214750))
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -672,7 +672,7 @@ L37:
 	goto L38
 L38:
 	;
-	v115 = *(*int32)(unsafe.Add(mBase, _consts[96]))
+	v115 = *(*int32)(unsafe.Add(mBase, _consts[100]))
 	v119 = F_WaitLatch(m, v115, int32(33), int32(0), int32(134217764))
 	mBase = m.M
 	v120 = m.ExcPending
@@ -683,7 +683,7 @@ L38:
 	}
 L39:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _consts[96]))
+	v122 = *(*int32)(unsafe.Add(mBase, _consts[100]))
 	*(*int32)(unsafe.Add(mBase, uint32(v122))) = int32(0)
 	goto L40
 L40:

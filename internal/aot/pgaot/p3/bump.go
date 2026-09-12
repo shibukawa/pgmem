@@ -27,14 +27,14 @@ func F_BumpGetChunkSpace(m *base.Module, l0 int32) int32 {
 	if v11 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(418184)
-		F_errmsg_internal(m, int32(209216), v4)
+		*(*int32)(unsafe.Add(mBase, uint32(v4))) = int32(418937)
+		F_errmsg_internal(m, int32(209441), v4)
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
 			return int32(0)
 		} else {
-			F_errfinish(m, int32(494078), int32(651), int32(418223))
+			F_errfinish(m, int32(495257), int32(651), int32(418976))
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {

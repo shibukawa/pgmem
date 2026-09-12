@@ -941,7 +941,7 @@ L60:
 	v199 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v83)+26)))
 	*(*uint16)(unsafe.Add(mBase, uint32(v151))) = uint16(v199)
 	v202 = int32(1)
-	v206 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152<<(uint(v202)%32))+uint32(_consts[1182]))))
+	v206 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v152<<(uint(v202)%32))+uint32(_consts[1191]))))
 	v207 = base.I32_div_u_s(v151-v118, v206)
 	*(*uint16)(unsafe.Add(mBase, uint32(v83)+26)) = uint16(v207)
 	v209 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v83)+24)))

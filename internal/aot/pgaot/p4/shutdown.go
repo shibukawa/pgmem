@@ -106,9 +106,9 @@ func F_ShutdownXLOG(m *base.Module, l0 int32, l1 int32) {
 	_ = v149
 	var v150 int32
 	_ = v150
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[283]))
-	*(*int32)(unsafe.Add(mBase, _consts[173])) = v7
-	v12 = int32(*(*uint8)(unsafe.Add(mBase, _consts[284])))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[292]))
+	*(*int32)(unsafe.Add(mBase, _consts[182])) = v7
+	v12 = int32(*(*uint8)(unsafe.Add(mBase, _consts[293])))
 	if v12 != 0 {
 		goto L1
 	} else {
@@ -144,7 +144,7 @@ L5:
 	}
 L6:
 	;
-	F_errmsg(m, int32(243852), int32(0))
+	F_errmsg(m, int32(244146), int32(0))
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
@@ -158,7 +158,7 @@ L7:
 L8:
 	;
 	v26 = int32(0)
-	v28 = *(*int32)(unsafe.Add(mBase, _consts[273]))
+	v28 = *(*int32)(unsafe.Add(mBase, _consts[282]))
 	if v26 < v28 {
 		goto L11
 	} else {
@@ -166,7 +166,7 @@ L8:
 	}
 L9:
 	;
-	F_errfinish(m, int32(496314), int32(6655), int32(534221))
+	F_errfinish(m, int32(497508), int32(6655), int32(535428))
 	mBase = m.M
 	v25 = m.ExcPending
 	if v25 != 0 {
@@ -187,7 +187,7 @@ L12:
 L13:
 	;
 	v68 = int32(0)
-	v70 = *(*int32)(unsafe.Add(mBase, _consts[273]))
+	v70 = *(*int32)(unsafe.Add(mBase, _consts[282]))
 	if v70 <= v68 {
 		goto L25
 	} else {
@@ -195,7 +195,7 @@ L13:
 	}
 L14:
 	;
-	v36 = *(*int32)(unsafe.Add(mBase, _consts[285]))
+	v36 = *(*int32)(unsafe.Add(mBase, _consts[294]))
 	v39 = v36 + v32*int32(96)
 	v41 = v39 + int32(164)
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)))
@@ -211,7 +211,7 @@ L15:
 	goto L13
 L16:
 	;
-	F_s_lock(m, v41, int32(493749), int32(3805), int32(330261))
+	F_s_lock(m, v41, int32(494928), int32(3805), int32(330781))
 	mBase = m.M
 	v51 = m.ExcPending
 	if v51 != 0 {
@@ -250,7 +250,7 @@ L21:
 L22:
 	;
 	v60 = v32 + int32(1)
-	v62 = *(*int32)(unsafe.Add(mBase, _consts[273]))
+	v62 = *(*int32)(unsafe.Add(mBase, _consts[282]))
 	if v60 < v62 {
 		v32 = v60
 		goto L14
@@ -265,7 +265,7 @@ L24:
 	goto L15
 L25:
 	;
-	v122 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+	v122 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 	if v122 != int32(1) {
 		goto L39
 	} else {
@@ -277,7 +277,7 @@ L26:
 	goto L27
 L27:
 	;
-	v78 = *(*int32)(unsafe.Add(mBase, _consts[285]))
+	v78 = *(*int32)(unsafe.Add(mBase, _consts[294]))
 	v81 = v78 + v74*int32(96)
 	v83 = v81 + int32(164)
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)))
@@ -292,7 +292,7 @@ L28:
 	goto L25
 L29:
 	;
-	F_s_lock(m, v83, int32(493749), int32(3833), int32(330280))
+	F_s_lock(m, v83, int32(494928), int32(3833), int32(330800))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -319,7 +319,7 @@ L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v83))) = int32(0)
 	v113 = v74 + int32(1)
-	v115 = *(*int32)(unsafe.Add(mBase, _consts[273]))
+	v115 = *(*int32)(unsafe.Add(mBase, _consts[282]))
 	if v113 < v115 {
 		v74 = v113
 		goto L27
@@ -348,7 +348,7 @@ L35:
 	}
 L36:
 	;
-	v107 = *(*int32)(unsafe.Add(mBase, _consts[273]))
+	v107 = *(*int32)(unsafe.Add(mBase, _consts[282]))
 	if int32(0) < v107 {
 		v74 = v100
 		goto L27
@@ -363,7 +363,7 @@ L38:
 	goto L28
 L39:
 	;
-	v139 = *(*int32)(unsafe.Add(mBase, _consts[286]))
+	v139 = *(*int32)(unsafe.Add(mBase, _consts[295]))
 	if int32(0) < v139 {
 		goto L43
 	} else {
@@ -371,10 +371,10 @@ L39:
 	}
 L40:
 	;
-	v127 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v127 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v127)+316))
 	v129 = int32(2)
-	*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(base.B2i32(v128 != v129))
+	*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(base.B2i32(v128 != v129))
 	if v128 == v129 {
 		goto L39
 	} else {

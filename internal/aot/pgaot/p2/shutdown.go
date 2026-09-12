@@ -84,7 +84,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 	_ = v123
 	var v127 int32
 	_ = v127
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[794]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[798]))
 	if v7 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, _consts[2]))
 		v13 = F_LWLockAcquire(m, v9+int32(512), int32(0))
@@ -93,7 +93,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 		if v14 != 0 {
 			return
 		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, _consts[193]))
+			v16 = *(*int32)(unsafe.Add(mBase, _consts[197]))
 			v19 = F_errstart(m, int32(11), int32(0))
 			mBase = m.M
 			v20 = m.ExcPending
@@ -101,13 +101,13 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 				return
 			} else {
 				if v19 != 0 {
-					F_errmsg_internal(m, int32(173213), int32(0))
+					F_errmsg_internal(m, int32(173364), int32(0))
 					mBase = m.M
 					v24 = m.ExcPending
 					if v24 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(490691), int32(5045), int32(335822))
+						F_errfinish(m, int32(491849), int32(5045), int32(336342))
 						mBase = m.M
 						v29 = m.ExcPending
 						if v29 != 0 {
@@ -115,7 +115,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(0)
 							*(*int64)(unsafe.Add(mBase, uint32(v16)+12)) = int64(0)
-							v35 = *(*int32)(unsafe.Add(mBase, _consts[139]))
+							v35 = *(*int32)(unsafe.Add(mBase, _consts[143]))
 							v36 = *(*int64)(unsafe.Add(mBase, uint32(v35)+8))
 							v38 = v36 - int64(1)
 							if base.Ui64(v38) < base.Ui64(int64(3)) {
@@ -141,7 +141,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 							*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v58
 							v60 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
 							*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v60 + int64(1)
-							v65 = *(*int32)(unsafe.Add(mBase, _consts[193]))
+							v65 = *(*int32)(unsafe.Add(mBase, _consts[197]))
 							*(*int32)(unsafe.Add(mBase, uint32(v65)+24)) = int32(0)
 							v69 = *(*int32)(unsafe.Add(mBase, _consts[2]))
 							F_LWLockRelease(m, v69+int32(512))
@@ -156,14 +156,14 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 								if v75 != 0 {
 									return
 								} else {
-									v77 = *(*int32)(unsafe.Add(mBase, _consts[794]))
+									v77 = *(*int32)(unsafe.Add(mBase, _consts[798]))
 									F_hash_destroy(m, v77)
 									mBase = m.M
 									v79 = m.ExcPending
 									if v79 != 0 {
 										return
 									} else {
-										v81 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+										v81 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 										F_hash_destroy(m, v81)
 										mBase = m.M
 										v83 = m.ExcPending
@@ -171,19 +171,19 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 											return
 										} else {
 											v85 = int32(0)
-											*(*int32)(unsafe.Add(mBase, _consts[773])) = v85
-											*(*int32)(unsafe.Add(mBase, _consts[794])) = v85
+											*(*int32)(unsafe.Add(mBase, _consts[777])) = v85
+											*(*int32)(unsafe.Add(mBase, _consts[798])) = v85
 											v90 = m.G0
 											v92 = v90 - int32(16)
 											m.G0 = v92
-											v95 = *(*int32)(unsafe.Add(mBase, _consts[185]))
+											v95 = *(*int32)(unsafe.Add(mBase, _consts[189]))
 											v99 = F_LWLockAcquire(m, v95+int32(584), v85)
 											mBase = m.M
 											v100 = m.ExcPending
 											if v100 != 0 {
 												return
 											} else {
-												v102 = *(*int32)(unsafe.Add(mBase, _consts[185]))
+												v102 = *(*int32)(unsafe.Add(mBase, _consts[189]))
 												v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+612))
 												v104 = int32(0)
 												*(*int32)(unsafe.Add(mBase, uint32(v102)+612)) = v104
@@ -205,10 +205,10 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 														} else {
 															*(*int64)(unsafe.Add(mBase, uint32(v92)+8)) = int64(73746443898191872)
 															*(*int32)(unsafe.Add(mBase, uint32(v92)+4)) = v103
-															v119 = *(*int32)(unsafe.Add(mBase, _consts[743]))
+															v119 = *(*int32)(unsafe.Add(mBase, _consts[747]))
 															*(*int32)(unsafe.Add(mBase, uint32(v92))) = v119
-															v123 = *(*int32)(unsafe.Add(mBase, _consts[185]))
-															F_LockRefindAndRelease(m, int32(1611336), v123, v92, int32(7), int32(0))
+															v123 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+															F_LockRefindAndRelease(m, int32(1612536), v123, v92, int32(7), int32(0))
 															mBase = m.M
 															v127 = m.ExcPending
 															if v127 != 0 {
@@ -230,7 +230,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(0)
 					*(*int64)(unsafe.Add(mBase, uint32(v16)+12)) = int64(0)
-					v35 = *(*int32)(unsafe.Add(mBase, _consts[139]))
+					v35 = *(*int32)(unsafe.Add(mBase, _consts[143]))
 					v36 = *(*int64)(unsafe.Add(mBase, uint32(v35)+8))
 					v38 = v36 - int64(1)
 					if base.Ui64(v38) < base.Ui64(int64(3)) {
@@ -256,7 +256,7 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 					*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v58
 					v60 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
 					*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v60 + int64(1)
-					v65 = *(*int32)(unsafe.Add(mBase, _consts[193]))
+					v65 = *(*int32)(unsafe.Add(mBase, _consts[197]))
 					*(*int32)(unsafe.Add(mBase, uint32(v65)+24)) = int32(0)
 					v69 = *(*int32)(unsafe.Add(mBase, _consts[2]))
 					F_LWLockRelease(m, v69+int32(512))
@@ -271,14 +271,14 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 						if v75 != 0 {
 							return
 						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, _consts[794]))
+							v77 = *(*int32)(unsafe.Add(mBase, _consts[798]))
 							F_hash_destroy(m, v77)
 							mBase = m.M
 							v79 = m.ExcPending
 							if v79 != 0 {
 								return
 							} else {
-								v81 = *(*int32)(unsafe.Add(mBase, _consts[773]))
+								v81 = *(*int32)(unsafe.Add(mBase, _consts[777]))
 								F_hash_destroy(m, v81)
 								mBase = m.M
 								v83 = m.ExcPending
@@ -286,19 +286,19 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 									return
 								} else {
 									v85 = int32(0)
-									*(*int32)(unsafe.Add(mBase, _consts[773])) = v85
-									*(*int32)(unsafe.Add(mBase, _consts[794])) = v85
+									*(*int32)(unsafe.Add(mBase, _consts[777])) = v85
+									*(*int32)(unsafe.Add(mBase, _consts[798])) = v85
 									v90 = m.G0
 									v92 = v90 - int32(16)
 									m.G0 = v92
-									v95 = *(*int32)(unsafe.Add(mBase, _consts[185]))
+									v95 = *(*int32)(unsafe.Add(mBase, _consts[189]))
 									v99 = F_LWLockAcquire(m, v95+int32(584), v85)
 									mBase = m.M
 									v100 = m.ExcPending
 									if v100 != 0 {
 										return
 									} else {
-										v102 = *(*int32)(unsafe.Add(mBase, _consts[185]))
+										v102 = *(*int32)(unsafe.Add(mBase, _consts[189]))
 										v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+612))
 										v104 = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v102)+612)) = v104
@@ -320,10 +320,10 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 												} else {
 													*(*int64)(unsafe.Add(mBase, uint32(v92)+8)) = int64(73746443898191872)
 													*(*int32)(unsafe.Add(mBase, uint32(v92)+4)) = v103
-													v119 = *(*int32)(unsafe.Add(mBase, _consts[743]))
+													v119 = *(*int32)(unsafe.Add(mBase, _consts[747]))
 													*(*int32)(unsafe.Add(mBase, uint32(v92))) = v119
-													v123 = *(*int32)(unsafe.Add(mBase, _consts[185]))
-													F_LockRefindAndRelease(m, int32(1611336), v123, v92, int32(7), int32(0))
+													v123 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+													F_LockRefindAndRelease(m, int32(1612536), v123, v92, int32(7), int32(0))
 													mBase = m.M
 													v127 = m.ExcPending
 													if v127 != 0 {

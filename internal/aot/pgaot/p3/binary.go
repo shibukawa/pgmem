@@ -20,7 +20,7 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[700])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[709])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -34,13 +34,13 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(411116), int32(0))
+				F_errmsg(m, int32(411869), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491132), int32(46), int32(433683))
+					F_errfinish(m, int32(492290), int32(46), int32(434463))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -55,7 +55,7 @@ func F_binary_upgrade_set_next_pg_tablespace_oid(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1017])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1026])) = v25
 		return int32(0)
 	}
 }
@@ -74,7 +74,7 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[700])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[709])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -88,13 +88,13 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(411116), int32(0))
+				F_errmsg(m, int32(411869), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491132), int32(57), int32(433495))
+					F_errfinish(m, int32(492290), int32(57), int32(434275))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -109,7 +109,7 @@ func F_binary_upgrade_set_next_pg_type_oid(m *base.Module, l0 int32) int32 {
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1018])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1027])) = v25
 		return int32(0)
 	}
 }
@@ -128,7 +128,7 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 	_ = v23
 	var v25 int32
 	_ = v25
-	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[700])))
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, _consts[709])))
 	if v3 == int32(0) {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
@@ -142,13 +142,13 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 			if v14 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(411116), int32(0))
+				F_errmsg(m, int32(411869), int32(0))
 				mBase = m.M
 				v18 = m.ExcPending
 				if v18 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491132), int32(156), int32(409573))
+					F_errfinish(m, int32(492290), int32(156), int32(410326))
 					mBase = m.M
 					v23 = m.ExcPending
 					if v23 != 0 {
@@ -163,7 +163,7 @@ func F_binary_upgrade_set_next_toast_relfilenode(m *base.Module, l0 int32) int32
 		}
 	} else {
 		v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		*(*int32)(unsafe.Add(mBase, _consts[1019])) = v25
+		*(*int32)(unsafe.Add(mBase, _consts[1028])) = v25
 		return int32(0)
 	}
 }

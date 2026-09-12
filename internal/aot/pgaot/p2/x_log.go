@@ -95,14 +95,14 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 	v13 = v11 - int32(16)
 	m.G0 = v13
 	v16 = int64(base.Ui64(v1) >> (uint(int64(13)) % 64))
-	v18 = *(*int64)(unsafe.Add(mBase, _consts[173]))
+	v18 = *(*int64)(unsafe.Add(mBase, _consts[177]))
 	if v16 == v18 {
-		v21 = *(*int32)(unsafe.Add(mBase, _consts[174]))
+		v21 = *(*int32)(unsafe.Add(mBase, _consts[178]))
 		v134 = v21 + base.I32_wrap_i64(v1)&int32(8191)
 		m.G0 = v13 + int32(16)
 		return v134
 	} else {
-		v27 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+		v27 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 		v28 = *(*int32)(unsafe.Add(mBase, uint32(v27)+300))
 		v29 = *(*int32)(unsafe.Add(mBase, uint32(v27)+304))
 		v33 = base.I64_rem_u_s(v16, base.I64_extend_i32_s(v29+int32(1)))
@@ -122,7 +122,7 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 				case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14:
 					v76 = v1
 				case 15:
-					v68 = *(*int32)(unsafe.Add(mBase, _consts[176]))
+					v68 = *(*int32)(unsafe.Add(mBase, _consts[180]))
 					if base.Ui64(v1&base.I64_extend_i32_s(v68-int32(1))) < base.Ui64(int64(8192)) {
 						v75 = v1 - int64(40)
 					} else {
@@ -130,7 +130,7 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 					}
 					v76 = v75
 				default:
-					v57 = *(*int32)(unsafe.Add(mBase, _consts[176]))
+					v57 = *(*int32)(unsafe.Add(mBase, _consts[180]))
 					if base.Ui64(int64(8192)) < base.Ui64(v1&base.I64_extend_i32_s(v57-int32(1))) {
 						v64 = v1 - int64(24)
 					} else {
@@ -139,8 +139,8 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 					v76 = v64
 				}
 			}
-			v78 = *(*int32)(unsafe.Add(mBase, _consts[177]))
-			v80 = int32(*(*uint8)(unsafe.Add(mBase, _consts[178])))
+			v78 = *(*int32)(unsafe.Add(mBase, _consts[181]))
+			v80 = int32(*(*uint8)(unsafe.Add(mBase, _consts[182])))
 			if v80 != 0 {
 				F_LWLockUpdateVar(m, v78+int32(896), v78+int32(912), v76)
 				mBase = m.M
@@ -154,7 +154,7 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 					if v101 != 0 {
 						return int32(0)
 					} else {
-						v103 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+						v103 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 						v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)+300))
 						v107 = v104 + v34<<(uint(int32(3))%32)
 						v108 = *(*int64)(unsafe.Add(mBase, uint32(v107)))
@@ -169,13 +169,13 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 								*(*uint32)(unsafe.Add(mBase, uint32(v13)+4)) = uint32(v1)
 								v145 = int64(base.Ui64(v1) >> (uint(int64(32)) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v13))) = uint32(v145)
-								F_errmsg_internal(m, int32(512277), v13)
+								F_errmsg_internal(m, int32(513484), v13)
 								mBase = m.M
 								v149 = m.ExcPending
 								if v149 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496314), int32(1712), int32(226124))
+									F_errfinish(m, int32(497508), int32(1712), int32(226390))
 									mBase = m.M
 									v154 = m.ExcPending
 									if v154 != 0 {
@@ -188,11 +188,11 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 								}
 							}
 						} else {
-							*(*int64)(unsafe.Add(mBase, _consts[173])) = v16
-							v119 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+							*(*int64)(unsafe.Add(mBase, _consts[177])) = v16
+							v119 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 							v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+296))
 							v123 = v120 + v34<<(uint(int32(13))%32)
-							*(*int32)(unsafe.Add(mBase, _consts[174])) = v123
+							*(*int32)(unsafe.Add(mBase, _consts[178])) = v123
 							v134 = v123 + base.I32_wrap_i64(v41)
 							m.G0 = v13 + int32(16)
 							return v134
@@ -200,7 +200,7 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 					}
 				}
 			} else {
-				v90 = *(*int32)(unsafe.Add(mBase, _consts[179]))
+				v90 = *(*int32)(unsafe.Add(mBase, _consts[183]))
 				v93 = v78 + v90<<(uint(int32(7))%32)
 				F_LWLockUpdateVar(m, v93, v93+int32(16), v76)
 				mBase = m.M
@@ -214,7 +214,7 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 					if v101 != 0 {
 						return int32(0)
 					} else {
-						v103 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+						v103 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 						v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)+300))
 						v107 = v104 + v34<<(uint(int32(3))%32)
 						v108 = *(*int64)(unsafe.Add(mBase, uint32(v107)))
@@ -229,13 +229,13 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 								*(*uint32)(unsafe.Add(mBase, uint32(v13)+4)) = uint32(v1)
 								v145 = int64(base.Ui64(v1) >> (uint(int64(32)) % 64))
 								*(*uint32)(unsafe.Add(mBase, uint32(v13))) = uint32(v145)
-								F_errmsg_internal(m, int32(512277), v13)
+								F_errmsg_internal(m, int32(513484), v13)
 								mBase = m.M
 								v149 = m.ExcPending
 								if v149 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(496314), int32(1712), int32(226124))
+									F_errfinish(m, int32(497508), int32(1712), int32(226390))
 									mBase = m.M
 									v154 = m.ExcPending
 									if v154 != 0 {
@@ -248,11 +248,11 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 								}
 							}
 						} else {
-							*(*int64)(unsafe.Add(mBase, _consts[173])) = v16
-							v119 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+							*(*int64)(unsafe.Add(mBase, _consts[177])) = v16
+							v119 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 							v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+296))
 							v123 = v120 + v34<<(uint(int32(13))%32)
-							*(*int32)(unsafe.Add(mBase, _consts[174])) = v123
+							*(*int32)(unsafe.Add(mBase, _consts[178])) = v123
 							v134 = v123 + base.I32_wrap_i64(v41)
 							m.G0 = v13 + int32(16)
 							return v134
@@ -261,11 +261,11 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 				}
 			}
 		} else {
-			*(*int64)(unsafe.Add(mBase, _consts[173])) = v16
-			v119 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+			*(*int64)(unsafe.Add(mBase, _consts[177])) = v16
+			v119 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 			v120 = *(*int32)(unsafe.Add(mBase, uint32(v119)+296))
 			v123 = v120 + v34<<(uint(int32(13))%32)
-			*(*int32)(unsafe.Add(mBase, _consts[174])) = v123
+			*(*int32)(unsafe.Add(mBase, _consts[178])) = v123
 			v134 = v123 + base.I32_wrap_i64(v41)
 			m.G0 = v13 + int32(16)
 			return v134
@@ -297,8 +297,8 @@ func F_XLogArchiveCleanup(m *base.Module, l0 int32) {
 	v5 = v3 - int32(1056)
 	m.G0 = v5
 	*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+20)) = int32(371551)
-	v16 = F_pg_snprintf(m, v5+int32(32), int32(1024), int32(175301), v5+int32(16))
+	*(*int32)(unsafe.Add(mBase, uint32(v5)+20)) = int32(372195)
+	v16 = F_pg_snprintf(m, v5+int32(32), int32(1024), int32(175452), v5+int32(16))
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -307,9 +307,9 @@ func F_XLogArchiveCleanup(m *base.Module, l0 int32) {
 		v19 = v5 + int32(32)
 		v20 = F_unlink(m, v19)
 		mBase = m.M
-		*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(22892)
+		*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(22905)
 		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		v28 = F_pg_snprintf(m, v19, int32(1024), int32(175301), v5)
+		v28 = F_pg_snprintf(m, v19, int32(1024), int32(175452), v5)
 		mBase = m.M
 		v29 = m.ExcPending
 		if v29 != 0 {
@@ -579,9 +579,9 @@ func F_XLogFlush(m *base.Module, l0 int64) {
 	v14 = m.G0
 	v16 = v14 - int32(48)
 	m.G0 = v16
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)+308))
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[180]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[184]))
 	if v22 < int32(0) {
 		goto L4
 	} else {
@@ -593,7 +593,7 @@ L1:
 	return
 L2:
 	;
-	v44 = *(*int64)(unsafe.Add(mBase, _consts[181]))
+	v44 = *(*int64)(unsafe.Add(mBase, _consts[185]))
 	if base.Ui64(v1) <= base.Ui64(v44) {
 		goto L1
 	} else {
@@ -611,7 +611,7 @@ L3:
 	}
 L4:
 	;
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[182])))
+	v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[186])))
 	if v26 == int32(1) {
 		goto L7
 	} else {
@@ -631,7 +631,7 @@ L7:
 	;
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v19)+316))
 	v32 = base.B2i32(v30 != int32(2))
-	*(*uint8)(unsafe.Add(mBase, _consts[182])) = uint8(v32)
+	*(*uint8)(unsafe.Add(mBase, _consts[186])) = uint8(v32)
 	if v30 != int32(2) {
 		goto L3
 	} else {
@@ -642,7 +642,7 @@ L8:
 	goto L9
 L9:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[180])) = int32(1)
+	*(*int32)(unsafe.Add(mBase, _consts[184])) = int32(1)
 	goto L2
 L10:
 	;
@@ -658,18 +658,18 @@ L13:
 	goto L1
 L14:
 	;
-	v46 = int32(4483812)
+	v46 = int32(4484100)
 	v48 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v48 + int32(1)
 	v64 = v1
 	goto L16
 L15:
 	;
-	v477 = int32(4483812)
+	v477 = int32(4484100)
 	v479 = *(*int32)(unsafe.Add(mBase, _consts[7]))
 	v480 = int32(1)
 	*(*int32)(unsafe.Add(mBase, _consts[7])) = v479 - v480
-	v485 = int32(*(*uint8)(unsafe.Add(mBase, _consts[182])))
+	v485 = int32(*(*uint8)(unsafe.Add(mBase, _consts[186])))
 	if v485 == v480 {
 		goto L99
 	} else {
@@ -677,17 +677,17 @@ L15:
 	}
 L16:
 	;
-	v65 = int32(4384720)
-	v66 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v65 = int32(4385008)
+	v66 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v67 = *(*int64)(unsafe.Add(mBase, uint32(v66)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v66)+280)) = v67
-	v69 = int32(4384760)
-	*(*int64)(unsafe.Add(mBase, _consts[181])) = v67
-	v72 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v69 = int32(4385048)
+	*(*int64)(unsafe.Add(mBase, _consts[185])) = v67
+	v72 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v73 = *(*int64)(unsafe.Add(mBase, uint32(v72)+272))
 	*(*int64)(unsafe.Add(mBase, uint32(v72)+272)) = v73
-	*(*int64)(unsafe.Add(mBase, _consts[183])) = v73
-	v78 = *(*int64)(unsafe.Add(mBase, _consts[181]))
+	*(*int64)(unsafe.Add(mBase, _consts[187])) = v73
+	v78 = *(*int64)(unsafe.Add(mBase, _consts[185]))
 	if base.Ui64(v1) <= base.Ui64(v78) {
 		goto L15
 	} else {
@@ -695,17 +695,17 @@ L16:
 	}
 L17:
 	;
-	v308 = int32(4384720)
-	v309 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v308 = int32(4385008)
+	v309 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v310 = *(*int64)(unsafe.Add(mBase, uint32(v309)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v309)+280)) = v310
-	v312 = int32(4384760)
-	*(*int64)(unsafe.Add(mBase, _consts[181])) = v310
-	v315 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v312 = int32(4385048)
+	*(*int64)(unsafe.Add(mBase, _consts[185])) = v310
+	v315 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v316 = *(*int64)(unsafe.Add(mBase, uint32(v315)+272))
 	*(*int64)(unsafe.Add(mBase, uint32(v315)+272)) = v316
-	*(*int64)(unsafe.Add(mBase, _consts[183])) = v316
-	v321 = *(*int64)(unsafe.Add(mBase, _consts[181]))
+	*(*int64)(unsafe.Add(mBase, _consts[187])) = v316
+	v321 = *(*int64)(unsafe.Add(mBase, _consts[185]))
 	if base.Ui64(v321) < base.Ui64(v1) {
 		goto L74
 	} else {
@@ -713,7 +713,7 @@ L17:
 	}
 L18:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v81 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+440))
 	*(*int32)(unsafe.Add(mBase, uint32(v81)+440)) = int32(1)
 	if v82 != 0 {
@@ -723,8 +723,8 @@ L18:
 	}
 L19:
 	;
-	v86 = *(*int32)(unsafe.Add(mBase, _consts[175]))
-	F_s_lock(m, v86+int32(440), int32(496314), int32(2843), int32(321265))
+	v86 = *(*int32)(unsafe.Add(mBase, _consts[179]))
+	F_s_lock(m, v86+int32(440), int32(497508), int32(2843), int32(321785))
 	mBase = m.M
 	v93 = m.ExcPending
 	if v93 != 0 {
@@ -737,7 +737,7 @@ L20:
 	goto L21
 L21:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v95 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	*(*int32)(unsafe.Add(mBase, uint32(v95)+440)) = int32(0)
 	v98 = *(*int64)(unsafe.Add(mBase, uint32(v95)+184))
 	if base.Ui64(v98) < base.Ui64(v64) {
@@ -770,7 +770,7 @@ L26:
 	;
 	v104 = *(*int32)(unsafe.Add(mBase, _consts[2]))
 	v106 = v104 + int32(1024)
-	v108 = *(*int32)(unsafe.Add(mBase, _consts[184]))
+	v108 = *(*int32)(unsafe.Add(mBase, _consts[188]))
 	if v108 < int32(200) {
 		goto L28
 	} else {
@@ -786,10 +786,10 @@ L27:
 	}
 L28:
 	;
-	v112 = *(*int32)(unsafe.Add(mBase, _consts[185]))
-	v113 = int32(4483804)
-	v115 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-	*(*int32)(unsafe.Add(mBase, _consts[186])) = v115 + int32(1)
+	v112 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+	v113 = int32(4484092)
+	v115 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	*(*int32)(unsafe.Add(mBase, _consts[190])) = v115 + int32(1)
 	v119 = *(*int32)(unsafe.Add(mBase, uint32(v106)+4))
 	v121 = v119
 	goto L31
@@ -879,13 +879,13 @@ L43:
 	goto L44
 L44:
 	;
-	v263 = int32(4410812)
-	v264 = *(*int32)(unsafe.Add(mBase, _consts[184]))
+	v263 = int32(4411100)
+	v264 = *(*int32)(unsafe.Add(mBase, _consts[188]))
 	v266 = v264 << (uint(int32(3)) % 32)
-	*(*int32)(unsafe.Add(mBase, uint32(v266)+uint32(_consts[187]))) = v106
+	*(*int32)(unsafe.Add(mBase, uint32(v266)+uint32(_consts[191]))) = v106
 	v271 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[184])) = v264 + v271
-	*(*int32)(unsafe.Add(mBase, uint32(v266)+uint32(_consts[188]))) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[188])) = v264 + v271
+	*(*int32)(unsafe.Add(mBase, uint32(v266)+uint32(_consts[192]))) = int32(0)
 	v305 = v271
 	goto L27
 L45:
@@ -953,7 +953,7 @@ L56:
 	goto L47
 L57:
 	;
-	v182 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+	v182 = *(*int32)(unsafe.Add(mBase, _consts[193]))
 	v183 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v106))))
 	*(*int32)(unsafe.Add(mBase, uint32(v182))) = v183 | int32(16777216)
 	v189 = int32(0)
@@ -982,7 +982,7 @@ L60:
 	}
 L61:
 	;
-	v205 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+	v205 = *(*int32)(unsafe.Add(mBase, _consts[193]))
 	v206 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v205))) = v206
 	if v206 < v189 {
@@ -1002,9 +1002,9 @@ L64:
 	goto L65
 L65:
 	;
-	v241 = int32(4483804)
-	v243 = *(*int32)(unsafe.Add(mBase, _consts[186]))
-	*(*int32)(unsafe.Add(mBase, _consts[186])) = v243 - int32(1)
+	v241 = int32(4484092)
+	v243 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	*(*int32)(unsafe.Add(mBase, _consts[190])) = v243 - int32(1)
 	v305 = int32(0)
 	goto L27
 L66:
@@ -1027,7 +1027,7 @@ L69:
 	goto L44
 L70:
 	;
-	F_errmsg_internal(m, int32(281595), int32(0))
+	F_errmsg_internal(m, int32(282013), int32(0))
 	mBase = m.M
 	v286 = m.ExcPending
 	if v286 != 0 {
@@ -1037,7 +1037,7 @@ L70:
 	}
 L71:
 	;
-	F_errfinish(m, int32(495859), int32(1425), int32(103325))
+	F_errfinish(m, int32(497038), int32(1425), int32(103438))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -1055,7 +1055,7 @@ L73:
 	goto L17
 L74:
 	;
-	v324 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v324 = *(*int32)(unsafe.Add(mBase, _consts[194]))
 	if v324 <= int32(0) {
 		v434 = v101
 		goto L77
@@ -1092,7 +1092,7 @@ L77:
 	}
 L78:
 	;
-	v328 = int32(*(*uint8)(unsafe.Add(mBase, _consts[191])))
+	v328 = int32(*(*uint8)(unsafe.Add(mBase, _consts[195])))
 	if v328 != int32(1) {
 		v434 = v101
 		goto L77
@@ -1102,7 +1102,7 @@ L78:
 L79:
 	;
 	v331 = int32(0)
-	v334 = *(*int32)(unsafe.Add(mBase, _consts[192]))
+	v334 = *(*int32)(unsafe.Add(mBase, _consts[196]))
 	if v334 == v331 {
 		v414 = int32(1)
 		goto L80
@@ -1119,7 +1119,7 @@ L80:
 	}
 L81:
 	;
-	v338 = *(*int32)(unsafe.Add(mBase, _consts[193]))
+	v338 = *(*int32)(unsafe.Add(mBase, _consts[197]))
 	v339 = *(*int32)(unsafe.Add(mBase, uint32(v338)))
 	if v339 <= int32(0) {
 		v390 = v331
@@ -1133,8 +1133,8 @@ L82:
 	goto L80
 L83:
 	;
-	v345 = *(*int32)(unsafe.Add(mBase, _consts[185]))
-	v347 = *(*int32)(unsafe.Add(mBase, _consts[194]))
+	v345 = *(*int32)(unsafe.Add(mBase, _consts[189]))
+	v347 = *(*int32)(unsafe.Add(mBase, _consts[198]))
 	v352 = v331
 	v357 = int32(0)
 	goto L84
@@ -1215,7 +1215,7 @@ L93:
 	goto L85
 L94:
 	;
-	v418 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v418 = *(*int32)(unsafe.Add(mBase, _consts[194]))
 	F_pg_usleep(m, v418)
 	mBase = m.M
 	v420 = m.ExcPending
@@ -1246,10 +1246,10 @@ L98:
 	goto L15
 L99:
 	;
-	v490 = *(*int32)(unsafe.Add(mBase, _consts[175]))
+	v490 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v491 = *(*int32)(unsafe.Add(mBase, uint32(v490)+316))
 	v492 = int32(2)
-	*(*uint8)(unsafe.Add(mBase, _consts[182])) = uint8(base.B2i32(v491 != v492))
+	*(*uint8)(unsafe.Add(mBase, _consts[186])) = uint8(base.B2i32(v491 != v492))
 	v497 = base.B2i32(v491 == v492)
 	goto L101
 L100:
@@ -1258,7 +1258,7 @@ L100:
 	goto L101
 L101:
 	;
-	v499 = int32(*(*uint8)(unsafe.Add(mBase, _consts[195])))
+	v499 = int32(*(*uint8)(unsafe.Add(mBase, _consts[199])))
 	if v499 != int32(1) {
 		goto L102
 	} else {
@@ -1266,7 +1266,7 @@ L101:
 	}
 L102:
 	;
-	v513 = *(*int64)(unsafe.Add(mBase, _consts[181]))
+	v513 = *(*int64)(unsafe.Add(mBase, _consts[185]))
 	if base.Ui64(v1) <= base.Ui64(v513) {
 		goto L1
 	} else {
@@ -1275,8 +1275,8 @@ L102:
 L103:
 	;
 	v503 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _consts[195])) = uint8(v503)
-	v506 = *(*int32)(unsafe.Add(mBase, _consts[196]))
+	*(*uint8)(unsafe.Add(mBase, _consts[199])) = uint8(v503)
+	v506 = *(*int32)(unsafe.Add(mBase, _consts[200]))
 	if v506 <= v503 {
 		goto L102
 	} else {
@@ -1307,7 +1307,7 @@ L106:
 	}
 L107:
 	;
-	v520 = *(*int64)(unsafe.Add(mBase, _consts[181]))
+	v520 = *(*int64)(unsafe.Add(mBase, _consts[185]))
 	*(*uint32)(unsafe.Add(mBase, uint32(v16)+12)) = uint32(v520)
 	*(*uint32)(unsafe.Add(mBase, uint32(v16)+4)) = uint32(v1)
 	v523 = int64(32)
@@ -1315,7 +1315,7 @@ L107:
 	*(*uint32)(unsafe.Add(mBase, uint32(v16))) = uint32(v524)
 	v527 = int64(base.Ui64(v520) >> (uint(v523) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v16)+8)) = uint32(v527)
-	F_errmsg_internal(m, int32(512515), v16)
+	F_errmsg_internal(m, int32(513722), v16)
 	mBase = m.M
 	v531 = m.ExcPending
 	if v531 != 0 {
@@ -1325,7 +1325,7 @@ L107:
 	}
 L108:
 	;
-	F_errfinish(m, int32(496314), int32(2942), int32(321265))
+	F_errfinish(m, int32(497508), int32(2942), int32(321785))
 	mBase = m.M
 	v536 = m.ExcPending
 	if v536 != 0 {
@@ -1378,7 +1378,7 @@ func F_XLogPrefetcherComputeStats(m *base.Module, l0 int32) {
 	}
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+112))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[237]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[241]))
 	v18 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+64)) = v18
 	*(*int32)(unsafe.Add(mBase, uint32(v17)+56)) = v13
@@ -1511,13 +1511,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 										*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 										v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 										*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-										F_errmsg_internal(m, int32(513365), v11)
+										F_errmsg_internal(m, int32(514572), v11)
 										mBase = m.M
 										v81 = m.ExcPending
 										if v81 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(492154), int32(800), int32(372296))
+											F_errfinish(m, int32(493333), int32(800), int32(372940))
 											mBase = m.M
 											v86 = m.ExcPending
 											if v86 != 0 {
@@ -1580,13 +1580,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 											v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-											F_errmsg_internal(m, int32(513365), v11)
+											F_errmsg_internal(m, int32(514572), v11)
 											mBase = m.M
 											v81 = m.ExcPending
 											if v81 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(492154), int32(800), int32(372296))
+												F_errfinish(m, int32(493333), int32(800), int32(372940))
 												mBase = m.M
 												v86 = m.ExcPending
 												if v86 != 0 {
@@ -1649,13 +1649,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(513365), v11)
+												F_errmsg_internal(m, int32(514572), v11)
 												mBase = m.M
 												v81 = m.ExcPending
 												if v81 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(492154), int32(800), int32(372296))
+													F_errfinish(m, int32(493333), int32(800), int32(372940))
 													mBase = m.M
 													v86 = m.ExcPending
 													if v86 != 0 {
@@ -1723,13 +1723,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(513365), v11)
+													F_errmsg_internal(m, int32(514572), v11)
 													mBase = m.M
 													v81 = m.ExcPending
 													if v81 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(492154), int32(800), int32(372296))
+														F_errfinish(m, int32(493333), int32(800), int32(372940))
 														mBase = m.M
 														v86 = m.ExcPending
 														if v86 != 0 {
@@ -1805,13 +1805,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 											v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-											F_errmsg_internal(m, int32(513365), v11)
+											F_errmsg_internal(m, int32(514572), v11)
 											mBase = m.M
 											v81 = m.ExcPending
 											if v81 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(492154), int32(800), int32(372296))
+												F_errfinish(m, int32(493333), int32(800), int32(372940))
 												mBase = m.M
 												v86 = m.ExcPending
 												if v86 != 0 {
@@ -1874,13 +1874,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(513365), v11)
+												F_errmsg_internal(m, int32(514572), v11)
 												mBase = m.M
 												v81 = m.ExcPending
 												if v81 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(492154), int32(800), int32(372296))
+													F_errfinish(m, int32(493333), int32(800), int32(372940))
 													mBase = m.M
 													v86 = m.ExcPending
 													if v86 != 0 {
@@ -1943,13 +1943,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(513365), v11)
+													F_errmsg_internal(m, int32(514572), v11)
 													mBase = m.M
 													v81 = m.ExcPending
 													if v81 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(492154), int32(800), int32(372296))
+														F_errfinish(m, int32(493333), int32(800), int32(372940))
 														mBase = m.M
 														v86 = m.ExcPending
 														if v86 != 0 {
@@ -2017,13 +2017,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 														*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 														v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 														*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-														F_errmsg_internal(m, int32(513365), v11)
+														F_errmsg_internal(m, int32(514572), v11)
 														mBase = m.M
 														v81 = m.ExcPending
 														if v81 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(492154), int32(800), int32(372296))
+															F_errfinish(m, int32(493333), int32(800), int32(372940))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -2107,13 +2107,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(513365), v11)
+												F_errmsg_internal(m, int32(514572), v11)
 												mBase = m.M
 												v81 = m.ExcPending
 												if v81 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(492154), int32(800), int32(372296))
+													F_errfinish(m, int32(493333), int32(800), int32(372940))
 													mBase = m.M
 													v86 = m.ExcPending
 													if v86 != 0 {
@@ -2176,13 +2176,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(513365), v11)
+													F_errmsg_internal(m, int32(514572), v11)
 													mBase = m.M
 													v81 = m.ExcPending
 													if v81 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(492154), int32(800), int32(372296))
+														F_errfinish(m, int32(493333), int32(800), int32(372940))
 														mBase = m.M
 														v86 = m.ExcPending
 														if v86 != 0 {
@@ -2245,13 +2245,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 														*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 														v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 														*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-														F_errmsg_internal(m, int32(513365), v11)
+														F_errmsg_internal(m, int32(514572), v11)
 														mBase = m.M
 														v81 = m.ExcPending
 														if v81 != 0 {
 															return
 														} else {
-															F_errfinish(m, int32(492154), int32(800), int32(372296))
+															F_errfinish(m, int32(493333), int32(800), int32(372940))
 															mBase = m.M
 															v86 = m.ExcPending
 															if v86 != 0 {
@@ -2319,13 +2319,13 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 															*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
 															v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
 															*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-															F_errmsg_internal(m, int32(513365), v11)
+															F_errmsg_internal(m, int32(514572), v11)
 															mBase = m.M
 															v81 = m.ExcPending
 															if v81 != 0 {
 																return
 															} else {
-																F_errfinish(m, int32(492154), int32(800), int32(372296))
+																F_errfinish(m, int32(493333), int32(800), int32(372940))
 																mBase = m.M
 																v86 = m.ExcPending
 																if v86 != 0 {
@@ -2838,12 +2838,12 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[233]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[237]))
 	v15 = v12 + l0*int32(8260)
 	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15))))
 	if v16 != 0 {
-		v18 = *(*int32)(unsafe.Add(mBase, _consts[234]))
-		v20 = *(*int32)(unsafe.Add(mBase, _consts[235]))
+		v18 = *(*int32)(unsafe.Add(mBase, _consts[238]))
+		v20 = *(*int32)(unsafe.Add(mBase, _consts[239]))
 		if v20 <= v18 {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -2851,23 +2851,23 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			if v65 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(503289), int32(0))
+				F_errmsg_internal(m, int32(504496), int32(0))
 				mBase = m.M
 				v69 = m.ExcPending
 				if v69 != 0 {
 					return
 				} else {
-					v71 = *(*int32)(unsafe.Add(mBase, _consts[234]))
+					v71 = *(*int32)(unsafe.Add(mBase, _consts[238]))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v71
-					v74 = *(*int32)(unsafe.Add(mBase, _consts[235]))
+					v74 = *(*int32)(unsafe.Add(mBase, _consts[239]))
 					*(*int32)(unsafe.Add(mBase, uint32(v9)+20)) = v74
-					F_errdetail_internal(m, int32(615183), v9+int32(16))
+					F_errdetail_internal(m, int32(616390), v9+int32(16))
 					mBase = m.M
 					v80 = m.ExcPending
 					if v80 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(491255), int32(428), int32(503478))
+						F_errfinish(m, int32(492424), int32(428), int32(504685))
 						mBase = m.M
 						v85 = m.ExcPending
 						if v85 != 0 {
@@ -2889,7 +2889,7 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v89 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(503289), int32(0))
+					F_errmsg_internal(m, int32(504496), int32(0))
 					mBase = m.M
 					v93 = m.ExcPending
 					if v93 != 0 {
@@ -2900,13 +2900,13 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v94
 						*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = l0
 						*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(65535)
-						F_errdetail_internal(m, int32(579879), v9)
+						F_errdetail_internal(m, int32(581086), v9)
 						mBase = m.M
 						v102 = m.ExcPending
 						if v102 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(491255), int32(433), int32(503478))
+							F_errfinish(m, int32(492424), int32(433), int32(504685))
 							mBase = m.M
 							v107 = m.ExcPending
 							if v107 != 0 {
@@ -2920,8 +2920,8 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				*(*int32)(unsafe.Add(mBase, _consts[234])) = v18 + int32(1)
-				v32 = *(*int32)(unsafe.Add(mBase, _consts[236]))
+				*(*int32)(unsafe.Add(mBase, _consts[238])) = v18 + int32(1)
+				v32 = *(*int32)(unsafe.Add(mBase, _consts[240]))
 				v35 = v32 + v18*int32(12)
 				*(*int32)(unsafe.Add(mBase, uint32(v35)+8)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v35)+4)) = l1
@@ -2942,13 +2942,13 @@ func F_XLogRegisterBufData(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l0
-			F_errmsg_internal(m, int32(245868), v9+int32(32))
+			F_errmsg_internal(m, int32(246162), v9+int32(32))
 			mBase = m.M
 			v56 = m.ExcPending
 			if v56 != 0 {
 				return
 			} else {
-				F_errfinish(m, int32(491255), int32(416), int32(503478))
+				F_errfinish(m, int32(492424), int32(416), int32(504685))
 				mBase = m.M
 				v61 = m.ExcPending
 				if v61 != 0 {

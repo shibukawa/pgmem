@@ -19,7 +19,7 @@ func F_IsToastRelation(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+68))
 	if v5 != int32(99) {
-		v10 = *(*int32)(unsafe.Add(mBase, _consts[127]))
+		v10 = *(*int32)(unsafe.Add(mBase, _consts[136]))
 		v15 = base.B2i32(v10 != int32(0)) & base.B2i32(v5 == v10)
 	} else {
 		v15 = int32(1)

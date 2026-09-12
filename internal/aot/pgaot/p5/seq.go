@@ -186,7 +186,7 @@ func F_seq_desc(m *base.Module, l0 int32, l1 int32) {
 		v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+8))
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v15
 		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v14
-		F_appendStringInfo(m, l0, int32(38740), v7)
+		F_appendStringInfo(m, l0, int32(38783), v7)
 		mBase = m.M
 		v20 = m.ExcPending
 		if v20 != 0 {

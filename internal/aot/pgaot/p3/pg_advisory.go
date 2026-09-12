@@ -33,7 +33,7 @@ func F_pg_advisory_lock_int8(m *base.Module, l0 int32) int32 {
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+8)) = uint32(v9)
 	v14 = int64(base.Ui64(v9) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+4)) = uint32(v14)
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v17
 	v22 = F_LockAcquire(m, v6, int32(7), int32(1), int32(0))
 	mBase = m.M
@@ -70,7 +70,7 @@ func F_pg_advisory_lock_shared_int4(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(34209794)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v8
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v9
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v15
 	v20 = F_LockAcquire(m, v6, int32(5), int32(1), int32(0))
 	mBase = m.M
@@ -110,7 +110,7 @@ func F_pg_advisory_lock_shared_int8(m *base.Module, l0 int32) int32 {
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+8)) = uint32(v9)
 	v14 = int64(base.Ui64(v9) >> (uint(int64(32)) % 64))
 	*(*uint32)(unsafe.Add(mBase, uint32(v6)+4)) = uint32(v14)
-	v17 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+	v17 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v17
 	v22 = F_LockAcquire(m, v6, int32(5), int32(1), int32(0))
 	mBase = m.M
@@ -149,7 +149,7 @@ func F_pg_try_advisory_lock_int4(m *base.Module, l0 int32) int32 {
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = int32(34209794)
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v8
 	*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v9
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 	*(*int32)(unsafe.Add(mBase, uint32(v6))) = v15
 	v18 = int32(1)
 	v20 = F_LockAcquire(m, v6, int32(7), v18, v18)

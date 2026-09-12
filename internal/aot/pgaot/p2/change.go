@@ -31,11 +31,11 @@ func F_ChangeToDataDir(m *base.Module) {
 	v2 = m.G0
 	v4 = v2 - int32(16)
 	m.G0 = v4
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[200]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 	v8 = m.Env.X__syscall_chdir(m, v7)
 	mBase = m.M
 	if base.Ui32(int32(-4095)) <= base.Ui32(v8) {
-		*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(0) - v8
+		*(*int32)(unsafe.Add(mBase, _consts[159])) = int32(0) - v8
 		v16 = int32(-1)
 	} else {
 		v16 = v8
@@ -53,15 +53,15 @@ func F_ChangeToDataDir(m *base.Module) {
 			if v24 != 0 {
 				return
 			} else {
-				v26 = *(*int32)(unsafe.Add(mBase, _consts[200]))
+				v26 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 				*(*int32)(unsafe.Add(mBase, uint32(v4))) = v26
-				F_errmsg(m, int32(296418), v4)
+				F_errmsg(m, int32(296919), v4)
 				mBase = m.M
 				v30 = m.ExcPending
 				if v30 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(491438), int32(468), int32(213168))
+					F_errfinish(m, int32(492607), int32(468), int32(213393))
 					mBase = m.M
 					v35 = m.ExcPending
 					if v35 != 0 {
@@ -392,7 +392,7 @@ L33:
 L34:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v126
-	F_errmsg(m, int32(110823), v11)
+	F_errmsg(m, int32(110936), v11)
 	mBase = m.M
 	v131 = m.ExcPending
 	if v131 != 0 {
@@ -402,7 +402,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(497814), int32(650), int32(284727))
+	F_errfinish(m, int32(499021), int32(650), int32(285176))
 	mBase = m.M
 	v136 = m.ExcPending
 	if v136 != 0 {

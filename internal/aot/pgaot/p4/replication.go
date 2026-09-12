@@ -26,7 +26,7 @@ func F_ReplicationOriginNameForLogicalRep(m *base.Module, l0 int32, l1 int32, l2
 	if l1 != 0 {
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l1
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = l0
-		v15 = F_pg_snprintf(m, l2, int32(64), int32(38407), v7+int32(16))
+		v15 = F_pg_snprintf(m, l2, int32(64), int32(38450), v7+int32(16))
 		mBase = m.M
 		v16 = m.ExcPending
 		if v16 != 0 {
@@ -37,7 +37,7 @@ func F_ReplicationOriginNameForLogicalRep(m *base.Module, l0 int32, l1 int32, l2
 		}
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-		v20 = F_pg_snprintf(m, l2, int32(64), int32(38458), v7)
+		v20 = F_pg_snprintf(m, l2, int32(64), int32(38501), v7)
 		mBase = m.M
 		v21 = m.ExcPending
 		if v21 != 0 {
@@ -55,7 +55,7 @@ func F_ReplicationSlotIndex(m *base.Module, l0 int32) int32 {
 	_ = v3
 	var v6 int32
 	_ = v6
-	v3 = *(*int32)(unsafe.Add(mBase, _consts[844]))
+	v3 = *(*int32)(unsafe.Add(mBase, _consts[853]))
 	v6 = base.I32_div_s(l0-v3, int32(288))
 	return v6
 }
@@ -147,7 +147,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 	v13 = *(*int32)(unsafe.Add(mBase, _consts[86]))
 	v17 = F_LWLockAcquire(m, v13+int32(4608), int32(0))
 	mBase = m.M
@@ -167,7 +167,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 				v43 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 				*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
 				if v43 != 0 {
-					F_s_lock(m, v11, int32(491287), int32(1611), int32(313538))
+					F_s_lock(m, v11, int32(492456), int32(1611), int32(314039))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
@@ -181,7 +181,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 						if v55 != 0 {
 							return
 						} else {
-							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 							v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 							v59 = F_XLogGetLastRemovedSegno(m)
 							mBase = m.M
@@ -198,12 +198,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 									if v68 != 0 {
 										return
 									} else {
-										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 										if v71 == int32(1) {
-											v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+											v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 											v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 											v79 = base.B2i32(v77 != int32(2))
-											*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+											*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 											v81 = v79
 										} else {
 											v81 = int32(0)
@@ -244,13 +244,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-										F_errmsg_internal(m, int32(18887), v8)
+										F_errmsg_internal(m, int32(18900), v8)
 										mBase = m.M
 										v101 = m.ExcPending
 										if v101 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(491287), int32(1622), int32(313538))
+											F_errfinish(m, int32(492456), int32(1622), int32(314039))
 											mBase = m.M
 											v106 = m.ExcPending
 											if v106 != 0 {
@@ -275,7 +275,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 					if v55 != 0 {
 						return
 					} else {
-						v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+						v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 						v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 						v59 = F_XLogGetLastRemovedSegno(m)
 						mBase = m.M
@@ -292,12 +292,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 								if v68 != 0 {
 									return
 								} else {
-									v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+									v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 									if v71 == int32(1) {
-										v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+										v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 										v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 										v79 = base.B2i32(v77 != int32(2))
-										*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+										*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 										v81 = v79
 									} else {
 										v81 = int32(0)
@@ -338,13 +338,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-									F_errmsg_internal(m, int32(18887), v8)
+									F_errmsg_internal(m, int32(18900), v8)
 									mBase = m.M
 									v101 = m.ExcPending
 									if v101 != 0 {
 										return
 									} else {
-										F_errfinish(m, int32(491287), int32(1622), int32(313538))
+										F_errfinish(m, int32(492456), int32(1622), int32(314039))
 										mBase = m.M
 										v106 = m.ExcPending
 										if v106 != 0 {
@@ -362,12 +362,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 				}
 			}
 		} else {
-			v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+			v26 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 			if v26 == int32(1) {
-				v31 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+				v31 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v31)+316))
 				v34 = base.B2i32(v32 != int32(2))
-				*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v34)
+				*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v34)
 				v36 = v34
 			} else {
 				v36 = int32(0)
@@ -383,7 +383,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 					v43 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
 					if v43 != 0 {
-						F_s_lock(m, v11, int32(491287), int32(1611), int32(313538))
+						F_s_lock(m, v11, int32(492456), int32(1611), int32(314039))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -397,7 +397,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 							if v55 != 0 {
 								return
 							} else {
-								v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+								v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 								v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 								v59 = F_XLogGetLastRemovedSegno(m)
 								mBase = m.M
@@ -414,12 +414,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 										if v68 != 0 {
 											return
 										} else {
-											v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+											v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 											if v71 == int32(1) {
-												v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+												v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 												v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 												v79 = base.B2i32(v77 != int32(2))
-												*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+												*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 												v81 = v79
 											} else {
 												v81 = int32(0)
@@ -460,13 +460,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-											F_errmsg_internal(m, int32(18887), v8)
+											F_errmsg_internal(m, int32(18900), v8)
 											mBase = m.M
 											v101 = m.ExcPending
 											if v101 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(491287), int32(1622), int32(313538))
+												F_errfinish(m, int32(492456), int32(1622), int32(314039))
 												mBase = m.M
 												v106 = m.ExcPending
 												if v106 != 0 {
@@ -491,7 +491,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 						if v55 != 0 {
 							return
 						} else {
-							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 							v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 							v59 = F_XLogGetLastRemovedSegno(m)
 							mBase = m.M
@@ -508,12 +508,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 									if v68 != 0 {
 										return
 									} else {
-										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 										if v71 == int32(1) {
-											v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+											v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 											v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 											v79 = base.B2i32(v77 != int32(2))
-											*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+											*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 											v81 = v79
 										} else {
 											v81 = int32(0)
@@ -554,13 +554,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-										F_errmsg_internal(m, int32(18887), v8)
+										F_errmsg_internal(m, int32(18900), v8)
 										mBase = m.M
 										v101 = m.ExcPending
 										if v101 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(491287), int32(1622), int32(313538))
+											F_errfinish(m, int32(492456), int32(1622), int32(314039))
 											mBase = m.M
 											v106 = m.ExcPending
 											if v106 != 0 {
@@ -588,7 +588,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 					v43 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 					*(*int32)(unsafe.Add(mBase, uint32(v11))) = int32(1)
 					if v43 != 0 {
-						F_s_lock(m, v11, int32(491287), int32(1611), int32(313538))
+						F_s_lock(m, v11, int32(492456), int32(1611), int32(314039))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -602,7 +602,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 							if v55 != 0 {
 								return
 							} else {
-								v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+								v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 								v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 								v59 = F_XLogGetLastRemovedSegno(m)
 								mBase = m.M
@@ -619,12 +619,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 										if v68 != 0 {
 											return
 										} else {
-											v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+											v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 											if v71 == int32(1) {
-												v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+												v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 												v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 												v79 = base.B2i32(v77 != int32(2))
-												*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+												*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 												v81 = v79
 											} else {
 												v81 = int32(0)
@@ -665,13 +665,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 											return
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-											F_errmsg_internal(m, int32(18887), v8)
+											F_errmsg_internal(m, int32(18900), v8)
 											mBase = m.M
 											v101 = m.ExcPending
 											if v101 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(491287), int32(1622), int32(313538))
+												F_errfinish(m, int32(492456), int32(1622), int32(314039))
 												mBase = m.M
 												v106 = m.ExcPending
 												if v106 != 0 {
@@ -696,7 +696,7 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 						if v55 != 0 {
 							return
 						} else {
-							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+							v57 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 							v58 = *(*int64)(unsafe.Add(mBase, uint32(v11)+104))
 							v59 = F_XLogGetLastRemovedSegno(m)
 							mBase = m.M
@@ -713,12 +713,12 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 									if v68 != 0 {
 										return
 									} else {
-										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+										v71 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 										if v71 == int32(1) {
-											v76 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+											v76 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 											v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)+316))
 											v79 = base.B2i32(v77 != int32(2))
-											*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v79)
+											*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v79)
 											v81 = v79
 										} else {
 											v81 = int32(0)
@@ -759,13 +759,13 @@ func F_ReplicationSlotReserveWal(m *base.Module) {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v8))) = v11 + int32(24)
-										F_errmsg_internal(m, int32(18887), v8)
+										F_errmsg_internal(m, int32(18900), v8)
 										mBase = m.M
 										v101 = m.ExcPending
 										if v101 != 0 {
 											return
 										} else {
-											F_errfinish(m, int32(491287), int32(1622), int32(313538))
+											F_errfinish(m, int32(492456), int32(1622), int32(314039))
 											mBase = m.M
 											v106 = m.ExcPending
 											if v106 != 0 {
@@ -795,7 +795,7 @@ func F_ReplicationSlotShmemExit(m *base.Module, l0 int32, l1 int32) {
 	_ = v6
 	var v9 int32
 	_ = v9
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 	if v4 != 0 {
 		F_ReplicationSlotRelease(m)
 		mBase = m.M
@@ -909,7 +909,7 @@ L1:
 	return
 L2:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, _consts[843]))
+	v15 = *(*int32)(unsafe.Add(mBase, _consts[852]))
 	if int32(0) < v15 {
 		goto L3
 	} else {
@@ -917,7 +917,7 @@ L2:
 	}
 L3:
 	;
-	v19 = *(*int32)(unsafe.Add(mBase, _consts[844]))
+	v19 = *(*int32)(unsafe.Add(mBase, _consts[853]))
 	v21 = v19
 	v22 = int32(0)
 	v24 = v4
@@ -955,7 +955,7 @@ L7:
 L8:
 	;
 	v65 = v22 + int32(1)
-	v67 = *(*int32)(unsafe.Add(mBase, _consts[843]))
+	v67 = *(*int32)(unsafe.Add(mBase, _consts[852]))
 	if v65 < v67 {
 		v21 = v60
 		v22 = v65
@@ -975,7 +975,7 @@ L9:
 	}
 L10:
 	;
-	F_s_lock(m, v28, int32(491287), int32(1244), int32(526264))
+	F_s_lock(m, v28, int32(492456), int32(1244), int32(527471))
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {
@@ -989,7 +989,7 @@ L11:
 L12:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v28))) = int32(0)
-	v43 = *(*int32)(unsafe.Add(mBase, _consts[844]))
+	v43 = *(*int32)(unsafe.Add(mBase, _consts[853]))
 	v44 = *(*int32)(unsafe.Add(mBase, uint32(v28)+112))
 	if v44 != 0 {
 		v60 = v43
@@ -1083,7 +1083,7 @@ L28:
 	goto L7
 L29:
 	;
-	v82 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v82 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 	v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)+440))
 	*(*int32)(unsafe.Add(mBase, uint32(v82)+440)) = int32(1)
 	if v83 != 0 {
@@ -1093,8 +1093,8 @@ L29:
 	}
 L30:
 	;
-	v87 = *(*int32)(unsafe.Add(mBase, _consts[190]))
-	F_s_lock(m, v87+int32(440), int32(496314), int32(2670), int32(526173))
+	v87 = *(*int32)(unsafe.Add(mBase, _consts[199]))
+	F_s_lock(m, v87+int32(440), int32(497508), int32(2670), int32(527380))
 	mBase = m.M
 	v94 = m.ExcPending
 	if v94 != 0 {
@@ -1107,7 +1107,7 @@ L31:
 	goto L32
 L32:
 	;
-	v96 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v96 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 	*(*int32)(unsafe.Add(mBase, uint32(v96)+440)) = int32(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v96)+224)) = v73
 	return

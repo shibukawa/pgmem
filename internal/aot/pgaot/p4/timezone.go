@@ -40,19 +40,19 @@ func F_checkTimezoneIsUsedForCast(m *base.Module, l0 int32, l1 int32, l2 int32) 
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = l2
 				*(*int32)(unsafe.Add(mBase, uint32(v7))) = l1
-				F_errmsg(m, int32(402690), v7)
+				F_errmsg(m, int32(403349), v7)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return
 				} else {
-					F_errhint(m, int32(561947), int32(0))
+					F_errhint(m, int32(563154), int32(0))
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(498222), int32(3672), int32(78016))
+						F_errfinish(m, int32(499429), int32(3672), int32(78120))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

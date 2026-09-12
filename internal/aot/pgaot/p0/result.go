@@ -54,7 +54,7 @@ func F_ExecGetResultSlotOps(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 			if v32 == int32(0) {
-				return int32(1600612)
+				return int32(1601812)
 			} else {
 				v37 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
 				v39 = v37
@@ -76,7 +76,7 @@ func F_ExecGetResultSlotOps(m *base.Module, l0 int32, l1 int32) int32 {
 		}
 		v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 		if v32 == int32(0) {
-			return int32(1600612)
+			return int32(1601812)
 		} else {
 			v37 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
 			v39 = v37

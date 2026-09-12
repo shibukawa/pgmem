@@ -187,7 +187,7 @@ L12:
 	}
 L13:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[403])))
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v56<<(uint(int32(2))%32))+uint32(_consts[407])))
 	v64 = v63
 	goto L15
 L14:
@@ -311,7 +311,7 @@ L33:
 L34:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-	F_errmsg_internal(m, int32(40595), v12)
+	F_errmsg_internal(m, int32(40638), v12)
 	mBase = m.M
 	v110 = m.ExcPending
 	if v110 != 0 {
@@ -321,7 +321,7 @@ L34:
 	}
 L35:
 	;
-	F_errfinish(m, int32(492711), int32(12179), int32(134447))
+	F_errfinish(m, int32(493890), int32(12179), int32(134588))
 	mBase = m.M
 	v115 = m.ExcPending
 	if v115 != 0 {
@@ -337,7 +337,7 @@ L36:
 L37:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
-	F_errmsg_internal(m, int32(40664), v12+int32(16))
+	F_errmsg_internal(m, int32(40707), v12+int32(16))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -347,7 +347,7 @@ L37:
 	}
 L38:
 	;
-	F_errfinish(m, int32(492711), int32(12182), int32(134447))
+	F_errfinish(m, int32(493890), int32(12182), int32(134588))
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
@@ -426,11 +426,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 		return
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(490520)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = int32(491678)
 		v24 = int32(256)
 		*(*uint16)(unsafe.Add(mBase, uint32(v18)+4)) = uint16(v24)
 		*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(181)
-		v29 = F_SystemFuncName(m, int32(149492))
+		v29 = F_SystemFuncName(m, int32(149643))
 		mBase = m.M
 		v30 = m.ExcPending
 		if v30 != 0 {
@@ -470,11 +470,11 @@ func F_createForeignKeyCheckTriggers(m *base.Module, l0 int32, l1 int32, l2 int3
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v59)+12)) = int32(0)
-						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(490520)
+						*(*int32)(unsafe.Add(mBase, uint32(v59)+8)) = int32(491678)
 						v65 = int32(256)
 						*(*uint16)(unsafe.Add(mBase, uint32(v59)+4)) = uint16(v65)
 						*(*int32)(unsafe.Add(mBase, uint32(v59))) = int32(181)
-						v70 = F_SystemFuncName(m, int32(420795))
+						v70 = F_SystemFuncName(m, int32(421548))
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -564,7 +564,7 @@ func F_has_foreign_data_wrapper_privilege_id(m *base.Module, l0 int32) int32 {
 	} else {
 		v16 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
-		v20 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+		v20 = *(*int32)(unsafe.Add(mBase, _consts[280]))
 		v22 = F_convert_any_priv_string(m, v12, int32(1640672))
 		mBase = m.M
 		v23 = m.ExcPending
@@ -638,7 +638,7 @@ func F_has_foreign_data_wrapper_privilege_name(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+			v13 = *(*int32)(unsafe.Add(mBase, _consts[280]))
 			v15 = F_text_to_cstring(m, v5)
 			mBase = m.M
 			v16 = m.ExcPending

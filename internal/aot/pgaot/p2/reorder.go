@@ -1023,7 +1023,7 @@ L14:
 L15:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v41)+176))
-	v52 = *(*int32)(unsafe.Add(mBase, _consts[61]))
+	v52 = *(*int32)(unsafe.Add(mBase, _consts[65]))
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+24))
 	v55 = base.B2i32(v53 != int32(0))
 	goto L16
@@ -1036,7 +1036,7 @@ L16:
 	}
 L17:
 	;
-	F_BeginInternalSubTransaction(m, int32(26484))
+	F_BeginInternalSubTransaction(m, int32(26497))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -1347,7 +1347,7 @@ func F_ReorderBufferReplay(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int6
 					if v32 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[121])) = int32(0)
+						*(*int32)(unsafe.Add(mBase, _consts[125])) = int32(0)
 						return
 					}
 				}

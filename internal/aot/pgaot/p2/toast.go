@@ -13,7 +13,7 @@ func F_IsToastNamespace(m *base.Module, l0 int32) int32 {
 	var v13 int32
 	_ = v13
 	if l0 != int32(99) {
-		v8 = *(*int32)(unsafe.Add(mBase, _consts[274]))
+		v8 = *(*int32)(unsafe.Add(mBase, _consts[278]))
 		v13 = base.B2i32(v8 != int32(0)) & base.B2i32(l0 == v8)
 	} else {
 		v13 = int32(1)
@@ -130,7 +130,7 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 			v40 = int32(base.Ui32(v34)>>(uint(int32(2))%32)) - int32(4)
 		}
 	}
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[13])))
+	v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[17])))
 	if l1 != 0 {
 		v43 = l1
 	} else {
@@ -150,19 +150,19 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 			if v56 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(442588), int32(0))
+				F_errmsg(m, int32(443368), int32(0))
 				mBase = m.M
 				v60 = m.ExcPending
 				if v60 != 0 {
 					return int32(0)
 				} else {
-					F_errdetail(m, int32(561990), int32(0))
+					F_errdetail(m, int32(563197), int32(0))
 					mBase = m.M
 					v64 = m.ExcPending
 					if v64 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(494626), int32(142), int32(285453))
+						F_errfinish(m, int32(495805), int32(142), int32(285902))
 						mBase = m.M
 						v69 = m.ExcPending
 						if v69 != 0 {
@@ -184,13 +184,13 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v9))) = base.I32_extend8_s(v43)
-			F_errmsg_internal(m, int32(499728), v9)
+			F_errmsg_internal(m, int32(500935), v9)
 			mBase = m.M
 			v78 = m.ExcPending
 			if v78 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(492268), int32(75), int32(285432))
+				F_errfinish(m, int32(493447), int32(75), int32(285881))
 				mBase = m.M
 				v83 = m.ExcPending
 				if v83 != 0 {
@@ -227,7 +227,7 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 				v114 = int32(base.Ui32(v108)>>(uint(int32(2))%32)) - int32(4)
 			}
 		}
-		v116 = *(*int32)(unsafe.Add(mBase, _consts[14]))
+		v116 = *(*int32)(unsafe.Add(mBase, _consts[18]))
 		v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
 		if v114 < v117 {
 			v147 = v3
@@ -428,13 +428,13 @@ func F_toast_fetch_datum(m *base.Module, l0 int32) int32 {
 		if v50 != 0 {
 			return int32(0)
 		} else {
-			F_errmsg_internal(m, int32(150131), int32(0))
+			F_errmsg_internal(m, int32(150282), int32(0))
 			mBase = m.M
 			v54 = m.ExcPending
 			if v54 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(491051), int32(351), int32(285524))
+				F_errfinish(m, int32(492209), int32(351), int32(285973))
 				mBase = m.M
 				v59 = m.ExcPending
 				if v59 != 0 {
@@ -455,13 +455,13 @@ func F_toast_fetch_datum(m *base.Module, l0 int32) int32 {
 			if v50 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg_internal(m, int32(150131), int32(0))
+				F_errmsg_internal(m, int32(150282), int32(0))
 				mBase = m.M
 				v54 = m.ExcPending
 				if v54 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491051), int32(351), int32(285524))
+					F_errfinish(m, int32(492209), int32(351), int32(285973))
 					mBase = m.M
 					v59 = m.ExcPending
 					if v59 != 0 {

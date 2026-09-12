@@ -187,8 +187,8 @@ func F_ExecChooseHashTableSize(m *base.Module, l0 float64, l1 int32, l2 int32, l
 	var v333 int32
 	_ = v333
 	v23 = (l1 + int32(7)) & int32(-8)
-	v27 = *(*float64)(unsafe.Add(mBase, _consts[528]))
-	v29 = *(*int32)(unsafe.Add(mBase, _consts[523]))
+	v27 = *(*float64)(unsafe.Add(mBase, _consts[537]))
+	v29 = *(*int32)(unsafe.Add(mBase, _consts[532]))
 	v33 = base.F64_mul(base.F64_mul(v27, base.F64_convert_i32_s(v29)), float64(1024))
 	v34 = float64(4.294967295e+09)
 	if base.F64_lt(v33, v34) != 0 {
@@ -429,8 +429,8 @@ L42:
 	}
 L43:
 	;
-	v130 = *(*float64)(unsafe.Add(mBase, _consts[528]))
-	v132 = *(*int32)(unsafe.Add(mBase, _consts[523]))
+	v130 = *(*float64)(unsafe.Add(mBase, _consts[537]))
+	v132 = *(*int32)(unsafe.Add(mBase, _consts[532]))
 	v136 = base.F64_mul(base.F64_mul(v130, base.F64_convert_i32_s(v132)), float64(1024))
 	v137 = float64(4.294967295e+09)
 	if base.F64_lt(v136, v137) != 0 {
@@ -3429,13 +3429,13 @@ func F_hash_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = v19
-				F_errmsg(m, int32(229230), v6)
+				F_errmsg(m, int32(229496), v6)
 				mBase = m.M
 				v23 = m.ExcPending
 				if v23 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(492891), int32(3950), int32(229063))
+					F_errfinish(m, int32(494070), int32(3950), int32(229329))
 					mBase = m.M
 					v28 = m.ExcPending
 					if v28 != 0 {

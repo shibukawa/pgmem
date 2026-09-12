@@ -11,7 +11,7 @@ func F_assign_log_destination(m *base.Module, l0 int32, l1 int32) {
 	var v4 int32
 	_ = v4
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[1099])) = v4
+	*(*int32)(unsafe.Add(mBase, _consts[1108])) = v4
 	return
 }
 func F_check_log_timezone(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
@@ -77,25 +77,25 @@ func F_check_log_timezone(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			} else {
 				if v17 == int32(0) {
 					v22 = *(*int32)(unsafe.Add(mBase, _consts[40]))
-					*(*int32)(unsafe.Add(mBase, _consts[497])) = v22
+					*(*int32)(unsafe.Add(mBase, _consts[506])) = v22
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 					*(*int32)(unsafe.Add(mBase, uint32(v8))) = v25
-					v29 = F_format_elog_string(m, int32(172272), v8)
+					v29 = F_format_elog_string(m, int32(172423), v8)
 					mBase = m.M
 					v30 = m.ExcPending
 					if v30 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, _consts[516])) = v29
+						*(*int32)(unsafe.Add(mBase, _consts[525])) = v29
 						v33 = *(*int32)(unsafe.Add(mBase, _consts[40]))
-						*(*int32)(unsafe.Add(mBase, _consts[497])) = v33
-						v39 = F_format_elog_string(m, int32(585445), int32(0))
+						*(*int32)(unsafe.Add(mBase, _consts[506])) = v33
+						v39 = F_format_elog_string(m, int32(586652), int32(0))
 						mBase = m.M
 						v40 = m.ExcPending
 						if v40 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, _consts[498])) = v39
+							*(*int32)(unsafe.Add(mBase, _consts[507])) = v39
 							v51 = v4
 							m.G0 = v8 + int32(16)
 							return v51

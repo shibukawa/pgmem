@@ -55,12 +55,12 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 	_ = v51
 	var v52 int32
 	_ = v52
-	v4 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+	v4 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 	if v4 == int32(1) {
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+316))
 		v12 = base.B2i32(v10 != int32(2))
-		*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v12)
+		*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v12)
 		v14 = v12
 	} else {
 		v14 = int32(0)
@@ -78,19 +78,19 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(127733), int32(0))
+				F_errmsg(m, int32(127874), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errhint(m, int32(556132), int32(0))
+					F_errhint(m, int32(557339), int32(0))
 					mBase = m.M
 					v31 = m.ExcPending
 					if v31 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(493093), int32(282), int32(244050))
+						F_errfinish(m, int32(494272), int32(282), int32(244344))
 						mBase = m.M
 						v36 = m.ExcPending
 						if v36 != 0 {
@@ -105,15 +105,15 @@ func F_pg_current_wal_lsn(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v39 = int32(4384720)
-		v40 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+		v39 = int32(4385008)
+		v40 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		v41 = *(*int64)(unsafe.Add(mBase, uint32(v40)+280))
 		*(*int64)(unsafe.Add(mBase, uint32(v40)+280)) = v41
-		*(*int64)(unsafe.Add(mBase, _consts[267])) = v41
-		v46 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+		*(*int64)(unsafe.Add(mBase, _consts[276])) = v41
+		v46 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		v47 = *(*int64)(unsafe.Add(mBase, uint32(v46)+272))
 		*(*int64)(unsafe.Add(mBase, uint32(v46)+272)) = v47
-		*(*int64)(unsafe.Add(mBase, _consts[268])) = v47
+		*(*int64)(unsafe.Add(mBase, _consts[277])) = v47
 		v51 = F_Int64GetDatum(m, v47)
 		mBase = m.M
 		v52 = m.ExcPending

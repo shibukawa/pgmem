@@ -558,13 +558,13 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(16384)
-						F_errmsg(m, int32(342596), v10)
+						F_errmsg(m, int32(343116), v10)
 						mBase = m.M
 						v110 = m.ExcPending
 						if v110 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(493984), int32(126), int32(416160))
+							F_errfinish(m, int32(495163), int32(126), int32(416913))
 							mBase = m.M
 							v115 = m.ExcPending
 							if v115 != 0 {

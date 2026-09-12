@@ -57,13 +57,13 @@ func F_get_language_oid(m *base.Module, l0 int32, l1 int32) int32 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(72362), v7)
+						F_errmsg(m, int32(72466), v7)
 						mBase = m.M
 						v27 = m.ExcPending
 						if v27 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(496413), int32(235), int32(433606))
+							F_errfinish(m, int32(497607), int32(235), int32(434386))
 							mBase = m.M
 							v32 = m.ExcPending
 							if v32 != 0 {

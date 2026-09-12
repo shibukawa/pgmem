@@ -382,7 +382,7 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v43
-	F_errmsg(m, int32(709558), v12)
+	F_errmsg(m, int32(710765), v12)
 	mBase = m.M
 	v182 = m.ExcPending
 	if v182 != 0 {
@@ -392,7 +392,7 @@ L48:
 	}
 L49:
 	;
-	F_errfinish(m, int32(495726), int32(1726), int32(328825))
+	F_errfinish(m, int32(496905), int32(1726), int32(329345))
 	mBase = m.M
 	v187 = m.ExcPending
 	if v187 != 0 {
@@ -467,7 +467,7 @@ func F_has_any_column_privilege_name(m *base.Module, l0 int32) int32 {
 		if v12 != 0 {
 			return int32(0)
 		} else {
-			v14 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+			v14 = *(*int32)(unsafe.Add(mBase, _consts[280]))
 			v15 = F_textToQualifiedNameList(m, v6)
 			mBase = m.M
 			v16 = m.ExcPending

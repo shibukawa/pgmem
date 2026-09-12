@@ -130,7 +130,7 @@ func F_AtEOSubXact_SPI(m *base.Module, l0 int32, l1 int32) {
 	_ = v188
 	var v189 int32
 	_ = v189
-	v8 = *(*int32)(unsafe.Add(mBase, _consts[499]))
+	v8 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	if v8 < int32(0) {
 		goto L1
 	} else {
@@ -145,7 +145,7 @@ L1:
 	}
 L2:
 	;
-	v12 = *(*int32)(unsafe.Add(mBase, _consts[500]))
+	v12 = *(*int32)(unsafe.Add(mBase, _consts[509]))
 	v15 = v12 + v8<<(uint(int32(6))%32)
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(v15)+32))
 	if v16 != l1 {
@@ -213,17 +213,17 @@ L11:
 L12:
 	;
 	v30 = *(*int64)(unsafe.Add(mBase, uint32(v15)+48))
-	*(*int64)(unsafe.Add(mBase, _consts[501])) = v30
+	*(*int64)(unsafe.Add(mBase, _consts[510])) = v30
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(v15)+56))
-	*(*int32)(unsafe.Add(mBase, _consts[502])) = v33
+	*(*int32)(unsafe.Add(mBase, _consts[511])) = v33
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v15)+60))
-	*(*int32)(unsafe.Add(mBase, _consts[503])) = v36
-	v38 = int32(4103748)
-	v40 = *(*int32)(unsafe.Add(mBase, _consts[499]))
+	*(*int32)(unsafe.Add(mBase, _consts[512])) = v36
+	v38 = int32(4103972)
+	v40 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	v42 = v40 - int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[499])) = v42
+	*(*int32)(unsafe.Add(mBase, _consts[508])) = v42
 	v45 = int32(0)
-	v47 = *(*int32)(unsafe.Add(mBase, _consts[500]))
+	v47 = *(*int32)(unsafe.Add(mBase, _consts[509]))
 	v52 = base.B2i32(v42 < v45)
 	if v42 < v45 {
 		goto L14
@@ -244,7 +244,7 @@ L15:
 	goto L16
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[208])) = v53
+	*(*int32)(unsafe.Add(mBase, _consts[217])) = v53
 	if v42 < v45 {
 		goto L17
 	} else {
@@ -331,16 +331,16 @@ L28:
 L29:
 	;
 	v78 = *(*int64)(unsafe.Add(mBase, uint32(v63)+48))
-	*(*int64)(unsafe.Add(mBase, _consts[501])) = v78
+	*(*int64)(unsafe.Add(mBase, _consts[510])) = v78
 	v81 = *(*int32)(unsafe.Add(mBase, uint32(v63)+56))
-	*(*int32)(unsafe.Add(mBase, _consts[502])) = v81
+	*(*int32)(unsafe.Add(mBase, _consts[511])) = v81
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v63)+60))
-	*(*int32)(unsafe.Add(mBase, _consts[503])) = v84
-	v86 = int32(4103748)
-	v88 = *(*int32)(unsafe.Add(mBase, _consts[499]))
+	*(*int32)(unsafe.Add(mBase, _consts[512])) = v84
+	v86 = int32(4103972)
+	v88 = *(*int32)(unsafe.Add(mBase, _consts[508]))
 	v90 = v88 - int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[499])) = v90
-	v94 = *(*int32)(unsafe.Add(mBase, _consts[500]))
+	*(*int32)(unsafe.Add(mBase, _consts[508])) = v90
+	v94 = *(*int32)(unsafe.Add(mBase, _consts[509]))
 	v98 = int32(0)
 	if v98 <= v90 {
 		goto L31
@@ -361,7 +361,7 @@ L32:
 	goto L33
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[208])) = v101
+	*(*int32)(unsafe.Add(mBase, _consts[217])) = v101
 	if int32(0) <= v90 {
 		v57 = v90
 		v58 = v94
@@ -401,7 +401,7 @@ L37:
 	}
 L38:
 	;
-	F_errmsg(m, int32(317523), int32(0))
+	F_errmsg(m, int32(318024), int32(0))
 	mBase = m.M
 	v125 = m.ExcPending
 	if v125 != 0 {
@@ -411,7 +411,7 @@ L38:
 	}
 L39:
 	;
-	F_errhint(m, int32(577404), int32(0))
+	F_errhint(m, int32(578611), int32(0))
 	mBase = m.M
 	v129 = m.ExcPending
 	if v129 != 0 {
@@ -421,7 +421,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(495923), int32(532), int32(532244))
+	F_errfinish(m, int32(497102), int32(532), int32(533451))
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -437,7 +437,7 @@ L42:
 	return
 L43:
 	;
-	v142 = *(*int32)(unsafe.Add(mBase, _consts[208]))
+	v142 = *(*int32)(unsafe.Add(mBase, _consts[217]))
 	if v142 == int32(0) {
 		goto L42
 	} else {
@@ -477,7 +477,7 @@ L47:
 	}
 L48:
 	;
-	v153 = *(*int32)(unsafe.Add(mBase, _consts[208]))
+	v153 = *(*int32)(unsafe.Add(mBase, _consts[217]))
 	v154 = v153
 	goto L47
 L49:
@@ -517,7 +517,7 @@ L55:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v160))) = v166
 	v171 = v162 - int32(28)
-	v173 = *(*int32)(unsafe.Add(mBase, _consts[208]))
+	v173 = *(*int32)(unsafe.Add(mBase, _consts[217]))
 	v174 = *(*int32)(unsafe.Add(mBase, uint32(v173)+8))
 	if v171 == v174 {
 		goto L56
@@ -533,7 +533,7 @@ L57:
 	goto L58
 L58:
 	;
-	v179 = *(*int32)(unsafe.Add(mBase, _consts[502]))
+	v179 = *(*int32)(unsafe.Add(mBase, _consts[511]))
 	if v179 == v171 {
 		goto L59
 	} else {
@@ -541,7 +541,7 @@ L58:
 	}
 L59:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[502])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[511])) = int32(0)
 	goto L61
 L60:
 	;

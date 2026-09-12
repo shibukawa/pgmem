@@ -67,14 +67,14 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 	if v12 != 0 {
 		return
 	} else {
-		v15 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+		v15 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 		F_LockSharedObject(m, int32(1262), v15, int32(8))
 		mBase = m.M
 		v18 = m.ExcPending
 		if v18 != 0 {
 			return
 		} else {
-			v21 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+			v21 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 			v22 = F_SearchSysCacheLockedCopy1(m, int32(21), v21)
 			mBase = m.M
 			v23 = m.ExcPending
@@ -162,15 +162,15 @@ func F_SetDatabaseHasLoginEventTriggers(m *base.Module) {
 					if v58 != 0 {
 						return
 					} else {
-						v60 = *(*int32)(unsafe.Add(mBase, _consts[119]))
+						v60 = *(*int32)(unsafe.Add(mBase, _consts[128]))
 						*(*int32)(unsafe.Add(mBase, uint32(v7))) = v60
-						F_errmsg_internal(m, int32(49332), v7)
+						F_errmsg_internal(m, int32(49375), v7)
 						mBase = m.M
 						v64 = m.ExcPending
 						if v64 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(493717), int32(409), int32(134355))
+							F_errfinish(m, int32(494896), int32(409), int32(134496))
 							mBase = m.M
 							v69 = m.ExcPending
 							if v69 != 0 {

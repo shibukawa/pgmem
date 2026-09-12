@@ -535,7 +535,7 @@ L38:
 L39:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v22))) = l0
-	F_errmsg_internal(m, int32(46815), v22)
+	F_errmsg_internal(m, int32(46858), v22)
 	mBase = m.M
 	v202 = m.ExcPending
 	if v202 != 0 {
@@ -545,7 +545,7 @@ L39:
 	}
 L40:
 	;
-	F_errfinish(m, int32(494662), int32(3605), int32(160229))
+	F_errfinish(m, int32(495841), int32(3605), int32(160380))
 	mBase = m.M
 	v207 = m.ExcPending
 	if v207 != 0 {
@@ -571,7 +571,7 @@ L42:
 	}
 L43:
 	;
-	v303 = *(*int32)(unsafe.Add(mBase, _consts[433]))
+	v303 = *(*int32)(unsafe.Add(mBase, _consts[442]))
 	if v303 != 0 {
 		goto L50
 	} else {

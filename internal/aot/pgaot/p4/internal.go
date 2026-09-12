@@ -128,7 +128,7 @@ func F_create_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v72))) = l0
-			v78 = *(*int32)(unsafe.Add(mBase, _consts[173]))
+			v78 = *(*int32)(unsafe.Add(mBase, _consts[182]))
 			*(*int32)(unsafe.Add(mBase, uint32(v72)+4)) = v78
 			v85 = F__emscripten_memset_bulkmem(m, v72+int32(8), base.I32_extend8_s(int32(0)), int32(648))
 			mBase = m.M
@@ -232,13 +232,13 @@ func F_create_internal(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = l1
 			*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(4096)
-			F_errmsg_internal(m, int32(460376), v13)
+			F_errmsg_internal(m, int32(461156), v13)
 			mBase = m.M
 			v190 = m.ExcPending
 			if v190 != 0 {
 				return int32(0)
 			} else {
-				F_errfinish(m, int32(498293), int32(1240), int32(311242))
+				F_errfinish(m, int32(499500), int32(1240), int32(311743))
 				mBase = m.M
 				v195 = m.ExcPending
 				if v195 != 0 {

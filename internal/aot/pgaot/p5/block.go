@@ -252,7 +252,7 @@ func F_BlockRefTableMarkBlockModified(m *base.Module, l0 int32, l1 int32, l2 int
 	v14 = m.G0
 	v16 = v14 - int32(48)
 	m.G0 = v16
-	v18 = int32(4489152)
+	v18 = int32(4489440)
 	v19 = *(*int32)(unsafe.Add(mBase, _consts[9]))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	*(*int32)(unsafe.Add(mBase, _consts[9])) = v21

@@ -111,7 +111,7 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 	if v30 != 0 {
 		return int32(0)
 	} else {
-		v32 = *(*int32)(unsafe.Add(mBase, _consts[414]))
+		v32 = *(*int32)(unsafe.Add(mBase, _consts[423]))
 		v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32))))
 		if v33 == int32(0) {
 			*(*int32)(unsafe.Add(mBase, uint32(v15))) = int32(0)
@@ -132,7 +132,7 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 			} else {
 				v52 = *(*int64)(unsafe.Add(mBase, uint32(v32)+24))
 				*(*int64)(unsafe.Add(mBase, uint32(v19))) = v52
-				v56 = *(*int32)(unsafe.Add(mBase, _consts[141]))
+				v56 = *(*int32)(unsafe.Add(mBase, _consts[150]))
 				v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)))
 				v61 = *(*int32)(unsafe.Add(mBase, uint32(v57+v43*int32(640))+44))
 				if v61 <= int32(0) {
@@ -218,13 +218,13 @@ func F_pg_get_wal_summarizer_state(m *base.Module, l0 int32) int32 {
 					if v118 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg_internal(m, int32(366242), int32(0))
+						F_errmsg_internal(m, int32(366886), int32(0))
 						mBase = m.M
 						v122 = m.ExcPending
 						if v122 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(492736), int32(192), int32(350565))
+							F_errfinish(m, int32(493915), int32(192), int32(351108))
 							mBase = m.M
 							v127 = m.ExcPending
 							if v127 != 0 {

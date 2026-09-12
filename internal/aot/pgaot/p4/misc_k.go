@@ -72,20 +72,20 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 	_ = v85
 	var v86 int64
 	_ = v86
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+440))
-	v12 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+	v12 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+440)) = int32(1)
 	v15 = base.I64_div_u_s(l0, v12)
 	if v10 != 0 {
-		v17 = *(*int32)(unsafe.Add(mBase, _consts[190]))
-		F_s_lock(m, v17+int32(440), int32(496314), int32(2685), int32(526206))
+		v17 = *(*int32)(unsafe.Add(mBase, _consts[199]))
+		F_s_lock(m, v17+int32(440), int32(497508), int32(2685), int32(527413))
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
 			return
 		} else {
-			v26 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+			v26 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 			*(*int32)(unsafe.Add(mBase, uint32(v26)+440)) = int32(0)
 			v29 = *(*int64)(unsafe.Add(mBase, uint32(v26)+224))
 			if v29 == int64(0) {
@@ -94,13 +94,13 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 				if base.Ui64(l0) <= base.Ui64(v29) {
 					v52 = v15
 				} else {
-					v34 = *(*int32)(unsafe.Add(mBase, _consts[262]))
+					v34 = *(*int32)(unsafe.Add(mBase, _consts[271]))
 					v36 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v34))
-					v38 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+					v38 = *(*int32)(unsafe.Add(mBase, _consts[296]))
 					if v38 < int32(0) {
 						v52 = v36
 					} else {
-						v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[288])))
+						v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[297])))
 						if v42 != 0 {
 							v52 = v36
 						} else {
@@ -125,7 +125,7 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 				return
 			} else {
 				if v57 != int64(0) {
-					v62 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+					v62 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 					v63 = base.I64_div_u_s(v57, v62)
 					if base.Ui64(v63) < base.Ui64(v52) {
 						v65 = v63
@@ -136,11 +136,11 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 				} else {
 					v67 = v52
 				}
-				v69 = *(*int32)(unsafe.Add(mBase, _consts[289]))
+				v69 = *(*int32)(unsafe.Add(mBase, _consts[298]))
 				if v69 <= int32(0) {
 					v85 = v67
 				} else {
-					v73 = *(*int32)(unsafe.Add(mBase, _consts[262]))
+					v73 = *(*int32)(unsafe.Add(mBase, _consts[271]))
 					v75 = base.I32_div_s(v73, int32(1048576))
 					v76 = base.I32_div_s(v69, v75)
 					v77 = base.I64_extend_i32_s(v76)
@@ -164,7 +164,7 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 			}
 		}
 	} else {
-		v26 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+		v26 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		*(*int32)(unsafe.Add(mBase, uint32(v26)+440)) = int32(0)
 		v29 = *(*int64)(unsafe.Add(mBase, uint32(v26)+224))
 		if v29 == int64(0) {
@@ -173,13 +173,13 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 			if base.Ui64(l0) <= base.Ui64(v29) {
 				v52 = v15
 			} else {
-				v34 = *(*int32)(unsafe.Add(mBase, _consts[262]))
+				v34 = *(*int32)(unsafe.Add(mBase, _consts[271]))
 				v36 = base.I64_div_u_s(v29, base.I64_extend_i32_s(v34))
-				v38 = *(*int32)(unsafe.Add(mBase, _consts[287]))
+				v38 = *(*int32)(unsafe.Add(mBase, _consts[296]))
 				if v38 < int32(0) {
 					v52 = v36
 				} else {
-					v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[288])))
+					v42 = int32(*(*uint8)(unsafe.Add(mBase, _consts[297])))
 					if v42 != 0 {
 						v52 = v36
 					} else {
@@ -204,7 +204,7 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 			return
 		} else {
 			if v57 != int64(0) {
-				v62 = int64(*(*int32)(unsafe.Add(mBase, _consts[262])))
+				v62 = int64(*(*int32)(unsafe.Add(mBase, _consts[271])))
 				v63 = base.I64_div_u_s(v57, v62)
 				if base.Ui64(v63) < base.Ui64(v52) {
 					v65 = v63
@@ -215,11 +215,11 @@ func F_KeepLogSeg(m *base.Module, l0 int64, l1 int32) {
 			} else {
 				v67 = v52
 			}
-			v69 = *(*int32)(unsafe.Add(mBase, _consts[289]))
+			v69 = *(*int32)(unsafe.Add(mBase, _consts[298]))
 			if v69 <= int32(0) {
 				v85 = v67
 			} else {
-				v73 = *(*int32)(unsafe.Add(mBase, _consts[262]))
+				v73 = *(*int32)(unsafe.Add(mBase, _consts[271]))
 				v75 = base.I32_div_s(v73, int32(1048576))
 				v76 = base.I32_div_s(v69, v75)
 				v77 = base.I64_extend_i32_s(v76)

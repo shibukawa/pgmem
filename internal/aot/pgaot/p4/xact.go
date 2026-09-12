@@ -105,7 +105,7 @@ func F_xactGetCommittedInvalidationMessages(m *base.Module, l0 int32, l1 int32) 
 	var v115 int32
 	_ = v115
 	v3 = int32(0)
-	v7 = *(*int32)(unsafe.Add(mBase, _consts[1367]))
+	v7 = *(*int32)(unsafe.Add(mBase, _consts[1377]))
 	if v7 == v3 {
 		v10 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v10)
@@ -114,7 +114,7 @@ func F_xactGetCommittedInvalidationMessages(m *base.Module, l0 int32, l1 int32) 
 	} else {
 		v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+16)))
 		*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v16)
-		v19 = *(*int32)(unsafe.Add(mBase, _consts[203]))
+		v19 = *(*int32)(unsafe.Add(mBase, _consts[212]))
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
 		v21 = *(*int32)(unsafe.Add(mBase, uint32(v7)+8))
 		v22 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
@@ -130,7 +130,7 @@ func F_xactGetCommittedInvalidationMessages(m *base.Module, l0 int32, l1 int32) 
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l0))) = v37
-			v43 = *(*int32)(unsafe.Add(mBase, _consts[1367]))
+			v43 = *(*int32)(unsafe.Add(mBase, _consts[1377]))
 			v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+28))
 			v45 = *(*int32)(unsafe.Add(mBase, uint32(v43)+20))
 			v46 = v44 - v45
@@ -383,7 +383,7 @@ func F_xact_redo_abort(m *base.Module, l0 int32, l1 int32, l2 int64, l3 int32) {
 	if v86 != 0 {
 		return
 	} else {
-		v88 = *(*int32)(unsafe.Add(mBase, _consts[257]))
+		v88 = *(*int32)(unsafe.Add(mBase, _consts[266]))
 		if v88 == int32(0) {
 			v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 			v92 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))

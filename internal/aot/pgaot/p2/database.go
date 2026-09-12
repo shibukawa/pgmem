@@ -12,7 +12,7 @@ func F_GetDatabaseEncoding(m *base.Module) int32 {
 	_ = v2
 	var v3 int32
 	_ = v3
-	v2 = *(*int32)(unsafe.Add(mBase, _consts[358]))
+	v2 = *(*int32)(unsafe.Add(mBase, _consts[362]))
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(v2)+4))
 	return v3
 }
@@ -25,14 +25,14 @@ func F_SetDatabasePath(m *base.Module, l0 int32) {
 	_ = v5
 	var v6 int32
 	_ = v6
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[870]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[11]))
 	v5 = F_MemoryContextStrdup(m, v4, l0)
 	mBase = m.M
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
 	} else {
-		*(*int32)(unsafe.Add(mBase, _consts[1173])) = v5
+		*(*int32)(unsafe.Add(mBase, _consts[1176])) = v5
 		return
 	}
 }
@@ -171,7 +171,7 @@ L3:
 	}
 L4:
 	;
-	F_appendStringInfoString(m, v17, int32(712615))
+	F_appendStringInfoString(m, v17, int32(713822))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {
@@ -190,7 +190,7 @@ L5:
 L6:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v11
-	F_appendStringInfo(m, v17, int32(712203), v15)
+	F_appendStringInfo(m, v17, int32(713410), v15)
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -203,7 +203,7 @@ L7:
 	goto L8
 L8:
 	;
-	F_appendStringInfoString(m, v17, int32(739920))
+	F_appendStringInfoString(m, v17, int32(741127))
 	mBase = m.M
 	v29 = m.ExcPending
 	if v29 != 0 {
@@ -226,7 +226,7 @@ L10:
 	}
 L11:
 	;
-	v34 = F_query_to_oid_list(m, int32(544792))
+	v34 = F_query_to_oid_list(m, int32(545999))
 	mBase = m.M
 	v35 = m.ExcPending
 	if v35 != 0 {
@@ -236,7 +236,7 @@ L11:
 	}
 L12:
 	;
-	v37 = F_query_to_oid_list(m, int32(544455))
+	v37 = F_query_to_oid_list(m, int32(545662))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -481,7 +481,7 @@ func F_has_database_privilege_name(m *base.Module, l0 int32) int32 {
 		if v11 != 0 {
 			return int32(0)
 		} else {
-			v13 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+			v13 = *(*int32)(unsafe.Add(mBase, _consts[280]))
 			v15 = F_text_to_cstring(m, v5)
 			mBase = m.M
 			v16 = m.ExcPending

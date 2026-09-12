@@ -278,7 +278,7 @@ func F_CheckTargetForConflictsIn(m *base.Module, l0 int32) {
 	v16 = m.G0
 	v18 = v16 - int32(16)
 	m.G0 = v18
-	v21 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
+	v21 = *(*int32)(unsafe.Add(mBase, _consts[1118]))
 	v22 = F_get_hash_value(m, v21, l0)
 	mBase = m.M
 	v23 = m.ExcPending
@@ -304,7 +304,7 @@ L2:
 	}
 L3:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
+	v37 = *(*int32)(unsafe.Add(mBase, _consts[1118]))
 	v38 = int32(0)
 	v40 = F_hash_search_with_hash_value(m, v37, l0, v22, v38, v38)
 	mBase = m.M
@@ -895,7 +895,7 @@ L86:
 	}
 L87:
 	;
-	v375 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
+	v375 = *(*int32)(unsafe.Add(mBase, _consts[1121]))
 	v378 = v316 ^ v22
 	v379 = int32(0)
 	v381 = F_hash_search_with_hash_value(m, v375, v18+int32(8), v378, v379, v379)
@@ -925,7 +925,7 @@ L89:
 	*(*int32)(unsafe.Add(mBase, uint32(v388)+4)) = v389
 	v391 = *(*int32)(unsafe.Add(mBase, uint32(v319)+16))
 	*(*int32)(unsafe.Add(mBase, uint32(v389))) = v391
-	v394 = *(*int32)(unsafe.Add(mBase, _consts[1111]))
+	v394 = *(*int32)(unsafe.Add(mBase, _consts[1121]))
 	v399 = F_hash_search_with_hash_value(m, v394, v18+int32(8), v378, int32(2), int32(0))
 	mBase = m.M
 	v400 = m.ExcPending
@@ -974,7 +974,7 @@ L95:
 	}
 L96:
 	;
-	v408 = *(*int32)(unsafe.Add(mBase, _consts[1108]))
+	v408 = *(*int32)(unsafe.Add(mBase, _consts[1118]))
 	v411 = F_hash_search_with_hash_value(m, v408, v40, v22, int32(2), int32(0))
 	mBase = m.M
 	v412 = m.ExcPending
@@ -1068,7 +1068,7 @@ L110:
 	}
 L111:
 	;
-	v448 = *(*int32)(unsafe.Add(mBase, _consts[1182]))
+	v448 = *(*int32)(unsafe.Add(mBase, _consts[1192]))
 	v451 = F_hash_search_with_hash_value(m, v448, l0, v22, int32(2), int32(0))
 	mBase = m.M
 	v452 = m.ExcPending

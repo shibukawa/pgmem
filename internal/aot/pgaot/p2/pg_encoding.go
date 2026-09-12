@@ -107,7 +107,7 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 				return v65
 			} else {
 				if l2 == int32(0) {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(l3*int32(28))+uint32(_consts[1222])))
+					v22 = *(*int32)(unsafe.Add(mBase, uint32(l3*int32(28))+uint32(_consts[1225])))
 					v23 = m.T0[v22].(func(*base.Module, int32, int32) int32)(m, l0, l1)
 					mBase = m.M
 					v26 = m.ExcPending
@@ -132,7 +132,7 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						}
 					}
 				} else {
-					v33 = *(*int32)(unsafe.Add(mBase, _consts[61]))
+					v33 = *(*int32)(unsafe.Add(mBase, _consts[65]))
 					v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+20))
 					if base.B2i32(v34 == int32(2)) == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
@@ -141,13 +141,13 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 						if v76 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg_internal(m, int32(257077), int32(0))
+							F_errmsg_internal(m, int32(257371), int32(0))
 							mBase = m.M
 							v80 = m.ExcPending
 							if v80 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(492178), int32(388), int32(270274))
+								F_errfinish(m, int32(493357), int32(388), int32(270645))
 								mBase = m.M
 								v85 = m.ExcPending
 								if v85 != 0 {
@@ -180,26 +180,26 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 										return int32(0)
 									} else {
 										if base.Ui32(l2) <= base.Ui32(int32(41)) {
-											v101 = *(*int32)(unsafe.Add(mBase, uint32(l2<<(uint(int32(3))%32))+uint32(_consts[359])))
+											v101 = *(*int32)(unsafe.Add(mBase, uint32(l2<<(uint(int32(3))%32))+uint32(_consts[363])))
 											v102 = v101
 										} else {
-											v102 = int32(740129)
+											v102 = int32(741336)
 										}
 										if base.Ui32(l3) <= base.Ui32(int32(41)) {
-											v111 = *(*int32)(unsafe.Add(mBase, uint32(l3<<(uint(int32(3))%32))+uint32(_consts[359])))
+											v111 = *(*int32)(unsafe.Add(mBase, uint32(l3<<(uint(int32(3))%32))+uint32(_consts[363])))
 											v112 = v111
 										} else {
-											v112 = int32(740129)
+											v112 = int32(741336)
 										}
 										*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v112
 										*(*int32)(unsafe.Add(mBase, uint32(v9))) = v102
-										F_errmsg(m, int32(70997), v9)
+										F_errmsg(m, int32(71101), v9)
 										mBase = m.M
 										v117 = m.ExcPending
 										if v117 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(492178), int32(396), int32(270274))
+											F_errfinish(m, int32(493357), int32(396), int32(270645))
 											mBase = m.M
 											v122 = m.ExcPending
 											if v122 != 0 {
@@ -226,20 +226,20 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 										if v129 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(13891), int32(0))
+											F_errmsg(m, int32(13904), int32(0))
 											mBase = m.M
 											v133 = m.ExcPending
 											if v133 != 0 {
 												return int32(0)
 											} else {
 												*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = l1
-												F_errdetail(m, int32(600940), v9+int32(16))
+												F_errdetail(m, int32(602147), v9+int32(16))
 												mBase = m.M
 												v139 = m.ExcPending
 												if v139 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(492178), int32(412), int32(270274))
+													F_errfinish(m, int32(493357), int32(412), int32(270645))
 													mBase = m.M
 													v144 = m.ExcPending
 													if v144 != 0 {
@@ -287,20 +287,20 @@ func F_pg_do_encoding_conversion(m *base.Module, l0 int32, l1 int32, l2 int32, l
 														if v151 != 0 {
 															return int32(0)
 														} else {
-															F_errmsg(m, int32(13891), int32(0))
+															F_errmsg(m, int32(13904), int32(0))
 															mBase = m.M
 															v155 = m.ExcPending
 															if v155 != 0 {
 																return int32(0)
 															} else {
 																*(*int32)(unsafe.Add(mBase, uint32(v9)+32)) = l1
-																F_errdetail(m, int32(600940), v9+int32(32))
+																F_errdetail(m, int32(602147), v9+int32(32))
 																mBase = m.M
 																v161 = m.ExcPending
 																if v161 != 0 {
 																	return int32(0)
 																} else {
-																	F_errfinish(m, int32(492178), int32(440), int32(270274))
+																	F_errfinish(m, int32(493357), int32(440), int32(270645))
 																	mBase = m.M
 																	v166 = m.ExcPending
 																	if v166 != 0 {

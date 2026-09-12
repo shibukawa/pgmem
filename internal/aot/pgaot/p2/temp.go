@@ -155,7 +155,7 @@ L4:
 L5:
 	;
 	v12 = int32(8)
-	v13 = int32(505639)
+	v13 = int32(506846)
 	goto L9
 L6:
 	;
@@ -260,7 +260,7 @@ L20:
 L21:
 	;
 	v60 = int32(14)
-	v61 = int32(505624)
+	v61 = int32(506831)
 	goto L26
 L22:
 	;
@@ -485,22 +485,22 @@ func F_assign_temp_tablespaces(m *base.Module, l0 int32, l1 int32) {
 	_ = v23
 	if l1 != 0 {
 		v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-		*(*int32)(unsafe.Add(mBase, _consts[405])) = v5
-		*(*int32)(unsafe.Add(mBase, _consts[406])) = l1 + int32(4)
+		*(*int32)(unsafe.Add(mBase, _consts[409])) = v5
+		*(*int32)(unsafe.Add(mBase, _consts[410])) = l1 + int32(4)
 		if int32(2) <= v5 {
-			v19 = F_pg_prng_uint64_range(m, int32(4572656), int64(0), base.I64_extend_i32_u(v5-int32(1)))
+			v19 = F_pg_prng_uint64_range(m, int32(4572944), int64(0), base.I64_extend_i32_u(v5-int32(1)))
 			mBase = m.M
 			v21 = base.I32_wrap_i64(v19)
 		} else {
 			v21 = int32(0)
 		}
-		*(*int32)(unsafe.Add(mBase, _consts[407])) = v21
+		*(*int32)(unsafe.Add(mBase, _consts[411])) = v21
 		return
 	} else {
 		v23 = int32(0)
-		*(*int32)(unsafe.Add(mBase, _consts[405])) = v23
-		*(*int32)(unsafe.Add(mBase, _consts[406])) = v23
-		*(*int32)(unsafe.Add(mBase, _consts[407])) = v23
+		*(*int32)(unsafe.Add(mBase, _consts[409])) = v23
+		*(*int32)(unsafe.Add(mBase, _consts[410])) = v23
+		*(*int32)(unsafe.Add(mBase, _consts[411])) = v23
 		return
 	}
 }
@@ -514,7 +514,7 @@ func F_createTempGistContext(m *base.Module) int32 {
 	var v10 int32
 	_ = v10
 	v2 = *(*int32)(unsafe.Add(mBase, _consts[0]))
-	v7 = F_AllocSetContextCreateInternal(m, v2, int32(59873), int32(0), int32(8192), int32(8388608))
+	v7 = F_AllocSetContextCreateInternal(m, v2, int32(59977), int32(0), int32(8192), int32(8388608))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

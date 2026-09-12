@@ -440,11 +440,11 @@ L15:
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v126 = *(*int32)(unsafe.Add(mBase, uint32(v125)+56))
 	v128 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _consts[143])) = uint8(v128)
-	*(*uint8)(unsafe.Add(mBase, _consts[144])) = uint8(v128)
+	*(*uint8)(unsafe.Add(mBase, _consts[152])) = uint8(v128)
+	*(*uint8)(unsafe.Add(mBase, _consts[153])) = uint8(v128)
 	v134 = v126 << (uint(int32(6)) % 32)
-	v137 = *(*int64)(unsafe.Add(mBase, uint32(v134)+uint32(_consts[145])))
-	*(*int64)(unsafe.Add(mBase, uint32(v134)+uint32(_consts[145]))) = v137 + int64(1)
+	v137 = *(*int64)(unsafe.Add(mBase, uint32(v134)+uint32(_consts[154])))
+	*(*int64)(unsafe.Add(mBase, uint32(v134)+uint32(_consts[154]))) = v137 + int64(1)
 	v142 = base.I64_div_s(v30, int64(32))
 	v143 = *(*int32)(unsafe.Add(mBase, uint32(v125)+36))
 	if v143 == int32(0) {
@@ -634,7 +634,7 @@ L44:
 	goto L40
 L45:
 	;
-	v292 = int32(4483812)
+	v292 = int32(4484100)
 	v294 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v294 + int32(1)
 	F_XLogFlush(m, v286)
@@ -647,7 +647,7 @@ L45:
 	}
 L46:
 	;
-	v300 = int32(4483812)
+	v300 = int32(4484100)
 	v302 = *(*int32)(unsafe.Add(mBase, _consts[14]))
 	*(*int32)(unsafe.Add(mBase, _consts[14])) = v302 - int32(1)
 	goto L16
@@ -680,7 +680,7 @@ L50:
 	;
 	v467 = int32(0)
 	*(*int32)(unsafe.Add(mBase, _consts[40])) = v467
-	v469 = int32(4104556)
+	v469 = int32(4104780)
 	v470 = *(*int32)(unsafe.Add(mBase, _consts[39]))
 	*(*int32)(unsafe.Add(mBase, uint32(v470))) = int32(167772213)
 	v473 = *(*int32)(unsafe.Add(mBase, uint32(v125)+4))
@@ -770,7 +770,7 @@ L62:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v23)+8)) = v142
 	*(*int32)(unsafe.Add(mBase, uint32(v23))) = v390
-	v400 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(508044), v23)
+	v400 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(509251), v23)
 	mBase = m.M
 	v401 = m.ExcPending
 	if v401 != 0 {
@@ -785,7 +785,7 @@ L64:
 	;
 	*(*uint32)(unsafe.Add(mBase, uint32(v23)+20)) = uint32(v142)
 	*(*int32)(unsafe.Add(mBase, uint32(v23)+16)) = v390
-	v410 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(508431), v23+int32(16))
+	v410 = F_pg_snprintf(m, v23+int32(48), int32(1024), int32(509638), v23+int32(16))
 	mBase = m.M
 	v411 = m.ExcPending
 	if v411 != 0 {
@@ -808,9 +808,9 @@ L67:
 	}
 L68:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[146])) = int32(0)
+	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(0)
 	v424 = *(*int32)(unsafe.Add(mBase, _consts[40]))
-	*(*int32)(unsafe.Add(mBase, _consts[147])) = v424
+	*(*int32)(unsafe.Add(mBase, _consts[156])) = v424
 	goto L49
 L69:
 	;
@@ -876,8 +876,8 @@ L77:
 	goto L78
 L78:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[147])) = v500
-	*(*int32)(unsafe.Add(mBase, _consts[146])) = int32(3)
+	*(*int32)(unsafe.Add(mBase, _consts[156])) = v500
+	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(3)
 	if v451 == int32(0) {
 		goto L49
 	} else {
@@ -980,9 +980,9 @@ L91:
 	goto L89
 L92:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[146])) = int32(4)
+	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(4)
 	v556 = *(*int32)(unsafe.Add(mBase, _consts[40]))
-	*(*int32)(unsafe.Add(mBase, _consts[147])) = v556
+	*(*int32)(unsafe.Add(mBase, _consts[156])) = v556
 	v558 = F_CloseTransientFile(m, v449)
 	mBase = m.M
 	v559 = m.ExcPending
@@ -1013,9 +1013,9 @@ L95:
 	}
 L96:
 	;
-	*(*int32)(unsafe.Add(mBase, _consts[146])) = int32(5)
+	*(*int32)(unsafe.Add(mBase, _consts[155])) = int32(5)
 	v572 = *(*int32)(unsafe.Add(mBase, _consts[40]))
-	*(*int32)(unsafe.Add(mBase, _consts[147])) = v572
+	*(*int32)(unsafe.Add(mBase, _consts[156])) = v572
 	goto L49
 L97:
 	;
@@ -1116,12 +1116,12 @@ L108:
 	goto L47
 L109:
 	;
-	v719 = int32(4384868)
-	v721 = *(*int32)(unsafe.Add(mBase, _consts[148]))
-	*(*int32)(unsafe.Add(mBase, _consts[148])) = v721 + int32(1)
-	v725 = int32(4468856)
-	v727 = *(*int64)(unsafe.Add(mBase, _consts[149]))
-	*(*int64)(unsafe.Add(mBase, _consts[149])) = v727 + int64(1)
+	v719 = int32(4385156)
+	v721 = *(*int32)(unsafe.Add(mBase, _consts[157]))
+	*(*int32)(unsafe.Add(mBase, _consts[157])) = v721 + int32(1)
+	v725 = int32(4469144)
+	v727 = *(*int64)(unsafe.Add(mBase, _consts[158]))
+	*(*int64)(unsafe.Add(mBase, _consts[158])) = v727 + int64(1)
 	goto L1
 }
 func F_SlruSyncFileTag(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
@@ -1194,7 +1194,7 @@ L2:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v12
-	v21 = F_pg_snprintf(m, l2, int32(1024), int32(508044), v9)
+	v21 = F_pg_snprintf(m, l2, int32(1024), int32(509251), v9)
 	mBase = m.M
 	v24 = m.ExcPending
 	if v24 != 0 {
@@ -1209,7 +1209,7 @@ L4:
 	;
 	*(*uint32)(unsafe.Add(mBase, uint32(v9)+20)) = uint32(v13)
 	*(*int32)(unsafe.Add(mBase, uint32(v9)+16)) = v12
-	v31 = F_pg_snprintf(m, l2, int32(1024), int32(508431), v9+int32(16))
+	v31 = F_pg_snprintf(m, l2, int32(1024), int32(509638), v9+int32(16))
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {

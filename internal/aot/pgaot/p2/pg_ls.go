@@ -8,7 +8,7 @@ import (
 func F_pg_ls_archive_statusdir(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_pg_ls_dir_files(m, l0, int32(114345), int32(1))
+	F_pg_ls_dir_files(m, l0, int32(114458), int32(1))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -19,7 +19,7 @@ func F_pg_ls_archive_statusdir(m *base.Module, l0 int32) int32 {
 func F_pg_ls_logicalmapdir(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_pg_ls_dir_files(m, l0, int32(155838), int32(0))
+	F_pg_ls_dir_files(m, l0, int32(155989), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -30,7 +30,7 @@ func F_pg_ls_logicalmapdir(m *base.Module, l0 int32) int32 {
 func F_pg_ls_logicalsnapdir(m *base.Module, l0 int32) int32 {
 	var v7 int32
 	_ = v7
-	F_pg_ls_dir_files(m, l0, int32(118757), int32(0))
+	F_pg_ls_dir_files(m, l0, int32(118870), int32(0))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
@@ -87,13 +87,13 @@ func F_pg_ls_tmpdir(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = l1
-					F_errmsg(m, int32(69214), v6)
+					F_errmsg(m, int32(69318), v6)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(497167), int32(657), int32(212717))
+						F_errfinish(m, int32(498374), int32(657), int32(212942))
 						mBase = m.M
 						v31 = m.ExcPending
 						if v31 != 0 {

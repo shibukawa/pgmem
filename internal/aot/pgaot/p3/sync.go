@@ -89,7 +89,7 @@ func F_SyncRepGetCandidateStandbys(m *base.Module, l0 int32) int32 {
 	var v115 int32
 	_ = v115
 	v2 = int32(0)
-	v9 = *(*int32)(unsafe.Add(mBase, _consts[299]))
+	v9 = *(*int32)(unsafe.Add(mBase, _consts[308]))
 	v12 = F_palloc(m, v9*int32(48))
 	mBase = m.M
 	v15 = m.ExcPending
@@ -104,7 +104,7 @@ L1:
 L2:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v12
-	v18 = *(*int32)(unsafe.Add(mBase, _consts[705]))
+	v18 = *(*int32)(unsafe.Add(mBase, _consts[714]))
 	if v18 == int32(0) {
 		v115 = v2
 		goto L3
@@ -116,7 +116,7 @@ L3:
 	return v115
 L4:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _consts[299]))
+	v22 = *(*int32)(unsafe.Add(mBase, _consts[308]))
 	if v22 <= int32(0) {
 		goto L6
 	} else {
@@ -146,7 +146,7 @@ L8:
 	goto L9
 L9:
 	;
-	v33 = *(*int32)(unsafe.Add(mBase, _consts[352]))
+	v33 = *(*int32)(unsafe.Add(mBase, _consts[361]))
 	v36 = v33 + v29*int32(96)
 	v38 = v36 + int32(164)
 	v39 = *(*int32)(unsafe.Add(mBase, uint32(v38)))
@@ -161,13 +161,13 @@ L9:
 	}
 L10:
 	;
-	v93 = *(*int32)(unsafe.Add(mBase, _consts[705]))
+	v93 = *(*int32)(unsafe.Add(mBase, _consts[714]))
 	v95 = v93
 	v97 = v86
 	goto L5
 L11:
 	;
-	F_s_lock(m, v38, int32(494140), int32(779), int32(112856))
+	F_s_lock(m, v38, int32(495319), int32(779), int32(112969))
 	mBase = m.M
 	v52 = m.ExcPending
 	if v52 != 0 {
@@ -206,7 +206,7 @@ L14:
 L15:
 	;
 	v88 = v29 + int32(1)
-	v90 = *(*int32)(unsafe.Add(mBase, _consts[299]))
+	v90 = *(*int32)(unsafe.Add(mBase, _consts[308]))
 	if v88 < v90 {
 		v28 = v86
 		v29 = v88
@@ -243,7 +243,7 @@ L18:
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v45)+36)) = v29
-	v81 = *(*int32)(unsafe.Add(mBase, _consts[706]))
+	v81 = *(*int32)(unsafe.Add(mBase, _consts[715]))
 	*(*uint8)(unsafe.Add(mBase, uint32(v45)+40)) = uint8(base.B2i32(v47 == v81))
 	v86 = v28 + int32(1)
 	goto L15
@@ -272,7 +272,7 @@ L22:
 	}
 L23:
 	;
-	v110 = *(*int32)(unsafe.Add(mBase, _consts[705]))
+	v110 = *(*int32)(unsafe.Add(mBase, _consts[714]))
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v110)+4))
 	v115 = v111
 	goto L3

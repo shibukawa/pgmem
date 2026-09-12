@@ -3008,6 +3008,14 @@ func F_seg_gt(m *base.Module, l0 int32) int32
 func F_seg_ge(m *base.Module, l0 int32) int32
 //go:linkname F_seg_different github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F_seg_different
 func F_seg_different(m *base.Module, l0 int32) int32
+//go:linkname F_Pg_magic_func_bloom github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_Pg_magic_func_bloom
+func F_Pg_magic_func_bloom(m *base.Module) int32
+//go:linkname F_pg_finfo_blhandler github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_pg_finfo_blhandler
+func F_pg_finfo_blhandler(m *base.Module) int32
+//go:linkname F__PG_init_bloom github.com/shibukawa/pgmem/internal/aot/pgaot/p1.F__PG_init_bloom
+func F__PG_init_bloom(m *base.Module)
+//go:linkname F_blhandler github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_blhandler
+func F_blhandler(m *base.Module, l0 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem
 func F__emscripten_memcpy_bulkmem(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memset_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memset_bulkmem

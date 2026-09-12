@@ -1240,9 +1240,9 @@ func F_uuid_out(m *base.Module, l0 int32) int32 {
 				v25 = v12
 			}
 			v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13+v6))))
-			v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27&int32(15))+uint32(_consts[1342]))))
+			v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v27&int32(15))+uint32(_consts[1352]))))
 			*(*uint8)(unsafe.Add(mBase, uint32(v25)+1)) = uint8(v32)
-			v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v27)>>(uint(int32(4))%32)))+uint32(_consts[1342]))))
+			v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(int32(base.Ui32(v27)>>(uint(int32(4))%32)))+uint32(_consts[1352]))))
 			*(*uint8)(unsafe.Add(mBase, uint32(v25))) = uint8(v38)
 			v41 = v25 + int32(2)
 			v43 = v13 + int32(1)

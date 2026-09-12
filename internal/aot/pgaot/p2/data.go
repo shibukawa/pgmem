@@ -12,8 +12,8 @@ func F_CreateDataDirLockFile(m *base.Module, l0 int32) {
 	_ = v6
 	var v8 int32
 	_ = v8
-	v6 = *(*int32)(unsafe.Add(mBase, _consts[200]))
-	F_CreateLockFile(m, int32(432049), l0, int32(740129), int32(1), v6)
+	v6 = *(*int32)(unsafe.Add(mBase, _consts[204]))
+	F_CreateLockFile(m, int32(432829), l0, int32(741336), int32(1), v6)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
@@ -911,11 +911,11 @@ L96:
 	goto L94
 L97:
 	;
-	*(*uint16)(unsafe.Add(mBase, _consts[15])) = uint16(v142)
+	*(*uint16)(unsafe.Add(mBase, _consts[19])) = uint16(v142)
 	v347 = *(*int64)(unsafe.Add(mBase, uint32(l3)))
-	*(*int64)(unsafe.Add(mBase, _consts[16])) = v347
+	*(*int64)(unsafe.Add(mBase, _consts[20])) = v347
 	v350 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l3)+8)))
-	*(*uint16)(unsafe.Add(mBase, _consts[17])) = uint16(v350)
+	*(*uint16)(unsafe.Add(mBase, _consts[21])) = uint16(v350)
 	F_XLogRegisterBuffer(m, int32(0), l1, int32(8))
 	mBase = m.M
 	v355 = m.ExcPending
@@ -926,7 +926,7 @@ L97:
 	}
 L98:
 	;
-	F_XLogRegisterBufData(m, int32(0), int32(4383620), int32(12))
+	F_XLogRegisterBufData(m, int32(0), int32(4383908), int32(12))
 	mBase = m.M
 	v360 = m.ExcPending
 	if v360 != 0 {
@@ -1352,7 +1352,7 @@ L11:
 	}
 L12:
 	;
-	F_px_debug(m, int32(490172), int32(0))
+	F_px_debug(m, int32(491330), int32(0))
 	mBase = m.M
 	v45 = m.ExcPending
 	if v45 != 0 {
@@ -1419,7 +1419,7 @@ L21:
 	goto L22
 L22:
 	;
-	v73 = F_pullf_create(m, v15+int32(36), int32(4377204), l0, l2)
+	v73 = F_pullf_create(m, v15+int32(36), int32(4377428), l0, l2)
 	mBase = m.M
 	v74 = m.ExcPending
 	if v74 != 0 {
@@ -1431,7 +1431,7 @@ L23:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v56)+4)) = v54
 	*(*int32)(unsafe.Add(mBase, uint32(v56))) = v36
-	v63 = F_pullf_create(m, v15+int32(36), int32(4377168), v56, l2)
+	v63 = F_pullf_create(m, v15+int32(36), int32(4377392), v56, l2)
 	mBase = m.M
 	v64 = m.ExcPending
 	if v64 != 0 {
@@ -1481,7 +1481,7 @@ L29:
 L30:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v80
-	F_px_debug(m, int32(464960), v15)
+	F_px_debug(m, int32(465847), v15)
 	mBase = m.M
 	v339 = m.ExcPending
 	if v339 != 0 {
@@ -1565,7 +1565,7 @@ L39:
 	}
 L40:
 	;
-	F_px_debug(m, int32(337588), int32(0))
+	F_px_debug(m, int32(338108), int32(0))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -1613,7 +1613,7 @@ L47:
 L48:
 	;
 	v130 = int32(0)
-	F_px_debug(m, int32(270013), v130)
+	F_px_debug(m, int32(270384), v130)
 	mBase = m.M
 	v134 = m.ExcPending
 	if v134 != 0 {
@@ -1639,7 +1639,7 @@ L51:
 L52:
 	;
 	v135 = int32(0)
-	F_px_debug(m, int32(438462), v135)
+	F_px_debug(m, int32(439242), v135)
 	mBase = m.M
 	v139 = m.ExcPending
 	if v139 != 0 {
@@ -1690,7 +1690,7 @@ L57:
 	}
 L58:
 	;
-	F_px_debug(m, int32(366939), int32(0))
+	F_px_debug(m, int32(367583), int32(0))
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {
@@ -1700,7 +1700,7 @@ L58:
 	}
 L59:
 	;
-	F_px_debug(m, int32(440117), int32(0))
+	F_px_debug(m, int32(440897), int32(0))
 	mBase = m.M
 	v172 = m.ExcPending
 	if v172 != 0 {
@@ -1803,7 +1803,7 @@ L72:
 L73:
 	;
 	v201 = int32(0)
-	F_px_debug(m, int32(542621), v201)
+	F_px_debug(m, int32(543828), v201)
 	mBase = m.M
 	v205 = m.ExcPending
 	if v205 != 0 {
@@ -1911,7 +1911,7 @@ L87:
 	}
 L88:
 	;
-	F_px_debug(m, int32(490235), int32(0))
+	F_px_debug(m, int32(491393), int32(0))
 	mBase = m.M
 	v232 = m.ExcPending
 	if v232 != 0 {
@@ -1925,7 +1925,7 @@ L89:
 L90:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v220
-	F_px_debug(m, int32(464734), v15+int32(32))
+	F_px_debug(m, int32(465621), v15+int32(32))
 	mBase = m.M
 	v239 = m.ExcPending
 	if v239 != 0 {
@@ -2075,7 +2075,7 @@ L113:
 	}
 L114:
 	;
-	F_px_debug(m, int32(452996), int32(0))
+	F_px_debug(m, int32(453776), int32(0))
 	mBase = m.M
 	v328 = m.ExcPending
 	if v328 != 0 {
@@ -2126,7 +2126,7 @@ L121:
 	}
 L122:
 	;
-	F_px_debug(m, int32(502698), int32(0))
+	F_px_debug(m, int32(503905), int32(0))
 	mBase = m.M
 	v362 = m.ExcPending
 	if v362 != 0 {
@@ -2167,7 +2167,7 @@ L128:
 	}
 L129:
 	;
-	F_px_debug(m, int32(490209), int32(0))
+	F_px_debug(m, int32(491367), int32(0))
 	mBase = m.M
 	v372 = m.ExcPending
 	if v372 != 0 {
@@ -2188,7 +2188,7 @@ L131:
 	}
 L132:
 	;
-	F_px_debug(m, int32(337588), int32(0))
+	F_px_debug(m, int32(338108), int32(0))
 	mBase = m.M
 	v398 = m.ExcPending
 	if v398 != 0 {
@@ -2231,7 +2231,7 @@ L138:
 L139:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v91
-	F_px_debug(m, int32(498480), v15+int32(16))
+	F_px_debug(m, int32(499687), v15+int32(16))
 	mBase = m.M
 	v417 = m.ExcPending
 	if v417 != 0 {
@@ -2524,7 +2524,7 @@ L183:
 	}
 L184:
 	;
-	v555 = F_mbuf_append(m, l1, int32(729073), int32(1))
+	v555 = F_mbuf_append(m, l1, int32(730280), int32(1))
 	mBase = m.M
 	v556 = m.ExcPending
 	if v556 != 0 {

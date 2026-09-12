@@ -452,7 +452,7 @@ L42:
 	}
 L43:
 	;
-	v187 = *(*int32)(unsafe.Add(mBase, _consts[104]))
+	v187 = *(*int32)(unsafe.Add(mBase, _consts[113]))
 	v188 = *(*int32)(unsafe.Add(mBase, uint32(v187)))
 	goto L44
 L44:
@@ -673,19 +673,19 @@ func F_RollbackAndReleaseCurrentSubTransaction(m *base.Module) {
 				} else {
 					v25 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
 					if base.Ui32(v25) <= base.Ui32(int32(19)) {
-						v34 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[175])))
+						v34 = *(*int32)(unsafe.Add(mBase, uint32(v25<<(uint(int32(2))%32))+uint32(_consts[184])))
 						v35 = v34
 					} else {
-						v35 = int32(541631)
+						v35 = int32(542838)
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v6))) = v35
-					F_errmsg_internal(m, int32(186718), v6)
+					F_errmsg_internal(m, int32(186943), v6)
 					mBase = m.M
 					v39 = m.ExcPending
 					if v39 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(491705), int32(4833), int32(257521))
+						F_errfinish(m, int32(492874), int32(4833), int32(257815))
 						mBase = m.M
 						v44 = m.ExcPending
 						if v44 != 0 {

@@ -26,7 +26,7 @@ func F_AtEOSubXact_Parallel(m *base.Module, l0 int32, l1 int32) {
 	_ = v33
 	var v35 int32
 	_ = v35
-	v5 = *(*int32)(unsafe.Add(mBase, _consts[142]))
+	v5 = *(*int32)(unsafe.Add(mBase, _consts[151]))
 	if v5 == int32(0) {
 		goto L1
 	} else {
@@ -37,7 +37,7 @@ L1:
 	return
 L2:
 	;
-	if v5 == int32(4095356) {
+	if v5 == int32(4095580) {
 		goto L1
 	} else {
 		goto L3
@@ -96,7 +96,7 @@ L10:
 	}
 L11:
 	;
-	F_errmsg_internal(m, int32(60807), int32(0))
+	F_errmsg_internal(m, int32(60911), int32(0))
 	mBase = m.M
 	v26 = m.ExcPending
 	if v26 != 0 {
@@ -106,7 +106,7 @@ L11:
 	}
 L12:
 	;
-	F_errfinish(m, int32(495676), int32(1271), int32(306981))
+	F_errfinish(m, int32(496855), int32(1271), int32(307482))
 	mBase = m.M
 	v31 = m.ExcPending
 	if v31 != 0 {
@@ -119,7 +119,7 @@ L13:
 	goto L7
 L14:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _consts[142]))
+	v35 = *(*int32)(unsafe.Add(mBase, _consts[151]))
 	if v35 == int32(0) {
 		goto L1
 	} else {
@@ -127,7 +127,7 @@ L14:
 	}
 L15:
 	;
-	if v35 != int32(4095356) {
+	if v35 != int32(4095580) {
 		v12 = v35
 		goto L4
 	} else {

@@ -41,7 +41,7 @@ func F_euc_jis_2004_to_utf8(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v17 = int32(0)
-		v27 = F_LocalToUtf(m, v6, v10, v5, int32(4371636), int32(2336928), int32(25), v17, int32(5), base.B2i32(v7 != v17))
+		v27 = F_LocalToUtf(m, v6, v10, v5, int32(4371860), int32(2337120), int32(25), v17, int32(5), base.B2i32(v7 != v17))
 		mBase = m.M
 		v28 = m.ExcPending
 		if v28 != 0 {
@@ -353,41 +353,41 @@ L29:
 	}
 L30:
 	;
-	v123 = int32(2217000)
+	v123 = int32(2217192)
 	goto L28
 L31:
 	;
-	v123 = int32(2216996)
+	v123 = int32(2217188)
 	goto L28
 L32:
 	;
-	v117 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1289])))
+	v117 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1298])))
 	v126 = v117
 	goto L27
 L33:
 	;
-	v115 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1290])))
+	v115 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1299])))
 	v126 = v115
 	goto L27
 L34:
 	;
-	v113 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1291])))
+	v113 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1300])))
 	v126 = v113
 	goto L27
 L35:
 	;
-	v111 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1292])))
+	v111 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1301])))
 	v126 = v111
 	goto L27
 L36:
 	;
-	v109 = F_BinarySearchRange(m, int32(2217456), int32(47), v70)
+	v109 = F_BinarySearchRange(m, int32(2217648), int32(47), v70)
 	mBase = m.M
 	v126 = v109
 	goto L27
 L37:
 	;
-	v106 = F_BinarySearchRange(m, int32(2217344), int32(24), v70)
+	v106 = F_BinarySearchRange(m, int32(2217536), int32(24), v70)
 	mBase = m.M
 	v126 = v106
 	goto L27
@@ -413,7 +413,7 @@ L40:
 	;
 	switch v70 - int32(8483) {
 	case 0:
-		v123 = int32(2216992)
+		v123 = int32(2217184)
 		goto L28
 	case 1:
 		goto L31
@@ -459,7 +459,7 @@ L45:
 	}
 L46:
 	;
-	v89 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1293])))
+	v89 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1302])))
 	v126 = v89
 	goto L27
 L47:
@@ -489,7 +489,7 @@ L50:
 	}
 L51:
 	;
-	v97 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1294])))
+	v97 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1303])))
 	v126 = v97
 	goto L27
 L52:
@@ -502,12 +502,12 @@ L52:
 	}
 L53:
 	;
-	v103 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1295])))
+	v103 = int32(*(*uint16)(unsafe.Add(mBase, _consts[1304])))
 	v126 = v103
 	goto L27
 L54:
 	;
-	v123 = int32(2217004)
+	v123 = int32(2217196)
 	goto L28
 L55:
 	;

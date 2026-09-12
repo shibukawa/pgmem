@@ -329,7 +329,7 @@ L32:
 	;
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v20)))
 	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v64
-	F_errmsg_internal(m, int32(484245), v11)
+	F_errmsg_internal(m, int32(485403), v11)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {
@@ -339,7 +339,7 @@ L32:
 	}
 L33:
 	;
-	F_errfinish(m, int32(490619), int32(270), int32(20644))
+	F_errfinish(m, int32(491777), int32(270), int32(20657))
 	mBase = m.M
 	v73 = m.ExcPending
 	if v73 != 0 {
@@ -512,7 +512,7 @@ L58:
 	;
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
 	*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v151
-	F_errmsg_internal(m, int32(484245), v11+int32(16))
+	F_errmsg_internal(m, int32(485403), v11+int32(16))
 	mBase = m.M
 	v157 = m.ExcPending
 	if v157 != 0 {
@@ -522,7 +522,7 @@ L58:
 	}
 L59:
 	;
-	F_errfinish(m, int32(490619), int32(310), int32(20644))
+	F_errfinish(m, int32(491777), int32(310), int32(20657))
 	mBase = m.M
 	v162 = m.ExcPending
 	if v162 != 0 {
@@ -575,12 +575,12 @@ func F_CreateNewPortal(m *base.Module) int32 {
 	goto L1
 L1:
 	;
-	v9 = int32(4489200)
-	v11 = *(*int32)(unsafe.Add(mBase, _consts[1446]))
+	v9 = int32(4489488)
+	v11 = *(*int32)(unsafe.Add(mBase, _consts[1456]))
 	v13 = v11 + int32(1)
-	*(*int32)(unsafe.Add(mBase, _consts[1446])) = v13
+	*(*int32)(unsafe.Add(mBase, _consts[1456])) = v13
 	*(*int32)(unsafe.Add(mBase, uint32(v5))) = v13
-	v19 = F_pg_sprintf(m, v5+int32(16), int32(544154), v5)
+	v19 = F_pg_sprintf(m, v5+int32(16), int32(545361), v5)
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
@@ -607,7 +607,7 @@ L4:
 	return int32(0)
 L5:
 	;
-	v24 = *(*int32)(unsafe.Add(mBase, _consts[219]))
+	v24 = *(*int32)(unsafe.Add(mBase, _consts[228]))
 	v27 = int32(0)
 	v29 = F_hash_search(m, v24, v5+int32(16), v27, v27)
 	mBase = m.M
@@ -792,7 +792,7 @@ L2:
 	}
 L3:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, _consts[421]))
+	v21 = *(*int32)(unsafe.Add(mBase, _consts[430]))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(l4)+16))
 	if v22 == int32(3) {
 		goto L4
@@ -903,7 +903,7 @@ L19:
 	}
 L20:
 	;
-	v57 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1213])))
+	v57 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1223])))
 	if v57 == int32(1) {
 		goto L23
 	} else {
@@ -922,9 +922,9 @@ L22:
 	}
 L23:
 	;
-	F_getrusage(m, int32(4412792))
+	F_getrusage(m, int32(4413080))
 	mBase = m.M
-	F___gettimeofday(m, int32(4412944))
+	F___gettimeofday(m, int32(4413232))
 	mBase = m.M
 	goto L26
 L24:
@@ -1019,7 +1019,7 @@ L37:
 L38:
 	;
 	v90 = int32(1)
-	v92 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1213])))
+	v92 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1223])))
 	if v92 != v90 {
 		v108 = v90
 		goto L19
@@ -1057,7 +1057,7 @@ L43:
 	goto L38
 L44:
 	;
-	F_ShowUsage(m, int32(522030))
+	F_ShowUsage(m, int32(523237))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {

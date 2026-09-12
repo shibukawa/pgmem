@@ -409,13 +409,13 @@ func F_EncodeSpecialDate(m *base.Module, l0 int32, l1 int32) {
 			if v16 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(356686), int32(0))
+				F_errmsg_internal(m, int32(357270), int32(0))
 				mBase = m.M
 				v20 = m.ExcPending
 				if v20 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(496845), int32(309), int32(356707))
+					F_errfinish(m, int32(498052), int32(309), int32(357291))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {

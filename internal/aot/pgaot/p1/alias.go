@@ -76,6 +76,8 @@ func F_relation_open(m *base.Module, l0 int32, l1 int32) int32
 func F_relation_openrv(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_relation_openrv_extended github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_relation_openrv_extended
 func F_relation_openrv_extended(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_add_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_int_reloption
+func F_add_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32)
 //go:linkname F_add_local_int_reloption github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_add_local_int_reloption
 func F_add_local_int_reloption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32)
 //go:linkname F_transformRelOptions github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_transformRelOptions
@@ -348,6 +350,12 @@ func F_TransactionIdSetPageStatusInternal(m *base.Module, l0 int32, l1 int32, l2
 func F_TransactionTreeSetCommitTsData(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int64, l4 int32)
 //go:linkname F_ActivateCommitTs github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ActivateCommitTs
 func F_ActivateCommitTs(m *base.Module)
+//go:linkname F_GenericXLogStart github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GenericXLogStart
+func F_GenericXLogStart(m *base.Module, l0 int32) int32
+//go:linkname F_GenericXLogRegisterBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GenericXLogRegisterBuffer
+func F_GenericXLogRegisterBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_GenericXLogFinish github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_GenericXLogFinish
+func F_GenericXLogFinish(m *base.Module, l0 int32)
 //go:linkname F_GetMultiXactIdMembers github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_GetMultiXactIdMembers
 func F_GetMultiXactIdMembers(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F_ReadNextMultiXactId github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_ReadNextMultiXactId
@@ -1974,6 +1982,8 @@ func F_MarkBufferDirtyHint(m *base.Module, l0 int32, l1 int32)
 func F_ConditionalLockBuffer(m *base.Module, l0 int32) int32
 //go:linkname F_StrategyFreeBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F_StrategyFreeBuffer
 func F_StrategyFreeBuffer(m *base.Module, l0 int32)
+//go:linkname F_GetAccessStrategy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_GetAccessStrategy
+func F_GetAccessStrategy(m *base.Module, l0 int32) int32
 //go:linkname F_GetAccessStrategyWithSize github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_GetAccessStrategyWithSize
 func F_GetAccessStrategyWithSize(m *base.Module, l0 int32) int32
 //go:linkname F_LocalBufferAlloc github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_LocalBufferAlloc
@@ -2044,8 +2054,12 @@ func F_fsm_search(m *base.Module, l0 int32, l1 int32) int32
 func F_RecordPageWithFreeSpace(m *base.Module, l0 int32, l1 int32, l2 int32)
 //go:linkname F_XLogRecordPageWithFreeSpace github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_XLogRecordPageWithFreeSpace
 func F_XLogRecordPageWithFreeSpace(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_FreeSpaceMapVacuum github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_FreeSpaceMapVacuum
+func F_FreeSpaceMapVacuum(m *base.Module, l0 int32)
 //go:linkname F_FreeSpaceMapVacuumRange github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_FreeSpaceMapVacuumRange
 func F_FreeSpaceMapVacuumRange(m *base.Module, l0 int32, l1 int32, l2 int32)
+//go:linkname F_RecordFreeIndexPage github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_RecordFreeIndexPage
+func F_RecordFreeIndexPage(m *base.Module, l0 int32, l1 int32)
 //go:linkname F_BarrierArriveAndWait github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_BarrierArriveAndWait
 func F_BarrierArriveAndWait(m *base.Module, l0 int32, l1 int32) int32
 //go:linkname F_BarrierAttach github.com/shibukawa/pgmem/internal/aot/pgaot/p4.F_BarrierAttach
@@ -3964,6 +3978,12 @@ func F_cube_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 func F_cube_scanner_finish(m *base.Module, l0 int32)
 //go:linkname F_seg_yy_scan_bytes github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_seg_yy_scan_bytes
 func F_seg_yy_scan_bytes(m *base.Module, l0 int32, l1 int32, l2 int32) int32
+//go:linkname F_initBloomState github.com/shibukawa/pgmem/internal/aot/pgaot/p0.F_initBloomState
+func F_initBloomState(m *base.Module, l0 int32, l1 int32)
+//go:linkname F_signValue github.com/shibukawa/pgmem/internal/aot/pgaot/p2.F_signValue
+func F_signValue(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32)
+//go:linkname F_BloomNewBuffer github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F_BloomNewBuffer
+func F_BloomNewBuffer(m *base.Module, l0 int32) int32
 //go:linkname F___memcpy github.com/shibukawa/pgmem/internal/aot/pgaot/p5.F___memcpy
 func F___memcpy(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 //go:linkname F__emscripten_memcpy_bulkmem github.com/shibukawa/pgmem/internal/aot/pgaot/p3.F__emscripten_memcpy_bulkmem

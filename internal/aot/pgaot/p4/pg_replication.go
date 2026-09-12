@@ -142,12 +142,12 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 	_ = v58
 	var v63 int32
 	_ = v63
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, _consts[189])))
+	v7 = int32(*(*uint8)(unsafe.Add(mBase, _consts[198])))
 	if v7 == int32(1) {
-		v12 = *(*int32)(unsafe.Add(mBase, _consts[190]))
+		v12 = *(*int32)(unsafe.Add(mBase, _consts[199]))
 		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+316))
 		v15 = base.B2i32(v13 != int32(2))
-		*(*uint8)(unsafe.Add(mBase, _consts[189])) = uint8(v15)
+		*(*uint8)(unsafe.Add(mBase, _consts[198])) = uint8(v15)
 		v17 = v15
 	} else {
 		v17 = int32(0)
@@ -227,13 +227,13 @@ func F_pg_replication_origin_oid(m *base.Module, l0 int32) int32 {
 			if v54 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(14408), int32(0))
+				F_errmsg(m, int32(14421), int32(0))
 				mBase = m.M
 				v58 = m.ExcPending
 				if v58 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494759), int32(200), int32(159585))
+					F_errfinish(m, int32(495938), int32(200), int32(159736))
 					mBase = m.M
 					v63 = m.ExcPending
 					if v63 != 0 {

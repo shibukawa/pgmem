@@ -191,13 +191,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 				if v202 != 0 {
 					return
 				} else {
-					F_errmsg_internal(m, int32(173165), int32(0))
+					F_errmsg_internal(m, int32(173316), int32(0))
 					mBase = m.M
 					v206 = m.ExcPending
 					if v206 != 0 {
 						return
 					} else {
-						F_errfinish(m, int32(490691), int32(4831), int32(461972))
+						F_errfinish(m, int32(491849), int32(4831), int32(462859))
 						mBase = m.M
 						v211 = m.ExcPending
 						if v211 != 0 {
@@ -228,13 +228,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						if v215 != 0 {
 							return
 						} else {
-							F_errmsg_internal(m, int32(173138), int32(0))
+							F_errmsg_internal(m, int32(173289), int32(0))
 							mBase = m.M
 							v219 = m.ExcPending
 							if v219 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(490691), int32(4848), int32(461972))
+								F_errfinish(m, int32(491849), int32(4848), int32(462859))
 								mBase = m.M
 								v224 = m.ExcPending
 								if v224 != 0 {
@@ -400,13 +400,13 @@ func F_KnownAssignedXidsAdd(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					if v215 != 0 {
 						return
 					} else {
-						F_errmsg_internal(m, int32(173138), int32(0))
+						F_errmsg_internal(m, int32(173289), int32(0))
 						mBase = m.M
 						v219 = m.ExcPending
 						if v219 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(490691), int32(4848), int32(461972))
+							F_errfinish(m, int32(491849), int32(4848), int32(462859))
 							mBase = m.M
 							v224 = m.ExcPending
 							if v224 != 0 {

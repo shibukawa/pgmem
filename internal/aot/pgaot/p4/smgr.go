@@ -52,7 +52,7 @@ func F_smgr_aio_describe_identity(m *base.Module, l0 int32) int32 {
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v14 = *(*int32)(unsafe.Add(mBase, _consts[157]))
+	v14 = *(*int32)(unsafe.Add(mBase, _consts[166]))
 	v16 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+20)))
 	if v16&int32(256) != 0 {
 		v19 = v14
@@ -69,7 +69,7 @@ func F_smgr_aio_describe_identity(m *base.Module, l0 int32) int32 {
 		switch v25 {
 		case 0:
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v6 + int32(40)
-			v32 = F_psprintf(m, int32(700180), v6+int32(16))
+			v32 = F_psprintf(m, int32(701387), v6+int32(16))
 			mBase = m.M
 			v33 = m.ExcPending
 			if v33 != 0 {
@@ -83,7 +83,7 @@ func F_smgr_aio_describe_identity(m *base.Module, l0 int32) int32 {
 			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v34
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = v6 + int32(40)
-			v42 = F_psprintf(m, int32(699100), v6+int32(32))
+			v42 = F_psprintf(m, int32(700307), v6+int32(32))
 			mBase = m.M
 			v43 = m.ExcPending
 			if v43 != 0 {
@@ -98,7 +98,7 @@ func F_smgr_aio_describe_identity(m *base.Module, l0 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = v44
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v44 + v25 - int32(1)
 			*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = v6 + int32(40)
-			v54 = F_psprintf(m, int32(699073), v6)
+			v54 = F_psprintf(m, int32(700280), v6)
 			mBase = m.M
 			v55 = m.ExcPending
 			if v55 != 0 {

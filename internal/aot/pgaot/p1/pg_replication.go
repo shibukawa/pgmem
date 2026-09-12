@@ -334,7 +334,7 @@ L1:
 	return int32(0)
 L2:
 	;
-	v31 = int32(4384720)
+	v31 = int32(4385008)
 	v32 = *(*int32)(unsafe.Add(mBase, _consts[30]))
 	v33 = *(*int64)(unsafe.Add(mBase, uint32(v32)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v32)+280)) = v33
@@ -423,7 +423,7 @@ L12:
 	}
 L13:
 	;
-	F_s_lock(m, v86, int32(492816), int32(268), int32(118193))
+	F_s_lock(m, v86, int32(493995), int32(268), int32(118306))
 	mBase = m.M
 	v97 = m.ExcPending
 	if v97 != 0 {
@@ -483,7 +483,7 @@ L23:
 	;
 	v121 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v21)+1)) = uint8(v121)
-	v126 = int32(313346)
+	v126 = int32(313847)
 	goto L22
 L24:
 	;
@@ -491,7 +491,7 @@ L24:
 L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v21)+36)) = v21 + int32(249)
-	v126 = int32(313432)
+	v126 = int32(313933)
 	goto L22
 L26:
 	;
@@ -680,7 +680,7 @@ L56:
 	goto L55
 L57:
 	;
-	v305 = F_cstring_to_text(m, int32(67926))
+	v305 = F_cstring_to_text(m, int32(68030))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -731,7 +731,7 @@ L61:
 	}
 L62:
 	;
-	v181 = int32(4384720)
+	v181 = int32(4385008)
 	v182 = *(*int32)(unsafe.Add(mBase, _consts[30]))
 	v183 = *(*int64)(unsafe.Add(mBase, uint32(v182)+280))
 	*(*int64)(unsafe.Add(mBase, uint32(v182)+280)) = v183
@@ -764,7 +764,7 @@ L63:
 L64:
 	;
 	v207 = *(*int32)(unsafe.Add(mBase, _consts[30]))
-	F_s_lock(m, v207+int32(440), int32(496314), int32(3760), int32(240329))
+	F_s_lock(m, v207+int32(440), int32(497508), int32(3760), int32(240623))
 	mBase = m.M
 	v214 = m.ExcPending
 	if v214 != 0 {
@@ -861,7 +861,7 @@ L80:
 	goto L60
 L81:
 	;
-	v269 = F_cstring_to_text(m, int32(438739))
+	v269 = F_cstring_to_text(m, int32(439519))
 	mBase = m.M
 	v270 = m.ExcPending
 	if v270 != 0 {
@@ -871,7 +871,7 @@ L81:
 	}
 L82:
 	;
-	v265 = F_cstring_to_text(m, int32(459931))
+	v265 = F_cstring_to_text(m, int32(460711))
 	mBase = m.M
 	v266 = m.ExcPending
 	if v266 != 0 {
@@ -881,7 +881,7 @@ L82:
 	}
 L83:
 	;
-	v261 = F_cstring_to_text(m, int32(438809))
+	v261 = F_cstring_to_text(m, int32(439589))
 	mBase = m.M
 	v262 = m.ExcPending
 	if v262 != 0 {
@@ -917,7 +917,7 @@ L88:
 	}
 L89:
 	;
-	F_s_lock(m, v86, int32(492816), int32(364), int32(118193))
+	F_s_lock(m, v86, int32(493995), int32(364), int32(118306))
 	mBase = m.M
 	v291 = m.ExcPending
 	if v291 != 0 {
@@ -945,7 +945,7 @@ L92:
 	goto L91
 L93:
 	;
-	v300 = F_cstring_to_text(m, int32(438739))
+	v300 = F_cstring_to_text(m, int32(439519))
 	mBase = m.M
 	v301 = m.ExcPending
 	if v301 != 0 {
@@ -1086,7 +1086,7 @@ L111:
 	}
 L112:
 	;
-	v456 = int32(371483)
+	v456 = int32(372127)
 	if base.Ui32(int32(8)) < base.Ui32(v418) {
 		v471 = v456
 		goto L121
@@ -1224,13 +1224,13 @@ func F_pg_replication_origin_session_is_setup(m *base.Module, l0 int32) int32 {
 			if v23 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(14408), int32(0))
+				F_errmsg(m, int32(14421), int32(0))
 				mBase = m.M
 				v27 = m.ExcPending
 				if v27 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(494759), int32(200), int32(159585))
+					F_errfinish(m, int32(495938), int32(200), int32(159736))
 					mBase = m.M
 					v32 = m.ExcPending
 					if v32 != 0 {

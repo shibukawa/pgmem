@@ -302,7 +302,7 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 	} else {
 		F_canonicalize_path_enc(m, v3)
 		mBase = m.M
-		v9 = *(*int32)(unsafe.Add(mBase, _consts[276]))
+		v9 = *(*int32)(unsafe.Add(mBase, _consts[280]))
 		v11 = F_has_privs_of_role(m, v9, int32(4569))
 		mBase = m.M
 		v12 = m.ExcPending
@@ -314,7 +314,7 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 			} else {
 				v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v3))))
 				if v13 == int32(47) {
-					v17 = *(*int32)(unsafe.Add(mBase, _consts[200]))
+					v17 = *(*int32)(unsafe.Add(mBase, _consts[204]))
 					v19 = F_strlen(m, v17)
 					mBase = m.M
 					v20 = F_strncmp(m, v17, v3, v19)
@@ -328,7 +328,7 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 					if v29 != 0 {
 						return v3
 					} else {
-						v31 = *(*int32)(unsafe.Add(mBase, _consts[1086]))
+						v31 = *(*int32)(unsafe.Add(mBase, _consts[1089]))
 						v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31))))
 						if v32 == int32(47) {
 							v36 = F_strlen(m, v31)
@@ -356,13 +356,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 									if v53 != 0 {
 										return int32(0)
 									} else {
-										F_errmsg(m, int32(438297), int32(0))
+										F_errmsg(m, int32(439077), int32(0))
 										mBase = m.M
 										v57 = m.ExcPending
 										if v57 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(497167), int32(84), int32(376876))
+											F_errfinish(m, int32(498374), int32(84), int32(377520))
 											mBase = m.M
 											v62 = m.ExcPending
 											if v62 != 0 {
@@ -389,13 +389,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 								if v53 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(438297), int32(0))
+									F_errmsg(m, int32(439077), int32(0))
 									mBase = m.M
 									v57 = m.ExcPending
 									if v57 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(497167), int32(84), int32(376876))
+										F_errfinish(m, int32(498374), int32(84), int32(377520))
 										mBase = m.M
 										v62 = m.ExcPending
 										if v62 != 0 {
@@ -442,13 +442,13 @@ func F_convert_and_check_filename(m *base.Module, l0 int32) int32 {
 							if v88 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(13295), int32(0))
+								F_errmsg(m, int32(13308), int32(0))
 								mBase = m.M
 								v92 = m.ExcPending
 								if v92 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(497167), int32(89), int32(376876))
+									F_errfinish(m, int32(498374), int32(89), int32(377520))
 									mBase = m.M
 									v97 = m.ExcPending
 									if v97 != 0 {

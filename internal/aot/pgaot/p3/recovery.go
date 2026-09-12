@@ -70,20 +70,20 @@ func F_assign_recovery_target_lsn(m *base.Module, l0 int32, l1 int32) {
 	_ = v18
 	var v24 int32
 	_ = v24
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[223]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[232]))
 	if v4&int32(-5) == int32(0) {
 		if l0 == int32(0) {
-			*(*int32)(unsafe.Add(mBase, _consts[223])) = int32(0)
+			*(*int32)(unsafe.Add(mBase, _consts[232])) = int32(0)
 			return
 		} else {
 			v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 			if v11 == int32(0) {
-				*(*int32)(unsafe.Add(mBase, _consts[223])) = int32(0)
+				*(*int32)(unsafe.Add(mBase, _consts[232])) = int32(0)
 				return
 			} else {
-				*(*int32)(unsafe.Add(mBase, _consts[223])) = int32(4)
+				*(*int32)(unsafe.Add(mBase, _consts[232])) = int32(4)
 				v18 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-				*(*int64)(unsafe.Add(mBase, _consts[248])) = v18
+				*(*int64)(unsafe.Add(mBase, _consts[257])) = v18
 				return
 			}
 		}
@@ -111,7 +111,7 @@ func F_assign_recovery_target_time(m *base.Module, l0 int32, l1 int32) {
 	_ = v13
 	var v16 int32
 	_ = v16
-	v4 = *(*int32)(unsafe.Add(mBase, _consts[223]))
+	v4 = *(*int32)(unsafe.Add(mBase, _consts[232]))
 	if v4&int32(-3) == int32(0) {
 		if l0 != 0 {
 			v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
@@ -123,7 +123,7 @@ func F_assign_recovery_target_time(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			v13 = int32(0)
 		}
-		*(*int32)(unsafe.Add(mBase, _consts[223])) = v13
+		*(*int32)(unsafe.Add(mBase, _consts[232])) = v13
 		return
 	} else {
 		F_error_multiple_recovery_targets(m)
@@ -150,7 +150,7 @@ func F_assign_recovery_target_timeline(m *base.Module, l0 int32, l1 int32) {
 	var v16 int32
 	_ = v16
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _consts[226])) = v5
+	*(*int32)(unsafe.Add(mBase, _consts[235])) = v5
 	if v5 == int32(2) {
 		v11 = int32(0)
 		v14 = F_strtox_2(m, l0, v11, v11, int64(4294967295))
@@ -159,6 +159,6 @@ func F_assign_recovery_target_timeline(m *base.Module, l0 int32, l1 int32) {
 	} else {
 		v16 = int32(0)
 	}
-	*(*int32)(unsafe.Add(mBase, _consts[228])) = v16
+	*(*int32)(unsafe.Add(mBase, _consts[237])) = v16
 	return
 }

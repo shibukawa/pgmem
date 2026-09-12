@@ -42,7 +42,7 @@ func F_table_block_parallelscan_initialize(m *base.Module, l0 int32, l1 int32) i
 		return int32(0)
 	} else {
 		*(*int32)(unsafe.Add(mBase, uint32(l1)+20)) = v10
-		v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[132])))
+		v16 = int32(*(*uint8)(unsafe.Add(mBase, _consts[136])))
 		if v16 != int32(1) {
 			v28 = v3
 		} else {
@@ -51,7 +51,7 @@ func F_table_block_parallelscan_initialize(m *base.Module, l0 int32, l1 int32) i
 			if v20 == int32(116) {
 				v28 = v3
 			} else {
-				v24 = *(*int32)(unsafe.Add(mBase, _consts[133]))
+				v24 = *(*int32)(unsafe.Add(mBase, _consts[137]))
 				v26 = base.I32_div_s(v24, int32(4))
 				v28 = base.B2i32(base.Ui32(v26) < base.Ui32(v10))
 			}
@@ -240,9 +240,9 @@ func F_table_tuple_get_latest_tid(m *base.Module, l0 int32, l1 int32) {
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+188))
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[121]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[125]))
 	if v13 != 0 {
-		v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[122])))
+		v15 = int32(*(*uint8)(unsafe.Add(mBase, _consts[126])))
 		if v15&int32(1) == int32(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
@@ -250,13 +250,13 @@ func F_table_tuple_get_latest_tid(m *base.Module, l0 int32, l1 int32) {
 			if v34 != 0 {
 				return
 			} else {
-				F_errmsg_internal(m, int32(335556), int32(0))
+				F_errmsg_internal(m, int32(336076), int32(0))
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
 					return
 				} else {
-					F_errfinish(m, int32(495468), int32(247), int32(431719))
+					F_errfinish(m, int32(496647), int32(247), int32(432499))
 					mBase = m.M
 					v43 = m.ExcPending
 					if v43 != 0 {
@@ -296,13 +296,13 @@ func F_table_tuple_get_latest_tid(m *base.Module, l0 int32, l1 int32) {
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v54
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v53 + int32(4)
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51 | v52<<(uint(int32(16))%32)
-							F_errmsg(m, int32(687922), v8)
+							F_errmsg(m, int32(689129), v8)
 							mBase = m.M
 							v65 = m.ExcPending
 							if v65 != 0 {
 								return
 							} else {
-								F_errfinish(m, int32(495468), int32(259), int32(431719))
+								F_errfinish(m, int32(496647), int32(259), int32(432499))
 								mBase = m.M
 								v70 = m.ExcPending
 								if v70 != 0 {
@@ -357,13 +357,13 @@ func F_table_tuple_get_latest_tid(m *base.Module, l0 int32, l1 int32) {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v54
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v53 + int32(4)
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51 | v52<<(uint(int32(16))%32)
-						F_errmsg(m, int32(687922), v8)
+						F_errmsg(m, int32(689129), v8)
 						mBase = m.M
 						v65 = m.ExcPending
 						if v65 != 0 {
 							return
 						} else {
-							F_errfinish(m, int32(495468), int32(259), int32(431719))
+							F_errfinish(m, int32(496647), int32(259), int32(432499))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {

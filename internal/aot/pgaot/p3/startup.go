@@ -49,9 +49,9 @@ func F_StartupSUBTRANS(m *base.Module, l0 int32) {
 	goto L1
 L1:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, _consts[152]))
+	v21 = *(*int32)(unsafe.Add(mBase, _consts[161]))
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+28))
-	v25 = int32(*(*uint16)(unsafe.Add(mBase, _consts[153])))
+	v25 = int32(*(*uint16)(unsafe.Add(mBase, _consts[162])))
 	v26 = base.I32_rem_u_s(base.I32_wrap_i64(v17), v25)
 	v29 = v22 + v26<<(uint(int32(7))%32)
 	if v29 != v16 {
@@ -82,7 +82,7 @@ L4:
 	goto L5
 L5:
 	;
-	v38 = F_SimpleLruZeroPage(m, int32(4384056), v17)
+	v38 = F_SimpleLruZeroPage(m, int32(4384344), v17)
 	mBase = m.M
 	v39 = m.ExcPending
 	if v39 != 0 {

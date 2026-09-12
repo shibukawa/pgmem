@@ -383,7 +383,7 @@ L19:
 	goto L15
 L20:
 	;
-	v45 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v45 = *(*int32)(unsafe.Add(mBase, _consts[1125]))
 	v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)))
 	if v46 == int32(0) {
 		goto L22
@@ -573,7 +573,7 @@ L50:
 	goto L46
 L51:
 	;
-	v167 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v167 = *(*int32)(unsafe.Add(mBase, _consts[1125]))
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(v167)))
 	if v168 == int32(0) {
 		goto L53
@@ -777,7 +777,7 @@ L84:
 	goto L80
 L85:
 	;
-	v311 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v311 = *(*int32)(unsafe.Add(mBase, _consts[1125]))
 	v312 = *(*int32)(unsafe.Add(mBase, uint32(v311)))
 	if v312 == int32(0) {
 		goto L87
@@ -910,7 +910,7 @@ L106:
 	goto L102
 L107:
 	;
-	v407 = *(*int32)(unsafe.Add(mBase, _consts[1124]))
+	v407 = *(*int32)(unsafe.Add(mBase, _consts[1125]))
 	v408 = *(*int32)(unsafe.Add(mBase, uint32(v407)))
 	if v408 == int32(0) {
 		goto L109
@@ -1164,13 +1164,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 				if v178 != 0 {
 					return int32(0)
 				} else {
-					F_errmsg(m, int32(525848), int32(0))
+					F_errmsg(m, int32(527055), int32(0))
 					mBase = m.M
 					v182 = m.ExcPending
 					if v182 != 0 {
 						return int32(0)
 					} else {
-						F_errfinish(m, int32(491753), int32(4090), int32(546597))
+						F_errfinish(m, int32(492922), int32(4090), int32(547804))
 						mBase = m.M
 						v187 = m.ExcPending
 						if v187 != 0 {
@@ -1199,13 +1199,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 					if v178 != 0 {
 						return int32(0)
 					} else {
-						F_errmsg(m, int32(525848), int32(0))
+						F_errmsg(m, int32(527055), int32(0))
 						mBase = m.M
 						v182 = m.ExcPending
 						if v182 != 0 {
 							return int32(0)
 						} else {
-							F_errfinish(m, int32(491753), int32(4090), int32(546597))
+							F_errfinish(m, int32(492922), int32(4090), int32(547804))
 							mBase = m.M
 							v187 = m.ExcPending
 							if v187 != 0 {
@@ -1234,13 +1234,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 						if v178 != 0 {
 							return int32(0)
 						} else {
-							F_errmsg(m, int32(525848), int32(0))
+							F_errmsg(m, int32(527055), int32(0))
 							mBase = m.M
 							v182 = m.ExcPending
 							if v182 != 0 {
 								return int32(0)
 							} else {
-								F_errfinish(m, int32(491753), int32(4090), int32(546597))
+								F_errfinish(m, int32(492922), int32(4090), int32(547804))
 								mBase = m.M
 								v187 = m.ExcPending
 								if v187 != 0 {
@@ -1267,13 +1267,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 							if v194 != 0 {
 								return int32(0)
 							} else {
-								F_errmsg(m, int32(349380), int32(0))
+								F_errmsg(m, int32(349910), int32(0))
 								mBase = m.M
 								v198 = m.ExcPending
 								if v198 != 0 {
 									return int32(0)
 								} else {
-									F_errfinish(m, int32(491753), int32(4096), int32(546597))
+									F_errfinish(m, int32(492922), int32(4096), int32(547804))
 									mBase = m.M
 									v203 = m.ExcPending
 									if v203 != 0 {
@@ -1300,13 +1300,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 								if v194 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(349380), int32(0))
+									F_errmsg(m, int32(349910), int32(0))
 									mBase = m.M
 									v198 = m.ExcPending
 									if v198 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(491753), int32(4096), int32(546597))
+										F_errfinish(m, int32(492922), int32(4096), int32(547804))
 										mBase = m.M
 										v203 = m.ExcPending
 										if v203 != 0 {
@@ -1342,13 +1342,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 												if v54 != 0 {
 													return int32(0)
 												} else {
-													F_errmsg(m, int32(401154), int32(0))
+													F_errmsg(m, int32(401813), int32(0))
 													mBase = m.M
 													v58 = m.ExcPending
 													if v58 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(491753), int32(4107), int32(546597))
+														F_errfinish(m, int32(492922), int32(4107), int32(547804))
 														mBase = m.M
 														v63 = m.ExcPending
 														if v63 != 0 {
@@ -1400,13 +1400,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 										if v210 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(423272), int32(0))
+											F_errmsg(m, int32(424025), int32(0))
 											mBase = m.M
 											v214 = m.ExcPending
 											if v214 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(491753), int32(4162), int32(546597))
+												F_errfinish(m, int32(492922), int32(4162), int32(547804))
 												mBase = m.M
 												v219 = m.ExcPending
 												if v219 != 0 {
@@ -1441,13 +1441,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 													if v110 != 0 {
 														return int32(0)
 													} else {
-														F_errmsg(m, int32(401154), int32(0))
+														F_errmsg(m, int32(401813), int32(0))
 														mBase = m.M
 														v114 = m.ExcPending
 														if v114 != 0 {
 															return int32(0)
 														} else {
-															F_errfinish(m, int32(491753), int32(4145), int32(546597))
+															F_errfinish(m, int32(492922), int32(4145), int32(547804))
 															mBase = m.M
 															v119 = m.ExcPending
 															if v119 != 0 {
@@ -1506,13 +1506,13 @@ func F_width_bucket_float8(m *base.Module, l0 int32) int32 {
 			if v160 != 0 {
 				return int32(0)
 			} else {
-				F_errmsg(m, int32(239267), int32(0))
+				F_errmsg(m, int32(239561), int32(0))
 				mBase = m.M
 				v164 = m.ExcPending
 				if v164 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(491753), int32(4085), int32(546597))
+					F_errfinish(m, int32(492922), int32(4085), int32(547804))
 					mBase = m.M
 					v169 = m.ExcPending
 					if v169 != 0 {
@@ -1560,7 +1560,7 @@ func F_win866_to_koi8r(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(20), int32(22), int32(2212672), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(20), int32(22), int32(2212864), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -1603,7 +1603,7 @@ func F_win866_to_mic(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_latin2mic_with_table(m, v6, v5, v10, int32(139), int32(20), int32(2212672), base.B2i32(v7 != int32(0)))
+		v22 = F_latin2mic_with_table(m, v6, v5, v10, int32(139), int32(20), int32(2212864), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

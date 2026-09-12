@@ -160,7 +160,7 @@ func F_KeepFileRestoredFromArchive(m *base.Module, l0 int32, l1 int32) {
 	v8 = v6 - int32(2176)
 	m.G0 = v8
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
-	v17 = F_pg_snprintf(m, v8+int32(1152), int32(1024), int32(176704), v8+int32(16))
+	v17 = F_pg_snprintf(m, v8+int32(1152), int32(1024), int32(176855), v8+int32(16))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -453,7 +453,7 @@ L40:
 	goto L7
 L41:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, _consts[193]))
+	v156 = *(*int32)(unsafe.Add(mBase, _consts[202]))
 	if v156 != int32(2) {
 		goto L43
 	} else {
@@ -498,7 +498,7 @@ L47:
 L48:
 	;
 	v165 = int32(0)
-	v167 = *(*int32)(unsafe.Add(mBase, _consts[299]))
+	v167 = *(*int32)(unsafe.Add(mBase, _consts[308]))
 	if v165 < v167 {
 		goto L51
 	} else {
@@ -529,7 +529,7 @@ L53:
 	goto L50
 L54:
 	;
-	v176 = *(*int32)(unsafe.Add(mBase, _consts[352]))
+	v176 = *(*int32)(unsafe.Add(mBase, _consts[361]))
 	v179 = v176 + v173*int32(96)
 	v181 = v179 + int32(164)
 	v182 = *(*int32)(unsafe.Add(mBase, uint32(v181)))
@@ -544,7 +544,7 @@ L55:
 	goto L53
 L56:
 	;
-	F_s_lock(m, v181, int32(493749), int32(3596), int32(462109))
+	F_s_lock(m, v181, int32(494928), int32(3596), int32(462996))
 	mBase = m.M
 	v189 = m.ExcPending
 	if v189 != 0 {
@@ -579,7 +579,7 @@ L62:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v181))) = int32(0)
 	v198 = v173 + int32(1)
-	v200 = *(*int32)(unsafe.Add(mBase, _consts[299]))
+	v200 = *(*int32)(unsafe.Add(mBase, _consts[308]))
 	if v198 < v200 {
 		v173 = v198
 		goto L54
@@ -606,7 +606,7 @@ L65:
 L66:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v8 + int32(1152)
-	F_errmsg(m, int32(298300), v8)
+	F_errmsg(m, int32(298801), v8)
 	mBase = m.M
 	v230 = m.ExcPending
 	if v230 != 0 {
@@ -616,7 +616,7 @@ L66:
 	}
 L67:
 	;
-	F_errfinish(m, int32(496622), int32(400), int32(342964))
+	F_errfinish(m, int32(497816), int32(400), int32(343484))
 	mBase = m.M
 	v235 = m.ExcPending
 	if v235 != 0 {
@@ -741,7 +741,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 	_ = v203
 	var v204 int64
 	_ = v204
-	v13 = *(*int32)(unsafe.Add(mBase, _consts[176]))
+	v13 = *(*int32)(unsafe.Add(mBase, _consts[185]))
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+20))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v13)+16))
 	v16 = v14 - v15
@@ -761,8 +761,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v172 = v74
 					} else {
 						v76 = int32(1)
-						v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-						v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+						v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+						v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 						if v15+v76 != v14 {
 							v88 = v74
 							v90 = v15
@@ -847,7 +847,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 							return
 						}
 					} else {
@@ -860,7 +860,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+						*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 						return
 					}
 				}
@@ -870,8 +870,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					v172 = v74
 				} else {
 					v76 = int32(1)
-					v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-					v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+					v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+					v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 					if v15+v76 != v14 {
 						v88 = v74
 						v90 = v15
@@ -956,7 +956,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+						*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 						return
 					}
 				} else {
@@ -969,7 +969,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 					v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 					v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 					m.G0 = v200 + v199
-					*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+					*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 					return
 				}
 			}
@@ -978,10 +978,10 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 		}
 	} else {
 		if l0 == int32(2) {
-			v23 = int32(4405920)
-			v25 = *(*int32)(unsafe.Add(mBase, _consts[834]))
+			v23 = int32(4406208)
+			v25 = *(*int32)(unsafe.Add(mBase, _consts[843]))
 			v26 = int32(1)
-			*(*int32)(unsafe.Add(mBase, _consts[834])) = v25 + v26
+			*(*int32)(unsafe.Add(mBase, _consts[843])) = v25 + v26
 			if v16 < v17<<(uint(v26)%32) {
 				return
 			} else {
@@ -999,8 +999,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v172 = v74
 							} else {
 								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-								v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+								v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+								v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 								if v15+v76 != v14 {
 									v88 = v74
 									v90 = v15
@@ -1085,7 +1085,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+									*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 									return
 								}
 							} else {
@@ -1098,7 +1098,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						}
@@ -1108,8 +1108,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v172 = v74
 						} else {
 							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-							v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+							v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+							v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 							if v15+v76 != v14 {
 								v88 = v74
 								v90 = v15
@@ -1194,7 +1194,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						} else {
@@ -1207,7 +1207,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 							return
 						}
 					}
@@ -1230,8 +1230,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v172 = v74
 						} else {
 							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-							v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+							v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+							v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 							if v15+v76 != v14 {
 								v88 = v74
 								v90 = v15
@@ -1316,7 +1316,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						} else {
@@ -1329,7 +1329,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 							return
 						}
 					}
@@ -1339,8 +1339,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v172 = v74
 					} else {
 						v76 = int32(1)
-						v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-						v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+						v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+						v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 						if v15+v76 != v14 {
 							v88 = v74
 							v90 = v15
@@ -1425,7 +1425,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 							return
 						}
 					} else {
@@ -1438,12 +1438,12 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 						v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 						v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 						m.G0 = v200 + v199
-						*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+						*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 						return
 					}
 				}
 			} else {
-				v39 = *(*int64)(unsafe.Add(mBase, _consts[833]))
+				v39 = *(*int64)(unsafe.Add(mBase, _consts[842]))
 				if v39 == int64(0) {
 					if l1 == int32(0) {
 						v68 = *(*int32)(unsafe.Add(mBase, _consts[44]))
@@ -1458,8 +1458,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v172 = v74
 							} else {
 								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-								v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+								v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+								v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 								if v15+v76 != v14 {
 									v88 = v74
 									v90 = v15
@@ -1544,7 +1544,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+									*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 									return
 								}
 							} else {
@@ -1557,7 +1557,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						}
@@ -1567,8 +1567,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v172 = v74
 						} else {
 							v76 = int32(1)
-							v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-							v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+							v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+							v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 							if v15+v76 != v14 {
 								v88 = v74
 								v90 = v15
@@ -1653,7 +1653,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						} else {
@@ -1666,7 +1666,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 							v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 							v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 							m.G0 = v200 + v199
-							*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+							*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 							return
 						}
 					}
@@ -1696,8 +1696,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v172 = v74
 								} else {
 									v76 = int32(1)
-									v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-									v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+									v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+									v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 									if v15+v76 != v14 {
 										v88 = v74
 										v90 = v15
@@ -1782,7 +1782,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 										v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 										v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 										m.G0 = v200 + v199
-										*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+										*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 										return
 									}
 								} else {
@@ -1795,7 +1795,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+									*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 									return
 								}
 							}
@@ -1805,8 +1805,8 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v172 = v74
 							} else {
 								v76 = int32(1)
-								v79 = *(*int32)(unsafe.Add(mBase, _consts[831]))
-								v81 = *(*int32)(unsafe.Add(mBase, _consts[832]))
+								v79 = *(*int32)(unsafe.Add(mBase, _consts[840]))
+								v81 = *(*int32)(unsafe.Add(mBase, _consts[841]))
 								if v15+v76 != v14 {
 									v88 = v74
 									v90 = v15
@@ -1891,7 +1891,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 									v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 									v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 									m.G0 = v200 + v199
-									*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+									*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 									return
 								}
 							} else {
@@ -1904,7 +1904,7 @@ func F_KnownAssignedXidsCompress(m *base.Module, l0 int32, l1 int32) {
 								v203 = *(*int64)(unsafe.Add(mBase, uint32(v200)))
 								v204 = int64(*(*int32)(unsafe.Add(mBase, uint32(v200)+8)))
 								m.G0 = v200 + v199
-								*(*int64)(unsafe.Add(mBase, _consts[833])) = v204 + v203*int64(1000000) - int64(946684800000000)
+								*(*int64)(unsafe.Add(mBase, _consts[842])) = v204 + v203*int64(1000000) - int64(946684800000000)
 								return
 							}
 						}
@@ -1947,7 +1947,7 @@ func F_koi8r_to_iso(m *base.Module, l0 int32) int32 {
 	if v16 != 0 {
 		return int32(0)
 	} else {
-		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2212288), base.B2i32(v7 != int32(0)))
+		v22 = F_local2local(m, v6, v5, v10, int32(22), int32(25), int32(2212480), base.B2i32(v7 != int32(0)))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {

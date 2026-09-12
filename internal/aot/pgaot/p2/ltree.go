@@ -423,7 +423,7 @@ L27:
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v24
-	F_errmsg_internal(m, int32(480801), v15)
+	F_errmsg_internal(m, int32(481959), v15)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -433,7 +433,7 @@ L28:
 	}
 L29:
 	;
-	F_errfinish(m, int32(490983), int32(541), int32(92647))
+	F_errfinish(m, int32(492141), int32(541), int32(92760))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
@@ -653,7 +653,7 @@ L62:
 	}
 L63:
 	;
-	F_errmsg(m, int32(152249), int32(0))
+	F_errmsg(m, int32(152400), int32(0))
 	mBase = m.M
 	v279 = m.ExcPending
 	if v279 != 0 {
@@ -663,7 +663,7 @@ L63:
 	}
 L64:
 	;
-	F_errfinish(m, int32(490983), int32(493), int32(146986))
+	F_errfinish(m, int32(492141), int32(493), int32(147137))
 	mBase = m.M
 	v286 = m.ExcPending
 	if v286 != 0 {
@@ -688,7 +688,7 @@ L66:
 	}
 L67:
 	;
-	F_errmsg(m, int32(312106), int32(0))
+	F_errmsg(m, int32(312607), int32(0))
 	mBase = m.M
 	v299 = m.ExcPending
 	if v299 != 0 {
@@ -698,7 +698,7 @@ L67:
 	}
 L68:
 	;
-	F_errfinish(m, int32(490983), int32(489), int32(146986))
+	F_errfinish(m, int32(492141), int32(489), int32(147137))
 	mBase = m.M
 	v306 = m.ExcPending
 	if v306 != 0 {
@@ -716,7 +716,7 @@ L70:
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v50
 	v311 = int32(8)
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v51 + v311
-	v320 = F_ltree_execute(m, v19+v311, v15+v311, int32(0), int32(6862))
+	v320 = F_ltree_execute(m, v19+v311, v15+v311, int32(0), int32(6886))
 	mBase = m.M
 	v321 = m.ExcPending
 	if v321 != 0 {
@@ -1248,7 +1248,7 @@ func F__ltree_gist_options(m *base.Module, l0 int32) int32 {
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
-	F_add_local_int_reloption(m, v2, int32(281176), int32(319944), int32(28), int32(1), int32(2024))
+	F_add_local_int_reloption(m, v2, int32(281594), int32(320464), int32(28), int32(1), int32(2024))
 	mBase = m.M
 	v18 = m.ExcPending
 	if v18 != 0 {
@@ -3168,7 +3168,7 @@ L17:
 L18:
 	;
 	v86 = int32(8)
-	F_pg_qsort(m, v80+v86, v61, v86, int32(6863))
+	F_pg_qsort(m, v80+v86, v61, v86, int32(6887))
 	mBase = m.M
 	v91 = m.ExcPending
 	if v91 != 0 {
@@ -3205,7 +3205,7 @@ L22:
 L23:
 	;
 	v139 = int32(8)
-	F_pg_qsort(m, v80+v139, v61, v139, int32(6863))
+	F_pg_qsort(m, v80+v139, v61, v139, int32(6887))
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {

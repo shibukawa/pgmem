@@ -492,7 +492,7 @@ L40:
 	goto L39
 L41:
 	;
-	v205 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1053])))
+	v205 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1062])))
 	if v205 != int32(1) {
 		v209 = v198
 		goto L39
@@ -501,7 +501,7 @@ L41:
 	}
 L42:
 	;
-	v203 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1054])))
+	v203 = int32(*(*uint8)(unsafe.Add(mBase, _consts[1063])))
 	if v203 != 0 {
 		goto L40
 	} else {
@@ -574,7 +574,7 @@ L51:
 	}
 L52:
 	;
-	v224 = *(*int32)(unsafe.Add(mBase, _consts[170]))
+	v224 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	F_ResourceOwnerEnlarge(m, v224)
 	mBase = m.M
 	v226 = m.ExcPending
@@ -587,7 +587,7 @@ L53:
 	;
 	v227 = *(*int32)(unsafe.Add(mBase, uint32(v219)+32))
 	*(*int32)(unsafe.Add(mBase, uint32(v219)+32)) = v227 + int32(1)
-	v232 = *(*int32)(unsafe.Add(mBase, _consts[170]))
+	v232 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	F_ResourceOwnerRemember(m, v232, v219+int32(40), int32(1722756))
 	mBase = m.M
 	v237 = m.ExcPending
@@ -698,7 +698,7 @@ L69:
 	goto L66
 L70:
 	;
-	v282 = *(*int32)(unsafe.Add(mBase, _consts[170]))
+	v282 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	F_ResourceOwnerEnlarge(m, v282)
 	mBase = m.M
 	v284 = m.ExcPending
@@ -712,7 +712,7 @@ L71:
 	v286 = v78 + int32(8)
 	v287 = *(*int32)(unsafe.Add(mBase, uint32(v286)))
 	*(*int32)(unsafe.Add(mBase, uint32(v286))) = v287 + int32(1)
-	v292 = *(*int32)(unsafe.Add(mBase, _consts[170]))
+	v292 = *(*int32)(unsafe.Add(mBase, _consts[179]))
 	v294 = v78 + int32(16)
 	F_ResourceOwnerRemember(m, v292, v294, int32(1722756))
 	mBase = m.M
@@ -729,7 +729,7 @@ L72:
 L73:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v18))) = l1
-	F_errmsg_internal(m, int32(479968), v18)
+	F_errmsg_internal(m, int32(481126), v18)
 	mBase = m.M
 	v324 = m.ExcPending
 	if v324 != 0 {
@@ -739,7 +739,7 @@ L73:
 	}
 L74:
 	;
-	F_errfinish(m, int32(497365), int32(373), int32(346392))
+	F_errfinish(m, int32(498572), int32(373), int32(346922))
 	mBase = m.M
 	v329 = m.ExcPending
 	if v329 != 0 {

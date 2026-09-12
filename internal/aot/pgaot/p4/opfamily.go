@@ -172,7 +172,7 @@ L9:
 L10:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13))) = l0
-	F_errmsg_internal(m, int32(39530), v13)
+	F_errmsg_internal(m, int32(39573), v13)
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -182,7 +182,7 @@ L10:
 	}
 L11:
 	;
-	F_errfinish(m, int32(497711), int32(2283), int32(64169))
+	F_errfinish(m, int32(498918), int32(2283), int32(64273))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {
@@ -217,7 +217,7 @@ L14:
 L15:
 	;
 	v46 = int32(0)
-	v48 = *(*int32)(unsafe.Add(mBase, _consts[379]))
+	v48 = *(*int32)(unsafe.Add(mBase, _consts[388]))
 	if v48 == v46 {
 		goto L19
 	} else {
@@ -317,7 +317,7 @@ L31:
 	goto L17
 L32:
 	;
-	v95 = *(*int32)(unsafe.Add(mBase, _consts[379]))
+	v95 = *(*int32)(unsafe.Add(mBase, _consts[388]))
 	if v95 == int32(0) {
 		v138 = v3
 		goto L33
@@ -339,7 +339,7 @@ L34:
 	}
 L35:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, _consts[251]))
+	v104 = *(*int32)(unsafe.Add(mBase, _consts[260]))
 	v107 = int32(0)
 	v109 = v104
 	v113 = v98
@@ -394,7 +394,7 @@ L41:
 L42:
 	;
 	v126 = *(*int32)(unsafe.Add(mBase, uint32(v95)+4))
-	v128 = *(*int32)(unsafe.Add(mBase, _consts[251]))
+	v128 = *(*int32)(unsafe.Add(mBase, _consts[260]))
 	v129 = v128
 	v130 = v126
 	goto L40
@@ -450,13 +450,13 @@ func F_get_opfamily_name(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
-				F_errmsg_internal(m, int32(39806), v6)
+				F_errmsg_internal(m, int32(39849), v6)
 				mBase = m.M
 				v22 = m.ExcPending
 				if v22 != 0 {
 					return int32(0)
 				} else {
-					F_errfinish(m, int32(497376), int32(1404), int32(377077))
+					F_errfinish(m, int32(498583), int32(1404), int32(377721))
 					mBase = m.M
 					v27 = m.ExcPending
 					if v27 != 0 {

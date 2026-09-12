@@ -9512,6 +9512,30 @@ func callExport(m *base.Module, name string, a []uint64) (res []uint64, ok bool)
 		}
 		r := pgaot.SegUpper(m, int32(uint32(a[0])))
 		return []uint64{uint64(uint32(r))}, true
+	case "Pg_magic_func_bloom":
+		if len(a) != 0 {
+			panic("aot: Pg_magic_func_bloom: want 0 args")
+		}
+		r := pgaot.PgMagicFuncBloom(m)
+		return []uint64{uint64(uint32(r))}, true
+	case "_PG_init_bloom":
+		if len(a) != 0 {
+			panic("aot: _PG_init_bloom: want 0 args")
+		}
+		pgaot.PGInitBloom(m)
+		return nil, true
+	case "blhandler":
+		if len(a) != 1 {
+			panic("aot: blhandler: want 1 args")
+		}
+		r := pgaot.Blhandler(m, int32(uint32(a[0])))
+		return []uint64{uint64(uint32(r))}, true
+	case "pg_finfo_blhandler":
+		if len(a) != 0 {
+			panic("aot: pg_finfo_blhandler: want 0 args")
+		}
+		r := pgaot.PgFinfoBlhandler(m)
+		return []uint64{uint64(uint32(r))}, true
 	case "_emscripten_memcpy_bulkmem":
 		if len(a) != 3 {
 			panic("aot: _emscripten_memcpy_bulkmem: want 3 args")
