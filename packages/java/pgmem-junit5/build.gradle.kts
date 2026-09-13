@@ -8,3 +8,12 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.postgresql:postgresql:42.7.7")
 }
+
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            versionMapping { allVariants { fromResolutionResult() } }
+        }
+    }
+}

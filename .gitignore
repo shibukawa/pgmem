@@ -6,6 +6,15 @@
 # knowledge-compiler cache
 .knowledge/.cache/
 
+# release builds (scripts/build-*.sh) and the notices they copy into packages
+/dist/
+/packages/python/LICENSE
+/packages/python/NOTICE
+/packages/node/core/LICENSE
+/packages/node/core/NOTICE
+/packages/node/platforms/*/LICENSE
+/packages/node/platforms/*/NOTICE
+
 # language packages
 /packages/python/dist/
 /packages/python/.venv/

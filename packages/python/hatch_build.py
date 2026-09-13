@@ -15,12 +15,14 @@ import sys
 from hatchling.builders.hooks.plugin.interface import BuildHookInterface
 
 # GOOS/GOARCH -> wheel platform tag. The binary has no libc dependency, so
-# the oldest tag each platform accepts is correct.
+# the oldest glibc tag is correct and musl systems (Alpine) take the same
+# wheel. On macOS the floor is the oldest release the Go toolchain supports:
+# 13 for Go 1.27, which .github/workflows/release.yml builds with.
 PLATFORM_TAGS = {
-    ("linux", "amd64"): "manylinux_2_17_x86_64.manylinux2014_x86_64",
-    ("linux", "arm64"): "manylinux_2_17_aarch64.manylinux2014_aarch64",
-    ("darwin", "amd64"): "macosx_10_13_x86_64",
-    ("darwin", "arm64"): "macosx_11_0_arm64",
+    ("linux", "amd64"): "manylinux_2_17_x86_64.manylinux2014_x86_64.musllinux_1_1_x86_64",
+    ("linux", "arm64"): "manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64",
+    ("darwin", "amd64"): "macosx_13_0_x86_64",
+    ("darwin", "arm64"): "macosx_13_0_arm64",
     ("windows", "amd64"): "win_amd64",
     ("windows", "arm64"): "win_arm64",
 }
@@ -44,6 +46,11 @@ class CustomBuildHook(BuildHookInterface):
         if version == "editable":
             # dev install: tests supply PGMEM_BINARY or build on demand
             return
+        # a binary left by a build for another platform would ride along
+        for stale in ("pgmem", "pgmem.exe"):
+            path = os.path.join(self.root, "src", "pgmem", "_bin", stale)
+            if os.path.exists(path):
+                os.remove(path)
         src = os.environ.get("PGMEM_BINARY")
         if src:
             shutil.copyfile(src, dst)

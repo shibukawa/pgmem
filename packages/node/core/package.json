@@ -27,7 +27,8 @@
     "index.d.ts",
     "register.js",
     "jest-environment.cjs",
-    "README.md"
+    "README.md",
+    "NOTICE"
   ],
   "engines": {
     "node": ">=20"

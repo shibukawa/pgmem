@@ -47,15 +47,18 @@ val buildBinary by tasks.registering(Exec::class) {
     doFirst { nativeDir.get().asFile.mkdirs() }
 }
 
+// The version is in gradle.properties, where scripts/set-version.sh stamps it.
 allprojects {
     group = "jp.shibu"
-    version = "0.1.0"
     repositories { mavenCentral() }
 }
+
+val repoRoot: File = rootDir.parentFile.parentFile
 
 subprojects {
     apply(plugin = "java-library")
     apply(plugin = "maven-publish")
+    apply(plugin = "signing")
 
     extensions.configure<JavaPluginExtension> {
         withSourcesJar()
@@ -67,6 +70,7 @@ subprojects {
     }
     tasks.withType<Jar>().configureEach {
         manifest { attributes("Implementation-Version" to project.version, "Implementation-Title" to project.name) }
+        metaInf { from(File(repoRoot, "LICENSE"), File(repoRoot, "NOTICE")) }
     }
     tasks.withType<Javadoc>().configureEach {
         (options as StandardJavadocDocletOptions).addBooleanOption("Xdoclint:none", true)
@@ -77,7 +81,50 @@ subprojects {
         systemProperty("pgmem.binary", nativeDir.get().file(binaryName).asFile.absolutePath)
         testLogging { events("passed", "failed", "skipped"); showStandardStreams = false }
     }
+
+    // Each subproject declares its own publication; this adds the POM fields
+    // Maven Central requires and the directory scripts/build-maven-bundle.sh
+    // zips into a Central Publisher Portal bundle.
     extensions.configure<PublishingExtension> {
-        publications { create<MavenPublication>("maven") { from(components["java"]) } }
+        publications.withType<MavenPublication>().configureEach {
+            pom {
+                name.set(project.name)
+                description.set(provider { project.description.orEmpty() })
+                url.set("https://github.com/shibukawa/pgmem")
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("shibukawa")
+                        name.set("Yoshiki Shibukawa")
+                        url.set("https://github.com/shibukawa")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:https://github.com/shibukawa/pgmem.git")
+                    developerConnection.set("scm:git:git@github.com:shibukawa/pgmem.git")
+                    url.set("https://github.com/shibukawa/pgmem")
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "centralStaging"
+                url = uri(rootProject.layout.buildDirectory.dir("central-staging"))
+            }
+        }
+    }
+
+    // GPG_PRIVATE_KEY (an armored secret key) and GPG_PASSPHRASE sign every publication.
+    val signingKey = providers.environmentVariable("GPG_PRIVATE_KEY")
+    if (signingKey.isPresent) {
+        extensions.configure<SigningExtension> {
+            useInMemoryPgpKeys(signingKey.get(), providers.environmentVariable("GPG_PASSPHRASE").orNull)
+            sign(extensions.getByType<PublishingExtension>().publications)
+        }
     }
 }
