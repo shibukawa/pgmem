@@ -11,3 +11,5 @@
 /packages/python/.venv/
 /packages/python/**/__pycache__/
 /packages/python/.pytest_cache/
+/packages/node/platforms/*/bin/
+/packages/node/**/node_modules/

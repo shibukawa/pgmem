@@ -1,0 +1,19 @@
+{
+  "name": "pgmem-example-prisma",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "prisma generate",
+    "test": "prisma generate && vitest run",
+    "migrate:dev": "node scripts/migrate-dev.mjs"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0"
+  },
+  "devDependencies": {
+    "@pgmem/core": "file:../../core",
+    "prisma": "7.10.0",
+    "vitest": "^5.0.0"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "@pgmem/core",
+  "version": "0.1.0",
+  "description": "In-memory PostgreSQL 18 for tests: one DATABASE_URL per test file, reset in place per test, no Docker",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shibukawa/pgmem.git",
+    "directory": "packages/node/core"
+  },
+  "type": "module",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./register": "./register.js",
+    "./jest-environment": "./jest-environment.cjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "register.js",
+    "jest-environment.cjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "peerDependencies": {
+    "jest-environment-node": ">=29"
+  },
+  "peerDependenciesMeta": {
+    "jest-environment-node": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {
+    "@pgmem/darwin-arm64": "0.1.0",
+    "@pgmem/darwin-x64": "0.1.0",
+    "@pgmem/linux-arm64": "0.1.0",
+    "@pgmem/linux-x64": "0.1.0",
+    "@pgmem/win32-arm64": "0.1.0",
+    "@pgmem/win32-x64": "0.1.0"
+  },
+  "keywords": [
+    "postgresql",
+    "postgres",
+    "testing",
+    "in-memory",
+    "prisma",
+    "drizzle",
+    "typeorm",
+    "vitest",
+    "jest"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
