@@ -53,6 +53,9 @@ func sharedEngine() (*engine.Engine, error) {
 // Options configures Start.
 type Options struct {
 	// Database and User for the DSN. The user is the initdb superuser.
+	// Connections may also name other databases of the server (made with
+	// CREATE DATABASE); the backend serves one database at a time and is
+	// restarted on another one when a connection to it needs it.
 	Database string
 	User     string
 	// Port to listen on (0 = pick a free port). Always binds 127.0.0.1.
@@ -81,9 +84,10 @@ type Server struct {
 	ln   net.Listener
 	port int
 
-	// fs and b are the data directory and the backend. Restore replaces
-	// both while holding sem and bmu; Close takes bmu to shut b down
-	// without waiting for a connection that keeps sem.
+	// fs and b are the data directory and the backend. Restore and
+	// database switches replace them while holding sem and bmu; Close
+	// takes bmu to shut b down without waiting for a connection that
+	// keeps sem.
 	bmu sync.Mutex
 	fs  *vfs.FS
 	b   *engine.Backend
@@ -96,22 +100,25 @@ type Server struct {
 	// a batch without giving the backend back (0 while a batch runs or
 	// nobody holds it), which tells a waiter an idle transaction from a
 	// slow statement.
-	sem         chan struct{}
-	holder      atomic.Int64
-	idleSince   atomic.Int64
-	live        int // sessions started and not yet ended; guarded by sem
-	startupPkt  []byte
-	startupResp []byte
+	sem       chan struct{}
+	holder    atomic.Int64
+	idleSince atomic.Int64
 
-	// LISTEN/NOTIFY. The backend's own listen set is the union over all
-	// connections; these map each channel to the sessions that asked for
-	// it, fed by the commit hook (Backend.Listen), so NotifyResponse
-	// messages can be routed to the right connections. relisten holds
-	// channels the backend dropped (UNLISTEN by one connection) while
-	// others still want them. All guarded by sem.
+	// current is the database the backend serves and dbs the session
+	// bookkeeping of every database connected to (see databases.go).
+	// Guarded by sem.
+	current string
+	dbs     map[string]*dbState
+
+	// LISTEN/NOTIFY. The backend's own listen set is the union over the
+	// connections to its database; these map each channel to the sessions
+	// that asked for it, fed by the commit hook (Backend.Listen), so
+	// NotifyResponse messages can be routed to the right connections.
+	// relisten holds channels the backend dropped (UNLISTEN by one
+	// connection) while others still want them. All guarded by sem.
 	sessions    map[int64]*session
-	listeners   map[string]map[int64]*session
-	relisten    map[string]bool
+	listeners   map[listenKey]map[int64]*session
+	relisten    map[listenKey]bool
 	quietListen bool // pgmem is re-issuing LISTEN; ignore hook events
 
 	// origin is the snapshot a fork was started from, which Reset returns
@@ -214,14 +221,16 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, origin *Snapshot, onClose 
 		conns:     map[net.Conn]struct{}{},
 		sem:       make(chan struct{}, 1),
 		done:      make(chan struct{}),
+		current:   opts.Database,
+		dbs:       map[string]*dbState{},
 		sessions:  map[int64]*session{},
-		listeners: map[string]map[int64]*session{},
-		relisten:  map[string]bool{},
+		listeners: map[listenKey]map[int64]*session{},
+		relisten:  map[listenKey]bool{},
 		origin:    origin,
 		restored:  origin,
 		onClose:   onClose,
 	}
-	b, err := s.startBackend(fs)
+	b, err := s.startBackend(fs, opts.Database)
 	if err != nil {
 		return nil, err
 	}
@@ -237,9 +246,10 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, origin *Snapshot, onClose 
 	return s, nil
 }
 
-// startBackend boots a backend on fs with the server's options and hooks.
-func (s *Server) startBackend(fs *vfs.FS) (*engine.Backend, error) {
-	b, err := s.e.Start(fs, engine.StartOptions{User: s.opts.User, Database: s.opts.Database, Params: s.opts.Params})
+// startBackend boots a backend on fs serving database name, with the
+// server's options and hooks.
+func (s *Server) startBackend(fs *vfs.FS, name string) (*engine.Backend, error) {
+	b, err := s.e.Start(fs, engine.StartOptions{User: s.opts.User, Database: name, Params: s.opts.Params})
 	if err != nil {
 		return nil, err
 	}
@@ -416,16 +426,18 @@ func (s *Server) logf(format string, args ...any) {
 
 // session is one client connection.
 type session struct {
-	id  int64
-	c   net.Conn
-	wmu sync.Mutex // serializes writes: batch replies and routed notifications
+	id       int64
+	c        net.Conn
+	database string
+	wmu      sync.Mutex // serializes writes: batch replies and routed notifications
 	// notify queues NotifyResponse messages routed from other connections;
 	// a writer goroutine drains it so delivery never blocks the backend
 	// (a net.Pipe client that is not reading would otherwise stall it).
 	notify chan []byte
 	// parses holds the Parse message of every named prepared statement the
 	// connection has open (names already prefixed), to drop them when it
-	// ends and to re-create them after Restore. Guarded by the server's sem.
+	// ends and to re-create them on a restarted backend. Guarded by the
+	// server's sem.
 	parses map[string][]byte
 }
 
@@ -482,17 +494,14 @@ func (s *Server) serve(c net.Conn) {
 		}
 		break
 	}
-	// One backend serves one database; a client asking for another would
-	// silently land in this one, so refuse it the way PostgreSQL refuses a
-	// database that does not exist.
-	if db := startupParam(pkt, "database"); db != "" && db != s.opts.Database {
-		c.Write(errorResponse("3D000", fmt.Sprintf("database %q is not served by this pgmem server (serving %q)", db, s.opts.Database)))
-		return
+	db := startupParam(pkt, "database")
+	if db == "" {
+		db = s.opts.Database
 	}
 	id := s.connSeq.Add(1)
 	prefix := "pgmem" + strconv.FormatInt(id, 36) + "_"
 
-	sess := &session{id: id, c: c, notify: make(chan []byte, 256), parses: map[string][]byte{}}
+	sess := &session{id: id, c: c, database: db, notify: make(chan []byte, 256), parses: map[string][]byte{}}
 	go func() {
 		for msg := range sess.notify {
 			sess.write(msg)
@@ -504,14 +513,19 @@ func (s *Server) serve(c net.Conn) {
 		c.Write(s.acquireError(err))
 		return
 	}
-	resp, err := s.startSession(pkt)
+	if err := s.use(db); err != nil {
+		s.release()
+		c.Write(s.useError(err))
+		return
+	}
+	resp, err := s.startSession(pkt, db)
 	if err != nil {
 		s.release()
 		s.logf("pgmem: startup failed: %v", err)
 		c.Write(errorResponse("08006", err.Error()))
 		return
 	}
-	s.live++
+	s.db(db).live++
 	s.sessions[id] = sess
 	s.release()
 	if err := sess.write(resp); err != nil {
@@ -542,6 +556,11 @@ func (s *Server) serve(c net.Conn) {
 					return
 				}
 				held = true
+				if err := s.use(sess.database); err != nil {
+					sess.write(s.useError(err))
+					s.endSession(sess, true)
+					return
+				}
 			}
 			s.idleSince.Store(0)
 			s.dirty = true
@@ -608,6 +627,20 @@ func (s *Server) acquireError(err error) []byte {
 	return errorResponse("57P01", "terminating connection because the pgmem server was closed")
 }
 
+// useError is what a connection is sent when the backend cannot serve its
+// database; the connection ends after it.
+func (s *Server) useError(err error) []byte {
+	var missing *noDatabaseError
+	switch {
+	case errors.As(err, &missing):
+		return errorResponse("3D000", err.Error())
+	case errors.Is(err, errServerClosed):
+		return errorResponse("57P01", "terminating connection because the pgmem server was closed")
+	}
+	s.logf("pgmem: %v", err)
+	return errorResponse("XX000", err.Error())
+}
+
 // linger keeps a connection of a closed server open until its client
 // closes it or closeGrace passes. A message from the client, or one that
 // was already read (pending), is answered with 57P01, ending it.
@@ -628,16 +661,19 @@ func (s *Server) endSession(sess *session, held bool) {
 		return // closed: the backend and the bookkeeping are gone
 	}
 	defer s.release()
-	s.live--
+	s.db(sess.database).live--
 	delete(s.sessions, sess.id)
-	for ch, m := range s.listeners {
+	for k, m := range s.listeners {
+		if k.database != sess.database {
+			continue
+		}
 		delete(m, sess.id)
 		if len(m) == 0 {
-			delete(s.listeners, ch)
+			delete(s.listeners, k)
 		}
 	}
-	if s.closed.Load() {
-		return
+	if s.closed.Load() || sess.database != s.current {
+		return // the session's state went with its backend
 	}
 	if held {
 		// The client went away mid-transaction, mid-pipeline or mid-COPY.
@@ -676,35 +712,38 @@ func (s *Server) onListen(channel string, op int) {
 		if sess == nil {
 			return
 		}
-		m := s.listeners[channel]
+		key := listenKey{s.current, channel}
+		m := s.listeners[key]
 		if m == nil {
 			m = map[int64]*session{}
-			s.listeners[channel] = m
+			s.listeners[key] = m
 		}
 		m[id] = sess
 	case 0:
-		s.dropListener(channel, id)
+		s.dropListener(listenKey{s.current, channel}, id)
 	case 2:
-		for ch := range s.listeners {
-			s.dropListener(ch, id)
+		for k := range s.listeners {
+			if k.database == s.current {
+				s.dropListener(k, id)
+			}
 		}
 	}
 }
 
-// dropListener records that the backend stopped listening on channel
+// dropListener records that the backend stopped listening on a channel
 // because connection id unlistened. If other connections still listen,
 // the backend has to be re-subscribed once it is idle again.
-func (s *Server) dropListener(channel string, id int64) {
-	m := s.listeners[channel]
+func (s *Server) dropListener(key listenKey, id int64) {
+	m := s.listeners[key]
 	if m == nil {
 		return
 	}
 	delete(m, id)
 	if len(m) == 0 {
-		delete(s.listeners, channel)
+		delete(s.listeners, key)
 		return
 	}
-	s.relisten[channel] = true
+	s.relisten[key] = true
 }
 
 // afterExec post-processes the backend's reply to a batch from sess: it
@@ -733,7 +772,7 @@ func (s *Server) afterExec(sess *session, out []byte) []byte {
 		if z < 0 {
 			continue
 		}
-		for id, target := range s.listeners[string(body[:z])] {
+		for id, target := range s.listeners[listenKey{s.current, string(body[:z])}] {
 			if id == sess.id {
 				kept = append(kept, msg...)
 				continue
@@ -748,21 +787,27 @@ func (s *Server) afterExec(sess *session, out []byte) []byte {
 	out = append(kept, rest...)
 	if len(s.relisten) > 0 && backendIdle(out) {
 		var q strings.Builder
-		for ch := range s.relisten {
-			q.WriteString("LISTEN " + quoteIdent(ch) + ";")
+		for k := range s.relisten {
+			if k.database == s.current {
+				q.WriteString("LISTEN " + quoteIdent(k.channel) + ";")
+				delete(s.relisten, k)
+			}
 		}
-		clear(s.relisten)
-		s.quietListen = true
-		s.b.Exec(simpleQuery(q.String()))
-		s.quietListen = false
+		if q.Len() > 0 {
+			s.quietListen = true
+			s.b.Exec(simpleQuery(q.String()))
+			s.quietListen = false
+		}
 	}
 	return out
 }
 
-// startSession runs the startup handshake for the first connection and
-// replays it (after resetting session state) for later ones.
-func (s *Server) startSession(pkt []byte) ([]byte, error) {
-	if s.startupResp == nil {
+// startSession runs the startup handshake for the first connection to a
+// database and replays it (after resetting session state) for later ones.
+// The backend serves the database already (see use).
+func (s *Server) startSession(pkt []byte, name string) ([]byte, error) {
+	st := s.db(name)
+	if st.startupResp == nil {
 		resp, err := s.b.Startup(pkt)
 		if err != nil {
 			return nil, err
@@ -770,21 +815,21 @@ func (s *Server) startSession(pkt []byte) ([]byte, error) {
 		if err := checkNoError(resp); err != nil {
 			return nil, err
 		}
-		s.startupPkt = append([]byte(nil), pkt...)
-		s.startupResp = resp
+		st.startupPkt = append([]byte(nil), pkt...)
+		st.startupResp = resp
 		return resp, s.applyUser()
 	}
 	// Fresh session semantics for a new connection, but only when no other
-	// connection is alive: the reset would drop the prepared statements
-	// and temp tables of connections still using the shared session. It
-	// is done in C rather than as ROLLBACK and DISCARD ALL statements, so
-	// pg_stat_statements and the log do not see it.
-	if s.live == 0 {
+	// connection to the database is alive: the reset would drop the
+	// prepared statements and temp tables of connections still using the
+	// shared session. It is done in C rather than as ROLLBACK and DISCARD
+	// ALL statements, so pg_stat_statements and the log do not see it.
+	if st.live == 0 {
 		if err := s.b.ResetSession(true); err != nil {
 			return nil, err
 		}
 	}
-	return s.startupResp, s.applyUser()
+	return st.startupResp, s.applyUser()
 }
 
 // applyUser switches the session to the configured user. The single-user

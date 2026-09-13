@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"strings"
 )
 
 // Reset returns a fork to the state of the snapshot it was started from;
@@ -42,59 +41,12 @@ func (s *Server) Restore(ctx context.Context, sn *Snapshot) error {
 	if !s.dirty && s.restored == sn {
 		return nil
 	}
-	fs := sn.fs.Clone()
-	b, err := s.startBackend(fs)
-	if err != nil {
-		return err
-	}
-	if s.startupPkt != nil {
-		resp, err := b.Startup(s.startupPkt)
-		if err == nil {
-			err = checkNoError(resp)
+	if err := s.restart(sn.fs.Clone(), s.opts.Database); err != nil {
+		if errors.Is(err, errServerClosed) {
+			return err
 		}
-		if err != nil {
-			b.Close()
-			return fmt.Errorf("pgmem: restore: startup: %w", err)
-		}
-	}
-	s.bmu.Lock()
-	if s.closed.Load() {
-		s.bmu.Unlock()
-		b.Close()
-		return errServerClosed
-	}
-	old := s.b
-	s.fs, s.b = fs, b
-	s.bmu.Unlock()
-	old.Close()
-	s.restored, s.dirty = sn, false
-	if s.startupPkt == nil {
-		return nil // no client has connected yet; the first one starts the session
-	}
-	if err := s.applyUser(); err != nil {
 		return fmt.Errorf("pgmem: restore: %w", err)
 	}
-	s.reestablish()
+	s.restored, s.dirty = sn, false
 	return nil
-}
-
-// reestablish re-creates on a new backend what live connections had set
-// up on the one it replaced: LISTEN registrations and named prepared
-// statements. Runs with the backend held.
-func (s *Server) reestablish() {
-	clear(s.relisten)
-	if len(s.listeners) > 0 {
-		var q strings.Builder
-		for ch := range s.listeners {
-			q.WriteString("LISTEN " + quoteIdent(ch) + ";")
-		}
-		s.quietListen = true
-		s.b.Exec(simpleQuery(q.String()))
-		s.quietListen = false
-	}
-	for _, sess := range s.sessions {
-		for _, parse := range sess.parses {
-			s.b.Exec(append(append([]byte(nil), parse...), syncMessage...))
-		}
-	}
 }

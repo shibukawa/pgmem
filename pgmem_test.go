@@ -713,25 +713,36 @@ func TestNotifyInProcessDial(t *testing.T) {
 	}
 }
 
-// CREATE DATABASE and DROP DATABASE run fine on the live session, but the
-// backend serves only Options.Database: a connection naming another
-// database is refused (3D000) rather than silently attached to the served
-// one, which is what Prisma's shadow database or a per-worker database
-// would otherwise hit.
-func TestOtherDatabaseIsRefused(t *testing.T) {
+// A server serves every database of its data directory, one at a time: a
+// connection to another database (Prisma's shadow database, a database per
+// test worker) waits for the backend like any other connection and then
+// has it restarted on its database. Connections to different databases
+// keep working side by side, with their prepared statements; a database
+// that does not exist, or was dropped, is refused with 3D000.
+func TestOtherDatabases(t *testing.T) {
 	ctx := context.Background()
-	s := startServer(t, pgmem.Options{Database: "app"})
-	conn, err := pgx.Connect(ctx, s.DSN())
+	s := startServer(t, pgmem.Options{Database: "app", User: "tester"})
+	app, err := pgx.Connect(ctx, s.DSN())
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer conn.Close(ctx)
-	if _, err := conn.Exec(ctx, "CREATE DATABASE shadow"); err != nil {
+	defer app.Close(ctx)
+	if _, err := app.Exec(ctx, "CREATE TABLE t(v int); INSERT INTO t VALUES (1)"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := app.Exec(ctx, "CREATE DATABASE shadow"); err != nil {
 		t.Fatalf("CREATE DATABASE: %v", err)
 	}
-	var n int
-	if err := conn.QueryRow(ctx, "SELECT count(*) FROM pg_database WHERE datname = 'shadow'").Scan(&n); err != nil || n != 1 {
-		t.Fatalf("pg_database lookup: n=%d err=%v", n, err)
+	if _, err := app.Prepare(ctx, "count_t", "SELECT count(*) FROM t"); err != nil {
+		t.Fatal(err)
+	}
+	listener, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer listener.Close(ctx)
+	if _, err := listener.Exec(ctx, "LISTEN ch"); err != nil {
+		t.Fatal(err)
 	}
 
 	cfg, err := pgx.ParseConfig(s.DSN())
@@ -739,30 +750,111 @@ func TestOtherDatabaseIsRefused(t *testing.T) {
 		t.Fatal(err)
 	}
 	cfg.Database = "shadow"
+	shadow, err := pgx.ConnectConfig(ctx, cfg)
+	if err != nil {
+		t.Fatalf("connecting to shadow: %v", err)
+	}
+	defer shadow.Close(ctx)
+	var name, user string
+	if err := shadow.QueryRow(ctx, "SELECT current_database(), current_user").Scan(&name, &user); err != nil || name != "shadow" || user != "tester" {
+		t.Fatalf("shadow session: database %q user %q err=%v", name, user, err)
+	}
+	if _, err := shadow.Exec(ctx, "CREATE TABLE u(w int); INSERT INTO u VALUES (7), (8)"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := shadow.Exec(ctx, "SELECT * FROM t"); err == nil {
+		t.Fatal("shadow sees app's table")
+	}
+
+	// back and forth, with prepared statements on both sides
+	start := time.Now()
+	for i := 0; i < 5; i++ {
+		var n int
+		if err := app.QueryRow(ctx, "count_t").Scan(&n); err != nil || n != 1 {
+			t.Fatalf("app, round %d: %d %v", i, n, err)
+		}
+		if err := shadow.QueryRow(ctx, "SELECT count(*) FROM u WHERE w > $1", 0).Scan(&n); err != nil || n != 2 {
+			t.Fatalf("shadow, round %d: %d %v", i, n, err)
+		}
+	}
+	t.Logf("10 queries alternating between databases in %s", time.Since(start))
+
+	// notifications stay in their database, and LISTEN survives the switches
+	if _, err := shadow.Exec(ctx, "NOTIFY ch, 'from shadow'"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := app.Exec(ctx, "NOTIFY ch, 'from app'"); err != nil {
+		t.Fatal(err)
+	}
+	if n := waitNotification(t, listener, 5*time.Second); n == nil || n.Payload != "from app" {
+		t.Fatalf("listener got %+v, want the notification from app only", n)
+	}
+
+	cfg.Database = "nope"
 	_, err = pgx.ConnectConfig(ctx, cfg)
 	var pgErr *pgconn.PgError
-	if !errors.As(err, &pgErr) || pgErr.Code != "3D000" {
-		t.Fatalf("connecting to shadow: got %v, want SQLSTATE 3D000", err)
-	}
-	if !strings.Contains(pgErr.Message, `"shadow"`) || !strings.Contains(pgErr.Message, `"app"`) {
-		t.Fatalf("message = %q", pgErr.Message)
+	if !errors.As(err, &pgErr) || pgErr.Code != "3D000" || !strings.Contains(pgErr.Message, `"nope"`) {
+		t.Fatalf("connecting to a missing database: %v, want 3D000", err)
 	}
 
-	// the served database still accepts connections, with or without an
-	// explicit database name
-	cfg.Database = "app"
-	c2, err := pgx.ConnectConfig(ctx, cfg)
-	if err != nil {
-		t.Fatalf("reconnect: %v", err)
-	}
-	var name string
-	if err := c2.QueryRow(ctx, "SELECT current_database()").Scan(&name); err != nil || name != "app" {
-		t.Fatalf("current_database = %q err=%v", name, err)
-	}
-	c2.Close(ctx)
-
-	if _, err := conn.Exec(ctx, "DROP DATABASE shadow"); err != nil {
+	// dropped under a live connection: that connection is refused, the rest go on
+	if _, err := app.Exec(ctx, "DROP DATABASE shadow WITH (FORCE)"); err != nil {
 		t.Fatalf("DROP DATABASE: %v", err)
+	}
+	if _, err := shadow.Exec(ctx, "SELECT 1"); !errors.As(err, &pgErr) || pgErr.Code != "3D000" {
+		t.Fatalf("query on a dropped database: %v, want 3D000", err)
+	}
+	var n int
+	if err := app.QueryRow(ctx, "count_t").Scan(&n); err != nil || n != 1 {
+		t.Fatalf("app after the drop: %d %v", n, err)
+	}
+}
+
+// Restore puts every database back, whichever one the backend serves.
+func TestRestoreWhileServingAnotherDatabase(t *testing.T) {
+	ctx := context.Background()
+	s := startServer(t, pgmem.Options{Database: "app"})
+	app, err := pgx.Connect(ctx, s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer app.Close(ctx)
+	if _, err := app.Exec(ctx, "CREATE TABLE t(v int); INSERT INTO t VALUES (1)"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := app.Exec(ctx, "CREATE DATABASE other"); err != nil {
+		t.Fatal(err)
+	}
+	cfg, _ := pgx.ParseConfig(s.DSN())
+	cfg.Database = "other"
+	other, err := pgx.ConnectConfig(ctx, cfg)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer other.Close(ctx)
+	if _, err := other.Exec(ctx, "CREATE TABLE u(w int); INSERT INTO u VALUES (1)"); err != nil {
+		t.Fatal(err)
+	}
+	snap, err := s.Snapshot(ctx, pgmem.SnapshotOptions{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer snap.Close()
+	if _, err := app.Exec(ctx, "INSERT INTO t VALUES (2)"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := other.Exec(ctx, "INSERT INTO u VALUES (2), (3)"); err != nil {
+		t.Fatal(err)
+	}
+	if err := s.Restore(ctx, snap); err != nil { // the backend serves "other" now
+		t.Fatal(err)
+	}
+	var n int
+	if err := other.QueryRow(ctx, "SELECT count(*) FROM u").Scan(&n); err != nil || n != 1 {
+		t.Fatalf("other after restore: %d %v", n, err)
+	}
+	if err := app.QueryRow(ctx, "SELECT count(*) FROM t").Scan(&n); err != nil || n != 1 {
+		t.Fatalf("app after restore: %d %v", n, err)
 	}
 }
 
