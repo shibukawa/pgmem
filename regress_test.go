@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"sort"
 	"strings"
 	"testing"
@@ -102,6 +103,14 @@ var regressSuites = map[string]regressSuite{
 	"pg_stat_statements": {params: []string{"-c", "shared_preload_libraries=pg_stat_statements", "-c", "max_prepared_transactions=5"}},
 }
 
+// regressSkips lists the regression files that cannot pass on a GOOS, with
+// the reason given to t.Skip.
+var regressSkips = map[string]map[string]string{
+	"windows": {
+		"pg_stat_statements/entry_timestamp": "the Windows wall clock can return one time for back-to-back statements, so stats_since does not order around now()",
+	},
+}
+
 // TestContribRegress replays PostgreSQL's own regression tests for every
 // bundled extension against a fresh server each and compares with the
 // upstream expected output, formatted the way psql -a -q prints it.
@@ -179,6 +188,9 @@ func runRegress(t *testing.T, dsn, dir string, names []string) {
 
 	for _, name := range names {
 		ok := t.Run(name, func(t *testing.T) {
+			if why := regressSkips[runtime.GOOS][filepath.Base(dir)+"/"+name]; why != "" {
+				t.Skip(why)
+			}
 			sqlText, err := os.ReadFile(filepath.Join(dir, "sql", name+".sql"))
 			if err != nil {
 				t.Fatal(err)
