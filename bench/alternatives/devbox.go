@@ -136,7 +136,7 @@ func (d *devboxTarget) mem(ctx context.Context) (memory, error) {
 		return memory{}, err
 	}
 	fp, err := footprintMB(ctx, pids...)
-	return memory{Host: fp, RSS: rss}, err
+	return memory{Host: fp, RSS: rss, Process: fp, Service: fp}, err
 }
 
 func (d *devboxTarget) stop(ctx context.Context) {

@@ -6,10 +6,10 @@
 #
 # Two passes. The timing pass leaves the Docker VM running between runs, as
 # a developer's machine would. The memory pass restarts OrbStack before
-# each docker and testcontainers run and counts how much the VM process
-# grows on the host, because a container's own cgroup figure hides the VM
-# that macOS needs to run it. The memory pass refuses to restart OrbStack
-# while other containers are running.
+# each docker and testcontainers run. It records container stats plus
+# benchmark-process growth as the comparable service footprint, and records
+# the VM's net change and absolute footprint separately for host context.
+# The memory pass refuses to restart OrbStack while other containers run.
 set -euo pipefail
 cd "$(dirname "$0")"
 RUNS=${RUNS:-5}
@@ -60,7 +60,10 @@ for ((i = 1; i <= MEM_RUNS; i++)); do
   done
 done
 
-./sizes.sh "$IMAGE" > "$OUT/sizes.json"
+if [ "$SKIP_TIMING" != 1 ]; then
+  ./sizes.sh "$IMAGE" > "$OUT/sizes.tmp.json"
+  mv "$OUT/sizes.tmp.json" "$OUT/sizes.json"
+fi
 python3 summarize.py "$OUT/raw.jsonl" "$OUT/sizes.json" > "$OUT/summary.json"
 cp "$OUT/summary.json" ../../website/src/data/benchmarks.json
 cat "$OUT/summary.json"

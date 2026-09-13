@@ -5,6 +5,9 @@ template: splash
 hero:
   tagline: テストのための、メモリ上で動く本物の PostgreSQL 18。Docker もディスクも使いません。スキーマは一度だけ準備し、各テストにはその複製をミリ秒で渡します。
   actions:
+    - text: クイックスタート
+      link: quickstart/
+      variant: minimal
     - text: なぜ pgmem か
       link: why/
       icon: right-arrow
@@ -23,13 +26,13 @@ hero:
 ---
 
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
-import BenchmarkTable from '../../../components/BenchmarkTable.astro';
+import BenchmarkOverview from '../../../components/BenchmarkOverview.astro';
 
 ## よくある選択肢との比較
 
 同じスキーマ、同じクエリ、同じテスト単位の分離を、同じマシンで計測しました。比較相手は公式イメージを使った `docker run`、Testcontainers、devbox で入れた PostgreSQL です。
 
-<BenchmarkTable lang="ja" variant="compact" />
+<BenchmarkOverview lang="ja" />
 
 クエリ性能、計測方法、再現手順は[ベンチマーク](benchmarks/)のページにあります。
 

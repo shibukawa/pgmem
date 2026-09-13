@@ -1,0 +1,146 @@
+---
+import data from '../data/benchmarks.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+}
+
+const { lang = 'en' } = Astro.props;
+const labels = {
+	en: {
+		title: 'Backend and test-process memory during the benchmark',
+		idle: 'After setup',
+		loaded: 'After query and isolation runs',
+		axis: 'Backend + test-process memory (MiB)',
+		note: 'Bars show medians; whiskers span the minimum and maximum across memory runs. Docker and Testcontainers sum container usage with benchmark-process growth; Testcontainers includes PostgreSQL and Ryuk. OrbStack VM net changes are separate because the VM can reclaim memory during a run.',
+		groups: {
+			pgmem: 'pgmem (Go library)',
+			binary: 'pgmem binary',
+			docker: 'docker run',
+			testcontainers: 'Testcontainers (Go)',
+			devbox: 'devbox',
+		},
+	},
+	ja: {
+		title: 'ベンチマーク中の DB と計測プロセスのメモリ',
+		idle: 'スキーマ準備後',
+		loaded: 'query・分離計測後',
+		axis: 'DB と計測プロセスのメモリ (MiB)',
+		note: '棒は中央値、ひげは各回の最小値から最大値です。Docker と Testcontainers はコンテナ使用量と計測プロセスの増分を合算します。Testcontainers には PostgreSQL と Ryuk が含まれます。OrbStack VM は負荷中にメモリを解放することがあるため、VM の差分は別に示します。',
+		groups: {
+			pgmem: 'pgmem（Go ライブラリ）',
+			binary: 'pgmem バイナリ',
+			docker: 'docker run',
+			testcontainers: 'Testcontainers（Go）',
+			devbox: 'devbox',
+		},
+	},
+}[lang];
+
+const metrics = data.targets as Record<string, Record<string, number>>;
+const series = (key: string) => {
+	const target = metrics[key];
+	return {
+		key,
+		idle: target.service_idle_mb,
+		idleMin: target.service_idle_min_mb ?? target.service_idle_mb,
+		idleMax: target.service_idle_max_mb ?? target.service_idle_mb,
+		loaded: target.service_after_mb,
+		loadedMin: target.service_after_min_mb ?? target.service_after_mb,
+		loadedMax: target.service_after_max_mb ?? target.service_after_mb,
+	};
+};
+const targets = [
+	series('pgmem'),
+	series('binary'),
+	series('docker'),
+	series('testcontainers'),
+	series('devbox'),
+];
+const maxValue = Math.max(...targets.flatMap((t) => [t.idleMax ?? 0, t.loadedMax ?? 0]));
+const axisMax = Math.max(100, Math.ceil(maxValue / 100) * 100);
+const tick = axisMax > 800 ? 200 : 100;
+const plotX = 310;
+const plotWidth = 450;
+const plotTop = 94;
+const rowHeight = 72;
+const chartBottom = plotTop + targets.length * rowHeight;
+const chartHeight = chartBottom + 70;
+const scale = plotWidth / axisMax;
+
+const rangeLabel = (median: number, min: number, max: number) => `${median.toFixed(0)} MiB (${min.toFixed(0)}–${max.toFixed(0)})`;
+---
+
+<figure class="memory-chart" aria-labelledby="memory-chart-title">
+	<h2 id="memory-chart-title">{labels.title}</h2>
+	<div class="scroll">
+		<svg viewBox={`0 0 1060 ${chartHeight}`} role="img" aria-labelledby="chart-title chart-desc">
+			<title id="chart-title">{labels.title}</title>
+			<desc id="chart-desc">{labels.note}</desc>
+			<rect width="1060" height={chartHeight} rx="16" fill="var(--sl-color-bg-nav, #f7f8fa)" />
+			<rect x={plotX} y="31" width="12" height="12" rx="3" fill="#83bdb2" />
+			<text x={plotX + 19} y="42" class="legend">{labels.idle}</text>
+			<rect x={plotX + 200} y="31" width="12" height="12" rx="3" fill="var(--sl-color-accent-high, #167d83)" />
+			<text x={plotX + 219} y="42" class="legend">{labels.loaded}</text>
+			{Array.from({ length: axisMax / tick + 1 }, (_, i) => i * tick).map((value) => {
+				const x = plotX + value * scale;
+				return (
+					<g>
+						<line x1={x} y1={plotTop - 6} x2={x} y2={chartBottom - 6} class="grid" />
+						<text x={x} y={chartBottom + 15} text-anchor="middle" class="tick">{value}</text>
+					</g>
+				);
+			})}
+			{targets.map((target, index) => {
+				const y = plotTop + index * rowHeight;
+				const idleWidth = (target.idle ?? 0) * scale;
+				const loadedWidth = (target.loaded ?? 0) * scale;
+				const idleMinX = plotX + (target.idleMin ?? target.idle) * scale;
+				const idleMaxX = plotX + (target.idleMax ?? target.idle) * scale;
+				const loadedMinX = plotX + (target.loadedMin ?? target.loaded ?? 0) * scale;
+				const loadedMaxX = plotX + (target.loadedMax ?? target.loaded ?? 0) * scale;
+				const idleLabelX = plotX + Math.max(target.idle, target.idleMax ?? target.idle) * scale + 8;
+				const loadedLabelX = plotX + Math.max(target.loaded ?? 0, target.loadedMax ?? target.loaded ?? 0) * scale + 8;
+				return (
+					<g>
+						<text x="22" y={y + 27} class="target">{labels.groups[target.key as keyof typeof labels.groups]}</text>
+						<rect x={plotX} y={y + 2} width={idleWidth} height="17" rx="4" fill="#83bdb2" />
+						<text x={idleLabelX} y={y + 15} class="value">{rangeLabel(target.idle, target.idleMin, target.idleMax)}</text>
+						<g class="whisker">
+							<line x1={idleMinX} y1={y + 23} x2={idleMaxX} y2={y + 23} />
+							<line x1={idleMinX} y1={y + 19} x2={idleMinX} y2={y + 27} />
+							<line x1={idleMaxX} y1={y + 19} x2={idleMaxX} y2={y + 27} />
+						</g>
+						{target.loaded !== undefined && (
+							<>
+								<rect x={plotX} y={y + 29} width={loadedWidth} height="17" rx="4" fill="var(--sl-color-accent-high, #167d83)" />
+								<text x={loadedLabelX} y={y + 42} class="value">{rangeLabel(target.loaded, target.loadedMin, target.loadedMax)}</text>
+								<g class="whisker">
+									<line x1={loadedMinX} y1={y + 51} x2={loadedMaxX} y2={y + 51} />
+									<line x1={loadedMinX} y1={y + 47} x2={loadedMinX} y2={y + 55} />
+									<line x1={loadedMaxX} y1={y + 47} x2={loadedMaxX} y2={y + 55} />
+								</g>
+							</>
+						)}
+					</g>
+				);
+			})}
+			<text x={plotX + plotWidth / 2} y={chartBottom + 39} text-anchor="middle" class="axis">{labels.axis}</text>
+		</svg>
+	</div>
+	<figcaption>{labels.note}</figcaption>
+</figure>
+
+<style>
+	.memory-chart { margin: 1.5rem 0 2rem; }
+	.memory-chart h2 { margin-bottom: 0.75rem; }
+	.scroll { overflow-x: auto; border-radius: 16px; }
+	svg { display: block; width: 100%; min-width: 800px; height: auto; }
+	.grid { stroke: var(--sl-color-gray-5, #dce1e8); stroke-width: 1; }
+	.whisker { stroke: var(--sl-color-text, #253746); stroke-width: 1.5; }
+	.legend, .tick, .axis, .value, .target { font-family: system-ui, sans-serif; }
+	.legend, .tick, .axis { fill: var(--sl-color-gray-2, #657085); font-size: 12px; }
+	.value { fill: var(--sl-color-text, #172033); font-size: 12px; font-weight: 650; }
+	.target { fill: var(--sl-color-text, #172033); font-size: 13px; font-weight: 650; }
+	figcaption { color: var(--sl-color-gray-2); font-size: var(--sl-text-xs); margin-top: 0.5rem; }
+</style>

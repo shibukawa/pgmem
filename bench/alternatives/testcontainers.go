@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"os"
 	"strings"
 	"time"
 
@@ -15,18 +16,24 @@ import (
 // strategy its documentation recommends. A fresh process also starts the
 // Ryuk reaper container, which is part of what a test binary pays.
 type tcTarget struct {
-	image string
-	fresh bool
-	vm    orbVM
-	c     *postgres.PostgresContainer
-	dsn   string
+	image       string
+	fresh       bool
+	vm          orbVM
+	processBase float64
+	c           *postgres.PostgresContainer
+	dsn         string
 }
 
 func (t *tcTarget) prepare(ctx context.Context) error {
-	if t.fresh {
-		return t.vm.restart(ctx)
+	if !t.fresh {
+		return nil
 	}
-	return nil
+	if err := t.vm.restart(ctx); err != nil {
+		return err
+	}
+	var err error
+	t.processBase, err = footprintMB(ctx, os.Getpid())
+	return err
 }
 
 func (t *tcTarget) start(ctx context.Context) error {
@@ -71,7 +78,11 @@ func (t *tcTarget) mem(ctx context.Context) (memory, error) {
 	if ryuk, err := run(ctx, "docker", "ps", "-q", "--filter", "label=org.testcontainers.ryuk=true"); err == nil && ryuk != "" {
 		ids = append(ids, strings.Fields(ryuk)...)
 	}
-	return containerMem(ctx, t.fresh, &t.vm, ids...)
+	m, err := containerMem(ctx, t.fresh, &t.vm, ids...)
+	if err != nil || !t.fresh {
+		return m, err
+	}
+	return addBenchmarkProcessGrowth(ctx, m, t.processBase)
 }
 
 func (t *tcTarget) stop(ctx context.Context) {

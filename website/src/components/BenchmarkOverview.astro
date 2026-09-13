@@ -1,0 +1,127 @@
+---
+import data from '../data/benchmarks.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = data.targets as Record<string, Record<string, number>>;
+const s = data.sizes as Record<string, number>;
+
+const labels = {
+	en: {
+		intro: (runs: number, memoryRuns: number) => `Medians from ${runs} runs on one machine. Docker and Testcontainers memory uses ${memoryRuns} fresh OrbStack runs. Bars scale to the largest value in each card; lower is better.`,
+		startup: 'Start to first query',
+		startupNote: 'From server start until a TCP SELECT 1 succeeds.',
+		isolation: 'Fresh copy per test',
+		isolationNote: 'Median time to create an isolated database copy and run a join.',
+		memory: 'Backend + test-process memory',
+		memoryNote: 'After setup, before queries. Docker and Testcontainers sum container usage (PostgreSQL, plus Ryuk for Testcontainers) and benchmark-process growth. OrbStack VM changes are reported separately.',
+		download: 'Initial download footprint',
+		downloadNote: 'Same MB scale; Go link growth, compressed image layers, and devbox cache download measure different things.',
+		pgmem: 'pgmem · Go library',
+		docker: 'Docker · PostgreSQL 18',
+		testcontainers: 'Testcontainers · Go',
+		devbox: 'devbox · PostgreSQL',
+	},
+	ja: {
+		intro: (runs: number, memoryRuns: number) => `${runs} 回計測した中央値です。Docker と Testcontainers のメモリは OrbStack を再起動して ${memoryRuns} 回測定しました。バーは各カード内の最大値を基準にし、短いほど値が小さくなります。`,
+		startup: '起動から最初のクエリまで',
+		startupNote: 'サーバー起動から、TCP 経由で SELECT 1 が成功するまで。',
+		isolation: 'テストごとの複製',
+		isolationNote: 'DB を分離し、結合クエリを実行する時間の中央値。',
+		memory: 'DB と計測プロセスのメモリ',
+		memoryNote: 'スキーマ準備後、クエリ前の値です。Docker と Testcontainers はコンテナ使用量（Testcontainers は PostgreSQL と Ryuk）と計測プロセスの増分を合算します。OrbStack VM の変化は別に示します。',
+		download: '初回取得サイズ',
+		downloadNote: '同じ MB スケールですが、Go のリンク増分、圧縮イメージ、devbox の取得量で測る対象が異なります。',
+		pgmem: 'pgmem · Go ライブラリ',
+		docker: 'Docker · PostgreSQL 18',
+		testcontainers: 'Testcontainers · Go',
+		devbox: 'devbox · PostgreSQL',
+	},
+}[lang];
+
+const groups = [
+	{ key: 'pgmem', name: labels.pgmem, color: '#70d13d' },
+	{ key: 'docker', name: labels.docker, color: '#293e96' },
+	{ key: 'testcontainers', name: labels.testcontainers, color: '#293e96' },
+	{ key: 'devbox', name: labels.devbox, color: '#806126' },
+];
+
+const formatTime = (ms: number) => ms >= 1000 ? `${(ms / 1000).toFixed(2)} s` : `${ms.toFixed(ms < 10 ? 1 : 0)} ms`;
+const formatMB = (bytes: number) => `${(bytes / 1e6).toFixed(1)} MB`;
+
+const metrics = [
+	{
+		id: 'startup', title: labels.startup, note: labels.startupNote,
+		rows: groups.map((group) => ({ ...group, value: t[group.key].startup_ms, display: formatTime(t[group.key].startup_ms) })),
+	},
+	{
+		id: 'isolation', title: labels.isolation, note: labels.isolationNote,
+		rows: groups.map((group) => ({ ...group, value: t[group.key].isolate_ms, display: formatTime(t[group.key].isolate_ms) })),
+	},
+	{
+		id: 'memory', title: labels.memory, note: labels.memoryNote,
+		rows: groups.map((group) => ({ ...group, value: t[group.key].service_idle_mb, display: `${t[group.key].service_idle_mb.toFixed(0)} MiB` })),
+	},
+	{
+		id: 'download', title: labels.download, note: labels.downloadNote,
+		rows: groups.map((group) => {
+			const value = group.key === 'pgmem' ? s.go_link_added_stripped
+				: group.key === 'docker' ? s.image_download
+					: group.key === 'testcontainers' ? s.image_download + s.ryuk_download
+						: s.devbox_download;
+			return { ...group, value, display: formatMB(value) };
+		}),
+	},
+];
+---
+
+<div class="overview" role="group" aria-label={lang === 'ja' ? 'ベンチマークの比較グラフ' : 'Benchmark comparison charts'}>
+	<p class="intro">{labels.intro(t.pgmem.runs, t.docker.mem_runs)}</p>
+	{metrics.map((metric) => {
+		const maxValue = Math.max(...metric.rows.map((row) => row.value));
+		return (
+			<section class="metric-card" aria-labelledby={`metric-${metric.id}`}>
+				<h3 id={`metric-${metric.id}`}>{metric.title}</h3>
+				<p class="note">{metric.note}</p>
+				<ul>
+					{metric.rows.map((row) => (
+						<li>
+							<div class="row-label"><span>{row.name}</span><strong>{row.display}</strong></div>
+							<div class="track" aria-hidden="true">
+								<span class="bar" style={`--bar-color:${row.color};width:${(row.value / maxValue) * 100}%`}></span>
+							</div>
+						</li>
+					))}
+				</ul>
+			</section>
+		);
+	})}
+</div>
+
+<style>
+	.overview { margin: 1.25rem 0 2rem; }
+	.intro { color: var(--sl-color-gray-2); margin: 0 0 1rem; }
+	.metric-card {
+		background: var(--sl-color-gray-6);
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 14px;
+		margin: 1.25rem 0;
+		padding: 1rem 1.25rem 0.75rem;
+	}
+	.metric-card h3 { font-size: 1.1rem; margin: 0 0 0.35rem; }
+	.note { color: var(--sl-color-gray-2); font-size: var(--sl-text-sm); line-height: 1.55; margin: 0 0 0.9rem; }
+	ul { list-style: none; margin: 0; padding: 0; }
+	li { margin: 0 0 1.1rem; }
+	.row-label { align-items: baseline; display: flex; gap: 1rem; justify-content: space-between; line-height: 1.5; }
+	.row-label span { color: var(--sl-color-text); }
+	.row-label strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.track { background: var(--sl-color-gray-5); border-radius: 999px; height: 0.55rem; margin-top: 0.3rem; overflow: hidden; }
+	.bar { background: var(--bar-color); border-radius: inherit; display: block; height: 100%; min-width: 0.25rem; }
+	@media (max-width: 480px) {
+		.metric-card { padding-inline: 0.9rem; }
+		.row-label { align-items: flex-start; font-size: var(--sl-text-sm); }
+	}
+</style>

@@ -57,9 +57,9 @@ func footprintMB(ctx context.Context, pids ...int) (float64, error) {
 }
 
 // orbVM tracks the OrbStack virtual machine process that runs every
-// container on macOS. Its host-side memory grows while a container runs
-// and is not handed back when the container stops, so a fair reading
-// restarts OrbStack first and measures growth from an idle VM.
+// container on macOS. Its host-side footprint can rise or fall as the VM
+// reclaims memory, so VM net change is recorded separately from container
+// usage and benchmark-process growth.
 type orbVM struct {
 	baseMB float64
 }
@@ -125,7 +125,8 @@ func (v *orbVM) restart(ctx context.Context) error {
 	return err
 }
 
-// usage returns the VM's growth since restart and its absolute footprint.
+// usage returns the VM's net footprint change since restart and its current
+// absolute footprint. The net change may shrink after a workload.
 func (v *orbVM) usage(ctx context.Context) (growth, total float64, err error) {
 	pid, err := vmPID(ctx)
 	if err != nil {
@@ -133,4 +134,19 @@ func (v *orbVM) usage(ctx context.Context) (growth, total float64, err error) {
 	}
 	total, err = footprintMB(ctx, pid)
 	return total - v.baseMB, total, err
+}
+
+// addBenchmarkProcessGrowth records the harness process's increase since the
+// fresh-VM baseline. The comparable service reading sums that increase with
+// the container stats; the VM net change stays a separate host-level reading.
+func addBenchmarkProcessGrowth(ctx context.Context, m memory, baseline float64) (memory, error) {
+	current, err := footprintMB(ctx, os.Getpid())
+	if err != nil {
+		return memory{}, err
+	}
+	m.Process = current - baseline
+	m.VMGrowth = m.Host
+	m.Host += m.Process
+	m.Service = m.Container + m.Process
+	return m, nil
 }

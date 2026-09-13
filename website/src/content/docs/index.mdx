@@ -5,6 +5,9 @@ template: splash
 hero:
   tagline: Real PostgreSQL 18, in memory, for tests. No Docker, no disk. Prepare the schema once, then give every test its own copy in milliseconds.
   actions:
+    - text: Quickstart
+      link: quickstart/
+      variant: minimal
     - text: Why pgmem
       link: why/
       icon: right-arrow
@@ -23,13 +26,13 @@ hero:
 ---
 
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
-import BenchmarkTable from '../../components/BenchmarkTable.astro';
+import BenchmarkOverview from '../../components/BenchmarkOverview.astro';
 
 ## Compared with the usual options
 
 The same schema, queries and per-test isolation, measured on one machine against the official image with `docker run`, Testcontainers, and a devbox-installed PostgreSQL.
 
-<BenchmarkTable lang="en" variant="compact" />
+<BenchmarkOverview lang="en" />
 
 Query latency, methodology and how to reproduce are on the [benchmarks page](benchmarks/).
 

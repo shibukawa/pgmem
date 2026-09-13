@@ -2,7 +2,7 @@
 // getting a PostgreSQL for tests: a plain docker run, testcontainers-go
 // and a devbox (nix) installed PostgreSQL. One invocation measures one
 // target in a fresh process and prints one JSON object; run.sh repeats
-// it and summarize.go aggregates the samples.
+// it and summarize.py aggregates the samples.
 //
 //	go run . -target pgmem|docker|testcontainers|devbox
 package main
@@ -23,30 +23,39 @@ import (
 )
 
 // Result is one run of one target. Durations are in milliseconds,
-// memory in megabytes.
+// memory values are in mebibytes.
 type Result struct {
-	Target        string    `json:"target"`
-	StartupMS     float64   `json:"startup_ms"`
-	SetupMS       float64   `json:"setup_ms"`
-	SimpleQueryUS float64   `json:"simple_query_us"`
-	DialQueryUS   float64   `json:"dial_query_us,omitempty"`
-	HeavyQueryMS  float64   `json:"heavy_query_ms"`
-	IsolateMS     float64   `json:"isolate_ms"`
-	MemIdleMB     float64   `json:"mem_idle_mb"`
-	MemAfterMB    float64   `json:"mem_after_mb"`
-	RSSIdleMB     float64   `json:"rss_idle_mb,omitempty"`
-	ContainerMB   float64   `json:"container_mb,omitempty"`
-	VMTotalMB     float64   `json:"vm_total_mb,omitempty"`
-	FreshVM       bool      `json:"fresh_vm,omitempty"`
-	Version       string    `json:"version"`
-	Time          time.Time `json:"time"`
+	Target           string    `json:"target"`
+	StartupMS        float64   `json:"startup_ms"`
+	SetupMS          float64   `json:"setup_ms"`
+	SimpleQueryUS    float64   `json:"simple_query_us"`
+	DialQueryUS      float64   `json:"dial_query_us,omitempty"`
+	HeavyQueryMS     float64   `json:"heavy_query_ms"`
+	IsolateMS        float64   `json:"isolate_ms"`
+	MemIdleMB        float64   `json:"mem_idle_mb"`
+	MemAfterMB       float64   `json:"mem_after_mb"`
+	ServiceIdleMB    float64   `json:"service_idle_mb,omitempty"`
+	ServiceAfterMB   float64   `json:"service_after_mb,omitempty"`
+	RSSIdleMB        float64   `json:"rss_idle_mb,omitempty"`
+	ContainerMB      float64   `json:"container_mb,omitempty"`
+	ContainerAfterMB float64   `json:"container_after_mb,omitempty"`
+	ProcessMB        float64   `json:"process_mb,omitempty"`
+	VMGrowthMB       float64   `json:"vm_growth_mb,omitempty"`
+	VMTotalMB        float64   `json:"vm_total_mb,omitempty"`
+	ProcessAfterMB   float64   `json:"process_after_mb,omitempty"`
+	VMGrowthAfterMB  float64   `json:"vm_growth_after_mb,omitempty"`
+	FreshVM          bool      `json:"fresh_vm,omitempty"`
+	Version          string    `json:"version"`
+	Time             time.Time `json:"time"`
 }
 
 // target is what each backend implements.
-// memory is one reading. Host is what the approach costs the machine;
-// the others are breakdowns kept for the notes.
+// Host is the measured host-footprint reading; for container targets it is
+// VM net change plus benchmark-process growth, and can shrink when the VM
+// reclaims memory. Service is backend usage plus separately measured runner
+// growth, which stays comparable when the VM changes its allocation.
 type memory struct {
-	Host, RSS, Container, VMTotal float64
+	Host, RSS, Process, VMGrowth, Container, VMTotal, Service float64
 }
 
 type target interface {
@@ -86,7 +95,7 @@ func main() {
 	name := flag.String("target", "pgmem", "pgmem | docker | testcontainers | devbox")
 	image := flag.String("image", "postgres:18-alpine", "image for docker and testcontainers")
 	devboxDir := flag.String("devbox", "devbox", "directory with devbox.json")
-	freshVM := flag.Bool("fresh-vm", false, "docker and testcontainers: restart OrbStack first and count the VM's memory growth")
+	freshVM := flag.Bool("fresh-vm", false, "docker and testcontainers: restart OrbStack and count benchmark-process plus VM memory growth")
 	flag.Parse()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
@@ -148,7 +157,8 @@ func measure(ctx context.Context, name string, t target) (*Result, error) {
 	if err != nil {
 		return nil, fmt.Errorf("memory: %w", err)
 	}
-	r.MemIdleMB, r.RSSIdleMB, r.ContainerMB, r.VMTotalMB = idle.Host, idle.RSS, idle.Container, idle.VMTotal
+	r.MemIdleMB, r.RSSIdleMB, r.ContainerMB, r.ProcessMB, r.VMGrowthMB, r.VMTotalMB = idle.Host, idle.RSS, idle.Container, idle.Process, idle.VMGrowth, idle.VMTotal
+	r.ServiceIdleMB = idle.Service
 
 	conn, err = pgx.Connect(ctx, t.url())
 	if err != nil {
@@ -203,7 +213,8 @@ func measure(ctx context.Context, name string, t target) (*Result, error) {
 	if err != nil {
 		return nil, fmt.Errorf("memory: %w", err)
 	}
-	r.MemAfterMB = after.Host
+	r.MemAfterMB, r.ProcessAfterMB, r.VMGrowthAfterMB = after.Host, after.Process, after.VMGrowth
+	r.ServiceAfterMB, r.ContainerAfterMB = after.Service, after.Container
 	return r, nil
 }
 

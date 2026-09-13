@@ -3,25 +3,32 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 	"strings"
 )
 
 // dockerTarget starts the official image with docker run, the way a
 // Makefile or a CI service container does.
 type dockerTarget struct {
-	image string
-	fresh bool
-	vm    orbVM
-	id    string
-	port  string
-	n     int
+	image       string
+	fresh       bool
+	vm          orbVM
+	processBase float64
+	id          string
+	port        string
+	n           int
 }
 
 func (d *dockerTarget) prepare(ctx context.Context) error {
-	if d.fresh {
-		return d.vm.restart(ctx)
+	if !d.fresh {
+		return nil
 	}
-	return nil
+	if err := d.vm.restart(ctx); err != nil {
+		return err
+	}
+	var err error
+	d.processBase, err = footprintMB(ctx, os.Getpid())
+	return err
 }
 
 func (d *dockerTarget) start(ctx context.Context) error {
@@ -53,11 +60,15 @@ func (d *dockerTarget) isolate(ctx context.Context, fn func(string) error) error
 }
 
 func (d *dockerTarget) mem(ctx context.Context) (memory, error) {
-	return containerMem(ctx, d.fresh, &d.vm, d.id)
+	m, err := containerMem(ctx, d.fresh, &d.vm, d.id)
+	if err != nil || !d.fresh {
+		return m, err
+	}
+	return addBenchmarkProcessGrowth(ctx, m, d.processBase)
 }
 
 // containerMem reads docker stats for the containers and, on a freshly
-// restarted VM, the VM's host-side growth, which is what the Mac pays.
+// restarted VM, records the VM's host-side net change separately.
 func containerMem(ctx context.Context, fresh bool, vm *orbVM, ids ...string) (memory, error) {
 	var m memory
 	for _, id := range ids {
@@ -68,6 +79,7 @@ func containerMem(ctx context.Context, fresh bool, vm *orbVM, ids ...string) (me
 		m.Container += c
 	}
 	m.Host = m.Container
+	m.Service = m.Container
 	if fresh {
 		growth, total, err := vm.usage(ctx)
 		if err != nil {

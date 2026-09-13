@@ -4,8 +4,11 @@ description: Startup, per-test isolation, query latency, memory and download siz
 ---
 
 import BenchmarkTable from '../../components/BenchmarkTable.astro';
+import MemoryChart from '../../components/MemoryChart.astro';
 
 <BenchmarkTable lang="en" />
+
+<MemoryChart lang="en" />
 
 ## What each column measures
 
@@ -15,13 +18,14 @@ Every run is a fresh process that starts one server, loads the same schema, and 
 - **Fresh copy per test**: the median of 20 isolated copies of the prepared database (1,000 users, 10,000 orders), each followed by a connect and a join. pgmem forks a snapshot. docker run and devbox use `CREATE DATABASE … TEMPLATE` and `DROP DATABASE`. Testcontainers uses its PostgreSQL module's `Snapshot` and `Restore`, which do the same through a template database.
 - **Indexed SELECT**: `SELECT v FROM bench WHERE id = $1` with pgx, 3,000 iterations after warm-up. For pgmem the second number uses the in-process dialer (`Server.Dial`) instead of TCP.
 - **Sort 200k rows**: `SELECT count(*) FROM (SELECT md5(i::text) AS h FROM generate_series(1, 200000) i ORDER BY h) t`, median of three runs after one warm-up.
-- **Memory on the host**: what the machine pays after start and schema load, before queries, as macOS `phys_footprint`. pgmem is the growth of the test process, where the server runs, and the binary row is the pgmem process. docker run and Testcontainers run inside OrbStack's Linux VM, which is a separate process on the Mac: before each of these runs OrbStack is restarted, and the figure is how much the VM process grows until the schema is loaded. Testcontainers' figure includes its Ryuk container. The notes give the containers' own `docker stats` value and the VM's total, which is what OrbStack holds while tests run. devbox is summed over the postmaster and every process it forks.
+- **Memory**: OrbStack's net VM footprint can fall under load, making Testcontainers look smaller than `docker run` even while its containers use more memory. The chart instead compares backend usage plus measured test-process growth. pgmem uses its process's `phys_footprint` increase; the binary row uses the standalone pgmem process. Docker and Testcontainers sum Docker's usage for their containers with the Go benchmark process's growth. Testcontainers includes both PostgreSQL and Ryuk, using the memory values reported by `docker stats` (the Linux CLI subtracts cache from its display). devbox sums the PostgreSQL postmaster and its child processes. The table keeps OrbStack's net change and absolute footprint as separate host context.
 - **Download**: what a first run fetches. pgmem as a Go library is the growth of a stripped test binary that links it. The binary row is the compressed binary that the wheel, jar and npm package carry. Images are compressed layers for the measured architecture; the nix closure is what devbox downloads from cache.nixos.org.
 
 ## Reading the numbers
 
 - **Defaults differ.** The container and devbox servers use PostgreSQL's defaults (`shared_buffers=128MB`) and write to a real or virtual disk. pgmem uses `shared_buffers=32MB` and an in-memory file system, so sorts that spill to temporary files never touch a disk.
-- **The Docker VM is a fixed cost on top.** A freshly started OrbStack VM already holds several hundred megabytes before any container runs, and memory the VM takes from the host is not handed back when containers stop. The growth figure leaves that idle baseline out; the VM total in the note includes it.
+- **The chart compares the backend and test process.** It shows medians and observed ranges after schema setup and after the query/isolation workload. Testcontainers includes both PostgreSQL and Ryuk container usage. The Linux `docker stats` CLI subtracts cache from the displayed usage.
+- **OrbStack's net change is separate context.** Each container memory run restarts the VM and records its idle footprint. The VM can reclaim memory during a run, so its net change may fall even as container usage rises. The table reports that change and the absolute VM footprint separately.
 - **pgmem memory grows under load.** WebAssembly linear memory is not returned to the OS while a server runs, and each live fork holds its own copy. Budget roughly the idle figure per live fork and bound the number with `MaxForks`.
 - **Testcontainers and docker run are close** because they run the same image; the difference is the Ryuk container and the wait strategy.
 

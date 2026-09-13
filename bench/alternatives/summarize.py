@@ -7,7 +7,13 @@ raw, sizes = sys.argv[1], sys.argv[2]
 # a freshly restarted OrbStack VM (fresh_vm), where the VM's host-side
 # growth is measurable; timing fields come only from the other runs, where
 # the VM was already warm as on a developer's machine.
-MEMORY = {"mem_idle_mb", "mem_after_mb", "rss_idle_mb", "container_mb", "vm_total_mb"}
+MEMORY = {
+    "mem_idle_mb", "mem_after_mb", "service_idle_mb", "service_after_mb",
+    "rss_idle_mb", "container_mb", "container_after_mb", "vm_total_mb",
+    "process_mb", "vm_growth_mb", "process_after_mb", "vm_growth_after_mb",
+    "mem_idle_min_mb", "mem_idle_max_mb", "mem_after_min_mb", "mem_after_max_mb",
+    "service_idle_min_mb", "service_idle_max_mb", "service_after_min_mb", "service_after_max_mb",
+}
 CONTAINER_TARGETS = {"docker", "testcontainers"}
 
 samples = defaultdict(lambda: defaultdict(list))
@@ -16,6 +22,18 @@ for line in open(raw):
     r = json.loads(line)
     t = r["target"]
     fresh = bool(r.get("fresh_vm"))
+    if t in CONTAINER_TARGETS and fresh:
+        # Older raw rows contain the same idle components but not the service
+        # total; derive it without mixing in the OrbStack VM's net change.
+        r.setdefault("service_idle_mb", r.get("container_mb", 0) + r.get("process_mb", 0))
+        if "container_after_mb" in r and "process_after_mb" in r:
+            r.setdefault("service_after_mb", r["container_after_mb"] + r["process_after_mb"])
+    elif t == "binary":
+        r.setdefault("service_idle_mb", r.get("mem_idle_mb"))
+    else:
+        r.setdefault("service_idle_mb", r.get("mem_idle_mb"))
+        if "mem_after_mb" in r:
+            r.setdefault("service_after_mb", r["mem_after_mb"])
     for k, v in r.items():
         if not isinstance(v, (int, float)) or isinstance(v, bool) or not v:
             continue
@@ -40,6 +58,16 @@ def orbstack_version():
 targets = {}
 for t, fields in samples.items():
     targets[t] = {k: round(statistics.median(v), 2) for k, v in fields.items()}
+    for field in ("mem_idle_mb", "mem_after_mb", "service_idle_mb", "service_after_mb"):
+        if fields.get(field):
+            stem = field.removesuffix("_mb")
+            targets[t][f"{stem}_min_mb"] = round(min(fields[field]), 2)
+            targets[t][f"{stem}_max_mb"] = round(max(fields[field]), 2)
+    if t == "pgmem":
+        # pgmem runs the server in the measured process, so all host growth
+        # belongs to that process even in older raw samples without components.
+        targets[t]["process_mb"] = targets[t]["mem_idle_mb"]
+        targets[t]["process_after_mb"] = targets[t]["mem_after_mb"]
     targets[t]["runs"] = max(len(v) for k, v in fields.items() if k not in MEMORY)
     if t in CONTAINER_TARGETS and fields.get("mem_idle_mb"):
         targets[t]["mem_runs"] = len(fields["mem_idle_mb"])

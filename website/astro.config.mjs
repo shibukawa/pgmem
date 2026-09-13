@@ -29,6 +29,7 @@ export default defineConfig({
 					label: 'Overview',
 					translations: { ja: '概要' },
 					items: [
+						{ label: 'Quickstart', translations: { ja: 'クイックスタート' }, slug: 'quickstart' },
 						{ label: 'Why pgmem', translations: { ja: 'なぜ pgmem か' }, slug: 'why' },
 						{ label: 'Benchmarks', translations: { ja: 'ベンチマーク' }, slug: 'benchmarks' },
 						{ label: 'Architecture', translations: { ja: 'アーキテクチャ' }, slug: 'architecture' },

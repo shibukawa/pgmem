@@ -9,8 +9,8 @@ import (
 )
 
 // pgmemTarget runs the library in this process, the way Go tests use it.
-// Memory is the growth of this process's RSS, so the harness itself is
-// subtracted.
+// Host memory is this process's phys_footprint growth; RSS is reported
+// separately for reference, so the idle harness itself is subtracted.
 type pgmemTarget struct {
 	s       *pgmem.Server
 	snap    *pgmem.Snapshot
@@ -57,7 +57,8 @@ func (p *pgmemTarget) mem(ctx context.Context) (memory, error) {
 		return memory{}, err
 	}
 	fp, err := footprintMB(ctx, os.Getpid())
-	return memory{Host: fp - p.baseFP, RSS: rss - p.baseRSS}, err
+	growth := fp - p.baseFP
+	return memory{Host: growth, RSS: rss - p.baseRSS, Process: growth, Service: growth}, err
 }
 
 func (p *pgmemTarget) dialQuery(ctx context.Context) (float64, error) {
