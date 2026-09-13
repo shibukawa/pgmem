@@ -14,8 +14,8 @@ JVM 向けの pgmem は 3 つのアーティファクトでできています。
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    testImplementation("jp.shibu:pgmem-junit5:1.18.0")          // jp.shibu:pgmem も入る
-    testRuntimeOnly("jp.shibu:pgmem-native:1.18.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
+    testImplementation("jp.shibu:pgmem-junit5:0.1.0")          // jp.shibu:pgmem も入る
+    testRuntimeOnly("jp.shibu:pgmem-native:0.1.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
@@ -30,8 +30,8 @@ tasks.test {
 
 ```groovy title="build.gradle"
 dependencies {
-    testImplementation 'jp.shibu:pgmem-junit5:1.18.0'           // jp.shibu:pgmem も入る
-    testRuntimeOnly 'jp.shibu:pgmem-native:1.18.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
+    testImplementation 'jp.shibu:pgmem-junit5:0.1.0'           // jp.shibu:pgmem も入る
+    testRuntimeOnly 'jp.shibu:pgmem-native:0.1.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
@@ -49,13 +49,13 @@ test {
   <dependency>
     <groupId>jp.shibu</groupId>
     <artifactId>pgmem-junit5</artifactId>
-    <version>1.18.0</version>
+    <version>0.1.0</version>
     <scope>test</scope>
   </dependency>
   <dependency>
     <groupId>jp.shibu</groupId>
     <artifactId>pgmem-native</artifactId>
-    <version>1.18.0</version>
+    <version>0.1.0</version>
     <classifier>darwin-arm64</classifier>
     <scope>test</scope>
   </dependency>
@@ -71,7 +71,7 @@ test {
 </TabItem>
 </Tabs>
 
-classifier は `linux-x86_64`、`linux-arm64`、`darwin-x86_64`、`darwin-arm64`、`windows-x86_64` です。複数のプラットフォームでビルドするなら、5 つ全部に依存するのではなく、Maven のプロファイルや Gradle の OS 判定プラグインでプラットフォームごとに 1 つを選んでください。バイナリは初回に `~/.cache/pgmem/<version>/` へ展開されます。Java 17 以降が必要です。
+classifier は `linux-x86_64`、`linux-arm64`、`darwin-x86_64`、`darwin-arm64`、`windows-x86_64`、`windows-arm64` です。複数のプラットフォームでビルドするなら、6 つ全部に依存するのではなく、Maven のプロファイルや Gradle の OS 判定プラグインでプラットフォームごとに 1 つを選んでください。バイナリは初回に `~/.cache/pgmem/<version>/` へ展開されます。Java 17 以降が必要です。
 
 ## 基本の流れ
 

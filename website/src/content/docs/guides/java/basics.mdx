@@ -14,8 +14,8 @@ pgmem for the JVM is three artifacts: `jp.shibu:pgmem` (the client), `jp.shibu:p
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    testImplementation("jp.shibu:pgmem-junit5:1.18.0")          // pulls in jp.shibu:pgmem
-    testRuntimeOnly("jp.shibu:pgmem-native:1.18.0:darwin-arm64") // the binary for your platform
+    testImplementation("jp.shibu:pgmem-junit5:0.1.0")          // pulls in jp.shibu:pgmem
+    testRuntimeOnly("jp.shibu:pgmem-native:0.1.0:darwin-arm64") // the binary for your platform
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
@@ -30,8 +30,8 @@ tasks.test {
 
 ```groovy title="build.gradle"
 dependencies {
-    testImplementation 'jp.shibu:pgmem-junit5:1.18.0'           // pulls in jp.shibu:pgmem
-    testRuntimeOnly 'jp.shibu:pgmem-native:1.18.0:darwin-arm64' // the binary for your platform
+    testImplementation 'jp.shibu:pgmem-junit5:0.1.0'           // pulls in jp.shibu:pgmem
+    testRuntimeOnly 'jp.shibu:pgmem-native:0.1.0:darwin-arm64' // the binary for your platform
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
@@ -49,13 +49,13 @@ test {
   <dependency>
     <groupId>jp.shibu</groupId>
     <artifactId>pgmem-junit5</artifactId>
-    <version>1.18.0</version>
+    <version>0.1.0</version>
     <scope>test</scope>
   </dependency>
   <dependency>
     <groupId>jp.shibu</groupId>
     <artifactId>pgmem-native</artifactId>
-    <version>1.18.0</version>
+    <version>0.1.0</version>
     <classifier>darwin-arm64</classifier>
     <scope>test</scope>
   </dependency>
@@ -71,7 +71,7 @@ test {
 </TabItem>
 </Tabs>
 
-The classifiers are `linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64` and `windows-x86_64`. When a build runs on several platforms, pick one per platform with Maven profiles or a Gradle OS detection plugin rather than depending on all five. The binary is extracted once into `~/.cache/pgmem/<version>/`. Java 17 or newer.
+The classifiers are `linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64`, `windows-x86_64` and `windows-arm64`. When a build runs on several platforms, pick one per platform with Maven profiles or a Gradle OS detection plugin rather than depending on all six. The binary is extracted once into `~/.cache/pgmem/<version>/`. Java 17 or newer.
 
 ## The basic flow
 
