@@ -6,10 +6,13 @@
 //	{"event":"ready","protocol":1,"version":"v0.1.0","pid":1234,"server":{"id":"template","host":"127.0.0.1","port":54321,...},"port":54321,"host":"127.0.0.1","user":"postgres","database":"app","dsn":"postgres://postgres@127.0.0.1:54321/app?sslmode=disable"}
 //
 // and then serves the control protocol: one JSON request per line on stdin
-// (start, snapshot, fork, close, shutdown), one JSON response per line on
-// stdout, matched by the request's "id". It keeps running until stdin is
-// closed (the portable way for a parent process to end a child on every
-// platform), a shutdown request arrives, or SIGINT/SIGTERM is received.
+// (start, snapshot, fork, reset, close, shutdown), one JSON response per
+// line on stdout, matched by the request's "id". With -control it also
+// serves the protocol on a loopback socket, so that other processes (test
+// workers) can fork and reset; the ready line then carries the socket's
+// address and token. It keeps running until stdin is closed (the portable
+// way for a parent process to end a child on every platform), a shutdown
+// request arrives, or SIGINT/SIGTERM is received.
 package main
 
 import (
@@ -34,10 +37,12 @@ func main() {
 		params   = flag.String("params", "", "extra postgres -c settings, comma separated (e.g. shared_buffers=32MB,log_statement=all)")
 		verbose  = flag.Bool("log", false, "print the server log to stderr")
 		noStdin  = flag.Bool("no-stdin", false, "do not read control requests from stdin and do not exit when it is closed")
+		control  = flag.String("control", "", "also serve the control protocol on this loopback address (e.g. 127.0.0.1:0) for other processes")
+		wait     = flag.Duration("wait-timeout", 0, "end a connection that waits this long behind another connection's idle transaction (0 = 2s, negative = wait forever)")
 	)
 	flag.Parse()
 
-	base := pgmem.Options{}
+	base := pgmem.Options{WaitTimeout: *wait}
 	for _, p := range strings.Split(*params, ",") {
 		if p = strings.TrimSpace(p); p != "" {
 			base.Params = append(base.Params, "-c", p)
@@ -54,6 +59,11 @@ func main() {
 	}
 	c := newController(base, os.Stdout)
 	tmpl := c.add("template", s, *user, *database)
+	if *control != "" {
+		if err := c.listen(*control); err != nil {
+			log.Fatalf("pgmem: control socket: %v", err)
+		}
+	}
 	if err := c.ready(os.Getpid(), buildVersion(), tmpl); err != nil {
 		log.Fatal(err)
 	}
