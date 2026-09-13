@@ -1,6 +1,6 @@
 ---
 title: pytest への組み込み
-description: pytest で pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのフォーク。
+description: pytest で使うデータベースのライフサイクル。テストごとにサーバーを起動するか、準備済みスナップショットを読み取り専用テストで共有し、書き込み時だけフォークします。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
@@ -13,10 +13,14 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 | `pgmem_process` | session | 起動したバイナリ |
 | `pgmem_server` | session | テンプレートサーバー |
 | `pgmem_snapshot` | session | テンプレートのスナップショット。マイグレーションを先に流すときに上書きする |
-| `pgmem_fork`、`pgmem_dsn` | function | テストごとのフォーク。teardown で閉じる |
+| `pgmem_fork`、`pgmem_dsn` | function | 要求したテストごとのフォーク。teardown で閉じる |
 | `pgmem_class_fork`、`pgmem_class_dsn` | class | テストクラスで共有するフォーク |
 
-## テストごとに新しいサーバー
+## データベースのライフサイクル
+
+テストごとに異なるスキーマが必要なら、新しいサーバーを使います。同じスキーマとシードデータを使うテストでは、セッションでスナップショットを 1 つ準備します。読み取り専用テストはクラス用フォークを共有し、テストごとのフォークは書き込みや分離が必要なテストだけで要求します。
+
+### テストごとに新しいサーバー
 
 テストごとにスキーマが違うなら、function スコープのフィクスチャでプロセスを起動します。
 
@@ -33,7 +37,7 @@ def fresh_dsn():
 
 テストごとにプロセスの起動とマイグレーションのコストがかかります。
 
-## セッションで一度だけ準備する
+### セッションで一度だけ準備する
 
 `conftest.py` で `pgmem_options` と `pgmem_snapshot` を上書きします。マイグレーションとシードはセッションで一度だけ走り、そのスナップショットがすべてのフォークの出発点になります。
 
@@ -56,7 +60,7 @@ def pgmem_snapshot(pgmem_server):
     return pgmem_server.snapshot()
 ```
 
-## 読み取り専用のクラスで 1 つのフォークを共有する
+#### 読み取り専用のクラスで 1 つのフォークを共有する
 
 読むだけのテストは、クラス単位でフォークを共有できます。
 
@@ -74,9 +78,9 @@ class TestReports:
 クラスの中に 1 つでも書き込むテストがあると、ほかのテストがその結果を見てしまい、結果が実行順に左右されます。書き込むテストは `pgmem_dsn` に移してください。
 </Aside>
 
-## 書き込むテストにはテストごとのフォーク
+#### 書き込むテストだけでフォークする
 
-`pgmem_dsn` はテストごとに作られる、準備済みデータベースの新しい複製です。
+書き込みや分離が必要なテスト関数だけで `pgmem_dsn` を要求します。pytest はこのフィクスチャが使われたときに、準備済みデータベースの複製を作ります。同じクラスの読み取り専用テストは `pgmem_class_dsn` を使い、クラス用のフォークを共有できます。スイート全体にテストごとのフォークを自動適用する必要はありません。
 
 <Tabs syncKey="py-driver">
 <TabItem label="psycopg">
@@ -143,7 +147,22 @@ def audit_dsn(audit_snapshot):
 
 ## 並列実行
 
-pytest-xdist では各ワーカーが別プロセスで、それぞれ pgmem バイナリを起動し、テンプレートも各自で準備します。ワーカーの中ではフォーク同士が独立しています。1 ワーカーが同時に保持するフォークの数は `snapshot(max_forks=...)` で制限できます。
+pytest-xdist では各ワーカーが別プロセスで、それぞれ pgmem バイナリを起動し、テンプレートとフォークプールを持ちます。ワーカー内ではセッション用スナップショットの `max_forks` がフォーク数を制限し、既定値は利用可能な CPU 数です。フォークはそれぞれデータディレクトリとバッファキャッシュを複製するため、xdist のワーカー数と `max_forks` の両方を増やすとメモリ使用量も増えます。
+
+プールが満杯のとき、組み込みフィクスチャは空き枠を無期限に待ちます。上限と期限を設定するには、`conftest.py` で `pgmem_snapshot` と `pgmem_fork` を上書きします。
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def pgmem_snapshot(pgmem_server):
+    return pgmem_server.snapshot(max_forks=4, timeout=30.0)
+
+@pytest.fixture
+def pgmem_fork(pgmem_snapshot):
+    with pgmem_snapshot.fork(timeout=30.0) as fork:
+        yield fork
+```
+
+`max_forks` はこのスナップショットに適用されます。`fork(timeout=...)` は空き枠を待つ時間だけを制限し、期限を超えると `ProtocolError` の code `pool_timeout` で失敗します。timeout を省略すれば無期限に待ちます。`snapshot()` の `timeout` は、開いているトランザクションが終わるのを待つ時間です。その他のタイムアウトは[制限事項](../../../limits/)を参照してください。
 
 <Aside>
 フォーク 1 つは PostgreSQL の 1 セッションです。1 つのフォークの上でコネクションプールを使うこともできますが、接続はトランザクション境界で直列になります。`snapshot()` の前にテンプレートへの接続をコミットするか閉じてください。そうしないと 30 秒後に `busy` で失敗します。

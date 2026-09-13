@@ -10,12 +10,26 @@ pgmem is a Go module. The server runs inside your process; there is no binary to
 ## Install
 
 ```sh
-go get github.com/shibukawa/pgmem
+go get github.com/shibukawa/pgmem github.com/jackc/pgx/v5
 ```
+
+This installs both pgmem and the commonly used pgx driver shown below.
 
 <Aside>
 The first build compiles about 110 MB of generated Go and takes around a minute. Go's build cache keeps the result, so later builds and `go test` runs do not pay it again.
 </Aside>
+
+## Choose a connection for tests
+
+`pgmemtest.Fixture` exposes three connection forms. Its per-test helpers give each calling test a fresh database; read-only tests can instead share one fork. Prefer `*pgxpool.Pool` or `*sql.DB` for test queries: both use an in-process `net.Pipe` connection and skip loopback TCP. Use the DSN when a tool or client needs a PostgreSQL URL. `PgxConn(t)` is also available when a single pgx connection is a better fit.
+
+| Handle | Fixture method | Connection |
+|---|---|---|
+| `*pgxpool.Pool` | `fx.PgxPool(t)` | In-process; recommended for pgx applications |
+| `*sql.DB` | `fx.DB(t)` | In-process; recommended for `database/sql` applications |
+| DSN | `fx.DSN(t)` | Loopback TCP; works with any client that accepts a URL |
+
+The [Go testing guide](../testing/) shows how to prepare a database once, share a fork across read-only tests, and give only writing tests their own copies. On small queries, the in-process dialer is about three times faster than TCP; see the [benchmark results](/pgmem/benchmarks/).
 
 ## The basic flow
 
@@ -86,7 +100,7 @@ The first build compiles about 110 MB of generated Go and takes around a minute.
 
 ### Skip TCP with the in-process dialer
 
-`Server.Dial` connects through `net.Pipe` instead of a loopback socket. Small queries get about three times faster, because a TCP round trip spends most of its time in the kernel, not in PostgreSQL.
+`Server.Dial` connects through `net.Pipe` instead of a loopback socket. Small queries get about three times faster, because a TCP round trip spends most of its time in the kernel, not in PostgreSQL. `pgmemtest.Fixture.PgxPool` and `pgmemtest.Fixture.DB` configure this dialer for you.
 
 ```go
 cfg, _ := pgx.ParseConfig(s.DSN())
@@ -96,6 +110,11 @@ conn, _ := pgx.ConnectConfig(ctx, cfg)
 // database/sql: register the config and open it by name
 name := stdlib.RegisterConnConfig(cfg)
 db, _ := sql.Open("pgx", name)
+
+// For pgxpool, set the same dialer on its parsed config.
+poolCfg, _ := pgxpool.ParseConfig(s.DSN())
+poolCfg.ConnConfig.DialFunc = s.Dial
+pool, _ := pgxpool.NewWithConfig(ctx, poolCfg)
 ```
 
 ## Migration tools
@@ -263,3 +282,13 @@ defer fork.Close()
 ```
 
 A snapshot checkpoints the server and copies its data directory. A fork copies it again and starts a new backend. Commit or close every connection to `s` before `Snapshot`, because it waits for open transactions.
+
+Use `Restore` to replace a live server's state with a different snapshot of the same database and user. It keeps the fork's port and client connections, so a captured DSN or pool remains valid:
+
+```go
+if err := fork.Restore(ctx, anotherSnapshot); err != nil {
+	return err
+}
+```
+
+`Reset(ctx)` is shorthand for restoring the snapshot that originally created the fork. `Snapshot.Close()` stops new forks but leaves live forks running; `Snapshot.Wait()` blocks until those forks close.

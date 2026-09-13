@@ -1,6 +1,6 @@
 ---
 title: Testing with pytest
-description: Three ways to use pgmem with pytest - a fresh server per test, one prepared database shared by read-only tests, and a fork per test for tests that write.
+description: Choose a pytest database lifecycle with a fresh server per test or one prepared snapshot shared by read-only tests and forked only for writes.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
@@ -13,10 +13,14 @@ Installing `pgmem` registers a pytest plugin. Its fixtures cover the prepared-da
 | `pgmem_process` | session | the running binary |
 | `pgmem_server` | session | the template server |
 | `pgmem_snapshot` | session | a snapshot of the template; override it to run migrations first |
-| `pgmem_fork`, `pgmem_dsn` | function | a fork per test, closed at teardown |
+| `pgmem_fork`, `pgmem_dsn` | function | a fork per requesting test, closed at teardown |
 | `pgmem_class_fork`, `pgmem_class_dsn` | class | one fork shared by a test class |
 
-## A fresh server per test
+## Database lifecycle strategy
+
+Use a fresh server when tests need different schemas. When tests share a schema and seed data, prepare one snapshot for the session. Read-only tests can share a class fork; request a per-test fork only in tests that write or need isolation.
+
+### A fresh server per test
 
 When every test needs a different schema, start a process in a function-scoped fixture:
 
@@ -33,7 +37,7 @@ def fresh_dsn():
 
 Each test pays a process start and its migrations.
 
-## Prepare once for the session
+### Prepare once for the session
 
 Override `pgmem_options` and `pgmem_snapshot` in `conftest.py`. Migrations and seed data run once per session; the snapshot is what every fork starts from.
 
@@ -56,7 +60,7 @@ def pgmem_snapshot(pgmem_server):
     return pgmem_server.snapshot()
 ```
 
-## Share one fork across a read-only class
+#### Share one fork across a read-only class
 
 Tests that only read can share a fork per class.
 
@@ -74,9 +78,9 @@ class TestReports:
 If one test in the class writes, the others see it, and the result depends on test order. Move writing tests to `pgmem_dsn`.
 </Aside>
 
-## A fork per test for tests that write
+#### Fork only in tests that write
 
-`pgmem_dsn` is a fresh copy of the prepared database for each test.
+Request `pgmem_dsn` only in test functions that write or need isolation; pytest creates a fresh copy of the prepared database when that fixture is requested. Read-only tests in the same class can keep using `pgmem_class_dsn` and share their class fork. You do not need to make the per-test fork fixture automatic for the whole suite.
 
 <Tabs syncKey="py-driver">
 <TabItem label="psycopg">
@@ -143,7 +147,22 @@ def audit_dsn(audit_snapshot):
 
 ## Parallel runs
 
-With pytest-xdist, every worker is its own process and starts its own pgmem binary, so each worker prepares its own template. Inside a worker, forks are independent. `snapshot(max_forks=...)` bounds how many forks one worker keeps alive.
+With pytest-xdist, every worker is its own process and starts its own pgmem binary, so each worker prepares its own template and gets its own fork pool. Within a worker, `max_forks` on the session snapshot caps live forks; the default is the available CPU count. Forks hold separate data-directory copies and buffer caches, so raising both the xdist worker count and `max_forks` raises memory use.
+
+The built-in fixture waits indefinitely when the pool is full. To set a limit and a deadline, override `pgmem_snapshot` and `pgmem_fork` in `conftest.py`:
+
+```python title="conftest.py"
+@pytest.fixture(scope="session")
+def pgmem_snapshot(pgmem_server):
+    return pgmem_server.snapshot(max_forks=4, timeout=30.0)
+
+@pytest.fixture
+def pgmem_fork(pgmem_snapshot):
+    with pgmem_snapshot.fork(timeout=30.0) as fork:
+        yield fork
+```
+
+`max_forks` applies to this snapshot. `fork(timeout=...)` limits only the wait for a free slot and raises `ProtocolError` with code `pool_timeout`; omitting the timeout waits indefinitely. The `timeout` passed to `snapshot()` instead bounds its wait for open transactions to finish. See [limits](../../../limits/) for the other timeout settings.
 
 <Aside>
 A fork is one PostgreSQL session. A connection pool on one fork works, but its connections serialize at transaction boundaries. Commit or close connections to the template before `snapshot()`, or it fails with `busy` after 30 seconds.

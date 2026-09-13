@@ -1,27 +1,24 @@
 ---
 title: pgmem
-description: テストの中でメモリ上に動く本物の PostgreSQL 18。Docker 不要、ディスク不要、テストごとの複製はミリ秒単位。
+description: テストの中でメモリ上に動く本物の PostgreSQL 18。Docker もディスクも不要。読み取りは共有し、書き込みをミリ秒で分離できます。
 template: splash
 hero:
-  tagline: テストのための、メモリ上で動く本物の PostgreSQL 18。Docker もディスクも使いません。スキーマは一度だけ準備し、各テストにはその複製をミリ秒で渡します。
+  tagline: テストのための、メモリ上で動く本物の PostgreSQL 18。Docker もディスクも使いません。スキーマを一度だけ準備し、読み取りテストで共有し、書き込みテストにはミリ秒で専用の複製を渡します。
   actions:
-    - text: クイックスタート
-      link: quickstart/
+    - text: アーキテクチャ
+      link: /pgmem/ja/architecture/
       variant: minimal
-    - text: なぜ pgmem か
-      link: why/
-      icon: right-arrow
     - text: Go ガイド
-      link: guides/go/basics/
+      link: /pgmem/ja/guides/go/basics/
       variant: minimal
     - text: Python ガイド
-      link: guides/python/basics/
+      link: /pgmem/ja/guides/python/basics/
       variant: minimal
     - text: Java ガイド
-      link: guides/java/basics/
+      link: /pgmem/ja/guides/java/basics/
       variant: minimal
     - text: Node.js ガイド
-      link: guides/nodejs/basics/
+      link: /pgmem/ja/guides/nodejs/basics/
       variant: minimal
 ---
 
@@ -34,7 +31,7 @@ import BenchmarkOverview from '../../../components/BenchmarkOverview.astro';
 
 <BenchmarkOverview lang="ja" />
 
-クエリ性能、計測方法、再現手順は[ベンチマーク](benchmarks/)のページにあります。
+クエリ性能、計測方法、再現手順は[ベンチマーク](/pgmem/ja/benchmarks/)のページにあります。
 
 <CardGrid>
 	<Card title="本物の PostgreSQL" icon="approve-check">
@@ -43,8 +40,8 @@ import BenchmarkOverview from '../../../components/BenchmarkOverview.astro';
 	<Card title="インストールするものがない" icon="rocket">
 		各言語で依存はひとつ。Docker デーモンも、CI 上のコンテナランタイムも要りません。ディスクにも書き込みません。
 	</Card>
-	<Card title="テストごとにフォーク" icon="random">
-		マイグレーションとシードは一度だけ。スナップショットを取り、各テストには独立した複製を渡します。書き込むテスト同士も並列に走らせられます。
+	<Card title="読み取りは共有、書き込みは分離" icon="random">
+		マイグレーションとシードは一度だけ。読み取り専用テストではフォークを共有し、書き込みテストには専用の複製を渡します。書き込みテスト同士も並列に走らせられます。
 	</Card>
 	<Card title="ドライバを選ばない" icon="puzzle">
 		PostgreSQL のワイヤプロトコルで待ち受けるので、pgx、psycopg、JDBC、node-postgres、ORM、マイグレーションツールがそのまま動きます。

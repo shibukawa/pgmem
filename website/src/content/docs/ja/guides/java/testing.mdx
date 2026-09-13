@@ -1,19 +1,15 @@
 ---
 title: JUnit 5 への組み込み
-description: JUnit 5 で pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用クラスで共有するフォーク、書き込むテストにはメソッドごとのフォーク。
+description: JUnit 5 で使うデータベースのライフサイクル。テストごとに新しいサーバーを起動するか、テンプレートを一度初期化してクラス単位・メソッド単位のフォークを渡します。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-`PgmemExtension` はクラスの前にバイナリを起動し、`prepare` を一度だけ実行してスナップショットを取り、テストのパラメータにフォークを注入します。
+## データベースのライフサイクル
 
-| 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
-|---|---|---|---|
-| テストごとに新しいサーバー | テストごと | プロセス起動とマイグレーション | スキーマ自体を変えたいテスト |
-| クラスごとのフォーク | 一度 | 最初のテスト以降はなし | 読むだけのテストクラス |
-| メソッドごとのフォーク（既定） | 一度 | フォーク 1 回、数ミリ秒 | 書き込むテスト、並列に走らせるテスト |
+テストごとにスキーマを変える場合は、新しいサーバーを起動します。同じスキーマとシードデータを使う場合は、`PgmemExtension` を 1 つ登録してテンプレートを一度だけ初期化し、テストクラスごとにフォークのスコープを選びます。
 
-## テストごとに新しいサーバー
+### テストごとに新しいサーバー
 
 <Tabs syncKey="jvm-lang">
 <TabItem label="Java">
@@ -46,9 +42,9 @@ fun schemaVariant() {
 </TabItem>
 </Tabs>
 
-## 拡張で一度だけ準備する
+### テンプレートを一度だけ初期化する
 
-拡張は static フィールドに登録します。`prepare` にはテンプレートの `Server` が渡されるので、そこでマイグレーションとシードを流します。
+拡張は static フィールドに登録します。JUnit はクラスの前に pgmem を起動し、テンプレートの `Server` を渡して `prepare` を一度だけ呼びます。ここでマイグレーションとシードデータを準備します。`prepare` が戻ると、そのデータベースをスナップショットにします。以下のフォークはこの準備済みスナップショットから作られるため、各テストメソッドで初期化を繰り返す必要がなく、テスト本体を振る舞いの確認に集中させられます。
 
 <Tabs syncKey="jvm-lang">
 <TabItem label="Java">
@@ -92,7 +88,9 @@ class OrderRepositoryTest {
 
 ネストしたクラスは外側のクラスのプロセスを使い回します。
 
-## 読み取り専用のクラスで 1 つのフォークを共有する
+以下のどちらのスコープも、同じ準備済みテンプレートから始まります。クラス内のテストがすべて読み取り専用ならクラススコープを選び、書き込むテストには各テストに独立した複製を渡すメソッドスコープを使います。
+
+#### 読み取り専用のクラスで 1 つのフォークを共有する
 
 パラメータで `ForkScope.CLASS` を指定するか、ビルダーの `forkScope(ForkScope.CLASS)` で既定にします。
 
@@ -132,7 +130,7 @@ fun totals(@PgmemFork(scope = ForkScope.CLASS) ds: DataSource) {
 クラス内のどのテストが書き込んでも、ほかのテストすべてに見えます。書き込むテストは既定のメソッドスコープのままにしてください。
 </Aside>
 
-## 書き込むテストにはメソッドごとのフォーク
+#### 書き込むテストにはメソッドごとのフォーク
 
 `Fork`、`DataSource`、`@PgmemFork String` のパラメータには、準備済みデータベースの新しい複製が渡され、テストの後で閉じられます。1 つのテストに複数のパラメータがあれば、同じフォークを共有します。
 
@@ -176,7 +174,7 @@ fun cancelOrder(ds: DataSource) {
 </TabItem>
 </Tabs>
 
-### DbUnit で検証する
+##### DbUnit で検証する
 
 ```java
 @Test
@@ -209,7 +207,20 @@ void auditTrail(@PgmemFork("audit") DataSource audit) { /* ... */ }
 
 ## 並列実行
 
-JUnit の並列実行はそのまま使えます。フォーク同士は独立しています。`maxForks(n)` で生きているフォークの数を制限し（既定は利用可能なプロセッサ数）、`forkTimeout(Duration)` を設定すると、プールが埋まったときに待たずにテストを失敗させます。Gradle の `maxParallelForks` や Surefire の `forkCount` でフォークされたテスト JVM は、それぞれ自分のバイナリを起動します。
+JUnit の並列実行はそのまま使えます。フォーク同士は独立しています。`maxForks(n)` はテンプレートごとの同時フォーク数を制限し（既定は利用可能なプロセッサ数）、枠が埋まると新しいフォークは待ちます。`forkTimeout(Duration)` を指定すると、待機時間が期限を超えたとき `pool_timeout` で失敗します。省略した場合、待機に期限はありません。
+
+```java
+import java.time.Duration;
+
+@RegisterExtension
+static PgmemExtension pg = PgmemExtension.builder()
+        .database("app")
+        .maxForks(4)
+        .forkTimeout(Duration.ofSeconds(30))
+        .build();
+```
+
+Gradle の `maxParallelForks` や Surefire の `forkCount` でテスト JVM を分けると、JVM ごとにバイナリとフォークプールが起動します。スナップショット、起動、接続待ちのタイムアウトは[制限事項](../../../limits/)を参照してください。
 
 <Aside>
 スナップショットの前に接続はコミットするか閉じてください。`prepare` がトランザクションを開いたまま戻ると、スナップショットは 30 秒後に `busy` で失敗します。

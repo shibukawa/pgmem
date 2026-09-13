@@ -1,27 +1,24 @@
 ---
 title: pgmem
-description: Real PostgreSQL 18 that runs in memory inside your tests. No Docker, no disk, a fresh copy per test in milliseconds.
+description: Real PostgreSQL 18 that runs in memory inside your tests. No Docker or disk; share read-only tests and isolate writes in milliseconds.
 template: splash
 hero:
-  tagline: Real PostgreSQL 18, in memory, for tests. No Docker, no disk. Prepare the schema once, then give every test its own copy in milliseconds.
+  tagline: Real PostgreSQL 18, in memory, for tests. No Docker, no disk. Prepare the schema once, share read-only tests, and give writing tests isolated copies in milliseconds.
   actions:
-    - text: Quickstart
-      link: quickstart/
+    - text: Architecture
+      link: /pgmem/architecture/
       variant: minimal
-    - text: Why pgmem
-      link: why/
-      icon: right-arrow
     - text: Go guide
-      link: guides/go/basics/
+      link: /pgmem/guides/go/basics/
       variant: minimal
     - text: Python guide
-      link: guides/python/basics/
+      link: /pgmem/guides/python/basics/
       variant: minimal
     - text: Java guide
-      link: guides/java/basics/
+      link: /pgmem/guides/java/basics/
       variant: minimal
     - text: Node.js guide
-      link: guides/nodejs/basics/
+      link: /pgmem/guides/nodejs/basics/
       variant: minimal
 ---
 
@@ -34,7 +31,7 @@ The same schema, queries and per-test isolation, measured on one machine against
 
 <BenchmarkOverview lang="en" />
 
-Query latency, methodology and how to reproduce are on the [benchmarks page](benchmarks/).
+Query latency, methodology and how to reproduce are on the [benchmarks page](/pgmem/benchmarks/).
 
 <CardGrid>
 	<Card title="The real thing" icon="approve-check">
@@ -43,8 +40,8 @@ Query latency, methodology and how to reproduce are on the [benchmarks page](ben
 	<Card title="Nothing to install" icon="rocket">
 		One dependency per language. No Docker daemon, no container runtime on CI, no files written to disk.
 	</Card>
-	<Card title="A fork per test" icon="random">
-		Run migrations and seed data once, snapshot, and hand each test an isolated copy. Tests that write can run in parallel.
+	<Card title="Share reads, isolate writes" icon="random">
+		Run migrations and seed data once, then share a fork across read-only tests and give writing tests isolated copies. Writing tests can run in parallel.
 	</Card>
 	<Card title="Any driver" icon="puzzle">
 		pgmem listens on the PostgreSQL wire protocol, so pgx, psycopg, JDBC, node-postgres, ORMs and migration tools work unchanged.

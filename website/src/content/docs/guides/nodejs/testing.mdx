@@ -1,19 +1,17 @@
 ---
 title: Testing with Vitest, Jest, node:test and Bun
-description: Three ways to use pgmem in Node.js tests - a fresh server per test file, one prepared database shared by read-only tests, and a reset or fork per test for tests that write.
+description: Choose a Node.js test database lifecycle with one prepared snapshot per run and extra reset or fork isolation only for tests that write.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem fits that shape: one pgmem process for the run, a fork per test file exposed as `DATABASE_URL` before the file is imported, and a reset in place between tests. Setting `DATABASE_URL` per test case would not help, because the client already holds the URL.
+Node.js test runners load each test file in a fresh worker or module context, and an ORM client reads `DATABASE_URL` once, when it is created. pgmem starts one process per run and gives each file one fork before its imports; test cases in the file share that fork. Read-only cases need no extra fork or reset. Add that isolation only around cases that write. Changing `DATABASE_URL` per test case would not help, because the client already holds the URL.
 
-| Shape | Setup runs | Cost per test | Use it for |
-|---|---|---|---|
-| Fresh server per test file | every file | process start plus migrations | files that need their own schema |
-| Shared prepared database | once per run | nothing | tests that only read |
-| Reset or fork per test | once per run | a reset or fork, about 15 ms | tests that write |
+## Database lifecycle strategy
 
-## A fresh server per test file
+Use a fresh server when a test file needs its own schema. For a shared schema and seed data, prepare one snapshot for the run. The register hook automatically creates one fork per test file; read-only cases share it, and only writing cases need an additional reset or fork. Concurrent writing tests need separate forks.
+
+### A fresh server per test file
 
 ```ts title="schema-variant.test.ts"
 import { PgmemServer } from '@pgmem/core';
@@ -36,7 +34,7 @@ test('reads the new column', async () => {
 });
 ```
 
-## Prepare once for the run
+### Prepare once for the run
 
 Start the server in the runner's global setup and export `server.env()`. It carries `PGMEM_CONTROL` and `PGMEM_SNAPSHOT`, which is how test processes reach the server and its snapshot.
 
@@ -142,9 +140,9 @@ process.exit(run.status ?? 1);
 </TabItem>
 </Tabs>
 
-`@pgmem/core/register` forks the snapshot and writes the fork's URL to `DATABASE_URL` before the test file's imports run, so application code that builds its client at import time connects to that file's copy. Test files run in parallel, each on its own fork. Set `PGMEM_ENV` to write other variable names instead.
+`@pgmem/core/register` forks the snapshot and writes the fork's URL to `DATABASE_URL` before the test file's imports run, so application code that builds its client at import time connects to that file's copy. This file-level fork is shared by its test cases; only write cases need an additional reset or fork. Test files run in parallel, each on its own fork. Set `PGMEM_ENV` to write other variable names instead.
 
-## Share the prepared database with read-only tests
+#### Share the file fork across read-only tests
 
 Tests in one file share that file's fork. A file whose tests only read needs nothing else:
 
@@ -158,52 +156,61 @@ test('counts users', async () => {
 ```
 
 <Aside type="caution">
-A write in one test is visible to the rest of the file. Reset between tests as below as soon as any test in the file writes.
+A write in one test is visible to the rest of the file. If only some cases write, isolate just those cases with the reset or fork pattern below; read-only cases can keep sharing the file's fork.
 </Aside>
 
-## Reset or fork per test for tests that write
+#### Isolate only tests that write
 
-`reset()` puts the file's fork back to the snapshot in place. The URL and the client's pooled connections stay valid, and pooled connections keep their prepared statements.
+`reset()` puts the file's fork back to its snapshot in place. Place an `afterEach` hook inside the suite of writing tests to restore it after those cases; read-only tests outside that suite do not pay a reset. The URL and pooled connections stay valid, and prepared statements remain available.
 
 <Tabs syncKey="node-runner">
 <TabItem label="Vitest">
 
-```ts title="test/reset.ts"
-import { beforeEach } from 'vitest';
+```ts title="test/orders.test.ts"
+import { afterEach, describe, test } from 'vitest';
 import { currentFork } from '@pgmem/core';
 
-beforeEach(() => currentFork().reset());
-```
-
-```ts title="vitest.config.ts"
-setupFiles: ['@pgmem/core/register', './test/reset.ts'],
+describe('tests that write', () => {
+  afterEach(() => currentFork().reset());
+  test('starts from the prepared database', async () => {
+    // write to the database
+  });
+});
 ```
 
 </TabItem>
 <TabItem label="Jest">
 
-```js title="test/reset.js"
+```js title="test/orders.test.js"
 const { currentFork } = require('@pgmem/core');
 
-beforeEach(() => currentFork().reset());
-```
-
-```js title="jest.config.js"
-setupFilesAfterEnv: ['./test/reset.js'],
+describe('tests that write', () => {
+  afterEach(() => currentFork().reset());
+  test('starts from the prepared database', async () => {
+    // write to the database
+  });
+});
 ```
 
 </TabItem>
 <TabItem label="node:test">
 
 ```js
-import { beforeEach } from 'node:test';
+import { afterEach, describe, it } from 'node:test';
 import { currentFork } from '@pgmem/core';
 
-beforeEach(() => currentFork().reset());
+describe('tests that write', () => {
+  afterEach(() => currentFork().reset());
+  it('starts from the prepared database', async () => {
+    // write to the database
+  });
+});
 ```
 
 </TabItem>
 </Tabs>
+
+Without isolation, this pair is order-dependent: the second test fails if `signUp` runs first. The write-only suite above resets the shared fork after the writing case.
 
 ```ts title="test/users.test.ts"
 import { expect, test } from 'vitest';
@@ -220,18 +227,23 @@ test('the next test starts from an empty database', async () => {
 });
 ```
 
-**Seed in `beforeAll`, reset to it.** Snapshot the fork after file-level seeding, and reset to that snapshot instead of the run's:
+**Give a writing suite its own seed baseline.** Snapshot the fork after seeding, then reset to that snapshot after each writing case instead of the run's baseline:
 
 ```ts
-import { beforeAll, beforeEach } from 'vitest';
+import { afterEach, beforeAll, describe, test } from 'vitest';
 import { currentFork, type PgmemSnapshot } from '@pgmem/core';
 
-let seeded: PgmemSnapshot;
-beforeAll(async () => {
-  await seedOrders(process.env.DATABASE_URL!);
-  seeded = await currentFork().snapshot();
+describe('tests that write', () => {
+  let seeded: PgmemSnapshot;
+  beforeAll(async () => {
+    await seedOrders(process.env.DATABASE_URL!);
+    seeded = await currentFork().snapshot();
+  });
+  afterEach(() => currentFork().reset({ snapshot: seeded }));
+  test('uses the writing suite seed', async () => {
+    // write to the database
+  });
 });
-beforeEach(() => currentFork().reset({ snapshot: seeded }));
 ```
 
 **Concurrent tests** cannot share one fork. Give each its own with `withFork`, and pass the URL to code that accepts one:
@@ -247,6 +259,22 @@ test.concurrent('imports a file', async () => {
   });
 });
 ```
+
+## Fork capacity and waiting
+
+`maxForks` on `PgmemServer.start()` caps the default snapshot's live forks; the default is the available CPU count. Every registered test file takes a slot because `@pgmem/core/register` creates one fork before import. If the pool is full, registration waits until another file's fork closes. That automatic wait has no deadline.
+
+Explicit `fork()` and `withFork()` calls accept `timeoutMs`; if the slot does not open in time, they fail with `PgmemError` code `pool_timeout`.
+
+```ts
+const pg = await PgmemServer.start({ maxForks: 4 });
+
+await pg.withFork(async (fork) => {
+  await runImport(fork.url);
+}, { timeoutMs: 30_000 });
+```
+
+Each fork adds a separate data-directory copy and buffer cache. See [limits](../../../limits/) for the distinction between fork-slot, snapshot, reset and connection-wait timeouts.
 
 ## Things to know
 

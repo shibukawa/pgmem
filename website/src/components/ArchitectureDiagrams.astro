@@ -1,0 +1,269 @@
+---
+const { lang = 'en' } = Astro.props;
+const ja = lang === 'ja';
+const t = ja
+	? {
+		queryTitle: 'クエリの実行経路',
+		queryDesc: 'クライアントからブリッジ、PostgreSQL バックエンド、メモリ上のファイルシステムへクエリが流れる図。',
+		client: 'PostgreSQL ドライバ',
+		clientTcp: 'DSN 経由の TCP',
+		clientPipe: 'Go: net.Pipe (Server.Dial)',
+		server: '1 つの Server',
+		bridge: 'pgmem ブリッジ',
+		multiplex: '接続を多重化',
+		backend: 'PostgreSQL',
+		single: '単一セッション',
+		vfs: 'メモリ上の VFS',
+		dataWal: 'データ + WAL',
+		queryCaption: '接続方法が違っても、クエリは同じバックエンドに届きます。1 つの Server 内では接続がトランザクション境界で直列化され、並列性は独立したフォークから得ます。',
+		lifecycleTitle: 'テンプレートからフォークへ',
+		lifecycleDesc: 'テンプレートを一度準備してスナップショットを作り、上限付きのフォーク枠から独立したサーバーを起動する図。',
+		template: 'テンプレート',
+		prepare: 'マイグレーション + シード',
+		live: '稼働中のサーバー',
+		snapshot: 'スナップショット',
+		frozen: '固定したデータの状態',
+		capacity: 'このスナップショットの MaxForks 枠',
+		forkLabel: 'Fork()',
+		copy: 'データの複製',
+		backendUrl: 'サーバー + URL',
+		fork1: 'フォーク 1',
+		fork2: 'フォーク 2',
+		forkN: 'フォーク N',
+		wait: '枠が埋まると待機し、Close() で枠が空く',
+		lifecycleCaption: '各フォークはスナップショットから独立したデータ領域を持ちます。Reset は元の状態を同じフォークへ戻すため、ポートとクライアント接続は維持されます。',
+		wrapperTitle: '各言語の実行形態',
+		wrapperText: 'Go はライブラリをアプリケーションプロセス内で使います。Python、Java、Node.js は cmd/pgmem バイナリを起動し、ドライバは各サーバーの DSN へ接続します。JSON Lines と Node.js の制御ソケットはフォーク操作用で、クエリの通信経路ではありません。',
+	}
+	: {
+		queryTitle: 'Query path',
+		queryDesc: 'A query flows from a client through the bridge and PostgreSQL backend to the in-memory file system.',
+		client: 'PostgreSQL driver',
+		clientTcp: 'TCP via the DSN',
+		clientPipe: 'Go: net.Pipe (Server.Dial)',
+		server: 'One Server',
+		bridge: 'pgmem bridge',
+		multiplex: 'multiplexes connections',
+		backend: 'PostgreSQL',
+		single: 'single-user backend',
+		vfs: 'In-memory VFS',
+		dataWal: 'data + WAL',
+		queryCaption: 'Both transports reach the same backend. Connections to one Server serialize at transaction boundaries; parallel work comes from independent forks.',
+		lifecycleTitle: 'From template to forks',
+		lifecycleDesc: 'Prepare a template once, snapshot it, and start independent servers from a bounded pool of fork slots.',
+		template: 'Template',
+		prepare: 'migrations + seed data',
+		live: 'running server',
+		snapshot: 'Snapshot',
+		frozen: 'frozen data state',
+		capacity: 'MaxForks slots for this snapshot',
+		forkLabel: 'Fork()',
+		copy: 'data copy',
+		backendUrl: 'server + URL',
+		fork1: 'Fork 1',
+		fork2: 'Fork 2',
+		forkN: 'Fork N',
+		wait: 'When full, wait; Close() frees a slot',
+		lifecycleCaption: 'Each fork owns an independent data directory. Reset restores its snapshot in place, keeping the same port and client connections.',
+		wrapperTitle: 'How language wrappers run',
+		wrapperText: 'Go uses the library inside the application process. Python, Java and Node.js launch the cmd/pgmem binary; drivers connect to each server’s DSN. JSON Lines and Node.js control sockets manage forks, not query traffic.',
+	};
+---
+
+<div class="diagrams">
+	<figure>
+		<div class="scroll">
+			<svg viewBox="0 0 1000 320" role="img" aria-labelledby="query-title query-desc">
+				<title id="query-title">{t.queryTitle}</title>
+				<desc id="query-desc">{t.queryDesc}</desc>
+				<defs>
+					<marker id="query-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+						<path class="arrowhead" d="M0,0 L10,4 L0,8 z" />
+					</marker>
+					<marker id="query-arrow-back" markerWidth="10" markerHeight="8" refX="1" refY="4" orient="auto">
+						<path class="arrowhead" d="M10,0 L0,4 L10,8 z" />
+					</marker>
+				</defs>
+
+				<rect class="server-frame" x="272" y="52" width="706" height="220" rx="18" />
+				<text class="frame-label" x="296" y="43">{t.server}</text>
+
+				<rect class="node accent" x="24" y="111" width="210" height="112" rx="14" />
+				<text class="node-title" x="129" y="147" text-anchor="middle">{t.client}</text>
+				<text class="node-copy" x="129" y="177" text-anchor="middle">{t.clientTcp}</text>
+				<text class="node-copy" x="129" y="201" text-anchor="middle">{t.clientPipe}</text>
+
+				<rect class="node" x="298" y="111" width="195" height="112" rx="14" />
+				<text class="node-title" x="395" y="154" text-anchor="middle">{t.bridge}</text>
+				<text class="node-copy" x="395" y="185" text-anchor="middle">{t.multiplex}</text>
+
+				<rect class="node" x="550" y="111" width="188" height="112" rx="14" />
+				<text class="node-title" x="644" y="154" text-anchor="middle">{t.backend}</text>
+				<text class="node-copy" x="644" y="185" text-anchor="middle">{t.single}</text>
+
+				<rect class="node" x="794" y="111" width="158" height="112" rx="14" />
+				<text class="node-title" x="873" y="154" text-anchor="middle">{t.vfs}</text>
+				<text class="node-copy" x="873" y="185" text-anchor="middle">{t.dataWal}</text>
+
+				<path class="flow bidirectional" d="M234 167 H298" />
+				<path class="flow bidirectional" d="M493 167 H550" />
+				<path class="flow bidirectional" d="M738 167 H794" />
+			</svg>
+		</div>
+		<figcaption>{t.queryCaption}</figcaption>
+	</figure>
+
+	<figure>
+		<div class="scroll">
+			<svg class="lifecycle" viewBox="0 0 1100 430" role="img" aria-labelledby="life-title life-desc">
+				<title id="life-title">{t.lifecycleTitle}</title>
+				<desc id="life-desc">{t.lifecycleDesc}</desc>
+				<defs>
+					<marker id="life-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+						<path class="arrowhead" d="M0,0 L10,4 L0,8 z" />
+					</marker>
+				</defs>
+
+				<rect class="node" x="28" y="121" width="214" height="174" rx="16" />
+				<text class="node-title" x="135" y="166" text-anchor="middle">{t.template}</text>
+				<text class="node-copy" x="135" y="201" text-anchor="middle">{t.prepare}</text>
+				<text class="node-copy" x="135" y="235" text-anchor="middle">{t.live}</text>
+
+				<rect class="node accent" x="319" y="121" width="214" height="174" rx="16" />
+				<text class="node-title" x="426" y="166" text-anchor="middle">{t.snapshot}</text>
+				<text class="node-copy" x="426" y="201" text-anchor="middle">{t.frozen}</text>
+				<text class="node-copy" x="426" y="235" text-anchor="middle">MaxForks</text>
+
+				<rect class="pool-frame" x="600" y="61" width="476" height="282" rx="18" />
+				<text class="frame-label" x="624" y="51">{t.capacity}</text>
+
+				<rect class="node" x="622" y="111" width="132" height="151" rx="12" />
+				<text class="node-title small" x="688" y="148" text-anchor="middle">{t.fork1}</text>
+				<text class="node-copy" x="688" y="182" text-anchor="middle">{t.copy}</text>
+				<text class="node-copy" x="688" y="214" text-anchor="middle">{t.backendUrl}</text>
+
+				<rect class="node" x="772" y="111" width="132" height="151" rx="12" />
+				<text class="node-title small" x="838" y="148" text-anchor="middle">{t.fork2}</text>
+				<text class="node-copy" x="838" y="182" text-anchor="middle">{t.copy}</text>
+				<text class="node-copy" x="838" y="214" text-anchor="middle">{t.backendUrl}</text>
+
+				<rect class="node" x="922" y="111" width="132" height="151" rx="12" />
+				<text class="node-title small" x="988" y="148" text-anchor="middle">{t.forkN}</text>
+				<text class="node-copy" x="988" y="182" text-anchor="middle">{t.copy}</text>
+				<text class="node-copy" x="988" y="214" text-anchor="middle">{t.backendUrl}</text>
+
+				<path class="flow" d="M242 208 H319" />
+				<path class="flow" d="M533 208 H576" />
+				<path class="bus" d="M576 208 V91 H988" />
+				<path class="flow" d="M688 91 V111" />
+				<path class="flow" d="M838 91 V111" />
+				<path class="flow" d="M988 91 V111" />
+				<text class="node-copy" x="571" y="194" text-anchor="end">{t.forkLabel}</text>
+
+				<rect class="wait-note" x="622" y="278" width="432" height="45" rx="10" />
+				<text class="wait-text" x="838" y="307" text-anchor="middle">{t.wait}</text>
+			</svg>
+		</div>
+		<figcaption>{t.lifecycleCaption}</figcaption>
+	</figure>
+
+	<p class="wrapper-note"><strong>{t.wrapperTitle}:</strong> {t.wrapperText}</p>
+</div>
+
+<style>
+	.diagrams {
+		margin: 1.5rem 0 2.5rem;
+	}
+	figure {
+		margin: 1.5rem 0 2rem;
+	}
+	.scroll {
+		overflow-x: auto;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 1rem;
+		background: var(--sl-color-bg-sidebar);
+	}
+	svg {
+		display: block;
+		width: 100%;
+		min-width: 760px;
+		height: auto;
+	}
+	.node,
+	.server-frame,
+	.pool-frame,
+	.wait-note {
+		vector-effect: non-scaling-stroke;
+	}
+	.node {
+		fill: var(--sl-color-bg);
+		stroke: var(--sl-color-gray-5);
+		stroke-width: 1.5;
+	}
+	.node.accent {
+		fill: var(--sl-color-accent-low);
+		stroke: var(--sl-color-accent-high);
+	}
+	.server-frame,
+	.pool-frame {
+		fill: none;
+		stroke: var(--sl-color-gray-4);
+		stroke-width: 1.5;
+		stroke-dasharray: 7 6;
+	}
+	.wait-note {
+		fill: var(--sl-color-bg-inline-code);
+		stroke: var(--sl-color-gray-5);
+		stroke-width: 1;
+	}
+	.flow {
+		fill: var(--sl-color-text-accent);
+		stroke: var(--sl-color-text-accent);
+	}
+	.arrowhead {
+		fill: var(--sl-color-text-accent);
+	}
+	.flow {
+		stroke-width: 2;
+		marker-end: url(#query-arrow);
+	}
+	.flow.bidirectional {
+		marker-start: url(#query-arrow-back);
+	}
+	svg.lifecycle .flow {
+		marker-end: url(#life-arrow);
+	}
+	.bus {
+		fill: none;
+		stroke: var(--sl-color-text-accent);
+		stroke-width: 2;
+	}
+	text {
+		fill: var(--sl-color-text);
+		font-family: var(--sl-font-system);
+	}
+	.frame-label,
+	.node-title {
+		font-size: 18px;
+		font-weight: 650;
+	}
+	.node-title.small {
+		font-size: 16px;
+	}
+	.node-copy {
+		font-size: 14px;
+	}
+	.wait-text {
+		font-size: 14px;
+		font-weight: 600;
+	}
+	figcaption,
+	.wrapper-note {
+		margin: 0.75rem 0 0;
+		color: var(--sl-color-gray-2);
+		font-size: 0.95rem;
+	}
+	.wrapper-note {
+		color: var(--sl-color-text);
+	}
+</style>

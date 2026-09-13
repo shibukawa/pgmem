@@ -1,19 +1,30 @@
 ---
 title: Go のテストへの組み込み
-description: Go のテストで pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのフォーク。
+description: Go のテストで使うデータベースのライフサイクル。テストごとに新しいサーバーを起動するか、基準データベースを一度準備して共有・リセット・フォークします。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-テストによってデータベースへの触り方が違うので、pgmem では 3 つの形を用意しています。後ろの 2 つは `pgmemtest` パッケージが面倒を見ます。
+`pgmemtest.Fixture` から、代表的な 3 種類の接続を取得できます。`fx.*(t)` のテストごとのヘルパーは、書き込みや分離が必要なテストだけで使います。読み取り専用のテストは、後述のように 1 つのフォークを共有できます。単独の pgx 接続が必要なら `PgxConn(t)` も使えます。
 
-| 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
+| 取得するもの | メソッド | 接続方法 | 向いている用途 |
 |---|---|---|---|
-| テストごとに新しいサーバー | テストごと | サーバー起動とマイグレーション | スキーマ自体を変えたいテスト |
-| 準備済みデータベースを共有 | 一度 | なし | 読むだけのテスト |
-| テストごとにフォーク | 一度 | フォーク 1 回、数ミリ秒 | 書き込むテスト、並列に走らせるテスト |
+| `*pgxpool.Pool` | `fx.PgxPool(t)` | プロセス内、TCP なし | pgx を使うアプリのクエリ。おすすめ |
+| `*sql.DB` | `fx.DB(t)` | プロセス内、TCP なし | `database/sql`、ORM、DB ハンドルを受け取るツール |
+| DSN | `fx.DSN(t)` | ループバック TCP | 接続 URL を必要とするドライバやツール |
 
-## テストごとに新しいサーバー
+最初の 2 つは `Server.Dial` と `net.Pipe` を使って TCP のオーバーヘッドを避けます。DSN は URL を必要とするツールに使える汎用的な方法です。どのヘルパーも、テスト終了時に接続とフォークを閉じます。
+
+## データベースのライフサイクル
+
+テストごとにスキーマを変えるなら、新しいサーバーを起動します。同じスキーマとシードデータを使うテストでは、基準となるデータベースを一度だけ初期化し、テストごとの使い方を選びます。
+
+- 読み取り専用のパッケージでは、1 つのフォークを共有します。
+- 書き込みを行うテストでは、直列実行ならフォークをリセットし、テストごとに分離するなら新しい複製を作ります。
+
+共有用とテストごとの複製は、どちらも準備済みの基準データベースから作ります。フォークのたびにマイグレーションやシードデータの投入を繰り返すことはありません。
+
+### テストごとに新しいサーバー
 
 いちばん素朴な形です。テストごとにサーバーを起動し、スキーマを作ります。何も共有しない代わりに、マイグレーションが長いといちばん遅くなります。
 
@@ -37,9 +48,9 @@ func TestSchemaVariant(t *testing.T) {
 }
 ```
 
-## TestMain で一度だけ準備する
+### 基準データベースを一度だけ準備する
 
-`pgmemtest.Run` はテンプレートサーバーを起動し、`Prepare` を一度だけ実行し、その結果をスナップショットにして、テストを走らせ、最後に後始末をします。
+`pgmemtest.Run` はテンプレートサーバーを起動し、`Prepare` を一度だけ実行して、その結果をスナップショットにしてからテストを走らせます。マイグレーションとシードデータの投入は `Prepare` に書きます。ここで渡される `db` はテンプレートに接続済みです。以降のフォークはそのスナップショットから作られるため、テストごとに初期化を繰り返す必要はありません。
 
 ```go
 package store_test
@@ -50,6 +61,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/shibukawa/pgmem"
 	"github.com/shibukawa/pgmem/pgmemtest"
 )
@@ -71,22 +84,45 @@ func TestMain(m *testing.M) {
 
 `Prepare` には、プロセス内で接続済みの `*sql.DB` と、URL を必要とするツール向けの DSN が渡されます。[基本](../basics/)で紹介したマイグレーションとシードのコードは、そのままここに置けます。
 
-## 読み取り専用のテストで準備済みデータベースを共有する
+#### 読み取り専用のパッケージで 1 つのフォークを共有する
 
-読むだけのテストなら、データベースは 1 つで足ります。`TestMain` でパッケージ全体用のフォークを 1 つ取るか、テンプレートをそのまま使います。
+パッケージ内のテストがすべて読み取り専用なら、準備済みスナップショットからフォークを 1 つ作り、共有できます。フォークには `Prepare` で用意したスキーマとシードデータが入っています。
 
 ```go
+var fx *pgmemtest.Fixture
+var shared *pgmem.Server
 var readOnly *sql.DB
 
 func TestMain(m *testing.M) {
-	os.Exit(pgmemtest.Run(m, opts, func(f *pgmemtest.Fixture) {
+	code := pgmemtest.Run(m, pgmemtest.Options{
+		Options: pgmem.Options{Database: "app"},
+		Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
+			if err := migrateUp(dsn); err != nil {
+				return err
+			}
+			return seed(ctx, db)
+		},
+	}, func(f *pgmemtest.Fixture) {
 		fx = f
-		shared, err := f.Snapshot().Fork(context.Background())
+		var err error
+		shared, err = f.Snapshot().Fork(context.Background())
 		if err != nil {
 			panic(err)
 		}
-		readOnly, _ = sql.Open("pgx", shared.DSN())
-	}))
+		cfg, err := pgx.ParseConfig(shared.DSN())
+		if err != nil {
+			panic(err)
+		}
+		cfg.DialFunc = shared.Dial
+		readOnly = stdlib.OpenDB(*cfg)
+	})
+	if readOnly != nil {
+		_ = readOnly.Close()
+	}
+	if shared != nil {
+		_ = shared.Close()
+	}
+	os.Exit(code)
 }
 
 func TestReportTotals(t *testing.T) {
@@ -102,9 +138,9 @@ func TestReportTotals(t *testing.T) {
 共有データベースが安全なのは、どのテストも書き込まない間だけです。あるテストの `INSERT` が別のテストを驚かせ、失敗するかどうかがテストの実行順で変わってしまいます。
 </Aside>
 
-## 書き込むテストにはテストごとのフォーク
+#### 書き込みテストではリセットするかテストごとにフォークする
 
-どのヘルパーも `t` を受け取ってスナップショットをフォークし、テストの終了時にフォークを閉じます。フォーク同士は独立しているので、`t.Parallel()` を付けても安全です。
+直列で実行するテストが書き込み後も同じフォークを使う場合は、接続を閉じてからテストの間に `Server.Reset(ctx)` を呼び、準備済みの基準状態に戻します。並列テストが使っているフォークをリセットしてはいけません。テストを分離したり並列実行したりする場合は、以下の `Fixture` ヘルパーでテストごとに新しいフォークを作ります。ヘルパーは終了時にフォークも閉じます。
 
 <Tabs syncKey="go-driver">
 <TabItem label="database/sql">
@@ -161,7 +197,7 @@ func TestWithURL(t *testing.T) {
 
 `DSN()` と `Dial` の両方が要るときは、`fx.Fork(t)` で `*pgmem.Server` そのものを受け取れます。
 
-### テストが書き込んだ内容を検証する
+##### テストが書き込んだ内容を検証する
 
 dbtestify はデータベースを期待するデータセットと比較し、食い違えばテーブルの差分を表示します。
 
@@ -184,11 +220,13 @@ func TestCancelOrder(t *testing.T) {
 
 ## 並列度とメモリ
 
-生きているフォークはそれぞれデータディレクトリとバッファキャッシュの複製を持ちます。同時に存在できる数は `MaxForks` で制限され、既定値は `go test` の既定の並列度と同じ `GOMAXPROCS` です。上限に達したときにフォークを求めたテストは、ほかのテストが終わるまで待ちます。テストのコンテキストをキャンセルすると待ちも中断されます。
+生きているフォークはそれぞれデータディレクトリとバッファキャッシュの複製を持ちます。`MaxForks` は 1 つのスナップショットから作れるフォーク数を制限し、既定値は `go test` の既定の並列度と同じ `GOMAXPROCS` です。`pgmemtest.Options` または `SnapshotOptions` で設定し、メモリ使用量と並列数を調整できます。
 
 ```go
 pgmemtest.Options{MaxForks: 4, /* ... */}
 ```
+
+上限に達すると、`Fork(ctx)` はフォークが閉じて枠が空くまで待ちます。context のキャンセルや期限で待機を中断できます。`pgmemtest` のヘルパーはテストの context を使います。サーバーログを有効にしている場合、5 秒を超える待機はログに記録されます。スナップショット、リセット、接続待ちのタイムアウトとの違いは[制限事項](../../../limits/)を参照してください。
 
 <Aside>
 1 つのフォークの上でコネクションプールを使うこともできますが、同じフォークへのクエリはトランザクション境界で直列になります。独立したテストは、別々のフォークで並列に走らせてください。[制限事項](../../../limits/)も参照してください。

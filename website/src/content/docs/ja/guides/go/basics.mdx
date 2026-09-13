@@ -10,12 +10,26 @@ pgmem は Go のモジュールです。サーバーは自分のプロセスの�
 ## インストール
 
 ```sh
-go get github.com/shibukawa/pgmem
+go get github.com/shibukawa/pgmem github.com/jackc/pgx/v5
 ```
+
+pgmem と、このページで使う一般的なドライバ pgx をまとめてインストールします。
 
 <Aside>
 初回のビルドでは約 110 MB の生成済み Go コードをコンパイルするため、1 分ほどかかります。結果は Go のビルドキャッシュに残るので、2 回目以降のビルドや `go test` ではかかりません。
 </Aside>
+
+## テストで使う接続方法
+
+`pgmemtest.Fixture` には 3 つの接続方法があります。テストごとのヘルパーを使うと、呼び出したテスト専用のデータベースに接続できます。読み取り専用のテストでは、代わりに 1 つのフォークを共有できます。クエリには `*pgxpool.Pool` または `*sql.DB` を使うのがおすすめです。どちらも TCP ではなくプロセス内の `net.Pipe` で接続します。PostgreSQL の URL を要求するツールやクライアントには DSN を使います。
+
+| 取得するもの | Fixture のメソッド | 接続方法 |
+|---|---|---|
+| `*pgxpool.Pool` | `fx.PgxPool(t)` | プロセス内接続。pgx を使うアプリにおすすめ |
+| `*sql.DB` | `fx.DB(t)` | プロセス内接続。`database/sql` を使うアプリにおすすめ |
+| DSN | `fx.DSN(t)` | ループバック TCP。URL を受け取るあらゆるクライアントに使える |
+
+[Go のテストガイド](../testing/)では、データベースを一度準備し、読み取り専用テストではフォークを共有し、書き込みテストだけに専用の複製を渡す方法を説明しています。小さなクエリではプロセス内ダイヤラが TCP 接続より約 3 倍速くなります。[ベンチマーク結果](/pgmem/ja/benchmarks/)を参照してください。
 
 ## 基本の流れ
 
@@ -86,7 +100,7 @@ go get github.com/shibukawa/pgmem
 
 ### プロセス内ダイヤラで TCP を省く
 
-`Server.Dial` はループバックソケットではなく `net.Pipe` で接続します。TCP の往復は時間の大半を PostgreSQL ではなくカーネルで使うので、小さなクエリならおよそ 3 倍速くなります。
+`Server.Dial` はループバックソケットではなく `net.Pipe` で接続します。TCP の往復は時間の大半を PostgreSQL ではなくカーネルで使うので、小さなクエリならおよそ 3 倍速くなります。`pgmemtest.Fixture.PgxPool` と `pgmemtest.Fixture.DB` はこのダイヤラを設定してくれます。
 
 ```go
 cfg, _ := pgx.ParseConfig(s.DSN())
@@ -96,6 +110,11 @@ conn, _ := pgx.ConnectConfig(ctx, cfg)
 // database/sql では設定を登録して名前で開く
 name := stdlib.RegisterConnConfig(cfg)
 db, _ := sql.Open("pgx", name)
+
+// pgxpool では設定を読み込み、同じダイヤラを指定します。
+poolCfg, _ := pgxpool.ParseConfig(s.DSN())
+poolCfg.ConnConfig.DialFunc = s.Dial
+pool, _ := pgxpool.NewWithConfig(ctx, poolCfg)
 ```
 
 ## マイグレーションツール
@@ -263,3 +282,13 @@ defer fork.Close()
 ```
 
 スナップショットはサーバーをチェックポイントしてデータディレクトリを複製します。フォークはそれをさらに複製し、新しいバックエンドを起動します。`Snapshot` は開いているトランザクションを待つので、その前に `s` への接続はすべてコミットするか閉じてください。
+
+別のスナップショットの状態で稼働中サーバーを置き換えるには `Restore` を使います。データベース名とユーザーが同じスナップショットに限ります。フォークのポートとクライアント接続はそのままなので、すでに取得した DSN やプールを使い続けられます。
+
+```go
+if err := fork.Restore(ctx, anotherSnapshot); err != nil {
+	return err
+}
+```
+
+`Reset(ctx)` は、そのフォークを作ったスナップショットへ戻す短縮形です。`Snapshot.Close()` は新しいフォークを止めますが、稼働中のフォークは閉じません。`Snapshot.Wait()` はそれらが閉じるまで待ちます。

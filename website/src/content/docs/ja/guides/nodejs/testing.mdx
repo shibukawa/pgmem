@@ -1,19 +1,17 @@
 ---
 title: Vitest、Jest、node:test、Bun への組み込み
-description: Node.js のテストで pgmem を使う 3 つの形。テストファイルごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのリセットかフォーク。
+description: Node.js のテストで使うデータベースのライフサイクル。実行ごとに 1 つ準備し、書き込みテストだけを追加のリセットやフォークで分離します。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そして ORM のクライアントは、作られたときに一度だけ `DATABASE_URL` を読みます。pgmem はこの形に合わせてあります。実行全体で pgmem プロセスを 1 つ、テストファイルごとにフォークを 1 つ用意してファイルの import 前に `DATABASE_URL` として渡し、テストの間はその場でリセットします。テストケースごとに `DATABASE_URL` を書き換えても、クライアントはもう URL を持っているので効きません。
+Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そして ORM のクライアントは、作られたときに一度だけ `DATABASE_URL` を読みます。pgmem は実行全体でプロセスを 1 つ起動し、テストファイルの import 前に、そのファイル用のフォークを `DATABASE_URL` として渡します。同じファイル内のテストケースはそのフォークを共有します。読み取り専用テストに追加のフォークやリセットは要りません。書き込みテストだけを追加で分離します。テストケースごとに `DATABASE_URL` を書き換えても、クライアントはもう URL を持っているので効きません。
 
-| 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
-|---|---|---|---|
-| テストファイルごとに新しいサーバー | ファイルごと | プロセス起動とマイグレーション | 独自のスキーマが必要なファイル |
-| 準備済みデータベースを共有 | 実行ごとに一度 | なし | 読むだけのテスト |
-| テストごとにリセットかフォーク | 実行ごとに一度 | リセットかフォーク 1 回、約 15 ms | 書き込むテスト |
+## データベースのライフサイクル
 
-## テストファイルごとに新しいサーバー
+テストファイルごとに独自のスキーマが必要なら、新しいサーバーを使います。同じスキーマとシードデータを共有する場合は、実行ごとにスナップショットを 1 つ準備します。register フックがテストファイルごとに 1 つフォークを作り、読み取り専用ケースはそれを共有します。書き込みケースだけ、追加のリセットやフォークで分離します。同時に書き込むテストには別々のフォークが必要です。
+
+### テストファイルごとに新しいサーバー
 
 ```ts title="schema-variant.test.ts"
 import { PgmemServer } from '@pgmem/core';
@@ -36,7 +34,7 @@ test('新しいカラムを読める', async () => {
 });
 ```
 
-## 実行全体で一度だけ準備する
+### 実行全体で一度だけ準備する
 
 ランナーのグローバルセットアップでサーバーを起動し、`server.env()` を環境変数に書き出します。中身は `PGMEM_CONTROL` と `PGMEM_SNAPSHOT` で、テストプロセスはこれを使ってサーバーとスナップショットにたどり着きます。
 
@@ -142,9 +140,9 @@ process.exit(run.status ?? 1);
 </TabItem>
 </Tabs>
 
-`@pgmem/core/register` はスナップショットをフォークし、テストファイルの import が走る前にフォークの URL を `DATABASE_URL` に書き込みます。import 時にクライアントを作るアプリケーションのコードも、そのファイル専用の複製に接続します。テストファイルは並列に、それぞれ自分のフォークで走ります。別の環境変数名に書き込みたいときは `PGMEM_ENV` を設定してください。
+`@pgmem/core/register` はスナップショットをフォークし、テストファイルの import が走る前にフォークの URL を `DATABASE_URL` に書き込みます。import 時にクライアントを作るアプリケーションのコードも、そのファイル専用の複製に接続します。このファイル単位のフォークをケース同士で共有し、追加のリセットやフォークは書き込みテストだけで使います。テストファイルは並列に、それぞれ自分のフォークで走ります。別の環境変数名に書き込みたいときは `PGMEM_ENV` を設定してください。
 
-## 読み取り専用のテストで準備済みデータベースを共有する
+#### 読み取り専用テストでファイル用フォークを共有する
 
 同じファイルのテストは、そのファイルのフォークを共有します。読むだけのテストしかないファイルなら、ほかに何も要りません。
 
@@ -158,52 +156,61 @@ test('ユーザーを数える', async () => {
 ```
 
 <Aside type="caution">
-あるテストの書き込みは、同じファイルのほかのテストに見えます。ファイル内に 1 つでも書き込むテストがあれば、次の方法でテストの間にリセットしてください。
+あるテストの書き込みは、同じファイルのほかのテストに見えます。書き込むケースだけを次のリセットまたはフォークで分離し、読み取り専用のケースはそのまま共有できます。
 </Aside>
 
-## 書き込むテストにはテストごとのリセットかフォーク
+#### 書き込みテストだけを分離する
 
-`reset()` はファイルのフォークをその場でスナップショットの状態に戻します。URL もクライアントのプール接続もそのまま使え、プール接続のプリペアドステートメントも残ります。
+`reset()` はファイルのフォークをその場でスナップショットの状態に戻します。書き込みテストをまとめたスイートの `afterEach` から呼ぶと、そのケースの後でだけ基準状態に戻せます。読み取り専用テストはリセット不要です。URL とプール接続はそのまま使え、プリペアドステートメントも残ります。
 
 <Tabs syncKey="node-runner">
 <TabItem label="Vitest">
 
-```ts title="test/reset.ts"
-import { beforeEach } from 'vitest';
+```ts title="test/orders.test.ts"
+import { afterEach, describe, test } from 'vitest';
 import { currentFork } from '@pgmem/core';
 
-beforeEach(() => currentFork().reset());
-```
-
-```ts title="vitest.config.ts"
-setupFiles: ['@pgmem/core/register', './test/reset.ts'],
+describe('書き込みテスト', () => {
+  afterEach(() => currentFork().reset());
+  test('準備済みデータベースから始まる', async () => {
+    // データベースに書き込む
+  });
+});
 ```
 
 </TabItem>
 <TabItem label="Jest">
 
-```js title="test/reset.js"
+```js title="test/orders.test.js"
 const { currentFork } = require('@pgmem/core');
 
-beforeEach(() => currentFork().reset());
-```
-
-```js title="jest.config.js"
-setupFilesAfterEnv: ['./test/reset.js'],
+describe('書き込みテスト', () => {
+  afterEach(() => currentFork().reset());
+  test('準備済みデータベースから始まる', async () => {
+    // データベースに書き込む
+  });
+});
 ```
 
 </TabItem>
 <TabItem label="node:test">
 
 ```js
-import { beforeEach } from 'node:test';
+import { afterEach, describe, it } from 'node:test';
 import { currentFork } from '@pgmem/core';
 
-beforeEach(() => currentFork().reset());
+describe('書き込みテスト', () => {
+  afterEach(() => currentFork().reset());
+  it('準備済みデータベースから始まる', async () => {
+    // データベースに書き込む
+  });
+});
 ```
 
 </TabItem>
 </Tabs>
+
+分離しないと、この 2 つのテストは実行順に左右されます。`signUp` が先に走ると、2 つ目は失敗します。前の書き込み専用スイートでは、書き込みケースの後に共有フォークをリセットします。
 
 ```ts title="test/users.test.ts"
 import { expect, test } from 'vitest';
@@ -220,18 +227,23 @@ test('次のテストは空のデータベースから始まる', async () => {
 });
 ```
 
-**`beforeAll` でシードし、そこへ戻す。** ファイル単位のシードの後でフォークのスナップショットを取り、実行全体のスナップショットではなくそちらへリセットします。
+**書き込みスイート専用のシード状態を作る。** シード後のスナップショットを取り、実行全体の基準状態ではなく、書き込みケースの後にそこへリセットします。
 
 ```ts
-import { beforeAll, beforeEach } from 'vitest';
+import { afterEach, beforeAll, describe, test } from 'vitest';
 import { currentFork, type PgmemSnapshot } from '@pgmem/core';
 
-let seeded: PgmemSnapshot;
-beforeAll(async () => {
-  await seedOrders(process.env.DATABASE_URL!);
-  seeded = await currentFork().snapshot();
+describe('書き込みテスト', () => {
+  let seeded: PgmemSnapshot;
+  beforeAll(async () => {
+    await seedOrders(process.env.DATABASE_URL!);
+    seeded = await currentFork().snapshot();
+  });
+  afterEach(() => currentFork().reset({ snapshot: seeded }));
+  test('このスイートのシードを使う', async () => {
+    // データベースに書き込む
+  });
 });
-beforeEach(() => currentFork().reset({ snapshot: seeded }));
 ```
 
 **同時に走るテスト**は 1 つのフォークを共有できません。`withFork` でそれぞれに専用のフォークを渡し、URL を受け取れるコードに渡します。
@@ -247,6 +259,22 @@ test.concurrent('ファイルを取り込む', async () => {
   });
 });
 ```
+
+## フォーク数と待機
+
+`PgmemServer.start()` の `maxForks` は既定のスナップショットから作るフォーク数を制限します。既定値は利用可能な CPU 数です。`@pgmem/core/register` は各テストファイルの import 前に 1 つフォークするため、すべてのファイルが枠を使います。プールが満杯なら、ほかのファイルのフォークが閉じるまで register が待ちます。この自動待機に期限はありません。
+
+明示的な `fork()` と `withFork()` には `timeoutMs` を指定できます。期限までに枠が空かなければ、`PgmemError` の code `pool_timeout` で失敗します。
+
+```ts
+const pg = await PgmemServer.start({ maxForks: 4 });
+
+await pg.withFork(async (fork) => {
+  await runImport(fork.url);
+}, { timeoutMs: 30_000 });
+```
+
+フォークごとにデータディレクトリとバッファキャッシュの複製が増えます。フォーク枠、スナップショット、リセット、接続待ちのタイムアウトの違いは[制限事項](../../../limits/)を参照してください。
 
 ## 知っておきたいこと
 

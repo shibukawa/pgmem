@@ -3,7 +3,13 @@ title: Architecture
 description: How PostgreSQL 18 ends up running in memory inside a Go process, and how forks and the wrappers work.
 ---
 
+import ArchitectureDiagrams from '../../components/ArchitectureDiagrams.astro';
+
 pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of time, and run in single-user mode against an in-memory file system. A small bridge exposes it on a loopback TCP port.
+
+## Runtime at a glance
+
+<ArchitectureDiagrams lang="en" />
 
 ## Layers
 
@@ -20,12 +26,12 @@ pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of
 
 ## A query's path
 
-1. The driver connects to the DSN over loopback TCP.
-2. The bridge reads the startup packet. When it names another database of the server, the backend is restarted on that database first; a database that does not exist is refused with SQLSTATE 3D000.
+1. A driver connects over loopback TCP using the DSN, or a Go in-process dialer connects through `net.Pipe`.
+2. The bridge reads the startup packet from either transport. When it names another database of the server, the backend is restarted on that database first; a database that does not exist is refused with SQLSTATE 3D000.
 3. The connection takes the backend for one message batch, or for the whole transaction after `BEGIN`.
 4. The bytes are fed to PostgreSQL's main loop in generated Go.
 5. Page reads and WAL writes hit the in-memory file system.
-6. Responses are copied back to the socket.
+6. Responses are copied back through the same connection.
 
 ## Snapshots and forks
 

@@ -1,19 +1,15 @@
 ---
 title: Testing with JUnit 5
-description: Three ways to use pgmem with JUnit 5 - a fresh server per test, one fork shared by a read-only class, and a fork per test method for tests that write.
+description: Choose a JUnit 5 database lifecycle with a fresh server per test or one initialized template and class- or method-scoped forks.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-`PgmemExtension` starts the binary before the class, runs your `prepare` step once, snapshots, and injects forks into test parameters.
+## Database lifecycle strategies
 
-| Shape | Setup runs | Cost per test | Use it for |
-|---|---|---|---|
-| Fresh server per test | every test | process start plus migrations | tests that need a different schema |
-| Fork per class | once | nothing after the first test | read-only test classes |
-| Fork per method (default) | once | a fork, a few milliseconds | tests that write, parallel tests |
+Start a fresh server when a test needs a different schema. When tests share the same schema and seed data, register one `PgmemExtension` and initialize its template once; then choose a fork scope for each test class.
 
-## A fresh server per test
+### A fresh server per test
 
 <Tabs syncKey="jvm-lang">
 <TabItem label="Java">
@@ -46,9 +42,9 @@ fun schemaVariant() {
 </TabItem>
 </Tabs>
 
-## Prepare once with the extension
+### Initialize one template once
 
-Register the extension in a static field. `prepare` receives the template `Server`; run migrations and seed data there.
+Register the extension in a static field. JUnit starts pgmem before the class and calls `prepare` once with the template `Server`; run migrations and seed data there. When `prepare` returns, the extension snapshots that database. The test forks below start from this prepared snapshot, so migrations and seed data stay out of each test method and the test body can focus on its behavior.
 
 <Tabs syncKey="jvm-lang">
 <TabItem label="Java">
@@ -92,7 +88,9 @@ class OrderRepositoryTest {
 
 Nested classes reuse the outer class's process.
 
-## Share one fork across a read-only class
+Both scopes below start from this same prepared template. Choose class scope only when every test in the class is read-only; method scope gives each test its own writable copy.
+
+#### Share one fork across a read-only class
 
 Ask for `ForkScope.CLASS` on the parameter, or make it the default with `forkScope(ForkScope.CLASS)` on the builder.
 
@@ -132,7 +130,7 @@ fun totals(@PgmemFork(scope = ForkScope.CLASS) ds: DataSource) {
 Every test in the class sees what any of them wrote. Keep writing tests on the default method scope.
 </Aside>
 
-## A fork per method for tests that write
+#### Fork per method for tests that write
 
 A `Fork`, `DataSource` or `@PgmemFork String` parameter gets a fresh copy of the prepared database, closed after the test. Several parameters in one test share one fork.
 
@@ -176,7 +174,7 @@ fun cancelOrder(ds: DataSource) {
 </TabItem>
 </Tabs>
 
-### Assert with DbUnit
+##### Assert with DbUnit
 
 ```java
 @Test
@@ -209,7 +207,20 @@ void auditTrail(@PgmemFork("audit") DataSource audit) { /* ... */ }
 
 ## Parallel runs
 
-JUnit's parallel execution works; forks are independent. `maxForks(n)` caps live forks (default: available processors), and `forkTimeout(Duration)` turns a full pool into a test failure instead of a wait. Every forked test JVM, from Gradle's `maxParallelForks` or Surefire's `forkCount`, starts its own binary.
+JUnit's parallel execution works; forks are independent. `maxForks(n)` caps live forks per template (default: available processors). When all slots are occupied, a new fork waits. `forkTimeout(Duration)` makes that wait fail with `pool_timeout`; without it, the wait has no deadline.
+
+```java
+import java.time.Duration;
+
+@RegisterExtension
+static PgmemExtension pg = PgmemExtension.builder()
+        .database("app")
+        .maxForks(4)
+        .forkTimeout(Duration.ofSeconds(30))
+        .build();
+```
+
+Every forked test JVM, from Gradle's `maxParallelForks` or Surefire's `forkCount`, starts its own binary and pool. See [limits](../../../limits/) for snapshot, startup and connection-wait timeouts.
 
 <Aside>
 Commit or close connections before the snapshot is taken. `prepare` returning with an open transaction makes the snapshot fail with `busy` after 30 seconds.

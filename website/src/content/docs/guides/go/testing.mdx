@@ -1,19 +1,30 @@
 ---
 title: Testing with Go
-description: Three ways to use pgmem in Go tests - a fresh server per test, one prepared database shared by read-only tests, and a fork per test for tests that write.
+description: Choose a Go test database lifecycle with a fresh server per test or one prepared baseline to share, reset, or fork.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-Tests differ in what they do to the database, so pgmem offers three shapes. The `pgmemtest` package covers the last two.
+`pgmemtest.Fixture` provides three common connection forms. Use its per-test helpers only for tests that need to write or otherwise need isolation; read-only tests can share one fork as described below. It also provides `PgxConn(t)` when code needs one standalone pgx connection:
 
-| Shape | Setup runs | Cost per test | Use it for |
+| Handle | Method | Transport | Best for |
 |---|---|---|---|
-| Fresh server per test | every test | server start plus migrations | tests that need a different schema |
-| Shared prepared database | once | nothing | tests that only read |
-| Fork per test | once | a fork, a few milliseconds | tests that write, and parallel tests |
+| `*pgxpool.Pool` | `fx.PgxPool(t)` | In-process, no TCP | pgx-based application code; recommended for queries |
+| `*sql.DB` | `fx.DB(t)` | In-process, no TCP | `database/sql`, ORMs and tools that accept a DB handle |
+| DSN | `fx.DSN(t)` | Loopback TCP | Drivers and tools that require a connection URL |
 
-## A fresh server per test
+The first two use `Server.Dial` over `net.Pipe` and avoid TCP overhead; the DSN remains the portable option for tools that need a URL. Each helper closes its handle and fork when the test ends.
+
+## Database lifecycle strategy
+
+Use a fresh server when a test needs a different schema. When tests use the same schema and seed data, initialize a baseline once, then choose how each test uses it:
+
+- Share one fork across a read-only package.
+- For tests that write, reset a reusable fork between serial tests or fork a fresh copy per test.
+
+The prepared baseline is the parent of both shared and per-test copies; migrations and seed data do not run again on each fork.
+
+### A fresh server per test
 
 The simplest shape: every test starts its own server and builds the schema. Nothing is shared, so it is also the slowest when migrations are long.
 
@@ -37,9 +48,9 @@ func TestSchemaVariant(t *testing.T) {
 }
 ```
 
-## Prepare once in TestMain
+### Prepare the baseline once
 
-`pgmemtest.Run` starts a template server, runs `Prepare` once, snapshots the result, runs the tests and cleans up.
+`pgmemtest.Run` starts a template server, runs `Prepare` once, snapshots the result, runs the tests and cleans up. Put migrations and seed data in `Prepare`; its `db` handle is already connected to the template. Every later fork starts from that snapshot, so tests do not repeat the setup.
 
 ```go
 package store_test
@@ -50,6 +61,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/shibukawa/pgmem"
 	"github.com/shibukawa/pgmem/pgmemtest"
 )
@@ -71,22 +84,45 @@ func TestMain(m *testing.M) {
 
 `Prepare` receives a `*sql.DB` already connected in-process and the DSN for tools that want a URL. The migration and seed code from [the basics](../basics/) goes here unchanged.
 
-## Share the prepared database with read-only tests
+#### Share one fork across a read-only package
 
-Tests that only read can use one database. Take one fork for the whole package in `TestMain`, or use the template directly:
+If every test in a package only reads, create one fork from the prepared snapshot and share it. The fork starts with the schema and seed data from `Prepare`:
 
 ```go
+var fx *pgmemtest.Fixture
+var shared *pgmem.Server
 var readOnly *sql.DB
 
 func TestMain(m *testing.M) {
-	os.Exit(pgmemtest.Run(m, opts, func(f *pgmemtest.Fixture) {
+	code := pgmemtest.Run(m, pgmemtest.Options{
+		Options: pgmem.Options{Database: "app"},
+		Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
+			if err := migrateUp(dsn); err != nil {
+				return err
+			}
+			return seed(ctx, db)
+		},
+	}, func(f *pgmemtest.Fixture) {
 		fx = f
-		shared, err := f.Snapshot().Fork(context.Background())
+		var err error
+		shared, err = f.Snapshot().Fork(context.Background())
 		if err != nil {
 			panic(err)
 		}
-		readOnly, _ = sql.Open("pgx", shared.DSN())
-	}))
+		cfg, err := pgx.ParseConfig(shared.DSN())
+		if err != nil {
+			panic(err)
+		}
+		cfg.DialFunc = shared.Dial
+		readOnly = stdlib.OpenDB(*cfg)
+	})
+	if readOnly != nil {
+		_ = readOnly.Close()
+	}
+	if shared != nil {
+		_ = shared.Close()
+	}
+	os.Exit(code)
 }
 
 func TestReportTotals(t *testing.T) {
@@ -102,9 +138,9 @@ func TestReportTotals(t *testing.T) {
 A shared database is only safe while no test writes to it. One test's `INSERT` becomes another test's surprise, and the failure depends on test order.
 </Aside>
 
-## A fork per test for tests that write
+#### Reset or fork per test for tests that write
 
-Each helper takes `t`, forks the snapshot, and closes the fork when the test ends. Forks are independent, so `t.Parallel()` is safe.
+For sequential tests that reuse a writable fork, close its connections and call `Server.Reset(ctx)` between tests to restore the prepared baseline. Do not reset a fork while parallel tests are using it. For isolated or parallel tests, prefer a fresh fork per test: the `Fixture` helpers below create it from the prepared snapshot and close it when the test ends.
 
 <Tabs syncKey="go-driver">
 <TabItem label="database/sql">
@@ -161,7 +197,7 @@ func TestWithURL(t *testing.T) {
 
 `fx.Fork(t)` returns the `*pgmem.Server` itself when you need both `DSN()` and `Dial`.
 
-### Assert what the test wrote
+##### Assert what the test wrote
 
 dbtestify compares the database with an expected data set and reports a table diff on mismatch:
 
@@ -184,11 +220,13 @@ func TestCancelOrder(t *testing.T) {
 
 ## Parallelism and memory
 
-Every live fork holds its own copy of the data directory and buffer cache. `MaxForks` caps how many exist at once and defaults to `GOMAXPROCS`, which matches `go test`'s default parallelism. A test that asks for a fork while the pool is full waits until another test ends; cancelling the test context aborts the wait.
+Every live fork holds its own data-directory copy and buffer cache. `MaxForks` limits forks from one snapshot and defaults to `GOMAXPROCS`, which usually matches `go test`'s default parallelism. Set it on `pgmemtest.Options` or `SnapshotOptions` to trade memory for parallelism.
 
 ```go
 pgmemtest.Options{MaxForks: 4, /* ... */}
 ```
+
+When the cap is full, `Fork(ctx)` waits until a fork closes. Its context can cancel or deadline that wait; the `pgmemtest` helpers use the test's context. With server logging enabled, a wait longer than five seconds is logged. See [limits](../../../limits/) for how this differs from snapshot, reset and connection-wait timeouts.
 
 <Aside>
 Connection pools on one fork work, but queries on the same fork serialize at transaction boundaries. Run independent tests in parallel on separate forks instead. See [limits](../../../limits/).
