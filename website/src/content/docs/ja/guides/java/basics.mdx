@@ -5,7 +5,7 @@ description: Gradle や Maven のビルドに pgmem を追加して起動し、F
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-JVM 向けの pgmem は 3 つのアーティファクトでできています。クライアントの `jp.shibu:pgmem`、JUnit 5 拡張の `jp.shibu:pgmem-junit5`、プラットフォームごとの classifier でバイナリを配る `jp.shibu:pgmem-native` です。クライアントはサードパーティの実行時依存を持たないので、JDBC ドライバは自分で追加してください。
+JVM 向けの pgmem は 3 つのアーティファクトでできています。クライアントの `io.github.shibukawa.pgmem:pgmem`、JUnit 5 拡張の `io.github.shibukawa.pgmem:pgmem-junit5`、プラットフォームごとの classifier でバイナリを配る `io.github.shibukawa.pgmem:pgmem-native` です。クライアントはサードパーティの実行時依存を持たないので、JDBC ドライバは自分で追加してください。
 
 ## 依存関係
 
@@ -14,8 +14,8 @@ JVM 向けの pgmem は 3 つのアーティファクトでできています。
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    testImplementation("jp.shibu:pgmem-junit5:0.1.0")          // jp.shibu:pgmem も入る
-    testRuntimeOnly("jp.shibu:pgmem-native:0.1.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
+    testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:0.1.0")          // io.github.shibukawa.pgmem:pgmem も入る
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
@@ -30,8 +30,8 @@ tasks.test {
 
 ```groovy title="build.gradle"
 dependencies {
-    testImplementation 'jp.shibu:pgmem-junit5:0.1.0'           // jp.shibu:pgmem も入る
-    testRuntimeOnly 'jp.shibu:pgmem-native:0.1.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
+    testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:0.1.0'           // io.github.shibukawa.pgmem:pgmem も入る
+    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
@@ -47,13 +47,13 @@ test {
 ```xml title="pom.xml"
 <dependencies>
   <dependency>
-    <groupId>jp.shibu</groupId>
+    <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-junit5</artifactId>
     <version>0.1.0</version>
     <scope>test</scope>
   </dependency>
   <dependency>
-    <groupId>jp.shibu</groupId>
+    <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-native</artifactId>
     <version>0.1.0</version>
     <classifier>darwin-arm64</classifier>

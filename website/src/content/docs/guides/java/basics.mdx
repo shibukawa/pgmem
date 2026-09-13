@@ -5,7 +5,7 @@ description: Add pgmem to a Gradle or Maven build, start it, migrate with Flyway
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-pgmem for the JVM is three artifacts: `jp.shibu:pgmem` (the client), `jp.shibu:pgmem-junit5` (the JUnit 5 extension) and `jp.shibu:pgmem-native` (the binary, one classifier per platform). The client has no third-party runtime dependencies; bring your JDBC driver.
+pgmem for the JVM is three artifacts: `io.github.shibukawa.pgmem:pgmem` (the client), `io.github.shibukawa.pgmem:pgmem-junit5` (the JUnit 5 extension) and `io.github.shibukawa.pgmem:pgmem-native` (the binary, one classifier per platform). The client has no third-party runtime dependencies; bring your JDBC driver.
 
 ## Dependencies
 
@@ -14,8 +14,8 @@ pgmem for the JVM is three artifacts: `jp.shibu:pgmem` (the client), `jp.shibu:p
 
 ```kotlin title="build.gradle.kts"
 dependencies {
-    testImplementation("jp.shibu:pgmem-junit5:0.1.0")          // pulls in jp.shibu:pgmem
-    testRuntimeOnly("jp.shibu:pgmem-native:0.1.0:darwin-arm64") // the binary for your platform
+    testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:0.1.0")          // pulls in io.github.shibukawa.pgmem:pgmem
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64") // the binary for your platform
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
 }
@@ -30,8 +30,8 @@ tasks.test {
 
 ```groovy title="build.gradle"
 dependencies {
-    testImplementation 'jp.shibu:pgmem-junit5:0.1.0'           // pulls in jp.shibu:pgmem
-    testRuntimeOnly 'jp.shibu:pgmem-native:0.1.0:darwin-arm64' // the binary for your platform
+    testImplementation 'io.github.shibukawa.pgmem:pgmem-junit5:0.1.0'           // pulls in io.github.shibukawa.pgmem:pgmem
+    testRuntimeOnly 'io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64' // the binary for your platform
     testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 }
@@ -47,13 +47,13 @@ test {
 ```xml title="pom.xml"
 <dependencies>
   <dependency>
-    <groupId>jp.shibu</groupId>
+    <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-junit5</artifactId>
     <version>0.1.0</version>
     <scope>test</scope>
   </dependency>
   <dependency>
-    <groupId>jp.shibu</groupId>
+    <groupId>io.github.shibukawa.pgmem</groupId>
     <artifactId>pgmem-native</artifactId>
     <version>0.1.0</version>
     <classifier>darwin-arm64</classifier>
