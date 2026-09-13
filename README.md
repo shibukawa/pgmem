@@ -49,6 +49,14 @@ The same primitives are available without the test helpers:
 `snap.Fork(ctx)` starts a new server from it. Snapshotting takes about
 10 ms and a fork about 20 ms.
 
+A fork can also be put back in place: `srv.Reset(ctx)` returns it to its
+snapshot while it keeps its port and its client connections, so a pool or
+a connection string captured once (an ORM client built at import time,
+say) stays valid from test to test. Pooled connections continue in a fresh
+session; pgmem re-creates their named prepared statements and LISTEN
+registrations. `srv.Restore(ctx, snap)` does the same with any snapshot of
+the same database, and a reset with nothing to undo returns at once.
+
 Connecting over loopback TCP works with every driver. For pgx you can
 skip the kernel entirely with the in-process dialer, which makes small
 queries about three times faster:
@@ -88,10 +96,17 @@ The same prepare-once, fork-per-test workflow is available without Go:
 - **Java**: `jp.shibu:pgmem-junit5` injects a fresh `Fork` or `DataSource`
   into every test method, plus `jp.shibu:pgmem-native` with your
   platform's classifier. See [packages/java](packages/java/README.md).
+- **Node.js**: `@pgmem/core` gives every test file its own copy through
+  `DATABASE_URL` (a Vitest setup file, a Jest environment, `node --test
+  --import`) and resets it in place between tests, so Prisma, Drizzle and
+  TypeORM clients created at import time work unchanged. See
+  [packages/node](packages/node/core/README.md).
 
-Both bundle the `pgmem` binary (`go build ./cmd/pgmem`): a standalone
-process that prints a JSON line with the DSN when ready, takes snapshot and
-fork requests as JSON lines on stdin, and exits when its stdin is closed.
+All three bundle the `pgmem` binary (`go build ./cmd/pgmem`): a standalone
+process that prints a JSON line with the DSN when ready, takes snapshot,
+fork and reset requests as JSON lines on stdin (and, with `-control`, on a
+loopback socket that test workers can use), and exits when its stdin is
+closed.
 [docs/subprocess.md](docs/subprocess.md) documents the protocol for other
 languages.
 
@@ -207,13 +222,27 @@ on this memory-bound code (arm64; amd64 not measured).
     set to pgmem at commit time and notifications are routed to the
     connections that listen on the channel. `DISCARD ALL` issued by a
     client while others are connected still unsubscribes everyone.
-  - A connection that waits, inside a transaction, for work another
-    connection must do first (row locks, advisory locks, application-level
-    hand-offs) waits forever. pgmem logs a diagnostic after 5 s.
-- `CREATE DATABASE` and `DROP DATABASE` work, but the backend only ever
-  serves the database it was started with (`Options.Database`); a
-  connection that asks for another database is refused with SQLSTATE
-  3D000 instead of silently landing in the served one.
+  - A connection cannot run while another is inside a transaction. When
+    the holder stays idle in its transaction while another connection
+    waits (code that queries through the pool instead of the transaction
+    handle inside a transaction callback, or that waits for another
+    connection's row or advisory lock), the waiting connection is ended
+    after `Options.WaitTimeout` (default 2 s) with SQLSTATE 55P03 and a
+    message naming the holder, instead of waiting forever. A statement
+    that is merely slow is waited for.
+- `Close` does not drop client connections: each stays open until its
+  client closes it, sends a message (answered with SQLSTATE 57P01) or 30 s
+  pass, because pools such as node-postgres's raise an unhandled error
+  when an idle connection is dropped under them.
+- Every database of a server can be connected to (`CREATE DATABASE`
+  works), but a backend serves one database at a time: a connection to
+  another database restarts the backend on it (well under 10 ms), and the
+  connections of the database that stopped being served get their prepared
+  statements and LISTEN registrations back when it is served again, though
+  not their `SET` values or temp tables. Prisma's shadow database needs
+  nothing more; connections that keep alternating between databases pay a
+  restart each time. A database that does not exist is refused with
+  SQLSTATE 3D000.
 - Extensions: plpgsql, pgcrypto, citext, pg_trgm, hstore, ltree, btree_gist, btree_gin, unaccent, tablefunc, intarray, fuzzystrmatch, cube, earthdistance, seg, bloom, isn, dict_int, dict_xsyn, lo, tsm_system_rows, tsm_system_time, pgstattuple, uuid-ossp, amcheck, pg_visibility, pageinspect, pg_buffercache, pg_freespacemap, pg_prewarm, pg_stat_statements, auto_explain (a `LOAD`-able module rather than an extension), and pgvector 0.8.6 as `vector`. ICU, OpenSSL and zlib are not compiled
   in; pgcrypto gets its crypto and its OpenPGP compression from Go instead
   (so `compress-algo=1|2` and messages made by GnuPG work), and

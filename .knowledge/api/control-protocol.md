@@ -21,8 +21,11 @@ api:
     close: 'in {"server":"f1"} or {"snapshot":"s1"}  out {}; idempotent, unknown ids succeed'
     shutdown: 'in {}  out {} then the process exits 0'
     start: 'in {"database":..,"user":..,"params":["k=v",..]}  out {"server":<endpoint with id "t2">}; extra template server for suites with several seed sets; closable like a fork'
+    reset: 'in {"server":"f1","snapshot":"s1"?,"timeout_ms":N?}  out {}; api:reset in place; a template needs snapshot (protocol error otherwise); busy after timeout'
+    hello: 'in {"token":".."}  out {"protocol":1,"version":".."}; required first request on api:control-socket'
   ordering: rule:non-blocking-control-channel
-  error_codes: [unknown_op, unknown_id, snapshot_closed, pool_timeout, busy, protocol, internal]
+  error_codes: [unknown_op, unknown_id, snapshot_closed, pool_timeout, busy, protocol, unauthorized, forbidden, internal]
+  transports: stdin/stdout for the spawning process; api:control-socket with -control for other processes (added 2026-09-13)
   busy: a client connection idle in a transaction blocks snapshot forever (rule:single-session-per-backend); wrappers default timeout_ms to 30000 and tell the user to commit or close connections first
   malformed_line: response with id null and code protocol; the process keeps running
   events_without_id: ready, fatal (written before an abnormal exit)

@@ -8,7 +8,7 @@ Python and Java packages that bundle the pgmem binary so one dependency gives th
 ```yaml
 summary:
   scope_now: [api:python-wrapper, api:java-wrapper]  # both implemented 2026-09-12; publishing and the CI build matrix remain
-  scope_later: Node.js; no standard DB API, so decide the driver story first
+  scope_node: decided 2026-09-13 (decision:node-test-integration, api:node-wrapper); the driver story is the plain URL (system:node-orms)
   layout:
     - packages/python  # PyPI package pgmem
     - packages/java    # Maven artifacts

@@ -18,6 +18,11 @@ policy:
     select: user adds the classifier via os-maven-plugin or Gradle osdetector; depending on all five (185MB) is discouraged
     extract: first use copies to PGMEM_CACHE_DIR, else ${user.home}/.cache/pgmem/<Implementation-Version>/, else java.io.tmpdir; sets the exec bit; atomic rename so concurrent JVMs are safe
     fallback: PGMEM_BINARY env, then pgmem on PATH
+  node:
+    layout: main package plus per-platform packages in optionalDependencies with os and cpu (esbuild and @osmem/core layout); no postinstall because package managers hold install scripts (system:node-test-runners)
+    name: scoped (api:node-wrapper); unscoped pgmem collides with pg-mem under npm's name similarity rule
+    fallback: PGMEM_BINARY env
+    status: packages/node/platforms and scripts/build-npm.sh exist (2026-09-13); nothing published
   version_check: wrapper version equals binary version; protocol integer from the ready event (api:control-protocol) checked before use
   why_no_download: offline CI, supply-chain review, reproducibility; an opt-in downloader can come later
   exercised: darwin/arm64 wheel and native jar verified end to end 2026-09-12 in a clean venv and a bare classpath; CI matrix for the other platforms is still to do

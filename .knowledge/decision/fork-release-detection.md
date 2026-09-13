@@ -18,6 +18,7 @@ decision:
       note: independent of decision:data-plane-transport; the control pipe carries liveness, not the SQL socket
     child_death:
       signal: wrapper reader thread sees stdout EOF or process exit; pending waiters fail with server_exited, the next fork raises
+  abrupt_client_close: closing a fork drops client sockets at once; a pg.Pool holding an idle client then crashes Node with an unhandled 'error' (system:node-orms); Server.Close therefore leaves client sockets open until the client closes them, sends a message (answered 57P01) or closeGrace 30s passes (implemented 2026-09-13)
   rejected:
     last_connection_closed:
       shape: close a fork when its client connection count drops to zero

@@ -20,5 +20,5 @@ decision:
       shape: wrapper runs a magic statement on a template connection and pgmem.go intercepts it
       pros: [no second channel]
       cons: [intercepting queries in the proxy is fragile, fork endpoint must be smuggled through a result set, close needs a live connection]
-  later: a control socket can be added for shared-process mode without changing the message format
+  later: api:control-socket (planned 2026-09-13) adds shared-process mode with the same message format for decision:node-test-integration
 ```
