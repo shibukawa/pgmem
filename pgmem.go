@@ -65,25 +65,42 @@ type Options struct {
 	Params []string
 	// Log receives server log output and host diagnostics (nil = discard).
 	Log func(format string, args ...any)
+	// WaitTimeout bounds how long a connection waits for the shared session
+	// while the connection holding it sits idle inside a transaction. The
+	// waiting connection is then terminated with SQLSTATE 55P03 and a
+	// message naming the holder, instead of waiting forever: the usual
+	// cause is a query sent through another pooled connection from inside
+	// a transaction callback. 0 means 2s; negative waits forever.
+	WaitTimeout time.Duration
 }
 
 // Server is a running in-memory PostgreSQL.
 type Server struct {
 	opts Options
 	e    *engine.Engine
-	fs   *vfs.FS
-	b    *engine.Backend
 	ln   net.Listener
 	port int
+
+	// fs and b are the data directory and the backend. Restore replaces
+	// both while holding sem and bmu; Close takes bmu to shut b down
+	// without waiting for a connection that keeps sem.
+	bmu sync.Mutex
+	fs  *vfs.FS
+	b   *engine.Backend
 
 	// sem serializes use of the single backend. A connection holds it for
 	// one message batch normally, and across batches while it is inside a
 	// transaction (or mid-pipeline), so pooled connections interleave only
 	// at transaction boundaries. holder is the id of the connection that
-	// has it, for diagnostics.
+	// has it, for diagnostics. idleSince is when the holder last finished
+	// a batch without giving the backend back (0 while a batch runs or
+	// nobody holds it), which tells a waiter an idle transaction from a
+	// slow statement.
 	sem         chan struct{}
 	holder      atomic.Int64
+	idleSince   atomic.Int64
 	live        int // sessions started and not yet ended; guarded by sem
+	startupPkt  []byte
 	startupResp []byte
 
 	// LISTEN/NOTIFY. The backend's own listen set is the union over all
@@ -97,10 +114,18 @@ type Server struct {
 	relisten    map[string]bool
 	quietListen bool // pgmem is re-issuing LISTEN; ignore hook events
 
-	onClose func() // set for forks: returns the Snapshot's slot
+	// origin is the snapshot a fork was started from, which Reset returns
+	// to. restored is the snapshot the data directory was last copied from
+	// and dirty whether a client has run anything since, so a Restore with
+	// nothing to undo returns at once. Guarded by sem.
+	origin   *Snapshot
+	restored *Snapshot
+	dirty    bool
+
+	onClose func()        // set for forks: returns the Snapshot's slot
+	done    chan struct{} // closed by Close
 	connSeq atomic.Int64
 	closed  atomic.Bool
-	wg      sync.WaitGroup
 	connsMu sync.Mutex
 	conns   map[net.Conn]struct{}
 }
@@ -146,7 +171,7 @@ func Start(ctx context.Context, opts Options) (*Server, error) {
 	// window and tar buffers as garbage; give that back to the OS now so a
 	// server's resident size is what it actually uses.
 	debug.FreeOSMemory()
-	return boot(e, opts, fs, nil)
+	return boot(e, opts, fs, nil, nil)
 }
 
 func (o Options) withDefaults() Options {
@@ -173,30 +198,33 @@ func (o Options) withDefaults() Options {
 	if !hasSetting(o.Params, "max_parallel_workers") {
 		o.Params = append([]string{"-c", "max_parallel_workers=0"}, o.Params...)
 	}
+	if o.WaitTimeout == 0 {
+		o.WaitTimeout = 2 * time.Second
+	}
 	return o
 }
 
 // boot starts a backend on a filesystem that already holds a data
-// directory and begins serving it. onClose runs at the end of Close.
-func boot(e *engine.Engine, opts Options, fs *vfs.FS, onClose func()) (*Server, error) {
+// directory and begins serving it. origin is the snapshot fs was copied
+// from (nil for Start); onClose runs at the end of Close.
+func boot(e *engine.Engine, opts Options, fs *vfs.FS, origin *Snapshot, onClose func()) (*Server, error) {
 	s := &Server{
 		opts:      opts,
 		e:         e,
 		conns:     map[net.Conn]struct{}{},
 		sem:       make(chan struct{}, 1),
+		done:      make(chan struct{}),
 		sessions:  map[int64]*session{},
 		listeners: map[string]map[int64]*session{},
 		relisten:  map[string]bool{},
+		origin:    origin,
+		restored:  origin,
 		onClose:   onClose,
 	}
-	b, err := e.Start(fs, engine.StartOptions{User: opts.User, Database: opts.Database, Params: opts.Params})
+	b, err := s.startBackend(fs)
 	if err != nil {
 		return nil, err
 	}
-	if opts.Log != nil {
-		b.Stderr = func(p []byte) { opts.Log("%s", bytes.TrimRight(p, "\n")) }
-	}
-	b.Listen = s.onListen
 	s.fs, s.b = fs, b
 	ln, err := net.Listen("tcp", net.JoinHostPort("127.0.0.1", strconv.Itoa(opts.Port)))
 	if err != nil {
@@ -205,9 +233,21 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, onClose func()) (*Server, 
 	}
 	s.ln = ln
 	s.port = ln.Addr().(*net.TCPAddr).Port
-	s.wg.Add(1)
 	go s.acceptLoop()
 	return s, nil
+}
+
+// startBackend boots a backend on fs with the server's options and hooks.
+func (s *Server) startBackend(fs *vfs.FS) (*engine.Backend, error) {
+	b, err := s.e.Start(fs, engine.StartOptions{User: s.opts.User, Database: s.opts.Database, Params: s.opts.Params})
+	if err != nil {
+		return nil, err
+	}
+	if s.opts.Log != nil {
+		b.Stderr = func(p []byte) { s.opts.Log("%s", bytes.TrimRight(p, "\n")) }
+	}
+	b.Listen = s.onListen
+	return b, nil
 }
 
 // Dial returns an in-process connection to the server, bypassing TCP. It
@@ -216,20 +256,10 @@ func boot(e *engine.Engine, opts Options, fs *vfs.FS, onClose func()) (*Server, 
 // register such a config with pgx's stdlib adapter for database/sql.
 func (s *Server) Dial(ctx context.Context, network, addr string) (net.Conn, error) {
 	if s.closed.Load() {
-		return nil, errors.New("pgmem: server is closed")
+		return nil, errServerClosed
 	}
 	client, server := net.Pipe()
-	s.connsMu.Lock()
-	s.conns[server] = struct{}{}
-	s.connsMu.Unlock()
-	s.wg.Add(1)
-	go func() {
-		defer s.wg.Done()
-		s.serve(server)
-		s.connsMu.Lock()
-		delete(s.conns, server)
-		s.connsMu.Unlock()
-	}()
+	s.track(server)
 	return client, nil
 }
 
@@ -244,21 +274,30 @@ func (s *Server) DSN() string {
 	return fmt.Sprintf("postgres://%s@127.0.0.1:%d/%s?sslmode=disable", s.opts.User, s.port, s.opts.Database)
 }
 
-// Close stops the listener, drops connections and shuts the backend down.
+// closeGrace is how long a client connection of a closed server stays open
+// while its client does nothing. Pools keep idle connections, and
+// node-postgres among others raises an unhandled error event when the
+// server drops one, so a closed server leaves the socket to the client
+// instead: it answers the next message with 57P01 and closes.
+const closeGrace = 30 * time.Second
+
+// Close stops the listener and shuts the backend down. Client connections
+// stay open until their client closes them, sends a message (answered with
+// SQLSTATE 57P01) or closeGrace passes.
 func (s *Server) Close() error {
 	if !s.closed.CompareAndSwap(false, true) {
 		return nil
 	}
+	close(s.done)
 	s.ln.Close()
 	s.connsMu.Lock()
 	for c := range s.conns {
-		c.Close()
+		c.SetReadDeadline(time.Now()) // wake the reader; serve lingers from there
 	}
 	s.connsMu.Unlock()
-	s.wg.Wait()
-	s.acquire(0)
-	err := s.b.Close()
-	s.release()
+	s.bmu.Lock()
+	err := s.b.Close() // waits for a batch that is running
+	s.bmu.Unlock()
 	if s.onClose != nil {
 		s.onClose()
 	}
@@ -270,73 +309,97 @@ func (s *Server) Close() error {
 // in a transaction, which serializes everyone else behind it.
 const lockWarnAfter = 5 * time.Second
 
-// acquire takes exclusive use of the backend for connection id.
-func (s *Server) acquire(id int64) {
-	select {
-	case s.sem <- struct{}{}:
-	default:
-		t := time.NewTimer(lockWarnAfter)
-		select {
-		case s.sem <- struct{}{}:
-			t.Stop()
-		case <-t.C:
-			s.logf("pgmem: connection %d has waited %s for the backend held by connection %d (idle in transaction?)", id, lockWarnAfter, s.holder.Load())
-			s.sem <- struct{}{}
-		}
-	}
-	s.holder.Store(id)
+var errServerClosed = errors.New("pgmem: server is closed")
+
+// idleHolderError reports a wait abandoned under Options.WaitTimeout.
+type idleHolderError struct {
+	waiter, holder int64
+	waited         time.Duration
 }
 
-// acquireCtx is acquire for callers that must not wait forever: it gives
-// up with ctx.Err() when ctx ends first.
-func (s *Server) acquireCtx(ctx context.Context, id int64) error {
+func (e *idleHolderError) Error() string {
+	return fmt.Sprintf("connection %d waited %s for the session, which connection %d holds idle inside a transaction; "+
+		"commit or roll back that transaction first (inside a transaction callback, send queries through the transaction, not another pooled connection)",
+		e.waiter, e.waited.Round(time.Millisecond), e.holder)
+}
+
+// acquire takes exclusive use of the backend for connection id (0 for
+// pgmem itself). It fails when the server closes or ctx ends and, with
+// failFast, when the connection holding the backend stays idle inside a
+// transaction for Options.WaitTimeout while this one waits: if the
+// holder's client is waiting for this connection, nothing else would ever
+// end the wait.
+func (s *Server) acquire(ctx context.Context, id int64, failFast bool) error {
 	select {
 	case s.sem <- struct{}{}:
+		s.holder.Store(id)
+		return nil
 	default:
-		t := time.NewTimer(lockWarnAfter)
+	}
+	start := time.Now()
+	tick := time.NewTicker(50 * time.Millisecond)
+	defer tick.Stop()
+	warned := false
+	for {
 		select {
 		case s.sem <- struct{}{}:
-			t.Stop()
+			s.holder.Store(id)
+			return nil
+		case <-s.done:
+			return errServerClosed
 		case <-ctx.Done():
-			t.Stop()
 			return ctx.Err()
-		case <-t.C:
-			s.logf("pgmem: connection %d has waited %s for the backend held by connection %d (idle in transaction?)", id, lockWarnAfter, s.holder.Load())
-			select {
-			case s.sem <- struct{}{}:
-			case <-ctx.Done():
-				return ctx.Err()
+		case now := <-tick.C:
+			if limit := s.opts.WaitTimeout; failFast && limit > 0 {
+				if idle := s.idleSince.Load(); idle != 0 {
+					from := time.Unix(0, idle)
+					if from.Before(start) {
+						from = start
+					}
+					if now.Sub(from) >= limit {
+						return &idleHolderError{waiter: id, holder: s.holder.Load(), waited: now.Sub(start)}
+					}
+				}
+			}
+			if !warned && now.Sub(start) >= lockWarnAfter {
+				s.logf("pgmem: connection %d has waited %s for the backend held by connection %d (idle in transaction?)", id, lockWarnAfter, s.holder.Load())
+				warned = true
 			}
 		}
 	}
-	s.holder.Store(id)
-	return nil
 }
 
 func (s *Server) release() {
+	s.idleSince.Store(0)
 	s.holder.Store(0)
 	<-s.sem
 }
 
 func (s *Server) acceptLoop() {
-	defer s.wg.Done()
 	for {
 		c, err := s.ln.Accept()
 		if err != nil {
 			return
 		}
-		s.connsMu.Lock()
-		s.conns[c] = struct{}{}
-		s.connsMu.Unlock()
-		s.wg.Add(1)
-		go func() {
-			defer s.wg.Done()
-			s.serve(c)
-			s.connsMu.Lock()
-			delete(s.conns, c)
-			s.connsMu.Unlock()
-		}()
+		s.track(c)
 	}
+}
+
+// track registers a client connection and serves it in its own goroutine.
+// A connection that arrives while Close runs is woken like the others.
+func (s *Server) track(c net.Conn) {
+	s.connsMu.Lock()
+	s.conns[c] = struct{}{}
+	if s.closed.Load() {
+		c.SetReadDeadline(time.Now())
+	}
+	s.connsMu.Unlock()
+	go func() {
+		s.serve(c)
+		s.connsMu.Lock()
+		delete(s.conns, c)
+		s.connsMu.Unlock()
+	}()
 }
 
 const (
@@ -360,6 +423,34 @@ type session struct {
 	// a writer goroutine drains it so delivery never blocks the backend
 	// (a net.Pipe client that is not reading would otherwise stall it).
 	notify chan []byte
+	// parses holds the Parse message of every named prepared statement the
+	// connection has open (names already prefixed), to drop them when it
+	// ends and to re-create them after Restore. Guarded by the server's sem.
+	parses map[string][]byte
+}
+
+// record notes the named statements a batch creates and closes.
+func (ss *session) record(batch []byte) {
+	for len(batch) >= 5 {
+		n := binary.BigEndian.Uint32(batch[1:5])
+		if n < 4 || int(n)+1 > len(batch) {
+			break
+		}
+		msg, body := batch[:1+n], batch[5:1+n]
+		switch msg[0] {
+		case 'P': // Parse: stmt\0 query\0 ...
+			if z := bytes.IndexByte(body, 0); z > 0 {
+				ss.parses[string(body[:z])] = append([]byte(nil), msg...)
+			}
+		case 'C': // Close: 'S' stmt\0 or 'P' portal\0
+			if len(body) > 1 && body[0] == 'S' {
+				if z := bytes.IndexByte(body[1:], 0); z > 0 {
+					delete(ss.parses, string(body[1:1+z]))
+				}
+			}
+		}
+		batch = batch[1+n:]
+	}
 }
 
 func (ss *session) write(p []byte) error {
@@ -401,7 +492,7 @@ func (s *Server) serve(c net.Conn) {
 	id := s.connSeq.Add(1)
 	prefix := "pgmem" + strconv.FormatInt(id, 36) + "_"
 
-	sess := &session{id: id, c: c, notify: make(chan []byte, 256)}
+	sess := &session{id: id, c: c, notify: make(chan []byte, 256), parses: map[string][]byte{}}
 	go func() {
 		for msg := range sess.notify {
 			sess.write(msg)
@@ -409,7 +500,10 @@ func (s *Server) serve(c net.Conn) {
 	}()
 	defer close(sess.notify)
 
-	s.acquire(id)
+	if err := s.acquire(context.Background(), id, true); err != nil {
+		c.Write(s.acquireError(err))
+		return
+	}
 	resp, err := s.startSession(pkt)
 	if err != nil {
 		s.release()
@@ -421,29 +515,37 @@ func (s *Server) serve(c net.Conn) {
 	s.sessions[id] = sess
 	s.release()
 	if err := sess.write(resp); err != nil {
-		s.endSession(id, nil, false)
+		s.endSession(sess, false)
 		return
 	}
 
 	// held is true while this connection keeps the backend across batches:
 	// inside a transaction block, or between a pipelined message and its
-	// Sync. stmts are the prepared statements this connection created, so
-	// they can be dropped when it goes away.
+	// Sync.
 	held := false
-	var stmts []string
 	for {
 		batch, terminate, err := readBatch(r)
+		if s.closed.Load() {
+			s.linger(sess, r, len(batch) > 0)
+			return
+		}
 		if err != nil {
-			s.endSession(id, stmts, held)
+			s.endSession(sess, held)
 			return
 		}
 		if len(batch) > 0 {
 			batch = rewriteNames(batch, prefix)
-			stmts = appendParsedNames(stmts, batch)
 			if !held {
-				s.acquire(id)
+				if err := s.acquire(context.Background(), id, true); err != nil {
+					sess.write(s.acquireError(err))
+					s.endSession(sess, false)
+					return
+				}
 				held = true
 			}
+			s.idleSince.Store(0)
+			s.dirty = true
+			sess.record(batch)
 			// A COPY FROM STDIN reads its data inside this Exec, so the
 			// backend may ask for more of this connection's input than
 			// the batch holds. If the client goes away or sends
@@ -459,7 +561,7 @@ func (s *Server) serve(c net.Conn) {
 					return copyFail("client disconnected")
 				}
 				more = rewriteNames(more, prefix)
-				stmts = appendParsedNames(stmts, more)
+				sess.record(more)
 				return more
 			}
 			out, err := s.b.Exec(batch)
@@ -468,43 +570,73 @@ func (s *Server) serve(c net.Conn) {
 			if err == nil && backendIdle(out) {
 				s.release()
 				held = false
+			} else if err == nil {
+				s.idleSince.Store(time.Now().UnixNano())
 			}
 			if len(out) > 0 {
 				if werr := sess.write(out); werr != nil {
-					s.endSession(id, stmts, held)
+					s.endSession(sess, held)
 					return
 				}
 			}
 			if err != nil {
+				if s.closed.Load() { // Close shut the backend down under this batch
+					sess.write(errorResponse("57P01", "terminating connection because the pgmem server was closed"))
+					return
+				}
 				s.logf("pgmem: exec failed: %v", err)
 				c.Write(errorResponse("XX000", err.Error()))
-				s.endSession(id, stmts, held)
+				s.endSession(sess, held)
 				return
 			}
 		}
 		if terminate {
-			s.endSession(id, stmts, held)
+			s.endSession(sess, held)
 			return
 		}
 	}
 }
 
+// acquireError is what a connection is sent when it cannot have the
+// backend for its next batch; the connection ends after it.
+func (s *Server) acquireError(err error) []byte {
+	var idle *idleHolderError
+	if errors.As(err, &idle) {
+		s.logf("pgmem: %v", err)
+		return errorResponse("55P03", "pgmem: "+err.Error())
+	}
+	return errorResponse("57P01", "terminating connection because the pgmem server was closed")
+}
+
+// linger keeps a connection of a closed server open until its client
+// closes it or closeGrace passes. A message from the client, or one that
+// was already read (pending), is answered with 57P01, ending it.
+func (s *Server) linger(sess *session, r *bufio.Reader, pending bool) {
+	if !pending {
+		sess.c.SetReadDeadline(time.Now().Add(closeGrace))
+		if _, err := r.ReadByte(); err != nil {
+			return
+		}
+	}
+	sess.write(errorResponse("57P01", "terminating connection because the pgmem server was closed"))
+}
+
 // endSession cleans up after a connection: aborts a transaction it left
 // open, drops its prepared statements and returns the backend.
-func (s *Server) endSession(id int64, stmts []string, held bool) {
-	if !held {
-		s.acquire(id)
+func (s *Server) endSession(sess *session, held bool) {
+	if !held && s.acquire(context.Background(), sess.id, false) != nil {
+		return // closed: the backend and the bookkeeping are gone
 	}
 	defer s.release()
 	s.live--
-	delete(s.sessions, id)
+	delete(s.sessions, sess.id)
 	for ch, m := range s.listeners {
-		delete(m, id)
+		delete(m, sess.id)
 		if len(m) == 0 {
 			delete(s.listeners, ch)
 		}
 	}
-	if s.b == nil {
+	if s.closed.Load() {
 		return
 	}
 	if held {
@@ -513,19 +645,19 @@ func (s *Server) endSession(id int64, stmts []string, held bool) {
 		// clears a pipelined error state; the abort ends the transaction
 		// without a ROLLBACK statement anyone could observe.
 		s.b.Exec(copyFail("client disconnected"))
-		s.b.Exec([]byte{'S', 0, 0, 0, 4})
+		s.b.Exec(syncMessage)
 		s.b.ResetSession(false)
 	}
-	if len(stmts) > 0 {
+	if len(sess.parses) > 0 {
 		var msg bytes.Buffer
-		for _, name := range stmts {
+		for name := range sess.parses {
 			msg.WriteByte('C')
 			binary.Write(&msg, binary.BigEndian, uint32(4+1+len(name)+1))
 			msg.WriteByte('S')
 			msg.WriteString(name)
 			msg.WriteByte(0)
 		}
-		msg.Write([]byte{'S', 0, 0, 0, 4})
+		msg.Write(syncMessage)
 		s.b.Exec(msg.Bytes())
 	}
 }
@@ -638,6 +770,7 @@ func (s *Server) startSession(pkt []byte) ([]byte, error) {
 		if err := checkNoError(resp); err != nil {
 			return nil, err
 		}
+		s.startupPkt = append([]byte(nil), pkt...)
 		s.startupResp = resp
 		return resp, s.applyUser()
 	}
@@ -795,25 +928,6 @@ func backendIdle(out []byte) bool {
 	return status == 'I'
 }
 
-// appendParsedNames records the (already prefixed) names of prepared
-// statements created by Parse messages in batch.
-func appendParsedNames(names []string, batch []byte) []string {
-	for len(batch) >= 5 {
-		n := binary.BigEndian.Uint32(batch[1:5])
-		if n < 4 || int(n)+1 > len(batch) {
-			break
-		}
-		if batch[0] == 'P' {
-			body := batch[5 : 1+n]
-			if z := bytes.IndexByte(body, 0); z > 0 {
-				names = append(names, string(body[:z]))
-			}
-		}
-		batch = batch[1+n:]
-	}
-	return names
-}
-
 // startupParam returns the value of key in a StartupMessage (length,
 // protocol version, then NUL-terminated key/value pairs), or "".
 func startupParam(pkt []byte, key string) string {
@@ -847,6 +961,9 @@ func startupPacket(user, database string) []byte {
 	pkt.Write(body.Bytes())
 	return pkt.Bytes()
 }
+
+// syncMessage is a Sync message: it ends an extended-protocol batch.
+var syncMessage = []byte{'S', 0, 0, 0, 4}
 
 // copyFail is a CopyFail message: ignored outside COPY mode, it aborts a
 // COPY FROM STDIN with an error inside it.

@@ -48,7 +48,7 @@ func (s *Server) Snapshot(ctx context.Context, opts SnapshotOptions) (*Snapshot,
 	// between transactions; CHECKPOINT then flushes every dirty page. A
 	// connection left idle in a transaction would block this forever, so
 	// ctx bounds the wait.
-	if err := s.acquireCtx(ctx, 0); err != nil {
+	if err := s.acquire(ctx, 0, false); err != nil {
 		return nil, fmt.Errorf("pgmem: snapshot waited for an open transaction to end (commit or close every connection first): %w", err)
 	}
 	defer s.release()
@@ -99,7 +99,7 @@ func (sn *Snapshot) Fork(ctx context.Context) (*Server, error) {
 		}
 	}
 	sn.forks.Add(1)
-	srv, err := boot(sn.e, sn.opts, sn.fs.Clone(), func() {
+	srv, err := boot(sn.e, sn.opts, sn.fs.Clone(), sn, func() {
 		<-sn.slots
 		sn.forks.Done()
 	})
