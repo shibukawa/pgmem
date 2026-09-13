@@ -15,12 +15,13 @@ Every run is a fresh process that starts one server, loads the same schema, and 
 - **Fresh copy per test**: the median of 20 isolated copies of the prepared database (1,000 users, 10,000 orders), each followed by a connect and a join. pgmem forks a snapshot. docker run and devbox use `CREATE DATABASE … TEMPLATE` and `DROP DATABASE`. Testcontainers uses its PostgreSQL module's `Snapshot` and `Restore`, which do the same through a template database.
 - **Indexed SELECT**: `SELECT v FROM bench WHERE id = $1` with pgx, 3,000 iterations after warm-up. For pgmem the second number uses the in-process dialer (`Server.Dial`) instead of TCP.
 - **Sort 200k rows**: `SELECT count(*) FROM (SELECT md5(i::text) AS h FROM generate_series(1, 200000) i ORDER BY h) t`, median of three runs after one warm-up.
-- **Memory, idle**: after start and schema load, before queries. pgmem is the growth of the test process's resident set; the binary is its resident set. Containers report `docker stats`, which excludes the Linux VM that Docker needs on macOS. devbox is the resident set summed over the postmaster and its children, which counts shared buffers more than once.
+- **Memory on the host**: what the machine pays after start and schema load, before queries, as macOS `phys_footprint`. pgmem is the growth of the test process, where the server runs, and the binary row is the pgmem process. docker run and Testcontainers run inside OrbStack's Linux VM, which is a separate process on the Mac: before each of these runs OrbStack is restarted, and the figure is how much the VM process grows until the schema is loaded. Testcontainers' figure includes its Ryuk container. The notes give the containers' own `docker stats` value and the VM's total, which is what OrbStack holds while tests run. devbox is summed over the postmaster and every process it forks.
 - **Download**: what a first run fetches. pgmem as a Go library is the growth of a stripped test binary that links it. The binary row is the compressed binary that the wheel, jar and npm package carry. Images are compressed layers for the measured architecture; the nix closure is what devbox downloads from cache.nixos.org.
 
 ## Reading the numbers
 
 - **Defaults differ.** The container and devbox servers use PostgreSQL's defaults (`shared_buffers=128MB`) and write to a real or virtual disk. pgmem uses `shared_buffers=32MB` and an in-memory file system, so sorts that spill to temporary files never touch a disk.
+- **The Docker VM is a fixed cost on top.** A freshly started OrbStack VM already holds several hundred megabytes before any container runs, and memory the VM takes from the host is not handed back when containers stop. The growth figure leaves that idle baseline out; the VM total in the note includes it.
 - **pgmem memory grows under load.** WebAssembly linear memory is not returned to the OS while a server runs, and each live fork holds its own copy. Budget roughly the idle figure per live fork and bound the number with `MaxForks`.
 - **Testcontainers and docker run are close** because they run the same image; the difference is the Ryuk container and the wait strategy.
 
@@ -28,7 +29,7 @@ Every run is a fresh process that starts one server, loads the same schema, and 
 
 ```sh
 cd bench/alternatives
-RUNS=5 ./run.sh
+RUNS=5 MEM_RUNS=3 ./run.sh
 ```
 
-The script needs a running Docker daemon and devbox. It writes raw samples to `results/raw.jsonl`, medians to `results/summary.json`, and copies the summary to `website/src/data/benchmarks.json`, which is what the tables on this site render.
+The script needs OrbStack and devbox, and restarts OrbStack for the memory pass; it refuses to do so while other containers run. It writes raw samples to `results/raw.jsonl`, medians to `results/summary.json`, and copies the summary to `website/src/data/benchmarks.json`, which is what the tables on this site render.

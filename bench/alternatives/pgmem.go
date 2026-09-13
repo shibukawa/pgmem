@@ -15,11 +15,15 @@ type pgmemTarget struct {
 	s       *pgmem.Server
 	snap    *pgmem.Snapshot
 	baseRSS float64
+	baseFP  float64
 }
 
 func (p *pgmemTarget) start(ctx context.Context) error {
 	var err error
 	if p.baseRSS, err = rssMB(ctx, os.Getpid()); err != nil {
+		return err
+	}
+	if p.baseFP, err = footprintMB(ctx, os.Getpid()); err != nil {
 		return err
 	}
 	p.s, err = pgmem.Start(ctx, pgmem.Options{Database: "app"})
@@ -46,9 +50,14 @@ func (p *pgmemTarget) isolate(ctx context.Context, fn func(string) error) error 
 	return fn(f.DSN())
 }
 
-func (p *pgmemTarget) memMB(ctx context.Context) (float64, error) {
+// mem is the growth of this process, where the server runs.
+func (p *pgmemTarget) mem(ctx context.Context) (memory, error) {
 	rss, err := rssMB(ctx, os.Getpid())
-	return rss - p.baseRSS, err
+	if err != nil {
+		return memory{}, err
+	}
+	fp, err := footprintMB(ctx, os.Getpid())
+	return memory{Host: fp - p.baseFP, RSS: rss - p.baseRSS}, err
 }
 
 func (p *pgmemTarget) dialQuery(ctx context.Context) (float64, error) {

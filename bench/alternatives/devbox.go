@@ -106,20 +106,21 @@ func (d *devboxTarget) isolate(ctx context.Context, fn func(string) error) error
 	return templateIsolation(ctx, d.dbURL, d.dbURL, &d.n, fn)
 }
 
-// memMB sums the RSS of the postmaster and its children. Shared buffers
-// are counted once per process that touched them, so this over-reports.
-func (d *devboxTarget) memMB(ctx context.Context) (float64, error) {
+// mem sums the postmaster and every child it forked: footprint for the
+// host figure, RSS for comparison (RSS counts shared buffers once per
+// process that touched them).
+func (d *devboxTarget) mem(ctx context.Context) (memory, error) {
 	b, err := os.ReadFile(filepath.Join(d.dataDir, "data", "postmaster.pid"))
 	if err != nil {
-		return 0, err
+		return memory{}, err
 	}
 	pm, err := strconv.Atoi(strings.SplitN(string(b), "\n", 2)[0])
 	if err != nil {
-		return 0, err
+		return memory{}, err
 	}
 	out, err := run(ctx, "ps", "-axo", "pid=,ppid=")
 	if err != nil {
-		return 0, err
+		return memory{}, err
 	}
 	pids := []int{pm}
 	for _, line := range strings.Split(out, "\n") {
@@ -130,7 +131,12 @@ func (d *devboxTarget) memMB(ctx context.Context) (float64, error) {
 			}
 		}
 	}
-	return rssMB(ctx, pids...)
+	rss, err := rssMB(ctx, pids...)
+	if err != nil {
+		return memory{}, err
+	}
+	fp, err := footprintMB(ctx, pids...)
+	return memory{Host: fp, RSS: rss}, err
 }
 
 func (d *devboxTarget) stop(ctx context.Context) {

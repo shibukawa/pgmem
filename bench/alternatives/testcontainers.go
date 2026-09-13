@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"strings"
 	"time"
 
 	_ "github.com/jackc/pgx/v5/stdlib" // Snapshot and Restore open database/sql with this driver
@@ -15,8 +16,17 @@ import (
 // Ryuk reaper container, which is part of what a test binary pays.
 type tcTarget struct {
 	image string
+	fresh bool
+	vm    orbVM
 	c     *postgres.PostgresContainer
 	dsn   string
+}
+
+func (t *tcTarget) prepare(ctx context.Context) error {
+	if t.fresh {
+		return t.vm.restart(ctx)
+	}
+	return nil
 }
 
 func (t *tcTarget) start(ctx context.Context) error {
@@ -55,8 +65,13 @@ func (t *tcTarget) isolate(ctx context.Context, fn func(string) error) error {
 	return fn(t.dsn)
 }
 
-func (t *tcTarget) memMB(ctx context.Context) (float64, error) {
-	return dockerMemMB(ctx, t.c.GetContainerID())
+// mem includes the Ryuk reaper container that testcontainers starts.
+func (t *tcTarget) mem(ctx context.Context) (memory, error) {
+	ids := []string{t.c.GetContainerID()}
+	if ryuk, err := run(ctx, "docker", "ps", "-q", "--filter", "label=org.testcontainers.ryuk=true"); err == nil && ryuk != "" {
+		ids = append(ids, strings.Fields(ryuk)...)
+	}
+	return containerMem(ctx, t.fresh, &t.vm, ids...)
 }
 
 func (t *tcTarget) stop(ctx context.Context) {

@@ -3,14 +3,25 @@ import json, platform, statistics, subprocess, sys
 from collections import defaultdict
 
 raw, sizes = sys.argv[1], sys.argv[2]
+# Memory fields. For docker and testcontainers they come only from runs on
+# a freshly restarted OrbStack VM (fresh_vm), where the VM's host-side
+# growth is measurable; timing fields come only from the other runs, where
+# the VM was already warm as on a developer's machine.
+MEMORY = {"mem_idle_mb", "mem_after_mb", "rss_idle_mb", "container_mb", "vm_total_mb"}
+CONTAINER_TARGETS = {"docker", "testcontainers"}
+
 samples = defaultdict(lambda: defaultdict(list))
 versions = {}
 for line in open(raw):
     r = json.loads(line)
     t = r["target"]
+    fresh = bool(r.get("fresh_vm"))
     for k, v in r.items():
-        if isinstance(v, (int, float)) and v:
-            samples[t][k].append(v)
+        if not isinstance(v, (int, float)) or isinstance(v, bool) or not v:
+            continue
+        if t in CONTAINER_TARGETS and (k in MEMORY) != fresh:
+            continue
+        samples[t][k].append(v)
     if r.get("version"):
         versions[t] = r["version"]
 
@@ -29,7 +40,9 @@ def orbstack_version():
 targets = {}
 for t, fields in samples.items():
     targets[t] = {k: round(statistics.median(v), 2) for k, v in fields.items()}
-    targets[t]["runs"] = max(len(v) for v in fields.values())
+    targets[t]["runs"] = max(len(v) for k, v in fields.items() if k not in MEMORY)
+    if t in CONTAINER_TARGETS and fields.get("mem_idle_mb"):
+        targets[t]["mem_runs"] = len(fields["mem_idle_mb"])
     if t in versions:
         targets[t]["postgres"] = versions[t]
 

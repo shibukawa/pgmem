@@ -34,11 +34,21 @@ type Result struct {
 	IsolateMS     float64   `json:"isolate_ms"`
 	MemIdleMB     float64   `json:"mem_idle_mb"`
 	MemAfterMB    float64   `json:"mem_after_mb"`
+	RSSIdleMB     float64   `json:"rss_idle_mb,omitempty"`
+	ContainerMB   float64   `json:"container_mb,omitempty"`
+	VMTotalMB     float64   `json:"vm_total_mb,omitempty"`
+	FreshVM       bool      `json:"fresh_vm,omitempty"`
 	Version       string    `json:"version"`
 	Time          time.Time `json:"time"`
 }
 
 // target is what each backend implements.
+// memory is one reading. Host is what the approach costs the machine;
+// the others are breakdowns kept for the notes.
+type memory struct {
+	Host, RSS, Container, VMTotal float64
+}
+
 type target interface {
 	// start boots a server and returns once SELECT 1 succeeds on url().
 	start(ctx context.Context) error
@@ -47,7 +57,7 @@ type target interface {
 	// runs fn against its URL and discards it.
 	prepareIsolation(ctx context.Context) error
 	isolate(ctx context.Context, fn func(url string) error) error
-	memMB(ctx context.Context) (float64, error)
+	mem(ctx context.Context) (memory, error)
 	stop(ctx context.Context)
 }
 
@@ -76,6 +86,7 @@ func main() {
 	name := flag.String("target", "pgmem", "pgmem | docker | testcontainers | devbox")
 	image := flag.String("image", "postgres:18-alpine", "image for docker and testcontainers")
 	devboxDir := flag.String("devbox", "devbox", "directory with devbox.json")
+	freshVM := flag.Bool("fresh-vm", false, "docker and testcontainers: restart OrbStack first and count the VM's memory growth")
 	flag.Parse()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
@@ -86,15 +97,18 @@ func main() {
 	case "pgmem":
 		t = &pgmemTarget{}
 	case "docker":
-		t = &dockerTarget{image: *image}
+		t = &dockerTarget{image: *image, fresh: *freshVM}
 	case "testcontainers":
-		t = &tcTarget{image: *image}
+		t = &tcTarget{image: *image, fresh: *freshVM}
 	case "devbox":
 		t = &devboxTarget{dir: *devboxDir}
 	default:
 		fatal(fmt.Errorf("unknown target %q", *name))
 	}
 	r, err := measure(ctx, *name, t)
+	if r != nil {
+		r.FreshVM = *freshVM && (*name == "docker" || *name == "testcontainers")
+	}
 	t.stop(context.Background())
 	if err != nil {
 		fatal(err)
@@ -130,9 +144,11 @@ func measure(ctx context.Context, name string, t target) (*Result, error) {
 	r.SetupMS = ms(time.Since(begin))
 	conn.Close(ctx)
 
-	if r.MemIdleMB, err = t.memMB(ctx); err != nil {
+	idle, err := t.mem(ctx)
+	if err != nil {
 		return nil, fmt.Errorf("memory: %w", err)
 	}
+	r.MemIdleMB, r.RSSIdleMB, r.ContainerMB, r.VMTotalMB = idle.Host, idle.RSS, idle.Container, idle.VMTotal
 
 	conn, err = pgx.Connect(ctx, t.url())
 	if err != nil {
@@ -183,9 +199,11 @@ func measure(ctx context.Context, name string, t target) (*Result, error) {
 	}
 	r.IsolateMS = median(iso)
 
-	if r.MemAfterMB, err = t.memMB(ctx); err != nil {
+	after, err := t.mem(ctx)
+	if err != nil {
 		return nil, fmt.Errorf("memory: %w", err)
 	}
+	r.MemAfterMB = after.Host
 	return r, nil
 }
 

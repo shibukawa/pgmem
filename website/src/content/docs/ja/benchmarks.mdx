@@ -15,12 +15,13 @@ import BenchmarkTable from '../../../components/BenchmarkTable.astro';
 - **テストごとの複製**：準備済みデータベース（ユーザー 1,000 件、注文 10,000 件）の独立した複製を 20 回作り、そのたびに接続して結合クエリを 1 本流したときの中央値です。pgmem はスナップショットからフォークします。docker run と devbox は `CREATE DATABASE … TEMPLATE` と `DROP DATABASE`、Testcontainers は PostgreSQL モジュールの `Snapshot` と `Restore` を使います。後者も内部ではテンプレートデータベースで同じことをしています。
 - **インデックス SELECT**：pgx で `SELECT v FROM bench WHERE id = $1` をウォームアップ後に 3,000 回。pgmem の 2 つ目の値は、TCP の代わりにプロセス内ダイヤラ（`Server.Dial`）を使ったものです。
 - **20万行ソート**：`SELECT count(*) FROM (SELECT md5(i::text) AS h FROM generate_series(1, 200000) i ORDER BY h) t` を、ウォームアップ 1 回の後に 3 回流した中央値です。
-- **アイドル時メモリ**：起動とスキーマ投入の後、クエリを流す前の値です。pgmem はテストプロセスの常駐メモリの増分、バイナリはそのプロセスの常駐メモリです。コンテナは `docker stats` の値で、macOS で Docker が必要とする Linux VM の分は含みません。devbox はポストマスターと子プロセスの常駐メモリの合計で、共有バッファを重複して数えています。
+- **ホストのメモリ**：起動とスキーマ投入の後、クエリを流す前にマシンが負担している量で、macOS の `phys_footprint` で測ります。pgmem はサーバーが動くテストプロセスの増分、バイナリの行は pgmem プロセスの値です。docker run と Testcontainers は、Mac 上では別プロセスである OrbStack の Linux VM の中で動きます。そこでこの 2 つは毎回 OrbStack を再起動してから計測し、スキーマ投入までに VM プロセスが増えた量を載せています。Testcontainers の値には Ryuk コンテナの分も含みます。注記には、コンテナ単体の `docker stats` の値と、テスト中に OrbStack が保持している VM 全体の量を載せました。devbox はポストマスターと、そこから起動されたすべてのプロセスの合計です。
 - **ダウンロード**：初回に取得するもの。Go ライブラリとしての pgmem は、strip したテストバイナリがリンクによって増える量です。バイナリの行は wheel、jar、npm パッケージが同梱する圧縮済みバイナリの大きさです。イメージは計測したアーキテクチャの圧縮レイヤ、nix closure は devbox が cache.nixos.org から取得する量です。
 
 ## 数字の読み方
 
 - **既定値が違います。** コンテナと devbox のサーバーは PostgreSQL の既定値（`shared_buffers=128MB`）で、実ディスクか仮想ディスクに書き込みます。pgmem は `shared_buffers=32MB` でファイルシステムもメモリ上にあるため、一時ファイルにあふれるソートでもディスクに触れません。
+- **Docker の VM はその上に乗る固定費です。** 起動直後の OrbStack の VM は、コンテナを 1 つも動かさないうちから数百 MB を保持しています。VM がホストから取ったメモリは、コンテナを止めても返されません。表の増分にはこのアイドル時の基準分を含めず、注記の VM 全体には含めています。
 - **pgmem のメモリは負荷で増えます。** WebAssembly のリニアメモリはサーバー稼働中は OS に返らず、生きているフォークはそれぞれ自分の複製を持ちます。生きているフォーク 1 つあたりアイドル時の値程度を見込み、`MaxForks` で数を抑えてください。
 - **Testcontainers と docker run が近い**のは同じイメージを動かしているからです。差は Ryuk コンテナと待機戦略の分です。
 
@@ -28,7 +29,7 @@ import BenchmarkTable from '../../../components/BenchmarkTable.astro';
 
 ```sh
 cd bench/alternatives
-RUNS=5 ./run.sh
+RUNS=5 MEM_RUNS=3 ./run.sh
 ```
 
-Docker デーモンと devbox が必要です。生の計測値を `results/raw.jsonl`、中央値を `results/summary.json` に書き、要約を `website/src/data/benchmarks.json` にコピーします。このサイトの表はそのファイルを描画しています。
+OrbStack と devbox が必要です。メモリ計測のパスでは OrbStack を再起動しますが、ほかのコンテナが動いているときは再起動せずに止まります。生の計測値を `results/raw.jsonl`、中央値を `results/summary.json` に書き、要約を `website/src/data/benchmarks.json` にコピーします。このサイトの表はそのファイルを描画しています。
