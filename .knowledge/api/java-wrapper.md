@@ -9,7 +9,7 @@ Maven artifacts in packages/java: a core client for api:control-protocol and a J
 api:
   package: packages/java (Gradle multi-module, wrapper 9.5.1, options.release 17); java >= 17; core has no third-party runtime dependency (Json.java is a minimal codec)
   status: implemented 2026-09-12; tests use pgjdbc against the binary that the root buildBinary task compiles (system property pgmem.binary)
-  group_id: jp.shibu
+  group_id: io.github.shibukawa.pgmem  # jp.shibu until 2026-09-14; the namespace io.github.shibukawa is verified through the GitHub account, as for osmem
   artifacts:
     pgmem: core client
     pgmem-junit5: JUnit 5 extension
@@ -19,7 +19,7 @@ api:
     - 'Pgmem: template() -> Server (default); startServer(ServerOptions) -> Server (op start); close() shuts the process down'
     - 'Server: id(), jdbcUrl(), dsn(), user(), host(), port(), dataSource(), snapshot(), snapshot(maxForks), snapshot(maxForks, Duration timeout) -> Snapshot; close()'
     - 'Snapshot.fork(Duration timeout) -> pool_timeout instead of waiting forever'
-    - 'BinaryLocator: pgmem.binary property, PGMEM_BINARY, classpath resource /jp/shibu/pgmem/native/<classifier>/pgmem extracted to PGMEM_CACHE_DIR or ~/.cache/pgmem/<Implementation-Version>/, then PATH'
+    - 'BinaryLocator: pgmem.binary property, PGMEM_BINARY, classpath resource /io/github/shibukawa/pgmem/native/<classifier>/pgmem extracted to PGMEM_CACHE_DIR or ~/.cache/pgmem/<Implementation-Version>/, then PATH'
     - 'Snapshot: fork() -> Fork, AutoCloseable; close()'
     - 'Fork: jdbcUrl(), dataSource(), close()'
     - 'dataSource(): javax.sql.DataSource over DriverManager so core does not compile against pgjdbc'

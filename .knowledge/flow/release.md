@@ -32,7 +32,7 @@ flow:
   registry_setup:
     pypi: pending trusted publisher for project pgmem (shibukawa/pgmem, release.yml, environment release); valid before the first upload
     npm: a trusted publisher needs an existing package, so the first version of the 7 packages is published by hand with 2FA from rehearsal tarballs; configurations need direct publishing enabled, since those created after 2026-09-03 otherwise allow only npm stage publish
-    maven: namespace jp.shibu verified by DNS TXT on shibu.jp (kept over io.github.shibukawa on 2026-09-14; no TXT record seen that day); CENTRAL_USERNAME/CENTRAL_PASSWORD and GPG_PRIVATE_KEY/GPG_PASSPHRASE secrets exist in environment release since 2026-09-13
+    maven: groupId io.github.shibukawa.pgmem under the namespace io.github.shibukawa, which the Portal verifies through the GitHub account (the user switched from jp.shibu on 2026-09-14 before the first publish, as osmem did); CENTRAL_USERNAME/CENTRAL_PASSWORD and GPG_PRIVATE_KEY/GPG_PASSPHRASE secrets exist in environment release since 2026-09-13
     pages: build_type workflow; environment github-pages allows main; docs.yml deploys website/
   limits: Go module zip 26MB compressed, 129MB of the 500MB proxy limit (2026-09-14); a cold cross-compile of one target takes ~46s and ~2.2GB RSS on an M-series Mac
 ```

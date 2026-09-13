@@ -8,8 +8,8 @@ Using pgmem from JVM tests: dependencies with the platform classifier, the JUnit
 ```yaml
 summary:
   install: |
-    testImplementation("jp.shibu:pgmem-junit5:0.1.0")
-    testRuntimeOnly("jp.shibu:pgmem-native:0.1.0:darwin-arm64")   // classifier per platform, policy:binary-distribution
+    testImplementation("io.github.shibukawa.pgmem:pgmem-junit5:0.1.0")
+    testRuntimeOnly("io.github.shibukawa.pgmem:pgmem-native:0.1.0:darwin-arm64")   // classifier per platform, policy:binary-distribution
     testRuntimeOnly("org.postgresql:postgresql:42.7.7")
   basic_test: |
     try (Pgmem pg = Pgmem.builder().database("app").start();

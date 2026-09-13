@@ -20,7 +20,7 @@ policy:
     - Go module tag vX.Y.Z
     - cmd/pgmem binary version in the ready event (api:control-protocol), -X main.version=vX.Y.Z from scripts/build-binaries.sh
     - PyPI pgmem version in packages/python/pyproject.toml
-    - Maven jp.shibu artifacts and Implementation-Version, from packages/java/gradle.properties
+    - Maven io.github.shibukawa.pgmem artifacts and Implementation-Version, from packages/java/gradle.properties
     - npm @pgmem/core, @pgmem/<platform> and core's optionalDependencies pins
   compatibility: wrappers require an exactly matching binary version (policy:binary-distribution); the control protocol integer is versioned separately
 ```

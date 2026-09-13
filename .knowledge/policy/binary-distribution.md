@@ -16,7 +16,7 @@ policy:
     size: ~17MB per wheel (41MB unpacked), under the PyPI 100MB file limit
     fallback: PGMEM_BINARY env for unsupported platforms and local builds
   java:
-    layout: pgmem-native with packaging pom and only classifier jars (~17MB each, as osmem-server-binaries on Maven Central); resource /jp/shibu/pgmem/native/<classifier>/pgmem; -PnativeDist=<dist dir> packs all six, otherwise the host binary
+    layout: pgmem-native with packaging pom and only classifier jars (~17MB each, as osmem-server-binaries on Maven Central); resource /io/github/shibukawa/pgmem/native/<classifier>/pgmem; -PnativeDist=<dist dir> packs all six, otherwise the host binary
     select: user adds the classifier via os-maven-plugin or Gradle osdetector; depending on all six (~100MB) is discouraged
     extract: first use copies to PGMEM_CACHE_DIR, else ${user.home}/.cache/pgmem/<Implementation-Version>/, else java.io.tmpdir; sets the exec bit; atomic rename so concurrent JVMs are safe
     fallback: PGMEM_BINARY env, then pgmem on PATH
