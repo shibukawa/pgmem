@@ -11,7 +11,8 @@ bench:       ## query benchmarks (TCP, in-process, engine-bound)
 vet:         ## vet everything; the generated code only gets the cheap passes
 	go vet $(GO_PKGS)
 	go vet -unreachable=false ./internal/aot
-	gofmt -l $(shell find . -name '*.go' -not -path './internal/aot/pgaot/*' -not -path './postgres-pglite/*' -not -path './toolchain/*')
+	@unformatted=$$(gofmt -l $$(git ls-files '*.go' | grep -v '^internal/aot/pgaot/')); \
+	if [ -n "$$unformatted" ]; then echo "needs gofmt:"; echo "$$unformatted"; exit 1; fi
 
 wasm:        ## rebuild postgres.wasm / initdb.wasm / share.tar.gz (needs emsdk)
 	./wasm/build.sh

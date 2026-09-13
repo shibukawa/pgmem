@@ -1,0 +1,118 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  go:
+    name: Go (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+      - name: Vet and gofmt
+        if: runner.os == 'Linux'
+        run: make vet
+      - name: Test
+        run: go test ./... -count=1
+
+  packages:
+    name: Language packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+      - name: Build pgmem for the package tests
+        run: |
+          scripts/build-binaries.sh host
+          echo "PGMEM_BINARY=$PWD/dist/linux-amd64/pgmem" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Node.js
+        working-directory: packages/node/core
+        run: npm test
+
+      - uses: astral-sh/setup-uv@v10
+      - name: Python
+        working-directory: packages/python
+        run: uv run pytest -q
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - name: Java
+        working-directory: packages/java
+        run: ./gradlew --no-daemon --console=plain build
+
+  release-packaging:
+    name: Release packaging (placeholder binaries, nothing uploaded)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Placeholder binaries and a test version
+        run: |
+          for target in darwin-amd64 darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64; do
+            exe=pgmem
+            case $target in windows-*) exe=pgmem.exe ;; esac
+            mkdir -p "dist/$target"
+            echo "placeholder for $target" > "dist/$target/$exe"
+          done
+          scripts/set-version.sh 0.0.0
+      - name: GitHub Release archives
+        run: VERSION=0.0.0 scripts/package-archives.sh
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: npm tarballs
+        run: |
+          scripts/build-npm.sh
+          for tgz in dist/npm/pgmem-*.tgz; do
+            case $tgz in */pgmem-core-*) continue ;; esac
+            if ! tar -tvzf "$tgz" | grep -E ' package/bin/pgmem(\.exe)?$' | grep -q '^-rwx'; then
+              echo "$tgz: the binary is missing or not executable"
+              tar -tvzf "$tgz"
+              exit 1
+            fi
+          done
+
+      - uses: astral-sh/setup-uv@v10
+      - name: Wheels
+        run: |
+          scripts/build-python-wheels.sh
+          uvx twine check --strict dist/wheels/*.whl
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - name: Maven Central bundle, signed with a throwaway key
+        run: |
+          GNUPGHOME=$(mktemp -d)
+          export GNUPGHOME
+          gpg --batch --pinentry-mode loopback --passphrase ci --quick-gen-key "pgmem ci <ci@example.invalid>" ed25519 sign 1d
+          GPG_PRIVATE_KEY=$(gpg --batch --pinentry-mode loopback --passphrase ci --armor --export-secret-keys)
+          export GPG_PRIVATE_KEY GPG_PASSPHRASE=ci
+          scripts/build-maven-bundle.sh

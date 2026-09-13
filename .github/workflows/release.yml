@@ -1,0 +1,306 @@
+name: Release
+
+# Pushing a tag vX.Y.Z builds every artifact from the tagged commit and
+# publishes it under that one version:
+#   - GitHub Release: the pgmem binaries (tar.gz, zip for Windows) with
+#     SHA256SUMS, the wheels and the npm tarballs
+#   - npm: the @pgmem/<platform> packages, then @pgmem/core, by trusted
+#     publishing (OIDC, no token)
+#   - PyPI: the pgmem platform wheels, by trusted publishing
+#   - Maven Central: jp.shibu:pgmem, pgmem-junit5 and pgmem-native through the
+#     Central Publisher Portal, with the CENTRAL_USERNAME / CENTRAL_PASSWORD
+#     and GPG_PRIVATE_KEY / GPG_PASSPHRASE secrets of the release environment
+#   - Go: fetches the tag through proxy.golang.org so that pkg.go.dev lists it
+# README.md, "Releasing", lists the registry-side setup.
+#
+# Started by hand it rehearses a release (dry_run, the default: everything is
+# built, npm publish runs with --dry-run, and the Portal validates the Maven
+# bundle, which is then dropped), or, run on a tag, publishes that version to
+# some registries again:
+#   gh workflow run release.yml -f version=0.1.0
+#   gh workflow run release.yml --ref v0.1.0 -f version=0.1.0 -f registries=maven -f dry_run=false
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version without the v (X.Y.Z)
+        required: true
+      registries:
+        description: Comma-separated subset of github,npm,pypi,maven,go
+        default: github,npm,pypi,maven,go
+      dry_run:
+        description: Build and check everything, publish nothing
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.check.outputs.version }}
+      registries: ${{ steps.check.outputs.registries }}
+      publish: ${{ steps.check.outputs.publish }}
+    steps:
+      - id: check
+        env:
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+          INPUT_VERSION: ${{ inputs.version }}
+          INPUT_REGISTRIES: ${{ inputs.registries }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$EVENT" = push ]; then
+            version=${REF#refs/tags/v}
+            registries=github,npm,pypi,maven,go
+            publish=true
+          else
+            version=$INPUT_VERSION
+            registries=$INPUT_REGISTRIES
+            publish=true
+            if [ "$INPUT_DRY_RUN" = true ]; then publish=false; fi
+          fi
+          if ! printf '%s\n' "$version" | grep -Eqx '[0-9]+\.[0-9]+\.[0-9]+'; then
+            echo "::error::version '$version' is not X.Y.Z"
+            exit 1
+          fi
+          if [ "$publish" = true ] && [ "$REF" != "refs/tags/v$version" ]; then
+            echo "::error::publishing $version has to run on the tag v$version, not on $REF"
+            exit 1
+          fi
+          {
+            echo "version=$version"
+            echo "registries=,$(printf '%s' "$registries" | tr -d ' '),"
+            echo "publish=$publish"
+          } >> "$GITHUB_OUTPUT"
+          echo "version $version, registries $registries, publish $publish"
+
+  binaries:
+    name: Binary (${{ matrix.target }})
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [darwin-amd64, darwin-arm64, linux-amd64, linux-arm64, windows-amd64, windows-arm64]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          # The oldest macOS a binary runs on follows the Go release (13 for
+          # Go 1.27); move the macosx wheel tags in packages/python/hatch_build.py
+          # along with this.
+          go-version: "1.27.x"
+          cache: false
+      - name: Build
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          TARGET: ${{ matrix.target }}
+        run: scripts/build-binaries.sh "$TARGET"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: bin-${{ matrix.target }}
+          path: dist
+          if-no-files-found: error
+
+  packages:
+    name: Packages
+    needs: [prepare, binaries]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: bin-*
+          path: dist
+          merge-multiple: true
+      - name: Stamp the version
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: scripts/set-version.sh "$VERSION"
+      - name: GitHub Release archives
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: scripts/package-archives.sh
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: npm tarballs
+        run: scripts/build-npm.sh
+
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: false
+      - name: Wheels
+        run: |
+          scripts/build-python-wheels.sh
+          uvx twine check --strict dist/wheels/*.whl
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: packages
+          path: |
+            dist/release
+            dist/npm
+            dist/wheels
+          if-no-files-found: error
+
+  github:
+    name: GitHub Release
+    needs: [prepare, packages]
+    if: needs.prepare.outputs.publish == 'true' && contains(needs.prepare.outputs.registries, ',github,')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: packages
+          path: dist
+      - uses: softprops/action-gh-release@v3
+        with:
+          tag_name: v${{ needs.prepare.outputs.version }}
+          generate_release_notes: true
+          files: |
+            dist/release/*
+            dist/wheels/*.whl
+            dist/npm/*.tgz
+
+  npm:
+    name: npm
+    needs: [prepare, packages]
+    if: contains(needs.prepare.outputs.registries, ',npm,')
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: read
+      id-token: write # trusted publishing; there is no NPM_TOKEN
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: packages
+          path: dist
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: npm 11.5.1 or later, for trusted publishing
+        run: npm install -g npm@latest && npm --version
+      - name: Publish the platform packages, then @pgmem/core
+        env:
+          PUBLISH: ${{ needs.prepare.outputs.publish }}
+          # npm quietly falls back to the placeholder token when the OIDC
+          # exchange fails; verbose logs say why
+          NPM_CONFIG_LOGLEVEL: verbose
+        run: |
+          publish() {
+            spec=$(tar -xzOf "$1" package/package.json | node -e '
+              const p = JSON.parse(require("fs").readFileSync(0, "utf8"));
+              console.log(`${p.name}@${p.version}`);')
+            if [ "$(npm view "$spec" version 2>/dev/null)" = "${spec##*@}" ]; then
+              echo "$spec is already on npm, skipping"
+            elif [ "$PUBLISH" = true ]; then
+              npm publish "$1" --access public --provenance
+            else
+              npm publish "$1" --access public --dry-run
+            fi
+          }
+          for tgz in dist/npm/*.tgz; do
+            case $tgz in */pgmem-core-*) ;; *) publish "$tgz" ;; esac
+          done
+          publish dist/npm/pgmem-core-*.tgz
+
+  pypi:
+    name: PyPI
+    needs: [prepare, packages]
+    if: needs.prepare.outputs.publish == 'true' && contains(needs.prepare.outputs.registries, ',pypi,')
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: read
+      id-token: write # trusted publishing
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: packages
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/wheels
+          skip-existing: true
+
+  maven:
+    name: Maven Central
+    needs: [prepare, binaries]
+    if: contains(needs.prepare.outputs.registries, ',maven,')
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: bin-*
+          path: dist
+          merge-multiple: true
+      - name: Stamp the version
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: scripts/set-version.sh "$VERSION"
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Look for the version on Maven Central
+        id: existing
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          if curl -sfI "https://repo1.maven.org/maven2/jp/shibu/pgmem/$VERSION/pgmem-$VERSION.pom" > /dev/null; then
+            echo "jp.shibu:pgmem:$VERSION is already on Maven Central, skipping"
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build and sign the bundle
+        if: steps.existing.outputs.published != 'true'
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: scripts/build-maven-bundle.sh
+      - name: Upload to the Central Publisher Portal
+        if: steps.existing.outputs.published != 'true'
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          PUBLISH: ${{ needs.prepare.outputs.publish }}
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+        run: |
+          if [ "$PUBLISH" = true ]; then
+            scripts/publish-maven-central.sh "dist/maven/pgmem-$VERSION-bundle.zip"
+          else
+            scripts/publish-maven-central.sh --validate-only "dist/maven/pgmem-$VERSION-bundle.zip"
+          fi
+
+  go:
+    name: Go module proxy
+    needs: [prepare, packages]
+    if: needs.prepare.outputs.publish == 'true' && contains(needs.prepare.outputs.registries, ',go,')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+      - name: Fetch the tag through proxy.golang.org
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          GOPROXY: https://proxy.golang.org
+        run: go list -m "github.com/shibukawa/pgmem@v$VERSION"
