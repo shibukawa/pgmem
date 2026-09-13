@@ -7,7 +7,7 @@ npm package driving concept:server-process, shaped like @osmem/core and implemen
 
 ```yaml
 api:
-  status: implemented 2026-09-13 in packages/node, unpublished; node --test suite in core/test (9 tests); end to end in a scratch project with Vitest 5 (Prisma 7.10, Drizzle 0.45 with postgres.js, TypeORM 1.1) and Jest 30
+  status: implemented 2026-09-13 in packages/node; flow:release packs and publishes it (set up 2026-09-14, the first version of each package goes up by hand); node --test suite in core/test (9 tests); end to end in a scratch project with Vitest 5 (Prisma 7.10, Drizzle 0.45 with postgres.js, TypeORM 1.1) and Jest 30
   package: '@pgmem/core plus @pgmem/<platform> (darwin-arm64, darwin-x64, linux-arm64, linux-x64, win32-arm64, win32-x64); the npm org pgmem belongs to the user (confirmed 2026-09-13); unscoped pgmem is rejected by npm name similarity to pg-mem'
   core:
     - 'PgmemServer.start({database, user, params, prepare(template), maxForks, control=true, waitTimeoutMs, log, binary}) -> server; spawns pgmem -control 127.0.0.1:0, runs prepare, snapshots the template'
@@ -22,6 +22,6 @@ api:
     jest_environment: extends jest-environment-node TestEnvironment; one fork per Jest worker, reset between test files, URL written to this.global.process.env
   format: implementation in index.cjs so Jest test files can require it (Jest vm has no dynamic import without experimental flags); index.js re-exports for ESM; one index.d.ts
   liveness: channel handles are referenced only while a request is pending, so the control socket never keeps a test process alive; api:control-socket closes a worker's forks when it exits
-  binary: resolveBinary(option, PGMEM_BINARY, @pgmem/<platform>/bin/pgmem); scripts/build-npm.sh fills platforms/*/bin (policy:binary-distribution)
+  binary: resolveBinary(option, PGMEM_BINARY, @pgmem/<platform>/bin/pgmem); scripts/build-npm.sh copies the built binaries into platforms/*/bin and packs every package (policy:binary-distribution)
   docs: packages/node/core/README.md (Vitest, Jest, node:test, Bun, ORM prepare recipes); packages/node/examples/prisma (Prisma 7 with Vitest, migrate deploy in globalSetup, per-test reset, migrate dev through pgmem)
 ```
