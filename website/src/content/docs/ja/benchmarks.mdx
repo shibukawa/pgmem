@@ -14,7 +14,7 @@ import MemoryChart from '../../../components/MemoryChart.astro';
 
 どの計測も、新しいプロセスでサーバーを 1 つ起動し、同じスキーマを流し込んでから測ります。ハーネスは [`bench/alternatives`](https://github.com/shibukawa/pgmem/tree/main/bench/alternatives) にあります。
 
-- **起動〜最初のクエリ**：サーバー起動の呼び出しから、TCP 越しの `SELECT 1` が成功するまで。`docker run` はコマンドの実行時間を含みます。Testcontainers は、新しいテストプロセスが起動する Ryuk コンテナの分も含みます。devbox は `initdb` と `pg_ctl start` の合計で、devbox の環境解決は済ませた状態から測ります。pgmem バイナリは ready 行が出るまでの時間で、Python、Java、Node.js のラッパーが待つのはこの時点です。
+- **起動〜最初のクエリ**：起動処理を呼び出してから、TCP 経由の `SELECT 1` が成功するまで。`docker pull` と `devbox install` は計測前に実行し、Devbox 環境の解決も計測外の準備で済ませます。`docker run` は新規コンテナと DB クラスタの初期化を含みます。Devbox は初期化済みの永続クラスタと app DB を計測前に準備し、`devbox services up -b` の実行から SQL ready までを計ります。Testcontainers は新しいテストプロセスが起動する Ryuk コンテナも含みます。pgmem バイナリは ready 行が出るまでを計り、Python、Java、Node.js のラッパーはその行を待ちます。
 - **テストごとの複製**：準備済みデータベース（ユーザー 1,000 件、注文 10,000 件）の独立した複製を 20 回作り、そのたびに接続して結合クエリを 1 本流したときの中央値です。pgmem はスナップショットからフォークします。docker run と devbox は `CREATE DATABASE … TEMPLATE` と `DROP DATABASE`、Testcontainers は PostgreSQL モジュールの `Snapshot` と `Restore` を使います。後者も内部ではテンプレートデータベースで同じことをしています。
 - **インデックス SELECT**：pgx で `SELECT v FROM bench WHERE id = $1` をウォームアップ後に 3,000 回。pgmem の 2 つ目の値は、TCP の代わりにプロセス内ダイヤラ（`Server.Dial`）を使ったものです。
 - **20万行ソート**：`SELECT count(*) FROM (SELECT md5(i::text) AS h FROM generate_series(1, 200000) i ORDER BY h) t` を、ウォームアップ 1 回の後に 3 回流した中央値です。

@@ -13,7 +13,7 @@ const labels = {
 	en: {
 		intro: (runs: number, memoryRuns: number) => `Medians from ${runs} runs on one machine. Docker and Testcontainers memory uses ${memoryRuns} fresh OrbStack runs. Bars scale to the largest value in each card; lower is better.`,
 		startup: 'Start to first query',
-		startupNote: 'From server start until a TCP SELECT 1 succeeds.',
+		startupNote: 'From command start to TCP SELECT 1; downloads are excluded and Devbox uses an initialized cluster.',
 		isolation: 'Fresh copy per test',
 		isolationNote: 'Median time to create an isolated database copy and run a join.',
 		simple: 'Indexed SELECT',
@@ -27,12 +27,12 @@ const labels = {
 		pgmem: 'pgmem · Go library',
 		docker: 'Docker · PostgreSQL 18',
 		testcontainers: 'Testcontainers · Go',
-		devbox: 'devbox · PostgreSQL',
+		devbox: 'devbox · services up',
 	},
 	ja: {
 		intro: (runs: number, memoryRuns: number) => `${runs} 回計測した中央値です。Docker と Testcontainers のメモリは OrbStack を再起動して ${memoryRuns} 回測定しました。バーは各カード内の最大値を基準にし、短いほど値が小さくなります。`,
 		startup: '起動から最初のクエリまで',
-		startupNote: 'サーバー起動から、TCP 経由で SELECT 1 が成功するまで。',
+		startupNote: '起動コマンドから TCP SELECT 1 まで。取得時間は除外し、Devbox は初期化済みクラスタを使います。',
 		isolation: 'テストごとの複製',
 		isolationNote: 'DB を分離し、結合クエリを実行する時間の中央値。',
 		simple: 'インデックス SELECT',
@@ -46,7 +46,7 @@ const labels = {
 		pgmem: 'pgmem · Go ライブラリ',
 		docker: 'Docker · PostgreSQL 18',
 		testcontainers: 'Testcontainers · Go',
-		devbox: 'devbox · PostgreSQL',
+		devbox: 'devbox · services up',
 	},
 }[lang];
 

@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strconv"
 	"strings"
@@ -13,34 +12,22 @@ import (
 	"github.com/jackc/pgx/v5"
 )
 
-// devboxTarget runs the nix-built PostgreSQL that devbox installs. The
-// devbox environment is resolved once before timing starts, as for a test
-// suite running inside devbox shell; startup is initdb plus pg_ctl start
-// of a fresh cluster.
+// devboxTarget measures the built-in PostgreSQL service workflow. prepare
+// resolves the Devbox environment and prepares a persistent cluster before
+// timing; start measures devbox services up -b through a successful SQL probe.
 type devboxTarget struct {
 	dir     string
-	env     []string
 	dataDir string
 	port    int
 	n       int
 }
 
 func (d *devboxTarget) prepare(ctx context.Context) error {
-	path, err := run(ctx, "devbox", "run", "-q", "-c", d.dir, "--", "printenv", "PATH")
-	if err != nil {
+	// Resolve/install the environment outside the startup interval.
+	if _, err := run(ctx, "devbox", "run", "-q", "-c", d.dir, "--", "true"); err != nil {
 		return err
 	}
-	lines := strings.Split(path, "\n")
-	for _, kv := range os.Environ() {
-		if !strings.HasPrefix(kv, "PATH=") {
-			d.env = append(d.env, kv)
-		}
-	}
-	d.env = append(d.env, "PATH="+lines[len(lines)-1])
-	return nil
-}
 
-func (d *devboxTarget) start(ctx context.Context) error {
 	var err error
 	d.dataDir, err = os.MkdirTemp("", "pgbench-devbox-")
 	if err != nil {
@@ -53,45 +40,68 @@ func (d *devboxTarget) start(ctx context.Context) error {
 	d.port = ln.Addr().(*net.TCPAddr).Port
 	ln.Close()
 
-	if err := d.cmd(ctx, "initdb", "-D", filepath.Join(d.dataDir, "data"), "-U", "postgres", "--auth=trust", "-N"); err != nil {
+	if err := d.initDB(ctx); err != nil {
 		return err
 	}
-	opts := fmt.Sprintf("-p %d -k %s -c listen_addresses=127.0.0.1", d.port, d.dataDir)
-	if err := d.cmd(ctx, "pg_ctl", "-D", filepath.Join(d.dataDir, "data"), "-o", opts, "-l", filepath.Join(d.dataDir, "log"), "start"); err != nil {
+	// Devbox services expect an initialized persistent PGDATA. Create the
+	// benchmark database in an untimed service launch, then stop it so start
+	// measures a real service restart with the database already in place.
+	if err := d.servicesUp(ctx); err != nil {
 		return err
 	}
 	if err := waitReady(ctx, d.dbURL("postgres")); err != nil {
 		return err
 	}
-	return d.createApp(ctx)
+	if err := d.createApp(ctx); err != nil {
+		return err
+	}
+	return d.servicesStop(ctx)
 }
 
-func (d *devboxTarget) cmd(ctx context.Context, name string, args ...string) error {
-	p := lookPath(d.env, name)
-	if p == "" {
-		return fmt.Errorf("%s not found in the devbox PATH", name)
+func (d *devboxTarget) start(ctx context.Context) error {
+	if err := d.servicesUp(ctx); err != nil {
+		return err
 	}
-	c := exec.CommandContext(ctx, p, args...)
-	c.Env = d.env
-	out, err := c.CombinedOutput()
-	if err != nil {
-		return fmt.Errorf("%s: %v: %s", name, err, out)
-	}
-	return nil
+	return waitReady(ctx, d.url())
 }
 
-func lookPath(env []string, name string) string {
-	for _, kv := range env {
-		if strings.HasPrefix(kv, "PATH=") {
-			for _, dir := range filepath.SplitList(kv[5:]) {
-				p := filepath.Join(dir, name)
-				if st, err := os.Stat(p); err == nil && !st.IsDir() {
-					return p
-				}
-			}
-		}
+func (d *devboxTarget) initDB(ctx context.Context) error {
+	args := []string{
+		"run", "-q", "-c", d.dir,
+		"-e", "PGDATA=" + d.pgData(),
+		"-e", "PGHOST=" + d.dataDir,
+		"-e", fmt.Sprintf("PGPORT=%d", d.port),
+		"--", "initdb", "-D", d.pgData(), "-U", "postgres", "--auth=trust", "-N",
 	}
-	return ""
+	_, err := run(ctx, "devbox", args...)
+	return err
+}
+
+func (d *devboxTarget) serviceArgs(action string) []string {
+	args := []string{
+		"services", action, "-q", "-c", d.dir,
+		"-e", "PGDATA=" + d.pgData(),
+		"-e", "PGHOST=" + d.dataDir,
+		"-e", fmt.Sprintf("PGPORT=%d", d.port),
+	}
+	if action == "up" {
+		args = append(args, "-b")
+	}
+	return args
+}
+
+func (d *devboxTarget) servicesUp(ctx context.Context) error {
+	_, err := run(ctx, "devbox", d.serviceArgs("up")...)
+	return err
+}
+
+func (d *devboxTarget) servicesStop(ctx context.Context) error {
+	_, err := run(ctx, "devbox", d.serviceArgs("stop")...)
+	return err
+}
+
+func (d *devboxTarget) pgData() string {
+	return filepath.Join(d.dataDir, "data")
 }
 
 func (d *devboxTarget) dbURL(db string) string {
@@ -110,7 +120,7 @@ func (d *devboxTarget) isolate(ctx context.Context, fn func(string) error) error
 // host figure, RSS for comparison (RSS counts shared buffers once per
 // process that touched them).
 func (d *devboxTarget) mem(ctx context.Context) (memory, error) {
-	b, err := os.ReadFile(filepath.Join(d.dataDir, "data", "postmaster.pid"))
+	b, err := os.ReadFile(filepath.Join(d.pgData(), "postmaster.pid"))
 	if err != nil {
 		return memory{}, err
 	}
@@ -143,8 +153,8 @@ func (d *devboxTarget) stop(ctx context.Context) {
 	if d.dataDir == "" {
 		return
 	}
-	d.cmd(ctx, "pg_ctl", "-D", filepath.Join(d.dataDir, "data"), "-m", "immediate", "stop")
-	os.RemoveAll(d.dataDir)
+	_ = d.servicesStop(ctx)
+	_ = os.RemoveAll(d.dataDir)
 }
 
 // createApp creates the app database that docker and testcontainers get
