@@ -184,19 +184,21 @@ at run time:
 - **PyPI**: one wheel per platform tagged `py3-none-<platform>` with the
   binary at `pgmem/_bin/pgmem` (the `ruff` / `uv` layout).
   `packages/python/hatch_build.py` builds or copies it (`PGMEM_BINARY`,
-  `GOOS`/`GOARCH`).
+  `GOOS`/`GOARCH`); `scripts/build-python-wheels.sh` makes every wheel.
 - **Maven**: `jp.shibu:pgmem-native` with one classifier per platform
   (`linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64`,
-  `windows-x86_64`), extracted to `~/.cache/pgmem/<version>/` on first
-  use. `zonky embedded-postgres` uses this layout for real PostgreSQL
-  binaries. `./gradlew -Pgoos=linux -Pgoarch=amd64 build` cross-compiles.
+  `windows-x86_64`, `windows-arm64`), extracted to
+  `~/.cache/pgmem/<version>/` on first use. `zonky embedded-postgres` uses
+  this layout for real PostgreSQL binaries. `./gradlew -Pgoos=linux
+  -Pgoarch=amd64 build` cross-compiles.
 - **npm**: `@pgmem/core` lists one `@pgmem/<platform>` package per
   platform as `optionalDependencies` (the esbuild layout, with no install
   script, since pnpm, Yarn, Bun and npm 11 hold install scripts by
-  default). `scripts/build-npm.sh` cross-compiles into
-  `packages/node/platforms/<platform>/bin/`.
+  default). `scripts/build-npm.sh` copies the binaries into
+  `packages/node/platforms/<platform>/bin/` and packs every package.
 
-Cross-compiling is a plain `GOOS=linux GOARCH=amd64 go build` and the
-same for `windows/amd64`, `linux/arm64`, `darwin/arm64`. The default
-backend is generated Go with no assembly, so every `GOOS`/`GOARCH` pair
-Go supports builds; only darwin/arm64 has been exercised so far.
+`scripts/build-binaries.sh` cross-compiles all six platforms into
+`dist/<goos>-<goarch>/`; each is a plain `GOOS=linux GOARCH=amd64 go
+build`. The default backend is generated Go with no assembly, so every
+`GOOS`/`GOARCH` pair Go supports builds; only darwin/arm64 has been
+exercised so far.

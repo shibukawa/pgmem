@@ -23,7 +23,7 @@ testRuntimeOnly("org.postgresql:postgresql:42.7.7")         // your usual driver
 ```
 
 Classifiers: `linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64`,
-`windows-x86_64`. Pick one with `os-maven-plugin` or Gradle's
+`windows-x86_64`, `windows-arm64`. Pick one with `os-maven-plugin` or Gradle's
 `osdetector` if the build runs on several platforms. Without the native
 artifact, `PGMEM_BINARY` (or the `pgmem.binary` system property) points at
 a local build of `github.com/shibukawa/pgmem/cmd/pgmem`. The binary is

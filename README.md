@@ -302,6 +302,59 @@ SIMD-in-Go lever there.
 `make vet` vets and formats everything except the generated package;
 `make test` and `make bench` run the suite and the benchmarks.
 
+## Releasing
+
+Every artifact of a release carries one version, taken from a `vX.Y.Z`
+tag (the numbering is explained on the
+[versioning](https://shibukawa.github.io/pgmem/versioning/) page; the
+0.1.x releases bring the pipeline up before 1.18.0). Pushing the tag runs
+`.github/workflows/release.yml`. It cross-compiles `cmd/pgmem` for six
+platforms (`scripts/build-binaries.sh`), stamps the version into every
+manifest (`scripts/set-version.sh`), packs the archives, npm packages,
+wheels and Maven bundle (`scripts/package-archives.sh`,
+`scripts/build-npm.sh`, `scripts/build-python-wheels.sh`,
+`scripts/build-maven-bundle.sh`) and publishes them to GitHub Releases,
+npm, PyPI and Maven Central. It also fetches the tag through
+proxy.golang.org so that pkg.go.dev lists it. CI runs the same packaging
+scripts on every push with placeholder binaries and a throwaway signing
+key, and `.github/workflows/docs.yml` deploys `website/` to GitHub Pages.
+
+Rehearse on the commit you are going to tag. Nothing is published: npm
+runs `publish --dry-run`, and the Central Publisher Portal validates the
+Maven bundle, which is then dropped.
+
+```bash
+gh workflow run release.yml -f version=0.1.0
+```
+
+The registries need a one-time setup:
+
+- **PyPI**: a pending trusted publisher for the project `pgmem` (owner
+  `shibukawa`, repository `pgmem`, workflow `release.yml`, environment
+  `release`). It works before the first upload.
+- **npm**: a trusted publisher can only be added to a package that
+  exists, so the first version of the six `@pgmem/<platform>` packages
+  and of `@pgmem/core` is published by hand, with 2FA, from the tarballs
+  of a rehearsal (`gh run download <run-id> -n packages -D dist`, then
+  `npm publish dist/npm/<tarball> --access public`, `pgmem-core` last).
+  Each package then gets the trusted publisher `shibukawa/pgmem`,
+  `release.yml`, environment `release`, with direct publishing allowed
+  (package settings on npmjs.com, or `npm trust github`). The workflow
+  skips versions that are already on npm.
+- **Maven Central**: the namespace `jp.shibu` verified in the Central
+  Publisher Portal (a DNS TXT record on shibu.jp), a Portal user token as
+  `CENTRAL_USERNAME` / `CENTRAL_PASSWORD`, and an armored GPG secret key as
+  `GPG_PRIVATE_KEY` / `GPG_PASSPHRASE` whose public key is on
+  keys.openpgp.org or keyserver.ubuntu.com, all four as secrets of the
+  `release` environment.
+
+To publish a tagged version to some registries again, for instance after
+a registry-side failure, run the workflow on the tag:
+
+```bash
+gh workflow run release.yml --ref v0.1.0 -f version=0.1.0 -f registries=maven -f dry_run=false
+```
+
 ## Debugging
 
 - `Options.Log` receives the server log.
