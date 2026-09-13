@@ -16,6 +16,10 @@ const labels = {
 		startupNote: 'From server start until a TCP SELECT 1 succeeds.',
 		isolation: 'Fresh copy per test',
 		isolationNote: 'Median time to create an isolated database copy and run a join.',
+		simple: 'Indexed SELECT',
+		simpleNote: 'Warm indexed SELECT over TCP.',
+		heavy: 'Sort 200k rows',
+		heavyNote: 'Median time to sort and count 200k rows.',
 		memory: 'Backend + test-process memory',
 		memoryNote: 'After setup, before queries. Docker and Testcontainers sum container usage (PostgreSQL, plus Ryuk for Testcontainers) and benchmark-process growth. OrbStack VM changes are reported separately.',
 		download: 'Initial download footprint',
@@ -31,6 +35,10 @@ const labels = {
 		startupNote: 'サーバー起動から、TCP 経由で SELECT 1 が成功するまで。',
 		isolation: 'テストごとの複製',
 		isolationNote: 'DB を分離し、結合クエリを実行する時間の中央値。',
+		simple: 'インデックス SELECT',
+		simpleNote: 'ウォームアップ後に行う TCP 経由の検索。',
+		heavy: '20万行ソート',
+		heavyNote: '20 万行を並べ替えて数える時間の中央値。',
 		memory: 'DB と計測プロセスのメモリ',
 		memoryNote: 'スキーマ準備後、クエリ前の値です。Docker と Testcontainers はコンテナ使用量（Testcontainers は PostgreSQL と Ryuk）と計測プロセスの増分を合算します。OrbStack VM の変化は別に示します。',
 		download: '初回取得サイズ',
@@ -50,6 +58,7 @@ const groups = [
 ];
 
 const formatTime = (ms: number) => ms >= 1000 ? `${(ms / 1000).toFixed(2)} s` : `${ms.toFixed(ms < 10 ? 1 : 0)} ms`;
+const formatUs = (us: number) => `${us.toFixed(0)} µs`;
 const formatMB = (bytes: number) => `${(bytes / 1e6).toFixed(1)} MB`;
 
 const metrics = [
@@ -60,6 +69,14 @@ const metrics = [
 	{
 		id: 'isolation', title: labels.isolation, note: labels.isolationNote,
 		rows: groups.map((group) => ({ ...group, value: t[group.key].isolate_ms, display: formatTime(t[group.key].isolate_ms) })),
+	},
+	{
+		id: 'simple', title: labels.simple, note: labels.simpleNote,
+		rows: groups.map((group) => ({ ...group, value: t[group.key].simple_query_us, display: formatUs(t[group.key].simple_query_us) })),
+	},
+	{
+		id: 'heavy', title: labels.heavy, note: labels.heavyNote,
+		rows: groups.map((group) => ({ ...group, value: t[group.key].heavy_query_ms, display: formatTime(t[group.key].heavy_query_ms) })),
 	},
 	{
 		id: 'memory', title: labels.memory, note: labels.memoryNote,
@@ -80,36 +97,40 @@ const metrics = [
 
 <div class="overview" role="group" aria-label={lang === 'ja' ? 'ベンチマークの比較グラフ' : 'Benchmark comparison charts'}>
 	<p class="intro">{labels.intro(t.pgmem.runs, t.docker.mem_runs)}</p>
-	{metrics.map((metric) => {
-		const maxValue = Math.max(...metric.rows.map((row) => row.value));
-		return (
-			<section class="metric-card" aria-labelledby={`metric-${metric.id}`}>
-				<h3 id={`metric-${metric.id}`}>{metric.title}</h3>
-				<p class="note">{metric.note}</p>
-				<ul>
-					{metric.rows.map((row) => (
-						<li>
-							<div class="row-label"><span>{row.name}</span><strong>{row.display}</strong></div>
-							<div class="track" aria-hidden="true">
-								<span class="bar" style={`--bar-color:${row.color};width:${(row.value / maxValue) * 100}%`}></span>
-							</div>
-						</li>
-					))}
-				</ul>
-			</section>
-		);
-	})}
+	<div class="metric-grid">
+		{metrics.map((metric) => {
+			const maxValue = Math.max(...metric.rows.map((row) => row.value));
+			return (
+				<section class="metric-card" aria-labelledby={`metric-${metric.id}`}>
+					<h3 id={`metric-${metric.id}`}>{metric.title}</h3>
+					<p class="note">{metric.note}</p>
+					<ul>
+						{metric.rows.map((row) => (
+							<li>
+								<div class="row-label"><span>{row.name}</span><strong>{row.display}</strong></div>
+								<div class="track" aria-hidden="true">
+									<span class="bar" style={`--bar-color:${row.color};width:${(row.value / maxValue) * 100}%`}></span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</section>
+			);
+		})}
+	</div>
 </div>
 
 <style>
-	.overview { margin: 1.25rem 0 2rem; }
+	.overview { container-type: inline-size; margin: 1.25rem 0 2rem; }
+	.metric-grid { display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 	.intro { color: var(--sl-color-gray-2); margin: 0 0 1rem; }
 	.metric-card {
 		background: var(--sl-color-gray-6);
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 14px;
-		margin: 1.25rem 0;
-		padding: 1rem 1.25rem 0.75rem;
+		margin: 0;
+		min-width: 0;
+		padding: 1rem 1rem 0.75rem;
 	}
 	.metric-card h3 { font-size: 1.1rem; margin: 0 0 0.35rem; }
 	.note { color: var(--sl-color-gray-2); font-size: var(--sl-text-sm); line-height: 1.55; margin: 0 0 0.9rem; }
@@ -120,6 +141,12 @@ const metrics = [
 	.row-label strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
 	.track { background: var(--sl-color-gray-5); border-radius: 999px; height: 0.55rem; margin-top: 0.3rem; overflow: hidden; }
 	.bar { background: var(--bar-color); border-radius: inherit; display: block; height: 100%; min-width: 0.25rem; }
+	@container (max-width: 56rem) {
+		.metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	}
+	@container (max-width: 34rem) {
+		.metric-grid { grid-template-columns: 1fr; }
+	}
 	@media (max-width: 480px) {
 		.metric-card { padding-inline: 0.9rem; }
 		.row-label { align-items: flex-start; font-size: var(--sl-text-sm); }
