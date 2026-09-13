@@ -93,9 +93,10 @@ The same prepare-once, fork-per-test workflow is available without Go:
 - **Python**: `pip install pgmem` and use the `pgmem_dsn` pytest fixture
   (override `pgmem_snapshot` to run migrations). See
   [packages/python](packages/python/README.md).
-- **Java**: `jp.shibu:pgmem-junit5` injects a fresh `Fork` or `DataSource`
-  into every test method, plus `jp.shibu:pgmem-native` with your
-  platform's classifier. See [packages/java](packages/java/README.md).
+- **Java**: `io.github.shibukawa.pgmem:pgmem-junit5` injects a fresh
+  `Fork` or `DataSource` into every test method, plus
+  `io.github.shibukawa.pgmem:pgmem-native` with your platform's
+  classifier. See [packages/java](packages/java/README.md).
 - **Node.js**: `@pgmem/core` gives every test file its own copy through
   `DATABASE_URL` (a Vitest setup file, a Jest environment, `node --test
   --import`) and resets it in place between tests, so Prisma, Drizzle and
@@ -341,12 +342,13 @@ The registries need a one-time setup:
   `release.yml`, environment `release`, with direct publishing allowed
   (package settings on npmjs.com, or `npm trust github`). The workflow
   skips versions that are already on npm.
-- **Maven Central**: the namespace `jp.shibu` verified in the Central
-  Publisher Portal (a DNS TXT record on shibu.jp), a Portal user token as
-  `CENTRAL_USERNAME` / `CENTRAL_PASSWORD`, and an armored GPG secret key as
-  `GPG_PRIVATE_KEY` / `GPG_PASSPHRASE` whose public key is on
-  keys.openpgp.org or keyserver.ubuntu.com, all four as secrets of the
-  `release` environment.
+- **Maven Central**: the namespace `io.github.shibukawa`, which the
+  Central Publisher Portal verifies when you sign in with the GitHub
+  account `shibukawa` (the artifacts are `io.github.shibukawa.pgmem:*`),
+  a Portal user token as `CENTRAL_USERNAME` / `CENTRAL_PASSWORD`, and an
+  armored GPG secret key as `GPG_PRIVATE_KEY` / `GPG_PASSPHRASE` whose
+  public key is on keys.openpgp.org or keyserver.ubuntu.com, all four as
+  secrets of the `release` environment.
 
 To publish a tagged version to some registries again, for instance after
 a registry-side failure, run the workflow on the tag:

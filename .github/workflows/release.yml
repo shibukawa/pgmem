@@ -7,7 +7,7 @@ name: Release
 #   - npm: the @pgmem/<platform> packages, then @pgmem/core, by trusted
 #     publishing (OIDC, no token)
 #   - PyPI: the pgmem platform wheels, by trusted publishing
-#   - Maven Central: jp.shibu:pgmem, pgmem-junit5 and pgmem-native through the
+#   - Maven Central: io.github.shibukawa.pgmem:pgmem, pgmem-junit5 and pgmem-native through the
 #     Central Publisher Portal, with the CENTRAL_USERNAME / CENTRAL_PASSWORD
 #     and GPG_PRIVATE_KEY / GPG_PASSPHRASE secrets of the release environment
 #   - Go: fetches the tag through proxy.golang.org so that pkg.go.dev lists it
@@ -138,7 +138,7 @@ jobs:
       - name: npm tarballs
         run: scripts/build-npm.sh
 
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.1.0
         with:
           enable-cache: false
       - name: Wheels
@@ -265,8 +265,8 @@ jobs:
         env:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
-          if curl -sfI "https://repo1.maven.org/maven2/jp/shibu/pgmem/$VERSION/pgmem-$VERSION.pom" > /dev/null; then
-            echo "jp.shibu:pgmem:$VERSION is already on Maven Central, skipping"
+          if curl -sfI "https://repo1.maven.org/maven2/io/github/shibukawa/pgmem/pgmem/$VERSION/pgmem-$VERSION.pom" > /dev/null; then
+            echo "io.github.shibukawa.pgmem:pgmem:$VERSION is already on Maven Central, skipping"
             echo "published=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Build and sign the bundle

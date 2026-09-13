@@ -11,8 +11,9 @@ Ready-made wrappers live in this repository:
 - [`packages/python`](../packages/python/README.md): PyPI package `pgmem`
   with a pytest plugin (`pgmem_dsn` fixture).
 - [`packages/java`](../packages/java/README.md): Maven artifacts
-  `jp.shibu:pgmem` (client), `jp.shibu:pgmem-junit5` (extension) and
-  `jp.shibu:pgmem-native` (binary per platform classifier).
+  `io.github.shibukawa.pgmem:pgmem` (client),
+  `io.github.shibukawa.pgmem:pgmem-junit5` (extension) and
+  `io.github.shibukawa.pgmem:pgmem-native` (binary per platform classifier).
 - [`packages/node`](../packages/node/core/README.md): npm package
   `@pgmem/core` with a Vitest/node:test setup entry
   (`@pgmem/core/register`) and a Jest environment.
@@ -185,9 +186,9 @@ at run time:
   binary at `pgmem/_bin/pgmem` (the `ruff` / `uv` layout).
   `packages/python/hatch_build.py` builds or copies it (`PGMEM_BINARY`,
   `GOOS`/`GOARCH`); `scripts/build-python-wheels.sh` makes every wheel.
-- **Maven**: `jp.shibu:pgmem-native` with one classifier per platform
-  (`linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64`,
-  `windows-x86_64`, `windows-arm64`), extracted to
+- **Maven**: `io.github.shibukawa.pgmem:pgmem-native` with one classifier
+  per platform (`linux-x86_64`, `linux-arm64`, `darwin-x86_64`,
+  `darwin-arm64`, `windows-x86_64`, `windows-arm64`), extracted to
   `~/.cache/pgmem/<version>/` on first use. `zonky embedded-postgres` uses
   this layout for real PostgreSQL binaries. `./gradlew -Pgoos=linux
   -Pgoarch=amd64 build` cross-compiles.

@@ -16,7 +16,7 @@ fun hostGoarch(): String = when (System.getProperty("os.arch").lowercase(Locale.
 }
 val goos: String = (findProperty("goos") as String?) ?: hostGoos()
 val goarch: String = (findProperty("goarch") as String?) ?: hostGoarch()
-// Classifier as jp.shibu.pgmem.BinaryLocator computes it from os.name/os.arch.
+// Classifier as io.github.shibukawa.pgmem.BinaryLocator computes it from os.name/os.arch.
 val nativeClassifier: String = "$goos-" + (if (goarch == "amd64") "x86_64" else "arm64")
 val binaryName: String = if (goos == "windows") "pgmem.exe" else "pgmem"
 val nativeDir: Provider<Directory> = layout.buildDirectory.dir("native/$nativeClassifier")
@@ -49,7 +49,7 @@ val buildBinary by tasks.registering(Exec::class) {
 
 // The version is in gradle.properties, where scripts/set-version.sh stamps it.
 allprojects {
-    group = "jp.shibu"
+    group = "io.github.shibukawa.pgmem"
     repositories { mavenCentral() }
 }
 

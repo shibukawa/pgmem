@@ -4,7 +4,7 @@ val nativeClassifier: String by rootProject.extra
 val binaryName: String by rootProject.extra
 val nativeDir: Provider<Directory> by rootProject.extra
 
-// Go target -> classifier, as jp.shibu.pgmem.BinaryLocator computes it.
+// Go target -> classifier, as io.github.shibukawa.pgmem.BinaryLocator computes it.
 val platforms = mapOf(
     "darwin-amd64" to "darwin-x86_64",
     "darwin-arm64" to "darwin-arm64",
@@ -24,7 +24,7 @@ val nativeJars: List<TaskProvider<Jar>> = if (nativeDist == null) {
         archiveClassifier.set(nativeClassifier)
         from(nativeDir) {
             include(binaryName)
-            into("jp/shibu/pgmem/native/$nativeClassifier")
+            into("io/github/shibukawa/pgmem/native/$nativeClassifier")
         }
     }
     listOf(tasks.jar)
@@ -33,7 +33,7 @@ val nativeJars: List<TaskProvider<Jar>> = if (nativeDist == null) {
         val binary = file("$nativeDist/$target/" + if (target.startsWith("windows-")) "pgmem.exe" else "pgmem")
         tasks.register<Jar>("nativeJar-$classifier") {
             archiveClassifier.set(classifier)
-            from(binary) { into("jp/shibu/pgmem/native/$classifier") }
+            from(binary) { into("io/github/shibukawa/pgmem/native/$classifier") }
             doFirst { check(binary.isFile) { "missing $binary: run scripts/build-binaries.sh" } }
         }
     }
