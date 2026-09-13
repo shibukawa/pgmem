@@ -2,8 +2,8 @@
 # Uploads a bundle made by scripts/build-maven-bundle.sh to the Central
 # Publisher Portal and waits for the outcome. CENTRAL_USERNAME and
 # CENTRAL_PASSWORD are a Portal user token. --validate-only stops after the
-# Portal's checks (namespace, POM, signatures) and drops the deployment, so
-# nothing is published.
+# Portal's checks (namespace, POM, signatures) and drops the deployment
+# whether it passed or failed, so nothing is published or left behind.
 #
 #   scripts/publish-maven-central.sh dist/maven/pgmem-0.1.0-bundle.zip
 #   scripts/publish-maven-central.sh --validate-only dist/maven/pgmem-0.1.0-bundle.zip
@@ -43,6 +43,10 @@ while :; do
       fi ;;
     FAILED)
       printf '%s\n' "$status" | python3 -m json.tool
+      if $validate_only; then
+        curl --fail-with-body -sS -X DELETE -H "$auth" "$api/deployment/$id"
+        echo "deployment dropped"
+      fi
       exit 1 ;;
   esac
   if [ $SECONDS -ge $deadline ]; then

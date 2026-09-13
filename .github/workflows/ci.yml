@@ -51,7 +51,7 @@ jobs:
         working-directory: packages/node/core
         run: npm test
 
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.1.0
       - name: Python
         working-directory: packages/python
         run: uv run pytest -q
@@ -97,7 +97,7 @@ jobs:
             fi
           done
 
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.1.0
       - name: Wheels
         run: |
           scripts/build-python-wheels.sh

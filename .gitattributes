@@ -1,0 +1,3 @@
+# The regression suites compare psql output line by line, so their files keep
+# LF in a Windows checkout too (core.autocrlf would add a CR to every line).
+testdata/** -text
