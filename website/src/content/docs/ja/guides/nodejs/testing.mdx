@@ -1,21 +1,17 @@
 ---
-title: Vitest、Jest、node:test への組み込み
+title: Vitest、Jest、node:test、Bun への組み込み
 description: Node.js のテストで pgmem を使う 3 つの形。テストファイルごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのリセットかフォーク。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="プレビュー">
-Node.js パッケージは開発中です。このページの API は合意済みの設計に沿っていますが、最初のリリースまでに変わる可能性があります。
-</Aside>
-
-Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そしてたいていのアプリケーションは、データベースクライアントを作るときに一度だけ `DATABASE_URL` を読みます。pgmem はこの形に合わせてあります。実行全体で pgmem プロセスを 1 つ、テストファイルごとにフォークを 1 つ用意してモジュールの読み込み前に `DATABASE_URL` として渡し、テストごとにリセットします。
+Node.js のテストランナーはテストファイルごとに新しいワーカーやモジュールコンテキストで読み込みます。そして ORM のクライアントは、作られたときに一度だけ `DATABASE_URL` を読みます。pgmem はこの形に合わせてあります。実行全体で pgmem プロセスを 1 つ、テストファイルごとにフォークを 1 つ用意してファイルの import 前に `DATABASE_URL` として渡し、テストの間はその場でリセットします。テストケースごとに `DATABASE_URL` を書き換えても、クライアントはもう URL を持っているので効きません。
 
 | 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
 |---|---|---|---|
 | テストファイルごとに新しいサーバー | ファイルごと | プロセス起動とマイグレーション | 独自のスキーマが必要なファイル |
 | 準備済みデータベースを共有 | 実行ごとに一度 | なし | 読むだけのテスト |
-| テストごとにリセットかフォーク | 実行ごとに一度 | リセットかフォーク 1 回、数ミリ秒 | 書き込むテスト |
+| テストごとにリセットかフォーク | 実行ごとに一度 | リセットかフォーク 1 回、約 15 ms | 書き込むテスト |
 
 ## テストファイルごとに新しいサーバー
 
@@ -28,7 +24,8 @@ let server: PgmemServer;
 beforeAll(async () => {
   server = await PgmemServer.start({
     database: 'app',
-    prepare: async ({ url }) => applySchemaV2(url),
+    control: false,
+    prepare: ({ url }) => applySchemaV2(url),
   });
 });
 
@@ -41,23 +38,27 @@ test('新しいカラムを読める', async () => {
 
 ## 実行全体で一度だけ準備する
 
-ランナーのグローバルセットアップでサーバーを起動します。`PgmemServer.start()` は `PGMEM_CONTROL` を環境変数に書き出し、テストワーカーはそれを手がかりにプロセスを見つけます。
+ランナーのグローバルセットアップでサーバーを起動し、`server.env()` を環境変数に書き出します。中身は `PGMEM_CONTROL` と `PGMEM_SNAPSHOT` で、テストプロセスはこれを使ってサーバーとスナップショットにたどり着きます。
 
 <Tabs syncKey="node-runner">
 <TabItem label="Vitest">
 
 ```ts title="test/global-setup.ts"
+import { execFileSync } from 'node:child_process';
 import { PgmemServer } from '@pgmem/core';
 
-export default async function setup() {
-  const server = await PgmemServer.start({
+export async function setup() {
+  const pg = await PgmemServer.start({
     database: 'app',
-    prepare: async ({ url }) => {
-      await migrate(url);
-      await seed(url);
+    prepare({ url }) {
+      execFileSync('npx', ['prisma', 'migrate', 'deploy'], {
+        stdio: 'inherit',
+        env: { ...process.env, DATABASE_URL: url },
+      });
     },
   });
-  return () => server.close();
+  Object.assign(process.env, pg.env());
+  return () => pg.close();
 }
 ```
 
@@ -75,59 +76,84 @@ export default defineConfig({
 </TabItem>
 <TabItem label="Jest">
 
-```ts title="test/global-setup.ts"
-import { PgmemServer } from '@pgmem/core';
-
-export default async function setup() {
-  globalThis.__pgmem = await PgmemServer.start({
-    database: 'app',
-    prepare: async ({ url }) => migrate(url),
-  });
-}
-```
-
 ```js title="jest.config.js"
 module.exports = {
-  globalSetup: './test/global-setup.ts',
-  globalTeardown: './test/global-teardown.ts', // await globalThis.__pgmem.close()
+  globalSetup: './test/global-setup.js',
+  globalTeardown: './test/global-teardown.js',
   testEnvironment: '@pgmem/core/jest-environment',
 };
 ```
 
+```js title="test/global-setup.js"
+const { PgmemServer } = require('@pgmem/core');
+
+module.exports = async () => {
+  globalThis.pgmem = await PgmemServer.start({ database: 'app', prepare: ({ url }) => migrate(url) });
+  Object.assign(process.env, globalThis.pgmem.env());
+};
+```
+
+```js title="test/global-teardown.js"
+module.exports = () => globalThis.pgmem.close();
+```
+
+この環境は Jest のワーカーごとにフォークを 1 つ用意し、そのワーカーが実行するテストファイルの合間にリセットします。Jest がインストールする `jest-environment-node` が必要です。
+
 </TabItem>
 <TabItem label="node:test">
 
-```ts title="test/setup.ts"
+```js title="test/global-setup.mjs"
 import { PgmemServer } from '@pgmem/core';
-import { after, before } from 'node:test';
 
-let server: PgmemServer;
-before(async () => {
-  server = await PgmemServer.start({ database: 'app', prepare: async ({ url }) => migrate(url) });
-});
-after(() => server.close());
+let pg;
+export async function globalSetup() {
+  pg = await PgmemServer.start({ database: 'app', prepare: ({ url }) => migrate(url) });
+  Object.assign(process.env, pg.env());
+}
+export async function globalTeardown() {
+  await pg.close();
+}
 ```
 
 ```sh
-node --test --import ./test/setup.ts --import @pgmem/core/register
+node --test --test-global-setup=./test/global-setup.mjs --import @pgmem/core/register
 ```
+
+グローバルセットアップには Node.js 24 以降が必要です。テストファイルはそれぞれ別プロセスで動くので、`--import` で各ファイルにフォークが渡ります。
+
+</TabItem>
+<TabItem label="Bun">
+
+```js title="test/run.mjs"
+import { spawnSync } from 'node:child_process';
+import { PgmemServer } from '@pgmem/core';
+
+const pg = await PgmemServer.start({ database: 'app', prepare: ({ url }) => migrate(url) });
+const run = spawnSync('bun', ['test', '--isolate', '--preload', '@pgmem/core/register'], {
+  stdio: 'inherit',
+  env: { ...process.env, ...pg.env() },
+});
+await pg.close();
+process.exit(run.status ?? 1);
+```
+
+`bun test` にはグローバルセットアップがなく、既定では 1 つのプロセスを共有します。そこで小さなスクリプトで pgmem を起動し、`--isolate` を付けてテストを走らせます。
 
 </TabItem>
 </Tabs>
 
-register エントリはテストファイルごとにスナップショットをフォークし、そのファイルの import が走る前にフォークの URL を `DATABASE_URL` に書き込みます。import 時に環境変数を読むアプリケーションのコードも、そのファイル専用の複製に接続します。
+`@pgmem/core/register` はスナップショットをフォークし、テストファイルの import が走る前にフォークの URL を `DATABASE_URL` に書き込みます。import 時にクライアントを作るアプリケーションのコードも、そのファイル専用の複製に接続します。テストファイルは並列に、それぞれ自分のフォークで走ります。別の環境変数名に書き込みたいときは `PGMEM_ENV` を設定してください。
 
 ## 読み取り専用のテストで準備済みデータベースを共有する
 
 同じファイルのテストは、そのファイルのフォークを共有します。読むだけのテストしかないファイルなら、ほかに何も要りません。
 
 ```ts
-import { db } from '../src/db'; // process.env.DATABASE_URL から作られる
 import { expect, test } from 'vitest';
+import { prisma } from '../src/db'; // process.env.DATABASE_URL から作られる
 
-test('注文を数える', async () => {
-  const [{ count }] = await db.execute('SELECT count(*) FROM orders');
-  expect(Number(count)).toBe(10_000);
+test('ユーザーを数える', async () => {
+  expect(await prisma.user.count()).toBe(0);
 });
 ```
 
@@ -137,44 +163,94 @@ test('注文を数える', async () => {
 
 ## 書き込むテストにはテストごとのリセットかフォーク
 
-`reset()` はファイルのフォークをスナップショットの状態に戻します。ポートもクライアントの接続もそのまま残るので、import 時に作ったプールも使い続けられます。
+`reset()` はファイルのフォークをその場でスナップショットの状態に戻します。URL もクライアントのプール接続もそのまま使え、プール接続のプリペアドステートメントも残ります。
 
-```ts
+<Tabs syncKey="node-runner">
+<TabItem label="Vitest">
+
+```ts title="test/reset.ts"
+import { beforeEach } from 'vitest';
 import { currentFork } from '@pgmem/core';
-import { beforeEach, expect, test } from 'vitest';
 
 beforeEach(() => currentFork().reset());
+```
 
-test('注文をキャンセルする', async () => {
-  await cancelOrder(1);
-  // リポジトリやクエリで検証する
+```ts title="vitest.config.ts"
+setupFiles: ['@pgmem/core/register', './test/reset.ts'],
+```
+
+</TabItem>
+<TabItem label="Jest">
+
+```js title="test/reset.js"
+const { currentFork } = require('@pgmem/core');
+
+beforeEach(() => currentFork().reset());
+```
+
+```js title="jest.config.js"
+setupFilesAfterEnv: ['./test/reset.js'],
+```
+
+</TabItem>
+<TabItem label="node:test">
+
+```js
+import { beforeEach } from 'node:test';
+import { currentFork } from '@pgmem/core';
+
+beforeEach(() => currentFork().reset());
+```
+
+</TabItem>
+</Tabs>
+
+```ts title="test/users.test.ts"
+import { expect, test } from 'vitest';
+import { prisma } from '../src/db';
+import { signUp } from '../src/blog';
+
+test('サインアップ', async () => {
+  await signUp('alice@example.com');
+  expect(await prisma.user.count()).toBe(1);
 });
 
-test('元の注文がまだ見える', async () => {
-  // 前のテストのキャンセルは消えている
+test('次のテストは空のデータベースから始まる', async () => {
+  expect(await prisma.user.count()).toBe(0);
 });
 ```
 
-同時に走るテストは 1 つのフォークを共有できません。`withFork` でそれぞれに専用のフォークを渡し、URL を受け取れるコードに渡します。
+**`beforeAll` でシードし、そこへ戻す。** ファイル単位のシードの後でフォークのスナップショットを取り、実行全体のスナップショットではなくそちらへリセットします。
 
 ```ts
-import { connect } from '@pgmem/core';
+import { beforeAll, beforeEach } from 'vitest';
+import { currentFork, type PgmemSnapshot } from '@pgmem/core';
+
+let seeded: PgmemSnapshot;
+beforeAll(async () => {
+  await seedOrders(process.env.DATABASE_URL!);
+  seeded = await currentFork().snapshot();
+});
+beforeEach(() => currentFork().reset({ snapshot: seeded }));
+```
+
+**同時に走るテスト**は 1 つのフォークを共有できません。`withFork` でそれぞれに専用のフォークを渡し、URL を受け取れるコードに渡します。
+
+```ts
+import { withFork } from '@pgmem/core';
 import { test } from 'vitest';
 
-const pgmem = connect(); // PGMEM_CONTROL を読む
-
 test.concurrent('ファイルを取り込む', async () => {
-  await pgmem.withFork(async (fork) => {
+  await withFork(async (fork) => {
     const app = createApp({ databaseUrl: fork.url });
     await app.importCsv('fixtures/orders.csv');
   });
 });
 ```
 
-## 並列実行
+## 知っておきたいこと
 
-ワーカーはそれぞれ自分のフォークを持ち、フォーク同士は独立しているので、並列に走るファイルが干渉することはありません。生きているフォークの数は pgmem プロセスが制限し、上限に達するとフォークの要求は待ちます。
-
-<Aside>
-フォーク 1 つは PostgreSQL の 1 セッションです。コネクションプールは使えますが、同じフォークへの接続はトランザクション境界で直列になります。フォークが閉じる前にプールを閉じてください。そうしないと、クライアントが切断された接続のログを出します。
-</Aside>
+- **フォーク 1 つは PostgreSQL の 1 セッション**で、トランザクションモードのプーラーと同じように全接続で共有します。プールは使えますが、`SET`、一時テーブル、アドバイザリーロックは共有されるので `SET LOCAL` を使ってください。
+- **トランザクションのコールバックの中ではトランザクションのハンドルでクエリを投げてください。** 別のプール接続で投げると、そのトランザクションが終わるまで待つことになります。pgmem はその待ちを `waitTimeoutMs`（既定 2 秒）後に SQLSTATE 55P03 で打ち切り、両方の接続を示すメッセージを返します。
+- **`reset` は開いているトランザクションを待ち**、`timeoutMs`（既定 5 秒）を過ぎると `busy` で失敗します。
+- **`@pgmem/core/register`、`fork()`、`withFork()` で作ったフォークは作ったプロセスのもの**で、そのプロセスが終わると閉じます。

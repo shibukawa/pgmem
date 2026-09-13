@@ -146,8 +146,8 @@ call_command("migrate", interactive=False)
 </TabItem>
 </Tabs>
 
-<Aside type="caution">
-Django's own test runner creates a `test_<name>` database and connects to it, which pgmem does not serve. Apply migrations to the template yourself and run tests against the forked DSN instead of relying on the runner's database creation.
+<Aside>
+Django's own test runner creates a `test_<name>` database and connects to it. A pgmem server serves every database it has, so that path is open, but it has not been tested with Django, and the runner then migrates for every run. Applying migrations to the template and giving tests forked DSNs is the faster route.
 </Aside>
 
 ## Seed data

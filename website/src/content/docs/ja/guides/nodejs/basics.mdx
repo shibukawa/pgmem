@@ -1,15 +1,11 @@
 ---
 title: Node.js の基本
-description: "@pgmem/core を PostgreSQL クライアントと一緒にインストールし、サーバーを起動して、Prisma、Drizzle、生 SQL でマイグレーションし、シードを入れ、node-postgres や postgres.js で接続する。"
+description: "@pgmem/core を PostgreSQL クライアントと一緒にインストールし、サーバーを起動して、Prisma、Drizzle、生 SQL でマイグレーションし、シードを入れ、node-postgres、postgres.js、Drizzle、Prisma で接続する。"
 ---
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="プレビュー">
-Node.js パッケージは開発中です。このページの API は合意済みの設計に沿っていますが、最初のリリースまでに変わる可能性があります。
-</Aside>
-
-`@pgmem/core` は pgmem バイナリを起動し、`DATABASE_URL` を渡してくれます。バイナリは npm がオプション依存としてインストールするプラットフォーム別パッケージに入っています。postinstall スクリプトはなく、実行時のダウンロードもありません。pgmem は PostgreSQL クライアントや ORM を置き換えるものではありません。それらはほかのサーバーと同じように URL へ接続するだけです。
+`@pgmem/core` は pgmem バイナリを起動し、PostgreSQL の URL を渡してくれます。バイナリは npm がオプション依存としてインストールするプラットフォーム別パッケージに入っています。postinstall スクリプトはなく、実行時のダウンロードもありません。pgmem は PostgreSQL クライアントや ORM を置き換えるものではありません。Prisma、Drizzle、TypeORM、Kysely、`pg`、`postgres` は、ほかのサーバーと同じように URL へ接続するだけで、プールもそのまま使えます。
 
 ## インストール
 
@@ -46,20 +42,20 @@ bun add --dev @pgmem/core pg
 </TabItem>
 </Tabs>
 
-`pg` は [node-postgres](https://node-postgres.com) です。[postgres.js](https://github.com/porsager/postgres)（`postgres`）、Prisma、Drizzle、TypeORM も同じように使えるので、アプリケーションで使っているものを入れてください。
+`pg` は [node-postgres](https://node-postgres.com) です。[postgres.js](https://github.com/porsager/postgres)、Prisma、Drizzle、TypeORM も同じように使えるので、アプリケーションで使っているものを入れてください。Node.js 20 以降が必要です。バイナリのパッケージは Linux と macOS の x64・arm64、Windows の x64・arm64 向けにあります。それ以外の環境では `PGMEM_BINARY` で `cmd/pgmem` のビルドを指定してください。
 
 ## 基本の流れ
 
 <Steps>
 
-1. **サーバーを起動します。** `PgmemServer.start()` はバイナリを起動し、テンプレートに対して `prepare` を実行し、その結果をスナップショットにします。フォークはそこから始まります。
+1. **サーバーを起動します。** `PgmemServer.start()` はバイナリを起動し、テンプレートのデータベースに対して `prepare` を実行し、その結果をスナップショットにします。フォークはそこから始まります。
 
    ```ts
    import { PgmemServer } from '@pgmem/core';
 
    await using server = await PgmemServer.start({
      database: 'app',
-     prepare: async ({ url }) => {
+     async prepare({ url }) {
        await migrate(url);
        await seed(url);
      },
@@ -68,11 +64,11 @@ bun add --dev @pgmem/core pg
    console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
    ```
 
-   `await using` はスコープの終わりでサーバーを閉じます。明示的なリソース管理が使えない環境では `server.close()` を自分で呼んでください。
+   `await using` はスコープの終わりでサーバーを閉じます。明示的なリソース管理が使えない環境では `server.close()` を自分で呼んでください。ほかのオプションは `user`、`params`（`{ log_statement: 'all' }` のような postgres の設定のオブジェクト）、`maxForks`、`waitTimeoutMs`、`log`、`binary` です。
 
-2. **スキーマを登録します。** `prepare` の中で行います。[マイグレーションツール](#マイグレーションツール)を参照してください。
+2. **スキーマを登録します。** `prepare` の中で行います。`prepare` にはテンプレートのサーバー（`url`、`host`、`port`、`user`、`database`）が渡されます。[マイグレーションツール](#マイグレーションツール)を参照してください。
 
-3. **シードデータを入れます。** これも `prepare` の中です。[シードデータ](#シードデータ)を参照してください。
+3. **シードデータを入れます。** これも `prepare` の中です。[シードデータ](#シードデータ)を参照してください。スナップショットは開いているトランザクションを待つので、`prepare` で開いた接続はすべて閉じるかコミットしてください。
 
 4. **公式クライアントから使います。**
 
@@ -109,17 +105,20 @@ bun add --dev @pgmem/core pg
    ```
 
    </TabItem>
-   <TabItem label="Prisma">
+   <TabItem label="Prisma 7">
 
    ```ts
-   import { PrismaClient } from '@prisma/client';
+   import { PrismaPg } from '@prisma/adapter-pg';
+   import { PrismaClient } from '../generated/prisma/client';
 
-   const prisma = new PrismaClient({ datasourceUrl: server.url });
+   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: server.url }) });
    const user = await prisma.user.findUnique({ where: { id: 1 } });
    ```
 
    </TabItem>
    </Tabs>
+
+   URL の `sslmode=disable` は残してください。`pg` は `prefer` と `require` を「TLS 必須」と扱いますが、pgmem には TLS がありません。
 
 </Steps>
 
@@ -152,11 +151,14 @@ import { execFileSync } from 'node:child_process';
 
 function migrate(url: string) {
   execFileSync('npx', ['prisma', 'migrate', 'deploy'], {
-    env: { ...process.env, DATABASE_URL: url },
     stdio: 'inherit',
+    env: { ...process.env, DATABASE_URL: url },
+    shell: process.platform === 'win32',
   });
 }
 ```
+
+`prisma.config.ts` では環境変数から URL を読みます：`datasource: { url: process.env.DATABASE_URL ?? '' }`。`prisma db push` も同じように使えます。
 
 </TabItem>
 <TabItem label="Drizzle">
@@ -167,7 +169,7 @@ import { migrate as drizzleMigrate } from 'drizzle-orm/node-postgres/migrator';
 
 async function migrate(url: string) {
   const db = drizzle(url);
-  await drizzleMigrate(db, { migrationsFolder: './drizzle' });
+  await drizzleMigrate(db, { migrationsFolder: 'drizzle' });
   await db.$client.end();
 }
 ```
@@ -179,8 +181,7 @@ async function migrate(url: string) {
 import { DataSource } from 'typeorm';
 
 async function migrate(url: string) {
-  const ds = new DataSource({ type: 'postgres', url, migrations: ['src/migrations/*.ts'] });
-  await ds.initialize();
+  const ds = await new DataSource({ ...options, url }).initialize();
   await ds.runMigrations();
   await ds.destroy();
 }
@@ -202,9 +203,30 @@ async function migrate(url: string) {
 </TabItem>
 </Tabs>
 
-<Aside type="caution">
-`prisma migrate deploy` は動きます。`prisma migrate dev` はシャドウデータベースを作って接続しますが、pgmem のサーバーはまだそれを提供しません。マイグレーションの生成は開発用データベースで行い、テストでは `migrate deploy` で適用してください。
-</Aside>
+### `prisma migrate dev` でマイグレーションを作る
+
+`prisma migrate dev` にはシャドウデータベースが必要です。pgmem のサーバーは持っているすべてのデータベースに接続できるので、Prisma は同じメモリ上のサーバーにシャドウデータベースを作ります。ローカルに PostgreSQL がなくてもマイグレーションを作れます。
+
+```js title="scripts/migrate-dev.mjs"
+import { spawnSync } from 'node:child_process';
+import { PgmemServer } from '@pgmem/core';
+
+const server = await PgmemServer.start({ database: 'app', control: false });
+try {
+  const run = spawnSync('npx', ['prisma', 'migrate', 'dev', ...process.argv.slice(2)], {
+    stdio: 'inherit',
+    env: { ...process.env, DATABASE_URL: server.url },
+    shell: process.platform === 'win32',
+  });
+  process.exitCode = run.status ?? 1;
+} finally {
+  await server.close();
+}
+```
+
+```sh
+node scripts/migrate-dev.mjs --name add_posts
+```
 
 ## シードデータ
 
@@ -220,8 +242,9 @@ await client.query(await readFile('seed.sql', 'utf8'));
 
 ```ts
 execFileSync('npx', ['prisma', 'db', 'seed'], {
-  env: { ...process.env, DATABASE_URL: url },
   stdio: 'inherit',
+  env: { ...process.env, DATABASE_URL: url },
+  shell: process.platform === 'win32',
 });
 ```
 
@@ -234,6 +257,7 @@ await db.insert(users).values([
   { id: 1, name: 'Frank', email: 'frank@example.com' },
   { id: 2, name: 'Grace', email: 'grace@example.com' },
 ]);
+await db.$client.end();
 ```
 
 </TabItem>
@@ -242,17 +266,16 @@ await db.insert(users).values([
 ## フォークを直接使う
 
 ```ts
-const fork = await server.fork();     // 準備済みデータベースの専用の複製
-try {
-  await useDatabase(fork.url);
-} finally {
-  await fork.close();
-}
+await using fork = await server.fork();   // 準備済みデータベースの専用の複製
+await useDatabase(fork.url);
 
 // pgmem に閉じてもらう書き方
 await server.withFork(async (fork) => {
   await useDatabase(fork.url);
 });
+
+// URL を変えずにフォークをスナップショットの状態に戻す
+await fork.reset();
 ```
 
-フォークを閉じる前にプールを閉じてください。[次のページ](../testing/)では、テストランナーからの使い方を紹介します。
+生きているフォークが `maxForks` 個あると、次のフォークは空きが出るまで待ちます。フォークを閉じても、アイドル状態のプール接続はプールに任されます。`error` リスナーのないプールでもプロセスが落ちることはありません。[次のページ](../testing/)では、テストランナーからの使い方を紹介します。

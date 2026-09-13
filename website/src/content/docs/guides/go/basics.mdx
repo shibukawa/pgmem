@@ -33,7 +33,7 @@ The first build compiles about 110 MB of generated Go and takes around a minute.
    fmt.Println(s.DSN()) // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
    ```
 
-   `Options` also takes `User`, `Port` (0 picks a free port), `Params` for `postgres -c` settings, and `Log` for the server log.
+   `Options` also takes `User`, `Port` (0 picks a free port), `Params` for `postgres -c` settings, `Log` for the server log, and `WaitTimeout` for how long a connection may wait behind another connection's idle transaction.
 
 2. **Register the schema.** Run your migrations against the DSN. Any tool that accepts a connection string works; see [migration tools](#migration-tools) below.
 
@@ -174,8 +174,8 @@ client.Schema.Create(ctx)
 </TabItem>
 </Tabs>
 
-<Aside type="caution">
-Tools that use a second database, such as Atlas's dev database for `migrate diff`, need a second pgmem server: a server serves only the database it was started with.
+<Aside>
+A server serves every database it has, restarting its backend when a connection switches databases. Tools that create a scratch database on the same server can use it, but each switch costs a backend restart, so keep that to setup rather than test cases.
 </Aside>
 
 ## Seed data

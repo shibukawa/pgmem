@@ -21,7 +21,7 @@ pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of
 ## A query's path
 
 1. The driver connects to the DSN over loopback TCP.
-2. The bridge reads the startup packet. Only the database the server was started with is served; other names are refused with SQLSTATE 3D000.
+2. The bridge reads the startup packet. When it names another database of the server, the backend is restarted on that database first; a database that does not exist is refused with SQLSTATE 3D000.
 3. The connection takes the backend for one message batch, or for the whole transaction after `BEGIN`.
 4. The bytes are fed to PostgreSQL's main loop in generated Go.
 5. Page reads and WAL writes hit the in-memory file system.
@@ -29,12 +29,12 @@ pgmem is PostgreSQL 18.3 compiled to WebAssembly once, translated to Go ahead of
 
 ## Snapshots and forks
 
-A **snapshot** runs `CHECKPOINT` on a prepared server and deep-copies its in-memory data directory. A **fork** copies that image again, starts a new backend on the copy and listens on a new port. Startup replays almost no WAL, so a fork takes milliseconds, and the loaded engine code is shared by every server in the process.
+A **snapshot** runs `CHECKPOINT` on a prepared server and deep-copies its in-memory data directory. A **fork** copies that image again, starts a new backend on the copy and listens on a new port. A **reset** does the same for a running server in place: the port and client connections stay, so a URL an application captured at import time remains valid. Startup replays almost no WAL, so a fork takes milliseconds, and the loaded engine code is shared by every server in the process.
 
 Forks are full backends. They are independent of each other, so tests that write can run in parallel, and each one holds its own buffer cache and data directory copy. `MaxForks` bounds how many exist at once; asking for another blocks until one is closed.
 
 ## Other languages
 
-The Python, Java and Node.js packages bundle `pgmem`, a standalone binary built from `cmd/pgmem`. A wrapper spawns it, reads one JSON line with the template's DSN, and sends `snapshot`, `fork` and `close` requests as JSON lines on stdin. When the parent exits, stdin closes and the binary shuts everything down, so a crashed test run cannot leave servers behind.
+The Python, Java and Node.js packages bundle `pgmem`, a standalone binary built from `cmd/pgmem`. A wrapper spawns it, reads one JSON line with the template's DSN, and sends `snapshot`, `fork` and `close` requests as JSON lines on stdin. When the parent exits, stdin closes and the binary shuts everything down, so a crashed test run cannot leave servers behind. Node.js test workers, which are separate processes, fork and reset through a loopback control socket instead; forks made on a socket connection close when that connection ends.
 
 Every test process (a pytest-xdist worker, a forked test JVM) starts its own binary. Within it, forks behave exactly as in Go.

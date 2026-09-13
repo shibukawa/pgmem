@@ -11,12 +11,16 @@ The consequences are the usual transaction-pooling ones:
 
 - **Session state is shared** between live connections: `SET`, temporary tables and advisory locks. Use `SET LOCAL`. Prepared statements are safe, because their names are prefixed per connection. When a connection starts and no other is alive, the session is reset as a new backend would be.
 - **`LISTEN` and `NOTIFY` work per connection.** Notifications are routed to the connections that listen on the channel.
-- **Cross-connection waits hang.** A connection that waits inside a transaction for work another connection must do first, such as a row lock or an advisory lock, waits forever. pgmem logs a diagnostic after five seconds.
+- **Waits behind an idle transaction end.** A connection cannot run while another is inside a transaction. When the holder sits idle in its transaction while another connection waits, for example code that queries through the pool instead of the transaction handle inside a transaction callback, the waiting connection is ended after `WaitTimeout` (default two seconds) with SQLSTATE 55P03 and a message naming the holder. A statement that is merely slow is waited for.
 - **`snapshot` waits for open transactions.** Commit or close every connection to the template before taking a snapshot; the wrappers fail with `busy` after 30 seconds.
 
 ## Databases
 
-`CREATE DATABASE` and `DROP DATABASE` work, but a server serves only the database it was started with. A connection that names another database is refused with SQLSTATE 3D000. Tools that create and connect to a second database, such as a shadow database for migration diffing, need a second server.
+Every database of a server can be connected to, and `CREATE DATABASE` works. The backend serves one database at a time: a connection to another database restarts the backend on it, in well under 10 ms. Connections of the database that stopped being served get their prepared statements and `LISTEN` registrations back when it is served again, but not their `SET` values or temporary tables. Prisma's shadow database needs nothing more; connections that keep alternating between databases pay a restart each time. A database that does not exist is refused with SQLSTATE 3D000.
+
+## Closing a server
+
+Closing a server or fork does not drop client connections. Each stays open until its client closes it, sends a message, which is answered with SQLSTATE 57P01, or 30 seconds pass. Pools such as node-postgres's raise an unhandled error when an idle connection is dropped under them.
 
 ## Features that need background processes
 

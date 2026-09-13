@@ -21,14 +21,14 @@ summary:
     - name: engine
       what: internal/engine boots initdb output and runs postgres --single the way PGlite does; frontend and backend protocol flows through in-memory buffers; ereport(ERROR) unwinds use the PGlite exit trick
     - name: bridge
-      what: pgmem.go accepts TCP on 127.0.0.1 (or api:in-process-dialer), multiplexes connections onto the one session (rule:single-session-per-backend), routes NOTIFY per connection
+      what: pgmem.go accepts TCP on 127.0.0.1 (or api:in-process-dialer), multiplexes connections onto the one session (rule:single-session-per-backend), routes NOTIFY per connection; reset.go puts a server back to a snapshot in place (api:reset)
     - name: embedded data
       what: internal/pgdata/pgdata.tar.zst is initdb output produced at build time by cmd/pgmem-mkdata (initdb wasm under wazero); unpacking it is why Start takes ~0.1 s (metric:server-footprint)
     - name: process and wrappers
-      what: cmd/pgmem wraps the library as concept:server-process for api:python-wrapper and api:java-wrapper over api:control-protocol
+      what: cmd/pgmem wraps the library as concept:server-process for api:python-wrapper, api:java-wrapper and api:node-wrapper over api:control-protocol, plus api:control-socket for test workers
   query_path:
     - client driver connects to the DSN over loopback TCP
-    - pgmem.go serve parses the startup packet; only Options.Database is served
+    - pgmem.go serve parses the startup packet; a connection naming another database of the server restarts the backend on it first (concept:database-switching); a missing one gets 3D000
     - connection acquires the backend semaphore for one message batch, or for the whole transaction after BEGIN
     - engine.Backend feeds the bytes to PostgresMainLoopOnce in generated Go
     - page reads and WAL writes hit internal/vfs; no host file is touched (requirement:in-memory-only)
@@ -41,7 +41,7 @@ summary:
     cmd/pgmem-mkdata: regenerates the embedded data directory
     wasm/: build scripts, patches, static module table, lock files for postgres-pglite, pgvector and wasm2go
     testdata/regress: upstream contrib regression files replayed by regress_test.go
-    packages/python, packages/java: wrappers (requirement:multi-language-wrapper)
+    packages/python, packages/java, packages/node: wrappers (requirement:multi-language-wrapper)
   rebuild: emsdk 3.1.74 at toolchain/emsdk; ./wasm/build.sh, ./wasm/gen-aot.sh, go run ./cmd/pgmem-mkdata, go test ./...
   aot_backend_choice: pure Go beats the wasm2go asm backend on size (104 vs 281 MB) and speed (95 vs 122 ms sort of 200k rows); asm stays available with ASM=1
 ```

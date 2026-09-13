@@ -33,8 +33,8 @@ ui:
           - {kind: page, id: guides/python/testing, target: decision:fork-or-not, children: [api:python-wrapper, flow:wrapper-test-lifecycle]}
           - {kind: page, id: guides/java/basics, target: concept:java-guide, children: [api:java-wrapper, concept:migration-tools, concept:seeding]}
           - {kind: page, id: guides/java/testing, target: decision:fork-or-not, children: [api:java-wrapper, flow:wrapper-test-lifecycle]}
-          - {kind: page, id: guides/nodejs/basics, target: requirement:nodejs-wrapper, state: preview}
-          - {kind: page, id: guides/nodejs/testing, target: requirement:nodejs-wrapper, state: preview}
+          - {kind: page, id: guides/nodejs/basics, target: api:node-wrapper, children: [system:node-orms, concept:migration-tools]}
+          - {kind: page, id: guides/nodejs/testing, target: decision:node-test-integration, children: [api:node-wrapper, api:reset, api:control-socket, system:node-test-runners]}
   guide_story:  # every language, in this order
     basics: [install with the official client, start, register schema (raw SQL then popular migration tools), seed data (raw SQL, COPY, dbtestify / DbUnit / factory_boy / ORM seeders), connect with official drivers, snapshot and fork by hand]
     testing: [fresh server per test, prepare once and share with read-only tests (class or file scope), fork or reset per test for writing tests, several templates, parallelism]
@@ -45,6 +45,6 @@ ui:
     node-pm: [npm, pnpm, Yarn, Bun]
     per_guide: driver, migrate and seed tab groups share a syncKey per language
   numbers: website/src/data/benchmarks.json, copied by bench/alternatives/run.sh; BenchmarkTable.astro renders compact (top) and full (why, benchmarks) variants in both languages
-  node_state: preview banner until the npm package lands; API names follow the Node.js design in progress on 2026-09-13 (PgmemServer.start, fork, withFork, reset, register entry)
+  node_state: follows packages/node/core (index.d.ts, README) as merged 2026-09-13; unpublished, so install snippets assume the npm release
   versions_in_snippets: 1.18.0 per policy:versioning, ahead of the first publish
 ```

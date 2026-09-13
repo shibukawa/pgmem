@@ -1,15 +1,11 @@
 ---
 title: Node.js basics
-description: Install @pgmem/core with your PostgreSQL client, start a server, migrate with Prisma, Drizzle or plain SQL, seed data, and connect with node-postgres or postgres.js.
+description: Install @pgmem/core with your PostgreSQL client, start a server, migrate with Prisma, Drizzle or plain SQL, seed data, and connect with node-postgres, postgres.js, Drizzle or Prisma.
 ---
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="Preview">
-The Node.js package is being built. The API on this page follows the agreed design and may still change before the first release.
-</Aside>
-
-`@pgmem/core` starts the pgmem binary and hands you a `DATABASE_URL`. The binary comes from a platform package that npm installs as an optional dependency; there is no postinstall script and nothing is downloaded at run time. pgmem does not replace your PostgreSQL client or ORM: they connect to the URL as they would to any server.
+`@pgmem/core` starts the pgmem binary and hands you a PostgreSQL URL. The binary comes from a platform package that npm installs as an optional dependency; there is no postinstall script and nothing is downloaded at run time. pgmem does not replace your PostgreSQL client or ORM: Prisma, Drizzle, TypeORM, Kysely, `pg` and `postgres` connect to the URL as they would to any server, pools included.
 
 ## Install
 
@@ -46,20 +42,20 @@ bun add --dev @pgmem/core pg
 </TabItem>
 </Tabs>
 
-`pg` is [node-postgres](https://node-postgres.com). [postgres.js](https://github.com/porsager/postgres) (`postgres`), Prisma, Drizzle and TypeORM work the same way; install whichever your application already uses.
+`pg` is [node-postgres](https://node-postgres.com). [postgres.js](https://github.com/porsager/postgres), Prisma, Drizzle and TypeORM work the same way; install whichever your application already uses. Node.js 20 or newer. Binary packages exist for Linux and macOS on x64 and arm64 and for Windows on x64 and arm64; elsewhere, point `PGMEM_BINARY` at a build of `cmd/pgmem`.
 
 ## The basic flow
 
 <Steps>
 
-1. **Start a server.** `PgmemServer.start()` spawns the binary, runs `prepare` against the template, and snapshots the result so forks start from it.
+1. **Start a server.** `PgmemServer.start()` spawns the binary, runs `prepare` against the template database, and snapshots the result so forks start from it.
 
    ```ts
    import { PgmemServer } from '@pgmem/core';
 
    await using server = await PgmemServer.start({
      database: 'app',
-     prepare: async ({ url }) => {
+     async prepare({ url }) {
        await migrate(url);
        await seed(url);
      },
@@ -68,11 +64,11 @@ bun add --dev @pgmem/core pg
    console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
    ```
 
-   `await using` closes the server at the end of the scope; call `server.close()` yourself where explicit resource management is not available.
+   `await using` closes the server at the end of the scope; call `server.close()` yourself where explicit resource management is not available. Other options are `user`, `params` (postgres settings as an object, such as `{ log_statement: 'all' }`), `maxForks`, `waitTimeoutMs`, `log` and `binary`.
 
-2. **Register the schema** in `prepare`. See [migration tools](#migration-tools).
+2. **Register the schema** in `prepare`. It receives the template server (`url`, `host`, `port`, `user`, `database`). See [migration tools](#migration-tools).
 
-3. **Load seed data** in `prepare` too. See [seed data](#seed-data).
+3. **Load seed data**, also in `prepare`. See [seed data](#seed-data). Close or commit every connection `prepare` opens: the snapshot waits for open transactions.
 
 4. **Use it with the official clients.**
 
@@ -109,17 +105,20 @@ bun add --dev @pgmem/core pg
    ```
 
    </TabItem>
-   <TabItem label="Prisma">
+   <TabItem label="Prisma 7">
 
    ```ts
-   import { PrismaClient } from '@prisma/client';
+   import { PrismaPg } from '@prisma/adapter-pg';
+   import { PrismaClient } from '../generated/prisma/client';
 
-   const prisma = new PrismaClient({ datasourceUrl: server.url });
+   const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: server.url }) });
    const user = await prisma.user.findUnique({ where: { id: 1 } });
    ```
 
    </TabItem>
    </Tabs>
+
+   Keep `sslmode=disable` in the URL. `pg` treats `prefer` and `require` as "TLS required", and pgmem has no TLS.
 
 </Steps>
 
@@ -152,11 +151,14 @@ import { execFileSync } from 'node:child_process';
 
 function migrate(url: string) {
   execFileSync('npx', ['prisma', 'migrate', 'deploy'], {
-    env: { ...process.env, DATABASE_URL: url },
     stdio: 'inherit',
+    env: { ...process.env, DATABASE_URL: url },
+    shell: process.platform === 'win32',
   });
 }
 ```
+
+`prisma.config.ts` reads the URL from the environment: `datasource: { url: process.env.DATABASE_URL ?? '' }`. `prisma db push` works the same way.
 
 </TabItem>
 <TabItem label="Drizzle">
@@ -167,7 +169,7 @@ import { migrate as drizzleMigrate } from 'drizzle-orm/node-postgres/migrator';
 
 async function migrate(url: string) {
   const db = drizzle(url);
-  await drizzleMigrate(db, { migrationsFolder: './drizzle' });
+  await drizzleMigrate(db, { migrationsFolder: 'drizzle' });
   await db.$client.end();
 }
 ```
@@ -179,8 +181,7 @@ async function migrate(url: string) {
 import { DataSource } from 'typeorm';
 
 async function migrate(url: string) {
-  const ds = new DataSource({ type: 'postgres', url, migrations: ['src/migrations/*.ts'] });
-  await ds.initialize();
+  const ds = await new DataSource({ ...options, url }).initialize();
   await ds.runMigrations();
   await ds.destroy();
 }
@@ -202,9 +203,30 @@ async function migrate(url: string) {
 </TabItem>
 </Tabs>
 
-<Aside type="caution">
-`prisma migrate deploy` works. `prisma migrate dev` creates a shadow database and connects to it, which a pgmem server does not serve yet. Generate migrations against your development database, and apply them with `migrate deploy` in tests.
-</Aside>
+### Authoring migrations with `prisma migrate dev`
+
+`prisma migrate dev` needs a shadow database. pgmem serves every database a server has, so Prisma creates the shadow database on the same in-memory server, and you can author migrations without a local PostgreSQL:
+
+```js title="scripts/migrate-dev.mjs"
+import { spawnSync } from 'node:child_process';
+import { PgmemServer } from '@pgmem/core';
+
+const server = await PgmemServer.start({ database: 'app', control: false });
+try {
+  const run = spawnSync('npx', ['prisma', 'migrate', 'dev', ...process.argv.slice(2)], {
+    stdio: 'inherit',
+    env: { ...process.env, DATABASE_URL: server.url },
+    shell: process.platform === 'win32',
+  });
+  process.exitCode = run.status ?? 1;
+} finally {
+  await server.close();
+}
+```
+
+```sh
+node scripts/migrate-dev.mjs --name add_posts
+```
 
 ## Seed data
 
@@ -220,8 +242,9 @@ await client.query(await readFile('seed.sql', 'utf8'));
 
 ```ts
 execFileSync('npx', ['prisma', 'db', 'seed'], {
-  env: { ...process.env, DATABASE_URL: url },
   stdio: 'inherit',
+  env: { ...process.env, DATABASE_URL: url },
+  shell: process.platform === 'win32',
 });
 ```
 
@@ -234,6 +257,7 @@ await db.insert(users).values([
   { id: 1, name: 'Frank', email: 'frank@example.com' },
   { id: 2, name: 'Grace', email: 'grace@example.com' },
 ]);
+await db.$client.end();
 ```
 
 </TabItem>
@@ -242,17 +266,16 @@ await db.insert(users).values([
 ## Forks by hand
 
 ```ts
-const fork = await server.fork();     // a private copy of the prepared database
-try {
-  await useDatabase(fork.url);
-} finally {
-  await fork.close();
-}
+await using fork = await server.fork();   // a private copy of the prepared database
+await useDatabase(fork.url);
 
 // or let pgmem close it
 await server.withFork(async (fork) => {
   await useDatabase(fork.url);
 });
+
+// put a fork back to the snapshot without changing its URL
+await fork.reset();
 ```
 
-Close your pools before closing a fork. The [next page](../testing/) shows how the test runners use this.
+A fork waits for a free slot while `maxForks` forks are alive. Closing a fork leaves idle pooled connections to their pools, so a pool without an `error` listener does not crash the process. The [next page](../testing/) shows how the test runners use this.
