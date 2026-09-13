@@ -1,0 +1,258 @@
+---
+title: Node.js の基本
+description: "@pgmem/core を PostgreSQL クライアントと一緒にインストールし、サーバーを起動して、Prisma、Drizzle、生 SQL でマイグレーションし、シードを入れ、node-postgres や postgres.js で接続する。"
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="プレビュー">
+Node.js パッケージは開発中です。このページの API は合意済みの設計に沿っていますが、最初のリリースまでに変わる可能性があります。
+</Aside>
+
+`@pgmem/core` は pgmem バイナリを起動し、`DATABASE_URL` を渡してくれます。バイナリは npm がオプション依存としてインストールするプラットフォーム別パッケージに入っています。postinstall スクリプトはなく、実行時のダウンロードもありません。pgmem は PostgreSQL クライアントや ORM を置き換えるものではありません。それらはほかのサーバーと同じように URL へ接続するだけです。
+
+## インストール
+
+pgmem と、使っている公式クライアントを一緒にインストールします。
+
+<Tabs syncKey="node-pm">
+<TabItem label="npm">
+
+```sh
+npm install --save-dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+pnpm add --save-dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="Yarn">
+
+```sh
+yarn add --dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="Bun">
+
+```sh
+bun add --dev @pgmem/core pg
+```
+
+</TabItem>
+</Tabs>
+
+`pg` は [node-postgres](https://node-postgres.com) です。[postgres.js](https://github.com/porsager/postgres)（`postgres`）、Prisma、Drizzle、TypeORM も同じように使えるので、アプリケーションで使っているものを入れてください。
+
+## 基本の流れ
+
+<Steps>
+
+1. **サーバーを起動します。** `PgmemServer.start()` はバイナリを起動し、テンプレートに対して `prepare` を実行し、その結果をスナップショットにします。フォークはそこから始まります。
+
+   ```ts
+   import { PgmemServer } from '@pgmem/core';
+
+   await using server = await PgmemServer.start({
+     database: 'app',
+     prepare: async ({ url }) => {
+       await migrate(url);
+       await seed(url);
+     },
+   });
+
+   console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
+   ```
+
+   `await using` はスコープの終わりでサーバーを閉じます。明示的なリソース管理が使えない環境では `server.close()` を自分で呼んでください。
+
+2. **スキーマを登録します。** `prepare` の中で行います。[マイグレーションツール](#マイグレーションツール)を参照してください。
+
+3. **シードデータを入れます。** これも `prepare` の中です。[シードデータ](#シードデータ)を参照してください。
+
+4. **公式クライアントから使います。**
+
+   <Tabs syncKey="node-client">
+   <TabItem label="node-postgres">
+
+   ```ts
+   import pg from 'pg';
+
+   const pool = new pg.Pool({ connectionString: server.url });
+   const { rows } = await pool.query('SELECT name FROM users WHERE id = $1', [1]);
+   await pool.end();
+   ```
+
+   </TabItem>
+   <TabItem label="postgres.js">
+
+   ```ts
+   import postgres from 'postgres';
+
+   const sql = postgres(server.url);
+   const [user] = await sql`SELECT name FROM users WHERE id = ${1}`;
+   await sql.end();
+   ```
+
+   </TabItem>
+   <TabItem label="Drizzle">
+
+   ```ts
+   import { drizzle } from 'drizzle-orm/node-postgres';
+
+   const db = drizzle(server.url);
+   const rows = await db.select().from(users);
+   ```
+
+   </TabItem>
+   <TabItem label="Prisma">
+
+   ```ts
+   import { PrismaClient } from '@prisma/client';
+
+   const prisma = new PrismaClient({ datasourceUrl: server.url });
+   const user = await prisma.user.findUnique({ where: { id: 1 } });
+   ```
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+## マイグレーションツール
+
+どのツールも URL を受け取ります。`prepare` の中で実行すれば、テンプレートに対して一度だけ走ります。
+
+<Tabs syncKey="node-migrate">
+<TabItem label="生 SQL">
+
+```ts
+import { readFile } from 'node:fs/promises';
+import pg from 'pg';
+
+async function migrate(url: string) {
+  const client = new pg.Client({ connectionString: url });
+  await client.connect();
+  await client.query(await readFile('schema.sql', 'utf8'));
+  await client.end();
+}
+```
+
+node-postgres はパラメータのないクエリを 1 回のシンプルクエリとして送るので、複数の文を書いてかまいません。
+
+</TabItem>
+<TabItem label="Prisma">
+
+```ts
+import { execFileSync } from 'node:child_process';
+
+function migrate(url: string) {
+  execFileSync('npx', ['prisma', 'migrate', 'deploy'], {
+    env: { ...process.env, DATABASE_URL: url },
+    stdio: 'inherit',
+  });
+}
+```
+
+</TabItem>
+<TabItem label="Drizzle">
+
+```ts
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { migrate as drizzleMigrate } from 'drizzle-orm/node-postgres/migrator';
+
+async function migrate(url: string) {
+  const db = drizzle(url);
+  await drizzleMigrate(db, { migrationsFolder: './drizzle' });
+  await db.$client.end();
+}
+```
+
+</TabItem>
+<TabItem label="TypeORM">
+
+```ts
+import { DataSource } from 'typeorm';
+
+async function migrate(url: string) {
+  const ds = new DataSource({ type: 'postgres', url, migrations: ['src/migrations/*.ts'] });
+  await ds.initialize();
+  await ds.runMigrations();
+  await ds.destroy();
+}
+```
+
+</TabItem>
+<TabItem label="Knex">
+
+```ts
+import knex from 'knex';
+
+async function migrate(url: string) {
+  const db = knex({ client: 'pg', connection: url });
+  await db.migrate.latest();
+  await db.destroy();
+}
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+`prisma migrate deploy` は動きます。`prisma migrate dev` はシャドウデータベースを作って接続しますが、pgmem のサーバーはまだそれを提供しません。マイグレーションの生成は開発用データベースで行い、テストでは `migrate deploy` で適用してください。
+</Aside>
+
+## シードデータ
+
+<Tabs syncKey="node-seed">
+<TabItem label="生 SQL">
+
+```ts
+await client.query(await readFile('seed.sql', 'utf8'));
+```
+
+</TabItem>
+<TabItem label="Prisma">
+
+```ts
+execFileSync('npx', ['prisma', 'db', 'seed'], {
+  env: { ...process.env, DATABASE_URL: url },
+  stdio: 'inherit',
+});
+```
+
+</TabItem>
+<TabItem label="Drizzle">
+
+```ts
+const db = drizzle(url);
+await db.insert(users).values([
+  { id: 1, name: 'Frank', email: 'frank@example.com' },
+  { id: 2, name: 'Grace', email: 'grace@example.com' },
+]);
+```
+
+</TabItem>
+</Tabs>
+
+## フォークを直接使う
+
+```ts
+const fork = await server.fork();     // 準備済みデータベースの専用の複製
+try {
+  await useDatabase(fork.url);
+} finally {
+  await fork.close();
+}
+
+// pgmem に閉じてもらう書き方
+await server.withFork(async (fork) => {
+  await useDatabase(fork.url);
+});
+```
+
+フォークを閉じる前にプールを閉じてください。[次のページ](../testing/)では、テストランナーからの使い方を紹介します。

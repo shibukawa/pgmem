@@ -3,37 +3,25 @@ id: metric:alternative-comparison
 type: metric
 title: Alternative Comparison Numbers
 ---
-Startup and memory of pgmem next to Docker-based and binary-based test databases; pgmem rows are measured, the others are typical public figures until the bench plan runs.
+pgmem measured next to docker run, Testcontainers and devbox on one machine with one harness; the website tables render the same data.
 
 ```yaml
 metric:
-  status: pgmem measured (metric:server-footprint, metric:fork-cost); Docker and embedded rows not measured in this repository as of 2026-09-12 (Docker daemon unavailable on the dev machine); treat them as order-of-magnitude
-  rows:
-    pgmem_start:
-      time_s: 0.1
-      memory_mb: 152
-      source: measured
-    pgmem_fork:
-      time_s: 0.02
-      memory_mb: ~100  # estimate: fresh linear memory ~65 MB touched plus ~39 MB vfs clone; measure before quoting
-      source: derived
-    testcontainers_postgres_container:
-      time_s: 1-3    # image already pulled; ryuk container adds one more start
-      first_pull_mb: ~100  # postgres alpine image size
-      memory_mb: 50-200  # container RSS; excludes the Docker VM, 1-4 GB on macOS and Windows
-      per_test_isolation: CREATE DATABASE from a template, ~0.1-0.3 s, or transaction rollback
-      source: public docs and typical experience, unmeasured here
-    embedded_postgres_binary:
-      time_s: 1-2    # unpack cached, initdb plus postmaster start
-      memory_mb: 30-150
-      disk: temp data directory per server
-      source: public docs, unmeasured here
-  bench_plan:
-    - start OrbStack or Docker, pull postgres:18-alpine once
-    - Go: testcontainers-go postgres module, time from Run to first successful connect, 10 runs, report median
-    - memory: docker stats for the container, ps for the Docker VM helper; compare with ps RSS of the pgmem binary
-    - per test: time CREATE DATABASE ... TEMPLATE against the container versus api:clone; repeat with 8 parallel tests
-    - Java: zonky embedded-postgres start time with a warm cache; Python: pytest-postgresql
-    - record machine, versions and date; replace the unmeasured rows above
-  publish_rule: the website must label unmeasured rows as such until this plan replaces them
+  measured: 2026-09-13, Apple M3 8 cores 16 GB, macOS (Darwin 27), OrbStack 2.2.3 Docker 29.4.0, devbox 0.17.5, Go 1.27, median of 5 runs
+  harness: bench/alternatives (run.sh -> results/summary.json -> website/src/data/benchmarks.json)
+  workload: bench 1000 rows + users 1000 + orders 10000; isolate = copy + connect + join, median of 20
+  servers: pgmem 18.3 in-process; docker/testcontainers postgres:18-alpine 18.6; devbox nix postgresql 18.6
+  start_to_first_query_ms: {pgmem: 48, pgmem_binary_ready: 129, devbox_initdb_plus_start: 760, docker_run: 1523, testcontainers_with_ryuk: 1530}
+  fresh_copy_per_test_ms: {pgmem_fork: 13.6, testcontainers_snapshot_restore: 30.5, docker_template_db: 56.3, devbox_template_db: 60.9}
+  indexed_select_us: {pgmem_tcp: 33.1, pgmem_in_process: 9.3, devbox: 28.7, docker: 84.8, testcontainers: 88.1}
+  sort_200k_rows_ms: {pgmem: 113, devbox: 134, docker: 250, testcontainers: 248}
+  memory_idle_mb: {pgmem_in_process_growth: 164, pgmem_binary_rss: 166, devbox_rss_sum: 66, container_docker_stats: 24}
+  memory_after_load_mb: {pgmem: 486, devbox: 81, container: 39-48}  # pgmem linear memory and freed forks are not returned while the process runs
+  download_mb: {go_link_added_stripped: 37.9, go_link_added_unstripped: 58.0, binary_zip: 16.8, binary_raw: 41.5, image_arm64: 117.9, ryuk: 2.1, devbox_nix_closure: 112.7, devbox_nix_unpacked: 463}
+  reading:
+    - pgmem wins start, per-test copy and download; it loses idle memory (container figure excludes the Docker VM)
+    - native devbox PostgreSQL matches pgmem on TCP latency; pgmem's in-process dialer is ~3x faster
+    - container latency includes OrbStack port forwarding
+    - defaults differ: containers and devbox use shared_buffers=128MB and a disk; pgmem 32MB and memory
+  first_samples_noisy: first run per target is slower (cold caches); medians hide it
 ```

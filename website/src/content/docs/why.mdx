@@ -1,0 +1,39 @@
+---
+title: Why pgmem
+description: How pgmem compares with Docker, Testcontainers, devbox, embedded PostgreSQL binaries, PGlite and SQL emulators.
+---
+
+import BenchmarkTable from '../../components/BenchmarkTable.astro';
+
+A test suite that talks to PostgreSQL needs three things: a server, a schema with seed data, and a way to keep tests from seeing each other's writes. The usual answers each give up something.
+
+## The options
+
+**Docker and Testcontainers** run the official image. You get the exact production build, every extension and a real multi-session server. You also get a daemon that every developer machine and every CI runner must provide, an image pull on first use, seconds per container start, and on macOS or Windows a Linux VM that holds memory. Per-test isolation is left to you: a database per test from a template, or a transaction that is rolled back.
+
+**devbox, nix and embedded PostgreSQL binaries** (zonky embedded-postgres, fergusstrange/embedded-postgres, pytest-postgresql) avoid Docker by running a native PostgreSQL. `initdb` and the postmaster still take time, the data directory is written to disk, and isolation is again a database per test.
+
+**PGlite** runs PostgreSQL as WebAssembly inside a JavaScript process. It is in-process, but it is driven through a TypeScript API rather than the wire protocol, so ORMs need adapters and only one connection exists.
+
+**SQL emulators** such as pg-mem, or SQLite standing in for PostgreSQL, are fast but are not PostgreSQL. Dialect, planner and extension gaps surface in production.
+
+## What pgmem does differently
+
+pgmem uses the same PGlite fork of PostgreSQL 18, but ships it as a Go library and as a small standalone binary that speaks the wire protocol on a loopback port.
+
+- **Start is about a tenth of a second**, because the data directory produced by `initdb` is embedded and unpacked into memory.
+- **A fork is a copy of the prepared state**: the in-memory data directory is cloned and a new backend starts on it. Migrations and seed data run once per suite, not once per test.
+- **Every driver works.** The URL is an ordinary `postgres://` or `jdbc:postgresql://` URL.
+- **One dependency per language.** The Python wheel, the Maven artifact and the npm package carry the binary; nothing is downloaded at run time.
+
+<BenchmarkTable lang="en" />
+
+## When to choose something else
+
+pgmem runs PostgreSQL in single-user mode. Each fork is one session, and connections to it are multiplexed at transaction boundaries. Choose Docker or Testcontainers when a test needs:
+
+- sessions that really run concurrently against one database, for example lock contention tests;
+- extensions that are not bundled, such as PostGIS or background-worker extensions like pg_cron;
+- the exact server build and configuration you run in production.
+
+The full list is on the [limits page](../limits/).

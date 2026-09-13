@@ -1,0 +1,248 @@
+---
+title: Java basics
+description: Add pgmem to a Gradle or Maven build, start it, migrate with Flyway or Liquibase, seed data with DbUnit, and connect through JDBC.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+pgmem for the JVM is three artifacts: `jp.shibu:pgmem` (the client), `jp.shibu:pgmem-junit5` (the JUnit 5 extension) and `jp.shibu:pgmem-native` (the binary, one classifier per platform). The client has no third-party runtime dependencies; bring your JDBC driver.
+
+## Dependencies
+
+<Tabs syncKey="jvm-build">
+<TabItem label="Gradle (Kotlin DSL)">
+
+```kotlin title="build.gradle.kts"
+dependencies {
+    testImplementation("jp.shibu:pgmem-junit5:1.18.0")          // pulls in jp.shibu:pgmem
+    testRuntimeOnly("jp.shibu:pgmem-native:1.18.0:darwin-arm64") // the binary for your platform
+    testRuntimeOnly("org.postgresql:postgresql:42.7.7")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem label="Gradle (Groovy DSL)">
+
+```groovy title="build.gradle"
+dependencies {
+    testImplementation 'jp.shibu:pgmem-junit5:1.18.0'           // pulls in jp.shibu:pgmem
+    testRuntimeOnly 'jp.shibu:pgmem-native:1.18.0:darwin-arm64' // the binary for your platform
+    testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem label="Maven">
+
+```xml title="pom.xml"
+<dependencies>
+  <dependency>
+    <groupId>jp.shibu</groupId>
+    <artifactId>pgmem-junit5</artifactId>
+    <version>1.18.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>jp.shibu</groupId>
+    <artifactId>pgmem-native</artifactId>
+    <version>1.18.0</version>
+    <classifier>darwin-arm64</classifier>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.7</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+```
+
+</TabItem>
+</Tabs>
+
+The classifiers are `linux-x86_64`, `linux-arm64`, `darwin-x86_64`, `darwin-arm64` and `windows-x86_64`. When a build runs on several platforms, pick one per platform with Maven profiles or a Gradle OS detection plugin rather than depending on all five. The binary is extracted once into `~/.cache/pgmem/<version>/`. Java 17 or newer.
+
+## The basic flow
+
+<Steps>
+
+1. **Start the process.** `Pgmem` is `AutoCloseable`; closing it stops every server.
+
+   <Tabs syncKey="jvm-lang">
+   <TabItem label="Java">
+
+   ```java
+   try (Pgmem pg = Pgmem.builder().database("app").start()) {
+       Server template = pg.template();
+       System.out.println(template.jdbcUrl()); // jdbc:postgresql://127.0.0.1:54321/app?user=postgres&sslmode=disable
+   }
+   ```
+
+   </TabItem>
+   <TabItem label="Kotlin">
+
+   ```kotlin
+   Pgmem.builder().database("app").start().use { pg ->
+       val template = pg.template()
+       println(template.jdbcUrl())
+   }
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   The builder also takes `user(...)`, `param("shared_buffers", "128MB")`, `log(true)` and `binary(path)`.
+
+2. **Register the schema** with a migration tool. See [migration tools](#migration-tools).
+
+3. **Load seed data.** See [seed data](#seed-data).
+
+4. **Use it through JDBC.** `jdbcUrl()` carries the user and `sslmode`, and `dataSource()` returns a `javax.sql.DataSource`.
+
+   <Tabs syncKey="jvm-lang">
+   <TabItem label="Java">
+
+   ```java
+   try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+        PreparedStatement ps = conn.prepareStatement("SELECT name FROM users WHERE id = ?")) {
+       ps.setLong(1, 1);
+       try (ResultSet rs = ps.executeQuery()) {
+           rs.next();
+           String name = rs.getString(1);
+       }
+   }
+   ```
+
+   </TabItem>
+   <TabItem label="Kotlin">
+
+   ```kotlin
+   DriverManager.getConnection(template.jdbcUrl()).use { conn ->
+       conn.prepareStatement("SELECT name FROM users WHERE id = ?").use { ps ->
+           ps.setLong(1, 1)
+           ps.executeQuery().use { rs -> rs.next(); println(rs.getString(1)) }
+       }
+   }
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   A HikariCP pool on the URL works too; its connections serialize at transaction boundaries.
+
+</Steps>
+
+## Migration tools
+
+<Tabs syncKey="jvm-migrate">
+<TabItem label="Plain SQL">
+
+```java
+String schema = Files.readString(Path.of("src/test/resources/schema.sql"));
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+     Statement st = conn.createStatement()) {
+    st.execute(schema);
+}
+```
+
+</TabItem>
+<TabItem label="Flyway">
+
+```java
+Flyway.configure()
+      .dataSource(template.jdbcUrl(), template.user(), null)
+      .locations("classpath:db/migration")
+      .load()
+      .migrate();
+```
+
+Flyway 10 and later also need `org.flywaydb:flyway-database-postgresql` on the test classpath.
+
+</TabItem>
+<TabItem label="Liquibase">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl())) {
+    Database db = DatabaseFactory.getInstance()
+            .findCorrectDatabaseImplementation(new JdbcConnection(conn));
+    new CommandScope("update")
+            .addArgumentValue("database", db)
+            .addArgumentValue("changelogFile", "db/changelog/db.changelog-master.yaml")
+            .execute();
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Seed data
+
+<Tabs syncKey="jvm-seed">
+<TabItem label="DbUnit">
+
+```xml title="src/test/resources/seed.xml"
+<dataset>
+  <users id="1" name="Frank" email="frank@example.com"/>
+  <users id="2" name="Grace" email="grace@example.com"/>
+  <orders id="1" user_id="1" amount="1200"/>
+</dataset>
+```
+
+```java
+IDatabaseTester tester = new JdbcDatabaseTester(
+        "org.postgresql.Driver", template.jdbcUrl(), template.user(), "");
+tester.setDataSet(new FlatXmlDataSetBuilder()
+        .build(getClass().getResourceAsStream("/seed.xml")));
+tester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
+tester.onSetup();
+```
+
+</TabItem>
+<TabItem label="Plain SQL">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+     Statement st = conn.createStatement()) {
+    st.execute(Files.readString(Path.of("src/test/resources/seed.sql")));
+}
+```
+
+</TabItem>
+<TabItem label="COPY">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl())) {
+    CopyManager copy = conn.unwrap(PGConnection.class).getCopyAPI();
+    copy.copyIn("COPY users (id, name, email) FROM STDIN (FORMAT csv)",
+            new StringReader("1,Frank,frank@example.com\n2,Grace,grace@example.com\n"));
+}
+```
+
+</TabItem>
+</Tabs>
+
+## Snapshot and fork by hand
+
+```java
+try (Pgmem pg = Pgmem.builder().database("app").start()) {
+    migrate(pg.template().jdbcUrl());
+    Snapshot snap = pg.template().snapshot();          // waits for open transactions, 30 s
+    try (Fork fork = snap.fork()) {                     // a private copy
+        DataSource ds = fork.dataSource();
+        // ...
+    }
+}
+```
+
+Commit or close every connection to the template before `snapshot()`. The JUnit 5 extension on the [next page](../testing/) wires this into the test lifecycle.

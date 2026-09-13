@@ -1,0 +1,180 @@
+---
+title: Testing with Vitest, Jest and node:test
+description: Three ways to use pgmem in Node.js tests - a fresh server per test file, one prepared database shared by read-only tests, and a reset or fork per test for tests that write.
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Preview">
+The Node.js package is being built. The API on this page follows the agreed design and may still change before the first release.
+</Aside>
+
+Node.js test runners load each test file in a fresh worker or module context, and most applications read `DATABASE_URL` once, when the database client is built. pgmem fits that shape: one pgmem process for the run, a fork per test file exposed as `DATABASE_URL` before your modules load, and a reset per test.
+
+| Shape | Setup runs | Cost per test | Use it for |
+|---|---|---|---|
+| Fresh server per test file | every file | process start plus migrations | files that need their own schema |
+| Shared prepared database | once per run | nothing | tests that only read |
+| Reset or fork per test | once per run | a reset or fork, a few milliseconds | tests that write |
+
+## A fresh server per test file
+
+```ts title="schema-variant.test.ts"
+import { PgmemServer } from '@pgmem/core';
+import { afterAll, beforeAll, test } from 'vitest';
+
+let server: PgmemServer;
+
+beforeAll(async () => {
+  server = await PgmemServer.start({
+    database: 'app',
+    prepare: async ({ url }) => applySchemaV2(url),
+  });
+});
+
+afterAll(() => server.close());
+
+test('reads the new column', async () => {
+  // connect to server.url
+});
+```
+
+## Prepare once for the run
+
+Start the server in the runner's global setup. `PgmemServer.start()` exports `PGMEM_CONTROL`, which is how test workers find the process.
+
+<Tabs syncKey="node-runner">
+<TabItem label="Vitest">
+
+```ts title="test/global-setup.ts"
+import { PgmemServer } from '@pgmem/core';
+
+export default async function setup() {
+  const server = await PgmemServer.start({
+    database: 'app',
+    prepare: async ({ url }) => {
+      await migrate(url);
+      await seed(url);
+    },
+  });
+  return () => server.close();
+}
+```
+
+```ts title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globalSetup: ['./test/global-setup.ts'],
+    setupFiles: ['@pgmem/core/register'],
+  },
+});
+```
+
+</TabItem>
+<TabItem label="Jest">
+
+```ts title="test/global-setup.ts"
+import { PgmemServer } from '@pgmem/core';
+
+export default async function setup() {
+  globalThis.__pgmem = await PgmemServer.start({
+    database: 'app',
+    prepare: async ({ url }) => migrate(url),
+  });
+}
+```
+
+```js title="jest.config.js"
+module.exports = {
+  globalSetup: './test/global-setup.ts',
+  globalTeardown: './test/global-teardown.ts', // await globalThis.__pgmem.close()
+  testEnvironment: '@pgmem/core/jest-environment',
+};
+```
+
+</TabItem>
+<TabItem label="node:test">
+
+```ts title="test/setup.ts"
+import { PgmemServer } from '@pgmem/core';
+import { after, before } from 'node:test';
+
+let server: PgmemServer;
+before(async () => {
+  server = await PgmemServer.start({ database: 'app', prepare: async ({ url }) => migrate(url) });
+});
+after(() => server.close());
+```
+
+```sh
+node --test --import ./test/setup.ts --import @pgmem/core/register
+```
+
+</TabItem>
+</Tabs>
+
+The register entry forks the snapshot for each test file and writes the fork's URL to `DATABASE_URL` before the file's imports run, so application code that reads the variable at import time connects to that file's copy.
+
+## Share the prepared database with read-only tests
+
+Tests in one file share that file's fork. A file whose tests only read needs nothing else:
+
+```ts
+import { db } from '../src/db'; // built from process.env.DATABASE_URL
+import { expect, test } from 'vitest';
+
+test('counts orders', async () => {
+  const [{ count }] = await db.execute('SELECT count(*) FROM orders');
+  expect(Number(count)).toBe(10_000);
+});
+```
+
+<Aside type="caution">
+A write in one test is visible to the rest of the file. Reset between tests as below as soon as any test in the file writes.
+</Aside>
+
+## Reset or fork per test for tests that write
+
+`reset()` returns the file's fork to the snapshot while keeping its port and your client's open connections, so a pool built at import time keeps working.
+
+```ts
+import { currentFork } from '@pgmem/core';
+import { beforeEach, expect, test } from 'vitest';
+
+beforeEach(() => currentFork().reset());
+
+test('cancels an order', async () => {
+  await cancelOrder(1);
+  // assert through your repository or a query
+});
+
+test('still sees the original order', async () => {
+  // the previous test's cancel is gone
+});
+```
+
+Tests that run concurrently cannot share one fork. Give each its own with `withFork`, and pass the URL to code that accepts one:
+
+```ts
+import { connect } from '@pgmem/core';
+import { test } from 'vitest';
+
+const pgmem = connect(); // reads PGMEM_CONTROL
+
+test.concurrent('imports a file', async () => {
+  await pgmem.withFork(async (fork) => {
+    const app = createApp({ databaseUrl: fork.url });
+    await app.importCsv('fixtures/orders.csv');
+  });
+});
+```
+
+## Parallel runs
+
+Each worker gets its own fork, and forks are independent, so parallel files do not interfere. The number of live forks is bounded by the pgmem process; a fork request waits when the bound is reached.
+
+<Aside>
+A fork is one PostgreSQL session. Connection pools work, but connections to the same fork serialize at transaction boundaries. Close pools before a fork closes, or the client logs a terminated connection.
+</Aside>

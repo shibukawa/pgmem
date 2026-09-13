@@ -1,0 +1,258 @@
+---
+title: Node.js basics
+description: Install @pgmem/core with your PostgreSQL client, start a server, migrate with Prisma, Drizzle or plain SQL, seed data, and connect with node-postgres or postgres.js.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Preview">
+The Node.js package is being built. The API on this page follows the agreed design and may still change before the first release.
+</Aside>
+
+`@pgmem/core` starts the pgmem binary and hands you a `DATABASE_URL`. The binary comes from a platform package that npm installs as an optional dependency; there is no postinstall script and nothing is downloaded at run time. pgmem does not replace your PostgreSQL client or ORM: they connect to the URL as they would to any server.
+
+## Install
+
+Install pgmem together with the official client you use.
+
+<Tabs syncKey="node-pm">
+<TabItem label="npm">
+
+```sh
+npm install --save-dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+pnpm add --save-dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="Yarn">
+
+```sh
+yarn add --dev @pgmem/core pg
+```
+
+</TabItem>
+<TabItem label="Bun">
+
+```sh
+bun add --dev @pgmem/core pg
+```
+
+</TabItem>
+</Tabs>
+
+`pg` is [node-postgres](https://node-postgres.com). [postgres.js](https://github.com/porsager/postgres) (`postgres`), Prisma, Drizzle and TypeORM work the same way; install whichever your application already uses.
+
+## The basic flow
+
+<Steps>
+
+1. **Start a server.** `PgmemServer.start()` spawns the binary, runs `prepare` against the template, and snapshots the result so forks start from it.
+
+   ```ts
+   import { PgmemServer } from '@pgmem/core';
+
+   await using server = await PgmemServer.start({
+     database: 'app',
+     prepare: async ({ url }) => {
+       await migrate(url);
+       await seed(url);
+     },
+   });
+
+   console.log(server.url); // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
+   ```
+
+   `await using` closes the server at the end of the scope; call `server.close()` yourself where explicit resource management is not available.
+
+2. **Register the schema** in `prepare`. See [migration tools](#migration-tools).
+
+3. **Load seed data** in `prepare` too. See [seed data](#seed-data).
+
+4. **Use it with the official clients.**
+
+   <Tabs syncKey="node-client">
+   <TabItem label="node-postgres">
+
+   ```ts
+   import pg from 'pg';
+
+   const pool = new pg.Pool({ connectionString: server.url });
+   const { rows } = await pool.query('SELECT name FROM users WHERE id = $1', [1]);
+   await pool.end();
+   ```
+
+   </TabItem>
+   <TabItem label="postgres.js">
+
+   ```ts
+   import postgres from 'postgres';
+
+   const sql = postgres(server.url);
+   const [user] = await sql`SELECT name FROM users WHERE id = ${1}`;
+   await sql.end();
+   ```
+
+   </TabItem>
+   <TabItem label="Drizzle">
+
+   ```ts
+   import { drizzle } from 'drizzle-orm/node-postgres';
+
+   const db = drizzle(server.url);
+   const rows = await db.select().from(users);
+   ```
+
+   </TabItem>
+   <TabItem label="Prisma">
+
+   ```ts
+   import { PrismaClient } from '@prisma/client';
+
+   const prisma = new PrismaClient({ datasourceUrl: server.url });
+   const user = await prisma.user.findUnique({ where: { id: 1 } });
+   ```
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+## Migration tools
+
+Every tool below reads a URL. Run it inside `prepare`, so it runs once on the template.
+
+<Tabs syncKey="node-migrate">
+<TabItem label="Plain SQL">
+
+```ts
+import { readFile } from 'node:fs/promises';
+import pg from 'pg';
+
+async function migrate(url: string) {
+  const client = new pg.Client({ connectionString: url });
+  await client.connect();
+  await client.query(await readFile('schema.sql', 'utf8'));
+  await client.end();
+}
+```
+
+node-postgres sends a query without parameters as one simple query, so several statements are fine.
+
+</TabItem>
+<TabItem label="Prisma">
+
+```ts
+import { execFileSync } from 'node:child_process';
+
+function migrate(url: string) {
+  execFileSync('npx', ['prisma', 'migrate', 'deploy'], {
+    env: { ...process.env, DATABASE_URL: url },
+    stdio: 'inherit',
+  });
+}
+```
+
+</TabItem>
+<TabItem label="Drizzle">
+
+```ts
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { migrate as drizzleMigrate } from 'drizzle-orm/node-postgres/migrator';
+
+async function migrate(url: string) {
+  const db = drizzle(url);
+  await drizzleMigrate(db, { migrationsFolder: './drizzle' });
+  await db.$client.end();
+}
+```
+
+</TabItem>
+<TabItem label="TypeORM">
+
+```ts
+import { DataSource } from 'typeorm';
+
+async function migrate(url: string) {
+  const ds = new DataSource({ type: 'postgres', url, migrations: ['src/migrations/*.ts'] });
+  await ds.initialize();
+  await ds.runMigrations();
+  await ds.destroy();
+}
+```
+
+</TabItem>
+<TabItem label="Knex">
+
+```ts
+import knex from 'knex';
+
+async function migrate(url: string) {
+  const db = knex({ client: 'pg', connection: url });
+  await db.migrate.latest();
+  await db.destroy();
+}
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+`prisma migrate deploy` works. `prisma migrate dev` creates a shadow database and connects to it, which a pgmem server does not serve yet. Generate migrations against your development database, and apply them with `migrate deploy` in tests.
+</Aside>
+
+## Seed data
+
+<Tabs syncKey="node-seed">
+<TabItem label="Plain SQL">
+
+```ts
+await client.query(await readFile('seed.sql', 'utf8'));
+```
+
+</TabItem>
+<TabItem label="Prisma">
+
+```ts
+execFileSync('npx', ['prisma', 'db', 'seed'], {
+  env: { ...process.env, DATABASE_URL: url },
+  stdio: 'inherit',
+});
+```
+
+</TabItem>
+<TabItem label="Drizzle">
+
+```ts
+const db = drizzle(url);
+await db.insert(users).values([
+  { id: 1, name: 'Frank', email: 'frank@example.com' },
+  { id: 2, name: 'Grace', email: 'grace@example.com' },
+]);
+```
+
+</TabItem>
+</Tabs>
+
+## Forks by hand
+
+```ts
+const fork = await server.fork();     // a private copy of the prepared database
+try {
+  await useDatabase(fork.url);
+} finally {
+  await fork.close();
+}
+
+// or let pgmem close it
+await server.withFork(async (fork) => {
+  await useDatabase(fork.url);
+});
+```
+
+Close your pools before closing a fork. The [next page](../testing/) shows how the test runners use this.

@@ -1,0 +1,216 @@
+---
+title: JUnit 5 への組み込み
+description: JUnit 5 で pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用クラスで共有するフォーク、書き込むテストにはメソッドごとのフォーク。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`PgmemExtension` はクラスの前にバイナリを起動し、`prepare` を一度だけ実行してスナップショットを取り、テストのパラメータにフォークを注入します。
+
+| 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
+|---|---|---|---|
+| テストごとに新しいサーバー | テストごと | プロセス起動とマイグレーション | スキーマ自体を変えたいテスト |
+| クラスごとのフォーク | 一度 | 最初のテスト以降はなし | 読むだけのテストクラス |
+| メソッドごとのフォーク（既定） | 一度 | フォーク 1 回、数ミリ秒 | 書き込むテスト、並列に走らせるテスト |
+
+## テストごとに新しいサーバー
+
+<Tabs syncKey="jvm-lang">
+<TabItem label="Java">
+
+```java
+@Test
+void schemaVariant() throws Exception {
+    try (Pgmem pg = Pgmem.builder().database("app").start();
+         Connection conn = DriverManager.getConnection(pg.template().jdbcUrl())) {
+        conn.createStatement().execute(SCHEMA_V2);
+        // ...
+    }
+}
+```
+
+</TabItem>
+<TabItem label="Kotlin">
+
+```kotlin
+@Test
+fun schemaVariant() {
+    Pgmem.builder().database("app").start().use { pg ->
+        DriverManager.getConnection(pg.template().jdbcUrl()).use { conn ->
+            conn.createStatement().execute(SCHEMA_V2)
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+## 拡張で一度だけ準備する
+
+拡張は static フィールドに登録します。`prepare` にはテンプレートの `Server` が渡されるので、そこでマイグレーションとシードを流します。
+
+<Tabs syncKey="jvm-lang">
+<TabItem label="Java">
+
+```java
+class OrderRepositoryTest {
+
+    @RegisterExtension
+    static PgmemExtension pg = PgmemExtension.builder()
+            .database("app")
+            .prepare(t -> {
+                Flyway.configure().dataSource(t.jdbcUrl(), t.user(), null).load().migrate();
+                seed(t.jdbcUrl());
+            })
+            .build();
+}
+```
+
+</TabItem>
+<TabItem label="Kotlin">
+
+```kotlin
+class OrderRepositoryTest {
+
+    companion object {
+        @JvmField
+        @RegisterExtension
+        val pg: PgmemExtension = PgmemExtension.builder()
+            .database("app")
+            .prepare { t ->
+                Flyway.configure().dataSource(t.jdbcUrl(), t.user(), null).load().migrate()
+                seed(t.jdbcUrl())
+            }
+            .build()
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+ネストしたクラスは外側のクラスのプロセスを使い回します。
+
+## 読み取り専用のクラスで 1 つのフォークを共有する
+
+パラメータで `ForkScope.CLASS` を指定するか、ビルダーの `forkScope(ForkScope.CLASS)` で既定にします。
+
+<Tabs syncKey="jvm-lang">
+<TabItem label="Java">
+
+```java
+@Test
+void totals(@PgmemFork(scope = ForkScope.CLASS) DataSource ds) throws Exception {
+    try (Connection conn = ds.getConnection();
+         ResultSet rs = conn.createStatement().executeQuery("SELECT count(*) FROM orders")) {
+        rs.next();
+        assertEquals(10_000, rs.getInt(1));
+    }
+}
+```
+
+</TabItem>
+<TabItem label="Kotlin">
+
+```kotlin
+@Test
+fun totals(@PgmemFork(scope = ForkScope.CLASS) ds: DataSource) {
+    ds.connection.use { conn ->
+        conn.createStatement().executeQuery("SELECT count(*) FROM orders").use { rs ->
+            rs.next()
+            assertEquals(10_000, rs.getInt(1))
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+クラス内のどのテストが書き込んでも、ほかのテストすべてに見えます。書き込むテストは既定のメソッドスコープのままにしてください。
+</Aside>
+
+## 書き込むテストにはメソッドごとのフォーク
+
+`Fork`、`DataSource`、`@PgmemFork String` のパラメータには、準備済みデータベースの新しい複製が渡され、テストの後で閉じられます。1 つのテストに複数のパラメータがあれば、同じフォークを共有します。
+
+<Tabs syncKey="jvm-lang">
+<TabItem label="Java">
+
+```java
+@Test
+void cancelOrder(DataSource ds) throws Exception {
+    new OrderRepository(ds).cancel(1);
+    try (Connection conn = ds.getConnection();
+         ResultSet rs = conn.createStatement().executeQuery("SELECT status FROM orders WHERE id = 1")) {
+        rs.next();
+        assertEquals("cancelled", rs.getString(1));
+    }
+}
+
+@Test
+void withUrl(@PgmemFork String jdbcUrl) {
+    var app = new App(jdbcUrl);
+    // ...
+}
+```
+
+</TabItem>
+<TabItem label="Kotlin">
+
+```kotlin
+@Test
+fun cancelOrder(ds: DataSource) {
+    OrderRepository(ds).cancel(1)
+    ds.connection.use { conn ->
+        conn.createStatement().executeQuery("SELECT status FROM orders WHERE id = 1").use { rs ->
+            rs.next()
+            assertEquals("cancelled", rs.getString(1))
+        }
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### DbUnit で検証する
+
+```java
+@Test
+void cancelOrder(Fork fork) throws Exception {
+    new OrderRepository(fork.dataSource()).cancel(1);
+
+    IDatabaseConnection conn = new DatabaseConnection(DriverManager.getConnection(fork.jdbcUrl()));
+    ITable actual = conn.createQueryTable("orders", "SELECT id, status FROM orders ORDER BY id");
+    ITable expected = new FlatXmlDataSetBuilder()
+            .build(getClass().getResourceAsStream("/after_cancel.xml")).getTable("orders");
+    Assertion.assertEquals(expected, actual);
+}
+```
+
+## 複数のテンプレート
+
+`template(name, prepare)` で 2 つ目の準備済みデータベースを追加し、`@PgmemFork("name")` でそれを選びます。
+
+```java
+@RegisterExtension
+static PgmemExtension pg = PgmemExtension.builder()
+        .database("app")
+        .prepare(t -> migrate(t.jdbcUrl()))
+        .template("audit", t -> migrateAudit(t.jdbcUrl()))
+        .build();
+
+@Test
+void auditTrail(@PgmemFork("audit") DataSource audit) { /* ... */ }
+```
+
+## 並列実行
+
+JUnit の並列実行はそのまま使えます。フォーク同士は独立しています。`maxForks(n)` で生きているフォークの数を制限し（既定は利用可能なプロセッサ数）、`forkTimeout(Duration)` を設定すると、プールが埋まったときに待たずにテストを失敗させます。Gradle の `maxParallelForks` や Surefire の `forkCount` でフォークされたテスト JVM は、それぞれ自分のバイナリを起動します。
+
+<Aside>
+スナップショットの前に接続はコミットするか閉じてください。`prepare` がトランザクションを開いたまま戻ると、スナップショットは 30 秒後に `busy` で失敗します。
+</Aside>

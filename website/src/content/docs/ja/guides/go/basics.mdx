@@ -1,0 +1,265 @@
+---
+title: Go の基本
+description: Go から pgmem を起動し、マイグレーションツールでスキーマを登録し、シードデータを入れて、pgx や database/sql から使う。
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+pgmem は Go のモジュールです。サーバーは自分のプロセスの中で動くので、インストールするバイナリも、実行時のダウンロードもありません。
+
+## インストール
+
+```sh
+go get github.com/shibukawa/pgmem
+```
+
+<Aside>
+初回のビルドでは約 110 MB の生成済み Go コードをコンパイルするため、1 分ほどかかります。結果は Go のビルドキャッシュに残るので、2 回目以降のビルドや `go test` ではかかりません。
+</Aside>
+
+## 基本の流れ
+
+<Steps>
+
+1. **サーバーを起動します。** `pgmem.Start` は、専用のメモリ上データディレクトリを持つ PostgreSQL を起動して返します。
+
+   ```go
+   s, err := pgmem.Start(ctx, pgmem.Options{Database: "app"})
+   if err != nil {
+   	log.Fatal(err)
+   }
+   defer s.Close()
+
+   fmt.Println(s.DSN()) // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
+   ```
+
+   `Options` にはほかに `User`、`Port`（0 なら空きポート）、`postgres -c` の設定を渡す `Params`、サーバーログを受け取る `Log` があります。
+
+2. **スキーマを登録します。** DSN に対してマイグレーションを流します。接続文字列を受け取るツールなら何でも使えます。下の[マイグレーションツール](#マイグレーションツール)を参照してください。
+
+3. **シードデータを入れます。** どのテストも前提にする行を投入します。[シードデータ](#シードデータ)を参照してください。
+
+4. **公式ドライバから使います。** DSN は普通の PostgreSQL の URL です。
+
+   <Tabs syncKey="go-driver">
+   <TabItem label="pgx">
+
+   ```go
+   conn, err := pgx.Connect(ctx, s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer conn.Close(ctx)
+
+   var name string
+   err = conn.QueryRow(ctx, "SELECT name FROM users WHERE id = $1", 1).Scan(&name)
+   ```
+
+   </TabItem>
+   <TabItem label="pgxpool">
+
+   ```go
+   pool, err := pgxpool.New(ctx, s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer pool.Close()
+   ```
+
+   </TabItem>
+   <TabItem label="database/sql">
+
+   ```go
+   import _ "github.com/jackc/pgx/v5/stdlib"
+
+   db, err := sql.Open("pgx", s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer db.Close()
+   ```
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+### プロセス内ダイヤラで TCP を省く
+
+`Server.Dial` はループバックソケットではなく `net.Pipe` で接続します。TCP の往復は時間の大半を PostgreSQL ではなくカーネルで使うので、小さなクエリならおよそ 3 倍速くなります。
+
+```go
+cfg, _ := pgx.ParseConfig(s.DSN())
+cfg.DialFunc = s.Dial
+conn, _ := pgx.ConnectConfig(ctx, cfg)
+
+// database/sql では設定を登録して名前で開く
+name := stdlib.RegisterConnConfig(cfg)
+db, _ := sql.Open("pgx", name)
+```
+
+## マイグレーションツール
+
+マイグレーションツールに必要なのは DSN か `*sql.DB` だけです。テストに複製を渡す前に一度だけ流します。
+
+<Tabs syncKey="go-migrate">
+<TabItem label="生 SQL">
+
+```go
+//go:embed schema.sql
+var schema string
+
+if _, err := db.ExecContext(ctx, schema); err != nil {
+	return err
+}
+```
+
+1 つの文字列に複数の文を書いてかまいません。
+
+</TabItem>
+<TabItem label="golang-migrate">
+
+```go
+import (
+	"github.com/golang-migrate/migrate/v4"
+	_ "github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+)
+
+m, err := migrate.New("file://migrations", s.DSN())
+if err != nil {
+	return err
+}
+if err := m.Up(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
+	return err
+}
+```
+
+</TabItem>
+<TabItem label="goose">
+
+```go
+import "github.com/pressly/goose/v3"
+
+goose.SetDialect("postgres")
+if err := goose.Up(db, "migrations"); err != nil { // db は *sql.DB
+	return err
+}
+```
+
+</TabItem>
+<TabItem label="Atlas">
+
+```go
+out, err := exec.CommandContext(ctx, "atlas", "migrate", "apply",
+	"--dir", "file://migrations", "--url", s.DSN()).CombinedOutput()
+if err != nil {
+	return fmt.Errorf("atlas: %v: %s", err, out)
+}
+```
+
+</TabItem>
+<TabItem label="ORM">
+
+```go
+// GORM
+gdb, _ := gorm.Open(postgres.Open(s.DSN()), &gorm.Config{})
+gdb.AutoMigrate(&User{}, &Order{})
+
+// ent
+client, _ := ent.Open("postgres", s.DSN())
+client.Schema.Create(ctx)
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+Atlas の `migrate diff` が使う dev データベースのように、別のデータベースを使うツールには pgmem のサーバーをもう 1 つ用意してください。サーバーが提供するのは起動時に指定したデータベースだけです。
+</Aside>
+
+## シードデータ
+
+<Tabs syncKey="go-seed">
+<TabItem label="dbtestify">
+
+[dbtestify](https://github.com/shibukawa/dbtestify) は YAML のデータセットを投入でき、あとで別のデータセットと突き合わせてデータベースの状態を検証することもできます。
+
+```yaml title="testdata/seed.yaml"
+users:
+- { id: 1, name: Frank, email: frank@example.com }
+- { id: 2, name: Grace, email: grace@example.com }
+
+orders:
+- { id: 1, user_id: 1, amount: 1200 }
+```
+
+```go
+import "github.com/shibukawa/dbtestify"
+
+//go:embed testdata
+var testdata embed.FS
+
+func seed(ctx context.Context, db *sql.DB) error {
+	f, err := testdata.Open("testdata/seed.yaml")
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	data, err := dbtestify.ParseYAML(f)
+	if err != nil {
+		return err
+	}
+	dbc, err := dbtestify.NewDBConnectorFromDB(db, dbtestify.PostgresDialect)
+	if err != nil {
+		return err
+	}
+	return dbtestify.Seed(ctx, dbc, data, dbtestify.SeedOpt{})
+}
+```
+
+</TabItem>
+<TabItem label="生 SQL">
+
+```go
+_, err := db.ExecContext(ctx, `
+	INSERT INTO users (id, name, email) VALUES
+		(1, 'Frank', 'frank@example.com'),
+		(2, 'Grace', 'grace@example.com');
+	INSERT INTO orders (id, user_id, amount) VALUES (1, 1, 1200);
+`)
+```
+
+</TabItem>
+<TabItem label="COPY">
+
+```go
+rows := [][]any{{1, "Frank", "frank@example.com"}, {2, "Grace", "grace@example.com"}}
+_, err := conn.CopyFrom(ctx, pgx.Identifier{"users"},
+	[]string{"id", "name", "email"}, pgx.CopyFromRows(rows))
+```
+
+数千行を入れるなら `COPY` が最速です。
+
+</TabItem>
+</Tabs>
+
+## スナップショットとフォークを直接使う
+
+[次のページ](../testing/)のテストヘルパーは、次の 2 つの呼び出しを包んだものです。直接使うこともできます。
+
+```go
+snap, err := s.Snapshot(ctx, pgmem.SnapshotOptions{MaxForks: 8})
+if err != nil {
+	return err
+}
+defer snap.Close()
+
+fork, err := snap.Fork(ctx) // スナップショットの複製で動く新しいサーバー
+if err != nil {
+	return err
+}
+defer fork.Close()
+```
+
+スナップショットはサーバーをチェックポイントしてデータディレクトリを複製します。フォークはそれをさらに複製し、新しいバックエンドを起動します。`Snapshot` は開いているトランザクションを待つので、その前に `s` への接続はすべてコミットするか閉じてください。

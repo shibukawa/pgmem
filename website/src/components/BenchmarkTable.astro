@@ -1,0 +1,111 @@
+---
+// Renders bench/alternatives/results/summary.json (copied to src/data by
+// bench/alternatives/run.sh). Every number on the site comes from here.
+import data from '../data/benchmarks.json';
+
+interface Props {
+	lang?: 'en' | 'ja';
+	/** compact: the headline rows for the top page */
+	variant?: 'compact' | 'full';
+}
+const { lang = 'en', variant = 'full' } = Astro.props;
+const t = data.targets as Record<string, Record<string, number>>;
+const s = data.sizes as Record<string, number | string>;
+
+const L = {
+	en: {
+		tool: '', pgmem: 'pgmem (Go library)', binary: 'pgmem binary (Python / Java / Node.js)', docker: 'docker run', testcontainers: 'Testcontainers (Go)', devbox: 'devbox (nix PostgreSQL)',
+		startup: 'Start → first query', isolate: 'Fresh copy per test', simple: 'Indexed SELECT', heavy: 'Sort 200k rows', mem: 'Memory, idle', download: 'Download',
+		isoPgmem: 'fork', isoTemplate: 'CREATE DATABASE … TEMPLATE', isoTc: 'Snapshot / Restore', inproc: 'in-process', na: '—',
+		dlGo: 'linked into the test binary', dlBin: 'wheel / jar / npm payload', dlImage: 'image layers', dlRyuk: '+ Ryuk', dlNix: 'nix closure',
+		note: (d: string, m: typeof data.machine) => `Median of ${t.pgmem?.runs ?? '?'} runs on ${d}: ${m.cpu}, ${m.cores} cores, ${m.memory_gb} GB, ${m.os}; ${m.docker_runtime} (Docker ${m.docker}); ${s.arch}.`,
+	},
+	ja: {
+		tool: '', pgmem: 'pgmem（Go ライブラリ）', binary: 'pgmem バイナリ（Python / Java / Node.js）', docker: 'docker run', testcontainers: 'Testcontainers（Go）', devbox: 'devbox（nix の PostgreSQL）',
+		startup: '起動〜最初のクエリ', isolate: 'テストごとの複製', simple: 'インデックス SELECT', heavy: '20万行ソート', mem: 'アイドル時メモリ', download: 'ダウンロード',
+		isoPgmem: 'フォーク', isoTemplate: 'CREATE DATABASE … TEMPLATE', isoTc: 'Snapshot / Restore', inproc: 'プロセス内接続', na: '—',
+		dlGo: 'テストバイナリへのリンク増分', dlBin: 'wheel / jar / npm の中身', dlImage: 'イメージレイヤ', dlRyuk: '+ Ryuk', dlNix: 'nix closure',
+		note: (d: string, m: typeof data.machine) => `${d} 計測、${t.pgmem?.runs ?? '?'} 回の中央値。${m.cpu}、${m.cores} コア、${m.memory_gb} GB、${m.os}。${m.docker_runtime}（Docker ${m.docker}）、${s.arch}。`,
+	},
+}[lang];
+
+const mb = (b: number | string | undefined) => (typeof b === 'number' ? `${(b / 1e6).toFixed(b >= 1e8 ? 0 : 1)} MB` : L.na);
+const sec = (ms?: number) => (ms === undefined ? L.na : ms >= 1000 ? `${(ms / 1000).toFixed(2)} s` : `${ms.toFixed(0)} ms`);
+const msf = (ms?: number) => (ms === undefined ? L.na : `${ms.toFixed(ms < 10 ? 1 : 0)} ms`);
+const us = (u?: number) => (u === undefined ? L.na : `${u.toFixed(0)} µs`);
+const mem = (m?: number) => (m === undefined ? L.na : `${m.toFixed(0)} MB`);
+
+type Row = { key: string; name: string; startup: string; isolate: string; simple: string; simpleNote?: string; heavy: string; mem: string; download: string; highlight?: boolean };
+const rows: Row[] = [
+	{
+		key: 'pgmem', name: L.pgmem, highlight: true,
+		startup: sec(t.pgmem?.startup_ms), isolate: `${msf(t.pgmem?.isolate_ms)} (${L.isoPgmem})`,
+		simple: us(t.pgmem?.simple_query_us), simpleNote: `${us(t.pgmem?.dial_query_us)} ${L.inproc}`, heavy: msf(t.pgmem?.heavy_query_ms),
+		mem: mem(t.pgmem?.mem_idle_mb), download: `${mb(s.go_link_added_stripped)} (${L.dlGo})`,
+	},
+	{
+		key: 'binary', name: L.binary, highlight: true,
+		startup: sec(t.binary?.startup_ms), isolate: `${msf(t.pgmem?.isolate_ms)} (${L.isoPgmem})`, simple: us(t.pgmem?.simple_query_us), heavy: msf(t.pgmem?.heavy_query_ms),
+		mem: mem(t.binary?.mem_idle_mb), download: `${mb(s.binary_compressed)} (${L.dlBin})`,
+	},
+	{
+		key: 'docker', name: L.docker,
+		startup: sec(t.docker?.startup_ms), isolate: `${msf(t.docker?.isolate_ms)} (${L.isoTemplate})`, simple: us(t.docker?.simple_query_us), heavy: msf(t.docker?.heavy_query_ms),
+		mem: mem(t.docker?.mem_idle_mb), download: `${mb(s.image_download)} (${L.dlImage})`,
+	},
+	{
+		key: 'testcontainers', name: L.testcontainers,
+		startup: sec(t.testcontainers?.startup_ms), isolate: `${msf(t.testcontainers?.isolate_ms)} (${L.isoTc})`, simple: us(t.testcontainers?.simple_query_us), heavy: msf(t.testcontainers?.heavy_query_ms),
+		mem: mem(t.testcontainers?.mem_idle_mb), download: `${mb((s.image_download as number) + (s.ryuk_download as number))} (${L.dlImage} ${L.dlRyuk})`,
+	},
+	{
+		key: 'devbox', name: L.devbox,
+		startup: sec(t.devbox?.startup_ms), isolate: `${msf(t.devbox?.isolate_ms)} (${L.isoTemplate})`, simple: us(t.devbox?.simple_query_us), heavy: msf(t.devbox?.heavy_query_ms),
+		mem: mem(t.devbox?.mem_idle_mb), download: `${mb(s.devbox_download)} (${L.dlNix})`,
+	},
+];
+const shown = variant === 'compact' ? rows.filter((r) => r.key !== 'binary') : rows;
+---
+
+<div class="bench not-content">
+	<table>
+		<thead>
+			<tr>
+				<th>{L.tool}</th>
+				<th>{L.startup}</th>
+				<th>{L.isolate}</th>
+				{variant === 'full' && <th>{L.simple}</th>}
+				{variant === 'full' && <th>{L.heavy}</th>}
+				<th>{L.mem}</th>
+				<th>{L.download}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{shown.map((r) => (
+				<tr class:list={{ highlight: r.highlight }}>
+					<th scope="row">{r.name}</th>
+					<td>{r.startup}</td>
+					<td>{r.isolate}</td>
+					{variant === 'full' && <td>{r.simple}{r.simpleNote && <span class="inproc">{r.simpleNote}</span>}</td>}
+					{variant === 'full' && <td>{r.heavy}</td>}
+					<td>{r.mem}</td>
+					<td>{r.download}</td>
+				</tr>
+			))}
+		</tbody>
+	</table>
+	<p class="note">{L.note(data.measured_at, data.machine)}</p>
+</div>
+
+<style>
+	.bench { overflow-x: auto; margin-block: 1.5rem; }
+	table { border-collapse: collapse; width: 100%; font-size: var(--sl-text-sm); font-variant-numeric: tabular-nums; }
+	th, td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--sl-color-gray-5); text-align: left; vertical-align: top; }
+	thead th { color: var(--sl-color-gray-2); font-weight: 600; white-space: nowrap; }
+	tbody th { font-weight: 600; color: var(--sl-color-white); white-space: nowrap; }
+	tr.highlight th { box-shadow: inset 3px 0 0 var(--sl-color-accent); }
+	tr.highlight th, tr.highlight td { background: color-mix(in srgb, var(--sl-color-accent-low) 35%, transparent); }
+	td { white-space: nowrap; }
+	.inproc { display: block; color: var(--sl-color-gray-3); font-size: var(--sl-text-xs); }
+	.note { color: var(--sl-color-gray-3); font-size: var(--sl-text-xs); margin-top: 0.5rem; }
+</style>

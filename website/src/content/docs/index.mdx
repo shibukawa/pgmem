@@ -1,0 +1,98 @@
+---
+title: pgmem
+description: Real PostgreSQL 18 that runs in memory inside your tests. No Docker, no disk, a fresh copy per test in milliseconds.
+template: splash
+hero:
+  tagline: Real PostgreSQL 18, in memory, for tests. No Docker, no disk. Prepare the schema once, then give every test its own copy in milliseconds.
+  actions:
+    - text: Why pgmem
+      link: why/
+      icon: right-arrow
+    - text: Go guide
+      link: guides/go/basics/
+      variant: minimal
+    - text: Python guide
+      link: guides/python/basics/
+      variant: minimal
+    - text: Java guide
+      link: guides/java/basics/
+      variant: minimal
+    - text: Node.js guide
+      link: guides/nodejs/basics/
+      variant: minimal
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+import BenchmarkTable from '../../components/BenchmarkTable.astro';
+
+## Compared with the usual options
+
+The same schema, queries and per-test isolation, measured on one machine against the official image with `docker run`, Testcontainers, and a devbox-installed PostgreSQL.
+
+<BenchmarkTable lang="en" variant="compact" />
+
+Query latency, methodology and how to reproduce are on the [benchmarks page](benchmarks/).
+
+<CardGrid>
+	<Card title="The real thing" icon="approve-check">
+		PostgreSQL 18.3 compiled to WebAssembly and translated to Go. Your SQL, planner behaviour and error codes are PostgreSQL's, not an emulator's.
+	</Card>
+	<Card title="Nothing to install" icon="rocket">
+		One dependency per language. No Docker daemon, no container runtime on CI, no files written to disk.
+	</Card>
+	<Card title="A fork per test" icon="random">
+		Run migrations and seed data once, snapshot, and hand each test an isolated copy. Tests that write can run in parallel.
+	</Card>
+	<Card title="Any driver" icon="puzzle">
+		pgmem listens on the PostgreSQL wire protocol, so pgx, psycopg, JDBC, node-postgres, ORMs and migration tools work unchanged.
+	</Card>
+</CardGrid>
+
+## Five lines to a database
+
+<Tabs syncKey="lang">
+<TabItem label="Go">
+
+```go
+s, err := pgmem.Start(ctx, pgmem.Options{Database: "app"})
+if err != nil {
+	t.Fatal(err)
+}
+defer s.Close()
+db, _ := sql.Open("pgx", s.DSN())
+```
+
+</TabItem>
+<TabItem label="Python">
+
+```python
+import pgmem, psycopg
+
+with pgmem.start(database="app") as pg:
+    with psycopg.connect(pg.template.dsn) as conn:
+        conn.execute("SELECT 1")
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+try (Pgmem pg = Pgmem.builder().database("app").start();
+     Connection conn = DriverManager.getConnection(pg.template().jdbcUrl())) {
+    conn.createStatement().execute("SELECT 1");
+}
+```
+
+</TabItem>
+<TabItem label="Node.js">
+
+```ts
+import { PgmemServer } from '@pgmem/core';
+import pg from 'pg';
+
+await using server = await PgmemServer.start({ database: 'app' });
+const client = new pg.Client({ connectionString: server.url });
+```
+
+</TabItem>
+</Tabs>

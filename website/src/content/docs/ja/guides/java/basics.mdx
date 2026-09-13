@@ -1,0 +1,248 @@
+---
+title: Java の基本
+description: Gradle や Maven のビルドに pgmem を追加して起動し、Flyway や Liquibase でマイグレーションし、DbUnit でシードデータを入れて、JDBC で接続する。
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+JVM 向けの pgmem は 3 つのアーティファクトでできています。クライアントの `jp.shibu:pgmem`、JUnit 5 拡張の `jp.shibu:pgmem-junit5`、プラットフォームごとの classifier でバイナリを配る `jp.shibu:pgmem-native` です。クライアントはサードパーティの実行時依存を持たないので、JDBC ドライバは自分で追加してください。
+
+## 依存関係
+
+<Tabs syncKey="jvm-build">
+<TabItem label="Gradle (Kotlin DSL)">
+
+```kotlin title="build.gradle.kts"
+dependencies {
+    testImplementation("jp.shibu:pgmem-junit5:1.18.0")          // jp.shibu:pgmem も入る
+    testRuntimeOnly("jp.shibu:pgmem-native:1.18.0:darwin-arm64") // 自分のプラットフォーム用のバイナリ
+    testRuntimeOnly("org.postgresql:postgresql:42.7.7")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem label="Gradle (Groovy DSL)">
+
+```groovy title="build.gradle"
+dependencies {
+    testImplementation 'jp.shibu:pgmem-junit5:1.18.0'           // jp.shibu:pgmem も入る
+    testRuntimeOnly 'jp.shibu:pgmem-native:1.18.0:darwin-arm64' // 自分のプラットフォーム用のバイナリ
+    testRuntimeOnly 'org.postgresql:postgresql:42.7.7'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem label="Maven">
+
+```xml title="pom.xml"
+<dependencies>
+  <dependency>
+    <groupId>jp.shibu</groupId>
+    <artifactId>pgmem-junit5</artifactId>
+    <version>1.18.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>jp.shibu</groupId>
+    <artifactId>pgmem-native</artifactId>
+    <version>1.18.0</version>
+    <classifier>darwin-arm64</classifier>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.7</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+```
+
+</TabItem>
+</Tabs>
+
+classifier は `linux-x86_64`、`linux-arm64`、`darwin-x86_64`、`darwin-arm64`、`windows-x86_64` です。複数のプラットフォームでビルドするなら、5 つ全部に依存するのではなく、Maven のプロファイルや Gradle の OS 判定プラグインでプラットフォームごとに 1 つを選んでください。バイナリは初回に `~/.cache/pgmem/<version>/` へ展開されます。Java 17 以降が必要です。
+
+## 基本の流れ
+
+<Steps>
+
+1. **プロセスを起動します。** `Pgmem` は `AutoCloseable` で、閉じるとすべてのサーバーが止まります。
+
+   <Tabs syncKey="jvm-lang">
+   <TabItem label="Java">
+
+   ```java
+   try (Pgmem pg = Pgmem.builder().database("app").start()) {
+       Server template = pg.template();
+       System.out.println(template.jdbcUrl()); // jdbc:postgresql://127.0.0.1:54321/app?user=postgres&sslmode=disable
+   }
+   ```
+
+   </TabItem>
+   <TabItem label="Kotlin">
+
+   ```kotlin
+   Pgmem.builder().database("app").start().use { pg ->
+       val template = pg.template()
+       println(template.jdbcUrl())
+   }
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   ビルダーにはほかに `user(...)`、`param("shared_buffers", "128MB")`、`log(true)`、`binary(path)` があります。
+
+2. **スキーマを登録します。** マイグレーションツールを使います。[マイグレーションツール](#マイグレーションツール)を参照してください。
+
+3. **シードデータを入れます。** [シードデータ](#シードデータ)を参照してください。
+
+4. **JDBC で使います。** `jdbcUrl()` にはユーザーと `sslmode` が含まれ、`dataSource()` は `javax.sql.DataSource` を返します。
+
+   <Tabs syncKey="jvm-lang">
+   <TabItem label="Java">
+
+   ```java
+   try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+        PreparedStatement ps = conn.prepareStatement("SELECT name FROM users WHERE id = ?")) {
+       ps.setLong(1, 1);
+       try (ResultSet rs = ps.executeQuery()) {
+           rs.next();
+           String name = rs.getString(1);
+       }
+   }
+   ```
+
+   </TabItem>
+   <TabItem label="Kotlin">
+
+   ```kotlin
+   DriverManager.getConnection(template.jdbcUrl()).use { conn ->
+       conn.prepareStatement("SELECT name FROM users WHERE id = ?").use { ps ->
+           ps.setLong(1, 1)
+           ps.executeQuery().use { rs -> rs.next(); println(rs.getString(1)) }
+       }
+   }
+   ```
+
+   </TabItem>
+   </Tabs>
+
+   この URL で HikariCP のプールを作ることもできます。接続はトランザクション境界で直列になります。
+
+</Steps>
+
+## マイグレーションツール
+
+<Tabs syncKey="jvm-migrate">
+<TabItem label="生 SQL">
+
+```java
+String schema = Files.readString(Path.of("src/test/resources/schema.sql"));
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+     Statement st = conn.createStatement()) {
+    st.execute(schema);
+}
+```
+
+</TabItem>
+<TabItem label="Flyway">
+
+```java
+Flyway.configure()
+      .dataSource(template.jdbcUrl(), template.user(), null)
+      .locations("classpath:db/migration")
+      .load()
+      .migrate();
+```
+
+Flyway 10 以降では、テストのクラスパスに `org.flywaydb:flyway-database-postgresql` も必要です。
+
+</TabItem>
+<TabItem label="Liquibase">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl())) {
+    Database db = DatabaseFactory.getInstance()
+            .findCorrectDatabaseImplementation(new JdbcConnection(conn));
+    new CommandScope("update")
+            .addArgumentValue("database", db)
+            .addArgumentValue("changelogFile", "db/changelog/db.changelog-master.yaml")
+            .execute();
+}
+```
+
+</TabItem>
+</Tabs>
+
+## シードデータ
+
+<Tabs syncKey="jvm-seed">
+<TabItem label="DbUnit">
+
+```xml title="src/test/resources/seed.xml"
+<dataset>
+  <users id="1" name="Frank" email="frank@example.com"/>
+  <users id="2" name="Grace" email="grace@example.com"/>
+  <orders id="1" user_id="1" amount="1200"/>
+</dataset>
+```
+
+```java
+IDatabaseTester tester = new JdbcDatabaseTester(
+        "org.postgresql.Driver", template.jdbcUrl(), template.user(), "");
+tester.setDataSet(new FlatXmlDataSetBuilder()
+        .build(getClass().getResourceAsStream("/seed.xml")));
+tester.setSetUpOperation(DatabaseOperation.CLEAN_INSERT);
+tester.onSetup();
+```
+
+</TabItem>
+<TabItem label="生 SQL">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl());
+     Statement st = conn.createStatement()) {
+    st.execute(Files.readString(Path.of("src/test/resources/seed.sql")));
+}
+```
+
+</TabItem>
+<TabItem label="COPY">
+
+```java
+try (Connection conn = DriverManager.getConnection(template.jdbcUrl())) {
+    CopyManager copy = conn.unwrap(PGConnection.class).getCopyAPI();
+    copy.copyIn("COPY users (id, name, email) FROM STDIN (FORMAT csv)",
+            new StringReader("1,Frank,frank@example.com\n2,Grace,grace@example.com\n"));
+}
+```
+
+</TabItem>
+</Tabs>
+
+## スナップショットとフォークを直接使う
+
+```java
+try (Pgmem pg = Pgmem.builder().database("app").start()) {
+    migrate(pg.template().jdbcUrl());
+    Snapshot snap = pg.template().snapshot();          // 開いているトランザクションを待つ。30 秒
+    try (Fork fork = snap.fork()) {                     // 専用の複製
+        DataSource ds = fork.dataSource();
+        // ...
+    }
+}
+```
+
+`snapshot()` の前に、テンプレートへの接続はすべてコミットするか閉じてください。[次のページ](../testing/)の JUnit 5 拡張は、これをテストのライフサイクルに組み込みます。

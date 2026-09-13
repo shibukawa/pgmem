@@ -1,0 +1,98 @@
+---
+title: pgmem
+description: テストの中でメモリ上に動く本物の PostgreSQL 18。Docker 不要、ディスク不要、テストごとの複製はミリ秒単位。
+template: splash
+hero:
+  tagline: テストのための、メモリ上で動く本物の PostgreSQL 18。Docker もディスクも使いません。スキーマは一度だけ準備し、各テストにはその複製をミリ秒で渡します。
+  actions:
+    - text: なぜ pgmem か
+      link: why/
+      icon: right-arrow
+    - text: Go ガイド
+      link: guides/go/basics/
+      variant: minimal
+    - text: Python ガイド
+      link: guides/python/basics/
+      variant: minimal
+    - text: Java ガイド
+      link: guides/java/basics/
+      variant: minimal
+    - text: Node.js ガイド
+      link: guides/nodejs/basics/
+      variant: minimal
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+import BenchmarkTable from '../../../components/BenchmarkTable.astro';
+
+## よくある選択肢との比較
+
+同じスキーマ、同じクエリ、同じテスト単位の分離を、同じマシンで計測しました。比較相手は公式イメージを使った `docker run`、Testcontainers、devbox で入れた PostgreSQL です。
+
+<BenchmarkTable lang="ja" variant="compact" />
+
+クエリ性能、計測方法、再現手順は[ベンチマーク](benchmarks/)のページにあります。
+
+<CardGrid>
+	<Card title="本物の PostgreSQL" icon="approve-check">
+		PostgreSQL 18.3 を WebAssembly にコンパイルし、Go に変換したものです。SQL の解釈もプランナの挙動もエラーコードも、エミュレータではなく PostgreSQL そのものです。
+	</Card>
+	<Card title="インストールするものがない" icon="rocket">
+		各言語で依存はひとつ。Docker デーモンも、CI 上のコンテナランタイムも要りません。ディスクにも書き込みません。
+	</Card>
+	<Card title="テストごとにフォーク" icon="random">
+		マイグレーションとシードは一度だけ。スナップショットを取り、各テストには独立した複製を渡します。書き込むテスト同士も並列に走らせられます。
+	</Card>
+	<Card title="ドライバを選ばない" icon="puzzle">
+		PostgreSQL のワイヤプロトコルで待ち受けるので、pgx、psycopg、JDBC、node-postgres、ORM、マイグレーションツールがそのまま動きます。
+	</Card>
+</CardGrid>
+
+## 5 行でデータベース
+
+<Tabs syncKey="lang">
+<TabItem label="Go">
+
+```go
+s, err := pgmem.Start(ctx, pgmem.Options{Database: "app"})
+if err != nil {
+	t.Fatal(err)
+}
+defer s.Close()
+db, _ := sql.Open("pgx", s.DSN())
+```
+
+</TabItem>
+<TabItem label="Python">
+
+```python
+import pgmem, psycopg
+
+with pgmem.start(database="app") as pg:
+    with psycopg.connect(pg.template.dsn) as conn:
+        conn.execute("SELECT 1")
+```
+
+</TabItem>
+<TabItem label="Java">
+
+```java
+try (Pgmem pg = Pgmem.builder().database("app").start();
+     Connection conn = DriverManager.getConnection(pg.template().jdbcUrl())) {
+    conn.createStatement().execute("SELECT 1");
+}
+```
+
+</TabItem>
+<TabItem label="Node.js">
+
+```ts
+import { PgmemServer } from '@pgmem/core';
+import pg from 'pg';
+
+await using server = await PgmemServer.start({ database: 'app' });
+const client = new pg.Client({ connectionString: server.url });
+```
+
+</TabItem>
+</Tabs>

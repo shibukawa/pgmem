@@ -1,0 +1,80 @@
+{
+  "measured_at": "2026-09-13",
+  "machine": {
+    "cpu": "Apple M3",
+    "cores": "8",
+    "memory_gb": 16,
+    "os": "Darwin 27.0.0",
+    "go": "go1.27.0",
+    "docker": "29.4.0",
+    "docker_runtime": "OrbStack 2.2.3",
+    "devbox": "0.17.5"
+  },
+  "targets": {
+    "pgmem": {
+      "startup_ms": 48.17,
+      "setup_ms": 53.97,
+      "simple_query_us": 33.05,
+      "dial_query_us": 9.29,
+      "heavy_query_ms": 113.0,
+      "isolate_ms": 13.62,
+      "mem_idle_mb": 164.06,
+      "mem_after_mb": 485.58,
+      "runs": 5,
+      "postgres": "18.3"
+    },
+    "docker": {
+      "startup_ms": 1522.93,
+      "setup_ms": 71.58,
+      "simple_query_us": 84.82,
+      "heavy_query_ms": 249.61,
+      "isolate_ms": 56.32,
+      "mem_idle_mb": 23.91,
+      "mem_after_mb": 39.11,
+      "runs": 5,
+      "postgres": "18.6"
+    },
+    "testcontainers": {
+      "startup_ms": 1529.8,
+      "setup_ms": 79.63,
+      "simple_query_us": 88.14,
+      "heavy_query_ms": 248.03,
+      "isolate_ms": 30.48,
+      "mem_idle_mb": 23.99,
+      "mem_after_mb": 48.48,
+      "runs": 5,
+      "postgres": "18.6"
+    },
+    "devbox": {
+      "startup_ms": 760.09,
+      "setup_ms": 37.7,
+      "simple_query_us": 28.74,
+      "heavy_query_ms": 133.99,
+      "isolate_ms": 60.91,
+      "mem_idle_mb": 65.86,
+      "mem_after_mb": 80.67,
+      "runs": 5,
+      "postgres": "18.6"
+    },
+    "binary": {
+      "startup_ms": 128.68,
+      "mem_idle_mb": 165.77,
+      "runs": 5
+    }
+  },
+  "sizes": {
+    "arch": "arm64",
+    "image": "postgres:18-alpine",
+    "image_download": 117870194,
+    "image_disk": 297982672,
+    "ryuk": "testcontainers/ryuk:0.14.0",
+    "ryuk_download": 2117632,
+    "devbox_postgres": "zndqgdxn4p28iyax8raza3pfn7lkjw64-postgresql-18.6",
+    "devbox_download": 112708126,
+    "devbox_disk": 463004040,
+    "go_link_added": 57965168,
+    "go_link_added_stripped": 37913408,
+    "binary": 41495618,
+    "binary_compressed": 16802383
+  }
+}

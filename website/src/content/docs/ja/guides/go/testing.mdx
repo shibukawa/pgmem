@@ -1,0 +1,195 @@
+---
+title: Go のテストへの組み込み
+description: Go のテストで pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのフォーク。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+テストによってデータベースへの触り方が違うので、pgmem では 3 つの形を用意しています。後ろの 2 つは `pgmemtest` パッケージが面倒を見ます。
+
+| 形 | 準備が走る回数 | テスト 1 件あたりのコスト | 向いているテスト |
+|---|---|---|---|
+| テストごとに新しいサーバー | テストごと | サーバー起動とマイグレーション | スキーマ自体を変えたいテスト |
+| 準備済みデータベースを共有 | 一度 | なし | 読むだけのテスト |
+| テストごとにフォーク | 一度 | フォーク 1 回、数ミリ秒 | 書き込むテスト、並列に走らせるテスト |
+
+## テストごとに新しいサーバー
+
+いちばん素朴な形です。テストごとにサーバーを起動し、スキーマを作ります。何も共有しない代わりに、マイグレーションが長いといちばん遅くなります。
+
+```go
+func TestSchemaVariant(t *testing.T) {
+	s, err := pgmem.Start(t.Context(), pgmem.Options{Database: "app"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { s.Close() })
+
+	db, err := sql.Open("pgx", s.DSN())
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { db.Close() })
+	if _, err := db.Exec(schemaV2); err != nil {
+		t.Fatal(err)
+	}
+	// ...
+}
+```
+
+## TestMain で一度だけ準備する
+
+`pgmemtest.Run` はテンプレートサーバーを起動し、`Prepare` を一度だけ実行し、その結果をスナップショットにして、テストを走らせ、最後に後始末をします。
+
+```go
+package store_test
+
+import (
+	"context"
+	"database/sql"
+	"os"
+	"testing"
+
+	"github.com/shibukawa/pgmem"
+	"github.com/shibukawa/pgmem/pgmemtest"
+)
+
+var fx *pgmemtest.Fixture
+
+func TestMain(m *testing.M) {
+	os.Exit(pgmemtest.Run(m, pgmemtest.Options{
+		Options: pgmem.Options{Database: "app"},
+		Prepare: func(ctx context.Context, db *sql.DB, dsn string) error {
+			if err := migrateUp(dsn); err != nil { // golang-migrate、goose、Atlas など
+				return err
+			}
+			return seed(ctx, db) // dbtestify、SQL、COPY など
+		},
+	}, func(f *pgmemtest.Fixture) { fx = f }))
+}
+```
+
+`Prepare` には、プロセス内で接続済みの `*sql.DB` と、URL を必要とするツール向けの DSN が渡されます。[基本](../basics/)で紹介したマイグレーションとシードのコードは、そのままここに置けます。
+
+## 読み取り専用のテストで準備済みデータベースを共有する
+
+読むだけのテストなら、データベースは 1 つで足ります。`TestMain` でパッケージ全体用のフォークを 1 つ取るか、テンプレートをそのまま使います。
+
+```go
+var readOnly *sql.DB
+
+func TestMain(m *testing.M) {
+	os.Exit(pgmemtest.Run(m, opts, func(f *pgmemtest.Fixture) {
+		fx = f
+		shared, err := f.Snapshot().Fork(context.Background())
+		if err != nil {
+			panic(err)
+		}
+		readOnly, _ = sql.Open("pgx", shared.DSN())
+	}))
+}
+
+func TestReportTotals(t *testing.T) {
+	t.Parallel()
+	var total int
+	if err := readOnly.QueryRow("SELECT sum(amount) FROM orders").Scan(&total); err != nil {
+		t.Fatal(err)
+	}
+}
+```
+
+<Aside type="caution">
+共有データベースが安全なのは、どのテストも書き込まない間だけです。あるテストの `INSERT` が別のテストを驚かせ、失敗するかどうかがテストの実行順で変わってしまいます。
+</Aside>
+
+## 書き込むテストにはテストごとのフォーク
+
+どのヘルパーも `t` を受け取ってスナップショットをフォークし、テストの終了時にフォークを閉じます。フォーク同士は独立しているので、`t.Parallel()` を付けても安全です。
+
+<Tabs syncKey="go-driver">
+<TabItem label="database/sql">
+
+```go
+func TestCreateOrder(t *testing.T) {
+	t.Parallel()
+	db := fx.DB(t) // 新しい複製へのプロセス内接続
+
+	if _, err := db.Exec(`INSERT INTO orders (user_id, amount) VALUES (1, 500)`); err != nil {
+		t.Fatal(err)
+	}
+}
+```
+
+</TabItem>
+<TabItem label="pgx">
+
+```go
+func TestCreateOrder(t *testing.T) {
+	t.Parallel()
+	conn := fx.PgxConn(t)
+	_, err := conn.Exec(t.Context(), `INSERT INTO orders (user_id, amount) VALUES (1, 500)`)
+	if err != nil {
+		t.Fatal(err)
+	}
+}
+```
+
+</TabItem>
+<TabItem label="pgxpool">
+
+```go
+func TestService(t *testing.T) {
+	t.Parallel()
+	svc := NewService(fx.PgxPool(t))
+	// ...
+}
+```
+
+</TabItem>
+<TabItem label="DSN">
+
+```go
+func TestWithURL(t *testing.T) {
+	t.Parallel()
+	app := NewApp(Config{DatabaseURL: fx.DSN(t)})
+	// ...
+}
+```
+
+</TabItem>
+</Tabs>
+
+`DSN()` と `Dial` の両方が要るときは、`fx.Fork(t)` で `*pgmem.Server` そのものを受け取れます。
+
+### テストが書き込んだ内容を検証する
+
+dbtestify はデータベースを期待するデータセットと比較し、食い違えばテーブルの差分を表示します。
+
+```go
+import (
+	"github.com/shibukawa/dbtestify"
+	"github.com/shibukawa/dbtestify/assertdb"
+)
+
+func TestCancelOrder(t *testing.T) {
+	t.Parallel()
+	db := fx.DB(t)
+
+	if err := CancelOrder(t.Context(), db, 1); err != nil {
+		t.Fatal(err)
+	}
+	assertdb.AssertDBWithDB(t, db, dbtestify.PostgresDialect, testdata, "testdata/after_cancel.yaml", nil)
+}
+```
+
+## 並列度とメモリ
+
+生きているフォークはそれぞれデータディレクトリとバッファキャッシュの複製を持ちます。同時に存在できる数は `MaxForks` で制限され、既定値は `go test` の既定の並列度と同じ `GOMAXPROCS` です。上限に達したときにフォークを求めたテストは、ほかのテストが終わるまで待ちます。テストのコンテキストをキャンセルすると待ちも中断されます。
+
+```go
+pgmemtest.Options{MaxForks: 4, /* ... */}
+```
+
+<Aside>
+1 つのフォークの上でコネクションプールを使うこともできますが、同じフォークへのクエリはトランザクション境界で直列になります。独立したテストは、別々のフォークで並列に走らせてください。[制限事項](../../../limits/)も参照してください。
+</Aside>

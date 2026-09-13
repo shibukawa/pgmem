@@ -1,0 +1,150 @@
+---
+title: pytest への組み込み
+description: pytest で pgmem を使う 3 つの形。テストごとに新しいサーバー、読み取り専用テストで共有する準備済みデータベース、書き込むテストにはテストごとのフォーク。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`pgmem` をインストールすると pytest プラグインが登録されます。準備済みデータベースを使う形はそのフィクスチャでまかなえるので、サーバーを用意するだけなら `conftest.py` に何も書く必要はありません。
+
+| フィクスチャ | スコープ | 中身 |
+|---|---|---|
+| `pgmem_options` | session | `pgmem.start()` に渡すキーワード引数。`database` や `params` を変えるときに上書きする |
+| `pgmem_process` | session | 起動したバイナリ |
+| `pgmem_server` | session | テンプレートサーバー |
+| `pgmem_snapshot` | session | テンプレートのスナップショット。マイグレーションを先に流すときに上書きする |
+| `pgmem_fork`、`pgmem_dsn` | function | テストごとのフォーク。teardown で閉じる |
+| `pgmem_class_fork`、`pgmem_class_dsn` | class | テストクラスで共有するフォーク |
+
+## テストごとに新しいサーバー
+
+テストごとにスキーマが違うなら、function スコープのフィクスチャでプロセスを起動します。
+
+```python
+import pgmem
+import pytest
+
+@pytest.fixture
+def fresh_dsn():
+    with pgmem.start(database="app") as pg:
+        apply_schema(pg.template.dsn)
+        yield pg.template.dsn
+```
+
+テストごとにプロセスの起動とマイグレーションのコストがかかります。
+
+## セッションで一度だけ準備する
+
+`conftest.py` で `pgmem_options` と `pgmem_snapshot` を上書きします。マイグレーションとシードはセッションで一度だけ走り、そのスナップショットがすべてのフォークの出発点になります。
+
+```python title="conftest.py"
+import pytest
+from alembic import command
+from alembic.config import Config
+
+@pytest.fixture(scope="session")
+def pgmem_options():
+    return {"database": "app"}
+
+@pytest.fixture(scope="session")
+def pgmem_snapshot(pgmem_server):
+    url = pgmem_server.dsn.replace("postgres://", "postgresql+psycopg://", 1)
+    cfg = Config("alembic.ini")
+    cfg.set_main_option("sqlalchemy.url", url)
+    command.upgrade(cfg, "head")
+    load_seed(pgmem_server.dsn)
+    return pgmem_server.snapshot()
+```
+
+## 読み取り専用のクラスで 1 つのフォークを共有する
+
+読むだけのテストは、クラス単位でフォークを共有できます。
+
+```python
+class TestReports:
+    def test_total(self, pgmem_class_dsn):
+        with psycopg.connect(pgmem_class_dsn) as conn:
+            assert conn.execute("SELECT count(*) FROM orders").fetchone()[0] == 10_000
+
+    def test_top_customer(self, pgmem_class_dsn):
+        ...
+```
+
+<Aside type="caution">
+クラスの中に 1 つでも書き込むテストがあると、ほかのテストがその結果を見てしまい、結果が実行順に左右されます。書き込むテストは `pgmem_dsn` に移してください。
+</Aside>
+
+## 書き込むテストにはテストごとのフォーク
+
+`pgmem_dsn` はテストごとに作られる、準備済みデータベースの新しい複製です。
+
+<Tabs syncKey="py-driver">
+<TabItem label="psycopg">
+
+```python
+def test_cancel_order(pgmem_dsn):
+    with psycopg.connect(pgmem_dsn) as conn:
+        cancel_order(conn, order_id=1)
+        status = conn.execute("SELECT status FROM orders WHERE id = 1").fetchone()[0]
+    assert status == "cancelled"
+```
+
+</TabItem>
+<TabItem label="asyncpg">
+
+```python
+import pytest
+
+@pytest.mark.asyncio
+async def test_cancel_order(pgmem_dsn):
+    conn = await asyncpg.connect(pgmem_dsn)
+    try:
+        await cancel_order(conn, 1)
+    finally:
+        await conn.close()
+```
+
+</TabItem>
+<TabItem label="SQLAlchemy">
+
+```python
+@pytest.fixture
+def session(pgmem_dsn):
+    engine = create_engine(pgmem_dsn.replace("postgres://", "postgresql+psycopg://", 1))
+    with Session(engine) as s:
+        yield s
+    engine.dispose()
+
+def test_cancel_order(session):
+    cancel_order(session, 1)
+```
+
+フォークが閉じる前にエンジンを dispose し、なくなったサーバーへの接続をプールに残さないようにします。
+
+</TabItem>
+</Tabs>
+
+## シードの組を複数使う
+
+準備済みデータベースが 2 種類必要なスイートでは、専用の session フィクスチャで 2 つ目のテンプレートサーバーを起動します。
+
+```python
+@pytest.fixture(scope="session")
+def audit_snapshot(pgmem_process):
+    server = pgmem_process.start_server("audit")
+    apply_audit_schema(server.dsn)
+    return server.snapshot()
+
+@pytest.fixture
+def audit_dsn(audit_snapshot):
+    with audit_snapshot.fork() as fork:
+        yield fork.dsn
+```
+
+## 並列実行
+
+pytest-xdist では各ワーカーが別プロセスで、それぞれ pgmem バイナリを起動し、テンプレートも各自で準備します。ワーカーの中ではフォーク同士が独立しています。1 ワーカーが同時に保持するフォークの数は `snapshot(max_forks=...)` で制限できます。
+
+<Aside>
+フォーク 1 つは PostgreSQL の 1 セッションです。1 つのフォークの上でコネクションプールを使うこともできますが、接続はトランザクション境界で直列になります。`snapshot()` の前にテンプレートへの接続をコミットするか閉じてください。そうしないと 30 秒後に `busy` で失敗します。
+</Aside>

@@ -1,0 +1,265 @@
+---
+title: Go basics
+description: Start pgmem from Go, load a schema with a migration tool, seed data, and use it with pgx or database/sql.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+pgmem is a Go module. The server runs inside your process; there is no binary to install and nothing is downloaded at run time.
+
+## Install
+
+```sh
+go get github.com/shibukawa/pgmem
+```
+
+<Aside>
+The first build compiles about 110 MB of generated Go and takes around a minute. Go's build cache keeps the result, so later builds and `go test` runs do not pay it again.
+</Aside>
+
+## The basic flow
+
+<Steps>
+
+1. **Start a server.** `pgmem.Start` returns a running PostgreSQL with its own in-memory data directory.
+
+   ```go
+   s, err := pgmem.Start(ctx, pgmem.Options{Database: "app"})
+   if err != nil {
+   	log.Fatal(err)
+   }
+   defer s.Close()
+
+   fmt.Println(s.DSN()) // postgres://postgres@127.0.0.1:54321/app?sslmode=disable
+   ```
+
+   `Options` also takes `User`, `Port` (0 picks a free port), `Params` for `postgres -c` settings, and `Log` for the server log.
+
+2. **Register the schema.** Run your migrations against the DSN. Any tool that accepts a connection string works; see [migration tools](#migration-tools) below.
+
+3. **Load seed data.** Insert the rows every test expects. See [seed data](#seed-data).
+
+4. **Use it with the official drivers.** The DSN is an ordinary PostgreSQL URL.
+
+   <Tabs syncKey="go-driver">
+   <TabItem label="pgx">
+
+   ```go
+   conn, err := pgx.Connect(ctx, s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer conn.Close(ctx)
+
+   var name string
+   err = conn.QueryRow(ctx, "SELECT name FROM users WHERE id = $1", 1).Scan(&name)
+   ```
+
+   </TabItem>
+   <TabItem label="pgxpool">
+
+   ```go
+   pool, err := pgxpool.New(ctx, s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer pool.Close()
+   ```
+
+   </TabItem>
+   <TabItem label="database/sql">
+
+   ```go
+   import _ "github.com/jackc/pgx/v5/stdlib"
+
+   db, err := sql.Open("pgx", s.DSN())
+   if err != nil {
+   	return err
+   }
+   defer db.Close()
+   ```
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+### Skip TCP with the in-process dialer
+
+`Server.Dial` connects through `net.Pipe` instead of a loopback socket. Small queries get about three times faster, because a TCP round trip spends most of its time in the kernel, not in PostgreSQL.
+
+```go
+cfg, _ := pgx.ParseConfig(s.DSN())
+cfg.DialFunc = s.Dial
+conn, _ := pgx.ConnectConfig(ctx, cfg)
+
+// database/sql: register the config and open it by name
+name := stdlib.RegisterConnConfig(cfg)
+db, _ := sql.Open("pgx", name)
+```
+
+## Migration tools
+
+A migration tool only needs the DSN or a `*sql.DB`. Run it once, before any test gets a copy.
+
+<Tabs syncKey="go-migrate">
+<TabItem label="Plain SQL">
+
+```go
+//go:embed schema.sql
+var schema string
+
+if _, err := db.ExecContext(ctx, schema); err != nil {
+	return err
+}
+```
+
+Several statements in one string are fine.
+
+</TabItem>
+<TabItem label="golang-migrate">
+
+```go
+import (
+	"github.com/golang-migrate/migrate/v4"
+	_ "github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+)
+
+m, err := migrate.New("file://migrations", s.DSN())
+if err != nil {
+	return err
+}
+if err := m.Up(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
+	return err
+}
+```
+
+</TabItem>
+<TabItem label="goose">
+
+```go
+import "github.com/pressly/goose/v3"
+
+goose.SetDialect("postgres")
+if err := goose.Up(db, "migrations"); err != nil { // db is a *sql.DB
+	return err
+}
+```
+
+</TabItem>
+<TabItem label="Atlas">
+
+```go
+out, err := exec.CommandContext(ctx, "atlas", "migrate", "apply",
+	"--dir", "file://migrations", "--url", s.DSN()).CombinedOutput()
+if err != nil {
+	return fmt.Errorf("atlas: %v: %s", err, out)
+}
+```
+
+</TabItem>
+<TabItem label="ORM">
+
+```go
+// GORM
+gdb, _ := gorm.Open(postgres.Open(s.DSN()), &gorm.Config{})
+gdb.AutoMigrate(&User{}, &Order{})
+
+// ent
+client, _ := ent.Open("postgres", s.DSN())
+client.Schema.Create(ctx)
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+Tools that use a second database, such as Atlas's dev database for `migrate diff`, need a second pgmem server: a server serves only the database it was started with.
+</Aside>
+
+## Seed data
+
+<Tabs syncKey="go-seed">
+<TabItem label="dbtestify">
+
+[dbtestify](https://github.com/shibukawa/dbtestify) loads YAML data sets and can later assert the database against another data set.
+
+```yaml title="testdata/seed.yaml"
+users:
+- { id: 1, name: Frank, email: frank@example.com }
+- { id: 2, name: Grace, email: grace@example.com }
+
+orders:
+- { id: 1, user_id: 1, amount: 1200 }
+```
+
+```go
+import "github.com/shibukawa/dbtestify"
+
+//go:embed testdata
+var testdata embed.FS
+
+func seed(ctx context.Context, db *sql.DB) error {
+	f, err := testdata.Open("testdata/seed.yaml")
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	data, err := dbtestify.ParseYAML(f)
+	if err != nil {
+		return err
+	}
+	dbc, err := dbtestify.NewDBConnectorFromDB(db, dbtestify.PostgresDialect)
+	if err != nil {
+		return err
+	}
+	return dbtestify.Seed(ctx, dbc, data, dbtestify.SeedOpt{})
+}
+```
+
+</TabItem>
+<TabItem label="Plain SQL">
+
+```go
+_, err := db.ExecContext(ctx, `
+	INSERT INTO users (id, name, email) VALUES
+		(1, 'Frank', 'frank@example.com'),
+		(2, 'Grace', 'grace@example.com');
+	INSERT INTO orders (id, user_id, amount) VALUES (1, 1, 1200);
+`)
+```
+
+</TabItem>
+<TabItem label="COPY">
+
+```go
+rows := [][]any{{1, "Frank", "frank@example.com"}, {2, "Grace", "grace@example.com"}}
+_, err := conn.CopyFrom(ctx, pgx.Identifier{"users"},
+	[]string{"id", "name", "email"}, pgx.CopyFromRows(rows))
+```
+
+`COPY` is the fastest way to load thousands of rows.
+
+</TabItem>
+</Tabs>
+
+## Snapshot and fork by hand
+
+The test helpers in the [next page](../testing/) wrap these two calls, which you can also use directly:
+
+```go
+snap, err := s.Snapshot(ctx, pgmem.SnapshotOptions{MaxForks: 8})
+if err != nil {
+	return err
+}
+defer snap.Close()
+
+fork, err := snap.Fork(ctx) // a new server on a copy of the snapshot
+if err != nil {
+	return err
+}
+defer fork.Close()
+```
+
+A snapshot checkpoints the server and copies its data directory. A fork copies it again and starts a new backend. Commit or close every connection to `s` before `Snapshot`, because it waits for open transactions.

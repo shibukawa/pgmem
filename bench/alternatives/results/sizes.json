@@ -1,0 +1,15 @@
+{
+  "arch": "arm64",
+  "image": "postgres:18-alpine",
+  "image_download": 117870194,
+  "image_disk": 297982672,
+  "ryuk": "testcontainers/ryuk:0.14.0",
+  "ryuk_download": 2117632,
+  "devbox_postgres": "zndqgdxn4p28iyax8raza3pfn7lkjw64-postgresql-18.6",
+  "devbox_download": 112708126,
+  "devbox_disk": 463004040,
+  "go_link_added": 57965168,
+  "go_link_added_stripped": 37913408,
+  "binary": 41495618,
+  "binary_compressed": 16802383
+}

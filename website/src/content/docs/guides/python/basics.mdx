@@ -1,0 +1,210 @@
+---
+title: Python basics
+description: Start pgmem from Python, apply migrations with Alembic or plain SQL, load seed data, and connect with psycopg, asyncpg or SQLAlchemy.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+The `pgmem` package ships a platform wheel with the pgmem binary inside. It has no runtime dependencies; bring the PostgreSQL driver you already use.
+
+## Install
+
+<Tabs syncKey="py-installer">
+<TabItem label="pip">
+
+```sh
+pip install pgmem "psycopg[binary]"
+```
+
+</TabItem>
+<TabItem label="uv">
+
+```sh
+uv add --dev pgmem "psycopg[binary]"
+```
+
+</TabItem>
+<TabItem label="Poetry">
+
+```sh
+poetry add --group dev pgmem "psycopg[binary]"
+```
+
+</TabItem>
+</Tabs>
+
+Python 3.9 or newer. Wheels exist for Linux and macOS on x86-64 and arm64, and for Windows on x86-64. On other platforms, build the binary with `go build ./cmd/pgmem` and point `PGMEM_BINARY` at it.
+
+## The basic flow
+
+<Steps>
+
+1. **Start the process.** `pgmem.start()` spawns the binary and waits until its template server accepts connections.
+
+   ```python
+   import pgmem
+
+   with pgmem.start(database="app") as pg:
+       print(pg.template.dsn)  # postgres://postgres@127.0.0.1:54321/app?sslmode=disable
+   ```
+
+   It also takes `user`, `params` (a list of `postgres -c` settings such as `["log_statement=all"]`), `log=True` to pass the server log to stderr, and `binary` to override the lookup.
+
+2. **Register the schema** by running migrations against `pg.template.dsn`. See [migration tools](#migration-tools).
+
+3. **Load seed data.** See [seed data](#seed-data).
+
+4. **Use it with the official drivers.**
+
+   <Tabs syncKey="py-driver">
+   <TabItem label="psycopg">
+
+   ```python
+   import psycopg
+
+   with psycopg.connect(pg.template.dsn) as conn:
+       row = conn.execute("SELECT name FROM users WHERE id = %s", (1,)).fetchone()
+   ```
+
+   </TabItem>
+   <TabItem label="asyncpg">
+
+   ```python
+   import asyncpg
+
+   conn = await asyncpg.connect(pg.template.dsn)
+   name = await conn.fetchval("SELECT name FROM users WHERE id = $1", 1)
+   await conn.close()
+   ```
+
+   </TabItem>
+   <TabItem label="SQLAlchemy">
+
+   ```python
+   from sqlalchemy import create_engine, text
+
+   url = pg.template.dsn.replace("postgres://", "postgresql+psycopg://", 1)
+   engine = create_engine(url)
+   with engine.connect() as conn:
+       conn.execute(text("SELECT 1"))
+   ```
+
+   SQLAlchemy does not accept the `postgres://` scheme, so name the dialect and driver.
+
+   </TabItem>
+   </Tabs>
+
+</Steps>
+
+## Migration tools
+
+<Tabs syncKey="py-migrate">
+<TabItem label="Plain SQL">
+
+```python
+from pathlib import Path
+
+with psycopg.connect(pg.template.dsn) as conn:
+    conn.execute(Path("schema.sql").read_text())
+```
+
+psycopg accepts several statements in one string when there are no parameters.
+
+</TabItem>
+<TabItem label="Alembic">
+
+```python
+from alembic import command
+from alembic.config import Config
+
+cfg = Config("alembic.ini")
+cfg.set_main_option("sqlalchemy.url", pg.template.dsn.replace("postgres://", "postgresql+psycopg://", 1))
+command.upgrade(cfg, "head")
+```
+
+This works with the `env.py` Alembic generates, which reads `sqlalchemy.url` from the config.
+
+</TabItem>
+<TabItem label="SQLAlchemy models">
+
+```python
+from myapp.models import Base
+
+Base.metadata.create_all(create_engine(url))
+```
+
+</TabItem>
+<TabItem label="Django">
+
+```python
+from django.core.management import call_command
+
+# settings.DATABASES["default"] points at pg.template's host, port and NAME
+call_command("migrate", interactive=False)
+```
+
+</TabItem>
+</Tabs>
+
+<Aside type="caution">
+Django's own test runner creates a `test_<name>` database and connects to it, which pgmem does not serve. Apply migrations to the template yourself and run tests against the forked DSN instead of relying on the runner's database creation.
+</Aside>
+
+## Seed data
+
+<Tabs syncKey="py-seed">
+<TabItem label="Plain SQL">
+
+```python
+with psycopg.connect(pg.template.dsn) as conn:
+    conn.execute(Path("seed.sql").read_text())
+```
+
+</TabItem>
+<TabItem label="COPY">
+
+```python
+rows = [(1, "Frank", "frank@example.com"), (2, "Grace", "grace@example.com")]
+with psycopg.connect(pg.template.dsn) as conn, conn.cursor() as cur:
+    with cur.copy("COPY users (id, name, email) FROM STDIN") as copy:
+        for row in rows:
+            copy.write_row(row)
+```
+
+</TabItem>
+<TabItem label="factory_boy">
+
+```python
+import factory
+from sqlalchemy.orm import Session
+
+class UserFactory(factory.alchemy.SQLAlchemyModelFactory):
+    class Meta:
+        model = User
+        sqlalchemy_session_persistence = "commit"
+
+    name = factory.Sequence(lambda n: f"user{n}")
+    email = factory.LazyAttribute(lambda u: f"{u.name}@example.com")
+
+with Session(create_engine(url)) as session:
+    UserFactory._meta.sqlalchemy_session = session
+    UserFactory.create_batch(100)
+```
+
+</TabItem>
+</Tabs>
+
+## Snapshot and fork by hand
+
+```python
+with pgmem.start(database="app") as pg:
+    migrate(pg.template.dsn)
+    snap = pg.template.snapshot()        # waits for open transactions, 30 s by default
+    with snap.fork() as fork:            # a private copy of the prepared database
+        with psycopg.connect(fork.dsn) as conn:
+            conn.execute("DELETE FROM orders")
+    with snap.fork() as fork:            # still has every order
+        ...
+```
+
+Close or commit every connection to the template before `snapshot()`. The pytest plugin on the [next page](../testing/) does all of this for you.
