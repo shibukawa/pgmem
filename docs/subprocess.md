@@ -201,5 +201,7 @@ at run time:
 `scripts/build-binaries.sh` cross-compiles all six platforms into
 `dist/<goos>-<goarch>/`; each is a plain `GOOS=linux GOARCH=amd64 go
 build`. The default backend is generated Go with no assembly, so every
-`GOOS`/`GOARCH` pair Go supports builds; only darwin/arm64 has been
-exercised so far.
+`GOOS`/`GOARCH` pair Go supports builds. CI runs the Go tests on
+linux/amd64, darwin/arm64 and windows/amd64 and the wrapper tests on
+linux/amd64; the linux/arm64, windows/arm64 and darwin/amd64 binaries
+are built but not run.
