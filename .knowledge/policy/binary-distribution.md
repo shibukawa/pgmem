@@ -28,5 +28,5 @@ policy:
   notices: policy:third-party-notices
   version_check: wrapper version equals binary version (policy:versioning); protocol integer from the ready event (api:control-protocol) checked before use
   why_no_download: offline CI, supply-chain review, reproducibility; an opt-in downloader can come later
-  exercised: darwin/arm64 wheel and native jar end to end 2026-09-12 in a clean venv and a bare classpath; 2026-09-14 all six binaries, archives, npm tarballs, wheels and a Maven bundle signed with throwaway ed25519 and RSA keys were built locally, and the darwin/arm64 wheel (venv), npm tarballs (npm install) and native jar (bare classpath) each started a server reporting v0.1.0; other platforms only build
+  exercised: darwin/arm64 wheel and native jar end to end 2026-09-12 in a clean venv and a bare classpath; 2026-09-14 all six binaries, archives, npm tarballs, wheels and a Maven bundle signed with throwaway ed25519 and RSA keys were built locally, and the darwin/arm64 wheel (venv), npm tarballs (npm install) and native jar (bare classpath) each started a server reporting v0.1.0; CI (2026-09-14) runs the Go tests on linux/amd64, darwin/arm64 and windows/amd64 and the wrapper tests on linux/amd64, while linux/arm64, windows/arm64 and darwin/amd64 only build
 ```
