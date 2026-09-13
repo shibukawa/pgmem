@@ -87,7 +87,15 @@ func main() {
 	}
 }
 
+// version is stamped by release builds (-ldflags "-X main.version=v0.1.0",
+// scripts/build-binaries.sh). Other builds report the module version the go
+// command recorded, which is a real version only under go install pkg@version.
+var version string
+
 func buildVersion() string {
+	if version != "" {
+		return version
+	}
 	if bi, ok := debug.ReadBuildInfo(); ok && bi.Main.Version != "" {
 		return bi.Main.Version
 	}
