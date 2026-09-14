@@ -23,11 +23,11 @@ Every run is a fresh process that starts one server, loads the same schema, and 
 
 ## Reading the numbers
 
-- **Defaults differ.** The container and devbox servers use PostgreSQL's defaults (`shared_buffers=128MB`) and write to a real or virtual disk. pgmem uses `shared_buffers=32MB` and an in-memory file system, so sorts that spill to temporary files never touch a disk.
+- **Defaults differ.** The servers use PostgreSQL's defaults (`shared_buffers=128MB`). The Testcontainers benchmark mounts PostgreSQL 18's data directory (`/var/lib/postgresql/18/docker`) as tmpfs; docker run and devbox use disk-backed storage. pgmem uses `shared_buffers=32MB` and an in-memory file system, so sorts that spill to temporary files never touch a disk.
 - **The chart compares the backend and test process.** It shows medians and observed ranges after schema setup and after the query/isolation workload. Testcontainers includes both PostgreSQL and Ryuk container usage. The Linux `docker stats` CLI subtracts cache from the displayed usage.
 - **OrbStack's net change is separate context.** Each container memory run restarts the VM and records its idle footprint. The VM can reclaim memory during a run, so its net change may fall even as container usage rises. The table reports that change and the absolute VM footprint separately.
 - **pgmem memory grows under load.** WebAssembly linear memory is not returned to the OS while a server runs, and each live fork holds its own copy. Budget roughly the idle figure per live fork and bound the number with `MaxForks`.
-- **Testcontainers and docker run are close** because they run the same image; the difference is the Ryuk container and the wait strategy.
+- **The container rows include different setup costs.** docker run uses disk-backed storage; Testcontainers uses tmpfs for PGDATA and includes Ryuk, so its result reflects both storage and orchestration choices.
 
 ## Reproduce
 

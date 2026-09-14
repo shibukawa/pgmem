@@ -23,11 +23,11 @@ import MemoryChart from '../../../components/MemoryChart.astro';
 
 ## 数字の読み方
 
-- **既定値が違います。** コンテナと devbox のサーバーは PostgreSQL の既定値（`shared_buffers=128MB`）で、実ディスクか仮想ディスクに書き込みます。pgmem は `shared_buffers=32MB` でファイルシステムもメモリ上にあるため、一時ファイルにあふれるソートでもディスクに触れません。
+- **既定値が違います。** サーバーは PostgreSQL の既定値（`shared_buffers=128MB`）を使います。Testcontainers の計測では PostgreSQL 18 のデータディレクトリ（`/var/lib/postgresql/18/docker`）を tmpfs にマウントし、docker run と devbox はディスクを使います。pgmem は `shared_buffers=32MB` でファイルシステムもメモリ上にあるため、一時ファイルにあふれるソートでもディスクに触れません。
 - **グラフは DB と計測プロセスのメモリを比べます。** スキーマ準備後とクエリ・分離計測後の中央値および計測回ごとの範囲を示します。Testcontainers は PostgreSQL と Ryuk のコンテナ使用量を含みます。Linux の `docker stats` CLI は表示値からキャッシュを差し引きます。
 - **OrbStack VM の差分は別の参考値です。** コンテナの計測ごとに VM を再起動し、アイドル時を記録します。VM は実行中にメモリを解放することがあり、コンテナ使用量が増えても VM の差分が下がる場合があります。表では差分と VM の絶対値を分けています。
 - **pgmem のメモリは負荷で増えます。** WebAssembly のリニアメモリはサーバー稼働中は OS に返らず、生きているフォークはそれぞれ自分の複製を持ちます。生きているフォーク 1 つあたりアイドル時の値程度を見込み、`MaxForks` で数を抑えてください。
-- **Testcontainers と docker run が近い**のは同じイメージを動かしているからです。差は Ryuk コンテナと待機戦略の分です。
+- **コンテナ方式の差には実行条件も含まれます。** docker run はディスク上に保存しますが、Testcontainers は PGDATA を tmpfs に置き、Ryuk も起動します。そのため、差には保存先と起動方式の違いが含まれます。
 
 ## 再現手順
 

@@ -46,6 +46,12 @@ func (t *tcTarget) start(ctx context.Context) error {
 		testcontainers.WithWaitStrategy(
 			wait.ForLog("database system is ready to accept connections").
 				WithOccurrence(2).WithStartupTimeout(time.Minute)),
+		// postgres:18 moved PGDATA from /var/lib/postgresql/data to
+		// /var/lib/postgresql/18/docker. Keep database I/O in memory for this
+		// benchmark by mounting the actual data directory as tmpfs.
+		testcontainers.WithTmpfs(map[string]string{
+			"/var/lib/postgresql/18/docker": "rw",
+		}),
 	)
 	if err != nil {
 		return err
