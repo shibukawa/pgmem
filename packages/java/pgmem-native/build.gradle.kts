@@ -6,7 +6,6 @@ val nativeDir: Provider<Directory> by rootProject.extra
 
 // Go target -> classifier, as io.github.shibukawa.pgmem.BinaryLocator computes it.
 val platforms = mapOf(
-    "darwin-amd64" to "darwin-x86_64",
     "darwin-arm64" to "darwin-arm64",
     "linux-amd64" to "linux-x86_64",
     "linux-arm64" to "linux-arm64",

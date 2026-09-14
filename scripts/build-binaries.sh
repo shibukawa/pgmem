@@ -10,7 +10,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-all="darwin-amd64 darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
+all="darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
 case "${1:-}" in
   "") targets=$all ;;
   host) targets="$(go env GOOS)-$(go env GOARCH)" ;;

@@ -24,7 +24,7 @@ while IFS= read -r f; do
     if [ ! -f "$f.$ext" ]; then echo "missing $f.$ext"; status=1; fi
   done
 done < <(find "$staging" -type f \( -name '*.jar' -o -name '*.pom' -o -name '*.module' \))
-for classifier in darwin-arm64 darwin-x86_64 linux-arm64 linux-x86_64 windows-arm64 windows-x86_64; do
+for classifier in darwin-arm64 linux-arm64 linux-x86_64 windows-arm64 windows-x86_64; do
   jar=$staging/io/github/shibukawa/pgmem/pgmem-native/$version/pgmem-native-$version-$classifier.jar
   if [ ! -f "$jar" ]; then echo "missing $jar"; status=1; fi
 done

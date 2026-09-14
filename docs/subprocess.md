@@ -187,8 +187,8 @@ at run time:
   `packages/python/hatch_build.py` builds or copies it (`PGMEM_BINARY`,
   `GOOS`/`GOARCH`); `scripts/build-python-wheels.sh` makes every wheel.
 - **Maven**: `io.github.shibukawa.pgmem:pgmem-native` with one classifier
-  per platform (`linux-x86_64`, `linux-arm64`, `darwin-x86_64`,
-  `darwin-arm64`, `windows-x86_64`, `windows-arm64`), extracted to
+  per platform (`linux-x86_64`, `linux-arm64`, `darwin-arm64`,
+  `windows-x86_64`, `windows-arm64`), extracted to
   `~/.cache/pgmem/<version>/` on first use. `zonky embedded-postgres` uses
   this layout for real PostgreSQL binaries. `./gradlew -Pgoos=linux
   -Pgoarch=amd64 build` cross-compiles.
@@ -198,10 +198,12 @@ at run time:
   default). `scripts/build-npm.sh` copies the binaries into
   `packages/node/platforms/<platform>/bin/` and packs every package.
 
-`scripts/build-binaries.sh` cross-compiles all six platforms into
+`scripts/build-binaries.sh` cross-compiles all five platforms into
 `dist/<goos>-<goarch>/`; each is a plain `GOOS=linux GOARCH=amd64 go
 build`. The default backend is generated Go with no assembly, so every
 `GOOS`/`GOARCH` pair Go supports builds. CI runs the Go tests on
 linux/amd64, darwin/arm64 and windows/amd64 and the wrapper tests on
-linux/amd64; the linux/arm64, windows/arm64 and darwin/amd64 binaries
-are built but not run.
+linux/amd64; the linux/arm64 and windows/arm64 binaries are built but
+not run. There is no darwin/amd64 package: on an Intel Mac, `go install
+github.com/shibukawa/pgmem/cmd/pgmem@<version>` and point `PGMEM_BINARY`
+at the result.

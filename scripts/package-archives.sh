@@ -10,7 +10,7 @@ root=$PWD
 v=${VERSION:?set VERSION to X.Y.Z}
 export COPYFILE_DISABLE=1 # no AppleDouble files in tarballs made on macOS
 
-all="darwin-amd64 darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
+all="darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
 rm -rf dist/release
 mkdir -p dist/release
 for target in $all; do

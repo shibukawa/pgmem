@@ -309,7 +309,7 @@ Every artifact of a release carries one version, taken from a `vX.Y.Z`
 tag (the numbering is explained on the
 [versioning](https://shibukawa.github.io/pgmem/versioning/) page; the
 0.1.x releases bring the pipeline up before 1.18.0). Pushing the tag runs
-`.github/workflows/release.yml`. It cross-compiles `cmd/pgmem` for six
+`.github/workflows/release.yml`. It cross-compiles `cmd/pgmem` for five
 platforms (`scripts/build-binaries.sh`), stamps the version into every
 manifest (`scripts/set-version.sh`), packs the archives, npm packages,
 wheels and Maven bundle (`scripts/package-archives.sh`,
@@ -334,7 +334,7 @@ The registries need a one-time setup:
   `shibukawa`, repository `pgmem`, workflow `release.yml`, environment
   `release`). It works before the first upload.
 - **npm**: a trusted publisher can only be added to a package that
-  exists, so the first version of the six `@pgmem/<platform>` packages
+  exists, so the first version of the five `@pgmem/<platform>` packages
   and of `@pgmem/core` is published by hand, with 2FA, from the tarballs
   of a rehearsal (`gh run download <run-id> -n packages -D dist`, then
   `npm publish dist/npm/<tarball> --access public`, `pgmem-core` last).

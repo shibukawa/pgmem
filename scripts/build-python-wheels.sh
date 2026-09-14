@@ -9,7 +9,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 root=$PWD
 
-all="darwin-amd64 darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
+all="darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64"
 rm -rf dist/wheels
 mkdir -p dist/wheels
 cp LICENSE NOTICE packages/python/

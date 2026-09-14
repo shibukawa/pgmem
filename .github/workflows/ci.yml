@@ -72,7 +72,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Placeholder binaries and a test version
         run: |
-          for target in darwin-amd64 darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64; do
+          for target in darwin-arm64 linux-amd64 linux-arm64 windows-amd64 windows-arm64; do
             exe=pgmem
             case $target in windows-*) exe=pgmem.exe ;; esac
             mkdir -p "dist/$target"

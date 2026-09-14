@@ -8,7 +8,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 root=$PWD
 
-all="darwin-arm64 darwin-x64 linux-arm64 linux-x64 win32-arm64 win32-x64"
+all="darwin-arm64 linux-arm64 linux-x64 win32-arm64 win32-x64"
 rm -rf dist/npm
 mkdir -p dist/npm
 for platform in ${*:-$all}; do
