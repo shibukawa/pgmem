@@ -7,8 +7,9 @@ Each wrapper ships the platform pgmem binary inside its own package format; noth
 
 ```yaml
 policy:
-  build: scripts/build-binaries.sh cross-compiles cmd/pgmem with -trimpath -ldflags "-s -w -X main.version=vX.Y.Z" (~41MB) in the six-job matrix of flow:release; one tag produces every package at the same version
-  platforms: [linux-x86_64, linux-arm64, darwin-x86_64, darwin-arm64, windows-x86_64, windows-arm64]  # classifier = BinaryLocator.classifier(); npm uses process.platform-process.arch names
+  build: scripts/build-binaries.sh cross-compiles cmd/pgmem with -trimpath -ldflags "-s -w -X main.version=vX.Y.Z" (~41MB) in the five-job matrix of flow:release; one tag produces every package at the same version
+  platforms: [linux-x86_64, linux-arm64, darwin-arm64, windows-x86_64, windows-arm64]  # classifier = BinaryLocator.classifier(); npm uses process.platform-process.arch names
+  dropped: darwin-x86_64 (npm darwin-x64) on 2026-09-14 at the user's request; an Intel Mac builds cmd/pgmem itself (go install) and sets PGMEM_BINARY
   archives: GitHub Release assets pgmem-<version>-<goos>-<goarch>.tar.gz (zip for Windows, ~17MB) with SHA256SUMS (scripts/package-archives.sh)
   python:
     layout: platform wheels (ruff/uv style); binary at pgmem/_bin/pgmem or pgmem.exe; hatch_build.py deletes a binary left by another platform's build, since hatchling ignores the nested _bin/.gitignore
@@ -16,8 +17,8 @@ policy:
     size: ~17MB per wheel (41MB unpacked), under the PyPI 100MB file limit
     fallback: PGMEM_BINARY env for unsupported platforms and local builds
   java:
-    layout: pgmem-native with packaging pom and only classifier jars (~17MB each, as osmem-server-binaries on Maven Central); resource /io/github/shibukawa/pgmem/native/<classifier>/pgmem; -PnativeDist=<dist dir> packs all six, otherwise the host binary
-    select: user adds the classifier via os-maven-plugin or Gradle osdetector; depending on all six (~100MB) is discouraged
+    layout: pgmem-native with packaging pom and only classifier jars (~17MB each, as osmem-server-binaries on Maven Central); resource /io/github/shibukawa/pgmem/native/<classifier>/pgmem; -PnativeDist=<dist dir> packs all five, otherwise the host binary
+    select: user adds the classifier via os-maven-plugin or Gradle osdetector; depending on all five (~85MB) is discouraged
     extract: first use copies to PGMEM_CACHE_DIR, else ${user.home}/.cache/pgmem/<Implementation-Version>/, else java.io.tmpdir; sets the exec bit; atomic rename so concurrent JVMs are safe
     fallback: PGMEM_BINARY env, then pgmem on PATH
   node:
@@ -28,5 +29,5 @@ policy:
   notices: policy:third-party-notices
   version_check: wrapper version equals binary version (policy:versioning); protocol integer from the ready event (api:control-protocol) checked before use
   why_no_download: offline CI, supply-chain review, reproducibility; an opt-in downloader can come later
-  exercised: darwin/arm64 wheel and native jar end to end 2026-09-12 in a clean venv and a bare classpath; 2026-09-14 all six binaries, archives, npm tarballs, wheels and a Maven bundle signed with throwaway ed25519 and RSA keys were built locally, and the darwin/arm64 wheel (venv), npm tarballs (npm install) and native jar (bare classpath) each started a server reporting v0.1.0; CI (2026-09-14) runs the Go tests on linux/amd64, darwin/arm64 and windows/amd64 and the wrapper tests on linux/amd64, while linux/arm64, windows/arm64 and darwin/amd64 only build
+  exercised: darwin/arm64 wheel and native jar end to end 2026-09-12 in a clean venv and a bare classpath; 2026-09-14 all six binaries, archives, npm tarballs, wheels and a Maven bundle signed with throwaway ed25519 and RSA keys were built locally, and the darwin/arm64 wheel (venv), npm tarballs (npm install) and native jar (bare classpath) each started a server reporting v0.1.0; CI (2026-09-14) runs the Go tests on linux/amd64, darwin/arm64 and windows/amd64 and the wrapper tests on linux/amd64, while linux/arm64 and windows/arm64 only build
 ```

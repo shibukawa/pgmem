@@ -8,7 +8,7 @@ npm package driving concept:server-process, shaped like @osmem/core and implemen
 ```yaml
 api:
   status: implemented 2026-09-13 in packages/node; flow:release packs and publishes it (set up 2026-09-14, the first version of each package goes up by hand); node --test suite in core/test (9 tests); end to end in a scratch project with Vitest 5 (Prisma 7.10, Drizzle 0.45 with postgres.js, TypeORM 1.1) and Jest 30
-  package: '@pgmem/core plus @pgmem/<platform> (darwin-arm64, darwin-x64, linux-arm64, linux-x64, win32-arm64, win32-x64); the npm org pgmem belongs to the user (confirmed 2026-09-13); unscoped pgmem is rejected by npm name similarity to pg-mem'
+  package: '@pgmem/core plus @pgmem/<platform> (darwin-arm64, linux-arm64, linux-x64, win32-arm64, win32-x64; darwin-x64 dropped 2026-09-14 at the user's request, so Intel Macs need PGMEM_BINARY); the npm org pgmem belongs to the user (confirmed 2026-09-13); unscoped pgmem is rejected by npm name similarity to pg-mem'
   core:
     - 'PgmemServer.start({database, user, params, prepare(template), maxForks, control=true, waitTimeoutMs, log, binary}) -> server; spawns pgmem -control 127.0.0.1:0, runs prepare, snapshots the template'
     - 'server: url, template, snapshot, controlUrl, env() -> {PGMEM_CONTROL, PGMEM_SNAPSHOT}, fork(), withFork(fn), close()'
