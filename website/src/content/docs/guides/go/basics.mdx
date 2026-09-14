@@ -53,7 +53,7 @@ The [Go testing guide](../testing/) shows how to prepare a database once, share 
 
 3. **Load seed data.** Insert the rows every test expects. See [seed data](#seed-data).
 
-4. **Use it with the official drivers.** The DSN is an ordinary PostgreSQL URL.
+4. **Connect the application.** For backend unit tests, let repositories and services accept `*sql.DB` or `*pgxpool.Pool` and inject a handle from `pgmemtest.Fixture`. Those handles use the in-process dialer, so tests avoid loopback TCP. The examples below use a DSN to show the standalone driver APIs; keep that boundary for end-to-end tests, separate processes, or tools that require a PostgreSQL URL.
 
    <Tabs syncKey="go-driver">
    <TabItem label="pgx">
@@ -202,7 +202,7 @@ A server serves every database it has, restarting its backend when a connection 
 <Tabs syncKey="go-seed">
 <TabItem label="dbtestify">
 
-[dbtestify](https://github.com/shibukawa/dbtestify) loads YAML data sets and can later assert the database against another data set.
+[dbtestify](https://github.com/shibukawa/dbtestify) loads YAML data sets for seeding. In backend unit tests, it can also compare the resulting table contents with an expected data set and report differences.
 
 ```yaml title="testdata/seed.yaml"
 users:

@@ -197,9 +197,9 @@ func TestWithURL(t *testing.T) {
 
 `fx.Fork(t)` returns the `*pgmem.Server` itself when you need both `DSN()` and `Dial`.
 
-##### Assert what the test wrote
+##### Verify the resulting table contents
 
-dbtestify compares the database with an expected data set and reports a table diff on mismatch:
+For tests of a public API, assert its observable response. For backend unit tests, checking persisted rows directly is another useful verification method: dbtestify compares the resulting table contents with an expected data set and reports a diff on mismatch.
 
 ```go
 import (

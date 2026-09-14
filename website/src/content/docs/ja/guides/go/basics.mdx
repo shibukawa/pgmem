@@ -53,7 +53,7 @@ pgmem と、このページで使う一般的なドライバ pgx をまとめて
 
 3. **シードデータを入れます。** どのテストも前提にする行を投入します。[シードデータ](#シードデータ)を参照してください。
 
-4. **公式ドライバから使います。** DSN は普通の PostgreSQL の URL です。
+4. **アプリケーションから接続します。** バックエンドのユニットテストでは、リポジトリやサービスが `*sql.DB` または `*pgxpool.Pool` を受け取る形にして、`pgmemtest.Fixture` から取得した接続を注入すると、ループバック TCP を通らないプロセス内ダイヤラを使えます。以下の例はドライバ単体の API を示すため DSN を使っています。DSN は E2E テスト、別プロセス、または PostgreSQL の URL を必要とするツールとの境界で使います。
 
    <Tabs syncKey="go-driver">
    <TabItem label="pgx">
@@ -202,7 +202,7 @@ client.Schema.Create(ctx)
 <Tabs syncKey="go-seed">
 <TabItem label="dbtestify">
 
-[dbtestify](https://github.com/shibukawa/dbtestify) は YAML のデータセットを投入でき、あとで別のデータセットと突き合わせてデータベースの状態を検証することもできます。
+[dbtestify](https://github.com/shibukawa/dbtestify) は YAML のデータセットをシードとして投入できます。バックエンドのユニットテストでは、実行後のテーブル内容を期待するデータセットと比較し、差分を確認する用途にも使えます。
 
 ```yaml title="testdata/seed.yaml"
 users:
