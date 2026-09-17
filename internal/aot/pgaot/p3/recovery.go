@@ -141,24 +141,24 @@ func F_assign_recovery_target_time(m *base.Module, l0 int32, l1 int32) {
 func F_assign_recovery_target_timeline(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v11 int32
-	_ = v11
-	var v14 int64
-	_ = v14
-	var v16 int32
-	_ = v16
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_recovery_target_timeline[0])) = v5
-	if v5 == int32(2) {
-		v11 = int32(0)
-		v14 = F_strtox_2(m, l0, v11, v11, int64(4294967295))
+	var v4 int32
+	_ = v4
+	var v9 int32
+	_ = v9
+	var v12 int64
+	_ = v12
+	var v15 int32
+	_ = v15
+	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_recovery_target_timeline[0])) = v4
+	if v4 == int32(2) {
+		v9 = int32(0)
+		v12 = F_strtox_2(m, l0, v9, v9, int64(4294967295))
 		mBase = m.M
-		v16 = base.I32_wrap_i64(v14)
+		v15 = base.I32_wrap_i64(v12)
 	} else {
-		v16 = int32(0)
+		v15 = int32(0)
 	}
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_recovery_target_timeline[1])) = v16
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_recovery_target_timeline[1])) = v15
 	return
 }

@@ -223,24 +223,26 @@ func F_standby_desc(m *base.Module, l0 int32, l1 int32) {
 	_ = v123
 	var v128 int32
 	_ = v128
-	var v133 int32
-	_ = v133
-	var v139 int32
-	_ = v139
+	var v129 int32
+	_ = v129
+	var v135 int32
+	_ = v135
 	var v141 int32
 	_ = v141
-	var v142 int32
-	_ = v142
+	var v143 int32
+	_ = v143
 	var v144 int32
 	_ = v144
-	var v147 int32
-	_ = v147
-	var v148 int32
-	_ = v148
+	var v146 int32
+	_ = v146
 	var v149 int32
 	_ = v149
+	var v150 int32
+	_ = v150
 	var v151 int32
 	_ = v151
+	var v153 int32
+	_ = v153
 	v8 = m.G0
 	v10 = v8 - int32(96)
 	m.G0 = v10
@@ -264,14 +266,14 @@ L1:
 	return
 L2:
 	;
-	v144 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
-	v147 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-	v148 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	v149 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+8)))
-	F_standby_desc_invalidations(m, l0, v144, v13+int32(16), v147, v148, v149)
+	v146 = *(*int32)(unsafe.Add(mBase, uint32(v13)+12))
+	v149 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+	v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+8)))
+	F_standby_desc_invalidations(m, l0, v146, v13+int32(16), v149, v150, v151)
 	mBase = m.M
-	v151 = m.ExcPending
-	if v151 != 0 {
+	v153 = m.ExcPending
+	if v153 != 0 {
 		goto L9
 	} else {
 		goto L32
@@ -462,12 +464,13 @@ L27:
 L28:
 	;
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v13)))
-	v133 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(24)+(v128+v123)<<(uint(int32(2))%32))))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v133
+	v129 = int32(2)
+	v135 = *(*int32)(unsafe.Add(mBase, uint32(v13+int32(24)+v128<<(uint(v129)%32)+v123<<(uint(v129)%32))))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v135
 	F_appendStringInfo(m, l0, int32(_a_F_standby_desc_3), v10+int32(16))
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v141 = m.ExcPending
+	if v141 != 0 {
 		goto L9
 	} else {
 		goto L30
@@ -477,10 +480,10 @@ L29:
 	goto L1
 L30:
 	;
-	v141 = v123 + int32(1)
-	v142 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	if v141 < v142 {
-		v123 = v141
+	v143 = v123 + int32(1)
+	v144 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+	if v143 < v144 {
+		v123 = v143
 		goto L28
 	} else {
 		goto L31

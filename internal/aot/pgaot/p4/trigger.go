@@ -32,42 +32,34 @@ func F_CopyTriggerDesc(m *base.Module, l0 int32) int32 {
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v32 int32
-	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
+	var v37 int32
+	_ = v37
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
+	var v51 int32
+	_ = v51
+	var v58 int32
+	_ = v58
 	var v59 int32
 	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
-	_ = v61
 	var v62 int32
 	_ = v62
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v66 int32
-	_ = v66
+	var v63 int32
+	_ = v63
 	var v68 int32
 	_ = v68
 	var v73 int32
@@ -169,115 +161,103 @@ L5:
 	}
 L6:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v34 = v32 * int32(60)
-	if v34 != 0 {
-		goto L8
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v33 = v31 * int32(60)
+	if v33 != 0 {
+		goto L7
 	} else {
-		goto L9
+		goto L8
 	}
 L7:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v36
-	v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v38 <= int32(0) {
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	base.MemoryCopy(m, v29, v34, v33)
+	goto L9
+L8:
+	;
+	goto L9
+L9:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v29
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v37 <= int32(0) {
 		v135 = v14
 		goto L1
 	} else {
-		goto L11
+		goto L10
 	}
-L8:
-	;
-	v35 = F__emscripten_memcpy_bulkmem(m, v29, v31, v34)
-	mBase = m.M
-	v36 = v35
-	goto L10
-L9:
-	;
-	v36 = v29
-	goto L10
 L10:
 	;
-	goto L7
+	v41 = v29
+	v46 = v2
+	goto L11
 L11:
 	;
-	v42 = v29
-	v45 = v2
-	goto L12
-L12:
-	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v42)+4))
-	v49 = F_pstrdup(m, v48)
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v41)+4))
+	v48 = F_pstrdup(m, v47)
 	mBase = m.M
-	v50 = m.ExcPending
-	if v50 != 0 {
+	v49 = m.ExcPending
+	if v49 != 0 {
 		goto L4
 	} else {
-		goto L14
+		goto L13
 	}
-L13:
+L12:
 	;
 	v135 = v14
 	goto L1
+L13:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+4)) = v48
+	v51 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41)+36)))
+	if int32(0) < v51 {
+		goto L14
+	} else {
+		goto L15
+	}
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+4)) = v49
-	v52 = int32(*(*int16)(unsafe.Add(mBase, uint32(v42)+36)))
-	if int32(0) < v52 {
-		goto L15
+	v58 = F_palloc(m, v51<<(uint(int32(1))%32)&int32(_a_F_CopyTriggerDesc_0))
+	mBase = m.M
+	v59 = m.ExcPending
+	if v59 != 0 {
+		goto L4
 	} else {
-		goto L16
+		goto L17
 	}
 L15:
 	;
-	v59 = F_palloc(m, v52<<(uint(int32(1))%32)&int32(_a_F_CopyTriggerDesc_0))
-	mBase = m.M
-	v60 = m.ExcPending
-	if v60 != 0 {
-		goto L4
-	} else {
-		goto L18
-	}
+	goto L16
 L16:
 	;
-	goto L17
+	v68 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41)+34)))
+	if int32(0) < v68 {
+		goto L21
+	} else {
+		goto L22
+	}
 L17:
 	;
-	v68 = int32(*(*int16)(unsafe.Add(mBase, uint32(v42)+34)))
-	if int32(0) < v68 {
-		goto L23
+	v60 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41)+36)))
+	v62 = v60 << (uint(int32(1)) % 32)
+	if v62 != 0 {
+		goto L18
 	} else {
-		goto L24
+		goto L19
 	}
 L18:
 	;
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v42)+40))
-	v62 = int32(*(*int16)(unsafe.Add(mBase, uint32(v42)+36)))
-	v64 = v62 << (uint(int32(1)) % 32)
-	if v64 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v41)+40))
+	base.MemoryCopy(m, v58, v63, v62)
+	goto L20
 L19:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+40)) = v66
-	goto L17
+	goto L20
 L20:
 	;
-	v65 = F__emscripten_memcpy_bulkmem(m, v59, v61, v64)
-	mBase = m.M
-	v66 = v65
-	goto L22
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+40)) = v58
+	goto L16
 L21:
-	;
-	v66 = v59
-	goto L22
-L22:
-	;
-	goto L19
-L23:
 	;
 	v73 = F_palloc(m, v68<<(uint(int32(2))%32))
 	mBase = m.M
@@ -285,42 +265,42 @@ L23:
 	if v74 != 0 {
 		goto L4
 	} else {
-		goto L26
+		goto L24
+	}
+L22:
+	;
+	goto L23
+L23:
+	;
+	v114 = *(*int32)(unsafe.Add(mBase, uint32(v41)+48))
+	if v114 != 0 {
+		goto L32
+	} else {
+		goto L33
 	}
 L24:
 	;
-	goto L25
+	v75 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41)+34)))
+	if int32(0) < v75 {
+		goto L25
+	} else {
+		goto L26
+	}
 L25:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(v42)+48))
-	if v114 != 0 {
-		goto L34
-	} else {
-		goto L35
-	}
+	v81 = int32(0)
+	goto L28
 L26:
 	;
-	v75 = int32(*(*int16)(unsafe.Add(mBase, uint32(v42)+34)))
-	if int32(0) < v75 {
-		goto L27
-	} else {
-		goto L28
-	}
+	goto L27
 L27:
 	;
-	v81 = int32(0)
-	goto L30
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+44)) = v73
+	goto L23
 L28:
 	;
-	goto L29
-L29:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+44)) = v73
-	goto L25
-L30:
-	;
 	v87 = v81 << (uint(int32(2)) % 32)
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(v42)+44))
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(v41)+44))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v89+v87)))
 	v92 = F_pstrdup(m, v91)
 	mBase = m.M
@@ -328,26 +308,26 @@ L30:
 	if v93 != 0 {
 		goto L4
 	} else {
-		goto L32
+		goto L30
+	}
+L29:
+	;
+	goto L27
+L30:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v73+v87))) = v92
+	v96 = v81 + int32(1)
+	v97 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41)+34)))
+	if v96 < v97 {
+		v81 = v96
+		goto L28
+	} else {
+		goto L31
 	}
 L31:
 	;
 	goto L29
 L32:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v73+v87))) = v92
-	v96 = v81 + int32(1)
-	v97 = int32(*(*int16)(unsafe.Add(mBase, uint32(v42)+34)))
-	if v96 < v97 {
-		v81 = v96
-		goto L30
-	} else {
-		goto L33
-	}
-L33:
-	;
-	goto L31
-L34:
 	;
 	v115 = F_pstrdup(m, v114)
 	mBase = m.M
@@ -355,24 +335,24 @@ L34:
 	if v116 != 0 {
 		goto L4
 	} else {
+		goto L35
+	}
+L33:
+	;
+	goto L34
+L34:
+	;
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(v41)+52))
+	if v118 != 0 {
+		goto L36
+	} else {
 		goto L37
 	}
 L35:
 	;
-	goto L36
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+48)) = v115
+	goto L34
 L36:
-	;
-	v118 = *(*int32)(unsafe.Add(mBase, uint32(v42)+52))
-	if v118 != 0 {
-		goto L38
-	} else {
-		goto L39
-	}
-L37:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+48)) = v115
-	goto L36
-L38:
 	;
 	v119 = F_pstrdup(m, v118)
 	mBase = m.M
@@ -380,24 +360,24 @@ L38:
 	if v120 != 0 {
 		goto L4
 	} else {
+		goto L39
+	}
+L37:
+	;
+	goto L38
+L38:
+	;
+	v122 = *(*int32)(unsafe.Add(mBase, uint32(v41)+56))
+	if v122 != 0 {
+		goto L40
+	} else {
 		goto L41
 	}
 L39:
 	;
-	goto L40
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+52)) = v119
+	goto L38
 L40:
-	;
-	v122 = *(*int32)(unsafe.Add(mBase, uint32(v42)+56))
-	if v122 != 0 {
-		goto L42
-	} else {
-		goto L43
-	}
-L41:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+52)) = v119
-	goto L40
-L42:
 	;
 	v123 = F_pstrdup(m, v122)
 	mBase = m.M
@@ -405,29 +385,29 @@ L42:
 	if v124 != 0 {
 		goto L4
 	} else {
-		goto L45
+		goto L43
+	}
+L41:
+	;
+	goto L42
+L42:
+	;
+	v129 = v46 + int32(1)
+	v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v129 < v130 {
+		v41 = v41 + int32(60)
+		v46 = v129
+		goto L11
+	} else {
+		goto L44
 	}
 L43:
 	;
-	goto L44
+	*(*int32)(unsafe.Add(mBase, uint32(v41)+56)) = v123
+	goto L42
 L44:
 	;
-	v129 = v45 + int32(1)
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v129 < v130 {
-		v42 = v42 + int32(60)
-		v45 = v129
-		goto L12
-	} else {
-		goto L46
-	}
-L45:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v42)+56)) = v123
-	goto L44
-L46:
-	;
-	goto L13
+	goto L12
 }
 func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
 	mBase := m.M
@@ -436,10 +416,16 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v10
 	var v12 int32
 	_ = v12
+	var v15 int32
+	_ = v15
 	var v20 int32
 	_ = v20
 	var v22 int32
 	_ = v22
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
 	var v27 int32
 	_ = v27
 	var v28 int32
@@ -456,100 +442,101 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v45 int32
-	_ = v45
-	var v58 int32
-	_ = v58
+	var v39 int32
+	_ = v39
+	var v40 int32
+	_ = v40
+	var v43 int32
+	_ = v43
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
+	var v64 int32
+	_ = v64
 	var v70 int32
 	_ = v70
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v79 int32
+	_ = v79
 	var v80 int32
 	_ = v80
-	var v81 int32
-	_ = v81
-	var v85 int32
-	_ = v85
+	var v84 int32
+	_ = v84
 	var v86 int32
 	_ = v86
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
+	var v93 int32
+	_ = v93
 	var v97 int32
 	_ = v97
-	var v101 int32
-	_ = v101
+	var v102 int32
+	_ = v102
 	var v106 int32
 	_ = v106
-	var v110 int32
-	_ = v110
-	var v116 int32
-	_ = v116
-	var v121 int32
-	_ = v121
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
 	v10 = m.G0
 	v12 = v10 - int32(96)
 	m.G0 = v12
-	F_ScanKeyInit(m, v12+int32(48), int32(1), int32(3), int32(184), l1)
+	v15 = v12 + int32(48)
+	F_ScanKeyInit(m, v15, int32(1), int32(3), int32(184), l1)
 	mBase = m.M
 	v20 = m.ExcPending
 	if v20 != 0 {
 		return
 	} else {
 		v22 = int32(1)
-		v27 = F_systable_beginscan(m, l0, int32(2702), v22, int32(0), v22, v12+int32(48))
+		v25 = F_systable_beginscan(m, l0, int32(2702), v22, int32(0), v22, v15)
 		mBase = m.M
-		v28 = m.ExcPending
-		if v28 != 0 {
+		v26 = m.ExcPending
+		if v26 != 0 {
 			return
 		} else {
-			v29 = F_systable_getnext(m, v27)
+			v27 = F_systable_getnext(m, v25)
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v28 = m.ExcPending
+			if v28 != 0 {
 				return
 			} else {
-				if v29 != 0 {
-					v31 = F_heap_copytuple(m, v29)
+				if v27 != 0 {
+					v29 = F_heap_copytuple(m, v27)
 					mBase = m.M
-					v32 = m.ExcPending
-					if v32 != 0 {
+					v30 = m.ExcPending
+					if v30 != 0 {
 						return
 					} else {
-						v33 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
-						v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+22)))
-						v35 = v33 + v34
+						v31 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
+						v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v31)+22)))
+						v33 = v31 + v32
 						if l2 != 0 {
-							v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
-							if v36 != 0 {
+							v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+8))
+							if v34 != 0 {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v110 = m.ExcPending
-								if v110 != 0 {
+								v106 = m.ExcPending
+								if v106 != 0 {
 									return
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
 									F_errmsg_internal(m, int32(_a_F_TriggerSetParentTrigger_0), v12+int32(16))
 									mBase = m.M
-									v116 = m.ExcPending
-									if v116 != 0 {
+									v112 = m.ExcPending
+									if v112 != 0 {
 										return
 									} else {
 										F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1255), int32(_a_F_TriggerSetParentTrigger_2))
 										mBase = m.M
-										v121 = m.ExcPending
-										if v121 != 0 {
+										v117 = m.ExcPending
+										if v117 != 0 {
 											return
 										} else {
 											base.Wasm_trap_unreachable()
@@ -559,46 +546,48 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 									}
 								}
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v35)+8)) = l2
-								F_CatalogTupleUpdate(m, l0, v29+int32(4), v31)
+								*(*int32)(unsafe.Add(mBase, uint32(v33)+8)) = l2
+								F_CatalogTupleUpdate(m, l0, v27+int32(4), v29)
 								mBase = m.M
-								v41 = m.ExcPending
-								if v41 != 0 {
+								v39 = m.ExcPending
+								if v39 != 0 {
 									return
 								} else {
-									v42 = int32(0)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v42
+									v40 = int32(0)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+44)) = v40
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+40)) = l1
-									v45 = int32(2620)
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v45
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v42
+									v43 = int32(2620)
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+36)) = v43
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v40
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l2
-									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v45
-									F_recordDependencyOn(m, v12+int32(36), v12+int32(24), int32(80))
+									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v43
+									v51 = v12 + int32(36)
+									v53 = v12 + int32(24)
+									F_recordDependencyOn(m, v51, v53, int32(80))
 									mBase = m.M
-									v58 = m.ExcPending
-									if v58 != 0 {
+									v56 = m.ExcPending
+									if v56 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l3
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(1259)
-										F_recordDependencyOn(m, v12+int32(36), v12+int32(24), int32(83))
+										F_recordDependencyOn(m, v51, v53, int32(83))
 										mBase = m.M
-										v70 = m.ExcPending
-										if v70 != 0 {
+										v64 = m.ExcPending
+										if v64 != 0 {
 											return
 										} else {
-											F_pfree(m, v31)
+											F_pfree(m, v29)
 											mBase = m.M
-											v88 = m.ExcPending
-											if v88 != 0 {
+											v84 = m.ExcPending
+											if v84 != 0 {
 												return
 											} else {
-												F_systable_endscan(m, v27)
+												F_systable_endscan(m, v25)
 												mBase = m.M
-												v90 = m.ExcPending
-												if v90 != 0 {
+												v86 = m.ExcPending
+												if v86 != 0 {
 													return
 												} else {
 													m.G0 = v12 + int32(96)
@@ -610,36 +599,36 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 								}
 							}
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v35)+8)) = int32(0)
-							F_CatalogTupleUpdate(m, l0, v29+int32(4), v31)
+							*(*int32)(unsafe.Add(mBase, uint32(v33)+8)) = int32(0)
+							F_CatalogTupleUpdate(m, l0, v27+int32(4), v29)
 							mBase = m.M
-							v76 = m.ExcPending
-							if v76 != 0 {
+							v70 = m.ExcPending
+							if v70 != 0 {
 								return
 							} else {
-								v77 = int32(2620)
-								v80 = F_deleteDependencyRecordsForClass(m, v77, l1, v77, int32(80))
+								v71 = int32(2620)
+								v74 = F_deleteDependencyRecordsForClass(m, v71, l1, v71, int32(80))
 								mBase = m.M
-								v81 = m.ExcPending
-								if v81 != 0 {
+								v75 = m.ExcPending
+								if v75 != 0 {
 									return
 								} else {
-									v85 = F_deleteDependencyRecordsForClass(m, int32(2620), l1, int32(1259), int32(83))
+									v79 = F_deleteDependencyRecordsForClass(m, int32(2620), l1, int32(1259), int32(83))
 									mBase = m.M
-									v86 = m.ExcPending
-									if v86 != 0 {
+									v80 = m.ExcPending
+									if v80 != 0 {
 										return
 									} else {
-										F_pfree(m, v31)
+										F_pfree(m, v29)
 										mBase = m.M
-										v88 = m.ExcPending
-										if v88 != 0 {
+										v84 = m.ExcPending
+										if v84 != 0 {
 											return
 										} else {
-											F_systable_endscan(m, v27)
+											F_systable_endscan(m, v25)
 											mBase = m.M
-											v90 = m.ExcPending
-											if v90 != 0 {
+											v86 = m.ExcPending
+											if v86 != 0 {
 												return
 											} else {
 												m.G0 = v12 + int32(96)
@@ -654,21 +643,21 @@ func F_TriggerSetParentTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v97 = m.ExcPending
-					if v97 != 0 {
+					v93 = m.ExcPending
+					if v93 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 						F_errmsg_internal(m, int32(_a_F_TriggerSetParentTrigger_3), v12)
 						mBase = m.M
-						v101 = m.ExcPending
-						if v101 != 0 {
+						v97 = m.ExcPending
+						if v97 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_TriggerSetParentTrigger_1), int32(1247), int32(_a_F_TriggerSetParentTrigger_2))
 							mBase = m.M
-							v106 = m.ExcPending
-							if v106 != 0 {
+							v102 = m.ExcPending
+							if v102 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()

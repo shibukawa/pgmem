@@ -20,20 +20,20 @@ func F_pg_get_wal_resource_managers(m *base.Module, l0 int32) int32 {
 	_ = v18
 	var v21 int32
 	_ = v21
+	var v25 int32
+	_ = v25
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
 	v2 = int32(0)
 	v5 = m.G0
 	v7 = v5 - int32(16)
@@ -58,8 +58,8 @@ L2:
 	goto L3
 L3:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v21<<(uint(int32(5))%32))+uint32(_c_F_pg_get_wal_resource_managers[0])))
-	if v27 != 0 {
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v21<<(uint(int32(5))%32))+uint32(_c_F_pg_get_wal_resource_managers[0])))
+	if v25 != 0 {
 		goto L5
 	} else {
 		goto L6
@@ -71,10 +71,10 @@ L4:
 L5:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v21
-	v29 = F_cstring_to_text(m, v27)
+	v27 = F_cstring_to_text(m, v25)
 	mBase = m.M
-	v30 = m.ExcPending
-	if v30 != 0 {
+	v28 = m.ExcPending
+	if v28 != 0 {
 		goto L1
 	} else {
 		goto L8
@@ -84,9 +84,9 @@ L6:
 	goto L7
 L7:
 	;
-	v43 = v21 + int32(1)
-	if v43 != int32(256) {
-		v21 = v43
+	v41 = v21 + int32(1)
+	if v41 != int32(256) {
+		v21 = v41
 		goto L3
 	} else {
 		goto L10
@@ -94,13 +94,13 @@ L7:
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = base.B2i32(base.Ui32(v21) < base.Ui32(int32(22)))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v29
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
-	F_tuplestore_putvalues(m, v35, v36, v7+int32(4), v7)
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v27
+	v33 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v9)+28))
+	F_tuplestore_putvalues(m, v33, v34, v7+int32(4), v7)
 	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L1
 	} else {
 		goto L9

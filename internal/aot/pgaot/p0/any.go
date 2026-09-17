@@ -48,8 +48,8 @@ func F_convert_ANY_sublink_to_join(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v59
 	var v61 int32
 	_ = v61
-	var v66 int32
-	_ = v66
+	var v68 int32
+	_ = v68
 	var v75 int32
 	_ = v75
 	var v78 int32
@@ -84,8 +84,8 @@ func F_convert_ANY_sublink_to_join(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v120
 	var v122 int32
 	_ = v122
-	var v127 int32
-	_ = v127
+	var v129 int32
+	_ = v129
 	var v136 int32
 	_ = v136
 	var v139 int32
@@ -130,14 +130,12 @@ func F_convert_ANY_sublink_to_join(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v169
 	var v172 int32
 	_ = v172
-	var v173 int32
-	_ = v173
+	var v178 int32
+	_ = v178
 	var v179 int32
 	_ = v179
-	var v180 int32
-	_ = v180
-	var v182 int32
-	_ = v182
+	var v184 int32
+	_ = v184
 	var v186 int32
 	_ = v186
 	var v190 int32
@@ -160,8 +158,8 @@ func F_convert_ANY_sublink_to_join(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v200
 	var v202 int32
 	_ = v202
-	var v208 int32
-	_ = v208
+	var v206 int32
+	_ = v206
 	var v214 int32
 	_ = v214
 	var v219 int32
@@ -225,21 +223,21 @@ L6:
 L7:
 	;
 	if l2 == int32(0) {
-		v66 = v22
+		v68 = v22
 		goto L8
 	} else {
 		goto L9
 	}
 L8:
 	;
-	v75 = v66
+	v75 = v68
 	goto L4
 L9:
 	;
 	v31 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	if v32 < v31 {
-		v66 = v22
+		v68 = v22
 		goto L8
 	} else {
 		goto L10
@@ -269,18 +267,18 @@ L14:
 	;
 	v50 = v43 << (uint(int32(2)) % 32)
 	v52 = *(*int32)(unsafe.Add(mBase, uint32(v18+v38+v50)))
-	v54 = *(*int32)(unsafe.Add(mBase, uint32(v50+(l2+v38))))
+	v54 = *(*int32)(unsafe.Add(mBase, uint32(l2+v38+v50)))
 	v57 = v52 & (v54 ^ int32(-1))
 	v59 = base.B2i32(v57 == int32(0))
 	if v57 != 0 {
-		v66 = v59
+		v68 = v59
 		goto L8
 	} else {
 		goto L16
 	}
 L15:
 	;
-	v66 = v59
+	v68 = v59
 	goto L8
 L16:
 	;
@@ -339,21 +337,21 @@ L23:
 L24:
 	;
 	if l2 == int32(0) {
-		v127 = v83
+		v129 = v83
 		goto L25
 	} else {
 		goto L26
 	}
 L25:
 	;
-	v136 = v127
+	v136 = v129
 	goto L21
 L26:
 	;
 	v92 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
 	v93 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	if v93 < v92 {
-		v127 = v83
+		v129 = v83
 		goto L25
 	} else {
 		goto L27
@@ -383,18 +381,18 @@ L31:
 	;
 	v111 = v104 << (uint(int32(2)) % 32)
 	v113 = *(*int32)(unsafe.Add(mBase, uint32(v79+v99+v111)))
-	v115 = *(*int32)(unsafe.Add(mBase, uint32(v111+(l2+v99))))
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(l2+v99+v111)))
 	v118 = v113 & (v115 ^ int32(-1))
 	v120 = base.B2i32(v118 == int32(0))
 	if v118 != 0 {
-		v127 = v120
+		v129 = v120
 		goto L25
 	} else {
 		goto L33
 	}
 L32:
 	;
-	v127 = v120
+	v129 = v120
 	goto L25
 L33:
 	;
@@ -504,7 +502,7 @@ L45:
 	*(*int32)(unsafe.Add(mBase, uint32(v164))) = int32(63)
 	v169 = *(*int32)(unsafe.Add(mBase, uint32(v17)+76))
 	if v169 == int32(0) {
-		v208 = v142
+		v206 = v142
 		goto L46
 	} else {
 		goto L47
@@ -512,7 +510,7 @@ L45:
 L46:
 	;
 	v214 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v208
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v206
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = l0
 	v219 = F_convert_testexpr_mutator(m, v214, v13+int32(8))
 	mBase = m.M
@@ -520,45 +518,38 @@ L46:
 	if v220 != 0 {
 		goto L2
 	} else {
-		goto L59
+		goto L57
 	}
 L47:
 	;
-	v172 = int32(0)
-	v173 = *(*int32)(unsafe.Add(mBase, uint32(v169)+4))
-	if v173 <= v172 {
-		goto L48
+	v172 = *(*int32)(unsafe.Add(mBase, uint32(v169)+4))
+	if v172 <= int32(0) {
+		v206 = v142
+		goto L46
 	} else {
-		goto L49
+		goto L48
 	}
 L48:
 	;
-	v208 = v142
-	goto L46
+	v178 = v142
+	v179 = int32(0)
+	v184 = v172
+	goto L49
 L49:
-	;
-	goto L50
-L50:
-	;
-	v179 = v172
-	v180 = v142
-	v182 = v173
-	goto L51
-L51:
 	;
 	v186 = *(*int32)(unsafe.Add(mBase, uint32(v169)+12))
 	v190 = *(*int32)(unsafe.Add(mBase, uint32(v186+v179<<(uint(int32(2))%32))))
 	v191 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v190)+26)))
 	if v191 == int32(0) {
-		goto L53
+		goto L51
 	} else {
-		goto L54
+		goto L52
 	}
-L52:
+L50:
 	;
-	v208 = v199
+	v206 = v199
 	goto L46
-L53:
+L51:
 	;
 	v194 = F_makeVarFromTargetEntry(m, v162, v190)
 	mBase = m.M
@@ -566,44 +557,44 @@ L53:
 	if v195 != 0 {
 		goto L2
 	} else {
+		goto L54
+	}
+L52:
+	;
+	v199 = v178
+	v200 = v184
+	goto L53
+L53:
+	;
+	v202 = v179 + int32(1)
+	if v202 < v200 {
+		v178 = v199
+		v179 = v202
+		v184 = v200
+		goto L49
+	} else {
 		goto L56
 	}
 L54:
 	;
-	v199 = v180
-	v200 = v182
-	goto L55
-L55:
-	;
-	v202 = v179 + int32(1)
-	if v202 < v200 {
-		v179 = v202
-		v180 = v199
-		v182 = v200
-		goto L51
-	} else {
-		goto L58
-	}
-L56:
-	;
-	v196 = F_lappend(m, v180, v194)
+	v196 = F_lappend(m, v178, v194)
 	mBase = m.M
 	v197 = m.ExcPending
 	if v197 != 0 {
 		goto L2
 	} else {
-		goto L57
+		goto L55
 	}
-L57:
+L55:
 	;
 	v198 = *(*int32)(unsafe.Add(mBase, uint32(v169)+4))
 	v199 = v196
 	v200 = v198
-	goto L55
-L58:
+	goto L53
+L56:
 	;
-	goto L52
-L59:
+	goto L50
+L57:
 	;
 	v222 = F_palloc0(m, int32(40))
 	mBase = m.M
@@ -611,9 +602,9 @@ L59:
 	if v223 != 0 {
 		goto L2
 	} else {
-		goto L60
+		goto L58
 	}
-L60:
+L58:
 	;
 	v224 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(v222)+32)) = v224
@@ -704,8 +695,8 @@ func F_executeAnyItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	_ = v129
 	var v130 int32
 	_ = v130
-	var v147 int32
-	_ = v147
+	var v148 int32
+	_ = v148
 	v15 = m.G0
 	v17 = v15 - int32(48)
 	m.G0 = v17
@@ -730,10 +721,10 @@ L2:
 L3:
 	;
 	m.G0 = v17 + int32(48)
-	return v147
+	return v148
 L4:
 	;
-	v147 = int32(1)
+	v148 = int32(1)
 	goto L3
 L5:
 	;
@@ -766,7 +757,7 @@ L8:
 	}
 L9:
 	;
-	v147 = int32(0)
+	v148 = int32(0)
 	goto L3
 L10:
 	;
@@ -789,7 +780,7 @@ L12:
 	;
 	switch v53 {
 	case 0:
-		v147 = v44
+		v148 = v44
 		goto L3
 	case 1:
 		goto L11
@@ -870,7 +861,7 @@ L25:
 	;
 	v85 = int32(2)
 	if v83 == v85 {
-		v147 = v85
+		v148 = v85
 		goto L3
 	} else {
 		goto L31
@@ -1036,28 +1027,20 @@ L47:
 L48:
 	;
 	if v129 == int32(2) {
-		v147 = int32(2)
+		v148 = int32(2)
 		goto L3
 	} else {
 		goto L49
 	}
 L49:
 	;
-	if l3 != 0 {
+	if v129|l3 != 0 {
 		v44 = v129
 		goto L8
 	} else {
 		goto L50
 	}
 L50:
-	;
-	if v129 != 0 {
-		v44 = v129
-		goto L8
-	} else {
-		goto L51
-	}
-L51:
 	;
 	goto L15
 }

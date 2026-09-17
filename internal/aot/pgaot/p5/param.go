@@ -21,11 +21,11 @@ func F_makeParamList(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		v11 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v11
 		*(*int64)(unsafe.Add(mBase, uint32(v7))) = v11
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+24)) = int32(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = int32(815)
-		*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v11
 		*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = v7
 		return v7
 	}

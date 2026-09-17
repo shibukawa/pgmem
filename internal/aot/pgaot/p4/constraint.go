@@ -20,8 +20,8 @@ func F_ConstraintImpliedByRelConstraint(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v15
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
+	var v21 int32
+	_ = v21
 	var v25 int32
 	_ = v25
 	var v28 int32
@@ -54,8 +54,8 @@ func F_ConstraintImpliedByRelConstraint(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v45
 	var v47 int32
 	_ = v47
-	var v52 int32
-	_ = v52
+	var v51 int32
+	_ = v51
 	var v56 int32
 	_ = v56
 	var v57 int32
@@ -76,14 +76,14 @@ L2:
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
 	if v12 == int32(0) {
-		v52 = v7
+		v51 = v7
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	v56 = F_predicate_implied_by(m, l1, v52, int32(1))
+	v56 = F_predicate_implied_by(m, l1, v51, int32(1))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {
@@ -95,7 +95,7 @@ L4:
 	;
 	v15 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v12)+14)))
 	if v15 == int32(0) {
-		v52 = v7
+		v51 = v7
 		goto L3
 	} else {
 		goto L5
@@ -103,7 +103,7 @@ L4:
 L5:
 	;
 	v19 = int32(0)
-	v22 = v7
+	v21 = v7
 	goto L6
 L6:
 	;
@@ -117,7 +117,7 @@ L6:
 	}
 L7:
 	;
-	v52 = v45
+	v51 = v45
 	goto L3
 L8:
 	;
@@ -132,14 +132,14 @@ L8:
 	}
 L9:
 	;
-	v45 = v22
+	v45 = v21
 	goto L10
 L10:
 	;
 	v47 = v19 + int32(1)
 	if v47 != v15 {
 		v19 = v47
-		v22 = v45
+		v21 = v45
 		goto L6
 	} else {
 		goto L16
@@ -176,7 +176,7 @@ L13:
 	}
 L14:
 	;
-	v43 = F_list_concat(m, v22, v41)
+	v43 = F_list_concat(m, v21, v41)
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -196,48 +196,15 @@ L17:
 	return v56
 }
 func F_get_constraint_name(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
-	v4 = F_SearchSysCache1(m, int32(19), l0)
-	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn13895(m, l0, int32(19))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		if v4 == int32(0) {
-			return int32(0)
-		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)+16))
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+22)))
-			v17 = F_pstrdup(m, v12+v13+int32(4))
-			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
-				return int32(0)
-			} else {
-				F_ReleaseCatCache(m, v4)
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					return v17
-				}
-			}
-		}
+		return v3
 	}
 }

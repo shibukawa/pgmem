@@ -261,25 +261,22 @@ func F_InstrAggNode(m *base.Module, l0 int32, l1 int32) {
 func F_InstrStartParallelQuery(m *base.Module) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v8 int64
-	_ = v8
-	var v12 int64
-	_ = v12
-	var v16 int64
-	_ = v16
-	var v20 int64
-	_ = v20
-	v4 = F__emscripten_memcpy_bulkmem(m, int32(_a_F_InstrStartParallelQuery_0), int32(_a_F_InstrStartParallelQuery_1), int32(128))
-	mBase = m.M
-	v8 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[0]))
-	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[1])) = v8
-	v12 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[2]))
-	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[3])) = v12
-	v16 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[4]))
-	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[5])) = v16
-	v20 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[6]))
-	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[7])) = v20
+	var v7 int64
+	_ = v7
+	var v11 int64
+	_ = v11
+	var v15 int64
+	_ = v15
+	var v19 int64
+	_ = v19
+	base.MemoryCopy(m, int32(_a_F_InstrStartParallelQuery_0), int32(_a_F_InstrStartParallelQuery_1), int32(128))
+	v7 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[0]))
+	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[1])) = v7
+	v11 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[2]))
+	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[3])) = v11
+	v15 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[4]))
+	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[5])) = v15
+	v19 = *(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[6]))
+	*(*int64)(unsafe.Add(mBase, _c_F_InstrStartParallelQuery[7])) = v19
 	return
 }

@@ -19,111 +19,53 @@ func F_circle_above(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v11 float64
 	_ = v11
-	var v21 float64
-	_ = v21
-	var v22 float64
-	_ = v22
-	var v23 float64
-	_ = v23
-	var v43 int32
-	_ = v43
+	var v13 float64
+	_ = v13
+	var v25 float64
+	_ = v25
+	var v26 float64
+	_ = v26
+	var v27 float64
+	_ = v27
+	var v29 float64
+	_ = v29
+	var v51 int32
+	_ = v51
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v9 = *(*float64)(unsafe.Add(mBase, uint32(v8)+8))
 	v10 = *(*float64)(unsafe.Add(mBase, uint32(v8)+16))
 	v11 = base.F64_sub(v9, v10)
-	if base.F64_ne(base.F64_abs(v11), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-		v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)+8))
-		v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-		v23 = base.F64_add(v21, v22)
-		if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
+	v13 = math.Float64frombits(uint64(0x7ff0000000000000))
+	if base.B2i32(base.F64_ne(base.F64_abs(v11), v13)|base.F64_eq(base.F64_abs(v9), v13) == int32(0))&base.F64_ne(base.F64_abs(v10), v13) != 0 {
+		F_float_overflow_error(m)
+		mBase = m.M
+		v51 = m.ExcPending
+		if v51 != 0 {
+			return int32(0)
 		} else {
-			if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-			} else {
-				if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v43 = m.ExcPending
-					if v43 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				} else {
-					return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-				}
+			base.Wasm_trap_unreachable()
+			for {
 			}
 		}
 	} else {
-		if base.F64_eq(base.F64_abs(v9), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)+8))
-			v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-			v23 = base.F64_add(v21, v22)
-			if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
+		v25 = *(*float64)(unsafe.Add(mBase, uint32(v7)+8))
+		v26 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
+		v27 = base.F64_add(v25, v26)
+		v29 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.B2i32(base.F64_ne(base.F64_abs(v27), v29)|base.F64_eq(base.F64_abs(v25), v29) == int32(0))&base.F64_ne(base.F64_abs(v26), v29) != 0 {
+			F_float_overflow_error(m)
+			mBase = m.M
+			v51 = m.ExcPending
+			if v51 != 0 {
+				return int32(0)
 			} else {
-				if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-				} else {
-					if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						F_float_overflow_error(m)
-						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					} else {
-						return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-					}
+				base.Wasm_trap_unreachable()
+				for {
 				}
 			}
 		} else {
-			if base.F64_ne(base.F64_abs(v10), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				F_float_overflow_error(m)
-				mBase = m.M
-				v43 = m.ExcPending
-				if v43 != 0 {
-					return int32(0)
-				} else {
-					base.Wasm_trap_unreachable()
-					for {
-					}
-				}
-			} else {
-				v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)+8))
-				v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-				v23 = base.F64_add(v21, v22)
-				if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-				} else {
-					if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-					} else {
-						if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-							F_float_overflow_error(m)
-							mBase = m.M
-							v43 = m.ExcPending
-							if v43 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						} else {
-							return base.F64_gt(v11, base.F64_add(v23, float64(1e-06)))
-						}
-					}
-				}
-			}
+			return base.F64_gt(v11, base.F64_add(v27, float64(1e-06)))
 		}
 	}
 }
@@ -270,8 +212,10 @@ func F_circle_contained(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v15 float64
 	_ = v15
-	var v26 int32
-	_ = v26
+	var v17 float64
+	_ = v17
+	var v30 int32
+	_ = v30
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v9 = F_point_dt(m, v7, v8)
@@ -283,27 +227,20 @@ func F_circle_contained(m *base.Module, l0 int32) int32 {
 		v13 = *(*float64)(unsafe.Add(mBase, uint32(v8)+16))
 		v14 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
 		v15 = base.F64_sub(v13, v14)
-		if base.F64_ne(base.F64_abs(v15), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			return base.F64_le(v9, base.F64_add(v15, float64(1e-06)))
-		} else {
-			if base.F64_eq(base.F64_abs(v13), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				return base.F64_le(v9, base.F64_add(v15, float64(1e-06)))
+		v17 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.F64_ne(base.F64_abs(v15), v17)|base.F64_eq(base.F64_abs(v13), v17)|base.F64_eq(base.F64_abs(v14), v17) == int32(0) {
+			F_float_overflow_error(m)
+			mBase = m.M
+			v30 = m.ExcPending
+			if v30 != 0 {
+				return int32(0)
 			} else {
-				if base.F64_eq(base.F64_abs(v14), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					return base.F64_le(v9, base.F64_add(v15, float64(1e-06)))
-				} else {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
+				base.Wasm_trap_unreachable()
+				for {
 				}
 			}
+		} else {
+			return base.F64_le(v9, base.F64_add(v15, float64(1e-06)))
 		}
 	}
 }
@@ -387,18 +324,22 @@ func F_circle_distance(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v17 float64
 	_ = v17
-	var v26 float64
-	_ = v26
-	var v35 float64
-	_ = v35
-	var v38 float64
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v44 int32
-	_ = v44
+	var v18 float64
+	_ = v18
+	var v31 float64
+	_ = v31
+	var v33 float64
+	_ = v33
+	var v43 float64
+	_ = v43
+	var v46 float64
+	_ = v46
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
+	var v52 int32
+	_ = v52
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v10 = F_point_dt(m, v8, v9)
@@ -411,208 +352,46 @@ func F_circle_distance(m *base.Module, l0 int32) int32 {
 		v15 = *(*float64)(unsafe.Add(mBase, uint32(v9)+16))
 		v16 = base.F64_add(v14, v15)
 		v17 = base.F64_abs(v16)
-		if base.F64_ne(v17, math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			v26 = base.F64_sub(v10, v16)
-			if base.F64_ne(base.F64_abs(v26), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				v35 = float64(0)
-				if base.F64_lt(v26, v35) != 0 {
-					v38 = v35
-				} else {
-					v38 = v26
-				}
-				v39 = F_Float8GetDatum(m, v38)
-				mBase = m.M
-				v40 = m.ExcPending
-				if v40 != 0 {
-					return int32(0)
-				} else {
-					return v39
-				}
+		v18 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.B2i32(base.F64_ne(v17, v18)|base.F64_eq(base.F64_abs(v14), v18) == int32(0))&base.F64_ne(base.F64_abs(v15), v18) != 0 {
+			F_float_overflow_error(m)
+			mBase = m.M
+			v52 = m.ExcPending
+			if v52 != 0 {
+				return int32(0)
 			} else {
-				if base.F64_eq(base.F64_abs(v10), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					v35 = float64(0)
-					if base.F64_lt(v26, v35) != 0 {
-						v38 = v35
-					} else {
-						v38 = v26
-					}
-					v39 = F_Float8GetDatum(m, v38)
-					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
-						return int32(0)
-					} else {
-						return v39
-					}
-				} else {
-					if base.F64_ne(v17, math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						F_float_overflow_error(m)
-						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					} else {
-						v35 = float64(0)
-						if base.F64_lt(v26, v35) != 0 {
-							v38 = v35
-						} else {
-							v38 = v26
-						}
-						v39 = F_Float8GetDatum(m, v38)
-						mBase = m.M
-						v40 = m.ExcPending
-						if v40 != 0 {
-							return int32(0)
-						} else {
-							return v39
-						}
-					}
+				base.Wasm_trap_unreachable()
+				for {
 				}
 			}
 		} else {
-			if base.F64_eq(base.F64_abs(v14), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				v26 = base.F64_sub(v10, v16)
-				if base.F64_ne(base.F64_abs(v26), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					v35 = float64(0)
-					if base.F64_lt(v26, v35) != 0 {
-						v38 = v35
-					} else {
-						v38 = v26
-					}
-					v39 = F_Float8GetDatum(m, v38)
-					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
-						return int32(0)
-					} else {
-						return v39
-					}
+			v31 = math.Float64frombits(uint64(0x7ff0000000000000))
+			v33 = base.F64_sub(v10, v16)
+			if base.B2i32(base.F64_eq(base.F64_abs(v10), v31)|base.F64_ne(base.F64_abs(v33), v31) == int32(0))&base.F64_ne(v17, v31) != 0 {
+				F_float_overflow_error(m)
+				mBase = m.M
+				v52 = m.ExcPending
+				if v52 != 0 {
+					return int32(0)
 				} else {
-					if base.F64_eq(base.F64_abs(v10), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						v35 = float64(0)
-						if base.F64_lt(v26, v35) != 0 {
-							v38 = v35
-						} else {
-							v38 = v26
-						}
-						v39 = F_Float8GetDatum(m, v38)
-						mBase = m.M
-						v40 = m.ExcPending
-						if v40 != 0 {
-							return int32(0)
-						} else {
-							return v39
-						}
-					} else {
-						if base.F64_ne(v17, math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-							F_float_overflow_error(m)
-							mBase = m.M
-							v44 = m.ExcPending
-							if v44 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						} else {
-							v35 = float64(0)
-							if base.F64_lt(v26, v35) != 0 {
-								v38 = v35
-							} else {
-								v38 = v26
-							}
-							v39 = F_Float8GetDatum(m, v38)
-							mBase = m.M
-							v40 = m.ExcPending
-							if v40 != 0 {
-								return int32(0)
-							} else {
-								return v39
-							}
-						}
+					base.Wasm_trap_unreachable()
+					for {
 					}
 				}
 			} else {
-				if base.F64_ne(base.F64_abs(v15), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v44 = m.ExcPending
-					if v44 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
+				v43 = float64(0)
+				if base.F64_lt(v33, v43) != 0 {
+					v46 = v43
 				} else {
-					v26 = base.F64_sub(v10, v16)
-					if base.F64_ne(base.F64_abs(v26), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						v35 = float64(0)
-						if base.F64_lt(v26, v35) != 0 {
-							v38 = v35
-						} else {
-							v38 = v26
-						}
-						v39 = F_Float8GetDatum(m, v38)
-						mBase = m.M
-						v40 = m.ExcPending
-						if v40 != 0 {
-							return int32(0)
-						} else {
-							return v39
-						}
-					} else {
-						if base.F64_eq(base.F64_abs(v10), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-							v35 = float64(0)
-							if base.F64_lt(v26, v35) != 0 {
-								v38 = v35
-							} else {
-								v38 = v26
-							}
-							v39 = F_Float8GetDatum(m, v38)
-							mBase = m.M
-							v40 = m.ExcPending
-							if v40 != 0 {
-								return int32(0)
-							} else {
-								return v39
-							}
-						} else {
-							if base.F64_ne(v17, math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-								F_float_overflow_error(m)
-								mBase = m.M
-								v44 = m.ExcPending
-								if v44 != 0 {
-									return int32(0)
-								} else {
-									base.Wasm_trap_unreachable()
-									for {
-									}
-								}
-							} else {
-								v35 = float64(0)
-								if base.F64_lt(v26, v35) != 0 {
-									v38 = v35
-								} else {
-									v38 = v26
-								}
-								v39 = F_Float8GetDatum(m, v38)
-								mBase = m.M
-								v40 = m.ExcPending
-								if v40 != 0 {
-									return int32(0)
-								} else {
-									return v39
-								}
-							}
-						}
-					}
+					v46 = v33
+				}
+				v47 = F_Float8GetDatum(m, v46)
+				mBase = m.M
+				v48 = m.ExcPending
+				if v48 != 0 {
+					return int32(0)
+				} else {
+					return v47
 				}
 			}
 		}
@@ -649,8 +428,8 @@ func F_circle_in(m *base.Module, l0 int32) int32 {
 	_ = v69
 	var v79 int32
 	_ = v79
-	var v84 int32
-	_ = v84
+	var v85 int32
+	_ = v85
 	var v92 int32
 	_ = v92
 	var v93 int32
@@ -679,52 +458,52 @@ func F_circle_in(m *base.Module, l0 int32) int32 {
 	_ = v128
 	var v129 int32
 	_ = v129
-	var v134 int32
-	_ = v134
 	var v135 int32
 	_ = v135
 	var v136 int32
 	_ = v136
-	var v141 int32
-	_ = v141
-	var v149 int32
-	_ = v149
-	var v154 int32
-	_ = v154
+	var v137 int32
+	_ = v137
+	var v142 int32
+	_ = v142
+	var v150 int32
+	_ = v150
 	var v155 int32
 	_ = v155
 	var v156 int32
 	_ = v156
 	var v157 int32
 	_ = v157
-	var v162 int32
-	_ = v162
-	var v168 int32
-	_ = v168
-	var v173 int32
-	_ = v173
-	var v176 int32
-	_ = v176
-	var v185 int32
-	_ = v185
-	var v187 int32
-	_ = v187
-	var v198 int32
-	_ = v198
-	var v206 int32
-	_ = v206
-	var v207 int32
-	_ = v207
+	var v158 int32
+	_ = v158
+	var v163 int32
+	_ = v163
+	var v169 int32
+	_ = v169
+	var v174 int32
+	_ = v174
+	var v177 int32
+	_ = v177
+	var v186 int32
+	_ = v186
+	var v188 int32
+	_ = v188
+	var v200 int32
+	_ = v200
 	var v208 int32
 	_ = v208
-	var v213 int32
-	_ = v213
-	var v221 int32
-	_ = v221
-	var v226 int32
-	_ = v226
-	var v232 int32
-	_ = v232
+	var v209 int32
+	_ = v209
+	var v210 int32
+	_ = v210
+	var v215 int32
+	_ = v215
+	var v223 int32
+	_ = v223
+	var v228 int32
+	_ = v228
+	var v234 int32
+	_ = v234
 	v11 = m.G0
 	v13 = v11 - int32(48)
 	m.G0 = v13
@@ -760,7 +539,7 @@ L4:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v13)+44)) = v69
 	v79 = v69
-	v84 = int32(0)
+	v85 = int32(0)
 	goto L3
 L5:
 	;
@@ -793,7 +572,7 @@ L10:
 		goto L9
 	default:
 		v79 = v25
-		v84 = v22
+		v85 = v22
 		goto L3
 	case 8:
 		goto L8
@@ -803,7 +582,7 @@ L10:
 L11:
 	;
 	v55 = v48 + int32(1)
-	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v55))))
+	v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+1)))
 	if base.Ui32(v56-int32(9)) < base.Ui32(int32(5)) {
 		v48 = v55
 		goto L11
@@ -818,7 +597,7 @@ L13:
 		goto L11
 	default:
 		v79 = v25
-		v84 = v22
+		v85 = v22
 		goto L3
 	case 8:
 		v69 = v55
@@ -827,7 +606,7 @@ L13:
 L14:
 	;
 	m.G0 = v13 + int32(48)
-	return v232
+	return v234
 L15:
 	;
 	if v92 == int32(0) {
@@ -839,7 +618,7 @@ L16:
 	;
 	v96 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v96)
-	v232 = int32(0)
+	v234 = int32(0)
 	goto L14
 L17:
 	;
@@ -908,26 +687,26 @@ L26:
 	;
 	v121 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v121)
-	v232 = int32(0)
+	v234 = int32(0)
 	goto L14
 L27:
 	;
-	if v198 == int32(0) {
-		v232 = v18
+	if v200 == int32(0) {
+		v234 = v18
 		goto L14
 	} else {
-		goto L49
+		goto L47
 	}
 L28:
 	;
-	v176 = v128
-	goto L45
+	v177 = v128
+	goto L44
 L29:
 	;
 	v128 = *(*int32)(unsafe.Add(mBase, uint32(v13)+44))
 	v129 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v128))))
-	if v84 != 0 {
-		v198 = v129
+	if v85 != 0 {
+		v200 = v129
 		goto L27
 	} else {
 		goto L32
@@ -937,208 +716,193 @@ L30:
 	goto L31
 L31:
 	;
-	v155 = int32(0)
-	v156 = F_errsave_start(m, v15)
+	v156 = int32(0)
+	v157 = F_errsave_start(m, v15)
 	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
+	v158 = m.ExcPending
+	if v158 != 0 {
 		goto L1
 	} else {
-		goto L40
+		goto L39
 	}
 L32:
 	;
-	if v129 == int32(62) {
+	if base.B2i32(v129 == int32(62))|base.B2i32(v129 == int32(41)) != 0 {
 		goto L28
 	} else {
 		goto L33
 	}
 L33:
 	;
-	if v129 == int32(41) {
-		goto L28
+	v135 = int32(0)
+	v136 = F_errsave_start(m, v15)
+	mBase = m.M
+	v137 = m.ExcPending
+	if v137 != 0 {
+		goto L1
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v134 = int32(0)
-	v135 = F_errsave_start(m, v15)
-	mBase = m.M
-	v136 = m.ExcPending
-	if v136 != 0 {
-		goto L1
+	if v136 == int32(0) {
+		v234 = v135
+		goto L14
 	} else {
 		goto L35
 	}
 L35:
 	;
-	if v135 == int32(0) {
-		v232 = v134
-		goto L14
+	F_errcode(m, int32(33685634))
+	mBase = m.M
+	v142 = m.ExcPending
+	if v142 != 0 {
+		goto L1
 	} else {
 		goto L36
 	}
 L36:
 	;
-	F_errcode(m, int32(33685634))
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+36)) = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(_a_F_circle_in_0)
+	F_errmsg(m, int32(_a_F_circle_in_1), v13+int32(32))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v150 = m.ExcPending
+	if v150 != 0 {
 		goto L1
 	} else {
 		goto L37
 	}
 L37:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+36)) = v16
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+32)) = int32(_a_F_circle_in_0)
-	F_errmsg(m, int32(_a_F_circle_in_1), v13+int32(32))
+	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_3), int32(_a_F_circle_in_4))
 	mBase = m.M
-	v149 = m.ExcPending
-	if v149 != 0 {
+	v155 = m.ExcPending
+	if v155 != 0 {
 		goto L1
 	} else {
 		goto L38
 	}
 L38:
 	;
-	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_3), int32(_a_F_circle_in_4))
-	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
-		goto L1
-	} else {
-		goto L39
-	}
+	v234 = v135
+	goto L14
 L39:
 	;
-	v232 = v134
-	goto L14
+	if v157 == int32(0) {
+		v234 = v156
+		goto L14
+	} else {
+		goto L40
+	}
 L40:
 	;
-	if v156 == int32(0) {
-		v232 = v155
-		goto L14
+	F_errcode(m, int32(33685634))
+	mBase = m.M
+	v163 = m.ExcPending
+	if v163 != 0 {
+		goto L1
 	} else {
 		goto L41
 	}
 L41:
 	;
-	F_errcode(m, int32(33685634))
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(_a_F_circle_in_0)
+	F_errmsg(m, int32(_a_F_circle_in_1), v13)
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v169 = m.ExcPending
+	if v169 != 0 {
 		goto L1
 	} else {
 		goto L42
 	}
 L42:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v16
-	*(*int32)(unsafe.Add(mBase, uint32(v13))) = int32(_a_F_circle_in_0)
-	F_errmsg(m, int32(_a_F_circle_in_1), v13)
+	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_5), int32(_a_F_circle_in_4))
 	mBase = m.M
-	v168 = m.ExcPending
-	if v168 != 0 {
+	v174 = m.ExcPending
+	if v174 != 0 {
 		goto L1
 	} else {
 		goto L43
 	}
 L43:
 	;
-	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_5), int32(_a_F_circle_in_4))
-	mBase = m.M
-	v173 = m.ExcPending
-	if v173 != 0 {
-		goto L1
-	} else {
-		goto L44
-	}
+	v234 = v156
+	goto L14
 L44:
 	;
-	v232 = v155
-	goto L14
+	v186 = v177 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+44)) = v186
+	v188 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v177)+1)))
+	if base.B2i32(base.Ui32(v188-int32(9)) < base.Ui32(int32(5)))|base.B2i32(v188 == int32(32)) != 0 {
+		v177 = v186
+		goto L44
+	} else {
+		goto L46
+	}
 L45:
 	;
-	v185 = v176 + int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+44)) = v185
-	v187 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v185))))
-	if base.Ui32(v187-int32(9)) < base.Ui32(int32(5)) {
-		v176 = v185
-		goto L45
-	} else {
-		goto L47
-	}
+	v200 = v188
+	goto L27
 L46:
 	;
-	v198 = v187
-	goto L27
+	goto L45
 L47:
 	;
-	if v187 == int32(32) {
-		v176 = v185
-		goto L45
+	v208 = int32(0)
+	v209 = F_errsave_start(m, v15)
+	mBase = m.M
+	v210 = m.ExcPending
+	if v210 != 0 {
+		goto L1
 	} else {
 		goto L48
 	}
 L48:
 	;
-	goto L46
+	if v209 == int32(0) {
+		v234 = v208
+		goto L14
+	} else {
+		goto L49
+	}
 L49:
 	;
-	v206 = int32(0)
-	v207 = F_errsave_start(m, v15)
+	F_errcode(m, int32(33685634))
 	mBase = m.M
-	v208 = m.ExcPending
-	if v208 != 0 {
+	v215 = m.ExcPending
+	if v215 != 0 {
 		goto L1
 	} else {
 		goto L50
 	}
 L50:
 	;
-	if v207 == int32(0) {
-		v232 = v206
-		goto L14
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v16
+	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = int32(_a_F_circle_in_0)
+	F_errmsg(m, int32(_a_F_circle_in_1), v13+int32(16))
+	mBase = m.M
+	v223 = m.ExcPending
+	if v223 != 0 {
+		goto L1
 	} else {
 		goto L51
 	}
 L51:
 	;
-	F_errcode(m, int32(33685634))
+	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_6), int32(_a_F_circle_in_4))
 	mBase = m.M
-	v213 = m.ExcPending
-	if v213 != 0 {
+	v228 = m.ExcPending
+	if v228 != 0 {
 		goto L1
 	} else {
 		goto L52
 	}
 L52:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = v16
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = int32(_a_F_circle_in_0)
-	F_errmsg(m, int32(_a_F_circle_in_1), v13+int32(16))
-	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
-		goto L1
-	} else {
-		goto L53
-	}
-L53:
-	;
-	F_errsave_finish(m, v15, int32(_a_F_circle_in_2), int32(_a_F_circle_in_6), int32(_a_F_circle_in_4))
-	mBase = m.M
-	v226 = m.ExcPending
-	if v226 != 0 {
-		goto L1
-	} else {
-		goto L54
-	}
-L54:
-	;
-	v232 = v206
+	v234 = v208
 	goto L14
 }
 func F_circle_ne(m *base.Module, l0 int32) int32 {
@@ -1321,111 +1085,53 @@ func F_circle_overleft(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v11 float64
 	_ = v11
-	var v21 float64
-	_ = v21
-	var v22 float64
-	_ = v22
-	var v23 float64
-	_ = v23
-	var v43 int32
-	_ = v43
+	var v13 float64
+	_ = v13
+	var v25 float64
+	_ = v25
+	var v26 float64
+	_ = v26
+	var v27 float64
+	_ = v27
+	var v29 float64
+	_ = v29
+	var v51 int32
+	_ = v51
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v9 = *(*float64)(unsafe.Add(mBase, uint32(v8)))
 	v10 = *(*float64)(unsafe.Add(mBase, uint32(v8)+16))
 	v11 = base.F64_add(v9, v10)
-	if base.F64_ne(base.F64_abs(v11), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-		v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)))
-		v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-		v23 = base.F64_add(v21, v22)
-		if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
+	v13 = math.Float64frombits(uint64(0x7ff0000000000000))
+	if base.B2i32(base.F64_ne(base.F64_abs(v11), v13)|base.F64_eq(base.F64_abs(v9), v13) == int32(0))&base.F64_ne(base.F64_abs(v10), v13) != 0 {
+		F_float_overflow_error(m)
+		mBase = m.M
+		v51 = m.ExcPending
+		if v51 != 0 {
+			return int32(0)
 		} else {
-			if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-			} else {
-				if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v43 = m.ExcPending
-					if v43 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				} else {
-					return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-				}
+			base.Wasm_trap_unreachable()
+			for {
 			}
 		}
 	} else {
-		if base.F64_eq(base.F64_abs(v9), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)))
-			v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-			v23 = base.F64_add(v21, v22)
-			if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
+		v25 = *(*float64)(unsafe.Add(mBase, uint32(v7)))
+		v26 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
+		v27 = base.F64_add(v25, v26)
+		v29 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.B2i32(base.F64_ne(base.F64_abs(v27), v29)|base.F64_eq(base.F64_abs(v25), v29) == int32(0))&base.F64_ne(base.F64_abs(v26), v29) != 0 {
+			F_float_overflow_error(m)
+			mBase = m.M
+			v51 = m.ExcPending
+			if v51 != 0 {
+				return int32(0)
 			} else {
-				if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-				} else {
-					if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						F_float_overflow_error(m)
-						mBase = m.M
-						v43 = m.ExcPending
-						if v43 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					} else {
-						return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-					}
+				base.Wasm_trap_unreachable()
+				for {
 				}
 			}
 		} else {
-			if base.F64_ne(base.F64_abs(v10), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				F_float_overflow_error(m)
-				mBase = m.M
-				v43 = m.ExcPending
-				if v43 != 0 {
-					return int32(0)
-				} else {
-					base.Wasm_trap_unreachable()
-					for {
-					}
-				}
-			} else {
-				v21 = *(*float64)(unsafe.Add(mBase, uint32(v7)))
-				v22 = *(*float64)(unsafe.Add(mBase, uint32(v7)+16))
-				v23 = base.F64_add(v21, v22)
-				if base.F64_ne(base.F64_abs(v23), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-				} else {
-					if base.F64_eq(base.F64_abs(v21), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-					} else {
-						if base.F64_ne(base.F64_abs(v22), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-							F_float_overflow_error(m)
-							mBase = m.M
-							v43 = m.ExcPending
-							if v43 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						} else {
-							return base.F64_le(v11, base.F64_add(v23, float64(1e-06)))
-						}
-					}
-				}
-			}
+			return base.F64_le(v11, base.F64_add(v27, float64(1e-06)))
 		}
 	}
 }

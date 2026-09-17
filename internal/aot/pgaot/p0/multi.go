@@ -172,82 +172,82 @@ func F_RecordNewMultiXact(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v161
 	var v164 int32
 	_ = v164
-	var v165 int32
-	_ = v165
 	var v170 int32
 	_ = v170
 	var v173 int32
 	_ = v173
+	var v175 int32
+	_ = v175
 	var v176 int32
 	_ = v176
-	var v178 int32
-	_ = v178
 	var v180 int64
 	_ = v180
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
-	var v194 int32
-	_ = v194
-	var v196 int32
-	_ = v196
+	var v184 int32
+	_ = v184
+	var v185 int64
+	_ = v185
+	var v188 int32
+	_ = v188
+	var v189 int32
+	_ = v189
+	var v191 int32
+	_ = v191
+	var v192 int32
+	_ = v192
+	var v195 int32
+	_ = v195
 	var v198 int32
 	_ = v198
-	var v199 int64
-	_ = v199
+	var v200 int32
+	_ = v200
+	var v201 int32
+	_ = v201
 	var v202 int32
 	_ = v202
-	var v203 int32
-	_ = v203
 	var v205 int32
 	_ = v205
 	var v206 int32
 	_ = v206
-	var v209 int32
+	var v207 int32
+	_ = v207
+	var v208 int32
+	_ = v208
+	var v209 int64
 	_ = v209
-	var v212 int32
-	_ = v212
-	var v214 int32
-	_ = v214
+	var v210 int32
+	_ = v210
+	var v213 int32
+	_ = v213
 	var v215 int32
 	_ = v215
-	var v216 int32
-	_ = v216
+	var v217 int32
+	_ = v217
+	var v218 int32
+	_ = v218
 	var v219 int32
 	_ = v219
 	var v220 int32
 	_ = v220
-	var v221 int32
-	_ = v221
 	var v222 int32
 	_ = v222
-	var v223 int64
-	_ = v223
-	var v225 int32
-	_ = v225
-	var v226 int32
-	_ = v226
-	var v227 int32
-	_ = v227
-	var v228 int32
-	_ = v228
-	var v230 int32
-	_ = v230
+	var v229 int32
+	_ = v229
+	var v231 int32
+	_ = v231
+	var v232 int32
+	_ = v232
 	var v235 int32
 	_ = v235
 	var v236 int32
 	_ = v236
+	var v238 int32
+	_ = v238
 	var v239 int32
 	_ = v239
 	var v240 int32
 	_ = v240
-	var v242 int32
-	_ = v242
-	var v243 int32
-	_ = v243
-	var v244 int32
-	_ = v244
+	var v245 int32
+	_ = v245
 	var v250 int32
 	_ = v250
 	var v255 int32
@@ -459,8 +459,8 @@ L23:
 	}
 L24:
 	;
-	v146 = v86
-	v147 = v92
+	v146 = v92
+	v147 = v86
 	v148 = v103 + int32(4)
 	goto L26
 L25:
@@ -513,8 +513,8 @@ L29:
 	v136 = *(*int32)(unsafe.Add(mBase, uint32(v135)+4))
 	v137 = int32(2)
 	v140 = *(*int32)(unsafe.Add(mBase, uint32(v136+v132<<(uint(v137)%32))))
-	v146 = v126
-	v147 = v132
+	v146 = v132
+	v147 = v126
 	v148 = v140 + v20&int32(2047)<<(uint(v137)%32)
 	goto L26
 L30:
@@ -539,14 +539,14 @@ L33:
 	v158 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[0]))
 	v159 = *(*int32)(unsafe.Add(mBase, uint32(v158)+12))
 	v161 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v159+v147))) = uint8(v161)
+	*(*uint8)(unsafe.Add(mBase, uint32(v159+v146))) = uint8(v161)
 	goto L35
 L34:
 	;
 	goto L35
 L35:
 	;
-	F_LWLockRelease(m, v146)
+	F_LWLockRelease(m, v147)
 	mBase = m.M
 	v164 = m.ExcPending
 	if v164 != 0 {
@@ -556,8 +556,7 @@ L35:
 	}
 L36:
 	;
-	v165 = int32(0)
-	if l2 <= v165 {
+	if l2 <= int32(0) {
 		goto L37
 	} else {
 		goto L38
@@ -568,108 +567,109 @@ L37:
 L38:
 	;
 	v170 = l1
-	v173 = v165
-	v176 = v147
-	v178 = int32(0)
+	v173 = v146
+	v175 = int32(0)
+	v176 = int32(0)
 	v180 = int64(-1)
 	goto L39
 L39:
 	;
-	v186 = v170 << (uint(int32(3)) % 32) & int32(24)
-	v187 = int32(2)
-	v194 = base.I32_rem_u_s(int32(base.Ui32(v170)>>(uint(v187)%32)), int32(409))
-	v196 = v194 * int32(20)
-	v198 = base.I32_div_u_s(v170, int32(1636))
-	v199 = base.I64_extend_i32_u(v198)
-	if v199 != v180 {
+	v184 = base.I32_div_u_s(v170, int32(1636))
+	v185 = base.I64_extend_i32_u(v184)
+	if v185 != v180 {
 		goto L41
 	} else {
 		goto L42
 	}
 L40:
 	;
-	if v222 == int32(0) {
+	if v208 == int32(0) {
 		goto L37
 	} else {
 		goto L54
 	}
 L41:
 	;
-	v202 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
-	v203 = *(*int32)(unsafe.Add(mBase, uint32(v202)+28))
-	v205 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[5])))
-	v206 = base.I32_rem_u_s(v198, v205)
-	v209 = v203 + v206<<(uint(int32(7))%32)
-	if v178 != v209 {
+	v188 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
+	v189 = *(*int32)(unsafe.Add(mBase, uint32(v188)+28))
+	v191 = int32(*(*uint16)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[5])))
+	v192 = base.I32_rem_u_s(v184, v191)
+	v195 = v189 + v192<<(uint(int32(7))%32)
+	if v176 != v195 {
 		goto L44
 	} else {
 		goto L45
 	}
 L42:
 	;
-	v221 = v176
-	v222 = v178
-	v223 = v180
+	v207 = v173
+	v208 = v176
+	v209 = v180
 	goto L43
 L43:
 	;
-	v225 = v221 << (uint(int32(2)) % 32)
-	v226 = int32(_a_F_RecordNewMultiXact_4)
-	v227 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
-	v228 = *(*int32)(unsafe.Add(mBase, uint32(v227)+4))
-	v230 = *(*int32)(unsafe.Add(mBase, uint32(v225+v228)))
-	v235 = l3 + v173<<(uint(int32(3))%32)
-	v236 = *(*int32)(unsafe.Add(mBase, uint32(v235)))
-	*(*int32)(unsafe.Add(mBase, uint32(v230+v170<<(uint(v187)%32)&int32(12)+v196)+4)) = v236
-	v239 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
-	v240 = *(*int32)(unsafe.Add(mBase, uint32(v239)+4))
-	v242 = *(*int32)(unsafe.Add(mBase, uint32(v240+v225)))
-	v243 = v242 + v196
-	v244 = *(*int32)(unsafe.Add(mBase, uint32(v243)))
-	v250 = *(*int32)(unsafe.Add(mBase, uint32(v235)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v243))) = v244&(int32(255)<<(uint(v186)%32)^int32(-1)) | v250<<(uint(v186)%32)
+	v210 = int32(2)
+	v213 = base.I32_rem_u_s(int32(base.Ui32(v170)>>(uint(v210)%32)), int32(409))
+	v215 = v213 * int32(20)
+	v217 = v207 << (uint(v210) % 32)
+	v218 = int32(_a_F_RecordNewMultiXact_4)
+	v219 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
+	v220 = *(*int32)(unsafe.Add(mBase, uint32(v219)+4))
+	v222 = *(*int32)(unsafe.Add(mBase, uint32(v217+v220)))
+	v229 = int32(3)
+	v231 = l3 + v175<<(uint(v229)%32)
+	v232 = *(*int32)(unsafe.Add(mBase, uint32(v231)))
+	*(*int32)(unsafe.Add(mBase, uint32(v215+(v222+v170<<(uint(v210)%32)&int32(12)))+4)) = v232
+	v235 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
+	v236 = *(*int32)(unsafe.Add(mBase, uint32(v235)+4))
+	v238 = *(*int32)(unsafe.Add(mBase, uint32(v236+v217)))
+	v239 = v238 + v215
+	v240 = *(*int32)(unsafe.Add(mBase, uint32(v239)))
+	v245 = v170 << (uint(v229) % 32) & int32(24)
+	v250 = *(*int32)(unsafe.Add(mBase, uint32(v231)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v239))) = v240&(int32(255)<<(uint(v245)%32)^int32(-1)) | v250<<(uint(v245)%32)
 	v255 = *(*int32)(unsafe.Add(mBase, _c_F_RecordNewMultiXact[4]))
 	v256 = *(*int32)(unsafe.Add(mBase, uint32(v255)+12))
 	v258 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v256+v221))) = uint8(v258)
-	v263 = v173 + v258
+	*(*uint8)(unsafe.Add(mBase, uint32(v256+v207))) = uint8(v258)
+	v263 = v175 + v258
 	if v263 != l2 {
 		v170 = v170 + v258
-		v173 = v263
-		v176 = v221
-		v178 = v222
-		v180 = v223
+		v173 = v207
+		v175 = v263
+		v176 = v208
+		v180 = v209
 		goto L39
 	} else {
 		goto L53
 	}
 L44:
 	;
-	if v178 != 0 {
+	if v176 != 0 {
 		goto L47
 	} else {
 		goto L48
 	}
 L45:
 	;
-	v216 = v178
+	v202 = v176
 	goto L46
 L46:
 	;
-	v219 = F_SimpleLruReadPage(m, int32(_a_F_RecordNewMultiXact_4), v199, int32(1), l0)
+	v205 = F_SimpleLruReadPage(m, int32(_a_F_RecordNewMultiXact_4), v185, int32(1), l0)
 	mBase = m.M
-	v220 = m.ExcPending
-	if v220 != 0 {
+	v206 = m.ExcPending
+	if v206 != 0 {
 		goto L8
 	} else {
 		goto L52
 	}
 L47:
 	;
-	F_LWLockRelease(m, v178)
+	F_LWLockRelease(m, v176)
 	mBase = m.M
-	v212 = m.ExcPending
-	if v212 != 0 {
+	v198 = m.ExcPending
+	if v198 != 0 {
 		goto L8
 	} else {
 		goto L50
@@ -679,10 +679,10 @@ L48:
 	goto L49
 L49:
 	;
-	v214 = F_LWLockAcquire(m, v209, int32(0))
+	v200 = F_LWLockAcquire(m, v195, int32(0))
 	mBase = m.M
-	v215 = m.ExcPending
-	if v215 != 0 {
+	v201 = m.ExcPending
+	if v201 != 0 {
 		goto L8
 	} else {
 		goto L51
@@ -692,20 +692,20 @@ L50:
 	goto L49
 L51:
 	;
-	v216 = v209
+	v202 = v195
 	goto L46
 L52:
 	;
-	v221 = v219
-	v222 = v216
-	v223 = v199
+	v207 = v205
+	v208 = v202
+	v209 = v185
 	goto L43
 L53:
 	;
 	goto L40
 L54:
 	;
-	F_LWLockRelease(m, v222)
+	F_LWLockRelease(m, v208)
 	mBase = m.M
 	v268 = m.ExcPending
 	if v268 != 0 {

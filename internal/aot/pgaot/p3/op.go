@@ -72,8 +72,8 @@ func F_ResolveOpClass(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 	_ = v73
 	var v77 int32
 	_ = v77
-	var v80 int32
-	_ = v80
+	var v79 int32
+	_ = v79
 	var v88 int32
 	_ = v88
 	var v91 int32
@@ -123,9 +123,9 @@ func F_ResolveOpClass(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 			return int32(0)
 		} else {
 			if v13 != 0 {
-				v80 = v13
+				v79 = v13
 				m.G0 = v9 - int32(-64)
-				return v80
+				return v79
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -307,9 +307,9 @@ func F_ResolveOpClass(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 									if v77 != 0 {
 										return int32(0)
 									} else {
-										v80 = v70
+										v79 = v70
 										m.G0 = v9 - int32(-64)
-										return v80
+										return v79
 									}
 								}
 							}
@@ -475,9 +475,9 @@ func F_ResolveOpClass(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 										if v77 != 0 {
 											return int32(0)
 										} else {
-											v80 = v70
+											v79 = v70
 											m.G0 = v9 - int32(-64)
-											return v80
+											return v79
 										}
 									}
 								}

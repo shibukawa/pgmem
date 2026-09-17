@@ -98,8 +98,8 @@ func F_ProcessTwoPhaseBuffer(m *base.Module, l0 int32, l1 int64, l2 int32, l3 in
 	_ = v163
 	var v164 int32
 	_ = v164
-	var v173 int32
-	_ = v173
+	var v172 int32
+	_ = v172
 	var v182 int32
 	_ = v182
 	var v185 int32
@@ -135,7 +135,7 @@ L1:
 L2:
 	;
 	m.G0 = v12 + int32(96)
-	return v173
+	return v172
 L3:
 	;
 	if base.B2i32(base.Ui32(int32(2)) < base.Ui32(v16))&base.B2i32(base.Ui32(int32(3)) <= base.Ui32(l0)) == int32(0) {
@@ -249,7 +249,7 @@ L19:
 	goto L17
 L20:
 	;
-	v173 = v6
+	v172 = v6
 	goto L2
 L21:
 	;
@@ -290,7 +290,7 @@ L25:
 	goto L23
 L26:
 	;
-	v173 = v6
+	v172 = v6
 	goto L2
 L27:
 	;
@@ -393,7 +393,7 @@ L42:
 	goto L40
 L43:
 	;
-	v173 = v6
+	v172 = v6
 	goto L2
 L44:
 	;
@@ -434,13 +434,13 @@ L48:
 	goto L46
 L49:
 	;
-	v173 = v6
+	v172 = v6
 	goto L2
 L50:
 	;
 	v133 = *(*int32)(unsafe.Add(mBase, uint32(v132)+28))
 	if v133 <= int32(0) {
-		v173 = v132
+		v172 = v132
 		goto L2
 	} else {
 		goto L62
@@ -551,7 +551,7 @@ L63:
 	}
 L64:
 	;
-	v173 = v132
+	v172 = v132
 	goto L2
 L65:
 	;

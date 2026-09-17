@@ -75,18 +75,18 @@ func F_read_seq_tuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v70
 	var v71 int32
 	_ = v71
-	var v73 int32
-	_ = v73
+	var v72 int32
+	_ = v72
+	var v81 int32
+	_ = v81
 	var v82 int32
 	_ = v82
 	var v83 int32
 	_ = v83
-	var v84 int32
-	_ = v84
-	var v91 int32
-	_ = v91
-	var v96 int32
-	_ = v96
+	var v90 int32
+	_ = v90
+	var v95 int32
+	_ = v95
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -141,37 +141,37 @@ func F_read_seq_tuple(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					} else {
 						v70 = *(*int32)(unsafe.Add(mBase, uint32(l2)+16))
 						v71 = v70
-						v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71)+22)))
+						v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71)+22)))
 						m.G0 = v9 + int32(16)
-						return v71 + v73
+						return v71 + v72
 					}
 				} else {
 					v71 = v47
-					v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71)+22)))
+					v72 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v71)+22)))
 					m.G0 = v9 + int32(16)
-					return v71 + v73
+					return v71 + v72
 				}
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v82 = m.ExcPending
-				if v82 != 0 {
+				v81 = m.ExcPending
+				if v81 != 0 {
 					return int32(0)
 				} else {
-					v83 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-					v84 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v84
-					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v83 + int32(4)
+					v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+					v83 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
+					*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v83
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v82 + int32(4)
 					F_errmsg_internal(m, int32(_a_F_read_seq_tuple_3), v9)
 					mBase = m.M
-					v91 = m.ExcPending
-					if v91 != 0 {
+					v90 = m.ExcPending
+					if v90 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_read_seq_tuple_4), int32(1205), int32(_a_F_read_seq_tuple_5))
 						mBase = m.M
-						v96 = m.ExcPending
-						if v96 != 0 {
+						v95 = m.ExcPending
+						if v95 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()

@@ -20,36 +20,36 @@ func F__equalRoleSpec(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v8
 	var v13 int32
 	_ = v13
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
-	var v22 int32
-	_ = v22
+	var v20 int32
+	_ = v20
 	var v23 int32
 	_ = v23
-	var v26 int32
-	_ = v26
-	var v33 int32
-	_ = v33
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
 	var v34 int32
 	_ = v34
-	var v42 int32
-	_ = v42
+	var v35 int32
+	_ = v35
+	var v43 int32
+	_ = v43
 	v3 = int32(0)
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v4 != v5 {
-		v42 = v3
+		v43 = v3
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v42
+	return v43
 L2:
 	;
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
@@ -61,12 +61,12 @@ L2:
 	}
 L3:
 	;
-	v42 = int32(1)
+	v43 = int32(1)
 	goto L1
 L4:
 	;
 	if v7 == int32(0) {
-		v42 = v3
+		v43 = v3
 		goto L1
 	} else {
 		goto L7
@@ -77,80 +77,71 @@ L5:
 L6:
 	;
 	if v8 != v7 {
-		v42 = v3
+		v43 = v3
 		goto L1
 	} else {
-		goto L17
+		goto L16
 	}
 L7:
 	;
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7))))
-	v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8))))
-	if v14 == int32(0) {
-		v33 = v13
-		v34 = v14
+	v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8))))
+	v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7))))
+	if base.B2i32(v13 == int32(0))|base.B2i32(v13 != v16) != 0 {
+		v34 = v13
+		v35 = v16
 		goto L9
 	} else {
 		goto L10
 	}
 L8:
 	;
-	if v34-v33 == int32(0) {
+	if v34-v35 == int32(0) {
 		goto L3
 	} else {
-		goto L16
+		goto L15
 	}
 L9:
 	;
 	goto L8
 L10:
 	;
-	if v13 != v14 {
-		v33 = v13
-		v34 = v14
-		goto L9
-	} else {
-		goto L11
-	}
+	v19 = v8
+	v20 = v7
+	goto L11
 L11:
 	;
-	v18 = v8
-	v19 = v7
-	goto L12
+	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+1)))
+	v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+1)))
+	if v24 == int32(0) {
+		v34 = v24
+		v35 = v23
+		goto L9
+	} else {
+		goto L13
+	}
 L12:
 	;
-	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+1)))
-	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v18)+1)))
-	if v23 == int32(0) {
-		v33 = v22
-		v34 = v23
-		goto L9
+	v34 = v24
+	v35 = v23
+	goto L9
+L13:
+	;
+	v27 = int32(1)
+	if v24 == v23 {
+		v19 = v19 + v27
+		v20 = v20 + v27
+		goto L11
 	} else {
 		goto L14
 	}
-L13:
-	;
-	v33 = v22
-	v34 = v23
-	goto L9
 L14:
 	;
-	v26 = int32(1)
-	if v22 == v23 {
-		v18 = v18 + v26
-		v19 = v19 + v26
-		goto L12
-	} else {
-		goto L15
-	}
+	goto L12
 L15:
 	;
-	goto L13
-L16:
-	;
-	v42 = v3
+	v43 = v3
 	goto L1
-L17:
+L16:
 	;
 	goto L3
 }

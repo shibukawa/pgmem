@@ -12,58 +12,61 @@ func F_DropForeignKeyConstraintTriggers(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v7
 	var v9 int32
 	_ = v9
+	var v12 int32
+	_ = v12
 	var v17 int32
 	_ = v17
 	var v19 int32
 	_ = v19
+	var v22 int32
+	_ = v22
+	var v23 int32
+	_ = v23
 	var v24 int32
 	_ = v24
 	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
 	var v27 int32
 	_ = v27
-	var v29 int32
-	_ = v29
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
 	var v35 int32
 	_ = v35
 	var v36 int32
 	_ = v36
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
-	var v46 int32
-	_ = v46
-	var v49 int32
-	_ = v49
+	var v45 int32
+	_ = v45
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
-	var v66 int32
-	_ = v66
-	var v68 int32
-	_ = v68
+	var v65 int32
+	_ = v65
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
 	var v70 int32
 	_ = v70
-	var v71 int32
-	_ = v71
-	var v79 int32
-	_ = v79
+	var v78 int32
+	_ = v78
 	v7 = m.G0
 	v9 = v7 + int32(-64)
 	m.G0 = v9
-	F_ScanKeyInit(m, v7+int32(-48), int32(11), int32(3), int32(184), l1)
+	v12 = v7 + int32(-48)
+	F_ScanKeyInit(m, v12, int32(11), int32(3), int32(184), l1)
 	mBase = m.M
 	v17 = m.ExcPending
 	if v17 != 0 {
@@ -77,55 +80,56 @@ L1:
 L2:
 	;
 	v19 = int32(1)
-	v24 = F_systable_beginscan(m, l0, int32(2699), v19, int32(0), v19, v7+int32(-48))
+	v22 = F_systable_beginscan(m, l0, int32(2699), v19, int32(0), v19, v12)
 	mBase = m.M
-	v25 = m.ExcPending
-	if v25 != 0 {
+	v23 = m.ExcPending
+	if v23 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v26 = F_systable_getnext(m, v24)
+	v24 = F_systable_getnext(m, v22)
 	mBase = m.M
-	v27 = m.ExcPending
-	if v27 != 0 {
+	v25 = m.ExcPending
+	if v25 != 0 {
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	if v26 != 0 {
+	if v24 != 0 {
 		goto L5
 	} else {
 		goto L6
 	}
 L5:
 	;
-	v29 = v26
+	v27 = v24
 	goto L8
 L6:
 	;
 	goto L7
 L7:
 	;
-	F_systable_endscan(m, v24)
+	F_systable_endscan(m, v22)
 	mBase = m.M
-	v79 = m.ExcPending
-	if v79 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L1
 	} else {
-		goto L23
+		goto L22
 	}
 L8:
 	;
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v29)+16))
-	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+22)))
-	v36 = v34 + v35
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v36)+84))
-	if v37 == int32(0) {
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+16))
+	v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v32)+22)))
+	v34 = v32 + v33
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+84))
+	v36 = int32(0)
+	if base.B2i32(v35 == v36)|base.B2i32(base.B2i32(l3 == v36)|base.B2i32(v35 == l3) == v36) != 0 {
 		goto L10
 	} else {
 		goto L11
@@ -135,104 +139,96 @@ L9:
 	goto L7
 L10:
 	;
-	v70 = F_systable_getnext(m, v24)
+	v69 = F_systable_getnext(m, v22)
 	mBase = m.M
-	v71 = m.ExcPending
-	if v71 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L1
 	} else {
-		goto L21
+		goto L20
 	}
 L11:
 	;
-	v40 = int32(0)
-	if base.B2i32(l3 == v40)|base.B2i32(v37 == l3) == v40 {
-		goto L10
-	} else {
+	if l2 != 0 {
 		goto L12
+	} else {
+		goto L13
 	}
 L12:
 	;
-	if l2 != 0 {
-		goto L13
+	v45 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+	if v45 != l2 {
+		goto L10
 	} else {
-		goto L14
+		goto L15
 	}
 L13:
 	;
-	v46 = *(*int32)(unsafe.Add(mBase, uint32(v36)+4))
-	if v46 != l2 {
-		goto L10
+	goto L14
+L14:
+	;
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+	v50 = F_deleteDependencyRecordsFor(m, int32(2620), v48, int32(0))
+	mBase = m.M
+	v51 = m.ExcPending
+	if v51 != 0 {
+		goto L1
 	} else {
 		goto L16
 	}
-L14:
-	;
-	goto L15
 L15:
 	;
-	v49 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
-	v51 = F_deleteDependencyRecordsFor(m, int32(2620), v49, int32(0))
+	goto L14
+L16:
+	;
+	F_CommandCounterIncrement(m)
 	mBase = m.M
-	v52 = m.ExcPending
-	if v52 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L1
 	} else {
 		goto L17
 	}
-L16:
-	;
-	goto L15
 L17:
 	;
-	F_CommandCounterIncrement(m)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(2620)
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
+	v57 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = v57
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v56
+	F_performDeletion(m, v7+int32(-60), v57, v57)
 	mBase = m.M
-	v54 = m.ExcPending
-	if v54 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L1
 	} else {
 		goto L18
 	}
 L18:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = int32(2620)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
-	v58 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+12)) = v58
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+8)) = v57
-	F_performDeletion(m, v7+int32(-60), v58, v58)
+	F_CommandCounterIncrement(m)
 	mBase = m.M
-	v66 = m.ExcPending
-	if v66 != 0 {
+	v67 = m.ExcPending
+	if v67 != 0 {
 		goto L1
 	} else {
 		goto L19
 	}
 L19:
 	;
-	F_CommandCounterIncrement(m)
-	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L1
-	} else {
-		goto L20
-	}
+	goto L10
 L20:
 	;
-	goto L10
-L21:
-	;
-	if v70 != 0 {
-		v29 = v70
+	if v69 != 0 {
+		v27 = v69
 		goto L8
 	} else {
-		goto L22
+		goto L21
 	}
-L22:
+L21:
 	;
 	goto L9
-L23:
+L22:
 	;
 	m.G0 = v9 - int32(-64)
 	return
@@ -1855,151 +1851,29 @@ func F_createForeignKeyActionTriggers(m *base.Module, l0 int32, l1 int32, l2 int
 	}
 }
 func F_get_foreign_server_oid(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v23 int32
-	_ = v23
-	var v27 int32
-	_ = v27
-	var v32 int32
-	_ = v32
-	v3 = int32(0)
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v13 = F_GetSysCacheOid(m, int32(31), l0, v3, v3, v3)
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	v9 = Fn13899(m, l0, l1, int32(_a_F_get_foreign_server_oid_0), int32(714), int32(_a_F_get_foreign_server_oid_1), int32(_a_F_get_foreign_server_oid_2), int32(67137668), int32(31))
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return int32(0)
 	} else {
-		if l1 != 0 {
-			m.G0 = v7 + int32(16)
-			return v13
-		} else {
-			if v13 != 0 {
-				m.G0 = v7 + int32(16)
-				return v13
-			} else {
-				F_errstart_cold(m, int32(21), int32(0))
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					F_errcode(m, int32(67137668))
-					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-						F_errmsg(m, int32(_a_F_get_foreign_server_oid_0), v7)
-						mBase = m.M
-						v27 = m.ExcPending
-						if v27 != 0 {
-							return int32(0)
-						} else {
-							F_errfinish(m, int32(_a_F_get_foreign_server_oid_1), int32(714), int32(_a_F_get_foreign_server_oid_2))
-							mBase = m.M
-							v32 = m.ExcPending
-							if v32 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		return v9
 	}
 }
 func F_has_foreign_data_wrapper_privilege_id_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13914(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_id_id_0), int32(2328))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(_a_F_has_foreign_data_wrapper_privilege_id_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(2328), v11, v12, v22, v9+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v9 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_foreign_data_wrapper_privilege_id_name(m *base.Module, l0 int32) int32 {
@@ -2083,86 +1957,15 @@ func F_has_foreign_data_wrapper_privilege_id_name(m *base.Module, l0 int32) int3
 	}
 }
 func F_has_foreign_data_wrapper_privilege_name_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v24 int64
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13915(m, l0, int32(_a_F_has_foreign_data_wrapper_privilege_name_id_0), int32(2328))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v21 = F_get_role_oid_or_public(m, v12)
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			v24 = F_convert_any_priv_string(m, v14, int32(_a_F_has_foreign_data_wrapper_privilege_name_id_0))
-			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
-				return int32(0)
-			} else {
-				v28 = F_object_aclcheck_ext(m, int32(2328), v11, v21, v24, v9+int32(15))
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
-				} else {
-					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-					if v30 == int32(1) {
-						v33 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v33)
-						v37 = int32(0)
-					} else {
-						v37 = base.B2i32(v28 == int32(0))
-					}
-					m.G0 = v9 + int32(16)
-					return v37
-				}
-			}
-		}
+		return v4
 	}
 }

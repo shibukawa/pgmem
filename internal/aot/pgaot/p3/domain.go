@@ -196,48 +196,48 @@ func F_replace_domain_constraint_value(m *base.Module, l0 int32, l1 int32) int32
 	_ = v14
 	var v17 int32
 	_ = v17
-	var v18 int32
-	_ = v18
-	var v22 int32
-	_ = v22
+	var v20 int32
+	_ = v20
 	var v23 int32
 	_ = v23
-	var v26 int32
-	_ = v26
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
-	var v30 int32
-	_ = v30
-	var v37 int32
-	_ = v37
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
 	var v38 int32
 	_ = v38
-	var v40 int32
-	_ = v40
+	var v39 int32
+	_ = v39
 	var v41 int32
 	_ = v41
-	var v44 int32
-	_ = v44
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
-	var v47 int32
-	_ = v47
+	var v46 int32
+	_ = v46
+	var v48 int32
+	_ = v48
 	v3 = int32(0)
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v5 == v3 {
-		v47 = v3
+		v48 = v3
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v47
+	return v48
 L2:
 	;
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v5)+4))
 	if v8 != int32(1) {
-		v47 = v3
+		v48 = v3
 		goto L1
 	} else {
 		goto L3
@@ -248,88 +248,79 @@ L3:
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
 	v14 = int32(_a_F_replace_domain_constraint_value_0)
-	v17 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_replace_domain_constraint_value[0])))
-	v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13))))
-	if v18 == int32(0) {
-		v37 = v17
-		v38 = v18
+	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13))))
+	v20 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_replace_domain_constraint_value[0])))
+	if base.B2i32(v17 == int32(0))|base.B2i32(v17 != v20) != 0 {
+		v38 = v17
+		v39 = v20
 		goto L5
 	} else {
 		goto L6
 	}
 L4:
 	;
-	if v38-v37 != 0 {
-		v47 = v3
+	if v38-v39 != 0 {
+		v48 = v3
 		goto L1
 	} else {
-		goto L12
+		goto L11
 	}
 L5:
 	;
 	goto L4
 L6:
 	;
-	if v17 != v18 {
-		v37 = v17
-		v38 = v18
-		goto L5
-	} else {
-		goto L7
-	}
+	v23 = v13
+	v24 = v14
+	goto L7
 L7:
 	;
-	v22 = v13
-	v23 = v14
-	goto L8
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v24)+1)))
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
+	if v28 == int32(0) {
+		v38 = v28
+		v39 = v27
+		goto L5
+	} else {
+		goto L9
+	}
 L8:
 	;
-	v26 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23)+1)))
-	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22)+1)))
-	if v27 == int32(0) {
-		v37 = v26
-		v38 = v27
-		goto L5
+	v38 = v28
+	v39 = v27
+	goto L5
+L9:
+	;
+	v31 = int32(1)
+	if v28 == v27 {
+		v23 = v23 + v31
+		v24 = v24 + v31
+		goto L7
 	} else {
 		goto L10
 	}
-L9:
-	;
-	v37 = v26
-	v38 = v27
-	goto L5
 L10:
 	;
-	v30 = int32(1)
-	if v26 == v27 {
-		v22 = v22 + v30
-		v23 = v23 + v30
-		goto L8
-	} else {
-		goto L11
-	}
+	goto L8
 L11:
 	;
-	goto L9
+	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
+	v42 = F_copyObjectImpl(m, v41)
+	mBase = m.M
+	v45 = m.ExcPending
+	if v45 != 0 {
+		goto L12
+	} else {
+		goto L13
+	}
 L12:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+120))
-	v41 = F_copyObjectImpl(m, v40)
-	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
-		goto L13
-	} else {
-		goto L14
-	}
+	return int32(0)
 L13:
 	;
-	return int32(0)
-L14:
-	;
-	v45 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v41)+16)) = v45
-	v47 = v41
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v42)+16)) = v46
+	v48 = v42
 	goto L1
 }
 func F_validateDomainNotNullConstraint(m *base.Module, l0 int32) {
@@ -345,8 +336,8 @@ func F_validateDomainNotNullConstraint(m *base.Module, l0 int32) {
 	_ = v18
 	var v21 int32
 	_ = v21
-	var v31 int32
-	_ = v31
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
 	var v40 int32
@@ -512,12 +503,12 @@ L5:
 	}
 L6:
 	;
-	v31 = int32(0)
+	v32 = int32(0)
 	goto L7
 L7:
 	;
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v36+v31<<(uint(int32(2))%32))))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v36+v32<<(uint(int32(2))%32))))
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v41)+52))
 	v43 = F_GetLatestSnapshot(m)
@@ -792,7 +783,7 @@ L41:
 	}
 L42:
 	;
-	F_sequence_close(m, v41, int32(0))
+	F_relation_close(m, v41, int32(0))
 	mBase = m.M
 	v165 = m.ExcPending
 	if v165 != 0 {
@@ -802,10 +793,10 @@ L42:
 	}
 L43:
 	;
-	v167 = v31 + int32(1)
+	v167 = v32 + int32(1)
 	v168 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
 	if v167 < v168 {
-		v31 = v167
+		v32 = v167
 		goto L7
 	} else {
 		goto L44

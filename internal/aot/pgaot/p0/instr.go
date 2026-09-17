@@ -363,16 +363,16 @@ func F_InstrStopNode(m *base.Module, l0 int32, l1 float64) {
 	_ = v187
 	var v190 int32
 	_ = v190
-	var v192 int32
-	_ = v192
-	var v199 int64
-	_ = v199
-	var v210 int32
-	_ = v210
-	var v214 int32
-	_ = v214
-	var v219 int32
-	_ = v219
+	var v196 int32
+	_ = v196
+	var v200 int64
+	_ = v200
+	var v211 int32
+	_ = v211
+	var v215 int32
+	_ = v215
+	var v220 int32
+	_ = v220
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -384,20 +384,20 @@ func F_InstrStopNode(m *base.Module, l0 int32, l1 float64) {
 		if v17 == int64(0) {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v210 = m.ExcPending
-			if v210 != 0 {
+			v211 = m.ExcPending
+			if v211 != 0 {
 				return
 			} else {
 				F_errmsg_internal(m, int32(_a_F_InstrStopNode_0), int32(0))
 				mBase = m.M
-				v214 = m.ExcPending
-				if v214 != 0 {
+				v215 = m.ExcPending
+				if v215 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_InstrStopNode_1), int32(96), int32(_a_F_InstrStopNode_2))
 					mBase = m.M
-					v219 = m.ExcPending
-					if v219 != 0 {
+					v220 = m.ExcPending
+					if v220 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -509,17 +509,14 @@ func F_InstrStopNode(m *base.Module, l0 int32, l1 float64) {
 			if v187 == int32(0) {
 				v190 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v190)
-				v199 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-				*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v199), float64(1e+09))
+				v200 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+				*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v200), float64(1e+09))
 			} else {
-				v192 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
-				if v192 != int32(1) {
+				v196 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
+				if base.B2i32(base.F64_lt(v11, float64(1)) == int32(0))|base.B2i32(v196 != int32(1)) != 0 {
 				} else {
-					if base.F64_lt(v11, float64(1)) == int32(0) {
-					} else {
-						v199 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-						*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v199), float64(1e+09))
-					}
+					v200 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+					*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v200), float64(1e+09))
 				}
 			}
 			m.G0 = v9 + int32(16)
@@ -620,17 +617,14 @@ func F_InstrStopNode(m *base.Module, l0 int32, l1 float64) {
 		if v187 == int32(0) {
 			v190 = int32(1)
 			*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v190)
-			v199 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-			*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v199), float64(1e+09))
+			v200 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+			*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v200), float64(1e+09))
 		} else {
-			v192 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
-			if v192 != int32(1) {
+			v196 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
+			if base.B2i32(base.F64_lt(v11, float64(1)) == int32(0))|base.B2i32(v196 != int32(1)) != 0 {
 			} else {
-				if base.F64_lt(v11, float64(1)) == int32(0) {
-				} else {
-					v199 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
-					*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v199), float64(1e+09))
-				}
+				v200 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
+				*(*float64)(unsafe.Add(mBase, uint32(l0)+24)) = base.F64_div(base.F64_convert_i64_s(v200), float64(1e+09))
 			}
 		}
 		m.G0 = v9 + int32(16)

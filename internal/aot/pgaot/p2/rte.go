@@ -12,144 +12,141 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v18 int64
-	_ = v18
+	var v11 int32
+	_ = v11
+	var v17 int64
+	_ = v17
+	var v29 int32
+	_ = v29
 	var v30 int32
 	_ = v30
 	var v31 int32
 	_ = v31
-	var v32 int32
-	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
 	var v35 int32
 	_ = v35
-	var v36 int32
-	_ = v36
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
 	var v40 int32
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
+	var v43 int32
+	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v50 int32
-	_ = v50
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
+	var v59 int32
+	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
+	var v61 int64
 	_ = v61
-	var v62 int64
-	_ = v62
-	var v64 int64
-	_ = v64
-	var v66 int64
-	_ = v66
-	var v68 int64
-	_ = v68
-	var v70 int64
-	_ = v70
+	var v63 int64
+	_ = v63
+	var v65 int64
+	_ = v65
+	var v67 int64
+	_ = v67
+	var v69 int64
+	_ = v69
 	v7 = F_palloc(m, int32(136))
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
 		return
 	} else {
-		v10 = F__emscripten_memcpy_bulkmem(m, v7, l2, int32(136))
+		base.MemoryCopy(m, v7, l2, int32(136))
+		v11 = int32(0)
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+128)) = v11
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+120)) = v11
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+104)) = v11
+		v17 = int64(0)
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+96)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+76)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+52)) = v17
+		*(*int64)(unsafe.Add(mBase, uint32(v7)+60)) = v17
+		*(*int32)(unsafe.Add(mBase, uint32(v7)+68)) = v11
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+		v30 = F_lappend(m, v29, v7)
 		mBase = m.M
-		v12 = int32(0)
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+128)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+120)) = v12
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+104)) = v12
-		v18 = int64(0)
-		*(*int64)(unsafe.Add(mBase, uint32(v10)+96)) = v18
-		*(*int64)(unsafe.Add(mBase, uint32(v10)+76)) = v18
-		*(*int64)(unsafe.Add(mBase, uint32(v10)+32)) = v18
-		*(*int64)(unsafe.Add(mBase, uint32(v10)+52)) = v18
-		*(*int64)(unsafe.Add(mBase, uint32(v10)+60)) = v18
-		*(*int32)(unsafe.Add(mBase, uint32(v10)+68)) = v12
-		v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-		v31 = F_lappend(m, v30, v10)
-		mBase = m.M
-		v32 = m.ExcPending
-		if v32 != 0 {
+		v31 = m.ExcPending
+		if v31 != 0 {
 			return
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v31
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(v10)+12))
-			switch v34 {
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v30
+			v33 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
+			switch v33 {
 			case 0:
-				v35 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-				v39 = v35
-				v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-				v41 = F_lappend_oid(m, v40, v39)
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+				v38 = v34
+				v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+				v40 = F_lappend_oid(m, v39, v38)
 				mBase = m.M
-				v42 = m.ExcPending
-				if v42 != 0 {
+				v41 = m.ExcPending
+				if v41 != 0 {
 					return
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v41
-					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-					v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-					if v45 != 0 {
-						v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+4))
-						v48 = v46
+					*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v40
+					v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+					if v44 != 0 {
+						v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
+						v47 = v45
 					} else {
-						v48 = int32(0)
+						v47 = int32(0)
 					}
-					v49 = F_bms_add_member(m, v44, v48)
+					v48 = F_bms_add_member(m, v43, v47)
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
+					v49 = m.ExcPending
+					if v49 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49
-						v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-						if v53 != 0 {
-							v54 = F_getRTEPermissionInfo(m, l1, v10)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v48
+						v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+						if v52 != 0 {
+							v53 = F_getRTEPermissionInfo(m, l1, v7)
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v54 = m.ExcPending
+							if v54 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(0)
-								v60 = F_addRTEPermissionInfo(m, l0+int32(36), v10)
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
+								v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
 								mBase = m.M
-								v61 = m.ExcPending
-								if v61 != 0 {
+								v60 = m.ExcPending
+								if v60 != 0 {
 									return
 								} else {
-									v62 = *(*int64)(unsafe.Add(mBase, uint32(v54)+32))
-									*(*int64)(unsafe.Add(mBase, uint32(v60)+32)) = v62
-									v64 = *(*int64)(unsafe.Add(mBase, uint32(v54)+24))
-									*(*int64)(unsafe.Add(mBase, uint32(v60)+24)) = v64
-									v66 = *(*int64)(unsafe.Add(mBase, uint32(v54)+16))
-									*(*int64)(unsafe.Add(mBase, uint32(v60)+16)) = v66
-									v68 = *(*int64)(unsafe.Add(mBase, uint32(v54)+8))
-									*(*int64)(unsafe.Add(mBase, uint32(v60)+8)) = v68
-									v70 = *(*int64)(unsafe.Add(mBase, uint32(v54)))
-									*(*int64)(unsafe.Add(mBase, uint32(v60))) = v70
+									v61 = *(*int64)(unsafe.Add(mBase, uint32(v53)+32))
+									*(*int64)(unsafe.Add(mBase, uint32(v59)+32)) = v61
+									v63 = *(*int64)(unsafe.Add(mBase, uint32(v53)+24))
+									*(*int64)(unsafe.Add(mBase, uint32(v59)+24)) = v63
+									v65 = *(*int64)(unsafe.Add(mBase, uint32(v53)+16))
+									*(*int64)(unsafe.Add(mBase, uint32(v59)+16)) = v65
+									v67 = *(*int64)(unsafe.Add(mBase, uint32(v53)+8))
+									*(*int64)(unsafe.Add(mBase, uint32(v59)+8)) = v67
+									v69 = *(*int64)(unsafe.Add(mBase, uint32(v53)))
+									*(*int64)(unsafe.Add(mBase, uint32(v59))) = v69
 									return
 								}
 							}
@@ -159,33 +156,33 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			case 1:
-				v36 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-				if v36 == int32(0) {
-					v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-					if v53 != 0 {
-						v54 = F_getRTEPermissionInfo(m, l1, v10)
+				v35 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+				if v35 == int32(0) {
+					v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+					if v52 != 0 {
+						v53 = F_getRTEPermissionInfo(m, l1, v7)
 						mBase = m.M
-						v55 = m.ExcPending
-						if v55 != 0 {
+						v54 = m.ExcPending
+						if v54 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(0)
-							v60 = F_addRTEPermissionInfo(m, l0+int32(36), v10)
+							*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
+							v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
 							mBase = m.M
-							v61 = m.ExcPending
-							if v61 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return
 							} else {
-								v62 = *(*int64)(unsafe.Add(mBase, uint32(v54)+32))
-								*(*int64)(unsafe.Add(mBase, uint32(v60)+32)) = v62
-								v64 = *(*int64)(unsafe.Add(mBase, uint32(v54)+24))
-								*(*int64)(unsafe.Add(mBase, uint32(v60)+24)) = v64
-								v66 = *(*int64)(unsafe.Add(mBase, uint32(v54)+16))
-								*(*int64)(unsafe.Add(mBase, uint32(v60)+16)) = v66
-								v68 = *(*int64)(unsafe.Add(mBase, uint32(v54)+8))
-								*(*int64)(unsafe.Add(mBase, uint32(v60)+8)) = v68
-								v70 = *(*int64)(unsafe.Add(mBase, uint32(v54)))
-								*(*int64)(unsafe.Add(mBase, uint32(v60))) = v70
+								v61 = *(*int64)(unsafe.Add(mBase, uint32(v53)+32))
+								*(*int64)(unsafe.Add(mBase, uint32(v59)+32)) = v61
+								v63 = *(*int64)(unsafe.Add(mBase, uint32(v53)+24))
+								*(*int64)(unsafe.Add(mBase, uint32(v59)+24)) = v63
+								v65 = *(*int64)(unsafe.Add(mBase, uint32(v53)+16))
+								*(*int64)(unsafe.Add(mBase, uint32(v59)+16)) = v65
+								v67 = *(*int64)(unsafe.Add(mBase, uint32(v53)+8))
+								*(*int64)(unsafe.Add(mBase, uint32(v59)+8)) = v67
+								v69 = *(*int64)(unsafe.Add(mBase, uint32(v53)))
+								*(*int64)(unsafe.Add(mBase, uint32(v59))) = v69
 								return
 							}
 						}
@@ -193,55 +190,55 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						return
 					}
 				} else {
-					v39 = v36
-					v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-					v41 = F_lappend_oid(m, v40, v39)
+					v38 = v35
+					v39 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+					v40 = F_lappend_oid(m, v39, v38)
 					mBase = m.M
-					v42 = m.ExcPending
-					if v42 != 0 {
+					v41 = m.ExcPending
+					if v41 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v41
-						v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
-						if v45 != 0 {
-							v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)+4))
-							v48 = v46
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+56)) = v40
+						v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+24))
+						if v44 != 0 {
+							v45 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
+							v47 = v45
 						} else {
-							v48 = int32(0)
+							v47 = int32(0)
 						}
-						v49 = F_bms_add_member(m, v44, v48)
+						v48 = F_bms_add_member(m, v43, v47)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v49 = m.ExcPending
+						if v49 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v49
-							v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-							if v53 != 0 {
-								v54 = F_getRTEPermissionInfo(m, l1, v10)
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+28)) = v48
+							v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+							if v52 != 0 {
+								v53 = F_getRTEPermissionInfo(m, l1, v7)
 								mBase = m.M
-								v55 = m.ExcPending
-								if v55 != 0 {
+								v54 = m.ExcPending
+								if v54 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(0)
-									v60 = F_addRTEPermissionInfo(m, l0+int32(36), v10)
+									*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
+									v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
 									mBase = m.M
-									v61 = m.ExcPending
-									if v61 != 0 {
+									v60 = m.ExcPending
+									if v60 != 0 {
 										return
 									} else {
-										v62 = *(*int64)(unsafe.Add(mBase, uint32(v54)+32))
-										*(*int64)(unsafe.Add(mBase, uint32(v60)+32)) = v62
-										v64 = *(*int64)(unsafe.Add(mBase, uint32(v54)+24))
-										*(*int64)(unsafe.Add(mBase, uint32(v60)+24)) = v64
-										v66 = *(*int64)(unsafe.Add(mBase, uint32(v54)+16))
-										*(*int64)(unsafe.Add(mBase, uint32(v60)+16)) = v66
-										v68 = *(*int64)(unsafe.Add(mBase, uint32(v54)+8))
-										*(*int64)(unsafe.Add(mBase, uint32(v60)+8)) = v68
-										v70 = *(*int64)(unsafe.Add(mBase, uint32(v54)))
-										*(*int64)(unsafe.Add(mBase, uint32(v60))) = v70
+										v61 = *(*int64)(unsafe.Add(mBase, uint32(v53)+32))
+										*(*int64)(unsafe.Add(mBase, uint32(v59)+32)) = v61
+										v63 = *(*int64)(unsafe.Add(mBase, uint32(v53)+24))
+										*(*int64)(unsafe.Add(mBase, uint32(v59)+24)) = v63
+										v65 = *(*int64)(unsafe.Add(mBase, uint32(v53)+16))
+										*(*int64)(unsafe.Add(mBase, uint32(v59)+16)) = v65
+										v67 = *(*int64)(unsafe.Add(mBase, uint32(v53)+8))
+										*(*int64)(unsafe.Add(mBase, uint32(v59)+8)) = v67
+										v69 = *(*int64)(unsafe.Add(mBase, uint32(v53)))
+										*(*int64)(unsafe.Add(mBase, uint32(v59))) = v69
 										return
 									}
 								}
@@ -252,31 +249,31 @@ func F_add_rte_to_flat_rtable(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			default:
-				v53 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
-				if v53 != 0 {
-					v54 = F_getRTEPermissionInfo(m, l1, v10)
+				v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
+				if v52 != 0 {
+					v53 = F_getRTEPermissionInfo(m, l1, v7)
 					mBase = m.M
-					v55 = m.ExcPending
-					if v55 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v10)+28)) = int32(0)
-						v60 = F_addRTEPermissionInfo(m, l0+int32(36), v10)
+						*(*int32)(unsafe.Add(mBase, uint32(v7)+28)) = int32(0)
+						v59 = F_addRTEPermissionInfo(m, l0+int32(36), v7)
 						mBase = m.M
-						v61 = m.ExcPending
-						if v61 != 0 {
+						v60 = m.ExcPending
+						if v60 != 0 {
 							return
 						} else {
-							v62 = *(*int64)(unsafe.Add(mBase, uint32(v54)+32))
-							*(*int64)(unsafe.Add(mBase, uint32(v60)+32)) = v62
-							v64 = *(*int64)(unsafe.Add(mBase, uint32(v54)+24))
-							*(*int64)(unsafe.Add(mBase, uint32(v60)+24)) = v64
-							v66 = *(*int64)(unsafe.Add(mBase, uint32(v54)+16))
-							*(*int64)(unsafe.Add(mBase, uint32(v60)+16)) = v66
-							v68 = *(*int64)(unsafe.Add(mBase, uint32(v54)+8))
-							*(*int64)(unsafe.Add(mBase, uint32(v60)+8)) = v68
-							v70 = *(*int64)(unsafe.Add(mBase, uint32(v54)))
-							*(*int64)(unsafe.Add(mBase, uint32(v60))) = v70
+							v61 = *(*int64)(unsafe.Add(mBase, uint32(v53)+32))
+							*(*int64)(unsafe.Add(mBase, uint32(v59)+32)) = v61
+							v63 = *(*int64)(unsafe.Add(mBase, uint32(v53)+24))
+							*(*int64)(unsafe.Add(mBase, uint32(v59)+24)) = v63
+							v65 = *(*int64)(unsafe.Add(mBase, uint32(v53)+16))
+							*(*int64)(unsafe.Add(mBase, uint32(v59)+16)) = v65
+							v67 = *(*int64)(unsafe.Add(mBase, uint32(v53)+8))
+							*(*int64)(unsafe.Add(mBase, uint32(v59)+8)) = v67
+							v69 = *(*int64)(unsafe.Add(mBase, uint32(v53)))
+							*(*int64)(unsafe.Add(mBase, uint32(v59))) = v69
 							return
 						}
 					}

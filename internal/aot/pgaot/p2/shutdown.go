@@ -26,64 +26,68 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 	_ = v24
 	var v29 int32
 	_ = v29
+	var v30 int32
+	_ = v30
 	var v35 int32
 	_ = v35
 	var v36 int64
 	_ = v36
 	var v38 int64
 	_ = v38
-	var v48 int64
-	_ = v48
-	var v50 int64
-	_ = v50
-	var v58 int64
-	_ = v58
-	var v60 int64
-	_ = v60
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	var v85 int32
-	_ = v85
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
+	var v51 int64
+	_ = v51
+	var v53 int64
+	_ = v53
+	var v61 int64
+	_ = v61
+	var v63 int64
+	_ = v63
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v88 int32
+	_ = v88
+	var v93 int32
+	_ = v93
 	var v95 int32
 	_ = v95
-	var v99 int32
-	_ = v99
-	var v100 int32
-	_ = v100
+	var v98 int32
+	_ = v98
 	var v102 int32
 	_ = v102
 	var v103 int32
 	_ = v103
-	var v104 int32
-	_ = v104
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
-	var v112 int32
-	_ = v112
-	var v119 int32
-	_ = v119
-	var v123 int32
-	_ = v123
-	var v127 int32
-	_ = v127
+	var v107 int32
+	_ = v107
+	var v109 int32
+	_ = v109
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v133 int32
+	_ = v133
 	v7 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0]))
 	if v7 != 0 {
 		v9 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[1]))
@@ -113,111 +117,104 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 						if v29 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(0)
+							v30 = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = v30
 							*(*int64)(unsafe.Add(mBase, uint32(v16)+12)) = int64(0)
 							v35 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[3]))
 							v36 = *(*int64)(unsafe.Add(mBase, uint32(v35)+8))
 							v38 = v36 - int64(1)
-							if base.Ui64(v38) < base.Ui64(int64(3)) {
-								v58 = v38
-							} else {
-								if base.Ui32(int32(2)) < base.Ui32(base.I32_wrap_i64(v38)) {
-									v58 = v38
-								} else {
-									v48 = v38
-									for {
-										v50 = v48 - int64(1)
-										if base.Ui32(base.I32_wrap_i64(v50)) < base.Ui32(int32(3)) {
-											v48 = v50
-											continue
-										} else {
-											break
-										}
+							if base.B2i32(base.Ui64(v38) < base.Ui64(int64(3)))|base.B2i32(base.Ui32(int32(2)) < base.Ui32(base.I32_wrap_i64(v38))) == v30 {
+								v51 = v38
+								for {
+									v53 = v51 - int64(1)
+									if base.Ui32(base.I32_wrap_i64(v53)) < base.Ui32(int32(3)) {
+										v51 = v53
+										continue
+									} else {
 										break
 									}
-									v58 = v50
+									break
 								}
+								v61 = v53
+							} else {
+								v61 = v38
 							}
-							*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v58
-							v60 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
-							*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v60 + int64(1)
-							v65 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[2]))
-							*(*int32)(unsafe.Add(mBase, uint32(v65)+24)) = int32(0)
-							v69 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[1]))
-							F_LWLockRelease(m, v69+int32(512))
+							*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v61
+							v63 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
+							*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v63 + int64(1)
+							v68 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[2]))
+							*(*int32)(unsafe.Add(mBase, uint32(v68)+24)) = int32(0)
+							v72 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[1]))
+							F_LWLockRelease(m, v72+int32(512))
 							mBase = m.M
-							v73 = m.ExcPending
-							if v73 != 0 {
+							v76 = m.ExcPending
+							if v76 != 0 {
 								return
 							} else {
 								F_StandbyReleaseAllLocks(m)
 								mBase = m.M
-								v75 = m.ExcPending
-								if v75 != 0 {
+								v78 = m.ExcPending
+								if v78 != 0 {
 									return
 								} else {
-									v77 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0]))
-									F_hash_destroy(m, v77)
+									v80 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0]))
+									F_hash_destroy(m, v80)
 									mBase = m.M
-									v79 = m.ExcPending
-									if v79 != 0 {
+									v82 = m.ExcPending
+									if v82 != 0 {
 										return
 									} else {
-										v81 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4]))
-										F_hash_destroy(m, v81)
+										v84 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4]))
+										F_hash_destroy(m, v84)
 										mBase = m.M
-										v83 = m.ExcPending
-										if v83 != 0 {
+										v86 = m.ExcPending
+										if v86 != 0 {
 											return
 										} else {
-											v85 = int32(0)
-											*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4])) = v85
-											*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0])) = v85
-											v90 = m.G0
-											v92 = v90 - int32(16)
-											m.G0 = v92
-											v95 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-											v99 = F_LWLockAcquire(m, v95+int32(584), v85)
+											v88 = int32(0)
+											*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4])) = v88
+											*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0])) = v88
+											v93 = m.G0
+											v95 = v93 - int32(16)
+											m.G0 = v95
+											v98 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+											v102 = F_LWLockAcquire(m, v98+int32(584), v88)
 											mBase = m.M
-											v100 = m.ExcPending
-											if v100 != 0 {
+											v103 = m.ExcPending
+											if v103 != 0 {
 												return
 											} else {
-												v102 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-												v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+612))
-												v104 = int32(0)
-												*(*int32)(unsafe.Add(mBase, uint32(v102)+612)) = v104
-												v106 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+608)))
-												*(*uint8)(unsafe.Add(mBase, uint32(v102)+608)) = uint8(v104)
-												F_LWLockRelease(m, v102+int32(584))
+												v105 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+												v106 = *(*int32)(unsafe.Add(mBase, uint32(v105)+612))
+												v107 = int32(0)
+												*(*int32)(unsafe.Add(mBase, uint32(v105)+612)) = v107
+												v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v105)+608)))
+												*(*uint8)(unsafe.Add(mBase, uint32(v105)+608)) = uint8(v107)
+												F_LWLockRelease(m, v105+int32(584))
 												mBase = m.M
-												v112 = m.ExcPending
-												if v112 != 0 {
+												v115 = m.ExcPending
+												if v115 != 0 {
 													return
 												} else {
-													if v106 != 0 {
-														m.G0 = v92 + int32(16)
-														return
-													} else {
-														if v103 == int32(0) {
-															m.G0 = v92 + int32(16)
+													v116 = int32(0)
+													if v109|base.B2i32(v106 == v116) == v116 {
+														*(*int64)(unsafe.Add(mBase, uint32(v95)+8)) = int64(73746443898191872)
+														*(*int32)(unsafe.Add(mBase, uint32(v95)+4)) = v106
+														v125 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[6]))
+														*(*int32)(unsafe.Add(mBase, uint32(v95))) = v125
+														v129 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+														F_LockRefindAndRelease(m, int32(_a_F_ShutdownRecoveryTransactionEnvironment_4), v129, v95, int32(7), int32(0))
+														mBase = m.M
+														v133 = m.ExcPending
+														if v133 != 0 {
 															return
 														} else {
-															*(*int64)(unsafe.Add(mBase, uint32(v92)+8)) = int64(73746443898191872)
-															*(*int32)(unsafe.Add(mBase, uint32(v92)+4)) = v103
-															v119 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[6]))
-															*(*int32)(unsafe.Add(mBase, uint32(v92))) = v119
-															v123 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-															F_LockRefindAndRelease(m, int32(_a_F_ShutdownRecoveryTransactionEnvironment_4), v123, v92, int32(7), int32(0))
-															mBase = m.M
-															v127 = m.ExcPending
-															if v127 != 0 {
-																return
-															} else {
-																m.G0 = v92 + int32(16)
-																return
-															}
+															m.G0 = v95 + int32(16)
+															return
 														}
+													} else {
+														m.G0 = v95 + int32(16)
+														return
 													}
 												}
 											}
@@ -228,111 +225,104 @@ func F_ShutdownRecoveryTransactionEnvironment(m *base.Module) {
 						}
 					}
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = int32(0)
+					v30 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v16)+20)) = v30
 					*(*int64)(unsafe.Add(mBase, uint32(v16)+12)) = int64(0)
 					v35 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[3]))
 					v36 = *(*int64)(unsafe.Add(mBase, uint32(v35)+8))
 					v38 = v36 - int64(1)
-					if base.Ui64(v38) < base.Ui64(int64(3)) {
-						v58 = v38
-					} else {
-						if base.Ui32(int32(2)) < base.Ui32(base.I32_wrap_i64(v38)) {
-							v58 = v38
-						} else {
-							v48 = v38
-							for {
-								v50 = v48 - int64(1)
-								if base.Ui32(base.I32_wrap_i64(v50)) < base.Ui32(int32(3)) {
-									v48 = v50
-									continue
-								} else {
-									break
-								}
+					if base.B2i32(base.Ui64(v38) < base.Ui64(int64(3)))|base.B2i32(base.Ui32(int32(2)) < base.Ui32(base.I32_wrap_i64(v38))) == v30 {
+						v51 = v38
+						for {
+							v53 = v51 - int64(1)
+							if base.Ui32(base.I32_wrap_i64(v53)) < base.Ui32(int32(3)) {
+								v51 = v53
+								continue
+							} else {
 								break
 							}
-							v58 = v50
+							break
 						}
+						v61 = v53
+					} else {
+						v61 = v38
 					}
-					*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v58
-					v60 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
-					*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v60 + int64(1)
-					v65 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[2]))
-					*(*int32)(unsafe.Add(mBase, uint32(v65)+24)) = int32(0)
-					v69 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[1]))
-					F_LWLockRelease(m, v69+int32(512))
+					*(*int64)(unsafe.Add(mBase, uint32(v35)+48)) = v61
+					v63 = *(*int64)(unsafe.Add(mBase, uint32(v35)+56))
+					*(*int64)(unsafe.Add(mBase, uint32(v35)+56)) = v63 + int64(1)
+					v68 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[2]))
+					*(*int32)(unsafe.Add(mBase, uint32(v68)+24)) = int32(0)
+					v72 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[1]))
+					F_LWLockRelease(m, v72+int32(512))
 					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v76 = m.ExcPending
+					if v76 != 0 {
 						return
 					} else {
 						F_StandbyReleaseAllLocks(m)
 						mBase = m.M
-						v75 = m.ExcPending
-						if v75 != 0 {
+						v78 = m.ExcPending
+						if v78 != 0 {
 							return
 						} else {
-							v77 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0]))
-							F_hash_destroy(m, v77)
+							v80 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0]))
+							F_hash_destroy(m, v80)
 							mBase = m.M
-							v79 = m.ExcPending
-							if v79 != 0 {
+							v82 = m.ExcPending
+							if v82 != 0 {
 								return
 							} else {
-								v81 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4]))
-								F_hash_destroy(m, v81)
+								v84 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4]))
+								F_hash_destroy(m, v84)
 								mBase = m.M
-								v83 = m.ExcPending
-								if v83 != 0 {
+								v86 = m.ExcPending
+								if v86 != 0 {
 									return
 								} else {
-									v85 = int32(0)
-									*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4])) = v85
-									*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0])) = v85
-									v90 = m.G0
-									v92 = v90 - int32(16)
-									m.G0 = v92
-									v95 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-									v99 = F_LWLockAcquire(m, v95+int32(584), v85)
+									v88 = int32(0)
+									*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[4])) = v88
+									*(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[0])) = v88
+									v93 = m.G0
+									v95 = v93 - int32(16)
+									m.G0 = v95
+									v98 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+									v102 = F_LWLockAcquire(m, v98+int32(584), v88)
 									mBase = m.M
-									v100 = m.ExcPending
-									if v100 != 0 {
+									v103 = m.ExcPending
+									if v103 != 0 {
 										return
 									} else {
-										v102 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-										v103 = *(*int32)(unsafe.Add(mBase, uint32(v102)+612))
-										v104 = int32(0)
-										*(*int32)(unsafe.Add(mBase, uint32(v102)+612)) = v104
-										v106 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v102)+608)))
-										*(*uint8)(unsafe.Add(mBase, uint32(v102)+608)) = uint8(v104)
-										F_LWLockRelease(m, v102+int32(584))
+										v105 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+										v106 = *(*int32)(unsafe.Add(mBase, uint32(v105)+612))
+										v107 = int32(0)
+										*(*int32)(unsafe.Add(mBase, uint32(v105)+612)) = v107
+										v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v105)+608)))
+										*(*uint8)(unsafe.Add(mBase, uint32(v105)+608)) = uint8(v107)
+										F_LWLockRelease(m, v105+int32(584))
 										mBase = m.M
-										v112 = m.ExcPending
-										if v112 != 0 {
+										v115 = m.ExcPending
+										if v115 != 0 {
 											return
 										} else {
-											if v106 != 0 {
-												m.G0 = v92 + int32(16)
-												return
-											} else {
-												if v103 == int32(0) {
-													m.G0 = v92 + int32(16)
+											v116 = int32(0)
+											if v109|base.B2i32(v106 == v116) == v116 {
+												*(*int64)(unsafe.Add(mBase, uint32(v95)+8)) = int64(73746443898191872)
+												*(*int32)(unsafe.Add(mBase, uint32(v95)+4)) = v106
+												v125 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[6]))
+												*(*int32)(unsafe.Add(mBase, uint32(v95))) = v125
+												v129 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
+												F_LockRefindAndRelease(m, int32(_a_F_ShutdownRecoveryTransactionEnvironment_4), v129, v95, int32(7), int32(0))
+												mBase = m.M
+												v133 = m.ExcPending
+												if v133 != 0 {
 													return
 												} else {
-													*(*int64)(unsafe.Add(mBase, uint32(v92)+8)) = int64(73746443898191872)
-													*(*int32)(unsafe.Add(mBase, uint32(v92)+4)) = v103
-													v119 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[6]))
-													*(*int32)(unsafe.Add(mBase, uint32(v92))) = v119
-													v123 = *(*int32)(unsafe.Add(mBase, _c_F_ShutdownRecoveryTransactionEnvironment[5]))
-													F_LockRefindAndRelease(m, int32(_a_F_ShutdownRecoveryTransactionEnvironment_4), v123, v92, int32(7), int32(0))
-													mBase = m.M
-													v127 = m.ExcPending
-													if v127 != 0 {
-														return
-													} else {
-														m.G0 = v92 + int32(16)
-														return
-													}
+													m.G0 = v95 + int32(16)
+													return
 												}
+											} else {
+												m.G0 = v95 + int32(16)
+												return
 											}
 										}
 									}

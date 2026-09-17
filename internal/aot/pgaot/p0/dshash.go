@@ -222,8 +222,8 @@ func F_dshash_seq_init(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	v4 = int64(0)
 	*(*int64)(unsafe.Add(mBase, uint32(l0)+4)) = v4
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = l1
+	*(*int64)(unsafe.Add(mBase, uint32(l0)+12)) = v4
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+24)) = uint8(v3)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+20)) = int32(-1)
-	*(*int64)(unsafe.Add(mBase, uint32(l0)+12)) = v4
 	return
 }

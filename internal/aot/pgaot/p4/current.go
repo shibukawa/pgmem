@@ -61,36 +61,36 @@ func F_current_schemas(m *base.Module, l0 int32) int32 {
 	_ = v23
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
 	var v37 int32
 	_ = v37
-	var v43 int32
-	_ = v43
+	var v38 int32
+	_ = v38
 	var v44 int32
 	_ = v44
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
-	var v54 int32
-	_ = v54
+	var v52 int32
+	_ = v52
 	var v56 int32
 	_ = v56
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
 	var v62 int32
 	_ = v62
+	var v63 int32
+	_ = v63
 	v2 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v9 = F_fetch_search_path(m, base.B2i32(v6 != v2))
@@ -105,8 +105,8 @@ L1:
 	;
 	F_list_free(m, v9)
 	mBase = m.M
-	v59 = m.ExcPending
-	if v59 != 0 {
+	v60 = m.ExcPending
+	if v60 != 0 {
 		goto L2
 	} else {
 		goto L18
@@ -147,92 +147,92 @@ L6:
 	}
 L7:
 	;
-	v54 = v2
-	v56 = v16
+	v56 = v2
+	v57 = v16
 	goto L1
 L8:
 	;
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 	if v23 <= int32(0) {
-		v54 = v2
-		v56 = v21
+		v56 = v2
+		v57 = v21
 		goto L1
 	} else {
 		goto L9
 	}
 L9:
 	;
-	v27 = v2
-	v28 = v2
+	v27 = int32(0)
+	v29 = v2
 	goto L10
 L10:
 	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v27<<(uint(int32(2))%32))))
-	v36 = F_get_namespace_name(m, v35)
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32+v27<<(uint(int32(2))%32))))
+	v37 = F_get_namespace_name(m, v36)
 	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L2
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v54 = v48
-	v56 = v21
+	v56 = v49
+	v57 = v21
 	goto L1
 L12:
 	;
-	if v36 != 0 {
+	if v37 != 0 {
 		goto L13
 	} else {
 		goto L14
 	}
 L13:
 	;
-	v43 = F_DirectFunctionCall1Coll(m, int32(500), int32(0), v36)
+	v44 = F_DirectFunctionCall1Coll(m, int32(500), int32(0), v37)
 	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
+	v45 = m.ExcPending
+	if v45 != 0 {
 		goto L2
 	} else {
 		goto L16
 	}
 L14:
 	;
-	v48 = v28
+	v49 = v29
 	goto L15
 L15:
 	;
-	v50 = v27 + int32(1)
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
-	if v50 < v51 {
-		v27 = v50
-		v28 = v48
+	v51 = v27 + int32(1)
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
+	if v51 < v52 {
+		v27 = v51
+		v29 = v49
 		goto L10
 	} else {
 		goto L17
 	}
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v21+v28<<(uint(int32(2))%32)))) = v43
-	v48 = v28 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v21+v29<<(uint(int32(2))%32)))) = v44
+	v49 = v29 + int32(1)
 	goto L15
 L17:
 	;
 	goto L11
 L18:
 	;
-	v61 = F_construct_array_builtin(m, v56, v54, int32(19))
+	v62 = F_construct_array_builtin(m, v57, v56, int32(19))
 	mBase = m.M
-	v62 = m.ExcPending
-	if v62 != 0 {
+	v63 = m.ExcPending
+	if v63 != 0 {
 		goto L2
 	} else {
 		goto L19
 	}
 L19:
 	;
-	return v61
+	return v62
 }

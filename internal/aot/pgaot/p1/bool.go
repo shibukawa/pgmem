@@ -72,23 +72,16 @@ func F_makeBoolConst(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_makeBoolExpr(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	v6 = F_palloc0(m, int32(16))
-	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v5 = Fn13943(m, l0, l1, l2, int32(21))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l2
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+8)) = l1
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(21)
-		return v6
+		return v5
 	}
 }
 func F_parse_bool_with_len(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

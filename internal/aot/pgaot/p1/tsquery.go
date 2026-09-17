@@ -8,12 +8,16 @@ import (
 func F_tsquery_le(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v5 int32
+	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v13 int32
@@ -22,74 +26,67 @@ func F_tsquery_le(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = F_pg_detoast_datum_copy(m, v6)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = l0 + int32(28)
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-		v14 = F_pg_detoast_datum_copy(m, v13)
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			v16 = F_CompareTSQ(m, v7, v14)
+			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v14 = m.ExcPending
+			if v14 != 0 {
 				return int32(0)
 			} else {
-				v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-				if v18 != v7 {
-					F_pfree(m, v7)
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				if v15 != v6 {
+					F_pfree(m, v6)
 					mBase = m.M
-					v21 = m.ExcPending
-					if v21 != 0 {
+					v18 = m.ExcPending
+					if v18 != 0 {
 						return int32(0)
 					} else {
-						v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-						if v22 != v14 {
-							F_pfree(m, v14)
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						if v19 != v11 {
+							F_pfree(m, v11)
 							mBase = m.M
-							v25 = m.ExcPending
-							if v25 != 0 {
+							v22 = m.ExcPending
+							if v22 != 0 {
 								return int32(0)
 							} else {
-								return base.B2i32(v16 <= int32(0))
+								return base.B2i32(v13 <= int32(0))
 							}
 						} else {
-							return base.B2i32(v16 <= int32(0))
+							return base.B2i32(v13 <= int32(0))
 						}
 					}
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-					if v22 != v14 {
-						F_pfree(m, v14)
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					if v19 != v11 {
+						F_pfree(m, v11)
 						mBase = m.M
-						v25 = m.ExcPending
-						if v25 != 0 {
+						v22 = m.ExcPending
+						if v22 != 0 {
 							return int32(0)
 						} else {
-							return base.B2i32(v16 <= int32(0))
+							return base.B2i32(v13 <= int32(0))
 						}
 					} else {
-						return base.B2i32(v16 <= int32(0))
+						return base.B2i32(v13 <= int32(0))
 					}
 				}
 			}
@@ -99,12 +96,16 @@ func F_tsquery_le(m *base.Module, l0 int32) int32 {
 func F_tsquery_ne(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v5 int32
+	_ = v5
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
+	var v9 int32
+	_ = v9
 	var v10 int32
 	_ = v10
+	var v11 int32
+	_ = v11
 	var v12 int32
 	_ = v12
 	var v13 int32
@@ -113,74 +114,67 @@ func F_tsquery_ne(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
+	var v19 int32
+	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = F_pg_detoast_datum_copy(m, v6)
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v6 = F_pg_detoast_datum_copy(m, v5)
 	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v9 = m.ExcPending
+	if v9 != 0 {
 		return int32(0)
 	} else {
-		v12 = l0 + int32(28)
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-		v14 = F_pg_detoast_datum_copy(m, v13)
+		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v11 = F_pg_detoast_datum_copy(m, v10)
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v12 = m.ExcPending
+		if v12 != 0 {
 			return int32(0)
 		} else {
-			v16 = F_CompareTSQ(m, v7, v14)
+			v13 = F_CompareTSQ(m, v6, v11)
 			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
+			v14 = m.ExcPending
+			if v14 != 0 {
 				return int32(0)
 			} else {
-				v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-				if v18 != v7 {
-					F_pfree(m, v7)
+				v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+				if v15 != v6 {
+					F_pfree(m, v6)
 					mBase = m.M
-					v21 = m.ExcPending
-					if v21 != 0 {
+					v18 = m.ExcPending
+					if v18 != 0 {
 						return int32(0)
 					} else {
-						v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-						if v22 != v14 {
-							F_pfree(m, v14)
+						v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+						if v19 != v11 {
+							F_pfree(m, v11)
 							mBase = m.M
-							v25 = m.ExcPending
-							if v25 != 0 {
+							v22 = m.ExcPending
+							if v22 != 0 {
 								return int32(0)
 							} else {
-								return base.B2i32(v16 != int32(0))
+								return base.B2i32(v13 != int32(0))
 							}
 						} else {
-							return base.B2i32(v16 != int32(0))
+							return base.B2i32(v13 != int32(0))
 						}
 					}
 				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-					if v22 != v14 {
-						F_pfree(m, v14)
+					v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+					if v19 != v11 {
+						F_pfree(m, v11)
 						mBase = m.M
-						v25 = m.ExcPending
-						if v25 != 0 {
+						v22 = m.ExcPending
+						if v22 != 0 {
 							return int32(0)
 						} else {
-							return base.B2i32(v16 != int32(0))
+							return base.B2i32(v13 != int32(0))
 						}
 					} else {
-						return base.B2i32(v16 != int32(0))
+						return base.B2i32(v13 != int32(0))
 					}
 				}
 			}
@@ -334,7 +328,7 @@ func F_tsquery_phrase(m *base.Module, l0 int32) int32 {
 	_ = v10
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = F_DirectFunctionCall3Coll(m, int32(1531), int32(0), v4, v5, int32(1))
+	v7 = F_DirectFunctionCall3Coll(m, int32(1512), int32(0), v4, v5, int32(1))
 	mBase = m.M
 	v10 = m.ExcPending
 	if v10 != 0 {

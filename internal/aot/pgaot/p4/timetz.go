@@ -55,7 +55,7 @@ func F_timetz_hash(m *base.Module, l0 int32) int32 {
 	var v35 int32
 	_ = v35
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = F_DirectFunctionCall1Coll(m, int32(1288), int32(0), v4)
+	v5 = F_DirectFunctionCall1Coll(m, int32(1269), int32(0), v4)
 	mBase = m.M
 	v8 = m.ExcPending
 	if v8 != 0 {
@@ -112,16 +112,12 @@ func F_timetz_send(m *base.Module, l0 int32) int32 {
 	_ = v64
 	var v65 int32
 	_ = v65
-	var v67 int32
-	_ = v67
 	var v69 int32
 	_ = v69
-	var v71 int32
-	_ = v71
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -159,16 +155,14 @@ func F_timetz_send(m *base.Module, l0 int32) int32 {
 			} else {
 				v64 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 				v65 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-				v67 = int32(24)
-				v69 = int32(_a_F_timetz_send_0)
-				v71 = int32(8)
-				*(*int32)(unsafe.Add(mBase, uint32(v64+v65))) = v60<<(uint(v67)%32) | v60&v69<<(uint(v71)%32) | (int32(base.Ui32(v60)>>(uint(v71)%32))&v69 | int32(base.Ui32(v60)>>(uint(v67)%32)))
-				v84 = v64 + int32(4)
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v84
-				v87 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-				*(*int32)(unsafe.Add(mBase, uint32(v87))) = v84 << (uint(int32(2)) % 32)
+				v69 = int32(16711935)
+				*(*int32)(unsafe.Add(mBase, uint32(v64+v65))) = base.I32_rotr(v60, int32(24))&v69 | base.I32_rotr(v60&v69, int32(8))
+				v78 = v64 + int32(4)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v78
+				v81 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+				*(*int32)(unsafe.Add(mBase, uint32(v81))) = v78 << (uint(int32(2)) % 32)
 				m.G0 = v7 + int32(16)
-				return v87
+				return v81
 			}
 		}
 	}

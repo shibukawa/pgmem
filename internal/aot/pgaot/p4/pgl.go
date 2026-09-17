@@ -32,135 +32,129 @@ func F_pgl_sendConnData(m *base.Module) {
 	_ = mBase
 	var v1 int32
 	_ = v1
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v14 int32
-	_ = v14
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v17 int32
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v19 int32
-	_ = v19
-	var v27 int32
-	_ = v27
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	var v40 int32
+	_ = v40
 	var v41 int32
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
-	var v45 int32
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
+	var v46 int32
+	_ = v46
+	var v54 int32
+	_ = v54
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
-	var v66 int32
-	_ = v66
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
+	var v69 int32
+	_ = v69
+	var v72 int32
+	_ = v72
 	v1 = int32(0)
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
+	v4 = m.G0
+	v6 = v4 - int32(16)
+	m.G0 = v6
 	*(*uint8)(unsafe.Add(mBase, _c_F_pgl_sendConnData[0])) = uint8(v1)
-	F_pq_beginmessage(m, v7, int32(82))
+	F_pq_beginmessage(m, v6, int32(82))
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return
 	} else {
-		F_enlargeStringInfo(m, v7, int32(4))
+		F_enlargeStringInfo(m, v6, int32(4))
 		mBase = m.M
-		v17 = m.ExcPending
-		if v17 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return
 		} else {
-			v18 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-			v19 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-			*(*int32)(unsafe.Add(mBase, uint32(v18+v19))) = int32(0)
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v18 + int32(4)
-			F_pq_endmessage(m, v7)
+			v17 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+			v18 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+			*(*int32)(unsafe.Add(mBase, uint32(v17+v18))) = int32(0)
+			*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v17 + int32(4)
+			F_pq_endmessage(m, v6)
 			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
+			v26 = m.ExcPending
+			if v26 != 0 {
 				return
 			} else {
 				F_BeginReportingGUCOptions(m)
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
+				v28 = m.ExcPending
+				if v28 != 0 {
 					return
 				} else {
 					F_pgstat_report_connect(m)
 					mBase = m.M
-					v33 = m.ExcPending
-					if v33 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return
 					} else {
-						F_pq_beginmessage(m, v7, int32(75))
+						F_pq_beginmessage(m, v6, int32(75))
 						mBase = m.M
-						v36 = m.ExcPending
-						if v36 != 0 {
+						v35 = m.ExcPending
+						if v35 != 0 {
 							return
 						} else {
-							v38 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_sendConnData[1]))
-							F_enlargeStringInfo(m, v7, int32(4))
+							v37 = *(*int32)(unsafe.Add(mBase, _c_F_pgl_sendConnData[1]))
+							F_enlargeStringInfo(m, v6, int32(4))
 							mBase = m.M
-							v41 = m.ExcPending
-							if v41 != 0 {
+							v40 = m.ExcPending
+							if v40 != 0 {
 								return
 							} else {
-								v42 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-								v43 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-								v45 = int32(24)
-								v47 = int32(_a_F_pgl_sendConnData_0)
-								v49 = int32(8)
-								*(*int32)(unsafe.Add(mBase, uint32(v42+v43))) = v38<<(uint(v45)%32) | v38&v47<<(uint(v49)%32) | (int32(base.Ui32(v38)>>(uint(v49)%32))&v47 | int32(base.Ui32(v38)>>(uint(v45)%32)))
-								v61 = int32(4)
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v42 + v61
-								F_enlargeStringInfo(m, v7, v61)
+								v41 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+								v42 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+								v46 = int32(16711935)
+								*(*int32)(unsafe.Add(mBase, uint32(v41+v42))) = base.I32_rotr(v37, int32(24))&v46 | base.I32_rotr(v37&v46, int32(8))
+								v54 = int32(4)
+								*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v41 + v54
+								F_enlargeStringInfo(m, v6, v54)
 								mBase = m.M
-								v66 = m.ExcPending
-								if v66 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return
 								} else {
-									v67 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-									v68 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-									*(*int32)(unsafe.Add(mBase, uint32(v67+v68))) = int32(1351107840)
-									*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v67 + int32(4)
-									F_pq_endmessage(m, v7)
+									v60 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+									v61 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
+									*(*int32)(unsafe.Add(mBase, uint32(v60+v61))) = int32(-528071424)
+									*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = v60 + int32(4)
+									F_pq_endmessage(m, v6)
 									mBase = m.M
-									v76 = m.ExcPending
-									if v76 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return
 									} else {
 										F_ReadyForQuery(m, int32(2))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v72 = m.ExcPending
+										if v72 != 0 {
 											return
 										} else {
-											m.G0 = v7 + int32(16)
+											m.G0 = v6 + int32(16)
 											return
 										}
 									}

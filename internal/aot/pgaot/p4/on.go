@@ -16,8 +16,8 @@ func F_BuildOnConflictExcludedTargetlist(m *base.Module, l0 int32, l1 int32) int
 	_ = v8
 	var v14 int32
 	_ = v14
-	var v15 int32
-	_ = v15
+	var v16 int32
+	_ = v16
 	var v17 int32
 	_ = v17
 	var v18 int32
@@ -68,8 +68,8 @@ func F_BuildOnConflictExcludedTargetlist(m *base.Module, l0 int32, l1 int32) int
 	_ = v62
 	var v66 int32
 	_ = v66
-	var v68 int32
-	_ = v68
+	var v69 int32
+	_ = v69
 	var v70 int32
 	_ = v70
 	var v71 int32
@@ -99,12 +99,12 @@ func F_BuildOnConflictExcludedTargetlist(m *base.Module, l0 int32, l1 int32) int
 L1:
 	;
 	v14 = v3
-	v15 = v3
+	v16 = v3
 	goto L4
 L2:
 	;
 	v66 = v7
-	v68 = v3
+	v69 = v3
 	goto L3
 L3:
 	;
@@ -132,7 +132,7 @@ L4:
 L5:
 	;
 	v66 = v61
-	v68 = v59
+	v69 = v59
 	goto L3
 L6:
 	;
@@ -198,7 +198,7 @@ L13:
 	goto L6
 L14:
 	;
-	v59 = F_lappend(m, v15, v57)
+	v59 = F_lappend(m, v16, v57)
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -212,7 +212,7 @@ L15:
 	v62 = int32(*(*int16)(unsafe.Add(mBase, uint32(v61)+120)))
 	if v54 < v62 {
 		v14 = v54
-		v15 = v59
+		v16 = v59
 		goto L4
 	} else {
 		goto L16
@@ -233,7 +233,7 @@ L17:
 	}
 L18:
 	;
-	v82 = F_lappend(m, v68, v80)
+	v82 = F_lappend(m, v69, v80)
 	mBase = m.M
 	v83 = m.ExcPending
 	if v83 != 0 {

@@ -87,12 +87,13 @@ type EnvImports interface {
 	X__syscall_lstat64(m *Module, l0 int32, l1 int32) int32
 	X__syscall_ftruncate64(m *Module, l0 int32, l1 int64) int32
 	X__syscall_getcwd(m *Module, l0 int32, l1 int32) int32
+	X__syscall_getegid32(m *Module) int32
 	Emscripten_get_now(m *Module) float64
 	X__syscall_mkdirat(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X_tzset_js(m *Module, l0 int32, l1 int32, l2 int32, l3 int32)
-	X_gmtime_js(m *Module, l0 int64, l1 int32)
+	X_gmtime_js(m *Module, l0 int64, l1 int32) int32
 	X_mmap_js(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int64, l5 int32, l6 int32) int32
-	X__syscall_pipe(m *Module, l0 int32) int32
+	X__syscall_pipe2(m *Module, l0 int32, l1 int32) int32
 	X__syscall_fadvise64(m *Module, l0 int32, l1 int64, l2 int64, l3 int32) int32
 	X__syscall_fallocate(m *Module, l0 int32, l1 int32, l2 int64, l3 int64) int32
 	X_emscripten_runtime_keepalive_clear(m *Module)
@@ -101,10 +102,11 @@ type EnvImports interface {
 	X__syscall_readlinkat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_renameat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	X__syscall_rmdir(m *Module, l0 int32) int32
-	X__syscall__newselect(m *Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32
+	X__syscall_poll(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X_setitimer_js(m *Module, l0 int32, l1 float64) int32
 	X__syscall_symlinkat(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X__syscall_truncate64(m *Module, l0 int32, l1 int64) int32
+	X__syscall_umask(m *Module, l0 int32) int32
 	X__syscall_unlinkat(m *Module, l0 int32, l1 int32, l2 int32) int32
 	X__syscall_utimensat(m *Module, l0 int32, l1 int32, l2 int32, l3 int32) int32
 	Emscripten_resize_heap(m *Module, l0 int32) int32
@@ -125,6 +127,8 @@ type Module struct {
 	ExcVals                [1]uint64
 	T0                     []any
 	G0                     int32
+	G1                     int32
+	G2                     int32
 	Wasi_snapshot_preview1 Wasi_snapshot_preview1Imports
 	Env                    EnvImports
 	MemMu                  *sync.Mutex
@@ -310,75 +314,84 @@ func F32_nearest(x float32) float32 { return float32(math.RoundToEven(float64(x)
 
 func F64_nearest(x float64) float64 { return math.RoundToEven(x) }
 
-func I32_trunc_f32_s(x float32) int32 {
+func I32_trunc_sat_f32_s(x float32) int32 {
 	if x != x {
-		Wasm_trap_invalid_conv()
+		return 0
 	}
-
-	if !(x > -2147483904.0 && x < 2147483648.0) {
-		Wasm_trap_int_overflow()
+	if x <= -2147483648.0 {
+		return math.MinInt32
+	}
+	if x >= 2147483648.0 {
+		return math.MaxInt32
 	}
 	return int32(x)
 }
 
-func I32_trunc_f32_u(x float32) int32 {
-	if x != x {
-		Wasm_trap_invalid_conv()
+func I32_trunc_sat_f32_u(x float32) int32 {
+	if x != x || x <= 0 {
+		return 0
 	}
-	if !(x > -1.0 && x < 4294967296.0) {
-		Wasm_trap_int_overflow()
+	if x >= 4294967296.0 {
+		return -1
 	}
 	return int32(uint32(x))
 }
 
-func I32_trunc_f64_s(x float64) int32 {
+func I32_trunc_sat_f64_s(x float64) int32 {
 	if x != x {
-		Wasm_trap_invalid_conv()
+		return 0
 	}
-
-	if !(x > -2147483649.0 && x < 2147483648.0) {
-		Wasm_trap_int_overflow()
+	if x <= -2147483648.0 {
+		return math.MinInt32
+	}
+	if x >= 2147483648.0 {
+		return math.MaxInt32
 	}
 	return int32(x)
 }
 
-func I32_trunc_f64_u(x float64) int32 {
-	if x != x {
-		Wasm_trap_invalid_conv()
+func I32_trunc_sat_f64_u(x float64) int32 {
+	if x != x || x <= 0 {
+		return 0
 	}
-	if !(x > -1.0 && x < 4294967296.0) {
-		Wasm_trap_int_overflow()
+	if x >= 4294967296.0 {
+		return -1
 	}
 	return int32(uint32(x))
 }
 
-func I64_trunc_f32_s(x float32) int64 {
+func I64_trunc_sat_f32_s(x float32) int64 {
 	if x != x {
-		Wasm_trap_invalid_conv()
+		return 0
 	}
-
-	if !(float64(x) > -9223373136366403584.0 && float64(x) < 9223372036854775808.0) {
-		Wasm_trap_int_overflow()
+	if float64(x) <= -9223372036854775808.0 {
+		return math.MinInt64
+	}
+	if float64(x) >= 9223372036854775808.0 {
+		return math.MaxInt64
 	}
 	return int64(x)
 }
 
-func I64_trunc_f64_s(x float64) int64 {
+func I64_trunc_sat_f64_s(x float64) int64 {
 	if x != x {
-		Wasm_trap_invalid_conv()
+		return 0
 	}
-	if !(x >= -9223372036854775808.0 && x < 9223372036854775808.0) {
-		Wasm_trap_int_overflow()
+	if x <= -9223372036854775808.0 {
+		return math.MinInt64
+	}
+	if x >= 9223372036854775808.0 {
+		return math.MaxInt64
 	}
 	return int64(x)
 }
 
-func I64_trunc_f64_u(x float64) int64 {
-	if x != x {
-		Wasm_trap_invalid_conv()
+func I64_trunc_sat_f64_u(x float64) int64 {
+	if x != x || x <= 0 {
+		return 0
 	}
-	if !(x > -1.0 && x < 18446744073709551616.0) {
-		Wasm_trap_int_overflow()
+	if x >= 18446744073709551616.0 {
+		return -1
 	}
 	return int64(uint64(x))
 }
@@ -628,8 +641,10 @@ func (p *ThreadPool) wake(ea uint64, count int32) int32 {
 // to RestoreGlobals. It is how a snapshot of an instance captures the state that does not
 // live in linear memory.
 func SaveGlobals(m *Module) []uint64 {
-	g := make([]uint64, 1)
+	g := make([]uint64, 3)
 	g[0] = uint64(uint32(m.G0))
+	g[1] = uint64(uint32(m.G1))
+	g[2] = uint64(uint32(m.G2))
 	return g
 }
 
@@ -638,10 +653,12 @@ func SaveGlobals(m *Module) []uint64 {
 // index out of bounds, take what fits and leave the rest at their declared
 // initializers.
 func RestoreGlobals(m *Module, g []uint64) {
-	if len(g) != 1 {
+	if len(g) != 3 {
 		return
 	}
 	m.G0 = int32(uint32(g[0]))
+	m.G1 = int32(uint32(g[1]))
+	m.G2 = int32(uint32(g[2]))
 }
 
 // WasiExitError is the sentinel that the recover layer of SafeInvokeExport

@@ -8,60 +8,56 @@ import (
 func F_AllTablesyncsReady(m *base.Module) int32 {
 	mBase := m.M
 	_ = mBase
-	var v1 int32
-	_ = v1
 	var v4 int32
 	_ = v4
 	var v6 int32
 	_ = v6
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
 	var v20 int32
 	_ = v20
-	var v22 int32
-	_ = v22
+	var v21 int32
+	_ = v21
 	var v23 int32
 	_ = v23
-	var v25 int32
-	_ = v25
-	v1 = int32(0)
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
-	*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)) = uint8(v1)
-	v12 = F_FetchTableStates(m, v6+int32(15))
+	v10 = F_FetchTableStates(m, v6+int32(15))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)))
-		if v16 == int32(1) {
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v6)+15)))
+		if v14 == int32(1) {
 			F_CommitTransactionCommand(m)
 			mBase = m.M
-			v20 = m.ExcPending
-			if v20 != 0 {
+			v18 = m.ExcPending
+			if v18 != 0 {
 				return int32(0)
 			} else {
-				v22 = F_pgstat_report_stat(m, int32(1))
+				v20 = F_pgstat_report_stat(m, int32(1))
 				mBase = m.M
-				v23 = m.ExcPending
-				if v23 != 0 {
+				v21 = m.ExcPending
+				if v21 != 0 {
 					return int32(0)
 				} else {
-					v25 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+					v23 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
 					m.G0 = v6 + int32(16)
-					return v12 & base.B2i32(v25 == int32(0))
+					return v10 & base.B2i32(v23 == int32(0))
 				}
 			}
 		} else {
-			v25 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
+			v23 = *(*int32)(unsafe.Add(mBase, _c_F_AllTablesyncsReady[0]))
 			m.G0 = v6 + int32(16)
-			return v12 & base.B2i32(v25 == int32(0))
+			return v10 & base.B2i32(v23 == int32(0))
 		}
 	}
 }
@@ -197,91 +193,89 @@ func F_ExecGetAllUpdatedCols(m *base.Module, l0 int32, l1 int32) int32 {
 func F_ExecStoreAllNullTuple(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
 	var v5 int32
 	_ = v5
-	var v7 int32
-	_ = v7
+	var v6 int32
+	_ = v6
 	var v8 int32
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v11 int32
-	_ = v11
 	var v12 int32
 	_ = v12
-	var v17 int32
-	_ = v17
-	var v23 int32
-	_ = v23
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
 	var v25 int32
 	_ = v25
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v41 int32
-	_ = v41
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
+	var v27 int32
+	_ = v27
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v45 int32
+	_ = v45
 	var v46 int32
 	_ = v46
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+12))
-	m.T0[v5].(func(*base.Module, int32))(m, l0)
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v55 int32
+	_ = v55
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(v5)+12))
+	m.T0[v6].(func(*base.Module, int32))(m, l0)
 	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)))
-		v11 = v9 << (uint(int32(2)) % 32)
-		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-		if v12&int32(3) != 0 {
-			v35 = F__emscripten_memset_bulkmem(m, v12, base.I32_extend8_s(int32(0)), v11)
-			mBase = m.M
-		} else {
-			if base.Ui32(int32(1024)) < base.Ui32(v11) {
-				v35 = F__emscripten_memset_bulkmem(m, v12, base.I32_extend8_s(int32(0)), v11)
-				mBase = m.M
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
+		v15 = v13 << (uint(int32(2)) % 32)
+		if v9&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(v15)) == int32(0) {
+			if v15 == int32(0) {
 			} else {
-				v17 = v12 + v11
-				if base.Ui32(v17) <= base.Ui32(v12) {
+				v25 = v15 + v9
+				v27 = v9 + int32(4)
+				if base.Ui32(v27) < base.Ui32(v25) {
+					v29 = v25
 				} else {
-					v23 = v12 + int32(4)
-					if base.Ui32(v23) < base.Ui32(v17) {
-						v25 = v17
-					} else {
-						v25 = v23
-					}
-					v32 = F__emscripten_memset_bulkmem(m, v12, base.I32_extend8_s(int32(0)), (v12^int32(-1)+v25)&int32(-4)+int32(4))
-					mBase = m.M
+					v29 = v27
+				}
+				v34 = (v9^int32(-1)+v29)&int32(-4) + int32(4)
+				if v34 == int32(0) {
+				} else {
+					base.MemoryFill(m, v9, int32(0), v34)
 				}
 			}
+		} else {
+			if v15 == int32(0) {
+			} else {
+				base.MemoryFill(m, v9, int32(0), v15)
+			}
 		}
-		v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-		v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
-		v43 = F__emscripten_memset_bulkmem(m, v38, base.I32_extend8_s(int32(1)), v41)
-		mBase = m.M
-		v44 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
-		v46 = v44 & int32(_a_F_ExecStoreAllNullTuple_0)
-		*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v46)
-		v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
-		*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v49)
+		v45 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v46 = *(*int32)(unsafe.Add(mBase, uint32(v45)))
+		if v46 != 0 {
+			v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+			base.MemoryFill(m, v47, int32(1), v46)
+		} else {
+		}
+		v50 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)))
+		v52 = v50 & int32(_a_F_ExecStoreAllNullTuple_0)
+		*(*uint16)(unsafe.Add(mBase, uint32(l0)+4)) = uint16(v52)
+		v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+		v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)))
+		*(*uint16)(unsafe.Add(mBase, uint32(l0)+6)) = uint16(v55)
 		return
 	}
 }
@@ -382,8 +376,8 @@ func F_all_rows_selectable(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v140
 	var v147 int32
 	_ = v147
-	var v149 int32
-	_ = v149
+	var v150 int32
+	_ = v150
 	var v152 int32
 	_ = v152
 	var v157 int32
@@ -830,7 +824,7 @@ L44:
 L45:
 	;
 	v147 = v83
-	v149 = v140
+	v150 = v140
 	goto L48
 L46:
 	;
@@ -853,7 +847,7 @@ L47:
 	}
 L48:
 	;
-	v152 = v149 - int32(7)
+	v152 = v150 - int32(7)
 	if v152&int32(_a_F_all_rows_selectable_0) == int32(0) {
 		goto L51
 	} else {
@@ -979,7 +973,7 @@ L66:
 	;
 	if int32(0) <= v270 {
 		v147 = v211
-		v149 = v270
+		v150 = v270
 		goto L48
 	} else {
 		goto L77
@@ -994,7 +988,7 @@ L68:
 	goto L66
 L69:
 	;
-	v221 = v149 + int32(1)
+	v221 = v150 + int32(1)
 	v223 = base.I32_div_s(v221, int32(32))
 	v224 = *(*int32)(unsafe.Add(mBase, uint32(v61)+4))
 	if v224 <= v223 {

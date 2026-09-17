@@ -26,8 +26,8 @@ func F_set_subquery_size_estimates(m *base.Module, l0 int32, l1 int32) {
 	_ = v20
 	var v23 int32
 	_ = v23
-	var v29 int32
-	_ = v29
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
 	var v40 int32
@@ -127,12 +127,12 @@ L4:
 	}
 L5:
 	;
-	v29 = v3
+	v32 = v3
 	goto L6
 L6:
 	;
 	v36 = *(*int32)(unsafe.Add(mBase, uint32(v20)+12))
-	v40 = *(*int32)(unsafe.Add(mBase, uint32(v36+v29<<(uint(int32(2))%32))))
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(v36+v32<<(uint(int32(2))%32))))
 	v41 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v40)+26)))
 	if v41 != 0 {
 		goto L8
@@ -144,10 +144,10 @@ L7:
 	goto L3
 L8:
 	;
-	v82 = v29 + int32(1)
+	v82 = v32 + int32(1)
 	v83 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
 	if v82 < v83 {
-		v29 = v82
+		v32 = v82
 		goto L6
 	} else {
 		goto L16

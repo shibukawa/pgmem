@@ -34,8 +34,8 @@ func F_AddEventToPendingNotifies(m *base.Module, l0 int32) {
 	_ = v40
 	var v41 int32
 	_ = v41
-	var v47 int32
-	_ = v47
+	var v48 int32
+	_ = v48
 	var v49 int32
 	_ = v49
 	var v53 int32
@@ -160,7 +160,7 @@ L9:
 	goto L1
 L10:
 	;
-	v47 = v2
+	v48 = v2
 	goto L13
 L11:
 	;
@@ -173,7 +173,7 @@ L12:
 L13:
 	;
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(v40)+12))
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v49+v47<<(uint(int32(2))%32))))
+	v53 = *(*int32)(unsafe.Add(mBase, uint32(v49+v48<<(uint(int32(2))%32))))
 	*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v53
 	v56 = *(*int32)(unsafe.Add(mBase, _c_F_AddEventToPendingNotifies[0]))
 	v57 = *(*int32)(unsafe.Add(mBase, uint32(v56)+8))
@@ -190,10 +190,10 @@ L14:
 	goto L12
 L15:
 	;
-	v66 = v47 + int32(1)
+	v66 = v48 + int32(1)
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(v40)+4))
 	if v66 < v67 {
-		v47 = v66
+		v48 = v66
 		goto L13
 	} else {
 		goto L16
@@ -305,114 +305,91 @@ func F_EventTriggerTableRewrite(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	var v19 int32
+	_ = v19
+	var v20 int32
+	_ = v20
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
-	var v36 int32
-	_ = v36
-	var v39 int32
-	_ = v39
-	var v43 int32
-	_ = v43
+	var v31 int32
+	_ = v31
+	var v37 int32
+	_ = v37
 	var v47 int32
 	_ = v47
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
+	var v59 int32
+	_ = v59
+	var v61 int32
+	_ = v61
 	var v67 int32
 	_ = v67
+	var v68 int32
+	_ = v68
 	var v69 int32
 	_ = v69
-	var v75 int32
-	_ = v75
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v78 int32
-	_ = v78
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
+	var v70 int32
+	_ = v70
 	var v81 int32
 	_ = v81
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
-	var v105 int32
-	_ = v105
+	var v83 int32
+	_ = v83
+	var v94 int32
+	_ = v94
+	var v99 int32
+	_ = v99
 	var v112 int32
 	_ = v112
-	var v128 int32
-	_ = v128
+	var v119 int32
+	_ = v119
+	var v124 int32
+	_ = v124
+	var v125 int64
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v131 int32
+	_ = v131
+	var v132 int32
+	_ = v132
+	var v135 int32
+	_ = v135
 	var v137 int32
 	_ = v137
-	var v143 int32
-	_ = v143
-	var v145 int32
-	_ = v145
-	var v146 int64
-	_ = v146
-	var v150 int32
-	_ = v150
-	var v152 int32
-	_ = v152
-	var v153 int32
-	_ = v153
-	var v157 int32
-	_ = v157
-	var v159 int32
-	_ = v159
-	var v160 int32
-	_ = v160
-	var v161 int32
-	_ = v161
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
-	var v164 int32
-	_ = v164
-	var v165 int32
-	_ = v165
-	var v167 int32
-	_ = v167
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
+	var v144 int32
+	_ = v144
 	v4 = int32(0)
-	v13 = m.G0
-	v15 = v13 - int32(32)
-	m.G0 = v15
+	v10 = m.G0
+	v12 = v10 - int32(208)
+	m.G0 = v12
+	v19 = v4
+	v20 = v4
+	v21 = v4
 	v22 = v4
-	v23 = v4
-	v24 = v4
-	v25 = v4
-	v26 = v4
-	v27 = v15
-	v28 = v4
-	v29 = int32(-1)
+	v23 = int32(-1)
 	goto L1
 L1:
 	;
@@ -424,7 +401,7 @@ L2:
 	}
 L3:
 	;
-	if v29 != int32(1) {
+	if v23 != int32(1) {
 		goto L8
 	} else {
 		goto L9
@@ -434,181 +411,157 @@ L4:
 	goto L2
 L5:
 	;
-	v145 = int32(m.ExcTag)
-	v146 = int64(m.ExcVals[0])
+	v124 = int32(m.ExcTag)
+	v125 = int64(m.ExcVals[0])
 	m.ExcPending = 0
-	if v145 == int32(0) {
+	if v124 == int32(0) {
 		goto L25
 	} else {
 		goto L26
 	}
 L6:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0])) = v77
-	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v79
-	v128 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
-	*(*int64)(unsafe.Add(mBase, uint32(v128)+12)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v77
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v75
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v76
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v78
+	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0])) = v68
+	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v67
+	v112 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
+	*(*int64)(unsafe.Add(mBase, uint32(v112)+12)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+200)) = v67
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+196)) = v68
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+204)) = v69
 	F_pg_re_throw(m)
 	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
-		v143 = v80
+	v119 = m.ExcPending
+	if v119 != 0 {
 		goto L5
 	} else {
 		goto L24
 	}
 L7:
 	;
-	m.G0 = v15 + int32(32)
+	m.G0 = v12 + int32(208)
 	return
 L8:
 	;
-	v33 = v27 - int32(16)
-	m.G0 = v33
-	v36 = v33 - int32(160)
-	m.G0 = v36
-	v39 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[3])))
-	if v39 != int32(1) {
+	v27 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[3])))
+	if v27 != int32(1) {
 		goto L7
 	} else {
 		goto L11
 	}
 L9:
 	;
-	v75 = v22
-	v76 = v23
-	v77 = v24
-	v78 = v25
-	v79 = v26
-	v80 = v27
-	v81 = v28
+	v67 = v19
+	v68 = v20
+	v69 = v21
+	v70 = v22
 	goto L10
 L10:
 	;
-	if v81 != 0 {
+	if v70 != 0 {
 		goto L6
 	} else {
 		goto L20
 	}
 L11:
 	;
-	v43 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[4])))
-	if v43 != int32(1) {
+	v31 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[4])))
+	if v31&int32(1) == int32(0) {
 		goto L7
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
-	if v47 == int32(0) {
+	v37 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
+	if v37 == int32(0) {
 		goto L7
 	} else {
 		goto L13
 	}
 L13:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v26
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v24
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v22
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v36
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v33
-	v57 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(_a_F_EventTriggerTableRewrite_0), v33)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+200)) = v19
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+196)) = v20
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+204)) = v21
+	v47 = F_EventTriggerCommonSetup(m, l0, int32(3), int32(_a_F_EventTriggerTableRewrite_0), v12+int32(180))
 	mBase = m.M
-	v58 = m.ExcPending
-	if v58 != 0 {
-		v143 = v36
+	v48 = m.ExcPending
+	if v48 != 0 {
 		goto L5
 	} else {
 		goto L14
 	}
 L14:
 	;
-	if v57 == int32(0) {
+	if v47 == int32(0) {
 		goto L7
 	} else {
 		goto L15
 	}
 L15:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v63)+16)) = l2
-	*(*int32)(unsafe.Add(mBase, uint32(v63)+12)) = l1
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0]))
-	v69 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1]))
+	v53 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
+	*(*int32)(unsafe.Add(mBase, uint32(v53)+16)) = l2
+	*(*int32)(unsafe.Add(mBase, uint32(v53)+12)) = l1
+	v57 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0]))
+	v59 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1]))
 	goto L16
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v36)+4)) = int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v36))) = v15 + int32(8)
+	v61 = v12 + int32(16)
+	*(*int32)(unsafe.Add(mBase, uint32(v61)+4)) = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v61))) = v12 + int32(12)
 	goto L19
 L17:
 	;
-	v75 = v57
-	v76 = v36
-	v77 = v67
-	v78 = v33
-	v79 = v69
-	v80 = v36
-	v81 = int32(0)
+	v67 = v59
+	v68 = v57
+	v69 = v47
+	v70 = int32(0)
 	goto L10
 L19:
 	;
 	goto L17
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v76
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v77
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v75
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v76
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v78
-	F_EventTriggerInvoke(m, v75, v78)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+196)) = v68
+	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v12 + int32(16)
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+200)) = v67
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+204)) = v69
+	F_EventTriggerInvoke(m, v69, v12+int32(180))
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
-		v143 = v80
+	v81 = m.ExcPending
+	if v81 != 0 {
 		goto L5
 	} else {
 		goto L21
 	}
 L21:
 	;
-	v92 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
-	*(*int64)(unsafe.Add(mBase, uint32(v92)+12)) = int64(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0])) = v77
-	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v77
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v75
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v76
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v78
-	F_list_free(m, v75)
+	v83 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[2]))
+	*(*int64)(unsafe.Add(mBase, uint32(v83)+12)) = int64(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[0])) = v68
+	*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerTableRewrite[1])) = v67
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+196)) = v68
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+200)) = v67
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+204)) = v69
+	F_list_free(m, v69)
 	mBase = m.M
-	v105 = m.ExcPending
-	if v105 != 0 {
-		v143 = v80
+	v94 = m.ExcPending
+	if v94 != 0 {
 		goto L5
 	} else {
 		goto L22
 	}
 L22:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+16)) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+12)) = v77
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v75
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v76
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v78
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+200)) = v67
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+196)) = v68
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+204)) = v69
 	F_CommandCounterIncrement(m)
 	mBase = m.M
-	v112 = m.ExcPending
-	if v112 != 0 {
-		v143 = v80
+	v99 = m.ExcPending
+	if v99 != 0 {
 		goto L5
 	} else {
 		goto L23
@@ -621,12 +574,12 @@ L24:
 	goto L4
 L25:
 	;
-	v150 = int32(v146)
-	m.G0 = v143
-	v152 = *(*int32)(unsafe.Add(mBase, uint32(v150)+4))
-	v153 = *(*int32)(unsafe.Add(mBase, uint32(v150)))
-	v157 = *(*int32)(unsafe.Add(mBase, uint32(v153)))
-	if v15+int32(8) == v157 {
+	v129 = int32(v125)
+	m.G0 = v12
+	v131 = *(*int32)(unsafe.Add(mBase, uint32(v129)+4))
+	v132 = *(*int32)(unsafe.Add(mBase, uint32(v129)))
+	v135 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
+	if v12+int32(12) == v135 {
 		goto L28
 	} else {
 		goto L29
@@ -637,48 +590,43 @@ L26:
 	goto L34
 L27:
 	;
-	if v160 != 0 {
+	if v139 != 0 {
 		goto L31
 	} else {
 		goto L32
 	}
 L28:
 	;
-	v159 = *(*int32)(unsafe.Add(mBase, uint32(v153)+4))
-	v160 = v159
+	v137 = *(*int32)(unsafe.Add(mBase, uint32(v132)+4))
+	v139 = v137
 	goto L30
 L29:
 	;
-	v160 = int32(0)
+	v139 = int32(0)
 	goto L30
 L30:
 	;
 	goto L27
 L31:
 	;
-	v161 = *(*int32)(unsafe.Add(mBase, uint32(v15)+28))
-	v162 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
-	v163 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-	v164 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
-	v165 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
-	v22 = v163
-	v23 = v162
-	v24 = v165
-	v25 = v161
-	v26 = v164
-	v27 = v143
-	v28 = v152
-	v29 = v160
+	v140 = *(*int32)(unsafe.Add(mBase, uint32(v12)+204))
+	v141 = *(*int32)(unsafe.Add(mBase, uint32(v12)+200))
+	v142 = *(*int32)(unsafe.Add(mBase, uint32(v12)+196))
+	v19 = v141
+	v20 = v142
+	v21 = v140
+	v22 = v131
+	v23 = v139
 	goto L1
 L32:
 	;
 	goto L33
 L33:
 	;
-	F___wasm_longjmp(m, v153, v152)
+	F___wasm_longjmp(m, v132, v131)
 	mBase = m.M
-	v167 = m.ExcPending
-	if v167 != 0 {
+	v144 = m.ExcPending
+	if v144 != 0 {
 		goto L34
 	} else {
 		goto L35

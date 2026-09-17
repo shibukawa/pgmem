@@ -92,8 +92,8 @@ func F_bms_nonempty_difference(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v42
 	var v44 int32
 	_ = v44
-	var v49 int32
-	_ = v49
+	var v48 int32
+	_ = v48
 	if l0 == int32(0) {
 		goto L1
 	} else {
@@ -109,20 +109,20 @@ L3:
 	;
 	v11 = int32(1)
 	if l1 == int32(0) {
-		v49 = v11
+		v48 = v11
 		goto L4
 	} else {
 		goto L5
 	}
 L4:
 	;
-	return v49
+	return v48
 L5:
 	;
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
 	if v15 < v14 {
-		v49 = v11
+		v48 = v11
 		goto L4
 	} else {
 		goto L6
@@ -152,18 +152,18 @@ L10:
 	;
 	v33 = v26 << (uint(int32(2)) % 32)
 	v35 = *(*int32)(unsafe.Add(mBase, uint32(l0+v21+v33)))
-	v37 = *(*int32)(unsafe.Add(mBase, uint32(v33+(l1+v21))))
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l1+v21+v33)))
 	v40 = v35 & (v37 ^ int32(-1))
 	v42 = base.B2i32(v40 != int32(0))
 	if v40 != 0 {
-		v49 = v42
+		v48 = v42
 		goto L4
 	} else {
 		goto L12
 	}
 L11:
 	;
-	v49 = v42
+	v48 = v42
 	goto L4
 L12:
 	;
@@ -183,35 +183,35 @@ func F_bms_overlap_list(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v13 int32
-	_ = v13
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
+	var v14 int32
+	_ = v14
+	var v19 int32
+	_ = v19
+	var v22 int32
+	_ = v22
+	var v32 int32
+	_ = v32
 	var v36 int32
 	_ = v36
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
-	var v48 int32
-	_ = v48
-	var v53 int32
-	_ = v53
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v74 int32
-	_ = v74
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v43 int32
+	_ = v43
+	var v49 int32
+	_ = v49
+	var v55 int32
+	_ = v55
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v75 int32
+	_ = v75
 	v3 = int32(0)
-	if l0 == v3 {
-		v53 = v3
+	if base.B2i32(l0 == v3)|base.B2i32(l1 == v3) != 0 {
+		v55 = v3
 		goto L2
 	} else {
 		goto L3
@@ -220,110 +220,102 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
-		goto L14
+	v66 = m.ExcPending
+	if v66 != 0 {
+		goto L13
 	} else {
-		goto L15
+		goto L14
 	}
 L2:
 	;
-	return v53
+	return v55
 L3:
 	;
-	if l1 == int32(0) {
-		v53 = v3
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if v14 <= int32(0) {
+		v55 = v3
 		goto L2
 	} else {
 		goto L4
 	}
 L4:
 	;
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v13 <= int32(0) {
-		v53 = v3
-		goto L2
-	} else {
-		goto L5
-	}
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+	v22 = int32(0)
+	goto L5
 L5:
 	;
-	v18 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-	v21 = int32(0)
-	goto L6
-L6:
-	;
-	v31 = *(*int32)(unsafe.Add(mBase, uint32(v18+v21<<(uint(int32(2))%32))))
-	if v31 < int32(0) {
+	v32 = *(*int32)(unsafe.Add(mBase, uint32(v19+v22<<(uint(int32(2))%32))))
+	if v32 < int32(0) {
 		goto L1
 	} else {
-		goto L8
+		goto L7
 	}
+L6:
+	;
+	v55 = int32(0)
+	goto L2
 L7:
 	;
-	v53 = int32(0)
-	goto L2
+	v36 = int32(base.Ui32(v32) >> (uint(int32(5)) % 32))
+	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v36 < v37 {
+		goto L8
+	} else {
+		goto L9
+	}
 L8:
 	;
-	v35 = int32(base.Ui32(v31) >> (uint(int32(5)) % 32))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v35 < v36 {
-		goto L9
+	v39 = int32(1)
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v36<<(uint(int32(2))%32))))
+	if int32(base.Ui32(v43)>>(uint(v32)%32))&v39 != 0 {
+		v55 = v39
+		goto L2
 	} else {
-		goto L10
+		goto L11
 	}
 L9:
 	;
-	v38 = int32(1)
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0+int32(8)+v35<<(uint(int32(2))%32))))
-	if int32(base.Ui32(v42)>>(uint(v31)%32))&v38 != 0 {
-		v53 = v38
-		goto L2
+	goto L10
+L10:
+	;
+	v49 = v22 + int32(1)
+	if v49 != v14 {
+		v22 = v49
+		goto L5
 	} else {
 		goto L12
 	}
-L10:
-	;
-	goto L11
 L11:
 	;
-	v48 = v21 + int32(1)
-	if v48 != v13 {
-		v21 = v48
-		goto L6
-	} else {
-		goto L13
-	}
+	goto L10
 L12:
 	;
-	goto L11
+	goto L6
 L13:
 	;
-	goto L7
-L14:
-	;
 	return int32(0)
-L15:
+L14:
 	;
 	F_errmsg_internal(m, int32(_a_F_bms_overlap_list_0), int32(0))
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
-		goto L14
+	v70 = m.ExcPending
+	if v70 != 0 {
+		goto L13
+	} else {
+		goto L15
+	}
+L15:
+	;
+	F_errfinish(m, int32(_a_F_bms_overlap_list_1), int32(624), int32(_a_F_bms_overlap_list_2))
+	mBase = m.M
+	v75 = m.ExcPending
+	if v75 != 0 {
+		goto L13
 	} else {
 		goto L16
 	}
 L16:
-	;
-	F_errfinish(m, int32(_a_F_bms_overlap_list_1), int32(624), int32(_a_F_bms_overlap_list_2))
-	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
-		goto L14
-	} else {
-		goto L17
-	}
-L17:
 	;
 	base.Wasm_trap_unreachable()
 	for {

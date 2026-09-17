@@ -81,7 +81,7 @@ func F_begin_startup_progress_phase(m *base.Module) {
 				v23 = int32(16)
 				v24 = v22 - v23
 				m.G0 = v24
-				F___gettimeofday(m, v24)
+				F_gettimeofday(m, v24)
 				mBase = m.M
 				v27 = *(*int64)(unsafe.Add(mBase, uint32(v24)))
 				v28 = int64(*(*int32)(unsafe.Add(mBase, uint32(v24)+8)))
@@ -94,7 +94,7 @@ func F_begin_startup_progress_phase(m *base.Module) {
 				v52 = int32(16)
 				v53 = v51 - v52
 				m.G0 = v53
-				F___gettimeofday(m, v53)
+				F_gettimeofday(m, v53)
 				mBase = m.M
 				v56 = *(*int64)(unsafe.Add(mBase, uint32(v53)))
 				v57 = int64(*(*int32)(unsafe.Add(mBase, uint32(v53)+8)))

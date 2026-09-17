@@ -71,34 +71,36 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v10
 	var v13 int32
 	_ = v13
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
-	var v27 int32
-	_ = v27
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v31 int32
 	_ = v31
-	var v33 int32
-	_ = v33
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v52 int32
-	_ = v52
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
-	var v65 int32
-	_ = v65
-	var v70 int32
-	_ = v70
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
 	v6 = m.G0
 	v8 = v6 + int32(-64)
 	m.G0 = v8
@@ -109,27 +111,27 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 			if v13 == int32(0) {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v56 = m.ExcPending
-				if v56 != 0 {
+				v55 = m.ExcPending
+				if v55 != 0 {
 					return
 				} else {
 					F_errcode(m, int32(325))
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v58 = m.ExcPending
+					if v58 != 0 {
 						return
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+16)) = l1
 						F_errmsg(m, int32(_a_F_CheckAlterSubOption_0), v6+int32(-48))
 						mBase = m.M
-						v65 = m.ExcPending
-						if v65 != 0 {
+						v64 = m.ExcPending
+						if v64 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_CheckAlterSubOption_1), int32(1085), int32(_a_F_CheckAlterSubOption_2))
 							mBase = m.M
-							v70 = m.ExcPending
-							if v70 != 0 {
+							v69 = m.ExcPending
+							if v69 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -140,31 +142,32 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					}
 				}
 			} else {
-				F_initStringInfo(m, v6+int32(-16))
+				v17 = v6 + int32(-16)
+				F_initStringInfo(m, v17)
 				mBase = m.M
 				v19 = m.ExcPending
 				if v19 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = l1
-					F_appendStringInfo(m, v6+int32(-16), int32(_a_F_CheckAlterSubOption_3), v6+int32(-32))
+					F_appendStringInfo(m, v17, int32(_a_F_CheckAlterSubOption_3), v6+int32(-32))
 					mBase = m.M
-					v27 = m.ExcPending
-					if v27 != 0 {
+					v25 = m.ExcPending
+					if v25 != 0 {
 						return
 					} else {
-						v28 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-						F_PreventInTransactionBlock(m, l3, v28)
+						v26 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
+						F_PreventInTransactionBlock(m, l3, v26)
 						mBase = m.M
-						v30 = m.ExcPending
-						if v30 != 0 {
+						v28 = m.ExcPending
+						if v28 != 0 {
 							return
 						} else {
-							v31 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
-							F_pfree(m, v31)
+							v29 = *(*int32)(unsafe.Add(mBase, uint32(v8)+48))
+							F_pfree(m, v29)
 							mBase = m.M
-							v33 = m.ExcPending
-							if v33 != 0 {
+							v31 = m.ExcPending
+							if v31 != 0 {
 								return
 							} else {
 								m.G0 = v8 - int32(-64)
@@ -181,27 +184,27 @@ func F_CheckAlterSubOption(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v40 = m.ExcPending
-		if v40 != 0 {
+		v39 = m.ExcPending
+		if v39 != 0 {
 			return
 		} else {
 			F_errcode(m, int32(325))
 			mBase = m.M
-			v43 = m.ExcPending
-			if v43 != 0 {
+			v42 = m.ExcPending
+			if v42 != 0 {
 				return
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v8))) = l1
 				F_errmsg(m, int32(_a_F_CheckAlterSubOption_4), v8)
 				mBase = m.M
-				v47 = m.ExcPending
-				if v47 != 0 {
+				v46 = m.ExcPending
+				if v46 != 0 {
 					return
 				} else {
 					F_errfinish(m, int32(_a_F_CheckAlterSubOption_1), int32(1071), int32(_a_F_CheckAlterSubOption_2))
 					mBase = m.M
-					v52 = m.ExcPending
-					if v52 != 0 {
+					v51 = m.ExcPending
+					if v51 != 0 {
 						return
 					} else {
 						base.Wasm_trap_unreachable()
@@ -268,9 +271,9 @@ func F_ExecAlterObjectDependsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v50 int32
+	var v50 int64
 	_ = v50
-	var v52 int64
+	var v52 int32
 	_ = v52
 	var v54 int32
 	_ = v54
@@ -286,9 +289,9 @@ func F_ExecAlterObjectDependsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v65
 	var v69 int32
 	_ = v69
-	var v70 int64
+	var v70 int32
 	_ = v70
-	var v72 int32
+	var v72 int64
 	_ = v72
 	var v74 int32
 	_ = v74
@@ -324,10 +327,10 @@ func F_ExecAlterObjectDependsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v111
 	var v112 int32
 	_ = v112
+	var v115 int32
+	_ = v115
 	var v116 int32
 	_ = v116
-	var v120 int32
-	_ = v120
 	var v122 int32
 	_ = v122
 	var v123 int32
@@ -350,8 +353,8 @@ func F_ExecAlterObjectDependsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v135
 	var v136 int32
 	_ = v136
-	var v144 int32
-	_ = v144
+	var v139 int32
+	_ = v139
 	var v147 int32
 	_ = v147
 	var v150 int32
@@ -376,8 +379,8 @@ func F_ExecAlterObjectDependsStmt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 	_ = v179
 	var v181 int32
 	_ = v181
-	var v186 int32
-	_ = v186
+	var v187 int32
+	_ = v187
 	var v193 int32
 	_ = v193
 	var v198 int32
@@ -502,10 +505,10 @@ L14:
 	v47 = *(*int32)(unsafe.Add(mBase, _c_F_ExecAlterObjectDependsStmt[0]))
 	v48 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v50
-	v52 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v52
+	v50 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(v12))) = v50
+	v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v52
 	v54 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
 	F_check_object_ownership(m, v47, v49, v12, v48, v54)
 	mBase = m.M
@@ -525,7 +528,7 @@ L15:
 	}
 L16:
 	;
-	F_sequence_close(m, v57, int32(0))
+	F_relation_close(m, v57, int32(0))
 	mBase = m.M
 	v60 = m.ExcPending
 	if v60 != 0 {
@@ -560,10 +563,10 @@ L20:
 	}
 L21:
 	;
-	v70 = *(*int64)(unsafe.Add(mBase, uint32(v12)+20))
-	*(*int64)(unsafe.Add(mBase, uint32(l2))) = v70
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(v12)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v72
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v12)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v70
+	v72 = *(*int64)(unsafe.Add(mBase, uint32(v12)+20))
+	*(*int64)(unsafe.Add(mBase, uint32(l2))) = v72
 	goto L23
 L22:
 	;
@@ -663,12 +666,12 @@ L33:
 	}
 L34:
 	;
+	v115 = v84
 	v116 = v111
-	v120 = v84
 	goto L37
 L35:
 	;
-	v144 = v84
+	v139 = v84
 	goto L36
 L36:
 	;
@@ -687,14 +690,14 @@ L37:
 	v124 = v122 + v123
 	v125 = *(*int32)(unsafe.Add(mBase, uint32(v124)+12))
 	if v125 != int32(3079) {
-		v134 = v120
+		v134 = v115
 		goto L39
 	} else {
 		goto L40
 	}
 L38:
 	;
-	v144 = v134
+	v139 = v134
 	goto L36
 L39:
 	;
@@ -710,7 +713,7 @@ L40:
 	;
 	v128 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v124)+24)))
 	if v128 != int32(120) {
-		v134 = v120
+		v134 = v115
 		goto L39
 	} else {
 		goto L41
@@ -718,7 +721,7 @@ L40:
 L41:
 	;
 	v131 = *(*int32)(unsafe.Add(mBase, uint32(v124)+16))
-	v132 = F_lappend_oid(m, v120, v131)
+	v132 = F_lappend_oid(m, v115, v131)
 	mBase = m.M
 	v133 = m.ExcPending
 	if v133 != 0 {
@@ -733,8 +736,8 @@ L42:
 L43:
 	;
 	if v135 != 0 {
+		v115 = v134
 		v116 = v135
-		v120 = v134
 		goto L37
 	} else {
 		goto L44
@@ -744,7 +747,7 @@ L44:
 	goto L38
 L45:
 	;
-	F_sequence_close(m, v91, int32(1))
+	F_relation_close(m, v91, int32(1))
 	mBase = m.M
 	v150 = m.ExcPending
 	if v150 != 0 {
@@ -757,7 +760,7 @@ L46:
 	m.G0 = v87 + int32(96)
 	v154 = *(*int32)(unsafe.Add(mBase, uint32(v12)+24))
 	v155 = int32(0)
-	if v144 == v155 {
+	if v139 == v155 {
 		goto L48
 	} else {
 		goto L49
@@ -778,16 +781,16 @@ L49:
 	goto L50
 L50:
 	;
-	v161 = *(*int32)(unsafe.Add(mBase, uint32(v144)+4))
+	v161 = *(*int32)(unsafe.Add(mBase, uint32(v139)+4))
 	if v161 <= int32(0) {
-		v186 = v155
+		v187 = v155
 		goto L51
 	} else {
 		goto L52
 	}
 L51:
 	;
-	v193 = v186
+	v193 = v187
 	goto L47
 L52:
 	;
@@ -807,7 +810,7 @@ L54:
 	goto L55
 L55:
 	;
-	v168 = *(*int32)(unsafe.Add(mBase, uint32(v144)+12))
+	v168 = *(*int32)(unsafe.Add(mBase, uint32(v139)+12))
 	v170 = int32(0)
 	goto L56
 L56:
@@ -815,14 +818,14 @@ L56:
 	v178 = *(*int32)(unsafe.Add(mBase, uint32(v168+v170<<(uint(int32(2))%32))))
 	v179 = base.B2i32(v178 == v154)
 	if v178 == v154 {
-		v186 = v179
+		v187 = v179
 		goto L51
 	} else {
 		goto L58
 	}
 L57:
 	;
-	v186 = v179
+	v187 = v179
 	goto L51
 L58:
 	;

@@ -116,6 +116,8 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 	_ = v60
 	var v61 int32
 	_ = v61
+	var v63 int32
+	_ = v63
 	var v64 int32
 	_ = v64
 	var v65 int32
@@ -132,28 +134,28 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 	_ = v73
 	var v75 int32
 	_ = v75
-	var v83 int32
-	_ = v83
-	var v88 int32
-	_ = v88
-	var v92 int32
-	_ = v92
-	var v96 int32
-	_ = v96
-	var v101 int32
-	_ = v101
+	var v81 int32
+	_ = v81
+	var v86 int32
+	_ = v86
+	var v90 int32
+	_ = v90
+	var v94 int32
+	_ = v94
+	var v99 int32
+	_ = v99
 	v6 = m.G0
-	v8 = v6 - int32(112)
+	v8 = v6 - int32(96)
 	m.G0 = v8
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v12 = l0 + int32(36)
 	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
 	if v13 != int32(-1) {
 		v16 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
-		*(*int32)(unsafe.Add(mBase, uint32(v8)+104)) = v16
+		*(*int32)(unsafe.Add(mBase, uint32(v8)+32)) = v16
 		v18 = *(*int64)(unsafe.Add(mBase, uint32(v12)))
-		*(*int64)(unsafe.Add(mBase, uint32(v8)+96)) = v18
-		F_pgaio_wref_wait(m, v8+int32(96))
+		*(*int64)(unsafe.Add(mBase, uint32(v8)+24)) = v18
+		F_pgaio_wref_wait(m, v8+int32(24))
 		mBase = m.M
 		v23 = m.ExcPending
 		if v23 != 0 {
@@ -172,12 +174,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						return
 					} else {
 						v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+						v63 = v8 + int32(24)
 						v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 						v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 						v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 						v68 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateLocalBuffer[1]))
 						v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-						F_GetRelationPath(m, v8+int32(24), v64, v65, v66, v68, v69)
+						F_GetRelationPath(m, v63, v64, v65, v66, v68, v69)
 						mBase = m.M
 						v71 = m.ExcPending
 						if v71 != 0 {
@@ -187,17 +190,17 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 							v75 = *(*int32)(unsafe.Add(mBase, uint32(v73+v28)))
 							*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 							*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v75
-							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v8 + int32(24)
+							*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v63
 							F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_1), v8)
 							mBase = m.M
-							v83 = m.ExcPending
-							if v83 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(637), int32(_a_F_InvalidateLocalBuffer_3))
 								mBase = m.M
-								v88 = m.ExcPending
-								if v88 != 0 {
+								v86 = m.ExcPending
+								if v86 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -218,20 +221,20 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						if v41 == int32(0) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v92 = m.ExcPending
-							if v92 != 0 {
+							v90 = m.ExcPending
+							if v90 != 0 {
 								return
 							} else {
 								F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_4), int32(0))
 								mBase = m.M
-								v96 = m.ExcPending
-								if v96 != 0 {
+								v94 = m.ExcPending
+								if v94 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(643), int32(_a_F_InvalidateLocalBuffer_3))
 									mBase = m.M
-									v101 = m.ExcPending
-									if v101 != 0 {
+									v99 = m.ExcPending
+									if v99 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -245,7 +248,7 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 							*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = int64(-4294967296)
 							*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
 							*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v24 & int32(_a_F_InvalidateLocalBuffer_0)
-							m.G0 = v8 + int32(112)
+							m.G0 = v8 + int32(96)
 							return
 						}
 					}
@@ -261,20 +264,20 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 					if v41 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v92 = m.ExcPending
-						if v92 != 0 {
+						v90 = m.ExcPending
+						if v90 != 0 {
 							return
 						} else {
 							F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_4), int32(0))
 							mBase = m.M
-							v96 = m.ExcPending
-							if v96 != 0 {
+							v94 = m.ExcPending
+							if v94 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(643), int32(_a_F_InvalidateLocalBuffer_3))
 								mBase = m.M
-								v101 = m.ExcPending
-								if v101 != 0 {
+								v99 = m.ExcPending
+								if v99 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -288,7 +291,7 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = int64(-4294967296)
 						*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v24 & int32(_a_F_InvalidateLocalBuffer_0)
-						m.G0 = v8 + int32(112)
+						m.G0 = v8 + int32(96)
 						return
 					}
 				}
@@ -308,12 +311,13 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 					return
 				} else {
 					v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+					v63 = v8 + int32(24)
 					v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 					v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 					v66 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 					v68 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateLocalBuffer[1]))
 					v69 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-					F_GetRelationPath(m, v8+int32(24), v64, v65, v66, v68, v69)
+					F_GetRelationPath(m, v63, v64, v65, v66, v68, v69)
 					mBase = m.M
 					v71 = m.ExcPending
 					if v71 != 0 {
@@ -323,17 +327,17 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						v75 = *(*int32)(unsafe.Add(mBase, uint32(v73+v28)))
 						*(*int32)(unsafe.Add(mBase, uint32(v8))) = v61
 						*(*int32)(unsafe.Add(mBase, uint32(v8)+8)) = v75
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v8 + int32(24)
+						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v63
 						F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_1), v8)
 						mBase = m.M
-						v83 = m.ExcPending
-						if v83 != 0 {
+						v81 = m.ExcPending
+						if v81 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(637), int32(_a_F_InvalidateLocalBuffer_3))
 							mBase = m.M
-							v88 = m.ExcPending
-							if v88 != 0 {
+							v86 = m.ExcPending
+							if v86 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -354,20 +358,20 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 					if v41 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v92 = m.ExcPending
-						if v92 != 0 {
+						v90 = m.ExcPending
+						if v90 != 0 {
 							return
 						} else {
 							F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_4), int32(0))
 							mBase = m.M
-							v96 = m.ExcPending
-							if v96 != 0 {
+							v94 = m.ExcPending
+							if v94 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(643), int32(_a_F_InvalidateLocalBuffer_3))
 								mBase = m.M
-								v101 = m.ExcPending
-								if v101 != 0 {
+								v99 = m.ExcPending
+								if v99 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -381,7 +385,7 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 						*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = int64(-4294967296)
 						*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v24 & int32(_a_F_InvalidateLocalBuffer_0)
-						m.G0 = v8 + int32(112)
+						m.G0 = v8 + int32(96)
 						return
 					}
 				}
@@ -397,20 +401,20 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 				if v41 == int32(0) {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v92 = m.ExcPending
-					if v92 != 0 {
+					v90 = m.ExcPending
+					if v90 != 0 {
 						return
 					} else {
 						F_errmsg_internal(m, int32(_a_F_InvalidateLocalBuffer_4), int32(0))
 						mBase = m.M
-						v96 = m.ExcPending
-						if v96 != 0 {
+						v94 = m.ExcPending
+						if v94 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_InvalidateLocalBuffer_2), int32(643), int32(_a_F_InvalidateLocalBuffer_3))
 							mBase = m.M
-							v101 = m.ExcPending
-							if v101 != 0 {
+							v99 = m.ExcPending
+							if v99 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -424,7 +428,7 @@ func F_InvalidateLocalBuffer(m *base.Module, l0 int32, l1 int32) {
 					*(*int64)(unsafe.Add(mBase, uint32(l0)+8)) = int64(-4294967296)
 					*(*int64)(unsafe.Add(mBase, uint32(l0))) = int64(0)
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+24)) = v24 & int32(_a_F_InvalidateLocalBuffer_0)
-					m.G0 = v8 + int32(112)
+					m.G0 = v8 + int32(96)
 					return
 				}
 			}
@@ -454,14 +458,18 @@ func F_InvalidateSystemCachesExtended(m *base.Module) {
 	_ = v24
 	var v26 int32
 	_ = v26
-	var v29 int32
-	_ = v29
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
-	var v38 int32
-	_ = v38
 	var v40 int32
 	_ = v40
 	var v42 int32
@@ -470,38 +478,34 @@ func F_InvalidateSystemCachesExtended(m *base.Module) {
 	_ = v46
 	var v48 int32
 	_ = v48
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
+	var v49 int32
+	_ = v49
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
+	var v55 int32
+	_ = v55
 	var v57 int32
 	_ = v57
 	var v61 int32
 	_ = v61
 	var v63 int32
 	_ = v63
-	var v65 int32
-	_ = v65
 	var v67 int32
 	_ = v67
-	var v71 int32
-	_ = v71
-	var v73 int32
-	_ = v73
-	var v77 int32
-	_ = v77
-	var v79 int32
-	_ = v79
-	var v82 int32
-	_ = v82
-	var v86 int32
-	_ = v86
-	var v88 int32
-	_ = v88
-	var v90 int32
-	_ = v90
-	var v92 int32
-	_ = v92
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
+	var v72 int32
+	_ = v72
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	var v78 int32
+	_ = v78
 	F_InvalidateCatalogSnapshot(m)
 	mBase = m.M
 	v4 = m.ExcPending
@@ -581,9 +585,9 @@ L12:
 	goto L13
 L13:
 	;
-	v46 = int32(0)
-	v48 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[2]))
-	if v46 < v48 {
+	v40 = int32(0)
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[2]))
+	if v40 < v42 {
 		goto L18
 	} else {
 		goto L19
@@ -591,13 +595,13 @@ L13:
 L14:
 	;
 	v26 = v24 * int32(12)
-	v29 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[3])))
-	v32 = int32(*(*int16)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[4]))))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[5])))
-	m.T0[v36].(func(*base.Module, int32, int32, int32))(m, v29, v32, int32(0))
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[3])))
+	v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[4]))))
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v26)+uint32(_c_F_InvalidateSystemCachesExtended[5])))
+	m.T0[v30].(func(*base.Module, int32, int32, int32))(m, v27, v28, int32(0))
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v32 = m.ExcPending
+	if v32 != 0 {
 		goto L1
 	} else {
 		goto L16
@@ -607,10 +611,10 @@ L15:
 	goto L13
 L16:
 	;
-	v40 = v24 + int32(1)
-	v42 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[1]))
-	if v40 < v42 {
-		v24 = v40
+	v34 = v24 + int32(1)
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[1]))
+	if v34 < v36 {
+		v24 = v34
 		goto L14
 	} else {
 		goto L17
@@ -620,29 +624,29 @@ L17:
 	goto L15
 L18:
 	;
-	v52 = v46
+	v46 = v40
 	goto L21
 L19:
 	;
 	goto L20
 L20:
 	;
-	v71 = int32(0)
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[6]))
-	if v71 < v73 {
+	v61 = int32(0)
+	v63 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[6]))
+	if v61 < v63 {
 		goto L25
 	} else {
 		goto L26
 	}
 L21:
 	;
-	v54 = v52 << (uint(int32(3)) % 32)
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v54)+uint32(_c_F_InvalidateSystemCachesExtended[7])))
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v54)+uint32(_c_F_InvalidateSystemCachesExtended[8])))
-	m.T0[v61].(func(*base.Module, int32, int32))(m, v57, int32(0))
+	v48 = v46 << (uint(int32(3)) % 32)
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v48)+uint32(_c_F_InvalidateSystemCachesExtended[7])))
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v48)+uint32(_c_F_InvalidateSystemCachesExtended[8])))
+	m.T0[v51].(func(*base.Module, int32, int32))(m, v49, int32(0))
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v53 = m.ExcPending
+	if v53 != 0 {
 		goto L1
 	} else {
 		goto L23
@@ -652,10 +656,10 @@ L22:
 	goto L20
 L23:
 	;
-	v65 = v52 + int32(1)
-	v67 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[2]))
-	if v65 < v67 {
-		v52 = v65
+	v55 = v46 + int32(1)
+	v57 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[2]))
+	if v55 < v57 {
+		v46 = v55
 		goto L21
 	} else {
 		goto L24
@@ -665,7 +669,7 @@ L24:
 	goto L22
 L25:
 	;
-	v77 = v71
+	v67 = v61
 	goto L28
 L26:
 	;
@@ -675,13 +679,13 @@ L27:
 	return
 L28:
 	;
-	v79 = v77 << (uint(int32(3)) % 32)
-	v82 = *(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F_InvalidateSystemCachesExtended[9])))
-	v86 = *(*int32)(unsafe.Add(mBase, uint32(v79)+uint32(_c_F_InvalidateSystemCachesExtended[10])))
-	m.T0[v86].(func(*base.Module, int32, int32))(m, v82, int32(0))
+	v69 = v67 << (uint(int32(3)) % 32)
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+uint32(_c_F_InvalidateSystemCachesExtended[9])))
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v69)+uint32(_c_F_InvalidateSystemCachesExtended[10])))
+	m.T0[v72].(func(*base.Module, int32, int32))(m, v70, int32(0))
 	mBase = m.M
-	v88 = m.ExcPending
-	if v88 != 0 {
+	v74 = m.ExcPending
+	if v74 != 0 {
 		goto L1
 	} else {
 		goto L30
@@ -691,10 +695,10 @@ L29:
 	goto L27
 L30:
 	;
-	v90 = v77 + int32(1)
-	v92 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[6]))
-	if v90 < v92 {
-		v77 = v90
+	v76 = v67 + int32(1)
+	v78 = *(*int32)(unsafe.Add(mBase, _c_F_InvalidateSystemCachesExtended[6]))
+	if v76 < v78 {
+		v67 = v76
 		goto L28
 	} else {
 		goto L31

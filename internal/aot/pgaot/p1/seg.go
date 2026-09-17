@@ -8,28 +8,28 @@ import (
 func F_seg_contains(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
+	var v3 int32
+	_ = v3
+	var v4 float32
 	_ = v4
-	var v5 float32
+	var v5 int32
 	_ = v5
-	var v6 int32
+	var v6 float32
 	_ = v6
-	var v7 float32
-	_ = v7
+	var v8 float32
+	_ = v8
 	var v9 float32
 	_ = v9
-	var v10 float32
-	_ = v10
 	var v12 int32
 	_ = v12
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v5 = *(*float32)(unsafe.Add(mBase, uint32(v4)))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = *(*float32)(unsafe.Add(mBase, uint32(v6)))
-	if base.F32_le(v5, v7) != 0 {
-		v9 = *(*float32)(unsafe.Add(mBase, uint32(v4)+4))
-		v10 = *(*float32)(unsafe.Add(mBase, uint32(v6)+4))
-		v12 = base.F32_ge(v9, v10)
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v4 = *(*float32)(unsafe.Add(mBase, uint32(v3)))
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = *(*float32)(unsafe.Add(mBase, uint32(v5)))
+	if base.F32_le(v4, v6) != 0 {
+		v8 = *(*float32)(unsafe.Add(mBase, uint32(v3)+4))
+		v9 = *(*float32)(unsafe.Add(mBase, uint32(v5)+4))
+		v12 = base.F32_ge(v8, v9)
 	} else {
 		v12 = int32(0)
 	}
@@ -94,22 +94,18 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 	_ = v21
 	var v26 int32
 	_ = v26
+	var v27 int32
+	_ = v27
 	var v30 int32
 	_ = v30
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v34 int64
-	_ = v34
+	var v33 int64
+	_ = v33
+	var v45 int32
+	_ = v45
 	var v46 int32
 	_ = v46
 	var v47 int32
 	_ = v47
-	var v48 int32
-	_ = v48
-	var v49 int32
-	_ = v49
 	if l1 != 0 {
 		v6 = F_palloc(m, int32(96))
 		mBase = m.M
@@ -119,25 +115,22 @@ func F_seg_scanner_init(m *base.Module, l0 int32, l1 int32) {
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l1))) = v6
 			if v6 != 0 {
-				v30 = F__emscripten_memset_bulkmem(m, v6, base.I32_extend8_s(int32(0)), int32(96))
+				v27 = int32(0)
+				base.MemoryFill(m, v6, v27, int32(96))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+				*(*int32)(unsafe.Add(mBase, uint32(v30)+60)) = v27
+				v33 = int64(0)
+				*(*int64)(unsafe.Add(mBase, uint32(v30)+52)) = v33
+				*(*int32)(unsafe.Add(mBase, uint32(v30)+44)) = v27
+				*(*int64)(unsafe.Add(mBase, uint32(v30)+36)) = v33
+				*(*int64)(unsafe.Add(mBase, uint32(v30)+4)) = v33
+				*(*int64)(unsafe.Add(mBase, uint32(v30)+12)) = v33
+				*(*int32)(unsafe.Add(mBase, uint32(v30)+20)) = v27
+				v45 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+				v46 = F_seg_yy_scan_string(m, l0, v45)
 				mBase = m.M
-				v31 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-				v32 = int32(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v31)+60)) = v32
-				v34 = int64(0)
-				*(*int64)(unsafe.Add(mBase, uint32(v31)+52)) = v34
-				*(*int32)(unsafe.Add(mBase, uint32(v31)+44)) = v32
-				*(*int64)(unsafe.Add(mBase, uint32(v31)+36)) = v34
-				*(*int64)(unsafe.Add(mBase, uint32(v31)+4)) = v34
-				*(*int64)(unsafe.Add(mBase, uint32(v31)+12)) = v34
-				*(*int32)(unsafe.Add(mBase, uint32(v31)+20)) = v32
-				v46 = F_strlen(m, l0)
-				mBase = m.M
-				v47 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-				v48 = F_seg_yy_scan_bytes(m, l0, v46, v47)
-				mBase = m.M
-				v49 = m.ExcPending
-				if v49 != 0 {
+				v47 = m.ExcPending
+				if v47 != 0 {
 					return
 				} else {
 					return

@@ -6,149 +6,29 @@ import (
 )
 
 func F_has_server_privilege_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v6 int32
-	_ = v6
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = F_pg_detoast_datum_packed(m, v11)
-	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = Fn13913(m, l0, int32(_a_F_has_server_privilege_id_0), int32(1417))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)) = uint8(v16)
-		v20 = *(*int32)(unsafe.Add(mBase, _c_F_has_server_privilege_id[0]))
-		v22 = F_convert_any_priv_string(m, v12, int32(_a_F_has_server_privilege_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(1417), v10, v20, v22, v8+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v8 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_server_privilege_id_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v22 int64
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13914(m, l0, int32(_a_F_has_server_privilege_id_id_0), int32(1417))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v22 = F_convert_any_priv_string(m, v14, int32(_a_F_has_server_privilege_id_id_0))
-		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
-			return int32(0)
-		} else {
-			v26 = F_object_aclcheck_ext(m, int32(1417), v11, v12, v22, v9+int32(15))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-				if v28 == int32(1) {
-					v31 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v31)
-					v35 = int32(0)
-				} else {
-					v35 = base.B2i32(v26 == int32(0))
-				}
-				m.G0 = v9 + int32(16)
-				return v35
-			}
-		}
+		return v4
 	}
 }
 func F_has_server_privilege_id_name(m *base.Module, l0 int32) int32 {
@@ -232,87 +112,16 @@ func F_has_server_privilege_id_name(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_has_server_privilege_name_id(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v24 int64
-	_ = v24
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
-	var v37 int32
-	_ = v37
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v14 = F_pg_detoast_datum_packed(m, v13)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v4 = Fn13915(m, l0, int32(_a_F_has_server_privilege_name_id_0), int32(1417))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v18 = int32(0)
-		*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)) = uint8(v18)
-		v21 = F_get_role_oid_or_public(m, v12)
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			v24 = F_convert_any_priv_string(m, v14, int32(_a_F_has_server_privilege_name_id_0))
-			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
-				return int32(0)
-			} else {
-				v28 = F_object_aclcheck_ext(m, int32(1417), v11, v21, v24, v9+int32(15))
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
-				} else {
-					v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+15)))
-					if v30 == int32(1) {
-						v33 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v33)
-						v37 = int32(0)
-					} else {
-						v37 = base.B2i32(v28 == int32(0))
-					}
-					m.G0 = v9 + int32(16)
-					return v37
-				}
-			}
-		}
+		return v4
 	}
 }
 func F_server_get_sink(m *base.Module, l0 int32, l1 int32) int32 {
@@ -352,10 +161,10 @@ func F_server_get_sink(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v47
 	var v48 int32
 	_ = v48
-	var v54 int32
-	_ = v54
 	var v55 int32
 	_ = v55
+	var v56 int32
+	_ = v56
 	var v57 int32
 	_ = v57
 	var v60 int32
@@ -372,50 +181,50 @@ func F_server_get_sink(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v77
 	var v80 int32
 	_ = v80
-	var v81 int32
-	_ = v81
-	var v85 int32
-	_ = v85
+	var v83 int32
+	_ = v83
 	var v86 int32
 	_ = v86
-	var v89 int32
-	_ = v89
+	var v87 int32
+	_ = v87
 	var v90 int32
 	_ = v90
-	var v93 int32
-	_ = v93
-	var v100 int32
-	_ = v100
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
 	var v101 int32
 	_ = v101
-	var v106 int32
-	_ = v106
+	var v102 int32
+	_ = v102
 	var v107 int32
 	_ = v107
-	var v111 int32
-	_ = v111
-	var v118 int32
-	_ = v118
+	var v108 int32
+	_ = v108
+	var v112 int32
+	_ = v112
 	var v119 int32
 	_ = v119
 	var v120 int32
 	_ = v120
-	var v122 int32
-	_ = v122
-	var v124 int32
-	_ = v124
-	var v125 int32
-	_ = v125
-	var v132 int32
-	_ = v132
+	var v121 int32
+	_ = v121
+	var v123 int32
+	_ = v123
+	var v126 int32
+	_ = v126
+	var v127 int32
+	_ = v127
+	var v134 int32
+	_ = v134
 	var v135 int32
 	_ = v135
-	var v137 int32
-	_ = v137
-	var v140 int32
-	_ = v140
-	var v143 int32
-	_ = v143
+	var v138 int32
+	_ = v138
+	var v141 int32
+	_ = v141
+	var v142 int32
+	_ = v142
 	var v145 int32
 	_ = v145
 	var v155 int32
@@ -516,7 +325,7 @@ L5:
 	if v240 != 0 {
 		goto L2
 	} else {
-		goto L88
+		goto L87
 	}
 L6:
 	;
@@ -546,7 +355,7 @@ L9:
 	if v217 != 0 {
 		goto L2
 	} else {
-		goto L83
+		goto L82
 	}
 L10:
 	;
@@ -577,7 +386,7 @@ L13:
 	if v199 != 0 {
 		goto L2
 	} else {
-		goto L79
+		goto L78
 	}
 L14:
 	;
@@ -587,14 +396,14 @@ L14:
 	if v181 != 0 {
 		goto L2
 	} else {
-		goto L75
+		goto L74
 	}
 L15:
 	;
 	v157 = *(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[1]))
 	v158 = F_mkdir(m, l1, v157)
 	mBase = m.M
-	goto L69
+	goto L68
 L16:
 	;
 	switch v155 {
@@ -609,18 +418,18 @@ L16:
 	}
 L17:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[2]))
-	v124 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
-	v125 = F_close(m, v124)
+	v123 = *(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[2]))
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(v35)+8))
+	v127 = F_close(m, v126)
 	mBase = m.M
 	F_emscripten_builtin_free(m, v35)
 	mBase = m.M
-	goto L50
+	goto L49
 L18:
 	;
 	v48 = v40
-	v54 = v3
 	v55 = v3
+	v56 = v3
 	goto L26
 L19:
 	;
@@ -646,9 +455,9 @@ L21:
 	}
 L22:
 	;
-	v118 = v3
-	v119 = v3
-	v120 = v39
+	v119 = v39
+	v120 = v3
+	v121 = v3
 	goto L17
 L23:
 	;
@@ -672,29 +481,29 @@ L26:
 	}
 L27:
 	;
-	v118 = v106
-	v119 = v107
-	v120 = v39
+	v119 = v39
+	v120 = v107
+	v121 = v108
 	goto L17
 L28:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[2])) = int32(0)
-	v111 = F_readdir(m, v35)
+	v112 = F_readdir(m, v35)
 	mBase = m.M
-	if v111 != 0 {
-		v48 = v111
-		v54 = v106
+	if v112 != 0 {
+		v48 = v112
 		v55 = v107
+		v56 = v108
 		goto L26
 	} else {
-		goto L49
+		goto L48
 	}
 L29:
 	;
 	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v48)+20)))
 	if v60 == int32(0) {
-		v106 = v54
 		v107 = v55
+		v108 = v56
 		goto L28
 	} else {
 		goto L32
@@ -706,11 +515,11 @@ L31:
 	;
 	v75 = int32(_a_F_server_get_sink_2)
 	v77 = v48 + int32(19)
-	v80 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77))))
-	v81 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_server_get_sink[3])))
-	if v81 == int32(0) {
-		v100 = v80
-		v101 = v81
+	v80 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_server_get_sink[3])))
+	v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v77))))
+	if base.B2i32(v80 == int32(0))|base.B2i32(v80 != v83) != 0 {
+		v101 = v80
+		v102 = v83
 		goto L39
 	} else {
 		goto L40
@@ -726,8 +535,8 @@ L32:
 L33:
 	;
 	if v71 == int32(0) {
-		v106 = v54
 		v107 = v55
+		v108 = v56
 		goto L28
 	} else {
 		goto L37
@@ -746,182 +555,173 @@ L36:
 	goto L33
 L37:
 	;
-	v106 = int32(1)
-	v107 = v55
+	v107 = int32(1)
+	v108 = v56
 	goto L28
 L38:
 	;
-	if v101-v100 != 0 {
-		goto L46
+	if v101-v102 != 0 {
+		goto L45
 	} else {
-		goto L47
+		goto L46
 	}
 L39:
 	;
 	goto L38
 L40:
 	;
-	if v80 != v81 {
-		v100 = v80
-		v101 = v81
-		goto L39
-	} else {
-		goto L41
-	}
+	v86 = v75
+	v87 = v77
+	goto L41
 L41:
 	;
-	v85 = v75
-	v86 = v77
-	goto L42
+	v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v87)+1)))
+	v91 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86)+1)))
+	if v91 == int32(0) {
+		v101 = v91
+		v102 = v90
+		goto L39
+	} else {
+		goto L43
+	}
 L42:
 	;
-	v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86)+1)))
-	v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+1)))
-	if v90 == int32(0) {
-		v100 = v89
-		v101 = v90
-		goto L39
+	v101 = v91
+	v102 = v90
+	goto L39
+L43:
+	;
+	v94 = int32(1)
+	if v91 == v90 {
+		v86 = v86 + v94
+		v87 = v87 + v94
+		goto L41
 	} else {
 		goto L44
 	}
-L43:
-	;
-	v100 = v89
-	v101 = v90
-	goto L39
 L44:
 	;
-	v93 = int32(1)
-	if v89 == v90 {
-		v85 = v85 + v93
-		v86 = v86 + v93
-		goto L42
-	} else {
-		goto L45
-	}
+	goto L42
 L45:
 	;
-	goto L43
+	v119 = int32(4)
+	v120 = v55
+	v121 = v56
+	goto L17
 L46:
 	;
-	v118 = v54
-	v119 = v55
-	v120 = int32(4)
-	goto L17
+	goto L47
 L47:
 	;
-	goto L48
+	v107 = v55
+	v108 = int32(1)
+	goto L28
 L48:
 	;
-	v106 = v54
-	v107 = int32(1)
-	goto L28
+	goto L27
 L49:
 	;
-	goto L27
+	if v127 == int32(0) {
+		goto L50
+	} else {
+		goto L51
+	}
 L50:
 	;
-	if v125 != 0 {
-		goto L51
+	*(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[2])) = v123
+	if v123 != 0 {
+		goto L53
 	} else {
-		goto L52
+		goto L54
 	}
 L51:
 	;
-	v145 = int32(-1)
-	goto L53
+	v135 = int32(-1)
+	goto L52
 L52:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_server_get_sink[2])) = v122
-	if v118 != 0 {
-		goto L54
+	if v121 != 0 {
+		goto L56
 	} else {
-		goto L55
+		goto L57
 	}
 L53:
 	;
-	v155 = v145
-	goto L16
+	v134 = int32(-1)
+	goto L55
 L54:
 	;
-	v132 = int32(2)
-	goto L56
+	v134 = v119
+	goto L55
 L55:
 	;
-	v132 = int32(1)
-	goto L56
+	v135 = v134
+	goto L52
 L56:
 	;
-	if v119 != 0 {
-		goto L57
-	} else {
-		goto L58
-	}
+	v138 = int32(3)
+	goto L58
 L57:
 	;
-	v135 = int32(3)
-	goto L59
+	v138 = v135
+	goto L58
 L58:
 	;
-	v135 = int32(1)
-	goto L59
+	if v135 == int32(1) {
+		goto L59
+	} else {
+		goto L60
+	}
 L59:
 	;
-	if v122 != 0 {
-		goto L60
-	} else {
-		goto L61
-	}
+	v141 = v138
+	goto L61
 L60:
 	;
-	v137 = int32(-1)
-	goto L62
+	v141 = v135
+	goto L61
 L61:
 	;
-	v137 = v120
-	goto L62
+	if v120 != 0 {
+		goto L62
+	} else {
+		goto L63
+	}
 L62:
 	;
-	if v137 == int32(1) {
-		goto L63
-	} else {
-		goto L64
-	}
+	v142 = int32(2)
+	goto L64
 L63:
 	;
-	v140 = v135
-	goto L65
+	v142 = v141
+	goto L64
 L64:
 	;
-	v140 = v137
-	goto L65
+	if v141 == int32(1) {
+		goto L65
+	} else {
+		goto L66
+	}
 L65:
 	;
-	if v140 == int32(1) {
-		goto L66
-	} else {
-		goto L67
-	}
+	v145 = v142
+	goto L67
 L66:
 	;
-	v143 = v132
-	goto L68
+	v145 = v141
+	goto L67
 L67:
 	;
-	v143 = v140
-	goto L68
+	v155 = v145
+	goto L16
 L68:
-	;
-	v145 = v143
-	goto L53
-L69:
 	;
 	if int32(0) <= v158 {
 		goto L12
 	} else {
-		goto L70
+		goto L69
 	}
-L70:
+L69:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
@@ -929,9 +729,9 @@ L70:
 	if v164 != 0 {
 		goto L2
 	} else {
-		goto L71
+		goto L70
 	}
-L71:
+L70:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
@@ -939,9 +739,9 @@ L71:
 	if v166 != 0 {
 		goto L2
 	} else {
-		goto L72
+		goto L71
 	}
-L72:
+L71:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l1
 	F_errmsg(m, int32(_a_F_server_get_sink_3), v10+int32(-48))
@@ -950,9 +750,9 @@ L72:
 	if v172 != 0 {
 		goto L2
 	} else {
-		goto L73
+		goto L72
 	}
-L73:
+L72:
 	;
 	F_errfinish(m, int32(_a_F_server_get_sink_4), int32(102), int32(_a_F_server_get_sink_5))
 	mBase = m.M
@@ -960,14 +760,14 @@ L73:
 	if v177 != 0 {
 		goto L2
 	} else {
-		goto L74
+		goto L73
 	}
-L74:
+L73:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L75:
+L74:
 	;
 	F_errcode(m, int32(33686021))
 	mBase = m.M
@@ -975,9 +775,9 @@ L75:
 	if v184 != 0 {
 		goto L2
 	} else {
-		goto L76
+		goto L75
 	}
-L76:
+L75:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = l1
 	F_errmsg(m, int32(_a_F_server_get_sink_6), v10+int32(-32))
@@ -986,9 +786,9 @@ L76:
 	if v190 != 0 {
 		goto L2
 	} else {
-		goto L77
+		goto L76
 	}
-L77:
+L76:
 	;
 	F_errfinish(m, int32(_a_F_server_get_sink_4), int32(116), int32(_a_F_server_get_sink_5))
 	mBase = m.M
@@ -996,14 +796,14 @@ L77:
 	if v195 != 0 {
 		goto L2
 	} else {
-		goto L78
+		goto L77
 	}
-L78:
+L77:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L79:
+L78:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
@@ -1011,9 +811,9 @@ L79:
 	if v201 != 0 {
 		goto L2
 	} else {
-		goto L80
+		goto L79
 	}
-L80:
+L79:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
 	F_errmsg(m, int32(_a_F_server_get_sink_7), v12)
@@ -1022,9 +822,9 @@ L80:
 	if v205 != 0 {
 		goto L2
 	} else {
-		goto L81
+		goto L80
 	}
-L81:
+L80:
 	;
 	F_errfinish(m, int32(_a_F_server_get_sink_4), int32(124), int32(_a_F_server_get_sink_5))
 	mBase = m.M
@@ -1032,14 +832,14 @@ L81:
 	if v210 != 0 {
 		goto L2
 	} else {
-		goto L82
+		goto L81
 	}
-L82:
+L81:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L83:
+L82:
 	;
 	F_errcode(m, int32(16797828))
 	mBase = m.M
@@ -1047,9 +847,9 @@ L83:
 	if v220 != 0 {
 		goto L2
 	} else {
-		goto L84
+		goto L83
 	}
-L84:
+L83:
 	;
 	F_errmsg(m, int32(_a_F_server_get_sink_8), int32(0))
 	mBase = m.M
@@ -1057,9 +857,9 @@ L84:
 	if v224 != 0 {
 		goto L2
 	} else {
-		goto L85
+		goto L84
 	}
-L85:
+L84:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+48)) = int32(_a_F_server_get_sink_9)
 	F_errdetail(m, int32(_a_F_server_get_sink_10), v10+int32(-16))
@@ -1068,9 +868,9 @@ L85:
 	if v231 != 0 {
 		goto L2
 	} else {
-		goto L86
+		goto L85
 	}
-L86:
+L85:
 	;
 	F_errfinish(m, int32(_a_F_server_get_sink_4), int32(75), int32(_a_F_server_get_sink_5))
 	mBase = m.M
@@ -1078,14 +878,14 @@ L86:
 	if v236 != 0 {
 		goto L2
 	} else {
-		goto L87
+		goto L86
 	}
-L87:
+L86:
 	;
 	base.Wasm_trap_unreachable()
 	for {
 	}
-L88:
+L87:
 	;
 	F_errcode(m, int32(33579140))
 	mBase = m.M
@@ -1093,9 +893,9 @@ L88:
 	if v243 != 0 {
 		goto L2
 	} else {
-		goto L89
+		goto L88
 	}
-L89:
+L88:
 	;
 	F_errmsg(m, int32(_a_F_server_get_sink_11), int32(0))
 	mBase = m.M
@@ -1103,9 +903,9 @@ L89:
 	if v247 != 0 {
 		goto L2
 	} else {
-		goto L90
+		goto L89
 	}
-L90:
+L89:
 	;
 	F_errfinish(m, int32(_a_F_server_get_sink_4), int32(89), int32(_a_F_server_get_sink_5))
 	mBase = m.M
@@ -1113,9 +913,9 @@ L90:
 	if v252 != 0 {
 		goto L2
 	} else {
-		goto L91
+		goto L90
 	}
-L91:
+L90:
 	;
 	base.Wasm_trap_unreachable()
 	for {

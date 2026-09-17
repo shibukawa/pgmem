@@ -337,18 +337,18 @@ func F_proc_exit_prepare(m *base.Module, l0 int32) {
 	_ = v59
 	var v62 int32
 	_ = v62
-	var v65 int32
-	_ = v65
-	var v68 int32
-	_ = v68
-	var v70 int32
-	_ = v70
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v69 int32
+	_ = v69
 	var v71 int32
 	_ = v71
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
 	v2 = int32(0)
 	v4 = m.G0
 	v6 = v4 - int32(16)
@@ -445,12 +445,12 @@ L11:
 L12:
 	;
 	v62 = v59 << (uint(int32(3)) % 32)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v62)+uint32(_c_F_proc_exit_prepare[9])))
-	v68 = *(*int32)(unsafe.Add(mBase, uint32(v62)+uint32(_c_F_proc_exit_prepare[10])))
-	m.T0[v68].(func(*base.Module, int32, int32))(m, l0, v65)
+	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+uint32(_c_F_proc_exit_prepare[9])))
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v62)+uint32(_c_F_proc_exit_prepare[10])))
+	m.T0[v64].(func(*base.Module, int32, int32))(m, l0, v63)
 	mBase = m.M
-	v70 = m.ExcPending
-	if v70 != 0 {
+	v66 = m.ExcPending
+	if v66 != 0 {
 		goto L1
 	} else {
 		goto L14
@@ -460,12 +460,12 @@ L13:
 	goto L11
 L14:
 	;
-	v71 = int32(_a_F_proc_exit_prepare_1)
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_proc_exit_prepare[8]))
-	v75 = v73 - int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_proc_exit_prepare[8])) = v75
-	if int32(0) <= v75 {
-		v59 = v75
+	v67 = int32(_a_F_proc_exit_prepare_1)
+	v69 = *(*int32)(unsafe.Add(mBase, _c_F_proc_exit_prepare[8]))
+	v71 = v69 - int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_proc_exit_prepare[8])) = v71
+	if int32(0) <= v71 {
+		v59 = v71
 		goto L12
 	} else {
 		goto L15

@@ -41,26 +41,26 @@ func F_LockTimeoutHandler(m *base.Module) {
 func F_get_timeout_finish_time(m *base.Module, l0 int32) int64 {
 	mBase := m.M
 	_ = mBase
-	var v6 int64
-	_ = v6
-	v6 = *(*int64)(unsafe.Add(mBase, uint32(l0*int32(40))+uint32(_c_F_get_timeout_finish_time[0])))
-	return v6
+	var v4 int64
+	_ = v4
+	v4 = *(*int64)(unsafe.Add(mBase, uint32(l0*int32(40))+uint32(_c_F_get_timeout_finish_time[0])))
+	return v4
 }
 func F_get_timeout_indicator(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v7 int32
-	_ = v7
+	var v5 int32
+	_ = v5
 	var v10 int32
 	_ = v10
 	v4 = l0 * int32(40)
-	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_c_F_get_timeout_indicator[0]))))
-	if v7&int32(1) != 0 {
+	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_c_F_get_timeout_indicator[0]))))
+	if v5&int32(1) != 0 {
 		v10 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(v4)+uint32(_c_F_get_timeout_indicator[0]))) = uint8(v10)
 	} else {
 	}
-	return v7 & int32(1)
+	return v5 & int32(1)
 }

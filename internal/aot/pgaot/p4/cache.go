@@ -20,9 +20,9 @@ func F_CacheInvalidateSmgr(m *base.Module, l0 int32) {
 	_ = v10
 	var v13 int32
 	_ = v13
-	var v15 int32
+	var v15 int64
 	_ = v15
-	var v17 int64
+	var v17 int32
 	_ = v17
 	var v21 int32
 	_ = v21
@@ -36,11 +36,11 @@ func F_CacheInvalidateSmgr(m *base.Module, l0 int32) {
 	*(*uint16)(unsafe.Add(mBase, uint32(v6)+2)) = uint16(v10)
 	v13 = int32(base.Ui32(v10) >> (uint(v5) % 32))
 	*(*uint8)(unsafe.Add(mBase, uint32(v6)+1)) = uint8(v13)
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v15
-	v17 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(v6)+4)) = v17
-	F_SendSharedInvalidMessages(m, v6, int32(1))
+	v15 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(v6)+4)) = v15
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = v17
+	F_SIInsertDataEntries(m, v6, int32(1))
 	mBase = m.M
 	v21 = m.ExcPending
 	if v21 != 0 {

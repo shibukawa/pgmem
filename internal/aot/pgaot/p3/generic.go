@@ -53,12 +53,12 @@ func F_GenericXLogStart(m *base.Module, l0 int32) int32 {
 		*(*uint8)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[1]))) = uint8(v25)
 		v27 = int32(0)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[2]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[3]))) = v6 - int32(-8192)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[4]))) = v6 + int32(_a_F_GenericXLogStart_2)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[3]))) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[4]))) = v27
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[5]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[6]))) = v6 + int32(_a_F_GenericXLogStart_3)
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[7]))) = v27
-		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[8]))) = v27
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[6]))) = v6 - int32(-8192)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[7]))) = v6 + int32(_a_F_GenericXLogStart_2)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[8]))) = v6 + int32(_a_F_GenericXLogStart_3)
 		*(*int32)(unsafe.Add(mBase, uint32(v6)+uint32(_c_F_GenericXLogStart[9]))) = v6
 		return v6
 	}

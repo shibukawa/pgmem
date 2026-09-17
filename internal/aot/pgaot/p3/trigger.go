@@ -24,10 +24,8 @@ func F_EnableDisableTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v30
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	var v43 int32
-	_ = v43
+	var v42 int32
+	_ = v42
 	var v45 int32
 	_ = v45
 	var v48 int32
@@ -38,8 +36,8 @@ func F_EnableDisableTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v62 int32
-	_ = v62
+	var v61 int32
+	_ = v61
 	var v64 int32
 	_ = v64
 	var v67 int32
@@ -86,8 +84,8 @@ func F_EnableDisableTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v113
 	var v114 int32
 	_ = v114
-	var v126 int32
-	_ = v126
+	var v125 int32
+	_ = v125
 	var v134 int32
 	_ = v134
 	var v138 int32
@@ -132,28 +130,28 @@ func F_EnableDisableTrigger(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v216
 	var v219 int32
 	_ = v219
+	var v221 int32
+	_ = v221
 	var v223 int32
 	_ = v223
-	var v225 int32
-	_ = v225
-	var v232 int32
-	_ = v232
-	var v235 int32
-	_ = v235
-	var v243 int32
-	_ = v243
-	var v248 int32
-	_ = v248
-	var v252 int32
-	_ = v252
-	var v255 int32
-	_ = v255
-	var v256 int32
-	_ = v256
-	var v263 int32
-	_ = v263
-	var v268 int32
-	_ = v268
+	var v230 int32
+	_ = v230
+	var v233 int32
+	_ = v233
+	var v241 int32
+	_ = v241
+	var v246 int32
+	_ = v246
+	var v250 int32
+	_ = v250
+	var v253 int32
+	_ = v253
+	var v254 int32
+	_ = v254
+	var v261 int32
+	_ = v261
+	var v266 int32
+	_ = v266
 	v4 = l3
 	v8 = int32(0)
 	v17 = m.G0
@@ -183,7 +181,6 @@ L2:
 	}
 L3:
 	;
-	v33 = int32(1)
 	if l1 != 0 {
 		goto L6
 	} else {
@@ -193,8 +190,8 @@ L4:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v252 = m.ExcPending
-	if v252 != 0 {
+	v250 = m.ExcPending
+	if v250 != 0 {
 		goto L1
 	} else {
 		goto L64
@@ -203,8 +200,8 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v232 = m.ExcPending
-	if v232 != 0 {
+	v230 = m.ExcPending
+	if v230 != 0 {
 		goto L1
 	} else {
 		goto L60
@@ -213,19 +210,19 @@ L6:
 	;
 	F_ScanKeyInit(m, v19+int32(80), int32(4), int32(3), int32(62), l1)
 	mBase = m.M
-	v43 = m.ExcPending
-	if v43 != 0 {
+	v42 = m.ExcPending
+	if v42 != 0 {
 		goto L1
 	} else {
 		goto L9
 	}
 L7:
 	;
-	v45 = v33
+	v45 = int32(1)
 	goto L8
 L8:
 	;
-	v48 = F_systable_beginscan(m, v23, int32(2701), v33, int32(0), v45, v19+int32(32))
+	v48 = F_systable_beginscan(m, v23, int32(2701), int32(1), int32(0), v45, v19+int32(32))
 	mBase = m.M
 	v49 = m.ExcPending
 	if v49 != 0 {
@@ -256,7 +253,7 @@ L11:
 	}
 L12:
 	;
-	v62 = v50
+	v61 = v50
 	v64 = v8
 	v67 = v8
 	goto L15
@@ -277,7 +274,7 @@ L14:
 	}
 L15:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v62)+16))
+	v70 = *(*int32)(unsafe.Add(mBase, uint32(v61)+16))
 	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v70)+22)))
 	v72 = v70 + v71
 	if l2 != 0 {
@@ -366,7 +363,7 @@ L27:
 	goto L24
 L28:
 	;
-	v84 = F_heap_copytuple(m, v62)
+	v84 = F_heap_copytuple(m, v61)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -460,12 +457,12 @@ L38:
 	}
 L39:
 	;
-	v126 = int32(0)
+	v125 = int32(0)
 	goto L40
 L40:
 	;
 	v134 = *(*int32)(unsafe.Add(mBase, uint32(v112)+8))
-	v138 = *(*int32)(unsafe.Add(mBase, uint32(v134+v126<<(uint(int32(2))%32))))
+	v138 = *(*int32)(unsafe.Add(mBase, uint32(v134+v125<<(uint(int32(2))%32))))
 	v139 = F_relation_open(m, v138, l6)
 	mBase = m.M
 	v140 = m.ExcPending
@@ -490,7 +487,7 @@ L42:
 	}
 L43:
 	;
-	F_sequence_close(m, v139, int32(0))
+	F_relation_close(m, v139, int32(0))
 	mBase = m.M
 	v148 = m.ExcPending
 	if v148 != 0 {
@@ -500,10 +497,10 @@ L43:
 	}
 L44:
 	;
-	v150 = v126 + int32(1)
+	v150 = v125 + int32(1)
 	v151 = *(*int32)(unsafe.Add(mBase, uint32(v112)))
 	if v150 < v151 {
-		v126 = v150
+		v125 = v150
 		goto L40
 	} else {
 		goto L45
@@ -531,7 +528,7 @@ L47:
 L48:
 	;
 	if v197 != 0 {
-		v62 = v197
+		v61 = v197
 		v64 = v191
 		v67 = v194
 		goto L15
@@ -543,7 +540,7 @@ L49:
 	goto L16
 L50:
 	;
-	F_sequence_close(m, v23, int32(3))
+	F_relation_close(m, v23, int32(3))
 	mBase = m.M
 	v219 = m.ExcPending
 	if v219 != 0 {
@@ -553,22 +550,22 @@ L50:
 	}
 L51:
 	;
-	if v209&int32(1) != 0 {
+	if v209 != 0 {
 		goto L52
 	} else {
 		goto L53
 	}
 L52:
 	;
-	v223 = int32(0)
+	v221 = int32(0)
 	goto L54
 L53:
 	;
-	v223 = l1
+	v221 = l1
 	goto L54
 L54:
 	;
-	if v223 != 0 {
+	if v221 != 0 {
 		goto L4
 	} else {
 		goto L55
@@ -584,8 +581,8 @@ L56:
 	;
 	F_CacheInvalidateRelcache(m, l0)
 	mBase = m.M
-	v225 = m.ExcPending
-	if v225 != 0 {
+	v223 = m.ExcPending
+	if v223 != 0 {
 		goto L1
 	} else {
 		goto L59
@@ -604,8 +601,8 @@ L60:
 	;
 	F_errcode(m, int32(16797828))
 	mBase = m.M
-	v235 = m.ExcPending
-	if v235 != 0 {
+	v233 = m.ExcPending
+	if v233 != 0 {
 		goto L1
 	} else {
 		goto L61
@@ -615,8 +612,8 @@ L61:
 	*(*int32)(unsafe.Add(mBase, uint32(v19)+16)) = v72 + int32(12)
 	F_errmsg(m, int32(_a_F_EnableDisableTrigger_0), v19+int32(16))
 	mBase = m.M
-	v243 = m.ExcPending
-	if v243 != 0 {
+	v241 = m.ExcPending
+	if v241 != 0 {
 		goto L1
 	} else {
 		goto L62
@@ -625,8 +622,8 @@ L62:
 	;
 	F_errfinish(m, int32(_a_F_EnableDisableTrigger_1), int32(1778), int32(_a_F_EnableDisableTrigger_2))
 	mBase = m.M
-	v248 = m.ExcPending
-	if v248 != 0 {
+	v246 = m.ExcPending
+	if v246 != 0 {
 		goto L1
 	} else {
 		goto L63
@@ -640,21 +637,21 @@ L64:
 	;
 	F_errcode(m, int32(67137668))
 	mBase = m.M
-	v255 = m.ExcPending
-	if v255 != 0 {
+	v253 = m.ExcPending
+	if v253 != 0 {
 		goto L1
 	} else {
 		goto L65
 	}
 L65:
 	;
-	v256 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v254 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
 	*(*int32)(unsafe.Add(mBase, uint32(v19))) = l1
-	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v256 + int32(4)
+	*(*int32)(unsafe.Add(mBase, uint32(v19)+4)) = v254 + int32(4)
 	F_errmsg(m, int32(_a_F_EnableDisableTrigger_3), v19)
 	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L1
 	} else {
 		goto L66
@@ -663,8 +660,8 @@ L66:
 	;
 	F_errfinish(m, int32(_a_F_EnableDisableTrigger_1), int32(1839), int32(_a_F_EnableDisableTrigger_2))
 	mBase = m.M
-	v268 = m.ExcPending
-	if v268 != 0 {
+	v266 = m.ExcPending
+	if v266 != 0 {
 		goto L1
 	} else {
 		goto L67
@@ -688,94 +685,96 @@ func F_TriggerEnabled(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 	_ = v15
 	var v17 int32
 	_ = v17
-	var v28 int32
-	_ = v28
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v45 int32
-	_ = v45
-	var v48 int32
-	_ = v48
+	var v23 int32
+	_ = v23
+	var v34 int32
+	_ = v34
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
 	var v54 int32
 	_ = v54
-	var v67 int32
-	_ = v67
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
+	var v57 int32
+	_ = v57
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
+	var v73 int32
+	_ = v73
 	var v76 int32
 	_ = v76
 	var v77 int32
 	_ = v77
-	var v80 int32
-	_ = v80
+	var v78 int32
+	_ = v78
 	var v81 int32
 	_ = v81
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
-	var v85 int32
-	_ = v85
 	var v86 int32
 	_ = v86
 	var v87 int32
 	_ = v87
 	var v89 int32
 	_ = v89
-	var v90 int32
-	_ = v90
 	var v91 int32
 	_ = v91
+	var v92 int32
+	_ = v92
 	var v93 int32
 	_ = v93
-	var v94 int32
-	_ = v94
-	var v98 int32
-	_ = v98
-	var v102 int32
-	_ = v102
-	var v103 int32
-	_ = v103
+	var v95 int32
+	_ = v95
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
 	var v104 int32
 	_ = v104
-	var v105 int32
-	_ = v105
-	var v106 int32
-	_ = v106
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
+	var v110 int32
+	_ = v110
+	var v111 int32
+	_ = v111
 	var v112 int32
 	_ = v112
-	var v115 int32
-	_ = v115
-	var v116 int32
-	_ = v116
-	var v117 int32
-	_ = v117
-	var v120 int32
-	_ = v120
-	var v124 int32
-	_ = v124
-	var v125 int32
-	_ = v125
-	var v127 int32
-	_ = v127
+	var v118 int32
+	_ = v118
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v126 int32
+	_ = v126
+	var v130 int32
+	_ = v130
 	var v131 int32
 	_ = v131
-	var v132 int32
-	_ = v132
 	var v133 int32
 	_ = v133
-	var v150 int32
-	_ = v150
+	var v137 int32
+	_ = v137
+	var v138 int32
+	_ = v138
+	var v139 int32
+	_ = v139
+	var v157 int32
+	_ = v157
 	v8 = int32(0)
 	v11 = m.G0
 	v13 = v11 - int32(16)
@@ -790,19 +789,19 @@ func F_TriggerEnabled(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4
 L1:
 	;
 	m.G0 = v13 + int32(16)
-	return v150
+	return v157
 L2:
 	;
 	if l3&int32(3) != int32(2) {
-		goto L6
-	} else {
 		goto L7
+	} else {
+		goto L8
 	}
 L3:
 	;
 	switch v15 - int32(68) {
 	case 0, 11:
-		v150 = v8
+		v157 = v8
 		goto L1
 	default:
 		goto L2
@@ -812,234 +811,237 @@ L4:
 	goto L5
 L5:
 	;
-	switch v15 - int32(68) {
-	case 0, 14:
-		v150 = v8
+	v23 = v15 - int32(68)
+	if base.B2i32(v23 == int32(0))|base.B2i32(v23 == int32(14)) != 0 {
+		v157 = v8
 		goto L1
-	default:
-		goto L2
+	} else {
+		goto L6
 	}
 L6:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
-	if v67 == int32(0) {
-		goto L15
-	} else {
-		goto L16
-	}
+	goto L2
 L7:
 	;
-	v28 = int32(*(*int16)(unsafe.Add(mBase, uint32(l2)+36)))
-	if v28 <= int32(0) {
-		goto L6
+	v73 = *(*int32)(unsafe.Add(mBase, uint32(l2)+48))
+	if v73 == int32(0) {
+		goto L16
 	} else {
-		goto L8
+		goto L17
 	}
 L8:
 	;
-	v38 = v8
-	goto L9
+	v34 = int32(*(*int16)(unsafe.Add(mBase, uint32(l2)+36)))
+	if v34 <= int32(0) {
+		goto L7
+	} else {
+		goto L9
+	}
 L9:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
-	v45 = int32(*(*int16)(unsafe.Add(mBase, uint32(v41+v38<<(uint(int32(1))%32)))))
-	v48 = F_bms_is_member(m, v45+int32(7), l4)
-	mBase = m.M
-	v51 = m.ExcPending
-	if v51 != 0 {
-		goto L11
-	} else {
-		goto L12
-	}
+	v44 = v8
+	goto L10
 L10:
 	;
-	v150 = int32(0)
-	goto L1
-L11:
-	;
-	return int32(0)
-L12:
-	;
-	if v48 != 0 {
-		goto L6
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
+	v51 = int32(*(*int16)(unsafe.Add(mBase, uint32(v47+v44<<(uint(int32(1))%32)))))
+	v54 = F_bms_is_member(m, v51+int32(7), l4)
+	mBase = m.M
+	v57 = m.ExcPending
+	if v57 != 0 {
+		goto L12
 	} else {
 		goto L13
 	}
+L11:
+	;
+	v157 = int32(0)
+	goto L1
+L12:
+	;
+	return int32(0)
 L13:
 	;
-	v53 = v38 + int32(1)
-	v54 = int32(*(*int16)(unsafe.Add(mBase, uint32(l2)+36)))
-	if v53 < v54 {
-		v38 = v53
-		goto L9
+	if v54 != 0 {
+		goto L7
 	} else {
 		goto L14
 	}
 L14:
 	;
-	goto L10
+	v59 = v44 + int32(1)
+	v60 = int32(*(*int16)(unsafe.Add(mBase, uint32(l2)+36)))
+	if v59 < v60 {
+		v44 = v59
+		goto L10
+	} else {
+		goto L15
+	}
 L15:
 	;
-	v150 = int32(1)
-	goto L1
+	goto L11
 L16:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(l1)+60))
-	v71 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(v71)))
-	v75 = base.I32_div_s(l2-v72, int32(15))
-	v76 = v70 + v75
-	v77 = *(*int32)(unsafe.Add(mBase, uint32(v76)))
-	if v77 == int32(0) {
-		goto L17
-	} else {
-		goto L18
-	}
+	v157 = int32(1)
+	goto L1
 L17:
 	;
-	v80 = int32(_a_F_TriggerEnabled_0)
-	v81 = *(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1]))
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
-	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v83
-	v85 = F_stringToNode(m, v67)
-	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
-		goto L11
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(l1)+60))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v77)))
+	v81 = base.I32_div_s(l2-v78, int32(15))
+	v82 = v76 + v81
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v82)))
+	if v83 == int32(0) {
+		goto L18
 	} else {
-		goto L20
+		goto L19
 	}
 L18:
 	;
-	goto L19
-L19:
-	;
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+152))
-	if v112 == int32(0) {
-		goto L27
-	} else {
-		goto L28
-	}
-L20:
-	;
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v89 = F_expand_generated_columns_in_expr(m, v85, v87, int32(1))
+	v86 = int32(_a_F_TriggerEnabled_0)
+	v87 = *(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1]))
+	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+100))
+	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v89
+	v91 = F_stringToNode(m, v73)
 	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
-		goto L11
+	v92 = m.ExcPending
+	if v92 != 0 {
+		goto L12
 	} else {
 		goto L21
 	}
+L19:
+	;
+	goto L20
+L20:
+	;
+	v118 = *(*int32)(unsafe.Add(mBase, uint32(l0)+152))
+	if v118 == int32(0) {
+		goto L28
+	} else {
+		goto L29
+	}
 L21:
 	;
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-	v93 = F_expand_generated_columns_in_expr(m, v89, v91, int32(2))
+	v93 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v95 = F_expand_generated_columns_in_expr(m, v91, v93, int32(1))
 	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
-		goto L11
+	v96 = m.ExcPending
+	if v96 != 0 {
+		goto L12
 	} else {
 		goto L22
 	}
 L22:
 	;
-	F_ChangeVarNodes(m, v93, int32(1), int32(-1))
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+	v99 = F_expand_generated_columns_in_expr(m, v95, v97, int32(2))
 	mBase = m.M
-	v98 = m.ExcPending
-	if v98 != 0 {
-		goto L11
+	v100 = m.ExcPending
+	if v100 != 0 {
+		goto L12
 	} else {
 		goto L23
 	}
 L23:
 	;
-	F_ChangeVarNodes(m, v93, int32(2), int32(-2))
+	F_ChangeVarNodes(m, v99, int32(1), int32(-1))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
-		goto L11
+	v104 = m.ExcPending
+	if v104 != 0 {
+		goto L12
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v103 = F_make_ands_implicit(m, v93)
+	F_ChangeVarNodes(m, v99, int32(2), int32(-2))
 	mBase = m.M
-	v104 = m.ExcPending
-	if v104 != 0 {
-		goto L11
+	v108 = m.ExcPending
+	if v108 != 0 {
+		goto L12
 	} else {
 		goto L25
 	}
 L25:
 	;
-	v105 = F_ExecPrepareQual(m, v103, l0)
+	v109 = F_make_ands_implicit(m, v99)
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
-		goto L11
+	v110 = m.ExcPending
+	if v110 != 0 {
+		goto L12
 	} else {
 		goto L26
 	}
 L26:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v76))) = v105
-	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v81
-	goto L19
+	v111 = F_ExecPrepareQual(m, v109, l0)
+	mBase = m.M
+	v112 = m.ExcPending
+	if v112 != 0 {
+		goto L12
+	} else {
+		goto L27
+	}
 L27:
 	;
-	v115 = F_MakePerTupleExprContext(m, l0)
-	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
-		goto L11
-	} else {
-		goto L30
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v82))) = v111
+	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v87
+	goto L20
 L28:
 	;
-	v117 = v112
-	goto L29
-L29:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v117)+12)) = l6
-	*(*int32)(unsafe.Add(mBase, uint32(v117)+8)) = l5
-	v120 = *(*int32)(unsafe.Add(mBase, uint32(v76)))
-	if v120 == int32(0) {
-		goto L15
+	v121 = F_MakePerTupleExprContext(m, l0)
+	mBase = m.M
+	v122 = m.ExcPending
+	if v122 != 0 {
+		goto L12
 	} else {
 		goto L31
 	}
+L29:
+	;
+	v123 = v118
+	goto L30
 L30:
 	;
-	v117 = v115
-	goto L29
-L31:
-	;
-	v124 = int32(_a_F_TriggerEnabled_0)
-	v125 = *(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1]))
-	v127 = *(*int32)(unsafe.Add(mBase, uint32(v117)+20))
-	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v127
-	v131 = *(*int32)(unsafe.Add(mBase, uint32(v120)+20))
-	v132 = m.T0[v131].(func(*base.Module, int32, int32, int32) int32)(m, v120, v117, v13+int32(15))
-	mBase = m.M
-	v133 = m.ExcPending
-	if v133 != 0 {
-		goto L11
+	*(*int32)(unsafe.Add(mBase, uint32(v123)+12)) = l6
+	*(*int32)(unsafe.Add(mBase, uint32(v123)+8)) = l5
+	v126 = *(*int32)(unsafe.Add(mBase, uint32(v82)))
+	if v126 == int32(0) {
+		goto L16
 	} else {
 		goto L32
 	}
+L31:
+	;
+	v123 = v121
+	goto L30
 L32:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v125
-	if v132 == int32(0) {
-		v150 = int32(0)
-		goto L1
+	v130 = int32(_a_F_TriggerEnabled_0)
+	v131 = *(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1]))
+	v133 = *(*int32)(unsafe.Add(mBase, uint32(v123)+20))
+	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v133
+	v137 = *(*int32)(unsafe.Add(mBase, uint32(v126)+20))
+	v138 = m.T0[v137].(func(*base.Module, int32, int32, int32) int32)(m, v126, v123, v13+int32(15))
+	mBase = m.M
+	v139 = m.ExcPending
+	if v139 != 0 {
+		goto L12
 	} else {
 		goto L33
 	}
 L33:
 	;
-	goto L15
+	*(*int32)(unsafe.Add(mBase, _c_F_TriggerEnabled[1])) = v131
+	if v138 == int32(0) {
+		v157 = int32(0)
+		goto L1
+	} else {
+		goto L34
+	}
+L34:
+	;
+	goto L16
 }

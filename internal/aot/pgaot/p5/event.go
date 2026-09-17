@@ -114,22 +114,20 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
+	var v38 int32
+	_ = v38
 	var v39 int32
 	_ = v39
-	var v40 int32
-	_ = v40
+	var v42 int32
+	_ = v42
 	var v43 int32
 	_ = v43
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
+	var v47 int32
+	_ = v47
 	v9 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[0]))
 	if v9 == int32(0) {
 		return
@@ -163,28 +161,27 @@ func F_EventTriggerCollectAlterTSConfig(m *base.Module, l0 int32, l1 int32, l2 i
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v19)+24)) = v33
 					if v32 != 0 {
-						v36 = F__emscripten_memcpy_bulkmem(m, v33, l2, v32)
-						mBase = m.M
+						base.MemoryCopy(m, v33, l2, v32)
 					} else {
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v19)+28)) = l3
-					v39 = F_copyObjectImpl(m, l0)
+					v38 = F_copyObjectImpl(m, l0)
 					mBase = m.M
-					v40 = m.ExcPending
-					if v40 != 0 {
+					v39 = m.ExcPending
+					if v39 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v39
-						v43 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[0]))
-						v44 = *(*int32)(unsafe.Add(mBase, uint32(v43)+28))
-						v45 = F_lappend(m, v44, v19)
+						*(*int32)(unsafe.Add(mBase, uint32(v19)+8)) = v38
+						v42 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[0]))
+						v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)+28))
+						v44 = F_lappend(m, v43, v19)
 						mBase = m.M
-						v46 = m.ExcPending
-						if v46 != 0 {
+						v45 = m.ExcPending
+						if v45 != 0 {
 							return
 						} else {
-							v48 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[0]))
-							*(*int32)(unsafe.Add(mBase, uint32(v48)+28)) = v45
+							v47 = *(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[0]))
+							*(*int32)(unsafe.Add(mBase, uint32(v47)+28)) = v44
 							*(*int32)(unsafe.Add(mBase, _c_F_EventTriggerCollectAlterTSConfig[1])) = v14
 							return
 						}

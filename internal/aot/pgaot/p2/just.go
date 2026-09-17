@@ -51,6 +51,8 @@ func F_ExecJustAssignInnerVarVirt(m *base.Module, l0 int32, l1 int32, l2 int32) 
 func F_ExecJustAssignScanVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
+	var v7 int32
+	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
@@ -59,62 +61,60 @@ func F_ExecJustAssignScanVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v10
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
+	var v13 int32
+	_ = v13
 	var v14 int32
 	_ = v14
 	var v15 int32
 	_ = v15
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
-	var v25 int32
-	_ = v25
+	var v20 int32
+	_ = v20
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v26 int32
+	_ = v26
 	var v27 int32
 	_ = v27
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+56))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v10)+20))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v8)+60))
-	v14 = v12 + int32(1)
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	v16 = int32(*(*int16)(unsafe.Add(mBase, uint32(v15)+6)))
-	if v16 < v14 {
-		F_slot_getsomeattrs_int(m, v15, v14)
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+20))
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+56))
+	v11 = *(*int32)(unsafe.Add(mBase, uint32(v9)+60))
+	v13 = v11 + int32(1)
+	v14 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	v15 = int32(*(*int16)(unsafe.Add(mBase, uint32(v14)+6)))
+	if v15 < v13 {
+		F_slot_getsomeattrs_int(m, v14, v13)
 		mBase = m.M
-		v21 = m.ExcPending
-		if v21 != 0 {
+		v20 = m.ExcPending
+		if v20 != 0 {
 			return int32(0)
 		} else {
-			v23 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-			v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23+v12))))
-			*(*uint8)(unsafe.Add(mBase, uint32(v9+v11))) = uint8(v25)
-			v27 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-			v28 = int32(2)
-			v31 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
-			v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v12<<(uint(v28)%32))))
-			*(*int32)(unsafe.Add(mBase, uint32(v27+v9<<(uint(v28)%32)))) = v35
+			v22 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
+			v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22+v11))))
+			*(*uint8)(unsafe.Add(mBase, uint32(v10+v8))) = uint8(v24)
+			v26 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+			v27 = int32(2)
+			v30 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(v30+v11<<(uint(v27)%32))))
+			*(*int32)(unsafe.Add(mBase, uint32(v26+v10<<(uint(v27)%32)))) = v34
 			return int32(0)
 		}
 	} else {
-		v23 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
-		v25 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v23+v12))))
-		*(*uint8)(unsafe.Add(mBase, uint32(v9+v11))) = uint8(v25)
-		v27 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-		v28 = int32(2)
-		v31 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
-		v35 = *(*int32)(unsafe.Add(mBase, uint32(v31+v12<<(uint(v28)%32))))
-		*(*int32)(unsafe.Add(mBase, uint32(v27+v9<<(uint(v28)%32)))) = v35
+		v22 = *(*int32)(unsafe.Add(mBase, uint32(v14)+20))
+		v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22+v11))))
+		*(*uint8)(unsafe.Add(mBase, uint32(v10+v8))) = uint8(v24)
+		v26 = *(*int32)(unsafe.Add(mBase, uint32(v7)+16))
+		v27 = int32(2)
+		v30 = *(*int32)(unsafe.Add(mBase, uint32(v14)+16))
+		v34 = *(*int32)(unsafe.Add(mBase, uint32(v30+v11<<(uint(v27)%32))))
+		*(*int32)(unsafe.Add(mBase, uint32(v26+v10<<(uint(v27)%32)))) = v34
 		return int32(0)
 	}
 }
@@ -145,8 +145,8 @@ func F_ExecJustHashInnerVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v26
 	var v28 int32
 	_ = v28
-	var v31 int32
-	_ = v31
+	var v30 int32
+	_ = v30
 	var v32 int32
 	_ = v32
 	var v33 int32
@@ -176,9 +176,9 @@ func F_ExecJustHashInnerVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 			*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)) = uint8(v26)
 			v28 = int32(0)
 			*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v28)
-			v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)))
-			if v31 != 0 {
-				v35 = v28
+			v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)))
+			if v30 != 0 {
+				v35 = int32(0)
 				return v35
 			} else {
 				v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+104))
@@ -202,9 +202,9 @@ func F_ExecJustHashInnerVar(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 		*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)) = uint8(v26)
 		v28 = int32(0)
 		*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v28)
-		v31 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)))
-		if v31 != 0 {
-			v35 = v28
+		v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+24)))
+		if v30 != 0 {
+			v35 = int32(0)
 			return v35
 		} else {
 			v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+104))
@@ -241,16 +241,16 @@ func F_ExecJustHashOuterVarVirt(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v16
 	var v18 int32
 	_ = v18
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
+	var v22 int32
+	_ = v22
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
 	v4 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+60))
@@ -263,20 +263,20 @@ func F_ExecJustHashOuterVarVirt(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10+v16))))
 	*(*uint8)(unsafe.Add(mBase, uint32(v7)+24)) = uint8(v18)
 	*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v4)
-	v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+24)))
-	if v23 != 0 {
-		v31 = v4
-		return v31
+	v22 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7)+24)))
+	if v22 != 0 {
+		v29 = int32(0)
+		return v29
 	} else {
-		v26 = *(*int32)(unsafe.Add(mBase, uint32(v6-int32(-64))))
-		v27 = m.T0[v26].(func(*base.Module, int32) int32)(m, v7)
+		v24 = *(*int32)(unsafe.Add(mBase, uint32(v6)+64))
+		v25 = m.T0[v24].(func(*base.Module, int32) int32)(m, v7)
 		mBase = m.M
-		v30 = m.ExcPending
-		if v30 != 0 {
+		v28 = m.ExcPending
+		if v28 != 0 {
 			return int32(0)
 		} else {
-			v31 = v27
-			return v31
+			v29 = v25
+			return v29
 		}
 	}
 }

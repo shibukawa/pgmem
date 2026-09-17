@@ -208,7 +208,7 @@ L13:
 	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17)+1)))
 	v31 = base.I32_extend8_s(v30)
 	v32 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v19)+1)))
-	if v32 != v30 {
+	if v30 != v32 {
 		goto L14
 	} else {
 		goto L15

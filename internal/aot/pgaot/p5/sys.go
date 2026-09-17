@@ -442,141 +442,79 @@ func F_ExecEvalSysVar(m *base.Module, l0 int32, l1 int32, l2 int32) {
 func F_GetSysCacheOid(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
+	var v7 int32
+	_ = v7
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
+	var v15 int32
+	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
+	var v19 int32
+	_ = v19
+	var v24 int32
+	_ = v24
 	var v25 int32
 	_ = v25
-	var v26 int32
-	_ = v26
+	var v28 int32
+	_ = v28
 	var v29 int32
 	_ = v29
-	var v30 int32
-	_ = v30
+	var v31 int32
+	_ = v31
 	var v32 int32
 	_ = v32
-	var v33 int32
-	_ = v33
-	v8 = m.G0
-	v10 = v8 - int32(16)
-	m.G0 = v10
-	v13 = l0 << (uint(int32(2)) % 32)
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_c_F_GetSysCacheOid[0])))
-	v17 = F_SearchCatCache(m, v16, l1, l2, l3, l4)
+	v7 = m.G0
+	v9 = v7 - int32(16)
+	m.G0 = v9
+	v12 = l0 << (uint(int32(2)) % 32)
+	v15 = *(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_c_F_GetSysCacheOid[0])))
+	v16 = F_SearchCatCache(m, v15, l1, l2, l3, l4)
 	mBase = m.M
-	v20 = m.ExcPending
-	if v20 != 0 {
+	v19 = m.ExcPending
+	if v19 != 0 {
 		return int32(0)
 	} else {
-		if v17 == int32(0) {
-			v33 = int32(0)
-			m.G0 = v10 + int32(16)
-			return v33
+		if v16 == int32(0) {
+			v32 = int32(0)
+			m.G0 = v9 + int32(16)
+			return v32
 		} else {
-			v25 = *(*int32)(unsafe.Add(mBase, uint32(v13)+uint32(_c_F_GetSysCacheOid[0])))
-			v26 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
-			v29 = F_heap_getattr_1(m, v17, int32(1), v26, v10+int32(15))
+			v24 = *(*int32)(unsafe.Add(mBase, uint32(v12)+uint32(_c_F_GetSysCacheOid[0])))
+			v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+8))
+			v28 = F_heap_getattr_1(m, v16, int32(1), v25, v9+int32(15))
 			mBase = m.M
-			v30 = m.ExcPending
-			if v30 != 0 {
+			v29 = m.ExcPending
+			if v29 != 0 {
 				return int32(0)
 			} else {
-				F_ReleaseCatCache(m, v17)
+				F_ReleaseCatCache(m, v16)
 				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
+				v31 = m.ExcPending
+				if v31 != 0 {
 					return int32(0)
 				} else {
-					v33 = v29
-					m.G0 = v10 + int32(16)
-					return v33
+					v32 = v28
+					m.G0 = v9 + int32(16)
+					return v32
 				}
 			}
 		}
 	}
 }
 func F_SearchSysCacheCopyAttNum(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
-	v3 = int32(0)
-	v5 = *(*int32)(unsafe.Add(mBase, _c_F_SearchSysCacheCopyAttNum[0]))
-	v6 = F_SearchCatCache2(m, v5, l0, l1)
-	mBase = m.M
-	v9 = m.ExcPending
-	if v9 != 0 {
+	var v4 int32
+	_ = v4
+	var v7 int32
+	_ = v7
+	v4 = Fn13837(m, l0, l1, int32(_a_F_SearchSysCacheCopyAttNum_0))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		if v6 != 0 {
-			v10 = *(*int32)(unsafe.Add(mBase, uint32(v6)+16))
-			v11 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+22)))
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10+v11)+91)))
-			if v13 == int32(0) {
-				v16 = F_heap_copytuple(m, v6)
-				mBase = m.M
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return int32(0)
-				} else {
-					v18 = v16
-					F_ReleaseCatCache(m, v6)
-					mBase = m.M
-					v20 = m.ExcPending
-					if v20 != 0 {
-						return int32(0)
-					} else {
-						v22 = v18
-						return v22
-					}
-				}
-			} else {
-				v18 = v3
-				F_ReleaseCatCache(m, v6)
-				mBase = m.M
-				v20 = m.ExcPending
-				if v20 != 0 {
-					return int32(0)
-				} else {
-					v22 = v18
-					return v22
-				}
-			}
-		} else {
-			v22 = v3
-			return v22
-		}
+		return v4
 	}
 }
 func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
@@ -586,51 +524,51 @@ func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v18 int32
-	_ = v18
-	var v25 int32
-	_ = v25
-	var v29 int32
-	_ = v29
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	var v27 int32
+	_ = v27
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
 	if base.Ui32(l0) <= base.Ui32(int32(84)) {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_SearchSysCacheList[0])))
-		if v18 != 0 {
-			v35 = F_SearchCatCacheList(m, v18, l1, l2, l3, l4)
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0<<(uint(int32(2))%32))+uint32(_c_F_SearchSysCacheList[0])))
+		if v16 != 0 {
+			v33 = F_SearchCatCacheList(m, v16, l1, l2, l3, l4)
 			mBase = m.M
-			v36 = m.ExcPending
-			if v36 != 0 {
+			v34 = m.ExcPending
+			if v34 != 0 {
 				return int32(0)
 			} else {
 				m.G0 = v10 + int32(16)
-				return v35
+				return v33
 			}
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v25 = m.ExcPending
-			if v25 != 0 {
+			v23 = m.ExcPending
+			if v23 != 0 {
 				return int32(0)
 			} else {
 				*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 				F_errmsg_internal(m, int32(_a_F_SearchSysCacheList_0), v10)
 				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
+				v27 = m.ExcPending
+				if v27 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(683), int32(_a_F_SearchSysCacheList_2))
 					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -643,21 +581,21 @@ func F_SearchSysCacheList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v25 = m.ExcPending
-		if v25 != 0 {
+		v23 = m.ExcPending
+		if v23 != 0 {
 			return int32(0)
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
 			F_errmsg_internal(m, int32(_a_F_SearchSysCacheList_0), v10)
 			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return int32(0)
 			} else {
 				F_errfinish(m, int32(_a_F_SearchSysCacheList_1), int32(683), int32(_a_F_SearchSysCacheList_2))
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()
@@ -675,8 +613,6 @@ func F_StartSysLogger(m *base.Module) {
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v11 int32
-	_ = v11
 	var v12 int32
 	_ = v12
 	var v14 int32
@@ -755,116 +691,116 @@ func F_StartSysLogger(m *base.Module) {
 	_ = v102
 	var v104 int32
 	_ = v104
-	var v109 int32
-	_ = v109
-	var v110 int32
-	_ = v110
-	var v115 int32
-	_ = v115
-	var v116 int32
-	_ = v116
-	var v122 int32
-	_ = v122
+	var v107 int32
+	_ = v107
+	var v108 int32
+	_ = v108
+	var v113 int32
+	_ = v113
+	var v114 int32
+	_ = v114
+	var v120 int32
+	_ = v120
+	var v125 int32
+	_ = v125
 	var v127 int32
 	_ = v127
-	var v129 int32
-	_ = v129
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
+	var v137 int32
+	_ = v137
 	var v139 int32
 	_ = v139
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
+	var v143 int32
+	_ = v143
+	var v148 int32
+	_ = v148
 	var v150 int32
 	_ = v150
+	var v151 int32
+	_ = v151
 	var v152 int32
 	_ = v152
-	var v153 int32
-	_ = v153
 	var v154 int32
 	_ = v154
 	var v156 int32
 	_ = v156
-	var v158 int32
-	_ = v158
+	var v160 int32
+	_ = v160
+	var v161 int32
+	_ = v161
 	var v162 int32
 	_ = v162
-	var v163 int32
-	_ = v163
 	var v164 int32
 	_ = v164
 	var v166 int32
 	_ = v166
-	var v168 int32
-	_ = v168
+	var v169 int32
+	_ = v169
+	var v170 int32
+	_ = v170
 	var v171 int32
 	_ = v171
-	var v172 int32
-	_ = v172
 	var v173 int32
 	_ = v173
-	var v175 int32
-	_ = v175
+	var v179 int32
+	_ = v179
+	var v180 int32
+	_ = v180
 	var v181 int32
 	_ = v181
-	var v182 int32
-	_ = v182
-	var v183 int32
-	_ = v183
+	var v186 int32
+	_ = v186
+	var v187 int32
+	_ = v187
 	var v188 int32
 	_ = v188
-	var v189 int32
-	_ = v189
-	var v190 int32
-	_ = v190
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
 	var v195 int32
 	_ = v195
-	var v196 int32
-	_ = v196
-	var v197 int32
-	_ = v197
-	var v201 int32
-	_ = v201
+	var v199 int32
+	_ = v199
+	var v206 int32
+	_ = v206
 	var v208 int32
 	_ = v208
-	var v210 int32
-	_ = v210
-	var v214 int32
-	_ = v214
-	var v219 int32
-	_ = v219
+	var v212 int32
+	_ = v212
+	var v217 int32
+	_ = v217
+	var v221 int32
+	_ = v221
 	var v223 int32
 	_ = v223
-	var v225 int32
-	_ = v225
-	var v229 int32
-	_ = v229
-	var v234 int32
-	_ = v234
+	var v227 int32
+	_ = v227
+	var v232 int32
+	_ = v232
+	var v236 int32
+	_ = v236
 	var v238 int32
 	_ = v238
-	var v240 int32
-	_ = v240
-	var v244 int32
-	_ = v244
+	var v242 int32
+	_ = v242
+	var v247 int32
+	_ = v247
 	var v249 int32
 	_ = v249
-	var v251 int32
-	_ = v251
-	var v255 int32
-	_ = v255
-	var v256 int32
-	_ = v256
-	var v263 int32
-	_ = v263
-	var v267 int32
-	_ = v267
-	var v272 int32
-	_ = v272
+	var v253 int32
+	_ = v253
+	var v254 int32
+	_ = v254
+	var v261 int32
+	_ = v261
+	var v265 int32
+	_ = v265
+	var v270 int32
+	_ = v270
 	v8 = F_AssignPostmasterChildSlot(m, int32(17))
 	mBase = m.M
 	v9 = m.ExcPending
@@ -886,7 +822,6 @@ L2:
 	}
 L3:
 	;
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(v8)+4))
 	v12 = m.G0
 	v14 = v12 - int32(32)
 	m.G0 = v14
@@ -903,17 +838,17 @@ L5:
 	;
 	F_errstart_cold(m, int32(23), int32(0))
 	mBase = m.M
-	v263 = m.ExcPending
-	if v263 != 0 {
+	v261 = m.ExcPending
+	if v261 != 0 {
 		goto L1
 	} else {
 		goto L81
 	}
 L6:
 	;
-	v251 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[0]))
-	*(*int32)(unsafe.Add(mBase, uint32(v251))) = v201
-	if v201 == int32(0) {
+	v249 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[0]))
+	*(*int32)(unsafe.Add(mBase, uint32(v249))) = v199
+	if v199 == int32(0) {
 		goto L77
 	} else {
 		goto L78
@@ -922,8 +857,8 @@ L7:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v238 = m.ExcPending
-	if v238 != 0 {
+	v236 = m.ExcPending
+	if v236 != 0 {
 		goto L1
 	} else {
 		goto L73
@@ -932,8 +867,8 @@ L8:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v223 = m.ExcPending
-	if v223 != 0 {
+	v221 = m.ExcPending
+	if v221 != 0 {
 		goto L1
 	} else {
 		goto L69
@@ -942,8 +877,8 @@ L9:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v208 = m.ExcPending
-	if v208 != 0 {
+	v206 = m.ExcPending
+	if v206 != 0 {
 		goto L1
 	} else {
 		goto L65
@@ -972,7 +907,7 @@ L13:
 	goto L12
 L14:
 	;
-	v30 = F___time(m)
+	v30 = F_time(m)
 	mBase = m.M
 	*(*int64)(unsafe.Add(mBase, _c_F_StartSysLogger[4])) = v30
 	*(*int64)(unsafe.Add(mBase, uint32(v14)+24)) = v30
@@ -1114,10 +1049,10 @@ L28:
 L29:
 	;
 	v104 = int32(0)
-	v109 = F_postmaster_child_launch(m, int32(17), v11, v104, v104, v104)
+	v107 = F_postmaster_child_launch(m, int32(17), v104)
 	mBase = m.M
-	v110 = m.ExcPending
-	if v110 != 0 {
+	v108 = m.ExcPending
+	if v108 != 0 {
 		goto L1
 	} else {
 		goto L34
@@ -1152,17 +1087,17 @@ L33:
 	goto L6
 L34:
 	;
-	if v109 == int32(-1) {
+	if v107 == int32(-1) {
 		goto L35
 	} else {
 		goto L36
 	}
 L35:
 	;
-	v115 = F_errstart(m, int32(15), int32(0))
+	v113 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
+	v114 = m.ExcPending
+	if v114 != 0 {
 		goto L1
 	} else {
 		goto L38
@@ -1172,16 +1107,16 @@ L36:
 	goto L37
 L37:
 	;
-	v129 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_StartSysLogger[11])))
-	if v129 == int32(0) {
+	v127 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_StartSysLogger[11])))
+	if v127 == int32(0) {
 		goto L42
 	} else {
 		goto L43
 	}
 L38:
 	;
-	if v115 == int32(0) {
-		v201 = v104
+	if v113 == int32(0) {
+		v199 = v104
 		goto L33
 	} else {
 		goto L39
@@ -1190,8 +1125,8 @@ L39:
 	;
 	F_errmsg(m, int32(_a_F_StartSysLogger_8), int32(0))
 	mBase = m.M
-	v122 = m.ExcPending
-	if v122 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L1
 	} else {
 		goto L40
@@ -1200,22 +1135,22 @@ L40:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(711), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v125 = m.ExcPending
+	if v125 != 0 {
 		goto L1
 	} else {
 		goto L41
 	}
 L41:
 	;
-	v201 = v104
+	v199 = v104
 	goto L33
 L42:
 	;
-	v134 = F_errstart(m, int32(15), int32(0))
+	v132 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
+	v133 = m.ExcPending
+	if v133 != 0 {
 		goto L1
 	} else {
 		goto L45
@@ -1225,18 +1160,18 @@ L43:
 	goto L44
 L44:
 	;
-	v181 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[7]))
-	v182 = F_fclose(m, v181)
+	v179 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[7]))
+	v180 = F_fclose(m, v179)
 	mBase = m.M
-	v183 = m.ExcPending
-	if v183 != 0 {
+	v181 = m.ExcPending
+	if v181 != 0 {
 		goto L1
 	} else {
 		goto L56
 	}
 L45:
 	;
-	if v134 != 0 {
+	if v132 != 0 {
 		goto L46
 	} else {
 		goto L47
@@ -1245,8 +1180,8 @@ L46:
 	;
 	F_errmsg(m, int32(_a_F_StartSysLogger_9), int32(0))
 	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L1
 	} else {
 		goto L49
@@ -1256,23 +1191,23 @@ L47:
 	goto L48
 L48:
 	;
-	v152 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[12]))
-	v153 = F_fflush(m, v152)
+	v150 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[12]))
+	v151 = F_fflush(m, v150)
 	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
+	v152 = m.ExcPending
+	if v152 != 0 {
 		goto L1
 	} else {
 		goto L52
 	}
 L49:
 	;
-	v141 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v141
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[2]))
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = v139
 	F_errhint(m, int32(_a_F_StartSysLogger_10), v14)
 	mBase = m.M
-	v145 = m.ExcPending
-	if v145 != 0 {
+	v143 = m.ExcPending
+	if v143 != 0 {
 		goto L1
 	} else {
 		goto L50
@@ -1281,8 +1216,8 @@ L50:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(732), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
-	v150 = m.ExcPending
-	if v150 != 0 {
+	v148 = m.ExcPending
+	if v148 != 0 {
 		goto L1
 	} else {
 		goto L51
@@ -1292,60 +1227,60 @@ L51:
 	goto L48
 L52:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
-	v158 = F_dup2(m, v156, int32(1))
+	v154 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
+	v156 = F_dup2(m, v154, int32(1))
 	mBase = m.M
-	if v158 < int32(0) {
+	if v156 < int32(0) {
 		goto L8
 	} else {
 		goto L53
 	}
 L53:
 	;
-	v162 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[14]))
-	v163 = F_fflush(m, v162)
+	v160 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[14]))
+	v161 = F_fflush(m, v160)
 	mBase = m.M
-	v164 = m.ExcPending
-	if v164 != 0 {
+	v162 = m.ExcPending
+	if v162 != 0 {
 		goto L1
 	} else {
 		goto L54
 	}
 L54:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
-	v168 = F_dup2(m, v166, int32(2))
+	v164 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
+	v166 = F_dup2(m, v164, int32(2))
 	mBase = m.M
-	if v168 < int32(0) {
+	if v166 < int32(0) {
 		goto L7
 	} else {
 		goto L55
 	}
 L55:
 	;
-	v171 = int32(_a_F_StartSysLogger_13)
-	v172 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
-	v173 = F_close(m, v172)
+	v169 = int32(_a_F_StartSysLogger_13)
+	v170 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13]))
+	v171 = F_close(m, v170)
 	mBase = m.M
-	v175 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, _c_F_StartSysLogger[11])) = uint8(v175)
+	v173 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, _c_F_StartSysLogger[11])) = uint8(v173)
 	*(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[13])) = int32(-1)
 	goto L44
 L56:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[7])) = int32(0)
-	v188 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[9]))
-	if v188 != 0 {
+	v186 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[9]))
+	if v186 != 0 {
 		goto L57
 	} else {
 		goto L58
 	}
 L57:
 	;
-	v189 = F_fclose(m, v188)
+	v187 = F_fclose(m, v186)
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v188 = m.ExcPending
+	if v188 != 0 {
 		goto L1
 	} else {
 		goto L60
@@ -1355,8 +1290,8 @@ L58:
 	goto L59
 L59:
 	;
-	v195 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[10]))
-	if v195 != 0 {
+	v193 = *(*int32)(unsafe.Add(mBase, _c_F_StartSysLogger[10]))
+	if v193 != 0 {
 		goto L61
 	} else {
 		goto L62
@@ -1367,10 +1302,10 @@ L60:
 	goto L59
 L61:
 	;
-	v196 = F_fclose(m, v195)
+	v194 = F_fclose(m, v193)
 	mBase = m.M
-	v197 = m.ExcPending
-	if v197 != 0 {
+	v195 = m.ExcPending
+	if v195 != 0 {
 		goto L1
 	} else {
 		goto L64
@@ -1380,7 +1315,7 @@ L62:
 	goto L63
 L63:
 	;
-	v201 = v109
+	v199 = v107
 	goto L33
 L64:
 	;
@@ -1390,8 +1325,8 @@ L65:
 	;
 	F_errcode_for_socket_access(m)
 	mBase = m.M
-	v210 = m.ExcPending
-	if v210 != 0 {
+	v208 = m.ExcPending
+	if v208 != 0 {
 		goto L1
 	} else {
 		goto L66
@@ -1400,8 +1335,8 @@ L66:
 	;
 	F_errmsg(m, int32(_a_F_StartSysLogger_1), int32(0))
 	mBase = m.M
-	v214 = m.ExcPending
-	if v214 != 0 {
+	v212 = m.ExcPending
+	if v212 != 0 {
 		goto L1
 	} else {
 		goto L67
@@ -1410,8 +1345,8 @@ L67:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(626), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
-	v219 = m.ExcPending
-	if v219 != 0 {
+	v217 = m.ExcPending
+	if v217 != 0 {
 		goto L1
 	} else {
 		goto L68
@@ -1425,8 +1360,8 @@ L69:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v225 = m.ExcPending
-	if v225 != 0 {
+	v223 = m.ExcPending
+	if v223 != 0 {
 		goto L1
 	} else {
 		goto L70
@@ -1435,8 +1370,8 @@ L70:
 	;
 	F_errmsg(m, int32(_a_F_StartSysLogger_11), int32(0))
 	mBase = m.M
-	v229 = m.ExcPending
-	if v229 != 0 {
+	v227 = m.ExcPending
+	if v227 != 0 {
 		goto L1
 	} else {
 		goto L71
@@ -1445,8 +1380,8 @@ L71:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(739), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
-	v234 = m.ExcPending
-	if v234 != 0 {
+	v232 = m.ExcPending
+	if v232 != 0 {
 		goto L1
 	} else {
 		goto L72
@@ -1460,8 +1395,8 @@ L73:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v240 = m.ExcPending
-	if v240 != 0 {
+	v238 = m.ExcPending
+	if v238 != 0 {
 		goto L1
 	} else {
 		goto L74
@@ -1470,8 +1405,8 @@ L74:
 	;
 	F_errmsg(m, int32(_a_F_StartSysLogger_12), int32(0))
 	mBase = m.M
-	v244 = m.ExcPending
-	if v244 != 0 {
+	v242 = m.ExcPending
+	if v242 != 0 {
 		goto L1
 	} else {
 		goto L75
@@ -1480,8 +1415,8 @@ L75:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_2), int32(744), int32(_a_F_StartSysLogger_3))
 	mBase = m.M
-	v249 = m.ExcPending
-	if v249 != 0 {
+	v247 = m.ExcPending
+	if v247 != 0 {
 		goto L1
 	} else {
 		goto L76
@@ -1493,10 +1428,10 @@ L76:
 	}
 L77:
 	;
-	v255 = F_ReleasePostmasterChildSlot(m, v251)
+	v253 = F_ReleasePostmasterChildSlot(m, v249)
 	mBase = m.M
-	v256 = m.ExcPending
-	if v256 != 0 {
+	v254 = m.ExcPending
+	if v254 != 0 {
 		goto L1
 	} else {
 		goto L80
@@ -1515,8 +1450,8 @@ L81:
 	;
 	F_errmsg_internal(m, int32(_a_F_StartSysLogger_14), int32(0))
 	mBase = m.M
-	v267 = m.ExcPending
-	if v267 != 0 {
+	v265 = m.ExcPending
+	if v265 != 0 {
 		goto L1
 	} else {
 		goto L82
@@ -1525,8 +1460,8 @@ L82:
 	;
 	F_errfinish(m, int32(_a_F_StartSysLogger_15), int32(4012), int32(_a_F_StartSysLogger_16))
 	mBase = m.M
-	v272 = m.ExcPending
-	if v272 != 0 {
+	v270 = m.ExcPending
+	if v270 != 0 {
 		goto L1
 	} else {
 		goto L83

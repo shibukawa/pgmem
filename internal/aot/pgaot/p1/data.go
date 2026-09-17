@@ -260,8 +260,8 @@ func F_dataLocateItem(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v50
 	var v52 int32
 	_ = v52
-	var v62 int32
-	_ = v62
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
 	var v76 int32
@@ -300,14 +300,14 @@ func F_dataLocateItem(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v112
 	var v113 int32
 	_ = v113
-	var v114 int32
-	_ = v114
+	var v115 int32
+	_ = v115
 	var v118 int32
 	_ = v118
 	var v119 int32
 	_ = v119
-	var v129 int32
-	_ = v129
+	var v128 int32
+	_ = v128
 	var v140 int32
 	_ = v140
 	var v141 int32
@@ -380,23 +380,23 @@ L9:
 	return v43
 L10:
 	;
-	v62 = int32(1)
-	v65 = v52
+	v64 = v52
+	v65 = int32(1)
 	goto L13
 L11:
 	;
-	v129 = v52
+	v128 = v52
 	goto L12
 L12:
 	;
-	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v129)
-	v140 = v30 + v129&int32(_a_F_dataLocateItem_0)*int32(10)
+	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v128)
+	v140 = v30 + v128&int32(_a_F_dataLocateItem_0)*int32(10)
 	v141 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v140)+22)))
 	v144 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v140)+24)))
 	return v141<<(uint(int32(16))%32) | v144
 L13:
 	;
-	v76 = int32(base.Ui32((v65-v62)&int32(_a_F_dataLocateItem_1))>>(uint(int32(1))%32)) + v62
+	v76 = int32(base.Ui32((v64-v65)&int32(_a_F_dataLocateItem_1))>>(uint(int32(1))%32)) + v65
 	v78 = v76 & int32(_a_F_dataLocateItem_0)
 	if v50 == v78 {
 		goto L16
@@ -405,21 +405,21 @@ L13:
 	}
 L14:
 	;
-	v129 = v118
+	v128 = v118
 	goto L12
 L15:
 	;
 	v119 = int32(_a_F_dataLocateItem_0)
-	if base.Ui32(v114&v119) < base.Ui32(v118&v119) {
-		v62 = v114
-		v65 = v118
+	if base.Ui32(v115&v119) < base.Ui32(v118&v119) {
+		v64 = v118
+		v65 = v115
 		goto L13
 	} else {
 		goto L28
 	}
 L16:
 	;
-	v114 = v62
+	v115 = v65
 	v118 = v76
 	goto L15
 L17:
@@ -466,7 +466,7 @@ L22:
 	goto L24
 L23:
 	;
-	v112 = v62
+	v112 = v65
 	goto L24
 L24:
 	;
@@ -477,7 +477,7 @@ L24:
 	}
 L25:
 	;
-	v113 = v65
+	v113 = v64
 	goto L27
 L26:
 	;
@@ -485,7 +485,7 @@ L26:
 	goto L27
 L27:
 	;
-	v114 = v112
+	v115 = v112
 	v118 = v113
 	goto L15
 L28:

@@ -122,49 +122,49 @@ func F_macaddr8_ne(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v12 int32
 	_ = v12
-	var v23 int32
-	_ = v23
-	var v24 int32
-	_ = v24
-	var v41 int32
-	_ = v41
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v46 int32
-	_ = v46
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v32 int32
+	_ = v32
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
+	var v39 int32
+	_ = v39
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
 	v5 = int32(1)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	v8 = int32(24)
-	v10 = int32(_a_F_macaddr8_ne_0)
-	v12 = int32(8)
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-	if v7<<(uint(v8)%32)|v7&v10<<(uint(v12)%32)|(int32(base.Ui32(v7)>>(uint(v12)%32))&v10|int32(base.Ui32(v7)>>(uint(v8)%32))) != v24<<(uint(v8)%32)|v24&v10<<(uint(v12)%32)|(int32(base.Ui32(v24)>>(uint(v12)%32))&v10|int32(base.Ui32(v24)>>(uint(v8)%32))) {
-		v77 = v5
+	v8 = int32(16711935)
+	v10 = int32(8)
+	v12 = int32(24)
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+	if base.I32_rotr(v7&v8, v10)|base.I32_rotr(v7, v12)&v8 != base.I32_rotr(v18&v8, v10)|base.I32_rotr(v18, v12)&v8 {
+		v53 = v5
 	} else {
-		v41 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
-		v42 = int32(24)
-		v44 = int32(_a_F_macaddr8_ne_0)
-		v46 = int32(8)
-		v56 = v41<<(uint(v42)%32) | v41&v44<<(uint(v46)%32) | (int32(base.Ui32(v41)>>(uint(v46)%32))&v44 | int32(base.Ui32(v41)>>(uint(v42)%32)))
-		v57 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-		v72 = v57<<(uint(v42)%32) | v57&v44<<(uint(v46)%32) | (int32(base.Ui32(v57)>>(uint(v46)%32))&v44 | int32(base.Ui32(v57)>>(uint(v42)%32)))
-		if base.Ui32(v56) < base.Ui32(v72) {
-			v77 = v5
+		v29 = *(*int32)(unsafe.Add(mBase, uint32(v6)+4))
+		v30 = int32(16711935)
+		v32 = int32(8)
+		v34 = int32(24)
+		v38 = base.I32_rotr(v29&v30, v32) | base.I32_rotr(v29, v34)&v30
+		v39 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+		v48 = base.I32_rotr(v39&v30, v32) | base.I32_rotr(v39, v34)&v30
+		if base.Ui32(v38) < base.Ui32(v48) {
+			v53 = v5
 		} else {
-			v77 = base.B2i32(base.Ui32(v72) < base.Ui32(v56))
+			v53 = base.B2i32(base.Ui32(v48) < base.Ui32(v38))
 		}
 	}
-	return v77
+	return v53
 }

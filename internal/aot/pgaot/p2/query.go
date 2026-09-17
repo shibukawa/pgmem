@@ -18,10 +18,10 @@ func F_QueryRewrite(m *base.Module, l0 int32) int32 {
 	_ = v17
 	var v20 int32
 	_ = v20
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
 	var v32 int32
 	_ = v32
 	var v36 int32
@@ -38,8 +38,8 @@ func F_QueryRewrite(m *base.Module, l0 int32) int32 {
 	_ = v44
 	var v45 int32
 	_ = v45
-	var v50 int32
-	_ = v50
+	var v51 int32
+	_ = v51
 	var v58 int32
 	_ = v58
 	var v59 int32
@@ -52,10 +52,10 @@ func F_QueryRewrite(m *base.Module, l0 int32) int32 {
 	_ = v66
 	var v67 int32
 	_ = v67
+	var v69 int32
+	_ = v69
 	var v70 int32
 	_ = v70
-	var v71 int32
-	_ = v71
 	var v81 int32
 	_ = v81
 	var v82 int32
@@ -68,12 +68,12 @@ func F_QueryRewrite(m *base.Module, l0 int32) int32 {
 	_ = v92
 	var v94 int32
 	_ = v94
-	var v98 int32
-	_ = v98
+	var v97 int32
+	_ = v97
 	var v107 int32
 	_ = v107
-	var v122 int32
-	_ = v122
+	var v120 int32
+	_ = v120
 	v2 = int32(0)
 	v10 = *(*int64)(unsafe.Add(mBase, uint32(l0)+16))
 	v14 = F_RewriteQuery(m, l0, v2, v2, v2)
@@ -86,14 +86,14 @@ func F_QueryRewrite(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return v122
+	return v120
 L2:
 	;
 	return int32(0)
 L3:
 	;
 	if v14 == int32(0) {
-		v122 = v2
+		v120 = v2
 		goto L1
 	} else {
 		goto L4
@@ -108,17 +108,17 @@ L4:
 	}
 L5:
 	;
-	v25 = v2
-	v26 = v2
+	v24 = v2
+	v27 = v2
 	goto L8
 L6:
 	;
-	v50 = v2
+	v51 = v2
 	goto L7
 L7:
 	;
-	if v50 == int32(0) {
-		v122 = v2
+	if v51 == int32(0) {
+		v120 = v2
 		goto L1
 	} else {
 		goto L13
@@ -126,7 +126,7 @@ L7:
 L8:
 	;
 	v32 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32+v25<<(uint(int32(2))%32))))
+	v36 = *(*int32)(unsafe.Add(mBase, uint32(v32+v24<<(uint(int32(2))%32))))
 	v38 = F_fireRIRrules(m, v36, int32(0))
 	mBase = m.M
 	v39 = m.ExcPending
@@ -137,12 +137,12 @@ L8:
 	}
 L9:
 	;
-	v50 = v41
+	v51 = v41
 	goto L7
 L10:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v38)+16)) = v10
-	v41 = F_lappend(m, v26, v38)
+	v41 = F_lappend(m, v27, v38)
 	mBase = m.M
 	v42 = m.ExcPending
 	if v42 != 0 {
@@ -152,11 +152,11 @@ L10:
 	}
 L11:
 	;
-	v44 = v25 + int32(1)
+	v44 = v24 + int32(1)
 	v45 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
 	if v44 < v45 {
-		v25 = v44
-		v26 = v41
+		v24 = v44
+		v27 = v41
 		goto L8
 	} else {
 		goto L12
@@ -167,7 +167,7 @@ L12:
 L13:
 	;
 	v58 = int32(0)
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v51)+4))
 	if v58 < v59 {
 		goto L15
 	} else {
@@ -175,7 +175,7 @@ L13:
 	}
 L14:
 	;
-	v122 = v50
+	v120 = v51
 	goto L1
 L15:
 	;
@@ -188,11 +188,11 @@ L15:
 	}
 L16:
 	;
-	v98 = v58
+	v97 = v58
 	goto L17
 L17:
 	;
-	if v98 == int32(0) {
+	if v97 == int32(0) {
 		goto L14
 	} else {
 		goto L31
@@ -207,13 +207,13 @@ L19:
 	goto L20
 L20:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(v50)+12))
-	v70 = int32(0)
-	v71 = v58
+	v67 = *(*int32)(unsafe.Add(mBase, uint32(v51)+12))
+	v69 = int32(0)
+	v70 = v58
 	goto L21
 L21:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(v67+v70<<(uint(int32(2))%32))))
+	v81 = *(*int32)(unsafe.Add(mBase, uint32(v67+v69<<(uint(int32(2))%32))))
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(v81)+8))
 	if v82 == int32(0) {
 		goto L14
@@ -222,7 +222,7 @@ L21:
 	}
 L22:
 	;
-	v98 = v92
+	v97 = v92
 	goto L17
 L23:
 	;
@@ -238,7 +238,7 @@ L24:
 	goto L26
 L25:
 	;
-	v87 = v71
+	v87 = v70
 	goto L26
 L26:
 	;
@@ -253,14 +253,14 @@ L27:
 	goto L29
 L28:
 	;
-	v92 = v71
+	v92 = v70
 	goto L29
 L29:
 	;
-	v94 = v70 + int32(1)
+	v94 = v69 + int32(1)
 	if v94 != v66 {
-		v70 = v94
-		v71 = v92
+		v69 = v94
+		v70 = v92
 		goto L21
 	} else {
 		goto L30
@@ -271,7 +271,7 @@ L30:
 L31:
 	;
 	v107 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v98)+24)) = uint8(v107)
+	*(*uint8)(unsafe.Add(mBase, uint32(v97)+24)) = uint8(v107)
 	goto L14
 }
 func F_compareQueryOperand(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {

@@ -140,6 +140,21 @@ for rel, inc in [('contrib/pgcrypto/openssl.c', 'pgmem_pgcrypto_openssl.inc'),
 # that real PostgreSQL withholds until Sync (the client then sees two).
 # Move the decision after the recovery block, where PostgresMain has it.
 patch('pglite/src/pglitec/pglitec.c',
+'''#include <emscripten/emscripten.h>
+#else
+''',
+'''#include <emscripten/emscripten.h>
+#ifdef __PGMEM__
+/* Keep the pgmem ABI explicit; the full PGlite callback surface is
+ * internal to the statically linked backend. */
+#undef EMSCRIPTEN_KEEPALIVE
+#define EMSCRIPTEN_KEEPALIVE
+#endif
+#else
+''',
+'Keep the pgmem ABI explicit')
+
+patch('pglite/src/pglitec/pglitec.c',
 """        // reset this as it is expected
         if (!ignore_till_sync)
 		    send_ready_for_query = true;	/* initially, or after error */

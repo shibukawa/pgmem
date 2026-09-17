@@ -446,38 +446,38 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 	_ = v21
 	var v30 int32
 	_ = v30
+	var v31 int64
+	_ = v31
+	var v32 int64
+	_ = v32
 	var v33 int64
 	_ = v33
 	var v36 int64
 	_ = v36
 	var v37 int64
 	_ = v37
+	var v39 int64
+	_ = v39
 	var v40 int64
 	_ = v40
-	var v41 int64
-	_ = v41
 	var v43 int64
 	_ = v43
-	var v44 int64
-	_ = v44
-	var v47 int64
-	_ = v47
-	var v57 int32
-	_ = v57
+	var v53 int32
+	_ = v53
+	var v56 int32
+	_ = v56
 	var v60 int32
 	_ = v60
-	var v64 int32
-	_ = v64
+	var v65 int32
+	_ = v65
 	var v69 int32
 	_ = v69
-	var v73 int32
-	_ = v73
+	var v72 int32
+	_ = v72
 	var v76 int32
 	_ = v76
-	var v80 int32
-	_ = v80
-	var v85 int32
-	_ = v85
+	var v81 int32
+	_ = v81
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v10 = F_palloc(m, int32(16))
@@ -504,26 +504,26 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 					if base.Ui32(v20-int32(_a_F_timetz_recv_0)) <= base.Ui32(int32(-115200)) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v73 = m.ExcPending
-						if v73 != 0 {
+						v69 = m.ExcPending
+						if v69 != 0 {
 							return int32(0)
 						} else {
 							F_errcode(m, int32(150995074))
 							mBase = m.M
-							v76 = m.ExcPending
-							if v76 != 0 {
+							v72 = m.ExcPending
+							if v72 != 0 {
 								return int32(0)
 							} else {
 								F_errmsg(m, int32(_a_F_timetz_recv_1), int32(0))
 								mBase = m.M
-								v80 = m.ExcPending
-								if v80 != 0 {
+								v76 = m.ExcPending
+								if v76 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_timetz_recv_2), int32(2425), int32(_a_F_timetz_recv_3))
 									mBase = m.M
-									v85 = m.ExcPending
-									if v85 != 0 {
+									v81 = m.ExcPending
+									if v81 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -536,19 +536,19 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 					} else {
 						if base.Ui32(v7) <= base.Ui32(int32(6)) {
 							v30 = v7 << (uint(int32(3)) % 32)
-							v33 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_c_F_timetz_recv[0])))
-							v36 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_c_F_timetz_recv[1])))
-							v37 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
-							if int64(0) <= v37 {
-								v40 = v36 + v37
-								v41 = base.I64_rem_s(v40, v33)
-								v47 = v40 - v41
-							} else {
+							v31 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_c_F_timetz_recv[0])))
+							v32 = *(*int64)(unsafe.Add(mBase, uint32(v30)+uint32(_c_F_timetz_recv[1])))
+							v33 = *(*int64)(unsafe.Add(mBase, uint32(v10)))
+							if int64(0) <= v33 {
+								v36 = v32 + v33
+								v37 = base.I64_rem_s(v36, v31)
 								v43 = v36 - v37
-								v44 = base.I64_rem_s(v43, v33)
-								v47 = v44 - v43
+							} else {
+								v39 = v32 - v33
+								v40 = base.I64_rem_s(v39, v31)
+								v43 = v40 - v39
 							}
-							*(*int64)(unsafe.Add(mBase, uint32(v10))) = v47
+							*(*int64)(unsafe.Add(mBase, uint32(v10))) = v43
 						} else {
 						}
 						return v10
@@ -557,26 +557,26 @@ func F_timetz_recv(m *base.Module, l0 int32) int32 {
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v57 = m.ExcPending
-				if v57 != 0 {
+				v53 = m.ExcPending
+				if v53 != 0 {
 					return int32(0)
 				} else {
 					F_errcode(m, int32(134217858))
 					mBase = m.M
-					v60 = m.ExcPending
-					if v60 != 0 {
+					v56 = m.ExcPending
+					if v56 != 0 {
 						return int32(0)
 					} else {
 						F_errmsg(m, int32(_a_F_timetz_recv_4), int32(0))
 						mBase = m.M
-						v64 = m.ExcPending
-						if v64 != 0 {
+						v60 = m.ExcPending
+						if v60 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_timetz_recv_2), int32(2417), int32(_a_F_timetz_recv_3))
 							mBase = m.M
-							v69 = m.ExcPending
-							if v69 != 0 {
+							v65 = m.ExcPending
+							if v65 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -607,20 +607,20 @@ func F_timetz_scale(m *base.Module, l0 int32) int32 {
 	_ = v16
 	var v21 int32
 	_ = v21
-	var v24 int64
-	_ = v24
+	var v22 int64
+	_ = v22
+	var v23 int64
+	_ = v23
+	var v26 int64
+	_ = v26
 	var v27 int64
 	_ = v27
+	var v29 int64
+	_ = v29
 	var v30 int64
 	_ = v30
-	var v31 int64
-	_ = v31
 	var v33 int64
 	_ = v33
-	var v34 int64
-	_ = v34
-	var v37 int64
-	_ = v37
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v10 = F_palloc(m, int32(16))
@@ -635,18 +635,18 @@ func F_timetz_scale(m *base.Module, l0 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(v10)+8)) = v16
 		if base.Ui32(v7) <= base.Ui32(int32(6)) {
 			v21 = v7 << (uint(int32(3)) % 32)
-			v24 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_timetz_scale[0])))
-			v27 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_timetz_scale[1])))
+			v22 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_timetz_scale[0])))
+			v23 = *(*int64)(unsafe.Add(mBase, uint32(v21)+uint32(_c_F_timetz_scale[1])))
 			if int64(0) <= v14 {
-				v30 = v14 + v27
-				v31 = base.I64_rem_s(v30, v24)
-				v37 = v30 - v31
+				v26 = v14 + v23
+				v27 = base.I64_rem_s(v26, v22)
+				v33 = v26 - v27
 			} else {
-				v33 = v27 - v14
-				v34 = base.I64_rem_s(v33, v24)
-				v37 = v34 - v33
+				v29 = v23 - v14
+				v30 = base.I64_rem_s(v29, v22)
+				v33 = v30 - v29
 			}
-			*(*int64)(unsafe.Add(mBase, uint32(v10))) = v37
+			*(*int64)(unsafe.Add(mBase, uint32(v10))) = v33
 		} else {
 		}
 		return v10
@@ -673,8 +673,8 @@ func F_timetz_smaller(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v20 int64
 	_ = v20
-	var v25 int32
-	_ = v25
+	var v28 int32
+	_ = v28
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+8))
 	v10 = int64(1000000)
@@ -684,22 +684,10 @@ func F_timetz_smaller(m *base.Module, l0 int32) int32 {
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+8))
 	v19 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
 	v20 = base.I64_extend_i32_s(v15)*v10 + v19
-	if v20 < v13 {
-		v25 = v14
+	if base.B2i32(v20 < v13)|(base.B2i32(v15 < v8)|base.B2i32(v15 <= v8))&base.B2i32(v20 <= v13) != 0 {
+		v28 = v14
 	} else {
-		if v20 <= v13 {
-			if v15 < v8 {
-				v25 = v14
-			} else {
-				if v15 <= v8 {
-					v25 = v14
-				} else {
-					v25 = v7
-				}
-			}
-		} else {
-			v25 = v7
-		}
+		v28 = v7
 	}
-	return v25
+	return v28
 }

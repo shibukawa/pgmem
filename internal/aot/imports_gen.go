@@ -340,6 +340,12 @@ func (a *imports) X__syscall_getcwd(m *base.Module, l0 int32, l1 int32) int32 {
 	return int32(uint32(fn_env___syscall_getcwd.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
 }
 
+var fn_env___syscall_getegid32 = mustLookup("env", "__syscall_getegid32")
+
+func (a *imports) X__syscall_getegid32(m *base.Module) int32 {
+	return int32(uint32(fn_env___syscall_getegid32.Call(a.h, a.mem, []uint64{})))
+}
+
 var fn_wasi_snapshot_preview1_fd_fdstat_get = mustLookup("wasi_snapshot_preview1", "fd_fdstat_get")
 
 func (a *imports) Fd_fdstat_get(m *base.Module, l0 int32, l1 int32) int32 {
@@ -372,8 +378,8 @@ func (a *imports) X_tzset_js(m *base.Module, l0 int32, l1 int32, l2 int32, l3 in
 
 var fn_env__gmtime_js = mustLookup("env", "_gmtime_js")
 
-func (a *imports) X_gmtime_js(m *base.Module, l0 int64, l1 int32) {
-	fn_env__gmtime_js.Call(a.h, a.mem, []uint64{uint64(l0), uint64(uint32(l1))})
+func (a *imports) X_gmtime_js(m *base.Module, l0 int64, l1 int32) int32 {
+	return int32(uint32(fn_env__gmtime_js.Call(a.h, a.mem, []uint64{uint64(l0), uint64(uint32(l1))})))
 }
 
 var fn_env__mmap_js = mustLookup("env", "_mmap_js")
@@ -382,10 +388,10 @@ func (a *imports) X_mmap_js(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	return int32(uint32(fn_env__mmap_js.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3)), uint64(l4), uint64(uint32(l5)), uint64(uint32(l6))})))
 }
 
-var fn_env___syscall_pipe = mustLookup("env", "__syscall_pipe")
+var fn_env___syscall_pipe2 = mustLookup("env", "__syscall_pipe2")
 
-func (a *imports) X__syscall_pipe(m *base.Module, l0 int32) int32 {
-	return int32(uint32(fn_env___syscall_pipe.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
+func (a *imports) X__syscall_pipe2(m *base.Module, l0 int32, l1 int32) int32 {
+	return int32(uint32(fn_env___syscall_pipe2.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1))})))
 }
 
 var fn_env___syscall_fadvise64 = mustLookup("env", "__syscall_fadvise64")
@@ -448,10 +454,10 @@ func (a *imports) X__syscall_rmdir(m *base.Module, l0 int32) int32 {
 	return int32(uint32(fn_env___syscall_rmdir.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
 }
 
-var fn_env___syscall__newselect = mustLookup("env", "__syscall__newselect")
+var fn_env___syscall_poll = mustLookup("env", "__syscall_poll")
 
-func (a *imports) X__syscall__newselect(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) int32 {
-	return int32(uint32(fn_env___syscall__newselect.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2)), uint64(uint32(l3)), uint64(uint32(l4))})))
+func (a *imports) X__syscall_poll(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
+	return int32(uint32(fn_env___syscall_poll.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(uint32(l1)), uint64(uint32(l2))})))
 }
 
 var fn_env__setitimer_js = mustLookup("env", "_setitimer_js")
@@ -470,6 +476,12 @@ var fn_env___syscall_truncate64 = mustLookup("env", "__syscall_truncate64")
 
 func (a *imports) X__syscall_truncate64(m *base.Module, l0 int32, l1 int64) int32 {
 	return int32(uint32(fn_env___syscall_truncate64.Call(a.h, a.mem, []uint64{uint64(uint32(l0)), uint64(l1)})))
+}
+
+var fn_env___syscall_umask = mustLookup("env", "__syscall_umask")
+
+func (a *imports) X__syscall_umask(m *base.Module, l0 int32) int32 {
+	return int32(uint32(fn_env___syscall_umask.Call(a.h, a.mem, []uint64{uint64(uint32(l0))})))
 }
 
 var fn_env___syscall_unlinkat = mustLookup("env", "__syscall_unlinkat")

@@ -688,111 +688,17 @@ L23:
 	goto L1
 }
 func F_to_bin32(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v7 int32
-	_ = v7
+	var v5 int32
+	_ = v5
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v11 int64
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int64
-	_ = v15
-	var v20 int32
-	_ = v20
-	var v21 int32
-	_ = v21
-	var v27 int32
-	_ = v27
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
-	v7 = m.G0
-	v8 = int32(-64)
-	v9 = v7 + v8
-	m.G0 = v9
-	v11 = int64(*(*uint32)(unsafe.Add(mBase, uint32(l0)+20)))
-	v13 = v9 - v8
-	v14 = v13
-	v15 = v11
-	goto L1
-L1:
-	;
-	v20 = int32(1)
-	v21 = v14 - v20
-	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(base.I32_wrap_i64(v15)&v20)+uint32(_c_F_to_bin32[0]))))
-	*(*uint8)(unsafe.Add(mBase, uint32(v21))) = uint8(v27)
-	if base.Ui64(v15) < base.Ui64(int64(2)) {
-		goto L3
+	v5 = Fn14003(m, l0, int64(1), int64(2), int32(1))
+	v8 = m.ExcPending
+	if v8 != 0 {
+		return int32(0)
 	} else {
-		goto L4
+		return v5
 	}
-L2:
-	;
-	v35 = v13 - v21
-	v37 = v35 + int32(4)
-	v38 = F_palloc(m, v37)
-	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
-		goto L6
-	} else {
-		goto L7
-	}
-L3:
-	;
-	goto L2
-L4:
-	;
-	if base.Ui32(v9) < base.Ui32(v21) {
-		v14 = v21
-		v15 = int64(base.Ui64(v15) >> (uint(int64(1)) % 64))
-		goto L1
-	} else {
-		goto L5
-	}
-L5:
-	;
-	goto L3
-L6:
-	;
-	return int32(0)
-L7:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v38))) = v37 << (uint(int32(2)) % 32)
-	if v35 != 0 {
-		goto L9
-	} else {
-		goto L10
-	}
-L8:
-	;
-	m.G0 = v9 - int32(-64)
-	return v38
-L9:
-	;
-	v47 = F__emscripten_memcpy_bulkmem(m, v38+int32(4), v21, v35)
-	mBase = m.M
-	goto L11
-L10:
-	;
-	goto L11
-L11:
-	;
-	goto L8
 }
 func F_to_date(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -1272,215 +1178,41 @@ func F_to_date(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_to_regoper(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v20 int64
-	_ = v20
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v33 int32
-	_ = v33
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum_packed(m, v9)
-	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn14005(m, l0, int32(1479))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		v14 = F_text_to_cstring(m, v10)
-		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
-			return int32(0)
-		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _c_F_to_regoper[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regoper[1]))
-			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1498), v14, int32(-1), v7, v7+int32(12))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				if v26 == int32(0) {
-					v30 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-					v33 = int32(0)
-				} else {
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
-					v33 = v32
-				}
-				m.G0 = v7 + int32(16)
-				return v33
-			}
-		}
+		return v3
 	}
 }
 func F_to_regoperator(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v20 int64
-	_ = v20
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v33 int32
-	_ = v33
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum_packed(m, v9)
-	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn14005(m, l0, int32(1480))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		v14 = F_text_to_cstring(m, v10)
-		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
-			return int32(0)
-		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _c_F_to_regoperator[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regoperator[1]))
-			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1499), v14, int32(-1), v7, v7+int32(12))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				if v26 == int32(0) {
-					v30 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-					v33 = int32(0)
-				} else {
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
-					v33 = v32
-				}
-				m.G0 = v7 + int32(16)
-				return v33
-			}
-		}
+		return v3
 	}
 }
 func F_to_regrole(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v20 int64
-	_ = v20
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v32 int32
-	_ = v32
-	var v33 int32
-	_ = v33
-	v5 = m.G0
-	v7 = v5 - int32(16)
-	m.G0 = v7
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v10 = F_pg_detoast_datum_packed(m, v9)
-	mBase = m.M
-	v13 = m.ExcPending
-	if v13 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn14005(m, l0, int32(1483))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		v14 = F_text_to_cstring(m, v10)
-		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
-			return int32(0)
-		} else {
-			v17 = *(*int32)(unsafe.Add(mBase, _c_F_to_regrole[0]))
-			*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v17
-			v20 = *(*int64)(unsafe.Add(mBase, _c_F_to_regrole[1]))
-			*(*int64)(unsafe.Add(mBase, uint32(v7))) = v20
-			v26 = F_DirectInputFunctionCallSafe(m, int32(1502), v14, int32(-1), v7, v7+int32(12))
-			mBase = m.M
-			v27 = m.ExcPending
-			if v27 != 0 {
-				return int32(0)
-			} else {
-				if v26 == int32(0) {
-					v30 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v30)
-					v33 = int32(0)
-				} else {
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
-					v33 = v32
-				}
-				m.G0 = v7 + int32(16)
-				return v33
-			}
-		}
+		return v3
 	}
 }

@@ -183,8 +183,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 	_ = v69
 	var v71 int64
 	_ = v71
-	var v75 int32
-	_ = v75
+	var v73 int32
+	_ = v73
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v5 != v6 {
@@ -283,8 +283,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 							*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 							v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 							*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-							v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-							*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+							v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 							*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 							return
 						} else {
@@ -302,8 +302,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 										v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-										*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+										v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 										return
 									} else {
@@ -318,8 +318,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 											*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 											v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 											*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-											v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-											*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+											v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+											*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 											*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 											return
 										}
@@ -333,8 +333,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 									v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-									*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+									v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 									return
 								} else {
@@ -349,8 +349,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 										v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-										*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+										v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 										return
 									}
@@ -377,8 +377,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 						*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 						v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 						*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-						v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-						*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+						v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 						*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 						return
 					} else {
@@ -396,8 +396,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 									v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-									*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+									v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 									return
 								} else {
@@ -412,8 +412,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 										v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 										*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-										v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-										*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+										v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+										*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 										*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 										return
 									}
@@ -427,8 +427,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 								*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 								v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 								*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-								v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-								*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+								v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 								*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 								return
 							} else {
@@ -443,8 +443,8 @@ func F_tts_buffer_heap_copyslot(m *base.Module, l0 int32, l1 int32) {
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+48)) = v69
 									v71 = *(*int64)(unsafe.Add(mBase, uint32(v68)+8))
 									*(*int64)(unsafe.Add(mBase, uint32(l0)+56)) = v71
-									v75 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
-									*(*int32)(unsafe.Add(mBase, uint32(l0-int32(-64)))) = v75
+									v73 = *(*int32)(unsafe.Add(mBase, uint32(v68)+16))
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+64)) = v73
 									*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = l0 + int32(48)
 									return
 								}

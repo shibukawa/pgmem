@@ -8,14 +8,14 @@ import (
 func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v19 int32
-	_ = v19
-	var v20 int32
-	_ = v20
+	var v5 int32
+	_ = v5
+	var v11 int32
+	_ = v11
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
 	var v22 int64
 	_ = v22
 	var v38 int32
@@ -74,55 +74,57 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	_ = v90
 	var v94 int32
 	_ = v94
-	var v101 int32
-	_ = v101
-	var v102 int32
-	_ = v102
-	var v106 int32
-	_ = v106
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
 	var v109 int32
 	_ = v109
-	var v111 int32
-	_ = v111
-	var v114 int32
-	_ = v114
+	var v112 int32
+	_ = v112
+	var v116 int32
+	_ = v116
+	var v121 int32
+	_ = v121
 	var v123 int32
 	_ = v123
-	var v125 int32
-	_ = v125
+	var v124 int32
+	_ = v124
 	var v128 int32
 	_ = v128
+	var v130 int32
+	_ = v130
 	var v132 int32
 	_ = v132
 	var v134 int32
 	_ = v134
-	var v136 int32
-	_ = v136
-	var v138 int32
-	_ = v138
-	var v146 int32
-	_ = v146
-	var v147 int32
-	_ = v147
-	var v152 int32
-	_ = v152
-	var v157 int32
-	_ = v157
-	v10 = m.G0
-	v12 = v10 - int32(224)
-	m.G0 = v12
-	v19 = F__emscripten_memset_bulkmem(m, v12+int32(96), base.I32_extend8_s(int32(0)), int32(100))
-	mBase = m.M
-	v20 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v12)+88)) = uint8(v20)
+	var v142 int32
+	_ = v142
+	var v143 int32
+	_ = v143
+	var v148 int32
+	_ = v148
+	var v153 int32
+	_ = v153
+	v5 = int32(0)
+	v11 = m.G0
+	v13 = v11 - int32(224)
+	m.G0 = v13
+	v16 = v13 + int32(96)
+	base.MemoryFill(m, v16, v5, int32(100))
+	*(*uint8)(unsafe.Add(mBase, uint32(v13)+88)) = uint8(v5)
 	v22 = int64(0)
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+80)) = v22
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+72)) = v22
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+64)) = v22
-	*(*uint8)(unsafe.Add(mBase, uint32(v12)+56)) = uint8(v20)
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+48)) = v22
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+40)) = v22
-	*(*int64)(unsafe.Add(mBase, uint32(v12)+32)) = v22
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+80)) = v22
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+72)) = v22
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+64)) = v22
+	*(*uint8)(unsafe.Add(mBase, uint32(v13)+56)) = uint8(v5)
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+48)) = v22
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+40)) = v22
+	*(*int64)(unsafe.Add(mBase, uint32(v13)+32)) = v22
 	v38 = F_table_open(m, int32(2604), int32(3))
 	mBase = m.M
 	v41 = m.ExcPending
@@ -141,19 +143,19 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 			if v47 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, uint32(v12)+208)) = v46
+				*(*int32)(unsafe.Add(mBase, uint32(v13)+208)) = v46
 				v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-				*(*int32)(unsafe.Add(mBase, uint32(v12)+216)) = l1
-				*(*int32)(unsafe.Add(mBase, uint32(v12)+212)) = v49
+				*(*int32)(unsafe.Add(mBase, uint32(v13)+216)) = l1
+				*(*int32)(unsafe.Add(mBase, uint32(v13)+212)) = v49
 				v52 = F_cstring_to_text(m, v42)
 				mBase = m.M
 				v53 = m.ExcPending
 				if v53 != 0 {
 					return int32(0)
 				} else {
-					*(*int32)(unsafe.Add(mBase, uint32(v12)+220)) = v52
+					*(*int32)(unsafe.Add(mBase, uint32(v13)+220)) = v52
 					v55 = *(*int32)(unsafe.Add(mBase, uint32(v38)+52))
-					v59 = F_heap_form_tuple(m, v55, v12+int32(208), int32(_a_F_StoreAttrDefault_0))
+					v59 = F_heap_form_tuple(m, v55, v13+int32(208), int32(_a_F_StoreAttrDefault_0))
 					mBase = m.M
 					v60 = m.ExcPending
 					if v60 != 0 {
@@ -165,16 +167,16 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 						if v62 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = int32(0)
-							*(*int32)(unsafe.Add(mBase, uint32(v12)+12)) = v46
-							*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = int32(2604)
-							F_sequence_close(m, v38, int32(3))
+							*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = int32(0)
+							*(*int32)(unsafe.Add(mBase, uint32(v13)+12)) = v46
+							*(*int32)(unsafe.Add(mBase, uint32(v13)+8)) = int32(2604)
+							F_relation_close(m, v38, int32(3))
 							mBase = m.M
 							v70 = m.ExcPending
 							if v70 != 0 {
 								return int32(0)
 							} else {
-								v71 = *(*int32)(unsafe.Add(mBase, uint32(v12)+220))
+								v71 = *(*int32)(unsafe.Add(mBase, uint32(v13)+220))
 								F_pfree(m, v71)
 								mBase = m.M
 								v73 = m.ExcPending
@@ -211,69 +213,70 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 														v87 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86)+22)))
 														v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v86+v87)+90)))
 														v90 = int32(1)
-														*(*uint8)(unsafe.Add(mBase, uint32(v12)+44)) = uint8(v90)
-														*(*int32)(unsafe.Add(mBase, uint32(v12)+144)) = v90
+														*(*uint8)(unsafe.Add(mBase, uint32(v13)+44)) = uint8(v90)
+														*(*int32)(unsafe.Add(mBase, uint32(v13)+144)) = v90
 														v94 = *(*int32)(unsafe.Add(mBase, uint32(v80)+52))
-														v101 = F_heap_modify_tuple(m, v84, v94, v12+int32(96), v12-int32(-64), v12+int32(32))
+														v99 = F_heap_modify_tuple(m, v84, v94, v16, v13-int32(-64), v13+int32(32))
 														mBase = m.M
-														v102 = m.ExcPending
-														if v102 != 0 {
+														v100 = m.ExcPending
+														if v100 != 0 {
 															return int32(0)
 														} else {
-															F_CatalogTupleUpdate(m, v80, v101+int32(4), v101)
+															F_CatalogTupleUpdate(m, v80, v99+int32(4), v99)
 															mBase = m.M
-															v106 = m.ExcPending
-															if v106 != 0 {
+															v104 = m.ExcPending
+															if v104 != 0 {
 																return int32(0)
 															} else {
-																F_sequence_close(m, v80, int32(3))
+																F_relation_close(m, v80, int32(3))
 																mBase = m.M
-																v109 = m.ExcPending
-																if v109 != 0 {
+																v107 = m.ExcPending
+																if v107 != 0 {
 																	return int32(0)
 																} else {
-																	F_pfree(m, v101)
+																	F_pfree(m, v99)
 																	mBase = m.M
-																	v111 = m.ExcPending
-																	if v111 != 0 {
+																	v109 = m.ExcPending
+																	if v109 != 0 {
 																		return int32(0)
 																	} else {
-																		*(*int32)(unsafe.Add(mBase, uint32(v12)+20)) = int32(1259)
-																		v114 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-																		*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l1
-																		*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v114
+																		*(*int32)(unsafe.Add(mBase, uint32(v13)+20)) = int32(1259)
+																		v112 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+																		*(*int32)(unsafe.Add(mBase, uint32(v13)+28)) = l1
+																		*(*int32)(unsafe.Add(mBase, uint32(v13)+24)) = v112
+																		v116 = v13 + int32(8)
 																		if v89 != 0 {
-																			v123 = int32(105)
+																			v121 = int32(105)
 																		} else {
-																			v123 = int32(97)
+																			v121 = int32(97)
 																		}
-																		F_recordDependencyOn(m, v12+int32(8), v12+int32(20), v123)
+																		F_recordDependencyOn(m, v116, v13+int32(20), v121)
 																		mBase = m.M
-																		v125 = m.ExcPending
-																		if v125 != 0 {
+																		v123 = m.ExcPending
+																		if v123 != 0 {
 																			return int32(0)
 																		} else {
-																			v128 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-																			F_recordDependencyOnSingleRelExpr(m, v12+int32(8), l2, v128, int32(110), int32(0))
+																			v124 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+																			F_recordDependencyOnSingleRelExpr(m, v116, l2, v124, int32(110), int32(0))
 																			mBase = m.M
-																			v132 = m.ExcPending
-																			if v132 != 0 {
+																			v128 = m.ExcPending
+																			if v128 != 0 {
 																				return int32(0)
 																			} else {
-																				v134 = *(*int32)(unsafe.Add(mBase, _c_F_StoreAttrDefault[0]))
-																				if v134 != 0 {
-																					v136 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-																					F_RunObjectPostCreateHook(m, int32(2604), v136, l1, l3)
+																				v130 = *(*int32)(unsafe.Add(mBase, _c_F_StoreAttrDefault[0]))
+																				if v130 != 0 {
+																					v132 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+																					F_RunObjectPostCreateHook(m, int32(2604), v132, l1, l3)
 																					mBase = m.M
-																					v138 = m.ExcPending
-																					if v138 != 0 {
+																					v134 = m.ExcPending
+																					if v134 != 0 {
 																						return int32(0)
 																					} else {
-																						m.G0 = v12 + int32(224)
+																						m.G0 = v13 + int32(224)
 																						return v46
 																					}
 																				} else {
-																					m.G0 = v12 + int32(224)
+																					m.G0 = v13 + int32(224)
 																					return v46
 																				}
 																			}
@@ -285,23 +288,23 @@ func F_StoreAttrDefault(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 													} else {
 														F_errstart_cold(m, int32(21), int32(0))
 														mBase = m.M
-														v146 = m.ExcPending
-														if v146 != 0 {
+														v142 = m.ExcPending
+														if v142 != 0 {
 															return int32(0)
 														} else {
-															v147 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-															*(*int32)(unsafe.Add(mBase, uint32(v12)+4)) = v147
-															*(*int32)(unsafe.Add(mBase, uint32(v12))) = l1
-															F_errmsg_internal(m, int32(_a_F_StoreAttrDefault_1), v12)
+															v143 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+															*(*int32)(unsafe.Add(mBase, uint32(v13)+4)) = v143
+															*(*int32)(unsafe.Add(mBase, uint32(v13))) = l1
+															F_errmsg_internal(m, int32(_a_F_StoreAttrDefault_1), v13)
 															mBase = m.M
-															v152 = m.ExcPending
-															if v152 != 0 {
+															v148 = m.ExcPending
+															if v148 != 0 {
 																return int32(0)
 															} else {
 																F_errfinish(m, int32(_a_F_StoreAttrDefault_2), int32(95), int32(_a_F_StoreAttrDefault_3))
 																mBase = m.M
-																v157 = m.ExcPending
-																if v157 != 0 {
+																v153 = m.ExcPending
+																if v153 != 0 {
 																	return int32(0)
 																} else {
 																	base.Wasm_trap_unreachable()

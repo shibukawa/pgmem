@@ -24,21 +24,21 @@ func F_ExecGetResultSlotOps(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v20
 	var v23 int32
 	_ = v23
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
-	var v37 int32
-	_ = v37
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
 	var v39 int32
 	_ = v39
+	var v42 int32
+	_ = v42
 	v4 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+103)))
 	if v4 == int32(1) {
 		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+92))
 		if v7 != 0 {
 			if l1 == int32(0) {
-				v39 = v7
-				return v39
+				v42 = v7
+				return v42
 			} else {
 				v10 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+99)))
 				*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v10)
@@ -49,16 +49,16 @@ func F_ExecGetResultSlotOps(m *base.Module, l0 int32, l1 int32) int32 {
 			if l1 == int32(0) {
 			} else {
 				v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+99)))
-				v29 = v16
-				*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v29)
+				v30 = v16
+				*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v30)
 			}
-			v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-			if v32 == int32(0) {
+			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+			if v34 == int32(0) {
 				return int32(_a_F_ExecGetResultSlotOps_0)
 			} else {
-				v37 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
-				v39 = v37
-				return v39
+				v39 = *(*int32)(unsafe.Add(mBase, uint32(v34)+8))
+				v42 = v39
+				return v42
 			}
 		}
 	} else {
@@ -67,20 +67,20 @@ func F_ExecGetResultSlotOps(m *base.Module, l0 int32, l1 int32) int32 {
 			v19 = int32(0)
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
 			if v20 == v19 {
-				v29 = v19
+				v30 = v19
 			} else {
 				v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20)+4)))
-				v29 = int32(base.Ui32(v23)>>(uint(int32(4))%32)) & int32(1)
+				v30 = int32(base.Ui32(v23)>>(uint(int32(4))%32)) & int32(1)
 			}
-			*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v29)
+			*(*uint8)(unsafe.Add(mBase, uint32(l1))) = uint8(v30)
 		}
-		v32 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-		if v32 == int32(0) {
+		v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
+		if v34 == int32(0) {
 			return int32(_a_F_ExecGetResultSlotOps_0)
 		} else {
-			v37 = *(*int32)(unsafe.Add(mBase, uint32(v32)+8))
-			v39 = v37
-			return v39
+			v39 = *(*int32)(unsafe.Add(mBase, uint32(v34)+8))
+			v42 = v39
+			return v42
 		}
 	}
 }
@@ -113,23 +113,8 @@ func F_get_call_result_type(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	}
 }
 func F_wait_result_is_any_signal(m *base.Module, l0 int32) int32 {
-	var v3 int32
-	_ = v3
-	var v21 int32
-	_ = v21
-	v3 = int32(1)
-	if base.Ui32(l0&int32(_a_F_wait_result_is_any_signal_0)-v3) < base.Ui32(int32(255)) {
-		v21 = v3
-	} else {
-		if l0&int32(127) == int32(0) {
-			if base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(l0)>>(uint(int32(8))%32))&int32(255)) {
-				v21 = v3
-			} else {
-				v21 = int32(0)
-			}
-		} else {
-			v21 = int32(0)
-		}
-	}
-	return v21
+	var v10 int32
+	_ = v10
+	v10 = int32(255)
+	return base.B2i32(l0&int32(127) == int32(0))&base.B2i32(base.Ui32(int32(125)) < base.Ui32(int32(base.Ui32(l0)>>(uint(int32(8))%32))&v10)) | base.B2i32(base.Ui32(l0&int32(_a_F_wait_result_is_any_signal_0)-int32(1)) < base.Ui32(v10))
 }

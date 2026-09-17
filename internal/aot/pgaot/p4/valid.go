@@ -1153,40 +1153,40 @@ func F_read_valid_char(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v67
 	var v69 int32
 	_ = v69
-	var v75 int32
-	_ = v75
-	var v78 int32
-	_ = v78
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
+	var v82 int32
+	_ = v82
+	var v99 int32
+	_ = v99
 	var v101 int32
 	_ = v101
+	var v102 int32
+	_ = v102
 	var v103 int32
 	_ = v103
-	var v104 int32
-	_ = v104
 	var v105 int32
 	_ = v105
-	var v107 int32
-	_ = v107
-	var v118 int32
-	_ = v118
-	var v122 int32
-	_ = v122
-	var v131 int32
-	_ = v131
-	var v134 int32
-	_ = v134
-	var v150 int32
-	_ = v150
+	var v116 int32
+	_ = v116
+	var v123 int32
+	_ = v123
+	var v130 int32
+	_ = v130
+	var v133 int32
+	_ = v133
+	var v149 int32
+	_ = v149
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v13 = v7
 	goto L2
 L1:
 	;
-	return base.I32_extend8_s(v150)
+	return base.I32_extend8_s(v149)
 L2:
 	;
 	v14 = l0 + v13
@@ -1199,29 +1199,29 @@ L2:
 	}
 L3:
 	;
-	v150 = int32(92)
+	v149 = int32(92)
 	goto L1
 L4:
 	;
 	goto L3
 L5:
 	;
-	if v131&int32(255) == int32(0) {
-		goto L42
+	if v130&int32(255) == int32(0) {
+		goto L41
 	} else {
-		goto L43
+		goto L42
 	}
 L6:
 	;
-	v79 = int32(*(*int8)(unsafe.Add(mBase, uint32(v14))))
-	if int32(0) <= v79 {
+	v77 = int32(*(*int8)(unsafe.Add(mBase, uint32(v14))))
+	if int32(0) <= v77 {
 		goto L20
 	} else {
 		goto L21
 	}
 L7:
 	;
-	v75 = v17
+	v74 = v17
 	goto L9
 L8:
 	;
@@ -1232,8 +1232,8 @@ L8:
 	}
 L9:
 	;
-	if v75 != 0 {
-		v78 = v75
+	if v74 != 0 {
+		v76 = v74
 		goto L6
 	} else {
 		goto L18
@@ -1241,7 +1241,7 @@ L9:
 L10:
 	;
 	v69 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v66+v14))))
-	v75 = v67 | v69&int32(63)
+	v74 = v67 | v69&int32(63)
 	goto L9
 L11:
 	;
@@ -1270,7 +1270,7 @@ L15:
 L16:
 	;
 	if v17&int32(248) != int32(240) {
-		v78 = int32(-1)
+		v76 = int32(-1)
 		goto L6
 	} else {
 		goto L17
@@ -1285,117 +1285,117 @@ L17:
 	goto L10
 L18:
 	;
-	v131 = int32(0)
-	v134 = v13
+	v130 = int32(0)
+	v133 = v13
 	goto L5
 L19:
 	;
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v105 = v103 + v104
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v105
-	v107 = int32(26)
-	if base.Ui32(v78-int32(91)) < base.Ui32(int32(3)) {
-		v131 = v107
-		v134 = v105
+	v102 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v103 = v101 + v102
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v103
+	v105 = int32(26)
+	if base.Ui32(v76-int32(91)) < base.Ui32(int32(3)) {
+		v130 = v105
+		v133 = v103
 		goto L5
 	} else {
 		goto L32
 	}
 L20:
 	;
-	v103 = int32(1)
+	v101 = int32(1)
 	goto L19
 L21:
 	;
 	goto L22
 L22:
 	;
-	v84 = v79 & int32(255)
-	if v84&int32(224) == int32(192) {
+	v82 = v77 & int32(255)
+	if v82&int32(224) == int32(192) {
 		goto L23
 	} else {
 		goto L24
 	}
 L23:
 	;
-	v103 = int32(2)
+	v101 = int32(2)
 	goto L19
 L24:
 	;
 	goto L25
 L25:
 	;
-	if v84&int32(240) == int32(224) {
+	if v82&int32(240) == int32(224) {
 		goto L26
 	} else {
 		goto L27
 	}
 L26:
 	;
-	v103 = int32(3)
+	v101 = int32(3)
 	goto L19
 L27:
 	;
 	goto L28
 L28:
 	;
-	if v84&int32(248) == int32(240) {
+	if v82&int32(248) == int32(240) {
 		goto L29
 	} else {
 		goto L30
 	}
 L29:
 	;
-	v101 = int32(4)
+	v99 = int32(4)
 	goto L31
 L30:
 	;
-	v101 = int32(1)
+	v99 = int32(1)
 	goto L31
 L31:
 	;
-	v103 = v101
+	v101 = v99
 	goto L19
 L32:
 	;
-	if base.Ui32(v78) <= base.Ui32(int32(95)) {
+	if base.Ui32(v76) <= base.Ui32(int32(95)) {
 		goto L33
 	} else {
 		goto L34
 	}
 L33:
 	;
-	v131 = v78
-	v134 = v105
+	v130 = v76
+	v133 = v103
 	goto L5
 L34:
 	;
 	goto L35
 L35:
 	;
-	if base.Ui32(v78) <= base.Ui32(int32(255)) {
+	if base.Ui32(v76) <= base.Ui32(int32(255)) {
 		goto L36
 	} else {
 		goto L37
 	}
 L36:
 	;
-	v118 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v78)+uint32(_c_F_read_valid_char[0]))))
-	v131 = v118
-	v134 = v105
+	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v76)+uint32(_c_F_read_valid_char[0]))))
+	v130 = v116
+	v133 = v103
 	goto L5
 L37:
 	;
 	goto L38
 L38:
 	;
-	switch v78 - int32(260) {
+	switch v76 - int32(260) {
 	case 0, 1:
-		v150 = int32(91)
+		v149 = int32(91)
 		goto L1
 	case 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19:
-		v131 = v107
-		v134 = v105
+		v130 = v105
+		v133 = v103
 		goto L5
 	case 20, 21:
 		goto L4
@@ -1404,42 +1404,34 @@ L38:
 	}
 L39:
 	;
-	v122 = int32(93)
-	if base.Ui32(v78-int32(354)) < base.Ui32(int32(2)) {
-		v150 = v122
+	v123 = int32(2)
+	if base.B2i32(base.Ui32(v76-int32(354)) < base.Ui32(v123))|base.B2i32(base.Ui32(v76-int32(538)) < base.Ui32(v123)) != 0 {
+		v149 = int32(93)
 		goto L1
 	} else {
 		goto L40
 	}
 L40:
 	;
-	if base.Ui32(v78-int32(538)) < base.Ui32(int32(2)) {
-		v150 = v122
-		goto L1
-	} else {
-		goto L41
-	}
+	v130 = v105
+	v133 = v103
+	goto L5
 L41:
 	;
-	v131 = v107
-	v134 = v105
-	goto L5
+	return base.I32_extend8_s(v130)
 L42:
 	;
-	return base.I32_extend8_s(v131)
+	goto L43
 L43:
 	;
-	goto L44
-L44:
-	;
-	if base.Ui32(int32(28)) < base.Ui32((v131-int32(65))&int32(255)) {
-		v13 = v134
+	if base.Ui32(int32(28)) < base.Ui32((v130-int32(65))&int32(255)) {
+		v13 = v133
 		goto L2
 	} else {
-		goto L45
+		goto L44
 	}
-L45:
+L44:
 	;
-	v150 = v131
+	v149 = v130
 	goto L1
 }

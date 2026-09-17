@@ -50,8 +50,8 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v81
 	var v82 int32
 	_ = v82
-	var v84 int32
-	_ = v84
+	var v85 int32
+	_ = v85
 	v3 = int32(0)
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	switch v6 - int32(1) {
@@ -61,26 +61,26 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 		*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(884)
 		return int32(1)
 	default:
-		v84 = v3
-		return v84
+		v85 = v3
+		return v85
 	case 19:
 		v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)+12))
 		v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+4))
 		if v36 == int32(0) {
-			v84 = v3
-			return v84
+			v85 = v3
+			return v85
 		} else {
 			v39 = *(*int32)(unsafe.Add(mBase, uint32(v36)))
 			if v39 != int32(35) {
 				if v39 != int32(7) {
-					v84 = v3
-					return v84
+					v85 = v3
+					return v85
 				} else {
 					v44 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36)+24)))
 					if v44 != 0 {
-						v84 = v3
-						return v84
+						v85 = v3
+						return v85
 					} else {
 						v45 = *(*int32)(unsafe.Add(mBase, uint32(v36)+20))
 						v46 = F_pg_detoast_datum(m, v45)
@@ -90,15 +90,15 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 							return int32(0)
 						} else {
 							v50 = *(*int32)(unsafe.Add(mBase, uint32(v46)+4))
-							v53 = F_ArrayGetNItems(m, v50, v46+int32(16))
+							v53 = F_ArrayGetNItemsSafe(m, v50, v46+int32(16))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return int32(0)
 							} else {
 								if int32(100) < v53 {
-									v84 = v3
-									return v84
+									v85 = v3
+									return v85
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(886)
 									*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(887)
@@ -118,13 +118,13 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 			} else {
 				v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36)+20)))
 				if v68 != 0 {
-					v84 = v3
+					v85 = v3
 				} else {
 					v69 = *(*int32)(unsafe.Add(mBase, uint32(v36)+16))
 					if v69 != 0 {
 						v70 = *(*int32)(unsafe.Add(mBase, uint32(v69)+4))
 						if int32(100) < v70 {
-							v84 = v3
+							v85 = v3
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(889)
 							*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = int32(890)
@@ -135,7 +135,7 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 							} else {
 								v82 = int32(1)
 							}
-							v84 = v82
+							v85 = v82
 						}
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(l1)+16)) = int32(889)
@@ -147,10 +147,10 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 						} else {
 							v82 = int32(1)
 						}
-						v84 = v82
+						v85 = v82
 					}
 				}
-				return v84
+				return v85
 			}
 		}
 	case 20:
@@ -167,8 +167,8 @@ func F_predicate_classify(m *base.Module, l0 int32, l1 int32) int32 {
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = int32(885)
 			return int32(2)
 		default:
-			v84 = v3
-			return v84
+			v85 = v3
+			return v85
 		}
 	}
 }

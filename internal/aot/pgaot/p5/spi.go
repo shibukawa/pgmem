@@ -474,22 +474,22 @@ func F_SPI_keepplan(m *base.Module, l0 int32) {
 	_ = v28
 	var v35 int32
 	_ = v35
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v63 int32
-	_ = v63
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v62 int32
+	_ = v62
+	var v64 int32
+	_ = v64
 	var v65 int32
 	_ = v65
-	var v66 int32
-	_ = v66
 	if l0 == int32(0) {
 		goto L1
 	} else {
@@ -536,8 +536,8 @@ L5:
 	}
 L6:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	if v48 == int32(0) {
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	if v47 == int32(0) {
 		goto L1
 	} else {
 		goto L23
@@ -626,24 +626,24 @@ L22:
 	goto L6
 L23:
 	;
-	v51 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-	if v51 <= int32(0) {
+	v50 = *(*int32)(unsafe.Add(mBase, uint32(v47)+4))
+	if v50 <= int32(0) {
 		goto L1
 	} else {
 		goto L24
 	}
 L24:
 	;
-	v55 = int32(0)
+	v54 = int32(0)
 	goto L25
 L25:
 	;
-	v57 = *(*int32)(unsafe.Add(mBase, uint32(v48)+12))
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v57+v55<<(uint(int32(2))%32))))
-	F_SaveCachedPlan(m, v61)
+	v56 = *(*int32)(unsafe.Add(mBase, uint32(v47)+12))
+	v60 = *(*int32)(unsafe.Add(mBase, uint32(v56+v54<<(uint(int32(2))%32))))
+	F_SaveCachedPlan(m, v60)
 	mBase = m.M
-	v63 = m.ExcPending
-	if v63 != 0 {
+	v62 = m.ExcPending
+	if v62 != 0 {
 		goto L27
 	} else {
 		goto L28
@@ -656,10 +656,10 @@ L27:
 	return
 L28:
 	;
-	v65 = v55 + int32(1)
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
-	if v65 < v66 {
-		v55 = v65
+	v64 = v54 + int32(1)
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(v47)+4))
+	if v64 < v65 {
+		v54 = v64
 		goto L25
 	} else {
 		goto L29

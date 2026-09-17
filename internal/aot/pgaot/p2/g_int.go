@@ -116,14 +116,14 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 	_ = v110
 	var v111 int32
 	_ = v111
-	var v125 int32
-	_ = v125
-	var v128 int32
-	_ = v128
-	var v134 int32
-	_ = v134
-	var v141 int32
-	_ = v141
+	var v124 int32
+	_ = v124
+	var v127 int32
+	_ = v127
+	var v131 int32
+	_ = v131
+	var v136 int32
+	_ = v136
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -175,26 +175,26 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 					if v40 != 0 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v125 = m.ExcPending
-						if v125 != 0 {
+						v124 = m.ExcPending
+						if v124 != 0 {
 							return int32(0)
 						} else {
 							F_errcode(m, int32(67108994))
 							mBase = m.M
-							v128 = m.ExcPending
-							if v128 != 0 {
+							v127 = m.ExcPending
+							if v127 != 0 {
 								return int32(0)
 							} else {
 								F_errmsg(m, int32(_a_F_g_int_consistent_1), int32(0))
 								mBase = m.M
-								v134 = m.ExcPending
-								if v134 != 0 {
+								v131 = m.ExcPending
+								if v131 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_g_int_consistent_2), int32(71), int32(_a_F_g_int_consistent_3))
 									mBase = m.M
-									v141 = m.ExcPending
-									if v141 != 0 {
+									v136 = m.ExcPending
+									if v136 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -206,7 +206,7 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 						}
 					} else {
 						v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-						v45 = F_ArrayGetNItems(m, v42, v13+int32(16))
+						v45 = F_ArrayGetNItemsSafe(m, v42, v13+int32(16))
 						mBase = m.M
 						v46 = m.ExcPending
 						if v46 != 0 {
@@ -378,7 +378,7 @@ func F_g_int_consistent(m *base.Module, l0 int32) int32 {
 				}
 			} else {
 				v42 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-				v45 = F_ArrayGetNItems(m, v42, v13+int32(16))
+				v45 = F_ArrayGetNItemsSafe(m, v42, v13+int32(16))
 				mBase = m.M
 				v46 = m.ExcPending
 				if v46 != 0 {

@@ -137,22 +137,20 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v27
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
-	var v46 int32
-	_ = v46
-	var v47 int32
-	_ = v47
+	var v40 int32
+	_ = v40
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
-	var v54 int32
-	_ = v54
-	var v56 int32
-	_ = v56
-	var v58 int32
-	_ = v58
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
 	v1 = l0
 	v4 = int32(0)
 	v5 = m.G0
@@ -170,57 +168,56 @@ func F_socket_putmessage(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 			return int32(0)
 		} else {
 			if v21 != 0 {
-				v54 = int32(-1)
-				v56 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v56)
-				v58 = v54
+				v48 = int32(-1)
+				v50 = int32(0)
+				*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v50)
+				v52 = v48
 				m.G0 = v7 + int32(16)
-				return v58
+				return v52
 			} else {
 				v25 = int32(4)
 				v26 = l2 + v25
-				v27 = int32(24)
-				v29 = int32(_a_F_socket_putmessage_0)
-				v31 = int32(8)
-				*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = v26<<(uint(v27)%32) | v26&v29<<(uint(v31)%32) | (int32(base.Ui32(v26)>>(uint(v31)%32))&v29 | int32(base.Ui32(v26)>>(uint(v27)%32)))
-				v46 = F_internal_putbytes(m, v7+v31, v25)
+				v27 = int32(16711935)
+				v29 = int32(8)
+				*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = base.I32_rotr(v26&v27, v29) | base.I32_rotr(v26, int32(24))&v27
+				v40 = F_internal_putbytes(m, v7+v29, v25)
 				mBase = m.M
-				v47 = m.ExcPending
-				if v47 != 0 {
+				v41 = m.ExcPending
+				if v41 != 0 {
 					return int32(0)
 				} else {
-					if v46 != 0 {
-						v54 = int32(-1)
-						v56 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v56)
-						v58 = v54
+					if v40 != 0 {
+						v48 = int32(-1)
+						v50 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v50)
+						v52 = v48
 						m.G0 = v7 + int32(16)
-						return v58
+						return v52
 					} else {
-						v48 = F_internal_putbytes(m, l1, l2)
+						v42 = F_internal_putbytes(m, l1, l2)
 						mBase = m.M
-						v49 = m.ExcPending
-						if v49 != 0 {
+						v43 = m.ExcPending
+						if v43 != 0 {
 							return int32(0)
 						} else {
-							if v48 != 0 {
-								v54 = int32(-1)
+							if v42 != 0 {
+								v48 = int32(-1)
 							} else {
-								v54 = int32(0)
+								v48 = int32(0)
 							}
-							v56 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v56)
-							v58 = v54
+							v50 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, _c_F_socket_putmessage[0])) = uint8(v50)
+							v52 = v48
 							m.G0 = v7 + int32(16)
-							return v58
+							return v52
 						}
 					}
 				}
 			}
 		}
 	} else {
-		v58 = v4
+		v52 = v4
 		m.G0 = v7 + int32(16)
-		return v58
+		return v52
 	}
 }

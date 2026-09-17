@@ -28,20 +28,18 @@ func F_bit_send(m *base.Module, l0 int32) int32 {
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v23 int32
-	_ = v23
 	var v25 int32
 	_ = v25
-	var v27 int32
-	_ = v27
+	var v29 int32
+	_ = v29
+	var v38 int32
+	_ = v38
 	var v44 int32
 	_ = v44
-	var v50 int32
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -67,23 +65,22 @@ func F_bit_send(m *base.Module, l0 int32) int32 {
 			} else {
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 				v21 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-				v23 = int32(24)
-				v25 = int32(_a_F_bit_send_0)
-				v27 = int32(8)
-				*(*int32)(unsafe.Add(mBase, uint32(v20+v21))) = v16<<(uint(v23)%32) | v16&v25<<(uint(v27)%32) | (int32(base.Ui32(v16)>>(uint(v27)%32))&v25 | int32(base.Ui32(v16)>>(uint(v23)%32)))
+				v25 = int32(16711935)
+				v29 = int32(8)
+				*(*int32)(unsafe.Add(mBase, uint32(v20+v21))) = base.I32_rotr(v16, int32(24))&v25 | base.I32_rotr(v16&v25, v29)
 				*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v20 + int32(4)
-				v44 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
-				F_pq_sendbytes(m, v7, v10+v27, int32(base.Ui32(v44)>>(uint(int32(2))%32))-v27)
+				v38 = *(*int32)(unsafe.Add(mBase, uint32(v10)))
+				F_appendBinaryStringInfo(m, v7, v10+v29, int32(base.Ui32(v38)>>(uint(int32(2))%32))-v29)
 				mBase = m.M
-				v50 = m.ExcPending
-				if v50 != 0 {
+				v44 = m.ExcPending
+				if v44 != 0 {
 					return int32(0)
 				} else {
-					v52 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
-					v53 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-					*(*int32)(unsafe.Add(mBase, uint32(v52))) = v53 << (uint(int32(2)) % 32)
+					v46 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+					v47 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
+					*(*int32)(unsafe.Add(mBase, uint32(v46))) = v47 << (uint(int32(2)) % 32)
 					m.G0 = v7 + int32(16)
-					return v52
+					return v46
 				}
 			}
 		}

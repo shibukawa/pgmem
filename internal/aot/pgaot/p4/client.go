@@ -54,12 +54,12 @@ func F_InitializeClientEncoding(m *base.Module) {
 	_ = v54
 	var v57 int32
 	_ = v57
-	var v62 int32
-	_ = v62
-	var v66 int32
-	_ = v66
-	var v71 int32
-	_ = v71
+	var v60 int32
+	_ = v60
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
 	v3 = m.G0
 	v5 = v3 - int32(16)
 	m.G0 = v5
@@ -89,18 +89,18 @@ func F_InitializeClientEncoding(m *base.Module) {
 					v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 					*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v54
 					v57 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeClientEncoding[1]))
-					v62 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_c_F_InitializeClientEncoding[3])))
-					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v62
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_c_F_InitializeClientEncoding[3])))
+					*(*int32)(unsafe.Add(mBase, uint32(v5))) = v60
 					F_errmsg(m, int32(_a_F_InitializeClientEncoding_0), v5)
 					mBase = m.M
-					v66 = m.ExcPending
-					if v66 != 0 {
+					v64 = m.ExcPending
+					if v64 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_InitializeClientEncoding_1), int32(308), int32(_a_F_InitializeClientEncoding_2))
 						mBase = m.M
-						v71 = m.ExcPending
-						if v71 != 0 {
+						v69 = m.ExcPending
+						if v69 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()
@@ -135,18 +135,18 @@ func F_InitializeClientEncoding(m *base.Module) {
 							v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)))
 							*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = v54
 							v57 = *(*int32)(unsafe.Add(mBase, _c_F_InitializeClientEncoding[1]))
-							v62 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_c_F_InitializeClientEncoding[3])))
-							*(*int32)(unsafe.Add(mBase, uint32(v5))) = v62
+							v60 = *(*int32)(unsafe.Add(mBase, uint32(v57<<(uint(int32(3))%32))+uint32(_c_F_InitializeClientEncoding[3])))
+							*(*int32)(unsafe.Add(mBase, uint32(v5))) = v60
 							F_errmsg(m, int32(_a_F_InitializeClientEncoding_0), v5)
 							mBase = m.M
-							v66 = m.ExcPending
-							if v66 != 0 {
+							v64 = m.ExcPending
+							if v64 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_InitializeClientEncoding_1), int32(308), int32(_a_F_InitializeClientEncoding_2))
 								mBase = m.M
-								v71 = m.ExcPending
-								if v71 != 0 {
+								v69 = m.ExcPending
+								if v69 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -278,24 +278,24 @@ func F_ProcessClientWriteInterrupt(m *base.Module, l0 int32) {
 func F_SetClientEncoding(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v21 int32
-	_ = v21
+	var v2 int32
+	_ = v2
+	var v12 int32
+	_ = v12
 	var v22 int32
 	_ = v22
-	var v32 int32
-	_ = v32
-	var v41 int32
-	_ = v41
+	var v23 int32
+	_ = v23
+	var v33 int32
+	_ = v33
+	var v42 int32
+	_ = v42
 	var v50 int32
 	_ = v50
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
+	var v54 int32
+	_ = v54
 	var v56 int32
 	_ = v56
 	var v58 int32
@@ -328,22 +328,22 @@ func F_SetClientEncoding(m *base.Module, l0 int32) int32 {
 	_ = v96
 	var v102 int32
 	_ = v102
-	var v106 int32
-	_ = v106
+	var v112 int32
+	_ = v112
+	v2 = int32(0)
 	if base.Ui32(int32(41)) < base.Ui32(l0) {
-		v106 = int32(-1)
+		v112 = int32(-1)
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	return v106
+	return v112
 L2:
 	;
-	v11 = int32(0)
-	v13 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetClientEncoding[0])))
-	if v13 == v11 {
+	v12 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SetClientEncoding[0])))
+	if v12 == int32(0) {
 		goto L3
 	} else {
 		goto L4
@@ -351,8 +351,7 @@ L2:
 L3:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[1])) = l0
-	v106 = v11
-	goto L1
+	return int32(0)
 L4:
 	;
 	goto L5
@@ -365,9 +364,9 @@ L5:
 	}
 L6:
 	;
-	v41 = *(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[2]))
-	if v41 == int32(0) {
-		v106 = int32(-1)
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[2]))
+	if v42 == int32(0) {
+		v112 = int32(-1)
 		goto L1
 	} else {
 		goto L11
@@ -375,22 +374,22 @@ L6:
 L7:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[3])) = l0<<(uint(int32(3))%32) + int32(_a_F_SetClientEncoding_0)
-	v32 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[4])) = v32
-	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[5])) = v32
-	return v32
+	v33 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[4])) = v33
+	*(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[5])) = v33
+	return v33
 L8:
 	;
-	v21 = *(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[6]))
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(v21)+4))
-	if v22 == l0 {
+	v22 = *(*int32)(unsafe.Add(mBase, _c_F_SetClientEncoding[6]))
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+4))
+	if v23 == l0 {
 		goto L7
 	} else {
 		goto L9
 	}
 L9:
 	;
-	if v22 != 0 {
+	if v23 != 0 {
 		goto L6
 	} else {
 		goto L10
@@ -400,9 +399,9 @@ L10:
 	goto L7
 L11:
 	;
-	v50 = int32(0)
-	v51 = v41
-	v53 = int32(0)
+	v50 = v2
+	v51 = v42
+	v54 = v2
 	goto L12
 L12:
 	;
@@ -414,23 +413,24 @@ L12:
 	}
 L13:
 	;
-	return v102 - int32(1)
+	v112 = v102 - int32(1)
+	goto L1
 L14:
 	;
 	v58 = *(*int32)(unsafe.Add(mBase, uint32(v51)+12))
 	v62 = *(*int32)(unsafe.Add(mBase, uint32(v58+v50<<(uint(int32(2))%32))))
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)))
-	if v63 != v22 {
+	if v63 != v23 {
 		v94 = v50
 		v95 = v51
-		v96 = v53
+		v96 = v54
 		goto L17
 	} else {
 		goto L18
 	}
 L15:
 	;
-	v102 = v53
+	v102 = v54
 	goto L16
 L16:
 	;
@@ -440,7 +440,7 @@ L17:
 	if v95 != 0 {
 		v50 = v94 + int32(1)
 		v51 = v95
-		v53 = v96
+		v54 = v96
 		goto L12
 	} else {
 		goto L27
@@ -451,14 +451,14 @@ L18:
 	if v65 != l0 {
 		v94 = v50
 		v95 = v51
-		v96 = v53
+		v96 = v54
 		goto L17
 	} else {
 		goto L19
 	}
 L19:
 	;
-	if v53 == int32(0) {
+	if v54 == int32(0) {
 		goto L21
 	} else {
 		goto L22
@@ -549,10 +549,8 @@ func F_check_client_encoding(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v53
 	var v57 int32
 	_ = v57
-	var v59 int32
-	_ = v59
-	var v60 int32
-	_ = v60
+	var v58 int32
+	_ = v58
 	var v61 int32
 	_ = v61
 	var v65 int32
@@ -585,98 +583,98 @@ func F_check_client_encoding(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 	_ = v100
 	var v108 int32
 	_ = v108
+	var v115 int32
+	_ = v115
+	var v117 int32
+	_ = v117
 	var v119 int32
 	_ = v119
-	var v120 int32
-	_ = v120
-	var v122 int32
-	_ = v122
-	var v126 int32
-	_ = v126
-	var v132 int32
-	_ = v132
-	var v138 int32
-	_ = v138
-	var v141 int32
-	_ = v141
-	var v143 int32
-	_ = v143
+	var v123 int32
+	_ = v123
+	var v131 int32
+	_ = v131
+	var v137 int32
+	_ = v137
+	var v140 int32
+	_ = v140
 	var v144 int32
 	_ = v144
-	var v148 int32
-	_ = v148
+	var v145 int32
+	_ = v145
 	var v149 int32
 	_ = v149
-	var v156 int32
-	_ = v156
-	var v160 int32
-	_ = v160
+	var v150 int32
+	_ = v150
+	var v157 int32
+	_ = v157
 	var v161 int32
 	_ = v161
-	var v165 int32
-	_ = v165
+	var v162 int32
+	_ = v162
 	var v166 int32
 	_ = v166
-	var v168 int32
-	_ = v168
-	var v173 int32
-	_ = v173
+	var v167 int32
+	_ = v167
+	var v169 int32
+	_ = v169
 	var v174 int32
 	_ = v174
 	var v175 int32
 	_ = v175
-	var v179 int32
-	_ = v179
-	var v182 int32
-	_ = v182
+	var v176 int32
+	_ = v176
+	var v180 int32
+	_ = v180
 	var v183 int32
 	_ = v183
-	var v187 int32
-	_ = v187
-	var v188 int32
-	_ = v188
-	var v191 int32
-	_ = v191
-	var v192 int32
-	_ = v192
-	var v195 int32
-	_ = v195
-	var v202 int32
-	_ = v202
-	var v203 int32
-	_ = v203
-	var v207 int32
-	_ = v207
-	var v210 int32
-	_ = v210
-	var v211 int32
-	_ = v211
+	var v186 int32
+	_ = v186
+	var v189 int32
+	_ = v189
+	var v190 int32
+	_ = v190
+	var v193 int32
+	_ = v193
+	var v194 int32
+	_ = v194
+	var v197 int32
+	_ = v197
+	var v204 int32
+	_ = v204
+	var v205 int32
+	_ = v205
+	var v209 int32
+	_ = v209
+	var v212 int32
+	_ = v212
 	var v215 int32
 	_ = v215
-	var v216 int32
-	_ = v216
+	var v218 int32
+	_ = v218
 	var v219 int32
 	_ = v219
-	var v220 int32
-	_ = v220
+	var v222 int32
+	_ = v222
 	var v223 int32
 	_ = v223
-	var v230 int32
-	_ = v230
-	var v231 int32
-	_ = v231
-	var v236 int32
-	_ = v236
-	var v238 int32
-	_ = v238
+	var v226 int32
+	_ = v226
+	var v233 int32
+	_ = v233
+	var v234 int32
+	_ = v234
 	var v239 int32
 	_ = v239
-	var v244 int32
-	_ = v244
-	var v245 int32
-	_ = v245
-	var v253 int32
-	_ = v253
+	var v241 int32
+	_ = v241
+	var v242 int32
+	_ = v242
+	var v247 int32
+	_ = v247
+	var v248 int32
+	_ = v248
+	var v256 int32
+	_ = v256
 	v4 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(16)
@@ -695,7 +693,7 @@ func F_check_client_encoding(m *base.Module, l0 int32, l1 int32, l2 int32) int32
 L1:
 	;
 	m.G0 = v9 + int32(16)
-	return v253
+	return v256
 L2:
 	;
 	if base.Ui32(int32(42)) <= base.Ui32(v100) {
@@ -762,11 +760,10 @@ L10:
 	goto L11
 L11:
 	;
-	v59 = v34 + int32(1)
-	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59))))
-	if v60 != 0 {
-		v34 = v59
-		v35 = v60
+	v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+1)))
+	if v58 != 0 {
+		v34 = v34 + int32(1)
+		v35 = v58
 		v36 = v57
 		goto L7
 	} else {
@@ -873,7 +870,7 @@ L29:
 L30:
 	;
 	if v108 < int32(0) {
-		v253 = v4
+		v256 = v4
 		goto L1
 	} else {
 		goto L31
@@ -887,104 +884,108 @@ L31:
 	}
 L32:
 	;
-	v122 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[0]))
-	if int32(0) <= v122 {
-		goto L37
+	v119 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[0]))
+	if v119 < int32(0) {
+		goto L36
 	} else {
-		goto L38
+		goto L37
 	}
 L33:
 	;
-	v119 = *(*int32)(unsafe.Add(mBase, uint32(v108<<(uint(int32(3))%32))+uint32(_c_F_check_client_encoding[1])))
-	v120 = v119
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(v108<<(uint(int32(3))%32))+uint32(_c_F_check_client_encoding[1])))
+	v117 = v115
 	goto L35
 L34:
 	;
-	v120 = int32(_a_F_check_client_encoding_2)
+	v117 = int32(_a_F_check_client_encoding_2)
 	goto L35
 L35:
 	;
 	goto L32
 L36:
 	;
-	v179 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v182 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120))))
-	v183 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v179))))
-	if v183 == int32(0) {
-		v202 = v182
-		v203 = v183
-		goto L60
-	} else {
-		goto L61
-	}
-L37:
-	;
-	v126 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_client_encoding[2])))
-	if v126 != 0 {
-		goto L36
-	} else {
-		goto L40
-	}
-L38:
-	;
-	goto L39
-L39:
-	;
-	v143 = F_PrepareClientEncoding(m, v108)
-	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
-		goto L43
-	} else {
-		goto L45
-	}
-L40:
-	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[3])) = int32(322)
-	goto L41
-L41:
-	;
-	v132 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v132
-	goto L42
-L42:
-	;
-	v138 = F_format_elog_string(m, int32(_a_F_check_client_encoding_3), int32(0))
-	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	if int32(0) <= v119 {
 		goto L43
 	} else {
 		goto L44
 	}
-L43:
+L37:
+	;
+	v123 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_client_encoding[2])))
+	if v123&int32(1) != 0 {
+		goto L36
+	} else {
+		goto L38
+	}
+L38:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[3])) = int32(322)
+	goto L39
+L39:
+	;
+	v131 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v131
+	goto L40
+L40:
+	;
+	v137 = F_format_elog_string(m, int32(_a_F_check_client_encoding_3), int32(0))
+	mBase = m.M
+	v140 = m.ExcPending
+	if v140 != 0 {
+		goto L41
+	} else {
+		goto L42
+	}
+L41:
 	;
 	return int32(0)
+L42:
+	;
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[6])) = v137
+	v256 = int32(0)
+	goto L1
+L43:
+	;
+	v180 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v183 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v180))))
+	v186 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117))))
+	if base.B2i32(v183 == int32(0))|base.B2i32(v183 != v186) != 0 {
+		v204 = v183
+		v205 = v186
+		goto L60
+	} else {
+		goto L61
+	}
 L44:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[6])) = v138
-	v253 = int32(0)
-	goto L1
+	v144 = F_PrepareClientEncoding(m, v108)
+	mBase = m.M
+	v145 = m.ExcPending
+	if v145 != 0 {
+		goto L41
+	} else {
+		goto L45
+	}
 L45:
 	;
-	if int32(0) <= v143 {
-		goto L36
+	if int32(0) <= v144 {
+		goto L43
 	} else {
 		goto L46
 	}
 L46:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[7]))
-	v149 = *(*int32)(unsafe.Add(mBase, uint32(v148)+20))
+	v149 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[7]))
+	v150 = *(*int32)(unsafe.Add(mBase, uint32(v149)+20))
 	goto L48
 L47:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[6])) = v175
-	v253 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[6])) = v176
+	v256 = int32(0)
 	goto L1
 L48:
 	;
-	if v149 == int32(2) {
+	if v150 == int32(2) {
 		goto L49
 	} else {
 		goto L50
@@ -998,227 +999,209 @@ L50:
 	goto L51
 L51:
 	;
-	v168 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v168
+	v169 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v169
 	goto L56
 L52:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v156
+	v157 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[5])) = v157
 	goto L53
 L53:
 	;
-	v160 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[8]))
-	v161 = *(*int32)(unsafe.Add(mBase, uint32(v160)))
+	v161 = *(*int32)(unsafe.Add(mBase, _c_F_check_client_encoding[8]))
+	v162 = *(*int32)(unsafe.Add(mBase, uint32(v161)))
 	goto L54
 L54:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v161
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v120
-	v165 = F_format_elog_string(m, int32(_a_F_check_client_encoding_4), v9)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = v162
+	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v117
+	v166 = F_format_elog_string(m, int32(_a_F_check_client_encoding_4), v9)
 	mBase = m.M
-	v166 = m.ExcPending
-	if v166 != 0 {
-		goto L43
+	v167 = m.ExcPending
+	if v167 != 0 {
+		goto L41
 	} else {
 		goto L55
 	}
 L55:
 	;
-	v175 = v165
+	v176 = v166
 	goto L47
 L56:
 	;
-	v173 = F_format_elog_string(m, int32(_a_F_check_client_encoding_5), int32(0))
+	v174 = F_format_elog_string(m, int32(_a_F_check_client_encoding_5), int32(0))
 	mBase = m.M
-	v174 = m.ExcPending
-	if v174 != 0 {
-		goto L43
+	v175 = m.ExcPending
+	if v175 != 0 {
+		goto L41
 	} else {
 		goto L57
 	}
 L57:
 	;
-	v175 = v173
+	v176 = v174
 	goto L47
 L58:
 	;
-	v244 = F_guc_malloc(m, int32(4))
+	v247 = F_guc_malloc(m, int32(4))
 	mBase = m.M
-	v245 = m.ExcPending
-	if v245 != 0 {
-		goto L43
+	v248 = m.ExcPending
+	if v248 != 0 {
+		goto L41
 	} else {
-		goto L80
+		goto L78
 	}
 L59:
 	;
-	if v203-v202 == int32(0) {
+	if v204-v205 == int32(0) {
 		goto L58
 	} else {
-		goto L67
+		goto L66
 	}
 L60:
 	;
 	goto L59
 L61:
 	;
-	if v182 != v183 {
-		v202 = v182
-		v203 = v183
-		goto L60
-	} else {
-		goto L62
-	}
+	v189 = v180
+	v190 = v117
+	goto L62
 L62:
 	;
-	v187 = v179
-	v188 = v120
-	goto L63
+	v193 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v190)+1)))
+	v194 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v189)+1)))
+	if v194 == int32(0) {
+		v204 = v194
+		v205 = v193
+		goto L60
+	} else {
+		goto L64
+	}
 L63:
 	;
-	v191 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v188)+1)))
-	v192 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v187)+1)))
-	if v192 == int32(0) {
-		v202 = v191
-		v203 = v192
-		goto L60
+	v204 = v194
+	v205 = v193
+	goto L60
+L64:
+	;
+	v197 = int32(1)
+	if v194 == v193 {
+		v189 = v189 + v197
+		v190 = v190 + v197
+		goto L62
 	} else {
 		goto L65
 	}
-L64:
-	;
-	v202 = v191
-	v203 = v192
-	goto L60
 L65:
 	;
-	v195 = int32(1)
-	if v191 == v192 {
-		v187 = v187 + v195
-		v188 = v188 + v195
-		goto L63
-	} else {
-		goto L66
-	}
+	goto L63
 L66:
 	;
-	goto L64
+	v209 = int32(_a_F_check_client_encoding_6)
+	v212 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v180))))
+	v215 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_client_encoding[9])))
+	if base.B2i32(v212 == int32(0))|base.B2i32(v212 != v215) != 0 {
+		v233 = v212
+		v234 = v215
+		goto L68
+	} else {
+		goto L69
+	}
 L67:
 	;
-	v207 = int32(_a_F_check_client_encoding_6)
-	v210 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_check_client_encoding[9])))
-	v211 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v179))))
-	if v211 == int32(0) {
-		v230 = v210
-		v231 = v211
-		goto L69
-	} else {
-		goto L70
-	}
-L68:
-	;
-	if v231-v230 == int32(0) {
+	if v233-v234 == int32(0) {
 		goto L58
-	} else {
-		goto L76
-	}
-L69:
-	;
-	goto L68
-L70:
-	;
-	if v210 != v211 {
-		v230 = v210
-		v231 = v211
-		goto L69
-	} else {
-		goto L71
-	}
-L71:
-	;
-	v215 = v179
-	v216 = v207
-	goto L72
-L72:
-	;
-	v219 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v216)+1)))
-	v220 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v215)+1)))
-	if v220 == int32(0) {
-		v230 = v219
-		v231 = v220
-		goto L69
 	} else {
 		goto L74
 	}
+L68:
+	;
+	goto L67
+L69:
+	;
+	v218 = v180
+	v219 = v209
+	goto L70
+L70:
+	;
+	v222 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v219)+1)))
+	v223 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v218)+1)))
+	if v223 == int32(0) {
+		v233 = v223
+		v234 = v222
+		goto L68
+	} else {
+		goto L72
+	}
+L71:
+	;
+	v233 = v223
+	v234 = v222
+	goto L68
+L72:
+	;
+	v226 = int32(1)
+	if v223 == v222 {
+		v218 = v218 + v226
+		v219 = v219 + v226
+		goto L70
+	} else {
+		goto L73
+	}
 L73:
 	;
-	v230 = v219
-	v231 = v220
-	goto L69
+	goto L71
 L74:
 	;
-	v223 = int32(1)
-	if v219 == v220 {
-		v215 = v215 + v223
-		v216 = v216 + v223
-		goto L72
+	F_bms_free(m, v180)
+	mBase = m.M
+	v239 = m.ExcPending
+	if v239 != 0 {
+		goto L41
 	} else {
 		goto L75
 	}
 L75:
 	;
-	goto L73
+	v241 = F_guc_strdup(m, int32(15), v117)
+	mBase = m.M
+	v242 = m.ExcPending
+	if v242 != 0 {
+		goto L41
+	} else {
+		goto L76
+	}
 L76:
 	;
-	F_bms_free(m, v179)
-	mBase = m.M
-	v236 = m.ExcPending
-	if v236 != 0 {
-		goto L43
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v241
+	if v241 != 0 {
+		goto L58
 	} else {
 		goto L77
 	}
 L77:
 	;
-	v238 = F_guc_strdup(m, int32(15), v120)
-	mBase = m.M
-	v239 = m.ExcPending
-	if v239 != 0 {
-		goto L43
-	} else {
-		goto L78
-	}
+	v256 = int32(0)
+	goto L1
 L78:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v238
-	if v238 != 0 {
-		goto L58
-	} else {
+	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v247
+	if v247 == int32(0) {
 		goto L79
+	} else {
+		goto L80
 	}
 L79:
 	;
-	v253 = int32(0)
+	v256 = int32(0)
 	goto L1
 L80:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l1))) = v244
-	if v244 == int32(0) {
-		goto L81
-	} else {
-		goto L82
-	}
+	goto L81
 L81:
 	;
-	v253 = int32(0)
-	goto L1
-L82:
-	;
-	goto L83
-L83:
-	;
-	*(*int32)(unsafe.Add(mBase, uint32(v244))) = v108
-	v253 = int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v247))) = v108
+	v256 = int32(1)
 	goto L1
 }

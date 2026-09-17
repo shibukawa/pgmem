@@ -67,12 +67,10 @@ func F_makeItemLikeRegex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v29
 	var v35 int32
 	_ = v35
-	var v36 int32
-	_ = v36
 	var v39 int32
 	_ = v39
-	var v46 int32
-	_ = v46
+	var v47 int32
+	_ = v47
 	var v49 int32
 	_ = v49
 	var v51 int32
@@ -109,8 +107,8 @@ func F_makeItemLikeRegex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v97
 	var v98 int32
 	_ = v98
-	var v107 int32
-	_ = v107
+	var v108 int32
+	_ = v108
 	var v113 int32
 	_ = v113
 	var v131 int32
@@ -145,8 +143,8 @@ func F_makeItemLikeRegex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v171
 	var v172 int32
 	_ = v172
-	var v175 int32
-	_ = v175
+	var v174 int32
+	_ = v174
 	var v176 int32
 	_ = v176
 	var v177 int32
@@ -157,14 +155,14 @@ func F_makeItemLikeRegex(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v179
 	var v184 int32
 	_ = v184
-	var v190 int32
-	_ = v190
-	var v195 int32
-	_ = v195
-	var v199 int32
-	_ = v199
-	var v207 int32
-	_ = v207
+	var v188 int32
+	_ = v188
+	var v193 int32
+	_ = v193
+	var v197 int32
+	_ = v197
+	var v205 int32
+	_ = v205
 	v6 = int32(0)
 	v10 = m.G0
 	v12 = v10 - int32(192)
@@ -222,7 +220,7 @@ L6:
 L7:
 	;
 	m.G0 = v12 + int32(192)
-	return v207
+	return v205
 L8:
 	;
 	v159 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
@@ -232,7 +230,7 @@ L8:
 	if v165 != 0 {
 		goto L1
 	} else {
-		goto L46
+		goto L45
 	}
 L9:
 	;
@@ -243,73 +241,69 @@ L10:
 	goto L11
 L11:
 	;
-	v35 = int32(0)
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
-	if v36 <= v35 {
-		goto L13
+	v35 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
+	if int32(0) < v35 {
+		goto L12
 	} else {
-		goto L14
+		goto L13
 	}
 L12:
 	;
-	if v107&int32(1) != 0 {
-		goto L32
-	} else {
-		goto L33
-	}
+	v39 = int32(0)
+	v47 = v6
+	goto L15
 L13:
 	;
-	v107 = v6
-	goto L12
+	v108 = v6
+	goto L14
 L14:
 	;
-	goto L15
+	if v108&int32(1) != 0 {
+		goto L31
+	} else {
+		goto L32
+	}
 L15:
-	;
-	v39 = v35
-	v46 = v6
-	goto L16
-L16:
 	;
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	v51 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49+v39))))
 	switch v51 - int32(105) {
 	case 0:
 		v93 = int32(1)
-		goto L18
+		goto L17
 	default:
-		goto L20
-	case 4:
-		goto L23
-	case 8:
-		goto L21
-	case 10:
 		goto L19
-	case 15:
+	case 4:
 		goto L22
+	case 8:
+		goto L20
+	case 10:
+		goto L18
+	case 15:
+		goto L21
 	}
+L16:
+	;
+	v108 = v94
+	goto L14
 L17:
 	;
-	v107 = v94
-	goto L12
-L18:
-	;
-	v94 = v93 | v46
+	v94 = v93 | v47
 	*(*int32)(unsafe.Add(mBase, uint32(v15)+20)) = v94
 	v97 = v39 + int32(1)
 	v98 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
 	if v97 < v98 {
 		v39 = v97
-		v46 = v94
-		goto L16
+		v47 = v94
+		goto L15
 	} else {
-		goto L31
+		goto L30
 	}
-L19:
+L18:
 	;
 	v93 = int32(2)
-	goto L18
-L20:
+	goto L17
+L19:
 	;
 	v57 = int32(0)
 	v58 = F_errsave_start(m, l4)
@@ -318,29 +312,29 @@ L20:
 	if v59 != 0 {
 		goto L1
 	} else {
-		goto L24
+		goto L23
 	}
-L21:
+L20:
 	;
 	v93 = int32(16)
-	goto L18
-L22:
+	goto L17
+L21:
 	;
 	v93 = int32(8)
-	goto L18
-L23:
+	goto L17
+L22:
 	;
 	v93 = int32(4)
-	goto L18
-L24:
+	goto L17
+L23:
 	;
 	if v58 == int32(0) {
-		v207 = v57
+		v205 = v57
 		goto L7
 	} else {
-		goto L25
+		goto L24
 	}
-L25:
+L24:
 	;
 	F_errcode(m, int32(16801924))
 	mBase = m.M
@@ -348,9 +342,9 @@ L25:
 	if v64 != 0 {
 		goto L1
 	} else {
-		goto L26
+		goto L25
 	}
-L26:
+L25:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(_a_F_makeItemLikeRegex_0)
 	F_errmsg(m, int32(_a_F_makeItemLikeRegex_1), v12+int32(32))
@@ -359,9 +353,9 @@ L26:
 	if v71 != 0 {
 		goto L1
 	} else {
-		goto L27
+		goto L26
 	}
-L27:
+L26:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	v74 = *(*int32)(unsafe.Add(mBase, uint32(l2)+4))
@@ -371,9 +365,9 @@ L27:
 	if v77 != 0 {
 		goto L1
 	} else {
-		goto L28
+		goto L27
 	}
-L28:
+L27:
 	;
 	v78 = *(*int32)(unsafe.Add(mBase, uint32(l2)))
 	*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = v76
@@ -384,9 +378,9 @@ L28:
 	if v86 != 0 {
 		goto L1
 	} else {
-		goto L29
+		goto L28
 	}
-L29:
+L28:
 	;
 	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(603), int32(_a_F_makeItemLikeRegex_4))
 	mBase = m.M
@@ -394,52 +388,52 @@ L29:
 	if v91 != 0 {
 		goto L1
 	} else {
-		goto L30
+		goto L29
 	}
+L29:
+	;
+	v205 = v57
+	goto L7
 L30:
 	;
-	v207 = v57
-	goto L7
+	goto L16
 L31:
 	;
-	goto L17
+	v113 = int32(11)
+	goto L33
 L32:
 	;
-	v113 = int32(11)
-	goto L34
+	v113 = int32(3)
+	goto L33
 L33:
 	;
-	v113 = int32(3)
-	goto L34
-L34:
-	;
-	if v107&int32(16) != 0 {
-		goto L35
+	if v108&int32(16) != 0 {
+		goto L34
 	} else {
-		goto L36
+		goto L35
 	}
-L35:
+L34:
 	;
 	v153 = v113&int32(8) | int32(4)
 	goto L8
+L35:
+	;
+	goto L36
 L36:
 	;
-	goto L37
+	if v108&int32(8) == int32(0) {
+		goto L37
+	} else {
+		goto L38
+	}
 L37:
 	;
-	if v107&int32(8) == int32(0) {
-		goto L38
-	} else {
-		goto L39
-	}
+	v153 = v113 | v108<<(uint(int32(5))%32)&int32(192) ^ int32(64)
+	goto L8
 L38:
 	;
-	v153 = v113 | v107<<(uint(int32(5))%32)&int32(192) ^ int32(64)
-	goto L8
+	goto L39
 L39:
-	;
-	goto L40
-L40:
 	;
 	v131 = int32(0)
 	v132 = F_errsave_start(m, l4)
@@ -448,17 +442,17 @@ L40:
 	if v133 != 0 {
 		goto L1
 	} else {
+		goto L40
+	}
+L40:
+	;
+	if v132 == int32(0) {
+		v205 = v131
+		goto L7
+	} else {
 		goto L41
 	}
 L41:
-	;
-	if v132 == int32(0) {
-		v207 = v131
-		goto L7
-	} else {
-		goto L42
-	}
-L42:
 	;
 	F_errcode(m, int32(1088))
 	mBase = m.M
@@ -466,9 +460,9 @@ L42:
 	if v138 != 0 {
 		goto L1
 	} else {
-		goto L43
+		goto L42
 	}
-L43:
+L42:
 	;
 	F_errmsg(m, int32(_a_F_makeItemLikeRegex_5), int32(0))
 	mBase = m.M
@@ -476,9 +470,9 @@ L43:
 	if v142 != 0 {
 		goto L1
 	} else {
-		goto L44
+		goto L43
 	}
-L44:
+L43:
 	;
 	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(680), int32(_a_F_makeItemLikeRegex_6))
 	mBase = m.M
@@ -486,13 +480,13 @@ L44:
 	if v147 != 0 {
 		goto L1
 	} else {
-		goto L45
+		goto L44
 	}
-L45:
+L44:
 	;
-	v207 = v131
+	v205 = v131
 	goto L7
-L46:
+L45:
 	;
 	v166 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v167 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
@@ -502,9 +496,9 @@ L46:
 	if v169 != 0 {
 		goto L1
 	} else {
-		goto L47
+		goto L46
 	}
-L47:
+L46:
 	;
 	v171 = F_pg_regcomp(m, v12+int32(160), v164, v168, v153, int32(100))
 	mBase = m.M
@@ -512,39 +506,40 @@ L47:
 	if v172 != 0 {
 		goto L1
 	} else {
+		goto L47
+	}
+L47:
+	;
+	if v171 != 0 {
 		goto L48
+	} else {
+		goto L49
 	}
 L48:
 	;
-	if v171 != 0 {
-		goto L49
-	} else {
-		goto L50
-	}
-L49:
-	;
-	v175 = F_pg_regerror(m, v171, v12+int32(48))
+	v174 = v12 + int32(48)
+	F_pg_regerror(m, v171, v174)
 	mBase = m.M
 	v176 = m.ExcPending
 	if v176 != 0 {
 		goto L1
 	} else {
-		goto L52
+		goto L51
 	}
-L50:
+L49:
 	;
-	goto L51
-L51:
+	goto L50
+L50:
 	;
 	F_pg_regfree(m, v12+int32(160))
 	mBase = m.M
-	v199 = m.ExcPending
-	if v199 != 0 {
+	v197 = m.ExcPending
+	if v197 != 0 {
 		goto L1
 	} else {
-		goto L58
+		goto L57
 	}
-L52:
+L51:
 	;
 	v177 = int32(0)
 	v178 = F_errsave_start(m, l4)
@@ -553,17 +548,17 @@ L52:
 	if v179 != 0 {
 		goto L1
 	} else {
+		goto L52
+	}
+L52:
+	;
+	if v178 == int32(0) {
+		v205 = v177
+		goto L7
+	} else {
 		goto L53
 	}
 L53:
-	;
-	if v178 == int32(0) {
-		v207 = v177
-		goto L7
-	} else {
-		goto L54
-	}
-L54:
 	;
 	F_errcode(m, int32(302252162))
 	mBase = m.M
@@ -571,36 +566,36 @@ L54:
 	if v184 != 0 {
 		goto L1
 	} else {
+		goto L54
+	}
+L54:
+	;
+	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v174
+	F_errmsg(m, int32(_a_F_makeItemLikeRegex_7), v12)
+	mBase = m.M
+	v188 = m.ExcPending
+	if v188 != 0 {
+		goto L1
+	} else {
 		goto L55
 	}
 L55:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v12))) = v12 + int32(48)
-	F_errmsg(m, int32(_a_F_makeItemLikeRegex_7), v12)
+	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(632), int32(_a_F_makeItemLikeRegex_4))
 	mBase = m.M
-	v190 = m.ExcPending
-	if v190 != 0 {
+	v193 = m.ExcPending
+	if v193 != 0 {
 		goto L1
 	} else {
 		goto L56
 	}
 L56:
 	;
-	F_errsave_finish(m, l4, int32(_a_F_makeItemLikeRegex_3), int32(632), int32(_a_F_makeItemLikeRegex_4))
-	mBase = m.M
-	v195 = m.ExcPending
-	if v195 != 0 {
-		goto L1
-	} else {
-		goto L57
-	}
+	v205 = v177
+	goto L7
 L57:
 	;
-	v207 = v177
-	goto L7
-L58:
-	;
 	*(*int32)(unsafe.Add(mBase, uint32(l3))) = v15
-	v207 = int32(1)
+	v205 = int32(1)
 	goto L7
 }

@@ -54,8 +54,8 @@ func F_OperatorIsVisibleExt(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v69
 	var v71 int32
 	_ = v71
-	var v76 int32
-	_ = v76
+	var v77 int32
+	_ = v77
 	var v83 int32
 	_ = v83
 	var v89 int32
@@ -232,14 +232,14 @@ L21:
 	;
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(v44)+4))
 	if v51 <= int32(0) {
-		v76 = v42
+		v77 = v42
 		goto L22
 	} else {
 		goto L23
 	}
 L22:
 	;
-	v83 = v76
+	v83 = v77
 	goto L18
 L23:
 	;
@@ -267,14 +267,14 @@ L27:
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v58+v60<<(uint(int32(2))%32))))
 	v69 = base.B2i32(v68 == v39)
 	if v68 == v39 {
-		v76 = v69
+		v77 = v69
 		goto L22
 	} else {
 		goto L29
 	}
 L28:
 	;
-	v76 = v69
+	v77 = v69
 	goto L22
 L29:
 	;
@@ -660,7 +660,7 @@ L30:
 	}
 L31:
 	;
-	F_sequence_close(m, v20, int32(3))
+	F_relation_close(m, v20, int32(3))
 	mBase = m.M
 	v144 = m.ExcPending
 	if v144 != 0 {

@@ -54,8 +54,8 @@ func F_populate_recordset_record(m *base.Module, l0 int32, l1 int32) {
 	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
+	var v52 int32
+	_ = v52
 	var v54 int32
 	_ = v54
 	var v55 int32
@@ -103,7 +103,7 @@ L1:
 	;
 	v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v14)+68))
-	v57 = F_populate_record(m, v51, v14+int32(48), v54, v55, l1, int32(0))
+	v57 = F_populate_record(m, v52, v14+int32(48), v54, v55, l1, int32(0))
 	mBase = m.M
 	v58 = m.ExcPending
 	if v58 != 0 {
@@ -145,7 +145,7 @@ L6:
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v18)+8))
 	v26 = *(*int32)(unsafe.Add(mBase, uint32(v14)+60))
 	if v25 == v26 {
-		v51 = v18
+		v52 = v18
 		goto L1
 	} else {
 		goto L7
@@ -200,7 +200,7 @@ L14:
 	*(*int32)(unsafe.Add(mBase, _c_F_populate_recordset_record[0])) = v37
 	v45 = *(*int32)(unsafe.Add(mBase, uint32(v31)+12))
 	if v45 < int32(0) {
-		v51 = v40
+		v52 = v40
 		goto L1
 	} else {
 		goto L15
@@ -218,7 +218,7 @@ L15:
 L16:
 	;
 	v50 = *(*int32)(unsafe.Add(mBase, uint32(v14)+52))
-	v51 = v50
+	v52 = v50
 	goto L1
 L17:
 	;

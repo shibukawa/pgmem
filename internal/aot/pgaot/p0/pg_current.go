@@ -24,70 +24,68 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 	_ = v24
 	var v25 int32
 	_ = v25
-	var v30 int64
-	_ = v30
+	var v31 int64
+	_ = v31
 	var v38 int64
 	_ = v38
 	var v43 int64
 	_ = v43
 	var v45 int32
 	_ = v45
-	var v50 int64
-	_ = v50
+	var v51 int64
+	_ = v51
 	var v58 int64
 	_ = v58
 	var v63 int64
 	_ = v63
-	var v72 int64
-	_ = v72
-	var v80 int32
-	_ = v80
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v102 int64
-	_ = v102
-	var v107 int64
-	_ = v107
-	var v110 int32
-	_ = v110
-	var v112 int32
-	_ = v112
-	var v116 int32
-	_ = v116
+	var v74 int64
+	_ = v74
+	var v82 int32
+	_ = v82
+	var v94 int32
+	_ = v94
+	var v95 int32
+	_ = v95
+	var v98 int32
+	_ = v98
+	var v104 int64
+	_ = v104
+	var v108 int64
+	_ = v108
+	var v111 int32
+	_ = v111
+	var v113 int32
+	_ = v113
 	var v120 int32
 	_ = v120
-	var v121 int32
-	_ = v121
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v136 int32
-	_ = v136
-	var v139 int64
+	var v124 int32
+	_ = v124
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v130 int32
+	_ = v130
+	var v139 int32
 	_ = v139
-	var v143 int64
-	_ = v143
-	var v146 int32
+	var v142 int64
+	_ = v142
+	var v146 int64
 	_ = v146
-	var v152 int32
-	_ = v152
+	var v149 int32
+	_ = v149
 	var v155 int32
 	_ = v155
-	var v161 int32
-	_ = v161
-	var v172 int32
-	_ = v172
-	var v189 int32
-	_ = v189
-	var v193 int32
-	_ = v193
-	var v198 int32
-	_ = v198
+	var v158 int32
+	_ = v158
+	var v166 int32
+	_ = v166
+	var v182 int32
+	_ = v182
+	var v186 int32
+	_ = v186
+	var v191 int32
+	_ = v191
 	v11 = F_ReadNextFullTransactionId(m)
 	mBase = m.M
 	v14 = m.ExcPending
@@ -108,11 +106,11 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 				if base.Ui32(v25) <= base.Ui32(int32(2)) {
 					v43 = base.I64_extend_i32_u(v25)
 				} else {
-					v30 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
+					v31 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
 					if base.Ui32(base.I32_wrap_i64(v11)) < base.Ui32(v25) {
-						v38 = (v30 - int64(1)) & int64(4294967295)
+						v38 = (v31 - int64(1)) & int64(4294967295)
 					} else {
-						v38 = v30
+						v38 = v31
 					}
 					v43 = base.I64_extend_i32_u(v25) | v38<<(uint(int64(32))%64)
 				}
@@ -121,96 +119,93 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 				if base.Ui32(v45) <= base.Ui32(int32(2)) {
 					v63 = base.I64_extend_i32_u(v45)
 				} else {
-					v50 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
+					v51 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
 					if base.Ui32(base.I32_wrap_i64(v11)) < base.Ui32(v45) {
-						v58 = (v50 - int64(1)) & int64(4294967295)
+						v58 = (v51 - int64(1)) & int64(4294967295)
 					} else {
-						v58 = v50
+						v58 = v51
 					}
 					v63 = base.I64_extend_i32_u(v45) | v58<<(uint(int64(32))%64)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v18
 				*(*int64)(unsafe.Add(mBase, uint32(v23)+16)) = v63
 				if v18 == int32(0) {
-					v172 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v23))) = v172<<(uint(int32(5))%32) + int32(96)
+					*(*int32)(unsafe.Add(mBase, uint32(v23))) = int32(96)
 					return v23
 				} else {
-					v72 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
-					v80 = int32(0)
+					v74 = int64(base.Ui64(v11) >> (uint(int64(32)) % 64))
+					v82 = int32(0)
 					for {
-						v92 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
-						v93 = int32(2)
-						v96 = *(*int32)(unsafe.Add(mBase, uint32(v92+v80<<(uint(v93)%32))))
-						if base.Ui32(v96) <= base.Ui32(v93) {
-							v107 = base.I64_extend_i32_u(v96)
+						v94 = *(*int32)(unsafe.Add(mBase, uint32(v17)+12))
+						v95 = int32(2)
+						v98 = *(*int32)(unsafe.Add(mBase, uint32(v94+v82<<(uint(v95)%32))))
+						if base.Ui32(v98) <= base.Ui32(v95) {
+							v108 = base.I64_extend_i32_u(v98)
 						} else {
-							if base.Ui32(base.I32_wrap_i64(v11)) < base.Ui32(v96) {
-								v102 = (v72 - int64(1)) & int64(4294967295)
+							if base.Ui32(base.I32_wrap_i64(v11)) < base.Ui32(v98) {
+								v104 = (v74 - int64(1)) & int64(4294967295)
 							} else {
-								v102 = v72
+								v104 = v74
 							}
-							v107 = base.I64_extend_i32_u(v96) | v102<<(uint(int64(32))%64)
+							v108 = base.I64_extend_i32_u(v98) | v104<<(uint(int64(32))%64)
 						}
-						*(*int64)(unsafe.Add(mBase, uint32(v23+int32(24)+v80<<(uint(int32(3))%32)))) = v107
-						v110 = v80 + int32(1)
-						if v110 != v18 {
-							v80 = v110
+						*(*int64)(unsafe.Add(mBase, uint32(v23+int32(24)+v82<<(uint(int32(3))%32)))) = v108
+						v111 = v82 + int32(1)
+						if v111 != v18 {
+							v82 = v111
 							continue
 						} else {
 							break
 						}
 						break
 					}
-					v112 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-					if base.Ui32(v112) < base.Ui32(int32(2)) {
-						v172 = v112
-						*(*int32)(unsafe.Add(mBase, uint32(v23))) = v172<<(uint(int32(5))%32) + int32(96)
+					v113 = int32(1)
+					if v18 == v113 {
+						*(*int32)(unsafe.Add(mBase, uint32(v23))) = int32(128)
 						return v23
 					} else {
-						v116 = v23 + int32(24)
-						F_pg_qsort(m, v116, v112, int32(8), int32(1565))
+						v120 = v23 + int32(24)
+						F_pg_qsort(m, v120, v18, int32(8), int32(1546))
 						mBase = m.M
-						v120 = m.ExcPending
-						if v120 != 0 {
+						v124 = m.ExcPending
+						if v124 != 0 {
 							return int32(0)
 						} else {
-							v121 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
-							if base.Ui32(int32(2)) <= base.Ui32(v121) {
-								v126 = int32(0)
-								v127 = int32(1)
+							v125 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
+							if base.Ui32(int32(2)) <= base.Ui32(v125) {
+								v129 = int32(0)
+								v130 = v113
 								for {
-									v136 = int32(3)
-									v139 = *(*int64)(unsafe.Add(mBase, uint32(v116+v127<<(uint(v136)%32))))
-									v143 = *(*int64)(unsafe.Add(mBase, uint32(v116+v126<<(uint(v136)%32))))
-									if v139 == v143 {
-										v152 = v126
+									v139 = int32(3)
+									v142 = *(*int64)(unsafe.Add(mBase, uint32(v120+v130<<(uint(v139)%32))))
+									v146 = *(*int64)(unsafe.Add(mBase, uint32(v120+v129<<(uint(v139)%32))))
+									if v142 == v146 {
+										v155 = v129
 									} else {
-										v146 = v126 + int32(1)
-										if v127 == v146 {
-											v152 = v127
+										v149 = v129 + int32(1)
+										if v130 == v149 {
+											v155 = v130
 										} else {
-											*(*int64)(unsafe.Add(mBase, uint32(v116+v146<<(uint(int32(3))%32)))) = v139
-											v152 = v146
+											*(*int64)(unsafe.Add(mBase, uint32(v120+v149<<(uint(int32(3))%32)))) = v142
+											v155 = v149
 										}
 									}
-									v155 = v127 + int32(1)
-									if v155 != v121 {
-										v126 = v152
-										v127 = v155
+									v158 = v130 + int32(1)
+									if v158 != v125 {
+										v129 = v155
+										v130 = v158
 										continue
 									} else {
 										break
 									}
 									break
 								}
-								v161 = v152 + int32(1)
+								v166 = v155 + int32(1)
 							} else {
-								v161 = v121
+								v166 = v125
 							}
-							*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v161
-							v172 = v161
-							*(*int32)(unsafe.Add(mBase, uint32(v23))) = v172<<(uint(int32(5))%32) + int32(96)
+							*(*int32)(unsafe.Add(mBase, uint32(v23)+4)) = v166
+							*(*int32)(unsafe.Add(mBase, uint32(v23))) = v166<<(uint(int32(5))%32) + int32(96)
 							return v23
 						}
 					}
@@ -219,20 +214,20 @@ func F_pg_current_snapshot(m *base.Module, l0 int32) int32 {
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v189 = m.ExcPending
-			if v189 != 0 {
+			v182 = m.ExcPending
+			if v182 != 0 {
 				return int32(0)
 			} else {
 				F_errmsg_internal(m, int32(_a_F_pg_current_snapshot_0), int32(0))
 				mBase = m.M
-				v193 = m.ExcPending
-				if v193 != 0 {
+				v186 = m.ExcPending
+				if v186 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_pg_current_snapshot_1), int32(380), int32(_a_F_pg_current_snapshot_2))
 					mBase = m.M
-					v198 = m.ExcPending
-					if v198 != 0 {
+					v191 = m.ExcPending
+					if v191 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()

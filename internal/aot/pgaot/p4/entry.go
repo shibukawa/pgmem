@@ -150,7 +150,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 				v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30+v39)+6)))
 				if v41&int32(2) != 0 {
 				} else {
-					v47 = *(*int32)(unsafe.Add(mBase, uint32(v31<<(uint(int32(2))%32)+v30)+20))
+					v47 = *(*int32)(unsafe.Add(mBase, uint32(v30+v31<<(uint(int32(2))%32))+20))
 					v50 = v30 + v47&int32(_a_F_entryExecPlaceToPage_0)
 					v51 = int32(0)
 					*(*uint16)(unsafe.Add(mBase, uint32(v50)+4)) = uint16(v51)
@@ -305,7 +305,7 @@ func F_entryExecPlaceToPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 			v41 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v30+v39)+6)))
 			if v41&int32(2) != 0 {
 			} else {
-				v47 = *(*int32)(unsafe.Add(mBase, uint32(v31<<(uint(int32(2))%32)+v30)+20))
+				v47 = *(*int32)(unsafe.Add(mBase, uint32(v30+v31<<(uint(int32(2))%32))+20))
 				v50 = v30 + v47&int32(_a_F_entryExecPlaceToPage_0)
 				v51 = int32(0)
 				*(*uint16)(unsafe.Add(mBase, uint32(v50)+4)) = uint16(v51)
@@ -483,30 +483,26 @@ func F_entryLocateLeafEntry(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v46
 	var v50 int32
 	_ = v50
-	var v54 int32
-	_ = v54
-	var v59 int32
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v67 int32
-	_ = v67
-	var v73 int32
-	_ = v73
-	var v81 int32
-	_ = v81
-	var v84 int32
-	_ = v84
-	var v85 int32
-	_ = v85
-	var v88 int32
-	_ = v88
-	var v89 int32
-	_ = v89
-	var v92 int32
-	_ = v92
-	var v93 int32
-	_ = v93
+	var v53 int32
+	_ = v53
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v71 int32
+	_ = v71
+	var v77 int32
+	_ = v77
+	var v83 int32
+	_ = v83
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v91 int32
+	_ = v91
 	var v94 int32
 	_ = v94
 	var v95 int32
@@ -521,14 +517,20 @@ func F_entryLocateLeafEntry(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v99
 	var v100 int32
 	_ = v100
-	var v106 int32
-	_ = v106
-	var v107 int32
-	_ = v107
-	var v112 int32
-	_ = v112
-	var v130 int32
-	_ = v130
+	var v101 int32
+	_ = v101
+	var v102 int32
+	_ = v102
+	var v108 int32
+	_ = v108
+	var v109 int32
+	_ = v109
+	var v114 int32
+	_ = v114
+	var v122 int32
+	_ = v122
+	var v142 int32
+	_ = v142
 	v11 = m.G0
 	v13 = v11 - int32(16)
 	m.G0 = v13
@@ -564,12 +566,12 @@ L4:
 L5:
 	;
 	m.G0 = v13 + int32(16)
-	return v130
+	return v142
 L6:
 	;
 	v38 = int32(1)
 	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v38)
-	v130 = v34
+	v142 = v34
 	goto L5
 L7:
 	;
@@ -584,18 +586,20 @@ L8:
 	}
 L9:
 	;
-	v130 = int32(0)
+	v142 = int32(0)
 	goto L5
 L10:
 	;
-	v54 = int32(1)
-	v59 = v54
-	v61 = v46 + v54
-	goto L15
+	v53 = v46 + int32(1)
+	if base.Ui32(int32(2)) <= base.Ui32(v53&int32(_a_F_entryLocateLeafEntry_0)) {
+		goto L15
+	} else {
+		goto L16
+	}
 L11:
 	;
-	v46 = int32(base.Ui32(v40+int32(_a_F_entryLocateLeafEntry_0)) >> (uint(int32(2)) % 32))
-	if v46&int32(_a_F_entryLocateLeafEntry_1) != 0 {
+	v46 = int32(base.Ui32(v40+int32(_a_F_entryLocateLeafEntry_1)) >> (uint(int32(2)) % 32))
+	if v46&int32(_a_F_entryLocateLeafEntry_0) != 0 {
 		goto L10
 	} else {
 		goto L14
@@ -613,107 +617,120 @@ L14:
 	goto L13
 L15:
 	;
-	v67 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v73 = int32(base.Ui32((v61-v59)&int32(_a_F_entryLocateLeafEntry_2))>>(uint(int32(1))%32)) + v59
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(v73&int32(_a_F_entryLocateLeafEntry_1)<<(uint(int32(2))%32)+(v33+int32(24))-int32(4))))
-	v84 = v33 + v81&int32(_a_F_entryLocateLeafEntry_3)
-	v85 = F_gintuple_get_attrnum(m, v67, v84)
-	mBase = m.M
-	v88 = m.ExcPending
-	if v88 != 0 {
-		goto L17
-	} else {
-		goto L18
-	}
+	v63 = int32(1)
+	v65 = v53
+	goto L18
 L16:
 	;
-	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v107)
-	goto L9
+	v122 = v53
+	goto L17
 L17:
 	;
-	return int32(0)
+	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v122)
+	goto L9
 L18:
 	;
-	v89 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v92 = F_gintuple_get_key(m, v89, v84, v13+int32(15))
+	v71 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v77 = int32(base.Ui32((v65-v63)&int32(_a_F_entryLocateLeafEntry_2))>>(uint(int32(1))%32)) + v63
+	v83 = *(*int32)(unsafe.Add(mBase, uint32(v33+int32(20)+v77&int32(_a_F_entryLocateLeafEntry_0)<<(uint(int32(2))%32))))
+	v86 = v33 + v83&int32(_a_F_entryLocateLeafEntry_3)
+	v87 = F_gintuple_get_attrnum(m, v71, v86)
 	mBase = m.M
-	v93 = m.ExcPending
-	if v93 != 0 {
-		goto L17
+	v90 = m.ExcPending
+	if v90 != 0 {
+		goto L20
 	} else {
-		goto L19
+		goto L21
 	}
 L19:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v95 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+54)))
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
-	v97 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+60)))
-	v98 = int32(*(*int8)(unsafe.Add(mBase, uint32(v13)+15)))
-	v99 = F_ginCompareAttEntries(m, v94, v95, v96, v97, v85, v92, v98)
-	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
-		goto L17
-	} else {
-		goto L20
-	}
+	v122 = v109
+	goto L17
 L20:
 	;
-	if v99 == int32(0) {
-		goto L21
+	return int32(0)
+L21:
+	;
+	v91 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v94 = F_gintuple_get_key(m, v91, v86, v13+int32(15))
+	mBase = m.M
+	v95 = m.ExcPending
+	if v95 != 0 {
+		goto L20
 	} else {
 		goto L22
 	}
-L21:
-	;
-	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v73)
-	v130 = int32(1)
-	goto L5
 L22:
 	;
-	goto L23
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v97 = int32(*(*uint16)(unsafe.Add(mBase, uint32(l0)+54)))
+	v98 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
+	v99 = int32(*(*int8)(unsafe.Add(mBase, uint32(l0)+60)))
+	v100 = int32(*(*int8)(unsafe.Add(mBase, uint32(v13)+15)))
+	v101 = F_ginCompareAttEntries(m, v96, v97, v98, v99, v87, v94, v100)
+	mBase = m.M
+	v102 = m.ExcPending
+	if v102 != 0 {
+		goto L20
+	} else {
+		goto L23
+	}
 L23:
 	;
-	v106 = base.B2i32(int32(0) < v99)
-	if int32(0) < v99 {
+	if v101 == int32(0) {
 		goto L24
 	} else {
 		goto L25
 	}
 L24:
 	;
-	v107 = v61
-	goto L26
+	*(*uint16)(unsafe.Add(mBase, uint32(l1)+8)) = uint16(v77)
+	v142 = int32(1)
+	goto L5
 L25:
 	;
-	v107 = v73
 	goto L26
 L26:
 	;
-	if int32(0) < v99 {
+	v108 = base.B2i32(int32(0) < v101)
+	if int32(0) < v101 {
 		goto L27
 	} else {
 		goto L28
 	}
 L27:
 	;
-	v112 = v73 + int32(1)
+	v109 = v65
 	goto L29
 L28:
 	;
-	v112 = v59
+	v109 = v77
 	goto L29
 L29:
 	;
-	if base.Ui32(v112&int32(_a_F_entryLocateLeafEntry_1)) < base.Ui32(v107&int32(_a_F_entryLocateLeafEntry_1)) {
-		v59 = v112
-		v61 = v107
-		goto L15
-	} else {
+	if int32(0) < v101 {
 		goto L30
+	} else {
+		goto L31
 	}
 L30:
 	;
-	goto L16
+	v114 = v77 + int32(1)
+	goto L32
+L31:
+	;
+	v114 = v63
+	goto L32
+L32:
+	;
+	if base.Ui32(v114&int32(_a_F_entryLocateLeafEntry_0)) < base.Ui32(v109&int32(_a_F_entryLocateLeafEntry_0)) {
+		v63 = v114
+		v65 = v109
+		goto L18
+	} else {
+		goto L33
+	}
+L33:
+	;
+	goto L19
 }

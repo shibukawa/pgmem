@@ -79,8 +79,8 @@ func F_system_rows_nextsampletuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v11
 	var v16 int32
 	_ = v16
-	var v18 int32
-	_ = v18
+	var v19 int32
+	_ = v19
 	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)+144))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+128))
 	v7 = *(*int64)(unsafe.Add(mBase, uint32(v6)+8))
@@ -93,11 +93,11 @@ func F_system_rows_nextsampletuple(m *base.Module, l0 int32, l1 int32, l2 int32)
 			v16 = int32(0)
 		}
 		*(*uint16)(unsafe.Add(mBase, uint32(v6)+16)) = uint16(v16)
-		v18 = v16
+		v19 = v16
 	} else {
-		v18 = int32(0)
+		v19 = int32(0)
 	}
-	return v18 & int32(_a_F_system_rows_nextsampletuple_0)
+	return v19 & int32(_a_F_system_rows_nextsampletuple_0)
 }
 func F_system_time_initsamplescan(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M

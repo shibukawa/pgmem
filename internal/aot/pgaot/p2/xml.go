@@ -8,91 +8,23 @@ import (
 func F_XmlTableInitOpaque(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	F_errstart_cold(m, int32(21), int32(0))
+	Fn13841(m, l0, l1, int32(_a_F_XmlTableInitOpaque_0), int32(_a_F_XmlTableInitOpaque_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
 	} else {
-		F_errcode(m, int32(1088))
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return
-		} else {
-			F_errmsg(m, int32(_a_F_XmlTableInitOpaque_0), int32(0))
-			v13 = m.ExcPending
-			if v13 != 0 {
-				return
-			} else {
-				F_errdetail(m, int32(_a_F_XmlTableInitOpaque_1), int32(0))
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return
-				} else {
-					F_errfinish(m, int32(_a_F_XmlTableInitOpaque_2), int32(_a_F_XmlTableInitOpaque_3), int32(_a_F_XmlTableInitOpaque_4))
-					v22 = m.ExcPending
-					if v22 != 0 {
-						return
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return
 	}
 }
 func F_XmlTableSetDocument(m *base.Module, l0 int32, l1 int32) {
 	var v6 int32
 	_ = v6
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	F_errstart_cold(m, int32(21), int32(0))
+	Fn13841(m, l0, l1, int32(_a_F_XmlTableSetDocument_0), int32(_a_F_XmlTableSetDocument_1))
 	v6 = m.ExcPending
 	if v6 != 0 {
 		return
 	} else {
-		F_errcode(m, int32(1088))
-		v9 = m.ExcPending
-		if v9 != 0 {
-			return
-		} else {
-			F_errmsg(m, int32(_a_F_XmlTableSetDocument_0), int32(0))
-			v13 = m.ExcPending
-			if v13 != 0 {
-				return
-			} else {
-				F_errdetail(m, int32(_a_F_XmlTableSetDocument_1), int32(0))
-				v17 = m.ExcPending
-				if v17 != 0 {
-					return
-				} else {
-					F_errfinish(m, int32(_a_F_XmlTableSetDocument_2), int32(_a_F_XmlTableSetDocument_3), int32(_a_F_XmlTableSetDocument_4))
-					v22 = m.ExcPending
-					if v22 != 0 {
-						return
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return
 	}
 }
 func F_XmlTableSetNamespace(m *base.Module, l0 int32, l1 int32, l2 int32) {
@@ -171,47 +103,15 @@ func F_xml_out(m *base.Module, l0 int32) int32 {
 	}
 }
 func F_xml_recv(m *base.Module, l0 int32) int32 {
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v23 int32
-	_ = v23
-	F_errstart_cold(m, int32(21), int32(0))
+	v4 = Fn13840(m, l0, int32(_a_F_xml_recv_0), int32(431))
 	v7 = m.ExcPending
 	if v7 != 0 {
 		return int32(0)
 	} else {
-		F_errcode(m, int32(1088))
-		v10 = m.ExcPending
-		if v10 != 0 {
-			return int32(0)
-		} else {
-			F_errmsg(m, int32(_a_F_xml_recv_0), int32(0))
-			v14 = m.ExcPending
-			if v14 != 0 {
-				return int32(0)
-			} else {
-				F_errdetail(m, int32(_a_F_xml_recv_1), int32(0))
-				v18 = m.ExcPending
-				if v18 != 0 {
-					return int32(0)
-				} else {
-					F_errfinish(m, int32(_a_F_xml_recv_2), int32(431), int32(_a_F_xml_recv_3))
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
-			}
-		}
+		return v4
 	}
 }

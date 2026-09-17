@@ -10,6 +10,8 @@ func F_QueuePartitionConstraintValidation(m *base.Module, l0 int32, l1 int32, l2
 	_ = mBase
 	var v4 int32
 	_ = v4
+	var v5 int32
+	_ = v5
 	var v11 int32
 	_ = v11
 	var v13 int32
@@ -48,71 +50,72 @@ func F_QueuePartitionConstraintValidation(m *base.Module, l0 int32, l1 int32, l2
 	_ = v64
 	var v70 int32
 	_ = v70
+	var v78 int32
+	_ = v78
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
-	var v83 int32
-	_ = v83
+	var v82 int32
+	_ = v82
+	var v95 int32
+	_ = v95
 	var v96 int32
 	_ = v96
-	var v97 int32
-	_ = v97
+	var v100 int32
+	_ = v100
 	var v101 int32
 	_ = v101
-	var v102 int32
-	_ = v102
+	var v103 int32
+	_ = v103
 	var v104 int32
 	_ = v104
 	var v105 int32
 	_ = v105
-	var v106 int32
-	_ = v106
-	var v110 int32
-	_ = v110
-	var v112 int32
-	_ = v112
+	var v109 int32
+	_ = v109
+	var v111 int32
+	_ = v111
+	var v113 int32
+	_ = v113
 	var v114 int32
 	_ = v114
 	var v115 int32
 	_ = v115
-	var v116 int32
-	_ = v116
-	var v123 int32
-	_ = v123
+	var v121 int32
+	_ = v121
+	var v127 int32
+	_ = v127
 	var v128 int32
 	_ = v128
-	var v129 int32
-	_ = v129
+	var v132 int32
+	_ = v132
 	var v133 int32
 	_ = v133
 	var v134 int32
 	_ = v134
-	var v135 int32
-	_ = v135
-	var v143 int32
-	_ = v143
-	var v148 int32
-	_ = v148
-	var v152 int32
-	_ = v152
+	var v141 int32
+	_ = v141
+	var v147 int32
+	_ = v147
+	var v151 int32
+	_ = v151
+	var v153 int32
+	_ = v153
 	var v154 int32
 	_ = v154
-	var v155 int32
-	_ = v155
+	var v156 int32
+	_ = v156
 	var v157 int32
 	_ = v157
-	var v158 int32
-	_ = v158
-	var v160 int32
-	_ = v160
-	var v163 int32
-	_ = v163
+	var v159 int32
+	_ = v159
+	var v162 int32
+	_ = v162
+	var v164 int32
+	_ = v164
 	var v165 int32
 	_ = v165
-	var v166 int32
-	_ = v166
 	v4 = l3
+	v5 = int32(0)
 	v11 = m.G0
 	v13 = v11 - int32(32)
 	m.G0 = v13
@@ -239,10 +242,10 @@ L16:
 	goto L1
 L17:
 	;
-	v133 = F_RelationGetPartitionDesc(m, l1, int32(1))
+	v132 = F_RelationGetPartitionDesc(m, l1, int32(1))
 	mBase = m.M
-	v134 = m.ExcPending
-	if v134 != 0 {
+	v133 = m.ExcPending
+	if v133 != 0 {
 		goto L2
 	} else {
 		goto L30
@@ -258,17 +261,17 @@ L18:
 	}
 L19:
 	;
-	v128 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
-	v129 = *(*int32)(unsafe.Add(mBase, uint32(v128)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v123)+104)) = uint8(v4)
-	*(*int32)(unsafe.Add(mBase, uint32(v123)+100)) = v129
+	v127 = *(*int32)(unsafe.Add(mBase, uint32(l2)+12))
+	v128 = *(*int32)(unsafe.Add(mBase, uint32(v127)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v121)+104)) = uint8(v4)
+	*(*int32)(unsafe.Add(mBase, uint32(v121)+100)) = v128
 	goto L1
 L20:
 	;
-	v96 = F_palloc0(m, int32(140))
+	v95 = F_palloc0(m, int32(140))
 	mBase = m.M
-	v97 = m.ExcPending
-	if v97 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L2
 	} else {
 		goto L27
@@ -284,14 +287,14 @@ L21:
 L22:
 	;
 	v64 = *(*int32)(unsafe.Add(mBase, uint32(v58)+12))
-	v70 = int32(0)
+	v70 = v5
 	goto L23
 L23:
 	;
-	v79 = *(*int32)(unsafe.Add(mBase, uint32(v64+v70<<(uint(int32(2))%32))))
-	v80 = *(*int32)(unsafe.Add(mBase, uint32(v79)))
-	if v80 == v57 {
-		v123 = v79
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v64+v70<<(uint(int32(2))%32))))
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v78)))
+	if v79 == v57 {
+		v121 = v78
 		goto L19
 	} else {
 		goto L25
@@ -301,9 +304,9 @@ L24:
 	goto L20
 L25:
 	;
-	v83 = v70 + int32(1)
-	if v61 != v83 {
-		v70 = v83
+	v82 = v70 + int32(1)
+	if v61 != v82 {
+		v70 = v82
 		goto L23
 	} else {
 		goto L26
@@ -313,62 +316,62 @@ L26:
 	goto L24
 L27:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v96)+12)) = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v96))) = v57
-	v101 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
-	v102 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v101)+119)))
-	*(*uint8)(unsafe.Add(mBase, uint32(v96)+4)) = uint8(v102)
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
-	v105 = F_CreateTupleDescCopyConstr(m, v104)
+	*(*int32)(unsafe.Add(mBase, uint32(v95)+12)) = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v95))) = v57
+	v100 = *(*int32)(unsafe.Add(mBase, uint32(l1)+48))
+	v101 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v100)+119)))
+	*(*uint8)(unsafe.Add(mBase, uint32(v95)+4)) = uint8(v101)
+	v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+52))
+	v104 = F_CreateTupleDescCopyConstr(m, v103)
 	mBase = m.M
-	v106 = m.ExcPending
-	if v106 != 0 {
+	v105 = m.ExcPending
+	if v105 != 0 {
 		goto L2
 	} else {
 		goto L28
 	}
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v96)+8)) = v105
-	*(*int64)(unsafe.Add(mBase, uint32(v96)+88)) = int64(0)
-	v110 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v96)+84)) = uint8(v110)
-	v112 = int32(_a_F_QueuePartitionConstraintValidation_6)
-	*(*uint16)(unsafe.Add(mBase, uint32(v96)+96)) = uint16(v112)
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v115 = F_lappend(m, v114, v96)
+	*(*int32)(unsafe.Add(mBase, uint32(v95)+8)) = v104
+	*(*int64)(unsafe.Add(mBase, uint32(v95)+88)) = int64(0)
+	v109 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v95)+84)) = uint8(v109)
+	v111 = int32(_a_F_QueuePartitionConstraintValidation_6)
+	*(*uint16)(unsafe.Add(mBase, uint32(v95)+96)) = uint16(v111)
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v114 = F_lappend(m, v113, v95)
 	mBase = m.M
-	v116 = m.ExcPending
-	if v116 != 0 {
+	v115 = m.ExcPending
+	if v115 != 0 {
 		goto L2
 	} else {
 		goto L29
 	}
 L29:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v115
-	v123 = v96
+	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v114
+	v121 = v95
 	goto L19
 L30:
 	;
-	v135 = *(*int32)(unsafe.Add(mBase, uint32(v133)))
-	if v135 <= int32(0) {
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
+	if v134 <= int32(0) {
 		goto L1
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v143 = int32(0)
+	v141 = v5
 	goto L32
 L32:
 	;
-	v148 = *(*int32)(unsafe.Add(mBase, uint32(v133)+8))
-	v152 = *(*int32)(unsafe.Add(mBase, uint32(v148+v143<<(uint(int32(2))%32))))
-	v154 = F_table_open(m, v152, int32(8))
+	v147 = *(*int32)(unsafe.Add(mBase, uint32(v132)+8))
+	v151 = *(*int32)(unsafe.Add(mBase, uint32(v147+v141<<(uint(int32(2))%32))))
+	v153 = F_table_open(m, v151, int32(8))
 	mBase = m.M
-	v155 = m.ExcPending
-	if v155 != 0 {
+	v154 = m.ExcPending
+	if v154 != 0 {
 		goto L2
 	} else {
 		goto L34
@@ -378,40 +381,40 @@ L33:
 	goto L1
 L34:
 	;
-	v157 = F_map_partition_varattnos(m, l2, int32(1), v154, l1)
+	v156 = F_map_partition_varattnos(m, l2, int32(1), v153, l1)
 	mBase = m.M
-	v158 = m.ExcPending
-	if v158 != 0 {
+	v157 = m.ExcPending
+	if v157 != 0 {
 		goto L2
 	} else {
 		goto L35
 	}
 L35:
 	;
-	F_QueuePartitionConstraintValidation(m, l0, v154, v157, v4)
+	F_QueuePartitionConstraintValidation(m, l0, v153, v156, v4)
 	mBase = m.M
-	v160 = m.ExcPending
-	if v160 != 0 {
+	v159 = m.ExcPending
+	if v159 != 0 {
 		goto L2
 	} else {
 		goto L36
 	}
 L36:
 	;
-	F_sequence_close(m, v154, int32(0))
+	F_relation_close(m, v153, int32(0))
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v162 = m.ExcPending
+	if v162 != 0 {
 		goto L2
 	} else {
 		goto L37
 	}
 L37:
 	;
-	v165 = v143 + int32(1)
-	v166 = *(*int32)(unsafe.Add(mBase, uint32(v133)))
-	if v165 < v166 {
-		v143 = v165
+	v164 = v141 + int32(1)
+	v165 = *(*int32)(unsafe.Add(mBase, uint32(v132)))
+	if v164 < v165 {
+		v141 = v164
 		goto L32
 	} else {
 		goto L38

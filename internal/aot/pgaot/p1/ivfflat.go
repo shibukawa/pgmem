@@ -32,24 +32,24 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 	_ = v26
 	var v29 int32
 	_ = v29
-	var v32 int32
-	_ = v32
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v47 int32
-	_ = v47
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
-	var v53 int32
-	_ = v53
-	var v55 int32
-	_ = v55
-	var v57 int32
-	_ = v57
+	var v36 int32
+	_ = v36
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v48 int32
+	_ = v48
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
+	var v58 int32
+	_ = v58
 	v7 = int32(0)
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 	v12 = F_ReadBufferExtended(m, l0, l5, v9, v7, v7)
@@ -80,32 +80,28 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(v20+v22<<(uint(int32(2))%32))+20))
 					v29 = v20 + v26&int32(_a_F_IvfflatUpdateList_0)
 					if l2 == int32(-1) {
-						v40 = v7
+						v41 = v7
 					} else {
-						v32 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
-						if l2 == v32 {
-							v40 = v7
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(v29)+4))
+						if base.B2i32(l3 != int32(-1))&base.B2i32(base.Ui32(l2) < base.Ui32(l3))|base.B2i32(l2 == v36) != 0 {
+							v41 = v7
 						} else {
-							if base.B2i32(l3 != int32(-1))&base.B2i32(base.Ui32(l2) < base.Ui32(l3)) != 0 {
-								v40 = v7
-							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = l2
-								v40 = int32(1)
-							}
+							*(*int32)(unsafe.Add(mBase, uint32(v29)+4)) = l2
+							v41 = int32(1)
 						}
 					}
 					if l4 == int32(-1) {
-						if v40 != 0 {
+						if v41 != 0 {
 							F_GenericXLogFinish(m, v17)
 							mBase = m.M
-							v51 = m.ExcPending
-							if v51 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
 								F_UnlockReleaseBuffer(m, v12)
 								mBase = m.M
-								v53 = m.ExcPending
-								if v53 != 0 {
+								v54 = m.ExcPending
+								if v54 != 0 {
 									return
 								} else {
 									return
@@ -114,14 +110,14 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 						} else {
 							F_pfree(m, v17)
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return
 							} else {
 								F_UnlockReleaseBuffer(m, v12)
 								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
+								v58 = m.ExcPending
+								if v58 != 0 {
 									return
 								} else {
 									return
@@ -129,19 +125,19 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							}
 						}
 					} else {
-						v43 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
-						if l4 == v43 {
-							if v40 != 0 {
+						v44 = *(*int32)(unsafe.Add(mBase, uint32(v29)))
+						if l4 == v44 {
+							if v41 != 0 {
 								F_GenericXLogFinish(m, v17)
 								mBase = m.M
-								v51 = m.ExcPending
-								if v51 != 0 {
+								v52 = m.ExcPending
+								if v52 != 0 {
 									return
 								} else {
 									F_UnlockReleaseBuffer(m, v12)
 									mBase = m.M
-									v53 = m.ExcPending
-									if v53 != 0 {
+									v54 = m.ExcPending
+									if v54 != 0 {
 										return
 									} else {
 										return
@@ -150,14 +146,14 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							} else {
 								F_pfree(m, v17)
 								mBase = m.M
-								v55 = m.ExcPending
-								if v55 != 0 {
+								v56 = m.ExcPending
+								if v56 != 0 {
 									return
 								} else {
 									F_UnlockReleaseBuffer(m, v12)
 									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
+									v58 = m.ExcPending
+									if v58 != 0 {
 										return
 									} else {
 										return
@@ -168,14 +164,14 @@ func F_IvfflatUpdateList(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32,
 							*(*int32)(unsafe.Add(mBase, uint32(v29))) = l4
 							F_GenericXLogFinish(m, v17)
 							mBase = m.M
-							v47 = m.ExcPending
-							if v47 != 0 {
+							v48 = m.ExcPending
+							if v48 != 0 {
 								return
 							} else {
 								F_UnlockReleaseBuffer(m, v12)
 								mBase = m.M
-								v49 = m.ExcPending
-								if v49 != 0 {
+								v50 = m.ExcPending
+								if v50 != 0 {
 									return
 								} else {
 									return

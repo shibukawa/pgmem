@@ -24,8 +24,8 @@ func F_build_regexp_match_result(m *base.Module, l0 int32) int32 {
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v27 int32
-	_ = v27
+	var v31 int32
+	_ = v31
 	var v32 int32
 	_ = v32
 	var v35 int32
@@ -94,8 +94,8 @@ L1:
 	;
 	v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
 	v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-	v27 = v2
-	v32 = v21 * v17 << (uint(int32(1)) % 32)
+	v31 = v21 * v17 << (uint(int32(1)) % 32)
+	v32 = v2
 	goto L4
 L2:
 	;
@@ -119,7 +119,7 @@ L4:
 	v35 = int32(1)
 	v36 = int32(0)
 	v37 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v40 = v37 + v32<<(uint(int32(2))%32)
+	v40 = v37 + v31<<(uint(int32(2))%32)
 	v41 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
 	if v41 < v36 {
 		v69 = v35
@@ -135,13 +135,13 @@ L5:
 L6:
 	;
 	v72 = int32(2)
-	*(*int32)(unsafe.Add(mBase, uint32(v16+v27<<(uint(v72)%32)))) = v71
-	*(*uint8)(unsafe.Add(mBase, uint32(v27+v15))) = uint8(v69)
-	v81 = v27 + int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v16+v32<<(uint(v72)%32)))) = v71
+	*(*uint8)(unsafe.Add(mBase, uint32(v32+v15))) = uint8(v69)
+	v81 = v32 + int32(1)
 	v82 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 	if v81 < v82 {
-		v27 = v81
-		v32 = v32 + v72
+		v31 = v31 + v72
+		v32 = v81
 		goto L4
 	} else {
 		goto L16
@@ -182,7 +182,7 @@ L11:
 	;
 	v60 = int32(0)
 	v63 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v67 = F_DirectFunctionCall3Coll(m, int32(1496), v60, v63, v41+int32(1), v45-v41)
+	v67 = F_DirectFunctionCall3Coll(m, int32(1477), v60, v63, v41+int32(1), v45-v41)
 	mBase = m.M
 	v68 = m.ExcPending
 	if v68 != 0 {

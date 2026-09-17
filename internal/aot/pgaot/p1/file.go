@@ -10,100 +10,100 @@ func F_AllocateFile(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v14 int32
-	_ = v14
-	var v16 int32
-	_ = v16
-	var v20 int32
-	_ = v20
-	var v22 int32
-	_ = v22
-	var v24 int32
-	_ = v24
-	var v35 int32
-	_ = v35
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v19 int32
+	_ = v19
+	var v21 int32
+	_ = v21
+	var v23 int32
+	_ = v23
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
 	var v38 int32
 	_ = v38
-	var v40 int32
-	_ = v40
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
 	var v46 int32
 	_ = v46
-	var v48 int32
-	_ = v48
-	var v58 int32
-	_ = v58
-	var v68 int32
-	_ = v68
+	var v55 int32
+	_ = v55
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
 	var v73 int32
 	_ = v73
-	var v74 int32
-	_ = v74
 	var v77 int32
 	_ = v77
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	var v88 int32
-	_ = v88
-	var v91 int32
-	_ = v91
+	var v82 int32
+	_ = v82
+	var v84 int32
+	_ = v84
+	var v87 int32
+	_ = v87
+	var v93 int32
+	_ = v93
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
-	var v98 int32
-	_ = v98
-	var v100 int32
-	_ = v100
-	var v101 int32
-	_ = v101
+	var v102 int32
+	_ = v102
+	var v106 int32
+	_ = v106
 	var v108 int32
 	_ = v108
 	var v111 int32
 	_ = v111
-	var v113 int32
-	_ = v113
 	var v116 int32
 	_ = v116
+	var v117 int32
+	_ = v117
+	var v119 int32
+	_ = v119
 	var v121 int32
 	_ = v121
-	var v122 int32
-	_ = v122
-	var v124 int32
-	_ = v124
-	var v126 int32
-	_ = v126
+	var v125 int32
+	_ = v125
 	var v130 int32
 	_ = v130
-	var v136 int32
-	_ = v136
+	var v138 int32
+	_ = v138
+	var v141 int32
+	_ = v141
 	var v144 int32
 	_ = v144
-	var v147 int32
-	_ = v147
-	var v150 int32
-	_ = v150
-	var v154 int32
-	_ = v154
-	var v159 int32
-	_ = v159
+	var v148 int32
+	_ = v148
+	var v153 int32
+	_ = v153
 	v3 = int32(0)
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = F_reserveAllocatedDesc(m)
+	v6 = m.G0
+	v8 = v6 - int32(16)
+	m.G0 = v8
+	v10 = F_reserveAllocatedDesc(m)
 	mBase = m.M
-	v14 = m.ExcPending
-	if v14 != 0 {
+	v13 = m.ExcPending
+	if v13 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -113,15 +113,15 @@ L1:
 	return int32(0)
 L2:
 	;
-	if v11 != 0 {
+	if v10 != 0 {
 		goto L3
 	} else {
 		goto L4
 	}
 L3:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
-	if v16 <= int32(0) {
+	v15 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
+	if v15 <= int32(0) {
 		goto L6
 	} else {
 		goto L7
@@ -133,27 +133,27 @@ L5:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v144 = m.ExcPending
-	if v144 != 0 {
+	v138 = m.ExcPending
+	if v138 != 0 {
 		goto L1
 	} else {
 		goto L34
 	}
 L6:
 	;
-	v58 = F_fopen(m, l0, l1)
+	v55 = F_fopen(m, l0, l1)
 	mBase = m.M
-	if v58 == int32(0) {
+	if v55 == int32(0) {
 		goto L15
 	} else {
 		goto L16
 	}
 L7:
 	;
-	v20 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[1]))
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[2]))
-	v24 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
-	if v22+(v24+v16) < v20 {
+	v19 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[1]))
+	v21 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[2]))
+	v23 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
+	if v21+(v23+v15) < v19 {
 		goto L6
 	} else {
 		goto L8
@@ -163,12 +163,12 @@ L8:
 	goto L9
 L9:
 	;
-	v35 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[4]))
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)+16))
-	F_LruDelete(m, v36)
+	v33 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[4]))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
+	F_LruDelete(m, v34)
 	mBase = m.M
-	v38 = m.ExcPending
-	if v38 != 0 {
+	v36 = m.ExcPending
+	if v36 != 0 {
 		goto L1
 	} else {
 		goto L11
@@ -178,18 +178,18 @@ L10:
 	goto L6
 L11:
 	;
-	v40 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
-	if v40 <= int32(0) {
+	v38 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
+	if v38 <= int32(0) {
 		goto L6
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[1]))
-	v46 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[2]))
-	v48 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
-	if v44 <= v46+(v48+v40) {
+	v42 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[1]))
+	v44 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[2]))
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
+	if v42 <= v44+(v46+v38) {
 		goto L9
 	} else {
 		goto L13
@@ -199,52 +199,52 @@ L13:
 	goto L10
 L14:
 	;
-	m.G0 = v9 + int32(16)
-	return v136
+	m.G0 = v8 + int32(16)
+	return v130
 L15:
 	;
 	goto L18
 L16:
 	;
-	v108 = v58
+	v102 = v55
 	goto L17
 L17:
 	;
-	v111 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[5]))
-	v113 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
-	v116 = v111 + v113*int32(12)
-	*(*int32)(unsafe.Add(mBase, uint32(v116)+8)) = v108
-	*(*int32)(unsafe.Add(mBase, uint32(v116))) = int32(0)
-	v121 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[6]))
-	v122 = *(*int32)(unsafe.Add(mBase, uint32(v121)+8))
+	v106 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[5]))
+	v108 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
+	v111 = v106 + v108*int32(12)
+	*(*int32)(unsafe.Add(mBase, uint32(v111)+8)) = v102
+	*(*int32)(unsafe.Add(mBase, uint32(v111))) = int32(0)
+	v116 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[6]))
+	v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
 	goto L33
 L18:
 	;
-	v68 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7]))
-	switch v68 - int32(33) {
+	v64 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7]))
+	switch v64 - int32(33) {
 	case 0, 8:
 		goto L20
 	default:
-		v136 = v3
+		v130 = v3
 		goto L14
 	}
 L19:
 	;
-	v108 = v101
+	v102 = v97
 	goto L17
 L20:
 	;
-	v73 = F_errstart(m, int32(15), int32(0))
+	v69 = F_errstart(m, int32(15), int32(0))
 	mBase = m.M
-	v74 = m.ExcPending
-	if v74 != 0 {
+	v70 = m.ExcPending
+	if v70 != 0 {
 		goto L1
 	} else {
 		goto L21
 	}
 L21:
 	;
-	if v73 != 0 {
+	if v69 != 0 {
 		goto L22
 	} else {
 		goto L23
@@ -253,8 +253,8 @@ L22:
 	;
 	F_errcode(m, int32(197))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
+	v73 = m.ExcPending
+	if v73 != 0 {
 		goto L1
 	} else {
 		goto L25
@@ -264,10 +264,10 @@ L23:
 	goto L24
 L24:
 	;
-	v88 = int32(0)
-	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7])) = v88
-	v91 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
-	if v91 <= v88 {
+	v84 = int32(0)
+	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7])) = v84
+	v87 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[0]))
+	if v87 <= v84 {
 		goto L28
 	} else {
 		goto L29
@@ -276,8 +276,8 @@ L25:
 	;
 	F_errmsg(m, int32(_a_F_AllocateFile_0), int32(0))
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
+	v77 = m.ExcPending
+	if v77 != 0 {
 		goto L1
 	} else {
 		goto L26
@@ -286,8 +286,8 @@ L26:
 	;
 	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2684), int32(_a_F_AllocateFile_2))
 	mBase = m.M
-	v86 = m.ExcPending
-	if v86 != 0 {
+	v82 = m.ExcPending
+	if v82 != 0 {
 		goto L1
 	} else {
 		goto L27
@@ -297,29 +297,29 @@ L27:
 	goto L24
 L28:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7])) = v68
-	v136 = v3
+	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[7])) = v64
+	v130 = v3
 	goto L14
 L29:
 	;
 	goto L30
 L30:
 	;
-	v97 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[4]))
-	v98 = *(*int32)(unsafe.Add(mBase, uint32(v97)+16))
-	F_LruDelete(m, v98)
+	v93 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[4]))
+	v94 = *(*int32)(unsafe.Add(mBase, uint32(v93)+16))
+	F_LruDelete(m, v94)
 	mBase = m.M
-	v100 = m.ExcPending
-	if v100 != 0 {
+	v96 = m.ExcPending
+	if v96 != 0 {
 		goto L1
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v101 = F_fopen(m, l0, l1)
+	v97 = F_fopen(m, l0, l1)
 	mBase = m.M
-	if v101 == int32(0) {
+	if v97 == int32(0) {
 		goto L18
 	} else {
 		goto L32
@@ -329,32 +329,32 @@ L32:
 	goto L19
 L33:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v116)+4)) = v122
-	v124 = int32(_a_F_AllocateFile_3)
-	v126 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
-	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3])) = v126 + int32(1)
-	v130 = *(*int32)(unsafe.Add(mBase, uint32(v116)+8))
-	v136 = v130
+	*(*int32)(unsafe.Add(mBase, uint32(v111)+4)) = v117
+	v119 = int32(_a_F_AllocateFile_3)
+	v121 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3]))
+	*(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[3])) = v121 + int32(1)
+	v125 = *(*int32)(unsafe.Add(mBase, uint32(v111)+8))
+	v130 = v125
 	goto L14
 L34:
 	;
 	F_errcode(m, int32(197))
 	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
+	v141 = m.ExcPending
+	if v141 != 0 {
 		goto L1
 	} else {
 		goto L35
 	}
 L35:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v9)+4)) = l0
-	v150 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[8]))
-	*(*int32)(unsafe.Add(mBase, uint32(v9))) = v150
-	F_errmsg(m, int32(_a_F_AllocateFile_4), v9)
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l0
+	v144 = *(*int32)(unsafe.Add(mBase, _c_F_AllocateFile[8]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v144
+	F_errmsg(m, int32(_a_F_AllocateFile_4), v8)
 	mBase = m.M
-	v154 = m.ExcPending
-	if v154 != 0 {
+	v148 = m.ExcPending
+	if v148 != 0 {
 		goto L1
 	} else {
 		goto L36
@@ -363,8 +363,8 @@ L36:
 	;
 	F_errfinish(m, int32(_a_F_AllocateFile_1), int32(2661), int32(_a_F_AllocateFile_2))
 	mBase = m.M
-	v159 = m.ExcPending
-	if v159 != 0 {
+	v153 = m.ExcPending
+	if v153 != 0 {
 		goto L1
 	} else {
 		goto L37

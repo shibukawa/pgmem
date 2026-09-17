@@ -23,24 +23,22 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v7 int32
-	_ = v7
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v13 int32
+	_ = v13
 	var v16 int32
 	_ = v16
-	var v19 int32
-	_ = v19
+	var v17 int32
+	_ = v17
 	var v20 int32
 	_ = v20
-	var v23 int32
-	_ = v23
+	var v21 int32
+	_ = v21
 	var v24 int32
 	_ = v24
 	var v25 int32
@@ -55,30 +53,34 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
-	var v37 int32
-	_ = v37
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
-	var v41 int32
-	_ = v41
-	var v43 int32
-	_ = v43
+	var v39 int32
+	_ = v39
+	var v42 int32
+	_ = v42
 	var v44 int32
 	_ = v44
 	var v45 int32
 	_ = v45
+	var v46 int32
+	_ = v46
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
-	var v51 int32
-	_ = v51
+	var v50 int32
+	_ = v50
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
-	var v54 int32
-	_ = v54
 	var v62 int32
 	_ = v62
 	var v63 int32
@@ -118,47 +120,48 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 	var v110 int32
 	_ = v110
 	v2 = int32(0)
-	v7 = m.G0
-	v9 = v7 - int32(16)
-	m.G0 = v9
-	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)+16))
-	if v12 == v2 {
-		v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v16 = F_pg_detoast_datum_packed(m, v15)
+	v8 = m.G0
+	v10 = v8 - int32(16)
+	m.G0 = v10
+	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)+16))
+	if v13 == v2 {
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v17 = F_pg_detoast_datum_packed(m, v16)
 		mBase = m.M
-		v19 = m.ExcPending
-		if v19 != 0 {
+		v20 = m.ExcPending
+		if v20 != 0 {
 			return int32(0)
 		} else {
-			v20 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
-			if int32(3) <= v20 {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-				v24 = F_pg_detoast_datum_packed(m, v23)
+			v21 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+18)))
+			if int32(3) <= v21 {
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
+				v25 = F_pg_detoast_datum_packed(m, v24)
 				mBase = m.M
-				v25 = m.ExcPending
-				if v25 != 0 {
+				v26 = m.ExcPending
+				if v26 != 0 {
 					return int32(0)
 				} else {
-					v26 = v24
-					v27 = F_init_MultiFuncCall(m, l0)
+					v27 = v25
+					v28 = F_init_MultiFuncCall(m, l0)
 					mBase = m.M
-					v28 = m.ExcPending
-					if v28 != 0 {
+					v29 = m.ExcPending
+					if v29 != 0 {
 						return int32(0)
 					} else {
-						v29 = int32(_a_F_regexp_split_to_table_0)
-						v30 = *(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0]))
-						v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+24))
-						*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v32
-						F_parse_re_flags(m, v9+int32(8), v26)
+						v30 = int32(_a_F_regexp_split_to_table_0)
+						v31 = *(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0]))
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(v28)+24))
+						*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v33
+						v36 = v10 + int32(8)
+						F_parse_re_flags(m, v36, v27)
 						mBase = m.M
-						v37 = m.ExcPending
-						if v37 != 0 {
+						v38 = m.ExcPending
+						if v38 != 0 {
 							return int32(0)
 						} else {
-							v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+12)))
-							if v38 == int32(1) {
+							v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)))
+							if v39 == int32(1) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
 								v97 = m.ExcPending
@@ -171,8 +174,8 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 									if v100 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(_a_F_regexp_split_to_table_1)
-										F_errmsg(m, int32(_a_F_regexp_split_to_table_2), v9)
+										*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(_a_F_regexp_split_to_table_1)
+										F_errmsg(m, int32(_a_F_regexp_split_to_table_2), v10)
 										mBase = m.M
 										v105 = m.ExcPending
 										if v105 != 0 {
@@ -192,26 +195,26 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 									}
 								}
 							} else {
-								v41 = int32(1)
-								*(*uint8)(unsafe.Add(mBase, uint32(v9)+12)) = uint8(v41)
-								v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-								v44 = F_pg_detoast_datum_copy(m, v43)
+								v42 = int32(1)
+								*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)) = uint8(v42)
+								v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+								v45 = F_pg_detoast_datum_copy(m, v44)
 								mBase = m.M
-								v45 = m.ExcPending
-								if v45 != 0 {
+								v46 = m.ExcPending
+								if v46 != 0 {
 									return int32(0)
 								} else {
-									v48 = int32(0)
-									v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-									v51 = int32(1)
-									v53 = F_setup_regexp_matches(m, v44, v16, v9+int32(8), v48, v49, v48, v51, v51)
+									v47 = int32(0)
+									v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+									v50 = int32(1)
+									v52 = F_setup_regexp_matches(m, v45, v17, v36, v47, v48, v47, v50, v50)
 									mBase = m.M
-									v54 = m.ExcPending
-									if v54 != 0 {
+									v53 = m.ExcPending
+									if v53 != 0 {
 										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v30
-										*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v53
+										*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v31
+										*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = v52
 										v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 										v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+16))
 										v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+16))
@@ -232,7 +235,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 												v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 												*(*int32)(unsafe.Add(mBase, uint32(v78)+20)) = v71
 												v89 = v68
-												m.G0 = v9 + int32(16)
+												m.G0 = v10 + int32(16)
 												return v89
 											}
 										} else {
@@ -247,7 +250,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 												v86 = int32(1)
 												*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v86)
 												v89 = int32(0)
-												m.G0 = v9 + int32(16)
+												m.G0 = v10 + int32(16)
 												return v89
 											}
 										}
@@ -258,25 +261,26 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				v26 = v2
-				v27 = F_init_MultiFuncCall(m, l0)
+				v27 = v2
+				v28 = F_init_MultiFuncCall(m, l0)
 				mBase = m.M
-				v28 = m.ExcPending
-				if v28 != 0 {
+				v29 = m.ExcPending
+				if v29 != 0 {
 					return int32(0)
 				} else {
-					v29 = int32(_a_F_regexp_split_to_table_0)
-					v30 = *(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0]))
-					v32 = *(*int32)(unsafe.Add(mBase, uint32(v27)+24))
-					*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v32
-					F_parse_re_flags(m, v9+int32(8), v26)
+					v30 = int32(_a_F_regexp_split_to_table_0)
+					v31 = *(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0]))
+					v33 = *(*int32)(unsafe.Add(mBase, uint32(v28)+24))
+					*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v33
+					v36 = v10 + int32(8)
+					F_parse_re_flags(m, v36, v27)
 					mBase = m.M
-					v37 = m.ExcPending
-					if v37 != 0 {
+					v38 = m.ExcPending
+					if v38 != 0 {
 						return int32(0)
 					} else {
-						v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+12)))
-						if v38 == int32(1) {
+						v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)))
+						if v39 == int32(1) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
 							v97 = m.ExcPending
@@ -289,8 +293,8 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 								if v100 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v9))) = int32(_a_F_regexp_split_to_table_1)
-									F_errmsg(m, int32(_a_F_regexp_split_to_table_2), v9)
+									*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(_a_F_regexp_split_to_table_1)
+									F_errmsg(m, int32(_a_F_regexp_split_to_table_2), v10)
 									mBase = m.M
 									v105 = m.ExcPending
 									if v105 != 0 {
@@ -310,26 +314,26 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 								}
 							}
 						} else {
-							v41 = int32(1)
-							*(*uint8)(unsafe.Add(mBase, uint32(v9)+12)) = uint8(v41)
-							v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-							v44 = F_pg_detoast_datum_copy(m, v43)
+							v42 = int32(1)
+							*(*uint8)(unsafe.Add(mBase, uint32(v10)+12)) = uint8(v42)
+							v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+							v45 = F_pg_detoast_datum_copy(m, v44)
 							mBase = m.M
-							v45 = m.ExcPending
-							if v45 != 0 {
+							v46 = m.ExcPending
+							if v46 != 0 {
 								return int32(0)
 							} else {
-								v48 = int32(0)
-								v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-								v51 = int32(1)
-								v53 = F_setup_regexp_matches(m, v44, v16, v9+int32(8), v48, v49, v48, v51, v51)
+								v47 = int32(0)
+								v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+								v50 = int32(1)
+								v52 = F_setup_regexp_matches(m, v45, v17, v36, v47, v48, v47, v50, v50)
 								mBase = m.M
-								v54 = m.ExcPending
-								if v54 != 0 {
+								v53 = m.ExcPending
+								if v53 != 0 {
 									return int32(0)
 								} else {
-									*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v30
-									*(*int32)(unsafe.Add(mBase, uint32(v27)+16)) = v53
+									*(*int32)(unsafe.Add(mBase, _c_F_regexp_split_to_table[0])) = v31
+									*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = v52
 									v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 									v63 = *(*int32)(unsafe.Add(mBase, uint32(v62)+16))
 									v64 = *(*int32)(unsafe.Add(mBase, uint32(v63)+16))
@@ -350,7 +354,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 											v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 											*(*int32)(unsafe.Add(mBase, uint32(v78)+20)) = v71
 											v89 = v68
-											m.G0 = v9 + int32(16)
+											m.G0 = v10 + int32(16)
 											return v89
 										}
 									} else {
@@ -365,7 +369,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 											v86 = int32(1)
 											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v86)
 											v89 = int32(0)
-											m.G0 = v9 + int32(16)
+											m.G0 = v10 + int32(16)
 											return v89
 										}
 									}
@@ -397,7 +401,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 				v78 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
 				*(*int32)(unsafe.Add(mBase, uint32(v78)+20)) = v71
 				v89 = v68
-				m.G0 = v9 + int32(16)
+				m.G0 = v10 + int32(16)
 				return v89
 			}
 		} else {
@@ -412,7 +416,7 @@ func F_regexp_split_to_table(m *base.Module, l0 int32) int32 {
 				v86 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v86)
 				v89 = int32(0)
-				m.G0 = v9 + int32(16)
+				m.G0 = v10 + int32(16)
 				return v89
 			}
 		}

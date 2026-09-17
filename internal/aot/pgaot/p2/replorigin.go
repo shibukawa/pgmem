@@ -20,8 +20,8 @@ func F_replorigin_get_progress(m *base.Module, l0 int32, l1 int32) int64 {
 	_ = v19
 	var v23 int32
 	_ = v23
-	var v26 int32
-	_ = v26
+	var v27 int32
+	_ = v27
 	var v34 int32
 	_ = v34
 	var v35 int32
@@ -48,8 +48,10 @@ func F_replorigin_get_progress(m *base.Module, l0 int32, l1 int32) int64 {
 	_ = v58
 	var v62 int32
 	_ = v62
-	var v68 int32
-	_ = v68
+	var v63 int32
+	_ = v63
+	var v71 int32
+	_ = v71
 	v7 = int64(0)
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_replorigin_get_progress[0]))
 	v14 = F_LWLockAcquire(m, v10+int32(_a_F_replorigin_get_progress_0), int32(1))
@@ -67,9 +69,11 @@ L2:
 	;
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_replorigin_get_progress[1]))
 	if v19 <= int32(0) {
-		goto L4
+		v55 = v7
+		v56 = v7
+		goto L3
 	} else {
-		goto L5
+		goto L4
 	}
 L3:
 	;
@@ -80,22 +84,14 @@ L3:
 	if v62 != 0 {
 		goto L1
 	} else {
-		goto L14
+		goto L12
 	}
 L4:
 	;
-	v55 = v7
-	v56 = v7
-	goto L3
-L5:
-	;
-	goto L6
-L6:
-	;
 	v23 = *(*int32)(unsafe.Add(mBase, _c_F_replorigin_get_progress[2]))
-	v26 = int32(0)
-	goto L8
-L7:
+	v27 = int32(0)
+	goto L6
+L5:
 	;
 	v41 = v34 + int32(40)
 	v43 = F_LWLockAcquire(m, v41, int32(1))
@@ -104,35 +100,35 @@ L7:
 	if v44 != 0 {
 		goto L1
 	} else {
-		goto L12
-	}
-L8:
-	;
-	v34 = v23 + v26*int32(56)
-	v35 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v34))))
-	if v35 == l0 {
-		goto L7
-	} else {
 		goto L10
 	}
-L9:
+L6:
+	;
+	v34 = v23 + v27*int32(56)
+	v35 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v34))))
+	if v35 == l0 {
+		goto L5
+	} else {
+		goto L8
+	}
+L7:
 	;
 	v55 = v7
 	v56 = v7
 	goto L3
-L10:
+L8:
 	;
-	v38 = v26 + int32(1)
+	v38 = v27 + int32(1)
 	if v38 != v19 {
-		v26 = v38
-		goto L8
+		v27 = v38
+		goto L6
 	} else {
-		goto L11
+		goto L9
 	}
-L11:
+L9:
 	;
-	goto L9
-L12:
+	goto L7
+L10:
 	;
 	v45 = *(*int64)(unsafe.Add(mBase, uint32(v34)+16))
 	v46 = *(*int64)(unsafe.Add(mBase, uint32(v34)+8))
@@ -142,41 +138,38 @@ L12:
 	if v48 != 0 {
 		goto L1
 	} else {
-		goto L13
+		goto L11
 	}
-L13:
+L11:
 	;
 	v55 = v45
 	v56 = v46
 	goto L3
-L14:
+L12:
 	;
-	if l1 == int32(0) {
-		goto L15
+	v63 = int32(0)
+	if base.B2i32(l1 == v63)|base.B2i32(v55 == int64(0)) == v63 {
+		goto L13
+	} else {
+		goto L14
+	}
+L13:
+	;
+	F_XLogFlush(m, v55)
+	mBase = m.M
+	v71 = m.ExcPending
+	if v71 != 0 {
+		goto L1
 	} else {
 		goto L16
 	}
+L14:
+	;
+	goto L15
 L15:
 	;
 	return v56
 L16:
-	;
-	if v55 == int64(0) {
-		goto L15
-	} else {
-		goto L17
-	}
-L17:
-	;
-	F_XLogFlush(m, v55)
-	mBase = m.M
-	v68 = m.ExcPending
-	if v68 != 0 {
-		goto L1
-	} else {
-		goto L18
-	}
-L18:
 	;
 	goto L15
 }

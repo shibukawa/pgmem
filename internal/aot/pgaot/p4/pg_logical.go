@@ -40,6 +40,8 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 	_ = v40
 	var v47 int32
 	_ = v47
+	var v50 int32
+	_ = v50
 	var v54 int32
 	_ = v54
 	var v55 int32
@@ -60,26 +62,26 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 	_ = v68
 	var v71 int32
 	_ = v71
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
 	var v76 int32
 	_ = v76
 	var v77 int32
 	_ = v77
 	var v78 int32
 	_ = v78
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
+	var v82 int32
+	_ = v82
 	var v84 int32
 	_ = v84
-	var v86 int32
-	_ = v86
-	var v94 int32
-	_ = v94
-	var v98 int32
-	_ = v98
-	var v103 int32
-	_ = v103
+	var v92 int32
+	_ = v92
+	var v96 int32
+	_ = v96
+	var v101 int32
+	_ = v101
 	v8 = m.G0
 	v10 = v8 - int32(32)
 	m.G0 = v10
@@ -124,7 +126,8 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+24)) = int32(395)
 						*(*int32)(unsafe.Add(mBase, uint32(v10)+20)) = int32(396)
 						v47 = int32(0)
-						v54 = F_CreateInitDecodingContext(m, v15, v47, int64(0), v10+int32(20), v47, v47, v47)
+						v50 = v10 + int32(20)
+						v54 = F_CreateInitDecodingContext(m, v15, v47, int64(0), v50, v47, v47, v47)
 						mBase = m.M
 						v55 = m.ExcPending
 						if v55 != 0 {
@@ -155,45 +158,45 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 										*(*uint16)(unsafe.Add(mBase, uint32(v10)+20)) = uint16(v68)
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+12)) = v66
 										v71 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-										v76 = F_heap_form_tuple(m, v71, v10+int32(8), v10+int32(20))
+										v74 = F_heap_form_tuple(m, v71, v10+int32(8), v50)
 										mBase = m.M
-										v77 = m.ExcPending
-										if v77 != 0 {
+										v75 = m.ExcPending
+										if v75 != 0 {
 											return int32(0)
 										} else {
-											v78 = *(*int32)(unsafe.Add(mBase, uint32(v76)+16))
-											v79 = F_HeapTupleHeaderGetDatum(m, v78)
+											v76 = *(*int32)(unsafe.Add(mBase, uint32(v74)+16))
+											v77 = F_HeapTupleHeaderGetDatum(m, v76)
 											mBase = m.M
-											v80 = m.ExcPending
-											if v80 != 0 {
+											v78 = m.ExcPending
+											if v78 != 0 {
 												return int32(0)
 											} else {
 												if v14 == int32(0) {
 													F_ReplicationSlotPersist(m)
 													mBase = m.M
-													v84 = m.ExcPending
-													if v84 != 0 {
+													v82 = m.ExcPending
+													if v82 != 0 {
 														return int32(0)
 													} else {
 														F_ReplicationSlotRelease(m)
 														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
+														v84 = m.ExcPending
+														if v84 != 0 {
 															return int32(0)
 														} else {
 															m.G0 = v10 + int32(32)
-															return v79
+															return v77
 														}
 													}
 												} else {
 													F_ReplicationSlotRelease(m)
 													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
+													v84 = m.ExcPending
+													if v84 != 0 {
 														return int32(0)
 													} else {
 														m.G0 = v10 + int32(32)
-														return v79
+														return v77
 													}
 												}
 											}
@@ -208,20 +211,20 @@ func F_pg_create_logical_replication_slot(m *base.Module, l0 int32) int32 {
 		} else {
 			F_errstart_cold(m, int32(21), int32(0))
 			mBase = m.M
-			v94 = m.ExcPending
-			if v94 != 0 {
+			v92 = m.ExcPending
+			if v92 != 0 {
 				return int32(0)
 			} else {
 				F_errmsg_internal(m, int32(_a_F_pg_create_logical_replication_slot_0), int32(0))
 				mBase = m.M
-				v98 = m.ExcPending
-				if v98 != 0 {
+				v96 = m.ExcPending
+				if v96 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_pg_create_logical_replication_slot_1), int32(183), int32(_a_F_pg_create_logical_replication_slot_2))
 					mBase = m.M
-					v103 = m.ExcPending
-					if v103 != 0 {
+					v101 = m.ExcPending
+					if v101 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()

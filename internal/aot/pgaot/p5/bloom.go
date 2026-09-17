@@ -48,9 +48,9 @@ func F_BloomNewBuffer(m *base.Module, l0 int32) int32 {
 	_ = v55
 	var v56 int32
 	_ = v56
-	var v65 int32
-	_ = v65
-	var v68 int64
+	var v66 int64
+	_ = v66
+	var v68 int32
 	_ = v68
 	var v70 int32
 	_ = v70
@@ -97,11 +97,11 @@ L5:
 L6:
 	;
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+24)) = int64(0)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v65
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+20)) = l0
-	v68 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
-	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v68
+	v66 = *(*int64)(unsafe.Add(mBase, uint32(v7)+20))
+	*(*int64)(unsafe.Add(mBase, uint32(v7)+8)) = v66
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(v7)+28))
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v68
 	v70 = int32(8)
 	v72 = int32(0)
 	v75 = F_ExtendBufferedRel(m, v7+v70, v72, v72, v70)
@@ -235,138 +235,15 @@ L24:
 	goto L1
 }
 func F_bloom_get_procinfo(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v6 int32
 	_ = v6
-	var v8 int32
-	_ = v8
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v48 int64
-	_ = v48
-	var v50 int64
-	_ = v50
-	var v52 int32
-	_ = v52
-	var v54 int64
-	_ = v54
-	var v67 int32
-	_ = v67
-	var v70 int32
-	_ = v70
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
-	var v85 int32
-	_ = v85
-	v6 = m.G0
-	v8 = v6 - int32(16)
-	m.G0 = v8
-	v13 = *(*int32)(unsafe.Add(mBase, uint32(l1<<(uint(int32(2))%32)+l0)+16))
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
-	if v15 == int32(0) {
-		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v19 = base.I32_extend16_s(l1)
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(v18)+216))
-		v22 = *(*int32)(unsafe.Add(mBase, uint32(v18)+204))
-		v23 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v22)+6)))
-		v35 = *(*int32)(unsafe.Add(mBase, uint32(v21+v23*(v19-int32(1))<<(uint(int32(2))%32)+int32(44)-int32(4))))
-		if v35 == int32(0) {
-			F_errstart_cold(m, int32(21), int32(0))
-			mBase = m.M
-			v67 = m.ExcPending
-			if v67 != 0 {
-				return int32(0)
-			} else {
-				F_errcode(m, int32(117833860))
-				mBase = m.M
-				v70 = m.ExcPending
-				if v70 != 0 {
-					return int32(0)
-				} else {
-					F_errmsg_internal(m, int32(_a_F_bloom_get_procinfo_0), int32(0))
-					mBase = m.M
-					v74 = m.ExcPending
-					if v74 != 0 {
-						return int32(0)
-					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = l1
-						*(*int32)(unsafe.Add(mBase, uint32(v8))) = int32(11)
-						F_errdetail_internal(m, int32(_a_F_bloom_get_procinfo_1), v8)
-						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
-							return int32(0)
-						} else {
-							F_errfinish(m, int32(_a_F_bloom_get_procinfo_2), int32(739), int32(_a_F_bloom_get_procinfo_3))
-							mBase = m.M
-							v85 = m.ExcPending
-							if v85 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						}
-					}
-				}
-			}
-		} else {
-			v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v40 = F_index_getprocinfo(m, v38, v19, int32(11))
-			mBase = m.M
-			v43 = m.ExcPending
-			if v43 != 0 {
-				return int32(0)
-			} else {
-				v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v47 = v14 + int32(16)
-				v48 = *(*int64)(unsafe.Add(mBase, uint32(v40)+16))
-				*(*int64)(unsafe.Add(mBase, uint32(v47))) = v48
-				v50 = *(*int64)(unsafe.Add(mBase, uint32(v40)))
-				*(*int64)(unsafe.Add(mBase, uint32(v14))) = v50
-				v52 = *(*int32)(unsafe.Add(mBase, uint32(v40)+24))
-				*(*int32)(unsafe.Add(mBase, uint32(v14)+24)) = v52
-				v54 = *(*int64)(unsafe.Add(mBase, uint32(v40)+8))
-				*(*int64)(unsafe.Add(mBase, uint32(v14)+8)) = v54
-				*(*int32)(unsafe.Add(mBase, uint32(v14)+20)) = v44
-				*(*int32)(unsafe.Add(mBase, uint32(v47))) = int32(0)
-				m.G0 = v8 + int32(16)
-				return v14
-			}
-		}
+	var v9 int32
+	_ = v9
+	v6 = Fn13850(m, l0, l1, int32(_a_F_bloom_get_procinfo_0), int32(739), int32(_a_F_bloom_get_procinfo_1))
+	v9 = m.ExcPending
+	if v9 != 0 {
+		return int32(0)
 	} else {
-		m.G0 = v8 + int32(16)
-		return v14
+		return v6
 	}
 }

@@ -30,14 +30,14 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 	_ = v51
 	var v53 int32
 	_ = v53
-	var v62 int32
-	_ = v62
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v74 int32
-	_ = v74
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
 	if base.Ui32(l0) < base.Ui32(int32(13)) {
 		v53 = l0
 		*(*int32)(unsafe.Add(mBase, uint32(v53*int32(40))+uint32(_c_F_RegisterTimeout[0]))) = l1
@@ -101,26 +101,26 @@ func F_RegisterTimeout(m *base.Module, l0 int32, l1 int32) {
 											if v51 != 0 {
 												F_errstart_cold(m, int32(22), int32(0))
 												mBase = m.M
-												v62 = m.ExcPending
-												if v62 != 0 {
+												v60 = m.ExcPending
+												if v60 != 0 {
 													return
 												} else {
 													F_errcode(m, int32(_a_F_RegisterTimeout_0))
 													mBase = m.M
-													v65 = m.ExcPending
-													if v65 != 0 {
+													v63 = m.ExcPending
+													if v63 != 0 {
 														return
 													} else {
 														F_errmsg(m, int32(_a_F_RegisterTimeout_1), int32(0))
 														mBase = m.M
-														v69 = m.ExcPending
-														if v69 != 0 {
+														v67 = m.ExcPending
+														if v67 != 0 {
 															return
 														} else {
 															F_errfinish(m, int32(_a_F_RegisterTimeout_2), int32(520), int32(_a_F_RegisterTimeout_3))
 															mBase = m.M
-															v74 = m.ExcPending
-															if v74 != 0 {
+															v72 = m.ExcPending
+															if v72 != 0 {
 																return
 															} else {
 																base.Wasm_trap_unreachable()
@@ -170,7 +170,7 @@ func F_enable_timeout_after(m *base.Module, l0 int32, l1 int32) {
 	v11 = int32(16)
 	v12 = v10 - v11
 	m.G0 = v12
-	F___gettimeofday(m, v12)
+	F_gettimeofday(m, v12)
 	mBase = m.M
 	v15 = *(*int64)(unsafe.Add(mBase, uint32(v12)))
 	v16 = int64(*(*int32)(unsafe.Add(mBase, uint32(v12)+8)))

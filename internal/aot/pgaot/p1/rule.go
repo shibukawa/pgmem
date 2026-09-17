@@ -64,8 +64,6 @@ func F_get_rule_orderby(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) 
 	_ = v63
 	var v64 int32
 	_ = v64
-	var v65 int32
-	_ = v65
 	var v74 int32
 	_ = v74
 	var v79 int32
@@ -196,9 +194,8 @@ L8:
 	}
 L9:
 	;
-	v64 = int32(1)
-	v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v65 <= v64 {
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v64 < int32(2) {
 		goto L1
 	} else {
 		goto L26
@@ -307,7 +304,7 @@ L25:
 	goto L9
 L26:
 	;
-	v74 = v64
+	v74 = int32(1)
 	goto L27
 L27:
 	;

@@ -253,28 +253,16 @@ func F_contain_subplans_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_contain_vars_of_level(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
 	var v4 int32
 	_ = v4
-	var v6 int32
-	_ = v6
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	v4 = m.G0
-	v6 = v4 - int32(16)
-	m.G0 = v6
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+12)) = l1
-	v13 = F_query_or_expression_tree_walker_impl(m, l0, int32(900), v6+int32(12), int32(0))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	var v7 int32
+	_ = v7
+	v4 = Fn13865(m, l0, l1, int32(900))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		m.G0 = v6 + int32(16)
-		return v13
+		return v4
 	}
 }
 func F_contain_vars_returning_old_or_new_walker(m *base.Module, l0 int32, l1 int32) int32 {
@@ -334,19 +322,19 @@ func F_contain_vars_returning_old_or_new_walker(m *base.Module, l0 int32, l1 int
 	}
 }
 func F_contain_volatile_functions_not_nextval_checker(m *base.Module, l0 int32, l1 int32) int32 {
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
 	var v12 int32
 	_ = v12
 	if l0 != int32(1574) {
-		v6 = F_func_volatile(m, l0)
-		v9 = m.ExcPending
-		if v9 != 0 {
+		v5 = F_func_volatile(m, l0)
+		v8 = m.ExcPending
+		if v8 != 0 {
 			return int32(0)
 		} else {
-			v12 = base.B2i32(v6 == int32(118))
+			v12 = base.B2i32(v5 == int32(118))
 			return v12
 		}
 	} else {

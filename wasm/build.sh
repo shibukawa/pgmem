@@ -5,7 +5,14 @@
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 ROOT=$(dirname "$HERE")
-source "$ROOT/toolchain/emsdk/emsdk_env.sh" >/dev/null 2>&1
+# Prefer the pinned emsdk when it is present.  Devbox provides emcc/emmake
+# directly on PATH, so do not require an emsdk checkout in that environment.
+if [ -f "$ROOT/toolchain/emsdk/emsdk_env.sh" ]; then
+  source "$ROOT/toolchain/emsdk/emsdk_env.sh" >/dev/null 2>&1
+elif ! command -v emcc >/dev/null 2>&1 || ! command -v emmake >/dev/null 2>&1; then
+  echo "error: emcc/emmake not found; use emsdk or a Devbox environment with emscripten" >&2
+  exit 1
+fi
 OUT=$HERE/out
 PREFIX=$OUT/install
 SJLJ=${SJLJ:-wasm}
@@ -104,7 +111,28 @@ emmake make PORTNAME=emscripten install
 echo "== rebuild loadable modules for static linking"
 # Each module gets unique Pg_magic_func/_PG_init symbols; pgmem_dl.c maps
 # them back when dfmgr.c asks for the generic names.
-LLVM_NM="$ROOT/toolchain/emsdk/upstream/bin/llvm-nm"
+LLVM_NM=${LLVM_NM:-$(command -v llvm-nm || true)}
+if [ -z "$LLVM_NM" ] && command -v emcc >/dev/null 2>&1 && command -v realpath >/dev/null 2>&1; then
+  # Emscripten's Nix package keeps emnm.py next to the private LLVM output.
+  # It is an executable wrapper, so gen_modules.py can invoke it like nm.
+  EMCC_BIN=$(realpath "$(command -v emcc)" 2>/dev/null || true)
+  EMSCRIPTEN_ROOT=$(cd "$(dirname "$EMCC_BIN")/.." 2>/dev/null && pwd || true)
+  if [ -x "$EMSCRIPTEN_ROOT/share/emscripten/tools/emnm.py" ]; then
+    LLVM_NM="$EMSCRIPTEN_ROOT/share/emscripten/tools/emnm.py"
+  fi
+fi
+if [ -z "$LLVM_NM" ] && command -v em-config >/dev/null 2>&1; then
+  # Nix's Emscripten package keeps LLVM tools in its private dependency
+  # output instead of adding them all to PATH.
+  LLVM_ROOT=$(em-config LLVM_ROOT 2>/dev/null || true)
+  if [ -n "$LLVM_ROOT" ] && [ -x "$LLVM_ROOT/llvm-nm" ]; then
+    LLVM_NM="$LLVM_ROOT/llvm-nm"
+  fi
+fi
+if [ -z "$LLVM_NM" ]; then
+  echo "error: llvm-nm not found; use emsdk or a Devbox environment with LLVM" >&2
+  exit 1
+fi
 MODULE_DIRS="plpgsql=src/pl/plpgsql/src dict_snowball=src/backend/snowball"
 for d in src/backend/utils/mb/conversion_procs/*/; do
   n=$(basename "$d")
@@ -187,15 +215,32 @@ emcc $BASE_CFLAGS -c -o "$OUT/pgmem_dl.o" "$HERE/pgmem_dl.c"
 emcc $BASE_CFLAGS -c -o "$OUT/pgmem_modules_gen.o" "$OUT/pgmem_modules_gen.c"
 
 echo "== link backend (pglite target)"
-BACKEND_EXPORTS=$EXPORTS_COMMON,_PostgresMainLoopOnce,_PostgresMainLongJmp,_PostgresSendReadyForQueryIfNecessary,_ProcessStartupPacket,_IsTransactionBlock,_pgl_startPGlite,_pgl_getMyProcPort,_pgl_sendConnData,_pgl_pq_flush,_pq_buffer_remaining_data,_pgmem_module_name,_pgmem_reset_session
+AOT_EXPORTS_FILE=${AOT_EXPORTS_FILE:-$HERE/aot-exports.txt}
+if [ ! -s "$AOT_EXPORTS_FILE" ]; then
+  echo "error: AOT export allowlist not found or empty: $AOT_EXPORTS_FILE" >&2
+  exit 1
+fi
+# Emscripten's EXPORTED_FUNCTIONS uses C spellings with one leading
+# underscore.  __wasm_call_ctors is emitted by the linker automatically.
+BACKEND_EXPORTS=$(sed \
+  -e '/^[[:space:]]*#/d' \
+  -e '/^[[:space:]]*$/d' \
+  -e '/^__wasm_call_ctors$/d' \
+  -e 's/^/_/' \
+  "$AOT_EXPORTS_FILE" | paste -sd, -)
 rm -f src/backend/pglite.wasm src/backend/pglite.js
 # A small initial memory: the heap grows on demand (emscripten_resize_heap)
 # and every initial byte is resident memory the host has to zero.
 # --profiling-funcs keeps the function names (a "name" custom section,
 # ~0.5 MB, not shipped): gen-aot.sh names the generated Go functions
 # after them so a rebuild only changes the functions that changed.
+# PostgreSQL's normal backend link sets -Wl,--export-dynamic, which makes
+# Emscripten export every symbol.  pgmem statically links its modules through
+# pgmem_dl.c, so the pglite image requests only BACKEND_EXPORTS; clear that
+# generic backend flag for this link.  Emscripten may still emit a few
+# runtime/libc exports needed by the generated JS glue.
 POSTGRES_PGLITE_FLAGS="-sINITIAL_MEMORY=32MB --profiling-funcs -sEXPORTED_FUNCTIONS=$BACKEND_EXPORTS $OUT/pgmem_dl.o $OUT/pgmem_modules_gen.o $MODULE_OBJS" \
-  emmake make PORTNAME=emscripten -C src/backend -j"$JOBS" pglite
+  emmake make PORTNAME=emscripten -C src/backend -j"$JOBS" LDFLAGS_EX_BE= pglite
 
 cp src/backend/pglite.wasm "$OUT/postgres.wasm"
 cp src/bin/initdb/initdb.wasm "$OUT/initdb.wasm"

@@ -18,14 +18,16 @@ func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v14 int32
 	_ = v14
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
-	var v26 int32
-	_ = v26
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
 	v2 = int32(0)
 	v4 = m.G0
 	v6 = v4 - int32(80)
@@ -36,20 +38,21 @@ func F_pg_restore_relation_stats(m *base.Module, l0 int32) int32 {
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+8)) = v10
 	v14 = int32(6)
 	*(*uint16)(unsafe.Add(mBase, uint32(v6)+26)) = uint16(v14)
-	v19 = F_stats_fill_fcinfo_from_arg_pairs(m, l0, v6+int32(8), int32(_a_F_pg_restore_relation_stats_0))
+	v17 = v6 + int32(8)
+	v19 = F_stats_fill_fcinfo_from_arg_pairs(m, l0, v17, int32(_a_F_pg_restore_relation_stats_0))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
 		return int32(0)
 	} else {
-		v25 = F_relation_statistics_update(m, v6+int32(8))
+		v23 = F_relation_statistics_update(m, v17)
 		mBase = m.M
-		v26 = m.ExcPending
-		if v26 != 0 {
+		v24 = m.ExcPending
+		if v24 != 0 {
 			return int32(0)
 		} else {
 			m.G0 = v6 + int32(80)
-			return v19 & v25
+			return v19 & v23
 		}
 	}
 }

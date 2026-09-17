@@ -93,7 +93,7 @@ func F_GetAttrDefaultOid(m *base.Module, l0 int32, l1 int32) int32 {
 						if v43 != 0 {
 							return int32(0)
 						} else {
-							F_sequence_close(m, v12, int32(1))
+							F_relation_close(m, v12, int32(1))
 							mBase = m.M
 							v46 = m.ExcPending
 							if v46 != 0 {
@@ -120,8 +120,8 @@ func F_execute_attr_map_cols(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
+	var v18 int32
+	_ = v18
 	var v23 int32
 	_ = v23
 	var v29 int32
@@ -136,14 +136,14 @@ func F_execute_attr_map_cols(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v43
 	var v44 int32
 	_ = v44
-	var v45 int32
-	_ = v45
+	var v46 int32
+	_ = v46
 	var v48 int32
 	_ = v48
 	var v49 int32
 	_ = v49
-	var v54 int32
-	_ = v54
+	var v55 int32
+	_ = v55
 	v3 = int32(0)
 	if l1 == v3 {
 		goto L1
@@ -168,15 +168,15 @@ L3:
 L4:
 	;
 	v16 = v10
-	v17 = v3
+	v18 = v3
 	goto L7
 L5:
 	;
-	v54 = v3
+	v55 = v3
 	goto L6
 L6:
 	;
-	return v54
+	return v55
 L7:
 	;
 	if int32(0) <= v16 {
@@ -186,7 +186,7 @@ L7:
 	}
 L8:
 	;
-	v54 = v45
+	v55 = v46
 	goto L6
 L9:
 	;
@@ -194,7 +194,7 @@ L9:
 	v49 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v48 <= v49 {
 		v16 = v48
-		v17 = v45
+		v18 = v46
 		goto L7
 	} else {
 		goto L19
@@ -202,7 +202,7 @@ L9:
 L10:
 	;
 	if v16 == int32(0) {
-		v45 = v17
+		v46 = v18
 		goto L9
 	} else {
 		goto L13
@@ -226,7 +226,7 @@ L13:
 	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v29 = int32(*(*int16)(unsafe.Add(mBase, uint32(v23+v16<<(uint(int32(1))%32)-int32(2)))))
 	if v29 == int32(0) {
-		v45 = v17
+		v46 = v18
 		goto L9
 	} else {
 		goto L14
@@ -241,14 +241,14 @@ L15:
 L16:
 	;
 	if v35 == int32(0) {
-		v45 = v17
+		v46 = v18
 		goto L9
 	} else {
 		goto L17
 	}
 L17:
 	;
-	v43 = F_bms_add_member(m, v17, v16+int32(7))
+	v43 = F_bms_add_member(m, v18, v16+int32(7))
 	mBase = m.M
 	v44 = m.ExcPending
 	if v44 != 0 {
@@ -258,7 +258,7 @@ L17:
 	}
 L18:
 	;
-	v45 = v43
+	v46 = v43
 	goto L9
 L19:
 	;

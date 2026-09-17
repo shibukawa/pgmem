@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.5/.schema/devbox.schema.json",
+  "packages": [
+    "emscripten@6.0.8",
+    "binaryen@latest",
+    "bison@latest",
+    "flex@latest",
+    "gnumake@latest"
+  ],
+  "shell": {
+    "scripts": {
+      "wasm-build": [
+        "./wasm/build.sh"
+      ],
+      "aot": [
+        "./wasm/gen-aot.sh"
+      ],
+      "test": [
+        "go test . ./cmd/... ./internal/..."
+      ]
+    }
+  }
+}

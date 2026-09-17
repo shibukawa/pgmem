@@ -10,6 +10,15 @@ import MemoryChart from '../../../components/MemoryChart.astro';
 
 <MemoryChart lang="ja" />
 
+## 最新の AOT 再計測
+
+エクスポートを絞った AOT ビルドで、pgmem ライブラリと単独バイナリの行を
+2026-09-18 に再計測しました。起動・メモリなどは各 5 回、Go ベンチマークは
+3 回実行しています。darwin/arm64 の strip 済みバイナリは 36.7 MB、zip の
+配布物は 16.3 MB、strip 済み Go テストバイナリへリンクした増分は 33.1 MB
+でした。Docker、Testcontainers、devbox は再計測せず、比較行は 2026-09-14 の
+基準値を残しています。
+
 ## 各列が測っているもの
 
 どの計測も、新しいプロセスでサーバーを 1 つ起動し、同じスキーマを流し込んでから測ります。ハーネスは [`bench/alternatives`](https://github.com/shibukawa/pgmem/tree/main/bench/alternatives) にあります。

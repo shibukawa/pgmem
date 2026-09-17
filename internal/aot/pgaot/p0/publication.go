@@ -35,20 +35,18 @@ func F_GetPublicationByName(m *base.Module, l0 int32, l1 int32) int32 {
 func F_publicationListToArray(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v2 int32
-	_ = v2
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
+	var v6 int32
+	_ = v6
+	var v11 int32
+	_ = v11
+	var v14 int32
+	_ = v14
 	var v15 int32
 	_ = v15
 	var v16 int32
 	_ = v16
-	var v17 int32
-	_ = v17
-	var v20 int32
-	_ = v20
+	var v19 int32
+	_ = v19
 	var v23 int32
 	_ = v23
 	var v24 int32
@@ -59,30 +57,29 @@ func F_publicationListToArray(m *base.Module, l0 int32) int32 {
 	_ = v27
 	var v30 int32
 	_ = v30
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
+	var v32 int32
+	_ = v32
 	var v34 int32
 	_ = v34
-	var v36 int32
-	_ = v36
-	v2 = int32(0)
-	v7 = *(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0]))
-	v12 = F_AllocSetContextCreateInternal(m, v7, int32(_a_F_publicationListToArray_0), v2, int32(_a_F_publicationListToArray_1), int32(_a_F_publicationListToArray_2))
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	v6 = *(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0]))
+	v11 = F_AllocSetContextCreateInternal(m, v6, int32(_a_F_publicationListToArray_0), int32(0), int32(_a_F_publicationListToArray_1), int32(_a_F_publicationListToArray_2))
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v14 = m.ExcPending
+	if v14 != 0 {
 		return int32(0)
 	} else {
-		v16 = int32(_a_F_publicationListToArray_3)
-		v17 = *(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0]))
-		*(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0])) = v12
+		v15 = int32(_a_F_publicationListToArray_3)
+		v16 = *(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0]))
+		*(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0])) = v11
 		if l0 != 0 {
-			v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			v23 = v20 << (uint(int32(2)) % 32)
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			v23 = v19 << (uint(int32(2)) % 32)
 		} else {
-			v23 = v2
+			v23 = int32(0)
 		}
 		v24 = F_palloc(m, v23)
 		mBase = m.M
@@ -96,26 +93,26 @@ func F_publicationListToArray(m *base.Module, l0 int32) int32 {
 			if v27 != 0 {
 				return int32(0)
 			} else {
-				*(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0])) = v17
+				*(*int32)(unsafe.Add(mBase, _c_F_publicationListToArray[0])) = v16
 				if l0 != 0 {
 					v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-					v31 = v30
+					v32 = v30
 				} else {
-					v31 = v2
+					v32 = int32(0)
 				}
-				v33 = F_construct_array_builtin(m, v24, v31, int32(25))
+				v34 = F_construct_array_builtin(m, v24, v32, int32(25))
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v35 = m.ExcPending
+				if v35 != 0 {
 					return int32(0)
 				} else {
-					F_MemoryContextDelete(m, v12)
+					F_MemoryContextDelete(m, v11)
 					mBase = m.M
-					v36 = m.ExcPending
-					if v36 != 0 {
+					v37 = m.ExcPending
+					if v37 != 0 {
 						return int32(0)
 					} else {
-						return v33
+						return v34
 					}
 				}
 			}
@@ -145,9 +142,9 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v22
 	var v25 int32
 	_ = v25
-	var v27 int64
+	var v27 int32
 	_ = v27
-	var v30 int32
+	var v30 int64
 	_ = v30
 	var v35 int32
 	_ = v35
@@ -163,6 +160,8 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v46
 	var v51 int32
 	_ = v51
+	var v56 int32
+	_ = v56
 	var v58 int32
 	_ = v58
 	var v59 int32
@@ -171,70 +170,70 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v60
 	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
+	var v67 int32
+	_ = v67
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
 	var v78 int32
 	_ = v78
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
-	var v85 int32
-	_ = v85
-	var v86 int32
-	_ = v86
-	var v102 int32
-	_ = v102
-	var v114 int32
-	_ = v114
-	var v117 int32
-	_ = v117
-	var v119 int32
-	_ = v119
-	var v120 int32
-	_ = v120
-	var v122 int32
-	_ = v122
-	var v123 int32
-	_ = v123
-	var v125 int64
-	_ = v125
-	var v135 int32
-	_ = v135
-	var v138 int32
-	_ = v138
-	var v139 int32
-	_ = v139
+	var v94 int32
+	_ = v94
+	var v96 int32
+	_ = v96
+	var v99 int32
+	_ = v99
+	var v107 int32
+	_ = v107
+	var v110 int32
+	_ = v110
+	var v112 int32
+	_ = v112
+	var v113 int32
+	_ = v113
+	var v115 int32
+	_ = v115
+	var v116 int32
+	_ = v116
+	var v118 int64
+	_ = v118
+	var v129 int32
+	_ = v129
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
+	var v134 int32
+	_ = v134
 	var v140 int32
 	_ = v140
-	var v146 int32
-	_ = v146
-	var v150 int32
-	_ = v150
-	var v155 int32
-	_ = v155
-	var v159 int32
-	_ = v159
-	var v162 int32
-	_ = v162
-	var v163 int32
-	_ = v163
+	var v144 int32
+	_ = v144
+	var v149 int32
+	_ = v149
+	var v153 int32
+	_ = v153
+	var v156 int32
+	_ = v156
+	var v157 int32
+	_ = v157
+	var v158 int32
+	_ = v158
 	var v164 int32
 	_ = v164
-	var v170 int32
-	_ = v170
-	var v174 int32
-	_ = v174
-	var v179 int32
-	_ = v179
+	var v168 int32
+	_ = v168
+	var v173 int32
+	_ = v173
 	v8 = m.G0
 	v10 = v8 - int32(80)
 	m.G0 = v10
@@ -258,17 +257,17 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 				return
 			} else {
 				if v21 != 0 {
-					F_sequence_close(m, v16, int32(3))
+					F_relation_close(m, v16, int32(3))
 					mBase = m.M
 					v25 = m.ExcPending
 					if v25 != 0 {
 						return
 					} else {
 						if l3 != 0 {
-							v27 = *(*int64)(unsafe.Add(mBase, _c_F_publication_add_schema[0]))
-							*(*int64)(unsafe.Add(mBase, uint32(l0))) = v27
-							v30 = *(*int32)(unsafe.Add(mBase, _c_F_publication_add_schema[1]))
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v30
+							v27 = *(*int32)(unsafe.Add(mBase, _c_F_publication_add_schema[0]))
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v27
+							v30 = *(*int64)(unsafe.Add(mBase, _c_F_publication_add_schema[1]))
+							*(*int64)(unsafe.Add(mBase, uint32(l0))) = v30
 							m.G0 = v10 + int32(80)
 							return
 						} else {
@@ -319,39 +318,39 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 					if l2 == int32(11) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v135 = m.ExcPending
-						if v135 != 0 {
+						v129 = m.ExcPending
+						if v129 != 0 {
 							return
 						} else {
 							F_errcode(m, int32(50856066))
 							mBase = m.M
-							v138 = m.ExcPending
-							if v138 != 0 {
+							v132 = m.ExcPending
+							if v132 != 0 {
 								return
 							} else {
-								v139 = F_get_namespace_name(m, l2)
+								v133 = F_get_namespace_name(m, l2)
 								mBase = m.M
-								v140 = m.ExcPending
-								if v140 != 0 {
+								v134 = m.ExcPending
+								if v134 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
+									*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v133
 									F_errmsg(m, int32(_a_F_publication_add_schema_5), v10+int32(16))
 									mBase = m.M
-									v146 = m.ExcPending
-									if v146 != 0 {
+									v140 = m.ExcPending
+									if v140 != 0 {
 										return
 									} else {
 										F_errdetail(m, int32(_a_F_publication_add_schema_6), int32(0))
 										mBase = m.M
-										v150 = m.ExcPending
-										if v150 != 0 {
+										v144 = m.ExcPending
+										if v144 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_publication_add_schema_3), int32(103), int32(_a_F_publication_add_schema_7))
 											mBase = m.M
-											v155 = m.ExcPending
-											if v155 != 0 {
+											v149 = m.ExcPending
+											if v149 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -365,48 +364,48 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 						}
 					} else {
 						if l2 != int32(99) {
-							v58 = F_isTempToastNamespace(m, l2)
+							v56 = F_isTempToastNamespace(m, l2)
 							mBase = m.M
-							v59 = v58
+							v58 = v56
 						} else {
-							v59 = int32(1)
+							v58 = int32(1)
 						}
-						if v59 != 0 {
+						if v58 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v135 = m.ExcPending
-							if v135 != 0 {
+							v129 = m.ExcPending
+							if v129 != 0 {
 								return
 							} else {
 								F_errcode(m, int32(50856066))
 								mBase = m.M
-								v138 = m.ExcPending
-								if v138 != 0 {
+								v132 = m.ExcPending
+								if v132 != 0 {
 									return
 								} else {
-									v139 = F_get_namespace_name(m, l2)
+									v133 = F_get_namespace_name(m, l2)
 									mBase = m.M
-									v140 = m.ExcPending
-									if v140 != 0 {
+									v134 = m.ExcPending
+									if v134 != 0 {
 										return
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v139
+										*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v133
 										F_errmsg(m, int32(_a_F_publication_add_schema_5), v10+int32(16))
 										mBase = m.M
-										v146 = m.ExcPending
-										if v146 != 0 {
+										v140 = m.ExcPending
+										if v140 != 0 {
 											return
 										} else {
 											F_errdetail(m, int32(_a_F_publication_add_schema_6), int32(0))
 											mBase = m.M
-											v150 = m.ExcPending
-											if v150 != 0 {
+											v144 = m.ExcPending
+											if v144 != 0 {
 												return
 											} else {
 												F_errfinish(m, int32(_a_F_publication_add_schema_3), int32(103), int32(_a_F_publication_add_schema_7))
 												mBase = m.M
-												v155 = m.ExcPending
-												if v155 != 0 {
+												v149 = m.ExcPending
+												if v149 != 0 {
 													return
 												} else {
 													base.Wasm_trap_unreachable()
@@ -419,48 +418,48 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 								}
 							}
 						} else {
-							v60 = F_isAnyTempNamespace(m, l2)
+							v59 = F_isAnyTempNamespace(m, l2)
 							mBase = m.M
-							v61 = m.ExcPending
-							if v61 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return
 							} else {
-								if v60 != 0 {
+								if v59 != 0 {
 									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v159 = m.ExcPending
-									if v159 != 0 {
+									v153 = m.ExcPending
+									if v153 != 0 {
 										return
 									} else {
 										F_errcode(m, int32(50856066))
 										mBase = m.M
-										v162 = m.ExcPending
-										if v162 != 0 {
+										v156 = m.ExcPending
+										if v156 != 0 {
 											return
 										} else {
-											v163 = F_get_namespace_name(m, l2)
+											v157 = F_get_namespace_name(m, l2)
 											mBase = m.M
-											v164 = m.ExcPending
-											if v164 != 0 {
+											v158 = m.ExcPending
+											if v158 != 0 {
 												return
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v163
+												*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v157
 												F_errmsg(m, int32(_a_F_publication_add_schema_5), v10+int32(32))
 												mBase = m.M
-												v170 = m.ExcPending
-												if v170 != 0 {
+												v164 = m.ExcPending
+												if v164 != 0 {
 													return
 												} else {
 													F_errdetail(m, int32(_a_F_publication_add_schema_8), int32(0))
 													mBase = m.M
-													v174 = m.ExcPending
-													if v174 != 0 {
+													v168 = m.ExcPending
+													if v168 != 0 {
 														return
 													} else {
 														F_errfinish(m, int32(_a_F_publication_add_schema_3), int32(111), int32(_a_F_publication_add_schema_7))
 														mBase = m.M
-														v179 = m.ExcPending
-														if v179 != 0 {
+														v173 = m.ExcPending
+														if v173 != 0 {
 															return
 														} else {
 															base.Wasm_trap_unreachable()
@@ -473,82 +472,83 @@ func F_publication_add_schema(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 										}
 									}
 								} else {
-									v62 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v10)+66)) = uint8(v62)
-									*(*uint16)(unsafe.Add(mBase, uint32(v10)+64)) = uint16(v62)
-									v68 = F_GetNewOidWithIndex(m, v16, int32(_a_F_publication_add_schema_9), int32(1))
+									v61 = int32(0)
+									*(*uint8)(unsafe.Add(mBase, uint32(v10)+66)) = uint8(v61)
+									*(*uint16)(unsafe.Add(mBase, uint32(v10)+64)) = uint16(v61)
+									v67 = F_GetNewOidWithIndex(m, v16, int32(_a_F_publication_add_schema_9), int32(1))
 									mBase = m.M
-									v69 = m.ExcPending
-									if v69 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+76)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v10)+72)) = l1
-										*(*int32)(unsafe.Add(mBase, uint32(v10)+68)) = v68
-										v73 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
-										v78 = F_heap_form_tuple(m, v73, v10+int32(68), v10-int32(-64))
+										*(*int32)(unsafe.Add(mBase, uint32(v10)+68)) = v67
+										v72 = *(*int32)(unsafe.Add(mBase, uint32(v16)+52))
+										v77 = F_heap_form_tuple(m, v72, v10+int32(68), v10-int32(-64))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v78 = m.ExcPending
+										if v78 != 0 {
 											return
 										} else {
-											F_CatalogTupleInsert(m, v16, v78)
+											F_CatalogTupleInsert(m, v16, v77)
 											mBase = m.M
-											v81 = m.ExcPending
-											if v81 != 0 {
+											v80 = m.ExcPending
+											if v80 != 0 {
 												return
 											} else {
-												F_pfree(m, v78)
+												F_pfree(m, v77)
 												mBase = m.M
-												v83 = m.ExcPending
-												if v83 != 0 {
+												v82 = m.ExcPending
+												if v82 != 0 {
 													return
 												} else {
-													v85 = v10 + int32(60)
-													v86 = int32(0)
-													*(*int32)(unsafe.Add(mBase, uint32(v85))) = v86
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+56)) = v68
+													v83 = int32(0)
+													*(*int32)(unsafe.Add(mBase, uint32(v10)+60)) = v83
+													*(*int32)(unsafe.Add(mBase, uint32(v10)+56)) = v67
 													*(*int32)(unsafe.Add(mBase, uint32(v10)+52)) = int32(_a_F_publication_add_schema_0)
-													*(*int32)(unsafe.Add(mBase, uint32(v10)+48)) = v86
+													*(*int32)(unsafe.Add(mBase, uint32(v10)+48)) = v83
 													*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = l1
 													*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(_a_F_publication_add_schema_10)
-													F_recordDependencyOn(m, v10+int32(52), v10+int32(40), int32(97))
+													v94 = v10 + int32(52)
+													v96 = v10 + int32(40)
+													F_recordDependencyOn(m, v94, v96, int32(97))
 													mBase = m.M
-													v102 = m.ExcPending
-													if v102 != 0 {
+													v99 = m.ExcPending
+													if v99 != 0 {
 														return
 													} else {
 														*(*int32)(unsafe.Add(mBase, uint32(v10)+48)) = int32(0)
 														*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = l2
 														*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(2615)
-														F_recordDependencyOn(m, v10+int32(52), v10+int32(40), int32(97))
+														F_recordDependencyOn(m, v94, v96, int32(97))
 														mBase = m.M
-														v114 = m.ExcPending
-														if v114 != 0 {
+														v107 = m.ExcPending
+														if v107 != 0 {
 															return
 														} else {
-															F_sequence_close(m, v16, int32(3))
+															F_relation_close(m, v16, int32(3))
 															mBase = m.M
-															v117 = m.ExcPending
-															if v117 != 0 {
+															v110 = m.ExcPending
+															if v110 != 0 {
 																return
 															} else {
-																v119 = F_GetSchemaPublicationRelations(m, l2, int32(2))
+																v112 = F_GetSchemaPublicationRelations(m, l2, int32(2))
 																mBase = m.M
-																v120 = m.ExcPending
-																if v120 != 0 {
+																v113 = m.ExcPending
+																if v113 != 0 {
 																	return
 																} else {
-																	F_InvalidatePublicationRels(m, v119)
+																	F_InvalidatePublicationRels(m, v112)
 																	mBase = m.M
-																	v122 = m.ExcPending
-																	if v122 != 0 {
+																	v115 = m.ExcPending
+																	if v115 != 0 {
 																		return
 																	} else {
-																		v123 = *(*int32)(unsafe.Add(mBase, uint32(v85)))
-																		*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v123
-																		v125 = *(*int64)(unsafe.Add(mBase, uint32(v10)+52))
-																		*(*int64)(unsafe.Add(mBase, uint32(l0))) = v125
+																		v116 = *(*int32)(unsafe.Add(mBase, uint32(v10)+60))
+																		*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v116
+																		v118 = *(*int64)(unsafe.Add(mBase, uint32(v10)+52))
+																		*(*int64)(unsafe.Add(mBase, uint32(l0))) = v118
 																		m.G0 = v10 + int32(80)
 																		return
 																	}

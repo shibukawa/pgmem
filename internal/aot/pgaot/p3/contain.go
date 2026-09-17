@@ -66,29 +66,15 @@ func F_contain_dml_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 }
 func F_contain_placeholder_walker(m *base.Module, l0 int32, l1 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v7 int32
-	_ = v7
-	var v13 int32
-	_ = v13
-	var v16 int32
-	_ = v16
-	if l0 == int32(0) {
+	var v5 int32
+	_ = v5
+	var v8 int32
+	_ = v8
+	v5 = Fn13866(m, l0, l1, int32(1488), int32(319))
+	v8 = m.ExcPending
+	if v8 != 0 {
 		return int32(0)
 	} else {
-		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		if v7 == int32(319) {
-			return int32(1)
-		} else {
-			v13 = F_expression_tree_walker_impl(m, l0, int32(1507), l1)
-			mBase = m.M
-			v16 = m.ExcPending
-			if v16 != 0 {
-				return int32(0)
-			} else {
-				return v13
-			}
-		}
+		return v5
 	}
 }

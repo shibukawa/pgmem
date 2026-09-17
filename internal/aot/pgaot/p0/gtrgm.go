@@ -10,15 +10,15 @@ func F_gtrgm_options(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v18 int32
-	_ = v18
+	var v15 int32
+	_ = v15
 	v2 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	*(*int32)(unsafe.Add(mBase, uint32(v2)+8)) = int32(8)
 	*(*int64)(unsafe.Add(mBase, uint32(v2))) = int64(0)
 	F_add_local_int_reloption(m, v2, int32(_a_F_gtrgm_options_0), int32(_a_F_gtrgm_options_1), int32(12), int32(1), int32(2024))
 	mBase = m.M
-	v18 = m.ExcPending
-	if v18 != 0 {
+	v15 = m.ExcPending
+	if v15 != 0 {
 		return int32(0)
 	} else {
 		return int32(0)
@@ -115,8 +115,8 @@ func F_gtrgm_same(m *base.Module, l0 int32) int32 {
 	_ = v121
 	var v123 int32
 	_ = v123
-	var v129 int32
-	_ = v129
+	var v130 int32
+	_ = v130
 	v2 = int32(0)
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
@@ -206,7 +206,7 @@ L12:
 	return v8
 L13:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v8))) = uint8(v129)
+	*(*uint8)(unsafe.Add(mBase, uint32(v8))) = uint8(v130)
 	goto L12
 L14:
 	;
@@ -230,14 +230,15 @@ L16:
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 	v92 = base.I32_div_u_s(int32(base.Ui32(v86)>>(uint(v80)%32))-v82, v84)
 	if v85 != v92 {
-		goto L29
+		v130 = v2
+		goto L13
 	} else {
-		goto L30
+		goto L29
 	}
 L17:
 	;
 	if v43 != 0 {
-		v129 = v2
+		v130 = v2
 		goto L13
 	} else {
 		goto L20
@@ -252,13 +253,13 @@ L18:
 	}
 L19:
 	;
-	v129 = int32(1)
+	v130 = int32(1)
 	goto L13
 L20:
 	;
 	v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+4)))
 	if v52&int32(4) != 0 {
-		v129 = v2
+		v130 = v2
 		goto L13
 	} else {
 		goto L21
@@ -289,7 +290,7 @@ L23:
 	}
 L24:
 	;
-	v129 = v2
+	v130 = v2
 	goto L13
 L25:
 	;
@@ -311,74 +312,67 @@ L28:
 	goto L12
 L29:
 	;
-	v129 = v2
-	goto L13
-L30:
-	;
-	goto L31
-L31:
-	;
 	v94 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(v8))) = uint8(v94)
 	if base.Ui32(v83) < base.Ui32(int32(3)) {
 		goto L12
 	} else {
-		goto L32
+		goto L30
 	}
-L32:
+L30:
 	;
 	v98 = int32(5)
 	v102 = int32(1)
 	if base.Ui32(v85) <= base.Ui32(v102) {
-		goto L33
+		goto L31
 	} else {
-		goto L34
+		goto L32
 	}
-L33:
+L31:
 	;
 	v105 = v102
-	goto L35
-L34:
+	goto L33
+L32:
 	;
 	v105 = v85
-	goto L35
-L35:
+	goto L33
+L33:
 	;
 	v107 = int32(0)
-	goto L36
-L36:
+	goto L34
+L34:
 	;
 	v115 = v107 * int32(3)
 	v119 = *(*int32)(unsafe.Add(mBase, _c_F_gtrgm_same[0]))
-	v120 = m.T0[v119].(func(*base.Module, int32, int32) int32)(m, v10+v98+v115, v115+(v9+v98))
+	v120 = m.T0[v119].(func(*base.Module, int32, int32) int32)(m, v10+v98+v115, v9+v98+v115)
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
 		goto L10
 	} else {
-		goto L38
+		goto L36
 	}
-L37:
+L35:
 	;
 	goto L12
-L38:
+L36:
 	;
 	if v120 != 0 {
-		v129 = v2
+		v130 = v2
 		goto L13
 	} else {
-		goto L39
+		goto L37
 	}
-L39:
+L37:
 	;
 	v123 = v107 + int32(1)
 	if v105 != v123 {
 		v107 = v123
-		goto L36
+		goto L34
 	} else {
-		goto L40
+		goto L38
 	}
-L40:
+L38:
 	;
-	goto L37
+	goto L35
 }

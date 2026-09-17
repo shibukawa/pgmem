@@ -31,6 +31,10 @@ import BenchmarkOverview from '../../../components/BenchmarkOverview.astro';
 
 <BenchmarkOverview lang="ja" />
 
+現在の darwin/arm64 向け strip 済み pgmem バイナリは、エクスポートを絞った
+AOT バックエンドを含めて 36.7 MB です。ベンチマークページには pgmem だけを
+再計測した最新値を記録し、比較対象は再現可能な基準値として残しています。
+
 クエリ性能、計測方法、再現手順は[ベンチマーク](/pgmem/ja/benchmarks/)のページにあります。
 
 <CardGrid>

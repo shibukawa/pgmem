@@ -67,8 +67,8 @@ func F_contain_nonstrict_functions_walker(m *base.Module, l0 int32, l1 int32) in
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
+	var v56 int32
+	_ = v56
 	if l0 == int32(0) {
 		goto L1
 	} else {
@@ -86,7 +86,7 @@ L3:
 	goto L6
 L4:
 	;
-	return v55
+	return v56
 L5:
 	;
 	v50 = F_check_functions_in_node(m, v9, int32(866), l1)
@@ -103,7 +103,7 @@ L6:
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(v9)))
 	switch v14 - int32(9) {
 	case 0, 1, 2:
-		v55 = v13
+		v56 = v13
 		goto L4
 	default:
 		v34 = v14
@@ -166,7 +166,7 @@ L17:
 	;
 	v30 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v22)+8)))
 	if v30 != int32(1) {
-		v55 = v13
+		v56 = v13
 		goto L4
 	} else {
 		goto L18
@@ -180,7 +180,7 @@ L19:
 	;
 	switch v34 - int32(18) {
 	case 0, 1, 4, 5, 6, 8, 14, 17, 18, 19, 20, 21, 23, 27, 34, 35:
-		v55 = v13
+		v56 = v13
 		goto L4
 	default:
 		goto L5
@@ -216,7 +216,7 @@ L24:
 L25:
 	;
 	if v50 != 0 {
-		v55 = v13
+		v56 = v13
 		goto L4
 	} else {
 		goto L26
@@ -233,7 +233,7 @@ L26:
 	}
 L27:
 	;
-	v55 = v53
+	v56 = v53
 	goto L4
 }
 func F_contain_var_clause(m *base.Module, l0 int32) int32 {

@@ -60,18 +60,18 @@ func F_RI_FKey_setnull_del(m *base.Module, l0 int32) int32 {
 func F_RI_FKey_trigger_type(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	v4 = l0 - int32(1644)
-	if base.Ui32(v4) <= base.Ui32(int32(11)) {
-		v11 = *(*int32)(unsafe.Add(mBase, uint32(v4<<(uint(int32(2))%32))+uint32(_c_F_RI_FKey_trigger_type[0])))
-		v12 = v11
+	var v3 int32
+	_ = v3
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
+	v3 = l0 - int32(1644)
+	if base.Ui32(v3) <= base.Ui32(int32(11)) {
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(v3<<(uint(int32(2))%32))+uint32(_c_F_RI_FKey_trigger_type[0])))
+		v10 = v8
 	} else {
-		v12 = int32(0)
+		v10 = int32(0)
 	}
-	return v12
+	return v10
 }

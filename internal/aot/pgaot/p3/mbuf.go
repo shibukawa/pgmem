@@ -56,8 +56,8 @@ func F_mbuf_free(m *base.Module, l0 int32) int32 {
 	_ = v6
 	var v8 int32
 	_ = v8
-	var v10 int32
-	_ = v10
+	var v9 int32
+	_ = v9
 	var v11 int32
 	_ = v11
 	var v15 int32
@@ -68,8 +68,11 @@ func F_mbuf_free(m *base.Module, l0 int32) int32 {
 	if v3 == int32(1) {
 		v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-		v10 = F___memset(m, v6, int32(0), v8-v6)
-		mBase = m.M
+		v9 = v8 - v6
+		if v9 != 0 {
+			base.MemoryFill(m, v6, int32(0), v9)
+		} else {
+		}
 		v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		F_pfree(m, v11)
 		mBase = m.M
@@ -100,27 +103,27 @@ func F_mbuf_free(m *base.Module, l0 int32) int32 {
 func F_mbuf_grab(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v6 int32
-	_ = v6
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
 	var v8 int32
 	_ = v8
-	var v9 int32
-	_ = v9
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	v6 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v6)
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v9
-	v11 = v8 - v9
-	if l1 < v11 {
-		v13 = l1
+	var v10 int32
+	_ = v10
+	var v12 int32
+	_ = v12
+	v5 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v5)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(l2))) = v8
+	v10 = v7 - v8
+	if l1 < v10 {
+		v12 = l1
 	} else {
-		v13 = v11
+		v12 = v10
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v9 + v13
-	return v13
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v8 + v12
+	return v12
 }

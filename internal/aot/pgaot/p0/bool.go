@@ -174,8 +174,8 @@ func F_bool_accum(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					v53 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v49))) = v53
 					*(*int64)(unsafe.Add(mBase, uint32(v49)+8)) = v53
+					*(*int64)(unsafe.Add(mBase, uint32(v49))) = v53
 					v57 = v49
 					v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 					if v58 != 0 {
@@ -282,8 +282,8 @@ func F_bool_accum(m *base.Module, l0 int32) int32 {
 				return int32(0)
 			} else {
 				v53 = int64(0)
-				*(*int64)(unsafe.Add(mBase, uint32(v49))) = v53
 				*(*int64)(unsafe.Add(mBase, uint32(v49)+8)) = v53
+				*(*int64)(unsafe.Add(mBase, uint32(v49))) = v53
 				v57 = v49
 				v58 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
 				if v58 != 0 {
@@ -353,124 +353,148 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v17
 	var v20 int32
 	_ = v20
+	var v24 int32
+	_ = v24
 	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
 	var v38 int32
 	_ = v38
+	var v39 int32
+	_ = v39
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
+	var v44 int32
+	_ = v44
 	var v46 int32
 	_ = v46
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v55 int32
-	_ = v55
+	var v54 int32
+	_ = v54
 	var v56 int32
 	_ = v56
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
 	var v62 int32
 	_ = v62
-	var v66 int32
-	_ = v66
+	var v64 int32
+	_ = v64
 	var v67 int32
 	_ = v67
 	var v68 int32
 	_ = v68
-	var v72 int32
-	_ = v72
-	var v77 int32
-	_ = v77
+	var v74 int32
+	_ = v74
+	var v76 int32
+	_ = v76
 	var v78 int32
 	_ = v78
+	var v80 int32
+	_ = v80
+	var v83 int32
+	_ = v83
+	var v84 int32
+	_ = v84
 	var v86 int32
 	_ = v86
+	var v88 int32
+	_ = v88
 	var v90 int32
 	_ = v90
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
-	var v98 int32
-	_ = v98
+	var v101 int32
+	_ = v101
 	var v102 int32
 	_ = v102
+	var v103 int32
+	_ = v103
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
 	var v111 int32
 	_ = v111
+	var v112 int32
+	_ = v112
 	var v114 int32
 	_ = v114
-	var v115 int32
-	_ = v115
-	var v120 int32
-	_ = v120
-	var v121 int32
-	_ = v121
+	var v116 int32
+	_ = v116
+	var v117 int32
+	_ = v117
+	var v122 int32
+	_ = v122
 	var v123 int32
 	_ = v123
-	var v126 int32
-	_ = v126
+	var v128 int32
+	_ = v128
+	var v129 int32
+	_ = v129
 	var v131 int32
 	_ = v131
-	var v132 int32
-	_ = v132
-	var v136 int32
-	_ = v136
-	var v137 int32
-	_ = v137
-	var v142 int32
-	_ = v142
-	var v143 int32
-	_ = v143
-	var v150 int32
-	_ = v150
-	var v151 int32
-	_ = v151
-	var v153 int32
-	_ = v153
-	var v156 int32
-	_ = v156
-	var v157 int32
-	_ = v157
-	var v161 int32
-	_ = v161
-	var v162 int32
-	_ = v162
+	var v134 int32
+	_ = v134
+	var v135 int32
+	_ = v135
+	var v139 int32
+	_ = v139
+	var v140 int32
+	_ = v140
+	var v146 int32
+	_ = v146
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
+	var v159 int32
+	_ = v159
+	var v163 int32
+	_ = v163
 	var v168 int32
 	_ = v168
-	var v169 int32
-	_ = v169
-	var v171 int32
-	_ = v171
-	var v176 int32
-	_ = v176
+	var v170 int32
+	_ = v170
+	var v172 int32
+	_ = v172
+	var v174 int32
+	_ = v174
+	var v175 int32
+	_ = v175
 	var v180 int32
 	_ = v180
-	var v181 int32
-	_ = v181
-	var v185 int32
-	_ = v185
-	var v190 int32
-	_ = v190
-	var v194 int32
-	_ = v194
+	var v189 int32
+	_ = v189
+	var v193 int32
+	_ = v193
 	var v198 int32
 	_ = v198
-	var v199 int32
-	_ = v199
-	var v204 int32
-	_ = v204
-	var v213 int32
-	_ = v213
-	var v217 int32
-	_ = v217
-	var v222 int32
-	_ = v222
 	v7 = m.G0
 	v9 = v7 + int32(-64)
 	m.G0 = v9
@@ -485,20 +509,20 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 			if int32(0) < v17 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v213 = m.ExcPending
-				if v213 != 0 {
+				v189 = m.ExcPending
+				if v189 != 0 {
 					return int32(0)
 				} else {
 					F_errmsg_internal(m, int32(_a_F_executeBoolItem_0), int32(0))
 					mBase = m.M
-					v217 = m.ExcPending
-					if v217 != 0 {
+					v193 = m.ExcPending
+					if v193 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_executeBoolItem_1), int32(1788), int32(_a_F_executeBoolItem_2))
 						mBase = m.M
-						v222 = m.ExcPending
-						if v222 != 0 {
+						v198 = m.ExcPending
+						if v198 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -511,176 +535,184 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 				v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 				switch v20 - int32(4) {
 				case 0:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v24 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v24)
 					mBase = m.M
 					v26 = m.ExcPending
 					if v26 != 0 {
 						return int32(0)
 					} else {
 						v27 = int32(0)
-						v31 = F_executeBoolItem(m, l0, v7+int32(-28), l2, v27)
+						v29 = F_executeBoolItem(m, l0, v24, l2, v27)
 						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
+						v30 = m.ExcPending
+						if v30 != 0 {
 							return int32(0)
 						} else {
-							if v31 == int32(0) {
-								v204 = v27
+							if v29 == int32(0) {
+								v180 = v27
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							} else {
-								F_jspGetRightArg(m, l1, v7+int32(-56))
+								v34 = v7 + int32(-56)
+								F_jspGetRightArg(m, l1, v34)
 								mBase = m.M
-								v38 = m.ExcPending
-								if v38 != 0 {
+								v36 = m.ExcPending
+								if v36 != 0 {
 									return int32(0)
 								} else {
-									v42 = F_executeBoolItem(m, l0, v7+int32(-56), l2, int32(0))
+									v38 = F_executeBoolItem(m, l0, v34, l2, int32(0))
 									mBase = m.M
-									v43 = m.ExcPending
-									if v43 != 0 {
+									v39 = m.ExcPending
+									if v39 != 0 {
 										return int32(0)
 									} else {
-										if v42 == int32(1) {
-											v46 = v31
+										if v38 == int32(1) {
+											v42 = v29
 										} else {
-											v46 = v42
+											v42 = v38
 										}
-										v204 = v46
+										v180 = v42
 										m.G0 = v9 - int32(-64)
-										return v204
+										return v180
 									}
 								}
 							}
 						}
 					}
 				case 1:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v44 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v44)
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
+					v46 = m.ExcPending
+					if v46 != 0 {
 						return int32(0)
 					} else {
-						v55 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+						v49 = F_executeBoolItem(m, l0, v44, l2, int32(0))
 						mBase = m.M
-						v56 = m.ExcPending
-						if v56 != 0 {
+						v50 = m.ExcPending
+						if v50 != 0 {
 							return int32(0)
 						} else {
-							if v55 == int32(1) {
-								v204 = int32(1)
+							if v49 == int32(1) {
+								v180 = int32(1)
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							} else {
-								F_jspGetRightArg(m, l1, v7+int32(-56))
+								v54 = v7 + int32(-56)
+								F_jspGetRightArg(m, l1, v54)
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v56 = m.ExcPending
+								if v56 != 0 {
 									return int32(0)
 								} else {
-									v66 = F_executeBoolItem(m, l0, v7+int32(-56), l2, int32(0))
+									v58 = F_executeBoolItem(m, l0, v54, l2, int32(0))
 									mBase = m.M
-									v67 = m.ExcPending
-									if v67 != 0 {
+									v59 = m.ExcPending
+									if v59 != 0 {
 										return int32(0)
 									} else {
-										if v66 != 0 {
-											v68 = v66
+										if v58 != 0 {
+											v60 = v58
 										} else {
-											v68 = v55
+											v60 = v49
 										}
-										v204 = v68
+										v180 = v60
 										m.G0 = v9 - int32(-64)
-										return v204
+										return v180
 									}
 								}
 							}
 						}
 					}
 				case 2:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v62 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v62)
 					mBase = m.M
-					v72 = m.ExcPending
-					if v72 != 0 {
+					v64 = m.ExcPending
+					if v64 != 0 {
 						return int32(0)
 					} else {
-						v77 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+						v67 = F_executeBoolItem(m, l0, v62, l2, int32(0))
 						mBase = m.M
-						v78 = m.ExcPending
-						if v78 != 0 {
+						v68 = m.ExcPending
+						if v68 != 0 {
 							return int32(0)
 						} else {
-							if v77 == int32(2) {
-								v204 = int32(2)
+							if v67 == int32(2) {
+								v180 = int32(2)
 							} else {
-								v204 = base.B2i32(v77 != int32(1))
+								v180 = base.B2i32(v67 != int32(1))
 							}
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				case 3:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v170 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v170)
 					mBase = m.M
-					v194 = m.ExcPending
-					if v194 != 0 {
+					v172 = m.ExcPending
+					if v172 != 0 {
 						return int32(0)
 					} else {
-						v198 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+						v174 = F_executeBoolItem(m, l0, v170, l2, int32(0))
 						mBase = m.M
-						v199 = m.ExcPending
-						if v199 != 0 {
+						v175 = m.ExcPending
+						if v175 != 0 {
 							return int32(0)
 						} else {
-							v204 = base.B2i32(v198 == int32(2))
+							v180 = base.B2i32(v174 == int32(2))
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				case 4, 5, 6, 7, 8, 9:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v74 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v74)
 					mBase = m.M
-					v86 = m.ExcPending
-					if v86 != 0 {
+					v76 = m.ExcPending
+					if v76 != 0 {
 						return int32(0)
 					} else {
-						F_jspGetRightArg(m, l1, v7+int32(-56))
+						v78 = v7 + int32(-56)
+						F_jspGetRightArg(m, l1, v78)
 						mBase = m.M
-						v90 = m.ExcPending
-						if v90 != 0 {
+						v80 = m.ExcPending
+						if v80 != 0 {
 							return int32(0)
 						} else {
-							v97 = F_executePredicate(m, l0, l1, v7+int32(-28), v7+int32(-56), l2, int32(1), int32(1442), l0)
+							v83 = F_executePredicate(m, l0, l1, v74, v78, l2, int32(1), int32(1423), l0)
 							mBase = m.M
-							v98 = m.ExcPending
-							if v98 != 0 {
+							v84 = m.ExcPending
+							if v84 != 0 {
 								return int32(0)
 							} else {
-								v204 = v97
+								v180 = v83
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							}
 						}
 					}
 				default:
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v180 = m.ExcPending
-					if v180 != 0 {
+					v158 = m.ExcPending
+					if v158 != 0 {
 						return int32(0)
 					} else {
-						v181 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v181
+						v159 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v159
 						F_errmsg_internal(m, int32(_a_F_executeBoolItem_3), v9)
 						mBase = m.M
-						v185 = m.ExcPending
-						if v185 != 0 {
+						v163 = m.ExcPending
+						if v163 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_executeBoolItem_1), int32(1902), int32(_a_F_executeBoolItem_2))
 							mBase = m.M
-							v190 = m.ExcPending
-							if v190 != 0 {
+							v168 = m.ExcPending
+							if v168 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -690,105 +722,109 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 						}
 					}
 				case 26:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v114 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v114)
 					mBase = m.M
-					v136 = m.ExcPending
-					if v136 != 0 {
+					v116 = m.ExcPending
+					if v116 != 0 {
 						return int32(0)
 					} else {
-						v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
-						if v137 == int32(0) {
+						v117 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
+						if v117 == int32(0) {
 							*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(0)
-							v142 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
-							v143 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v143)
-							v150 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v7+int32(-56), v143)
+							v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
+							v123 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v123)
+							v128 = F_executeItemOptUnwrapTarget(m, l0, v114, l2, v7+int32(-56), v123)
 							mBase = m.M
-							v151 = m.ExcPending
-							if v151 != 0 {
+							v129 = m.ExcPending
+							if v129 != 0 {
 								return int32(0)
 							} else {
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v142)
-								v153 = int32(2)
-								if v150 == v153 {
-									v204 = v153
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v122)
+								v131 = int32(2)
+								if v128 == v131 {
+									v180 = v131
 								} else {
-									v156 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
-									v157 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-									v204 = base.B2i32(v156|v157 != int32(0))
+									v134 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+									v135 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+									v180 = base.B2i32(v134|v135 != int32(0))
 								}
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							}
 						} else {
-							v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
-							v162 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v162)
-							v168 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v162, int32(1))
+							v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
+							v140 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v140)
+							v146 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v140, int32(1))
 							mBase = m.M
-							v169 = m.ExcPending
-							if v169 != 0 {
+							v147 = m.ExcPending
+							if v147 != 0 {
 								return int32(0)
 							} else {
-								*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v161)
-								v171 = int32(2)
-								if v168 == v171 {
-									v176 = v171
+								*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v139)
+								v149 = int32(2)
+								if v146 == v149 {
+									v154 = v149
 								} else {
-									v176 = base.B2i32(v168 == int32(0))
+									v154 = base.B2i32(v146 == int32(0))
 								}
-								v204 = v176
+								v180 = v154
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							}
 						}
 					}
 				case 37:
-					F_jspGetArg(m, l1, v7+int32(-28))
+					v86 = v7 + int32(-28)
+					F_jspGetArg(m, l1, v86)
 					mBase = m.M
-					v102 = m.ExcPending
-					if v102 != 0 {
+					v88 = m.ExcPending
+					if v88 != 0 {
 						return int32(0)
 					} else {
-						F_jspGetRightArg(m, l1, v7+int32(-56))
+						v90 = v7 + int32(-56)
+						F_jspGetRightArg(m, l1, v90)
 						mBase = m.M
-						v106 = m.ExcPending
-						if v106 != 0 {
+						v92 = m.ExcPending
+						if v92 != 0 {
 							return int32(0)
 						} else {
-							v111 = int32(0)
-							v114 = F_executePredicate(m, l0, l1, v7+int32(-28), v7+int32(-56), l2, v111, int32(1443), v111)
+							v93 = int32(0)
+							v96 = F_executePredicate(m, l0, l1, v86, v90, l2, v93, int32(1424), v93)
 							mBase = m.M
-							v115 = m.ExcPending
-							if v115 != 0 {
+							v97 = m.ExcPending
+							if v97 != 0 {
 								return int32(0)
 							} else {
-								v204 = v114
+								v180 = v96
 								m.G0 = v9 - int32(-64)
-								return v204
+								return v180
 							}
 						}
 					}
 				case 38:
 					*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(0)
-					v120 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-					v121 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-					F_jspInitByBuffer(m, v7+int32(-28), v120, v121)
+					v101 = v7 + int32(-28)
+					v102 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+					v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+					F_jspInitByBuffer(m, v101, v102, v103)
 					mBase = m.M
-					v123 = m.ExcPending
-					if v123 != 0 {
+					v105 = m.ExcPending
+					if v105 != 0 {
 						return int32(0)
 					} else {
-						v126 = int32(0)
-						v131 = F_executePredicate(m, l0, l1, v7+int32(-28), v126, l2, v126, int32(1444), v7+int32(-56))
+						v106 = int32(0)
+						v111 = F_executePredicate(m, l0, l1, v101, v106, l2, v106, int32(1425), v7+int32(-56))
 						mBase = m.M
-						v132 = m.ExcPending
-						if v132 != 0 {
+						v112 = m.ExcPending
+						if v112 != 0 {
 							return int32(0)
 						} else {
-							v204 = v131
+							v180 = v111
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				}
@@ -797,176 +833,184 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			switch v20 - int32(4) {
 			case 0:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v24 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v24)
 				mBase = m.M
 				v26 = m.ExcPending
 				if v26 != 0 {
 					return int32(0)
 				} else {
 					v27 = int32(0)
-					v31 = F_executeBoolItem(m, l0, v7+int32(-28), l2, v27)
+					v29 = F_executeBoolItem(m, l0, v24, l2, v27)
 					mBase = m.M
-					v32 = m.ExcPending
-					if v32 != 0 {
+					v30 = m.ExcPending
+					if v30 != 0 {
 						return int32(0)
 					} else {
-						if v31 == int32(0) {
-							v204 = v27
+						if v29 == int32(0) {
+							v180 = v27
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						} else {
-							F_jspGetRightArg(m, l1, v7+int32(-56))
+							v34 = v7 + int32(-56)
+							F_jspGetRightArg(m, l1, v34)
 							mBase = m.M
-							v38 = m.ExcPending
-							if v38 != 0 {
+							v36 = m.ExcPending
+							if v36 != 0 {
 								return int32(0)
 							} else {
-								v42 = F_executeBoolItem(m, l0, v7+int32(-56), l2, int32(0))
+								v38 = F_executeBoolItem(m, l0, v34, l2, int32(0))
 								mBase = m.M
-								v43 = m.ExcPending
-								if v43 != 0 {
+								v39 = m.ExcPending
+								if v39 != 0 {
 									return int32(0)
 								} else {
-									if v42 == int32(1) {
-										v46 = v31
+									if v38 == int32(1) {
+										v42 = v29
 									} else {
-										v46 = v42
+										v42 = v38
 									}
-									v204 = v46
+									v180 = v42
 									m.G0 = v9 - int32(-64)
-									return v204
+									return v180
 								}
 							}
 						}
 					}
 				}
 			case 1:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v44 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v44)
 				mBase = m.M
-				v50 = m.ExcPending
-				if v50 != 0 {
+				v46 = m.ExcPending
+				if v46 != 0 {
 					return int32(0)
 				} else {
-					v55 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+					v49 = F_executeBoolItem(m, l0, v44, l2, int32(0))
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v50 = m.ExcPending
+					if v50 != 0 {
 						return int32(0)
 					} else {
-						if v55 == int32(1) {
-							v204 = int32(1)
+						if v49 == int32(1) {
+							v180 = int32(1)
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						} else {
-							F_jspGetRightArg(m, l1, v7+int32(-56))
+							v54 = v7 + int32(-56)
+							F_jspGetRightArg(m, l1, v54)
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return int32(0)
 							} else {
-								v66 = F_executeBoolItem(m, l0, v7+int32(-56), l2, int32(0))
+								v58 = F_executeBoolItem(m, l0, v54, l2, int32(0))
 								mBase = m.M
-								v67 = m.ExcPending
-								if v67 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return int32(0)
 								} else {
-									if v66 != 0 {
-										v68 = v66
+									if v58 != 0 {
+										v60 = v58
 									} else {
-										v68 = v55
+										v60 = v49
 									}
-									v204 = v68
+									v180 = v60
 									m.G0 = v9 - int32(-64)
-									return v204
+									return v180
 								}
 							}
 						}
 					}
 				}
 			case 2:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v62 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v62)
 				mBase = m.M
-				v72 = m.ExcPending
-				if v72 != 0 {
+				v64 = m.ExcPending
+				if v64 != 0 {
 					return int32(0)
 				} else {
-					v77 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+					v67 = F_executeBoolItem(m, l0, v62, l2, int32(0))
 					mBase = m.M
-					v78 = m.ExcPending
-					if v78 != 0 {
+					v68 = m.ExcPending
+					if v68 != 0 {
 						return int32(0)
 					} else {
-						if v77 == int32(2) {
-							v204 = int32(2)
+						if v67 == int32(2) {
+							v180 = int32(2)
 						} else {
-							v204 = base.B2i32(v77 != int32(1))
+							v180 = base.B2i32(v67 != int32(1))
 						}
 						m.G0 = v9 - int32(-64)
-						return v204
+						return v180
 					}
 				}
 			case 3:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v170 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v170)
 				mBase = m.M
-				v194 = m.ExcPending
-				if v194 != 0 {
+				v172 = m.ExcPending
+				if v172 != 0 {
 					return int32(0)
 				} else {
-					v198 = F_executeBoolItem(m, l0, v7+int32(-28), l2, int32(0))
+					v174 = F_executeBoolItem(m, l0, v170, l2, int32(0))
 					mBase = m.M
-					v199 = m.ExcPending
-					if v199 != 0 {
+					v175 = m.ExcPending
+					if v175 != 0 {
 						return int32(0)
 					} else {
-						v204 = base.B2i32(v198 == int32(2))
+						v180 = base.B2i32(v174 == int32(2))
 						m.G0 = v9 - int32(-64)
-						return v204
+						return v180
 					}
 				}
 			case 4, 5, 6, 7, 8, 9:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v74 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v74)
 				mBase = m.M
-				v86 = m.ExcPending
-				if v86 != 0 {
+				v76 = m.ExcPending
+				if v76 != 0 {
 					return int32(0)
 				} else {
-					F_jspGetRightArg(m, l1, v7+int32(-56))
+					v78 = v7 + int32(-56)
+					F_jspGetRightArg(m, l1, v78)
 					mBase = m.M
-					v90 = m.ExcPending
-					if v90 != 0 {
+					v80 = m.ExcPending
+					if v80 != 0 {
 						return int32(0)
 					} else {
-						v97 = F_executePredicate(m, l0, l1, v7+int32(-28), v7+int32(-56), l2, int32(1), int32(1442), l0)
+						v83 = F_executePredicate(m, l0, l1, v74, v78, l2, int32(1), int32(1423), l0)
 						mBase = m.M
-						v98 = m.ExcPending
-						if v98 != 0 {
+						v84 = m.ExcPending
+						if v84 != 0 {
 							return int32(0)
 						} else {
-							v204 = v97
+							v180 = v83
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				}
 			default:
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v180 = m.ExcPending
-				if v180 != 0 {
+				v158 = m.ExcPending
+				if v158 != 0 {
 					return int32(0)
 				} else {
-					v181 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v181
+					v159 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+					*(*int32)(unsafe.Add(mBase, uint32(v9))) = v159
 					F_errmsg_internal(m, int32(_a_F_executeBoolItem_3), v9)
 					mBase = m.M
-					v185 = m.ExcPending
-					if v185 != 0 {
+					v163 = m.ExcPending
+					if v163 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_executeBoolItem_1), int32(1902), int32(_a_F_executeBoolItem_2))
 						mBase = m.M
-						v190 = m.ExcPending
-						if v190 != 0 {
+						v168 = m.ExcPending
+						if v168 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -976,105 +1020,109 @@ func F_executeBoolItem(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 					}
 				}
 			case 26:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v114 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v114)
 				mBase = m.M
-				v136 = m.ExcPending
-				if v136 != 0 {
+				v116 = m.ExcPending
+				if v116 != 0 {
 					return int32(0)
 				} else {
-					v137 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
-					if v137 == int32(0) {
+					v117 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+32)))
+					if v117 == int32(0) {
 						*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(0)
-						v142 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
-						v143 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v143)
-						v150 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v7+int32(-56), v143)
+						v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
+						v123 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v123)
+						v128 = F_executeItemOptUnwrapTarget(m, l0, v114, l2, v7+int32(-56), v123)
 						mBase = m.M
-						v151 = m.ExcPending
-						if v151 != 0 {
+						v129 = m.ExcPending
+						if v129 != 0 {
 							return int32(0)
 						} else {
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v142)
-							v153 = int32(2)
-							if v150 == v153 {
-								v204 = v153
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v122)
+							v131 = int32(2)
+							if v128 == v131 {
+								v180 = v131
 							} else {
-								v156 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
-								v157 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
-								v204 = base.B2i32(v156|v157 != int32(0))
+								v134 = *(*int32)(unsafe.Add(mBase, uint32(v9)+8))
+								v135 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
+								v180 = base.B2i32(v134|v135 != int32(0))
 							}
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					} else {
-						v161 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
-						v162 = int32(0)
-						*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v162)
-						v168 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v162, int32(1))
+						v139 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)))
+						v140 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v140)
+						v146 = F_executeItemOptUnwrapTarget(m, l0, v7+int32(-28), l2, v140, int32(1))
 						mBase = m.M
-						v169 = m.ExcPending
-						if v169 != 0 {
+						v147 = m.ExcPending
+						if v147 != 0 {
 							return int32(0)
 						} else {
-							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v161)
-							v171 = int32(2)
-							if v168 == v171 {
-								v176 = v171
+							*(*uint8)(unsafe.Add(mBase, uint32(l0)+34)) = uint8(v139)
+							v149 = int32(2)
+							if v146 == v149 {
+								v154 = v149
 							} else {
-								v176 = base.B2i32(v168 == int32(0))
+								v154 = base.B2i32(v146 == int32(0))
 							}
-							v204 = v176
+							v180 = v154
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				}
 			case 37:
-				F_jspGetArg(m, l1, v7+int32(-28))
+				v86 = v7 + int32(-28)
+				F_jspGetArg(m, l1, v86)
 				mBase = m.M
-				v102 = m.ExcPending
-				if v102 != 0 {
+				v88 = m.ExcPending
+				if v88 != 0 {
 					return int32(0)
 				} else {
-					F_jspGetRightArg(m, l1, v7+int32(-56))
+					v90 = v7 + int32(-56)
+					F_jspGetRightArg(m, l1, v90)
 					mBase = m.M
-					v106 = m.ExcPending
-					if v106 != 0 {
+					v92 = m.ExcPending
+					if v92 != 0 {
 						return int32(0)
 					} else {
-						v111 = int32(0)
-						v114 = F_executePredicate(m, l0, l1, v7+int32(-28), v7+int32(-56), l2, v111, int32(1443), v111)
+						v93 = int32(0)
+						v96 = F_executePredicate(m, l0, l1, v86, v90, l2, v93, int32(1424), v93)
 						mBase = m.M
-						v115 = m.ExcPending
-						if v115 != 0 {
+						v97 = m.ExcPending
+						if v97 != 0 {
 							return int32(0)
 						} else {
-							v204 = v114
+							v180 = v96
 							m.G0 = v9 - int32(-64)
-							return v204
+							return v180
 						}
 					}
 				}
 			case 38:
 				*(*int64)(unsafe.Add(mBase, uint32(v9)+8)) = int64(0)
-				v120 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-				v121 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
-				F_jspInitByBuffer(m, v7+int32(-28), v120, v121)
+				v101 = v7 + int32(-28)
+				v102 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+				v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+12))
+				F_jspInitByBuffer(m, v101, v102, v103)
 				mBase = m.M
-				v123 = m.ExcPending
-				if v123 != 0 {
+				v105 = m.ExcPending
+				if v105 != 0 {
 					return int32(0)
 				} else {
-					v126 = int32(0)
-					v131 = F_executePredicate(m, l0, l1, v7+int32(-28), v126, l2, v126, int32(1444), v7+int32(-56))
+					v106 = int32(0)
+					v111 = F_executePredicate(m, l0, l1, v101, v106, l2, v106, int32(1425), v7+int32(-56))
 					mBase = m.M
-					v132 = m.ExcPending
-					if v132 != 0 {
+					v112 = m.ExcPending
+					if v112 != 0 {
 						return int32(0)
 					} else {
-						v204 = v131
+						v180 = v111
 						m.G0 = v9 - int32(-64)
-						return v204
+						return v180
 					}
 				}
 			}

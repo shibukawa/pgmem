@@ -11,6 +11,7 @@ interface Props {
 const { lang = 'en', variant = 'full' } = Astro.props;
 const t = data.targets as Record<string, Record<string, number>>;
 const s = data.sizes as Record<string, number | string>;
+const comparisonAt = data.comparison_measured_at ?? data.measured_at;
 
 const L = {
 	en: {
@@ -19,7 +20,7 @@ const L = {
 		memContainer: 'container usage', memVM: 'VM absolute', memVMGrowth: 'VM net change', memProc: 'test-process growth', memServer: 'server process tree',
 		isoPgmem: 'fork', isoTemplate: 'CREATE DATABASE … TEMPLATE', isoTc: 'Snapshot / Restore', inproc: 'in-process', na: '—',
 		dlGo: 'linked into the test binary', dlBin: 'wheel / jar / npm payload', dlImage: 'image layers', dlRyuk: '+ Ryuk', dlNix: 'nix closure',
-		note: (d: string, m: typeof data.machine) => `Median of ${t.pgmem?.runs ?? '?'} runs on ${d}: ${m.cpu}, ${m.cores} cores, ${m.memory_gb} GB, ${m.os}; ${m.docker_runtime} (Docker ${m.docker}); ${s.arch}. The memory column compares backend usage and measured test-process growth. Testcontainers includes PostgreSQL and Ryuk container usage. VM net change and absolute footprint are separate context; VM net change can fall when OrbStack reclaims memory.`,
+		note: (d: string, m: typeof data.machine, comparisonAt: string) => `Median of ${t.pgmem?.runs ?? '?'} pgmem and binary runs on ${d}: ${m.cpu}, ${m.cores} cores, ${m.memory_gb} GB, ${m.os}; ${m.docker_runtime} (Docker ${m.docker}); ${s.arch}. The Docker, Testcontainers and devbox comparison baselines are from ${comparisonAt}. The memory column compares backend usage and measured test-process growth. Testcontainers includes PostgreSQL and Ryuk container usage. VM net change and absolute footprint are separate context; VM net change can fall when OrbStack reclaims memory.`,
 	},
 	ja: {
 		tool: '', pgmem: 'pgmem（Go ライブラリ）', binary: 'pgmem バイナリ（Python / Java / Node.js）', docker: 'docker run', testcontainers: 'Testcontainers（Go）', devbox: 'devbox（nix の PostgreSQL）',
@@ -27,7 +28,7 @@ const L = {
 		memContainer: 'コンテナ使用量', memVM: 'VM 絶対値', memVMGrowth: 'VM の差分', memProc: '計測プロセスの増分', memServer: 'PostgreSQL プロセス合計',
 		isoPgmem: 'フォーク', isoTemplate: 'CREATE DATABASE … TEMPLATE', isoTc: 'Snapshot / Restore', inproc: 'プロセス内接続', na: '—',
 		dlGo: 'テストバイナリへのリンク増分', dlBin: 'wheel / jar / npm の中身', dlImage: 'イメージレイヤ', dlRyuk: '+ Ryuk', dlNix: 'nix closure',
-		note: (d: string, m: typeof data.machine) => `${d} 計測、${t.pgmem?.runs ?? '?'} 回の中央値。${m.cpu}、${m.cores} コア、${m.memory_gb} GB、${m.os}。${m.docker_runtime}（Docker ${m.docker}）、${s.arch}。メモリ列は DB 使用量と計測プロセスの増分を比べます。Testcontainers は PostgreSQL と Ryuk のコンテナ使用量を含みます。VM の差分と絶対値は参考値として分けており、OrbStack がメモリを解放すると差分は小さくなります。`,
+		note: (d: string, m: typeof data.machine, comparisonAt: string) => `${d} に計測した pgmem とバイナリの中央値（${t.pgmem?.runs ?? '?'} 回）。${m.cpu}、${m.cores} コア、${m.memory_gb} GB、${m.os}。${m.docker_runtime}（Docker ${m.docker}）、${s.arch}。Docker、Testcontainers、devbox の比較値は ${comparisonAt} の基準値です。メモリ列は DB 使用量と計測プロセスの増分を比べます。Testcontainers は PostgreSQL と Ryuk のコンテナ使用量を含みます。VM の差分と絶対値は参考値として分けており、OrbStack がメモリを解放すると差分は小さくなります。`,
 	},
 }[lang];
 
@@ -96,7 +97,7 @@ const shown = variant === 'compact' ? rows.filter((r) => r.key !== 'binary') : r
 			))}
 		</tbody>
 	</table>
-	<p class="note">{L.note(data.measured_at, data.machine)}</p>
+	<p class="note">{L.note(data.measured_at, data.machine, comparisonAt)}</p>
 </div>
 
 <style>

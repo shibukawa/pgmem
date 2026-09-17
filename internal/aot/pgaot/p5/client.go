@@ -12,70 +12,72 @@ func F_PrepareClientEncoding(m *base.Module, l0 int32) int32 {
 	_ = v2
 	var v10 int32
 	_ = v10
-	var v16 int32
-	_ = v16
+	var v11 int32
+	_ = v11
 	var v17 int32
 	_ = v17
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v33 int32
-	_ = v33
-	var v34 int32
-	_ = v34
-	var v38 int32
-	_ = v38
+	var v18 int32
+	_ = v18
+	var v24 int32
+	_ = v24
+	var v25 int32
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v31 int32
+	_ = v31
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	var v40 int32
 	_ = v40
-	var v41 int32
-	_ = v41
-	var v47 int32
-	_ = v47
+	var v42 int32
+	_ = v42
+	var v43 int32
+	_ = v43
 	var v49 int32
 	_ = v49
-	var v53 int32
-	_ = v53
+	var v51 int32
+	_ = v51
 	var v55 int32
 	_ = v55
-	var v56 int32
-	_ = v56
 	var v57 int32
 	_ = v57
-	var v60 int32
-	_ = v60
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v62 int32
+	_ = v62
 	var v65 int32
 	_ = v65
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
-	var v82 int32
-	_ = v82
-	var v83 int32
-	_ = v83
-	var v86 int32
-	_ = v86
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
+	var v75 int32
+	_ = v75
+	var v78 int32
+	_ = v78
+	var v81 int32
+	_ = v81
+	var v84 int32
+	_ = v84
+	var v85 int32
+	_ = v85
+	var v88 int32
+	_ = v88
+	var v96 int32
+	_ = v96
 	var v97 int32
 	_ = v97
-	var v102 int32
-	_ = v102
-	var v112 int32
-	_ = v112
+	var v99 int32
+	_ = v99
+	var v104 int32
+	_ = v104
+	var v114 int32
+	_ = v114
 	v2 = int32(0)
 	if base.Ui32(int32(41)) < base.Ui32(l0) {
 		goto L2
@@ -84,224 +86,209 @@ func F_PrepareClientEncoding(m *base.Module, l0 int32) int32 {
 	}
 L1:
 	;
-	return v112
+	return v114
 L2:
 	;
-	v112 = int32(-1)
+	v114 = int32(-1)
 	goto L1
 L3:
 	;
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[0])))
-	if v10 == int32(0) {
-		v112 = v2
+	v11 = int32(0)
+	if base.B2i32(v10 == v11)|base.B2i32(l0 == v11) != 0 {
+		v114 = v2
 		goto L1
 	} else {
 		goto L4
 	}
 L4:
 	;
-	if l0 == int32(0) {
-		v112 = v2
+	v17 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[1]))
+	v18 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if base.B2i32(v18 == l0)|base.B2i32(v18 == int32(0)) != 0 {
+		v114 = v2
 		goto L1
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v16 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[1]))
-	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	if v17 == l0 {
-		v112 = v2
-		goto L1
-	} else {
-		goto L6
-	}
+	v24 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[2]))
+	v25 = *(*int32)(unsafe.Add(mBase, uint32(v24)+20))
+	goto L6
 L6:
 	;
-	if v17 == int32(0) {
-		v112 = v2
-		goto L1
-	} else {
+	if v25 == int32(2) {
 		goto L7
+	} else {
+		goto L8
 	}
 L7:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[2]))
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v22)+20))
-	goto L8
+	v28 = F_FindDefaultConversionProc(m, l0, v18)
+	mBase = m.M
+	v31 = m.ExcPending
+	if v31 != 0 {
+		goto L10
+	} else {
+		goto L11
+	}
 L8:
 	;
-	if v23 == int32(2) {
-		goto L9
-	} else {
-		goto L10
-	}
+	goto L9
 L9:
 	;
-	v26 = F_FindDefaultConversionProc(m, l0, v17)
-	mBase = m.M
-	v29 = m.ExcPending
-	if v29 != 0 {
-		goto L12
+	v75 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3]))
+	if v75 == int32(0) {
+		goto L2
 	} else {
-		goto L13
+		goto L19
 	}
 L10:
 	;
-	goto L11
+	return int32(0)
 L11:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3]))
-	if v73 == int32(0) {
+	if v28 == int32(0) {
 		goto L2
 	} else {
-		goto L21
+		goto L12
 	}
 L12:
 	;
-	return int32(0)
+	v35 = F_FindDefaultConversionProc(m, v18, l0)
+	mBase = m.M
+	v36 = m.ExcPending
+	if v36 != 0 {
+		goto L10
+	} else {
+		goto L13
+	}
 L13:
 	;
-	if v26 == int32(0) {
-		goto L2
+	if v35 == int32(0) {
+		v114 = int32(-1)
+		goto L1
 	} else {
 		goto L14
 	}
 L14:
 	;
-	v33 = F_FindDefaultConversionProc(m, v17, l0)
+	v40 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
+	v42 = F_MemoryContextAlloc(m, v40, int32(64))
 	mBase = m.M
-	v34 = m.ExcPending
-	if v34 != 0 {
-		goto L12
+	v43 = m.ExcPending
+	if v43 != 0 {
+		goto L10
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v33 == int32(0) {
-		v112 = int32(-1)
-		goto L1
+	*(*int32)(unsafe.Add(mBase, uint32(v42)+4)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v42))) = v18
+	v49 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
+	F_fmgr_info_cxt(m, v28, v42+int32(8), v49)
+	mBase = m.M
+	v51 = m.ExcPending
+	if v51 != 0 {
+		goto L10
 	} else {
 		goto L16
 	}
 L16:
 	;
-	v38 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
-	v40 = F_MemoryContextAlloc(m, v38, int32(64))
+	v55 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
+	F_fmgr_info_cxt(m, v35, v42+int32(36), v55)
 	mBase = m.M
-	v41 = m.ExcPending
-	if v41 != 0 {
-		goto L12
+	v57 = m.ExcPending
+	if v57 != 0 {
+		goto L10
 	} else {
 		goto L17
 	}
 L17:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v40)+4)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v40))) = v17
-	v47 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
-	F_fmgr_info_cxt(m, v26, v40+int32(8), v47)
+	v58 = int32(_a_F_PrepareClientEncoding_0)
+	v59 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5]))
+	v62 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
+	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5])) = v62
+	v65 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3]))
+	v66 = F_lcons(m, v42, v65)
 	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
-		goto L12
+	v67 = m.ExcPending
+	if v67 != 0 {
+		goto L10
 	} else {
 		goto L18
 	}
 L18:
 	;
-	v53 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
-	F_fmgr_info_cxt(m, v33, v40+int32(36), v53)
-	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
-		goto L12
-	} else {
-		goto L19
-	}
+	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5])) = v59
+	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3])) = v66
+	return int32(0)
 L19:
 	;
-	v56 = int32(_a_F_PrepareClientEncoding_0)
-	v57 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5]))
-	v60 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[4]))
-	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5])) = v60
-	v63 = *(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3]))
-	v64 = F_lcons(m, v40, v63)
-	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
-		goto L12
+	v78 = *(*int32)(unsafe.Add(mBase, uint32(v75)+4))
+	if v78 <= int32(0) {
+		goto L2
 	} else {
 		goto L20
 	}
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[5])) = v57
-	*(*int32)(unsafe.Add(mBase, _c_F_PrepareClientEncoding[3])) = v64
-	return int32(0)
-L21:
-	;
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v73)+4))
-	if v76 <= int32(0) {
-		goto L2
+	v81 = int32(0)
+	if v81 < v78 {
+		goto L21
 	} else {
 		goto L22
 	}
+L21:
+	;
+	v84 = v78
+	goto L23
 L22:
 	;
-	v79 = int32(0)
-	if v79 < v76 {
-		goto L23
-	} else {
-		goto L24
-	}
+	v84 = v81
+	goto L23
 L23:
 	;
-	v82 = v76
-	goto L25
+	v85 = *(*int32)(unsafe.Add(mBase, uint32(v75)+12))
+	v88 = int32(0)
+	goto L24
 L24:
 	;
-	v82 = v79
-	goto L25
+	v96 = *(*int32)(unsafe.Add(mBase, uint32(v85+v88<<(uint(int32(2))%32))))
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v96)))
+	if v97 != v18 {
+		goto L26
+	} else {
+		goto L27
+	}
 L25:
 	;
-	v83 = *(*int32)(unsafe.Add(mBase, uint32(v73)+12))
-	v86 = int32(0)
-	goto L26
+	goto L2
 L26:
 	;
-	v94 = *(*int32)(unsafe.Add(mBase, uint32(v83+v86<<(uint(int32(2))%32))))
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(v94)))
-	if v95 != v17 {
-		goto L28
+	v104 = v88 + int32(1)
+	if v104 != v84 {
+		v88 = v104
+		goto L24
 	} else {
 		goto L29
 	}
 L27:
 	;
-	goto L2
-L28:
-	;
-	v102 = v86 + int32(1)
-	if v102 != v82 {
-		v86 = v102
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v96)+4))
+	if v99 != l0 {
 		goto L26
 	} else {
-		goto L31
-	}
-L29:
-	;
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v94)+4))
-	if v97 != l0 {
 		goto L28
-	} else {
-		goto L30
 	}
-L30:
+L28:
 	;
 	return int32(0)
-L31:
+L29:
 	;
-	goto L27
+	goto L25
 }

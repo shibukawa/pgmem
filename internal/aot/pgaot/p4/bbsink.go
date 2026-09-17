@@ -78,7 +78,7 @@ func F_bbsink_copystream_end_archive(m *base.Module, l0 int32) {
 	v15 = m.G0
 	v17 = v15 - v6
 	m.G0 = v17
-	F___gettimeofday(m, v17)
+	F_gettimeofday(m, v17)
 	mBase = m.M
 	v20 = *(*int64)(unsafe.Add(mBase, uint32(v17)))
 	v21 = int64(*(*int32)(unsafe.Add(mBase, uint32(v17)+8)))
@@ -261,24 +261,24 @@ func F_bbsink_progress_end_archive(m *base.Module, l0 int32) {
 	_ = v17
 	var v21 int32
 	_ = v21
-	var v24 int32
-	_ = v24
 	var v26 int32
 	_ = v26
-	var v27 int32
-	_ = v27
-	var v30 int32
-	_ = v30
-	var v38 int32
-	_ = v38
-	var v44 int32
-	_ = v44
-	var v49 int32
-	_ = v49
-	var v50 int32
-	_ = v50
+	var v28 int32
+	_ = v28
+	var v29 int32
+	_ = v29
+	var v32 int32
+	_ = v32
+	var v40 int32
+	_ = v40
+	var v46 int32
+	_ = v46
 	var v51 int32
 	_ = v51
+	var v52 int32
+	_ = v52
+	var v53 int32
+	_ = v53
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(v4)+4))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(v4)))
@@ -293,32 +293,32 @@ func F_bbsink_progress_end_archive(m *base.Module, l0 int32) {
 		if v17 == int32(0) {
 		} else {
 			v21 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[1])))
-			if v21 != int32(1) {
+			if v21&int32(1) == int32(0) {
 			} else {
-				v24 = int32(_a_F_bbsink_progress_end_archive_0)
-				v26 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
-				v27 = int32(1)
-				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v26 + v27
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v30 + v27
+				v26 = int32(_a_F_bbsink_progress_end_archive_0)
+				v28 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
+				v29 = int32(1)
+				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v28 + v29
+				v32 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v32 + v29
 				*(*int64)(unsafe.Add(mBase, uint32(v17+int32(32))+232)) = base.I64_extend_i32_s(v5 + int32(1))
-				v38 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
-				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v38 + v27
-				v44 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
-				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v44 - v27
+				v40 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
+				*(*int32)(unsafe.Add(mBase, uint32(v17))) = v40 + v29
+				v46 = *(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2]))
+				*(*int32)(unsafe.Add(mBase, _c_F_bbsink_progress_end_archive[2])) = v46 - v29
 			}
 		}
 	} else {
 	}
 	F_bbsink_forward_end_archive(m, l0)
 	mBase = m.M
-	v49 = m.ExcPending
-	if v49 != 0 {
+	v51 = m.ExcPending
+	if v51 != 0 {
 		return
 	} else {
-		v50 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
-		v51 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
-		*(*int32)(unsafe.Add(mBase, uint32(v50)+4)) = v51 + int32(1)
+		v52 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
+		v53 = *(*int32)(unsafe.Add(mBase, uint32(v52)+4))
+		*(*int32)(unsafe.Add(mBase, uint32(v52)+4)) = v53 + int32(1)
 		return
 	}
 }

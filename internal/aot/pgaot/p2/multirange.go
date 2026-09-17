@@ -52,24 +52,28 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 	_ = v41
 	var v44 int32
 	_ = v44
+	var v48 int32
+	_ = v48
 	var v54 int32
 	_ = v54
 	var v55 int32
 	_ = v55
+	var v61 int32
+	_ = v61
 	var v63 int32
 	_ = v63
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	var v68 int32
 	_ = v68
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v80 int32
-	_ = v80
-	var v84 int32
-	_ = v84
-	var v89 int32
-	_ = v89
+	var v77 int32
+	_ = v77
+	var v81 int32
+	_ = v81
+	var v86 int32
+	_ = v86
 	v7 = m.G0
 	v9 = v7 - int32(48)
 	m.G0 = v9
@@ -99,38 +103,40 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 					v35 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 					v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17+int32(base.Ui32(v35)>>(uint(int32(2))%32))-int32(1)))))
 					if v41&int32(1) != 0 {
-						v72 = v34
+						v68 = v34
 						m.G0 = v9 + int32(48)
-						return v72
+						return v68
 					} else {
 						v44 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
 						if v44 == int32(0) {
-							v72 = v34
+							v68 = v34
 							m.G0 = v9 + int32(48)
-							return v72
+							return v68
 						} else {
-							F_range_deserialize(m, v33, v17, v9+int32(40), v9+int32(32), v9+int32(15))
+							v48 = v9 + int32(40)
+							F_range_deserialize(m, v33, v17, v48, v9+int32(32), v9+int32(15))
 							mBase = m.M
 							v54 = m.ExcPending
 							if v54 != 0 {
 								return int32(0)
 							} else {
 								v55 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
-								F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v9+int32(16))
+								v61 = v9 + int32(16)
+								F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v61)
 								mBase = m.M
 								v63 = m.ExcPending
 								if v63 != 0 {
 									return int32(0)
 								} else {
-									v68 = F_range_cmp_bounds(m, v33, v9+int32(40), v9+int32(16))
+									v64 = F_range_cmp_bounds(m, v33, v48, v61)
 									mBase = m.M
-									v69 = m.ExcPending
-									if v69 != 0 {
+									v65 = m.ExcPending
+									if v65 != 0 {
 										return int32(0)
 									} else {
-										v72 = base.B2i32(int32(0) < v68)
+										v68 = base.B2i32(int32(0) < v64)
 										m.G0 = v9 + int32(48)
-										return v72
+										return v68
 									}
 								}
 							}
@@ -147,21 +153,21 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 						if v27 == int32(0) {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v80 = m.ExcPending
-							if v80 != 0 {
+							v77 = m.ExcPending
+							if v77 != 0 {
 								return int32(0)
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
 								F_errmsg_internal(m, int32(_a_F_multirange_before_range_1), v9)
 								mBase = m.M
-								v84 = m.ExcPending
-								if v84 != 0 {
+								v81 = m.ExcPending
+								if v81 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_multirange_before_range_2), int32(558), int32(_a_F_multirange_before_range_3))
 									mBase = m.M
-									v89 = m.ExcPending
-									if v89 != 0 {
+									v86 = m.ExcPending
+									if v86 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -179,38 +185,40 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 							v35 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 							v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17+int32(base.Ui32(v35)>>(uint(int32(2))%32))-int32(1)))))
 							if v41&int32(1) != 0 {
-								v72 = v34
+								v68 = v34
 								m.G0 = v9 + int32(48)
-								return v72
+								return v68
 							} else {
 								v44 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
 								if v44 == int32(0) {
-									v72 = v34
+									v68 = v34
 									m.G0 = v9 + int32(48)
-									return v72
+									return v68
 								} else {
-									F_range_deserialize(m, v33, v17, v9+int32(40), v9+int32(32), v9+int32(15))
+									v48 = v9 + int32(40)
+									F_range_deserialize(m, v33, v17, v48, v9+int32(32), v9+int32(15))
 									mBase = m.M
 									v54 = m.ExcPending
 									if v54 != 0 {
 										return int32(0)
 									} else {
 										v55 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
-										F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v9+int32(16))
+										v61 = v9 + int32(16)
+										F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v61)
 										mBase = m.M
 										v63 = m.ExcPending
 										if v63 != 0 {
 											return int32(0)
 										} else {
-											v68 = F_range_cmp_bounds(m, v33, v9+int32(40), v9+int32(16))
+											v64 = F_range_cmp_bounds(m, v33, v48, v61)
 											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
+											v65 = m.ExcPending
+											if v65 != 0 {
 												return int32(0)
 											} else {
-												v72 = base.B2i32(int32(0) < v68)
+												v68 = base.B2i32(int32(0) < v64)
 												m.G0 = v9 + int32(48)
-												return v72
+												return v68
 											}
 										}
 									}
@@ -230,21 +238,21 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 					if v27 == int32(0) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
+						v77 = m.ExcPending
+						if v77 != 0 {
 							return int32(0)
 						} else {
 							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
 							F_errmsg_internal(m, int32(_a_F_multirange_before_range_1), v9)
 							mBase = m.M
-							v84 = m.ExcPending
-							if v84 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
 								return int32(0)
 							} else {
 								F_errfinish(m, int32(_a_F_multirange_before_range_2), int32(558), int32(_a_F_multirange_before_range_3))
 								mBase = m.M
-								v89 = m.ExcPending
-								if v89 != 0 {
+								v86 = m.ExcPending
+								if v86 != 0 {
 									return int32(0)
 								} else {
 									base.Wasm_trap_unreachable()
@@ -262,38 +270,40 @@ func F_multirange_before_range(m *base.Module, l0 int32) int32 {
 						v35 = *(*int32)(unsafe.Add(mBase, uint32(v17)))
 						v41 = int32(*(*int8)(unsafe.Add(mBase, uint32(v17+int32(base.Ui32(v35)>>(uint(int32(2))%32))-int32(1)))))
 						if v41&int32(1) != 0 {
-							v72 = v34
+							v68 = v34
 							m.G0 = v9 + int32(48)
-							return v72
+							return v68
 						} else {
 							v44 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
 							if v44 == int32(0) {
-								v72 = v34
+								v68 = v34
 								m.G0 = v9 + int32(48)
-								return v72
+								return v68
 							} else {
-								F_range_deserialize(m, v33, v17, v9+int32(40), v9+int32(32), v9+int32(15))
+								v48 = v9 + int32(40)
+								F_range_deserialize(m, v33, v17, v48, v9+int32(32), v9+int32(15))
 								mBase = m.M
 								v54 = m.ExcPending
 								if v54 != 0 {
 									return int32(0)
 								} else {
 									v55 = *(*int32)(unsafe.Add(mBase, uint32(v12)+8))
-									F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v9+int32(16))
+									v61 = v9 + int32(16)
+									F_multirange_get_bounds(m, v33, v12, v55-int32(1), v9+int32(24), v61)
 									mBase = m.M
 									v63 = m.ExcPending
 									if v63 != 0 {
 										return int32(0)
 									} else {
-										v68 = F_range_cmp_bounds(m, v33, v9+int32(40), v9+int32(16))
+										v64 = F_range_cmp_bounds(m, v33, v48, v61)
 										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return int32(0)
 										} else {
-											v72 = base.B2i32(int32(0) < v68)
+											v68 = base.B2i32(int32(0) < v64)
 											m.G0 = v9 + int32(48)
-											return v72
+											return v68
 										}
 									}
 								}
@@ -756,16 +766,16 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 	if v15 != 0 {
 		return int32(0)
 	} else {
-		v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-		v17 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+		v16 = *(*int32)(unsafe.Add(mBase, uint32(v12)+4))
+		v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v18 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 		v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+16))
 		if v19 != 0 {
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
-			if v20 == v17 {
+			if v20 == v16 {
 				v30 = v19
 				v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+296))
-				v32 = F_multirange_contains_elem_internal(m, v31, v12, v16)
+				v32 = F_multirange_contains_elem_internal(m, v31, v12, v17)
 				mBase = m.M
 				v33 = m.ExcPending
 				if v33 != 0 {
@@ -775,7 +785,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 					return v32
 				}
 			} else {
-				v23 = F_lookup_type_cache(m, v17, int32(_a_F_multirange_contains_elem_0))
+				v23 = F_lookup_type_cache(m, v16, int32(_a_F_multirange_contains_elem_0))
 				mBase = m.M
 				v24 = m.ExcPending
 				if v24 != 0 {
@@ -789,7 +799,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v17
+							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v16
 							F_errmsg_internal(m, int32(_a_F_multirange_contains_elem_1), v9)
 							mBase = m.M
 							v45 = m.ExcPending
@@ -813,7 +823,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 						*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = v23
 						v30 = v23
 						v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+296))
-						v32 = F_multirange_contains_elem_internal(m, v31, v12, v16)
+						v32 = F_multirange_contains_elem_internal(m, v31, v12, v17)
 						mBase = m.M
 						v33 = m.ExcPending
 						if v33 != 0 {
@@ -826,7 +836,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 				}
 			}
 		} else {
-			v23 = F_lookup_type_cache(m, v17, int32(_a_F_multirange_contains_elem_0))
+			v23 = F_lookup_type_cache(m, v16, int32(_a_F_multirange_contains_elem_0))
 			mBase = m.M
 			v24 = m.ExcPending
 			if v24 != 0 {
@@ -840,7 +850,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 					if v41 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v17
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v16
 						F_errmsg_internal(m, int32(_a_F_multirange_contains_elem_1), v9)
 						mBase = m.M
 						v45 = m.ExcPending
@@ -864,7 +874,7 @@ func F_multirange_contains_elem(m *base.Module, l0 int32) int32 {
 					*(*int32)(unsafe.Add(mBase, uint32(v28)+16)) = v23
 					v30 = v23
 					v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)+296))
-					v32 = F_multirange_contains_elem_internal(m, v31, v12, v16)
+					v32 = F_multirange_contains_elem_internal(m, v31, v12, v17)
 					mBase = m.M
 					v33 = m.ExcPending
 					if v33 != 0 {
@@ -943,10 +953,10 @@ func F_multirange_intersect(m *base.Module, l0 int32) int32 {
 	_ = v69
 	var v71 int32
 	_ = v71
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
+	var v73 int32
+	_ = v73
+	var v80 int32
+	_ = v80
 	var v87 int32
 	_ = v87
 	var v88 int32
@@ -959,8 +969,8 @@ func F_multirange_intersect(m *base.Module, l0 int32) int32 {
 	_ = v103
 	var v106 int32
 	_ = v106
-	var v116 int32
-	_ = v116
+	var v117 int32
+	_ = v117
 	var v118 int32
 	_ = v118
 	var v119 int32
@@ -1120,12 +1130,12 @@ L19:
 	}
 L20:
 	;
-	v75 = v39
-	v81 = v2
+	v73 = v39
+	v80 = v2
 	goto L21
 L21:
 	;
-	if int32(0) < v75 {
+	if int32(0) < v73 {
 		goto L27
 	} else {
 		goto L28
@@ -1147,8 +1157,8 @@ L23:
 L24:
 	;
 	v71 = *(*int32)(unsafe.Add(mBase, uint32(v21)+8))
-	v75 = v71
-	v81 = v50
+	v73 = v71
+	v80 = v50
 	goto L21
 L25:
 	;
@@ -1165,7 +1175,7 @@ L26:
 	goto L24
 L27:
 	;
-	v87 = F_palloc(m, v75<<(uint(int32(2))%32))
+	v87 = F_palloc(m, v73<<(uint(int32(2))%32))
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
@@ -1175,11 +1185,11 @@ L27:
 	}
 L28:
 	;
-	v116 = v2
+	v117 = v2
 	goto L29
 L29:
 	;
-	v118 = F_multirange_intersect_internal(m, v23, v37, v38, v81, v75, v116)
+	v118 = F_multirange_intersect_internal(m, v23, v37, v38, v80, v73, v117)
 	mBase = m.M
 	v119 = m.ExcPending
 	if v119 != 0 {
@@ -1203,13 +1213,13 @@ L31:
 	}
 L32:
 	;
-	v116 = v87
+	v117 = v87
 	goto L29
 L33:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v87+v89<<(uint(int32(2))%32)))) = v102
 	v106 = v89 + int32(1)
-	if v106 != v75 {
+	if v106 != v73 {
 		v89 = v106
 		goto L31
 	} else {

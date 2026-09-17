@@ -169,10 +169,10 @@ func F_jsonpath_yyensure_buffer_stack(m *base.Module, l0 int32) {
 					v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 					v34 = v26 + v31<<(uint(int32(2))%32)
 					v35 = int64(0)
-					*(*int64)(unsafe.Add(mBase, uint32(v34))) = v35
 					*(*int64)(unsafe.Add(mBase, uint32(v34)+24)) = v35
 					*(*int64)(unsafe.Add(mBase, uint32(v34)+16)) = v35
 					*(*int64)(unsafe.Add(mBase, uint32(v34)+8)) = v35
+					*(*int64)(unsafe.Add(mBase, uint32(v34))) = v35
 					*(*int32)(unsafe.Add(mBase, uint32(l0)+16)) = v23
 					return
 				}

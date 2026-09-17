@@ -26,8 +26,8 @@ func F_SyncRepInitConfig(m *base.Module) {
 	_ = v22
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v33 int32
 	_ = v33
 	var v36 int32
@@ -68,8 +68,8 @@ func F_SyncRepInitConfig(m *base.Module) {
 	_ = v96
 	var v97 int32
 	_ = v97
-	var v99 int32
-	_ = v99
+	var v101 int32
+	_ = v101
 	var v103 int32
 	_ = v103
 	var v104 int32
@@ -100,7 +100,7 @@ func F_SyncRepInitConfig(m *base.Module) {
 	m.G0 = v7
 	v10 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[0])))
 	if v10 != 0 {
-		v99 = v1
+		v101 = v1
 		goto L1
 	} else {
 		goto L2
@@ -109,7 +109,7 @@ L1:
 	;
 	v103 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
 	v104 = *(*int32)(unsafe.Add(mBase, uint32(v103)+72))
-	if v104 == v99 {
+	if v104 == v101 {
 		goto L32
 	} else {
 		goto L33
@@ -118,7 +118,7 @@ L2:
 	;
 	v12 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[2]))
 	if v12 == int32(0) {
-		v99 = v1
+		v101 = v1
 		goto L1
 	} else {
 		goto L3
@@ -127,7 +127,7 @@ L3:
 	;
 	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12))))
 	if v15 == int32(0) {
-		v99 = v1
+		v101 = v1
 		goto L1
 	} else {
 		goto L4
@@ -136,7 +136,7 @@ L4:
 	;
 	v19 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[3]))
 	if v19 == int32(0) {
-		v99 = v1
+		v101 = v1
 		goto L1
 	} else {
 		goto L5
@@ -145,7 +145,7 @@ L5:
 	;
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 	if v22 <= int32(0) {
-		v99 = v1
+		v101 = v1
 		goto L1
 	} else {
 		goto L6
@@ -153,7 +153,7 @@ L5:
 L6:
 	;
 	v28 = v19 + int32(16)
-	v30 = int32(1)
+	v29 = int32(1)
 	goto L7
 L7:
 	;
@@ -273,12 +273,12 @@ L26:
 	v83 = F_strlen(m, v28)
 	mBase = m.M
 	v85 = int32(1)
-	v88 = v30 + v85
+	v88 = v29 + v85
 	v90 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[3]))
 	v91 = *(*int32)(unsafe.Add(mBase, uint32(v90)+12))
 	if v88 <= v91 {
 		v28 = v83 + v28 + v85
-		v30 = v88
+		v29 = v88
 		goto L7
 	} else {
 		goto L28
@@ -288,7 +288,7 @@ L27:
 	goto L26
 L28:
 	;
-	v99 = v1
+	v101 = v1
 	goto L1
 L29:
 	;
@@ -296,11 +296,11 @@ L29:
 	goto L31
 L30:
 	;
-	v97 = v30
+	v97 = v29
 	goto L31
 L31:
 	;
-	v99 = v97
+	v101 = v97
 	goto L1
 L32:
 	;
@@ -334,7 +334,7 @@ L36:
 	v119 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[1]))
 	v120 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v119)+76)) = v120
-	*(*int32)(unsafe.Add(mBase, uint32(v119)+72)) = v99
+	*(*int32)(unsafe.Add(mBase, uint32(v119)+72)) = v101
 	v125 = F_errstart(m, int32(14), v120)
 	mBase = m.M
 	v126 = m.ExcPending
@@ -358,7 +358,7 @@ L39:
 	}
 L40:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v99
+	*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = v101
 	v131 = *(*int32)(unsafe.Add(mBase, _c_F_SyncRepInitConfig[4]))
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = v131
 	F_errmsg_internal(m, int32(_a_F_SyncRepInitConfig_2), v7)

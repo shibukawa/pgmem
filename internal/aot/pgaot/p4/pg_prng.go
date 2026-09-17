@@ -8,24 +8,24 @@ import (
 func F_pg_prng_bool(m *base.Module) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
 	var v4 int32
 	_ = v4
-	var v5 int64
+	var v5 int32
 	_ = v5
-	var v7 int64
-	_ = v7
+	var v6 int64
+	_ = v6
 	var v8 int64
 	_ = v8
-	v3 = int32(_a_F_pg_prng_bool_0)
-	v4 = int32(_a_F_pg_prng_bool_1)
-	v5 = *(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[0]))
-	v7 = *(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[1]))
-	v8 = v5 ^ v7
-	*(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[1])) = base.I64_rotl(v8, int64(37))
-	*(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[0])) = v8<<(uint(int64(16))%64) ^ base.I64_rotl(v5, int64(24)) ^ v8
-	return base.I32_wrap_i64(int64(base.Ui64(base.I64_rotl(v5*int64(5), int64(7))*int64(9)) >> (uint(int64(63)) % 64)))
+	var v9 int64
+	_ = v9
+	v4 = int32(_a_F_pg_prng_bool_0)
+	v5 = int32(_a_F_pg_prng_bool_1)
+	v6 = *(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[0]))
+	v8 = *(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[1]))
+	v9 = v6 ^ v8
+	*(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[1])) = base.I64_rotl(v9, int64(37))
+	*(*int64)(unsafe.Add(mBase, _c_F_pg_prng_bool[0])) = v9<<(uint(int64(16))%64) ^ base.I64_rotl(v6, int64(24)) ^ v9
+	return base.I32_wrap_i64(int64(base.Ui64(base.I64_rotl(v6*int64(5), int64(7))*int64(9)) >> (uint(int64(63)) % 64)))
 }
 func F_pg_prng_seed_check(m *base.Module, l0 int32) int32 {
 	mBase := m.M

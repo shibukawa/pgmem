@@ -32,18 +32,12 @@ func F_pgmem_aes_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 	_ = v17
 	var v21 int32
 	_ = v21
-	var v26 int32
-	_ = v26
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
-	var v40 int32
-	_ = v40
+	var v28 int32
+	_ = v28
+	var v32 int32
+	_ = v32
+	var v39 int32
+	_ = v39
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(v8)+92))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+12))
@@ -51,76 +45,79 @@ func F_pgmem_aes_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) in
 		v21 = int32(16)
 		*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v21
 		if l2 != 0 {
-			v26 = F__emscripten_memcpy_bulkmem(m, v8+int32(4), l1, l2)
-			mBase = m.M
+			base.MemoryCopy(m, v8+int32(4), l1, l2)
 		} else {
 		}
-		v29 = v8 + int32(68)
+		v28 = v8 + int32(68)
 		if l3 != 0 {
 			if v10 != 0 {
-				v30 = F__emscripten_memcpy_bulkmem(m, v29, l3, v10)
-				mBase = m.M
+				base.MemoryCopy(m, v28, l3, v10)
 			} else {
 			}
 			return int32(0)
 		} else {
-			v34 = int32(0)
-			v37 = F__emscripten_memset_bulkmem(m, v29, base.I32_extend8_s(v34), v10)
-			mBase = m.M
-			v40 = v34
-			return v40
+			v32 = int32(0)
+			if v10 == v32 {
+				v39 = v32
+			} else {
+				base.MemoryFill(m, v28, int32(0), v10)
+				v39 = v32
+			}
+			return v39
 		}
 	} else {
 		if base.Ui32(l2) < base.Ui32(int32(25)) {
 			v21 = int32(24)
 			*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v21
 			if l2 != 0 {
-				v26 = F__emscripten_memcpy_bulkmem(m, v8+int32(4), l1, l2)
-				mBase = m.M
+				base.MemoryCopy(m, v8+int32(4), l1, l2)
 			} else {
 			}
-			v29 = v8 + int32(68)
+			v28 = v8 + int32(68)
 			if l3 != 0 {
 				if v10 != 0 {
-					v30 = F__emscripten_memcpy_bulkmem(m, v29, l3, v10)
-					mBase = m.M
+					base.MemoryCopy(m, v28, l3, v10)
 				} else {
 				}
 				return int32(0)
 			} else {
-				v34 = int32(0)
-				v37 = F__emscripten_memset_bulkmem(m, v29, base.I32_extend8_s(v34), v10)
-				mBase = m.M
-				v40 = v34
-				return v40
+				v32 = int32(0)
+				if v10 == v32 {
+					v39 = v32
+				} else {
+					base.MemoryFill(m, v28, int32(0), v10)
+					v39 = v32
+				}
+				return v39
 			}
 		} else {
 			v17 = int32(32)
 			if base.Ui32(v17) < base.Ui32(l2) {
-				v40 = int32(-7)
-				return v40
+				v39 = int32(-7)
+				return v39
 			} else {
 				v21 = v17
 				*(*int32)(unsafe.Add(mBase, uint32(v8)+84)) = v21
 				if l2 != 0 {
-					v26 = F__emscripten_memcpy_bulkmem(m, v8+int32(4), l1, l2)
-					mBase = m.M
+					base.MemoryCopy(m, v8+int32(4), l1, l2)
 				} else {
 				}
-				v29 = v8 + int32(68)
+				v28 = v8 + int32(68)
 				if l3 != 0 {
 					if v10 != 0 {
-						v30 = F__emscripten_memcpy_bulkmem(m, v29, l3, v10)
-						mBase = m.M
+						base.MemoryCopy(m, v28, l3, v10)
 					} else {
 					}
 					return int32(0)
 				} else {
-					v34 = int32(0)
-					v37 = F__emscripten_memset_bulkmem(m, v29, base.I32_extend8_s(v34), v10)
-					mBase = m.M
-					v40 = v34
-					return v40
+					v32 = int32(0)
+					if v10 == v32 {
+						v39 = v32
+					} else {
+						base.MemoryFill(m, v28, int32(0), v10)
+						v39 = v32
+					}
+					return v39
 				}
 			}
 		}
@@ -150,16 +147,10 @@ func F_pgmem_des3_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	_ = v9
 	var v11 int64
 	_ = v11
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v27 int32
-	_ = v27
-	var v33 int32
-	_ = v33
+	var v20 int32
+	_ = v20
+	var v25 int32
+	_ = v25
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)+92))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)+12))
@@ -170,26 +161,27 @@ func F_pgmem_des3_init(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) i
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+12)) = v11
 	*(*int64)(unsafe.Add(mBase, uint32(v6)+20)) = v11
 	if base.Ui32(v9) <= base.Ui32(l2) {
-		v22 = v9
+		v20 = v9
 	} else {
-		v22 = l2
+		v20 = l2
 	}
-	if v22 != 0 {
-		v23 = F__emscripten_memcpy_bulkmem(m, v6+int32(4), l1, v22)
-		mBase = m.M
+	if v20 != 0 {
+		base.MemoryCopy(m, v6+int32(4), l1, v20)
 	} else {
 	}
-	v26 = v6 + int32(68)
+	v25 = v6 + int32(68)
 	if l3 != 0 {
-		if v8 != 0 {
-			v27 = F__emscripten_memcpy_bulkmem(m, v26, l3, v8)
-			mBase = m.M
+		if v8 == int32(0) {
+			return int32(0)
 		} else {
+			base.MemoryCopy(m, v25, l3, v8)
+			return int32(0)
 		}
-		return int32(0)
 	} else {
-		v33 = F__emscripten_memset_bulkmem(m, v26, base.I32_extend8_s(int32(0)), v8)
-		mBase = m.M
+		if v8 == int32(0) {
+		} else {
+			base.MemoryFill(m, v25, int32(0), v8)
+		}
 		return int32(0)
 	}
 }

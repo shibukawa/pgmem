@@ -126,8 +126,6 @@ func F_set_var_from_num(m *base.Module, l0 int32, l1 int32) {
 	_ = v80
 	var v83 int32
 	_ = v83
-	var v85 int32
-	_ = v85
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v12 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+4)))
 	if int32(0) <= v12 {
@@ -186,15 +184,14 @@ func F_set_var_from_num(m *base.Module, l0 int32, l1 int32) {
 					v76 = v67 & int32(_a_F_set_var_from_num_4)
 				}
 				*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v76
-				v80 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+4)))
-				if v80 < int32(0) {
-					v83 = int32(6)
-				} else {
-					v83 = int32(8)
-				}
 				if v23 != 0 {
-					v85 = F__emscripten_memcpy_bulkmem(m, v34, l0+v83, v23)
-					mBase = m.M
+					v80 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+4)))
+					if v80 < int32(0) {
+						v83 = int32(6)
+					} else {
+						v83 = int32(8)
+					}
+					base.MemoryCopy(m, v34, l0+v83, v23)
 				} else {
 				}
 				return
@@ -243,15 +240,14 @@ func F_set_var_from_num(m *base.Module, l0 int32, l1 int32) {
 				v76 = v67 & int32(_a_F_set_var_from_num_4)
 			}
 			*(*int32)(unsafe.Add(mBase, uint32(l1)+12)) = v76
-			v80 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+4)))
-			if v80 < int32(0) {
-				v83 = int32(6)
-			} else {
-				v83 = int32(8)
-			}
 			if v23 != 0 {
-				v85 = F__emscripten_memcpy_bulkmem(m, v34, l0+v83, v23)
-				mBase = m.M
+				v80 = int32(*(*int16)(unsafe.Add(mBase, uint32(l0)+4)))
+				if v80 < int32(0) {
+					v83 = int32(6)
+				} else {
+					v83 = int32(8)
+				}
+				base.MemoryCopy(m, v34, l0+v83, v23)
 			} else {
 			}
 			return

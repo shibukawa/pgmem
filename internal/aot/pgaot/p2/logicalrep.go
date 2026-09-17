@@ -8,50 +8,54 @@ import (
 func F_logicalrep_partmap_invalidate_cb(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v9 int32
-	_ = v9
-	var v15 int32
-	_ = v15
-	var v21 int32
-	_ = v21
+	var v5 int32
+	_ = v5
+	var v7 int32
+	_ = v7
+	var v10 int32
+	_ = v10
+	var v16 int32
+	_ = v16
 	var v22 int32
 	_ = v22
-	var v25 int32
-	_ = v25
+	var v23 int32
+	_ = v23
+	var v24 int32
+	_ = v24
 	var v27 int32
 	_ = v27
+	var v29 int32
+	_ = v29
 	var v32 int32
 	_ = v32
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v46 int32
-	_ = v46
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v45 int32
+	_ = v45
+	var v49 int32
+	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
-	v4 = m.G0
-	v6 = v4 - int32(32)
-	m.G0 = v6
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_partmap_invalidate_cb[0]))
-	if v9 == int32(0) {
+	v5 = m.G0
+	v7 = v5 - int32(32)
+	m.G0 = v7
+	v10 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_partmap_invalidate_cb[0]))
+	if v10 == int32(0) {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	m.G0 = v6 + int32(32)
+	m.G0 = v7 + int32(32)
 	return
 L2:
 	;
@@ -62,10 +66,10 @@ L2:
 	}
 L3:
 	;
-	F_hash_seq_init(m, v6+int32(12), v9)
+	F_hash_seq_init(m, v7+int32(12), v10)
 	mBase = m.M
-	v15 = m.ExcPending
-	if v15 != 0 {
+	v16 = m.ExcPending
+	if v16 != 0 {
 		goto L6
 	} else {
 		goto L7
@@ -75,7 +79,8 @@ L4:
 	goto L5
 L5:
 	;
-	F_hash_seq_init(m, v6+int32(12), v9)
+	v34 = v7 + int32(12)
+	F_hash_seq_init(m, v34, v10)
 	mBase = m.M
 	v36 = m.ExcPending
 	if v36 != 0 {
@@ -91,19 +96,20 @@ L7:
 	goto L8
 L8:
 	;
-	v21 = F_hash_seq_search(m, v6+int32(12))
+	v22 = v7 + int32(12)
+	v23 = F_hash_seq_search(m, v22)
 	mBase = m.M
-	v22 = m.ExcPending
-	if v22 != 0 {
+	v24 = m.ExcPending
+	if v24 != 0 {
 		goto L6
 	} else {
 		goto L10
 	}
 L9:
 	;
-	v27 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v21)+40)) = uint8(v27)
-	F_hash_seq_term(m, v6+int32(12))
+	v29 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v23)+40)) = uint8(v29)
+	F_hash_seq_term(m, v22)
 	mBase = m.M
 	v32 = m.ExcPending
 	if v32 != 0 {
@@ -113,15 +119,15 @@ L9:
 	}
 L10:
 	;
-	if v21 == int32(0) {
+	if v23 == int32(0) {
 		goto L1
 	} else {
 		goto L11
 	}
 L11:
 	;
-	v25 = *(*int32)(unsafe.Add(mBase, uint32(v21)+44))
-	if v25 != l1 {
+	v27 = *(*int32)(unsafe.Add(mBase, uint32(v23)+44))
+	if v27 != l1 {
 		goto L8
 	} else {
 		goto L12
@@ -134,33 +140,33 @@ L13:
 	goto L1
 L14:
 	;
-	v39 = F_hash_seq_search(m, v6+int32(12))
+	v37 = F_hash_seq_search(m, v34)
 	mBase = m.M
-	v40 = m.ExcPending
-	if v40 != 0 {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L6
 	} else {
 		goto L15
 	}
 L15:
 	;
-	if v39 == int32(0) {
+	if v37 == int32(0) {
 		goto L1
 	} else {
 		goto L16
 	}
 L16:
 	;
-	v43 = v39
+	v41 = v37
 	goto L17
 L17:
 	;
-	v46 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v43)+40)) = uint8(v46)
-	v50 = F_hash_seq_search(m, v6+int32(12))
+	v45 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v41)+40)) = uint8(v45)
+	v49 = F_hash_seq_search(m, v7+int32(12))
 	mBase = m.M
-	v51 = m.ExcPending
-	if v51 != 0 {
+	v50 = m.ExcPending
+	if v50 != 0 {
 		goto L6
 	} else {
 		goto L19
@@ -170,8 +176,8 @@ L18:
 	goto L1
 L19:
 	;
-	if v50 != 0 {
-		v43 = v50
+	if v49 != 0 {
+		v41 = v49
 		goto L17
 	} else {
 		goto L20
@@ -363,8 +369,8 @@ func F_logicalrep_workers_find(m *base.Module, l0 int32, l1 int32, l2 int32) int
 	_ = v19
 	var v23 int32
 	_ = v23
-	var v27 int32
-	_ = v27
+	var v28 int32
+	_ = v28
 	var v29 int32
 	_ = v29
 	var v30 int32
@@ -389,16 +395,16 @@ func F_logicalrep_workers_find(m *base.Module, l0 int32, l1 int32, l2 int32) int
 	_ = v48
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
+	var v52 int32
+	_ = v52
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
 	var v56 int32
 	_ = v56
-	var v61 int32
-	_ = v61
+	var v65 int32
+	_ = v65
 	var v67 int32
 	_ = v67
 	var v71 int32
@@ -440,14 +446,14 @@ L5:
 L6:
 	;
 	v23 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_workers_find[2]))
-	v27 = v4
-	v29 = v4
-	v30 = v19
-	v31 = v23
+	v28 = v19
+	v29 = v23
+	v30 = v4
+	v31 = v4
 	goto L9
 L7:
 	;
-	v61 = v4
+	v65 = v4
 	goto L8
 L8:
 	;
@@ -458,11 +464,11 @@ L8:
 	}
 L9:
 	;
-	v34 = v31 + v29*int32(112)
+	v34 = v29 + v30*int32(112)
 	v35 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v34)+32)))
 	if v35 != int32(1) {
-		v51 = v27
-		v53 = v30
+		v52 = v28
+		v53 = v29
 		v54 = v31
 		goto L11
 	} else {
@@ -470,15 +476,15 @@ L9:
 	}
 L10:
 	;
-	v61 = v51
+	v65 = v54
 	goto L8
 L11:
 	;
-	v56 = v29 + int32(1)
-	if v56 < v53 {
-		v27 = v51
-		v29 = v56
-		v30 = v53
+	v56 = v30 + int32(1)
+	if v56 < v52 {
+		v28 = v52
+		v29 = v53
+		v30 = v56
 		v31 = v54
 		goto L9
 	} else {
@@ -489,8 +495,8 @@ L12:
 	v39 = v34 + int32(16)
 	v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)+32))
 	if v40 != l0 {
-		v51 = v27
-		v53 = v30
+		v52 = v28
+		v53 = v29
 		v54 = v31
 		goto L11
 	} else {
@@ -507,8 +513,8 @@ L14:
 	;
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v39)+20))
 	if v42 == int32(0) {
-		v51 = v27
-		v53 = v30
+		v52 = v28
+		v53 = v29
 		v54 = v31
 		goto L11
 	} else {
@@ -519,7 +525,7 @@ L15:
 	goto L16
 L16:
 	;
-	v45 = F_lappend(m, v27, v39)
+	v45 = F_lappend(m, v31, v39)
 	mBase = m.M
 	v46 = m.ExcPending
 	if v46 != 0 {
@@ -534,9 +540,9 @@ L18:
 	;
 	v48 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_workers_find[1]))
 	v50 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_workers_find[2]))
-	v51 = v45
-	v53 = v48
-	v54 = v50
+	v52 = v48
+	v53 = v50
+	v54 = v45
 	goto L11
 L19:
 	;
@@ -557,7 +563,7 @@ L21:
 	goto L22
 L22:
 	;
-	return v61
+	return v65
 L23:
 	;
 	goto L22

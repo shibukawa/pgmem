@@ -199,8 +199,8 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 	_ = v20
 	var v21 int32
 	_ = v21
-	var v23 int32
-	_ = v23
+	var v22 int32
+	_ = v22
 	var v25 int32
 	_ = v25
 	var v26 int32
@@ -240,9 +240,9 @@ func F_convert_string_datum(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int
 		if v21 != 0 {
 			return int32(0)
 		} else {
+			v22 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v20)+1)) = uint8(v22)
 			*(*uint8)(unsafe.Add(mBase, uint32(v20))) = uint8(v1)
-			v23 = int32(0)
-			*(*uint8)(unsafe.Add(mBase, uint32(v20)+1)) = uint8(v23)
 			v27 = v20
 			v28 = F_pg_newlocale_from_collation(m, l2)
 			mBase = m.M
@@ -882,26 +882,26 @@ func F_string_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v15
 	var v17 int32
 	_ = v17
-	var v22 int32
-	_ = v22
-	var v25 int32
-	_ = v25
+	var v23 int32
+	_ = v23
 	var v26 int32
 	_ = v26
 	var v27 int32
 	_ = v27
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	var v37 int32
-	_ = v37
-	var v41 int32
-	_ = v41
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
 	var v42 int32
 	_ = v42
-	var v49 int32
-	_ = v49
+	var v43 int32
+	_ = v43
+	var v50 int32
+	_ = v50
 	v5 = l2 - int32(1)
 	if v5 == int32(0) {
 		goto L2
@@ -910,10 +910,10 @@ func F_string_compare(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 L1:
 	;
-	return v49
+	return v50
 L2:
 	;
-	v49 = int32(0)
+	v50 = int32(0)
 	goto L1
 L3:
 	;
@@ -935,68 +935,59 @@ L5:
 	goto L9
 L6:
 	;
-	v37 = l1
-	v41 = int32(0)
+	v38 = l1
+	v42 = int32(0)
 	goto L7
 L7:
 	;
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v37))))
-	v49 = v41 - v42
+	v43 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v38))))
+	v50 = v42 - v43
 	goto L1
 L8:
 	;
-	v37 = v32
-	v41 = v34
+	v38 = v33
+	v42 = v35
 	goto L7
 L9:
 	;
 	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13))))
-	if v15 != v17 {
-		v32 = v13
-		v34 = v15
+	if base.B2i32(v15 != v17)|base.B2i32(v17 == int32(0)) != 0 {
+		v33 = v13
+		v35 = v15
 		goto L8
 	} else {
 		goto L11
 	}
 L10:
 	;
-	v32 = v26
-	v34 = int32(0)
+	v33 = v27
+	v35 = int32(0)
 	goto L8
 L11:
 	;
-	if v17 == int32(0) {
-		v32 = v13
-		v34 = v15
+	v23 = v14 - int32(1)
+	if v23 == int32(0) {
+		v33 = v13
+		v35 = v15
 		goto L8
 	} else {
 		goto L12
 	}
 L12:
 	;
-	v22 = v14 - int32(1)
-	if v22 == int32(0) {
-		v32 = v13
-		v34 = v15
-		goto L8
+	v26 = int32(1)
+	v27 = v13 + v26
+	v28 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+1)))
+	if v28 != 0 {
+		v12 = v12 + v26
+		v13 = v27
+		v14 = v23
+		v15 = v28
+		goto L9
 	} else {
 		goto L13
 	}
 L13:
-	;
-	v25 = int32(1)
-	v26 = v13 + v25
-	v27 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+1)))
-	if v27 != 0 {
-		v12 = v12 + v25
-		v13 = v26
-		v14 = v22
-		v15 = v27
-		goto L9
-	} else {
-		goto L14
-	}
-L14:
 	;
 	goto L10
 }

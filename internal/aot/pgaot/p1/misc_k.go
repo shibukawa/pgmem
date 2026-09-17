@@ -30,8 +30,8 @@ func F_KnownAssignedXidsRemove(m *base.Module, l0 int32) {
 	_ = v33
 	var v38 int32
 	_ = v38
-	var v39 int32
-	_ = v39
+	var v41 int32
+	_ = v41
 	var v46 int32
 	_ = v46
 	var v47 int32
@@ -133,13 +133,13 @@ L8:
 	return
 L9:
 	;
-	v38 = v33
-	v39 = v30
+	v38 = v30
+	v41 = v33
 	goto L10
 L10:
 	;
 	v46 = *(*int32)(unsafe.Add(mBase, _c_F_KnownAssignedXidsRemove[1]))
-	v47 = v38 + v39
+	v47 = v38 + v41
 	v48 = int32(2)
 	v49 = base.I32_div_s(v47, v48)
 	v53 = *(*int32)(unsafe.Add(mBase, uint32(v46+v49<<(uint(v48)%32))))
@@ -188,7 +188,7 @@ L18:
 	goto L15
 L19:
 	;
-	v69 = v39
+	v69 = v38
 	goto L21
 L20:
 	;
@@ -207,13 +207,13 @@ L22:
 	goto L24
 L23:
 	;
-	v72 = v38
+	v72 = v41
 	goto L24
 L24:
 	;
 	if v69 <= v72 {
-		v38 = v72
-		v39 = v69
+		v38 = v69
+		v41 = v72
 		goto L10
 	} else {
 		goto L25
@@ -285,45 +285,15 @@ L35:
 	goto L29
 }
 func F_koi8r_to_mic(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v5 int32
-	_ = v5
-	var v6 int32
-	_ = v6
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v9 int32
-	_ = v9
-	var v10 int32
-	_ = v10
-	var v16 int32
-	_ = v16
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+60))
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	F_check_encoding_conversion_args(m, v8, v9, v10, int32(22), int32(7))
-	mBase = m.M
-	v16 = m.ExcPending
-	if v16 != 0 {
+	v4 = Fn13935(m, l0, int32(22), int32(139))
+	v7 = m.ExcPending
+	if v7 != 0 {
 		return int32(0)
 	} else {
-		v21 = F_latin2mic(m, v6, v5, v10, int32(139), int32(22), base.B2i32(v7 != int32(0)))
-		mBase = m.M
-		v22 = m.ExcPending
-		if v22 != 0 {
-			return int32(0)
-		} else {
-			return v21
-		}
+		return v4
 	}
 }

@@ -294,9 +294,9 @@ func F_fill_seq_fork_with_data(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v8
 	var v10 int32
 	_ = v10
-	var v14 int32
-	_ = v14
-	var v17 int64
+	var v15 int64
+	_ = v15
+	var v17 int32
 	_ = v17
 	var v23 int32
 	_ = v23
@@ -310,123 +310,133 @@ func F_fill_seq_fork_with_data(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v36
 	var v42 int32
 	_ = v42
-	var v69 int32
-	_ = v69
-	var v75 int32
-	_ = v75
-	var v81 int32
-	_ = v81
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
+	var v65 int32
+	_ = v65
+	var v70 int32
+	_ = v70
 	var v84 int32
 	_ = v84
-	var v88 int32
-	_ = v88
-	var v91 int32
-	_ = v91
-	var v92 int32
-	_ = v92
-	var v94 int32
-	_ = v94
-	var v96 int32
-	_ = v96
+	var v90 int32
+	_ = v90
+	var v93 int32
+	_ = v93
 	var v97 int32
 	_ = v97
-	var v99 int32
-	_ = v99
+	var v100 int32
+	_ = v100
 	var v101 int32
 	_ = v101
 	var v103 int32
 	_ = v103
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
-	var v107 int32
-	_ = v107
-	var v109 int32
-	_ = v109
-	var v111 int32
-	_ = v111
+	var v108 int32
+	_ = v108
+	var v110 int32
+	_ = v110
 	var v112 int32
 	_ = v112
+	var v115 int32
+	_ = v115
 	var v116 int32
 	_ = v116
-	var v117 int32
-	_ = v117
+	var v118 int32
+	_ = v118
+	var v120 int32
+	_ = v120
 	var v121 int32
 	_ = v121
-	var v124 int32
-	_ = v124
 	var v125 int32
 	_ = v125
 	var v126 int32
 	_ = v126
-	var v127 int32
-	_ = v127
-	var v128 int32
-	_ = v128
 	var v130 int32
 	_ = v130
+	var v133 int32
+	_ = v133
+	var v134 int32
+	_ = v134
 	var v135 int32
 	_ = v135
 	var v136 int32
 	_ = v136
 	var v137 int32
 	_ = v137
-	var v138 int32
-	_ = v138
-	var v140 int32
-	_ = v140
-	var v141 int32
-	_ = v141
+	var v139 int32
+	_ = v139
 	var v144 int32
 	_ = v144
 	var v145 int32
 	_ = v145
+	var v146 int32
+	_ = v146
+	var v147 int32
+	_ = v147
 	var v149 int32
 	_ = v149
-	var v152 int32
-	_ = v152
-	var v155 int32
-	_ = v155
+	var v150 int32
+	_ = v150
+	var v153 int32
+	_ = v153
+	var v154 int32
+	_ = v154
+	var v158 int32
+	_ = v158
 	var v161 int32
 	_ = v161
-	var v165 int32
-	_ = v165
-	var v166 int32
-	_ = v166
-	var v168 int64
-	_ = v168
+	var v164 int32
+	_ = v164
+	var v170 int32
+	_ = v170
 	var v174 int32
 	_ = v174
 	var v175 int32
 	_ = v175
-	var v176 int32
-	_ = v176
-	var v178 int32
-	_ = v178
-	var v181 int64
-	_ = v181
-	var v182 int32
-	_ = v182
-	var v186 int32
-	_ = v186
-	var v188 int32
-	_ = v188
-	var v193 int32
-	_ = v193
-	var v200 int32
-	_ = v200
-	var v204 int32
-	_ = v204
+	var v177 int64
+	_ = v177
+	var v183 int32
+	_ = v183
+	var v184 int32
+	_ = v184
+	var v185 int32
+	_ = v185
+	var v187 int32
+	_ = v187
+	var v190 int64
+	_ = v190
+	var v191 int32
+	_ = v191
+	var v195 int32
+	_ = v195
+	var v197 int32
+	_ = v197
+	var v202 int32
+	_ = v202
 	var v209 int32
 	_ = v209
+	var v213 int32
+	_ = v213
+	var v218 int32
+	_ = v218
 	v8 = m.G0
 	v10 = v8 - int32(48)
 	m.G0 = v10
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+40)) = int64(0)
-	v14 = *(*int32)(unsafe.Add(mBase, uint32(v10)+44))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v14
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = l0
-	v17 = *(*int64)(unsafe.Add(mBase, uint32(v10)+36))
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v17
+	v15 = *(*int64)(unsafe.Add(mBase, uint32(v10)+36))
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+8)) = v15
+	v17 = *(*int32)(unsafe.Add(mBase, uint32(v10)+44))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+16)) = v17
 	v23 = F_ExtendBufferedRel(m, v10+int32(8), l2, int32(0), int32(9))
 	mBase = m.M
 	v24 = m.ExcPending
@@ -437,7 +447,9 @@ func F_fill_seq_fork_with_data(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 L1:
 	;
-	if v42&int32(3) != 0 {
+	v43 = int32(_a_F_fill_seq_fork_with_data_0)
+	v45 = int32(0)
+	if v45|(v42&int32(3)|int32(1)) == v45 {
 		goto L9
 	} else {
 		goto L10
@@ -468,236 +480,256 @@ L6:
 	goto L1
 L7:
 	;
-	v84 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v42)+16)))
-	*(*int32)(unsafe.Add(mBase, uint32(v42+v84))) = int32(_a_F_fill_seq_fork_with_data_4)
-	v88 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v88))) = int32(2)
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v92 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v91)+20)))
-	v94 = v92 | int32(768)
-	*(*uint16)(unsafe.Add(mBase, uint32(v91)+20)) = uint16(v94)
-	v96 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v97 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v96)+8)) = v97
-	v99 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v96)+20)))
-	v101 = v99 & int32(_a_F_fill_seq_fork_with_data_5)
-	*(*uint16)(unsafe.Add(mBase, uint32(v96)+20)) = uint16(v101)
-	v103 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v103)+4)) = v97
-	v106 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v107 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v106)+20)))
-	v109 = v107 | int32(2048)
-	*(*uint16)(unsafe.Add(mBase, uint32(v106)+20)) = uint16(v109)
-	v111 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v112 = int32(1)
-	*(*uint16)(unsafe.Add(mBase, uint32(v111)+16)) = uint16(v112)
-	*(*int32)(unsafe.Add(mBase, uint32(v111)+12)) = v97
-	v116 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v117 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v116)+118)))
-	if v117 != int32(112) {
-		goto L17
-	} else {
+	v93 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v42)+16)))
+	*(*int32)(unsafe.Add(mBase, uint32(v42+v93))) = int32(_a_F_fill_seq_fork_with_data_4)
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v97))) = int32(2)
+	v100 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v101 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v100)+20)))
+	v103 = v101 | int32(768)
+	*(*uint16)(unsafe.Add(mBase, uint32(v100)+20)) = uint16(v103)
+	v105 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v106 = int32(0)
+	*(*int32)(unsafe.Add(mBase, uint32(v105)+8)) = v106
+	v108 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v105)+20)))
+	v110 = v108 & int32(_a_F_fill_seq_fork_with_data_5)
+	*(*uint16)(unsafe.Add(mBase, uint32(v105)+20)) = uint16(v110)
+	v112 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v112)+4)) = v106
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v116 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v115)+20)))
+	v118 = v116 | int32(2048)
+	*(*uint16)(unsafe.Add(mBase, uint32(v115)+20)) = uint16(v118)
+	v120 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v121 = int32(1)
+	*(*uint16)(unsafe.Add(mBase, uint32(v120)+16)) = uint16(v121)
+	*(*int32)(unsafe.Add(mBase, uint32(v120)+12)) = v106
+	v125 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v126 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v125)+118)))
+	if v126 != int32(112) {
 		goto L18
+	} else {
+		goto L19
 	}
 L8:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v42)+10)) = int32(_a_F_fill_seq_fork_with_data_1)
-	v75 = int32(_a_F_fill_seq_fork_with_data_2)
-	*(*uint16)(unsafe.Add(mBase, uint32(v42)+18)) = uint16(v75)
-	v81 = int32(_a_F_fill_seq_fork_with_data_3)
-	*(*uint16)(unsafe.Add(mBase, uint32(v42)+16)) = uint16(v81)
-	*(*uint16)(unsafe.Add(mBase, uint32(v42)+14)) = uint16(v81)
+	v84 = int32(_a_F_fill_seq_fork_with_data_2)
+	*(*uint16)(unsafe.Add(mBase, uint32(v42)+18)) = uint16(v84)
+	v90 = int32(_a_F_fill_seq_fork_with_data_3)
+	*(*uint16)(unsafe.Add(mBase, uint32(v42)+16)) = uint16(v90)
+	*(*uint16)(unsafe.Add(mBase, uint32(v42)+14)) = uint16(v90)
 	goto L7
 L9:
 	;
-	v69 = F___memset(m, v42, int32(0), int32(_a_F_fill_seq_fork_with_data_0))
-	mBase = m.M
-	goto L8
+	goto L12
 L10:
 	;
-	goto L9
-L17:
-	;
-	v128 = int32(_a_F_fill_seq_fork_with_data_6)
-	v130 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2]))
-	*(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2])) = v130 + int32(1)
-	F_MarkBufferDirty(m, v23)
-	mBase = m.M
-	v135 = m.ExcPending
-	if v135 != 0 {
-		goto L2
-	} else {
-		goto L25
-	}
-L18:
-	;
-	v121 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[3]))
-	if v121 <= int32(0) {
-		goto L19
-	} else {
-		goto L20
-	}
-L19:
-	;
-	v124 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	if v124 != 0 {
-		goto L17
-	} else {
-		goto L22
-	}
-L20:
-	;
-	goto L21
-L21:
-	;
-	v126 = F_GetTopTransactionId(m)
-	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
-		goto L2
-	} else {
-		goto L24
-	}
-L22:
-	;
-	v125 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	if v125 != 0 {
-		goto L17
-	} else {
-		goto L23
-	}
-L23:
-	;
-	goto L21
-L24:
+	goto L11
+L11:
 	;
 	goto L17
-L25:
+L12:
 	;
-	v136 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v137 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	v138 = int32(0)
-	v140 = F_PageAddItemExtended(m, v42, v136, v137, v138, v138)
+	v61 = v42 + v43
+	v63 = v42 + int32(4)
+	if base.Ui32(v63) < base.Ui32(v61) {
+		goto L13
+	} else {
+		goto L14
+	}
+L13:
+	;
+	v65 = v61
+	goto L15
+L14:
+	;
+	v65 = v63
+	goto L15
+L15:
+	;
+	v70 = (v42^int32(-1)+v65)&int32(-4) + int32(4)
+	if v70 == int32(0) {
+		goto L8
+	} else {
+		goto L16
+	}
+L16:
+	;
+	base.MemoryFill(m, v42, int32(0), v70)
+	goto L8
+L17:
+	;
+	base.MemoryFill(m, v42, int32(0), v43)
+	goto L8
+L18:
+	;
+	v137 = int32(_a_F_fill_seq_fork_with_data_6)
+	v139 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2]))
+	*(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2])) = v139 + int32(1)
+	F_MarkBufferDirty(m, v23)
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v144 = m.ExcPending
+	if v144 != 0 {
 		goto L2
 	} else {
 		goto L26
 	}
+L19:
+	;
+	v130 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[3]))
+	if v130 <= int32(0) {
+		goto L20
+	} else {
+		goto L21
+	}
+L20:
+	;
+	v133 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	if v133 != 0 {
+		goto L18
+	} else {
+		goto L23
+	}
+L21:
+	;
+	goto L22
+L22:
+	;
+	v135 = F_GetTopTransactionId(m)
+	mBase = m.M
+	v136 = m.ExcPending
+	if v136 != 0 {
+		goto L2
+	} else {
+		goto L25
+	}
+L23:
+	;
+	v134 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	if v134 != 0 {
+		goto L18
+	} else {
+		goto L24
+	}
+L24:
+	;
+	goto L22
+L25:
+	;
+	goto L18
 L26:
 	;
-	if v140 == int32(1) {
-		goto L27
+	v145 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v146 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	v147 = int32(0)
+	v149 = F_PageAddItemExtended(m, v42, v145, v146, v147, v147)
+	mBase = m.M
+	v150 = m.ExcPending
+	if v150 != 0 {
+		goto L2
 	} else {
-		goto L28
+		goto L27
 	}
 L27:
 	;
-	v144 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
-	v145 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v144)+118)))
-	if v145 != int32(112) {
-		goto L32
+	if v149 == int32(1) {
+		goto L28
 	} else {
-		goto L33
+		goto L29
 	}
 L28:
 	;
-	goto L29
+	v153 = *(*int32)(unsafe.Add(mBase, uint32(l0)+48))
+	v154 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v153)+118)))
+	if v154 != int32(112) {
+		goto L33
+	} else {
+		goto L34
+	}
 L29:
+	;
+	goto L30
+L30:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v200 = m.ExcPending
-	if v200 != 0 {
+	v209 = m.ExcPending
+	if v209 != 0 {
+		goto L2
+	} else {
+		goto L46
+	}
+L31:
+	;
+	v195 = int32(_a_F_fill_seq_fork_with_data_6)
+	v197 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2]))
+	*(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2])) = v197 - int32(1)
+	F_UnlockReleaseBuffer(m, v23)
+	mBase = m.M
+	v202 = m.ExcPending
+	if v202 != 0 {
 		goto L2
 	} else {
 		goto L45
 	}
-L30:
-	;
-	v186 = int32(_a_F_fill_seq_fork_with_data_6)
-	v188 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2]))
-	*(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[2])) = v188 - int32(1)
-	F_UnlockReleaseBuffer(m, v23)
-	mBase = m.M
-	v193 = m.ExcPending
-	if v193 != 0 {
-		goto L2
-	} else {
-		goto L44
-	}
-L31:
+L32:
 	;
 	F_XLogBeginInsert(m)
 	mBase = m.M
-	v161 = m.ExcPending
-	if v161 != 0 {
+	v170 = m.ExcPending
+	if v170 != 0 {
 		goto L2
 	} else {
-		goto L39
-	}
-L32:
-	;
-	if l2 != int32(3) {
-		goto L30
-	} else {
-		goto L38
+		goto L40
 	}
 L33:
 	;
-	v149 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[3]))
-	if int32(0) < v149 {
+	if l2 != int32(3) {
 		goto L31
 	} else {
-		goto L34
+		goto L39
 	}
 L34:
 	;
-	v152 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
-	if v152 != 0 {
+	v158 = *(*int32)(unsafe.Add(mBase, _c_F_fill_seq_fork_with_data[3]))
+	if int32(0) < v158 {
 		goto L32
 	} else {
 		goto L35
 	}
 L35:
 	;
-	if l2 == int32(3) {
-		goto L31
+	v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+32))
+	if v161 != 0 {
+		goto L33
 	} else {
 		goto L36
 	}
 L36:
 	;
-	v155 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	if v155 == int32(0) {
-		goto L31
+	if l2 == int32(3) {
+		goto L32
 	} else {
 		goto L37
 	}
 L37:
 	;
-	goto L30
+	v164 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	if v164 == int32(0) {
+		goto L32
+	} else {
+		goto L38
+	}
 L38:
 	;
 	goto L31
 L39:
 	;
-	F_XLogRegisterBuffer(m, int32(0), v23, int32(6))
-	mBase = m.M
-	v165 = m.ExcPending
-	if v165 != 0 {
-		goto L2
-	} else {
-		goto L40
-	}
+	goto L32
 L40:
 	;
-	v166 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v166
-	v168 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v168
-	F_XLogRegisterData(m, v10+int32(24), int32(12))
+	F_XLogRegisterBuffer(m, int32(0), v23, int32(6))
 	mBase = m.M
 	v174 = m.ExcPending
 	if v174 != 0 {
@@ -707,55 +739,69 @@ L40:
 	}
 L41:
 	;
-	v175 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
-	v176 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-	F_XLogRegisterData(m, v175, v176)
+	v175 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+32)) = v175
+	v177 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(v10)+24)) = v177
+	F_XLogRegisterData(m, v10+int32(24), int32(12))
 	mBase = m.M
-	v178 = m.ExcPending
-	if v178 != 0 {
+	v183 = m.ExcPending
+	if v183 != 0 {
 		goto L2
 	} else {
 		goto L42
 	}
 L42:
 	;
-	v181 = F_XLogInsert(m, int32(15), int32(0))
+	v184 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
+	v185 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+	F_XLogRegisterData(m, v184, v185)
 	mBase = m.M
-	v182 = m.ExcPending
-	if v182 != 0 {
+	v187 = m.ExcPending
+	if v187 != 0 {
 		goto L2
 	} else {
 		goto L43
 	}
 L43:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v42))) = base.I64_rotr(v181, int64(32))
-	goto L30
+	v190 = F_XLogInsert(m, int32(15), int32(0))
+	mBase = m.M
+	v191 = m.ExcPending
+	if v191 != 0 {
+		goto L2
+	} else {
+		goto L44
+	}
 L44:
+	;
+	*(*int64)(unsafe.Add(mBase, uint32(v42))) = base.I64_rotr(v190, int64(32))
+	goto L31
+L45:
 	;
 	m.G0 = v10 + int32(48)
 	return
-L45:
+L46:
 	;
 	F_errmsg_internal(m, int32(_a_F_fill_seq_fork_with_data_7), int32(0))
 	mBase = m.M
-	v204 = m.ExcPending
-	if v204 != 0 {
-		goto L2
-	} else {
-		goto L46
-	}
-L46:
-	;
-	F_errfinish(m, int32(_a_F_fill_seq_fork_with_data_8), int32(405), int32(_a_F_fill_seq_fork_with_data_9))
-	mBase = m.M
-	v209 = m.ExcPending
-	if v209 != 0 {
+	v213 = m.ExcPending
+	if v213 != 0 {
 		goto L2
 	} else {
 		goto L47
 	}
 L47:
+	;
+	F_errfinish(m, int32(_a_F_fill_seq_fork_with_data_8), int32(405), int32(_a_F_fill_seq_fork_with_data_9))
+	mBase = m.M
+	v218 = m.ExcPending
+	if v218 != 0 {
+		goto L2
+	} else {
+		goto L48
+	}
+L48:
 	;
 	base.Wasm_trap_unreachable()
 	for {

@@ -62,32 +62,34 @@ func F_comparetup_heap_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v70
 	var v77 int32
 	_ = v77
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
+	var v88 int32
+	_ = v88
 	var v90 int32
 	_ = v90
-	var v91 int32
-	_ = v91
-	var v95 int32
-	_ = v95
-	var v98 int32
-	_ = v98
+	var v94 int32
+	_ = v94
+	var v97 int32
+	_ = v97
+	var v100 int32
+	_ = v100
 	var v101 int32
 	_ = v101
-	var v102 int32
-	_ = v102
+	var v106 int32
+	_ = v106
 	var v107 int32
 	_ = v107
 	var v108 int32
 	_ = v108
 	var v109 int32
 	_ = v109
-	var v110 int32
-	_ = v110
+	var v116 int32
+	_ = v116
 	var v117 int32
 	_ = v117
-	var v118 int32
-	_ = v118
+	var v122 int32
+	_ = v122
 	var v123 int32
 	_ = v123
 	var v124 int32
@@ -98,16 +100,14 @@ func F_comparetup_heap_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) in
 	_ = v126
 	var v127 int32
 	_ = v127
-	var v128 int32
-	_ = v128
-	var v135 int32
-	_ = v135
+	var v134 int32
+	_ = v134
+	var v137 int32
+	_ = v137
 	var v138 int32
 	_ = v138
-	var v139 int32
-	_ = v139
-	var v155 int32
-	_ = v155
+	var v151 int32
+	_ = v151
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
@@ -131,11 +131,11 @@ func F_comparetup_heap_tiebreak(m *base.Module, l0 int32, l1 int32, l2 int32) in
 L1:
 	;
 	m.G0 = v12 + int32(48)
-	return v155
+	return v151
 L2:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
-	if int32(2) <= v81 {
+	v80 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
+	if int32(2) <= v80 {
 		goto L27
 	} else {
 		goto L28
@@ -208,7 +208,7 @@ L12:
 	goto L13
 L13:
 	;
-	v155 = v59
+	v151 = v59
 	goto L1
 L14:
 	;
@@ -242,7 +242,7 @@ L18:
 	goto L19
 L19:
 	;
-	v155 = v65
+	v151 = v65
 	goto L1
 L20:
 	;
@@ -260,7 +260,7 @@ L21:
 L22:
 	;
 	if v67 < int32(0) {
-		v155 = v69
+		v151 = v69
 		goto L1
 	} else {
 		goto L24
@@ -268,7 +268,7 @@ L22:
 L23:
 	;
 	if v77 != 0 {
-		v155 = v77
+		v151 = v77
 		goto L1
 	} else {
 		goto L25
@@ -282,28 +282,28 @@ L25:
 	goto L2
 L26:
 	;
-	v155 = int32(1)
+	v151 = int32(1)
 	goto L1
 L27:
 	;
-	v90 = v14
-	v91 = int32(1)
+	v88 = v14
+	v90 = int32(1)
 	goto L30
 L28:
 	;
 	goto L29
 L29:
 	;
-	v155 = int32(0)
+	v151 = int32(0)
 	goto L1
 L30:
 	;
-	v95 = v90 + int32(36)
-	v98 = int32(*(*int16)(unsafe.Add(mBase, uint32(v90)+46)))
-	v101 = F_heap_getattr_1(m, v12+int32(28), v98, v31, v12+int32(7))
+	v94 = v88 + int32(36)
+	v97 = int32(*(*int16)(unsafe.Add(mBase, uint32(v88)+46)))
+	v100 = F_heap_getattr_1(m, v12+int32(28), v97, v31, v12+int32(7))
 	mBase = m.M
-	v102 = m.ExcPending
-	if v102 != 0 {
+	v101 = m.ExcPending
+	if v101 != 0 {
 		goto L4
 	} else {
 		goto L32
@@ -313,37 +313,37 @@ L31:
 	goto L29
 L32:
 	;
-	v107 = F_heap_getattr_1(m, v12+int32(8), v98, v31, v12+int32(6))
+	v106 = F_heap_getattr_1(m, v12+int32(8), v97, v31, v12+int32(6))
 	mBase = m.M
-	v108 = m.ExcPending
-	if v108 != 0 {
+	v107 = m.ExcPending
+	if v107 != 0 {
 		goto L4
 	} else {
 		goto L33
 	}
 L33:
 	;
-	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+6)))
-	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+7)))
-	if v110 == int32(1) {
+	v108 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+6)))
+	v109 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+7)))
+	if v109 == int32(1) {
 		goto L35
 	} else {
 		goto L36
 	}
 L34:
 	;
-	v138 = v91 + int32(1)
-	v139 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
-	if v138 < v139 {
-		v90 = v95
-		v91 = v138
+	v137 = v90 + int32(1)
+	v138 = *(*int32)(unsafe.Add(mBase, uint32(l2)+40))
+	if v137 < v138 {
+		v88 = v94
+		v90 = v137
 		goto L30
 	} else {
 		goto L54
 	}
 L35:
 	;
-	if v109&int32(1) != 0 {
+	if v108&int32(1) != 0 {
 		goto L34
 	} else {
 		goto L38
@@ -353,35 +353,35 @@ L36:
 	goto L37
 L37:
 	;
-	if v109&int32(1) != 0 {
+	if v108&int32(1) != 0 {
 		goto L42
 	} else {
 		goto L43
 	}
 L38:
 	;
-	v117 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+45)))
-	if v117 != 0 {
+	v116 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88)+45)))
+	if v116 != 0 {
 		goto L39
 	} else {
 		goto L40
 	}
 L39:
 	;
-	v118 = int32(-1)
+	v117 = int32(-1)
 	goto L41
 L40:
 	;
-	v118 = int32(1)
+	v117 = int32(1)
 	goto L41
 L41:
 	;
-	v155 = v118
+	v151 = v117
 	goto L1
 L42:
 	;
-	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+45)))
-	if v123 != 0 {
+	v122 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88)+45)))
+	if v122 != 0 {
 		goto L45
 	} else {
 		goto L46
@@ -391,57 +391,57 @@ L43:
 	goto L44
 L44:
 	;
-	v125 = *(*int32)(unsafe.Add(mBase, uint32(v90)+52))
-	v126 = m.T0[v125].(func(*base.Module, int32, int32, int32) int32)(m, v101, v107, v95)
+	v124 = *(*int32)(unsafe.Add(mBase, uint32(v88)+52))
+	v125 = m.T0[v124].(func(*base.Module, int32, int32, int32) int32)(m, v100, v106, v94)
 	mBase = m.M
-	v127 = m.ExcPending
-	if v127 != 0 {
+	v126 = m.ExcPending
+	if v126 != 0 {
 		goto L4
 	} else {
 		goto L48
 	}
 L45:
 	;
-	v124 = int32(1)
+	v123 = int32(1)
 	goto L47
 L46:
 	;
-	v124 = int32(-1)
+	v123 = int32(-1)
 	goto L47
 L47:
 	;
-	v155 = v124
+	v151 = v123
 	goto L1
 L48:
 	;
-	v128 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v90)+44)))
-	if v128 == int32(1) {
+	v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v88)+44)))
+	if v127 == int32(1) {
 		goto L49
 	} else {
 		goto L50
 	}
 L49:
 	;
-	if v126 < int32(0) {
+	if v125 < int32(0) {
 		goto L26
 	} else {
 		goto L52
 	}
 L50:
 	;
-	v135 = v126
+	v134 = v125
 	goto L51
 L51:
 	;
-	if v135 != 0 {
-		v155 = v135
+	if v134 != 0 {
+		v151 = v134
 		goto L1
 	} else {
 		goto L53
 	}
 L52:
 	;
-	v135 = int32(0) - v126
+	v134 = int32(0) - v125
 	goto L51
 L53:
 	;

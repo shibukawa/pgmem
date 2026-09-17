@@ -528,60 +528,62 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 	_ = v105
 	var v112 int32
 	_ = v112
-	var v137 int32
-	_ = v137
-	var v138 int32
-	_ = v138
+	var v115 int32
+	_ = v115
 	var v139 int32
 	_ = v139
-	var v140 int64
+	var v140 int32
 	_ = v140
-	var v141 int64
+	var v141 int32
 	_ = v141
-	var v142 int32
+	var v142 int64
 	_ = v142
-	var v149 int32
-	_ = v149
-	var v150 int32
-	_ = v150
-	var v153 int32
-	_ = v153
-	var v154 int32
-	_ = v154
-	var v155 int64
+	var v143 int64
+	_ = v143
+	var v144 int32
+	_ = v144
+	var v151 int32
+	_ = v151
+	var v152 int32
+	_ = v152
+	var v155 int32
 	_ = v155
+	var v156 int32
+	_ = v156
 	var v157 int64
 	_ = v157
-	var v161 int32
-	_ = v161
-	var v164 int32
-	_ = v164
-	var v165 int32
-	_ = v165
-	var v169 int32
-	_ = v169
-	var v172 int32
-	_ = v172
-	var v176 int32
-	_ = v176
-	var v181 int32
-	_ = v181
+	var v159 int64
+	_ = v159
+	var v163 int32
+	_ = v163
+	var v166 int32
+	_ = v166
+	var v167 int32
+	_ = v167
+	var v171 int32
+	_ = v171
+	var v174 int32
+	_ = v174
+	var v178 int32
+	_ = v178
 	var v183 int32
 	_ = v183
-	var v184 int32
-	_ = v184
-	var v187 int32
-	_ = v187
-	var v190 int32
-	_ = v190
-	var v198 int32
-	_ = v198
-	var v201 int32
-	_ = v201
-	var v205 int32
-	_ = v205
-	var v210 int32
-	_ = v210
+	var v185 int32
+	_ = v185
+	var v186 int32
+	_ = v186
+	var v189 int32
+	_ = v189
+	var v192 int32
+	_ = v192
+	var v200 int32
+	_ = v200
+	var v203 int32
+	_ = v203
+	var v207 int32
+	_ = v207
+	var v212 int32
+	_ = v212
 	v12 = m.G0
 	v14 = v12 - int32(16)
 	m.G0 = v14
@@ -589,9 +591,9 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(v16)+16))
 	if v17 == int32(0) {
 		v20 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
-		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+		v21 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 		v22 = *(*int64)(unsafe.Add(mBase, uint32(v21)))
-		v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+		v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 		v24 = *(*int64)(unsafe.Add(mBase, uint32(v23)))
 		v25 = F_init_MultiFuncCall(m, l0)
 		mBase = m.M
@@ -609,8 +611,8 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 			if v36 != 0 {
 				return int32(0)
 			} else {
-				*(*int64)(unsafe.Add(mBase, uint32(v35)+8)) = v22
-				*(*int64)(unsafe.Add(mBase, uint32(v35))) = v24
+				*(*int64)(unsafe.Add(mBase, uint32(v35)+8)) = v24
+				*(*int64)(unsafe.Add(mBase, uint32(v35))) = v22
 				v39 = *(*int64)(unsafe.Add(mBase, uint32(v20)+8))
 				*(*int64)(unsafe.Add(mBase, uint32(v35)+24)) = v39
 				v41 = *(*int64)(unsafe.Add(mBase, uint32(v20)))
@@ -643,26 +645,26 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 				if v99|v90 == v105 {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v169 = m.ExcPending
-					if v169 != 0 {
+					v171 = m.ExcPending
+					if v171 != 0 {
 						return int32(0)
 					} else {
 						F_errcode(m, int32(50856066))
 						mBase = m.M
-						v172 = m.ExcPending
-						if v172 != 0 {
+						v174 = m.ExcPending
+						if v174 != 0 {
 							return int32(0)
 						} else {
 							F_errmsg(m, int32(_a_F_generate_series_timestamp_1), int32(0))
 							mBase = m.M
-							v176 = m.ExcPending
-							if v176 != 0 {
+							v178 = m.ExcPending
+							if v178 != 0 {
 								return int32(0)
 							} else {
 								F_errfinish(m, int32(_a_F_generate_series_timestamp_2), int32(_a_F_generate_series_timestamp_3), int32(_a_F_generate_series_timestamp_4))
 								mBase = m.M
-								v181 = m.ExcPending
-								if v181 != 0 {
+								v183 = m.ExcPending
+								if v183 != 0 {
 									return int32(0)
 								} else {
 									base.Wasm_trap_unreachable()
@@ -675,355 +677,140 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 				} else {
 					v112 = base.I32_wrap_i64(v39)
 					if v44 != int32(2147483647) {
-						if v44 != int32(-2147483648) {
+						v115 = int32(-2147483648)
+						if base.B2i32(v44 != v115)|base.B2i32(v41 != int64(-9223372036854775807-1))|base.B2i32(v112 != v115) != 0 {
 							*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v35
 							*(*int32)(unsafe.Add(mBase, _c_F_generate_series_timestamp[0])) = v30
-							v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-							v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-							v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-							v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-							v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-							v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-							if int32(0) < v142 {
-								if v141 <= v140 {
-									v149 = F_Int64GetDatum(m, v141)
+							v139 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)+16))
+							v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)+16))
+							v142 = *(*int64)(unsafe.Add(mBase, uint32(v141)+8))
+							v143 = *(*int64)(unsafe.Add(mBase, uint32(v141)))
+							v144 = *(*int32)(unsafe.Add(mBase, uint32(v141)+32))
+							if int32(0) < v144 {
+								if v143 <= v142 {
+									v151 = F_Int64GetDatum(m, v143)
 									mBase = m.M
-									v150 = m.ExcPending
-									if v150 != 0 {
+									v152 = m.ExcPending
+									if v152 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+										v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 										mBase = m.M
-										v154 = m.ExcPending
-										if v154 != 0 {
+										v156 = m.ExcPending
+										if v156 != 0 {
 											return int32(0)
 										} else {
-											v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-											*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-											v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-											*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-											v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-											v164 = F_Int64GetDatum(m, v141)
+											v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+											*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+											v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+											*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+											v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+											v166 = F_Int64GetDatum(m, v143)
 											mBase = m.M
-											v165 = m.ExcPending
-											if v165 != 0 {
+											v167 = m.ExcPending
+											if v167 != 0 {
 												return int32(0)
 											} else {
-												v190 = v164
+												v192 = v166
 												m.G0 = v14 + int32(16)
-												return v190
+												return v192
 											}
 										}
 									}
 								} else {
 									F_end_MultiFuncCall(m, l0)
 									mBase = m.M
-									v183 = m.ExcPending
-									if v183 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return int32(0)
 									} else {
-										v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-										v187 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-										v190 = int32(0)
+										v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+										v189 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+										v192 = int32(0)
 										m.G0 = v14 + int32(16)
-										return v190
+										return v192
 									}
 								}
 							} else {
-								if v141 < v140 {
+								if v143 < v142 {
 									F_end_MultiFuncCall(m, l0)
 									mBase = m.M
-									v183 = m.ExcPending
-									if v183 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return int32(0)
 									} else {
-										v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-										v187 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-										v190 = int32(0)
+										v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+										v189 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+										v192 = int32(0)
 										m.G0 = v14 + int32(16)
-										return v190
+										return v192
 									}
 								} else {
-									v149 = F_Int64GetDatum(m, v141)
+									v151 = F_Int64GetDatum(m, v143)
 									mBase = m.M
-									v150 = m.ExcPending
-									if v150 != 0 {
+									v152 = m.ExcPending
+									if v152 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+										v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 										mBase = m.M
-										v154 = m.ExcPending
-										if v154 != 0 {
+										v156 = m.ExcPending
+										if v156 != 0 {
 											return int32(0)
 										} else {
-											v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-											*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-											v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-											*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-											v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-											v164 = F_Int64GetDatum(m, v141)
+											v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+											*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+											v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+											*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+											v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+											v166 = F_Int64GetDatum(m, v143)
 											mBase = m.M
-											v165 = m.ExcPending
-											if v165 != 0 {
+											v167 = m.ExcPending
+											if v167 != 0 {
 												return int32(0)
 											} else {
-												v190 = v164
+												v192 = v166
 												m.G0 = v14 + int32(16)
-												return v190
+												return v192
 											}
 										}
 									}
 								}
 							}
 						} else {
-							if v41 != int64(-9223372036854775807-1) {
-								*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v35
-								*(*int32)(unsafe.Add(mBase, _c_F_generate_series_timestamp[0])) = v30
-								v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-								v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-								v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-								v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-								v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-								if int32(0) < v142 {
-									if v141 <= v140 {
-										v149 = F_Int64GetDatum(m, v141)
-										mBase = m.M
-										v150 = m.ExcPending
-										if v150 != 0 {
-											return int32(0)
-										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
-											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
-												return int32(0)
-											} else {
-												v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-												*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-												v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-												*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-												v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-												v164 = F_Int64GetDatum(m, v141)
-												mBase = m.M
-												v165 = m.ExcPending
-												if v165 != 0 {
-													return int32(0)
-												} else {
-													v190 = v164
-													m.G0 = v14 + int32(16)
-													return v190
-												}
-											}
-										}
-									} else {
-										F_end_MultiFuncCall(m, l0)
-										mBase = m.M
-										v183 = m.ExcPending
-										if v183 != 0 {
-											return int32(0)
-										} else {
-											v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-											v187 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-											v190 = int32(0)
-											m.G0 = v14 + int32(16)
-											return v190
-										}
-									}
-								} else {
-									if v141 < v140 {
-										F_end_MultiFuncCall(m, l0)
-										mBase = m.M
-										v183 = m.ExcPending
-										if v183 != 0 {
-											return int32(0)
-										} else {
-											v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-											v187 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-											v190 = int32(0)
-											m.G0 = v14 + int32(16)
-											return v190
-										}
-									} else {
-										v149 = F_Int64GetDatum(m, v141)
-										mBase = m.M
-										v150 = m.ExcPending
-										if v150 != 0 {
-											return int32(0)
-										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
-											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
-												return int32(0)
-											} else {
-												v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-												*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-												v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-												*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-												v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-												v164 = F_Int64GetDatum(m, v141)
-												mBase = m.M
-												v165 = m.ExcPending
-												if v165 != 0 {
-													return int32(0)
-												} else {
-													v190 = v164
-													m.G0 = v14 + int32(16)
-													return v190
-												}
-											}
-										}
-									}
-								}
+							F_errstart_cold(m, int32(21), int32(0))
+							mBase = m.M
+							v200 = m.ExcPending
+							if v200 != 0 {
+								return int32(0)
 							} else {
-								if v112 != int32(-2147483648) {
-									*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v35
-									*(*int32)(unsafe.Add(mBase, _c_F_generate_series_timestamp[0])) = v30
-									v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-									v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-									v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-									v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-									v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-									v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-									if int32(0) < v142 {
-										if v141 <= v140 {
-											v149 = F_Int64GetDatum(m, v141)
-											mBase = m.M
-											v150 = m.ExcPending
-											if v150 != 0 {
-												return int32(0)
-											} else {
-												v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
-												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
-													return int32(0)
-												} else {
-													v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-													*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-													v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-													*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-													v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-													*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-													v164 = F_Int64GetDatum(m, v141)
-													mBase = m.M
-													v165 = m.ExcPending
-													if v165 != 0 {
-														return int32(0)
-													} else {
-														v190 = v164
-														m.G0 = v14 + int32(16)
-														return v190
-													}
-												}
-											}
-										} else {
-											F_end_MultiFuncCall(m, l0)
-											mBase = m.M
-											v183 = m.ExcPending
-											if v183 != 0 {
-												return int32(0)
-											} else {
-												v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-												v187 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-												v190 = int32(0)
-												m.G0 = v14 + int32(16)
-												return v190
-											}
-										}
-									} else {
-										if v141 < v140 {
-											F_end_MultiFuncCall(m, l0)
-											mBase = m.M
-											v183 = m.ExcPending
-											if v183 != 0 {
-												return int32(0)
-											} else {
-												v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-												v187 = int32(1)
-												*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-												v190 = int32(0)
-												m.G0 = v14 + int32(16)
-												return v190
-											}
-										} else {
-											v149 = F_Int64GetDatum(m, v141)
-											mBase = m.M
-											v150 = m.ExcPending
-											if v150 != 0 {
-												return int32(0)
-											} else {
-												v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
-												mBase = m.M
-												v154 = m.ExcPending
-												if v154 != 0 {
-													return int32(0)
-												} else {
-													v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-													*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-													v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-													*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-													v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-													*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-													v164 = F_Int64GetDatum(m, v141)
-													mBase = m.M
-													v165 = m.ExcPending
-													if v165 != 0 {
-														return int32(0)
-													} else {
-														v190 = v164
-														m.G0 = v14 + int32(16)
-														return v190
-													}
-												}
-											}
-										}
-									}
+								F_errcode(m, int32(50856066))
+								mBase = m.M
+								v203 = m.ExcPending
+								if v203 != 0 {
+									return int32(0)
 								} else {
-									F_errstart_cold(m, int32(21), int32(0))
+									F_errmsg(m, int32(_a_F_generate_series_timestamp_5), int32(0))
 									mBase = m.M
-									v198 = m.ExcPending
-									if v198 != 0 {
+									v207 = m.ExcPending
+									if v207 != 0 {
 										return int32(0)
 									} else {
-										F_errcode(m, int32(50856066))
+										F_errfinish(m, int32(_a_F_generate_series_timestamp_2), int32(_a_F_generate_series_timestamp_6), int32(_a_F_generate_series_timestamp_4))
 										mBase = m.M
-										v201 = m.ExcPending
-										if v201 != 0 {
+										v212 = m.ExcPending
+										if v212 != 0 {
 											return int32(0)
 										} else {
-											F_errmsg(m, int32(_a_F_generate_series_timestamp_5), int32(0))
-											mBase = m.M
-											v205 = m.ExcPending
-											if v205 != 0 {
-												return int32(0)
-											} else {
-												F_errfinish(m, int32(_a_F_generate_series_timestamp_2), int32(_a_F_generate_series_timestamp_6), int32(_a_F_generate_series_timestamp_4))
-												mBase = m.M
-												v210 = m.ExcPending
-												if v210 != 0 {
-													return int32(0)
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
-												}
+											base.Wasm_trap_unreachable()
+											for {
 											}
 										}
 									}
@@ -1034,104 +821,104 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 						if v41 != int64(9223372036854775807) {
 							*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v35
 							*(*int32)(unsafe.Add(mBase, _c_F_generate_series_timestamp[0])) = v30
-							v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-							v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-							v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-							v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-							v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-							v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-							if int32(0) < v142 {
-								if v141 <= v140 {
-									v149 = F_Int64GetDatum(m, v141)
+							v139 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+							v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)+16))
+							v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)+16))
+							v142 = *(*int64)(unsafe.Add(mBase, uint32(v141)+8))
+							v143 = *(*int64)(unsafe.Add(mBase, uint32(v141)))
+							v144 = *(*int32)(unsafe.Add(mBase, uint32(v141)+32))
+							if int32(0) < v144 {
+								if v143 <= v142 {
+									v151 = F_Int64GetDatum(m, v143)
 									mBase = m.M
-									v150 = m.ExcPending
-									if v150 != 0 {
+									v152 = m.ExcPending
+									if v152 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+										v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 										mBase = m.M
-										v154 = m.ExcPending
-										if v154 != 0 {
+										v156 = m.ExcPending
+										if v156 != 0 {
 											return int32(0)
 										} else {
-											v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-											*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-											v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-											*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-											v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-											v164 = F_Int64GetDatum(m, v141)
+											v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+											*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+											v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+											*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+											v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+											v166 = F_Int64GetDatum(m, v143)
 											mBase = m.M
-											v165 = m.ExcPending
-											if v165 != 0 {
+											v167 = m.ExcPending
+											if v167 != 0 {
 												return int32(0)
 											} else {
-												v190 = v164
+												v192 = v166
 												m.G0 = v14 + int32(16)
-												return v190
+												return v192
 											}
 										}
 									}
 								} else {
 									F_end_MultiFuncCall(m, l0)
 									mBase = m.M
-									v183 = m.ExcPending
-									if v183 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return int32(0)
 									} else {
-										v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-										v187 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-										v190 = int32(0)
+										v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+										v189 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+										v192 = int32(0)
 										m.G0 = v14 + int32(16)
-										return v190
+										return v192
 									}
 								}
 							} else {
-								if v141 < v140 {
+								if v143 < v142 {
 									F_end_MultiFuncCall(m, l0)
 									mBase = m.M
-									v183 = m.ExcPending
-									if v183 != 0 {
+									v185 = m.ExcPending
+									if v185 != 0 {
 										return int32(0)
 									} else {
-										v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-										*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-										v187 = int32(1)
-										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-										v190 = int32(0)
+										v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+										*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+										v189 = int32(1)
+										*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+										v192 = int32(0)
 										m.G0 = v14 + int32(16)
-										return v190
+										return v192
 									}
 								} else {
-									v149 = F_Int64GetDatum(m, v141)
+									v151 = F_Int64GetDatum(m, v143)
 									mBase = m.M
-									v150 = m.ExcPending
-									if v150 != 0 {
+									v152 = m.ExcPending
+									if v152 != 0 {
 										return int32(0)
 									} else {
-										v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+										v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 										mBase = m.M
-										v154 = m.ExcPending
-										if v154 != 0 {
+										v156 = m.ExcPending
+										if v156 != 0 {
 											return int32(0)
 										} else {
-											v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-											*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-											v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-											*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-											v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-											v164 = F_Int64GetDatum(m, v141)
+											v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+											*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+											v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+											*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+											v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+											v166 = F_Int64GetDatum(m, v143)
 											mBase = m.M
-											v165 = m.ExcPending
-											if v165 != 0 {
+											v167 = m.ExcPending
+											if v167 != 0 {
 												return int32(0)
 											} else {
-												v190 = v164
+												v192 = v166
 												m.G0 = v14 + int32(16)
-												return v190
+												return v192
 											}
 										}
 									}
@@ -1141,26 +928,26 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 							if v112 == int32(2147483647) {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v198 = m.ExcPending
-								if v198 != 0 {
+								v200 = m.ExcPending
+								if v200 != 0 {
 									return int32(0)
 								} else {
 									F_errcode(m, int32(50856066))
 									mBase = m.M
-									v201 = m.ExcPending
-									if v201 != 0 {
+									v203 = m.ExcPending
+									if v203 != 0 {
 										return int32(0)
 									} else {
 										F_errmsg(m, int32(_a_F_generate_series_timestamp_5), int32(0))
 										mBase = m.M
-										v205 = m.ExcPending
-										if v205 != 0 {
+										v207 = m.ExcPending
+										if v207 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_generate_series_timestamp_2), int32(_a_F_generate_series_timestamp_6), int32(_a_F_generate_series_timestamp_4))
 											mBase = m.M
-											v210 = m.ExcPending
-											if v210 != 0 {
+											v212 = m.ExcPending
+											if v212 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -1173,104 +960,104 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v25)+16)) = v35
 								*(*int32)(unsafe.Add(mBase, _c_F_generate_series_timestamp[0])) = v30
-								v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-								v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-								v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-								v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-								v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-								v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-								if int32(0) < v142 {
-									if v141 <= v140 {
-										v149 = F_Int64GetDatum(m, v141)
+								v139 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+								v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)+16))
+								v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)+16))
+								v142 = *(*int64)(unsafe.Add(mBase, uint32(v141)+8))
+								v143 = *(*int64)(unsafe.Add(mBase, uint32(v141)))
+								v144 = *(*int32)(unsafe.Add(mBase, uint32(v141)+32))
+								if int32(0) < v144 {
+									if v143 <= v142 {
+										v151 = F_Int64GetDatum(m, v143)
 										mBase = m.M
-										v150 = m.ExcPending
-										if v150 != 0 {
+										v152 = m.ExcPending
+										if v152 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+											v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
+											v156 = m.ExcPending
+											if v156 != 0 {
 												return int32(0)
 											} else {
-												v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-												*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-												v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-												*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-												v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-												v164 = F_Int64GetDatum(m, v141)
+												v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+												*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+												v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+												*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+												v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+												v166 = F_Int64GetDatum(m, v143)
 												mBase = m.M
-												v165 = m.ExcPending
-												if v165 != 0 {
+												v167 = m.ExcPending
+												if v167 != 0 {
 													return int32(0)
 												} else {
-													v190 = v164
+													v192 = v166
 													m.G0 = v14 + int32(16)
-													return v190
+													return v192
 												}
 											}
 										}
 									} else {
 										F_end_MultiFuncCall(m, l0)
 										mBase = m.M
-										v183 = m.ExcPending
-										if v183 != 0 {
+										v185 = m.ExcPending
+										if v185 != 0 {
 											return int32(0)
 										} else {
-											v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-											v187 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-											v190 = int32(0)
+											v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+											v189 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+											v192 = int32(0)
 											m.G0 = v14 + int32(16)
-											return v190
+											return v192
 										}
 									}
 								} else {
-									if v141 < v140 {
+									if v143 < v142 {
 										F_end_MultiFuncCall(m, l0)
 										mBase = m.M
-										v183 = m.ExcPending
-										if v183 != 0 {
+										v185 = m.ExcPending
+										if v185 != 0 {
 											return int32(0)
 										} else {
-											v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-											*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-											v187 = int32(1)
-											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-											v190 = int32(0)
+											v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+											*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+											v189 = int32(1)
+											*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+											v192 = int32(0)
 											m.G0 = v14 + int32(16)
-											return v190
+											return v192
 										}
 									} else {
-										v149 = F_Int64GetDatum(m, v141)
+										v151 = F_Int64GetDatum(m, v143)
 										mBase = m.M
-										v150 = m.ExcPending
-										if v150 != 0 {
+										v152 = m.ExcPending
+										if v152 != 0 {
 											return int32(0)
 										} else {
-											v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+											v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 											mBase = m.M
-											v154 = m.ExcPending
-											if v154 != 0 {
+											v156 = m.ExcPending
+											if v156 != 0 {
 												return int32(0)
 											} else {
-												v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-												*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-												v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-												*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-												v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-												*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-												v164 = F_Int64GetDatum(m, v141)
+												v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+												*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+												v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+												*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+												v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+												*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+												v166 = F_Int64GetDatum(m, v143)
 												mBase = m.M
-												v165 = m.ExcPending
-												if v165 != 0 {
+												v167 = m.ExcPending
+												if v167 != 0 {
 													return int32(0)
 												} else {
-													v190 = v164
+													v192 = v166
 													m.G0 = v14 + int32(16)
-													return v190
+													return v192
 												}
 											}
 										}
@@ -1283,104 +1070,104 @@ func F_generate_series_timestamp(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v137 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v138 = *(*int32)(unsafe.Add(mBase, uint32(v137)+16))
-		v139 = *(*int32)(unsafe.Add(mBase, uint32(v138)+16))
-		v140 = *(*int64)(unsafe.Add(mBase, uint32(v139)+8))
-		v141 = *(*int64)(unsafe.Add(mBase, uint32(v139)))
-		v142 = *(*int32)(unsafe.Add(mBase, uint32(v139)+32))
-		if int32(0) < v142 {
-			if v141 <= v140 {
-				v149 = F_Int64GetDatum(m, v141)
+		v139 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v140 = *(*int32)(unsafe.Add(mBase, uint32(v139)+16))
+		v141 = *(*int32)(unsafe.Add(mBase, uint32(v140)+16))
+		v142 = *(*int64)(unsafe.Add(mBase, uint32(v141)+8))
+		v143 = *(*int64)(unsafe.Add(mBase, uint32(v141)))
+		v144 = *(*int32)(unsafe.Add(mBase, uint32(v141)+32))
+		if int32(0) < v144 {
+			if v143 <= v142 {
+				v151 = F_Int64GetDatum(m, v143)
 				mBase = m.M
-				v150 = m.ExcPending
-				if v150 != 0 {
+				v152 = m.ExcPending
+				if v152 != 0 {
 					return int32(0)
 				} else {
-					v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+					v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 					mBase = m.M
-					v154 = m.ExcPending
-					if v154 != 0 {
+					v156 = m.ExcPending
+					if v156 != 0 {
 						return int32(0)
 					} else {
-						v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-						*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-						v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-						*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-						v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-						v164 = F_Int64GetDatum(m, v141)
+						v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+						*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+						v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+						*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+						v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+						v166 = F_Int64GetDatum(m, v143)
 						mBase = m.M
-						v165 = m.ExcPending
-						if v165 != 0 {
+						v167 = m.ExcPending
+						if v167 != 0 {
 							return int32(0)
 						} else {
-							v190 = v164
+							v192 = v166
 							m.G0 = v14 + int32(16)
-							return v190
+							return v192
 						}
 					}
 				}
 			} else {
 				F_end_MultiFuncCall(m, l0)
 				mBase = m.M
-				v183 = m.ExcPending
-				if v183 != 0 {
+				v185 = m.ExcPending
+				if v185 != 0 {
 					return int32(0)
 				} else {
-					v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-					v187 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-					v190 = int32(0)
+					v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+					v189 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+					v192 = int32(0)
 					m.G0 = v14 + int32(16)
-					return v190
+					return v192
 				}
 			}
 		} else {
-			if v141 < v140 {
+			if v143 < v142 {
 				F_end_MultiFuncCall(m, l0)
 				mBase = m.M
-				v183 = m.ExcPending
-				if v183 != 0 {
+				v185 = m.ExcPending
+				if v185 != 0 {
 					return int32(0)
 				} else {
-					v184 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-					*(*int32)(unsafe.Add(mBase, uint32(v184)+20)) = int32(2)
-					v187 = int32(1)
-					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v187)
-					v190 = int32(0)
+					v186 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+					*(*int32)(unsafe.Add(mBase, uint32(v186)+20)) = int32(2)
+					v189 = int32(1)
+					*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)) = uint8(v189)
+					v192 = int32(0)
 					m.G0 = v14 + int32(16)
-					return v190
+					return v192
 				}
 			} else {
-				v149 = F_Int64GetDatum(m, v141)
+				v151 = F_Int64GetDatum(m, v143)
 				mBase = m.M
-				v150 = m.ExcPending
-				if v150 != 0 {
+				v152 = m.ExcPending
+				if v152 != 0 {
 					return int32(0)
 				} else {
-					v153 = F_DirectFunctionCall2Coll(m, int32(1286), int32(0), v149, v139+int32(16))
+					v155 = F_DirectFunctionCall2Coll(m, int32(1267), int32(0), v151, v141+int32(16))
 					mBase = m.M
-					v154 = m.ExcPending
-					if v154 != 0 {
+					v156 = m.ExcPending
+					if v156 != 0 {
 						return int32(0)
 					} else {
-						v155 = *(*int64)(unsafe.Add(mBase, uint32(v153)))
-						*(*int64)(unsafe.Add(mBase, uint32(v139))) = v155
-						v157 = *(*int64)(unsafe.Add(mBase, uint32(v138)))
-						*(*int64)(unsafe.Add(mBase, uint32(v138))) = v157 + int64(1)
-						v161 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-						*(*int32)(unsafe.Add(mBase, uint32(v161)+20)) = int32(1)
-						v164 = F_Int64GetDatum(m, v141)
+						v157 = *(*int64)(unsafe.Add(mBase, uint32(v155)))
+						*(*int64)(unsafe.Add(mBase, uint32(v141))) = v157
+						v159 = *(*int64)(unsafe.Add(mBase, uint32(v140)))
+						*(*int64)(unsafe.Add(mBase, uint32(v140))) = v159 + int64(1)
+						v163 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+						*(*int32)(unsafe.Add(mBase, uint32(v163)+20)) = int32(1)
+						v166 = F_Int64GetDatum(m, v143)
 						mBase = m.M
-						v165 = m.ExcPending
-						if v165 != 0 {
+						v167 = m.ExcPending
+						if v167 != 0 {
 							return int32(0)
 						} else {
-							v190 = v164
+							v192 = v166
 							m.G0 = v14 + int32(16)
-							return v190
+							return v192
 						}
 					}
 				}

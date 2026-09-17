@@ -14,40 +14,33 @@ func F_assign_max_stack_depth(m *base.Module, l0 int32, l1 int32) {
 func F_assign_max_wal_size(m *base.Module, l0 int32, l1 int32) {
 	mBase := m.M
 	_ = mBase
-	var v9 int32
-	_ = v9
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v10 int32
+	_ = v10
 	var v11 int32
 	_ = v11
-	var v12 int32
-	_ = v12
-	var v15 float64
-	_ = v15
-	var v18 float64
+	var v14 float64
+	_ = v14
+	var v18 int32
 	_ = v18
-	var v22 int32
-	_ = v22
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
+	var v21 int32
+	_ = v21
 	*(*int32)(unsafe.Add(mBase, _c_F_assign_max_wal_size[0])) = l0
-	v9 = *(*int32)(unsafe.Add(mBase, _c_F_assign_max_wal_size[1]))
-	v11 = base.I32_div_s(v9, int32(_a_F_assign_max_wal_size_0))
-	v12 = base.I32_div_s(l0, v11)
-	v15 = *(*float64)(unsafe.Add(mBase, _c_F_assign_max_wal_size[2]))
-	v18 = base.F64_div(base.F64_convert_i32_s(v12), base.F64_add(v15, float64(1)))
-	if base.F64_lt(base.F64_abs(v18), float64(2.147483648e+09)) != 0 {
-		v22 = base.I32_trunc_f64_s(v18)
-		v24 = v22
+	v6 = int32(1)
+	v8 = *(*int32)(unsafe.Add(mBase, _c_F_assign_max_wal_size[1]))
+	v10 = base.I32_div_s(v8, int32(_a_F_assign_max_wal_size_0))
+	v11 = base.I32_div_s(l0, v10)
+	v14 = *(*float64)(unsafe.Add(mBase, _c_F_assign_max_wal_size[2]))
+	v18 = base.I32_trunc_sat_f64_s(base.F64_div(base.F64_convert_i32_s(v11), base.F64_add(v14, float64(1))))
+	if v18 <= v6 {
+		v21 = v6
 	} else {
-		v24 = int32(-2147483648)
+		v21 = v18
 	}
-	if v24 <= int32(1) {
-		v27 = int32(1)
-	} else {
-		v27 = v24
-	}
-	*(*int32)(unsafe.Add(mBase, _c_F_assign_max_wal_size[3])) = v27
+	*(*int32)(unsafe.Add(mBase, _c_F_assign_max_wal_size[3])) = v21
 	return
 }
 func F_max_parallel_hazard_checker(m *base.Module, l0 int32, l1 int32) int32 {

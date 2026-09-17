@@ -200,110 +200,112 @@ func F_logical_heap_rewrite_flush_mappings(m *base.Module, l0 int32) {
 	_ = v30
 	var v35 int32
 	_ = v35
+	var v37 int32
+	_ = v37
 	var v38 int32
 	_ = v38
 	var v40 int32
 	_ = v40
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v50 int32
-	_ = v50
+	var v41 int32
+	_ = v41
+	var v42 int32
+	_ = v42
+	var v48 int32
+	_ = v48
+	var v57 int32
+	_ = v57
+	var v58 int32
+	_ = v58
 	var v59 int32
 	_ = v59
 	var v60 int32
 	_ = v60
-	var v61 int32
-	_ = v61
 	var v62 int32
 	_ = v62
 	var v64 int32
 	_ = v64
-	var v66 int32
-	_ = v66
-	var v70 int32
-	_ = v70
-	var v71 int32
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v71 int64
 	_ = v71
 	var v73 int64
 	_ = v73
-	var v75 int64
-	_ = v75
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
 	var v78 int32
 	_ = v78
 	var v79 int32
 	_ = v79
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v85 int32
-	_ = v85
+	var v83 int32
+	_ = v83
+	var v87 int32
+	_ = v87
 	var v89 int32
 	_ = v89
-	var v91 int32
-	_ = v91
+	var v97 int32
+	_ = v97
 	var v99 int32
 	_ = v99
-	var v101 int32
-	_ = v101
+	var v100 int32
+	_ = v100
 	var v102 int64
 	_ = v102
-	var v104 int32
+	var v104 int64
 	_ = v104
 	var v106 int64
 	_ = v106
 	var v108 int64
 	_ = v108
-	var v110 int64
+	var v110 int32
 	_ = v110
-	var v112 int32
-	_ = v112
+	var v111 int32
+	_ = v111
 	var v113 int32
 	_ = v113
 	var v115 int32
 	_ = v115
-	var v117 int32
-	_ = v117
-	var v122 int32
-	_ = v122
-	var v123 int32
-	_ = v123
-	var v142 int64
-	_ = v142
-	var v143 int32
-	_ = v143
-	var v150 int32
-	_ = v150
-	var v151 int32
+	var v120 int32
+	_ = v120
+	var v121 int32
+	_ = v121
+	var v140 int64
+	_ = v140
+	var v141 int32
+	_ = v141
+	var v148 int32
+	_ = v148
+	var v149 int32
+	_ = v149
+	var v151 int64
 	_ = v151
-	var v153 int64
-	_ = v153
-	var v158 int32
-	_ = v158
+	var v156 int32
+	_ = v156
+	var v161 int32
+	_ = v161
 	var v163 int32
 	_ = v163
-	var v165 int32
-	_ = v165
-	var v168 int64
-	_ = v168
+	var v166 int64
+	_ = v166
+	var v167 int32
+	_ = v167
 	var v169 int32
 	_ = v169
-	var v171 int32
-	_ = v171
-	var v186 int32
-	_ = v186
-	var v187 int32
-	_ = v187
+	var v184 int32
+	_ = v184
+	var v185 int32
+	_ = v185
+	var v204 int32
+	_ = v204
 	var v206 int32
 	_ = v206
-	var v208 int32
-	_ = v208
-	var v216 int32
-	_ = v216
-	var v221 int32
-	_ = v221
+	var v214 int32
+	_ = v214
+	var v219 int32
+	_ = v219
 	v13 = m.G0
 	v15 = v13 - int32(96)
 	m.G0 = v15
@@ -317,8 +319,8 @@ L1:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v206 = m.ExcPending
-	if v206 != 0 {
+	v204 = m.ExcPending
+	if v204 != 0 {
 		goto L4
 	} else {
 		goto L39
@@ -364,8 +366,9 @@ L7:
 	goto L8
 L8:
 	;
+	v37 = v15 + int32(68)
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)+64))
-	F_hash_seq_init(m, v15+int32(68), v38)
+	F_hash_seq_init(m, v37, v38)
 	mBase = m.M
 	v40 = m.ExcPending
 	if v40 != 0 {
@@ -388,29 +391,29 @@ L10:
 	goto L8
 L11:
 	;
-	v43 = F_hash_seq_search(m, v15+int32(68))
+	v41 = F_hash_seq_search(m, v37)
 	mBase = m.M
-	v44 = m.ExcPending
-	if v44 != 0 {
+	v42 = m.ExcPending
+	if v42 != 0 {
 		goto L4
 	} else {
 		goto L12
 	}
 L12:
 	;
-	if v43 == int32(0) {
+	if v41 == int32(0) {
 		goto L2
 	} else {
 		goto L13
 	}
 L13:
 	;
-	v50 = v43
+	v48 = v41
 	goto L14
 L14:
 	;
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v50)+24))
-	if v59 != 0 {
+	v57 = *(*int32)(unsafe.Add(mBase, uint32(v48)+24))
+	if v57 != 0 {
 		goto L16
 	} else {
 		goto L17
@@ -420,16 +423,16 @@ L15:
 	goto L2
 L16:
 	;
-	v60 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v60)+48))
-	v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v61)+117)))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v59
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(v60)+56))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v64
-	v66 = *(*int32)(unsafe.Add(mBase, uint32(v50)))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v66
-	v70 = *(*int32)(unsafe.Add(mBase, _c_F_logical_heap_rewrite_flush_mappings[0]))
-	if v62 != 0 {
+	v58 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v58)+48))
+	v60 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v59)+117)))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+48)) = v57
+	v62 = *(*int32)(unsafe.Add(mBase, uint32(v58)+56))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+32)) = v62
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(v48)))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v64
+	v68 = *(*int32)(unsafe.Add(mBase, _c_F_logical_heap_rewrite_flush_mappings[0]))
+	if v60 != 0 {
 		goto L19
 	} else {
 		goto L20
@@ -439,98 +442,98 @@ L17:
 	goto L18
 L18:
 	;
-	v186 = F_hash_seq_search(m, v15+int32(68))
+	v184 = F_hash_seq_search(m, v15+int32(68))
 	mBase = m.M
-	v187 = m.ExcPending
-	if v187 != 0 {
+	v185 = m.ExcPending
+	if v185 != 0 {
 		goto L4
 	} else {
 		goto L37
 	}
 L19:
 	;
-	v71 = int32(0)
+	v69 = int32(0)
 	goto L21
 L20:
 	;
-	v71 = v70
+	v69 = v68
 	goto L21
 L21:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v71
-	v73 = *(*int64)(unsafe.Add(mBase, uint32(v50)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v15)+40)) = v73
-	v75 = *(*int64)(unsafe.Add(mBase, uint32(l0)+48))
-	*(*int64)(unsafe.Add(mBase, uint32(v15)+56)) = v75
-	v78 = v59 * int32(36)
-	v79 = F_palloc(m, v78)
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+28)) = v69
+	v71 = *(*int64)(unsafe.Add(mBase, uint32(v48)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v15)+40)) = v71
+	v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+48))
+	*(*int64)(unsafe.Add(mBase, uint32(v15)+56)) = v73
+	v76 = v57 * int32(36)
+	v77 = F_palloc(m, v76)
 	mBase = m.M
-	v80 = m.ExcPending
-	if v80 != 0 {
+	v78 = m.ExcPending
+	if v78 != 0 {
 		goto L4
 	} else {
 		goto L22
 	}
 L22:
 	;
-	v81 = *(*int32)(unsafe.Add(mBase, uint32(v50)+20))
-	if v81 == int32(0) {
+	v79 = *(*int32)(unsafe.Add(mBase, uint32(v48)+20))
+	if v79 == int32(0) {
 		goto L23
 	} else {
 		goto L24
 	}
 L23:
 	;
-	v142 = *(*int64)(unsafe.Add(mBase, uint32(v50)+8))
-	v143 = *(*int32)(unsafe.Add(mBase, uint32(v50)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+88)) = v79
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+92)) = v78
-	v150 = F_FileWriteV(m, v143, v15+int32(88), int32(1), v142, int32(167772199))
+	v140 = *(*int64)(unsafe.Add(mBase, uint32(v48)+8))
+	v141 = *(*int32)(unsafe.Add(mBase, uint32(v48)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+88)) = v77
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+92)) = v76
+	v148 = F_FileWriteV(m, v141, v15+int32(88), int32(1), v140, int32(167772199))
 	mBase = m.M
-	v151 = m.ExcPending
-	if v151 != 0 {
+	v149 = m.ExcPending
+	if v149 != 0 {
 		goto L4
 	} else {
 		goto L30
 	}
 L24:
 	;
-	v85 = v50 + int32(16)
-	if v81 == v85 {
+	v83 = v48 + int32(16)
+	if v79 == v83 {
 		goto L23
 	} else {
 		goto L25
 	}
 L25:
 	;
-	v89 = v79
-	v91 = v81
+	v87 = v79
+	v89 = v77
 	goto L26
 L26:
 	;
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v91)+4))
-	v101 = v91 - int32(36)
-	v102 = *(*int64)(unsafe.Add(mBase, uint32(v101)))
-	*(*int64)(unsafe.Add(mBase, uint32(v89))) = v102
-	v104 = *(*int32)(unsafe.Add(mBase, uint32(v101)+32))
-	*(*int32)(unsafe.Add(mBase, uint32(v89)+32)) = v104
-	v106 = *(*int64)(unsafe.Add(mBase, uint32(v101)+24))
-	*(*int64)(unsafe.Add(mBase, uint32(v89)+24)) = v106
-	v108 = *(*int64)(unsafe.Add(mBase, uint32(v101)+16))
-	*(*int64)(unsafe.Add(mBase, uint32(v89)+16)) = v108
-	v110 = *(*int64)(unsafe.Add(mBase, uint32(v101)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v89)+8)) = v110
-	v112 = *(*int32)(unsafe.Add(mBase, uint32(v91)))
-	v113 = *(*int32)(unsafe.Add(mBase, uint32(v91)+4))
-	*(*int32)(unsafe.Add(mBase, uint32(v112)+4)) = v113
-	v115 = *(*int32)(unsafe.Add(mBase, uint32(v91)))
-	*(*int32)(unsafe.Add(mBase, uint32(v113))) = v115
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v50)+24))
-	*(*int32)(unsafe.Add(mBase, uint32(v50)+24)) = v117 - int32(1)
-	F_pfree(m, v101)
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v87)+4))
+	v99 = v87 - int32(36)
+	v100 = *(*int32)(unsafe.Add(mBase, uint32(v99)+32))
+	*(*int32)(unsafe.Add(mBase, uint32(v89)+32)) = v100
+	v102 = *(*int64)(unsafe.Add(mBase, uint32(v99)+24))
+	*(*int64)(unsafe.Add(mBase, uint32(v89)+24)) = v102
+	v104 = *(*int64)(unsafe.Add(mBase, uint32(v99)+16))
+	*(*int64)(unsafe.Add(mBase, uint32(v89)+16)) = v104
+	v106 = *(*int64)(unsafe.Add(mBase, uint32(v99)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v89)+8)) = v106
+	v108 = *(*int64)(unsafe.Add(mBase, uint32(v99)))
+	*(*int64)(unsafe.Add(mBase, uint32(v89))) = v108
+	v110 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+	v111 = *(*int32)(unsafe.Add(mBase, uint32(v87)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v110)+4)) = v111
+	v113 = *(*int32)(unsafe.Add(mBase, uint32(v87)))
+	*(*int32)(unsafe.Add(mBase, uint32(v111))) = v113
+	v115 = *(*int32)(unsafe.Add(mBase, uint32(v48)+24))
+	*(*int32)(unsafe.Add(mBase, uint32(v48)+24)) = v115 - int32(1)
+	F_pfree(m, v99)
 	mBase = m.M
-	v122 = m.ExcPending
-	if v122 != 0 {
+	v120 = m.ExcPending
+	if v120 != 0 {
 		goto L4
 	} else {
 		goto L28
@@ -540,11 +543,11 @@ L27:
 	goto L23
 L28:
 	;
-	v123 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v123 - int32(1)
-	if v99 != v85 {
+	v121 = *(*int32)(unsafe.Add(mBase, uint32(l0)+68))
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+68)) = v121 - int32(1)
+	if v97 != v83 {
+		v87 = v97
 		v89 = v89 + int32(36)
-		v91 = v99
 		goto L26
 	} else {
 		goto L29
@@ -554,19 +557,19 @@ L29:
 	goto L27
 L30:
 	;
-	if v150 != v78 {
+	if v148 != v76 {
 		goto L1
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v153 = *(*int64)(unsafe.Add(mBase, uint32(v50)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v50)+8)) = v153 + base.I64_extend_i32_u(v78)
+	v151 = *(*int64)(unsafe.Add(mBase, uint32(v48)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v48)+8)) = v151 + base.I64_extend_i32_u(v76)
 	F_XLogBeginInsert(m)
 	mBase = m.M
-	v158 = m.ExcPending
-	if v158 != 0 {
+	v156 = m.ExcPending
+	if v156 != 0 {
 		goto L4
 	} else {
 		goto L32
@@ -575,38 +578,38 @@ L32:
 	;
 	F_XLogRegisterData(m, v15+int32(24), int32(40))
 	mBase = m.M
-	v163 = m.ExcPending
-	if v163 != 0 {
+	v161 = m.ExcPending
+	if v161 != 0 {
 		goto L4
 	} else {
 		goto L33
 	}
 L33:
 	;
-	F_XLogRegisterData(m, v79, v78)
+	F_XLogRegisterData(m, v77, v76)
 	mBase = m.M
-	v165 = m.ExcPending
-	if v165 != 0 {
+	v163 = m.ExcPending
+	if v163 != 0 {
 		goto L4
 	} else {
 		goto L34
 	}
 L34:
 	;
-	v168 = F_XLogInsert(m, int32(9), int32(0))
+	v166 = F_XLogInsert(m, int32(9), int32(0))
 	mBase = m.M
-	v169 = m.ExcPending
-	if v169 != 0 {
+	v167 = m.ExcPending
+	if v167 != 0 {
 		goto L4
 	} else {
 		goto L35
 	}
 L35:
 	;
-	F_pfree(m, v79)
+	F_pfree(m, v77)
 	mBase = m.M
-	v171 = m.ExcPending
-	if v171 != 0 {
+	v169 = m.ExcPending
+	if v169 != 0 {
 		goto L4
 	} else {
 		goto L36
@@ -616,8 +619,8 @@ L36:
 	goto L18
 L37:
 	;
-	if v186 != 0 {
-		v50 = v186
+	if v184 != 0 {
+		v48 = v184
 		goto L14
 	} else {
 		goto L38
@@ -629,21 +632,21 @@ L39:
 	;
 	F_errcode_for_file_access(m)
 	mBase = m.M
-	v208 = m.ExcPending
-	if v208 != 0 {
+	v206 = m.ExcPending
+	if v206 != 0 {
 		goto L4
 	} else {
 		goto L40
 	}
 L40:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v78
-	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v150
-	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v50 + int32(28)
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+8)) = v76
+	*(*int32)(unsafe.Add(mBase, uint32(v15)+4)) = v148
+	*(*int32)(unsafe.Add(mBase, uint32(v15))) = v48 + int32(28)
 	F_errmsg(m, int32(_a_F_logical_heap_rewrite_flush_mappings_3), v15)
 	mBase = m.M
-	v216 = m.ExcPending
-	if v216 != 0 {
+	v214 = m.ExcPending
+	if v214 != 0 {
 		goto L4
 	} else {
 		goto L41
@@ -652,8 +655,8 @@ L41:
 	;
 	F_errfinish(m, int32(_a_F_logical_heap_rewrite_flush_mappings_1), int32(886), int32(_a_F_logical_heap_rewrite_flush_mappings_2))
 	mBase = m.M
-	v221 = m.ExcPending
-	if v221 != 0 {
+	v219 = m.ExcPending
+	if v219 != 0 {
 		goto L4
 	} else {
 		goto L42

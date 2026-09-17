@@ -35,445 +35,623 @@ func F_line_eq(m *base.Module, l0 int32) int32 {
 	_ = v45
 	var v56 float64
 	_ = v56
-	var v63 int64
-	_ = v63
-	var v74 float64
-	_ = v74
-	var v77 int32
-	_ = v77
-	var v82 float64
-	_ = v82
-	var v83 int32
+	var v64 int64
+	_ = v64
+	var v75 float64
+	_ = v75
+	var v78 int32
+	_ = v78
+	var v83 float64
 	_ = v83
-	var v87 float64
-	_ = v87
-	var v88 int32
+	var v84 int32
+	_ = v84
+	var v88 float64
 	_ = v88
-	var v89 float64
+	var v89 int32
 	_ = v89
 	var v90 float64
 	_ = v90
 	var v91 float64
 	_ = v91
-	var v92 float64
-	_ = v92
-	var v115 float64
-	_ = v115
-	var v116 float64
-	_ = v116
-	var v117 float64
-	_ = v117
-	var v118 int32
-	_ = v118
-	var v126 float64
-	_ = v126
+	var v93 float64
+	_ = v93
+	var v95 float64
+	_ = v95
+	var v96 float64
+	_ = v96
+	var v101 int32
+	_ = v101
+	var v109 float64
+	_ = v109
 	var v127 float64
 	_ = v127
 	var v128 float64
 	_ = v128
-	var v129 int32
+	var v129 float64
 	_ = v129
-	var v137 int32
-	_ = v137
-	var v139 int32
+	var v130 int32
+	_ = v130
+	var v139 float64
 	_ = v139
-	var v148 float64
-	_ = v148
-	var v150 int64
+	var v140 float64
+	_ = v140
+	var v141 float64
+	_ = v141
+	var v142 int32
+	_ = v142
+	var v150 int32
 	_ = v150
-	var v151 int64
-	_ = v151
-	var v152 float64
+	var v152 int32
 	_ = v152
+	var v161 float64
+	_ = v161
+	var v163 int64
+	_ = v163
+	var v164 int64
+	_ = v164
 	var v165 float64
 	_ = v165
-	var v167 int64
-	_ = v167
-	var v168 int64
-	_ = v168
-	var v169 float64
-	_ = v169
-	var v192 int32
-	_ = v192
+	var v179 float64
+	_ = v179
+	var v181 int64
+	_ = v181
+	var v182 int64
+	_ = v182
+	var v183 float64
+	_ = v183
+	var v206 int32
+	_ = v206
 	v11 = int32(0)
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v16 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
 	if base.Ui64(base.I64_reinterpret_f64(v16)&int64(9223372036854775807)) <= base.Ui64(int64(9218868437227405312)) {
-		goto L4
+		v22 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+		if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v22)&int64(9223372036854775807)) {
+			v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+			if base.F64_ne(v16, v56)|base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807))) != 0 {
+				v206 = v11
+				return v206
+			} else {
+				v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+				v163 = int64(9223372036854775807)
+				v164 = base.I64_reinterpret_f64(v161) & v163
+				v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+				if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+					if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+						v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+						v181 = int64(9223372036854775807)
+						v182 = base.I64_reinterpret_f64(v179) & v181
+						v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+						if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+							return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+						} else {
+							return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+						}
+					} else {
+						return int32(0)
+					}
+				} else {
+					if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+						v206 = v11
+						return v206
+					} else {
+						v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+						v181 = int64(9223372036854775807)
+						v182 = base.I64_reinterpret_f64(v179) & v181
+						v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+						if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+							return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+						} else {
+							return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+						}
+					}
+				}
+			}
+		} else {
+			v28 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+			if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v28)&int64(9223372036854775807)) {
+				v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+				if base.F64_ne(v16, v56)|base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807))) != 0 {
+					v206 = v11
+					return v206
+				} else {
+					v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+					v163 = int64(9223372036854775807)
+					v164 = base.I64_reinterpret_f64(v161) & v163
+					v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+					if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+						if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+							v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+							v181 = int64(9223372036854775807)
+							v182 = base.I64_reinterpret_f64(v179) & v181
+							v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+							if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+								return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+							} else {
+								return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+							}
+						} else {
+							return int32(0)
+						}
+					} else {
+						if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+							v206 = v11
+							return v206
+						} else {
+							v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+							v181 = int64(9223372036854775807)
+							v182 = base.I64_reinterpret_f64(v179) & v181
+							v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+							if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+								return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+							} else {
+								return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+							}
+						}
+					}
+				}
+			} else {
+				v34 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+				v35 = base.F64_abs(v34)
+				if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v35)) {
+					v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+					if base.F64_ne(v16, v56)|base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807))) != 0 {
+						v206 = v11
+						return v206
+					} else {
+						v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+						v163 = int64(9223372036854775807)
+						v164 = base.I64_reinterpret_f64(v161) & v163
+						v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+						if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+							if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+								v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+								v181 = int64(9223372036854775807)
+								v182 = base.I64_reinterpret_f64(v179) & v181
+								v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+								if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+									return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+								} else {
+									return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+								}
+							} else {
+								return int32(0)
+							}
+						} else {
+							if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+								v206 = v11
+								return v206
+							} else {
+								v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+								v181 = int64(9223372036854775807)
+								v182 = base.I64_reinterpret_f64(v179) & v181
+								v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+								if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+									return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+								} else {
+									return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+								}
+							}
+						}
+					}
+				} else {
+					v39 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+					v40 = base.F64_abs(v39)
+					if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v40)) {
+						v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+						if base.F64_ne(v16, v56)|base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807))) != 0 {
+							v206 = v11
+							return v206
+						} else {
+							v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+							v163 = int64(9223372036854775807)
+							v164 = base.I64_reinterpret_f64(v161) & v163
+							v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+							if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+								if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+									v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+									v181 = int64(9223372036854775807)
+									v182 = base.I64_reinterpret_f64(v179) & v181
+									v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+									if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+										return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+									} else {
+										return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+									}
+								} else {
+									return int32(0)
+								}
+							} else {
+								if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+									v206 = v11
+									return v206
+								} else {
+									v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+									v181 = int64(9223372036854775807)
+									v182 = base.I64_reinterpret_f64(v179) & v181
+									v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+									if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+										return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+									} else {
+										return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+									}
+								}
+							}
+						}
+					} else {
+						v44 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+						v45 = base.F64_abs(v44)
+						if base.Ui64(base.I64_reinterpret_f64(v45)) <= base.Ui64(int64(9218868437227405312)) {
+							if base.F64_le(v35, float64(1e-06)) == int32(0) {
+								v75 = F_float8_div(m, v16, v34)
+								mBase = m.M
+								v78 = m.ExcPending
+								if v78 != 0 {
+									return int32(0)
+								} else {
+									v90 = v75
+									v91 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
+									v93 = math.Float64frombits(uint64(0x7ff0000000000000))
+									v95 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+									v96 = base.F64_mul(v90, v95)
+									v101 = int32(0)
+									if base.B2i32(base.F64_eq(base.F64_abs(v90), v93)|base.F64_ne(base.F64_abs(v96), v93) == v101)&base.F64_ne(base.F64_abs(v95), v93) == v101 {
+										v109 = float64(0)
+										if base.B2i32(base.F64_eq(v90, v109)|base.F64_ne(v96, v109) == int32(0))&base.F64_ne(v95, v109) != 0 {
+											F_float_underflow_error(m)
+											mBase = m.M
+											v152 = m.ExcPending
+											if v152 != 0 {
+												return int32(0)
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										} else {
+											if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v91, v96)), float64(1e-06)) == int32(0))&base.F64_ne(v96, v91) != 0 {
+												v206 = v11
+												return v206
+											} else {
+												v127 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+												v128 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+												v129 = F_float8_mul(m, v90, v128)
+												mBase = m.M
+												v130 = m.ExcPending
+												if v130 != 0 {
+													return int32(0)
+												} else {
+													if base.F64_ne(v127, v129)&base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v127, v129)), float64(1e-06)) == int32(0)) != 0 {
+														v206 = v11
+														return v206
+													} else {
+														v139 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+														v140 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+														v141 = F_float8_mul(m, v90, v140)
+														mBase = m.M
+														v142 = m.ExcPending
+														if v142 != 0 {
+															return int32(0)
+														} else {
+															v206 = base.F64_eq(v139, v141) | base.F64_le(base.F64_abs(base.F64_sub(v139, v141)), float64(1e-06))
+															return v206
+														}
+													}
+												}
+											}
+										}
+									} else {
+										F_float_overflow_error(m)
+										mBase = m.M
+										v150 = m.ExcPending
+										if v150 != 0 {
+											return int32(0)
+										} else {
+											base.Wasm_trap_unreachable()
+											for {
+											}
+										}
+									}
+								}
+							} else {
+								if base.F64_le(v40, float64(1e-06)) == int32(0) {
+									v83 = F_float8_div(m, v22, v39)
+									mBase = m.M
+									v84 = m.ExcPending
+									if v84 != 0 {
+										return int32(0)
+									} else {
+										v90 = v83
+										v91 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
+										v93 = math.Float64frombits(uint64(0x7ff0000000000000))
+										v95 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+										v96 = base.F64_mul(v90, v95)
+										v101 = int32(0)
+										if base.B2i32(base.F64_eq(base.F64_abs(v90), v93)|base.F64_ne(base.F64_abs(v96), v93) == v101)&base.F64_ne(base.F64_abs(v95), v93) == v101 {
+											v109 = float64(0)
+											if base.B2i32(base.F64_eq(v90, v109)|base.F64_ne(v96, v109) == int32(0))&base.F64_ne(v95, v109) != 0 {
+												F_float_underflow_error(m)
+												mBase = m.M
+												v152 = m.ExcPending
+												if v152 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											} else {
+												if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v91, v96)), float64(1e-06)) == int32(0))&base.F64_ne(v96, v91) != 0 {
+													v206 = v11
+													return v206
+												} else {
+													v127 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+													v128 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+													v129 = F_float8_mul(m, v90, v128)
+													mBase = m.M
+													v130 = m.ExcPending
+													if v130 != 0 {
+														return int32(0)
+													} else {
+														if base.F64_ne(v127, v129)&base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v127, v129)), float64(1e-06)) == int32(0)) != 0 {
+															v206 = v11
+															return v206
+														} else {
+															v139 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+															v140 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+															v141 = F_float8_mul(m, v90, v140)
+															mBase = m.M
+															v142 = m.ExcPending
+															if v142 != 0 {
+																return int32(0)
+															} else {
+																v206 = base.F64_eq(v139, v141) | base.F64_le(base.F64_abs(base.F64_sub(v139, v141)), float64(1e-06))
+																return v206
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_float_overflow_error(m)
+											mBase = m.M
+											v150 = m.ExcPending
+											if v150 != 0 {
+												return int32(0)
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										}
+									}
+								} else {
+									if base.F64_le(v45, float64(1e-06)) != 0 {
+										v90 = float64(1)
+										v91 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
+										v93 = math.Float64frombits(uint64(0x7ff0000000000000))
+										v95 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+										v96 = base.F64_mul(v90, v95)
+										v101 = int32(0)
+										if base.B2i32(base.F64_eq(base.F64_abs(v90), v93)|base.F64_ne(base.F64_abs(v96), v93) == v101)&base.F64_ne(base.F64_abs(v95), v93) == v101 {
+											v109 = float64(0)
+											if base.B2i32(base.F64_eq(v90, v109)|base.F64_ne(v96, v109) == int32(0))&base.F64_ne(v95, v109) != 0 {
+												F_float_underflow_error(m)
+												mBase = m.M
+												v152 = m.ExcPending
+												if v152 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											} else {
+												if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v91, v96)), float64(1e-06)) == int32(0))&base.F64_ne(v96, v91) != 0 {
+													v206 = v11
+													return v206
+												} else {
+													v127 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+													v128 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+													v129 = F_float8_mul(m, v90, v128)
+													mBase = m.M
+													v130 = m.ExcPending
+													if v130 != 0 {
+														return int32(0)
+													} else {
+														if base.F64_ne(v127, v129)&base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v127, v129)), float64(1e-06)) == int32(0)) != 0 {
+															v206 = v11
+															return v206
+														} else {
+															v139 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+															v140 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+															v141 = F_float8_mul(m, v90, v140)
+															mBase = m.M
+															v142 = m.ExcPending
+															if v142 != 0 {
+																return int32(0)
+															} else {
+																v206 = base.F64_eq(v139, v141) | base.F64_le(base.F64_abs(base.F64_sub(v139, v141)), float64(1e-06))
+																return v206
+															}
+														}
+													}
+												}
+											}
+										} else {
+											F_float_overflow_error(m)
+											mBase = m.M
+											v150 = m.ExcPending
+											if v150 != 0 {
+												return int32(0)
+											} else {
+												base.Wasm_trap_unreachable()
+												for {
+												}
+											}
+										}
+									} else {
+										v88 = F_float8_div(m, v28, v44)
+										mBase = m.M
+										v89 = m.ExcPending
+										if v89 != 0 {
+											return int32(0)
+										} else {
+											v90 = v88
+											v91 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
+											v93 = math.Float64frombits(uint64(0x7ff0000000000000))
+											v95 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+											v96 = base.F64_mul(v90, v95)
+											v101 = int32(0)
+											if base.B2i32(base.F64_eq(base.F64_abs(v90), v93)|base.F64_ne(base.F64_abs(v96), v93) == v101)&base.F64_ne(base.F64_abs(v95), v93) == v101 {
+												v109 = float64(0)
+												if base.B2i32(base.F64_eq(v90, v109)|base.F64_ne(v96, v109) == int32(0))&base.F64_ne(v95, v109) != 0 {
+													F_float_underflow_error(m)
+													mBase = m.M
+													v152 = m.ExcPending
+													if v152 != 0 {
+														return int32(0)
+													} else {
+														base.Wasm_trap_unreachable()
+														for {
+														}
+													}
+												} else {
+													if base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v91, v96)), float64(1e-06)) == int32(0))&base.F64_ne(v96, v91) != 0 {
+														v206 = v11
+														return v206
+													} else {
+														v127 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+														v128 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+														v129 = F_float8_mul(m, v90, v128)
+														mBase = m.M
+														v130 = m.ExcPending
+														if v130 != 0 {
+															return int32(0)
+														} else {
+															if base.F64_ne(v127, v129)&base.B2i32(base.F64_le(base.F64_abs(base.F64_sub(v127, v129)), float64(1e-06)) == int32(0)) != 0 {
+																v206 = v11
+																return v206
+															} else {
+																v139 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+																v140 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+																v141 = F_float8_mul(m, v90, v140)
+																mBase = m.M
+																v142 = m.ExcPending
+																if v142 != 0 {
+																	return int32(0)
+																} else {
+																	v206 = base.F64_eq(v139, v141) | base.F64_le(base.F64_abs(base.F64_sub(v139, v141)), float64(1e-06))
+																	return v206
+																}
+															}
+														}
+													}
+												}
+											} else {
+												F_float_overflow_error(m)
+												mBase = m.M
+												v150 = m.ExcPending
+												if v150 != 0 {
+													return int32(0)
+												} else {
+													base.Wasm_trap_unreachable()
+													for {
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} else {
+							v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
+							if base.F64_ne(v16, v56)|base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807))) != 0 {
+								v206 = v11
+								return v206
+							} else {
+								v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+								v163 = int64(9223372036854775807)
+								v164 = base.I64_reinterpret_f64(v161) & v163
+								v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+								if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+									if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+										v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+										v181 = int64(9223372036854775807)
+										v182 = base.I64_reinterpret_f64(v179) & v181
+										v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+										if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+											return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+										} else {
+											return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+										}
+									} else {
+										return int32(0)
+									}
+								} else {
+									if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+										v206 = v11
+										return v206
+									} else {
+										v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+										v181 = int64(9223372036854775807)
+										v182 = base.I64_reinterpret_f64(v179) & v181
+										v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+										if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+											return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+										} else {
+											return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	} else {
-		goto L5
+		v64 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
+		if base.Ui64(int64(9218868437227405312)) < base.Ui64(v64&int64(9223372036854775807)) {
+			v161 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
+			v163 = int64(9223372036854775807)
+			v164 = base.I64_reinterpret_f64(v161) & v163
+			v165 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
+			if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v165)&v163) {
+				if base.Ui64(int64(9218868437227405312)) < base.Ui64(v164) {
+					v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+					v181 = int64(9223372036854775807)
+					v182 = base.I64_reinterpret_f64(v179) & v181
+					v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+					if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+						return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+					} else {
+						return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+					}
+				} else {
+					return int32(0)
+				}
+			} else {
+				if base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v164))|base.F64_ne(v165, v161) != 0 {
+					v206 = v11
+					return v206
+				} else {
+					v179 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
+					v181 = int64(9223372036854775807)
+					v182 = base.I64_reinterpret_f64(v179) & v181
+					v183 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
+					if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v183)&v181) {
+						return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v182))
+					} else {
+						return base.B2i32(base.Ui64(v182) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v183, v179)
+					}
+				}
+			}
+		} else {
+			return int32(0)
+		}
 	}
-L1:
-	;
-	return v192
-L2:
-	;
-	v148 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
-	v150 = int64(9223372036854775807)
-	v151 = base.I64_reinterpret_f64(v148) & v150
-	v152 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
-	if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v152)&v150) {
-		goto L51
-	} else {
-		goto L52
-	}
-L3:
-	;
-	if base.F64_le(v35, float64(1e-06)) == int32(0) {
-		goto L17
-	} else {
-		goto L18
-	}
-L4:
-	;
-	v22 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v22)&int64(9223372036854775807)) {
-		goto L7
-	} else {
-		goto L8
-	}
-L5:
-	;
-	goto L6
-L6:
-	;
-	v63 = *(*int64)(unsafe.Add(mBase, uint32(v14)))
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(v63&int64(9223372036854775807)) {
-		goto L2
-	} else {
-		goto L15
-	}
-L7:
-	;
-	v56 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
-	if base.F64_ne(v16, v56) != 0 {
-		v192 = v11
-		goto L1
-	} else {
-		goto L13
-	}
-L8:
-	;
-	v28 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v28)&int64(9223372036854775807)) {
-		goto L7
-	} else {
-		goto L9
-	}
-L9:
-	;
-	v34 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
-	v35 = base.F64_abs(v34)
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v35)) {
-		goto L7
-	} else {
-		goto L10
-	}
-L10:
-	;
-	v39 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
-	v40 = base.F64_abs(v39)
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v40)) {
-		goto L7
-	} else {
-		goto L11
-	}
-L11:
-	;
-	v44 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
-	v45 = base.F64_abs(v44)
-	if base.Ui64(base.I64_reinterpret_f64(v45)) <= base.Ui64(int64(9218868437227405312)) {
-		goto L3
-	} else {
-		goto L12
-	}
-L12:
-	;
-	goto L7
-L13:
-	;
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(base.I64_reinterpret_f64(v56)&int64(9223372036854775807)) {
-		v192 = v11
-		goto L1
-	} else {
-		goto L14
-	}
-L14:
-	;
-	goto L2
-L15:
-	;
-	return int32(0)
-L16:
-	;
-	v90 = *(*float64)(unsafe.Add(mBase, uint32(v15)))
-	v91 = *(*float64)(unsafe.Add(mBase, uint32(v14)))
-	v92 = base.F64_mul(v89, v91)
-	if base.F64_ne(base.F64_abs(v92), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-		goto L30
-	} else {
-		goto L31
-	}
-L17:
-	;
-	v74 = F_float8_div(m, v16, v34)
-	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
-		goto L20
-	} else {
-		goto L21
-	}
-L18:
-	;
-	goto L19
-L19:
-	;
-	if base.F64_le(v40, float64(1e-06)) == int32(0) {
-		goto L22
-	} else {
-		goto L23
-	}
-L20:
-	;
-	return int32(0)
-L21:
-	;
-	v89 = v74
-	goto L16
-L22:
-	;
-	v82 = F_float8_div(m, v22, v39)
-	mBase = m.M
-	v83 = m.ExcPending
-	if v83 != 0 {
-		goto L20
-	} else {
-		goto L25
-	}
-L23:
-	;
-	goto L24
-L24:
-	;
-	if base.F64_le(v45, float64(1e-06)) != 0 {
-		v89 = float64(1)
-		goto L16
-	} else {
-		goto L26
-	}
-L25:
-	;
-	v89 = v82
-	goto L16
-L26:
-	;
-	v87 = F_float8_div(m, v28, v44)
-	mBase = m.M
-	v88 = m.ExcPending
-	if v88 != 0 {
-		goto L20
-	} else {
-		goto L27
-	}
-L27:
-	;
-	v89 = v87
-	goto L16
-L28:
-	;
-	F_float_underflow_error(m)
-	mBase = m.M
-	v139 = m.ExcPending
-	if v139 != 0 {
-		goto L20
-	} else {
-		goto L49
-	}
-L29:
-	;
-	F_float_overflow_error(m)
-	mBase = m.M
-	v137 = m.ExcPending
-	if v137 != 0 {
-		goto L20
-	} else {
-		goto L48
-	}
-L30:
-	;
-	if base.F64_ne(v92, float64(0)) != 0 {
-		goto L34
-	} else {
-		goto L35
-	}
-L31:
-	;
-	if base.F64_eq(base.F64_abs(v89), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-		goto L30
-	} else {
-		goto L32
-	}
-L32:
-	;
-	if base.F64_ne(base.F64_abs(v91), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-		goto L29
-	} else {
-		goto L33
-	}
-L33:
-	;
-	goto L30
-L34:
-	;
-	if base.F64_ne(v92, v90) != 0 {
-		goto L38
-	} else {
-		goto L39
-	}
-L35:
-	;
-	if base.F64_eq(v89, float64(0)) != 0 {
-		goto L34
-	} else {
-		goto L36
-	}
-L36:
-	;
-	if base.F64_ne(v91, float64(0)) != 0 {
-		goto L28
-	} else {
-		goto L37
-	}
-L37:
-	;
-	goto L34
-L38:
-	;
-	if base.F64_le(base.F64_abs(base.F64_sub(v90, v92)), float64(1e-06)) == int32(0) {
-		v192 = v11
-		goto L1
-	} else {
-		goto L41
-	}
-L39:
-	;
-	goto L40
-L40:
-	;
-	v115 = *(*float64)(unsafe.Add(mBase, uint32(v15)+8))
-	v116 = *(*float64)(unsafe.Add(mBase, uint32(v14)+8))
-	v117 = F_float8_mul(m, v89, v116)
-	mBase = m.M
-	v118 = m.ExcPending
-	if v118 != 0 {
-		goto L20
-	} else {
-		goto L42
-	}
-L41:
-	;
-	goto L40
-L42:
-	;
-	if base.F64_ne(v115, v117) != 0 {
-		goto L43
-	} else {
-		goto L44
-	}
-L43:
-	;
-	if base.F64_le(base.F64_abs(base.F64_sub(v115, v117)), float64(1e-06)) == int32(0) {
-		v192 = v11
-		goto L1
-	} else {
-		goto L46
-	}
-L44:
-	;
-	goto L45
-L45:
-	;
-	v126 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
-	v127 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
-	v128 = F_float8_mul(m, v89, v127)
-	mBase = m.M
-	v129 = m.ExcPending
-	if v129 != 0 {
-		goto L20
-	} else {
-		goto L47
-	}
-L46:
-	;
-	goto L45
-L47:
-	;
-	v192 = base.F64_eq(v126, v128) | base.F64_le(base.F64_abs(base.F64_sub(v126, v128)), float64(1e-06))
-	goto L1
-L48:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L49:
-	;
-	base.Wasm_trap_unreachable()
-	for {
-	}
-L50:
-	;
-	v165 = *(*float64)(unsafe.Add(mBase, uint32(v14)+16))
-	v167 = int64(9223372036854775807)
-	v168 = base.I64_reinterpret_f64(v165) & v167
-	v169 = *(*float64)(unsafe.Add(mBase, uint32(v15)+16))
-	if base.Ui64(int64(9218868437227405313)) <= base.Ui64(base.I64_reinterpret_f64(v169)&v167) {
-		goto L57
-	} else {
-		goto L58
-	}
-L51:
-	;
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(v151) {
-		goto L50
-	} else {
-		goto L54
-	}
-L52:
-	;
-	goto L53
-L53:
-	;
-	if base.F64_ne(v152, v148) != 0 {
-		v192 = v11
-		goto L1
-	} else {
-		goto L55
-	}
-L54:
-	;
-	return int32(0)
-L55:
-	;
-	if base.Ui64(int64(9218868437227405312)) < base.Ui64(v151) {
-		v192 = v11
-		goto L1
-	} else {
-		goto L56
-	}
-L56:
-	;
-	goto L50
-L57:
-	;
-	return base.B2i32(base.Ui64(int64(9218868437227405312)) < base.Ui64(v168))
-L58:
-	;
-	goto L59
-L59:
-	;
-	return base.B2i32(base.Ui64(v168) < base.Ui64(int64(9218868437227405313))) & base.F64_eq(v169, v165)
 }
 func F_line_recv(m *base.Module, l0 int32) int32 {
 	mBase := m.M

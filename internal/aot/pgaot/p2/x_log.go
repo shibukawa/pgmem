@@ -275,49 +275,49 @@ func F_GetXLogBuffer(m *base.Module, l0 int64, l1 int32) int32 {
 func F_XLogArchiveCleanup(m *base.Module, l0 int32) {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
-	var v5 int32
-	_ = v5
-	var v16 int32
-	_ = v16
+	var v4 int32
+	_ = v4
+	var v6 int32
+	_ = v6
+	var v12 int32
+	_ = v12
 	var v17 int32
 	_ = v17
+	var v18 int32
+	_ = v18
 	var v19 int32
 	_ = v19
-	var v20 int32
-	_ = v20
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v32 int32
-	_ = v32
-	v3 = m.G0
-	v5 = v3 - int32(1056)
-	m.G0 = v5
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+16)) = l0
-	*(*int32)(unsafe.Add(mBase, uint32(v5)+20)) = int32(_a_F_XLogArchiveCleanup_0)
-	v16 = F_pg_snprintf(m, v5+int32(32), int32(1024), int32(_a_F_XLogArchiveCleanup_1), v5+int32(16))
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	v4 = m.G0
+	v6 = v4 - int32(1056)
+	m.G0 = v6
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = l0
+	*(*int32)(unsafe.Add(mBase, uint32(v6)+20)) = int32(_a_F_XLogArchiveCleanup_0)
+	v12 = v6 + int32(32)
+	v17 = F_pg_snprintf(m, v12, int32(1024), int32(_a_F_XLogArchiveCleanup_1), v6+int32(16))
 	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v18 = m.ExcPending
+	if v18 != 0 {
 		return
 	} else {
-		v19 = v5 + int32(32)
-		v20 = F_unlink(m, v19)
+		v19 = F_unlink(m, v12)
 		mBase = m.M
-		*(*int32)(unsafe.Add(mBase, uint32(v5)+4)) = int32(_a_F_XLogArchiveCleanup_2)
-		*(*int32)(unsafe.Add(mBase, uint32(v5))) = l0
-		v28 = F_pg_snprintf(m, v19, int32(1024), int32(_a_F_XLogArchiveCleanup_1), v5)
+		*(*int32)(unsafe.Add(mBase, uint32(v6)+4)) = int32(_a_F_XLogArchiveCleanup_2)
+		*(*int32)(unsafe.Add(mBase, uint32(v6))) = l0
+		v25 = F_pg_snprintf(m, v12, int32(1024), int32(_a_F_XLogArchiveCleanup_1), v6)
 		mBase = m.M
-		v29 = m.ExcPending
-		if v29 != 0 {
+		v26 = m.ExcPending
+		if v26 != 0 {
 			return
 		} else {
-			v32 = F_unlink(m, v5+int32(32))
+			v27 = F_unlink(m, v12)
 			mBase = m.M
-			m.G0 = v5 + int32(1056)
+			m.G0 = v6 + int32(1056)
 			return
 		}
 	}
@@ -483,98 +483,98 @@ func F_XLogFlush(m *base.Module, l0 int64) {
 	_ = v324
 	var v328 int32
 	_ = v328
-	var v331 int32
-	_ = v331
-	var v334 int32
-	_ = v334
-	var v338 int32
-	_ = v338
-	var v339 int32
-	_ = v339
-	var v345 int32
-	_ = v345
+	var v333 int32
+	_ = v333
+	var v336 int32
+	_ = v336
+	var v340 int32
+	_ = v340
+	var v341 int32
+	_ = v341
 	var v347 int32
 	_ = v347
+	var v349 int32
+	_ = v349
 	var v352 int32
 	_ = v352
-	var v357 int32
-	_ = v357
-	var v365 int32
-	_ = v365
-	var v370 int32
-	_ = v370
+	var v353 int32
+	_ = v353
+	var v367 int32
+	_ = v367
 	var v372 int32
 	_ = v372
-	var v375 int32
-	_ = v375
-	var v378 int32
-	_ = v378
+	var v374 int32
+	_ = v374
+	var v377 int32
+	_ = v377
 	var v380 int32
 	_ = v380
 	var v382 int32
 	_ = v382
-	var v385 int32
-	_ = v385
+	var v384 int32
+	_ = v384
+	var v387 int32
+	_ = v387
 	var v390 int32
 	_ = v390
-	var v414 int32
-	_ = v414
-	var v418 int32
-	_ = v418
+	var v416 int32
+	_ = v416
 	var v420 int32
 	_ = v420
-	var v421 int64
-	_ = v421
 	var v422 int32
 	_ = v422
-	var v434 int64
-	_ = v434
-	var v444 int32
-	_ = v444
-	var v459 int32
-	_ = v459
-	var v463 int32
-	_ = v463
-	var v477 int32
-	_ = v477
+	var v423 int64
+	_ = v423
+	var v424 int32
+	_ = v424
+	var v436 int64
+	_ = v436
+	var v446 int32
+	_ = v446
+	var v461 int32
+	_ = v461
+	var v465 int32
+	_ = v465
 	var v479 int32
 	_ = v479
-	var v480 int32
-	_ = v480
-	var v485 int32
-	_ = v485
-	var v490 int32
-	_ = v490
-	var v491 int32
-	_ = v491
+	var v481 int32
+	_ = v481
+	var v482 int32
+	_ = v482
+	var v487 int32
+	_ = v487
 	var v492 int32
 	_ = v492
-	var v497 int32
-	_ = v497
+	var v493 int32
+	_ = v493
+	var v494 int32
+	_ = v494
 	var v499 int32
 	_ = v499
-	var v503 int32
-	_ = v503
-	var v506 int32
-	_ = v506
-	var v511 int32
-	_ = v511
-	var v513 int64
+	var v501 int32
+	_ = v501
+	var v505 int32
+	_ = v505
+	var v508 int32
+	_ = v508
+	var v513 int32
 	_ = v513
-	var v518 int32
-	_ = v518
-	var v520 int64
+	var v515 int64
+	_ = v515
+	var v520 int32
 	_ = v520
-	var v523 int64
-	_ = v523
-	var v524 int64
-	_ = v524
-	var v527 int64
-	_ = v527
-	var v531 int32
-	_ = v531
-	var v536 int32
-	_ = v536
+	var v522 int64
+	_ = v522
+	var v525 int64
+	_ = v525
+	var v526 int64
+	_ = v526
+	var v529 int64
+	_ = v529
+	var v533 int32
+	_ = v533
+	var v538 int32
+	_ = v538
 	v1 = l0
 	v14 = m.G0
 	v16 = v14 - int32(48)
@@ -665,12 +665,12 @@ L14:
 	goto L16
 L15:
 	;
-	v477 = int32(_a_F_XLogFlush_0)
-	v479 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[4]))
-	v480 = int32(1)
-	*(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[4])) = v479 - v480
-	v485 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[3])))
-	if v485 == v480 {
+	v479 = int32(_a_F_XLogFlush_0)
+	v481 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[4]))
+	v482 = int32(1)
+	*(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[4])) = v481 - v482
+	v487 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[3])))
+	if v487 == v482 {
 		goto L99
 	} else {
 		goto L100
@@ -1057,7 +1057,7 @@ L74:
 	;
 	v324 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[13]))
 	if v324 <= int32(0) {
-		v434 = v101
+		v436 = v101
 		goto L77
 	} else {
 		goto L78
@@ -1067,25 +1067,25 @@ L75:
 	goto L76
 L76:
 	;
-	v459 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[6]))
-	F_LWLockRelease(m, v459+int32(1024))
+	v461 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[6]))
+	F_LWLockRelease(m, v461+int32(1024))
 	mBase = m.M
-	v463 = m.ExcPending
-	if v463 != 0 {
+	v465 = m.ExcPending
+	if v465 != 0 {
 		goto L12
 	} else {
 		goto L98
 	}
 L77:
 	;
-	*(*int64)(unsafe.Add(mBase, uint32(v16)+40)) = v434
-	*(*int64)(unsafe.Add(mBase, uint32(v16)+24)) = v434
-	*(*int64)(unsafe.Add(mBase, uint32(v16)+32)) = v434
-	*(*int64)(unsafe.Add(mBase, uint32(v16)+16)) = v434
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+40)) = v436
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+32)) = v436
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+16)) = v436
+	*(*int64)(unsafe.Add(mBase, uint32(v16)+24)) = v436
 	F_XLogWrite(m, v16+int32(16), v20, int32(0))
 	mBase = m.M
-	v444 = m.ExcPending
-	if v444 != 0 {
+	v446 = m.ExcPending
+	if v446 != 0 {
 		goto L12
 	} else {
 		goto L97
@@ -1093,150 +1093,150 @@ L77:
 L78:
 	;
 	v328 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[14])))
-	if v328 != int32(1) {
-		v434 = v101
+	if v328&int32(1) == int32(0) {
+		v436 = v101
 		goto L77
 	} else {
 		goto L79
 	}
 L79:
 	;
-	v331 = int32(0)
-	v334 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[15]))
-	if v334 == v331 {
-		v414 = int32(1)
+	v333 = int32(0)
+	v336 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[15]))
+	if v336 == v333 {
+		v416 = int32(1)
 		goto L80
 	} else {
 		goto L81
 	}
 L80:
 	;
-	if v414 == int32(0) {
-		v434 = v101
+	if v416 == int32(0) {
+		v436 = v101
 		goto L77
 	} else {
 		goto L94
 	}
 L81:
 	;
-	v338 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[16]))
-	v339 = *(*int32)(unsafe.Add(mBase, uint32(v338)))
-	if v339 <= int32(0) {
-		v390 = v331
+	v340 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[16]))
+	v341 = *(*int32)(unsafe.Add(mBase, uint32(v340)))
+	if v341 <= int32(0) {
+		v390 = v333
 		goto L82
 	} else {
 		goto L83
 	}
 L82:
 	;
-	v414 = base.B2i32(v334 <= v390)
+	v416 = base.B2i32(v336 <= v390)
 	goto L80
 L83:
 	;
-	v345 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[8]))
-	v347 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[17]))
-	v352 = v331
-	v357 = int32(0)
+	v347 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[8]))
+	v349 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[17]))
+	v352 = v333
+	v353 = int32(0)
 	goto L84
 L84:
 	;
-	v365 = *(*int32)(unsafe.Add(mBase, uint32(v338+int32(36)+v357<<(uint(int32(2))%32))))
-	if v365 == int32(-1) {
-		v382 = v352
+	v367 = *(*int32)(unsafe.Add(mBase, uint32(v340+int32(36)+v353<<(uint(int32(2))%32))))
+	if v367 == int32(-1) {
+		v384 = v352
 		goto L86
 	} else {
 		goto L87
 	}
 L85:
 	;
-	v390 = v382
+	v390 = v384
 	goto L82
 L86:
 	;
-	v385 = v357 + int32(1)
-	if v385 != v339 {
-		v352 = v382
-		v357 = v385
+	v387 = v353 + int32(1)
+	if v387 != v341 {
+		v352 = v384
+		v353 = v387
 		goto L84
 	} else {
 		goto L93
 	}
 L87:
 	;
-	v370 = v347 + v365*int32(640)
-	if v370 == v345 {
-		v382 = v352
+	v372 = v349 + v367*int32(640)
+	if v372 == v347 {
+		v384 = v352
 		goto L86
 	} else {
 		goto L88
 	}
 L88:
 	;
-	v372 = *(*int32)(unsafe.Add(mBase, uint32(v370)+36))
-	if v372 == int32(0) {
-		v382 = v352
+	v374 = *(*int32)(unsafe.Add(mBase, uint32(v372)+36))
+	if v374 == int32(0) {
+		v384 = v352
 		goto L86
 	} else {
 		goto L89
 	}
 L89:
 	;
-	v375 = *(*int32)(unsafe.Add(mBase, uint32(v370)+44))
-	if v375 == int32(0) {
-		v382 = v352
+	v377 = *(*int32)(unsafe.Add(mBase, uint32(v372)+44))
+	if v377 == int32(0) {
+		v384 = v352
 		goto L86
 	} else {
 		goto L90
 	}
 L90:
 	;
-	v378 = *(*int32)(unsafe.Add(mBase, uint32(v370)+92))
-	if v378 != 0 {
-		v382 = v352
+	v380 = *(*int32)(unsafe.Add(mBase, uint32(v372)+92))
+	if v380 != 0 {
+		v384 = v352
 		goto L86
 	} else {
 		goto L91
 	}
 L91:
 	;
-	v380 = v352 + int32(1)
-	if v334 <= v380 {
-		v390 = v380
+	v382 = v352 + int32(1)
+	if v336 <= v382 {
+		v390 = v382
 		goto L82
 	} else {
 		goto L92
 	}
 L92:
 	;
-	v382 = v380
+	v384 = v382
 	goto L86
 L93:
 	;
 	goto L85
 L94:
 	;
-	v418 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[13]))
-	F_pg_usleep(m, v418)
+	v420 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[13]))
+	F_pg_usleep(m, v420)
 	mBase = m.M
-	v420 = m.ExcPending
-	if v420 != 0 {
+	v422 = m.ExcPending
+	if v422 != 0 {
 		goto L12
 	} else {
 		goto L95
 	}
 L95:
 	;
-	v421 = F_WaitXLogInsertionsToFinish(m, v101)
+	v423 = F_WaitXLogInsertionsToFinish(m, v101)
 	mBase = m.M
-	v422 = m.ExcPending
-	if v422 != 0 {
+	v424 = m.ExcPending
+	if v424 != 0 {
 		goto L12
 	} else {
 		goto L96
 	}
 L96:
 	;
-	v434 = v421
+	v436 = v423
 	goto L77
 L97:
 	;
@@ -1246,48 +1246,48 @@ L98:
 	goto L15
 L99:
 	;
-	v490 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[0]))
-	v491 = *(*int32)(unsafe.Add(mBase, uint32(v490)+316))
-	v492 = int32(2)
-	*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[3])) = uint8(base.B2i32(v491 != v492))
-	v497 = base.B2i32(v491 == v492)
+	v492 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[0]))
+	v493 = *(*int32)(unsafe.Add(mBase, uint32(v492)+316))
+	v494 = int32(2)
+	*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[3])) = uint8(base.B2i32(v493 != v494))
+	v499 = base.B2i32(v493 == v494)
 	goto L101
 L100:
 	;
-	v497 = v480
+	v499 = v482
 	goto L101
 L101:
 	;
-	v499 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[18])))
-	if v499 != int32(1) {
+	v501 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[18])))
+	if v501 != int32(1) {
 		goto L102
 	} else {
 		goto L103
 	}
 L102:
 	;
-	v513 = *(*int64)(unsafe.Add(mBase, _c_F_XLogFlush[2]))
-	if base.Ui64(v1) <= base.Ui64(v513) {
+	v515 = *(*int64)(unsafe.Add(mBase, _c_F_XLogFlush[2]))
+	if base.Ui64(v1) <= base.Ui64(v515) {
 		goto L1
 	} else {
 		goto L106
 	}
 L103:
 	;
-	v503 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[18])) = uint8(v503)
-	v506 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[19]))
-	if v506 <= v503 {
+	v505 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, _c_F_XLogFlush[18])) = uint8(v505)
+	v508 = *(*int32)(unsafe.Add(mBase, _c_F_XLogFlush[19]))
+	if v508 <= v505 {
 		goto L102
 	} else {
 		goto L104
 	}
 L104:
 	;
-	F_WalSndWakeup(m, int32(1), v497)
+	F_WalSndWakeup(m, int32(1), v499)
 	mBase = m.M
-	v511 = m.ExcPending
-	if v511 != 0 {
+	v513 = m.ExcPending
+	if v513 != 0 {
 		goto L12
 	} else {
 		goto L105
@@ -1299,26 +1299,26 @@ L106:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v518 = m.ExcPending
-	if v518 != 0 {
+	v520 = m.ExcPending
+	if v520 != 0 {
 		goto L12
 	} else {
 		goto L107
 	}
 L107:
 	;
-	v520 = *(*int64)(unsafe.Add(mBase, _c_F_XLogFlush[2]))
-	*(*uint32)(unsafe.Add(mBase, uint32(v16)+12)) = uint32(v520)
+	v522 = *(*int64)(unsafe.Add(mBase, _c_F_XLogFlush[2]))
+	*(*uint32)(unsafe.Add(mBase, uint32(v16)+12)) = uint32(v522)
 	*(*uint32)(unsafe.Add(mBase, uint32(v16)+4)) = uint32(v1)
-	v523 = int64(32)
-	v524 = int64(base.Ui64(v1) >> (uint(v523) % 64))
-	*(*uint32)(unsafe.Add(mBase, uint32(v16))) = uint32(v524)
-	v527 = int64(base.Ui64(v520) >> (uint(v523) % 64))
-	*(*uint32)(unsafe.Add(mBase, uint32(v16)+8)) = uint32(v527)
+	v525 = int64(32)
+	v526 = int64(base.Ui64(v1) >> (uint(v525) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v16))) = uint32(v526)
+	v529 = int64(base.Ui64(v522) >> (uint(v525) % 64))
+	*(*uint32)(unsafe.Add(mBase, uint32(v16)+8)) = uint32(v529)
 	F_errmsg_internal(m, int32(_a_F_XLogFlush_12), v16)
 	mBase = m.M
-	v531 = m.ExcPending
-	if v531 != 0 {
+	v533 = m.ExcPending
+	if v533 != 0 {
 		goto L12
 	} else {
 		goto L108
@@ -1327,8 +1327,8 @@ L108:
 	;
 	F_errfinish(m, int32(_a_F_XLogFlush_3), int32(2942), int32(_a_F_XLogFlush_4))
 	mBase = m.M
-	v536 = m.ExcPending
-	if v536 != 0 {
+	v538 = m.ExcPending
+	if v538 != 0 {
 		goto L12
 	} else {
 		goto L109
@@ -1411,46 +1411,48 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 	_ = v27
 	var v32 int32
 	_ = v32
-	var v36 int64
+	var v36 int32
 	_ = v36
-	var v44 int64
-	_ = v44
-	var v45 int64
-	_ = v45
-	var v47 int32
-	_ = v47
-	var v48 int32
+	var v38 int64
+	_ = v38
+	var v48 int64
 	_ = v48
 	var v49 int64
 	_ = v49
-	var v50 int64
-	_ = v50
-	var v51 int64
+	var v51 int32
 	_ = v51
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v61 int64
+	var v52 int32
+	_ = v52
+	var v53 int64
+	_ = v53
+	var v54 int64
+	_ = v54
+	var v55 int64
+	_ = v55
+	var v60 int32
+	_ = v60
+	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
-	var v65 int32
+	var v65 int64
 	_ = v65
-	var v68 int32
-	_ = v68
+	var v66 int32
+	_ = v66
 	var v69 int32
 	_ = v69
 	var v72 int32
 	_ = v72
-	var v73 int64
+	var v73 int32
 	_ = v73
+	var v76 int32
+	_ = v76
 	var v77 int64
 	_ = v77
-	var v81 int32
+	var v81 int64
 	_ = v81
-	var v86 int32
-	_ = v86
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
 	v9 = m.G0
 	v11 = v9 - int32(16)
 	m.G0 = v11
@@ -1464,67 +1466,75 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 			m.G0 = v11 + int32(16)
 			return
 		} else {
-			v36 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-			if v36 == int64(0) {
-				v47 = F_readTimeLineHistory(m, l3)
-				mBase = m.M
-				v48 = m.ExcPending
-				if v48 != 0 {
+			v36 = int32(0)
+			v38 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+			if base.B2i32(v32 == v36)|(base.B2i32(v38 == int64(0))|base.B2i32(l3 == v32)) == v36 {
+				v48 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
+				v49 = base.I64_div_u_s(v38, v14)
+				if base.Ui64(v48) < base.Ui64(v49) {
+					m.G0 = v11 + int32(16)
 					return
 				} else {
-					v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-					v50 = base.I64_div_u_s(l1, v49)
-					v51 = int64(1)
-					v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+					v51 = F_readTimeLineHistory(m, l3)
 					mBase = m.M
-					v57 = m.ExcPending
-					if v57 != 0 {
+					v52 = m.ExcPending
+					if v52 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-						v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+						v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+						v54 = base.I64_div_u_s(l1, v53)
+						v55 = int64(1)
+						v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v61 = m.ExcPending
+						if v61 != 0 {
 							return
 						} else {
-							*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-							F_list_free_deep(m, v47)
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+							v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 							mBase = m.M
-							v65 = m.ExcPending
-							if v65 != 0 {
+							v66 = m.ExcPending
+							if v66 != 0 {
 								return
 							} else {
-								v68 = F_errstart(m, int32(12), int32(0))
+								*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+								F_list_free_deep(m, v51)
 								mBase = m.M
 								v69 = m.ExcPending
 								if v69 != 0 {
 									return
 								} else {
-									if v68 == int32(0) {
-										m.G0 = v11 + int32(16)
+									v72 = F_errstart(m, int32(12), int32(0))
+									mBase = m.M
+									v73 = m.ExcPending
+									if v73 != 0 {
 										return
 									} else {
-										v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-										v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-										*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-										*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-										v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-										*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-										F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-										mBase = m.M
-										v81 = m.ExcPending
-										if v81 != 0 {
+										if v72 == int32(0) {
+											m.G0 = v11 + int32(16)
 											return
 										} else {
-											F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+											v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+											v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+											*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+											v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+											F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
 											mBase = m.M
-											v86 = m.ExcPending
-											if v86 != 0 {
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												m.G0 = v11 + int32(16)
-												return
+												F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+												mBase = m.M
+												v90 = m.ExcPending
+												if v90 != 0 {
+													return
+												} else {
+													m.G0 = v11 + int32(16)
+													return
+												}
 											}
 										}
 									}
@@ -1534,212 +1544,65 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 					}
 				}
 			} else {
-				if l3 == v32 {
-					v47 = F_readTimeLineHistory(m, l3)
+				v51 = F_readTimeLineHistory(m, l3)
+				mBase = m.M
+				v52 = m.ExcPending
+				if v52 != 0 {
+					return
+				} else {
+					v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+					v54 = base.I64_div_u_s(l1, v53)
+					v55 = int64(1)
+					v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 					mBase = m.M
-					v48 = m.ExcPending
-					if v48 != 0 {
+					v61 = m.ExcPending
+					if v61 != 0 {
 						return
 					} else {
-						v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-						v50 = base.I64_div_u_s(l1, v49)
-						v51 = int64(1)
-						v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+						*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+						v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 						mBase = m.M
-						v57 = m.ExcPending
-						if v57 != 0 {
+						v66 = m.ExcPending
+						if v66 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-							v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+							*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+							F_list_free_deep(m, v51)
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v69 = m.ExcPending
+							if v69 != 0 {
 								return
 							} else {
-								*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-								F_list_free_deep(m, v47)
+								v72 = F_errstart(m, int32(12), int32(0))
 								mBase = m.M
-								v65 = m.ExcPending
-								if v65 != 0 {
+								v73 = m.ExcPending
+								if v73 != 0 {
 									return
 								} else {
-									v68 = F_errstart(m, int32(12), int32(0))
-									mBase = m.M
-									v69 = m.ExcPending
-									if v69 != 0 {
+									if v72 == int32(0) {
+										m.G0 = v11 + int32(16)
 										return
 									} else {
-										if v68 == int32(0) {
-											m.G0 = v11 + int32(16)
+										v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+										v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+										*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+										*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+										v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+										*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+										F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+										mBase = m.M
+										v85 = m.ExcPending
+										if v85 != 0 {
 											return
 										} else {
-											v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-											v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-											*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-											v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-											F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+											F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
 											mBase = m.M
-											v81 = m.ExcPending
-											if v81 != 0 {
+											v90 = m.ExcPending
+											if v90 != 0 {
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
-													return
-												} else {
-													m.G0 = v11 + int32(16)
-													return
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				} else {
-					if v32 == int32(0) {
-						v47 = F_readTimeLineHistory(m, l3)
-						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
-							return
-						} else {
-							v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-							v50 = base.I64_div_u_s(l1, v49)
-							v51 = int64(1)
-							v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
-								return
-							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-								v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
-									return
-								} else {
-									*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-									F_list_free_deep(m, v47)
-									mBase = m.M
-									v65 = m.ExcPending
-									if v65 != 0 {
-										return
-									} else {
-										v68 = F_errstart(m, int32(12), int32(0))
-										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
-											return
-										} else {
-											if v68 == int32(0) {
 												m.G0 = v11 + int32(16)
 												return
-											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-												v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-												mBase = m.M
-												v81 = m.ExcPending
-												if v81 != 0 {
-													return
-												} else {
-													F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
-														return
-													} else {
-														m.G0 = v11 + int32(16)
-														return
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					} else {
-						v44 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
-						v45 = base.I64_div_u_s(v36, v14)
-						if base.Ui64(v44) < base.Ui64(v45) {
-							m.G0 = v11 + int32(16)
-							return
-						} else {
-							v47 = F_readTimeLineHistory(m, l3)
-							mBase = m.M
-							v48 = m.ExcPending
-							if v48 != 0 {
-								return
-							} else {
-								v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-								v50 = base.I64_div_u_s(l1, v49)
-								v51 = int64(1)
-								v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
-									return
-								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-									v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-									mBase = m.M
-									v62 = m.ExcPending
-									if v62 != 0 {
-										return
-									} else {
-										*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-										F_list_free_deep(m, v47)
-										mBase = m.M
-										v65 = m.ExcPending
-										if v65 != 0 {
-											return
-										} else {
-											v68 = F_errstart(m, int32(12), int32(0))
-											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
-												return
-											} else {
-												if v68 == int32(0) {
-													m.G0 = v11 + int32(16)
-													return
-												} else {
-													v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-													v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
-														return
-													} else {
-														F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
-															return
-														} else {
-															m.G0 = v11 + int32(16)
-															return
-														}
-													}
-												}
 											}
 										}
 									}
@@ -1758,67 +1621,75 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 				m.G0 = v11 + int32(16)
 				return
 			} else {
-				v36 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-				if v36 == int64(0) {
-					v47 = F_readTimeLineHistory(m, l3)
-					mBase = m.M
-					v48 = m.ExcPending
-					if v48 != 0 {
+				v36 = int32(0)
+				v38 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+				if base.B2i32(v32 == v36)|(base.B2i32(v38 == int64(0))|base.B2i32(l3 == v32)) == v36 {
+					v48 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
+					v49 = base.I64_div_u_s(v38, v14)
+					if base.Ui64(v48) < base.Ui64(v49) {
+						m.G0 = v11 + int32(16)
 						return
 					} else {
-						v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-						v50 = base.I64_div_u_s(l1, v49)
-						v51 = int64(1)
-						v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+						v51 = F_readTimeLineHistory(m, l3)
 						mBase = m.M
-						v57 = m.ExcPending
-						if v57 != 0 {
+						v52 = m.ExcPending
+						if v52 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-							v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+							v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+							v54 = base.I64_div_u_s(l1, v53)
+							v55 = int64(1)
+							v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 							mBase = m.M
-							v62 = m.ExcPending
-							if v62 != 0 {
+							v61 = m.ExcPending
+							if v61 != 0 {
 								return
 							} else {
-								*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-								F_list_free_deep(m, v47)
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+								v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 								mBase = m.M
-								v65 = m.ExcPending
-								if v65 != 0 {
+								v66 = m.ExcPending
+								if v66 != 0 {
 									return
 								} else {
-									v68 = F_errstart(m, int32(12), int32(0))
+									*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+									F_list_free_deep(m, v51)
 									mBase = m.M
 									v69 = m.ExcPending
 									if v69 != 0 {
 										return
 									} else {
-										if v68 == int32(0) {
-											m.G0 = v11 + int32(16)
+										v72 = F_errstart(m, int32(12), int32(0))
+										mBase = m.M
+										v73 = m.ExcPending
+										if v73 != 0 {
 											return
 										} else {
-											v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-											v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-											*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-											v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-											F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-											mBase = m.M
-											v81 = m.ExcPending
-											if v81 != 0 {
+											if v72 == int32(0) {
+												m.G0 = v11 + int32(16)
 												return
 											} else {
-												F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+												v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+												v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+												*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+												v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+												F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
 												mBase = m.M
-												v86 = m.ExcPending
-												if v86 != 0 {
+												v85 = m.ExcPending
+												if v85 != 0 {
 													return
 												} else {
-													m.G0 = v11 + int32(16)
-													return
+													F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+													mBase = m.M
+													v90 = m.ExcPending
+													if v90 != 0 {
+														return
+													} else {
+														m.G0 = v11 + int32(16)
+														return
+													}
 												}
 											}
 										}
@@ -1828,212 +1699,65 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 						}
 					}
 				} else {
-					if l3 == v32 {
-						v47 = F_readTimeLineHistory(m, l3)
+					v51 = F_readTimeLineHistory(m, l3)
+					mBase = m.M
+					v52 = m.ExcPending
+					if v52 != 0 {
+						return
+					} else {
+						v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+						v54 = base.I64_div_u_s(l1, v53)
+						v55 = int64(1)
+						v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
+						v61 = m.ExcPending
+						if v61 != 0 {
 							return
 						} else {
-							v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-							v50 = base.I64_div_u_s(l1, v49)
-							v51 = int64(1)
-							v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+							*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+							v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
+							v66 = m.ExcPending
+							if v66 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-								v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+								*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+								F_list_free_deep(m, v51)
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v69 = m.ExcPending
+								if v69 != 0 {
 									return
 								} else {
-									*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-									F_list_free_deep(m, v47)
+									v72 = F_errstart(m, int32(12), int32(0))
 									mBase = m.M
-									v65 = m.ExcPending
-									if v65 != 0 {
+									v73 = m.ExcPending
+									if v73 != 0 {
 										return
 									} else {
-										v68 = F_errstart(m, int32(12), int32(0))
-										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										if v72 == int32(0) {
+											m.G0 = v11 + int32(16)
 											return
 										} else {
-											if v68 == int32(0) {
-												m.G0 = v11 + int32(16)
+											v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+											v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+											*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+											*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+											v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+											*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+											F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+											mBase = m.M
+											v85 = m.ExcPending
+											if v85 != 0 {
 												return
 											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-												v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+												F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
 												mBase = m.M
-												v81 = m.ExcPending
-												if v81 != 0 {
+												v90 = m.ExcPending
+												if v90 != 0 {
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
-														return
-													} else {
-														m.G0 = v11 + int32(16)
-														return
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					} else {
-						if v32 == int32(0) {
-							v47 = F_readTimeLineHistory(m, l3)
-							mBase = m.M
-							v48 = m.ExcPending
-							if v48 != 0 {
-								return
-							} else {
-								v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-								v50 = base.I64_div_u_s(l1, v49)
-								v51 = int64(1)
-								v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
-									return
-								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-									v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-									mBase = m.M
-									v62 = m.ExcPending
-									if v62 != 0 {
-										return
-									} else {
-										*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-										F_list_free_deep(m, v47)
-										mBase = m.M
-										v65 = m.ExcPending
-										if v65 != 0 {
-											return
-										} else {
-											v68 = F_errstart(m, int32(12), int32(0))
-											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
-												return
-											} else {
-												if v68 == int32(0) {
 													m.G0 = v11 + int32(16)
 													return
-												} else {
-													v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-													v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
-														return
-													} else {
-														F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
-															return
-														} else {
-															m.G0 = v11 + int32(16)
-															return
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						} else {
-							v44 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
-							v45 = base.I64_div_u_s(v36, v14)
-							if base.Ui64(v44) < base.Ui64(v45) {
-								m.G0 = v11 + int32(16)
-								return
-							} else {
-								v47 = F_readTimeLineHistory(m, l3)
-								mBase = m.M
-								v48 = m.ExcPending
-								if v48 != 0 {
-									return
-								} else {
-									v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-									v50 = base.I64_div_u_s(l1, v49)
-									v51 = int64(1)
-									v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
-										return
-									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-										v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-										mBase = m.M
-										v62 = m.ExcPending
-										if v62 != 0 {
-											return
-										} else {
-											*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-											F_list_free_deep(m, v47)
-											mBase = m.M
-											v65 = m.ExcPending
-											if v65 != 0 {
-												return
-											} else {
-												v68 = F_errstart(m, int32(12), int32(0))
-												mBase = m.M
-												v69 = m.ExcPending
-												if v69 != 0 {
-													return
-												} else {
-													if v68 == int32(0) {
-														m.G0 = v11 + int32(16)
-														return
-													} else {
-														v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-														v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-														*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-														*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-														v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-														*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-														F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-															mBase = m.M
-															v86 = m.ExcPending
-															if v86 != 0 {
-																return
-															} else {
-																m.G0 = v11 + int32(16)
-																return
-															}
-														}
-													}
 												}
 											}
 										}
@@ -2060,67 +1784,75 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 					m.G0 = v11 + int32(16)
 					return
 				} else {
-					v36 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-					if v36 == int64(0) {
-						v47 = F_readTimeLineHistory(m, l3)
-						mBase = m.M
-						v48 = m.ExcPending
-						if v48 != 0 {
+					v36 = int32(0)
+					v38 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+					if base.B2i32(v32 == v36)|(base.B2i32(v38 == int64(0))|base.B2i32(l3 == v32)) == v36 {
+						v48 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
+						v49 = base.I64_div_u_s(v38, v14)
+						if base.Ui64(v48) < base.Ui64(v49) {
+							m.G0 = v11 + int32(16)
 							return
 						} else {
-							v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-							v50 = base.I64_div_u_s(l1, v49)
-							v51 = int64(1)
-							v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+							v51 = F_readTimeLineHistory(m, l3)
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
+							v52 = m.ExcPending
+							if v52 != 0 {
 								return
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-								v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+								v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+								v54 = base.I64_div_u_s(l1, v53)
+								v55 = int64(1)
+								v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 								mBase = m.M
-								v62 = m.ExcPending
-								if v62 != 0 {
+								v61 = m.ExcPending
+								if v61 != 0 {
 									return
 								} else {
-									*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-									F_list_free_deep(m, v47)
+									*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+									v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 									mBase = m.M
-									v65 = m.ExcPending
-									if v65 != 0 {
+									v66 = m.ExcPending
+									if v66 != 0 {
 										return
 									} else {
-										v68 = F_errstart(m, int32(12), int32(0))
+										*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+										F_list_free_deep(m, v51)
 										mBase = m.M
 										v69 = m.ExcPending
 										if v69 != 0 {
 											return
 										} else {
-											if v68 == int32(0) {
-												m.G0 = v11 + int32(16)
+											v72 = F_errstart(m, int32(12), int32(0))
+											mBase = m.M
+											v73 = m.ExcPending
+											if v73 != 0 {
 												return
 											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-												v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-												v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-												F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-												mBase = m.M
-												v81 = m.ExcPending
-												if v81 != 0 {
+												if v72 == int32(0) {
+													m.G0 = v11 + int32(16)
 													return
 												} else {
-													F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+													v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+													v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+													*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+													v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+													F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
 													mBase = m.M
-													v86 = m.ExcPending
-													if v86 != 0 {
+													v85 = m.ExcPending
+													if v85 != 0 {
 														return
 													} else {
-														m.G0 = v11 + int32(16)
-														return
+														F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
+														mBase = m.M
+														v90 = m.ExcPending
+														if v90 != 0 {
+															return
+														} else {
+															m.G0 = v11 + int32(16)
+															return
+														}
 													}
 												}
 											}
@@ -2130,212 +1862,65 @@ func F_XLogReadDetermineTimeline(m *base.Module, l0 int32, l1 int64, l2 int32, l
 							}
 						}
 					} else {
-						if l3 == v32 {
-							v47 = F_readTimeLineHistory(m, l3)
+						v51 = F_readTimeLineHistory(m, l3)
+						mBase = m.M
+						v52 = m.ExcPending
+						if v52 != 0 {
+							return
+						} else {
+							v53 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
+							v54 = base.I64_div_u_s(l1, v53)
+							v55 = int64(1)
+							v60 = F_tliOfPointInHistory(m, (v54+v55)*v53-v55, v51)
 							mBase = m.M
-							v48 = m.ExcPending
-							if v48 != 0 {
+							v61 = m.ExcPending
+							if v61 != 0 {
 								return
 							} else {
-								v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-								v50 = base.I64_div_u_s(l1, v49)
-								v51 = int64(1)
-								v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
+								*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v60
+								v65 = F_tliSwitchPoint(m, v60, v51, l0+int32(1240))
 								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
+								v66 = m.ExcPending
+								if v66 != 0 {
 									return
 								} else {
-									*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-									v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
+									*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v65
+									F_list_free_deep(m, v51)
 									mBase = m.M
-									v62 = m.ExcPending
-									if v62 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return
 									} else {
-										*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-										F_list_free_deep(m, v47)
+										v72 = F_errstart(m, int32(12), int32(0))
 										mBase = m.M
-										v65 = m.ExcPending
-										if v65 != 0 {
+										v73 = m.ExcPending
+										if v73 != 0 {
 											return
 										} else {
-											v68 = F_errstart(m, int32(12), int32(0))
-											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
+											if v72 == int32(0) {
+												m.G0 = v11 + int32(16)
 												return
 											} else {
-												if v68 == int32(0) {
-													m.G0 = v11 + int32(16)
+												v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
+												v77 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
+												*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v77)
+												*(*int32)(unsafe.Add(mBase, uint32(v11))) = v76
+												v81 = int64(base.Ui64(v77) >> (uint(int64(32)) % 64))
+												*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v81)
+												F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+												mBase = m.M
+												v85 = m.ExcPending
+												if v85 != 0 {
 													return
 												} else {
-													v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-													v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-													*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-													v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-													*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-													F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
+													F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
 													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
+													v90 = m.ExcPending
+													if v90 != 0 {
 														return
 													} else {
-														F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-														mBase = m.M
-														v86 = m.ExcPending
-														if v86 != 0 {
-															return
-														} else {
-															m.G0 = v11 + int32(16)
-															return
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						} else {
-							if v32 == int32(0) {
-								v47 = F_readTimeLineHistory(m, l3)
-								mBase = m.M
-								v48 = m.ExcPending
-								if v48 != 0 {
-									return
-								} else {
-									v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-									v50 = base.I64_div_u_s(l1, v49)
-									v51 = int64(1)
-									v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
-										return
-									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-										v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-										mBase = m.M
-										v62 = m.ExcPending
-										if v62 != 0 {
-											return
-										} else {
-											*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-											F_list_free_deep(m, v47)
-											mBase = m.M
-											v65 = m.ExcPending
-											if v65 != 0 {
-												return
-											} else {
-												v68 = F_errstart(m, int32(12), int32(0))
-												mBase = m.M
-												v69 = m.ExcPending
-												if v69 != 0 {
-													return
-												} else {
-													if v68 == int32(0) {
 														m.G0 = v11 + int32(16)
 														return
-													} else {
-														v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-														v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-														*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-														*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-														v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-														*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-														F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
-															return
-														} else {
-															F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-															mBase = m.M
-															v86 = m.ExcPending
-															if v86 != 0 {
-																return
-															} else {
-																m.G0 = v11 + int32(16)
-																return
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							} else {
-								v44 = base.I64_div_u_s(l1+base.I64_extend_i32_u(l2), v14)
-								v45 = base.I64_div_u_s(v36, v14)
-								if base.Ui64(v44) < base.Ui64(v45) {
-									m.G0 = v11 + int32(16)
-									return
-								} else {
-									v47 = F_readTimeLineHistory(m, l3)
-									mBase = m.M
-									v48 = m.ExcPending
-									if v48 != 0 {
-										return
-									} else {
-										v49 = int64(*(*int32)(unsafe.Add(mBase, uint32(l0)+1160)))
-										v50 = base.I64_div_u_s(l1, v49)
-										v51 = int64(1)
-										v56 = F_tliOfPointInHistory(m, (v50+v51)*v49-v51, v47)
-										mBase = m.M
-										v57 = m.ExcPending
-										if v57 != 0 {
-											return
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(l0)+1224)) = v56
-											v61 = F_tliSwitchPoint(m, v56, v47, l0+int32(1240))
-											mBase = m.M
-											v62 = m.ExcPending
-											if v62 != 0 {
-												return
-											} else {
-												*(*int64)(unsafe.Add(mBase, uint32(l0)+1232)) = v61
-												F_list_free_deep(m, v47)
-												mBase = m.M
-												v65 = m.ExcPending
-												if v65 != 0 {
-													return
-												} else {
-													v68 = F_errstart(m, int32(12), int32(0))
-													mBase = m.M
-													v69 = m.ExcPending
-													if v69 != 0 {
-														return
-													} else {
-														if v68 == int32(0) {
-															m.G0 = v11 + int32(16)
-															return
-														} else {
-															v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+1224))
-															v73 = *(*int64)(unsafe.Add(mBase, uint32(l0)+1232))
-															*(*uint32)(unsafe.Add(mBase, uint32(v11)+8)) = uint32(v73)
-															*(*int32)(unsafe.Add(mBase, uint32(v11))) = v72
-															v77 = int64(base.Ui64(v73) >> (uint(int64(32)) % 64))
-															*(*uint32)(unsafe.Add(mBase, uint32(v11)+4)) = uint32(v77)
-															F_errmsg_internal(m, int32(_a_F_XLogReadDetermineTimeline_0), v11)
-															mBase = m.M
-															v81 = m.ExcPending
-															if v81 != 0 {
-																return
-															} else {
-																F_errfinish(m, int32(_a_F_XLogReadDetermineTimeline_1), int32(800), int32(_a_F_XLogReadDetermineTimeline_2))
-																mBase = m.M
-																v86 = m.ExcPending
-																if v86 != 0 {
-																	return
-																} else {
-																	m.G0 = v11 + int32(16)
-																	return
-																}
-															}
-														}
 													}
 												}
 											}
@@ -2371,90 +1956,98 @@ func F_XLogRecordPageWithFreeSpace(m *base.Module, l0 int32, l1 int32, l2 int32)
 	_ = v26
 	var v29 int32
 	_ = v29
-	var v35 int32
-	_ = v35
-	var v42 int32
-	_ = v42
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v50 int32
-	_ = v50
-	var v56 int32
-	_ = v56
-	var v57 int32
-	_ = v57
-	var v86 int32
-	_ = v86
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v69 int32
+	_ = v69
+	var v71 int32
+	_ = v71
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
 	var v92 int32
 	_ = v92
 	var v98 int32
 	_ = v98
-	var v102 int32
-	_ = v102
-	var v107 int32
-	_ = v107
 	var v109 int32
 	_ = v109
-	var v110 int32
-	_ = v110
 	var v111 int32
 	_ = v111
-	var v113 int32
-	_ = v113
+	var v117 int32
+	_ = v117
+	var v119 int32
+	_ = v119
+	var v120 int32
+	_ = v120
 	var v121 int32
 	_ = v121
 	var v123 int32
 	_ = v123
-	var v124 int32
-	_ = v124
-	var v125 int32
-	_ = v125
-	var v126 int32
-	_ = v126
-	var v128 int32
-	_ = v128
 	var v130 int32
 	_ = v130
-	var v132 int32
-	_ = v132
+	var v134 int32
+	_ = v134
+	var v135 int32
+	_ = v135
 	var v136 int32
 	_ = v136
-	var v138 int32
-	_ = v138
-	var v140 int32
-	_ = v140
+	var v137 int32
+	_ = v137
+	var v139 int32
+	_ = v139
 	var v141 int32
 	_ = v141
 	var v143 int32
 	_ = v143
-	var v144 int32
-	_ = v144
+	var v147 int32
+	_ = v147
+	var v149 int32
+	_ = v149
 	var v151 int32
 	_ = v151
-	var v157 int32
-	_ = v157
-	var v164 int32
-	_ = v164
-	var v166 int32
-	_ = v166
-	var v170 int32
-	_ = v170
-	var v174 int32
-	_ = v174
-	var v176 int32
-	_ = v176
-	var v179 int32
-	_ = v179
+	var v152 int32
+	_ = v152
+	var v154 int32
+	_ = v154
+	var v155 int32
+	_ = v155
+	var v162 int32
+	_ = v162
+	var v168 int32
+	_ = v168
+	var v178 int32
+	_ = v178
 	var v180 int32
 	_ = v180
-	var v181 int32
-	_ = v181
-	var v201 int32
-	_ = v201
-	var v204 int32
-	_ = v204
-	var v206 int32
-	_ = v206
+	var v184 int32
+	_ = v184
+	var v186 int32
+	_ = v186
+	var v189 int32
+	_ = v189
+	var v190 int32
+	_ = v190
+	var v191 int32
+	_ = v191
+	var v213 int32
+	_ = v213
+	var v216 int32
+	_ = v216
+	var v218 int32
+	_ = v218
 	v7 = m.G0
 	v9 = v7 - int32(16)
 	m.G0 = v9
@@ -2487,295 +2080,330 @@ L2:
 	}
 L3:
 	;
-	if base.Ui32(int32(_a_F_XLogRecordPageWithFreeSpace_0)) < base.Ui32(l2) {
-		goto L4
-	} else {
+	if v25 < int32(0) {
 		goto L5
+	} else {
+		goto L6
 	}
 L4:
 	;
-	v35 = int32(-1)
-	goto L6
-L5:
-	;
-	v35 = int32(base.Ui32(l2) >> (uint(int32(5)) % 32))
-	goto L6
-L6:
-	;
-	if v25 < int32(0) {
+	v48 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v47)+14)))
+	if v48 == int32(0) {
 		goto L8
 	} else {
 		goto L9
 	}
+L5:
+	;
+	v33 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecordPageWithFreeSpace[0]))
+	v39 = *(*int32)(unsafe.Add(mBase, uint32(v33+(v25^int32(-1))<<(uint(int32(2))%32))))
+	v47 = v39
+	goto L4
+L6:
+	;
+	goto L7
 L7:
 	;
-	v57 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v56)+14)))
-	if v57 == int32(0) {
-		goto L11
-	} else {
-		goto L12
-	}
+	v41 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecordPageWithFreeSpace[1]))
+	v47 = v41 + v25<<(uint(int32(13))%32) + int32(-8192)
+	goto L4
 L8:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecordPageWithFreeSpace[0]))
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v42+(v25^int32(-1))<<(uint(int32(2))%32))))
-	v56 = v48
-	goto L7
+	v51 = int32(_a_F_XLogRecordPageWithFreeSpace_0)
+	v52 = int32(0)
+	if v52|(v47&int32(3)|int32(1)) == v52 {
+		goto L13
+	} else {
+		goto L14
+	}
 L9:
 	;
 	goto L10
 L10:
 	;
-	v50 = *(*int32)(unsafe.Add(mBase, _c_F_XLogRecordPageWithFreeSpace[1]))
-	v56 = v50 + v25<<(uint(int32(13))%32) + int32(-8192)
-	goto L7
+	if base.Ui32(int32(_a_F_XLogRecordPageWithFreeSpace_1)) < base.Ui32(l2) {
+		goto L22
+	} else {
+		goto L23
+	}
 L11:
 	;
-	if v56&int32(3) != 0 {
-		goto L16
-	} else {
-		goto L17
-	}
+	goto L10
 L12:
 	;
-	goto L13
+	*(*int32)(unsafe.Add(mBase, uint32(v47)+10)) = int32(_a_F_XLogRecordPageWithFreeSpace_2)
+	v92 = int32(_a_F_XLogRecordPageWithFreeSpace_3)
+	*(*uint16)(unsafe.Add(mBase, uint32(v47)+18)) = uint16(v92)
+	v98 = int32(_a_F_XLogRecordPageWithFreeSpace_0)
+	*(*uint16)(unsafe.Add(mBase, uint32(v47)+16)) = uint16(v98)
+	*(*uint16)(unsafe.Add(mBase, uint32(v47)+14)) = uint16(v98)
+	goto L11
 L13:
 	;
-	v102 = v35 & int32(255)
-	v107 = v56 + int32(28)
-	v109 = l1 - v17*int32(4069) + int32(4095)
-	v110 = v107 + v109
-	v111 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v110))))
-	if v111 != v102 {
-		goto L25
-	} else {
-		goto L26
-	}
+	goto L16
 L14:
 	;
-	goto L13
+	goto L15
 L15:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v56)+10)) = int32(_a_F_XLogRecordPageWithFreeSpace_1)
-	v92 = int32(_a_F_XLogRecordPageWithFreeSpace_2)
-	*(*uint16)(unsafe.Add(mBase, uint32(v56)+18)) = uint16(v92)
-	v98 = int32(_a_F_XLogRecordPageWithFreeSpace_3)
-	*(*uint16)(unsafe.Add(mBase, uint32(v56)+16)) = uint16(v98)
-	*(*uint16)(unsafe.Add(mBase, uint32(v56)+14)) = uint16(v98)
-	goto L14
+	goto L21
 L16:
 	;
-	v86 = F___memset(m, v56, int32(0), int32(_a_F_XLogRecordPageWithFreeSpace_3))
-	mBase = m.M
-	goto L15
+	v69 = v47 + v51
+	v71 = v47 + int32(4)
+	if base.Ui32(v71) < base.Ui32(v69) {
+		goto L17
+	} else {
+		goto L18
+	}
 L17:
 	;
-	goto L16
+	v73 = v69
+	goto L19
+L18:
+	;
+	v73 = v71
+	goto L19
+L19:
+	;
+	v78 = (v47^int32(-1)+v73)&int32(-4) + int32(4)
+	if v78 == int32(0) {
+		goto L12
+	} else {
+		goto L20
+	}
+L20:
+	;
+	base.MemoryFill(m, v47, int32(0), v78)
+	goto L12
+L21:
+	;
+	base.MemoryFill(m, v47, int32(0), v51)
+	goto L12
+L22:
+	;
+	v109 = int32(-1)
+	goto L24
+L23:
+	;
+	v109 = int32(base.Ui32(l2) >> (uint(int32(5)) % 32))
+	goto L24
 L24:
 	;
-	if v201 != 0 {
-		goto L55
-	} else {
-		goto L56
-	}
-L25:
-	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v110))) = uint8(v102)
-	v121 = v109
-	goto L28
-L26:
-	;
-	v113 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107))))
-	if base.Ui32(v113) < base.Ui32(v102) {
-		goto L25
+	v111 = v109 & int32(255)
+	v117 = v47 + int32(28)
+	v119 = l1 - v17*int32(4069) + int32(4095)
+	v120 = v117 + v119
+	v121 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v120))))
+	if v121 != v111 {
+		goto L26
 	} else {
 		goto L27
 	}
+L25:
+	;
+	if v213 != 0 {
+		goto L56
+	} else {
+		goto L57
+	}
+L26:
+	;
+	*(*uint8)(unsafe.Add(mBase, uint32(v120))) = uint8(v111)
+	v130 = v119
+	goto L29
 L27:
 	;
-	v201 = int32(0)
-	goto L24
+	v123 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117))))
+	if base.Ui32(v123) < base.Ui32(v111) {
+		goto L26
+	} else {
+		goto L28
+	}
 L28:
 	;
-	v123 = int32(1)
-	v124 = v121 - v123
-	v125 = int32(2)
-	v126 = base.I32_div_s(v124, v125)
-	v128 = v126 << (uint(v123) % 32)
-	v130 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107+v128)+1)))
-	v132 = v128 + v125
-	if base.Ui32(v132) <= base.Ui32(int32(_a_F_XLogRecordPageWithFreeSpace_4)) {
-		goto L30
-	} else {
-		goto L31
-	}
+	v213 = int32(0)
+	goto L25
 L29:
 	;
-	v151 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107))))
-	if base.Ui32(v151) < base.Ui32(v102) {
-		goto L40
+	v134 = int32(1)
+	v135 = v130 - v134
+	v136 = int32(2)
+	v137 = base.I32_div_s(v135, v136)
+	v139 = v137 << (uint(v134) % 32)
+	v141 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117+v139)+1)))
+	v143 = v139 + v136
+	if base.Ui32(v143) <= base.Ui32(int32(_a_F_XLogRecordPageWithFreeSpace_4)) {
+		goto L31
 	} else {
-		goto L41
+		goto L32
 	}
 L30:
 	;
-	v136 = v130 & int32(255)
-	v138 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107+v132))))
-	if base.Ui32(v138) < base.Ui32(v136) {
-		goto L33
+	v162 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117))))
+	if base.Ui32(v162) < base.Ui32(v111) {
+		goto L41
 	} else {
-		goto L34
+		goto L42
 	}
 L31:
 	;
-	v141 = v130
-	goto L32
+	v147 = v141 & int32(255)
+	v149 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v117+v143))))
+	if base.Ui32(v149) < base.Ui32(v147) {
+		goto L34
+	} else {
+		goto L35
+	}
 L32:
 	;
-	v143 = v107 + v126
-	v144 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v143))))
-	if v144 != v141&int32(255) {
-		goto L36
-	} else {
-		goto L37
-	}
+	v152 = v141
+	goto L33
 L33:
 	;
-	v140 = v136
-	goto L35
+	v154 = v137 + v117
+	v155 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v154))))
+	if v155 != v152&int32(255) {
+		goto L37
+	} else {
+		goto L38
+	}
 L34:
 	;
-	v140 = v138
-	goto L35
+	v151 = v147
+	goto L36
 L35:
 	;
-	v141 = v140
-	goto L32
+	v151 = v149
+	goto L36
 L36:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v143))) = uint8(v141)
-	if int32(1) < v124 {
-		v121 = v126
-		goto L28
-	} else {
-		goto L39
-	}
+	v152 = v151
+	goto L33
 L37:
 	;
-	goto L38
+	*(*uint8)(unsafe.Add(mBase, uint32(v154))) = uint8(v152)
+	if int32(1) < v135 {
+		v130 = v137
+		goto L29
+	} else {
+		goto L40
+	}
 L38:
 	;
-	goto L29
+	goto L39
 L39:
 	;
-	goto L38
+	goto L30
 L40:
 	;
-	v157 = int32(4094)
-	goto L43
+	goto L39
 L41:
 	;
-	goto L42
+	v168 = int32(4094)
+	goto L44
 L42:
 	;
-	v201 = int32(1)
-	goto L24
+	goto L43
 L43:
 	;
-	if base.Ui32(int32(4081)) < base.Ui32(v157) {
-		v179 = int32(0)
-		goto L45
-	} else {
-		goto L46
-	}
+	v213 = int32(1)
+	goto L25
 L44:
 	;
-	goto L42
-L45:
-	;
-	v180 = v107 + v157
-	v181 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v180))))
-	if v181 != v179&int32(255) {
-		goto L51
-	} else {
-		goto L52
-	}
-L46:
-	;
-	v164 = v157 << (uint(int32(1)) % 32)
-	v166 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107+v164)+1)))
-	if v157 == int32(4081) {
-		v179 = v166
-		goto L45
+	if base.Ui32(int32(4081)) < base.Ui32(v168) {
+		v189 = int32(0)
+		goto L46
 	} else {
 		goto L47
 	}
+L45:
+	;
+	goto L43
+L46:
+	;
+	v190 = v168 + v117
+	v191 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v190))))
+	if v191 != v189&int32(255) {
+		goto L52
+	} else {
+		goto L53
+	}
 L47:
 	;
-	v170 = v166 & int32(255)
-	v174 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v107+(v164+int32(2))))))
-	if base.Ui32(v174) < base.Ui32(v170) {
-		goto L48
+	v178 = v168 << (uint(int32(1)) % 32)
+	v180 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v47+int32(29)+v178))))
+	if v168 == int32(4081) {
+		v189 = v180
+		goto L46
 	} else {
-		goto L49
+		goto L48
 	}
 L48:
 	;
-	v176 = v170
-	goto L50
+	v184 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v178+v117)+2)))
+	if base.Ui32(v184) < base.Ui32(v180) {
+		goto L49
+	} else {
+		goto L50
+	}
 L49:
 	;
-	v176 = v174
-	goto L50
+	v186 = v180
+	goto L51
 L50:
 	;
-	v179 = v176
-	goto L45
+	v186 = v184
+	goto L51
 L51:
 	;
-	*(*uint8)(unsafe.Add(mBase, uint32(v180))) = uint8(v179)
-	goto L53
+	v189 = v186
+	goto L46
 L52:
 	;
-	goto L53
+	*(*uint8)(unsafe.Add(mBase, uint32(v190))) = uint8(v189)
+	goto L54
 L53:
 	;
-	if v157 != 0 {
-		v157 = v157 - int32(1)
-		goto L43
-	} else {
-		goto L54
-	}
+	goto L54
 L54:
 	;
-	goto L44
+	if v168 != 0 {
+		v168 = v168 - int32(1)
+		goto L44
+	} else {
+		goto L55
+	}
 L55:
+	;
+	goto L45
+L56:
 	;
 	F_MarkBufferDirtyHint(m, v25, int32(0))
 	mBase = m.M
-	v204 = m.ExcPending
-	if v204 != 0 {
-		goto L1
-	} else {
-		goto L58
-	}
-L56:
-	;
-	goto L57
-L57:
-	;
-	F_UnlockReleaseBuffer(m, v25)
-	mBase = m.M
-	v206 = m.ExcPending
-	if v206 != 0 {
+	v216 = m.ExcPending
+	if v216 != 0 {
 		goto L1
 	} else {
 		goto L59
 	}
+L57:
+	;
+	goto L58
 L58:
 	;
-	goto L57
+	F_UnlockReleaseBuffer(m, v25)
+	mBase = m.M
+	v218 = m.ExcPending
+	if v218 != 0 {
+		goto L1
+	} else {
+		goto L60
+	}
 L59:
+	;
+	goto L58
+L60:
 	;
 	m.G0 = v9 + int32(16)
 	return

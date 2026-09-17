@@ -16,95 +16,95 @@ func F_disable_timeout(m *base.Module, l0 int32) {
 	_ = v8
 	var v14 int32
 	_ = v14
-	var v17 int32
-	_ = v17
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
+	var v15 int32
+	_ = v15
+	var v20 int32
+	_ = v20
+	var v24 int32
+	_ = v24
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
+	var v36 int32
+	_ = v36
 	var v40 int32
 	_ = v40
-	var v44 int32
-	_ = v44
+	var v47 int32
+	_ = v47
 	var v51 int32
 	_ = v51
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v64 int32
-	_ = v64
+	var v54 int32
+	_ = v54
+	var v60 int32
+	_ = v60
+	var v65 int32
+	_ = v65
+	var v68 int32
+	_ = v68
 	var v69 int32
 	_ = v69
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
+	var v72 int32
+	_ = v72
 	var v74 int32
 	_ = v74
 	var v76 int32
 	_ = v76
-	var v78 int32
-	_ = v78
-	var __phi78 int32
-	_ = __phi78
-	var v79 int32
-	_ = v79
-	var __phi79 int32
-	_ = __phi79
-	var v83 int32
-	_ = v83
-	var v91 int32
-	_ = v91
-	var v94 int32
-	_ = v94
-	var v96 int32
-	_ = v96
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v116 int32
-	_ = v116
-	var v119 int32
-	_ = v119
-	var v125 int32
-	_ = v125
-	var v126 int32
+	var __phi76 int32
+	_ = __phi76
+	var v77 int32
+	_ = v77
+	var __phi77 int32
+	_ = __phi77
+	var v81 int32
+	_ = v81
+	var v87 int32
+	_ = v87
+	var v90 int32
+	_ = v90
+	var v92 int32
+	_ = v92
+	var v99 int32
+	_ = v99
+	var v101 int32
+	_ = v101
+	var v112 int32
+	_ = v112
+	var v115 int32
+	_ = v115
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
+	var v123 int32
+	_ = v123
+	var v126 int64
 	_ = v126
-	var v127 int32
+	var v127 int64
 	_ = v127
-	var v130 int64
-	_ = v130
-	var v131 int64
-	_ = v131
-	var v141 int32
-	_ = v141
+	var v137 int32
+	_ = v137
 	v2 = int32(0)
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
 	*(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[0])) = v2
 	v14 = l0 * int32(40)
-	v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_disable_timeout[1]))))
-	if v17 == int32(1) {
+	v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_disable_timeout[1]))))
+	if v15 == int32(1) {
 		goto L1
 	} else {
 		goto L2
 	}
 L1:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v22 <= int32(0) {
-		v51 = int32(-1)
+	v20 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v20 <= int32(0) {
+		v47 = int32(-1)
 		goto L5
 	} else {
 		goto L6
@@ -114,22 +114,22 @@ L2:
 	goto L3
 L3:
 	;
-	v116 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_disable_timeout[3]))) = uint8(v116)
-	v119 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v116 < v119 {
+	v112 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_disable_timeout[3]))) = uint8(v112)
+	v115 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v112 < v115 {
 		goto L23
 	} else {
 		goto L24
 	}
 L4:
 	;
-	v70 = *(*int32)(unsafe.Add(mBase, uint32(v31)+uint32(_c_F_disable_timeout[4])))
-	v71 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v70)+4)) = uint8(v71)
-	v74 = v26 + int32(1)
-	v76 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v74 < v76 {
+	v68 = *(*int32)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_disable_timeout[4])))
+	v69 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v68)+4)) = uint8(v69)
+	v72 = v24 + int32(1)
+	v74 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v72 < v74 {
 		goto L17
 	} else {
 		goto L18
@@ -138,44 +138,44 @@ L5:
 	;
 	F_errstart_cold(m, int32(22), int32(0))
 	mBase = m.M
-	v55 = m.ExcPending
-	if v55 != 0 {
+	v51 = m.ExcPending
+	if v51 != 0 {
 		goto L13
 	} else {
 		goto L14
 	}
 L6:
 	;
-	v26 = v2
+	v24 = v2
 	goto L8
 L7:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v26 < v44 {
+	v40 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v24 < v40 {
 		goto L4
 	} else {
 		goto L12
 	}
 L8:
 	;
-	v31 = v26 << (uint(int32(2)) % 32)
-	v34 = *(*int32)(unsafe.Add(mBase, uint32(v31)+uint32(_c_F_disable_timeout[4])))
-	v35 = *(*int32)(unsafe.Add(mBase, uint32(v34)))
-	if v35 == l0 {
+	v29 = v24 << (uint(int32(2)) % 32)
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+uint32(_c_F_disable_timeout[4])))
+	v31 = *(*int32)(unsafe.Add(mBase, uint32(v30)))
+	if v31 == l0 {
 		goto L7
 	} else {
 		goto L10
 	}
 L9:
 	;
-	v51 = int32(-1)
+	v47 = int32(-1)
 	goto L5
 L10:
 	;
-	v38 = v26 + int32(1)
-	v40 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v38 < v40 {
-		v26 = v38
+	v34 = v24 + int32(1)
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v34 < v36 {
+		v24 = v34
 		goto L8
 	} else {
 		goto L11
@@ -185,20 +185,20 @@ L11:
 	goto L9
 L12:
 	;
-	v51 = v26
+	v47 = v24
 	goto L5
 L13:
 	;
 	return
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v51
-	v58 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v58 - int32(1)
+	*(*int32)(unsafe.Add(mBase, uint32(v8))) = v47
+	v54 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	*(*int32)(unsafe.Add(mBase, uint32(v8)+4)) = v54 - int32(1)
 	F_errmsg_internal(m, int32(_a_F_disable_timeout_0), v8)
 	mBase = m.M
-	v64 = m.ExcPending
-	if v64 != 0 {
+	v60 = m.ExcPending
+	if v60 != 0 {
 		goto L13
 	} else {
 		goto L15
@@ -207,8 +207,8 @@ L15:
 	;
 	F_errfinish(m, int32(_a_F_disable_timeout_1), int32(143), int32(_a_F_disable_timeout_2))
 	mBase = m.M
-	v69 = m.ExcPending
-	if v69 != 0 {
+	v65 = m.ExcPending
+	if v65 != 0 {
 		goto L13
 	} else {
 		goto L16
@@ -220,32 +220,32 @@ L16:
 	}
 L17:
 	;
-	__phi78 = v74
-	__phi79 = v26
-	v78 = __phi78
-	v79 = __phi79
+	__phi76 = v72
+	__phi77 = v24
+	v76 = __phi76
+	v77 = __phi77
 	goto L20
 L18:
 	;
 	goto L19
 L19:
 	;
-	v103 = int32(_a_F_disable_timeout_3)
-	v105 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	*(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2])) = v105 - int32(1)
+	v99 = int32(_a_F_disable_timeout_3)
+	v101 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	*(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2])) = v101 - int32(1)
 	goto L3
 L20:
 	;
-	v83 = int32(2)
-	v91 = *(*int32)(unsafe.Add(mBase, uint32(v78<<(uint(v83)%32))+uint32(_c_F_disable_timeout[4])))
-	*(*int32)(unsafe.Add(mBase, uint32(v79<<(uint(v83)%32))+uint32(_c_F_disable_timeout[4]))) = v91
-	v94 = v78 + int32(1)
-	v96 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
-	if v94 < v96 {
-		__phi78 = v94
-		__phi79 = v78
-		v78 = __phi78
-		v79 = __phi79
+	v81 = int32(2)
+	v87 = *(*int32)(unsafe.Add(mBase, uint32(v76<<(uint(v81)%32))+uint32(_c_F_disable_timeout[4])))
+	*(*int32)(unsafe.Add(mBase, uint32(v77<<(uint(v81)%32))+uint32(_c_F_disable_timeout[4]))) = v87
+	v90 = v76 + int32(1)
+	v92 = *(*int32)(unsafe.Add(mBase, _c_F_disable_timeout[2]))
+	if v90 < v92 {
+		__phi76 = v90
+		__phi77 = v76
+		v76 = __phi76
+		v77 = __phi77
 		goto L20
 	} else {
 		goto L22
@@ -258,15 +258,15 @@ L22:
 	goto L21
 L23:
 	;
-	v125 = m.G0
-	v126 = int32(16)
-	v127 = v125 - v126
-	m.G0 = v127
-	F___gettimeofday(m, v127)
+	v121 = m.G0
+	v122 = int32(16)
+	v123 = v121 - v122
+	m.G0 = v123
+	F_gettimeofday(m, v123)
 	mBase = m.M
-	v130 = *(*int64)(unsafe.Add(mBase, uint32(v127)))
-	v131 = int64(*(*int32)(unsafe.Add(mBase, uint32(v127)+8)))
-	m.G0 = v127 + v126
+	v126 = *(*int64)(unsafe.Add(mBase, uint32(v123)))
+	v127 = int64(*(*int32)(unsafe.Add(mBase, uint32(v123)+8)))
+	m.G0 = v123 + v122
 	goto L26
 L24:
 	;
@@ -277,10 +277,10 @@ L25:
 	return
 L26:
 	;
-	F_schedule_alarm(m, v131+v130*int64(1000000)-int64(946684800000000))
+	F_schedule_alarm(m, v127+v126*int64(1000000)-int64(946684800000000))
 	mBase = m.M
-	v141 = m.ExcPending
-	if v141 != 0 {
+	v137 = m.ExcPending
+	if v137 != 0 {
 		goto L13
 	} else {
 		goto L27

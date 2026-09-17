@@ -42,22 +42,20 @@ func F_BufFileWrite(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v26
 	var v31 int32
 	_ = v31
-	var v34 int32
-	_ = v34
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v38 int32
+	_ = v38
+	var v40 int32
+	_ = v40
 	var v41 int32
 	_ = v41
-	var v42 int32
-	_ = v42
-	var v44 int32
-	_ = v44
-	var v48 int32
-	_ = v48
+	var v43 int32
+	_ = v43
+	var v47 int32
+	_ = v47
 	if l2 != 0 {
 		goto L1
 	} else {
@@ -89,8 +87,8 @@ L5:
 	goto L3
 L6:
 	;
-	v34 = int32(_a_F_BufFileWrite_0) - v31
-	if base.Ui32(v34) < base.Ui32(v12) {
+	v33 = int32(_a_F_BufFileWrite_0) - v31
+	if base.Ui32(v33) < base.Ui32(v12) {
 		goto L13
 	} else {
 		goto L14
@@ -133,62 +131,58 @@ L12:
 	goto L6
 L13:
 	;
-	v36 = v34
+	v35 = v33
 	goto L15
 L14:
 	;
-	v36 = v12
+	v35 = v12
 	goto L15
 L15:
 	;
-	if v36 != 0 {
-		goto L17
+	if v35 != 0 {
+		goto L16
 	} else {
-		goto L18
+		goto L17
 	}
 L16:
 	;
-	v39 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)) = uint8(v39)
-	v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
-	v42 = v41 + v36
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v42
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	if v44 < v42 {
-		goto L20
-	} else {
-		goto L21
-	}
+	base.MemoryCopy(m, v31+(l0+int32(48)), v11, v35)
+	goto L18
 L17:
 	;
-	v37 = F__emscripten_memcpy_bulkmem(m, v31+(l0+int32(48)), v11, v36)
-	mBase = m.M
-	goto L19
+	goto L18
 L18:
 	;
-	goto L19
+	v38 = int32(1)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+9)) = uint8(v38)
+	v40 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
+	v41 = v40 + v35
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+40)) = v41
+	v43 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
+	if v43 < v41 {
+		goto L19
+	} else {
+		goto L20
+	}
 L19:
 	;
-	goto L16
+	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v41
+	goto L21
 L20:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+44)) = v42
-	goto L22
+	goto L21
 L21:
 	;
-	goto L22
-L22:
-	;
-	v48 = v12 - v36
-	if v48 != 0 {
-		v11 = v11 + v36
-		v12 = v48
-		v13 = v42
+	v47 = v12 - v35
+	if v47 != 0 {
+		v11 = v11 + v35
+		v12 = v47
+		v13 = v41
 		goto L4
 	} else {
-		goto L23
+		goto L22
 	}
-L23:
+L22:
 	;
 	goto L5
 }

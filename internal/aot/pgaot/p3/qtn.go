@@ -8,41 +8,33 @@ import (
 func F_QTNEq(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v3 int32
-	_ = v3
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
+	var v14 int32
+	_ = v14
+	var v17 int32
+	_ = v17
 	var v18 int32
 	_ = v18
-	v3 = int32(0)
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l1)+16))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+16))
 	v9 = v7 & v8
-	if v9 != v8 {
-		v18 = v3
-		return v18
+	if base.B2i32(v9 != v8)|base.B2i32(v7 != v9) != 0 {
+		v18 = int32(1)
+		return base.B2i32(v18 == int32(0))
 	} else {
-		if v7 != v9 {
-			v18 = v3
-			return v18
+		v14 = F_QTNodeCompare(m, l0, l1)
+		mBase = m.M
+		v17 = m.ExcPending
+		if v17 != 0 {
+			return int32(0)
 		} else {
-			v12 = F_QTNodeCompare(m, l0, l1)
-			mBase = m.M
-			v15 = m.ExcPending
-			if v15 != 0 {
-				return int32(0)
-			} else {
-				v18 = base.B2i32(v12 == int32(0))
-				return v18
-			}
+			v18 = v14
+			return base.B2i32(v18 == int32(0))
 		}
 	}
 }
@@ -382,7 +374,7 @@ L10:
 L11:
 	;
 	v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	F_pg_qsort(m, v33, v25, int32(4), int32(1534))
+	F_pg_qsort(m, v33, v25, int32(4), int32(1515))
 	mBase = m.M
 	v37 = m.ExcPending
 	if v37 != 0 {

@@ -10,6 +10,15 @@ import MemoryChart from '../../components/MemoryChart.astro';
 
 <MemoryChart lang="en" />
 
+## Latest AOT rerun
+
+The pgmem library and standalone binary rows were rerun on 2026-09-18 with
+the export-pruned AOT build: five runs for each timing/memory sample, plus a
+three-run Go benchmark. The stripped darwin/arm64 binary is 36.7 MB, its zip
+payload is 16.3 MB, and linking pgmem into a stripped Go test binary adds
+33.1 MB. Docker, Testcontainers and devbox were not rerun; their comparison
+rows remain the 2026-09-14 baselines.
+
 ## What each column measures
 
 Every run is a fresh process that starts one server, loads the same schema, and then measures. The harness is in [`bench/alternatives`](https://github.com/shibukawa/pgmem/tree/main/bench/alternatives).

@@ -6,260 +6,16 @@ import (
 )
 
 func F_tsquery_or(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
+	var v3 int32
+	_ = v3
 	var v6 int32
 	_ = v6
-	var v7 int32
-	_ = v7
-	var v10 int32
-	_ = v10
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v19 int32
-	_ = v19
-	var v21 int32
-	_ = v21
-	var v24 int32
-	_ = v24
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v43 int32
-	_ = v43
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
-	var v57 int32
-	_ = v57
-	var v58 int32
-	_ = v58
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v69 int32
-	_ = v69
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
-	var v76 int32
-	_ = v76
-	var v78 int32
-	_ = v78
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
-	var v83 int32
-	_ = v83
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v7 = F_pg_detoast_datum_copy(m, v6)
-	mBase = m.M
-	v10 = m.ExcPending
-	if v10 != 0 {
+	v3 = Fn14008(m, l0, int32(3))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		v12 = l0 + int32(28)
-		v13 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-		v14 = F_pg_detoast_datum_copy(m, v13)
-		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
-			return int32(0)
-		} else {
-			v16 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-			if v16 == int32(0) {
-				v19 = *(*int32)(unsafe.Add(mBase, uint32(v12)))
-				if v19 != v7 {
-					v78 = v7
-					v79 = v14
-					F_pfree(m, v78)
-					mBase = m.M
-					v81 = m.ExcPending
-					if v81 != 0 {
-						return int32(0)
-					} else {
-						v83 = v79
-						return v83
-					}
-				} else {
-					v83 = v14
-					return v83
-				}
-			} else {
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
-				if v21 == int32(0) {
-					v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-					if v14 != v24 {
-						v78 = v14
-						v79 = v7
-						F_pfree(m, v78)
-						mBase = m.M
-						v81 = m.ExcPending
-						if v81 != 0 {
-							return int32(0)
-						} else {
-							v83 = v79
-							return v83
-						}
-					} else {
-						v83 = v7
-						return v83
-					}
-				} else {
-					v27 = F_palloc0(m, int32(24))
-					mBase = m.M
-					v28 = m.ExcPending
-					if v28 != 0 {
-						return int32(0)
-					} else {
-						v29 = *(*int32)(unsafe.Add(mBase, uint32(v27)+4))
-						*(*int32)(unsafe.Add(mBase, uint32(v27)+4)) = v29 | int32(1)
-						v34 = F_palloc0(m, int32(12))
-						mBase = m.M
-						v35 = m.ExcPending
-						if v35 != 0 {
-							return int32(0)
-						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v27))) = v34
-							v37 = int32(2)
-							*(*uint8)(unsafe.Add(mBase, uint32(v34))) = uint8(v37)
-							v39 = *(*int32)(unsafe.Add(mBase, uint32(v27)))
-							v40 = int32(3)
-							*(*uint8)(unsafe.Add(mBase, uint32(v39)+1)) = uint8(v40)
-							v43 = F_palloc0(m, int32(8))
-							mBase = m.M
-							v44 = m.ExcPending
-							if v44 != 0 {
-								return int32(0)
-							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v27)+20)) = v43
-								v47 = v14 + int32(8)
-								v48 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
-								v52 = F_QT2QTN(m, v47, v47+v48*int32(12))
-								mBase = m.M
-								v53 = m.ExcPending
-								if v53 != 0 {
-									return int32(0)
-								} else {
-									v54 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
-									*(*int32)(unsafe.Add(mBase, uint32(v54))) = v52
-									v57 = v7 + int32(8)
-									v58 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
-									v62 = F_QT2QTN(m, v57, v57+v58*int32(12))
-									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
-										return int32(0)
-									} else {
-										v64 = *(*int32)(unsafe.Add(mBase, uint32(v27)+20))
-										*(*int32)(unsafe.Add(mBase, uint32(v64)+4)) = v62
-										*(*int32)(unsafe.Add(mBase, uint32(v27)+8)) = int32(2)
-										v68 = F_QTN2QT(m, v27)
-										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
-											return int32(0)
-										} else {
-											F_QTNFree(m, v27)
-											mBase = m.M
-											v71 = m.ExcPending
-											if v71 != 0 {
-												return int32(0)
-											} else {
-												v72 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-												if v72 != v7 {
-													F_pfree(m, v7)
-													mBase = m.M
-													v75 = m.ExcPending
-													if v75 != 0 {
-														return int32(0)
-													} else {
-														v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-														if v14 == v76 {
-															v83 = v68
-															return v83
-														} else {
-															v78 = v14
-															v79 = v68
-															F_pfree(m, v78)
-															mBase = m.M
-															v81 = m.ExcPending
-															if v81 != 0 {
-																return int32(0)
-															} else {
-																v83 = v79
-																return v83
-															}
-														}
-													}
-												} else {
-													v76 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-													if v14 == v76 {
-														v83 = v68
-														return v83
-													} else {
-														v78 = v14
-														v79 = v68
-														F_pfree(m, v78)
-														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
-															return int32(0)
-														} else {
-															v83 = v79
-															return v83
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		return v3
 	}
 }
 func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
@@ -347,20 +103,20 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 	_ = v85
 	var v87 int32
 	_ = v87
-	var v88 int32
-	_ = v88
-	var v91 int32
-	_ = v91
+	var v89 int32
+	_ = v89
+	var v92 int32
+	_ = v92
 	var v93 int32
 	_ = v93
-	var v102 int32
-	_ = v102
-	var v105 int32
-	_ = v105
-	var v110 int32
-	_ = v110
-	var v115 int32
-	_ = v115
+	var v104 int32
+	_ = v104
+	var v107 int32
+	_ = v107
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
 	v8 = m.G0
 	v10 = v8 - int32(16)
 	m.G0 = v10
@@ -384,15 +140,15 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 				if v23 == int32(0) {
 					v26 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 					if v13 != v26 {
-						v87 = v13
-						v88 = v18
-						F_pfree(m, v87)
+						v87 = v18
+						v89 = v13
+						F_pfree(m, v89)
 						mBase = m.M
-						v91 = m.ExcPending
-						if v91 != 0 {
+						v92 = m.ExcPending
+						if v92 != 0 {
 							return int32(0)
 						} else {
-							v93 = v88
+							v93 = v87
 							m.G0 = v10 + int32(16)
 							return v93
 						}
@@ -405,16 +161,16 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 					v28 = *(*int32)(unsafe.Add(mBase, uint32(v18)+4))
 					if v28 == int32(0) {
 						v31 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-						if v18 != v31 {
-							v87 = v18
-							v88 = v13
-							F_pfree(m, v87)
+						if v31 != v18 {
+							v87 = v13
+							v89 = v18
+							F_pfree(m, v89)
 							mBase = m.M
-							v91 = m.ExcPending
-							if v91 != 0 {
+							v92 = m.ExcPending
+							if v92 != 0 {
 								return int32(0)
 							} else {
-								v93 = v88
+								v93 = v87
 								m.G0 = v10 + int32(16)
 								return v93
 							}
@@ -495,20 +251,20 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 															return int32(0)
 														} else {
 															v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-															if v18 == v85 {
+															if v85 == v18 {
 																v93 = v77
 																m.G0 = v10 + int32(16)
 																return v93
 															} else {
-																v87 = v18
-																v88 = v77
-																F_pfree(m, v87)
+																v87 = v77
+																v89 = v18
+																F_pfree(m, v89)
 																mBase = m.M
-																v91 = m.ExcPending
-																if v91 != 0 {
+																v92 = m.ExcPending
+																if v92 != 0 {
 																	return int32(0)
 																} else {
-																	v93 = v88
+																	v93 = v87
 																	m.G0 = v10 + int32(16)
 																	return v93
 																}
@@ -516,20 +272,20 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 														}
 													} else {
 														v85 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-														if v18 == v85 {
+														if v85 == v18 {
 															v93 = v77
 															m.G0 = v10 + int32(16)
 															return v93
 														} else {
-															v87 = v18
-															v88 = v77
-															F_pfree(m, v87)
+															v87 = v77
+															v89 = v18
+															F_pfree(m, v89)
 															mBase = m.M
-															v91 = m.ExcPending
-															if v91 != 0 {
+															v92 = m.ExcPending
+															if v92 != 0 {
 																return int32(0)
 															} else {
-																v93 = v88
+																v93 = v87
 																m.G0 = v10 + int32(16)
 																return v93
 															}
@@ -547,27 +303,27 @@ func F_tsquery_phrase_distance(m *base.Module, l0 int32) int32 {
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v102 = m.ExcPending
-				if v102 != 0 {
+				v104 = m.ExcPending
+				if v104 != 0 {
 					return int32(0)
 				} else {
 					F_errcode(m, int32(50856066))
 					mBase = m.M
-					v105 = m.ExcPending
-					if v105 != 0 {
+					v107 = m.ExcPending
+					if v107 != 0 {
 						return int32(0)
 					} else {
 						*(*int32)(unsafe.Add(mBase, uint32(v10))) = int32(_a_F_tsquery_phrase_distance_1)
 						F_errmsg(m, int32(_a_F_tsquery_phrase_distance_2), v10)
 						mBase = m.M
-						v110 = m.ExcPending
-						if v110 != 0 {
+						v112 = m.ExcPending
+						if v112 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_tsquery_phrase_distance_3), int32(126), int32(_a_F_tsquery_phrase_distance_4))
 							mBase = m.M
-							v115 = m.ExcPending
-							if v115 != 0 {
+							v117 = m.ExcPending
+							if v117 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()

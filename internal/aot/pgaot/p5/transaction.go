@@ -38,457 +38,339 @@ func F_TransactionIdDidCommit(m *base.Module, l0 int32) int32 {
 	_ = v10
 	var v13 int32
 	_ = v13
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v32 int64
+	var v21 int32
+	_ = v21
+	var v24 int32
+	_ = v24
+	var v30 int64
+	_ = v30
+	var v32 int32
 	_ = v32
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
 	var v40 int32
 	_ = v40
-	var v49 int32
-	_ = v49
 	var v50 int32
 	_ = v50
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
+	var v51 int32
+	_ = v51
+	var v54 int32
+	_ = v54
 	var v57 int32
 	_ = v57
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
+	var v58 int32
+	_ = v58
+	var v64 int32
+	_ = v64
 	var v69 int32
 	_ = v69
 	var v70 int32
 	_ = v70
-	var v74 int32
-	_ = v74
+	var v71 int32
+	_ = v71
+	var v75 int32
+	_ = v75
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[0]))
 	if v10 == l0 {
 		v13 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[1]))
-		v34 = v13
-		v35 = int32(1)
-		switch v34 - v35 {
+		v32 = v13
+		v33 = int32(1)
+		switch v32 - v33 {
 		case 0:
-			v74 = v35
+			v75 = v33
 			m.G0 = v7 + int32(16)
-			return v74
+			return v75
 		default:
-			v74 = int32(0)
+			v75 = int32(0)
 			m.G0 = v7 + int32(16)
-			return v74
+			return v75
 		case 2:
-			v38 = int32(0)
+			v36 = int32(0)
+			v37 = int32(3)
 			v40 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[2]))
-			if base.Ui32(l0) < base.Ui32(int32(3)) {
-				if base.Ui32(l0) < base.Ui32(v40) {
-					v74 = v38
-					m.G0 = v7 + int32(16)
-					return v74
-				} else {
-					v49 = F_SubTransGetParent(m, l0)
+			if base.B2i32(base.Ui32(l0) < base.Ui32(v37))|base.B2i32(base.Ui32(v40) < base.Ui32(v37)) == v36 {
+				if int32(0) <= l0-v40 {
+					v50 = F_SubTransGetParent(m, l0)
 					mBase = m.M
-					v50 = m.ExcPending
-					if v50 != 0 {
+					v51 = m.ExcPending
+					if v51 != 0 {
 						return int32(0)
 					} else {
-						if v49 == int32(0) {
-							v53 = int32(0)
-							v56 = F_errstart(m, int32(19), v53)
+						if v50 == int32(0) {
+							v54 = int32(0)
+							v57 = F_errstart(m, int32(19), v54)
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
+							v58 = m.ExcPending
+							if v58 != 0 {
 								return int32(0)
 							} else {
-								if v56 == int32(0) {
-									v74 = v53
+								if v57 == int32(0) {
+									v75 = v54
 									m.G0 = v7 + int32(16)
-									return v74
+									return v75
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
 									F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
 									mBase = m.M
-									v63 = m.ExcPending
-									if v63 != 0 {
+									v64 = m.ExcPending
+									if v64 != 0 {
 										return int32(0)
 									} else {
 										F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
 										mBase = m.M
-										v68 = m.ExcPending
-										if v68 != 0 {
+										v69 = m.ExcPending
+										if v69 != 0 {
 											return int32(0)
 										} else {
-											v74 = v53
+											v75 = v54
 											m.G0 = v7 + int32(16)
-											return v74
+											return v75
 										}
 									}
 								}
 							}
 						} else {
-							v69 = F_TransactionIdDidCommit(m, v49)
+							v70 = F_TransactionIdDidCommit(m, v50)
 							mBase = m.M
-							v70 = m.ExcPending
-							if v70 != 0 {
+							v71 = m.ExcPending
+							if v71 != 0 {
 								return int32(0)
 							} else {
-								v74 = v69
+								v75 = v70
 								m.G0 = v7 + int32(16)
-								return v74
-							}
-						}
-					}
-				}
-			} else {
-				if base.Ui32(v40) < base.Ui32(int32(3)) {
-					if base.Ui32(l0) < base.Ui32(v40) {
-						v74 = v38
-						m.G0 = v7 + int32(16)
-						return v74
-					} else {
-						v49 = F_SubTransGetParent(m, l0)
-						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
-							return int32(0)
-						} else {
-							if v49 == int32(0) {
-								v53 = int32(0)
-								v56 = F_errstart(m, int32(19), v53)
-								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
-									return int32(0)
-								} else {
-									if v56 == int32(0) {
-										v74 = v53
-										m.G0 = v7 + int32(16)
-										return v74
-									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-										F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
-										mBase = m.M
-										v63 = m.ExcPending
-										if v63 != 0 {
-											return int32(0)
-										} else {
-											F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
-											mBase = m.M
-											v68 = m.ExcPending
-											if v68 != 0 {
-												return int32(0)
-											} else {
-												v74 = v53
-												m.G0 = v7 + int32(16)
-												return v74
-											}
-										}
-									}
-								}
-							} else {
-								v69 = F_TransactionIdDidCommit(m, v49)
-								mBase = m.M
-								v70 = m.ExcPending
-								if v70 != 0 {
-									return int32(0)
-								} else {
-									v74 = v69
-									m.G0 = v7 + int32(16)
-									return v74
-								}
+								return v75
 							}
 						}
 					}
 				} else {
-					if int32(0) <= l0-v40 {
-						v49 = F_SubTransGetParent(m, l0)
-						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
-							return int32(0)
-						} else {
-							if v49 == int32(0) {
-								v53 = int32(0)
-								v56 = F_errstart(m, int32(19), v53)
-								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
-									return int32(0)
+					v75 = v36
+					m.G0 = v7 + int32(16)
+					return v75
+				}
+			} else {
+				if base.Ui32(l0) < base.Ui32(v40) {
+					v75 = v36
+					m.G0 = v7 + int32(16)
+					return v75
+				} else {
+					v50 = F_SubTransGetParent(m, l0)
+					mBase = m.M
+					v51 = m.ExcPending
+					if v51 != 0 {
+						return int32(0)
+					} else {
+						if v50 == int32(0) {
+							v54 = int32(0)
+							v57 = F_errstart(m, int32(19), v54)
+							mBase = m.M
+							v58 = m.ExcPending
+							if v58 != 0 {
+								return int32(0)
+							} else {
+								if v57 == int32(0) {
+									v75 = v54
+									m.G0 = v7 + int32(16)
+									return v75
 								} else {
-									if v56 == int32(0) {
-										v74 = v53
-										m.G0 = v7 + int32(16)
-										return v74
+									*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
+									F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
+									mBase = m.M
+									v64 = m.ExcPending
+									if v64 != 0 {
+										return int32(0)
 									} else {
-										*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-										F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
+										F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
 										mBase = m.M
-										v63 = m.ExcPending
-										if v63 != 0 {
+										v69 = m.ExcPending
+										if v69 != 0 {
 											return int32(0)
 										} else {
-											F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
-											mBase = m.M
-											v68 = m.ExcPending
-											if v68 != 0 {
-												return int32(0)
-											} else {
-												v74 = v53
-												m.G0 = v7 + int32(16)
-												return v74
-											}
+											v75 = v54
+											m.G0 = v7 + int32(16)
+											return v75
 										}
 									}
 								}
+							}
+						} else {
+							v70 = F_TransactionIdDidCommit(m, v50)
+							mBase = m.M
+							v71 = m.ExcPending
+							if v71 != 0 {
+								return int32(0)
 							} else {
-								v69 = F_TransactionIdDidCommit(m, v49)
-								mBase = m.M
-								v70 = m.ExcPending
-								if v70 != 0 {
-									return int32(0)
-								} else {
-									v74 = v69
-									m.G0 = v7 + int32(16)
-									return v74
-								}
+								v75 = v70
+								m.G0 = v7 + int32(16)
+								return v75
 							}
 						}
-					} else {
-						v74 = v38
-						m.G0 = v7 + int32(16)
-						return v74
 					}
 				}
 			}
 		}
 	} else {
 		if base.Ui32(l0) <= base.Ui32(int32(2)) {
-			if base.Ui32(int32(2)) <= base.Ui32(l0-int32(1)) {
-				v74 = int32(0)
+			if l0 == int32(0) {
+				v75 = int32(0)
 			} else {
-				v74 = int32(1)
+				v75 = int32(1)
 			}
 			m.G0 = v7 + int32(16)
-			return v74
+			return v75
 		} else {
-			v23 = F_TransactionIdGetStatus(m, l0, v7+int32(8))
+			v21 = F_TransactionIdGetStatus(m, l0, v7+int32(8))
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
+			v24 = m.ExcPending
+			if v24 != 0 {
 				return int32(0)
 			} else {
-				switch v23 {
+				switch v21 {
 				case 0, 3:
-					v34 = v23
+					v32 = v21
 				default:
-					*(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[1])) = v23
+					*(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[1])) = v21
 					*(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[0])) = l0
-					v32 = *(*int64)(unsafe.Add(mBase, uint32(v7)+8))
-					*(*int64)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[3])) = v32
-					v34 = v23
+					v30 = *(*int64)(unsafe.Add(mBase, uint32(v7)+8))
+					*(*int64)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[3])) = v30
+					v32 = v21
 				}
-				v35 = int32(1)
-				switch v34 - v35 {
+				v33 = int32(1)
+				switch v32 - v33 {
 				case 0:
-					v74 = v35
+					v75 = v33
 					m.G0 = v7 + int32(16)
-					return v74
+					return v75
 				default:
-					v74 = int32(0)
+					v75 = int32(0)
 					m.G0 = v7 + int32(16)
-					return v74
+					return v75
 				case 2:
-					v38 = int32(0)
+					v36 = int32(0)
+					v37 = int32(3)
 					v40 = *(*int32)(unsafe.Add(mBase, _c_F_TransactionIdDidCommit[2]))
-					if base.Ui32(l0) < base.Ui32(int32(3)) {
-						if base.Ui32(l0) < base.Ui32(v40) {
-							v74 = v38
-							m.G0 = v7 + int32(16)
-							return v74
-						} else {
-							v49 = F_SubTransGetParent(m, l0)
+					if base.B2i32(base.Ui32(l0) < base.Ui32(v37))|base.B2i32(base.Ui32(v40) < base.Ui32(v37)) == v36 {
+						if int32(0) <= l0-v40 {
+							v50 = F_SubTransGetParent(m, l0)
 							mBase = m.M
-							v50 = m.ExcPending
-							if v50 != 0 {
+							v51 = m.ExcPending
+							if v51 != 0 {
 								return int32(0)
 							} else {
-								if v49 == int32(0) {
-									v53 = int32(0)
-									v56 = F_errstart(m, int32(19), v53)
+								if v50 == int32(0) {
+									v54 = int32(0)
+									v57 = F_errstart(m, int32(19), v54)
 									mBase = m.M
-									v57 = m.ExcPending
-									if v57 != 0 {
+									v58 = m.ExcPending
+									if v58 != 0 {
 										return int32(0)
 									} else {
-										if v56 == int32(0) {
-											v74 = v53
+										if v57 == int32(0) {
+											v75 = v54
 											m.G0 = v7 + int32(16)
-											return v74
+											return v75
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
 											F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
 											mBase = m.M
-											v63 = m.ExcPending
-											if v63 != 0 {
+											v64 = m.ExcPending
+											if v64 != 0 {
 												return int32(0)
 											} else {
 												F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
 												mBase = m.M
-												v68 = m.ExcPending
-												if v68 != 0 {
+												v69 = m.ExcPending
+												if v69 != 0 {
 													return int32(0)
 												} else {
-													v74 = v53
+													v75 = v54
 													m.G0 = v7 + int32(16)
-													return v74
+													return v75
 												}
 											}
 										}
 									}
 								} else {
-									v69 = F_TransactionIdDidCommit(m, v49)
+									v70 = F_TransactionIdDidCommit(m, v50)
 									mBase = m.M
-									v70 = m.ExcPending
-									if v70 != 0 {
+									v71 = m.ExcPending
+									if v71 != 0 {
 										return int32(0)
 									} else {
-										v74 = v69
+										v75 = v70
 										m.G0 = v7 + int32(16)
-										return v74
-									}
-								}
-							}
-						}
-					} else {
-						if base.Ui32(v40) < base.Ui32(int32(3)) {
-							if base.Ui32(l0) < base.Ui32(v40) {
-								v74 = v38
-								m.G0 = v7 + int32(16)
-								return v74
-							} else {
-								v49 = F_SubTransGetParent(m, l0)
-								mBase = m.M
-								v50 = m.ExcPending
-								if v50 != 0 {
-									return int32(0)
-								} else {
-									if v49 == int32(0) {
-										v53 = int32(0)
-										v56 = F_errstart(m, int32(19), v53)
-										mBase = m.M
-										v57 = m.ExcPending
-										if v57 != 0 {
-											return int32(0)
-										} else {
-											if v56 == int32(0) {
-												v74 = v53
-												m.G0 = v7 + int32(16)
-												return v74
-											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-												F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
-												mBase = m.M
-												v63 = m.ExcPending
-												if v63 != 0 {
-													return int32(0)
-												} else {
-													F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
-													mBase = m.M
-													v68 = m.ExcPending
-													if v68 != 0 {
-														return int32(0)
-													} else {
-														v74 = v53
-														m.G0 = v7 + int32(16)
-														return v74
-													}
-												}
-											}
-										}
-									} else {
-										v69 = F_TransactionIdDidCommit(m, v49)
-										mBase = m.M
-										v70 = m.ExcPending
-										if v70 != 0 {
-											return int32(0)
-										} else {
-											v74 = v69
-											m.G0 = v7 + int32(16)
-											return v74
-										}
+										return v75
 									}
 								}
 							}
 						} else {
-							if int32(0) <= l0-v40 {
-								v49 = F_SubTransGetParent(m, l0)
-								mBase = m.M
-								v50 = m.ExcPending
-								if v50 != 0 {
-									return int32(0)
-								} else {
-									if v49 == int32(0) {
-										v53 = int32(0)
-										v56 = F_errstart(m, int32(19), v53)
-										mBase = m.M
-										v57 = m.ExcPending
-										if v57 != 0 {
-											return int32(0)
+							v75 = v36
+							m.G0 = v7 + int32(16)
+							return v75
+						}
+					} else {
+						if base.Ui32(l0) < base.Ui32(v40) {
+							v75 = v36
+							m.G0 = v7 + int32(16)
+							return v75
+						} else {
+							v50 = F_SubTransGetParent(m, l0)
+							mBase = m.M
+							v51 = m.ExcPending
+							if v51 != 0 {
+								return int32(0)
+							} else {
+								if v50 == int32(0) {
+									v54 = int32(0)
+									v57 = F_errstart(m, int32(19), v54)
+									mBase = m.M
+									v58 = m.ExcPending
+									if v58 != 0 {
+										return int32(0)
+									} else {
+										if v57 == int32(0) {
+											v75 = v54
+											m.G0 = v7 + int32(16)
+											return v75
 										} else {
-											if v56 == int32(0) {
-												v74 = v53
-												m.G0 = v7 + int32(16)
-												return v74
+											*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
+											F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
+											mBase = m.M
+											v64 = m.ExcPending
+											if v64 != 0 {
+												return int32(0)
 											} else {
-												*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
-												F_errmsg_internal(m, int32(_a_F_TransactionIdDidCommit_0), v7)
+												F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
 												mBase = m.M
-												v63 = m.ExcPending
-												if v63 != 0 {
+												v69 = m.ExcPending
+												if v69 != 0 {
 													return int32(0)
 												} else {
-													F_errfinish(m, int32(_a_F_TransactionIdDidCommit_1), int32(162), int32(_a_F_TransactionIdDidCommit_2))
-													mBase = m.M
-													v68 = m.ExcPending
-													if v68 != 0 {
-														return int32(0)
-													} else {
-														v74 = v53
-														m.G0 = v7 + int32(16)
-														return v74
-													}
+													v75 = v54
+													m.G0 = v7 + int32(16)
+													return v75
 												}
 											}
 										}
+									}
+								} else {
+									v70 = F_TransactionIdDidCommit(m, v50)
+									mBase = m.M
+									v71 = m.ExcPending
+									if v71 != 0 {
+										return int32(0)
 									} else {
-										v69 = F_TransactionIdDidCommit(m, v49)
-										mBase = m.M
-										v70 = m.ExcPending
-										if v70 != 0 {
-											return int32(0)
-										} else {
-											v74 = v69
-											m.G0 = v7 + int32(16)
-											return v74
-										}
+										v75 = v70
+										m.G0 = v7 + int32(16)
+										return v75
 									}
 								}
-							} else {
-								v74 = v38
-								m.G0 = v7 + int32(16)
-								return v74
 							}
 						}
 					}

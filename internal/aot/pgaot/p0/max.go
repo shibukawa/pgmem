@@ -93,8 +93,8 @@ func F_max_parallel_hazard_walker(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v90
 	var v92 int32
 	_ = v92
-	var v97 int32
-	_ = v97
+	var v98 int32
+	_ = v98
 	var v104 int32
 	_ = v104
 	var v105 int32
@@ -388,14 +388,14 @@ L36:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(v64)+4))
 	if v72 <= int32(0) {
-		v97 = v66
+		v98 = v66
 		goto L37
 	} else {
 		goto L38
 	}
 L37:
 	;
-	v104 = v97
+	v104 = v98
 	goto L33
 L38:
 	;
@@ -423,14 +423,14 @@ L42:
 	v89 = *(*int32)(unsafe.Add(mBase, uint32(v79+v81<<(uint(int32(2))%32))))
 	v90 = base.B2i32(v89 == v65)
 	if v89 == v65 {
-		v97 = v90
+		v98 = v90
 		goto L37
 	} else {
 		goto L44
 	}
 L43:
 	;
-	v97 = v90
+	v98 = v90
 	goto L37
 L44:
 	;

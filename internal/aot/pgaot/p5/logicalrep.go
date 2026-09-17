@@ -34,8 +34,8 @@ func F_logicalrep_rel_mark_updatable(m *base.Module, l0 int32) {
 	_ = v24
 	var v26 int32
 	_ = v26
-	var v30 int32
-	_ = v30
+	var v29 int32
+	_ = v29
 	var v39 int32
 	_ = v39
 	var v41 int32
@@ -102,7 +102,7 @@ func F_logicalrep_rel_mark_updatable(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v30 = int32(-1)
+	v29 = int32(-1)
 	goto L10
 L2:
 	;
@@ -193,7 +193,7 @@ L14:
 	goto L12
 L15:
 	;
-	v39 = v30 + int32(1)
+	v39 = v29 + int32(1)
 	v41 = base.I32_div_s(v39, int32(32))
 	v42 = *(*int32)(unsafe.Add(mBase, uint32(v26)+4))
 	if v42 <= v41 {
@@ -287,7 +287,7 @@ L27:
 L28:
 	;
 	if v104 != 0 {
-		v30 = v88
+		v29 = v88
 		goto L10
 	} else {
 		goto L29
@@ -384,10 +384,10 @@ func F_logicalrep_worker_onexit(m *base.Module, l0 int32, l1 int32) {
 	_ = v68
 	var v70 int32
 	_ = v70
+	var v71 int32
+	_ = v71
 	var v72 int32
 	_ = v72
-	var v73 int32
-	_ = v73
 	var v74 int32
 	_ = v74
 	var v78 int32
@@ -408,22 +408,20 @@ func F_logicalrep_worker_onexit(m *base.Module, l0 int32, l1 int32) {
 	_ = v92
 	var v94 int32
 	_ = v94
+	var v95 int32
+	_ = v95
 	var v96 int32
 	_ = v96
-	var v97 int32
-	_ = v97
 	var v98 int32
 	_ = v98
 	var v100 int32
 	_ = v100
 	var v104 int32
 	_ = v104
-	var v105 int32
-	_ = v105
 	var v108 int32
 	_ = v108
-	var v110 int32
-	_ = v110
+	var v109 int32
+	_ = v109
 	var v114 int32
 	_ = v114
 	var v118 int32
@@ -630,17 +628,17 @@ L21:
 	v66 = *(*int32)(unsafe.Add(mBase, uint32(v65)+32))
 	v68 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_onexit[6]))
 	v70 = int32(0)
-	v72 = v61
-	v73 = int32(0)
-	v74 = v68
+	v71 = v61
+	v72 = v68
+	v74 = int32(0)
 	goto L22
 L22:
 	;
-	v78 = v74 + v70*int32(112)
+	v78 = v72 + v70*int32(112)
 	v79 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v78)+32)))
 	if v79 != int32(1) {
+		v95 = v71
 		v96 = v72
-		v97 = v73
 		v98 = v74
 		goto L24
 	} else {
@@ -648,7 +646,7 @@ L22:
 	}
 L23:
 	;
-	if v97 == int32(0) {
+	if v98 == int32(0) {
 		goto L20
 	} else {
 		goto L30
@@ -656,10 +654,10 @@ L23:
 L24:
 	;
 	v100 = v70 + int32(1)
-	if v100 < v96 {
+	if v100 < v95 {
 		v70 = v100
+		v71 = v95
 		v72 = v96
-		v73 = v97
 		v74 = v98
 		goto L22
 	} else {
@@ -670,8 +668,8 @@ L25:
 	v83 = v78 + int32(16)
 	v84 = *(*int32)(unsafe.Add(mBase, uint32(v83)+32))
 	if v84 != v66 {
+		v95 = v71
 		v96 = v72
-		v97 = v73
 		v98 = v74
 		goto L24
 	} else {
@@ -681,8 +679,8 @@ L26:
 	;
 	v86 = *(*int32)(unsafe.Add(mBase, uint32(v83)+20))
 	if v86 == int32(0) {
+		v95 = v71
 		v96 = v72
-		v97 = v73
 		v98 = v74
 		goto L24
 	} else {
@@ -690,7 +688,7 @@ L26:
 	}
 L27:
 	;
-	v89 = F_lappend(m, v73, v83)
+	v89 = F_lappend(m, v74, v83)
 	mBase = m.M
 	v90 = m.ExcPending
 	if v90 != 0 {
@@ -702,34 +700,33 @@ L28:
 	;
 	v92 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_onexit[5]))
 	v94 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_onexit[6]))
-	v96 = v92
-	v97 = v89
-	v98 = v94
+	v95 = v92
+	v96 = v94
+	v98 = v89
 	goto L24
 L29:
 	;
 	goto L23
 L30:
 	;
-	v104 = int32(0)
-	v105 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
-	if v105 <= v104 {
+	v104 = *(*int32)(unsafe.Add(mBase, uint32(v98)+4))
+	if v104 <= int32(0) {
 		goto L20
 	} else {
 		goto L31
 	}
 L31:
 	;
-	v108 = v104
-	v110 = v105
+	v108 = int32(0)
+	v109 = v104
 	goto L32
 L32:
 	;
-	v114 = *(*int32)(unsafe.Add(mBase, uint32(v97)+12))
+	v114 = *(*int32)(unsafe.Add(mBase, uint32(v98)+12))
 	v118 = *(*int32)(unsafe.Add(mBase, uint32(v114+v108<<(uint(int32(2))%32))))
 	v119 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v118)+16)))
-	if v119 != int32(1) {
-		v129 = v110
+	if v119 == int32(0) {
+		v129 = v109
 		goto L34
 	} else {
 		goto L35
@@ -742,7 +739,7 @@ L34:
 	v131 = v108 + int32(1)
 	if v131 < v129 {
 		v108 = v131
-		v110 = v129
+		v109 = v129
 		goto L32
 	} else {
 		goto L38
@@ -751,7 +748,7 @@ L35:
 	;
 	v122 = *(*int32)(unsafe.Add(mBase, uint32(v118)))
 	if v122 != int32(3) {
-		v129 = v110
+		v129 = v109
 		goto L34
 	} else {
 		goto L36
@@ -768,7 +765,7 @@ L36:
 	}
 L37:
 	;
-	v128 = *(*int32)(unsafe.Add(mBase, uint32(v97)+4))
+	v128 = *(*int32)(unsafe.Add(mBase, uint32(v98)+4))
 	v129 = v128
 	goto L34
 L38:
@@ -785,10 +782,10 @@ L40:
 	v162 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(v159)+16)) = uint8(v162)
 	*(*int32)(unsafe.Add(mBase, uint32(v159))) = v162
-	*(*uint8)(unsafe.Add(mBase, uint32(v159)+68)) = uint8(v162)
-	*(*int32)(unsafe.Add(mBase, uint32(v159)+64)) = int32(-1)
 	*(*int64)(unsafe.Add(mBase, uint32(v159)+28)) = v160
 	*(*int32)(unsafe.Add(mBase, uint32(v159)+36)) = v162
+	*(*uint8)(unsafe.Add(mBase, uint32(v159)+68)) = uint8(v162)
+	*(*int32)(unsafe.Add(mBase, uint32(v159)+64)) = int32(-1)
 	v175 = *(*int32)(unsafe.Add(mBase, _c_F_logicalrep_worker_onexit[4]))
 	F_LWLockRelease(m, v175+int32(_a_F_logicalrep_worker_onexit_0))
 	mBase = m.M

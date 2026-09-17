@@ -38,22 +38,14 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 	_ = v49
 	var v50 int32
 	_ = v50
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v62 int32
-	_ = v62
-	var v67 int32
-	_ = v67
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v78 int32
-	_ = v78
-	var v83 int32
-	_ = v83
+	var v56 int32
+	_ = v56
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v68 int32
+	_ = v68
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
@@ -77,7 +69,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 					return int32(0)
 				} else {
 					v45 = int32(0)
-					v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+					v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 					mBase = m.M
 					v50 = m.ExcPending
 					if v50 != 0 {
@@ -103,7 +95,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						v45 = int32(0)
-						v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+						v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -117,26 +109,26 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 				if int32(106751983) <= v11 {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v71 = m.ExcPending
-					if v71 != 0 {
+					v56 = m.ExcPending
+					if v56 != 0 {
 						return int32(0)
 					} else {
 						F_errcode(m, int32(134217858))
 						mBase = m.M
-						v74 = m.ExcPending
-						if v74 != 0 {
+						v59 = m.ExcPending
+						if v59 != 0 {
 							return int32(0)
 						} else {
 							F_errmsg(m, int32(_a_F_in_range_date_interval_0), int32(0))
 							mBase = m.M
-							v78 = m.ExcPending
-							if v78 != 0 {
+							v63 = m.ExcPending
+							if v63 != 0 {
 								return int32(0)
 							} else {
 								F_errfinish(m, int32(_a_F_in_range_date_interval_1), int32(658), int32(_a_F_in_range_date_interval_2))
 								mBase = m.M
-								v83 = m.ExcPending
-								if v83 != 0 {
+								v68 = m.ExcPending
+								if v68 != 0 {
 									return int32(0)
 								} else {
 									base.Wasm_trap_unreachable()
@@ -161,7 +153,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							v45 = int32(0)
-							v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+							v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -192,7 +184,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 						return int32(0)
 					} else {
 						v45 = int32(0)
-						v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+						v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 						mBase = m.M
 						v50 = m.ExcPending
 						if v50 != 0 {
@@ -218,7 +210,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							v45 = int32(0)
-							v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+							v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -232,26 +224,26 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 					if int32(106751983) <= v11 {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v71 = m.ExcPending
-						if v71 != 0 {
+						v56 = m.ExcPending
+						if v56 != 0 {
 							return int32(0)
 						} else {
 							F_errcode(m, int32(134217858))
 							mBase = m.M
-							v74 = m.ExcPending
-							if v74 != 0 {
+							v59 = m.ExcPending
+							if v59 != 0 {
 								return int32(0)
 							} else {
 								F_errmsg(m, int32(_a_F_in_range_date_interval_0), int32(0))
 								mBase = m.M
-								v78 = m.ExcPending
-								if v78 != 0 {
+								v63 = m.ExcPending
+								if v63 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_in_range_date_interval_1), int32(658), int32(_a_F_in_range_date_interval_2))
 									mBase = m.M
-									v83 = m.ExcPending
-									if v83 != 0 {
+									v68 = m.ExcPending
+									if v68 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -276,7 +268,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								v45 = int32(0)
-								v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+								v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 								mBase = m.M
 								v50 = m.ExcPending
 								if v50 != 0 {
@@ -293,26 +285,26 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 			if int32(106751983) <= v14 {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v55 = m.ExcPending
-				if v55 != 0 {
+				v56 = m.ExcPending
+				if v56 != 0 {
 					return int32(0)
 				} else {
 					F_errcode(m, int32(134217858))
 					mBase = m.M
-					v58 = m.ExcPending
-					if v58 != 0 {
+					v59 = m.ExcPending
+					if v59 != 0 {
 						return int32(0)
 					} else {
 						F_errmsg(m, int32(_a_F_in_range_date_interval_0), int32(0))
 						mBase = m.M
-						v62 = m.ExcPending
-						if v62 != 0 {
+						v63 = m.ExcPending
+						if v63 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_in_range_date_interval_1), int32(658), int32(_a_F_in_range_date_interval_2))
 							mBase = m.M
-							v67 = m.ExcPending
-							if v67 != 0 {
+							v68 = m.ExcPending
+							if v68 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()
@@ -339,7 +331,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 							return int32(0)
 						} else {
 							v45 = int32(0)
-							v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+							v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 							mBase = m.M
 							v50 = m.ExcPending
 							if v50 != 0 {
@@ -365,7 +357,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 								return int32(0)
 							} else {
 								v45 = int32(0)
-								v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+								v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 								mBase = m.M
 								v50 = m.ExcPending
 								if v50 != 0 {
@@ -379,26 +371,26 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 						if int32(106751983) <= v11 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v71 = m.ExcPending
-							if v71 != 0 {
+							v56 = m.ExcPending
+							if v56 != 0 {
 								return int32(0)
 							} else {
 								F_errcode(m, int32(134217858))
 								mBase = m.M
-								v74 = m.ExcPending
-								if v74 != 0 {
+								v59 = m.ExcPending
+								if v59 != 0 {
 									return int32(0)
 								} else {
 									F_errmsg(m, int32(_a_F_in_range_date_interval_0), int32(0))
 									mBase = m.M
-									v78 = m.ExcPending
-									if v78 != 0 {
+									v63 = m.ExcPending
+									if v63 != 0 {
 										return int32(0)
 									} else {
 										F_errfinish(m, int32(_a_F_in_range_date_interval_1), int32(658), int32(_a_F_in_range_date_interval_2))
 										mBase = m.M
-										v83 = m.ExcPending
-										if v83 != 0 {
+										v68 = m.ExcPending
+										if v68 != 0 {
 											return int32(0)
 										} else {
 											base.Wasm_trap_unreachable()
@@ -423,7 +415,7 @@ func F_in_range_date_interval(m *base.Module, l0 int32) int32 {
 									return int32(0)
 								} else {
 									v45 = int32(0)
-									v49 = F_DirectFunctionCall5Coll(m, int32(1285), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
+									v49 = F_DirectFunctionCall5Coll(m, int32(1266), int32(0), v39, v43, v10, base.B2i32(v9 != v45), base.B2i32(v8 != v45))
 									mBase = m.M
 									v50 = m.ExcPending
 									if v50 != 0 {

@@ -78,8 +78,8 @@ nothing to download at run time.
 | simple indexed `SELECT` via pgx over TCP | ~27 µs |
 | same, in-process via `Server.Dial` | ~8.5 µs |
 | sort + count over 200k generated rows | ~95 ms |
-| what ships | 110 MB generated Go (~35 s to compile once), 1.5 MB of data |
-| minimal program, `-ldflags="-s -w"` | 36 MB |
+| what ships | 115 MB generated Go (~35 s to compile once), 1.4 MB of AOT data |
+| minimal program, `-ldflags="-s -w"` | 36.7 MB |
 
 Reference measurements and their conditions are in
 [docs/benchmarks.md](docs/benchmarks.md).
@@ -173,8 +173,11 @@ installed server headers like a PGXS build would (without
 ### Ahead-of-time backend
 
 `internal/aot/pgaot` is the same wasm module translated to Go by
-[wasm2go](https://github.com/goccy/wasm2go) (a local fork at `../wasm2go`,
-branch `pgmem`, with a small fix for colliding export names). `internal/aot`
+[wasm2go](https://github.com/goccy/wasm2go). The pinned
+[shibukawa/wasm2go-fork](https://github.com/shibukawa/wasm2go-fork) commit in
+`wasm/wasm2go.lock` is used by default. Set `WASM2GO_SOURCE` to a checked-out
+local fork, for example `/path/to/wasm2go-fork`, then run
+`devbox run -- ./wasm/gen-aot.sh`. `internal/aot`
 plugs the generated package's import interfaces into the same host table.
 Regenerate with `./wasm/gen-aot.sh` after rebuilding the wasm.
 
@@ -186,8 +189,21 @@ pure-Go backend wins on both size and speed, so it is the default:
 
 | backend | generated source | sort + count 200k rows | simple `SELECT` |
 |---|---|---|---|
-| pure Go (`gen-aot.sh`) | 104 MB | 95 ms | 26.5 µs |
+| pure Go (`gen-aot.sh`) | 115 MB | 95 ms | 26.5 µs |
 | asm (`ASM=1 gen-aot.sh`) | 281 MB | 122 ms | 27.9 µs |
+
+`wasm/aot-exports.txt` is the single allowlist for the supported host-facing
+AOT API. It is used both for wasm2go's `-entry-exports` roots and for the Go
+dispatcher, so the generated dispatcher has 25 cases instead of all 2,070
+function exports in the unpruned wasm. The current `postgres.wasm` contains
+34 export entries in total, including the memory/table and Emscripten runtime
+exports required by the module. With `wasm-opt -Oz`, compressed AOT data, and
+the limited dispatcher, the stripped darwin/arm64 binary is 36.7 MB.
+
+The release build uses `-trimpath -ldflags='-s -w'`: DWARF is removed, while
+Go's compact pclntab is retained for panic and traceback support. Disabling
+inlining was measured as a line-table reduction but made the final binary
+larger, so no separate line-information compression flag is enabled.
 
 The generated functions are named after PostgreSQL's symbols
 (`F_heap_insert`), spread over the `p0`..`p5` packages by name hash, and
@@ -267,21 +283,44 @@ on this memory-bound code (arm64; amd64 not measured).
 
 ## Rebuilding the wasm module
 
-Requires bash, python3, curl, binaryen (`wasm-opt`), and the Emscripten
-SDK checked out at `toolchain/emsdk` with version 3.1.74 installed and
-activated. The PostgreSQL source (the PGlite fork, pinned by commit and
-sha256 in `wasm/postgres-pglite.lock`) is downloaded by the build script
-into `wasm/out/src` and patched there by `wasm/patches.py`; nothing under
-version control is modified.
+Requires bash, python3, curl, binaryen (`wasm-opt`), and Emscripten. The
+pinned emsdk can be checked out at `toolchain/emsdk` with version 3.1.74
+installed and activated, or a Devbox environment can provide `emcc` and
+`emmake` directly on `PATH`. The PostgreSQL source (the PGlite fork, pinned
+by commit and sha256 in `wasm/postgres-pglite.lock`) is downloaded by the
+build script into `wasm/out/src` and patched there by `wasm/patches.py`;
+nothing under version control is modified.
+
+The repository also includes a reproducible Devbox environment. Its lockfile
+currently uses Emscripten 6.0.8, Binaryen, Bison, Flex, and GNU Make:
+
+```bash
+devbox install
+devbox run -- ./wasm/build.sh
+devbox run -- ./wasm/gen-aot.sh
+devbox run -- go run ./cmd/pgmem-mkdata
+devbox run -- go test . ./cmd/... ./internal/...
+```
+
+The checked-in generated tree and size figures above were regenerated with
+this Devbox environment on 2026-09-17.
+
+The equivalent commands without Devbox are:
 
 ```bash
 git clone --depth 1 https://github.com/emscripten-core/emsdk.git toolchain/emsdk
 (cd toolchain/emsdk && ./emsdk install 3.1.74 && ./emsdk activate 3.1.74)
 ./wasm/build.sh                  # downloads + patches the source, writes wasm/out/*.wasm and internal/assets/share.tar.gz
-./wasm/gen-aot.sh                # regenerates internal/aot/pgaot from wasm/out/postgres.wasm
+./wasm/gen-aot.sh                # optimizes + regenerates internal/aot/pgaot from postgres.wasm
 go run ./cmd/pgmem-mkdata        # runs wasm/out/initdb.exnref.wasm under wazero, writes internal/pgdata/pgdata.tar.zst
-go test ./...
+go test . ./cmd/... ./internal/...
 ```
+
+The AOT step runs `wasm-opt -Oz` before wasm2go and gzip-compresses the
+generated linear-memory data segment. `AOT_WASM_OPT_LEVEL=O3` selects the
+speed-oriented Binaryen passes; `AOT_WASM_OPT_LEVEL=0` skips the Wasm
+optimization for a baseline comparison. The compressed data is expanded once
+when the generated package is initialized.
 
 The build emits legacy wasm exception handling (what wasm2go consumes for
 setjmp/longjmp) and also an `exnref`-encoded copy via `wasm-opt`, which

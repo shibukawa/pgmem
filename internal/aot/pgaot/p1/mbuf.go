@@ -34,10 +34,8 @@ func F_mbuf_append(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v39
 	var v43 int32
 	_ = v43
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
+	var v47 int32
+	_ = v47
 	v7 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+16)))
 	if v7 == int32(1) {
 		F_px_debug(m, int32(_a_F_mbuf_append_0), int32(0))
@@ -70,23 +68,21 @@ func F_mbuf_append(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, uint32(l0)+8)) = v29 + (v39 - v33)
 				v43 = v37
 				if l2 != 0 {
-					v46 = F__emscripten_memcpy_bulkmem(m, v43, l1, l2)
-					mBase = m.M
+					base.MemoryCopy(m, v43, l1, l2)
 				} else {
 				}
-				v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v48 + l2
+				v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v47 + l2
 				return int32(0)
 			}
 		} else {
 			v43 = v19
 			if l2 != 0 {
-				v46 = F__emscripten_memcpy_bulkmem(m, v43, l1, l2)
-				mBase = m.M
+				base.MemoryCopy(m, v43, l1, l2)
 			} else {
 			}
-			v48 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-			*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v48 + l2
+			v47 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+			*(*int32)(unsafe.Add(mBase, uint32(l0)+4)) = v47 + l2
 			return int32(0)
 		}
 	}

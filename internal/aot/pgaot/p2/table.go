@@ -10,9 +10,9 @@ func F_table_block_parallelscan_initialize(m *base.Module, l0 int32, l1 int32) i
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v5 int64
+	var v5 int32
 	_ = v5
-	var v7 int32
+	var v7 int64
 	_ = v7
 	var v10 int32
 	_ = v10
@@ -31,10 +31,10 @@ func F_table_block_parallelscan_initialize(m *base.Module, l0 int32, l1 int32) i
 	var v28 int32
 	_ = v28
 	v3 = int32(0)
-	v5 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v5
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
-	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v7
+	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+8))
+	*(*int32)(unsafe.Add(mBase, uint32(l1)+8)) = v5
+	v7 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int64)(unsafe.Add(mBase, uint32(l1))) = v7
 	v10 = F_RelationGetNumberOfBlocksInFork(m, l0, v3)
 	mBase = m.M
 	v13 = m.ExcPending
@@ -109,8 +109,8 @@ func F_table_block_parallelscan_nextpage(m *base.Module, l0 int32, l1 int32, l2 
 	_ = v55
 	var v59 int32
 	_ = v59
-	var v61 int32
-	_ = v61
+	var v60 int32
+	_ = v60
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
 	if v8 != 0 {
 		v9 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
@@ -155,22 +155,22 @@ func F_table_block_parallelscan_nextpage(m *base.Module, l0 int32, l1 int32, l2 
 			if v59 != 0 {
 				return int32(0)
 			} else {
-				v61 = v55
-				return v61
+				v60 = v55
+				return v60
 			}
 		} else {
-			v61 = v44
-			return v61
+			v60 = v44
+			return v60
 		}
 	} else {
 		if v33 != v39 {
-			v61 = v35
-			return v61
+			v60 = v35
+			return v60
 		} else {
 			v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l2)+12)))
 			if v47&int32(1) == int32(0) {
-				v61 = v35
-				return v61
+				v60 = v35
+				return v60
 			} else {
 				v52 = *(*int32)(unsafe.Add(mBase, uint32(l2)+28))
 				v54 = v52
@@ -181,8 +181,8 @@ func F_table_block_parallelscan_nextpage(m *base.Module, l0 int32, l1 int32, l2 
 				if v59 != 0 {
 					return int32(0)
 				} else {
-					v61 = v55
-					return v61
+					v60 = v55
+					return v60
 				}
 			}
 		}

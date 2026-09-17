@@ -680,44 +680,42 @@ func F_SimpleLruZeroPage(m *base.Module, l0 int32, l1 int64) int32 {
 	_ = v47
 	var v49 int32
 	_ = v49
+	var v50 int32
+	_ = v50
 	var v53 int32
 	_ = v53
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
+	var v57 int32
+	_ = v57
 	var v58 int32
 	_ = v58
 	var v59 int32
 	_ = v59
-	var v60 int32
-	_ = v60
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v78 int32
-	_ = v78
-	var v84 int32
-	_ = v84
+	var v61 int32
+	_ = v61
+	var v65 int32
+	_ = v65
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
+	var v80 int32
+	_ = v80
 	var v86 int32
 	_ = v86
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v103 int32
-	_ = v103
-	var v105 int32
-	_ = v105
-	var v111 int32
-	_ = v111
-	var v114 int64
+	var v88 int32
+	_ = v88
+	var v94 int32
+	_ = v94
+	var v106 int32
+	_ = v106
+	var v108 int32
+	_ = v108
+	var v114 int32
 	_ = v114
+	var v117 int64
+	_ = v117
 	v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v10 = F_SlruSelectLRUPage(m, l0, l1)
 	mBase = m.M
@@ -748,53 +746,51 @@ func F_SimpleLruZeroPage(m *base.Module, l0 int32, l1 int64) int32 {
 		}
 		v47 = *(*int32)(unsafe.Add(mBase, uint32(v9)+4))
 		v49 = *(*int32)(unsafe.Add(mBase, uint32(v47+v20)))
-		v53 = F__emscripten_memset_bulkmem(m, v49, base.I32_extend8_s(int32(0)), int32(_a_F_SimpleLruZeroPage_0))
-		mBase = m.M
-		v54 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v55 = *(*int32)(unsafe.Add(mBase, uint32(v54)+40))
-		if v55 <= int32(0) {
+		v50 = int32(0)
+		base.MemoryFill(m, v49, v50, int32(_a_F_SimpleLruZeroPage_0))
+		v53 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v54 = *(*int32)(unsafe.Add(mBase, uint32(v53)+40))
+		if v54 <= v50 {
 		} else {
-			v58 = *(*int32)(unsafe.Add(mBase, uint32(v54)+36))
-			v59 = v55 * v10
-			v60 = int32(3)
-			v62 = v58 + v59<<(uint(v60)%32)
-			v64 = v55 << (uint(v60) % 32)
-			if base.Ui32(int32(1024)) < base.Ui32(v64) {
-				v93 = v64
-				v96 = F__emscripten_memset_bulkmem(m, v62, base.I32_extend8_s(int32(0)), v93)
-				mBase = m.M
-			} else {
-				if v62&int32(3) != 0 {
-					v93 = v64
-					v96 = F__emscripten_memset_bulkmem(m, v62, base.I32_extend8_s(int32(0)), v93)
-					mBase = m.M
+			v57 = *(*int32)(unsafe.Add(mBase, uint32(v53)+36))
+			v58 = v54 * v10
+			v59 = int32(3)
+			v61 = v57 + v58<<(uint(v59)%32)
+			v65 = v54 << (uint(v59) % 32)
+			if v61&v59|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(v65)) == int32(0) {
+				if v65 == int32(0) {
 				} else {
-					if base.Ui32(v62+v64) <= base.Ui32(v62) {
+					v73 = int32(3)
+					v74 = v58 << (uint(v73) % 32)
+					v80 = v74 + v57 + int32(4)
+					v86 = v54*(v10<<(uint(v73)%32)+int32(8)) + v57
+					if base.Ui32(v86) < base.Ui32(v80) {
+						v88 = v80
 					} else {
-						v71 = int32(3)
-						v72 = v59 << (uint(v71) % 32)
-						v78 = v72 + v58 + int32(4)
-						v84 = v55*(v10<<(uint(v71)%32)+int32(8)) + v58
-						if base.Ui32(v84) < base.Ui32(v78) {
-							v86 = v78
-						} else {
-							v86 = v84
-						}
-						v93 = (v72^int32(-1)-v58+v86)&int32(-4) + int32(4)
-						v96 = F__emscripten_memset_bulkmem(m, v62, base.I32_extend8_s(int32(0)), v93)
-						mBase = m.M
+						v88 = v86
 					}
+					v94 = (v74^int32(-1)-v57+v88)&int32(-4) + int32(4)
+					if v94 == int32(0) {
+					} else {
+						base.MemoryFill(m, v61, int32(0), v94)
+					}
+				}
+			} else {
+				v94 = v65
+				if v94 == int32(0) {
+				} else {
+					base.MemoryFill(m, v61, int32(0), v94)
 				}
 			}
 		}
 		*(*int64)(unsafe.Add(mBase, uint32(v9)+48)) = l1
-		v103 = *(*int32)(unsafe.Add(mBase, uint32(v9)+56))
-		v105 = int32(1)
-		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[0])) = uint8(v105)
-		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[1])) = uint8(v105)
-		v111 = v103 << (uint(int32(6)) % 32)
-		v114 = *(*int64)(unsafe.Add(mBase, uint32(v111)+uint32(_c_F_SimpleLruZeroPage[2])))
-		*(*int64)(unsafe.Add(mBase, uint32(v111)+uint32(_c_F_SimpleLruZeroPage[2]))) = v114 + int64(1)
+		v106 = *(*int32)(unsafe.Add(mBase, uint32(v9)+56))
+		v108 = int32(1)
+		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[0])) = uint8(v108)
+		*(*uint8)(unsafe.Add(mBase, _c_F_SimpleLruZeroPage[1])) = uint8(v108)
+		v114 = v106 << (uint(int32(6)) % 32)
+		v117 = *(*int64)(unsafe.Add(mBase, uint32(v114)+uint32(_c_F_SimpleLruZeroPage[2])))
+		*(*int64)(unsafe.Add(mBase, uint32(v114)+uint32(_c_F_SimpleLruZeroPage[2]))) = v117 + int64(1)
 		return v10
 	}
 }

@@ -8,143 +8,143 @@ import (
 func F_ResetPlanCache(m *base.Module) {
 	mBase := m.M
 	_ = mBase
+	var v1 int32
+	_ = v1
 	var v5 int32
 	_ = v5
-	var v10 int32
-	_ = v10
-	var v14 int32
-	_ = v14
-	var v15 int32
-	_ = v15
-	var v20 int32
-	_ = v20
+	var v13 int32
+	_ = v13
+	var v17 int32
+	_ = v17
+	var v18 int32
+	_ = v18
 	var v23 int32
 	_ = v23
-	var v24 int32
-	_ = v24
-	var v28 int32
-	_ = v28
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
 	var v31 int32
 	_ = v31
-	var v35 int32
-	_ = v35
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
+	var v34 int32
+	_ = v34
+	var v38 int32
+	_ = v38
 	var v42 int32
 	_ = v42
-	var v50 int32
-	_ = v50
-	var v56 int32
-	_ = v56
-	var v60 int32
-	_ = v60
+	var v43 int32
+	_ = v43
+	var v45 int32
+	_ = v45
+	var v53 int32
+	_ = v53
+	var v59 int32
+	_ = v59
 	var v63 int32
 	_ = v63
-	var v67 int32
-	_ = v67
-	var v74 int32
-	_ = v74
-	var v79 int32
-	_ = v79
-	var v84 int32
-	_ = v84
-	var v86 int32
-	_ = v86
+	var v66 int32
+	_ = v66
+	var v70 int32
+	_ = v70
+	var v77 int32
+	_ = v77
+	var v78 int32
+	_ = v78
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
+	var v92 int32
+	_ = v92
+	v1 = int32(0)
 	v5 = *(*int32)(unsafe.Add(mBase, _c_F_ResetPlanCache[0]))
-	if v5 == int32(0) {
-	} else {
-		if v5 == int32(_a_F_ResetPlanCache_0) {
-		} else {
-			v10 = v5
-			for {
-				v14 = v10 - int32(5)
-				v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v14))))
-				if v15 != int32(1) {
-				} else {
-					v20 = *(*int32)(unsafe.Add(mBase, uint32(v10-int32(96))))
-					if v20 != 0 {
-						v23 = *(*int32)(unsafe.Add(mBase, uint32(v20)+4))
-						v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)))
-						switch v24 - int32(137) {
-						case 0, 1, 2, 3, 4, 6, 7, 64, 76, 104, 105:
-							v28 = int32(1)
-						default:
-							v28 = int32(0)
-						}
-						if v28 != 0 {
-							v56 = int32(0)
-							*(*uint8)(unsafe.Add(mBase, uint32(v14))) = uint8(v56)
-							v60 = *(*int32)(unsafe.Add(mBase, uint32(v10-int32(12))))
-							if v60 == v56 {
-							} else {
-								v63 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v60)+10)) = uint8(v63)
-							}
+	if base.B2i32(v5 == v1)|base.B2i32(v5 == int32(_a_F_ResetPlanCache_0)) == v1 {
+		v13 = v5
+		for {
+			v17 = v13 - int32(5)
+			v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v17))))
+			if v18 != int32(1) {
+			} else {
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(v13-int32(96))))
+				if v23 != 0 {
+					v26 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
+					v27 = *(*int32)(unsafe.Add(mBase, uint32(v26)))
+					switch v27 - int32(137) {
+					case 0, 1, 2, 3, 4, 6, 7, 64, 76, 104, 105:
+						v31 = int32(1)
+					default:
+						v31 = int32(0)
+					}
+					if v31 != 0 {
+						v59 = int32(0)
+						*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v59)
+						v63 = *(*int32)(unsafe.Add(mBase, uint32(v13-int32(12))))
+						if v63 == v59 {
 						} else {
+							v66 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v63)+10)) = uint8(v66)
 						}
 					} else {
-						v31 = *(*int32)(unsafe.Add(mBase, uint32(v10-int32(92))))
-						if v31 == int32(0) {
+					}
+				} else {
+					v34 = *(*int32)(unsafe.Add(mBase, uint32(v13-int32(92))))
+					if v34 == int32(0) {
+					} else {
+						v38 = *(*int32)(unsafe.Add(mBase, uint32(v34)+4))
+						if v38 != int32(6) {
+							v53 = int32(1)
 						} else {
-							v35 = *(*int32)(unsafe.Add(mBase, uint32(v31)+4))
-							if v35 != int32(6) {
-								v50 = int32(1)
+							v42 = *(*int32)(unsafe.Add(mBase, uint32(v34)+28))
+							v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
+							v45 = v43 - int32(201)
+							if base.Ui32(int32(41)) < base.Ui32(v45) {
+								v53 = int32(0)
 							} else {
-								v39 = *(*int32)(unsafe.Add(mBase, uint32(v31)+28))
-								v40 = *(*int32)(unsafe.Add(mBase, uint32(v39)))
-								v42 = v40 - int32(201)
-								if base.Ui32(int32(41)) < base.Ui32(v42) {
-									v50 = int32(0)
-								} else {
-									v50 = base.I32_wrap_i64(int64(base.Ui64(int64(3298534887425)) >> (uint(base.I64_extend_i32_u(v42)) % 64)))
-								}
+								v53 = base.I32_wrap_i64(int64(base.Ui64(int64(3298534887425)) >> (uint(base.I64_extend_i32_u(v45)) % 64)))
 							}
-							if v50&int32(1) == int32(0) {
+						}
+						if v53&int32(1) == int32(0) {
+						} else {
+							v59 = int32(0)
+							*(*uint8)(unsafe.Add(mBase, uint32(v17))) = uint8(v59)
+							v63 = *(*int32)(unsafe.Add(mBase, uint32(v13-int32(12))))
+							if v63 == v59 {
 							} else {
-								v56 = int32(0)
-								*(*uint8)(unsafe.Add(mBase, uint32(v14))) = uint8(v56)
-								v60 = *(*int32)(unsafe.Add(mBase, uint32(v10-int32(12))))
-								if v60 == v56 {
-								} else {
-									v63 = int32(0)
-									*(*uint8)(unsafe.Add(mBase, uint32(v60)+10)) = uint8(v63)
-								}
+								v66 = int32(0)
+								*(*uint8)(unsafe.Add(mBase, uint32(v63)+10)) = uint8(v66)
 							}
 						}
 					}
 				}
-				v67 = *(*int32)(unsafe.Add(mBase, uint32(v10)+4))
-				if v67 != int32(_a_F_ResetPlanCache_0) {
-					v10 = v67
-					continue
-				} else {
-					break
-				}
+			}
+			v70 = *(*int32)(unsafe.Add(mBase, uint32(v13)+4))
+			if v70 != int32(_a_F_ResetPlanCache_0) {
+				v13 = v70
+				continue
+			} else {
 				break
 			}
+			break
 		}
-	}
-	v74 = *(*int32)(unsafe.Add(mBase, _c_F_ResetPlanCache[1]))
-	if v74 == int32(0) {
 	} else {
-		if v74 == int32(_a_F_ResetPlanCache_1) {
-		} else {
-			v79 = v74
-			for {
-				v84 = int32(0)
-				*(*uint8)(unsafe.Add(mBase, uint32(v79-int32(16)))) = uint8(v84)
-				v86 = *(*int32)(unsafe.Add(mBase, uint32(v79)+4))
-				if v86 != int32(_a_F_ResetPlanCache_1) {
-					v79 = v86
-					continue
-				} else {
-					break
-				}
+	}
+	v77 = *(*int32)(unsafe.Add(mBase, _c_F_ResetPlanCache[1]))
+	v78 = int32(0)
+	if base.B2i32(v77 == v78)|base.B2i32(v77 == int32(_a_F_ResetPlanCache_1)) == v78 {
+		v85 = v77
+		for {
+			v90 = int32(0)
+			*(*uint8)(unsafe.Add(mBase, uint32(v85-int32(16)))) = uint8(v90)
+			v92 = *(*int32)(unsafe.Add(mBase, uint32(v85)+4))
+			if v92 != int32(_a_F_ResetPlanCache_1) {
+				v85 = v92
+				continue
+			} else {
 				break
 			}
+			break
 		}
+	} else {
 	}
 	return
 }

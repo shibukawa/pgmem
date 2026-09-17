@@ -8,63 +8,63 @@ import (
 func F_LookupCollation(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	var v23 int32
-	_ = v23
+	var v6 int32
+	_ = v6
+	var v8 int32
+	_ = v8
+	var v13 int32
+	_ = v13
+	var v16 int32
+	_ = v16
+	var v18 int32
+	_ = v18
 	var v24 int32
 	_ = v24
-	var v31 int32
-	_ = v31
+	var v25 int32
+	_ = v25
 	var v32 int32
 	_ = v32
-	var v36 int32
-	_ = v36
-	var v38 int32
-	_ = v38
-	v5 = m.G0
-	v7 = v5 - int32(32)
-	m.G0 = v7
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v37 int32
+	_ = v37
+	v6 = m.G0
+	v8 = v6 - int32(32)
+	m.G0 = v8
 	if l0 == int32(0) {
-		v12 = F_get_collation_oid(m, l1, int32(0))
+		v13 = F_get_collation_oid(m, l1, int32(0))
 		mBase = m.M
-		v15 = m.ExcPending
-		if v15 != 0 {
+		v16 = m.ExcPending
+		if v16 != 0 {
 			return int32(0)
 		} else {
-			v38 = v12
-			m.G0 = v7 + int32(32)
-			return v38
+			v37 = v13
+			m.G0 = v8 + int32(32)
+			return v37
 		}
 	} else {
-		v17 = v7 + int32(12)
-		*(*int32)(unsafe.Add(mBase, uint32(v17)+12)) = int32(489)
-		*(*int32)(unsafe.Add(mBase, uint32(v17)+4)) = l2
-		*(*int32)(unsafe.Add(mBase, uint32(v17))) = l0
-		*(*int32)(unsafe.Add(mBase, uint32(v17)+16)) = v17
-		v23 = int32(_a_F_LookupCollation_0)
-		v24 = *(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0]))
-		*(*int32)(unsafe.Add(mBase, uint32(v17)+8)) = v24
-		*(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0])) = v7 + int32(20)
-		v31 = F_get_collation_oid(m, l1, int32(0))
+		v18 = v8 + int32(12)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+12)) = int32(489)
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+4)) = l2
+		*(*int32)(unsafe.Add(mBase, uint32(v18))) = l0
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+16)) = v18
+		v24 = int32(_a_F_LookupCollation_0)
+		v25 = *(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0]))
+		*(*int32)(unsafe.Add(mBase, uint32(v18)+8)) = v25
+		*(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0])) = v8 + int32(20)
+		v32 = F_get_collation_oid(m, l1, int32(0))
 		mBase = m.M
-		v32 = m.ExcPending
-		if v32 != 0 {
+		v33 = m.ExcPending
+		if v33 != 0 {
 			return int32(0)
 		} else {
-			v36 = *(*int32)(unsafe.Add(mBase, uint32(v7+int32(12))+8))
-			*(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0])) = v36
-			v38 = v31
-			m.G0 = v7 + int32(32)
-			return v38
+			v35 = *(*int32)(unsafe.Add(mBase, uint32(v18)+8))
+			*(*int32)(unsafe.Add(mBase, _c_F_LookupCollation[0])) = v35
+			v37 = v32
+			m.G0 = v8 + int32(32)
+			return v37
 		}
 	}
 }

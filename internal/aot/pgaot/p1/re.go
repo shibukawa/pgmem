@@ -12,8 +12,8 @@ func F_ExecReScanBitmapAnd(m *base.Module, l0 int32) {
 	_ = v2
 	var v5 int32
 	_ = v5
-	var v9 int32
-	_ = v9
+	var v10 int32
+	_ = v10
 	var v12 int32
 	_ = v12
 	var v16 int32
@@ -39,7 +39,7 @@ func F_ExecReScanBitmapAnd(m *base.Module, l0 int32) {
 	}
 L1:
 	;
-	v9 = v2
+	v10 = v2
 	goto L4
 L2:
 	;
@@ -50,7 +50,7 @@ L3:
 L4:
 	;
 	v12 = *(*int32)(unsafe.Add(mBase, uint32(l0)+104))
-	v16 = *(*int32)(unsafe.Add(mBase, uint32(v12+v9<<(uint(int32(2))%32))))
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(v12+v10<<(uint(int32(2))%32))))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
 	if v17 != 0 {
 		goto L6
@@ -102,10 +102,10 @@ L12:
 	goto L13
 L13:
 	;
-	v26 = v9 + int32(1)
+	v26 = v10 + int32(1)
 	v27 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
 	if v26 < v27 {
-		v9 = v26
+		v10 = v26
 		goto L4
 	} else {
 		goto L15
@@ -128,18 +128,18 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = v12
 	var v15 int32
 	_ = v15
-	var v20 int32
-	_ = v20
+	var v19 int32
+	_ = v19
 	var v21 int32
 	_ = v21
 	var v25 int32
 	_ = v25
 	var v28 int32
 	_ = v28
-	var v34 int32
-	_ = v34
-	var v39 int32
-	_ = v39
+	var v32 int32
+	_ = v32
+	var v37 int32
+	_ = v37
 	v7 = m.G0
 	v9 = v7 - int32(128)
 	m.G0 = v9
@@ -150,7 +150,8 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 		return int32(0)
 	} else {
 		if base.Ui32(int32(2)) <= base.Ui32(v12) {
-			v20 = F_pg_regerror(m, v12, v9+int32(16))
+			v19 = v9 + int32(16)
+			F_pg_regerror(m, v12, v19)
 			mBase = m.M
 			v21 = m.ExcPending
 			if v21 != 0 {
@@ -168,17 +169,17 @@ func F_RE_wchar_execute(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 					if v28 != 0 {
 						return int32(0)
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v19
 						F_errmsg(m, int32(_a_F_RE_wchar_execute_1), v9)
 						mBase = m.M
-						v34 = m.ExcPending
-						if v34 != 0 {
+						v32 = m.ExcPending
+						if v32 != 0 {
 							return int32(0)
 						} else {
 							F_errfinish(m, int32(_a_F_RE_wchar_execute_2), int32(304), int32(_a_F_RE_wchar_execute_3))
 							mBase = m.M
-							v39 = m.ExcPending
-							if v39 != 0 {
+							v37 = m.ExcPending
+							if v37 != 0 {
 								return int32(0)
 							} else {
 								base.Wasm_trap_unreachable()

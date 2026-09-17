@@ -180,7 +180,7 @@ L9:
 	;
 	v41 = v30 << (uint(int32(2)) % 32)
 	v43 = *(*float32)(unsafe.Add(mBase, uint32(v12+v25+v41)))
-	v45 = *(*float32)(unsafe.Add(mBase, uint32(v41+(v17+v25))))
+	v45 = *(*float32)(unsafe.Add(mBase, uint32(v17+v25+v41)))
 	if base.F32_lt(v43, v45) != 0 {
 		goto L11
 	} else {
@@ -263,8 +263,8 @@ func F_vector_ge(m *base.Module, l0 int32) int32 {
 	_ = v45
 	var v51 int32
 	_ = v51
-	var v70 int32
-	_ = v70
+	var v73 int32
+	_ = v73
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v12 = F_pg_detoast_datum(m, v11)
 	mBase = m.M
@@ -299,10 +299,10 @@ L3:
 	}
 L4:
 	;
-	return v70
+	return v73
 L5:
 	;
-	v70 = base.B2i32(v20 <= v19)
+	v73 = base.B2i32(v20 <= v19)
 	goto L4
 L6:
 	;
@@ -328,9 +328,9 @@ L10:
 	;
 	v41 = v30 << (uint(int32(2)) % 32)
 	v43 = *(*float32)(unsafe.Add(mBase, uint32(v12+v25+v41)))
-	v45 = *(*float32)(unsafe.Add(mBase, uint32(v41+(v17+v25))))
+	v45 = *(*float32)(unsafe.Add(mBase, uint32(v17+v25+v41)))
 	if base.F32_lt(v43, v45) != 0 {
-		v70 = int32(0)
+		v73 = int32(0)
 		goto L4
 	} else {
 		goto L12
@@ -587,28 +587,26 @@ func F_vector_to_float4(m *base.Module, l0 int32) int32 {
 	_ = v65
 	var v67 int32
 	_ = v67
-	var v69 int32
-	_ = v69
-	var v79 int32
-	_ = v79
-	var v82 int32
-	_ = v82
-	var v88 int32
-	_ = v88
+	var v73 int32
+	_ = v73
+	var v84 int32
+	_ = v84
 	var v92 int32
 	_ = v92
-	var v95 int32
-	_ = v95
+	var v94 int32
+	_ = v94
 	var v97 int32
 	_ = v97
-	var v100 int32
-	_ = v100
-	var v115 int32
-	_ = v115
-	var v116 int32
-	_ = v116
+	var v99 int32
+	_ = v99
+	var v102 int32
+	_ = v102
+	var v117 int32
+	_ = v117
 	var v118 int32
 	_ = v118
+	var v120 int32
+	_ = v120
 	v2 = int32(0)
 	v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v12 = F_pg_detoast_datum(m, v11)
@@ -663,24 +661,40 @@ func F_vector_to_float4(m *base.Module, l0 int32) int32 {
 							}
 							break
 						}
-						v69 = v65
+						if v21&int32(3) == int32(0) {
+						} else {
+							v73 = v65
+							v84 = v73
+							v92 = v2
+							for {
+								v94 = v84 << (uint(int32(2)) % 32)
+								v97 = *(*int32)(unsafe.Add(mBase, uint32(v25+v94)))
+								*(*int32)(unsafe.Add(mBase, uint32(v19+v94))) = v97
+								v99 = int32(1)
+								v102 = v92 + v99
+								if v102 != v21&int32(3) {
+									v84 = v84 + v99
+									v92 = v102
+									continue
+								} else {
+									break
+								}
+								break
+							}
+						}
 					} else {
-						v69 = v26
-					}
-					v79 = v21 & int32(3)
-					if v79 == int32(0) {
-					} else {
-						v82 = v69
-						v88 = v2
+						v73 = v26
+						v84 = v73
+						v92 = v2
 						for {
-							v92 = v82 << (uint(int32(2)) % 32)
-							v95 = *(*int32)(unsafe.Add(mBase, uint32(v92+v25)))
-							*(*int32)(unsafe.Add(mBase, uint32(v19+v92))) = v95
-							v97 = int32(1)
-							v100 = v88 + v97
-							if v100 != v79 {
-								v82 = v82 + v97
-								v88 = v100
+							v94 = v84 << (uint(int32(2)) % 32)
+							v97 = *(*int32)(unsafe.Add(mBase, uint32(v25+v94)))
+							*(*int32)(unsafe.Add(mBase, uint32(v19+v94))) = v97
+							v99 = int32(1)
+							v102 = v92 + v99
+							if v102 != v21&int32(3) {
+								v84 = v84 + v99
+								v92 = v102
 								continue
 							} else {
 								break
@@ -689,19 +703,19 @@ func F_vector_to_float4(m *base.Module, l0 int32) int32 {
 						}
 					}
 				}
-				v115 = F_construct_array(m, v19, v21, int32(700), int32(4), int32(1), int32(105))
+				v117 = F_construct_array(m, v19, v21, int32(700), int32(4), int32(1), int32(105))
 				mBase = m.M
-				v116 = m.ExcPending
-				if v116 != 0 {
+				v118 = m.ExcPending
+				if v118 != 0 {
 					return int32(0)
 				} else {
 					F_pfree(m, v19)
 					mBase = m.M
-					v118 = m.ExcPending
-					if v118 != 0 {
+					v120 = m.ExcPending
+					if v120 != 0 {
 						return int32(0)
 					} else {
-						return v115
+						return v117
 					}
 				}
 			}

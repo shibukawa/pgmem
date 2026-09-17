@@ -279,7 +279,7 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 																return int32(0)
 															} else {
 																if v78 != 0 {
-																	F_CatalogTupleDelete(m, v73, v78+int32(4))
+																	F_simple_heap_delete(m, v73, v78+int32(4))
 																	mBase = m.M
 																	v83 = m.ExcPending
 																	if v83 != 0 {
@@ -291,7 +291,7 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 																		if v85 != 0 {
 																			return int32(0)
 																		} else {
-																			F_sequence_close(m, v73, int32(3))
+																			F_relation_close(m, v73, int32(3))
 																			mBase = m.M
 																			v88 = m.ExcPending
 																			if v88 != 0 {
@@ -310,7 +310,7 @@ func F_pg_clear_attribute_stats(m *base.Module, l0 int32) int32 {
 																		}
 																	}
 																} else {
-																	F_sequence_close(m, v73, int32(3))
+																	F_relation_close(m, v73, int32(3))
 																	mBase = m.M
 																	v88 = m.ExcPending
 																	if v88 != 0 {

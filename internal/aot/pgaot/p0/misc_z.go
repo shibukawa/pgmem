@@ -10,92 +10,68 @@ func F_ZeroAndLockBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = mBase
 	var v10 int32
 	_ = v10
-	var v12 int32
-	_ = v12
+	var v13 int32
+	_ = v13
 	var v15 int32
 	_ = v15
-	var v17 int32
-	_ = v17
 	var v18 int32
 	_ = v18
-	var v22 int32
-	_ = v22
-	var v26 int32
-	_ = v26
-	var v30 int32
-	_ = v30
-	var v34 int32
-	_ = v34
+	var v19 int32
+	_ = v19
+	var v23 int32
+	_ = v23
+	var v29 int32
+	_ = v29
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v37 int32
+	_ = v37
+	var v42 int32
+	_ = v42
+	var v44 int32
+	_ = v44
 	var v46 int32
 	_ = v46
 	var v49 int32
 	_ = v49
 	var v51 int32
 	_ = v51
-	var v54 int32
-	_ = v54
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
-	var v68 int32
-	_ = v68
-	var v72 int32
-	_ = v72
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
-	var v79 int32
-	_ = v79
-	var v87 int32
-	_ = v87
-	var v94 int32
-	_ = v94
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v60 int32
+	_ = v60
+	var v67 int32
+	_ = v67
+	var v85 int32
+	_ = v85
+	var v92 int32
+	_ = v92
+	var v93 int32
+	_ = v93
 	var v95 int32
 	_ = v95
-	var v97 int32
-	_ = v97
 	if l2 == int32(0) {
-		if l0 < int32(0) {
+		if int32(0) <= l0 {
 			v10 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[0]))
-			v12 = l0 ^ int32(-1)
-			v15 = v10 + v12<<(uint(int32(6))%32)
-			v17 = F_StartLocalBufferIO(m, v15, int32(0))
+			v13 = v10 + l0<<(uint(int32(6))%32)
+			v15 = v13 + int32(-64)
+			v18 = F_StartBufferIO(m, v15, int32(1), int32(0))
 			mBase = m.M
-			v18 = m.ExcPending
-			if v18 != 0 {
+			v19 = m.ExcPending
+			if v19 != 0 {
 				return
 			} else {
-				if v17 == int32(0) {
-					return
-				} else {
-					v22 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[1]))
-					v26 = *(*int32)(unsafe.Add(mBase, uint32(v22+v12<<(uint(int32(2))%32))))
-					v30 = F__emscripten_memset_bulkmem(m, v26, base.I32_extend8_s(int32(0)), int32(_a_F_ZeroAndLockBuffer_0))
-					mBase = m.M
-					v34 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
-					*(*int32)(unsafe.Add(mBase, uint32(v15)+24)) = v34&int32(-134217729) | int32(16777216)
-					return
-				}
-			}
-		} else {
-			v46 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[2]))
-			v49 = v46 + l0<<(uint(int32(6))%32)
-			v51 = v49 + int32(-64)
-			v54 = F_StartBufferIO(m, v51, int32(1), int32(0))
-			mBase = m.M
-			v55 = m.ExcPending
-			if v55 != 0 {
-				return
-			} else {
-				if v54 == int32(0) {
+				if v18 == int32(0) {
 					if l1 == int32(1) {
-						v87 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[2]))
-						v94 = F_LWLockAcquire(m, v87+l0<<(uint(int32(6))%32)-int32(16), int32(0))
+						v85 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[0]))
+						v92 = F_LWLockAcquire(m, v85+l0<<(uint(int32(6))%32)-int32(16), int32(0))
 						mBase = m.M
-						v95 = m.ExcPending
-						if v95 != 0 {
+						v93 = m.ExcPending
+						if v93 != 0 {
 							return
 						} else {
 							return
@@ -103,33 +79,54 @@ func F_ZeroAndLockBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					} else {
 						F_LockBufferForCleanup(m, l0)
 						mBase = m.M
-						v97 = m.ExcPending
-						if v97 != 0 {
+						v95 = m.ExcPending
+						if v95 != 0 {
 							return
 						} else {
 							return
 						}
 					}
 				} else {
-					v59 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[3]))
-					v68 = F__emscripten_memset_bulkmem(m, v59+l0<<(uint(int32(13))%32)+int32(-8192), base.I32_extend8_s(int32(0)), int32(_a_F_ZeroAndLockBuffer_0))
+					v23 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[1]))
+					v29 = int32(0)
+					base.MemoryFill(m, v23+l0<<(uint(int32(13))%32)+int32(-8192), v29, int32(_a_F_ZeroAndLockBuffer_0))
+					v35 = F_LWLockAcquire(m, v13-int32(16), v29)
 					mBase = m.M
-					v72 = F_LWLockAcquire(m, v49-int32(16), int32(0))
-					mBase = m.M
-					v73 = m.ExcPending
-					if v73 != 0 {
+					v36 = m.ExcPending
+					if v36 != 0 {
 						return
 					} else {
-						v74 = int32(0)
-						F_TerminateBufferIO(m, v51, v74, int32(16777216), int32(1), v74)
+						v37 = int32(0)
+						F_TerminateBufferIO(m, v15, v37, int32(16777216), int32(1), v37)
 						mBase = m.M
-						v79 = m.ExcPending
-						if v79 != 0 {
+						v42 = m.ExcPending
+						if v42 != 0 {
 							return
 						} else {
 							return
 						}
 					}
+				}
+			}
+		} else {
+			v44 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[2]))
+			v46 = l0 ^ int32(-1)
+			v49 = v44 + v46<<(uint(int32(6))%32)
+			v51 = F_StartLocalBufferIO(m, v49, int32(0))
+			mBase = m.M
+			v52 = m.ExcPending
+			if v52 != 0 {
+				return
+			} else {
+				if v51 == int32(0) {
+					return
+				} else {
+					v56 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[3]))
+					v60 = *(*int32)(unsafe.Add(mBase, uint32(v56+v46<<(uint(int32(2))%32))))
+					base.MemoryFill(m, v60, int32(0), int32(_a_F_ZeroAndLockBuffer_0))
+					v67 = *(*int32)(unsafe.Add(mBase, uint32(v49)+24))
+					*(*int32)(unsafe.Add(mBase, uint32(v49)+24)) = v67&int32(-134217729) | int32(16777216)
+					return
 				}
 			}
 		}
@@ -138,11 +135,11 @@ func F_ZeroAndLockBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			return
 		} else {
 			if l1 == int32(1) {
-				v87 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[2]))
-				v94 = F_LWLockAcquire(m, v87+l0<<(uint(int32(6))%32)-int32(16), int32(0))
+				v85 = *(*int32)(unsafe.Add(mBase, _c_F_ZeroAndLockBuffer[0]))
+				v92 = F_LWLockAcquire(m, v85+l0<<(uint(int32(6))%32)-int32(16), int32(0))
 				mBase = m.M
-				v95 = m.ExcPending
-				if v95 != 0 {
+				v93 = m.ExcPending
+				if v93 != 0 {
 					return
 				} else {
 					return
@@ -150,8 +147,8 @@ func F_ZeroAndLockBuffer(m *base.Module, l0 int32, l1 int32, l2 int32) {
 			} else {
 				F_LockBufferForCleanup(m, l0)
 				mBase = m.M
-				v97 = m.ExcPending
-				if v97 != 0 {
+				v95 = m.ExcPending
+				if v95 != 0 {
 					return
 				} else {
 					return

@@ -58,20 +58,20 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 	_ = v26
 	var v30 int32
 	_ = v30
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
-	var v49 int32
-	_ = v49
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
-	var v68 int32
-	_ = v68
+	var v33 int32
+	_ = v33
+	var v34 int32
+	_ = v34
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v56 int32
+	_ = v56
+	var v61 int32
+	_ = v61
+	var v66 int32
+	_ = v66
 	v4 = m.G0
 	v6 = v4 - int32(16)
 	m.G0 = v6
@@ -89,19 +89,19 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 				v26 = int32(1)
 				*(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferPin[1])) = v25 - v26
 				v30 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferPin[2]))
-				v35 = v30 + v13<<(uint(int32(6))%32) + int32(24)
-				v36 = *(*int32)(unsafe.Add(mBase, uint32(v35)))
-				*(*int32)(unsafe.Add(mBase, uint32(v35))) = v36 - v26
+				v33 = v30 + v13<<(uint(int32(6))%32)
+				v34 = *(*int32)(unsafe.Add(mBase, uint32(v33)+24))
+				*(*int32)(unsafe.Add(mBase, uint32(v33)+24)) = v34 - v26
 			} else {
 			}
 			m.G0 = v6 + int32(16)
 			return
 		} else {
-			v42 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferPin[3]))
-			F_UnpinBufferNoOwner(m, v42+l0<<(uint(int32(6))%32)+int32(-64))
+			v40 = *(*int32)(unsafe.Add(mBase, _c_F_ResOwnerReleaseBufferPin[3]))
+			F_UnpinBufferNoOwner(m, v40+l0<<(uint(int32(6))%32)+int32(-64))
 			mBase = m.M
-			v49 = m.ExcPending
-			if v49 != 0 {
+			v47 = m.ExcPending
+			if v47 != 0 {
 				return
 			} else {
 				m.G0 = v6 + int32(16)
@@ -111,21 +111,21 @@ func F_ResOwnerReleaseBufferPin(m *base.Module, l0 int32) {
 	} else {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v58 = m.ExcPending
-		if v58 != 0 {
+		v56 = m.ExcPending
+		if v56 != 0 {
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(v6))) = int32(0)
 			F_errmsg_internal(m, int32(_a_F_ResOwnerReleaseBufferPin_1), v6)
 			mBase = m.M
-			v63 = m.ExcPending
-			if v63 != 0 {
+			v61 = m.ExcPending
+			if v61 != 0 {
 				return
 			} else {
 				F_errfinish(m, int32(_a_F_ResOwnerReleaseBufferPin_2), int32(_a_F_ResOwnerReleaseBufferPin_3), int32(_a_F_ResOwnerReleaseBufferPin_4))
 				mBase = m.M
-				v68 = m.ExcPending
-				if v68 != 0 {
+				v66 = m.ExcPending
+				if v66 != 0 {
 					return
 				} else {
 					base.Wasm_trap_unreachable()
@@ -147,16 +147,13 @@ func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
 	_ = v9
 	var v14 int32
 	_ = v14
-	var v18 int32
-	_ = v18
 	var v20 int32
 	_ = v20
 	v2 = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(l0)+96)) = v2
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	if v5 <= v2 {
-		v18 = F___memset(m, l0, int32(0), int32(100))
-		mBase = m.M
+		base.MemoryFill(m, l0, int32(0), int32(100))
 		F_pfree(m, l0)
 		mBase = m.M
 		v20 = m.ExcPending
@@ -170,8 +167,7 @@ func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
 		mBase = m.M
 		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+96))
 		if v9 == int32(0) {
-			v18 = F___memset(m, l0, int32(0), int32(100))
-			mBase = m.M
+			base.MemoryFill(m, l0, int32(0), int32(100))
 			F_pfree(m, l0)
 			mBase = m.M
 			v20 = m.ExcPending
@@ -187,8 +183,7 @@ func F_ResOwnerReleasePGMEMCipher(m *base.Module, l0 int32) {
 			if v14 != 0 {
 				return
 			} else {
-				v18 = F___memset(m, l0, int32(0), int32(100))
-				mBase = m.M
+				base.MemoryFill(m, l0, int32(0), int32(100))
 				F_pfree(m, l0)
 				mBase = m.M
 				v20 = m.ExcPending

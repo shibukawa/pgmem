@@ -5,278 +5,6 @@ import (
 	"unsafe"
 )
 
-func F_SendSharedInvalidMessages(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	var v14 int32
-	_ = v14
-	var v18 int32
-	_ = v18
-	var v21 int32
-	_ = v21
-	var v22 int32
-	_ = v22
-	var v32 int32
-	_ = v32
-	var v36 int32
-	_ = v36
-	var v37 int32
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v41 int32
-	_ = v41
-	var v52 int32
-	_ = v52
-	var v53 int32
-	_ = v53
-	var v54 int32
-	_ = v54
-	var v58 int32
-	_ = v58
-	var v60 int32
-	_ = v60
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v71 int32
-	_ = v71
-	var v74 int32
-	_ = v74
-	var v75 int64
-	_ = v75
-	var v77 int64
-	_ = v77
-	var v79 int32
-	_ = v79
-	var v80 int32
-	_ = v80
-	var v82 int32
-	_ = v82
-	var v87 int32
-	_ = v87
-	var v94 int32
-	_ = v94
-	var v95 int32
-	_ = v95
-	var v96 int32
-	_ = v96
-	var v99 int32
-	_ = v99
-	var v102 int32
-	_ = v102
-	var v107 int32
-	_ = v107
-	var v117 int32
-	_ = v117
-	var v121 int32
-	_ = v121
-	var v124 int32
-	_ = v124
-	var v125 int32
-	_ = v125
-	var v138 int32
-	_ = v138
-	var v142 int32
-	_ = v142
-	var v147 int32
-	_ = v147
-	if l1 <= int32(0) {
-		goto L1
-	} else {
-		goto L2
-	}
-L1:
-	;
-	return
-L2:
-	;
-	v14 = *(*int32)(unsafe.Add(mBase, _c_F_SendSharedInvalidMessages[0]))
-	v18 = v14 + int32(12)
-	v21 = l0
-	v22 = l1
-	goto L3
-L3:
-	;
-	v32 = *(*int32)(unsafe.Add(mBase, _c_F_SendSharedInvalidMessages[1]))
-	v36 = F_LWLockAcquire(m, v32+int32(768), int32(0))
-	mBase = m.M
-	v37 = m.ExcPending
-	if v37 != 0 {
-		goto L5
-	} else {
-		goto L6
-	}
-L5:
-	;
-	return
-L6:
-	;
-	v38 = int32(64)
-	if base.Ui32(v38) <= base.Ui32(v22) {
-		goto L7
-	} else {
-		goto L8
-	}
-L7:
-	;
-	v41 = v38
-	goto L9
-L8:
-	;
-	v41 = v22
-	goto L9
-L9:
-	;
-	goto L10
-L10:
-	;
-	v52 = *(*int32)(unsafe.Add(mBase, uint32(v14)+4))
-	v53 = *(*int32)(unsafe.Add(mBase, uint32(v14)))
-	v54 = v52 - v53
-	if int32(_a_F_SendSharedInvalidMessages_0) < v54+v41 {
-		goto L12
-	} else {
-		goto L13
-	}
-L12:
-	;
-	F_SICleanupQueue(m, int32(1), v41)
-	mBase = m.M
-	v147 = m.ExcPending
-	if v147 != 0 {
-		goto L5
-	} else {
-		goto L30
-	}
-L13:
-	;
-	v58 = *(*int32)(unsafe.Add(mBase, uint32(v14)+8))
-	if v58 <= v54 {
-		goto L12
-	} else {
-		goto L14
-	}
-L14:
-	;
-	v60 = v21
-	v63 = v52
-	v64 = v41
-	goto L15
-L15:
-	;
-	v71 = base.I32_rem_s(v63, int32(_a_F_SendSharedInvalidMessages_0))
-	v74 = v14 + int32(16) + v71<<(uint(int32(4))%32)
-	v75 = *(*int64)(unsafe.Add(mBase, uint32(v60)))
-	*(*int64)(unsafe.Add(mBase, uint32(v74))) = v75
-	v77 = *(*int64)(unsafe.Add(mBase, uint32(v60)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v74)+8)) = v77
-	v79 = int32(1)
-	v80 = v63 + v79
-	v82 = v60 + int32(16)
-	if v79 < v64 {
-		v60 = v82
-		v63 = v80
-		v64 = v64 - v79
-		goto L15
-	} else {
-		goto L17
-	}
-L16:
-	;
-	v87 = *(*int32)(unsafe.Add(mBase, uint32(v18)))
-	*(*int32)(unsafe.Add(mBase, uint32(v18))) = int32(1)
-	if v87 != 0 {
-		goto L18
-	} else {
-		goto L19
-	}
-L17:
-	;
-	goto L16
-L18:
-	;
-	F_s_lock(m, v18, int32(_a_F_SendSharedInvalidMessages_1), int32(422), int32(_a_F_SendSharedInvalidMessages_2))
-	mBase = m.M
-	v94 = m.ExcPending
-	if v94 != 0 {
-		goto L5
-	} else {
-		goto L21
-	}
-L19:
-	;
-	goto L20
-L20:
-	;
-	v95 = v22 - v41
-	v96 = int32(0)
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+12)) = v96
-	*(*int32)(unsafe.Add(mBase, uint32(v14)+4)) = v80
-	v99 = *(*int32)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_SendSharedInvalidMessages[2])))
-	if v96 < v99 {
-		goto L22
-	} else {
-		goto L23
-	}
-L21:
-	;
-	goto L20
-L22:
-	;
-	v102 = *(*int32)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_SendSharedInvalidMessages[3])))
-	v107 = int32(0)
-	goto L25
-L23:
-	;
-	goto L24
-L24:
-	;
-	v138 = *(*int32)(unsafe.Add(mBase, _c_F_SendSharedInvalidMessages[1]))
-	F_LWLockRelease(m, v138+int32(768))
-	mBase = m.M
-	v142 = m.ExcPending
-	if v142 != 0 {
-		goto L5
-	} else {
-		goto L28
-	}
-L25:
-	;
-	v117 = *(*int32)(unsafe.Add(mBase, uint32(v102+v107<<(uint(int32(2))%32))))
-	v121 = int32(1)
-	*(*uint8)(unsafe.Add(mBase, uint32(v14+int32(_a_F_SendSharedInvalidMessages_3)+v117<<(uint(int32(4))%32)))) = uint8(v121)
-	v124 = v107 + v121
-	v125 = *(*int32)(unsafe.Add(mBase, uint32(v14)+uint32(_c_F_SendSharedInvalidMessages[2])))
-	if v124 < v125 {
-		v107 = v124
-		goto L25
-	} else {
-		goto L27
-	}
-L26:
-	;
-	goto L24
-L27:
-	;
-	goto L26
-L28:
-	;
-	if int32(0) < v95 {
-		v21 = v82
-		v22 = v95
-		goto L3
-	} else {
-		goto L29
-	}
-L29:
-	;
-	goto L1
-L30:
-	;
-	goto L10
-}
 func F_recordSharedDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	mBase := m.M
 	_ = mBase
@@ -294,48 +22,44 @@ func F_recordSharedDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	_ = v19
 	var v20 int32
 	_ = v20
-	var v21 int32
-	_ = v21
-	var v34 int32
-	_ = v34
-	var v37 int64
-	_ = v37
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v40 int32
+	var v40 int64
 	_ = v40
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
 	var v43 int32
 	_ = v43
-	var v49 int32
-	_ = v49
-	var v61 int32
-	_ = v61
-	var v73 int32
-	_ = v73
-	var v89 int32
-	_ = v89
-	var v117 int32
-	_ = v117
-	var v126 int32
-	_ = v126
-	var v127 int32
-	_ = v127
-	var v129 int32
-	_ = v129
-	var v134 int32
-	_ = v134
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
+	var v52 int32
+	_ = v52
+	var v64 int32
+	_ = v64
+	var v77 int32
+	_ = v77
+	var v94 int32
+	_ = v94
+	var v123 int32
+	_ = v123
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
 	var v135 int32
 	_ = v135
-	var v137 int32
-	_ = v137
-	var v139 int32
-	_ = v139
-	var v147 int32
-	_ = v147
+	var v140 int32
+	_ = v140
+	var v141 int32
+	_ = v141
+	var v143 int32
+	_ = v143
+	var v145 int32
+	_ = v145
+	var v153 int32
+	_ = v153
 	v9 = m.G0
 	v11 = v9 - int32(48)
 	m.G0 = v11
@@ -349,119 +73,81 @@ func F_recordSharedDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32) {
 		} else {
 			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
 			v20 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-			v21 = int32(0)
-			if v19 == int32(2613) {
-				v34 = v21
-			} else {
-				if base.Ui32(int32(_a_F_recordSharedDependencyOn_0)) < base.Ui32(v20) {
-					v34 = v21
-				} else {
-					v34 = (base.B2i32(v19 != int32(2615)) | base.B2i32(v20 != int32(2200))) & base.B2i32(v19 != int32(1262))
-				}
-			}
-			if v34 == int32(0) {
-				v37 = *(*int64)(unsafe.Add(mBase, uint32(l0)+4))
-				v38 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v39 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
-				v40 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-				F_shdepLockAndCheckObject(m, v39, v40)
+			if base.B2i32(base.B2i32(v19 == int32(2613))|base.B2i32(base.Ui32(int32(_a_F_recordSharedDependencyOn_0)) < base.Ui32(v20)) == int32(0))&((base.B2i32(v19 != int32(2615))|base.B2i32(v20 != int32(2200)))&base.B2i32(v19 != int32(1262))) == int32(0) {
+				v40 = *(*int64)(unsafe.Add(mBase, uint32(l0)+4))
+				v41 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v42 = *(*int32)(unsafe.Add(mBase, uint32(l1)))
+				v43 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+				F_shdepLockAndCheckObject(m, v42, v43)
 				mBase = m.M
-				v42 = m.ExcPending
-				if v42 != 0 {
+				v45 = m.ExcPending
+				if v45 != 0 {
 					return
 				} else {
-					v43 = int32(0)
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+11)) = v43
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v43
-					v49 = int32(1)
-					if v38 <= int32(3591) {
-						if v38 <= int32(2670) {
-							switch v38 - int32(1213) {
+					v46 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+11)) = v46
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+8)) = v46
+					v52 = int32(1)
+					if v41 <= int32(3591) {
+						if v41 <= int32(2670) {
+							switch v41 - int32(1213) {
 							case 0, 1, 19, 20, 47, 48, 49:
-								v117 = v49
+								v123 = v52
 							case 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46:
-								v117 = int32(0)
+								v123 = int32(0)
 							default:
-								if base.Ui32(int32(2)) <= base.Ui32(v38-int32(2396)) {
-									v117 = int32(0)
+								if base.Ui32(int32(2)) <= base.Ui32(v41-int32(2396)) {
+									v123 = int32(0)
 								} else {
-									v117 = v49
+									v123 = v52
 								}
 							}
 						} else {
-							v61 = v38 - int32(2671)
-							if base.Ui32(int32(27)) < base.Ui32(v61) {
-								if base.Ui32(v38-int32(2964)) < base.Ui32(int32(4)) {
-									v117 = v49
+							v64 = v41 - int32(2671)
+							if base.B2i32(base.Ui32(int32(27)) < base.Ui32(v64))|base.B2i32(int32(1)<<(uint(v64)%32)&int32(226492515) == int32(0)) != 0 {
+								if base.B2i32(base.Ui32(v41-int32(2964)) < base.Ui32(int32(4)))|base.B2i32(base.Ui32(v41-int32(2846)) < base.Ui32(int32(2))) != 0 {
+									v123 = v52
 								} else {
-									if base.Ui32(v38-int32(2846)) < base.Ui32(int32(2)) {
-										v117 = v49
-									} else {
-										v117 = int32(0)
-									}
+									v123 = int32(0)
 								}
 							} else {
-								if int32(1)<<(uint(v61)%32)&int32(226492515) == int32(0) {
-									if base.Ui32(v38-int32(2964)) < base.Ui32(int32(4)) {
-										v117 = v49
-									} else {
-										if base.Ui32(v38-int32(2846)) < base.Ui32(int32(2)) {
-											v117 = v49
-										} else {
-											v117 = int32(0)
-										}
-									}
-								} else {
-									v117 = v49
-								}
+								v123 = v52
 							}
 						}
 					} else {
-						if v38 <= int32(_a_F_recordSharedDependencyOn_1) {
-							v73 = v38 - int32(_a_F_recordSharedDependencyOn_2)
-							if base.Ui32(int32(9)) < base.Ui32(v73) {
-								if base.Ui32(v38-int32(3592)) < base.Ui32(int32(2)) {
-									v117 = v49
+						if v41 <= int32(_a_F_recordSharedDependencyOn_1) {
+							v77 = v41 - int32(_a_F_recordSharedDependencyOn_2)
+							if base.B2i32(base.Ui32(int32(9)) < base.Ui32(v77))|base.B2i32(int32(1)<<(uint(v77)%32)&int32(963) == int32(0)) != 0 {
+								if base.Ui32(v41-int32(3592)) < base.Ui32(int32(2)) {
+									v123 = v52
 								} else {
-									if base.Ui32(int32(2)) <= base.Ui32(v38-int32(4060)) {
-										v117 = int32(0)
+									if base.Ui32(int32(2)) <= base.Ui32(v41-int32(4060)) {
+										v123 = int32(0)
 									} else {
-										v117 = v49
+										v123 = v52
 									}
 								}
 							} else {
-								if int32(1)<<(uint(v73)%32)&int32(963) == int32(0) {
-									if base.Ui32(v38-int32(3592)) < base.Ui32(int32(2)) {
-										v117 = v49
-									} else {
-										if base.Ui32(int32(2)) <= base.Ui32(v38-int32(4060)) {
-											v117 = int32(0)
-										} else {
-											v117 = v49
-										}
-									}
-								} else {
-									v117 = v49
-								}
+								v123 = v52
 							}
 						} else {
-							switch v38 - int32(_a_F_recordSharedDependencyOn_3) {
+							switch v41 - int32(_a_F_recordSharedDependencyOn_3) {
 							case 0, 1, 2, 3, 4, 59, 60:
-								v117 = v49
+								v123 = v52
 							case 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58:
-								v117 = int32(0)
+								v123 = int32(0)
 							default:
-								if base.Ui32(v38-int32(_a_F_recordSharedDependencyOn_4)) < base.Ui32(int32(3)) {
-									v117 = v49
+								if base.Ui32(v41-int32(_a_F_recordSharedDependencyOn_4)) < base.Ui32(int32(3)) {
+									v123 = v52
 								} else {
-									v89 = v38 - int32(_a_F_recordSharedDependencyOn_5)
-									if base.Ui32(int32(15)) < base.Ui32(v89) {
-										v117 = int32(0)
+									v94 = v41 - int32(_a_F_recordSharedDependencyOn_5)
+									if base.Ui32(int32(15)) < base.Ui32(v94) {
+										v123 = int32(0)
 									} else {
-										if int32(1)<<(uint(v89)%32)&int32(_a_F_recordSharedDependencyOn_6) != 0 {
-											v117 = v49
+										if int32(1)<<(uint(v94)%32)&int32(_a_F_recordSharedDependencyOn_6) != 0 {
+											v123 = v52
 										} else {
-											v117 = int32(0)
+											v123 = int32(0)
 										}
 									}
 								}
@@ -469,40 +155,40 @@ func F_recordSharedDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32) {
 						}
 					}
 					*(*int32)(unsafe.Add(mBase, uint32(v11)+40)) = base.I32_extend8_s(l2)
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v40
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v39
-					*(*int64)(unsafe.Add(mBase, uint32(v11)+24)) = v37
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v38
-					v126 = *(*int32)(unsafe.Add(mBase, _c_F_recordSharedDependencyOn[1]))
-					if v117 != 0 {
-						v127 = int32(0)
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+36)) = v43
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+32)) = v42
+					*(*int64)(unsafe.Add(mBase, uint32(v11)+24)) = v40
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+20)) = v41
+					v132 = *(*int32)(unsafe.Add(mBase, _c_F_recordSharedDependencyOn[1]))
+					if v123 != 0 {
+						v133 = int32(0)
 					} else {
-						v127 = v126
+						v133 = v132
 					}
-					*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v127
-					v129 = *(*int32)(unsafe.Add(mBase, uint32(v17)+52))
-					v134 = F_heap_form_tuple(m, v129, v11+int32(16), v11+int32(8))
+					*(*int32)(unsafe.Add(mBase, uint32(v11)+16)) = v133
+					v135 = *(*int32)(unsafe.Add(mBase, uint32(v17)+52))
+					v140 = F_heap_form_tuple(m, v135, v11+int32(16), v11+int32(8))
 					mBase = m.M
-					v135 = m.ExcPending
-					if v135 != 0 {
+					v141 = m.ExcPending
+					if v141 != 0 {
 						return
 					} else {
-						F_CatalogTupleInsert(m, v17, v134)
+						F_CatalogTupleInsert(m, v17, v140)
 						mBase = m.M
-						v137 = m.ExcPending
-						if v137 != 0 {
+						v143 = m.ExcPending
+						if v143 != 0 {
 							return
 						} else {
-							F_pfree(m, v134)
+							F_pfree(m, v140)
 							mBase = m.M
-							v139 = m.ExcPending
-							if v139 != 0 {
+							v145 = m.ExcPending
+							if v145 != 0 {
 								return
 							} else {
-								F_sequence_close(m, v17, int32(3))
+								F_relation_close(m, v17, int32(3))
 								mBase = m.M
-								v147 = m.ExcPending
-								if v147 != 0 {
+								v153 = m.ExcPending
+								if v153 != 0 {
 									return
 								} else {
 									m.G0 = v11 + int32(48)
@@ -513,10 +199,10 @@ func F_recordSharedDependencyOn(m *base.Module, l0 int32, l1 int32, l2 int32) {
 					}
 				}
 			} else {
-				F_sequence_close(m, v17, int32(3))
+				F_relation_close(m, v17, int32(3))
 				mBase = m.M
-				v147 = m.ExcPending
-				if v147 != 0 {
+				v153 = m.ExcPending
+				if v153 != 0 {
 					return
 				} else {
 					m.G0 = v11 + int32(48)
@@ -556,8 +242,8 @@ func F_shared_buffer_readv_stage(m *base.Module, l0 int32, l1 int32) {
 	_ = v34
 	var v36 int32
 	_ = v36
-	var v40 int32
-	_ = v40
+	var v41 int32
+	_ = v41
 	var v47 int32
 	_ = v47
 	var v49 int32
@@ -592,9 +278,9 @@ func F_shared_buffer_readv_stage(m *base.Module, l0 int32, l1 int32) {
 	_ = v116
 	var v119 int32
 	_ = v119
-	var v120 int64
+	var v120 int32
 	_ = v120
-	var v122 int32
+	var v122 int64
 	_ = v122
 	var v130 int32
 	_ = v130
@@ -634,7 +320,7 @@ L2:
 	}
 L3:
 	;
-	v40 = int32(0)
+	v41 = int32(0)
 	goto L6
 L4:
 	;
@@ -645,7 +331,7 @@ L5:
 	return
 L6:
 	;
-	v47 = *(*int32)(unsafe.Add(mBase, uint32(v18+v19<<(uint(int32(3))%32)+v40<<(uint(int32(3))%32))))
+	v47 = *(*int32)(unsafe.Add(mBase, uint32(v18+v19<<(uint(int32(3))%32)+v41<<(uint(int32(3))%32))))
 	v49 = *(*int32)(unsafe.Add(mBase, _c_F_shared_buffer_readv_stage[1]))
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+44)) = int32(_a_F_shared_buffer_readv_stage_0)
 	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(_a_F_shared_buffer_readv_stage_1)
@@ -715,10 +401,10 @@ L15:
 L16:
 	;
 	v119 = v62 - int32(28)
-	v120 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
-	*(*int64)(unsafe.Add(mBase, uint32(v119))) = v120
-	v122 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
-	*(*int32)(unsafe.Add(mBase, uint32(v119)+8)) = v122
+	v120 = *(*int32)(unsafe.Add(mBase, uint32(v10)+16))
+	*(*int32)(unsafe.Add(mBase, uint32(v119)+8)) = v120
+	v122 = *(*int64)(unsafe.Add(mBase, uint32(v10)+8))
+	*(*int64)(unsafe.Add(mBase, uint32(v119))) = v122
 	*(*int32)(unsafe.Add(mBase, uint32(v64))) = (v90 + int32(_a_F_shared_buffer_readv_stage_5)) & int32(-4194305)
 	v130 = *(*int32)(unsafe.Add(mBase, _c_F_shared_buffer_readv_stage[3]))
 	F_ResourceOwnerForget(m, v130, v47, int32(_a_F_shared_buffer_readv_stage_6))
@@ -779,10 +465,10 @@ L26:
 	goto L18
 L27:
 	;
-	v135 = v40 + int32(1)
+	v135 = v41 + int32(1)
 	v136 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v10)+23)))
 	if base.Ui32(v135) < base.Ui32(v136) {
-		v40 = v135
+		v41 = v135
 		goto L6
 	} else {
 		goto L28

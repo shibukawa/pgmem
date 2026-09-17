@@ -24,7 +24,7 @@ func F__int_contains_joinsel(m *base.Module, l0 int32) int32 {
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
 	v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+52))
-	v9 = F_DirectFunctionCall5Coll(m, int32(4013), int32(0), v4, int32(2751), v6, v7, v8)
+	v9 = F_DirectFunctionCall5Coll(m, int32(3994), int32(0), v4, int32(2751), v6, v7, v8)
 	mBase = m.M
 	v12 = m.ExcPending
 	if v12 != 0 {
@@ -49,7 +49,7 @@ func F__int_contains_sel(m *base.Module, l0 int32) int32 {
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+36))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+44))
-	v8 = F_DirectFunctionCall4Coll(m, int32(4012), int32(0), v4, int32(2751), v6, v7)
+	v8 = F_DirectFunctionCall4Coll(m, int32(3993), int32(0), v4, int32(2751), v6, v7)
 	mBase = m.M
 	v11 = m.ExcPending
 	if v11 != 0 {
@@ -103,19 +103,19 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 	_ = v71
 	var v76 int32
 	_ = v76
-	var v79 int32
-	_ = v79
-	var v81 int32
-	_ = v81
+	var v80 int32
+	_ = v80
+	var v84 int32
+	_ = v84
 	v9 = m.G0
 	v11 = v9 + int32(-64)
 	m.G0 = v11
 	v13 = int32(1)
 	v14 = *(*int32)(unsafe.Add(mBase, uint32(l0)+108))
 	if v14 == int32(0) {
-		v81 = v13
+		v84 = v13
 		m.G0 = v11 - int32(-64)
-		return v81
+		return v84
 	} else {
 		*(*int32)(unsafe.Add(mBase, _c_F_call_int_check_hook[0])) = int32(50856066)
 		v21 = int32(0)
@@ -129,9 +129,9 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 			return int32(0)
 		} else {
 			if v29 != 0 {
-				v81 = v13
+				v84 = v13
 				m.G0 = v11 - int32(-64)
-				return v81
+				return v84
 			} else {
 				v34 = F_errstart(m, l4, int32(0))
 				mBase = m.M
@@ -182,13 +182,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													} else {
 														F_FlushErrorState(m)
 														mBase = m.M
-														v79 = m.ExcPending
-														if v79 != 0 {
+														v80 = m.ExcPending
+														if v80 != 0 {
 															return int32(0)
 														} else {
-															v81 = int32(0)
+															v84 = int32(0)
 															m.G0 = v11 - int32(-64)
-															return v81
+															return v84
 														}
 													}
 												}
@@ -201,13 +201,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												} else {
 													F_FlushErrorState(m)
 													mBase = m.M
-													v79 = m.ExcPending
-													if v79 != 0 {
+													v80 = m.ExcPending
+													if v80 != 0 {
 														return int32(0)
 													} else {
-														v81 = int32(0)
+														v84 = int32(0)
 														m.G0 = v11 - int32(-64)
-														return v81
+														return v84
 													}
 												}
 											}
@@ -230,13 +230,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												} else {
 													F_FlushErrorState(m)
 													mBase = m.M
-													v79 = m.ExcPending
-													if v79 != 0 {
+													v80 = m.ExcPending
+													if v80 != 0 {
 														return int32(0)
 													} else {
-														v81 = int32(0)
+														v84 = int32(0)
 														m.G0 = v11 - int32(-64)
-														return v81
+														return v84
 													}
 												}
 											}
@@ -249,13 +249,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											} else {
 												F_FlushErrorState(m)
 												mBase = m.M
-												v79 = m.ExcPending
-												if v79 != 0 {
+												v80 = m.ExcPending
+												if v80 != 0 {
 													return int32(0)
 												} else {
-													v81 = int32(0)
+													v84 = int32(0)
 													m.G0 = v11 - int32(-64)
-													return v81
+													return v84
 												}
 											}
 										}
@@ -298,13 +298,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 													} else {
 														F_FlushErrorState(m)
 														mBase = m.M
-														v79 = m.ExcPending
-														if v79 != 0 {
+														v80 = m.ExcPending
+														if v80 != 0 {
 															return int32(0)
 														} else {
-															v81 = int32(0)
+															v84 = int32(0)
 															m.G0 = v11 - int32(-64)
-															return v81
+															return v84
 														}
 													}
 												}
@@ -317,13 +317,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												} else {
 													F_FlushErrorState(m)
 													mBase = m.M
-													v79 = m.ExcPending
-													if v79 != 0 {
+													v80 = m.ExcPending
+													if v80 != 0 {
 														return int32(0)
 													} else {
-														v81 = int32(0)
+														v84 = int32(0)
 														m.G0 = v11 - int32(-64)
-														return v81
+														return v84
 													}
 												}
 											}
@@ -346,13 +346,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 												} else {
 													F_FlushErrorState(m)
 													mBase = m.M
-													v79 = m.ExcPending
-													if v79 != 0 {
+													v80 = m.ExcPending
+													if v80 != 0 {
 														return int32(0)
 													} else {
-														v81 = int32(0)
+														v84 = int32(0)
 														m.G0 = v11 - int32(-64)
-														return v81
+														return v84
 													}
 												}
 											}
@@ -365,13 +365,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 											} else {
 												F_FlushErrorState(m)
 												mBase = m.M
-												v79 = m.ExcPending
-												if v79 != 0 {
+												v80 = m.ExcPending
+												if v80 != 0 {
 													return int32(0)
 												} else {
-													v81 = int32(0)
+													v84 = int32(0)
 													m.G0 = v11 - int32(-64)
-													return v81
+													return v84
 												}
 											}
 										}
@@ -382,13 +382,13 @@ func F_call_int_check_hook(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int3
 					} else {
 						F_FlushErrorState(m)
 						mBase = m.M
-						v79 = m.ExcPending
-						if v79 != 0 {
+						v80 = m.ExcPending
+						if v80 != 0 {
 							return int32(0)
 						} else {
-							v81 = int32(0)
+							v84 = int32(0)
 							m.G0 = v11 - int32(-64)
-							return v81
+							return v84
 						}
 					}
 				}

@@ -117,8 +117,8 @@ func F_markVarForSelectPriv(m *base.Module, l0 int32, l1 int32) {
 	_ = v28
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
+	var v34 int32
+	_ = v34
 	var v40 int32
 	_ = v40
 	var v42 int32
@@ -162,14 +162,29 @@ func F_markVarForSelectPriv(m *base.Module, l0 int32, l1 int32) {
 				}
 				break
 			}
-			v32 = v28
+			if v10 == int32(0) {
+				v49 = v28
+			} else {
+				v34 = v28
+				v40 = v34
+				v42 = int32(0)
+				for {
+					v45 = *(*int32)(unsafe.Add(mBase, uint32(v40)))
+					v47 = v42 + int32(1)
+					if v47 != v10 {
+						v40 = v45
+						v42 = v47
+						continue
+					} else {
+						break
+					}
+					break
+				}
+				v49 = v45
+			}
 		} else {
-			v32 = l0
-		}
-		if v10 == int32(0) {
-			v49 = v32
-		} else {
-			v40 = v32
+			v34 = l0
+			v40 = v34
 			v42 = int32(0)
 			for {
 				v45 = *(*int32)(unsafe.Add(mBase, uint32(v40)))

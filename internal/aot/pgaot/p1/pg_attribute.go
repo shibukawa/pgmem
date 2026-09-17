@@ -82,12 +82,14 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 	_ = v117
 	var v118 int32
 	_ = v118
-	var v123 int32
-	_ = v123
-	var v125 int32
-	_ = v125
-	var v128 int64
+	var v119 int32
+	_ = v119
+	var v126 int32
+	_ = v126
+	var v128 int32
 	_ = v128
+	var v131 int64
+	_ = v131
 	v9 = m.G0
 	v11 = v9 - int32(48)
 	m.G0 = v11
@@ -101,9 +103,9 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 			if l4 != 0 {
 				v20 = int32(1)
 				*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v20)
-				v128 = int64(0)
+				v131 = int64(0)
 				m.G0 = v11 + int32(48)
-				return v128
+				return v131
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
@@ -153,9 +155,9 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 					if v78 != 0 {
 						return int64(0)
 					} else {
-						v128 = int64(0)
+						v131 = int64(0)
 						m.G0 = v11 + int32(48)
-						return v128
+						return v131
 					}
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
@@ -217,9 +219,9 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 									if l4 != 0 {
 										v87 = int32(1)
 										*(*uint8)(unsafe.Add(mBase, uint32(l4))) = uint8(v87)
-										v128 = int64(0)
+										v131 = int64(0)
 										m.G0 = v11 + int32(48)
-										return v128
+										return v131
 									} else {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
@@ -277,47 +279,35 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 										if v118 != 0 {
 											return int64(0)
 										} else {
-											if v114 == int32(0) {
-												F_ReleaseCatCache(m, v14)
+											v119 = int32(0)
+											if base.B2i32(v114 == v119)|base.B2i32(v114 == v71) == v119 {
+												F_pfree(m, v114)
 												mBase = m.M
-												v125 = m.ExcPending
-												if v125 != 0 {
+												v126 = m.ExcPending
+												if v126 != 0 {
 													return int64(0)
 												} else {
-													v128 = v117
-													m.G0 = v11 + int32(48)
-													return v128
-												}
-											} else {
-												if v71 == v114 {
 													F_ReleaseCatCache(m, v14)
 													mBase = m.M
-													v125 = m.ExcPending
-													if v125 != 0 {
+													v128 = m.ExcPending
+													if v128 != 0 {
 														return int64(0)
 													} else {
-														v128 = v117
+														v131 = v117
 														m.G0 = v11 + int32(48)
-														return v128
+														return v131
 													}
+												}
+											} else {
+												F_ReleaseCatCache(m, v14)
+												mBase = m.M
+												v128 = m.ExcPending
+												if v128 != 0 {
+													return int64(0)
 												} else {
-													F_pfree(m, v114)
-													mBase = m.M
-													v123 = m.ExcPending
-													if v123 != 0 {
-														return int64(0)
-													} else {
-														F_ReleaseCatCache(m, v14)
-														mBase = m.M
-														v125 = m.ExcPending
-														if v125 != 0 {
-															return int64(0)
-														} else {
-															v128 = v117
-															m.G0 = v11 + int32(48)
-															return v128
-														}
-													}
+													v131 = v117
+													m.G0 = v11 + int32(48)
+													return v131
 												}
 											}
 										}
@@ -332,9 +322,9 @@ func F_pg_attribute_aclmask_ext(m *base.Module, l0 int32, l1 int32, l2 int32, l3
 						if v78 != 0 {
 							return int64(0)
 						} else {
-							v128 = int64(0)
+							v131 = int64(0)
 							m.G0 = v11 + int32(48)
-							return v128
+							return v131
 						}
 					}
 				}

@@ -10,24 +10,24 @@ func F_MarkLocalBufferDirty(m *base.Module, l0 int32) {
 	_ = mBase
 	var v4 int32
 	_ = v4
-	var v11 int32
-	_ = v11
-	var v12 int32
-	_ = v12
-	var v17 int32
+	var v9 int32
+	_ = v9
+	var v10 int32
+	_ = v10
+	var v15 int32
+	_ = v15
+	var v17 int64
 	_ = v17
-	var v19 int64
-	_ = v19
 	v4 = *(*int32)(unsafe.Add(mBase, _c_F_MarkLocalBufferDirty[0]))
-	v11 = v4 + (l0^int32(-1))<<(uint(int32(6))%32) + int32(24)
-	v12 = *(*int32)(unsafe.Add(mBase, uint32(v11)))
-	if v12&int32(_a_F_MarkLocalBufferDirty_0) == int32(0) {
-		v17 = int32(_a_F_MarkLocalBufferDirty_1)
-		v19 = *(*int64)(unsafe.Add(mBase, _c_F_MarkLocalBufferDirty[1]))
-		*(*int64)(unsafe.Add(mBase, _c_F_MarkLocalBufferDirty[1])) = v19 + int64(1)
+	v9 = v4 + (l0^int32(-1))<<(uint(int32(6))%32)
+	v10 = *(*int32)(unsafe.Add(mBase, uint32(v9)+24))
+	if v10&int32(_a_F_MarkLocalBufferDirty_0) == int32(0) {
+		v15 = int32(_a_F_MarkLocalBufferDirty_1)
+		v17 = *(*int64)(unsafe.Add(mBase, _c_F_MarkLocalBufferDirty[1]))
+		*(*int64)(unsafe.Add(mBase, _c_F_MarkLocalBufferDirty[1])) = v17 + int64(1)
 	} else {
 	}
-	*(*int32)(unsafe.Add(mBase, uint32(v11))) = v12 | int32(_a_F_MarkLocalBufferDirty_0)
+	*(*int32)(unsafe.Add(mBase, uint32(v9)+24)) = v10 | int32(_a_F_MarkLocalBufferDirty_0)
 	return
 }
 func F_PinLocalBuffer(m *base.Module, l0 int32, l1 int32) {
@@ -134,32 +134,32 @@ func F_RemoveLocalLock(m *base.Module, l0 int32) {
 	_ = v41
 	var v42 int32
 	_ = v42
-	var v48 int32
-	_ = v48
+	var v46 int32
+	_ = v46
+	var v51 int32
+	_ = v51
 	var v53 int32
 	_ = v53
-	var v55 int32
-	_ = v55
-	var v60 int32
-	_ = v60
-	var v61 int32
-	_ = v61
-	var v65 int32
-	_ = v65
-	var v73 int32
-	_ = v73
-	var v76 int32
-	_ = v76
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v87 int32
-	_ = v87
-	var v92 int32
-	_ = v92
+	var v58 int32
+	_ = v58
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v71 int32
+	_ = v71
+	var v74 int32
+	_ = v74
+	var v75 int32
+	_ = v75
+	var v78 int32
+	_ = v78
+	var v79 int32
+	_ = v79
+	var v85 int32
+	_ = v85
+	var v90 int32
+	_ = v90
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+40))
 	v7 = v5 - int32(1)
 	if int32(0) <= v7 {
@@ -266,22 +266,22 @@ L17:
 	goto L18
 L18:
 	;
-	v73 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[1]))
-	v76 = F_hash_search(m, v73, l0, int32(2), int32(0))
+	v71 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[1]))
+	v74 = F_hash_search(m, v71, l0, int32(2), int32(0))
 	mBase = m.M
-	v77 = m.ExcPending
-	if v77 != 0 {
+	v75 = m.ExcPending
+	if v75 != 0 {
 		goto L9
 	} else {
 		goto L24
 	}
 L19:
 	;
-	v48 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[0]))
-	F_s_lock(m, v48, int32(_a_F_RemoveLocalLock_0), int32(1495), int32(_a_F_RemoveLocalLock_1))
+	v46 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[0]))
+	F_s_lock(m, v46, int32(_a_F_RemoveLocalLock_0), int32(1495), int32(_a_F_RemoveLocalLock_1))
 	mBase = m.M
-	v53 = m.ExcPending
-	if v53 != 0 {
+	v51 = m.ExcPending
+	if v51 != 0 {
 		goto L9
 	} else {
 		goto L22
@@ -291,13 +291,13 @@ L20:
 	goto L21
 L21:
 	;
-	v55 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[0]))
-	v60 = v55 + v42&int32(1023)<<(uint(int32(2))%32) + int32(4)
-	v61 = *(*int32)(unsafe.Add(mBase, uint32(v60)))
-	*(*int32)(unsafe.Add(mBase, uint32(v60))) = v61 - int32(1)
-	v65 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v65)
-	*(*int32)(unsafe.Add(mBase, uint32(v55))) = v65
+	v53 = *(*int32)(unsafe.Add(mBase, _c_F_RemoveLocalLock[0]))
+	v58 = v53 + v42&int32(1023)<<(uint(int32(2))%32)
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v58)+4))
+	*(*int32)(unsafe.Add(mBase, uint32(v58)+4)) = v59 - int32(1)
+	v63 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(l0)+52)) = uint8(v63)
+	*(*int32)(unsafe.Add(mBase, uint32(v53))) = v63
 	goto L18
 L22:
 	;
@@ -307,24 +307,24 @@ L23:
 	return
 L24:
 	;
-	if v76 != 0 {
+	if v74 != 0 {
 		goto L23
 	} else {
 		goto L25
 	}
 L25:
 	;
-	v80 = F_errstart(m, int32(19), int32(0))
+	v78 = F_errstart(m, int32(19), int32(0))
 	mBase = m.M
-	v81 = m.ExcPending
-	if v81 != 0 {
+	v79 = m.ExcPending
+	if v79 != 0 {
 		goto L9
 	} else {
 		goto L26
 	}
 L26:
 	;
-	if v80 == int32(0) {
+	if v78 == int32(0) {
 		goto L23
 	} else {
 		goto L27
@@ -333,8 +333,8 @@ L27:
 	;
 	F_errmsg_internal(m, int32(_a_F_RemoveLocalLock_2), int32(0))
 	mBase = m.M
-	v87 = m.ExcPending
-	if v87 != 0 {
+	v85 = m.ExcPending
+	if v85 != 0 {
 		goto L9
 	} else {
 		goto L28
@@ -343,8 +343,8 @@ L28:
 	;
 	F_errfinish(m, int32(_a_F_RemoveLocalLock_0), int32(1505), int32(_a_F_RemoveLocalLock_1))
 	mBase = m.M
-	v92 = m.ExcPending
-	if v92 != 0 {
+	v90 = m.ExcPending
+	if v90 != 0 {
 		goto L9
 	} else {
 		goto L29

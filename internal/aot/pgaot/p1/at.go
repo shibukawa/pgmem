@@ -112,8 +112,8 @@ func F_ATExecAlterConstrEnforceability(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v130
 	var v133 int32
 	_ = v133
-	var v148 int32
-	_ = v148
+	var v147 int32
+	_ = v147
 	var v156 int32
 	_ = v156
 	var v157 int32
@@ -144,8 +144,8 @@ func F_ATExecAlterConstrEnforceability(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v201
 	var v202 int32
 	_ = v202
-	var v217 int32
-	_ = v217
+	var v212 int32
+	_ = v212
 	var v223 int32
 	_ = v223
 	var v224 int32
@@ -156,8 +156,8 @@ func F_ATExecAlterConstrEnforceability(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v227
 	var v228 int32
 	_ = v228
-	var v242 int32
-	_ = v242
+	var v237 int32
+	_ = v237
 	var v271 int32
 	_ = v271
 	var v272 int32
@@ -174,8 +174,8 @@ func F_ATExecAlterConstrEnforceability(m *base.Module, l0 int32, l1 int32, l2 in
 	_ = v298
 	var v300 int32
 	_ = v300
-	var v335 int32
-	_ = v335
+	var v334 int32
+	_ = v334
 	var v342 int32
 	_ = v342
 	v20 = m.G0
@@ -218,7 +218,7 @@ L3:
 	}
 L4:
 	;
-	F_sequence_close(m, v33, int32(0))
+	F_relation_close(m, v33, int32(0))
 	mBase = m.M
 	v342 = m.ExcPending
 	if v342 != 0 {
@@ -228,7 +228,7 @@ L4:
 	}
 L5:
 	;
-	v335 = int32(1)
+	v334 = int32(1)
 	goto L4
 L6:
 	;
@@ -257,14 +257,14 @@ L7:
 	}
 L8:
 	;
-	if v242&int32(255) == int32(112) {
+	if v237&int32(255) == int32(112) {
 		goto L6
 	} else {
 		goto L50
 	}
 L9:
 	;
-	v223 = *(*int32)(unsafe.Add(mBase, uint32(v217)+64))
+	v223 = *(*int32)(unsafe.Add(mBase, uint32(v212)+64))
 	v224 = F_lappend(m, v223, v92)
 	mBase = m.M
 	v225 = m.ExcPending
@@ -285,7 +285,7 @@ L10:
 	}
 L11:
 	;
-	v148 = int32(0)
+	v147 = int32(0)
 	goto L42
 L12:
 	;
@@ -312,7 +312,7 @@ L14:
 L15:
 	;
 	if v35 != 0 {
-		v335 = int32(0)
+		v334 = int32(0)
 		goto L4
 	} else {
 		goto L33
@@ -412,7 +412,7 @@ L26:
 	v85 = *(*int32)(unsafe.Add(mBase, uint32(v33)+48))
 	v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v85)+119)))
 	if v86 != int32(114) {
-		v242 = v86
+		v237 = v86
 		goto L8
 	} else {
 		goto L28
@@ -523,14 +523,14 @@ L40:
 	goto L34
 L41:
 	;
-	v335 = base.B2i32(v35 != v36)
+	v334 = base.B2i32(v35 != v36)
 	goto L4
 L42:
 	;
-	v156 = *(*int32)(unsafe.Add(mBase, uint32(v112+v148<<(uint(int32(2))%32))))
+	v156 = *(*int32)(unsafe.Add(mBase, uint32(v112+v147<<(uint(int32(2))%32))))
 	v157 = *(*int32)(unsafe.Add(mBase, uint32(v156)))
 	if v157 == v105 {
-		v217 = v156
+		v212 = v156
 		goto L9
 	} else {
 		goto L44
@@ -540,9 +540,9 @@ L43:
 	goto L10
 L44:
 	;
-	v160 = v148 + int32(1)
+	v160 = v147 + int32(1)
 	if v109 != v160 {
-		v148 = v160
+		v147 = v160
 		goto L42
 	} else {
 		goto L45
@@ -586,14 +586,14 @@ L47:
 L48:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(l0))) = v201
-	v217 = v182
+	v212 = v182
 	goto L9
 L49:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v217)+64)) = v224
+	*(*int32)(unsafe.Add(mBase, uint32(v212)+64)) = v224
 	v227 = *(*int32)(unsafe.Add(mBase, uint32(v33)+48))
 	v228 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v227)+119)))
-	v242 = v228
+	v237 = v228
 	goto L8
 L50:
 	;
@@ -614,7 +614,7 @@ L53:
 L54:
 	;
 	m.G0 = v22 + int32(16)
-	return v335
+	return v334
 }
 func F_ATTypedTableRecursion(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32) {
 	mBase := m.M

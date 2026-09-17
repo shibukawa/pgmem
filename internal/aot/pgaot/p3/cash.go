@@ -278,32 +278,32 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 	_ = v19
 	var v20 int32
 	_ = v20
-	var v30 int32
+	var v23 int64
+	_ = v23
+	var v29 int32
+	_ = v29
+	var v30 int64
 	_ = v30
-	var v31 int64
-	_ = v31
-	var v37 int64
-	_ = v37
-	var v39 int32
-	_ = v39
-	var v42 int64
-	_ = v42
-	var v52 int32
-	_ = v52
-	var v53 int64
+	var v36 int64
+	_ = v36
+	var v38 int32
+	_ = v38
+	var v45 int64
+	_ = v45
+	var v53 int32
 	_ = v53
-	var v59 int64
-	_ = v59
-	var v61 int32
-	_ = v61
-	var v64 int64
-	_ = v64
-	var v69 int32
-	_ = v69
+	var v54 int64
+	_ = v54
+	var v60 int64
+	_ = v60
+	var v62 int32
+	_ = v62
+	var v65 int64
+	_ = v65
 	var v70 int32
 	_ = v70
-	var v75 int32
-	_ = v75
+	var v71 int32
+	_ = v71
 	var v76 int32
 	_ = v76
 	var v77 int32
@@ -318,8 +318,10 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 	_ = v81
 	var v82 int32
 	_ = v82
-	var v89 int32
-	_ = v89
+	var v83 int32
+	_ = v83
+	var v90 int32
+	_ = v90
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v8 = *(*int64)(unsafe.Add(mBase, uint32(v7)))
 	v9 = F_PGLC_localeconv(m)
@@ -342,79 +344,95 @@ func F_cash_numeric(m *base.Module, l0 int32) int32 {
 			}
 			v20 = base.I32_extend8_s(v19)
 			if int32(0) < v20 {
-				if base.Ui32(v19) < base.Ui32(int32(8)) {
-					v42 = int64(1)
-				} else {
-					v30 = int32(0)
-					v31 = int64(1)
+				v23 = int64(1)
+				if base.Ui32(int32(8)) <= base.Ui32(v19) {
+					v29 = int32(0)
+					v30 = v23
 					for {
-						v37 = v31 * int64(100000000)
-						v39 = v30 + int32(8)
-						if v39 != v20&int32(120) {
-							v30 = v39
-							v31 = v37
+						v36 = v30 * int64(100000000)
+						v38 = v29 + int32(8)
+						if v38 != v20&int32(120) {
+							v29 = v38
+							v30 = v36
 							continue
 						} else {
 							break
 						}
 						break
 					}
-					v42 = v37
-				}
-				if v19&int32(7) != 0 {
-					v52 = int32(0)
-					v53 = v42
+					if v19&int32(7) == int32(0) {
+						v65 = v36
+					} else {
+						v45 = v36
+						v53 = int32(0)
+						v54 = v45
+						for {
+							v60 = v54 * int64(10)
+							v62 = v53 + int32(1)
+							if v62 != v20&int32(7) {
+								v53 = v62
+								v54 = v60
+								continue
+							} else {
+								break
+							}
+							break
+						}
+						v65 = v60
+					}
+				} else {
+					v45 = v23
+					v53 = int32(0)
+					v54 = v45
 					for {
-						v59 = v53 * int64(10)
-						v61 = v52 + int32(1)
-						if v61 != v20&int32(7) {
-							v52 = v61
-							v53 = v59
+						v60 = v54 * int64(10)
+						v62 = v53 + int32(1)
+						if v62 != v20&int32(7) {
+							v53 = v62
+							v54 = v60
 							continue
 						} else {
 							break
 						}
 						break
 					}
-					v64 = v59
-				} else {
-					v64 = v42
+					v65 = v60
 				}
-				v69 = int32(1278)
-				v70 = int32(0)
-				v75 = F_int64_to_numeric(m, v64)
+				v70 = int32(1259)
+				v71 = int32(0)
+				v76 = F_int64_to_numeric(m, v65)
 				mBase = m.M
-				v76 = m.ExcPending
-				if v76 != 0 {
+				v77 = m.ExcPending
+				if v77 != 0 {
 					return int32(0)
 				} else {
-					v77 = F_DirectFunctionCall2Coll(m, v69, v70, v75, v20)
+					v78 = F_DirectFunctionCall2Coll(m, v70, v71, v76, v20)
 					mBase = m.M
-					v78 = m.ExcPending
-					if v78 != 0 {
+					v79 = m.ExcPending
+					if v79 != 0 {
 						return int32(0)
 					} else {
-						v79 = F_DirectFunctionCall2Coll(m, int32(1279), v70, v14, v77)
+						v80 = F_DirectFunctionCall2Coll(m, int32(1260), v71, v14, v78)
 						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
+						v81 = m.ExcPending
+						if v81 != 0 {
 							return int32(0)
 						} else {
-							v81 = F_DirectFunctionCall2Coll(m, v69, v70, v79, v20)
+							v82 = F_DirectFunctionCall2Coll(m, v70, v71, v80, v20)
 							mBase = m.M
-							v82 = m.ExcPending
-							if v82 != 0 {
+							v83 = m.ExcPending
+							if v83 != 0 {
 								return int32(0)
 							} else {
-								v89 = v81
-								return v89
+								v90 = v82
+								return v90
 							}
 						}
 					}
 				}
 			} else {
-				v89 = v14
-				return v89
+				v90 = v14
+				return v90
 			}
 		}
 	}

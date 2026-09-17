@@ -14,24 +14,32 @@ func F_TypeNameListToString(m *base.Module, l0 int32) int32 {
 	_ = v7
 	var v12 int32
 	_ = v12
-	var v15 int32
-	_ = v15
+	var v16 int32
+	_ = v16
 	var v19 int32
 	_ = v19
+	var v20 int32
+	_ = v20
 	var v22 int32
 	_ = v22
-	var v26 int32
-	_ = v26
-	var v31 int32
-	_ = v31
-	var v33 int32
-	_ = v33
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
+	var v23 int32
+	_ = v23
+	var v28 int32
+	_ = v28
+	var v30 int32
+	_ = v30
+	var v34 int32
+	_ = v34
+	var v37 int32
+	_ = v37
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
+	var v48 int32
+	_ = v48
 	v5 = m.G0
 	v7 = v5 - int32(16)
 	m.G0 = v7
@@ -55,72 +63,79 @@ L2:
 	}
 L3:
 	;
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+	v48 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
 	m.G0 = v7 + int32(16)
-	return v42
+	return v48
 L4:
 	;
-	v15 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v15 <= int32(0) {
+	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v16 <= int32(0) {
 		goto L3
 	} else {
 		goto L5
 	}
 L5:
 	;
-	v19 = int32(0)
-	goto L6
+	v19 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v20 = *(*int32)(unsafe.Add(mBase, uint32(v19)))
+	F_appendTypeNameToBuffer(m, v20, v7)
+	mBase = m.M
+	v22 = m.ExcPending
+	if v22 != 0 {
+		goto L1
+	} else {
+		goto L6
+	}
 L6:
 	;
-	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v26 = *(*int32)(unsafe.Add(mBase, uint32(v22+v19<<(uint(int32(2))%32))))
-	if v19&int32(1073741823) != 0 {
-		goto L8
+	v23 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v23 <= int32(1) {
+		goto L3
 	} else {
-		goto L9
+		goto L7
 	}
 L7:
 	;
-	goto L3
+	v28 = int32(1)
+	goto L8
 L8:
 	;
+	v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v34 = *(*int32)(unsafe.Add(mBase, uint32(v30+v28<<(uint(int32(2))%32))))
 	F_appendStringInfoChar(m, v7, int32(44))
 	mBase = m.M
-	v31 = m.ExcPending
-	if v31 != 0 {
+	v37 = m.ExcPending
+	if v37 != 0 {
+		goto L1
+	} else {
+		goto L10
+	}
+L9:
+	;
+	goto L3
+L10:
+	;
+	F_appendTypeNameToBuffer(m, v34, v7)
+	mBase = m.M
+	v39 = m.ExcPending
+	if v39 != 0 {
 		goto L1
 	} else {
 		goto L11
 	}
-L9:
+L11:
 	;
-	goto L10
-L10:
-	;
-	F_appendTypeNameToBuffer(m, v26, v7)
-	mBase = m.M
-	v33 = m.ExcPending
-	if v33 != 0 {
-		goto L1
+	v41 = v28 + int32(1)
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+	if v41 < v42 {
+		v28 = v41
+		goto L8
 	} else {
 		goto L12
 	}
-L11:
-	;
-	goto L10
 L12:
 	;
-	v35 = v19 + int32(1)
-	v36 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-	if v35 < v36 {
-		v19 = v35
-		goto L6
-	} else {
-		goto L13
-	}
-L13:
-	;
-	goto L7
+	goto L9
 }
 func F_TypeNameToString(m *base.Module, l0 int32) int32 {
 	mBase := m.M
@@ -163,6 +178,8 @@ func F_record_type_typmod_hash(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v3
 	var v4 int32
 	_ = v4
+	var v7 int32
+	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
@@ -173,68 +190,66 @@ func F_record_type_typmod_hash(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v12 int32
 	_ = v12
-	var v13 int32
-	_ = v13
+	var v21 int32
+	_ = v21
 	var v22 int32
 	_ = v22
-	var v23 int32
-	_ = v23
-	var v29 int32
-	_ = v29
-	var v30 int32
-	_ = v30
-	var v31 int32
-	_ = v31
-	var v39 int32
-	_ = v39
-	var v40 int32
-	_ = v40
-	var v49 int32
-	_ = v49
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v28 int32
+	_ = v28
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v48 int32
+	_ = v48
 	var v51 int32
 	_ = v51
-	var v52 int32
-	_ = v52
-	var v55 int32
-	_ = v55
 	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v4 = int32(0)
-	v8 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
-	v9 = F_hash_bytes_uint32(m, v8)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
+	v8 = F_hash_bytes_uint32(m, v7)
 	mBase = m.M
-	v10 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
-	v11 = F_hash_bytes_uint32(m, v10)
+	v9 = *(*int32)(unsafe.Add(mBase, uint32(v3)+4))
+	v10 = F_hash_bytes_uint32(m, v9)
 	mBase = m.M
-	v12 = int32(1640531527)
-	v13 = v9 - v12
-	v22 = v11 + v13<<(uint(int32(6))%32) + int32(base.Ui32(v13)>>(uint(int32(2))%32)) - v12 ^ v13
-	v23 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
-	if v4 < v23 {
-		v29 = v22
-		v30 = v4
-		v31 = v23
+	v11 = int32(1640531527)
+	v12 = v8 - v11
+	v21 = v10 + v12<<(uint(int32(6))%32) + int32(base.Ui32(v12)>>(uint(int32(2))%32)) - v11 ^ v12
+	v22 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
+	if v4 < v22 {
+		v26 = v21
+		v27 = v22
+		v28 = v4
 		for {
-			v39 = *(*int32)(unsafe.Add(mBase, uint32(v3+int32(88)+v31<<(uint(int32(4))%32)+v30*int32(100))))
-			v40 = F_hash_bytes_uint32(m, v39)
+			v35 = *(*int32)(unsafe.Add(mBase, uint32(v3+v27<<(uint(int32(4))%32)+v28*int32(100))+88))
+			v36 = F_hash_bytes_uint32(m, v35)
 			mBase = m.M
-			v49 = v40 + (v29<<(uint(int32(6))%32) + int32(base.Ui32(v29)>>(uint(int32(2))%32))) - int32(1640531527) ^ v29
-			v51 = v30 + int32(1)
-			v52 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
-			if v51 < v52 {
-				v29 = v49
-				v30 = v51
-				v31 = v52
+			v45 = v36 + (v26<<(uint(int32(6))%32) + int32(base.Ui32(v26)>>(uint(int32(2))%32))) - int32(1640531527) ^ v26
+			v47 = v28 + int32(1)
+			v48 = *(*int32)(unsafe.Add(mBase, uint32(v3)))
+			if v47 < v48 {
+				v26 = v45
+				v27 = v48
+				v28 = v47
 				continue
 			} else {
 				break
 			}
 			break
 		}
-		v55 = v49
+		v51 = v45
 	} else {
-		v55 = v22
+		v51 = v21
 	}
-	return v55
+	return v51
 }
 func F_typeStringToTypeName(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -283,8 +298,8 @@ func F_typeStringToTypeName(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v78
 	var v80 int32
 	_ = v80
-	var v84 int32
-	_ = v84
+	var v82 int32
+	_ = v82
 	var v92 int32
 	_ = v92
 	var v93 int32
@@ -345,9 +360,9 @@ L2:
 	v93 = F_strlen(m, l0)
 	mBase = m.M
 	if v92 != v93 {
-		goto L23
+		goto L21
 	} else {
-		goto L24
+		goto L22
 	}
 L3:
 	;
@@ -410,7 +425,7 @@ L13:
 	;
 	v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
 	if v59 == int32(0) {
-		v84 = l0
+		v82 = l0
 		goto L15
 	} else {
 		goto L16
@@ -420,7 +435,7 @@ L14:
 	goto L13
 L15:
 	;
-	v92 = v84 - l0
+	v92 = v82 - l0
 	goto L2
 L16:
 	;
@@ -431,22 +446,16 @@ L17:
 	;
 	v72 = *(*int32)(unsafe.Add(mBase, uint32(v15+int32(base.Ui32(v64)>>(uint(int32(3))%32))&int32(28))))
 	if int32(base.Ui32(v72)>>(uint(v64)%32))&int32(1) == int32(0) {
-		goto L19
+		v82 = v63
+		goto L15
 	} else {
-		goto L20
+		goto L19
 	}
 L18:
 	;
-	v84 = v80
+	v82 = v80
 	goto L15
 L19:
-	;
-	v84 = v63
-	goto L15
-L20:
-	;
-	goto L21
-L21:
 	;
 	v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+1)))
 	v80 = v63 + int32(1)
@@ -455,12 +464,12 @@ L21:
 		v64 = v78
 		goto L17
 	} else {
-		goto L22
+		goto L20
 	}
-L22:
+L20:
 	;
 	goto L18
-L23:
+L21:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+12)) = l0
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+8)) = int32(498)
@@ -472,28 +481,28 @@ L23:
 	mBase = m.M
 	v109 = m.ExcPending
 	if v109 != 0 {
-		goto L26
+		goto L24
 	} else {
-		goto L27
+		goto L25
 	}
-L24:
+L22:
 	;
-	goto L25
-L25:
+	goto L23
+L23:
 	;
 	v119 = int32(0)
 	v120 = F_errsave_start(m, l1)
 	mBase = m.M
 	v121 = m.ExcPending
 	if v121 != 0 {
-		goto L26
+		goto L24
 	} else {
-		goto L29
+		goto L27
 	}
-L26:
+L24:
 	;
 	return int32(0)
-L27:
+L25:
 	;
 	v111 = *(*int32)(unsafe.Add(mBase, uint32(v7)+4))
 	*(*int32)(unsafe.Add(mBase, _c_F_typeStringToTypeName[2])) = v111
@@ -504,51 +513,51 @@ L27:
 		v136 = v114
 		goto L1
 	} else {
-		goto L28
+		goto L26
 	}
-L28:
+L26:
 	;
-	goto L25
-L29:
+	goto L23
+L27:
 	;
 	if v120 == int32(0) {
 		v136 = v119
 		goto L1
 	} else {
-		goto L30
+		goto L28
 	}
-L30:
+L28:
 	;
 	F_errcode(m, int32(16801924))
 	mBase = m.M
 	v126 = m.ExcPending
 	if v126 != 0 {
-		goto L26
+		goto L24
 	} else {
-		goto L31
+		goto L29
 	}
-L31:
+L29:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v7))) = l0
 	F_errmsg(m, int32(_a_F_typeStringToTypeName_2), v7)
 	mBase = m.M
 	v130 = m.ExcPending
 	if v130 != 0 {
-		goto L26
+		goto L24
 	} else {
-		goto L32
+		goto L30
 	}
-L32:
+L30:
 	;
 	F_errsave_finish(m, l1, int32(_a_F_typeStringToTypeName_3), int32(773), int32(_a_F_typeStringToTypeName_4))
 	mBase = m.M
 	v135 = m.ExcPending
 	if v135 != 0 {
-		goto L26
+		goto L24
 	} else {
-		goto L33
+		goto L31
 	}
-L33:
+L31:
 	;
 	v136 = v119
 	goto L1

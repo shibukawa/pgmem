@@ -44,52 +44,56 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v40
 	var v43 int32
 	_ = v43
+	var v51 int32
+	_ = v51
+	var v53 int32
+	_ = v53
 	var v56 int32
 	_ = v56
-	var v68 int32
-	_ = v68
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	var v69 int32
 	_ = v69
-	var v73 int32
-	_ = v73
-	var v75 int32
-	_ = v75
+	var v71 int32
+	_ = v71
+	var v76 int32
+	_ = v76
+	var v77 int32
+	_ = v77
 	var v80 int32
 	_ = v80
 	var v81 int32
 	_ = v81
-	var v84 int32
-	_ = v84
 	var v85 int32
 	_ = v85
-	var v89 int32
-	_ = v89
-	var v90 int32
-	_ = v90
-	var v93 int32
-	_ = v93
-	var v96 int32
-	_ = v96
-	var v103 int32
-	_ = v103
-	var v107 int32
-	_ = v107
-	var v112 int32
-	_ = v112
-	var v116 int32
-	_ = v116
-	var v122 int32
-	_ = v122
-	var v127 int32
-	_ = v127
-	var v131 int32
-	_ = v131
-	var v134 int32
-	_ = v134
-	var v138 int32
-	_ = v138
-	var v143 int32
-	_ = v143
+	var v86 int32
+	_ = v86
+	var v91 int32
+	_ = v91
+	var v94 int32
+	_ = v94
+	var v101 int32
+	_ = v101
+	var v105 int32
+	_ = v105
+	var v110 int32
+	_ = v110
+	var v114 int32
+	_ = v114
+	var v120 int32
+	_ = v120
+	var v125 int32
+	_ = v125
+	var v129 int32
+	_ = v129
+	var v132 int32
+	_ = v132
+	var v136 int32
+	_ = v136
+	var v141 int32
+	_ = v141
 	v10 = m.G0
 	v12 = v10 - int32(48)
 	m.G0 = v12
@@ -120,21 +124,21 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 						if v26 != 0 {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v116 = m.ExcPending
-							if v116 != 0 {
+							v114 = m.ExcPending
+							if v114 != 0 {
 								return
 							} else {
 								*(*int32)(unsafe.Add(mBase, uint32(v12)+16)) = l0
 								F_errmsg_internal(m, int32(_a_F_ConstraintSetParentConstraint_0), v12+int32(16))
 								mBase = m.M
-								v122 = m.ExcPending
-								if v122 != 0 {
+								v120 = m.ExcPending
+								if v120 != 0 {
 									return
 								} else {
 									F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1147), int32(_a_F_ConstraintSetParentConstraint_2))
 									mBase = m.M
-									v127 = m.ExcPending
-									if v127 != 0 {
+									v125 = m.ExcPending
+									if v125 != 0 {
 										return
 									} else {
 										base.Wasm_trap_unreachable()
@@ -152,26 +156,26 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 							if base.I32_extend16_s(v31) != v31 {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v131 = m.ExcPending
-								if v131 != 0 {
+								v129 = m.ExcPending
+								if v129 != 0 {
 									return
 								} else {
 									F_errcode(m, int32(261))
 									mBase = m.M
-									v134 = m.ExcPending
-									if v134 != 0 {
+									v132 = m.ExcPending
+									if v132 != 0 {
 										return
 									} else {
 										F_errmsg(m, int32(_a_F_ConstraintSetParentConstraint_3), int32(0))
 										mBase = m.M
-										v138 = m.ExcPending
-										if v138 != 0 {
+										v136 = m.ExcPending
+										if v136 != 0 {
 											return
 										} else {
 											F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1154), int32(_a_F_ConstraintSetParentConstraint_2))
 											mBase = m.M
-											v143 = m.ExcPending
-											if v143 != 0 {
+											v141 = m.ExcPending
+											if v141 != 0 {
 												return
 											} else {
 												base.Wasm_trap_unreachable()
@@ -197,7 +201,9 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = v40
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l1
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = v43
-									F_recordDependencyOn(m, v12+int32(36), v12+int32(24), int32(80))
+									v51 = v12 + int32(36)
+									v53 = v12 + int32(24)
+									F_recordDependencyOn(m, v51, v53, int32(80))
 									mBase = m.M
 									v56 = m.ExcPending
 									if v56 != 0 {
@@ -206,22 +212,22 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+32)) = int32(0)
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+28)) = l2
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+24)) = int32(1259)
-										F_recordDependencyOn(m, v12+int32(36), v12+int32(24), int32(83))
+										F_recordDependencyOn(m, v51, v53, int32(83))
 										mBase = m.M
-										v68 = m.ExcPending
-										if v68 != 0 {
+										v64 = m.ExcPending
+										if v64 != 0 {
 											return
 										} else {
 											F_ReleaseCatCache(m, v19)
 											mBase = m.M
-											v93 = m.ExcPending
-											if v93 != 0 {
+											v91 = m.ExcPending
+											if v91 != 0 {
 												return
 											} else {
-												F_sequence_close(m, v16, int32(3))
+												F_relation_close(m, v16, int32(3))
 												mBase = m.M
-												v96 = m.ExcPending
-												if v96 != 0 {
+												v94 = m.ExcPending
+												if v94 != 0 {
 													return
 												} else {
 													m.G0 = v12 + int32(48)
@@ -234,41 +240,41 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 							}
 						}
 					} else {
-						v69 = int32(1)
-						*(*uint8)(unsafe.Add(mBase, uint32(v25)+103)) = uint8(v69)
+						v65 = int32(1)
+						*(*uint8)(unsafe.Add(mBase, uint32(v25)+103)) = uint8(v65)
 						*(*int32)(unsafe.Add(mBase, uint32(v25)+92)) = int32(0)
-						v73 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)))
-						v75 = v73 - v69
-						*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)) = uint16(v75)
+						v69 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)))
+						v71 = v69 - v65
+						*(*uint16)(unsafe.Add(mBase, uint32(v25)+104)) = uint16(v71)
 						F_CatalogTupleUpdate(m, v16, v19+int32(4), v21)
 						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
+						v76 = m.ExcPending
+						if v76 != 0 {
 							return
 						} else {
-							v81 = int32(2606)
-							v84 = F_deleteDependencyRecordsForClass(m, v81, l0, v81, int32(80))
+							v77 = int32(2606)
+							v80 = F_deleteDependencyRecordsForClass(m, v77, l0, v77, int32(80))
 							mBase = m.M
-							v85 = m.ExcPending
-							if v85 != 0 {
+							v81 = m.ExcPending
+							if v81 != 0 {
 								return
 							} else {
-								v89 = F_deleteDependencyRecordsForClass(m, int32(2606), l0, int32(1259), int32(83))
+								v85 = F_deleteDependencyRecordsForClass(m, int32(2606), l0, int32(1259), int32(83))
 								mBase = m.M
-								v90 = m.ExcPending
-								if v90 != 0 {
+								v86 = m.ExcPending
+								if v86 != 0 {
 									return
 								} else {
 									F_ReleaseCatCache(m, v19)
 									mBase = m.M
-									v93 = m.ExcPending
-									if v93 != 0 {
+									v91 = m.ExcPending
+									if v91 != 0 {
 										return
 									} else {
-										F_sequence_close(m, v16, int32(3))
+										F_relation_close(m, v16, int32(3))
 										mBase = m.M
-										v96 = m.ExcPending
-										if v96 != 0 {
+										v94 = m.ExcPending
+										if v94 != 0 {
 											return
 										} else {
 											m.G0 = v12 + int32(48)
@@ -283,21 +289,21 @@ func F_ConstraintSetParentConstraint(m *base.Module, l0 int32, l1 int32, l2 int3
 			} else {
 				F_errstart_cold(m, int32(21), int32(0))
 				mBase = m.M
-				v103 = m.ExcPending
-				if v103 != 0 {
+				v101 = m.ExcPending
+				if v101 != 0 {
 					return
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v12))) = l0
 					F_errmsg_internal(m, int32(_a_F_ConstraintSetParentConstraint_4), v12)
 					mBase = m.M
-					v107 = m.ExcPending
-					if v107 != 0 {
+					v105 = m.ExcPending
+					if v105 != 0 {
 						return
 					} else {
 						F_errfinish(m, int32(_a_F_ConstraintSetParentConstraint_1), int32(1138), int32(_a_F_ConstraintSetParentConstraint_2))
 						mBase = m.M
-						v112 = m.ExcPending
-						if v112 != 0 {
+						v110 = m.ExcPending
+						if v110 != 0 {
 							return
 						} else {
 							base.Wasm_trap_unreachable()

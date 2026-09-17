@@ -12,10 +12,10 @@ func F_checkcondition_HL(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v4
 	var v9 int32
 	_ = v9
-	var v16 int32
-	_ = v16
-	var v17 int32
-	_ = v17
+	var v15 int32
+	_ = v15
+	var v18 int32
+	_ = v18
 	var v21 int32
 	_ = v21
 	var v22 int32
@@ -59,8 +59,8 @@ func F_checkcondition_HL(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	}
 L1:
 	;
-	v16 = v9
-	v17 = v4
+	v15 = v9
+	v18 = v4
 	goto L4
 L2:
 	;
@@ -74,7 +74,7 @@ L3:
 	}
 L4:
 	;
-	v21 = v17 << (uint(int32(4)) % 32)
+	v21 = v18 << (uint(int32(4)) % 32)
 	v22 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
 	v23 = v21 + v22
 	v24 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
@@ -88,11 +88,11 @@ L5:
 	goto L3
 L6:
 	;
-	v66 = v17 + int32(1)
+	v66 = v18 + int32(1)
 	v67 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
 	if v66 < v67 {
-		v16 = v67
-		v17 = v66
+		v15 = v67
+		v18 = v66
 		goto L4
 	} else {
 		goto L17
@@ -120,7 +120,7 @@ L10:
 	}
 L11:
 	;
-	v35 = F_palloc(m, v16<<(uint(int32(1))%32))
+	v35 = F_palloc(m, v15<<(uint(int32(1))%32))
 	mBase = m.M
 	v38 = m.ExcPending
 	if v38 != 0 {
@@ -181,33 +181,33 @@ L20:
 func F_checkcondition_bit_2(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v5 int32
-	_ = v5
+	var v3 int32
+	_ = v3
+	var v7 int32
+	_ = v7
 	var v8 int32
 	_ = v8
 	var v9 int32
 	_ = v9
 	var v10 int32
 	_ = v10
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v17 int32
-	_ = v17
-	var v24 int32
-	_ = v24
-	v5 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
-	if v5&int32(21) != 0 {
-		v24 = int32(1)
+	var v12 int32
+	_ = v12
+	var v16 int32
+	_ = v16
+	var v23 int32
+	_ = v23
+	v3 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l1)+8)))
+	if v3&int32(21) != 0 {
+		v23 = int32(1)
 	} else {
-		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-		v9 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-		v10 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		v11 = int32(3)
-		v13 = base.I32_rem_u_s(v9, v10<<(uint(v11)%32))
-		v17 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v8+int32(base.Ui32(v13)>>(uint(v11)%32))))))
-		v24 = int32(base.Ui32(v17)>>(uint(v13&int32(7))%32)) & int32(1)
+		v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+		v8 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+		v9 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		v10 = int32(3)
+		v12 = base.I32_rem_u_s(v8, v9<<(uint(v10)%32))
+		v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v7+int32(base.Ui32(v12)>>(uint(v10)%32))))))
+		v23 = int32(base.Ui32(v16)>>(uint(v12&int32(7))%32)) & int32(1)
 	}
-	return v24
+	return v23
 }

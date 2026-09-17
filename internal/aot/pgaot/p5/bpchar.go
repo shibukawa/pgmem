@@ -52,12 +52,8 @@ func F_bpchar_input(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) int3
 	_ = v67
 	var v72 int32
 	_ = v72
-	var v73 int32
-	_ = v73
-	var v74 int32
-	_ = v74
-	var v80 int32
-	_ = v80
+	var v75 int32
+	_ = v75
 	var v83 int32
 	_ = v83
 	v8 = m.G0
@@ -233,38 +229,37 @@ L25:
 	*(*int32)(unsafe.Add(mBase, uint32(v66))) = v65 << (uint(int32(2)) % 32)
 	v72 = v66 + int32(4)
 	if v58 != 0 {
-		goto L27
+		goto L26
 	} else {
-		goto L28
+		goto L27
 	}
 L26:
+	;
+	base.MemoryCopy(m, v72, l0, v58)
+	goto L28
+L27:
+	;
+	goto L28
+L28:
 	;
 	if base.Ui32(v61) <= base.Ui32(v58) {
 		v83 = v66
 		goto L1
 	} else {
-		goto L30
+		goto L29
 	}
-L27:
-	;
-	v73 = F__emscripten_memcpy_bulkmem(m, v72, l0, v58)
-	mBase = m.M
-	v74 = v73
-	goto L29
-L28:
-	;
-	v74 = v72
-	goto L29
 L29:
 	;
-	goto L26
+	v75 = v61 - v58
+	if v75 == int32(0) {
+		v83 = v66
+		goto L1
+	} else {
+		goto L30
+	}
 L30:
 	;
-	v80 = F__emscripten_memset_bulkmem(m, v74+v58, base.I32_extend8_s(int32(32)), v61-v58)
-	mBase = m.M
-	goto L31
-L31:
-	;
+	base.MemoryFill(m, v58+v72, int32(32), v75)
 	v83 = v66
 	goto L1
 }

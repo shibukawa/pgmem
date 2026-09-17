@@ -146,22 +146,22 @@ func F_AtEOSubXact_on_commit_actions(m *base.Module, l0 int32, l1 int32, l2 int3
 	_ = v29
 	var v30 int32
 	_ = v30
-	var v32 int32
-	_ = v32
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
 	var v36 int32
 	_ = v36
-	var v39 int32
-	_ = v39
-	var v44 int32
-	_ = v44
-	var v47 int32
-	_ = v47
-	var v48 int32
-	_ = v48
+	var v37 int32
+	_ = v37
+	var v38 int32
+	_ = v38
+	var v41 int32
+	_ = v41
+	var v46 int32
+	_ = v46
+	var v49 int32
+	_ = v49
+	var v50 int32
+	_ = v50
 	v4 = int32(0)
 	v10 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_on_commit_actions[0]))
 	if v10 == v4 {
@@ -208,87 +208,87 @@ L8:
 	v25 = *(*int32)(unsafe.Add(mBase, uint32(v19)+12))
 	v29 = *(*int32)(unsafe.Add(mBase, uint32(v25+v18<<(uint(int32(2))%32))))
 	v30 = *(*int32)(unsafe.Add(mBase, uint32(v29)+8))
-	if l0 != 0 {
-		goto L10
-	} else {
+	if l0 == int32(0) {
 		goto L11
+	} else {
+		goto L12
 	}
 L9:
 	;
-	if v48 != 0 {
-		v18 = v47 + int32(1)
-		v19 = v48
+	if v50 != 0 {
+		v18 = v49 + int32(1)
+		v19 = v50
 		goto L6
 	} else {
 		goto L20
 	}
 L10:
 	;
-	if l1 == v30 {
-		goto L16
+	v46 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
+	if v46 != l1 {
+		v49 = v18
+		v50 = v19
+		goto L9
 	} else {
-		goto L17
+		goto L19
 	}
 L11:
 	;
 	if l1 != v30 {
 		goto L10
 	} else {
-		goto L12
+		goto L14
 	}
 L12:
 	;
-	v32 = int32(_a_F_AtEOSubXact_on_commit_actions_0)
-	v34 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_on_commit_actions[0]))
-	v35 = F_list_delete_nth_cell(m, v34, v18)
-	mBase = m.M
-	v36 = m.ExcPending
-	if v36 != 0 {
-		goto L13
-	} else {
-		goto L14
-	}
+	goto L13
 L13:
 	;
-	return
+	if l1 != v30 {
+		goto L10
+	} else {
+		goto L18
+	}
 L14:
 	;
-	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_on_commit_actions[0])) = v35
-	F_pfree(m, v29)
+	v34 = int32(_a_F_AtEOSubXact_on_commit_actions_0)
+	v36 = *(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_on_commit_actions[0]))
+	v37 = F_list_delete_nth_cell(m, v36, v18)
 	mBase = m.M
-	v39 = m.ExcPending
-	if v39 != 0 {
-		goto L13
-	} else {
+	v38 = m.ExcPending
+	if v38 != 0 {
 		goto L15
+	} else {
+		goto L16
 	}
 L15:
 	;
-	v47 = v18 - int32(1)
-	v48 = v35
-	goto L9
+	return
 L16:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l2
-	goto L18
+	*(*int32)(unsafe.Add(mBase, _c_F_AtEOSubXact_on_commit_actions[0])) = v37
+	F_pfree(m, v29)
+	mBase = m.M
+	v41 = m.ExcPending
+	if v41 != 0 {
+		goto L15
+	} else {
+		goto L17
+	}
 L17:
 	;
-	goto L18
+	v49 = v18 - int32(1)
+	v50 = v37
+	goto L9
 L18:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, uint32(v29)+12))
-	if v44 != l1 {
-		v47 = v18
-		v48 = v19
-		goto L9
-	} else {
-		goto L19
-	}
+	*(*int32)(unsafe.Add(mBase, uint32(v29)+8)) = l2
+	goto L10
 L19:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v29)+12)) = v14
-	v47 = v18
-	v48 = v19
+	v49 = v18
+	v50 = v19
 	goto L9
 L20:
 	;

@@ -62,8 +62,6 @@ func F_dsm_unpin_segment(m *base.Module, l0 int32) {
 	_ = v56
 	var v61 int32
 	_ = v61
-	var v63 int32
-	_ = v63
 	var v65 int32
 	_ = v65
 	var v67 int32
@@ -72,12 +70,10 @@ func F_dsm_unpin_segment(m *base.Module, l0 int32) {
 	_ = v69
 	var v70 int32
 	_ = v70
-	var v71 int32
-	_ = v71
-	var v72 int32
-	_ = v72
-	var v75 int32
-	_ = v75
+	var v73 int32
+	_ = v73
+	var v74 int32
+	_ = v74
 	var v76 int32
 	_ = v76
 	var v78 int32
@@ -118,16 +114,16 @@ func F_dsm_unpin_segment(m *base.Module, l0 int32) {
 	_ = v133
 	var v136 int32
 	_ = v136
-	var v141 int32
-	_ = v141
-	var v145 int32
-	_ = v145
-	var v153 int32
-	_ = v153
-	var v157 int32
-	_ = v157
-	var v162 int32
-	_ = v162
+	var v143 int32
+	_ = v143
+	var v147 int32
+	_ = v147
+	var v155 int32
+	_ = v155
+	var v159 int32
+	_ = v159
+	var v164 int32
+	_ = v164
 	v2 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -155,8 +151,7 @@ L2:
 	}
 L3:
 	;
-	v63 = v27 * int32(24)
-	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20+v63)+32)))
+	v65 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v20+v27*int32(24))+32)))
 	if v65 != 0 {
 		goto L17
 	} else {
@@ -257,8 +252,8 @@ L19:
 	;
 	F_errstart_cold(m, int32(21), int32(0))
 	mBase = m.M
-	v153 = m.ExcPending
-	if v153 != 0 {
+	v155 = m.ExcPending
+	if v155 != 0 {
 		goto L1
 	} else {
 		goto L36
@@ -274,13 +269,12 @@ L21:
 	goto L22
 L22:
 	;
-	v71 = v70 + v63
-	v72 = int32(0)
-	*(*uint8)(unsafe.Add(mBase, uint32(v71)+32)) = uint8(v72)
-	v75 = v71 + int32(16)
-	v76 = *(*int32)(unsafe.Add(mBase, uint32(v75)))
+	v73 = v70 + v27*int32(24)
+	v74 = int32(0)
+	*(*uint8)(unsafe.Add(mBase, uint32(v73)+32)) = uint8(v74)
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v73)+16))
 	v78 = v76 - int32(1)
-	*(*int32)(unsafe.Add(mBase, uint32(v75))) = v78
+	*(*int32)(unsafe.Add(mBase, uint32(v73)+16)) = v78
 	v81 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_unpin_segment[0]))
 	F_LWLockRelease(m, v81+int32(_a_F_dsm_unpin_segment_0))
 	mBase = m.M
@@ -315,12 +309,12 @@ L25:
 L26:
 	;
 	v136 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_unpin_segment[1]))
-	*(*int32)(unsafe.Add(mBase, uint32(v136+v63)+16)) = int32(0)
-	v141 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_unpin_segment[0]))
-	F_LWLockRelease(m, v141+int32(_a_F_dsm_unpin_segment_0))
+	*(*int32)(unsafe.Add(mBase, uint32(v136+v27*int32(24))+16)) = int32(0)
+	v143 = *(*int32)(unsafe.Add(mBase, _c_F_dsm_unpin_segment[0]))
+	F_LWLockRelease(m, v143+int32(_a_F_dsm_unpin_segment_0))
 	mBase = m.M
-	v145 = m.ExcPending
-	if v145 != 0 {
+	v147 = m.ExcPending
+	if v147 != 0 {
 		goto L1
 	} else {
 		goto L35
@@ -395,8 +389,8 @@ L36:
 	;
 	F_errmsg_internal(m, int32(_a_F_dsm_unpin_segment_4), int32(0))
 	mBase = m.M
-	v157 = m.ExcPending
-	if v157 != 0 {
+	v159 = m.ExcPending
+	if v159 != 0 {
 		goto L1
 	} else {
 		goto L37
@@ -405,8 +399,8 @@ L37:
 	;
 	F_errfinish(m, int32(_a_F_dsm_unpin_segment_2), int32(1018), int32(_a_F_dsm_unpin_segment_3))
 	mBase = m.M
-	v162 = m.ExcPending
-	if v162 != 0 {
+	v164 = m.ExcPending
+	if v164 != 0 {
 		goto L1
 	} else {
 		goto L38

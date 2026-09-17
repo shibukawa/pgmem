@@ -106,58 +106,16 @@ func F_IvfflatGetMetaPageInfo(m *base.Module, l0 int32, l1 int32, l2 int32) {
 	}
 }
 func F_IvfflatGetTypeInfo(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v3 int32
-	_ = v3
-	var v6 int32
-	_ = v6
+	var v4 int32
+	_ = v4
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v20 int32
-	_ = v20
-	var v25 int32
-	_ = v25
-	var v28 int32
-	_ = v28
-	var v31 int32
-	_ = v31
-	var v32 int32
-	_ = v32
-	var v34 int32
-	_ = v34
-	v3 = int32(_a_F_IvfflatGetTypeInfo_0)
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+216))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+204))
-	v8 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v7)+6)))
-	v20 = *(*int32)(unsafe.Add(mBase, uint32(v6+v8*int32(0)<<(uint(int32(2))%32)+int32(20)-int32(4))))
-	if v20 == int32(0) {
-		v34 = v3
-		return v34
+	v4 = Fn13830(m, l0, int32(5), int32(_a_F_IvfflatGetTypeInfo_0))
+	v7 = m.ExcPending
+	if v7 != 0 {
+		return int32(0)
 	} else {
-		v25 = F_index_getprocinfo(m, l0, int32(1), int32(5))
-		mBase = m.M
-		v28 = m.ExcPending
-		if v28 != 0 {
-			return int32(0)
-		} else {
-			if v25 == int32(0) {
-				v34 = v3
-				return v34
-			} else {
-				v31 = F_FunctionCall0Coll(m, v25)
-				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
-					return int32(0)
-				} else {
-					v34 = v31
-					return v34
-				}
-			}
-		}
+		return v4
 	}
 }
 func F_IvfflatInitRegisterPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32) {
@@ -173,18 +131,28 @@ func F_IvfflatInitRegisterPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 	_ = v10
 	var v11 int32
 	_ = v11
-	var v39 int32
-	_ = v39
-	var v45 int32
-	_ = v45
-	var v51 int32
-	_ = v51
+	var v13 int32
+	_ = v13
+	var v15 int32
+	_ = v15
+	var v31 int32
+	_ = v31
+	var v33 int32
+	_ = v33
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
 	var v54 int32
 	_ = v54
-	var v55 int32
-	_ = v55
-	var v56 int32
-	_ = v56
+	var v60 int32
+	_ = v60
+	var v63 int32
+	_ = v63
+	var v64 int32
+	_ = v64
+	var v65 int32
+	_ = v65
 	v5 = F_GenericXLogStart(m, l0)
 	mBase = m.M
 	v6 = m.ExcPending
@@ -200,22 +168,35 @@ func F_IvfflatInitRegisterPage(m *base.Module, l0 int32, l1 int32, l2 int32, l3 
 			return
 		} else {
 			*(*int32)(unsafe.Add(mBase, uint32(l2))) = v10
-			if v10&int32(3) != 0 {
+			v13 = int32(_a_F_IvfflatInitRegisterPage_0)
+			v15 = int32(0)
+			if v15|(v10&int32(3)|int32(1)) == v15 {
+				v31 = v10 + v13
+				v33 = v10 + int32(4)
+				if base.Ui32(v33) < base.Ui32(v31) {
+					v35 = v31
+				} else {
+					v35 = v33
+				}
+				v40 = (v10^int32(-1)+v35)&int32(-4) + int32(4)
+				if v40 == int32(0) {
+				} else {
+					base.MemoryFill(m, v10, int32(0), v40)
+				}
 			} else {
+				base.MemoryFill(m, v10, int32(0), v13)
 			}
-			v39 = F___memset(m, v10, int32(0), int32(_a_F_IvfflatInitRegisterPage_0))
-			mBase = m.M
 			*(*int32)(unsafe.Add(mBase, uint32(v10)+10)) = int32(_a_F_IvfflatInitRegisterPage_1)
-			v45 = int32(_a_F_IvfflatInitRegisterPage_2)
-			*(*uint16)(unsafe.Add(mBase, uint32(v10)+18)) = uint16(v45)
-			v51 = int32(_a_F_IvfflatInitRegisterPage_3)
-			*(*uint16)(unsafe.Add(mBase, uint32(v10)+16)) = uint16(v51)
-			*(*uint16)(unsafe.Add(mBase, uint32(v10)+14)) = uint16(v51)
-			v54 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+16)))
-			v55 = v10 + v54
-			v56 = int32(_a_F_IvfflatInitRegisterPage_4)
-			*(*uint16)(unsafe.Add(mBase, uint32(v55)+6)) = uint16(v56)
-			*(*int32)(unsafe.Add(mBase, uint32(v55))) = int32(-1)
+			v54 = int32(_a_F_IvfflatInitRegisterPage_2)
+			*(*uint16)(unsafe.Add(mBase, uint32(v10)+18)) = uint16(v54)
+			v60 = int32(_a_F_IvfflatInitRegisterPage_3)
+			*(*uint16)(unsafe.Add(mBase, uint32(v10)+16)) = uint16(v60)
+			*(*uint16)(unsafe.Add(mBase, uint32(v10)+14)) = uint16(v60)
+			v63 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+16)))
+			v64 = v10 + v63
+			v65 = int32(_a_F_IvfflatInitRegisterPage_4)
+			*(*uint16)(unsafe.Add(mBase, uint32(v64)+6)) = uint16(v65)
+			*(*int32)(unsafe.Add(mBase, uint32(v64))) = int32(-1)
 			return
 		}
 	}

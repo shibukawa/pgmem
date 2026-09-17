@@ -21,16 +21,18 @@ func F_dist_cpoint(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 float64
 	_ = v12
-	var v23 int32
-	_ = v23
-	var v24 float64
-	_ = v24
-	var v27 float64
+	var v14 float64
+	_ = v14
+	var v27 int32
 	_ = v27
-	var v28 int32
+	var v28 float64
 	_ = v28
-	var v29 int32
-	_ = v29
+	var v31 float64
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = F_point_dt(m, v5, v6)
@@ -41,65 +43,32 @@ func F_dist_cpoint(m *base.Module, l0 int32) int32 {
 	} else {
 		v11 = *(*float64)(unsafe.Add(mBase, uint32(v6)+16))
 		v12 = base.F64_sub(v7, v11)
-		if base.F64_ne(base.F64_abs(v12), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			v24 = float64(0)
-			if base.F64_lt(v12, v24) != 0 {
-				v27 = v24
-			} else {
-				v27 = v12
-			}
-			v28 = F_Float8GetDatum(m, v27)
+		v14 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.F64_ne(base.F64_abs(v12), v14)|base.F64_eq(base.F64_abs(v7), v14)|base.F64_eq(base.F64_abs(v11), v14) == int32(0) {
+			F_float_overflow_error(m)
 			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return int32(0)
 			} else {
-				return v28
+				base.Wasm_trap_unreachable()
+				for {
+				}
 			}
 		} else {
-			if base.F64_eq(base.F64_abs(v7), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				v24 = float64(0)
-				if base.F64_lt(v12, v24) != 0 {
-					v27 = v24
-				} else {
-					v27 = v12
-				}
-				v28 = F_Float8GetDatum(m, v27)
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
-				} else {
-					return v28
-				}
+			v28 = float64(0)
+			if base.F64_lt(v12, v28) != 0 {
+				v31 = v28
 			} else {
-				if base.F64_eq(base.F64_abs(v11), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					v24 = float64(0)
-					if base.F64_lt(v12, v24) != 0 {
-						v27 = v24
-					} else {
-						v27 = v12
-					}
-					v28 = F_Float8GetDatum(m, v27)
-					mBase = m.M
-					v29 = m.ExcPending
-					if v29 != 0 {
-						return int32(0)
-					} else {
-						return v28
-					}
-				} else {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
+				v31 = v12
+			}
+			v32 = F_Float8GetDatum(m, v31)
+			mBase = m.M
+			v33 = m.ExcPending
+			if v33 != 0 {
+				return int32(0)
+			} else {
+				return v32
 			}
 		}
 	}
@@ -119,16 +88,18 @@ func F_dist_pc(m *base.Module, l0 int32) int32 {
 	_ = v11
 	var v12 float64
 	_ = v12
-	var v23 int32
-	_ = v23
-	var v24 float64
-	_ = v24
-	var v27 float64
+	var v14 float64
+	_ = v14
+	var v27 int32
 	_ = v27
-	var v28 int32
+	var v28 float64
 	_ = v28
-	var v29 int32
-	_ = v29
+	var v31 float64
+	_ = v31
+	var v32 int32
+	_ = v32
+	var v33 int32
+	_ = v33
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v7 = F_point_dt(m, v5, v6)
@@ -139,65 +110,32 @@ func F_dist_pc(m *base.Module, l0 int32) int32 {
 	} else {
 		v11 = *(*float64)(unsafe.Add(mBase, uint32(v6)+16))
 		v12 = base.F64_sub(v7, v11)
-		if base.F64_ne(base.F64_abs(v12), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-			v24 = float64(0)
-			if base.F64_lt(v12, v24) != 0 {
-				v27 = v24
-			} else {
-				v27 = v12
-			}
-			v28 = F_Float8GetDatum(m, v27)
+		v14 = math.Float64frombits(uint64(0x7ff0000000000000))
+		if base.F64_ne(base.F64_abs(v12), v14)|base.F64_eq(base.F64_abs(v7), v14)|base.F64_eq(base.F64_abs(v11), v14) == int32(0) {
+			F_float_overflow_error(m)
 			mBase = m.M
-			v29 = m.ExcPending
-			if v29 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return int32(0)
 			} else {
-				return v28
+				base.Wasm_trap_unreachable()
+				for {
+				}
 			}
 		} else {
-			if base.F64_eq(base.F64_abs(v7), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				v24 = float64(0)
-				if base.F64_lt(v12, v24) != 0 {
-					v27 = v24
-				} else {
-					v27 = v12
-				}
-				v28 = F_Float8GetDatum(m, v27)
-				mBase = m.M
-				v29 = m.ExcPending
-				if v29 != 0 {
-					return int32(0)
-				} else {
-					return v28
-				}
+			v28 = float64(0)
+			if base.F64_lt(v12, v28) != 0 {
+				v31 = v28
 			} else {
-				if base.F64_eq(base.F64_abs(v11), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					v24 = float64(0)
-					if base.F64_lt(v12, v24) != 0 {
-						v27 = v24
-					} else {
-						v27 = v12
-					}
-					v28 = F_Float8GetDatum(m, v27)
-					mBase = m.M
-					v29 = m.ExcPending
-					if v29 != 0 {
-						return int32(0)
-					} else {
-						return v28
-					}
-				} else {
-					F_float_overflow_error(m)
-					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						base.Wasm_trap_unreachable()
-						for {
-						}
-					}
-				}
+				v31 = v12
+			}
+			v32 = F_Float8GetDatum(m, v31)
+			mBase = m.M
+			v33 = m.ExcPending
+			if v33 != 0 {
+				return int32(0)
+			} else {
+				return v32
 			}
 		}
 	}
@@ -221,16 +159,18 @@ func F_dist_polyc(m *base.Module, l0 int32) int32 {
 	_ = v14
 	var v15 float64
 	_ = v15
-	var v26 int32
-	_ = v26
-	var v27 float64
-	_ = v27
-	var v30 float64
+	var v17 float64
+	_ = v17
+	var v30 int32
 	_ = v30
-	var v31 int32
+	var v31 float64
 	_ = v31
-	var v32 int32
-	_ = v32
+	var v34 float64
+	_ = v34
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = F_pg_detoast_datum(m, v6)
 	mBase = m.M
@@ -247,65 +187,32 @@ func F_dist_polyc(m *base.Module, l0 int32) int32 {
 		} else {
 			v14 = *(*float64)(unsafe.Add(mBase, uint32(v11)+16))
 			v15 = base.F64_sub(v12, v14)
-			if base.F64_ne(base.F64_abs(v15), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-				v27 = float64(0)
-				if base.F64_lt(v15, v27) != 0 {
-					v30 = v27
-				} else {
-					v30 = v15
-				}
-				v31 = F_Float8GetDatum(m, v30)
+			v17 = math.Float64frombits(uint64(0x7ff0000000000000))
+			if base.F64_ne(base.F64_abs(v15), v17)|base.F64_eq(base.F64_abs(v12), v17)|base.F64_eq(base.F64_abs(v14), v17) == int32(0) {
+				F_float_overflow_error(m)
 				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
+				v30 = m.ExcPending
+				if v30 != 0 {
 					return int32(0)
 				} else {
-					return v31
+					base.Wasm_trap_unreachable()
+					for {
+					}
 				}
 			} else {
-				if base.F64_eq(base.F64_abs(v12), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-					v27 = float64(0)
-					if base.F64_lt(v15, v27) != 0 {
-						v30 = v27
-					} else {
-						v30 = v15
-					}
-					v31 = F_Float8GetDatum(m, v30)
-					mBase = m.M
-					v32 = m.ExcPending
-					if v32 != 0 {
-						return int32(0)
-					} else {
-						return v31
-					}
+				v31 = float64(0)
+				if base.F64_lt(v15, v31) != 0 {
+					v34 = v31
 				} else {
-					if base.F64_eq(base.F64_abs(v14), math.Float64frombits(uint64(0x7ff0000000000000))) != 0 {
-						v27 = float64(0)
-						if base.F64_lt(v15, v27) != 0 {
-							v30 = v27
-						} else {
-							v30 = v15
-						}
-						v31 = F_Float8GetDatum(m, v30)
-						mBase = m.M
-						v32 = m.ExcPending
-						if v32 != 0 {
-							return int32(0)
-						} else {
-							return v31
-						}
-					} else {
-						F_float_overflow_error(m)
-						mBase = m.M
-						v26 = m.ExcPending
-						if v26 != 0 {
-							return int32(0)
-						} else {
-							base.Wasm_trap_unreachable()
-							for {
-							}
-						}
-					}
+					v34 = v15
+				}
+				v35 = F_Float8GetDatum(m, v34)
+				mBase = m.M
+				v36 = m.ExcPending
+				if v36 != 0 {
+					return int32(0)
+				} else {
+					return v35
 				}
 			}
 		}
@@ -355,22 +262,22 @@ func F_dist_sl(m *base.Module, l0 int32) int32 {
 	_ = v8
 	var v11 int32
 	_ = v11
-	var v13 float64
-	_ = v13
-	var v14 int32
+	var v14 float64
 	_ = v14
-	var v18 float64
-	_ = v18
-	var v19 int32
+	var v15 int32
+	_ = v15
+	var v19 float64
 	_ = v19
-	var v21 float64
-	_ = v21
-	var v24 float64
-	_ = v24
-	var v25 int32
+	var v20 int32
+	_ = v20
+	var v22 float64
+	_ = v22
+	var v25 float64
 	_ = v25
 	var v26 int32
 	_ = v26
+	var v27 int32
+	_ = v27
 	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
 	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v8 = F_lseg_interpt_line(m, int32(0), v6, v7)
@@ -380,41 +287,41 @@ func F_dist_sl(m *base.Module, l0 int32) int32 {
 		return int32(0)
 	} else {
 		if v8 != 0 {
-			v24 = float64(0)
-			v25 = F_Float8GetDatum(m, v24)
+			v25 = float64(0)
+			v26 = F_Float8GetDatum(m, v25)
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
+			v27 = m.ExcPending
+			if v27 != 0 {
 				return int32(0)
 			} else {
-				return v25
+				return v26
 			}
 		} else {
-			v13 = F_line_closept_point(m, int32(0), v7, v6)
+			v14 = F_line_closept_point(m, int32(0), v7, v6)
 			mBase = m.M
-			v14 = m.ExcPending
-			if v14 != 0 {
+			v15 = m.ExcPending
+			if v15 != 0 {
 				return int32(0)
 			} else {
-				v18 = F_line_closept_point(m, int32(0), v7, v6+int32(16))
+				v19 = F_line_closept_point(m, int32(0), v7, v6+int32(16))
 				mBase = m.M
-				v19 = m.ExcPending
-				if v19 != 0 {
+				v20 = m.ExcPending
+				if v20 != 0 {
 					return int32(0)
 				} else {
-					if base.F64_lt(v13, v18) != 0 {
-						v21 = v13
+					if base.F64_lt(v14, v19) != 0 {
+						v22 = v14
 					} else {
-						v21 = v18
+						v22 = v19
 					}
-					v24 = v21
-					v25 = F_Float8GetDatum(m, v24)
+					v25 = v22
+					v26 = F_Float8GetDatum(m, v25)
 					mBase = m.M
-					v26 = m.ExcPending
-					if v26 != 0 {
+					v27 = m.ExcPending
+					if v27 != 0 {
 						return int32(0)
 					} else {
-						return v25
+						return v26
 					}
 				}
 			}

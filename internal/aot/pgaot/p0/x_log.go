@@ -26,6 +26,8 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 	_ = v28
 	var v31 int64
 	_ = v31
+	var v34 int32
+	_ = v34
 	var v36 int32
 	_ = v36
 	var v38 int32
@@ -34,10 +36,10 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 	_ = v44
 	var v46 int32
 	_ = v46
-	var v52 int32
-	_ = v52
-	var v57 int32
-	_ = v57
+	var v50 int32
+	_ = v50
+	var v55 int32
+	_ = v55
 	v7 = m.G0
 	v9 = v7 - int32(80)
 	m.G0 = v9
@@ -57,8 +59,9 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 			*(*int32)(unsafe.Add(mBase, uint32(v28)+440)) = int32(0)
 			v31 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
 			if base.Ui64(l0) <= base.Ui64(v31) {
+				v34 = v9 + int32(16)
 				v36 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
-				F_XLogFileName(m, v9+int32(16), l1, l0, v36)
+				F_XLogFileName(m, v34, l1, l0, v36)
 				mBase = m.M
 				v38 = m.ExcPending
 				if v38 != 0 {
@@ -77,17 +80,17 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 						if v46 != 0 {
 							return
 						} else {
-							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
+							*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34
 							F_errmsg(m, int32(_a_F_CheckXLogRemoved_2), v9)
 							mBase = m.M
-							v52 = m.ExcPending
-							if v52 != 0 {
+							v50 = m.ExcPending
+							if v50 != 0 {
 								return
 							} else {
 								F_errfinish(m, int32(_a_F_CheckXLogRemoved_0), int32(3743), int32(_a_F_CheckXLogRemoved_1))
 								mBase = m.M
-								v57 = m.ExcPending
-								if v57 != 0 {
+								v55 = m.ExcPending
+								if v55 != 0 {
 									return
 								} else {
 									base.Wasm_trap_unreachable()
@@ -109,8 +112,9 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 		*(*int32)(unsafe.Add(mBase, uint32(v28)+440)) = int32(0)
 		v31 = *(*int64)(unsafe.Add(mBase, uint32(v28)+232))
 		if base.Ui64(l0) <= base.Ui64(v31) {
+			v34 = v9 + int32(16)
 			v36 = *(*int32)(unsafe.Add(mBase, _c_F_CheckXLogRemoved[2]))
-			F_XLogFileName(m, v9+int32(16), l1, l0, v36)
+			F_XLogFileName(m, v34, l1, l0, v36)
 			mBase = m.M
 			v38 = m.ExcPending
 			if v38 != 0 {
@@ -129,17 +133,17 @@ func F_CheckXLogRemoved(m *base.Module, l0 int64, l1 int32) {
 					if v46 != 0 {
 						return
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v9 + int32(16)
+						*(*int32)(unsafe.Add(mBase, uint32(v9))) = v34
 						F_errmsg(m, int32(_a_F_CheckXLogRemoved_2), v9)
 						mBase = m.M
-						v52 = m.ExcPending
-						if v52 != 0 {
+						v50 = m.ExcPending
+						if v50 != 0 {
 							return
 						} else {
 							F_errfinish(m, int32(_a_F_CheckXLogRemoved_0), int32(3743), int32(_a_F_CheckXLogRemoved_1))
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
+							v55 = m.ExcPending
+							if v55 != 0 {
 								return
 							} else {
 								base.Wasm_trap_unreachable()
@@ -162,36 +166,38 @@ func F_InstallXLogFileSegment(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = mBase
 	var v6 int32
 	_ = v6
-	var v11 int32
-	_ = v11
-	var v13 int32
-	_ = v13
-	var v15 int64
-	_ = v15
-	var v19 int64
-	_ = v19
+	var v12 int32
+	_ = v12
+	var v14 int32
+	_ = v14
+	var v16 int64
+	_ = v16
 	var v20 int64
 	_ = v20
 	var v21 int64
 	_ = v21
-	var v24 int64
-	_ = v24
-	var v32 int32
-	_ = v32
-	var v35 int32
-	_ = v35
-	var v37 int32
-	_ = v37
-	var v41 int32
-	_ = v41
+	var v22 int64
+	_ = v22
+	var v25 int64
+	_ = v25
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
+	var v36 int32
+	_ = v36
+	var v38 int32
+	_ = v38
 	var v42 int32
 	_ = v42
-	var v44 int32
-	_ = v44
+	var v43 int32
+	_ = v43
 	var v45 int32
 	_ = v45
-	var v54 int32
-	_ = v54
+	var v46 int32
+	_ = v46
+	var v53 int32
+	_ = v53
 	var v65 int64
 	_ = v65
 	var v68 int64
@@ -204,20 +210,22 @@ func F_InstallXLogFileSegment(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	_ = v75
 	var v78 int64
 	_ = v78
+	var v81 int32
+	_ = v81
 	var v84 int32
 	_ = v84
 	var v85 int32
 	_ = v85
-	var v92 int32
-	_ = v92
-	var v98 int32
-	_ = v98
-	var v99 int32
-	_ = v99
+	var v90 int32
+	_ = v90
+	var v96 int32
+	_ = v96
+	var v97 int32
+	_ = v97
+	var v112 int32
+	_ = v112
 	var v113 int32
 	_ = v113
-	var v114 int32
-	_ = v114
 	var v123 int32
 	_ = v123
 	var v128 int32
@@ -225,21 +233,22 @@ func F_InstallXLogFileSegment(m *base.Module, l0 int32, l1 int32, l2 int32, l3 i
 	var v132 int32
 	_ = v132
 	v6 = int32(0)
-	v11 = m.G0
-	v13 = v11 - int32(1152)
-	m.G0 = v13
-	v15 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
-	*(*int32)(unsafe.Add(mBase, uint32(v13)+16)) = l4
-	v19 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[0])))
-	v20 = base.I64_div_u_s(int64(4294967296), v19)
-	v21 = base.I64_div_u_s(v15, v20)
-	*(*uint32)(unsafe.Add(mBase, uint32(v13)+20)) = uint32(v21)
-	v24 = v15 - v20*v21
-	*(*uint32)(unsafe.Add(mBase, uint32(v13)+24)) = uint32(v24)
-	v32 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(_a_F_InstallXLogFileSegment_0), v13+int32(16))
+	v12 = m.G0
+	v14 = v12 - int32(1152)
+	m.G0 = v14
+	v16 = *(*int64)(unsafe.Add(mBase, uint32(l0)))
+	*(*int32)(unsafe.Add(mBase, uint32(v14)+16)) = l4
+	v20 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[0])))
+	v21 = base.I64_div_u_s(int64(4294967296), v20)
+	v22 = base.I64_div_u_s(v16, v21)
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+20)) = uint32(v22)
+	v25 = v16 - v21*v22
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+24)) = uint32(v25)
+	v28 = v14 + int32(128)
+	v33 = F_pg_snprintf(m, v28, int32(1024), int32(_a_F_InstallXLogFileSegment_0), v14+int32(16))
 	mBase = m.M
-	v35 = m.ExcPending
-	if v35 != 0 {
+	v36 = m.ExcPending
+	if v36 != 0 {
 		goto L1
 	} else {
 		goto L2
@@ -249,20 +258,20 @@ L1:
 	return int32(0)
 L2:
 	;
-	v37 = *(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[1]))
-	v41 = F_LWLockAcquire(m, v37+int32(1152), int32(0))
+	v38 = *(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[1]))
+	v42 = F_LWLockAcquire(m, v38+int32(1152), int32(0))
 	mBase = m.M
-	v42 = m.ExcPending
-	if v42 != 0 {
+	v43 = m.ExcPending
+	if v43 != 0 {
 		goto L1
 	} else {
 		goto L3
 	}
 L3:
 	;
-	v44 = *(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[2]))
-	v45 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v44)+320)))
-	if v45 != int32(1) {
+	v45 = *(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[2]))
+	v46 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45)+320)))
+	if v46 != int32(1) {
 		v123 = v6
 		goto L4
 	} else {
@@ -288,17 +297,17 @@ L5:
 	}
 L6:
 	;
-	v113 = F_durable_rename(m, l1, v13+int32(128), int32(15))
+	v112 = F_durable_rename(m, l1, v14+int32(128), int32(15))
 	mBase = m.M
-	v114 = m.ExcPending
-	if v114 != 0 {
+	v113 = m.ExcPending
+	if v113 != 0 {
 		goto L1
 	} else {
 		goto L19
 	}
 L7:
 	;
-	v54 = F___fstatat(m, int32(-100), v13+int32(128), v13+int32(32), int32(0))
+	v53 = F___fstatat(m, int32(-100), v28, v14+int32(32), int32(0))
 	mBase = m.M
 	goto L10
 L8:
@@ -306,17 +315,17 @@ L8:
 	goto L9
 L9:
 	;
-	v98 = F_durable_unlink(m, v13+int32(128), int32(14))
+	v96 = F_durable_unlink(m, v14+int32(128), int32(14))
 	mBase = m.M
-	v99 = m.ExcPending
-	if v99 != 0 {
+	v97 = m.ExcPending
+	if v97 != 0 {
 		goto L1
 	} else {
 		goto L18
 	}
 L10:
 	;
-	if v54 != 0 {
+	if v53 != 0 {
 		goto L6
 	} else {
 		goto L11
@@ -340,14 +349,15 @@ L14:
 	;
 	v68 = v65 + int64(1)
 	*(*int64)(unsafe.Add(mBase, uint32(l0))) = v68
-	*(*int32)(unsafe.Add(mBase, uint32(v13))) = l4
+	*(*int32)(unsafe.Add(mBase, uint32(v14))) = l4
 	v73 = int64(*(*int32)(unsafe.Add(mBase, _c_F_InstallXLogFileSegment[0])))
 	v74 = base.I64_div_u_s(int64(4294967296), v73)
 	v75 = base.I64_div_u_s(v68, v74)
-	*(*uint32)(unsafe.Add(mBase, uint32(v13)+4)) = uint32(v75)
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+4)) = uint32(v75)
 	v78 = v68 - v74*v75
-	*(*uint32)(unsafe.Add(mBase, uint32(v13)+8)) = uint32(v78)
-	v84 = F_pg_snprintf(m, v13+int32(128), int32(1024), int32(_a_F_InstallXLogFileSegment_0), v13)
+	*(*uint32)(unsafe.Add(mBase, uint32(v14)+8)) = uint32(v78)
+	v81 = v14 + int32(128)
+	v84 = F_pg_snprintf(m, v81, int32(1024), int32(_a_F_InstallXLogFileSegment_0), v14)
 	mBase = m.M
 	v85 = m.ExcPending
 	if v85 != 0 {
@@ -357,12 +367,12 @@ L14:
 	}
 L15:
 	;
-	v92 = F___fstatat(m, int32(-100), v13+int32(128), v13+int32(32), int32(0))
+	v90 = F___fstatat(m, int32(-100), v81, v14+int32(32), int32(0))
 	mBase = m.M
 	goto L16
 L16:
 	;
-	if v92 == int32(0) {
+	if v90 == int32(0) {
 		goto L12
 	} else {
 		goto L17
@@ -375,11 +385,11 @@ L18:
 	goto L6
 L19:
 	;
-	v123 = base.B2i32(v113 == int32(0))
+	v123 = base.B2i32(v112 == int32(0))
 	goto L4
 L20:
 	;
-	m.G0 = v13 + int32(1152)
+	m.G0 = v14 + int32(1152)
 	return v123
 }
 func F_XLogBeginInsert(m *base.Module) {
@@ -511,9 +521,9 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v12
 	var v15 int32
 	_ = v15
-	var v19 int64
+	var v19 int32
 	_ = v19
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v25 int32
 	_ = v25
@@ -539,8 +549,8 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 	_ = v55
 	var v61 int32
 	_ = v61
-	var v64 int32
-	_ = v64
+	var v65 int32
+	_ = v65
 	v6 = m.G0
 	v8 = v6 - int32(16)
 	m.G0 = v8
@@ -551,14 +561,14 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 		return int32(0)
 	} else {
 		if v12 == int32(0) {
-			v64 = int32(0)
+			v65 = int32(0)
 			m.G0 = v8 + int32(16)
-			return v64
+			return v65
 		} else {
-			v19 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
-			*(*int64)(unsafe.Add(mBase, uint32(v12))) = v19
-			v21 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
-			*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v21
+			v19 = *(*int32)(unsafe.Add(mBase, uint32(l1)+8))
+			*(*int32)(unsafe.Add(mBase, uint32(v12)+8)) = v19
+			v21 = *(*int64)(unsafe.Add(mBase, uint32(l1)))
+			*(*int64)(unsafe.Add(mBase, uint32(v12))) = v21
 			v25 = F_palloc_extended(m, int32(_a_F_XLogReaderAllocate_0), int32(2))
 			mBase = m.M
 			v26 = m.ExcPending
@@ -573,9 +583,9 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 					if v61 != 0 {
 						return int32(0)
 					} else {
-						v64 = int32(0)
+						v65 = int32(0)
 						m.G0 = v8 + int32(16)
-						return v64
+						return v65
 					}
 				} else {
 					*(*int32)(unsafe.Add(mBase, uint32(v12)+1184)) = int32(0)
@@ -604,9 +614,9 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								if v61 != 0 {
 									return int32(0)
 								} else {
-									v64 = int32(0)
+									v65 = int32(0)
 									m.G0 = v8 + int32(16)
-									return v64
+									return v65
 								}
 							}
 						} else {
@@ -628,9 +638,9 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+1248)) = int32(_a_F_XLogReaderAllocate_1)
 										*(*int32)(unsafe.Add(mBase, uint32(v12)+1244)) = v54
-										v64 = v12
+										v65 = v12
 										m.G0 = v8 + int32(16)
-										return v64
+										return v65
 									}
 								}
 							} else {
@@ -642,9 +652,9 @@ func F_XLogReaderAllocate(m *base.Module, l0 int32, l1 int32, l2 int32) int32 {
 								} else {
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+1248)) = int32(_a_F_XLogReaderAllocate_1)
 									*(*int32)(unsafe.Add(mBase, uint32(v12)+1244)) = v54
-									v64 = v12
+									v65 = v12
 									m.G0 = v8 + int32(16)
-									return v64
+									return v65
 								}
 							}
 						}
@@ -663,13 +673,15 @@ func F_XLogRecGetBlockTagExtended(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	_ = v8
 	var v9 int32
 	_ = v9
-	var v15 int32
-	_ = v15
-	var v16 int32
-	_ = v16
-	var v19 int64
+	var v13 int32
+	_ = v13
+	var v14 int32
+	_ = v14
+	var v18 int32
+	_ = v18
+	var v19 int32
 	_ = v19
-	var v21 int32
+	var v21 int64
 	_ = v21
 	var v23 int32
 	_ = v23
@@ -687,25 +699,26 @@ func F_XLogRecGetBlockTagExtended(m *base.Module, l0 int32, l1 int32, l2 int32, 
 	if v9 < l1 {
 		v33 = v7
 	} else {
-		v15 = v8 + l1*int32(52) + int32(76)
-		v16 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v15))))
-		if v16 != int32(1) {
+		v13 = v8 + l1*int32(52)
+		v14 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v13)+76)))
+		if v14 != int32(1) {
 			v33 = v7
 		} else {
+			v18 = v13 + int32(76)
 			if l2 != 0 {
-				v19 = *(*int64)(unsafe.Add(mBase, uint32(v15)+4))
-				*(*int64)(unsafe.Add(mBase, uint32(l2))) = v19
-				v21 = *(*int32)(unsafe.Add(mBase, uint32(v15)+12))
-				*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v21
+				v19 = *(*int32)(unsafe.Add(mBase, uint32(v18)+12))
+				*(*int32)(unsafe.Add(mBase, uint32(l2)+8)) = v19
+				v21 = *(*int64)(unsafe.Add(mBase, uint32(v18)+4))
+				*(*int64)(unsafe.Add(mBase, uint32(l2))) = v21
 			} else {
 			}
 			if l3 != 0 {
-				v23 = *(*int32)(unsafe.Add(mBase, uint32(v15)+16))
+				v23 = *(*int32)(unsafe.Add(mBase, uint32(v18)+16))
 				*(*int32)(unsafe.Add(mBase, uint32(l3))) = v23
 			} else {
 			}
 			if l4 != 0 {
-				v25 = *(*int32)(unsafe.Add(mBase, uint32(v15)+20))
+				v25 = *(*int32)(unsafe.Add(mBase, uint32(v18)+20))
 				*(*int32)(unsafe.Add(mBase, uint32(l4))) = v25
 			} else {
 			}
@@ -713,7 +726,7 @@ func F_XLogRecGetBlockTagExtended(m *base.Module, l0 int32, l1 int32, l2 int32, 
 			if l5 == int32(0) {
 				v33 = v27
 			} else {
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(v15)+24))
+				v30 = *(*int32)(unsafe.Add(mBase, uint32(v18)+24))
 				*(*int32)(unsafe.Add(mBase, uint32(l5))) = v30
 				v33 = v27
 			}

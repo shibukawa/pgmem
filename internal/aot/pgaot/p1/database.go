@@ -100,8 +100,8 @@ func F_get_database_list(m *base.Module) int32 {
 	_ = v28
 	var v29 int32
 	_ = v29
-	var v31 int32
-	_ = v31
+	var v34 int32
+	_ = v34
 	var v37 int32
 	_ = v37
 	var v38 int32
@@ -146,8 +146,8 @@ func F_get_database_list(m *base.Module) int32 {
 	_ = v88
 	var v89 int32
 	_ = v89
-	var v92 int32
-	_ = v92
+	var v95 int32
+	_ = v95
 	var v98 int32
 	_ = v98
 	var v99 int32
@@ -217,11 +217,11 @@ L5:
 L6:
 	;
 	v29 = v27
-	v31 = v1
+	v34 = v1
 	goto L9
 L7:
 	;
-	v92 = v1
+	v95 = v1
 	goto L8
 L8:
 	;
@@ -245,7 +245,7 @@ L9:
 	goto L12
 L10:
 	;
-	v92 = v86
+	v95 = v86
 	goto L8
 L11:
 	;
@@ -293,7 +293,7 @@ L15:
 L16:
 	;
 	if v45 == int32(0) {
-		v86 = v31
+		v86 = v34
 		goto L11
 	} else {
 		goto L17
@@ -321,7 +321,7 @@ L18:
 	}
 L19:
 	;
-	v86 = v31
+	v86 = v34
 	goto L11
 L20:
 	;
@@ -343,7 +343,7 @@ L21:
 	v76 = *(*int32)(unsafe.Add(mBase, uint32(v39)+88))
 	*(*int32)(unsafe.Add(mBase, uint32(v65)+16)) = int32(0)
 	*(*int32)(unsafe.Add(mBase, uint32(v65)+12)) = v76
-	v80 = F_lappend(m, v31, v65)
+	v80 = F_lappend(m, v34, v65)
 	mBase = m.M
 	v81 = m.ExcPending
 	if v81 != 0 {
@@ -360,7 +360,7 @@ L23:
 	;
 	if v88 != 0 {
 		v29 = v88
-		v31 = v86
+		v34 = v86
 		goto L9
 	} else {
 		goto L24
@@ -370,7 +370,7 @@ L24:
 	goto L10
 L25:
 	;
-	F_sequence_close(m, v21, int32(1))
+	F_relation_close(m, v21, int32(1))
 	mBase = m.M
 	v105 = m.ExcPending
 	if v105 != 0 {
@@ -392,7 +392,7 @@ L27:
 	;
 	*(*int32)(unsafe.Add(mBase, _c_F_get_database_list[0])) = v14
 	m.G0 = v11 + int32(16)
-	return v92
+	return v95
 }
 func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -405,10 +405,16 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v14
 	var v17 int32
 	_ = v17
+	var v19 int32
+	_ = v19
 	var v24 int32
 	_ = v24
 	var v26 int32
 	_ = v26
+	var v29 int32
+	_ = v29
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
 	var v32 int32
@@ -417,26 +423,22 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v33
 	var v34 int32
 	_ = v34
-	var v35 int32
-	_ = v35
 	var v36 int32
 	_ = v36
-	var v38 int32
-	_ = v38
+	var v37 int32
+	_ = v37
 	var v39 int32
 	_ = v39
-	var v41 int32
-	_ = v41
-	var v44 int32
-	_ = v44
-	var v48 int32
-	_ = v48
-	var v51 int32
-	_ = v51
-	var v55 int32
-	_ = v55
-	var v60 int32
-	_ = v60
+	var v42 int32
+	_ = v42
+	var v49 int32
+	_ = v49
+	var v52 int32
+	_ = v52
+	var v56 int32
+	_ = v56
+	var v61 int32
+	_ = v61
 	v8 = m.G0
 	v10 = v8 + int32(-64)
 	m.G0 = v10
@@ -446,86 +448,82 @@ func F_get_database_oid(m *base.Module, l0 int32, l1 int32) int32 {
 	if v17 != 0 {
 		return int32(0)
 	} else {
-		F_ScanKeyInit(m, v8+int32(-48), int32(2), int32(3), int32(62), l0)
+		v19 = v8 + int32(-48)
+		F_ScanKeyInit(m, v19, int32(2), int32(3), int32(62), l0)
 		mBase = m.M
 		v24 = m.ExcPending
 		if v24 != 0 {
 			return int32(0)
 		} else {
 			v26 = int32(1)
-			v31 = F_systable_beginscan(m, v14, int32(2671), v26, int32(0), v26, v8+int32(-48))
+			v29 = F_systable_beginscan(m, v14, int32(2671), v26, int32(0), v26, v19)
 			mBase = m.M
-			v32 = m.ExcPending
-			if v32 != 0 {
+			v30 = m.ExcPending
+			if v30 != 0 {
 				return int32(0)
 			} else {
-				v33 = F_systable_getnext(m, v31)
+				v31 = F_systable_getnext(m, v29)
 				mBase = m.M
-				v34 = m.ExcPending
-				if v34 != 0 {
+				v32 = m.ExcPending
+				if v32 != 0 {
 					return int32(0)
 				} else {
-					if v33 != 0 {
-						v35 = *(*int32)(unsafe.Add(mBase, uint32(v33)+16))
-						v36 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35)+22)))
-						v38 = *(*int32)(unsafe.Add(mBase, uint32(v35+v36)))
-						v39 = v38
+					if v31 != 0 {
+						v33 = *(*int32)(unsafe.Add(mBase, uint32(v31)+16))
+						v34 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v33)+22)))
+						v36 = *(*int32)(unsafe.Add(mBase, uint32(v33+v34)))
+						v37 = v36
 					} else {
-						v39 = int32(0)
+						v37 = int32(0)
 					}
-					F_systable_endscan(m, v31)
+					F_systable_endscan(m, v29)
 					mBase = m.M
-					v41 = m.ExcPending
-					if v41 != 0 {
+					v39 = m.ExcPending
+					if v39 != 0 {
 						return int32(0)
 					} else {
-						F_sequence_close(m, v14, int32(1))
+						F_relation_close(m, v14, int32(1))
 						mBase = m.M
-						v44 = m.ExcPending
-						if v44 != 0 {
+						v42 = m.ExcPending
+						if v42 != 0 {
 							return int32(0)
 						} else {
-							if l1 != 0 {
-								m.G0 = v10 - int32(-64)
-								return v39
-							} else {
-								if v39 != 0 {
-									m.G0 = v10 - int32(-64)
-									return v39
+							if l1|v37 == int32(0) {
+								F_errstart_cold(m, int32(21), int32(0))
+								mBase = m.M
+								v49 = m.ExcPending
+								if v49 != 0 {
+									return int32(0)
 								} else {
-									F_errstart_cold(m, int32(21), int32(0))
+									F_errcode(m, int32(1283))
 									mBase = m.M
-									v48 = m.ExcPending
-									if v48 != 0 {
+									v52 = m.ExcPending
+									if v52 != 0 {
 										return int32(0)
 									} else {
-										F_errcode(m, int32(1283))
+										*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
+										F_errmsg(m, int32(_a_F_get_database_oid_0), v10)
 										mBase = m.M
-										v51 = m.ExcPending
-										if v51 != 0 {
+										v56 = m.ExcPending
+										if v56 != 0 {
 											return int32(0)
 										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v10))) = l0
-											F_errmsg(m, int32(_a_F_get_database_oid_0), v10)
+											F_errfinish(m, int32(_a_F_get_database_oid_1), int32(3202), int32(_a_F_get_database_oid_2))
 											mBase = m.M
-											v55 = m.ExcPending
-											if v55 != 0 {
+											v61 = m.ExcPending
+											if v61 != 0 {
 												return int32(0)
 											} else {
-												F_errfinish(m, int32(_a_F_get_database_oid_1), int32(3202), int32(_a_F_get_database_oid_2))
-												mBase = m.M
-												v60 = m.ExcPending
-												if v60 != 0 {
-													return int32(0)
-												} else {
-													base.Wasm_trap_unreachable()
-													for {
-													}
+												base.Wasm_trap_unreachable()
+												for {
 												}
 											}
 										}
 									}
 								}
+							} else {
+								m.G0 = v10 - int32(-64)
+								return v37
 							}
 						}
 					}

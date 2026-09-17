@@ -48,59 +48,57 @@ func F_MemoryContextAllocZero(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = mBase
 	var v3 int32
 	_ = v3
-	var v6 int32
-	_ = v6
 	var v7 int32
 	_ = v7
 	var v8 int32
 	_ = v8
-	var v11 int32
-	_ = v11
-	var v16 int32
-	_ = v16
-	var v22 int32
-	_ = v22
+	var v9 int32
+	_ = v9
+	var v12 int32
+	_ = v12
 	var v24 int32
 	_ = v24
-	var v31 int32
-	_ = v31
-	var v35 int32
-	_ = v35
+	var v26 int32
+	_ = v26
+	var v28 int32
+	_ = v28
+	var v33 int32
+	_ = v33
 	v3 = int32(0)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v3)
-	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(v6)))
-	v8 = m.T0[v7].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, v3)
+	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
+	v8 = *(*int32)(unsafe.Add(mBase, uint32(v7)))
+	v9 = m.T0[v8].(func(*base.Module, int32, int32, int32) int32)(m, l0, l1, v3)
 	mBase = m.M
-	v11 = m.ExcPending
-	if v11 != 0 {
+	v12 = m.ExcPending
+	if v12 != 0 {
 		return int32(0)
 	} else {
-		if base.Ui32(int32(1024)) < base.Ui32(l1) {
-			v35 = F__emscripten_memset_bulkmem(m, v8, base.I32_extend8_s(int32(0)), l1)
-			mBase = m.M
-			return v8
-		} else {
-			if l1&int32(3) != 0 {
-				v35 = F__emscripten_memset_bulkmem(m, v8, base.I32_extend8_s(int32(0)), l1)
-				mBase = m.M
-				return v8
+		if l1&int32(3)|base.B2i32(base.Ui32(int32(1024)) < base.Ui32(l1)) == int32(0) {
+			if l1 == int32(0) {
+				return v9
 			} else {
-				v16 = v8 + l1
-				if base.Ui32(v16) <= base.Ui32(v8) {
-					return v8
+				v24 = v9 + l1
+				v26 = v9 + int32(4)
+				if base.Ui32(v26) < base.Ui32(v24) {
+					v28 = v24
 				} else {
-					v22 = v8 + int32(4)
-					if base.Ui32(v22) < base.Ui32(v16) {
-						v24 = v16
-					} else {
-						v24 = v22
-					}
-					v31 = F__emscripten_memset_bulkmem(m, v8, base.I32_extend8_s(int32(0)), (v8^int32(-1)+v24)&int32(-4)+int32(4))
-					mBase = m.M
-					return v31
+					v28 = v26
+				}
+				v33 = (v9^int32(-1)+v28)&int32(-4) + int32(4)
+				if v33 == int32(0) {
+					return v9
+				} else {
+					base.MemoryFill(m, v9, int32(0), v33)
+					return v9
 				}
 			}
+		} else {
+			if l1 == int32(0) {
+			} else {
+				base.MemoryFill(m, v9, int32(0), l1)
+			}
+			return v9
 		}
 	}
 }
@@ -207,10 +205,4 @@ L11:
 	v19 = int32(1)
 	*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)) = uint8(v19)
 	goto L3
-}
-func F_MemoryContextSetIdentifier(m *base.Module, l0 int32, l1 int32) {
-	mBase := m.M
-	_ = mBase
-	*(*int32)(unsafe.Add(mBase, uint32(l0)+36)) = l1
-	return
 }

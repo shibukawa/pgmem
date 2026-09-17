@@ -56,32 +56,32 @@ func F_appendStringInfoStringQuoted(m *base.Module, l0 int32, l1 int32, l2 int32
 	_ = v47
 	var v51 int32
 	_ = v51
-	var v55 int32
-	_ = v55
-	var __phi55 int32
-	_ = __phi55
-	var v58 int32
-	_ = v58
-	var __phi58 int32
-	_ = __phi58
-	var v65 int32
-	_ = v65
-	var v68 int32
-	_ = v68
+	var v53 int32
+	_ = v53
+	var __phi53 int32
+	_ = __phi53
+	var v54 int32
+	_ = v54
+	var __phi54 int32
+	_ = __phi54
+	var v63 int32
+	_ = v63
+	var v66 int32
+	_ = v66
+	var v67 int32
+	_ = v67
 	var v69 int32
 	_ = v69
-	var v71 int32
-	_ = v71
+	var v73 int32
+	_ = v73
 	var v75 int32
 	_ = v75
-	var v78 int32
-	_ = v78
+	var v84 int32
+	_ = v84
 	var v86 int32
 	_ = v86
 	var v88 int32
 	_ = v88
-	var v90 int32
-	_ = v90
 	v4 = int32(0)
 	v8 = m.G0
 	v10 = v8 - int32(16)
@@ -143,9 +143,9 @@ L7:
 	mBase = m.M
 	v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v45))))
 	if v47 == v44 {
-		goto L14
+		goto L13
 	} else {
-		goto L15
+		goto L14
 	}
 L8:
 	;
@@ -177,139 +177,136 @@ L11:
 	goto L7
 L12:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v78
-	if v16 != 0 {
-		goto L28
+	if v51 != 0 {
+		goto L16
 	} else {
-		goto L29
+		goto L17
 	}
 L13:
 	;
-	if v51 == int32(0) {
-		goto L17
-	} else {
-		goto L18
-	}
+	v51 = v45
+	goto L15
 L14:
 	;
-	v51 = v45
-	goto L16
+	v51 = int32(0)
+	goto L15
 L15:
 	;
-	v51 = int32(0)
-	goto L16
+	goto L12
 L16:
 	;
-	goto L13
+	__phi53 = v21
+	__phi54 = v51
+	v53 = __phi53
+	v54 = __phi54
+	goto L19
 L17:
 	;
-	v78 = v21
-	goto L12
+	v75 = v21
+	goto L18
 L18:
 	;
-	goto L19
+	*(*int32)(unsafe.Add(mBase, uint32(v10))) = v75
+	if v16 != 0 {
+		goto L27
+	} else {
+		goto L28
+	}
 L19:
 	;
-	__phi55 = v21
-	__phi58 = v51
-	v55 = __phi55
-	v58 = __phi58
-	goto L20
-L20:
-	;
-	F_appendBinaryStringInfoNT(m, l0, v55, v58-v55+int32(1))
+	F_appendBinaryStringInfoNT(m, l0, v53, v54-v53+int32(1))
 	mBase = m.M
-	v65 = m.ExcPending
-	if v65 != 0 {
+	v63 = m.ExcPending
+	if v63 != 0 {
 		goto L4
 	} else {
-		goto L22
+		goto L21
 	}
+L20:
+	;
+	v75 = v54
+	goto L18
 L21:
 	;
-	v78 = v58
-	goto L12
+	v66 = int32(39)
+	v67 = F___strchrnul(m, v54+int32(1), v66)
+	mBase = m.M
+	v69 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v67))))
+	if v69 == v66 {
+		goto L23
+	} else {
+		goto L24
+	}
 L22:
 	;
-	v68 = int32(39)
-	v69 = F___strchrnul(m, v58+int32(1), v68)
-	mBase = m.M
-	v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v69))))
-	if v71 == v68 {
-		goto L24
+	if v73 != 0 {
+		__phi53 = v54
+		__phi54 = v73
+		v53 = __phi53
+		v54 = __phi54
+		goto L19
 	} else {
-		goto L25
+		goto L26
 	}
 L23:
 	;
-	if v75 != 0 {
-		__phi55 = v58
-		__phi58 = v75
-		v55 = __phi55
-		v58 = __phi58
-		goto L20
-	} else {
-		goto L27
-	}
+	v73 = v67
+	goto L25
 L24:
 	;
-	v75 = v69
-	goto L26
+	v73 = int32(0)
+	goto L25
 L25:
 	;
-	v75 = int32(0)
-	goto L26
+	goto L22
 L26:
 	;
-	goto L23
+	goto L20
 L27:
 	;
-	goto L21
+	v84 = int32(_a_F_appendStringInfoStringQuoted_0)
+	goto L29
 L28:
 	;
-	v86 = int32(_a_F_appendStringInfoStringQuoted_0)
-	goto L30
+	v84 = int32(_a_F_appendStringInfoStringQuoted_1)
+	goto L29
 L29:
 	;
-	v86 = int32(_a_F_appendStringInfoStringQuoted_1)
-	goto L30
+	F_appendStringInfo(m, l0, v84, v10)
+	mBase = m.M
+	v86 = m.ExcPending
+	if v86 != 0 {
+		goto L4
+	} else {
+		goto L30
+	}
 L30:
 	;
-	F_appendStringInfo(m, l0, v86, v10)
+	if v22 != 0 {
+		goto L31
+	} else {
+		goto L32
+	}
+L31:
+	;
+	F_pfree(m, v22)
 	mBase = m.M
 	v88 = m.ExcPending
 	if v88 != 0 {
 		goto L4
 	} else {
-		goto L31
-	}
-L31:
-	;
-	if v22 != 0 {
-		goto L32
-	} else {
-		goto L33
+		goto L34
 	}
 L32:
 	;
-	F_pfree(m, v22)
-	mBase = m.M
-	v90 = m.ExcPending
-	if v90 != 0 {
-		goto L4
-	} else {
-		goto L35
-	}
+	goto L33
 L33:
-	;
-	goto L34
-L34:
 	;
 	m.G0 = v10 + int32(16)
 	return
-L35:
+L34:
 	;
-	goto L34
+	goto L33
 }
 func F_string_hash(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -1084,32 +1081,30 @@ func F_transform_string_values_scalar(m *base.Module, l0 int32, l1 int32, l2 int
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v21 int32
-	_ = v21
-	var v23 int32
-	_ = v23
-	var v32 int32
-	_ = v32
+	var v24 int32
+	_ = v24
+	var v27 int32
+	_ = v27
+	var v34 int32
+	_ = v34
 	var v35 int32
 	_ = v35
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
+	var v41 int32
+	_ = v41
+	var v47 int32
+	_ = v47
 	var v48 int32
 	_ = v48
-	var v49 int32
-	_ = v49
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
-	var v64 int32
-	_ = v64
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v58 int32
+	_ = v58
+	var v61 int32
+	_ = v61
+	var v63 int32
+	_ = v63
 	if l2 == int32(1) {
 		v8 = *(*int32)(unsafe.Add(mBase, uint32(l0)+12))
 		v9 = F_strlen(m, l1)
@@ -1130,45 +1125,44 @@ func F_transform_string_values_scalar(m *base.Module, l0 int32, l1 int32, l2 int
 			} else {
 				v18 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16))))
 				if v18 == int32(1) {
-					v21 = int32(4)
-					v23 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+1)))
-					if v23&int32(254) == int32(2) {
-						v32 = v21
+					v24 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v16)+1)))
+					if v24 == int32(18) {
+						v27 = int32(16)
 					} else {
-						v32 = base.B2i32(v23 == int32(18)) << (uint(v21) % 32)
+						v27 = int32(0)
 					}
-					if v23 == int32(1) {
-						v35 = v21
+					if base.Ui32((v24-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+						v34 = int32(4)
 					} else {
-						v35 = v32
+						v34 = v27
 					}
-					v48 = v35
+					v47 = v34
 				} else {
-					v36 = int32(1)
-					if v18&v36 != 0 {
-						v48 = int32(base.Ui32(v18)>>(uint(v36)%32)) - v36
+					v35 = int32(1)
+					if v18&v35 != 0 {
+						v47 = int32(base.Ui32(v18)>>(uint(v35)%32)) - v35
 					} else {
-						v42 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
-						v48 = int32(base.Ui32(v42)>>(uint(int32(2))%32)) - int32(4)
+						v41 = *(*int32)(unsafe.Add(mBase, uint32(v16)))
+						v47 = int32(base.Ui32(v41)>>(uint(int32(2))%32)) - int32(4)
 					}
 				}
-				v49 = int32(1)
-				if v18&v49 != 0 {
-					v53 = v49
+				v48 = int32(1)
+				if v18&v48 != 0 {
+					v52 = v48
 				} else {
-					v53 = int32(4)
+					v52 = int32(4)
 				}
-				F_escape_json_with_len(m, v15, v16+v53, v48)
+				F_escape_json_with_len(m, v15, v16+v52, v47)
 				mBase = m.M
-				v56 = m.ExcPending
-				if v56 != 0 {
+				v55 = m.ExcPending
+				if v55 != 0 {
 					return int32(0)
 				} else {
 					if v16 != v11 {
 						F_pfree(m, v16)
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v58 = m.ExcPending
+						if v58 != 0 {
 							return int32(0)
 						} else {
 							return int32(0)
@@ -1180,11 +1174,11 @@ func F_transform_string_values_scalar(m *base.Module, l0 int32, l1 int32, l2 int
 			}
 		}
 	} else {
-		v62 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-		F_appendStringInfoString(m, v62, l1)
+		v61 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+		F_appendStringInfoString(m, v61, l1)
 		mBase = m.M
-		v64 = m.ExcPending
-		if v64 != 0 {
+		v63 = m.ExcPending
+		if v63 != 0 {
 			return int32(0)
 		} else {
 			return int32(0)

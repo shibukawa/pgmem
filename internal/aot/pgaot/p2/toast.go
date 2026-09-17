@@ -8,17 +8,17 @@ import (
 func F_IsToastNamespace(m *base.Module, l0 int32) int32 {
 	mBase := m.M
 	_ = mBase
-	var v8 int32
-	_ = v8
-	var v13 int32
-	_ = v13
+	var v6 int32
+	_ = v6
+	var v12 int32
+	_ = v12
 	if l0 != int32(99) {
-		v8 = *(*int32)(unsafe.Add(mBase, _c_F_IsToastNamespace[0]))
-		v13 = base.B2i32(v8 != int32(0)) & base.B2i32(l0 == v8)
+		v6 = *(*int32)(unsafe.Add(mBase, _c_F_IsToastNamespace[0]))
+		v12 = base.B2i32(v6 != int32(0)) & base.B2i32(l0 == v6)
 	} else {
-		v13 = int32(1)
+		v12 = int32(1)
 	}
-	return v13
+	return v12
 }
 func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -33,82 +33,82 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v11
 	var v15 int32
 	_ = v15
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
-	var v40 int32
-	_ = v40
+	var v26 int32
+	_ = v26
+	var v27 int32
+	_ = v27
+	var v33 int32
+	_ = v33
+	var v39 int32
+	_ = v39
+	var v41 int32
+	_ = v41
 	var v42 int32
 	_ = v42
-	var v43 int32
-	_ = v43
-	var v53 int32
-	_ = v53
-	var v56 int32
-	_ = v56
-	var v60 int32
-	_ = v60
-	var v64 int32
-	_ = v64
-	var v69 int32
-	_ = v69
-	var v73 int32
-	_ = v73
-	var v78 int32
-	_ = v78
+	var v52 int32
+	_ = v52
+	var v55 int32
+	_ = v55
+	var v59 int32
+	_ = v59
+	var v63 int32
+	_ = v63
+	var v68 int32
+	_ = v68
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
-	var v84 int32
-	_ = v84
-	var v87 int32
-	_ = v87
 	var v89 int32
 	_ = v89
-	var v98 int32
-	_ = v98
-	var v101 int32
-	_ = v101
-	var v102 int32
-	_ = v102
-	var v108 int32
-	_ = v108
+	var v92 int32
+	_ = v92
+	var v99 int32
+	_ = v99
+	var v100 int32
+	_ = v100
+	var v106 int32
+	_ = v106
+	var v112 int32
+	_ = v112
 	var v114 int32
 	_ = v114
-	var v116 int32
-	_ = v116
+	var v115 int32
+	_ = v115
 	var v117 int32
 	_ = v117
-	var v119 int32
-	_ = v119
+	var v121 int32
+	_ = v121
+	var v122 int32
+	_ = v122
 	var v123 int32
 	_ = v123
-	var v124 int32
-	_ = v124
 	var v125 int32
 	_ = v125
-	var v127 int32
-	_ = v127
-	var v130 int32
-	_ = v130
-	var v134 int32
-	_ = v134
-	var v135 int32
-	_ = v135
-	var v139 int32
-	_ = v139
-	var v147 int32
-	_ = v147
-	var v150 int32
-	_ = v150
+	var v128 int32
+	_ = v128
+	var v132 int32
+	_ = v132
+	var v133 int32
+	_ = v133
+	var v137 int32
+	_ = v137
+	var v145 int32
+	_ = v145
+	var v148 int32
+	_ = v148
+	var v149 int32
+	_ = v149
 	var v151 int32
 	_ = v151
-	var v153 int32
-	_ = v153
+	var v157 int32
+	_ = v157
 	var v159 int32
 	_ = v159
-	var v161 int32
-	_ = v161
 	v3 = int32(0)
 	v7 = m.G0
 	v9 = v7 - int32(16)
@@ -117,55 +117,60 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 	if v11 == int32(1) {
 		v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
 		if base.Ui32((v15-int32(1))&int32(255)) < base.Ui32(int32(3)) {
-			v40 = int32(4)
+			v39 = int32(4)
 		} else {
-			v40 = base.B2i32(v15&int32(255) == int32(18)) << (uint(int32(4)) % 32)
+			if v15 == int32(18) {
+				v26 = int32(16)
+			} else {
+				v26 = int32(0)
+			}
+			v39 = v26
 		}
 	} else {
-		v28 = int32(1)
-		if v11&v28 != 0 {
-			v40 = int32(base.Ui32(v11)>>(uint(v28)%32)) - v28
+		v27 = int32(1)
+		if v11&v27 != 0 {
+			v39 = int32(base.Ui32(v11)>>(uint(v27)%32)) - v27
 		} else {
-			v34 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-			v40 = int32(base.Ui32(v34)>>(uint(int32(2))%32)) - int32(4)
+			v33 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+			v39 = int32(base.Ui32(v33)>>(uint(int32(2))%32)) - int32(4)
 		}
 	}
-	v42 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_toast_compress_datum[0])))
+	v41 = int32(*(*uint8)(unsafe.Add(mBase, _c_F_toast_compress_datum[0])))
 	if l1 != 0 {
-		v43 = l1
+		v42 = l1
 	} else {
-		v43 = v42
+		v42 = v41
 	}
-	switch v43&int32(255) - int32(108) {
+	switch v42&int32(255) - int32(108) {
 	case 0:
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v53 = m.ExcPending
-		if v53 != 0 {
+		v52 = m.ExcPending
+		if v52 != 0 {
 			return int32(0)
 		} else {
 			F_errcode(m, int32(1088))
 			mBase = m.M
-			v56 = m.ExcPending
-			if v56 != 0 {
+			v55 = m.ExcPending
+			if v55 != 0 {
 				return int32(0)
 			} else {
 				F_errmsg(m, int32(_a_F_toast_compress_datum_0), int32(0))
 				mBase = m.M
-				v60 = m.ExcPending
-				if v60 != 0 {
+				v59 = m.ExcPending
+				if v59 != 0 {
 					return int32(0)
 				} else {
 					F_errdetail(m, int32(_a_F_toast_compress_datum_1), int32(0))
 					mBase = m.M
-					v64 = m.ExcPending
-					if v64 != 0 {
+					v63 = m.ExcPending
+					if v63 != 0 {
 						return int32(0)
 					} else {
 						F_errfinish(m, int32(_a_F_toast_compress_datum_2), int32(142), int32(_a_F_toast_compress_datum_3))
 						mBase = m.M
-						v69 = m.ExcPending
-						if v69 != 0 {
+						v68 = m.ExcPending
+						if v68 != 0 {
 							return int32(0)
 						} else {
 							base.Wasm_trap_unreachable()
@@ -179,21 +184,21 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 	default:
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v73 = m.ExcPending
-		if v73 != 0 {
+		v72 = m.ExcPending
+		if v72 != 0 {
 			return int32(0)
 		} else {
-			*(*int32)(unsafe.Add(mBase, uint32(v9))) = base.I32_extend8_s(v43)
+			*(*int32)(unsafe.Add(mBase, uint32(v9))) = base.I32_extend8_s(v42)
 			F_errmsg_internal(m, int32(_a_F_toast_compress_datum_4), v9)
 			mBase = m.M
-			v78 = m.ExcPending
-			if v78 != 0 {
+			v77 = m.ExcPending
+			if v77 != 0 {
 				return int32(0)
 			} else {
 				F_errfinish(m, int32(_a_F_toast_compress_datum_5), int32(75), int32(_a_F_toast_compress_datum_6))
 				mBase = m.M
-				v83 = m.ExcPending
-				if v83 != 0 {
+				v82 = m.ExcPending
+				if v82 != 0 {
 					return int32(0)
 				} else {
 					base.Wasm_trap_unreachable()
@@ -203,169 +208,168 @@ func F_toast_compress_datum(m *base.Module, l0 int32, l1 int32) int32 {
 			}
 		}
 	case 4:
-		v84 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-		if v84 == int32(1) {
-			v87 = int32(4)
+		v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+		if v83 == int32(1) {
 			v89 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
-			if v89&int32(254) == int32(2) {
-				v98 = v87
+			if v89 == int32(18) {
+				v92 = int32(16)
 			} else {
-				v98 = base.B2i32(v89 == int32(18)) << (uint(v87) % 32)
+				v92 = int32(0)
 			}
-			if v89 == int32(1) {
-				v101 = v87
+			if base.Ui32((v89-int32(1))&int32(255)) < base.Ui32(int32(3)) {
+				v99 = int32(4)
 			} else {
-				v101 = v98
+				v99 = v92
 			}
-			v114 = v101
+			v112 = v99
 		} else {
-			v102 = int32(1)
-			if v84&v102 != 0 {
-				v114 = int32(base.Ui32(v84)>>(uint(v102)%32)) - v102
+			v100 = int32(1)
+			if v83&v100 != 0 {
+				v112 = int32(base.Ui32(v83)>>(uint(v100)%32)) - v100
 			} else {
-				v108 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v114 = int32(base.Ui32(v108)>>(uint(int32(2))%32)) - int32(4)
+				v106 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
+				v112 = int32(base.Ui32(v106)>>(uint(int32(2))%32)) - int32(4)
 			}
 		}
-		v116 = *(*int32)(unsafe.Add(mBase, _c_F_toast_compress_datum[1]))
-		v117 = *(*int32)(unsafe.Add(mBase, uint32(v116)))
-		if v114 < v117 {
-			v147 = v3
-			v150 = v147
-			if v150 != 0 {
-				v151 = int32(2)
-				v153 = *(*int32)(unsafe.Add(mBase, uint32(v150)))
-				if base.Ui32(int32(base.Ui32(v153)>>(uint(v151)%32))) < base.Ui32(v40-v151) {
-					*(*int32)(unsafe.Add(mBase, uint32(v150)+4)) = v40
-					v161 = v150
+		v114 = *(*int32)(unsafe.Add(mBase, _c_F_toast_compress_datum[1]))
+		v115 = *(*int32)(unsafe.Add(mBase, uint32(v114)))
+		if v112 < v115 {
+			v145 = v3
+			v148 = v145
+			if v148 != 0 {
+				v149 = int32(2)
+				v151 = *(*int32)(unsafe.Add(mBase, uint32(v148)))
+				if base.Ui32(int32(base.Ui32(v151)>>(uint(v149)%32))) < base.Ui32(v39-v149) {
+					*(*int32)(unsafe.Add(mBase, uint32(v148)+4)) = v39
+					v159 = v148
 					m.G0 = v9 + int32(16)
-					return v161
+					return v159
 				} else {
-					F_pfree(m, v150)
+					F_pfree(m, v148)
 					mBase = m.M
-					v159 = m.ExcPending
-					if v159 != 0 {
+					v157 = m.ExcPending
+					if v157 != 0 {
 						return int32(0)
 					} else {
-						v161 = int32(0)
+						v159 = int32(0)
 						m.G0 = v9 + int32(16)
-						return v161
+						return v159
 					}
 				}
 			} else {
-				v161 = int32(0)
+				v159 = int32(0)
 				m.G0 = v9 + int32(16)
-				return v161
+				return v159
 			}
 		} else {
-			v119 = *(*int32)(unsafe.Add(mBase, uint32(v116)+4))
-			if v119 < v114 {
-				v147 = v3
-				v150 = v147
-				if v150 != 0 {
-					v151 = int32(2)
-					v153 = *(*int32)(unsafe.Add(mBase, uint32(v150)))
-					if base.Ui32(int32(base.Ui32(v153)>>(uint(v151)%32))) < base.Ui32(v40-v151) {
-						*(*int32)(unsafe.Add(mBase, uint32(v150)+4)) = v40
-						v161 = v150
+			v117 = *(*int32)(unsafe.Add(mBase, uint32(v114)+4))
+			if v117 < v112 {
+				v145 = v3
+				v148 = v145
+				if v148 != 0 {
+					v149 = int32(2)
+					v151 = *(*int32)(unsafe.Add(mBase, uint32(v148)))
+					if base.Ui32(int32(base.Ui32(v151)>>(uint(v149)%32))) < base.Ui32(v39-v149) {
+						*(*int32)(unsafe.Add(mBase, uint32(v148)+4)) = v39
+						v159 = v148
 						m.G0 = v9 + int32(16)
-						return v161
+						return v159
 					} else {
-						F_pfree(m, v150)
+						F_pfree(m, v148)
 						mBase = m.M
-						v159 = m.ExcPending
-						if v159 != 0 {
+						v157 = m.ExcPending
+						if v157 != 0 {
 							return int32(0)
 						} else {
-							v161 = int32(0)
+							v159 = int32(0)
 							m.G0 = v9 + int32(16)
-							return v161
+							return v159
 						}
 					}
 				} else {
-					v161 = int32(0)
+					v159 = int32(0)
 					m.G0 = v9 + int32(16)
-					return v161
+					return v159
 				}
 			} else {
-				v123 = F_palloc(m, v114+int32(12))
+				v121 = F_palloc(m, v112+int32(12))
 				mBase = m.M
-				v124 = m.ExcPending
-				if v124 != 0 {
+				v122 = m.ExcPending
+				if v122 != 0 {
 					return int32(0)
 				} else {
-					v125 = int32(1)
-					v127 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-					if v127&v125 != 0 {
-						v130 = v125
+					v123 = int32(1)
+					v125 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+					if v125&v123 != 0 {
+						v128 = v123
 					} else {
-						v130 = int32(4)
+						v128 = int32(4)
 					}
-					v134 = int32(0)
-					v135 = F_pglz_compress(m, l0+v130, v114, v123+int32(8), v134)
+					v132 = int32(0)
+					v133 = F_pglz_compress(m, l0+v128, v112, v121+int32(8), v132)
 					mBase = m.M
-					if v135 < v134 {
-						F_pfree(m, v123)
+					if v133 < v132 {
+						F_pfree(m, v121)
 						mBase = m.M
-						v139 = m.ExcPending
-						if v139 != 0 {
+						v137 = m.ExcPending
+						if v137 != 0 {
 							return int32(0)
 						} else {
-							v150 = int32(0)
-							if v150 != 0 {
-								v151 = int32(2)
-								v153 = *(*int32)(unsafe.Add(mBase, uint32(v150)))
-								if base.Ui32(int32(base.Ui32(v153)>>(uint(v151)%32))) < base.Ui32(v40-v151) {
-									*(*int32)(unsafe.Add(mBase, uint32(v150)+4)) = v40
-									v161 = v150
+							v148 = int32(0)
+							if v148 != 0 {
+								v149 = int32(2)
+								v151 = *(*int32)(unsafe.Add(mBase, uint32(v148)))
+								if base.Ui32(int32(base.Ui32(v151)>>(uint(v149)%32))) < base.Ui32(v39-v149) {
+									*(*int32)(unsafe.Add(mBase, uint32(v148)+4)) = v39
+									v159 = v148
 									m.G0 = v9 + int32(16)
-									return v161
+									return v159
 								} else {
-									F_pfree(m, v150)
+									F_pfree(m, v148)
 									mBase = m.M
-									v159 = m.ExcPending
-									if v159 != 0 {
+									v157 = m.ExcPending
+									if v157 != 0 {
 										return int32(0)
 									} else {
-										v161 = int32(0)
+										v159 = int32(0)
 										m.G0 = v9 + int32(16)
-										return v161
+										return v159
 									}
 								}
 							} else {
-								v161 = int32(0)
+								v159 = int32(0)
 								m.G0 = v9 + int32(16)
-								return v161
+								return v159
 							}
 						}
 					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v123))) = v135<<(uint(int32(2))%32) + int32(34)
-						v147 = v123
-						v150 = v147
-						if v150 != 0 {
-							v151 = int32(2)
-							v153 = *(*int32)(unsafe.Add(mBase, uint32(v150)))
-							if base.Ui32(int32(base.Ui32(v153)>>(uint(v151)%32))) < base.Ui32(v40-v151) {
-								*(*int32)(unsafe.Add(mBase, uint32(v150)+4)) = v40
-								v161 = v150
+						*(*int32)(unsafe.Add(mBase, uint32(v121))) = v133<<(uint(int32(2))%32) + int32(34)
+						v145 = v121
+						v148 = v145
+						if v148 != 0 {
+							v149 = int32(2)
+							v151 = *(*int32)(unsafe.Add(mBase, uint32(v148)))
+							if base.Ui32(int32(base.Ui32(v151)>>(uint(v149)%32))) < base.Ui32(v39-v149) {
+								*(*int32)(unsafe.Add(mBase, uint32(v148)+4)) = v39
+								v159 = v148
 								m.G0 = v9 + int32(16)
-								return v161
+								return v159
 							} else {
-								F_pfree(m, v150)
+								F_pfree(m, v148)
 								mBase = m.M
-								v159 = m.ExcPending
-								if v159 != 0 {
+								v157 = m.ExcPending
+								if v157 != 0 {
 									return int32(0)
 								} else {
-									v161 = int32(0)
+									v159 = int32(0)
 									m.G0 = v9 + int32(16)
-									return v161
+									return v159
 								}
 							}
 						} else {
-							v161 = int32(0)
+							v159 = int32(0)
 							m.G0 = v9 + int32(16)
-							return v161
+							return v159
 						}
 					}
 				}
@@ -509,7 +513,7 @@ func F_toast_fetch_datum(m *base.Module, l0 int32) int32 {
 						if v41 != 0 {
 							return int32(0)
 						} else {
-							F_sequence_close(m, v35, int32(1))
+							F_relation_close(m, v35, int32(1))
 							mBase = m.M
 							v44 = m.ExcPending
 							if v44 != 0 {
@@ -641,7 +645,7 @@ L10:
 	goto L8
 L11:
 	;
-	F_sequence_close(m, v11, int32(0))
+	F_relation_close(m, v11, int32(0))
 	mBase = m.M
 	v57 = m.ExcPending
 	if v57 != 0 {

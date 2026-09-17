@@ -24,32 +24,32 @@ func F_GetDefaultTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v25
 	var v29 int32
 	_ = v29
-	var v32 int32
-	_ = v32
 	var v33 int32
 	_ = v33
-	var v35 int32
-	_ = v35
-	var v38 int32
-	_ = v38
-	var v42 int32
-	_ = v42
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
+	var v39 int32
+	_ = v39
 	var v43 int32
 	_ = v43
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v62 int32
-	_ = v62
-	var v67 int32
-	_ = v67
-	var v68 int32
-	_ = v68
+	var v44 int32
+	_ = v44
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
+	var v57 int32
+	_ = v57
+	var v60 int32
+	_ = v60
+	var v64 int32
+	_ = v64
+	var v69 int32
+	_ = v69
+	var v70 int32
+	_ = v70
 	if l0 == int32(116) {
 		F_PrepareTempTablespaces(m)
 		mBase = m.M
@@ -70,72 +70,67 @@ func F_GetDefaultTablespace(m *base.Module, l0 int32, l1 int32) int32 {
 				*(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[1])) = v22
 				v25 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[2]))
 				v29 = *(*int32)(unsafe.Add(mBase, uint32(v25+v22<<(uint(int32(2))%32))))
-				v32 = v29
+				v33 = v29
 			} else {
-				v32 = int32(0)
+				v33 = int32(0)
 			}
-			v68 = v32
-			return v68
+			v70 = v33
+			return v70
 		}
 	} else {
-		v33 = int32(0)
-		v35 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[3]))
-		if v35 == v33 {
-			v68 = v33
-			return v68
+		v34 = int32(0)
+		v36 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[3]))
+		if v36 == v34 {
+			v70 = v34
+			return v70
 		} else {
-			v38 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v35))))
-			if v38 == int32(0) {
-				v68 = v33
-				return v68
+			v39 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v36))))
+			if v39 == int32(0) {
+				v70 = v34
+				return v70
 			} else {
-				v42 = F_get_tablespace_oid(m, v35, int32(1))
+				v43 = F_get_tablespace_oid(m, v36, int32(1))
 				mBase = m.M
-				v43 = m.ExcPending
-				if v43 != 0 {
+				v44 = m.ExcPending
+				if v44 != 0 {
 					return int32(0)
 				} else {
-					v46 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[4]))
-					if v42 != v46 {
-						v48 = v42
+					v47 = *(*int32)(unsafe.Add(mBase, _c_F_GetDefaultTablespace[4]))
+					if v43 != v47 {
+						v49 = v43
 					} else {
-						v48 = int32(0)
+						v49 = int32(0)
 					}
-					if l1 == int32(0) {
-						v68 = v48
-						return v68
+					if base.B2i32(l1 == int32(0))|base.B2i32(v43 != v47) != 0 {
+						v70 = v49
+						return v70
 					} else {
-						if v42 != v46 {
-							v68 = v48
-							return v68
+						F_errstart_cold(m, int32(21), int32(0))
+						mBase = m.M
+						v57 = m.ExcPending
+						if v57 != 0 {
+							return int32(0)
 						} else {
-							F_errstart_cold(m, int32(21), int32(0))
+							F_errcode(m, int32(1088))
 							mBase = m.M
-							v55 = m.ExcPending
-							if v55 != 0 {
+							v60 = m.ExcPending
+							if v60 != 0 {
 								return int32(0)
 							} else {
-								F_errcode(m, int32(1088))
+								F_errmsg(m, int32(_a_F_GetDefaultTablespace_1), int32(0))
 								mBase = m.M
-								v58 = m.ExcPending
-								if v58 != 0 {
+								v64 = m.ExcPending
+								if v64 != 0 {
 									return int32(0)
 								} else {
-									F_errmsg(m, int32(_a_F_GetDefaultTablespace_1), int32(0))
+									F_errfinish(m, int32(_a_F_GetDefaultTablespace_2), int32(1178), int32(_a_F_GetDefaultTablespace_3))
 									mBase = m.M
-									v62 = m.ExcPending
-									if v62 != 0 {
+									v69 = m.ExcPending
+									if v69 != 0 {
 										return int32(0)
 									} else {
-										F_errfinish(m, int32(_a_F_GetDefaultTablespace_2), int32(1178), int32(_a_F_GetDefaultTablespace_3))
-										mBase = m.M
-										v67 = m.ExcPending
-										if v67 != 0 {
-											return int32(0)
-										} else {
-											base.Wasm_trap_unreachable()
-											for {
-											}
+										base.Wasm_trap_unreachable()
+										for {
 										}
 									}
 								}
@@ -168,10 +163,10 @@ func F_findDefaultOnlyColumns(m *base.Module, l0 int32) int32 {
 	_ = v26
 	var v27 int32
 	_ = v27
+	var v30 int32
+	_ = v30
 	var v31 int32
 	_ = v31
-	var v32 int32
-	_ = v32
 	var v37 int32
 	_ = v37
 	var v38 int32
@@ -192,10 +187,10 @@ func F_findDefaultOnlyColumns(m *base.Module, l0 int32) int32 {
 	_ = v55
 	var v57 int32
 	_ = v57
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
-	var v62 int32
-	_ = v62
 	var v67 int32
 	_ = v67
 	var v68 int32
@@ -310,14 +305,14 @@ L12:
 	}
 L13:
 	;
+	v30 = v26
 	v31 = v14
-	v32 = v26
 	goto L14
 L14:
 	;
-	v37 = v32 + int32(1)
+	v37 = v30 + int32(1)
 	v38 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
-	v42 = *(*int32)(unsafe.Add(mBase, uint32(v38+v32<<(uint(int32(2))%32))))
+	v42 = *(*int32)(unsafe.Add(mBase, uint32(v38+v30<<(uint(int32(2))%32))))
 	v43 = *(*int32)(unsafe.Add(mBase, uint32(v42)))
 	if v43 != int32(57) {
 		goto L16
@@ -346,8 +341,8 @@ L18:
 	;
 	v51 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
 	if v37 < v51 {
+		v30 = v37
 		v31 = v50
-		v32 = v37
 		goto L14
 	} else {
 		goto L21
@@ -374,14 +369,14 @@ L22:
 	}
 L23:
 	;
+	v60 = v55
 	v61 = v55
-	v62 = v55
 	goto L24
 L24:
 	;
-	v67 = v62 + int32(1)
+	v67 = v60 + int32(1)
 	v68 = *(*int32)(unsafe.Add(mBase, uint32(v23)+12))
-	v72 = *(*int32)(unsafe.Add(mBase, uint32(v68+v62<<(uint(int32(2))%32))))
+	v72 = *(*int32)(unsafe.Add(mBase, uint32(v68+v60<<(uint(int32(2))%32))))
 	v73 = *(*int32)(unsafe.Add(mBase, uint32(v72)))
 	if v73 == int32(57) {
 		goto L26
@@ -410,8 +405,8 @@ L28:
 	;
 	v79 = *(*int32)(unsafe.Add(mBase, uint32(v23)+4))
 	if v67 < v79 {
+		v60 = v67
 		v61 = v78
-		v62 = v67
 		goto L24
 	} else {
 		goto L30

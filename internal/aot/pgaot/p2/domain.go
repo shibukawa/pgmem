@@ -687,12 +687,18 @@ func F_get_domain_constraint_oid(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v15
 	var v18 int32
 	_ = v18
+	var v20 int32
+	_ = v20
 	var v26 int32
 	_ = v26
 	var v33 int32
 	_ = v33
 	var v40 int32
 	_ = v40
+	var v45 int32
+	_ = v45
+	var v46 int32
+	_ = v46
 	var v47 int32
 	_ = v47
 	var v48 int32
@@ -701,30 +707,26 @@ func F_get_domain_constraint_oid(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	_ = v49
 	var v50 int32
 	_ = v50
-	var v51 int32
-	_ = v51
 	var v52 int32
 	_ = v52
-	var v54 int32
-	_ = v54
+	var v53 int32
+	_ = v53
 	var v55 int32
 	_ = v55
-	var v57 int32
-	_ = v57
-	var v61 int32
-	_ = v61
-	var v64 int32
-	_ = v64
+	var v62 int32
+	_ = v62
 	var v65 int32
 	_ = v65
 	var v66 int32
 	_ = v66
-	var v71 int32
-	_ = v71
-	var v76 int32
-	_ = v76
-	var v79 int32
-	_ = v79
+	var v67 int32
+	_ = v67
+	var v72 int32
+	_ = v72
+	var v77 int32
+	_ = v77
+	var v80 int32
+	_ = v80
 	v9 = m.G0
 	v11 = v9 - int32(160)
 	m.G0 = v11
@@ -734,7 +736,8 @@ func F_get_domain_constraint_oid(m *base.Module, l0 int32, l1 int32, l2 int32) i
 	if v18 != 0 {
 		return int32(0)
 	} else {
-		F_ScanKeyInit(m, v11+int32(16), int32(9), int32(3), int32(184), int32(0))
+		v20 = v11 + int32(16)
+		F_ScanKeyInit(m, v20, int32(9), int32(3), int32(184), int32(0))
 		mBase = m.M
 		v26 = m.ExcPending
 		if v26 != 0 {
@@ -752,94 +755,82 @@ func F_get_domain_constraint_oid(m *base.Module, l0 int32, l1 int32, l2 int32) i
 				if v40 != 0 {
 					return int32(0)
 				} else {
-					v47 = F_systable_beginscan(m, v15, int32(2665), int32(1), int32(0), int32(3), v11+int32(16))
+					v45 = F_systable_beginscan(m, v15, int32(2665), int32(1), int32(0), int32(3), v20)
 					mBase = m.M
-					v48 = m.ExcPending
-					if v48 != 0 {
+					v46 = m.ExcPending
+					if v46 != 0 {
 						return int32(0)
 					} else {
-						v49 = F_systable_getnext(m, v47)
+						v47 = F_systable_getnext(m, v45)
 						mBase = m.M
-						v50 = m.ExcPending
-						if v50 != 0 {
+						v48 = m.ExcPending
+						if v48 != 0 {
 							return int32(0)
 						} else {
-							if v49 != 0 {
-								v51 = *(*int32)(unsafe.Add(mBase, uint32(v49)+16))
-								v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+22)))
-								v54 = *(*int32)(unsafe.Add(mBase, uint32(v51+v52)))
-								v55 = v54
+							if v47 != 0 {
+								v49 = *(*int32)(unsafe.Add(mBase, uint32(v47)+16))
+								v50 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v49)+22)))
+								v52 = *(*int32)(unsafe.Add(mBase, uint32(v49+v50)))
+								v53 = v52
 							} else {
-								v55 = int32(0)
+								v53 = int32(0)
 							}
-							F_systable_endscan(m, v47)
+							F_systable_endscan(m, v45)
 							mBase = m.M
-							v57 = m.ExcPending
-							if v57 != 0 {
+							v55 = m.ExcPending
+							if v55 != 0 {
 								return int32(0)
 							} else {
-								if l2 != 0 {
-									F_sequence_close(m, v15, int32(1))
+								if l2|v53 == int32(0) {
+									F_errstart_cold(m, int32(21), int32(0))
 									mBase = m.M
-									v79 = m.ExcPending
-									if v79 != 0 {
+									v62 = m.ExcPending
+									if v62 != 0 {
 										return int32(0)
 									} else {
-										m.G0 = v11 + int32(160)
-										return v55
-									}
-								} else {
-									if v55 != 0 {
-										F_sequence_close(m, v15, int32(1))
+										F_errcode(m, int32(67137668))
 										mBase = m.M
-										v79 = m.ExcPending
-										if v79 != 0 {
+										v65 = m.ExcPending
+										if v65 != 0 {
 											return int32(0)
 										} else {
-											m.G0 = v11 + int32(160)
-											return v55
-										}
-									} else {
-										F_errstart_cold(m, int32(21), int32(0))
-										mBase = m.M
-										v61 = m.ExcPending
-										if v61 != 0 {
-											return int32(0)
-										} else {
-											F_errcode(m, int32(67137668))
+											v66 = F_format_type_be(m, l0)
 											mBase = m.M
-											v64 = m.ExcPending
-											if v64 != 0 {
+											v67 = m.ExcPending
+											if v67 != 0 {
 												return int32(0)
 											} else {
-												v65 = F_format_type_be(m, l0)
+												*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v66
+												*(*int32)(unsafe.Add(mBase, uint32(v11))) = l1
+												F_errmsg(m, int32(_a_F_get_domain_constraint_oid_0), v11)
 												mBase = m.M
-												v66 = m.ExcPending
-												if v66 != 0 {
+												v72 = m.ExcPending
+												if v72 != 0 {
 													return int32(0)
 												} else {
-													*(*int32)(unsafe.Add(mBase, uint32(v11)+4)) = v65
-													*(*int32)(unsafe.Add(mBase, uint32(v11))) = l1
-													F_errmsg(m, int32(_a_F_get_domain_constraint_oid_0), v11)
+													F_errfinish(m, int32(_a_F_get_domain_constraint_oid_1), int32(1428), int32(_a_F_get_domain_constraint_oid_2))
 													mBase = m.M
-													v71 = m.ExcPending
-													if v71 != 0 {
+													v77 = m.ExcPending
+													if v77 != 0 {
 														return int32(0)
 													} else {
-														F_errfinish(m, int32(_a_F_get_domain_constraint_oid_1), int32(1428), int32(_a_F_get_domain_constraint_oid_2))
-														mBase = m.M
-														v76 = m.ExcPending
-														if v76 != 0 {
-															return int32(0)
-														} else {
-															base.Wasm_trap_unreachable()
-															for {
-															}
+														base.Wasm_trap_unreachable()
+														for {
 														}
 													}
 												}
 											}
 										}
+									}
+								} else {
+									F_relation_close(m, v15, int32(1))
+									mBase = m.M
+									v80 = m.ExcPending
+									if v80 != 0 {
+										return int32(0)
+									} else {
+										m.G0 = v11 + int32(160)
+										return v53
 									}
 								}
 							}

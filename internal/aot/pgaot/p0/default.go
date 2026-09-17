@@ -312,68 +312,58 @@ func F_check_default_text_search_config(m *base.Module, l0 int32, l1 int32, l2 i
 	}
 }
 func F_default_multirange_selectivity(m *base.Module, l0 int32) float64 {
-	var v5 float64
-	_ = v5
-	var v9 int32
-	_ = v9
-	var v13 int32
-	_ = v13
-	var v46 float64
-	_ = v46
-	v5 = float64(0.01)
+	var v4 float64
+	_ = v4
+	var v8 int32
+	_ = v8
+	var v12 int32
+	_ = v12
+	var v41 float64
+	_ = v41
+	v4 = float64(0.005)
 	if l0 <= int32(_a_F_default_multirange_selectivity_0) {
-		v9 = l0 - int32(2862)
-		if base.Ui32(int32(15)) < base.Ui32(v9) {
-			if l0 == int32(3585) {
-				v46 = float64(0.3333333333333333)
+		v8 = l0 - int32(2862)
+		if base.Ui32(int32(15)) < base.Ui32(v8) {
+			if base.B2i32(l0 == int32(3585))|base.B2i32(l0 == int32(4035)) != 0 {
+				v41 = float64(0.3333333333333333)
+				return v41
 			} else {
-				if l0 != int32(4035) {
-					v46 = v5
-				} else {
-					v46 = float64(0.3333333333333333)
-				}
+				return float64(0.01)
 			}
-			return v46
 		} else {
-			v13 = int32(1) << (uint(v9) % 32)
-			if v13&int32(_a_F_default_multirange_selectivity_1) != 0 {
-				v46 = float64(0.3333333333333333)
-				return v46
+			v12 = int32(1) << (uint(v8) % 32)
+			if v12&int32(_a_F_default_multirange_selectivity_1) != 0 {
+				v41 = float64(0.3333333333333333)
+				return v41
 			} else {
-				if v13&int32(_a_F_default_multirange_selectivity_2) != 0 {
-					return float64(0.005)
-				} else {
-					if int32(1)<<(uint(v9)%32)&int32(1152) == int32(0) {
-						if l0 == int32(3585) {
-							v46 = float64(0.3333333333333333)
-						} else {
-							if l0 != int32(4035) {
-								v46 = v5
-							} else {
-								v46 = float64(0.3333333333333333)
-							}
-						}
-						return v46
+				if v12&int32(_a_F_default_multirange_selectivity_2) == int32(0) {
+					if base.B2i32(l0 == int32(3585))|base.B2i32(l0 == int32(4035)) != 0 {
+						v41 = float64(0.3333333333333333)
+						return v41
 					} else {
-						return float64(0.005)
+						return float64(0.01)
 					}
+				} else {
+					v41 = v4
+					return v41
 				}
 			}
 		}
 	} else {
 		if base.Ui32(l0-int32(_a_F_default_multirange_selectivity_3)) < base.Ui32(int32(6)) {
-			v46 = float64(0.3333333333333333)
-			return v46
+			v41 = float64(0.3333333333333333)
+			return v41
 		} else {
 			if base.Ui32(l0-int32(_a_F_default_multirange_selectivity_4)) < base.Ui32(int32(2)) {
-				return float64(0.005)
+				v41 = v4
+				return v41
 			} else {
 				if l0 != int32(_a_F_default_multirange_selectivity_5) {
-					v46 = v5
+					return float64(0.01)
 				} else {
-					v46 = float64(0.3333333333333333)
+					v41 = float64(0.3333333333333333)
+					return v41
 				}
-				return v46
 			}
 		}
 	}

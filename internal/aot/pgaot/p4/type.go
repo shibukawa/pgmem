@@ -165,8 +165,8 @@ L1:
 	}
 L2:
 	;
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1624)
-	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1625)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+40)) = int32(1605)
+	*(*int32)(unsafe.Add(mBase, uint32(v10)+36)) = int32(1606)
 	*(*int64)(unsafe.Add(mBase, uint32(v10)+28)) = int64(17179869188)
 	v27 = F_hash_create(m, int32(_a_F_assign_record_type_typmod_3), int32(64), v8+int32(-52), int32(200))
 	mBase = m.M
@@ -425,7 +425,7 @@ L35:
 	;
 	v141 = int32(1)
 	v144 = v120 + v141
-	if v120&v144 != 0 {
+	if v144&v120 != 0 {
 		goto L36
 	} else {
 		goto L37
@@ -465,222 +465,16 @@ L40:
 	goto L8
 }
 func F_findTypeTypmodoutFunction(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v6 int32
-	_ = v6
-	var v10 int32
-	_ = v10
+	var v11 int32
+	_ = v11
 	var v14 int32
 	_ = v14
-	var v17 int32
-	_ = v17
-	var v18 int32
-	_ = v18
-	var v19 int32
-	_ = v19
-	var v22 int32
-	_ = v22
-	var v23 int32
-	_ = v23
-	var v28 int32
-	_ = v28
-	var v29 int32
-	_ = v29
-	var v34 int32
-	_ = v34
-	var v35 int32
-	_ = v35
-	var v36 int32
-	_ = v36
-	var v42 int32
-	_ = v42
-	var v47 int32
-	_ = v47
-	var v55 int32
-	_ = v55
-	var v58 int32
-	_ = v58
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v68 int32
-	_ = v68
-	var v73 int32
-	_ = v73
-	var v77 int32
-	_ = v77
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v82 int32
-	_ = v82
-	var v90 int32
-	_ = v90
-	var v95 int32
-	_ = v95
-	v4 = m.G0
-	v6 = v4 - int32(48)
-	m.G0 = v6
-	*(*int32)(unsafe.Add(mBase, uint32(v6)+44)) = int32(23)
-	v10 = int32(1)
-	v14 = F_LookupFuncName(m, l0, v10, v6+int32(44), v10)
-	mBase = m.M
-	v17 = m.ExcPending
-	if v17 != 0 {
+	v11 = Fn13877(m, l0, int32(_a_F_findTypeTypmodoutFunction_0), int32(2233), int32(_a_F_findTypeTypmodoutFunction_1), int32(_a_F_findTypeTypmodoutFunction_2), int32(2227), int32(2240), int32(_a_F_findTypeTypmodoutFunction_3), int32(2275), int32(23))
+	v14 = m.ExcPending
+	if v14 != 0 {
 		return int32(0)
 	} else {
-		if v14 != 0 {
-			v18 = F_get_func_rettype(m, v14)
-			mBase = m.M
-			v19 = m.ExcPending
-			if v19 != 0 {
-				return int32(0)
-			} else {
-				if v18 != int32(2275) {
-					F_errstart_cold(m, int32(21), int32(0))
-					mBase = m.M
-					v77 = m.ExcPending
-					if v77 != 0 {
-						return int32(0)
-					} else {
-						F_errcode(m, int32(117833860))
-						mBase = m.M
-						v80 = m.ExcPending
-						if v80 != 0 {
-							return int32(0)
-						} else {
-							v81 = F_NameListToString(m, l0)
-							mBase = m.M
-							v82 = m.ExcPending
-							if v82 != 0 {
-								return int32(0)
-							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+36)) = int32(_a_F_findTypeTypmodoutFunction_0)
-								*(*int32)(unsafe.Add(mBase, uint32(v6)+32)) = v81
-								F_errmsg(m, int32(_a_F_findTypeTypmodoutFunction_1), v6+int32(32))
-								mBase = m.M
-								v90 = m.ExcPending
-								if v90 != 0 {
-									return int32(0)
-								} else {
-									F_errfinish(m, int32(_a_F_findTypeTypmodoutFunction_2), int32(2233), int32(_a_F_findTypeTypmodoutFunction_3))
-									mBase = m.M
-									v95 = m.ExcPending
-									if v95 != 0 {
-										return int32(0)
-									} else {
-										base.Wasm_trap_unreachable()
-										for {
-										}
-									}
-								}
-							}
-						}
-					}
-				} else {
-					v22 = F_func_volatile(m, v14)
-					mBase = m.M
-					v23 = m.ExcPending
-					if v23 != 0 {
-						return int32(0)
-					} else {
-						if v22 != int32(118) {
-							m.G0 = v6 + int32(48)
-							return v14
-						} else {
-							v28 = F_errstart(m, int32(19), int32(0))
-							mBase = m.M
-							v29 = m.ExcPending
-							if v29 != 0 {
-								return int32(0)
-							} else {
-								if v28 == int32(0) {
-									m.G0 = v6 + int32(48)
-									return v14
-								} else {
-									F_errcode(m, int32(117833860))
-									mBase = m.M
-									v34 = m.ExcPending
-									if v34 != 0 {
-										return int32(0)
-									} else {
-										v35 = F_NameListToString(m, l0)
-										mBase = m.M
-										v36 = m.ExcPending
-										if v36 != 0 {
-											return int32(0)
-										} else {
-											*(*int32)(unsafe.Add(mBase, uint32(v6)+16)) = v35
-											F_errmsg(m, int32(_a_F_findTypeTypmodoutFunction_4), v6+int32(16))
-											mBase = m.M
-											v42 = m.ExcPending
-											if v42 != 0 {
-												return int32(0)
-											} else {
-												F_errfinish(m, int32(_a_F_findTypeTypmodoutFunction_2), int32(2240), int32(_a_F_findTypeTypmodoutFunction_3))
-												mBase = m.M
-												v47 = m.ExcPending
-												if v47 != 0 {
-													return int32(0)
-												} else {
-													m.G0 = v6 + int32(48)
-													return v14
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		} else {
-			F_errstart_cold(m, int32(21), int32(0))
-			mBase = m.M
-			v55 = m.ExcPending
-			if v55 != 0 {
-				return int32(0)
-			} else {
-				F_errcode(m, int32(52461700))
-				mBase = m.M
-				v58 = m.ExcPending
-				if v58 != 0 {
-					return int32(0)
-				} else {
-					v63 = F_func_signature_string(m, l0, int32(1), int32(0), v6+int32(44))
-					mBase = m.M
-					v64 = m.ExcPending
-					if v64 != 0 {
-						return int32(0)
-					} else {
-						*(*int32)(unsafe.Add(mBase, uint32(v6))) = v63
-						F_errmsg(m, int32(_a_F_findTypeTypmodoutFunction_5), v6)
-						mBase = m.M
-						v68 = m.ExcPending
-						if v68 != 0 {
-							return int32(0)
-						} else {
-							F_errfinish(m, int32(_a_F_findTypeTypmodoutFunction_2), int32(2227), int32(_a_F_findTypeTypmodoutFunction_3))
-							mBase = m.M
-							v73 = m.ExcPending
-							if v73 != 0 {
-								return int32(0)
-							} else {
-								base.Wasm_trap_unreachable()
-								for {
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		return v11
 	}
 }
 func F_format_type_with_typemod(m *base.Module, l0 int32, l1 int32) int32 {
@@ -948,41 +742,16 @@ L14:
 	goto L2
 }
 func F_type_is_multirange(m *base.Module, l0 int32) int32 {
-	mBase := m.M
-	_ = mBase
-	var v4 int32
-	_ = v4
-	var v7 int32
-	_ = v7
-	var v12 int32
-	_ = v12
-	var v13 int32
-	_ = v13
-	var v15 int32
-	_ = v15
-	var v17 int32
-	_ = v17
-	v4 = F_SearchSysCache1(m, int32(82), l0)
-	mBase = m.M
-	v7 = m.ExcPending
-	if v7 != 0 {
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
+	v3 = Fn14011(m, l0, int32(109))
+	v6 = m.ExcPending
+	if v6 != 0 {
 		return int32(0)
 	} else {
-		if v4 == int32(0) {
-			return int32(0)
-		} else {
-			v12 = *(*int32)(unsafe.Add(mBase, uint32(v4)+16))
-			v13 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12)+22)))
-			v15 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v12+v13)+79)))
-			F_ReleaseCatCache(m, v4)
-			mBase = m.M
-			v17 = m.ExcPending
-			if v17 != 0 {
-				return int32(0)
-			} else {
-				return base.B2i32(v15 == int32(109))
-			}
-		}
+		return v3
 	}
 }
 func F_type_is_rowtype(m *base.Module, l0 int32) int32 {

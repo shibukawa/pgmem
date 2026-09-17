@@ -12,133 +12,136 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 	_ = v5
 	var v7 int32
 	_ = v7
+	var v17 int32
+	_ = v17
 	var v19 int32
 	_ = v19
 	var v22 int32
 	_ = v22
-	var v27 int32
-	_ = v27
-	var v28 int32
-	_ = v28
-	var v34 int32
-	_ = v34
+	var v25 int32
+	_ = v25
+	var v26 int32
+	_ = v26
+	var v32 int32
+	_ = v32
+	var v35 int32
+	_ = v35
+	var v36 int32
+	_ = v36
 	var v37 int32
 	_ = v37
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v45 int32
-	_ = v45
-	var v50 int32
-	_ = v50
+	var v43 int32
+	_ = v43
+	var v48 int32
+	_ = v48
+	var v53 int32
+	_ = v53
+	var v54 int32
+	_ = v54
 	var v55 int32
 	_ = v55
 	var v56 int32
 	_ = v56
 	var v57 int32
 	_ = v57
-	var v58 int32
-	_ = v58
-	var v59 int32
-	_ = v59
-	var v64 int32
-	_ = v64
-	var v65 int32
-	_ = v65
-	var v69 int32
-	_ = v69
-	var v72 int32
-	_ = v72
-	var v76 int32
-	_ = v76
-	var v81 int32
-	_ = v81
+	var v62 int32
+	_ = v62
+	var v63 int32
+	_ = v63
+	var v67 int32
+	_ = v67
+	var v70 int32
+	_ = v70
+	var v74 int32
+	_ = v74
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
 	var v84 int32
 	_ = v84
-	var v86 int32
-	_ = v86
-	var v87 int32
-	_ = v87
-	var v91 int32
-	_ = v91
+	var v85 int32
+	_ = v85
+	var v89 int32
+	_ = v89
+	var v90 int32
+	_ = v90
 	var v92 int32
 	_ = v92
-	var v94 int32
-	_ = v94
-	var v103 int32
-	_ = v103
+	var v101 int32
+	_ = v101
+	var v104 int32
+	_ = v104
+	var v105 int32
+	_ = v105
 	var v106 int32
 	_ = v106
-	var v107 int32
-	_ = v107
-	var v108 int32
-	_ = v108
-	var v114 int32
-	_ = v114
-	var v119 int32
-	_ = v119
+	var v112 int32
+	_ = v112
+	var v117 int32
+	_ = v117
 	v5 = m.G0
 	v7 = v5 + int32(-64)
 	m.G0 = v7
 	*(*int32)(unsafe.Add(mBase, uint32(v7)+48)) = int32(2281)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+40)) = int64(90194315497)
 	*(*int64)(unsafe.Add(mBase, uint32(v7)+32)) = int64(111669151977)
-	v19 = F_LookupFuncName(m, l0, int32(5), v5+int32(-32), int32(1))
+	v17 = v5 + int32(-32)
+	v19 = F_LookupFuncName(m, l0, int32(5), v17, int32(1))
 	mBase = m.M
 	v22 = m.ExcPending
 	if v22 != 0 {
 		return int32(0)
 	} else {
-		v27 = F_LookupFuncName(m, l0, int32(4), v5+int32(-32), int32(1))
+		v25 = F_LookupFuncName(m, l0, int32(4), v17, int32(1))
 		mBase = m.M
-		v28 = m.ExcPending
-		if v28 != 0 {
+		v26 = m.ExcPending
+		if v26 != 0 {
 			return int32(0)
 		} else {
 			if v19 != 0 {
-				if v27 == int32(0) {
-					v57 = v19
-					v58 = F_get_func_rettype(m, v57)
+				if v25 == int32(0) {
+					v55 = v19
+					v56 = F_get_func_rettype(m, v55)
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v57 = m.ExcPending
+					if v57 != 0 {
 						return int32(0)
 					} else {
-						if v58 == int32(701) {
-							if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v57) {
-								v64 = F_superuser(m)
+						if v56 == int32(701) {
+							if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v55) {
+								v62 = F_superuser(m)
 								mBase = m.M
-								v65 = m.ExcPending
-								if v65 != 0 {
+								v63 = m.ExcPending
+								if v63 != 0 {
 									return int32(0)
 								} else {
-									if v64 != 0 {
+									if v62 != 0 {
 										m.G0 = v7 - int32(-64)
-										return v57
+										return v55
 									} else {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										v67 = m.ExcPending
+										if v67 != 0 {
 											return int32(0)
 										} else {
 											F_errcode(m, int32(16797828))
 											mBase = m.M
-											v72 = m.ExcPending
-											if v72 != 0 {
+											v70 = m.ExcPending
+											if v70 != 0 {
 												return int32(0)
 											} else {
 												F_errmsg(m, int32(_a_F_ValidateJoinEstimator_1), int32(0))
 												mBase = m.M
-												v76 = m.ExcPending
-												if v76 != 0 {
+												v74 = m.ExcPending
+												if v74 != 0 {
 													return int32(0)
 												} else {
 													F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(379), int32(_a_F_ValidateJoinEstimator_3))
 													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
+													v79 = m.ExcPending
+													if v79 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -151,31 +154,31 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 									}
 								}
 							} else {
-								v84 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
-								v86 = F_object_aclcheck(m, int32(1255), v57, v84, int64(128))
+								v82 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
+								v84 = F_object_aclcheck(m, int32(1255), v55, v82, int64(128))
 								mBase = m.M
-								v87 = m.ExcPending
-								if v87 != 0 {
+								v85 = m.ExcPending
+								if v85 != 0 {
 									return int32(0)
 								} else {
-									if v86 == int32(0) {
+									if v84 == int32(0) {
 										m.G0 = v7 - int32(-64)
-										return v57
+										return v55
 									} else {
-										v91 = F_NameListToString(m, l0)
+										v89 = F_NameListToString(m, l0)
 										mBase = m.M
-										v92 = m.ExcPending
-										if v92 != 0 {
+										v90 = m.ExcPending
+										if v90 != 0 {
 											return int32(0)
 										} else {
-											F_aclcheck_error(m, v86, int32(19), v91)
+											F_aclcheck_error(m, v84, int32(19), v89)
 											mBase = m.M
-											v94 = m.ExcPending
-											if v94 != 0 {
+											v92 = m.ExcPending
+											if v92 != 0 {
 												return int32(0)
 											} else {
 												m.G0 = v7 - int32(-64)
-												return v57
+												return v55
 											}
 										}
 									}
@@ -184,34 +187,34 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v103 = m.ExcPending
-							if v103 != 0 {
+							v101 = m.ExcPending
+							if v101 != 0 {
 								return int32(0)
 							} else {
 								F_errcode(m, int32(117833860))
 								mBase = m.M
-								v106 = m.ExcPending
-								if v106 != 0 {
+								v104 = m.ExcPending
+								if v104 != 0 {
 									return int32(0)
 								} else {
-									v107 = F_NameListToString(m, l0)
+									v105 = F_NameListToString(m, l0)
 									mBase = m.M
-									v108 = m.ExcPending
-									if v108 != 0 {
+									v106 = m.ExcPending
+									if v106 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(_a_F_ValidateJoinEstimator_4)
-										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
+										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v105
 										F_errmsg(m, int32(_a_F_ValidateJoinEstimator_5), v7)
 										mBase = m.M
-										v114 = m.ExcPending
-										if v114 != 0 {
+										v112 = m.ExcPending
+										if v112 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(371), int32(_a_F_ValidateJoinEstimator_3))
 											mBase = m.M
-											v119 = m.ExcPending
-											if v119 != 0 {
+											v117 = m.ExcPending
+											if v117 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -227,33 +230,33 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 				} else {
 					F_errstart_cold(m, int32(21), int32(0))
 					mBase = m.M
-					v34 = m.ExcPending
-					if v34 != 0 {
+					v32 = m.ExcPending
+					if v32 != 0 {
 						return int32(0)
 					} else {
 						F_errcode(m, int32(84439172))
 						mBase = m.M
-						v37 = m.ExcPending
-						if v37 != 0 {
+						v35 = m.ExcPending
+						if v35 != 0 {
 							return int32(0)
 						} else {
-							v38 = F_NameListToString(m, l0)
+							v36 = F_NameListToString(m, l0)
 							mBase = m.M
-							v39 = m.ExcPending
-							if v39 != 0 {
+							v37 = m.ExcPending
+							if v37 != 0 {
 								return int32(0)
 							} else {
-								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v38
+								*(*int32)(unsafe.Add(mBase, uint32(v7)+16)) = v36
 								F_errmsg(m, int32(_a_F_ValidateJoinEstimator_6), v5+int32(-48))
 								mBase = m.M
-								v45 = m.ExcPending
-								if v45 != 0 {
+								v43 = m.ExcPending
+								if v43 != 0 {
 									return int32(0)
 								} else {
 									F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(356), int32(_a_F_ValidateJoinEstimator_3))
 									mBase = m.M
-									v50 = m.ExcPending
-									if v50 != 0 {
+									v48 = m.ExcPending
+									if v48 != 0 {
 										return int32(0)
 									} else {
 										base.Wasm_trap_unreachable()
@@ -266,48 +269,48 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 					}
 				}
 			} else {
-				if v27 != 0 {
-					v57 = v27
-					v58 = F_get_func_rettype(m, v57)
+				if v25 != 0 {
+					v55 = v25
+					v56 = F_get_func_rettype(m, v55)
 					mBase = m.M
-					v59 = m.ExcPending
-					if v59 != 0 {
+					v57 = m.ExcPending
+					if v57 != 0 {
 						return int32(0)
 					} else {
-						if v58 == int32(701) {
-							if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v57) {
-								v64 = F_superuser(m)
+						if v56 == int32(701) {
+							if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v55) {
+								v62 = F_superuser(m)
 								mBase = m.M
-								v65 = m.ExcPending
-								if v65 != 0 {
+								v63 = m.ExcPending
+								if v63 != 0 {
 									return int32(0)
 								} else {
-									if v64 != 0 {
+									if v62 != 0 {
 										m.G0 = v7 - int32(-64)
-										return v57
+										return v55
 									} else {
 										F_errstart_cold(m, int32(21), int32(0))
 										mBase = m.M
-										v69 = m.ExcPending
-										if v69 != 0 {
+										v67 = m.ExcPending
+										if v67 != 0 {
 											return int32(0)
 										} else {
 											F_errcode(m, int32(16797828))
 											mBase = m.M
-											v72 = m.ExcPending
-											if v72 != 0 {
+											v70 = m.ExcPending
+											if v70 != 0 {
 												return int32(0)
 											} else {
 												F_errmsg(m, int32(_a_F_ValidateJoinEstimator_1), int32(0))
 												mBase = m.M
-												v76 = m.ExcPending
-												if v76 != 0 {
+												v74 = m.ExcPending
+												if v74 != 0 {
 													return int32(0)
 												} else {
 													F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(379), int32(_a_F_ValidateJoinEstimator_3))
 													mBase = m.M
-													v81 = m.ExcPending
-													if v81 != 0 {
+													v79 = m.ExcPending
+													if v79 != 0 {
 														return int32(0)
 													} else {
 														base.Wasm_trap_unreachable()
@@ -320,31 +323,31 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 									}
 								}
 							} else {
-								v84 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
-								v86 = F_object_aclcheck(m, int32(1255), v57, v84, int64(128))
+								v82 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
+								v84 = F_object_aclcheck(m, int32(1255), v55, v82, int64(128))
 								mBase = m.M
-								v87 = m.ExcPending
-								if v87 != 0 {
+								v85 = m.ExcPending
+								if v85 != 0 {
 									return int32(0)
 								} else {
-									if v86 == int32(0) {
+									if v84 == int32(0) {
 										m.G0 = v7 - int32(-64)
-										return v57
+										return v55
 									} else {
-										v91 = F_NameListToString(m, l0)
+										v89 = F_NameListToString(m, l0)
 										mBase = m.M
-										v92 = m.ExcPending
-										if v92 != 0 {
+										v90 = m.ExcPending
+										if v90 != 0 {
 											return int32(0)
 										} else {
-											F_aclcheck_error(m, v86, int32(19), v91)
+											F_aclcheck_error(m, v84, int32(19), v89)
 											mBase = m.M
-											v94 = m.ExcPending
-											if v94 != 0 {
+											v92 = m.ExcPending
+											if v92 != 0 {
 												return int32(0)
 											} else {
 												m.G0 = v7 - int32(-64)
-												return v57
+												return v55
 											}
 										}
 									}
@@ -353,34 +356,34 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v103 = m.ExcPending
-							if v103 != 0 {
+							v101 = m.ExcPending
+							if v101 != 0 {
 								return int32(0)
 							} else {
 								F_errcode(m, int32(117833860))
 								mBase = m.M
-								v106 = m.ExcPending
-								if v106 != 0 {
+								v104 = m.ExcPending
+								if v104 != 0 {
 									return int32(0)
 								} else {
-									v107 = F_NameListToString(m, l0)
+									v105 = F_NameListToString(m, l0)
 									mBase = m.M
-									v108 = m.ExcPending
-									if v108 != 0 {
+									v106 = m.ExcPending
+									if v106 != 0 {
 										return int32(0)
 									} else {
 										*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(_a_F_ValidateJoinEstimator_4)
-										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
+										*(*int32)(unsafe.Add(mBase, uint32(v7))) = v105
 										F_errmsg(m, int32(_a_F_ValidateJoinEstimator_5), v7)
 										mBase = m.M
-										v114 = m.ExcPending
-										if v114 != 0 {
+										v112 = m.ExcPending
+										if v112 != 0 {
 											return int32(0)
 										} else {
 											F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(371), int32(_a_F_ValidateJoinEstimator_3))
 											mBase = m.M
-											v119 = m.ExcPending
-											if v119 != 0 {
+											v117 = m.ExcPending
+											if v117 != 0 {
 												return int32(0)
 											} else {
 												base.Wasm_trap_unreachable()
@@ -394,53 +397,53 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 						}
 					}
 				} else {
-					v55 = F_LookupFuncName(m, l0, int32(5), v5+int32(-32), int32(0))
+					v53 = F_LookupFuncName(m, l0, int32(5), v5+int32(-32), int32(0))
 					mBase = m.M
-					v56 = m.ExcPending
-					if v56 != 0 {
+					v54 = m.ExcPending
+					if v54 != 0 {
 						return int32(0)
 					} else {
-						v57 = v55
-						v58 = F_get_func_rettype(m, v57)
+						v55 = v53
+						v56 = F_get_func_rettype(m, v55)
 						mBase = m.M
-						v59 = m.ExcPending
-						if v59 != 0 {
+						v57 = m.ExcPending
+						if v57 != 0 {
 							return int32(0)
 						} else {
-							if v58 == int32(701) {
-								if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v57) {
-									v64 = F_superuser(m)
+							if v56 == int32(701) {
+								if base.Ui32(int32(_a_F_ValidateJoinEstimator_0)) <= base.Ui32(v55) {
+									v62 = F_superuser(m)
 									mBase = m.M
-									v65 = m.ExcPending
-									if v65 != 0 {
+									v63 = m.ExcPending
+									if v63 != 0 {
 										return int32(0)
 									} else {
-										if v64 != 0 {
+										if v62 != 0 {
 											m.G0 = v7 - int32(-64)
-											return v57
+											return v55
 										} else {
 											F_errstart_cold(m, int32(21), int32(0))
 											mBase = m.M
-											v69 = m.ExcPending
-											if v69 != 0 {
+											v67 = m.ExcPending
+											if v67 != 0 {
 												return int32(0)
 											} else {
 												F_errcode(m, int32(16797828))
 												mBase = m.M
-												v72 = m.ExcPending
-												if v72 != 0 {
+												v70 = m.ExcPending
+												if v70 != 0 {
 													return int32(0)
 												} else {
 													F_errmsg(m, int32(_a_F_ValidateJoinEstimator_1), int32(0))
 													mBase = m.M
-													v76 = m.ExcPending
-													if v76 != 0 {
+													v74 = m.ExcPending
+													if v74 != 0 {
 														return int32(0)
 													} else {
 														F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(379), int32(_a_F_ValidateJoinEstimator_3))
 														mBase = m.M
-														v81 = m.ExcPending
-														if v81 != 0 {
+														v79 = m.ExcPending
+														if v79 != 0 {
 															return int32(0)
 														} else {
 															base.Wasm_trap_unreachable()
@@ -453,31 +456,31 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 										}
 									}
 								} else {
-									v84 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
-									v86 = F_object_aclcheck(m, int32(1255), v57, v84, int64(128))
+									v82 = *(*int32)(unsafe.Add(mBase, _c_F_ValidateJoinEstimator[0]))
+									v84 = F_object_aclcheck(m, int32(1255), v55, v82, int64(128))
 									mBase = m.M
-									v87 = m.ExcPending
-									if v87 != 0 {
+									v85 = m.ExcPending
+									if v85 != 0 {
 										return int32(0)
 									} else {
-										if v86 == int32(0) {
+										if v84 == int32(0) {
 											m.G0 = v7 - int32(-64)
-											return v57
+											return v55
 										} else {
-											v91 = F_NameListToString(m, l0)
+											v89 = F_NameListToString(m, l0)
 											mBase = m.M
-											v92 = m.ExcPending
-											if v92 != 0 {
+											v90 = m.ExcPending
+											if v90 != 0 {
 												return int32(0)
 											} else {
-												F_aclcheck_error(m, v86, int32(19), v91)
+												F_aclcheck_error(m, v84, int32(19), v89)
 												mBase = m.M
-												v94 = m.ExcPending
-												if v94 != 0 {
+												v92 = m.ExcPending
+												if v92 != 0 {
 													return int32(0)
 												} else {
 													m.G0 = v7 - int32(-64)
-													return v57
+													return v55
 												}
 											}
 										}
@@ -486,34 +489,34 @@ func F_ValidateJoinEstimator(m *base.Module, l0 int32) int32 {
 							} else {
 								F_errstart_cold(m, int32(21), int32(0))
 								mBase = m.M
-								v103 = m.ExcPending
-								if v103 != 0 {
+								v101 = m.ExcPending
+								if v101 != 0 {
 									return int32(0)
 								} else {
 									F_errcode(m, int32(117833860))
 									mBase = m.M
-									v106 = m.ExcPending
-									if v106 != 0 {
+									v104 = m.ExcPending
+									if v104 != 0 {
 										return int32(0)
 									} else {
-										v107 = F_NameListToString(m, l0)
+										v105 = F_NameListToString(m, l0)
 										mBase = m.M
-										v108 = m.ExcPending
-										if v108 != 0 {
+										v106 = m.ExcPending
+										if v106 != 0 {
 											return int32(0)
 										} else {
 											*(*int32)(unsafe.Add(mBase, uint32(v7)+4)) = int32(_a_F_ValidateJoinEstimator_4)
-											*(*int32)(unsafe.Add(mBase, uint32(v7))) = v107
+											*(*int32)(unsafe.Add(mBase, uint32(v7))) = v105
 											F_errmsg(m, int32(_a_F_ValidateJoinEstimator_5), v7)
 											mBase = m.M
-											v114 = m.ExcPending
-											if v114 != 0 {
+											v112 = m.ExcPending
+											if v112 != 0 {
 												return int32(0)
 											} else {
 												F_errfinish(m, int32(_a_F_ValidateJoinEstimator_2), int32(371), int32(_a_F_ValidateJoinEstimator_3))
 												mBase = m.M
-												v119 = m.ExcPending
-												if v119 != 0 {
+												v117 = m.ExcPending
+												if v117 != 0 {
 													return int32(0)
 												} else {
 													base.Wasm_trap_unreachable()
@@ -557,8 +560,8 @@ func F_find_join_rel(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v41
 	var v44 int32
 	_ = v44
-	var v49 int32
-	_ = v49
+	var v50 int32
+	_ = v50
 	var v55 int32
 	_ = v55
 	var v59 int32
@@ -585,8 +588,8 @@ func F_find_join_rel(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v109
 	var v112 int32
 	_ = v112
-	var v118 int32
-	_ = v118
+	var v119 int32
+	_ = v119
 	var v124 int32
 	_ = v124
 	var v128 int32
@@ -595,38 +598,36 @@ func F_find_join_rel(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v129
 	var v130 int32
 	_ = v130
-	var v137 int32
-	_ = v137
-	var v143 int32
-	_ = v143
 	var v144 int32
 	_ = v144
-	var v146 int32
-	_ = v146
-	var v149 int32
-	_ = v149
+	var v145 int32
+	_ = v145
+	var v147 int32
+	_ = v147
 	var v150 int32
 	_ = v150
-	var v155 int32
-	_ = v155
-	var v163 int32
-	_ = v163
-	var v165 int32
-	_ = v165
-	var v167 int32
-	_ = v167
+	var v151 int32
+	_ = v151
+	var v156 int32
+	_ = v156
+	var v164 int32
+	_ = v164
+	var v166 int32
+	_ = v166
 	var v168 int32
 	_ = v168
-	var v171 int32
-	_ = v171
+	var v169 int32
+	_ = v169
+	var v172 int32
+	_ = v172
 	var v176 int32
 	_ = v176
-	var v181 int32
-	_ = v181
 	var v182 int32
 	_ = v182
-	var v190 int32
-	_ = v190
+	var v183 int32
+	_ = v183
+	var v192 int32
+	_ = v192
 	v3 = int32(0)
 	v9 = m.G0
 	v11 = v9 + int32(-64)
@@ -640,12 +641,12 @@ func F_find_join_rel(m *base.Module, l0 int32, l1 int32) int32 {
 L1:
 	;
 	m.G0 = v11 - int32(-64)
-	return v190
+	return v192
 L2:
 	;
 	v109 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v109 == int32(0) {
-		v190 = v3
+		v192 = v3
 		goto L1
 	} else {
 		goto L20
@@ -654,7 +655,7 @@ L3:
 	;
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+56))
 	if v16 == int32(0) {
-		v190 = v3
+		v192 = v3
 		goto L1
 	} else {
 		goto L6
@@ -727,12 +728,12 @@ L11:
 	}
 L12:
 	;
-	v49 = int32(0)
+	v50 = int32(0)
 	goto L13
 L13:
 	;
 	v55 = *(*int32)(unsafe.Add(mBase, uint32(v41)+12))
-	v59 = *(*int32)(unsafe.Add(mBase, uint32(v55+v49<<(uint(int32(2))%32))))
+	v59 = *(*int32)(unsafe.Add(mBase, uint32(v55+v50<<(uint(int32(2))%32))))
 	v65 = F_hash_search(m, v37, v59+int32(8), int32(1), v9+int32(-49))
 	mBase = m.M
 	v66 = m.ExcPending
@@ -747,10 +748,10 @@ L14:
 L15:
 	;
 	*(*int32)(unsafe.Add(mBase, uint32(v65)+4)) = v59
-	v69 = v49 + int32(1)
+	v69 = v50 + int32(1)
 	v70 = *(*int32)(unsafe.Add(mBase, uint32(v41)+4))
 	if v69 < v70 {
-		v49 = v69
+		v50 = v69
 		goto L13
 	} else {
 		goto L16
@@ -765,7 +766,7 @@ L17:
 L18:
 	;
 	if v96 == int32(0) {
-		v190 = v3
+		v192 = v3
 		goto L1
 	} else {
 		goto L19
@@ -773,135 +774,120 @@ L18:
 L19:
 	;
 	v100 = *(*int32)(unsafe.Add(mBase, uint32(v96)+4))
-	v190 = v100
+	v192 = v100
 	goto L1
 L20:
 	;
 	v112 = *(*int32)(unsafe.Add(mBase, uint32(v109)+4))
 	if v112 <= int32(0) {
-		goto L21
+		v192 = v3
+		goto L1
 	} else {
-		goto L22
+		goto L21
 	}
 L21:
 	;
-	v190 = v3
-	goto L1
+	v119 = int32(0)
+	goto L22
 L22:
 	;
-	goto L23
-L23:
-	;
-	v118 = int32(0)
-	goto L24
-L24:
-	;
 	v124 = *(*int32)(unsafe.Add(mBase, uint32(v109)+12))
-	v128 = *(*int32)(unsafe.Add(mBase, uint32(v124+v118<<(uint(int32(2))%32))))
+	v128 = *(*int32)(unsafe.Add(mBase, uint32(v124+v119<<(uint(int32(2))%32))))
 	v129 = *(*int32)(unsafe.Add(mBase, uint32(v128)+8))
 	v130 = int32(0)
-	v137 = base.B2i32(v129|l1 == v130)
-	if v129 == v130 {
-		v176 = v137
-		goto L27
+	if base.B2i32(v129 == v130)|base.B2i32(l1 == v130) != 0 {
+		v176 = base.B2i32(v129|l1 == v130)
+		goto L25
 	} else {
-		goto L28
+		goto L26
+	}
+L23:
+	;
+	v192 = int32(0)
+	goto L1
+L24:
+	;
+	if v176 != 0 {
+		v192 = v128
+		goto L1
+	} else {
+		goto L35
 	}
 L25:
 	;
-	v190 = int32(0)
-	goto L1
+	goto L24
 L26:
 	;
-	if v176 != 0 {
-		v190 = v128
-		goto L1
+	v144 = *(*int32)(unsafe.Add(mBase, uint32(v129)+4))
+	v145 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
+	if v144 != v145 {
+		v176 = int32(0)
+		goto L25
 	} else {
-		goto L38
+		goto L27
 	}
 L27:
 	;
-	goto L26
-L28:
-	;
-	if l1 == int32(0) {
-		v176 = v137
-		goto L27
+	v147 = int32(1)
+	if v144 <= v147 {
+		goto L28
 	} else {
 		goto L29
 	}
+L28:
+	;
+	v150 = v147
+	goto L30
 L29:
 	;
-	v143 = *(*int32)(unsafe.Add(mBase, uint32(v129)+4))
-	v144 = *(*int32)(unsafe.Add(mBase, uint32(l1)+4))
-	if v143 != v144 {
-		v176 = int32(0)
-		goto L27
-	} else {
-		goto L30
-	}
+	v150 = v144
+	goto L30
 L30:
 	;
-	v146 = int32(1)
-	if v143 <= v146 {
-		goto L31
-	} else {
-		goto L32
-	}
+	v151 = int32(8)
+	v156 = int32(0)
+	goto L31
 L31:
 	;
-	v149 = v146
-	goto L33
+	v164 = v156 << (uint(int32(2)) % 32)
+	v166 = *(*int32)(unsafe.Add(mBase, uint32(v129+v151+v164)))
+	v168 = *(*int32)(unsafe.Add(mBase, uint32(l1+v151+v164)))
+	v169 = base.B2i32(v166 == v168)
+	if v166 != v168 {
+		v176 = v169
+		goto L25
+	} else {
+		goto L33
+	}
 L32:
 	;
-	v149 = v143
-	goto L33
+	v176 = v169
+	goto L25
 L33:
 	;
-	v150 = int32(8)
-	v155 = int32(0)
-	goto L34
+	v172 = v156 + int32(1)
+	if v172 != v150 {
+		v156 = v172
+		goto L31
+	} else {
+		goto L34
+	}
 L34:
 	;
-	v163 = v155 << (uint(int32(2)) % 32)
-	v165 = *(*int32)(unsafe.Add(mBase, uint32(v129+v150+v163)))
-	v167 = *(*int32)(unsafe.Add(mBase, uint32(v163+(l1+v150))))
-	v168 = base.B2i32(v165 == v167)
-	if v167 != v165 {
-		v176 = v168
-		goto L27
+	goto L32
+L35:
+	;
+	v182 = v119 + int32(1)
+	v183 = *(*int32)(unsafe.Add(mBase, uint32(v109)+4))
+	if v182 < v183 {
+		v119 = v182
+		goto L22
 	} else {
 		goto L36
 	}
-L35:
-	;
-	v176 = v168
-	goto L27
 L36:
 	;
-	v171 = v155 + int32(1)
-	if v171 != v149 {
-		v155 = v171
-		goto L34
-	} else {
-		goto L37
-	}
-L37:
-	;
-	goto L35
-L38:
-	;
-	v181 = v118 + int32(1)
-	v182 = *(*int32)(unsafe.Add(mBase, uint32(v109)+4))
-	if v181 < v182 {
-		v118 = v181
-		goto L24
-	} else {
-		goto L39
-	}
-L39:
-	;
-	goto L25
+	goto L23
 }
 func F_join_clause_is_movable_to(m *base.Module, l0 int32, l1 int32) int32 {
 	mBase := m.M
@@ -930,68 +916,68 @@ func F_join_clause_is_movable_to(m *base.Module, l0 int32, l1 int32) int32 {
 	_ = v17
 	var v18 int32
 	_ = v18
-	var v27 int32
-	_ = v27
 	var v28 int32
 	_ = v28
-	var v30 int32
-	_ = v30
-	var v33 int32
-	_ = v33
+	var v29 int32
+	_ = v29
+	var v31 int32
+	_ = v31
 	var v34 int32
 	_ = v34
-	var v39 int32
-	_ = v39
-	var v46 int32
-	_ = v46
-	var v48 int32
-	_ = v48
-	var v50 int32
-	_ = v50
+	var v35 int32
+	_ = v35
+	var v40 int32
+	_ = v40
+	var v47 int32
+	_ = v47
+	var v49 int32
+	_ = v49
 	var v51 int32
 	_ = v51
-	var v53 int32
-	_ = v53
-	var v55 int32
-	_ = v55
-	var v59 int32
-	_ = v59
+	var v52 int32
+	_ = v52
+	var v54 int32
+	_ = v54
+	var v56 int32
+	_ = v56
 	var v63 int32
 	_ = v63
 	var v64 int32
 	_ = v64
 	var v65 int32
 	_ = v65
-	var v74 int32
-	_ = v74
-	var v75 int32
-	_ = v75
+	var v66 int32
+	_ = v66
+	var v76 int32
+	_ = v76
 	var v77 int32
 	_ = v77
-	var v80 int32
-	_ = v80
-	var v81 int32
-	_ = v81
-	var v86 int32
-	_ = v86
-	var v93 int32
-	_ = v93
+	var v79 int32
+	_ = v79
+	var v82 int32
+	_ = v82
+	var v83 int32
+	_ = v83
+	var v88 int32
+	_ = v88
 	var v95 int32
 	_ = v95
 	var v97 int32
 	_ = v97
-	var v98 int32
-	_ = v98
+	var v99 int32
+	_ = v99
 	var v100 int32
 	_ = v100
 	var v102 int32
 	_ = v102
-	var v106 int32
-	_ = v106
-	var v110 int32
-	_ = v110
-	var v113 int32
-	_ = v113
+	var v104 int32
+	_ = v104
+	var v111 int32
+	_ = v111
+	var v112 int32
+	_ = v112
+	var v115 int32
+	_ = v115
 	v3 = int32(0)
 	v4 = *(*int32)(unsafe.Add(mBase, uint32(l1)+68))
 	v5 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
@@ -1005,14 +991,14 @@ func F_join_clause_is_movable_to(m *base.Module, l0 int32, l1 int32) int32 {
 	}
 L1:
 	;
-	return v113 & int32(1)
+	return v115 & int32(1)
 L2:
 	;
 	return int32(0)
 L3:
 	;
 	if v6 == int32(0) {
-		v113 = v3
+		v115 = v3
 		goto L1
 	} else {
 		goto L4
@@ -1032,7 +1018,7 @@ L4:
 L5:
 	;
 	if v14 != 0 {
-		v113 = v3
+		v115 = v3
 		goto L1
 	} else {
 		goto L6
@@ -1042,197 +1028,181 @@ L6:
 	v16 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
 	v17 = *(*int32)(unsafe.Add(mBase, uint32(l1)+96))
 	v18 = int32(0)
-	if v16 == v18 {
-		v59 = v18
+	if base.B2i32(v16 == v18)|base.B2i32(v17 == v18) != 0 {
+		v63 = v18
 		goto L8
 	} else {
 		goto L9
 	}
 L7:
 	;
-	if v59 != 0 {
-		v113 = v3
+	if v63 != 0 {
+		v115 = v3
 		goto L1
 	} else {
-		goto L21
+		goto L20
 	}
 L8:
 	;
 	goto L7
 L9:
 	;
-	if v17 == int32(0) {
-		v59 = v18
-		goto L8
-	} else {
+	v28 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
+	v29 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
+	if v28 < v29 {
 		goto L10
+	} else {
+		goto L11
 	}
 L10:
 	;
-	v27 = *(*int32)(unsafe.Add(mBase, uint32(v16)+4))
-	v28 = *(*int32)(unsafe.Add(mBase, uint32(v17)+4))
-	if v27 < v28 {
-		goto L11
-	} else {
-		goto L12
-	}
+	v31 = v28
+	goto L12
 L11:
 	;
-	v30 = v27
-	goto L13
+	v31 = v29
+	goto L12
 L12:
 	;
-	v30 = v28
-	goto L13
+	if v31 <= int32(1) {
+		goto L13
+	} else {
+		goto L14
+	}
 L13:
 	;
-	if v30 <= int32(1) {
-		goto L14
-	} else {
-		goto L15
-	}
+	v34 = int32(1)
+	goto L15
 L14:
 	;
-	v33 = int32(1)
-	goto L16
+	v34 = v31
+	goto L15
 L15:
 	;
-	v33 = v30
+	v35 = int32(8)
+	v40 = int32(0)
 	goto L16
 L16:
 	;
-	v34 = int32(8)
-	v39 = int32(0)
-	goto L17
+	v47 = v40 << (uint(int32(2)) % 32)
+	v49 = *(*int32)(unsafe.Add(mBase, uint32(v17+v35+v47)))
+	v51 = *(*int32)(unsafe.Add(mBase, uint32(v16+v35+v47)))
+	v52 = v49 & v51
+	v54 = base.B2i32(v52 != int32(0))
+	if v52 != 0 {
+		v63 = v54
+		goto L8
+	} else {
+		goto L18
+	}
 L17:
 	;
-	v46 = v39 << (uint(int32(2)) % 32)
-	v48 = *(*int32)(unsafe.Add(mBase, uint32(v17+v34+v46)))
-	v50 = *(*int32)(unsafe.Add(mBase, uint32(v46+(v16+v34))))
-	v51 = v48 & v50
-	v53 = base.B2i32(v51 != int32(0))
-	if v51 != 0 {
-		v59 = v53
-		goto L8
+	v63 = v54
+	goto L8
+L18:
+	;
+	v56 = v40 + int32(1)
+	if v56 != v34 {
+		v40 = v56
+		goto L16
 	} else {
 		goto L19
 	}
-L18:
-	;
-	v59 = v53
-	goto L8
 L19:
 	;
-	v55 = v39 + int32(1)
-	if v55 != v33 {
-		v39 = v55
-		goto L17
-	} else {
-		goto L20
-	}
+	goto L17
 L20:
 	;
-	goto L18
+	v64 = *(*int32)(unsafe.Add(mBase, uint32(l1)+104))
+	v65 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v66 = int32(0)
+	if base.B2i32(v64 == v66)|base.B2i32(v65 == v66) != 0 {
+		v111 = v66
+		goto L22
+	} else {
+		goto L23
+	}
 L21:
 	;
-	v63 = *(*int32)(unsafe.Add(mBase, uint32(l1)+104))
-	v64 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v65 = int32(0)
-	if v63 == v65 {
-		v106 = v65
-		goto L23
-	} else {
-		goto L24
-	}
-L22:
-	;
-	if v106 != 0 {
-		v113 = v3
+	if v111 != 0 {
+		v115 = v3
 		goto L1
-	} else {
-		goto L36
-	}
-L23:
-	;
-	goto L22
-L24:
-	;
-	if v64 == int32(0) {
-		v106 = v65
-		goto L23
-	} else {
-		goto L25
-	}
-L25:
-	;
-	v74 = *(*int32)(unsafe.Add(mBase, uint32(v63)+4))
-	v75 = *(*int32)(unsafe.Add(mBase, uint32(v64)+4))
-	if v74 < v75 {
-		goto L26
-	} else {
-		goto L27
-	}
-L26:
-	;
-	v77 = v74
-	goto L28
-L27:
-	;
-	v77 = v75
-	goto L28
-L28:
-	;
-	if v77 <= int32(1) {
-		goto L29
-	} else {
-		goto L30
-	}
-L29:
-	;
-	v80 = int32(1)
-	goto L31
-L30:
-	;
-	v80 = v77
-	goto L31
-L31:
-	;
-	v81 = int32(8)
-	v86 = int32(0)
-	goto L32
-L32:
-	;
-	v93 = v86 << (uint(int32(2)) % 32)
-	v95 = *(*int32)(unsafe.Add(mBase, uint32(v64+v81+v93)))
-	v97 = *(*int32)(unsafe.Add(mBase, uint32(v93+(v63+v81))))
-	v98 = v95 & v97
-	v100 = base.B2i32(v98 != int32(0))
-	if v98 != 0 {
-		v106 = v100
-		goto L23
 	} else {
 		goto L34
 	}
+L22:
+	;
+	goto L21
+L23:
+	;
+	v76 = *(*int32)(unsafe.Add(mBase, uint32(v64)+4))
+	v77 = *(*int32)(unsafe.Add(mBase, uint32(v65)+4))
+	if v76 < v77 {
+		goto L24
+	} else {
+		goto L25
+	}
+L24:
+	;
+	v79 = v76
+	goto L26
+L25:
+	;
+	v79 = v77
+	goto L26
+L26:
+	;
+	if v79 <= int32(1) {
+		goto L27
+	} else {
+		goto L28
+	}
+L27:
+	;
+	v82 = int32(1)
+	goto L29
+L28:
+	;
+	v82 = v79
+	goto L29
+L29:
+	;
+	v83 = int32(8)
+	v88 = int32(0)
+	goto L30
+L30:
+	;
+	v95 = v88 << (uint(int32(2)) % 32)
+	v97 = *(*int32)(unsafe.Add(mBase, uint32(v65+v83+v95)))
+	v99 = *(*int32)(unsafe.Add(mBase, uint32(v64+v83+v95)))
+	v100 = v97 & v99
+	v102 = base.B2i32(v100 != int32(0))
+	if v100 != 0 {
+		v111 = v102
+		goto L22
+	} else {
+		goto L32
+	}
+L31:
+	;
+	v111 = v102
+	goto L22
+L32:
+	;
+	v104 = v88 + int32(1)
+	if v104 != v82 {
+		v88 = v104
+		goto L30
+	} else {
+		goto L33
+	}
 L33:
 	;
-	v106 = v100
-	goto L23
+	goto L31
 L34:
 	;
-	v102 = v86 + int32(1)
-	if v102 != v80 {
-		v86 = v102
-		goto L32
-	} else {
-		goto L35
-	}
-L35:
-	;
-	goto L33
-L36:
-	;
-	v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+12)))
-	v113 = v110 ^ int32(1)
+	v112 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+12)))
+	v115 = v112 ^ int32(1)
 	goto L1
 }
 func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, l4 int32, l5 int32) float64 {
@@ -1250,6 +1220,8 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = v23
 	var v25 int32
 	_ = v25
+	var v28 int32
+	_ = v28
 	var v30 int32
 	_ = v30
 	var v33 int32
@@ -1258,32 +1230,32 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 	_ = v34
 	var v49 int32
 	_ = v49
+	var v59 int32
+	_ = v59
+	var v60 int32
+	_ = v60
 	var v61 int32
 	_ = v61
 	var v62 int32
 	_ = v62
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v70 int32
-	_ = v70
-	var v71 int32
-	_ = v71
-	var v75 int32
-	_ = v75
-	var v80 int32
-	_ = v80
-	var v84 float64
-	_ = v84
-	var v95 int32
-	_ = v95
-	var v99 int32
-	_ = v99
-	var v104 int32
+	var v68 int32
+	_ = v68
+	var v69 int32
+	_ = v69
+	var v73 int32
+	_ = v73
+	var v78 int32
+	_ = v78
+	var v82 float64
+	_ = v82
+	var v93 int32
+	_ = v93
+	var v97 int32
+	_ = v97
+	var v102 int32
+	_ = v102
+	var v104 float64
 	_ = v104
-	var v108 float64
-	_ = v108
 	v11 = m.G0
 	v13 = v11 - int32(16)
 	m.G0 = v13
@@ -1294,15 +1266,16 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 		return float64(0)
 	} else {
 		if v15 == int32(0) {
-			v108 = float64(0.5)
+			v104 = float64(0.5)
 			m.G0 = v13 + int32(16)
-			return v108
+			return v104
 		} else {
 			v23 = m.G0
 			v25 = v23 - int32(96)
 			m.G0 = v25
+			v28 = v25 + int32(8)
 			v30 = *(*int32)(unsafe.Add(mBase, _c_F_join_selectivity[0]))
-			F_fmgr_info_cxt_security(m, v15, v25+int32(8), v30, int32(0))
+			F_fmgr_info_cxt_security(m, v15, v28, v30, int32(0))
 			mBase = m.M
 			v33 = m.ExcPending
 			if v33 != 0 {
@@ -1324,34 +1297,34 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 				*(*uint8)(unsafe.Add(mBase, uint32(v25)+52)) = uint8(v34)
 				*(*int32)(unsafe.Add(mBase, uint32(v25)+48)) = l3
 				*(*int64)(unsafe.Add(mBase, uint32(v25)+40)) = int64(0)
-				*(*int32)(unsafe.Add(mBase, uint32(v25)+36)) = v25 + int32(8)
-				v61 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
-				v62 = m.T0[v61].(func(*base.Module, int32) int32)(m, v25+int32(36))
+				*(*int32)(unsafe.Add(mBase, uint32(v25)+36)) = v28
+				v59 = *(*int32)(unsafe.Add(mBase, uint32(v25)+8))
+				v60 = m.T0[v59].(func(*base.Module, int32) int32)(m, v25+int32(36))
 				mBase = m.M
-				v63 = m.ExcPending
-				if v63 != 0 {
+				v61 = m.ExcPending
+				if v61 != 0 {
 					return float64(0)
 				} else {
-					v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+52)))
-					if v64 == int32(1) {
+					v62 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v25)+52)))
+					if v62 == int32(1) {
 						F_errstart_cold(m, int32(21), int32(0))
 						mBase = m.M
-						v70 = m.ExcPending
-						if v70 != 0 {
+						v68 = m.ExcPending
+						if v68 != 0 {
 							return float64(0)
 						} else {
-							v71 = *(*int32)(unsafe.Add(mBase, uint32(v25)+12))
-							*(*int32)(unsafe.Add(mBase, uint32(v25))) = v71
+							v69 = *(*int32)(unsafe.Add(mBase, uint32(v25)+12))
+							*(*int32)(unsafe.Add(mBase, uint32(v25))) = v69
 							F_errmsg_internal(m, int32(_a_F_join_selectivity_0), v25)
 							mBase = m.M
-							v75 = m.ExcPending
-							if v75 != 0 {
+							v73 = m.ExcPending
+							if v73 != 0 {
 								return float64(0)
 							} else {
 								F_errfinish(m, int32(_a_F_join_selectivity_1), int32(1246), int32(_a_F_join_selectivity_2))
 								mBase = m.M
-								v80 = m.ExcPending
-								if v80 != 0 {
+								v78 = m.ExcPending
+								if v78 != 0 {
 									return float64(0)
 								} else {
 									base.Wasm_trap_unreachable()
@@ -1362,29 +1335,29 @@ func F_join_selectivity(m *base.Module, l0 int32, l1 int32, l2 int32, l3 int32, 
 						}
 					} else {
 						m.G0 = v25 + int32(96)
-						v84 = *(*float64)(unsafe.Add(mBase, uint32(v62)))
-						if base.F64_lt(v84, float64(0))|base.F64_gt(v84, float64(1)) == int32(0) {
-							v108 = v84
+						v82 = *(*float64)(unsafe.Add(mBase, uint32(v60)))
+						if base.F64_lt(v82, float64(0))|base.F64_gt(v82, float64(1)) == int32(0) {
+							v104 = v82
 							m.G0 = v13 + int32(16)
-							return v108
+							return v104
 						} else {
 							F_errstart_cold(m, int32(21), int32(0))
 							mBase = m.M
-							v95 = m.ExcPending
-							if v95 != 0 {
+							v93 = m.ExcPending
+							if v93 != 0 {
 								return float64(0)
 							} else {
-								*(*float64)(unsafe.Add(mBase, uint32(v13))) = v84
+								*(*float64)(unsafe.Add(mBase, uint32(v13))) = v82
 								F_errmsg_internal(m, int32(_a_F_join_selectivity_3), v13)
 								mBase = m.M
-								v99 = m.ExcPending
-								if v99 != 0 {
+								v97 = m.ExcPending
+								if v97 != 0 {
 									return float64(0)
 								} else {
 									F_errfinish(m, int32(_a_F_join_selectivity_4), int32(2048), int32(_a_F_join_selectivity_5))
 									mBase = m.M
-									v104 = m.ExcPending
-									if v104 != 0 {
+									v102 = m.ExcPending
+									if v102 != 0 {
 										return float64(0)
 									} else {
 										base.Wasm_trap_unreachable()

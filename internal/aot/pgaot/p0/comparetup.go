@@ -34,24 +34,20 @@ func F_comparetup_index_gin(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 	_ = v31
 	var v33 int32
 	_ = v33
-	var v38 int32
-	_ = v38
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v36 int32
+	_ = v36
+	var v40 int32
+	_ = v40
 	var v42 int32
 	_ = v42
 	var v45 int32
 	_ = v45
 	var v46 int32
 	_ = v46
-	var v51 int32
-	_ = v51
-	var v52 int32
-	_ = v52
-	var v54 int32
-	_ = v54
+	var v49 int32
+	_ = v49
+	var v53 int32
+	_ = v53
 	var v56 int32
 	_ = v56
 	var v57 int32
@@ -140,14 +136,13 @@ func F_comparetup_index_gin(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 						v31 = int32(1)
 						v33 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v9)+10)))
 						if v33 == v31 {
-							v38 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+6)))
-							if v38 != 0 {
-								v39 = F__emscripten_memcpy_bulkmem(m, v14+int32(8), v30, v38)
-								mBase = m.M
+							v36 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v9)+6)))
+							if v36 != 0 {
+								base.MemoryCopy(m, v14+int32(8), v30, v36)
 							} else {
 							}
-							v41 = *(*int32)(unsafe.Add(mBase, uint32(v14)+8))
-							v42 = v41
+							v40 = *(*int32)(unsafe.Add(mBase, uint32(v14)+8))
+							v42 = v40
 						} else {
 							v42 = v30
 						}
@@ -159,14 +154,13 @@ func F_comparetup_index_gin(m *base.Module, l0 int32, l1 int32, l2 int32) int32 
 							if v46 != int32(1) {
 								v56 = v45
 							} else {
-								v51 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+6)))
-								if v51 != 0 {
-									v52 = F__emscripten_memcpy_bulkmem(m, v14+int32(12), v45, v51)
-									mBase = m.M
+								v49 = int32(*(*uint16)(unsafe.Add(mBase, uint32(v10)+6)))
+								if v49 != 0 {
+									base.MemoryCopy(m, v14+int32(12), v45, v49)
 								} else {
 								}
-								v54 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
-								v56 = v54
+								v53 = *(*int32)(unsafe.Add(mBase, uint32(v14)+12))
+								v56 = v53
 							}
 						}
 						v57 = int32(36)

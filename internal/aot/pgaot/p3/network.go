@@ -16,147 +16,147 @@ func F_convert_network_to_scalar(m *base.Module, l0 int32, l1 int32, l2 int32) f
 	_ = v14
 	var v16 int32
 	_ = v16
-	var v30 int32
-	_ = v30
-	var v53 int32
-	_ = v53
+	var v24 int32
+	_ = v24
+	var v41 int32
+	_ = v41
+	var v44 int32
+	_ = v44
+	var v45 int32
+	_ = v45
+	var v47 int32
+	_ = v47
+	var v50 int32
+	_ = v50
+	var v51 int32
+	_ = v51
+	var v52 int32
+	_ = v52
+	var v54 float64
+	_ = v54
 	var v56 int32
 	_ = v56
-	var v57 int32
-	_ = v57
-	var v59 int32
-	_ = v59
-	var v62 int32
-	_ = v62
-	var v63 int32
-	_ = v63
-	var v64 int32
-	_ = v64
-	var v66 float64
+	var v61 int32
+	_ = v61
+	var v66 int32
 	_ = v66
-	var v68 int32
-	_ = v68
-	var v73 int32
+	var v71 int32
+	_ = v71
+	var v73 float64
 	_ = v73
 	var v78 int32
 	_ = v78
+	var v82 int32
+	_ = v82
 	var v83 int32
 	_ = v83
-	var v85 float64
-	_ = v85
-	var v90 int32
-	_ = v90
+	var v84 int32
+	_ = v84
+	var v86 int32
+	_ = v86
+	var v87 int32
+	_ = v87
 	var v94 int32
 	_ = v94
 	var v95 int32
 	_ = v95
-	var v96 int32
-	_ = v96
 	var v98 int32
 	_ = v98
-	var v99 int32
-	_ = v99
 	var v106 int32
 	_ = v106
-	var v107 int32
-	_ = v107
-	var v110 int32
+	var v110 float64
 	_ = v110
-	var v118 int32
-	_ = v118
-	var v122 float64
-	_ = v122
 	if l1 <= int32(828) {
 		if l1 == int32(650) {
-			v53 = F_pg_detoast_datum_packed(m, l0)
+			v41 = F_pg_detoast_datum_packed(m, l0)
 			mBase = m.M
-			v56 = m.ExcPending
-			if v56 != 0 {
+			v44 = m.ExcPending
+			if v44 != 0 {
 				return float64(0)
 			} else {
-				v57 = int32(1)
-				v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53))))
-				if v59&v57 != 0 {
-					v62 = v57
+				v45 = int32(1)
+				v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41))))
+				if v47&v45 != 0 {
+					v50 = v45
 				} else {
-					v62 = int32(4)
+					v50 = int32(4)
 				}
-				v63 = v53 + v62
-				v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63))))
-				v66 = float64(256)
-				v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+2)))
-				v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+3)))
-				v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+4)))
-				v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+5)))
-				v85 = base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_convert_i32_u(v64), v66), base.F64_convert_i32_u(v68)), v66), base.F64_convert_i32_u(v73)), v66), base.F64_convert_i32_u(v78)), v66), base.F64_convert_i32_u(v83))
-				if v64 == int32(2) {
-					v122 = v85
-					return v122
+				v51 = v41 + v50
+				v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
+				v54 = float64(256)
+				v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+2)))
+				v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+3)))
+				v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+4)))
+				v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+5)))
+				v73 = base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_convert_i32_u(v52), v54), base.F64_convert_i32_u(v56)), v54), base.F64_convert_i32_u(v61)), v54), base.F64_convert_i32_u(v66)), v54), base.F64_convert_i32_u(v71))
+				if v52 == int32(2) {
+					v110 = v73
+					return v110
 				} else {
-					v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+6)))
-					return base.F64_add(base.F64_mul(v85, float64(256)), base.F64_convert_i32_u(v90))
+					v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+6)))
+					return base.F64_add(base.F64_mul(v73, float64(256)), base.F64_convert_i32_u(v78))
 				}
 			}
 		} else {
 			if l1 != int32(774) {
-				v118 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v118)
-				v122 = float64(0)
-				return v122
+				v106 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v106)
+				v110 = float64(0)
+				return v110
 			} else {
 				v11 = *(*int32)(unsafe.Add(mBase, uint32(l0)))
-				v12 = int32(24)
-				v14 = int32(_a_F_convert_network_to_scalar_0)
-				v16 = int32(8)
-				v30 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
-				return base.F64_add(base.F64_mul(base.F64_convert_i32_s(v11<<(uint(v12)%32)|v11&v14<<(uint(v16)%32)|(int32(base.Ui32(v11)>>(uint(v16)%32))&v14|int32(base.Ui32(v11)>>(uint(v12)%32)))), float64(4.294967296e+09)), base.F64_convert_i32_s(v30<<(uint(v12)%32)|v30&v14<<(uint(v16)%32)|(int32(base.Ui32(v30)>>(uint(v16)%32))&v14|int32(base.Ui32(v30)>>(uint(v12)%32)))))
+				v12 = int32(16711935)
+				v14 = int32(8)
+				v16 = int32(24)
+				v24 = *(*int32)(unsafe.Add(mBase, uint32(l0)+4))
+				return base.F64_add(base.F64_mul(base.F64_convert_i32_s(base.I32_rotr(v11&v12, v14)|base.I32_rotr(v11, v16)&v12), float64(4.294967296e+09)), base.F64_convert_i32_s(base.I32_rotr(v24&v12, v14)|base.I32_rotr(v24, v16)&v12))
 			}
 		}
 	} else {
 		if l1 == int32(829) {
-			v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
-			v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
-			v96 = int32(8)
-			v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
-			v99 = int32(16)
-			v106 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+5)))
-			v107 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
-			v110 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
-			return base.F64_add(base.F64_mul(base.F64_convert_i32_u(v94|(v95<<(uint(v96)%32)|v98<<(uint(v99)%32))), float64(1.6777216e+07)), base.F64_convert_i32_u(v106|(v107<<(uint(v96)%32)|v110<<(uint(v99)%32))))
+			v82 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+2)))
+			v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+1)))
+			v84 = int32(8)
+			v86 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0))))
+			v87 = int32(16)
+			v94 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+5)))
+			v95 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+4)))
+			v98 = int32(*(*uint8)(unsafe.Add(mBase, uint32(l0)+3)))
+			return base.F64_add(base.F64_mul(base.F64_convert_i32_u(v82|(v83<<(uint(v84)%32)|v86<<(uint(v87)%32))), float64(1.6777216e+07)), base.F64_convert_i32_u(v94|(v95<<(uint(v84)%32)|v98<<(uint(v87)%32))))
 		} else {
 			if l1 != int32(869) {
-				v118 = int32(1)
-				*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v118)
-				v122 = float64(0)
-				return v122
+				v106 = int32(1)
+				*(*uint8)(unsafe.Add(mBase, uint32(l2))) = uint8(v106)
+				v110 = float64(0)
+				return v110
 			} else {
-				v53 = F_pg_detoast_datum_packed(m, l0)
+				v41 = F_pg_detoast_datum_packed(m, l0)
 				mBase = m.M
-				v56 = m.ExcPending
-				if v56 != 0 {
+				v44 = m.ExcPending
+				if v44 != 0 {
 					return float64(0)
 				} else {
-					v57 = int32(1)
-					v59 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v53))))
-					if v59&v57 != 0 {
-						v62 = v57
+					v45 = int32(1)
+					v47 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v41))))
+					if v47&v45 != 0 {
+						v50 = v45
 					} else {
-						v62 = int32(4)
+						v50 = int32(4)
 					}
-					v63 = v53 + v62
-					v64 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63))))
-					v66 = float64(256)
-					v68 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+2)))
-					v73 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+3)))
-					v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+4)))
-					v83 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+5)))
-					v85 = base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_convert_i32_u(v64), v66), base.F64_convert_i32_u(v68)), v66), base.F64_convert_i32_u(v73)), v66), base.F64_convert_i32_u(v78)), v66), base.F64_convert_i32_u(v83))
-					if v64 == int32(2) {
-						v122 = v85
-						return v122
+					v51 = v41 + v50
+					v52 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51))))
+					v54 = float64(256)
+					v56 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+2)))
+					v61 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+3)))
+					v66 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+4)))
+					v71 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+5)))
+					v73 = base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_add(base.F64_mul(base.F64_convert_i32_u(v52), v54), base.F64_convert_i32_u(v56)), v54), base.F64_convert_i32_u(v61)), v54), base.F64_convert_i32_u(v66)), v54), base.F64_convert_i32_u(v71))
+					if v52 == int32(2) {
+						v110 = v73
+						return v110
 					} else {
-						v90 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v63)+6)))
-						return base.F64_add(base.F64_mul(v85, float64(256)), base.F64_convert_i32_u(v90))
+						v78 = int32(*(*uint8)(unsafe.Add(mBase, uint32(v51)+6)))
+						return base.F64_add(base.F64_mul(v73, float64(256)), base.F64_convert_i32_u(v78))
 					}
 				}
 			}

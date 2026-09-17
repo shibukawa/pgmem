@@ -466,49 +466,49 @@ func F_int4_dist(m *base.Module, l0 int32) int32 {
 	_ = mBase
 	var v2 int32
 	_ = v2
-	var v4 int32
-	_ = v4
+	var v3 int32
+	_ = v3
+	var v6 int32
+	_ = v6
 	var v7 int32
 	_ = v7
-	var v8 int32
-	_ = v8
-	var v23 int32
-	_ = v23
-	var v26 int32
-	_ = v26
-	var v32 int32
-	_ = v32
-	var v39 int32
-	_ = v39
-	var v41 int32
-	_ = v41
+	var v22 int32
+	_ = v22
+	var v25 int32
+	_ = v25
+	var v29 int32
+	_ = v29
+	var v34 int32
+	_ = v34
+	var v36 int32
+	_ = v36
 	v2 = int32(0)
-	v4 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
-	v7 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
-	v8 = v7 - v4
-	if base.B2i32(base.B2i32(v2 < v4)^base.B2i32(v8 < v7) == v2)&base.B2i32(v8 != int32(-2147483648)) == v2 {
+	v3 = *(*int32)(unsafe.Add(mBase, uint32(l0)+28))
+	v6 = *(*int32)(unsafe.Add(mBase, uint32(l0)+20))
+	v7 = v6 - v3
+	if base.B2i32(base.B2i32(v2 < v3)^base.B2i32(v7 < v6) == v2)&base.B2i32(v7 != int32(-2147483648)) == v2 {
 		F_errstart_cold(m, int32(21), int32(0))
 		mBase = m.M
-		v23 = m.ExcPending
-		if v23 != 0 {
+		v22 = m.ExcPending
+		if v22 != 0 {
 			return int32(0)
 		} else {
 			F_errcode(m, int32(50331778))
 			mBase = m.M
-			v26 = m.ExcPending
-			if v26 != 0 {
+			v25 = m.ExcPending
+			if v25 != 0 {
 				return int32(0)
 			} else {
 				F_errmsg(m, int32(_a_F_int4_dist_0), int32(0))
 				mBase = m.M
-				v32 = m.ExcPending
-				if v32 != 0 {
+				v29 = m.ExcPending
+				if v29 != 0 {
 					return int32(0)
 				} else {
 					F_errfinish(m, int32(_a_F_int4_dist_1), int32(105), int32(_a_F_int4_dist_2))
 					mBase = m.M
-					v39 = m.ExcPending
-					if v39 != 0 {
+					v34 = m.ExcPending
+					if v34 != 0 {
 						return int32(0)
 					} else {
 						base.Wasm_trap_unreachable()
@@ -519,7 +519,7 @@ func F_int4_dist(m *base.Module, l0 int32) int32 {
 			}
 		}
 	} else {
-		v41 = v8 >> (uint(int32(31)) % 32)
-		return v8 ^ v41 - v41
+		v36 = v7 >> (uint(int32(31)) % 32)
+		return v7 ^ v36 - v36
 	}
 }
